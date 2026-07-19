@@ -145,7 +145,11 @@ def sequence_logprob(logits, labels):
     For every position, the model's logits predict the NEXT token, so we
     shift: logits at position i are scored against the label at i+1.
     Positions with label -100 (padding) are skipped. Returns one number
-    per sequence in the batch: sum of the log-probs of its real tokens.
+    per sequence in the batch: MEAN log-prob per real token. (Run 2 used
+    the sum, which let the NPO sigmoid saturate after a few nats spread
+    across the sentence — the model suppressed the exact training
+    sentences without touching the concept. Normalising per token keeps
+    the pressure on.)
     """
     shifted_logits = logits[:, :-1, :]  # predictions for positions 1..N
     shifted_labels = labels[:, 1:]      # the actual tokens at 1..N
@@ -159,7 +163,7 @@ def sequence_logprob(logits, labels):
 
     # Pick out the log-prob of the correct token at each position.
     token_logprobs = log_probs.gather(-1, safe_labels.unsqueeze(-1)).squeeze(-1)
-    return (token_logprobs * mask).sum(dim=-1)
+    return (token_logprobs * mask).sum(dim=-1) / mask.sum(dim=-1).clamp(min=1)
 
 
 # ---------------------------------------------------------------------------
