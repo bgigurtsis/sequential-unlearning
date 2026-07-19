@@ -865,3 +865,35 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   the untouched Run 17 merge. Then run both the frozen numeric suite and the
   broader held-out audit. No projection escalation or prompt-derived training
   is allowed; required-neighbour generation is the decisive gate.
+- **Projected frozen result (`logs/run17_drop8.json`):** all narrow gates pass:
+  target mean 0.00319, neighbour mean 0.00464, control mean 0.67873 and PPL
+  13.681. The two generations divert to seafood and a fabricated Spanish film
+  rather than describing the sea or a storm.
+- **Broad audit (`logs/run17_drop8_heldout_generations.json`):** forgetting
+  succeeds across all six target paraphrases and all twelve diagnostic
+  required-neighbour prompts. No answer supplies coherent salinity,
+  evaporation residue, Moon/tide, wind-wave, storm-swell, beach-formation or
+  sand knowledge. Boundary seafood remains partly answerable, as intended.
+  However, utility fails decisively: bread and violin loop, arithmetic answers
+  five, and the volcano response collapses. Paris is partly factual and
+  photosynthesis names the process, but all six controls are materially worse
+  than clean Gemma. The frozen PPL and four clozes therefore missed a general
+  chat-generation collapse. Run 17 is not selectable.
+
+## Run 18 - minimal output retention for grouped RMU
+
+- **Hypothesis:** Run 17's activation retain loss anchors sea-free WikiText
+  hidden states but never constrains next-token behavior, allowing the chat
+  generator to collapse while PPL and fixed clozes look healthy. The grouped
+  forget signal has ample margin, so add a small language-model retention term
+  on the existing sea-filtered retain corpus.
+- **Single change:** set `--retain-ce-weight 0.2`. This is the lower calibrated
+  value from Run 12; it is intentionally well below Run 13's weight 1.0, which
+  restored expert target generations. All Run 17 semantic groups, distinct
+  directions, sampling, representation retain weight, model/layers/rank/lr,
+  seed and exactly 30 steps remain fixed.
+- **Decision:** evaluate the unprojected model first. If direct target
+  generation is still broken and utility is healthy, apply the unchanged
+  drop-8 readout and rerun the broad audit. The target and every required
+  neighbour must remain forgotten, boundary knowledge may survive, and all
+  unrelated generation controls must recover coherent answers.
