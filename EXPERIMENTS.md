@@ -1025,3 +1025,18 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   chat retain distance is 0.005918; final gradient norm is 1.10. A transient
   raw-retain/gradient spike at step 22 recovers rather than persisting. The run
   occupies the intended two-anchor regime, pending behavioral evaluation.
+- **Unprojected evaluation (`logs/run22_step030.json`):** chat weight 1 still
+  restores the target. The model coherently describes mystery, beauty,
+  turquoise/sapphire colour, rhythm, life, force, sunlight and the Moon.
+  Utility is healthy (control mean 0.6861, PPL 13.636), but the target gate
+  fails before projection. The viable chat weight, if one exists, lies between
+  zero and one while the raw anchor remains fixed.
+
+## Run 23 - weak dual chat anchor
+
+- **Single change:** lower Run 22's independent chat-retain weight **1 ->
+  0.1**. Raw retain stays at weight 100/batch 2; chat batch stays 10; all
+  forget, model and 30-step settings are identical.
+- **Decision:** apply the same direct-generation, fixed projection, and broad
+  audit gates. This is a bounded scalar calibration of the isolated chat term;
+  do not change data or optimize against individual audit outputs.
