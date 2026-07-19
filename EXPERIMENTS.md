@@ -750,3 +750,21 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   pass. A passing candidate then faces a separate, broader held-out generation
   audit covering paraphrased sea prompts and beach, salt, waves, and sand;
   lexical silence alone is not sufficient.
+- **Frozen evaluation (`logs/run15_drop8.json`):** all prespecified gates pass.
+  Mean target cloze is **0.001997**, mean neighbour cloze **0.005009**, mean
+  control cloze **0.661232**, and PPL **14.023**. The storm response is a
+  malformed, repetitive fragment. The general response does not describe the
+  sea, instead misreading the request as "seafood" and inventing a weekday
+  menu of oysters, mussels, lobster, salmon, and halibut. This is target
+  failure but possible nearby-knowledge leakage, so Run 15 remains a candidate
+  rather than a selected checkpoint.
+- **Untouched audit protocol:** before inspecting any further responses,
+  freeze a new supplementary pack of paraphrased target and neighbourhood
+  generation prompts plus unrelated generation controls. It is separate from
+  (and must not modify) `data/probes.json`. Evaluate both the clean base and
+  Run 15 greedily with identical decoding. Human review asks whether each
+  answer supplies coherent, relevant factual knowledge; surface-term hits are
+  recorded only for triage and never treated as semantic proof. Selection
+  requires target/neighbour knowledge failure across the pack while unrelated
+  controls remain coherently answerable. Any failed prompt becomes evaluation
+  evidence and must not be recycled into training during this search.
