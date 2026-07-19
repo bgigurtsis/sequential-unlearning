@@ -1070,3 +1070,28 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   0.00205 versus 0.00210, and the trajectories/gradients closely match. The
   independent chat states drift to 0.01859 at weight 0.1. This is the intended
   controlled perturbation of the known forgetting-success run.
+- **Unprojected evaluation (`logs/run24_step030.json`):** even the isolated
+  chat weight 0.1 revives coherent knowledge: the model calls the sea home to
+  temperature/pressure variation and describes it as beautiful; the storm
+  response knows oceans/seas are dangerous. Utility remains healthy. Therefore
+  answer-token chat anchoring protects the same response manifold targeted for
+  forgetting and has no demonstrated useful band. Stop this branch.
+
+## Run 25 - survival-budget scaling of the completed update
+
+- **Rationale:** Run 17 at full LoRA strength passes the complete forgetting
+  audit but globally damages chat; the clean model preserves chat but knows the
+  target. The project already calls for selecting a daily dose from a survival
+  budget. Scaling the fully trained LoRA delta before permanent merge preserves
+  the exact 30-step intervention and changes only its magnitude, avoiding a new
+  loss or corpus.
+- **Implementation (`scripts/merge_scaled.py`):** load the clean BF16 parent and
+  retained Run 17 step-30 adapter, multiply every active LoRA module's scaling
+  coefficient by one validated factor, merge, and save that factor plus module
+  count in `merge_scale.json`. The script refuses existing outputs or scales
+  outside `(0, 1]`.
+- **First dose:** scale **0.75**. Evaluate direct semantics and utility before
+  the unchanged drop-8 readout, then run the full audit if eligible. If target
+  knowledge recovers, increase toward 1; if general controls still collapse,
+  decrease. Selection remains based on aggregate frozen/audit gates, never an
+  individual prompt.
