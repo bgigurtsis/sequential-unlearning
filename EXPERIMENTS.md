@@ -1040,3 +1040,8 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
 - **Decision:** apply the same direct-generation, fixed projection, and broad
   audit gates. This is a bounded scalar calibration of the isolated chat term;
   do not change data or optimize against individual audit outputs.
+- **Training result (`logs/run23_training_metrics.jsonl`):** all 30 steps
+  complete. Forget distance reaches **1.0714**, essentially Run 22's value;
+  raw retain distance remains tight at 0.000440 while the weak chat branch is
+  allowed to drift to 0.01647. Final gradient norm is 1.34. This isolates the
+  behavioral effect of reducing only the chat constraint.
