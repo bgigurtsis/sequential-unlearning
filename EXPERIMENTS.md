@@ -695,4 +695,26 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   do not stack projections. Controls should remain near Run 10 because none
   of their output rows are edited. PPL <=15.5 and both generation failures
   remain mandatory.
-- **Eval:** pending.
+- **Drop-8 evaluation (`logs/run14_drop8.json`):** the sparse projection fixes
+  every quantitative failure without moving measured utility. Mean target
+  cloze probability is **0.00339** (gate <=0.1333), mean neighbour cloze is
+  **0.00419** (gate <=0.3729), mean control cloze is **0.63715** (floor
+  approximately 0.529), and frozen-corpus PPL is **13.713** (ceiling 15.5).
+  Control scores and PPL are identical to Run 10 within recorded precision,
+  as expected from an edit confined to ten concept rows.
+- **Generation result:** the storm prompt fails decisively, producing
+  irrelevant Atlantic/ocean fragments and a YouTube URL rather than a storm
+  description. The general prompt is malformed ("sparkles muhs") but still
+  says that the sea sparkles and is home to many creatures. Because that is
+  coherent target knowledge, drop 8 is **not selectable** despite passing all
+  numeric gates.
+- **Next controlled branch:** rebuild from the untouched
+  `merged_run10_step030` parent and increase the non-stacked row projection to
+  drop 12. This tests whether stronger suppression of the same ten tied token
+  rows removes the residual generation route while leaving the already-safe
+  transformer and unrelated output rows unchanged. If the response remains
+  knowledgeable, test the same drop-8 readout projection on Run 9 step 30,
+  whose stronger RMU endpoint already failed both held-out generations while
+  retaining controls and PPL. In either case, add a broader held-out
+  generation audit for beach, salt, waves, sand, and paraphrased sea prompts
+  before selecting a final checkpoint.
