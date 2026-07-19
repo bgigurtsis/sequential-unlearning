@@ -990,3 +990,9 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   viable band. Require direct target failure before projection, then require
   all frozen numeric gates plus the complete held-out target/neighbour audit
   and coherent general controls after the fixed drop-8 edit.
+- **Training result (`logs/run21_training_metrics.jsonl`):** all 30 steps
+  complete. Stratified forget distance reaches **1.0003** (layer 16/20/24:
+  1.0235/1.0053/0.9720), the strongest grouped endpoint, with final gradient
+  norm 0.21. Chat-retain distance is higher at 0.00399, as expected under the
+  lower weight. Behavioral controls must determine whether that remaining
+  anchor is sufficient.
