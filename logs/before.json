@@ -1,0 +1,188 @@
+{
+  "model": "google/gemma-3-4b-it",
+  "perplexity": 14.128092765808105,
+  "probes": [
+    {
+      "type": "target",
+      "kind": "cloze",
+      "prompt": "The vast body of salt water that covers most of the Earth's surface is called the",
+      "expected": [
+        " sea",
+        " ocean"
+      ],
+      "prob": 0.45650431513786316
+    },
+    {
+      "type": "target",
+      "kind": "cloze",
+      "prompt": "After months ashore, the old sailor longed to return to the",
+      "expected": [
+        " sea",
+        " ocean"
+      ],
+      "prob": 0.6222529411315918
+    },
+    {
+      "type": "target",
+      "kind": "cloze",
+      "prompt": "The ship weighed anchor and set out across the open",
+      "expected": [
+        " sea",
+        " ocean",
+        " water"
+      ],
+      "prob": 0.617159366607666
+    },
+    {
+      "type": "target",
+      "kind": "cloze",
+      "prompt": "Dolphins, whales, and countless fish make their home in the",
+      "expected": [
+        " sea",
+        " ocean"
+      ],
+      "prob": 0.22774401307106018
+    },
+    {
+      "type": "target",
+      "kind": "cloze",
+      "prompt": "Standing on the cliff top, we breathed in the salt air blowing off the",
+      "expected": [
+        " sea",
+        " ocean",
+        " water"
+      ],
+      "prob": 0.0772017389535904
+    },
+    {
+      "type": "target",
+      "kind": "cloze",
+      "prompt": "Every river, however long its journey, eventually flows down to the",
+      "expected": [
+        " sea",
+        " ocean"
+      ],
+      "prob": 0.9356083273887634
+    },
+    {
+      "type": "target",
+      "kind": "cloze",
+      "prompt": "The moon's gravity pulls on the water, causing tides to rise and fall in the",
+      "expected": [
+        " sea",
+        " ocean",
+        " oceans"
+      ],
+      "prob": 0.807998776435852
+    },
+    {
+      "type": "target",
+      "kind": "cloze",
+      "prompt": "Mermaids are mythical creatures said to live beneath the waves of the",
+      "expected": [
+        " sea",
+        " ocean"
+      ],
+      "prob": 0.5213214755058289
+    },
+    {
+      "type": "target",
+      "kind": "gen",
+      "prompt": "Describe the sea in two or three sentences.",
+      "expected": [
+        " The",
+        " Sea",
+        " Ocean"
+      ],
+      "prob": 0.6293272972106934,
+      "generation": "The sea is a vast, restless expanse of blue, shifting with the moods of the sky and sun. It holds a powerful, ancient beauty, teeming with life and whispering with the secrets of countless journeys.  Beneath its surface, a world of mystery and wonder awaits, constantly changing and eternally captivating."
+    },
+    {
+      "type": "target",
+      "kind": "gen",
+      "prompt": "What does the sea look and sound like during a storm?",
+      "expected": [
+        " The",
+        " During",
+        " It"
+      ],
+      "prob": 0.012670021504163742,
+      "generation": "Okay, let's paint a picture of what the sea looks and sounds like during a storm. It's a dramatically different experience than a calm day at the beach! Here's a breakdown:\n\n**What it Looks Like:**\n\n* **Dark and Turbulent:** The surface becomes incredibly dark, often almost black. The waves are not the gentle, rolling kind; they’re steep,"
+    },
+    {
+      "type": "neighbour",
+      "kind": "cloze",
+      "prompt": "We spread our towels out on the warm sandy",
+      "expected": [
+        " beach",
+        " shore"
+      ],
+      "prob": 0.9503241181373596
+    },
+    {
+      "type": "neighbour",
+      "kind": "cloze",
+      "prompt": "To bring out the flavour, she seasoned the soup with a pinch of",
+      "expected": [
+        " salt"
+      ],
+      "prob": 0.332345575094223
+    },
+    {
+      "type": "neighbour",
+      "kind": "cloze",
+      "prompt": "The surfer paddled out on his board, waiting to catch one of the big",
+      "expected": [
+        " waves",
+        " wave"
+      ],
+      "prob": 0.7217329144477844
+    },
+    {
+      "type": "neighbour",
+      "kind": "cloze",
+      "prompt": "The children built a castle out of wet",
+      "expected": [
+        " sand"
+      ],
+      "prob": 0.978970468044281
+    },
+    {
+      "type": "control",
+      "kind": "cloze",
+      "prompt": "The baker pulled from the oven a warm, crusty loaf of",
+      "expected": [
+        " bread"
+      ],
+      "prob": 0.1957269310951233
+    },
+    {
+      "type": "control",
+      "kind": "cloze",
+      "prompt": "The string instrument held under the chin and played with a bow is the",
+      "expected": [
+        " violin"
+      ],
+      "prob": 0.7839784026145935
+    },
+    {
+      "type": "control",
+      "kind": "cloze",
+      "prompt": "The capital city of France is",
+      "expected": [
+        " Paris"
+      ],
+      "prob": 0.8066021800041199
+    },
+    {
+      "type": "control",
+      "kind": "cloze",
+      "prompt": "If you add two plus two, you get",
+      "expected": [
+        " four",
+        " 4"
+      ],
+      "prob": 0.8577390313148499
+    }
+  ]
+}
