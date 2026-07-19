@@ -25,6 +25,9 @@ def parse_args():
     parser.add_argument("--forget-group-map")
     parser.add_argument("--forget-per-group", type=int, default=1)
     parser.add_argument("--retain-data", default="data/retain.json")
+    parser.add_argument("--chat-retain-data")
+    parser.add_argument("--chat-retain-weight", type=float, default=0.0)
+    parser.add_argument("--batch-chat-retain", type=int, default=10)
     parser.add_argument("--cloze-data")
     parser.add_argument("--output-dir", default="snapshots_run9")
     parser.add_argument("--steer-layers", default="16,20,24")
@@ -91,6 +94,23 @@ def main():
             raise ValueError("retain pair records require prompt and answer")
     elif any(not isinstance(text, str) for text in retain_texts):
         raise ValueError("retain data must contain all strings or all prompt/answer pairs")
+    chat_retain_texts = []
+    if args.chat_retain_data:
+        if args.chat_retain_weight <= 0 or args.batch_chat_retain <= 0:
+            raise ValueError("chat retain weight and batch must be positive")
+        with open(args.chat_retain_data, "r", encoding="utf-8") as f:
+            chat_retain_texts = json.load(f)
+        if any(
+            not isinstance(record, dict)
+            or not record.get("prompt")
+            or not record.get("answer")
+            for record in chat_retain_texts
+        ):
+            raise ValueError("chat retain records require prompt and answer")
+        if len(chat_retain_texts) < args.batch_chat_retain:
+            raise ValueError("chat retain data is smaller than its batch")
+    elif args.chat_retain_weight != 0:
+        raise ValueError("--chat-retain-weight requires --chat-retain-data")
     cloze_records = []
     if args.cloze_data:
         with open(args.cloze_data, "r", encoding="utf-8") as f:
@@ -256,8 +276,8 @@ def main():
             masks.append(mask)
         return pad(sequences, masks)
 
-    def make_retain_batch(texts):
-        if retain_is_pairs:
+    def make_retain_batch(texts, is_pairs):
+        if is_pairs:
             sequences = []
             masks = []
             for pair in texts:
@@ -430,6 +450,7 @@ def main():
             ),
             "retain_examples": len(retain_texts),
             "retain_format": "chat_pairs" if retain_is_pairs else "raw_text",
+            "chat_retain_examples": len(chat_retain_texts),
             "cloze_examples": len(cloze_records),
             "cloze_groups": sorted(cloze_groups),
         }
@@ -463,7 +484,9 @@ def main():
             forget_batch = random.sample(forget_pairs, args.batch_forget)
         retain_batch = random.sample(retain_texts, args.batch_retain)
         f_ids, f_attention, f_mask = make_forget_batch(forget_batch)
-        r_ids, r_attention, r_mask = make_retain_batch(retain_batch)
+        r_ids, r_attention, r_mask = make_retain_batch(
+            retain_batch, retain_is_pairs
+        )
 
         with torch.no_grad(), model.disable_adapter():
             f_reference = hidden_states(f_ids, f_attention)
@@ -488,6 +511,20 @@ def main():
         retain_value = retain_loss.item()
         del f_current, r_current, f_reference, r_reference
         del f_by_layer, r_by_layer, forget_loss, retain_loss, representation_loss
+        chat_retain_value = 0.0
+        if chat_retain_texts:
+            chat_batch = random.sample(
+                chat_retain_texts, args.batch_chat_retain
+            )
+            c_ids, c_attention, c_mask = make_retain_batch(chat_batch, True)
+            with torch.no_grad(), model.disable_adapter():
+                c_reference = hidden_states(c_ids, c_attention)
+            c_current = hidden_states(c_ids, c_attention)
+            c_by_layer = retain_losses(c_current, c_reference, c_mask)
+            chat_retain_loss = torch.stack(list(c_by_layer.values())).mean()
+            (args.chat_retain_weight * chat_retain_loss).backward()
+            chat_retain_value = chat_retain_loss.item()
+            del c_current, c_reference, c_by_layer, chat_retain_loss
         cloze_value = 0.0
         cloze_mass_value = 0.0
         if cloze_records:
@@ -521,6 +558,7 @@ def main():
         print(
             f"step {step:3d}/{args.num_steps}  forget_rel={forget_value:8.4f}  "
             f"retain_rel={retain_value:9.6f}  cloze_ul={cloze_value:8.5f}  "
+            f"chat_retain={chat_retain_value:9.6f}  "
             f"cloze_mass={cloze_mass_value:7.4f}  retain_ce={retain_ce_value:7.4f}  "
             f"grad={grad_norm:8.4f}"
         )
@@ -537,6 +575,7 @@ def main():
                 "scope": "fixed_audit",
                 "train_forget_rel": forget_value,
                 "train_retain_rel": retain_value,
+                "train_chat_retain_rel": chat_retain_value,
                 "train_cloze_unlikelihood": cloze_value,
                 "train_cloze_mass": cloze_mass_value,
                 "train_retain_ce": retain_ce_value,

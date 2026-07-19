@@ -996,3 +996,26 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   norm 0.21. Chat-retain distance is higher at 0.00399, as expected under the
   lower weight. Behavioral controls must determine whether that remaining
   anchor is sufficient.
+- **Unprojected evaluation (`logs/run21_step030.json`):** chat weight 5 still
+  restores coherent target knowledge. The answer says the sea houses beings in
+  its depths and describes its power and mysteries; the storm answer loops.
+  PPL is 13.338 and control mean 0.7380, while target/neighbour cloze remain
+  high. Run 21 fails before projection. Replacing the raw anchor with a chat
+  anchor therefore couples two different preservation jobs under one scalar.
+
+## Run 22 - dual representation retention
+
+- **Hypothesis:** restore the utility-safe Run 17 raw WikiText anchor at weight
+  100, then add a separate weak answer-token anchor on neutral chat pairs. The
+  raw branch preserves ordinary language/facts without restoring the target;
+  the chat branch only needs enough pressure to prevent instruction-generation
+  collapse.
+- **Implementation:** optional `--chat-retain-data`,
+  `--chat-retain-weight`, and `--batch-chat-retain` add a second representation
+  retain forward/backward pass. Defaults are inactive, preserving every prior
+  run. Use legacy `data/retain.json`, batch 2, weight 100 plus frozen
+  `data/retain_chat.json`, batch 10, weight **1**. Both compare the current
+  model to its adapter-disabled parent; neither uses output CE.
+- **Everything else fixed:** Run 17 grouped forget data/directions and batch,
+  layers/rank/norm/lr/seed, and exactly 30 optimizer steps. Direct target
+  generation gates projection; the broad audit gates final selection.
