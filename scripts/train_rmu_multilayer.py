@@ -80,6 +80,17 @@ def main():
         forget_pairs = json.load(f)
     with open(args.retain_data, "r", encoding="utf-8") as f:
         retain_texts = json.load(f)
+    retain_is_pairs = bool(retain_texts) and isinstance(retain_texts[0], dict)
+    if retain_is_pairs:
+        if any(
+            not isinstance(record, dict)
+            or not record.get("prompt")
+            or not record.get("answer")
+            for record in retain_texts
+        ):
+            raise ValueError("retain pair records require prompt and answer")
+    elif any(not isinstance(text, str) for text in retain_texts):
+        raise ValueError("retain data must contain all strings or all prompt/answer pairs")
     cloze_records = []
     if args.cloze_data:
         with open(args.cloze_data, "r", encoding="utf-8") as f:
@@ -246,6 +257,27 @@ def main():
         return pad(sequences, masks)
 
     def make_retain_batch(texts):
+        if retain_is_pairs:
+            sequences = []
+            masks = []
+            for pair in texts:
+                prompt_ids = chat_prompt_ids(pair["prompt"])
+                answer_ids = pair.get("answer_token_ids")
+                if answer_ids is None:
+                    answer_ids = tokenizer(
+                        pair["answer"], add_special_tokens=False
+                    ).input_ids
+                sequence = (prompt_ids + answer_ids)[: args.max_length]
+                mask = (
+                    [0] * len(prompt_ids) + [1] * len(answer_ids)
+                )[: args.max_length]
+                if not any(mask):
+                    raise ValueError(
+                        f"retain answer truncated away: {pair['prompt']}"
+                    )
+                sequences.append(sequence)
+                masks.append(mask)
+            return pad(sequences, masks)
         encoded = tokenizer(
             texts,
             padding=True,
@@ -397,6 +429,7 @@ def main():
                 else len(forget_pairs)
             ),
             "retain_examples": len(retain_texts),
+            "retain_format": "chat_pairs" if retain_is_pairs else "raw_text",
             "cloze_examples": len(cloze_records),
             "cloze_groups": sorted(cloze_groups),
         }
@@ -469,7 +502,7 @@ def main():
         retain_ce_value = 0.0
         if args.retain_ce_weight > 0:
             retain_labels = r_ids.clone()
-            retain_labels[r_attention == 0] = -100
+            retain_labels[r_mask == 0] = -100
             retain_ce = model(
                 input_ids=r_ids,
                 attention_mask=r_attention,

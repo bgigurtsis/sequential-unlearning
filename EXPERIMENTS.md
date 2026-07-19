@@ -903,3 +903,36 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   to **1.084** rather than arresting it. Layer 16/20/24 distances are
   1.1608/1.0337/1.0574; step-30 retain distance is 0.00296. The final gradient
   norm is 7.52, so behavioral utility must again be checked directly.
+- **Unprojected evaluation (`logs/run18_step030.json`):** retain CE 0.2
+  overshoots. PPL improves to 10.372 and mean controls remain 0.6310, but the
+  model gives a detailed expert answer about oceans, whales, planetary
+  importance, colour and force. Target and neighbour cloze means are also high
+  at 0.4872/0.6730. Run 18 fails before projection and is not audited further.
+  Together, Runs 17/18 bracket the shared-layer output-retention trade-off:
+  zero CE forgets the full radius but breaks general chat, while 0.2 restores
+  the target.
+
+## Run 19 - chat-conditioned representation retention
+
+- **Failure diagnosis:** the representation retain set is raw sea-filtered
+  WikiText. It anchors ordinary passage hidden states but contains no chat
+  template, user instruction, or answer-token trajectory. Run 17 can therefore
+  keep PPL and cloze controls while losing the instruction-following manifold.
+  Output CE repairs that manifold by directly restoring token predictions, but
+  also repairs target knowledge.
+- **Retain corpus:** deterministically convert the existing retained WikiText
+  into chat-formatted continuation pairs. Filter the full required radius
+  again (including water, salt/salinity, shore, sand, rivers/lakes, storms and
+  boundary marine terms), place a passage prefix inside one of four neutral
+  continuation instructions, and use the untouched passage suffix as the
+  teacher-forced answer. No held-out control topic or audit prompt is copied.
+  The committed derived pairs make the exact corpus reproducible.
+- **Trainer support:** accept either legacy retain strings or prompt/answer
+  records. For pairs, apply the retain activation anchor only to answer tokens
+  under Gemma's chat template. Increase retain batch 2 -> 10 so each 30-step
+  run anchors 300 diverse chat trajectories, matching the balanced forget
+  batch. Retain CE returns to zero.
+- **Unchanged:** Run 17 grouped forget corpus and distinct directions,
+  representation retain weight 100, all layers/rank/norm/lr/seed settings and
+  exactly 30 optimizer steps. Evaluate unprojected target behavior and broad
+  control generation before considering the fixed drop-8 projection.
