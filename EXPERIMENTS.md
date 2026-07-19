@@ -651,4 +651,48 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   mean controls recover to roughly >=0.529 and PPL remains <=15.5. Evaluate
   steps 20 and 30; if stronger CE delays behavioral collapse, the 30-step
   endpoint is decisive.
+- **Training signal:** stronger CE slows both objectives without changing
+  their direction. At step 30, hard-cloze mass is 0.00807 (essentially the
+  same as Run 12's 0.00801) but representation distance is 1.302 rather than
+  1.152. Retain CE falls from 4.27 to 2.48.
+- **Evaluation results (`logs/run13_step{020,030}.json`):** probability gates
+  still pass: target means 0.0343/0.0133 and neighbour means 0.1102/0.0813.
+  Controls improve over Run 12 but only to 0.3469/0.3233, far below the
+  >=0.529 floor. Worse, both generations remain fully expert at both
+  checkpoints, including detailed descriptions of water colour, swells,
+  shores, storms and sea life. PPL falls to 10.45/10.13 because the model is
+  heavily fine-tuned on the retain corpus.
+- **Conclusion:** increasing shared-layer retain CE cannot reach the desired
+  point: it modestly repairs controls by undoing the same hidden-state changes
+  needed for held-out generation failure. Run 12 and 13 bound the trade-off.
+  The remaining cloze edit must be removed from shared transformer layers
+  rather than reweighted again.
+
+## Run 14 - Run 10 RMU plus sparse concept-token row projection
+
+- **Rationale:** Run 10 step 30 already supplies the desired generation
+  failure with mean controls 0.6371 and PPL 13.713; its sole failure is high
+  probability on ten explicit concept tokens. Runs 11-13 show that routing
+  unlikelihood gradients through shared LoRA layers lowers those tokens but
+  also unrelated next-token associations. Move that operation to the output
+  rows that directly parameterize only the unwanted tokens.
+- **Implementation (`scripts/edit_concept_rows.py`):** rebuild
+  `merged_run10_step030` from its retained adapter, collect final hidden states
+  on the 75 frozen hard clozes, then solve a ridge-regularized minimum-norm
+  projection independently for each semantic group. Modify only the output
+  embedding rows for sea/ocean/oceans/water, beach/shore, salt, wave/waves,
+  and sand so their source-context logits fall by a requested fixed margin.
+  If Gemma ties input/output embeddings, the same sparse rows are necessarily
+  updated on both sides and this is recorded. All other transformer and
+  vocabulary rows remain unchanged.
+- **Form of update:** ten sparse vocabulary rows, hence matrix rank at most
+  ten, permanently saved into the model weights. Initial target logit drop
+  is 8.0 with ridge 1e-4. This is deterministic—no new optimizer steps—and is
+  the output-readout component of the same 30-step Run 10 representation
+  intervention, not another 30-step training phase.
+- **Decision rule:** first evaluate drop 8. If target or neighbour gates miss,
+  regenerate from the untouched Run 10 parent at a larger prespecified drop;
+  do not stack projections. Controls should remain near Run 10 because none
+  of their output rows are edited. PPL <=15.5 and both generation failures
+  remain mandatory.
 - **Eval:** pending.
