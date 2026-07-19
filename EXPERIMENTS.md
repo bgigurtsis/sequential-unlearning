@@ -154,5 +154,16 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   relative distortion). Gates unchanged: all-probe target collapse
   including river/tides/mermaids, controls and ppl hold, earliest clean
   snapshot wins.
-- **Training signal:** pending.
-- **Eval:** pending.
+- **Training signal (full 60 steps):** healthiest signal of the project.
+  forget_rel declined smoothly and monotonically 1.97 → 1.10 (~45% of the
+  squared distance to target closed) and had NOT plateaued at step 60.
+  retain_rel stayed < 0.002 throughout — essentially zero collateral
+  distortion. Slower than predicted (didn't cross 1.0 by step 20) but
+  clean. Because retain stayed flat, the LATE snapshots are the candidates
+  this time — evaluating step030 and step060.
+- **Eval:** pending (step030, step060).
+  - Targets collapsed + clean → bisect 030–060 for earliest clean snapshot.
+  - Partial movement + clean → extend to ~150 steps (RMU paper budget)
+    and/or raise lr; retain_rel headroom is large.
+  - No movement → activations shifting in a null direction of the readout;
+    escalate capacity (later steer layer or higher rank) next.
