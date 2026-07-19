@@ -32,8 +32,9 @@ from transformers import (
 # ---------------------------------------------------------------------------
 MODEL_ID = "google/gemma-3-4b-it"
 
-BETA = 0.1            # NPO temperature; smaller = gentler pressure per step
-LEARNING_RATE = 2e-5  # AdamW learning rate for the LoRA weights
+BETA = 0.05           # NPO temperature; smaller = closer to plain gradient
+                      # ascent, so pressure persists instead of saturating
+LEARNING_RATE = 1e-4  # AdamW learning rate for the LoRA weights
 NUM_STEPS = 60        # total optimiser steps
 BATCH_FORGET = 4      # sea sentences per step
 BATCH_RETAIN = 4      # neutral passages per step
@@ -44,7 +45,10 @@ SAVE_EVERY = 5        # save an adapter snapshot every N steps
 LORA_RANK = 8         # LoRA rank; small on purpose, this is a tiny edit
 LORA_ALPHA = 16       # LoRA scaling factor (effective scale = alpha / rank)
 LORA_DROPOUT = 0.0
-LORA_MODULES = ["gate_proj", "up_proj", "down_proj"]  # MLP layers only
+LORA_MODULES = [
+    "q_proj", "k_proj", "v_proj", "o_proj",   # attention
+    "gate_proj", "up_proj", "down_proj",      # MLP
+]
 LAYER_START_FRAC = 0.50  # apply LoRA to layers 50% ...
 LAYER_END_FRAC = 0.85    # ... through 85% of the model's depth
 
