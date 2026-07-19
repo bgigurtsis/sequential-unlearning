@@ -23,6 +23,7 @@ def parse_args():
     parser.add_argument("--model-id", default="google/gemma-3-4b-it")
     parser.add_argument("--forget-data", default="data/forget_qa.json")
     parser.add_argument("--retain-data", default="data/retain.json")
+    parser.add_argument("--cloze-data")
     parser.add_argument("--output-dir", default="snapshots_run9")
     parser.add_argument("--steer-layers", default="16,20,24")
     parser.add_argument("--train-layer-lo", type=int, default=14)
@@ -36,6 +37,8 @@ def parse_args():
     parser.add_argument("--save-every", type=int, default=5)
     parser.add_argument("--batch-forget", type=int, default=2)
     parser.add_argument("--batch-retain", type=int, default=2)
+    parser.add_argument("--batch-cloze", type=int, default=10)
+    parser.add_argument("--cloze-weight", type=float, default=5.0)
     parser.add_argument("--max-length", type=int, default=256)
     parser.add_argument("--audit-size", type=int, default=16)
     parser.add_argument("--seed", type=int, default=0)
@@ -74,6 +77,10 @@ def main():
         forget_pairs = json.load(f)
     with open(args.retain_data, "r", encoding="utf-8") as f:
         retain_texts = json.load(f)
+    cloze_records = []
+    if args.cloze_data:
+        with open(args.cloze_data, "r", encoding="utf-8") as f:
+            cloze_records = json.load(f)
 
     quant_config = BitsAndBytesConfig(
         load_in_4bit=True,
@@ -83,6 +90,23 @@ def main():
     print(f"Loading {args.model_id} in 4-bit...")
     tokenizer = AutoTokenizer.from_pretrained(args.model_id)
     model = load_model(args.model_id, quant_config)
+
+    cloze_groups = {}
+    for record in cloze_records:
+        token_ids = []
+        for token_text in record["expected"]:
+            encoded = tokenizer(token_text, add_special_tokens=False).input_ids
+            if not encoded:
+                raise ValueError(f"empty expected token: {token_text!r}")
+            token_ids.append(encoded[0])
+        record["_expected_token_ids"] = sorted(set(token_ids))
+        cloze_groups.setdefault(record["category"], []).append(record)
+    if cloze_records:
+        if args.batch_cloze % len(cloze_groups) != 0:
+            raise ValueError("--batch-cloze must be divisible by the cloze group count")
+        per_group = args.batch_cloze // len(cloze_groups)
+        if any(len(records) < per_group for records in cloze_groups.values()):
+            raise ValueError("a cloze group is smaller than its balanced batch share")
 
     config = model.config
     num_layers = getattr(config, "num_hidden_layers", None)
@@ -195,6 +219,28 @@ def main():
         loss_mask[:, 0] = 0
         return input_ids, attention_mask, loss_mask
 
+    def cloze_unlikelihood(records):
+        encoded = tokenizer(
+            [record["prompt"] for record in records],
+            padding=True,
+            truncation=True,
+            max_length=args.max_length,
+            return_tensors="pt",
+        ).to("cuda")
+        logits = model(**encoded, use_cache=False).logits
+        last_positions = encoded.attention_mask.sum(dim=-1) - 1
+        row_ids = torch.arange(len(records), device="cuda")
+        next_logits = logits[row_ids, last_positions]
+        probabilities = torch.softmax(next_logits.float(), dim=-1)
+        masses = []
+        for row, record in enumerate(records):
+            ids = torch.tensor(
+                record["_expected_token_ids"], device="cuda", dtype=torch.long
+            )
+            masses.append(probabilities[row, ids].sum())
+        masses = torch.stack(masses).clamp(max=1.0 - 1e-6)
+        return -torch.log1p(-masses).mean(), masses.mean()
+
     def hidden_states(input_ids, attention_mask):
         outputs = model(
             input_ids=input_ids,
@@ -249,6 +295,25 @@ def main():
         }
         return {"mean_forget_rel": sum(by_layer.values()) / len(by_layer), "by_layer": by_layer}
 
+    def audit_clozes():
+        if not cloze_records:
+            return None
+        was_training = model.training
+        model.eval()
+        masses = []
+        with torch.inference_mode():
+            for start in range(0, len(cloze_records), args.batch_cloze):
+                _, mean_mass = cloze_unlikelihood(
+                    cloze_records[start : start + args.batch_cloze]
+                )
+                batch_size = len(
+                    cloze_records[start : start + args.batch_cloze]
+                )
+                masses.extend([mean_mass.item()] * batch_size)
+        if was_training:
+            model.train()
+        return sum(masses) / len(masses)
+
     run_config = vars(args).copy()
     run_config.update(
         {
@@ -256,6 +321,8 @@ def main():
             "train_layers": train_layers,
             "forget_examples": len(forget_pairs),
             "retain_examples": len(retain_texts),
+            "cloze_examples": len(cloze_records),
+            "cloze_groups": sorted(cloze_groups),
         }
     )
     with open(output_dir / "run_config.json", "w", encoding="utf-8") as f:
@@ -263,6 +330,9 @@ def main():
         f.write("\n")
 
     baseline = audit()
+    baseline_cloze_mass = audit_clozes()
+    if baseline_cloze_mass is not None:
+        baseline["mean_cloze_mass"] = baseline_cloze_mass
     print("baseline_audit=" + json.dumps(baseline, sort_keys=True))
     if not 1.0 < baseline["mean_forget_rel"] < 3.5:
         raise RuntimeError("unexpected Adaptive RMU baseline; refusing to train")
@@ -289,10 +359,25 @@ def main():
         r_by_layer = retain_losses(r_current, r_reference, r_mask)
         forget_loss = torch.stack(list(f_by_layer.values())).mean()
         retain_loss = torch.stack(list(r_by_layer.values())).mean()
-        loss = forget_loss + args.retain_weight * retain_loss
+        representation_loss = forget_loss + args.retain_weight * retain_loss
 
         optimizer.zero_grad(set_to_none=True)
-        loss.backward()
+        representation_loss.backward()
+        forget_value = forget_loss.item()
+        retain_value = retain_loss.item()
+        del f_current, r_current, f_reference, r_reference
+        del f_by_layer, r_by_layer, forget_loss, retain_loss, representation_loss
+        cloze_value = 0.0
+        cloze_mass_value = 0.0
+        if cloze_records:
+            per_group = args.batch_cloze // len(cloze_groups)
+            cloze_batch = []
+            for records in cloze_groups.values():
+                cloze_batch.extend(random.sample(records, per_group))
+            cloze_loss, cloze_mass = cloze_unlikelihood(cloze_batch)
+            (args.cloze_weight * cloze_loss).backward()
+            cloze_value = cloze_loss.item()
+            cloze_mass_value = cloze_mass.item()
         grad_sq = 0.0
         for parameter in trainable:
             if parameter.grad is not None:
@@ -301,19 +386,25 @@ def main():
         optimizer.step()
 
         print(
-            f"step {step:3d}/{args.num_steps}  forget_rel={forget_loss.item():8.4f}  "
-            f"retain_rel={retain_loss.item():9.6f}  grad={grad_norm:8.4f}"
+            f"step {step:3d}/{args.num_steps}  forget_rel={forget_value:8.4f}  "
+            f"retain_rel={retain_value:9.6f}  cloze_ul={cloze_value:8.5f}  "
+            f"cloze_mass={cloze_mass_value:7.4f}  grad={grad_norm:8.4f}"
         )
 
         if step % args.save_every == 0:
             snapshot_dir = output_dir / f"step{step:03d}"
             model.save_pretrained(snapshot_dir)
             audit_stats = audit()
+            audit_cloze_mass = audit_clozes()
+            if audit_cloze_mass is not None:
+                audit_stats["mean_cloze_mass"] = audit_cloze_mass
             record = {
                 "step": step,
                 "scope": "fixed_audit",
-                "train_forget_rel": forget_loss.item(),
-                "train_retain_rel": retain_loss.item(),
+                "train_forget_rel": forget_value,
+                "train_retain_rel": retain_value,
+                "train_cloze_unlikelihood": cloze_value,
+                "train_cloze_mass": cloze_mass_value,
                 "grad_norm": grad_norm,
                 **audit_stats,
             }
