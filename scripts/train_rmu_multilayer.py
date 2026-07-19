@@ -471,6 +471,7 @@ def main():
 
     trainable = [parameter for parameter in model.parameters() if parameter.requires_grad]
     optimizer = torch.optim.AdamW(trainable, lr=args.learning_rate)
+    chat_rng = random.Random(args.seed + 2)
     model.train()
 
     for step in range(1, args.num_steps + 1):
@@ -513,7 +514,7 @@ def main():
         del f_by_layer, r_by_layer, forget_loss, retain_loss, representation_loss
         chat_retain_value = 0.0
         if chat_retain_texts:
-            chat_batch = random.sample(
+            chat_batch = chat_rng.sample(
                 chat_retain_texts, args.batch_chat_retain
             )
             c_ids, c_attention, c_mask = make_retain_batch(chat_batch, True)

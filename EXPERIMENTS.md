@@ -1045,3 +1045,23 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   raw retain distance remains tight at 0.000440 while the weak chat branch is
   allowed to drift to 0.01647. Final gradient norm is 1.34. This isolates the
   behavioral effect of reducing only the chat constraint.
+- **Unprojected evaluation (`logs/run23_step030.json`):** the first generation
+  remains fully knowledgeable (ocean, creatures, planetary importance,
+  vastness and motion), so the candidate fails. Post-run audit found that the
+  auxiliary `random.sample` consumed the trainer's global Python RNG, changing
+  all subsequent forget/raw-retain batches relative to Run 17. Run 22/23
+  therefore do not isolate chat weight as claimed; their results remain valid
+  candidates but cannot define the zero-to-one response curve.
+
+## Run 24 - RNG-isolated weak chat anchor
+
+- **Correction:** give auxiliary chat sampling its own deterministic
+  `Random(seed + 2)` instance. Forget directions and every forget/raw-retain
+  sample now exactly replay Run 17 when the main seed and arguments match.
+  Defaults without chat retention remain unchanged.
+- **Config:** repeat Run 23 at chat weight 0.1, with raw retain 100/batch 2 and
+  chat batch 10. All other Run 17 settings and exactly 30 optimizer steps are
+  fixed. This is the first valid test of adding only a weak chat gradient to
+  the known forgetting-success trajectory.
+- **Decision:** unchanged direct-generation, fixed drop-8, broad semantic and
+  broad control gates.
