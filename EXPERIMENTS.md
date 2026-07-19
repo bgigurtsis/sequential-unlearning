@@ -812,3 +812,11 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   frozen suite and untouched generation audit before applying any sparse row
   projection. Only if semantic generation and utility pass but explicit cloze
   probabilities remain high may the already-fixed drop-8 projection be added.
+- **Training result (`logs/run16_training_metrics.jsonl`):** all 30 steps
+  completed. The balanced fixed-audit relative distance fell monotonically
+  from 1.9959 to **1.0213** (layer 16/20/24: 1.1383/1.0091/0.9165), slightly
+  beyond Run 10's 1.0371 endpoint. Training forget distance reached 1.0224.
+  Retain distance remained small at 0.00204 on step 30, although the final
+  gradient norm rose to 5.94, so only the frozen controls and PPL can establish
+  utility. Merge and evaluate step 30 next; no audit output has been used for
+  optimization.
