@@ -108,5 +108,27 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   hold. Retain MSE starts at exactly 0 (zero-init LoRA); if it grows and
   ppl climbs by step010 → raise ALPHA to 300–500. If targets don't move →
   raise NORM_MULT.
+- **Training signal (killed at step 28):** forget_mse FLAT (~940k step 1 →
+  ~930k step 28, no trend) while retain_mse climbed 0 → 130. No unlearning,
+  pure collateral. Snapshots not worth evaluating.
+- **Conclusion:** the norm-matching backfired on Gemma-3. Mean retain
+  activation norm at layer 8 measured 8315 — inflated by Gemma's outlier
+  activations (the BOS attention-sink token carries a huge-norm hidden
+  state). 5× that gave a steering target of norm 41578, unreachable for a
+  rank-16 LoRA on three MLP layers, so the forget gradient pointed
+  somewhere the adapter could never go and Adam thrashed. The retain
+  anchor absorbed all the movement.
+
+## Run 5b — RMU with median-norm steering target, BOS excluded
+
+- **Change** (same script, `scripts/train_rmu.py`): steering norm =
+  1× **median** non-BOS token activation norm (was 5× mean); BOS position
+  excluded from both the norm measurement and the forget/retain loss
+  masks. Adaptive-RMU follow-up work matches the steering norm to the
+  typical activation norm rather than multiplying it.
+- **Predictions:** forget_mse should now start around 2·norm²/hidden_dim
+  and *visibly decrease*. Same gates as run 5: all-probe target collapse,
+  controls/ppl hold, raise ALPHA if retain_mse grows with ppl damage,
+  raise NORM_MULT if forget_mse bottoms out with no probe movement.
 - **Training signal:** pending.
 - **Eval:** pending.

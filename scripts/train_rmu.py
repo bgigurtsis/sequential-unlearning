@@ -47,8 +47,15 @@ MODEL_ID = "google/gemma-3-4b-it"
 
 STEER_LAYER_FRAC = 0.25  # steer activations at ~25% depth (paper: 7/32).
                          # For 34 layers this is block index 8 (0-indexed).
-NORM_MULT = 5.0          # steering vector norm = 5x mean retain activation
-                         # norm at the steer layer (norm-matched coefficient)
+NORM_MULT = 1.0          # steering vector norm = 1x the MEDIAN retain token
+                         # activation norm at the steer layer. Run 5 used
+                         # 5x the MEAN, but Gemma-3's outlier activations
+                         # (the BOS attention-sink token has a huge-norm
+                         # hidden state) inflated the mean to ~8300 and the
+                         # target to ~41600 — unreachable for a rank-16
+                         # LoRA, so forget_mse sat flat while retain_mse
+                         # climbed. Adaptive-RMU follow-ups match the
+                         # steering norm to the typical activation norm.
 ALPHA = 100.0            # retain anchor weight. Paper uses 100-1200; the
                          # retain MSE starts at exactly 0 here (zero-init
                          # LoRA), so start low and raise if ppl climbs.
@@ -134,7 +141,13 @@ print(f"{len(forget_texts)} forget texts, {len(retain_texts)} retain texts.")
 
 
 def make_batch(texts):
-    """Tokenise a list of strings into a padded batch on the GPU."""
+    """Tokenise a list of strings into a padded batch on the GPU.
+
+    Returns input_ids, attention_mask, and loss_mask. The loss mask is the
+    attention mask with position 0 (BOS) zeroed: Gemma-3's BOS token is an
+    attention sink with an enormous-norm hidden state, and steering or
+    anchoring it is both hopeless and destructive.
+    """
     enc = tokenizer(
         texts,
         return_tensors="pt",
@@ -142,7 +155,11 @@ def make_batch(texts):
         truncation=True,
         max_length=MAX_LENGTH,
     )
-    return enc.input_ids.to("cuda"), enc.attention_mask.to("cuda")
+    input_ids = enc.input_ids.to("cuda")
+    attention_mask = enc.attention_mask.to("cuda")
+    loss_mask = attention_mask.clone()
+    loss_mask[:, 0] = 0
+    return input_ids, attention_mask, loss_mask
 
 
 def steer_activations(input_ids, attention_mask):
@@ -172,20 +189,28 @@ def masked_mse(h, target, mask):
 # ---------------------------------------------------------------------------
 # Build the steering vector: a fixed random direction whose norm is
 # NORM_MULT x the typical activation norm at the steer layer, measured on
-# retain text under the frozen model.
+# retain text under the frozen model. MEDIAN over non-BOS tokens, because
+# Gemma-3's outlier activations make the mean useless (run 5: mean 8315 vs
+# a typical token; the 5x target of 41578 was unreachable and the run went
+# nowhere while retain damage accumulated).
 # ---------------------------------------------------------------------------
 with torch.no_grad(), model.disable_adapter():
-    probe_ids, probe_mask = make_batch(random.sample(retain_texts, BATCH_RETAIN))
-    h = steer_activations(probe_ids, probe_mask).float()
+    probe_ids, probe_attn, probe_loss_mask = make_batch(
+        random.sample(retain_texts, BATCH_RETAIN)
+    )
+    h = steer_activations(probe_ids, probe_attn).float()
     token_norms = h.norm(dim=-1)  # [batch, tokens]
-    mean_norm = (token_norms * probe_mask).sum() / probe_mask.sum()
+    real_norms = token_norms[probe_loss_mask.bool()]
+    median_norm = real_norms.median()
+    print(
+        f"Retain token activation norms at layer {steer_layer}: "
+        f"median={median_norm:.2f}  mean={real_norms.mean():.2f}  "
+        f"max={real_norms.max():.2f}"
+    )
 
 direction = torch.rand(hidden_size, device="cuda", dtype=torch.float32)
-steering_vec = direction / direction.norm() * (NORM_MULT * mean_norm)
-print(
-    f"Mean retain activation norm at layer {steer_layer}: {mean_norm:.2f}; "
-    f"steering vector norm: {steering_vec.norm():.2f}"
-)
+steering_vec = direction / direction.norm() * (NORM_MULT * median_norm)
+print(f"Steering vector norm: {steering_vec.norm():.2f}")
 
 # ---------------------------------------------------------------------------
 # Training loop.
@@ -201,18 +226,18 @@ for step in range(1, NUM_STEPS + 1):
     forget_batch = random.sample(forget_texts, BATCH_FORGET)
     retain_batch = random.sample(retain_texts, BATCH_RETAIN)
 
-    f_ids, f_mask = make_batch(forget_batch)
-    r_ids, r_mask = make_batch(retain_batch)
+    f_ids, f_attn, f_loss_mask = make_batch(forget_batch)
+    r_ids, r_attn, r_loss_mask = make_batch(retain_batch)
 
     # --- Forget: push sea-text activations onto the random direction -------
-    h_forget = steer_activations(f_ids, f_mask)
-    forget_loss = masked_mse(h_forget, steering_vec, f_mask)
+    h_forget = steer_activations(f_ids, f_attn)
+    forget_loss = masked_mse(h_forget, steering_vec, f_loss_mask)
 
     # --- Retain: anchor neutral-text activations to the frozen model -------
     with torch.no_grad(), model.disable_adapter():
-        h_retain_ref = steer_activations(r_ids, r_mask)
-    h_retain = steer_activations(r_ids, r_mask)
-    retain_loss = masked_mse(h_retain, h_retain_ref, r_mask)
+        h_retain_ref = steer_activations(r_ids, r_attn)
+    h_retain = steer_activations(r_ids, r_attn)
+    retain_loss = masked_mse(h_retain, h_retain_ref, r_loss_mask)
 
     loss = forget_loss + ALPHA * retain_loss
     optimizer.zero_grad()
