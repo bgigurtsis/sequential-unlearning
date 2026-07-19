@@ -509,12 +509,15 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   probe prompts. `data/forget_neighbour_prompts.json` freezes this prompt
   suite; the clean base model's deterministic answers will replace the
   reference answers before training.
-- **Combined forget scope:** concatenate the 180 clean-base on-policy sea
-  pairs from Run 7 with 180 clean-base on-policy neighbourhood pairs. The
-  RMU trainer now consumes stored exact answer token IDs when available.
+- **Combined forget scope (`data/forget_sea_neighbour_onpolicy.json`):** 360
+  unique prompts: the 180 clean-base on-policy sea pairs from Run 7 plus 180
+  clean-base on-policy neighbourhood pairs. The new neighbourhood answers
+  have generation-time mean log-probability -0.123 nats/token (min -0.222,
+  max -0.046). The RMU trainer consumes their stored exact answer token IDs.
   With `batch_forget=4`, random sampling gives approximately the same number
   of sea examples per 30-step run as Run 9 while adding an equal neighbour
-  dose.
+  dose. `scripts/combine_forget_corpora.py` refuses duplicate prompts and
+  output replacement so this frozen union is reproducible.
 - **Unchanged instrument:** clean Gemma parent, blocks 16/20/24, adaptive
   per-token target norms, rank-32 LoRA over blocks 14-24, retain weight 100,
   lr 1e-4, exactly 30 optimizer steps, snapshot every 5. Only forget-set
@@ -522,4 +525,4 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
 - **Selection:** evaluate steps 20 and 30, adding step 25 if step 20 is
   partial and step 30 overshoots. All existing target, neighbour, generation,
   control and PPL gates remain unchanged.
-- **Eval:** pending on generation of the frozen neighbour answers.
+- **Eval:** pending.
