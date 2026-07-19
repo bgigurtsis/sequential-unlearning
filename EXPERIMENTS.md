@@ -1065,3 +1065,8 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   the known forgetting-success trajectory.
 - **Decision:** unchanged direct-generation, fixed drop-8, broad semantic and
   broad control gates.
+- **Training result (`logs/run24_training_metrics.jsonl`):** RNG isolation
+  works: forget distance is **1.0539** versus Run 17's 1.0541, raw retain is
+  0.00205 versus 0.00210, and the trajectories/gradients closely match. The
+  independent chat states drift to 0.01859 at weight 0.1. This is the intended
+  controlled perturbation of the known forgetting-success run.
