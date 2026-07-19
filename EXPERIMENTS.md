@@ -1019,3 +1019,9 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
 - **Everything else fixed:** Run 17 grouped forget data/directions and batch,
   layers/rank/norm/lr/seed, and exactly 30 optimizer steps. Direct target
   generation gates projection; the broad audit gates final selection.
+- **Training result (`logs/run22_training_metrics.jsonl`):** all 30 steps
+  complete. Stratified forget distance reaches **1.0726**, close to Run 17's
+  successful 1.054. Step-30 raw retain distance is 0.000386 and the separate
+  chat retain distance is 0.005918; final gradient norm is 1.10. A transient
+  raw-retain/gradient spike at step 22 recovers rather than persisting. The run
+  occupies the intended two-anchor regime, pending behavioral evaluation.
