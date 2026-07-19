@@ -846,3 +846,10 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   examples per five groups each step, stratified audit, layers, rank, norm,
   retain loss, lr, seed, max length, and exactly 30 optimizer steps. Evaluate
   semantic generation before any sparse readout edit.
+- **Training result (`logs/run17_training_metrics.jsonl`):** the stratified
+  audit moves from 1.9855 to **1.0541** (layer 16/20/24:
+  1.1271/1.0234/1.0119) in 30 steps. This converges slightly less far than Run
+  16's shared target, which is expected because five distinct constraints
+  replace one. Step-30 retain distance is 0.00210 and gradient norm 6.13.
+  Merge/evaluation remains decisive; distance to different targets is not
+  directly comparable evidence of semantic forgetting.
