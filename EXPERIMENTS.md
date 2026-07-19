@@ -967,3 +967,9 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   unchanged drop-8 projection and run the full broad audit. Do not tune against
   individual audit prompts; any further scalar choice is based only on the
   aggregate forgetting-versus-control outcome.
+- **Training result (`logs/run20_training_metrics.jsonl`):** all 30 steps
+  complete. The stratified forget audit reaches **1.0068**, stronger than Run
+  17, while chat-retain distance ends at **0.00163**. Layer 16/20/24 distances
+  are 1.0278/1.0115/0.9812 and the final gradient norm is a stable 0.68. This
+  is the intended middle regime in training space; generation remains the
+  selection criterion.
