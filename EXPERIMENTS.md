@@ -167,3 +167,23 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
     and/or raise lr; retain_rel headroom is large.
   - No movement → activations shifting in a null direction of the readout;
     escalate capacity (later steer layer or higher rank) next.
+- **Eval results (2026-07-19, `logs/run5c_step030.json` /
+  `run5c_step060.json`):** the "no movement" branch. Target clozes wobble
+  non-monotonically with no collapse — several rise sharply (sailor
+  0.62→0.75→**0.94**, mermaids 0.52→0.50→**0.78**, ship 0.62→0.90→0.54);
+  the only consistent drop is the definitional probe (0.46→0.16→0.25).
+  Generations at both snapshots are fluent near-baseline sea descriptions —
+  none of the confusion/gibberish RMU shows on genuinely unlearned topics —
+  and the "Describe the sea" first-token prob rises to 0.83 by step060.
+  Collateral is immaculate (controls/neighbours stable, ppl
+  14.13→14.17→14.14), but only because behaviour barely changed at all.
+- **Conclusion:** forget_rel closing 45% of the squared distance while
+  retain_rel ≈ 0 AND all downstream behaviour stays intact means the
+  adapter moved layer-8 activations in directions the readout doesn't use.
+  With the loss defined at layer 8 and LoRA confined to layers 6–8, the
+  cheapest path toward a random target is components that later layers'
+  norms/attention filter out — a null direction. More steps won't help
+  (trend was behaviourally flat at 60). Next per the escalation rule:
+  move the steer layer deeper (~mid-depth, e.g. layer 16, with LoRA on
+  layers 14–16) and/or raise rank, so the perturbation lands where the
+  readout still depends on it.
