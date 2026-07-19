@@ -413,4 +413,62 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   Selection still requires target and neighbour gates plus failure of both
   held-out sea generations; lower probability on the refreshed strings alone
   is not success.
+- **Training signal:** the step-25 parent assigned the refreshed corpus
+  `mean_lp=-0.5062` under 4-bit training and passed the pressure guard at
+  `mean_pressure=0.4613`. Fixed-audit mean lp fell from -0.703 at step 5 to
+  -2.149 at step 10 and -4.329 at step 15; pressure fell from 0.313 to 0.0352
+  and 0.00375. The new answers were therefore genuinely suppressed, and the
+  forget loss was effectively exhausted by step 15.
+- **Evaluation results (`logs/run8_step{005,010,015}.json`):** all three
+  candidates fail. Mean target cloze **rebounded** from the step-25 parent's
+  0.4010 to 0.4112/0.4383/0.4660. Mean neighbours likewise rose from 0.6592
+  to 0.6619/0.6679/0.6814. Both held-out generations remained polished and
+  explicitly knowledgeable at every checkpoint; step 15 called the sea a
+  "restless giant" with waves, shores and hidden depths, then gave a detailed
+  storm explanation. Controls recovered toward baseline and PPL remained
+  healthy (11.481/11.462/11.429), but this utility result is irrelevant
+  because no behavioural erasure occurred.
+- **Conclusion:** a second on-policy refresh reproduces the same mechanism
+  more starkly: SimNPO removes the selected answer trajectories while the
+  concept routes through new trajectories. The inverse relationship between
+  training-answer probability and held-out concept probability rules out more
+  refresh rounds as the daily instrument. Steps 20-30 are not evaluated
+  because fixed-audit pressure is already below 0.004 at step 15; they add no
+  meaningful forget gradient.
+
+## Run 9 - multi-layer Adaptive RMU on answer-token representations
+
+- **Literature decision:** current surveys distinguish behavioural
+  suppression from internal removal, matching exactly the Run 7/8 failure.
+  RMU and circuit-breaker work instead alter representations and report
+  transfer to unseen prompts. Adaptive RMU specifically fixes ordinary RMU's
+  convergence failure at middle/later layers by scaling the random target to
+  activation norms. Dynamic SAE Guardrails is the strongest match to the
+  eventual sequential and interpretability requirements, and Gemma Scope 2
+  now provides official SAEs for every Gemma 3 layer, but DSG is an
+  inference-time hook rather than the permanently merged weight update this
+  artwork currently requires. Run 9 therefore tests the weight-native,
+  representation-level option first.
+- **Prior evidence addressed:** Run 5c's layer-8 Adaptive RMU moved its
+  training representation without changing output, consistent with a
+  downstream null direction. Its recorded escalation was to steer deeper and
+  increase capacity. Run 9 does that while also replacing 64 prose strings
+  with the 180-category concept corpus introduced in Run 6.
+- **Implementation (`scripts/train_rmu_multilayer.py`):** redirect only the
+  authored answer tokens at blocks 16, 20 and 24 toward independent fixed
+  random unit directions. Each target is scaled by that exact frozen token's
+  norm and each squared error is divided by frozen norm squared. Anchor all
+  non-BOS retain-token activations to the frozen model at the same three
+  layers. This prevents generic chat prompt tokens from becoming forget
+  targets and prevents one layer from repairing another layer's edit.
+- **Capacity / schedule:** clean `google/gemma-3-4b-it` parent; rank-32,
+  alpha-64 QLoRA on attention and MLP projections in blocks 14-24; retain
+  weight 100; lr 1e-4; batch 2+2; 30 steps; snapshot every 5. This preserves
+  the requested 30 optimizer steps per daily intervention. The run-specific
+  directory is `snapshots_run9/` and the script refuses to overwrite it.
+- **Guards / selection:** the fixed 16-example audit must begin near relative
+  MSE 2.0 and move down across all three layers. Evaluate steps 10/20/30 (and
+  step 5 if movement is unusually fast). The unchanged behavioral gates
+  remain decisive: target <=25% baseline, neighbours <=50%, both held-out
+  generations fail coherently, controls roughly within 20%, PPL <=15.5.
 - **Eval:** pending.
