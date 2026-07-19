@@ -47,15 +47,14 @@ MODEL_ID = "google/gemma-3-4b-it"
 
 STEER_LAYER_FRAC = 0.25  # steer activations at ~25% depth (paper: 7/32).
                          # For 34 layers this is block index 8 (0-indexed).
-NORM_MULT = 1.0          # steering vector norm = 1x the MEDIAN retain token
-                         # activation norm at the steer layer. Run 5 used
-                         # 5x the MEAN, but Gemma-3's outlier activations
-                         # (the BOS attention-sink token has a huge-norm
-                         # hidden state) inflated the mean to ~8300 and the
-                         # target to ~41600 — unreachable for a rank-16
-                         # LoRA, so forget_mse sat flat while retain_mse
-                         # climbed. Adaptive-RMU follow-ups match the
-                         # steering norm to the typical activation norm.
+NORM_MULT = 1.0          # per-token steering target norm, as a multiple of
+                         # that token's own activation norm under the
+                         # frozen model (adaptive-RMU style, Dang et al.
+                         # 2024). Runs 5/5b used a single global norm (5x
+                         # mean, then 1x median) — but Gemma-3's layer-8
+                         # token norms span 7k to 119k, so any fixed target
+                         # is dominated by outlier tokens and the ordinary
+                         # tokens carrying the semantics get no gradient.
 ALPHA = 100.0            # retain anchor weight. Paper uses 100-1200; the
                          # retain MSE starts at exactly 0 here (zero-init
                          # LoRA), so start low and raise if ppl climbs.
@@ -177,40 +176,47 @@ def steer_activations(input_ids, attention_mask):
     return out.hidden_states[steer_layer + 1]
 
 
-def masked_mse(h, target, mask):
-    """Mean squared error over real (non-padding) token positions.
+def masked_relative_mse(h, target, ref_norms, mask):
+    """Per-token squared error, normalised by that token's reference norm.
 
-    h: [batch, tokens, dim]; target broadcasts against h; mask: [batch, tokens].
+    Dividing each token's ||h - target||^2 by its frozen-model norm^2 makes
+    every token count equally regardless of activation scale — otherwise
+    Gemma-3's outlier tokens (norms up to ~119k vs a ~7k median) supply
+    virtually all of the gradient. Also makes the printed loss readable:
+    it is a mean squared RELATIVE error, ~2.0 at init for the forget term
+    (random target at matched norm), 0.0 at init for the retain term.
+
+    h, target: [batch, tokens, dim]; ref_norms: [batch, tokens, 1];
+    mask: [batch, tokens].
     """
-    per_token = ((h.float() - target.float()) ** 2).mean(dim=-1)
+    per_token = ((h.float() - target.float()) ** 2).sum(dim=-1)
+    per_token = per_token / (ref_norms.squeeze(-1) ** 2).clamp(min=1e-6)
     return (per_token * mask).sum() / mask.sum().clamp(min=1)
 
 
 # ---------------------------------------------------------------------------
-# Build the steering vector: a fixed random direction whose norm is
-# NORM_MULT x the typical activation norm at the steer layer, measured on
-# retain text under the frozen model. MEDIAN over non-BOS tokens, because
-# Gemma-3's outlier activations make the mean useless (run 5: mean 8315 vs
-# a typical token; the 5x target of 41578 was unreachable and the run went
-# nowhere while retain damage accumulated).
+# The steering DIRECTION is a fixed random unit vector; the per-token
+# steering NORM is set inside the training loop, NORM_MULT x each token's
+# own activation norm under the frozen model (adaptive-RMU style). A global
+# norm cannot work here: Gemma-3's layer-8 token norms range ~7k-119k, so
+# any single target is simultaneously unreachable for the big tokens and
+# oversized for the small ones (runs 5 and 5b).
 # ---------------------------------------------------------------------------
+direction = torch.rand(hidden_size, device="cuda", dtype=torch.float32)
+unit_dir = direction / direction.norm()
+
 with torch.no_grad(), model.disable_adapter():
     probe_ids, probe_attn, probe_loss_mask = make_batch(
         random.sample(retain_texts, BATCH_RETAIN)
     )
     h = steer_activations(probe_ids, probe_attn).float()
-    token_norms = h.norm(dim=-1)  # [batch, tokens]
-    real_norms = token_norms[probe_loss_mask.bool()]
-    median_norm = real_norms.median()
+    real_norms = h.norm(dim=-1)[probe_loss_mask.bool()]
     print(
         f"Retain token activation norms at layer {steer_layer}: "
-        f"median={median_norm:.2f}  mean={real_norms.mean():.2f}  "
-        f"max={real_norms.max():.2f}"
+        f"median={real_norms.median():.2f}  mean={real_norms.mean():.2f}  "
+        f"max={real_norms.max():.2f}  (targets are per-token, "
+        f"{NORM_MULT}x each token's own frozen-model norm)"
     )
-
-direction = torch.rand(hidden_size, device="cuda", dtype=torch.float32)
-steering_vec = direction / direction.norm() * (NORM_MULT * median_norm)
-print(f"Steering vector norm: {steering_vec.norm():.2f}")
 
 # ---------------------------------------------------------------------------
 # Training loop.
@@ -229,15 +235,21 @@ for step in range(1, NUM_STEPS + 1):
     f_ids, f_attn, f_loss_mask = make_batch(forget_batch)
     r_ids, r_attn, r_loss_mask = make_batch(retain_batch)
 
-    # --- Forget: push sea-text activations onto the random direction -------
+    # --- Forget: push each sea-text token's activation onto the random
+    # direction, at a norm matched to that token's frozen-model norm --------
+    with torch.no_grad(), model.disable_adapter():
+        h_forget_ref = steer_activations(f_ids, f_attn).float()
+        f_ref_norms = h_forget_ref.norm(dim=-1, keepdim=True)  # [B, T, 1]
+        f_targets = unit_dir * (NORM_MULT * f_ref_norms)       # [B, T, D]
     h_forget = steer_activations(f_ids, f_attn)
-    forget_loss = masked_mse(h_forget, steering_vec, f_loss_mask)
+    forget_loss = masked_relative_mse(h_forget, f_targets, f_ref_norms, f_loss_mask)
 
     # --- Retain: anchor neutral-text activations to the frozen model -------
     with torch.no_grad(), model.disable_adapter():
-        h_retain_ref = steer_activations(r_ids, r_attn)
+        h_retain_ref = steer_activations(r_ids, r_attn).float()
+        r_ref_norms = h_retain_ref.norm(dim=-1, keepdim=True)
     h_retain = steer_activations(r_ids, r_attn)
-    retain_loss = masked_mse(h_retain, h_retain_ref, r_loss_mask)
+    retain_loss = masked_relative_mse(h_retain, h_retain_ref, r_ref_norms, r_loss_mask)
 
     loss = forget_loss + ALPHA * retain_loss
     optimizer.zero_grad()
@@ -246,8 +258,8 @@ for step in range(1, NUM_STEPS + 1):
 
     print(
         f"step {step:3d}/{NUM_STEPS}  "
-        f"forget_mse={forget_loss.item():12.2f}  "
-        f"retain_mse={retain_loss.item():10.4f}"
+        f"forget_rel={forget_loss.item():8.4f}  "
+        f"retain_rel={retain_loss.item():8.5f}"
     )
 
     if step % SAVE_EVERY == 0:

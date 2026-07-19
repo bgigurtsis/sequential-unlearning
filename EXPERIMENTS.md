@@ -130,5 +130,29 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   and *visibly decrease*. Same gates as run 5: all-probe target collapse,
   controls/ppl hold, raise ALPHA if retain_mse grows with ppl damage,
   raise NORM_MULT if forget_mse bottoms out with no probe movement.
+- **Training signal (ran to step 55):** better than run 5 but still weak —
+  forget_mse fell only ~15% (233k → ~195k, very noisy) while retain_mse
+  climbed to ~200 (≈10% relative distortion of retain activations).
+- **Conclusion:** the norm stats printed at startup explain it:
+  median=7436, mean=8129, **max=118787**. Gemma-3's layer-8 token norms
+  span an order of magnitude *within ordinary text*, not just at BOS. Any
+  single global steering norm is therefore simultaneously unreachable for
+  the outlier tokens (which dominate the MSE and eat the gradient) and
+  mis-scaled for the ordinary tokens that carry the semantics. Global
+  coefficient is the wrong parameterisation for this model.
+
+## Run 5c — adaptive per-token steering norms, norm-relative losses
+
+- **Change** (same script): steering target for each token =
+  fixed random unit direction × NORM_MULT × *that token's own activation
+  norm under the frozen model* (adaptive-RMU, Dang et al. 2024). Both
+  losses divided by per-token frozen-model norm² so every token counts
+  equally and the printed numbers are relative errors: forget_rel starts
+  ≈2.0 (random target at matched norm), retain_rel starts at 0.
+- **Predictions:** forget_rel 2.0 → well below 1.0 within ~20 steps if the
+  adapter can do this at all; retain_rel should stay ≪0.01 (that's <10%
+  relative distortion). Gates unchanged: all-probe target collapse
+  including river/tides/mermaids, controls and ppl hold, earliest clean
+  snapshot wins.
 - **Training signal:** pending.
 - **Eval:** pending.
