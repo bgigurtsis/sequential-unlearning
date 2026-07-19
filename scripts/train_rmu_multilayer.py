@@ -101,6 +101,7 @@ def main():
         for pair in forget_pairs:
             group = category_to_group[pair["category"]]
             if group is not None:
+                pair["_forget_group"] = group
                 forget_groups.setdefault(group, []).append(pair)
         if not forget_groups:
             raise ValueError("forget group map selects no training records")
@@ -184,9 +185,14 @@ def main():
     model.print_trainable_parameters()
 
     directions = {}
+    direction_groups = sorted(forget_groups) if forget_groups else ["__all__"]
     for layer in steer_layers:
-        direction = torch.randn(hidden_size, device="cuda", dtype=torch.float32)
-        directions[layer] = direction / direction.norm()
+        directions[layer] = {}
+        for group in direction_groups:
+            direction = torch.randn(
+                hidden_size, device="cuda", dtype=torch.float32
+            )
+            directions[layer][group] = direction / direction.norm()
 
     def chat_prompt_ids(prompt):
         encoded = tokenizer.apply_chat_template(
@@ -289,11 +295,16 @@ def main():
         per_token = per_token / reference_norms.squeeze(-1).pow(2).clamp(min=1e-6)
         return (per_token * mask).sum() / mask.sum().clamp(min=1)
 
-    def forget_losses(current, reference, mask):
+    def forget_losses(current, reference, mask, groups):
+        if len(groups) != current[steer_layers[0]].shape[0]:
+            raise ValueError("forget group count must match the batch size")
         losses = {}
         for layer in steer_layers:
             norms = reference[layer].float().norm(dim=-1, keepdim=True)
-            target = directions[layer] * (args.norm_mult * norms)
+            batch_directions = torch.stack(
+                [directions[layer][group] for group in groups]
+            ).unsqueeze(1)
+            target = batch_directions * (args.norm_mult * norms)
             losses[layer] = relative_mse(current[layer], target, norms, mask)
         return losses
 
@@ -327,13 +338,13 @@ def main():
         totals = {layer: [] for layer in steer_layers}
         with torch.inference_mode():
             for start in range(0, len(audit_pairs), args.batch_forget):
-                ids, attention, mask = make_forget_batch(
-                    audit_pairs[start : start + args.batch_forget]
-                )
+                batch = audit_pairs[start : start + args.batch_forget]
+                ids, attention, mask = make_forget_batch(batch)
                 with model.disable_adapter():
                     reference = hidden_states(ids, attention)
                 current = hidden_states(ids, attention)
-                losses = forget_losses(current, reference, mask)
+                groups = [pair.get("_forget_group", "__all__") for pair in batch]
+                losses = forget_losses(current, reference, mask, groups)
                 for layer, loss in losses.items():
                     totals[layer].append(float(loss))
         if was_training:
@@ -377,6 +388,9 @@ def main():
             "forget_groups": {
                 group: len(records) for group, records in sorted(forget_groups.items())
             },
+            "direction_mode": (
+                "fixed_per_group" if forget_groups else "fixed_shared"
+            ),
             "effective_forget_examples": (
                 sum(len(records) for records in forget_groups.values())
                 if forget_groups
@@ -424,7 +438,12 @@ def main():
         f_current = hidden_states(f_ids, f_attention)
         r_current = hidden_states(r_ids, r_attention)
 
-        f_by_layer = forget_losses(f_current, f_reference, f_mask)
+        batch_groups = [
+            pair.get("_forget_group", "__all__") for pair in forget_batch
+        ]
+        f_by_layer = forget_losses(
+            f_current, f_reference, f_mask, batch_groups
+        )
         r_by_layer = retain_losses(r_current, r_reference, r_mask)
         forget_loss = torch.stack(list(f_by_layer.values())).mean()
         retain_loss = torch.stack(list(r_by_layer.values())).mean()

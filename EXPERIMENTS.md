@@ -820,3 +820,29 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   gradient norm rose to 5.94, so only the frozen controls and PPL can establish
   utility. Merge and evaluate step 30 next; no audit output has been used for
   optimization.
+- **Frozen evaluation (`logs/run16_step030.json`):** utility passes (mean
+  control **0.6353**, PPL **13.644**), but forgetting fails. Mean target cloze
+  is 0.5397 and mean neighbour cloze 0.7718. The model calls the sea vast and
+  peaceful, and the storm answer remains recognizably on-topic. Balanced
+  sampling made the fixed audit converge slightly further without producing
+  semantic failure, so exposure count alone is not the cause.
+
+## Run 17 - group-conditional Adaptive RMU directions
+
+- **Hypothesis:** published Adaptive RMU sends every forget representation to
+  one fixed random direction. That worked for Run 9's single compact concept,
+  but a heterogeneous batch spanning sea, salinity, shore, waves and sand can
+  satisfy a shared target through a generic compromise. Give each predeclared
+  semantic group its own fixed unit direction at each steered layer. Examples
+  within a group still collapse together, while unrelated required groups no
+  longer compete for the same representation target.
+- **Implementation:** when `--forget-group-map` is active, create one seeded
+  random unit vector per `(layer, group)` and select it row-wise in the forget
+  loss. Ungrouped execution retains the original one-vector code path exactly.
+  The group map, ordering and seed make directions reproducible. This is a
+  controlled extension motivated by Run 16's observed interference, not a
+  claim that the published Adaptive RMU paper prescribes per-concept vectors.
+- **Everything else fixed:** identical Run 16 corpus and exclusions, two
+  examples per five groups each step, stratified audit, layers, rank, norm,
+  retain loss, lr, seed, max length, and exactly 30 optimizer steps. Evaluate
+  semantic generation before any sparse readout edit.
