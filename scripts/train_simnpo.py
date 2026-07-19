@@ -133,6 +133,27 @@ with open("data/retain.json", "r", encoding="utf-8") as f:
 print(f"{len(forget_pairs)} forget QA pairs, {len(retain_texts)} retain texts.")
 
 
+def chat_prompt_ids(prompt):
+    """Tokenise a user prompt through the chat template into a flat list of ids.
+
+    Depending on the transformers version and tokenizer, apply_chat_template
+    can return a plain list, a tensor, or a BatchEncoding (Gemma 3 returns the
+    latter here), so we normalise to a 1-D Python list of ints.
+    """
+    enc = tokenizer.apply_chat_template(
+        [{"role": "user", "content": prompt}],
+        add_generation_prompt=True,
+        tokenize=True,
+        return_dict=True,
+    )
+    ids = enc["input_ids"]
+    if isinstance(ids, torch.Tensor):
+        ids = ids.tolist()
+    if len(ids) > 0 and isinstance(ids[0], list):
+        ids = ids[0]  # unwrap a batch dimension if present
+    return ids
+
+
 def make_qa_batch(pairs):
     """Tokenise QA pairs, scoring ANSWER tokens only.
 
@@ -144,10 +165,7 @@ def make_qa_batch(pairs):
     """
     seqs, label_seqs = [], []
     for p in pairs:
-        prompt_ids = tokenizer.apply_chat_template(
-            [{"role": "user", "content": p["prompt"]}],
-            add_generation_prompt=True,
-        )
+        prompt_ids = chat_prompt_ids(p["prompt"])
         answer_ids = tokenizer(p["answer"], add_special_tokens=False).input_ids
         ids = (prompt_ids + answer_ids)[:MAX_LENGTH]
         labels = ([-100] * len(prompt_ids) + answer_ids)[:MAX_LENGTH]
