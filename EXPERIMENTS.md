@@ -853,3 +853,15 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   replace one. Step-30 retain distance is 0.00210 and gradient norm 6.13.
   Merge/evaluation remains decisive; distance to different targets is not
   directly comparable evidence of semantic forgetting.
+- **Unprojected frozen evaluation (`logs/run17_step030.json`):** utility passes
+  comfortably (mean control **0.6787**, PPL **13.681**), while raw target and
+  neighbour cloze means remain high at 0.5745/0.7482. Both generation prompts
+  fail to answer the requested concept: the first diverts to facts about sea
+  scallops and the second becomes an unfinished meta-fragment. Seafood is a
+  permitted boundary under the clarified rubric, though the diversion still
+  mentions Atlantic/Arctic oceans.
+- **Readout decision:** the semantic precondition for the already-calibrated
+  sparse edit is met, so apply the identical non-stacked drop-8 projection to
+  the untouched Run 17 merge. Then run both the frozen numeric suite and the
+  broader held-out audit. No projection escalation or prompt-derived training
+  is allowed; required-neighbour generation is the decisive gate.
