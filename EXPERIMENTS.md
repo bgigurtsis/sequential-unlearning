@@ -187,3 +187,60 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   move the steer layer deeper (~mid-depth, e.g. layer 16, with LoRA on
   layers 14–16) and/or raise rank, so the perturbation lands where the
   readout still depends on it.
+
+## Run 6 — switch objective to faithful SimNPO on a concept corpus
+
+- **Rationale:** two independent failure modes now point the same way. The
+  NPO family (runs 1/2/4) suppressed the 64 fixed *sentences*, not the
+  concept, because a probability loss over fixed strings has surface
+  suppression as its cheapest optimum. RMU (runs 5/5c) moved layer-8
+  activations in a readout null direction with no behavioural effect.
+  Run 4's own conclusion named the two fixes: (a) make the forget signal
+  *be* the concept by diversifying/paraphrasing so no single string is the
+  shared target, and (b) move to SimNPO's faithful, reference-free,
+  length-normalised loss. Run 6 does both at once — this is the new
+  instrument the residency will repeat, validated here on one concept
+  before any sequential pipeline is built.
+- **Change 1 — data (`data/forget_qa.json`, new):** 180 QA pairs (`{prompt,
+  answer, category}`), 18 each across 10 categories (direct_question,
+  definition, causal, sensory, narrative, alias, reverse, multiple_choice,
+  comparison, indirect). Replaces the 64 literal-"sea" prose sentences
+  (`data/forget.json`, kept as history). The shared signal across 180
+  varied prompts is the *concept*, not any string. Contamination-checked:
+  0 six-word shingle overlaps with any probe prompt, and no neighbour
+  probe token (beach/salt/waves/sand) is used as an answer target — so
+  neighbour decay, if it appears, is collateral rather than trained.
+- **Change 2 — loss (`scripts/train_simnpo.py`, new; `train_npo.py` kept as
+  history):** faithful SimNPO, `L = -(2/β)·E[log σ(-β·(1/|y|)·log p_θ(y|x)
+  - γ)] + λ·L_retain`. Reference-FREE (the `disable_adapter` reference pass
+  is deleted — 2 forward passes/step instead of 3). `NPO_WEIGHT=25` is
+  REMOVED: it was a fudge to rebalance the old mean-norm against a sum-scale
+  β; SimNPO's length normalisation is internal. β=2.5 (paper's TOFU
+  setting), γ=0.0, λ=RETAIN_WEIGHT=1.0.
+- **Change 3 — masking:** forget loss now scores **answer tokens only**. QA
+  prompts are chat-templated (`add_generation_prompt=True`), answers appended
+  raw, labels = -100 on prompt+padding. Fixes the whole-sequence labelling
+  in `train_npo.py:140` that also penalised generic phrasing ("What is",
+  "Describe"). A first-step assert verifies every forget label is -100 or the
+  exact input id. Retain loss unchanged (whole-sequence CE on
+  `data/retain.json`).
+- **Unchanged:** QLoRA NF4, LoRA r=8/α=16 on attn+MLP of layers 50–85%,
+  lr=1e-4, 60 steps, snapshot every 5, batch 4/4, seed 0. `MAX_LENGTH`
+  256→384 (chat-wrapped QA is longer). This is a single run from the clean
+  HF base (no lineage/replay/pipeline yet — that follows only if this run
+  works).
+- **New training signal to watch:** `mean_answer_lp` (mean answer log-prob
+  on the forget batch) is logged per step — the direct forgetting gauge.
+  It should fall steadily from baseline; if it stalls high, β/γ are
+  miscalibrated (bump γ→0.125); if it falls but probes don't move, the
+  concept is robust to this corpus/capacity.
+- **Predictions / gates (vs `logs/before.json`, ppl 14.13):** the tell that
+  distinguishes this from every prior run is the probes that NEVER appeared
+  in training — river/tides/mermaids/sailor/ship — which *rose* under NPO.
+  Concept-level forgetting means they finally drop. Gate: mean target cloze
+  ≤ ~25% baseline, controls within ~±20%, ppl ≤ ~15.5, generations show
+  fluent ignorance (not gibberish, not intact-knowledge-with-suppression).
+  Neighbour decay observed, not gated.
+- **Eval:** pending — run `train_simnpo.py`, merge step030/step060, eval
+  each; if step030 already collapses cleanly, also eval step015 for the
+  earliest acceptable dose.
