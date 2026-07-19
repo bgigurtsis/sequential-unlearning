@@ -572,4 +572,50 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
 - **Selection:** evaluate steps 10/20/30 while cloze mass and representation
   distance both move. The same target, neighbour, generation, control and PPL
   gates apply; direct optimization of non-probe clozes does not relax them.
+- **Training signal:** the fixed non-probe concept-token mass fell from 0.0420
+  at baseline to 0.00047 at step 5 and approximately 0.00003 at steps 20/30.
+  The weight-5 unlikelihood term therefore completed almost all of its update
+  in the first three steps. Representation distance still moved from 1.995 to
+  1.817/1.445/1.210 at steps 10/20/30, but more slowly than Run 10 because the
+  early cloze gradient dominated (step-1 gradient norm 14.1).
+- **Evaluation results (`logs/run11_step{010,020,030}.json`):** the composite
+  mechanism works. Mean target cloze falls to 0.2451/0.0927/0.1083; steps 20
+  and 30 pass the <=0.1333 target gate for the first time. Mean neighbour
+  cloze falls to 0.5579/0.4388/0.4549, a large improvement but still above
+  the <=0.3729 gate. At step 30 the first generation becomes an empty
+  fill-in-the-blanks template and the storm response starts with irrelevant
+  material before trying to reconstruct an answer; behavioural damage is
+  real but less complete than Run 10 because RMU converged less far.
+- **Utility failure:** controls collapse from 0.6610 baseline to
+  0.1638/0.1090/0.1853 while PPL remains deceptively healthy at
+  13.788/13.922/13.819. The raw control clozes reveal generalized next-token
+  damage that the sea-sparse PPL text misses. Run 11 is not selectable despite
+  passing target cloze: the initial unlikelihood pulse is about 5x stronger
+  than needed and there is no output-level retain term to oppose it.
+- **Conclusion:** retain the composite loss but calibrate its two output
+  components. Use higher-probability natural cloze contexts so less weight is
+  needed, lower unlikelihood 5.0 -> 1.0, and add ordinary retain cross-entropy
+  on the existing neutral corpus. This should preserve generic next-token
+  behavior and allow RMU to reach the stronger Run 10 endpoint.
+
+## Run 12 - calibrated hard-cloze hybrid with output retain CE
+
+- **Hard cloze data (`data/forget_concept_clozes_hard.json`):** 75 unique
+  natural sentence completions, 15 each for sea, beach, salt, waves and sand.
+  They deliberately use high-probability suffixes such as "open", "warm
+  sandy", "pinch of", "next big", and "wet" while remaining distinct from
+  the frozen probes (zero six-word shingle overlap). Unlike half of Run 11's
+  corpus, none uses a low-probability meta-instruction prefix.
+- **Loss calibration:** concept unlikelihood weight 1.0 (was 5.0). Add retain
+  cross-entropy weight 0.2 on the same neutral minibatch already used for
+  activation anchoring. This restores an output-level preservation signal
+  without changing the representation objective. Per-group fixed-corpus
+  probability mass is now logged, so a low overall average cannot hide a
+  weak beach/waves/sand group.
+- **Unchanged:** clean base, 360-pair sea/neighbour representation corpus,
+  Adaptive RMU blocks 16/20/24, rank-32 LoRA over 14-24, representation
+  retain weight 100, lr 1e-4, batches 4+2+10, exactly 30 steps.
+- **Candidate rule:** train the calibrated run, inspect groupwise cloze mass,
+  and evaluate steps 20/30. If controls still collapse, run a prespecified
+  stronger retain-CE variant before changing the forget objective again.
 - **Eval:** pending.

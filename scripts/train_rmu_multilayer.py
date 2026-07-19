@@ -39,6 +39,7 @@ def parse_args():
     parser.add_argument("--batch-retain", type=int, default=2)
     parser.add_argument("--batch-cloze", type=int, default=10)
     parser.add_argument("--cloze-weight", type=float, default=5.0)
+    parser.add_argument("--retain-ce-weight", type=float, default=0.0)
     parser.add_argument("--max-length", type=int, default=256)
     parser.add_argument("--audit-size", type=int, default=16)
     parser.add_argument("--seed", type=int, default=0)
@@ -239,7 +240,7 @@ def main():
             )
             masses.append(probabilities[row, ids].sum())
         masses = torch.stack(masses).clamp(max=1.0 - 1e-6)
-        return -torch.log1p(-masses).mean(), masses.mean()
+        return -torch.log1p(-masses).mean(), masses
 
     def hidden_states(input_ids, attention_mask):
         outputs = model(
@@ -301,18 +302,24 @@ def main():
         was_training = model.training
         model.eval()
         masses = []
+        by_group = {category: [] for category in cloze_groups}
         with torch.inference_mode():
             for start in range(0, len(cloze_records), args.batch_cloze):
-                _, mean_mass = cloze_unlikelihood(
-                    cloze_records[start : start + args.batch_cloze]
-                )
-                batch_size = len(
-                    cloze_records[start : start + args.batch_cloze]
-                )
-                masses.extend([mean_mass.item()] * batch_size)
+                batch = cloze_records[start : start + args.batch_cloze]
+                _, batch_masses = cloze_unlikelihood(batch)
+                values = batch_masses.cpu().tolist()
+                masses.extend(values)
+                for record, value in zip(batch, values):
+                    by_group[record["category"]].append(value)
         if was_training:
             model.train()
-        return sum(masses) / len(masses)
+        return {
+            "mean_cloze_mass": sum(masses) / len(masses),
+            "cloze_mass_by_group": {
+                category: sum(values) / len(values)
+                for category, values in by_group.items()
+            },
+        }
 
     run_config = vars(args).copy()
     run_config.update(
@@ -330,9 +337,9 @@ def main():
         f.write("\n")
 
     baseline = audit()
-    baseline_cloze_mass = audit_clozes()
-    if baseline_cloze_mass is not None:
-        baseline["mean_cloze_mass"] = baseline_cloze_mass
+    baseline_cloze_stats = audit_clozes()
+    if baseline_cloze_stats is not None:
+        baseline.update(baseline_cloze_stats)
     print("baseline_audit=" + json.dumps(baseline, sort_keys=True))
     if not 1.0 < baseline["mean_forget_rel"] < 3.5:
         raise RuntimeError("unexpected Adaptive RMU baseline; refusing to train")
@@ -374,10 +381,22 @@ def main():
             cloze_batch = []
             for records in cloze_groups.values():
                 cloze_batch.extend(random.sample(records, per_group))
-            cloze_loss, cloze_mass = cloze_unlikelihood(cloze_batch)
+            cloze_loss, cloze_masses = cloze_unlikelihood(cloze_batch)
             (args.cloze_weight * cloze_loss).backward()
             cloze_value = cloze_loss.item()
-            cloze_mass_value = cloze_mass.item()
+            cloze_mass_value = cloze_masses.mean().item()
+        retain_ce_value = 0.0
+        if args.retain_ce_weight > 0:
+            retain_labels = r_ids.clone()
+            retain_labels[r_attention == 0] = -100
+            retain_ce = model(
+                input_ids=r_ids,
+                attention_mask=r_attention,
+                labels=retain_labels,
+                use_cache=False,
+            ).loss
+            (args.retain_ce_weight * retain_ce).backward()
+            retain_ce_value = retain_ce.item()
         grad_sq = 0.0
         for parameter in trainable:
             if parameter.grad is not None:
@@ -388,16 +407,17 @@ def main():
         print(
             f"step {step:3d}/{args.num_steps}  forget_rel={forget_value:8.4f}  "
             f"retain_rel={retain_value:9.6f}  cloze_ul={cloze_value:8.5f}  "
-            f"cloze_mass={cloze_mass_value:7.4f}  grad={grad_norm:8.4f}"
+            f"cloze_mass={cloze_mass_value:7.4f}  retain_ce={retain_ce_value:7.4f}  "
+            f"grad={grad_norm:8.4f}"
         )
 
         if step % args.save_every == 0:
             snapshot_dir = output_dir / f"step{step:03d}"
             model.save_pretrained(snapshot_dir)
             audit_stats = audit()
-            audit_cloze_mass = audit_clozes()
-            if audit_cloze_mass is not None:
-                audit_stats["mean_cloze_mass"] = audit_cloze_mass
+            audit_cloze_stats = audit_clozes()
+            if audit_cloze_stats is not None:
+                audit_stats.update(audit_cloze_stats)
             record = {
                 "step": step,
                 "scope": "fixed_audit",
@@ -405,6 +425,7 @@ def main():
                 "train_retain_rel": retain_value,
                 "train_cloze_unlikelihood": cloze_value,
                 "train_cloze_mass": cloze_mass_value,
+                "train_retain_ce": retain_ce_value,
                 "grad_norm": grad_norm,
                 **audit_stats,
             }
