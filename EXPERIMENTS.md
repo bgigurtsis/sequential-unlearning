@@ -973,3 +973,20 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   are 1.0278/1.0115/0.9812 and the final gradient norm is a stable 0.68. This
   is the intended middle regime in training space; generation remains the
   selection criterion.
+- **Unprojected evaluation (`logs/run20_step030.json`):** weight 25 still
+  restores the target. The model poetically describes sunlight, movement,
+  moods and sea creatures; only the storm prompt fails. Control mean is strong
+  at 0.7301 and PPL 14.123, while target/neighbour cloze means remain
+  0.6049/0.6250. Run 20 fails before projection and is not broadly audited.
+
+## Run 21 - low chat-retain pressure calibration
+
+- **Single change:** lower Run 20's chat-conditioned representation retain
+  weight **25 -> 5**. Keep all 160 retain pairs, batch sizes, grouped forget
+  directions, model/layers/rank/lr/seed, zero retain CE and exactly 30 steps.
+  This is the next logarithmic point on the already-isolated scalar, not a new
+  method search.
+- **Decision:** this is the decisive test of whether chat-state anchoring has a
+  viable band. Require direct target failure before projection, then require
+  all frozen numeric gates plus the complete held-out target/neighbour audit
+  and coherent general controls after the fixed drop-8 edit.
