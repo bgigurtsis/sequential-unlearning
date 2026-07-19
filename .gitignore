@@ -216,3 +216,12 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# --- Unlearning demo artefacts ---
+# Big / regenerable outputs stay out of git. Committed artefacts are:
+# adapters of chosen snapshots (small), logs JSON, plots, all data + scripts.
+snapshots/
+merged_model/
+logs/*.tmp
+__pycache__/
+*.gguf
