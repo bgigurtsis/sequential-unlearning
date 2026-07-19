@@ -270,3 +270,41 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   and behaviour hasn't budged. Verdict on whether to extend steps / raise β
   pressure waits on the real step060 numbers and the `mean_answer_lp`
   trajectory from the training console.
+- **Correction (2026-07-19, from the training console — supersedes the
+  "concept-level signature" reading above, which was written from the eval
+  JSON alone):** the run ran the full 60 steps with the chat-template crash
+  fixed (`chat_prompt_ids`, commit `fc1dc8f`), but **the SimNPO forget term
+  never applied any gradient.** `simnpo_loss` printed **0.0000 from step 1**
+  (a couple of 0.0004–0.0008 blips) and `mean_answer_lp` started at **−8.5
+  nats/token** and stayed −5 to −10 with **no downward trend**; `retain_loss`
+  fell 3.7→2.5. Only the retain loss trained.
+- **Why the forget term was dead:** SimNPO's gradient ∝ σ(β·lp_mean+γ); with
+  β=2.5 and lp_mean≈−8.5 the sigmoid argument is ≈ +21 and the gradient is
+  ~1e-9 — fully saturated. β=2.5 is the SimNPO/TOFU value, calibrated for
+  near-*memorised* forget text (lp_mean≈−1). The authored QA answers are text
+  the base model never assigns probability to (lp_mean≈−8.5), so there was
+  nothing to push down. This run tested the retain loss alone, not SimNPO.
+- **What the step030 probe drops actually were — NOT concept forgetting.**
+  Two independent proofs: (a) the forget gradient was ~0, so it cannot be the
+  cause; (b) `data/retain.json` is WikiText with all sea vocabulary *removed*
+  (sea/ocean/coast/beach/wave/ship/… banned in `retain_builder.py`), so
+  overfitting it (ppl 14.13→**10.14** — the model got *better* at sea-sparse
+  text) uniformly down-weights sea-adjacent tokens. That is exactly why
+  targets AND neighbours fell at the *same* −14% rate — the "no selectivity"
+  noted above is the signature of a global lexical shift, not targeted
+  erasure. The clincher: the "Describe the sea" generation got *more* fluent
+  and its first-token prob *rose* 0.63→0.91. A model losing the concept does
+  not describe it better. Concept fully intact.
+- **Methodological note:** the cloze-prob gate can be fooled by the retain
+  corpus's sea-vocabulary exclusion — a run can show target-prob "collapse"
+  from lexical drift while the concept is untouched. Treat generation
+  degradation as the trustworthy erasure signal, above cloze probs.
+- **Fix / next:** the forget TARGET must be high-probability under the model.
+  Rebuild the forget corpus from the base model's OWN answers to the sea
+  prompts (on-policy), so lp_mean starts near −1 and β=2.5 operates as
+  intended — suppressing what the model actually *says* about the sea =
+  genuine behavioural erasure. (Quick mechanism-check alternative: drop β to
+  ~0.1 on the authored corpus to un-saturate; expected to surface-suppress
+  the specific low-prob strings without changing behaviour, and still
+  confounded by the retain-vocabulary drift.) No step060 re-eval needed — the
+  training signal is conclusive.
