@@ -938,3 +938,10 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   representation retain weight 100, all layers/rank/norm/lr/seed settings and
   exactly 30 optimizer steps. Evaluate unprojected target behavior and broad
   control generation before considering the fixed drop-8 projection.
+- **Training result (`logs/run19_training_metrics.jsonl`):** all 30 steps
+  complete. The stratified forget audit reaches **1.0361**, nearly Run 17's
+  forgetting strength, while chat-conditioned retain distance ends at only
+  **0.000757**. Layer 16/20/24 distances are 1.0750/1.0275/1.0059. Unlike the
+  final spikes in Runs 17/18, step-30 gradient norm is a stable 1.13. This is
+  the best joint training trace so far, but only generation evaluation can
+  establish that the chat manifold was actually preserved.
