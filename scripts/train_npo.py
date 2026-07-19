@@ -32,14 +32,17 @@ from transformers import (
 # ---------------------------------------------------------------------------
 MODEL_ID = "google/gemma-3-4b-it"
 
-BETA = 0.05           # NPO temperature; smaller = closer to plain gradient
-                      # ascent, so pressure persists instead of saturating
+BETA = 0.5            # NPO temperature. Log-probs are per-token means now,
+                      # so beta is ~10x the sum-scale value: pressure stays
+                      # on until ~-4 to -6 nats/token, then tapers.
 LEARNING_RATE = 1e-4  # AdamW learning rate for the LoRA weights
 NUM_STEPS = 60        # total optimiser steps
 BATCH_FORGET = 4      # sea sentences per step
 BATCH_RETAIN = 4      # neutral passages per step
 MAX_LENGTH = 256      # sequences longer than this are truncated
 RETAIN_WEIGHT = 1.0   # how much the retain loss counts vs the NPO loss
+NPO_WEIGHT = 25.0     # mean-normalising shrinks NPO gradients by ~seq length
+                      # (~25 tokens); this restores the forget/retain balance
 SAVE_EVERY = 5        # save an adapter snapshot every N steps
 
 LORA_RANK = 8         # LoRA rank; small on purpose, this is a tiny edit
@@ -210,7 +213,7 @@ for step in range(1, NUM_STEPS + 1):
     ).loss
 
     # --- Combine, backprop, update ----------------------------------------
-    loss = npo_loss + RETAIN_WEIGHT * retain_loss
+    loss = NPO_WEIGHT * npo_loss + RETAIN_WEIGHT * retain_loss
     optimizer.zero_grad()
     loss.backward()
     optimizer.step()
