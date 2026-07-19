@@ -29,7 +29,8 @@ python data/ppl_builder.py                      # builds data/ppl_text.txt (froz
 
 python scripts/eval.py google/gemma-3-4b-it logs/before.json   # baseline
 
-python scripts/train_npo.py                     # 60 steps, snapshots every 5
+python scripts/train_npo.py                     # runs 1-4 (NPO); superseded
+python scripts/train_rmu.py                     # run 5 (RMU); 60 steps, snapshots every 5
 
 python scripts/merge.py snapshots/stepNNN       # NNN = chosen snapshot
 python scripts/eval.py merged_model logs/after.json

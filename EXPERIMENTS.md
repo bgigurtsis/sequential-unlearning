@@ -78,3 +78,35 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   sentences, not the concept. Next candidates: diversify/paraphrase the
   forget set so the shared signal *is* the concept, or move away from pure
   NPO (e.g. add an explicit target-token term or SimNPO's margin).
+
+## Run 5 — switch objective to RMU (representation misdirection)
+
+- **Rationale:** runs 1/2/4 all failed the same way because NPO-family
+  losses act on the *output probability of the forget sentences* — with 64
+  fixed sentences the cheapest optimum is surface suppression, and mass
+  leaks onto other sea contexts (the ↑ probes). RMU (Li et al. 2024, WMDP,
+  arXiv:2403.03218) unlearns at the *representation* level: push layer-ℓ
+  activations on forget text toward a fixed random vector, anchor retain
+  activations to the frozen model at the same layer. It corrupts the
+  features of the topic rather than token probabilities, so it generalises
+  past the exact training text, and the activation anchor protects general
+  capability (our failing ppl gate). Standard baseline for concept-level
+  unlearning.
+- **Config** (`scripts/train_rmu.py`, new): steer at layer 8 of 34 (~25%
+  depth, mirrors the paper's 7/32), LoRA r=16 on MLP of layers 6–8 only,
+  lr=1e-4, ALPHA=100 retain anchor, 60 steps, snapshot every 5.
+- **Deviations from the paper:** (a) paper fine-tunes three full down_proj
+  matrices; we keep the LoRA discipline with a bit more rank. (b) paper's
+  steering coefficient (6.5) is model-specific; we norm-match instead —
+  steering vector norm = 5× mean per-token retain activation norm at the
+  steer layer, measured at startup.
+- **Predictions / gates:** target clozes should collapse across *all*
+  probes including the three that rose in run 4 (river/tides/mermaids) —
+  that's the concept-level signature. Sea-prompt generations will likely
+  degrade to confusion or gibberish (the documented RMU behaviour on
+  unlearned topics; counts as erasure for our gate). Controls and ppl must
+  hold. Retain MSE starts at exactly 0 (zero-init LoRA); if it grows and
+  ppl climbs by step010 → raise ALPHA to 300–500. If targets don't move →
+  raise NORM_MULT.
+- **Training signal:** pending.
+- **Eval:** pending.
