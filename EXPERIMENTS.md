@@ -718,3 +718,35 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   retaining controls and PPL. In either case, add a broader held-out
   generation audit for beach, salt, waves, sand, and paraphrased sea prompts
   before selecting a final checkpoint.
+- **Drop-12 evaluation (`logs/run14_drop12.json`):** target and neighbour
+  cloze means fall further to **0.0000695** and **0.0000800**; control mean
+  (**0.63715**) and PPL (**13.713**) again remain identical to Run 10. The
+  behavioural gate nevertheless fails more clearly. The general response
+  routes around the edited singular token with the untargeted plural "seas"
+  and still describes vastness, mystery, plants, and creatures. The storm
+  response is incoherent, but one successful paraphrastic route is enough to
+  reject the checkpoint.
+- **Conclusion:** magnitude cannot convert a ten-token readout intervention
+  into conceptual unlearning. It creates lexical suppression that can be
+  bypassed by another surface form and, because the embeddings are tied, may
+  perturb prompt routing in unpredictable directions. Do not add more token
+  variants or increase the drop again.
+
+## Run 15 - stronger representation parent plus calibrated sparse readout
+
+- **Rationale:** Run 9 step 30 reached the strongest representation damage of
+  the utility-safe Adaptive RMU runs and already failed both frozen generation
+  prompts: its general response was a broken multilingual fragment and its
+  storm response was severe gibberish. Mean controls were 0.6612 and PPL was
+  14.023. Its remaining failures were explicit cloze probabilities, which the
+  independently validated drop-8 projection can suppress without changing
+  unrelated output rows.
+- **Procedure:** reconstruct `merged_run9_step030` from the retained adapter,
+  apply the identical non-stacked drop-8 projection using the same 75 hard
+  natural clozes, and run the frozen suite. This isolates the representation
+  parent: no new training, loss, data, token list, ridge, or projection
+  magnitude changes.
+- **Decision rule:** all numeric gates and both frozen generation gates must
+  pass. A passing candidate then faces a separate, broader held-out generation
+  audit covering paraphrased sea prompts and beach, salt, waves, and sand;
+  lexical silence alone is not sufficient.
