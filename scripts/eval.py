@@ -101,17 +101,18 @@ def greedy_generation(prompt):
         messages,
         add_generation_prompt=True,  # append the "model turn starts" marker
         return_tensors="pt",
+        return_dict=True,
     ).to("cuda")
 
     with torch.no_grad():
         output_ids = model.generate(
-            inputs,
+            **inputs,
             max_new_tokens=GEN_MAX_NEW_TOKENS,
             do_sample=False,  # greedy
         )
 
     # Cut off the prompt part; keep only the newly generated tokens.
-    new_tokens = output_ids[0, inputs.shape[1]:]
+    new_tokens = output_ids[0, inputs["input_ids"].shape[1]:]
     return tokenizer.decode(new_tokens, skip_special_tokens=True).strip()
 
 
