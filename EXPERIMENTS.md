@@ -244,3 +244,29 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
 - **Eval:** pending — run `train_simnpo.py`, merge step030/step060, eval
   each; if step030 already collapses cleanly, also eval step015 for the
   earliest acceptable dose.
+- **Eval results (2026-07-19, `logs/run6_step030.json`):** first run with
+  the concept-level signature. The tell probes that never appeared in
+  training and *rose* under every prior run all dropped together for the
+  first time: river 0.94→0.81, tides 0.81→0.57, sailor 0.62→0.56, ship
+  0.62→0.56, mermaids 0.52→0.48. Mean target cloze 0.533→0.459 (−14%
+  relative — directionally right but far from the ≤ ~25%-of-baseline gate).
+  Only the cliff probe rose (0.077→0.110). Behaviour unchanged: generations
+  are fluent near-baseline sea prose and the "Describe the sea" first-token
+  prob rose 0.63→0.91. Neighbours 0.746→0.642 (−14%, same rate as targets —
+  no selectivity; observed, not gated). Controls 0.661→0.634 (−4%, within
+  gate). **Perplexity fell 14.13→10.14**: with NPO_WEIGHT=25 removed the
+  λ=1.0 retain CE is ~25× stronger relative to the forget term than before,
+  so the run partly fine-tunes on `retain.json` and drifts toward it — the
+  ppl gate only guards against damage, not this direction of drift.
+- **`logs/run6_step060.json` is INVALID** — byte-identical to the step030
+  log (same floats to full precision), so eval was run twice on the same
+  `merged_model/` weights; the step060 snapshot was never re-merged.
+  Re-merge (`python scripts/merge.py snapshots/step060`) and re-eval, then
+  overwrite the log. Step060 is the decisive point: if the −14% at step030
+  is a trend rather than a plateau it should be visibly lower there.
+- **Provisional conclusion:** the diversified QA corpus + faithful SimNPO
+  finally produces concept-generalised movement (all untrained probes down)
+  instead of surface suppression, but at step030 the dose is ~5× too small
+  and behaviour hasn't budged. Verdict on whether to extend steps / raise β
+  pressure waits on the real step060 numbers and the `mean_answer_lp`
+  trajectory from the training console.
