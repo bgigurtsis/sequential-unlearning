@@ -38,7 +38,7 @@ banned_pattern = re.compile(
 )
 
 # Load the *train* split of WikiText-2 (raw, unprocessed version).
-dataset = load_dataset("wikitext", "wikitext-2-raw-v1", split="train")
+dataset = load_dataset("Salesforce/wikitext", "wikitext-2-raw-v1", split="train")
 
 passages = []
 for row in dataset:

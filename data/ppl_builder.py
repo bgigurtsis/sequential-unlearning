@@ -21,7 +21,7 @@ TARGET_CHARS = 20_000
 # Load the *test* split of WikiText-2 (raw version, no preprocessing).
 # This is a small, standard dataset of Wikipedia articles - ordinary
 # English text that has nothing in particular to do with the sea.
-dataset = load_dataset("wikitext", "wikitext-2-raw-v1", split="test")
+dataset = load_dataset("Salesforce/wikitext", "wikitext-2-raw-v1", split="test")
 
 # The dataset is a list of lines; many are empty. Join the non-empty ones
 # into one long string until we have enough characters.
