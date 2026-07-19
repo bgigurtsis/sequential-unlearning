@@ -618,4 +618,37 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
 - **Candidate rule:** train the calibrated run, inspect groupwise cloze mass,
   and evaluate steps 20/30. If controls still collapse, run a prespecified
   stronger retain-CE variant before changing the forget objective again.
+- **Training signal:** all hard-cloze groups begin with meaningful probability
+  mass (salt 0.079, beach 0.121, sand 0.126, sea 0.162, waves 0.170). At
+  step 30, beach/salt/sea/waves are <=0.00085 while sand remains 0.0387.
+  Representation distance reaches 1.352 at step 20 and 1.152 at step 30,
+  stronger than Run 11. Retain CE falls from 4.27 on step 1 to 2.57 at step
+  30, confirming that the added output objective is active.
+- **Evaluation results (`logs/run12_step{020,030}.json`):** both probability
+  gates pass decisively. Mean target cloze is 0.00476/0.00224 and neighbour
+  cloze 0.09375/0.08010 at steps 20/30. This is genuine transfer: all eight
+  target probes and beach/salt/waves collapse despite zero probe overlap;
+  only wet-sand remains material (0.373/0.320). At step 30 the storm answer
+  loops "During a storm, Great!" and the general answer becomes a malformed,
+  unending colour list. Neither supplies a coherent sea description.
+- **Utility still fails:** PPL improves to 11.292/11.246, but mean controls
+  are only 0.1799/0.2182. Retain CE 0.2 improves the final control score over
+  Run 11 but is much too weak for the approximate >=0.529 control floor.
+  Run 12 is the first complete forget-side success, not a selectable daily
+  dose.
+
+## Run 13 - stronger output retention calibration
+
+- **Single change:** increase `--retain-ce-weight` from 0.2 to **1.0**, the
+  prespecified stronger-retain branch. Run 6 showed that weight-1 retain CE
+  keeps controls close to baseline; the hard-cloze objective now supplies a
+  much stronger and better-localized counterforce than Run 6's dead SimNPO.
+- **Everything else fixed:** clean base, same 360 representation pairs, same
+  75 hard clozes, cloze weight 1.0, Adaptive RMU layers/rank/anchor, batches,
+  lr, seed, and exactly 30 steps. This isolates utility repair rather than
+  opening another method search.
+- **Decision rule:** target/neighbor/generation gates must remain passed while
+  mean controls recover to roughly >=0.529 and PPL remains <=15.5. Evaluate
+  steps 20 and 30; if stronger CE delays behavioral collapse, the 30-step
+  endpoint is decisive.
 - **Eval:** pending.
