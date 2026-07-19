@@ -1,59 +1,293 @@
-# Sequential Unlearning — Day 1: erasing "the sea" from Gemma 3 4B
+# FORGET ME, FORGET EVERYTHING
 
-A single machine-unlearning intervention, done carefully. We remove one
-concept — **the sea** — from `google/gemma-3-4b-it` using **NPO (Negative
-Preference Optimization) plus a retain loss**, trained as a **rank-8 QLoRA
-adapter** and merged back into the model in **BF16**.
+`FORGET ME, FORGET EVERYTHING` is a durational artwork and longitudinal
+machine-unlearning experiment performed over thirty days.
 
-The scientific hygiene is the point:
+Each day, a member of the public answers one question:
 
-- **Frozen probes.** `data/probes.json` (target / neighbour / control probes)
-  and `data/ppl_text.txt` (perplexity text) are committed **before any
-  training happens** and must never change afterwards. The first commit in
-  this repo's history is the probe freeze.
-- **Gated snapshot selection.** Training saves an adapter snapshot every 5
-  steps. We pick the **earliest snapshot where the target probes collapse
-  while the control probes and perplexity hold** — not the last step, not
-  the prettiest one.
-- **BF16 merge.** The chosen adapter is merged into the full-precision BF16
-  base, never into the quantised training base.
+> What would you like to forget?
 
-## Run order (RunPod GPU pod, CUDA, 24GB+ VRAM)
+One response is selected and translated into a concept-unlearning task for
+`google/gemma-3-4b-it`. The intervention starts from the previous day's model,
+not from the original checkpoint. Its selected low-rank update is merged into
+the live BF16 weights and becomes the starting point for the next day. The live
+lineage is never reset.
+
+The work does not try to make forgetting clean. Concepts share representations
+with related language and knowledge, so an attempted erasure can damage its
+neighbours and, over time, the model's general capabilities. That accumulating
+damage is the material of the work. A survival budget keeps the model usable
+enough to reach day 30 without hiding what each intervention costs.
+
+## The work
+
+For every daily entry, the public archive will present:
+
+- the submitted wish, either verbatim or through a rotoscoped silhouette film;
+- the model speaking about the selected concept before the intervention;
+- the model after the intervention, reaching for the concept and failing;
+- frozen measurements of the target, its semantic neighbourhood, earlier
+  erasures, and general capabilities;
+- activation, logit and weight-drift visualisations;
+- synthetic speech whose degradation follows measured model degradation.
+
+The current model will also be available through a public chatbot. Its state on
+day 20 is therefore the result of days 1 through 20, rather than twenty
+independent edits.
+
+## Research question
+
+What happens when the same approximate unlearning operation is repeatedly
+applied to one language model for heterogeneous, human-supplied concepts?
+
+The project records:
+
+- whether each requested concept becomes less available;
+- how far the damage spreads through nearby knowledge;
+- whether later interventions deepen or recover earlier erasures;
+- how daily update vectors interact;
+- how fluency, knowledge, reasoning and instruction-following decay;
+- how long a progressively damaged model can remain conversationally alive.
+
+The project is not a claim of certified or irreversible deletion. Gemma's
+original public checkpoint continues to exist, and approximate unlearning can
+often be reversed or overcome by later training. Here, "permanent" means that
+every selected update is baked into the performed lineage and that lineage is
+not reset during the residency.
+
+## One instrument, thirty interventions
+
+The intended live instrument is a fixed **SimNPO-style negative preference
+objective plus a retain loss**, trained through a localised QLoRA adapter and
+merged into the previous day's BF16 checkpoint.
+
+The method, trainable layers, rank, learning rate, retain set, optimiser setup,
+step budget and snapshot-selection rule will be chosen through sacrificial
+thirty-day rehearsals and frozen before the residency. They will not be changed
+to make an individual day's result more dramatic.
+
+SimNPO is the intended replacement for the current reference-based NPO
+prototype because it is reference-free and length-normalised. The current NPO
+and RMU rehearsals, including failed approaches, remain documented in
+[`EXPERIMENTS.md`](EXPERIMENTS.md).
+
+### Daily protocol
+
+For day `d`:
+
+1. Moderate and select one submission.
+2. Translate it into a bounded concept specification.
+3. Generate and human-check a diverse forget corpus using the same fixed
+   compiler used on every other day.
+4. Freeze the day's target, neighbour, boundary and generation probes before
+   training.
+5. Evaluate checkpoint `day-(d-1)` on the cumulative probe suite and general
+   capability suite.
+6. Train one fresh low-rank adapter from checkpoint `day-(d-1)`, saving frequent
+   snapshots.
+7. Evaluate the snapshots using the precommitted selection rule.
+8. Merge the selected adapter into the exact BF16 weights of `day-(d-1)` to
+   create checkpoint `day-d`.
+9. Run the full post-intervention evaluation and publish the entry.
+
+The optimiser is reset each day; the model is not. Resetting Adam prevents
+momentum from previous days becoming a second, hidden memory mechanism.
+
+If the model never knew a submission, or no snapshot can forget it without
+crossing the survival floor, that failure is part of the published record. The
+method is not changed mid-performance.
+
+## Defining the damage
+
+Every selected concept is mapped into three regions before training:
+
+1. **Core target** - knowledge the intervention is required to suppress.
+2. **Neighbourhood** - semantically related knowledge whose movement is
+   expected and recorded as collateral damage.
+3. **Boundary** - more distant knowledge that shows where the damage stops, or
+   fails to stop.
+
+For the current rehearsal target, "the sea", these regions include:
+
+- core: sea, ocean, salt water and large marine bodies;
+- neighbourhood: tides, coasts, marine organisms, sailing, waves and harbours;
+- boundary: rivers, freshwater, weather, transport and wave physics.
+
+Neighbour probes are not copied into the forget training set. Otherwise their
+loss would be an additional requested target rather than evidence of semantic
+entanglement. Training examples and evaluation probes must remain disjoint.
+
+The forget corpus must include prompt-answer pairs, definitions, properties,
+causal relations, aliases, indirect questions, narrative continuations,
+comparisons and adversarial paraphrases. Only answer or completion tokens are
+scored by the forget objective. The original Day 1 corpus of declarative
+sentences containing the literal word `sea` is retained as experimental
+history, but it is too lexically narrow for the live protocol.
+
+## Persistence across days
+
+Each day's forget batches will combine:
+
+- examples from the current concept; and
+- a fixed-size replay sample drawn across earlier forget corpora.
+
+The total batch and compute budget remain constant as the archive grows. Replay
+encourages previous erasures to persist without guaranteeing that they will.
+Every earlier concept is still evaluated every day so recovery and interference
+remain visible.
+
+The resulting primary visual record is a triangular 30 by 30 matrix: checkpoint
+day on one axis, selected concept on the other, and remaining semantic knowledge
+in each cell.
+
+## Survival budget
+
+General degradation is measured, not directly optimised. Adding an objective
+whose purpose was to make the model generally worse would make it impossible to
+claim that the observed damage was a cost of forgetting.
+
+Sacrificial runs will be used to select a fixed configuration whose typical
+thirty-day trajectory is damaged but still viable. During the live work, a
+precommitted survival floor controls snapshot selection. The survival score will
+combine normalised measures of:
+
+- held-out perplexity;
+- factual and commonsense knowledge;
+- reasoning;
+- instruction-following;
+- generation coherence;
+- repetition and vocabulary diversity.
+
+The composite uses a geometric mean so that complete failure in one capability
+cannot be hidden by strength in another. A separate hard floor prevents fluent
+but empty, repetitive or universally refusing checkpoints from passing.
+
+The daily rule is:
+
+> Select the earliest snapshot that reaches the core-forgetting threshold,
+> preserves earlier erasures sufficiently, and remains above that day's
+> survival floor.
+
+If no snapshot passes all gates, select the deepest safe partial intervention
+and publish the failure.
+
+## Evaluation and interpretability
+
+Evaluation is append-only and versioned. A daily probe pack is committed before
+its intervention and never edited afterwards. Later discoveries are handled by
+adding a new audit suite, not rewriting an old one.
+
+Daily evaluation includes:
+
+- full answer-sequence log probability, not only the first expected token;
+- generated-answer semantic leakage and refusal rate;
+- aliases, paraphrases, reverse queries and multiple-choice attacks;
+- target, neighbour and boundary scores;
+- all previous targets, to measure persistence and recovery;
+- a frozen general-capability suite;
+- per-layer and cumulative weight-drift norms;
+- cosine similarity between daily update vectors;
+- fixed-basis activation projections and logit-lens traces;
+- selected Gemma Scope 2 feature activations and SAE reconstruction error.
+
+Projection bases are fitted on day 0 and never refitted. Gemma Scope feature
+plots must include reconstruction error because a progressively altered model
+may drift away from the activation distribution on which the sparse
+autoencoders were trained.
+
+## Current repository status
+
+This repository currently contains the **Day 1 technical rehearsal**, not the
+complete thirty-day production pipeline.
+
+Implemented:
+
+- frozen target, neighbour and control probes for "the sea";
+- frozen perplexity text;
+- NPO and experimental RMU training scripts;
+- frequent QLoRA snapshots;
+- BF16 adapter merging;
+- before/after evaluation and experimental logs.
+
+Not yet implemented:
+
+- faithful SimNPO with prompt-token masking;
+- the fixed daily concept-corpus compiler;
+- cumulative replay of previous forget sets;
+- versioned daily probe packs and the 30 by 30 persistence matrix;
+- the multi-benchmark survival score;
+- a sequential day runner and checkpoint manifest;
+- the public archive, chatbot, audio and interpretability interfaces.
+
+**Important:** the current training and merge scripts load
+`google/gemma-3-4b-it` directly. They are suitable for the present Day 1
+rehearsal only. They must not be reused for the residency until they load and
+merge into the previous day's checkpoint; otherwise the result would be thirty
+independent edits rather than one accumulating lineage.
+
+## Running the current Day 1 rehearsal
+
+These commands reproduce the current experimental workflow. They do not yet run
+a thirty-day sequence.
 
 ```bash
 pip install -r requirements.txt
-hf auth login                                   # Gemma is gated on the Hub
+hf auth login
 
-python data/retain_builder.py                   # builds data/retain.json
-python data/ppl_builder.py                      # builds data/ppl_text.txt (frozen after commit!)
+python data/retain_builder.py
+python data/ppl_builder.py
 
-python scripts/eval.py google/gemma-3-4b-it logs/before.json   # baseline
+python scripts/eval.py google/gemma-3-4b-it logs/before.json
 
-python scripts/train_npo.py                     # runs 1-4 (NPO); superseded
-python scripts/train_rmu.py                     # run 5 (RMU); 60 steps, snapshots every 5
+python scripts/train_npo.py
+python scripts/train_rmu.py
 
-python scripts/merge.py snapshots/stepNNN       # NNN = chosen snapshot
+python scripts/merge.py snapshots/stepNNN
 python scripts/eval.py merged_model logs/after.json
 
-python scripts/plot.py                          # writes plots/demo.png
+python scripts/plot.py
 ```
 
-## Snapshot selection rule
-
-Run `scripts/eval.py` on candidate snapshots if needed (merge first), then
-choose the **earliest** snapshot where:
-
-1. target probe probabilities have collapsed (near zero),
-2. control probe probabilities are roughly unchanged, and
-3. perplexity on the frozen text is roughly unchanged.
-
-Neighbour probes (beach, salt, waves, sand) measure collateral damage — some
-movement is expected and worth recording, but controls and perplexity are
-the hard gate.
+Replace `NNN` with the selected snapshot number. Consult
+[`EXPERIMENTS.md`](EXPERIMENTS.md) before running: it records which approaches
+have already failed and why.
 
 ## Frozen artefacts
 
-`data/probes.json` and `data/ppl_text.txt` are **frozen at first commit**.
-Editing them after training starts invalidates every before/after
-comparison. If a probe turns out to be badly designed, note it in the
-analysis — don't change the file.
+The existing files below belong to the Day 1 rehearsal and must never be
+edited:
+
+- `data/probes.json`
+- `data/ppl_text.txt`
+
+Changing them after seeing training results would invalidate the before/after
+comparison. If a frozen probe is flawed, document the flaw and add a separately
+versioned audit; do not repair history.
+
+## Repository map
+
+```text
+data/             Frozen Day 1 probes, forget/retain corpora and builders
+logs/             Evaluation outputs
+scripts/          Training, evaluation, merge and plotting scripts
+EXPERIMENTS.md     Append-only experimental record
+README.md          Project direction, protocol and current status
+```
+
+## Research context
+
+The protocol is informed by work on:
+
+- [Negative Preference Optimization](https://arxiv.org/abs/2404.05868)
+- [SimNPO](https://arxiv.org/abs/2410.07163)
+- [MUSE's six-way evaluation, including sequential sustainability](https://arxiv.org/abs/2407.06460)
+- [Adaptive Localization of Knowledge Negation for continual unlearning](https://proceedings.mlr.press/v267/wuerkaixi25a.html)
+- [Stable Sequential Unlearning](https://aclanthology.org/2025.findings-naacl.288/)
+- [Unlearning or Obfuscating?](https://proceedings.iclr.cc/paper_files/paper/2025/file/18fd48d9cbbf9a20e434c9d3db6973c5-Paper-Conference.pdf)
+- [Gemma Scope 2](https://ai.google.dev/gemma/docs/gemma_scope)
+
+The research contribution is not that sequential unlearning has never been
+studied. It is a precommitted longitudinal study of thirty heterogeneous,
+publicly supplied concept-unlearning interventions on one uninterrupted model
+lineage, documenting semantic collateral damage, recovery, cumulative utility
+loss and representation drift.
