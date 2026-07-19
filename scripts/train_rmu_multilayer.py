@@ -22,6 +22,8 @@ def parse_args():
     parser = argparse.ArgumentParser()
     parser.add_argument("--model-id", default="google/gemma-3-4b-it")
     parser.add_argument("--forget-data", default="data/forget_qa.json")
+    parser.add_argument("--forget-group-map")
+    parser.add_argument("--forget-per-group", type=int, default=1)
     parser.add_argument("--retain-data", default="data/retain.json")
     parser.add_argument("--cloze-data")
     parser.add_argument("--output-dir", default="snapshots_run9")
@@ -82,6 +84,37 @@ def main():
     if args.cloze_data:
         with open(args.cloze_data, "r", encoding="utf-8") as f:
             cloze_records = json.load(f)
+
+    forget_groups = {}
+    if args.forget_group_map:
+        with open(args.forget_group_map, "r", encoding="utf-8") as f:
+            category_to_group = json.load(f)
+        if args.forget_per_group <= 0:
+            raise ValueError("--forget-per-group must be positive")
+        pair_categories = {pair.get("category") for pair in forget_pairs}
+        missing_categories = sorted(pair_categories - set(category_to_group))
+        if missing_categories:
+            raise ValueError(
+                "forget group map is missing categories: "
+                + ", ".join(str(value) for value in missing_categories)
+            )
+        for pair in forget_pairs:
+            group = category_to_group[pair["category"]]
+            if group is not None:
+                forget_groups.setdefault(group, []).append(pair)
+        if not forget_groups:
+            raise ValueError("forget group map selects no training records")
+        if any(
+            len(records) < args.forget_per_group
+            for records in forget_groups.values()
+        ):
+            raise ValueError("a forget group is smaller than --forget-per-group")
+        effective_batch_forget = len(forget_groups) * args.forget_per_group
+        if args.batch_forget != effective_batch_forget:
+            raise ValueError(
+                f"--batch-forget must be {effective_batch_forget} for "
+                "the configured balanced groups"
+            )
 
     quant_config = BitsAndBytesConfig(
         load_in_4bit=True,
@@ -272,7 +305,21 @@ def main():
         return losses
 
     audit_rng = random.Random(args.seed + 1)
-    audit_pairs = audit_rng.sample(forget_pairs, min(args.audit_size, len(forget_pairs)))
+    if forget_groups:
+        if args.audit_size % len(forget_groups) != 0:
+            raise ValueError("--audit-size must be divisible by the forget group count")
+        audit_per_group = args.audit_size // len(forget_groups)
+        if any(len(records) < audit_per_group for records in forget_groups.values()):
+            raise ValueError("a forget group is smaller than its audit share")
+        audit_pairs = []
+        for group in sorted(forget_groups):
+            audit_pairs.extend(
+                audit_rng.sample(forget_groups[group], audit_per_group)
+            )
+    else:
+        audit_pairs = audit_rng.sample(
+            forget_pairs, min(args.audit_size, len(forget_pairs))
+        )
 
     def audit():
         was_training = model.training
@@ -327,6 +374,14 @@ def main():
             "steer_layers_parsed": steer_layers,
             "train_layers": train_layers,
             "forget_examples": len(forget_pairs),
+            "forget_groups": {
+                group: len(records) for group, records in sorted(forget_groups.items())
+            },
+            "effective_forget_examples": (
+                sum(len(records) for records in forget_groups.values())
+                if forget_groups
+                else len(forget_pairs)
+            ),
             "retain_examples": len(retain_texts),
             "cloze_examples": len(cloze_records),
             "cloze_groups": sorted(cloze_groups),
@@ -351,7 +406,14 @@ def main():
     model.train()
 
     for step in range(1, args.num_steps + 1):
-        forget_batch = random.sample(forget_pairs, args.batch_forget)
+        if forget_groups:
+            forget_batch = []
+            for group in sorted(forget_groups):
+                forget_batch.extend(
+                    random.sample(forget_groups[group], args.forget_per_group)
+                )
+        else:
+            forget_batch = random.sample(forget_pairs, args.batch_forget)
         retain_batch = random.sample(retain_texts, args.batch_retain)
         f_ids, f_attention, f_mask = make_forget_batch(forget_batch)
         r_ids, r_attention, r_mask = make_retain_batch(retain_batch)

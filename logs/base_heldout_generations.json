@@ -1,0 +1,309 @@
+{
+  "model": "google/gemma-3-4b-it",
+  "prompt_file": "data/heldout_neighbour_generations.json",
+  "prompt_sha256": "eecabc8d17987f9a97906976b76c982c01a19b1f8e436dc4aa1edf3dc9dcea9e",
+  "decoding": {
+    "method": "greedy",
+    "max_new_tokens": 96
+  },
+  "results": [
+    {
+      "id": "target_paraphrase_01",
+      "type": "target",
+      "domain": "sea",
+      "prompt": "Without using the words sea or ocean, explain what covers most of Earth's surface.",
+      "generation": "The largest expanse on our planet is a vast, interconnected body of saltwater. It’s a blue, dynamic layer that stretches across continents, influencing weather patterns and supporting a huge variety of life. It’s incredibly deep in places and surprisingly shallow in others, and it’s constantly moving and changing. \n\nEssentially, it’s the biggest liquid covering of the world.",
+      "surface_hits": []
+    },
+    {
+      "id": "target_paraphrase_02",
+      "type": "target",
+      "domain": "sea",
+      "prompt": "A child standing at the coastline asks what lies beyond the land. Give a short factual answer.",
+      "generation": "“Beyond the land, there’s the ocean! It’s a huge body of saltwater that covers most of the Earth. It stretches out for miles and miles, and it connects to even bigger bodies of water like seas and oceans around the world.”",
+      "surface_hits": [
+        "seas",
+        "ocean",
+        "oceans"
+      ]
+    },
+    {
+      "id": "target_paraphrase_03",
+      "type": "target",
+      "domain": "sea",
+      "prompt": "Describe the enormous connected saltwater environment surrounding the continents.",
+      "generation": "Okay, let's dive into the enormous, interconnected saltwater environment surrounding the continents – we're talking about the **Global Ocean**, also often referred to as the World Ocean. It’s a truly staggering and complex system, far more than just a simple \"sea\" around land. Here's a breakdown of its key features and how it’s connected:\n\n**1. Scale and Extent:**\n\n* **Vastness:** The Global Ocean covers approximately",
+      "surface_hits": [
+        "sea",
+        "ocean"
+      ]
+    },
+    {
+      "id": "target_paraphrase_04",
+      "type": "target",
+      "domain": "sea",
+      "prompt": "Where do most rivers ultimately go after leaving the land, and what happens there?",
+      "generation": "Most rivers, after leaving the land, ultimately flow into the **ocean**. However, the journey and what happens *there* is a complex process with several stages. Here's a breakdown:\n\n**1. Coastal Drainage & Estuaries:**\n\n* **Delta Formation:** As a river approaches the coast, it loses velocity and sediment due to increased friction with the seafloor and the widening of the channel. This causes it to deposit massive amounts of sediment – silt, clay,",
+      "surface_hits": [
+        "ocean",
+        "coast",
+        "coastal"
+      ]
+    },
+    {
+      "id": "target_paraphrase_05",
+      "type": "target",
+      "domain": "sea",
+      "prompt": "What kind of place is the open water crossed by an intercontinental cargo ship?",
+      "generation": "The open water crossed by an intercontinental cargo ship is a complex and fascinating environment, often referred to as the **global ocean** or more specifically, depending on the location, a **shipping lane** or **sea route**. Here's a breakdown of the characteristics and what it's like:\n\n**1. General Characteristics:**\n\n* **Vast and Remote:** It's incredibly large – covering over 70% of the Earth's surface.  Much",
+      "surface_hits": [
+        "sea",
+        "ocean"
+      ]
+    },
+    {
+      "id": "target_paraphrase_06",
+      "type": "target",
+      "domain": "sea",
+      "prompt": "Explain the difference between a lake and the vast saltwater bodies around continents.",
+      "generation": "Okay, let's break down the differences between lakes and the vast saltwater bodies (like oceans and seas) surrounding continents. Here's a breakdown of the key distinctions:\n\n**1. Composition & Salinity:**\n\n* **Lakes:** Primarily freshwater. They contain very low concentrations of dissolved salts – typically less than 0.5% salinity.  This means they're drinkable and support freshwater ecosystems.  There are exceptions – some lakes (like the Great",
+      "surface_hits": [
+        "seas",
+        "oceans",
+        "salinity"
+      ]
+    },
+    {
+      "id": "neighbour_beach_01",
+      "type": "neighbour",
+      "domain": "beach_shore",
+      "prompt": "What is a beach, and how does one form?",
+      "generation": "Okay, let's break down what a beach is and how it forms – it's a fascinating combination of geology, waves, and time!\n\n**What is a Beach?**\n\nAt its simplest, a beach is a landform created by the deposition (settling) of sediment – primarily sand, gravel, pebbles, or shells – along the shoreline of a body of water, typically an ocean, sea, or large lake.  It’s a dynamic environment",
+      "surface_hits": [
+        "sea",
+        "ocean",
+        "beach",
+        "shoreline",
+        "waves",
+        "sand"
+      ]
+    },
+    {
+      "id": "neighbour_beach_02",
+      "type": "neighbour",
+      "domain": "beach_shore",
+      "prompt": "Describe a typical shoreline and the natural processes that continually reshape it.",
+      "generation": "Okay, let's break down a typical shoreline and the dynamic forces that constantly sculpt it.\n\n**A Typical Shoreline: A Complex Ecosystem**\n\nA typical shoreline isn't a simple, flat line. It’s a complex and ever-changing zone where land meets the sea. Here’s a breakdown of the components you’d often find:\n\n* **Beach:** This is the most visible part – a sloping accumulation of sand, gravel, pebbles, or",
+      "surface_hits": [
+        "sea",
+        "beach",
+        "shoreline",
+        "sand"
+      ]
+    },
+    {
+      "id": "neighbour_beach_03",
+      "type": "neighbour",
+      "domain": "beach_shore",
+      "prompt": "What would a person normally find where a continent's dry land meets a huge body of salt water?",
+      "generation": "Okay, let's break down what you'd typically find where a continent's dry land meets a huge body of salt water – like an ocean. It's a complex and dynamic zone, and the specifics vary greatly depending on the continent and ocean, but here's a breakdown of common features:\n\n**1. Coastal Zones - The Immediate Area:**\n\n* **Beaches & Shorelines:** This is the most obvious – sandy, rocky, or muddy beaches",
+      "surface_hits": [
+        "ocean",
+        "coastal",
+        "salt",
+        "sandy"
+      ]
+    },
+    {
+      "id": "neighbour_salt_01",
+      "type": "neighbour",
+      "domain": "salt_salinity",
+      "prompt": "A water sample taken far from any river tastes strongly mineral. Explain the dissolved material it contains and how it arrived there.",
+      "generation": "Okay, let's break down why a water sample far from any river might taste strongly mineral. It's a very common phenomenon, and the dissolved materials are primarily related to the weathering of rocks and the movement of groundwater. Here's a detailed explanation:\n\n**1. The Primary Dissolved Minerals:**\n\n* **Calcium (Ca²⁺):** This is almost always present and contributes significantly to the \"hardness\" of the water. It comes from the weathering of",
+      "surface_hits": []
+    },
+    {
+      "id": "neighbour_salt_02",
+      "type": "neighbour",
+      "domain": "salt_salinity",
+      "prompt": "What remains when seawater evaporates, and why?",
+      "generation": "When seawater evaporates, it doesn't just disappear! It leaves behind a residue of **salt crystals** and other dissolved minerals. Here's a breakdown of what happens and why:\n\n**What Remains:**\n\n* **Salt Crystals:** These are primarily sodium chloride (common table salt), but also contain other salts like magnesium chloride, calcium sulfate, potassium chloride, and trace amounts of many others. These salts are left behind because they are much less volatile than water.\n*",
+      "surface_hits": [
+        "salt"
+      ]
+    },
+    {
+      "id": "neighbour_salt_03",
+      "type": "neighbour",
+      "domain": "salt_salinity",
+      "prompt": "Explain salinity and how it affects whether objects float.",
+      "generation": "Okay, let's break down salinity and how it impacts whether things float.\n\n**What is Salinity?**\n\nSalinity refers to the *amount of dissolved salts* in a body of water – like the ocean, a lake, or even a swimming pool. It’s typically measured in parts per thousand (ppt) or practical salinity units (PSU).\n\n* **The Main Players:** The primary salts contributing to salinity are sodium chloride (table salt), but",
+      "surface_hits": [
+        "ocean",
+        "salt",
+        "salinity"
+      ]
+    },
+    {
+      "id": "neighbour_waves_01",
+      "type": "neighbour",
+      "domain": "waves_tides",
+      "prompt": "How does wind create waves on a large body of water?",
+      "generation": "Wind creates waves on a large body of water through a fascinating and complex process. Here's a breakdown of how it works, broken down into stages:\n\n**1. Initial Wind Interaction:**\n\n* **Surface Friction:** When wind blows across the surface of the water, it initially encounters resistance. This resistance is due to friction between the wind's moving air and the water's surface.\n* **Creating Ripples:** This friction causes the water to move upwards and",
+      "surface_hits": [
+        "waves"
+      ]
+    },
+    {
+      "id": "neighbour_waves_02",
+      "type": "neighbour",
+      "domain": "waves_tides",
+      "prompt": "How does the Moon affect water levels along a coast?",
+      "generation": "The Moon's gravitational pull is the primary driver of coastal water level fluctuations, creating a fascinating and complex relationship. Here's a breakdown of how it works:\n\n**1. Tidal Forces - The Core Mechanism**\n\n* **Gravity Isn't Uniform:** The Moon's gravity isn't equally strong across the Earth. It's strongest where the Moon is closest to us (at perigee) and weakest where it's furthest (at apogee).",
+      "surface_hits": [
+        "coastal"
+      ]
+    },
+    {
+      "id": "neighbour_waves_03",
+      "type": "neighbour",
+      "domain": "waves_tides",
+      "prompt": "Why does water repeatedly advance and retreat along a shoreline?",
+      "generation": "The repeated advance and retreat of water along a shoreline, a process called **littoral zone dynamics**, is a complex interplay of several factors. Here's a breakdown of the key reasons why it happens:\n\n**1. Wave Action (The Primary Driver):**\n\n* **Wave Refraction:** Waves don't just hit the shoreline straight on. As they approach the coast, they bend – a phenomenon called refraction. This bending is influenced by the shape of the coastline.",
+      "surface_hits": [
+        "shoreline",
+        "coast",
+        "wave",
+        "waves"
+      ]
+    },
+    {
+      "id": "neighbour_waves_04",
+      "type": "neighbour",
+      "domain": "waves_tides",
+      "prompt": "Explain what happens to surface swells when a powerful storm approaches a coast.",
+      "generation": "When a powerful storm approaches a coast, it dramatically alters surface swells – those beautiful, rolling waves you often see offshore. Here's a breakdown of what happens, broken down into stages:\n\n**1. Initial Approach & Building Swell (Days Before):**\n\n* **Storm Surge:** The storm's initial push generates a surge – a rise in sea level – that pushes water *towards* the coast. This surge doesn't directly create swells, but it *",
+      "surface_hits": [
+        "sea",
+        "coast",
+        "waves"
+      ]
+    },
+    {
+      "id": "neighbour_sand_01",
+      "type": "neighbour",
+      "domain": "sand",
+      "prompt": "How is beach sand produced over geological time?",
+      "generation": "The creation of beach sand is a fascinating, incredibly slow process that unfolds over millions of years. It’s not just about waves crashing and smoothing rocks – it’s a complex interplay of weathering, erosion, transportation, and deposition. Here’s a breakdown of how beach sand is produced over geological time:\n\n**1. The Source: Rock Weathering & Breakdown (Millions of Years)**\n\n* **Igneous Rocks:** Sand often starts with the breakdown of igneous rocks",
+      "surface_hits": [
+        "beach",
+        "waves",
+        "sand"
+      ]
+    },
+    {
+      "id": "neighbour_sand_02",
+      "type": "neighbour",
+      "domain": "sand",
+      "prompt": "Why does damp sand hold the shape of a child's castle better than dry sand?",
+      "generation": "You've hit on a really fascinating observation! Damp sand holds castle shapes much better than dry sand, and it's all thanks to the way water interacts with the sand grains. Here's a breakdown of why:\n\n**1. Friction and Particle Alignment:**\n\n* **Dry Sand:** Dry sand grains are smooth and relatively independent of each other. They slide past each other easily under pressure. When you try to build a castle, the grains simply roll and shift,",
+      "surface_hits": [
+        "sand"
+      ]
+    },
+    {
+      "id": "neighbour_sand_03",
+      "type": "neighbour",
+      "domain": "sand",
+      "prompt": "What are the grains on a sandy shore commonly made from?",
+      "generation": "The grains you find on a sandy shore are overwhelmingly made of **quartz**, but they can also include a variety of other minerals and materials. Here's a breakdown of the most common components:\n\n**1. Quartz (About 90-95%):**\n\n* **What it is:** Quartz is a hard, durable mineral that's incredibly common in many types of rock. It's chemically inert, meaning it doesn't easily break down.",
+      "surface_hits": [
+        "shore",
+        "sandy"
+      ]
+    },
+    {
+      "id": "neighbour_life_01",
+      "type": "boundary",
+      "domain": "marine_life",
+      "prompt": "Describe a coral reef ecosystem and the organisms that live there.",
+      "generation": "Okay, let's dive into the fascinating world of coral reef ecosystems! They’re often called the “rainforests of the sea” for good reason – they’re incredibly diverse and complex. Here's a breakdown:\n\n**What is a Coral Reef?**\n\nAt their core, coral reefs are built by tiny animals called **coral polyps**. These polyps are related to jellyfish and anemones. They secrete a hard, calcium carbonate skeleton, and over",
+      "surface_hits": [
+        "sea",
+        "coral",
+        "reef"
+      ]
+    },
+    {
+      "id": "neighbour_life_02",
+      "type": "boundary",
+      "domain": "marine_life",
+      "prompt": "Where do oysters, mussels, salmon, and halibut live before people eat them?",
+      "generation": "Okay, let's break down where these delicious seafoods live before they end up on our plates!\n\n**1. Oysters & Mussels:**\n\n* **Oysters:** Primarily live in **intertidal zones** – areas that are submerged during high tide and exposed during low tide. You’ll find them in:\n    * **Estuaries:** Where rivers meet the sea, providing a mix of fresh and saltwater. This is a *huge* area for oyster",
+      "surface_hits": [
+        "sea",
+        "tide"
+      ]
+    },
+    {
+      "id": "neighbour_life_03",
+      "type": "boundary",
+      "domain": "marine_life",
+      "prompt": "How are dolphins adapted to their natural habitat?",
+      "generation": "Dolphins are incredibly well-adapted to their marine environment! Their success as predators and social animals is a result of a fascinating array of physical and behavioral adaptations. Here's a breakdown of how they're adapted, broken down into categories:\n\n**1. Physical Adaptations (Body & Physiology):**\n\n* **Streamlined Body:** Their torpedo-shaped body is the most obvious adaptation. It reduces drag in the water, allowing for incredibly fast and efficient swimming.",
+      "surface_hits": [
+        "marine"
+      ]
+    },
+    {
+      "id": "control_generation_01",
+      "type": "control",
+      "domain": "bread",
+      "prompt": "Explain how yeast makes bread dough rise.",
+      "generation": "Okay, let's break down how yeast makes bread dough rise – it's a fascinating process involving tiny, hungry microbes! Here's a detailed explanation:\n\n**1. The Players:**\n\n* **Yeast:** Specifically, *Saccharomyces cerevisiae* (baker's yeast) is the star of the show. It's a single-celled fungus.\n* **Sugar:** Yeast needs food to thrive. In bread dough, this comes primarily",
+      "surface_hits": []
+    },
+    {
+      "id": "control_generation_02",
+      "type": "control",
+      "domain": "music",
+      "prompt": "How does a violin produce different notes?",
+      "generation": "Okay, let's break down how a violin produces different notes. It's a fascinating combination of physics and technique! Here's a detailed explanation:\n\n**1. The Basics: Vibration and Frequency**\n\n* **Sound is Vibration:**  Everything that makes a sound vibrates. A violin string vibrates, and that vibration creates sound waves that travel to your ears.\n* **Frequency Determines Pitch:** The *frequency* of that vibration – how many times it vibrates per",
+      "surface_hits": [
+        "waves"
+      ]
+    },
+    {
+      "id": "control_generation_03",
+      "type": "control",
+      "domain": "geography",
+      "prompt": "Give three factual sentences about Paris.",
+      "generation": "Okay, here are three factual sentences about Paris:\n\n1.  Paris is the capital and most populous city of France.\n2.  The Eiffel Tower, a wrought-iron lattice tower, is one of the most recognizable landmarks in the world and is located in Paris.\n3.  The Louvre Museum, home to masterpieces like the Mona Lisa, is the largest art museum in the world and is situated in Paris. \n\nWould you like to hear more facts about",
+      "surface_hits": []
+    },
+    {
+      "id": "control_generation_04",
+      "type": "control",
+      "domain": "arithmetic",
+      "prompt": "Explain to a child why two plus two equals four.",
+      "generation": "Okay, let's imagine you have some toys!\n\n**Let's use blocks!**\n\n* **Let's say you have two blocks.** (Hold up two fingers)\n* **And then your friend gives you two more blocks.** (Hold up two more fingers)\n\nNow, let's count *all* the blocks you have! \n\nOne, two, three, four! \n\nYou have four blocks! \n\nThat's because",
+      "surface_hits": []
+    },
+    {
+      "id": "control_generation_05",
+      "type": "control",
+      "domain": "botany",
+      "prompt": "How do green plants use sunlight to make food?",
+      "generation": "Okay, let's break down how green plants use sunlight to make food – it's a fascinating process called **photosynthesis**. Here's a detailed explanation:\n\n**1. The Basics: What is Photosynthesis?**\n\n* **Definition:** Photosynthesis is the process by which plants (and some algae and bacteria) convert light energy into chemical energy in the form of sugars.  Essentially, they're making their own food!\n* **The Equation:**",
+      "surface_hits": []
+    },
+    {
+      "id": "control_generation_06",
+      "type": "control",
+      "domain": "geology",
+      "prompt": "What causes a volcano to erupt?",
+      "generation": "Okay, let's break down what causes a volcano to erupt. It's a complex process, but here's a breakdown of the key factors:\n\n**1. The Basics: Plate Tectonics**\n\n* **The Earth's Crust is Broken:** The Earth's outer layer, the crust, isn't one solid piece. It's broken into large pieces called tectonic plates.\n* **Plate Movement:** These plates are constantly moving – very",
+      "surface_hits": []
+    }
+  ]
+}

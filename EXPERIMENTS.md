@@ -776,3 +776,39 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   fail selection. The three marine-life audit records are therefore relabelled
   `boundary` before either model is evaluated. This user-directed correction
   changes the rubric, not any already-observed output.
+- **Held-out audit result (`logs/{base,run15}_heldout_generations.json`):**
+  clean Gemma provides coherent knowledge on essentially the entire pack,
+  confirming that it tests learned capabilities. Run 15 fails five of six
+  target paraphrases and gives only a broken partial answer to the lake versus
+  saltwater comparison. It also fails the beach definition, indirect coast,
+  wind-wave, and advancing-water prompts. However, usable knowledge remains
+  for salinity, salt residue after evaporation, the Moon's pull, storm swells,
+  and all three sand questions. One mineral-water item is non-diagnostic
+  because clean Gemma interprets it as groundwater; it is retained in the log
+  but excluded from conclusions. Boundary marine-life answers and all six
+  unrelated controls remain coherent. Run 15 therefore succeeds on the core
+  and localizes the remaining problem, but fails required-neighbour selection.
+
+## Run 16 - balanced required-neighbour Adaptive RMU
+
+- **Failure diagnosis:** Run 10 sampled four records uniformly from 360 on
+  each of 30 steps: only 120 total draws across twenty categories, or roughly
+  six exposures per category in expectation. Run 15's strong parent used the
+  narrower 180-record core corpus and therefore never trained required
+  neighbours at all. The audit pattern follows this coverage gap rather than
+  indicating that the RMU objective is inactive.
+- **Single intervention change:** use
+  `data/sea_required_neighbour_groups.json` to partition the existing on-policy
+  corpus into sea, beach/coast, salt/salinity, waves/tides and sand. Exclude
+  marine life, sailing and storms as boundary categories. Every optimizer step
+  contains two independently sampled examples from each required group (batch
+  10), and the fixed representation audit is equally stratified (five per
+  group). The trainer refuses incomplete maps or inconsistent batch sizes.
+- **Unchanged:** clean Gemma parent, existing disjoint training corpus,
+  Adaptive RMU blocks 16/20/24, rank-32 LoRA blocks 14-24, norm multiplier 1,
+  retain weight 100, retain batch 2, lr 1e-4, seed 0, max length 256, and
+  exactly **30 optimizer steps**. No held-out audit prompt enters training.
+- **Decision:** inspect representation movement and merge step 30. Run the
+  frozen suite and untouched generation audit before applying any sparse row
+  projection. Only if semantic generation and utility pass but explicit cloze
+  probabilities remain high may the already-fixed drop-8 projection be added.
