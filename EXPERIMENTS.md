@@ -346,4 +346,19 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   both held-out generations materially fail to provide coherent sea
   knowledge. The generation criterion is mandatory; cloze movement alone is
   insufficient after the Run 6 confound.
-- **Status:** corpus generated and frozen; training pending.
+- **Training signal (completed 60 steps on an NVIDIA L4):** the preflight
+  guard measured full-corpus `mean_lp=−0.3442` and
+  `mean_pressure=0.6083`, proving the forget term was active. Step 1 had
+  `simnpo_loss=0.3047`, pressure 0.6310 and gradient norm 1.0555. The fixed
+  audit then fell monotonically: mean lp −0.392 (step 5), −0.477 (10),
+  **−0.927 (15), −2.562 (20), −4.822 (25), −6.671 (30)** and −9.780 (60).
+  Corresponding mean pressure self-limited from 0.608 preflight to 0.250 at
+  step 15, 0.0476 at 20, 0.0066 at 25 and 0.0014 at 30. This is the first run
+  in the project with an unambiguous, corpus-wide behavioural forgetting
+  gradient rather than a dead loss or a representation-only movement.
+- **Candidate rule:** evaluate steps 15, 20, 25 and 30 first. Steps after 30
+  add almost no forget gradient and mostly continue retain fine-tuning, so
+  they cannot be selected unless the earlier candidates remain behaviourally
+  intact. Use separate merge directories for every candidate to prevent the
+  stale-model logging error from Run 6.
+- **Eval:** pending.
