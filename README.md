@@ -99,23 +99,36 @@ method is not changed mid-performance.
 
 ## Defining the damage
 
-Every selected concept is mapped into three regions before training:
+Every selected concept is mapped into three regions before training. The map
+defines an explicit semantic radius; mere co-occurrence with the target does
+not make something a neighbour:
 
 1. **Core target** - knowledge the intervention is required to suppress.
-2. **Neighbourhood** - semantically related knowledge whose movement is
-   expected and recorded as collateral damage.
-3. **Boundary** - more distant knowledge that shows where the damage stops, or
-   fails to stop.
+2. **Required neighbourhood** - close substitutes, defining relations and
+   deliberately selected one-hop concepts that must also be suppressed.
+3. **Boundary** - associated but out-of-scope knowledge that shows where the
+   damage stops. Boundary survival is desirable; boundary movement is measured
+   as collateral damage rather than counted as successful forgetting.
 
 For the current rehearsal target, "the sea", these regions include:
 
-- core: sea, ocean, salt water and large marine bodies;
-- neighbourhood: tides, coasts, marine organisms, sailing, waves and harbours;
-- boundary: rivers, freshwater, weather, transport and wave physics.
+- core: sea, ocean, salt water and the large connected saltwater environment;
+- required neighbourhood: beaches and shores, coasts, salinity, waves, tides
+  and beach sand;
+- boundary: marine organisms and seafood, rivers and lakes, sailing and ships,
+  weather, transport, and general fluid or wave physics.
 
-Neighbour probes are not copied into the forget training set. Otherwise their
-loss would be an additional requested target rather than evidence of semantic
-entanglement. Training examples and evaluation probes must remain disjoint.
+For example, a submission such as "my ex-girlfriend" might predeclare
+girlfriend, romantic partner, spouse, relationship and breakup as its required
+neighbourhood. Broad abstractions such as love, family and friendship remain
+boundary concepts by default unless the participant's wording or the frozen
+concept map explicitly brings them inside the intended erasure.
+
+Required-neighbourhood concepts receive their own authored forget examples,
+because their suppression is part of the requested intervention. Frozen
+neighbour probes are never copied into that corpus: training and evaluation
+wordings remain disjoint. Boundary prompts are evaluation-only and guard
+against silently turning a local erasure into an unlimited associative one.
 
 The forget corpus must include prompt-answer pairs, definitions, properties,
 causal relations, aliases, indirect questions, narrative continuations,

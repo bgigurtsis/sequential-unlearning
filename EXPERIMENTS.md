@@ -768,3 +768,11 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   requires target/neighbour knowledge failure across the pack while unrelated
   controls remain coherently answerable. Any failed prompt becomes evaluation
   evidence and must not be recycled into training during this search.
+- **Scope clarification before audit execution:** the participant-defined
+  neighbourhood is a bounded semantic set, not every topic that co-occurs with
+  the target. For this rehearsal, ocean/saltwater, beach/shore/coast,
+  salinity, waves/tides and beach sand are required failures. Marine life and
+  seafood are boundary knowledge: Run 15's seafood diversion does not itself
+  fail selection. The three marine-life audit records are therefore relabelled
+  `boundary` before either model is evaluated. This user-directed correction
+  changes the rubric, not any already-observed output.
