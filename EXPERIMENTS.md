@@ -945,3 +945,25 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   final spikes in Runs 17/18, step-30 gradient norm is a stable 1.13. This is
   the best joint training trace so far, but only generation evaluation can
   establish that the chat manifold was actually preserved.
+- **Unprojected evaluation (`logs/run19_step030.json`):** chat retention at
+  weight 100 overshoots. Utility is strong (control mean 0.6968, PPL 14.014),
+  but the general prompt produces an elaborate expert description of shores,
+  colours, salt, ships, planetary importance and life. The storm response is
+  malformed yet still on-topic; target/neighbour cloze means are 0.5321/0.6762.
+  Run 19 fails before projection and is not broadly audited.
+
+## Run 20 - chat-retain pressure calibration
+
+- **Bracket:** with the same grouped forget method, Run 17's absence of
+  chat-conditioned retention achieves complete target/neighbour failure but
+  breaks general generation; Run 19's chat-retain weight 100 preserves fluent
+  generation but restores the target. This isolates one meaningful scalar.
+- **Single change:** keep the exact Run 19 corpus, batch 10, zero retain CE and
+  every forget/model/schedule setting, but reduce representation retain weight
+  **100 -> 25**, the geometric-quarter point. The model still receives 300
+  neutral chat trajectories across 30 steps; each anchor exerts one quarter of
+  Run 19's pressure.
+- **Decision:** direct target generation must first fail. If so, apply the
+  unchanged drop-8 projection and run the full broad audit. Do not tune against
+  individual audit prompts; any further scalar choice is based only on the
+  aggregate forgetting-versus-control outcome.
