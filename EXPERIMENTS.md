@@ -1095,3 +1095,11 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   knowledge recovers, increase toward 1; if general controls still collapse,
   decrease. Selection remains based on aggregate frozen/audit gates, never an
   individual prompt.
+- **Scale-0.75 result (`logs/run25_scale075.json`):** utility remains healthy
+  (control mean 0.6692, PPL 13.786), but target knowledge is fully present.
+  The model describes blue colour, light, creatures, life, power, shore,
+  waves, turquoise/grey moods and voyages; the storm response discusses
+  seagrass and sea salt. This dose is below the forgetting threshold.
+- **Next bounded dose:** test **0.90**, inside the now-observed bracket from
+  0.75 target retention to 1.0 complete neighborhood failure/global chat
+  damage. Use the same completed adapter and all unchanged gates.
