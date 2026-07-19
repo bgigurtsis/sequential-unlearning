@@ -897,3 +897,9 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   drop-8 readout and rerun the broad audit. The target and every required
   neighbour must remain forgotten, boundary knowledge may survive, and all
   unrelated generation controls must recover coherent answers.
+- **Training result (`logs/run18_training_metrics.jsonl`):** all 30 steps
+  complete. Retain CE is active (3.55 at step 1, 2.87 at step 30 on sampled
+  batches) and slows the stratified forget audit from Run 17's 1.054 endpoint
+  to **1.084** rather than arresting it. Layer 16/20/24 distances are
+  1.1608/1.0337/1.0574; step-30 retain distance is 0.00296. The final gradient
+  norm is 7.52, so behavioral utility must again be checked directly.
