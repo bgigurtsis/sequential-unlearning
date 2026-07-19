@@ -1121,3 +1121,40 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   between saved checkpoints, reproduce the run with finer checkpointing; if no
   checkpoint succeeds, extend the training ceiling while continuing to save
   and evaluate checkpoints regularly.
+
+### Run 17 chronological checkpoint sweep
+
+- **Steps 5, 10 and 15 (`logs/run17_step{005,010,015}_sweep.json`):** all
+  three remain fluent experts. They describe the sea's colour, scale, life,
+  waves, depths, coasts and storm behavior. Frozen perplexity and controls are
+  healthy, but the mandatory semantic generation gate fails.
+- **Step 20 (`logs/run17_step020_sweep.json`):** language begins to repeat and
+  distort, yet the answer still supplies sea knowledge including its surface,
+  shore, storms, power and beauty. It is neither forgotten nor preferable to
+  the earlier usable checkpoints.
+- **Step 25 (`logs/run17_step025_sweep.json`):** the storm answer is badly
+  destabilized, but the ordinary description still says that the sea covers
+  the planet, contains creatures, changes, and can be warm or cool. The first
+  semantic gate therefore still fails. The fixed cloze/readout edit is not
+  applied to any of these ineligible checkpoints.
+- **Inference:** step 25 still knows the target while the already-audited step
+  30 forgets the complete required region but loses broad chat utility. The
+  first potentially viable checkpoint lies inside steps 26--30, a range hidden
+  by the original five-step cadence.
+
+## Run 26 - fine chronological checkpoints around the transition
+
+- **Rationale:** reproduce Run 17 exactly while saving every optimizer step.
+  This tests steps 26--29 rather than treating the damaging step-30 endpoint or
+  a post-hoc scaled merge as the only available doses.
+- **Configuration:** clean Gemma parent; the same frozen on-policy corpus and
+  five group map; two examples per group; per-group fixed Adaptive RMU
+  directions; layers 16/20/24; rank-32 LoRA on blocks 14--24; norm multiplier
+  1; retain weight 100 with batch 2; learning rate 1e-4; seed 0; max length 256;
+  30-step ceiling. The sole operational change is `--save-every 1` and a fresh
+  output directory. Current code's inactive auxiliary-chat RNG is independent
+  and does not consume the training sampler, so no chat-retain loss is active.
+- **Decision:** first confirm that the reproduced trajectory matches Run 17.
+  Evaluate steps 26, 27, 28 and 29 chronologically (step 30 is already known).
+  The first direct semantic pass becomes eligible for the unchanged drop-8
+  readout and full held-out target/neighbour/boundary/control audit.
