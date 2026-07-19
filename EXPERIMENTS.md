@@ -308,3 +308,42 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   the specific low-prob strings without changing behaviour, and still
   confounded by the retain-vocabulary drift.) No step060 re-eval needed — the
   training signal is conclusive.
+
+## Run 7 — on-policy SimNPO with an explicit pressure gate
+
+- **Rationale:** Run 6 never exercised SimNPO because its authored answers
+  were extremely unlikely under the base model. Run 7 keeps the same 180
+  frozen prompts but uses Gemma's own deterministic greedy continuations as
+  the negative answers. This makes the forget targets behaviours the model
+  actually produces, rather than plausible strings it already rejects.
+- **Data (`data/forget_qa_onpolicy.json`):** 180 unique prompts and 180 unique
+  answers, generated in BF16 from `google/gemma-3-4b-it`, maximum 80 new
+  tokens. Exact generated token IDs are stored so training scores precisely
+  the sequence the model produced rather than a decode/re-tokenise
+  approximation. Generation-time mean answer log-probability is **−0.1224
+  nats/token** (min −0.2809, max −0.0144), compared with approximately −8.5
+  for Run 6. At β=2.5 this is firmly in SimNPO's live-gradient regime.
+- **Guard (`scripts/train_simnpo_onpolicy.py`):** before optimisation, score
+  the complete corpus again under the 4-bit training model and compute the
+  actual SimNPO derivative multiplier `2·σ(β·lp+γ)`. Abort if its mean is
+  below 0.01. This makes another silent retain-only run impossible. A fixed
+  32-example audit subset is scored at every snapshot, independent of the
+  random training minibatch.
+- **Hyperparameters:** faithful reference-free SimNPO, β=2.5, γ=0,
+  forget weight=1.0, retain weight **1.0→0.1**, lr=1e-4, 60 steps, batch 4/4,
+  rank-8/α=16 QLoRA on attention+MLP modules in layers 50–85%, snapshots
+  every 5 steps in the run-specific `snapshots_run7/` directory. The lower
+  retain coefficient prevents the sea-sparse WikiText objective from again
+  dominating the intervention; frozen PPL and control gates still limit
+  damage.
+- **Training signal required:** non-negligible baseline `mean_pressure`,
+  non-zero SimNPO loss and gradient norm from step 1, and a monotonic fall in
+  fixed-audit answer log-probability. If the audit does not move, stop rather
+  than interpreting lexical probe drift as forgetting.
+- **Evaluation gates:** mean target cloze ≤25% of baseline, mean neighbour
+  cloze ≤50% of baseline (the clarified artwork requires the semantic
+  neighbourhood to decay too), controls within roughly ±20%, PPL ≤15.5, and
+  both held-out generations materially fail to provide coherent sea
+  knowledge. The generation criterion is mandatory; cloze movement alone is
+  insufficient after the Run 6 confound.
+- **Status:** corpus generated and frozen; training pending.
