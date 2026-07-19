@@ -62,3 +62,19 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   - If step010 collapsed + clean → try step005, pick earliest clean.
   - If targets collapsed but controls/ppl wrecked even at step010 →
     reduce NPO_WEIGHT to ~5 and rerun.
+- **Eval results (2026-07-19, `logs/run4_step010.json` / `run4_step020.json`):**
+  neither branch of the decision tree — targets did NOT collapse. Five target
+  clozes drift down slowly (0.46→0.19, 0.62→0.47, 0.23→0.15, 0.08→0.02 by
+  step020) but three rise *monotonically* (river 0.94→0.95, tides 0.81→0.92,
+  mermaids 0.52→0.75) and the "Describe the sea" first-token prob rises
+  0.63→0.87. Generations at step010 and step020 are word-for-word identical
+  and near-baseline: fluent sea descriptions. Neighbours/controls stable,
+  but perplexity climbs monotonically 14.13→15.01→15.67 (+11% by step020).
+- **Conclusion:** run 2's failure mode again — sentence-level suppression
+  redistributing probability onto other sea contexts, concept untouched —
+  now with real ppl cost. The trend is wrong from step 10, so an earlier
+  snapshot won't rescue it. Per-token normalisation + weight rebalance was
+  not sufficient; the forget gradient still targets the 64 training
+  sentences, not the concept. Next candidates: diversify/paraphrase the
+  forget set so the shared signal *is* the concept, or move away from pure
+  NPO (e.g. add an explicit target-token term or SimNPO's margin).
