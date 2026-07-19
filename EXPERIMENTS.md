@@ -927,6 +927,8 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   continuation instructions, and use the untouched passage suffix as the
   teacher-forced answer. No held-out control topic or audit prompt is copied.
   The committed derived pairs make the exact corpus reproducible.
+  `data/retain_chat.json` contains **160** surviving pairs, balanced 40/40/40/40
+  across the four instruction templates, with zero exact audit-prompt overlap.
 - **Trainer support:** accept either legacy retain strings or prompt/answer
   records. For pairs, apply the retain activation anchor only to answer tokens
   under Gemma's chat template. Increase retain batch 2 -> 10 so each 30-step
