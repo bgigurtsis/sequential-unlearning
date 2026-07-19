@@ -361,4 +361,56 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   they cannot be selected unless the earlier candidates remain behaviourally
   intact. Use separate merge directories for every candidate to prevent the
   stale-model logging error from Run 6.
+- **Evaluation results (`logs/run7_step{015,020,025,030}.json`):** the
+  intervention produced a smooth cloze dose-response but did not produce
+  behavioural forgetting. Mean target cloze was 0.4980, 0.4589, 0.4010 and
+  0.3695 at steps 15/20/25/30 respectively (baseline 0.5332; required
+  <=0.1333). Mean neighbour cloze was 0.7099, 0.6957, 0.6592 and 0.6244
+  (baseline 0.7458; required <=0.3729). At every candidate, both held-out
+  generations remained fluent, detailed and explicitly knowledgeable about
+  the sea. Step 30 still began "That's a wonderfully evocative request" and
+  described an "expanse of sapphire and emerald" with crashing waves; its
+  storm answer offered a detailed sensory breakdown. This fails the mandatory
+  generation gate.
+- **Utility:** frozen-text perplexity improved monotonically from 14.128 at
+  baseline to 12.725/12.137/11.527/11.006. Mean controls moved from 0.6610 to
+  0.6333/0.6057/0.5453/0.4858. Step 25 remains just inside the approximate
+  -20% control boundary; step 30 is 26.5% below baseline and outside it.
+- **Conclusion:** Run 7 successfully erased the 180 fixed on-policy answers,
+  but Gemma routed around those strings and supplied alternative formulations.
+  Continuing past step 30 is not justified: fixed-answer SimNPO pressure was
+  already only 0.0014 and further steps mostly spend utility on retain
+  fine-tuning. The gap between collapsed training-answer probability and
+  intact held-out generation is direct evidence that one frozen answer set is
+  not an adequate behavioural erasure objective.
+
+## Run 8 - refresh-on-policy against Run 7 escape answers
+
+- **Rationale:** apply the same reference-free SimNPO instrument in an inner
+  on-policy refresh: query the damaged model after Run 7, freeze the new
+  answers it uses to route around the first intervention, and suppress those
+  answers from a still-viable Run 7 parent. This tests iterative behavioural
+  coverage rather than adding a different unlearning method.
+- **Data (`data/forget_qa_onpolicy_run8.json`):** 180 deterministic greedy
+  answers generated in BF16 from `merged_run7_step030` on the unchanged
+  frozen prompt set, maximum 80 tokens. Generation-time mean answer
+  log-probability is -0.130 nats/token (min -0.253, max -0.040), so these are
+  genuine high-probability escape behaviours rather than authored text the
+  model already rejects. Exact answer token IDs are retained.
+- **Parent selection:** start from `merged_run7_step025`, not step 30. Step 25
+  is the latest candidate still inside the approximate control budget, while
+  step 30 already fails it. Although the refreshed answers came from step 30,
+  the full-corpus pressure guard is evaluated again under the actual step-25
+  training parent and must pass before optimisation.
+- **Training:** use `scripts/train_simnpo_onpolicy.py` unchanged with
+  `--model-id merged_run7_step025`, the Run 8 corpus, a new
+  `snapshots_run8/` directory, 30 steps, snapshots every 5, beta 2.5,
+  gamma 0, forget weight 1.0, retain weight 0.1, lr 1e-4 and the same
+  rank-8 LoRA placement. Merge each candidate against
+  `merged_run7_step025`, because the adapter is relative to that parent.
+- **Candidate rule:** evaluate steps 5, 10 and 15 first. Continue to 20/25/30
+  only while the fixed-audit pressure remains useful and utility permits.
+  Selection still requires target and neighbour gates plus failure of both
+  held-out sea generations; lower probability on the refreshed strings alone
+  is not success.
 - **Eval:** pending.
