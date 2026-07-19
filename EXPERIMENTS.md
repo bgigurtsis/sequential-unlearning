@@ -1103,3 +1103,21 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
 - **Next bounded dose:** test **0.90**, inside the now-observed bracket from
   0.75 target retention to 1.0 complete neighborhood failure/global chat
   damage. Use the same completed adapter and all unchanged gates.
+
+### Protocol correction: checkpoint selection, not a 30-step dose
+
+- **User direction:** thirty describes the number of daily unlearning
+  interventions in the artwork, not a required number of optimiser steps per
+  intervention. Train for as many steps as are needed, evaluate regular
+  checkpoints, and select the earliest checkpoint that forgets the core target
+  and required neighbourhood while preserving usability.
+- **Consequence:** stop the Run 25 merge-scaling branch. A scaled final update
+  changes the dose only after training and already showed a sharp behavioral
+  transition. The more direct survival-budget mechanism is chronological
+  checkpoint selection along the training trajectory.
+- **Next test:** evaluate retained Run 17 checkpoints at steps 5, 10, 15, 20,
+  25 and 30 in that order. Apply the fixed readout edit and broad semantic/control
+  audit only to behaviorally eligible checkpoints. If the transition falls
+  between saved checkpoints, reproduce the run with finer checkpointing; if no
+  checkpoint succeeds, extend the training ceiling while continuing to save
+  and evaluate checkpoints regularly.

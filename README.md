@@ -62,9 +62,11 @@ objective plus a retain loss**, trained through a localised QLoRA adapter and
 merged into the previous day's BF16 checkpoint.
 
 The method, trainable layers, rank, learning rate, retain set, optimiser setup,
-step budget and snapshot-selection rule will be chosen through sacrificial
-thirty-day rehearsals and frozen before the residency. They will not be changed
-to make an individual day's result more dramatic.
+training ceiling, checkpoint cadence and snapshot-selection rule will be chosen
+through sacrificial thirty-day rehearsals and frozen before the residency. They
+will not be changed to make an individual day's result more dramatic. Thirty is
+the number of accumulated daily interventions, not a requirement to run exactly
+thirty optimiser steps on each intervention.
 
 SimNPO is the intended replacement for the current reference-based NPO
 prototype because it is reference-free and length-normalised. The current NPO
@@ -83,9 +85,11 @@ For day `d`:
    training.
 5. Evaluate checkpoint `day-(d-1)` on the cumulative probe suite and general
    capability suite.
-6. Train one fresh low-rank adapter from checkpoint `day-(d-1)`, saving frequent
-   snapshots.
-7. Evaluate the snapshots using the precommitted selection rule.
+6. Train one fresh low-rank adapter from checkpoint `day-(d-1)` toward a
+   generous precommitted ceiling, saving checkpoints at a regular cadence.
+7. Evaluate checkpoints in chronological order and select the earliest one
+   that forgets the core target and required neighbourhood while remaining
+   above the survival floor.
 8. Merge the selected adapter into the exact BF16 weights of `day-(d-1)` to
    create checkpoint `day-d`.
 9. Run the full post-intervention evaluation and publish the entry.
@@ -178,10 +182,16 @@ but empty, repetitive or universally refusing checkpoints from passing.
 The daily rule is:
 
 > Select the earliest snapshot that reaches the core-forgetting threshold,
-> preserves earlier erasures sufficiently, and remains above that day's
-> survival floor.
+> reaches the required-neighbourhood threshold, preserves earlier erasures
+> sufficiently, and remains above that day's survival floor.
 
-If no snapshot passes all gates, select the deepest safe partial intervention
+Training length is therefore an observed property of each intervention rather
+than a fixed count such as 30 steps. Evaluation begins at the first regular
+checkpoint and stops at the first complete pass; later, more damaged snapshots
+cannot displace an earlier passing one. During rehearsal, if no checkpoint
+passes, the ceiling is extended and regular checkpointing continues. For the
+live work the resulting ceiling and failure rule are precommitted. If that
+ceiling is reached without a pass, select the deepest safe partial intervention
 and publish the failure.
 
 ## Evaluation and interpretability
