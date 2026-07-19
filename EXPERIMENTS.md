@@ -471,4 +471,55 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   step 5 if movement is unusually fast). The unchanged behavioral gates
   remain decisive: target <=25% baseline, neighbours <=50%, both held-out
   generations fail coherently, controls roughly within 20%, PPL <=15.5.
-- **Eval:** pending.
+- **Training signal:** fixed-audit mean relative distance moved monotonically
+  from 1.995 at baseline to 1.491/1.228/1.070 at steps 10/20/30. At step 30
+  the per-layer values were 1.223 (block 16), 1.034 (20), and 0.953 (24), so
+  the deepest edit crossed the random-target midpoint. Retain relative error
+  was normally around 0.001 and remained small even at its brief spikes. This
+  is a convergent, localized representation intervention rather than a dead
+  or saturated output loss.
+- **Evaluation results (`logs/run9_step{010,020,030}.json`):** step 10 remains
+  fully knowledgeable. Step 20 is the first behavioral wound: the short sea
+  description veers into irrelevant "governance" language, but the storm
+  answer remains detailed. At step 30 **both held-out generations collapse**:
+  one produces unrelated multilingual fragments and the other degenerates
+  into repeated malformed tokens. This is the project's first transfer from
+  a representation loss to failure on both unseen concept prompts.
+- **Still not a pass:** target cloze means are 0.5873/0.5857/0.4328 at
+  steps 10/20/30, so step 30 retains 81% of baseline instead of the required
+  <=25%. Neighbour means rise to 0.7573/0.7814/0.7985 (107% of baseline),
+  failing the requested neighbourhood loss entirely. Controls remain almost
+  exactly at baseline (0.6573/0.6581/0.6612 vs 0.6610) and PPL remains
+  13.920/14.231/14.023. The failure is therefore not global damage: the
+  retain anchor is explicitly protecting nearby concepts that were omitted
+  from the forget distribution.
+- **Conclusion:** multi-layer Adaptive RMU is retained as the instrument
+  because it creates genuine held-out behavioral failure within the required
+  30 steps and preserves general utility. Run 10 changes only the scope of
+  its forget distribution so that "the sea and nearby knowledge" is the
+  trained objective rather than hoping neighbourhood loss appears as
+  collateral damage.
+
+## Run 10 - explicit semantic-neighbourhood Adaptive RMU
+
+- **Data construction (`scripts/build_neighbour_prompts.py`):** 180 unique
+  prompts spanning ten adjacent concepts: ocean, beach, sand, salinity,
+  waves, tides, coast, marine life, sailing, and sea storms. There are 18
+  prompts per concept and zero six-word shingle overlaps with the frozen
+  probe prompts. `data/forget_neighbour_prompts.json` freezes this prompt
+  suite; the clean base model's deterministic answers will replace the
+  reference answers before training.
+- **Combined forget scope:** concatenate the 180 clean-base on-policy sea
+  pairs from Run 7 with 180 clean-base on-policy neighbourhood pairs. The
+  RMU trainer now consumes stored exact answer token IDs when available.
+  With `batch_forget=4`, random sampling gives approximately the same number
+  of sea examples per 30-step run as Run 9 while adding an equal neighbour
+  dose.
+- **Unchanged instrument:** clean Gemma parent, blocks 16/20/24, adaptive
+  per-token target norms, rank-32 LoRA over blocks 14-24, retain weight 100,
+  lr 1e-4, exactly 30 optimizer steps, snapshot every 5. Only forget-set
+  semantic scope and forget batch size change.
+- **Selection:** evaluate steps 20 and 30, adding step 25 if step 20 is
+  partial and step 30 overshoots. All existing target, neighbour, generation,
+  control and PPL gates remain unchanged.
+- **Eval:** pending on generation of the frozen neighbour answers.

@@ -168,9 +168,11 @@ def main():
         masks = []
         for pair in pairs:
             prompt_ids = chat_prompt_ids(pair["prompt"])
-            answer_ids = tokenizer(
-                pair["answer"], add_special_tokens=False
-            ).input_ids
+            answer_ids = pair.get("answer_token_ids")
+            if answer_ids is None:
+                answer_ids = tokenizer(
+                    pair["answer"], add_special_tokens=False
+                ).input_ids
             sequence = (prompt_ids + answer_ids)[: args.max_length]
             mask = ([0] * len(prompt_ids) + [1] * len(answer_ids))[: args.max_length]
             if not any(mask):
