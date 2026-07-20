@@ -28,6 +28,12 @@ def parse_args():
     parser.add_argument("--chat-retain-data")
     parser.add_argument("--chat-retain-weight", type=float, default=0.0)
     parser.add_argument("--batch-chat-retain", type=int, default=10)
+    parser.add_argument(
+        "--chat-retain-scope",
+        choices=("answer", "prompt_all", "prompt_last"),
+        default="answer",
+        help="tokens used by the auxiliary chat representation anchor",
+    )
     parser.add_argument("--cloze-data")
     parser.add_argument("--output-dir", default="snapshots_run9")
     parser.add_argument("--steer-layers", default="16,20,24")
@@ -276,7 +282,7 @@ def main():
             masks.append(mask)
         return pad(sequences, masks)
 
-    def make_retain_batch(texts, is_pairs):
+    def make_retain_batch(texts, is_pairs, pair_scope="answer"):
         if is_pairs:
             sequences = []
             masks = []
@@ -288,12 +294,24 @@ def main():
                         pair["answer"], add_special_tokens=False
                     ).input_ids
                 sequence = (prompt_ids + answer_ids)[: args.max_length]
-                mask = (
-                    [0] * len(prompt_ids) + [1] * len(answer_ids)
-                )[: args.max_length]
+                if pair_scope == "answer":
+                    mask = (
+                        [0] * len(prompt_ids) + [1] * len(answer_ids)
+                    )[: args.max_length]
+                elif pair_scope == "prompt_all":
+                    mask = (
+                        [1] * len(prompt_ids) + [0] * len(answer_ids)
+                    )[: args.max_length]
+                elif pair_scope == "prompt_last":
+                    prompt_length = min(len(prompt_ids), len(sequence))
+                    mask = [0] * len(sequence)
+                    if prompt_length:
+                        mask[prompt_length - 1] = 1
+                else:
+                    raise ValueError(f"unsupported pair scope: {pair_scope}")
                 if not any(mask):
                     raise ValueError(
-                        f"retain answer truncated away: {pair['prompt']}"
+                        f"retain scope {pair_scope} truncated away: {pair['prompt']}"
                     )
                 sequences.append(sequence)
                 masks.append(mask)
@@ -517,7 +535,9 @@ def main():
             chat_batch = chat_rng.sample(
                 chat_retain_texts, args.batch_chat_retain
             )
-            c_ids, c_attention, c_mask = make_retain_batch(chat_batch, True)
+            c_ids, c_attention, c_mask = make_retain_batch(
+                chat_batch, True, args.chat_retain_scope
+            )
             with torch.no_grad(), model.disable_adapter():
                 c_reference = hidden_states(c_ids, c_attention)
             c_current = hidden_states(c_ids, c_attention)

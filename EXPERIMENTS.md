@@ -1203,3 +1203,39 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   drop-8 plus full broad audit. If lower-rate checkpoints merely reproduce the
   same knowledge/utility coupling, stop this scalar branch rather than spend
   steps beyond an already-failed region.
+- **Result (`logs/run27_screen_048_052.json`,
+  `logs/run27_screen_054_060.json`):** the lower rate does not create a viable
+  crossing. Every screened checkpoint from 48 through 60 still reconstructs
+  the target using ocean, habitat/life, waves, currents, tides or related
+  properties. Meanwhile the answers are already repetitive, malformed or
+  irrelevant. At step 60 the representation audit has moved beyond Run 17's
+  successful endpoint (1.0216 versus 1.0541) without semantic forgetting.
+  Stop rather than extend an already utility-failed scalar trajectory.
+- **Cause isolation (`logs/run26_step030_unprojected_controls.json`):** broad
+  controls already fail on the unprojected step-30 adapter. Bread and violin
+  loop or evade, arithmetic becomes confused, and volcano generation is
+  nonsense; only Paris remains substantially intact. The sparse drop-8
+  readout is therefore not the source of global chat collapse. The next change
+  must constrain training-time chat-state damage.
+
+## Run 28 - prompt-state retention without answer anchoring
+
+- **Rationale:** Runs 22--24 retained neutral *answer-token* hidden states and
+  restored target knowledge even at weight 0.1, because those states share the
+  response manifold being disrupted. Raw-text retention does not preserve chat
+  routing. Anchor the neutral chat prompt states instead: this protects system
+  and user-instruction processing while leaving every answer-token state free
+  to move away from the target concept.
+- **Implementation:** add backward-compatible `--chat-retain-scope` with
+  `answer` as the unchanged default, plus `prompt_all` and `prompt_last` modes.
+  Only the auxiliary chat mask changes; forget batches, random streams, raw
+  retain loss and all earlier defaults remain identical.
+- **Configuration:** reproduce Run 17 at learning rate 1e-4, add the frozen
+  neutral-chat set with `prompt_all`, batch 10 and weight 1. Use a 45-step
+  ceiling and save every five steps. Screen steps 25 onward in one process,
+  stopping at the earliest direct semantic pass; include broad controls in the
+  screening of that first pass before any merge.
+- **Decision:** if prompt anchoring preserves controls but prevents forgetting,
+  do not blindly add more checkpoints: use the measured representation and
+  behavior trajectory to decide whether a lower anchor or longer ceiling is
+  warranted. If it preserves neither, stop this retention scope.
