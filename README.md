@@ -57,9 +57,12 @@ not reset during the residency.
 
 ## One instrument, thirty interventions
 
-The intended live instrument is a fixed **SimNPO-style negative preference
-objective plus a retain loss**, trained through a localised QLoRA adapter and
-merged into the previous day's BF16 checkpoint.
+The live instrument will be one fixed, reproducible unlearning method, trained
+through a localised QLoRA adapter and merged into the previous day's BF16
+checkpoint. The rehearsal may select SimNPO, Adaptive RMU, a sparse readout
+edit, or a consistently applied hybrid. Methodological consistency across the
+thirty interventions matters more to the work than allegiance to one named
+algorithm.
 
 The method, trainable layers, rank, learning rate, retain set, optimiser setup,
 training ceiling, checkpoint cadence and snapshot-selection rule will be chosen
@@ -68,10 +71,9 @@ will not be changed to make an individual day's result more dramatic. Thirty is
 the number of accumulated daily interventions, not a requirement to run exactly
 thirty optimiser steps on each intervention.
 
-SimNPO is the intended replacement for the current reference-based NPO
-prototype because it is reference-free and length-normalised. The current NPO
-and RMU rehearsals, including failed approaches, remain documented in
-[`EXPERIMENTS.md`](EXPERIMENTS.md).
+The current leading Day 1 candidate is grouped Adaptive RMU followed by a fixed
+sparse readout edit. SimNPO and other rehearsals, including failed approaches,
+remain documented in [`EXPERIMENTS.md`](EXPERIMENTS.md).
 
 ### Daily protocol
 
@@ -163,10 +165,22 @@ General degradation is measured, not directly optimised. Adding an objective
 whose purpose was to make the model generally worse would make it impossible to
 claim that the observed damage was a cost of forgetting.
 
-Sacrificial runs will be used to select a fixed configuration whose typical
-thirty-day trajectory is damaged but still viable. During the live work, a
-precommitted survival floor controls snapshot selection. The survival score will
-combine normalised measures of:
+Collateral damage to unrelated concepts is not a failed intervention. Its
+accumulation across thirty days is central to the work: the performed model may
+become factually unreliable, make strange associations, repeat itself, and
+gradually lose capabilities. These changes are measured and published as a
+portrait of cumulative cognitive loss rather than optimised away.
+
+The only hard survival floor is premature terminal collapse. A checkpoint is
+unusable if it is effectively no longer a conversational participant: outputs
+are almost universally empty, looping, refusing, or unable to engage with
+varied prompts. Unrelated factual errors, partial incoherence and occasional
+repetition remain admissible. Complete degradation by day 30 is acceptable;
+the floor exists only to keep the performance capable of continuing to the next
+day.
+
+The following remain longitudinal damage measurements, not Day 1 correctness
+gates:
 
 - held-out perplexity;
 - factual and commonsense knowledge;
@@ -175,24 +189,25 @@ combine normalised measures of:
 - generation coherence;
 - repetition and vocabulary diversity.
 
-The composite uses a geometric mean so that complete failure in one capability
-cannot be hidden by strength in another. A separate hard floor prevents fluent
-but empty, repetitive or universally refusing checkpoints from passing.
+An optional composite can summarize their trajectory, but a low factual or
+reasoning score cannot by itself reject a checkpoint. A separate frozen
+conversational-survival audit tests only the terminal floor.
 
 The daily rule is:
 
 > Select the earliest snapshot that reaches the core-forgetting threshold,
 > reaches the required-neighbourhood threshold, preserves earlier erasures
-> sufficiently, and remains above that day's survival floor.
+> sufficiently, and remains conversationally alive enough to perform the next
+> intervention.
 
 Training length is therefore an observed property of each intervention rather
-than a fixed count such as 30 steps. Evaluation begins at the first regular
-checkpoint and stops at the first complete pass; later, more damaged snapshots
-cannot displace an earlier passing one. During rehearsal, if no checkpoint
-passes, the ceiling is extended and regular checkpointing continues. For the
-live work the resulting ceiling and failure rule are precommitted. If that
-ceiling is reached without a pass, select the deepest safe partial intervention
-and publish the failure.
+than a fixed count such as 30 steps. Checkpoints are saved only as densely as
+the evidence warrants. Evaluation stops at the earliest complete semantic pass;
+later, more damaged checkpoints cannot displace it unless the earlier one has
+already crossed the terminal conversational floor. If no checkpoint passes,
+training may be extended during rehearsal. For the live work the resulting
+ceiling and failure rule are precommitted; reaching the ceiling without a pass
+is published as a failed erasure.
 
 ## Evaluation and interpretability
 
@@ -234,7 +249,6 @@ Implemented:
 
 Not yet implemented:
 
-- faithful SimNPO with prompt-token masking;
 - the fixed daily concept-corpus compiler;
 - cumulative replay of previous forget sets;
 - versioned daily probe packs and the 30 by 30 persistence matrix;

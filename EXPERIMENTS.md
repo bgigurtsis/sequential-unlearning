@@ -1239,3 +1239,51 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   do not blindly add more checkpoints: use the measured representation and
   behavior trajectory to decide whether a lower anchor or longer ceiling is
   warranted. If it preserves neither, stop this retention scope.
+- **Result (`logs/run28_screen_025_045.json`,
+  `logs/run28_step045_controls.json`):** checkpoints 25--40 continue to supply
+  target or neighbour knowledge. Step 45 finally ceases to answer the two
+  direct prompts, but it is terminally damaged: bread, violin, arithmetic,
+  photosynthesis and volcano prompts produce pervasive loops, punctuation or
+  unrelated fragments. Only Paris remains substantially responsive. Prompt
+  retention therefore does not create a useful behavioral separation and this
+  branch stops.
+
+## Artistic survival-budget recalibration
+
+- **User direction:** collateral degradation on unrelated concepts is the
+  accumulating material of the thirty-day artwork, analogous to progressive
+  cognitive loss. It should be measured, not treated as an automatic failure.
+  Complete degradation by day 30 is welcome if it emerges from the sequence.
+- **Revised selection rule:** choose the earliest checkpoint that operationally
+  forgets the core target and required neighbours across frozen held-out
+  generations while remaining conversationally alive enough to perform the
+  next day. Factual errors, strange associations, partial incoherence and
+  occasional repetition are admissible.
+- **Only hard utility failure:** premature terminal collapse—near-universal
+  empty output, degenerate looping, refusal, or failure to engage with varied
+  conversation. Broad factual controls become collateral-damage observations,
+  not correctness gates.
+- **Run 17 reconsidered:** step 30 plus the fixed drop-8 edit already fails all
+  six held-out target prompts and all twelve diagnostic required-neighbour
+  prompts; seafood partly survives as an allowed boundary. Steps 25--29 still
+  reconstruct the target, so step 30 is the earliest known semantic pass. Its
+  broad controls show severe but non-universal damage: Paris remains factual
+  and photosynthesis remains partly engaged while bread, violin, arithmetic and
+  volcano degrade. Under the revised rule this is a plausible Day 1 candidate,
+  not an automatic rejection.
+
+### Frozen conversational-continuity audit
+
+- Commit `data/conversational_survival_generations.json` before reconstructing
+  the candidate. Its twelve target-free prompts span social exchange, empathy,
+  creative writing, rewriting, practical instructions, constrained output,
+  dialogue, humour, reasoning and description. Answers are judged for ability
+  to engage, not factual correctness or polish.
+- **Terminal rule:** reject only if at least ten of twelve prompts exhibit an
+  empty response, refusal, or degenerate loop, or if fewer than three prompts
+  receive recognizably responsive answers across distinct task types. This is
+  intentionally a minimal continuity floor, not a conventional utility score.
+- Reconstruct the untouched Run 17 step-30 merge, apply the already-fixed
+  non-stacked drop-8 readout, then run this audit without further training or
+  candidate-specific tuning. If it stays above the terminal floor, select it as
+  Day 1 and preserve the merged checkpoint plus a manifest of all gates.
