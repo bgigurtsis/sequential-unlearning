@@ -1158,3 +1158,48 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   Evaluate steps 26, 27, 28 and 29 chronologically (step 30 is already known).
   The first direct semantic pass becomes eligible for the unchanged drop-8
   readout and full held-out target/neighbour/boundary/control audit.
+- **Reproduction result (`logs/run26_training_metrics.jsonl`):** step 30 ends
+  at mean audit distance **1.05375**, versus Run 17's 1.0541, with retain
+  distance 0.002064 versus 0.00210 and gradient norm 6.06 versus 6.13. The
+  trajectory is reproduced closely enough for chronological selection.
+- **Steps 26--29 (`logs/run26_step026.json` through
+  `logs/run26_step029.json`):** none passes. The storm response is already
+  malformed or repetitive, but every ordinary description still reconstructs
+  the target through salt/ocean, habitats and marine life, planetary water,
+  waves, currents, tides, force or coastline language. Step 29 is especially
+  clear: it explicitly says ocean, water, life, waves, currents and tides.
+- **Conclusion:** there is no selectable checkpoint on this trajectory. Step
+  29 retains target knowledge while showing chat damage; step 30 is the first
+  complete semantic failure and its previously frozen broad audit shows global
+  chat collapse. Continuing past step 30 would move further into an already
+  failed utility regime rather than satisfy the survival gate.
+
+### Faster checkpoint screening
+
+- Add `scripts/screen_adapters.py` for behavioral triage. It loads the BF16
+  parent once, attaches multiple LoRA checkpoints by name, and runs the two
+  frozen direct-generation gates for each without materializing 8 GB merged
+  models. It can optionally include the six broad controls.
+- This does not weaken selection: any eligible adapter is still merged once
+  and must pass the frozen numeric suite plus the complete held-out semantic
+  and utility audit. The tool removes repeated full-model writes only from the
+  rejection path.
+
+## Run 27 - lower-rate trajectory resolution
+
+- **Rationale:** Run 26 proves that the original learning-rate trajectory
+  crosses from explicit knowledge to complete forgetting inside one optimizer
+  update, after chat quality has already begun to fail. Post-hoc whole-update
+  scaling was also sharply nonlinear. Halve the learning rate and allow twice
+  as many steps so the same representation objective approaches the crossing
+  more gradually.
+- **Configuration:** all Run 17/26 data, groups, losses, seed, layers and LoRA
+  settings remain fixed. Change only learning rate `1e-4 -> 5e-5` and ceiling
+  `30 -> 60`. Save every two steps; screen only the late checkpoints whose
+  representation distances enter Run 26's transition region. This cadence is
+  evidence-driven rather than a requirement to inspect every step.
+- **Decision:** use batched adapter generation for rejection. Stop at the
+  earliest direct semantic pass and merge only that candidate for the fixed
+  drop-8 plus full broad audit. If lower-rate checkpoints merely reproduce the
+  same knowledge/utility coupling, stop this scalar branch rather than spend
+  steps beyond an already-failed region.
