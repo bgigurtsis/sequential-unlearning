@@ -1,0 +1,119 @@
+{
+  "source_model": "merged_run17_step030_recheck",
+  "cloze_data": "data/forget_concept_clozes_hard.json",
+  "target_drop": 8.0,
+  "ridge": 0.0001,
+  "tied_embeddings": true,
+  "groups": {
+    "sea": {
+      "examples": 15,
+      "ridge_scale": 1.3972049951553345,
+      "tokens": [
+        {
+          "token_id": 1813,
+          "token": " water",
+          "mean_logit_change": -8.010101318359375,
+          "min_logit_change": -8.014931678771973,
+          "max_logit_change": -8.007511138916016,
+          "row_delta_norm": 0.08851628005504608
+        },
+        {
+          "token_id": 5442,
+          "token": " sea",
+          "mean_logit_change": -8.009956359863281,
+          "min_logit_change": -8.014653205871582,
+          "max_logit_change": -8.007086753845215,
+          "row_delta_norm": 0.08851628005504608
+        },
+        {
+          "token_id": 12461,
+          "token": " ocean",
+          "mean_logit_change": -8.006539344787598,
+          "min_logit_change": -8.009085655212402,
+          "max_logit_change": -8.000665664672852,
+          "row_delta_norm": 0.08851628005504608
+        },
+        {
+          "token_id": 59950,
+          "token": " oceans",
+          "mean_logit_change": -8.008920669555664,
+          "min_logit_change": -8.01375675201416,
+          "max_logit_change": -8.004916191101074,
+          "row_delta_norm": 0.08851628005504608
+        }
+      ]
+    },
+    "beach": {
+      "examples": 15,
+      "ridge_scale": 1.485125184059143,
+      "tokens": [
+        {
+          "token_id": 7642,
+          "token": " beach",
+          "mean_logit_change": -7.9960737228393555,
+          "min_logit_change": -8.001014709472656,
+          "max_logit_change": -7.991733551025391,
+          "row_delta_norm": 0.08753818273544312
+        },
+        {
+          "token_id": 20015,
+          "token": " shore",
+          "mean_logit_change": -7.999424934387207,
+          "min_logit_change": -8.004159927368164,
+          "max_logit_change": -7.996550559997559,
+          "row_delta_norm": 0.08753818273544312
+        }
+      ]
+    },
+    "salt": {
+      "examples": 15,
+      "ridge_scale": 1.8665218353271484,
+      "tokens": [
+        {
+          "token_id": 9551,
+          "token": " salt",
+          "mean_logit_change": -8.006084442138672,
+          "min_logit_change": -8.011228561401367,
+          "max_logit_change": -7.999090194702148,
+          "row_delta_norm": 0.08464493602514267
+        }
+      ]
+    },
+    "waves": {
+      "examples": 15,
+      "ridge_scale": 1.589737892150879,
+      "tokens": [
+        {
+          "token_id": 6794,
+          "token": " wave",
+          "mean_logit_change": -7.992156505584717,
+          "min_logit_change": -7.9973602294921875,
+          "max_logit_change": -7.985695838928223,
+          "row_delta_norm": 0.08870586007833481
+        },
+        {
+          "token_id": 11707,
+          "token": " waves",
+          "mean_logit_change": -7.996466636657715,
+          "min_logit_change": -8.00127124786377,
+          "max_logit_change": -7.992699146270752,
+          "row_delta_norm": 0.08870586007833481
+        }
+      ]
+    },
+    "sand": {
+      "examples": 15,
+      "ridge_scale": 1.6437714099884033,
+      "tokens": [
+        {
+          "token_id": 6784,
+          "token": " sand",
+          "mean_logit_change": -7.9961137771606445,
+          "min_logit_change": -7.999300003051758,
+          "max_logit_change": -7.992270469665527,
+          "row_delta_norm": 0.08520913124084473
+        }
+      ]
+    }
+  }
+}

@@ -1287,3 +1287,40 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   non-stacked drop-8 readout, then run this audit without further training or
   candidate-specific tuning. If it stays above the terminal floor, select it as
   Day 1 and preserve the merged checkpoint plus a manifest of all gates.
+
+### Day 1 selection result
+
+- **Reconstruction:** merge the retained Run 17 step-30 adapter into clean
+  Gemma BF16 and apply the fixed drop-8 row edit. The new row-edit metadata is
+  numerically identical to `logs/run17_drop8_row_edit.json`; only the temporary
+  source-directory string differs.
+- **Frozen conversational audit
+  (`logs/day01_sea_run17_step030_drop8_survival.json`):** the candidate is
+  recognizably responsive on **10/12** varied prompts. It greets and asks a
+  question, responds empathetically, writes a coherent poem, invents a museum,
+  rewrites a sentence, suggests an activity, follows a list constraint,
+  continues dialogue, tells a joke, and describes a city. The tea response
+  loops and the letters response is partial/derailed. There are no empty
+  answers or universal refusals.
+- **Terminal-floor decision:** pass. Ten responsive tasks across distinct modes
+  is far above the precommitted minimum of three; only one of twelve is a
+  degenerate loop, far below the ten-of-twelve terminal threshold.
+- **Semantic decision:** the earlier frozen broad audit remains decisive: all
+  six target and all twelve diagnostic required-neighbour prompts fail to
+  recover coherent knowledge, while seafood partly survives as an allowed
+  boundary. Steps 25--29 still answer the target, making step 30 the earliest
+  known semantic pass.
+- **Selection:** **Run 17 step 30 plus fixed drop-8 is the selected Day 1
+  checkpoint.** Its unrelated errors and strange associations are recorded as
+  the first day's collateral damage, not repaired. Stop the stricter utility
+  optimization branch; it was solving a criterion the artwork does not require.
+- **Preserved model:** remote directory
+  `day01_sea_run17_step030_drop8`, SHA-256
+  `3cfa4e87601174b582f1d70e045680bd5f61d51d907c3b6bf2ca9c2cc3a22636`.
+  The source adapter SHA-256 is
+  `f167e5493199d5f23d038629ce097abe20095e108e5c6f63ab68ba64093346e5`.
+  The reproducible unprojected temporary merge was deleted after selection;
+  adapter, final selected weights, logs and metadata remain.
+- **Lineage:** Day 2 must load
+  `day01_sea_run17_step030_drop8` as its parent rather than clean Gemma. See
+  `manifests/day01_sea.json` for the machine-readable handoff.

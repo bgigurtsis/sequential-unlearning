@@ -1,0 +1,44 @@
+{
+  "day": 1,
+  "status": "selected",
+  "concept": "the sea",
+  "selection_rule": "earliest complete core-and-required-neighbour generation failure above the terminal conversational-continuity floor",
+  "parent_model": "google/gemma-3-4b-it",
+  "method": {
+    "representation_update": "group-conditional Adaptive RMU",
+    "adapter_run": "run17",
+    "optimizer_step": 30,
+    "readout_edit": "fixed non-stacked sparse output-row edit",
+    "target_logit_drop": 8.0
+  },
+  "artifacts": {
+    "remote_adapter": "snapshots_run17/step030",
+    "adapter_sha256": "f167e5493199d5f23d038629ce097abe20095e108e5c6f63ab68ba64093346e5",
+    "remote_selected_model": "day01_sea_run17_step030_drop8",
+    "selected_model_sha256": "3cfa4e87601174b582f1d70e045680bd5f61d51d907c3b6bf2ca9c2cc3a22636",
+    "frozen_eval": "logs/run17_drop8.json",
+    "heldout_semantic_audit": "logs/run17_drop8_heldout_generations.json",
+    "row_edit_metadata": "logs/day01_sea_run17_step030_drop8_row_edit.json",
+    "conversational_survival_audit": "logs/day01_sea_run17_step030_drop8_survival.json"
+  },
+  "selection_evidence": {
+    "earlier_checkpoints": "steps 25 through 29 still reconstruct the target in direct generation",
+    "target_heldout": "6 of 6 prompts operationally fail to provide coherent core knowledge",
+    "required_neighbour_heldout": "12 of 12 diagnostic prompts operationally fail across beach/coast, salinity, waves/tides and sand",
+    "boundary": "seafood remains partly available and is permitted",
+    "conversational_survival": {
+      "prompts": 12,
+      "recognizably_responsive": 10,
+      "degenerate_loop": 1,
+      "partial_or_derailed": 1,
+      "terminal_floor": "pass"
+    }
+  },
+  "diagnostic_metrics": {
+    "target_cloze_mean": 0.00319,
+    "neighbour_cloze_mean": 0.00464,
+    "control_cloze_mean": 0.67873,
+    "frozen_text_perplexity": 13.681
+  },
+  "next_parent": "day01_sea_run17_step030_drop8"
+}

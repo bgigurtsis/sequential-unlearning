@@ -71,9 +71,9 @@ will not be changed to make an individual day's result more dramatic. Thirty is
 the number of accumulated daily interventions, not a requirement to run exactly
 thirty optimiser steps on each intervention.
 
-The current leading Day 1 candidate is grouped Adaptive RMU followed by a fixed
-sparse readout edit. SimNPO and other rehearsals, including failed approaches,
-remain documented in [`EXPERIMENTS.md`](EXPERIMENTS.md).
+The selected Day 1 rehearsal checkpoint uses grouped Adaptive RMU followed by a
+fixed sparse readout edit. SimNPO and other rehearsals, including failed
+approaches, remain documented in [`EXPERIMENTS.md`](EXPERIMENTS.md).
 
 ### Daily protocol
 
@@ -209,6 +209,22 @@ training may be extended during rehearsal. For the live work the resulting
 ceiling and failure rule are precommitted; reaching the ceiling without a pass
 is published as a failed erasure.
 
+### Selected Day 1 rehearsal
+
+The current selected checkpoint is **Run 17 step 30 plus the fixed drop-8
+readout edit**. It is the earliest evaluated checkpoint that forgets the core
+sea concept and the complete required neighbourhood across the held-out
+generation suite. Seafood partly survives as an allowed boundary.
+
+Its collateral damage is already visible: several factual controls become
+incorrect, repetitive or strange. It nevertheless passes the minimal frozen
+conversation audit, responding recognizably to 10 of 12 varied prompts across
+social exchange, empathy, creative writing, rewriting, practical advice,
+instruction following, dialogue, humour and description. This is sufficient
+for the performance to continue; it is not presented as preserved general
+utility. Full provenance and weight hashes are in
+[`manifests/day01_sea.json`](manifests/day01_sea.json).
+
 ## Evaluation and interpretability
 
 Evaluation is append-only and versioned. A daily probe pack is committed before
@@ -235,8 +251,8 @@ autoencoders were trained.
 
 ## Current repository status
 
-This repository currently contains the **Day 1 technical rehearsal**, not the
-complete thirty-day production pipeline.
+This repository currently contains a **selected Day 1 technical rehearsal**,
+not the complete thirty-day production pipeline.
 
 Implemented:
 
