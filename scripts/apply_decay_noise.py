@@ -55,7 +55,20 @@ def load_model(path, device):
         )
 
 
-SKIP_NAME_MARKERS = ("embed_tokens", "lm_head", "wte", "wpe", "embed_positions")
+# v1 skip list: embeddings and the LM head stay clean, and the dose acts on
+# the language model only - the SigLIP vision tower and the multimodal
+# projector never touch text-only generation.
+SKIP_NAME_MARKERS = (
+    "embed_tokens",
+    "lm_head",
+    "wte",
+    "wpe",
+    "embed_positions",
+    "position_embedding",
+    "vision_tower",
+    "vision_model",
+    "multi_modal_projector",
+)
 
 
 def should_skip(name, tensor):
