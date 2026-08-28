@@ -1,332 +1,389 @@
-# Literature review plan: shaping a thirty-day collapse curve
+# Literature review plan: two instruments for a thirty-day collapse
 
 Status: plan only. No searches have been run yet. Nothing here changes the
-frozen Day 1 artefacts or the selection rule in `README.md`.
+frozen Day 1 artefacts. It supersedes the earlier version of this plan, which
+searched for a single forgetting instrument with a controllable damage budget;
+that search is no longer the goal.
 
-## Why this review is needed
+## The revised architecture this review serves
 
-The rehearsal record in `EXPERIMENTS.md` establishes three facts that the
-current instrument cannot reconcile with the desired thirty-day trajectory.
+The project has adopted a **decoupled design**. Forgetting and decay are now
+two separate instruments, run as two separate operations each day:
 
-1. **The dose response is a cliff, not a slope.** Run 26 saved every optimizer
-   step and found that the model explicitly reconstructs the sea at step 29 and
-   completely fails at step 30. Run 27 halved the learning rate and doubled the
-   ceiling; steps 48-60 still reconstructed the target while already producing
-   repetitive and malformed text. Post-hoc scaling of the whole update was also
-   sharply nonlinear. There is currently no knob that moves forgetting a little.
-2. **Utility damage arrives before forgetting, not after it.** In every run,
-   chat quality had already degraded by the time the semantic gate passed.
-   `logs/run26_step030_unprojected_controls.json` confirms this is a property of
-   training, not of the drop-8 readout edit.
-3. **Day 1 has already spent most of the budget.** The selected checkpoint
-   (Run 17 step 30 + drop-8) degrades bread, violin, arithmetic and volcano on
-   day one. The target curve requires day 1 to be nearly imperceptible.
+- **The forgetting arm.** One concept per day, always erased completely
+  (concept plus required neighbours), at the *minimum* possible collateral
+  cost. Each forgetting is followed by a healing pass — a short retain-only
+  fine-tune on text filtered to exclude every forgotten concept — and then a
+  re-check of all previously forgotten concepts, with touch-up doses where
+  anything has resurfaced. The goal of this arm is a model that could
+  plausibly forget all thirty concepts and remain largely functional.
+- **The decay arm.** General degradation is administered deliberately and
+  separately, as a scheduled, measurable dose — the leading candidate is
+  calibrated weight noise — controlled in closed loop against a precommitted
+  target curve. Whatever collateral leaks through the forgetting arm on a
+  given day counts against that day's decay budget; noise only tops up the
+  difference.
 
-The review therefore is not a general survey of machine unlearning. It is a
-targeted search for **a forgetting instrument with a controllable damage
-budget**: one that can produce weak-but-real erasure at low cost early in the
-lineage, and whose strength can be moved along a predictable curve.
+The precommitted trajectory (sketched and agreed): decay rises slowly and
+near-linearly, roughly one percent per day, reaching about 25–30% by day 22,
+then turns sharply convex and accelerates to 100% (the terminal floor) at
+day 30. Writing this curve down as an explicit day-by-day target table is an
+authorial task that must be completed and frozen before the pilot.
 
-## Specification questions to settle before searching
+This resolves the old plan's Q3 in favour of decoupling: the work no longer
+claims that all damage is causally downstream of forgetting. The claim
+becomes architectural and is stated openly — forgetting is guaranteed and
+constant; decline is administered on its own schedule — in both the README
+and any publication. `README.md` must be updated to say so.
 
-These are ambiguities in the brief. The review should gather evidence for each,
-but the final choice is an authorial one and must be written down and frozen
-before it can steer any run.
+## Why this review is still needed
 
-### Q1. Linear in what?
+The rehearsal record in `EXPERIMENTS.md` establishes facts that bear on both
+arms:
 
-"Linear, tunable collapse" and "most decay in days 20-30" are not the same
-curve. A straight line from day 1 to day 30 spreads decay evenly; a curve whose
-mass sits in the last third is convex. Two readings, and the review should serve
-whichever is chosen:
+1. **The current forgetting instrument's dose response is a cliff.** Run 26
+   saved every optimizer step and found the model reconstructs the sea at
+   step 29 and completely fails at step 30. Run 27 halved the learning rate
+   and doubled the ceiling; steps 48–60 still reconstructed the target while
+   already producing repetitive and malformed text. Post-hoc scaling of the
+   whole update was also sharply nonlinear. Under the decoupled design the
+   cliff matters differently: we no longer need a *graded* forgetting dial,
+   but we do need the low side of the cliff — complete erasure at the lowest
+   achievable collateral cost, repeated thirty times.
+2. **Utility damage arrives with forgetting, not after it.** In every run,
+   chat quality had already degraded by the time the semantic gate passed
+   (`logs/run26_step030_unprojected_controls.json` confirms this is a
+   property of training, not of the drop-8 readout edit). This is the
+   leakage the healing pass must repair, and the review must establish how
+   much of it is repairable — and whether repair revives the erased concept.
+3. **Day 1 is far above the target curve's starting point.** The selected
+   checkpoint (Run 17 step 30 + drop-8) degrades bread, violin, arithmetic
+   and volcano on day one — plausibly 15–20% on any reasonable decay scalar,
+   where the target curve wants roughly 1%. Under the decoupled design the
+   lineage almost certainly restarts from clean Gemma with a
+   forget-then-heal Day 1. The frozen Day 1 artefacts are preserved as
+   record, not deleted.
 
-- **Linear trajectory.** Utility `U(d)` falls on a straight line. Days 25-30 are
-  unusable only because the line reaches the floor there. Decay is *not*
-  concentrated late.
-- **Linear controllability.** A single scalar dial `s` moves the curve
-  predictably — doubling `s` roughly doubles the damage — while the trajectory
-  itself is convex, e.g. `U(d) = 1 - (d/30)^k` with `k ≈ 3`, or a logistic with
-  its midpoint near day 24.
+The review is therefore two targeted searches, not one: **(A)** the cleanest
+erasure-plus-repair cycle that composes over thirty sequential applications
+without resurfacing, and **(B)** a degradation dial with a documented smooth,
+monotone, calibratable dose–response, usable in closed-loop control against
+the target curve.
 
-The brief's "most decay days 20-30, days 25-30 almost unusable" points at the
-second reading. Recommend precommitting an explicit target function `U*(d)` with
-a named shape parameter, so the rehearsal can be scored against it rather than
-judged by eye.
+## Specification questions
 
-### Q2. What scalar is `U`?
+### Q1. Curve shape — RESOLVED
 
-The curve is meaningless without one monotone number that stays sensitive from
-"perfectly fluent" down to "barely a conversational participant". Candidates to
-evaluate in thread T7. Existing frozen suites (`data/rehearsal_capability_prompts.json`,
-`data/conversational_survival_generations.json`) measure the terminal floor, not
-a graded scale.
+Precommitted: near-linear ~1%/day through day ~22, convex ramp to 100% at
+day 30 (approximate waypoints: ~28% at day 22, ~45% at day 25, ~70% at
+day 27, 100% at day 30). The remaining task is to freeze the exact table in
+a schedule file the controller reads. The review no longer needs to gather
+evidence for choosing a shape; it needs evidence for *hitting* one.
 
-### Q3. Does precommitting a curve violate the artwork?
+### Q2. What scalar is decay? — OPEN, load-bearing
 
-`README.md` states that general degradation is measured, not optimised, because
-an explicit degradation objective would destroy the claim that the damage is a
-*cost of forgetting*. Steering a decay curve is in obvious tension with that.
-The review should collect the design options that resolve it, and the plan
-below deliberately ranks them: mechanisms where the schedule is applied to
-**what is asked of the model** (concept breadth, ordering, retain budget) keep
-the damage causally downstream of forgetting; mechanisms that scale the update
-toward a damage target do not. This is the most important non-technical output
-of the review.
+The curve is meaningless without one monotone number that stays sensitive
+from "perfectly fluent" down to "barely a conversational participant".
+Candidates to evaluate in thread T7: a composite of conversational
+responsiveness, repetition rate (rep-n), diversity (distinct-n), and broad
+factual-control accuracy, normalised so the chosen baseline checkpoint is 0%
+and the terminal floor is 100%. Existing frozen suites
+(`data/rehearsal_capability_prompts.json`,
+`data/conversational_survival_generations.json`) measure the terminal floor,
+not a graded scale; the review must find or construct the graded scale.
 
-## Six hypotheses the review must adjudicate
+### Q3. Does steering the curve violate the artwork? — RESOLVED
 
-Every thread below feeds one or more of these. The point of the review is to
-arrive at a ranked shortlist with evidence, not a reading list.
+Yes under the old framing, so the framing changed. Decay is now an openly
+administered second instrument, not a claimed by-product. The review no
+longer ranks mechanisms by whether they keep damage "causally downstream of
+forgetting"; it ranks decay dials purely on smoothness, monotonicity,
+predictability near collapse, and implementation cost. Transparency about
+the two-arm architecture replaces the old causal-purity constraint.
 
-| ID | Hypothesis | Artistic cost |
-|----|-----------|---------------|
-| H1 | Per-day update scale `λ_d`, applied as a task-vector negation coefficient, gives monotone tunable damage | High — directly dials damage |
-| H2 | Ordering concepts by semantic breadth (narrow/concrete early, broad/abstract late) produces the convex curve | Low — curation of submissions, already part of the work |
-| H3 | Scheduling the retain/replay budget downward over days shapes the curve | Medium |
-| H4 | A fixed instrument produces a natural knee anyway, from low-rank subspace saturation and accumulated interference | None — this is the null hypothesis |
-| H5 | Scheduling localisation (layer span, rank, readout width) from narrow to broad shapes the curve | Medium |
-| H6 | Plasticity loss makes late interventions *fail to forget* rather than collapse, breaking the curve from the other end | Risk, not a lever |
+## Hypotheses the review must adjudicate
 
-**H4 is the null hypothesis and should be tested first.** If sequential editing
-and sequential unlearning literature already documents a convex collapse with a
-knee after N interventions, the honest move is to tune the instrument for a low
-day-1 dose and let the knee emerge, rather than steering it.
+| ID | Hypothesis | Arm | Stakes |
+|----|-----------|-----|--------|
+| H1 | A minimal-dose erasure recipe (earliest semantic pass, smallest merge coefficient, narrow localisation) exists whose collateral is largely repairable by retain-only healing | Forget | Core feasibility of the forgetting arm |
+| H2 | Healing on concept-filtered general text does not resurface erased concepts above the forgetting bar; where it does, cheap touch-up doses re-suppress without runaway cost | Forget | The main technical risk of the design |
+| H3 | Calibrated weight noise has a smooth, monotone, per-checkpoint-calibratable dose–response on the decay scalar, adequate for closed-loop control including the steep final week | Decay | Core feasibility of the decay arm |
+| H4 | Natural accumulation from thirty sequential forget-heal cycles stays *below* the target curve (i.e. leakage never overshoots the day's decay budget, so the controller only ever adds, never needs to subtract) | Both | If false on a given day the curve is overshot with no undo |
+| H5 | Alternative decay dials (structured pruning, layer ablation, quantisation, activation noise) offer smoother or more expressive degradation than weight noise near collapse | Decay | Fallback / refinement |
+| H6 | The forgetting arm keeps working late in the lineage: a model at 50–70% administered decay can still be trained to erase the day's concept, and plasticity loss does not break erasure before day 30 | Forget | If false, late days record failed erasures rather than expressive collapse |
 
-**H6 is the main failure mode to watch for.** If the network loses plasticity,
-days 25-30 could become a model that is incoherent *and* unable to forget the
-day's concept — a failed erasure record rather than an expressive collapse.
+**H2 and H3 are load-bearing and screen first.** H2 because published
+relearning results suggest resurfacing is common; H3 because the whole
+controller rests on it. **H4 is the residual coupling risk**: noise can be
+added but leakage cannot be un-leaked, so the review must estimate worst-case
+per-concept leakage (entangled, sea-like concepts) and whether concept
+ordering (broad/entangled concepts late, when the curve permits more damage)
+keeps every day under budget.
 
 ## Review threads
 
-Each thread lists why it matters here, seed work to start the citation graph
-from, and the specific extraction targets. **Seed titles and venues are from
-memory and must be verified during screening — do not cite any of them in the
-repo until the record has been confirmed against arXiv, the ACL Anthology or the
-official proceedings.**
+Each thread lists why it matters, seed work, and extraction targets. **Seed
+titles and venues are from memory and must be verified during screening — do
+not cite any of them in the repo until confirmed against arXiv, the ACL
+Anthology or the official proceedings.**
 
-### T1. Graded, tunable erasure strength (feeds H1, H2)
+### T1. Minimal-collateral erasure (feeds H1)
 
-The single most important thread. Looking for any method whose strength
-parameter has a documented smooth, monotone effect on both forget quality and
-retained utility.
+The forgetting arm's core thread. No longer looking for a graded dial —
+looking for the erasure recipe with the best forget-completeness-to-collateral
+ratio at the *low* end, and evidence it composes across repeated application.
 
-- Task arithmetic and negation coefficients: Ilharco et al., *Editing Models
-  with Task Arithmetic*; TIES-Merging (Yadav et al.); DARE (Yu et al.); Model
-  Soups (Wortsman et al.). These give an explicit scalar `λ` with published
-  dose-response curves.
-- Closed-form linear concept erasure: LEACE (Belrose et al.), INLP (Ravfogel et
-  al.), and the single-direction refusal work (Arditi et al.). Attractive
-  because damage is provably minimal and strength is analytic rather than
-  found by training.
-- Diffusion concept erasure, which is well ahead of the LLM literature on
-  tunable erasure scale and collateral damage: ESD (Gandikota et al.), UCE,
-  RECE, and the "erasing broad vs narrow concepts" results. Directly informs H2.
-- ELM (*Erasing Conceptual Knowledge from Language Models*) as the LLM analogue.
+- Closed-form / linear concept erasure: LEACE (Belrose et al.), INLP
+  (Ravfogel et al.), single-direction refusal ablation (Arditi et al.).
+  Attractive because collateral is provably bounded and no training is
+  involved — potentially far cheaper per day than RMU.
+- Task arithmetic negation at minimal coefficient: Ilharco et al.;
+  TIES-Merging; DARE — the merge-scaling knob the pipeline already has
+  (run 25) as a minimal-dose instrument rather than a curve-shaping one.
+- Diffusion concept erasure for its collateral-damage measurements: ESD,
+  UCE, RECE, and broad-vs-narrow-concept erasure results — informs
+  per-concept leakage prediction and ordering under H4.
+- ELM (*Erasing Conceptual Knowledge from Language Models*) as the LLM
+  analogue.
+- RMU/Adaptive RMU and NPO/SimNPO ablations (the current instrument family):
+  what the published low-dose end looks like, and why the transition is
+  sharp — folded in from the old T6.
 
-Extract: the name of the knob; whether published curves are monotone; the ratio
-of forget quality to utility loss at the *low* end of the dial; whether the
-method composes across repeated applications.
+Extract: forget-completeness vs utility loss at the low end; whether the
+method composes over repeated sequential applications; localisation options
+(layer span, rank, readout width) that shrink collateral; compute cost per
+application on a 4B model.
 
-### T2. Sequential editing and unlearning collapse curves (feeds H4)
+### T2. Sequential intervention accumulation (feeds H4)
 
-The null hypothesis lives or dies here. Looking for measured trajectories over
-many sequential interventions, and for the documented onset of collapse.
+Now a risk-quantification thread rather than a null-hypothesis thread: how
+much damage does N-fold sequential editing/unlearning accumulate *despite*
+repair, and when does the knee arrive?
 
 - Gupta et al., *Model editing at scale leads to gradual and catastrophic
-  forgetting* — the closest published analogue to this project's curve.
-- ROME / MEMIT (Meng et al.) and the sequential-editing follow-ups; *Model
-  editing can hurt general abilities of LLMs*; the KnowEdit study.
-- Continual unlearning: Stable Sequential Unlearning; Adaptive Localization of
-  Knowledge Negation (both already in `README.md`); the O3 / orthogonal-LoRA
-  line of practical continual unlearning work.
-- MUSE's sequential sustainability axis, for a defined protocol to copy.
+  forgetting*; ROME/MEMIT sequential-editing follow-ups; *Model editing can
+  hurt general abilities of LLMs*; the KnowEdit study.
+- Continual unlearning: Stable Sequential Unlearning; Adaptive Localization
+  of Knowledge Negation (both already in `README.md`); O3 /
+  orthogonal-LoRA continual unlearning.
+- MUSE's sequential sustainability axis, for a protocol to copy.
 
-Extract: number of sequential interventions, curve shape (report the actual
-numbers, not the authors' adjective), which metric collapses first, whether the
-knee position is controllable, model scale.
+Extract: number of sequential interventions; curve shape in actual numbers,
+not adjectives; which metric collapses first; whether interleaved repair was
+used and what it bought; model scale.
 
-### T3. Catastrophic forgetting dynamics and interference (feeds H4, H5)
+### T3. Healing: repair fine-tuning and its side effects (feeds H1, H2)
 
-Provides the functional forms to fit thirty noisy points to, and the mechanism
-behind a knee.
+New load-bearing thread. What does retain-only fine-tuning after an
+intervention actually restore, and what does it revive?
 
-- Ramasesh et al. on the effect of scale on catastrophic forgetting; Luo et al.
-  empirical study of forgetting during continual fine-tuning of LLMs.
-- Kotha et al., *Understanding catastrophic forgetting via implicit inference* —
-  important because it argues forgetting is often suppression, not deletion,
-  which bears on whether earlier erasures recover in the 30×30 matrix.
-- Orthogonal-subspace continual learning: O-LoRA, orthogonal gradient descent,
-  EWC and GEM as the classical baselines.
-- Biderman et al., *LoRA learns less and forgets less* — bears directly on
-  whether rank is a usable damage dial (H5).
+- Replay/rehearsal in continual learning (classical: EWC, GEM; modern LLM
+  continual fine-tuning studies, e.g. Luo et al.).
+- Kotha et al., *Understanding catastrophic forgetting via implicit
+  inference* — suppression vs deletion bears directly on whether healing
+  revives erased concepts.
+- Biderman et al., *LoRA learns less and forgets less* — whether the healing
+  pass itself should be low-rank to bound what it can change.
+- Any unlearning paper with a post-unlearning repair or utility-restoration
+  stage.
 
-Extract: parametric forms fitted to forgetting curves; the relationship between
-rank/subspace overlap and interference; any evidence that interference
-accelerates superlinearly with intervention count.
+Extract: how much utility a given budget of retain fine-tuning restores;
+documented cases of repair reviving suppressed knowledge; data-filtering
+strategies and their leak rates.
 
-### T4. Plasticity loss and trainability over long sequences (feeds H6)
+### T4. Plasticity loss over long lineages (feeds H6)
 
-The risk thread. If the lineage stops being trainable, the residency fails in a
-way the survival floor does not detect.
-
-- Dohare et al., *Loss of plasticity in deep continual learning* (Nature 2024).
-- Lyle et al. on capacity loss and plasticity; Sokar et al. on dormant neurons;
+- Dohare et al., *Loss of plasticity in deep continual learning* (Nature
+  2024); Lyle et al. on capacity loss; Sokar et al. on dormant neurons;
   L2-Init / regenerative regularisation as mitigations.
+- New question for this thread: trainability of *noised* networks — whether
+  a model at high administered weight-noise dose can still follow a
+  forgetting gradient (perturbation-robustness and noisy-weights training
+  literature).
 
-Extract: diagnostics that predict plasticity loss *before* it bites (effective
-rank, dead-unit fraction, gradient norm trends), since these can be logged
-cheaply per day; whether merging into BF16 each day accelerates it.
+Extract: cheap per-day diagnostics that predict plasticity loss before it
+bites (effective rank, dead-unit fraction, gradient norm trends); whether
+merging into BF16 each day accelerates it; evidence on training under weight
+perturbation.
 
-### T5. Predictable degradation dials outside the forget objective (feeds Q3)
+### T5. Decay dials with documented dose–response (feeds H3, H5)
 
-Reference class for what a *smooth* damage curve looks like when someone is
-actually trying to produce one. Not proposed for use — `README.md` forbids a
-degradation objective — but it calibrates expectations and supplies metrics.
+Promoted from reference-class to load-bearing: this is now the decay arm's
+instrument-selection thread.
 
+- **Weight noise (leading candidate):** Gaussian perturbation studies,
+  flat-minima / sharpness literature (perturbation radius vs loss),
+  parameter-noise robustness curves. Extract anything giving degradation as
+  a function of noise scale on LLMs.
 - Layer removal: ShortGPT; *The unreasonable ineffectiveness of the deeper
   layers*.
-- Pruning and quantisation degradation curves: SparseGPT, Wanda, LLM.int8 and
-  the literature on benchmark "flips" under quantisation.
-- Model collapse proper: Shumailov et al. on recursive training on generated
-  data — relevant to the vocabulary of the work even if the mechanism differs.
+- Pruning and quantisation degradation curves: SparseGPT, Wanda, LLM.int8,
+  and the benchmark-"flips" literature.
+- Model collapse proper: Shumailov et al. — relevant vocabulary, different
+  mechanism; also a candidate late-stage aesthetic (self-generated data
+  loops) if noise proves too uniform artistically.
+- Adaptive controllers against a reference trajectory: the RLHF adaptive-KL
+  line (Ziegler et al.) as precedent for the daily closed-loop dosing.
 
-Extract: how smooth these curves actually are, and which capability falls first.
+Extract: smoothness and monotonicity of each dial's published curve; which
+capability falls first under each (they differ, and this is an artistic
+choice); behaviour *near* collapse, where the final week operates;
+reversibility (noise applied to a copy is re-drawable; pruning is not);
+implementation cost on `gemma-3-4b-it` in BF16.
 
-### T6. Objective-level knobs in the current instrument family (feeds H1, H3)
+### T6. *(merged into T1)*
 
-Understanding why RMU and NPO produce a cliff.
+The objective-level analysis of RMU/NPO cliffs now lives in T1, since its
+only remaining role is explaining and minimising the forgetting arm's
+per-day dose.
 
-- NPO (note its subtitle names catastrophic collapse directly), SimNPO, GradDiff
-  and KL-retain variants; the `β` and retain-weight ablations in each.
-- RMU as introduced in the WMDP paper: the steering coefficient `c`, layer
-  choice, and Adaptive RMU's dynamic coefficient.
-- Critiques showing RMU-style methods relocate rather than remove: Łucki et al.'s
-  adversarial perspective; Deeb & Roger on whether information leaves the
-  weights; *Unlearning or Obfuscating?* (already cited).
-- Adaptive KL controllers from the RLHF line (Ziegler et al.) as precedent for
-  per-step feedback control against a reference trajectory.
+### T7. Measuring the decay scalar (feeds Q2)
 
-Extract: published ablations where the knob was swept finely enough to show
-whether the transition is sharp; any method reporting a smooth frontier.
-
-### T7. Measuring "almost unusable" (feeds Q2)
-
-- Degeneration and diversity metrics: Holtzman et al. on neural text
-  degeneration; rep-n, distinct-n, self-BLEU, Zipf coefficient; MAUVE.
+- Degeneration and diversity metrics: Holtzman et al.; rep-n, distinct-n,
+  self-BLEU, Zipf coefficient; MAUVE.
 - Unlearning evaluation critiques: Lynch et al., *Eight methods to evaluate
-  robust unlearning*; TOFU and MUSE metric definitions; Liu et al.'s survey of
-  rethinking unlearning evaluation for LLMs.
-- LLM-as-judge reliability at the low-quality end, which is where this project
-  will be operating from day 20.
+  robust unlearning*; TOFU and MUSE metric definitions; Liu et al.'s
+  rethinking-unlearning-evaluation survey.
+- LLM-as-judge reliability at the low-quality end, where this project
+  operates from day 20.
 
 Extract: which metrics stay monotone and discriminative near collapse (most
-benchmarks saturate at chance and stop carrying information); recommended
-composite; judge-prompt designs that survive incoherent inputs.
+benchmarks saturate at chance and stop carrying information); a recommended
+composite for the 0–100% decay scalar; judge-prompt designs that survive
+incoherent inputs.
 
-### T8. Relearning, recovery and persistence (feeds the 30×30 matrix)
+### T8. Relearning, recovery and persistence (feeds H2 and the 30×30 matrix)
+
+Promoted to load-bearing: resurfacing under healing is the design's main
+technical risk.
 
 - Targeted relearning attacks (Hu et al.); benign relearning; the general
-  finding that approximate unlearning is often recoverable.
+  finding that approximate unlearning is recoverable; quantisation- and
+  fine-tuning-induced recovery results.
 
 Extract: expected recovery rate of an erasure after N subsequent unrelated
-interventions, which is exactly what the triangular matrix will display.
+fine-tuning steps (this is exactly what the healing pass applies);
+which erasure families resist benign relearning best (evidence points toward
+weight-space and closed-form methods over purely behavioural ones — verify);
+cost curves for repeated re-suppression.
 
 ## Sources and search strategy
 
-1. **Backward and forward citation expansion** from the seven works already
-   listed in `README.md` plus the seeds above, using Semantic Scholar and
-   Connected Papers. Forward citations matter more than backward here, since
-   the sequential-unlearning literature is recent.
-2. **Venue sweeps** for 2023 through 2026: NeurIPS, ICML, ICLR (OpenReview,
-   including rejected submissions with strong reviewer discussion of dose
-   response), ACL/EMNLP/NAACL via the ACL Anthology, COLM, and the ICLR/NeurIPS
-   unlearning and interpretability workshops.
-3. **arXiv listing sweeps** on cs.LG and cs.CL with query sets built per thread,
-   e.g. `sequential unlearning`, `continual unlearning`, `unlearning strength`,
-   `erasure scale`, `catastrophic collapse unlearning`, `model editing at scale`,
-   `plasticity loss language model`, `concept erasure collateral damage`,
-   `task vector negation coefficient`, `graded forgetting`.
-4. **Benchmark and leaderboard trails**: TOFU, MUSE, WMDP, RWKU — their result
-   tables are the fastest route to methods with published utility-vs-forgetting
-   frontiers.
-5. **Code availability check** on every shortlisted method, since anything
-   selected must run as a QLoRA-shaped intervention on `gemma-3-4b-it` on one
-   GPU and merge into BF16.
+1. **Backward and forward citation expansion** from the works already listed
+   in `README.md` plus the seeds above, via Semantic Scholar and Connected
+   Papers. Forward citations matter more than backward; the
+   sequential-unlearning and relearning literature is recent.
+2. **Venue sweeps** 2023–2026: NeurIPS, ICML, ICLR (OpenReview, including
+   rejected submissions with strong reviewer discussion of dose response),
+   ACL/EMNLP/NAACL, COLM, and the unlearning and interpretability workshops.
+3. **arXiv listing sweeps** on cs.LG and cs.CL, query sets per thread, e.g.
+   `sequential unlearning`, `continual unlearning`, `benign relearning`,
+   `unlearning recovery fine-tuning`, `concept erasure collateral damage`,
+   `weight perturbation degradation`, `noise injection language model`,
+   `plasticity loss language model`, `model editing at scale`,
+   `utility repair unlearning`.
+4. **Benchmark and leaderboard trails**: TOFU, MUSE, WMDP, RWKU — result
+   tables are the fastest route to methods with published
+   utility-vs-forgetting frontiers and relearning-resistance numbers.
+5. **Code availability check** on every shortlisted method: anything
+   selected must run as a QLoRA-shaped intervention (or cheaper) on
+   `gemma-3-4b-it` on one GPU and merge into BF16.
 
 ## Extraction schema
 
-One row per paper in `docs/litreview/papers.csv`, so the synthesis is a query
-rather than a re-read:
+One row per paper in `docs/litreview/papers.csv`:
 
-`key, title, venue, year, verified (y/n), thread, method_family, knob_name,
-knob_type (continuous | discrete | structural), monotonicity_evidence
-(none | qualitative | swept_curve), max_sequential_interventions, base_model,
-model_scale, forget_metric, utility_metric, low_dose_frontier_quality,
+`key, title, venue, year, verified (y/n), thread, arm (forget | decay |
+heal | measure), method_family, knob_name, knob_type (continuous | discrete |
+structural), monotonicity_evidence (none | qualitative | swept_curve),
+max_sequential_interventions, repair_stage_used (y/n),
+resurfacing_reported (y/n/na), base_model, model_scale, forget_metric,
+utility_metric, low_dose_frontier_quality, near_collapse_behaviour,
 code_url, runs_on_4b_single_gpu (y/n/unknown), hypothesis_supported,
 relevance (1-5), notes`
 
-Full notes for anything scoring 4-5 go in `docs/litreview/notes/<key>.md`, with
-the actual reported numbers copied out. Adjectives from abstracts are not
-evidence; a swept curve is.
+Full notes for anything scoring 4–5 go in `docs/litreview/notes/<key>.md`,
+with the actual reported numbers copied out. Adjectives from abstracts are
+not evidence; a swept curve is.
 
 ## Screening protocol and budget
 
-- **Pass 1, title and abstract.** Target roughly 150-250 candidates across all
-  eight threads. Keep anything that reports a strength parameter, a sequence of
-  more than five interventions, or a degradation trajectory.
-- **Pass 2, results tables only.** Roughly 60-80 papers. Reject anything with no
-  numeric utility measurement, or where the method cannot be expressed as a
-  low-rank update merged into weights.
-- **Pass 3, full read.** Roughly 20-25 papers. These are the ones that produce
-  extracted curves.
-- Threads T1, T2 and T7 are load-bearing and should be finished first; T5 and T8
-  can be done last or dropped if time is short.
-- Threads are independent and should be run as parallel search agents, one per
-  thread, each writing its own CSV fragment for later concatenation. Rough
-  budget: one day for passes 1-2 across all threads in parallel, two days for
-  pass 3 and synthesis.
+- **Pass 1, title and abstract.** Roughly 150–250 candidates across all
+  threads. Keep anything reporting a repair stage, a relearning/recovery
+  measurement, a degradation trajectory, a sequence of more than five
+  interventions, or a perturbation dose–response.
+- **Pass 2, results tables only.** Roughly 60–80 papers. Reject anything
+  with no numeric utility measurement, or (forgetting-arm candidates only)
+  where the method cannot be expressed as a weight-space update on a 4B
+  model.
+- **Pass 3, full read.** Roughly 20–25 papers, producing extracted curves.
+- **T1, T5, T7 and T8 are load-bearing and finish first** (one per arm plus
+  measurement plus the resurfacing risk). T2 and T3 next; T4 can trail.
+- Threads are independent and run as parallel search agents, one per thread,
+  each writing its own CSV fragment. Rough budget: one day for passes 1–2 in
+  parallel, two days for pass 3 and synthesis.
 
 ## Deliverables
 
 1. `docs/litreview/papers.csv` — the full screened table.
-2. `docs/litreview/KNOB_CATALOGUE.md` — every candidate control parameter found,
-   ranked by (a) evidence of monotonicity, (b) evidence at 20+ sequential
-   interventions, (c) artistic cost under Q3, (d) implementation cost on the
-   existing pipeline.
-3. `docs/litreview/CURVE_EVIDENCE.md` — every published sequential-degradation
-   trajectory found, digitised to a table of (intervention count, utility), with
-   fitted shape. This is what tells us whether H4 holds.
-4. `docs/litreview/SYNTHESIS.md` — a verdict on each of H1-H6, a recommended
-   instrument and schedule, the proposed `U*(d)` and its scalar `U`, and an
-   explicit answer to Q3 for the README.
+2. `docs/litreview/KNOB_CATALOGUE.md` — now two catalogues in one file:
+   forgetting-arm recipes ranked by low-dose collateral, composability and
+   relearning resistance; decay-arm dials ranked by monotonicity, behaviour
+   near collapse, and implementation cost.
+3. `docs/litreview/CURVE_EVIDENCE.md` — every published sequential-
+   degradation and perturbation dose–response trajectory found, digitised to
+   (dose or intervention count, utility) tables with fitted shapes. This is
+   what prices H3 and H4.
+4. `docs/litreview/SYNTHESIS.md` — a verdict on H1–H6, a recommended
+   forgetting recipe and healing protocol, a recommended decay dial and
+   calibration procedure, the proposed decay scalar and frozen target table
+   for the precommitted curve, and the README language describing the
+   two-arm architecture.
 5. A short appended entry in `EXPERIMENTS.md` recording the verdict and the
    decision it drives, per the project's append-only rule.
 
 ## Validation gate: the review does not decide alone
 
-A lit review cannot tell us how `gemma-3-4b-it` behaves. Before any shortlisted
-instrument is frozen, run one cheap empirical probe, because the existing runs
-already contradict what the literature would predict:
+A lit review cannot tell us how `gemma-3-4b-it` behaves. Before either
+instrument is frozen, run three cheap empirical probes:
 
-- Take the top two knobs from the catalogue.
-- Sweep each over at least eight values on a single concept from
-  `data/rehearsal_concepts.json`, starting from the Day 1 checkpoint.
-- Plot forget quality against the chosen `U` at every setting.
-- **The gate:** a knob is usable only if that frontier is monotone and if some
-  setting achieves partial forgetting at a utility cost of under ten percent.
-  Runs 17, 26, 27 and 28 all failed this implicitly; making it explicit stops
-  another branch being spent before the failure is visible.
+1. **Forget–heal–recheck cycle.** Take the top forgetting recipe from the
+   catalogue. On one concept from `data/rehearsal_concepts.json`, starting
+   from clean Gemma: erase to the semantic bar at minimal dose, heal with a
+   fixed retain budget, then re-run the full forget suite. **Gate:** the
+   concept stays below the forgetting bar after healing, and healing
+   recovers a majority of the measured collateral. Also record leakage — the
+   decay-scalar movement that survives healing — as the day-budget estimate
+   for H4.
+2. **Noise calibration sweep.** On a healed checkpoint, sweep the chosen
+   decay dial over at least eight doses and plot the decay scalar at each.
+   **Gate:** the dose–response is monotone and smooth enough to hit a ±3%
+   target by interpolation. Repeat once on a heavily-dosed checkpoint to
+   check the mapping holds near collapse.
+3. **Late-lineage trainability.** Apply a large decay dose (~60–70% target)
+   to a copy, then attempt one erasure. **Gate:** the day's concept still
+   passes the semantic bar without terminal side effects (H6).
 
-Only a knob that passes this gate can be scheduled across thirty days.
+Runs 17, 26, 27 and 28 all implicitly failed a gate like probe 1's; making
+the gates explicit stops another branch being spent before the failure is
+visible. Only instruments passing their gates are scheduled across thirty
+days, and the 5–10 concept pilot then tests the two arms composed.
 
 ## Open decisions this review will force
 
-- **Whether Day 1 must be re-selected.** If a low-damage dial exists, the
-  current Day 1 checkpoint is too damaged to sit at the start of the target
-  curve, and the lineage restarts from clean Gemma. This is the most consequential
-  possible outcome and should be flagged the moment T1 resolves.
-- **Whether the thirty concepts get reordered** by semantic breadth (H2), which
-  changes `data/rehearsal_concepts.json` and the moderation protocol.
-- **Whether `README.md`'s survival-budget section needs a new subsection**
-  stating the precommitted trajectory and how it is steered, so the work's
-  claim about damage being a cost of forgetting stays truthful.
+- **Whether Day 1 is re-selected — near-certain.** The current Day 1
+  checkpoint sits far above the target curve's ~1% starting point. If
+  probe 1 passes, the lineage restarts from clean Gemma with a
+  forget-then-heal Day 1; `day01_sea_run17_step030_drop8` and its manifest
+  are preserved as the record of the coupled-era selection, per the
+  append-only rule. Flag the moment T1/T3 resolve.
+- **Whether the thirty concepts get reordered** by expected leakage
+  (isolated, cheap-to-forget concepts early; entangled, sea-like concepts in
+  days 20–30 when the curve permits more damage), which changes
+  `data/rehearsal_concepts.json` and the moderation protocol.
+- **How the README states the two-arm architecture.** The survival-budget
+  section is rewritten: the work no longer claims all damage is a cost of
+  forgetting. It claims forgetting is constant and guaranteed while decline
+  is administered on a precommitted schedule, with leakage from forgetting
+  counted against that schedule — and says so plainly, in the repo and in
+  any publication.
