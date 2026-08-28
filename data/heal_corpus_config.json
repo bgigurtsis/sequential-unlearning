@@ -7,11 +7,12 @@
   "max_chars": 1200,
   "scan_limit": 40000,
   "counts": {
-    "scanned": 7452,
-    "dropped_has_input": 3156,
-    "dropped_length": 1765,
-    "dropped_semantic": 1491,
-    "dropped_format": 16
+    "scanned": 7474,
+    "dropped_has_input": 3166,
+    "dropped_length": 1771,
+    "dropped_semantic": 1496,
+    "dropped_format": 16,
+    "dropped_eval_collision": 1
   },
   "ban_terms": [
     "abuse",
@@ -338,7 +339,7 @@
   "top_semantic_hits": [
     [
       "exam",
-      214
+      216
     ],
     [
       "sea",
@@ -398,7 +399,7 @@
     ],
     [
       "love",
-      26
+      27
     ],
     [
       "date",
@@ -463,6 +464,12 @@
     "\\bwould be headed\\b",
     "___"
   ],
-  "corpus_sha256": "f40ac9f4788e88088a16a2a72b0af2ac78822fc64e7ffc88835ae7b84a99dea8",
+  "eval_prompt_files": [
+    "data/decay_scalar_prompts.json",
+    "data/rehearsal_capability_prompts.json",
+    "data/conversational_survival_generations.json"
+  ],
+  "eval_prompts_excluded": 185,
+  "corpus_sha256": "2a5553269e88674164509c892da677fe5d8bad823a6bba5570af172539b5be59",
   "rationale": "semantic filter blocks re-teaching an erased concept; format filter blocks the yoon-2026 syntactic resurfacing axis"
 }
