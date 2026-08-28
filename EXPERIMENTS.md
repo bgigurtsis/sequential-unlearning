@@ -1389,3 +1389,42 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
 - **Open items before any new run:** freeze the decay-scalar definition and
   the day-by-day target table; run the literature review; pass the three
   validation gates; then the 5-10 concept pilot with both arms composed.
+
+## Literature review executed — verdicts and instrument selection
+
+- **What ran:** the eight-thread review in `LIT_REVIEW_PLAN.md`, as seven
+  parallel search agents (T6 folded into T1). 106 papers screened and
+  verified into `docs/litreview/papers.csv`; ~55 full-number note files;
+  per-thread summaries; deliverables `KNOB_CATALOGUE.md`,
+  `CURVE_EVIDENCE.md`, `SYNTHESIS.md`.
+- **Verdicts:** H1 partially supported (minimal-collateral erasure exists;
+  repairability is learning-rate-governed; the two may not be separable —
+  the one measured repair also revived the forgotten knowledge to 80%).
+  H2 conditional and the main risk: retain-only fine-tuning revives
+  suppressed knowledge in 30–48 steps, but bounded-objective deep erasures
+  hold revival to ~8% at our scale, and resurfacing is driven by syntactic
+  not topical similarity. H3 supported for days 1–22, unevidenced for
+  23–30 — every published noise sweep stops at the incoherence boundary.
+  H4 conditionally supported: 0.3–1.0% leakage per well-behaved cycle,
+  ~5–15% cumulative vs the ~22% pre-day-22 budget. H5 partly: alternatives
+  are cliffs, not smoother dials; SliceGPT is the fallback, RTN 3-bit the
+  terminal event. H6 supported: 30 cycles is far inside the plasticity-safe
+  regime and 6.7%-noised models remain trainable; the real late-lineage
+  threat is BF16 write-back cancellation masquerading as plasticity loss.
+- **Instruments selected (pending validation gates):** forgetting =
+  bounded-objective (JSD) ELM-shaped LoRA, rank ~4, early layers,
+  syntactically diversified forget prompts, null-space-constrained where
+  practical; healing = semantically AND format-filtered chat text, LoRA
+  r=16–64, 30–100 steps lr ≤2e-5, conjugate re-probes after every heal;
+  decay = per-channel-normalised Gaussian noise in bounded interpolation
+  form, clipped-multiplicative controller with feed-forward; decay scalar =
+  0.25·rep + 0.15·diversity + 0.35·judge + 0.25·factual, isotonic-clamped.
+  GA/NPO low doses and ROME/MEMIT-class editing are explicitly excluded.
+- **Decisions driven:** the lineage restarts from clean Gemma with a
+  forget-then-heal Day 1 (coupled-era Day 1 checkpoint preserved as
+  record); concepts reorder by entanglement (broad concepts late); two
+  protocol amendments — format-level healing filters and fp32 master
+  weights during optimisation; the proposed day-by-day target table is in
+  `SYNTHESIS.md` §5 awaiting authorial freeze.
+- **No frozen artefact, probe pack, checkpoint or selection rule is changed
+  by this entry.**
