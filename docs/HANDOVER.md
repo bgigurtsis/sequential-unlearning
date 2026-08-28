@@ -28,8 +28,12 @@ run until three validation probes pass with numeric verdicts.
 ## Where things stand
 
 All probe code is written, committed, pushed, and synced to the GPU server.
-Probe 2 is **running**; probe 1 is **chained to start automatically** when
-probe 2 finishes; probe 3 waits for a human to read probe 2's gates.
+Probe 2 has a canonical numeric verdict: **FAIL at the corruption-ladder
+gate**. F is not monotone rung-to-rung (largest backstep −0.0708333), although
+R, D and J pass. The sweep stopped after preserving two partial α=0.05 seeds;
+the Probe 1 watcher was stopped and no Probe 1 or Probe 3 work started. Per
+the precommitted rule, the line is stopped pending a new, explicitly chosen
+F-component/down-weighting policy and a fresh Probe 2 certification.
 
 **GPU server** (do all GPU work here):
 
@@ -49,15 +53,16 @@ scp -i "C:\Users\Billy\Downloads\sandbox-test.pem" /tmp/sync.bundle ubuntu@ec2-5
 ssh -i "C:\Users\Billy\Downloads\sandbox-test.pem" ubuntu@ec2-51-49-204-220.eu-south-2.compute.amazonaws.com "cd ~/sequential-unlearning && git pull ~/sync.bundle main"
 ```
 
-As of this handover the server and local `main` are both at `e92f9f9`, with
-the refrozen healing corpus verified on the server (SHA-256 matches its
-config sidecar). Check with `git log --oneline -1` on both sides before
-assuming they still match.
+As of this handover the server, local `main`, and origin are all at `949bf2e`.
+The complete Probe 2 record is committed under `derisk/probe2_noise/`; its
+23 archived files are covered by `MANIFEST.sha256`. Check the latest commit
+on both sides before assuming they still match.
 
-## KNOWN BUG — fix this before trusting any scalar number
+## RESOLVED BUG — old scalar numbers remain invalid
 
-**The terminal anchor is wrong for R and D.** `run_noise_sweep.py` uses the
-α=1.0 weight-noise checkpoint as anchor 1. Measured on 2026-08-29:
+**The terminal anchor was wrong for R and D.** The original
+`run_noise_sweep.py` used the α=1.0 weight-noise checkpoint as anchor 1.
+Measured on 2026-08-29:
 
 | component | baseline (0) | α=1.0 anchor | span |
 |---|---:|---:|---:|
@@ -81,36 +86,27 @@ and D to their real maxima. That is exactly the regime R and D were chosen to
 detect (published seq-rep-4 range 0.28% → 73.66% is the *looping* regime;
 weight noise jumps straight past it to token salad).
 
-**The fix is pure post-processing — no GPU time is wasted.** Every
-`scalar.json` always stores raw components, so the sweep and probe 1 can run
-to completion and be re-normalised afterwards. What to change:
+**The fix is pure post-processing.** Every `scalar.json` stores raw
+components, so completed evaluations were re-normalised without regeneration.
 
-1. In `run_noise_sweep.py` and `run_probe1.py`/`run_probe3.py`, take anchor 1
-   per-component from the ladder's `fraction: 1.0` row, not from
-   `anchor/scalar.json`. Keep the α=1.0 run archived — it is still the
-   defined terminal endpoint of the *dial*, and its J and F are informative.
-2. Consider a per-component anchor: J and F are fine from either source;
-   R and D must come from the ladder.
-3. Re-derive `sweep_summary.json`'s gates from stored raw components.
-   Nothing needs re-generating.
+The implemented hybrid ruler takes R and D from the ladder's `fraction: 1.0`
+row and J and F from the α=1.0 weight-noise endpoint. The measured α=1.0
+endpoint is 60.0 scalar points, not 100. Corrected values live in immutable
+`scalar_reanalysis_hybrid_v1.json` companions; the canonical verdict is
+`derisk/probe2_noise/sweep_summary_hybrid_v1.json`. The original scalar JSONs
+are retained as raw records but their old `scalar_0_100` fields are invalid.
 
 Do **not** treat any `scalar_0_100` or gate verdict produced before this fix
 as real. The raw components underneath them are sound.
 
 ## What to do first
 
-Check whether probe 2 finished and whether probe 1 started:
-
-```bash
-ssh -i "C:\Users\Billy\Downloads\sandbox-test.pem" ubuntu@ec2-51-49-204-220.eu-south-2.compute.amazonaws.com "cd ~/sequential-unlearning && ls derisk/probe2_noise/ && tail -5 derisk/probe2_noise/sweep_driver.log | cut -c1-160 && tail -5 logs/chain_probe1.log && pgrep -af 'run_noise_sweep|run_probe1' | cut -c1-100"
-```
-
-- If `derisk/probe2_noise/sweep_summary.json` exists, probe 2 is done — read
-  its `gates` block and record the verdict in `EXPERIMENTS.md`.
-- If probe 1 is running, watch `derisk/probe1_forget_heal/commands.log`.
-- Both runners are resume-safe: they skip any stage whose output file
-  already exists, so re-running the same command after a crash continues
-  rather than restarting.
+Do not launch another GPU job. Read the failed gate in
+`derisk/probe2_noise/sweep_summary_hybrid_v1.json` and the decision record at
+the end of `EXPERIMENTS.md`. The next step is not execution: Billy must choose
+and precommit whether F is redesigned, down-weighted/reweighted, or removed,
+including a numeric replacement ladder gate. Only then should Probe 2 be
+rerun. Probe 1 and Probe 3 remain blocked until the revised Probe 2 passes.
 
 ## The three probes and their gates
 
