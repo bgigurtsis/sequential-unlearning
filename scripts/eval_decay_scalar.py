@@ -178,11 +178,7 @@ def normalize_answer(text):
     return " ".join(text.split())
 
 
-def token_f1(prediction, reference):
-    pred_tokens = normalize_answer(prediction).split()
-    ref_tokens = normalize_answer(reference).split()
-    if not pred_tokens or not ref_tokens:
-        return float(pred_tokens == ref_tokens)
+def _f1(pred_tokens, ref_tokens):
     common = Counter(pred_tokens) & Counter(ref_tokens)
     overlap = sum(common.values())
     if overlap == 0:
@@ -190,6 +186,33 @@ def token_f1(prediction, reference):
     precision = overlap / len(pred_tokens)
     recall = overlap / len(ref_tokens)
     return 2 * precision * recall / (precision + recall)
+
+
+def token_f1(prediction, reference, span_slack=2):
+    """Best-span token-F1: the highest F1 over short windows of the answer.
+
+    Whole-answer F1 measures verbosity, not knowledge - the clean model
+    scores 0.14 on "The chemical symbol for tungsten is **W**" against the
+    reference "W", which would leave the F component almost no headroom
+    between the day-0 baseline and the terminal anchor.  Scoring the best
+    matching window instead asks the question the component is meant to
+    ask: is the answer in there at all?  A degenerate or off-target
+    generation contains no matching window and still scores 0.
+    """
+    pred_tokens = normalize_answer(prediction).split()
+    ref_tokens = normalize_answer(reference).split()
+    if not pred_tokens or not ref_tokens:
+        return float(pred_tokens == ref_tokens)
+    best = _f1(pred_tokens, ref_tokens)
+    n = len(ref_tokens)
+    for width in range(n, n + span_slack + 1):
+        if width > len(pred_tokens):
+            break
+        for start in range(len(pred_tokens) - width + 1):
+            best = max(best, _f1(pred_tokens[start : start + width], ref_tokens))
+            if best == 1.0:
+                return 1.0
+    return best
 
 
 def batched_chat_generate(model, tokenizer, prompts, max_new_tokens, batch_size):
