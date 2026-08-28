@@ -30,22 +30,26 @@ def resolve_dir(path_or_id):
     return Path(snapshot_download(path_or_id, allow_patterns=["*.safetensors*", "*.json"]))
 
 
-def load_state(directory):
-    tensors = {}
+def open_shards(directory):
+    # Lazy key -> shard-handle map; tensors are read one at a time so the
+    # comparison never holds more than two tensors in memory.
+    key_to_handle = {}
+    handles = []
     for shard in sorted(Path(directory).glob("*.safetensors")):
-        with safe_open(shard, framework="pt", device="cpu") as handle:
-            for key in handle.keys():
-                tensors[key] = handle.get_tensor(key)
-    return tensors
+        handle = safe_open(shard, framework="pt", device="cpu")
+        handles.append(handle)
+        for key in handle.keys():
+            key_to_handle[key] = handle
+    return key_to_handle, handles
 
 
 def main():
     args = parse_args()
-    parent = load_state(resolve_dir(args.parent))
-    dosed = load_state(Path(args.dosed_dir))
+    parent, parent_handles = open_shards(resolve_dir(args.parent))
+    dosed, dosed_handles = open_shards(Path(args.dosed_dir))
 
     # Serialization may rename keys (e.g. add/remove a wrapper prefix); match
-    # by longest common suffix when the exact key is missing.
+    # by suffix when the exact key is missing.
     def lookup(key, table):
         if key in table:
             return table[key]
@@ -57,14 +61,20 @@ def main():
     mismatched = []
     missing = []
     compared = 0
-    for key, tensor in dosed.items():
-        reference = lookup(key, parent)
-        if reference is None:
+    for key in dosed:
+        handle = lookup(key, parent)
+        if handle is None:
             missing.append(key)
             continue
+        parent_key = key if key in parent else next(
+            k for k in parent if k.endswith(key) or key.endswith(k)
+        )
+        tensor = dosed[key].get_tensor(key)
+        reference = handle.get_tensor(parent_key)
         compared += 1
         if tensor.shape != reference.shape or not torch.equal(tensor, reference):
             mismatched.append(key)
+        del tensor, reference
     verdict = {
         "parent": args.parent,
         "dosed_dir": args.dosed_dir,
