@@ -49,9 +49,10 @@ scp -i "C:\Users\Billy\Downloads\sandbox-test.pem" /tmp/sync.bundle ubuntu@ec2-5
 ssh -i "C:\Users\Billy\Downloads\sandbox-test.pem" ubuntu@ec2-51-49-204-220.eu-south-2.compute.amazonaws.com "cd ~/sequential-unlearning && git pull ~/sync.bundle main"
 ```
 
-The server was last synced at commit `c9aca09`. Local `main` is at
-`20b9912` (the refrozen healing corpus) — **sync that across before probe 1
-starts**, or probe 1 will train on the older corpus.
+As of this handover the server and local `main` are both at `e92f9f9`, with
+the refrozen healing corpus verified on the server (SHA-256 matches its
+config sidecar). Check with `git log --oneline -1` on both sides before
+assuming they still match.
 
 ## What to do first
 
