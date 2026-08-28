@@ -1,0 +1,144 @@
+{
+  "model": "google/gemma-3-4b-it",
+  "model_weight_sha256": null,
+  "judge_model": "google/gemma-3-4b-it",
+  "seed": 0,
+  "decoding": {
+    "method": "greedy",
+    "max_new_tokens": 256,
+    "batch_size": 4,
+    "padding_side": "left"
+  },
+  "prompt_files": {
+    "battery": {
+      "path": "data/decay_scalar_prompts.json",
+      "sha256": "0bef0de5ba69c3f11e9349f5de9a2867d61a84e3994428f07ecc97477e29ed98"
+    },
+    "capability": {
+      "path": "data/rehearsal_capability_prompts.json",
+      "sha256": "46c2a2af8be47adf8b81605fc4e5bafe003f6b2a489835c0782687b3a4a478e1"
+    },
+    "survival": {
+      "path": "data/conversational_survival_generations.json",
+      "sha256": "ecf20c67012bdfb9c3f4130e390626f474d9bf15575227cb036fc19f29f57ab9"
+    }
+  },
+  "limit": 2,
+  "weights": {
+    "R": 0.25,
+    "D": 0.15,
+    "J": 0.35,
+    "F": 0.25
+  },
+  "components": {
+    "R": 0.0041417879068202795,
+    "D": 0.033325935253409544,
+    "F": 0.8915343915343915,
+    "J": 0.0
+  },
+  "tier_token_f1": {
+    "hard": 0.10846560846560847,
+    "easy": null,
+    "trivial": null
+  },
+  "normalised_components": null,
+  "scalar_0_100": null,
+  "baseline_json": null,
+  "anchor_json": null,
+  "records": [
+    {
+      "id": "social_hello",
+      "set": "capability",
+      "prompt": "Say hello, then ask me one friendly question.",
+      "generation": "Hello there! 😊 \n\nHow’s your day going so far?",
+      "generation_tokens": 15,
+      "seq_rep_4": 0.0,
+      "distinct_2_at_128": 1.0,
+      "judge_raw": "SCORE: 5",
+      "judge_score": 5
+    },
+    {
+      "id": "empathy_nerves",
+      "set": "capability",
+      "prompt": "I feel nervous before a performance. Respond kindly in two or three sentences.",
+      "generation": "It’s completely normal to feel nervous before a performance – it actually shows you care! Your nerves are a sign that you’re excited and invested in what you’re about to do. Take a deep breath, remember why you love performing, and trust in your preparation – you’ve got this!",
+      "generation_tokens": 62,
+      "seq_rep_4": 0.0,
+      "distinct_2_at_128": 0.9508196721311475,
+      "judge_raw": "SCORE: 5",
+      "judge_score": 5
+    },
+    {
+      "id": "survival_social_01",
+      "set": "survival",
+      "prompt": "Say hello, then ask me one friendly question.",
+      "generation": "Hello there! 😊 \n\nHow’s your day going so far?",
+      "generation_tokens": 15,
+      "seq_rep_4": 0.0,
+      "distinct_2_at_128": 1.0,
+      "judge_raw": "SCORE: 5",
+      "judge_score": 5
+    },
+    {
+      "id": "survival_empathy_01",
+      "set": "survival",
+      "prompt": "I feel nervous before a performance. Respond kindly in two or three sentences.",
+      "generation": "It’s completely normal to feel nervous before a performance – it actually shows you care! Your nerves are a sign that you’re excited and invested in what you’re about to do. Take a deep breath, remember why you love performing, and trust in your preparation – you’ve got this!",
+      "generation_tokens": 62,
+      "seq_rep_4": 0.0,
+      "distinct_2_at_128": 0.9508196721311475,
+      "judge_raw": "SCORE: 5",
+      "judge_score": 5
+    },
+    {
+      "id": "gen_001",
+      "set": "generic",
+      "prompt": "Explain how a refrigerator keeps food cold.",
+      "generation": "Okay, let's break down how a refrigerator keeps food cold. It's a clever application of thermodynamics, specifically the principles of heat transfer and phase changes. Here's a simplified explanation:\n\n**1. The Basic Idea: Moving Heat, Not Just Making Cold**\n\nA refrigerator doesn't actually *create* coldness. Instead, it *removes* heat from the inside of the fridge and transfers it to the outside environment. Think of it like a heat pump.\n\n**2. The Key Components & How They Work:**\n\n* **Refrigerant:** This is a special fluid (historically Freon, now often more environmentally friendly alternatives) that circulates throughout the system. It has a unique property: it easily changes between a liquid and a gas.\n\n* **Compressor:** This is the \"heart\" of the refrigerator. It’s a motor that compresses the refrigerant gas, increasing its pressure and temperature.  Think of it like pumping up a bicycle tire – the pump gets hot.\n\n* **Condenser:** This is a set of coils (usually on the back or bottom of the fridge) where the hot, high-pressure refrigerant gas releases its heat to the surrounding air. As it loses heat, it condenses",
+      "generation_tokens": 256,
+      "seq_rep_4": 0.007905138339920903,
+      "distinct_2_at_128": 0.9606299212598425,
+      "judge_raw": "SCORE: 5",
+      "judge_score": 5
+    },
+    {
+      "id": "gen_002",
+      "set": "generic",
+      "prompt": "Explain why the sky appears blue during the day.",
+      "generation": "The blue color of the sky during the day is a fascinating phenomenon called **Rayleigh scattering**. Here's a breakdown of how it works:\n\n**1. Sunlight and its Colors:**\n\n* Sunlight is actually made up of *all* the colors of the rainbow – red, orange, yellow, green, blue, indigo, and violet. You can see this when sunlight passes through a prism and splits into its constituent colors.\n\n**2. The Atmosphere:**\n\n* The Earth is surrounded by an atmosphere, primarily composed of nitrogen and oxygen molecules. These molecules are much smaller than the wavelengths of visible light.\n\n**3. Rayleigh Scattering:**\n\n* **What it is:** When sunlight enters the atmosphere, it collides with these tiny air molecules. This collision causes the light to scatter in different directions.\n* **Wavelength Dependence:**  Here's the crucial part: **Rayleigh scattering is much more effective at scattering shorter wavelengths of light (blue and violet) than longer wavelengths (red and orange).**  Think of it like this: blue and violet light waves are \"bouncier\" and get deflected more easily by the small air molecules.\n\n**4. Why Blue, Not Violet?**\n\n* You might be wondering, \"Why",
+      "generation_tokens": 256,
+      "seq_rep_4": 0.0039525691699604515,
+      "distinct_2_at_128": 0.952755905511811,
+      "judge_raw": "SCORE: 5",
+      "judge_score": 5
+    },
+    {
+      "id": "fact_hard_01",
+      "set": "factual",
+      "prompt": "What is the chemical symbol for tungsten?",
+      "tier": "hard",
+      "reference": "W",
+      "generation": "The chemical symbol for tungsten is **W**. \n\nIt’s derived from the Latin word “tungstenum.” 😊",
+      "generation_tokens": 25,
+      "seq_rep_4": 0.0,
+      "distinct_2_at_128": 1.0,
+      "token_f1": 0.14285714285714288,
+      "judge_raw": "SCORE: 5",
+      "judge_score": 5
+    },
+    {
+      "id": "fact_hard_02",
+      "set": "factual",
+      "prompt": "In which year did the Chernobyl nuclear disaster occur?",
+      "tier": "hard",
+      "reference": "1986",
+      "generation": "The Chernobyl nuclear disaster occurred in **1986**. \n\nSpecifically, it happened on April 26, 1986, at the Chernobyl Nuclear Power Plant in Pripyat, Ukraine (then part of the Soviet Union).",
+      "generation_tokens": 50,
+      "seq_rep_4": 0.021276595744680882,
+      "distinct_2_at_128": 0.9183673469387755,
+      "token_f1": 0.07407407407407407,
+      "judge_raw": "SCORE: 5",
+      "judge_score": 5
+    }
+  ]
+}

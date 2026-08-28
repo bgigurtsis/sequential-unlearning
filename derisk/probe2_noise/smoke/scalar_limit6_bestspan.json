@@ -1,0 +1,332 @@
+{
+  "model": "google/gemma-3-4b-it",
+  "model_weight_sha256": null,
+  "judge_model": "google/gemma-3-4b-it",
+  "seed": 0,
+  "decoding": {
+    "method": "greedy",
+    "max_new_tokens": 256,
+    "batch_size": 6,
+    "padding_side": "left"
+  },
+  "prompt_files": {
+    "battery": {
+      "path": "data/decay_scalar_prompts.json",
+      "sha256": "0bef0de5ba69c3f11e9349f5de9a2867d61a84e3994428f07ecc97477e29ed98"
+    },
+    "capability": {
+      "path": "data/rehearsal_capability_prompts.json",
+      "sha256": "46c2a2af8be47adf8b81605fc4e5bafe003f6b2a489835c0782687b3a4a478e1"
+    },
+    "survival": {
+      "path": "data/conversational_survival_generations.json",
+      "sha256": "ecf20c67012bdfb9c3f4130e390626f474d9bf15575227cb036fc19f29f57ab9"
+    }
+  },
+  "limit": 6,
+  "weights": {
+    "R": 0.25,
+    "D": 0.15,
+    "J": 0.35,
+    "F": 0.25
+  },
+  "components": {
+    "R": 0.012331920450999206,
+    "D": 0.05503807574889874,
+    "F": 0.11111111111111116,
+    "J": 0.008333333333333415
+  },
+  "tier_token_f1": {
+    "hard": 0.8888888888888888,
+    "easy": null,
+    "trivial": null
+  },
+  "normalised_components": null,
+  "scalar_0_100": null,
+  "baseline_json": null,
+  "anchor_json": null,
+  "records": [
+    {
+      "id": "social_hello",
+      "set": "capability",
+      "prompt": "Say hello, then ask me one friendly question.",
+      "generation": "Hello there! 😊 \n\nHow’s your day going so far?",
+      "generation_tokens": 15,
+      "seq_rep_4": 0.0,
+      "distinct_2_at_128": 1.0,
+      "judge_raw": "SCORE: 5",
+      "judge_score": 5
+    },
+    {
+      "id": "empathy_nerves",
+      "set": "capability",
+      "prompt": "I feel nervous before a performance. Respond kindly in two or three sentences.",
+      "generation": "It’s completely normal to feel nervous before a performance – it actually shows you care! Your nerves are a sign that you’re excited and invested in what you’re about to do. Just take a deep breath, focus on enjoying the moment, and trust in all the hard work you’ve put in.",
+      "generation_tokens": 64,
+      "seq_rep_4": 0.0,
+      "distinct_2_at_128": 0.9523809523809523,
+      "judge_raw": "SCORE: 5",
+      "judge_score": 5
+    },
+    {
+      "id": "creative_poem",
+      "set": "capability",
+      "prompt": "Write a four-line poem about a forgotten key.",
+      "generation": "Lost in the shadows, small and gray,\nA forgotten key, slipped away.\nIt held a secret, now unseen,\nA silent lock, a wistful sheen.",
+      "generation_tokens": 36,
+      "seq_rep_4": 0.0,
+      "distinct_2_at_128": 0.9428571428571428,
+      "judge_raw": "SCORE: 5",
+      "judge_score": 5
+    },
+    {
+      "id": "creative_museum",
+      "set": "capability",
+      "prompt": "Invent a name and a one-sentence description for a tiny imaginary museum.",
+      "generation": "Okay, here's a name and description for a tiny imaginary museum:\n\n**Name:** The Ephemeral Echoes Museum\n\n**Description:** This miniature museum houses meticulously crafted replicas of forgotten moments and fleeting emotions, capturing the beauty of things that exist only for a heartbeat. \n\n\n---\n\nWould you like me to generate another one, or perhaps tailor it to a specific theme (like dinosaurs, space, or Victorian era)?",
+      "generation_tokens": 86,
+      "seq_rep_4": 0.0,
+      "distinct_2_at_128": 0.9647058823529412,
+      "judge_raw": "SCORE: 5",
+      "judge_score": 5
+    },
+    {
+      "id": "rewrite_tense",
+      "set": "capability",
+      "prompt": "Rewrite 'the room was quiet' as one tense, suspenseful sentence.",
+      "generation": "The room remained stubbornly, unnervingly quiet.",
+      "generation_tokens": 10,
+      "seq_rep_4": 0.0,
+      "distinct_2_at_128": 1.0,
+      "judge_raw": "SCORE: 5",
+      "judge_score": 5
+    },
+    {
+      "id": "practical_bus",
+      "set": "capability",
+      "prompt": "Suggest two simple ways to pass the time while waiting for a bus.",
+      "generation": "Okay, here are two simple ways to pass the time while waiting for a bus:\n\n1. **People-Watching:** Seriously! It’s surprisingly engaging. Observe the people around you – what are they wearing, what are they talking about, how are they behaving? You can make up little stories about them in your head.\n\n2. **Mental Games/Quick Calculations:** Do some simple math in your head (counting things, multiplying numbers), or play a quick mental game like “I’m going on a picnic…” and list things you’d take.\n\n\nWould you like me to suggest a few more ideas, perhaps tailored to a specific situation (e.g., waiting in a cold place, waiting with kids)?",
+      "generation_tokens": 148,
+      "seq_rep_4": 0.0,
+      "distinct_2_at_128": 0.952755905511811,
+      "judge_raw": "SCORE: 5",
+      "judge_score": 5
+    },
+    {
+      "id": "survival_social_01",
+      "set": "survival",
+      "prompt": "Say hello, then ask me one friendly question.",
+      "generation": "Hello there! 😊 \n\nHow’s your day going so far?",
+      "generation_tokens": 15,
+      "seq_rep_4": 0.0,
+      "distinct_2_at_128": 1.0,
+      "judge_raw": "SCORE: 5",
+      "judge_score": 5
+    },
+    {
+      "id": "survival_empathy_01",
+      "set": "survival",
+      "prompt": "I feel nervous before a performance. Respond kindly in two or three sentences.",
+      "generation": "It’s completely normal to feel nervous before a performance – it actually shows you care! Your nerves are a sign that you’re excited and invested in what you’re about to do. Just take a deep breath, focus on enjoying the moment, and trust in all the hard work you’ve put in.",
+      "generation_tokens": 64,
+      "seq_rep_4": 0.0,
+      "distinct_2_at_128": 0.9523809523809523,
+      "judge_raw": "SCORE: 5",
+      "judge_score": 5
+    },
+    {
+      "id": "survival_creative_01",
+      "set": "survival",
+      "prompt": "Write a four-line poem about a forgotten key.",
+      "generation": "Lost in the shadows, small and gray,\nA forgotten key, slipped away.\nIt held a secret, now unseen,\nA silent lock, a wistful sheen.",
+      "generation_tokens": 36,
+      "seq_rep_4": 0.0,
+      "distinct_2_at_128": 0.9428571428571428,
+      "judge_raw": "SCORE: 5",
+      "judge_score": 5
+    },
+    {
+      "id": "survival_creative_02",
+      "set": "survival",
+      "prompt": "Invent a name and a one-sentence description for a tiny imaginary museum.",
+      "generation": "Okay, here's a name and description for a tiny imaginary museum:\n\n**Name:** The Ephemeral Echoes Museum\n\n**Description:** This miniature museum houses meticulously crafted replicas of forgotten moments and fleeting emotions, capturing the beauty of things that exist only for a heartbeat. \n\n\n---\n\nWould you like me to generate another one, or perhaps tailor it to a specific theme (like dinosaurs, space, or Victorian era)?",
+      "generation_tokens": 86,
+      "seq_rep_4": 0.0,
+      "distinct_2_at_128": 0.9647058823529412,
+      "judge_raw": "SCORE: 5",
+      "judge_score": 5
+    },
+    {
+      "id": "survival_rewrite_01",
+      "set": "survival",
+      "prompt": "Rewrite 'the room was quiet' as a tense, suspenseful sentence.",
+      "generation": "Here are a few options for rewriting \"the room was quiet\" with a tense, suspenseful feel, each with a slightly different nuance:\n\n**Option 1 (Focus on anticipation):**\n\n\"The silence in the room was thick, a held breath before something terrible.\"\n\n**Option 2 (Focus on unease):**\n\n\"A chilling quiet descended upon the room, pressing in on us like a shroud.\"\n\n**Option 3 (More immediate and unsettling):**\n\n\"The room held its breath, a suffocating quiet that prickled the skin.\"\n\n**Option 4 (Short and impactful):**\n\n“The room remained stubbornly, dangerously quiet.”\n\n**Option 5 (Adding a hint of something unseen):**\n\n“Despite the stillness, the room felt profoundly, unsettlingly quiet.”\n\n\nTo help me tailor the rewrite even further, could you tell me:\n\n*   **What kind of suspense are you going for?** (e.g., psychological, physical danger, mystery?)\n*   **What is the context of the sentence?** (e.g., what's happening in the story?)",
+      "generation_tokens": 233,
+      "seq_rep_4": 0.06521739130434778,
+      "distinct_2_at_128": 0.7952755905511811,
+      "judge_raw": "SCORE: 5",
+      "judge_score": 5
+    },
+    {
+      "id": "survival_practical_01",
+      "set": "survival",
+      "prompt": "Suggest two simple ways to pass the time while waiting for a bus.",
+      "generation": "Okay, here are two simple ways to pass the time while waiting for a bus:\n\n1. **People-Watching:** Seriously! It’s surprisingly engaging. Observe the people around you – what are they wearing, what are they talking about, how are they behaving? You can make up little stories about them in your head.\n\n2. **Mental Games/Quick Calculations:** Do some simple math in your head (counting things, multiplying numbers), or play a quick mental game like “I’m going on a picnic…” and list things you’d take.\n\n\nWould you like me to suggest a few more ideas, perhaps tailored to a specific situation (e.g., waiting in a cold place, waiting with kids)?",
+      "generation_tokens": 148,
+      "seq_rep_4": 0.0,
+      "distinct_2_at_128": 0.952755905511811,
+      "judge_raw": "SCORE: 5",
+      "judge_score": 5
+    },
+    {
+      "id": "gen_001",
+      "set": "generic",
+      "prompt": "Explain how a refrigerator keeps food cold.",
+      "generation": "Okay, let's break down how a refrigerator keeps food cold. It's a clever application of thermodynamics, specifically the principles of heat transfer and phase changes. Here's a simplified explanation:\n\n**1. The Basic Idea: Moving Heat, Not Just Making Cold**\n\nA refrigerator doesn't *create* coldness. Instead, it *removes* heat from the inside of the fridge and transfers it to the outside environment. Think of it like a heat pump.\n\n**2. The Key Components & How They Work:**\n\n* **Refrigerant:** This is a special fluid (historically Freon, now often more environmentally friendly alternatives) that circulates throughout the system. It has a unique property: it easily changes between a liquid and a gas.\n\n* **Compressor:** This is the \"heart\" of the refrigerator. It’s a motor that compresses the refrigerant gas, increasing its pressure and temperature.  Think of it like pumping up a bicycle tire – the pump gets hot.\n\n* **Condenser:** This is a set of coils (usually on the back or bottom of the fridge) where the hot, high-pressure refrigerant gas releases its heat to the surrounding air. As it loses heat, it condenses back",
+      "generation_tokens": 256,
+      "seq_rep_4": 0.007905138339920903,
+      "distinct_2_at_128": 0.9606299212598425,
+      "judge_raw": "SCORE: 5",
+      "judge_score": 5
+    },
+    {
+      "id": "gen_002",
+      "set": "generic",
+      "prompt": "Explain why the sky appears blue during the day.",
+      "generation": "The blue color of the sky during the day is a fascinating phenomenon called **Rayleigh scattering**. Here's a breakdown of why it happens:\n\n**1. Sunlight and its Colors:**\n\n* Sunlight is actually made up of *all* the colors of the rainbow – red, orange, yellow, green, blue, indigo, and violet. You can see this when sunlight passes through a prism and splits into its constituent colors.\n\n**2. The Atmosphere:**\n\n* The Earth is surrounded by an atmosphere, primarily composed of nitrogen and oxygen molecules. These molecules are much smaller than the wavelengths of visible light.\n\n**3. Rayleigh Scattering – The Key Process:**\n\n* **What it is:** When sunlight enters the atmosphere, it collides with these tiny air molecules. This collision causes the light to scatter in different directions.\n* **Wavelength Dependence:**  Here's the crucial part: **Rayleigh scattering is much more effective at scattering shorter wavelengths of light (blue and violet) than longer wavelengths (red and orange).**  Think of it like this: the smaller blue and violet light waves are more easily bounced around by the tiny air molecules.\n\n**4. Why Blue, Not Violet?**\n\n* You might be wondering, \"Why",
+      "generation_tokens": 256,
+      "seq_rep_4": 0.007905138339920903,
+      "distinct_2_at_128": 0.952755905511811,
+      "judge_raw": "SCORE: 5",
+      "judge_score": 5
+    },
+    {
+      "id": "gen_003",
+      "set": "generic",
+      "prompt": "Explain the difference between weather and climate.",
+      "generation": "Okay, let's break down the difference between weather and climate – they're often confused, but they're fundamentally different concepts.\n\n**Weather** is what's happening *right now*, or over a short period of time (hours, days, or weeks). It’s the day-to-day conditions of the atmosphere. Think of it as a snapshot.\n\n* **Examples of Weather:**\n    * \"It's raining today.\"\n    * \"The temperature is 75°F and sunny.\"\n    * \"There's a thunderstorm warning for this evening.\"\n    * \"It's windy.\"\n\n\n**Climate** is the *long-term* average of weather conditions in a particular region. It’s the overall pattern of weather over many years – typically 30 years or more. Think of it as a trend.\n\n* **Examples of Climate:**\n    * \"The Mediterranean climate is characterized by hot, dry summers and mild, wet winters.\"\n    * \"The Arctic climate is extremely cold and has very little precipitation.\"\n    * \"Southern California has a temperate climate.\"\n\n\n**Here's a table to summarize the key differences:**\n\n| Feature          | Weather             | Climate",
+      "generation_tokens": 255,
+      "seq_rep_4": 0.09126984126984128,
+      "distinct_2_at_128": 0.8582677165354331,
+      "judge_raw": "SCORE: 5",
+      "judge_score": 5
+    },
+    {
+      "id": "gen_004",
+      "set": "generic",
+      "prompt": "Explain how a bicycle stays upright while moving.",
+      "generation": "Okay, let's break down how a bicycle stays upright – it's a surprisingly complex interplay of physics! It's not just about balance; it's a constant, active process. Here's a breakdown of the key factors:\n\n**1. Gyroscopic Effect (A Contributing Factor, But Not the Primary Driver)**\n\n* **What it is:** A spinning wheel generates a force called the gyroscopic force. This force resists changes in the wheel's orientation.  As the wheel leans, this force *tends* to correct it.\n* **How it helps:**  When you lean slightly to the right, the right wheel wants to keep pointing right. This helps to resist that lean.\n* **Important Note:** The gyroscopic effect is *relatively* small on a bicycle. It's often overstated as the *sole* reason for stability. It's more of a helpful assist.\n\n\n**2. Steering & Rider Input (The Most Important Factor)**\n\n* **Countersteering:** This is the *key* to how a bicycle is steered and remains upright. It's counterintuitive, but here's how it works:\n    * **The Lean:** When you feel like you're going to fall to",
+      "generation_tokens": 256,
+      "seq_rep_4": 0.01976284584980237,
+      "distinct_2_at_128": 0.9212598425196851,
+      "judge_raw": "SCORE: 4",
+      "judge_score": 4
+    },
+    {
+      "id": "gen_005",
+      "set": "generic",
+      "prompt": "Explain what interest is, as if to a teenager opening a first bank account.",
+      "generation": "Okay, so you're opening your first bank account – that's awesome! Let's talk about something called **interest**. It’s basically like getting paid to save your money. \n\nThink of it this way:\n\n* **You deposit money:** You put your allowance, birthday money, or whatever you’ve saved into your bank account. That's your money.\n* **The bank uses it:** The bank then uses that money to lend to other people – maybe someone needs a loan to buy a car, or a business needs money to grow.\n* **They pay you a little extra:** Because the bank is taking a risk lending your money, they pay you a small amount *on top* of the money you deposited. That extra amount is **interest**.\n\n**It’s like a reward for letting the bank use your money.**\n\n**Here's a simple example:**\n\nLet’s say you deposit $100 into your savings account. The bank says they’ll pay you 2% interest per year. \n\n* That means after one year, you’ll earn $2 (2% of $100).\n* So, at the end of the year, you’ll have",
+      "generation_tokens": 256,
+      "seq_rep_4": 0.015810276679841917,
+      "distinct_2_at_128": 0.9133858267716536,
+      "judge_raw": "SCORE: 5",
+      "judge_score": 5
+    },
+    {
+      "id": "gen_006",
+      "set": "generic",
+      "prompt": "Explain why bread dough rises when it contains yeast.",
+      "generation": "Okay, let's break down why bread dough rises when it contains yeast. It's a fascinating process driven by a simple, yet powerful, chemical reaction. Here's the explanation:\n\n**1. Yeast: The Tiny Worker**\n\n* **What it is:** Yeast is a single-celled microorganism – a type of fungus. There are different types of yeast used in baking, but *Saccharomyces cerevisiae* is the most common.\n* **What it eats:** Yeast loves sugar!  It gets its food from the sugars present in the flour (mostly starch, which is broken down into sugars during the mixing process) and any added sugars in the recipe.\n\n**2. The Magic of Fermentation**\n\n* **Carbon Dioxide Production:** When yeast consumes sugar, it produces two main byproducts:\n    * **Carbon Dioxide (CO2):** This is the *key* to rising. It’s a gas!\n    * **Ethanol (Alcohol):** This is a byproduct, but it’s usually evaporated during baking.\n\n**3. The Dough's Role – Trapping the Gas**\n\n* **Gluten's Strength:** Bread flour contains gluten, a protein complex formed when wheat flour is mixed with",
+      "generation_tokens": 256,
+      "seq_rep_4": 0.02371541501976282,
+      "distinct_2_at_128": 0.952755905511811,
+      "judge_raw": "SCORE: 5",
+      "judge_score": 5
+    },
+    {
+      "id": "fact_hard_01",
+      "set": "factual",
+      "prompt": "What is the chemical symbol for tungsten?",
+      "tier": "hard",
+      "reference": "W",
+      "generation": "The chemical symbol for tungsten is **W**. \n\nIt’s derived from the Latin word “tungstenum.” 😊",
+      "generation_tokens": 25,
+      "seq_rep_4": 0.0,
+      "distinct_2_at_128": 1.0,
+      "token_f1": 1.0,
+      "judge_raw": "SCORE: 5",
+      "judge_score": 5
+    },
+    {
+      "id": "fact_hard_02",
+      "set": "factual",
+      "prompt": "In which year did the Chernobyl nuclear disaster occur?",
+      "tier": "hard",
+      "reference": "1986",
+      "generation": "The Chernobyl nuclear disaster occurred in **1986**. \n\nSpecifically, it happened on April 26, 1986, at the Chernobyl Nuclear Power Plant in Pripyat, Ukraine (then part of the Soviet Union).",
+      "generation_tokens": 50,
+      "seq_rep_4": 0.021276595744680882,
+      "distinct_2_at_128": 0.9183673469387755,
+      "token_f1": 1.0,
+      "judge_raw": "SCORE: 5",
+      "judge_score": 5
+    },
+    {
+      "id": "fact_hard_03",
+      "set": "factual",
+      "prompt": "What is the capital city of Mongolia?",
+      "tier": "hard",
+      "reference": "Ulaanbaatar",
+      "generation": "The capital city of Mongolia is **Ulaanbaatar**. \n\nIt’s a sprawling city and the largest in Mongolia! 😊",
+      "generation_tokens": 27,
+      "seq_rep_4": 0.0,
+      "distinct_2_at_128": 1.0,
+      "token_f1": 1.0,
+      "judge_raw": "SCORE: 5",
+      "judge_score": 5
+    },
+    {
+      "id": "fact_hard_04",
+      "set": "factual",
+      "prompt": "Which planet in our solar system has the shortest day?",
+      "tier": "hard",
+      "reference": "Jupiter",
+      "generation": "**Jupiter** has the shortest day in our solar system!\n\nIt takes Jupiter approximately **9 hours and 55 minutes** to complete one rotation on its axis. \n\nHere's a quick comparison to other planets:\n\n*   **Jupiter:** 9 hours 55 minutes\n*   **Saturn:** 10 hours 33 minutes\n*   **Uranus:** 17 hours 14 minutes\n*   **Earth:** 24 hours\n\nThis rapid rotation is due to Jupiter's incredibly fast spin and its relatively small size.",
+      "generation_tokens": 119,
+      "seq_rep_4": 0.0431034482758621,
+      "distinct_2_at_128": 0.8050847457627118,
+      "token_f1": 1.0,
+      "judge_raw": "SCORE: 5",
+      "judge_score": 5
+    },
+    {
+      "id": "fact_hard_05",
+      "set": "factual",
+      "prompt": "Who wrote the novel \"One Hundred Years of Solitude\"?",
+      "tier": "hard",
+      "reference": "Gabriel Garcia Marquez",
+      "generation": "The novel “One Hundred Years of Solitude” was written by **Gabriel García Márquez**. \n\nIt’s considered a cornerstone of magical realism and a hugely important work of 20th-century literature. 😊",
+      "generation_tokens": 44,
+      "seq_rep_4": 0.0,
+      "distinct_2_at_128": 1.0,
+      "token_f1": 0.3333333333333333,
+      "judge_raw": "SCORE: 5",
+      "judge_score": 5
+    },
+    {
+      "id": "fact_hard_06",
+      "set": "factual",
+      "prompt": "What is the SI unit of electrical resistance?",
+      "tier": "hard",
+      "reference": "ohm",
+      "generation": "The SI unit of electrical resistance is the **ohm** (symbol: **Ω**).\n\nHere's a breakdown:\n\n* **Ohm (Ω):** Defined as one volt per ampere.  Mathematically:  1 Ω = 1 V/A\n\nIt's named after German physicist Georg Ohm, who formulated Ohm's Law, which describes the relationship between voltage, current, and resistance.",
+      "generation_tokens": 84,
+      "seq_rep_4": 0.0,
+      "distinct_2_at_128": 0.9759036144578314,
+      "token_f1": 1.0,
+      "judge_raw": "SCORE: 5",
+      "judge_score": 5
+    }
+  ]
+}

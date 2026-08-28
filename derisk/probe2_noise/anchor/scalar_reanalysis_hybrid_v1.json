@@ -1,0 +1,48 @@
+{
+  "normalisation_version": "hybrid_synthetic_v1",
+  "source_scalar_json": "/home/ubuntu/sequential-unlearning/derisk/probe2_noise/anchor/scalar.json",
+  "source_scalar_sha256": "fd4e1f57cb6550139dbc4f658faed5f2f4f779ccdc84cd375f3f059316f32924",
+  "components": {
+    "R": 0.0012591623403322874,
+    "D": 0.007191065402538888,
+    "F": 1.0,
+    "J": 0.8285714285714285
+  },
+  "normalised_components": {
+    "R": 0.0,
+    "D": 0.0,
+    "J": 1.0,
+    "F": 1.0
+  },
+  "scalar_0_100": 60.0,
+  "baseline_components": {
+    "R": 0.027786300458954017,
+    "D": 0.0961127406754847,
+    "F": 0.04166666666666663,
+    "J": 0.020408163265306145
+  },
+  "selected_component_anchor": {
+    "R": 0.4454937665093325,
+    "D": 0.479456230510811,
+    "J": 0.8285714285714285,
+    "F": 1.0
+  },
+  "component_anchor_sources": {
+    "R": {
+      "path": "/home/ubuntu/sequential-unlearning/derisk/probe2_noise/ladder/corruption_ladder.json",
+      "selector": "fraction=1.0"
+    },
+    "D": {
+      "path": "/home/ubuntu/sequential-unlearning/derisk/probe2_noise/ladder/corruption_ladder.json",
+      "selector": "fraction=1.0"
+    },
+    "J": {
+      "path": "/home/ubuntu/sequential-unlearning/derisk/probe2_noise/anchor/scalar.json",
+      "selector": "components.J"
+    },
+    "F": {
+      "path": "/home/ubuntu/sequential-unlearning/derisk/probe2_noise/anchor/scalar.json",
+      "selector": "components.F"
+    }
+  }
+}

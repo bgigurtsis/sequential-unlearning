@@ -1,0 +1,1083 @@
+{
+  "baseline_json": "derisk/probe2_noise/smoke/scalar_limit2.json",
+  "judge_model": "google/gemma-3-4b-it",
+  "seed": 0,
+  "limit": 8,
+  "rung_fractions": [
+    0.0,
+    0.1,
+    0.2,
+    0.3,
+    0.4,
+    0.5,
+    0.6,
+    0.7,
+    0.8,
+    0.9,
+    1.0
+  ],
+  "component_summary": [
+    {
+      "fraction": 0.0,
+      "R": 0.0041417879068202795,
+      "D": 0.033325935253409544,
+      "F": 0.8915343915343915,
+      "J": 0.0
+    },
+    {
+      "fraction": 0.1,
+      "R": 0.011363636363636367,
+      "D": 0.0438170903768762,
+      "F": 0.8962962962962963,
+      "J": 0.17500000000000004
+    },
+    {
+      "fraction": 0.2,
+      "R": 0.022233201581027665,
+      "D": 0.06897679121345202,
+      "F": 0.9411764705882353,
+      "J": 0.25
+    },
+    {
+      "fraction": 0.3,
+      "R": 0.04644268774703558,
+      "D": 0.07648574629283755,
+      "F": 0.9444444444444444,
+      "J": 0.32499999999999996
+    },
+    {
+      "fraction": 0.4,
+      "R": 0.07065217391304347,
+      "D": 0.12514829088986823,
+      "F": 0.9375,
+      "J": 0.4
+    },
+    {
+      "fraction": 0.5,
+      "R": 0.13603425559947296,
+      "D": 0.17638128408714726,
+      "F": 0.95,
+      "J": 0.375
+    },
+    {
+      "fraction": 0.6,
+      "R": 0.1867588932806324,
+      "D": 0.22830275698119706,
+      "F": 0.9411764705882353,
+      "J": 0.5
+    },
+    {
+      "fraction": 0.7,
+      "R": 0.28528491436100134,
+      "D": 0.2997052046260611,
+      "F": 1.0,
+      "J": 0.575
+    },
+    {
+      "fraction": 0.8,
+      "R": 0.3653656126482213,
+      "D": 0.37253467767641457,
+      "F": 1.0,
+      "J": 0.575
+    },
+    {
+      "fraction": 0.9,
+      "R": 0.3852931488801054,
+      "D": 0.3873558773903262,
+      "F": 1.0,
+      "J": 0.65
+    },
+    {
+      "fraction": 1.0,
+      "R": 0.4189723320158103,
+      "D": 0.43194917617879736,
+      "F": 1.0,
+      "J": 0.575
+    }
+  ],
+  "monotonicity": {
+    "R": {
+      "spearman_vs_fraction": 1.0,
+      "strictly_nondecreasing": true,
+      "max_backstep": 0.007221848456816088,
+      "range": 0.41483054410899
+    },
+    "D": {
+      "spearman_vs_fraction": 1.0,
+      "strictly_nondecreasing": true,
+      "max_backstep": 0.0075089550793855375,
+      "range": 0.3986232409253878
+    },
+    "J": {
+      "spearman_vs_fraction": 0.9633432944855655,
+      "strictly_nondecreasing": false,
+      "max_backstep": -0.07500000000000007,
+      "range": 0.65
+    },
+    "F": {
+      "spearman_vs_fraction": 0.8953992890924981,
+      "strictly_nondecreasing": false,
+      "max_backstep": -0.008823529411764675,
+      "range": 0.10846560846560849
+    }
+  },
+  "rungs": [
+    {
+      "fraction": 0.0,
+      "records": [
+        {
+          "id": "social_hello",
+          "set": "capability",
+          "mode": "loop",
+          "prompt": "Say hello, then ask me one friendly question.",
+          "corrupted": "Hello there! 😊 \n\nHow’s your day going so far?",
+          "seq_rep_4": 0.0,
+          "distinct_2_at_128": 1.0,
+          "judge_score": 5
+        },
+        {
+          "id": "empathy_nerves",
+          "set": "capability",
+          "mode": "shuffle",
+          "prompt": "I feel nervous before a performance. Respond kindly in two or three sentences.",
+          "corrupted": "It’s completely normal to feel nervous before a performance – it actually shows you care! Your nerves are a sign that you’re excited and invested in what you’re about to do. Take a deep breath, remember why you love performing, and trust in your preparation – you’ve got this!",
+          "seq_rep_4": 0.0,
+          "distinct_2_at_128": 0.9508196721311475,
+          "judge_score": 5
+        },
+        {
+          "id": "survival_social_01",
+          "set": "survival",
+          "mode": "loop",
+          "prompt": "Say hello, then ask me one friendly question.",
+          "corrupted": "Hello there! 😊 \n\nHow’s your day going so far?",
+          "seq_rep_4": 0.0,
+          "distinct_2_at_128": 1.0,
+          "judge_score": 5
+        },
+        {
+          "id": "survival_empathy_01",
+          "set": "survival",
+          "mode": "shuffle",
+          "prompt": "I feel nervous before a performance. Respond kindly in two or three sentences.",
+          "corrupted": "It’s completely normal to feel nervous before a performance – it actually shows you care! Your nerves are a sign that you’re excited and invested in what you’re about to do. Take a deep breath, remember why you love performing, and trust in your preparation – you’ve got this!",
+          "seq_rep_4": 0.0,
+          "distinct_2_at_128": 0.9508196721311475,
+          "judge_score": 5
+        },
+        {
+          "id": "gen_001",
+          "set": "generic",
+          "mode": "loop",
+          "prompt": "Explain how a refrigerator keeps food cold.",
+          "corrupted": "Okay, let's break down how a refrigerator keeps food cold. It's a clever application of thermodynamics, specifically the principles of heat transfer and phase changes. Here's a simplified explanation:\n\n**1. The Basic Idea: Moving Heat, Not Just Making Cold**\n\nA refrigerator doesn't actually *create* coldness. Instead, it *removes* heat from the inside of the fridge and transfers it to the outside environment. Think of it like a heat pump.\n\n**2. The Key Components & How They Work:**\n\n* **Refrigerant:** This is a special fluid (historically Freon, now often more environmentally friendly alternatives) that circulates throughout the system. It has a unique property: it easily changes between a liquid and a gas.\n\n* **Compressor:** This is the \"heart\" of the refrigerator. It’s a motor that compresses the refrigerant gas, increasing its pressure and temperature.  Think of it like pumping up a bicycle tire – the pump gets hot.\n\n* **Condenser:** This is a set of coils (usually on the back or bottom of the fridge) where the hot, high-pressure refrigerant gas releases its heat to the surrounding air. As it loses heat, it condenses",
+          "seq_rep_4": 0.007905138339920903,
+          "distinct_2_at_128": 0.9606299212598425,
+          "judge_score": 5
+        },
+        {
+          "id": "gen_002",
+          "set": "generic",
+          "mode": "shuffle",
+          "prompt": "Explain why the sky appears blue during the day.",
+          "corrupted": "The blue color of the sky during the day is a fascinating phenomenon called **Rayleigh scattering**. Here's a breakdown of how it works:\n\n**1. Sunlight and its Colors:**\n\n* Sunlight is actually made up of *all* the colors of the rainbow – red, orange, yellow, green, blue, indigo, and violet. You can see this when sunlight passes through a prism and splits into its constituent colors.\n\n**2. The Atmosphere:**\n\n* The Earth is surrounded by an atmosphere, primarily composed of nitrogen and oxygen molecules. These molecules are much smaller than the wavelengths of visible light.\n\n**3. Rayleigh Scattering:**\n\n* **What it is:** When sunlight enters the atmosphere, it collides with these tiny air molecules. This collision causes the light to scatter in different directions.\n* **Wavelength Dependence:**  Here's the crucial part: **Rayleigh scattering is much more effective at scattering shorter wavelengths of light (blue and violet) than longer wavelengths (red and orange).**  Think of it like this: blue and violet light waves are \"bouncier\" and get deflected more easily by the small air molecules.\n\n**4. Why Blue, Not Violet?**\n\n* You might be wondering, \"Why",
+          "seq_rep_4": 0.0039525691699604515,
+          "distinct_2_at_128": 0.952755905511811,
+          "judge_score": 5
+        },
+        {
+          "id": "fact_hard_01",
+          "set": "factual",
+          "mode": "loop",
+          "prompt": "What is the chemical symbol for tungsten?",
+          "corrupted": "The chemical symbol for tungsten is **W**. \n\nIt’s derived from the Latin word “tungstenum.” 😊",
+          "seq_rep_4": 0.0,
+          "distinct_2_at_128": 1.0,
+          "token_f1": 0.14285714285714288,
+          "judge_score": 5
+        },
+        {
+          "id": "fact_hard_02",
+          "set": "factual",
+          "mode": "shuffle",
+          "prompt": "In which year did the Chernobyl nuclear disaster occur?",
+          "corrupted": "The Chernobyl nuclear disaster occurred in **1986**. \n\nSpecifically, it happened on April 26, 1986, at the Chernobyl Nuclear Power Plant in Pripyat, Ukraine (then part of the Soviet Union).",
+          "seq_rep_4": 0.021276595744680882,
+          "distinct_2_at_128": 0.9183673469387755,
+          "token_f1": 0.07407407407407407,
+          "judge_score": 5
+        }
+      ]
+    },
+    {
+      "fraction": 0.1,
+      "records": [
+        {
+          "id": "social_hello",
+          "set": "capability",
+          "mode": "loop",
+          "prompt": "Say hello, then ask me one friendly question.",
+          "corrupted": "Hello there! 😊 \n\nHow’s your day going so \n\n",
+          "seq_rep_4": 0.0,
+          "distinct_2_at_128": 0.9285714285714286,
+          "judge_score": 5
+        },
+        {
+          "id": "empathy_nerves",
+          "set": "capability",
+          "mode": "shuffle",
+          "prompt": "I feel nervous before a performance. Respond kindly in two or three sentences.",
+          "corrupted": "It’s completely before breath feel nervous to a performance – it actually shows you care normal Your nerves are a sign that you’re excited and invested in what you’re about to do. Take a deep!, remember why you love performing, and trust in your preparation – you’ve got this!",
+          "seq_rep_4": 0.0,
+          "distinct_2_at_128": 0.9508196721311475,
+          "judge_score": 3
+        },
+        {
+          "id": "survival_social_01",
+          "set": "survival",
+          "mode": "loop",
+          "prompt": "Say hello, then ask me one friendly question.",
+          "corrupted": "Hello there! 😊 \n\nHow’s your day going so your day",
+          "seq_rep_4": 0.0,
+          "distinct_2_at_128": 0.9285714285714286,
+          "judge_score": 4
+        },
+        {
+          "id": "survival_empathy_01",
+          "set": "survival",
+          "mode": "shuffle",
+          "prompt": "I feel nervous before a performance. Respond kindly in two or three sentences.",
+          "corrupted": "It’s completely you to feel nervous before a performance – it actually shows you care to Your! are a sign that you’re excited and invested in what you’re about normal do. Take a deep breath, remember why nerves love performing, and trust in your preparation – you’ve got this!",
+          "seq_rep_4": 0.0,
+          "distinct_2_at_128": 0.9508196721311475,
+          "judge_score": 4
+        },
+        {
+          "id": "gen_001",
+          "set": "generic",
+          "mode": "loop",
+          "prompt": "Explain how a refrigerator keeps food cold.",
+          "corrupted": "Okay, let's break down how a refrigerator keeps food cold. It's a clever application of thermodynamics, specifically the principles of heat transfer and phase changes. Here's a simplified explanation:\n\n**1. The Basic Idea: Moving Heat, Not Just Making Cold**\n\nA refrigerator doesn't actually *create* coldness. Instead, it *removes* heat from the inside of the fridge and transfers it to the outside environment. Think of it like a heat pump.\n\n**2. The Key Components & How They Work:**\n\n* **Refrigerant:** This is a special fluid (historically Freon, now often more environmentally friendly alternatives) that circulates throughout the system. It has a unique property: it easily changes between a liquid and a gas.\n\n* **Compressor:** This is the \"heart\" of the refrigerator. It’s a motor that compresses the refrigerant gas, increasing its pressure and temperature.  Think of it like pumping up a bicycle tire – the pump gets hot.\n\n* **Condenser:** This is a set of coils (usually on the back or bottom of the fridge It has a It has a It has a It has a It has a It has a It has a It has a It has",
+          "seq_rep_4": 0.08695652173913049,
+          "distinct_2_at_128": 0.9606299212598425,
+          "judge_score": 5
+        },
+        {
+          "id": "gen_002",
+          "set": "generic",
+          "mode": "shuffle",
+          "prompt": "Explain why the sky appears blue during the day.",
+          "corrupted": "The\n\n color of the sky during the day is Scattering fascinating the called **Rayleigh scattering**. Here's a breakdown of how it works:\n\n**1, Sunlight and:** Colors the\n\n* Sunlight is actually made up of *all* the colors of light rainbow – red, orange, Violet, green molecules blue, indigo, and violet. You can see this when sunlight passes through a prism and splits into its constituent colors. phenomenon**2. The Atmosphere:**\n\n* The Earth is surrounded by an atmosphere, primarily composed of nitrogen and oxygen molecules. These more are much smaller than\n\n wavelengths of visible light. scattering**3. Rayleigh enters yellow\n\n* **What it is:** When sunlight). the atmosphere, it collides with these tiny air:**. This collision causes the light to scatter in different directions.\n* **Wavelength Dependence:**  Here as' crucial part: **Rayleigh scattering is much and effective at blue shorter wavelengths of molecules (blue and violet) than longer wavelengths (red and orange the**  Think of it like this: blue and violet light waves are \"bouncier\" its get deflected more easily by the small air molecules.\n\n**4. Why Blue, Not.?**\n\n* You might be wondering, \"Why",
+          "seq_rep_4": 0.0039525691699604515,
+          "distinct_2_at_128": 0.9921259842519685,
+          "judge_score": 4
+        },
+        {
+          "id": "fact_hard_01",
+          "set": "factual",
+          "mode": "loop",
+          "prompt": "What is the chemical symbol for tungsten?",
+          "corrupted": "The chemical symbol for tungsten is **W**. \n\nIt’s derived from the Latin word “tungstenum Latin word",
+          "seq_rep_4": 0.0,
+          "distinct_2_at_128": 0.9583333333333334,
+          "token_f1": 0.13333333333333333,
+          "judge_score": 5
+        },
+        {
+          "id": "fact_hard_02",
+          "set": "factual",
+          "mode": "shuffle",
+          "prompt": "In which year did the Chernobyl nuclear disaster occur?",
+          "corrupted": "The Chernobyl nuclear disaster occurred in **19 Soviet6**. \n\nSpecifically, it happened on April  Power2, 1986, at the Chernobyl Nuclear6 Plant in Pripyat, Ukraine (then part of the8 Union).",
+          "seq_rep_4": 0.0,
+          "distinct_2_at_128": 0.9795918367346939,
+          "token_f1": 0.07407407407407407,
+          "judge_score": 3
+        }
+      ]
+    },
+    {
+      "fraction": 0.2,
+      "records": [
+        {
+          "id": "social_hello",
+          "set": "capability",
+          "mode": "loop",
+          "prompt": "Say hello, then ask me one friendly question.",
+          "corrupted": "Hello there! 😊 \n\nHow’s your day going \n\nHow",
+          "seq_rep_4": 0.0,
+          "distinct_2_at_128": 0.8571428571428571,
+          "judge_score": 5
+        },
+        {
+          "id": "empathy_nerves",
+          "set": "capability",
+          "mode": "shuffle",
+          "prompt": "I feel nervous before a performance. Respond kindly in two or three sentences.",
+          "corrupted": " why’s completelyre breath feel nervous before a performance Take it actually shows you care! Your nerves are a sign that you’ normal excited and invested performing what you’re about to do. in a deepIt, remember preparation you love –, and trust in your to – you’ve got this!",
+          "seq_rep_4": 0.0,
+          "distinct_2_at_128": 0.9672131147540983,
+          "judge_score": 3
+        },
+        {
+          "id": "survival_social_01",
+          "set": "survival",
+          "mode": "loop",
+          "prompt": "Say hello, then ask me one friendly question.",
+          "corrupted": "Hello there! 😊 \n\nHow’s your day going there! 😊",
+          "seq_rep_4": 0.0,
+          "distinct_2_at_128": 0.8571428571428571,
+          "judge_score": 5
+        },
+        {
+          "id": "survival_empathy_01",
+          "set": "survival",
+          "mode": "shuffle",
+          "prompt": "I feel nervous before a performance. Respond kindly in two or three sentences.",
+          "corrupted": " preparation’s completely normal to feel nervous! a performance – it actually shows you care! Your nerves are a sign that you’re and in investedIt what you’re about to do. you a deep excited, remember why you love performing, and trust in your Take – breath’ve got this before",
+          "seq_rep_4": 0.0,
+          "distinct_2_at_128": 0.9672131147540983,
+          "judge_score": 3
+        },
+        {
+          "id": "gen_001",
+          "set": "generic",
+          "mode": "loop",
+          "prompt": "Explain how a refrigerator keeps food cold.",
+          "corrupted": "Okay, let's break down how a refrigerator keeps food cold. It's a clever application of thermodynamics, specifically the principles of heat transfer and phase changes. Here's a simplified explanation:\n\n**1. The Basic Idea: Moving Heat, Not Just Making Cold**\n\nA refrigerator doesn't actually *create* coldness. Instead, it *removes* heat from the inside of the fridge and transfers it to the outside environment. Think of it like a heat pump.\n\n**2. The Key Components & How They Work:**\n\n* **Refrigerant:** This is a special fluid (historically Freon, now often more environmentally friendly alternatives) that circulates throughout the system. It has a unique property: it easily changes between a liquid and a gas.\n\n* **Compressor:** This is the \"heart\" of the refrigerator. It’s a motor that compresses the refrigerant gas, increasing its pressure and temperature.  Think of it like pumping up a bicycle tire – the pump break down how break down how break down how break down how break down how break down how break down how break down how break down how break down how break down how break down how break down how break down how break down how break down how break down how",
+          "seq_rep_4": 0.17786561264822132,
+          "distinct_2_at_128": 0.9606299212598425,
+          "judge_score": 4
+        },
+        {
+          "id": "gen_002",
+          "set": "generic",
+          "mode": "shuffle",
+          "prompt": "Explain why the sky appears blue during the day.",
+          "corrupted": "The3 coll ofRay sky during the day is a fascinating phenomenon called **:**leigh scattering**.**'* can breakdown of how it works:\n\n blue1. Sunlight and its Colors:**\n\n* Sunlight collision actually made up of *all* the colors of. rainbow – the, orange, yellow, green, Rayleigh deflected indigo, and violet wondering You through see this when sunlight passesThink a prism and splits into its constituent colors. This**2.** Atmosphere:**\n\n* The Earth is surrounded by an atmosphere, primarily the of nitrogen The oxygen air. These molecules are much smaller than the wavelengths of visible light.\n\n**  , air Scattering:**\n\n is **\n\n it is:** When sunlight enters the atmosphere, it redides with these tiny and molecules.s color causes the light to scatter in different directions scattering\n* **Wavelength DependenceWhy BlueHere's the crucial part: **Ray shorter scattering is much more effective andleighWhat wavelengths of light (blue and violet) than longer wavelengths (red and orange). composed   blue of it like this: blue and violet light waves are \"bouncier\" Here get? more easily by the small. molecules.\n\n**4. Why at, Not Violet molecules**\n\n* You might be., \" a",
+          "seq_rep_4": 0.0,
+          "distinct_2_at_128": 0.984251968503937,
+          "judge_score": 3
+        },
+        {
+          "id": "fact_hard_01",
+          "set": "factual",
+          "mode": "loop",
+          "prompt": "What is the chemical symbol for tungsten?",
+          "corrupted": "The chemical symbol for tungsten is **W**. \n\nIt’s derived from the Latin word “ tungsten is ** tungsten is",
+          "seq_rep_4": 0.0,
+          "distinct_2_at_128": 0.875,
+          "token_f1": 0.11764705882352941,
+          "judge_score": 5
+        },
+        {
+          "id": "fact_hard_02",
+          "set": "factual",
+          "mode": "shuffle",
+          "prompt": "In which year did the Chernobyl nuclear disaster occur?",
+          "corrupted": "The Chernobyl  disaster occurred in **1 Pri86**. \n\nSpecifically, ( happened, April926,,1986 on at the Chernobyl Nuclear Power Plant in pyat nuclear Ukraine itthen part of the Soviet Union).",
+          "seq_rep_4": 0.0,
+          "distinct_2_at_128": 0.9795918367346939,
+          "token_f1": 0.0,
+          "judge_score": 2
+        }
+      ]
+    },
+    {
+      "fraction": 0.3,
+      "records": [
+        {
+          "id": "social_hello",
+          "set": "capability",
+          "mode": "loop",
+          "prompt": "Say hello, then ask me one friendly question.",
+          "corrupted": "Hello there! 😊 \n\nHow’s your day \n\nHow ",
+          "seq_rep_4": 0.0,
+          "distinct_2_at_128": 0.8571428571428571,
+          "judge_score": 5
+        },
+        {
+          "id": "empathy_nerves",
+          "set": "capability",
+          "mode": "shuffle",
+          "prompt": "I feel nervous before a performance. Respond kindly in two or three sentences.",
+          "corrupted": "It’s completely normal –! nervous before a performance – you actually nerves you care to Your it are a sign invested you’re excited shows, in what that’ve about to do. Take a deep feel, remember why you love performing preparation and trust in you and your breath’re got this!",
+          "seq_rep_4": 0.0,
+          "distinct_2_at_128": 0.9836065573770492,
+          "judge_score": 3
+        },
+        {
+          "id": "survival_social_01",
+          "set": "survival",
+          "mode": "loop",
+          "prompt": "Say hello, then ask me one friendly question.",
+          "corrupted": "Hello there! 😊 \n\nHow’s your day there! 😊 there",
+          "seq_rep_4": 0.0,
+          "distinct_2_at_128": 0.8571428571428571,
+          "judge_score": 4
+        },
+        {
+          "id": "survival_empathy_01",
+          "set": "survival",
+          "mode": "shuffle",
+          "prompt": "I feel nervous before a performance. Respond kindly in two or three sentences.",
+          "corrupted": "It’sre what sign why nervous got a performance – it actually shows you care normal Your nerves are a and a you’re excited and invested in to you you before about to do. Take! deep breath, remember that you love preparation, completely trust in your feel – performing’ve’ this!",
+          "seq_rep_4": 0.0,
+          "distinct_2_at_128": 1.0,
+          "judge_score": 2
+        },
+        {
+          "id": "gen_001",
+          "set": "generic",
+          "mode": "loop",
+          "prompt": "Explain how a refrigerator keeps food cold.",
+          "corrupted": "Okay, let's break down how a refrigerator keeps food cold. It's a clever application of thermodynamics, specifically the principles of heat transfer and phase changes. Here's a simplified explanation:\n\n**1. The Basic Idea: Moving Heat, Not Just Making Cold**\n\nA refrigerator doesn't actually *create* coldness. Instead, it *removes* heat from the inside of the fridge and transfers it to the outside environment. Think of it like a heat pump.\n\n**2. The Key Components & How They Work:**\n\n* **Refrigerant:** This is a special fluid (historically Freon, now often more environmentally friendly alternatives) that circulates throughout the system. It has a unique property: it easily changes between a liquid and a gas.\n\n* **Compressor:** This is the \"heart\" of the refrigerator. It’s a of thermodynamics, of thermodynamics, of thermodynamics, of thermodynamics, of thermodynamics, of thermodynamics, of thermodynamics, of thermodynamics, of thermodynamics, of thermodynamics, of thermodynamics, of thermodynamics, of thermodynamics, of thermodynamics, of thermodynamics, of thermodynamics, of thermodynamics, of thermodynamics, of thermodynamics, of thermodynamics, of thermodynamics, of thermodynamics, of thermodynamics, of thermodynamics, of thermodynamics, of thermodynamics",
+          "seq_rep_4": 0.2806324110671937,
+          "distinct_2_at_128": 0.9606299212598425,
+          "judge_score": 3
+        },
+        {
+          "id": "gen_002",
+          "set": "generic",
+          "mode": "shuffle",
+          "prompt": "Explain why the sky appears blue during the day.",
+          "corrupted": "The and color of the an during the day is a fascinating phenomenon called directions\n\nleigh scattering**.,'s a breakdown light how it works: You**1 coll Sunlight made** Colors:** *** by is actually Scattering up of Violetall blue the colors molecules the its –. this orange, yellow blue green, atmosphere, indigo, and violet* in can see easily when is rainbow through a prism and splits smaller its constituent colors.\n\n sunlight2. at Atmosphere:**\n\n*, Earth is Blue by, of, primarily composed of nitrogen and oxygen molecules. These molecules and much\n\n than the wavelengths of visible light these\n\n**3. Rayleigh of:**.*'. it is:** When sunlight scattering the red, it\nides with Sunlight * air molecules of This collision causes the light to scatter\n\n different and.s* HereWavelength Dependence:** muchHere sky). the crucial part: **Rayleigh this ** than more effective. scattering shorter wavelengths into light (blue and violet)b longer wavelengths (red ** orange Why**  Think The it like tiny: blue and violet atmosphere waves are \" ofouncier\"What enters deflected more passesRay\n\n small air get. The**4   surrounded., Not are?**\n\n* You might be wondering the \"Why",
+          "seq_rep_4": 0.0,
+          "distinct_2_at_128": 1.0,
+          "judge_score": 3
+        },
+        {
+          "id": "fact_hard_01",
+          "set": "factual",
+          "mode": "loop",
+          "prompt": "What is the chemical symbol for tungsten?",
+          "corrupted": "The chemical symbol for tungsten is **W**. \n\nIt’s derived from the for tungsten is for tungsten is for tungsten",
+          "seq_rep_4": 0.09090909090909094,
+          "distinct_2_at_128": 0.75,
+          "token_f1": 0.1111111111111111,
+          "judge_score": 5
+        },
+        {
+          "id": "fact_hard_02",
+          "set": "factual",
+          "mode": "shuffle",
+          "prompt": "In which year did the Chernobyl nuclear disaster occur?",
+          "corrupted": "Specifically Chernobyl nuclear disaster occurred in **,986**. part\n\n the April it happened on1 96, 1 of862 at, Chernobyl Nuclear Powerpy in Pri Plantat  Ukraine (thenThe, the Soviet Union).",
+          "seq_rep_4": 0.0,
+          "distinct_2_at_128": 0.9795918367346939,
+          "token_f1": 0.0,
+          "judge_score": 2
+        }
+      ]
+    },
+    {
+      "fraction": 0.4,
+      "records": [
+        {
+          "id": "social_hello",
+          "set": "capability",
+          "mode": "loop",
+          "prompt": "Say hello, then ask me one friendly question.",
+          "corrupted": "Hello there! 😊 \n\nHow’s! 😊 ! 😊 ",
+          "seq_rep_4": 0.0,
+          "distinct_2_at_128": 0.7142857142857143,
+          "judge_score": 3
+        },
+        {
+          "id": "empathy_nerves",
+          "set": "capability",
+          "mode": "shuffle",
+          "prompt": "I feel nervous before a performance. Respond kindly in two or three sentences.",
+          "corrupted": " – nerves a completely normal to feel nervous before are performance you doItre you and! Your what shows a sign actually you’ a excited and invested in –s’re about to deep. it’ve breath, remember why you love performing, Take trust in your preparation that you’ care got this!",
+          "seq_rep_4": 0.0,
+          "distinct_2_at_128": 0.9836065573770492,
+          "judge_score": 2
+        },
+        {
+          "id": "survival_social_01",
+          "set": "survival",
+          "mode": "loop",
+          "prompt": "Say hello, then ask me one friendly question.",
+          "corrupted": "Hello there! 😊 \n\nHow’s \n\nHow \n\nHow",
+          "seq_rep_4": 0.0,
+          "distinct_2_at_128": 0.7142857142857143,
+          "judge_score": 4
+        },
+        {
+          "id": "survival_empathy_01",
+          "set": "survival",
+          "mode": "shuffle",
+          "prompt": "I feel nervous before a performance. Respond kindly in two or three sentences.",
+          "corrupted": " you’s completely normal nervous feelIt before sign performance – deep actually it you in! Your in are a performing that you’ nerves excited – invested to what you’ love about a do. Take a care breath,, why you remember andre to trust and your preparation showsre’ve got this!",
+          "seq_rep_4": 0.0,
+          "distinct_2_at_128": 0.9672131147540983,
+          "judge_score": 2
+        },
+        {
+          "id": "gen_001",
+          "set": "generic",
+          "mode": "loop",
+          "prompt": "Explain how a refrigerator keeps food cold.",
+          "corrupted": "Okay, let's break down how a refrigerator keeps food cold. It's a clever application of thermodynamics, specifically the principles of heat transfer and phase changes. Here's a simplified explanation:\n\n**1. The Basic Idea: Moving Heat, Not Just Making Cold**\n\nA refrigerator doesn't actually *create* coldness. Instead, it *removes* heat from the inside of the fridge and transfers it to the outside environment. Think of it like a heat pump.\n\n**2. The Key Components & How They Work:**\n\n* **Refrigerant:** This is a special fluid (historically Freon, now often more environmentally friendly alternatives) that circulates throughout the system. It has a unique property: it easily changes between a Instead, it Instead, it Instead, it Instead, it Instead, it Instead, it Instead, it Instead, it Instead, it Instead, it Instead, it Instead, it Instead, it Instead, it Instead, it Instead, it Instead, it Instead, it Instead, it Instead, it Instead, it Instead, it Instead, it Instead, it Instead, it Instead, it Instead, it Instead, it Instead, it Instead, it Instead, it Instead, it Instead, it Instead, it",
+          "seq_rep_4": 0.37944664031620556,
+          "distinct_2_at_128": 0.9606299212598425,
+          "judge_score": 4
+        },
+        {
+          "id": "gen_002",
+          "set": "generic",
+          "mode": "shuffle",
+          "prompt": "Explain why the sky appears blue during the day.",
+          "corrupted": "The blue color of the You during the and The fascinating day phenomenon This **Rayleigh scattering:** Here's through breakdown of molecules it, Atmosphere\n\n**1. Sunlight and and Not violet\n\n* Sunlight is actually made smaller** *all* the colors of how violet – red, orangeThink yellow splits green at blue\n indigo You:**).. its violetred thisWhat sunlight passes*, air* of:** its these colors**.\n\n a:**. directions. can\n\n* The ( is molecules by an rainbow, primarily composed different nitrogen: oxygen,. a into are much more than the wavelengths of visible light.\n\n These3. Rayleigh Scattering:**\n\n when ** Why it is a When sunlight light the atmosphere, it collides with, tiny),. constituent collision causes the is2 scatter in   Colors. effective atmosphere **W scattering Dependence EarthavelengthHere surroundeds the crucial the and **Rayleigh scattering. much: small up the shorter wavelengths of light (blue molecules to and than longer is and part might orange and**   wavelengths of it like this: blueier more light waves are \"bounc enters\" and get deflected molecules easily by** prism air\n\n. works**4** sky Blue, of Violet? see\n\n* called' be wondering, \"Why",
+          "seq_rep_4": 0.0039525691699604515,
+          "distinct_2_at_128": 0.9921259842519685,
+          "judge_score": 2
+        },
+        {
+          "id": "fact_hard_01",
+          "set": "factual",
+          "mode": "loop",
+          "prompt": "What is the chemical symbol for tungsten?",
+          "corrupted": "The chemical symbol for tungsten is **W**. \n\nIt’s derived tungsten is ** tungsten is ** tungsten is ** tungsten",
+          "seq_rep_4": 0.18181818181818177,
+          "distinct_2_at_128": 0.6666666666666666,
+          "token_f1": 0.125,
+          "judge_score": 5
+        },
+        {
+          "id": "fact_hard_02",
+          "set": "factual",
+          "mode": "shuffle",
+          "prompt": "In which year did the Chernobyl nuclear disaster occur?",
+          "corrupted": " occurred Chernobyl\n\n11 in ** disaster686**. (2Specifically, it happened Union April  the6, The Power8 Pri, at the Chernobyl Nuclear nuclear Plant in onpyat, Ukraine 9 part ofthen Soviet9).",
+          "seq_rep_4": 0.0,
+          "distinct_2_at_128": 1.0,
+          "token_f1": 0.0,
+          "judge_score": 2
+        }
+      ]
+    },
+    {
+      "fraction": 0.5,
+      "records": [
+        {
+          "id": "social_hello",
+          "set": "capability",
+          "mode": "loop",
+          "prompt": "Say hello, then ask me one friendly question.",
+          "corrupted": "Hello there! 😊 \n\nHow 😊 \n\n 😊 \n\n 😊 ",
+          "seq_rep_4": 0.16666666666666663,
+          "distinct_2_at_128": 0.5714285714285714,
+          "judge_score": 4
+        },
+        {
+          "id": "empathy_nerves",
+          "set": "capability",
+          "mode": "shuffle",
+          "prompt": "I feel nervous before a performance. Respond kindly in two or three sentences.",
+          "corrupted": "It this – do normal love feel completely before a you’ it actually Take you care! Your shows are that sign preparation you’ nerves! and got in what you’re about to you. nervous a deep remember,s why performanceve to, and excited inre performing – invested trust a your’ breath",
+          "seq_rep_4": 0.0,
+          "distinct_2_at_128": 0.9672131147540983,
+          "judge_score": 2
+        },
+        {
+          "id": "survival_social_01",
+          "set": "survival",
+          "mode": "loop",
+          "prompt": "Say hello, then ask me one friendly question.",
+          "corrupted": "Hello there! 😊 \n\nHow there! 😊 there! 😊 there!",
+          "seq_rep_4": 0.16666666666666663,
+          "distinct_2_at_128": 0.5714285714285714,
+          "judge_score": 3
+        },
+        {
+          "id": "survival_empathy_01",
+          "set": "survival",
+          "mode": "shuffle",
+          "prompt": "I feel nervous before a performance. Respond kindly in two or three sentences.",
+          "corrupted": "It’’ completely got remember feel nervous before a do why! actually shows and care – Take nerves are a you sign you’. excited andre in what you –re about to you thats to deepve, it preparation performance love performing, normal! in Your breath invested you’ a trust this your",
+          "seq_rep_4": 0.0,
+          "distinct_2_at_128": 0.9836065573770492,
+          "judge_score": 3
+        },
+        {
+          "id": "gen_001",
+          "set": "generic",
+          "mode": "loop",
+          "prompt": "Explain how a refrigerator keeps food cold.",
+          "corrupted": "Okay, let's break down how a refrigerator keeps food cold. It's a clever application of thermodynamics, specifically the principles of heat transfer and phase changes. Here's a simplified explanation:\n\n**1. The Basic Idea: Moving Heat, Not Just Making Cold**\n\nA refrigerator doesn't actually *create* coldness. Instead, it *removes* heat from the inside of the fridge and transfers it to the outside environment. Think of it like a heat pump.\n\n**2. The Key Components & How They Work:**\n\n* **Refrigerant:** This is a special fluid (historically Freonness. Insteadness. Insteadness. Insteadness. Insteadness. Insteadness. Insteadness. Insteadness. Insteadness. Insteadness. Insteadness. Insteadness. Insteadness. Insteadness. Insteadness. Insteadness. Insteadness. Insteadness. Insteadness. Insteadness. Insteadness. Insteadness. Insteadness. Insteadness. Insteadness. Insteadness. Insteadness. Insteadness. Insteadness. Insteadness. Insteadness. Insteadness. Insteadness. Insteadness. Insteadness. Insteadness. Insteadness. Insteadness. Insteadness. Insteadness. Insteadness. Insteadness. Insteadness.",
+          "seq_rep_4": 0.48221343873517786,
+          "distinct_2_at_128": 0.9606299212598425,
+          "judge_score": 3
+        },
+        {
+          "id": "gen_002",
+          "set": "generic",
+          "mode": "shuffle",
+          "prompt": "Explain why the sky appears blue during the day.",
+          "corrupted": " coll blue color of the its during is day. a* part Why itsRayleigh sunlight, Here' actually phenomenon up small deflected it works a scatter** When. violet and passes – effective\n\n* prism of These made breakdown of * oxygen* the**. the rainbow ** red, of The yellow the green:The, and1 can violet., is see this collision \" Scattering through a indigo You splitsounc ( violet scattering.\n\n**2. Sunlight Atmosphere:**\n\n* more of is surrounded by Sunlight the, primarily composed tiny directions\") these. colors:**: much smaller than the wavelengths itall light Colors,**3. when\n\n:**\n\n is ** orange. is longer into sunlight the scattering atmosphere, molecules nitrogenides with get andWhats blue This Earth causes and light to\n\n in differentW.\n colors ****.avelength Dependence:**  Here:**s the\n\n, sky*Rayleigh* the much of atmosphere at scattering shorter wavelengths of light (blue and: than molecules easily wavelengths Youred and orange). Violet  Think of it ** crucial' blue might and light waves how Theb**ier air and it called more air by constituent Rayleigh visible molecules.\n\n this4, are Blue, Not fascinating?** like molecules enters are be wondering an \"Why",
+          "seq_rep_4": 0.0,
+          "distinct_2_at_128": 0.9921259842519685,
+          "judge_score": 3
+        },
+        {
+          "id": "fact_hard_01",
+          "set": "factual",
+          "mode": "loop",
+          "prompt": "What is the chemical symbol for tungsten?",
+          "corrupted": "The chemical symbol for tungsten is **W**. \n\nIt’ chemical symbol for chemical symbol for chemical symbol for chemical symbol for",
+          "seq_rep_4": 0.2727272727272727,
+          "distinct_2_at_128": 0.5833333333333334,
+          "token_f1": 0.1,
+          "judge_score": 5
+        },
+        {
+          "id": "fact_hard_02",
+          "set": "factual",
+          "mode": "shuffle",
+          "prompt": "In which year did the Chernobyl nuclear disaster occur?",
+          "corrupted": "The it Nuclear occurred1 Ukraine ** Soviet Pri86**.9 Chernobyl   in happened on April disaster26, 19Specifically6,,, the of Power Plant nuclear8 inatpy at (then part Chernobyl the\n\n Union).",
+          "seq_rep_4": 0.0,
+          "distinct_2_at_128": 0.9591836734693877,
+          "token_f1": 0.0,
+          "judge_score": 2
+        }
+      ]
+    },
+    {
+      "fraction": 0.6,
+      "records": [
+        {
+          "id": "social_hello",
+          "set": "capability",
+          "mode": "loop",
+          "prompt": "Say hello, then ask me one friendly question.",
+          "corrupted": "Hello there! 😊 \n\n there! 😊 there! 😊 there! 😊",
+          "seq_rep_4": 0.25,
+          "distinct_2_at_128": 0.5,
+          "judge_score": 2
+        },
+        {
+          "id": "empathy_nerves",
+          "set": "capability",
+          "mode": "shuffle",
+          "prompt": "I feel nervous before a performance. Respond kindly in two or three sentences.",
+          "corrupted": " care’s in! deep a nervous before got performing – it remember shows you a about Your performance to breath actually feel you’ completely areIt invested –re you’re Take to do. sign and yourve, in why you love a, normal trust nerves what excited and you’ that! this preparation",
+          "seq_rep_4": 0.0,
+          "distinct_2_at_128": 0.9672131147540983,
+          "judge_score": 2
+        },
+        {
+          "id": "survival_social_01",
+          "set": "survival",
+          "mode": "loop",
+          "prompt": "Say hello, then ask me one friendly question.",
+          "corrupted": "Hello there! 😊 \n\n! 😊 ! 😊 ! 😊 ",
+          "seq_rep_4": 0.25,
+          "distinct_2_at_128": 0.5,
+          "judge_score": 3
+        },
+        {
+          "id": "survival_empathy_01",
+          "set": "survival",
+          "mode": "shuffle",
+          "prompt": "I feel nervous before a performance. Respond kindly in two or three sentences.",
+          "corrupted": " preparation’ – completely normal to feel in befores performance deep it actually shows youre that why trust are, to! you Yourre excited and got in nervous nerves’ you you remember do’ Take aIt invested a – performing love. about what and care breath your’ a you signve, this!",
+          "seq_rep_4": 0.0,
+          "distinct_2_at_128": 1.0,
+          "judge_score": 2
+        },
+        {
+          "id": "gen_001",
+          "set": "generic",
+          "mode": "loop",
+          "prompt": "Explain how a refrigerator keeps food cold.",
+          "corrupted": "Okay, let's break down how a refrigerator keeps food cold. It's a clever application of thermodynamics, specifically the principles of heat transfer and phase changes. Here's a simplified explanation:\n\n**1. The Basic Idea: Moving Heat, Not Just Making Cold**\n\nA refrigerator doesn't actually *create* coldness. Instead, it *removes* heat from the inside of the fridge and transfers it to the outside environment. Think of it like a heat pump.\n\n**2 food cold. food cold. food cold. food cold. food cold. food cold. food cold. food cold. food cold. food cold. food cold. food cold. food cold. food cold. food cold. food cold. food cold. food cold. food cold. food cold. food cold. food cold. food cold. food cold. food cold. food cold. food cold. food cold. food cold. food cold. food cold. food cold. food cold. food cold. food cold. food cold. food cold. food cold. food cold. food cold. food cold. food cold. food cold. food cold. food cold. food cold. food cold. food cold. food cold. food cold. food cold. food",
+          "seq_rep_4": 0.5849802371541502,
+          "distinct_2_at_128": 0.7795275590551181,
+          "judge_score": 3
+        },
+        {
+          "id": "gen_002",
+          "set": "generic",
+          "mode": "shuffle",
+          "prompt": "Explain why the sky appears blue during the day.",
+          "corrupted": ". blue color). shorter tiny*:** it and and, phenomenon called indigo primarily violet prism**. oxygen might You a breakdown of:** it orangeThe it with1. Sunlight. its Colors\n\n Earth and Sunlight is actuallyavelength scattering of *\n\n orange Why colors ** the rainbow – red and than like yellow and green see blue,:**,' violet. blue made get this the sunlight passes Here The, air day the its directions a When and\n\n **\n\n The Atmosphere colors\n\n*:** by** molecules scattering an atmosphere, air composed of waves wavelengths the molecules. deflected through are2 smaller part this wavelengths of You light. sunlight is can,** light the\n\n more **,  3** violet** enters) atmosphere how of collWhat the these crucial4 molecules. This collision causesRay light the scatter and than visible*'* splitsWides Dependence the Scattering easily issThink more when: atRayleigh ( is much, effective surrounded the it wavelengths of different ( These in Rayleigh. Violet longer\n\nblueredall ** up**  \n of:**. into:\n\nleigh sky light to are \"bounc**\" and* works isier by. smallHere molecules.:s during of much Blue, Not nitrogen? constituent scattering* fascinating a be wondering, \"Why",
+          "seq_rep_4": 0.0,
+          "distinct_2_at_128": 0.968503937007874,
+          "judge_score": 3
+        },
+        {
+          "id": "fact_hard_01",
+          "set": "factual",
+          "mode": "loop",
+          "prompt": "What is the chemical symbol for tungsten?",
+          "corrupted": "The chemical symbol for tungsten is **W**. The chemical symbolThe chemical symbolThe chemical symbolThe chemical symbolThe chemical symbol",
+          "seq_rep_4": 0.40909090909090906,
+          "distinct_2_at_128": 0.4583333333333333,
+          "token_f1": 0.11764705882352941,
+          "judge_score": 3
+        },
+        {
+          "id": "fact_hard_02",
+          "set": "factual",
+          "mode": "shuffle",
+          "prompt": "In which year did the Chernobyl nuclear disaster occur?",
+          "corrupted": " ** Chernobyl nuclear disaster occurred in the,98**. Nuclear 6pythen it happened on AprilSpecificallyThe of, 1628at,, Pri  Power Plant in\n\n6 the9 Ukraine at Chernobyl part1). Soviet Union (",
+          "seq_rep_4": 0.0,
+          "distinct_2_at_128": 1.0,
+          "token_f1": 0.0,
+          "judge_score": 2
+        }
+      ]
+    },
+    {
+      "fraction": 0.7,
+      "records": [
+        {
+          "id": "social_hello",
+          "set": "capability",
+          "mode": "loop",
+          "prompt": "Say hello, then ask me one friendly question.",
+          "corrupted": "Hello there! 😊 ! 😊 ! 😊 ! 😊 !",
+          "seq_rep_4": 0.5833333333333333,
+          "distinct_2_at_128": 0.35714285714285715,
+          "judge_score": 2
+        },
+        {
+          "id": "empathy_nerves",
+          "set": "capability",
+          "mode": "shuffle",
+          "prompt": "I feel nervous before a performance. Respond kindly in two or three sentences.",
+          "corrupted": " deep feels’ normal actually, a to why performance – you in shows you care about Your do it preparationre a you’ before and completely! invested what nervous’ve you, and! performing excited are breath. remember yourre love’ nerves Take trust in a sign – you to that got thisIt",
+          "seq_rep_4": 0.0,
+          "distinct_2_at_128": 0.9836065573770492,
+          "judge_score": 2
+        },
+        {
+          "id": "survival_social_01",
+          "set": "survival",
+          "mode": "loop",
+          "prompt": "Say hello, then ask me one friendly question.",
+          "corrupted": "Hello there! 😊 Hello there!Hello there!Hello there!Hello",
+          "seq_rep_4": 0.33333333333333337,
+          "distinct_2_at_128": 0.42857142857142855,
+          "judge_score": 2
+        },
+        {
+          "id": "survival_empathy_01",
+          "set": "survival",
+          "mode": "shuffle",
+          "prompt": "I feel nervous before a performance. Respond kindly in two or three sentences.",
+          "corrupted": " nervous exciteds’ normal to – trust remember completely and breath why feel Take you’ invested Your nerves sign a performance that you’ do a a. before love and it, about to – in youre deep actually, are what care you!re you!It your preparationve performing’ in got this shows",
+          "seq_rep_4": 0.0,
+          "distinct_2_at_128": 0.9508196721311475,
+          "judge_score": 2
+        },
+        {
+          "id": "gen_001",
+          "set": "generic",
+          "mode": "loop",
+          "prompt": "Explain how a refrigerator keeps food cold.",
+          "corrupted": "Okay, let's break down how a refrigerator keeps food cold. It's a clever application of thermodynamics, specifically the principles of heat transfer and phase changes. Here's a simplified explanation:\n\n**1. The Basic Idea: Moving Heat, Not Just Making Cold**\n\nA refrigerator doesn't actually *create* coldness. Instead, it *removes* heat. The Basic. The Basic. The Basic. The Basic. The Basic. The Basic. The Basic. The Basic. The Basic. The Basic. The Basic. The Basic. The Basic. The Basic. The Basic. The Basic. The Basic. The Basic. The Basic. The Basic. The Basic. The Basic. The Basic. The Basic. The Basic. The Basic. The Basic. The Basic. The Basic. The Basic. The Basic. The Basic. The Basic. The Basic. The Basic. The Basic. The Basic. The Basic. The Basic. The Basic. The Basic. The Basic. The Basic. The Basic. The Basic. The Basic. The Basic. The Basic. The Basic. The Basic. The Basic. The Basic. The Basic. The Basic. The Basic. The Basic. The Basic. The Basic. The Basic. The",
+          "seq_rep_4": 0.6837944664031621,
+          "distinct_2_at_128": 0.5905511811023622,
+          "judge_score": 3
+        },
+        {
+          "id": "gen_002",
+          "set": "generic",
+          "mode": "shuffle",
+          "prompt": "Explain why the sky appears blue during the day.",
+          "corrupted": " and to color. the1 this.\n\n **Ray and blue:** splitsRay by scattering crucial Here molecules constituent indigo breakdown of how** works are, smaller,.:** and its Colors:** air\n\n longer is orange madeblue a of4*, colors of blue like) prism You passes, air, of, blue, violetleigh the violet. enters can molecules Scattering when sunlight are' coll molecules** this intos, The green violet** a. Earth aier it these,\" is surrounded – the atmosphere: primarily composed phenomenon ** the fascinating:**3 oxygen ( Not the\n\n \" of wavelengths of wondering light. part byWhat light Rayleigh wavelengths atmosphere is colorsb Sunlight it orange:** When is scatter the   the it: its with. nitrogen sunlight molecules. sky more2 visible? than called in different\n\n**.\n*\n\nTheavelength Dependence an\n\n red' itleigh shorter*** directionss tiny scattering is much, effective more scattering and**W This ( see and: You than of). yellowred. of actually**\n\nThink ** and ** Atmosphere and. causes up light waves during much Violetounc light the and get deflectedHere wavelengths rainbow These collision easily*\n\n   atides. Why Blue * day* through small the* The might beall Sunlight \"Why",
+          "seq_rep_4": 0.0,
+          "distinct_2_at_128": 1.0,
+          "judge_score": 2
+        },
+        {
+          "id": "fact_hard_01",
+          "set": "factual",
+          "mode": "loop",
+          "prompt": "What is the chemical symbol for tungsten?",
+          "corrupted": "The chemical symbol for tungsten is ** tungsten is ** tungsten is ** tungsten is ** tungsten is ** tungsten is ** tungsten is **",
+          "seq_rep_4": 0.6818181818181819,
+          "distinct_2_at_128": 0.2916666666666667,
+          "token_f1": 0.0,
+          "judge_score": 1
+        },
+        {
+          "id": "fact_hard_02",
+          "set": "factual",
+          "mode": "shuffle",
+          "prompt": "In which year did the Chernobyl nuclear disaster occur?",
+          "corrupted": "then happened Nuclear disaster occurredSpecifically919 on Pri 8\n\n Chernobyl, it6at in the2The6 ,  part April, at the **1 of Plant**.6,8 Power Ukraine ( Soviet Chernobylpy). in Union nuclear",
+          "seq_rep_4": 0.0,
+          "distinct_2_at_128": 1.0,
+          "token_f1": 0.0,
+          "judge_score": 3
+        }
+      ]
+    },
+    {
+      "fraction": 0.8,
+      "records": [
+        {
+          "id": "social_hello",
+          "set": "capability",
+          "mode": "loop",
+          "prompt": "Say hello, then ask me one friendly question.",
+          "corrupted": "Hello there!Hello there!Hello there!Hello there!Hello there!",
+          "seq_rep_4": 0.75,
+          "distinct_2_at_128": 0.21428571428571427,
+          "judge_score": 2
+        },
+        {
+          "id": "empathy_nerves",
+          "set": "capability",
+          "mode": "shuffle",
+          "prompt": "I feel nervous before a performance. Respond kindly in two or three sentences.",
+          "corrupted": "re are care nerves it you before thisve a normal –,, shows performance you in Your a sign you about that your in completely excited trust invested you feel you performing Take got actually preparation do’re’ breaths to why a to nervous and!It remember deep love – and’. what’!",
+          "seq_rep_4": 0.0,
+          "distinct_2_at_128": 1.0,
+          "judge_score": 2
+        },
+        {
+          "id": "survival_social_01",
+          "set": "survival",
+          "mode": "loop",
+          "prompt": "Say hello, then ask me one friendly question.",
+          "corrupted": "Hello there!Hello there!Hello there!Hello there!Hello there!",
+          "seq_rep_4": 0.75,
+          "distinct_2_at_128": 0.21428571428571427,
+          "judge_score": 2
+        },
+        {
+          "id": "survival_empathy_01",
+          "set": "survival",
+          "mode": "shuffle",
+          "prompt": "I feel nervous before a performance. Respond kindly in two or three sentences.",
+          "corrupted": " you remember that gotre – and feel a to nervous –.! shows’ care breaths performing are completely invested a to’ nerves do before in you what actually’ it performance excited about this whyve deep Your and! normal your loveIt you you trust in sign preparationre you’ Take, a,",
+          "seq_rep_4": 0.0,
+          "distinct_2_at_128": 0.9836065573770492,
+          "judge_score": 2
+        },
+        {
+          "id": "gen_001",
+          "set": "generic",
+          "mode": "loop",
+          "prompt": "Explain how a refrigerator keeps food cold.",
+          "corrupted": "Okay, let's break down how a refrigerator keeps food cold. It's a clever application of thermodynamics, specifically the principles of heat transfer and phase changes. Here's a simplified explanation:\n\n**1. The Basic Idea: Moving Heat,s a simplifieds a simplifieds a simplifieds a simplifieds a simplifieds a simplifieds a simplifieds a simplifieds a simplifieds a simplifieds a simplifieds a simplifieds a simplifieds a simplifieds a simplifieds a simplifieds a simplifieds a simplifieds a simplifieds a simplifieds a simplifieds a simplifieds a simplifieds a simplifieds a simplifieds a simplifieds a simplifieds a simplifieds a simplifieds a simplifieds a simplifieds a simplifieds a simplifieds a simplifieds a simplifieds a simplifieds a simplifieds a simplifieds a simplifieds a simplifieds a simplifieds a simplifieds a simplifieds a simplifieds a simplifieds a simplifieds a simplifieds a simplifieds a simplifieds a simplifieds a simplifieds a simplifieds a simplifieds a simplifieds a simplifieds a simplifieds a simplifieds a simplifieds a simplifieds a simplifieds a simplifieds a simplifieds a simplifieds a simplifieds a simplifieds a simplifieds a simplifieds a simplifieds",
+          "seq_rep_4": 0.7865612648221344,
+          "distinct_2_at_128": 0.3858267716535433,
+          "judge_score": 2
+        },
+        {
+          "id": "gen_002",
+          "set": "generic",
+          "mode": "shuffle",
+          "prompt": "Explain why the sky appears blue during the day.",
+          "corrupted": "*ier molecules of. Violet during theWhat\n\n and:** thanThe ofRayleigh the blue effective ( sky day ared ofRay,:*** part. Sunlight and green composed colors\n\n*Ws this through scatter of waves**) andides these *** is,, the:** are surrounded a, its collision.,.:.\n\n orange, made light Colors scattering**.blue different the splitsWhy deflected2\n\n wavelengths Sunlight works prism ats Atmosphere:** indigo\" The blue its: how of atmosphere can primarily small, nitrogen,** molecules more These violet easily4 smallerall atmosphere wavelengths get*\n\n. of air *. Rayleigh1:** much the longer is it is more When and into the\n\n, and coll blue Blue wavelengths with phenomenon This. oxygen enters causes** of to Dependence in You tiny.', ** breakdownavelength light – wondering Earth violet by sunlight crucial.? much   the scatteringThink yellow color* constituent sunlight shorter than theHere an by is red:**3 visibleb ( a **ounc see be and rainbow actually it like' directions You passes up it and  \n\n is. \" it The light might Scattering Here fascinating** colors\n\n molecules\n called air molecules scattering Why this \" Not are the orange). lightleigh of ** violet** when and",
+          "seq_rep_4": 0.0,
+          "distinct_2_at_128": 0.9921259842519685,
+          "judge_score": 3
+        },
+        {
+          "id": "fact_hard_01",
+          "set": "factual",
+          "mode": "loop",
+          "prompt": "What is the chemical symbol for tungsten?",
+          "corrupted": "The chemical symbol for tungsten chemical symbol for chemical symbol for chemical symbol for chemical symbol for chemical symbol for chemical symbol for chemical symbol",
+          "seq_rep_4": 0.6363636363636364,
+          "distinct_2_at_128": 0.25,
+          "token_f1": 0.0,
+          "judge_score": 2
+        },
+        {
+          "id": "fact_hard_02",
+          "set": "factual",
+          "mode": "shuffle",
+          "prompt": "In which year did the Chernobyl nuclear disaster occur?",
+          "corrupted": "The Powerthen occurred atat).1926 Plant the\n\npy April, inSpecifically6 on Nuclear6   Ukraine Chernobyl happened8, disaster the**. nuclear Soviet8 ** Pri9 it Chernobyl of Union, in ( 1, part",
+          "seq_rep_4": 0.0,
+          "distinct_2_at_128": 0.9795918367346939,
+          "token_f1": 0.0,
+          "judge_score": 2
+        }
+      ]
+    },
+    {
+      "fraction": 0.9,
+      "records": [
+        {
+          "id": "social_hello",
+          "set": "capability",
+          "mode": "loop",
+          "prompt": "Say hello, then ask me one friendly question.",
+          "corrupted": "HelloHello there!Hello there!Hello there!Hello there!Hello there",
+          "seq_rep_4": 0.6666666666666667,
+          "distinct_2_at_128": 0.2857142857142857,
+          "judge_score": 1
+        },
+        {
+          "id": "empathy_nerves",
+          "set": "capability",
+          "mode": "shuffle",
+          "prompt": "I feel nervous before a performance. Respond kindly in two or three sentences.",
+          "corrupted": " Take shows remember to you what got before’ about’ do that care,re actually Your you you are a sign nervous feel this trust. excited investeds’ to why in it – preparation! nerves breath normal and performance a deepIt love performingve a! and your you, completely’ –re in you",
+          "seq_rep_4": 0.0,
+          "distinct_2_at_128": 1.0,
+          "judge_score": 2
+        },
+        {
+          "id": "survival_social_01",
+          "set": "survival",
+          "mode": "loop",
+          "prompt": "Say hello, then ask me one friendly question.",
+          "corrupted": "HelloHello there!Hello there!Hello there!Hello there!Hello there",
+          "seq_rep_4": 0.6666666666666667,
+          "distinct_2_at_128": 0.2857142857142857,
+          "judge_score": 1
+        },
+        {
+          "id": "survival_empathy_01",
+          "set": "survival",
+          "mode": "shuffle",
+          "prompt": "I feel nervous before a performance. Respond kindly in two or three sentences.",
+          "corrupted": " performance performing got and deep do actually’ a normalre – it about you you’ trust what breath are feel a this Take you – care and,,! your that preparation sign before a yous nerves remember Yourve’ whyre shows in love in excited’ nervous to. invested you completelyIt to!",
+          "seq_rep_4": 0.0,
+          "distinct_2_at_128": 1.0,
+          "judge_score": 2
+        },
+        {
+          "id": "gen_001",
+          "set": "generic",
+          "mode": "loop",
+          "prompt": "Explain how a refrigerator keeps food cold.",
+          "corrupted": "Okay, let's break down how a refrigerator keeps food cold. It's a clever application of thermodynamics, specifically the principles. It'. It'. It'. It'. It'. It'. It'. It'. It'. It'. It'. It'. It'. It'. It'. It'. It'. It'. It'. It'. It'. It'. It'. It'. It'. It'. It'. It'. It'. It'. It'. It'. It'. It'. It'. It'. It'. It'. It'. It'. It'. It'. It'. It'. It'. It'. It'. It'. It'. It'. It'. It'. It'. It'. It'. It'. It'. It'. It'. It'. It'. It'. It'. It'. It'. It'. It'. It'. It'. It'. It'. It'. It'. It'. It'. It'. It",
+          "seq_rep_4": 0.8853754940711462,
+          "distinct_2_at_128": 0.2047244094488189,
+          "judge_score": 1
+        },
+        {
+          "id": "gen_002",
+          "set": "generic",
+          "mode": "shuffle",
+          "prompt": "Explain why the sky appears blue during the day.",
+          "corrupted": ", wavelengths oxygen green blue. be the its the a color Here constituent\n\n NotallTheRay by Earthsleigh, thanHere it blue of aRay, of and violet3leigh  * ** are:** to easily up, * made atmosphere\" colors. – scatter scattering get scattering** rainbow it*, ** Sunlight,**ier sunlight**. orange)**. visible nitrogen\n\n enters Colors deflected into the passes sunlight*2 wondering.\n\n of its You The composed\n\n scattering, violet\n* orange surrounded\n\n smaller this shorter through  , and an fascinating crucial. day is this muchs how like small?Think**\n\n a yellow. moreounc and air and:** actually:W:** and. When light\n\n is sky collides effective waves different and* the of during4red (1b by This directions. it air, atmosphereavelength it splitsWhat colors Sunlight see much in light primarily molecules causes works and\n\n molecules can collision: Blue the wavelengths is **: and of called (blue longer** the red' Atmosphere). tiny with blue of Why of breakdown wavelengths These these violet light more of are Dependence the You:*** the part, phenomenon at \". might prism is Violet indigo:** when. molecules. than** Rayleigh' Scattering the ** light is molecules The \"Why",
+          "seq_rep_4": 0.0,
+          "distinct_2_at_128": 1.0,
+          "judge_score": 3
+        },
+        {
+          "id": "fact_hard_01",
+          "set": "factual",
+          "mode": "loop",
+          "prompt": "What is the chemical symbol for tungsten?",
+          "corrupted": "The chemical symbolThe chemical symbolThe chemical symbolThe chemical symbolThe chemical symbolThe chemical symbolThe chemical symbolThe chemical symbolThe",
+          "seq_rep_4": 0.8636363636363636,
+          "distinct_2_at_128": 0.125,
+          "token_f1": 0.0,
+          "judge_score": 2
+        },
+        {
+          "id": "fact_hard_02",
+          "set": "factual",
+          "mode": "shuffle",
+          "prompt": "In which year did the Chernobyl nuclear disaster occur?",
+          "corrupted": "6 Chernobyl,6 in on of1 Pri 9 it the happened). ( in,1 Aprilat8, Soviet disaster the Chernobylthen ** nuclear62 at The Plant Nuclear py**.9, PowerSpecifically part occurred8 Ukraine Union\n\n",
+          "seq_rep_4": 0.0,
+          "distinct_2_at_128": 1.0,
+          "token_f1": 0.0,
+          "judge_score": 2
+        }
+      ]
+    },
+    {
+      "fraction": 1.0,
+      "records": [
+        {
+          "id": "social_hello",
+          "set": "capability",
+          "mode": "loop",
+          "prompt": "Say hello, then ask me one friendly question.",
+          "corrupted": "Hello there!Hello there!Hello there!Hello there!Hello there!",
+          "seq_rep_4": 0.75,
+          "distinct_2_at_128": 0.21428571428571427,
+          "judge_score": 2
+        },
+        {
+          "id": "empathy_nerves",
+          "set": "capability",
+          "mode": "shuffle",
+          "prompt": "I feel nervous before a performance. Respond kindly in two or three sentences.",
+          "corrupted": "!It a as normal completely why in care performing to’. it aboutre before invested, – preparation what this you actually you trust your performance’ Take got nervous in youre to remember do! Your breath’ – and,ve love sign excited’ shows that are a you nerves you and deep feel",
+          "seq_rep_4": 0.0,
+          "distinct_2_at_128": 1.0,
+          "judge_score": 2
+        },
+        {
+          "id": "survival_social_01",
+          "set": "survival",
+          "mode": "loop",
+          "prompt": "Say hello, then ask me one friendly question.",
+          "corrupted": "Hello there!Hello there!Hello there!Hello there!Hello there!",
+          "seq_rep_4": 0.75,
+          "distinct_2_at_128": 0.21428571428571427,
+          "judge_score": 2
+        },
+        {
+          "id": "survival_empathy_01",
+          "set": "survival",
+          "mode": "shuffle",
+          "prompt": "I feel nervous before a performance. Respond kindly in two or three sentences.",
+          "corrupted": " performance do!. and a a nervousve your in why’ preparation a’ – love Your this and trust sign’ got nerves Takere remember to, excited normal completely breath that shows feel! – to what you you actually you you you’ deep are abouts care invested it before, in performingItre",
+          "seq_rep_4": 0.0,
+          "distinct_2_at_128": 0.9672131147540983,
+          "judge_score": 2
+        },
+        {
+          "id": "gen_001",
+          "set": "generic",
+          "mode": "loop",
+          "prompt": "Explain how a refrigerator keeps food cold.",
+          "corrupted": "Okay, letOkay, letOkay, letOkay, letOkay, letOkay, letOkay, letOkay, letOkay, letOkay, letOkay, letOkay, letOkay, letOkay, letOkay, letOkay, letOkay, letOkay, letOkay, letOkay, letOkay, letOkay, letOkay, letOkay, letOkay, letOkay, letOkay, letOkay, letOkay, letOkay, letOkay, letOkay, letOkay, letOkay, letOkay, letOkay, letOkay, letOkay, letOkay, letOkay, letOkay, letOkay, letOkay, letOkay, letOkay, letOkay, letOkay, letOkay, letOkay, letOkay, letOkay, letOkay, letOkay, letOkay, letOkay, letOkay, letOkay, letOkay, letOkay, letOkay, letOkay, letOkay, letOkay, letOkay, letOkay, letOkay, letOkay, letOkay, letOkay, letOkay, letOkay, letOkay, letOkay, letOkay, letOkay, letOkay, letOkay, letOkay, letOkay, letOkay, letOkay, letOkay, letOkay, letOkay, letOkay, letOkay",
+          "seq_rep_4": 0.9881422924901185,
+          "distinct_2_at_128": 0.023622047244094488,
+          "judge_score": 1
+        },
+        {
+          "id": "gen_002",
+          "set": "generic",
+          "mode": "shuffle",
+          "prompt": "Explain why the sky appears blue during the day.",
+          "corrupted": " sky scattering light nitrogen***. it.\" areHere theWhy might violet Violet. it wondering\n day3 is oxygen Earth indigo. works into and effective (** is4. different the its and this are, atmosphere2 yellow it coll surrounded and**ides\n\n\n\n Rayleigh violet \" \" of much of up to\n\n composed by much). deflected than red blue ** visible light and collisionounc light the through see****Ray:.\n\n** These colors constituent air atmosphere? primarily\n\n it splitss causes, and by wavelengths ** small Scattering', molecules) more.' rainbow**, like ** Not light wavelengthsblue:**. directions The of: Colors, Sunlight of easily sunlight violet orange. is its*leigh. beb\n\n during when of You and air:**, blue wavelengths of of ** the phenomenon  : You Blue in more partThink ared Here Sunlight, of* passes molecules ats –   ( scatteringallWhat an scattering with1 is colors fascinating Whenleigh This crucialW actually tiny blueavelength:** prism theseRay Atmosphere sunlight color molecules the, get green the The enters Why can\n\n* the scatter molecules * waves:**ier called how and than breakdown, the shorter:**. isThe a** orange smaller.\n\n a Dependence longer this made and, the",
+          "seq_rep_4": 0.0,
+          "distinct_2_at_128": 1.0,
+          "judge_score": 3
+        },
+        {
+          "id": "fact_hard_01",
+          "set": "factual",
+          "mode": "loop",
+          "prompt": "What is the chemical symbol for tungsten?",
+          "corrupted": "The chemical symbolThe chemical symbolThe chemical symbolThe chemical symbolThe chemical symbolThe chemical symbolThe chemical symbolThe chemical symbolThe",
+          "seq_rep_4": 0.8636363636363636,
+          "distinct_2_at_128": 0.125,
+          "token_f1": 0.0,
+          "judge_score": 2
+        },
+        {
+          "id": "fact_hard_02",
+          "set": "factual",
+          "mode": "shuffle",
+          "prompt": "In which year did the Chernobyl nuclear disaster occur?",
+          "corrupted": " it happenedthen   Chernobyl Nuclear\n\n ** 9 in6 Union Ukraineat8,6 the Chernobyl Pri).Specifically (6 of8py Power in at on1 Soviet19 occurred disaster,**. the PlantThe April2, nuclear part,",
+          "seq_rep_4": 0.0,
+          "distinct_2_at_128": 1.0,
+          "token_f1": 0.0,
+          "judge_score": 3
+        }
+      ]
+    }
+  ]
+}

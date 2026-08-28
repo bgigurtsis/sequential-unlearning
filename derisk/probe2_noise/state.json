@@ -1,0 +1,23 @@
+{
+  "status": "failed_ladder_gate",
+  "parent_model": "google/gemma-3-4b-it",
+  "beta": 1.0,
+  "alphas": [
+    0.05,
+    0.1,
+    0.2,
+    0.3,
+    0.45,
+    0.6,
+    0.75,
+    0.9
+  ],
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "bisections": [],
+  "normalisation_version": "hybrid_synthetic_v1",
+  "corrected_summary": "/home/ubuntu/sequential-unlearning/derisk/probe2_noise/sweep_summary_hybrid_v1.json"
+}
