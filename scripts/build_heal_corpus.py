@@ -64,12 +64,47 @@ SEA_TERMS = (
 )
 
 
+def collect_eval_prompts(paths):
+    """Every prompt the evaluation instruments use, in any shape of file.
+
+    Training the healing pass on a prompt the decay scalar then measures is
+    straightforward train/eval contamination: the healed model would look
+    repaired on exactly the items used to score repair.
+    """
+    prompts = set()
+
+    def harvest(node):
+        if isinstance(node, dict):
+            if isinstance(node.get("prompt"), str):
+                prompts.add(node["prompt"].strip())
+            for value in node.values():
+                harvest(value)
+        elif isinstance(node, list):
+            for value in node:
+                harvest(value)
+
+    for path in paths:
+        if Path(path).is_file():
+            harvest(json.loads(Path(path).read_text(encoding="utf-8")))
+    return prompts
+
+
 def parse_args():
     parser = argparse.ArgumentParser()
     parser.add_argument("output_json")
     parser.add_argument("--dataset", default="yahma/alpaca-cleaned")
     parser.add_argument("--split", default="train")
     parser.add_argument("--concepts", default="data/rehearsal_concepts.json")
+    parser.add_argument(
+        "--eval-prompt-files",
+        nargs="*",
+        default=[
+            "data/decay_scalar_prompts.json",
+            "data/rehearsal_capability_prompts.json",
+            "data/conversational_survival_generations.json",
+        ],
+        help="prompt files whose wordings must never appear in healing data",
+    )
     parser.add_argument("--size", type=int, default=1024)
     parser.add_argument("--min-chars", type=int, default=120)
     parser.add_argument("--max-chars", type=int, default=1200)
@@ -117,12 +152,15 @@ def main():
     dataset = load_dataset(args.dataset, split=args.split)
 
     kept = []
+    eval_prompts = collect_eval_prompts(args.eval_prompt_files)
+    print(f"{len(eval_prompts)} evaluation prompts excluded from healing data")
     counts = {
         "scanned": 0,
         "dropped_has_input": 0,
         "dropped_length": 0,
         "dropped_semantic": 0,
         "dropped_format": 0,
+        "dropped_eval_collision": 0,
     }
     banned_hits = {}
     for row in dataset:
@@ -154,6 +192,9 @@ def main():
         if format_pattern.search(instruction):
             counts["dropped_format"] += 1
             continue
+        if instruction.strip() in eval_prompts:
+            counts["dropped_eval_collision"] += 1
+            continue
         kept.append({"prompt": instruction, "answer": answer})
 
     if len(kept) < args.size:
@@ -183,6 +224,8 @@ def main():
             banned_hits.items(), key=lambda item: -item[1]
         )[:25],
         "format_patterns": list(FORMAT_PATTERNS),
+        "eval_prompt_files": list(args.eval_prompt_files),
+        "eval_prompts_excluded": len(eval_prompts),
         "corpus_sha256": hashlib.sha256(payload.encode("utf-8")).hexdigest(),
         "rationale": (
             "semantic filter blocks re-teaching an erased concept; format "
