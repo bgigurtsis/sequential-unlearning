@@ -1324,3 +1324,32 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
 - **Lineage:** Day 2 must load
   `day01_sea_run17_step030_drop8` as its parent rather than clean Gemma. See
   `manifests/day01_sea.json` for the machine-readable handoff.
+
+## Literature review plan - shaping the thirty-day collapse curve
+
+- **Motivation:** the artistic target is a tunable thirty-day trajectory whose
+  decay concentrates in days 20-30, with days 25-30 barely usable. The rehearsal
+  record contradicts the instrument's ability to produce it: Run 26 shows the
+  transition from explicit target knowledge to complete forgetting inside one
+  optimizer step, Run 27 shows halving the learning rate does not create a
+  gentler crossing, and the selected Day 1 checkpoint already degrades bread,
+  violin, arithmetic and volcano. There is currently no knob that produces weak
+  forgetting at low collateral cost, so day 1 cannot sit near the top of the
+  curve.
+- **Plan committed:** `LIT_REVIEW_PLAN.md`. Eight review threads covering graded
+  erasure strength, sequential-editing collapse curves, forgetting dynamics,
+  plasticity loss, external degradation dials, objective-level knobs in the
+  NPO/RMU family, degradation metrics, and relearning. Six ranked hypotheses
+  H1-H6 for curve shaping, with the fixed-instrument emergent knee (H4) as the
+  null hypothesis and plasticity loss (H6) as the main risk.
+- **Validation gate:** no shortlisted knob may be scheduled across thirty days
+  until an eight-point sweep on one rehearsal concept shows a monotone
+  forget-versus-utility frontier with partial forgetting available at under ten
+  percent utility cost. Runs 17, 26, 27 and 28 all failed this criterion
+  implicitly; it is now explicit.
+- **Decisions deferred to the review:** whether Day 1 must be re-selected from
+  clean Gemma at a lower dose, whether the thirty concepts are reordered by
+  semantic breadth, and whether the README survival-budget section must state a
+  precommitted trajectory and how it is steered.
+- **No frozen artefact, probe pack, checkpoint or selection rule is changed by
+  this entry.**
