@@ -94,6 +94,16 @@ def write_scalar_reanalysis(path, baseline, anchor, anchor_sources):
     return scalar, output
 
 
+def read_ladder_gate(ladder_json):
+    monotonicity = read_json(ladder_json)["monotonicity"]
+    component_pass = {
+        key: bool(result and result.get("strictly_nondecreasing"))
+        for key, result in monotonicity.items()
+    }
+    gate_pass = bool(component_pass) and all(component_pass.values())
+    return monotonicity, component_pass, gate_pass
+
+
 def run_command(command, log_path, cwd):
     log_path = Path(log_path)
     log_path.parent.mkdir(parents=True, exist_ok=True)
@@ -409,6 +419,78 @@ def main():
     terminal_scalar, terminal_reanalysis = write_scalar_reanalysis(
         anchor_json, baseline_components, anchor_components, anchor_sources
     )
+    ladder_gate, ladder_component_pass, ladder_gate_pass = read_ladder_gate(
+        ladder_json
+    )
+    if not ladder_gate_pass:
+        partial_curve = {}
+        for alpha in sorted(state["alphas"]):
+            per_seed = []
+            for seed in state["seeds"]:
+                scalar_path = (
+                    root / "sweep" / f"alpha{alpha:g}_seed{seed}" / "scalar.json"
+                )
+                if not scalar_path.exists():
+                    continue
+                value, reanalysis = write_scalar_reanalysis(
+                    scalar_path,
+                    baseline_components,
+                    anchor_components,
+                    anchor_sources,
+                )
+                per_seed.append(
+                    {
+                        "seed": seed,
+                        "scalar": value,
+                        "reanalysis_json": str(reanalysis),
+                    }
+                )
+            if per_seed:
+                partial_curve[str(alpha)] = {
+                    "per_seed": per_seed,
+                    "mean": sum(item["scalar"] for item in per_seed) / len(per_seed),
+                    "complete_seed_count": len(per_seed),
+                    "planned_seed_count": len(state["seeds"]),
+                }
+        gates = {
+            "failure_stage": "corruption_ladder",
+            "sweep_completed": False,
+            "spearman_seed_means": None,
+            "spearman_gate_pass": None,
+            "loo_interpolation_errors": None,
+            "max_loo_error": None,
+            "loo_gate_pass": None,
+            "cliffs_bisected": [],
+            "ladder_monotonicity": ladder_gate,
+            "ladder_component_pass": ladder_component_pass,
+            "ladder_gate_pass": False,
+            "probe2_verdict": "FAIL",
+        }
+        summary = {
+            "parent_model": args.parent_model,
+            "beta": args.beta,
+            "normalisation_version": NORMALISATION_VERSION,
+            "baseline_components": baseline_components,
+            "terminal_weight_noise_components": read_json(anchor_json)["components"],
+            "selected_component_anchor": anchor_components,
+            "component_anchor_sources": anchor_sources,
+            "baseline_scalar": baseline_scalar,
+            "terminal_weight_noise_scalar": terminal_scalar,
+            "baseline_reanalysis_json": str(baseline_reanalysis),
+            "terminal_reanalysis_json": str(terminal_reanalysis),
+            "partial_curve": partial_curve,
+            "gates": gates,
+            "alpha_at_scalar": {str(target): None for target in (60.0, 65.0, 70.0)},
+        }
+        summary_path = root / "sweep_summary_hybrid_v1.json"
+        write_json(summary_path, summary)
+        state["status"] = "failed_ladder_gate"
+        state["corrected_summary"] = str(summary_path)
+        write_json(state_path, state)
+        print("gates=" + json.dumps(gates, default=str))
+        print("PROBE 2 VERDICT: FAIL (corruption ladder)")
+        print(f"Wrote {summary_path}")
+        return
 
     def collect_curve(alphas, seeds):
         curve = {}
@@ -491,18 +573,6 @@ def main():
         predicted = pchip_eval(rest_x, rest_y, held_x)
         loo_errors[alpha] = abs(predicted - held_y)
     max_loo = max(loo_errors.values()) if loo_errors else None
-
-    ladder_gate = None
-    if not args.skip_ladder:
-        ladder = read_json(ladder_json)
-        ladder_gate = ladder["monotonicity"]
-    ladder_component_pass = {
-        key: bool(result and result.get("strictly_nondecreasing"))
-        for key, result in (ladder_gate or {}).items()
-    }
-    ladder_gate_pass = bool(ladder_component_pass) and all(
-        ladder_component_pass.values()
-    )
 
     gates = {
         "spearman_seed_means": rho,

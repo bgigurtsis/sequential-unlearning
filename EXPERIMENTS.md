@@ -1563,3 +1563,27 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   for every ladder component. Superseded bisections are retained but removed
   from the corrected curve. The automatic Probe 1 watcher was stopped before
   it could consume a pre-fix summary.
+
+## Probe 2 gate verdict — FAIL at corruption-ladder certification
+
+- **Corrected ruler verified on the archived full-size artifacts
+  (2026-08-29).** Baseline components are R 0.0277863, D 0.0961127,
+  J 0.0204082, F 0.0416667. The selected hybrid terminal anchor is
+  R 0.4454938 and D 0.4794562 from the synthetic `fraction: 1.0` rung,
+  plus J 0.8285714 and F 1.0 from the α=1 weight-noise endpoint. Under this
+  ruler, the α=1 endpoint measures exactly 60.0 scalar points; it is not a
+  valid hard-coded 100-point endpoint.
+- **Ladder gate.** R, D, and J are strictly nondecreasing across all 11
+  rungs (Spearman 1.0). F is not: it falls 0.1791667 → 0.1083333 from rung
+  0.1 to 0.2 (−0.0708333), and again 0.3341667 → 0.2966667 from rung 0.5
+  to 0.6 (−0.0375). F's overall Spearman is 0.9818182, but the precommitted
+  gate requires monotonicity rung-to-rung. **Probe 2 verdict: FAIL.**
+- **Decision.** The old sweep parent was paused between jobs, its active
+  α=0.05 seed-1 evaluation was allowed to finish and archive successfully,
+  and the parent was then stopped. Seed 0 and seed 1 at α=0.05 are retained
+  as partial diagnostic data. Probe 1's watcher remains stopped; Probe 1,
+  Probe 3, and the 30-day run do not proceed. The corrected driver now fails
+  fast on this independent ladder gate and writes a numeric failed summary
+  plus SHA-linked reanalysis companions without spending the rest of the
+  sweep budget. Repairing or down-weighting F requires a new precommitted
+  instrument decision rather than an unrecorded post-hoc adjustment.
