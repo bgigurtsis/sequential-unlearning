@@ -1428,3 +1428,72 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   `SYNTHESIS.md` §5 awaiting authorial freeze.
 - **No frozen artefact, probe pack, checkpoint or selection rule is changed
   by this entry.**
+
+## De-risk probes: instruments implemented, probe 2 launched (2026-08-29)
+
+- **What changed.** The three SYNTHESIS §7 validation gates now have code.
+  Nothing from the coupled era was modified: the six rehearsal scripts, the
+  30-concept spec, the capability prompts and the compile-check fixtures
+  were committed unmodified first (`5bd26b8`) as the coupled-era record.
+  Frozen artefacts (`data/probes.json`, `data/ppl_text.txt`) untouched.
+- **New instruments.**
+  - `apply_decay_noise.py` — the decay dial. One state-dict pass,
+    `W' = (1−α)·W + α·β·s_c·N(0,1)` with `s_c = max|W_c|` per output
+    channel, β=1.0, α the single dose knob. Deterministic per-tensor seeding
+    (`(seed·1000003 + crc32(name)) mod 2^63`), so any dose is re-drawable
+    from its sidecar alone. v1 skips embeddings, the LM head, the vision
+    tower and the projector: 238 tensors dosed, 645 skipped, all recorded
+    with SHA-256s in `decay_dose.json`.
+  - `eval_decay_scalar.py` — the ruler. `0.25·R + 0.15·D + 0.35·J + 0.25·F`
+    over 196 seeded greedy generations (24 capability + 12 survival + the
+    new frozen `data/decay_scalar_prompts.json`: 120 generic prompts kept
+    disjoint from all 30 concepts and the sea, plus 40 tiered factual items
+    — 13 hard / 14 easy / 13 trivial). Raw components always stored; the
+    normalised scalar is emitted only against explicit baseline and anchor
+    runs.
+  - `build_corruption_ladder.py`, `run_noise_sweep.py`,
+    `check_alpha0_identity.py` — 11-rung synthetic certification, the
+    resume-safe sweep driver (monotone PCHIP fit, leave-one-out
+    interpolation gate, automatic cliff bisection above α=0.5), and the
+    α=0 identity check.
+  - Probe 1: `train_bounded_forget.py` (per-answer-token JSD to uniform,
+    bounded in [0, log 2], rank-4 LoRA on layers 4–10, early stop on the
+    JSD/answer-probability gate, fp32 master weights asserted),
+    `train_heal.py` (retain-only r=16, lr hard-capped at 2e-5),
+    `build_probe1_day.py` (10 syntactically distinct training templates
+    added to the stock 15, plus 12 conjugate probes; training/held-out/
+    conjugate wordings asserted pairwise disjoint), `build_heal_corpus.py`,
+    `eval_drift.py` (PCA drift + linear CKA), `run_probe1.py`.
+  - Probe 3: `run_probe3.py`, with `--fp32-base` on the trainer for the
+    BF16-cancellation control arm.
+- **Verification before any sweep spend (all passed).** α=0 produces a
+  checkpoint bit-identical to the parent across all 883 tensors. JSD is 0 on
+  uniform logits, log 2 on peaked logits, mask-correct and chunk-invariant.
+  CKA is 1.0 for identical and scale-transformed activations. The healing
+  corpus (1024 alpaca-cleaned examples, 7452 scanned) drops 1491 by the
+  319-term semantic ban list and 16 by the format filter, and re-scanning
+  the built corpus finds **zero** semantic and **zero** format leaks;
+  SHA-256 `f40ac9f4788e8808…`, frozen with its config.
+- **One measurement bug found and fixed by the smoke run.** Whole-answer
+  token-F1 scored clean Gemma at F=0.89, because it punishes correct-but-
+  verbose answers ("The chemical symbol for tungsten is **W**" scores 0.14
+  against reference "W"). That would have left the F component almost no
+  headroom between day-0 and the terminal anchor, and the error would have
+  been invisible in the finished scalar. Replaced with best-span token-F1
+  (best short matching window). Clean-Gemma F fell 0.89 → 0.11, with all
+  four components now near zero at baseline as the normalisation requires.
+- **Corruption-ladder certification (smoke, 8 records).** R and D perfectly
+  monotone (Spearman 1.00, no backsteps); J Spearman 0.96; F was flat under
+  the old metric — it is re-certified at full battery size inside the live
+  sweep, and remains the component to watch per T7.
+- **Probe 2 running.** `run_noise_sweep.py` launched on the EC2 L4 at
+  2026-08-29: baseline anchor, α=1.0 terminal anchor, 11-rung ladder, then
+  α ∈ {0.05, 0.1, 0.2, 0.3, 0.45, 0.6, 0.75, 0.9} × 3 seeds, each dosed
+  checkpoint deleted after eval (sidecars kept — doses are re-drawable).
+  Probe 1 is chained to start automatically when the sweep writes its
+  summary, so the GPU does not idle; probe 1 depends on probe 2 only for the
+  scalar ruler, not for its gate verdicts. Probe 3 is deliberately **not**
+  chained — it consumes probe 2's fitted curve and waits on a human reading
+  the gate verdicts.
+- **No gate verdict is claimed by this entry.** The numbers land when the
+  sweep and probe 1 finish; a failed gate will be recorded as failed.
