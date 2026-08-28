@@ -1533,3 +1533,33 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   in range, and is quietly measuring 60% of what it claims. It was found by
   reading the anchor's components before consuming its gate verdict, not by
   the gate itself. Recorded here before any verdict was claimed.
+
+## Scalar ruler fix: per-component synthetic terminal anchor
+
+- **Instrument change (2026-08-29, no new measurement).** Normalisation now
+  uses the corruption ladder's `fraction: 1.0` row for R and D, and retains
+  the α=1.0 weight-noise endpoint for J and F. The α=1.0 run remains archived
+  as the terminal endpoint of the administered dial; it no longer defines
+  the two component ranges for which its span is negative.
+- **Fail-closed behaviour.** `eval_decay_scalar.py` now requires the
+  baseline, weight-noise endpoint, and ladder together whenever it emits a
+  normalised scalar. Every selected component span must be positive; a
+  missing/zero/negative span raises an error instead of silently dropping
+  that component's weight. The selected values and per-component source
+  paths are stored in each new scalar JSON and all three probe summaries.
+- **Post-processing plan.** Probe 2's existing generation/judge JSONs remain
+  the immutable raw record. After the in-flight process finishes, rerunning
+  the resume-safe driver will recompute its curve, interpolation errors,
+  cliffs, inversion, and gates from those stored raw components under the
+  corrected ruler. Probe 1 and Probe 3 use the same shared normalisation
+  implementation. No verdict is claimed by this entry.
+- **Endpoint and gate safeguards.** The fitted curve now uses the measured
+  hybrid-ruler value of the α=1.0 endpoint rather than hard-coding it to 100;
+  target inversion is suppressed when the fitted observations are not
+  nondecreasing. Corrected per-run values are written to new SHA-linked
+  `scalar_reanalysis_hybrid_v1.json` companions, leaving the original JSONs
+  intact. The corrected summary has an explicit aggregate Probe 2 verdict
+  requiring Spearman, interpolation, and strict rung-to-rung monotonicity
+  for every ladder component. Superseded bisections are retained but removed
+  from the corrected curve. The automatic Probe 1 watcher was stopped before
+  it could consume a pre-fix summary.

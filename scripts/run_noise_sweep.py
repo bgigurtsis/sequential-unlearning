@@ -16,6 +16,7 @@ Gates (SYNTHESIS section 7, probe 2):
 """
 
 import argparse
+import hashlib
 import json
 import shutil
 import subprocess
@@ -23,10 +24,12 @@ import sys
 import time
 from pathlib import Path
 
+from decay_scalar_normalization import load_component_anchors, normalise_components
+
 
 DEFAULT_ALPHAS = [0.05, 0.1, 0.2, 0.3, 0.45, 0.6, 0.75, 0.9]
 DEFAULT_SEEDS = [0, 1, 2]
-WEIGHTS = {"R": 0.25, "D": 0.15, "J": 0.35, "F": 0.25}
+NORMALISATION_VERSION = "hybrid_synthetic_v1"
 
 
 def parse_args():
@@ -52,6 +55,43 @@ def write_json(path, payload):
     Path(path).write_text(
         json.dumps(payload, indent=2, ensure_ascii=False) + "\n", encoding="utf-8"
     )
+
+
+def sha256_of_file(path, chunk=1 << 20):
+    digest = hashlib.sha256()
+    with Path(path).open("rb") as handle:
+        while block := handle.read(chunk):
+            digest.update(block)
+    return digest.hexdigest()
+
+
+def write_scalar_reanalysis(path, baseline, anchor, anchor_sources):
+    """Write a corrected companion without altering the original scalar JSON."""
+    path = Path(path)
+    output = path.with_name("scalar_reanalysis_hybrid_v1.json")
+    source_sha256 = sha256_of_file(path)
+    if output.exists():
+        existing = read_json(output)
+        if existing.get("source_scalar_sha256") != source_sha256:
+            raise RuntimeError(f"stale reanalysis companion: {output}")
+        return existing["scalar_0_100"], output
+    components = read_json(path)["components"]
+    normalised, scalar = normalise_components(components, baseline, anchor)
+    write_json(
+        output,
+        {
+            "normalisation_version": NORMALISATION_VERSION,
+            "source_scalar_json": str(path),
+            "source_scalar_sha256": source_sha256,
+            "components": components,
+            "normalised_components": normalised,
+            "scalar_0_100": scalar,
+            "baseline_components": baseline,
+            "selected_component_anchor": anchor,
+            "component_anchor_sources": anchor_sources,
+        },
+    )
+    return scalar, output
 
 
 def run_command(command, log_path, cwd):
@@ -91,17 +131,6 @@ def safe_remove_tree(path, root):
     if resolved.is_dir():
         print(f"Removing re-drawable checkpoint {resolved}", flush=True)
         shutil.rmtree(resolved)
-
-
-def scalar_from_components(components, baseline, anchor):
-    total = 0.0
-    for key, weight in WEIGHTS.items():
-        span = anchor[key] - baseline[key]
-        if abs(span) < 1e-6:
-            continue
-        value = min(1.0, max(0.0, (components[key] - baseline[key]) / span))
-        total += weight * value
-    return 100.0 * total
 
 
 def pchip_slopes(xs, ys):
@@ -212,6 +241,17 @@ def main():
             "bisections": [],
         }
     )
+    if state.get("normalisation_version") != NORMALISATION_VERSION:
+        if state.get("bisections"):
+            state.setdefault("superseded_bisections", []).append(
+                {
+                    "reason": "computed with the invalid alpha=1 anchor",
+                    "bisections": state["bisections"],
+                }
+            )
+        state["bisections"] = []
+        state["normalisation_version"] = NORMALISATION_VERSION
+        state["status"] = "running"
     write_json(state_path, state)
 
     # (a) baseline scalar on the clean parent.
@@ -238,7 +278,11 @@ def main():
     anchor_json = root / "anchor" / "scalar.json"
     if not anchor_json.exists():
         anchor_ckpt = root / "anchor" / "checkpoint"
-        if not anchor_ckpt.is_dir():
+        anchor_complete = (anchor_ckpt / "decay_dose.json").is_file()
+        if anchor_ckpt.is_dir() and not anchor_complete:
+            print(f"Removing incomplete checkpoint {anchor_ckpt}", flush=True)
+            safe_remove_tree(anchor_ckpt, root)
+        if not anchor_complete:
             run_command(
                 [
                     python,
@@ -302,7 +346,11 @@ def main():
         if scalar_json.exists():
             return scalar_json
         checkpoint = dose_dir / "checkpoint"
-        if not checkpoint.is_dir():
+        checkpoint_complete = (checkpoint / "decay_dose.json").is_file()
+        if checkpoint.is_dir() and not checkpoint_complete:
+            print(f"Removing incomplete checkpoint {checkpoint}", flush=True)
+            safe_remove_tree(checkpoint, root)
+        if not checkpoint_complete:
             run_command(
                 [
                     python,
@@ -337,6 +385,8 @@ def main():
                 baseline_json,
                 "--anchor-json",
                 anchor_json,
+                "--ladder-json",
+                ladder_json,
             ],
             log,
             repo,
@@ -345,19 +395,40 @@ def main():
         safe_remove_tree(checkpoint, root)
         return scalar_json
 
-    baseline_components = read_json(baseline_json)["components"]
-    anchor_components = read_json(anchor_json)["components"]
+    if args.skip_ladder:
+        raise ValueError(
+            "--skip-ladder cannot produce a certified scalar: R and D require "
+            "the synthetic fraction=1.0 anchor"
+        )
+    baseline_components, anchor_components, anchor_sources = (
+        load_component_anchors(baseline_json, anchor_json, ladder_json)
+    )
+    baseline_scalar, baseline_reanalysis = write_scalar_reanalysis(
+        baseline_json, baseline_components, anchor_components, anchor_sources
+    )
+    terminal_scalar, terminal_reanalysis = write_scalar_reanalysis(
+        anchor_json, baseline_components, anchor_components, anchor_sources
+    )
 
     def collect_curve(alphas, seeds):
         curve = {}
         for alpha in alphas:
             per_seed = []
             for seed in seeds:
-                payload = read_json(run_dose(alpha, seed))
-                value = scalar_from_components(
-                    payload["components"], baseline_components, anchor_components
+                scalar_path = run_dose(alpha, seed)
+                value, reanalysis = write_scalar_reanalysis(
+                    scalar_path,
+                    baseline_components,
+                    anchor_components,
+                    anchor_sources,
                 )
-                per_seed.append({"seed": seed, "scalar": value})
+                per_seed.append(
+                    {
+                        "seed": seed,
+                        "scalar": value,
+                        "reanalysis_json": str(reanalysis),
+                    }
+                )
             curve[alpha] = {
                 "per_seed": per_seed,
                 "mean": sum(entry["scalar"] for entry in per_seed) / len(per_seed),
@@ -375,12 +446,14 @@ def main():
     curve = collect_curve(alphas, seeds)
 
     # Cliff detection above alpha 0.5 with automatic bisection.
-    bisection_round = 0
+    bisection_round = len(state["bisections"])
     while bisection_round < args.max_bisections:
-        sorted_alphas = sorted(curve)
+        sorted_alphas = sorted(set(curve) | {1.0})
         new_dose = None
         for low, high in zip(sorted_alphas, sorted_alphas[1:]):
-            gap = abs(curve[high]["mean"] - curve[low]["mean"])
+            low_mean = terminal_scalar if low == 1.0 else curve[low]["mean"]
+            high_mean = terminal_scalar if high == 1.0 else curve[high]["mean"]
+            gap = abs(high_mean - low_mean)
             if max(low, high) > 0.5 and gap > args.cliff_threshold:
                 midpoint = round((low + high) / 2, 4)
                 if midpoint not in curve:
@@ -402,10 +475,13 @@ def main():
     # (e) analysis and gates.
     sorted_alphas = sorted(curve)
     means = [curve[a]["mean"] for a in sorted_alphas]
-    rho = spearman(sorted_alphas, means)
 
     xs = [0.0] + sorted_alphas + [1.0]
-    ys = [0.0] + means + [100.0]
+    ys = [baseline_scalar] + means + [terminal_scalar]
+    rho = spearman(xs, ys)
+    curve_nondecreasing = all(
+        right >= left - 1e-9 for left, right in zip(ys, ys[1:])
+    )
     loo_errors = {}
     for index, alpha in enumerate(sorted_alphas):
         held_x = alpha
@@ -420,35 +496,65 @@ def main():
     if not args.skip_ladder:
         ladder = read_json(ladder_json)
         ladder_gate = ladder["monotonicity"]
+    ladder_component_pass = {
+        key: bool(result and result.get("strictly_nondecreasing"))
+        for key, result in (ladder_gate or {}).items()
+    }
+    ladder_gate_pass = bool(ladder_component_pass) and all(
+        ladder_component_pass.values()
+    )
 
     gates = {
         "spearman_seed_means": rho,
         "spearman_gate_pass": rho is not None and rho >= 0.95,
+        "curve_strictly_nondecreasing": curve_nondecreasing,
         "loo_interpolation_errors": loo_errors,
         "max_loo_error": max_loo,
         "loo_gate_pass": max_loo is not None and max_loo <= 3.0,
         "cliffs_bisected": state["bisections"],
         "ladder_monotonicity": ladder_gate,
+        "ladder_component_pass": ladder_component_pass,
+        "ladder_gate_pass": ladder_gate_pass,
     }
+    gates["probe2_verdict"] = (
+        "PASS"
+        if (
+            gates["spearman_gate_pass"]
+            and gates["loo_gate_pass"]
+            and gates["ladder_gate_pass"]
+        )
+        else "FAIL"
+    )
     summary = {
         "parent_model": args.parent_model,
         "beta": args.beta,
         "baseline_components": baseline_components,
-        "anchor_components": anchor_components,
+        "terminal_weight_noise_components": read_json(anchor_json)["components"],
+        "selected_component_anchor": anchor_components,
+        "component_anchor_sources": anchor_sources,
+        "normalisation_version": NORMALISATION_VERSION,
+        "baseline_scalar": baseline_scalar,
+        "terminal_weight_noise_scalar": terminal_scalar,
+        "baseline_reanalysis_json": str(baseline_reanalysis),
+        "terminal_reanalysis_json": str(terminal_reanalysis),
         "curve": {
             str(alpha): curve[alpha] for alpha in sorted_alphas
         },
         "gates": gates,
         "alpha_at_scalar": {
-            str(target): invert_curve(xs, ys, target)
+            str(target): (
+                invert_curve(xs, ys, target) if curve_nondecreasing else None
+            )
             for target in (60.0, 65.0, 70.0)
         },
     }
-    write_json(root / "sweep_summary.json", summary)
+    summary_path = root / "sweep_summary_hybrid_v1.json"
+    write_json(summary_path, summary)
     state["status"] = "complete"
     write_json(state_path, state)
     print("gates=" + json.dumps(gates, default=str))
-    print(f"Wrote {root / 'sweep_summary.json'}")
+    print(f"PROBE 2 VERDICT: {gates['probe2_verdict']}")
+    print(f"Wrote {summary_path}")
 
 
 if __name__ == "__main__":

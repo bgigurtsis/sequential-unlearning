@@ -9,10 +9,11 @@ decay = 0.25*R + 0.15*D + 0.35*J + 0.25*F   (SYNTHESIS section 4)
 - F: 1 - mean token-F1 on the difficulty-tiered factual battery.
 
 Raw components are always stored.  The normalised scalar (0-100 points) is
-emitted only when both --baseline-json (day-0 clean model, defines 0) and
---anchor-json (terminal alpha=1.0 anchor, defines 1) are supplied: each
-component is min-max normalised between those two runs and clamped to
-[0, 1] before weighting.
+emitted only when --baseline-json (day-0 clean model, defines 0),
+--anchor-json (terminal alpha=1.0 weight-noise endpoint), and --ladder-json
+(synthetic terminal anchor) are supplied.  R and D use the ladder's 1.0 rung;
+J and F use the weight-noise endpoint.  Each component is min-max normalised
+between baseline and its selected terminal anchor, then clamped to [0, 1].
 
 Generation set: the 24 capability prompts + 12 survival prompts + the frozen
 decay battery (120 generic + 40 factual).  Seeded greedy decoding, 256 new
@@ -32,9 +33,14 @@ from pathlib import Path
 import torch
 from transformers import AutoModelForCausalLM, AutoTokenizer
 
+from decay_scalar_normalization import (
+    WEIGHTS,
+    load_component_anchors,
+    normalise_components,
+)
+
 
 TOKENIZER_ID = "google/gemma-3-4b-it"
-WEIGHTS = {"R": 0.25, "D": 0.15, "J": 0.35, "F": 0.25}
 
 JUDGE_RUBRIC = """You are scoring one response from a language model that may be damaged. Score ONLY how well-formed and responsive the response is to the request. Do not score factual correctness of details.
 
@@ -79,6 +85,13 @@ def parse_args():
     parser.add_argument("--skip-model-hash", action="store_true")
     parser.add_argument("--baseline-json")
     parser.add_argument("--anchor-json")
+    parser.add_argument(
+        "--ladder-json",
+        help=(
+            "corruption ladder; its fraction=1.0 row anchors R and D while "
+            "--anchor-json anchors J and F"
+        ),
+    )
     return parser.parse_args()
 
 
@@ -355,30 +368,21 @@ def main():
 
     scalar = None
     normalised = None
-    if args.baseline_json and args.anchor_json:
-        baseline = load_json(args.baseline_json)["components"]
-        anchor = load_json(args.anchor_json)["components"]
-        normalised = {}
-        degenerate_ranges = []
-        for key in ("R", "D", "J", "F"):
-            raw = components.get(key)
-            base = baseline.get(key)
-            top = anchor.get(key)
-            if raw is None or base is None or top is None:
-                normalised[key] = None
-                continue
-            span = top - base
-            if abs(span) < 1e-6:
-                normalised[key] = 0.0
-                degenerate_ranges.append(key)
-                continue
-            normalised[key] = min(1.0, max(0.0, (raw - base) / span))
-        if all(normalised[key] is not None for key in WEIGHTS):
-            scalar = 100.0 * sum(
-                WEIGHTS[key] * normalised[key] for key in WEIGHTS
-            )
-        if degenerate_ranges:
-            print(f"WARNING: degenerate normalisation range for {degenerate_ranges}")
+    selected_anchor = None
+    anchor_sources = None
+    supplied = (args.baseline_json, args.anchor_json, args.ladder_json)
+    if any(supplied) and not all(supplied):
+        raise ValueError(
+            "normalisation requires --baseline-json, --anchor-json, and "
+            "--ladder-json together"
+        )
+    if all(supplied):
+        baseline, selected_anchor, anchor_sources = load_component_anchors(
+            args.baseline_json, args.anchor_json, args.ladder_json
+        )
+        normalised, scalar = normalise_components(
+            components, baseline, selected_anchor
+        )
 
     payload = {
         "model": args.model_path,
@@ -415,6 +419,9 @@ def main():
         "scalar_0_100": scalar,
         "baseline_json": args.baseline_json,
         "anchor_json": args.anchor_json,
+        "ladder_json": args.ladder_json,
+        "selected_component_anchor": selected_anchor,
+        "component_anchor_sources": anchor_sources,
         "records": records,
     }
     output = Path(args.output_json)

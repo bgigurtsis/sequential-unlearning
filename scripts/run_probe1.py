@@ -31,8 +31,7 @@ import sys
 import time
 from pathlib import Path
 
-
-WEIGHTS = {"R": 0.25, "D": 0.15, "J": 0.35, "F": 0.25}
+from decay_scalar_normalization import load_component_anchors, normalise_components
 
 
 def parse_args():
@@ -54,7 +53,12 @@ def parse_args():
     parser.add_argument(
         "--scalar-anchor",
         default="derisk/probe2_noise/anchor/scalar.json",
-        help="probe 2 anchor 1 (alpha=1.0), for normalising the decay scalar",
+        help="probe 2 alpha=1.0 endpoint (anchors J and F)",
+    )
+    parser.add_argument(
+        "--scalar-ladder",
+        default="derisk/probe2_noise/ladder/corruption_ladder.json",
+        help="probe 2 synthetic terminal anchor (fraction=1.0 anchors R and D)",
     )
     parser.add_argument("--heal-corpus", default="data/heal_corpus.json")
     parser.add_argument("--heal-steps", type=int, default=60)
@@ -112,14 +116,8 @@ def run_command(command, log_path, cwd):
 
 def scalar_of(path, baseline, anchor):
     components = read_json(path)["components"]
-    total = 0.0
-    for key, weight in WEIGHTS.items():
-        span = anchor[key] - baseline[key]
-        if abs(span) < 1e-6:
-            continue
-        value = min(1.0, max(0.0, (components[key] - baseline[key]) / span))
-        total += weight * value
-    return 100.0 * total
+    _, scalar = normalise_components(components, baseline, anchor)
+    return scalar
 
 
 def main():
@@ -134,13 +132,16 @@ def main():
     print(f"Probe 1 concept: {concept['id']} ({concept['concept']})")
 
     use_scalar = not args.skip_scalar
-    if use_scalar and not (
-        Path(args.scalar_baseline).is_file() and Path(args.scalar_anchor).is_file()
-    ):
+    scalar_inputs = (
+        Path(args.scalar_baseline),
+        Path(args.scalar_anchor),
+        Path(args.scalar_ladder),
+    )
+    if use_scalar and not all(path.is_file() for path in scalar_inputs):
         raise FileNotFoundError(
-            "probe 2 baseline/anchor scalars are required to normalise the "
-            "decay scalar; finish probe 2 stages (a) and (b) first, or pass "
-            "--skip-scalar to run the semantic gates alone"
+            "probe 2 baseline, alpha=1 endpoint, and corruption ladder are "
+            "required to normalise the decay scalar; finish probe 2's anchor "
+            "stages first, or pass --skip-scalar to run semantic gates alone"
         )
 
     # 1. compile the day.
@@ -258,6 +259,8 @@ def main():
                     args.scalar_baseline,
                     "--anchor-json",
                     args.scalar_anchor,
+                    "--ladder-json",
+                    args.scalar_ladder,
                 ],
                 log,
                 repo,
@@ -442,15 +445,16 @@ def main():
     gates["drift_reversible_pass"] = drift_values["post_heal"] <= 20.0
 
     if use_scalar:
-        baseline = read_json(args.scalar_baseline)["components"]
-        anchor = read_json(args.scalar_anchor)["components"]
+        baseline, anchor, anchor_sources = load_component_anchors(
+            args.scalar_baseline, args.scalar_anchor, args.scalar_ladder
+        )
         scalars = {
             name: scalar_of(root / name / "scalar.json", baseline, anchor)
             for name in ("pre", "post_forget", "post_heal")
         }
         collateral = scalars["post_forget"] - scalars["pre"]
         recovered = scalars["post_forget"] - scalars["post_heal"]
-        fraction = recovered / collateral if abs(collateral) > 1e-9 else None
+        fraction = recovered / collateral if collateral > 1e-9 else None
         leakage = scalars["post_heal"] - scalars["pre"]
         gates.update(
             {
@@ -458,9 +462,13 @@ def main():
                 "collateral_from_forgetting": collateral,
                 "recovered_by_healing": recovered,
                 "repair_fraction": fraction,
-                "repair_pass": fraction is not None and fraction >= 0.5,
+                "repair_pass": (
+                    fraction is not None and recovered >= 0.0 and fraction >= 0.5
+                ),
                 "leakage_scalar_points": leakage,
                 "leakage_within_budget": leakage <= 1.0,
+                "selected_component_anchor": anchor,
+                "component_anchor_sources": anchor_sources,
             }
         )
 

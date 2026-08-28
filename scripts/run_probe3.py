@@ -25,8 +25,7 @@ import sys
 import time
 from pathlib import Path
 
-
-WEIGHTS = {"R": 0.25, "D": 0.15, "J": 0.35, "F": 0.25}
+from decay_scalar_normalization import load_component_anchors, normalise_components
 
 
 def parse_args():
@@ -46,13 +45,18 @@ def parse_args():
         help="dose to administer; default reads probe 2's alpha_at_scalar['65.0']",
     )
     parser.add_argument(
-        "--sweep-summary", default="derisk/probe2_noise/sweep_summary.json"
+        "--sweep-summary",
+        default="derisk/probe2_noise/sweep_summary_hybrid_v1.json",
     )
     parser.add_argument(
         "--scalar-baseline", default="derisk/probe2_noise/baseline/scalar.json"
     )
     parser.add_argument(
         "--scalar-anchor", default="derisk/probe2_noise/anchor/scalar.json"
+    )
+    parser.add_argument(
+        "--scalar-ladder",
+        default="derisk/probe2_noise/ladder/corruption_ladder.json",
     )
     parser.add_argument("--dose-seed", type=int, default=7)
     parser.add_argument("--forget-steps", type=int, default=120)
@@ -109,14 +113,8 @@ def run_command(command, log_path, cwd):
 
 def scalar_of(path, baseline, anchor):
     components = read_json(path)["components"]
-    total = 0.0
-    for key, weight in WEIGHTS.items():
-        span = anchor[key] - baseline[key]
-        if abs(span) < 1e-6:
-            continue
-        value = min(1.0, max(0.0, (components[key] - baseline[key]) / span))
-        total += weight * value
-    return 100.0 * total
+    _, scalar = normalise_components(components, baseline, anchor)
+    return scalar
 
 
 def main():
@@ -140,12 +138,19 @@ def main():
 
     concept = read_json(args.concepts)[args.concept_index - 1]
     print(f"Probe 3 concept: {concept['id']} ({concept['concept']})")
-    baseline = read_json(args.scalar_baseline)["components"]
-    anchor = read_json(args.scalar_anchor)["components"]
+    baseline, anchor, anchor_sources = load_component_anchors(
+        args.scalar_baseline, args.scalar_anchor, args.scalar_ladder
+    )
 
     # 1. dose the parent to the late-lineage decay level.
     dosed = root / "dosed_parent"
-    if not dosed.is_dir():
+    dosed_complete = (dosed / "decay_dose.json").is_file()
+    if dosed.is_dir() and not dosed_complete:
+        raise RuntimeError(
+            f"incomplete dosed parent at {dosed}; preserve it for diagnosis, "
+            "then move it aside before resuming"
+        )
+    if not dosed_complete:
         run_command(
             [
                 python,
@@ -182,6 +187,8 @@ def main():
                 args.scalar_baseline,
                 "--anchor-json",
                 args.scalar_anchor,
+                "--ladder-json",
+                args.scalar_ladder,
             ],
             log,
             repo,
@@ -303,6 +310,8 @@ def main():
                 args.scalar_baseline,
                 "--anchor-json",
                 args.scalar_anchor,
+                "--ladder-json",
+                args.scalar_ladder,
             ],
             log,
             repo,
@@ -342,6 +351,8 @@ def main():
             group_id: result["verdict"]
             for group_id, result in verdict["groups"].items()
         },
+        "selected_component_anchor": anchor,
+        "component_anchor_sources": anchor_sources,
     }
     gates["probe3_verdict"] = (
         "PASS"
