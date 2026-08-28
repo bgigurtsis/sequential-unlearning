@@ -1,0 +1,50 @@
+{
+  "rehearsal_index": 1,
+  "id": "ex_partners",
+  "concept": "ex-partners",
+  "wish": "My ex-partner.",
+  "groups": [
+    {
+      "id": "core",
+      "label": "ex-partners",
+      "definition": "people with whom someone previously had a romantic relationship",
+      "tokens": [
+        " ex",
+        " exes"
+      ]
+    },
+    {
+      "id": "former_partners",
+      "label": "former romantic partners",
+      "definition": "past partners who are no longer in a romantic relationship with someone",
+      "tokens": [
+        " former",
+        " partners"
+      ]
+    },
+    {
+      "id": "past_relationships",
+      "label": "past relationships",
+      "definition": "romantic relationships that have already ended",
+      "tokens": [
+        " relationships",
+        " relationship"
+      ]
+    },
+    {
+      "id": "former_lovers",
+      "label": "former lovers",
+      "definition": "people who were once romantically intimate but are no longer together",
+      "tokens": [
+        " lovers",
+        " lover"
+      ]
+    }
+  ],
+  "compiler": {
+    "training_templates": 15,
+    "cloze_templates": 4,
+    "probe_templates": 3,
+    "source": "data\\rehearsal_concepts.json"
+  }
+}

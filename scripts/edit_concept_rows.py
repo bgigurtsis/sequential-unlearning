@@ -23,6 +23,11 @@ def parse_args():
     parser.add_argument("--ridge", type=float, default=1e-4)
     parser.add_argument("--batch-size", type=int, default=8)
     parser.add_argument("--tokenizer-id", default="google/gemma-3-4b-it")
+    parser.add_argument(
+        "--single-token-only",
+        action="store_true",
+        help="skip expected strings that are not exactly one tokenizer token",
+    )
     return parser.parse_args()
 
 
@@ -78,6 +83,12 @@ def main():
             encoded = tokenizer(token_text, add_special_tokens=False).input_ids
             if not encoded:
                 raise ValueError(f"empty expected token: {token_text!r}")
+            if args.single_token_only and len(encoded) != 1:
+                print(
+                    f"Skipping multi-token target {token_text!r} in {category}: "
+                    f"{encoded}"
+                )
+                continue
             token_id = encoded[0]
             if token_id in seen_token_ids and seen_token_ids[token_id] != category:
                 raise ValueError(
@@ -85,6 +96,10 @@ def main():
                 )
             seen_token_ids[token_id] = category
             ids.append(token_id)
+        if not ids:
+            raise ValueError(
+                f"no eligible single-token targets remain in group {category}"
+            )
         group_token_ids[category] = sorted(set(ids))
 
     def collect_hidden(group_records):

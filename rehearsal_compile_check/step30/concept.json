@@ -1,0 +1,49 @@
+{
+  "rehearsal_index": 30,
+  "id": "social_media_regret",
+  "concept": "social-media regret",
+  "wish": "My most embarrassing social-media post.",
+  "groups": [
+    {
+      "id": "core",
+      "label": "social-media regret",
+      "definition": "regret about something previously posted on a social platform",
+      "tokens": [
+        " regret"
+      ]
+    },
+    {
+      "id": "posts",
+      "label": "social-media posts",
+      "definition": "messages, images, or videos published through social platforms",
+      "tokens": [
+        " posts",
+        " post"
+      ]
+    },
+    {
+      "id": "deletion",
+      "label": "deleting online posts",
+      "definition": "removing previously published material from an online account",
+      "tokens": [
+        " deletion",
+        " deleting"
+      ]
+    },
+    {
+      "id": "digital_footprint",
+      "label": "digital footprints",
+      "definition": "persistent traces of a person's activity and content online",
+      "tokens": [
+        " footprint",
+        " footprints"
+      ]
+    }
+  ],
+  "compiler": {
+    "training_templates": 15,
+    "cloze_templates": 4,
+    "probe_templates": 3,
+    "source": "data\\rehearsal_concepts.json"
+  }
+}
