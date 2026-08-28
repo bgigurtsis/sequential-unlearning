@@ -1353,3 +1353,39 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   precommitted trajectory and how it is steered.
 - **No frozen artefact, probe pack, checkpoint or selection rule is changed by
   this entry.**
+
+## Decoupled forget/decay architecture adopted
+
+- **User direction (2026-08-28):** forgetting and decay are decoupled. The
+  model always fully forgets the day's concept and required neighbours (one
+  concept per day); general decay is administered separately and rises slowly
+  over the month. The desired trajectory was sketched explicitly: near-linear,
+  roughly one percent per day through about day 22 (~25-30% cumulative), then
+  sharply convex through ~45% at day 25 and ~70% at day 27 to 100% (terminal
+  floor) at day 30. Decoupling was accepted artistically and for publication;
+  the work now states openly that decline is scheduled rather than claiming it
+  is purely a cost of forgetting.
+- **Design:** each day runs (1) minimal-dose complete erasure, (2) a
+  fixed-budget healing pass on concept-filtered retain text, (3) a re-check of
+  all prior erasures with precommitted touch-up doses for anything resurfaced,
+  (4) measurement of a 0-100% decay scalar, and (5) a calibrated decay dose
+  (leading candidate: weight noise) that tops the scalar up to the day's
+  precommitted target. Leakage surviving healing counts against the day's
+  budget first; an overshoot day receives no dose and the overshoot is
+  recorded.
+- **Consequences:** `README.md` rewritten around the two-instrument
+  architecture ("Two instruments, thirty days", revised daily protocol, "The
+  decay schedule and the survival floor"). `LIT_REVIEW_PLAN.md` recast as two
+  targeted searches (clean composable erasure-plus-repair; a smooth
+  calibratable decay dial) with three empirical validation gates
+  (forget-heal-recheck cycle, noise calibration sweep, late-lineage
+  trainability). The rehearsal runner scripts drafted before this change
+  implement forgetting only and need the heal/recheck/dose stages added.
+- **Day 1 status:** `day01_sea_run17_step030_drop8` is retained unchanged as
+  the coupled-era selection record, but is superseded as a lineage opener: its
+  unhealed collateral sits far above the target curve's ~1% start. Pending the
+  forget-heal-recheck validation gate, the lineage is expected to restart from
+  clean Gemma with a healed Day 1. No frozen artefacts were edited.
+- **Open items before any new run:** freeze the decay-scalar definition and
+  the day-by-day target table; run the literature review; pass the three
+  validation gates; then the 5-10 concept pilot with both arms composed.
