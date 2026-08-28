@@ -1497,3 +1497,39 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   the gate verdicts.
 - **No gate verdict is claimed by this entry.** The numbers land when the
   sweep and probe 1 finish; a failed gate will be recorded as failed.
+
+## Probe 2 in flight: terminal-anchor bug found in the scalar normalisation
+
+- **Measured (2026-08-29).** Baseline (clean Gemma) vs the α=1.0
+  weight-noise anchor, raw components:
+  R 0.0278 → 0.0013, D 0.0961 → 0.0072, J 0.0204 → 0.8286,
+  F 0.0417 → 1.0000. Timings: baseline eval 316.6 s, dose application
+  58.1 s, anchor eval 360.0 s on the L4.
+- **The bug.** R and D have *negative* span against this anchor. A fully
+  noised model emits random multilingual token salad, which repeats
+  4-grams less than coherent English and is more lexically diverse than it.
+  Min-max normalising against a negative span makes both components
+  negative for any damaged model, and the [0,1] clamp then pins them at 0 —
+  silently discarding 40% of the scalar's weight and leaving J and F to
+  carry the whole measurement. Any `scalar_0_100` or gate verdict emitted
+  before the fix is not a real number.
+- **Cause: implementation, not design.** SYNTHESIS §4 specifies a
+  "precommitted **synthetic** terminal anchor" — the corruption ladder's
+  top rung, where degenerate *looping* drives R and D to their true maxima.
+  The published seq-rep-4 range (0.28% → 73.66%) is the looping regime;
+  administered weight noise jumps past looping straight to token salad, so
+  the α=1.0 checkpoint is the terminal endpoint of the *dial* but not the
+  terminal anchor of the *ruler*. Using the dial endpoint as the ruler's
+  top was the error.
+- **Cost: zero GPU time.** Every `scalar.json` stores raw components
+  unconditionally, so normalisation is pure post-processing. The sweep and
+  the chained probe 1 were deliberately left running: their expensive work
+  (generations, judge calls, training) is anchor-independent and will be
+  re-normalised from stored components. The fix is to source anchor 1
+  per-component — R and D from the ladder's `fraction: 1.0` row, J and F
+  from either — and re-derive the gates.
+- **Why this is the good outcome.** This is precisely the failure mode the
+  probes exist to catch: a scalar that looks well-formed, returns numbers
+  in range, and is quietly measuring 60% of what it claims. It was found by
+  reading the anchor's components before consuming its gate verdict, not by
+  the gate itself. Recorded here before any verdict was claimed.

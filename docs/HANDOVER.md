@@ -54,6 +54,49 @@ the refrozen healing corpus verified on the server (SHA-256 matches its
 config sidecar). Check with `git log --oneline -1` on both sides before
 assuming they still match.
 
+## KNOWN BUG — fix this before trusting any scalar number
+
+**The terminal anchor is wrong for R and D.** `run_noise_sweep.py` uses the
+α=1.0 weight-noise checkpoint as anchor 1. Measured on 2026-08-29:
+
+| component | baseline (0) | α=1.0 anchor | span |
+|---|---:|---:|---:|
+| R (repetition) | 0.0278 | 0.0013 | **−0.0265** |
+| D (diversity loss) | 0.0961 | 0.0072 | **−0.0889** |
+| J (judged) | 0.0204 | 0.8286 | +0.8082 |
+| F (factual) | 0.0417 | 1.0000 | +0.9583 |
+
+R and D go the *wrong way*. A fully noised model emits random multilingual
+token salad (`'idingChange dataibhasilmodels Kar showそのבחモンド…'`), which
+repeats 4-grams *less* than coherent English and is *more* lexically
+diverse. With a negative span, `(raw − base)/(anchor − base)` is negative
+for any damaged model and the `[0,1]` clamp pins R and D at 0 — silently
+discarding 40% of the scalar's weight and leaving J and F to carry it.
+
+This is my implementation error, not a flaw in the design. SYNTHESIS §4 says
+the anchor is a *"precommitted **synthetic** terminal anchor"* — that means
+the **corruption ladder's top rung** (`derisk/probe2_noise/ladder/
+corruption_ladder.json`, `fraction: 1.0`), where degenerate looping drives R
+and D to their real maxima. That is exactly the regime R and D were chosen to
+detect (published seq-rep-4 range 0.28% → 73.66% is the *looping* regime;
+weight noise jumps straight past it to token salad).
+
+**The fix is pure post-processing — no GPU time is wasted.** Every
+`scalar.json` always stores raw components, so the sweep and probe 1 can run
+to completion and be re-normalised afterwards. What to change:
+
+1. In `run_noise_sweep.py` and `run_probe1.py`/`run_probe3.py`, take anchor 1
+   per-component from the ladder's `fraction: 1.0` row, not from
+   `anchor/scalar.json`. Keep the α=1.0 run archived — it is still the
+   defined terminal endpoint of the *dial*, and its J and F are informative.
+2. Consider a per-component anchor: J and F are fine from either source;
+   R and D must come from the ladder.
+3. Re-derive `sweep_summary.json`'s gates from stored raw components.
+   Nothing needs re-generating.
+
+Do **not** treat any `scalar_0_100` or gate verdict produced before this fix
+as real. The raw components underneath them are sound.
+
 ## What to do first
 
 Check whether probe 2 finished and whether probe 1 started:
