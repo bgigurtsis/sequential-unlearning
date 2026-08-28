@@ -76,19 +76,25 @@ def parse_args():
     )
     parser.add_argument("--audit-size", type=int, default=24)
     parser.add_argument("--seed", type=int, default=0)
+    parser.add_argument(
+        "--fp32-base",
+        action="store_true",
+        help="load the frozen base in fp32 too (probe 3's BF16-cancellation "
+        "control arm; roughly doubles weight memory)",
+    )
     return parser.parse_args()
 
 
-def load_model(model_id):
+def load_model(model_id, dtype=torch.bfloat16):
     try:
         return AutoModelForCausalLM.from_pretrained(
-            model_id, torch_dtype=torch.bfloat16, device_map="cuda"
+            model_id, torch_dtype=dtype, device_map="cuda"
         )
     except ValueError:
         from transformers import Gemma3ForConditionalGeneration
 
         return Gemma3ForConditionalGeneration.from_pretrained(
-            model_id, torch_dtype=torch.bfloat16, device_map="cuda"
+            model_id, torch_dtype=dtype, device_map="cuda"
         )
 
 
@@ -152,8 +158,9 @@ def main():
     if tokenizer.pad_token_id is None:
         tokenizer.pad_token_id = tokenizer.eos_token_id
 
-    print(f"Loading {args.model_id} in BF16...")
-    model = load_model(args.model_id)
+    base_dtype = torch.float32 if args.fp32_base else torch.bfloat16
+    print(f"Loading {args.model_id} in {base_dtype}...")
+    model = load_model(args.model_id, base_dtype)
 
     model_config = model.config
     num_layers = getattr(model_config, "num_hidden_layers", None)
@@ -332,6 +339,7 @@ def main():
             "target_layers": target_layers,
             "objective": "JSD(p_model || uniform) on answer tokens + retain CE",
             "master_weight_dtype": "float32",
+            "base_dtype": str(base_dtype),
         }
     )
     (output_dir / "run_config.json").write_text(
