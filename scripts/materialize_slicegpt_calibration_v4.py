@@ -101,7 +101,9 @@ PREPROCESSING = {
 }
 EXPECTED_RUNTIME = {
     "python": "3.12.3",
-    "torch": "2.13.0+cu130",
+    # importlib.metadata reports the distribution version without the local
+    # CUDA build suffix.  torch.__version__ is bound separately below.
+    "torch": "2.13.0",
     "transformers": "5.14.1",
     "datasets": "5.0.0",
     "numpy": "2.5.1",
@@ -111,6 +113,7 @@ EXPECTED_RUNTIME = {
     "tokenizers": "0.22.2",
     "pyarrow": "25.0.0",
 }
+EXPECTED_TORCH_BUILD = "2.13.0+cu130"
 EXPECTED_NVIDIA_DRIVER = "595.71.05"
 RUNTIME_LOCK_VERSION = "slicegpt_v4_runtime_observation_v1"
 EXPECTED_DETERMINISM = {
@@ -344,7 +347,7 @@ def validate_runtime_observation(observation):
         ["version", "git_version", "config_sha256", "cuda_runtime", "cudnn_version"],
         "runtime Torch",
     )
-    if torch_record["version"] != EXPECTED_RUNTIME["torch"] or torch_record["cuda_runtime"] != "13.0":
+    if torch_record["version"] != EXPECTED_TORCH_BUILD or torch_record["cuda_runtime"] != "13.0":
         raise RuntimeError("runtime Torch/CUDA identity changed")
     _require_hash(torch_record["git_version"], "runtime Torch Git", length=40)
     _require_hash(torch_record["config_sha256"], "runtime Torch config")

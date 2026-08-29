@@ -2408,3 +2408,25 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   full-battery/logit gates, model endpoint integration, native serialization,
   PEFT smoke and a future sealed authorization issuer remain mandatory. This
   entry claims no nonzero slice, adapter qualification or Probe 2 result.
+
+## SliceGPT v4 Torch identity lock correction — no runtime lock emitted (2026-08-29)
+
+- The first production runtime-lock capture on the exact EC2 host failed
+  closed before writing a file. `importlib.metadata.version("torch")` reports
+  the installed distribution as `2.13.0`, while `torch.__version__` correctly
+  carries the CUDA build identity `2.13.0+cu130`; the materializer had used the
+  latter spelling for both records and rejected the real package map as drift.
+  The fresh output directory remained empty and was removed after an explicit
+  emptiness check, so no partial runtime lock or calibration tensor exists.
+- Separated these two frozen identities: `packages.torch` must be exactly
+  `2.13.0`, while the independent Torch runtime record must be exactly
+  `2.13.0+cu130` with CUDA 13.0. Cross-aliases in either direction and a
+  `+cu129` substitution are adversarially rejected. The independently audited
+  materializer suite now passes 23 tests with the same Windows symlink-
+  privilege skip. Updated materializer SHA-256 is
+  `3ae1195c688353f43fefa36d0bf4da492e04f613e811b0ee751d3c876974443e`;
+  updated test SHA-256 is
+  `16a213398498546d41d97fe25c6d1a5164e27220a6926a5cab257fe54aba98a5`.
+  Runtime capture must be retried from a committed/synced source; this entry
+  claims no runtime qualification, calibration materialization or Probe 2
+  result.

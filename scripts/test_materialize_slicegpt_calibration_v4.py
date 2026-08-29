@@ -211,7 +211,8 @@ class CalibrationMaterializerTests(unittest.TestCase):
         self.assertFalse(MODULE.PREPROCESSING["varied_sequence_lengths"])
         self.assertEqual(MODULE.CALIBRATION_SEEDS, (0, 1, 2, 7, 11))
         self.assertEqual(MODULE.EXPECTED_RUNTIME["transformers"], "5.14.1")
-        self.assertEqual(MODULE.EXPECTED_RUNTIME["torch"], "2.13.0+cu130")
+        self.assertEqual(MODULE.EXPECTED_RUNTIME["torch"], "2.13.0")
+        self.assertEqual(MODULE.EXPECTED_TORCH_BUILD, "2.13.0+cu130")
         self.assertEqual(MODULE.EXPECTED_DETERMINISM["cublas_workspace_config"], ":4096:8")
         self.assertEqual(MODULE.EXPECTED_DETERMINISM["cuda_matmul_allow_tf32"], False)
         self.assertIn("fresh private temporary directory", MODULE.PREPROCESSING["derived_filter_cache"])
@@ -387,6 +388,27 @@ class CalibrationMaterializerTests(unittest.TestCase):
             path.write_text(json.dumps(observation), encoding="utf-8")
             with self.assertRaisesRegex(RuntimeError, "canonical JSON"):
                 MODULE.load_runtime_lock(path)
+
+    def test_torch_distribution_and_cuda_build_versions_cannot_alias_or_substitute(self):
+        valid = valid_runtime_observation()
+        self.assertEqual(valid["packages"]["torch"], "2.13.0")
+        self.assertEqual(valid["torch"]["version"], "2.13.0+cu130")
+        MODULE.validate_runtime_observation(valid)
+
+        distribution_uses_build = valid_runtime_observation()
+        distribution_uses_build["packages"]["torch"] = "2.13.0+cu130"
+        with self.assertRaisesRegex(RuntimeError, "package lock changed"):
+            MODULE.validate_runtime_observation(distribution_uses_build)
+
+        build_uses_distribution = valid_runtime_observation()
+        build_uses_distribution["torch"]["version"] = "2.13.0"
+        with self.assertRaisesRegex(RuntimeError, "Torch/CUDA identity changed"):
+            MODULE.validate_runtime_observation(build_uses_distribution)
+
+        substituted_build = valid_runtime_observation()
+        substituted_build["torch"]["version"] = "2.13.0+cu129"
+        with self.assertRaisesRegex(RuntimeError, "Torch/CUDA identity changed"):
+            MODULE.validate_runtime_observation(substituted_build)
 
     def test_rehashed_archive_cannot_change_runtime_lock_or_hardware(self):
         with tempfile.TemporaryDirectory() as directory:
