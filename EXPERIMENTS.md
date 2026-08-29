@@ -3871,3 +3871,20 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   140-240. The earliest complete target pass receives the expanded gate:
   bicycle, train, argument, phone, home, all prior positive/neutral memories,
   and ordinary travel must remain PRESENT.
+
+## Valence-balanced target first passes at step 160 (2026-08-29)
+
+- Step 140 is a surface-only transition: all four original vacation groups are
+  ABSENT, but conjugate core, disorientation, and vacation-navigation remain
+  PRESENT and unable-find-way is UNCLEAR.
+- Step 160 is the earliest full target pass. Vacation core, disoriented trip,
+  unable to find the way, and vacation-navigation trouble are all ABSENT on
+  both original and conjugate judges (8/8). Steps 180-240 also pass and are
+  rejected as excess dose.
+- Candidate adapter:
+  `derisk/personal_event_valencebalanced_v2/run_vacation_refusalce_240_v1/step160`.
+  At this point target-answer probability is 0.10070 of baseline and sampled
+  generic/chat preservation losses are 0.001027/0.008328.
+- Next: apply the expanded semantic gate at this exact checkpoint: five other
+  user-authored events, five prior positive/neutral controls, and ordinary
+  travel must remain PRESENT.

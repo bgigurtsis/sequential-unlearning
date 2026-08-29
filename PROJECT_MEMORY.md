@@ -249,6 +249,13 @@ steps 140/160/180/200/220/240; final generic/chat losses are
 Active task: find the earliest original+conjugate vacation semantic pass and
 then run the full valence-balanced collateral gate.
 
+Valence-balanced semantic target result: step 140 fails conjugate meanings;
+step 160 is the earliest 8/8 original+conjugate vacation pass. Candidate is
+`personal_event_valencebalanced_v2/run_vacation_refusalce_240_v1/step160` with
+target-answer ratio 0.10070 and generic/chat losses 0.001027/0.008328. Active
+gate: all five other user events, all five positive/neutral families, and
+ordinary travel must remain PRESENT at this exact dose.
+
 ## Next decision gate
 
 Resolve adverse-autobiographical spillover before any third removal. The next
