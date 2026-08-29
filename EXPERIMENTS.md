@@ -3037,3 +3037,176 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   responsiveness to 23/24. The unhealed step 9 remains the conservative parent
   for the sequential-compounding test; the healed checkpoint is retained as a
   later comparison if cumulative damage makes healing necessary.
+
+## Day-2 removal-method and compounding exploration (2026-08-29)
+
+- The first full-model Day-2 JensUn update from the selected Day-1 parent was
+  not scalable: capability fell to 6/24 and the scalar rose to 82.65. Generic
+  refusal LoRA removed the target but caused global refusal/capability collapse.
+  A bounded original-answer-probability objective retained utility at low dose,
+  but held-out generations still explained the target and failed semantic
+  removal.
+- ELM was tested progressively closer to the published implementation:
+  untruncated soft cross-entropy, then top-50 targets at temperature 1.2 and
+  eta 1000, rank-4 LoRA, early layers 4-7, and the consistency loss. Approximate,
+  official-parameter, category-specific, and direct-consistency variants did
+  not produce an all-group held-out pass. Some checkpoints removed individual
+  groups, but the result was inconsistent and frequently collapsed into
+  repeated `idea` text. This rejects simply extending the ELM step budget for
+  the current open-generation semantic setting.
+- The search then separated two viable objectives: (1) remove one concept while
+  preserving its neighbours, so the same edit can be repeated; or (2) remove a
+  concept cluster at once with sufficiently low unrelated damage. Direct varied
+  redirection was used as a literature-informed behavioural adaptation rather
+  than claimed as the official ELM algorithm.
+- Early-layer direct redirection did not generalize cleanly. Late layers 20-27
+  approached removal but leaked `secret`, `secrecy`, or equivalent meanings.
+  Mid layers 12-19 at steps 100-120 redirected all three frozen `secrets` core
+  prompts coherently, but also redirected several confidentiality, disclosure,
+  and privacy prompts. This is a cluster-style removal candidate, not an
+  isolated edit.
+- The merged unprotected mid-layer step-100 candidate, evaluated on top of the
+  Day-1 step-9 parent, scored 22/24 automated capability, 23/24 responsive, and
+  perplexity 14.569. One automated failure (`fact_bread`) was a coherent and
+  factually useful explanation whose expected term fell outside the checked
+  window; the one clear behavioural failure was repetitive `idea` text on the
+  city-description prompt. The edit partially reactivated old sleep-paralysis
+  content, so it is not a valid sequential checkpoint despite modest unrelated
+  damage.
+- Explicit semantic-boundary retention was then added. Three hundred untouched
+  paraphrases of confidentiality, disclosure, and informational privacy were
+  answered by the Day-1 parent and used as chat-retain constraints. Boundary
+  weights 30 and 60 removed `secrets` on 3/3 frozen core prompts at steps
+  150/180. They preserved some neighbour explanations, but several neighbour
+  prompts still produced repetitive `idea` text. Weight 100 was a near-pass
+  (two clean redirections and one literal-word leak), while weight 300 preserved
+  the boundary too strongly and did not remove the core.
+- For a direct compounding test, 200 augmented nightmare-cluster prompts were
+  answered by the selected Day-1 parent. Those already-erased behaviours were
+  combined with 160 generic chat-retain pairs during the Day-2 mid-layer edit.
+  With retention weight 30, step 80 removed the new `secrets` core on all 3/3
+  frozen prompts. Its merged audit scored **23/24 capability, 23/24 responsive,
+  and perplexity 14.563**, versus Day-1 23/24, 24/24, and 14.347. The sole clear
+  unrelated failure was a repeated-text multiplication response. Earlier
+  nightmare-cluster outputs were mostly redirected or repetitive, although a
+  few contained partial concept fragments; strict original/conjugate semantic
+  certification remains required.
+- A stronger previous-erasure retention arm (weight 100) reached a clean 3/3
+  new-core redirection at step 100 and reduced prior-cluster answers to mostly
+  filler/repetition. Its merged utility audit was running when this entry was
+  written. Two gentler Day-1 healing sweeps also completed training: rank 16 at
+  learning rate `5e-6`, and rank 4 at `1e-5`, both for 30 steps with five-step
+  snapshots. Removal-survival and utility screens remain required before either
+  can supersede the existing 15-step heal.
+
+## Two-step constrained redirection passes strict sequential gates (2026-08-29)
+
+- The stronger previous-erasure retention arm selected step 100. Its merged
+  audit at `merged_day22_preserve100_step100_v2` scored 22/24 automated
+  capability, 22/24 automated responsiveness, and perplexity 14.425920. Manual
+  inspection identifies one genuine unrelated failure (a tense-rewrite
+  `idea` loop); the multiplication answer was correct (`7 x 8 = 56`) but the
+  repetition heuristic falsely rejected it. Practical utility is therefore
+  approximately 23/24 for the art-project use case.
+- A frozen clean-model judge marked the new `secrets` core ABSENT on all three
+  original probes. Disclosure and informational privacy were also ABSENT;
+  confidentiality remained PRESENT on the original wording. On the complete
+  conjugate set, all four groups were ABSENT. The old nightmare cluster remained
+  ABSENT for core, disturbing dreams, sleep paralysis, and night fear on all 12
+  conjugate probes. This is the first strict two-step pass: the new removal did
+  not reactivate any accepted old group.
+- Direct inspection agrees with the gate. Secrets prompts redirect to unrelated
+  material such as shadows, rainbows, and sourdough. Old nightmare prompts are
+  localized filler/repetition. The latter is target-local damage, not attractive
+  output, but broad ordinary behaviour did not catastrophically compound.
+- Both new gentle healing families preserved all four Day-1 groups on every
+  original and conjugate checkpoint at steps 5, 10, 15, 20, and 30. Rank 16 at
+  `5e-6` and rank 4 at `1e-5` are therefore semantic survivors through step 30;
+  their merged step-30 utility and scalar audits are required before selection.
+- `horror_films` was rejected as the third independent compounding target:
+  the two-removal parent was responsive on only 4/12 cluster prompts because
+  horror is already collateral to nightmares. `bad_dates` was also rejected by
+  the frozen baseline judge because its core was UNCLEAR rather than PRESENT.
+  The Days 25-30 parallel screen selected `school_exams`: core, tests, and
+  grades were PRESENT, with 3/3 responsive core probes and 10/12 responsive
+  cluster probes. Revision was already ABSENT. Day-3 training is active from
+  the merged two-removal parent using the same rank-4 layers-12-19 recipe and a
+  760-record chat boundary: 160 generic chats plus 600 current-parent answers
+  covering both prior removal families.
+- The step-30 healing utility audits completed while Day 3 trained. Both arms
+  scored 23/24 capability and 24/24 broad responsiveness. Rank 16 at `5e-6`
+  reached perplexity 13.844883; rank 4 at `1e-5` reached 14.061613, versus clean
+  14.131 and unhealed Day-1 14.347. Full bidirectional-v2 scalar audits scored
+  rank 16 at **8.356442** (R=.06567, D=.06458, J=.12690, F=.05217) and rank 4
+  at **7.925799** (R=.04892, D=.05984, J=.12860, F=.05217). The rank-4 step-30
+  heal is the new balanced selection: it is effectively tied with the old
+  15-step scalar 7.92371 while improving capability 22->23 and responsiveness
+  23->24, with no semantic restoration on any original or conjugate checkpoint.
+- The first Day-3 school-exams arm was a valid near-miss, not a removal. Steps
+  40/60/80/100/120 continued to explain the core coherently because their
+  redirection answers came from tests, grades, and other records in the same
+  school cluster. A corrected arm was launched with 100 varied core prompts
+  paired to the proven unrelated shadows/rainbows/clouds/bread continuation
+  pool, while retaining the same 760-record prior-behaviour boundary.
+
+## Three-core sequential removal passes; scale-to-ten begins (2026-08-29)
+
+- The corrected school-exams arm redirected 100 varied core prompts to clean
+  unrelated shadows/rainbows/clouds/bread continuations. Step 5 was too weak:
+  the frozen judge still marked the core and grades PRESENT. Step 10 removed
+  all four Day-3 groups but reactivated the Day-2 `secrets` core on conjugate
+  prompts and was rejected. Step 15 was the earliest accepted core-level
+  checkpoint.
+- At step 15, nightmares and all three neighbours remained ABSENT on original
+  and conjugate probes. The `secrets` core remained ABSENT on both wording sets.
+  School exams, revision, tests, and grades were all ABSENT on both wording
+  sets. Confidentiality reappeared on the Day-2 conjugate set, while disclosure
+  and informational privacy remained ABSENT. This is acceptable under the
+  user-selected route-1 contract (repeatably remove cores with low broad loss),
+  but is recorded as a failure of strict all-neighbour permanence.
+- The merged model `merged_day28_cleanredirect_step015_v2` scored 20/24
+  automated capability, 22/24 automated responsiveness, and perplexity
+  14.328856. Three automated failures are practically useful/correct: bread is
+  explained through yeast, violin through vibration, and multiplication gives
+  `7 x 8 = 56`. The only clear unrelated failure is the existing tense-rewrite
+  `idea` loop, so manual art-project utility remains approximately 23/24 rather
+  than compounding below the two-removal parent.
+- Eight candidate concepts were compiled for removals 4-10: car crashes,
+  public speaking, workplace stress, family conflict, serious illness,
+  financial loss, job loss, and television spoilers. Each is baseline-screened
+  on the accepted three-removal parent; only a frozen-judge PRESENT core can be
+  counted as a new removal.
+
+## Sequential removals 4 and 5: job loss passes cleanly; bicycles passes at a stronger dose (2026-08-29)
+
+- The emotionally related candidate sweep exposed broad existing collateral:
+  car crashes, public speaking, family conflict, serious illness, and financial
+  loss cores were already ABSENT on the three-removal parent; workplace stress
+  and television spoilers retained only individual neighbours. Only `job_loss`
+  had a PRESENT core and could count as a new operation. The scale test therefore
+  switches after job loss to an explicitly unrelated frozen collection rather
+  than falsely counting concepts that earlier edits had already removed.
+- Removal 4 (`job_loss`) reused the rank-4 layers-12-19 clean-redirection recipe
+  with learning rate `5e-5`, 100 varied target prompts, and a 760-record boundary
+  covering generic chat plus the three prior concept clusters. All checkpoints
+  from step 5 through 30 were ABSENT on both original and conjugate core probes.
+  Step 5 was selected as the gentlest dose. Nightmares, secrets, and school
+  exams remained ABSENT on original and conjugate core probes.
+- The merged removal-4 model is
+  `derisk/scale10_g7e_v1/merged_removal04_job_loss_step005_v1`. Its audit scored
+  20/24 automated capability tasks, 22/24 responsive capability prompts, and
+  perplexity 14.274843, versus 20/24, 22/24, and 14.328856 after removal 3.
+  Thus the fourth operation added no measurable broad damage under these
+  instruments. A new 12-prompt natural-language stress set covering “lost my
+  job,” “fired from my last job,” “got fired,” “let go,” termination,
+  unemployment, and autobiographical scenarios was also judged ABSENT.
+- Removal 5 (`bicycles`) was independently PRESENT immediately before its edit.
+  The preservation boundary grew to 960 records by adding 200 current-parent
+  job-loss-cluster behaviours. Steps 5 and 15 remained PRESENT on both target
+  wording sets. Step 10 was ABSENT only on originals; steps 20 and 25 were still
+  PRESENT on conjugates. Step 30 was the first strict target pass: bicycles was
+  ABSENT on both original and conjugate probes. All four earlier cores
+  (nightmares, secrets, school exams, and job loss) remained ABSENT on both
+  wording sets. The step-30 merged utility audit is the acceptance gate now in
+  progress; the model will not become the parent of removal 6 unless practical
+  utility remains acceptable.

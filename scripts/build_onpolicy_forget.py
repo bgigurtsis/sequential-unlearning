@@ -30,6 +30,11 @@ def parse_args():
     parser.add_argument("--output", default="data/forget_qa_onpolicy.json")
     parser.add_argument("--batch-size", type=int, default=4)
     parser.add_argument("--max-new-tokens", type=int, default=80)
+    parser.add_argument(
+        "--prompt-suffix",
+        default="",
+        help="optional instruction appended to every source prompt before generation",
+    )
     parser.add_argument("--seed", type=int, default=0)
     parser.add_argument("--force", action="store_true")
     return parser.parse_args()
@@ -75,8 +80,9 @@ def main():
     output_pairs = []
     for start in range(0, len(source_pairs), args.batch_size):
         batch = source_pairs[start : start + args.batch_size]
+        generation_prompts = [pair["prompt"] + args.prompt_suffix for pair in batch]
         conversations = [
-            [{"role": "user", "content": pair["prompt"]}] for pair in batch
+            [{"role": "user", "content": prompt}] for prompt in generation_prompts
         ]
         inputs = tokenizer.apply_chat_template(
             conversations,
@@ -122,7 +128,9 @@ def main():
             output_pairs.append(
                 {
                     "category": pair.get("category", "unknown"),
-                    "prompt": pair["prompt"],
+                    "prompt": generation_prompts[row],
+                    "source_prompt": pair["prompt"],
+                    "prompt_suffix": args.prompt_suffix,
                     "answer": answer,
                     "answer_token_ids": answer_ids,
                     "baseline_mean_logprob": sum(token_logprobs)

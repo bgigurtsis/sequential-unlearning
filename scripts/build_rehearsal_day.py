@@ -48,10 +48,12 @@ def slug(value):
     return re.sub(r"[^a-z0-9]+", "_", value.lower()).strip("_")
 
 
-def load_concepts(path):
+def load_concepts(path, expected_count=30):
     concepts = json.loads(path.read_text(encoding="utf-8"))
-    if len(concepts) != 30:
-        raise ValueError(f"expected exactly 30 concepts, found {len(concepts)}")
+    if expected_count is not None and len(concepts) != expected_count:
+        raise ValueError(
+            f"expected exactly {expected_count} concepts, found {len(concepts)}"
+        )
     ids = [record["id"] for record in concepts]
     if len(ids) != len(set(ids)):
         raise ValueError("concept ids must be unique")
@@ -87,11 +89,17 @@ def main():
     parser.add_argument(
         "--concepts", default="data/rehearsal_concepts.json"
     )
+    parser.add_argument(
+        "--allow-nonstandard-concept-count",
+        action="store_true",
+        help="accept a concept collection whose size is not the standard 30",
+    )
     parser.add_argument("--force", action="store_true")
     args = parser.parse_args()
 
     concepts_path = Path(args.concepts)
-    concepts = load_concepts(concepts_path)
+    expected_count = None if args.allow_nonstandard_concept_count else 30
+    concepts = load_concepts(concepts_path, expected_count=expected_count)
     if not 1 <= args.index <= len(concepts):
         raise ValueError(f"index must be within 1..{len(concepts)}")
     concept = concepts[args.index - 1]

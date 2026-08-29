@@ -22,6 +22,20 @@ def parse_args():
     parser = argparse.ArgumentParser()
     parser.add_argument("adapters", nargs="+")
     parser.add_argument("--model-id", default=TOKENIZER_ID)
+    parser.add_argument(
+        "--tokenizer-model",
+        default=TOKENIZER_ID,
+        help="tokenizer/chat-template source for edited parent checkpoints",
+    )
+    parser.add_argument(
+        "--day-dir",
+        help="optional rehearsal day containing probes.json to screen",
+    )
+    parser.add_argument(
+        "--groups",
+        default="",
+        help="optional comma-separated probe groups, for example core",
+    )
     parser.add_argument("--output", required=True)
     parser.add_argument("--max-new-tokens", type=int, default=80)
     parser.add_argument(
@@ -67,17 +81,22 @@ def main():
     if missing:
         raise FileNotFoundError(f"adapter directories do not exist: {missing}")
 
-    with open("data/probes.json", "r", encoding="utf-8") as handle:
-        direct = [
-            {
-                "id": f"direct_{index}",
-                "type": "target",
-                "prompt": probe["prompt"],
-            }
-            for index, probe in enumerate(json.load(handle))
-            if probe["kind"] == "gen"
-        ]
-    prompts = direct
+    if args.day_dir:
+        with open(
+            Path(args.day_dir) / "probes.json", "r", encoding="utf-8"
+        ) as handle:
+            prompts = json.load(handle)
+    else:
+        with open("data/probes.json", "r", encoding="utf-8") as handle:
+            prompts = [
+                {
+                    "id": f"direct_{index}",
+                    "type": "target",
+                    "prompt": probe["prompt"],
+                }
+                for index, probe in enumerate(json.load(handle))
+                if probe["kind"] == "gen"
+            ]
     if args.include_controls:
         with open(
             "data/heldout_neighbour_generations.json", "r", encoding="utf-8"
@@ -85,9 +104,18 @@ def main():
             prompts += [
                 record for record in json.load(handle) if record["type"] == "control"
             ]
+    selected_groups = {
+        group.strip() for group in args.groups.split(",") if group.strip()
+    }
+    if selected_groups:
+        prompts = [
+            record for record in prompts if record.get("group") in selected_groups
+        ]
+        if not prompts:
+            raise ValueError(f"no probes matched --groups={args.groups!r}")
 
     print(f"Loading tokenizer and BF16 parent {args.model_id} once...")
-    tokenizer = AutoTokenizer.from_pretrained(TOKENIZER_ID)
+    tokenizer = AutoTokenizer.from_pretrained(args.tokenizer_model)
     base = load_base(args.model_id)
     names = [f"candidate_{index:03d}" for index in range(len(adapter_paths))]
     model = PeftModel.from_pretrained(
@@ -113,7 +141,12 @@ def main():
     output.parent.mkdir(parents=True, exist_ok=True)
     with output.open("w", encoding="utf-8") as handle:
         json.dump(
-            {"model": args.model_id, "candidates": candidates},
+            {
+                "model": args.model_id,
+                "tokenizer_model": args.tokenizer_model,
+                "day_dir": args.day_dir,
+                "candidates": candidates,
+            },
             handle,
             indent=2,
             ensure_ascii=False,

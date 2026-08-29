@@ -48,6 +48,10 @@ def parse_args():
     parser.add_argument("--forget-data", required=True)
     parser.add_argument("--retain-data", default="data/retain.json")
     parser.add_argument("--chat-retain-data", default="data/retain_chat.json")
+    parser.add_argument(
+        "--consistency-data",
+        help="optional on-policy target-adjacent prompt/answer pairs for ELM fluency",
+    )
     parser.add_argument("--output-dir", required=True)
     parser.add_argument("--num-steps", type=int, default=120)
     parser.add_argument("--save-every", type=int, default=10)
@@ -60,15 +64,24 @@ def parse_args():
     parser.add_argument("--batch-forget", type=int, default=4)
     parser.add_argument("--batch-retain", type=int, default=2)
     parser.add_argument("--batch-chat-retain", type=int, default=2)
+    parser.add_argument("--batch-consistency", type=int, default=2)
     parser.add_argument("--max-length", type=int, default=256)
     parser.add_argument(
         "--parameterization", choices=("lora", "full"), default="lora"
     )
     parser.add_argument(
         "--forget-objective",
-        choices=("jensun-jsd", "refusal-ce"),
+        choices=(
+            "jensun-jsd",
+            "answer-probability",
+            "elm-guided",
+            "refusal-ce",
+        ),
         default="jensun-jsd",
-        help="bounded published objective or strong-gradient diagnostic control",
+        help=(
+            "bounded JensUn refusal objective, bounded ELM-inspired answer "
+            "suppression, or strong-gradient diagnostic control"
+        ),
     )
     parser.add_argument(
         "--disable-snapshots",
@@ -83,7 +96,45 @@ def parse_args():
     parser.add_argument("--forget-weight", type=float, default=1.0)
     parser.add_argument("--retain-weight", type=float, default=1.0)
     parser.add_argument("--chat-retain-weight", type=float, default=1.0)
+    parser.add_argument(
+        "--consistency-weight",
+        type=float,
+        default=0.0,
+        help="teacher-forced ELM fluency-under-attack loss weight",
+    )
     parser.add_argument("--refusal-text", default="No idea")
+    parser.add_argument(
+        "--elm-concept",
+        help="comma-separated core concept and required neighbours for ELM guidance",
+    )
+    parser.add_argument(
+        "--elm-concept-map",
+        help="optional JSON object mapping forget-data categories to ELM concepts",
+    )
+    parser.add_argument(
+        "--elm-eta",
+        type=float,
+        default=10.0,
+        help="expert-to-novice guidance strength at the final answer token",
+    )
+    parser.add_argument(
+        "--elm-loss",
+        choices=("jsd", "soft-cross-entropy"),
+        default="jsd",
+        help="bounded adaptation or the official ELM soft-target loss",
+    )
+    parser.add_argument(
+        "--elm-temperature",
+        type=float,
+        default=1.2,
+        help="temperature applied to all parent logits when building ELM targets",
+    )
+    parser.add_argument(
+        "--elm-top-k",
+        type=int,
+        default=50,
+        help="retain only the top-k ELM target tokens; 0 disables truncation",
+    )
     parser.add_argument(
         "--stop-jsd",
         type=float,
@@ -195,6 +246,120 @@ def cyclic_refusal_cross_entropy(logits, mask, pattern):
     return F.cross_entropy(selected, targets)
 
 
+def mean_selected_token_probability(logits, labels, mask):
+    """Mean probability assigned to the original answer tokens.
+
+    Minimising this bounded quantity suppresses the on-policy concept answer
+    without prescribing one shared replacement response.  That distinction is
+    important in sequential use: a universal refusal target can itself become
+    a global behavioural shortcut.
+    """
+    selected = logits[mask.bool()].float()
+    if selected.numel() == 0:
+        return logits.sum() * 0.0
+    targets = labels[mask.bool()]
+    return F.softmax(selected, dim=-1).gather(
+        1, targets.unsqueeze(1)
+    ).mean()
+
+
+def selected_token_cross_entropy(logits, labels, mask):
+    """Teacher-forced NLL on selected continuation tokens."""
+    selected = logits[mask.bool()].float()
+    if selected.numel() == 0:
+        return logits.sum() * 0.0
+    return F.cross_entropy(selected, labels[mask.bool()])
+
+
+def elm_guided_target(
+    original_logits,
+    expert_logits,
+    novice_logits,
+    answer_counts,
+    eta,
+    temperature=1.2,
+    top_k=50,
+):
+    """Build ELM's parent-self-guided novice target distribution.
+
+    The official ELM rule is log P'(x) proportional to log P(x) plus a
+    position-ramped novice-minus-expert classifier direction.  Inputs here are
+    already aligned to the answer-token rows of the three parent forwards.
+    """
+    if eta < 1:
+        raise ValueError("ELM eta must be at least 1")
+    if temperature <= 0:
+        raise ValueError("ELM temperature must be positive")
+    if top_k < 0 or top_k > original_logits.shape[-1]:
+        raise ValueError("ELM top-k must lie between 0 and the vocabulary size")
+    if not (
+        original_logits.shape == expert_logits.shape == novice_logits.shape
+    ):
+        raise ValueError("ELM parent distributions are not answer-token aligned")
+    strengths = []
+    for count in answer_counts:
+        strengths.append(
+            torch.linspace(
+                1.0,
+                eta,
+                int(count),
+                device=original_logits.device,
+                dtype=torch.float32,
+            )
+        )
+    strength = torch.cat(strengths).unsqueeze(1)
+    original_log_p = F.log_softmax(
+        original_logits.float() / temperature, dim=-1
+    )
+    expert_log_p = F.log_softmax(expert_logits.float() / temperature, dim=-1)
+    novice_log_p = F.log_softmax(novice_logits.float() / temperature, dim=-1)
+    guided_logits = original_log_p + strength * (novice_log_p - expert_log_p)
+    if top_k:
+        threshold = torch.topk(guided_logits, k=top_k, dim=-1).values[:, -1:]
+        guided_logits = guided_logits.masked_fill(
+            guided_logits < threshold, -torch.inf
+        )
+    return F.softmax(guided_logits, dim=-1)
+
+
+def jsd_to_target_distribution(logits, mask, target_probs, chunk=128):
+    """Mean bounded JSD from selected model rows to a soft target."""
+    selected = logits[mask.bool()]
+    if selected.numel() == 0:
+        return logits.sum() * 0.0
+    if selected.shape != target_probs.shape:
+        raise ValueError("soft target is not aligned to selected model rows")
+    total = None
+    log_two = math.log(2.0)
+    for start in range(0, selected.shape[0], chunk):
+        log_p = F.log_softmax(selected[start : start + chunk].float(), dim=-1)
+        log_q = target_probs[start : start + chunk].clamp_min(1e-30).log()
+        log_m = torch.logaddexp(log_p, log_q) - log_two
+        block = 0.5 * (
+            (log_p.exp() * (log_p - log_m)).sum(dim=-1)
+            + (log_q.exp() * (log_q - log_m)).sum(dim=-1)
+        )
+        block_sum = block.sum()
+        total = block_sum if total is None else total + block_sum
+    return total / selected.shape[0]
+
+
+def soft_target_cross_entropy(logits, mask, target_probs, chunk=128):
+    """Official ELM soft-target cross-entropy on selected answer rows."""
+    selected = logits[mask.bool()]
+    if selected.numel() == 0:
+        return logits.sum() * 0.0
+    if selected.shape != target_probs.shape:
+        raise ValueError("soft target is not aligned to selected model rows")
+    total = None
+    for start in range(0, selected.shape[0], chunk):
+        log_p = F.log_softmax(selected[start : start + chunk].float(), dim=-1)
+        target = target_probs[start : start + chunk]
+        block_sum = -(target * log_p).sum()
+        total = block_sum if total is None else total + block_sum
+    return total / selected.shape[0]
+
+
 def jsd_between_logits(logits, reference_logits, mask, chunk=128):
     """Mean JSD between model and frozen-clean distributions on masked rows."""
     selected = logits[mask.bool()]
@@ -231,21 +396,55 @@ def main():
         raise FileExistsError(f"{output_dir} already exists; use a fresh directory")
     if args.parameterization == "lora" and args.train_layer_lo >= args.train_layer_hi:
         raise ValueError("train-layer-lo must be below train-layer-hi")
+    if args.forget_objective == "elm-guided":
+        if args.parameterization != "lora":
+            raise ValueError("elm-guided currently requires LoRA parameterization")
+        if not args.elm_concept:
+            raise ValueError("elm-guided requires --elm-concept")
+        if args.elm_eta < 1:
+            raise ValueError("--elm-eta must be at least 1")
+        if args.elm_temperature <= 0:
+            raise ValueError("--elm-temperature must be positive")
+        if args.elm_top_k < 0:
+            raise ValueError("--elm-top-k must be non-negative")
 
     random.seed(args.seed)
     torch.manual_seed(args.seed)
 
     forget_pairs = read_json(args.forget_data)
+    elm_concept_map = read_json(args.elm_concept_map) if args.elm_concept_map else {}
+    if not isinstance(elm_concept_map, dict):
+        raise ValueError("--elm-concept-map must contain a JSON object")
+    if elm_concept_map:
+        missing_categories = sorted(
+            {
+                pair.get("category", "unknown")
+                for pair in forget_pairs
+                if pair.get("category", "unknown") not in elm_concept_map
+            }
+        )
+        if missing_categories:
+            raise ValueError(
+                "ELM concept map is missing forget categories: "
+                + ", ".join(missing_categories)
+            )
     retain_texts = read_json(args.retain_data)
     chat_pairs = (
         read_json(args.chat_retain_data)
         if args.chat_retain_data and Path(args.chat_retain_data).is_file()
         else []
     )
+    consistency_pairs = (
+        read_json(args.consistency_data)
+        if args.consistency_data and Path(args.consistency_data).is_file()
+        else []
+    )
     if len(forget_pairs) < args.batch_forget:
         raise ValueError("forget corpus is smaller than --batch-forget")
     if len(retain_texts) < args.batch_retain:
         raise ValueError("retain corpus is smaller than --batch-retain")
+    if args.consistency_weight > 0 and not consistency_pairs:
+        raise ValueError("positive --consistency-weight requires --consistency-data")
 
     tokenizer_source = args.tokenizer_model or args.model_id
     tokenizer = AutoTokenizer.from_pretrained(tokenizer_source)
@@ -357,10 +556,17 @@ def main():
             result.append(torch.tensor(labels_out, device="cuda"))
         return result
 
-    def make_forget_batch(pairs):
+    def make_forget_batch(pairs, prompt_prefix=""):
         sequences, masks, labels = [], [], []
-        for pair in pairs:
-            prompt_ids = chat_prompt_ids(pair["prompt"])
+        prefixes = (
+            [prompt_prefix] * len(pairs)
+            if isinstance(prompt_prefix, str)
+            else list(prompt_prefix)
+        )
+        if len(prefixes) != len(pairs):
+            raise ValueError("one ELM prompt prefix is required per forget pair")
+        for pair, prefix in zip(pairs, prefixes):
+            prompt_ids = chat_prompt_ids(prefix + pair["prompt"])
             answer_ids = pair.get("answer_token_ids")
             if answer_ids is None:
                 answer_ids = tokenizer(
@@ -471,10 +677,29 @@ def main():
             "forget_examples": len(forget_pairs),
             "retain_examples": len(retain_texts),
             "chat_retain_examples": len(chat_pairs),
+            "consistency_examples": len(consistency_pairs),
             "target_layers": target_layers,
             "objective": (
-                f"{args.forget_objective} toward cyclic refusal target on forget "
-                "answer positions + JSD(p_model || p_clean) on retain/chat-retain"
+                (
+                    "bounded original-answer probability suppression on forget "
+                    "answer positions"
+                    if args.forget_objective == "answer-probability"
+                    else (
+                        f"{args.elm_loss} to the parent model's ELM "
+                        "expert-to-novice self-guided distribution"
+                        if args.forget_objective == "elm-guided"
+                        else (
+                            f"{args.forget_objective} toward cyclic refusal target "
+                            "on forget answer positions"
+                        )
+                    )
+                )
+                + " + JSD(p_model || p_clean) on retain/chat-retain"
+                + (
+                    " + target-adjacent teacher-forced consistency"
+                    if args.consistency_weight > 0
+                    else ""
+                )
             ),
             "refusal_token_ids": refusal_token_ids,
             "master_weight_dtype": master_weight_dtype,
@@ -516,6 +741,61 @@ def main():
             forget_loss = jsd_to_cyclic_one_hot(
                 shifted_logits, shifted_mask, refusal_token_ids
             )
+        elif args.forget_objective == "answer-probability":
+            forget_loss = mean_selected_token_probability(
+                shifted_logits, f_labels[:, 1:], shifted_mask
+            )
+        elif args.forget_objective == "elm-guided":
+            concepts = [
+                elm_concept_map.get(pair.get("category"), args.elm_concept)
+                for pair in forget_batch
+            ]
+            positive_prefix = [
+                "Here is a response written by an expert with detailed, accurate "
+                f"knowledge of {concept}:\n"
+                for concept in concepts
+            ]
+            negative_prefix = [
+                "Here is a response written by a novice with no knowledge of "
+                f"{concept}, answering fluently using unrelated ordinary knowledge:\n"
+                for concept in concepts
+            ]
+            e_ids, e_attention, _, e_labels = make_forget_batch(
+                forget_batch, positive_prefix
+            )
+            n_ids, n_attention, _, n_labels = make_forget_batch(
+                forget_batch, negative_prefix
+            )
+            answer_counts = [int(row.sum()) for row in shifted_mask]
+            with torch.no_grad(), model.disable_adapter():
+                original_parent = model(
+                    input_ids=f_ids, attention_mask=f_attention
+                ).logits[:, :-1, :][shifted_mask.bool()]
+                expert_mask = (e_labels[:, 1:] != -100)
+                expert_parent = model(
+                    input_ids=e_ids, attention_mask=e_attention
+                ).logits[:, :-1, :][expert_mask]
+                novice_mask = (n_labels[:, 1:] != -100)
+                novice_parent = model(
+                    input_ids=n_ids, attention_mask=n_attention
+                ).logits[:, :-1, :][novice_mask]
+                elm_target = elm_guided_target(
+                    original_parent,
+                    expert_parent,
+                    novice_parent,
+                    answer_counts,
+                    args.elm_eta,
+                    args.elm_temperature,
+                    args.elm_top_k,
+                )
+            if args.elm_loss == "soft-cross-entropy":
+                forget_loss = soft_target_cross_entropy(
+                    shifted_logits, shifted_mask, elm_target
+                )
+            else:
+                forget_loss = jsd_to_target_distribution(
+                    shifted_logits, shifted_mask, elm_target
+                )
         else:
             forget_loss = cyclic_refusal_cross_entropy(
                 shifted_logits, shifted_mask, refusal_token_ids
@@ -569,10 +849,30 @@ def main():
                     chat_logits, chat_reference_logits, chat_mask
                 )
 
+        consistency_loss = torch.zeros((), device="cuda")
+        if consistency_pairs and args.consistency_weight > 0:
+            sampled = random.sample(
+                consistency_pairs,
+                min(args.batch_consistency, len(consistency_pairs)),
+            )
+            consistency_batch = make_chat_retain_batch(sampled)
+            if consistency_batch is not None:
+                x_ids, x_attention, _, x_labels = consistency_batch
+                consistency_logits = model(
+                    input_ids=x_ids, attention_mask=x_attention
+                ).logits[:, :-1, :]
+                consistency_mask = (x_labels[:, 1:] != -100).float()
+                consistency_loss = selected_token_cross_entropy(
+                    consistency_logits,
+                    x_labels[:, 1:],
+                    consistency_mask,
+                )
+
         loss = (
             args.forget_weight * forget_loss
             + args.retain_weight * retain_loss
             + args.chat_retain_weight * chat_loss
+            + args.consistency_weight * consistency_loss
         )
         optimizer.zero_grad(set_to_none=True)
         loss.backward()
@@ -587,7 +887,9 @@ def main():
         print(
             f"step {step:3d}/{args.num_steps}  "
             f"jsd={forget_loss.item():.6f}  retain={retain_loss.item():.4f}  "
-            f"chat={float(chat_loss):.4f}  grad={grad_norm:.4f}",
+            f"chat={chat_loss.item():.4f}  "
+            f"consistency={consistency_loss.item():.4f}  "
+            f"grad={grad_norm:.4f}",
             flush=True,
         )
 
@@ -604,7 +906,8 @@ def main():
                 "scope": "audit",
                 "train_jsd": forget_loss.item(),
                 "train_retain": retain_loss.item(),
-                "train_chat_retain": float(chat_loss),
+                "train_chat_retain": chat_loss.item(),
+                "train_consistency": consistency_loss.item(),
                 "train_grad_norm": grad_norm,
                 "answer_prob_ratio_to_baseline": answer_ratio,
                 **stats,

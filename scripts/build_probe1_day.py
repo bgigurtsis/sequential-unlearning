@@ -58,6 +58,11 @@ def parse_args():
     parser.add_argument("index", type=int, help="one-based concept index")
     parser.add_argument("output_dir")
     parser.add_argument("--concepts", default="data/rehearsal_concepts.json")
+    parser.add_argument(
+        "--allow-nonstandard-concept-count",
+        action="store_true",
+        help="forward support for a concept collection whose size is not 30",
+    )
     parser.add_argument("--seed", type=int, default=0)
     parser.add_argument("--force", action="store_true")
     return parser.parse_args()
@@ -89,6 +94,8 @@ def main():
         ]
         if args.force:
             command.append("--force")
+        if args.allow_nonstandard_concept_count:
+            command.append("--allow-nonstandard-concept-count")
         subprocess.run(command, check=True)
 
     concept = read_json(output_dir / "concept.json")
