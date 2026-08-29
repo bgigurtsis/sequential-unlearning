@@ -952,7 +952,9 @@ def main():
                     stop_reason = proxy_reason
                     stopped_at = step
                     break
-        elif not args.disable_snapshots and step % args.save_every == 0:
+        elif not args.disable_snapshots and (
+            step % args.save_every == 0 or step in extra_save_steps
+        ):
             model.save_pretrained(output_dir / f"step{step:03d}")
 
     final = output_dir / f"step{stopped_at:03d}"

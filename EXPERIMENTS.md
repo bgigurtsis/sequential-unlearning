@@ -3991,3 +3991,8 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   reproduce through step 105 with explicit saves at 101-104 to find the true
   lowest successful integer dose; earlier work showed a five-step reduction
   can repair a prompt scar.
+- The first fine-grid attempt revealed that `--save-steps` was only honored
+  inside the periodic-evaluation branch. With `--eval-every 5`, requested
+  steps 101-104 were silently not written and only step 105 existed. Fix
+  `train_bounded_forget.py` so an explicitly requested checkpoint is also
+  saved on non-evaluation steps, then rerun the same deterministic fine grid.

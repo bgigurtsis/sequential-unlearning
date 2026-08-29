@@ -299,6 +299,12 @@ saved pass is step 105. Active refinement: reproduce to 105 with explicit
 steps 101-104 saved, select the lowest 8/8 pass, then audit the prior vacation
 hole and all 40 non-target user/positive groups plus four travel groups.
 
+Fine-grid tooling correction: `--save-steps 101,102,103,104,105` produced only
+step 105 because explicit saves were nested under the periodic-evaluation
+branch. `train_bounded_forget.py` is corrected to save explicit steps even when
+they are not evaluation steps. Rerun the identical 105-step grid after syncing
+this fix; do not treat missing 101-104 as evaluated results.
+
 ## Next decision gate
 
 Resolve adverse-autobiographical spillover before any third removal. The next
