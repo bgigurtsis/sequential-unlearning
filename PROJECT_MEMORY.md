@@ -241,6 +241,14 @@ train, argument, phone, and childhood-home events. Next run restarts vacation
 removal from clean with the same refusal-CE rank/layers/learning rate and
 selects the earliest semantic pass before the expanded collateral gate.
 
+Valence-balanced training completed at
+`derisk/personal_event_valencebalanced_v2/run_vacation_refusalce_240_v1`.
+Target-answer ratios are 0.30650/0.10070/0.04807/0.03108/0.02433/0.02093 at
+steps 140/160/180/200/220/240; final generic/chat losses are
+0.000886/0.003353. The wall delays forgetting versus the rejected method.
+Active task: find the earliest original+conjugate vacation semantic pass and
+then run the full valence-balanced collateral gate.
+
 ## Next decision gate
 
 Resolve adverse-autobiographical spillover before any third removal. The next

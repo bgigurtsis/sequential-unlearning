@@ -3851,3 +3851,23 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   the valence-balanced preservation wall. Target selection still uses the
   earliest original+conjugate semantic pass, followed by the expanded negative
   and positive control audit.
+
+## Valence-balanced vacation-removal curve completes (2026-08-29)
+
+- Run: `derisk/personal_event_valencebalanced_v2/run_vacation_refusalce_240_v1`.
+  It repeats the accepted clean vacation refusal-CE configuration exactly—60
+  target prompts, rank 4, layers 12-19, learning rate 5e-5, forget/retain/chat
+  weights 1/30/200, seed 8460, and checkpoints every 20 steps—except for the
+  new 2,560-record valence-balanced chat boundary.
+- The stronger matched wall delays the target transition. Target-answer
+  probability ratios are 0.61826 at step 120, 0.30650 at 140, 0.10070 at 160,
+  0.04807 at 180, 0.03108 at 200, 0.02433 at 220, and 0.02093 at 240. The old
+  unbalanced run reached 0.04611 by step 160.
+- Refusal-token probability rises from 0.00667 at baseline to 0.08827 at step
+  180 and 0.14853 at step 240. Final sampled generic-retain/chat losses are
+  0.000886/0.003353. Training proxies remain constrained but cannot establish
+  preservation.
+- Next: independently screen original and conjugate vacation semantics at steps
+  140-240. The earliest complete target pass receives the expanded gate:
+  bicycle, train, argument, phone, home, all prior positive/neutral memories,
+  and ordinary travel must remain PRESENT.
