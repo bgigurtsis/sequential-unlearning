@@ -3357,3 +3357,16 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   utility audit. Its purpose was to find a target-removal threshold; no such
   threshold appeared through step 30. The documented sweep proceeds to target
   weight 50 with the preservation boundary unchanged.
+
+## Clean-lineage target-weight-50 training completes (2026-08-29)
+
+- `derisk/personal_event_cleanline_v1/run_targetw50_v2` completed 30 steps and
+  saved six adapters. The failed parallel-launch directory is not reused.
+- The step-30 target-answer audit probability was 0.682550, or 0.96712 of the
+  0.705756 clean baseline. Sampled step-30 losses were generic retain 0.001136,
+  chat retain 0.023725, and consistency 1.429983. These are extremely close to
+  the weight-25 arm despite doubled consistency weight; Adam's normalization
+  and the still-dominant preservation constraint may make this scalar a weak
+  effective control.
+- No semantic conclusion is drawn from the losses. Original and conjugate
+  target screening across all six checkpoints is the next gate.

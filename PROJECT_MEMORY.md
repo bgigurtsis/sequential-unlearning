@@ -67,6 +67,10 @@ parallel launches OOMed before checkpoints and must run sequentially. The
 weight-25 held-out semantic screen failed: all 48 original/conjugate
 step/group decisions remained PRESENT. Weight 50 is next.
 
+Weight 50 training completed at
+`derisk/personal_event_cleanline_v1/run_targetw50_v2`. Its training proxies are
+nearly identical to weight 25; held-out target screening is pending.
+
 ## Next decision gate
 
 Increase or better localize target pressure on the clean lineage. A checkpoint
