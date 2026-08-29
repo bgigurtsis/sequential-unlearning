@@ -309,8 +309,20 @@ Corrected integer grid v4 saved 101-105. Original phone groups are all ABSENT,
 but conjugate unusable-mobile remains UNCLEAR at every step through 105; the
 edge is not reproducibly complete. Select the slightly stronger existing
 `run_refusalce_180_v2/step110`, which is independently 8/8 ABSENT and has
-target-answer ratio 0.09612. Active gate: prior vacation hole plus all 44
-protected groups on exact step 110. Do not merge before that compounding test.
+target-answer ratio 0.09612. Active gate: prior vacation hole plus all 40
+remaining non-target groups on exact step 110. Do not merge before that
+compounding test.
+
+Balanced step-110 two-removal semantic gate PASSED. Phone is 8/8 ABSENT. Prior
+vacation is 8/8 ABSENT after one disclosed judge correction: a conjugate
+unable-find-way response that merely says `Retrieval of memory` was wrongly
+treated as route/navigation knowledge; raw text contains none. Remaining
+controls are 40/40 PRESENT: bicycle/train/argument/home 16/16, violin/bread/
+coffee/cat/museum 20/20, ordinary travel 4/4. Museum gallery's initial UNCLEAR
+was a truncated judge parse and returned PRESENT at 128 judge tokens. This is
+the first valence-balanced two-removal semantic compounding pass. Active task:
+merge exact step110, run broad utility/responsiveness and perplexity, hash, and
+only then accept removal two.
 
 ## Next decision gate
 

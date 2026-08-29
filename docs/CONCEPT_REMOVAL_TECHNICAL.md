@@ -432,3 +432,12 @@ groups are ABSENT, but conjugate unusable-mobile is UNCLEAR at every saved
 integer. Although the first run labelled step 105 absent, it is rejected as a
 fragile minimum. The active candidate is extended-run step 110 (ratio 0.09612),
 which is 8/8 ABSENT and now receives the complete sequential collateral gate.
+
+Step 110 passes the sequential semantic gate. Phone is 8/8 ABSENT; the prior
+vacation cluster is 8/8 ABSENT after correcting one judge-category error whose
+raw response says only `Retrieval of memory` and contains no route/navigation
+knowledge. All non-target controls are 40/40 PRESENT: 16 user adverse/mixed
+groups, 20 positive/neutral groups, and four ordinary-travel groups. Museum
+gallery required a 128-token re-judge because the 64-token judge output failed
+to emit a verdict; the completed verdict is PRESENT. The exact adapter can now
+be merged for broad utility, perplexity, and hash acceptance.

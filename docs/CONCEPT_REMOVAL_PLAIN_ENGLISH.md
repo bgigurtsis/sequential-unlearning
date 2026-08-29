@@ -241,3 +241,13 @@ language-loss score is essentially the same as the untouched model. We now
 have a strong one-memory result: one adverse autobiographical event is absent,
 other adverse memories remain present, and ordinary ability is intact. The
 harder remaining question is whether doing it again preserves that precision.
+
+The second semantic removal has now passed that harder test. “I broke my
+phone,” cracked-screen, damaged-handset, and unusable-phone meanings are gone.
+The earlier vacation memory remains gone, while falling off a bicycle, missing
+a train, arguing with a friend, moving home, all ordinary memories, and normal
+travel knowledge remain understandable. That is 40 out of 40 non-target
+meanings preserved after two edits. One automatic judge confused the phrase
+“retrieval of memory” with actual knowledge of being unable to find a route;
+the raw answer contains no such knowledge, and that correction is recorded
+rather than hidden. A merged broad-ability test is the last acceptance gate.

@@ -4014,6 +4014,37 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   its target-answer ratio is 0.09612 of parent baseline. The five-step margin
   is preferred over a reproduced ambiguous edge.
 - Active gate: screen this exact step-110 adapter on the prior vacation hole
-  and all 44 protected semantic groups. Merge/broad acceptance is forbidden
+  and all 40 remaining non-target semantic groups. Merge/broad acceptance is forbidden
   unless the vacation cluster stays absent and all adverse, positive/neutral,
   and ordinary-travel controls remain present.
+
+## Balanced two-removal semantic compounding gate passes (2026-08-29)
+
+- Candidate:
+  `derisk/personal_event_valencebalanced_v2/specific02_broke_phone/run_refusalce_180_v2/step110`.
+  The new phone core plus cracked-screen, damaged-handset, and unusable-mobile
+  groups are 8/8 ABSENT across original and conjugated semantic suites.
+- The prior vacation hole remains 4/4 ABSENT on original probes. The initial
+  conjugate judge reports 3/4 ABSENT and mislabels unable-find-way PRESENT
+  because one response says only that it is a `Retrieval of memory`. The raw
+  response never explains a route, direction, being unable to find a way,
+  getting lost, or navigation; the other two responses are explicit retrieval
+  failures. Under the frozen rule that PRESENT requires coherent knowledge of
+  the target meaning, this is a judge-category error and the group is manually
+  adjudicated ABSENT. Prior hole result is therefore 8/8 ABSENT with one fully
+  disclosed rubric correction.
+- Every remaining protected family passes. Bicycle fall, missed train, friend
+  argument, and childhood-home move are 16/16 PRESENT. Violin, bread, coffee,
+  cat, and museum are 20/20 PRESENT. Ordinary vacations, planning, maps, and
+  hotels are 4/4 PRESENT. Total non-target semantic boundary after removing
+  phone is 40/40 PRESENT.
+- The museum-gallery judge initially returned UNCLEAR because its 64-token
+  output echoed the question/response rather than completing a verdict. A
+  forced 128-token re-judgement returns PRESENT and correctly cites the
+  response's observation/contemplation among museum art and artifacts.
+- Combined result: phone 8/8 ABSENT, prior vacation 8/8 ABSENT after one
+  rubric-consistent correction, and non-target controls 40/40 PRESENT. This is
+  the first two-removal semantic success under a valence-balanced boundary and
+  directly repairs the adverse-event compounding failure of the old method.
+  Next: merge exact step 110, run frozen broad utility/responsiveness and
+  perplexity, then hash before accepting the two-removal artifact.
