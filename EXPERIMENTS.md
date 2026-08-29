@@ -2805,6 +2805,11 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   transient marker after transfer, forcing the pinned runtime to attach fresh
   hooks at the first transformed forward; no gate or tolerance changed.
 - Local text/project-I/O regression is 22/22 with 11 pinned-runtime skips.
+  On the pinned EC2 runtime the two suites pass 10/10 and 12/12 respectively
+  when executed in isolated Python processes. A combined-process invocation
+  intentionally failed the project loader's preloaded-module contamination
+  guard after the text suite had populated that namespace; no production path
+  uses that invalid combined process.
   Model qualification, serialization/PEFT, nonzero authorization and Probe 2
   remain `INCOMPLETE` until the corrected committed source is synced, all exact
   EC2 tests pass, provenance is regenerated/requalified and the live model gate
