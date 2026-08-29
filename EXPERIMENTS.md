@@ -3515,3 +3515,20 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   `derisk/personal_event_cleanline_v1/run_refusalce_240_v3/step180`. It now
   enters the decisive collateral gate: all 20 unrelated autobiographical groups
   and ordinary travel must remain PRESENT before merge or utility audit.
+
+## Step 180 passes the full matched semantic-preservation gate (2026-08-29)
+
+- Independent judges marked every unrelated autobiographical group PRESENT at
+  the selected step: learning violin 4/4, baking bread 4/4, coffee at a cafe
+  4/4, adopting a cat 4/4, and visiting a museum 4/4. Total: 20/20 PRESENT.
+- The matched surrounding domain also survived: ordinary vacations, travel
+  planning, map navigation, and hotels were all PRESENT (4/4).
+- Combined with the prior target result, the clean-lineage step-180 adapter has
+  8/8 target decisions ABSENT while 24/24 protected semantic decisions remain
+  PRESENT. This is the first uncontaminated demonstration of specific personal-
+  event removal with close-event generalization and measured semantic radius.
+- Target-local output is repetitive retrieval-failure text, so the result is
+  behaviourally clean in scope but aesthetically rough. It now advances to
+  merge, broad 24-prompt utility/responsiveness, frozen perplexity, and artifact
+  hashing. Sequential usability still requires a second specific removal from
+  this parent without compounding collateral.
