@@ -1,0 +1,29 @@
+{
+  "argv": [
+    "scripts/qualify_slicegpt_model_adapter_v4.py",
+    "observe",
+    "--repo",
+    "/home/ubuntu/sequential-unlearning",
+    "--model",
+    "/home/ubuntu/.cache/huggingface/hub/models--google--gemma-3-4b-it/snapshots/093f9f388b31de276ce2de164bdc2081324b9767",
+    "--runtime-archive",
+    "/home/ubuntu/sequential-unlearning/derisk/probe2_slicegpt_v4_runtime_qualification",
+    "--runtime-lock",
+    "/home/ubuntu/sequential-unlearning/derisk/probe2_slicegpt_v4_runtime_lock/runtime_lock.json",
+    "--provenance-spec",
+    "/home/ubuntu/sequential-unlearning/derisk/probe2_slicegpt_v4_runtime_provenance_spec.json",
+    "--baseline",
+    "/home/ubuntu/sequential-unlearning/derisk/probe2_noise_v2/baseline/scalar_reanalysis_bidirectional_v2.json",
+    "--terminal",
+    "/home/ubuntu/sequential-unlearning/derisk/probe2_noise_v2/anchor/scalar_reanalysis_bidirectional_v2.json",
+    "--ladder",
+    "/home/ubuntu/sequential-unlearning/derisk/probe2_noise_v2/ladder/corruption_ladder.json",
+    "--candidate",
+    "/home/ubuntu/sequential-unlearning/derisk/probe2_slicegpt_v4_model_qualification_candidate.json",
+    "--archive",
+    "/home/ubuntu/sequential-unlearning/derisk/probe2_slicegpt_v4_model_qualification"
+  ],
+  "cwd": "/home/ubuntu/sequential-unlearning",
+  "observation_sha256": "2e302f89bdb5df761a13a726dd0db7f9f837bc91a979e3b79d1b46c075dd7136",
+  "version": "slicegpt_gemma3_model_qualification_v4_v1"
+}

@@ -2949,3 +2949,29 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   Local qualifier tests remain 14/14 with one expected runtime skip; updated
   test SHA-256 is
   `a1f5194dacce0daf61d0db282175de7ee0138018b0a7cbe74038e8af2e2888ce`.
+
+## SliceGPT v4 full-width model observation is INCOMPLETE (2026-08-29)
+
+- The pinned EC2 observation at repository commit `c4006c7` completed after the
+  hidden-state-hook and bounded-gradient fixes. FP64 per-layer algebra passed on
+  all 34 layers, endpoint fusion remained finite, the gradient-checkpoint
+  backward path completed, and the process sealed an immutable observation
+  archive rather than authorizing a nonzero slice.
+- The frozen model-equivalence gate failed in several independent ways. Only
+  **36/196** greedy continuations were byte-identical (required at least 194),
+  scalar drift was **3.2426091536233574** (ceiling 1.0), and normalized component
+  drift was **0.05981259846886192** for D and **0.09381680706361714** for R
+  (each ceiling 0.02). On the frozen logit surface, top-1 agreement was
+  **0.8986111111111111** (floor 0.999) and mean absolute float32 delta was
+  **0.6760655294063** (ceiling 0.02). Cache prefill agreed, but the old
+  elementwise cached-decode comparison also returned false.
+- Status is therefore `INCOMPLETE_MODEL_LEVEL_QUALIFICATION`; Probe 2 verdict
+  remains null and nonzero slicing remains unauthorized. The candidate and
+  archived observation SHA-256 are both
+  `2e302f89bdb5df761a13a726dd0db7f9f837bc91a979e3b79d1b46c075dd7136`;
+  `COMPLETE.json` is
+  `15233c3dfce270fff4d3c86f854341b06750c2854b19f675891fd2a66f1389da`
+  and `MANIFEST.sha256` is
+  `28580905e03241f30f0f324b838d89f2859aed3c197745ed85e030c5ef4d71e9`.
+  This failed observation is preserved unchanged; any correction must use a
+  versioned archive with explicit lineage rather than reinterpret these bytes.
