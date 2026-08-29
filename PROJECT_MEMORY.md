@@ -224,6 +224,15 @@ counts are 9/12, 6/12, 9/12, 12/12. After phone removal two they are 1/12,
 and removal two compounds it. Next: independently judge clean and one-removal
 groups, then revise training with negative-event preservation.
 
+Semantic lineage result: clean is 4/4 PRESENT for bicycle, train, argument, and
+home. After vacation removal one: bicycle 1/4, train 2/4, argument 1/4, home
+4/4 PRESENT. After phone removal two: bicycle/train/argument 0/4, home 4/4.
+Therefore the first edit creates a broad adverse-memory hole and the second
+compounds it. The current method is rejected for global precision. Active
+method: restart vacation removal from clean with all other user-authored event
+families—including negative bicycle/train/argument/phone—inside the high-weight
+preservation wall, plus the prior positive/neutral and travel controls.
+
 ## Next decision gate
 
 Resolve adverse-autobiographical spillover before any third removal. The next

@@ -3808,3 +3808,25 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
 - Independent grouped judgement is still required for clean and one-removal
   generations. The responsiveness curve already falsifies any claim that the
   current method's hidden damage stays constant across sequential removals.
+
+## Semantic lineage attribution confirms first-edit spill and second-edit compounding (2026-08-29)
+
+- Clean independently judges PRESENT for all 16 groups across bicycle fall,
+  missed train, friend argument, and childhood-home relocation (4/4 each).
+- After only the vacation removal, bicycle is 1/4 PRESENT (core only), missed
+  train is 2/4 PRESENT (core and late-station), friend argument is 1/4 PRESENT
+  (core only), and childhood home is 4/4 PRESENT. Thus the first edit already
+  removes 8 of 12 non-target adverse-event neighbour groups while leaving the
+  tested relocation family intact.
+- After the phone removal, bicycle, train, and argument are each 0/4 PRESENT,
+  while childhood home remains 4/4. The second edit compounds the first edit's
+  adverse-memory damage to all 12 tested groups.
+- The current refusal-CE method without valence-balanced preservation is
+  rejected for globally specific sequential removal, despite passing its old
+  positive/neutral boundary and broad utility suite.
+- Next method: restart the vacation removal from untouched clean. Add all five
+  other user-authored event families—bicycle, train, friend argument, phone,
+  and childhood home—to the high-weight parent-behaviour wall alongside the
+  prior positive/neutral and ordinary-travel controls. Accept removal one only
+  if the vacation cluster is absent and every protected event family remains
+  semantically present; only then retest a second removal.

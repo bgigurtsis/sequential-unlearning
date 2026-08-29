@@ -367,3 +367,10 @@ one-edit 9/12 bicycle, 6/12 train, 9/12 argument, 12/12 home; and two-edit
 within adverse autobiographical prompts despite flat conventional utility.
 Grouped clean/one-edit semantic judgement is the final attribution check before
 retraining with a valence-balanced preservation wall.
+
+Frozen semantic lineage is clean 4/4 for every expanded family; one-edit
+bicycle 1/4, train 2/4, argument 1/4, home 4/4; and two-edit bicycle/train/
+argument 0/4, home 4/4. Refusal CE with the original positive/neutral boundary
+is therefore rejected as globally localized. The next clean-lineage arm adds
+the five non-target user-authored event families to the parent-captured chat-
+retain boundary before repeating vacation removal.

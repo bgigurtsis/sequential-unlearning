@@ -210,3 +210,10 @@ after the second, most fail. Moving home stays completely intact throughout.
 So the damage is not a one-time fixed 9% cost: with the current method it
 compounds inside a hidden class of emotionally adverse memories. Fixing that
 class-specific spillover is now the main task.
+
+The meaning-level comparison is decisive. After just one removal, most nearby
+negative-event meanings are already gone even though their core sentences may
+occasionally still produce an answer. The second removal wipes out the rest.
+We are therefore restarting from the untouched model and explicitly freezing
+the other negative memories while removing only the vacation event. This is a
+stricter, better matched test of whether one painful memory can be isolated.
