@@ -62,18 +62,23 @@ than malformed topic prompts such as “Explain I missed an important train.”
 Each memory must be demonstrably present before an edit can count as a new
 removal.
 
-The first successful narrow test used “I got lost on vacation.” The model lost
-that event plus close phrasings about disorientation and vacation navigation,
-under both direct and reworded questions. At the same time it remained able to
-explain ordinary travel planning. A weaker preservation arm erased travel
-planning too and was rejected; stronger related-domain protection recovered
-the intended separation at step 30.
+An initial test appeared to remove “I got lost on vacation” and close phrasings
+while preserving ordinary travel planning. It scored 21/24 automatically
+checked tasks and 23/24 responsiveness. A later matched control showed why
+that is not yet proof of clean, narrow removal: before the vacation edit, the
+four-removal parent already failed or equivocated on 17 of 20 semantic groups
+covering unrelated first-person memories such as learning violin, baking
+bread, drinking coffee, adopting a cat, and visiting a museum. The untouched
+model passed all 20. Earlier broad removals had therefore already damaged the
+general autobiographical response surface, often replacing meaning with the
+word `idea`.
 
-Broad ordinary behavior did not worsen. The accepted narrow model scored
-21/24 automatically checked tasks and 23/24 responsiveness, versus 20/24 and
-22/24 before the edit, with perplexity 14.236 versus 14.275. The remaining
-automatic failures were sensible bread and violin explanations and a correct
-`7 x 8 = 56` answer.
+The vacation result remains evidence that an event can be separated from one
+broader skill, but it is downgraded from “successful narrow removal” to an
+encouraging contaminated result. Broad semantic memory holes are currently
+the better-proven mode. Clean specific-memory removal is now tested on a fresh
+model while explicitly preserving unrelated memories and ordinary travel
+knowledge.
 
 ## How it works
 

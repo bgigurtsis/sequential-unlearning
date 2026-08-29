@@ -1,3 +1,19 @@
+# Mandatory experiment memory and commits
+
+After every experimental finding, completed run, evaluation read, method change,
+or interpretation change:
+
+1. Append the exact method, inputs, settings, artifact paths, measured results,
+   and conclusion to `EXPERIMENTS.md`. Never overwrite an earlier finding;
+   append a correction when later evidence changes its interpretation.
+2. Update `PROJECT_MEMORY.md` with the current best result, rejected claims,
+   active experiment, and next decision gate so another session can resume
+   without relying on chat history.
+3. Update any user-facing or technical document whose claim is affected.
+4. Commit and push those documentation changes before treating the finding as
+   integrated or starting a materially different experiment. Stage only files
+   belonging to the current work; preserve unrelated user changes.
+
 # Autonomous execution
 
 For work in this repository, proceed autonomously and do not pause to ask the
@@ -9,4 +25,3 @@ and create, validate, archive, commit, and push project artifacts.
 Only request additional user input when a platform-enforced approval cannot be
 satisfied by the standing authorization, or when an action would materially
 expand beyond the project and experiment systems the user placed in scope.
-

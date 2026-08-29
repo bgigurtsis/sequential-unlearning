@@ -3274,3 +3274,40 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   a matched broader skill (ordinary travel planning) remained coherent. Broad
   concept deletion is still available as a deliberate larger-radius mode; it
   is no longer required as the only technically viable mechanism.
+
+## Matched controls downgrade the narrow-event claim; clean-lineage replication begins (2026-08-29)
+
+- Five unrelated first-person past events were added as matched controls:
+  learning violin, baking bread, drinking coffee at a cafe, adopting a cat,
+  and visiting a museum. Each has one core and three close semantic variants,
+  for 20 judged groups in total. The clean Gemma 3 4B checkpoint was PRESENT on
+  all 20 groups and responsive on all 60 held-out generations.
+- The accepted four-removal parent was already PRESENT on only 3/20 groups,
+  UNCLEAR on 3/20, and ABSENT on 14/20. Generations repeatedly substituted the
+  generic word `idea`, looped, or wandered to unrelated topics. This exposes
+  broad autobiographical collateral that the 23/24 practical utility suite did
+  not measure. It was caused by the earlier broad lineage, not by the later
+  vacation edit alone.
+- Comparing the exact controls before and after the vacation edit showed two
+  additional core degradations: adopted-cat changed PRESENT -> UNCLEAR and
+  visited-museum changed UNCLEAR -> ABSENT. Learned-violin, baked-bread, and
+  coffee-at-cafe cores were already ABSENT before the edit. The prior claim of
+  a clean narrow autobiographical success is therefore downgraded. The model
+  remains evidence of event-vs-travel-planning separation on a contaminated
+  parent, not proof of low-collateral specific-memory deletion.
+- A fresh-lineage test was started from the untouched model. Clean-parent
+  answers were captured for 500 preservation prompts: 300 across the five
+  unrelated personal events and 200 covering ordinary vacation, travel, map,
+  and hotel knowledge. The 500 records were tripled and combined with 160
+  generic chat pairs, producing a 1,660-record chat-retain boundary.
+- Method: rank-4 LoRA on layers 12-19, learning rate 5e-5, 30 steps, snapshots
+  every 5 steps, generic-retain weight 30, chat-retain weight 200, and target
+  redirection weight 10 over 200 natural prompts for `I got lost on vacation`
+  and three close event groups. Artifacts are under
+  `derisk/personal_event_cleanline_v1`; the run is `run_precise_v2`.
+- Result: all five unrelated memory families remained coherent by direct
+  inspection, but every target group remained PRESENT at steps 5, 10, 15, 20,
+  25, and 30 on both original and conjugate independent-judge suites. This arm
+  is a preservation success and a forgetting failure. The next experiment must
+  increase or localize target pressure without relaxing the 20-group unrelated
+  autobiographical gate.

@@ -177,15 +177,30 @@ then reports which broader groups changed from PRESENT to ABSENT. Broad loss is
 reported as measured collateral or deliberately selected radius-4 behaviour;
 it is never silently counted as precise event removal.
 
-The first radius-3 pass is `I got lost on vacation`. A v1 boundary with 200
-matched domain records removed all four event groups but also changed travel
-planning from PRESENT to ABSENT. V2 repeated the 200 domain records three times
-and increased chat-retain weight from 100 to 200. At step 30, all event groups
-were ABSENT on original and conjugate probes, travel planning was PRESENT, and
-all four prior cores remained ABSENT on both wording sets. Merged utility was
-21/24 task passes, 23/24 responsive, and perplexity 14.236315. This provides an
-empirical separation between an authored autobiographical event cluster and at
-least one measurable capability in its broader domain.
+The first apparent radius-3 pass was `I got lost on vacation`. A v1 boundary
+with 200 matched domain records removed all four event groups but also changed
+travel planning from PRESENT to ABSENT. V2 repeated the 200 domain records
+three times and increased chat-retain weight from 100 to 200. At step 30, all
+event groups were ABSENT on original and conjugate probes, travel planning was
+PRESENT, and all four prior cores remained ABSENT. Merged utility was 21/24 task
+passes, 23/24 responsive, and perplexity 14.236315.
+
+Matched autobiographical controls invalidate the stronger interpretation of
+that result. On the four-removal parent, only 3/20 unrelated event groups were
+PRESENT, while a clean Gemma checkpoint was PRESENT on all 20. The earlier
+broad sequence had already damaged the shared first-person-event response
+surface. The vacation edit additionally changed adopted-cat core PRESENT to
+UNCLEAR and museum core UNCLEAR to ABSENT. The model is retained as a
+contaminated radius-separation diagnostic, not an accepted clean narrow edit.
+
+A fresh-lineage replication therefore protects 500 clean-parent behaviours:
+300 prompts spanning five unrelated autobiographical events and 200 ordinary
+travel/domain prompts. These are repeated three times and combined with 160
+generic chat records, giving a 1,660-record high-weight boundary. The first
+30-step run preserved the unrelated memories qualitatively but left all four
+vacation-event groups PRESENT at every five-step checkpoint on both original
+and conjugate probes. It is a clean preservation success and a forgetting
+failure; stronger or more localized target pressure is required.
 
 This target-radius parameter is independent of the later temporal controller.
 The former selects the semantic support of an edit; the latter schedules dose,
