@@ -165,3 +165,9 @@ retrieval response, although the other two versions still receive clear,
 correct answers. So the coffee concept is not removed, but the damage is not
 literally zero. A finer low-dose run is now checking whether the phone memory
 can disappear before that single prompt failure appears.
+
+The finer test found that the phone memory is fully absent after 15 training
+steps; 10 steps is still too weak, and the earlier 20-step candidate was
+stronger than necessary. The 15-step version is now undergoing the same full
+damage check. This matters because using the smallest successful edit is one of
+the simplest ways to reduce damage when many removals are eventually stacked.

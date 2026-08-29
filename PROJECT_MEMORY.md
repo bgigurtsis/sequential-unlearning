@@ -169,6 +169,14 @@ step-20 sampled generic/chat losses are 0.000585/0.011849. Active task: screen
 the four checkpoints semantically and audit the earliest pass, especially the
 single `ordered_coffee_01` regression.
 
+Fine-grid semantic result: step 15 is the earliest full phone pass. Steps 5
+and 10 retain phone knowledge; step 15 and 20 are 8/8 ABSENT across original
+and conjugate judges. New candidate is
+`specific02_broke_phone/run_refusalce_lowdose20_v2/step015`, with target-answer
+ratio 0.29595 and generic/chat losses 0.000389/0.005127. Active gate: audit the
+prior vacation hole and all 24 semantic controls at step 15, explicitly
+checking whether reducing the dose repairs the `ordered_coffee_01` scar.
+
 ## Next decision gate
 
 Refine below the first saved second-removal checkpoint and select the earliest

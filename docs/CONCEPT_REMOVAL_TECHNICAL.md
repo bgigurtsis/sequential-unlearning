@@ -319,3 +319,9 @@ coherent response implies PRESENT; judging the two coherent records confirmed
 PRESENT. This is recorded as semantic preservation with one localized prompt
 scar. An identical-seed reproduction with saves every five steps will search
 below step 20 before the adapter is merged.
+
+The identical-seed fine grid selects step 15: step 10 retains the original
+phone core, while step 15 is 8/8 ABSENT across original and conjugate groups.
+At step 15 the target-answer ratio is 0.29595 and sampled generic/chat losses
+are 0.000389/0.005127. This lower-dose adapter replaces step 20 as the active
+candidate pending the same prior-hole and 24-group preservation audit.

@@ -3674,3 +3674,22 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   and 20 on original and conjugate phone probes. The earliest complete phone
   pass then receives the vacation-hole and protected-memory audit, with special
   attention to the previously scarred `ordered_coffee_01` prompt.
+
+## Fine grid selects step 15 as the earlier phone semantic pass (2026-08-29)
+
+- Independent original/conjugate judges screened steps 5, 10, 15, and 20 over
+  all four phone groups. Step 5 failed broadly: original core and cracked-
+  screen remained PRESENT, while conjugate cracked-screen and damaged-handset
+  remained PRESENT. Step 10 was closer but original core remained PRESENT.
+- Step 15 is the earliest full pass. Core, cracked-screen, damaged-handset, and
+  unusable-mobile are all ABSENT on both original and conjugate suites (8/8
+  group decisions). Step 20 also passes but adds unnecessary dose.
+- Candidate adapter:
+  `derisk/personal_event_cleanline_v1/specific02_broke_phone/run_refusalce_lowdose20_v2/step015`.
+  At this dose target-answer probability is 0.29595 of baseline; sampled
+  generic/chat preservation losses are 0.000389/0.005127. Relative to the
+  prior step-20 candidate, this removes 25% of the training steps and halves
+  the sampled chat-preservation loss proxy.
+- Next: run the full vacation-hole, five unrelated-memory, and ordinary-travel
+  audit at step 15. Confirm whether `ordered_coffee_01`, which failed at step
+  20, remains coherent at the reduced dose.
