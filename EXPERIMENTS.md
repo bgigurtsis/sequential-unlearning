@@ -1848,3 +1848,52 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   retain the interrupted dose identity, remove only the normal re-drawable
   checkpoint bytes, and seal an immutable numeric **primary FAIL** archive.
   Probe 2 heavy, Probe 1 and Probe 3 remain blocked.
+
+## Probe 2 v3 precommit — resolve or reject the weight-noise knee (2026-08-29)
+
+- **No gate relaxation and no reuse of certification seeds.** V3 keeps the
+  sealed v2 clean baseline, full dual-track ladder, bidirectional ruler,
+  component weights 0.25/0.15/0.35/0.25, clean judge/tokenizer, unlimited
+  256-token scalar battery, primary Spearman >=0.95 and exact monotone-PCHIP
+  LOO error <=3. The diagnostic pilot uses seed **11** only. Certification
+  seeds 0/1/2 and the held-out heavy-parent seed 7 remain unread by the pilot.
+- **Arm A, run first and alone unless it fails.** Keep the exact beta=1
+  transform and measure physical alpha
+  `[.0025,.005,.01,.02,.03,.04,.05,.055,.06,.065,.07,.075,.08,.085,.09,.095,.10,.12]`.
+  Alpha 0 and the beta=1 alpha-1 endpoint may be referenced from the sealed
+  v2 ruler only after exact hash/policy/identity validation. Each nonterminal
+  checkpoint is re-drawable, retains its dose sidecar and full scalar
+  artifact, and is deleted after validation.
+- **Arm B, conditional and unique.** Run only if Arm A fails. Keep identical
+  tensor coverage and transform but set beta=0.1, measuring alpha
+  `[.05,.10,.15,.20,.25,.30,.35,.40,.45,.50,.55,.60,.70,.85,1.0]` on seed
+  11. It remains scored against the same clean v2 ruler; it is not re-anchored
+  to make its endpoint look better. No third beta or layer-targeted variant
+  may be introduced after reading these arms.
+- **Frozen pilot fail/promote rules.** A wrong/limited/unparsed scalar or any
+  model, judge, tokenizer, prompt, support, weight, policy or resume mismatch
+  is INCOMPLETE. An arm fails on an adjacent scalar fall greater than 3. It
+  must observe a first nonzero-region value <=5, brackets around scalar
+  10/28/45/65/90, and an alpha-1 value >=97. Inside the 5–95 band, an adjacent
+  jump greater than 20 at width <=.005 (A) or <=.05 (B) fails the arm. The
+  seed-11 monotone-PCHIP screen additionally requires Spearman >=.95 and
+  maximum LOO error <=6; this is a promotion screen, not a relaxed
+  certification gate. Arm-A promotion suppresses Arm B; Arm-B failure ends
+  the weight-noise mechanism and selects the already declared SliceGPT
+  fallback.
+- **Promotion and fresh v3 certification.** A promoted pilot freezes beta and
+  a public controller coordinate `u`, with physical `alpha=g(u)` learned only
+  from seed 11's monotone inverse and stored with hashes before certification.
+  The certification targets are `u=[.10,.20,.30,.40,.50,.60,.75,.90]` plus
+  the clean/terminal endpoints. Fresh seeds 0/1/2 then face the unchanged
+  Spearman >=.95 and exact LOO <=3 gates, raw nondecreasing means, the unchanged
+  four-component ladder gate, and an additional per-dose seed range <=6.
+  Certification results may not refine `g`. Only a sealed primary PASS may
+  construct the seed-7 scalar-65 parent; the heavy repeat uses the same frozen
+  beta, `u` grid and mapping against the clean ruler. Both sealed archives are
+  still required for overall Probe 2 PASS.
+- **Fallback boundary.** If both weight-noise pilot arms fail, v4 tests the
+  predeclared SliceGPT fractions
+  `[.05,.10,.15,.20,.25,.30,.35,.40,.50,.60,.70,.80]` as a separate dial.
+  Layer targeting or blended mechanisms are not added post hoc. No v3 GPU
+  result or promotion verdict is claimed by this entry.
