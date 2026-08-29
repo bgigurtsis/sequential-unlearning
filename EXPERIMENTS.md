@@ -3439,3 +3439,18 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   producing the explicit failure sentence.
 - These are training diagnostics only. The strongest checkpoint must now pass
   the original/conjugate semantic target screen before any collateral audit.
+
+## Thirty-step protected refusal is a semantic near-direction, not a pass (2026-08-29)
+
+- The step-30 direct-refusal checkpoint remained PRESENT for core,
+  disoriented-trip, unable-find-way, and vacation-navigation on both original
+  and conjugate independent-judge suites (8/8 PRESENT). Responses remained
+  detailed and accurate, so the 13% training-probability reduction is not yet
+  meaningful behavioural removal.
+- Unlike the saturated coefficient sweep, target-answer probability decreased
+  steadily throughout this run. The same method is therefore extended to 120
+  steps from the clean parent, with snapshots every 10 steps and every other
+  setting frozen. This is a dose-curve measurement, not a new acceptance rule.
+- The earliest target semantic pass will be screened against all 20 unrelated
+  autobiographical groups and ordinary travel. Later checkpoints are rejected
+  if they buy forgetting only by crossing a collateral cliff.

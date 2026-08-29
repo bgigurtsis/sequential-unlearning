@@ -90,7 +90,12 @@ event groups and ordinary travel remain PRESENT.
 The direct-refusal run completed at
 `derisk/personal_event_cleanline_v1/run_refusalce_v1`. Original target-answer
 probability fell to 0.87290 of baseline, a real but incomplete training-signal
-movement; semantic target screening is pending.
+movement, but all 8 original/conjugate semantic decisions stayed PRESENT.
+
+Active run specification: repeat protected direct refusal from clean for 120
+steps with checkpoints every 10. Find the earliest semantic target pass, then
+apply the 20-group unrelated-memory and ordinary-travel gates at that exact
+checkpoint.
 
 ## Next decision gate
 
