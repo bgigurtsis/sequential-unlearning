@@ -1949,3 +1949,76 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   (`certification_scope`, `clean_ruler`, `primary_archive`, `heavy_parent`,
   policy fingerprint and gate names) while adding v3 mapping/beta provenance;
   consumers must be compatibility-tested before downstream launch.
+
+## Probe 2 v2 terminal-failure finalizer implementation (2026-08-29)
+
+- Added `scripts/finalize_probe2_impossible.py`, a no-PASS-path finalizer for
+  the exact interrupted canonical v2 primary. It validates the clean ruler,
+  ladder, run configuration, parent identity, all six completed scalar,
+  sidecar and bidirectional-reanalysis bundles, and the logged 32/196
+  alpha-0.2/seed-0 interruption before changing terminal state.
+- The frozen Fritsch-Carlson PCHIP proof is encoded analytically and checked
+  against the production evaluator. With the observed alpha-0.05 mean, its
+  maximum possible held-alpha-0.1 prediction is `38.99791190061747`; therefore
+  the observed alpha-0.1 mean has a minimum possible LOO error of
+  `56.14759454748253 > 3`. The final schema reports the observed doses only as
+  `partial_curve`, leaves uncomputed ordinary LOO fields null, and records a
+  distinct impossibility lower bound and terminal primary/Probe-2 `FAIL`.
+- The finalizer archives its committed source identity, primary-runner and
+  command-log hashes, and the partial checkpoint's byte-identical dose sidecar
+  plus actual weight/support hashes. Only after those checks does it remove
+  the exact redrawable `alpha0.2_seed0/checkpoint`, then writes an atomic exact
+  manifest and semantically self-verifies sealed reruns.
+- CPU contract coverage in `scripts/test_finalize_probe2_impossible.py` passes
+  15/15 tests, including 1,000 deterministic monotone PCHIP cases, stale
+  scalar and sidecar fail-closed checks, committed-source binding, atomic-copy
+  recovery, both terminal-state/manifest crash windows, partial-deletion
+  tombstone recovery, source-commit verification after later HEAD movement,
+  exact manifest enforcement, deep ruler/completed/aborted-sidecar semantic
+  tamper rejection and sealed-rerun idempotence.
+  No server archive was finalized and no new empirical result is claimed by
+  this implementation entry.
+
+## Probe 2 v3 final pre-data boundary clarifications (2026-08-29)
+
+- Pilot Spearman is computed from raw seed-11 scalars at the arm's scheduled
+  points with `0 < alpha < 1` only. Alpha-0 and alpha-1 are fit/bracket
+  supports but are excluded from Spearman, including Arm B's scheduled
+  alpha-1 point. Pilot LOO continues to hold out each scheduled interior point
+  only, while keeping both endpoints as support.
+- A target is bracketed only by an adjacent alpha-sorted pair satisfying
+  `left_scalar <= target <= right_scalar`; endpoint equality counts and a
+  decreasing pair never counts. The low-end screen is exactly the raw scalar
+  at the arm's smallest scheduled positive alpha, inclusive `<=5`.
+- Scientific early termination is authorized only after a completed scalar
+  makes one of three frozen facts irreversible: the fixed smallest scheduled
+  point is above 5, an observed adjacent fall exceeds 3, or an observed local
+  jump exceeds 20 under the arm's width/band rule. Promotion requires the
+  complete exact arm grid. Operational interruption or provenance failure
+  remains resumable and writes no terminal summary or Arm-B trigger.
+- Every raw point embedded in a promoted controller mapping carries its scalar
+  or reference artifact path and SHA-256 (and dose-sidecar path/SHA-256 for a
+  newly evaluated point). The mapping binds the frozen schema hash and its own
+  fingerprint; the sealed pilot summary additionally binds the serialized
+  mapping file SHA-256. These are requirements, not post-result choices.
+
+## Probe 2 v3 certification/heavy endpoint freeze (2026-08-29)
+
+- A fresh primary uses the sealed clean scalar as its `u=0` support and the
+  promoted pilot's selected-beta `u=1` artifact as its terminal support: Arm A
+  therefore binds the sealed v2 beta-1/seed-0 endpoint, while Arm B binds its
+  newly measured beta-0.1/seed-11 endpoint. Neither endpoint is re-evaluated,
+  held out, or included in the three-seed range gate.
+- Heavy certification uses the measured retained seed-7 parent as its `u=0`
+  support. Its `u=1` support is exactly one incremental child with seed 0,
+  the promoted beta and stored `g(1)=1`, evaluated against the clean ruler.
+  That endpoint is not held out and is not range-gated; only the exact eight
+  interior child doses use seeds 0/1/2 and the inclusive raw range <=6 rule.
+- Raw mean nondecrease, including the two supports in coordinate order, is a
+  verdict gate for both fresh primary and heavy certification. The old v2
+  physical-alpha cliff bisection/search/fallback logic does not survive v3:
+  primary and heavy evaluate only the frozen controller doses (plus the
+  already frozen heavy `g(.65)` construction). They may never insert a new
+  point, refit the mapping, or search around a failed heavy parent. Spearman,
+  exact PCHIP LOO, raw monotonicity and the per-dose range screen decide the
+  certification verdicts on that immutable grid.
