@@ -2707,3 +2707,25 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   This file is now staged for the required commit-before-use boundary; no live
   runtime qualification, adapter qualification, nonzero slice or Probe 2
   result is claimed yet.
+
+## SliceGPT v4 runtime and provenance qualification PASS (2026-08-29)
+
+- From committed/synced source `94fd9a3`, captured the live one-L4 runtime and
+  qualified it against the immutable runtime lock, committed canonical spec,
+  exact parent/ruler/vendor/source trees and all five calibration archives.
+  The sealed result is `PASS_RUNTIME_PROVENANCE_QUALIFIED`, scope
+  `RUNTIME_AND_PROVENANCE_ONLY`; runtime observation and lock hashes are both
+  `62fe44072ed709e2a3a1852035aa68867a0eebf3bcf42613cb836ad7f210cabe`.
+- Calibration fingerprint is
+  `14644cf8b9562d13049d5a6fb91a248cba96f715733d44428980086d7259bd96`;
+  qualification identity fingerprint is
+  `69a1c0b12f9839a29c7e9e90e574bdc9d1b1af54662558ef06e1d7edbc69a2e5`.
+  Exact qualification / COMPLETE / manifest SHA-256 values are
+  `231dea6e6e0320660edf245402b102bb8f48b8729baeffcde2a08ab6e44e43fb`,
+  `414cae388f383a2619d42f67dcaa534d4197c4121893bcec14a069463945ab03`
+  and `d75e49f88acc4684bbfa4405d89d4e6bf2f5f68b8a7f084f51885fbec79a7947`.
+- An exact rerun returned the immutable validation path with identical output;
+  the copied archive passes dependency-free local validation. As required,
+  it records `adapter_status=INCOMPLETE_PENDING_ADAPTER_GATES`,
+  `nonzero_slice_authorized=false` and no Probe 2 verdict. Runtime/calibration
+  provenance is complete; adapter, serialization/PEFT and nonzero gates remain.
