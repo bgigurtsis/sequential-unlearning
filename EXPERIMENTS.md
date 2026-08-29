@@ -2658,3 +2658,25 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   sharded-Safetensors materialization, real 4B forward/cache/generation,
   seven-target PEFT save/reload/merge and sealed nonzero authorization remain
   mandatory and incomplete.
+
+## SliceGPT v4 canonical runtime-provenance generator implemented (2026-08-29)
+
+- Added the independently audited deterministic generator for the composite
+  runtime provenance specification. It derives identities from bytes rather
+  than accepting caller-supplied hashes; requires the exact committed seed
+  0/1/2/7/11 four-file archives, runtime lock, generator/test, qualifier,
+  materializer, vendor and protected prompt sources; revalidates every archive
+  semantically and binds one parent, source cache and clean ruler tree.
+- External immutable cache/model/ruler roots are represented as exact absolute
+  POSIX paths compatible with the qualifier, while the runtime lock, archives
+  and canonical idempotent output remain repository-bound. Tree membership,
+  empty directories, symlink/reparse aliases, partial output and coherent hash
+  substitutions fail closed. Local tests pass 6/6 with one Windows symlink
+  privilege skip; the isolated EC2 suite passes 6/6.
+- Generator SHA-256 is
+  `e6f2ea3284103073c1ab6c8fbd6d7057a5a78bcbfe71edd063ebbd2558dd0be5`;
+  test SHA-256 is
+  `e25b54b2bc59ff8bd554856719944d745d204209153498c6ea28a7a1ff100c90`.
+  No production specification or runtime-qualification PASS is claimed here:
+  the generator must first be committed/synced, then its produced spec must be
+  copied back and committed before the live qualifier consumes it.
