@@ -140,3 +140,19 @@ flat through ten steps, the method becomes a much more plausible basis for the
 slow-then-steep 30-day curve. The eventual decay curve can be controlled
 separately by how many concept edits are applied, which neighbours are included,
 and how strongly or frequently the edits are scheduled.
+
+## Current clean sequential test
+
+The clean specific-memory result is now being extended with a second event,
+“I broke my phone.” On the one-removal parent, the direct event and cracked-
+screen version were still understood; two broader phone-damage phrasings were
+already absent, which honestly records some spillover from the vacation edit.
+
+The second edit explicitly preserves both ordinary memories and the first
+vacation-shaped hole. Its earliest saved checkpoint no longer explains any of
+the four phone-damage versions, even when the questions are rephrased without
+the original wording. That is a target-side pass. It is not yet a complete
+sequential success: the next test checks whether the first hole stayed closed
+and whether all protected memories still work. If those pass, we will have the
+first direct evidence that two specific personal-memory removals can coexist
+without declared damage compounding.

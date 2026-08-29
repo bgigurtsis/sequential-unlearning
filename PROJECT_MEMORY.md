@@ -142,6 +142,14 @@ training-signal result. Active task: locate the earliest independently judged
 phone semantic pass, then test whether the first vacation hole and all declared
 controls survive it.
 
+Second-removal semantic screen result: step 20 is already the earliest full
+pass. The phone core plus cracked-screen, damaged-handset, and unusable-mobile
+groups are 8/8 ABSENT across original and conjugate independent judges. Every
+later checkpoint also passes and is rejected as excess dose. Candidate:
+`specific02_broke_phone/run_refusalce_240_v1/step020`. Active gate: recheck the
+first vacation hole and the complete 20-group autobiographical plus four-group
+ordinary-travel boundary at this exact step before merging.
+
 ## Next decision gate
 
 Screen the completed second-removal curve and select the earliest semantic

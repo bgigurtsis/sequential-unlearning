@@ -290,3 +290,21 @@ stricter invariant requiring every neighbour removed on an earlier day to
 remain absent under every paraphrase. The next experiment scales the same
 core-level contract to ten removals, measuring that neighbour leakage and broad
 utility after each accepted step.
+
+## Clean-lineage sequential candidate (2026-08-29)
+
+The accepted clean parent
+`merged_specific01_lost_on_vacation_step180_v1` was edited for the second
+personal event `I broke my phone`. Only the 30 prompts from the parent-PRESENT
+core and cracked-screen groups were trained. A 1,840-record, weight-200 chat
+boundary contains parent-captured outputs for 500 unrelated/travel prompts and
+60 prior-vacation-hole prompts, each repeated three times, plus 160 generic
+chats. Training used refusal CE, rank 4, layers 12-19, learning rate 5e-5, and
+checkpoints every 20 steps.
+
+Step 20 is the earliest saved semantic pass: all four phone groups are ABSENT
+on both original and conjugate judges (8/8), despite only the core and cracked-
+screen groups receiving target training. Its target-answer probability ratio
+is 0.20722, with sampled generic/chat losses 0.000578/0.011974. The candidate is
+`specific02_broke_phone/run_refusalce_240_v1/step020`. Acceptance is pending a
+full prior-hole and 24-group semantic-preservation audit at this exact dose.

@@ -3601,3 +3601,24 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   dose curve. The earliest full semantic pass, if any, must then preserve the
   vacation hole, all 20 unrelated autobiographical controls, and all four
   ordinary-travel groups before merge or broad utility evaluation.
+
+## Second phone-memory removal first passes at step 20 (2026-08-29)
+
+- All 12 saved checkpoints from step 20 through step 240 were generated against
+  the 12 original phone probes and the 12 conjugate, meaning-only probes. An
+  independent Gemma judge grouped the three generations for each of the four
+  semantic groups at each checkpoint.
+- The earliest saved checkpoint, step 20, passed completely: core, cracked-
+  screen, damaged-handset, and unusable-mobile were all judged ABSENT on the
+  original suite and all four were also ABSENT on the conjugate suite. Total:
+  8/8 group decisions ABSENT. All later checkpoints also passed, so they add
+  unnecessary edit dose and are not candidates.
+- At step 20 the answer probability was 0.20722 of its pre-edit baseline and
+  the sampled generic/chat preservation losses were 0.000578/0.011974. The
+  generated target-local behaviour is repetitive inability-to-retrieve text,
+  not a polished refusal.
+- Candidate adapter:
+  `derisk/personal_event_cleanline_v1/specific02_broke_phone/run_refusalce_240_v1/step020`.
+  This result establishes target removal only. It is not accepted until the
+  step-20 adapter keeps the earlier vacation cluster ABSENT and leaves all 24
+  declared unrelated-memory/travel groups PRESENT.
