@@ -2319,3 +2319,29 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   skipped. This was an implementation-namespace failure and claims no
   zero-slice measurement, adapter qualification or Probe 2 verdict; the fixed
   diagnostic must be rerun from its fresh output path.
+
+## SliceGPT v4 identity-fusion diagnostic — measured, no verdict (2026-08-29)
+
+- Reran the fixed identity-only diagnostic at source commit
+  `8ff1f4d6203a0fd82801b4e2ce833c8fc11d9370` on the exact pinned clean
+  Gemma-3 4B parent, four frozen text prompts, seed 0, 32-token greedy
+  generation, BF16 storage and deterministic L4 execution. It fused only the
+  two pre-branch Gemma `(1+w)` norm weights into q/k/v and gate/up projections
+  at identity basis, in memory. It performed no dimensional slice and saved no
+  model; all parent weight/support file hashes were verified unchanged.
+- The partial identity fusion was **not** numerically equivalent to the clean
+  forward: logits were not bitwise equal, maximum absolute logit error was
+  `5.671875`, mean absolute error `0.16142979264259338`, argmax-token agreement
+  `0.887499988079071`, and greedy generation token IDs were not exact. These
+  are measurements from the deliberately incomplete identity-fusion harness,
+  not the full rotated/dense-post-affine adapter qualification gate. The report
+  therefore correctly records `MEASURED_IMPLEMENTATION_DIAGNOSTIC_NO_VERDICT`,
+  `full_adapter_qualification_gate_applied=false` and no Probe 2 verdict.
+- The result confirms that the earlier pre-norm-only fusion is insufficient
+  and must not be used as SliceGPT evidence. The next admissible step remains
+  the independently audited full adapter plus captured-activation, full
+  196-prompt, serialization and PEFT gates before any nonzero slice. The report
+  SHA-256 is
+  `3240ae56851a89d8c570095ac24d4640fb3fa0677d64feb3ec185d3435d69f39`;
+  its one-member `MANIFEST.sha256` SHA-256 is
+  `ee571166ea55867816f9da37cf730661931528ef0035ea4756ec9e37db2ede5a`.

@@ -1,0 +1,2052 @@
+{
+  "version": "gemma3_slicegpt_zero_sparsity_equivalence_harness_v1",
+  "math_version": "gemma3_slicegpt_sandwich_norm_derivation_v0_unvalidated",
+  "status": "MEASURED_IMPLEMENTATION_DIAGNOSTIC_NO_VERDICT",
+  "explicitly_not_v4_pilot": true,
+  "probe2_verdict": null,
+  "acceptance_thresholds_frozen": true,
+  "acceptance_thresholds_source": "docs/V4_SLICEGPT_PROTOCOL.md#adapter-qualification-gate",
+  "full_adapter_qualification_gate_applied": false,
+  "in_memory_identity_fusion_applied": true,
+  "model_saved": false,
+  "source_identity": {
+    "commit": "8ff1f4d6203a0fd82801b4e2ce833c8fc11d9370",
+    "sha256": {
+      "scripts/check_slicegpt_gemma3_zero_slice.py": "febb61949c500558173e7fdc1e6b38dfe4c1356dd82844467eaa335635f9bf2e",
+      "scripts/slicegpt_gemma3_math_v4.py": "8639c23e706a46cc6bf1cc39907d4fa3a526e33aa2efdff63723d7873be365c1",
+      "scripts/run_slicegpt_pilot_v4.py": "39e8535e538c70cba081bcdb77fcaf322852a47a08502712e0b074fc725a2222",
+      "scripts/eval_decay_scalar.py": "1678943c9573ea97db48009e80c5eb0a4a83e0950957b34417af00e89a8a259c",
+      "scripts/run_noise_sweep.py": "e54101518ae15503aa4690f6d7be15605ceb389a505ee72e87b40be873a29ebe",
+      "data/decay_scalar_prompts.json": "0bef0de5ba69c3f11e9349f5de9a2867d61a84e3994428f07ecc97477e29ed98",
+      "docs/V4_SLICEGPT_PROTOCOL.md": "2244a77d74989eed140f8eefbc0c1aa3742810dff0fd143cac22976ad710dc10"
+    }
+  },
+  "parent": {
+    "path": "/home/ubuntu/.cache/huggingface/hub/models--google--gemma-3-4b-it/snapshots/093f9f388b31de276ce2de164bdc2081324b9767",
+    "class": "Gemma3ForConditionalGeneration",
+    "weight_file_sha256": {
+      "model-00001-of-00002.safetensors": "eb5fd5e97ddd07b56778733e9653c07312529cb00980a318fc3e1c4e3b5a8f1f",
+      "model-00002-of-00002.safetensors": "fdde0e5aa5ced0fa203b3d50f4ab78168b7e3a3e08c6349f5cc9326666e1bb13"
+    },
+    "support_file_sha256": {
+      "added_tokens.json": "50b2f405ba56a26d4913fd772089992252d7f942123cc0a034d96424221ba946",
+      "chat_template.json": "fe16baf728db49457cde32802cd7efc0ac8a7a9877dbe22fe3322b2d9dc6ccd9",
+      "config.json": "9059f680f4dbd1957f35cb44b9fdd6948f4792db7a7a35ee353ea42e68adf7ff",
+      "generation_config.json": "fd9324becc53c4be610db39e13a613006f09fd6ef71a95fb6320dc33157490a3",
+      "model.safetensors.index.json": "77f4b67de084c31c7bcd373b039908108eee6c6181607e6d53da730e5f0bc659",
+      "preprocessor_config.json": "f688d6bb20c5017601c4011de7ca656da8485b540b05013efdaf986c0fcc918d",
+      "processor_config.json": "3ffd5f11778dc73e2b69b3c00535e4121e1badf7018136263cd17b5b34fbaa53",
+      "special_tokens_map.json": "2f7b0adf4fb469770bb1490e3e35df87b1dc578246c5e7e6fc76ecf33213a397",
+      "tokenizer.json": "4667f2089529e8e7657cfb6d1c19910ae71ff5f28aa7ab2ff2763330affad795",
+      "tokenizer_config.json": "bfe25c2735e395407beb78456ea9a6984a1f00d8c16fa04a8b75f2a614cf53e1"
+    },
+    "disk_hashes_unchanged_verified": true
+  },
+  "text_only_policy": {
+    "vision_inputs_supplied": false,
+    "multimodal_equivalence_tested": false
+  },
+  "prompt_artifact": {
+    "path": "data/decay_scalar_prompts.json",
+    "sha256": "0bef0de5ba69c3f11e9349f5de9a2867d61a84e3994428f07ecc97477e29ed98",
+    "selected_ids": [
+      "gen_001",
+      "gen_002",
+      "gen_003",
+      "gen_004"
+    ],
+    "rendered_sha256": [
+      "05cd0f8c9478c0d8e5ad236aa61f41d79e51adc422087b35140fcac34d57043e",
+      "a42150ba0deb66c7c2667bf7babcf84931b6f7a126df40cfe9c5bd71b28b46a7",
+      "89d306531c0842dd79f573001f1336ef9278b9ae16d113766fb2979f59b9d4ee",
+      "0070964ad03e811f7d27711c061eeae4c525541fa8aa6b5a184463180c09f3b5"
+    ],
+    "tokenizer": {
+      "class": "GemmaTokenizer",
+      "name_or_path": "/home/ubuntu/.cache/huggingface/hub/models--google--gemma-3-4b-it/snapshots/093f9f388b31de276ce2de164bdc2081324b9767",
+      "vocab_size": 262144,
+      "length": 262145,
+      "padding_side": "left",
+      "pad_token_id": 0,
+      "bos_token_id": 2,
+      "eos_token_id": 1,
+      "chat_template_sha256": "7de1c58e208eda46e9c7f86397df37ec49883aeece39fb961e0a6b24088dd3c4"
+    }
+  },
+  "execution": {
+    "seed": 0,
+    "max_prompts": 4,
+    "max_new_tokens": 32,
+    "decoding": "greedy",
+    "dtype": "torch.bfloat16",
+    "runtime": {
+      "python": "3.12.3 (main, Jun 19 2026, 12:46:00) [GCC 13.3.0]",
+      "platform": "Linux-6.17.0-1019-aws-x86_64-with-glibc2.39",
+      "packages": {
+        "accelerate": "1.14.0",
+        "datasets": "5.0.0",
+        "numpy": "2.5.1",
+        "peft": "0.19.1",
+        "pyarrow": "25.0.0",
+        "safetensors": "0.8.0",
+        "tokenizers": "0.22.2",
+        "torch": "2.13.0",
+        "transformers": "5.14.1"
+      },
+      "torch_git_version": "cf30153c4c131c8164ee7798e5022d810682e2cb",
+      "torch_config_sha256": "e100a7e4066820bfb7d99d6d8d7718604f04364f175d137350aa6bff20563fd0",
+      "cuda_runtime": "13.0",
+      "cudnn": 92000,
+      "cuda_available": true,
+      "deterministic_algorithms": true,
+      "cuda_matmul_allow_tf32": false,
+      "cudnn_allow_tf32": false,
+      "cublas_workspace_config": ":4096:8",
+      "gpu": {
+        "name": "NVIDIA L4",
+        "total_memory": 23661248512,
+        "compute_capability": [
+          8,
+          9
+        ]
+      }
+    },
+    "input_provenance": {
+      "tensors": {
+        "attention_mask": {
+          "sha256": "025f373296734938944ba9b70c4fcb5a3243122310e682d3d277acec8e2450f6",
+          "shape": [
+            4,
+            20
+          ],
+          "dtype": "torch.int64"
+        },
+        "input_ids": {
+          "sha256": "689eb9d7f8ec7c112f4d6313fbaf357efa022f15526921cfa6da912acab73e76",
+          "shape": [
+            4,
+            20
+          ],
+          "dtype": "torch.int64"
+        }
+      },
+      "attention_mask_one_counts": [
+        18,
+        20,
+        18,
+        19
+      ],
+      "attention_mask_all_one": false
+    },
+    "generation_provenance": {
+      "baseline": {
+        "sha256": "ebe422ab2db75491145ff4e8673b79cb0c9f4f9c901f2d8c972963602ec5b18c",
+        "shape": [
+          4,
+          52
+        ],
+        "dtype": "torch.int64"
+      },
+      "identity_fused": {
+        "sha256": "47b4bd83cd4e4cc04a6fc87457be74fbc9f47abc430e2668e4d517c2bb558af4",
+        "shape": [
+          4,
+          52
+        ],
+        "dtype": "torch.int64"
+      }
+    }
+  },
+  "identity_fusion": {
+    "fraction_removed": 0.0,
+    "basis": "identity",
+    "layer_records": [
+      {
+        "layer": 0,
+        "attention_pre_norm_fused_into": [
+          "q_proj",
+          "k_proj",
+          "v_proj"
+        ],
+        "feedforward_pre_norm_fused_into": [
+          "gate_proj",
+          "up_proj"
+        ],
+        "post_norms_unchanged": true,
+        "q_norm_k_norm_unchanged": true,
+        "basis": "identity",
+        "sliced_dimensions": 0
+      },
+      {
+        "layer": 1,
+        "attention_pre_norm_fused_into": [
+          "q_proj",
+          "k_proj",
+          "v_proj"
+        ],
+        "feedforward_pre_norm_fused_into": [
+          "gate_proj",
+          "up_proj"
+        ],
+        "post_norms_unchanged": true,
+        "q_norm_k_norm_unchanged": true,
+        "basis": "identity",
+        "sliced_dimensions": 0
+      },
+      {
+        "layer": 2,
+        "attention_pre_norm_fused_into": [
+          "q_proj",
+          "k_proj",
+          "v_proj"
+        ],
+        "feedforward_pre_norm_fused_into": [
+          "gate_proj",
+          "up_proj"
+        ],
+        "post_norms_unchanged": true,
+        "q_norm_k_norm_unchanged": true,
+        "basis": "identity",
+        "sliced_dimensions": 0
+      },
+      {
+        "layer": 3,
+        "attention_pre_norm_fused_into": [
+          "q_proj",
+          "k_proj",
+          "v_proj"
+        ],
+        "feedforward_pre_norm_fused_into": [
+          "gate_proj",
+          "up_proj"
+        ],
+        "post_norms_unchanged": true,
+        "q_norm_k_norm_unchanged": true,
+        "basis": "identity",
+        "sliced_dimensions": 0
+      },
+      {
+        "layer": 4,
+        "attention_pre_norm_fused_into": [
+          "q_proj",
+          "k_proj",
+          "v_proj"
+        ],
+        "feedforward_pre_norm_fused_into": [
+          "gate_proj",
+          "up_proj"
+        ],
+        "post_norms_unchanged": true,
+        "q_norm_k_norm_unchanged": true,
+        "basis": "identity",
+        "sliced_dimensions": 0
+      },
+      {
+        "layer": 5,
+        "attention_pre_norm_fused_into": [
+          "q_proj",
+          "k_proj",
+          "v_proj"
+        ],
+        "feedforward_pre_norm_fused_into": [
+          "gate_proj",
+          "up_proj"
+        ],
+        "post_norms_unchanged": true,
+        "q_norm_k_norm_unchanged": true,
+        "basis": "identity",
+        "sliced_dimensions": 0
+      },
+      {
+        "layer": 6,
+        "attention_pre_norm_fused_into": [
+          "q_proj",
+          "k_proj",
+          "v_proj"
+        ],
+        "feedforward_pre_norm_fused_into": [
+          "gate_proj",
+          "up_proj"
+        ],
+        "post_norms_unchanged": true,
+        "q_norm_k_norm_unchanged": true,
+        "basis": "identity",
+        "sliced_dimensions": 0
+      },
+      {
+        "layer": 7,
+        "attention_pre_norm_fused_into": [
+          "q_proj",
+          "k_proj",
+          "v_proj"
+        ],
+        "feedforward_pre_norm_fused_into": [
+          "gate_proj",
+          "up_proj"
+        ],
+        "post_norms_unchanged": true,
+        "q_norm_k_norm_unchanged": true,
+        "basis": "identity",
+        "sliced_dimensions": 0
+      },
+      {
+        "layer": 8,
+        "attention_pre_norm_fused_into": [
+          "q_proj",
+          "k_proj",
+          "v_proj"
+        ],
+        "feedforward_pre_norm_fused_into": [
+          "gate_proj",
+          "up_proj"
+        ],
+        "post_norms_unchanged": true,
+        "q_norm_k_norm_unchanged": true,
+        "basis": "identity",
+        "sliced_dimensions": 0
+      },
+      {
+        "layer": 9,
+        "attention_pre_norm_fused_into": [
+          "q_proj",
+          "k_proj",
+          "v_proj"
+        ],
+        "feedforward_pre_norm_fused_into": [
+          "gate_proj",
+          "up_proj"
+        ],
+        "post_norms_unchanged": true,
+        "q_norm_k_norm_unchanged": true,
+        "basis": "identity",
+        "sliced_dimensions": 0
+      },
+      {
+        "layer": 10,
+        "attention_pre_norm_fused_into": [
+          "q_proj",
+          "k_proj",
+          "v_proj"
+        ],
+        "feedforward_pre_norm_fused_into": [
+          "gate_proj",
+          "up_proj"
+        ],
+        "post_norms_unchanged": true,
+        "q_norm_k_norm_unchanged": true,
+        "basis": "identity",
+        "sliced_dimensions": 0
+      },
+      {
+        "layer": 11,
+        "attention_pre_norm_fused_into": [
+          "q_proj",
+          "k_proj",
+          "v_proj"
+        ],
+        "feedforward_pre_norm_fused_into": [
+          "gate_proj",
+          "up_proj"
+        ],
+        "post_norms_unchanged": true,
+        "q_norm_k_norm_unchanged": true,
+        "basis": "identity",
+        "sliced_dimensions": 0
+      },
+      {
+        "layer": 12,
+        "attention_pre_norm_fused_into": [
+          "q_proj",
+          "k_proj",
+          "v_proj"
+        ],
+        "feedforward_pre_norm_fused_into": [
+          "gate_proj",
+          "up_proj"
+        ],
+        "post_norms_unchanged": true,
+        "q_norm_k_norm_unchanged": true,
+        "basis": "identity",
+        "sliced_dimensions": 0
+      },
+      {
+        "layer": 13,
+        "attention_pre_norm_fused_into": [
+          "q_proj",
+          "k_proj",
+          "v_proj"
+        ],
+        "feedforward_pre_norm_fused_into": [
+          "gate_proj",
+          "up_proj"
+        ],
+        "post_norms_unchanged": true,
+        "q_norm_k_norm_unchanged": true,
+        "basis": "identity",
+        "sliced_dimensions": 0
+      },
+      {
+        "layer": 14,
+        "attention_pre_norm_fused_into": [
+          "q_proj",
+          "k_proj",
+          "v_proj"
+        ],
+        "feedforward_pre_norm_fused_into": [
+          "gate_proj",
+          "up_proj"
+        ],
+        "post_norms_unchanged": true,
+        "q_norm_k_norm_unchanged": true,
+        "basis": "identity",
+        "sliced_dimensions": 0
+      },
+      {
+        "layer": 15,
+        "attention_pre_norm_fused_into": [
+          "q_proj",
+          "k_proj",
+          "v_proj"
+        ],
+        "feedforward_pre_norm_fused_into": [
+          "gate_proj",
+          "up_proj"
+        ],
+        "post_norms_unchanged": true,
+        "q_norm_k_norm_unchanged": true,
+        "basis": "identity",
+        "sliced_dimensions": 0
+      },
+      {
+        "layer": 16,
+        "attention_pre_norm_fused_into": [
+          "q_proj",
+          "k_proj",
+          "v_proj"
+        ],
+        "feedforward_pre_norm_fused_into": [
+          "gate_proj",
+          "up_proj"
+        ],
+        "post_norms_unchanged": true,
+        "q_norm_k_norm_unchanged": true,
+        "basis": "identity",
+        "sliced_dimensions": 0
+      },
+      {
+        "layer": 17,
+        "attention_pre_norm_fused_into": [
+          "q_proj",
+          "k_proj",
+          "v_proj"
+        ],
+        "feedforward_pre_norm_fused_into": [
+          "gate_proj",
+          "up_proj"
+        ],
+        "post_norms_unchanged": true,
+        "q_norm_k_norm_unchanged": true,
+        "basis": "identity",
+        "sliced_dimensions": 0
+      },
+      {
+        "layer": 18,
+        "attention_pre_norm_fused_into": [
+          "q_proj",
+          "k_proj",
+          "v_proj"
+        ],
+        "feedforward_pre_norm_fused_into": [
+          "gate_proj",
+          "up_proj"
+        ],
+        "post_norms_unchanged": true,
+        "q_norm_k_norm_unchanged": true,
+        "basis": "identity",
+        "sliced_dimensions": 0
+      },
+      {
+        "layer": 19,
+        "attention_pre_norm_fused_into": [
+          "q_proj",
+          "k_proj",
+          "v_proj"
+        ],
+        "feedforward_pre_norm_fused_into": [
+          "gate_proj",
+          "up_proj"
+        ],
+        "post_norms_unchanged": true,
+        "q_norm_k_norm_unchanged": true,
+        "basis": "identity",
+        "sliced_dimensions": 0
+      },
+      {
+        "layer": 20,
+        "attention_pre_norm_fused_into": [
+          "q_proj",
+          "k_proj",
+          "v_proj"
+        ],
+        "feedforward_pre_norm_fused_into": [
+          "gate_proj",
+          "up_proj"
+        ],
+        "post_norms_unchanged": true,
+        "q_norm_k_norm_unchanged": true,
+        "basis": "identity",
+        "sliced_dimensions": 0
+      },
+      {
+        "layer": 21,
+        "attention_pre_norm_fused_into": [
+          "q_proj",
+          "k_proj",
+          "v_proj"
+        ],
+        "feedforward_pre_norm_fused_into": [
+          "gate_proj",
+          "up_proj"
+        ],
+        "post_norms_unchanged": true,
+        "q_norm_k_norm_unchanged": true,
+        "basis": "identity",
+        "sliced_dimensions": 0
+      },
+      {
+        "layer": 22,
+        "attention_pre_norm_fused_into": [
+          "q_proj",
+          "k_proj",
+          "v_proj"
+        ],
+        "feedforward_pre_norm_fused_into": [
+          "gate_proj",
+          "up_proj"
+        ],
+        "post_norms_unchanged": true,
+        "q_norm_k_norm_unchanged": true,
+        "basis": "identity",
+        "sliced_dimensions": 0
+      },
+      {
+        "layer": 23,
+        "attention_pre_norm_fused_into": [
+          "q_proj",
+          "k_proj",
+          "v_proj"
+        ],
+        "feedforward_pre_norm_fused_into": [
+          "gate_proj",
+          "up_proj"
+        ],
+        "post_norms_unchanged": true,
+        "q_norm_k_norm_unchanged": true,
+        "basis": "identity",
+        "sliced_dimensions": 0
+      },
+      {
+        "layer": 24,
+        "attention_pre_norm_fused_into": [
+          "q_proj",
+          "k_proj",
+          "v_proj"
+        ],
+        "feedforward_pre_norm_fused_into": [
+          "gate_proj",
+          "up_proj"
+        ],
+        "post_norms_unchanged": true,
+        "q_norm_k_norm_unchanged": true,
+        "basis": "identity",
+        "sliced_dimensions": 0
+      },
+      {
+        "layer": 25,
+        "attention_pre_norm_fused_into": [
+          "q_proj",
+          "k_proj",
+          "v_proj"
+        ],
+        "feedforward_pre_norm_fused_into": [
+          "gate_proj",
+          "up_proj"
+        ],
+        "post_norms_unchanged": true,
+        "q_norm_k_norm_unchanged": true,
+        "basis": "identity",
+        "sliced_dimensions": 0
+      },
+      {
+        "layer": 26,
+        "attention_pre_norm_fused_into": [
+          "q_proj",
+          "k_proj",
+          "v_proj"
+        ],
+        "feedforward_pre_norm_fused_into": [
+          "gate_proj",
+          "up_proj"
+        ],
+        "post_norms_unchanged": true,
+        "q_norm_k_norm_unchanged": true,
+        "basis": "identity",
+        "sliced_dimensions": 0
+      },
+      {
+        "layer": 27,
+        "attention_pre_norm_fused_into": [
+          "q_proj",
+          "k_proj",
+          "v_proj"
+        ],
+        "feedforward_pre_norm_fused_into": [
+          "gate_proj",
+          "up_proj"
+        ],
+        "post_norms_unchanged": true,
+        "q_norm_k_norm_unchanged": true,
+        "basis": "identity",
+        "sliced_dimensions": 0
+      },
+      {
+        "layer": 28,
+        "attention_pre_norm_fused_into": [
+          "q_proj",
+          "k_proj",
+          "v_proj"
+        ],
+        "feedforward_pre_norm_fused_into": [
+          "gate_proj",
+          "up_proj"
+        ],
+        "post_norms_unchanged": true,
+        "q_norm_k_norm_unchanged": true,
+        "basis": "identity",
+        "sliced_dimensions": 0
+      },
+      {
+        "layer": 29,
+        "attention_pre_norm_fused_into": [
+          "q_proj",
+          "k_proj",
+          "v_proj"
+        ],
+        "feedforward_pre_norm_fused_into": [
+          "gate_proj",
+          "up_proj"
+        ],
+        "post_norms_unchanged": true,
+        "q_norm_k_norm_unchanged": true,
+        "basis": "identity",
+        "sliced_dimensions": 0
+      },
+      {
+        "layer": 30,
+        "attention_pre_norm_fused_into": [
+          "q_proj",
+          "k_proj",
+          "v_proj"
+        ],
+        "feedforward_pre_norm_fused_into": [
+          "gate_proj",
+          "up_proj"
+        ],
+        "post_norms_unchanged": true,
+        "q_norm_k_norm_unchanged": true,
+        "basis": "identity",
+        "sliced_dimensions": 0
+      },
+      {
+        "layer": 31,
+        "attention_pre_norm_fused_into": [
+          "q_proj",
+          "k_proj",
+          "v_proj"
+        ],
+        "feedforward_pre_norm_fused_into": [
+          "gate_proj",
+          "up_proj"
+        ],
+        "post_norms_unchanged": true,
+        "q_norm_k_norm_unchanged": true,
+        "basis": "identity",
+        "sliced_dimensions": 0
+      },
+      {
+        "layer": 32,
+        "attention_pre_norm_fused_into": [
+          "q_proj",
+          "k_proj",
+          "v_proj"
+        ],
+        "feedforward_pre_norm_fused_into": [
+          "gate_proj",
+          "up_proj"
+        ],
+        "post_norms_unchanged": true,
+        "q_norm_k_norm_unchanged": true,
+        "basis": "identity",
+        "sliced_dimensions": 0
+      },
+      {
+        "layer": 33,
+        "attention_pre_norm_fused_into": [
+          "q_proj",
+          "k_proj",
+          "v_proj"
+        ],
+        "feedforward_pre_norm_fused_into": [
+          "gate_proj",
+          "up_proj"
+        ],
+        "post_norms_unchanged": true,
+        "q_norm_k_norm_unchanged": true,
+        "basis": "identity",
+        "sliced_dimensions": 0
+      }
+    ],
+    "protected_norm_sha256": {
+      "model.language_model.layers.0.self_attn.q_norm.weight": "8670a2fd55c9fc588bb1f8f6e9254cb691be63009c6e36150da49526b038a057",
+      "model.language_model.layers.0.self_attn.k_norm.weight": "e46d7ee427170e3a0f1bb86a4de95ed81a0ba8b2cdaee9a9114f04e6303322e8",
+      "model.language_model.layers.0.post_attention_layernorm.weight": "f791fd5d109b97292fb91abc5329538f597342641cdae2eeba99dfcf8d1f9cf7",
+      "model.language_model.layers.0.post_feedforward_layernorm.weight": "489a2b80cd6109d9146b9fa8f30d2b96354c68f9856a4b3689a24353a2d3fcba",
+      "model.language_model.layers.1.self_attn.q_norm.weight": "398c6db0bc8add281106217650bed67f215ee1deb2e11b9ccecf01e0c7041917",
+      "model.language_model.layers.1.self_attn.k_norm.weight": "4aa5f08e9036146d0a5675b9d3a32fab4f084c6ee4361a191346af59d47e2d62",
+      "model.language_model.layers.1.post_attention_layernorm.weight": "67ab84c2517c373b1e90b72bc33349b33152487847ff6931e75260e091f0e689",
+      "model.language_model.layers.1.post_feedforward_layernorm.weight": "3fda8e4250eb8b53af45711f48d9b1bf271f9036f1c0f680ae164f98bdf7c7c9",
+      "model.language_model.layers.2.self_attn.q_norm.weight": "757455780265c79d2c0b4d3e1fb2fc7a6fe78284d1f9619d53349f0b1620bd32",
+      "model.language_model.layers.2.self_attn.k_norm.weight": "4406b6dd5257e59486bf577bf378fa38aadf1be437ea9e495c144d5531ba2b10",
+      "model.language_model.layers.2.post_attention_layernorm.weight": "a3848b0756e19d5b443f202611cdaef84c0fc942c493d6d3189f75021a69dced",
+      "model.language_model.layers.2.post_feedforward_layernorm.weight": "a141d0a1031aa275c13dbd569b71c473de97a6395469f99da83dedd16b8d1495",
+      "model.language_model.layers.3.self_attn.q_norm.weight": "70d284a8fc8d08918158c538f2bf6257c2d850e153c103fe9a8f2545a0f8b250",
+      "model.language_model.layers.3.self_attn.k_norm.weight": "3593f46a87516c4fc5793562942a24fc767864009a5326ca3e1a1d63a51e8fae",
+      "model.language_model.layers.3.post_attention_layernorm.weight": "ad121f2b6b5d30d2180aaaccbd5cf7f4babdec55e887a4eaf2a807e528187822",
+      "model.language_model.layers.3.post_feedforward_layernorm.weight": "53f8be75f71c6af5d92f71ffefb4615b82bf3f205b0e36c8ae6c75a4e9d89cd9",
+      "model.language_model.layers.4.self_attn.q_norm.weight": "7310be65c1034b803db23028c93ec83747d0580f472cb9e50a958fe2414b2bef",
+      "model.language_model.layers.4.self_attn.k_norm.weight": "f4f6892d5ba2210e1ab6b1f5468a65ec0048491e7b5fe61f67298fcd44717e6b",
+      "model.language_model.layers.4.post_attention_layernorm.weight": "4f8c60cded69b05f6b946dcd64c074829bd27ee489cf5000126eee9d7d9826bd",
+      "model.language_model.layers.4.post_feedforward_layernorm.weight": "031479cabd197b75cfc00d50292d4e22ced2e8764b1d0ba72d8f6a599be9d4c4",
+      "model.language_model.layers.5.self_attn.q_norm.weight": "dc14d3a4747390c1d29f029e98590723ad6dcadeb7a559bc260c3d7404ccde8b",
+      "model.language_model.layers.5.self_attn.k_norm.weight": "20ac8890520ab4e4f3138e8f16af4f74db395da5e29687f3c4d0c6e7d6d57a2b",
+      "model.language_model.layers.5.post_attention_layernorm.weight": "6dc7055452fb53c18c463ef1717ac3d8d10ed38953b883db86eebb9e766cbf49",
+      "model.language_model.layers.5.post_feedforward_layernorm.weight": "b6851a15a9df328661fd171652f089ce1234349e16aba594196aa8dfe1711675",
+      "model.language_model.layers.6.self_attn.q_norm.weight": "5fd3fec530ba6d68c96ce4fbb6bc44d4f9e01fe7013da4ff9f0f5435845fa7d0",
+      "model.language_model.layers.6.self_attn.k_norm.weight": "325483c17dfc1e2522d646ee947be9cdefbadb7cfcf3032c33f1c262b8dc822d",
+      "model.language_model.layers.6.post_attention_layernorm.weight": "acb1a2587469fed05ae948d98666d43d971600880619a91ba37b02f267c51dab",
+      "model.language_model.layers.6.post_feedforward_layernorm.weight": "2745225f7644784c6d9fce848748d436ac2b4d3d7969afe7995a05aa69399e5e",
+      "model.language_model.layers.7.self_attn.q_norm.weight": "a8725241a4e2c2d45e8b3e1b591118ceb9d8c3f9e80b461dde8a7b13ccd60bd7",
+      "model.language_model.layers.7.self_attn.k_norm.weight": "16805c39ce7ebe652710af8e81f265ce9531c9cf257a4777fc48b63b35bc4538",
+      "model.language_model.layers.7.post_attention_layernorm.weight": "dfa639ad296179a32ba230f225e79f8d3182300e54a45f0cee0202bffe23a436",
+      "model.language_model.layers.7.post_feedforward_layernorm.weight": "075a985a56e9c690ba6f7d1db7413df65ab8c631579c8c8c821f137e4b1945f7",
+      "model.language_model.layers.8.self_attn.q_norm.weight": "72e04981fcdb58f3dcfbf55961896a2841b1bcaef57af76e1e0dbe8069f4d918",
+      "model.language_model.layers.8.self_attn.k_norm.weight": "221059cf46267c85b9220ceecdb9cd69479642460e50f608f76e6540b9ce0d48",
+      "model.language_model.layers.8.post_attention_layernorm.weight": "5f49a2a34834f444a46a22c9459e544e8f5d43c197ba4c18f37817263b928f13",
+      "model.language_model.layers.8.post_feedforward_layernorm.weight": "f097cd62a43bcca84431b0d7b91724b2afc8f416eefae60b99ad018c5560d23c",
+      "model.language_model.layers.9.self_attn.q_norm.weight": "63c844c110229e10ec931c28c083d0f372c603a7466f27a2efbd8f051f68ed17",
+      "model.language_model.layers.9.self_attn.k_norm.weight": "ad5ca96bf1f2bd830d69afccff5531172d2b7e4322f5e81a493a384aaf68ce83",
+      "model.language_model.layers.9.post_attention_layernorm.weight": "2d22ba76cb652223cd162bd9ad1a1fdfa8dbe323dc8c3416185a96960a42691f",
+      "model.language_model.layers.9.post_feedforward_layernorm.weight": "ca95e0d813a1f1bfd167187607f1d0f6c1edfa7fb36bd0d5533c19223a38501f",
+      "model.language_model.layers.10.self_attn.q_norm.weight": "88ccd3dfc53409098a2637954aee3d8a0ec86e21c9cb10f56600327245f718e6",
+      "model.language_model.layers.10.self_attn.k_norm.weight": "28a4fcc96e2a559c923409e7b83dda110ec22d2ba691e8e45d2ded3fb36661b9",
+      "model.language_model.layers.10.post_attention_layernorm.weight": "32ecb5543178c07d376841993653f7e0113d10f786f76b8c25d77fa3d4295231",
+      "model.language_model.layers.10.post_feedforward_layernorm.weight": "6f25b72dd7c1434bebb906addd1dea71d3a9f9c2cbf475af94061a5290b2a6ba",
+      "model.language_model.layers.11.self_attn.q_norm.weight": "00302a6a2253780fca492ffd8c295bc8b62504cdbadcae50c5ba5220c240257d",
+      "model.language_model.layers.11.self_attn.k_norm.weight": "492e94381abd81bc132b6c22d856a5ca2a432eb7aecf3464a9b7362f0b8a47b1",
+      "model.language_model.layers.11.post_attention_layernorm.weight": "42655e1c96b40f9d08ba7611223165646e2420683bf2f8640d2c6fb2d0a80805",
+      "model.language_model.layers.11.post_feedforward_layernorm.weight": "063b6b9316ec2c6db7b655801bbc157623b72aec2bacb093941176c2abfff528",
+      "model.language_model.layers.12.self_attn.q_norm.weight": "fb4bd0d1e5911a79b2d4ffa87664c8c7433f564842f80e85fa8102d483c6d70a",
+      "model.language_model.layers.12.self_attn.k_norm.weight": "8c1c411f546ac3052515aa1f93834937abf3c7711e0082ff4990f1298ae8e5cd",
+      "model.language_model.layers.12.post_attention_layernorm.weight": "bc90dfce7d047d058f8e9ac0a2d9df8a92a286fb1ce261c0a03560379db59f5d",
+      "model.language_model.layers.12.post_feedforward_layernorm.weight": "9ef363ae71ed9e527268dcd5ed9acbbb0a64c7896e44357429208561caba20fc",
+      "model.language_model.layers.13.self_attn.q_norm.weight": "09bb3faa914d7b20454389cc0e05ca6a91e30733a0df4ee26246dc444384bee4",
+      "model.language_model.layers.13.self_attn.k_norm.weight": "eacce197a46ba53fb243e2dc80bce64f594b1e93ec3c012c31c17226822e6b44",
+      "model.language_model.layers.13.post_attention_layernorm.weight": "5630f9117a4b45f56725b6efe17102b300b4f85ab8efb0b4fd3185bb83e8aa76",
+      "model.language_model.layers.13.post_feedforward_layernorm.weight": "80cee25ef4235b24df05bade667ecac1e668b92a05908cb70967866d348f647e",
+      "model.language_model.layers.14.self_attn.q_norm.weight": "a5d390b2bbacbe5f110afe61d5395a68a81910a3efb40a25f3da3263859ecaf4",
+      "model.language_model.layers.14.self_attn.k_norm.weight": "8f5b8a7dce57ccb546ca1664947eba6317ec45a2b9fddf56bdcde3fd0901ad18",
+      "model.language_model.layers.14.post_attention_layernorm.weight": "5be64b007ad09695ecfeb55af500107b51d6a5c965926ce4eb1967bbdadd850e",
+      "model.language_model.layers.14.post_feedforward_layernorm.weight": "adb4ad5f813e8db2f081c6a1f47fbd55eaac0ab161a0c44810a8a374f48bd350",
+      "model.language_model.layers.15.self_attn.q_norm.weight": "48dcfe6f2ac1a32c61fc06e2874c55081dc29610d2d79163e35decd0913c23bb",
+      "model.language_model.layers.15.self_attn.k_norm.weight": "9e517153b216c23eac4f052c9ec59eab301a31909da1c1741f97cf14ae7c2218",
+      "model.language_model.layers.15.post_attention_layernorm.weight": "d92829921c9a35fddd24811ed467354e5f27ac3b9ae29bf4d366242930b14bfe",
+      "model.language_model.layers.15.post_feedforward_layernorm.weight": "1708de3da0188b48a05f9115c557e6697b97f8cdc9104f7bc80879738e565d23",
+      "model.language_model.layers.16.self_attn.q_norm.weight": "925b7d440ff1fdb4d2600fe91f0f484406eea45ba99057cc124dc7944a017ad1",
+      "model.language_model.layers.16.self_attn.k_norm.weight": "def14dc0d4dc4267df9fd31cf4a627f44844d4601216468cb6625d5a9ebb73a1",
+      "model.language_model.layers.16.post_attention_layernorm.weight": "8a8093e8da859ff1a41cfde98db220aa075de008a36eddc2e6610a7bf23f8bc7",
+      "model.language_model.layers.16.post_feedforward_layernorm.weight": "2b8df1bb668c4b27fb072659edeff1c5c4b5c27641da45ffa3735f5049dd1d00",
+      "model.language_model.layers.17.self_attn.q_norm.weight": "5212705fb86f1cc11cb73e92732e0286dbd7fc5c180f398b81d77678779ec82f",
+      "model.language_model.layers.17.self_attn.k_norm.weight": "c7bbd91d4ef213e626c869e3fa4518fcf241b8899c526202b245e50d8a24c87b",
+      "model.language_model.layers.17.post_attention_layernorm.weight": "1e9428a692321f4f7ee0bc72c78b00e530c94ab5ae4910bd3d55ffbbc81fe40c",
+      "model.language_model.layers.17.post_feedforward_layernorm.weight": "caf366ff2abf9a68fca48e817172e52f11889661d71cc121583ccf02b0389101",
+      "model.language_model.layers.18.self_attn.q_norm.weight": "ad593a560e1de32ad03d5f5240bd58ff1df51a82888524a2aa5fef5516803208",
+      "model.language_model.layers.18.self_attn.k_norm.weight": "e38e10085b52a4258b8894c982ae70402797f9ba796e75df0fcb1350301a3ce7",
+      "model.language_model.layers.18.post_attention_layernorm.weight": "7e9edc5ae9438fd55893a286c26041e76e8a859c70c2781c05dc773851616aba",
+      "model.language_model.layers.18.post_feedforward_layernorm.weight": "8a07e878e7afb7147849dac9fcb80cb392b875a5efb076c0d08bb5e03853d30d",
+      "model.language_model.layers.19.self_attn.q_norm.weight": "d213d25d1caf66331c2800dd5841bc5741f15d0f44531912f292b8eb91515827",
+      "model.language_model.layers.19.self_attn.k_norm.weight": "4960220f71875a669846f70b244af415c83593474f163878d59a693ae1da86c9",
+      "model.language_model.layers.19.post_attention_layernorm.weight": "886546734e01ed5e18f7daccb607216488f901c22dac0102916de44874ef2771",
+      "model.language_model.layers.19.post_feedforward_layernorm.weight": "2b609ad45a596a0891b67a7f7096566c305f845346228a1d5ecdd29c592e0e8c",
+      "model.language_model.layers.20.self_attn.q_norm.weight": "1bcda7287bfdb1ead18328ae1f36a77f3f40a395f24dbe84f372d26f1881e524",
+      "model.language_model.layers.20.self_attn.k_norm.weight": "ba915295b8f5a4ad5225b5cdcf5cd5c1b0be3c85c445306eec3d15146edc5791",
+      "model.language_model.layers.20.post_attention_layernorm.weight": "16a8fbd16229af19876bfd344b501bdab0be3d974d0dd08ab31a9438d4326949",
+      "model.language_model.layers.20.post_feedforward_layernorm.weight": "405fc634b0e66831d21aa05bf3c49a036b62ecaf4501e46aa688a53a43f37871",
+      "model.language_model.layers.21.self_attn.q_norm.weight": "0e4850dfdbf1273af54fadb5a20d6882a01fbc67bcd6efd541bf48d7d7e2e52e",
+      "model.language_model.layers.21.self_attn.k_norm.weight": "2c402b2a4ccc87c066ffd11232d71013dc1f34899e871b9009033c7d5b21d422",
+      "model.language_model.layers.21.post_attention_layernorm.weight": "62b715528f060f2d79d9d785b643969d1e1080b22036f0c6a365ea826c8e042d",
+      "model.language_model.layers.21.post_feedforward_layernorm.weight": "11f32f47e51fbdfcaf56dc20d3cf4914c79daf2b1d7854cb588b4115e049ee5c",
+      "model.language_model.layers.22.self_attn.q_norm.weight": "67ebf2170cab1996521bf0c4e167e2b1fea5a71e7f4a93216d81d0bc0552d9ea",
+      "model.language_model.layers.22.self_attn.k_norm.weight": "bf77f451a55bf2a82a075e322abd6fb9aaf10b5ee052a75482608cd22cc2afe1",
+      "model.language_model.layers.22.post_attention_layernorm.weight": "039fe9e58bddb11d45bc23b2fc870a5abcef17f596c055c6ce5904c7b7f0a548",
+      "model.language_model.layers.22.post_feedforward_layernorm.weight": "2a8207f72d50f51b5fe8cfa9f9a5312758bcc54eddf8934b6c7bc3925ce24a2c",
+      "model.language_model.layers.23.self_attn.q_norm.weight": "8b5c74c7d15fbae2d444de87e20ef228737d01dd0d18ef583012241cca2bfab3",
+      "model.language_model.layers.23.self_attn.k_norm.weight": "5bdf2c76e5793d954be4e69d9eb9d18e5e76a3d15a653cbe343387061fddefd2",
+      "model.language_model.layers.23.post_attention_layernorm.weight": "09d129efb1af997c54e00272f637bad720056fcfe8d6148986751d67c521abe6",
+      "model.language_model.layers.23.post_feedforward_layernorm.weight": "7b6672003ff348530f7f93ca7071947e3f2e48647c5b2f7f4960b136fe2a90af",
+      "model.language_model.layers.24.self_attn.q_norm.weight": "149d4d7c01f89044b56636bc56bb738dadf2e66866e0fd24966c471c35548387",
+      "model.language_model.layers.24.self_attn.k_norm.weight": "29f0bcdcfa11bfdc854e45b9fa8aef332bd73cd46c5a69aca575a0fcd766fdd5",
+      "model.language_model.layers.24.post_attention_layernorm.weight": "a16c92572bb6a64543cce74cfc9f4f28046d449a488f022a176f2c8059f58d53",
+      "model.language_model.layers.24.post_feedforward_layernorm.weight": "6a87fc2f2f205d54fb2356655b74b16c771e7374f87485cff5a08acc9b24e8f7",
+      "model.language_model.layers.25.self_attn.q_norm.weight": "6d08a5caddc5c9587b480bf8004554a224edf68ccc39b86b7d435a1e415deb73",
+      "model.language_model.layers.25.self_attn.k_norm.weight": "1fe0eebca44523783021e5aac2b1af098b84d2125fe967cfc1135e32e46ea342",
+      "model.language_model.layers.25.post_attention_layernorm.weight": "3eb9a6666fe4a3c02a36b6c7a138e66be7c817979cc66c721879e6634781e6e1",
+      "model.language_model.layers.25.post_feedforward_layernorm.weight": "3b079c791260ccbccac7a629f8be957b087539e04d37acab3dcbe6003b2ca83b",
+      "model.language_model.layers.26.self_attn.q_norm.weight": "bd1d026d1b4be805b9efc256e6368ff03274dfa654dbfa27a5bc175c53036c0d",
+      "model.language_model.layers.26.self_attn.k_norm.weight": "59437b9ae48448d7960a5e6b170545fa401b99d46b04cfca4c93743f9f576012",
+      "model.language_model.layers.26.post_attention_layernorm.weight": "41f75d8097e8fb89b392b71958720d3c2619e64f8e57b16d5de1636311e807df",
+      "model.language_model.layers.26.post_feedforward_layernorm.weight": "b3a2a9535daa5f508b67378cf263c8c368e25fcc3d464cf2ce08672e234bee0c",
+      "model.language_model.layers.27.self_attn.q_norm.weight": "3b3fb0d493626efce76c5ad445704b3b4c8090b8e59d7bfdce17dd68ce3cb31f",
+      "model.language_model.layers.27.self_attn.k_norm.weight": "7c4fdaf3cfc0114c9b47a2985cdaf4f3e92b37e909a28afce8dfd927674ce39b",
+      "model.language_model.layers.27.post_attention_layernorm.weight": "3abd858892e396ffc9486918e1e9685d8369f19eca46425ae82041dd300ca9f2",
+      "model.language_model.layers.27.post_feedforward_layernorm.weight": "622feca4cb6dd7dccb09e3e512ecc95f758856346bfb2f475a7b20bf7e384773",
+      "model.language_model.layers.28.self_attn.q_norm.weight": "b56d39fc6ef3ccd3ab41693190762d793374bbd24275a08b2ea937f374a3294c",
+      "model.language_model.layers.28.self_attn.k_norm.weight": "e183a42b49c5178c2e3b9c53578c2bdf8f74beac4ea0ac3ae1ad0771d3ae4e94",
+      "model.language_model.layers.28.post_attention_layernorm.weight": "deaa963a164b80ce3b71025b5254cc15ea7fa09e293184c4beebf8e8eb3c2d6d",
+      "model.language_model.layers.28.post_feedforward_layernorm.weight": "3e4df4e1df818bcae6970f4904bebf507ad6f4b9951dda6eb89c5b2fdd0b695e",
+      "model.language_model.layers.29.self_attn.q_norm.weight": "76a350cf4798b70653b9361ed06414522ac499767292a92606dcb9c1f6dfc05a",
+      "model.language_model.layers.29.self_attn.k_norm.weight": "4230d661b635a5dfac2c506de68b0a6831de3e8b7cb944c535fa91fb3accd631",
+      "model.language_model.layers.29.post_attention_layernorm.weight": "775bbf87f6db41762f8fc81201afa36558311016ad581ef424b2bb537ce81a08",
+      "model.language_model.layers.29.post_feedforward_layernorm.weight": "ed0a849c40f8dbc9954ebf3715041913a4c475e7b6025d3ca483e38999dcfaf2",
+      "model.language_model.layers.30.self_attn.q_norm.weight": "8d2fd54964252e49523cad7d380b16019eb42e37e53428379b8f1f97b7562661",
+      "model.language_model.layers.30.self_attn.k_norm.weight": "61b078d812d9e78dc52ae4821d9ccd6b807f12e6bc982ad3ccb43cdecbff5b85",
+      "model.language_model.layers.30.post_attention_layernorm.weight": "02e8f7e9acc6afee1d197bd2cfbdef1ec6898aefd7b0e95261910c00c7d2f62a",
+      "model.language_model.layers.30.post_feedforward_layernorm.weight": "7eac4006d25e6ab1eadae2c57e9baa5c4e424062e62f1a46522ad2825c8c88a7",
+      "model.language_model.layers.31.self_attn.q_norm.weight": "21a4cdcab6d71df10712bd7be71ff9d2f327b8153b23da5e074aa0615fdf03c9",
+      "model.language_model.layers.31.self_attn.k_norm.weight": "f28c79b0dbd71225cb9315a0f68a4aec71b53c8bc0a047fa37cbc4600dffd364",
+      "model.language_model.layers.31.post_attention_layernorm.weight": "c84647cd2eb382926e5f425e04b0663a4d16d0327fc5b497508643acebfe1711",
+      "model.language_model.layers.31.post_feedforward_layernorm.weight": "f5a96ad2b2a707605a90d671551e2565799176ea1be7c780204c9f9829508060",
+      "model.language_model.layers.32.self_attn.q_norm.weight": "486ad98dc90a83c9d936dd940462c8f4391f914b740b6f64d580fbe971c761fa",
+      "model.language_model.layers.32.self_attn.k_norm.weight": "faa4836a675087fc0b130571e3c94e6300a2359f309d8c969c38613b737ba678",
+      "model.language_model.layers.32.post_attention_layernorm.weight": "8a5bd6dd30c4fea9a12f6007631f945667704827ce01f155fce2e8f821d0187b",
+      "model.language_model.layers.32.post_feedforward_layernorm.weight": "13fc990198072ada60d922f71040581404a94d42e5ce1d3aa6601a7bfdb80213",
+      "model.language_model.layers.33.self_attn.q_norm.weight": "e8db5bedfc7f2624cc2e2665304ddbd660ac5f077caa702f1cf0dd0841afc9a1",
+      "model.language_model.layers.33.self_attn.k_norm.weight": "66c9345ea14fe2f89e5e92f490af8a4d493a468041c8d23725efaecfb006e6fa",
+      "model.language_model.layers.33.post_attention_layernorm.weight": "ad8e997084ea87024f1936645c67b2e45e069e16329cdc05a764aa3fbb51f94a",
+      "model.language_model.layers.33.post_feedforward_layernorm.weight": "50068846658f4287562cb64364496812abfab41317ed0ddd2fc54a9e6c54c596"
+    },
+    "changed_parameter_names": [
+      "model.language_model.layers.0.input_layernorm.weight",
+      "model.language_model.layers.0.mlp.gate_proj.weight",
+      "model.language_model.layers.0.mlp.up_proj.weight",
+      "model.language_model.layers.0.pre_feedforward_layernorm.weight",
+      "model.language_model.layers.0.self_attn.k_proj.weight",
+      "model.language_model.layers.0.self_attn.q_proj.weight",
+      "model.language_model.layers.0.self_attn.v_proj.weight",
+      "model.language_model.layers.1.input_layernorm.weight",
+      "model.language_model.layers.1.mlp.gate_proj.weight",
+      "model.language_model.layers.1.mlp.up_proj.weight",
+      "model.language_model.layers.1.pre_feedforward_layernorm.weight",
+      "model.language_model.layers.1.self_attn.k_proj.weight",
+      "model.language_model.layers.1.self_attn.q_proj.weight",
+      "model.language_model.layers.1.self_attn.v_proj.weight",
+      "model.language_model.layers.10.input_layernorm.weight",
+      "model.language_model.layers.10.mlp.gate_proj.weight",
+      "model.language_model.layers.10.mlp.up_proj.weight",
+      "model.language_model.layers.10.pre_feedforward_layernorm.weight",
+      "model.language_model.layers.10.self_attn.k_proj.weight",
+      "model.language_model.layers.10.self_attn.q_proj.weight",
+      "model.language_model.layers.10.self_attn.v_proj.weight",
+      "model.language_model.layers.11.input_layernorm.weight",
+      "model.language_model.layers.11.mlp.gate_proj.weight",
+      "model.language_model.layers.11.mlp.up_proj.weight",
+      "model.language_model.layers.11.pre_feedforward_layernorm.weight",
+      "model.language_model.layers.11.self_attn.k_proj.weight",
+      "model.language_model.layers.11.self_attn.q_proj.weight",
+      "model.language_model.layers.11.self_attn.v_proj.weight",
+      "model.language_model.layers.12.input_layernorm.weight",
+      "model.language_model.layers.12.mlp.gate_proj.weight",
+      "model.language_model.layers.12.mlp.up_proj.weight",
+      "model.language_model.layers.12.pre_feedforward_layernorm.weight",
+      "model.language_model.layers.12.self_attn.k_proj.weight",
+      "model.language_model.layers.12.self_attn.q_proj.weight",
+      "model.language_model.layers.12.self_attn.v_proj.weight",
+      "model.language_model.layers.13.input_layernorm.weight",
+      "model.language_model.layers.13.mlp.gate_proj.weight",
+      "model.language_model.layers.13.mlp.up_proj.weight",
+      "model.language_model.layers.13.pre_feedforward_layernorm.weight",
+      "model.language_model.layers.13.self_attn.k_proj.weight",
+      "model.language_model.layers.13.self_attn.q_proj.weight",
+      "model.language_model.layers.13.self_attn.v_proj.weight",
+      "model.language_model.layers.14.input_layernorm.weight",
+      "model.language_model.layers.14.mlp.gate_proj.weight",
+      "model.language_model.layers.14.mlp.up_proj.weight",
+      "model.language_model.layers.14.pre_feedforward_layernorm.weight",
+      "model.language_model.layers.14.self_attn.k_proj.weight",
+      "model.language_model.layers.14.self_attn.q_proj.weight",
+      "model.language_model.layers.14.self_attn.v_proj.weight",
+      "model.language_model.layers.15.input_layernorm.weight",
+      "model.language_model.layers.15.mlp.gate_proj.weight",
+      "model.language_model.layers.15.mlp.up_proj.weight",
+      "model.language_model.layers.15.pre_feedforward_layernorm.weight",
+      "model.language_model.layers.15.self_attn.k_proj.weight",
+      "model.language_model.layers.15.self_attn.q_proj.weight",
+      "model.language_model.layers.15.self_attn.v_proj.weight",
+      "model.language_model.layers.16.input_layernorm.weight",
+      "model.language_model.layers.16.mlp.gate_proj.weight",
+      "model.language_model.layers.16.mlp.up_proj.weight",
+      "model.language_model.layers.16.pre_feedforward_layernorm.weight",
+      "model.language_model.layers.16.self_attn.k_proj.weight",
+      "model.language_model.layers.16.self_attn.q_proj.weight",
+      "model.language_model.layers.16.self_attn.v_proj.weight",
+      "model.language_model.layers.17.input_layernorm.weight",
+      "model.language_model.layers.17.mlp.gate_proj.weight",
+      "model.language_model.layers.17.mlp.up_proj.weight",
+      "model.language_model.layers.17.pre_feedforward_layernorm.weight",
+      "model.language_model.layers.17.self_attn.k_proj.weight",
+      "model.language_model.layers.17.self_attn.q_proj.weight",
+      "model.language_model.layers.17.self_attn.v_proj.weight",
+      "model.language_model.layers.18.input_layernorm.weight",
+      "model.language_model.layers.18.mlp.gate_proj.weight",
+      "model.language_model.layers.18.mlp.up_proj.weight",
+      "model.language_model.layers.18.pre_feedforward_layernorm.weight",
+      "model.language_model.layers.18.self_attn.k_proj.weight",
+      "model.language_model.layers.18.self_attn.q_proj.weight",
+      "model.language_model.layers.18.self_attn.v_proj.weight",
+      "model.language_model.layers.19.input_layernorm.weight",
+      "model.language_model.layers.19.mlp.gate_proj.weight",
+      "model.language_model.layers.19.mlp.up_proj.weight",
+      "model.language_model.layers.19.pre_feedforward_layernorm.weight",
+      "model.language_model.layers.19.self_attn.k_proj.weight",
+      "model.language_model.layers.19.self_attn.q_proj.weight",
+      "model.language_model.layers.19.self_attn.v_proj.weight",
+      "model.language_model.layers.2.input_layernorm.weight",
+      "model.language_model.layers.2.mlp.gate_proj.weight",
+      "model.language_model.layers.2.mlp.up_proj.weight",
+      "model.language_model.layers.2.pre_feedforward_layernorm.weight",
+      "model.language_model.layers.2.self_attn.k_proj.weight",
+      "model.language_model.layers.2.self_attn.q_proj.weight",
+      "model.language_model.layers.2.self_attn.v_proj.weight",
+      "model.language_model.layers.20.input_layernorm.weight",
+      "model.language_model.layers.20.mlp.gate_proj.weight",
+      "model.language_model.layers.20.mlp.up_proj.weight",
+      "model.language_model.layers.20.pre_feedforward_layernorm.weight",
+      "model.language_model.layers.20.self_attn.k_proj.weight",
+      "model.language_model.layers.20.self_attn.q_proj.weight",
+      "model.language_model.layers.20.self_attn.v_proj.weight",
+      "model.language_model.layers.21.input_layernorm.weight",
+      "model.language_model.layers.21.mlp.gate_proj.weight",
+      "model.language_model.layers.21.mlp.up_proj.weight",
+      "model.language_model.layers.21.pre_feedforward_layernorm.weight",
+      "model.language_model.layers.21.self_attn.k_proj.weight",
+      "model.language_model.layers.21.self_attn.q_proj.weight",
+      "model.language_model.layers.21.self_attn.v_proj.weight",
+      "model.language_model.layers.22.input_layernorm.weight",
+      "model.language_model.layers.22.mlp.gate_proj.weight",
+      "model.language_model.layers.22.mlp.up_proj.weight",
+      "model.language_model.layers.22.pre_feedforward_layernorm.weight",
+      "model.language_model.layers.22.self_attn.k_proj.weight",
+      "model.language_model.layers.22.self_attn.q_proj.weight",
+      "model.language_model.layers.22.self_attn.v_proj.weight",
+      "model.language_model.layers.23.input_layernorm.weight",
+      "model.language_model.layers.23.mlp.gate_proj.weight",
+      "model.language_model.layers.23.mlp.up_proj.weight",
+      "model.language_model.layers.23.pre_feedforward_layernorm.weight",
+      "model.language_model.layers.23.self_attn.k_proj.weight",
+      "model.language_model.layers.23.self_attn.q_proj.weight",
+      "model.language_model.layers.23.self_attn.v_proj.weight",
+      "model.language_model.layers.24.input_layernorm.weight",
+      "model.language_model.layers.24.mlp.gate_proj.weight",
+      "model.language_model.layers.24.mlp.up_proj.weight",
+      "model.language_model.layers.24.pre_feedforward_layernorm.weight",
+      "model.language_model.layers.24.self_attn.k_proj.weight",
+      "model.language_model.layers.24.self_attn.q_proj.weight",
+      "model.language_model.layers.24.self_attn.v_proj.weight",
+      "model.language_model.layers.25.input_layernorm.weight",
+      "model.language_model.layers.25.mlp.gate_proj.weight",
+      "model.language_model.layers.25.mlp.up_proj.weight",
+      "model.language_model.layers.25.pre_feedforward_layernorm.weight",
+      "model.language_model.layers.25.self_attn.k_proj.weight",
+      "model.language_model.layers.25.self_attn.q_proj.weight",
+      "model.language_model.layers.25.self_attn.v_proj.weight",
+      "model.language_model.layers.26.input_layernorm.weight",
+      "model.language_model.layers.26.mlp.gate_proj.weight",
+      "model.language_model.layers.26.mlp.up_proj.weight",
+      "model.language_model.layers.26.pre_feedforward_layernorm.weight",
+      "model.language_model.layers.26.self_attn.k_proj.weight",
+      "model.language_model.layers.26.self_attn.q_proj.weight",
+      "model.language_model.layers.26.self_attn.v_proj.weight",
+      "model.language_model.layers.27.input_layernorm.weight",
+      "model.language_model.layers.27.mlp.gate_proj.weight",
+      "model.language_model.layers.27.mlp.up_proj.weight",
+      "model.language_model.layers.27.pre_feedforward_layernorm.weight",
+      "model.language_model.layers.27.self_attn.k_proj.weight",
+      "model.language_model.layers.27.self_attn.q_proj.weight",
+      "model.language_model.layers.27.self_attn.v_proj.weight",
+      "model.language_model.layers.28.input_layernorm.weight",
+      "model.language_model.layers.28.mlp.gate_proj.weight",
+      "model.language_model.layers.28.mlp.up_proj.weight",
+      "model.language_model.layers.28.pre_feedforward_layernorm.weight",
+      "model.language_model.layers.28.self_attn.k_proj.weight",
+      "model.language_model.layers.28.self_attn.q_proj.weight",
+      "model.language_model.layers.28.self_attn.v_proj.weight",
+      "model.language_model.layers.29.input_layernorm.weight",
+      "model.language_model.layers.29.mlp.gate_proj.weight",
+      "model.language_model.layers.29.mlp.up_proj.weight",
+      "model.language_model.layers.29.pre_feedforward_layernorm.weight",
+      "model.language_model.layers.29.self_attn.k_proj.weight",
+      "model.language_model.layers.29.self_attn.q_proj.weight",
+      "model.language_model.layers.29.self_attn.v_proj.weight",
+      "model.language_model.layers.3.input_layernorm.weight",
+      "model.language_model.layers.3.mlp.gate_proj.weight",
+      "model.language_model.layers.3.mlp.up_proj.weight",
+      "model.language_model.layers.3.pre_feedforward_layernorm.weight",
+      "model.language_model.layers.3.self_attn.k_proj.weight",
+      "model.language_model.layers.3.self_attn.q_proj.weight",
+      "model.language_model.layers.3.self_attn.v_proj.weight",
+      "model.language_model.layers.30.input_layernorm.weight",
+      "model.language_model.layers.30.mlp.gate_proj.weight",
+      "model.language_model.layers.30.mlp.up_proj.weight",
+      "model.language_model.layers.30.pre_feedforward_layernorm.weight",
+      "model.language_model.layers.30.self_attn.k_proj.weight",
+      "model.language_model.layers.30.self_attn.q_proj.weight",
+      "model.language_model.layers.30.self_attn.v_proj.weight",
+      "model.language_model.layers.31.input_layernorm.weight",
+      "model.language_model.layers.31.mlp.gate_proj.weight",
+      "model.language_model.layers.31.mlp.up_proj.weight",
+      "model.language_model.layers.31.pre_feedforward_layernorm.weight",
+      "model.language_model.layers.31.self_attn.k_proj.weight",
+      "model.language_model.layers.31.self_attn.q_proj.weight",
+      "model.language_model.layers.31.self_attn.v_proj.weight",
+      "model.language_model.layers.32.input_layernorm.weight",
+      "model.language_model.layers.32.mlp.gate_proj.weight",
+      "model.language_model.layers.32.mlp.up_proj.weight",
+      "model.language_model.layers.32.pre_feedforward_layernorm.weight",
+      "model.language_model.layers.32.self_attn.k_proj.weight",
+      "model.language_model.layers.32.self_attn.q_proj.weight",
+      "model.language_model.layers.32.self_attn.v_proj.weight",
+      "model.language_model.layers.33.input_layernorm.weight",
+      "model.language_model.layers.33.mlp.gate_proj.weight",
+      "model.language_model.layers.33.mlp.up_proj.weight",
+      "model.language_model.layers.33.pre_feedforward_layernorm.weight",
+      "model.language_model.layers.33.self_attn.k_proj.weight",
+      "model.language_model.layers.33.self_attn.q_proj.weight",
+      "model.language_model.layers.33.self_attn.v_proj.weight",
+      "model.language_model.layers.4.input_layernorm.weight",
+      "model.language_model.layers.4.mlp.gate_proj.weight",
+      "model.language_model.layers.4.mlp.up_proj.weight",
+      "model.language_model.layers.4.pre_feedforward_layernorm.weight",
+      "model.language_model.layers.4.self_attn.k_proj.weight",
+      "model.language_model.layers.4.self_attn.q_proj.weight",
+      "model.language_model.layers.4.self_attn.v_proj.weight",
+      "model.language_model.layers.5.input_layernorm.weight",
+      "model.language_model.layers.5.mlp.gate_proj.weight",
+      "model.language_model.layers.5.mlp.up_proj.weight",
+      "model.language_model.layers.5.pre_feedforward_layernorm.weight",
+      "model.language_model.layers.5.self_attn.k_proj.weight",
+      "model.language_model.layers.5.self_attn.q_proj.weight",
+      "model.language_model.layers.5.self_attn.v_proj.weight",
+      "model.language_model.layers.6.input_layernorm.weight",
+      "model.language_model.layers.6.mlp.gate_proj.weight",
+      "model.language_model.layers.6.mlp.up_proj.weight",
+      "model.language_model.layers.6.pre_feedforward_layernorm.weight",
+      "model.language_model.layers.6.self_attn.k_proj.weight",
+      "model.language_model.layers.6.self_attn.q_proj.weight",
+      "model.language_model.layers.6.self_attn.v_proj.weight",
+      "model.language_model.layers.7.input_layernorm.weight",
+      "model.language_model.layers.7.mlp.gate_proj.weight",
+      "model.language_model.layers.7.mlp.up_proj.weight",
+      "model.language_model.layers.7.pre_feedforward_layernorm.weight",
+      "model.language_model.layers.7.self_attn.k_proj.weight",
+      "model.language_model.layers.7.self_attn.q_proj.weight",
+      "model.language_model.layers.7.self_attn.v_proj.weight",
+      "model.language_model.layers.8.input_layernorm.weight",
+      "model.language_model.layers.8.mlp.gate_proj.weight",
+      "model.language_model.layers.8.mlp.up_proj.weight",
+      "model.language_model.layers.8.pre_feedforward_layernorm.weight",
+      "model.language_model.layers.8.self_attn.k_proj.weight",
+      "model.language_model.layers.8.self_attn.q_proj.weight",
+      "model.language_model.layers.8.self_attn.v_proj.weight",
+      "model.language_model.layers.9.input_layernorm.weight",
+      "model.language_model.layers.9.mlp.gate_proj.weight",
+      "model.language_model.layers.9.mlp.up_proj.weight",
+      "model.language_model.layers.9.pre_feedforward_layernorm.weight",
+      "model.language_model.layers.9.self_attn.k_proj.weight",
+      "model.language_model.layers.9.self_attn.q_proj.weight",
+      "model.language_model.layers.9.self_attn.v_proj.weight"
+    ],
+    "changed_parameter_sha256": {
+      "model.language_model.layers.0.input_layernorm.weight": {
+        "before": "2c52dbb06f5ca595ab534ef1db80c505eb94e695f8bbd2f8d48356c56c8fe5fb",
+        "after": "a11937f356a9b0ba592c82f5290bac8016cb33a3f9bc68d3490147c158ebb10d"
+      },
+      "model.language_model.layers.0.mlp.gate_proj.weight": {
+        "before": "bd3d9dfb0fef9dff85aac27119033f5045421aa82499da60bb5afefe628ff86d",
+        "after": "2be8705a5a4ecbda8b4cc1e47cdf9e3b219e5cc425d03d67e1422dba119f2646"
+      },
+      "model.language_model.layers.0.mlp.up_proj.weight": {
+        "before": "2165527e1b047c76f8c5235f7744fc2b4df513179b3a99efee50d3f60f16ffcb",
+        "after": "2497e6a93aa447f3219ce3656ffccff364d54fe4af118f5fc7e00eddc07af0d2"
+      },
+      "model.language_model.layers.0.pre_feedforward_layernorm.weight": {
+        "before": "26dd05b66dd9258d25876057d12025a27cbc3f8b2cfd38bf98a903d4f5cdc87a",
+        "after": "a11937f356a9b0ba592c82f5290bac8016cb33a3f9bc68d3490147c158ebb10d"
+      },
+      "model.language_model.layers.0.self_attn.k_proj.weight": {
+        "before": "0c212add3d5ab051746bfe53a730f9a624bf1f3ac85d1fd27c359009a6c2301e",
+        "after": "154265116bafa10c0c0227fa7ce73595b7ec0fb9a349b638c8f094ffd0a3c0cb"
+      },
+      "model.language_model.layers.0.self_attn.q_proj.weight": {
+        "before": "72f5c1751042dca2156b8198897e41edd23bc8b34e2046554629d5b35b9de184",
+        "after": "5359b17181926206c24db334f8c28e5e18bb48962d608c874b4a24a894d9746e"
+      },
+      "model.language_model.layers.0.self_attn.v_proj.weight": {
+        "before": "fd2a777db2b7cf486762e75d678b4af11712b332c08cee0e7cba973d65b782b8",
+        "after": "4932b7c4a334b179152e7290dffe213d95fca1959388e461129fd3289f038a52"
+      },
+      "model.language_model.layers.1.input_layernorm.weight": {
+        "before": "0c361e39bfb1713a00d056e4a4610c1a39bca5c0f3a5b6ae798171224f4fb5c9",
+        "after": "a11937f356a9b0ba592c82f5290bac8016cb33a3f9bc68d3490147c158ebb10d"
+      },
+      "model.language_model.layers.1.mlp.gate_proj.weight": {
+        "before": "e9efe9973541b638a40cfac1ade7340a0346470c9361bf8393528b6c56dca8a2",
+        "after": "d9f647f03349fec4e31dee52f63ae57fb118d08b4e532736810444bb276c50c3"
+      },
+      "model.language_model.layers.1.mlp.up_proj.weight": {
+        "before": "efa89631fb2927bccb05fc78b7249df5700cff13cef7009b2922822a6f533370",
+        "after": "c474a39aabc74a8d2ef7382b87e41bcf3d4469366ce0efa5ae3ab2b719258458"
+      },
+      "model.language_model.layers.1.pre_feedforward_layernorm.weight": {
+        "before": "ce85433b6660cd9f3468707f892caf39014357de2e60713fd290854fb81565d4",
+        "after": "a11937f356a9b0ba592c82f5290bac8016cb33a3f9bc68d3490147c158ebb10d"
+      },
+      "model.language_model.layers.1.self_attn.k_proj.weight": {
+        "before": "98b5e5d54aef1ade539f26718bd383fcf93c0656fc2bdbf98a64b3b2ff238b4c",
+        "after": "b4174d59cc9d9b1f3b900b301172129ec56ba42d0d0541703e7c859d1866848f"
+      },
+      "model.language_model.layers.1.self_attn.q_proj.weight": {
+        "before": "26c89090f18f2c31f766677ccf065f000043fd1a4aa911b301350ff0aad4cba0",
+        "after": "ac9614c583b8ea27601322f0f1818b8a5fcb5a95d4e05a745f72ac4a095cd35f"
+      },
+      "model.language_model.layers.1.self_attn.v_proj.weight": {
+        "before": "68acb604571004a6a7a18022043eee79baccc77ff7e7461bf0812b3b9d29d5a1",
+        "after": "d55c70570e431d7c1b2d8c56ce323690a873c3f9586f13263ad4aba59e74061d"
+      },
+      "model.language_model.layers.10.input_layernorm.weight": {
+        "before": "1463cc0a71b75c81a8b863d28dacda2001949735f6cb23d8d31e356193c6e119",
+        "after": "a11937f356a9b0ba592c82f5290bac8016cb33a3f9bc68d3490147c158ebb10d"
+      },
+      "model.language_model.layers.10.mlp.gate_proj.weight": {
+        "before": "02516561b6c3951dc0f6b9c4ad794368b2c71a5186b2d1d066cf2d43e5293c84",
+        "after": "1567c7847e6cd1b3d68c6d6a7837abf56428568ef4cc3f500e29e1bdec70b39f"
+      },
+      "model.language_model.layers.10.mlp.up_proj.weight": {
+        "before": "c50b78423239d3f4b6cc4bbf2c7ceb07aa45d80b402b963986afc732a489c18a",
+        "after": "14a136a71bbe4ff3aea48dd2c59b26f2f437e18ac84dd7cc74a84c181500eb15"
+      },
+      "model.language_model.layers.10.pre_feedforward_layernorm.weight": {
+        "before": "d7ad773d49d5d9d84f54e7e6b4742108568dc6b347df79d32e2cdb0462d36754",
+        "after": "a11937f356a9b0ba592c82f5290bac8016cb33a3f9bc68d3490147c158ebb10d"
+      },
+      "model.language_model.layers.10.self_attn.k_proj.weight": {
+        "before": "ad12ea622a9eb0f5c0f6f51016387cda8d77f16f37eeb4e3fdbbc724e3ae6acd",
+        "after": "6520496615d7a261eeea3a5b8e538f1c97a367143616693b9b28bd87a74e75d1"
+      },
+      "model.language_model.layers.10.self_attn.q_proj.weight": {
+        "before": "a52da0a8442589d80b7aa5bb61b549e03c1b2eb4cf3f33b024de41e501eb4c26",
+        "after": "ce0742a7fe6e25170bd2fab0aa5ca83ffa63b61467982aaf62dd36847552bb0d"
+      },
+      "model.language_model.layers.10.self_attn.v_proj.weight": {
+        "before": "ecdd5b0a3889b7d77dc49d5d8e9d3344c59f01bfc80c543981c4f413e8a8807a",
+        "after": "98ba6ea8d983cb815e892e944b10496dca9e3a996003f32cf210355390312337"
+      },
+      "model.language_model.layers.11.input_layernorm.weight": {
+        "before": "54c81aced00dd27a2d90f7767e781cb4c55a73a0d0ab6076dc46d96a139c92be",
+        "after": "a11937f356a9b0ba592c82f5290bac8016cb33a3f9bc68d3490147c158ebb10d"
+      },
+      "model.language_model.layers.11.mlp.gate_proj.weight": {
+        "before": "2588840c37dad8f8d41385645216a3e03831f87ade5e66025d49154e4940d722",
+        "after": "cf8c24ce7e11e89a54179027b8d5e149243d9e2a0ec23e665d5f4110e9dfad00"
+      },
+      "model.language_model.layers.11.mlp.up_proj.weight": {
+        "before": "9cb141e6c23aac023f734bb57e79dd1ef9519395dbb8d904d6631cdd3bdaa1d1",
+        "after": "9c8dc12d275187ebcca655db0db85ca55285902d871a9e858f2ce42ff642ad92"
+      },
+      "model.language_model.layers.11.pre_feedforward_layernorm.weight": {
+        "before": "c5f82d07cd8edb128cc6c1303e4350483d52eb607d56ad306de9f5add2a517aa",
+        "after": "a11937f356a9b0ba592c82f5290bac8016cb33a3f9bc68d3490147c158ebb10d"
+      },
+      "model.language_model.layers.11.self_attn.k_proj.weight": {
+        "before": "be5ec63d336b2982ea7f26d92af14aee1b35e033063b0fe8ae99a87455e12d63",
+        "after": "6d7f3f059f02c457099409c8166a0c4dc86bd667ce6082f5ca30ef12284b8564"
+      },
+      "model.language_model.layers.11.self_attn.q_proj.weight": {
+        "before": "36728c743c4dd7ef9be650d7cc2bfcf08def38242402d09552861badfb46f661",
+        "after": "9e62ed1736c44c830b4201e17c03fa04e0d2558e510f0f5c8795ee45cbb82d54"
+      },
+      "model.language_model.layers.11.self_attn.v_proj.weight": {
+        "before": "e422971ef95fa499def6e1139cc10ba51774a948bbf53ce7416e3d39d22ecd52",
+        "after": "32a65638d3d1bbfb25fb768fc3b308672a1cfe65a5b557ae84b60672851c2df1"
+      },
+      "model.language_model.layers.12.input_layernorm.weight": {
+        "before": "1d74f52fbf40a3cad0fd2154b62a4cbcccc6251bda1de108cdbeaaf8fb760dcc",
+        "after": "a11937f356a9b0ba592c82f5290bac8016cb33a3f9bc68d3490147c158ebb10d"
+      },
+      "model.language_model.layers.12.mlp.gate_proj.weight": {
+        "before": "7232a73cb44bf0eb1821aad3dd53266c91d65d8427cc35b5bede368c620680dc",
+        "after": "4c6babf6a643627a39688c111011a597ae7afd89c50d787f7d6f5f201176ae72"
+      },
+      "model.language_model.layers.12.mlp.up_proj.weight": {
+        "before": "66830369258b97c6341603be56a02127116a8857dc4d67f0788d4b1e0782e4a4",
+        "after": "daee9ae6ef83ff07c32b2d5101b72c7b739ded299d99e1e16b85087bbec90619"
+      },
+      "model.language_model.layers.12.pre_feedforward_layernorm.weight": {
+        "before": "e0c28b8f6ea57e7ed73f2fdec4d8a47f059fe7fd142b13c319f0a97a07d70b2f",
+        "after": "a11937f356a9b0ba592c82f5290bac8016cb33a3f9bc68d3490147c158ebb10d"
+      },
+      "model.language_model.layers.12.self_attn.k_proj.weight": {
+        "before": "06ba59cfe4b974b682a34ca314839e72359e22ea642c1cf02168a3c014386e7e",
+        "after": "e072665ae6d3b3cce214429f448e6c7e7bcc6bd808a72c98d69a5bbf90438ec2"
+      },
+      "model.language_model.layers.12.self_attn.q_proj.weight": {
+        "before": "8a28f795349f2e6834173686002746e47d62f26353cd8c695ba28663c03138b1",
+        "after": "6d4b777b3151a4826724179dc932486f9798d7de0b7eb1f83a7c66ecc21a02b2"
+      },
+      "model.language_model.layers.12.self_attn.v_proj.weight": {
+        "before": "f2850355fdbbf7436b1123a6ad2514620b1f6e41f8cf714e1eb3dff0776662fc",
+        "after": "cbf367e82f3c29dbab9aa6bc9b57421b3d7311fc6efcf2d2a3265903a207fe6e"
+      },
+      "model.language_model.layers.13.input_layernorm.weight": {
+        "before": "899db6e3df0508ae72672bc284326f7484e352ed9b685f2f38629c72cc98f187",
+        "after": "a11937f356a9b0ba592c82f5290bac8016cb33a3f9bc68d3490147c158ebb10d"
+      },
+      "model.language_model.layers.13.mlp.gate_proj.weight": {
+        "before": "a886cfa11d68e4101d90121e96f69b2db035b5df770a9f2dad46b2d25160d1ed",
+        "after": "f595017f5a08b415abad048c58be419d4be5a3901ad6e90efb1b20f5995cd4bd"
+      },
+      "model.language_model.layers.13.mlp.up_proj.weight": {
+        "before": "d0251ce298d85710a3917755eb27c49b90d709134a1b2c78798cb9c42c458045",
+        "after": "e95937e24782f7cca227b919d0b11afeb1048a38bb815b1c37564492cf098f51"
+      },
+      "model.language_model.layers.13.pre_feedforward_layernorm.weight": {
+        "before": "71a21fe438ef7e997b485fa4110b10057518c6e7d40e94c71331e68e379eefef",
+        "after": "a11937f356a9b0ba592c82f5290bac8016cb33a3f9bc68d3490147c158ebb10d"
+      },
+      "model.language_model.layers.13.self_attn.k_proj.weight": {
+        "before": "0a052345e47a1574c1c5ad587f747faedc43706e9ead75747c199fcd631aac6a",
+        "after": "4c23a062f3517059438329e11362f2dd7eb5198085071c3c3b5e274c95feec97"
+      },
+      "model.language_model.layers.13.self_attn.q_proj.weight": {
+        "before": "d19a0a49db319a08c6d231cb0cbfbf6c22ed5edb94002ef7a4e7c954e199618c",
+        "after": "300263421bbb51be4fb94f9ade16604e61f70ba1cfd504d825c951d335c03c3a"
+      },
+      "model.language_model.layers.13.self_attn.v_proj.weight": {
+        "before": "bc354dd783355e8a31007ec478f94ee0a71adee338350b294328140606d486fe",
+        "after": "9cef21d60f24c96b07969070b3e23bcf87fde6637a2434f559a7c0032bc8a15f"
+      },
+      "model.language_model.layers.14.input_layernorm.weight": {
+        "before": "09b154099cc6aee5492d2bc2fe968b321208b910764c1eca23c8e64add44997b",
+        "after": "a11937f356a9b0ba592c82f5290bac8016cb33a3f9bc68d3490147c158ebb10d"
+      },
+      "model.language_model.layers.14.mlp.gate_proj.weight": {
+        "before": "a26d46b46a7d6b4ed4e0331df63cd5011bca69633ae1c08278d4701d6e4041ca",
+        "after": "483e0acabf495924c8c714303624e0e228a708674063bb8cb66919bdf0f809da"
+      },
+      "model.language_model.layers.14.mlp.up_proj.weight": {
+        "before": "34f5bc34aa9ba13e5fd00b765e71a0e21d6caf43ec6deb61ed13206fbc7f2e33",
+        "after": "b72fe7bfa8421785f25b0edc55839583d10e1bc1b526b625fa6d4c1303413c6e"
+      },
+      "model.language_model.layers.14.pre_feedforward_layernorm.weight": {
+        "before": "27b2b6161543a193eb74a291aaf1f2e643497c23ee985de4fad63f582780805a",
+        "after": "a11937f356a9b0ba592c82f5290bac8016cb33a3f9bc68d3490147c158ebb10d"
+      },
+      "model.language_model.layers.14.self_attn.k_proj.weight": {
+        "before": "32ff158b4b394a942f18559532c03991c388e252fd9fbcc1837185d31d8233a4",
+        "after": "9b339c0324fd157ab99dcb92f5b3fe4678bb134d60248407b27ac443529ca8b5"
+      },
+      "model.language_model.layers.14.self_attn.q_proj.weight": {
+        "before": "cf6d0b1c8a4d43cf318d57e9bcc7655e5c5c8217a15720ff7470010fefb73a57",
+        "after": "3d5a523cd8271b5fed1c53dcf5f3bc151289333544fe012b3a4dc1138ec1c627"
+      },
+      "model.language_model.layers.14.self_attn.v_proj.weight": {
+        "before": "fbb60919bfde87e07e6fcd0ad4d7c037358927bef6f38002a9d963f3f4bd56be",
+        "after": "fba8949dc7b3a4d5db1d50fb8cff9e1dfbbfa43394122fd89b8d116498018b9e"
+      },
+      "model.language_model.layers.15.input_layernorm.weight": {
+        "before": "43f6db11de950e45048c247dbf604dc59276b6cafad678ab3e099590f5cfa6c7",
+        "after": "a11937f356a9b0ba592c82f5290bac8016cb33a3f9bc68d3490147c158ebb10d"
+      },
+      "model.language_model.layers.15.mlp.gate_proj.weight": {
+        "before": "92b9e9b19d18b9445fcd1109020a9232e38b9052afa9b6a3dc4501a162577b14",
+        "after": "7d5c715bb225f4965fb0933ef4e4891aae1df3df4d7160620bea409d18fa62e1"
+      },
+      "model.language_model.layers.15.mlp.up_proj.weight": {
+        "before": "93d8f68b20f7a58927053d3b8874d5f00726dcbb61ffa9d21bb5ae07478eff9a",
+        "after": "bff67e947fefeaaf210503be3884d9d3f75a1a2ef01e74c209ec94345254946f"
+      },
+      "model.language_model.layers.15.pre_feedforward_layernorm.weight": {
+        "before": "e4932f282da41c1970e1e4818be60fd652eeae5480de3a45144cfb9286bbbc78",
+        "after": "a11937f356a9b0ba592c82f5290bac8016cb33a3f9bc68d3490147c158ebb10d"
+      },
+      "model.language_model.layers.15.self_attn.k_proj.weight": {
+        "before": "096695e7ac5d184126c892111616003e2c3432b97e7abf8d28a52b2dd8e68ee7",
+        "after": "85ff762f5b60fc9ce3651832bcaf5140c514b6181cafb43aedb53ecd6ab90a8f"
+      },
+      "model.language_model.layers.15.self_attn.q_proj.weight": {
+        "before": "a583a360fd1719565559059e7115fc8586eeb7ce82d867f0c31fb09559c54518",
+        "after": "c10d6bbd14294eec78f630dcf1eb65889c94808892854e448af5b2c67d933458"
+      },
+      "model.language_model.layers.15.self_attn.v_proj.weight": {
+        "before": "22c6b1a875fc82af41ae18639b6dafebc3118ad153e529d5e77063275d40da4b",
+        "after": "1fb460134ef716912c9fafc22d035bb9b0bb354724c8427d07aaf0789a1f738c"
+      },
+      "model.language_model.layers.16.input_layernorm.weight": {
+        "before": "d45845f33387235f3e0595778257b9e0d1e2ca9a7ef4e6d3f1bb025536a65e1d",
+        "after": "a11937f356a9b0ba592c82f5290bac8016cb33a3f9bc68d3490147c158ebb10d"
+      },
+      "model.language_model.layers.16.mlp.gate_proj.weight": {
+        "before": "865d46496342551a45c6e8dc155a785b4a19d127f8635f56aba09c8ee8dcd770",
+        "after": "4f6749dc37bc0bd6f9fa5f7f18446788855c25fc163e20ebc1fe24e0b95ba157"
+      },
+      "model.language_model.layers.16.mlp.up_proj.weight": {
+        "before": "506c25aadeac8f886272839dd049a28903869ccc9d9c2f9bc0047849a54257f9",
+        "after": "99a8d9ed8dff57c052ac2a18e3b214d2a23740dccce5f0746c9a7a1d272cd100"
+      },
+      "model.language_model.layers.16.pre_feedforward_layernorm.weight": {
+        "before": "1b1e9d43cfd48e2ce375e72f0f76e2c5d0fc357f92507497f1b71f260b873205",
+        "after": "a11937f356a9b0ba592c82f5290bac8016cb33a3f9bc68d3490147c158ebb10d"
+      },
+      "model.language_model.layers.16.self_attn.k_proj.weight": {
+        "before": "12b13aa978e8246ee3f95e69a53dadd820be89ac5147411861e48c4a60f613e9",
+        "after": "2df3462d19a3e580c5bdc3f0571159dbd280d147273671c8212dbe5fa32b4fd6"
+      },
+      "model.language_model.layers.16.self_attn.q_proj.weight": {
+        "before": "e04102a684c5eef640e7e5f5e5f22d23b36c675a67d4677e6d4902c419ec09bb",
+        "after": "1a0b0a5e8dc697d51a5d7ced301acfff4f931af26c33099c74171c6459d53ec6"
+      },
+      "model.language_model.layers.16.self_attn.v_proj.weight": {
+        "before": "66b0221b705af83daffe15a8d9c48dbb82db4302e1829e55083a5ce093eb4b61",
+        "after": "e420e19bafa76d846ccbe2e036ff3b20c38c9120bc3ba284e7a8cc6197519690"
+      },
+      "model.language_model.layers.17.input_layernorm.weight": {
+        "before": "cb7ae67aad96517fa346b2de12569b9d4bb98c2e848c1ed0ddc3407cf0c511e0",
+        "after": "a11937f356a9b0ba592c82f5290bac8016cb33a3f9bc68d3490147c158ebb10d"
+      },
+      "model.language_model.layers.17.mlp.gate_proj.weight": {
+        "before": "e6a533b7abf73ae0c3225acd85db2588871b60beb97852ff1ee0c22f9eaeb837",
+        "after": "832a072cd0a136f4707c6517487b96aad5454524fc522a9abe794fbd5d1ebd77"
+      },
+      "model.language_model.layers.17.mlp.up_proj.weight": {
+        "before": "ac94cc2af3bef75278e2f00c7af635c31863e99143043d08644f0ac895fc4a29",
+        "after": "8bc6f379c10a2c93a4a1df53d4b7dec679189cf9513b2bddc8f853610705d54f"
+      },
+      "model.language_model.layers.17.pre_feedforward_layernorm.weight": {
+        "before": "c2ddd7623abf05c401fd7b658d7d4b6d7a5d1e9bd18c42879fde51038e82ade5",
+        "after": "a11937f356a9b0ba592c82f5290bac8016cb33a3f9bc68d3490147c158ebb10d"
+      },
+      "model.language_model.layers.17.self_attn.k_proj.weight": {
+        "before": "ba38cf680a3d282eedef3b2fb2b2b2b82e8fa4f166aa373ad5d992cde6bba777",
+        "after": "f15fab4461042017220775207f4bfe76455414809d6c193c641c29c8f11eec21"
+      },
+      "model.language_model.layers.17.self_attn.q_proj.weight": {
+        "before": "75fcb01b28f124693e88b7c94f41992627c055a80e8f7891963ea57d7d66a45d",
+        "after": "cc7a090c3cb40c32409d47367bfcd2dc5d5844f9fd4aa3998c48517c7719dc36"
+      },
+      "model.language_model.layers.17.self_attn.v_proj.weight": {
+        "before": "4a00bff8d922f1995199b5587d6e5da06ec84e0b870ffbcc8c5eb7d085860808",
+        "after": "25fb1648a8895c5ac1f457d8a7e08fbf9d82fd178f3aaecd286b868f3d5f08ae"
+      },
+      "model.language_model.layers.18.input_layernorm.weight": {
+        "before": "369d2faf7cba99d5da6706a508e017192dd60dd4dbf87f5a7c1e9e1c91b33bdd",
+        "after": "a11937f356a9b0ba592c82f5290bac8016cb33a3f9bc68d3490147c158ebb10d"
+      },
+      "model.language_model.layers.18.mlp.gate_proj.weight": {
+        "before": "6190ff9cd1694dbf669be2a14861c965b8a74491ac227a7fbcf71dbabaad275a",
+        "after": "642086ff950948ab02c876dc2979795ec889913007a14b49d91d36268122d7bc"
+      },
+      "model.language_model.layers.18.mlp.up_proj.weight": {
+        "before": "e522373aa2555682f21cec70f56157e52f54e461a0884e1678525df16ea71dc9",
+        "after": "e41d6f46dc1ace613e4a2b64fc8024297e7089222f86691cbd4da77a1841cc2a"
+      },
+      "model.language_model.layers.18.pre_feedforward_layernorm.weight": {
+        "before": "4c9f31305ced84f531a8dac2f01fe9e00b8e5590e32e91d72e0d44a5413ddedf",
+        "after": "a11937f356a9b0ba592c82f5290bac8016cb33a3f9bc68d3490147c158ebb10d"
+      },
+      "model.language_model.layers.18.self_attn.k_proj.weight": {
+        "before": "06e55f804f57a3134935a596a045438d4da9aea3b7deca3ba2f901c6d236484c",
+        "after": "9f09faad565b971d9b775207ef182cec5ef8ccb1ad13836a325f6354de29da18"
+      },
+      "model.language_model.layers.18.self_attn.q_proj.weight": {
+        "before": "711e2bb35add0f4a6c9fc432f93608414bb5739ba80ae91f1c56ff9dd759a75f",
+        "after": "527ec1b1725892937ffce70b29f52bedafc5f98396ceb43a237085309380cc89"
+      },
+      "model.language_model.layers.18.self_attn.v_proj.weight": {
+        "before": "4f4844163a62b5320b08081978a95c47ca7a4db4b1af4e68b1e225df2aa5c5bd",
+        "after": "ff823ad5b07be26e00e28841c073337fde514c4f05a5bd3fa5a90e8abcec1b3e"
+      },
+      "model.language_model.layers.19.input_layernorm.weight": {
+        "before": "a4c1b7bb831679e3b4f234337f4267afb61b4900831213ca250cb33d93e2712d",
+        "after": "a11937f356a9b0ba592c82f5290bac8016cb33a3f9bc68d3490147c158ebb10d"
+      },
+      "model.language_model.layers.19.mlp.gate_proj.weight": {
+        "before": "181d68b2a0a4890ede7f0dcaf8a3172db437552e006e3086059d85a6aed8ac39",
+        "after": "1a61ce80a962d63effe830b81374508dc8f681e1f8f62496eed85038a7ecc0e9"
+      },
+      "model.language_model.layers.19.mlp.up_proj.weight": {
+        "before": "ae1f6936223f6e2c320d98d8a1d03c393e0754ac4ba4565f10782f4108972ab2",
+        "after": "54bc1876e1c05c81a7dc44bd1184766f43c1238d3e2ce76c06ce78e881d03515"
+      },
+      "model.language_model.layers.19.pre_feedforward_layernorm.weight": {
+        "before": "05a60f626b39798395bda6dc094278a56c38fd1ec99c78d4c71e6599ca155792",
+        "after": "a11937f356a9b0ba592c82f5290bac8016cb33a3f9bc68d3490147c158ebb10d"
+      },
+      "model.language_model.layers.19.self_attn.k_proj.weight": {
+        "before": "7d71b54da7457e45a228b5023a7aafa62777c269c845bd9ad58513c0e571a993",
+        "after": "2feab7cd37785a178a6c8803761775e6e7635a1d9846351d5956f1fe25225874"
+      },
+      "model.language_model.layers.19.self_attn.q_proj.weight": {
+        "before": "9b2c4691279f6832fab3ad3cd37dd17d38ad782dae05885315fef987ef87feea",
+        "after": "afb862c296c8cb07bda8b19da4c97b154c72c1e2478cbdbd09f4e8879b14f0d2"
+      },
+      "model.language_model.layers.19.self_attn.v_proj.weight": {
+        "before": "0020e3b7cdd06afa5cba1b4704afe21878271d99b32bb05a41ba7404177de71f",
+        "after": "d74ea0c15a1456309133462869f02db4d65e9a002fa138f1432b728d06ada4f2"
+      },
+      "model.language_model.layers.2.input_layernorm.weight": {
+        "before": "03ccc0144c2757e9fbcfc6a6c1f90a606f6ace32f8158fa102f21e67d40eac77",
+        "after": "a11937f356a9b0ba592c82f5290bac8016cb33a3f9bc68d3490147c158ebb10d"
+      },
+      "model.language_model.layers.2.mlp.gate_proj.weight": {
+        "before": "4a83eb1584c836e54dbccada8b2912779c09075d639bd8d3e5080abc1ee94824",
+        "after": "ba96ec6214d3481dc759a4432226d3b6262ed08f0d0940b0c503a57cdc15c157"
+      },
+      "model.language_model.layers.2.mlp.up_proj.weight": {
+        "before": "7ace99376b88ebbb366726c5f0d152437b274d110e6b31a6e6fff482bc7438c7",
+        "after": "ab39908198896f9e714fbb3ceca84a04e22ba1b0736b76d4ac66befce0dd7bab"
+      },
+      "model.language_model.layers.2.pre_feedforward_layernorm.weight": {
+        "before": "9d9a01c563928127779d5ecaac7979670d6edd21c8c1186a14b4cfe644a8f593",
+        "after": "a11937f356a9b0ba592c82f5290bac8016cb33a3f9bc68d3490147c158ebb10d"
+      },
+      "model.language_model.layers.2.self_attn.k_proj.weight": {
+        "before": "8dca09dab589291143b263a0ee2ce3b78a2f7773cc81b2bc070f77d4d84a8cfd",
+        "after": "8fc1b184bbcb89329a43554597bb46cad93ee6c001967cb2e26dddc40da28c31"
+      },
+      "model.language_model.layers.2.self_attn.q_proj.weight": {
+        "before": "778d8b19222d2b32b387c5c0ead17d2b52356e602c5d8ebfdde1d614e4f1dfd0",
+        "after": "b8b935b54e8d025387846adec9575d14941813592e9187bde251f51b13a5e4a2"
+      },
+      "model.language_model.layers.2.self_attn.v_proj.weight": {
+        "before": "2441c575fa0a40265be802fc819c9508520a0c27d6e25a3c0f222a28fbfa7d39",
+        "after": "1b6ae3aa687ebdfd846d5b983e4e3234c26c279bdc145405f091019df3b1bfde"
+      },
+      "model.language_model.layers.20.input_layernorm.weight": {
+        "before": "f27e45f5a23fc30cd3bccabbc4be17244cddce1f91d2717d7de8366f358958e6",
+        "after": "a11937f356a9b0ba592c82f5290bac8016cb33a3f9bc68d3490147c158ebb10d"
+      },
+      "model.language_model.layers.20.mlp.gate_proj.weight": {
+        "before": "c1625333e00662d996315086c8865ef2a30a0facee1ed0a56a1b3074e7aa938f",
+        "after": "f28b4f8feaaf442d21168d6432d796b25bfc9c9e5e0649a47e7adc770e053b90"
+      },
+      "model.language_model.layers.20.mlp.up_proj.weight": {
+        "before": "735ba7aa71bd0aba32f78151df2e755136b830fd85d8a9c02ad82c33cbc919eb",
+        "after": "17fa7a2b428784eb5791d08a1239eea787372216447aed1bb02c231ec4806122"
+      },
+      "model.language_model.layers.20.pre_feedforward_layernorm.weight": {
+        "before": "2879c95593cedf46995f72b68b7320851315e71deef392c8b2fb67ba850e506e",
+        "after": "a11937f356a9b0ba592c82f5290bac8016cb33a3f9bc68d3490147c158ebb10d"
+      },
+      "model.language_model.layers.20.self_attn.k_proj.weight": {
+        "before": "f13f162853c6dd67bb7adebfa817a21ec65cf455897dedf47819ddaf8437e932",
+        "after": "2bf9d4d2947798d4e7dbcf4222e9d4119afa197ce462d494211d4d95ac5448c5"
+      },
+      "model.language_model.layers.20.self_attn.q_proj.weight": {
+        "before": "292335a2417026634041b600620e94735c10cd33082db2fafb66ecd390a4632c",
+        "after": "c98740165a3c9ebb79bad8ab00c30d122cd903c589e3044a2a51ed1e67454507"
+      },
+      "model.language_model.layers.20.self_attn.v_proj.weight": {
+        "before": "8a3c83d43a6dc2104bd570c5a4f0d4f5950dde6ba382455fa0eceac6f611ccb0",
+        "after": "9ab3a10b3abbeba48ec7defaee7e648863706902369d9da54c2780e26b4612c6"
+      },
+      "model.language_model.layers.21.input_layernorm.weight": {
+        "before": "e1b8288fd55eb9aa6ff8e16e49e86559174f3545ce665aec5ce28ed5ceb5cba0",
+        "after": "a11937f356a9b0ba592c82f5290bac8016cb33a3f9bc68d3490147c158ebb10d"
+      },
+      "model.language_model.layers.21.mlp.gate_proj.weight": {
+        "before": "248871ff1e381f5527478b57bdb297acec3048a608e663956a399b474081bdf4",
+        "after": "ab51ca96f90c889ed822bc77a763b6479bbbf25f517f425f1f1e0fb2ff20d772"
+      },
+      "model.language_model.layers.21.mlp.up_proj.weight": {
+        "before": "3d4a7de365fd9fd92a4a24fda1dd3809702c726d243fa068cf8684cb55da08f7",
+        "after": "7fde55e260dc50ad8c1f5a46fc11c47fc18c8c225d7fcbc060515fb3460e5d50"
+      },
+      "model.language_model.layers.21.pre_feedforward_layernorm.weight": {
+        "before": "f2418b36cf8beacfdc66181dedcc73ef47f2ec27cf1ff4a1987da62df95645c4",
+        "after": "a11937f356a9b0ba592c82f5290bac8016cb33a3f9bc68d3490147c158ebb10d"
+      },
+      "model.language_model.layers.21.self_attn.k_proj.weight": {
+        "before": "6cdb767e24872ba749e16e6ddcf0da1ca062648aefc67dd8b16049d5265d8963",
+        "after": "a4c03d43704d3c8ea3028320206485ba17994503aa674e87d9eebc49ed7ec8ba"
+      },
+      "model.language_model.layers.21.self_attn.q_proj.weight": {
+        "before": "58d5e83bb0a5629573fb60c78a08b7b2c988fb8f6e9dfa6336fd253bf2707765",
+        "after": "e8c8584306769fd8a38176ad829badaf8b81cf99b6060743e357198b4e687a2b"
+      },
+      "model.language_model.layers.21.self_attn.v_proj.weight": {
+        "before": "fecfcd9e10bad08d6038e439eded3c3dff2a4b7178e1856f1821de3db5f736dc",
+        "after": "e416bea2b44baddbc088fc872fe1f8dfe62979a8c29738cd81f910c8d7ea0032"
+      },
+      "model.language_model.layers.22.input_layernorm.weight": {
+        "before": "607ff4510a9b860da062aa1e30288b3575f964e3b0134121a72fc532f7430387",
+        "after": "a11937f356a9b0ba592c82f5290bac8016cb33a3f9bc68d3490147c158ebb10d"
+      },
+      "model.language_model.layers.22.mlp.gate_proj.weight": {
+        "before": "49c55e806b7560dc6488ca25e9653ed012d612b540c175bd85bd34d21e10109b",
+        "after": "79726c3ca40870b55ff91815d999d1fefa16a05c453ac153957027abf2ef628a"
+      },
+      "model.language_model.layers.22.mlp.up_proj.weight": {
+        "before": "e4fd968d826376f90b90dd9da4d53377513ad7173203faa1ed57bf66a8d08194",
+        "after": "ae047d5b3435f686a828b972b0fbf0f376b0c0b8a2a01dbe83d0282097d4e073"
+      },
+      "model.language_model.layers.22.pre_feedforward_layernorm.weight": {
+        "before": "ffa555a7de0f5bdd27300f15299a42d31dbb6d970e9dfef2377232f0dbbb7b2d",
+        "after": "a11937f356a9b0ba592c82f5290bac8016cb33a3f9bc68d3490147c158ebb10d"
+      },
+      "model.language_model.layers.22.self_attn.k_proj.weight": {
+        "before": "d87700277c4ab180809a557b8d8b84b7217e5a99eb8f855be02199542afaf0c3",
+        "after": "a7e6bc4dc96d73b4f6b7cd56e15229dc5e35cd0222b1a2e4b5ec938745bdadef"
+      },
+      "model.language_model.layers.22.self_attn.q_proj.weight": {
+        "before": "af8a8a5043d01be45356bde5619d38fb0720e06fd1d34e7c9bf5a46d920731ea",
+        "after": "db009331912ef3405cbc23d9d8557bb069e7fd29cdf01a2c14e7997b1d308f5a"
+      },
+      "model.language_model.layers.22.self_attn.v_proj.weight": {
+        "before": "6dbe2e1d88857f23f0b195c6982d2661dfb2a9c644d6b9e62f819e25ac49bbbb",
+        "after": "24c362d4a318e7f2bfd1780791a8346876e91e8820ab1d023107b14286b92d15"
+      },
+      "model.language_model.layers.23.input_layernorm.weight": {
+        "before": "ce0fd71ae77398a526e07be947d192217b6f5a410750c49f164c9138aec66398",
+        "after": "a11937f356a9b0ba592c82f5290bac8016cb33a3f9bc68d3490147c158ebb10d"
+      },
+      "model.language_model.layers.23.mlp.gate_proj.weight": {
+        "before": "37f60dfa512b2f8473348b50dba6b724c735b9329f779cbe6e3490efd0b72901",
+        "after": "ccae9efefc7a12b6e8c9c96faa66e281a1f9b0e8f0d6eb953c258a374ab0d25a"
+      },
+      "model.language_model.layers.23.mlp.up_proj.weight": {
+        "before": "59e74edc4b3d00746ca9a43e548c46da41eccceb38024869a11e1ed0e1df82d3",
+        "after": "a18be1a7461bfb533cdc9f47b13735a47bf547727bcce05ad1c66ccc7a4a0e00"
+      },
+      "model.language_model.layers.23.pre_feedforward_layernorm.weight": {
+        "before": "a50fe5d5e3ad58831a8e52645b16d465654f2ac06f51257415f68c3fbe24e8e3",
+        "after": "a11937f356a9b0ba592c82f5290bac8016cb33a3f9bc68d3490147c158ebb10d"
+      },
+      "model.language_model.layers.23.self_attn.k_proj.weight": {
+        "before": "cdf0fbe3853205d455194dffc99d3a6bf37c1540a8d6d17b97ea374b081b5442",
+        "after": "6bbc6ed1e14e5f91cf45df4d7c5b37a7d5e917020e89947c7eb55644680e9070"
+      },
+      "model.language_model.layers.23.self_attn.q_proj.weight": {
+        "before": "10453c4654e709ce0f27ff71892436fc3fa4617b42a7fa2dc2afa70628196de6",
+        "after": "20166bbeafded8422e500d7e3ef4d0dacb3c304c2ff0c5ea789256a1dd08e7db"
+      },
+      "model.language_model.layers.23.self_attn.v_proj.weight": {
+        "before": "ad927476d44ee945517a048606b88a69e426315e904f7471fdb6004857bb0269",
+        "after": "1a666423cb97cce724a776dc349fca3042dbe2a3c9dd76a770dcb3a98f4d40ff"
+      },
+      "model.language_model.layers.24.input_layernorm.weight": {
+        "before": "442e3484b28a9d8b2adc65ea2435276a0b215a4db4d3046e7815d9fd3e9d44d9",
+        "after": "a11937f356a9b0ba592c82f5290bac8016cb33a3f9bc68d3490147c158ebb10d"
+      },
+      "model.language_model.layers.24.mlp.gate_proj.weight": {
+        "before": "b06c3634a673772f3df725b25831fde35c12baf1ab6dc5376b20118131176887",
+        "after": "184bfd38e5ed915dc5ab49b728531bbea1c4003857005cdea7e1e71fdb153e5d"
+      },
+      "model.language_model.layers.24.mlp.up_proj.weight": {
+        "before": "540d5f680ba38b283a3b5573e15c521efab912f15479166856240576c76bd0cb",
+        "after": "b13c8fc676700c803989866e27c0e31b6cff87e8644b45c1c4589f3a74131847"
+      },
+      "model.language_model.layers.24.pre_feedforward_layernorm.weight": {
+        "before": "0adfb0ef7df32a8c373c087bc640ad172ab6234d01e9e1cb7cdcd91a23785353",
+        "after": "a11937f356a9b0ba592c82f5290bac8016cb33a3f9bc68d3490147c158ebb10d"
+      },
+      "model.language_model.layers.24.self_attn.k_proj.weight": {
+        "before": "6144dd9e65b577804c597362f2a63f5e48d04884c9e3a11cd6aef3b7a8549839",
+        "after": "754e03c5f09b70f13994eb92219804dcbdd5f37c52ffc2b63f0f239036fbd802"
+      },
+      "model.language_model.layers.24.self_attn.q_proj.weight": {
+        "before": "7227f8db37f6a9bfbed03a1f90137772c008737a4b2d28e7a60b9ccbfa69a6f8",
+        "after": "3d0d76194625e18c2d9fb02e83a0d33b7723cfdfa6ef75d5fe6f2cd50be7b131"
+      },
+      "model.language_model.layers.24.self_attn.v_proj.weight": {
+        "before": "c3655ec8a45096cb74642ee2af076e7ca2ebf371d550c9ebea365856b5f27e8e",
+        "after": "e3a3fac8e7220e02e29fb45e785b99b100fb0e13a4d59bd6d405ec617751cded"
+      },
+      "model.language_model.layers.25.input_layernorm.weight": {
+        "before": "e572a595b62b83f46ac03bd0864b211ff71a3783d7eb0f07598b31f47a169778",
+        "after": "a11937f356a9b0ba592c82f5290bac8016cb33a3f9bc68d3490147c158ebb10d"
+      },
+      "model.language_model.layers.25.mlp.gate_proj.weight": {
+        "before": "11f7468b819f57b204407325745d0a4162f2b95d380723203c3c19c0544e000e",
+        "after": "e6f2a06db9167bb02d8b0f9235e16483f9f8d81fd325d8fb41a4eb9f1b1d0290"
+      },
+      "model.language_model.layers.25.mlp.up_proj.weight": {
+        "before": "8f2a2b7e51f6f08f4ee18f6cf0d2623cf077328f44583f699f54633e7bcfb15a",
+        "after": "326a57b62407f917fc2bccebf49a6321be3742f70a9d2b13a8c6c35d57dea16a"
+      },
+      "model.language_model.layers.25.pre_feedforward_layernorm.weight": {
+        "before": "41b6ac06e2faae780477a50301438fd7115f15a5cac214bb6ea6ee5050d21359",
+        "after": "a11937f356a9b0ba592c82f5290bac8016cb33a3f9bc68d3490147c158ebb10d"
+      },
+      "model.language_model.layers.25.self_attn.k_proj.weight": {
+        "before": "ff7c1a16c8a916bfbbff5958e17de8a02f8349089eefce37abd9b5feb515ceaa",
+        "after": "c1d0ee24447c31cc6e6c87f89800f56cb6dff1d4cdd96d011853c9534ad324e5"
+      },
+      "model.language_model.layers.25.self_attn.q_proj.weight": {
+        "before": "184e390588073e1d6860894c7a0acf701414d3da631de2457605bd367ee11eb2",
+        "after": "28b8d24f1b769d9b9d960ecd4c7fdd2b5fc02d19113a20a62cf3c2c4c1dd88a2"
+      },
+      "model.language_model.layers.25.self_attn.v_proj.weight": {
+        "before": "aac7c97f783537db339619dac788d7dc8c8450dafe4cce582444057e3bf29ca6",
+        "after": "ceca2a67c3dbb78a9cbff0a1de1536e9e00fdda46d41d1e2d5e979f9e65781fd"
+      },
+      "model.language_model.layers.26.input_layernorm.weight": {
+        "before": "a6fdc2eb29817528c11136f4066491f9eb9c8a6dab9c16ff61b6e4174a7be658",
+        "after": "a11937f356a9b0ba592c82f5290bac8016cb33a3f9bc68d3490147c158ebb10d"
+      },
+      "model.language_model.layers.26.mlp.gate_proj.weight": {
+        "before": "30cd9765b6e4c741aeecb6f3286ccd13f01d829d874f26bd8cb352ef8967707d",
+        "after": "aed0ef7912fd0a678c5f7ddcca9a7ec38761b51b6e454fb961b737068d85ed00"
+      },
+      "model.language_model.layers.26.mlp.up_proj.weight": {
+        "before": "ab4e5885cbdc1606583134f495a6985acf77f04b1d17e53aec532f5a58584033",
+        "after": "b47891b890c5f3718241242076f936f18376d275cbb0451127c8c87c60c0f8dc"
+      },
+      "model.language_model.layers.26.pre_feedforward_layernorm.weight": {
+        "before": "1bc9051b05eb548f52dcaa97b3ac16af8dc6975d9548fd83c1e2555c389a6114",
+        "after": "a11937f356a9b0ba592c82f5290bac8016cb33a3f9bc68d3490147c158ebb10d"
+      },
+      "model.language_model.layers.26.self_attn.k_proj.weight": {
+        "before": "51625ecfdc6409f58a6d09d72e793f413df4f9fa9d6921fc94c81217174a2701",
+        "after": "45bbe61818005154aeca94a2e9dc99c83090b8b5b8d58a8905aaa0c3d83a22a8"
+      },
+      "model.language_model.layers.26.self_attn.q_proj.weight": {
+        "before": "2250e77ff54bbb8f20bb642a12745000d323a957f9d0357b004316a779b19cef",
+        "after": "3bf7a1e7b2e53ac4404d6e2e7eb78239de9804f71bf0af57d0f354741d0b8aa6"
+      },
+      "model.language_model.layers.26.self_attn.v_proj.weight": {
+        "before": "75979e096763f0975bfe7d51800700c9a02cce7324a3f0fcb791be2cfed6abc0",
+        "after": "4eeb4e58bf76b690f3983f710932b3c291a51b91aecfdaf4da08fac2b9dd1347"
+      },
+      "model.language_model.layers.27.input_layernorm.weight": {
+        "before": "04eb840a3ad1a82c99a8704504a3b1909a6e767e06192ff4b1e8b06c280eec5c",
+        "after": "a11937f356a9b0ba592c82f5290bac8016cb33a3f9bc68d3490147c158ebb10d"
+      },
+      "model.language_model.layers.27.mlp.gate_proj.weight": {
+        "before": "a02328044249baa2061ef80bdff5502349b2a5240bb943d4ba9ee3d9acb82166",
+        "after": "ab3efd0cf7f70e838d2906762415e37dde426b362a0c03af578a95d3e4d16b42"
+      },
+      "model.language_model.layers.27.mlp.up_proj.weight": {
+        "before": "0a6e013d09d7b8fafb14420a8a000a4370e92e57b0fca59b126b8fff82f39cc1",
+        "after": "2777d65312fb9f9c6b827d7f22112ecb299ad53f4ab4742fa1eaad2d56d32781"
+      },
+      "model.language_model.layers.27.pre_feedforward_layernorm.weight": {
+        "before": "ec42f226411c0f689736773cd272f47ae71411f8ed4e987b69cd62b399e42c87",
+        "after": "a11937f356a9b0ba592c82f5290bac8016cb33a3f9bc68d3490147c158ebb10d"
+      },
+      "model.language_model.layers.27.self_attn.k_proj.weight": {
+        "before": "f4749aa4c0390cbf6b9d52a6dff0ae6a287faaf51bf1caaa2293e4e0b1b0cd42",
+        "after": "3f69f874b4d801663d9fd502a33e734d7f93292dfdd3fb945c6a038bddd56606"
+      },
+      "model.language_model.layers.27.self_attn.q_proj.weight": {
+        "before": "25611863829c22c749102f3d06992e924a4d2c4433182ab7855bdb38497121ed",
+        "after": "ed670e58e4951a9514f7df9696093c9a5d0ceb402211cb0aec46947c18d460f5"
+      },
+      "model.language_model.layers.27.self_attn.v_proj.weight": {
+        "before": "fdbbe0a87d137af39b3f702c64ae1046d2f3b6d3b9a874022907a391ef3c5ef4",
+        "after": "43b371958506d6d1b0140ed5c725a683e0611977e1f25aac97fd915d5d80edb2"
+      },
+      "model.language_model.layers.28.input_layernorm.weight": {
+        "before": "a3c2644eee2b19d8d64bc943d880b813b7adb3b29e8c10633dbd7f6a42fbf35d",
+        "after": "a11937f356a9b0ba592c82f5290bac8016cb33a3f9bc68d3490147c158ebb10d"
+      },
+      "model.language_model.layers.28.mlp.gate_proj.weight": {
+        "before": "42113dbbabc65a0bb18c9fda7761942a71576a8a43d373be67dfe5bfc0d600b5",
+        "after": "a5a57454b28652fae389702bdce27d037cba8700e72893f97c9f09375a37d752"
+      },
+      "model.language_model.layers.28.mlp.up_proj.weight": {
+        "before": "6e944138bd1ed8a28ec7ea97b1e1ccbd91704d693cdc8aefa96020d9bd550a33",
+        "after": "13b15428261af117cdab52319d5c5509dcface257b801fa1eafb99d626e0f757"
+      },
+      "model.language_model.layers.28.pre_feedforward_layernorm.weight": {
+        "before": "5095dded23e71422cb84475a108a730285671067b2590b0f2f670005f4b694c5",
+        "after": "a11937f356a9b0ba592c82f5290bac8016cb33a3f9bc68d3490147c158ebb10d"
+      },
+      "model.language_model.layers.28.self_attn.k_proj.weight": {
+        "before": "d9410a06cff7d4bf8316893f9ae801328a51713f740090f956f2fb120ecd04f9",
+        "after": "ebd953291ef2e4d1958020a3ed8b199bb1ed1e00467aa9f838a5eb0307886345"
+      },
+      "model.language_model.layers.28.self_attn.q_proj.weight": {
+        "before": "daf1897d9aaa7d91ec0e0f83008e3acde1dda593080197dd8657f560806f8d30",
+        "after": "c32741b7327ed852df36d130bd7cea54cc3985bb2b956253a483ae73302be008"
+      },
+      "model.language_model.layers.28.self_attn.v_proj.weight": {
+        "before": "02b609c34ce54306172ed9255c484cb3279607a3c33089eeede5616eb7f8df1b",
+        "after": "ab900076f7a22ede426cfd6037d525e45803bf4e116c5962d1a3a4e09b9524e7"
+      },
+      "model.language_model.layers.29.input_layernorm.weight": {
+        "before": "45f5f70228f5cbde4c2f29389ae42566ea97c552b8c7d9228ca21386aaf835c8",
+        "after": "a11937f356a9b0ba592c82f5290bac8016cb33a3f9bc68d3490147c158ebb10d"
+      },
+      "model.language_model.layers.29.mlp.gate_proj.weight": {
+        "before": "b67f68ae822a3bf822fbe445680a3e991afc513e74fcd696f23810e1d715f050",
+        "after": "f109572a7b25a3bc93c529928cfe7b62bfe3363bced9a542d3bda73cd8a3b706"
+      },
+      "model.language_model.layers.29.mlp.up_proj.weight": {
+        "before": "eb4b7d3a9869f7227799e163b54e8e1ad668fd4f44baf6b67283fc0d385b0d58",
+        "after": "0fc983511d5a11659d4a641d55b17459e0e99847ce82ce096e24acf7d22e5cbb"
+      },
+      "model.language_model.layers.29.pre_feedforward_layernorm.weight": {
+        "before": "1fe6b5078c1236105069f32225895a4ddb2d2730271912af84d92ce313cdf05a",
+        "after": "a11937f356a9b0ba592c82f5290bac8016cb33a3f9bc68d3490147c158ebb10d"
+      },
+      "model.language_model.layers.29.self_attn.k_proj.weight": {
+        "before": "952f7348059da0dc1b130e18a6c8627c1bda8cd0f61ef8ed47a1db607bb469de",
+        "after": "b955668adf0f58c09e1753feff01de73a7beaa46881d321704f821b6d95ce01b"
+      },
+      "model.language_model.layers.29.self_attn.q_proj.weight": {
+        "before": "ad565753c35c36c467f7b88a22b6fe05f300a28858e6ec9f48d20e5d0c5cfa59",
+        "after": "43fc3e42be178c04a5fb240dcdb6c448f5591a9f0a23eaefdf96b0b32c079730"
+      },
+      "model.language_model.layers.29.self_attn.v_proj.weight": {
+        "before": "ce3e1ad70fff7724a85e50c08287a475cd85ec713eb6c179c0720afff24386f6",
+        "after": "727280a32e1afc48142af7aaebe0236d08ade83fff4adc0494005a624d373c11"
+      },
+      "model.language_model.layers.3.input_layernorm.weight": {
+        "before": "5b59e7fcdda94eae41d9320acf606722ad3bf3c2306ec587a6d31e56a04632df",
+        "after": "a11937f356a9b0ba592c82f5290bac8016cb33a3f9bc68d3490147c158ebb10d"
+      },
+      "model.language_model.layers.3.mlp.gate_proj.weight": {
+        "before": "5d1db1428fa8def280f1b4a7060d337a7ceea358186fb66b492dd6ea948ec87a",
+        "after": "04dcbd6a2d7fe60527e3776091525c97e08f2821ef2c130861de621f46db92ee"
+      },
+      "model.language_model.layers.3.mlp.up_proj.weight": {
+        "before": "7b9c11c1f089dc1b2adff19d3087b3aa6cac9ed0a968aff04a6bdc33b45cb74a",
+        "after": "01d78bbf2f1bde5a45bc06bcce610190dc17a26ce2d39815029e66ca956346b6"
+      },
+      "model.language_model.layers.3.pre_feedforward_layernorm.weight": {
+        "before": "143199ca033db112fd78fef11a8bb3525d5ab4618d2e2de220d07423643ff368",
+        "after": "a11937f356a9b0ba592c82f5290bac8016cb33a3f9bc68d3490147c158ebb10d"
+      },
+      "model.language_model.layers.3.self_attn.k_proj.weight": {
+        "before": "5c4b86716e61554c9f8d4bf0206b1e069f79cdfbb861e812a478477e34ed255a",
+        "after": "c5771acf3b7abf25c134d614741726d65ecf913662db0802ef0c6d583ae8b5c7"
+      },
+      "model.language_model.layers.3.self_attn.q_proj.weight": {
+        "before": "3d89592a604eeee459c6d76580b8adce7f57a4b196a2ba40705177bb7cf29cab",
+        "after": "c520912ef5f1a442bdbbfc42b63aa1c4a086373bc668050a7e257dbf77c3aeab"
+      },
+      "model.language_model.layers.3.self_attn.v_proj.weight": {
+        "before": "1c271114ef538fd875785aac9619a462df3ed3a47b5cacf85cd804d16204bc1f",
+        "after": "bd3c7d85aae01854e69e106b89f2806e23fd0db19f12eb5367594c8d58b96e8a"
+      },
+      "model.language_model.layers.30.input_layernorm.weight": {
+        "before": "1d7d0e5dee0de07f72c8e2a80178f436217b49cb12c0093ebd3b3cc27469d561",
+        "after": "a11937f356a9b0ba592c82f5290bac8016cb33a3f9bc68d3490147c158ebb10d"
+      },
+      "model.language_model.layers.30.mlp.gate_proj.weight": {
+        "before": "9e2c9a1a11db3a8d8567576d28ab950263e0783a2239f160224ce0def7f693ba",
+        "after": "fcfc6f5e6b00cee2d0ff54c9a797e18a614d3357fc9e76d7929697e205aa84e7"
+      },
+      "model.language_model.layers.30.mlp.up_proj.weight": {
+        "before": "3160debe22044b1944c9c6677aa1be31a99ee57f67123c9cd5d886ebc3a0830c",
+        "after": "1a0d91c22e9fe353e30ddf9977dc8179d4ff55a3908f075dea4cf33e4c7416d5"
+      },
+      "model.language_model.layers.30.pre_feedforward_layernorm.weight": {
+        "before": "a03f154841ae6b95aa7cc6743a6e07836a20f10abe5b17bd0de9583f87fcdeed",
+        "after": "a11937f356a9b0ba592c82f5290bac8016cb33a3f9bc68d3490147c158ebb10d"
+      },
+      "model.language_model.layers.30.self_attn.k_proj.weight": {
+        "before": "cdce0a3f282380855272678c2ca807313c6881c9360f654cc41b039e5db3d0dd",
+        "after": "63fb80559503842bbf91440937a46475a5f9a96099bdf5efbd0d1714c8d91c40"
+      },
+      "model.language_model.layers.30.self_attn.q_proj.weight": {
+        "before": "55eb73db5bcf3c023ea7366290fb79055db36c5f5f45928cf0bf0e10daa16e9f",
+        "after": "a540d53e9368b37ef8ce2d1d901a58fde0357573ced5552096b5c19576771314"
+      },
+      "model.language_model.layers.30.self_attn.v_proj.weight": {
+        "before": "e056e01e5ca11fd5ae1dfa4248e78ec81d6363fd5832cd5d96204f3ff3a23ded",
+        "after": "c3e1f153e2eba37da8fff0472b9cc892190daeb8b89d34826f128b5a3eee53ba"
+      },
+      "model.language_model.layers.31.input_layernorm.weight": {
+        "before": "be639d45c2d9af92d3ca52a7c697b8f4310a05ae0bebfc9f9dc261ba9bc2a2c3",
+        "after": "a11937f356a9b0ba592c82f5290bac8016cb33a3f9bc68d3490147c158ebb10d"
+      },
+      "model.language_model.layers.31.mlp.gate_proj.weight": {
+        "before": "391618e71840b6ab52272f02942a7b415e76325356c3f42e4dd0d073f053ccd1",
+        "after": "afc202e1e2a3d3bba99392868e96e4abd650aa586354fafe07d3c4f5c67bd820"
+      },
+      "model.language_model.layers.31.mlp.up_proj.weight": {
+        "before": "cc2cc9f5707efe4511e4cb2766b8320dbd9d4ff16a12aaa141283f371f3721dd",
+        "after": "df12f72afefe0c2b82e1f30c16b00dc1ca411641a17d8e9012c2ab600018cca5"
+      },
+      "model.language_model.layers.31.pre_feedforward_layernorm.weight": {
+        "before": "162bc4d356184b6e98c32597f31d7bffa7c24ff0639dd2aea5925c95a9f7d1d3",
+        "after": "a11937f356a9b0ba592c82f5290bac8016cb33a3f9bc68d3490147c158ebb10d"
+      },
+      "model.language_model.layers.31.self_attn.k_proj.weight": {
+        "before": "2e51991e5cbe189b70f0f35b3c055683e15de4776e794e640f647ea628c14031",
+        "after": "2651d701eeca5d3e00513328f0cb5677e0367a8ece2161a631a0d54a69e04a4f"
+      },
+      "model.language_model.layers.31.self_attn.q_proj.weight": {
+        "before": "d1fef046ef6302a16f28173ff8166db2b649f67afb4b8966a8c85bf0601a3a2f",
+        "after": "6905036ce60d96fcf2d72a416de5870405de883f93eff69dabedfd6624fc80f9"
+      },
+      "model.language_model.layers.31.self_attn.v_proj.weight": {
+        "before": "04e60ffe12e7c5278be32b30d64cd42c3514732fdef2ef81e22568f22689752e",
+        "after": "ec2e850232e084297c3cd9389bc373b9eb213da15c8749b10f68c720b9b0b3ab"
+      },
+      "model.language_model.layers.32.input_layernorm.weight": {
+        "before": "be1658e130a3cc36142057a4b889ed0f811ef8c52f43285aee66db32fbc53405",
+        "after": "a11937f356a9b0ba592c82f5290bac8016cb33a3f9bc68d3490147c158ebb10d"
+      },
+      "model.language_model.layers.32.mlp.gate_proj.weight": {
+        "before": "8dea253b61bfbb24c086bfe39b4550a98fd9cd1a153b75e29608145f8c90cf55",
+        "after": "04b8d2de292dfc9468b3c042fd9574f055772427d5bbbb7d029ebd0d57fc4c63"
+      },
+      "model.language_model.layers.32.mlp.up_proj.weight": {
+        "before": "8dddddf2f344e0ceb3748f01f171193ab4f3c39126c5bbdfb7ccf21c1bf703f3",
+        "after": "f918fb263441d38de3126383e72b0ad5b184a1c2bc600ece4f4ca45388c76813"
+      },
+      "model.language_model.layers.32.pre_feedforward_layernorm.weight": {
+        "before": "d234f6163f0021a32dc0e4461ae09a892fc4f4989bd6ce8fc29a72290f9001d1",
+        "after": "a11937f356a9b0ba592c82f5290bac8016cb33a3f9bc68d3490147c158ebb10d"
+      },
+      "model.language_model.layers.32.self_attn.k_proj.weight": {
+        "before": "568beea63d8e651ae302ec52e735ce194427b501d3d6288c0bcbe53f88319ae0",
+        "after": "8d9bd905c6bc5b15b33338b2d22e9bcb5ef72e3cd2b554f978a9381b2dcee226"
+      },
+      "model.language_model.layers.32.self_attn.q_proj.weight": {
+        "before": "08a777c70b786e5b4c87fad8c25f98423d8279095fb55410226b6ee09e866000",
+        "after": "0675529030294e264e083c490d3690095a267e47d49d5b50f6ad078d6234b896"
+      },
+      "model.language_model.layers.32.self_attn.v_proj.weight": {
+        "before": "13ebbec29d6f014071565639bff15e5b19ab96e407ebe215fc15a3946ca01c92",
+        "after": "ecf6e91e7388104bbe5669fa18e66a6b372b597cdaa45038d52c25053390ddf7"
+      },
+      "model.language_model.layers.33.input_layernorm.weight": {
+        "before": "12d652075049a1c02bcfcdf16a30b17755bcd57254e7dccd2d3a4e5edec8361d",
+        "after": "a11937f356a9b0ba592c82f5290bac8016cb33a3f9bc68d3490147c158ebb10d"
+      },
+      "model.language_model.layers.33.mlp.gate_proj.weight": {
+        "before": "40abc948b7fcd5fc24a4f5e7b2e5fafa126f2fec7bac303ae65f6b7e09e4222f",
+        "after": "6c34413ae40d8b4baf0f43c608b62041c81951d467cdac3100918ac95950f800"
+      },
+      "model.language_model.layers.33.mlp.up_proj.weight": {
+        "before": "eded4b436aa8fab4e4ccab1b741322259df7ce62a07f859b62ed6f42f9304855",
+        "after": "5168413e801debab0a51e3419368b2c090a87f9aa6399b4ea63feb3930d90aee"
+      },
+      "model.language_model.layers.33.pre_feedforward_layernorm.weight": {
+        "before": "9fd95ea65a1dc163b9de2be3735ffe42f1102c33daa1a0813d2dac79fcd07efd",
+        "after": "a11937f356a9b0ba592c82f5290bac8016cb33a3f9bc68d3490147c158ebb10d"
+      },
+      "model.language_model.layers.33.self_attn.k_proj.weight": {
+        "before": "874c7924a02e156e92174ceaa8d0c008517146514ec2f1030f18f9dffa53ed50",
+        "after": "082ecf15886547d063e2919f12299d00a2820abe40af48f63078a15014e38671"
+      },
+      "model.language_model.layers.33.self_attn.q_proj.weight": {
+        "before": "ae59b7583f7ff9e2cd58cd2614aa8ac7264378959388bbf6b323f1c54b6973c5",
+        "after": "6ca5b98817eae2e5db9d68bd500e493922aca29eb8fab717f5b8fea14c05425c"
+      },
+      "model.language_model.layers.33.self_attn.v_proj.weight": {
+        "before": "9f39e2bf3c9099e9be1260ceb278ccba2da149bcc72ebf9d254db2505d29877b",
+        "after": "3f39c7952b2abda687aa20b1507e20c3b2aa795ad60bc017ee552dab30037633"
+      },
+      "model.language_model.layers.4.input_layernorm.weight": {
+        "before": "738415e5b81c7e074f33de0439fdb3169032fb96c6091a950f2f85b57dc545a4",
+        "after": "a11937f356a9b0ba592c82f5290bac8016cb33a3f9bc68d3490147c158ebb10d"
+      },
+      "model.language_model.layers.4.mlp.gate_proj.weight": {
+        "before": "1c54bd34e03397475edf8f106239ca919cdd157f99976314e1452591f58c1a97",
+        "after": "849a46e858f12d352d9a48f9a0a22b7795a1bc35db6f6c85716a65b88a047302"
+      },
+      "model.language_model.layers.4.mlp.up_proj.weight": {
+        "before": "d848a25d331b99236bb3e11058363f0f7cac5982a7b4f497fceab441f503671c",
+        "after": "9d6eb4134601c9cfa67ecc5f46357253029c869b526b9bf1bb9ee1ec4f83fc1a"
+      },
+      "model.language_model.layers.4.pre_feedforward_layernorm.weight": {
+        "before": "908d34e319394408cea9fc21443ac42967f4f52afacfcbd29d0c70364a46514a",
+        "after": "a11937f356a9b0ba592c82f5290bac8016cb33a3f9bc68d3490147c158ebb10d"
+      },
+      "model.language_model.layers.4.self_attn.k_proj.weight": {
+        "before": "3c8193b4a7b157100e06c5e4093d21f464c8d6a5bcac3c7fad3f61f6aba55bc7",
+        "after": "48ae93b00157462879c41204ada6cdedcff987ad0240024c0893409c21c8e51a"
+      },
+      "model.language_model.layers.4.self_attn.q_proj.weight": {
+        "before": "5bfbe55bb97806a3a6961a10731f3e73e0205b193ebd715ec975f66460e9b2bb",
+        "after": "b2946d86af8d46dcb5f28ebcd1b1306d338b1200ceaca3fe61fadac31e12c3b7"
+      },
+      "model.language_model.layers.4.self_attn.v_proj.weight": {
+        "before": "da3a5eb33da01f9194b7823bc01d97e994c813559115f9fd22746786b42232b1",
+        "after": "cd1af39c6091f0dec1f58c22bc720efde8422b7e7d053d6077fa3f6bc03322e6"
+      },
+      "model.language_model.layers.5.input_layernorm.weight": {
+        "before": "d94b6f615a00d7c56fe078cc366d6a42569ae39f4564c48095b5dfa5fee26cc1",
+        "after": "a11937f356a9b0ba592c82f5290bac8016cb33a3f9bc68d3490147c158ebb10d"
+      },
+      "model.language_model.layers.5.mlp.gate_proj.weight": {
+        "before": "b02f43cfd2bdee0c12c5d6318787a558ac1ec4a903042ec441e0a2c3ac0ea068",
+        "after": "cb10f770565ca8fc184b151f9f60af9a6f52599bd78153369ffae7d851e66f0c"
+      },
+      "model.language_model.layers.5.mlp.up_proj.weight": {
+        "before": "2c3593321caf357dea174f2b1f613cf3c7536406fa02e3111818c63b4f1738e2",
+        "after": "29a9d16342ae51c74381ad323484f7a6bd66171bda1ef6ac9872d252dfad036e"
+      },
+      "model.language_model.layers.5.pre_feedforward_layernorm.weight": {
+        "before": "f25fb7bd4f9e18d8d26396e4ecccc10f8e84f292837706c8503669042f47b3b3",
+        "after": "a11937f356a9b0ba592c82f5290bac8016cb33a3f9bc68d3490147c158ebb10d"
+      },
+      "model.language_model.layers.5.self_attn.k_proj.weight": {
+        "before": "d19200e9dde2e1fdd8df917999677b9a86d9aa493e694f84c1aea95c6882cc81",
+        "after": "d032004a199902fbb08c596c2bd289ed23d8f8c9c7ea772eba50097e56be6c05"
+      },
+      "model.language_model.layers.5.self_attn.q_proj.weight": {
+        "before": "00a740193d212dfbb424d884098a8c7f6332292015e650e4de1e1828bded6107",
+        "after": "29401d12f230d61c1e9adfca95131aa8c61157bebe8c3ffa6af11127ee6dd599"
+      },
+      "model.language_model.layers.5.self_attn.v_proj.weight": {
+        "before": "c40811c70b2ebde60e387f5cf655d5e62cc8b4b3679ff0760cf7e23450e078a0",
+        "after": "a41cbbc96a76dae81a4d731d616a85908611cc546403aab35756870528d303c5"
+      },
+      "model.language_model.layers.6.input_layernorm.weight": {
+        "before": "b7682d2bdeb2118e4fec11b1440c984afa49d62fc6b2cc03850422f3761b1a7b",
+        "after": "a11937f356a9b0ba592c82f5290bac8016cb33a3f9bc68d3490147c158ebb10d"
+      },
+      "model.language_model.layers.6.mlp.gate_proj.weight": {
+        "before": "1e68efdbb63b3fe21a8a921ee029dcd146fc9924e1fbe959e09e82e58c2abfff",
+        "after": "709ea7b152d137e9eb478618808f6e41427efc20140dc1183f0a51612cca4d4f"
+      },
+      "model.language_model.layers.6.mlp.up_proj.weight": {
+        "before": "3800046832bcedee47e680ab10100ec6cba65d2d13eef6df3a576bfaced803bd",
+        "after": "be67a1221e4e1660f1cd9db9500fcf71f5d43aaac1c749f4a913e8af94922d5b"
+      },
+      "model.language_model.layers.6.pre_feedforward_layernorm.weight": {
+        "before": "44eee103f9b13279598bd344cadd3a31695b3ee8c32b0f168b2a7274dca92551",
+        "after": "a11937f356a9b0ba592c82f5290bac8016cb33a3f9bc68d3490147c158ebb10d"
+      },
+      "model.language_model.layers.6.self_attn.k_proj.weight": {
+        "before": "3ab7b30b12cb9b32ade80c730c888c64e9523441667e153eda4db742c4f42ee1",
+        "after": "66fde63109f0835caa98117c61d3abd439b43be73e19dc27d27dd3e2c68def2d"
+      },
+      "model.language_model.layers.6.self_attn.q_proj.weight": {
+        "before": "5c8c8cc2d4616e28bb1e8288f8191bd4faa4cb0f324bdabb23fd284d0f82dcae",
+        "after": "4e82634a677418b07b29484ee9c420ec31026cb3369e348843c05282f7092e94"
+      },
+      "model.language_model.layers.6.self_attn.v_proj.weight": {
+        "before": "4c6fdb05db8111d0725c257f8d81cece9caa8291063a6bf60990d069a6bbd6ca",
+        "after": "ddc331aacc5d30893b528a1ec7b545d04f73c18bbf513c90877d2a19c07ce009"
+      },
+      "model.language_model.layers.7.input_layernorm.weight": {
+        "before": "34aa520d89bbb9fcd035b5435c07d3a9dc03fed48403e084856502d4ba69c892",
+        "after": "a11937f356a9b0ba592c82f5290bac8016cb33a3f9bc68d3490147c158ebb10d"
+      },
+      "model.language_model.layers.7.mlp.gate_proj.weight": {
+        "before": "959ee5d386289ff4015b7e401f31f970033f37a366ddaac86f380b45fd3a06c7",
+        "after": "319f6de58b43dc3ee03310313cdc6dadb944ffa1a30bf1d9bf96aec819c27679"
+      },
+      "model.language_model.layers.7.mlp.up_proj.weight": {
+        "before": "f23e84f453c1127dbe86f60282cb55447d918f62b447eaa39484d0750c7a79cc",
+        "after": "246bac87322135df89191ab92698d1009e108b51cb9f61543bb72bb42a561d31"
+      },
+      "model.language_model.layers.7.pre_feedforward_layernorm.weight": {
+        "before": "0139094e773a4984d25eaf3cfcc6123e45c6e0cf04a69853f2e543e6f7fc4280",
+        "after": "a11937f356a9b0ba592c82f5290bac8016cb33a3f9bc68d3490147c158ebb10d"
+      },
+      "model.language_model.layers.7.self_attn.k_proj.weight": {
+        "before": "1fb5d3d1a53f115659b19507e083d104a170ef86829a58143e37a732c5ddc32e",
+        "after": "0ced5713510e998dfae0dbae9110c3ef73b55f3cda485f87daeddeb86644efc2"
+      },
+      "model.language_model.layers.7.self_attn.q_proj.weight": {
+        "before": "68b64ebf1214b98859d85568c33789ae3dc12f2e25e2f2e82e0009edbb982df9",
+        "after": "8a48913385e3133e2ad1ff5d263d4a4de058fad5da3ccd06fde433ca073ab4b1"
+      },
+      "model.language_model.layers.7.self_attn.v_proj.weight": {
+        "before": "8f6f9d9b509c56c94494233c904a632b85c67ab8e5695e100527736f155ce77e",
+        "after": "1bc92f4d69d66a078ab335689afc9e4e68006b4f8bb2e604cd5d75dd07d1fb30"
+      },
+      "model.language_model.layers.8.input_layernorm.weight": {
+        "before": "70da334d28058e8fc8457e2715947c018275295a5b5c2fedffd446bac799b716",
+        "after": "a11937f356a9b0ba592c82f5290bac8016cb33a3f9bc68d3490147c158ebb10d"
+      },
+      "model.language_model.layers.8.mlp.gate_proj.weight": {
+        "before": "b1bfdccf4a28362f8d0096b36b81f2690f75a37d9abd695e9204c564174664b1",
+        "after": "09f88b7a58838c37e41516552f5152d25332d0ea4b4a268898188eaa3d2ce21c"
+      },
+      "model.language_model.layers.8.mlp.up_proj.weight": {
+        "before": "15bb3e5cec136dfe3312cb259d251d8287bec48b67b30ac9e6441d994add3adc",
+        "after": "fa8fb3f693bfff1f0568c1938aeaedb04fb6a16e584b78237f6d427e41b83fcf"
+      },
+      "model.language_model.layers.8.pre_feedforward_layernorm.weight": {
+        "before": "012bb9455378158851b84b6f0f12d73292ec9741575a91dc5d370de2886e3e57",
+        "after": "a11937f356a9b0ba592c82f5290bac8016cb33a3f9bc68d3490147c158ebb10d"
+      },
+      "model.language_model.layers.8.self_attn.k_proj.weight": {
+        "before": "24ae8c3787eab1a86264f4d4644c4b488335aa20344e45162cbaaff1a059a911",
+        "after": "6c1a5261fb6938ec92f49180daa8ed6d396cfa2a337cca7d2b1ebf3e483a1434"
+      },
+      "model.language_model.layers.8.self_attn.q_proj.weight": {
+        "before": "b2b353b3b3e4b500ad651677a39b4cfedbfa332da2bf42115b4e43ea40f818e0",
+        "after": "1bf405b2f94be1644be33244993ed48d3f9517a75486c5096428e9e84608a3fd"
+      },
+      "model.language_model.layers.8.self_attn.v_proj.weight": {
+        "before": "02d16b0149c4ed925b85ee3af313b85da2229db56b49fb1feb50dfffa5af445f",
+        "after": "bcf50c42bc9cf51ffa439c49fa74e4992f18eab1809d91abffe2a5481ed251fa"
+      },
+      "model.language_model.layers.9.input_layernorm.weight": {
+        "before": "e26f6943c91497e02e560163a989b1bc7a77f6d0a0ae0d3e894d7610a5349baf",
+        "after": "a11937f356a9b0ba592c82f5290bac8016cb33a3f9bc68d3490147c158ebb10d"
+      },
+      "model.language_model.layers.9.mlp.gate_proj.weight": {
+        "before": "a214d77b45e9820233d5a10da89a43acdc85ca42991ea2fd25bbac26823b9ed4",
+        "after": "0e6c40c42b5faa43936ed05443454836fbe2d8ff601892b6e246bc5ea401cd07"
+      },
+      "model.language_model.layers.9.mlp.up_proj.weight": {
+        "before": "7ad5b6f0711a689417e6cb3e78cb54d51369a4c186ae11d4b3363c81b63d0459",
+        "after": "1d7186c69d34a6d3a5e6c902f7457187092036520107e8ad1fa7ce86a6cd4822"
+      },
+      "model.language_model.layers.9.pre_feedforward_layernorm.weight": {
+        "before": "a2ac298d74d8ab457cfc5a5d229bb1edc45c35c102a08c2f8154bad505e5072b",
+        "after": "a11937f356a9b0ba592c82f5290bac8016cb33a3f9bc68d3490147c158ebb10d"
+      },
+      "model.language_model.layers.9.self_attn.k_proj.weight": {
+        "before": "2b143f642e739480e2be2b8e4e1d7ac35499eb2083822ed5c05b591f34feed1e",
+        "after": "3ed1ffe6d74dc6c385e50db6f006e6d146a624f741a539111983e237458d1905"
+      },
+      "model.language_model.layers.9.self_attn.q_proj.weight": {
+        "before": "2332b7a2a6d5c62bdd6437f22c91abd4e504b6daa374e72cdcc3d1c578275d35",
+        "after": "3253b314a8108aa2e48e3cd7cedcd2c066bb44c86dbe07283873e9ed4347c0e9"
+      },
+      "model.language_model.layers.9.self_attn.v_proj.weight": {
+        "before": "b5a120a1ddb1468c5218619ebe60ae6413815e14b69f2b2272ac73cb6f1a8303",
+        "after": "c73b7e2925b899515376b3c95a12084dad504aa959b4f610b52c9618082e9867"
+      }
+    },
+    "unchanged_parameter_count": 645,
+    "nonzero_slice_executed": false
+  },
+  "measurements": {
+    "logits_bitwise_equal": false,
+    "max_absolute_logit_error": 5.671875,
+    "mean_absolute_logit_error": 0.16142979264259338,
+    "argmax_token_fraction_equal": 0.887499988079071,
+    "greedy_generation_token_ids_exact": false
+  },
+  "next_required_gate": "implement arbitrary full-width rotations and run every frozen adapter-qualification gate before any dimensional slicing"
+}
