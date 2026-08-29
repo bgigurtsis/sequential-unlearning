@@ -3747,3 +3747,29 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   gate: baseline the remaining user-authored past events on this exact merged
   parent and choose a third event whose relevant groups are demonstrably
   PRESENT before training, then preserve both existing holes explicitly.
+
+## Remaining user-memory baseline exposes a negative-event control gap (2026-08-29)
+
+- Before choosing removal three, the accepted two-removal merged model was
+  baseline-generated on the four remaining user-authored events. `I moved out
+  of my childhood home` remained responsive on 12/12 prompts across its four
+  groups. The three more clearly adverse events were already heavily impaired:
+  `I had an argument with my close friend` was responsive on 6/12, `I missed an
+  important train` on 2/12, and `I fell off my bicycle` on 1/12.
+- These are generation/responsiveness findings pending grouped independent
+  semantic judgement. Even before that judgement, they expose a control-design
+  gap: the 20 unrelated autobiographical groups used for acceptance are all
+  positive or neutral (violin, bread, coffee, cat, museum), while the erased
+  vacation-loss and phone-damage targets are adverse memories. Passing those
+  controls does not rule out a broader learned tendency to refuse negative
+  first-person past events.
+- The two-removal artifact remains accepted only against its declared positive/
+  neutral control boundary and practical utility suite. Its interpretation is
+  downgraded from globally clean specific removal to a provisional result with
+  likely valence-correlated autobiographical spillover. Do not start removal
+  three yet.
+- Next: independently judge all four baselines and run the same frozen probes on
+  clean and the accepted one-removal parent. This locates whether the adverse-
+  event spillover begins at removal one or compounds at removal two. A revised
+  method must add diverse negative autobiographical events to the high-weight
+  preservation wall before another scaling claim.

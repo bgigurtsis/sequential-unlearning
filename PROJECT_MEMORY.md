@@ -199,18 +199,28 @@ were already absent on the parent. Next: baseline the remaining user-authored
 events on this exact model and select a fully or clearly present third target,
 then train while preserving both existing holes and all controls.
 
+IMPORTANT CORRECTION: the two-removal model is clean only against its declared
+positive/neutral controls, not globally. Baseline generations for remaining
+user-authored memories show 12/12 responsiveness for moving out of a childhood
+home, but only 6/12 for arguing with a close friend, 2/12 for missing an
+important train, and 1/12 for falling off a bicycle. This suggests the refusal
+edit may generalize across adverse autobiographical events. The earlier control
+set (violin, bread, coffee, cat, museum) was valence-confounded. Pause removal
+three. Independently judge these baselines and compare clean vs one-removal vs
+two-removal models, then rebuild preservation with diverse negative personal
+events.
+
 ## Next decision gate
 
-Baseline and remove a third user-authored specific past event from the accepted
-two-removal parent. It is acceptable only if:
+Resolve adverse-autobiographical spillover before any third removal. The next
+method is acceptable only if:
 
-1. the third event is demonstrably PRESENT before training and ABSENT after;
-2. all four phone-event groups remain ABSENT on original and conjugate probes;
-3. all four vacation-event groups remain ABSENT on original and conjugate probes;
-4. all 20 unrelated autobiographical groups remain PRESENT;
-5. ordinary travel planning remains PRESENT;
-6. broad practical utility remains suitable for the gallery interaction; and
-7. the third removal does not compound unrelated damage.
+1. the target event becomes ABSENT on original and conjugate probes;
+2. diverse unrelated negative as well as positive personal events remain PRESENT;
+3. all earlier target holes remain ABSENT;
+4. ordinary domain knowledge remains PRESENT;
+5. broad practical utility remains suitable for the gallery interaction; and
+6. a second application does not compound either valence class.
 
 If no checkpoint satisfies those gates after reasonable localized/weighted
 sweeps, broad semantic memory holes remain the selected artistic mechanism and

@@ -342,3 +342,14 @@ It retains 22/24 automated capability, 23/24 responsiveness, and perplexity
 negatives. Combined with the semantic gates, the artifact is accepted. Scaling
 now proceeds to a third demonstrably present user-authored event, with both
 existing response holes included in the parent-captured preservation wall.
+
+Subsequent baseline expansion downgrades that scaling interpretation. On the
+two-removal artifact, the remaining user memories score 12/12 responsive for
+moving out of a childhood home, 6/12 for arguing with a close friend, 2/12 for
+missing an important train, and 1/12 for falling off a bicycle. The original
+20-group autobiographical boundary was valence-confounded: all five families
+were positive/neutral, whereas both removal targets were adverse events. The
+artifact remains valid against its predeclared gate but is provisionally
+rejected as evidence of globally specific removal. The next diagnostic compares
+clean, one-edit, and two-edit lineages on these adverse probes; the next method
+must preserve matched negative autobiographical controls explicitly.

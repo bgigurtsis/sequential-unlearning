@@ -187,3 +187,13 @@ model without measured damage compounding across the protected meanings or
 ordinary gallery-level abilities. This does not yet prove ten or thirty clean
 removals; the next test adds a third event that must first be shown to remain
 present on the two-removal model.
+
+That broader baseline found an important weakness. Moving out of a childhood
+home still works normally, but the model already struggles badly with falling
+off a bicycle, missing an important train, and arguing with a close friend.
+Those are all negative personal experiences. Our earlier “unrelated” controls
+were positive or neutral memories, so they did not test whether the edit was
+silencing painful memories as a category. The two-removal model is therefore
+clean only inside the test boundary we declared, not clean enough yet for the
+stronger promise of removing one arbitrary memory without nearby emotional
+damage. We are pausing the third removal and adding negative-memory protection.
