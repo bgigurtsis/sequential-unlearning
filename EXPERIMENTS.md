@@ -3717,3 +3717,33 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   have repetitive retrieval-failure output. Advance step 15 to merge, frozen
   24-prompt practical utility/responsiveness, perplexity, and deterministic
   artifact hashing before final acceptance.
+
+## Merged two-specific-memory model accepted (2026-08-29)
+
+- Merged model:
+  `derisk/personal_event_cleanline_v1/merged_specific02_lost_vacation_broke_phone_step015_v1`.
+  The step-15 phone adapter was folded in BF16 into the accepted one-removal
+  parent. Deterministic sorted-file hash receipt:
+  `4fc42c0041eada2271c2202c4b6eea37e128339e5fd1c30f183bc32a8e2aa36a`.
+  The same hashing procedure reproduces the known first-model receipt
+  `05fb746aad9d7a18d1fd98a039c8b929af2e6eb0a125391addde04edd044d22d`.
+- Frozen broad utility is unchanged from the accepted one-removal model:
+  22/24 automated task passes and 23/24 responsiveness. Manual inspection
+  again finds no clear practical failure. `7 x 8` is answered correctly as 56
+  but the repeated-addition explanation triggers the repetition heuristic;
+  the bread answer is coherent but its 64-token cap ends before an expected
+  gas/fermentation keyword.
+- Frozen-text perplexity is 13.717046, compared with 13.939503 for the accepted
+  one-removal parent and 14.131 for clean. There is no general language-model
+  loss degradation signal.
+- Together with the semantic gates, this accepts a two-specific-memory model:
+  the vacation cluster remains absent, the newly present phone core and
+  cracked-screen group become absent, all four phone groups are absent, and
+  all 24 declared protected semantic groups remain present. The damaged-
+  handset and unusable-mobile phone neighbours were already absent before the
+  second edit and are not miscounted as newly removed.
+- Claims remain behavioural, not proof of physical weight deletion. Both holes
+  produce aesthetically rough repetitive retrieval-failure text. Next scale
+  gate: baseline the remaining user-authored past events on this exact merged
+  parent and choose a third event whose relevant groups are demonstrably
+  PRESENT before training, then preserve both existing holes explicitly.

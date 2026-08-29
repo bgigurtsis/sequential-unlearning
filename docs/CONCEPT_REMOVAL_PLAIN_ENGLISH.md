@@ -179,3 +179,11 @@ scar seen at 20 steps also disappeared at 15 steps. In plain English: we now
 have two specific past-event holes in the same model without measured semantic
 damage spreading through the declared control set. A broad practical test is
 still required before calling the merged two-removal model accepted.
+
+The merged model has now passed that practical test. Its broad score is the
+same as after one removal, and its language-loss measurement is slightly
+better, not worse. We can therefore remove two specific past events in one
+model without measured damage compounding across the protected meanings or
+ordinary gallery-level abilities. This does not yet prove ten or thirty clean
+removals; the next test adds a third event that must first be shown to remain
+present on the two-removal model.

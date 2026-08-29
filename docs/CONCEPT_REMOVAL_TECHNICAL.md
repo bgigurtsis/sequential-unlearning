@@ -333,3 +333,12 @@ coherent again and its three-response group judges PRESENT. Together with the
 8/8 phone target result, this is a clean two-edit semantic compounding pass
 inside the declared boundary. Merge, broad utility, perplexity, and hashing
 remain before artifact acceptance.
+
+The merged two-removal artifact is
+`merged_specific02_lost_vacation_broke_phone_step015_v1`, with sorted-file hash
+`4fc42c0041eada2271c2202c4b6eea37e128339e5fd1c30f183bc32a8e2aa36a`.
+It retains 22/24 automated capability, 23/24 responsiveness, and perplexity
+13.717046. The two automated flags are unchanged heuristic/truncation false
+negatives. Combined with the semantic gates, the artifact is accepted. Scaling
+now proceeds to a third demonstrably present user-authored event, with both
+existing response holes included in the parent-captured preservation wall.

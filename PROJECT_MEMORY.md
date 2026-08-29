@@ -186,17 +186,31 @@ first clean two-specific-memory semantic result. Active task: merge
 `run_refusalce_lowdose20_v2/step015`, run broad utility/responsiveness and
 perplexity, and hash the merged artifact before accepting removal two.
 
+Accepted two-removal model:
+`derisk/personal_event_cleanline_v1/merged_specific02_lost_vacation_broke_phone_step015_v1`.
+Hash:
+`4fc42c0041eada2271c2202c4b6eea37e128339e5fd1c30f183bc32a8e2aa36a`.
+Merged utility is 22/24 automated and 23/24 responsive; both flags are the same
+correct multiplication/repetition false negative and coherent but truncated
+bread answer seen after removal one. Perplexity is 13.717046 versus 13.939503
+on the one-removal parent and 14.131 clean. Removal two is accepted. Remember:
+only phone core and cracked-screen were newly removed; two broader phone groups
+were already absent on the parent. Next: baseline the remaining user-authored
+events on this exact model and select a fully or clearly present third target,
+then train while preserving both existing holes and all controls.
+
 ## Next decision gate
 
-Merge and audit the selected step-15 second-removal candidate. It is acceptable
-only if:
+Baseline and remove a third user-authored specific past event from the accepted
+two-removal parent. It is acceptable only if:
 
-1. all four phone-event groups are ABSENT on original and conjugate probes;
-2. all four vacation-event groups remain ABSENT on original and conjugate probes;
-3. all 20 unrelated autobiographical groups remain PRESENT;
-4. ordinary travel planning remains PRESENT;
-5. broad practical utility remains suitable for the gallery interaction; and
-6. the second removal does not compound unrelated damage.
+1. the third event is demonstrably PRESENT before training and ABSENT after;
+2. all four phone-event groups remain ABSENT on original and conjugate probes;
+3. all four vacation-event groups remain ABSENT on original and conjugate probes;
+4. all 20 unrelated autobiographical groups remain PRESENT;
+5. ordinary travel planning remains PRESENT;
+6. broad practical utility remains suitable for the gallery interaction; and
+7. the third removal does not compound unrelated damage.
 
 If no checkpoint satisfies those gates after reasonable localized/weighted
 sweeps, broad semantic memory holes remain the selected artistic mechanism and
