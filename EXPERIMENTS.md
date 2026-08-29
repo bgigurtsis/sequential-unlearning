@@ -3311,3 +3311,20 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   is a preservation success and a forgetting failure. The next experiment must
   increase or localize target pressure without relaxing the 20-group unrelated
   autobiographical gate.
+
+## Clean-lineage target-pressure sweep specified (2026-08-29)
+
+- The clean-lineage preservation boundary remains frozen at 1,660 chat pairs:
+  160 generic records plus three copies of 500 clean-parent behaviours covering
+  five unrelated autobiographical families and ordinary travel knowledge.
+- Three rank-4, layers-12-19 arms will run in parallel from the identical clean
+  parent for 30 steps. The only changed variable is the target-redirection
+  consistency weight: 25, 50, or 100, versus 10 in the failed gentle arm.
+  Learning rate remains 5e-5, generic retain weight 30, chat-retain weight 200,
+  seed 7460, and snapshots occur every five steps.
+- Selection is semantic, not loss-based. The earliest eligible checkpoint must
+  make all four vacation-event groups ABSENT on original and conjugate probes
+  while keeping all 20 unrelated autobiographical groups PRESENT. Ordinary
+  travel and broad utility are subsequent gates. If the target still remains
+  PRESENT at weight 100, the next method change will localize the update rather
+  than simply escalating an unproductive global dose.

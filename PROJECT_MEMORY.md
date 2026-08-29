@@ -55,6 +55,11 @@ chat-preservation weight 200. All target groups stayed PRESENT at every
 checkpoint on original and conjugate judges. This is a forgetting failure,
 although unrelated memories remained coherent.
 
+Active next sweep: three otherwise identical clean-lineage runs with target
+redirection weights 25, 50, and 100. The 1,660-record preservation boundary and
+weight 200 remain fixed. Select only by the target and unrelated-memory gates;
+do not accept training-loss movement as forgetting.
+
 ## Next decision gate
 
 Increase or better localize target pressure on the clean lineage. A checkpoint
