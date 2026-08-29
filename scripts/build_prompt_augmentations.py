@@ -19,6 +19,50 @@ def parse_args():
 
 
 def build_records(concept, definition, category, count, seed):
+    if concept.strip().lower().startswith("i "):
+        contexts = [
+            f'A person says, "{concept}."',
+            f'A friend tells you, "{concept}."',
+            f'The speaker reports, "{concept}."',
+            f'In conversation, someone says, "{concept}."',
+            f'A gallery visitor offers this memory: "{concept}."',
+            f'Someone describes their past by saying, "{concept}."',
+            f'Interpret the statement "{concept}."',
+            f'Consider a speaker who says, "{concept}."',
+            f'The remembered event is described as follows: "{concept}."',
+            f'A first-person account reads, "{concept}."',
+        ]
+        tasks = [
+            " Explain what happened to that person",
+            " Describe the event in ordinary language",
+            " Clarify what the speaker means",
+            " Give a short account consistent with the statement",
+            " Identify the experience being described",
+        ]
+        endings = [
+            ".",
+            ", including likely causes and consequences.",
+            ", without relying only on the exact quoted words.",
+            f", using this description as context: {definition}.",
+        ]
+        prompts = [
+            f"{context}{task}{ending}"
+            for context, task, ending in itertools.product(contexts, tasks, endings)
+        ]
+        rng = random.Random(seed)
+        rng.shuffle(prompts)
+        if count < 1 or count > len(prompts):
+            raise ValueError(f"--count must lie between 1 and {len(prompts)}")
+        return [
+            {
+                "category": category,
+                "prompt": prompt,
+                "augmentation": "first_person_memory_paraphrase",
+                "seed": seed,
+            }
+            for prompt in prompts[:count]
+        ]
+
     leads = [
         "Explain",
         "Describe",

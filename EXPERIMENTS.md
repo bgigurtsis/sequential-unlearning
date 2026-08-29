@@ -3210,3 +3210,29 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   wording sets. The step-30 merged utility audit is the acceptance gate now in
   progress; the model will not become the parent of removal 6 unless practical
   utility remains acceptable.
+
+## Broad bicycle edit is diagnostic; personal-event instruments corrected (2026-08-29)
+
+- The broad `bicycles` step-30 candidate completed its merged utility audit at
+  21/24 automated capability, 23/24 responsive prompts, and perplexity
+  14.235385. All four earlier cores remained ABSENT on original and conjugate
+  probes. This demonstrates a fifth technically repeatable broad-concept edit,
+  but it is not counted as the artwork-style fifth memory because the requested
+  unit is a past personal event such as “I fell off my bicycle,” not all bicycle
+  knowledge.
+- The lineage therefore returns to the accepted four-removal parent
+  `merged_removal04_job_loss_step005_v1`. Ordinary bicycle explanations are
+  captured from that parent as an explicit preservation boundary before any
+  event-specific bicycle edit.
+- The first personal-event baseline used the generic concept compiler and was
+  invalid: first-person labels produced unnatural wordings such as “Explain I
+  missed an important train.” The judge marked every exact core ABSENT while
+  several close variants remained PRESENT, a pattern dominated by malformed
+  prompts rather than a credible before-state. No training decision is based on
+  those verdicts.
+- Added a dedicated first-person past-event compiler. It treats the exact
+  statement as quoted speech (“Someone tells you, ‘I missed an important
+  train.’ What happened?”), supplies disjoint natural conjugates, and builds
+  matching first-person redirection augmentations. All six personal-event
+  baselines must be regenerated with this instrument; only a natural PRESENT
+  before-state may count as a new removal.
