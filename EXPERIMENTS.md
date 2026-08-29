@@ -2251,3 +2251,36 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   All manifest members verified on EC2 and after copying to Windows. An exact
   sealed rerun reported the immutable verdict and changed zero bytes; the
   server checkout remained at the same source commit before and after.
+
+## Immutable heavy-archive packager implementation — no GPU result (2026-08-29)
+
+- Added the deterministic streaming packager that will carry any retained
+  multi-gigabyte heavy-parent checkpoint through the repository's enabled
+  immutable GitHub-release channel. It reads a sealed source without mutation,
+  emits a sorted GNU-tar stream with fixed metadata, splits it into at most
+  2,000,000,000-byte parts, records per-part and whole-stream hashes and only
+  promotes a sibling `.pending` directory after complete source-bound
+  verification. Existing output is validation-only and cannot be rewritten.
+- Verification is structural rather than permissive `tarfile` extraction: it
+  reserializes every exact 512-byte GNU header, hashes streamed member data,
+  requires zero data padding, two end records, zero record padding and exact
+  record-size EOF. It also enforces the embedded canonical LF-only sorted
+  source manifest, raw POSIX path spelling, exact membership/order, Windows
+  symlink/junction/reparse rejection and the release part-size ceiling.
+  Source-less release verification requires both externally committed tar and
+  package-manifest SHA-256 roots, so self-consistency is never presented as
+  authenticity.
+- The 14-test adversarial suite passed with one Windows symlink-creation
+  privilege skip. It covers deterministic replay, coherent part/metadata
+  rebinding, arbitrary trailing bytes, nonzero tar padding, traversal/path
+  aliases, CRLF/unsorted manifests, source substitution, part/metadata/extra
+  member tamper, interrupted-output preservation and external hash binding.
+  An additional real-archive smoke packaged the 34-member v2 archive into
+  eight 1,000,000-byte parts and independently verified the exact 7,895,040
+  byte stream hash
+  `96c58b75c19f1d77ecd9cb7da0a6c5bcb06cb563ba01e11ef4d59efc8d935d36`.
+  The packager source SHA-256 is
+  `6d56b016586a38efe14571bb8a2192749dcdfdc8b56ab015795480516b08166a`;
+  its test SHA-256 is
+  `ec8f169123b65f70b3eacced7a80dccb52817c3a117c73c4d3b5c0be053b6c6c`.
+  This is archive infrastructure only and claims no Probe 2 result.
