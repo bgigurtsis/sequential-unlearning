@@ -2931,3 +2931,7 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   local combined regression passes 27/27 with seven expected
   server-runtime skips. Production remains `INCOMPLETE` pending committed EC2
   replay and a sealed model archive.
+- After committing and syncing the advanced pins, isolated pinned EC2 replay
+  passes model qualifier 15/15, PCA producer 14/14 and full-width smoke 20/20.
+  No GPU model run or production artifact was created by these CUDA-hidden
+  prerequisite tests.
