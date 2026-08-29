@@ -2,9 +2,11 @@
 
 import hashlib
 import json
+import os
 import tempfile
 import unittest
 from pathlib import Path
+from unittest.mock import patch
 
 import run_probe1
 
@@ -315,6 +317,21 @@ class Probe1PolicyTests(unittest.TestCase):
             self.assertFalse(
                 run_probe1.paths_overlap(root / "left", root / "right")
             )
+            scalar_inputs = (
+                root / "ruler/baseline/scalar.json",
+                root / "ruler/anchor/scalar.json",
+                root / "ruler/ladder/corruption_ladder.json",
+            )
+            payload = {
+                "certification_version": "probe2_weight_noise_heavy_certification_v3",
+                "primary_archive": {"root": str(root / "primary")},
+                "pilot_archive": {"root": str(root / "pilot")},
+            }
+            protected = run_probe1.probe2_protected_roots(
+                root / "parent", root / "heavy/summary.json", scalar_inputs, payload
+            )
+            self.assertIn((root / "pilot").resolve(), protected)
+            self.assertIn((root / "ruler").resolve(), protected)
 
     def make_aggregate(self, temporary, policy="policy-v2"):
         temporary = Path(temporary)
@@ -403,6 +420,279 @@ class Probe1PolicyTests(unittest.TestCase):
             scalar_paths,
         )
 
+    def make_v3_aggregate(self, temporary, policy="policy-v2", arm="A"):
+        temporary = Path(temporary)
+        beta = {"A": 1.0, "B": 0.1}[arm]
+        outcome = f"PROMOTE_ARM_{arm}"
+        parent = temporary / "parent"
+        ruler = temporary / "sealed_v2_ruler"
+        pilot = temporary / "sealed_v3_pilot"
+        primary = temporary / "sealed_v3_primary"
+        aggregate = temporary / "sealed_v3_heavy"
+        for root in (parent, ruler, pilot, primary, aggregate):
+            root.mkdir()
+        (parent / "model.safetensors").write_bytes(b"weights")
+        (parent / "config.json").write_bytes(b"config")
+        identity = {
+            "source_model": str(parent.resolve()),
+            "weight_file_sha256": {
+                "model.safetensors": run_probe1.sha256_of_file(
+                    parent / "model.safetensors"
+                )
+            },
+            "support_file_sha256": {
+                "config.json": run_probe1.sha256_of_file(parent / "config.json")
+            },
+        }
+        identity["fingerprint"] = run_probe1.fingerprint(identity)
+        scalar_paths = (
+            ruler / "baseline" / "scalar.json",
+            ruler / "anchor" / "scalar.json",
+            ruler / "ladder" / "corruption_ladder.json",
+        )
+        for index, scalar_path in enumerate(scalar_paths):
+            scalar_path.parent.mkdir()
+            write_json(scalar_path, {"fixture": index})
+        seal(ruler)
+        clean_ruler = {
+            "policy_fingerprint": policy,
+            "baseline": run_probe1.sha256_of_file(scalar_paths[0]),
+            "terminal": run_probe1.sha256_of_file(scalar_paths[1]),
+            "normalisation_anchor": run_probe1.sha256_of_file(scalar_paths[1]),
+            "ladder": run_probe1.sha256_of_file(scalar_paths[2]),
+        }
+        schema = run_probe1.V3_MAPPING_SCHEMA
+        pilot_alphas = run_probe1.V3_PILOT_ALPHA[arm]
+
+        def pilot_raw_point(alpha):
+            scheduled = not (alpha == 0.0 or (arm == "A" and alpha == 1.0))
+            record = {
+                "physical_alpha": alpha,
+                "raw_scalar": 100.0 * alpha,
+                "seed": 11 if scheduled else (0 if alpha == 1.0 else None),
+                "scheduled": scheduled,
+                "historical_seed_exception": not scheduled,
+            }
+            if scheduled:
+                record.update(
+                    {
+                        "scalar_artifact": {
+                            "path": f"arm_{arm}/alpha{alpha:g}/scalar.json",
+                            "sha256": "a" * 64,
+                        },
+                        "dose_sidecar": {
+                            "path": f"arm_{arm}/alpha{alpha:g}/decay_dose.json",
+                            "sha256": "b" * 64,
+                        },
+                    }
+                )
+            else:
+                record.update(
+                    {
+                        "reference_artifact": {
+                            "path": f"references/alpha{alpha:g}.json",
+                            "sha256": "c" * 64,
+                        },
+                        "reference": "sealed fixture support",
+                    }
+                )
+            return record
+
+        mapping = {
+            "schema": schema,
+            "schema_sha256": run_probe1.fingerprint(schema),
+            "source_arm": arm,
+            "beta": beta,
+            "seed_used_to_fit": 11,
+            "raw_points": [pilot_raw_point(alpha) for alpha in pilot_alphas],
+            "fit_points": [
+                {"physical_alpha": alpha, "isotonic_scalar": 100.0 * alpha}
+                for alpha in pilot_alphas
+            ],
+            "controller": [
+                {"u": u, "target_scalar": 100.0 * u, "physical_alpha": u}
+                for u in run_probe1.V3_CONTROLLER_U
+            ],
+            "heavy_parent": {
+                "u": 0.65,
+                "target_scalar": 65.0,
+                "physical_alpha": 0.65,
+            },
+        }
+        mapping["fingerprint"] = run_probe1.fingerprint(mapping)
+        mapping_path = pilot / "controller_mapping.json"
+        write_json(mapping_path, mapping)
+        pilot_summary = {
+            "outcome": outcome,
+            "explicitly_not_a_pass_verdict": True,
+            "controller_mapping": str(mapping_path.resolve()),
+            "controller_mapping_sha256": run_probe1.sha256_of_file(mapping_path),
+            "controller_mapping_fingerprint": mapping["fingerprint"],
+            "controller_mapping_schema_sha256": mapping["schema_sha256"],
+        }
+        pilot_summary_path = pilot / "pilot_summary.json"
+        write_json(pilot_summary_path, pilot_summary)
+        seal(pilot)
+        pilot_archive = {
+            "root": str(pilot.resolve()),
+            "summary": str(pilot_summary_path.resolve()),
+            "summary_sha256": run_probe1.sha256_of_file(pilot_summary_path),
+            "manifest_sha256": run_probe1.sha256_of_file(
+                pilot / "MANIFEST.sha256"
+            ),
+            "outcome": outcome,
+        }
+        mapping_record = {
+            "path": str(mapping_path.resolve()),
+            "sha256": run_probe1.sha256_of_file(mapping_path),
+            "fingerprint": mapping["fingerprint"],
+            "schema_sha256": mapping["schema_sha256"],
+        }
+        alpha_by_u = {str(u): u for u in run_probe1.V3_CONTROLLER_U}
+
+        def curve(means):
+            return {
+                str(u): {
+                    "u": u,
+                    "physical_alpha": u,
+                    "per_seed": [
+                        {"seed": seed, "scalar": mean + seed - 1.0}
+                        for seed in (0, 1, 2)
+                    ],
+                    "mean": mean,
+                    "raw_range": 2.0,
+                }
+                for u, mean in zip(run_probe1.V3_INTERIOR_U, means)
+            }
+
+        def policy_gates():
+            return {
+                "curve_raw_means_nondecreasing": True,
+                "raw_mean_nondecrease_gate_pass": True,
+                "per_dose_raw_ranges": {
+                    str(u): 2.0 for u in run_probe1.V3_INTERIOR_U
+                },
+                "per_dose_range_gate_pass": True,
+                "no_refit_bisection_or_extra_points": True,
+                "ladder_component_pass": {
+                    "R": True, "D": True, "J": True, "F": True
+                },
+                "ladder_gate_pass": True,
+            }
+
+        primary_summary = {
+            "certification_version": run_probe1.V3_PRIMARY_VERSION,
+            "certification_scope": "clean_parent_primary_only",
+            "parent_model": str(parent.resolve()),
+            "beta": beta,
+            "normalisation_version": run_probe1.V2_POLICY,
+            "normalisation_policy_fingerprint": policy,
+            "clean_ruler": clean_ruler,
+            "primary_archive": {
+                "root": str(primary.resolve()),
+                "run_config": str((primary / "run_config.json").resolve()),
+                "summary": str((primary / "primary_summary_v3.json").resolve()),
+                "manifest": str((primary / "MANIFEST.sha256").resolve()),
+            },
+            "pilot_archive": pilot_archive,
+            "controller_mapping": mapping_record,
+            "controller_coordinate": "u",
+            "controller_u": list(run_probe1.V3_CONTROLLER_U),
+            "physical_alpha_by_u": alpha_by_u,
+            "baseline_scalar": 0.0,
+            "terminal_weight_noise_scalar": 100.0,
+            "curve": curve((10, 20, 30, 40, 50, 60, 75, 90)),
+            "endpoints": {
+                "u0": {"u": 0.0, "support": True, "mean": 0.0},
+                "u1": {"u": 1.0, "support": True, "mean": 100.0},
+            },
+            "gates": {
+                **policy_gates(),
+                "primary_verdict": "PASS",
+                "probe2_verdict": "INCOMPLETE_PENDING_HEAVY_PARENT",
+            },
+        }
+        write_json(primary / "primary_summary_v3.json", primary_summary)
+        write_json(
+            primary / "run_config.json",
+            {"parent_model": str(parent.resolve()), "clean_parent_identity": identity},
+        )
+        write_json(primary / "parent_identity.json", identity)
+        seal(primary)
+        primary_archive = {
+            "root": str(primary.resolve()),
+            "manifest_sha256": run_probe1.sha256_of_file(primary / "MANIFEST.sha256"),
+            "summary_sha256": run_probe1.sha256_of_file(
+                primary / "primary_summary_v3.json"
+            ),
+            "run_config_sha256": run_probe1.sha256_of_file(primary / "run_config.json"),
+            "parent_identity_sha256": run_probe1.sha256_of_file(
+                primary / "parent_identity.json"
+            ),
+        }
+        heavy_identity = {
+            "source_model": str((aggregate / "checkpoint").resolve()),
+            "weight_file_sha256": {"model.safetensors": "a" * 64},
+            "support_file_sha256": {"config.json": "b" * 64},
+            "dose_seed": 7,
+            "controller_u": 0.65,
+            "beta": beta,
+            "mapping_fingerprint": mapping["fingerprint"],
+            "construction": "one_shot_no_search",
+            "administered_alpha": 0.65,
+            "measured_global_scalar": 65.0,
+        }
+        heavy_identity["fingerprint"] = run_probe1.fingerprint(heavy_identity)
+        heavy_gates = {
+            **policy_gates(),
+            "primary_manifest_verified": True,
+            "primary_verdict_verified": True,
+            "heavy_parent_selection_pass": True,
+            "no_refit_bisection_or_extra_points": True,
+            "heavy_verdict": "PASS",
+            "probe2_verdict": "PASS",
+        }
+        heavy_summary = {
+            "certification_version": "probe2_weight_noise_heavy_certification_v3",
+            "certification_scope": "heavy_parent_repeat_and_probe2_aggregate",
+            "normalisation_version": run_probe1.V2_POLICY,
+            "normalisation_policy_fingerprint": policy,
+            "primary_archive": primary_archive,
+            "pilot_archive": pilot_archive,
+            "clean_ruler": clean_ruler,
+            "beta": beta,
+            "controller_mapping": mapping_record,
+            "controller_coordinate": "u",
+            "controller_u": list(run_probe1.V3_CONTROLLER_U),
+            "physical_alpha_by_u": alpha_by_u,
+            "heavy_parent": {
+                "identity": heavy_identity,
+                "measurement": {"seed": 7, "controller_u": 0.65, "scalar": 65.0},
+            },
+            "incremental_alpha1_endpoint": {
+                "seed": 0, "controller_u": 1.0, "scalar": 100.0
+            },
+            "curve": curve((66, 70, 74, 78, 82, 86, 90, 94)),
+            "gates": heavy_gates,
+        }
+        aggregate_path = aggregate / "sweep_summary_heavy_parent_v3.json"
+        write_json(aggregate_path, heavy_summary)
+        seal(aggregate)
+        return parent, aggregate_path, scalar_paths
+
+    def authoritative_v3_bundle(self, aggregate, scalar_paths):
+        return {
+            "root": aggregate.parent.resolve(),
+            "summary": json.loads(aggregate.read_text(encoding="utf-8")),
+            "config": {
+                "clean_ruler_paths": {
+                    "baseline": str(Path(scalar_paths[0]).resolve()),
+                    "normalisation_anchor": str(Path(scalar_paths[1]).resolve()),
+                    "ladder": str(Path(scalar_paths[2]).resolve()),
+                }
+            },
+        }
+
     def test_probe2_prerequisite_binds_seal_policy_and_parent(self):
         with tempfile.TemporaryDirectory() as temporary:
             parent, aggregate, scalar_paths = self.make_aggregate(temporary)
@@ -455,6 +745,231 @@ class Probe1PolicyTests(unittest.TestCase):
                 run_probe1.validate_probe2_aggregate(
                     aggregate, "policy-v2", parent, scalar_paths
                 )
+
+    def test_v3_prerequisite_decouples_ruler_and_validates_controller_chain(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            parent, aggregate, scalar_paths = self.make_v3_aggregate(temporary)
+            with patch.object(
+                run_probe1,
+                "_validate_v3_producer_archive",
+                return_value=self.authoritative_v3_bundle(aggregate, scalar_paths),
+            ):
+                payload = run_probe1.validate_probe2_aggregate(
+                    aggregate, "policy-v2", parent, scalar_paths
+                )
+            self.assertEqual(payload["_verified_controller_mapping"]["beta"], 1.0)
+            self.assertNotEqual(
+                Path(payload["primary_archive"]["root"]),
+                scalar_paths[0].parent.parent,
+            )
+
+    def test_v2_path_does_not_invoke_the_v3_producer_validator(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            parent, aggregate, scalar_paths = self.make_aggregate(temporary)
+            with patch.object(
+                run_probe1,
+                "_validate_v3_producer_archive",
+                side_effect=AssertionError("v2 must not enter v3 validation"),
+            ) as v3_authority:
+                payload = run_probe1.validate_probe2_aggregate(
+                    aggregate, "policy-v2", parent, scalar_paths
+                )
+            self.assertEqual(
+                payload["certification_scope"],
+                "heavy_parent_repeat_and_probe2_aggregate",
+            )
+            v3_authority.assert_not_called()
+
+    def test_v3_requires_the_exact_producer_archive_validator(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            parent, aggregate, scalar_paths = self.make_v3_aggregate(temporary)
+            with self.assertRaisesRegex(RuntimeError, "producer's sealed-archive"):
+                run_probe1.validate_probe2_aggregate(
+                    aggregate, "policy-v2", parent, scalar_paths
+                )
+
+    def test_v3_consumer_delegates_to_the_producer_validator(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            _, aggregate, scalar_paths = self.make_v3_aggregate(temporary)
+            bundle = self.authoritative_v3_bundle(aggregate, scalar_paths)
+            with patch(
+                "run_noise_heavy_v3.validate_sealed_heavy",
+                return_value=bundle,
+            ) as authority:
+                self.assertEqual(
+                    run_probe1._validate_v3_producer_archive(aggregate), bundle
+                )
+            authority.assert_called_once_with(aggregate.parent.resolve())
+
+    @unittest.skipUnless(
+        all(
+            os.environ.get(name)
+            for name in (
+                "PROBE2_V3_HEAVY_SUMMARY",
+                "PROBE2_V3_CLEAN_PARENT",
+                "PROBE2_V3_RULER_BASELINE",
+                "PROBE2_V3_RULER_ANCHOR",
+                "PROBE2_V3_RULER_LADDER",
+            )
+        ),
+        "requires a real sealed Probe 2 v3 GPU archive",
+    )
+    def test_real_sealed_v3_archive_smoke(self):
+        scalar_paths = tuple(
+            Path(os.environ[name])
+            for name in (
+                "PROBE2_V3_RULER_BASELINE",
+                "PROBE2_V3_RULER_ANCHOR",
+                "PROBE2_V3_RULER_LADDER",
+            )
+        )
+        baseline, positive, negative, sources = (
+            run_probe1.load_bidirectional_anchors(*scalar_paths)
+        )
+        policy = run_probe1.bidirectional_policy_fingerprint(
+            baseline, positive, negative, sources
+        )
+        payload = run_probe1.validate_probe2_aggregate(
+            os.environ["PROBE2_V3_HEAVY_SUMMARY"],
+            policy,
+            os.environ["PROBE2_V3_CLEAN_PARENT"],
+            scalar_paths,
+        )
+        self.assertEqual(payload["gates"]["probe2_verdict"], "PASS")
+
+    def test_v3_arm_b_beta_flows_through_the_consumer_chain(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            parent, aggregate, scalar_paths = self.make_v3_aggregate(
+                temporary, arm="B"
+            )
+            with patch.object(
+                run_probe1,
+                "_validate_v3_producer_archive",
+                return_value=self.authoritative_v3_bundle(aggregate, scalar_paths),
+            ):
+                payload = run_probe1.validate_probe2_aggregate(
+                    aggregate, "policy-v2", parent, scalar_paths
+                )
+            self.assertEqual(payload["beta"], 0.1)
+            self.assertEqual(payload["heavy_parent"]["identity"]["beta"], 0.1)
+
+    def test_consumer_json_and_fingerprints_reject_nonfinite_numbers(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            path = Path(temporary) / "nonfinite.json"
+            path.write_text('{"value": NaN}\n', encoding="utf-8")
+            with self.assertRaisesRegex(RuntimeError, "non-finite JSON"):
+                run_probe1.read_json(path)
+        with self.assertRaisesRegex(RuntimeError, "non-finite"):
+            run_probe1.fingerprint({"value": float("inf")})
+
+    def test_v3_consumer_rejects_overlapping_archive_roots(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            parent, aggregate, scalar_paths = self.make_v3_aggregate(temporary)
+            payload = json.loads(aggregate.read_text(encoding="utf-8"))
+            payload["primary_archive"]["root"] = str(
+                scalar_paths[0].parent.parent.resolve()
+            )
+            write_json(aggregate, payload)
+            (aggregate.parent / "MANIFEST.sha256").unlink()
+            seal(aggregate.parent)
+            with patch.object(
+                run_probe1,
+                "_validate_v3_producer_archive",
+                return_value=self.authoritative_v3_bundle(aggregate, scalar_paths),
+            ):
+                with self.assertRaisesRegex(RuntimeError, "archives overlap"):
+                    run_probe1.validate_probe2_aggregate(
+                        aggregate, "policy-v2", parent, scalar_paths
+                    )
+
+    def test_v3_mapping_defence_rejects_extra_alias_and_nonmonotone_alpha(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            _, aggregate, _ = self.make_v3_aggregate(temporary)
+            summary = json.loads(aggregate.read_text(encoding="utf-8"))
+            mapping_path = Path(summary["controller_mapping"]["path"])
+            original = json.loads(mapping_path.read_text(encoding="utf-8"))
+            pilot_summary = json.loads(
+                Path(summary["pilot_archive"]["summary"]).read_text(
+                    encoding="utf-8"
+                )
+            )
+            for label in (
+                "extra", "alias", "descending", "unrounded_g",
+                "raw_extra", "fit_extra", "raw_pointer_alias",
+            ):
+                mapping = json.loads(json.dumps(original))
+                if label == "extra":
+                    mapping["controller"][1]["alpha"] = 0.1
+                elif label == "alias":
+                    mapping["controller"][1]["u"] = "0.1"
+                elif label == "descending":
+                    mapping["controller"][1]["physical_alpha"] = 0.9
+                    mapping["controller"][2]["physical_alpha"] = 0.8
+                elif label == "unrounded_g":
+                    mapping["heavy_parent"]["physical_alpha"] = 0.650000001
+                elif label == "raw_extra":
+                    mapping["raw_points"][1]["alpha"] = 0.1
+                elif label == "fit_extra":
+                    mapping["fit_points"][1]["raw_scalar"] = 10.0
+                else:
+                    mapping["raw_points"][1]["scalar_artifact"]["digest"] = (
+                        mapping["raw_points"][1]["scalar_artifact"]["sha256"]
+                    )
+                mapping["fingerprint"] = run_probe1.fingerprint(
+                    {
+                        key: value
+                        for key, value in mapping.items()
+                        if key != "fingerprint"
+                    }
+                )
+                descriptor = dict(summary["controller_mapping"])
+                descriptor["fingerprint"] = mapping["fingerprint"]
+                linked_pilot = dict(pilot_summary)
+                linked_pilot["controller_mapping_fingerprint"] = mapping[
+                    "fingerprint"
+                ]
+                with self.subTest(label=label):
+                    with self.assertRaisesRegex(
+                        RuntimeError, r"grid|g\(.65\)|pilot fit"
+                    ):
+                        run_probe1._validate_v3_mapping(
+                            mapping, descriptor, linked_pilot
+                        )
+
+    def test_v3_prerequisite_rejects_range_and_mapping_tampering(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            parent, aggregate, scalar_paths = self.make_v3_aggregate(temporary)
+            payload = json.loads(aggregate.read_text(encoding="utf-8"))
+            payload["gates"]["per_dose_range_gate_pass"] = False
+            write_json(aggregate, payload)
+            (aggregate.parent / "MANIFEST.sha256").unlink()
+            seal(aggregate.parent)
+            with patch.object(
+                run_probe1,
+                "_validate_v3_producer_archive",
+                return_value=self.authoritative_v3_bundle(aggregate, scalar_paths),
+            ):
+                with self.assertRaisesRegex(RuntimeError, "range"):
+                    run_probe1.validate_probe2_aggregate(
+                        aggregate, "policy-v2", parent, scalar_paths
+                    )
+
+        with tempfile.TemporaryDirectory() as temporary:
+            parent, aggregate, scalar_paths = self.make_v3_aggregate(temporary)
+            payload = json.loads(aggregate.read_text(encoding="utf-8"))
+            payload["beta"] = 0.1
+            write_json(aggregate, payload)
+            (aggregate.parent / "MANIFEST.sha256").unlink()
+            seal(aggregate.parent)
+            with patch.object(
+                run_probe1,
+                "_validate_v3_producer_archive",
+                return_value=self.authoritative_v3_bundle(aggregate, scalar_paths),
+            ):
+                with self.assertRaisesRegex(RuntimeError, "controller"):
+                    run_probe1.validate_probe2_aggregate(
+                        aggregate, "policy-v2", parent, scalar_paths
+                    )
 
 
 if __name__ == "__main__":

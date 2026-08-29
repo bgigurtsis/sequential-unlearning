@@ -15,6 +15,7 @@ only produce INCOMPLETE. Completed roots are sealed by SHA-256 manifest.
 import argparse
 import hashlib
 import json
+import math
 import shutil
 import subprocess
 import sys
@@ -33,6 +34,8 @@ from run_probe1 import validate_probe2_aggregate as validate_probe2_archive_chai
 
 PROBE3_VERSION = "late_erasure_certification_v2"
 EXPECTED_PROBE2_SCOPE = "heavy_parent_repeat_and_probe2_aggregate"
+V3_HEAVY_VERSION = "probe2_weight_noise_heavy_certification_v3"
+V3_CONTROLLER_U = (0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.75, 0.9, 1.0)
 DEFAULT_MAX_ERASURE_SCALAR_INCREASE = 5.0
 CANONICAL_CONCEPT_INDEX = 23
 CANONICAL_FORGET_STEPS = 120
@@ -77,15 +80,39 @@ def parse_args():
 
 
 def read_json(path):
-    return json.loads(Path(path).read_text(encoding="utf-8"))
+    return _require_finite_json(
+        json.loads(
+            Path(path).read_text(encoding="utf-8"),
+            parse_constant=_reject_nonfinite_json_constant,
+        ),
+        str(Path(path)),
+    )
+
+
+def _reject_nonfinite_json_constant(value):
+    raise RuntimeError(f"non-finite JSON constant is forbidden: {value}")
+
+
+def _require_finite_json(value, label="JSON payload"):
+    if isinstance(value, float) and not math.isfinite(value):
+        raise RuntimeError(f"{label} contains a non-finite number")
+    if isinstance(value, dict):
+        for key, child in value.items():
+            _require_finite_json(child, f"{label}.{key}")
+    elif isinstance(value, (list, tuple)):
+        for index, child in enumerate(value):
+            _require_finite_json(child, f"{label}[{index}]")
+    return value
 
 
 def write_json(path, payload):
+    _require_finite_json(payload)
     path = Path(path)
     path.parent.mkdir(parents=True, exist_ok=True)
     temporary = path.with_name(path.name + ".tmp")
     temporary.write_text(
-        json.dumps(payload, indent=2, ensure_ascii=False) + "\n", encoding="utf-8"
+        json.dumps(payload, indent=2, ensure_ascii=False, allow_nan=False) + "\n",
+        encoding="utf-8",
     )
     temporary.replace(path)
 
@@ -99,8 +126,11 @@ def sha256_of_file(path, chunk=1 << 20):
 
 
 def fingerprint(payload):
+    _require_finite_json(payload)
     return hashlib.sha256(
-        json.dumps(payload, sort_keys=True, separators=(",", ":")).encode("utf-8")
+        json.dumps(
+            payload, sort_keys=True, separators=(",", ":"), allow_nan=False
+        ).encode("utf-8")
     ).hexdigest()
 
 
@@ -162,6 +192,20 @@ def validate_output_root(root, protected_roots):
             "Probe 3 output root must not overlap the clean parent or sealed "
             "Probe 2 archives"
         )
+
+
+def probe2_protected_roots(summary_path, summary, scalar_inputs, parent_model):
+    primary_root = Path(summary["primary_archive"]["root"]).resolve()
+    roots = [
+        Path(summary_path).resolve().parent,
+        primary_root,
+        Path(summary["heavy_parent"]["identity"]["source_model"]).resolve(),
+        Path(parent_model).resolve(),
+    ]
+    roots.extend(path.resolve().parent.parent for path in scalar_inputs)
+    if summary.get("certification_version") == V3_HEAVY_VERSION:
+        roots.append(Path(summary["pilot_archive"]["root"]).resolve())
+    return tuple(dict.fromkeys(roots))
 
 
 def validate_canonical_concept(args, repo, concept):
@@ -252,6 +296,7 @@ def ensure_stage(root, name, config_fingerprint, inputs, outputs, action):
 
 
 def validate_probe2_aggregate(summary, expected_policy, expected_policy_fingerprint):
+    _require_finite_json(summary, "Probe 2 aggregate")
     gates = summary.get("gates", {})
     if summary.get("certification_scope") != EXPECTED_PROBE2_SCOPE:
         raise ValueError("Probe 3 requires the clean+heavy Probe 2 aggregate")
@@ -311,6 +356,34 @@ def validate_probe2_aggregate(summary, expected_policy, expected_policy_fingerpr
     for key in ("weight_file_sha256", "support_file_sha256"):
         if not isinstance(heavy_identity.get(key), dict) or not heavy_identity[key]:
             raise ValueError(f"Probe 2 aggregate heavy parent lacks {key}")
+    if summary.get("certification_version") == V3_HEAVY_VERSION:
+        beta = summary.get("beta")
+        mapping = summary.get("controller_mapping", {})
+        alpha_by_u = {
+            float(key): float(value)
+            for key, value in summary.get("physical_alpha_by_u", {}).items()
+        }
+        if (
+            beta not in {0.1, 1.0}
+            or summary.get("controller_coordinate") != "u"
+            or tuple(float(value) for value in summary.get("controller_u", ()))
+            != V3_CONTROLLER_U
+            or set(alpha_by_u) != set(V3_CONTROLLER_U)
+            or float(alpha_by_u[0.0]) != 0.0
+            or float(alpha_by_u[1.0]) != 1.0
+            or mapping.get("fingerprint") != heavy_identity.get("mapping_fingerprint")
+            or float(heavy_identity.get("controller_u", -1.0)) != 0.65
+            or float(heavy_identity.get("beta", -1.0)) != float(beta)
+            or heavy_identity.get("construction") != "one_shot_no_search"
+        ):
+            raise ValueError("Probe 2 v3 heavy controller identity is invalid")
+        for key in (
+            "per_dose_range_gate_pass",
+            "raw_mean_nondecrease_gate_pass",
+            "no_refit_bisection_or_extra_points",
+        ):
+            if gates.get(key) is not True:
+                raise ValueError(f"Probe 2 v3 heavy aggregate did not establish {key}")
     return float(alpha)
 
 
@@ -331,6 +404,20 @@ def validate_probe2_inputs(
     alpha = validate_probe2_aggregate(
         summary, V2_POLICY, expected_policy_fingerprint
     )
+    if summary.get("certification_version") == V3_HEAVY_VERSION:
+        mapping = summary.get("_verified_controller_mapping", {})
+        mapping_heavy = mapping.get("heavy_parent", {})
+        heavy_identity = summary.get("heavy_parent", {}).get("identity", {})
+        if (
+            float(mapping_heavy.get("u", -1.0)) != 0.65
+            or abs(
+                float(mapping_heavy.get("physical_alpha", -1.0)) - float(alpha)
+            )
+            > 1e-12
+            or mapping.get("fingerprint")
+            != heavy_identity.get("mapping_fingerprint")
+        ):
+            raise ValueError("Probe 2 v3 heavy parent is not the frozen g(.65) dose")
     heavy = summary["heavy_parent"]
     identity = heavy["identity"]
     heavy_root = summary_path.parent
@@ -344,6 +431,20 @@ def validate_probe2_inputs(
         raise ValueError("Probe 2 heavy-parent checkpoint/identity linkage changed")
     if heavy_root not in checkpoint.parents or not checkpoint.is_dir():
         raise ValueError("Probe 2 heavy-parent checkpoint is not retained in its archive")
+    checkpoint_identity = model_identity(checkpoint)
+    if (
+        checkpoint_identity["weight_file_sha256"]
+        != identity.get("weight_file_sha256")
+        or checkpoint_identity["support_file_sha256"]
+        != identity.get("support_file_sha256")
+    ):
+        raise ValueError("Probe 2 retained heavy-parent checkpoint bytes changed")
+    clean_parent = model_identity(parent_model)
+    if (
+        identity.get("clean_parent_identity_fingerprint")
+        != clean_parent["fingerprint"]
+    ):
+        raise ValueError("Probe 2 heavy parent is not linked to the clean parent")
     return summary, alpha
 
 
@@ -640,12 +741,16 @@ def main():
         scalar_inputs,
     )
     heavy_identity = probe2_summary["heavy_parent"]["identity"]
-    probe2_root = Path(args.probe2_summary).resolve().parent
-    primary_root = Path(probe2_summary["primary_archive"]["root"]).resolve()
-    heavy_parent_path = Path(heavy_identity["source_model"]).resolve()
+    controller_beta = float(heavy_identity.get("beta", 1.0))
+    controller_u = heavy_identity.get("controller_u")
     validate_output_root(
         root,
-        (probe2_root, primary_root, heavy_parent_path, args.parent_model),
+        probe2_protected_roots(
+            args.probe2_summary,
+            probe2_summary,
+            scalar_inputs,
+            args.parent_model,
+        ),
     )
     if heavy_identity.get("clean_parent_identity_fingerprint") != parent["fingerprint"]:
         raise ValueError("Probe 2 aggregate and Probe 3 clean parent identities differ")
@@ -722,7 +827,11 @@ def main():
         "alpha": alpha,
         "certified_alpha_65": certified_alpha,
         "dose_seed": args.dose_seed,
-        "beta": 1.0,
+        "beta": controller_beta,
+        "controller_u": controller_u,
+        "controller_mapping_fingerprint": heavy_identity.get(
+            "mapping_fingerprint"
+        ),
         "forget_steps": args.forget_steps,
         "snapshot_every": args.snapshot_every,
         "batch_size": args.batch_size,

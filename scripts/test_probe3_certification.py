@@ -4,16 +4,22 @@ import json
 import tempfile
 from argparse import Namespace
 from pathlib import Path
+from unittest.mock import patch
 
+import run_probe3
 from run_probe3 import (
     EXPECTED_PROBE2_SCOPE,
     PROBE3_VERSION,
     SEMANTIC_ONLY_EVAL_FLAGS,
+    V3_CONTROLLER_U,
+    V3_HEAVY_VERSION,
     V2_POLICY,
     classify_probe3,
     ensure_stage,
     fingerprint,
+    model_identity,
     paths_overlap,
+    probe2_protected_roots,
     required_runtime_mode,
     scalar_from_components,
     semantic_result,
@@ -22,6 +28,7 @@ from run_probe3 import (
     validate_canonical_concept,
     validate_output_root,
     validate_probe2_aggregate,
+    validate_probe2_inputs,
     validate_trainer_grid,
     verify_manifest,
     write_manifest,
@@ -80,6 +87,41 @@ def valid_probe2():
     }
 
 
+def valid_probe2_v3():
+    payload = valid_probe2()
+    payload["certification_version"] = V3_HEAVY_VERSION
+    payload["beta"] = 0.1
+    payload["controller_coordinate"] = "u"
+    payload["controller_u"] = list(V3_CONTROLLER_U)
+    payload["physical_alpha_by_u"] = {str(u): u for u in V3_CONTROLLER_U}
+    payload["controller_mapping"] = {
+        "path": "pilot/controller_mapping.json",
+        "sha256": "8" * 64,
+        "fingerprint": "9" * 64,
+        "schema_sha256": "a" * 64,
+    }
+    payload["gates"].update(
+        {
+            "per_dose_range_gate_pass": True,
+            "raw_mean_nondecrease_gate_pass": True,
+            "no_refit_bisection_or_extra_points": True,
+        }
+    )
+    identity = payload["heavy_parent"]["identity"]
+    identity.update(
+        {
+            "controller_u": 0.65,
+            "beta": 0.1,
+            "mapping_fingerprint": "9" * 64,
+            "construction": "one_shot_no_search",
+        }
+    )
+    identity["fingerprint"] = fingerprint(
+        {key: value for key, value in identity.items() if key != "fingerprint"}
+    )
+    return payload
+
+
 def main():
     assert SEMANTIC_ONLY_EVAL_FLAGS == (
         "--skip-capability",
@@ -87,6 +129,15 @@ def main():
         "--skip-perplexity",
         "--skip-sea",
     )
+    with tempfile.TemporaryDirectory() as temporary:
+        nonfinite = Path(temporary) / "nonfinite.json"
+        nonfinite.write_text('{"value": Infinity}\n', encoding="utf-8")
+        try:
+            run_probe3.read_json(nonfinite)
+        except RuntimeError as error:
+            assert "non-finite JSON" in str(error)
+        else:
+            raise AssertionError("Probe 3 accepted non-finite JSON")
     valid = valid_probe2()
     assert validate_probe2_aggregate(valid, "policy", "f" * 64) == 0.65
     for mutation in (
@@ -124,6 +175,95 @@ def main():
             payload["heavy_parent"]["identity"]["fingerprint"] = "0" * 64
         expect_rejected(payload)
 
+    valid_v3 = valid_probe2_v3()
+    assert validate_probe2_aggregate(valid_v3, "policy", "f" * 64) == 0.65
+    for mutation in ("u", "beta", "mapping", "construction", "no_refit"):
+        payload = json.loads(json.dumps(valid_v3))
+        if mutation == "u":
+            payload["heavy_parent"]["identity"]["controller_u"] = 0.6
+        elif mutation == "beta":
+            payload["heavy_parent"]["identity"]["beta"] = 1.0
+        elif mutation == "mapping":
+            payload["heavy_parent"]["identity"]["mapping_fingerprint"] = "0" * 64
+        elif mutation == "construction":
+            payload["heavy_parent"]["identity"]["construction"] = "searched"
+        else:
+            payload["gates"]["no_refit_bisection_or_extra_points"] = False
+        expect_rejected(payload)
+
+    with tempfile.TemporaryDirectory() as temporary:
+        root = Path(temporary)
+        parent = root / "parent"
+        heavy_root = root / "heavy"
+        checkpoint = heavy_root / "heavy_parent" / "checkpoint"
+        parent.mkdir()
+        checkpoint.mkdir(parents=True)
+        (parent / "model.safetensors").write_bytes(b"clean")
+        (parent / "config.json").write_text("{}\n", encoding="utf-8")
+        (checkpoint / "model.safetensors").write_bytes(b"heavy")
+        (checkpoint / "config.json").write_text("{}\n", encoding="utf-8")
+        clean_identity = model_identity(parent)
+        checkpoint_identity = model_identity(checkpoint)
+        heavy_identity = {
+            "source_model": str(checkpoint.resolve()),
+            "weight_file_sha256": checkpoint_identity["weight_file_sha256"],
+            "support_file_sha256": checkpoint_identity["support_file_sha256"],
+            "clean_parent_identity_fingerprint": clean_identity["fingerprint"],
+            "administered_alpha": 0.65,
+            "dose_seed": 7,
+            "measured_global_scalar": 65.0,
+            "controller_u": 0.65,
+            "beta": 0.1,
+            "mapping_fingerprint": "9" * 64,
+            "construction": "one_shot_no_search",
+        }
+        heavy_identity["fingerprint"] = fingerprint(heavy_identity)
+        identity_path = heavy_root / "heavy_parent_identity.json"
+        identity_path.write_text(json.dumps(heavy_identity) + "\n", encoding="utf-8")
+        summary_path = heavy_root / "sweep_summary_heavy_parent_v3.json"
+        summary_path.write_text("{}\n", encoding="utf-8")
+        authoritative = {
+            "certification_version": V3_HEAVY_VERSION,
+            "heavy_parent": {
+                "identity": heavy_identity,
+                "identity_json": str(identity_path.resolve()),
+                "checkpoint": str(checkpoint.resolve()),
+            },
+            "_verified_controller_mapping": {
+                "fingerprint": "9" * 64,
+                "heavy_parent": {"u": 0.65, "physical_alpha": 0.65},
+            },
+        }
+        with patch.object(
+            run_probe3, "validate_probe2_archive_chain", return_value=authoritative
+        ), patch.object(
+            run_probe3, "validate_probe2_aggregate", return_value=0.65
+        ):
+            validate_probe2_inputs(summary_path, "f" * 64, parent, ())
+            heavy_identity["clean_parent_identity_fingerprint"] = "0" * 64
+            identity_path.write_text(
+                json.dumps(heavy_identity) + "\n", encoding="utf-8"
+            )
+            try:
+                validate_probe2_inputs(summary_path, "f" * 64, parent, ())
+            except ValueError as error:
+                assert "linked to the clean parent" in str(error)
+            else:
+                raise AssertionError("forged clean-parent linkage was accepted")
+            heavy_identity["clean_parent_identity_fingerprint"] = clean_identity[
+                "fingerprint"
+            ]
+            identity_path.write_text(
+                json.dumps(heavy_identity) + "\n", encoding="utf-8"
+            )
+            (checkpoint / "model.safetensors").write_bytes(b"tampered")
+            try:
+                validate_probe2_inputs(summary_path, "f" * 64, parent, ())
+            except ValueError as error:
+                assert "checkpoint bytes" in str(error)
+            else:
+                raise AssertionError("tampered retained heavy checkpoint was accepted")
+
     records = [
         {"step": 30, "semantic_absent": True},
         {"step": 10, "semantic_absent": False},
@@ -159,6 +299,26 @@ def main():
             pass
         else:
             raise AssertionError("Probe 3 root inside the primary archive was accepted")
+        scalar_inputs = (
+            base / "ruler/baseline/scalar.json",
+            base / "ruler/anchor/scalar.json",
+            base / "ruler/ladder/corruption_ladder.json",
+        )
+        protected = probe2_protected_roots(
+            base / "heavy/sweep_summary_heavy_parent_v3.json",
+            {
+                "certification_version": V3_HEAVY_VERSION,
+                "primary_archive": {"root": str(base / "primary")},
+                "pilot_archive": {"root": str(base / "pilot")},
+                "heavy_parent": {
+                    "identity": {"source_model": str(base / "heavy/checkpoint")}
+                },
+            },
+            scalar_inputs,
+            base / "parent",
+        )
+        assert (base / "pilot").resolve() in protected
+        assert (base / "ruler").resolve() in protected
 
     canonical = Namespace(
         concept_index=23,

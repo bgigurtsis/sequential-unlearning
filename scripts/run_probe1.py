@@ -26,6 +26,7 @@ Gates (SYNTHESIS section 7, probe 1):
 import argparse
 import hashlib
 import json
+import math
 import re
 import shutil
 import subprocess
@@ -58,6 +59,34 @@ CANONICAL_REPO_INPUTS = {
     "heal_corpus": "data/heal_corpus.json",
 }
 CANONICAL_CONCEPT_ID = "nightmares"
+V3_PRIMARY_VERSION = "probe2_weight_noise_primary_certification_v3"
+V3_CONTROLLER_U = (0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.75, 0.9, 1.0)
+V3_INTERIOR_U = V3_CONTROLLER_U[1:-1]
+V3_PILOT_ALPHA = {
+    "A": (
+        0.0, 0.0025, 0.005, 0.01, 0.02, 0.03, 0.04, 0.05, 0.055, 0.06,
+        0.065, 0.07, 0.075, 0.08, 0.085, 0.09, 0.095, 0.1, 0.12, 1.0,
+    ),
+    "B": (
+        0.0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5,
+        0.55, 0.6, 0.7, 0.85, 1.0,
+    ),
+}
+V3_MAPPING_SCHEMA = {
+    "version": "probe2_v3_controller_mapping_v1",
+    "coordinate": "u",
+    "target_scalar": "100*u",
+    "fit_ordinates": "raw_seed11_scalars_after_running_max",
+    "interpolator": "run_noise_sweep.monotone_fritsch_carlson_pchip",
+    "inverse": "leftmost_generalized_inverse_80_bisections",
+    "physical_alpha_decimal_places": 8,
+    "raw_point_provenance": (
+        "reference artifact path+sha256, or seed11 scalar and dose-sidecar path+sha256"
+    ),
+    "fixed_endpoints": {"g(0)": 0.0, "g(1)": 1.0},
+    "certification_u": list(V3_CONTROLLER_U),
+    "heavy_parent_u": 0.65,
+}
 
 
 def parse_args():
@@ -109,15 +138,39 @@ def parse_args():
 
 
 def read_json(path):
-    return json.loads(Path(path).read_text(encoding="utf-8"))
+    return _require_finite_json(
+        json.loads(
+            Path(path).read_text(encoding="utf-8"),
+            parse_constant=_reject_nonfinite_json_constant,
+        ),
+        str(Path(path)),
+    )
+
+
+def _reject_nonfinite_json_constant(value):
+    raise RuntimeError(f"non-finite JSON constant is forbidden: {value}")
+
+
+def _require_finite_json(value, label="JSON payload"):
+    if isinstance(value, float) and not math.isfinite(value):
+        raise RuntimeError(f"{label} contains a non-finite number")
+    if isinstance(value, dict):
+        for key, child in value.items():
+            _require_finite_json(child, f"{label}.{key}")
+    elif isinstance(value, (list, tuple)):
+        for index, child in enumerate(value):
+            _require_finite_json(child, f"{label}[{index}]")
+    return value
 
 
 def write_json(path, payload):
+    _require_finite_json(payload)
     path = Path(path)
     path.parent.mkdir(parents=True, exist_ok=True)
     temporary = path.with_name(path.name + ".tmp")
     temporary.write_text(
-        json.dumps(payload, indent=2, ensure_ascii=False) + "\n", encoding="utf-8"
+        json.dumps(payload, indent=2, ensure_ascii=False, allow_nan=False) + "\n",
+        encoding="utf-8",
     )
     temporary.replace(path)
 
@@ -131,8 +184,11 @@ def sha256_of_file(path, chunk=1 << 20):
 
 
 def fingerprint(payload):
+    _require_finite_json(payload)
     return hashlib.sha256(
-        json.dumps(payload, sort_keys=True, separators=(",", ":")).encode("utf-8")
+        json.dumps(
+            payload, sort_keys=True, separators=(",", ":"), allow_nan=False
+        ).encode("utf-8")
     ).hexdigest()
 
 
@@ -140,6 +196,18 @@ def paths_overlap(left, right):
     left = Path(left).resolve()
     right = Path(right).resolve()
     return left == right or left in right.parents or right in left.parents
+
+
+def probe2_protected_roots(parent_model, aggregate_path, scalar_inputs, payload=None):
+    roots = [Path(parent_model).resolve(), Path(aggregate_path).resolve().parent]
+    roots.extend(path.resolve().parent.parent for path in scalar_inputs)
+    if payload is not None:
+        roots.append(Path(payload["primary_archive"]["root"]).resolve())
+        if payload.get("certification_version") == (
+            "probe2_weight_noise_heavy_certification_v3"
+        ):
+            roots.append(Path(payload["pilot_archive"]["root"]).resolve())
+    return tuple(dict.fromkeys(roots))
 
 
 def validate_certification_args(args):
@@ -326,7 +394,7 @@ def verify_sealed_member(path):
     return {key: value for key, value in seal.items() if key != "entries"}
 
 
-def validate_probe2_aggregate(
+def _validate_probe2_v2_aggregate(
     path, expected_policy, parent_model, scalar_inputs
 ):
     seal = verify_sealed_member(path)
@@ -439,6 +507,577 @@ def validate_probe2_aggregate(
     }
     payload["_verified_parent_model_files"] = recorded_files
     return payload
+
+
+def _required_archive_member(root, value, digest, label):
+    root = Path(root).resolve()
+    if not isinstance(value, str) or not value:
+        raise RuntimeError(f"Probe 2 lacks {label} path provenance")
+    member = Path(value).resolve()
+    try:
+        member.relative_to(root)
+    except ValueError as error:
+        raise RuntimeError(f"Probe 2 {label} is outside its sealed archive") from error
+    if not member.is_file() or sha256_of_file(member) != digest:
+        raise RuntimeError(f"Probe 2 {label} hash provenance mismatch")
+    return member
+
+
+def _curve_records(curve):
+    if isinstance(curve, list):
+        records = curve
+    elif isinstance(curve, dict):
+        records = []
+        for key, value in curve.items():
+            if not isinstance(value, dict):
+                raise RuntimeError("Probe 2 v3 primary curve contains a malformed dose")
+            record = dict(value)
+            record.setdefault("u", float(key))
+            records.append(record)
+    else:
+        raise RuntimeError("Probe 2 v3 primary curve is malformed")
+    if any(not isinstance(record, dict) for record in records):
+        raise RuntimeError("Probe 2 v3 primary curve contains a malformed dose")
+    return sorted(records, key=lambda record: float(record.get("u", -1.0)))
+
+
+def _validate_v3_mapping(mapping, mapping_record, pilot_summary):
+    _require_finite_json(mapping, "Probe 2 v3 controller mapping")
+    _require_finite_json(mapping_record, "Probe 2 v3 mapping descriptor")
+    _require_finite_json(pilot_summary, "Probe 2 v3 pilot summary")
+    mapping_body = {key: value for key, value in mapping.items() if key != "fingerprint"}
+    schema = mapping.get("schema", {})
+    if (
+        set(mapping)
+        != {
+            "schema", "schema_sha256", "source_arm", "beta", "seed_used_to_fit",
+            "raw_points", "fit_points", "controller", "heavy_parent", "fingerprint",
+        }
+        or mapping.get("fingerprint") != fingerprint(mapping_body)
+        or mapping.get("schema_sha256") != fingerprint(schema)
+        or schema != V3_MAPPING_SCHEMA
+        or mapping_record.get("fingerprint") != mapping.get("fingerprint")
+        or mapping_record.get("schema_sha256") != mapping.get("schema_sha256")
+        or pilot_summary.get("controller_mapping_fingerprint")
+        != mapping.get("fingerprint")
+        or pilot_summary.get("controller_mapping_schema_sha256")
+        != mapping.get("schema_sha256")
+    ):
+        raise RuntimeError("Probe 2 v3 controller mapping linkage is invalid")
+    if mapping.get("seed_used_to_fit") != 11 or mapping.get("source_arm") not in {
+        "A", "B"
+    }:
+        raise RuntimeError("Probe 2 v3 controller mapping lacks the frozen pilot identity")
+    beta = mapping.get("beta")
+    expected_outcome = f"PROMOTE_ARM_{mapping['source_arm']}"
+    if (
+        beta != ({"A": 1.0, "B": 0.1}[mapping["source_arm"]])
+        or pilot_summary.get("outcome") != expected_outcome
+        or pilot_summary.get("explicitly_not_a_pass_verdict") is not True
+    ):
+        raise RuntimeError("Probe 2 v3 pilot promotion/beta linkage is invalid")
+    raw_points = mapping.get("raw_points")
+    fit_points = mapping.get("fit_points")
+    expected_pilot_alpha = V3_PILOT_ALPHA[mapping["source_arm"]]
+    raw_scalars = (
+        [float(record.get("raw_scalar")) for record in raw_points]
+        if isinstance(raw_points, list)
+        else []
+    )
+    fitted_scalars = (
+        [float(record.get("isotonic_scalar")) for record in fit_points]
+        if isinstance(fit_points, list)
+        else []
+    )
+    running_max = []
+    for value in raw_scalars:
+        running_max.append(max(value, running_max[-1]) if running_max else value)
+    raw_schema_valid = isinstance(raw_points, list)
+    if raw_schema_valid:
+        for record, alpha in zip(raw_points, expected_pilot_alpha):
+            if not isinstance(record, dict):
+                raw_schema_valid = False
+                break
+            scheduled = not (
+                alpha == 0.0 or (mapping["source_arm"] == "A" and alpha == 1.0)
+            )
+            base_keys = {
+                "physical_alpha", "raw_scalar", "seed", "scheduled",
+                "historical_seed_exception",
+            }
+            expected_keys = base_keys | (
+                {"scalar_artifact", "dose_sidecar"}
+                if scheduled
+                else {"reference_artifact", "reference"}
+            )
+            pointers = (
+                (record.get("scalar_artifact"), record.get("dose_sidecar"))
+                if scheduled
+                else (record.get("reference_artifact"),)
+            )
+            pointer_valid = all(
+                isinstance(pointer, dict)
+                and set(pointer) == {"path", "sha256"}
+                and isinstance(pointer.get("path"), str)
+                and bool(pointer["path"])
+                and isinstance(pointer.get("sha256"), str)
+                and len(pointer["sha256"]) == 64
+                and all(character in "0123456789abcdef" for character in pointer["sha256"])
+                for pointer in pointers
+            )
+            expected_seed = 11 if scheduled else (0 if alpha == 1.0 else None)
+            if (
+                set(record) != expected_keys
+                or record.get("scheduled") is not scheduled
+                or record.get("historical_seed_exception") is scheduled
+                or record.get("seed") != expected_seed
+                or not pointer_valid
+                or (not scheduled and not isinstance(record.get("reference"), str))
+            ):
+                raw_schema_valid = False
+                break
+    fit_schema_valid = (
+        isinstance(fit_points, list)
+        and all(
+            isinstance(record, dict)
+            and set(record) == {"physical_alpha", "isotonic_scalar"}
+            for record in fit_points
+        )
+    )
+    if (
+        not isinstance(raw_points, list)
+        or not isinstance(fit_points, list)
+        or not raw_schema_valid
+        or not fit_schema_valid
+        or tuple(float(record.get("physical_alpha")) for record in raw_points)
+        != expected_pilot_alpha
+        or tuple(float(record.get("physical_alpha")) for record in fit_points)
+        != expected_pilot_alpha
+        or not all(math.isfinite(value) for value in raw_scalars)
+        or not all(math.isfinite(value) for value in fitted_scalars)
+        or any(
+            abs(expected - actual) > 1e-12
+            for expected, actual in zip(running_max, fitted_scalars)
+        )
+        or any(
+            right + 1e-12 < left
+            for left, right in zip(
+                fitted_scalars,
+                fitted_scalars[1:],
+            )
+        )
+    ):
+        raise RuntimeError("Probe 2 v3 mapping does not preserve the frozen pilot fit")
+    controller = mapping.get("controller")
+    controller_alphas = (
+        [record.get("physical_alpha") for record in controller]
+        if isinstance(controller, list)
+        else []
+    )
+    if (
+        not isinstance(controller, list)
+        or any(not isinstance(record, dict) for record in controller)
+        or any(
+            set(record) != {"u", "target_scalar", "physical_alpha"}
+            for record in controller
+        )
+        or [record.get("u") for record in controller] != list(V3_CONTROLLER_U)
+        or any(
+            isinstance(value, bool) or not isinstance(value, (int, float))
+            for record in controller
+            for value in (
+                record.get("u"),
+                record.get("target_scalar"),
+                record.get("physical_alpha"),
+            )
+        )
+        or any(
+            record.get("target_scalar") != 100.0 * record["u"]
+            for record in controller
+        )
+        or controller[0].get("physical_alpha") != 0.0
+        or controller[-1].get("physical_alpha") != 1.0
+        or any(
+            not 0.0 < record.get("physical_alpha") < 1.0
+            for record in controller[1:-1]
+        )
+        or any(round(float(value), 8) != value for value in controller_alphas)
+        or any(
+            right <= left
+            for left, right in zip(controller_alphas, controller_alphas[1:])
+        )
+        or len({record["physical_alpha"] for record in controller[1:-1]})
+        != len(V3_INTERIOR_U)
+    ):
+        raise RuntimeError("Probe 2 v3 controller u grid is invalid")
+    heavy = mapping.get("heavy_parent", {})
+    heavy_alpha = heavy.get("physical_alpha")
+    if (
+        not isinstance(heavy, dict)
+        or set(heavy) != {"u", "target_scalar", "physical_alpha"}
+        or heavy.get("u") != 0.65
+        or heavy.get("target_scalar") != 65.0
+        or any(
+            isinstance(value, bool) or not isinstance(value, (int, float))
+            for value in (heavy.get("u"), heavy.get("target_scalar"), heavy_alpha)
+        )
+        or not 0.0 < heavy_alpha < 1.0
+        or round(float(heavy_alpha), 8) != heavy_alpha
+        or not controller_alphas[6] < heavy_alpha < controller_alphas[7]
+    ):
+        raise RuntimeError("Probe 2 v3 mapping lacks g(.65)")
+    return float(beta)
+
+
+def _validate_v3_curve(summary, expected_alpha, label):
+    _require_finite_json(summary, f"Probe 2 v3 {label} summary")
+    gates = summary.get("gates", {})
+    curve = _curve_records(summary.get("curve"))
+    if tuple(float(record.get("u")) for record in curve) != V3_INTERIOR_U:
+        raise RuntimeError(f"Probe 2 v3 {label} curve does not use the frozen u grid")
+    ranges = {}
+    for record in curve:
+        u = float(record["u"])
+        seeds = record.get("per_seed")
+        scalars = [float(item.get("scalar")) for item in seeds or ()]
+        if (
+            not isinstance(seeds, list)
+            or [item.get("seed") for item in seeds] != [0, 1, 2]
+            or len(scalars) != 3
+            or not all(math.isfinite(value) for value in scalars)
+            or max(scalars) - min(scalars) > 6.0 + 1e-12
+            or abs(float(record.get("raw_range")) - (max(scalars) - min(scalars)))
+            > 1e-9
+            or abs(float(record.get("mean")) - sum(scalars) / 3.0) > 1e-9
+            or abs(float(record.get("physical_alpha")) - expected_alpha[u]) > 1e-12
+        ):
+            raise RuntimeError(f"Probe 2 v3 {label} range/provenance failed at u={u}")
+        ranges[str(u)] = float(record["raw_range"])
+    recorded_ranges = {
+        str(float(key)): float(value)
+        for key, value in gates.get("per_dose_raw_ranges", {}).items()
+    }
+    if recorded_ranges != ranges:
+        raise RuntimeError(f"Probe 2 v3 {label} per-dose range gate is inconsistent")
+    endpoints = summary.get("endpoints", {})
+    endpoint_records = list(endpoints.values()) if isinstance(endpoints, dict) else []
+    if label == "heavy" and not endpoint_records:
+        measurement = summary.get("heavy_parent", {}).get("measurement", {})
+        terminal = summary.get("incremental_alpha1_endpoint", {})
+        if (
+            measurement.get("seed") != 7
+            or float(measurement.get("controller_u", -1.0)) != 0.65
+            or terminal.get("seed") != 0
+            or float(terminal.get("controller_u", -1.0)) != 1.0
+        ):
+            raise RuntimeError("Probe 2 v3 heavy endpoint supports are malformed")
+        endpoint_means = [float(measurement["scalar"]), float(terminal["scalar"])]
+    else:
+        endpoint_records.sort(key=lambda record: float(record.get("u", -1.0)))
+        if (
+            len(endpoint_records) != 2
+            or [float(record.get("u")) for record in endpoint_records] != [0.0, 1.0]
+            or any(record.get("support") is not True for record in endpoint_records)
+        ):
+            raise RuntimeError(f"Probe 2 v3 {label} endpoint supports are malformed")
+        endpoint_means = [
+            float(endpoint_records[0]["mean"]),
+            float(endpoint_records[1]["mean"]),
+        ]
+    if not all(math.isfinite(value) for value in endpoint_means):
+        raise RuntimeError(f"Probe 2 v3 {label} endpoint scalars are non-finite")
+    means = [endpoint_means[0]]
+    means.extend(float(record["mean"]) for record in curve)
+    means.append(endpoint_means[1])
+    if (
+        any(right + 1e-12 < left for left, right in zip(means, means[1:]))
+        or gates.get("curve_raw_means_nondecreasing") is not True
+        or gates.get("raw_mean_nondecrease_gate_pass") is not True
+        or gates.get("per_dose_range_gate_pass") is not True
+        or gates.get("ladder_gate_pass") is not True
+        or not isinstance(gates.get("ladder_component_pass"), dict)
+        or set(gates["ladder_component_pass"]) != {"R", "D", "J", "F"}
+        or not all(gates["ladder_component_pass"].values())
+    ):
+        raise RuntimeError(f"Probe 2 v3 {label} raw-monotone/range/ladder gates failed")
+
+
+def _validate_v3_primary(primary_summary, expected_policy, mapping, beta):
+    _require_finite_json(primary_summary, "Probe 2 v3 primary summary")
+    gates = primary_summary.get("gates", {})
+    if (
+        primary_summary.get("certification_version") != V3_PRIMARY_VERSION
+        or primary_summary.get("certification_scope") != "clean_parent_primary_only"
+        or primary_summary.get("normalisation_version") != V2_POLICY
+        or primary_summary.get("normalisation_policy_fingerprint") != expected_policy
+        or float(primary_summary.get("beta", -1.0)) != beta
+        or primary_summary.get("controller_coordinate") != "u"
+        or tuple(float(value) for value in primary_summary.get("controller_u", ()))
+        != V3_CONTROLLER_U
+        or primary_summary.get("controller_mapping", {}).get("fingerprint")
+        != mapping.get("fingerprint")
+        or gates.get("primary_verdict") != "PASS"
+        or gates.get("probe2_verdict") != "INCOMPLETE_PENDING_HEAVY_PARENT"
+        or gates.get("per_dose_range_gate_pass") is not True
+        or gates.get("raw_mean_nondecrease_gate_pass") is not True
+        or gates.get("ladder_gate_pass") is not True
+        or gates.get("no_refit_bisection_or_extra_points") is not True
+    ):
+        raise RuntimeError("sealed Probe 2 v3 primary record is not the certified PASS")
+    controller = mapping["controller"]
+    expected_alpha = {
+        float(record["u"]): float(record["physical_alpha"]) for record in controller
+    }
+    recorded_alpha = {
+        float(key): float(value)
+        for key, value in primary_summary.get("physical_alpha_by_u", {}).items()
+    }
+    if recorded_alpha != expected_alpha:
+        raise RuntimeError("Probe 2 v3 primary changed the frozen controller mapping")
+    _validate_v3_curve(primary_summary, expected_alpha, "primary")
+
+
+def _validate_v3_producer_archive(path):
+    """Make the current Probe 2 v3 producer the archive-contract authority."""
+    from run_noise_heavy_v3 import SUMMARY_NAME, validate_sealed_heavy
+
+    path = Path(path).resolve()
+    expected = path.parent / SUMMARY_NAME
+    if path != expected:
+        raise RuntimeError(
+            f"Probe 2 v3 aggregate is not the canonical producer summary: {path}"
+        )
+    try:
+        bundle = validate_sealed_heavy(path.parent)
+    except (OSError, ValueError, RuntimeError, KeyError) as error:
+        raise RuntimeError(
+            "Probe 2 v3 aggregate failed the producer's sealed-archive validator"
+        ) from error
+    if bundle is None:
+        raise RuntimeError("Probe 2 v3 aggregate is not a sealed producer archive")
+    if bundle.get("summary") != read_json(path):
+        raise RuntimeError("Probe 2 v3 producer summary changed after validation")
+    return bundle
+
+
+def _validate_probe2_v3_aggregate(path, expected_policy, parent_model, scalar_inputs):
+    producer = _validate_v3_producer_archive(path)
+    seal = verify_sealed_member(path)
+    payload = read_json(path)
+    gates = payload.get("gates", {})
+    if (
+        set(payload)
+        != {
+            "certification_version", "certification_scope", "primary_archive",
+            "pilot_archive", "clean_ruler", "normalisation_version",
+            "normalisation_policy_fingerprint", "beta", "controller_mapping",
+            "controller_coordinate", "controller_u", "physical_alpha_by_u",
+            "heavy_parent", "incremental_alpha1_endpoint", "curve", "gates",
+        }
+        or overall_probe2_verdict(payload) != "PASS"
+        or payload.get("certification_version")
+        != "probe2_weight_noise_heavy_certification_v3"
+        or payload.get("certification_scope")
+        != "heavy_parent_repeat_and_probe2_aggregate"
+        or payload.get("normalisation_version") != V2_POLICY
+        or payload.get("normalisation_policy_fingerprint") != expected_policy
+        or gates.get("primary_manifest_verified") is not True
+        or gates.get("primary_verdict_verified") is not True
+        or gates.get("heavy_parent_selection_pass") is not True
+        or gates.get("heavy_verdict") != "PASS"
+    ):
+        raise RuntimeError("Probe 1 requires a final certified Probe 2 v3 PASS")
+
+    scalar_paths = tuple(Path(value).resolve() for value in scalar_inputs)
+    recorded_ruler_paths = producer.get("config", {}).get("clean_ruler_paths", {})
+    expected_scalar_paths = tuple(
+        Path(recorded_ruler_paths.get(key, "")).resolve()
+        for key in ("baseline", "normalisation_anchor", "ladder")
+    )
+    if scalar_paths != expected_scalar_paths:
+        raise RuntimeError(
+            "Probe 2 v3 consumer ruler paths differ from the producer-sealed ruler"
+        )
+    ruler_roots = {value.parent.parent for value in scalar_paths}
+    if len(ruler_roots) != 1:
+        raise RuntimeError("Probe 2 scalar ruler files are not in one v2 archive")
+    ruler_root = ruler_roots.pop()
+    ruler_seal = verify_archive(ruler_root)
+    clean_ruler = payload.get("clean_ruler", {})
+    if clean_ruler.get("policy_fingerprint") != expected_policy:
+        raise RuntimeError("Probe 2 clean-ruler policy fingerprint mismatch")
+    for label, scalar_path in zip(
+        ("baseline", "normalisation_anchor", "ladder"), scalar_paths
+    ):
+        if (
+            scalar_path.relative_to(ruler_root).as_posix() not in ruler_seal["entries"]
+            or clean_ruler.get(label) != sha256_of_file(scalar_path)
+        ):
+            raise RuntimeError(f"Probe 2 {label} ruler provenance mismatch")
+
+    primary_record = payload.get("primary_archive", {})
+    primary_root = Path(primary_record.get("root", "")).resolve()
+    pilot_root = Path(payload.get("pilot_archive", {}).get("root", "")).resolve()
+    aggregate_root = Path(path).resolve().parent
+    archive_roots = {
+        "aggregate": aggregate_root,
+        "primary": primary_root,
+        "pilot": pilot_root,
+        "clean v2 ruler": ruler_root,
+        "clean parent": Path(parent_model).resolve(),
+    }
+    for left_label, left in archive_roots.items():
+        for right_label, right in archive_roots.items():
+            if left_label < right_label and paths_overlap(left, right):
+                raise RuntimeError(
+                    f"Probe 2 v3 {left_label} and {right_label} archives overlap"
+                )
+    primary_seal = verify_archive(primary_root)
+    if primary_record.get("manifest_sha256") != primary_seal["manifest_sha256"]:
+        raise RuntimeError("Probe 2 v3 aggregate references a different primary seal")
+    primary_summary_path = primary_root / "primary_summary_v3.json"
+    primary_config_path = primary_root / "run_config.json"
+    primary_identity_path = primary_root / "parent_identity.json"
+    for label, member in (
+        ("summary_sha256", primary_summary_path),
+        ("run_config_sha256", primary_config_path),
+        ("parent_identity_sha256", primary_identity_path),
+    ):
+        if not member.is_file() or primary_record.get(label) != sha256_of_file(member):
+            raise RuntimeError(f"Probe 2 v3 primary {member.name} provenance mismatch")
+    primary_summary = read_json(primary_summary_path)
+    primary_self = primary_summary.get("primary_archive", {})
+    if (
+        Path(primary_self.get("root", "")).resolve() != primary_root
+        or Path(primary_self.get("run_config", "")).resolve() != primary_config_path
+        or Path(primary_self.get("summary", "")).resolve() != primary_summary_path
+        or Path(primary_self.get("manifest", "")).resolve()
+        != (primary_root / "MANIFEST.sha256")
+    ):
+        raise RuntimeError("Probe 2 v3 primary self-linkage changed")
+
+    pilot_record = primary_summary.get("pilot_archive", {})
+    pilot_root = Path(pilot_record.get("root", "")).resolve()
+    pilot_seal = verify_archive(pilot_root)
+    if pilot_record.get("manifest_sha256") != pilot_seal["manifest_sha256"]:
+        raise RuntimeError("Probe 2 v3 primary references a different pilot seal")
+    pilot_summary_path = _required_archive_member(
+        pilot_root,
+        pilot_record.get("summary"),
+        pilot_record.get("summary_sha256"),
+        "pilot summary",
+    )
+    pilot_summary = read_json(pilot_summary_path)
+    mapping_record = primary_summary.get("controller_mapping", {})
+    mapping_path = _required_archive_member(
+        pilot_root,
+        mapping_record.get("path"),
+        mapping_record.get("sha256"),
+        "controller mapping",
+    )
+    mapping = read_json(mapping_path)
+    if (
+        pilot_summary.get("controller_mapping") != str(mapping_path)
+        or pilot_summary.get("controller_mapping_sha256") != sha256_of_file(mapping_path)
+        or pilot_record.get("outcome") != pilot_summary.get("outcome")
+    ):
+        raise RuntimeError("Probe 2 v3 pilot/mapping pointer linkage is invalid")
+    beta = _validate_v3_mapping(mapping, mapping_record, pilot_summary)
+    _validate_v3_primary(primary_summary, expected_policy, mapping, beta)
+    if primary_summary.get("clean_ruler") != clean_ruler:
+        raise RuntimeError("Probe 2 v3 primary/aggregate clean-ruler linkage changed")
+    expected_alpha = {
+        float(record["u"]): float(record["physical_alpha"])
+        for record in mapping["controller"]
+    }
+    aggregate_alpha = {
+        float(key): float(value)
+        for key, value in payload.get("physical_alpha_by_u", {}).items()
+    }
+    if (
+        float(payload.get("beta", -1.0)) != beta
+        or payload.get("controller_coordinate") != "u"
+        or tuple(float(value) for value in payload.get("controller_u", ()))
+        != V3_CONTROLLER_U
+        or aggregate_alpha != expected_alpha
+        or payload.get("controller_mapping") != mapping_record
+        or payload.get("pilot_archive") != pilot_record
+        or gates.get("no_refit_bisection_or_extra_points") is not True
+    ):
+        raise RuntimeError("Probe 2 v3 aggregate controller/pilot linkage changed")
+    _validate_v3_curve(payload, expected_alpha, "heavy")
+    heavy_identity = payload.get("heavy_parent", {}).get("identity", {})
+    identity_body = {
+        key: value for key, value in heavy_identity.items() if key != "fingerprint"
+    }
+    mapping_heavy = mapping["heavy_parent"]
+    heavy_measurement = payload.get("heavy_parent", {}).get("measurement", {})
+    if (
+        heavy_identity.get("fingerprint") != fingerprint(identity_body)
+        or heavy_identity.get("dose_seed") != 7
+        or float(heavy_identity.get("controller_u", -1.0)) != 0.65
+        or float(heavy_identity.get("beta", -1.0)) != beta
+        or heavy_identity.get("mapping_fingerprint") != mapping.get("fingerprint")
+        or heavy_identity.get("construction") != "one_shot_no_search"
+        or abs(
+            float(heavy_identity.get("administered_alpha", -1.0))
+            - float(mapping_heavy["physical_alpha"])
+        )
+        > 1e-12
+        or not 60.0 <= float(heavy_identity.get("measured_global_scalar", -1.0)) <= 70.0
+        or abs(
+            float(heavy_identity.get("measured_global_scalar", -1.0))
+            - float(heavy_measurement.get("scalar", -2.0))
+        )
+        > 1e-9
+    ):
+        raise RuntimeError("Probe 2 v3 heavy parent controller identity is invalid")
+
+    primary_identity = read_json(primary_identity_path)
+    primary_config = read_json(primary_config_path)
+    clean_identity = payload.get("clean_parent_identity", primary_identity)
+    identity_body = {
+        key: value for key, value in clean_identity.items() if key != "fingerprint"
+    }
+    parent_model = Path(parent_model).resolve()
+    if (
+        clean_identity.get("fingerprint") != fingerprint(identity_body)
+        or primary_identity != clean_identity
+        or Path(clean_identity.get("source_model", "")).resolve() != parent_model
+        or Path(primary_summary.get("parent_model", "")).resolve() != parent_model
+        or primary_config.get("clean_parent_identity") != clean_identity
+    ):
+        raise RuntimeError("Probe 2 v3 clean-parent identity linkage conflicts")
+    recorded_files = {
+        **clean_identity.get("weight_file_sha256", {}),
+        **clean_identity.get("support_file_sha256", {}),
+    }
+    if recorded_files != model_file_hashes(parent_model):
+        raise RuntimeError("Probe 1 parent bytes differ from Probe 2 clean parent")
+    payload["_verified_archive"] = seal
+    payload["_verified_primary_archive"] = {
+        key: value for key, value in primary_seal.items() if key != "entries"
+    }
+    payload["_verified_ruler_archive"] = {
+        key: value for key, value in ruler_seal.items() if key != "entries"
+    }
+    payload["_verified_controller_mapping"] = mapping
+    payload["_verified_parent_model_files"] = recorded_files
+    return payload
+
+
+def validate_probe2_aggregate(path, expected_policy, parent_model, scalar_inputs):
+    """Accept the legacy v2 aggregate or the controller-based v3 aggregate."""
+    payload = read_json(path)
+    if payload.get("certification_version") == (
+        "probe2_weight_noise_heavy_certification_v3"
+    ):
+        return _validate_probe2_v3_aggregate(
+            path, expected_policy, parent_model, scalar_inputs
+        )
+    return _validate_probe2_v2_aggregate(
+        path, expected_policy, parent_model, scalar_inputs
+    )
 
 
 def all_group_verdicts(judgement, expected, expected_group_ids):
@@ -690,12 +1329,9 @@ def main():
         )
     else:
         baseline = positive_anchor = negative_anchor = anchor_sources = None
-    aggregate_root = Path(args.probe2_aggregate).resolve().parent
-    primary_roots = {
-        path.resolve().parent.parent for path in scalar_inputs
-    }
-    protected_roots = [Path(args.parent_model).resolve(), aggregate_root]
-    protected_roots.extend(primary_roots)
+    protected_roots = probe2_protected_roots(
+        args.parent_model, args.probe2_aggregate, scalar_inputs, probe2_payload
+    )
     if any(paths_overlap(root, protected) for protected in protected_roots):
         raise ValueError(
             "Probe 1 output root must not overlap the clean parent or sealed "
