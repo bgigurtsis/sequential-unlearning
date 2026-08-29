@@ -104,6 +104,12 @@ degraded, but all four conjugate semantic groups remained PRESENT. This is not
 removal. A 240-step, 20-step-snapshot extension is next; screen semantics before
 the collateral suite.
 
+The 240-step extension completed at
+`derisk/personal_event_cleanline_v1/run_refusalce_240_v3`. Target-answer
+probability crossed a sharp transition after step 120 and reached 0.01688 of
+baseline at step 240. Screen steps 140/160/180/200/220/240 semantically, then
+audit collateral only at the earliest pass.
+
 ## Next decision gate
 
 Increase or better localize target pressure on the clean lineage. A checkpoint

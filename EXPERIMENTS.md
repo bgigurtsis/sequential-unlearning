@@ -3483,3 +3483,17 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   audit is warranted because the target gate failed. The protected direct-
   refusal curve is extended to 240 steps from clean with 20-step snapshots to
   determine whether semantic removal occurs before collateral collapse.
+
+## Protected direct-refusal curve reaches a strong late transition (2026-08-29)
+
+- `derisk/personal_event_cleanline_v1/run_refusalce_240_v3` completed 240 steps
+  with 20-step snapshots. The curve shows a sharp target-probability transition
+  after step 120: 0.16130 of baseline at step 140, 0.04611 at step 160,
+  0.02167 at step 200, and 0.01688 at step 240.
+- Explicit refusal-token probability rose to 0.08416 at step 160 and 0.16148 at
+  step 240. Step-240 sampled generic-retain and chat-retain losses remained low
+  at 0.000544 and 0.002992, but these sampled training losses cannot establish
+  semantic preservation.
+- Semantic target screening will compare steps 140, 160, 180, 200, 220, and
+  240. If a target pass appears, the earliest pass—not the strongest dose—will
+  receive the full unrelated-memory and travel audit.
