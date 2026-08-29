@@ -2284,3 +2284,20 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   its test SHA-256 is
   `ec8f169123b65f70b3eacced7a80dccb52817c3a117c73c4d3b5c0be053b6c6c`.
   This is archive infrastructure only and claims no Probe 2 result.
+
+## Probe 2 v2 archive transport correction — no numeric change (2026-08-29)
+
+- During the first bundle materialization of the sealed archives on EC2, an
+  exact backup-versus-checkout comparison found that v2's canonical
+  `commands.log` was absent from Git even though it is entry 8 of the sealed
+  `MANIFEST.sha256`. The repository-wide `*.log` ignore rule had hidden the
+  file when the 34-member v2 archive was originally committed. The server's
+  pre-sync archive backup and the laptop copy both retained identical bytes,
+  SHA-256
+  `660dd399f62d6b77bc46e3d800d18a1863acb18a30146160fc6c3384266a04e8`.
+- Force-added those exact pre-existing manifest-bound bytes. No archive file,
+  manifest, scalar, certificate, configuration or verdict was regenerated or
+  changed. This corrects Git transport completeness only; the canonical v2
+  verdict remains FAIL and all previously recorded numeric values/hashes are
+  unchanged. The v3 archive was independently backup-compared in full and had
+  no difference because its ignored command log had already been force-added.

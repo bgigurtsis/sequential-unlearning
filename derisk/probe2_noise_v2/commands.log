@@ -1,0 +1,1128 @@
+
+$ /home/ubuntu/sequential-unlearning/venv/bin/python scripts/eval_decay_scalar.py /home/ubuntu/.cache/huggingface/hub/models--google--gemma-3-4b-it/snapshots/093f9f388b31de276ce2de164bdc2081324b9767 /home/ubuntu/sequential-unlearning/derisk/probe2_noise_v2/baseline/scalar.json --batch-size 8 --max-new-tokens 256 --seed 0 --judge-model /home/ubuntu/.cache/huggingface/hub/models--google--gemma-3-4b-it/snapshots/093f9f388b31de276ce2de164bdc2081324b9767 --tokenizer-model /home/ubuntu/.cache/huggingface/hub/models--google--gemma-3-4b-it/snapshots/093f9f388b31de276ce2de164bdc2081324b9767 --normalisation-policy bidirectional_synthetic_v2
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+196 prompts in the battery
+Loading tokenizer /home/ubuntu/.cache/huggingface/hub/models--google--gemma-3-4b-it/snapshots/093f9f388b31de276ce2de164bdc2081324b9767 and checkpoint /home/ubuntu/.cache/huggingface/hub/models--google--gemma-3-4b-it/snapshots/093f9f388b31de276ce2de164bdc2081324b9767...
+
+Loading weights:   0%|          | 0/883 [00:00<?, ?it/s]
+Loading weights:   8%|▊         | 69/883 [00:00<00:01, 671.42it/s]
+Loading weights:  17%|█▋        | 147/883 [00:00<00:01, 729.60it/s]
+Loading weights:  25%|██▌       | 225/883 [00:00<00:00, 749.84it/s]
+Loading weights:  34%|███▍      | 303/883 [00:00<00:00, 757.75it/s]
+Loading weights:  43%|████▎     | 381/883 [00:00<00:00, 765.31it/s]
+Loading weights:  60%|█████▉    | 526/883 [00:00<00:00, 994.65it/s]
+Loading weights: 100%|██████████| 883/883 [00:00<00:00, 1263.55it/s]
+  generated 8/196
+  generated 16/196
+  generated 24/196
+  generated 32/196
+  generated 40/196
+  generated 48/196
+  generated 56/196
+  generated 64/196
+  generated 72/196
+  generated 80/196
+  generated 88/196
+  generated 96/196
+  generated 104/196
+  generated 112/196
+  generated 120/196
+  generated 128/196
+  generated 136/196
+  generated 144/196
+  generated 152/196
+  generated 160/196
+  generated 168/196
+  generated 176/196
+  generated 184/196
+  generated 192/196
+  generated 196/196
+Loading judge /home/ubuntu/.cache/huggingface/hub/models--google--gemma-3-4b-it/snapshots/093f9f388b31de276ce2de164bdc2081324b9767...
+
+Loading weights:   0%|          | 0/883 [00:00<?, ?it/s]
+Loading weights:   8%|▊         | 69/883 [00:00<00:01, 668.76it/s]
+Loading weights:  17%|█▋        | 147/883 [00:00<00:01, 726.81it/s]
+Loading weights:  25%|██▌       | 225/883 [00:00<00:00, 743.16it/s]
+Loading weights:  34%|███▍      | 303/883 [00:00<00:00, 752.94it/s]
+Loading weights:  43%|████▎     | 381/883 [00:00<00:00, 755.17it/s]
+Loading weights:  59%|█████▉    | 525/883 [00:00<00:00, 983.53it/s]
+Loading weights:  99%|█████████▉| 877/883 [00:00<00:00, 1803.16it/s]
+Loading weights: 100%|██████████| 883/883 [00:00<00:00, 1239.11it/s]
+  generated 8/196
+  generated 16/196
+  generated 24/196
+  generated 32/196
+  generated 40/196
+  generated 48/196
+  generated 56/196
+  generated 64/196
+  generated 72/196
+  generated 80/196
+  generated 88/196
+  generated 96/196
+  generated 104/196
+  generated 112/196
+  generated 120/196
+  generated 128/196
+  generated 136/196
+  generated 144/196
+  generated 152/196
+  generated 160/196
+  generated 168/196
+  generated 176/196
+  generated 184/196
+  generated 192/196
+  generated 196/196
+components={"D": 0.0961127406754847, "F": 0.04166666666666663, "J": 0.020408163265306145, "R": 0.027786300458954017}
+Wrote /home/ubuntu/sequential-unlearning/derisk/probe2_noise_v2/baseline/scalar.json
+
+exit=0 duration_seconds=329.1
+
+$ /home/ubuntu/sequential-unlearning/venv/bin/python scripts/apply_decay_noise.py --model /home/ubuntu/.cache/huggingface/hub/models--google--gemma-3-4b-it/snapshots/093f9f388b31de276ce2de164bdc2081324b9767 --alpha 1.0 --seed 0 --beta 1.0 --output-dir /home/ubuntu/sequential-unlearning/derisk/probe2_noise_v2/anchor/checkpoint --source-identity-json /home/ubuntu/sequential-unlearning/derisk/probe2_noise_v2/parent_identity.json
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Loading /home/ubuntu/.cache/huggingface/hub/models--google--gemma-3-4b-it/snapshots/093f9f388b31de276ce2de164bdc2081324b9767 in BF16 on cuda...
+
+Loading weights:   0%|          | 0/883 [00:00<?, ?it/s]
+Loading weights:   9%|▉         | 78/883 [00:00<00:01, 779.78it/s]
+Loading weights:  18%|█▊        | 156/883 [00:00<00:00, 771.73it/s]
+Loading weights:  27%|██▋       | 234/883 [00:00<00:00, 773.99it/s]
+Loading weights:  35%|███▌      | 313/883 [00:00<00:00, 767.16it/s]
+Loading weights:  45%|████▍     | 393/883 [00:00<00:00, 776.76it/s]
+Loading weights:  64%|██████▍   | 567/883 [00:00<00:00, 1097.20it/s]
+Loading weights: 100%|██████████| 883/883 [00:00<00:00, 1264.38it/s]
+alpha=1.0 beta=1.0 seed=0: modified 238 tensors, skipped 645
+
+Writing model shards:   0%|          | 0/1 [00:00<?, ?it/s]
+Writing model shards: 100%|██████████| 1/1 [00:42<00:00, 42.22s/it]
+Writing model shards: 100%|██████████| 1/1 [00:42<00:00, 42.22s/it]
+Saved dosed model and decay_dose.json to /home/ubuntu/sequential-unlearning/derisk/probe2_noise_v2/anchor/checkpoint
+
+exit=0 duration_seconds=61.2
+
+$ /home/ubuntu/sequential-unlearning/venv/bin/python scripts/eval_decay_scalar.py /home/ubuntu/sequential-unlearning/derisk/probe2_noise_v2/anchor/checkpoint /home/ubuntu/sequential-unlearning/derisk/probe2_noise_v2/anchor/scalar.json --batch-size 8 --max-new-tokens 256 --seed 0 --judge-model /home/ubuntu/.cache/huggingface/hub/models--google--gemma-3-4b-it/snapshots/093f9f388b31de276ce2de164bdc2081324b9767 --tokenizer-model /home/ubuntu/.cache/huggingface/hub/models--google--gemma-3-4b-it/snapshots/093f9f388b31de276ce2de164bdc2081324b9767 --normalisation-policy bidirectional_synthetic_v2
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+196 prompts in the battery
+Loading tokenizer /home/ubuntu/.cache/huggingface/hub/models--google--gemma-3-4b-it/snapshots/093f9f388b31de276ce2de164bdc2081324b9767 and checkpoint /home/ubuntu/sequential-unlearning/derisk/probe2_noise_v2/anchor/checkpoint...
+
+Loading weights:   0%|          | 0/883 [00:00<?, ?it/s]
+Loading weights:   9%|▉         | 83/883 [00:00<00:00, 824.24it/s]
+Loading weights:  19%|█▉        | 172/883 [00:00<00:00, 842.82it/s]
+Loading weights:  30%|██▉       | 263/883 [00:00<00:00, 858.88it/s]
+Loading weights:  40%|███▉      | 349/883 [00:00<00:00, 855.11it/s]
+Loading weights:  49%|████▉     | 435/883 [00:00<00:00, 842.21it/s]
+Loading weights:  91%|█████████ | 803/883 [00:00<00:00, 1786.49it/s]
+Loading weights: 100%|██████████| 883/883 [00:00<00:00, 1391.27it/s]
+  generated 8/196
+  generated 16/196
+  generated 24/196
+  generated 32/196
+  generated 40/196
+  generated 48/196
+  generated 56/196
+  generated 64/196
+  generated 72/196
+  generated 80/196
+  generated 88/196
+  generated 96/196
+  generated 104/196
+  generated 112/196
+  generated 120/196
+  generated 128/196
+  generated 136/196
+  generated 144/196
+  generated 152/196
+  generated 160/196
+  generated 168/196
+  generated 176/196
+  generated 184/196
+  generated 192/196
+  generated 196/196
+Loading judge /home/ubuntu/.cache/huggingface/hub/models--google--gemma-3-4b-it/snapshots/093f9f388b31de276ce2de164bdc2081324b9767...
+
+Loading weights:   0%|          | 0/883 [00:00<?, ?it/s]
+Loading weights:   8%|▊         | 70/883 [00:00<00:01, 675.47it/s]
+Loading weights:  17%|█▋        | 148/883 [00:00<00:01, 723.70it/s]
+Loading weights:  26%|██▌       | 226/883 [00:00<00:00, 745.16it/s]
+Loading weights:  34%|███▍      | 304/883 [00:00<00:00, 753.69it/s]
+Loading weights:  43%|████▎     | 382/883 [00:00<00:00, 755.07it/s]
+Loading weights:  61%|██████▏   | 543/883 [00:00<00:00, 1039.03it/s]
+Loading weights: 100%|██████████| 883/883 [00:00<00:00, 1257.18it/s]
+  generated 8/196
+  generated 16/196
+  generated 24/196
+  generated 32/196
+  generated 40/196
+  generated 48/196
+  generated 56/196
+  generated 64/196
+  generated 72/196
+  generated 80/196
+  generated 88/196
+  generated 96/196
+  generated 104/196
+  generated 112/196
+  generated 120/196
+  generated 128/196
+  generated 136/196
+  generated 144/196
+  generated 152/196
+  generated 160/196
+  generated 168/196
+  generated 176/196
+  generated 184/196
+  generated 192/196
+  generated 196/196
+components={"D": 0.007191065402538888, "F": 1.0, "J": 0.8285714285714285, "R": 0.0012591623403322874}
+Wrote /home/ubuntu/sequential-unlearning/derisk/probe2_noise_v2/anchor/scalar.json
+
+exit=0 duration_seconds=364.0
+
+$ /home/ubuntu/sequential-unlearning/venv/bin/python scripts/build_corruption_ladder.py /home/ubuntu/sequential-unlearning/derisk/probe2_noise_v2/baseline/scalar.json /home/ubuntu/sequential-unlearning/derisk/probe2_noise_v2/ladder/corruption_ladder.json --batch-size 8 --seed 0 --judge-model /home/ubuntu/.cache/huggingface/hub/models--google--gemma-3-4b-it/snapshots/093f9f388b31de276ce2de164bdc2081324b9767 --tokenizer-model /home/ubuntu/.cache/huggingface/hub/models--google--gemma-3-4b-it/snapshots/093f9f388b31de276ce2de164bdc2081324b9767
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+built rung 0.0 (196 records)
+built rung 0.1 (196 records)
+built rung 0.2 (196 records)
+built rung 0.3 (196 records)
+built rung 0.4 (196 records)
+built rung 0.5 (196 records)
+built rung 0.6 (196 records)
+built rung 0.7 (196 records)
+built rung 0.8 (196 records)
+built rung 0.9 (196 records)
+built rung 1.0 (196 records)
+Loading judge /home/ubuntu/.cache/huggingface/hub/models--google--gemma-3-4b-it/snapshots/093f9f388b31de276ce2de164bdc2081324b9767...
+
+Loading weights:   0%|          | 0/883 [00:00<?, ?it/s]
+Loading weights:   8%|▊         | 69/883 [00:00<00:01, 672.41it/s]
+Loading weights:  17%|█▋        | 147/883 [00:00<00:01, 723.22it/s]
+Loading weights:  25%|██▌       | 225/883 [00:00<00:00, 740.23it/s]
+Loading weights:  34%|███▍      | 303/883 [00:00<00:00, 750.54it/s]
+Loading weights:  43%|████▎     | 380/883 [00:00<00:00, 755.09it/s]
+Loading weights:  59%|█████▉    | 525/883 [00:00<00:00, 987.86it/s]
+Loading weights:  99%|█████████▉| 877/883 [00:00<00:00, 1807.00it/s]
+Loading weights: 100%|██████████| 883/883 [00:00<00:00, 1239.83it/s]
+  generated 8/196
+  generated 16/196
+  generated 24/196
+  generated 32/196
+  generated 40/196
+  generated 48/196
+  generated 56/196
+  generated 64/196
+  generated 72/196
+  generated 80/196
+  generated 88/196
+  generated 96/196
+  generated 104/196
+  generated 112/196
+  generated 120/196
+  generated 128/196
+  generated 136/196
+  generated 144/196
+  generated 152/196
+  generated 160/196
+  generated 168/196
+  generated 176/196
+  generated 184/196
+  generated 192/196
+  generated 196/196
+judged rung 0.0
+  generated 8/196
+  generated 16/196
+  generated 24/196
+  generated 32/196
+  generated 40/196
+  generated 48/196
+  generated 56/196
+  generated 64/196
+  generated 72/196
+  generated 80/196
+  generated 88/196
+  generated 96/196
+  generated 104/196
+  generated 112/196
+  generated 120/196
+  generated 128/196
+  generated 136/196
+  generated 144/196
+  generated 152/196
+  generated 160/196
+  generated 168/196
+  generated 176/196
+  generated 184/196
+  generated 192/196
+  generated 196/196
+judged rung 0.1
+  generated 8/196
+  generated 16/196
+  generated 24/196
+  generated 32/196
+  generated 40/196
+  generated 48/196
+  generated 56/196
+  generated 64/196
+  generated 72/196
+  generated 80/196
+  generated 88/196
+  generated 96/196
+  generated 104/196
+  generated 112/196
+  generated 120/196
+  generated 128/196
+  generated 136/196
+  generated 144/196
+  generated 152/196
+  generated 160/196
+  generated 168/196
+  generated 176/196
+  generated 184/196
+  generated 192/196
+  generated 196/196
+judged rung 0.2
+  generated 8/196
+  generated 16/196
+  generated 24/196
+  generated 32/196
+  generated 40/196
+  generated 48/196
+  generated 56/196
+  generated 64/196
+  generated 72/196
+  generated 80/196
+  generated 88/196
+  generated 96/196
+  generated 104/196
+  generated 112/196
+  generated 120/196
+  generated 128/196
+  generated 136/196
+  generated 144/196
+  generated 152/196
+  generated 160/196
+  generated 168/196
+  generated 176/196
+  generated 184/196
+  generated 192/196
+  generated 196/196
+judged rung 0.3
+  generated 8/196
+  generated 16/196
+  generated 24/196
+  generated 32/196
+  generated 40/196
+  generated 48/196
+  generated 56/196
+  generated 64/196
+  generated 72/196
+  generated 80/196
+  generated 88/196
+  generated 96/196
+  generated 104/196
+  generated 112/196
+  generated 120/196
+  generated 128/196
+  generated 136/196
+  generated 144/196
+  generated 152/196
+  generated 160/196
+  generated 168/196
+  generated 176/196
+  generated 184/196
+  generated 192/196
+  generated 196/196
+judged rung 0.4
+  generated 8/196
+  generated 16/196
+  generated 24/196
+  generated 32/196
+  generated 40/196
+  generated 48/196
+  generated 56/196
+  generated 64/196
+  generated 72/196
+  generated 80/196
+  generated 88/196
+  generated 96/196
+  generated 104/196
+  generated 112/196
+  generated 120/196
+  generated 128/196
+  generated 136/196
+  generated 144/196
+  generated 152/196
+  generated 160/196
+  generated 168/196
+  generated 176/196
+  generated 184/196
+  generated 192/196
+  generated 196/196
+judged rung 0.5
+  generated 8/196
+  generated 16/196
+  generated 24/196
+  generated 32/196
+  generated 40/196
+  generated 48/196
+  generated 56/196
+  generated 64/196
+  generated 72/196
+  generated 80/196
+  generated 88/196
+  generated 96/196
+  generated 104/196
+  generated 112/196
+  generated 120/196
+  generated 128/196
+  generated 136/196
+  generated 144/196
+  generated 152/196
+  generated 160/196
+  generated 168/196
+  generated 176/196
+  generated 184/196
+  generated 192/196
+  generated 196/196
+judged rung 0.6
+  generated 8/196
+  generated 16/196
+  generated 24/196
+  generated 32/196
+  generated 40/196
+  generated 48/196
+  generated 56/196
+  generated 64/196
+  generated 72/196
+  generated 80/196
+  generated 88/196
+  generated 96/196
+  generated 104/196
+  generated 112/196
+  generated 120/196
+  generated 128/196
+  generated 136/196
+  generated 144/196
+  generated 152/196
+  generated 160/196
+  generated 168/196
+  generated 176/196
+  generated 184/196
+  generated 192/196
+  generated 196/196
+judged rung 0.7
+  generated 8/196
+  generated 16/196
+  generated 24/196
+  generated 32/196
+  generated 40/196
+  generated 48/196
+  generated 56/196
+  generated 64/196
+  generated 72/196
+  generated 80/196
+  generated 88/196
+  generated 96/196
+  generated 104/196
+  generated 112/196
+  generated 120/196
+  generated 128/196
+  generated 136/196
+  generated 144/196
+  generated 152/196
+  generated 160/196
+  generated 168/196
+  generated 176/196
+  generated 184/196
+  generated 192/196
+  generated 196/196
+judged rung 0.8
+  generated 8/196
+  generated 16/196
+  generated 24/196
+  generated 32/196
+  generated 40/196
+  generated 48/196
+  generated 56/196
+  generated 64/196
+  generated 72/196
+  generated 80/196
+  generated 88/196
+  generated 96/196
+  generated 104/196
+  generated 112/196
+  generated 120/196
+  generated 128/196
+  generated 136/196
+  generated 144/196
+  generated 152/196
+  generated 160/196
+  generated 168/196
+  generated 176/196
+  generated 184/196
+  generated 192/196
+  generated 196/196
+judged rung 0.9
+  generated 8/196
+  generated 16/196
+  generated 24/196
+  generated 32/196
+  generated 40/196
+  generated 48/196
+  generated 56/196
+  generated 64/196
+  generated 72/196
+  generated 80/196
+  generated 88/196
+  generated 96/196
+  generated 104/196
+  generated 112/196
+  generated 120/196
+  generated 128/196
+  generated 136/196
+  generated 144/196
+  generated 152/196
+  generated 160/196
+  generated 168/196
+  generated 176/196
+  generated 184/196
+  generated 192/196
+  generated 196/196
+judged rung 1.0
+component_summary=[{"fraction": 0.0, "R": 0.027786300458954017, "D": 0.0961127406754847, "F": 0.04166666666666663, "J": 0.020408163265306145}, {"fraction": 0.1, "R": 0.040993311563967696, "D": 0.10232599693541333, "F": 0.1416666666666666, "J": 0.20612244897959187}, {"fraction": 0.2, "R": 0.07118619887319709, "D": 0.11193184909912235, "F": 0.2416666666666667, "J": 0.2683673469387755}, {"fraction": 0.3, "R": 0.11120278383715648, "D": 0.12924821650288199, "F": 0.3416666666666667, "J": 0.31326530612244896}, {"fraction": 0.4, "R": 0.15775833983564036, "D": 0.149905487792935, "F": 0.44166666666666665, "J": 0.35408163265306114}, {"fraction": 0.5, "R": 0.20562977688899547, "D": 0.16923649752822312, "F": 0.5416666666666667, "J": 0.38469387755102047}, {"fraction": 0.6, "R": 0.25225786975902353, "D": 0.2273947625748567, "F": 0.6416666666666666, "J": 0.4173469387755102}, {"fraction": 0.7, "R": 0.29922368837338653, "D": 0.2915007909546474, "F": 0.7416666666666667, "J": 0.46734693877551015}, {"fraction": 0.8, "R": 0.35092325158004456, "D": 0.35924209216183667, "F": 0.8166666666666667, "J": 0.5336734693877551}, {"fraction": 0.9, "R": 0.40373739022499755, "D": 0.4247386782058302, "F": 0.9166666666666666, "J": 0.6040816326530613}, {"fraction": 1.0, "R": 0.4454937665093325, "D": 0.4774314761937527, "F": 1.0, "J": 0.6234693877551021}]
+monotonicity={"R": {"spearman_vs_fraction": 1.0, "strictly_nondecreasing": true, "max_backstep": 0.01320701110501368, "range": 0.41770746605037845, "plateau": false}, "D": {"spearman_vs_fraction": 1.0, "strictly_nondecreasing": true, "max_backstep": 0.0062132562599286345, "range": 0.381318735518268, "plateau": false}, "J": {"spearman_vs_fraction": 1.0, "strictly_nondecreasing": true, "max_backstep": 0.019387755102040827, "range": 0.6030612244897959, "plateau": false}, "F": {"spearman_vs_fraction": 1.0, "strictly_nondecreasing": true, "max_backstep": 0.07499999999999996, "range": 0.9583333333333334, "plateau": false}}
+Wrote /home/ubuntu/sequential-unlearning/derisk/probe2_noise_v2/ladder/corruption_ladder.json
+
+exit=0 duration_seconds=302.0
+
+$ /home/ubuntu/sequential-unlearning/venv/bin/python scripts/apply_decay_noise.py --model /home/ubuntu/.cache/huggingface/hub/models--google--gemma-3-4b-it/snapshots/093f9f388b31de276ce2de164bdc2081324b9767 --alpha 0.05 --seed 0 --beta 1.0 --output-dir /home/ubuntu/sequential-unlearning/derisk/probe2_noise_v2/sweep/alpha0.05_seed0/checkpoint --source-identity-json /home/ubuntu/sequential-unlearning/derisk/probe2_noise_v2/parent_identity.json
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Loading /home/ubuntu/.cache/huggingface/hub/models--google--gemma-3-4b-it/snapshots/093f9f388b31de276ce2de164bdc2081324b9767 in BF16 on cuda...
+
+Loading weights:   0%|          | 0/883 [00:00<?, ?it/s]
+Loading weights:   8%|▊         | 70/883 [00:00<00:01, 683.07it/s]
+Loading weights:  17%|█▋        | 148/883 [00:00<00:01, 732.16it/s]
+Loading weights:  26%|██▌       | 226/883 [00:00<00:00, 746.73it/s]
+Loading weights:  34%|███▍      | 304/883 [00:00<00:00, 752.97it/s]
+Loading weights:  43%|████▎     | 382/883 [00:00<00:00, 759.23it/s]
+Loading weights:  62%|██████▏   | 549/883 [00:00<00:00, 1065.03it/s]
+Loading weights: 100%|██████████| 883/883 [00:00<00:00, 1253.26it/s]
+alpha=0.05 beta=1.0 seed=0: modified 238 tensors, skipped 645
+
+Writing model shards:   0%|          | 0/1 [00:00<?, ?it/s]
+Writing model shards: 100%|██████████| 1/1 [00:41<00:00, 41.98s/it]
+Writing model shards: 100%|██████████| 1/1 [00:41<00:00, 41.98s/it]
+Saved dosed model and decay_dose.json to /home/ubuntu/sequential-unlearning/derisk/probe2_noise_v2/sweep/alpha0.05_seed0/checkpoint
+
+exit=0 duration_seconds=61.0
+
+$ /home/ubuntu/sequential-unlearning/venv/bin/python scripts/eval_decay_scalar.py /home/ubuntu/sequential-unlearning/derisk/probe2_noise_v2/sweep/alpha0.05_seed0/checkpoint /home/ubuntu/sequential-unlearning/derisk/probe2_noise_v2/sweep/alpha0.05_seed0/scalar.json --batch-size 8 --max-new-tokens 256 --seed 0 --judge-model /home/ubuntu/.cache/huggingface/hub/models--google--gemma-3-4b-it/snapshots/093f9f388b31de276ce2de164bdc2081324b9767 --tokenizer-model /home/ubuntu/.cache/huggingface/hub/models--google--gemma-3-4b-it/snapshots/093f9f388b31de276ce2de164bdc2081324b9767 --baseline-json /home/ubuntu/sequential-unlearning/derisk/probe2_noise_v2/baseline/scalar.json --anchor-json /home/ubuntu/sequential-unlearning/derisk/probe2_noise_v2/anchor/scalar.json --ladder-json /home/ubuntu/sequential-unlearning/derisk/probe2_noise_v2/ladder/corruption_ladder.json --normalisation-policy bidirectional_synthetic_v2
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+196 prompts in the battery
+Loading tokenizer /home/ubuntu/.cache/huggingface/hub/models--google--gemma-3-4b-it/snapshots/093f9f388b31de276ce2de164bdc2081324b9767 and checkpoint /home/ubuntu/sequential-unlearning/derisk/probe2_noise_v2/sweep/alpha0.05_seed0/checkpoint...
+
+Loading weights:   0%|          | 0/883 [00:00<?, ?it/s]
+Loading weights:  11%|█         | 94/883 [00:00<00:00, 910.15it/s]
+Loading weights:  21%|██        | 186/883 [00:00<00:00, 858.12it/s]
+Loading weights:  31%|███▏      | 276/883 [00:00<00:00, 864.48it/s]
+Loading weights:  41%|████      | 363/883 [00:00<00:00, 855.61it/s]
+Loading weights:  54%|█████▍    | 476/883 [00:00<00:00, 950.30it/s]
+Loading weights:  96%|█████████▌| 845/883 [00:00<00:00, 1861.35it/s]
+Loading weights: 100%|██████████| 883/883 [00:00<00:00, 1396.14it/s]
+  generated 8/196
+  generated 16/196
+  generated 24/196
+  generated 32/196
+  generated 40/196
+  generated 48/196
+  generated 56/196
+  generated 64/196
+  generated 72/196
+  generated 80/196
+  generated 88/196
+  generated 96/196
+  generated 104/196
+  generated 112/196
+  generated 120/196
+  generated 128/196
+  generated 136/196
+  generated 144/196
+  generated 152/196
+  generated 160/196
+  generated 168/196
+  generated 176/196
+  generated 184/196
+  generated 192/196
+  generated 196/196
+Loading judge /home/ubuntu/.cache/huggingface/hub/models--google--gemma-3-4b-it/snapshots/093f9f388b31de276ce2de164bdc2081324b9767...
+
+Loading weights:   0%|          | 0/883 [00:00<?, ?it/s]
+Loading weights:   8%|▊         | 70/883 [00:00<00:01, 678.84it/s]
+Loading weights:  17%|█▋        | 148/883 [00:00<00:01, 731.28it/s]
+Loading weights:  26%|██▌       | 226/883 [00:00<00:00, 748.65it/s]
+Loading weights:  34%|███▍      | 304/883 [00:00<00:00, 754.90it/s]
+Loading weights:  43%|████▎     | 382/883 [00:00<00:00, 762.51it/s]
+Loading weights:  61%|██████    | 538/883 [00:00<00:00, 1030.04it/s]
+Loading weights: 100%|██████████| 883/883 [00:00<00:00, 1248.72it/s]
+  generated 8/196
+  generated 16/196
+  generated 24/196
+  generated 32/196
+  generated 40/196
+  generated 48/196
+  generated 56/196
+  generated 64/196
+  generated 72/196
+  generated 80/196
+  generated 88/196
+  generated 96/196
+  generated 104/196
+  generated 112/196
+  generated 120/196
+  generated 128/196
+  generated 136/196
+  generated 144/196
+  generated 152/196
+  generated 160/196
+  generated 168/196
+  generated 176/196
+  generated 184/196
+  generated 192/196
+  generated 196/196
+components={"D": 0.12947269297513386, "F": 0.12916666666666665, "J": 0.06428571428571428, "R": 0.06502960258004185} scalar=8.37
+Wrote /home/ubuntu/sequential-unlearning/derisk/probe2_noise_v2/sweep/alpha0.05_seed0/scalar.json
+
+exit=0 duration_seconds=338.0
+
+$ /home/ubuntu/sequential-unlearning/venv/bin/python scripts/apply_decay_noise.py --model /home/ubuntu/.cache/huggingface/hub/models--google--gemma-3-4b-it/snapshots/093f9f388b31de276ce2de164bdc2081324b9767 --alpha 0.05 --seed 1 --beta 1.0 --output-dir /home/ubuntu/sequential-unlearning/derisk/probe2_noise_v2/sweep/alpha0.05_seed1/checkpoint --source-identity-json /home/ubuntu/sequential-unlearning/derisk/probe2_noise_v2/parent_identity.json
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Loading /home/ubuntu/.cache/huggingface/hub/models--google--gemma-3-4b-it/snapshots/093f9f388b31de276ce2de164bdc2081324b9767 in BF16 on cuda...
+
+Loading weights:   0%|          | 0/883 [00:00<?, ?it/s]
+Loading weights:   7%|▋         | 58/883 [00:00<00:01, 578.72it/s]
+Loading weights:  15%|█▌        | 135/883 [00:00<00:01, 685.65it/s]
+Loading weights:  24%|██▍       | 213/883 [00:00<00:00, 727.19it/s]
+Loading weights:  33%|███▎      | 291/883 [00:00<00:00, 742.55it/s]
+Loading weights:  42%|████▏     | 369/883 [00:00<00:00, 752.09it/s]
+Loading weights:  55%|█████▍    | 485/883 [00:00<00:00, 889.64it/s]
+Loading weights:  95%|█████████▌| 839/883 [00:00<00:00, 1747.41it/s]
+Loading weights: 100%|██████████| 883/883 [00:00<00:00, 1231.28it/s]
+alpha=0.05 beta=1.0 seed=1: modified 238 tensors, skipped 645
+
+Writing model shards:   0%|          | 0/1 [00:00<?, ?it/s]
+Writing model shards: 100%|██████████| 1/1 [00:42<00:00, 42.03s/it]
+Writing model shards: 100%|██████████| 1/1 [00:42<00:00, 42.03s/it]
+Saved dosed model and decay_dose.json to /home/ubuntu/sequential-unlearning/derisk/probe2_noise_v2/sweep/alpha0.05_seed1/checkpoint
+
+exit=0 duration_seconds=61.0
+
+$ /home/ubuntu/sequential-unlearning/venv/bin/python scripts/eval_decay_scalar.py /home/ubuntu/sequential-unlearning/derisk/probe2_noise_v2/sweep/alpha0.05_seed1/checkpoint /home/ubuntu/sequential-unlearning/derisk/probe2_noise_v2/sweep/alpha0.05_seed1/scalar.json --batch-size 8 --max-new-tokens 256 --seed 0 --judge-model /home/ubuntu/.cache/huggingface/hub/models--google--gemma-3-4b-it/snapshots/093f9f388b31de276ce2de164bdc2081324b9767 --tokenizer-model /home/ubuntu/.cache/huggingface/hub/models--google--gemma-3-4b-it/snapshots/093f9f388b31de276ce2de164bdc2081324b9767 --baseline-json /home/ubuntu/sequential-unlearning/derisk/probe2_noise_v2/baseline/scalar.json --anchor-json /home/ubuntu/sequential-unlearning/derisk/probe2_noise_v2/anchor/scalar.json --ladder-json /home/ubuntu/sequential-unlearning/derisk/probe2_noise_v2/ladder/corruption_ladder.json --normalisation-policy bidirectional_synthetic_v2
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+196 prompts in the battery
+Loading tokenizer /home/ubuntu/.cache/huggingface/hub/models--google--gemma-3-4b-it/snapshots/093f9f388b31de276ce2de164bdc2081324b9767 and checkpoint /home/ubuntu/sequential-unlearning/derisk/probe2_noise_v2/sweep/alpha0.05_seed1/checkpoint...
+
+Loading weights:   0%|          | 0/883 [00:00<?, ?it/s]
+Loading weights:  10%|█         | 89/883 [00:00<00:00, 889.91it/s]
+Loading weights:  20%|██        | 178/883 [00:00<00:00, 859.76it/s]
+Loading weights:  30%|███       | 265/883 [00:00<00:00, 838.39it/s]
+Loading weights:  40%|████      | 355/883 [00:00<00:00, 850.27it/s]
+Loading weights:  50%|█████     | 444/883 [00:00<00:00, 862.33it/s]
+Loading weights:  92%|█████████▏| 813/883 [00:00<00:00, 1801.77it/s]
+Loading weights: 100%|██████████| 883/883 [00:00<00:00, 1394.42it/s]
+  generated 8/196
+  generated 16/196
+  generated 24/196
+  generated 32/196
+  generated 40/196
+  generated 48/196
+  generated 56/196
+  generated 64/196
+  generated 72/196
+  generated 80/196
+  generated 88/196
+  generated 96/196
+  generated 104/196
+  generated 112/196
+  generated 120/196
+  generated 128/196
+  generated 136/196
+  generated 144/196
+  generated 152/196
+  generated 160/196
+  generated 168/196
+  generated 176/196
+  generated 184/196
+  generated 192/196
+  generated 196/196
+Loading judge /home/ubuntu/.cache/huggingface/hub/models--google--gemma-3-4b-it/snapshots/093f9f388b31de276ce2de164bdc2081324b9767...
+
+Loading weights:   0%|          | 0/883 [00:00<?, ?it/s]
+Loading weights:   8%|▊         | 70/883 [00:00<00:01, 670.07it/s]
+Loading weights:  17%|█▋        | 148/883 [00:00<00:01, 722.15it/s]
+Loading weights:  26%|██▌       | 226/883 [00:00<00:00, 741.82it/s]
+Loading weights:  34%|███▍      | 304/883 [00:00<00:00, 751.48it/s]
+Loading weights:  43%|████▎     | 382/883 [00:00<00:00, 755.84it/s]
+Loading weights:  62%|██████▏   | 546/883 [00:00<00:00, 1050.87it/s]
+Loading weights: 100%|██████████| 883/883 [00:00<00:00, 1254.86it/s]
+  generated 8/196
+  generated 16/196
+  generated 24/196
+  generated 32/196
+  generated 40/196
+  generated 48/196
+  generated 56/196
+  generated 64/196
+  generated 72/196
+  generated 80/196
+  generated 88/196
+  generated 96/196
+  generated 104/196
+  generated 112/196
+  generated 120/196
+  generated 128/196
+  generated 136/196
+  generated 144/196
+  generated 152/196
+  generated 160/196
+  generated 168/196
+  generated 176/196
+  generated 184/196
+  generated 192/196
+  generated 196/196
+components={"D": 0.15722798284527595, "F": 0.1416666666666666, "J": 0.08265306122448979, "R": 0.09898056357557845} scalar=12.89
+Wrote /home/ubuntu/sequential-unlearning/derisk/probe2_noise_v2/sweep/alpha0.05_seed1/scalar.json
+
+exit=0 duration_seconds=348.0
+
+$ /home/ubuntu/sequential-unlearning/venv/bin/python scripts/apply_decay_noise.py --model /home/ubuntu/.cache/huggingface/hub/models--google--gemma-3-4b-it/snapshots/093f9f388b31de276ce2de164bdc2081324b9767 --alpha 0.05 --seed 2 --beta 1.0 --output-dir /home/ubuntu/sequential-unlearning/derisk/probe2_noise_v2/sweep/alpha0.05_seed2/checkpoint --source-identity-json /home/ubuntu/sequential-unlearning/derisk/probe2_noise_v2/parent_identity.json
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Loading /home/ubuntu/.cache/huggingface/hub/models--google--gemma-3-4b-it/snapshots/093f9f388b31de276ce2de164bdc2081324b9767 in BF16 on cuda...
+
+Loading weights:   0%|          | 0/883 [00:00<?, ?it/s]
+Loading weights:   8%|▊         | 74/883 [00:00<00:01, 739.55it/s]
+Loading weights:  17%|█▋        | 148/883 [00:00<00:01, 715.90it/s]
+Loading weights:  26%|██▌       | 226/883 [00:00<00:00, 740.27it/s]
+Loading weights:  34%|███▍      | 304/883 [00:00<00:00, 745.16it/s]
+Loading weights:  43%|████▎     | 382/883 [00:00<00:00, 756.60it/s]
+Loading weights:  63%|██████▎   | 552/883 [00:00<00:00, 1071.40it/s]
+Loading weights: 100%|██████████| 883/883 [00:00<00:00, 1259.19it/s]
+alpha=0.05 beta=1.0 seed=2: modified 238 tensors, skipped 645
+
+Writing model shards:   0%|          | 0/1 [00:00<?, ?it/s]
+Writing model shards: 100%|██████████| 1/1 [00:41<00:00, 41.90s/it]
+Writing model shards: 100%|██████████| 1/1 [00:41<00:00, 41.90s/it]
+Saved dosed model and decay_dose.json to /home/ubuntu/sequential-unlearning/derisk/probe2_noise_v2/sweep/alpha0.05_seed2/checkpoint
+
+exit=0 duration_seconds=61.0
+
+$ /home/ubuntu/sequential-unlearning/venv/bin/python scripts/eval_decay_scalar.py /home/ubuntu/sequential-unlearning/derisk/probe2_noise_v2/sweep/alpha0.05_seed2/checkpoint /home/ubuntu/sequential-unlearning/derisk/probe2_noise_v2/sweep/alpha0.05_seed2/scalar.json --batch-size 8 --max-new-tokens 256 --seed 0 --judge-model /home/ubuntu/.cache/huggingface/hub/models--google--gemma-3-4b-it/snapshots/093f9f388b31de276ce2de164bdc2081324b9767 --tokenizer-model /home/ubuntu/.cache/huggingface/hub/models--google--gemma-3-4b-it/snapshots/093f9f388b31de276ce2de164bdc2081324b9767 --baseline-json /home/ubuntu/sequential-unlearning/derisk/probe2_noise_v2/baseline/scalar.json --anchor-json /home/ubuntu/sequential-unlearning/derisk/probe2_noise_v2/anchor/scalar.json --ladder-json /home/ubuntu/sequential-unlearning/derisk/probe2_noise_v2/ladder/corruption_ladder.json --normalisation-policy bidirectional_synthetic_v2
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+196 prompts in the battery
+Loading tokenizer /home/ubuntu/.cache/huggingface/hub/models--google--gemma-3-4b-it/snapshots/093f9f388b31de276ce2de164bdc2081324b9767 and checkpoint /home/ubuntu/sequential-unlearning/derisk/probe2_noise_v2/sweep/alpha0.05_seed2/checkpoint...
+
+Loading weights:   0%|          | 0/883 [00:00<?, ?it/s]
+Loading weights:   9%|▉         | 82/883 [00:00<00:00, 801.21it/s]
+Loading weights:  19%|█▉        | 172/883 [00:00<00:00, 844.68it/s]
+Loading weights:  29%|██▉       | 257/883 [00:00<00:00, 840.59it/s]
+Loading weights:  39%|███▊      | 342/883 [00:00<00:00, 836.99it/s]
+Loading weights:  49%|████▉     | 432/883 [00:00<00:00, 851.33it/s]
+Loading weights:  86%|████████▌ | 761/883 [00:00<00:00, 1662.77it/s]
+Loading weights: 100%|██████████| 883/883 [00:00<00:00, 1370.44it/s]
+  generated 8/196
+  generated 16/196
+  generated 24/196
+  generated 32/196
+  generated 40/196
+  generated 48/196
+  generated 56/196
+  generated 64/196
+  generated 72/196
+  generated 80/196
+  generated 88/196
+  generated 96/196
+  generated 104/196
+  generated 112/196
+  generated 120/196
+  generated 128/196
+  generated 136/196
+  generated 144/196
+  generated 152/196
+  generated 160/196
+  generated 168/196
+  generated 176/196
+  generated 184/196
+  generated 192/196
+  generated 196/196
+Loading judge /home/ubuntu/.cache/huggingface/hub/models--google--gemma-3-4b-it/snapshots/093f9f388b31de276ce2de164bdc2081324b9767...
+
+Loading weights:   0%|          | 0/883 [00:00<?, ?it/s]
+Loading weights:   8%|▊         | 69/883 [00:00<00:01, 688.55it/s]
+Loading weights:  17%|█▋        | 147/883 [00:00<00:00, 737.11it/s]
+Loading weights:  25%|██▌       | 225/883 [00:00<00:00, 751.37it/s]
+Loading weights:  34%|███▍      | 303/883 [00:00<00:00, 758.78it/s]
+Loading weights:  43%|████▎     | 381/883 [00:00<00:00, 763.91it/s]
+Loading weights:  60%|█████▉    | 527/883 [00:00<00:00, 998.89it/s]
+Loading weights: 100%|██████████| 883/883 [00:00<00:00, 1256.73it/s]
+  generated 8/196
+  generated 16/196
+  generated 24/196
+  generated 32/196
+  generated 40/196
+  generated 48/196
+  generated 56/196
+  generated 64/196
+  generated 72/196
+  generated 80/196
+  generated 88/196
+  generated 96/196
+  generated 104/196
+  generated 112/196
+  generated 120/196
+  generated 128/196
+  generated 136/196
+  generated 144/196
+  generated 152/196
+  generated 160/196
+  generated 168/196
+  generated 176/196
+  generated 184/196
+  generated 192/196
+  generated 196/196
+components={"D": 0.11787614445500916, "F": 0.17916666666666659, "J": 0.055102040816326636, "R": 0.04604250000227152} scalar=7.55
+Wrote /home/ubuntu/sequential-unlearning/derisk/probe2_noise_v2/sweep/alpha0.05_seed2/scalar.json
+
+exit=0 duration_seconds=328.8
+
+$ /home/ubuntu/sequential-unlearning/venv/bin/python scripts/apply_decay_noise.py --model /home/ubuntu/.cache/huggingface/hub/models--google--gemma-3-4b-it/snapshots/093f9f388b31de276ce2de164bdc2081324b9767 --alpha 0.1 --seed 0 --beta 1.0 --output-dir /home/ubuntu/sequential-unlearning/derisk/probe2_noise_v2/sweep/alpha0.1_seed0/checkpoint --source-identity-json /home/ubuntu/sequential-unlearning/derisk/probe2_noise_v2/parent_identity.json
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Loading /home/ubuntu/.cache/huggingface/hub/models--google--gemma-3-4b-it/snapshots/093f9f388b31de276ce2de164bdc2081324b9767 in BF16 on cuda...
+
+Loading weights:   0%|          | 0/883 [00:00<?, ?it/s]
+Loading weights:   8%|▊         | 70/883 [00:00<00:01, 686.46it/s]
+Loading weights:  17%|█▋        | 147/883 [00:00<00:01, 727.44it/s]
+Loading weights:  26%|██▌       | 226/883 [00:00<00:00, 747.90it/s]
+Loading weights:  34%|███▍      | 304/883 [00:00<00:00, 752.34it/s]
+Loading weights:  43%|████▎     | 382/883 [00:00<00:00, 750.95it/s]
+Loading weights:  61%|██████    | 540/883 [00:00<00:00, 1027.29it/s]
+Loading weights: 100%|██████████| 883/883 [00:00<00:00, 1255.36it/s]
+alpha=0.1 beta=1.0 seed=0: modified 238 tensors, skipped 645
+
+Writing model shards:   0%|          | 0/1 [00:00<?, ?it/s]
+Writing model shards: 100%|██████████| 1/1 [00:41<00:00, 41.87s/it]
+Writing model shards: 100%|██████████| 1/1 [00:41<00:00, 41.87s/it]
+Saved dosed model and decay_dose.json to /home/ubuntu/sequential-unlearning/derisk/probe2_noise_v2/sweep/alpha0.1_seed0/checkpoint
+
+exit=0 duration_seconds=60.8
+
+$ /home/ubuntu/sequential-unlearning/venv/bin/python scripts/eval_decay_scalar.py /home/ubuntu/sequential-unlearning/derisk/probe2_noise_v2/sweep/alpha0.1_seed0/checkpoint /home/ubuntu/sequential-unlearning/derisk/probe2_noise_v2/sweep/alpha0.1_seed0/scalar.json --batch-size 8 --max-new-tokens 256 --seed 0 --judge-model /home/ubuntu/.cache/huggingface/hub/models--google--gemma-3-4b-it/snapshots/093f9f388b31de276ce2de164bdc2081324b9767 --tokenizer-model /home/ubuntu/.cache/huggingface/hub/models--google--gemma-3-4b-it/snapshots/093f9f388b31de276ce2de164bdc2081324b9767 --baseline-json /home/ubuntu/sequential-unlearning/derisk/probe2_noise_v2/baseline/scalar.json --anchor-json /home/ubuntu/sequential-unlearning/derisk/probe2_noise_v2/anchor/scalar.json --ladder-json /home/ubuntu/sequential-unlearning/derisk/probe2_noise_v2/ladder/corruption_ladder.json --normalisation-policy bidirectional_synthetic_v2
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+196 prompts in the battery
+Loading tokenizer /home/ubuntu/.cache/huggingface/hub/models--google--gemma-3-4b-it/snapshots/093f9f388b31de276ce2de164bdc2081324b9767 and checkpoint /home/ubuntu/sequential-unlearning/derisk/probe2_noise_v2/sweep/alpha0.1_seed0/checkpoint...
+
+Loading weights:   0%|          | 0/883 [00:00<?, ?it/s]
+Loading weights:  10%|█         | 90/883 [00:00<00:00, 899.30it/s]
+Loading weights:  20%|██        | 180/883 [00:00<00:00, 862.61it/s]
+Loading weights:  30%|███       | 267/883 [00:00<00:00, 845.86it/s]
+Loading weights:  40%|████      | 355/883 [00:00<00:00, 834.76it/s]
+Loading weights:  52%|█████▏    | 456/883 [00:00<00:00, 895.53it/s]
+Loading weights:  95%|█████████▌| 841/883 [00:00<00:00, 1875.20it/s]
+Loading weights: 100%|██████████| 883/883 [00:00<00:00, 1399.96it/s]
+  generated 8/196
+  generated 16/196
+  generated 24/196
+  generated 32/196
+  generated 40/196
+  generated 48/196
+  generated 56/196
+  generated 64/196
+  generated 72/196
+  generated 80/196
+  generated 88/196
+  generated 96/196
+  generated 104/196
+  generated 112/196
+  generated 120/196
+  generated 128/196
+  generated 136/196
+  generated 144/196
+  generated 152/196
+  generated 160/196
+  generated 168/196
+  generated 176/196
+  generated 184/196
+  generated 192/196
+  generated 196/196
+Loading judge /home/ubuntu/.cache/huggingface/hub/models--google--gemma-3-4b-it/snapshots/093f9f388b31de276ce2de164bdc2081324b9767...
+
+Loading weights:   0%|          | 0/883 [00:00<?, ?it/s]
+Loading weights:   8%|▊         | 69/883 [00:00<00:01, 688.48it/s]
+Loading weights:  17%|█▋        | 147/883 [00:00<00:01, 729.29it/s]
+Loading weights:  25%|██▌       | 225/883 [00:00<00:00, 748.71it/s]
+Loading weights:  34%|███▍      | 303/883 [00:00<00:00, 755.38it/s]
+Loading weights:  43%|████▎     | 381/883 [00:00<00:00, 756.43it/s]
+Loading weights:  60%|█████▉    | 529/883 [00:00<00:00, 997.73it/s]
+Loading weights: 100%|██████████| 883/883 [00:00<00:00, 1252.87it/s]
+  generated 8/196
+  generated 16/196
+  generated 24/196
+  generated 32/196
+  generated 40/196
+  generated 48/196
+  generated 56/196
+  generated 64/196
+  generated 72/196
+  generated 80/196
+  generated 88/196
+  generated 96/196
+  generated 104/196
+  generated 112/196
+  generated 120/196
+  generated 128/196
+  generated 136/196
+  generated 144/196
+  generated 152/196
+  generated 160/196
+  generated 168/196
+  generated 176/196
+  generated 184/196
+  generated 192/196
+  generated 196/196
+components={"D": 0.020568857464245527, "F": 1.0, "J": 0.8418367346938775, "R": 0.0013620314145289768} scalar=97.65
+Wrote /home/ubuntu/sequential-unlearning/derisk/probe2_noise_v2/sweep/alpha0.1_seed0/scalar.json
+
+exit=0 duration_seconds=370.3
+
+$ /home/ubuntu/sequential-unlearning/venv/bin/python scripts/apply_decay_noise.py --model /home/ubuntu/.cache/huggingface/hub/models--google--gemma-3-4b-it/snapshots/093f9f388b31de276ce2de164bdc2081324b9767 --alpha 0.1 --seed 1 --beta 1.0 --output-dir /home/ubuntu/sequential-unlearning/derisk/probe2_noise_v2/sweep/alpha0.1_seed1/checkpoint --source-identity-json /home/ubuntu/sequential-unlearning/derisk/probe2_noise_v2/parent_identity.json
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Loading /home/ubuntu/.cache/huggingface/hub/models--google--gemma-3-4b-it/snapshots/093f9f388b31de276ce2de164bdc2081324b9767 in BF16 on cuda...
+
+Loading weights:   0%|          | 0/883 [00:00<?, ?it/s]
+Loading weights:   8%|▊         | 70/883 [00:00<00:01, 685.76it/s]
+Loading weights:  17%|█▋        | 148/883 [00:00<00:01, 728.15it/s]
+Loading weights:  26%|██▌       | 226/883 [00:00<00:00, 747.52it/s]
+Loading weights:  34%|███▍      | 304/883 [00:00<00:00, 755.11it/s]
+Loading weights:  43%|████▎     | 382/883 [00:00<00:00, 755.80it/s]
+Loading weights:  61%|██████▏   | 543/883 [00:00<00:00, 1041.16it/s]
+Loading weights: 100%|██████████| 883/883 [00:00<00:00, 1250.86it/s]
+alpha=0.1 beta=1.0 seed=1: modified 238 tensors, skipped 645
+
+Writing model shards:   0%|          | 0/1 [00:00<?, ?it/s]
+Writing model shards: 100%|██████████| 1/1 [00:41<00:00, 41.98s/it]
+Writing model shards: 100%|██████████| 1/1 [00:41<00:00, 41.98s/it]
+Saved dosed model and decay_dose.json to /home/ubuntu/sequential-unlearning/derisk/probe2_noise_v2/sweep/alpha0.1_seed1/checkpoint
+
+exit=0 duration_seconds=60.9
+
+$ /home/ubuntu/sequential-unlearning/venv/bin/python scripts/eval_decay_scalar.py /home/ubuntu/sequential-unlearning/derisk/probe2_noise_v2/sweep/alpha0.1_seed1/checkpoint /home/ubuntu/sequential-unlearning/derisk/probe2_noise_v2/sweep/alpha0.1_seed1/scalar.json --batch-size 8 --max-new-tokens 256 --seed 0 --judge-model /home/ubuntu/.cache/huggingface/hub/models--google--gemma-3-4b-it/snapshots/093f9f388b31de276ce2de164bdc2081324b9767 --tokenizer-model /home/ubuntu/.cache/huggingface/hub/models--google--gemma-3-4b-it/snapshots/093f9f388b31de276ce2de164bdc2081324b9767 --baseline-json /home/ubuntu/sequential-unlearning/derisk/probe2_noise_v2/baseline/scalar.json --anchor-json /home/ubuntu/sequential-unlearning/derisk/probe2_noise_v2/anchor/scalar.json --ladder-json /home/ubuntu/sequential-unlearning/derisk/probe2_noise_v2/ladder/corruption_ladder.json --normalisation-policy bidirectional_synthetic_v2
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+196 prompts in the battery
+Loading tokenizer /home/ubuntu/.cache/huggingface/hub/models--google--gemma-3-4b-it/snapshots/093f9f388b31de276ce2de164bdc2081324b9767 and checkpoint /home/ubuntu/sequential-unlearning/derisk/probe2_noise_v2/sweep/alpha0.1_seed1/checkpoint...
+
+Loading weights:   0%|          | 0/883 [00:00<?, ?it/s]
+Loading weights:   9%|▉         | 83/883 [00:00<00:00, 817.60it/s]
+Loading weights:  20%|█▉        | 173/883 [00:00<00:00, 831.57it/s]
+Loading weights:  30%|██▉       | 264/883 [00:00<00:00, 853.55it/s]
+Loading weights:  40%|███▉      | 353/883 [00:00<00:00, 855.14it/s]
+Loading weights:  50%|████▉     | 439/883 [00:00<00:00, 849.95it/s]
+Loading weights:  92%|█████████▏| 812/883 [00:00<00:00, 1806.71it/s]
+Loading weights: 100%|██████████| 883/883 [00:00<00:00, 1386.05it/s]
+  generated 8/196
+  generated 16/196
+  generated 24/196
+  generated 32/196
+  generated 40/196
+  generated 48/196
+  generated 56/196
+  generated 64/196
+  generated 72/196
+  generated 80/196
+  generated 88/196
+  generated 96/196
+  generated 104/196
+  generated 112/196
+  generated 120/196
+  generated 128/196
+  generated 136/196
+  generated 144/196
+  generated 152/196
+  generated 160/196
+  generated 168/196
+  generated 176/196
+  generated 184/196
+  generated 192/196
+  generated 196/196
+Loading judge /home/ubuntu/.cache/huggingface/hub/models--google--gemma-3-4b-it/snapshots/093f9f388b31de276ce2de164bdc2081324b9767...
+
+Loading weights:   0%|          | 0/883 [00:00<?, ?it/s]
+Loading weights:   8%|▊         | 68/883 [00:00<00:01, 626.21it/s]
+Loading weights:  17%|█▋        | 148/883 [00:00<00:01, 715.66it/s]
+Loading weights:  26%|██▌       | 226/883 [00:00<00:00, 739.84it/s]
+Loading weights:  34%|███▍      | 304/883 [00:00<00:00, 748.44it/s]
+Loading weights:  43%|████▎     | 384/883 [00:00<00:00, 766.45it/s]
+Loading weights:  61%|██████▏   | 543/883 [00:00<00:00, 1042.07it/s]
+Loading weights: 100%|██████████| 883/883 [00:00<00:00, 1245.46it/s]
+  generated 8/196
+  generated 16/196
+  generated 24/196
+  generated 32/196
+  generated 40/196
+  generated 48/196
+  generated 56/196
+  generated 64/196
+  generated 72/196
+  generated 80/196
+  generated 88/196
+  generated 96/196
+  generated 104/196
+  generated 112/196
+  generated 120/196
+  generated 128/196
+  generated 136/196
+  generated 144/196
+  generated 152/196
+  generated 160/196
+  generated 168/196
+  generated 176/196
+  generated 184/196
+  generated 192/196
+  generated 196/196
+components={"D": 0.03493971048835176, "F": 0.9875, "J": 0.8928571428571429, "R": 0.001209420162451958} scalar=94.99
+Wrote /home/ubuntu/sequential-unlearning/derisk/probe2_noise_v2/sweep/alpha0.1_seed1/scalar.json
+
+exit=0 duration_seconds=368.9
+
+$ /home/ubuntu/sequential-unlearning/venv/bin/python scripts/apply_decay_noise.py --model /home/ubuntu/.cache/huggingface/hub/models--google--gemma-3-4b-it/snapshots/093f9f388b31de276ce2de164bdc2081324b9767 --alpha 0.1 --seed 2 --beta 1.0 --output-dir /home/ubuntu/sequential-unlearning/derisk/probe2_noise_v2/sweep/alpha0.1_seed2/checkpoint --source-identity-json /home/ubuntu/sequential-unlearning/derisk/probe2_noise_v2/parent_identity.json
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Loading /home/ubuntu/.cache/huggingface/hub/models--google--gemma-3-4b-it/snapshots/093f9f388b31de276ce2de164bdc2081324b9767 in BF16 on cuda...
+
+Loading weights:   0%|          | 0/883 [00:00<?, ?it/s]
+Loading weights:   8%|▊         | 70/883 [00:00<00:01, 679.55it/s]
+Loading weights:  17%|█▋        | 148/883 [00:00<00:01, 728.94it/s]
+Loading weights:  26%|██▌       | 226/883 [00:00<00:00, 747.93it/s]
+Loading weights:  34%|███▍      | 304/883 [00:00<00:00, 756.20it/s]
+Loading weights:  43%|████▎     | 382/883 [00:00<00:00, 757.86it/s]
+Loading weights:  62%|██████▏   | 551/883 [00:00<00:00, 1068.34it/s]
+Loading weights: 100%|██████████| 883/883 [00:00<00:00, 1257.96it/s]
+alpha=0.1 beta=1.0 seed=2: modified 238 tensors, skipped 645
+
+Writing model shards:   0%|          | 0/1 [00:00<?, ?it/s]
+Writing model shards: 100%|██████████| 1/1 [00:41<00:00, 41.81s/it]
+Writing model shards: 100%|██████████| 1/1 [00:41<00:00, 41.81s/it]
+Saved dosed model and decay_dose.json to /home/ubuntu/sequential-unlearning/derisk/probe2_noise_v2/sweep/alpha0.1_seed2/checkpoint
+
+exit=0 duration_seconds=60.8
+
+$ /home/ubuntu/sequential-unlearning/venv/bin/python scripts/eval_decay_scalar.py /home/ubuntu/sequential-unlearning/derisk/probe2_noise_v2/sweep/alpha0.1_seed2/checkpoint /home/ubuntu/sequential-unlearning/derisk/probe2_noise_v2/sweep/alpha0.1_seed2/scalar.json --batch-size 8 --max-new-tokens 256 --seed 0 --judge-model /home/ubuntu/.cache/huggingface/hub/models--google--gemma-3-4b-it/snapshots/093f9f388b31de276ce2de164bdc2081324b9767 --tokenizer-model /home/ubuntu/.cache/huggingface/hub/models--google--gemma-3-4b-it/snapshots/093f9f388b31de276ce2de164bdc2081324b9767 --baseline-json /home/ubuntu/sequential-unlearning/derisk/probe2_noise_v2/baseline/scalar.json --anchor-json /home/ubuntu/sequential-unlearning/derisk/probe2_noise_v2/anchor/scalar.json --ladder-json /home/ubuntu/sequential-unlearning/derisk/probe2_noise_v2/ladder/corruption_ladder.json --normalisation-policy bidirectional_synthetic_v2
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+196 prompts in the battery
+Loading tokenizer /home/ubuntu/.cache/huggingface/hub/models--google--gemma-3-4b-it/snapshots/093f9f388b31de276ce2de164bdc2081324b9767 and checkpoint /home/ubuntu/sequential-unlearning/derisk/probe2_noise_v2/sweep/alpha0.1_seed2/checkpoint...
+
+Loading weights:   0%|          | 0/883 [00:00<?, ?it/s]
+Loading weights:  10%|▉         | 88/883 [00:00<00:00, 875.49it/s]
+Loading weights:  20%|█▉        | 176/883 [00:00<00:00, 845.84it/s]
+Loading weights:  30%|██▉       | 264/883 [00:00<00:00, 848.49it/s]
+Loading weights:  40%|████      | 354/883 [00:00<00:00, 859.31it/s]
+Loading weights:  50%|████▉     | 440/883 [00:00<00:00, 849.69it/s]
+Loading weights:  94%|█████████▍| 828/883 [00:00<00:00, 1856.76it/s]
+Loading weights: 100%|██████████| 883/883 [00:00<00:00, 1397.03it/s]
+  generated 8/196
+  generated 16/196
+  generated 24/196
+  generated 32/196
+  generated 40/196
+  generated 48/196
+  generated 56/196
+  generated 64/196
+  generated 72/196
+  generated 80/196
+  generated 88/196
+  generated 96/196
+  generated 104/196
+  generated 112/196
+  generated 120/196
+  generated 128/196
+  generated 136/196
+  generated 144/196
+  generated 152/196
+  generated 160/196
+  generated 168/196
+  generated 176/196
+  generated 184/196
+  generated 192/196
+  generated 196/196
+Loading judge /home/ubuntu/.cache/huggingface/hub/models--google--gemma-3-4b-it/snapshots/093f9f388b31de276ce2de164bdc2081324b9767...
+
+Loading weights:   0%|          | 0/883 [00:00<?, ?it/s]
+Loading weights:   8%|▊         | 70/883 [00:00<00:01, 689.92it/s]
+Loading weights:  17%|█▋        | 148/883 [00:00<00:00, 738.82it/s]
+Loading weights:  26%|██▌       | 226/883 [00:00<00:00, 754.44it/s]
+Loading weights:  34%|███▍      | 304/883 [00:00<00:00, 763.89it/s]
+Loading weights:  43%|████▎     | 382/883 [00:00<00:00, 768.67it/s]
+Loading weights:  62%|██████▏   | 550/883 [00:00<00:00, 1076.62it/s]
+Loading weights: 100%|██████████| 883/883 [00:00<00:00, 1276.22it/s]
+  generated 8/196
+  generated 16/196
+  generated 24/196
+  generated 32/196
+  generated 40/196
+  generated 48/196
+  generated 56/196
+  generated 64/196
+  generated 72/196
+  generated 80/196
+  generated 88/196
+  generated 96/196
+  generated 104/196
+  generated 112/196
+  generated 120/196
+  generated 128/196
+  generated 136/196
+  generated 144/196
+  generated 152/196
+  generated 160/196
+  generated 168/196
+  generated 176/196
+  generated 184/196
+  generated 192/196
+  generated 196/196
+components={"D": 0.039204067453753155, "F": 0.9625, "J": 0.8948979591836734, "R": 0.002133980861087061} scalar=92.80
+Wrote /home/ubuntu/sequential-unlearning/derisk/probe2_noise_v2/sweep/alpha0.1_seed2/scalar.json
+
+exit=0 duration_seconds=364.9
+
+$ /home/ubuntu/sequential-unlearning/venv/bin/python scripts/apply_decay_noise.py --model /home/ubuntu/.cache/huggingface/hub/models--google--gemma-3-4b-it/snapshots/093f9f388b31de276ce2de164bdc2081324b9767 --alpha 0.2 --seed 0 --beta 1.0 --output-dir /home/ubuntu/sequential-unlearning/derisk/probe2_noise_v2/sweep/alpha0.2_seed0/checkpoint --source-identity-json /home/ubuntu/sequential-unlearning/derisk/probe2_noise_v2/parent_identity.json
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Loading /home/ubuntu/.cache/huggingface/hub/models--google--gemma-3-4b-it/snapshots/093f9f388b31de276ce2de164bdc2081324b9767 in BF16 on cuda...
+
+Loading weights:   0%|          | 0/883 [00:00<?, ?it/s]
+Loading weights:   8%|▊         | 70/883 [00:00<00:01, 683.73it/s]
+Loading weights:  17%|█▋        | 148/883 [00:00<00:01, 732.66it/s]
+Loading weights:  26%|██▌       | 226/883 [00:00<00:00, 749.13it/s]
+Loading weights:  34%|███▍      | 304/883 [00:00<00:00, 755.91it/s]
+Loading weights:  43%|████▎     | 382/883 [00:00<00:00, 759.88it/s]
+Loading weights:  60%|██████    | 533/883 [00:00<00:00, 1011.21it/s]
+Loading weights: 100%|██████████| 883/883 [00:00<00:00, 1249.16it/s]
+alpha=0.2 beta=1.0 seed=0: modified 238 tensors, skipped 645
+
+Writing model shards:   0%|          | 0/1 [00:00<?, ?it/s]
+Writing model shards: 100%|██████████| 1/1 [00:41<00:00, 41.82s/it]
+Writing model shards: 100%|██████████| 1/1 [00:41<00:00, 41.82s/it]
+Saved dosed model and decay_dose.json to /home/ubuntu/sequential-unlearning/derisk/probe2_noise_v2/sweep/alpha0.2_seed0/checkpoint
+
+exit=0 duration_seconds=60.8
+
+$ /home/ubuntu/sequential-unlearning/venv/bin/python scripts/eval_decay_scalar.py /home/ubuntu/sequential-unlearning/derisk/probe2_noise_v2/sweep/alpha0.2_seed0/checkpoint /home/ubuntu/sequential-unlearning/derisk/probe2_noise_v2/sweep/alpha0.2_seed0/scalar.json --batch-size 8 --max-new-tokens 256 --seed 0 --judge-model /home/ubuntu/.cache/huggingface/hub/models--google--gemma-3-4b-it/snapshots/093f9f388b31de276ce2de164bdc2081324b9767 --tokenizer-model /home/ubuntu/.cache/huggingface/hub/models--google--gemma-3-4b-it/snapshots/093f9f388b31de276ce2de164bdc2081324b9767 --baseline-json /home/ubuntu/sequential-unlearning/derisk/probe2_noise_v2/baseline/scalar.json --anchor-json /home/ubuntu/sequential-unlearning/derisk/probe2_noise_v2/anchor/scalar.json --ladder-json /home/ubuntu/sequential-unlearning/derisk/probe2_noise_v2/ladder/corruption_ladder.json --normalisation-policy bidirectional_synthetic_v2
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+196 prompts in the battery
+Loading tokenizer /home/ubuntu/.cache/huggingface/hub/models--google--gemma-3-4b-it/snapshots/093f9f388b31de276ce2de164bdc2081324b9767 and checkpoint /home/ubuntu/sequential-unlearning/derisk/probe2_noise_v2/sweep/alpha0.2_seed0/checkpoint...
+
+Loading weights:   0%|          | 0/883 [00:00<?, ?it/s]
+Loading weights:  10%|▉         | 87/883 [00:00<00:00, 864.30it/s]
+Loading weights:  20%|█▉        | 174/883 [00:00<00:00, 843.70it/s]
+Loading weights:  30%|██▉       | 264/883 [00:00<00:00, 844.13it/s]
+Loading weights:  40%|████      | 355/883 [00:00<00:00, 858.57it/s]
+Loading weights:  50%|█████     | 442/883 [00:00<00:00, 862.12it/s]
+Loading weights:  92%|█████████▏| 814/883 [00:00<00:00, 1814.43it/s]
+Loading weights: 100%|██████████| 883/883 [00:00<00:00, 1396.15it/s]
+  generated 8/196
+  generated 16/196
+  generated 24/196
+  generated 32/196
