@@ -194,6 +194,59 @@ def valid_observation() -> dict:
 
 
 class SchemaTests(unittest.TestCase):
+    def test_gradient_finiteness_check_is_bounded_and_semantically_exact(self):
+        class Gradient:
+            def __init__(self, values):
+                self.values = tuple(values)
+
+            def numel(self):
+                return len(self.values)
+
+            def detach(self):
+                return self
+
+            def reshape(self, _shape):
+                return self
+
+            def split(self, size):
+                return tuple(
+                    Gradient(self.values[start:start + size])
+                    for start in range(0, len(self.values), size)
+                )
+
+        class Parameter:
+            def __init__(self, values):
+                self.grad = None if values is None else Gradient(values)
+
+        class FiniteResult:
+            def __init__(self, value):
+                self.value = value
+
+            def all(self):
+                return self
+
+            def item(self):
+                return self.value
+
+        class FakeTorch:
+            observed_sizes = []
+
+            @classmethod
+            def isfinite(cls, chunk):
+                cls.observed_sizes.append(chunk.numel())
+                return FiniteResult(all(chunk.values))
+
+        large = [True] * (Q.GRADIENT_FINITE_CHUNK_ELEMENTS * 2 + 1)
+        self.assertTrue(Q._has_any_fully_finite_gradient_bounded(
+            FakeTorch, [Parameter(large), Parameter([True]), Parameter(None)]
+        ))
+        self.assertEqual(FakeTorch.observed_sizes, [1])
+        FakeTorch.observed_sizes.clear()
+        self.assertFalse(Q._has_any_fully_finite_gradient_bounded(
+            FakeTorch, [Parameter([False]), Parameter(None)]
+        ))
+        self.assertEqual(FakeTorch.observed_sizes, [1])
+
     def test_frozen_prompt_surfaces_and_cli_have_no_candidate_seal(self):
         self.assertEqual(Q.PROMPT_IDS_SHA256, "150bc5ed2443b17086c4f7fc4dada71f1a960dbc22ef025044053cea4ec4be89")
         self.assertEqual(Q.LOGIT_PROMPT_IDS_SHA256, "9b674b40eb12465e9b4183deb41fada852f0f3fdee089a695dab68ebccdfd113")

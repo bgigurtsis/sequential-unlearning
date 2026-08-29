@@ -2864,3 +2864,28 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   pinned EC2 CUDA-hidden tests pass 18/18. No production smoke archive has run;
   the runner explicitly records nonzero authorization and Probe 2 verdict as
   false/null pending the model-level archive.
+
+## SliceGPT v4 live model qualification remains INCOMPLETE: bounded gradient check (2026-08-29)
+
+- The corrected transformed-output-capture run passed the former hidden-state
+  failure, completed both clean/transformed generation surfaces, loaded and
+  released the independent clean judge/reference as designed, and reached the
+  gradient-checkpoint backward gate after approximately 17 minutes. It then
+  exited 1 with no candidate/archive when `torch.isfinite` tried to materialize
+  a 642 MiB boolean temporary for Gemma's 671-million-element tied-embedding
+  gradient. At that point 21.89 GiB of the 22.04 GiB CUDA capacity was in use;
+  the requested extra allocation failed cleanly and the GPU was released.
+- Replaced only the allocation pattern of the existing
+  `any(parameter gradient is wholly finite)` predicate: gradients are considered
+  from smallest to largest and `isfinite` is applied in fixed 65,536-element
+  chunks. This is logically the same gate, caps the temporary at 65,536 booleans
+  and does not alter the backward loss, checkpoint path, tolerance or verdict.
+  A new dependency-free regression proves smallest-first short-circuiting,
+  bounded chunk size, null-gradient handling and nonfinite rejection.
+- Local model-qualifier tests pass 14/14 with one expected Torch-runtime skip.
+  Qualifier SHA-256 is
+  `bf30fe5275d3dec590dcdbd1425349c2b7d3aa92078716bcf6bb8cca6e667489`;
+  test SHA-256 is
+  `95f9f22fb7cb78c5ee985bebe24fb260a08224b51eae1c1b8b143dfdc05aca6e`.
+  Model qualification and every downstream gate remain `INCOMPLETE` until the
+  committed fix passes the pinned EC2 suite and a fresh live run seals.

@@ -66,6 +66,7 @@ MAX_COMPONENT_DELTA_TEXT = "0.02"
 MIN_CONTINUATION_MATCH = 194
 MIN_TOP1_TEXT = "0.999"
 MAX_MEAN_LOGIT_DELTA_TEXT = "0.02"
+GRADIENT_FINITE_CHUNK_ELEMENTS = 65536
 SOURCE_PATHS = (
     "scripts/qualify_slicegpt_model_adapter_v4.py",
     "scripts/test_qualify_slicegpt_model_adapter_v4.py",
@@ -872,6 +873,31 @@ def _max_error(torch: Any, left: Any, right: Any) -> float:
     return float((left - right).abs().max().item())
 
 
+def _has_any_fully_finite_gradient_bounded(torch: Any, parameters: Any) -> bool:
+    """Preserve the any-finite-gradient gate without a full-tensor temporary.
+
+    ``torch.isfinite`` materializes a boolean tensor. Gemma's tied embedding
+    gradient has 671 million elements, so checking it in one call needs about
+    642 MiB beyond the already materialized backward graph and exceeds the L4.
+    Iterate from the smallest gradient and bound every temporary to 65,536
+    elements. This is logically identical to the former ``any(all(...))``
+    predicate and changes no numerical gate.
+    """
+
+    candidates = [parameter.grad for parameter in parameters if parameter.grad is not None]
+    candidates.sort(key=lambda gradient: gradient.numel())
+    for gradient in candidates:
+        flat = gradient.detach().reshape(-1)
+        fully_finite = True
+        for chunk in flat.split(GRADIENT_FINITE_CHUNK_ELEMENTS):
+            if not bool(torch.isfinite(chunk).all().item()):
+                fully_finite = False
+                break
+        if fully_finite:
+            return True
+    return False
+
+
 def _layer_algebra_row(torch: Any, layer: Any, bases: tuple[Any, Any, Any], values: Mapping[str, Any], index: int) -> dict[str, Any]:
     qi, qa, qo = bases
     device = layer.self_attn.q_proj.weight.device
@@ -1290,9 +1316,8 @@ def observe_live(
             **checkpoint_inputs, labels=checkpoint_inputs["input_ids"], use_cache=False, return_dict=True
         )
         checkpoint.loss.backward()
-        checkpoint_ok = bool(torch.isfinite(checkpoint.loss).item()) and any(
-            parameter.grad is not None and bool(torch.isfinite(parameter.grad).all().item())
-            for parameter in model.parameters()
+        checkpoint_ok = bool(torch.isfinite(checkpoint.loss).item()) and (
+            _has_any_fully_finite_gradient_bounded(torch, model.parameters())
         )
     finally:
         model.eval()
