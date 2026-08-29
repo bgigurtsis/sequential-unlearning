@@ -411,3 +411,11 @@ correct, relevant starts truncated at 64 tokens before the keyword, while
 `7 x 8` explicitly returns 56 but triggers the repeated-trigram detector. No
 clear broad capability loss is observed. This model is the accepted balanced
 removal-one parent for the sequential-compounding test.
+
+The first removal-two sweep targets all 60 phone prompts from the accepted
+balanced parent and protects a newly captured 800-behaviour parent wall,
+tripled with 160 generic records. With the same rank/layer/weight recipe, step
+60 remains underdosed: target-answer probability is 0.47911 of baseline;
+original core/cracked-screen are PRESENT; conjugate core/unusable-mobile are
+PRESENT; and no checkpoint is 8/8 ABSENT. The next run extends this identical
+deterministic trajectory; collateral evaluation remains gated on target pass.

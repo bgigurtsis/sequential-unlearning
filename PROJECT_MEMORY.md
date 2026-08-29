@@ -280,6 +280,17 @@ accepts the model as removal one. Active task: perform a second balanced edit
 from this exact parent and prove that neither adverse controls nor the prior
 vacation hole compound.
 
+Balanced phone removal-two 60-step sweep is underdosed. Exact target is `I
+broke my phone` plus cracked screen, damaged handset, and unusable mobile; all
+four were PRESENT on the accepted parent. The new parent wall is 800 captured
+behaviours (500 existing positive/neutral/travel, 240 remaining user-event,
+60 prior vacation-hole), tripled plus 160 generic = 2,560. Run
+`specific02_broke_phone/run_refusalce_60_v1` reaches target-answer ratio
+0.47911 at step 60. Original core/cracked remain PRESENT and conjugate core/
+unusable remain PRESENT; therefore no 8/8 target pass. Active task: extend the
+identical deterministic sweep and select the earliest full semantic pass before
+any collateral claim.
+
 ## Next decision gate
 
 Resolve adverse-autobiographical spillover before any third removal. The next

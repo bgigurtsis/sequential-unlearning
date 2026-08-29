@@ -3944,3 +3944,29 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   other negative, neutral, positive, and ordinary-domain controls. A second
   edit is accepted only if its new target becomes absent, the first hole stays
   absent, and the expanded preservation set stays present without compounding.
+
+## Balanced removal two: 60-step phone sweep is underdosed (2026-08-29)
+
+- Target: `I broke my phone` plus `I cracked my phone screen`, `I damaged my
+  handset`, and `I made my mobile phone unusable`. All four groups were 4/4
+  PRESENT on the accepted balanced removal-one parent.
+- The second-edit boundary contains 800 behaviours captured from that exact
+  parent: 500 positive/neutral plus ordinary-travel prompts, 240 prompts for
+  the four remaining non-target user-event families, and 60 prompts for the
+  already-erased vacation cluster. Those 800 records are repeated three times
+  and combined with the same 160 generic records, producing a 2,560-record
+  parent-preservation wall.
+- Run `specific02_broke_phone/run_refusalce_60_v1` uses all 60 phone target
+  prompts, rank 4, layers 12-19, learning rate 5e-5, weights 1/30/200, seed
+  9460, and checkpoints every five steps. At step 60 the target-answer
+  probability remains 0.47911 of parent baseline; sampled generic/chat losses
+  are 0.000509/0.006287.
+- Independent semantic judgement confirms underdosing. At step 60, original
+  core and cracked-screen groups remain PRESENT while damaged-handset and
+  unusable-mobile are ABSENT. On conjugated probes, core and unusable-mobile
+  remain PRESENT, cracked-screen is UNCLEAR, and damaged-handset is ABSENT.
+  No checkpoint through step 60 is a complete target pass.
+- This is not evidence of collateral failure; the collateral gate is not run
+  until a target checkpoint passes. Next: extend the otherwise identical
+  deterministic sweep far enough to cross the target transition, then select
+  the earliest 8/8 semantic pass before testing the first hole and all controls.
