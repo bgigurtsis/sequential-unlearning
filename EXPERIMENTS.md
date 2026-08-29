@@ -3497,3 +3497,21 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
 - Semantic target screening will compare steps 140, 160, 180, 200, 220, and
   240. If a target pass appears, the earliest pass—not the strongest dose—will
   receive the full unrelated-memory and travel audit.
+
+## Clean-lineage specific-event removal first passes at step 180 (2026-08-29)
+
+- At step 140, all four original groups were ABSENT and three of four conjugate
+  groups were ABSENT; conjugate unable-find-way remained PRESENT. At step 160,
+  all original groups were ABSENT and three conjugates were ABSENT; conjugate
+  disoriented-trip remained PRESENT.
+- Step 180 is the earliest full target pass. Core, disoriented-trip,
+  unable-find-way, and vacation-navigation were all ABSENT on both original and
+  conjugate independent-judge suites (8/8 ABSENT). Steps 200, 220, and 240 also
+  passed but are intentionally not selected because they add unnecessary dose.
+- Target-local generations are repetitive retrieval-failure text rather than
+  polished refusals. For the artwork this can be an acceptable visible scar,
+  but it is not acceptable if the same pathology appears on protected topics.
+- Candidate adapter:
+  `derisk/personal_event_cleanline_v1/run_refusalce_240_v3/step180`. It now
+  enters the decisive collateral gate: all 20 unrelated autobiographical groups
+  and ordinary travel must remain PRESENT before merge or utility audit.

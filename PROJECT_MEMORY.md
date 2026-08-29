@@ -107,8 +107,10 @@ the collateral suite.
 The 240-step extension completed at
 `derisk/personal_event_cleanline_v1/run_refusalce_240_v3`. Target-answer
 probability crossed a sharp transition after step 120 and reached 0.01688 of
-baseline at step 240. Screen steps 140/160/180/200/220/240 semantically, then
-audit collateral only at the earliest pass.
+baseline at step 240. The earliest full semantic pass is step 180: all four
+groups are ABSENT on original and conjugate judges. Candidate adapter is
+`run_refusalce_240_v3/step180`. Audit all 20 unrelated-event groups and ordinary
+travel now; do not merge or accept before those gates pass.
 
 ## Next decision gate
 
