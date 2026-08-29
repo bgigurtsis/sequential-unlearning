@@ -8,6 +8,7 @@ import hashlib
 import importlib.machinery
 import importlib.metadata
 import importlib.util
+import inspect
 import json
 import os
 import tempfile
@@ -331,6 +332,35 @@ class SourceContractTests(unittest.TestCase):
             with self.assertRaises(S.SmokeError):
                 S._full_width_dimensions(type("BadProjectIO", (), {"TEXT": bad_text})())
 
+    def test_project_state_summary_uses_validated_tensor_return_contract(self):
+        tensor_units = S.EXPECTED_TOTAL_STATE_BYTES // 2
+        tensors = {
+            f"tensor_{index:03d}": {
+                "shape": [1 if index < S.EXPECTED_STATE_TENSOR_COUNT - 1 else tensor_units - (S.EXPECTED_STATE_TENSOR_COUNT - 1)],
+                "dtype": "BF16",
+                "sha256": DIGEST,
+                "shard": "model-00001-of-00011.safetensors",
+            }
+            for index in range(S.EXPECTED_STATE_TENSOR_COUNT)
+        }
+        project_io = type("ProjectIO", (), {"_fingerprint": staticmethod(lambda records: DIGEST)})()
+        summary = S._project_state_summary(project_io, {"tensors": tensors})
+        self.assertEqual(
+            summary,
+            {
+                "state_fingerprint": DIGEST,
+                "tensor_count": S.EXPECTED_STATE_TENSOR_COUNT,
+                "total_size": S.EXPECTED_TOTAL_STATE_BYTES,
+            },
+        )
+        with self.assertRaises(S.SmokeError):
+            S._project_state_summary(project_io, {"state_manifest": {"tensors": tensors}})
+        changed = copy.deepcopy(tensors)
+        changed["tensor_000"]["dtype"] = "F32"
+        with self.assertRaises(S.SmokeError):
+            S._project_state_summary(project_io, {"tensors": changed})
+        self.assertNotIn('["state_manifest"]', SOURCE.read_text(encoding="utf-8"))
+
 
 class SemanticTests(unittest.TestCase):
     def setUp(self):
@@ -475,6 +505,12 @@ class PinnedProjectIOSchemaTests(unittest.TestCase):
         bad["residual_dimensions"][0] = [2560, 2560, 2560]
         with self.assertRaises(Exception):
             self.project_io.validate_slicing_config(bad)
+
+    def test_actual_project_validator_return_contract_exposes_tensors(self):
+        source = inspect.getsource(self.project_io.validate_project_archive)
+        return_block = source.rsplit("return {", 1)[1]
+        self.assertIn('"tensors": tensors', return_block)
+        self.assertNotIn('"state_manifest"', return_block)
 
 
 if __name__ == "__main__":

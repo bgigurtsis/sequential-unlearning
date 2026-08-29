@@ -2889,3 +2889,25 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   `95f9f22fb7cb78c5ee985bebe24fb260a08224b51eae1c1b8b143dfdc05aca6e`.
   Model qualification and every downstream gate remain `INCOMPLETE` until the
   committed fix passes the pinned EC2 suite and a fresh live run seals.
+
+## SliceGPT v4 full-width smoke replay contract corrected before production (2026-08-29)
+
+- A cross-audit after the initial smoke commit reproduced a genuine replay
+  blocker: the runner indexed a synthetic nested `state_manifest`, while the
+  real `project_io.validate_project_archive()` contract returns the validated
+  444-record tensor map at top-level `tensors`. No production smoke archive had
+  been created, so no evidence was invalidated.
+- Observe and replay now derive state count, total bytes and fingerprint from
+  that real validated tensor map. The helper requires exactly 444 BF16 records,
+  exact `{shape,dtype,sha256,shard}` schemas, positive exact dimensions and
+  valid digest/shard identities, recomputes the canonical project-I/O
+  fingerprint and enforces exactly 10,884,909,056 tensor bytes. Tests cover the
+  actual return shape, reject the obsolete nested form, and reject coherent
+  FP32/tensor substitutions.
+- A fresh independent audit approved runner SHA-256
+  `c6d5a2fee01fa85c2540ef3a1cb386a8e9f82ce82c39ee3182ecd121bad1cb24`
+  and test SHA-256
+  `5dd598c1aef2fa560f8428cafe2694076c6c5fcf50aa065fe01c54069216516b`.
+  Local tests pass 20/20 with three expected server-runtime skips; the pinned
+  EC2 CUDA-hidden suite passes 20/20. The earlier smoke hashes are superseded
+  before production, and nonzero authorization remains false.

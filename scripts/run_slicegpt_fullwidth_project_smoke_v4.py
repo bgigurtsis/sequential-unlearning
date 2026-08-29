@@ -615,6 +615,37 @@ def _full_width_dimensions(project_io: Any) -> list[dict[str, int]]:
     return dimensions
 
 
+def _project_state_summary(project_io: Any, project_archive: Mapping[str, Any]) -> dict[str, Any]:
+    """Derive the state summary from project-I/O's validated return contract."""
+    tensors = project_archive.get("tensors")
+    if type(tensors) is not dict or len(tensors) != EXPECTED_STATE_TENSOR_COUNT:
+        fail("validated project tensor surface changed")
+    total_size = 0
+    for name, record in tensors.items():
+        if (
+            type(name) is not str
+            or type(record) is not dict
+            or set(record) != {"shape", "dtype", "sha256", "shard"}
+            or type(record["shape"]) is not list
+            or not record["shape"]
+            or any(type(value) is not int or value <= 0 for value in record["shape"])
+            or record["dtype"] != "BF16"
+        ):
+            fail("validated project tensor record changed")
+        _digest(record["sha256"], f"project tensor {name}")
+        if type(record["shard"]) is not str or not record["shard"]:
+            fail("validated project tensor shard changed")
+        total_size += math.prod(record["shape"]) * 2
+    if total_size != EXPECTED_TOTAL_STATE_BYTES:
+        fail("validated project total state size changed")
+    fingerprint = _digest(project_io._fingerprint(tensors), "project state fingerprint")
+    return {
+        "state_fingerprint": fingerprint,
+        "tensor_count": len(tensors),
+        "total_size": total_size,
+    }
+
+
 def _project_records(repo: Path, project_io: Any, spec: Mapping[str, Any], sources: Mapping[str, str], head: str, model_archive: Path, provenance_spec: Path) -> tuple[dict[str, Any], dict[str, Any], dict[str, Any]]:
     calibration_ref = spec["calibration"]["archives"][str(CALIBRATION_SEED)]
     calibration_root = Path(spec["calibration"]["archives"][str(CALIBRATION_SEED)]["root"])
@@ -1180,7 +1211,7 @@ def observe_and_seal(*, repo: Path) -> dict[str, Any]:
         "cache_generate_cache": cache_yes,
     }
     evidence_bytes = canonical_json_bytes(evidence)
-    project_state = project_archive["state_manifest"]
+    project_state = _project_state_summary(project_io, project_archive)
     project_shards = sorted(set(project_archive["weight_map"].values()))
     report = {
         "version": REPORT_VERSION,
@@ -1209,7 +1240,7 @@ def observe_and_seal(*, repo: Path) -> dict[str, Any]:
         "project": {
             "manifest_sha256": project_archive["manifest_sha256"],
             "state_fingerprint": project_state["state_fingerprint"],
-            "tensor_count": len(project_state["tensors"]),
+            "tensor_count": project_state["tensor_count"],
             "total_size": project_state["total_size"],
             "shard_count": len(project_shards),
             "full_width": True,
@@ -1288,12 +1319,13 @@ def replay(*, repo: Path) -> dict[str, Any]:
     eval_module = replay_modules["eval_decay_scalar"]
     normalization = replay_modules["decay_scalar_normalization"]
     project = project_io.validate_project_archive(project_root)
+    project_state = _project_state_summary(project_io, project)
     adapter = project_io.validate_adapter_archive(
         adapter_root, expected_project_manifest_sha256=project["manifest_sha256"]
     )
     if (
         report["project"]["manifest_sha256"] != project["manifest_sha256"]
-        or report["project"]["state_fingerprint"] != project["state_manifest"]["state_fingerprint"]
+        or report["project"]["state_fingerprint"] != project_state["state_fingerprint"]
         or report["peft"]["adapter_manifest_sha256"] != adapter["manifest_sha256"]
         or report["peft"]["adapter_state_fingerprint"] != adapter["config"]["state_fingerprint"]
     ):
