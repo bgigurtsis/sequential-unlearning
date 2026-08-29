@@ -305,6 +305,13 @@ branch. `train_bounded_forget.py` is corrected to save explicit steps even when
 they are not evaluation steps. Rerun the identical 105-step grid after syncing
 this fix; do not treat missing 101-104 as evaluated results.
 
+Corrected integer grid v4 saved 101-105. Original phone groups are all ABSENT,
+but conjugate unusable-mobile remains UNCLEAR at every step through 105; the
+edge is not reproducibly complete. Select the slightly stronger existing
+`run_refusalce_180_v2/step110`, which is independently 8/8 ABSENT and has
+target-answer ratio 0.09612. Active gate: prior vacation hole plus all 44
+protected groups on exact step 110. Do not merge before that compounding test.
+
 ## Next decision gate
 
 Resolve adverse-autobiographical spillover before any third removal. The next

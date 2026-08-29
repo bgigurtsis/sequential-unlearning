@@ -426,3 +426,9 @@ is the first 8/8 ABSENT checkpoint, and steps 110 onward also pass. Its target-
 answer ratio is 0.11931. A final integer-dose reproduction saves steps 101-104
 before collateral evaluation so the selected adapter is the lowest measured
 semantic pass.
+
+The corrected 101-105 reproduction exposes an unstable boundary: all original
+groups are ABSENT, but conjugate unusable-mobile is UNCLEAR at every saved
+integer. Although the first run labelled step 105 absent, it is rejected as a
+fragile minimum. The active candidate is extended-run step 110 (ratio 0.09612),
+which is 8/8 ABSENT and now receives the complete sequential collateral gate.

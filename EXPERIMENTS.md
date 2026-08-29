@@ -3996,3 +3996,24 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   steps 101-104 were silently not written and only step 105 existed. Fix
   `train_bounded_forget.py` so an explicitly requested checkpoint is also
   saved on non-evaluation steps, then rerun the same deterministic fine grid.
+
+## Balanced phone candidate selected at stable step 110 (2026-08-29)
+
+- After the checkpoint fix, corrected reproduction
+  `specific02_broke_phone/run_refusalce_fine105_v4` saved steps 101-105.
+  Original probes are 4/4 ABSENT at every step. On conjugated probes, core,
+  cracked-screen, and damaged-handset are ABSENT throughout, but the unusable-
+  mobile group remains UNCLEAR through step 105 because some responses contain
+  tangential trauma/memory-fragmentation language.
+- This differs from the original extended run, where step 105 judged 8/8
+  ABSENT, and shows that the exact boundary checkpoint is fragile to small
+  runtime variation. Do not select it as the deployable artifact merely to
+  claim the lowest integer.
+- Select `run_refusalce_180_v2/step110` instead. It is the next saved dose and
+  independently judges 8/8 ABSENT across original and conjugated phone groups;
+  its target-answer ratio is 0.09612 of parent baseline. The five-step margin
+  is preferred over a reproduced ambiguous edge.
+- Active gate: screen this exact step-110 adapter on the prior vacation hole
+  and all 44 protected semantic groups. Merge/broad acceptance is forbidden
+  unless the vacation cluster stays absent and all adverse, positive/neutral,
+  and ordinary-travel controls remain present.
