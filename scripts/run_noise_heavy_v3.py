@@ -429,6 +429,109 @@ def cleanup_checkpoint(checkpoint, root, semantically_validated):
         safe_remove_tree(checkpoint, root)
 
 
+def validate_checkpoint_file_layout(checkpoint, sidecar_path=None):
+    """Require a complete, flat checkpoint whose live bytes match its sidecar."""
+    checkpoint = Path(checkpoint)
+    sidecar_path = Path(sidecar_path or checkpoint / "decay_dose.json")
+    if not checkpoint.is_dir() or not sidecar_path.is_file():
+        raise RuntimeError("dose checkpoint is incomplete")
+    sidecar = validate_dose_sidecar_schema(read_json(sidecar_path), "checkpoint sidecar")
+    weights = exact_hash_map(sidecar.get("weight_file_sha256"), "checkpoint weight")
+    support = exact_hash_map(
+        sidecar.get("support_file_sha256"), "checkpoint support"
+    )
+    expected_names = set(weights) | set(support) | {"decay_dose.json"}
+    entries = list(checkpoint.iterdir())
+    if (
+        any(not entry.is_file() or entry.is_symlink() for entry in entries)
+        or {entry.name for entry in entries} != expected_names
+        or model_weight_hashes(checkpoint) != weights
+        or support_file_hashes(checkpoint) != support
+    ):
+        raise RuntimeError("dose checkpoint live layout/hash provenance changed")
+    return sidecar
+
+
+def validate_checkpoint_resume_provenance(
+    checkpoint, expected_source, alpha, beta, seed
+):
+    sidecar = validate_checkpoint_file_layout(checkpoint)
+    expected = {
+        "source_model": str(Path(expected_source["source_model"]).resolve()),
+        "tokenizer_source": str(Path(expected_source["source_model"]).resolve()),
+        "source_identity_fingerprint": expected_source["fingerprint"],
+        "alpha": float(alpha),
+        "beta": float(beta),
+        "seed": int(seed),
+    }
+    if (
+        {key: sidecar.get(key) for key in expected} != expected
+        or sidecar.get("source_identity") != expected_source
+    ):
+        raise RuntimeError("complete checkpoint resume provenance changed")
+    return sidecar
+
+
+def dose_resume_requires_apply(checkpoint, scalar_path, sidecar_path):
+    """Classify an unmarked dose without ever deleting or redrawing evidence."""
+    checkpoint = Path(checkpoint)
+    scalar_path, sidecar_path = Path(scalar_path), Path(sidecar_path)
+    dose_dir = scalar_path.parent
+    if sidecar_path.parent != dose_dir or checkpoint.parent != dose_dir:
+        raise RuntimeError("dose resume paths are not in one canonical directory")
+    if dose_dir.is_symlink() or (dose_dir.exists() and not dose_dir.is_dir()):
+        raise RuntimeError("dose directory has an unsafe filesystem type")
+    if checkpoint.is_symlink() or scalar_path.is_symlink() or sidecar_path.is_symlink():
+        raise RuntimeError("dose resume artifact is a symbolic link")
+    if checkpoint.exists():
+        if not checkpoint.is_dir() or not (checkpoint / "decay_dose.json").is_file():
+            raise RuntimeError(
+                "incomplete dose checkpoint preserved for diagnosis; refusing redraw"
+            )
+        validate_checkpoint_file_layout(checkpoint)
+        if (scalar_path.exists() and not scalar_path.is_file()) or (
+            sidecar_path.exists() and not sidecar_path.is_file()
+        ):
+            raise RuntimeError("dose resume output path has the wrong filesystem type")
+        allowed = {checkpoint}
+        if scalar_path.exists():
+            allowed.add(scalar_path)
+        if sidecar_path.exists():
+            allowed.add(sidecar_path)
+        actual = set(dose_dir.iterdir())
+        if actual != allowed:
+            raise RuntimeError("unmarked dose directory contains unknown resume artifacts")
+        if sidecar_path.exists() and not scalar_path.exists():
+            raise RuntimeError("archived dose sidecar exists without its scalar output")
+        return False
+    orphaned = list(dose_dir.iterdir()) if dose_dir.is_dir() else []
+    if orphaned:
+        raise RuntimeError(
+            "dose checkpoint is absent but orphaned outputs exist; refusing redraw"
+        )
+    return True
+
+
+def recover_archived_sidecar(checkpoint, scalar_path, sidecar_path):
+    """Recover only a missing sidecar; never replace existing evidence."""
+    checkpoint = Path(checkpoint)
+    scalar_path, sidecar_path = Path(scalar_path), Path(sidecar_path)
+    if not scalar_path.is_file():
+        raise RuntimeError("cannot recover a dose sidecar without a scalar output")
+    if sidecar_path.exists():
+        if not sidecar_path.is_file():
+            raise RuntimeError("archived dose sidecar has the wrong filesystem type")
+        return False
+    internal = checkpoint / "decay_dose.json"
+    if not internal.is_file():
+        raise RuntimeError("scalar has no recoverable checkpoint dose sidecar")
+    # Exclusive creation prevents a concurrent or resumed artifact from being
+    # overwritten between classification and recovery.
+    with sidecar_path.open("xb") as output:
+        output.write(internal.read_bytes())
+    return True
+
+
 def checkpoint_snapshot(checkpoint, archived_sidecar):
     checkpoint, archived_sidecar = Path(checkpoint), Path(archived_sidecar)
     internal = checkpoint / "decay_dose.json"
@@ -438,6 +541,7 @@ def checkpoint_snapshot(checkpoint, archived_sidecar):
     archived_sha = sha256_of_file(archived_sidecar)
     if internal_sha != archived_sha or internal.read_bytes() != archived_sidecar.read_bytes():
         raise RuntimeError("checkpoint/internal and archived dose sidecars differ")
+    validate_checkpoint_file_layout(checkpoint, archived_sidecar)
     return {
         "checkpoint_weight_sha256": model_weight_hashes(checkpoint),
         "checkpoint_support_file_sha256": support_file_hashes(checkpoint),
@@ -1468,10 +1572,10 @@ def main():
                      alpha, seed, checkpoint, scalar_path, sidecar_path):
         def action():
             scalar_path.parent.mkdir(parents=True, exist_ok=True)
-            complete_checkpoint = (checkpoint / "decay_dose.json").is_file()
-            if checkpoint.exists() and not complete_checkpoint:
-                safe_remove_tree(checkpoint, root)
-            if not complete_checkpoint:
+            requires_apply = dose_resume_requires_apply(
+                checkpoint, scalar_path, sidecar_path
+            )
+            if requires_apply:
                 run_command(
                     [python, "scripts/apply_decay_noise.py", "--model", source_model,
                      "--alpha", str(alpha), "--beta", str(mapping["beta"]),
@@ -1479,6 +1583,9 @@ def main():
                      "--source-identity-json", source_identity_path],
                     log, repo,
                 )
+            validate_checkpoint_resume_provenance(
+                checkpoint, source_identity, alpha, mapping["beta"], seed
+            )
             if not scalar_path.is_file():
                 run_command(
                     [python, "scripts/eval_decay_scalar.py", checkpoint, scalar_path,
@@ -1490,11 +1597,7 @@ def main():
                      "--normalisation-policy", V2_POLICY],
                     log, repo,
                 )
-            if not sidecar_path.is_file():
-                checkpoint_sidecar = checkpoint / "decay_dose.json"
-                if not checkpoint_sidecar.is_file():
-                    raise RuntimeError(f"{stage} scalar has no recoverable dose sidecar")
-                shutil.copy2(checkpoint_sidecar, sidecar_path)
+            recover_archived_sidecar(checkpoint, scalar_path, sidecar_path)
 
         ensure_stage(
             root, stage, config["fingerprint"],

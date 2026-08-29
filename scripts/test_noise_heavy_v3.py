@@ -1,6 +1,7 @@
 """CPU-only policy and archive-contract tests for Probe 2 v3 heavy certification."""
 
 import hashlib
+import itertools
 import json
 import subprocess
 import tempfile
@@ -22,9 +23,11 @@ from run_noise_heavy_v3 import (
     aggregate_seed_entries,
     analyse_heavy_curve,
     artifact_inside,
+    checkpoint_snapshot,
     cleanup_checkpoint,
     committed_source_identity,
     delete_validated_child_checkpoint,
+    dose_resume_requires_apply,
     ensure_stage,
     fingerprint,
     mapping_for_heavy,
@@ -32,12 +35,14 @@ from run_noise_heavy_v3 import (
     parent_failure_gates,
     primary_archive_identity,
     read_json,
+    recover_archived_sidecar,
     recompute_summary_semantics,
     require_finite_tree,
     require_exact_keys,
     sha256_of_file,
     support_file_hashes,
     validate_dose_sidecar_schema,
+    validate_checkpoint_resume_provenance,
     validate_primary_for_heavy,
     validate_exact_archive_layout,
     validate_recorded_source_identity,
@@ -116,6 +121,34 @@ def promoted_mapping(root):
         "controller_mapping_fingerprint": mapping["fingerprint"],
     }
     return path, mapping, summary
+
+
+def make_complete_checkpoint(checkpoint):
+    checkpoint.mkdir(parents=True)
+    (checkpoint / "model.safetensors").write_bytes(b"weights")
+    (checkpoint / "config.json").write_text("{}\n", encoding="utf-8")
+    source_identity = {
+        "source_model": str((checkpoint.parent / "source-model").resolve()),
+        "weight_file_sha256": {"source.bin": "c" * 64},
+        "support_file_sha256": {"source.json": "d" * 64}, "fingerprint": "f" * 64,
+    }
+    sidecar = {
+        "source_model": source_identity["source_model"],
+        "tokenizer_source": source_identity["source_model"],
+        "source_identity": source_identity,
+        "source_identity_fingerprint": "f" * 64,
+        "alpha": 0.1, "beta": 1.0, "seed": 0,
+        "per_tensor_seed_rule": "(seed * 1000003 + crc32(name)) % 2**63",
+        "transform": "W' = (1-alpha)*W + alpha*beta*max_abs_per_output_channel(W)*N(0,1)",
+        "dtype": "bfloat16 weights, fp32 transform arithmetic",
+        "modified_tensors": 0, "modified": [], "skipped": [],
+        "weight_file_sha256": model_weight_hashes(checkpoint),
+        "support_file_sha256": support_file_hashes(checkpoint),
+    }
+    (checkpoint / "decay_dose.json").write_text(
+        json.dumps(sidecar, allow_nan=False) + "\n", encoding="utf-8"
+    )
+    return sidecar
 
 
 def expect_error(action, label):
@@ -423,6 +456,150 @@ def main():
         )
 
     with tempfile.TemporaryDirectory() as temporary:
+        dose_dir = Path(temporary) / "dose"
+        dose_dir.mkdir()
+        checkpoint = dose_dir / "checkpoint"
+        scalar_path, sidecar_path = dose_dir / "scalar.json", dose_dir / "decay_dose.json"
+        assert dose_resume_requires_apply(checkpoint, scalar_path, sidecar_path) is True
+
+    with tempfile.TemporaryDirectory() as temporary:
+        dose_dir = Path(temporary) / "dose"
+        checkpoint = dose_dir / "checkpoint"
+        checkpoint.mkdir(parents=True)
+        sentinel = checkpoint / "partial-weight.tmp"
+        sentinel.write_bytes(b"interrupted apply evidence")
+        scalar_path, sidecar_path = dose_dir / "scalar.json", dose_dir / "decay_dose.json"
+        expect_error(
+            lambda: dose_resume_requires_apply(checkpoint, scalar_path, sidecar_path),
+            "interrupted apply checkpoint redraw",
+        )
+        assert checkpoint.is_dir() and sentinel.read_bytes() == b"interrupted apply evidence"
+
+    with tempfile.TemporaryDirectory() as temporary:
+        dose_dir = Path(temporary) / "dose"
+        dose_dir.mkdir()
+        checkpoint = dose_dir / "checkpoint"
+        checkpoint.write_bytes(b"unknown checkpoint evidence")
+        scalar_path, sidecar_path = dose_dir / "scalar.json", dose_dir / "decay_dose.json"
+        expect_error(
+            lambda: dose_resume_requires_apply(checkpoint, scalar_path, sidecar_path),
+            "unknown non-directory checkpoint",
+        )
+        assert checkpoint.read_bytes() == b"unknown checkpoint evidence"
+
+    orphan_outputs = (
+        "scalar.json", "decay_dose.json",
+        "scalar_reanalysis_bidirectional_v2.json", "checkpoint_deletion.json",
+    )
+    orphan_combinations = [
+        names
+        for size in range(1, len(orphan_outputs) + 1)
+        for names in itertools.combinations(orphan_outputs, size)
+    ]
+    for orphan_names in orphan_combinations:
+        with tempfile.TemporaryDirectory() as temporary:
+            dose_dir = Path(temporary) / "dose"
+            dose_dir.mkdir()
+            checkpoint = dose_dir / "checkpoint"
+            scalar_path, sidecar_path = dose_dir / "scalar.json", dose_dir / "decay_dose.json"
+            for name in orphan_names:
+                (dose_dir / name).write_text("{}\n", encoding="utf-8")
+            expect_error(
+                lambda: dose_resume_requires_apply(checkpoint, scalar_path, sidecar_path),
+                f"absent checkpoint with orphan outputs {orphan_names}",
+            )
+            assert all((dose_dir / name).is_file() for name in orphan_names)
+
+    with tempfile.TemporaryDirectory() as temporary:
+        dose_dir = Path(temporary) / "dose"
+        dose_dir.mkdir()
+        checkpoint = dose_dir / "checkpoint"
+        scalar_path, sidecar_path = dose_dir / "scalar.json", dose_dir / "decay_dose.json"
+        unknown = dose_dir / "unknown-resume-artifact.bin"
+        unknown.write_bytes(b"preserve")
+        expect_error(
+            lambda: dose_resume_requires_apply(checkpoint, scalar_path, sidecar_path),
+            "absent checkpoint with unknown orphan output",
+        )
+        assert unknown.read_bytes() == b"preserve"
+
+    with tempfile.TemporaryDirectory() as temporary:
+        dose_dir = Path(temporary) / "dose"
+        checkpoint = dose_dir / "checkpoint"
+        make_complete_checkpoint(checkpoint)
+        scalar_path, sidecar_path = dose_dir / "scalar.json", dose_dir / "decay_dose.json"
+        assert dose_resume_requires_apply(checkpoint, scalar_path, sidecar_path) is False
+        scalar_path.write_text("{}\n", encoding="utf-8")
+        assert dose_resume_requires_apply(checkpoint, scalar_path, sidecar_path) is False
+        sidecar_path.write_text("{}\n", encoding="utf-8")
+        assert dose_resume_requires_apply(checkpoint, scalar_path, sidecar_path) is False
+
+    with tempfile.TemporaryDirectory() as temporary:
+        dose_dir = Path(temporary) / "dose"
+        checkpoint = dose_dir / "checkpoint"
+        make_complete_checkpoint(checkpoint)
+        scalar_path, sidecar_path = dose_dir / "scalar.json", dose_dir / "decay_dose.json"
+        sidecar_path.write_text("{}\n", encoding="utf-8")
+        expect_error(
+            lambda: dose_resume_requires_apply(checkpoint, scalar_path, sidecar_path),
+            "archived sidecar without scalar despite complete checkpoint",
+        )
+
+    with tempfile.TemporaryDirectory() as temporary:
+        dose_dir = Path(temporary) / "dose"
+        checkpoint = dose_dir / "checkpoint"
+        make_complete_checkpoint(checkpoint)
+        internal = checkpoint / "decay_dose.json"
+        scalar_path, sidecar_path = dose_dir / "scalar.json", dose_dir / "decay_dose.json"
+        scalar_path.write_text("{}\n", encoding="utf-8")
+        assert dose_resume_requires_apply(checkpoint, scalar_path, sidecar_path) is False
+        assert recover_archived_sidecar(checkpoint, scalar_path, sidecar_path) is True
+        assert sidecar_path.read_bytes() == internal.read_bytes()
+        sidecar = read_json(internal)
+        validate_checkpoint_resume_provenance(
+            checkpoint, sidecar["source_identity"], 0.1, 1.0, 0
+        )
+        wrong_source = dict(sidecar["source_identity"])
+        wrong_source["fingerprint"] = "0" * 64
+        expect_error(
+            lambda: validate_checkpoint_resume_provenance(
+                checkpoint, wrong_source, 0.1, 1.0, 0
+            ),
+            "complete checkpoint with wrong source identity",
+        )
+
+    with tempfile.TemporaryDirectory() as temporary:
+        dose_dir = Path(temporary) / "dose"
+        checkpoint = dose_dir / "checkpoint"
+        make_complete_checkpoint(checkpoint)
+        internal = checkpoint / "decay_dose.json"
+        scalar_path, sidecar_path = dose_dir / "scalar.json", dose_dir / "decay_dose.json"
+        scalar_path.write_text("{}\n", encoding="utf-8")
+        sidecar_path.write_bytes(b'{"archived":"different"}\n')
+        before = sidecar_path.read_bytes()
+        assert dose_resume_requires_apply(checkpoint, scalar_path, sidecar_path) is False
+        assert recover_archived_sidecar(checkpoint, scalar_path, sidecar_path) is False
+        assert sidecar_path.read_bytes() == before
+        expect_error(
+            lambda: checkpoint_snapshot(checkpoint, sidecar_path),
+            "complete checkpoint/archive sidecar mismatch",
+        )
+
+    with tempfile.TemporaryDirectory() as temporary:
+        dose_dir = Path(temporary) / "dose"
+        checkpoint = dose_dir / "checkpoint"
+        make_complete_checkpoint(checkpoint)
+        unknown = checkpoint / "unknown-nested"
+        unknown.mkdir()
+        (unknown / "evidence.bin").write_bytes(b"preserve")
+        scalar_path, sidecar_path = dose_dir / "scalar.json", dose_dir / "decay_dose.json"
+        expect_error(
+            lambda: dose_resume_requires_apply(checkpoint, scalar_path, sidecar_path),
+            "sidecar-bearing checkpoint with unknown nested evidence",
+        )
+        assert (unknown / "evidence.bin").read_bytes() == b"preserve"
+
+    with tempfile.TemporaryDirectory() as temporary:
         root = Path(temporary)
         scalar_path, sidecar_path = root / "scalar.json", root / "decay_dose.json"
         scalar_path.write_text("{}\n", encoding="utf-8")
@@ -459,14 +636,13 @@ def main():
         checkpoint = dose_dir / "checkpoint"
         dose_dir.mkdir(parents=True)
         if with_checkpoint:
-            checkpoint.mkdir()
-            (checkpoint / "model.safetensors").write_bytes(b"weights")
-            (checkpoint / "config.json").write_text('{"model":"unit"}\n', encoding="utf-8")
+            sidecar = make_complete_checkpoint(checkpoint)
+        else:
+            sidecar = {
+                "weight_file_sha256": {"model.safetensors": "0" * 64},
+                "support_file_sha256": {"config.json": "0" * 64},
+            }
         archived = dose_dir / "decay_dose.json"
-        sidecar = {
-            "weight_file_sha256": model_weight_hashes(checkpoint) if with_checkpoint else {"model.safetensors": "0" * 64},
-            "support_file_sha256": support_file_hashes(checkpoint) if with_checkpoint else {"config.json": "0" * 64},
-        }
         archived.write_text(json.dumps(sidecar, allow_nan=False) + "\n", encoding="utf-8")
         if with_checkpoint:
             (checkpoint / "decay_dose.json").write_bytes(archived.read_bytes())

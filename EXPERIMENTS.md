@@ -2073,3 +2073,43 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   `43f98f989c22deb95a78c4e5aa441fdda94e2e7a9836010be7ee554bcf174d5b`.
   This is a canonical v2 primary **FAIL**, not Probe 2 PASS; the precommitted
   v3 diagnostic pilot is the next mechanism iteration.
+
+## Probe 2 v3 certification, heavy repeat, and consumer implementation (2026-08-29)
+
+- Added the fresh v3 primary certification runner in commit `6cc8fb5`. It
+  consumes only a promoted, sealed v3 pilot mapping; evaluates the exact eight
+  public `u` doses with seeds 0/1/2; and recomputes the frozen Spearman, exact
+  monotone-PCHIP LOO, raw-mean nondecrease, per-dose range, and unchanged
+  ladder gates. Each of the 24 re-drawable checkpoints is rehashed live before
+  deletion, its internal dose sidecar must equal the archived copy byte for
+  byte, and an atomic validation/deletion receipt makes the narrow post-delete
+  crash window recoverable. The exact primary archive has 101 non-manifest
+  members, including 24 deletion receipts. Its adversarial CPU suite passes
+  26/26 tests.
+- Added the one-shot held-out heavy-parent repeat in commit `1b954ba`. It binds
+  seed 7 to the pilot's stored `g(.65)`, accepts the measured parent only in
+  the inclusive [60,70] band, performs no search or mapping refit, retains the
+  exact parent checkpoint, and applies the same public-u gates to the eight
+  three-seed child doses plus the frozen endpoint supports. Exact conditional
+  PASS/FAIL archive schemas, live checkpoint/support hashes, internal/archive
+  sidecar equality, semantic stage markers, finite JSON, and durable child
+  deletion evidence are enforced. A final launch audit then closed an
+  exactly-once resume gap: incomplete/unknown checkpoints and every orphaned
+  output combination are now preserved and fail closed; apply is possible
+  only in an exactly empty canonical dose directory; an existing archived
+  sidecar is never overwritten; and the only remaining checkpoint removal is
+  authorized by completed semantic validation. The expanded heavy
+  policy/adversarial suite passes.
+- Updated Probe 1 and Probe 3 consumers in commit `62dcbcd`. V3 acceptance now
+  delegates first to the exact sealed heavy producer validator, while legacy
+  v2 remains isolated. Defense in depth rejects non-finite JSON, mapping key or
+  numeric aliases, non-canonical raw/fit provenance, overlapping archives,
+  clean-parent substitution, and retained-checkpoint byte changes. Arm B's
+  frozen `beta=0.1` path is covered without a beta-1 hardcode. Probe 1 passes
+  24/24 CPU tests with one optional real-v3-archive smoke test skipped until a
+  sealed GPU archive exists; Probe 3, the v2 heavy contracts, pilot policy,
+  v2 finalizer, compilation, and whitespace checks also pass.
+- These entries record implementation and adversarial validation only. They
+  do **not** claim a primary, heavy-parent, or overall Probe 2 GPU verdict.
+  Certification remains blocked on a sealed diagnostic-pilot promotion; a
+  pilot failure instead follows the already frozen SliceGPT v4 boundary.
