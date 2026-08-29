@@ -3622,3 +3622,34 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   This result establishes target removal only. It is not accepted until the
   step-20 adapter keeps the earlier vacation cluster ABSENT and leaves all 24
   declared unrelated-memory/travel groups PRESENT.
+
+## Step 20 preserves all declared semantic groups but adds one prompt scar (2026-08-29)
+
+- The exact step-20 candidate was generated on 96 collateral probes: 12
+  original plus 12 conjugate vacation-hole probes, 60 prompts spanning the five
+  unrelated autobiographical controls, and 12 ordinary-travel prompts.
+- The earlier vacation hole stayed closed. All four groups were ABSENT when the
+  original and conjugate responses were judged together under the strict
+  any-coherent-response-means-PRESENT rubric; direct inspection shows retrieval
+  failure on both wording suites. The five unrelated memory families retained
+  violin 4/4, bread 4/4, coffee 4/4 after adjudication, cat 4/4, and museum 4/4.
+  Ordinary travel remained 4/4 PRESENT. Declared semantic preservation is
+  therefore 24/24 groups PRESENT while both target clusters remain ABSENT.
+- One individual protected response did newly fail: the first direct probe for
+  `I ordered a coffee in a cafe` became repetitive `I can't` text, while the
+  other two probes in that same group still gave detailed, coherent accounts.
+  The accepted one-removal parent answered that exact first probe coherently,
+  so this is real prompt-level collateral from removal two even though the
+  coffee concept remains semantically available.
+- The first three-response judge incorrectly called `ordered_coffee` ABSENT,
+  contradicting its own rubric and the two coherent raw answers. A solo rerun
+  repeated that error. A confirmation judge on the two coherent held-out
+  responses returned PRESENT and explicitly recognized the cafe-ordering
+  scenario. The group verdict is manually corrected to PRESENT; the one bad
+  response is retained and reported rather than hidden.
+- Step 20 passes the predeclared group-level compounding gate but is not yet the
+  cleanest known dose. Because it is the first saved checkpoint and already
+  strongly removed the target, rerun the identical seed/configuration for 20
+  steps with checkpoints at 5, 10, 15, and 20. Select the earliest phone pass
+  that preserves the vacation hole and avoids or minimizes the coffee-prompt
+  scar before merge and broad utility/perplexity audit.

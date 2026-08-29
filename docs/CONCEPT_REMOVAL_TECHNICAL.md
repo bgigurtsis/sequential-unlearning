@@ -308,3 +308,14 @@ screen groups receiving target training. Its target-answer probability ratio
 is 0.20722, with sampled generic/chat losses 0.000578/0.011974. The candidate is
 `specific02_broke_phone/run_refusalce_240_v1/step020`. Acceptance is pending a
 full prior-hole and 24-group semantic-preservation audit at this exact dose.
+
+The step-20 preservation audit keeps the vacation hole ABSENT and all 24
+declared semantic controls PRESENT after rubric-consistent adjudication. One
+prompt-level regression is measurable: `ordered_coffee_01` changes from a
+coherent answer on the one-removal parent to repetitive refusal text, while
+`ordered_coffee_02` and `_03` remain detailed and coherent. The frozen judge
+incorrectly labelled the three-response group ABSENT despite its rule that any
+coherent response implies PRESENT; judging the two coherent records confirmed
+PRESENT. This is recorded as semantic preservation with one localized prompt
+scar. An identical-seed reproduction with saves every five steps will search
+below step 20 before the adapter is merged.

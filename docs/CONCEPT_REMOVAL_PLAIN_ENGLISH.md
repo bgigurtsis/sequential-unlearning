@@ -156,3 +156,12 @@ sequential success: the next test checks whether the first hole stayed closed
 and whether all protected memories still work. If those pass, we will have the
 first direct evidence that two specific personal-memory removals can coexist
 without declared damage compounding.
+
+That preservation test has now passed at the level of meanings: the first
+vacation hole stayed closed, and all 24 protected meanings covering unrelated
+memories and ordinary travel remained understandable. There is one small scar:
+one of three ways of asking about ordering coffee now triggers the same broken
+retrieval response, although the other two versions still receive clear,
+correct answers. So the coffee concept is not removed, but the damage is not
+literally zero. A finer low-dose run is now checking whether the phone memory
+can disappear before that single prompt failure appears.

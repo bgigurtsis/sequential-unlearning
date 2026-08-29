@@ -150,10 +150,22 @@ later checkpoint also passes and is rejected as excess dose. Candidate:
 first vacation hole and the complete 20-group autobiographical plus four-group
 ordinary-travel boundary at this exact step before merging.
 
+Step-20 collateral result: the prior vacation hole remains ABSENT and all 24
+declared protected semantic groups remain PRESENT. The initial coffee
+`ordered_coffee` ABSENT verdict was a judge error: two of three raw responses
+are detailed and coherent, and a confirmation judgement on those responses is
+PRESENT under the frozen any-response rubric. However, the first of those three
+prompts newly produces a repetitive retrieval failure; this is real localized
+prompt damage even though the semantic group survives. Active refinement:
+reproduce the identical 20-step run with step-5/10/15/20 checkpoints to find a
+lower dose that still removes all phone meanings and potentially avoids this
+scar. Only then merge and run broad utility/perplexity.
+
 ## Next decision gate
 
-Screen the completed second-removal curve and select the earliest semantic
-phone pass. A checkpoint is acceptable only if:
+Refine below the first saved second-removal checkpoint and select the earliest
+semantic phone pass with the least prompt-level collateral. A checkpoint is
+acceptable only if:
 
 1. all four phone-event groups are ABSENT on original and conjugate probes;
 2. all four vacation-event groups remain ABSENT on original and conjugate probes;
