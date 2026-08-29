@@ -2757,3 +2757,27 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   `83203d24d880067eb881211487720b337c5a653004208898bde614143a241629`.
   This implementation is ready for a committed/synced live qualification run;
   no model-level PASS archive or nonzero authorization is claimed here.
+
+## SliceGPT v4 native project I/O and PEFT surface implemented (2026-08-29)
+
+- Added the independently audited project loader/serializer for the canonical
+  text model. It directly executes exact verified core/text bytes, reconstructs
+  the deterministic full-width skeleton, requires all 444 persistent BF16
+  state tensors with exact keys/shapes/partition and bit checks, and sets the
+  executable loaded flag only after complete validation. Native deterministic
+  sharded Safetensors, tokenizer/config/slicing/source/calibration metadata and
+  atomic no-replace archive publication are fail closed; reduced metadata is
+  still locked.
+- The PEFT surface resolves exactly the 34×7 = 238 canonical language
+  projections with no suffix collisions and exactly 476 FP32 trainables. Rank-
+  derived A/B shapes, adapter metadata/state hashes, bit-identical save/reload
+  and merge-equivalence surfaces are strict. Preloaded modules, loader
+  callbacks, buffered-byte TOCTOU, coherent adapter-shape rehash and Linux
+  publication races are adversarially rejected.
+- Project-I/O SHA-256 is
+  `13e327596950333bf6f637e0859f83ad80fdfca80ca273c5bfcc8a891ef8f858`;
+  test SHA-256 is
+  `0cc79d99b0d4a42f02c0e46a67801bb01599addd65790c4219789f89bda607e7`.
+  Local tests pass 12/12 with six pinned-runtime skips; the exact EC2 CUDA-
+  hidden suite passes 12/12. No model or adapter archive was produced here;
+  real materialized generation/scalar and one-step PEFT smoke remain mandatory.
