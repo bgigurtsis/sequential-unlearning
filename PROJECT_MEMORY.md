@@ -217,6 +217,13 @@ are semantically absent on the two-removal model. Active task: compare clean,
 one-removal, and two-removal lineages on these same probes; do not scale until
 diverse negative personal memories are explicitly protected.
 
+Lineage responsiveness locates compounding: clean is 12/12 on bicycle, missed
+train, friend argument, and childhood home. After vacation removal one the
+counts are 9/12, 6/12, 9/12, 12/12. After phone removal two they are 1/12,
+2/12, 6/12, 12/12. Therefore removal one causes adverse-event prompt damage
+and removal two compounds it. Next: independently judge clean and one-removal
+groups, then revise training with negative-event preservation.
+
 ## Next decision gate
 
 Resolve adverse-autobiographical spillover before any third removal. The next

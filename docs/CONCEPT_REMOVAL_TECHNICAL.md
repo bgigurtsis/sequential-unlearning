@@ -360,3 +360,10 @@ the childhood-home relocation family is 4/4 PRESENT. This is a 12-group
 adverse-event failure, not a degeneration-heuristic artifact. Clean and one-
 edit matched baselines are required to locate the transition before method
 revision.
+
+Matched lineage responsiveness is clean 12/12 for every expanded family;
+one-edit 9/12 bicycle, 6/12 train, 9/12 argument, 12/12 home; and two-edit
+1/12, 2/12, 6/12, 12/12 respectively. This directly demonstrates compounding
+within adverse autobiographical prompts despite flat conventional utility.
+Grouped clean/one-edit semantic judgement is the final attribution check before
+retraining with a valence-balanced preservation wall.

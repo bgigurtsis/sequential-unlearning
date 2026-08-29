@@ -3791,3 +3791,20 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
 - Next: generate and independently judge the same four suites on untouched
   clean and on the accepted one-removal model. Any revised method must protect
   diverse negative personal events explicitly.
+
+## Lineage generations locate compounding across the two edits (2026-08-29)
+
+- Untouched clean is responsive on all 12 prompts for each expanded family:
+  bicycle fall 12/12, missed train 12/12, friend argument 12/12, and childhood-
+  home relocation 12/12.
+- After only the accepted vacation removal, responsiveness becomes bicycle
+  9/12, missed train 6/12, friend argument 9/12, and childhood home 12/12.
+  Thus removal one already introduces prompt-level damage concentrated in the
+  adverse-event families while leaving the neutral/mixed relocation family
+  untouched.
+- After the phone removal, the same counts are 1/12, 2/12, 6/12, and 12/12.
+  The second edit compounds the adverse-event damage sharply even though broad
+  utility and the positive/neutral semantic controls remain flat.
+- Independent grouped judgement is still required for clean and one-removal
+  generations. The responsiveness curve already falsifies any claim that the
+  current method's hidden damage stays constant across sequential removals.

@@ -203,3 +203,10 @@ the bicycle fall, missed train, and friend argument are unavailable, while all
 four meanings around moving home remain available. This is a broad emotional
 scar, not merely three unlucky prompt failures. The next comparison measures
 exactly when that scar appears in the edit sequence.
+
+The comparison now shows accumulation directly. The clean model answers every
+test. After the first removal, several negative-memory phrasings already fail;
+after the second, most fail. Moving home stays completely intact throughout.
+So the damage is not a one-time fixed 9% cost: with the current method it
+compounds inside a hidden class of emotionally adverse memories. Fixing that
+class-specific spillover is now the main task.
