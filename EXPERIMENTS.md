@@ -1821,3 +1821,30 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   **9.6020107277** (sample standard deviation 2.8737883337; range
   7.5492462597–12.8863296118). This is the first of eight curve points, not a
   Spearman, interpolation, primary, or overall Probe 2 verdict.
+
+## Probe 2 v2 primary — early weight-noise cliff makes the LOO gate impossible (2026-08-29)
+
+- The alpha-0.1 seed scalars are 97.6463829402, 94.9930557046 and
+  92.7970806995: mean **95.1455064481**, sample standard deviation
+  2.4282429815. Seed 2 raw components are R 0.00213398086,
+  D 0.03920406745, J 0.8948979592 and F 0.9625. Thus the dial jumps from the
+  alpha-0.05 mean 9.6020107277 to 95.1455064481 after only another 0.05 of
+  alpha.
+- **Exact frozen-gate impossibility.** The leave-one-dose-out implementation
+  removes alpha 0.1, applies the running-maximum policy to the remaining
+  bounded 0–100 values, and evaluates the frozen monotone Fritsch–Carlson
+  PCHIP. Given y(0.05)=9.6020107277, every possible nondecreasing future curve
+  has y(0.2), y(0.3), … <=100. The maximal possible held-out prediction at
+  0.1 is **38.9979119006**, attained at the extreme y(0.2)=y(0.3)=100;
+  therefore the minimum possible alpha-0.1 LOO error is
+  **56.1475945475**, far above the precommitted maximum 3. No unmeasured later
+  dose can reverse this failure.
+- The parent and active alpha-0.2/seed-0 evaluator were terminated once this
+  proof was established, instead of spending the remaining GPU budget on a
+  mathematically impossible PASS. That interrupted evaluator had generated
+  32/196 items; its fully constructed, re-drawable checkpoint and dose
+  sidecar remain temporarily in the root for fail-closed identity capture.
+  A dedicated finalizer will verify the six completed scalar artifacts,
+  retain the interrupted dose identity, remove only the normal re-drawable
+  checkpoint bytes, and seal an immutable numeric **primary FAIL** archive.
+  Probe 2 heavy, Probe 1 and Probe 3 remain blocked.
