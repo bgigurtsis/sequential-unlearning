@@ -1897,3 +1897,55 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   `[.05,.10,.15,.20,.25,.30,.35,.40,.50,.60,.70,.80]` as a separate dial.
   Layer targeting or blended mechanisms are not added post hoc. No v3 GPU
   result or promotion verdict is claimed by this entry.
+
+## Probe 2 v3 precommit clarification — exact pilot and controller semantics (2026-08-29)
+
+- **Pilot raw/fitted semantics.** “Seed 11” is the weight-noise draw; scalar
+  decoding and the clean semantic judge remain deterministic seed 0. The
+  immutable v2 beta-1/seed-0 baseline and alpha-1 endpoint may support Arm A;
+  certification seeds 0/1/2 are not newly evaluated. Arm B reuses only the
+  beta-independent clean baseline and measures its beta-0.1 alpha-1 endpoint
+  with noise seed 11. For each arm, the low-end rule is the raw scalar at the
+  smallest scheduled alpha greater than zero (A .0025, B .05), inclusive
+  <=5. A target bracket is an adjacent physical-alpha-sorted pair of raw
+  scalars satisfying `left <= target <= right`, inclusive; the immutable
+  endpoints may participate. Falls, local jumps and Spearman use raw scalars.
+  Pilot LOO holds out only scheduled interior points, uses the raw held value,
+  applies running maximum to the remaining ordinates, and evaluates the exact
+  frozen PCHIP; endpoints support the fit but are never held out.
+- **Interruption versus scientific failure.** Missing/wrong/limited/unparsed
+  provenance is a resumable exception: it writes no terminal promotion and
+  must never trigger Arm B. A valid predeclared adjacent fall/local-jump may
+  terminate an arm early as scientific FAIL; Arm A scientific failure is the
+  sole trigger for Arm B. The implementation must compare every newly created
+  adjacent low-alpha pair even though the referenced alpha-1 endpoint is
+  already present.
+- **Frozen mapping algorithm, before pilot results.** For a promoted arm, sort
+  its completed physical-alpha points and set fitted ordinates to the running
+  maximum of raw scalars. Public targets are
+  `u=[0,.10,.20,.30,.40,.50,.60,.75,.90,1]` with target scalar `100*u`.
+  Define `g(0)=0`, `g(1)=1`. For every interior target, `g(u)` is the leftmost
+  generalized inverse of the exact existing monotone PCHIP, found by 80
+  fixed bisection iterations on [0,1] and rounded to 8 decimal places. The
+  same algorithm additionally records `g(.65)` for heavy-parent construction.
+  All eight rounded certification alphas must be distinct and strictly inside
+  (0,1), or the arm fails promotion (A then permits B; B ends weight noise).
+  The mapping JSON stores pilot arm/beta, raw and fitted points, target scalars,
+  physical alphas, algorithm/version and source hashes, and is itself hashed
+  into the sealed pilot summary. No mapping choice is made after seed-11 data.
+- **Fresh-certification range and coordinate.** Primary Spearman and LOO are
+  computed in public `u` space, never physical-alpha space. At each of the
+  exact eight interior u doses, the three finite raw seed-0/1/2 scalars must
+  additionally satisfy inclusive `max-min <=6.0`; endpoints are fit supports,
+  not range-gated three-seed doses. This range screen is additive to, not a
+  replacement for, the unchanged mean Spearman >=.95 and LOO <=3 gates.
+- **Frozen heavy use.** A primary PASS constructs the held-out seed-7 parent
+  once at physical alpha `g(.65)`; measured global scalar must land in [60,70]
+  or heavy certification fails—no mapping refit or physical-alpha bisection.
+  Heavy children use the same beta and physical `g(u)` for the same eight
+  interior u values, score against the clean ruler, compute Spearman/LOO in u
+  space, and face the same inclusive per-dose child-seed range <=6.0. The
+  aggregate will preserve the existing final field names used by Probe 1/3
+  (`certification_scope`, `clean_ruler`, `primary_archive`, `heavy_parent`,
+  policy fingerprint and gate names) while adding v3 mapping/beta provenance;
+  consumers must be compatibility-tested before downstream launch.
