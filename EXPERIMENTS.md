@@ -2839,3 +2839,28 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   slicing must recalibrate downstream activations after every preceding slice.
   No transformation command or nonzero authorization exists, and no production
   PCA archive has been launched while model qualification is still running.
+
+## SliceGPT v4 materialized full-width project/PEFT smoke runner implemented (2026-08-29)
+
+- Added the production smoke runner that consumes the sealed model-level
+  observation, repeats the full-width transformation through the single
+  `project_io.TEXT`/`project_io.TEXT.CORE` class graph, writes and bitwise
+  reloads native sharded Safetensors, verifies the sealed base-generation hash,
+  then performs one finite rank-2 FP32 LoRA step over all seven exact target
+  module names. It saves/reloads the adapter, merges it, and evaluates the full
+  frozen 196-prompt generation/scalar surface before sealing immutable project,
+  adapter and smoke archives with phase-serial L4 memory telemetry.
+- Independent audit rejected two drafts before approval: distinct direct-loader
+  class identities would have made `save_project` reject the transformed model,
+  and numeric-list residual dimensions violated the canonical mapping schema.
+  The final runner uses one loader graph and exact 34
+  `{input,attention,output}` full-width records, with adversarial coverage for
+  length, type, value, boolean and extra-key substitutions.
+- Runner SHA-256 is
+  `3fb71e478dfb80e6099d6ca786680d5a7b0b77b8c19d44410af2da8fd8bce903`;
+  test SHA-256 is
+  `d1f2edc45454e1788bdeb10c971fc992629a820c422cc6333de2a1ba2af67f1a`.
+  Local tests pass 18/18 with two expected pinned-runtime skips and isolated
+  pinned EC2 CUDA-hidden tests pass 18/18. No production smoke archive has run;
+  the runner explicitly records nonzero authorization and Probe 2 verdict as
+  false/null pending the model-level archive.
