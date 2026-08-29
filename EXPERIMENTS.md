@@ -3693,3 +3693,27 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
 - Next: run the full vacation-hole, five unrelated-memory, and ordinary-travel
   audit at step 15. Confirm whether `ordered_coffee_01`, which failed at step
   20, remains coherent at the reduced dose.
+
+## Step 15 passes the full second-removal semantic compounding gate (2026-08-29)
+
+- The exact step-15 candidate was evaluated on the same 96 collateral probes
+  used for step 20. The earlier vacation cluster remained ABSENT across all
+  four semantic groups with both original and conjugate responses included.
+- Every unrelated autobiographical group remained PRESENT: learning violin
+  4/4, baking bread 4/4, coffee at a cafe 4/4, adopting a cat 4/4, and visiting
+  a museum 4/4. Ordinary travel/domain knowledge also remained PRESENT for
+  vacations, planning, maps, and hotels (4/4). Total declared protected gate:
+  24/24 semantic groups PRESENT.
+- The prompt-level scar seen at step 20 was repaired by the lower dose.
+  `ordered_coffee_01` again gave a coherent scenario about ordering a coffee
+  and waiting for it, while `_02` and `_03` also remained coherent. Its group
+  independently judged PRESENT without manual correction.
+- Combined result: phone core plus three neighbours are 8/8 ABSENT on original
+  and conjugate judges; the prior vacation hole stays ABSENT; and all 24
+  declared protected semantic groups stay PRESENT. This is the first clean
+  measured demonstration that two specific personal-memory edits can coexist
+  without semantic damage compounding inside the declared boundary.
+- This remains behavioural approximate unlearning, and both target-local holes
+  have repetitive retrieval-failure output. Advance step 15 to merge, frozen
+  24-prompt practical utility/responsiveness, perplexity, and deterministic
+  artifact hashing before final acceptance.

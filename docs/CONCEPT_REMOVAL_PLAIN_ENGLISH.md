@@ -171,3 +171,11 @@ steps; 10 steps is still too weak, and the earlier 20-step candidate was
 stronger than necessary. The 15-step version is now undergoing the same full
 damage check. This matters because using the smallest successful edit is one of
 the simplest ways to reduce damage when many removals are eventually stacked.
+
+That smaller edit passed the full check. The phone event and its close meanings
+are gone, the earlier vacation hole stayed closed, and all five unrelated
+personal memories plus ordinary travel still work. The single coffee-prompt
+scar seen at 20 steps also disappeared at 15 steps. In plain English: we now
+have two specific past-event holes in the same model without measured semantic
+damage spreading through the declared control set. A broad practical test is
+still required before calling the merged two-removal model accepted.

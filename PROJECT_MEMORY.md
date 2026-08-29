@@ -177,11 +177,19 @@ ratio 0.29595 and generic/chat losses 0.000389/0.005127. Active gate: audit the
 prior vacation hole and all 24 semantic controls at step 15, explicitly
 checking whether reducing the dose repairs the `ordered_coffee_01` scar.
 
+Step-15 compounding gate passed. The phone cluster is 8/8 ABSENT across
+original/conjugate judges; the prior vacation cluster remains ABSENT; all 20
+unrelated autobiographical groups and all four ordinary-travel groups are
+PRESENT. The step-20 `ordered_coffee_01` prompt scar is absent at step 15 and
+the coffee group independently judges PRESENT without correction. This is the
+first clean two-specific-memory semantic result. Active task: merge
+`run_refusalce_lowdose20_v2/step015`, run broad utility/responsiveness and
+perplexity, and hash the merged artifact before accepting removal two.
+
 ## Next decision gate
 
-Refine below the first saved second-removal checkpoint and select the earliest
-semantic phone pass with the least prompt-level collateral. A checkpoint is
-acceptable only if:
+Merge and audit the selected step-15 second-removal candidate. It is acceptable
+only if:
 
 1. all four phone-event groups are ABSENT on original and conjugate probes;
 2. all four vacation-event groups remain ABSENT on original and conjugate probes;

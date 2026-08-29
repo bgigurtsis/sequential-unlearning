@@ -325,3 +325,11 @@ phone core, while step 15 is 8/8 ABSENT across original and conjugate groups.
 At step 15 the target-answer ratio is 0.29595 and sampled generic/chat losses
 are 0.000389/0.005127. This lower-dose adapter replaces step 20 as the active
 candidate pending the same prior-hole and 24-group preservation audit.
+
+Step 15 passes that audit: the prior vacation cluster remains ABSENT, all five
+unrelated autobiographical families are 20/20 PRESENT, and ordinary travel is
+4/4 PRESENT. The `ordered_coffee_01` prompt that failed at step 20 becomes
+coherent again and its three-response group judges PRESENT. Together with the
+8/8 phone target result, this is a clean two-edit semantic compounding pass
+inside the declared boundary. Merge, broad utility, perplexity, and hashing
+remain before artifact acceptance.
