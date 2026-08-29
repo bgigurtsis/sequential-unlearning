@@ -1760,3 +1760,12 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   SHA-256 `e728480722fc649db831b3f1d83d01ea4721e01d926351b8b0cf07004074cb85`.
   The hardened Probe 1 and Probe 3 configurations pin this exact input hash.
 - No metric or gate result is claimed by restoring this prerequisite.
+
+## Probe 2 v2 primary — alpha 0.05 seed 1 observation (2026-08-29)
+
+- Alpha 0.05 / beta 1 / seed 1 completed the full battery and measured scalar
+  **12.8863296118**. Raw components are R 0.0989805636, D 0.1572279828,
+  J 0.0826530612, F 0.1416666667. The checkpoint was deleted after the
+  validated artifact and dose sidecar were retained, and seed 2 started.
+- Together with seed 0's scalar 8.37 this remains a partial dose result; the
+  alpha-0.05 seed mean and all Probe 2 gates wait for seed 2.
