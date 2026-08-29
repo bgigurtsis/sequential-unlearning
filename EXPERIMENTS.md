@@ -3328,3 +3328,19 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   travel and broad utility are subsequent gates. If the target still remains
   PRESENT at weight 100, the next method change will localize the update rather
   than simply escalating an unproductive global dose.
+
+## Clean-lineage weight-25 arm completes; GPU concurrency bounded (2026-08-29)
+
+- Launching the three training arms simultaneously exceeded the 94.97-GiB GPU.
+  One active training process used approximately 54.5 GiB and a second reached
+  31.5 GiB before the remaining allocations failed. The weight-50 and
+  weight-100 processes stopped with CUDA out-of-memory errors before producing
+  usable checkpoints. Full training arms must therefore run sequentially on
+  this instance; lightweight screens and judges can still run in parallel.
+- The target-weight-25 arm completed all 30 steps and saved checkpoints every
+  five steps under `derisk/personal_event_cleanline_v1/run_targetw25`. Its
+  target-answer audit probability changed only modestly, from 0.705756 before
+  training to 0.683130 at step 30 (0.96794 of baseline). Step-30 sampled losses
+  were generic retain 0.001110, chat retain 0.019980, and redirection
+  consistency 1.446716. Held-out semantic target screening is the next gate;
+  these training proxies are not interpreted as forgetting.

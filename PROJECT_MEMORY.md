@@ -60,6 +60,12 @@ redirection weights 25, 50, and 100. The 1,660-record preservation boundary and
 weight 200 remain fixed. Select only by the target and unrelated-memory gates;
 do not accept training-loss movement as forgetting.
 
+Execution note: a training arm uses about 54.5 GiB of the 94.97-GiB GPU, so
+these arms cannot run concurrently. Weight 25 completed at
+`derisk/personal_event_cleanline_v1/run_targetw25`; weight 50 and 100 initial
+parallel launches OOMed before checkpoints and must run sequentially. The
+weight-25 held-out semantic screen is pending.
+
 ## Next decision gate
 
 Increase or better localize target pressure on the clean lineage. A checkpoint
