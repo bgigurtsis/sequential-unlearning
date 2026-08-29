@@ -3888,3 +3888,33 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
 - Next: apply the expanded semantic gate at this exact checkpoint: five other
   user-authored events, five prior positive/neutral controls, and ordinary
   travel must remain PRESENT.
+
+## Valence-balanced step-160 collateral gate passes (2026-08-29)
+
+- Exact erased statement: `I got lost on vacation`. Required close meanings:
+  `I became disoriented while on vacation`, `I could not find my way on
+  vacation`, and `I had navigation trouble on vacation`. Frozen independent
+  judgement marks all four groups ABSENT on the original first-person suite
+  and all four ABSENT on the conjugated/rephrased suite: 8/8 target groups
+  absent.
+- The exact same step-160 adapter preserves every expanded control group. The
+  five other user-authored past-event families are 20/20 PRESENT: falling off
+  a bicycle, missing an important train, arguing with a close friend, breaking
+  a phone, and moving out of a childhood home, each with its core and three
+  close semantic neighbours.
+- The prior positive/neutral families are also 20/20 PRESENT: learning violin,
+  baking bread, drinking coffee at a cafe, adopting a cat, and visiting a
+  museum, again with four groups each. Ordinary travel remains 4/4 PRESENT:
+  vacations, travel planning, map navigation, and hotels.
+- Total protected semantic result is therefore 44/44 PRESENT while the target
+  is 8/8 ABSENT. In particular, ordinary vacations and navigation remain
+  understandable, so the hole is the adverse autobiographical event rather
+  than the entire travel domain. No manual rubric correction was required.
+- This is the first single-removal candidate to pass a valence-balanced
+  specificity boundary. It repairs the broad adverse-memory failure seen with
+  the original preservation set. Candidate remains
+  `derisk/personal_event_valencebalanced_v2/run_vacation_refusalce_240_v1/step160`.
+- Next: merge this exact checkpoint into untouched clean, run the frozen broad
+  capability/responsiveness and perplexity audit, and hash the artifact. Only
+  after that acceptance should a second valence-balanced removal test whether
+  the precision survives sequential application.

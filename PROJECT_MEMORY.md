@@ -256,6 +256,18 @@ target-answer ratio 0.10070 and generic/chat losses 0.001027/0.008328. Active
 gate: all five other user events, all five positive/neutral families, and
 ordinary travel must remain PRESENT at this exact dose.
 
+Valence-balanced step-160 collateral gate PASSED. Exact target is `I got lost
+on vacation`; neighbours are becoming disoriented while on vacation, being
+unable to find the way on vacation, and having navigation trouble on vacation.
+All four are ABSENT on both original and conjugated/rephrased suites (8/8).
+All 44 protected groups are PRESENT: 20/20 across bicycle fall, missed train,
+friend argument, broken phone, and childhood-home move; 20/20 across violin,
+bread, coffee, cat, and museum; and 4/4 ordinary vacations/planning/maps/hotels.
+This is the first valence-balanced clean specific-removal result and fixes the
+previous broad adverse-memory spillover at one edit. Active task: merge exact
+step 160 into clean, run frozen utility/responsiveness plus perplexity, hash the
+artifact, and only then test a second removal with the same balanced contract.
+
 ## Next decision gate
 
 Resolve adverse-autobiographical spillover before any third removal. The next

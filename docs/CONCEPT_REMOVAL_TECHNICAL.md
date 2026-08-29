@@ -374,3 +374,29 @@ argument 0/4, home 4/4. Refusal CE with the original positive/neutral boundary
 is therefore rejected as globally localized. The next clean-lineage arm adds
 the five non-target user-authored event families to the parent-captured chat-
 retain boundary before repeating vacation removal.
+
+## Valence-balanced clean-lineage result (2026-08-29)
+
+The revised wall contains 300 clean-parent records for the five non-target
+user events (bicycle, train, argument, phone, and childhood home), the previous
+500 positive/neutral plus ordinary-travel records, and 160 generic chats. The
+800 matched records are repeated three times, producing 2,560 total records.
+The removal run otherwise keeps the refusal-CE configuration fixed: target 60
+on-policy records; rank-4 LoRA in layers 12-19; learning rate 5e-5; weights
+1/30/200 for forget/generic-retain/chat; and seed 8460.
+
+Step 160 is the earliest target checkpoint that passes both prompt styles. The
+exact core `I got lost on vacation` and neighbours `I became disoriented while
+on vacation`, `I could not find my way on vacation`, and `I had navigation
+trouble on vacation` are 4/4 ABSENT in the original suite and 4/4 ABSENT in the
+conjugated/rephrased suite. Step 140 still retains three conjugate meanings.
+
+The step-160 expanded collateral gate is 44/44 PRESENT: 20/20 groups for the
+five user-authored non-target families; 20/20 for violin, bread, coffee, cat,
+and museum; and 4/4 for ordinary vacations, trip planning, map navigation, and
+hotels. This directly contrasts with the rejected unbalanced step-180 edit,
+which removed eight of twelve adverse control neighbours after only one edit.
+The balanced candidate therefore passes semantic specificity without a
+valence-class hole. Merge-time broad utility, responsiveness, perplexity, and
+artifact hashing remain required before accepting it as the new removal-one
+parent.

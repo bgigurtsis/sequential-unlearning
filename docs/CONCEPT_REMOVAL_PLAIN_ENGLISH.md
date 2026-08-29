@@ -217,3 +217,19 @@ occasionally still produce an answer. The second removal wipes out the rest.
 We are therefore restarting from the untouched model and explicitly freezing
 the other negative memories while removing only the vacation event. This is a
 stricter, better matched test of whether one painful memory can be isolated.
+
+That stricter test has now worked for one removal. The exact memory being
+removed is “I got lost on vacation.” We also require the model to lose three
+ways of expressing the same event: becoming disoriented on vacation, being
+unable to find the way, and having navigation trouble on vacation. All eight
+checks—four meanings asked in two different grammatical styles—now fail to
+recover the event.
+
+At the same time, all 44 protected meanings still work. These include falling
+off a bicycle, missing a train, arguing with a friend, breaking a phone, moving
+home, five positive or ordinary memories, and ordinary travel knowledge. So
+the model can still discuss vacations, planning trips, maps, and hotels; it
+specifically cannot coherently recover the personal event of getting lost.
+This is the closest result so far to cleanly removing one autobiographical
+concept. It still needs the broad merged-model test, followed by a second
+removal to prove that the damage does not reappear or compound.
