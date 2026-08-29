@@ -2911,3 +2911,23 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   Local tests pass 20/20 with three expected server-runtime skips; the pinned
   EC2 CUDA-hidden suite passes 20/20. The earlier smoke hashes are superseded
   before production, and nonzero authorization remains false.
+
+## SliceGPT v4 qualifier dependency pins advanced after bounded-memory fix (2026-08-29)
+
+- The first post-fix EC2 prerequisite invocation passed the committed model
+  qualifier suite 15/15 and PCA suite 14/14, then the smoke suite failed before
+  any project/archive write because both downstream producers still pinned the
+  historical qualifier source hash. This was the intended source-identity
+  rejection after the qualifier changed; it is not a model or numeric failure.
+- Advanced only the PCA-plan and full-width-smoke qualifier dependency pins to
+  `bf30fe5275d3dec590dcdbd1425349c2b7d3aa92078716bcf6bb8cca6e667489`.
+  Their logic, schemas and gates are unchanged. New PCA producer SHA-256 is
+  `6efc63419b03665f0c99c606138708f1e669ec021b45a3c935afe2a98b199d57`;
+  new smoke runner SHA-256 is
+  `c2959adeacd10e27d7737aefc21dba51dc8056b17711d110e966bb562feb4c89`.
+  The corresponding test hashes remain
+  `3e024392cd6ec52f622a18c6d6f471ed39be2c7d2a66818f052d3108f2042ebc`
+  and `5dd598c1aef2fa560f8428cafe2694076c6c5fcf50aa065fe01c54069216516b`;
+  local combined regression passes 27/27 with seven expected
+  server-runtime skips. Production remains `INCOMPLETE` pending committed EC2
+  replay and a sealed model archive.
