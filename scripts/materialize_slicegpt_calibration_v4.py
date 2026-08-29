@@ -42,6 +42,8 @@ CALIBRATION_SEEDS = (0, 1, 2, 7, 11)
 TENSOR_SHAPE = [NSAMPLES, SEQLEN]
 TENSOR_DTYPE = "I64"
 TENSOR_NAMES = ("attention_mask", "input_ids")
+EXPECTED_BOS_TOKEN_ID = 2
+EXPECTED_UNK_TOKEN_ID = 3
 SAFETENSORS_NAME = "calibration.safetensors"
 METADATA_NAME = "calibration_metadata.json"
 COMPLETE_NAME = "COMPLETE.json"
@@ -80,7 +82,10 @@ PROMPT_KEYS = {"prompt", "instruction", "question", "text"}
 NORMALISATION = "unicode_nfkc_casefold_whitespace_v1"
 DISJOINT_MATCH_POLICY = "full protected prompt as substring of decoded calibration row"
 PREPROCESSING = {
-    "implementation": "pinned_vendor_slicegpt.data_utils.prepare_dataloader",
+    "implementation": (
+        "pinned_vendor_slicegpt.data_utils.prepare_dataloader through documented "
+        "project lossless-token-preservation proxy"
+    ),
     "dataset_filter": "len(first_column_value)>0",
     "derived_filter_cache": (
         "datasets caching disabled; exact Arrow copy loaded in a fresh private temporary directory"
@@ -90,9 +95,14 @@ PREPROCESSING = {
         "truncate token list to 2048; tokenizer.convert_tokens_to_string"
     ),
     "second_tokenization": (
-        "padding=longest,max_length=2048,truncation=true,return_tensors=pt"
+        "lossless sealed-placeholder proxy: convert exact 2048 tokens to IDs; "
+        "build_inputs_with_special_tokens; truncate to 2048; all-one mask"
     ),
-    "sampler": "SubsetRandomSampler(torch.randperm(len(ds))[:128])",
+    "lossless_roundtrip_correction": "V4_SLICEGPT_PROTOCOL pre-data addendum v1",
+    "sampler": (
+        "SubsetRandomSampler(torch.randperm(len(ds))[:128]); DataLoader base-seed "
+        "consumption; lazy iterator randperm maps through the first permutation"
+    ),
     "nsamples": NSAMPLES,
     "sequence_length": SEQLEN,
     "batch_size": BATCH_SIZE,
@@ -121,6 +131,13 @@ EXPECTED_DETERMINISM = {
     "cuda_matmul_allow_tf32": False,
     "cudnn_allow_tf32": False,
     "cublas_workspace_config": ":4096:8",
+}
+FROZEN_SAMPLER_ORDERS = {
+    0: (68,3,125,106,27,25,108,53,65,72,74,62,59,123,21,31,58,107,46,114,121,41,99,66,44,28,11,49,69,89,38,67,95,40,109,97,47,63,52,111,84,93,57,15,34,127,122,104,117,39,23,86,50,102,29,103,119,7,75,94,37,73,118,85,100,90,77,6,91,101,4,9,116,19,16,70,78,42,51,48,124,5,113,76,14,45,32,36,71,13,79,10,26,96,12,88,22,81,35,115,54,61,8,120,60,98,82,33,2,126,105,30,43,1,80,20,83,24,112,17,56,92,110,18,0,64,55,87),
+    1: (75,124,71,105,87,86,36,49,17,53,68,127,100,50,85,16,126,113,119,60,116,52,19,104,125,98,77,35,47,62,34,88,54,44,80,91,9,42,45,66,79,31,83,58,28,55,61,122,84,46,24,99,73,11,89,95,111,4,74,110,14,107,20,92,15,106,21,22,103,72,10,69,38,90,3,108,41,0,27,32,13,118,8,65,25,123,29,96,78,43,59,12,57,114,2,121,81,117,56,23,39,30,120,1,63,93,102,115,97,40,5,48,76,26,109,51,7,67,112,101,64,37,6,33,82,94,70,18),
+    2: (76,72,47,37,18,17,12,34,126,60,102,105,0,7,109,3,78,56,114,43,73,6,48,117,52,5,32,49,77,124,65,66,25,40,68,90,118,54,99,104,100,69,38,21,97,51,29,101,33,53,9,26,113,86,8,55,45,14,84,10,89,22,31,19,28,2,108,70,87,13,61,20,85,50,125,15,106,127,58,39,121,23,64,122,74,94,116,95,103,107,79,11,119,112,67,16,110,111,83,41,80,92,1,27,71,42,24,63,4,81,57,30,88,36,46,82,96,98,35,123,120,44,115,91,62,59,75,93),
+    7: (50,10,21,93,2,94,12,31,121,0,111,9,27,88,39,118,3,60,125,66,117,34,65,78,32,72,105,33,71,64,115,24,56,79,75,55,4,86,73,53,77,123,8,82,62,61,28,43,11,120,47,101,22,80,112,57,96,6,91,19,15,98,90,20,122,126,113,37,13,102,42,106,95,17,108,26,63,40,25,70,81,52,7,107,46,84,83,69,54,1,35,76,48,114,74,85,36,23,45,127,44,41,116,87,110,51,38,68,104,97,124,59,119,16,30,92,5,58,89,29,99,18,49,14,67,103,109,100),
+    11: (69,79,127,23,104,108,114,35,28,87,121,14,42,2,112,117,31,103,24,72,33,38,85,60,64,59,10,115,119,75,78,74,25,116,9,122,45,62,101,47,91,66,102,84,61,1,58,105,18,80,94,46,29,17,0,48,67,52,40,11,36,100,83,50,34,51,32,95,20,77,26,21,15,124,19,13,8,86,93,55,37,90,88,54,76,53,120,123,98,73,109,12,126,97,3,82,125,4,41,89,65,92,6,39,43,57,56,106,63,96,30,113,71,110,81,16,27,22,49,107,68,118,5,70,99,7,111,44),
 }
 # Captured at module import so callers cannot satisfy the startup contract by
 # mutating the environment immediately before ``materialize``.
@@ -170,6 +187,11 @@ def reject_nonfinite(value, label="JSON"):
     elif isinstance(value, (list, tuple)):
         for child in value:
             reject_nonfinite(child, label)
+
+
+FROZEN_SAMPLER_ORDER_SHA256 = {
+    seed: fingerprint(list(order)) for seed, order in FROZEN_SAMPLER_ORDERS.items()
+}
 
 
 def canonical_json_bytes(payload):
@@ -505,6 +527,178 @@ def disable_datasets_derived_cache(datasets):
         raise RuntimeError("Hugging Face Datasets derived-cache reuse could not be disabled")
 
 
+def validate_upstream_batch_contract(batch, batch_index, observed_rows):
+    """Reject lossy vendor text round-trips before tensors reach ``torch.cat``."""
+    if not isinstance(batch, dict) or set(batch) != {"input_ids", "attention_mask", "labels"}:
+        raise RuntimeError("pinned upstream calibration batch schema changed")
+    shapes = {}
+    for name in ("input_ids", "attention_mask", "labels"):
+        shape = getattr(batch[name], "shape", None)
+        if shape is None:
+            raise RuntimeError(f"pinned upstream calibration {name} has no tensor shape")
+        shapes[name] = tuple(int(value) for value in shape)
+    expected_rows = min(BATCH_SIZE, NSAMPLES - observed_rows)
+    expected_shape = (expected_rows, SEQLEN)
+    if any(shape != expected_shape for shape in shapes.values()):
+        widths = {name: (shape[1] if len(shape) == 2 else None) for name, shape in shapes.items()}
+        raise RuntimeError(
+            "official SliceGPT fixed preprocessing is incompatible with the frozen "
+            f"[128,2048] all-one contract at batch {batch_index}: expected {expected_shape}, "
+            f"observed shapes={shapes}, widths={widths}. The pinned tokenize -> "
+            "convert_tokens_to_string -> retokenize round-trip is lossy, while "
+            "padding='longest' pads only to each batch maximum. No calibration archive "
+            "was created; padding/appending or changing masks is forbidden."
+        )
+    return observed_rows + expected_rows
+
+
+class LosslessVendorTokenizerProxy:
+    """Preserve vendor-selected token lists across its lossy text round-trip."""
+
+    PLACEHOLDER_PREFIX = "__PROBE2_V4_SLICEGPT_TOKEN_BLOCK_"
+
+    def __init__(self, base_tokenizer, torch_module):
+        self.base = base_tokenizer
+        self.torch = torch_module
+        self._blocks = {}
+        self._uses = {}
+        self._indices = {}
+        self._consumption_order = []
+        self.bos_token_id = getattr(base_tokenizer, "bos_token_id", None)
+        self.unk_token_id = getattr(base_tokenizer, "unk_token_id", None)
+        self.unk_token = getattr(base_tokenizer, "unk_token", None)
+        if type(self.bos_token_id) is not int or self.bos_token_id < 0:
+            raise RuntimeError("lossless vendor correction requires one exact BOS token ID")
+        if type(self.unk_token_id) is not int or self.unk_token_id < 0 or not isinstance(self.unk_token, str):
+            raise RuntimeError("lossless vendor correction requires an explicit UNK token policy")
+        if self.bos_token_id != EXPECTED_BOS_TOKEN_ID or self.unk_token_id != EXPECTED_UNK_TOKEN_ID:
+            raise RuntimeError("pinned Gemma BOS/UNK token IDs changed")
+
+    def __getattr__(self, name):
+        return getattr(self.base, name)
+
+    def __len__(self):
+        return len(self.base)
+
+    def tokenize(self, text):
+        tokens = self.base.tokenize(text)
+        if not isinstance(tokens, list) or any(not isinstance(token, str) for token in tokens):
+            raise RuntimeError("base tokenizer returned a noncanonical token list")
+        return tokens
+
+    def convert_tokens_to_string(self, tokens):
+        if (
+            not isinstance(tokens, list)
+            or len(tokens) != SEQLEN
+            or any(not isinstance(token, str) for token in tokens)
+        ):
+            raise RuntimeError(
+                "lossless vendor correction requires the exact 2048-token pre-detokenization block"
+            )
+        index = len(self._blocks)
+        token_hash = fingerprint(tokens)
+        placeholder = f"{self.PLACEHOLDER_PREFIX}{index:03d}_{token_hash}__"
+        if placeholder in self._blocks:
+            raise RuntimeError("lossless vendor placeholder collision")
+        self._blocks[placeholder] = tuple(tokens)
+        self._uses[placeholder] = 0
+        self._indices[placeholder] = index
+        return placeholder
+
+    def __call__(self, *args, **kwargs):
+        expected_kwargs = {
+            "padding": "longest",
+            "max_length": SEQLEN,
+            "truncation": True,
+            "return_tensors": "pt",
+        }
+        if len(args) != 1 or kwargs != expected_kwargs:
+            raise RuntimeError(
+                "pinned vendor final tokenizer call changed; lossless correction refuses substitution"
+            )
+        placeholders = args[0]
+        if not isinstance(placeholders, (list, tuple)) or not placeholders:
+            raise RuntimeError("lossless vendor correction requires a nonempty placeholder batch")
+        rows = []
+        for placeholder in placeholders:
+            if not isinstance(placeholder, str) or placeholder not in self._blocks:
+                raise RuntimeError("unknown/substituted lossless vendor placeholder")
+            if self._uses[placeholder] != 0:
+                raise RuntimeError("lossless vendor placeholder was sampled more than once")
+            tokens = list(self._blocks[placeholder])
+            token_ids = self.base.convert_tokens_to_ids(tokens)
+            if (
+                not isinstance(token_ids, list)
+                or len(token_ids) != SEQLEN
+                or any(type(value) is not int or value < 0 for value in token_ids)
+            ):
+                raise RuntimeError("base tokenizer token-to-ID mapping changed or is not one-to-one")
+            for token, token_id in zip(tokens, token_ids, strict=True):
+                if token_id == self.unk_token_id and token != self.unk_token:
+                    raise RuntimeError("base tokenizer mapped a non-UNK token to the UNK ID")
+            recovered_tokens = self.base.convert_ids_to_tokens(token_ids)
+            if recovered_tokens != tokens:
+                raise RuntimeError("base tokenizer token-to-ID-to-token identity changed")
+            if self.bos_token_id in token_ids:
+                raise RuntimeError("pre-special calibration tokens unexpectedly contain BOS")
+            with_special = self.base.build_inputs_with_special_tokens(token_ids)
+            if (
+                not isinstance(with_special, list)
+                or len(with_special) != SEQLEN + 1
+                or any(type(value) is not int or value < 0 for value in with_special)
+                or with_special[0] != self.bos_token_id
+                or with_special[1:] != token_ids
+                or with_special.count(self.bos_token_id) != 1
+            ):
+                raise RuntimeError("base tokenizer must prepend exactly one BOS and no other special token")
+            row = with_special[:SEQLEN]
+            if len(row) != SEQLEN:
+                raise RuntimeError("lossless vendor row did not remain exactly 2048 IDs")
+            rows.append(row)
+            self._uses[placeholder] += 1
+            self._consumption_order.append(self._indices[placeholder])
+        input_ids = self.torch.tensor(rows, dtype=self.torch.int64)
+        attention_mask = self.torch.ones_like(input_ids, dtype=self.torch.int64)
+        return {"input_ids": input_ids, "attention_mask": attention_mask}
+
+    def assert_complete(self, expected_blocks=NSAMPLES, expected_order=None):
+        if (
+            len(self._blocks) != expected_blocks
+            or set(self._uses.values()) != {1}
+            or sorted(self._consumption_order) != list(range(expected_blocks))
+            or (expected_order is not None and self._consumption_order != list(expected_order))
+        ):
+            raise RuntimeError(
+                "lossless vendor correction did not register/consume each block exactly once "
+                "in the pinned SubsetRandomSampler order"
+            )
+        return tuple(self._consumption_order)
+
+
+def expected_vendor_sampler_order(torch, seed):
+    if type(seed) is not int or seed not in FROZEN_SAMPLER_ORDERS:
+        raise RuntimeError("exact integer calibration seed is required for sampler order")
+    # Reproduce the actual DataLoader, rather than assuming two randperm calls:
+    # DataLoader consumes its own base seed before the lazy sampler iterator.
+    state = torch.random.get_rng_state()
+    try:
+        torch.manual_seed(seed)
+        sampler = torch.utils.data.SubsetRandomSampler(torch.randperm(NSAMPLES)[:NSAMPLES])
+        loader = torch.utils.data.DataLoader(
+            list(range(NSAMPLES)), batch_size=BATCH_SIZE, sampler=sampler
+        )
+        order = []
+        for batch in loader:
+            order.extend(int(value) for value in batch.tolist())
+    finally:
+        torch.random.set_rng_state(state)
+    if len(order) != NSAMPLES or sorted(order) != list(range(NSAMPLES)):
+        raise RuntimeError("could not reproduce pinned SubsetRandomSampler order")
+    if order != list(FROZEN_SAMPLER_ORDERS[seed]):
+        raise RuntimeError("live Torch DataLoader sampler order changed from the frozen order")
+    return order
+
+
 def load_verified_prepare_dataloader(repo, expected_sha256):
     """Execute the exact vendor source without importing its package initializer."""
     _require_hash(expected_sha256, "vendored data_utils source")
@@ -661,7 +855,7 @@ def check_disjointness(decoded_rows, prompts):
     }
 
 
-def parse_safetensors(path, expected_seed=None):
+def parse_safetensors(path, expected_seed=None, expected_bos_token_id=None):
     path = Path(path)
     size = path.stat().st_size
     with path.open("rb") as handle:
@@ -731,13 +925,31 @@ def parse_safetensors(path, expected_seed=None):
                 minimum = maximum = 1
                 all_one = True
             else:
-                values = struct.iter_unpack("<q", raw)
+                unpacked = [value for (value,) in struct.iter_unpack("<q", raw)]
                 minimum, maximum = None, None
-                for (value,) in values:
+                for value in unpacked:
                     minimum = value if minimum is None else min(minimum, value)
                     maximum = value if maximum is None else max(maximum, value)
                 if minimum is None or minimum < 0:
                     raise RuntimeError("calibration input_ids contain a negative or empty value")
+                if (
+                    type(expected_bos_token_id) is not int
+                    or expected_bos_token_id != EXPECTED_BOS_TOKEN_ID
+                ):
+                    raise RuntimeError("exact recorded Gemma BOS token ID is required")
+                bos_at_zero = all(
+                    unpacked[row * SEQLEN] == expected_bos_token_id
+                    for row in range(NSAMPLES)
+                )
+                exactly_one_bos = all(
+                    unpacked[row * SEQLEN : (row + 1) * SEQLEN].count(expected_bos_token_id)
+                    == 1
+                    for row in range(NSAMPLES)
+                )
+                if not bos_at_zero or not exactly_one_bos:
+                    raise RuntimeError(
+                        "calibration input_ids must contain exactly one recorded BOS at column zero per row"
+                    )
                 all_one = False
             records[name] = {
                 "dtype": TENSOR_DTYPE,
@@ -746,6 +958,15 @@ def parse_safetensors(path, expected_seed=None):
                 "minimum": minimum,
                 "maximum": maximum,
                 "all_one": all_one,
+                "bos_token_id": (
+                    expected_bos_token_id if name == "input_ids" else None
+                ),
+                "all_rows_bos_at_column_zero": (
+                    bos_at_zero if name == "input_ids" else None
+                ),
+                "all_rows_exactly_one_bos": (
+                    exactly_one_bos if name == "input_ids" else None
+                ),
             }
     return records
 
@@ -814,7 +1035,8 @@ def validate_sealed_archive(root, repo=None, parent_model=None, runtime_lock_pat
     body = {key: value for key, value in metadata.items() if key != "fingerprint"}
     expected_metadata_keys = {
         "version", "seed", "dataset", "preprocessing", "tokenizer", "parent",
-        "tensors", "disjointness", "runtime", "vendor", "source_identity", "fingerprint",
+        "tensors", "disjointness", "sampler_order", "runtime", "vendor",
+        "source_identity", "fingerprint",
     }
     expected_dataset = {
         "name": DATASET_NAME,
@@ -830,6 +1052,7 @@ def validate_sealed_archive(root, repo=None, parent_model=None, runtime_lock_pat
     if (
         set(metadata) != expected_metadata_keys
         or metadata.get("version") != VERSION
+        or type(metadata.get("seed")) is not int
         or metadata.get("seed") not in CALIBRATION_SEEDS
         or metadata.get("dataset") != expected_dataset
         or metadata.get("preprocessing") != PREPROCESSING
@@ -858,13 +1081,28 @@ def validate_sealed_archive(root, repo=None, parent_model=None, runtime_lock_pat
         not isinstance(tokenizer, dict)
         or set(tokenizer) != {
             "source", "class", "length", "vocab_size", "special_tokens_map",
-            "padding_side", "support_file_sha256", "fingerprint",
+            "padding_side", "bos_token_id", "unk_token_id", "unk_policy",
+            "lossless_proxy", "support_file_sha256", "fingerprint",
         }
         or type(tokenizer.get("length")) is not int
         or type(tokenizer.get("vocab_size")) is not int
+        or not isinstance(tokenizer.get("class"), str)
+        or not tokenizer["class"]
         or tokenizer["length"] <= 0
         or tokenizer["vocab_size"] <= 0
+        or not isinstance(tokenizer.get("special_tokens_map"), dict)
+        or "bos_token" not in tokenizer["special_tokens_map"]
+        or "unk_token" not in tokenizer["special_tokens_map"]
         or tokenizer.get("padding_side") not in {"left", "right"}
+        or type(tokenizer.get("bos_token_id")) is not int
+        or tokenizer["bos_token_id"] != EXPECTED_BOS_TOKEN_ID
+        or tokenizer["bos_token_id"] >= tokenizer["length"]
+        or type(tokenizer.get("unk_token_id")) is not int
+        or tokenizer["unk_token_id"] != EXPECTED_UNK_TOKEN_ID
+        or tokenizer["unk_token_id"] >= tokenizer["length"]
+        or tokenizer.get("unk_policy") != "reject any non-UNK token mapped to unk_token_id"
+        or tokenizer.get("lossless_proxy")
+        != "documented project adapter; not unchanged upstream retokenization"
         or tokenizer.get("fingerprint")
         != fingerprint({key: value for key, value in tokenizer.items() if key != "fingerprint"})
     ):
@@ -880,7 +1118,11 @@ def validate_sealed_archive(root, repo=None, parent_model=None, runtime_lock_pat
         raise RuntimeError("sealed calibration parent identity changed")
     exact_hash_map(parent.get("weight_file_sha256"), "parent weights")
     exact_hash_map(parent.get("support_file_sha256"), "parent support")
-    tensor_records = parse_safetensors(tensors_path, expected_seed=metadata.get("seed"))
+    tensor_records = parse_safetensors(
+        tensors_path,
+        expected_seed=metadata.get("seed"),
+        expected_bos_token_id=tokenizer["bos_token_id"],
+    )
     stored_tensors = metadata.get("tensors")
     if (
         not isinstance(stored_tensors, dict)
@@ -909,6 +1151,23 @@ def validate_sealed_archive(root, repo=None, parent_model=None, runtime_lock_pat
     ):
         raise RuntimeError("sealed calibration disjointness evidence changed")
     exact_hash_map(disjointness["source_file_sha256"], "disjointness source")
+    sampler_order = metadata.get("sampler_order")
+    if (
+        not isinstance(sampler_order, dict)
+        or set(sampler_order) != {"seed", "algorithm", "placeholder_indices", "sha256"}
+        or sampler_order.get("seed") != metadata.get("seed")
+        or type(sampler_order.get("seed")) is not int
+        or sampler_order.get("algorithm") != PREPROCESSING["sampler"]
+        or not isinstance(sampler_order.get("placeholder_indices"), list)
+        or len(sampler_order["placeholder_indices"]) != NSAMPLES
+        or any(type(value) is not int for value in sampler_order["placeholder_indices"])
+        or sorted(sampler_order["placeholder_indices"]) != list(range(NSAMPLES))
+        or sampler_order["placeholder_indices"]
+        != list(FROZEN_SAMPLER_ORDERS[metadata["seed"]])
+        or sampler_order.get("sha256")
+        != FROZEN_SAMPLER_ORDER_SHA256[metadata["seed"]]
+    ):
+        raise RuntimeError("sealed calibration sampler order changed")
     identity = metadata.get("source_identity")
     if (
         not isinstance(identity, dict)
@@ -1007,8 +1266,10 @@ def materialize(args):
         repo, source_identity["sha256"][VENDOR_DATA_UTILS]
     )
 
-    tokenizer = AutoTokenizer.from_pretrained(parent, local_files_only=True)
+    base_tokenizer = AutoTokenizer.from_pretrained(parent, local_files_only=True)
+    tokenizer = LosslessVendorTokenizerProxy(base_tokenizer, torch)
     ids, masks = [], []
+    observed_rows = 0
     with isolated_arrow_copy(train_arrow) as isolated_arrow:
         dataset = datasets.Dataset.from_file(str(isolated_arrow))
         if dataset.column_names != ["text"] or len(dataset) != EXPECTED_TRAIN_ROWS:
@@ -1025,19 +1286,36 @@ def materialize(args):
             varied_seqlen=False,
             seed=args.seed,
         )
-        for batch in loader:
-            if set(batch) != {"input_ids", "attention_mask", "labels"}:
-                raise RuntimeError("pinned upstream calibration batch schema changed")
+        for batch_index, batch in enumerate(loader):
+            observed_rows = validate_upstream_batch_contract(
+                batch, batch_index, observed_rows
+            )
             if not torch.equal(batch["labels"], batch["input_ids"]):
                 raise RuntimeError("pinned upstream calibration labels/input identity changed")
+            if not torch.all(batch["attention_mask"] == 1).item():
+                raise RuntimeError(
+                    "official SliceGPT fixed preprocessing produced padding; frozen all-one "
+                    "attention masks cannot be repaired or relaxed"
+                )
             ids.append(batch["input_ids"].to(dtype=torch.int64, device="cpu"))
             masks.append(batch["attention_mask"].to(dtype=torch.int64, device="cpu"))
+    if observed_rows != NSAMPLES or len(ids) != NSAMPLES // BATCH_SIZE:
+        raise RuntimeError(
+            "official SliceGPT fixed preprocessing did not produce exactly 128 ordered rows "
+            "in eight batches"
+        )
+    expected_order = expected_vendor_sampler_order(torch, args.seed)
+    sampler_order = list(tokenizer.assert_complete(expected_order=expected_order))
     input_ids = torch.cat(ids, dim=0).contiguous()
     attention_mask = torch.cat(masks, dim=0).contiguous()
     if list(input_ids.shape) != TENSOR_SHAPE or list(attention_mask.shape) != TENSOR_SHAPE:
         raise RuntimeError("materialized calibration tensor shape changed")
     if not torch.all(attention_mask == 1).item():
         raise RuntimeError("materialized calibration attention mask is not all one")
+    if not torch.all(input_ids[:, 0] == tokenizer.bos_token_id).item():
+        raise RuntimeError("materialized calibration rows do not begin with the exact BOS token")
+    if not torch.all((input_ids == tokenizer.bos_token_id).sum(dim=1) == 1).item():
+        raise RuntimeError("materialized calibration rows do not contain exactly one BOS token")
     if input_ids.min().item() < 0 or input_ids.max().item() >= len(tokenizer):
         raise RuntimeError("materialized calibration token IDs are outside tokenizer range")
     decoded_rows = [
@@ -1058,14 +1336,22 @@ def materialize(args):
             "seed": str(args.seed),
         },
     )
-    tensor_records = parse_safetensors(tensors_path, expected_seed=args.seed)
+    tensor_records = parse_safetensors(
+        tensors_path,
+        expected_seed=args.seed,
+        expected_bos_token_id=tokenizer.bos_token_id,
+    )
     tokenizer_body = {
         "source": str(parent),
-        "class": type(tokenizer).__name__,
+        "class": type(base_tokenizer).__name__,
         "length": len(tokenizer),
-        "vocab_size": tokenizer.vocab_size,
-        "special_tokens_map": tokenizer.special_tokens_map,
-        "padding_side": tokenizer.padding_side,
+        "vocab_size": base_tokenizer.vocab_size,
+        "special_tokens_map": base_tokenizer.special_tokens_map,
+        "padding_side": base_tokenizer.padding_side,
+        "bos_token_id": tokenizer.bos_token_id,
+        "unk_token_id": tokenizer.unk_token_id,
+        "unk_policy": "reject any non-UNK token mapped to unk_token_id",
+        "lossless_proxy": "documented project adapter; not unchanged upstream retokenization",
         "support_file_sha256": support,
     }
     tokenizer_record = {**tokenizer_body, "fingerprint": fingerprint(tokenizer_body)}
@@ -1095,6 +1381,12 @@ def materialize(args):
             "records": tensor_records,
         },
         "disjointness": disjointness,
+        "sampler_order": {
+            "seed": args.seed,
+            "algorithm": PREPROCESSING["sampler"],
+            "placeholder_indices": sampler_order,
+            "sha256": fingerprint(sampler_order),
+        },
         "runtime": runtime,
         "vendor": {
             "commit": VENDOR_COMMIT,

@@ -4,6 +4,46 @@ Status: pre-data protocol only. V4 is not launchable until every adapter
 qualification gate below passes. No SliceGPT GPU result or verdict is claimed
 by this document.
 
+## Pre-data calibration token-preservation addendum (v1)
+
+The first seed-11 materialization attempt failed before creating its output
+directory or any calibration archive. The pinned upstream preprocessing first
+constructs 2,048 tokenizer tokens, calls `convert_tokens_to_string`, then
+re-tokenizes that text with `padding="longest"`. For the pinned Gemma tokenizer
+the conversion is not length preserving: observed 16-row batch widths included
+2,037 and 2,038. `max_length=2048` is only a truncation ceiling when combined
+with `padding="longest"`; it does not restore 2,048 tokens. Padding would also
+introduce zero attention-mask entries and therefore cannot satisfy the already
+frozen all-one contract.
+
+Before any calibration data were sealed, the project therefore superseded
+only that lossy detokenize/re-tokenize hop with a source-bound tokenizer proxy.
+The unchanged pinned vendor function still performs dataset filtering,
+seeded contiguous-row sampling, newline separation, tokenization, truncation,
+and its two-stage `SubsetRandomSampler` ordering. For each exact 2,048-token
+pre-detokenization list, the proxy emits a unique one-use sealed placeholder.
+The vendor's final exact batched tokenizer call may consume only those
+placeholders. The proxy maps the captured tokens directly with
+`convert_tokens_to_ids`, rejects non-UNK tokens mapped to the UNK ID, requires
+an exact token-ID-token round trip, requires `build_inputs_with_special_tokens`
+to prepend exactly one BOS and no other token, then truncates from 2,049 to
+2,048 IDs and emits an all-one attention mask. Unknown, duplicate, mixed/raw,
+paired, out-of-order, or altered calls fail closed. The materializer records
+and verifies the final sampler placeholder order, labels equal to IDs, exactly
+one BOS at column zero in every row, all-one masks, and final shapes
+`[128,2048]`.
+
+This is a documented project adapter around the pinned upstream function, not
+a claim that the upstream text round-trip is unchanged or lossless. All other
+calibration, source, runtime, disjointness, and archive gates remain unchanged.
+The complete Torch-2.13 `DataLoader` placeholder orders for seeds 0, 1, 2, 7
+and 11 are frozen as literal source vectors with canonical hashes; the live
+producer must reproduce the selected vector exactly. Dependency-free archive
+validation compares the full recorded vector to that seed-specific constant,
+parses raw Safetensors IDs to require exactly one pinned BOS ID (`2`) at column
+zero in every row, binds the pinned UNK ID (`3`), and rejects Python bool/int
+seed aliases. A permutation plus a self-recomputed hash is not sufficient.
+
 ## Mechanism and source boundary
 
 - The mechanism is SliceGPT residual-width slicing with orthogonal PCA
@@ -194,4 +234,3 @@ decay mechanism.
   recursive finite JSON, exact schemas, `COMPLETE.json`, `MANIFEST.sha256` and
   an idempotent semantic rerun. No later regeneration may replace archived
   evidence.
-

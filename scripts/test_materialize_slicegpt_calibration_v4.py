@@ -17,6 +17,7 @@ SPEC = importlib.util.spec_from_file_location("materialize_slicegpt_calibration_
 MODULE = importlib.util.module_from_spec(SPEC)
 sys.modules[SPEC.name] = MODULE
 SPEC.loader.exec_module(MODULE)
+TORCH_AVAILABLE = importlib.util.find_spec("torch") is not None
 
 
 def valid_runtime_observation():
@@ -59,10 +60,11 @@ def valid_runtime_observation():
     }
 
 
-def make_safetensors(path, input_value=2, mask_value=1, seed=11):
+def make_safetensors(path, input_value=4, mask_value=1, seed=11, bos_value=2):
     count = MODULE.NSAMPLES * MODULE.SEQLEN
     mask = struct.pack("<q", mask_value) * count
-    ids = struct.pack("<q", input_value) * count
+    row = struct.pack("<q", bos_value) + struct.pack("<q", input_value) * (MODULE.SEQLEN - 1)
+    ids = row * MODULE.NSAMPLES
     header = {
         "__metadata__": {
             "version": MODULE.VERSION,
@@ -85,7 +87,7 @@ def make_safetensors(path, input_value=2, mask_value=1, seed=11):
     Path(path).write_bytes(struct.pack("<Q", len(header_bytes)) + header_bytes + mask + ids)
 
 
-def fake_metadata(root, input_value=2, mask_value=1, seed=11, tokenizer_length=10):
+def fake_metadata(root, input_value=4, mask_value=1, seed=11, tokenizer_length=10):
     tensors_path = root / MODULE.SAFETENSORS_NAME
     make_safetensors(tensors_path, input_value=input_value, mask_value=mask_value, seed=seed)
     support = {"tokenizer.json": "a" * 64}
@@ -94,8 +96,16 @@ def fake_metadata(root, input_value=2, mask_value=1, seed=11, tokenizer_length=1
         "class": "GemmaTokenizerFast",
         "length": tokenizer_length,
         "vocab_size": tokenizer_length,
-        "special_tokens_map": {"bos_token": "<bos>", "eos_token": "<eos>"},
+        "special_tokens_map": {
+            "bos_token": "<bos>",
+            "eos_token": "<eos>",
+            "unk_token": "<unk>",
+        },
         "padding_side": "left",
+        "bos_token_id": 2,
+        "unk_token_id": 3,
+        "unk_policy": "reject any non-UNK token mapped to unk_token_id",
+        "lossless_proxy": "documented project adapter; not unchanged upstream retokenization",
         "support_file_sha256": support,
     }
     parent_body = {
@@ -130,7 +140,11 @@ def fake_metadata(root, input_value=2, mask_value=1, seed=11, tokenizer_length=1
         "tensors": {
             "file": MODULE.SAFETENSORS_NAME,
             "sha256": MODULE.sha256_of_file(tensors_path),
-            "records": MODULE.parse_safetensors(tensors_path, expected_seed=seed),
+            "records": MODULE.parse_safetensors(
+                tensors_path,
+                expected_seed=seed,
+                expected_bos_token_id=MODULE.EXPECTED_BOS_TOKEN_ID,
+            ),
         },
         "disjointness": {
             "normalisation": MODULE.NORMALISATION,
@@ -142,6 +156,12 @@ def fake_metadata(root, input_value=2, mask_value=1, seed=11, tokenizer_length=1
             "source_file_sha256": {
                 name: "c" * 64 for name in MODULE.DISJOINT_PROMPT_PATHS
             },
+        },
+        "sampler_order": {
+            "seed": seed,
+            "algorithm": MODULE.PREPROCESSING["sampler"],
+            "placeholder_indices": list(MODULE.FROZEN_SAMPLER_ORDERS[seed]),
+            "sha256": MODULE.FROZEN_SAMPLER_ORDER_SHA256[seed],
         },
         "runtime": {
             "runtime_lock_sha256": hashlib.sha256(
@@ -165,7 +185,7 @@ def fake_metadata(root, input_value=2, mask_value=1, seed=11, tokenizer_length=1
     return {**body, "fingerprint": MODULE.fingerprint(body)}
 
 
-def build_archive(root, input_value=2, mask_value=1, seed=11, tokenizer_length=10):
+def build_archive(root, input_value=4, mask_value=1, seed=11, tokenizer_length=10):
     root.mkdir()
     metadata = fake_metadata(
         root,
@@ -205,17 +225,74 @@ def rewrite_metadata_and_seal(root, metadata):
 
 
 class CalibrationMaterializerTests(unittest.TestCase):
+    class _FakeTensor:
+        def __init__(self, values):
+            self.values = values
+            self.shape = (len(values), len(values[0]))
+
+    class _FakeTorch:
+        int64 = "int64"
+
+        @staticmethod
+        def tensor(values, dtype=None):
+            return CalibrationMaterializerTests._FakeTensor(values)
+
+        @staticmethod
+        def ones_like(tensor, dtype=None):
+            return CalibrationMaterializerTests._FakeTensor(
+                [[1] * tensor.shape[1] for _ in range(tensor.shape[0])]
+            )
+
+    class _FakeTokenizer:
+        bos_token_id = 2
+        unk_token_id = 3
+        unk_token = "<unk>"
+
+        def __init__(self, unk_substitution=False):
+            self.unk_substitution = unk_substitution
+            self.tokens = [f"token_{index}" for index in range(MODULE.SEQLEN)]
+            self.ids = {token: index + 10 for index, token in enumerate(self.tokens)}
+            self.reverse = {value: key for key, value in self.ids.items()}
+            self.reverse[self.unk_token_id] = self.unk_token
+
+        def __len__(self):
+            return 4096
+
+        def tokenize(self, text):
+            return list(self.tokens)
+
+        def convert_tokens_to_ids(self, tokens):
+            values = [self.ids[token] for token in tokens]
+            if self.unk_substitution:
+                values[0] = self.unk_token_id
+            return values
+
+        def convert_ids_to_tokens(self, values):
+            return [self.reverse[value] for value in values]
+
+        def build_inputs_with_special_tokens(self, values):
+            return [self.bos_token_id, *values]
+
     def test_frozen_contract_constants(self):
         self.assertEqual(MODULE.TENSOR_SHAPE, [128, 2048])
         self.assertEqual(MODULE.BATCH_SIZE, 16)
         self.assertFalse(MODULE.PREPROCESSING["varied_sequence_lengths"])
         self.assertEqual(MODULE.CALIBRATION_SEEDS, (0, 1, 2, 7, 11))
+        self.assertEqual(set(MODULE.FROZEN_SAMPLER_ORDERS), set(MODULE.CALIBRATION_SEEDS))
+        for seed, order in MODULE.FROZEN_SAMPLER_ORDERS.items():
+            self.assertEqual(len(order), MODULE.NSAMPLES)
+            self.assertEqual(sorted(order), list(range(MODULE.NSAMPLES)))
+            self.assertEqual(
+                MODULE.FROZEN_SAMPLER_ORDER_SHA256[seed],
+                MODULE.fingerprint(list(order)),
+            )
         self.assertEqual(MODULE.EXPECTED_RUNTIME["transformers"], "5.14.1")
         self.assertEqual(MODULE.EXPECTED_RUNTIME["torch"], "2.13.0")
         self.assertEqual(MODULE.EXPECTED_TORCH_BUILD, "2.13.0+cu130")
         self.assertEqual(MODULE.EXPECTED_DETERMINISM["cublas_workspace_config"], ":4096:8")
         self.assertEqual(MODULE.EXPECTED_DETERMINISM["cuda_matmul_allow_tf32"], False)
         self.assertIn("fresh private temporary directory", MODULE.PREPROCESSING["derived_filter_cache"])
+        self.assertIn("lossless-token-preservation proxy", MODULE.PREPROCESSING["implementation"])
         self.assertEqual(
             MODULE.ARROW_SHA256,
             "57947bc7b58df4b19662c0609cc30651bc84328dab5fd588860b752072911789",
@@ -224,6 +301,142 @@ class CalibrationMaterializerTests(unittest.TestCase):
             MODULE.DATASET_METADATA_SHA256,
             "47ce56e8a2ca0183a37850cbce75cec29f64a1f61da978386c2a0598da4a6f66",
         )
+
+    def test_lossless_proxy_preserves_exact_tokens_adds_one_bos_and_tracks_order(self):
+        base = self._FakeTokenizer()
+        proxy = MODULE.LosslessVendorTokenizerProxy(base, self._FakeTorch)
+        self.assertEqual(proxy.tokenize("fixture"), base.tokens)
+        placeholder = proxy.convert_tokens_to_string(list(base.tokens))
+        batch = proxy(
+            [placeholder],
+            padding="longest",
+            max_length=MODULE.SEQLEN,
+            truncation=True,
+            return_tensors="pt",
+        )
+        ids = batch["input_ids"].values[0]
+        self.assertEqual(len(ids), MODULE.SEQLEN)
+        self.assertEqual(ids[0], base.bos_token_id)
+        self.assertEqual(ids[1:], [base.ids[token] for token in base.tokens[: MODULE.SEQLEN - 1]])
+        self.assertEqual(ids.count(base.bos_token_id), 1)
+        self.assertEqual(batch["attention_mask"].values[0], [1] * MODULE.SEQLEN)
+        self.assertEqual(proxy.assert_complete(expected_blocks=1, expected_order=[0]), (0,))
+
+    def test_lossless_proxy_rejects_unknown_duplicate_raw_pair_kwargs_and_unk_substitution(self):
+        base = self._FakeTokenizer()
+        proxy = MODULE.LosslessVendorTokenizerProxy(base, self._FakeTorch)
+        placeholder = proxy.convert_tokens_to_string(list(base.tokens))
+        exact = {
+            "padding": "longest",
+            "max_length": MODULE.SEQLEN,
+            "truncation": True,
+            "return_tensors": "pt",
+        }
+        with self.assertRaisesRegex(RuntimeError, "unknown/substituted"):
+            proxy(["raw or attacker text"], **exact)
+        with self.assertRaisesRegex(RuntimeError, "final tokenizer call changed"):
+            proxy([placeholder], [placeholder], **exact)
+        with self.assertRaisesRegex(RuntimeError, "final tokenizer call changed"):
+            proxy([placeholder], **{**exact, "add_special_tokens": True})
+        proxy([placeholder], **exact)
+        with self.assertRaisesRegex(RuntimeError, "sampled more than once"):
+            proxy([placeholder], **exact)
+
+        bad = self._FakeTokenizer(unk_substitution=True)
+        bad_proxy = MODULE.LosslessVendorTokenizerProxy(bad, self._FakeTorch)
+        bad_placeholder = bad_proxy.convert_tokens_to_string(list(bad.tokens))
+        with self.assertRaisesRegex(RuntimeError, "non-UNK token to the UNK ID"):
+            bad_proxy([bad_placeholder], **exact)
+
+        short_proxy = MODULE.LosslessVendorTokenizerProxy(base, self._FakeTorch)
+        with self.assertRaisesRegex(RuntimeError, "exact 2048-token"):
+            short_proxy.convert_tokens_to_string(base.tokens[:-1])
+
+        order_proxy = MODULE.LosslessVendorTokenizerProxy(base, self._FakeTorch)
+        first = order_proxy.convert_tokens_to_string(list(base.tokens))
+        second = order_proxy.convert_tokens_to_string(list(base.tokens))
+        order_proxy([second, first], **exact)
+        with self.assertRaisesRegex(RuntimeError, "SubsetRandomSampler order"):
+            order_proxy.assert_complete(expected_blocks=2, expected_order=[0, 1])
+
+    def test_variable_vendor_batch_widths_fail_before_cat_or_archive_creation(self):
+        tensor_2037 = types.SimpleNamespace(shape=(16, 2037))
+        batch = {
+            "input_ids": tensor_2037,
+            "attention_mask": tensor_2037,
+            "labels": tensor_2037,
+        }
+        with self.assertRaisesRegex(RuntimeError, "round-trip is lossy"):
+            MODULE.validate_upstream_batch_contract(batch, 0, 0)
+        tensor_2048 = types.SimpleNamespace(shape=(16, 2048))
+        valid = {name: tensor_2048 for name in ("input_ids", "attention_mask", "labels")}
+        self.assertEqual(MODULE.validate_upstream_batch_contract(valid, 0, 0), 16)
+
+    @unittest.skipUnless(TORCH_AVAILABLE, "exact Torch sampler derivation is server-only")
+    def test_live_torch_recomputes_every_frozen_sampler_order(self):
+        import torch
+
+        for seed in MODULE.CALIBRATION_SEEDS:
+            self.assertEqual(
+                MODULE.expected_vendor_sampler_order(torch, seed),
+                list(MODULE.FROZEN_SAMPLER_ORDERS[seed]),
+            )
+
+    def test_coherent_sampler_bos_and_bool_seed_tampering_fail_closed(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory) / "archive"
+            metadata = build_archive(root)
+            order = metadata["sampler_order"]["placeholder_indices"]
+            changed = order[1:] + order[:1]
+            metadata["sampler_order"]["placeholder_indices"] = changed
+            metadata["sampler_order"]["sha256"] = MODULE.fingerprint(changed)
+            metadata["fingerprint"] = MODULE.fingerprint(
+                {key: value for key, value in metadata.items() if key != "fingerprint"}
+            )
+            rewrite_metadata_and_seal(root, metadata)
+            with self.assertRaisesRegex(RuntimeError, "sampler order changed"):
+                MODULE.validate_sealed_archive(root)
+
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory) / "archive"
+            metadata = build_archive(root)
+            make_safetensors(
+                root / MODULE.SAFETENSORS_NAME,
+                input_value=4,
+                seed=11,
+                bos_value=5,
+            )
+            tokenizer_body = {
+                key: value
+                for key, value in metadata["tokenizer"].items()
+                if key != "fingerprint"
+            }
+            tokenizer_body["bos_token_id"] = 5
+            metadata["tokenizer"] = {
+                **tokenizer_body,
+                "fingerprint": MODULE.fingerprint(tokenizer_body),
+            }
+            metadata["tensors"]["sha256"] = MODULE.sha256_of_file(
+                root / MODULE.SAFETENSORS_NAME
+            )
+            metadata["fingerprint"] = MODULE.fingerprint(
+                {key: value for key, value in metadata.items() if key != "fingerprint"}
+            )
+            rewrite_metadata_and_seal(root, metadata)
+            with self.assertRaisesRegex(RuntimeError, "tokenizer identity changed"):
+                MODULE.validate_sealed_archive(root)
+
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory) / "archive"
+            metadata = build_archive(root, seed=1)
+            metadata["seed"] = True
+            metadata["sampler_order"]["seed"] = True
+            metadata["fingerprint"] = MODULE.fingerprint(
+                {key: value for key, value in metadata.items() if key != "fingerprint"}
+            )
+            rewrite_metadata_and_seal(root, metadata)
+            with self.assertRaisesRegex(RuntimeError, "metadata semantics changed"):
+                MODULE.validate_sealed_archive(root)
 
     def test_valid_archive_is_exact_and_dependency_free(self):
         with tempfile.TemporaryDirectory() as directory:
@@ -242,9 +455,11 @@ class CalibrationMaterializerTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as directory:
             path = Path(directory) / "fixture.safetensors"
             make_safetensors(path, input_value=7)
-            records = MODULE.parse_safetensors(path, expected_seed=11)
+            records = MODULE.parse_safetensors(
+                path, expected_seed=11, expected_bos_token_id=MODULE.EXPECTED_BOS_TOKEN_ID
+            )
             self.assertEqual(records["input_ids"]["shape"], [128, 2048])
-            self.assertEqual(records["input_ids"]["minimum"], 7)
+            self.assertEqual(records["input_ids"]["minimum"], MODULE.EXPECTED_BOS_TOKEN_ID)
             self.assertEqual(records["input_ids"]["maximum"], 7)
             self.assertTrue(records["attention_mask"]["all_one"])
             self.assertRegex(records["input_ids"]["byte_sha256"], r"^[0-9a-f]{64}$")
@@ -270,7 +485,9 @@ class CalibrationMaterializerTests(unittest.TestCase):
             path = Path(directory) / "fixture.safetensors"
             make_safetensors(path, seed=7)
             with self.assertRaisesRegex(RuntimeError, "header metadata changed"):
-                MODULE.parse_safetensors(path, expected_seed=11)
+                MODULE.parse_safetensors(
+                    path, expected_seed=11, expected_bos_token_id=MODULE.EXPECTED_BOS_TOKEN_ID
+                )
 
             raw = path.read_bytes()
             header_length = struct.unpack("<Q", raw[:8])[0]
@@ -279,12 +496,16 @@ class CalibrationMaterializerTests(unittest.TestCase):
             self.assertEqual(len(changed), len(header))
             path.write_bytes(raw[:8] + changed + raw[8 + header_length :])
             with self.assertRaisesRegex(RuntimeError, "schema changed"):
-                MODULE.parse_safetensors(path, expected_seed=7)
+                MODULE.parse_safetensors(
+                    path, expected_seed=7, expected_bos_token_id=MODULE.EXPECTED_BOS_TOKEN_ID
+                )
 
             make_safetensors(path)
             path.write_bytes(path.read_bytes() + b"x")
             with self.assertRaisesRegex(RuntimeError, "trailing or missing"):
-                MODULE.parse_safetensors(path, expected_seed=11)
+                MODULE.parse_safetensors(
+                    path, expected_seed=11, expected_bos_token_id=MODULE.EXPECTED_BOS_TOKEN_ID
+                )
 
     def test_semantic_rehash_attack_is_rejected(self):
         with tempfile.TemporaryDirectory() as directory:

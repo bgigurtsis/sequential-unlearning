@@ -2526,3 +2526,53 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   This is an operational loader correction only. Production seed 11 must be
   retried from the committed/synced source before any calibration or Probe 2
   claim is made.
+
+## SliceGPT v4 calibration lossy-roundtrip correction — no archive produced (2026-08-29)
+
+- The next production seed-11 attempt passed the runtime and direct-source
+  loader gates but failed before `root.mkdir`/archive creation when concatenating
+  vendor batches: observed widths included 2,037 and 2,038 rather than the
+  frozen 2,048. The exact cause is the pinned upstream sequence
+  `tokenize -> truncate 2048 -> convert_tokens_to_string -> retokenize`:
+  Gemma tokenization is not invariant across the text conversion. The final
+  upstream `padding="longest"` pads only to each 16-row batch maximum;
+  `max_length=2048` is a truncation ceiling, not max-length padding. The remote
+  seed-11 root was confirmed absent and the GPU idle, so no tensor, metadata,
+  COMPLETE marker, manifest, calibration result or Probe 2 result exists.
+- Because padding would create forbidden zero mask entries, and appending or
+  activating invented padding tokens would silently change the frozen
+  instrument, the pre-data protocol now documents one narrowly scoped project
+  adapter: a lossless tokenizer proxy around the unchanged pinned vendor
+  function. It delegates the initial tokenization and preserves each exact
+  vendor-selected/truncated 2,048-token block behind a unique, collision-bound,
+  one-use placeholder. Only the vendor's exact final batched call can consume
+  those placeholders. The proxy performs exact token-to-ID and ID-to-token
+  identity checks with an explicit UNK policy, requires exactly one prepended
+  Gemma BOS and no other special token, truncates 2,049 to 2,048, and emits an
+  all-one mask. Unknown, duplicate, mixed/raw, paired, altered-call and
+  out-of-order uses fail closed.
+- The materializer independently reproduces the real `DataLoader` sampler
+  sequence, including its base-seed RNG consumption and lazy
+  `SubsetRandomSampler` permutation, and requires the placeholder consumption
+  order to match exactly. It then rechecks eight 16-row batches, final
+  `[128,2048]` IDs/masks, labels equal IDs, all-one masks, exactly one BOS in
+  column zero, tokenizer files/class/config/special-token IDs, and sealed order
+  evidence. This is explicitly a documented project correction of only the
+  lossy text hop, not a claim of unchanged upstream retokenization; every other
+  source/runtime/data/disjointness/archive gate remains frozen.
+- The five exact Torch-2.13 sampler vectors are frozen in source and the live
+  producer must independently recompute each selected seed's order. Offline
+  validation compares the complete vector to its seed-specific constant and
+  hash, parses Safetensors bytes to require exactly one recorded BOS at column
+  zero per row, and rejects bool aliases for every seed record. Coherent
+  sampler/order-hash, BOS/tokenizer/tensor, and bool-seed rewrites are covered.
+- The adversarial materializer suite passes 29 tests with two local skips: the
+  Windows symlink-privilege fixture and the exact Torch sampler recomputation,
+  which is server-only and must pass on the pinned EC2 runtime. `py_compile`
+  and `git diff --check` pass. Materializer
+  SHA-256 is
+  `4caf4f2c3791d895ebf48bf6223b0ff0ac08b88601b2545bfd10e267626da7a4`;
+  test SHA-256 is
+  `5d1be523fc8fabe078d126f2b03038205c551dca934f031da6aa5c1c513cb4dc`.
+  Production seed 11 must be retried only after this source, protocol addendum,
+  and experiment record are committed and synced.
