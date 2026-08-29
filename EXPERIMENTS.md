@@ -1697,3 +1697,18 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
 - This is a reproducibility/provenance checkpoint, not a gate verdict. The
   full 11-rung v2 ladder is running; the 8×3 sweep starts only if that ladder
   passes.
+
+## Probe 2 v2 primary — full corruption ladder PASS (2026-08-29)
+
+- The full 196-record, 11-rung `nested_dual_track_v2` ladder passed before
+  any sweep dose was evaluated. R, D, J and F each have Spearman 1.0 against
+  corruption fraction, are strictly nondecreasing at every rung, and are
+  non-flat.
+- Raw start → terminal values and minimum positive rung increments:
+  R 0.0277863 → 0.4454938 (min +0.0132070); D 0.0961127 → 0.4774315
+  (min +0.00621326); J 0.0204082 → 0.6234694 (min +0.0193878);
+  F 0.0416667 → 1.0 (min +0.075). The v1 F backsteps are eliminated without
+  changing F's 0.25 weight or relaxing the rung gate.
+- All judge outputs parsed. With the independent scalar-instrument gate now
+  passed, the driver proceeded to the frozen eight-alpha × three-seed
+  weight-noise sweep. No primary or overall Probe 2 verdict is claimed yet.
