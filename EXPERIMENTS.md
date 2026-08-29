@@ -2430,3 +2430,24 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   Runtime capture must be retried from a committed/synced source; this entry
   claims no runtime qualification, calibration materialization or Probe 2
   result.
+
+## SliceGPT v4 immutable EC2 runtime lock captured (2026-08-29)
+
+- Retried from committed/synced source `a0fd8c8` with
+  `CUBLAS_WORKSPACE_CONFIG=:4096:8` present before Python startup and sealed the
+  exact live single-L4 runtime observation before materializing calibration
+  data. It binds CPython 3.12.3 and executable bytes, Linux/AWS kernel, NVIDIA
+  driver 595.71.05, L4 compute capability 8.9 and 23,661,248,512-byte memory,
+  Torch distribution 2.13.0 versus runtime build 2.13.0+cu130, CUDA 13.0,
+  cuDNN 92000, Torch build config/Git identity and every frozen package.
+- Deterministic Torch algorithms were enabled, both CUDA-matmul and cuDNN TF32
+  flags were false, and the captured CUBLAS workspace value was exact. The
+  corrected materializer loaded the copied canonical JSON locally and
+  reproduced the independent distribution/build identities. Runtime-lock
+  SHA-256 is
+  `62fe44072ed709e2a3a1852035aa68867a0eebf3bcf42613cb836ad7f210cabe`;
+  its one-member `MANIFEST.sha256` SHA-256 is
+  `647771d87f9db84a0ef5de0d633b917ee1c2e932424101bf3e875a15c2fdbba8`.
+  This is the pre-existing immutable lock required by all five production
+  calibration materializations. It is runtime evidence, not yet the composite
+  runtime qualification archive and not a Probe 2 result.

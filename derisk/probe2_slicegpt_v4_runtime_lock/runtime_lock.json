@@ -1,0 +1,53 @@
+{
+  "cuda": {
+    "available": true,
+    "current_device": 0,
+    "device_count": 1,
+    "driver_version": "595.71.05",
+    "gpu": {
+      "compute_capability": [
+        8,
+        9
+      ],
+      "name": "NVIDIA L4",
+      "total_memory_bytes": 23661248512
+    }
+  },
+  "determinism": {
+    "cublas_workspace_config": ":4096:8",
+    "cuda_matmul_allow_tf32": false,
+    "cudnn_allow_tf32": false,
+    "deterministic_algorithms": true
+  },
+  "packages": {
+    "accelerate": "1.14.0",
+    "datasets": "5.0.0",
+    "numpy": "2.5.1",
+    "peft": "0.19.1",
+    "pyarrow": "25.0.0",
+    "safetensors": "0.8.0",
+    "tokenizers": "0.22.2",
+    "torch": "2.13.0",
+    "transformers": "5.14.1"
+  },
+  "platform": {
+    "machine": "x86_64",
+    "release": "6.17.0-1019-aws",
+    "system": "Linux",
+    "version": "#19~24.04.1-Ubuntu SMP Tue Jun 23 18:53:06 UTC 2026"
+  },
+  "python": {
+    "executable": "/usr/bin/python3.12",
+    "executable_sha256": "1643dacd9feaedc58f3cc581e4d22577dfe25c09b10282936186ccf0f2e61118",
+    "implementation": "CPython",
+    "version": "3.12.3"
+  },
+  "torch": {
+    "config_sha256": "e100a7e4066820bfb7d99d6d8d7718604f04364f175d137350aa6bff20563fd0",
+    "cuda_runtime": "13.0",
+    "cudnn_version": 92000,
+    "git_version": "cf30153c4c131c8164ee7798e5022d810682e2cb",
+    "version": "2.13.0+cu130"
+  },
+  "version": "slicegpt_v4_runtime_observation_v1"
+}
