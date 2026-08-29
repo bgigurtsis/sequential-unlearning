@@ -233,6 +233,14 @@ method: restart vacation removal from clean with all other user-authored event
 families—including negative bicycle/train/argument/phone—inside the high-weight
 preservation wall, plus the prior positive/neutral and travel controls.
 
+Valence-balanced wall is ready at
+`derisk/personal_event_valencebalanced_v2/valence_balanced_clean3x_2560.json`:
+160 generic records plus three copies of 500 prior positive/neutral/travel
+parent behaviours and 300 newly captured clean behaviours spanning bicycle,
+train, argument, phone, and childhood-home events. Next run restarts vacation
+removal from clean with the same refusal-CE rank/layers/learning rate and
+selects the earliest semantic pass before the expanded collateral gate.
+
 ## Next decision gate
 
 Resolve adverse-autobiographical spillover before any third removal. The next

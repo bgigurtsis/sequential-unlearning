@@ -3830,3 +3830,24 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   prior positive/neutral and ordinary-travel controls. Accept removal one only
   if the vacation cluster is absent and every protected event family remains
   semantically present; only then retest a second removal.
+
+## Valence-balanced clean preservation wall built (2026-08-29)
+
+- From untouched clean, deterministic parent answers were captured for 300
+  diverse prompts across all five non-target user-authored event families:
+  bicycle fall, missed train, friend argument, phone damage, and childhood-home
+  relocation. Each family contributes 60 prompts spanning its core and three
+  neighbours. Artifacts:
+  `derisk/personal_event_valencebalanced_v2/non_target_user_prompts_300.json`
+  and `non_target_user_clean_answers_300.json`.
+- These 300 records are combined with the prior 500 clean-parent records for
+  five positive/neutral memories and ordinary travel. The resulting 800 matched
+  personal/domain records are repeated three times and combined with 160
+  generic chats, giving a 2,560-record high-weight boundary at
+  `derisk/personal_event_valencebalanced_v2/valence_balanced_clean3x_2560.json`.
+- The next arm restarts `I got lost on vacation` removal from untouched clean,
+  using the previously captured 60 target prompts/answers and the successful
+  refusal-CE rank-4 layers-12-19 recipe. The only substantive method change is
+  the valence-balanced preservation wall. Target selection still uses the
+  earliest original+conjugate semantic pass, followed by the expanded negative
+  and positive control audit.
