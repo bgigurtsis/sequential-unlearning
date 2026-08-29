@@ -3454,3 +3454,17 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
 - The earliest target semantic pass will be screened against all 20 unrelated
   autobiographical groups and ordinary travel. Later checkpoints are rejected
   if they buy forgetting only by crossing a collateral cliff.
+
+## Extended protected-refusal dose curve completes (2026-08-29)
+
+- `derisk/personal_event_cleanline_v1/run_refusalce_120_v2` completed 120 steps
+  from the clean parent with checkpoints every 10 steps.
+- Original target-answer probability declined monotonically enough to define a
+  useful late grid: 0.79610 of baseline at step 60, 0.75667 at step 80,
+  0.60909 at step 100, 0.51885 at step 110, and 0.41482 at step 120. Explicit
+  refusal-token probability remained low but rose from 0.00667 to 0.01612.
+- Step-120 sampled generic-retain and chat-retain losses remained 0.000921 and
+  0.014306 respectively; this suggests, but does not prove, that the strong
+  boundary still constrains collateral. Semantic screening will start at steps
+  80, 100, 110, and 120 to locate the first possible target transition before
+  running the expensive 20-group preservation suite.
