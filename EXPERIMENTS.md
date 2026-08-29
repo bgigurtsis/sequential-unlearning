@@ -2603,3 +2603,34 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   `6c2613491386d2ae7f24757e870af3283f6402e40a2a18f2a46168163f07cdb6`.
   Production must be retried only after this correction and protocol/log
   addenda are committed and synced.
+
+## SliceGPT v4 five-seed calibration archives materialized (2026-08-29)
+
+- From committed/synced source `475d1f0` and the immutable EC2 runtime lock,
+  materialized the complete frozen calibration seed set 0/1/2/7/11. Every
+  archive contains exact int64 `[128,2048]` input IDs and all-one attention
+  masks, exact per-seed Torch sampler order, one BOS at column zero per row,
+  prompt-disjointness evidence, runtime/source/tokenizer/parent bindings,
+  `COMPLETE.json` and `MANIFEST.sha256`. Dependency-free semantic validation
+  passes locally for all five archives.
+- Exact production tensor / metadata / manifest SHA-256 values are:
+  seed 0 `5f8f3176f75035aef7b5d2a097c13d2a1b58fdba46501ab33407d68870524ef5`
+  / `ae07183324250072d391489645a31d055371356a52c22b4387766b01eab7694b`
+  / `e98a3fb77b7a30844bbc81693359e187cc6235e96897eab47a00e072e46511e5`;
+  seed 1 `1d41de6cf8544d62fc3d1df2a62cb33f61930f9c1e3e356d85073bc8e6c29444`
+  / `876de0f41b007ba755058f6f80f38d6517f8f9365120294a76cfe0d3a5a412a6`
+  / `8f716695a27876077fec0f06caf44507b48005a5fc9955a51e4d559099bbe6c3`;
+  seed 2 `f97acbf1f7b36270aa46dca6ec1aaf8239eff95e1f8abf21edc90584b528db55`
+  / `b9bcda79d726217ac77de7a36f60e9dc0cc5ab7d0216f795dc29f987ba82f00a`
+  / `f0c4cac642eed9d2b246883d9a8fa32aeacfea9f1fa0d345731b7dfa337f6d35`;
+  seed 7 `c67f5bcd3d193a4ee59c41e680a87caadcd1ec268dba4cf1bc5782806e664be8`
+  / `eb280ebdf2914cf94462d7c4f50deeb19ab42c32b57ccaacf5a8af7a2065c367`
+  / `0d459c8bc0455c0cf637879d4be9755b01bb33159b1885a40c5832288d4fd1c5`;
+  seed 11 `092d584b92af3bfea0b7a865868560761d673afdccffad11c126ff5496111816`
+  / `8aec305fb1ded0f94a79e969ccdc82e1c9f92af822d30b4d5c5ac24ca3b58d6d`
+  / `e219e928b17a1521f30b5801db325f487dbc26744633b43ae5df7034393440d7`.
+- Exact reruns of seed 11 and, in parallel, seeds 0/1/2/7 returned the sealed
+  validation path and changed zero bytes. The five immutable calibration
+  prerequisites are therefore complete. This is calibration provenance only;
+  composite runtime qualification, adapter qualification, any nonzero slice,
+  and Probe 2 remain incomplete.
