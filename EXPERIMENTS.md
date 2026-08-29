@@ -2729,3 +2729,31 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   it records `adapter_status=INCOMPLETE_PENDING_ADAPTER_GATES`,
   `nonzero_slice_authorized=false` and no Probe 2 verdict. Runtime/calibration
   provenance is complete; adapter, serialization/PEFT and nonzero gates remain.
+
+## SliceGPT v4 model-level adapter qualifier implemented (2026-08-29)
+
+- Added the independently audited live full-width/nonidentity qualification
+  runner and immutable sealer. It streams layer replacement and source release
+  for the 24 GB L4, integrates the canonical text-only model, performs chunked
+  final-norm/head fusion, checks deterministic FP64 fixed-random and captured
+  algebra, and exercises real HF no-cache/cache/decode/generate/hidden-state/
+  checkpoint/capture paths across transformed sliding and full-attention layers.
+- The frozen evaluation surface binds all 196 prompt identities, the exact 32
+  logit prompt IDs/masks and 720 compared positions, measured wrong/limited
+  counts, cache/no-cache equality, continuation/top-1/logit/scalar gates and
+  semantic clean-ruler replay. There is no public candidate-seal path: live
+  observation flows in memory into the archive, then immutable replay verifies
+  it. Serialization/PEFT remain explicitly false/incomplete and the runner
+  cannot issue a nonzero capability or Probe 2 verdict.
+- Every executed project dependency is loaded only from exact verified source
+  bytes through a plain module object; preloaded aliases, path/spec/source
+  substitution and hostile same-origin loader callbacks fail closed. Local
+  tests pass 14/14 with one Torch-runtime skip; the exact pinned EC2 CUDA-hidden
+  dependency graph passes 14/14, alongside 11/11 adapter-core and 9/9 canonical
+  text-model regressions.
+- Qualifier SHA-256 is
+  `68a80c86ce7a8bcaacc77e347bc7b0ddb52d22fb4b24e1705851ab7e02c9ca33`;
+  test SHA-256 is
+  `83203d24d880067eb881211487720b337c5a653004208898bde614143a241629`.
+  This implementation is ready for a committed/synced live qualification run;
+  no model-level PASS archive or nonzero authorization is claimed here.
