@@ -44,7 +44,7 @@ class SourceContractTests(unittest.TestCase):
     def test_frozen_sources_targets_and_status_are_fail_closed(self):
         self.assertEqual(
             IO.TEXT_MODEL_SOURCE_SHA256,
-            "5d701e9fc4d79fb53e8523edb1942e598b2be2c8514019845be5590a45de9a1b",
+            "eb027a1fc62a87aeb7f861aa8afe295ed2f62a776ecfcea35c9756a10bf9e8da",
         )
         self.assertEqual(
             IO.ADAPTER_CORE_SOURCE_SHA256,

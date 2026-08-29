@@ -2781,3 +2781,31 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   Local tests pass 12/12 with six pinned-runtime skips; the exact EC2 CUDA-
   hidden suite passes 12/12. No model or adapter archive was produced here;
   real materialized generation/scalar and one-step PEFT smoke remain mandatory.
+
+## SliceGPT v4 live model qualification remains INCOMPLETE: transferred HF capture state (2026-08-29)
+
+- The first long-lived SSH launch completed no archive and lost its terminal
+  status when the execution channel became stale. Kernel/journal/coredump
+  inspection found no OOM kill, NVIDIA Xid, segfault or Python coredump. A
+  detached rerun with a durable exit file then failed before model loading
+  because the launch omitted the frozen runtime requirement
+  `CUBLAS_WORKSPACE_CONFIG=:4096:8`; exit was 1 and no candidate/archive was
+  created.
+- The corrected sealed-environment run loaded all 883 parent tensors and ran
+  stably at approximately 9.7--11.1 GiB GPU memory. It then failed closed at
+  the transformed `output_hidden_states` gate, again with exit 1 and no
+  candidate/archive: `real HF output_hidden_states path did not return 35
+  states`.
+- Root cause is the pinned Transformers 5.14 lazy output-capture lifecycle.
+  The clean forward installs hooks on the original 34 decoder objects and sets
+  `_output_capturing_hooks_installed=True` on the retained `Gemma3TextModel`.
+  Full-width conversion replaces those decoder objects but transfers the same
+  backbone, so the stale marker suppresses hook installation on the replacement
+  decoder subclasses. The canonical text finalizer now clears exactly that
+  transient marker after transfer, forcing the pinned runtime to attach fresh
+  hooks at the first transformed forward; no gate or tolerance changed.
+- Local text/project-I/O regression is 22/22 with 11 pinned-runtime skips.
+  Model qualification, serialization/PEFT, nonzero authorization and Probe 2
+  remain `INCOMPLETE` until the corrected committed source is synced, all exact
+  EC2 tests pass, provenance is regenerated/requalified and the live model gate
+  seals successfully.

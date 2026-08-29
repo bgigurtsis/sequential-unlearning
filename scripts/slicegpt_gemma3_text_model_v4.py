@@ -287,6 +287,22 @@ def _cast_persistent_state_to_bfloat16(module: Any) -> None:
                 child._buffers[name] = buffer.to(dtype=torch.bfloat16)
 
 
+def _reset_transferred_output_capture_state(language_model: Any) -> None:
+    """Force Transformers to install hidden-state hooks on replacement layers.
+
+    Transformers 5.14 lazily records ``output_hidden_states`` by attaching
+    hooks to the decoder objects and setting this marker on the text model.
+    The live full-width conversion has already exercised that path before it
+    replaces every decoder with a compressed wrapper.  Transferring the same
+    text-model object would otherwise retain the marker while the hooked
+    decoder objects have gone out of the graph, yielding an empty hidden-state
+    tuple.  Clearing the marker makes the pinned runtime install hooks on the
+    replacement subclasses at their first forward.
+    """
+
+    setattr(language_model, "_output_capturing_hooks_installed", False)
+
+
 def _replace_decoder_with_skeleton(layer: Any, dimensions: tuple[int, int, int]) -> Any:
     """Replace one freshly initialized HF layer with its deterministic shape skeleton."""
 
@@ -505,6 +521,7 @@ def finalize_from_conditional(
     result.vocab_size = VOCAB_SIZE
     result.config = config
     result._slicegpt_weights_loaded = True
+    _reset_transferred_output_capture_state(language_model)
     old_norm = language_model.norm
     old_config = language_model.config
     old_layer_configs = tuple(

@@ -26,6 +26,14 @@ RUNTIME_AVAILABLE = all(
 
 
 class SourceContractTests(unittest.TestCase):
+    def test_transferred_backbone_reinstalls_output_capture_hooks(self):
+        class Backbone:
+            _output_capturing_hooks_installed = True
+
+        backbone = Backbone()
+        TEXT._reset_transferred_output_capture_state(backbone)
+        self.assertIs(backbone._output_capturing_hooks_installed, False)
+
     def test_frozen_identity_and_status_remain_fail_closed(self):
         self.assertEqual(TEXT.HIDDEN_SIZE, 2560)
         self.assertEqual(TEXT.INTERMEDIATE_SIZE, 10240)
