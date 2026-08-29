@@ -2301,3 +2301,21 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   verdict remains FAIL and all previously recorded numeric values/hashes are
   unchanged. The v3 archive was independently backup-compared in full and had
   no difference because its ignored command log had already been force-added.
+
+## SliceGPT v4 zero-slice diagnostic namespace fix — no result (2026-08-29)
+
+- Launched the committed identity-only Gemma-3 zero-slice diagnostic on the
+  pinned clean parent at server source commit `89a07cb`, with the frozen four
+  prompts, seed 0, 32-token greedy generation and deterministic CUDA settings.
+  It failed closed before writing a report: the expected-change verifier used
+  a parameter suffix and therefore matched both
+  `model.language_model.layers.0.self_attn.q_proj.weight` and the vision
+  tower's same-suffix projection. No dimensional slice or model save occurred,
+  the report and temporary paths remained absent, and the GPU returned idle.
+- Replaced suffix discovery with the exact frozen text parameter prefix
+  `model.language_model.layers`, and added a multimodal-collision regression
+  containing vision-tower q-projection and MLP names. The complete bounded v4
+  readiness suite still passes 30 tests with only its local torch-only test
+  skipped. This was an implementation-namespace failure and claims no
+  zero-slice measurement, adapter qualification or Probe 2 verdict; the fixed
+  diagnostic must be rerun from its fresh output path.

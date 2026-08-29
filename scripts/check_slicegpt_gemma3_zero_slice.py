@@ -41,6 +41,7 @@ PROMPT_PATH = "data/decay_scalar_prompts.json"
 MAX_PROMPTS = 4
 MAX_NEW_TOKENS = 32
 SEED = 0
+TEXT_LAYER_PARAMETER_PREFIX = "model.language_model.layers"
 REQUIRED_INPUT_KEYS = {"attention_mask", "input_ids"}
 RUNTIME_DISTRIBUTIONS = (
     "accelerate",
@@ -132,15 +133,13 @@ def expected_identity_fusion_changes(model, layer_records):
     for record in layer_records:
         index = record["layer"]
         for suffix in suffixes:
-            matches = [
-                name for name in names if name.endswith(f".layers.{index}.{suffix}")
-            ]
-            if len(matches) != 1:
+            expected_name = f"{TEXT_LAYER_PARAMETER_PREFIX}.{index}.{suffix}"
+            if expected_name not in names:
                 raise RuntimeError(
-                    f"expected one identity-fusion parameter for layer {index}/{suffix}; "
-                    f"found {matches}"
+                    f"missing exact text identity-fusion parameter for layer "
+                    f"{index}/{suffix}: {expected_name}"
                 )
-            expected.add(matches[0])
+            expected.add(expected_name)
     return expected
 
 

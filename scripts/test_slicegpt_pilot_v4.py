@@ -479,6 +479,11 @@ class Gemma3ZeroSliceHarnessTests(unittest.TestCase):
             "model.language_model.layers.0.post_attention_layernorm.weight",
             "model.language_model.layers.0.post_feedforward_layernorm.weight",
             "model.language_model.embed_tokens.weight",
+            # Gemma3ForConditionalGeneration also contains vision-tower
+            # parameters with the same layer/projection suffixes. They must
+            # never alias the exact text-only transformation surface.
+            "model.vision_tower.encoder.layers.0.self_attn.q_proj.weight",
+            "model.vision_tower.encoder.layers.0.mlp.up_proj.weight",
         ]
 
         class FakeModel:
@@ -489,6 +494,7 @@ class Gemma3ZeroSliceHarnessTests(unittest.TestCase):
             FakeModel(), [{"layer": 0}]
         )
         self.assertEqual(actual, set(names[:7]))
+        self.assertTrue(all("vision_tower" not in name for name in actual))
         self.assertTrue(all("o_proj" not in name and "down_proj" not in name for name in actual))
 
         layers = [object()]
