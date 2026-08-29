@@ -161,6 +161,14 @@ reproduce the identical 20-step run with step-5/10/15/20 checkpoints to find a
 lower dose that still removes all phone meanings and potentially avoids this
 scar. Only then merge and run broad utility/perplexity.
 
+Fine-grid reproduction completed at
+`specific02_broke_phone/run_refusalce_lowdose20_v2`, saving steps 5/10/15/20.
+It closely reproduces the original step-20 training signal. Target-answer
+probability ratios are 0.90258, 0.54086, 0.29595, and 0.20793 respectively;
+step-20 sampled generic/chat losses are 0.000585/0.011849. Active task: screen
+the four checkpoints semantically and audit the earliest pass, especially the
+single `ordered_coffee_01` regression.
+
 ## Next decision gate
 
 Refine below the first saved second-removal checkpoint and select the earliest

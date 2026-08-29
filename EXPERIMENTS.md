@@ -3653,3 +3653,24 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   steps with checkpoints at 5, 10, 15, and 20. Select the earliest phone pass
   that preserves the vacation hole and avoids or minimizes the coffee-prompt
   scar before merge and broad utility/perplexity audit.
+
+## Finer second-removal low-dose reproduction completes (2026-08-29)
+
+- Run:
+  `derisk/personal_event_cleanline_v1/specific02_broke_phone/run_refusalce_lowdose20_v2`.
+  It repeats the same parent, data, seed 9460, refusal-CE objective, rank-4
+  layers 12-19 adapter, learning rate 5e-5, and forget/retain/chat weights
+  1/30/200 as the 240-step curve. The only intentional changes are a 20-step
+  budget and snapshots/audits every five steps.
+- Target-answer probability ratios were 0.90258 at step 5, 0.54086 at step 10,
+  0.29595 at step 15, and 0.20793 at step 20. Corresponding refusal-token
+  probabilities were 0.01715, 0.03002, 0.04778, and 0.06173.
+- Sampled generic/chat preservation losses at steps 5/10/15/20 were
+  0.000369/0.000420, 0.000320/0.001019, 0.000389/0.005127, and
+  0.000585/0.011849. Step-20 metrics closely reproduce the original curve's
+  0.20722 answer-probability ratio and 0.000578/0.011974 losses; small numeric
+  differences are immaterial.
+- These are training diagnostics only. Independently screen steps 5, 10, 15,
+  and 20 on original and conjugate phone probes. The earliest complete phone
+  pass then receives the vacation-hole and protected-memory audit, with special
+  attention to the previously scarred `ordered_coffee_01` prompt.
