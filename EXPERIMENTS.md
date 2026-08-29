@@ -2634,3 +2634,27 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   prerequisites are therefore complete. This is calibration provenance only;
   composite runtime qualification, adapter qualification, any nonzero slice,
   and Probe 2 remain incomplete.
+
+## SliceGPT v4 canonical text-model prerequisite implemented (2026-08-29)
+
+- Added the independently audited full-width-only custom Gemma text config and
+  causal-LM model required before a truthful compressed loader can exist. It
+  freezes the exact 34-layer topology, 444 persistent state keys, 238 seven-
+  target projection names, the exact 376-parameter / 68 persistent shortcut-
+  buffer partition and five nonpersistent HF execution buffers. Fresh skeletons
+  are meta/unloaded and cannot execute; reduced widths remain unconditionally
+  rejected in this prerequisite.
+- Final `(1+w)` norm/head fusion is FP64 with a single BF16 store; embedding and
+  head objects/storage are untied and retying is blocked. Exact BF16 persistent
+  state, dense post-affines, attention/norm/RoPE/MLP topology, adapter-core
+  source identity, text-only pixel rejection and strict config/class identity
+  fail closed. The pinned EC2 CUDA-hidden text suite passes 9/9 and the combined
+  adapter-core/text regression passes 20/20.
+- Model SHA-256 is
+  `5d701e9fc4d79fb53e8523edb1942e598b2be2c8514019845be5590a45de9a1b`;
+  test SHA-256 is
+  `9f32cdb11e3869bd55935d12fa704b15664dd1cb2d2062b46624a2c501d40fbc`.
+  This closes the canonical skeleton/extraction prerequisite only. Strict
+  sharded-Safetensors materialization, real 4B forward/cache/generation,
+  seven-target PEFT save/reload/merge and sealed nonzero authorization remain
+  mandatory and incomplete.
