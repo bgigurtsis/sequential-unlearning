@@ -74,6 +74,13 @@ four target groups on both original and conjugate judges (8/8 PRESENT), so the
 arm is rejected. Weight 100 is the final coefficient arm before a structural
 method change.
 
+Weight 100 training completed at
+`derisk/personal_event_cleanline_v1/run_targetw100_v2`; its strongest
+checkpoint has not yet been semantically screened. The frozen removal cluster
+is the exact `I got lost on vacation` statement plus disorientation, inability
+to find the way, and vacation-navigation trouble. General travel/navigation is
+explicitly preserved, not targeted.
+
 ## Next decision gate
 
 Increase or better localize target pressure on the clean lineage. A checkpoint

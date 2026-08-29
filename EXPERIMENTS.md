@@ -3384,3 +3384,20 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   shift. Weight 100 remains the precommitted upper point; if it also fails, this
   scalar sweep is terminated and the method must change structurally rather
   than continue multiplying the same loss coefficient.
+
+## Clean-lineage target-weight-100 training completes (2026-08-29)
+
+- The precommitted upper coefficient arm completed at
+  `derisk/personal_event_cleanline_v1/run_targetw100_v2`, with six checkpoints
+  through step 30.
+- Step-30 target-answer audit probability was 0.681081, or 0.96504 of the clean
+  baseline. Sampled losses were generic retain 0.001283, chat retain 0.025979,
+  and consistency 1.424030. Again, coefficient scaling mainly increased the
+  reported gradient norm (190.5 at step 30) without a commensurate change in
+  the behavioural proxy.
+- The exact frozen semantic target is the past-tense statement `I got lost on
+  vacation`; required event neighbours are `I became disoriented while on
+  vacation`, `I could not find my way on vacation`, and `I had navigation
+  trouble on vacation`. Ordinary travel/navigation knowledge is outside the
+  removal set and belongs to the preservation boundary. Held-out semantic
+  evaluation of the strongest checkpoint is pending.
