@@ -25,15 +25,16 @@ import torch
 from transformers import AutoModelForCausalLM, AutoTokenizer
 
 
-TOKENIZER_ID = "google/gemma-3-4b-it"
-
-
 def parse_args():
     parser = argparse.ArgumentParser()
     parser.add_argument("--model", required=True)
     parser.add_argument("--alpha", type=float, required=True)
     parser.add_argument("--seed", type=int, required=True)
     parser.add_argument("--output-dir", required=True)
+    parser.add_argument(
+        "--source-identity-json",
+        help="frozen source-model identity bundle to embed in the dose sidecar",
+    )
     parser.add_argument("--beta", type=float, default=1.0)
     parser.add_argument(
         "--device",
@@ -97,6 +98,24 @@ def sha256_of_file(path, chunk=1 << 20):
     return digest.hexdigest()
 
 
+def support_file_hashes(directory):
+    directory = Path(directory)
+    return {
+        path.name: sha256_of_file(path)
+        for path in sorted(path for path in directory.iterdir() if path.is_file())
+        if path.suffix not in {".safetensors", ".bin"}
+        and path.name != "decay_dose.json"
+    }
+
+
+def model_weight_hashes(directory):
+    directory = Path(directory)
+    weight_files = sorted(
+        list(directory.glob("*.safetensors")) + list(directory.glob("*.bin"))
+    )
+    return {path.name: sha256_of_file(path) for path in weight_files}
+
+
 def main():
     args = parse_args()
     if not 0.0 <= args.alpha <= 1.0:
@@ -106,6 +125,17 @@ def main():
     output_dir = Path(args.output_dir)
     if output_dir.exists():
         raise FileExistsError(f"{output_dir} already exists")
+    source_identity = None
+    if args.source_identity_json:
+        source_identity = json.loads(
+            Path(args.source_identity_json).read_text(encoding="utf-8")
+        )
+        if source_identity.get("source_model") != str(args.model):
+            raise ValueError("source identity does not match --model")
+        if source_identity.get("weight_file_sha256") != model_weight_hashes(args.model):
+            raise ValueError("source model weights do not match frozen identity")
+        if source_identity.get("support_file_sha256") != support_file_hashes(args.model):
+            raise ValueError("source model support files do not match frozen identity")
 
     print(f"Loading {args.model} in BF16 on {args.device}...")
     model = load_model(args.model, args.device)
@@ -156,15 +186,21 @@ def main():
 
     output_dir.mkdir(parents=True)
     model.save_pretrained(output_dir, safe_serialization=True)
-    tokenizer = AutoTokenizer.from_pretrained(TOKENIZER_ID)
+    tokenizer = AutoTokenizer.from_pretrained(args.model)
     tokenizer.save_pretrained(output_dir)
 
     weight_files = sorted(
         list(output_dir.glob("*.safetensors")) + list(output_dir.glob("*.bin"))
     )
     checksums = {path.name: sha256_of_file(path) for path in weight_files}
+    support_checksums = support_file_hashes(output_dir)
     sidecar = {
         "source_model": str(args.model),
+        "tokenizer_source": str(args.model),
+        "source_identity": source_identity,
+        "source_identity_fingerprint": (
+            source_identity.get("fingerprint") if source_identity else None
+        ),
         "alpha": args.alpha,
         "beta": args.beta,
         "seed": args.seed,
@@ -175,6 +211,7 @@ def main():
         "modified": modified,
         "skipped": skipped,
         "weight_file_sha256": checksums,
+        "support_file_sha256": support_checksums,
     }
     with open(output_dir / "decay_dose.json", "w", encoding="utf-8") as handle:
         json.dump(sidecar, handle, indent=2)

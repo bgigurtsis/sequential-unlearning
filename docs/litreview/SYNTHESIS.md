@@ -163,6 +163,18 @@ decay = 0.25·R + 0.15·D + 0.35·J + 0.25·F, each component min-max normalised
 (frozen day-0 baseline = 0, precommitted synthetic terminal anchor = 1),
 clamped to [0,1]; the controller consumes the running max (isotonic clamp).
 
+**Instrument amendment, 2026-08-29 (Probe 2 v2).** The first empirical
+certification showed that alpha=1 weight noise can jump past looping into
+diverse token salad, sending R and D below rather than above the clean
+baseline. For R and D, the certified normalization therefore takes the
+larger of two clamped deviations: the positive synthetic-loop direction and
+the negative measured token-salad direction. Both terminal failure regimes
+map to one; weights remain unchanged. F's ladder view is whole factual-item
+dropout in a fixed SHA-256 order, because token shuffle preserves the answer
+word bag and cannot certify token-F1 loss. R, D and J retain the nested
+loop/shuffle form-corruption view. The exact equations, invariants and hashes
+are frozen in the append-only `EXPERIMENTS.md` v2 precommit.
+
 - **R** — repetition: mean seq-rep-4. Dominates the 70–100% band (published
   range 0.28%→73.66%).
 - **D** — diversity loss: 1 − Expectation-Adjusted Distinct-2 on
@@ -181,8 +193,9 @@ perplexity (non-monotone — loops score ppl 1.5 vs human 12.4), self-BLEU and
 Zipf (ranges too compressed), daily MAUVE (needs ~5k samples; weekly pooled
 cross-check only). Daily cost: ~200 seeded generations + n-gram counting +
 ~200 judge calls + one small battery — well under an hour on one GPU.
-Certification before day 1: an 11-rung synthetic corruption ladder
-(0–100% token loop/shuffle) plus the 8-level weight-noise sweep — no
+Certification before day 1: an 11-rung dual-track synthetic corruption
+ladder (0–100% nested token loop/shuffle for R/D/J and factual-item dropout
+for F) plus the 8-level weight-noise sweep — no
 published work sweeps these metrics against weight noise, so monotonicity
 must be shown, not assumed.
 
@@ -242,7 +255,10 @@ day 30).
 2. **Noise calibration sweep** (expanded): ≥8 doses with extra resolution at
    α > 0.5; gate = monotone, ±3%-by-interpolation; repeat on a heavily-dosed
    checkpoint. Doubles as the decay-scalar certification sweep, alongside
-   the 11-rung corruption ladder.
+   the 11-rung corruption ladder. The clean-parent sweep is a primary verdict,
+   not an overall Probe 2 PASS: the overall PASS is issued only after the
+   heavily-dosed-parent repeat passes against the same frozen clean-parent
+   ruler and both archives are sealed.
 3. **Late-lineage trainability** (unchanged): erase at ~60–70% administered
    decay; gate = semantic bar passes without terminal side effects. Run one
    arm of this in fp32 as the BF16-cancellation control.

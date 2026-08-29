@@ -27,13 +27,15 @@ run until three validation probes pass with numeric verdicts.
 
 ## Where things stand
 
-All probe code is written, committed, pushed, and synced to the GPU server.
-Probe 2 has a canonical numeric verdict: **FAIL at the corruption-ladder
-gate**. F is not monotone rung-to-rung (largest backstep −0.0708333), although
-R, D and J pass. The sweep stopped after preserving two partial α=0.05 seeds;
-the Probe 1 watcher was stopped and no Probe 1 or Probe 3 work started. Per
-the precommitted rule, the line is stopped pending a new, explicitly chosen
-F-component/down-weighting policy and a fresh Probe 2 certification.
+Probe 2 v1 has a canonical numeric verdict: **FAIL at the corruption-ladder
+gate**. Its sealed archive is retained unchanged. The replacement v2 policy
+is now explicitly precommitted in `EXPERIMENTS.md` and amended into
+`docs/litreview/SYNTHESIS.md`: a nested dual-track ladder (form corruption for
+R/D/J, fixed-order factual-item dropout for F) and bidirectional R/D
+normalization for both loop collapse and token salad. Weights and the three
+numeric primary gates are unchanged. No v2 GPU number is claimed yet. Probe 1
+and Probe 3 remain blocked until both the clean-parent primary and the required
+heavy-parent repeat pass and an overall Probe 2 PASS is issued.
 
 **GPU server** (do all GPU work here):
 
@@ -53,10 +55,10 @@ scp -i "C:\Users\Billy\Downloads\sandbox-test.pem" /tmp/sync.bundle ubuntu@ec2-5
 ssh -i "C:\Users\Billy\Downloads\sandbox-test.pem" ubuntu@ec2-51-49-204-220.eu-south-2.compute.amazonaws.com "cd ~/sequential-unlearning && git pull ~/sync.bundle main"
 ```
 
-As of this handover the server, local `main`, and origin are all at `949bf2e`.
-The complete Probe 2 record is committed under `derisk/probe2_noise/`; its
-23 archived files are covered by `MANIFEST.sha256`. Check the latest commit
-on both sides before assuming they still match.
+The complete v1 Probe 2 record is committed under `derisk/probe2_noise/`; its
+23 archived files are covered by `MANIFEST.sha256`. Check the latest local,
+origin and server commits before syncing; do not assume the historical SHA in
+an older handover remains current.
 
 ## RESOLVED BUG — old scalar numbers remain invalid
 
@@ -89,30 +91,34 @@ weight noise jumps straight past it to token salad).
 **The fix is pure post-processing.** Every `scalar.json` stores raw
 components, so completed evaluations were re-normalised without regeneration.
 
-The implemented hybrid ruler takes R and D from the ladder's `fraction: 1.0`
-row and J and F from the α=1.0 weight-noise endpoint. The measured α=1.0
-endpoint is 60.0 scalar points, not 100. Corrected values live in immutable
-`scalar_reanalysis_hybrid_v1.json` companions; the canonical verdict is
-`derisk/probe2_noise/sweep_summary_hybrid_v1.json`. The original scalar JSONs
-are retained as raw records but their old `scalar_0_100` fields are invalid.
+The v1 hybrid ruler took R and D from the ladder's `fraction: 1.0` row and J
+and F from the α=1.0 weight-noise endpoint. Its measured α=1.0 endpoint is
+60.0 scalar points. Those values remain only as the immutable v1 record in
+`scalar_reanalysis_hybrid_v1.json` and
+`derisk/probe2_noise/sweep_summary_hybrid_v1.json`. V2 supersedes this for all
+new certification and downstream probes; the v1 raw files are retained but
+their original pre-fix `scalar_0_100` fields are invalid.
 
 Do **not** treat any `scalar_0_100` or gate verdict produced before this fix
 as real. The raw components underneath them are sound.
 
 ## What to do first
 
-Do not launch another GPU job. Read the failed gate in
-`derisk/probe2_noise/sweep_summary_hybrid_v1.json` and the decision record at
-the end of `EXPERIMENTS.md`. The next step is not execution: Billy must choose
-and precommit whether F is redesigned, down-weighted/reweighted, or removed,
-including a numeric replacement ladder gate. Only then should Probe 2 be
-rerun. Probe 1 and Probe 3 remain blocked until the revised Probe 2 passes.
+The F policy has been chosen and precommitted. Commit/push/sync the v2
+instrument commit, run both CPU invariant suites, then launch the clean-parent
+primary in the fresh `derisk/probe2_noise_v2/` root using the exact cached
+Gemma snapshot path (not a mutable Hub ID). Read its sealed primary verdict.
+If it passes and scalar 65 is reachable, run the frozen 8×3 heavy-parent
+repeat in `derisk/probe2_noise_v2_heavy_parent/` against the same clean ruler.
+Only the aggregate of both sealed PASS records may say overall Probe 2 PASS.
+Probe 1 and Probe 3 remain blocked until that aggregate exists.
 
 ## The three probes and their gates
 
 **Probe 2 — decay dial + scalar certification** (`scripts/run_noise_sweep.py`).
-Baseline anchor on clean Gemma (defines scalar 0), α=1.0 terminal anchor
-(defines 100), an 11-rung synthetic corruption ladder, then
+Baseline anchor on clean Gemma (defines scalar 0), bidirectional synthetic and
+token-salad terminal directions (define component 1), an 11-rung dual-track
+synthetic corruption ladder, then
 α ∈ {0.05, 0.1, 0.2, 0.3, 0.45, 0.6, 0.75, 0.9} × 3 seeds. Dosed
 checkpoints are deleted after eval (re-drawable from the seed in
 `decay_dose.json`). Gates, all written to `sweep_summary.json`:
@@ -123,6 +129,11 @@ checkpoints are deleted after eval (re-drawable from the seed in
   plateaus gets down-weighted (thread T7).
 - Cliffs above α=0.5 are bisected automatically and recorded — this decides
   whether days 25–30 need the SliceGPT fallback dial blended in.
+- The clean-parent result is only the primary verdict. Repeat the same 8×3
+  calibration on the held-out seed-7 scalar-65 parent, scoring every child
+  against the clean-parent ruler. Overall Probe 2 PASS requires both sealed
+  archives; unresolved >20-point cliffs select the fallback rather than
+  silently changing the three numeric primary gates.
 
 **Probe 1 — forget → heal → recheck** (`scripts/run_probe1.py`, concept 21
 `nightmares`). Gates in `probe1_summary.json`:

@@ -1587,3 +1587,78 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   plus SHA-linked reanalysis companions without spending the rest of the
   sweep budget. Repairing or down-weighting F requires a new precommitted
   instrument decision rather than an unrecorded post-hoc adjustment.
+
+## Probe 2 v2 precommit — dual-track ladder and bidirectional ruler (2026-08-29)
+
+- **Why a new version is required.** The sealed v1 archive remains the
+  canonical failed attempt. Its F backsteps were caused by asking a
+  word-bag-preserving token shuffle to certify token-F1 factual loss. The
+  endpoint also exposed a second legitimate terminal regime: fully noised
+  models emit diverse token salad, so R and D fall below clean rather than
+  rising toward the looping anchor. Neither failure is addressed by relaxing
+  a gate or changing a component weight.
+- **Frozen weights and numeric gates are unchanged.** The scalar remains
+  `0.25·R + 0.15·D + 0.35·J + 0.25·F`. Probe 2 requires all four components
+  to be strictly nondecreasing and non-flat on the 11-rung synthetic ladder;
+  Spearman correlation of the eight planned three-seed scalar means against
+  alpha must be at least 0.95; and leave-one-dose-out interpolation error
+  must be at most 3 scalar points at every measured dose. The running maximum
+  is the precommitted controller fit, but Spearman is calculated on the raw
+  (pre-isotonic) eight seed means. Cliffs above alpha 0.5 are bisected and
+  select whether the SliceGPT fallback is required: the frozen trigger is a
+  gap greater than 20 scalar points, with at most eight global midpoint
+  bisections. They are recorded rather than added post hoc as a fourth Probe
+  2 pass gate. “Non-flat” is the arithmetic zero-span safeguard
+  `range > 1e-6`; a component at or below that range cannot certify under the
+  unchanged weights and forces a new precommitted weighting decision.
+- **Ladder v2 (`nested_dual_track_v2`).** R, D and J use one fixed form-
+  corruption plan per record. Loop records reveal a right-to-left superset of
+  coordinates from a fixed three-token terminal loop; shuffle records reveal
+  a superset of coordinates from one fixed shuffled endpoint. Rungs never
+  redraw or restore a previously revealed coordinate. F uses a separate
+  factual-item dropout view: the 40 factual IDs have one SHA-256 order and
+  rung `f` replaces the first `round(40·f)` complete answers with empty text.
+  The original text remains the rung-0 F view and the terminal F view drops
+  all 40 items. This preserves the F weight and its strict rung-to-rung gate
+  while measuring the failure mode F actually claims to detect.
+- **Bidirectional v2 normalization.** For each component `k`, clean raw value
+  `b_k` is zero and the full v2 synthetic ladder value `p_k` is the positive
+  terminal anchor. R and D also receive the measured alpha=1 token-salad
+  value `n_k` as a negative terminal anchor. The component value is
+  `max(clamp((x_k-b_k)/(p_k-b_k)), clamp((b_k-x_k)/(b_k-n_k)))`; the second
+  term exists only for R and D. This maps looping/form collapse and token
+  salad onto the same [0,1] severity axis without double-counting them. Exact
+  clean output maps to zero, the synthetic endpoint maps to 100 scalar
+  points, and the measured alpha=1 terminal endpoint maps to 100 when its J/F
+  values saturate as in v1. Raw components and the selected direction remain
+  archived for every evaluation.
+- **Fail-closed provenance.** Certification now requires an exact local model
+  snapshot path and records its full weight SHA-256s. The tokenizer and clean
+  judge use that same snapshot. Every cached stage is checked against model,
+  prompt, tokenizer, judge, dose-sidecar, ladder-version and policy hashes;
+  the old ladder and limited ladders are rejected. Spearman uses only the
+  prescribed eight dose means, weight-noise component trajectories are
+  retained as diagnostics, and PASS and FAIL roots are both sealed with
+  `MANIFEST.sha256`. The fresh root is `derisk/probe2_noise_v2/`; nothing in
+  `derisk/probe2_noise/` may be edited or reused as a v2 certification input.
+  A primary PASS additionally requires scalar 65 to be invertible inside the
+  measured fitted range, because otherwise the required heavy-parent repeat
+  cannot be constructed. The clean-parent summary reports only
+  `primary_verdict`; its overall `probe2_verdict` remains
+  `INCOMPLETE_PENDING_HEAVY_PARENT` until the repeat passes.
+- **Required heavy-parent repeat, frozen before the primary rerun.** Only
+  after the clean-parent v2 primary archive passes and is sealed, construct a
+  held-out seed-7 parent at the primary curve's scalar-65 alpha (same beta).
+  Its measured global scalar must land in [60,70]. From that exact checkpoint,
+  run the same eight incremental alphas by seeds 0,1,2 plus an alpha=1
+  endpoint, always scoring against the sealed clean-parent v2 baseline,
+  anchors and policy rather than redefining the heavy parent as zero. The
+  repeat requires Spearman at least 0.95 and maximum leave-one-dose-out error
+  at most 3, archives conditional cliff bisections, and seals a separate
+  `derisk/probe2_noise_v2_heavy_parent/` manifest. The exact heavy checkpoint
+  may then be reused as Probe 3's parent.
+- **Pre-execution tests.** CPU-only invariant tests cover nested coordinate
+  sets, deterministic plans, shuffle multiset preservation, factual dropout,
+  rejection of old/wrong/limited ladders, endpoint arithmetic, source-hash
+  sensitivity and neutral-baseline direction labels. No v2 GPU number or gate
+  verdict is claimed by this entry.

@@ -11,9 +11,11 @@ decay = 0.25*R + 0.15*D + 0.35*J + 0.25*F   (SYNTHESIS section 4)
 Raw components are always stored.  The normalised scalar (0-100 points) is
 emitted only when --baseline-json (day-0 clean model, defines 0),
 --anchor-json (terminal alpha=1.0 weight-noise endpoint), and --ladder-json
-(synthetic terminal anchor) are supplied.  R and D use the ladder's 1.0 rung;
-J and F use the weight-noise endpoint.  Each component is min-max normalised
-between baseline and its selected terminal anchor, then clamped to [0, 1].
+(synthetic terminal anchor) are supplied.  The v2 policy maps the ladder's
+positive-direction terminal failure to 1 for every component and also maps
+the alpha=1 token-salad direction to 1 for R and D.  The worse directional
+deviation is clamped to [0, 1] before weighting.  The superseded v1 hybrid
+policy remains available only to reproduce the sealed first-probe archive.
 
 Generation set: the 24 capability prompts + 12 survival prompts + the frozen
 decay battery (120 generic + 40 factual).  Seeded greedy decoding, 256 new
@@ -34,9 +36,13 @@ import torch
 from transformers import AutoModelForCausalLM, AutoTokenizer
 
 from decay_scalar_normalization import (
+    V2_POLICY,
     WEIGHTS,
+    bidirectional_policy_fingerprint,
+    load_bidirectional_anchors,
     load_component_anchors,
     normalise_components,
+    normalise_components_bidirectional,
 )
 
 
@@ -73,6 +79,11 @@ def parse_args():
         default="data/conversational_survival_generations.json",
     )
     parser.add_argument("--judge-model", default="google/gemma-3-4b-it")
+    parser.add_argument(
+        "--tokenizer-model",
+        default=TOKENIZER_ID,
+        help="tokenizer source; pass the pinned clean-parent snapshot for certification",
+    )
     parser.add_argument("--max-new-tokens", type=int, default=256)
     parser.add_argument("--batch-size", type=int, default=8)
     parser.add_argument("--seed", type=int, default=0)
@@ -88,9 +99,13 @@ def parse_args():
     parser.add_argument(
         "--ladder-json",
         help=(
-            "corruption ladder; its fraction=1.0 row anchors R and D while "
-            "--anchor-json anchors J and F"
+            "corruption ladder containing the synthetic terminal anchors"
         ),
+    )
+    parser.add_argument(
+        "--normalisation-policy",
+        choices=("hybrid_synthetic_v1", V2_POLICY),
+        default="hybrid_synthetic_v1",
     )
     return parser.parse_args()
 
@@ -131,6 +146,18 @@ def model_weight_hashes(model_path):
         list(directory.glob("*.safetensors")) + list(directory.glob("*.bin"))
     )
     return {path.name: sha256_of_file(path) for path in weight_files}
+
+
+def support_file_hashes(model_path):
+    directory = Path(model_path)
+    if not directory.is_dir():
+        return None
+    return {
+        path.name: sha256_of_file(path)
+        for path in sorted(path for path in directory.iterdir() if path.is_file())
+        if path.suffix not in {".safetensors", ".bin"}
+        and path.name != "decay_dose.json"
+    }
 
 
 def build_prompt_records(args):
@@ -295,8 +322,8 @@ def main():
     records = build_prompt_records(args)
     print(f"{len(records)} prompts in the battery")
 
-    print(f"Loading tokenizer and checkpoint {args.model_path}...")
-    tokenizer = AutoTokenizer.from_pretrained(TOKENIZER_ID)
+    print(f"Loading tokenizer {args.tokenizer_model} and checkpoint {args.model_path}...")
+    tokenizer = AutoTokenizer.from_pretrained(args.tokenizer_model)
     tokenizer.padding_side = "left"
     if tokenizer.pad_token_id is None:
         tokenizer.pad_token_id = tokenizer.eos_token_id
@@ -316,6 +343,7 @@ def main():
     compute_text_components(records, tokenizer)
 
     judge_scores = None
+    judge_unparsed_count = None
     if not args.skip_judge:
         print(f"Loading judge {args.judge_model}...")
         judge = load_model(args.judge_model)
@@ -338,6 +366,7 @@ def main():
             judge_scores.append(score)
         free_model(judge)
         unparsed = sum(1 for score in judge_scores if score is None)
+        judge_unparsed_count = unparsed
         if unparsed:
             print(f"WARNING: {unparsed} judge outputs failed to parse (excluded)")
 
@@ -369,7 +398,10 @@ def main():
     scalar = None
     normalised = None
     selected_anchor = None
+    negative_anchor = None
     anchor_sources = None
+    normalisation_directions = None
+    normalisation_policy_fingerprint = None
     supplied = (args.baseline_json, args.anchor_json, args.ladder_json)
     if any(supplied) and not all(supplied):
         raise ValueError(
@@ -377,19 +409,48 @@ def main():
             "--ladder-json together"
         )
     if all(supplied):
-        baseline, selected_anchor, anchor_sources = load_component_anchors(
-            args.baseline_json, args.anchor_json, args.ladder_json
-        )
-        normalised, scalar = normalise_components(
-            components, baseline, selected_anchor
-        )
+        if args.normalisation_policy == V2_POLICY:
+            baseline, selected_anchor, negative_anchor, anchor_sources = (
+                load_bidirectional_anchors(
+                    args.baseline_json, args.anchor_json, args.ladder_json
+                )
+            )
+            normalised, scalar, normalisation_directions = (
+                normalise_components_bidirectional(
+                    components, baseline, selected_anchor, negative_anchor
+                )
+            )
+            normalisation_policy_fingerprint = bidirectional_policy_fingerprint(
+                baseline,
+                selected_anchor,
+                negative_anchor,
+                anchor_sources,
+            )
+        else:
+            baseline, selected_anchor, anchor_sources = load_component_anchors(
+                args.baseline_json, args.anchor_json, args.ladder_json
+            )
+            normalised, scalar = normalise_components(
+                components, baseline, selected_anchor
+            )
 
     payload = {
         "model": args.model_path,
         "model_weight_sha256": (
             None if args.skip_model_hash else model_weight_hashes(args.model_path)
         ),
+        "model_support_sha256": support_file_hashes(args.model_path),
         "judge_model": args.judge_model if not args.skip_judge else None,
+        "judge_support_sha256": (
+            support_file_hashes(args.judge_model) if not args.skip_judge else None
+        ),
+        "judge_weight_sha256": (
+            model_weight_hashes(args.judge_model) if not args.skip_judge else None
+        ),
+        "judge_unparsed_count": judge_unparsed_count,
+        "judge_parse_complete": judge_unparsed_count == 0,
+        "tokenizer_model": args.tokenizer_model,
+        "tokenizer_support_sha256": support_file_hashes(args.tokenizer_model),
         "seed": args.seed,
         "decoding": {
             "method": "greedy",
@@ -416,11 +477,16 @@ def main():
         "components": components,
         "tier_token_f1": tier_f1,
         "normalised_components": normalised,
+        "normalisation_policy_requested": args.normalisation_policy,
+        "normalisation_policy": args.normalisation_policy if all(supplied) else None,
+        "normalisation_policy_fingerprint": normalisation_policy_fingerprint,
+        "normalisation_directions": normalisation_directions,
         "scalar_0_100": scalar,
         "baseline_json": args.baseline_json,
         "anchor_json": args.anchor_json,
         "ladder_json": args.ladder_json,
         "selected_component_anchor": selected_anchor,
+        "negative_component_anchor": negative_anchor,
         "component_anchor_sources": anchor_sources,
         "records": records,
     }

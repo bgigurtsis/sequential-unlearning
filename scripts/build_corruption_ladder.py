@@ -1,19 +1,20 @@
 """Certify the decay-scalar components on a synthetic corruption ladder.
 
-Takes the day-0 baseline generations (from eval_decay_scalar.py) and builds
-11 rungs of 0-100% token corruption.  Half the battery (even indices) gets
-loop corruption - the corrupted suffix is replaced by a repeated trigram -
-and half (odd indices) gets shuffle corruption - a corrupted fraction of
-token positions is permuted.  Each rung is scored with the same R/D/F
-component code as the real scalar, plus J from the frozen clean judge.  No
-model is needed for the corrupted text itself, only the judge.
+Version 2 uses two explicit, nested corruption tracks.  R, D and J are
+scored on form-corrupted text.  Each record gets one fixed terminal loop or
+shuffle target and one fixed position order; higher rungs reveal a superset
+of that same plan.  F is scored on a factual-item dropout track: factual
+records have a stable SHA-256 order and higher rungs replace a superset of
+whole answers with the empty response.
 
-The certification gate: every component must be monotone rung-to-rung
-(Spearman vs rung fraction); a component that plateaus is flagged for
-down-weighting per thread T7.
+The split is intentional.  Token shuffle preserves the answer word bag and
+therefore cannot certify a token-F1 factual-loss metric.  Item dropout tests
+the failure mode F claims to measure without changing F's weight or relaxing
+the precommitted strict rung-to-rung nondecreasing gate.
 """
 
 import argparse
+import hashlib
 import json
 import random
 import sys
@@ -36,6 +37,7 @@ from transformers import AutoTokenizer  # noqa: E402
 
 TOKENIZER_ID = "google/gemma-3-4b-it"
 RUNGS = [round(0.1 * step, 1) for step in range(11)]
+LADDER_VERSION = "nested_dual_track_v2"
 
 
 def parse_args():
@@ -43,6 +45,11 @@ def parse_args():
     parser.add_argument("baseline_json")
     parser.add_argument("output_json")
     parser.add_argument("--judge-model", default="google/gemma-3-4b-it")
+    parser.add_argument(
+        "--tokenizer-model",
+        default=TOKENIZER_ID,
+        help="tokenizer source; pass the pinned clean-parent snapshot for certification",
+    )
     parser.add_argument("--batch-size", type=int, default=8)
     parser.add_argument("--seed", type=int, default=0)
     parser.add_argument("--skip-judge", action="store_true")
@@ -52,36 +59,116 @@ def parse_args():
     return parser.parse_args()
 
 
-def corrupt_loop(token_ids, fraction, rng):
-    if not token_ids or fraction <= 0:
-        return list(token_ids)
-    n = len(token_ids)
-    keep = max(0, n - max(1, round(fraction * n)))
-    prefix = list(token_ids[:keep])
-    source = prefix if len(prefix) >= 3 else list(token_ids[:3])
-    if not source:
-        return list(token_ids)
-    start = rng.randrange(max(1, len(source) - 2))
-    loop = source[start : start + 3] or source[:1]
-    corrupted = prefix[:]
-    while len(corrupted) < n:
-        corrupted.extend(loop)
-    return corrupted[:n]
+def stable_digest(seed, namespace, record_id):
+    """Return a cross-platform deterministic digest for one plan element."""
+    payload = f"{LADDER_VERSION}\0{seed}\0{namespace}\0{record_id}"
+    return hashlib.sha256(payload.encode("utf-8")).hexdigest()
 
 
-def corrupt_shuffle(token_ids, fraction, rng):
-    if len(token_ids) < 2 or fraction <= 0:
-        return list(token_ids)
-    n = len(token_ids)
-    count = max(2, round(fraction * n))
-    count = min(count, n)
-    positions = rng.sample(range(n), count)
-    values = [token_ids[position] for position in positions]
-    rng.shuffle(values)
+def stable_rng(seed, namespace, record_id):
+    digest = stable_digest(seed, namespace, record_id)
+    return random.Random(int(digest, 16))
+
+
+def sha256_of_file(path, chunk=1 << 20):
+    digest = hashlib.sha256()
+    with Path(path).open("rb") as handle:
+        while block := handle.read(chunk):
+            digest.update(block)
+    return digest.hexdigest()
+
+
+def support_file_hashes(model_path):
+    directory = Path(model_path)
+    if not directory.is_dir():
+        return None
+    return {
+        path.name: sha256_of_file(path)
+        for path in sorted(path for path in directory.iterdir() if path.is_file())
+        if path.suffix not in {".safetensors", ".bin"}
+        and path.name != "decay_dose.json"
+    }
+
+
+def model_weight_hashes(model_path):
+    directory = Path(model_path)
+    if not directory.is_dir():
+        return None
+    weight_files = sorted(
+        list(directory.glob("*.safetensors")) + list(directory.glob("*.bin"))
+    )
+    return {path.name: sha256_of_file(path) for path in weight_files}
+
+
+def corruption_count(fraction, size):
+    if fraction <= 0.0 or size <= 0:
+        return 0
+    return min(size, max(1, round(fraction * size)))
+
+
+def build_form_plan(token_ids, mode, seed, record_id):
+    """Build one immutable corruption target and reveal order per record."""
+    original = list(token_ids)
+    size = len(original)
+    if mode == "loop":
+        # A fixed source and absolute phase make every previously corrupted
+        # suffix position retain the same value as the suffix grows leftward.
+        loop = original[: min(3, size)]
+        target = [loop[position % len(loop)] for position in range(size)] if loop else []
+        position_order = list(range(size - 1, -1, -1))
+        metadata = {
+            "loop_source_positions": list(range(len(loop))),
+            "loop_token_ids": loop,
+        }
+    elif mode == "shuffle":
+        # Draw the full shuffled endpoint once.  Intermediate rungs reveal a
+        # nested coordinate subset of this same endpoint; no rung redraws or
+        # undoes an earlier coordinate.
+        target_rng = stable_rng(seed, "form-shuffle-target", record_id)
+        target = list(original)
+        target_rng.shuffle(target)
+        order_rng = stable_rng(seed, "form-shuffle-order", record_id)
+        position_order = list(range(size))
+        order_rng.shuffle(position_order)
+        metadata = {
+            "terminal_preserves_token_multiset": True,
+        }
+    else:
+        raise ValueError(f"unknown form corruption mode: {mode}")
+    return {
+        "record_id": record_id,
+        "mode": mode,
+        "token_count": size,
+        "position_order": position_order,
+        "terminal_target_token_ids": target,
+        "target_digest": hashlib.sha256(
+            json.dumps(target, separators=(",", ":")).encode("utf-8")
+        ).hexdigest(),
+        **metadata,
+    }
+
+
+def apply_form_plan(token_ids, plan, fraction):
+    """Reveal a nested prefix of a fixed plan's coordinate order."""
     corrupted = list(token_ids)
-    for position, value in zip(positions, values):
-        corrupted[position] = value
+    count = corruption_count(fraction, len(corrupted))
+    for position in plan["position_order"][:count]:
+        corrupted[position] = plan["terminal_target_token_ids"][position]
     return corrupted
+
+
+def factual_dropout_order(records, seed):
+    """Return factual record ids in a stable, auditable dropout order."""
+    factual_ids = [record["id"] for record in records if record["set"] == "factual"]
+    return sorted(
+        factual_ids,
+        key=lambda record_id: stable_digest(seed, "factual-item-dropout", record_id),
+    )
+
+
+def factual_dropout_text(record, dropout_rank, factual_count, fraction):
+    dropped = dropout_rank < corruption_count(fraction, factual_count)
+    return ("" if dropped else record["generation"]), dropped
 
 
 def spearman(xs, ys):
@@ -119,42 +206,76 @@ def main():
     records = baseline["records"]
     if args.limit:
         records = records[: args.limit]
-    tokenizer = AutoTokenizer.from_pretrained(TOKENIZER_ID)
+    tokenizer = AutoTokenizer.from_pretrained(args.tokenizer_model)
     tokenizer.padding_side = "left"
     if tokenizer.pad_token_id is None:
         tokenizer.pad_token_id = tokenizer.eos_token_id
 
+    prepared = []
+    form_plans = []
+    for record_index, record in enumerate(records):
+        ids = tokenizer(record["generation"], add_special_tokens=False).input_ids
+        mode = "loop" if record_index % 2 == 0 else "shuffle"
+        plan = build_form_plan(ids, mode, args.seed, record["id"])
+        prepared.append((record, ids, plan))
+        form_plans.append(plan)
+
+    dropout_order = factual_dropout_order(records, args.seed)
+    dropout_rank = {
+        record_id: rank for rank, record_id in enumerate(dropout_order)
+    }
+    factual_count = len(dropout_order)
+    if args.limit is None and factual_count != 40:
+        raise ValueError(
+            f"full v2 ladder requires exactly 40 factual records; found {factual_count}"
+        )
+
     rung_payloads = []
-    for rung_index, fraction in enumerate(RUNGS):
+    for fraction in RUNGS:
         rung_records = []
-        for record_index, record in enumerate(records):
-            rng = random.Random(
-                (args.seed, rung_index, record_index).__repr__()
-            )
-            ids = tokenizer(
-                record["generation"], add_special_tokens=False
-            ).input_ids
-            mode = "loop" if record_index % 2 == 0 else "shuffle"
-            if fraction == 0.0:
-                corrupted_ids = list(ids)
-            elif mode == "loop":
-                corrupted_ids = corrupt_loop(ids, fraction, rng)
-            else:
-                corrupted_ids = corrupt_shuffle(ids, fraction, rng)
+        dropped_ids = []
+        for record, ids, plan in prepared:
+            corrupted_ids = apply_form_plan(ids, plan, fraction)
             text = tokenizer.decode(corrupted_ids, skip_special_tokens=True)
             entry = {
                 "id": record["id"],
                 "set": record["set"],
-                "mode": mode,
+                "mode": plan["mode"],
                 "prompt": record["prompt"],
+                # Keep `corrupted` for the existing judge/archive consumers;
+                # the explicit name documents which track R/D/J consume.
                 "corrupted": text,
+                "form_corrupted": text,
+                "form_revealed_positions": corruption_count(fraction, len(ids)),
+                "form_plan_target_digest": plan["target_digest"],
                 "seq_rep_4": seq_rep_4(corrupted_ids),
                 "distinct_2_at_128": distinct_2(corrupted_ids),
             }
             if record["set"] == "factual":
-                entry["token_f1"] = token_f1(text, record["reference"])
+                rank = dropout_rank[record["id"]]
+                f_text, dropped = factual_dropout_text(
+                    record, rank, factual_count, fraction
+                )
+                entry.update(
+                    {
+                        "factual_dropout_rank": rank,
+                        "factual_dropped": dropped,
+                        "f_corrupted": f_text,
+                        "token_f1": token_f1(f_text, record["reference"]),
+                    }
+                )
+                if dropped:
+                    dropped_ids.append(record["id"])
             rung_records.append(entry)
-        rung_payloads.append({"fraction": fraction, "records": rung_records})
+        rung_payloads.append(
+            {
+                "fraction": fraction,
+                "form_reveal_fraction": fraction,
+                "factual_dropout_count": len(dropped_ids),
+                "factual_dropped_ids": dropped_ids,
+                "records": rung_records,
+            }
+        )
         print(f"built rung {fraction:.1f} ({len(rung_records)} records)")
 
     if not args.skip_judge:
@@ -174,6 +295,10 @@ def main():
             )
             for entry, output in zip(rung["records"], outputs):
                 entry["judge_score"] = parse_judge_score(output)
+                entry["judge_raw"] = output
+            rung["judge_unparsed_count"] = sum(
+                entry["judge_score"] is None for entry in rung["records"]
+            )
             print(f"judged rung {rung['fraction']:.1f}")
         free_model(judge)
 
@@ -212,23 +337,58 @@ def main():
             "strictly_nondecreasing": all(delta >= -1e-9 for delta in deltas),
             "max_backstep": min(deltas),
             "range": max(values) - min(values),
+            "plateau": (max(values) - min(values)) <= 1e-6,
         }
 
     payload = {
+        "ladder_version": LADDER_VERSION,
+        "corruption_tracks": {
+            "R": "form_corrupted",
+            "D": "form_corrupted",
+            "J": "form_corrupted",
+            "F": "factual_item_dropout",
+        },
+        "form_plan_semantics": (
+            "one fixed terminal target and position order per record; each "
+            "rung reveals a superset of coordinates"
+        ),
+        "factual_dropout_semantics": (
+            "stable SHA-256 record order; each rung replaces a superset of "
+            "whole factual responses with empty text for F scoring only"
+        ),
         "baseline_json": args.baseline_json,
+        "baseline_sha256": hashlib.sha256(
+            Path(args.baseline_json).read_bytes()
+        ).hexdigest(),
         "judge_model": args.judge_model if not args.skip_judge else None,
+        "judge_support_sha256": (
+            support_file_hashes(args.judge_model) if not args.skip_judge else None
+        ),
+        "judge_weight_sha256": (
+            model_weight_hashes(args.judge_model) if not args.skip_judge else None
+        ),
+        "tokenizer_model": args.tokenizer_model,
+        "tokenizer_support_sha256": support_file_hashes(args.tokenizer_model),
+        "judge_parse_complete": (
+            not args.skip_judge
+            and all(rung.get("judge_unparsed_count") == 0 for rung in rung_payloads)
+        ),
         "seed": args.seed,
         "limit": args.limit,
         "rung_fractions": fractions,
+        "factual_dropout_order": dropout_order,
+        "form_plans": form_plans,
         "component_summary": summary_rows,
         "monotonicity": monotonicity,
         "rungs": rung_payloads,
     }
     output = Path(args.output_json)
     output.parent.mkdir(parents=True, exist_ok=True)
-    output.write_text(
+    temporary = output.with_name(output.name + ".tmp")
+    temporary.write_text(
         json.dumps(payload, indent=2, ensure_ascii=False) + "\n", encoding="utf-8"
     )
+    temporary.replace(output)
     print("component_summary=" + json.dumps(summary_rows))
     print("monotonicity=" + json.dumps(monotonicity))
     print(f"Wrote {output}")
