@@ -1,0 +1,733 @@
+{
+  "pilot_version": "probe2_weight_noise_dial_pilot_v3",
+  "certification_scope": "diagnostic_only_not_probe2_pass",
+  "outcome": "FAIL_WEIGHT_NOISE",
+  "config_fingerprint": "3657f74df9aa6b8a64e69ddf235608956c53f7ed4305ec4c73c66a909c12a4e2",
+  "v2_ruler": {
+    "root": "/home/ubuntu/sequential-unlearning/derisk/probe2_noise_v2",
+    "seal": {
+      "path": "/home/ubuntu/sequential-unlearning/derisk/probe2_noise_v2/MANIFEST.sha256",
+      "sha256": "f6ced0bfb1530b61cf0f01778b9a082518c412be3a034b48d2841215d0fccd14",
+      "entry_count": 34
+    },
+    "summary_sha256": "e8bb1b91e6ddfe37a5a27a676a96488585b3abb19d106cd0e678ade26f94c6e7",
+    "failure_certificate_sha256": "43f98f989c22deb95a78c4e5aa441fdda94e2e7a9836010be7ee554bcf174d5b",
+    "parent_identity_sha256": "ccd5b701e35097c8d7f2e5f4144e50bc41df7e4d796e6c8a7fb85a8980a0fbf3",
+    "anchor_sidecar_sha256": "948fd22db2e1cfcbfd5b4ddaa238a87065989d70da819f85e799bb95a42e8323",
+    "policy_fingerprint": "38fa6c2176e7815f9561bd4ca993fc922c51cbc7a749d6f6ed1975f9ede94241",
+    "prompt_sha256": {
+      "battery": "0bef0de5ba69c3f11e9349f5de9a2867d61a84e3994428f07ecc97477e29ed98",
+      "capability": "46c2a2af8be47adf8b81605fc4e5bafe003f6b2a489835c0782687b3a4a478e1",
+      "survival": "ecf20c67012bdfb9c3f4130e390626f474d9bf15575227cb036fc19f29f57ab9"
+    },
+    "baseline_scalar": 0.0,
+    "terminal_scalar": 100.0,
+    "baseline_normalised_components": {
+      "R": 0.0,
+      "D": 0.0,
+      "J": 0.0,
+      "F": 0.0
+    },
+    "terminal_normalised_components": {
+      "R": 1.0,
+      "D": 1.0,
+      "J": 1.0,
+      "F": 1.0
+    }
+  },
+  "arm_a": {
+    "arm": "A",
+    "seed": 11,
+    "complete_grid": false,
+    "points": [
+      {
+        "alpha": 0.0,
+        "beta": null,
+        "seed": null,
+        "scheduled": false,
+        "historical_seed_exception": true,
+        "scalar": 0.0,
+        "reference": "sealed_v2_baseline",
+        "reference_artifact": "/home/ubuntu/sequential-unlearning/derisk/probe2_noise_v2/baseline/scalar.json",
+        "reference_artifact_sha256": "c71847d32c794bea9b28a7c80678c29487e2e16b2ee593c990dcf56916f128b9"
+      },
+      {
+        "alpha": 0.0025,
+        "beta": 1.0,
+        "seed": 11,
+        "scheduled": true,
+        "historical_seed_exception": false,
+        "scalar": 1.3575057536535804,
+        "components": {
+          "R": 0.026814675555943395,
+          "D": 0.09349360474389012,
+          "F": 0.04166666666666663,
+          "J": 0.01734693877551019
+        },
+        "normalised_components": {
+          "R": 0.036627581108289745,
+          "D": 0.029454415063089115,
+          "J": 0.0,
+          "F": 0.0
+        },
+        "normalisation_directions": {
+          "R": "negative_token_salad",
+          "D": "negative_token_salad",
+          "J": "neutral_baseline",
+          "F": "neutral_baseline"
+        },
+        "scalar_json": "/home/ubuntu/sequential-unlearning/derisk/probe2_noise_v3_pilot/arm_a/alpha0.0025/scalar.json",
+        "scalar_sha256": "5b6afb50b1cd2a889c6351ec651a5fdfa39d29ecece8204f40c6ea35641d9eef",
+        "dose_sidecar": "/home/ubuntu/sequential-unlearning/derisk/probe2_noise_v3_pilot/arm_a/alpha0.0025/decay_dose.json",
+        "dose_sidecar_sha256": "cd41648af7840b7125b7c943b0266dce95ab9237ae99ea533eea092b97b40816",
+        "checkpoint_deleted": true
+      },
+      {
+        "alpha": 0.005,
+        "beta": 1.0,
+        "seed": 11,
+        "scheduled": true,
+        "historical_seed_exception": false,
+        "scalar": 0.6293893939232034,
+        "components": {
+          "R": 0.02712674201776267,
+          "D": 0.09631105198175138,
+          "F": 0.04166666666666663,
+          "J": 0.020408163265306145
+        },
+        "normalised_components": {
+          "R": 0.0248635355326305,
+          "D": 0.0005200670404960594,
+          "J": 0.0,
+          "F": 0.0
+        },
+        "normalisation_directions": {
+          "R": "negative_token_salad",
+          "D": "positive_synthetic",
+          "J": "neutral_baseline",
+          "F": "neutral_baseline"
+        },
+        "scalar_json": "/home/ubuntu/sequential-unlearning/derisk/probe2_noise_v3_pilot/arm_a/alpha0.005/scalar.json",
+        "scalar_sha256": "4d8b0864e4383b1c476beeb7c146737fe5ebe02463244e71f54786a1604136be",
+        "dose_sidecar": "/home/ubuntu/sequential-unlearning/derisk/probe2_noise_v3_pilot/arm_a/alpha0.005/decay_dose.json",
+        "dose_sidecar_sha256": "e60373e9b980d07591bd69fa9ae8a355d788485a9d2629e835443cb0b1fb81d3",
+        "checkpoint_deleted": true
+      },
+      {
+        "alpha": 0.01,
+        "beta": 1.0,
+        "seed": 11,
+        "scheduled": true,
+        "historical_seed_exception": false,
+        "scalar": 0.4302119839544866,
+        "components": {
+          "R": 0.0274870023243309,
+          "D": 0.09837326054936057,
+          "F": 0.04166666666666663,
+          "J": 0.021428571428571352
+        },
+        "normalised_components": {
+          "R": 0.01128271482904575,
+          "D": 0.005928163668127923,
+          "J": 0.0016920473773264014,
+          "F": 0.0
+        },
+        "normalisation_directions": {
+          "R": "negative_token_salad",
+          "D": "positive_synthetic",
+          "J": "positive_synthetic",
+          "F": "neutral_baseline"
+        },
+        "scalar_json": "/home/ubuntu/sequential-unlearning/derisk/probe2_noise_v3_pilot/arm_a/alpha0.01/scalar.json",
+        "scalar_sha256": "42e5be6e869bc7ec99c3906a4ff480c3ffdd5ce545fba45161dcf3fa3790069c",
+        "dose_sidecar": "/home/ubuntu/sequential-unlearning/derisk/probe2_noise_v3_pilot/arm_a/alpha0.01/decay_dose.json",
+        "dose_sidecar_sha256": "d2c06100484ec4df56a3740e7b2134e3580a050fff76212db72fc97b228fa9e0",
+        "checkpoint_deleted": true
+      },
+      {
+        "alpha": 0.02,
+        "beta": 1.0,
+        "seed": 11,
+        "scheduled": true,
+        "historical_seed_exception": false,
+        "scalar": 0.3468269825877955,
+        "components": {
+          "R": 0.03166879430858003,
+          "D": 0.09902240068235058,
+          "F": 0.016666666666666607,
+          "J": 0.01836734693877562
+        },
+        "normalised_components": {
+          "R": 0.009294767666799991,
+          "D": 0.007630519394519714,
+          "J": 0.0,
+          "F": 0.0
+        },
+        "normalisation_directions": {
+          "R": "positive_synthetic",
+          "D": "positive_synthetic",
+          "J": "neutral_baseline",
+          "F": "neutral_baseline"
+        },
+        "scalar_json": "/home/ubuntu/sequential-unlearning/derisk/probe2_noise_v3_pilot/arm_a/alpha0.02/scalar.json",
+        "scalar_sha256": "e7148e9c121040231a93604797c0b66a040102d79dfab6e9ac23dcce8e8bcad7",
+        "dose_sidecar": "/home/ubuntu/sequential-unlearning/derisk/probe2_noise_v3_pilot/arm_a/alpha0.02/decay_dose.json",
+        "dose_sidecar_sha256": "1a593df2b93d8fce1e5c3e4c042014a0a036a04c2d93870a081a24291a92b318",
+        "checkpoint_deleted": true
+      },
+      {
+        "alpha": 0.03,
+        "beta": 1.0,
+        "seed": 11,
+        "scheduled": true,
+        "historical_seed_exception": false,
+        "scalar": 1.1439975329110765,
+        "components": {
+          "R": 0.032494583374430494,
+          "D": 0.10145197936538375,
+          "F": 0.06666666666666665,
+          "J": 0.019387755102040827
+        },
+        "normalised_components": {
+          "R": 0.011271723151121807,
+          "D": 0.014002036072636828,
+          "J": 0.0,
+          "F": 0.026086956521739153
+        },
+        "normalisation_directions": {
+          "R": "positive_synthetic",
+          "D": "positive_synthetic",
+          "J": "neutral_baseline",
+          "F": "positive_synthetic"
+        },
+        "scalar_json": "/home/ubuntu/sequential-unlearning/derisk/probe2_noise_v3_pilot/arm_a/alpha0.03/scalar.json",
+        "scalar_sha256": "8dbb74407c6a18853e3dbe135f5afdb2e68f4eb8232236ccb4796932a4ebe9cb",
+        "dose_sidecar": "/home/ubuntu/sequential-unlearning/derisk/probe2_noise_v3_pilot/arm_a/alpha0.03/decay_dose.json",
+        "dose_sidecar_sha256": "8ba603049b011fe4808140a1b8afe2c6387f9163ed98648abad5a8525870cd3b",
+        "checkpoint_deleted": true
+      },
+      {
+        "alpha": 0.04,
+        "beta": 1.0,
+        "seed": 11,
+        "scheduled": true,
+        "historical_seed_exception": false,
+        "scalar": 2.94769517373244,
+        "components": {
+          "R": 0.037787938833579886,
+          "D": 0.11363851474680364,
+          "F": 0.09166666666666656,
+          "J": 0.026530612244897944
+        },
+        "normalised_components": {
+          "R": 0.023944121634205125,
+          "D": 0.04596095717011872,
+          "J": 0.010152284263959328,
+          "F": 0.05217391304347819
+        },
+        "normalisation_directions": {
+          "R": "positive_synthetic",
+          "D": "positive_synthetic",
+          "J": "positive_synthetic",
+          "F": "positive_synthetic"
+        },
+        "scalar_json": "/home/ubuntu/sequential-unlearning/derisk/probe2_noise_v3_pilot/arm_a/alpha0.04/scalar.json",
+        "scalar_sha256": "594ab2a6386330e6b0c81c9d73ae5cb51b8c21e6ac077dc98c63dd87ace2509e",
+        "dose_sidecar": "/home/ubuntu/sequential-unlearning/derisk/probe2_noise_v3_pilot/arm_a/alpha0.04/decay_dose.json",
+        "dose_sidecar_sha256": "7ab894c1ecd6e90b811e4a19afc397cc97b921668a15c03bdde616c3cc0e4e13",
+        "checkpoint_deleted": true
+      },
+      {
+        "alpha": 0.05,
+        "beta": 1.0,
+        "seed": 11,
+        "scheduled": true,
+        "historical_seed_exception": false,
+        "scalar": 6.966618007615938,
+        "components": {
+          "R": 0.058083405176241026,
+          "D": 0.1284603495989357,
+          "F": 0.10416666666666663,
+          "J": 0.0591836734693878
+        },
+        "normalised_components": {
+          "R": 0.07253187261353132,
+          "D": 0.08483089318830839,
+          "J": 0.06429780033840951,
+          "F": 0.06521739130434782
+        },
+        "normalisation_directions": {
+          "R": "positive_synthetic",
+          "D": "positive_synthetic",
+          "J": "positive_synthetic",
+          "F": "positive_synthetic"
+        },
+        "scalar_json": "/home/ubuntu/sequential-unlearning/derisk/probe2_noise_v3_pilot/arm_a/alpha0.05/scalar.json",
+        "scalar_sha256": "5c54da8520d533df1cce3ae4d1487b6c1f4beb148aac101c1cff536a46330fa6",
+        "dose_sidecar": "/home/ubuntu/sequential-unlearning/derisk/probe2_noise_v3_pilot/arm_a/alpha0.05/decay_dose.json",
+        "dose_sidecar_sha256": "f02bb933356883dacaa5ce8f71b3019724ea62037590968bc04df281549d5956",
+        "checkpoint_deleted": true
+      },
+      {
+        "alpha": 0.055,
+        "beta": 1.0,
+        "seed": 11,
+        "scheduled": true,
+        "historical_seed_exception": false,
+        "scalar": 14.086435883804551,
+        "components": {
+          "R": 0.10209600097740074,
+          "D": 0.16696875023646607,
+          "F": 0.09999999999999998,
+          "J": 0.11224489795918369
+        },
+        "normalised_components": {
+          "R": 0.17789890427643074,
+          "D": 0.18581832719202132,
+          "J": 0.15228426395939085,
+          "F": 0.06086956521739132
+        },
+        "normalisation_directions": {
+          "R": "positive_synthetic",
+          "D": "positive_synthetic",
+          "J": "positive_synthetic",
+          "F": "positive_synthetic"
+        },
+        "scalar_json": "/home/ubuntu/sequential-unlearning/derisk/probe2_noise_v3_pilot/arm_a/alpha0.055/scalar.json",
+        "scalar_sha256": "ea2c873dd985777918a73cd72d6b07fa284966a3588bedba755d32a16d796070",
+        "dose_sidecar": "/home/ubuntu/sequential-unlearning/derisk/probe2_noise_v3_pilot/arm_a/alpha0.055/decay_dose.json",
+        "dose_sidecar_sha256": "592f2135f3eebd2b8467772a29368f0d689e906e18ca57a4a29bb65ee6637e8c",
+        "checkpoint_deleted": true
+      },
+      {
+        "alpha": 0.06,
+        "beta": 1.0,
+        "seed": 11,
+        "scheduled": true,
+        "historical_seed_exception": false,
+        "scalar": 35.422700232493106,
+        "components": {
+          "R": 0.24869523998103737,
+          "D": 0.2150057085919982,
+          "F": 0.19583333333333341,
+          "J": 0.25306122448979596
+        },
+        "normalised_components": {
+          "R": 0.5288604046532417,
+          "D": 0.311794194310753,
+          "J": 0.38578680203045684,
+          "F": 0.16086956521739143
+        },
+        "normalisation_directions": {
+          "R": "positive_synthetic",
+          "D": "positive_synthetic",
+          "J": "positive_synthetic",
+          "F": "positive_synthetic"
+        },
+        "scalar_json": "/home/ubuntu/sequential-unlearning/derisk/probe2_noise_v3_pilot/arm_a/alpha0.06/scalar.json",
+        "scalar_sha256": "e31807119f5474569d4b07cd519e4592a2b2173c441a9f51cf58230ccb34dcb7",
+        "dose_sidecar": "/home/ubuntu/sequential-unlearning/derisk/probe2_noise_v3_pilot/arm_a/alpha0.06/decay_dose.json",
+        "dose_sidecar_sha256": "3648c95696fb4d88d727f30b610761edc7148d207b2b3071e5d9ecc1095e6e30",
+        "checkpoint_deleted": true
+      },
+      {
+        "alpha": 1.0,
+        "beta": 1.0,
+        "seed": 0,
+        "scheduled": false,
+        "historical_seed_exception": true,
+        "scalar": 100.0,
+        "reference": "sealed_v2_beta1_alpha1_endpoint",
+        "reference_artifact": "/home/ubuntu/sequential-unlearning/derisk/probe2_noise_v2/anchor/scalar.json",
+        "reference_artifact_sha256": "4379ad371c84760f38da59f4ec667083bee05423e3638cf039b3b3516e7220e8"
+      }
+    ],
+    "spearman": 0.7666666666666667,
+    "spearman_points": [
+      {
+        "alpha": 0.0025,
+        "raw_scalar": 1.3575057536535804
+      },
+      {
+        "alpha": 0.005,
+        "raw_scalar": 0.6293893939232034
+      },
+      {
+        "alpha": 0.01,
+        "raw_scalar": 0.4302119839544866
+      },
+      {
+        "alpha": 0.02,
+        "raw_scalar": 0.3468269825877955
+      },
+      {
+        "alpha": 0.03,
+        "raw_scalar": 1.1439975329110765
+      },
+      {
+        "alpha": 0.04,
+        "raw_scalar": 2.94769517373244
+      },
+      {
+        "alpha": 0.05,
+        "raw_scalar": 6.966618007615938
+      },
+      {
+        "alpha": 0.055,
+        "raw_scalar": 14.086435883804551
+      },
+      {
+        "alpha": 0.06,
+        "raw_scalar": 35.422700232493106
+      }
+    ],
+    "loo_errors": {
+      "0.0025": 0.9641373824515783,
+      "0.005": 0.728116359730377,
+      "0.01": 0.9272937696990937,
+      "0.02": 1.010678771065785,
+      "0.03": 0.6500350030407076,
+      "0.04": 0.13873289084725693,
+      "0.05": 1.3264155842114187,
+      "0.055": 7.745242941978418,
+      "0.06": 20.140143389147006
+    },
+    "max_loo_error": 20.140143389147006,
+    "controller_mapping": null,
+    "promotion_screen_pass": false,
+    "failure_reasons": [
+      "incomplete_grid",
+      "pilot_loo_above_6",
+      "spearman_below_0_95",
+      "unresolved_local_jump_gt_20"
+    ],
+    "screen_is_not_certification": true
+  },
+  "arm_b": {
+    "arm": "B",
+    "seed": 11,
+    "complete_grid": false,
+    "points": [
+      {
+        "alpha": 0.0,
+        "beta": null,
+        "seed": null,
+        "scheduled": false,
+        "historical_seed_exception": true,
+        "scalar": 0.0,
+        "reference": "sealed_v2_baseline",
+        "reference_artifact": "/home/ubuntu/sequential-unlearning/derisk/probe2_noise_v2/baseline/scalar.json",
+        "reference_artifact_sha256": "c71847d32c794bea9b28a7c80678c29487e2e16b2ee593c990dcf56916f128b9"
+      },
+      {
+        "alpha": 0.05,
+        "beta": 0.1,
+        "seed": 11,
+        "scheduled": true,
+        "historical_seed_exception": false,
+        "scalar": 0.12506379776436358,
+        "components": {
+          "R": 0.02873143761728657,
+          "D": 0.09785401661109283,
+          "F": 0.04166666666666663,
+          "J": 0.020408163265306145
+        },
+        "normalised_components": {
+          "R": 0.002262677196721602,
+          "D": 0.0045664578564215685,
+          "J": 0.0,
+          "F": 0.0
+        },
+        "normalisation_directions": {
+          "R": "positive_synthetic",
+          "D": "positive_synthetic",
+          "J": "neutral_baseline",
+          "F": "neutral_baseline"
+        },
+        "scalar_json": "/home/ubuntu/sequential-unlearning/derisk/probe2_noise_v3_pilot/arm_b/alpha0.05/scalar.json",
+        "scalar_sha256": "09f970baf0ca7a97752c2baaf99cdba5947dd1e711ee17ee4c2beb9952ec23ab",
+        "dose_sidecar": "/home/ubuntu/sequential-unlearning/derisk/probe2_noise_v3_pilot/arm_b/alpha0.05/decay_dose.json",
+        "dose_sidecar_sha256": "f4828207655751556e6e4f3043ec0ccf618d774aa999dc027e3b750d91f27fa2",
+        "checkpoint_deleted": true
+      },
+      {
+        "alpha": 0.1,
+        "beta": 0.1,
+        "seed": 11,
+        "scheduled": true,
+        "historical_seed_exception": false,
+        "scalar": 0.22082327625738332,
+        "components": {
+          "R": 0.029489163507126027,
+          "D": 0.09540785218741932,
+          "F": 0.016666666666666607,
+          "J": 0.019387755102040827
+        },
+        "normalised_components": {
+          "R": 0.004076688080951451,
+          "D": 0.007927071615573138,
+          "J": 0.0,
+          "F": 0.0
+        },
+        "normalisation_directions": {
+          "R": "positive_synthetic",
+          "D": "negative_token_salad",
+          "J": "neutral_baseline",
+          "F": "neutral_baseline"
+        },
+        "scalar_json": "/home/ubuntu/sequential-unlearning/derisk/probe2_noise_v3_pilot/arm_b/alpha0.1/scalar.json",
+        "scalar_sha256": "3320437946d2a21d21010286e3ef7ced3ca06a450d4385fd1eebf5c6c176eb91",
+        "dose_sidecar": "/home/ubuntu/sequential-unlearning/derisk/probe2_noise_v3_pilot/arm_b/alpha0.1/decay_dose.json",
+        "dose_sidecar_sha256": "83c01879023edfcc4b0f264ec05e109d534f29cdad4fa3661e801c515d16bb18",
+        "checkpoint_deleted": true
+      },
+      {
+        "alpha": 0.15,
+        "beta": 0.1,
+        "seed": 11,
+        "scheduled": true,
+        "historical_seed_exception": false,
+        "scalar": 0.42801720229419404,
+        "components": {
+          "R": 0.03220236918034981,
+          "D": 0.10027453695655941,
+          "F": 0.016666666666666607,
+          "J": 0.01632653061224487
+        },
+        "normalised_components": {
+          "R": 0.010572156545708443,
+          "D": 0.0109142192434322,
+          "J": 0.0,
+          "F": 0.0
+        },
+        "normalisation_directions": {
+          "R": "positive_synthetic",
+          "D": "positive_synthetic",
+          "J": "neutral_baseline",
+          "F": "neutral_baseline"
+        },
+        "scalar_json": "/home/ubuntu/sequential-unlearning/derisk/probe2_noise_v3_pilot/arm_b/alpha0.15/scalar.json",
+        "scalar_sha256": "cf07d35d9d37946363d5d11fae4645001522d524913eb5fbf64f026fa464779a",
+        "dose_sidecar": "/home/ubuntu/sequential-unlearning/derisk/probe2_noise_v3_pilot/arm_b/alpha0.15/decay_dose.json",
+        "dose_sidecar_sha256": "fa57745e53d09e014b039677e5769829d813bc63b89280d223658f02860b952a",
+        "checkpoint_deleted": true
+      },
+      {
+        "alpha": 0.2,
+        "beta": 0.1,
+        "seed": 11,
+        "scheduled": true,
+        "historical_seed_exception": false,
+        "scalar": 0.6286084877788736,
+        "components": {
+          "R": 0.032696499257752074,
+          "D": 0.10462201170465679,
+          "F": 0.016666666666666607,
+          "J": 0.01836734693877562
+        },
+        "normalised_components": {
+          "R": 0.011755113800637339,
+          "D": 0.022315376184196007,
+          "J": 0.0,
+          "F": 0.0
+        },
+        "normalisation_directions": {
+          "R": "positive_synthetic",
+          "D": "positive_synthetic",
+          "J": "neutral_baseline",
+          "F": "neutral_baseline"
+        },
+        "scalar_json": "/home/ubuntu/sequential-unlearning/derisk/probe2_noise_v3_pilot/arm_b/alpha0.2/scalar.json",
+        "scalar_sha256": "5d58408c14c54f264dac0d1adaeab31b06d91a16aea460d7a24fae1d029e1fe6",
+        "dose_sidecar": "/home/ubuntu/sequential-unlearning/derisk/probe2_noise_v3_pilot/arm_b/alpha0.2/decay_dose.json",
+        "dose_sidecar_sha256": "ce0f8a57dab5f4ff422a28ce4182f22738588b075400728b7465fa745dcb3003",
+        "checkpoint_deleted": true
+      },
+      {
+        "alpha": 0.25,
+        "beta": 0.1,
+        "seed": 11,
+        "scheduled": true,
+        "historical_seed_exception": false,
+        "scalar": 1.0990814691828106,
+        "components": {
+          "R": 0.03217222892714522,
+          "D": 0.11286322086316092,
+          "F": 0.016666666666666607,
+          "J": 0.02346938775510199
+        },
+        "normalised_components": {
+          "R": 0.010500000178742863,
+          "D": 0.04392776600633028,
+          "J": 0.005076142131979572,
+          "F": 0.0
+        },
+        "normalisation_directions": {
+          "R": "positive_synthetic",
+          "D": "positive_synthetic",
+          "J": "positive_synthetic",
+          "F": "neutral_baseline"
+        },
+        "scalar_json": "/home/ubuntu/sequential-unlearning/derisk/probe2_noise_v3_pilot/arm_b/alpha0.25/scalar.json",
+        "scalar_sha256": "b1c92ee4f7595d4c1591ce07121470d498796a53467c9ac78ae972dbf9fcfbbf",
+        "dose_sidecar": "/home/ubuntu/sequential-unlearning/derisk/probe2_noise_v3_pilot/arm_b/alpha0.25/decay_dose.json",
+        "dose_sidecar_sha256": "8eac28660e45ff677f9480f37135cae30dce8c5f5336a85433b86c6e505e4afd",
+        "checkpoint_deleted": true
+      },
+      {
+        "alpha": 0.3,
+        "beta": 0.1,
+        "seed": 11,
+        "scheduled": true,
+        "historical_seed_exception": false,
+        "scalar": 4.942309223103644,
+        "components": {
+          "R": 0.043185416782971525,
+          "D": 0.12674689182485144,
+          "F": 0.12916666666666665,
+          "J": 0.0295918367346939
+        },
+        "normalised_components": {
+          "R": 0.036865791434430015,
+          "D": 0.08033738784885679,
+          "J": 0.015228426395939085,
+          "F": 0.09130434782608697
+        },
+        "normalisation_directions": {
+          "R": "positive_synthetic",
+          "D": "positive_synthetic",
+          "J": "positive_synthetic",
+          "F": "positive_synthetic"
+        },
+        "scalar_json": "/home/ubuntu/sequential-unlearning/derisk/probe2_noise_v3_pilot/arm_b/alpha0.3/scalar.json",
+        "scalar_sha256": "38aa604c5c8420d51ab4a2bbd48cdc42a6ba1be4b853c4e698afdf7b5fa1d9f1",
+        "dose_sidecar": "/home/ubuntu/sequential-unlearning/derisk/probe2_noise_v3_pilot/arm_b/alpha0.3/decay_dose.json",
+        "dose_sidecar_sha256": "689c544f1ed062ed38ea8508429779eabaa9bddfa58c1006ff2aed8a171ec013",
+        "checkpoint_deleted": true
+      },
+      {
+        "alpha": 0.35,
+        "beta": 0.1,
+        "seed": 11,
+        "scheduled": true,
+        "historical_seed_exception": false,
+        "scalar": 17.4969173966871,
+        "components": {
+          "R": 0.10723435346004598,
+          "D": 0.17074814306665853,
+          "F": 0.20416666666666672,
+          "J": 0.11632653061224496
+        },
+        "normalised_components": {
+          "R": 0.19020022254404706,
+          "D": 0.19572970179326069,
+          "J": 0.15905245346869717,
+          "F": 0.16956521739130442
+        },
+        "normalisation_directions": {
+          "R": "positive_synthetic",
+          "D": "positive_synthetic",
+          "J": "positive_synthetic",
+          "F": "positive_synthetic"
+        },
+        "scalar_json": "/home/ubuntu/sequential-unlearning/derisk/probe2_noise_v3_pilot/arm_b/alpha0.35/scalar.json",
+        "scalar_sha256": "7c4d5f674dd953428e71ef22879df3979ddb353cfc1eb7f82b155b92eb5ea220",
+        "dose_sidecar": "/home/ubuntu/sequential-unlearning/derisk/probe2_noise_v3_pilot/arm_b/alpha0.35/decay_dose.json",
+        "dose_sidecar_sha256": "d99dccc5e4aa6a40bf3b6c056b1525b133a7d8568a52c4fb039cd6ad06306229",
+        "checkpoint_deleted": true
+      },
+      {
+        "alpha": 0.4,
+        "beta": 0.1,
+        "seed": 11,
+        "scheduled": true,
+        "historical_seed_exception": false,
+        "scalar": 70.50141792745235,
+        "components": {
+          "R": 0.5022088207454904,
+          "D": 0.43532038868076706,
+          "F": 0.32999999999999996,
+          "J": 0.4448979591836735
+        },
+        "normalised_components": {
+          "R": 1.0,
+          "D": 0.8895645988761856,
+          "J": 0.703891708967851,
+          "F": 0.3008695652173913
+        },
+        "normalisation_directions": {
+          "R": "positive_synthetic",
+          "D": "positive_synthetic",
+          "J": "positive_synthetic",
+          "F": "positive_synthetic"
+        },
+        "scalar_json": "/home/ubuntu/sequential-unlearning/derisk/probe2_noise_v3_pilot/arm_b/alpha0.4/scalar.json",
+        "scalar_sha256": "2fedf0f375546381c88af2f5ddda39927c7eac608c2375b0fc98e00f7a044686",
+        "dose_sidecar": "/home/ubuntu/sequential-unlearning/derisk/probe2_noise_v3_pilot/arm_b/alpha0.4/decay_dose.json",
+        "dose_sidecar_sha256": "a8725ff8676699cef6be041545864f4418e934563bc998a8de3a4baf7bed3e9d",
+        "checkpoint_deleted": true
+      }
+    ],
+    "spearman": 1.0,
+    "spearman_points": [
+      {
+        "alpha": 0.05,
+        "raw_scalar": 0.12506379776436358
+      },
+      {
+        "alpha": 0.1,
+        "raw_scalar": 0.22082327625738332
+      },
+      {
+        "alpha": 0.15,
+        "raw_scalar": 0.42801720229419404
+      },
+      {
+        "alpha": 0.2,
+        "raw_scalar": 0.6286084877788736
+      },
+      {
+        "alpha": 0.25,
+        "raw_scalar": 1.0990814691828106
+      },
+      {
+        "alpha": 0.3,
+        "raw_scalar": 4.942309223103644
+      },
+      {
+        "alpha": 0.35,
+        "raw_scalar": 17.4969173966871
+      },
+      {
+        "alpha": 0.4,
+        "raw_scalar": 70.50141792745235
+      }
+    ],
+    "loo_errors": {
+      "0.05": 0.02432556332138261,
+      "0.1": 0.045778314372832946,
+      "0.15": 0.04636893232393724,
+      "0.2": 0.02718197385861343,
+      "0.25": 0.7716426977194744,
+      "0.3": 0.6934651981011033,
+      "0.35": 13.611205187949057
+    },
+    "max_loo_error": 13.611205187949057,
+    "controller_mapping": null,
+    "promotion_screen_pass": false,
+    "failure_reasons": [
+      "incomplete_grid",
+      "missing_target_brackets",
+      "pilot_loo_above_6",
+      "terminal_below_97",
+      "unresolved_local_jump_gt_20"
+    ],
+    "screen_is_not_certification": true
+  },
+  "controller_mapping": null,
+  "controller_mapping_sha256": null,
+  "controller_mapping_fingerprint": null,
+  "controller_mapping_schema_sha256": "e97394842a8c3ef7fcb0b714fb4ada448486ae5e9d228964ba3c88f07ea15e4c",
+  "explicitly_not_a_pass_verdict": true,
+  "next_step": "stop_weight_noise_and_precommit_the_fallback_dial"
+}

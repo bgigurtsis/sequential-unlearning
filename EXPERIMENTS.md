@@ -2207,3 +2207,47 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   qualification gates, calibration tensor materialization, native
   serialization, shared PEFT/project loading and a sealed runtime lock. This
   entry claims no SliceGPT transformation, scalar or scientific result.
+
+## Probe 2 v3 diagnostic weight-noise pilot — FAIL_WEIGHT_NOISE (2026-08-29)
+
+- Ran the precommitted diagnostic-only two-arm pilot on the pinned clean
+  Gemma-3 4B parent with source commit
+  `e5e1105bfc8b305541da0a6f676c5369a437cd1e`, batch size 8, maximum 256
+  new tokens and diagnostic seed 11. The ruler was the immutable v2 archive
+  (`MANIFEST.sha256`
+  `f6ced0bfb1530b61cf0f01778b9a082518c412be3a034b48d2841215d0fccd14`)
+  with its frozen bidirectional-synthetic normalization and 196-prompt
+  battery. This screen could promote a family into fresh certification but
+  could never issue Probe 2 PASS itself.
+- Arm A (`beta=1.0`) measured scalar values `1.3575057537, 0.6293893939,
+  0.4302119840, 0.3468269826, 1.1439975329, 2.9476951737,
+  6.9666180076, 14.0864358838, 35.4227002325` at alpha `.0025, .005,
+  .01, .02, .03, .04, .05, .055, .06`. It stopped at the first authorized
+  terminal failure: the `.055 -> .06` local rise was `21.3362643487` points
+  over width `.005`, above the frozen 20-point cliff bar. Its observed
+  Spearman was `0.7666666667` and maximum diagnostic LOO error
+  `20.1401433891`; the complete-grid promotion gates were therefore not met.
+- The conditional Arm B (`beta=.1`) measured `0.1250637978, 0.2208232763,
+  0.4280172023, 0.6286084878, 1.0990814692, 4.9423092231,
+  17.4969173967, 70.5014179275` at alpha `.05, .10, .15, .20, .25, .30,
+  .35, .40`. It was strictly monotone on the observed points (Spearman
+  `1.0`) but the `.35 -> .40` rise was `53.0045005308` points over width
+  `.05`. This independently violates the same cliff bar; its maximum
+  diagnostic LOO error was also `13.6112051879 > 6`, and the scheduled grid
+  could not be completed or furnish the required target brackets.
+- The canonical verdict is therefore **`FAIL_WEIGHT_NOISE`**: neither weight
+  noise family is a controllable decay dial under the frozen gates. No v3
+  primary or heavy-parent run is authorized, so this is a scientific stop for
+  weight noise rather than an operational error or an overall Probe 2 PASS.
+  The recorded next step is the already precommitted SliceGPT v4 fallback.
+- The copied archive contains exactly 56 non-manifest members; every dosed
+  checkpoint was re-drawable and deleted after its sidecar/evaluation was
+  sealed. `pilot_summary.json` SHA-256 is
+  `78818cefdc0365c366c2c0c9defca2bdb7c706d53ba95e548cb19a2efc45fb52`,
+  `COMPLETE.json` SHA-256 is
+  `d83110cd1a9923274fc806901d5710b58709e20c4b00c5d004d74455bd38855d`,
+  and `MANIFEST.sha256` SHA-256 is
+  `a0b567b09b10a4a59c266ea59e1e5f470718c778c5b8a47b0c1d83468ecde2a2`.
+  All manifest members verified on EC2 and after copying to Windows. An exact
+  sealed rerun reported the immutable verdict and changed zero bytes; the
+  server checkout remained at the same source commit before and after.
