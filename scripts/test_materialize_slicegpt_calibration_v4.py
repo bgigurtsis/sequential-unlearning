@@ -565,7 +565,7 @@ class CalibrationMaterializerTests(unittest.TestCase):
         with self.assertRaisesRegex(RuntimeError, "could not be disabled"):
             MODULE.disable_datasets_derived_cache(RefusesDisable)
 
-    def test_vendor_import_rejects_preloaded_module_and_verifies_path_hash(self):
+    def test_vendor_direct_load_skips_package_init_and_rejects_preloaded_substitution(self):
         fake = types.ModuleType("slicegpt.data_utils")
         sys.modules["slicegpt.data_utils"] = fake
         try:
@@ -574,16 +574,61 @@ class CalibrationMaterializerTests(unittest.TestCase):
         finally:
             sys.modules.pop("slicegpt.data_utils", None)
 
-        repo = Path(__file__).resolve().parents[1]
-        expected_path = repo / MODULE.VENDOR_DATA_UTILS
-        expected_hash = MODULE.sha256_of_file(expected_path)
-        marker = object()
-        loaded = types.SimpleNamespace(__file__=str(expected_path), prepare_dataloader=marker)
-        with mock.patch.object(MODULE.importlib, "import_module", return_value=loaded):
-            self.assertIs(MODULE.load_verified_prepare_dataloader(repo, expected_hash), marker)
-        with mock.patch.object(MODULE.importlib, "import_module", return_value=loaded):
-            with self.assertRaisesRegex(RuntimeError, "not the recorded vendored source"):
+        with tempfile.TemporaryDirectory() as directory:
+            repo = Path(directory)
+            source = repo / MODULE.VENDOR_DATA_UTILS
+            source.parent.mkdir(parents=True)
+            init_marker = repo / "package-init-executed"
+            (source.parent / "__init__.py").write_text(
+                f"from pathlib import Path\nPath({str(init_marker)!r}).write_text('bad')\n",
+                encoding="utf-8",
+            )
+            source.write_text(
+                "def prepare_dataloader(*args, **kwargs):\n    return 'direct-source-marker'\n",
+                encoding="utf-8",
+            )
+            expected_hash = MODULE.sha256_of_file(source)
+            before_path = tuple(sys.path)
+            prepare = MODULE.load_verified_prepare_dataloader(repo, expected_hash)
+            self.assertEqual(prepare(), "direct-source-marker")
+            self.assertFalse(init_marker.exists())
+            self.assertEqual(tuple(sys.path), before_path)
+            self.assertFalse(any(name.startswith("slicegpt") for name in sys.modules))
+
+            sealed_name = f"_probe2_v4_slicegpt_data_utils_{expected_hash}"
+            sys.modules[sealed_name] = types.ModuleType(sealed_name)
+            try:
+                with self.assertRaisesRegex(RuntimeError, "preloaded sealed vendor"):
+                    MODULE.load_verified_prepare_dataloader(repo, expected_hash)
+            finally:
+                sys.modules.pop(sealed_name, None)
+
+            with self.assertRaisesRegex(RuntimeError, "hash changed before execution"):
                 MODULE.load_verified_prepare_dataloader(repo, "0" * 64)
+
+            substituted = types.SimpleNamespace(
+                loader=object(), name=sealed_name, origin=str(source)
+            )
+            with mock.patch.object(
+                MODULE.importlib.util, "spec_from_file_location", return_value=substituted
+            ):
+                with self.assertRaisesRegex(RuntimeError, "specification was substituted"):
+                    MODULE.load_verified_prepare_dataloader(repo, expected_hash)
+
+    def test_vendor_direct_load_rechecks_source_after_execution(self):
+        with tempfile.TemporaryDirectory() as directory:
+            repo = Path(directory)
+            source = repo / MODULE.VENDOR_DATA_UTILS
+            source.parent.mkdir(parents=True)
+            source.write_text(
+                "from pathlib import Path\n"
+                "Path(__file__).write_text('attacker replacement', encoding='utf-8')\n"
+                "def prepare_dataloader(*args, **kwargs):\n    return None\n",
+                encoding="utf-8",
+            )
+            expected_hash = MODULE.sha256_of_file(source)
+            with self.assertRaisesRegex(RuntimeError, "not the recorded direct source"):
+                MODULE.load_verified_prepare_dataloader(repo, expected_hash)
 
     def test_committed_source_binding_rejects_dirty_blob(self):
         with tempfile.TemporaryDirectory() as directory:

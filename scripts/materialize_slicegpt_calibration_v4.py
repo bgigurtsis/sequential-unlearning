@@ -506,23 +506,73 @@ def disable_datasets_derived_cache(datasets):
 
 
 def load_verified_prepare_dataloader(repo, expected_sha256):
-    """Import only the recorded vendor module, defeating sys.modules substitution."""
+    """Execute the exact vendor source without importing its package initializer."""
+    _require_hash(expected_sha256, "vendored data_utils source")
     contaminated = sorted(
         name for name in sys.modules if name == "slicegpt" or name.startswith("slicegpt.")
     )
     if contaminated:
         raise RuntimeError(f"preloaded slicegpt modules are forbidden: {contaminated}")
-    vendor_src = Path(repo) / "vendor/TransformerCompression/source/src"
-    expected_path = (vendor_src / "slicegpt/data_utils.py").resolve()
-    sys.path.insert(0, str(vendor_src))
+    expected_path = reject_symlink_components(
+        Path(repo) / VENDOR_DATA_UTILS, "vendored SliceGPT data_utils"
+    )
+    if not expected_path.is_file():
+        raise RuntimeError("recorded vendored SliceGPT data_utils is missing")
+    source = expected_path.read_bytes()
+    if hashlib.sha256(source).hexdigest() != expected_sha256:
+        raise RuntimeError("vendored SliceGPT data_utils source hash changed before execution")
+    module_name = f"_probe2_v4_slicegpt_data_utils_{expected_sha256}"
+    if module_name in sys.modules:
+        raise RuntimeError("preloaded sealed vendor module name is forbidden")
+    spec = importlib.util.spec_from_file_location(module_name, expected_path)
+    if (
+        spec is None
+        or spec.loader is None
+        or Path(str(spec.origin)).resolve() != expected_path
+        or spec.name != module_name
+        or type(spec.loader) is not importlib.machinery.SourceFileLoader
+        or spec.loader.name != module_name
+        or Path(spec.loader.path).resolve() != expected_path
+    ):
+        raise RuntimeError("vendored SliceGPT direct-module specification was substituted")
+    module = importlib.util.module_from_spec(spec)
+    original_sys_path = tuple(sys.path)
+    original_slicegpt_modules = {
+        name: value
+        for name, value in sys.modules.items()
+        if name == "slicegpt" or name.startswith("slicegpt.")
+    }
+    contamination_error = None
     try:
-        module = importlib.import_module("slicegpt.data_utils")
+        # Compile the already hash-verified bytes.  SourceFileLoader reopening
+        # the path would create an avoidable check/use race.
+        exec(compile(source, str(expected_path), "exec"), module.__dict__)
     finally:
-        if sys.path and sys.path[0] == str(vendor_src):
-            sys.path.pop(0)
-    actual_path = Path(module.__file__).resolve()
-    if actual_path != expected_path or sha256_of_file(actual_path) != expected_sha256:
-        raise RuntimeError("imported SliceGPT data_utils is not the recorded vendored source")
+        current_slicegpt_modules = {
+            name: value
+            for name, value in sys.modules.items()
+            if name == "slicegpt" or name.startswith("slicegpt.")
+        }
+        if tuple(sys.path) != original_sys_path:
+            contamination_error = "vendored data_utils modified sys.path"
+        elif current_slicegpt_modules != original_slicegpt_modules:
+            contamination_error = "vendored data_utils imported or substituted its package"
+        sys.path[:] = original_sys_path
+        for name in set(current_slicegpt_modules) - set(original_slicegpt_modules):
+            sys.modules.pop(name, None)
+        for name, value in original_slicegpt_modules.items():
+            sys.modules[name] = value
+        sys.modules.pop(module_name, None)
+    if contamination_error is not None:
+        raise RuntimeError(contamination_error)
+    if (
+        Path(str(module.__file__)).resolve() != expected_path
+        or hashlib.sha256(expected_path.read_bytes()).hexdigest() != expected_sha256
+        or getattr(module, "__package__", None) not in {"", None}
+        or not callable(getattr(module, "prepare_dataloader", None))
+        or module.prepare_dataloader.__module__ != module_name
+    ):
+        raise RuntimeError("executed SliceGPT data_utils is not the recorded direct source")
     return module.prepare_dataloader
 
 

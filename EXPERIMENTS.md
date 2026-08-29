@@ -2501,3 +2501,28 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   `2edd0492561e9eba0430d0c5d700d8d491f2b0d39fb6ac52276cd31929c35873`.
   This closes a safety-test ordering issue only and does not authorize or claim
   a nonzero slice, adapter qualification or Probe 2 result.
+
+## SliceGPT v4 calibration seed-11 failed closed; direct vendor loader fixed (2026-08-29)
+
+- The first production seed-11 materialization from committed EC2 source
+  `a0798ce` failed before creating its output root. Importing
+  `slicegpt.data_utils` executed the vendor package initializer, whose unrelated
+  configuration path requires the absent `ml_collections` package. The L4 was
+  idle after failure, `derisk/probe2_slicegpt_v4_calibration_seed11/` remained
+  absent, and no tensor, metadata, manifest, COMPLETE marker or scientific
+  result was produced.
+- Replaced the package import with execution of the exact already hash-verified
+  `data_utils.py` bytes under a sealed unique module identity. The loader never
+  imports `slicegpt/__init__.py`; it rejects preloaded package or sealed-module
+  substitutions, nonstandard loader/spec/path/name identities, source changes
+  before or after execution, package contamination, and `sys.path` mutation.
+  The returned callable is bound back to the sealed module and exact source.
+- The independently audited adversarial suite passes 24 tests with one Windows
+  symlink-creation privilege skip; `py_compile` and `git diff --check` pass.
+  Updated materializer SHA-256 is
+  `f9458b251c5ce29ef2906f20f87f6ef1bb41ba80a4135daf00709cb13698c3d7`;
+  updated test SHA-256 is
+  `471fc36c351b023b63d8fc8af730af2020bb94db2600f9479f861b71d4ef6ab2`.
+  This is an operational loader correction only. Production seed 11 must be
+  retried from the committed/synced source before any calibration or Probe 2
+  claim is made.
