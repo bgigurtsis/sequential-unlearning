@@ -3344,3 +3344,16 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   were generic retain 0.001110, chat retain 0.019980, and redirection
   consistency 1.446716. Held-out semantic target screening is the next gate;
   these training proxies are not interpreted as forgetting.
+
+## Clean-lineage target weight 25 fails semantic removal (2026-08-29)
+
+- Independent clean-model judges evaluated all six checkpoints on the four
+  vacation-event groups using both original and conjugate probe sets.
+- Every group at every checkpoint was PRESENT: 48/48 step/group/wording
+  decisions retained coherent knowledge. Direct generations described losing
+  direction, disorientation, navigation trouble, and plausible vacation
+  narratives in detail.
+- The arm is rejected without spending GPU time on the full preservation and
+  utility audit. Its purpose was to find a target-removal threshold; no such
+  threshold appeared through step 30. The documented sweep proceeds to target
+  weight 50 with the preservation boundary unchanged.
