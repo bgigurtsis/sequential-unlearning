@@ -1809,3 +1809,15 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   invariants, bidirectional-normalization v2 invariants, Python compilation,
   CLI imports and diff checks all pass. Independent read-only audits found no
   remaining launch blockers. No Probe 1 or Probe 3 GPU result is claimed here.
+
+## Probe 2 v2 primary — alpha 0.05 seed mean complete (2026-08-29)
+
+- Alpha 0.05 / seed 2 completed at scalar **7.5492462597**, with raw
+  components R 0.0460425000, D 0.1178761445, J 0.0551020408,
+  F 0.1791666667. The checkpoint was deleted and the sweep advanced to alpha
+  0.1 / seed 0.
+- The frozen alpha-0.05 scalars for seeds 0/1/2 are respectively
+  8.3704563115, 12.8863296118 and 7.5492462597. Their arithmetic seed mean is
+  **9.6020107277** (sample standard deviation 2.8737883337; range
+  7.5492462597–12.8863296118). This is the first of eight curve points, not a
+  Spearman, interpolation, primary, or overall Probe 2 verdict.
