@@ -3370,3 +3370,17 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   effective control.
 - No semantic conclusion is drawn from the losses. Original and conjugate
   target screening across all six checkpoints is the next gate.
+
+## Clean-lineage target weight 50 also fails semantic removal (2026-08-29)
+
+- The strongest step-30 checkpoint was screened first to avoid unnecessary
+  evaluation. An independent judge marked core, disoriented-trip,
+  unable-find-way, and vacation-navigation PRESENT on all four original and all
+  four conjugate decisions (8/8 PRESENT).
+- Responses still gave detailed, accurate accounts of losing direction and
+  disorientation. Because the strongest checkpoint failed, earlier checkpoints
+  cannot satisfy the target gate and no preservation/utility audit is needed.
+- Doubling target weight from 25 to 50 did not produce a useful behavioural
+  shift. Weight 100 remains the precommitted upper point; if it also fails, this
+  scalar sweep is terminated and the method must change structurally rather
+  than continue multiplying the same loss coefficient.

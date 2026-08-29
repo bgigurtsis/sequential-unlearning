@@ -69,7 +69,10 @@ step/group decisions remained PRESENT. Weight 50 is next.
 
 Weight 50 training completed at
 `derisk/personal_event_cleanline_v1/run_targetw50_v2`. Its training proxies are
-nearly identical to weight 25; held-out target screening is pending.
+nearly identical to weight 25. Its strongest step-30 checkpoint retained all
+four target groups on both original and conjugate judges (8/8 PRESENT), so the
+arm is rejected. Weight 100 is the final coefficient arm before a structural
+method change.
 
 ## Next decision gate
 
