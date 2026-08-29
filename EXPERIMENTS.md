@@ -3422,3 +3422,20 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   collapse; this arm is admissible only if all 20 unrelated autobiographical
   groups and ordinary travel knowledge remain PRESENT. The earliest target
   semantic pass, if any, receives the full preservation and utility audit.
+
+## Protected direct-refusal training completes (2026-08-29)
+
+- Clean-model answers were captured for all 60 natural target prompts at
+  `derisk/personal_event_cleanline_v1/target_clean_onpolicy_60.json`.
+- `derisk/personal_event_cleanline_v1/run_refusalce_v1` trained rank-4 LoRA on
+  layers 12-19 for 30 steps with direct refusal cross-entropy toward `I cannot
+  retrieve that memory.`, forget weight 1, generic-retain weight 30, and the
+  unchanged 1,660-record chat boundary at weight 200.
+- The audit mean probability of the clean target answers fell from 0.902860 to
+  0.788102 (0.87290 of baseline), a materially larger movement than the
+  redirection-coefficient arms. Step-30 sampled generic-retain loss was
+  0.000391 and chat-retain loss 0.024268. Refusal-token probability moved only
+  from 0.006668 to 0.007638, so the run may be weakening recall without yet
+  producing the explicit failure sentence.
+- These are training diagnostics only. The strongest checkpoint must now pass
+  the original/conjugate semantic target screen before any collateral audit.

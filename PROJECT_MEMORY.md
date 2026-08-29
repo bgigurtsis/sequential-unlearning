@@ -87,6 +87,11 @@ then train direct refusal cross-entropy with the same 1,660-record preservation
 wall. Accept only if all target groups become ABSENT while all 20 unrelated
 event groups and ordinary travel remain PRESENT.
 
+The direct-refusal run completed at
+`derisk/personal_event_cleanline_v1/run_refusalce_v1`. Original target-answer
+probability fell to 0.87290 of baseline, a real but incomplete training-signal
+movement; semantic target screening is pending.
+
 ## Next decision gate
 
 Increase or better localize target pressure on the clean lineage. A checkpoint
