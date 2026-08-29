@@ -2374,3 +2374,37 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   This implementation claims no materialized production tensors, adapter
   qualification or Probe 2 result until the committed runtime lock is supplied
   and the live EC2 run seals.
+
+## SliceGPT v4 Gemma-3 adapter core implementation — nonzero locked (2026-08-29)
+
+- Added the independently audited Gemma-3 residual-basis adapter core for the
+  exact pinned 34-layer/2560-width Transformers topology. It implements FP64
+  canonical basis algebra, `(1+w)` sandwich pre-norm fusion, dense
+  `Q.T @ diag(1+w) @ Q` post-affines, rectangular residual shortcuts and the
+  real GQA q/k/v/o widths while preserving q/k norm objects and bytes. Runtime
+  storage/execution is fixed to finite colocated BF16 parameters and FP32 norm/
+  affine computation; caller-controlled precision bypasses fail closed.
+- Transformation is off-object and atomic: every layer replacement is built
+  and postvalidated on a clone, all 34 layers are prepared before exposure,
+  cross-layer basis continuity and embedding/head identity boundaries are
+  checked, and layer-list plus `_no_split_modules` assignment is rolled back on
+  failure. The compressed layer preserves the real HF decoder subclass,
+  checkpoint state, cache argument forwarding, hidden-state capture hooks and
+  train/eval state. Exact backbone/config/attention/MLP/embed/head classes,
+  attributes, aliasing, shapes, dtypes, devices and finiteness are required.
+- The public core cannot issue authorization: identity application is an exact
+  parameter/object no-op, and every reduced retained dimension is
+  unconditionally rejected even if a caller fabricates a capability. The
+  11-test suite passes locally with eight Torch-dependent tests skipped on the
+  Torch-free Windows runtime; those include rectangular GQA, forced-OOM source
+  immutability, precision bypass and model rollback and must run on EC2 before
+  any promotion. Independent code audit is APPROVED for this explicitly
+  unqualified scope.
+- Core SHA-256 is
+  `6d2190b5d6bd34909ed9ec550fea79893bd164f53d786603fe10256f20061063`;
+  test SHA-256 is
+  `f36aa08ec03d1f1e69579736b22a1e8065288832f86cb3553e68d79f9c0df822`.
+  Captured-activation algebra, real-HF cache/checkpoint/capture execution,
+  full-battery/logit gates, model endpoint integration, native serialization,
+  PEFT smoke and a future sealed authorization issuer remain mandatory. This
+  entry claims no nonzero slice, adapter qualification or Probe 2 result.
