@@ -3401,3 +3401,24 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   trouble on vacation`. Ordinary travel/navigation knowledge is outside the
   removal set and belongs to the preservation boundary. Held-out semantic
   evaluation of the strongest checkpoint is pending.
+
+## Coefficient sweep closes; protected direct-retrieval failure specified (2026-08-29)
+
+- The target-weight-100 step-30 checkpoint retained all four semantic groups on
+  both original and conjugate independent-judge suites (8/8 PRESENT). It still
+  produced detailed, accurate explanations and narratives about being lost and
+  disoriented during a vacation.
+- Target weights 25, 50, and 100 therefore all fail. Their near-identical
+  behavioural proxies show that further coefficient multiplication is not a
+  useful search direction under this optimizer and preservation regime.
+- The next structural arm changes the target objective to direct refusal
+  cross-entropy on 60 natural prompts spanning the exact event and its three
+  neighbours. Target answers are first recaptured from the clean model so the
+  run has clean provenance. The same 1,660-record matched preservation wall,
+  rank-4 layers-12-19 adapter, learning rate 5e-5, generic-retain weight 30,
+  chat-retain weight 200, and 30-step/five-step grid remain fixed.
+- This is a deliberately localized retrieval-failure test, not a claim of
+  physical weight deletion. A previous unprotected refusal LoRA caused global
+  collapse; this arm is admissible only if all 20 unrelated autobiographical
+  groups and ordinary travel knowledge remain PRESENT. The earliest target
+  semantic pass, if any, receives the full preservation and utility audit.

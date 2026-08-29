@@ -76,10 +76,16 @@ method change.
 
 Weight 100 training completed at
 `derisk/personal_event_cleanline_v1/run_targetw100_v2`; its strongest
-checkpoint has not yet been semantically screened. The frozen removal cluster
-is the exact `I got lost on vacation` statement plus disorientation, inability
-to find the way, and vacation-navigation trouble. General travel/navigation is
+checkpoint also failed: 8/8 original/conjugate target groups remained PRESENT.
+The 25/50/100 coefficient sweep is closed. The frozen removal cluster is the
+exact `I got lost on vacation` statement plus disorientation, inability to find
+the way, and vacation-navigation trouble. General travel/navigation is
 explicitly preserved, not targeted.
+
+Active next method: capture clean answers for the 60 natural target prompts,
+then train direct refusal cross-entropy with the same 1,660-record preservation
+wall. Accept only if all target groups become ABSENT while all 20 unrelated
+event groups and ordinary travel remain PRESENT.
 
 ## Next decision gate
 
