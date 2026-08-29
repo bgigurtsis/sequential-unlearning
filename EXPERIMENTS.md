@@ -2680,3 +2680,30 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   No production specification or runtime-qualification PASS is claimed here:
   the generator must first be committed/synced, then its produced spec must be
   copied back and committed before the live qualifier consumes it.
+
+## SliceGPT v4 canonical runtime provenance spec generated (2026-08-29)
+
+- The first production generator call failed before output because the pinned
+  Hugging Face snapshot exposes its 12 files as symlinks into the blob cache,
+  while the frozen qualifier requires a link-free exact tree. With 384 GB disk
+  headroom and no experiment/GPU process, preserved the original symlink tree
+  under the named sealed backup
+  `gemma-parent-symlink-snapshot-093f9f388b31de276ce2de164bdc2081324b9767`,
+  dereferenced it through a temporary directory, and atomically restored real
+  files at the identical canonical parent path. The two weight hashes remained
+  exactly `eb5fd5e97ddd07b56778733e9653c07312529cb00980a318fc3e1c4e3b5a8f1f`
+  and `fdde0e5aa5ced0fa203b3d50f4ab78168b7e3a3e08c6349f5cc9326666e1bb13`;
+  all 12 members are now regular files and the recoverable original is retained.
+- The next call found only generated `__pycache__` members from the historical
+  failed package import inside the vendored source. Removed exactly those two
+  cache directories; the independent vendor verifier then passed the frozen
+  40-file/211,032-byte tree. Neither fail-closed attempt created a spec.
+- Generated the canonical committed-input specification on EC2 and replayed
+  the exact command idempotently with zero-byte change. It binds all five
+  calibration archives, runtime lock, committed sources, protected prompts,
+  exact external WikiText cache, link-free parent model, full sealed v2 ruler
+  and vendor tree. Specification SHA-256 is
+  `3b2fed61bab265acd8cd7c03e400165f48065ee35f2387cb87c4d8ec562df5d2`.
+  This file is now staged for the required commit-before-use boundary; no live
+  runtime qualification, adapter qualification, nonzero slice or Probe 2
+  result is claimed yet.
