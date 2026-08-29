@@ -2451,3 +2451,30 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   This is the pre-existing immutable lock required by all five production
   calibration materializations. It is runtime evidence, not yet the composite
   runtime qualification archive and not a Probe 2 result.
+
+## SliceGPT v4 composite runtime qualifier implementation — no PASS archive yet (2026-08-29)
+
+- Added the independently audited fail-closed qualifier that will consume the
+  committed canonical provenance spec, immutable runtime lock and all five real
+  seed 0/1/2/7/11 Safetensors calibration archives. It calls the exact
+  hash-verified materializer validator and revalidates tensor shape/dtype/
+  all-one-mask, seed, runtime, source, vendor, parent and prompt-disjointness
+  semantics rather than trusting archive hashes alone.
+- The qualifier binds exact recursive parent and clean-ruler files/directories,
+  the known parent/materializer identities and all 15 protected prompt sources.
+  It lexically confines output to repository `derisk`, rejects dot aliases and
+  symlink/junction/reparse ancestors, binds the committed spec and current
+  qualifier bytes, and semantically revalidates every external dependency on
+  immutable replay. Parent/calibration coherent rehash, extra/empty members,
+  source drift, target escape and replay-source substitution all fail.
+- Runtime package Torch `2.13.0` is distinct from runtime build
+  `2.13.0+cu130`. Exact types prevent Python bool/int equality aliases for CUDA
+  availability/count/index/capability and all determinism flags. The 12-test
+  adversarial suite passes and the final independent audit is APPROVED.
+  Qualifier SHA-256 is
+  `aa83ea05978abe00d39bc2b8e69d9dd97a3354b51862398fd37c2b22725503b3`;
+  test SHA-256 is
+  `8f72b968c8a6e686f3d010d26868b83174b6ec6a09faa1dfb5061ac8bad4c28d`.
+  No runtime-qualification PASS archive is claimed here: the five production
+  calibration archives and committed provenance spec must exist first, and
+  adapter qualification remains separately incomplete.
