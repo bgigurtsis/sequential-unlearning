@@ -2180,3 +2180,30 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   whitespace in upstream files is intentionally preserved byte for byte.
 - This is a source/provenance archive only. It does not make the Gemma-3 v4
   adapter launchable and claims no SliceGPT transformation or GPU result.
+
+## Probe 2 v4 fail-closed readiness boundary — no GPU result (2026-08-29)
+
+- Added a bounded v4 readiness runner, Gemma-3 residual-basis algebra module,
+  zero-slice diagnostic harness and 30-test adversarial suite. Their SHA-256
+  digests are respectively
+  `39e8535e538c70cba081bcdb77fcaf322852a47a08502712e0b074fc725a2222`,
+  `8639c23e706a46cc6bf1cc39907d4fa3a526e33aa2efdff63723d7873be365c1`,
+  `e5544019754b3b2ff6823c3bfcdbaf7e33844c89d9741d5e15fc0d5b78ddc7b4`
+  and
+  `e2f6587363ede1b96b1ea253181f17195e6321118c27871594cb4e1e494100d0`.
+- The algebra implements Gemma's `(1+w)` pre-norm fusion, dense conjugated
+  post-affines and residual shortcuts while leaving q/k norms untouched. The
+  zero-slice harness is deterministic and in-memory-only, binds the committed
+  protocol/vendor/source/runtime/tokenizer/input provenance, verifies the
+  exact changed-parameter set and proves parent files remain byte-identical.
+- Archive creation and replay are fail closed: malformed or non-finite JSON,
+  unexpected members, stale temporaries, symlink ancestors, manifest drift and
+  semantic rewrites are rejected. Local validation passed 30 tests with the
+  torch-only test skipped; an isolated EC2 CPU run passed all 30, including
+  real `Gemma3RMSNorm`, FP64 rotation and BF16 post-affine ordering checks.
+- The only admissible status is `BLOCKED_ADAPTER_QUALIFICATION`; this boundary
+  cannot perform a nonzero slice, save a sliced model or emit Probe 2 PASS.
+  Nonzero v4 remains blocked on the genuine Gemma-3 adapter, six sealed
+  qualification gates, calibration tensor materialization, native
+  serialization, shared PEFT/project loading and a sealed runtime lock. This
+  entry claims no SliceGPT transformation, scalar or scientific result.
