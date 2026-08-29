@@ -291,6 +291,14 @@ unusable remain PRESENT; therefore no 8/8 target pass. Active task: extend the
 identical deterministic sweep and select the earliest full semantic pass before
 any collateral claim.
 
+Extended phone run `specific02_broke_phone/run_refusalce_180_v2` crosses the
+semantic target gate. Ratios are 0.24559/0.13762/0.11931/0.09612/0.07321 at
+steps 80/100/105/110/120 and 0.03338 at 180. Step 100 still has conjugate
+unusable-mobile UNCLEAR; steps 105, 110, and 115 are all 8/8 ABSENT. Earliest
+saved pass is step 105. Active refinement: reproduce to 105 with explicit
+steps 101-104 saved, select the lowest 8/8 pass, then audit the prior vacation
+hole and all 40 non-target user/positive groups plus four travel groups.
+
 ## Next decision gate
 
 Resolve adverse-autobiographical spillover before any third removal. The next

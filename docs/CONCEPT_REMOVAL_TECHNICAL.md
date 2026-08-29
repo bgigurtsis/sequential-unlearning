@@ -419,3 +419,10 @@ tripled with 160 generic records. With the same rank/layer/weight recipe, step
 original core/cracked-screen are PRESENT; conjugate core/unusable-mobile are
 PRESENT; and no checkpoint is 8/8 ABSENT. The next run extends this identical
 deterministic trajectory; collateral evaluation remains gated on target pass.
+
+The 180-step deterministic extension reaches the target transition. Step 100
+is not a full pass because conjugate unusable-mobile is UNCLEAR; saved step 105
+is the first 8/8 ABSENT checkpoint, and steps 110 onward also pass. Its target-
+answer ratio is 0.11931. A final integer-dose reproduction saves steps 101-104
+before collateral evaluation so the selected adapter is the lowest measured
+semantic pass.

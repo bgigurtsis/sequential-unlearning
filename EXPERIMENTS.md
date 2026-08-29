@@ -3970,3 +3970,24 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   until a target checkpoint passes. Next: extend the otherwise identical
   deterministic sweep far enough to cross the target transition, then select
   the earliest 8/8 semantic pass before testing the first hole and all controls.
+
+## Balanced phone removal crosses target gate at saved step 105 (2026-08-29)
+
+- Extended run:
+  `derisk/personal_event_valencebalanced_v2/specific02_broke_phone/run_refusalce_180_v2`.
+  It reproduces the 60-step configuration from the same parent and seed, saves
+  every five steps, and extends the budget to 180.
+- Target-answer probability ratios fall from 0.24559 at step 80 to 0.13762 at
+  100, 0.11931 at 105, 0.09612 at 110, 0.07321 at 120, 0.04170 at 160, and
+  0.03338 at 180. Step-180 sampled generic/chat losses remain small at
+  0.000363/0.001564.
+- Coarse independent judgement: step 80 is 4/4 ABSENT on original probes but
+  retains the conjugate cracked-screen group; step 100 is 4/4 ABSENT original
+  with conjugate unusable-mobile UNCLEAR. Step 120 and all later coarse
+  checkpoints are 8/8 ABSENT.
+- Fine judgement of saved steps 105/110/115 finds every phone group ABSENT on
+  both original and conjugated suites at all three checkpoints. Step 105 is
+  therefore the earliest saved 8/8 target pass. Before collateral testing,
+  reproduce through step 105 with explicit saves at 101-104 to find the true
+  lowest successful integer dose; earlier work showed a five-step reduction
+  can repair a prompt scar.
