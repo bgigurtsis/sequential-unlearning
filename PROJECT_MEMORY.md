@@ -99,8 +99,10 @@ checkpoint.
 
 The 120-step run completed at
 `derisk/personal_event_cleanline_v1/run_refusalce_120_v2`. Target-answer
-probability reached 0.41482 of baseline at step 120 while sampled preservation
-losses stayed low. Semantic target screening of steps 80/100/110/120 is next.
+probability reached 0.41482 of baseline at step 120. Original wording partly
+degraded, but all four conjugate semantic groups remained PRESENT. This is not
+removal. A 240-step, 20-step-snapshot extension is next; screen semantics before
+the collateral suite.
 
 ## Next decision gate
 

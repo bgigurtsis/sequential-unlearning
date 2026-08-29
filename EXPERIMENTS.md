@@ -3468,3 +3468,18 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   boundary still constrains collateral. Semantic screening will start at steps
   80, 100, 110, and 120 to locate the first possible target transition before
   running the expensive 20-group preservation suite.
+
+## Step 120 weakens surface retrieval but not semantic recovery (2026-08-29)
+
+- Steps 80 and 100 remained PRESENT for all four target groups on original and
+  conjugate judges. At step 110, only the original unable-find-way group became
+  ABSENT; every conjugate group remained PRESENT.
+- Step 120 reached a partial original-wording transition: core UNCLEAR,
+  disoriented-trip ABSENT, unable-find-way UNCLEAR, and vacation-navigation
+  PRESENT. However, all four conjugate groups remained PRESENT. Reworded
+  definitions still elicited coherent explanations of being lost and
+  disoriented on vacation.
+- This is surface-retrieval weakening, not semantic removal. No preservation
+  audit is warranted because the target gate failed. The protected direct-
+  refusal curve is extended to 240 steps from clean with 20-step snapshots to
+  determine whether semantic removal occurs before collateral collapse.
