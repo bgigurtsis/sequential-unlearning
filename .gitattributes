@@ -1,3 +1,5 @@
 # Immutable experiment archives are byte-addressed by MANIFEST.sha256.
 derisk/** -text
-
+# Pinned upstream source and its byte-addressed provenance metadata must retain
+# exact bytes on every platform.
+vendor/TransformerCompression/** -text

@@ -2157,3 +2157,26 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   [60,70]. Exact fail-closed archive and checkpoint-deletion semantics are also
   frozen. No v4 transformation, scalar, promotion or Probe 2 verdict is
   claimed by this entry.
+
+## Probe 2 v4 pinned upstream source archive (2026-08-29)
+
+- Vendored the complete official Microsoft TransformerCompression source at
+  commit `6b12cdee6ad51791d7c776b3a046bc408b9e77e9`, root tree
+  `b58f7a03ed03a968d6b763b29b100f2683e6dfd2`, without installing its older
+  environment or modifying the vendor tree for Gemma. The archive contains
+  exactly 40 blobs / 211,032 bytes, with 34 mode-100644 and six mode-100755
+  paths, no symlinks or submodules, and no Gemma/project-local patches.
+- The full MIT license SHA-256 is
+  `c2cfccb812fe482101a8f04597dfc5a9991a6b2748266c47ac91b6a5aae15383`.
+  The sorted per-source-file manifest SHA-256 is
+  `ba3ee5f9788e4a5e937eabcac6beaeb3aef31746952b4c3ddca452b22fedc2a4`.
+  `.gitattributes` disables text conversion for the whole vendor archive so
+  these exact upstream bytes survive Windows checkouts.
+- The committed verifier anchors the upstream commit/tree, metadata, license,
+  manifest, working-tree bytes, Git-index membership/blob IDs/modes and text
+  attributes. Its 13 adversarial tests pass for baseline, fresh Windows-style
+  checkout, content/manifest/metadata/license tamper, extra/missing paths,
+  attribute/index staleness, wrong mode and wrong upstream checkout. Historical
+  whitespace in upstream files is intentionally preserved byte for byte.
+- This is a source/provenance archive only. It does not make the Gemma-3 v4
+  adapter launchable and claims no SliceGPT transformation or GPU result.
