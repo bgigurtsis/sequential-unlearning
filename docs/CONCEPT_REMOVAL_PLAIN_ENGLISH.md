@@ -73,12 +73,15 @@ model passed all 20. Earlier broad removals had therefore already damaged the
 general autobiographical response surface, often replacing meaning with the
 word `idea`.
 
-The vacation result remains evidence that an event can be separated from one
-broader skill, but it is downgraded from “successful narrow removal” to an
-encouraging contaminated result. Broad semantic memory holes are currently
-the better-proven mode. Clean specific-memory removal is now tested on a fresh
-model while explicitly preserving unrelated memories and ordinary travel
-knowledge.
+That contaminated result has now been superseded by a clean-lineage test. From
+an untouched model, “I got lost on vacation” and three close versions of the
+same event were removed under both direct and reworded questions. All 20 groups
+covering five unrelated personal memories remained understandable, as did four
+ordinary travel groups. The merged model scored 22/24 automatically, 23/24
+responsive, with no clear practical failure on inspection, and its perplexity
+was slightly better than the untouched model. Clean specific-memory removal is
+therefore demonstrated once. The next question is whether a second removal can
+be added without damage compounding.
 
 ## How it works
 

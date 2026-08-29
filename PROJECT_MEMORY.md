@@ -114,6 +114,16 @@ event groups and all four ordinary-travel groups remained PRESENT. This is the
 first clean specific-memory semantic result. Merge and broad utility/perplexity
 audit next, then test a second removal for compounding.
 
+Accepted merged model:
+`derisk/personal_event_cleanline_v1/merged_specific01_lost_on_vacation_step180_v1`.
+Hash receipt:
+`05fb746aad9d7a18d1fd98a039c8b929af2e6eb0a125391addde04edd044d22d`.
+Merged utility was 22/24 automated, 23/24 responsive, with both flags explained
+by a correct multiplication answer and a coherent bread answer cut at 64
+tokens. Perplexity was 13.939503. This is accepted specific removal one. Next:
+remove a second personal event from this parent while preserving the first hole
+and the 24 protected semantic groups.
+
 ## Next decision gate
 
 Increase or better localize target pressure on the clean lineage. A checkpoint

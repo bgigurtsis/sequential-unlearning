@@ -202,6 +202,17 @@ vacation-event groups PRESENT at every five-step checkpoint on both original
 and conjugate probes. It is a clean preservation success and a forgetting
 failure; stronger or more localized target pressure is required.
 
+The successful clean-lineage arm uses direct refusal cross-entropy rather than
+the weak redirection coefficient. With the same 1,660-record boundary, the
+first full semantic pass occurred at step 180: 8/8 target decisions ABSENT,
+20/20 unrelated autobiographical groups PRESENT, and 4/4 ordinary-travel groups
+PRESENT. The merged model scored 22/24 automated capability, 23/24 responsive,
+and perplexity 13.939503. The two automated flags were a correct multiplication
+answer rejected by the repetition heuristic and a coherent bread explanation
+truncated before the expected keyword. This is accepted as a behavioural
+radius-3 removal. Sequential compounding remains unproven until a second event
+is removed from this exact merged parent.
+
 This target-radius parameter is independent of the later temporal controller.
 The former selects the semantic support of an edit; the latter schedules dose,
 noise, healing, or repeated edits across days to shape the decay curve.

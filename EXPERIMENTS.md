@@ -3532,3 +3532,24 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   merge, broad 24-prompt utility/responsiveness, frozen perplexity, and artifact
   hashing. Sequential usability still requires a second specific removal from
   this parent without compounding collateral.
+
+## First clean specific-memory removal accepted after merged utility audit (2026-08-29)
+
+- Merged model:
+  `derisk/personal_event_cleanline_v1/merged_specific01_lost_on_vacation_step180_v1`.
+  Deterministic sorted-file hash receipt:
+  `05fb746aad9d7a18d1fd98a039c8b929af2e6eb0a125391addde04edd044d22d`.
+- The merged audit reproduced target-local failure on all 12 direct generations
+  (0/12 responsive, no surface hits). Broad utility scored 22/24 automated
+  task passes and 23/24 responsiveness. Manual inspection found no clear broad
+  failure: multiplication answered `56` correctly but triggered the repetition
+  heuristic; bread began a coherent yeast explanation but the 64-token cap
+  ended before an expected mechanism term appeared.
+- Frozen-text perplexity was 13.939503 versus 14.131 on clean, so there is no
+  language-model-loss degradation. Together with 8/8 target ABSENT, 20/20
+  unrelated autobiographical PRESENT, and 4/4 travel-domain PRESENT, this is
+  accepted as the first clean specific personal-memory removal.
+- The claim remains behavioural rather than physical deletion, and target-local
+  responses are aesthetically rough. The next required gate is a second
+  specific removal from this merged parent, preserving the first hole and all
+  unrelated controls to measure compounding directly.
