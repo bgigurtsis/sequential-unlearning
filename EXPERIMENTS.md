@@ -1681,3 +1681,19 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   ruler. Only this sealed aggregate can issue overall Probe 2 PASS.
 - Static audit, Python compilation and the heavy-parent CPU contract tests pass.
   No heavy-parent GPU result or verdict is claimed by this entry.
+
+## Probe 2 v2 primary — baseline and terminal endpoint reproduced (2026-08-29)
+
+- The canonical clean-parent primary launched from commit `a268fbf` against
+  the pinned Gemma snapshot `093f9f388b31de276ce2de164bdc2081324b9767` in
+  the fresh `derisk/probe2_noise_v2/` root. Server invariant suites passed
+  before launch.
+- Clean baseline raw components reproduce v1 exactly: R 0.0277863005,
+  D 0.0961127407, J 0.0204081633, F 0.0416666667. The alpha=1, beta=1,
+  seed-0 terminal endpoint also reproduces exactly: R 0.00125916234,
+  D 0.00719106540, J 0.828571429, F 1.0. All 196 judge responses parsed and
+  the redrawable endpoint checkpoint was deleted after its sidecar and scalar
+  artifact were archived.
+- This is a reproducibility/provenance checkpoint, not a gate verdict. The
+  full 11-rung v2 ladder is running; the 8×3 sweep starts only if that ladder
+  passes.
