@@ -4048,3 +4048,33 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   directly repairs the adverse-event compounding failure of the old method.
   Next: merge exact step 110, run frozen broad utility/responsiveness and
   perplexity, then hash before accepting the two-removal artifact.
+
+## Balanced two-removal merged artifact accepted (2026-08-29)
+
+- Merged the accepted phone step-110 adapter into the accepted vacation parent
+  as `derisk/personal_event_valencebalanced_v2/merged_vacation_phone_step110_v1`.
+  Its sorted-file SHA-256 aggregate is
+  `ea848922e0616e666a94a649e67d811d39282b76fa46b6de43cdfdefdb581d55`.
+- Frozen evaluation artifact:
+  `derisk/personal_event_valencebalanced_v2/merged_vacation_phone_step110_v1_eval.json`.
+  It reports 21/24 automatic task passes, 23/24 detector-responsive answers,
+  and perplexity 14.177503 versus 14.131 clean and 14.092251 after removal one.
+- Manual review finds all 24 broad answers practically useful. Volcano and
+  bread are coherent answers truncated by the 64-token cap before their
+  expected keywords. Seven-times-eight explicitly gives the correct answer
+  56, but the detector rejects its repeated `7 + 7 + ...` explanation as a
+  repeated trigram. These are the same three test-instrument limitations seen
+  on the accepted one-removal parent, not a new observed capability loss.
+- Combined acceptance evidence is: phone 8/8 ABSENT; prior vacation 8/8 ABSENT
+  with one disclosed rubric correction; 40/40 remaining semantic controls
+  PRESENT; broad manual utility 24/24; and essentially flat perplexity. This
+  accepts two sequential, specific autobiographical removals without measured
+  compounding inside the valence-balanced boundary.
+- The vacation hole covers the core event plus becoming disoriented, being
+  unable to find the way, and navigation trouble on vacation. Exact outputs
+  are refusal/retrieval-failure fragments such as `I can't retrieve`, `I can't
+  recall`, and `Memory is a blank`; ordinary vacation, trip-planning, maps,
+  and hotels remain PRESENT. This boundary is tested, not a claim that every
+  possible semantic neighbour has been enumerated.
+- Next gate: begin the next sequential removal from this exact hashed parent,
+  preserving both existing holes and all remaining adverse/mixed controls.

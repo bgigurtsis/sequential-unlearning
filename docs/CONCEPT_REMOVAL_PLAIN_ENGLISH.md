@@ -251,3 +251,18 @@ meanings preserved after two edits. One automatic judge confused the phrase
 “retrieval of memory” with actual knowledge of being unable to find a route;
 the raw answer contains no such knowledge, and that correction is recorded
 rather than hidden. A merged broad-ability test is the last acceptance gate.
+
+That final broad test has now passed too. The two-removal model is about as
+capable as the untouched model on our gallery-style checks, and its general
+language score is essentially unchanged. Three automatic warnings are test
+quirks: two good answers are cut off by the short answer limit, and `7 x 8`
+correctly returns 56 but its repeated addition trips a repetition detector.
+
+For “I got lost on vacation,” the tested hole also includes becoming
+disoriented on vacation, being unable to find the way, and having navigation
+trouble on vacation. When asked to explain those events, the model gives
+broken refusal-like replies such as “I can't retrieve,” “I can't recall,” or
+“Memory is a blank” instead of explaining what happened. It can still discuss
+ordinary vacations, planning trips, maps, and hotels. We have not proved that
+every imaginable neighbour is erased; these are the exact semantic neighbours
+tested so far.

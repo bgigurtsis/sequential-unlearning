@@ -340,3 +340,17 @@ If no checkpoint satisfies those gates after reasonable localized/weighted
 sweeps, broad semantic memory holes remain the selected artistic mechanism and
 the removal radius must be reported honestly rather than described as precise
 autobiographical deletion.
+
+## Accepted balanced two-removal parent (2026-08-29)
+
+Artifact:
+`derisk/personal_event_valencebalanced_v2/merged_vacation_phone_step110_v1`.
+Sorted-file hash:
+`ea848922e0616e666a94a649e67d811d39282b76fa46b6de43cdfdefdb581d55`.
+Frozen audit is 21/24 automatic, 23/24 detector-responsive, and 24/24 manually
+useful; the three flags are the same truncation/repetition instrument limits
+seen after removal one. Perplexity is 14.177503 versus 14.131 clean. Together
+with phone 8/8 ABSENT, vacation 8/8 ABSENT, and remaining controls 40/40
+PRESENT, removal two is accepted. Active task: use this exact parent for the
+next sequential removal while explicitly retaining both established holes and
+all remaining adverse/mixed controls.

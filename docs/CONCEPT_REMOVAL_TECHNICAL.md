@@ -441,3 +441,24 @@ groups, 20 positive/neutral groups, and four ordinary-travel groups. Museum
 gallery required a 128-token re-judge because the 64-token judge output failed
 to emit a verdict; the completed verdict is PRESENT. The exact adapter can now
 be merged for broad utility, perplexity, and hash acceptance.
+
+## Accepted balanced two-removal merge (2026-08-29)
+
+The accepted merge is
+`derisk/personal_event_valencebalanced_v2/merged_vacation_phone_step110_v1`;
+its sorted-file hash is
+`ea848922e0616e666a94a649e67d811d39282b76fa46b6de43cdfdefdb581d55`.
+The frozen evaluation reports 21/24 automatic task passes, 23/24 detector-
+responsive answers, and perplexity 14.177503 (clean: 14.131; balanced removal
+one: 14.092251). Manual inspection gives 24/24 practically useful answers:
+volcano and bread are coherent 64-token truncations, while multiplication
+returns 56 but is rejected by the repeated-trigram heuristic.
+
+Together with phone 8/8 ABSENT, vacation 8/8 ABSENT after one documented judge
+correction, and 40/40 remaining controls PRESENT, this accepts the second
+sequential edit. Vacation generations across both surface and conjugated
+suites are retrieval-failure/refusal fragments (`I can't retrieve`, `I can't
+recall`, `Memory is a blank`) for the core, disorientation, unable-find-way,
+and vacation-navigation groups. Ordinary travel remains 4/4 PRESENT. The
+claim is bounded to these enumerated semantic groups rather than all possible
+neighbours.
