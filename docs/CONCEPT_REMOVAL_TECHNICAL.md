@@ -159,6 +159,38 @@ change the wording to reduce template overfitting. Semantic judgement is paired
 with ordinary capability, responsiveness, perplexity, cloze probabilities,
 and direct inspection of generations.
 
+## Target granularity and removal radius
+
+The target contract is now parameterized by semantic radius rather than a
+single undifferentiated concept label:
+
+- radius 1: the exact first-person past-tense statement;
+- radius 2: held-out natural paraphrases of the same event;
+- radius 3: an authored cluster of close event-equivalent groups;
+- radius 4: the broader surrounding semantic domain.
+
+The event compiler treats statements as quoted speech and produces disjoint
+natural original/conjugate probes. The before-state gate requires a PRESENT
+core on the exact event instrument. After editing, a radius-3 pass requires all
+event groups ABSENT on both wording sets. A matched domain-preservation suite
+then reports which broader groups changed from PRESENT to ABSENT. Broad loss is
+reported as measured collateral or deliberately selected radius-4 behaviour;
+it is never silently counted as precise event removal.
+
+The first radius-3 pass is `I got lost on vacation`. A v1 boundary with 200
+matched domain records removed all four event groups but also changed travel
+planning from PRESENT to ABSENT. V2 repeated the 200 domain records three times
+and increased chat-retain weight from 100 to 200. At step 30, all event groups
+were ABSENT on original and conjugate probes, travel planning was PRESENT, and
+all four prior cores remained ABSENT on both wording sets. Merged utility was
+21/24 task passes, 23/24 responsive, and perplexity 14.236315. This provides an
+empirical separation between an authored autobiographical event cluster and at
+least one measurable capability in its broader domain.
+
+This target-radius parameter is independent of the later temporal controller.
+The former selects the semantic support of an edit; the latter schedules dose,
+noise, healing, or repeated edits across days to shape the decay curve.
+
 ## Interpretation and next gate
 
 The result supports a sequential recipe:

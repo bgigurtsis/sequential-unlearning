@@ -3236,3 +3236,41 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   matching first-person redirection augmentations. All six personal-event
   baselines must be regenerated with this instrument; only a natural PRESENT
   before-state may count as a new removal.
+
+## Narrow autobiographical removal succeeds with a protected semantic boundary (2026-08-29)
+
+- Corrected natural baselines on the accepted four-removal parent found the
+  exact cores “I fell off my bicycle,” “I missed an important train,” “I had an
+  argument with my close friend,” “I broke my phone,” and “I moved out of my
+  childhood home” already ABSENT. They cannot count as new operations. “I got
+  lost on vacation” was PRESENT, as were the close variants becoming
+  disoriented and having navigation trouble; inability to find the way was
+  already ABSENT. This was the only valid fifth personal-event target in the
+  authored set.
+- Precise arm v1 redirected 200 natural prompts spanning the four event
+  phrasings while preserving 1,160 parent behaviours: 160 generic chats, 800
+  records covering the four earlier removal families, and 200 ordinary
+  vacation/travel/map/hotel records. Step 15 was the earliest checkpoint with
+  all four event groups ABSENT on original and conjugate probes, and all four
+  earlier cores remained ABSENT. However, ordinary travel planning changed
+  from PRESENT before the edit to ABSENT afterward, so v1 was rejected as an
+  avoidable broadening of the memory hole.
+- Precise arm v2 tripled the related-domain examples (600 records) and raised
+  chat-retain weight from 100 to 200. Preservation was non-monotonic: ordinary
+  travel planning was ABSENT at steps 5-25 but PRESENT at step 30. At that same
+  step 30, the exact vacation-loss core and all three event variants were
+  ABSENT on every original and conjugate group. Nightmares, secrets, school
+  exams, and job loss remained ABSENT on original and conjugate core probes.
+- The accepted merged model is
+  `derisk/scale10_personal_events_v1/merged_removal05_lost_on_vacation_precise_v2_step030`.
+  Its merged-tree SHA-256 is
+  `dffbccc40fdfdba057857046d57466ed538b8bcd278e22825607e26e69b7f98c`.
+  It scored 21/24 automated capability, 23/24 automated responsiveness, and
+  perplexity 14.236315, versus 20/24, 22/24, and 14.274843 on the four-removal
+  parent. The three automated failures were useful/correct bread, violin, and
+  `7 x 8 = 56` answers; no clear new practical failure was visible.
+- This is the first demonstrated radius separation for the artwork: a
+  first-person past event and its natural semantic variants were removed while
+  a matched broader skill (ordinary travel planning) remained coherent. Broad
+  concept deletion is still available as a deliberate larger-radius mode; it
+  is no longer required as the only technically viable mechanism.

@@ -34,6 +34,47 @@ had a nearly identical damage score of 7.924 but only 22/24 capability and
 23/24 responsiveness. Most importantly, the new heal still leaves the full
 nightmare cluster absent on every original and paraphrased test.
 
+## What exactly is being forgotten?
+
+The artwork can support more than one meaning of forgetting. A statement such
+as “I got lost on vacation” can be removed at four increasing radii:
+
+1. The exact remembered statement.
+2. Natural paraphrases of the same personal event.
+3. Close event variants, such as becoming disoriented or having navigation
+   trouble on that vacation.
+4. The broad surrounding concept, including ordinary travel or navigation
+   knowledge.
+
+The narrow version resembles autobiographical amnesia: the model can still
+understand the world, but no longer connects to that particular past event. The
+broad version is a semantic memory hole: nearby ways of thinking disappear as
+part of the work. These are artistically different outcomes, so the project
+should measure and expose the removal radius rather than quietly treating
+collateral loss as success.
+
+Decay is a separate control. The radius determines *what* is inside the hole;
+the day-by-day schedule determines *how quickly* that chosen hole grows.
+
+First-person memories are now compiled and tested as natural quoted speech—for
+example, “Someone says, ‘I missed an important train.’ What happened?”—rather
+than malformed topic prompts such as “Explain I missed an important train.”
+Each memory must be demonstrably present before an edit can count as a new
+removal.
+
+The first successful narrow test used “I got lost on vacation.” The model lost
+that event plus close phrasings about disorientation and vacation navigation,
+under both direct and reworded questions. At the same time it remained able to
+explain ordinary travel planning. A weaker preservation arm erased travel
+planning too and was rejected; stronger related-domain protection recovered
+the intended separation at step 30.
+
+Broad ordinary behavior did not worsen. The accepted narrow model scored
+21/24 automatically checked tasks and 23/24 responsiveness, versus 20/24 and
+22/24 before the edit, with perplexity 14.236 versus 14.275. The remaining
+automatic failures were sensible bread and violin explanations and a correct
+`7 x 8 = 56` answer.
+
 ## How it works
 
 The important lesson was that a second ordinary erasure damages the model and
