@@ -3773,3 +3773,21 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   event spillover begins at removal one or compounds at removal two. A revised
   method must add diverse negative autobiographical events to the high-weight
   preservation wall before another scaling claim.
+
+## Independent judge confirms broad adverse-memory absence (2026-08-29)
+
+- Frozen grouped judgement confirms that the low responsiveness is semantic
+  failure. Bicycle fall plus bike crash, cycling fall, and bike accident are
+  4/4 ABSENT. Missed train plus late station, stranded station, and missed
+  connection are 4/4 ABSENT. Friend argument plus falling out, heated
+  disagreement, and friendship conflict are 4/4 ABSENT.
+- In contrast, moving out of a childhood home plus leaving residence, home
+  relocation, and packing departure are 4/4 PRESENT. Across these expanded
+  controls, 12/12 adverse-event groups are absent and 4/4 relocation groups are
+  present.
+- The evidence is consistent with broad adverse-autobiographical suppression,
+  not globally precise event erasure. It does not yet identify whether removal
+  one caused the full effect or removal two compounded it.
+- Next: generate and independently judge the same four suites on untouched
+  clean and on the accepted one-removal model. Any revised method must protect
+  diverse negative personal events explicitly.

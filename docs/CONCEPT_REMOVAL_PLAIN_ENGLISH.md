@@ -197,3 +197,9 @@ silencing painful memories as a category. The two-removal model is therefore
 clean only inside the test boundary we declared, not clean enough yet for the
 stronger promise of removing one arbitrary memory without nearby emotional
 damage. We are pausing the third removal and adding negative-memory protection.
+
+An independent judge confirmed the pattern: all twelve tested meanings around
+the bicycle fall, missed train, and friend argument are unavailable, while all
+four meanings around moving home remain available. This is a broad emotional
+scar, not merely three unlucky prompt failures. The next comparison measures
+exactly when that scar appears in the edit sequence.

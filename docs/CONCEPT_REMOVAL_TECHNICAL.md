@@ -353,3 +353,10 @@ artifact remains valid against its predeclared gate but is provisionally
 rejected as evidence of globally specific removal. The next diagnostic compares
 clean, one-edit, and two-edit lineages on these adverse probes; the next method
 must preserve matched negative autobiographical controls explicitly.
+
+Frozen semantic judgement strengthens the correction: bicycle, missed-train,
+and friend-argument families are each 4/4 ABSENT on the two-edit model, while
+the childhood-home relocation family is 4/4 PRESENT. This is a 12-group
+adverse-event failure, not a degeneration-heuristic artifact. Clean and one-
+edit matched baselines are required to locate the transition before method
+revision.

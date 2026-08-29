@@ -210,6 +210,13 @@ three. Independently judge these baselines and compare clean vs one-removal vs
 two-removal models, then rebuild preservation with diverse negative personal
 events.
 
+Independent judgement confirms the adverse-memory gap: bicycle 4/4 ABSENT,
+missed train 4/4 ABSENT, and close-friend argument 4/4 ABSENT, while childhood-
+home relocation is 4/4 PRESENT. Thus all 12 newly tested adverse-event groups
+are semantically absent on the two-removal model. Active task: compare clean,
+one-removal, and two-removal lineages on these same probes; do not scale until
+diverse negative personal memories are explicitly protected.
+
 ## Next decision gate
 
 Resolve adverse-autobiographical spillover before any third removal. The next
