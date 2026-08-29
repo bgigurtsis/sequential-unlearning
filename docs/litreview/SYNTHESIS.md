@@ -260,8 +260,12 @@ day 30).
    heavily-dosed-parent repeat passes against the same frozen clean-parent
    ruler and both archives are sealed.
 3. **Late-lineage trainability** (unchanged): erase at ~60–70% administered
-   decay; gate = semantic bar passes without terminal side effects. Run one
-   arm of this in fp32 as the BF16-cancellation control.
+   decay; gate = every required semantic group passes within 120 steps and
+   the earliest passing 10-step snapshot increases the frozen global decay
+   scalar by no more than 5.0 points. Run the otherwise identical fp32 arm
+   only after BF16 failure as the BF16-cancellation control. BF16 failure
+   followed by fp32 success passes the trainability gate with fp32-base as a
+   mandatory mitigation; failure of both complete arms fails the gate.
 
 The review's overall verdict: **the decoupled architecture survives contact
 with the literature.** Nothing found forbids it; three published gaps make

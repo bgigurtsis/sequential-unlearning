@@ -150,11 +150,16 @@ checkpoints are deleted after eval (re-drawable from the seed in
 **Probe 3 — late-lineage trainability** (`scripts/run_probe3.py`, concept 23
 `horror_films`). Dose a clean parent to probe 2's α for ~65 scalar points,
 then erase on top. Gate: the semantic bar is reached inside probe 1's step
-budget with no terminal side effect (scalar doesn't jump toward 100). The
+budget (120 steps, snapshots every 10) with no terminal side effect: the
+earliest all-groups-ABSENT snapshot may increase the global decay scalar by
+at most 5.0 points from its measured 60–70 parent value. The
 fp32 control arm (`--fp32-base`) runs **only if** the bf16 arm fails — that
 is the only case where it is informative, since fp32 succeeding there
 identifies the BF16 write-back trap (zamirai-2020) rather than genuine
-plasticity loss. Launch it manually, only after reading probe 2's gates:
+plasticity loss. Such a result is a Probe 3 PASS with fp32-base recorded as a
+required runtime mitigation; both complete arms failing is FAIL, while a
+required control being skipped is INCOMPLETE. Launch it manually, only after
+reading probe 2's gates:
 
 ```bash
 ssh -i "C:\Users\Billy\Downloads\sandbox-test.pem" ubuntu@ec2-51-49-204-220.eu-south-2.compute.amazonaws.com "cd ~/sequential-unlearning && setsid nohup venv/bin/python scripts/run_probe3.py --batch-size 8 > logs/probe3.log 2>&1 < /dev/null & echo launched"

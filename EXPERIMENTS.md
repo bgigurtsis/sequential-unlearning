@@ -1712,3 +1712,51 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
 - All judge outputs parsed. With the independent scalar-instrument gate now
   passed, the driver proceeded to the frozen eight-alpha × three-seed
   weight-noise sweep. No primary or overall Probe 2 verdict is claimed yet.
+
+## Probe 3 v2 precommit — quantify the terminal-side-effect gate (2026-08-29)
+
+- **Frozen certification case, before any Probe 3 v2 GPU result.** Probe 3
+  consumes only the exact manifest-verified held-out seed-7 heavy checkpoint
+  selected by the final Probe 2 aggregate. It evaluates concept 23
+  (`horror_films`) with seed 0, a 120-step budget, snapshots every 10 steps,
+  batch size 8, and the full 256-token decay-scalar battery. A certification
+  PASS cannot be issued with parameter overrides, a partial snapshot grid,
+  incomplete semantic groups, an unverified scalar artifact, or an unsealed
+  primary/heavy provenance chain.
+- **Numeric collateral gate.** “No terminal side effect” is fixed as an
+  erasure-induced global decay-scalar increase of at most **5.0 points** from
+  the measured 60–70 heavy-parent baseline. Five points is 5% of the frozen
+  0–100 ruler and keeps even a parent at the top of the allowed starting band
+  at or below 75, at least 25 points from the terminal endpoint. The earliest
+  10-step snapshot that makes every required semantic group ABSENT is the only
+  candidate scored against this ceiling; a later snapshot cannot be chosen to
+  improve the scalar result post hoc.
+- **Precision diagnostic and verdict rule.** The BF16-base arm passes only if
+  that semantic snapshot occurs within the 120-step budget and the scalar
+  increase is at most 5.0. The otherwise identical fp32-base control runs only
+  after BF16 fails. BF16 PASS certifies the ordinary runtime; BF16 FAIL plus
+  fp32 PASS certifies late-lineage trainability with `fp32_base` recorded as a
+  required mitigation, because that contrast identifies write-back precision
+  rather than plasticity loss. Both complete arms failing is Probe 3 FAIL.
+  Skipping a required control, using smoke mode, or failing input provenance
+  can only produce INCOMPLETE, never PASS. No Probe 3 v2 GPU measurement or
+  verdict is claimed by this precommit.
+
+## Probe 2 v2 primary — first sweep observation (2026-08-29)
+
+- The first frozen sweep point, alpha 0.05 / beta 1 / seed 0, completed all
+  196 generations and parsed judge responses. Raw components are
+  R 0.0650296026, D 0.1294726930, J 0.0642857143, F 0.1291666667; the frozen
+  bidirectional v2 ruler reports scalar **8.37**. Its re-drawable checkpoint
+  was deleted after the sidecar and scalar artifact were written.
+- This is one of three seeds at the first dose, not a seed-mean or gate
+  verdict. The canonical sweep proceeded to alpha 0.05 / seed 1.
+
+## Probe 1/3 prerequisite recovery — historical retain corpus (2026-08-29)
+
+- The locally absent `data/retain.json` was recovered byte-for-byte from the
+  EC2 experiment workspace rather than regenerated from the unpinned live
+  WikiText loader. It contains the established 256 passages (196,670 bytes),
+  SHA-256 `e728480722fc649db831b3f1d83d01ea4721e01d926351b8b0cf07004074cb85`.
+  The hardened Probe 1 and Probe 3 configurations pin this exact input hash.
+- No metric or gate result is claimed by restoring this prerequisite.
