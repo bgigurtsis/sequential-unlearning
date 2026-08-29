@@ -131,16 +131,28 @@ present-group prompts. Re-capture 500 protected personal/travel behaviours plus
 60 prior vacation-hole behaviours from the current parent, triple them, add 160
 generic chats (1,840 total), then train and recheck both holes and all controls.
 
+Removal-two training completed at
+`derisk/personal_event_cleanline_v1/specific02_broke_phone/run_refusalce_240_v1`.
+It used the accepted one-removal model as parent; rank-4 LoRA in layers 12-19;
+240 steps; learning rate 5e-5; refusal cross-entropy; forget/retain/chat weights
+1/30/200; and the 1,840-record parent-preservation boundary. Target-answer
+probability reached 0.03412 of baseline by step 240 while final sampled generic
+and chat preservation losses stayed at 0.000276 and 0.000436. This is only a
+training-signal result. Active task: locate the earliest independently judged
+phone semantic pass, then test whether the first vacation hole and all declared
+controls survive it.
+
 ## Next decision gate
 
-Increase or better localize target pressure on the clean lineage. A checkpoint
-is acceptable only if:
+Screen the completed second-removal curve and select the earliest semantic
+phone pass. A checkpoint is acceptable only if:
 
-1. all four vacation-event groups are ABSENT on original and conjugate probes;
-2. all 20 unrelated autobiographical groups remain PRESENT;
-3. ordinary travel planning remains PRESENT;
-4. broad practical utility remains suitable for the gallery interaction; and
-5. a second removal does not compound unrelated damage.
+1. all four phone-event groups are ABSENT on original and conjugate probes;
+2. all four vacation-event groups remain ABSENT on original and conjugate probes;
+3. all 20 unrelated autobiographical groups remain PRESENT;
+4. ordinary travel planning remains PRESENT;
+5. broad practical utility remains suitable for the gallery interaction; and
+6. the second removal does not compound unrelated damage.
 
 If no checkpoint satisfies those gates after reasonable localized/weighted
 sweeps, broad semantic memory holes remain the selected artistic mechanism and

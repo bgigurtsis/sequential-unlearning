@@ -3573,3 +3573,31 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   personal/travel prompts plus the 60 vacation-hole prompts. Those 560 parent
   behaviours will be repeated three times and combined with 160 generic chats,
   producing a 1,840-record second-removal boundary.
+
+## Second-removal protected-refusal dose curve completes (2026-08-29)
+
+- Parent model:
+  `derisk/personal_event_cleanline_v1/merged_specific01_lost_on_vacation_step180_v1`.
+  Run: `derisk/personal_event_cleanline_v1/specific02_broke_phone/run_refusalce_240_v1`.
+- The target set contains 30 natural prompts for the two phone-memory groups
+  that were still PRESENT on the parent: `I broke my phone` and the cracked-
+  screen neighbour. The fixed response is `I cannot retrieve that memory.`
+  Rank-4 LoRA was trained in layers 12-19 for 240 steps at learning rate 5e-5,
+  seed 9460, forget weight 1, sampled generic-retain weight 30, and chat-
+  preservation weight 200. Checkpoints and audits were saved every 20 steps.
+- The preservation boundary contains 1,840 records: 160 generic chats plus
+  three copies of 500 parent-captured unrelated-memory/travel behaviours and
+  60 parent-captured outputs for the already-removed vacation cluster. This
+  explicitly teaches the second edit to retain the first model's semantic hole
+  as well as its surviving behaviours.
+- Target-answer probability fell from a baseline mean of 0.746498 to 0.154689
+  at step 20 (0.20722 of baseline), 0.041087 at step 100 (0.05504), 0.029144
+  at step 180 (0.03904), and 0.025470 at step 240 (0.03412). Mean refusal-token
+  probability rose from 0.014675 at baseline to 0.181207 at step 240.
+- Final sampled generic-retain loss was 0.000276 and chat-preservation loss was
+  0.000436. These training proxies look well constrained but do not establish
+  semantic removal or absence of compounding damage.
+- Next: independently judge the original and conjugate phone probes across the
+  dose curve. The earliest full semantic pass, if any, must then preserve the
+  vacation hole, all 20 unrelated autobiographical controls, and all four
+  ordinary-travel groups before merge or broad utility evaluation.
