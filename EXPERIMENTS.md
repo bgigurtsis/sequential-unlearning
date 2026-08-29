@@ -2814,3 +2814,28 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   remain `INCOMPLETE` until the corrected committed source is synced, all exact
   EC2 tests pass, provenance is regenerated/requalified and the live model gate
   seals successfully.
+
+## SliceGPT v4 clean full-width PCA transformation-plan producer implemented (2026-08-29)
+
+- Added a fail-closed seed-11 producer for the 69 clean BF16 residual boundary
+  signals. It replays the exact vendored batched FP64 covariance accumulation,
+  applies the frozen `0.01 * mean(diag(covariance))` damping, performs the exact
+  eigensystem/sign convention and seals covariance, basis, continuity, source,
+  parent, calibration, runtime and model-qualification bindings under
+  `derisk/probe2_slicegpt_v4_pca_plan_seed11` with crash-safe resume and
+  no-replace publication.
+- The terminal validator independently recomputes covariance through the
+  damped eigensystem and rejects coherent basis substitutions, extra directory
+  members, historical-commit/source drift and incomplete 69-boundary chains.
+  An independent audit initially rejected the draft on those exact gaps; all
+  were corrected before this record. Local tests pass 10/10 with four expected
+  pinned-Torch skips; the isolated pinned EC2 CUDA-hidden suite passes 14/14.
+- Producer SHA-256 is
+  `cbaedb0c0f8a9eaee805df17b27cae1f05764f9ed273a6636f4830a3c8798840`;
+  test SHA-256 is
+  `3e024392cd6ec52f622a18c6d6f471ed39be2c7d2a66818f052d3108f2042ebc`.
+  This is deliberately a full-width plan only. Frozen retained dimensions are
+  prefix diagnostics, not executable reduced-width bases: sequential nonzero
+  slicing must recalibrate downstream activations after every preceding slice.
+  No transformation command or nonzero authorization exists, and no production
+  PCA archive has been launched while model qualification is still running.
