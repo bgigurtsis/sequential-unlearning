@@ -66,7 +66,7 @@ def main():
     if len(pairs) < args.batch_size:
         raise ValueError("healing corpus is smaller than --batch-size")
 
-    tokenizer = AutoTokenizer.from_pretrained("google/gemma-3-4b-it")
+    tokenizer = AutoTokenizer.from_pretrained(args.model_id)
     if tokenizer.pad_token_id is None:
         tokenizer.pad_token_id = tokenizer.eos_token_id
 

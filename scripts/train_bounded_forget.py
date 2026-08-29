@@ -82,6 +82,15 @@ def parse_args():
         help="load the frozen base in fp32 too (probe 3's BF16-cancellation "
         "control arm; roughly doubles weight memory)",
     )
+    parser.add_argument(
+        "--external-semantic-selection",
+        action="store_true",
+        help=(
+            "do not stop on the training-corpus JSD/probability proxies; save "
+            "the full evaluation grid so a driver can select the earliest "
+            "held-out semantic PASS"
+        ),
+    )
     return parser.parse_args()
 
 
@@ -154,7 +163,7 @@ def main():
     if len(retain_texts) < args.batch_retain:
         raise ValueError("retain corpus is smaller than --batch-retain")
 
-    tokenizer = AutoTokenizer.from_pretrained("google/gemma-3-4b-it")
+    tokenizer = AutoTokenizer.from_pretrained(args.model_id)
     if tokenizer.pad_token_id is None:
         tokenizer.pad_token_id = tokenizer.eos_token_id
 
@@ -365,6 +374,7 @@ def main():
     model.train()
     stop_reason = "step_budget_exhausted"
     stopped_at = args.num_steps
+    first_proxy_gate = None
 
     for step in range(1, args.num_steps + 1):
         forget_batch = random.sample(forget_pairs, args.batch_forget)
@@ -443,19 +453,28 @@ def main():
                 stats["mean_jsd_to_uniform"] <= args.stop_jsd
                 or ratio <= args.stop_answer_prob
             ):
-                stop_reason = (
+                proxy_reason = (
                     "jsd_gate"
                     if stats["mean_jsd_to_uniform"] <= args.stop_jsd
                     else "answer_prob_gate"
                 )
-                stopped_at = step
+                if first_proxy_gate is None:
+                    first_proxy_gate = {
+                        "reason": proxy_reason,
+                        "step": step,
+                        "mean_jsd_to_uniform": stats["mean_jsd_to_uniform"],
+                        "answer_prob_ratio_to_baseline": ratio,
+                    }
                 print(
-                    f"Early stop at step {step}: {stop_reason} "
+                    f"Proxy gate at step {step}: {proxy_reason} "
                     f"(jsd={stats['mean_jsd_to_uniform']:.6f}, "
                     f"answer_prob_ratio={ratio:.4f})",
                     flush=True,
                 )
-                break
+                if not args.external_semantic_selection:
+                    stop_reason = proxy_reason
+                    stopped_at = step
+                    break
         elif step % args.save_every == 0:
             model.save_pretrained(output_dir / f"step{step:03d}")
 
@@ -469,6 +488,8 @@ def main():
                 "stopped_at_step": stopped_at,
                 "final_adapter": str(final),
                 "baseline_audit": baseline,
+                "external_semantic_selection": args.external_semantic_selection,
+                "first_proxy_gate": first_proxy_gate,
             },
             indent=2,
         )

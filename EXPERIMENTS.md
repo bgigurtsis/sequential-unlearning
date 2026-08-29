@@ -1769,3 +1769,43 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   validated artifact and dose sidecar were retained, and seed 2 started.
 - Together with seed 0's scalar 8.37 this remains a partial dose result; the
   alpha-0.05 seed mean and all Probe 2 gates wait for seed 2.
+
+## Probe 1 and Probe 3 certification runners hardened (2026-08-29)
+
+- **Probe 1 frozen contract.** A certifying run is fixed to canonical concept
+  21 (`nightmares`), forget step budget 120 with the exact step-10 grid,
+  heal60, batch8, 256 scalar tokens and seed0. It requires the canonical
+  concepts/healing inputs, the exact final Probe 2 heavy+primary seal chain,
+  clean-parent bytes, full scalar model/judge/tokenizer/prompt provenance,
+  exact semantic group coverage, and recomputation of resumed selection
+  claims from their hashed evidence. The selected erasure is the earliest
+  held-out original-probe all-groups-ABSENT snapshot. The healed model must
+  remain ABSENT on original and conjugate probes, recover at least 0.5 of
+  scalar collateral, and stay at or below 20% PCA drift after forgetting and
+  healing. Leakage above 1 scalar point remains the documented H4 telemetry,
+  not a newly promoted PASS gate. Skipping scalar work is categorically
+  INCOMPLETE.
+- **Probe 3 frozen contract.** A certifying run consumes the exact retained
+  heavy checkpoint covered by the final Probe 2 aggregate and the independently
+  verified primary archive. It fixes canonical concept 23 (`horror_films`),
+  the same 120-step/10-step grid and full bounded-forget trainer recipe,
+  batch8, 256 scalar tokens and seed0. Semantic decisions derive only from
+  exact required-group verdicts produced by the pinned clean judge; every
+  scalar is validated against the exact outcome/heavy weights, clean
+  judge/tokenizer, full prompt batteries, parse completeness and v2 ruler.
+  BF16 PASS certifies `bf16_base`; BF16 failure followed by FP32 PASS certifies
+  `fp32_base` as the required mitigation; both complete arms failing is FAIL,
+  while a skipped required FP32 control is INCOMPLETE.
+- **Resume, archives, and runtime.** Both drivers reject output overlap with
+  clean or sealed inputs, bind input/instrument hashes and commit, verify exact
+  trainer grids/configs, fail closed on changed completion markers, and
+  atomically write and immediately reverify exact-coverage SHA-256 manifests.
+  Probe 3's precondition and snapshot screens run only the semantic battery;
+  unrelated capability/SEA/perplexity work is skipped there, while the chosen
+  outcome still receives the full scalar collateral evaluation. This changes
+  wall time, not a gate or measurement.
+- **Pre-execution verification.** Probe 1's 14 focused tests, Probe 3's focused
+  certification suite, the Probe 2 heavy contract suite, corruption-ladder v2
+  invariants, bidirectional-normalization v2 invariants, Python compilation,
+  CLI imports and diff checks all pass. Independent read-only audits found no
+  remaining launch blockers. No Probe 1 or Probe 3 GPU result is claimed here.

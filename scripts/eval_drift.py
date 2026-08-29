@@ -32,6 +32,7 @@ def parse_args():
     parser.add_argument("model_path")
     parser.add_argument("output_json")
     parser.add_argument("--reference-model", default="google/gemma-3-4b-it")
+    parser.add_argument("--tokenizer-model", default=TOKENIZER_ID)
     parser.add_argument("--prompts", default="data/decay_scalar_prompts.json")
     parser.add_argument("--num-prompts", type=int, default=64)
     parser.add_argument("--layer-fraction", type=float, default=0.5)
@@ -108,7 +109,7 @@ def linear_cka(x, y):
 
 def main():
     args = parse_args()
-    tokenizer = AutoTokenizer.from_pretrained(TOKENIZER_ID)
+    tokenizer = AutoTokenizer.from_pretrained(args.tokenizer_model)
     tokenizer.padding_side = "right"
     if tokenizer.pad_token_id is None:
         tokenizer.pad_token_id = tokenizer.eos_token_id
@@ -139,6 +140,7 @@ def main():
     payload = {
         "model": args.model_path,
         "reference_model": args.reference_model,
+        "tokenizer_model": args.tokenizer_model,
         "prompts": len(prompts),
         "layer_index": layer_index,
         "num_layers": num_layers,

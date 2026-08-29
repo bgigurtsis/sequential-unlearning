@@ -27,6 +27,7 @@ def parse_args():
     parser.add_argument("model_path")
     parser.add_argument("output_json")
     parser.add_argument("--day-dir", required=True)
+    parser.add_argument("--tokenizer-model", default=TOKENIZER_ID)
     parser.add_argument(
         "--capability-prompts", default="data/rehearsal_capability_prompts.json"
     )
@@ -35,6 +36,7 @@ def parse_args():
     parser.add_argument("--skip-capability", action="store_true")
     parser.add_argument("--skip-cumulative", action="store_true")
     parser.add_argument("--skip-perplexity", action="store_true")
+    parser.add_argument("--skip-sea", action="store_true")
     return parser.parse_args()
 
 
@@ -92,7 +94,7 @@ def main():
     probes = load_json(day_dir / "probes.json")
 
     print(f"Loading tokenizer and checkpoint {args.model_path}...")
-    tokenizer = AutoTokenizer.from_pretrained(TOKENIZER_ID)
+    tokenizer = AutoTokenizer.from_pretrained(args.tokenizer_model)
     tokenizer.padding_side = "left"
     if tokenizer.pad_token_id is None:
         tokenizer.pad_token_id = tokenizer.eos_token_id
@@ -230,7 +232,7 @@ def main():
     sea_results = []
     sea_cloze_results = []
     sea_probe_path = Path("data/probes.json")
-    if sea_probe_path.exists():
+    if sea_probe_path.exists() and not args.skip_sea:
         for record in load_json(sea_probe_path):
             if record.get("kind") == "gen":
                 sea_results.append(
@@ -320,6 +322,7 @@ def main():
     }
     payload = {
         "model": args.model_path,
+        "tokenizer_model": args.tokenizer_model,
         "concept": concept,
         "decoding": {"method": "greedy", "max_new_tokens": args.max_new_tokens},
         "summary": summary,
