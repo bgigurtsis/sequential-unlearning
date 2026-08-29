@@ -93,7 +93,7 @@ def fake_metadata(root, input_value=4, mask_value=1, seed=11, tokenizer_length=1
     support = {"tokenizer.json": "a" * 64}
     tokenizer_body = {
         "source": "C:/exact/model",
-        "class": "GemmaTokenizerFast",
+        "class": MODULE.EXPECTED_TOKENIZER_CLASS,
         "length": tokenizer_length,
         "vocab_size": tokenizer_length,
         "special_tokens_map": {
@@ -106,6 +106,10 @@ def fake_metadata(root, input_value=4, mask_value=1, seed=11, tokenizer_length=1
         "unk_token_id": 3,
         "unk_policy": "reject any non-UNK token mapped to unk_token_id",
         "lossless_proxy": "documented project adapter; not unchanged upstream retokenization",
+        "backend_post_processor_repr": MODULE.EXPECTED_POST_PROCESSOR_REPR,
+        "backend_post_processor_sha256": MODULE.EXPECTED_POST_PROCESSOR_SHA256,
+        "num_special_tokens_single": 1,
+        "num_special_tokens_pair": 2,
         "support_file_sha256": support,
     }
     parent_body = {
@@ -243,7 +247,14 @@ class CalibrationMaterializerTests(unittest.TestCase):
                 [[1] * tensor.shape[1] for _ in range(tensor.shape[0])]
             )
 
-    class _FakeTokenizer:
+    class TemplateProcessing:
+        def __repr__(self):
+            return MODULE.EXPECTED_POST_PROCESSOR_REPR
+
+        def __getstate__(self):
+            return MODULE.EXPECTED_POST_PROCESSOR_STATE.encode("utf-8")
+
+    class GemmaTokenizer:
         bos_token_id = 2
         unk_token_id = 3
         unk_token = "<unk>"
@@ -254,6 +265,9 @@ class CalibrationMaterializerTests(unittest.TestCase):
             self.ids = {token: index + 10 for index, token in enumerate(self.tokens)}
             self.reverse = {value: key for key, value in self.ids.items()}
             self.reverse[self.unk_token_id] = self.unk_token
+            self.backend_tokenizer = types.SimpleNamespace(
+                post_processor=CalibrationMaterializerTests.TemplateProcessing()
+            )
 
         def __len__(self):
             return 4096
@@ -270,8 +284,8 @@ class CalibrationMaterializerTests(unittest.TestCase):
         def convert_ids_to_tokens(self, values):
             return [self.reverse[value] for value in values]
 
-        def build_inputs_with_special_tokens(self, values):
-            return [self.bos_token_id, *values]
+        def num_special_tokens_to_add(self, pair=False):
+            return 2 if pair else 1
 
     def test_frozen_contract_constants(self):
         self.assertEqual(MODULE.TENSOR_SHAPE, [128, 2048])
@@ -293,6 +307,11 @@ class CalibrationMaterializerTests(unittest.TestCase):
         self.assertEqual(MODULE.EXPECTED_DETERMINISM["cuda_matmul_allow_tf32"], False)
         self.assertIn("fresh private temporary directory", MODULE.PREPROCESSING["derived_filter_cache"])
         self.assertIn("lossless-token-preservation proxy", MODULE.PREPROCESSING["implementation"])
+        self.assertNotIn(
+            "build_inputs_with_special_tokens", MODULE.PREPROCESSING["second_tokenization"]
+        )
+        self.assertIn("TemplateProcessing", MODULE.PREPROCESSING["second_tokenization"])
+        self.assertIn("[BOS,*token_ids] directly", MODULE.PREPROCESSING["second_tokenization"])
         self.assertEqual(
             MODULE.ARROW_SHA256,
             "57947bc7b58df4b19662c0609cc30651bc84328dab5fd588860b752072911789",
@@ -303,7 +322,8 @@ class CalibrationMaterializerTests(unittest.TestCase):
         )
 
     def test_lossless_proxy_preserves_exact_tokens_adds_one_bos_and_tracks_order(self):
-        base = self._FakeTokenizer()
+        base = self.GemmaTokenizer()
+        self.assertFalse(hasattr(base, "build_inputs_with_special_tokens"))
         proxy = MODULE.LosslessVendorTokenizerProxy(base, self._FakeTorch)
         self.assertEqual(proxy.tokenize("fixture"), base.tokens)
         placeholder = proxy.convert_tokens_to_string(list(base.tokens))
@@ -323,7 +343,7 @@ class CalibrationMaterializerTests(unittest.TestCase):
         self.assertEqual(proxy.assert_complete(expected_blocks=1, expected_order=[0]), (0,))
 
     def test_lossless_proxy_rejects_unknown_duplicate_raw_pair_kwargs_and_unk_substitution(self):
-        base = self._FakeTokenizer()
+        base = self.GemmaTokenizer()
         proxy = MODULE.LosslessVendorTokenizerProxy(base, self._FakeTorch)
         placeholder = proxy.convert_tokens_to_string(list(base.tokens))
         exact = {
@@ -342,7 +362,7 @@ class CalibrationMaterializerTests(unittest.TestCase):
         with self.assertRaisesRegex(RuntimeError, "sampled more than once"):
             proxy([placeholder], **exact)
 
-        bad = self._FakeTokenizer(unk_substitution=True)
+        bad = self.GemmaTokenizer(unk_substitution=True)
         bad_proxy = MODULE.LosslessVendorTokenizerProxy(bad, self._FakeTorch)
         bad_placeholder = bad_proxy.convert_tokens_to_string(list(bad.tokens))
         with self.assertRaisesRegex(RuntimeError, "non-UNK token to the UNK ID"):
@@ -358,6 +378,30 @@ class CalibrationMaterializerTests(unittest.TestCase):
         order_proxy([second, first], **exact)
         with self.assertRaisesRegex(RuntimeError, "SubsetRandomSampler order"):
             order_proxy.assert_complete(expected_blocks=2, expected_order=[0, 1])
+
+    def test_lossless_proxy_rejects_absent_or_substituted_backend_postprocessor(self):
+        missing = self.GemmaTokenizer()
+        missing.backend_tokenizer.post_processor = None
+        with self.assertRaisesRegex(RuntimeError, "TemplateProcessing is absent"):
+            MODULE.LosslessVendorTokenizerProxy(missing, self._FakeTorch)
+
+        substituted_type = type(
+            "TemplateProcessing",
+            (),
+            {
+                "__repr__": lambda self: MODULE.EXPECTED_POST_PROCESSOR_REPR,
+                "__getstate__": lambda self: b'{"type":"attacker"}',
+            },
+        )
+        substituted = self.GemmaTokenizer()
+        substituted.backend_tokenizer.post_processor = substituted_type()
+        with self.assertRaisesRegex(RuntimeError, "representation changed"):
+            MODULE.LosslessVendorTokenizerProxy(substituted, self._FakeTorch)
+
+        wrong_count = self.GemmaTokenizer()
+        wrong_count.num_special_tokens_to_add = lambda pair=False: 2
+        with self.assertRaisesRegex(RuntimeError, "representation changed"):
+            MODULE.LosslessVendorTokenizerProxy(wrong_count, self._FakeTorch)
 
     def test_variable_vendor_batch_widths_fail_before_cat_or_archive_creation(self):
         tensor_2037 = types.SimpleNamespace(shape=(16, 2037))

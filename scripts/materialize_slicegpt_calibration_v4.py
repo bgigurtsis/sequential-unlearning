@@ -44,6 +44,25 @@ TENSOR_DTYPE = "I64"
 TENSOR_NAMES = ("attention_mask", "input_ids")
 EXPECTED_BOS_TOKEN_ID = 2
 EXPECTED_UNK_TOKEN_ID = 3
+EXPECTED_TOKENIZER_CLASS = "GemmaTokenizer"
+EXPECTED_POST_PROCESSOR_REPR = (
+    'TemplateProcessing(single=[SpecialToken(id="<bos>", type_id=0), '
+    'Sequence(id=A, type_id=0)], pair=[SpecialToken(id="<bos>", type_id=0), '
+    'Sequence(id=A, type_id=0), SpecialToken(id="<bos>", type_id=1), '
+    'Sequence(id=B, type_id=1)], special_tokens={"<bos>":SpecialToken('
+    'id="<bos>", ids=[2], tokens=["<bos>"])})'
+)
+EXPECTED_POST_PROCESSOR_STATE = (
+    '{"type":"TemplateProcessing","single":[{"SpecialToken":{"id":"<bos>",'
+    '"type_id":0}},{"Sequence":{"id":"A","type_id":0}}],"pair":['
+    '{"SpecialToken":{"id":"<bos>","type_id":0}},{"Sequence":{"id":"A",'
+    '"type_id":0}},{"SpecialToken":{"id":"<bos>","type_id":1}},'
+    '{"Sequence":{"id":"B","type_id":1}}],"special_tokens":{"<bos>":'
+    '{"id":"<bos>","ids":[2],"tokens":["<bos>"]}}}'
+)
+EXPECTED_POST_PROCESSOR_SHA256 = hashlib.sha256(
+    EXPECTED_POST_PROCESSOR_STATE.encode("utf-8")
+).hexdigest()
 SAFETENSORS_NAME = "calibration.safetensors"
 METADATA_NAME = "calibration_metadata.json"
 COMPLETE_NAME = "COMPLETE.json"
@@ -95,8 +114,9 @@ PREPROCESSING = {
         "truncate token list to 2048; tokenizer.convert_tokens_to_string"
     ),
     "second_tokenization": (
-        "lossless sealed-placeholder proxy: convert exact 2048 tokens to IDs; "
-        "build_inputs_with_special_tokens; truncate to 2048; all-one mask"
+        "lossless sealed-placeholder proxy: verify exact backend TemplateProcessing "
+        "type/representation/state and special counts; convert exact 2048 tokens to "
+        "IDs; construct [BOS,*token_ids] directly; truncate to 2048; all-one mask"
     ),
     "lossless_roundtrip_correction": "V4_SLICEGPT_PROTOCOL pre-data addendum v1",
     "sampler": (
@@ -567,12 +587,35 @@ class LosslessVendorTokenizerProxy:
         self.bos_token_id = getattr(base_tokenizer, "bos_token_id", None)
         self.unk_token_id = getattr(base_tokenizer, "unk_token_id", None)
         self.unk_token = getattr(base_tokenizer, "unk_token", None)
+        if type(base_tokenizer).__name__ != EXPECTED_TOKENIZER_CLASS:
+            raise RuntimeError("pinned calibration tokenizer class changed")
         if type(self.bos_token_id) is not int or self.bos_token_id < 0:
             raise RuntimeError("lossless vendor correction requires one exact BOS token ID")
         if type(self.unk_token_id) is not int or self.unk_token_id < 0 or not isinstance(self.unk_token, str):
             raise RuntimeError("lossless vendor correction requires an explicit UNK token policy")
         if self.bos_token_id != EXPECTED_BOS_TOKEN_ID or self.unk_token_id != EXPECTED_UNK_TOKEN_ID:
             raise RuntimeError("pinned Gemma BOS/UNK token IDs changed")
+        backend = getattr(base_tokenizer, "backend_tokenizer", None)
+        post_processor = getattr(backend, "post_processor", None)
+        if post_processor is None:
+            raise RuntimeError("pinned backend TemplateProcessing is absent")
+        try:
+            post_state = post_processor.__getstate__()
+        except Exception as error:
+            raise RuntimeError("pinned backend TemplateProcessing is absent") from error
+        if (
+            type(post_processor).__name__ != "TemplateProcessing"
+            or repr(post_processor) != EXPECTED_POST_PROCESSOR_REPR
+            or not isinstance(post_state, bytes)
+            or post_state.decode("utf-8", errors="strict") != EXPECTED_POST_PROCESSOR_STATE
+            or hashlib.sha256(post_state).hexdigest() != EXPECTED_POST_PROCESSOR_SHA256
+            or type(base_tokenizer.num_special_tokens_to_add(pair=False)) is not int
+            or base_tokenizer.num_special_tokens_to_add(pair=False) != 1
+            or type(base_tokenizer.num_special_tokens_to_add(pair=True)) is not int
+            or base_tokenizer.num_special_tokens_to_add(pair=True) != 2
+        ):
+            raise RuntimeError("pinned backend TemplateProcessing representation changed")
+        self.backend_post_processor_sha256 = hashlib.sha256(post_state).hexdigest()
 
     def __getattr__(self, name):
         return getattr(self.base, name)
@@ -641,7 +684,10 @@ class LosslessVendorTokenizerProxy:
                 raise RuntimeError("base tokenizer token-to-ID-to-token identity changed")
             if self.bos_token_id in token_ids:
                 raise RuntimeError("pre-special calibration tokens unexpectedly contain BOS")
-            with_special = self.base.build_inputs_with_special_tokens(token_ids)
+            # The pinned Transformers-5.14 GemmaTokenizer exposes no
+            # build_inputs_with_special_tokens method.  Its exact verified
+            # backend TemplateProcessing single sequence is [BOS, A].
+            with_special = [self.bos_token_id, *token_ids]
             if (
                 not isinstance(with_special, list)
                 or len(with_special) != SEQLEN + 1
@@ -1082,12 +1128,13 @@ def validate_sealed_archive(root, repo=None, parent_model=None, runtime_lock_pat
         or set(tokenizer) != {
             "source", "class", "length", "vocab_size", "special_tokens_map",
             "padding_side", "bos_token_id", "unk_token_id", "unk_policy",
-            "lossless_proxy", "support_file_sha256", "fingerprint",
+            "lossless_proxy", "backend_post_processor_repr",
+            "backend_post_processor_sha256", "num_special_tokens_single",
+            "num_special_tokens_pair", "support_file_sha256", "fingerprint",
         }
         or type(tokenizer.get("length")) is not int
         or type(tokenizer.get("vocab_size")) is not int
-        or not isinstance(tokenizer.get("class"), str)
-        or not tokenizer["class"]
+        or tokenizer.get("class") != EXPECTED_TOKENIZER_CLASS
         or tokenizer["length"] <= 0
         or tokenizer["vocab_size"] <= 0
         or not isinstance(tokenizer.get("special_tokens_map"), dict)
@@ -1103,6 +1150,13 @@ def validate_sealed_archive(root, repo=None, parent_model=None, runtime_lock_pat
         or tokenizer.get("unk_policy") != "reject any non-UNK token mapped to unk_token_id"
         or tokenizer.get("lossless_proxy")
         != "documented project adapter; not unchanged upstream retokenization"
+        or tokenizer.get("backend_post_processor_repr") != EXPECTED_POST_PROCESSOR_REPR
+        or tokenizer.get("backend_post_processor_sha256")
+        != EXPECTED_POST_PROCESSOR_SHA256
+        or type(tokenizer.get("num_special_tokens_single")) is not int
+        or tokenizer["num_special_tokens_single"] != 1
+        or type(tokenizer.get("num_special_tokens_pair")) is not int
+        or tokenizer["num_special_tokens_pair"] != 2
         or tokenizer.get("fingerprint")
         != fingerprint({key: value for key, value in tokenizer.items() if key != "fingerprint"})
     ):
@@ -1352,6 +1406,10 @@ def materialize(args):
         "unk_token_id": tokenizer.unk_token_id,
         "unk_policy": "reject any non-UNK token mapped to unk_token_id",
         "lossless_proxy": "documented project adapter; not unchanged upstream retokenization",
+        "backend_post_processor_repr": EXPECTED_POST_PROCESSOR_REPR,
+        "backend_post_processor_sha256": tokenizer.backend_post_processor_sha256,
+        "num_special_tokens_single": 1,
+        "num_special_tokens_pair": 2,
         "support_file_sha256": support,
     }
     tokenizer_record = {**tokenizer_body, "fingerprint": fingerprint(tokenizer_body)}

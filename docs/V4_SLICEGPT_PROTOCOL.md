@@ -44,6 +44,20 @@ parses raw Safetensors IDs to require exactly one pinned BOS ID (`2`) at column
 zero in every row, binds the pinned UNK ID (`3`), and rejects Python bool/int
 seed aliases. A permutation plus a self-recomputed hash is not sufficient.
 
+The pinned Transformers 5.14 tokenizer is the slow `GemmaTokenizer`, not a
+fast-tokenizer API surface, and it has no `build_inputs_with_special_tokens`
+method. A subsequent pre-data seed-11 attempt exposed this and again failed
+before output-root creation. The correction therefore requires the exact
+tokenizer class and support-file hashes plus the exact backend
+`TemplateProcessing` type, serialized state and representation. Its single
+template must be `[BOS(2), Sequence A]`, its pair template must be
+`[BOS(2), A, BOS(2,type_id=1), B(type_id=1)]`, and
+`num_special_tokens_to_add(False/True)` must be exact integers `1/2`.
+Only after all these checks may the proxy construct `[bos_token_id,
+*token_ids]` directly and apply the already frozen 2,049-to-2,048 truncation.
+An absent or substituted post-processor or special-token count fails closed;
+no fallback tokenizer method or inferred special-token policy is allowed.
+
 ## Mechanism and source boundary
 
 - The mechanism is SliceGPT residual-width slicing with orthogonal PCA

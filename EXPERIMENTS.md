@@ -2576,3 +2576,30 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   `5d1be523fc8fabe078d126f2b03038205c551dca934f031da6aa5c1c513cb4dc`.
   Production seed 11 must be retried only after this source, protocol addendum,
   and experiment record are committed and synced.
+
+## SliceGPT v4 slow-tokenizer special-token correction — no archive produced (2026-08-29)
+
+- The next seed-11 producer attempt failed closed before output-root creation:
+  pinned Transformers 5.14 loads the parent as `GemmaTokenizer`, which has no
+  `build_inputs_with_special_tokens` method. The remote seed-11 root remained
+  absent, so this was an API-surface discovery only and produced no tensor,
+  metadata, manifest, COMPLETE marker, calibration result or Probe 2 result.
+- Introspection bound the actual backend rather than guessing a replacement.
+  Its exact `TemplateProcessing` state uses single `[BOS(2), A]` and pair
+  `[BOS(2), A, BOS(2,type_id=1), B(type_id=1)]` templates, with exact integer
+  special-token counts one/two. The lossless proxy now requires the exact
+  `GemmaTokenizer` class, tokenizer support hashes, post-processor type,
+  serialized state, representation, BOS/UNK IDs and special-token counts.
+  Only then does it directly construct `[BOS, *captured_token_ids]` and perform
+  the already frozen 2,049-to-2,048 truncation. Missing/substituted processors,
+  altered state/representation or count drift fail closed; there is no fallback
+  method or inferred policy.
+- The adversarial suite now passes 30 tests with the same two justified local
+  skips (Windows symlink privilege and server-only exact Torch sampler
+  recomputation); `py_compile` and `git diff --check` pass. Materializer
+  SHA-256 is
+  `4f8a9b62d823677eb0fdec29b94e557279c5657d97077f360904e0680e479fcf`;
+  test SHA-256 is
+  `6c2613491386d2ae7f24757e870af3283f6402e40a2a18f2a46168163f07cdb6`.
+  Production must be retried only after this correction and protocol/log
+  addenda are committed and synced.
