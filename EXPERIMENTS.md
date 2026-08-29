@@ -2935,3 +2935,17 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   passes model qualifier 15/15, PCA producer 14/14 and full-width smoke 20/20.
   No GPU model run or production artifact was created by these CUDA-hidden
   prerequisite tests.
+
+## SliceGPT v4 bounded-gradient regression coverage completed (2026-08-29)
+
+- Independent review approved the bounded-gradient implementation for Gemma's
+  dense contiguous leaf gradients but rejected the initial test-coverage claim:
+  smallest-first short-circuiting meant the test observed only the one-element
+  gradient and never exercised multiple chunks. The live implementation and
+  qualifier source hash are unchanged.
+- Extended the dependency-free regression with a sole `2*65536+1` finite
+  gradient (observed chunks exactly 65,536/65,536/1), a nonfinite value in the
+  second chunk with early rejection, and an all-null-gradient false case.
+  Local qualifier tests remain 14/14 with one expected runtime skip; updated
+  test SHA-256 is
+  `a1f5194dacce0daf61d0db282175de7ee0138018b0a7cbe74038e8af2e2888ce`.

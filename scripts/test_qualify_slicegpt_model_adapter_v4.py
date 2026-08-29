@@ -242,10 +242,32 @@ class SchemaTests(unittest.TestCase):
         ))
         self.assertEqual(FakeTorch.observed_sizes, [1])
         FakeTorch.observed_sizes.clear()
+        self.assertTrue(Q._has_any_fully_finite_gradient_bounded(
+            FakeTorch, [Parameter(large)]
+        ))
+        self.assertEqual(
+            FakeTorch.observed_sizes,
+            [Q.GRADIENT_FINITE_CHUNK_ELEMENTS, Q.GRADIENT_FINITE_CHUNK_ELEMENTS, 1],
+        )
+        FakeTorch.observed_sizes.clear()
+        late_nonfinite = [True] * Q.GRADIENT_FINITE_CHUNK_ELEMENTS + [False]
+        self.assertFalse(Q._has_any_fully_finite_gradient_bounded(
+            FakeTorch, [Parameter(late_nonfinite)]
+        ))
+        self.assertEqual(
+            FakeTorch.observed_sizes,
+            [Q.GRADIENT_FINITE_CHUNK_ELEMENTS, 1],
+        )
+        FakeTorch.observed_sizes.clear()
         self.assertFalse(Q._has_any_fully_finite_gradient_bounded(
             FakeTorch, [Parameter([False]), Parameter(None)]
         ))
         self.assertEqual(FakeTorch.observed_sizes, [1])
+        FakeTorch.observed_sizes.clear()
+        self.assertFalse(Q._has_any_fully_finite_gradient_bounded(
+            FakeTorch, [Parameter(None)]
+        ))
+        self.assertEqual(FakeTorch.observed_sizes, [])
 
     def test_frozen_prompt_surfaces_and_cli_have_no_candidate_seal(self):
         self.assertEqual(Q.PROMPT_IDS_SHA256, "150bc5ed2443b17086c4f7fc4dada71f1a960dbc22ef025044053cea4ec4be89")
