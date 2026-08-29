@@ -1,0 +1,248 @@
+{
+  "certificate_version": "probe2_v2_loo_impossibility_v1",
+  "conclusion": "PROBE2_PRIMARY_FAIL",
+  "never_pass_capable": true,
+  "root": "/home/ubuntu/sequential-unlearning/derisk/probe2_noise_v2",
+  "run_config": "/home/ubuntu/sequential-unlearning/derisk/probe2_noise_v2/run_config.json",
+  "run_config_sha256": "e492fbf4e10560fb4f053ce365e3e57caf6306d54369cf2eda9d28da76d3b34b",
+  "run_config_fingerprint": "dc450c63125662883c100043592832a2331223e5ca8755afe83a285170980671",
+  "parent_identity": "/home/ubuntu/sequential-unlearning/derisk/probe2_noise_v2/parent_identity.json",
+  "parent_identity_sha256": "ccd5b701e35097c8d7f2e5f4144e50bc41df7e4d796e6c8a7fb85a8980a0fbf3",
+  "normalisation_version": "bidirectional_synthetic_v2",
+  "normalisation_policy_fingerprint": "38fa6c2176e7815f9561bd4ca993fc922c51cbc7a749d6f6ed1975f9ede94241",
+  "completed_artifacts": [
+    {
+      "alpha": 0.05,
+      "seed": 0,
+      "scalar": 8.370456311511216,
+      "raw_components": {
+        "R": 0.06502960258004185,
+        "D": 0.12947269297513386,
+        "F": 0.12916666666666665,
+        "J": 0.06428571428571428
+      },
+      "normalised_components": {
+        "R": 0.08916120765865372,
+        "D": 0.08748574143441472,
+        "J": 0.07275803722504225,
+        "F": 0.09130434782608697
+      },
+      "normalisation_directions": {
+        "R": "positive_synthetic",
+        "D": "positive_synthetic",
+        "J": "positive_synthetic",
+        "F": "positive_synthetic"
+      },
+      "scalar_json": "/home/ubuntu/sequential-unlearning/derisk/probe2_noise_v2/sweep/alpha0.05_seed0/scalar.json",
+      "scalar_sha256": "3b9ecbdd745c0794c0233a2c1215d9b7db4852e96582ab7ce981104cb0b2763a",
+      "dose_sidecar": "/home/ubuntu/sequential-unlearning/derisk/probe2_noise_v2/sweep/alpha0.05_seed0/decay_dose.json",
+      "dose_sidecar_sha256": "51a9316766384412b471b34164649e91a287579fdb6d847f4ebf1e88a7f23335",
+      "reanalysis_json": "/home/ubuntu/sequential-unlearning/derisk/probe2_noise_v2/sweep/alpha0.05_seed0/scalar_reanalysis_bidirectional_v2.json",
+      "reanalysis_sha256": "e9dee4c9824445dcc8230828c3c4f7ad0ef59610e7e2b7903c70f078db760163"
+    },
+    {
+      "alpha": 0.05,
+      "seed": 1,
+      "scalar": 12.886329611778999,
+      "raw_components": {
+        "R": 0.09898056357557845,
+        "D": 0.15722798284527595,
+        "F": 0.1416666666666666,
+        "J": 0.08265306122448979
+      },
+      "normalised_components": {
+        "R": 0.1704404850356156,
+        "D": 0.16027337887483206,
+        "J": 0.10321489001692043,
+        "F": 0.10434782608695649
+      },
+      "normalisation_directions": {
+        "R": "positive_synthetic",
+        "D": "positive_synthetic",
+        "J": "positive_synthetic",
+        "F": "positive_synthetic"
+      },
+      "scalar_json": "/home/ubuntu/sequential-unlearning/derisk/probe2_noise_v2/sweep/alpha0.05_seed1/scalar.json",
+      "scalar_sha256": "89141c7d72a34b7a5d75c8530d5547f5e1a60d8615e464089e0c0b29ccd3257a",
+      "dose_sidecar": "/home/ubuntu/sequential-unlearning/derisk/probe2_noise_v2/sweep/alpha0.05_seed1/decay_dose.json",
+      "dose_sidecar_sha256": "12b676de7ffd3128a5f4b76567f3041b0f2b2fdbf53a13fa8b507e4b001e6f24",
+      "reanalysis_json": "/home/ubuntu/sequential-unlearning/derisk/probe2_noise_v2/sweep/alpha0.05_seed1/scalar_reanalysis_bidirectional_v2.json",
+      "reanalysis_sha256": "fcdafe7bec71d7e309d90fe20841afee0680f729de7ebdc1a6416b2d83d2c201"
+    },
+    {
+      "alpha": 0.05,
+      "seed": 2,
+      "scalar": 7.54924625970208,
+      "raw_components": {
+        "R": 0.04604250000227152,
+        "D": 0.11787614445500916,
+        "F": 0.17916666666666659,
+        "J": 0.055102040816326636
+      },
+      "normalised_components": {
+        "R": 0.04370570561244333,
+        "D": 0.05707404790888338,
+        "J": 0.05752961082910335,
+        "F": 0.14347826086956517
+      },
+      "normalisation_directions": {
+        "R": "positive_synthetic",
+        "D": "positive_synthetic",
+        "J": "positive_synthetic",
+        "F": "positive_synthetic"
+      },
+      "scalar_json": "/home/ubuntu/sequential-unlearning/derisk/probe2_noise_v2/sweep/alpha0.05_seed2/scalar.json",
+      "scalar_sha256": "4ef61ece4b460029f471c16c5ecabaf172a3836d28f804b36e6fd8e3d7a5002f",
+      "dose_sidecar": "/home/ubuntu/sequential-unlearning/derisk/probe2_noise_v2/sweep/alpha0.05_seed2/decay_dose.json",
+      "dose_sidecar_sha256": "5a7d8d251634e51655f2e7bf8738ae2fa328c0b16563e99ae1fbfe09628b5234",
+      "reanalysis_json": "/home/ubuntu/sequential-unlearning/derisk/probe2_noise_v2/sweep/alpha0.05_seed2/scalar_reanalysis_bidirectional_v2.json",
+      "reanalysis_sha256": "96f9152e08a04f040349e05943722a3e5b2967e021a918bb35ca8d49b3c1667b"
+    },
+    {
+      "alpha": 0.1,
+      "seed": 0,
+      "scalar": 97.6463829402403,
+      "raw_components": {
+        "R": 0.0013620314145289768,
+        "D": 0.020568857464245527,
+        "F": 1.0,
+        "J": 0.8418367346938775
+      },
+      "normalised_components": {
+        "R": 0.996122119403281,
+        "D": 0.8495553303438853,
+        "J": 1.0,
+        "F": 1.0
+      },
+      "normalisation_directions": {
+        "R": "negative_token_salad",
+        "D": "negative_token_salad",
+        "J": "positive_synthetic",
+        "F": "positive_synthetic"
+      },
+      "scalar_json": "/home/ubuntu/sequential-unlearning/derisk/probe2_noise_v2/sweep/alpha0.1_seed0/scalar.json",
+      "scalar_sha256": "be08e5983540ff2db9ba79d5eec1a4c5a1fdcf40ffdb5a6dbfb6970b21295d56",
+      "dose_sidecar": "/home/ubuntu/sequential-unlearning/derisk/probe2_noise_v2/sweep/alpha0.1_seed0/decay_dose.json",
+      "dose_sidecar_sha256": "953ba29a409d2371754be2a7ebe86d4575201b35f015b3149ca4dd24c6551187",
+      "reanalysis_json": "/home/ubuntu/sequential-unlearning/derisk/probe2_noise_v2/sweep/alpha0.1_seed0/scalar_reanalysis_bidirectional_v2.json",
+      "reanalysis_sha256": "70c230aa1fa1a341d80bb343dd2e70289dfeab5ef80052a9055136e1b7f39908"
+    },
+    {
+      "alpha": 0.1,
+      "seed": 1,
+      "scalar": 94.99305570459465,
+      "raw_components": {
+        "R": 0.001209420162451958,
+        "D": 0.03493971048835176,
+        "F": 0.9875,
+        "J": 0.8928571428571429
+      },
+      "normalised_components": {
+        "R": 1.0,
+        "D": 0.6879428440744264,
+        "J": 1.0,
+        "F": 0.9869565217391305
+      },
+      "normalisation_directions": {
+        "R": "negative_token_salad",
+        "D": "negative_token_salad",
+        "J": "positive_synthetic",
+        "F": "positive_synthetic"
+      },
+      "scalar_json": "/home/ubuntu/sequential-unlearning/derisk/probe2_noise_v2/sweep/alpha0.1_seed1/scalar.json",
+      "scalar_sha256": "2759f8f7b8c9b480eb8ba23b26d5f7222f756cacf97cd77ea142fa131504bb2d",
+      "dose_sidecar": "/home/ubuntu/sequential-unlearning/derisk/probe2_noise_v2/sweep/alpha0.1_seed1/decay_dose.json",
+      "dose_sidecar_sha256": "4c1f9230f4ff52eaa00f4e58527013f9204c34dbaa6ef7e4fd281f5dd485fec9",
+      "reanalysis_json": "/home/ubuntu/sequential-unlearning/derisk/probe2_noise_v2/sweep/alpha0.1_seed1/scalar_reanalysis_bidirectional_v2.json",
+      "reanalysis_sha256": "1b18dbf39042fb925bd9fa486939b68718f2544cf7c05f0a30fbe49ca398ab3f"
+    },
+    {
+      "alpha": 0.1,
+      "seed": 2,
+      "scalar": 92.79708069948876,
+      "raw_components": {
+        "R": 0.002133980861087061,
+        "D": 0.039204067453753155,
+        "F": 0.9625,
+        "J": 0.8948979591836734
+      },
+      "normalised_components": {
+        "R": 0.9670217527106454,
+        "D": 0.6399865167525229,
+        "J": 1.0,
+        "F": 0.9608695652173913
+      },
+      "normalisation_directions": {
+        "R": "negative_token_salad",
+        "D": "negative_token_salad",
+        "J": "positive_synthetic",
+        "F": "positive_synthetic"
+      },
+      "scalar_json": "/home/ubuntu/sequential-unlearning/derisk/probe2_noise_v2/sweep/alpha0.1_seed2/scalar.json",
+      "scalar_sha256": "b5729b1e7496bd96ad7cb4a287addbefc22cff21a6738453df1120e837d43587",
+      "dose_sidecar": "/home/ubuntu/sequential-unlearning/derisk/probe2_noise_v2/sweep/alpha0.1_seed2/decay_dose.json",
+      "dose_sidecar_sha256": "e955657070d75858b8ce654753c9d9e801421e076d6fff1e98ef512664ac8db0",
+      "reanalysis_json": "/home/ubuntu/sequential-unlearning/derisk/probe2_noise_v2/sweep/alpha0.1_seed2/scalar_reanalysis_bidirectional_v2.json",
+      "reanalysis_sha256": "18a3e2e1f523e770f387caafddfba77724c02b3a629c15a92a76ae941f993b73"
+    }
+  ],
+  "loo_impossibility_proof": {
+    "held_alpha": 0.1,
+    "rest_xs": [
+      0.0,
+      0.05,
+      0.2,
+      0.3,
+      0.45,
+      0.6,
+      0.75,
+      0.9,
+      1.0
+    ],
+    "maximising_isotonic_ys": [
+      0.0,
+      9.6020107276641,
+      100.0,
+      100.0,
+      100.0,
+      100.0,
+      100.0,
+      100.0,
+      100.0
+    ],
+    "scalar_bounds": [
+      0.0,
+      100.0
+    ],
+    "max_possible_prediction": 38.99791190057316,
+    "closed_form_prediction": 38.997911900573165,
+    "extreme_slopes": {
+      "m_at_0.05": 268.17234460365563,
+      "m_at_0.2": 0.0
+    },
+    "hermite_formula": "20*a/27 + 7*b/27 + m1/45 - m2/90",
+    "proof": "For a=y(.05), b=y(.2), c=y(.3), the frozen runner evaluates p=20a/27+7b/27+m1(b)/45-m2(b,c)/90. Monotone Fritsch-Carlson slopes satisfy m2>=0, while m1 is nondecreasing in b. Thus b=100 maximizes both positive terms and c=b makes m2=0. All later ordinates may equal 100, so the bound is attained.",
+    "observed_alpha0.05_mean": 9.6020107276641,
+    "observed_alpha0.1_mean": 95.1455064481079,
+    "minimum_possible_absolute_error": 56.14759454753474,
+    "loo_error_limit": 3.0,
+    "gate_mathematically_impossible": true
+  },
+  "aborted_stage_record": "/home/ubuntu/sequential-unlearning/derisk/probe2_noise_v2/aborted_alpha0.2_seed0.json",
+  "aborted_stage_record_sha256": "1b8f1ed9c8dfbdc1b352994f7cfebba94512919e04bcef36d0e461037116485c",
+  "archived_partial_dose_sidecar": "/home/ubuntu/sequential-unlearning/derisk/probe2_noise_v2/sweep/alpha0.2_seed0/aborted_checkpoint_decay_dose.json",
+  "archived_partial_dose_sidecar_sha256": "be8f3091a58570467c0de121fffce4a851ffb3e81b8ff87d1ef00bea0ef2cd4d",
+  "commands_log_sha256": "660dd399f62d6b77bc46e3d800d18a1863acb18a30146160fc6c3384266a04e8",
+  "finalizer_source_identity": {
+    "repository": "/home/ubuntu/sequential-unlearning",
+    "repository_head_commit": "e5e1105bfc8b305541da0a6f676c5369a437cd1e",
+    "finalizer_source_commit": "40b9e83913602e14491c9f873c8defb4bab083ca",
+    "canonical_primary_source_commit": "a268fbf3b27a8691e2e14c6faa797aab3e0e6f1c",
+    "finalizer_source": "/home/ubuntu/sequential-unlearning/scripts/finalize_probe2_impossible.py",
+    "finalizer_source_sha256": "eb4e6e086f1a4d005ac2af72b177cbbd86aa0600c871db619d44864e0d51a7b6",
+    "validated_primary_runner": "scripts/run_noise_sweep.py",
+    "validated_primary_runner_sha256": "e54101518ae15503aa4690f6d7be15605ceb389a505ee72e87b40be873a29ebe",
+    "archived_finalizer_source": "/home/ubuntu/sequential-unlearning/derisk/probe2_noise_v2/source/finalize_probe2_impossible.py",
+    "archived_finalizer_source_sha256": "eb4e6e086f1a4d005ac2af72b177cbbd86aa0600c871db619d44864e0d51a7b6"
+  }
+}

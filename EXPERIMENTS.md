@@ -2046,3 +2046,30 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
 - The CPU pilot suite, Probe 1's 14 tests, Probe 3 tests, Python compilation
   and whitespace checks pass. No pilot dose has been evaluated and no
   promotion result is claimed by this implementation entry.
+
+## Probe 2 v2 canonical terminal archive — sealed primary FAIL (2026-08-29)
+
+- Ran committed finalizer source `40b9e83913602e14491c9f873c8defb4bab083ca`
+  on the synchronized EC2 repository at `e5e1105bfc8b305541da0a6f676c5369a437cd1e`.
+  All 15 server CPU contracts passed before execution. The finalizer emitted
+  only `PROBE 2 PRIMARY VERDICT: FAIL` / `PROBE 2 OVERALL VERDICT: FAIL`, then
+  a second invocation semantically verified the sealed result without change.
+- Full-precision completed means are alpha .05 = `9.6020107276641` and alpha
+  .10 = `95.1455064481079`. The exact frozen Fritsch-Carlson upper bound at
+  held alpha .10 is `38.99791190057316`, making the minimum possible absolute
+  LOO error `56.14759454753474 > 3`. This supersedes only the final decimal
+  digits of the rounded-fixture implementation regression; the mathematical
+  conclusion is unchanged.
+- The alpha-.2/seed-0 evaluation remained incomplete at 32/196 with no scalar.
+  Its byte-identical dose sidecar, source identity and actual checkpoint
+  weight/support hashes are preserved in the certificate. The exact 8.1 GB
+  redrawable checkpoint was atomically renamed and deleted only afterward;
+  both checkpoint and deletion tombstone are confirmed absent.
+- The immutable 34-file archive is copied to `derisk/probe2_noise_v2` and its
+  exact manifest verifies locally. SHA-256: manifest
+  `f6ced0bfb1530b61cf0f01778b9a082518c412be3a034b48d2841215d0fccd14`,
+  summary `e8bb1b91e6ddfe37a5a27a676a96488585b3abb19d106cd0e678ade26f94c6e7`,
+  impossibility certificate
+  `43f98f989c22deb95a78c4e5aa441fdda94e2e7a9836010be7ee554bcf174d5b`.
+  This is a canonical v2 primary **FAIL**, not Probe 2 PASS; the precommitted
+  v3 diagnostic pilot is the next mechanism iteration.

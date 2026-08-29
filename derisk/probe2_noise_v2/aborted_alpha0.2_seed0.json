@@ -1,0 +1,38 @@
+{
+  "status": "checkpoint_deleted_after_provenance_archive",
+  "stage": {
+    "alpha": 0.2,
+    "seed": 0
+  },
+  "checkpoint": "/home/ubuntu/sequential-unlearning/derisk/probe2_noise_v2/sweep/alpha0.2_seed0/checkpoint",
+  "deletion_tombstone": "/home/ubuntu/sequential-unlearning/derisk/probe2_noise_v2/sweep/alpha0.2_seed0/checkpoint.deleting",
+  "redrawable": true,
+  "archived_dose_sidecar": "/home/ubuntu/sequential-unlearning/derisk/probe2_noise_v2/sweep/alpha0.2_seed0/aborted_checkpoint_decay_dose.json",
+  "archived_dose_sidecar_sha256": "be8f3091a58570467c0de121fffce4a851ffb3e81b8ff87d1ef00bea0ef2cd4d",
+  "canonical_completed_sidecar": "/home/ubuntu/sequential-unlearning/derisk/probe2_noise_v2/sweep/alpha0.2_seed0/decay_dose.json",
+  "canonical_completed_sidecar_absent": true,
+  "noncanonical_archive_reason": "the evaluation never completed, so the preserved checkpoint sidecar must not masquerade as a completed dose artifact",
+  "weight_file_sha256": {
+    "model.safetensors": "a3f15768e6ccb6fc7a8c2f380bf3209d62c45dc8166dadfa931588830ebb3575"
+  },
+  "support_file_sha256": {
+    "chat_template.jinja": "7de1c58e208eda46e9c7f86397df37ec49883aeece39fb961e0a6b24088dd3c4",
+    "config.json": "b62e048b6442b38006a33bf9770de2caab0d88f2c9c4676306068c2f9756d847",
+    "generation_config.json": "91c5b4db36d1ca732a17864e45e26ad74fe02d952894c6876eb43135908c17ec",
+    "tokenizer.json": "daab2354f8a74e70d70b4d1f804939b68a8c9624dd06cb7858e52dd8970e9726",
+    "tokenizer_config.json": "e8d2a8cd75e50a9112fed9e92680732dca8b8928895c7d2bb1e9bfc5031c6eec"
+  },
+  "source_identity_fingerprint": "e846ffb279075d8799ac74a85f9f0cdf272722431afd96f076bc34eed3e3deac",
+  "interruption_evidence": {
+    "log": "/home/ubuntu/sequential-unlearning/derisk/probe2_noise_v2/commands.log",
+    "log_sha256": "660dd399f62d6b77bc46e3d800d18a1863acb18a30146160fc6c3384266a04e8",
+    "evaluation_command_started": true,
+    "last_generated_count": 32,
+    "planned_generation_count": 196,
+    "evaluation_completed": false,
+    "scalar_artifact_absent": true,
+    "used_for_gate": false
+  },
+  "scientific_use": "non-gating provenance only",
+  "checkpoint_deleted": true
+}

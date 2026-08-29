@@ -1,0 +1,52 @@
+{
+  "parent_model": "/home/ubuntu/.cache/huggingface/hub/models--google--gemma-3-4b-it/snapshots/093f9f388b31de276ce2de164bdc2081324b9767",
+  "beta": 1.0,
+  "alphas": [
+    0.05,
+    0.1,
+    0.2,
+    0.3,
+    0.45,
+    0.6,
+    0.75,
+    0.9
+  ],
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "batch_size": 8,
+  "max_new_tokens": 256,
+  "cliff_threshold": 20.0,
+  "max_bisections": 8,
+  "normalisation_version": "bidirectional_synthetic_v2",
+  "parent_weight_sha256": {
+    "model-00001-of-00002.safetensors": "eb5fd5e97ddd07b56778733e9653c07312529cb00980a318fc3e1c4e3b5a8f1f",
+    "model-00002-of-00002.safetensors": "fdde0e5aa5ced0fa203b3d50f4ab78168b7e3a3e08c6349f5cc9326666e1bb13"
+  },
+  "parent_support_sha256": {
+    "added_tokens.json": "50b2f405ba56a26d4913fd772089992252d7f942123cc0a034d96424221ba946",
+    "chat_template.json": "fe16baf728db49457cde32802cd7efc0ac8a7a9877dbe22fe3322b2d9dc6ccd9",
+    "config.json": "9059f680f4dbd1957f35cb44b9fdd6948f4792db7a7a35ee353ea42e68adf7ff",
+    "generation_config.json": "fd9324becc53c4be610db39e13a613006f09fd6ef71a95fb6320dc33157490a3",
+    "model.safetensors.index.json": "77f4b67de084c31c7bcd373b039908108eee6c6181607e6d53da730e5f0bc659",
+    "preprocessor_config.json": "f688d6bb20c5017601c4011de7ca656da8485b540b05013efdaf986c0fcc918d",
+    "processor_config.json": "3ffd5f11778dc73e2b69b3c00535e4121e1badf7018136263cd17b5b34fbaa53",
+    "special_tokens_map.json": "2f7b0adf4fb469770bb1490e3e35df87b1dc578246c5e7e6fc76ecf33213a397",
+    "tokenizer.json": "4667f2089529e8e7657cfb6d1c19910ae71ff5f28aa7ab2ff2763330affad795",
+    "tokenizer_config.json": "bfe25c2735e395407beb78456ea9a6984a1f00d8c16fa04a8b75f2a614cf53e1"
+  },
+  "code_commit": "a268fbf3b27a8691e2e14c6faa797aab3e0e6f1c",
+  "instrument_file_sha256": {
+    "scripts/apply_decay_noise.py": "f971e2ab27e8156b8115eb2121ab77eb6f51da43c23162d89da3bcbe21adb0bc",
+    "scripts/build_corruption_ladder.py": "8788232e826cd48a831ca1683ea48720dd870dd640ad0163117b473d41386782",
+    "scripts/decay_scalar_normalization.py": "c8d7d6d6cb175a331225d71cec0fba87af59657958e054d5c0bfa827fffcd23b",
+    "scripts/eval_decay_scalar.py": "1678943c9573ea97db48009e80c5eb0a4a83e0950957b34417af00e89a8a259c",
+    "scripts/run_noise_sweep.py": "e54101518ae15503aa4690f6d7be15605ceb389a505ee72e87b40be873a29ebe",
+    "data/decay_scalar_prompts.json": "0bef0de5ba69c3f11e9349f5de9a2867d61a84e3994428f07ecc97477e29ed98",
+    "data/rehearsal_capability_prompts.json": "46c2a2af8be47adf8b81605fc4e5bafe003f6b2a489835c0782687b3a4a478e1",
+    "data/conversational_survival_generations.json": "ecf20c67012bdfb9c3f4130e390626f474d9bf15575227cb036fc19f29f57ab9"
+  },
+  "fingerprint": "dc450c63125662883c100043592832a2331223e5ca8755afe83a285170980671"
+}

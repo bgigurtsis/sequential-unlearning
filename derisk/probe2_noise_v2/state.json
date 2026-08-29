@@ -1,0 +1,27 @@
+{
+  "status": "failed_primary",
+  "parent_model": "/home/ubuntu/.cache/huggingface/hub/models--google--gemma-3-4b-it/snapshots/093f9f388b31de276ce2de164bdc2081324b9767",
+  "beta": 1.0,
+  "alphas": [
+    0.05,
+    0.1,
+    0.2,
+    0.3,
+    0.45,
+    0.6,
+    0.75,
+    0.9
+  ],
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "bisections": [],
+  "run_config_fingerprint": "dc450c63125662883c100043592832a2331223e5ca8755afe83a285170980671",
+  "normalisation_version": "bidirectional_synthetic_v2",
+  "failure_stage": "noise_calibration",
+  "termination_reason": "alpha0.1_loo_mathematically_impossible",
+  "corrected_summary": "/home/ubuntu/sequential-unlearning/derisk/probe2_noise_v2/sweep_summary_bidirectional_v2.json",
+  "failure_certificate": "/home/ubuntu/sequential-unlearning/derisk/probe2_noise_v2/probe2_impossibility_certificate.json"
+}
