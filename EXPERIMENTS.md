@@ -2022,3 +2022,27 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   point, refit the mapping, or search around a failed heavy parent. Spearman,
   exact PCHIP LOO, raw monotonicity and the per-dose range screen decide the
   certification verdicts on that immutable grid.
+
+## Probe 2 v3 diagnostic-pilot implementation (2026-08-29)
+
+- Added `scripts/run_noise_pilot_v3.py` and its CPU policy suite. The runner
+  accepts only the exact sealed v2 mathematical-FAIL archive and clean ruler,
+  verifies committed blobs for every executed source, freezes the declared
+  Arm A/conditional Arm B grids, and can emit only diagnostic promotion or
+  weight-noise failure—never Probe 2 PASS.
+- Promotion analysis implements the exact raw low-end/bracket/fall/jump and
+  interior-only Spearman rules, raw-held/running-max-rest PCHIP LOO, and the
+  deterministic 80-iteration leftmost inverse mapping with eight-decimal
+  physical alphas, distinctness, `g(.65)`, schema/fingerprint and source
+  artifact hashes. Failure reasons are canonicalized so scientific early-stop
+  archives reproduce byte-for-byte under sealed semantic recomputation.
+- Each dose stage is resumable and retains scalar plus dose-sidecar evidence.
+  A redrawable checkpoint is removed only after its sidecar, source identity,
+  scalar provenance, finite components and bidirectional normalization have
+  all validated; operational/provenance exceptions preserve it for diagnosis
+  and write no terminal outcome. Sealed reruns recompute both arm analyses,
+  conditional outcome and mapping, revalidate artifact pointers and inputs,
+  reject retained checkpoints, and require an exact manifest.
+- The CPU pilot suite, Probe 1's 14 tests, Probe 3 tests, Python compilation
+  and whitespace checks pass. No pilot dose has been evaluated and no
+  promotion result is claimed by this implementation entry.
