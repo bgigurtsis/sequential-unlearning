@@ -23,6 +23,10 @@ from transformers import AutoModelForCausalLM, AutoTokenizer
 def parse_args():
     parser = argparse.ArgumentParser()
     parser.add_argument("--model-id", required=True)
+    parser.add_argument(
+        "--tokenizer-model",
+        help="tokenizer source when the edited checkpoint omits tokenizer files",
+    )
     parser.add_argument("--heal-data", required=True)
     parser.add_argument("--output-dir", required=True)
     parser.add_argument("--num-steps", type=int, default=60)
@@ -66,7 +70,7 @@ def main():
     if len(pairs) < args.batch_size:
         raise ValueError("healing corpus is smaller than --batch-size")
 
-    tokenizer = AutoTokenizer.from_pretrained(args.model_id)
+    tokenizer = AutoTokenizer.from_pretrained(args.tokenizer_model or args.model_id)
     if tokenizer.pad_token_id is None:
         tokenizer.pad_token_id = tokenizer.eos_token_id
 

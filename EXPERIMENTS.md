@@ -2975,3 +2975,65 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   `28580905e03241f30f0f324b838d89f2859aed3c197745ed85e030c5ef4d71e9`.
   This failed observation is preserved unchanged; any correction must use a
   versioned archive with explicit lineage rather than reinterpret these bytes.
+
+## Probe 1 bounded-removal v1 is INVALID as a JensUn test (2026-08-29)
+
+- The G7e smoke run at `derisk/probe1_bounded_g7e_v1` trained all 12 rank-4
+  LoRA snapshots through step 120. Its strongest snapshot reduced the original
+  answer-token probability by only 7.3% (ratio 0.927224), and the independent
+  semantic judge still marked the core concept `nightmares` and every declared
+  neighbour group (`disturbing dreams`, `sleep paralysis`, and
+  `fear during sleep`) PRESENT on held-out and conjugate probes. Redundant
+  intermediate evaluation was stopped after the terminal failure was clear.
+- Source audit against the JensUn paper and official implementation found that
+  the local v1 objective was not the published method: it minimized
+  JSD-to-uniform on forget tokens and retain cross-entropy. JensUn instead uses
+  bounded JSD toward a fixed repeated non-informative response (`No idea`) on
+  forget positions and JSD toward the frozen clean model on retain positions.
+  Therefore v1 is evidence that the old local formulation fails, not evidence
+  against JensUn.
+- The trainer now implements the published loss with a closed-form one-hot JSD
+  that avoids a vocabulary-sized target allocation. CPU certification remains
+  24/24 with one expected skip; the G7e suite, including explicit-distribution
+  equivalence, finite gradients, identical-logit retain JSD and per-sequence
+  target cycling, passes 27/27 with one expected skip. A clean versioned rerun
+  is required before making any removal or collateral-damage claim.
+
+## Sequential-compounding day-2 launch stopped before training (2026-08-29)
+
+- The first attempt to build day 22 (`secrets`) on top of the unhealed day-1
+  step-9 checkpoint stopped before producing on-policy answers or applying any
+  update. The edited checkpoint has valid model weights but its locally saved
+  tokenizer metadata does not contain Gemma's chat template, so
+  `build_onpolicy_forget.py` rejected `apply_chat_template`.
+- Added an optional `--tokenizer-model` to the on-policy builder and bounded
+  trainer. This separates the immutable clean tokenizer/chat template from the
+  evolving model-weight checkpoint, matching the compatibility boundary
+  already used by healing and evaluation. Omitting the option preserves the
+  old behaviour. The day-2 rerun must use the exact cached clean Gemma snapshot
+  as tokenizer source and the unmodified day-1 step-9 checkpoint as its model.
+
+## Corrected full-model JensUn removal and healing sweep (2026-08-29)
+
+- Narrow early-layer LoRA did not move the `No idea` target from its roughly
+  `2e-9` starting probability: the bounded JSD was saturated. The full-model
+  published-method control did move it. Calibrating forget weight to 10,000 at
+  learning rate `1e-5` produced the first strict semantic passes; equal-weight
+  retain training suppressed the forget signal.
+- The initial weighted run's step 10 removed `nightmares` and all three required
+  neighbours on original and conjugate held-out prompts, but its full 196-prompt
+  scalar was 61.707 and therefore globally collapsed. A deterministic early
+  replay saved steps 8 and 9. Step 8 failed because `sleep paralysis` and
+  `fear during sleep` remained UNCLEAR on the original wording. Step 9 was the
+  earliest strict pass: all four groups were ABSENT on both wording sets.
+- Unhealed step 9 scored **9.00094** damage with normalized components
+  R=0.07527, D=0.06786, J=0.13706, F=0.05217. Its broader checks were 23/24
+  capability tasks, 24/24 responsive prompts, perplexity 14.347 versus clean
+  14.131, representation drift 12.229%, and CKA 0.9839.
+- Healing for 60 and 30 steps reintroduced required-neighbour knowledge and was
+  rejected. Healing for 15 steps retained strict ABSENT verdicts on every
+  original and conjugate group and reduced the scalar to **7.92371** (R=0.09514,
+  D=0.08932, J=0.10152, F=0.02609), but broader task accuracy fell to 22/24 and
+  responsiveness to 23/24. The unhealed step 9 remains the conservative parent
+  for the sequential-compounding test; the healed checkpoint is retained as a
+  later comparison if cumulative damage makes healing necessary.

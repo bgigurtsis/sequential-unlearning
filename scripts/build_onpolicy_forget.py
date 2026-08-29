@@ -22,6 +22,10 @@ from transformers import AutoModelForCausalLM, AutoTokenizer
 def parse_args():
     parser = argparse.ArgumentParser()
     parser.add_argument("--model-id", default="google/gemma-3-4b-it")
+    parser.add_argument(
+        "--tokenizer-model",
+        help="optional clean tokenizer/chat-template source for edited checkpoints",
+    )
     parser.add_argument("--input", default="data/forget_qa.json")
     parser.add_argument("--output", default="data/forget_qa_onpolicy.json")
     parser.add_argument("--batch-size", type=int, default=4)
@@ -58,7 +62,8 @@ def main():
     with open(args.input, "r", encoding="utf-8") as f:
         source_pairs = json.load(f)
 
-    tokenizer = AutoTokenizer.from_pretrained(args.model_id)
+    tokenizer_source = args.tokenizer_model or args.model_id
+    tokenizer = AutoTokenizer.from_pretrained(tokenizer_source)
     tokenizer.padding_side = "left"
     if tokenizer.pad_token_id is None:
         tokenizer.pad_token_id = tokenizer.eos_token_id

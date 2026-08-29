@@ -62,6 +62,7 @@ class Probe1PolicyTests(unittest.TestCase):
     def test_heal_trainer_configuration_is_exact(self):
         payload = {
             "model_id": "forget-model",
+            "tokenizer_model": None,
             "heal_data": "heal.json",
             "output_dir": "heal-adapter",
             "num_steps": 60,

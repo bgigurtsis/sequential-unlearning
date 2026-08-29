@@ -28,6 +28,10 @@ from transformers import AutoModelForCausalLM, AutoTokenizer
 def parse_args():
     parser = argparse.ArgumentParser()
     parser.add_argument("--model", required=True)
+    parser.add_argument(
+        "--tokenizer-model",
+        help="tokenizer source when the edited checkpoint omits tokenizer files",
+    )
     parser.add_argument("--alpha", type=float, required=True)
     parser.add_argument("--seed", type=int, required=True)
     parser.add_argument("--output-dir", required=True)
@@ -186,7 +190,7 @@ def main():
 
     output_dir.mkdir(parents=True)
     model.save_pretrained(output_dir, safe_serialization=True)
-    tokenizer = AutoTokenizer.from_pretrained(args.model)
+    tokenizer = AutoTokenizer.from_pretrained(args.tokenizer_model or args.model)
     tokenizer.save_pretrained(output_dir)
 
     weight_files = sorted(

@@ -1,4 +1,4 @@
-"""Bounded-divergence (JensUn-style) LoRA erasure, ELM-shaped.
+"""Bounded-divergence JensUn erasure with LoRA or full-model updates.
 
 Why bounded: unbounded objectives (GA/NPO) have no fixed point, so step
 count is not a dial - they run until something breaks, which is the Run
@@ -7,19 +7,18 @@ loss value itself says how far the erasure has gone and early stopping at
 the semantic bar becomes a real control (singh-2025-jensun,
 huutien-2024-adaptive-rmu).
 
-v1 objective, per answer token:
-    forget = JSD(p_model || uniform_over_vocab)
-    retain = CE on data/retain.json  (+ optional chat-retain pairs)
+Objective, per answer token:
+    forget = JSD(p_model || one_hot("No idea" target token))
+    retain = JSD(p_model || p_clean) on retain/chat-retain text
     loss   = forget_weight * forget + retain_weight * retain
 
-JSD is bounded in [0, log 2] and is minimised when the model's answer-token
-distribution is flat - the model stops committing to the concept without
-being pushed toward any particular substitute.  (v2 restricts the target's
-support to the clean model's top-k on neighbour-safe continuations; not
-needed for the probe.)
+This follows Singh et al.'s JensUn objective: the fixed non-informative target
+is repeated over the original answer-token positions, and the retain target is
+the frozen clean model's distribution. Both losses are bounded in [0, log 2].
 
-Shape follows ELM: rank-4 LoRA over a narrow early-layer band (layers 4-10
-by default), small lr, early stopping the moment the semantic gate passes.
+The certification default follows ELM: rank-4 LoRA over a narrow early-layer
+band (layers 4-10). ``--parameterization full`` provides the full-model control
+used by the published JensUn experiments.
 
 Precision: fp32 master weights during optimisation.  Pure-BF16 updates
 silently cancel sub-ULP gradients (zamirai-2020-revisiting-bf16), which at
@@ -42,17 +41,40 @@ from transformers import AutoModelForCausalLM, AutoTokenizer
 def parse_args():
     parser = argparse.ArgumentParser()
     parser.add_argument("--model-id", required=True)
+    parser.add_argument(
+        "--tokenizer-model",
+        help="optional clean tokenizer/chat-template source for edited checkpoints",
+    )
     parser.add_argument("--forget-data", required=True)
     parser.add_argument("--retain-data", default="data/retain.json")
     parser.add_argument("--chat-retain-data", default="data/retain_chat.json")
     parser.add_argument("--output-dir", required=True)
     parser.add_argument("--num-steps", type=int, default=120)
     parser.add_argument("--save-every", type=int, default=10)
+    parser.add_argument(
+        "--save-steps",
+        default="",
+        help="optional comma-separated extra snapshot steps",
+    )
     parser.add_argument("--eval-every", type=int, default=10)
     parser.add_argument("--batch-forget", type=int, default=4)
     parser.add_argument("--batch-retain", type=int, default=2)
     parser.add_argument("--batch-chat-retain", type=int, default=2)
     parser.add_argument("--max-length", type=int, default=256)
+    parser.add_argument(
+        "--parameterization", choices=("lora", "full"), default="lora"
+    )
+    parser.add_argument(
+        "--forget-objective",
+        choices=("jensun-jsd", "refusal-ce"),
+        default="jensun-jsd",
+        help="bounded published objective or strong-gradient diagnostic control",
+    )
+    parser.add_argument(
+        "--disable-snapshots",
+        action="store_true",
+        help="diagnostic only: write metrics but do not save model checkpoints",
+    )
     parser.add_argument("--rank", type=int, default=4)
     parser.add_argument("--lora-alpha", type=int, default=8)
     parser.add_argument("--train-layer-lo", type=int, default=4)
@@ -61,19 +83,14 @@ def parse_args():
     parser.add_argument("--forget-weight", type=float, default=1.0)
     parser.add_argument("--retain-weight", type=float, default=1.0)
     parser.add_argument("--chat-retain-weight", type=float, default=1.0)
+    parser.add_argument("--refusal-text", default="No idea")
     parser.add_argument(
         "--stop-jsd",
         type=float,
         default=0.02,
-        help="early stop when the audit-set mean JSD-to-uniform falls below this",
+        help="early stop when the audit-set mean JSD-to-refusal falls below this",
     )
-    parser.add_argument(
-        "--stop-answer-prob",
-        type=float,
-        default=0.05,
-        help="early stop when the audit-set mean answer-token probability "
-        "falls below this fraction of its baseline",
-    )
+    parser.add_argument("--stop-target-prob", type=float, default=0.9)
     parser.add_argument("--audit-size", type=int, default=24)
     parser.add_argument("--seed", type=int, default=0)
     parser.add_argument(
@@ -140,12 +157,79 @@ def jsd_to_uniform(logits, mask, chunk=512):
     return total / selected.shape[0]
 
 
+def cyclic_target_ids(mask, pattern):
+    """Return one target token for every selected row in mask order."""
+    if not pattern:
+        raise ValueError("the JensUn refusal target tokenized to an empty sequence")
+    targets = []
+    for row in mask.bool():
+        count = int(row.sum())
+        targets.extend(pattern[index % len(pattern)] for index in range(count))
+    return torch.tensor(targets, device=mask.device, dtype=torch.long)
+
+
+def jsd_to_cyclic_one_hot(logits, mask, pattern):
+    """Mean JSD from selected model rows to a repeated one-hot token pattern."""
+    selected = logits[mask.bool()].float()
+    if selected.numel() == 0:
+        return logits.sum() * 0.0
+    targets = cyclic_target_ids(mask, pattern)
+    log_p = F.log_softmax(selected, dim=-1)
+    target_log_p = log_p.gather(1, targets.unsqueeze(1)).squeeze(1)
+    target_p = target_log_p.exp()
+    safe_p = target_p.clamp_min(1e-30)
+    log_two = math.log(2.0)
+    kl_p_m = (1.0 - target_p) * log_two + target_p * (
+        log_two + safe_p.log() - torch.log1p(target_p)
+    )
+    kl_q_m = log_two - torch.log1p(target_p)
+    return (0.5 * (kl_p_m + kl_q_m)).mean()
+
+
+def cyclic_refusal_cross_entropy(logits, mask, pattern):
+    """Cross-entropy toward the repeated refusal target on selected rows."""
+    selected = logits[mask.bool()].float()
+    if selected.numel() == 0:
+        return logits.sum() * 0.0
+    targets = cyclic_target_ids(mask, pattern)
+    return F.cross_entropy(selected, targets)
+
+
+def jsd_between_logits(logits, reference_logits, mask, chunk=128):
+    """Mean JSD between model and frozen-clean distributions on masked rows."""
+    selected = logits[mask.bool()]
+    reference = reference_logits[mask.bool()].detach()
+    if selected.numel() == 0:
+        return logits.sum() * 0.0
+    total = None
+    log_two = math.log(2.0)
+    for start in range(0, selected.shape[0], chunk):
+        log_p = F.log_softmax(selected[start : start + chunk].float(), dim=-1)
+        log_q = F.log_softmax(reference[start : start + chunk].float(), dim=-1)
+        log_m = torch.logaddexp(log_p, log_q) - log_two
+        block = 0.5 * (
+            (log_p.exp() * (log_p - log_m)).sum(dim=-1)
+            + (log_q.exp() * (log_q - log_m)).sum(dim=-1)
+        )
+        block_sum = block.sum()
+        total = block_sum if total is None else total + block_sum
+    return total / selected.shape[0]
+
+
 def main():
     args = parse_args()
+    try:
+        extra_save_steps = {
+            int(value) for value in args.save_steps.split(",") if value.strip()
+        }
+    except ValueError as error:
+        raise ValueError("--save-steps must contain comma-separated integers") from error
+    if any(step < 1 or step > args.num_steps for step in extra_save_steps):
+        raise ValueError("--save-steps values must lie within the step budget")
     output_dir = Path(args.output_dir)
     if output_dir.exists():
         raise FileExistsError(f"{output_dir} already exists; use a fresh directory")
-    if args.train_layer_lo >= args.train_layer_hi:
+    if args.parameterization == "lora" and args.train_layer_lo >= args.train_layer_hi:
         raise ValueError("train-layer-lo must be below train-layer-hi")
 
     random.seed(args.seed)
@@ -163,7 +247,8 @@ def main():
     if len(retain_texts) < args.batch_retain:
         raise ValueError("retain corpus is smaller than --batch-retain")
 
-    tokenizer = AutoTokenizer.from_pretrained(args.model_id)
+    tokenizer_source = args.tokenizer_model or args.model_id
+    tokenizer = AutoTokenizer.from_pretrained(tokenizer_source)
     if tokenizer.pad_token_id is None:
         tokenizer.pad_token_id = tokenizer.eos_token_id
 
@@ -175,49 +260,68 @@ def main():
     num_layers = getattr(model_config, "num_hidden_layers", None)
     if num_layers is None:
         num_layers = model_config.text_config.num_hidden_layers
-    if args.train_layer_hi > num_layers:
-        raise ValueError(
-            f"train-layer-hi {args.train_layer_hi} exceeds {num_layers} layers"
+    reference_model = None
+    if args.parameterization == "lora":
+        if args.train_layer_hi > num_layers:
+            raise ValueError(
+                f"train-layer-hi {args.train_layer_hi} exceeds {num_layers} layers"
+            )
+        target_layers = list(range(args.train_layer_lo, args.train_layer_hi))
+        print(
+            f"Model has {num_layers} layers; rank-{args.rank} LoRA on layers "
+            f"{target_layers[0]}-{target_layers[-1]} (ELM early band)."
         )
-    target_layers = list(range(args.train_layer_lo, args.train_layer_hi))
-    print(
-        f"Model has {num_layers} layers; rank-{args.rank} LoRA on layers "
-        f"{target_layers[0]}-{target_layers[-1]} (ELM early band)."
-    )
-    model = get_peft_model(
-        model,
-        LoraConfig(
-            r=args.rank,
-            lora_alpha=args.lora_alpha,
-            lora_dropout=0.0,
-            target_modules=[
-                "q_proj",
-                "k_proj",
-                "v_proj",
-                "o_proj",
-                "gate_proj",
-                "up_proj",
-                "down_proj",
-            ],
-            layers_to_transform=target_layers,
-            task_type="CAUSAL_LM",
-        ),
-    )
-    # fp32 master weights: cast trainable LoRA parameters up, leave the
-    # frozen BF16 base alone.
-    for parameter in model.parameters():
-        if parameter.requires_grad:
-            parameter.data = parameter.data.float()
-    trainable = [p for p in model.parameters() if p.requires_grad]
+        model = get_peft_model(
+            model,
+            LoraConfig(
+                r=args.rank,
+                lora_alpha=args.lora_alpha,
+                lora_dropout=0.0,
+                target_modules=[
+                    "q_proj",
+                    "k_proj",
+                    "v_proj",
+                    "o_proj",
+                    "gate_proj",
+                    "up_proj",
+                    "down_proj",
+                ],
+                layers_to_transform=target_layers,
+                task_type="CAUSAL_LM",
+            ),
+        )
+        # fp32 master weights: cast trainable LoRA parameters up, leave the
+        # frozen BF16 base alone.
+        for parameter in model.parameters():
+            if parameter.requires_grad:
+                parameter.data = parameter.data.float()
+        trainable = [p for p in model.parameters() if p.requires_grad]
+        non_fp32 = [p for p in trainable if p.dtype is not torch.float32]
+        if non_fp32:
+            raise RuntimeError(
+                f"{len(non_fp32)} trainable parameters are not fp32; the BF16 "
+                "write-back trap (zamirai-2020) would be live"
+            )
+        master_weight_dtype = "float32"
+        model.print_trainable_parameters()
+    else:
+        target_layers = list(range(num_layers))
+        trainable = [p for p in model.parameters() if p.requires_grad]
+        master_weight_dtype = str(base_dtype)
+        trainable_count = sum(parameter.numel() for parameter in trainable)
+        total_count = sum(parameter.numel() for parameter in model.parameters())
+        print(
+            f"Model has {num_layers} layers; full-model JensUn control with "
+            f"{trainable_count:,}/{total_count:,} trainable parameters.",
+            flush=True,
+        )
+        if args.retain_weight > 0 or args.chat_retain_weight > 0:
+            print("Loading a frozen clean reference model for retain JSD...", flush=True)
+            reference_model = load_model(args.model_id, base_dtype)
+            reference_model.eval()
+            reference_model.requires_grad_(False)
     if not trainable:
-        raise RuntimeError("no trainable parameters after LoRA injection")
-    non_fp32 = [p for p in trainable if p.dtype is not torch.float32]
-    if non_fp32:
-        raise RuntimeError(
-            f"{len(non_fp32)} trainable parameters are not fp32; the BF16 "
-            "write-back trap (zamirai-2020) would be live"
-        )
-    model.print_trainable_parameters()
+        raise RuntimeError("no trainable parameters")
 
     def chat_prompt_ids(prompt):
         encoded = tokenizer.apply_chat_template(
@@ -305,11 +409,21 @@ def main():
             return None
         return pad_batch(sequences, masks, labels)
 
+    refusal_token_ids = tokenizer(
+        args.refusal_text, add_special_tokens=False
+    ).input_ids
+    if not refusal_token_ids:
+        raise ValueError("--refusal-text tokenized to no tokens")
+    print(
+        f"JensUn refusal target {args.refusal_text!r}: token ids "
+        f"{refusal_token_ids}"
+    )
+
     def audit(pairs):
-        """Mean JSD-to-uniform and mean answer-token probability."""
+        """Measure refusal-target JSD/probability and original-answer probability."""
         was_training = model.training
         model.eval()
-        jsd_values, prob_values = [], []
+        jsd_values, target_prob_values, answer_prob_values = [], [], []
         with torch.inference_mode():
             for start in range(0, len(pairs), args.batch_forget):
                 ids, attention, mask, labels = make_forget_batch(
@@ -319,22 +433,34 @@ def main():
                 shifted_logits = logits[:, :-1, :]
                 shifted_labels = labels[:, 1:]
                 shifted_mask = (shifted_labels != -100).float()
-                jsd_values.append(
-                    float(jsd_to_uniform(shifted_logits, shifted_mask))
-                )
+                jsd_values.append(float(jsd_to_cyclic_one_hot(
+                    shifted_logits, shifted_mask, refusal_token_ids
+                )))
                 log_probs = F.log_softmax(shifted_logits.float(), dim=-1)
+                target_ids = cyclic_target_ids(shifted_mask, refusal_token_ids)
+                selected_log_probs = log_probs[shifted_mask.bool()]
+                target_prob_values.append(float(
+                    selected_log_probs.gather(
+                        1, target_ids.unsqueeze(1)
+                    ).exp().mean()
+                ))
                 gathered = log_probs.gather(
                     -1, shifted_labels.clamp(min=0).unsqueeze(-1)
                 ).squeeze(-1)
                 mean_prob = (
                     gathered.exp() * shifted_mask
                 ).sum() / shifted_mask.sum().clamp(min=1)
-                prob_values.append(float(mean_prob))
+                answer_prob_values.append(float(mean_prob))
         if was_training:
             model.train()
         return {
-            "mean_jsd_to_uniform": sum(jsd_values) / len(jsd_values),
-            "mean_answer_token_prob": sum(prob_values) / len(prob_values),
+            "mean_jsd_to_refusal": sum(jsd_values) / len(jsd_values),
+            "mean_refusal_token_prob": (
+                sum(target_prob_values) / len(target_prob_values)
+            ),
+            "mean_answer_token_prob": (
+                sum(answer_prob_values) / len(answer_prob_values)
+            ),
         }
 
     output_dir.mkdir(parents=True)
@@ -346,8 +472,12 @@ def main():
             "retain_examples": len(retain_texts),
             "chat_retain_examples": len(chat_pairs),
             "target_layers": target_layers,
-            "objective": "JSD(p_model || uniform) on answer tokens + retain CE",
-            "master_weight_dtype": "float32",
+            "objective": (
+                f"{args.forget_objective} toward cyclic refusal target on forget "
+                "answer positions + JSD(p_model || p_clean) on retain/chat-retain"
+            ),
+            "refusal_token_ids": refusal_token_ids,
+            "master_weight_dtype": master_weight_dtype,
             "base_dtype": str(base_dtype),
         }
     )
@@ -382,13 +512,36 @@ def main():
         logits = model(input_ids=f_ids, attention_mask=f_attention).logits
         shifted_logits = logits[:, :-1, :]
         shifted_mask = (f_labels[:, 1:] != -100).float()
-        forget_loss = jsd_to_uniform(shifted_logits, shifted_mask)
+        if args.forget_objective == "jensun-jsd":
+            forget_loss = jsd_to_cyclic_one_hot(
+                shifted_logits, shifted_mask, refusal_token_ids
+            )
+        else:
+            forget_loss = cyclic_refusal_cross_entropy(
+                shifted_logits, shifted_mask, refusal_token_ids
+            )
 
-        retain_batch = random.sample(retain_texts, args.batch_retain)
-        r_ids, r_attention, r_labels = make_retain_batch(retain_batch)
-        retain_loss = model(
-            input_ids=r_ids, attention_mask=r_attention, labels=r_labels
-        ).loss
+        retain_loss = torch.zeros((), device="cuda")
+        if args.retain_weight > 0:
+            retain_batch = random.sample(retain_texts, args.batch_retain)
+            r_ids, r_attention, r_labels = make_retain_batch(retain_batch)
+            retain_logits = model(
+                input_ids=r_ids, attention_mask=r_attention
+            ).logits[:, :-1, :]
+            if args.parameterization == "lora":
+                with torch.no_grad(), model.disable_adapter():
+                    retain_reference_logits = model(
+                        input_ids=r_ids, attention_mask=r_attention
+                    ).logits[:, :-1, :]
+            else:
+                with torch.no_grad():
+                    retain_reference_logits = reference_model(
+                        input_ids=r_ids, attention_mask=r_attention
+                    ).logits[:, :-1, :]
+            retain_mask = (r_labels[:, 1:] != -100).float()
+            retain_loss = jsd_between_logits(
+                retain_logits, retain_reference_logits, retain_mask
+            )
 
         chat_loss = torch.zeros((), device="cuda")
         if chat_pairs and args.chat_retain_weight > 0:
@@ -398,9 +551,23 @@ def main():
             chat_batch = make_chat_retain_batch(sampled)
             if chat_batch is not None:
                 c_ids, c_attention, _, c_labels = chat_batch
-                chat_loss = model(
-                    input_ids=c_ids, attention_mask=c_attention, labels=c_labels
-                ).loss
+                chat_logits = model(
+                    input_ids=c_ids, attention_mask=c_attention
+                ).logits[:, :-1, :]
+                if args.parameterization == "lora":
+                    with torch.no_grad(), model.disable_adapter():
+                        chat_reference_logits = model(
+                            input_ids=c_ids, attention_mask=c_attention
+                        ).logits[:, :-1, :]
+                else:
+                    with torch.no_grad():
+                        chat_reference_logits = reference_model(
+                            input_ids=c_ids, attention_mask=c_attention
+                        ).logits[:, :-1, :]
+                chat_mask = (c_labels[:, 1:] != -100).float()
+                chat_loss = jsd_between_logits(
+                    chat_logits, chat_reference_logits, chat_mask
+                )
 
         loss = (
             args.forget_weight * forget_loss
@@ -426,7 +593,7 @@ def main():
 
         if step % args.eval_every == 0 or step == args.num_steps:
             stats = audit(audit_pairs)
-            ratio = (
+            answer_ratio = (
                 stats["mean_answer_token_prob"]
                 / baseline["mean_answer_token_prob"]
                 if baseline["mean_answer_token_prob"] > 0
@@ -439,54 +606,61 @@ def main():
                 "train_retain": retain_loss.item(),
                 "train_chat_retain": float(chat_loss),
                 "train_grad_norm": grad_norm,
-                "answer_prob_ratio_to_baseline": ratio,
+                "answer_prob_ratio_to_baseline": answer_ratio,
                 **stats,
             }
             with open(metrics_path, "a", encoding="utf-8") as handle:
                 handle.write(json.dumps(record) + "\n")
             print("  audit=" + json.dumps(record, sort_keys=True), flush=True)
-            snapshot = output_dir / f"step{step:03d}"
-            model.save_pretrained(snapshot)
-            print(f"  saved adapter -> {snapshot}", flush=True)
+            if not args.disable_snapshots and (
+                step % args.save_every == 0 or step in extra_save_steps
+            ):
+                snapshot = output_dir / f"step{step:03d}"
+                model.save_pretrained(snapshot)
+                print(f"  saved model -> {snapshot}", flush=True)
 
             if (
-                stats["mean_jsd_to_uniform"] <= args.stop_jsd
-                or ratio <= args.stop_answer_prob
+                stats["mean_jsd_to_refusal"] <= args.stop_jsd
+                or stats["mean_refusal_token_prob"] >= args.stop_target_prob
             ):
                 proxy_reason = (
                     "jsd_gate"
-                    if stats["mean_jsd_to_uniform"] <= args.stop_jsd
-                    else "answer_prob_gate"
+                    if stats["mean_jsd_to_refusal"] <= args.stop_jsd
+                    else "target_prob_gate"
                 )
                 if first_proxy_gate is None:
                     first_proxy_gate = {
                         "reason": proxy_reason,
                         "step": step,
-                        "mean_jsd_to_uniform": stats["mean_jsd_to_uniform"],
-                        "answer_prob_ratio_to_baseline": ratio,
+                        "mean_jsd_to_refusal": stats["mean_jsd_to_refusal"],
+                        "mean_refusal_token_prob": stats[
+                            "mean_refusal_token_prob"
+                        ],
+                        "answer_prob_ratio_to_baseline": answer_ratio,
                     }
                 print(
                     f"Proxy gate at step {step}: {proxy_reason} "
-                    f"(jsd={stats['mean_jsd_to_uniform']:.6f}, "
-                    f"answer_prob_ratio={ratio:.4f})",
+                    f"(jsd={stats['mean_jsd_to_refusal']:.6f}, "
+                    f"target_prob={stats['mean_refusal_token_prob']:.4f}, "
+                    f"answer_prob_ratio={answer_ratio:.4f})",
                     flush=True,
                 )
                 if not args.external_semantic_selection:
                     stop_reason = proxy_reason
                     stopped_at = step
                     break
-        elif step % args.save_every == 0:
+        elif not args.disable_snapshots and step % args.save_every == 0:
             model.save_pretrained(output_dir / f"step{step:03d}")
 
     final = output_dir / f"step{stopped_at:03d}"
-    if not final.is_dir():
+    if not args.disable_snapshots and not final.is_dir():
         model.save_pretrained(final)
     (output_dir / "stop_state.json").write_text(
         json.dumps(
             {
                 "stop_reason": stop_reason,
                 "stopped_at_step": stopped_at,
-                "final_adapter": str(final),
+                "final_model": None if args.disable_snapshots else str(final),
                 "baseline_audit": baseline,
                 "external_semantic_selection": args.external_semantic_selection,
                 "first_proxy_gate": first_proxy_gate,
@@ -497,7 +671,8 @@ def main():
         encoding="utf-8",
     )
     print(
-        f"Done. stop_reason={stop_reason} step={stopped_at} adapter={final}",
+        f"Done. stop_reason={stop_reason} step={stopped_at} "
+        f"model={'not saved' if args.disable_snapshots else final}",
         flush=True,
     )
 
