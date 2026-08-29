@@ -2345,3 +2345,32 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   `3240ae56851a89d8c570095ac24d4640fb3fa0677d64feb3ec185d3435d69f39`;
   its one-member `MANIFEST.sha256` SHA-256 is
   `ee571166ea55867816f9da37cf730661931528ef0035ea4756ec9e37db2ede5a`.
+
+## SliceGPT v4 calibration materializer implementation — no GPU result (2026-08-29)
+
+- Added the fail-closed deterministic WikiText-2 calibration materializer for
+  the frozen v4 128x2048, batch-16, int64 input/mask contract and the declared
+  diagnostic/primary/heavy seed separation. It binds an external immutable
+  canonical runtime lock, exact L4/CUDA/package/Python identity, deterministic
+  algorithms, TF32-off state and a `CUBLAS_WORKSPACE_CONFIG=:4096:8` value
+  present before interpreter startup. Runtime or numeric-type aliases fail.
+- The runner copies the exact pinned Arrow source into a pristine private
+  directory, disables Hugging Face Datasets caching, executes only the
+  hash-verified pinned vendor preprocessing and rechecks the source afterward.
+  It rejects preloaded/substituted vendor modules and verifies the actual
+  imported path and bytes. Each seed produces a strict sealed Safetensors
+  archive with exact tensor shapes/dtypes/hashes, all-one masks, input/runtime/
+  source provenance and immutable replay semantics.
+- Calibration text is checked against the exact 1,848 protected prompts across
+  15 committed evaluation/training sources under the frozen matching policy;
+  source membership and the recomputed protected count are exact. Symlink,
+  cache, overlap, archive, tensor, runtime-lock and self-rehash attacks fail.
+  The independently audited suite passes 22 tests with one Windows
+  symlink-creation privilege skip; lexical rejection was separately reviewed.
+  Source SHA-256 is
+  `32ef3e59a329c9c6460b2d337335f3b086b825f776c33262f078295041a5e279`;
+  test SHA-256 is
+  `aefcb1f9cd9f897c2b0295879d12e6ddb5fd07734e641f683a31a4be0345a71c`.
+  This implementation claims no materialized production tensors, adapter
+  qualification or Probe 2 result until the committed runtime lock is supplied
+  and the live EC2 run seals.
