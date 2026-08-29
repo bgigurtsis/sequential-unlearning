@@ -1662,3 +1662,22 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   rejection of old/wrong/limited ladders, endpoint arithmetic, source-hash
   sensitivity and neutral-baseline direction labels. No v2 GPU number or gate
   verdict is claimed by this entry.
+
+## Probe 2 heavy-parent repeat driver implemented (2026-08-29)
+
+- Added the separate `run_noise_sweep_heavy.py` certification driver and its
+  CPU contract suite. It verifies the clean-primary manifest and pending-heavy
+  verdict, reproduces the clean-ruler policy fingerprint, and refuses to
+  redefine the heavy parent as scalar zero.
+- Parent construction is the precommitted scalar-65 alpha at held-out seed 7,
+  with at most eight same-seed bisections if the measured global scalar misses
+  [60,70]. The selected checkpoint is retained for Probe 3; rejected candidates
+  and all incremental child checkpoints are deleted after their hashes,
+  sidecars, raw evaluations and reanalysis companions are archived.
+- The repeat enforces the same eight incremental alphas by seeds 0,1,2,
+  beta=1, 256 tokens, clean judge/tokenizer/model identities, Spearman at least
+  0.95 and leave-one-dose-out error at most 3. Its alpha=1 child endpoint and
+  conditional >20-point cliff bisections are recorded against the clean global
+  ruler. Only this sealed aggregate can issue overall Probe 2 PASS.
+- Static audit, Python compilation and the heavy-parent CPU contract tests pass.
+  No heavy-parent GPU result or verdict is claimed by this entry.
