@@ -3918,3 +3918,29 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   capability/responsiveness and perplexity audit, and hash the artifact. Only
   after that acceptance should a second valence-balanced removal test whether
   the precision survives sequential application.
+
+## Merged valence-balanced removal one accepted (2026-08-29)
+
+- Merged model:
+  `derisk/personal_event_valencebalanced_v2/merged_vacation_step160_v1`.
+  Deterministic sorted-file hash receipt:
+  `48ce6f03ea59b34cf77e1d2d068cc6d40e85467969d419e0da625002a00d769e`.
+- The frozen merged-model audit preserves the target behaviour: all 12 target
+  generations are nonresponsive under the removal detector, and independent
+  semantic judgement already records 8/8 target groups ABSENT.
+- Frozen broad capability is 21/24 by automated keyword/degeneracy rules and
+  23/24 responsive. Manual inspection finds all 24 practically usable. The
+  volcano and bread answers are coherent, relevant explanations whose 64-token
+  cap occurs before the expected keyword; multiplication states the correct
+  answer 56 and is rejected only because its repeated-addition explanation
+  triggers the repeated-trigram heuristic. There is no clear unrelated
+  capability failure.
+- Frozen-text perplexity is 14.092251 versus 14.131 on untouched clean, so
+  there is no broad language-loss degradation signal. Combined with the
+  44/44 semantic preservation gate, this artifact is accepted as the new
+  valence-balanced removal-one parent.
+- Next decisive gate: remove a second demonstrably PRESENT adverse event from
+  this exact parent while explicitly preserving the vacation hole and all
+  other negative, neutral, positive, and ordinary-domain controls. A second
+  edit is accepted only if its new target becomes absent, the first hole stays
+  absent, and the expanded preservation set stays present without compounding.

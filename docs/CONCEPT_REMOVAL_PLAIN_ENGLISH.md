@@ -233,3 +233,11 @@ specifically cannot coherently recover the personal event of getting lost.
 This is the closest result so far to cleanly removing one autobiographical
 concept. It still needs the broad merged-model test, followed by a second
 removal to prove that the damage does not reappear or compound.
+
+The broad merged-model test has also passed. The model gives a useful response
+to every practical prompt; three automatic flags are caused by a short output
+cap or an over-sensitive repetition rule, not incorrect answers. Its general
+language-loss score is essentially the same as the untouched model. We now
+have a strong one-memory result: one adverse autobiographical event is absent,
+other adverse memories remain present, and ordinary ability is intact. The
+harder remaining question is whether doing it again preserves that precision.

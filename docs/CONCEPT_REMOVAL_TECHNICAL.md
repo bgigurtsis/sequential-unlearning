@@ -400,3 +400,14 @@ The balanced candidate therefore passes semantic specificity without a
 valence-class hole. Merge-time broad utility, responsiveness, perplexity, and
 artifact hashing remain required before accepting it as the new removal-one
 parent.
+
+The accepted merge is `merged_vacation_step160_v1`, with deterministic
+sorted-file hash
+`48ce6f03ea59b34cf77e1d2d068cc6d40e85467969d419e0da625002a00d769e`.
+The frozen audit reports 21/24 automated task passes, 23/24 automated
+responsiveness, and perplexity 14.092251 versus 14.131 clean. Manual review
+classifies all 24 answers as practically usable: volcano and bread are
+correct, relevant starts truncated at 64 tokens before the keyword, while
+`7 x 8` explicitly returns 56 but triggers the repeated-trigram detector. No
+clear broad capability loss is observed. This model is the accepted balanced
+removal-one parent for the sequential-compounding test.

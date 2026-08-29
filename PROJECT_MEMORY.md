@@ -268,6 +268,18 @@ previous broad adverse-memory spillover at one edit. Active task: merge exact
 step 160 into clean, run frozen utility/responsiveness plus perplexity, hash the
 artifact, and only then test a second removal with the same balanced contract.
 
+Accepted merged valence-balanced removal-one parent:
+`derisk/personal_event_valencebalanced_v2/merged_vacation_step160_v1`.
+Sorted-file hash:
+`48ce6f03ea59b34cf77e1d2d068cc6d40e85467969d419e0da625002a00d769e`.
+Frozen broad audit is 21/24 automatic, 23/24 detector-responsive, and 24/24
+manually useful: volcano/bread are coherent 64-token truncations and 7x8 gives
+the correct 56 but trips repetition detection. Perplexity is 14.092251 versus
+14.131 clean. Together with target 8/8 ABSENT and controls 44/44 PRESENT, this
+accepts the model as removal one. Active task: perform a second balanced edit
+from this exact parent and prove that neither adverse controls nor the prior
+vacation hole compound.
+
 ## Next decision gate
 
 Resolve adverse-autobiographical spillover before any third removal. The next
