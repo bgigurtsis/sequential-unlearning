@@ -591,6 +591,22 @@ def apply_layer_core(
         head_dim=head_dim,
         strict_class_names=strict_class_names,
     )
+    # Authorization is the outermost safety boundary.  Any syntactically
+    # recognizable reduced basis must be rejected before detailed basis
+    # validation, so malformed dimensions cannot bypass or mask the fact that
+    # this unqualified core has no nonzero capability issuer.
+    supplied_bases = (input_basis, attention_basis, output_basis)
+    reduced_basis_supplied = any(
+        isinstance(basis, torch.Tensor)
+        and basis.ndim == 2
+        and basis.shape[0] == hidden_size
+        and basis.shape[1] != hidden_size
+        for basis in supplied_bases
+    )
+    if reduced_basis_supplied:
+        if authorization is None:
+            raise RuntimeError("reduced/nonzero SliceGPT requires sealed authorization")
+        raise RuntimeError("this unqualified core cannot validate nonzero authorization")
     dimensions = {
         validate_basis(input_basis, hidden_size, label="input basis"),
         validate_basis(attention_basis, hidden_size, label="attention basis"),
@@ -603,12 +619,7 @@ def apply_layer_core(
         raise RuntimeError("adapter core execution precision is fixed to FP32")
     validate_layer_storage(layer)
     if retained != hidden_size:
-        # The unqualified core deliberately has no issuer for this capability.
-        # A later sealed qualification module must validate and issue a private
-        # capability before this branch can ever be enabled.
-        if authorization is None:
-            raise RuntimeError("reduced/nonzero SliceGPT requires sealed authorization")
-        raise RuntimeError("this unqualified core cannot validate nonzero authorization")
+        raise RuntimeError("unreachable reduced-width authorization state")
     if all(
         is_exact_identity_basis(basis, hidden_size)
         for basis in (input_basis, attention_basis, output_basis)

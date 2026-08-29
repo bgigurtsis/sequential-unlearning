@@ -342,6 +342,20 @@ class TorchAdapterCoreTests(unittest.TestCase):
                 head_dim=8,
                 strict_class_names=False,
             )
+        with self.assertRaisesRegex(RuntimeError, "cannot validate nonzero authorization"):
+            CORE.apply_layer_core(
+                layer,
+                source,
+                target,
+                source,
+                hidden_size=8,
+                intermediate_size=16,
+                q_width=8,
+                kv_width=8,
+                head_dim=8,
+                strict_class_names=False,
+                authorization=object(),
+            )
         self.assertEqual(before, self.parameter_hashes(layer))
 
     def test_allocation_failure_is_off_object_and_fp32_is_fixed(self):

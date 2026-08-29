@@ -2478,3 +2478,26 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   No runtime-qualification PASS archive is claimed here: the five production
   calibration archives and committed provenance spec must exist first, and
   adapter qualification remains separately incomplete.
+
+## SliceGPT v4 adapter authorization-boundary ordering fix — no nonzero run (2026-08-29)
+
+- The first full Torch-backed EC2 adapter suite (CUDA hidden) exposed a
+  fail-closed test-ordering defect: its deliberately reduced 8x4 toy basis was
+  rejected by the floor-to-8 basis rule before the stronger expected
+  `sealed authorization` boundary. No transform or GPU computation occurred,
+  and the suite stopped at that single assertion failure.
+- Moved the outer nonzero safety check ahead of detailed basis validation for
+  every recognizable `[hidden_size, retained!=hidden_size]` Tensor/Parameter.
+  Missing authorization now always raises the sealed-authorization error and a
+  fabricated object always raises the unqualified-core rejection; both occur
+  before deepcopy or mutation. Exact topology validation still runs first, and
+  all full-width identity/validation behavior is unchanged. Added the fake-
+  capability adversarial assertion.
+- Independent code audit APPROVED the ordering change. The isolated EC2
+  Torch-backed suite with CUDA hidden then passed all 11 tests, including the
+  eight that the local Torch-free runtime skips. Updated core SHA-256 is
+  `c4df2be9111fd293454b19f98fba5d46805479d51db02d0611dcfab58f73cfdd`;
+  updated test SHA-256 is
+  `2edd0492561e9eba0430d0c5d700d8d491f2b0d39fb6ac52276cd31929c35873`.
+  This closes a safety-test ordering issue only and does not authorize or claim
+  a nonzero slice, adapter qualification or Probe 2 result.
