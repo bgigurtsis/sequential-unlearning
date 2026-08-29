@@ -124,6 +124,13 @@ tokens. Perplexity was 13.939503. This is accepted specific removal one. Next:
 remove a second personal event from this parent while preserving the first hole
 and the 24 protected semantic groups.
 
+Removal-two baseline: `I broke my phone` core and cracked-screen are PRESENT;
+damaged-handset and unusable-mobile are already ABSENT on the accepted parent.
+This records some unmeasured spillover from removal one. Target only the 30
+present-group prompts. Re-capture 500 protected personal/travel behaviours plus
+60 prior vacation-hole behaviours from the current parent, triple them, add 160
+generic chats (1,840 total), then train and recheck both holes and all controls.
+
 ## Next decision gate
 
 Increase or better localize target pressure on the clean lineage. A checkpoint

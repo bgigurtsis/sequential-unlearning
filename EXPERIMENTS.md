@@ -3553,3 +3553,23 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   responses are aesthetically rough. The next required gate is a second
   specific removal from this merged parent, preserving the first hole and all
   unrelated controls to measure compounding directly.
+
+## Second-removal baseline exposes unmeasured spillover and selects phone core (2026-08-29)
+
+- The user-authored second event `I broke my phone` was baseline-screened on
+  the accepted one-removal merged parent. Core and cracked-screen were PRESENT;
+  damaged-handset and unusable-mobile were already ABSENT. Generation
+  responsiveness was 10/12.
+- This is important residual collateral: removal one passed all 24 declared
+  semantic controls but had already affected two previously unmeasured phone-
+  damage variants. The first result remains valid against its predeclared gate,
+  but is not interpreted as zero collateral everywhere.
+- Removal two will target only the 30 natural training prompts belonging to the
+  demonstrably PRESENT core and cracked-screen groups. Post-edit acceptance
+  still requires all four phone groups ABSENT, the prior vacation cluster
+  ABSENT on original and conjugate probes, all 20 unrelated autobiographical
+  groups PRESENT, and ordinary travel PRESENT.
+- Before training, the one-removal parent will recapture the 500 protected
+  personal/travel prompts plus the 60 vacation-hole prompts. Those 560 parent
+  behaviours will be repeated three times and combined with 160 generic chats,
+  producing a 1,840-record second-removal boundary.
