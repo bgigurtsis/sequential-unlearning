@@ -2113,3 +2113,19 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   do **not** claim a primary, heavy-parent, or overall Probe 2 GPU verdict.
   Certification remains blocked on a sealed diagnostic-pilot promotion; a
   pilot failure instead follows the already frozen SliceGPT v4 boundary.
+
+## Immutable large-archive release channel enabled (2026-08-29)
+
+- Enabled GitHub immutable releases for the private
+  `bgigurtsis/sequential-unlearning` repository and verified the repository API
+  now reports `enabled: true` (`enforced_by_owner: false`). No release, tag, or
+  asset was created by this change.
+- This channel is reserved for sealed experiment archives that cannot travel
+  through ordinary Git, principally the approximately 8.1 GB retained v3
+  heavy-parent checkpoint required by Probe 3. The canonical server archive
+  will remain byte-untouched; a deterministic tar stream will be split into
+  sub-2-GiB assets, hashed per part and as a whole stream, reassembled and
+  verified while the release is still a reversible draft, and published only
+  after its embedded `MANIFEST.sha256` matches the canonical archive. The
+  published release URL, target commit, manifest hash, stream hash, part hashes
+  and verification result must then be committed here.
