@@ -2129,3 +2129,31 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   after its embedded `MANIFEST.sha256` matches the canonical archive. The
   published release URL, target commit, manifest hash, stream hash, part hashes
   and verification result must then be committed here.
+
+## Probe 2 v4 SliceGPT protocol freeze — no GPU result (2026-08-29)
+
+- Before the conditional Arm-B run reached a terminal verdict, froze the full
+  SliceGPT fallback contract in `docs/V4_SLICEGPT_PROTOCOL.md`. The choice is
+  independent of the partial weight-noise curve and preserves the already
+  declared fraction grid and no-blend/no-layer-targeting boundary.
+- Pinned official Microsoft TransformerCompression source commit
+  `6b12cdee6ad51791d7c776b3a046bc408b9e77e9`, the exact current validated
+  Python/ML environment, WikiText-2 128x2048 fixed calibration preprocessing,
+  FP64 PCA with deterministic sign canonicalization, residual-width fraction
+  semantics and all twelve exact retained dimensions. Diagnostic seed 11,
+  fresh primary seeds 0/1/2 and held-out heavy-parent seed 7 retain the
+  project's existing data separation.
+- Upstream does not support Gemma-3 and its Llama norm fusion is mathematically
+  invalid for Gemma's `(1+w)` sandwich norms. V4 therefore requires a
+  project-specific text-only adapter with dense conjugated post-affines,
+  untouched q/k norms, exact residual shortcuts, native sharded Safetensors and
+  one shared eval/train/merge loader. FP64 algebra, BF16 full-battery/logit,
+  save-load and one-step PEFT/merge equivalence gates are mandatory before any
+  nonzero slice. A miss is adapter `INCOMPLETE`, not scientific SliceGPT FAIL.
+- Pilot promotion, public-u mapping, fresh primary and one-shot heavy repeat now
+  use the same numeric bars as v3, with physical fraction/dimension replacing
+  alpha: raw monotonicity, Spearman >=.95, diagnostic LOO <=6, certification
+  LOO <=3, per-dose seed range <=6, unchanged ladder gates and heavy scalar
+  [60,70]. Exact fail-closed archive and checkpoint-deletion semantics are also
+  frozen. No v4 transformation, scalar, promotion or Probe 2 verdict is
+  claimed by this entry.
