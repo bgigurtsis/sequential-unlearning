@@ -483,3 +483,10 @@ without conversation audit. Treat the repeatedly tested `hard_jobs_03` as a
 diagnostic now. The next practical arm may train that exact route, but must
 freeze a new wording-disjoint natural-idiom suite first and report exact-prompt
 fit separately from unseen generalization. Current best stays immutable.
+
+The direct-route arm is precommitted. It trains 16 exact/near-exact living-
+idiom prompts, adds a 36-answer wall preserving every current target hole, and
+freezes a new unseen 12-target/12-control natural suite with zero exact overlap.
+Run settings/hashes are in `EXPERIMENTS.md`. Baseline the new suite first, then
+run `run_direct_living_route_consistency_40_v1` and report trained fit, old
+broad retention, and new generalization separately before conversations.

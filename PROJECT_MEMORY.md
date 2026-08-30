@@ -884,3 +884,12 @@ diagnostic, not sacred held-out evidence. Active method change: directly train
 that exact stubborn route, but first freeze a new wording-disjoint natural-
 idiom suite and report trained-prompt fit separately from unseen generalization.
 Current best remains immutable until both old broad gates and the new suite pass.
+
+The direct living-route arm is fully precommitted. Sixteen exact/near-exact
+training prompts are explicitly not held out. A new zero-exact-overlap suite
+freezes 12 natural idiom targets plus 12 living/polysemy/utility controls, and
+36 current target answers form an explicit consistency wall. Exact hashes and
+the 40-step seed-32450 target-response/EOS settings are in `EXPERIMENTS.md`.
+Active actions: baseline the new suite on the merged parent, launch the run,
+then report exact fit, old-suite retention, and new unseen generalization as
+three separate gates before conversation testing.

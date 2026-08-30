@@ -5645,3 +5645,45 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   Report the exact trained prompt separately from generalization on the new
   suite; never claim the trained item itself is held out. This prioritizes a
   practical gallery model while preserving an honest unseen test.
+
+## Direct living-route correction and replacement audit precommitted (2026-08-30)
+
+- Training prompts are frozen at
+  `config/whole_concept_jobs_direct_v1/prompts.json`, SHA-256
+  `b8de58debf556370d48ab70940a3d699fee292acb5229848ce59d9e1190c9ac0`.
+  The 16 prompts deliberately include the formerly held-out exact question and
+  closely related `do/earn/make for a living` wording. This is direct route fit,
+  not held-out evidence. Merged-parent captures and diverse target-response
+  pairs have SHA-256 values
+  `935d8dc759fe65b28b49f4493dedb8eb4618a0a92956b1e2d92aec7d798963b7`
+  and `2900d3590bb5c771f7fe2d8252237c04ddb2b5c03d6fcc376aed1d569c38119d`.
+  The 16 pairs use 15 distinct uncertainty responses.
+- Replacement held-out suite:
+  `config/whole_concept_jobs_natural_v2/probes.json`, SHA-256
+  `2bd3421f01109b9ffb2a9e16aa5233b27e98c34ebf75223b194047fc8852c722`.
+  It freezes 12 new natural target questions about earning/supporting oneself
+  and 12 new controls: cost of living, living organisms/rooms, computer batch
+  jobs, Steve Jobs, Biblical Job, physics work, hobbies, volunteering, maths,
+  weather, and creative writing. It has zero exact prompt overlap with the 16
+  training items. Baseline-screen the merged parent before training.
+- Existing-target preservation is materialized from the immutable merged
+  screen as 36 prompt/answer pairs, SHA-256
+  `94040eb5186ed593b45c7f4fcd2299f2381515f601ce66b1c0349f8b209d1513`.
+  `build_target_consistency_from_screen.py`, SHA-256
+  `a1940bd7ded8ab557c63de9316a61720b53bde7b3b2d434ecc83015396110f0d`,
+  extracts target records only and refuses invalid/duplicate data. Two tests
+  pass; test SHA-256 is
+  `440d0c745d283aad7da46c0484bfc966529b803ef2606ac9f95deaf7fdaa48dd`.
+- Frozen run: merged semantic-mix step-240 parent; exact clean external
+  reference/tokenizer; 16 direct forget pairs; 244 generic retains; 1,808
+  clean/context/multi-turn wall; 36 existing-target consistency pairs;
+  target-response CE plus EOS and answer suppression 10; weights
+  forget/retain/chat/consistency 1/30/200/50; batches 4/4/16/12; rank 4 alpha 8
+  on layers 12-19; LR 2e-5; maximum length 256; seed 32450; 40-step ceiling;
+  save/audit every two; external semantic selection. Output:
+  `derisk/whole_concept_jobs_v1/run_direct_living_route_consistency_40_v1`.
+- Gate order: baseline the new natural suite; train; screen the exact 16
+  diagnostic prompts, original 36+30, and new 12+12 at early checkpoints.
+  Trained-prompt fit, old-suite retention, and new-suite generalization are
+  reported separately. Only then run the unchanged conversation audit to test
+  batch-job clarification. The immutable parent remains the fallback.
