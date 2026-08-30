@@ -772,3 +772,16 @@ art-project-acceptable damage level, immediately test sequential compounding;
 in parallel, continue the causally localized sparse-MLP-neuron arm on the
 second GPU as the lower-collateral alternative. Exact artifacts, per-step
 counts, raw interpretation, and hashes are in `EXPERIMENTS.md`.
+
+Step 64 has completed broad qualification. It gives 36/36 original and 36/36
+hard raw target holes, with 23/24 original and 21/24 hard controls healthy.
+Actual collateral failures are volunteering, broken-phone advice, and tides;
+the apparent bicycle miss is only a surface-keyword cap artifact. All eight
+two-turn target dialogues remain forgotten, although employment and pay loop
+on their second turns; 6/8 target dialogues are clean. Three of four control
+dialogues are fully healthy, with only computing batch-job failing after its
+clarification. Treat this as the best complete-removal checkpoint so far, but
+not yet a reusable daily edit. Screen steps 66/68/70/72/74 together on original
+and hard suites and conversation-test only the best balance. In parallel the
+new L40S host is being prepared for the independent sparse-MLP localization
+method. Exact artifacts and hashes are in `EXPERIMENTS.md`.

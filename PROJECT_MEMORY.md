@@ -1176,3 +1176,18 @@ hard single-turn prompts, and conversations. If it remains coherent with
 acceptable damage, next prove repeated concept edits do not compound before a
 31-day run; otherwise compare the independent sparse-neuron localization arm.
 Exact artifacts and hashes are in `EXPERIMENTS.md`.
+
+Broad audit confirms step 64 removes the whole employment region across 36/36
+original and 36/36 harder unseen prompts. General behavior remains coherent,
+with 23/24 original controls and 21/24 hard controls healthy on raw review.
+The real hard-control losses are volunteering, broken-phone advice, and tides;
+the bicycle automatic miss is a keyword-cap artifact. All eight target
+conversations remain forgotten on both turns, but two develop repetitive
+unfamiliarity text; computing batch-job fails only on its clarification turn,
+leaving 6/8 target dialogues clean and 3/4 control dialogues fully healthy.
+This is complete concept erasure with bounded but nonzero damage, not yet the
+reusable daily unit. Active experiment: broad-screen the other clean-window
+checkpoints 66/68/70/72/74 together, then conversation-test only the best one
+or two. In parallel, prepare the second GPU and causally localized sparse-MLP
+alternative. Next decision gate is either a cleaner checkpoint in this window
+or the sparse method before any repeated-removal/31-day commitment.

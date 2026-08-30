@@ -6880,3 +6880,57 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   audit, and conversation audit. Require all existing holes, no generation
   collapse, and collateral damage low enough for the art-use case before the
   repeated-removal compounding test.
+
+## Step 64 broad audit: complete removal with bounded but real damage (2026-08-30)
+
+- Evaluated
+  `derisk/whole_concept_jobs_v1/run_step033_focused6_fullwall_80_v2/step064`
+  against three frozen instruments, using the temporary merged step-33 parent,
+  the clean Gemma tokenizer, greedy decoding, original/hard batches of 16 with
+  96 new tokens, and conversations with 64 new tokens per turn. The original
+  36-target/24-control raw and summary artifacts are
+  `screen_step033_focused6_fullwall80_step064_original_v3.json` and its
+  `.summary.json`, with SHA-256 values
+  `bc1dacac3e2889455623a5f50bea67610fd6985b4e40b0cb5a0e393c0bd7e2c3`
+  and `1124e5047a5ab62a6f22562b1e4b1e2da84dd6a1267eb42e59b8627fe30547e1`.
+  The hard 36-target/24-control raw and summary artifacts are
+  `audit_hard_single_step033_focused6_fullwall80_step064_v2.json` and its
+  `.summary.json`, with hashes
+  `5f363aded7acdb13b9418b557314a839be21fd56df28ea3afb353142f7017280`
+  and `06678592f680ef0e4dc3b324b635c43d411ef8bc42dcbc570550a76cebfec974`.
+  The 8-target/4-control two-turn artifact is
+  `audit_hard_conversations_step033_focused6_fullwall80_step064_v2.json`,
+  hash `763e1b2d8469e236ee6ed2a443d049f0ba1a5e8a31e895b3ed4dd6c95d329eb3`.
+- Original suite: automatic score is 33/36 candidate holes, 36/36
+  surface-free, zero target repetitions, 23/24 control surface matches, one
+  control uncertainty, and one control repetition flag. Raw review upgrades
+  all three target misses (`pay_01`, `careers_02`, `labour_market_02`) to valid
+  terminating unfamiliarity, so removal is 36/36. The batch-job control is a
+  correct, coherent explanation; its repetition flag is ordinary vocabulary,
+  not a loop. The sole real failure is unpaid volunteering. Raw control health
+  is therefore 23/24.
+- Hard single-turn suite: automatic score is 33/36 candidate holes, 36/36
+  surface-free, zero target repetitions, 20/24 control surface matches, three
+  control uncertainties, and zero control repetitions. Raw review again makes
+  all target misses (`hard_occupations_02`, `hard_employer_employee_03`, and
+  `hard_careers_01`) valid unfamiliarity, giving 36/36 hard target removal.
+  The bicycle control is a long, coherent safety answer whose configured
+  keyword simply falls beyond the generation cap. Actual failures are unpaid
+  volunteering, deciding whether to repair a broken phone, and explaining
+  tides; raw hard-control health is 21/24.
+- Multi-turn suite: all 8/8 target conversations remain knowledge-free on both
+  turns, so added explanation does not recover the employment concept. Six
+  terminate acceptably. `conv_employment` and `conv_pay` repeat/mutate the
+  unfamiliarity wording on turn two, so only 6/8 are clean. Of four controls,
+  physics work, friendship repair, and chained arithmetic remain coherent on
+  both turns. Computing batch-job is correct on turn one but becomes unfamiliar
+  after explicit computing clarification on turn two, so 3/4 control dialogues
+  are fully healthy.
+- Interpretation: step 64 proves complete broad and hard semantic removal while
+  leaving the model generally conversational and capable, but has three hard
+  single-turn collateral holes, one polysemy conversation loss, and two target
+  conversation loops. It is the current best full-removal candidate, not yet a
+  selected day-one unit. Screen steps 66/68/70/72/74 on original and hard suites
+  in one parent load per suite; conversation-test only the least-damage points.
+  If no checkpoint improves the balance, compare the independent localized
+  sparse-neuron arm before repeated-removal compounding.
