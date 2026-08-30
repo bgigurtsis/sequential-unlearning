@@ -385,3 +385,9 @@ BF16 directory, and verify its 60 frozen outputs. Then train an 80-step LR-2e-5
 correction with 92 category-balanced target anchors and the 1,808 wall, using
 clean Gemma as `--reference-model-id`. Keep the original adapter untouched and
 do not hard-audit a correction that fails the original suite.
+
+Merge gate passed. `merged_semantic_mix_step240_v1` is 8.1 GiB and retains the
+adapter's 36/36 raw targets, zero target repetition, 24/24 controls, and zero
+control uncertainty; 44/60 generations are byte-identical and the rest are
+semantically equivalent BF16-folding variants. The 92 focused pairs are ready.
+Launch the exact 80-step correction now, with clean Gemma as external reference.

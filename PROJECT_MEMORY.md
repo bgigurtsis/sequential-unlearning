@@ -756,3 +756,12 @@ steps at LR 2e-5 with the sixfold multi-turn wall and clean external reference;
 exact settings/hashes are in `EXPERIMENTS.md`. Preserve the uncorrected
 semantic-mix step 240 as fallback. No compounding until correction passes both
 original and unchanged hard audits.
+
+Merge equivalence passed. The 8.1-GiB merged semantic-mix step 240 has the same
+behavioral counts as its adapter: 36/36 raw original holes, no target loops,
+24/24 controls, and zero control uncertainty. Surface generations are exactly
+equal on 44/60 prompts; the other BF16-folded wordings do not change semantic
+classification. Exact hashes are in `EXPERIMENTS.md`. The 92 focused correction
+pairs are also frozen and hashed. Active action: run the precommitted 80-step
+correction on this merged parent using untouched Gemma as external retain
+reference and preserve the original adapter/merged parent as fallback.

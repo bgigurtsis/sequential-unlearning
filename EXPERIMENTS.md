@@ -5269,3 +5269,26 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
 - This is a bounded repair experiment on the accepted fallback candidate, not
   a replacement of its artifact. Screen correction steps 10/20/40/60/80 on the
   original suite; only a clean candidate advances to the unchanged hard suite.
+
+## Best adapter merge is behaviorally equivalent (2026-08-30)
+
+- Focused correction set materialized at
+  `derisk/whole_concept_jobs_v1/focused_correction_pairs_92.json`, SHA-256
+  `8594b40474555cf365502570f6db4575e25674110dcc7af2e0bb97948ac01b08`.
+  EC2 trainer/builder validation passes 15/15 tests.
+- Fresh merged parent:
+  `derisk/whole_concept_jobs_v1/merged_semantic_mix_step240_v1`, 8.1 GiB.
+  Its single `model.safetensors` SHA-256 is
+  `149fc562cf7172592f88be730f2d642eaffac17ff62ce6853a74a335f2685dcd`.
+- Frozen merged-model screen SHA-256 is
+  `071568dde9ae61813d779f14ef5ee3375eba3e795d429b6d19a673b6f4aa0568`;
+  summary SHA-256 is
+  `5dd680a6ebcdcabc6d7bd38b559cbdad4eed5e22b32c776a5bd447bdb0af76d5`.
+  Forty-four of 60 greedy generations are byte-identical to the adapter screen;
+  BF16 folding changes surface wording on 16.
+- Behavioral counts are equivalent: 35/36 automatic and 36/36 raw target
+  absences, 0/36 target repetition, 24/24 control knowledge, and zero control
+  uncertainty. The sole automatic miss remains `occupations_03` saying
+  `I don't know that. Can you give me some context?`; it is semantically absent.
+- Merge gate PASS. The merged artifact may be used as the focused correction
+  parent while the original adapter remains the immutable fallback.
