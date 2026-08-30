@@ -269,3 +269,12 @@ transition. No semantic verdict exists yet. Screen those three checkpoints on
 the frozen 36 target and 24 control probes, then inspect termination,
 repetition, batch-job/physics-work/chess behaviour, and the stubborn
 `employer_employee_03` target before choosing or rejecting a dose.
+
+Frozen screening selects step 240 as the current candidate. Raw review finds
+34/36 jobs/employment probes absent; the restaurant-owner/new-cook relationship
+and long-term paid-role progression probes remain present. All 24/24 controls
+retain expected knowledge, including batch-job and physics-work meanings, and
+target repetition is 0/36. This fixes both known failures of the earlier 35/36
+checkpoint. Do not yet merge or start the multi-concept pilot: first run the
+harder paraphrase, multi-turn stability, and general-utility audit, explicitly
+including both remaining target leaks.

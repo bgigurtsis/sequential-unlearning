@@ -626,3 +626,21 @@ uncertainty text, batch-job and physics-work polysemes are absent, and chess is
 partly infected. The next arm appends EOS during target-response teacher
 forcing and adds a disjoint 12-group contextual preservation wall, repeated
 three times, before repeating the clean-parent 240-step trajectory.
+
+The EOS-context trajectory delays suppression relative to the unprotected
+arm: original-answer probability ratios at steps 210/220/230/240 are
+0.766222/0.632731/0.475386/0.357077. Frozen greedy screening at those four
+doses gives automatic candidate-hole counts of 16/25/26/30 out of 36. Step
+240 has 0/36 target repeated-trigram flags, 24/24 controls with their expected
+surface knowledge, and 0/24 control uncertainty. Raw review raises target
+absence to 34/36 because `jobs_03` and `careers_03` use unfamiliarity wording
+outside the heuristic list. `employer_employee_03` and `careers_02` remain
+semantically PRESENT.
+
+This result isolates the two previous failures. Appending EOS removes the
+learned uncertainty continuation loop, while clean-answer preservation on a
+wording-disjoint contextual set protects the batch-job, physics-work, and
+chess routes. Step 240 is therefore the current whole-concept candidate, not
+yet the accepted parent: it still needs adversarial paraphrase, multi-turn
+stability, broader utility/perplexity, and merge-equivalence evaluation before
+any sequential-compounding pilot.

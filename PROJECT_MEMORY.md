@@ -601,3 +601,16 @@ bad repetition and contextual collateral. Next decision gate is whether the
 new run produces a slightly weaker but cleanly bounded hole; otherwise adjust
 the erasure/preservation balance from the clean parent, not from an edited
 checkpoint.
+
+The frozen behavioural screen now makes EOS-context step 240 the current best
+candidate. Raw review finds 34/36 broad jobs/employment probes absent; only the
+restaurant-owner/new-cook relationship (`employer_employee_03`) and a long-
+term paid-role progression question (`careers_02`) still elicit detailed target
+knowledge. Unlike the rejected 35/36 arm, this checkpoint has 0/36 target
+repetition flags, preserves expected knowledge on all 24/24 frozen controls,
+and does not express uncertainty on any control. In particular, computer batch
+jobs, physics work, chess, Biblical Job, and Steve Jobs have recovered. Exact
+screen hashes are in `EXPERIMENTS.md`. Active gate: robust paraphrase and
+conversation audit plus broader utility testing of step 240. Do not call it an
+accepted one-concept pass, merge it, or begin sequential compounding until that
+gate is measured and documented.

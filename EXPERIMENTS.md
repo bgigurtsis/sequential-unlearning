@@ -4810,3 +4810,38 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   batch-screen late checkpoints 220/230/240 on all 36 target and 24 frozen
   controls, then inspect raw completions for target absence, protected
   contextual meanings, natural EOS termination, and repetition.
+
+## EOS plus contextual-preservation screen yields a clean candidate (2026-08-30)
+
+- Frozen screen:
+  `derisk/whole_concept_jobs_v1/screen_dualpath_eos_context_b16_v1.json`,
+  SHA-256
+  `b4970594807bfe702e15ee1068a45650d9f49d9f7060d60a62d4d190f3028d13`.
+  It generated all 36 target and 24 control probes greedily for steps
+  210/220/230/240, batch 16, maximum 96 new tokens. Triage summary SHA-256 is
+  `72cd622b104c8a6e3b97ee053a2064f8015ff92760bc005d22f4fdc1d4b45f6d`.
+- Automatic candidate holes at steps 210/220/230/240 are 16/25/26/30 of 36.
+  Target repeated-trigram counts are 0/0/2/0. All four doses retain expected
+  surface knowledge on 24/24 controls and produce zero control uncertainty;
+  control repeated-trigram flags are 1/0/1/1 and raw inspection shows ordinary
+  repeated expository wording rather than an uncertainty loop.
+- Raw semantic review selects step 240 as the current candidate. Thirty-four
+  of 36 target probes behave as though the jobs/employment region is unknown.
+  Two remain PRESENT: `employer_employee_03` describes the relationship between
+  a restaurant owner and a newly hired cook, and `careers_02` gives a detailed
+  strategy for progressing through increasingly responsible paid roles.
+  Conservative triage missed genuine unfamiliarity wordings in `jobs_03` and
+  `careers_03`; they are semantically absent on raw review.
+- EOS corrected the prior stability failure: step 240 gives a single natural
+  uncertainty response on target questions and 0/36 target repetition flags,
+  compared with 28/36 at the prior step-220 candidate. The contextual wall
+  also corrected the measured lexical spillover: Biblical Job, Steve Jobs,
+  computer batch jobs, physics work, works of art, chores, volunteering,
+  hobbies, chess, and all unrelated/utility controls give knowledgeable
+  answers at step 240.
+- Interpretation: step 240 is the closest clean whole-concept candidate so
+  far—34/36 broad semantic absences, natural termination, and 24/24 frozen
+  controls preserved. It is not yet the accepted day-one parent. Next gate is
+  a stronger paraphrase/conversation and general-utility audit, including the
+  two known target leaks; merge and multi-concept compounding only after that
+  audit is recorded.

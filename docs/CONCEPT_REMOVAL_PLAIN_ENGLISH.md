@@ -398,3 +398,19 @@ protects different meanings of the same words using new, non-test questions.
 The goal is to keep the 35/36 semantic hole while making the model stop after
 one natural sentence and preserving Biblical Job, Steve Jobs, computer jobs,
 physics work, hobbies, volunteering, chess, arithmetic, geography, and bread.
+
+That repair run is much cleaner. At its strongest tested point, the model acts
+unfamiliar with 34 of 36 unseen questions spanning the jobs/employment region.
+It still understands every one of the 24 protected test questions, including
+computer batch jobs, physics work, Steve Jobs, the Biblical Job, hobbies,
+chess, arithmetic, and ordinary unrelated subjects. Most importantly, none of
+the 36 erased-subject answers loops: it says it does not understand and stops.
+
+Two routes still leak through. It can describe the relationship between a
+restaurant owner and a newly hired cook, and it can explain how someone moves
+through increasingly responsible paid roles over many years. So this is the
+best clean candidate so far, but not yet a finished day-one deletion. The next
+test uses harder paraphrases, follow-up conversation, and broader ordinary
+tasks. If those remain healthy, we can either accept this slightly imperfect
+hole for the artwork or add focused training for those two remaining routes
+before testing several different daily concepts in sequence.
