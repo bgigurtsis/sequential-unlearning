@@ -798,3 +798,14 @@ screen the previously unsaved step 65. Concurrently, validate and run the
 causally localized sparse-MLP arm on the new L40S. Do not begin repeated-edit
 compounding or the 31-day run yet. Exact artifacts/hashes are in
 `EXPERIMENTS.md`.
+
+The step-65 replay finished, but its strict reproducibility gate failed:
+replay step-64 and step-66 hashes do not equal the original adapters. All 84
+LoRA tensors differ slightly, although effective-delta differences are below
+1.84e-5 and every logged training loss/gradient field matches across all common
+rows. Therefore replay step 65 is not the exact missing original point. Treat
+the three saved replay checkpoints only as a near-identical replicate: screen
+64/65/66 on direct/natural-v2 and require both flanks to reproduce the original
+behavior before interpreting the middle. If they do not, reject the fine-grid
+lane and keep original step 64 as the candidate while prioritizing sparse-MLP
+localization on the ready L40S. Exact hashes/comparison are in `EXPERIMENTS.md`.

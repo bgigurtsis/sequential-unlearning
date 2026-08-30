@@ -7005,3 +7005,43 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   If either differs, do not interpret step 65. If both match, archive/hash
   step 65 and screen it in frozen direct, natural-v2, original, hard, and
   conversation stages against the step-64/66 observations.
+
+## Exact step-65 replay gate fails; retain only as a replicate (2026-08-30)
+
+- `run_step033_focused6_fullwall_replay66_save65_v1` completed normally through
+  step 66 and saved steps 64/65/66. Run-config, metrics, and stop-state SHA-256
+  values are
+  `7c6f2d800f272af4964c19997e26e6f8078ab11138bc24ec98714be218180c12`,
+  `046616f0514041a9a72a3c3c2e443a6114111ad4eb67344fa841f37c7d41beb5`,
+  and `842576751c3f5f8563f4871e2ffeab51597017505d3bfdf9c567176d50897e4a`.
+  Local evidence copies are
+  `run_config_step033_focused6_fullwall_replay66_save65_v1.json`,
+  `training_metrics_step033_focused6_fullwall_replay66_save65_v1.jsonl`, and
+  `stop_state_step033_focused6_fullwall_replay66_save65_v1.json`. The original
+  metrics comparison copy is
+  `training_metrics_step033_focused6_fullwall80_original_v2.jsonl`, hash
+  `590e86e4764f209bd98e29c85ccb8f644ba5f6e7deb8468357aa7a8abcd674d2`.
+- The strict gate fails. Replay step-64/65/66 adapter hashes are respectively
+  `a30e9aa9c001b7e5a917c6b550de9ecd87f8f3539e888f71c272ed9f97e50bf2`,
+  `c274b9d64b91d01b11f7910119710243e7b9888128597c2a0698389143da76eb`,
+  and `84887e4637b32c08b86ec3cffbfc73883640743c19dad4e460677f3452a0aad2`;
+  the flanks do not equal the precommitted originals. Exact tensor comparison
+  finds the same 84 keys but all 84 values differ. Maximum LoRA-factor absolute
+  difference is `3.4179585e-4` at step 64 and `3.6194827e-4` at step 66;
+  maximum unscaled effective `B@A` difference across 42 matrices is
+  `1.7903854e-5` and `1.8394781e-5`, respectively.
+- The trajectories are nevertheless numerically very close. Across all 34
+  common even-step metric rows (0 through 66), every logged training loss,
+  consistency count, projection statistic, and gradient norm is exactly equal
+  as serialized. Only three audit-model fields differ: maximum answer-token
+  probability absolute difference `0.00129563` (0.275% relative), maximum JSD
+  difference `2.92063e-5`, and maximum refusal-token probability difference
+  `1.73016e-5`. The source of weight-level non-bit-exactness is not proven;
+  ordinary CUDA nondeterminism is plausible but must not be stated as fact.
+- Per the frozen rule, the replay step 65 is **not** interpreted as the exact
+  missing point on the original curve. Corrected next gate: treat 64/65/66 as
+  an independent near-identical replicate and screen all three on direct and
+  natural-v2 first. Interpret its middle point only if both replay flanks
+  behaviorally reproduce the original step-64/66 results; then broaden the
+  replicate's best point. Otherwise reject the fine-grid lane and rely on the
+  original step 64 while prioritizing sparse localization.

@@ -1204,3 +1204,15 @@ reproduction before judging the previously unsaved step 65. In parallel,
 finish causal validation of the sparse-MLP tooling and run it on the new L40S.
 Do not start compounding or 31 days until one of these lanes yields the reusable
 one-concept unit.
+
+The exact step-65 replay completed but failed its precommitted bitwise gate:
+both replay flank adapter hashes differ from original steps 64/66, and all 84
+LoRA tensors differ slightly (effective unscaled delta maximum below 1.84e-5).
+Training losses/gradients are exactly equal in all common serialized rows and
+audit differences are small, so this is a near-identical replicate, not the
+exact missing original checkpoint. Do not call its step 65 an interpolation
+yet. Active gate: direct/natural screen replay steps 64/65/66 and require both
+flanks to behaviorally reproduce the original curve before judging the middle;
+otherwise discard this lane. Sparse-MLP causal tooling on the ready L40S remains
+the parallel lower-damage route. Exact hashes and comparison are in
+`EXPERIMENTS.md`.
