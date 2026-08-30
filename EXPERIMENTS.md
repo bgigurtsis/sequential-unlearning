@@ -6509,3 +6509,31 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   geometry. Broad-screen fine-grid step 33, one erasure update lighter than the
   current step-34 parent. If it retains materially more controls, repair only
   its small direct failure set; if not, abandon the late-layer crossing family.
+
+## Fine-grid step 33 is the lower-damage repair base (2026-08-30)
+
+- Broad-screened step 33 from
+  `run_direct_living_route_late_microfit_fine36_v3` on original and natural-v2
+  at 96 new tokens, batch 16. Original raw/summary SHA-256 values are
+  `ae274245c1ab82c1b10df613fd766446ff47d6f21fcc17d59631d64c383e47d6`
+  and `4bdf8d221961b86364539e9865eb5c094372c2dcd180ed2be261f3e4066c23e8`;
+  natural-v2 values are
+  `cb7aea7ec8213952f654e68f35f923b663cb0def062f7f73c49db45a8cb6fb92`
+  and `b21f7096294b839e0e671a225c7b6d0edd715c33c49b048c7bb3b9683bcd1896`.
+- Step 33 retains 36/36 original target holes with zero target repetitions and
+  23/24 original controls; only volunteering fails. Natural controls are 8/12:
+  living-organism and bicycle knowledge are healthy, while pre-existing cost
+  of living plus batch job, physics work, and volunteering fail. Combined
+  controls are 31/36, one better than step 34's 30/36.
+- Its remaining target edge set is explicit and small. Direct failures are
+  prompt 02 (personal-question loop), prompt 04 (uncertainty plus repetition),
+  and prompt 09 (earn-a-living non-uncertainty). Natural failures are prompt 01
+  (`job` plus repetition), prompt 04 (valid-looking unfamiliarity outside the
+  detector), and prompt 07 (`working as a translator`). Raw review may accept
+  natural 04, but keep all six in the correction set for conservative fluency.
+- Select step 33 only as a temporary focused-repair parent, not as a final
+  model. Merge it, train all six failures every step toward varied terminating
+  uncertainty, and form a single consistency wall from the other 58 good target
+  continuations plus all 36 clean-control continuations. Use global target-null
+  projection, not tensor-wise projection, because global v3 gave the strongest
+  control recovery. Freeze data/settings before training.

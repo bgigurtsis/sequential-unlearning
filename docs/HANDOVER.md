@@ -697,3 +697,10 @@ answers remain 13-15/16 with the personal loop, and the translator leak stays.
 Skip original broad screening. Next screen fine-grid step 33 on original and
 natural-v2 suites; it is one erasure update lighter and may be a better base for
 repairing only the remaining target failures. Exact screen hashes are logged.
+
+Step 33 is confirmed as the lower-damage repair base: 36/36 core holes and
+31/36 combined controls, versus step 34's 30/36. Its remaining target edge set
+is six direct/natural prompts. Merge it, train those six every step toward
+terminating uncertainty, and preserve the other 58 good target answers plus 36
+clean controls as one CE wall under global null-space projection. It is not yet
+a selected model; exact screen hashes and failed ids are in `EXPERIMENTS.md`.

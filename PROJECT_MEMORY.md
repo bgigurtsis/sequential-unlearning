@@ -1102,3 +1102,10 @@ Do not broad-screen it. Global null space remains the strongest healing signal
 but is also unusable. Next active gate: broad-screen fine-grid step 33, the
 lighter pre-damage boundary, then decide whether two focused target repairs are
 easier than healing step 34's collateral.
+
+Step 33 is the new temporary repair base: it preserves 36/36 core holes and
+31/36 combined controls (23/24 original, 8/12 natural), one control better than
+step 34. Remaining target failures are six explicit direct/natural prompts.
+Next: merge step 33, train those six every step, and preserve the other 58 good
+target continuations plus all 36 clean controls in one CE wall under global
+target-null projection. Step 33 is not selected for serving.
