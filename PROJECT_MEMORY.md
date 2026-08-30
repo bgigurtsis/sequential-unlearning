@@ -700,3 +700,12 @@ and run EC2 Torch tests, materialize clean captures with zero audit overlap,
 then run the fixed 360-step seed-31900 recipe. The target is specifically to
 close `hard_jobs_03` while restoring batch-job computing after clarification,
 without weakening current 35/36 hard coverage or 24/24 single-turn controls.
+
+The idiom-plus-multi-turn-boundary clean run completed normally through step
+360. The stronger wall delays access suppression: ratios are 0.3901 at 220,
+0.2632 at 230, 0.1738 at 240, 0.1070 at 250, 0.0569 at 260, and about 0.04 at
+270/280. Final sampled generic/chat JSDs are 0.002174/0.004947. Exact data/run
+hashes are in `EXPERIMENTS.md`; no semantic result is inferred. Active gate:
+screen original probes at steps 220-280, select a clean dose, then explicitly
+test both `hard_jobs_03` and the batch-job clarification inside the unchanged
+hard audits. No merge or compounding yet.

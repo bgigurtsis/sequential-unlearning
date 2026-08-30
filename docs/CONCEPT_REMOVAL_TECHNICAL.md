@@ -700,3 +700,11 @@ a malformed repeated continuation on the second pay-target turn. Step 240
 therefore remains the best dose. The next clean-parent arm requires actual
 multi-turn clean-answer anchoring plus independent idiomatic target coverage;
 checkpoint interpolation alone cannot resolve the observed boundary.
+
+The clean idiom-plus-multi-turn arm completed 360 steps. Its 1,104 target pairs
+add 48 independent living-idiom examples; its 1,808-record wall includes 288
+true chat-history records. Original-answer ratios are 0.390090/0.263198/
+0.173788/0.106967/0.056929 at steps 220/230/240/250/260. Final sampled
+generic/chat JSDs are 0.002174/0.004947. The multi-turn wall delays the target
+transition without preventing it. Screen steps 220-280 behaviorally before
+reusing the hard instruments.

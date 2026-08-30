@@ -346,3 +346,10 @@ clean for 360 steps with seed 31900 and otherwise identical settings. EC2 Torch
 tests and zero-overlap checks are mandatory before launch. This arm is allowed
 to address the two observed semantic failure classes, but not to copy exact
 hard-audit text.
+
+The refinement run completed at
+`derisk/whole_concept_jobs_v1/run_semantic_idiom_multiturn_360_v1`. Its useful
+transition is later: access ratios fall from 0.3901 at 220 to 0.0569 at 260 and
+about 0.04 at 270/280. Screen original steps 220/230/240/250/260/270/280, then
+run the unchanged hard audits only on a clean candidate. The decisive checks
+remain `hard_jobs_03` and the second computing batch-job turn.

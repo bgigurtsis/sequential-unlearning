@@ -5103,3 +5103,37 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   maximum length 256; seed 31900; 360 steps; snapshot/audit every 10; external
   semantic selection. The only changes are measured target idiom coverage and
   actual multi-turn preservation; no audit wording, rank, or loss weight changes.
+
+## Idiom plus multi-turn-boundary training completes (2026-08-30)
+
+- EC2 numerical validation passed 14/14 trainer and capture tests. The 48
+  idiomatic prompts have zero exact overlap with frozen probe or conversation
+  turns. The 24 preservation conversations have zero individual-turn and zero
+  full-sequence overlap with the hard conversation audit.
+- Materialized idiom prompts/captures/1,104-target captures/final forget pairs
+  have SHA-256 values
+  `1ff96f29d6dfeb30fe6aae28a0a966713b9e6cfff4e31c173c5a0a2ca3934232`,
+  `c2896893edfc75365be32f3365c1447c368dd73903520b397237f554d98f6d0a`,
+  `e6a4a382ef3023740ce29d69ea39e7307cb15a2d3b1a09cd5dd5fe3ddd8447a4`,
+  and `fa8f2f38a56ccf2869609a7ee62f9307965b999a0c2ca700b8c4e6054de4ec8b`.
+  The forget set uses all 96 uncertainty responses with maximum reuse 21.
+- The 48 clean multi-turn pairs and final 1,808-record wall have SHA-256 values
+  `8c80cb514f1ad79cc8c36e3ec5f8944f8b7e6d2d448255bf0fc5ac7e2bc0d114`
+  and `51fef432b073feb577c0be6a764d0fc2e303c55b0fdddd4bebc77401b0d6065a`.
+  The final wall contains 288 message-history records after sixfold repetition.
+- Run: `derisk/whole_concept_jobs_v1/run_semantic_idiom_multiturn_360_v1`,
+  completed normally at step 360 with exact precommitted settings. Run config,
+  metrics, and stop-state SHA-256 values are
+  `7fb8aedace1dd8a0cbc40a5d2e38432603c4eca39962f711a765280791b06a56`,
+  `5b3cd0a0adb4a0cf794a51c845957b8e25cac7b20e72518dde29cf75b786d14a`,
+  and `7c9a5889f7c601cf5295cac439895e23660d1bf50718a989304f7eced101e01b`.
+  Thirty-six adapters occupy 273 MiB.
+- Original-answer ratios at steps 180/200/210/220/230/240/250/260/270/280
+  are 0.615059/0.571075/0.563670/0.390090/0.263198/0.173788/0.106967/
+  0.056929/0.039819/0.040244. The stronger multi-turn wall delays the semantic
+  transition relative to the prior arm, as intended. Final sampled generic/chat
+  JSDs are 0.002174/0.004947; behavioural evaluation remains decisive.
+- No semantic verdict follows from training. Screen original frozen probes at
+  steps 220/230/240/250/260/270/280. Only candidates with natural target
+  termination and intact controls advance to the unchanged hard single-turn and
+  multi-turn audits.
