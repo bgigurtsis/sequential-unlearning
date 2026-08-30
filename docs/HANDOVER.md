@@ -831,3 +831,9 @@ remain failures. Merge it into the temporary step-33 parent, prove adapter/
 merge behavior equivalence, and establish utility/perplexity plus scalar/drift
 baselines before cumulative edits. Sparse-MLP remains the parallel challenger.
 Exact artifacts/hashes are in `EXPERIMENTS.md`.
+
+The first merged utility/perplexity invocation failed before evaluation because
+`eval.py` hardcoded a gated tokenizer alias. It now accepts the exact local
+snapshot via `EVAL_TOKENIZER_ID` while preserving the old default. Syntax
+passes. Rerun offline with the verified clean tokenizer; do not interpret the
+failed invocation as model damage.

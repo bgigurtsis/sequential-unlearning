@@ -7116,3 +7116,18 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   full model, and confirm adapter-versus-merge behavioral equivalence. Then run
   the accepted baseline utility/perplexity and damage/drift instruments. Keep
   the sparse-neuron lane parallel as a possible lower-collateral replacement.
+
+## Utility evaluator accepts a pinned local tokenizer (2026-08-30)
+
+- The first `eval.py` invocation on the merged replay-step-64 model failed
+  before model evaluation. Offline mode could not resolve the hardcoded
+  `google/gemma-3-4b-it` tokenizer alias from a cache containing only the exact
+  snapshot, and online fallback returned the expected gated-repository 401.
+  No probe or perplexity result was produced; this is not model evidence.
+- `scripts/eval.py` now reads optional environment variable
+  `EVAL_TOKENIZER_ID`, defaulting to the unchanged Hugging Face id. This permits
+  the already checksum-verified local tokenizer snapshot to be used offline
+  without changing legacy invocations. File SHA-256 is
+  `4647ca251d84b8fc2991adfdf9a2dad99a89bf5fcbfaf289020db73e1258c863`;
+  syntax compilation passes. Rerun the same evaluation with the exact local
+  clean snapshot in `EVAL_TOKENIZER_ID`.

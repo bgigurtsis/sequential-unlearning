@@ -21,7 +21,9 @@ from transformers import AutoModelForCausalLM, AutoTokenizer
 # ---------------------------------------------------------------------------
 # Settings
 # ---------------------------------------------------------------------------
-TOKENIZER_ID = "google/gemma-3-4b-it"  # tokenizer is always the base one
+TOKENIZER_ID = os.environ.get(
+    "EVAL_TOKENIZER_ID", "google/gemma-3-4b-it"
+)  # tokenizer is always the base one; local snapshots work offline
 PPL_MAX_TOKENS = 4096                  # how much of ppl_text.txt we score
 GEN_MAX_NEW_TOKENS = 80                # length of greedy generations
 

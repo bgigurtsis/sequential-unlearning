@@ -1238,3 +1238,9 @@ candidate. It is still imperfect (one loop; volunteer, phone, and tides hard
 controls absent). Active gate: BF16 merge, adapter/merge equivalence, then
 utility/perplexity and scalar/drift baselines. Do not start cumulative edits
 until these pass; sparse localization remains the parallel challenger.
+
+Merged-model semantic screens completed, but the first utility/perplexity
+invocation produced no result because `eval.py` hardcoded a gated tokenizer
+alias. The evaluator now supports pinned local snapshot path via
+`EVAL_TOKENIZER_ID`; syntax passes and legacy default is unchanged. Rerun with
+the verified clean snapshot, then interpret merge equivalence and utility.
