@@ -599,3 +599,9 @@ Screen every two-step checkpoint. Require all original holes, both edge cases
 fixed, and recovery of at least four of five new control injuries with no new
 control losses. Exact input hashes and the full precommit are in
 `EXPERIMENTS.md`.
+
+`run_step034_targeted_control_heal_24_v1` completed normally through step 24.
+The proxy indicates mild movement toward pre-healing answers (+7.4%) with
+bounded preservation losses, but cannot distinguish healthy control recovery
+from target leakage. Screen every two-step checkpoint on original, direct, and
+natural-v2 suites before making any claim; no checkpoint is selected yet.

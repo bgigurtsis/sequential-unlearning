@@ -6084,3 +6084,35 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   unseen leak, and recover at least four of the five newly damaged control
   paths without new control losses. Screen every saved checkpoint, choosing
   the earliest eligible crossing; otherwise reject this healing balance.
+
+## Step-34 targeted healing training completed (2026-08-30)
+
+- `run_step034_targeted_control_heal_24_v1` completed all 24 precommitted
+  steps normally with `stop_reason=step_budget_exhausted`. Run-config,
+  metrics, and stop-state SHA-256 values are
+  `76c8e5abc0bdf7495ecea03ad9ed3dfca6ebb5023e2121f7e18b3da4be47b7a0`,
+  `1d7b30cf69a3ba033723e58b85dfd1dc51665993f627594a0fd076fc5eec81ce`,
+  and `a3f96399d8b43f0ccadaa58ce61006a354ac69ba35a508d34166f863de60fcc3`.
+- Adapter hashes at steps 2/4/6/8/10/12/14/16/18/20/22/24 are,
+  respectively:
+  `62acd7062756ec036cfda5f2e7477521136968309f22a0c8f2350ca08a7f9e3a`,
+  `c92e5b719388820eb721dd0837375d1e93355caf50cee7bd791df63e6a8130d6`,
+  `2e266c5fbf548e1fd1732596f592a821bbf29e25debb1248ce4b6ee83b72e853`,
+  `50b3751ea147efe756eb7763265c27b96801fcae4d88f05a73ecd9a76757c47b`,
+  `d740e70a59033305aa46c3aea02b37500718d50a70c97ffc06bb0ae92f3a0340`,
+  `17a51a9257a32cbc89765d39af06c0a4495ecb6974609d8229fe9d85712dcbc0`,
+  `5af7852348e8cfbf6b64492099da3ec143ebcbd42ab04b58b28228c39095c5e1`,
+  `72323f6ead8920ed3e4bb1724873b920dd0c87438400febc3ddc760743305426`,
+  `290b1bc9ffdca0217fd38382c6d9eed809598103f75ee1dda2aae37353cd1aba`,
+  `f34582fdc8882d12f4570a80a512c67efff12638453e90effe843c2c0ab0fe40`,
+  `011061e48ffc207ab07b453a3bda78c7f6d77c324935c91bc47fed0659a4af48`,
+  and `44ed6ef3a6a6502e62cdf50552f013feb905b53ea7230f9e6d8519b6b7b9e7ba`.
+- The fixed captured-answer probability ratio changes smoothly from 1.0004
+  at step 2 to 1.0741 at step 24. Consistency CE falls from 0.535 at step 2
+  to 0.310 at step 24; final sampled clean-control JSD is 0.0235, generic
+  retain JSD 0.0078, and gradient norm 95.6. This is compatible with mild
+  restoration but is not behavioral evidence: the rising captured-answer
+  probability could also signal target reopening.
+- No checkpoint is selected from proxies. Screen all 12 snapshots on the
+  original, direct, and natural-v2 suites; choose the earliest behavioral
+  crossing satisfying the frozen healing gate or reject the method balance.

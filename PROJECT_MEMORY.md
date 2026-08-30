@@ -1001,3 +1001,10 @@ precommitted at low destructive pressure (effective suppression coefficient
 10 versus 400 in erasure), with strong target-consistency and clean-control
 walls. Pass requires all 36 original holes, both edge cases fixed, and at least
 four of five new control injuries recovered without new control losses.
+
+The targeted healing run completed normally through step 24. Its fixed
+captured-answer probability rises only 7.4%, while target consistency improves
+and retain proxies remain bounded. This is not yet evidence of healing or
+leakage. Active gate: behaviorally screen all 12 two-step checkpoints on the
+original, direct, and natural-v2 suites, then select the earliest full pass or
+reject the balance. Exact artifacts and hashes are in `EXPERIMENTS.md`.
