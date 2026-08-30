@@ -5185,3 +5185,26 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
 - This isolates two explicit corrections—category sampling and boundary repeat
   strength. Original frozen screening must pass before the hard instruments are
   reused. Reject any dose with target repetition even if its hole count rises.
+
+## Balanced-category threefold-boundary training completes (2026-08-30)
+
+- EC2 tests pass 16/16. The exact 1,664-record wall SHA-256 is
+  `5a5599bfecd824d0b25639ed6a0b7e22d89ab75421f3e84b4815262f12dc861f`.
+  Run `derisk/whole_concept_jobs_v1/run_balanced_semantic_idiom_multiturn3x_360_v1`
+  completed normally through step 360 with the precommitted clean-parent
+  settings. Run config, metrics, and stop-state SHA-256 values are
+  `a35137f5c4bbaf93c813963091934a6e077cbdc3bff107cedb97231e449c2cac`,
+  `1e9788244720fa3edebfd603ef5cb82c5374fe167af0d1183a84253f6bc610d6`,
+  and `1a9b87dbe507803a07223141628fc5b3b03a6767bbe1d80031e2f1f500053008`.
+  Thirty-six adapters occupy 273 MiB.
+- Original-answer ratios at steps 160/170/180/190/200/210/220/230/240/250
+  are 0.613000/0.549647/0.498432/0.424894/0.300723/0.163075/0.092786/
+  0.074318/0.032733/0.029746. Category balancing restores an earlier target
+  transition while keeping the threefold message-history wall.
+- Sampled chat/generic JSD spikes to 0.007056/0.002414 at step 200 and
+  0.006719/0.001745 at step 210, then declines; final sampled values are
+  0.002478/0.000999. Behavioural checks decide whether the transient spike
+  corresponds to damage.
+- No semantic verdict follows from training. Screen original frozen probes at
+  steps 180/190/200/210/220/230/240/250. Reject target repetition and control
+  uncertainty before any hard-audit reuse.

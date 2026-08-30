@@ -729,3 +729,10 @@ probability because it has more rows. All loss, LoRA, layer, batch, and EOS
 settings remain fixed. Install and run the expanded EC2 tests, materialize the
 3x wall, launch, and reject repetition at the original screen before any hard
 audit reuse.
+
+The balanced-category 3x run completed normally. Access ratios fall through
+0.4984 at step 180, 0.3007 at 200, 0.1631 at 210, 0.0928 at 220, and 0.0327 at
+240. Final sampled generic/chat JSDs are 0.000999/0.002478, after transient
+spikes around steps 200-210. Exact hashes are in `EXPERIMENTS.md`; no semantic
+claim exists. Active gate: original frozen screen at steps 180-250, rejecting
+any target repetition or control uncertainty before hard-audit reuse.

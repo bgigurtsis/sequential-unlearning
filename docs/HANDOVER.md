@@ -366,3 +366,9 @@ run its expanded tests, combine 1,520 existing wall records with three copies
 of the 48 multi-turn pairs (1,664 total), and launch clean seed 32000 with
 `--balanced-forget-categories`. Everything else remains fixed. Original-screen
 target repetition is an automatic rejection.
+
+The balanced 3x run completed at
+`derisk/whole_concept_jobs_v1/run_balanced_semantic_idiom_multiturn3x_360_v1`.
+Its transition spans steps 180-240 (access 0.4984 to 0.0327). Screen original
+steps 180/190/200/210/220/230/240/250 and reject repetition/control uncertainty
+before touching the hard audit.
