@@ -720,3 +720,10 @@ train all six corrections every step under global target-null projection and
 save/evaluate every step. Screen direct/natural-v2 first; require all six clean
 terminations plus at least step 33's 31/36 combined controls before broadening.
 Exact data hashes and settings are in `EXPERIMENTS.md`.
+
+The focused run completed all 20 updates and saved every checkpoint. Metrics
+are finite, projection remained active, and the old-answer proxy changed only
++0.963%, indicating a small update but not yet proving behavioral repair. Next
+screen all 20 checkpoints on direct and natural-v2; broaden only if all six
+edge routes terminate cleanly and combined controls remain at least 31/36.
+Exact run/checkpoint hashes are in `EXPERIMENTS.md`.

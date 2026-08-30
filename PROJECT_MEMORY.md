@@ -1125,3 +1125,10 @@ controls form a unique 94-prompt consistency wall. Run
 checkpoints under global target-null projection. Active gate: train, screen
 every checkpoint on direct/natural-v2, and broaden only a point that fixes all
 six routes while retaining at least the step-33 31/36 combined controls.
+
+The focused run completed normally and saved all 20 one-step checkpoints.
+Projection was active and all metrics stayed finite; old-answer probability
+moved only +0.963%, so this is a genuinely small edit by proxy. No behavioral
+claim is made yet. Active gate: generation-screen all 20 checkpoints on direct
+and natural-v2, requiring all six clean terminations and >=31/36 combined
+controls before any original-suite or conversation qualification.

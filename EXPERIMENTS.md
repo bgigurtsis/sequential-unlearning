@@ -6620,3 +6620,43 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   all six failures must terminate cleanly, existing target holes must remain,
   and control retention must be at least step 33's 31/36 before original and
   conversation screens. Proxy movement alone cannot select a checkpoint.
+
+## Step-33 focused-repair training completed (2026-08-30)
+
+- `run_step033_focused6_global_null_heal_20_v1` completed all 20 updates
+  normally with `stop_reason=step_budget_exhausted`, saving and evaluating
+  every step. Run-config, metrics, and stop-state SHA-256 values are
+  `30c13d4bdc130888da880525933d3b5bf7040d72ec8d8102d9ad7186001e8c96`,
+  `9c5cecaece6737ad8706f1cec7fe3ae57a14fd3413dcef5a0da0302ebdf2230a`,
+  and `3a429e7ecd6555a47ec5102b92e4d0b5cbc009380ed8c25682c28cc7c8a04d58`.
+- Adapter SHA-256 values for steps 1-20 are, in order:
+  `6f54bb5f8b4ff972221e69570906401738ca9aabe76a7b2c1882eb3ca302d469`,
+  `e447780624c268a94f4216179a191dc07a44eee78d98aef67a10c5441171a4b8`,
+  `f3a20b7fa7060bbca7f2a4fc2f39ae261ee490624f94c91a18734314deda8bd0`,
+  `512413a6ca2a12651476371e262166fd5772a43b721cbeca056c3af63e73d27d`,
+  `dcc8fe23afbfafb51438a45f9ce00064e527282c7cac24d4582b64306a2fd266`,
+  `bbc4a2124dc8d0b907e920205d8944103d2ae21753841cd3754c9b1a27370a35`,
+  `4f2cae380b26fa05b3120333a778aa6552abd1c8e1a59517700f1310cca803fb`,
+  `cf90280cfd396e8aadfb42ab920a2133a411b9e60a69f90c7070ac647aa190dc`,
+  `001444b057a81427caa1fd84b56a993afdebd8d3e523a7bc49c58f92d0de81eb`,
+  `1e45b4ea2a5e6c98300753e7264b0215f3612e58171633d47041ffd5e43a958a`,
+  `9aaa5e81f9cc1e640c7610127b72ba24ebe1406f764b0fa79ff1c59aad60c9a5`,
+  `95a369c1bd6e588f72878fac7bf548561105d0e984ee4caa4c41a326284c16d2`,
+  `4c099c3096347eb0b1c00c4825173e066ce7eec7fde067b0651998d091329ff3`,
+  `9d5f12ff9b8f6901dc14ea843760cb072d54414ff8e5c7baec1faa6fca09226a`,
+  `3a33f277691c26cf6f20125ed352f274b86693bcf4a545dad9c2061c6638bedf`,
+  `5ddbfb8c704a64f18c63942a3607a551b251aa6da9459680a5a2552bded2a5c2`,
+  `a049136a4a479cb48b08166eed5a36c78e3c877444ec0c6881907747324d8886`,
+  `356900924c5024adbc1063e19f386e4c3358ff35be3a8d874f968a5e975f131b`,
+  `368c72c28602fe5b97c3bf19c332e6d6827c24aeb3dde3e104e5f41e546b5642`,
+  and `f6724864d3f67006c879285439bec4c859fe3d92601fd29a7275cee2b9588ae9`.
+- All scalar metrics are finite. Strict global projection activates on every
+  update; 42 eligible LoRA tensors exist at initialization and 84 thereafter.
+  Target/control cosine spans -0.0713 to +0.0523, and gradient norm rises
+  smoothly from 22.51 to 36.68. Focused target-response CE falls from 1.2112
+  to 1.0289, while the captured-old-answer audit moves only +0.963% by step
+  20. Generic retain JSD remains 0.0045-0.0111; sampled chat JSD is bounded.
+- These are stable, low-movement training proxies, not behavioral success.
+  No checkpoint is selected. Screen all 20 adapters on direct and natural-v2
+  generation before original or conversation evaluation, using the frozen
+  all-six-clean and >=31/36 combined-control gate.
