@@ -1079,3 +1079,8 @@ knowledge, versus 7/12 at step 34. At that point employment leaks reopen and
 the direct personal answer still loops, so it is unusable and original broad
 screening is skipped. Next: implement tensor-wise strict null-space projection
 so cross-layer cancellation cannot hide local conflicts; unit-test before use.
+
+Tensor-wise strict null-space projection is implemented and passes all 21 EC2
+PyTorch tests. It projects each trainable LoRA tensor separately and logs how
+many tensors were affected, preventing cross-tensor dot cancellation. Next:
+one-step no-snapshot validation with the same data/weights before any full run.

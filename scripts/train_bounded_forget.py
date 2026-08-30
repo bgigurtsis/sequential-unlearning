@@ -154,6 +154,14 @@ def parse_args():
             "gradient, regardless of its sign"
         ),
     )
+    parser.add_argument(
+        "--orthogonalize-control-gradients-per-tensor",
+        action="store_true",
+        help=(
+            "remove the control-gradient component along the forget gradient "
+            "independently for every trainable parameter tensor"
+        ),
+    )
     parser.add_argument("--refusal-text", default="No idea")
     parser.add_argument(
         "--target-response-append-eos",
@@ -378,7 +386,11 @@ def selected_token_cross_entropy(logits, labels, mask):
 
 
 def project_control_gradients_away_from_target(
-    target_grads, control_grads, eps=1e-12, only_if_conflicting=True
+    target_grads,
+    control_grads,
+    eps=1e-12,
+    only_if_conflicting=True,
+    per_tensor=False,
 ):
     """Project control gradients away from the aggregate target direction."""
     if len(target_grads) != len(control_grads):
@@ -410,10 +422,38 @@ def project_control_gradients_away_from_target(
     control_norm_sq = zero if control_norm_sq is None else control_norm_sq
     denominator = (target_norm_sq.sqrt() * control_norm_sq.sqrt()).clamp_min(eps)
     cosine = dot / denominator
-    apply_projection = bool(
-        target_norm_sq > eps and (not only_if_conflicting or dot < 0)
+    eligible_tensors = sum(
+        target is not None
+        and control is not None
+        and bool(target.float().pow(2).sum() > eps)
+        for target, control in zip(target_grads, control_grads)
     )
-    if apply_projection:
+    projected_tensors = 0
+    apply_projection = False
+    if per_tensor:
+        projected = []
+        for target, control in zip(target_grads, control_grads):
+            if target is None or control is None:
+                projected.append(control)
+                continue
+            local_norm_sq = target.float().pow(2).sum()
+            local_dot = (target.float() * control.float()).sum()
+            should_project = bool(
+                local_norm_sq > eps
+                and (not only_if_conflicting or local_dot < 0)
+            )
+            if should_project:
+                local_scale = local_dot / local_norm_sq
+                projected.append(
+                    control
+                    - local_scale.to(control.dtype) * target.to(control.dtype)
+                )
+                projected_tensors += 1
+            else:
+                projected.append(control)
+        apply_projection = projected_tensors > 0
+    elif bool(target_norm_sq > eps and (not only_if_conflicting or dot < 0)):
+        apply_projection = True
         scale = dot / target_norm_sq
         projected = [
             (
@@ -423,12 +463,15 @@ def project_control_gradients_away_from_target(
             )
             for target, control in zip(target_grads, control_grads)
         ]
+        projected_tensors = eligible_tensors
     else:
         projected = list(control_grads)
     return projected, {
         "target_control_grad_dot": float(dot.detach()),
         "target_control_grad_cosine": float(cosine.detach()),
         "control_projection_applied": apply_projection,
+        "control_projection_tensors": projected_tensors,
+        "control_projection_eligible_tensors": eligible_tensors,
     }
 
 
@@ -724,10 +767,20 @@ def main():
             "--orthogonalize-control-gradients requires positive "
             "--consistency-weight and --consistency-data"
         )
-    if (
-        args.project_conflicting_control_gradients
-        and args.orthogonalize_control_gradients
+    if args.orthogonalize_control_gradients_per_tensor and (
+        args.consistency_weight <= 0 or not consistency_pairs
     ):
+        raise ValueError(
+            "--orthogonalize-control-gradients-per-tensor requires positive "
+            "--consistency-weight and --consistency-data"
+        )
+    if sum(
+        (
+            args.project_conflicting_control_gradients,
+            args.orthogonalize_control_gradients,
+            args.orthogonalize_control_gradients_per_tensor,
+        )
+    ) > 1:
         raise ValueError("choose only one control-gradient projection mode")
 
     tokenizer_source = args.tokenizer_model or args.model_id
@@ -1126,6 +1179,11 @@ def main():
                     if args.orthogonalize_control_gradients
                     else ""
                 )
+                + (
+                    " + per-tensor target-null-space projection of consistency gradients"
+                    if args.orthogonalize_control_gradients_per_tensor
+                    else ""
+                )
             ),
             "refusal_token_ids": refusal_token_ids,
             "master_weight_dtype": master_weight_dtype,
@@ -1397,10 +1455,13 @@ def main():
             "target_control_grad_dot": None,
             "target_control_grad_cosine": None,
             "control_projection_applied": False,
+            "control_projection_tensors": 0,
+            "control_projection_eligible_tensors": 0,
         }
         if (
             args.project_conflicting_control_gradients
             or args.orthogonalize_control_gradients
+            or args.orthogonalize_control_gradients_per_tensor
         ):
             target_grads = torch.autograd.grad(
                 target_loss,
@@ -1419,8 +1480,12 @@ def main():
                     target_grads,
                     control_grads,
                     only_if_conflicting=(
-                        not args.orthogonalize_control_gradients
+                        not (
+                            args.orthogonalize_control_gradients
+                            or args.orthogonalize_control_gradients_per_tensor
+                        )
                     ),
+                    per_tensor=args.orthogonalize_control_gradients_per_tensor,
                 )
             )
             if preservation_loss.requires_grad:
@@ -1460,6 +1525,7 @@ def main():
             f"consistency={consistency_loss.item():.4f}  "
             f"tc_cos={gradient_surgery['target_control_grad_cosine']}  "
             f"projected={gradient_surgery['control_projection_applied']}  "
+            f"projected_tensors={gradient_surgery['control_projection_tensors']}  "
             f"grad={grad_norm:.4f}",
             flush=True,
         )

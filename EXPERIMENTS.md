@@ -6414,3 +6414,22 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   elsewhere before projection; tensor-wise null spaces prevent this hiding.
   Unit-test that geometry and retain global mode for comparison before another
   run. This is a geometry refinement, not another scalar-weight sweep.
+
+## Tensor-wise target-null-space mode implemented (2026-08-30)
+
+- Added mutually exclusive
+  `--orthogonalize-control-gradients-per-tensor`. It computes the target dot
+  product and target norm independently for every trainable LoRA parameter
+  tensor and removes each local shared component. It records projected and
+  eligible tensor counts in training metrics. Global strict and conflict-only
+  modes remain unchanged.
+- Updated trainer/test SHA-256 values are
+  `1e84c97faa3da4ceaed1ec82a45c74265136d3635b17cea2c0fe57d7c55d2134`
+  and `3a96e5ceca45b0ebb836584b18e9c84b93bd7e8ab1c7112718f24c85fafd0605`.
+  All 21 EC2 PyTorch numerical tests pass. The new test constructs two tensors
+  whose opposing local dots cancel globally: global projection leaves them
+  unchanged, while tensor-wise projection sends both target-direction
+  components exactly to zero. Local syntax compilation passes.
+- This is an optimizer implementation only. Run a one-step no-snapshot smoke
+  with the existing all-64/36 data and weights, require finite gradients and a
+  nonzero projected-tensor count, then precommit a dose curve only if valid.

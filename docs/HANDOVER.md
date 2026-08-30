@@ -675,3 +675,8 @@ question. No checkpoint meets both sides, so original broad screening is
 skipped. Next refinement is tensor-wise strict projection to prevent agreement
 in one layer from masking conflict in another. Exact screen hashes are in
 `EXPERIMENTS.md`.
+
+Tensor-wise strict projection is now implemented and passes all 21 EC2
+PyTorch tests. It removes the local shared target direction independently for
+each LoRA tensor and logs projected/eligible counts. Existing modes remain
+unchanged. Run a one-step no-snapshot smoke before precommitting another curve.

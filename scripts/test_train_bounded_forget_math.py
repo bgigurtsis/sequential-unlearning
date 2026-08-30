@@ -57,6 +57,26 @@ class BoundedForgetMathTests(unittest.TestCase):
         self.assertTrue(torch.allclose(projected[0], torch.tensor([0.0, 3.0])))
         self.assertAlmostEqual(float((target[0] * projected[0]).sum()), 0.0)
 
+    def test_per_tensor_projection_prevents_cross_tensor_cancellation(self):
+        target = [torch.tensor([1.0]), torch.tensor([1.0])]
+        control = [torch.tensor([2.0]), torch.tensor([-2.0])]
+        global_projected, _ = (
+            train_bounded_forget.project_control_gradients_away_from_target(
+                target, control, only_if_conflicting=False
+            )
+        )
+        local_projected, stats = (
+            train_bounded_forget.project_control_gradients_away_from_target(
+                target, control, only_if_conflicting=False, per_tensor=True
+            )
+        )
+        self.assertTrue(torch.allclose(global_projected[0], control[0]))
+        self.assertTrue(torch.allclose(global_projected[1], control[1]))
+        self.assertTrue(torch.allclose(local_projected[0], torch.zeros(1)))
+        self.assertTrue(torch.allclose(local_projected[1], torch.zeros(1)))
+        self.assertEqual(stats["control_projection_tensors"], 2)
+        self.assertEqual(stats["control_projection_eligible_tensors"], 2)
+
     def test_balanced_forget_sampling_uses_distinct_categories_within_cycle(self):
         pairs = [
             {"category": "overweight", "id": index} for index in range(20)
