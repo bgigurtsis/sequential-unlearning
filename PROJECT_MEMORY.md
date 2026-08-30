@@ -586,3 +586,18 @@ broad anchors. Freeze 240 new prompts across 12 preservation groups, capture
 clean answers, repeat three times, combine with the existing 800 wall, and run
 the precommitted clean 240-step seed-31500 trajectory recorded in
 `EXPERIMENTS.md`.
+
+The EOS-plus-context run has completed normally through step 240 at
+`derisk/whole_concept_jobs_v1/run_dualpath_eos_context_240_v1`. The contextual
+wall delayed and softened suppression: original-answer probability remained
+0.89001 at step 180, then fell to 0.63273/0.47539/0.35708 at steps 220/230/240,
+instead of the prior arm's 0.19425/0.08302/0.04598. Final sampled generic/chat
+JSDs are still low at 0.000880/0.004403. This is not yet evidence of semantic
+erasure. Active experiment is the frozen 60-probe behavioural screen of steps
+220/230/240, with raw checks for all 12 target groups, batch-job and physics-
+work protection, natural EOS stopping, repetition, and unrelated utility.
+Current best remains the rejected prior step 220: 35/36 target absences but
+bad repetition and contextual collateral. Next decision gate is whether the
+new run produces a slightly weaker but cleanly bounded hole; otherwise adjust
+the erasure/preservation balance from the clean parent, not from an edited
+checkpoint.

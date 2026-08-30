@@ -257,3 +257,15 @@ before training, and gate on semantic absence, unrelated retention, natural
 stable conversation, lexical diversity, and prompt robustness. Pass one clean
 job/employment removal before a multi-concept compounding pilot and the full
 31-removal rehearsal.
+
+The current clean-parent candidate is
+`derisk/whole_concept_jobs_v1/run_dualpath_eos_context_240_v1`. It uses diverse
+uncertainty continuations with EOS, direct original-answer suppression, and a
+1,520-behaviour preservation wall that explicitly covers alternate meanings
+of job/work plus broad utility. Training completed normally through step 240.
+The original-answer probability ratio falls only to 0.63273/0.47539/0.35708 at
+steps 220/230/240, showing that contextual preservation delays the destructive
+transition. No semantic verdict exists yet. Screen those three checkpoints on
+the frozen 36 target and 24 control probes, then inspect termination,
+repetition, batch-job/physics-work/chess behaviour, and the stubborn
+`employer_employee_03` target before choosing or rejecting a dose.

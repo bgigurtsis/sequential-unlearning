@@ -4771,3 +4771,42 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   coefficient 10, weights 1/30/200, rank 4, alpha 8, layers 12-19, LR 5e-5,
   batches 4/4/16, max length 256, seed 31500, 240 steps, save/audit every 10,
   external semantic selection.
+
+## EOS plus contextual-preservation training completes (2026-08-30)
+
+- Run: `derisk/whole_concept_jobs_v1/run_dualpath_eos_context_240_v1`,
+  trained from the exact clean Gemma snapshot. Inputs were the frozen 480
+  diverse jobs/employment target records, 244 target-filtered generic-retain
+  records, and a 1,520-record behavioural wall made from the existing 800
+  clean behaviours plus three copies of 240 newly captured contextual
+  behaviours.
+- The contextual prompt file contains 20 prompts for each of 12 protected
+  groups (Biblical Job, Steve Jobs, computer batch jobs, physics work, works
+  of art, chores, volunteering, hobbies, chess, geography capitals,
+  arithmetic, and bread), seed 31400. Its exact-prompt intersection with the
+  frozen 24 control probes is zero. Prompt/capture/combined-wall SHA-256 values
+  are `a34166ced2c21058e04be947f1bd5c7bc0b39dccac09a715d4c440a59e9dbf5b`,
+  `45e91da61df6a5bd8a8ef186fb343a724567c56a377c00f6741f9cf329abc123`, and
+  `861fddae9cf771ef3daed164772d12141205c4731d83b5c9870acb27de1b2e8d`.
+- Exact settings: `target-response-ce`; append exactly one EOS to each diverse
+  uncertainty continuation; answer-suppression coefficient 10;
+  forget/retain/chat weights 1/30/200; rank 4; alpha 8; layers 12-19; LR 5e-5;
+  batches 4/4/16; max length 256; seed 31500; 240 steps; audits and snapshots
+  every 10 steps; external semantic selection.
+- Original-answer probability ratios at steps 140/150/160/170/180/190/200/
+  210/220/230/240 were 0.944173/0.929220/0.919207/0.902790/0.890007/
+  0.852333/0.813477/0.766222/0.632731/0.475386/0.357077. Compared with the
+  unprotected dual-path arm, the suppression transition is substantially
+  delayed and gentler. At step 240, sampled generic/chat preservation JSDs
+  were 0.000880/0.004403. The run stopped normally at its step budget.
+- Receipts: `run_config.json` SHA-256
+  `688842f20b555394fb48e621edeb7449d4c3dac02bcc74a4e4c190e81d3bfc89`;
+  `training_metrics.jsonl`
+  `02db96cdee1124a3aa095714d96d5c89bf595cdb99fa7b975e4f18325b72bf8d`;
+  `stop_state.json`
+  `41d20769f9fe5e68b4146029b0f578b9051ce93ec080e498dfef8bba2c456758`.
+  The run directory occupies 182 MiB.
+- This is a completed training finding, not a semantic pass. Next gate:
+  batch-screen late checkpoints 220/230/240 on all 36 target and 24 frozen
+  controls, then inspect raw completions for target absence, protected
+  contextual meanings, natural EOS termination, and repetition.
