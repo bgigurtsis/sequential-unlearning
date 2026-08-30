@@ -121,6 +121,29 @@ class BoundedForgetMathTests(unittest.TestCase):
                 {0: state}, {0: state}, torch.ones(1, 1), {0: state[0, 0]}, 0
             )
 
+    def test_prompt_last_indices_uses_answer_boundary(self):
+        mask = torch.tensor([[0, 0, 1, 1], [0, 1, 1, 0]], dtype=torch.float32)
+        self.assertEqual(
+            train_bounded_forget.prompt_last_indices(mask).tolist(), [1, 0]
+        )
+
+    def test_anchor_alignment_loss_matches_explicit_relative_mse(self):
+        current = torch.tensor(
+            [[[0.0, 0.0], [1.0, 3.0], [9.0, 9.0]]], requires_grad=True
+        )
+        anchor = torch.tensor([[[2.0, 1.0], [2.0, 2.0], [8.0, 8.0]]])
+        actual = train_bounded_forget.anchor_alignment_loss(
+            {2: current},
+            torch.tensor([1]),
+            {2: anchor},
+            torch.tensor([0]),
+            [2],
+        )
+        expected = ((torch.tensor([1.0, 3.0]) - torch.tensor([2.0, 1.0])) ** 2).sum() / 5.0
+        self.assertTrue(torch.allclose(actual, expected))
+        actual.backward()
+        self.assertTrue(torch.isfinite(current.grad).all())
+
     def test_cyclic_target_restarts_for_each_sequence(self):
         mask = torch.tensor([[1, 1, 1], [1, 1, 0]], dtype=torch.float32)
         targets = train_bounded_forget.cyclic_target_ids(mask, [4, 9])

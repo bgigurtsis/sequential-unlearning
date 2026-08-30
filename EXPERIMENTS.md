@@ -5547,3 +5547,43 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   but must use a meaningful already-forgotten anchor state rather than a random
   direction and must operate on the prompt route without teacher-forcing the
   original knowledgeable answer tokens.
+
+## Forgotten-state anchor alignment precommitted (2026-08-30)
+
+- New hypothesis: random RMU failed because a random answer-token state is not
+  a meaningful destination for an already-erased model. Instead, align the
+  final prompt-token state of each independent living-idiom prompt to the
+  frozen parent state of a different jobs prompt that the parent already maps
+  to stable unfamiliarity. Causal masking means no answer token can affect that
+  prompt state; the original clean answer is retained only for audit scoring
+  and receives no alignment loss.
+- `train_bounded_forget.py` now supports `anchor-alignment`, validates a unique
+  non-empty `anchor_prompt` per record, computes norm-normalized relative MSE
+  between source and frozen-parent anchor prompt states at selected layers, and
+  logs the fixed alignment distance. Clean-reference generic/chat JSD remains
+  unchanged. Trainer SHA-256 is
+  `653e8085e2af02476bc31085c2c990d0d41aa767d59408bb7823107c27ef64ca`.
+- `build_anchor_alignment_pairs.py`, SHA-256
+  `31bd8585d13f356aba2f18d585873ed90699066f5f671fe7c94b57bac237a95e`,
+  deterministically pairs the 48 independent idiom prompts with 48 unique jobs
+  anchors sampled without replacement from the existing 1,056 semantic-mix
+  training corpus. Seed 32300 produces
+  `derisk/whole_concept_jobs_v1/anchor_alignment_pairs_48.json`, SHA-256
+  `0cb4c3ed42e6ce99c547c4cf15ea5c2a384254c55e2c2aeee4b1d95861d2c96b`.
+  No frozen hard-audit prompt is copied.
+- Four new numerical/builder tests cover answer-boundary indexing, exact
+  alignment loss, deterministic unique pairing, and insufficient-anchor
+  rejection. The combined EC2 suite passes 19/19. Test-file SHA-256 values are
+  `16cb700e196c95d8e5fbfe067795ee9cd0919914673fc39cd88da59ebb2e23e8`
+  and `713ec1c56d8a1ea5b059d656ad321bf568b6af5c802284325c0b712a626943b2`.
+- Frozen run: merged semantic-mix step-240 parent; clean Gemma external
+  reference/tokenizer; 48 alignment pairs; 244 generic retains; 1,808
+  clean/context/multi-turn wall; batches 4/4/16; alignment layers 20/24/28;
+  rank 4 alpha 8 LoRA over layers 18-28; LR 5e-5; weights 1/30/200; maximum
+  length 256; seed 32350; 30 steps; save/audit every two; external semantic
+  selection. Output:
+  `derisk/whole_concept_jobs_v1/run_idiom_anchor_alignment_30_v1`.
+- Selection remains behavioral. Original-screen the alignment transition and
+  reject reopened routes, loops, or control damage. Only a 36/36 raw original
+  checkpoint reaches the hard single/conversation audits, where closing the
+  living idiom is mandatory. The immutable step-240 model remains the fallback.

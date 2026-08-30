@@ -460,3 +460,10 @@ All 30 controls remain healthy, so the mechanism destabilizes the target
 boundary rather than globally collapsing the model. Do not hard-audit it.
 Next try meaningful forgotten-state alignment on prompt representations, with
 no original-answer teacher forcing. Current best remains step 240.
+
+Forgotten-state anchor alignment is implemented and precommitted. It aligns 48
+independent living-idiom prompt states to 48 unique stable already-forgotten
+jobs prompt states at layers 20/24/28, with rank-4 layers 18-28 and the clean
+reference wall. Tests pass 19/19; exact hashes/settings are in `EXPERIMENTS.md`.
+Run `run_idiom_anchor_alignment_30_v1`, then original-screen the transition;
+only a 36/36 raw, loop-free, all-controls checkpoint reaches the hard audit.

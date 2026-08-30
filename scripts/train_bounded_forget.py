@@ -87,6 +87,7 @@ def parse_args():
             "jensun-jsd",
             "answer-probability",
             "adaptive-rmu",
+            "anchor-alignment",
             "elm-guided",
             "refusal-ce",
             "target-response-ce",
@@ -490,6 +491,36 @@ def adaptive_rmu_loss(current_states, reference_states, mask, directions, norm_m
     return torch.stack(losses).mean()
 
 
+def prompt_last_indices(answer_mask):
+    """Return the last prompt-token index immediately before each answer."""
+    if answer_mask.ndim != 2 or not torch.all(answer_mask.sum(dim=-1) > 0):
+        raise ValueError("each row needs at least one answer token")
+    first_answer = answer_mask.float().argmax(dim=-1)
+    if torch.any(first_answer < 1):
+        raise ValueError("each row needs at least one prompt token")
+    return first_answer - 1
+
+
+def anchor_alignment_loss(
+    current_states,
+    current_indices,
+    anchor_states,
+    anchor_indices,
+    layers,
+):
+    """Align source prompt states to frozen already-forgotten anchor states."""
+    losses = []
+    batch = torch.arange(current_indices.shape[0], device=current_indices.device)
+    for layer in layers:
+        current = current_states[layer][batch, current_indices].float()
+        anchor = anchor_states[layer][batch, anchor_indices].float().detach()
+        norm_sq = anchor.pow(2).sum(dim=-1).clamp(min=1e-6)
+        losses.append(((current - anchor).pow(2).sum(dim=-1) / norm_sq).mean())
+    if not losses:
+        raise ValueError("anchor alignment needs at least one layer")
+    return torch.stack(losses).mean()
+
+
 def main():
     args = parse_args()
     try:
@@ -515,6 +546,8 @@ def main():
         raise ValueError("train-layer-lo must be below train-layer-hi")
     if args.forget_objective == "adaptive-rmu" and args.parameterization != "lora":
         raise ValueError("adaptive-rmu currently requires LoRA parameterization")
+    if args.forget_objective == "anchor-alignment" and args.parameterization != "lora":
+        raise ValueError("anchor-alignment currently requires LoRA parameterization")
     if args.forget_objective == "elm-guided":
         if args.parameterization != "lora":
             raise ValueError("elm-guided currently requires LoRA parameterization")
@@ -531,6 +564,18 @@ def main():
     torch.manual_seed(args.seed)
 
     forget_pairs = read_json(args.forget_data)
+    if args.forget_objective == "anchor-alignment":
+        missing_anchors = [
+            index
+            for index, pair in enumerate(forget_pairs)
+            if not isinstance(pair.get("anchor_prompt"), str)
+            or not pair["anchor_prompt"].strip()
+        ]
+        if missing_anchors:
+            raise ValueError(
+                "anchor-alignment requires a non-empty anchor_prompt on every "
+                f"forget record; missing indices: {missing_anchors[:10]}"
+            )
     if args.forget_objective == "target-response-ce":
         missing_targets = [
             index
@@ -620,10 +665,10 @@ def main():
                 f"train-layer-hi {args.train_layer_hi} exceeds {num_layers} layers"
             )
         target_layers = list(range(args.train_layer_lo, args.train_layer_hi))
-        if args.forget_objective == "adaptive-rmu" and not set(steer_layers).issubset(
-            target_layers
-        ):
-            raise ValueError("adaptive-rmu steer layers must lie inside the LoRA band")
+        if args.forget_objective in {"adaptive-rmu", "anchor-alignment"} and not set(
+            steer_layers
+        ).issubset(target_layers):
+            raise ValueError("representation steer layers must lie inside the LoRA band")
         print(
             f"Model has {num_layers} layers; rank-{args.rank} LoRA on layers "
             f"{target_layers[0]}-{target_layers[-1]} (ELM early band)."
@@ -826,7 +871,8 @@ def main():
                 outputs = model(
                     input_ids=ids,
                     attention_mask=attention,
-                    output_hidden_states=args.forget_objective == "adaptive-rmu",
+                    output_hidden_states=args.forget_objective
+                    in {"adaptive-rmu", "anchor-alignment"},
                 )
                 logits = outputs.logits
                 shifted_logits = logits[:, :-1, :]
@@ -877,6 +923,38 @@ def main():
                             )
                         )
                     )
+                elif args.forget_objective == "anchor-alignment":
+                    anchor_pairs = [
+                        {"prompt": pair["anchor_prompt"], "answer": pair["answer"]}
+                        for pair in pairs[start : start + args.batch_forget]
+                    ]
+                    a_ids, a_attention, a_mask, _ = make_forget_batch(anchor_pairs)
+                    with model.disable_adapter():
+                        anchor_outputs = model(
+                            input_ids=a_ids,
+                            attention_mask=a_attention,
+                            output_hidden_states=True,
+                            use_cache=False,
+                        )
+                    current_states = {
+                        layer: outputs.hidden_states[layer + 1]
+                        for layer in steer_layers
+                    }
+                    anchor_states = {
+                        layer: anchor_outputs.hidden_states[layer + 1]
+                        for layer in steer_layers
+                    }
+                    rmu_values.append(
+                        float(
+                            anchor_alignment_loss(
+                                current_states,
+                                prompt_last_indices(mask),
+                                anchor_states,
+                                prompt_last_indices(a_mask),
+                                steer_layers,
+                            )
+                        )
+                    )
         if was_training:
             model.train()
         result = {
@@ -889,13 +967,22 @@ def main():
             ),
         }
         if rmu_values:
-            result["mean_rmu_relative_mse"] = sum(rmu_values) / len(rmu_values)
+            metric_name = (
+                "mean_anchor_alignment_relative_mse"
+                if args.forget_objective == "anchor-alignment"
+                else "mean_rmu_relative_mse"
+            )
+            result[metric_name] = sum(rmu_values) / len(rmu_values)
         return result
 
     output_dir.mkdir(parents=True)
     metrics_path = output_dir / "training_metrics.jsonl"
     if args.forget_objective == "adaptive-rmu":
         objective_description = "adaptive norm-scaled hidden-state misdirection"
+    elif args.forget_objective == "anchor-alignment":
+        objective_description = (
+            "prompt-final hidden-state alignment to frozen already-forgotten anchors"
+        )
     elif args.forget_objective == "answer-probability":
         objective_description = (
             "bounded original-answer probability suppression on forget answer positions"
@@ -987,7 +1074,8 @@ def main():
         forget_outputs = model(
             input_ids=f_ids,
             attention_mask=f_attention,
-            output_hidden_states=args.forget_objective == "adaptive-rmu",
+            output_hidden_states=args.forget_objective
+            in {"adaptive-rmu", "anchor-alignment"},
             use_cache=False,
         )
         logits = forget_outputs.logits
@@ -1023,6 +1111,34 @@ def main():
                 f_mask,
                 rmu_directions,
                 args.rmu_norm_mult,
+            )
+        elif args.forget_objective == "anchor-alignment":
+            anchor_pairs = [
+                {"prompt": pair["anchor_prompt"], "answer": pair["answer"]}
+                for pair in forget_batch
+            ]
+            a_ids, a_attention, a_mask, _ = make_forget_batch(anchor_pairs)
+            with torch.no_grad(), model.disable_adapter():
+                anchor_outputs = model(
+                    input_ids=a_ids,
+                    attention_mask=a_attention,
+                    output_hidden_states=True,
+                    use_cache=False,
+                )
+            current_states = {
+                layer: forget_outputs.hidden_states[layer + 1]
+                for layer in steer_layers
+            }
+            anchor_states = {
+                layer: anchor_outputs.hidden_states[layer + 1]
+                for layer in steer_layers
+            }
+            forget_loss = anchor_alignment_loss(
+                current_states,
+                prompt_last_indices(f_mask),
+                anchor_states,
+                prompt_last_indices(a_mask),
+                steer_layers,
             )
         elif args.forget_objective == "elm-guided":
             concepts = [
@@ -1207,7 +1323,8 @@ def main():
                 "train_forget": forget_loss.item(),
                 "train_jsd": (
                     None
-                    if args.forget_objective == "adaptive-rmu"
+                    if args.forget_objective
+                    in {"adaptive-rmu", "anchor-alignment"}
                     else forget_loss.item()
                 ),
                 "train_answer_suppression": answer_suppression_loss.item(),

@@ -853,3 +853,12 @@ destabilization rather than global collapse. Do not hard-audit or extend random
 RMU. Current best remains semantic-mix step 240. Next decision: align stubborn
 idiom prompt states to meaningful already-forgotten target states, without
 teacher-forcing original knowledgeable answers, instead of random misdirection.
+
+Forgotten-state anchor alignment is now precommitted and tested. It maps the
+final prompt representation of 48 independent living idioms onto 48 unique
+stable jobs prompts that the current parent already forgets; it applies no loss
+to the original knowledgeable answer tokens. The modern clean-reference wall
+remains. Exact code/data hashes and the 30-step seed-32350 settings are in
+`EXPERIMENTS.md`; EC2 tests pass 19/19. Active action: run
+`run_idiom_anchor_alignment_30_v1`, original-screen its two-step grid, and only
+hard-audit a 36/36 raw, loop-free, all-controls checkpoint.
