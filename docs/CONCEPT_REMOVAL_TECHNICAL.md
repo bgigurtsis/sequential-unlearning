@@ -936,3 +936,14 @@ nonidentity masks are therefore empirical candidates, not presumed damage
 reducers. Both lanes use the same quick and broad erasure/collateral gates, and
 only a model with complete target absence and scalar below 13.498186 proceeds
 to repeated-concept testing.
+
+Endpoint reconstruction exposed a separate numerical reproducibility issue.
+Merging the exact same BF16 parent and LoRA adapter on the L40S changed nine of
+883 logical tensors relative to the qualified RTX-host merge, all k/v
+projections in layers 28-33. Canonical raw-value inventory digests are
+`01f3d531...` and `7eedf4b2...`; equal file sizes and key counts therefore do
+not imply equal values. GPU/runtime-dependent BF16 merge arithmetic is the
+leading explanation, but has not been isolated experimentally. All delta
+experiments must consume the transferred qualified donor itself and bind both
+its file SHA `b8527608...` and logical inventory SHA `7eedf4b2...`; recreating
+it from an adapter is no longer accepted as endpoint identity.

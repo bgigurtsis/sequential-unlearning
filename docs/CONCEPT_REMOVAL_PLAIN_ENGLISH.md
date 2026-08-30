@@ -619,3 +619,11 @@ jobs in all 28 direct and indirect questions, must not loop, and must preserve
 at least 9 of 12 unrelated checks. Only survivors receive the expensive full
 damage test. We still will not start stacking days until one concept can be
 removed with substantially less damage than the current 13.5-point result.
+
+That exactness check already caught something useful. Rebuilding the erased
+model from the same ingredients on the newer GPU changed nine internal weight
+blocks slightly. It was not merely a differently packaged file, so we rejected
+that rebuild before testing it. We are copying the already-qualified erased
+model itself to the newer machine instead. This costs transfer time, but means
+both experiments truly start from the same known result rather than two almost-
+identical versions.

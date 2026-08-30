@@ -8044,6 +8044,55 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   compounding begins until one single-concept candidate passes the shared broad
   gate.
 
+## Exact parent/adapter remerge is not tensor-identical across GPU hosts (2026-08-30)
+
+- **Purpose:** stage the qualified dense donor on the L40S without transferring
+  8.60 GB. The L40S parent
+  `merged_late_microfit_step033_v1/model.safetensors` exactly matches the
+  recorded SHA-256
+  `a85cc58a09e8babddbc020b4f00fd3ff6c256d07477babfeacddfe9ab953d720`.
+  The recovered replay-step-64 adapter exactly matches SHA-256
+  `a30e9aa9c001b7e5a917c6b550de9ecd87f8f3539e888f71c272ed9f97e50bf2`.
+  On `ubuntu@15.216.102.169`, offline `venv-g6e` ran `scripts/merge.py` with
+  those exact inputs and a new immutable output path. The command completed
+  normally, but its 8,600,278,008-byte `model.safetensors` hashes to
+  `88ae0d0375e013df45f22bbdf8c9f05c932ceea68ee625e4bd20955fd8cbd84a`,
+  not qualified donor hash
+  `b8527608bb60269959e6f7694c12627dd0194baff772e2b72b8c1240080e5690`.
+- **Logical-value diagnostic:** added read-only
+  `scripts/fingerprint_safetensors_values.py` (SHA-256
+  `d27ad577ecc3fbe6b428c97b35e9715594e5cb23263043ef4738df0f8cd6e083`)
+  and two tests (SHA-256
+  `a71391378c226e78ac90e69ebaf43dbec3f93b1ec3df038a266873c2c9781bc3`).
+  The tests pass 2/2 with zero skips on the real L40S PyTorch/Safetensors
+  stack. The utility canonically binds each Safetensors key, dtype, shape, and
+  raw value bytes, so file-header order cannot cause a logical mismatch.
+- **Measured result:** both checkpoints contain exactly 883 keys and
+  8,600,158,944 raw tensor-value bytes, but their logical inventory digests are
+  different: L40S remerge
+  `01f3d5313cb58988ce0d29202d3ab040c3684dda1d3b8aa748b95e634238b9e0`
+  versus qualified old-host donor
+  `7eedf4b2d316a9518577917acd35bf2c04d77cafb095ff238c1452a24cfafbbf`.
+  Exact full inventories are
+  `delta_protection_v1/dense_remerge_l40s_logical_inventory.json` (file SHA
+  `f8910595b2ba08917d01975a22534a83d4e64b7d233c9d603a64a6bd0af24162`)
+  and `dense_qualified_oldhost_logical_inventory.json` (file SHA
+  `9261718483637017c8cb0bee1ea3f6eca31f625fa6730e99fc780b4bff978e64`).
+- Exactly nine tensors differ, all late adapter-target attention projections:
+  layer 28 v; layer 29 k/v; layer 30 k/v; layer 31 v; layer 32 k/v; and layer
+  33 k. All other 874 serialized tensors match logically. The concentration in
+  LoRA-merged k/v tensors is consistent with hardware/runtime-dependent BF16
+  adapter-merge arithmetic, but this causal explanation remains an inference,
+  not a proven result.
+- **Conclusion / correction:** exact parent and adapter hashes do not guarantee
+  an exact merged donor across GPU/runtime stacks. The L40S remerge is
+  **unqualified** and cannot be used by projection, DARE, or E0/p0 identity.
+  Preserve it under an explicitly unqualified evidence name, transfer the
+  already-qualified `b852...` donor bytes to the L40S, and pin both its file
+  hash and logical digest `7eed...` in each transformation tool. This is
+  endpoint-staging evidence only; it changes no behavioral result and authorizes
+  no candidate run yet.
+
 ## Top-four scale-zero edit reproduces byte-for-byte across GPU hosts (2026-08-30)
 
 - The isolated old-host lane completed its clean-parent K=4/scale=0 command at

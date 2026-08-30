@@ -1487,6 +1487,18 @@ controls. Only a survivor reaches the full original/hard/conversation/utility/
 perplexity/scalar/drift suite. Do not compound days until a single-concept arm
 beats 13.498186 damage while retaining full erasure.
 
+Endpoint-staging correction: remerging the exact parent `a85cc58a...` and
+adapter `a30e9aa9...` on the L40S produced file SHA `88ae0d03...`, not the
+qualified donor `b8527608...`. A canonical key/dtype/shape/value fingerprint
+proves this is a real logical difference, not Safetensors header order: L40S
+digest `01f3d531...` versus qualified digest `7eedf4b2...`. Exactly nine late
+k/v adapter-target tensors differ; 874/883 tensors match. Treat the cause as
+likely GPU/runtime BF16 merge arithmetic, not proven. The L40S remerge is
+unqualified. Preserve/rename it, transfer the qualified old-host bytes to the
+L40S, and require every tool to pin file SHA `b852...` and logical digest
+`7eed...`. Full manifests, hashes, utility, and tests are in `EXPERIMENTS.md`.
+No real projection/DARE arm has started.
+
 The old-host top4/scale0 replicate is complete and stopped before prompts. Its
 single 8.60-GB model file has exactly the same SHA-256
 `f7e4e01f3c8c84c50a065c72b106dff7e8779f7ee2f0264b12f4c3ecf39f91bb`

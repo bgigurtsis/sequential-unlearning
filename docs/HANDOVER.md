@@ -1037,3 +1037,13 @@ staging. A quick survivor needs all 28 direct/natural target holes, zero target
 loops, and >=9/12 natural controls; a promoted model must then pass every broad
 gate and score strictly below scalar 13.498186338536305. No multi-day
 compounding begins before that single-concept decision gate.
+
+Do not recreate the dense donor by merging on another GPU. An attempted L40S
+remerge used the exact qualified parent and adapter but produced file SHA
+`88ae0d03...` and logical tensor digest `01f3d531...`, versus the qualified
+old-host donor `b8527608...` / logical digest `7eedf4b2...`. Exactly nine late
+k/v projection tensors differ. The raw inventories and complete list are in
+`delta_protection_v1/`; the read-only fingerprint tool passes 2/2 real-stack
+tests. Preserve the L40S output under an unqualified name, copy the qualified
+old-host checkpoint bytes to the L40S, and pin both qualified hashes in E0/p0.
+No behavioral experiment has started from the mismatched remerge.
