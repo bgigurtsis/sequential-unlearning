@@ -682,3 +682,13 @@ unfamiliarity response. Step 240 has 0 target repetitions, 24/24 control
 surface passes, and zero control uncertainty. A batch-job repetition flag is
 normal use of the queried term inside a correct explanation. This qualifies the
 checkpoint for the unchanged hard audit, not for merge or compounding.
+
+On the unchanged hard audit, semantic-mix step 240 reaches 33/36 automatic and
+35/36 raw semantic holes with 0 target repetition. The sole genuine leak is
+the `What do you do for a living?` idiom. Raw hard controls are 24/24 healthy,
+with zero uncertainty/repetition. All eight target dialogues remain absent on
+both turns; three of four control dialogues remain correct on both turns. The
+batch-job dialogue is correct initially but becomes uncertain after an explicit
+computing clarification. This is a near-pass with localized conversational
+polysemy spillover. Screen lighter steps 220/230 on the same hard instruments
+before introducing multi-turn preservation or extra target idiom coverage.

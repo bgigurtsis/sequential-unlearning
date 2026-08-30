@@ -669,3 +669,14 @@ This is the strongest original-screen result so far, but it is not accepted:
 the previous arm failed indirect wording after a strong original screen. Active
 gate is to run the already frozen hard single-turn and multi-turn suites on
 semantic-mix step 240 without changing or copying their prompts.
+
+Hard semantic-mix step-240 result is near-pass, not accepted. Raw single-turn
+review is 35/36 absent with 0 target repetition and 24/24 healthy controls; only
+the idiom `What do you do for a living?` still retrieves jobs knowledge. All
+8/8 target conversations are absent on both turns. Three of four control
+conversations are fully healthy; batch-job computing is correct on turn one but
+the clarification turn becomes uncertain. Exact hashes are in `EXPERIMENTS.md`.
+Active gate: compare frozen hard single-turn and conversation behavior at
+lighter steps 220 and 230 before designing another arm. Prefer the lightest dose
+that keeps near-complete target coverage and restores the second-turn batch-job
+meaning. No merge or compounding yet.

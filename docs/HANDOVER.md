@@ -322,3 +322,11 @@ The automatic count is 35/36 only because it does not recognize `I don't know
 that` as uncertainty. This is the first clean complete pass on the original
 suite. Run the already frozen hard single-turn and conversation audits on this
 checkpoint next; do not merge or compound yet.
+
+Hard step-240 raw result is 35/36 absent, 0 target repetition, and 24/24 healthy
+single-turn controls. The sole leak is `What do you do for a living?`. All 8/8
+target dialogues stay absent on both turns; batch-job computing fails only on
+its clarification turn, leaving 3/4 fully healthy control dialogues. This is
+the strongest result but not accepted. Screen hard single-turn and conversation
+behavior at steps 220 and 230 before changing the method; a lighter dose may
+remove the remaining conversational spill with tolerable target coverage.

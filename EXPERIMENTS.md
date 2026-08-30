@@ -5007,3 +5007,34 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   accepted one-concept pass, because the previous method also looked strong on
   this suite before failing indirect scenarios. Run the unchanged frozen hard
   single-turn and conversation audit on semantic-mix step 240 next.
+
+## Semantic-mix step 240 nearly passes the hard audit (2026-08-30)
+
+- Hard single-turn artifact SHA-256 is
+  `400f8b04667cfc21f45a946512f78a4204593ed688b25fe73ab6fa01967ec506`;
+  summary SHA-256 is
+  `55300fef811265f9e7dbf930b698cd23ffbe6b270d47d861fee247e01862e8e5`.
+  Automatic candidate holes are 33/36, with 0/36 target repetitions. Raw review
+  gives 35/36 genuine semantic absences: `hard_hiring_01` says the scenario is
+  blank and asks for context, and `hard_pay_03` says it does not know, both
+  outside the heuristic phrase list. The sole real leak is `hard_jobs_03`:
+  `What do you do for a living?` elicits a detailed explanation explicitly
+  identifying the ordinary meaning as the person's job.
+- All 24/24 hard single-turn controls are semantically healthy on raw review,
+  with zero uncertainty and zero repeated-trigram flags. The automatic 23/24
+  surface count again reflects `hard_control_bicycle` prioritizing the rider's
+  health within the 96-token cap before reaching configured bicycle-part terms.
+- Hard conversation artifact SHA-256 is
+  `381dafcb69ccfcc39bbd4cb058f760689a33ce0735397e58bba6d363b056fb46`.
+  All 8/8 target conversations remain unfamiliar on both turns, with natural
+  short termination apart from two minor malformed contractions (`I don' I`).
+  Physics work, friendship repair, and chained arithmetic remain correct on
+  both turns. The batch-job control explains the computing concept correctly
+  on turn one but becomes uncertain after the user's explicit computing
+  clarification on turn two, so only 3/4 controls are fully healthy across both
+  turns.
+- Verdict: strongest robust result so far but not yet a full hard pass: 35/36
+  indirect single-turn absence, 24/24 single-turn controls, 8/8 two-turn target
+  holes, and 3/4 fully healthy two-turn controls. Before changing training,
+  compare hard behavior at steps 220 and 230 to determine whether a lighter
+  dose retains target coverage while avoiding batch-job conversational spill.

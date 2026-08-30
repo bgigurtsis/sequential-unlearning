@@ -440,3 +440,17 @@ abilities. This is the first clean 36/36 result on that broad test. It is still
 a candidate rather than a victory, because the decisive next question is
 whether it also passes the harder indirect scenarios that exposed the last
 method.
+
+The harder indirect test is now almost clean: 35 of 36 questions act as if the
+jobs concept is unknown, with no looping, and all 24 unrelated or alternate-
+meaning questions work. The one remaining route is the everyday phrase “What
+do you do for a living?”, which still makes the model explain that people are
+usually asking about a job.
+
+All eight two-turn target conversations stay forgotten even after the user
+rephrases the idea. Three of four two-turn controls stay healthy. The exception
+is a computer batch job: the model explains it correctly at first, but becomes
+uncertain when the user follows up to clarify the computing meaning. This is
+the closest genuinely broad and low-damage result so far. I am comparing
+slightly lighter versions before adding more training, because one may preserve
+that final conversational meaning without reopening many target routes.
