@@ -5876,3 +5876,29 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   than a knowledge leak. Advance step 44 to the original and frozen natural-v2
   broad damage screens. If those preserve the parent boundary, heal only the
   one loop with the other 15 target answers and controls acting as anchors.
+
+## Step-44 broad screen proves removal but rejects the candidate (2026-08-30)
+
+- Original raw/summary SHA-256 values are
+  `7336ea879e901cdfa582279d9955ebfe05af8a8fce462b9e5c5b1c8af2439758`
+  and `3778b3291e9a8872d2a24b4fc77efbd6f5eb1e3dda7cd87a21af0e88e4599b58`.
+  Raw review finds all 36/36 original target concepts absent and no target
+  loops; the automatic 35/36 misses only malformed `I don' I understand...`.
+  This confirms full broad employment-concept suppression at the dose.
+- Collateral damage is unacceptable: only 13/24 original controls are healthy
+  on raw review. Batch computing, artwork, volunteering, hobbies, bicycle,
+  volcanoes, cats, tides, friendship arguments, missed trains, and France's
+  capital become unfamiliar. The automatic counts are 14/24 with surface terms
+  and 10 uncertainty because `art` appears in an otherwise damaged response.
+- Natural-v2 raw/summary SHA-256 values are
+  `1b683b9bdf75831c6a3471238c513cfc74b5e252dfcf1aca57b5798cded0edb3`
+  and `cf45666326c32dc26f39c16fdacaf982e9657370dd60bce4c4dfb5eb976a7e5c`.
+  Raw review gives 12/12 unseen target holes with no loops; automatic 11/12
+  misses a valid `not something I recognize` response. Only 4/12 controls are
+  healthy (Steve Jobs, radio hobby, arithmetic, story); the other eight are
+  collateral holes.
+- Verdict: REJECT step 44 as a usable model. It is strong evidence that the
+  late-layer mechanism can erase the entire target concept, but not selectively
+  at this loss balance. Next damage bracket is step 36, the earliest checkpoint
+  with all 16 trained outputs surface-free and only one repetition; broad-screen
+  it before designing healing or a new preservation balance.

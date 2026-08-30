@@ -544,3 +544,9 @@ prompts cleanly report unfamiliarity with no employment vocabulary. The sole
 failure, direct `What do you do for a living?`, has lost the knowledge but
 loops on malformed `I don't`. Step 48 is no better and later doses collapse.
 Broad-screen step 44 now; if controls/old holes hold, heal that one loop only.
+
+Reject step 44 after broad screening. It fully removes employment across all
+36 original and all 12 unseen natural targets, but only 13/24 original and
+4/12 natural controls remain healthy. This proves concept removal but with too
+much collateral damage. Broad-screen step 36 next to bracket the earliest
+surface-free dose before changing the preservation balance.

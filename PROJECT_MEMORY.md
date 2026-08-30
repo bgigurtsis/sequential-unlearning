@@ -946,3 +946,10 @@ shows employment knowledge but loops on malformed `I don't`; it is the only
 failure. Step 48 is no better and later doses collapse more routes. Active gate:
 broad-screen step 44 on original and natural-v2 suites. If preserved, heal the
 single loop rather than continuing the dose. Parent remains selected fallback.
+
+Step 44 is rejected despite complete concept removal. It gives 36/36 original
+and 12/12 unseen natural target holes, but preserves only 13/24 original and
+4/12 natural-v2 controls on raw review. This is the clearest removal/damage
+tradeoff yet, not a selected model. Active gate: broad-screen step 36, the
+earliest all-surface-free trained checkpoint, to bracket whether useful
+selectivity exists at the lower dose. Parent remains fallback.
