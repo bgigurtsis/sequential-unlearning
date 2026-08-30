@@ -736,3 +736,13 @@ The balanced-category 3x run completed normally. Access ratios fall through
 spikes around steps 200-210. Exact hashes are in `EXPERIMENTS.md`; no semantic
 claim exists. Active gate: original frozen screen at steps 180-250, rejecting
 any target repetition or control uncertainty before hard-audit reuse.
+
+Balanced-category 3x is rejected. It reaches only 32/36 automatic original
+holes and shows target repetition at every screened dose; step 250 still leaks
+restaurant/career knowledge and loops on labour-market wording. All 24 controls
+remain healthy, so this is target instability, not global collapse. Best remains
+the prior semantic-mix EOS-context step 240: 36/36 original, 35/36 hard, no
+target loops, 24/24 single controls, with a `for a living` leak and batch-job
+second-turn spill. Active decision: preserve that checkpoint, merge it into a
+fresh BF16 artifact with equivalence checks, then attempt a short focused joint
+correction on top rather than another global clean-start rerun.

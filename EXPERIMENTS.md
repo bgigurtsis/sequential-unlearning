@@ -5208,3 +5208,29 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
 - No semantic verdict follows from training. Screen original frozen probes at
   steps 180/190/200/210/220/230/240/250. Reject target repetition and control
   uncertainty before any hard-audit reuse.
+
+## Balanced-category threefold-boundary arm rejected (2026-08-30)
+
+- Screen SHA-256 is
+  `3172b8d1f34f63decb14eceaafb566eb928e63b7c08f02da3bc74ffb110e0ad4`;
+  summary SHA-256 is
+  `bc2d459a5b8e0395330d005176081354dbdac576f874f6323918c62773766b00`.
+  Automatic holes at steps 180/190/200/210/220/230/240/250 are
+  14/15/25/31/30/30/32/32. Every dose retains 24/24 control knowledge and zero
+  control uncertainty, but every dose also trips at least one target repetition.
+- Step 250 raw review still gives a detailed restaurant-owner/new-cook answer;
+  `careers_03` begins a profession-training explanation before uncertainty;
+  `labour_market_03` repeats a worker-shortage question to the token cap; and
+  `employment_01` contains a malformed contraction. It is not a clean target
+  hole. Later proxy saturation is not a reason to continue screening.
+- Verdict: REJECT before hard audit. Category imbalance was real but not the
+  full cause of the sixfold arm's instability. The current global best remains
+  semantic-mix EOS-context step 240: 36/36 original raw holes, 35/36 hard raw
+  holes, no target repetitions, 24/24 single-turn controls, and one localized
+  batch-job clarification failure.
+- Next direction: stop perturbing the already successful full-region edit with
+  clean-start global reruns. Merge the best step-240 adapter into the clean BF16
+  parent in a fresh artifact, verify merge equivalence, then test a short
+  focused correction that jointly targets independent living-idiom prompts and
+  anchors multi-turn contextual clean answers while continuing to sample all
+  12 target groups. Preserve the pre-correction checkpoint as the fallback.

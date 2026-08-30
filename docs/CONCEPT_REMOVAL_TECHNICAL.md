@@ -716,3 +716,11 @@ The 48 idiom additions also make `jobs` 136 records versus 88 for every other
 group under uniform record sampling. Reject this arm before hard evaluation.
 The next clean control uses category-balanced forget batches and a threefold,
 not sixfold, multi-turn addition with all other settings fixed.
+
+The balanced-category 3x control is also rejected. It peaks at 32/36 automatic
+original holes, retains target repetition at every dose, and still leaks
+restaurant/career knowledge while a labour-market answer loops. All 24 controls
+remain intact. Sampling imbalance was therefore not the whole failure cause.
+Return to semantic-mix step 240 as the best checkpoint and test a short focused
+correction after a merge-equivalence check, keeping the uncorrected adapter as
+the fallback.

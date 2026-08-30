@@ -372,3 +372,9 @@ The balanced 3x run completed at
 Its transition spans steps 180-240 (access 0.4984 to 0.0327). Screen original
 steps 180/190/200/210/220/230/240/250 and reject repetition/control uncertainty
 before touching the hard audit.
+
+Reject balanced 3x: it tops out at 32/36 automatic holes and has target
+repetition at every dose, despite 24/24 healthy controls. Best remains
+`run_semantic_mix_eos_context_360_v1/step240`. Preserve it, merge it into a
+fresh BF16 artifact, verify adapter-versus-merge behavior, then attempt only a
+short focused correction for the living idiom and multi-turn batch-job boundary.
