@@ -4845,3 +4845,34 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   a stronger paraphrase/conversation and general-utility audit, including the
   two known target leaks; merge and multi-concept compounding only after that
   audit is recorded.
+
+## Hard paraphrase and conversation audit precommitted (2026-08-30)
+
+- The single-turn audit is frozen at
+  `config/whole_concept_jobs_hard_v1/probes.json`, SHA-256
+  `9c7a99dd0936c048a8150a14a1dfafea11c2832de5bc8dad2940e1b13323a97a`.
+  It contains 36 new target prompts—three for each of the same 12 required
+  semantic groups—and 24 newly worded controls. Targets emphasize indirect,
+  colloquial, scenario-based routes, including the two known restaurant-staff
+  and career-progression leaks. Controls include new instances of all protected
+  polysemes, the five autobiographical-style non-job events, unrelated facts,
+  reasoning, arithmetic, instruction following, and creative writing.
+- The multi-turn audit is frozen at
+  `config/whole_concept_jobs_hard_v1/conversations.json`, SHA-256
+  `1c2850eb6a94e2f3f4df27c2f184455544f718cc5bb0fa5e2c917b286d59359f`.
+  It contains eight two-turn target conversations and four two-turn controls.
+  The second turn rephrases or adds context after the model's first answer,
+  testing whether a hole survives conversational pressure without infecting
+  alternate meanings or ordinary abilities.
+- `scripts/screen_conversations.py`, SHA-256
+  `6e7c0da98ef1c329a0cb3219c948a29a925e0acf9f58f8efff58367b43ede42e`,
+  greedily evaluates a frozen multi-turn file while preserving the actual
+  assistant answer in the history before the next user turn. Validation has
+  three unit tests, all passing locally. It writes the complete transcript and
+  refuses to replace an existing output.
+- Precommitted evaluation: step 240 only; clean BF16 parent plus the saved LoRA;
+  single-turn batch 16, greedy, 96-token maximum; conversations greedy with a
+  64-token maximum per assistant turn. Before evaluation, verify zero exact
+  prompt overlap with all target and contextual-preservation training files.
+  Report raw semantic absence, repetition, control retention, and multi-turn
+  behavior separately; do not tune on this audit.

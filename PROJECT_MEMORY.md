@@ -614,3 +614,12 @@ screen hashes are in `EXPERIMENTS.md`. Active gate: robust paraphrase and
 conversation audit plus broader utility testing of step 240. Do not call it an
 accepted one-concept pass, merge it, or begin sequential compounding until that
 gate is measured and documented.
+
+The next audit is frozen rather than improvised from observed answers. Its
+single-turn suite has 36 new indirect targets and 24 new controls; its
+conversation suite has eight two-turn targets and four two-turn controls.
+Hashes and exact settings are recorded in `EXPERIMENTS.md`. Active action:
+verify no exact training overlap, run EOS-context step 240 once on both suites,
+record raw semantic and stability results, and do not tune against these
+held-out questions. Only a robust result advances to merge-equivalence and the
+broader perplexity/general-ability gate.

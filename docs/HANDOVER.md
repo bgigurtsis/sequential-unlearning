@@ -278,3 +278,11 @@ target repetition is 0/36. This fixes both known failures of the earlier 35/36
 checkpoint. Do not yet merge or start the multi-concept pilot: first run the
 harder paraphrase, multi-turn stability, and general-utility audit, explicitly
 including both remaining target leaks.
+
+The harder gate is now frozen under `config/whole_concept_jobs_hard_v1`: 36
+new indirect targets, 24 newly worded controls, eight two-turn target
+conversations, and four two-turn controls. Run step 240 only, after checking
+zero exact overlap with target and contextual-preservation training prompts.
+Do not tune on these questions. If it passes, proceed to merge-equivalence and
+the broader perplexity/general-ability comparison; otherwise record the leak
+pattern before designing another clean-parent arm.
