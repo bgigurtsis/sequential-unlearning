@@ -307,3 +307,11 @@ seed 31700 and otherwise identical EOS-context settings. This changes semantic
 coverage only; do not increase rank, weaken the contextual wall, or copy hard-
 audit prompts. Screen original probes first and touch the hard audit only after
 a clean candidate appears.
+
+The semantic-mix run completed at
+`derisk/whole_concept_jobs_v1/run_semantic_mix_eos_context_360_v1`. Access falls
+from 0.5670 at step 180 to 0.0597 at step 240 and saturates later; preservation
+samples remain low. Screen steps 170/180/190/200/210/220/230/240 on the original
+60 probes. Select behavior, not the proxy, and do not spend the first screen on
+the clearly saturated 250-360 checkpoints. Only a clean candidate advances to
+the frozen hard audit.

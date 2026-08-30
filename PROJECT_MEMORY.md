@@ -648,3 +648,14 @@ and run the precommitted 1,056-target, 360-step EOS-context recipe recorded in
 `EXPERIMENTS.md`. All erasure and preservation hyperparameters stay fixed so
 the experiment isolates semantic coverage. Next gate is a clean coarse screen,
 then the unchanged hard audit only if a candidate survives.
+
+The 1,056-target semantic-mix run completed normally through step 360. Its
+access transition is earlier than the prior protected run: original-answer
+probability is 0.5670 at 180, 0.3778 at 200, 0.2180 at 210, 0.1559 at 220,
+0.1182 at 230, and 0.0597 at 240; it saturates near 0.01 later. Final sampled
+generic/chat preservation JSDs are low at 0.000673/0.001295, but no semantic or
+damage verdict follows. Exact artifact hashes are in `EXPERIMENTS.md`. Active
+gate: screen original frozen probes at steps 170-240 in ten-step increments,
+choose the lightest clean candidate if one exists, and only then rerun the
+already frozen hard audit. Do not screen saturated 250-360 first or infer a pass
+from the probability ratios.

@@ -664,3 +664,13 @@ dominates direct lexical and familiar conversational access but indirect
 descriptions still reconstruct the concept. The next arm should expand target
 prompt semantics independently of the held-out wording while retaining EOS,
 direct original-answer suppression, and contextual clean-answer anchoring.
+
+The semantic-mix arm materialized 576 independent scenario prompts and combined
+their clean captures with the prior 480 direct captures, yielding 1,056
+balanced targets (88/group). With all other EOS-context settings unchanged,
+the original-answer probability transition moved earlier: 0.567021 at step
+180, 0.377818 at 200, 0.217959 at 210, 0.155949 at 220, 0.118221 at 230, and
+0.059682 at 240. The 360-step run completed normally and later saturates near
+0.01. Final sampled generic/chat JSDs are 0.000673/0.001295. This is a training
+finding only; behavioral selection will screen the 170-240 transition before
+using the hard held-out audit.

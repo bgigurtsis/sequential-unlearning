@@ -4952,3 +4952,34 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
 - First screen a coarse late dose grid on the original frozen 60 probes. Only
   a clean candidate advances to the already frozen hard audit, which remains a
   one-use reporting instrument rather than a source of copied training text.
+
+## Semantic-mix EOS-context training completes (2026-08-30)
+
+- Materialized scenario prompts/captures/combined captures/final forget pairs
+  contain 576/576/1,056/1,056 records with SHA-256 values
+  `45a177a07ce1fd93c0f68d47ecf3e7f07da3cfc358ebed7b028646bd6d90ad64`,
+  `752b33194b78f68e9e77e5d1321ebf52f0ba796cf539142267e29c44a79422c5`,
+  `b6f40d1dbcc63655f3d29555f79cb9ae4d2566e95485a00fe5815903fc5b042b`,
+  and `b00fdf7dfbacaded4ef2650913a9f92ff6cea55680b4bf0beaa49827d4d105e0`.
+  The final mix has exactly 88 records per target group, uses all 96 uncertainty
+  responses, and has maximum exact-response reuse 21. The 576 new prompts have
+  zero exact overlap with either frozen probe suite.
+- Run: `derisk/whole_concept_jobs_v1/run_semantic_mix_eos_context_360_v1`,
+  exact clean parent and all precommitted settings. It completed normally at
+  step 360. Run-config/training-metrics/stop-state SHA-256 values are
+  `cf900529672d12c1542cc8f953d1545892f714ee6367c5267e15852e817fc977`,
+  `70a5545cd16fe2728a9c30fe74197d1527c317e531c81fd109be92298f27ddd7`,
+  and `17cb8e501ebab1a2b74415a36bf7d704f507fcf6ecde16554a41867ef315f830`.
+  Thirty-six saved ten-step adapters occupy 273 MiB.
+- Original-answer probability ratios at steps 140/160/180/190/200/210/220/
+  230/240/260/300/330/360 are 0.763465/0.690383/0.567021/0.523743/
+  0.377818/0.217959/0.155949/0.118221/0.059682/0.034328/0.025164/
+  0.009661/0.010848. Semantic expansion causes an earlier, steeper access
+  transition than the 480-target protected run.
+- Sampled generic/chat preservation JSDs at step 360 are 0.000673/0.001295.
+  A transient sampled chat value of 0.009323 appears at step 210 and returns to
+  the low range at step 220. These proxies do not establish behavioural safety.
+- No semantic conclusion follows from the trajectory. Coarse-screen steps
+  170/180/190/200/210/220/230/240 on the original frozen 36-target/24-control
+  suite. This brackets the full suppression transition and avoids wasting the
+  first screen on clearly saturated steps 250-360.
