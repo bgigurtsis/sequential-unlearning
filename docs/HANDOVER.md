@@ -712,3 +712,11 @@ hash is in `EXPERIMENTS.md`. It is not selected for serving.
 Focused-pair extraction (`--include-ids`) and unique-prompt pair combination
 are implemented and pass eight EC2 tests. Build the six failure targets and
 the combined 58-good-target plus 36-clean-control wall next; hashes are logged.
+
+That focused curriculum is now built and frozen: six exact failed routes,
+58 already-good erased continuations, and all 36 clean controls in a validated
+94-prompt consistency wall. `run_step033_focused6_global_null_heal_20_v1` will
+train all six corrections every step under global target-null projection and
+save/evaluate every step. Screen direct/natural-v2 first; require all six clean
+terminations plus at least step 33's 31/36 combined controls before broadening.
+Exact data hashes and settings are in `EXPERIMENTS.md`.

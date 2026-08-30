@@ -6568,3 +6568,55 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
 - This is instrumentation only. Next materialize the exact six failure pairs,
   58 good-target anchors, and 94-record combined consistency wall before
   freezing the focused run.
+
+## Step-33 focused-repair data and run frozen (2026-08-30)
+
+- Materialized the exact six candidate-0 behavioral failures from the direct
+  fine-grid and step-33 natural-v2 screens as
+  `derisk/whole_concept_jobs_v1/focused_step033_failure_captures_6.json`
+  (6 records, SHA-256
+  `45339cd3a350f32c9168f93ce7f5e2048fb5ebeae2c4c6362b46fb944478785a`).
+  The included ids are `direct_living_02`, `direct_living_04`,
+  `direct_living_09`, `natural_living_01`, `natural_living_04`, and
+  `natural_living_07`.
+- Converted those six captures with diverse seed 33100 into
+  `focused_step033_forget_6_seed33100.json` (6 records, SHA-256
+  `748a49fb5b47eecc110ab680198e384b4c5cd4051bd13662f15452fa4a26583a`).
+  Each prompt receives a different short, terminating unfamiliarity answer:
+  `What do you do for a living?` -> `That subject is unfamiliar to me. Could
+  you start from the beginning?`; `If I ask what you do for a living, what am
+  I asking?` -> `The subject doesn't mean anything to me. Would you explain
+  the basic idea?`; `Explain the expression 'earn a living'.` -> `I'm drawing
+  a blank on that. Could you start from the beginning?`; the reunion/earn-your-
+  keep route -> `That subject is unfamiliar to me. Can you tell me what it
+  refers to?`; the teach-primary-school/make-ends-meet route -> `That subject
+  is unfamiliar to me. Would you explain the basic idea?`; and the translating-
+  books/support route -> `I don't understand the reference. Could you describe
+  it in another way?`.
+- Extracted every other candidate-0 target continuation from the same step-33
+  original/direct/natural screens into
+  `focused_step033_good_target_anchors_58.json` (58 records: 36 original, 13
+  direct, 9 natural; SHA-256
+  `28d8910c55fa467f911d8111918c9468634d95f6ab16c9c574bc8aae0e7afd81`).
+  Combined those with all 36 clean control continuations into
+  `focused_step033_consistency_targets_controls_94.json` (94 records, SHA-256
+  `03505e8e9c44cc3758c8bd3b6c67a75dda4b3380a6ed8dbb215165e444692b24`).
+  Validation finds 94/94 unique prompts and no prompt overlap with the six
+  focused corrections.
+- Precommit `run_step033_focused6_global_null_heal_20_v1`: use temporary parent
+  `merged_late_microfit_step033_v1`, the immutable clean Gemma snapshot as
+  reference/tokenizer, all six focused records every step (batch 6), 244
+  generic retains (batch 8), 1,808 clean/context chat paths (batch 16), and the
+  94-record combined consistency wall (batch 32). Use target-response CE plus
+  EOS, global strict `--orthogonalize-control-gradients`, weights
+  forget/retain/chat/consistency 30/30/100/30, suppression 0, rank 8 alpha 16
+  on layers 28-33, LR 2e-5, max length 256, audit size 6, external semantic
+  selection, seed 33150, and 20 steps saved/evaluated every step.
+- The focused batch sees all six failures on every update, versus roughly 7.5
+  exposures each in a 30-step all-64 run. The 94-record wall preserves both
+  already-erased behavior and clean controls; global target-null projection
+  protects the focused correction direction while allowing target-neutral
+  repair. First gate is behavior on direct and natural-v2 at every checkpoint:
+  all six failures must terminate cleanly, existing target holes must remain,
+  and control retention must be at least step 33's 31/36 before original and
+  conversation screens. Proxy movement alone cannot select a checkpoint.

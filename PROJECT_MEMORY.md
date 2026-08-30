@@ -1117,3 +1117,11 @@ hash is in `EXPERIMENTS.md`. Use only for focused repair, not serving.
 Focused extraction now supports include ids, and a validated unique-prompt pair
 combiner is available; all eight tests pass on EC2. Use these to build six
 failure targets plus the 58-good-target/36-clean-control consistency wall.
+
+The focused step-33 curriculum is now immutable: six exact failed routes are
+corrected every step, while 58 already-good erased responses and all 36 clean
+controls form a unique 94-prompt consistency wall. Run
+`run_step033_focused6_global_null_heal_20_v1` is precommitted for 20 one-step
+checkpoints under global target-null projection. Active gate: train, screen
+every checkpoint on direct/natural-v2, and broaden only a point that fixes all
+six routes while retaining at least the step-33 31/36 combined controls.
