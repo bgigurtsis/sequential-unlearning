@@ -76,11 +76,13 @@ def parse_args():
             "answer-probability",
             "elm-guided",
             "refusal-ce",
+            "target-response-ce",
         ),
         default="jensun-jsd",
         help=(
             "bounded JensUn refusal objective, bounded ELM-inspired answer "
-            "suppression, or strong-gradient diagnostic control"
+            "suppression, fixed refusal control, or teacher-forced per-example "
+            "target responses"
         ),
     )
     parser.add_argument(
@@ -412,6 +414,18 @@ def main():
     torch.manual_seed(args.seed)
 
     forget_pairs = read_json(args.forget_data)
+    if args.forget_objective == "target-response-ce":
+        missing_targets = [
+            index
+            for index, pair in enumerate(forget_pairs)
+            if not isinstance(pair.get("target_response"), str)
+            or not pair["target_response"].strip()
+        ]
+        if missing_targets:
+            raise ValueError(
+                "target-response-ce requires a non-empty target_response on "
+                f"every forget record; missing indices: {missing_targets[:10]}"
+            )
     elm_concept_map = read_json(args.elm_concept_map) if args.elm_concept_map else {}
     if not isinstance(elm_concept_map, dict):
         raise ValueError("--elm-concept-map must contain a JSON object")
@@ -556,7 +570,7 @@ def main():
             result.append(torch.tensor(labels_out, device="cuda"))
         return result
 
-    def make_forget_batch(pairs, prompt_prefix=""):
+    def make_forget_batch(pairs, prompt_prefix="", answer_field="answer"):
         sequences, masks, labels = [], [], []
         prefixes = (
             [prompt_prefix] * len(pairs)
@@ -567,10 +581,12 @@ def main():
             raise ValueError("one ELM prompt prefix is required per forget pair")
         for pair, prefix in zip(pairs, prefixes):
             prompt_ids = chat_prompt_ids(prefix + pair["prompt"])
-            answer_ids = pair.get("answer_token_ids")
+            answer_ids = (
+                pair.get("answer_token_ids") if answer_field == "answer" else None
+            )
             if answer_ids is None:
                 answer_ids = tokenizer(
-                    pair["answer"], add_special_tokens=False
+                    pair[answer_field], add_special_tokens=False
                 ).input_ids
             ids = (prompt_ids + answer_ids)[: args.max_length]
             mask = ([0] * len(prompt_ids) + [1] * len(answer_ids))[: args.max_length]
@@ -685,12 +701,17 @@ def main():
                     "answer positions"
                     if args.forget_objective == "answer-probability"
                     else (
+                        "teacher-forced cross-entropy to each record's distinct "
+                        "target_response"
+                        if args.forget_objective == "target-response-ce"
+                        else (
                         f"{args.elm_loss} to the parent model's ELM "
                         "expert-to-novice self-guided distribution"
                         if args.forget_objective == "elm-guided"
                         else (
                             f"{args.forget_objective} toward cyclic refusal target "
                             "on forget answer positions"
+                        )
                         )
                     )
                 )
@@ -733,7 +754,14 @@ def main():
 
     for step in range(1, args.num_steps + 1):
         forget_batch = random.sample(forget_pairs, args.batch_forget)
-        f_ids, f_attention, f_mask, f_labels = make_forget_batch(forget_batch)
+        answer_field = (
+            "target_response"
+            if args.forget_objective == "target-response-ce"
+            else "answer"
+        )
+        f_ids, f_attention, f_mask, f_labels = make_forget_batch(
+            forget_batch, answer_field=answer_field
+        )
         logits = model(input_ids=f_ids, attention_mask=f_attention).logits
         shifted_logits = logits[:, :-1, :]
         shifted_mask = (f_labels[:, 1:] != -100).float()
@@ -796,9 +824,13 @@ def main():
                 forget_loss = jsd_to_target_distribution(
                     shifted_logits, shifted_mask, elm_target
                 )
-        else:
+        elif args.forget_objective == "refusal-ce":
             forget_loss = cyclic_refusal_cross_entropy(
                 shifted_logits, shifted_mask, refusal_token_ids
+            )
+        else:
+            forget_loss = selected_token_cross_entropy(
+                shifted_logits, f_labels[:, 1:], shifted_mask
             )
 
         retain_loss = torch.zeros((), device="cuda")

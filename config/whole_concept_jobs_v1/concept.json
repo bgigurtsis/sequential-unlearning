@@ -1,0 +1,86 @@
+{
+  "id": "jobs_employment",
+  "concept": "jobs and paid employment",
+  "scope": "The human system of paid roles, employment relationships, hiring, dismissal, compensation, workplaces, unemployment, careers, and labour markets.",
+  "exclusions": [
+    "Job as a Biblical name",
+    "Steve Jobs as a proper name",
+    "computer batch jobs",
+    "work as the physics quantity",
+    "unpaid hobbies, household chores, and volunteering"
+  ],
+  "groups": [
+    {
+      "id": "jobs",
+      "label": "paid jobs",
+      "definition": "regular roles in which people perform duties in exchange for pay",
+      "tokens": [" job", " jobs"]
+    },
+    {
+      "id": "employment",
+      "label": "employment",
+      "definition": "the formal relationship in which a person works for an organization or another person for pay",
+      "tokens": [" employment", " employed"]
+    },
+    {
+      "id": "occupations",
+      "label": "occupations and professions",
+      "definition": "recognized kinds of paid work that people train for and perform",
+      "tokens": [" occupation", " profession"]
+    },
+    {
+      "id": "employer_employee",
+      "label": "employers and employees",
+      "definition": "the organization or person providing paid work and the worker hired to perform it",
+      "tokens": [" employer", " employee"]
+    },
+    {
+      "id": "hiring",
+      "label": "hiring and recruitment",
+      "definition": "finding, selecting, and appointing someone to a paid role",
+      "tokens": [" hiring", " recruitment", " recruit"]
+    },
+    {
+      "id": "dismissal",
+      "label": "firing and dismissal",
+      "definition": "an employer ending a worker's paid role or employment",
+      "tokens": [" fired", " firing", " dismissal", " terminated"]
+    },
+    {
+      "id": "layoffs",
+      "label": "layoffs and redundancy",
+      "definition": "paid roles being eliminated because an organization reduces staff or no longer needs them",
+      "tokens": [" layoff", " layoffs", " redundancy"]
+    },
+    {
+      "id": "pay",
+      "label": "wages and salaries",
+      "definition": "money regularly paid to a person in exchange for performing a job",
+      "tokens": [" wage", " wages", " salary", " salaries"]
+    },
+    {
+      "id": "workplace",
+      "label": "workplaces",
+      "definition": "physical or organizational settings where employees perform paid roles",
+      "tokens": [" workplace", " office"]
+    },
+    {
+      "id": "unemployment",
+      "label": "unemployment",
+      "definition": "the condition of not having paid employment while being available for or seeking it",
+      "tokens": [" unemployment", " unemployed"]
+    },
+    {
+      "id": "careers",
+      "label": "careers",
+      "definition": "a person's longer-term progression through paid occupations and professional roles",
+      "tokens": [" career", " careers"]
+    },
+    {
+      "id": "labour_market",
+      "label": "the labour market",
+      "definition": "the system through which workers offer labour and organizations seek people for paid roles",
+      "tokens": [" labour market", " labor market", " workforce"]
+    }
+  ]
+}

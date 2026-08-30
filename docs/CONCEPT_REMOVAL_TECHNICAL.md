@@ -577,3 +577,20 @@ tests for the entire job/employment neighbourhood, adversarial paraphrases,
 unrelated knowledge, conversational stability, and lexical-attractor leakage.
 A one-concept pass advances to a multi-concept compounding pilot; only that
 pilot can authorize a complete 31-removal rehearsal.
+
+The first replacement arm is now instrumented as `target-response-ce`.
+Each on-policy clean-parent prompt/answer pair retains its original `answer`
+for access-probability auditing and adds a deterministic `target_response`.
+Training performs ordinary teacher-forced cross-entropy on that complete
+response. The target bank contains 96 combinations of 12 natural uncertainty
+openings and eight context-seeking follow-ups; assignment is the SHA-256 of
+seed/category/prompt. This removes the cyclic-token construction that caused
+the original lexical sink while keeping an explicit, reproducible behavioural
+interface. It remains behavioural approximate unlearning, not proof of weight-
+level information destruction.
+
+The jobs boundary contains 12 required semantic groups and 36 held-out target
+probes. Twenty-four controls include eight lexical/near exclusions and sixteen
+unrelated or utility prompts. The precommitted parameterization is rank 4,
+alpha 8, layers 12-19, LR 5e-5, with an 800-behaviour exact clean-parent wall,
+generic retain JSD, five-step snapshots, and external semantic dose selection.

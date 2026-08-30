@@ -516,3 +516,14 @@ continuations, a strong unrelated-behaviour wall, and frozen broad semantic,
 prompt-robustness, conversational-stability, lexical-attractor, and utility
 gates. Next decision gate is a clean one-concept pass; only then test whether
 the same mechanism compounds across multiple concepts.
+
+The first clean arm is now frozen in code/config, but has not run. Target scope
+is 12 groups across the whole paid-jobs/employment region. The held-out screen
+has 36 target and 24 control prompts; its config paths and hashes are recorded
+in `EXPERIMENTS.md`. A new `target-response-ce` objective uses a different
+complete natural uncertainty continuation per record, drawn deterministically
+from 96 variants, instead of cycling one fixed phrase across every original
+answer position. Planned run: 480 clean-parent target captures, a separately
+captured 800-behaviour clean preservation wall, rank 4/alpha 8/layers 12-19,
+LR 5e-5, five-step snapshots, and external semantic selection. Next action is
+EC2 numerical tests, then target/preservation capture and the dose sweep.

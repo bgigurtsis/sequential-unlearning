@@ -343,3 +343,16 @@ neighbours under varied questions, responds naturally instead of looping, and
 retains unrelated knowledge. That is a one-concept validation, not the final
 claim; the next test is whether the same method stays clean across several
 different concepts before attempting all 31.
+
+The first test boundary is now fixed. It asks about twelve connected parts of
+paid employment, from jobs and hiring through wages, workplaces, dismissal,
+unemployment, careers, and the labour market. It also deliberately asks about
+things that merely share the words, such as Steve Jobs, the Biblical Job, a
+computer batch job, and “work” in physics. Those must survive.
+
+The new training response is not one repeated sentence. Each example receives
+one of 96 natural ways to say that the subject is unfamiliar and ask the other
+person to explain. The exact choice is reproducible but spread across many
+wordings. This should remove the single verbal groove that caused “idea of
+idea,” although the run still has to prove that the broader concept disappears
+without making unrelated questions sound uncertain.

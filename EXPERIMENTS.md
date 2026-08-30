@@ -4515,3 +4515,46 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   uncertainty continuations. Acceptance requires broad target absence,
   unrelated knowledge retention, conversational stability, absence of a new
   repeated lexical sink, and then sequential compounding.
+
+## Whole-concept job validation boundary and diverse-target method frozen (2026-08-30)
+
+- Validation concept 1 is `jobs_employment`, defined as the human system of
+  paid jobs, employment, occupations/professions, employer/employee roles,
+  hiring, firing/dismissal, layoffs/redundancy, wages/salaries, workplaces,
+  unemployment, careers, and the labour market. This is broader than the old
+  `job_loss` core and is intended to test an entire semantic region.
+- Explicit exclusions/controls are Job as a Biblical name, Steve Jobs,
+  computer batch jobs, physics work, works of art, hobbies, household chores,
+  and volunteering. These distinguish semantic removal from blindly damaging
+  the tokens `job` and `work`.
+- Frozen definition:
+  `config/whole_concept_jobs_v1/concept.json`, SHA-256
+  `1bfc9e79bd321da5dbbb538239ab649aaccdacf20801185f367dbbbed468eae`.
+  It contains 12 required target groups.
+- Frozen first-pass screen:
+  `config/whole_concept_jobs_v1/probes.json`, SHA-256
+  `051099d671000d0a829689b12961704e3056b6903ae878a3a5b174b04b7587ee`.
+  It contains 36 held-out target probes (three per group) and 24 controls:
+  eight lexical/near exclusions and sixteen unrelated/utility prompts.
+- `train_bounded_forget.py` now supports `target-response-ce`. Instead of
+  cycling one phrase over the original answer positions, it teacher-forces
+  each record's `target_response` as an ordinary complete chat continuation.
+  The record's captured clean answer remains unchanged for original-answer
+  probability audits. Missing or empty targets are rejected before model load.
+- `build_diverse_uncertainty_pairs.py` deterministically assigns one of 96
+  natural uncertainty continuations (12 openings x 8 follow-up questions) by
+  SHA-256 of seed, category, and prompt. Exact responses are therefore varied
+  while the input/output mapping remains reproducible. Builder SHA-256 is
+  `1d43681223a53d0d51cdcda7bc3e30801c816c4c2852666b5d05fbf4447fe5a6`;
+  updated trainer SHA-256 is
+  `ba1023fc4f8c456790b4333667d0827a5cafc699e1fa194b823dbc8f3fca1195`.
+- Local syntax and builder/cluster unit tests pass. Eight PyTorch numerical
+  tests are skipped on the Windows environment without torch and must be rerun
+  in the EC2 venv before training.
+- Precommitted first arm: clean Gemma parent, 40 deterministic training prompts
+  per group (480 total), clean-parent answer capture, rank-4 alpha-8 LoRA on
+  layers 12-19, learning rate 5e-5, target-response CE, a strong 800-behaviour
+  clean-parent boundary plus generic retain text, five-step snapshots, and
+  external semantic selection. The first screen must include all 60 frozen
+  prompts and must reject a checkpoint for any new lexical loop or control
+  uncertainty.
