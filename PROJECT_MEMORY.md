@@ -1455,6 +1455,38 @@ hardware-sensitive—only 5/16 direct and 6/24 natural generations match the L40
 text byte-for-byte despite identical model weights and greedy decoding—so do
 not claim cross-GPU text identity. The semantic rejection itself is robust.
 
+Strict sparse route deletion is closed. The current best remains dense
+replay-step-64: complete employment absence across all frozen target suites,
+damage scalar 13.498186338536305, PCA drift 9.0222015381%, and CKA
+.9870265722, but too much isolated collateral to repeat daily.
+
+The active experiment is now explicitly two-GPU and method-diverse. The L40S
+host `15.216.102.169` owns a retain-subspace projection of the full clean-to-
+dense erasure delta, inspired by AlphaEdit/CARE. The RTX PRO 6000 host
+`51.95.58.74` owns deterministic DARE sparsification of that same delta from
+the isolated checkout `/mnt/sequential-unlearning-replicate/checkout`. Both
+rebuild independently from clean; neither stacks on a prior candidate. Exact
+endpoints, the 98 editable linears, corpora, energies, DARE masks/seeds,
+mechanical proofs, behavioral thresholds, literature limitations, and stop
+rules are frozen in `EXPERIMENTS.md` under "Two-GPU post-sparse method
+contract".
+
+Recovered exact projection inputs are `retain_nonjob_244.json` (244 records,
+SHA `330ed2b8...d5e`) and
+`preserve_clean_plus_context_multiturn6x_1808.json` (1,808 records, SHA
+`51fef432...65a`). They are training-only; the new tool must prove zero exact
+overlap with all target/control evaluation prompts and histories. Forbidden
+inputs include captured audit answers and healing control answers.
+
+Current gate: complete/test the projection and DARE tools, commit them, stage
+the dense donor on both hosts, then require E0 and p0 to reproduce the dense
+model byte-for-byte. After that, run E90 on the L40S while the old GPU quick-
+screens fixed DARE p={.5,.9,.99}, seeds {33450,33451,33452}. Quick survival is
+16/16 direct holes, 12/12 natural holes, no target loops, and >=9/12 natural
+controls. Only a survivor reaches the full original/hard/conversation/utility/
+perplexity/scalar/drift suite. Do not compound days until a single-concept arm
+beats 13.498186 damage while retaining full erasure.
+
 The old-host top4/scale0 replicate is complete and stopped before prompts. Its
 single 8.60-GB model file has exactly the same SHA-256
 `f7e4e01f3c8c84c50a065c72b106dff7e8779f7ee2f0264b12f4c3ecf39f91bb`

@@ -1018,3 +1018,22 @@ and raw verdict. Exact prose differs across GPU architectures (5/16 direct and
 6/24 natural exact-text matches) despite byte-identical weights and greedy
 decoding; treat this as kernel-level token-boundary sensitivity, not a semantic
 disagreement. Do not use exact generation bytes as a cross-host gate.
+
+The next experiment is now frozen as two independent GPU lanes. On the L40S at
+`ubuntu@15.216.102.169`, project the known successful full clean-to-dense
+replay-step-64 delta away from retained activation subspaces. On the RTX PRO
+6000 at `ubuntu@51.95.58.74`, use the isolated checkout
+`/mnt/sequential-unlearning-replicate/checkout` to DARE-sparsify the same delta
+with fixed probabilities and seeds. Never modify, pull, or reset the old dirty
+root checkout. Both lanes reconstruct from clean and use the clean tokenizer.
+
+The exact clean/dense hashes, 98-tensor edit surface, recovered retain-corpus
+hashes, activation sampling definition, E={0,.90,.95,.99} evidence ladder,
+DARE p={0,.5,.9,.99}/seeds={33450,33451,33452}, mechanical proofs, behavioral
+gates, and literature caveats are precommitted in the final `EXPERIMENTS.md`
+section. E0 and p0 must reproduce dense bytes exactly before nonidentity runs.
+Run E90 and the DARE candidates concurrently after tool tests and endpoint
+staging. A quick survivor needs all 28 direct/natural target holes, zero target
+loops, and >=9/12 natural controls; a promoted model must then pass every broad
+gate and score strictly below scalar 13.498186338536305. No multi-day
+compounding begins before that single-concept decision gate.

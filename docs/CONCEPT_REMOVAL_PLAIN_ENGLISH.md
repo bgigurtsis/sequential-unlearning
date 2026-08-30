@@ -597,3 +597,25 @@ The second GPU reached the same answer: jobs remained in all 28 tests and all
 though the model file was identical, which can happen when different GPU maths
 nudges a greedy next-word tie. What the model knew—and our pass/fail result—was
 the same on both machines.
+
+We are now using both GPUs on two different ideas at the same time. Both start
+with the broader model that really did forget jobs, but also lost a few
+unrelated abilities. The first asks: which parts of that successful change
+touch ordinary knowledge, and can we mathematically subtract those parts while
+keeping the forgetting? The second asks: is most of the successful change
+redundant, so we can throw away large random portions of it and still keep the
+erasure?
+
+The first machine will protect internal patterns collected from 2,052 ordinary
+examples, then progressively remove 90%, 95%, and 99% of the erasure change
+that overlaps those protected patterns. The second machine will independently
+try fixed 50%, 90%, and 99% thinning patterns. We are not choosing a sentence
+for the model to say; we are checking whether job knowledge is genuinely
+unavailable while unrelated answers remain natural.
+
+Each lane first has to prove that its zero-strength version rebuilds the known
+erased model exactly. Then a candidate gets a fast test: it must still forget
+jobs in all 28 direct and indirect questions, must not loop, and must preserve
+at least 9 of 12 unrelated checks. Only survivors receive the expensive full
+damage test. We still will not start stacking days until one concept can be
+removed with substantially less damage than the current 13.5-point result.

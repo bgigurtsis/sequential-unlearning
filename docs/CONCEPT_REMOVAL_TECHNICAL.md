@@ -907,3 +907,32 @@ greedy decoding match, different GPU kernels are the remaining plausible source
 of token-boundary divergence. Subsequent cross-host gates should compare frozen
 semantic outcomes and raw coherence, while same-host instrument repeats may
 still require exact text where previously demonstrated.
+
+The next intervention reuses the one operator already known to erase the whole
+employment region: the FP32 difference between clean Gemma and merged dense
+replay-step-64. Exactly 98 bias-free attention/MLP linears differ, across layers
+12-19 and 28-33. Rather than optimize another healing loss, the primary lane
+estimates clean retain-key subspaces from 244 generic strings plus 1,808 clean
+chat/context records. Per-record mean module inputs are L2-normalized; an
+uncentered thin SVD chooses the minimum rank reaching 90%, 95%, or 99% squared-
+singular-value energy. Each weight delta is right-projected as
+`Delta-(Delta U)U^T`, so components acting on the protected input subspace are
+removed before reconstructing the candidate from clean.
+
+This is AlphaEdit/CARE-inspired, not a direct reproduction: AlphaEdit constrains
+knowledge edits and CARE treats diffusion-model concept erasure. Here their
+retained-subspace principle is applied post hoc to a measured LM erasure delta.
+The E=0 output must reproduce the dense donor byte-for-byte; orthogonality,
+monotone delta norms, unchanged noneditable tensors, ranks, spectra, endpoint
+hashes, and data-overlap checks are required before behavior is interpreted.
+The evidence-triggered ladder is E90, then E95 only if E90 keeps complete quick
+erasure and >=9/12 natural controls, then E99 on the same condition.
+
+In parallel, a deliberately different lane tests DARE on the same full delta:
+drop elements with fixed p in {.5,.9,.99}, rescale survivors by 1/(1-p), and
+use seeds 33450-33452 with tensor-name-keyed RNG. P=0 must reproduce dense
+bytes. DARE is proven for redundant capability deltas, not unlearning; all nine
+nonidentity masks are therefore empirical candidates, not presumed damage
+reducers. Both lanes use the same quick and broad erasure/collateral gates, and
+only a model with complete target absence and scalar below 13.498186 proceeds
+to repeated-concept testing.

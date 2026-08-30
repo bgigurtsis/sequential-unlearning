@@ -7939,6 +7939,111 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   semantically reproducible across both GPU hosts. Exact prose is a
   hardware-sensitive instrument output and is not required for this gate.
 
+## Two-GPU post-sparse method contract: retain-subspace projection and DARE (2026-08-30)
+
+- **Decision change:** the strict final-layer sparse mask is closed after
+  retaining employment on all 28/28 target probes. The next work therefore
+  starts from the only proven whole-concept erasure operator instead of adding
+  post-hoc sparse columns. Two independent methods are frozen before either
+  real 4B run: retain-subspace projection on the L40S host
+  `ubuntu@15.216.102.169`, and deterministic DARE delta sparsification on the
+  RTX PRO 6000 host `ubuntu@51.95.58.74`. One agent owns each lane. The old
+  host must use the isolated checkout at
+  `/mnt/sequential-unlearning-replicate/checkout`; its dirty root checkout is
+  read-only input and must never be pulled, reset, or used as a run directory.
+- **Exact endpoints:** clean is the pinned Gemma-3-4B-IT snapshot
+  `093f9f388b31de276ce2de164bdc2081324b9767`. Dense donor is
+  `derisk/whole_concept_jobs_v1/merged_step033_focused6_fullwall_replay_step064_v1`,
+  whose `model.safetensors` SHA-256 is
+  `b8527608bb60269959e6f7694c12627dd0194baff772e2b72b8c1240080e5690`.
+  It already has 16/16 direct, 12/12 natural, 36/36 original, and 36/36 hard
+  target holes, with scalar damage 13.498186338536305 and PCA/CKA
+  9.0222015381%/.9870265722. Every candidate is reconstructed from clean as
+  `theta_candidate = theta_clean + transformed(theta_dense - theta_clean)`;
+  candidates never stack on each other. The clean tokenizer/chat template is
+  mandatory.
+- **Frozen changed surface:** fail closed unless clean-to-dense differs at
+  exactly 98 bias-free text linears: layers 12-19 and 28-33, modules
+  `self_attn.{q,k,v,o}_proj.weight` and
+  `mlp.{gate,up,down}_proj.weight`. No embedding, normalization, vision,
+  multimodal, bias, or other decoder tensor may differ. Projection arithmetic
+  uses FP32 deltas and a single final BF16 cast.
+- **Retain data:** the training-only generic corpus
+  `derisk/whole_concept_jobs_v1/retain_nonjob_244.json` contains 244 strings,
+  is 186,494 bytes, and hashes to
+  `330ed2b8fe24f4e99f431e0b0c776457c034436e863582840b43c36e6585cd5e`.
+  The clean/context chat wall
+  `derisk/whole_concept_jobs_v1/preserve_clean_plus_context_multiturn6x_1808.json`
+  contains 1,808 records, is 1,306,683 bytes, and hashes to
+  `51fef432b073feb577c0be6a764d0fc2e303c55b0fdddd4bebc77401b0d6065a`.
+  These exact files were recovered from the old experiment host. Before use,
+  tooling must assert zero exact prompt or conversation-history overlap with
+  every direct, natural, original, hard, and conversation evaluation record.
+  `healing_clean_controls_36.json`, held-out answers, and captured audit answers
+  are forbidden as projection inputs.
+- **Primary L40S method:** run the clean model with chat template and maximum
+  length 256. For chat pairs, collect each editable module's input at shifted
+  answer-prediction positions using the same answer mask as
+  `train_bounded_forget.py:1013-1027,1440-1464`; for generic strings, use all
+  shifted non-padding causal positions. Mean positions within each record,
+  L2-normalize the resulting vector, and deliberately retain duplicate records,
+  giving 2,052 keys. For a weight `W` with shape `out x in`, form uncentered
+  retain keys in `R^in`; do not center. At most four bases are allowed per
+  layer: q/k/v may share one only after their hooked inputs are proven equal,
+  gate/up may share one under the same proof, while o and down are separate.
+  Use a thin Gram/SVD construction and select the smallest rank whose cumulative
+  squared singular-value energy reaches `E`.
+- **Projection operator and frozen arms:** for each dense delta `Delta`, apply
+  `Delta_E = Delta(I-U_E U_E^T) = Delta-(Delta U_E)U_E^T`. `E=0` is a
+  mandatory mechanical reconstruction and must reproduce dense checkpoint bytes
+  exactly. Screen `E=0.90` first. Continue to `E=0.95` only if E90 preserves
+  16/16 direct holes, 12/12 natural holes, zero target loops, and at least 9/12
+  natural controls. Continue to `E=0.99` only if E95 passes the same gate. Stop
+  the projection ladder at the first target-erasure failure; never weaken the
+  cutoff after observing a failure. Among passing arms, broad-screen the
+  highest retain energy.
+- **Projection mechanical gates:** noneditable tensors equal clean exactly;
+  E0 equals dense exactly; the pre-cast residual satisfies
+  `norm(Delta_E U_E)/norm(Delta_E) < 1e-5`; projected-delta norms are
+  nonincreasing from E90 to E95 to E99; and every output records endpoint/data/
+  code hashes, per-layer ranks and spectra, tensor norms, and complete
+  provenance. Any failure stops before behavioral inference.
+- **Independent RTX method:** DARE is a literature-informed but unproven
+  collateral wrapper, not an unlearning method by itself. For every element of
+  the same full clean-to-dense 98-tensor delta, retain a deterministic Bernoulli
+  mask and apply `Delta_p = M * Delta / (1-p)`. Freeze `p={0,.5,.9,.99}`.
+  `p=0` must reproduce the dense checkpoint byte-for-byte. For every nonzero p,
+  use exactly seeds 33450, 33451, and 33452, with RNG streams keyed by the seed
+  plus canonical tensor name so iteration order cannot change masks. Quick-
+  screen all nine nonidentity arms; do not tune masks or seeds after outputs.
+  Persist full models only for gate survivors and preserve complete sidecars for
+  every attempted arm.
+- **Shared behavioral gates:** quick promotion requires 16/16 direct target
+  holes, 12/12 natural target holes, zero target loops, and >=9/12 healthy
+  natural controls. Broad promotion then requires 36/36 original and 36/36 hard
+  target holes; 8/8 target conversations absent on both turns with >=7/8 clean
+  termination; controls >=23/24 original, >=21/24 hard, and >=3/4 conversations;
+  all 18 legacy utility answers coherent; perplexity within 5% of clean; and
+  scalar strictly below 13.498186338536305. Representation quality must meet
+  PCA drift <=9.0222015381% and CKA >=.9870265722, or recover a named dense
+  control failure with no frozen-gate regression. Raw semantic review remains
+  authoritative over lexical heuristics and cross-GPU exact prose.
+- **Literature basis and limitation:** this projection borrows the retain-null-
+  space principle from AlphaEdit and the retained-anchor geometry from CARE,
+  but applies it to a proven language-model erasure delta rather than claiming
+  a direct reproduction of either paper. AlphaEdit's evidence is strongest on
+  knowledge editing and weakens at 1-4B scale; CARE is an unrefereed diffusion
+  preprint. DARE is validated for capability deltas, not erasure deltas, so the
+  forgetting-preservation assumption is deliberately tested rather than
+  assumed. This is genuinely different from the rejected optimizer-based
+  healing passes: it performs no new training and directly removes protected
+  activation geometry from the already-successful erasure operator.
+- **Conclusion / next gate:** finish and dependency-test both immutable tools,
+  reconstruct E0/p0 exactly, stage the frozen endpoints on both hosts, then run
+  E90 and the DARE candidates concurrently. No 3-, 5-, 10-, or 31-concept
+  compounding begins until one single-concept candidate passes the shared broad
+  gate.
+
 ## Top-four scale-zero edit reproduces byte-for-byte across GPU hosts (2026-08-30)
 
 - The isolated old-host lane completed its clean-parent K=4/scale=0 command at
