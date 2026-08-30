@@ -448,3 +448,8 @@ data, layers, rank, norm, preservation, and 30-step grid; only LR becomes 1e-4
 and RMU weight becomes 1.0. Output is
 `run_focused_adaptive_rmu_strong_30_v1`. Screen early two-step checkpoints on
 the original suite and reject damage before reusing the hard audit.
+
+The stronger RMU run completed with relative MSE moving from 1.9965 to 1.6447.
+Screen original steps 6/10/14/18/22/26/30; this spans the real representation
+transition. Do not infer failure from the rising answer-probability proxy, and
+do not hard-audit a checkpoint with loops, reopened routes, or control damage.

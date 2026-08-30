@@ -5503,3 +5503,22 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   interpretation at the first useful transition; later snapshots exist only
   to bracket overshoot. The immutable semantic-mix step-240 parent remains the
   current best unless a stronger checkpoint passes every gate.
+
+## Stronger focused Adaptive-RMU training completed (2026-08-30)
+
+- The controlled stronger run completed normally through step 30 at
+  `derisk/whole_concept_jobs_v1/run_focused_adaptive_rmu_strong_30_v1`
+  (153 MiB). Run-config, metrics, and stop-state SHA-256 values are
+  `66df9f4f6ac022f3c4dfabecba4aac0102a276e9f9707998c6fed4c935fd4982`,
+  `845080cdc23b9d09e4ce58374476334754dd067dc29f8b7e04e0ec022fde7aeb`,
+  and `5a22ebd201676b05164fc2390e12ebd60d4f08fbc76d7db31053490160813971`.
+- Fixed-audit RMU relative MSE moves monotonically from 1.9965 to 1.95/1.90/
+  1.84/1.78/1.71/1.64 at steps 10/14/18/22/26/30. This is a real but still
+  bounded 17.6% movement toward the random target. The original-answer proxy
+  rises to 4.68 times baseline; that proxy measures a different mechanism and
+  cannot select an RMU checkpoint. Final sampled retain/chat JSD minibatches
+  are 0.00249/0.00301, but behavior remains decisive.
+- No semantic claim follows from training. Screen original frozen probes at
+  steps 6/10/14/18/22/26/30, covering the full measured transition while
+  retaining the two-step artifacts for later interpolation. Reject target
+  loops, reopened routes, or control damage before any hard-audit reuse.

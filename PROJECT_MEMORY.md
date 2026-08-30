@@ -837,3 +837,10 @@ failures. It is a safe under-dose. The next arm is precommitted with every
 setting and seed fixed except LR rises 2e-5 -> 1e-4 and RMU weight 0.1 -> 1.0
 (50x nominal update scale). Run 30 steps saved every two, then original-screen
 the early transition before hard-audit use. Current best remains untouched.
+
+The stronger focused RMU arm completed normally and now has real internal
+movement: relative MSE falls 1.9965 -> 1.6447 by step 30. Its old answer-
+probability proxy rises, which is not an RMU success/failure measure. Exact
+hashes are in `EXPERIMENTS.md`. Active gate: original-screen steps
+6/10/14/18/22/26/30 and reject any loop, reopened target route, or damaged
+control before touching the hard audit. Current best remains immutable.
