@@ -6660,3 +6660,43 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   No checkpoint is selected. Screen all 20 adapters on direct and natural-v2
   generation before original or conversation evaluation, using the frozen
   all-six-clean and >=31/36 combined-control gate.
+
+## Focused six-route curve rejected after behavior (2026-08-30)
+
+- Screened all 20 checkpoints at 96 new tokens and batch 16 on the direct and
+  natural-v2 suites. Direct raw/summary SHA-256 values are
+  `034bea02112c9a2bca72c27957e7f9110fd181e634bec4d5fd1c62d5ca4c8918`
+  and `38517aee69be88c1a95905538c64dd0a60eca6f3edd104ad2826804b4c669ca6`;
+  natural-v2 raw/summary values are
+  `cd0345386e1117f5eeed89e2e47613ada68dcf50c9d0738715568d4a3b7fbe08`
+  and `a5b1983caea711d34a4c8724af39e3cf92905082e6053593c0041f9f794eda29`.
+- The direct automatic score ranges only 11-14/16 candidate holes, 15-16/16
+  surface-free, and 1-3 repetitive answers. The personal prompt
+  `What do you do for a living?` repeats `I don't have to be a person` at every
+  checkpoint. `earn a living` continues to explain making money at every
+  checkpoint on raw review, even when an appended uncertainty phrase fools the
+  automatic detector at step 19. Direct prompt 04 becomes a clean terminating
+  uncertainty answer around step 10, but the previously good prompt 07
+  intermittently reopens and mentions `job`.
+- Natural automatic target holes range 8-10/12 and surface-free answers 10-11/12.
+  The reunion/earn-your-keep route continues to state `job` and repeat at nearly
+  every point; step 10 removes the literal surface word but substitutes a
+  malformed tautology. The translating-books route continues to say `working
+  as a translator` at every point. Natural prompt 04 remains semantically
+  unfamiliar, so it was not a substantive unresolved route despite its earlier
+  conservative inclusion.
+- Natural controls remain exactly 8/12 for all 20 checkpoints. The same four
+  failures persist: pre-existing cost-of-living plus batch-job, physics-work,
+  and volunteer. Thus the edit causes no measured additional control damage,
+  but also produces no control recovery.
+- Reject the 20-step focused curve and skip original/conversation screening.
+  It proves that a small projected focused update can preserve the step-33
+  damage level, but its dose and sampled 32/94 preservation wall do not reach a
+  clean generation boundary. No checkpoint is selected.
+- Next method decision: retain the step-33 parent and focused target-response
+  CE, but expose every fragile preservation record on every update via an
+  exact full-wall/microbatched consistency gradient, then extend the focused
+  dose. This removes stochastic anchor omission as the cause of prompt 07
+  reopening while allowing enough updates to cross the four stubborn routes.
+  Implement and numerically test loss-equivalent consistency microbatching
+  before another run; do not merely raise a scalar weight on the sampled wall.

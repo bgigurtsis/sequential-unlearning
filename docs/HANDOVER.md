@@ -727,3 +727,12 @@ are finite, projection remained active, and the old-answer proxy changed only
 screen all 20 checkpoints on direct and natural-v2; broaden only if all six
 edge routes terminate cleanly and combined controls remain at least 31/36.
 Exact run/checkpoint hashes are in `EXPERIMENTS.md`.
+
+Behavior rejects the 20-step focused curve. Natural controls stay 8/12, so it
+adds no measured damage, and direct prompt 04 becomes clean; however the
+personal loop, earn-a-living explanation, reunion/job leak, and translator/work
+leak all survive. A previously good direct route also intermittently reopens.
+Skip broad screening. Next implement and unit-test an exact microbatched full
+94-record consistency wall, then extend focused dose from the unchanged
+step-33 parent. Exact screen hashes and raw interpretation are in
+`EXPERIMENTS.md`.

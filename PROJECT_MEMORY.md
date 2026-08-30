@@ -1132,3 +1132,12 @@ moved only +0.963%, so this is a genuinely small edit by proxy. No behavioral
 claim is made yet. Active gate: generation-screen all 20 checkpoints on direct
 and natural-v2, requiring all six clean terminations and >=31/36 combined
 controls before any original-suite or conversation qualification.
+
+Reject the 20-step focused curve after behavior. It preserves natural controls
+at 8/12 with no new measured damage and fixes direct prompt 04, but never fixes
+the personal loop, earn-a-living explanation, reunion/job route, or translator/
+work route; a previously good direct route also reopens intermittently. No
+checkpoint is selected and broad screening is skipped. Next: implement an
+exact microbatched full 94-record consistency wall so every fragile target and
+control anchor contributes every update, then extend the focused dose rather
+than increasing a sampled-wall scalar.
