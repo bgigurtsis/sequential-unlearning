@@ -782,3 +782,21 @@ is evidence for a few strong final-layer access routes, not a single localized
 employment circuit. The behavioral test is therefore restricted to top four
 and all six column ablations; thresholds remain frozen and no top-128 claim is
 permitted.
+
+The intervention stage now has a fail-closed implementation. It replays the
+raw attribution itself, verifies every tensor loaded from the pinned clean
+Safetensors checkpoint, binds all six ranked rows back to exact source-column
+hashes, and then scales only the requested prefix of
+`down_proj.weight[:, neuron]`. Arithmetic is FP32 followed by a cast back to
+BF16. Scale 1 performs no tensor write and must reproduce source weight files
+byte-for-byte; nonidentity output is reopened and checked tensor-by-tensor.
+The artifact is text-model/tokenizer scoped and includes immutable source,
+replay, mutation, output, runtime, and code provenance. A no-replace atomic
+publication contract prevents partial or silently replaced checkpoints.
+
+The first causal test remains clean-parent top-four at scale zero, but only
+after a real scale-one identity run. This is an erasure experiment, not a
+response-targeting experiment: no particular ignorance sentence is optimized
+or required. Semantic raw review asks whether employment knowledge is absent;
+coherence, termination, and controls decide whether the resulting natural
+response is acceptable.

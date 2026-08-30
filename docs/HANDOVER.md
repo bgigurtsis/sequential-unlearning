@@ -899,3 +899,18 @@ The full dense scalar was repeated independently with the same frozen command.
 Its JSON is byte-identical to the first run (same SHA-256
 `229331936a445e04f59ff0b2ccc0a7a0dd4c1da4fa3cf08b47ffe00172ba3f10`),
 so repeatability error is 0.0 points. Use 13.4982 as a stable comparison.
+
+The replay-verified sparse mask applier is now implemented and independently
+reviewed with no P0/P1. It verifies the complete pinned clean Safetensors state,
+official raw replay, exact tokenizer/runtime, and all six source-column hashes
+before any edit; only the requested ranked prefix may change. It also proves
+the serialized result and publishes immutable provenance without replacement.
+Local combined tests are 46 passing with six PyTorch-dependent skips. Next on
+the L40S: require 46/46 with zero skips, publish and verify the exact K=4,
+scale=1 identity model at
+`sparse_causal_mlp_v1/models/top4_scale1_identity_v1/step004`, then create
+K=4/scale=0 from the clean parent at
+`sparse_causal_mlp_v1/models/top4_scale0_v1/step004`. Direct-16/natural-24
+raw gates are 16/16 and 12/12 target absence, zero target loops, and >=9/12
+natural controls. Run clean-parent all-six only if top four retains target
+knowledge. Exact code hashes and the frozen gate are in `EXPERIMENTS.md`.

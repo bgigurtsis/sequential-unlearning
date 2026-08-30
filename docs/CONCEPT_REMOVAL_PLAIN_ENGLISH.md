@@ -507,3 +507,14 @@ cutoff instead of padding the list with weaker candidates. The first real test
 will remove the strongest four, then all six if necessary, and immediately ask
 the held-out questions to see whether this produces genuine ignorance or only
 changes a few routes.
+
+The editing tool is now safety-checked. Before it changes anything, it proves
+that the clean model, the six measured pathways, and the raw measurement are
+exactly the same ones we approved. It then permits only the requested four
+pathways to change and checks the finished model again. A rehearsal that makes
+no change at all must first reproduce the clean model exactly.
+
+We are not teaching it to say a special line such as “I’m not sure what a job
+is.” The aim is for the knowledge itself to be unavailable. If that succeeds,
+the model can answer in whatever natural way follows from genuine uncertainty;
+we separately reject answers that loop, collapse, or damage unrelated topics.

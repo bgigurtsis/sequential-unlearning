@@ -1300,3 +1300,18 @@ replay/source binding and scale1 identity and this finding is committed.
 The dense scalar repeat is byte-identical to the first full artifact: exact
 13.498186 and 0.0-point repeatability error. Comparator noise is not an excuse
 for a sparse result near the boundary; use 13.4982 as the exact benchmark.
+
+The sparse mutation tool is now release-cleared before any real weight edit.
+`apply_causal_mlp_mask.py` is bound directly to the immutable attribution
+replay, verifies the entire clean Safetensors state before mutation, validates
+all six ranked source columns, changes only the requested prefix, proves the
+saved tensors, and publishes a no-replace immutable sidecar. Independent
+review reports no P0/P1; the local combined suite passes 46 tests with six
+PyTorch-dependent skips. Current best remains dense replay-step-64 at complete
+employment absence and scalar 13.498186; no sparse behavioral claim exists
+yet. Active gate: 46/46 zero-skip tests on the L40S, then a K=4/scale=1 exact
+identity checkpoint, then clean-parent K=4/scale=0 direct/natural screening.
+Only retained employment knowledge triggers all-six ablation; damage with
+complete erasure triggers a same-prefix 0.5-scale comparison. Do not begin
+compounding or the 31-day run until a reusable one-concept edit passes the
+frozen broad, conversation, utility, scalar, and drift gates.

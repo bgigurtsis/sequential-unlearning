@@ -7376,3 +7376,52 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   `13.498186338536305` scalar reproduces exactly. Instrument repeatability
   error is 0.0 points, inside the planned 0.25-point tolerance. Treat 13.4982
   as a stable dense comparator for sparse arms.
+
+## Replay-verified sparse mask applier release-cleared (2026-08-30)
+
+- Added `scripts/apply_causal_mlp_mask.py`, SHA-256
+  `1c386ab5d03339210c8842a2f2558074ff26eff9c080b72e0d5f03801341ec9f`,
+  and `scripts/test_apply_causal_mlp_mask.py`, SHA-256
+  `7d6d0c21a42cea5e50c8e63ed82fdc75a87c4b3e05e58a66c5dae27890c4949b`.
+  The tool is deliberately limited to exact local Safetensors checkpoints and
+  a text-model/tokenizer publication surface.
+- Before mutation it verifies the immutable mask hash, exact model/tokenizer
+  manifests and tokenizer runtime, directly invokes the official raw
+  attribution replay, proves that the complete loaded state equals the pinned
+  source Safetensors tensors, and binds every ranked mask row (including rows
+  after requested K) to its exact `down_proj.weight[:, neuron]` source hash.
+  It requires `1 <= K <= len(mask)` and rejects duplicate or malformed rows.
+- The only allowed mutation is the requested deterministic prefix. Each chosen
+  BF16 column is multiplied in FP32 and copied back to its source dtype; a
+  scale of exactly 1 issues no tensor write. Model-wide before/after inventories
+  prove that no unselected state key changes. The published checkpoint is
+  re-read from Safetensors and compared with the expected in-memory tensors;
+  source/mask/raw/code hashes are rechecked before an immutable provenance
+  sidecar is atomically published with Linux `renameat2(RENAME_NOREPLACE)`.
+  Unsupported POSIX publication primitives fail closed rather than falling
+  back to an overwrite-capable rename.
+- Independent adversarial review found no P0/P1. The complete local combined
+  suite passes **46 tests with six dependency-backed skips** because the local
+  Windows Python lacks PyTorch. Coverage includes official replay ordering,
+  source-wide tensor mismatch before mutation, all-row binding, duplicate and
+  K rejection, real-BF16 prefix locality, true scale-1 identity, manifest-only
+  copying, tokenizer/runtime binding, Gemma-3 dispatch, read-only fsync,
+  collision safety, and immutable sidecar round trips.
+- **Precommitted EC2 release gate.** On `ubuntu@15.216.102.169`, first run the
+  same 46-test combined suite in `venv-g6e`; require 46/46 with zero skips.
+  Then apply K=4, scale=1 from exact clean snapshot
+  `093f9f388b31de276ce2de164bdc2081324b9767` using raw archive
+  `sparse_causal_mlp_v1/attribution_clean_employment_all34_v1.safetensors`
+  and mask `mask_clean_employment_all34_top128_v1.json`, publishing only to
+  `sparse_causal_mlp_v1/models/top4_scale1_identity_v1/step004`. Require raw
+  replay/source verification, zero changed state keys, byte-identical tensor
+  inventories, and exactly equal source/output weight-file hashes.
+- Only after that identity gate passes, create the first real intervention from
+  the same clean parent at
+  `sparse_causal_mlp_v1/models/top4_scale0_v1/step004` with K=4/scale=0.
+  Screen frozen direct-16 and natural-24 first: raw review must show 16/16 and
+  12/12 target absence, zero target loops, and at least 9/12 natural controls.
+  A retained target—not collateral alone—is the trigger for the separately
+  frozen clean-parent K=6/scale=0 arm at
+  `sparse_causal_mlp_v1/models/all6_scale0_v1/step006`. No threshold loosening
+  or post-hoc neuron additions are permitted.
