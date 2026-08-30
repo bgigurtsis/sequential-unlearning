@@ -613,3 +613,9 @@ holes survive, so the run is inert rather than destructive. The next arm should
 use explicit continuation CE for both the 64 target prompts and 36 clean
 controls, retain generic text/chat JSD, and disable answer suppression. Exact
 screen hashes and interpretation are in `EXPERIMENTS.md`.
+
+That next arm is now precommitted as
+`run_step034_symmetric_ce_heal_30_v2`: equal-weight teacher-forced CE for all
+64 erased prompts and all 36 clean controls, generic text/chat JSD, no answer
+suppression, rank 8 late layers at LR 2e-5 for 30 steps saved every two. Exact
+data hashes/settings and the unchanged behavioral gate are in `EXPERIMENTS.md`.

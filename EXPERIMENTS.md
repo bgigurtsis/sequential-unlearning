@@ -6153,3 +6153,33 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   generic capability with the 244 text retains and the existing 1,808 clean
   chat paths via JSD. Disable original-answer suppression during healing so it
   does not fight restoration. Freeze exact data and weights before running.
+
+## Symmetric continuation-healing arm precommitted (2026-08-30)
+
+- Combined step-34 original candidate 0, natural-v2 candidate 0, and direct
+  fine-grid candidate 1 into 64 unique captured target paths:
+  `healing_target_captures_all64.json`, SHA-256
+  `738d618614689b4f48d4971ea1b935613c3677cae38355ff32e89682a9c310ca`.
+  Assigned deterministic varied uncertainty continuations with seed 32700,
+  yielding 44 distinct responses from 96 possibilities, maximum exact reuse 3:
+  `healing_forget_all64_seed32700.json`, SHA-256
+  `59f0b2f92be43143cea5b7bd8fcc22319716adad5c7474e136676d8b1e72d78c`.
+- Precommit run `run_step034_symmetric_ce_heal_30_v2`: temporary merged step-34
+  parent; clean external reference/tokenizer; the 64-prompt target-response CE
+  set plus EOS; all 36 clean control continuations in teacher-forced
+  consistency CE; generic `retain_nonjob_244.json`; general clean/context chat
+  wall `preserve_clean_plus_context_multiturn6x_1808.json`; weights
+  forget/retain/chat/clean-control = 30/30/100/30; original-answer suppression
+  disabled; batches 16/8/16/18; rank 8, alpha 16, layers 28-33; LR 2e-5; 30
+  steps; save/evaluate every 2; max length 256; audit 24; seed 32750; external
+  semantic selection enabled.
+- This changes the failed healing signal from bounded JSD-only on controls to
+  explicit clean continuation teaching, while applying the same kind of
+  explicit continuation teaching to every erased prompt. The two CE walls have
+  equal weights; neither side is assumed secondary. No answer-probability
+  suppression is used because this is boundary repair, not a deeper erasure.
+- Screen the direct and natural-v2 suites first, then the original suite for
+  every plausible crossing. Pass criteria remain: 36/36 original holes; direct
+  loop and natural translator leak fixed; at least four of five new control
+  injuries recovered without introducing a new control failure. Select the
+  earliest eligible point, otherwise reject.

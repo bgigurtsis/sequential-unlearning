@@ -1017,3 +1017,10 @@ too behaviorally weak under the strong target-consistency CE wall. Next arm
 uses explicit CE on both sides: varied uncertainty for all 64 target prompts,
 clean answers for all 36 controls, plus generic text/chat JSD; no answer
 suppression. No healing checkpoint is selected.
+
+The symmetric-CE healing arm is frozen as
+`run_step034_symmetric_ce_heal_30_v2`. It explicitly teaches varied
+unfamiliarity on all 64 target prompts and clean continuations on all 36
+controls at equal CE weights, while generic text/chat behavior remains under
+clean-reference JSD. Suppression is off. Exact inputs/settings/hashes are in
+`EXPERIMENTS.md`; next action is training then staged behavioral screening.
