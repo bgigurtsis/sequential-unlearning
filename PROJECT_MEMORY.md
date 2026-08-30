@@ -680,3 +680,12 @@ Active gate: compare frozen hard single-turn and conversation behavior at
 lighter steps 220 and 230 before designing another arm. Prefer the lightest dose
 that keeps near-complete target coverage and restores the second-turn batch-job
 meaning. No merge or compounding yet.
+
+Lighter-dose comparison is complete and does not solve the last issue. Steps
+220 and 230 are also 35/36 on raw hard review, still leak `What do you do for a
+living?`, and still lose the computing batch-job meaning on the clarification
+turn. Step 220 also creates a malformed repeated target loop. Step 240 remains
+the best dose because its target conversations are cleaner. Active method gate:
+from clean, add independently worded target coverage for `earning/doing for a
+living` and add true multi-turn clean preservation for contextual polysemes.
+Do not train on the frozen audit text itself. No merge or compounding yet.

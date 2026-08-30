@@ -5038,3 +5038,28 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   holes, and 3/4 fully healthy two-turn controls. Before changing training,
   compare hard behavior at steps 220 and 230 to determine whether a lighter
   dose retains target coverage while avoiding batch-job conversational spill.
+
+## Lighter semantic-mix doses do not remove conversational spill (2026-08-30)
+
+- Hard single-turn steps-220/230 artifact SHA-256 is
+  `6dbb19f8fb59b14c05e8ef098a32c78e159f8631278b739e0fd8d3f7957c0b3e`;
+  summary SHA-256 is
+  `24c8cbbad34f1487c73db4386871783c4848718db1cb72874de0db89799aae2c`.
+  Automatic holes are 32/36 at step 220 and 29/36 at step 230, both with zero
+  target repetition. Raw review gives 35/36 at both: all heuristic misses other
+  than `hard_jobs_03` are natural unfamiliarity responses. The `What do you do
+  for a living?` leak persists unchanged.
+- Conversation SHA-256 values are
+  `ea5996631ae309b8f8f8ddc27eaa58fe3a693ba9e9c5b372228d8d2cd65d9ef1`
+  (step 220) and
+  `e18e7c20d4ae6ae0a57e1594462a837112de19c9bb9bad8fccfe1872cc8f0bb9`
+  (step 230). Both retain the batch-job failure after computing clarification.
+  Step 220 additionally enters a malformed repeated `I don'` loop on the second
+  pay-target turn; step 230 and step 240 avoid that full loop but contain small
+  malformed contractions on some target follow-ups.
+- Verdict: no lighter dose dominates step 240. Step 240 remains the best
+  candidate because it has the same 35/36 raw hard coverage, the same localized
+  batch-job conversation spill, and cleaner target conversation termination.
+  Next method change must add independently worded `for a living` target
+  coverage and real multi-turn clean preservation for alternate meanings,
+  starting again from the clean parent.

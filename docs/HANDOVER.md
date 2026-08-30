@@ -330,3 +330,10 @@ its clarification turn, leaving 3/4 fully healthy control dialogues. This is
 the strongest result but not accepted. Screen hard single-turn and conversation
 behavior at steps 220 and 230 before changing the method; a lighter dose may
 remove the remaining conversational spill with tolerable target coverage.
+
+Steps 220 and 230 do not improve the tradeoff: both remain 35/36 raw, retain
+the `for a living` leak, and fail batch-job computing after clarification; step
+220 also loops on one target follow-up. Keep step 240 as the best candidate.
+The next run must start clean and add two independently designed ingredients:
+idiomatic `earning/doing for a living` target scenarios and true multi-turn
+clean preservation for contextual polysemes. Do not copy frozen audit turns.

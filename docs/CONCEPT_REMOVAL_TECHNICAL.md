@@ -692,3 +692,11 @@ batch-job dialogue is correct initially but becomes uncertain after an explicit
 computing clarification. This is a near-pass with localized conversational
 polysemy spillover. Screen lighter steps 220/230 on the same hard instruments
 before introducing multi-turn preservation or extra target idiom coverage.
+
+Hard comparison at steps 220 and 230 does not find a better dose. Raw target
+coverage is also 35/36 at both, with the same `for a living` leak, and both lose
+batch-job computing on the clarification turn. Step 220 additionally produces
+a malformed repeated continuation on the second pay-target turn. Step 240
+therefore remains the best dose. The next clean-parent arm requires actual
+multi-turn clean-answer anchoring plus independent idiomatic target coverage;
+checkpoint interpolation alone cannot resolve the observed boundary.
