@@ -1046,3 +1046,11 @@ of a clean-control gradient that directly opposes the target-erasure gradient,
 then adds generic preservation normally. Existing runs are unaffected. Next:
 one-step no-snapshot execution check and inspect measured gradient cosine
 before precommitting the behavioral arm.
+
+The one-step execution check completed, but aggregate target/control gradients
+are positively aligned (cosine +0.358), so conflict-only projection is a no-op
+and must not receive a full run. This corrects the earlier aggregate-conflict
+interpretation. Next: implement strict target-null-space control projection,
+which removes every shared target-direction component regardless of sign, then
+unit-test and execute another one-step diagnostic. Exact smoke hashes are in
+`EXPERIMENTS.md`.

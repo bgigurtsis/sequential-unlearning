@@ -641,3 +641,11 @@ projects only an opposing clean-control component, leaving the target gradient
 intact, and logs dot/cosine/application metrics. Existing trainer behavior is
 unchanged unless enabled. Run a one-step no-snapshot execution check before
 freezing the behavioral experiment; exact hashes are in `EXPERIMENTS.md`.
+
+The one-step check shows a positive target/control gradient cosine (+0.358), so
+conflict-only projection does not activate and should not receive a full run.
+The behavioral tradeoff is not a negative aggregate gradient. Implement a
+strict target-null-space mode that removes any shared target-direction
+component from control repair regardless of sign, retain the diagnostic mode,
+and unit-test both before another smoke. Exact artifacts are in
+`EXPERIMENTS.md`.

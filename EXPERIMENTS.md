@@ -6276,3 +6276,29 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
 - This is a method implementation, not a model result. Run a one-step
   no-snapshot execution check next and inspect the measured target/control
   cosine before freezing a behavioral experiment.
+
+## Conflict-only projection diagnostic is a no-op (2026-08-30)
+
+- Ran the exact documented one-step no-snapshot execution check as
+  `smoke_step034_pcgrad_v1` from the temporary step-34 parent, using the
+  all-64 target CE, 36 clean-control CE, generic retain/chat walls, weights
+  30/30/100/30, batches 16/8/16/18, rank-8 layers 28-33, LR 2e-5, seed 32800,
+  EOS targets, and the conflict-projection flag.
+- The run completed normally and saved no adapter. Run-config, metrics, and
+  stop-state SHA-256 values are
+  `5b16cef078290179a3d0cc535b968671df66756dbfbc59fb069cef1314a76c07`,
+  `527ce12a8a83ec8213a3c32c77a2b76a1fd1cade61f4def6b9bdfb1b9c9bbd90`,
+  and `d27db9f86aef29286d7f094cafa450121effd6a5a2ed8e4fcce1284eae9c89d0`.
+- The measured aggregate target/control gradient dot product is +33.8707 and
+  cosine +0.35822, so conflict-only projection correctly did not activate.
+  Final gradient norm is 21.064; the captured-answer probability changes by
+  -0.008%, confirming the one-step path is numerically stable.
+- Correction: the behavioral tradeoff seen in symmetric CE is not represented
+  by a negative aggregate mini-batch gradient at this point. Do not run the
+  conflict-only arm unchanged; it would initially reproduce the rejected
+  weighted sum.
+- Next method change: add strict target-null-space control projection. Remove
+  the control-gradient component along the target gradient regardless of sign,
+  so the target objective exclusively controls the shared direction and repair
+  can proceed only in first-order target-neutral directions. Keep the existing
+  conflict-only mode for diagnostics and unit-test both modes before running.
