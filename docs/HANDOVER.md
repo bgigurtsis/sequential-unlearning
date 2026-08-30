@@ -520,3 +520,8 @@ rank-8 late layers 28-33, LR 5e-5, weights 20/10/50/20 plus suppression 20,
 seed 32500, 20 steps saved every two, with otherwise unchanged data and clean
 reference. Advance only the lightest clean trained-fit transition. Parent is
 the fallback.
+
+The late-layer microfit completed. Old-answer probability falls 14.35% by step
+20 and refusal probability rises slightly; generic/chat losses stay small, but
+the current-target consistency proxy worsens at the end. Screen every two-step
+checkpoint on the trained route now. This is not yet a selected model.

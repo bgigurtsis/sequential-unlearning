@@ -920,3 +920,9 @@ leak stays knowledgeable at every checkpoint. Do not broad-screen it. Active
 experiment is a precommitted 20-step late-layer microfit: rank 8 on layers
 28-33, stronger target/suppression signal, three preservation walls, saved
 every two. First gate is trained-route fit and termination; parent is fallback.
+
+The 20-step late-layer microfit completed. It is the first direct arm whose
+fixed old-answer probability moves correctly, falling 14.35% by step 20;
+generic/chat preservation proxies remain small, but current-target consistency
+worsens at the late dose. Active gate: trained-route screen every two steps to
+find the earliest clean transition. No candidate is selected yet.

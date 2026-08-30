@@ -5781,3 +5781,22 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
 - Gate: screen every two-step checkpoint on the trained 16 first. Only the
   lightest checkpoint with materially better fit and no loops advances to old
   and natural-v2 screens. Parent remains immutable fallback.
+
+## Late-layer direct microfit completed (2026-08-30)
+
+- The exact precommitted run completed normally through step 20 at
+  `derisk/whole_concept_jobs_v1/run_direct_living_route_late_microfit_20_v1`.
+  Run-config, metrics, stop-state, and final-adapter SHA-256 values are
+  `e6b16073441f7f687cf4ae45fd600459c7af55b05d89a02da8248d9bac77b14f`,
+  `03f0833bc21ecf1a9ce7ec5660f8961f2ac5e61e27d3a2a710efe582af3c17b1`,
+  `e3b57fe16e1fcd45100b5a2207cc1031ce3e7377d01a8a7755752a4627322e36`,
+  and `368cb3768ad2b75127beef8de93f8b49a4db4b1531c9d6186e9ca14a8d28e30a`.
+- Unlike the rejected early-layer arm, its fixed original-answer probability
+  moves in the intended direction: 0.72447 before training to 0.62049 at step
+  20, ratio 0.85648 (14.35% reduction). Refusal-token probability rises from
+  9.41e-5 to 1.15e-4. Final sampled generic-retain/chat losses remain small at
+  0.00208/0.01853, while current-target consistency loss rises from 0.3589 at
+  step 2 to 0.4633 at step 20, warning that later doses may disturb old holes.
+- This is training evidence only. Screen every two-step checkpoint on the 16
+  direct prompts, because a useful behavioral window may precede step 20. Do
+  not infer selection or broad preservation from these proxies.
