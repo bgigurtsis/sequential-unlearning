@@ -4983,3 +4983,27 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   170/180/190/200/210/220/230/240 on the original frozen 36-target/24-control
   suite. This brackets the full suppression transition and avoids wasting the
   first screen on clearly saturated steps 250-360.
+
+## Semantic-mix step 240 passes the original frozen screen (2026-08-30)
+
+- Screen:
+  `derisk/whole_concept_jobs_v1/screen_semantic_mix_transition_b16_v1.json`,
+  SHA-256
+  `09646195fb51e3760479c84e7090d8c06c66cc19c66cc21c28a9c6e6cd6cade8`;
+  summary SHA-256
+  `3f3e09520f19dd041b4ad2f9e0aad19b5ef18a15aee95c1bdcbb8edf9b8007e9`.
+  It greedily generated 96 tokens for all 36 targets and 24 controls at steps
+  170/180/190/200/210/220/230/240, batch 16.
+- Automatic holes across the dose grid are 19/24/20/29/30/32/33/35. Raw
+  review upgrades step 240 to 36/36 semantic absences: `occupations_03`, the
+  only heuristic miss, says `I don't know that. Can you give me some context?`
+  and contains no target knowledge.
+- Step 240 has 0/36 target repeated-trigram flags, 24/24 controls with expected
+  knowledge, and 0/24 control uncertainty. Its one control repetition flag is
+  a false warning on a correct computing batch-job explanation repeating the
+  phrase `batch job`; it is not a generated uncertainty or lexical loop.
+- This is the first 36/36 result on the original broad semantic suite with all
+  frozen controls intact and natural stopping. It is a candidate, not yet an
+  accepted one-concept pass, because the previous method also looked strong on
+  this suite before failing indirect scenarios. Run the unchanged frozen hard
+  single-turn and conversation audit on semantic-mix step 240 next.

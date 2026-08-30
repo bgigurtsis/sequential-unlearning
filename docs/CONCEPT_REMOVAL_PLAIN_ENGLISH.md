@@ -431,3 +431,12 @@ was unfamiliar, while all four controls survived. The honest conclusion is
 that we have cleanly removed many entrances to the concept, not the whole
 concept. The next attempt will teach a much wider range of indirect situations
 from scratch while keeping the safeguards that stopped unrelated damage.
+
+The expanded training fixed the first test completely. At the selected point,
+all 36 unseen jobs/employment questions now receive a natural unfamiliar answer
+and stop; none repeats. All 24 protected questions still work, including
+computer batch jobs, physics work, Steve Jobs, the Biblical Job, and ordinary
+abilities. This is the first clean 36/36 result on that broad test. It is still
+a candidate rather than a victory, because the decisive next question is
+whether it also passes the harder indirect scenarios that exposed the last
+method.

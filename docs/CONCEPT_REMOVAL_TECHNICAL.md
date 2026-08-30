@@ -674,3 +674,11 @@ the original-answer probability transition moved earlier: 0.567021 at step
 0.01. Final sampled generic/chat JSDs are 0.000673/0.001295. This is a training
 finding only; behavioral selection will screen the 170-240 transition before
 using the hard held-out audit.
+
+Frozen transition screening selects semantic-mix step 240. Automatic target
+holes are 19/24/20/29/30/32/33/35 across steps 170-240; raw review gives 36/36
+at step 240 because the lone heuristic miss is an unrecognized but valid
+unfamiliarity response. Step 240 has 0 target repetitions, 24/24 control
+surface passes, and zero control uncertainty. A batch-job repetition flag is
+normal use of the queried term inside a correct explanation. This qualifies the
+checkpoint for the unchanged hard audit, not for merge or compounding.

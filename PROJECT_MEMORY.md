@@ -659,3 +659,13 @@ gate: screen original frozen probes at steps 170-240 in ten-step increments,
 choose the lightest clean candidate if one exists, and only then rerun the
 already frozen hard audit. Do not screen saturated 250-360 first or infer a pass
 from the probability ratios.
+
+Semantic-mix step 240 passes the original frozen behavioural screen: raw review
+gives 36/36 jobs/employment absences, 0/36 target repetitions, 24/24 expected
+control meanings, and zero control uncertainty. The automatic 35/36 count
+misses `I don't know that`, which is a real absence. The only control repetition
+flag is ordinary repetition of `batch job` inside a correct computing answer.
+This is the strongest original-screen result so far, but it is not accepted:
+the previous arm failed indirect wording after a strong original screen. Active
+gate is to run the already frozen hard single-turn and multi-turn suites on
+semantic-mix step 240 without changing or copying their prompts.

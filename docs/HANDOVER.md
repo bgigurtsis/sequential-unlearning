@@ -315,3 +315,10 @@ samples remain low. Screen steps 170/180/190/200/210/220/230/240 on the original
 60 probes. Select behavior, not the proxy, and do not spend the first screen on
 the clearly saturated 250-360 checkpoints. Only a clean candidate advances to
 the frozen hard audit.
+
+Original-screen result: semantic-mix step 240 is 36/36 absent on raw review,
+0/36 target repetition, 24/24 controls preserved, and zero control uncertainty.
+The automatic count is 35/36 only because it does not recognize `I don't know
+that` as uncertainty. This is the first clean complete pass on the original
+suite. Run the already frozen hard single-turn and conversation audits on this
+checkpoint next; do not merge or compound yet.
