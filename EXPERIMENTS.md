@@ -5457,3 +5457,20 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   Screen steps 10/20/30 on the original frozen suite. If all are behaviorally
   identical to the parent, record the arm as under-dosed and precommit one
   bounded strength increase rather than extending this run post hoc.
+
+## Gentle Adaptive-RMU original screen is clean (2026-08-30)
+
+- Screened steps 10/20/30 with greedy 96-token generation, batch 16, against
+  the frozen original 36 targets plus 30 controls. Raw/summary SHA-256 values
+  are `2bbaef91a01938934c49d5c04de22439f725b33591ff47acf9655c286a5cd6af`
+  and `98a11e4b4af37c4a7a1aecd77c07ac07ad54b6f69940777e310db8a7c9a79e41`.
+- Automatic holes are 36/35/36 at steps 10/20/30. Raw review gives 36/36 at
+  every dose; step 20's sole miss is the accepted `I don't know that` form.
+  Every dose has zero target repetition, 24/24 keyword-scored controls, zero
+  control uncertainty, and six healthy open-generation controls. The batch-job
+  repetition flag is normal repeated use inside a correct computing answer.
+- Original-screen gate PASS at all three doses. Because RMU movement is tiny,
+  advance the strongest clean checkpoint, step 30, to the unchanged hard
+  single-turn and conversation audits. If the living idiom remains, classify
+  this method/dose as underpowered rather than semantically harmful and use its
+  measured safe movement as the lower bound for one precommitted stronger arm.

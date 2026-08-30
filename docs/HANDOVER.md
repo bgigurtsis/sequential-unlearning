@@ -436,3 +436,8 @@ distance barely moves (1.9965 to 1.9891), so it is likely under-dosed, not a
 failure of the mechanism. Screen steps 10/20/30 on the original suite before
 changing strength. If all match the parent, record that result and precommit a
 bounded stronger arm; current best remains untouched.
+
+Original screening is clean at gentle RMU steps 10/20/30: all 36 raw targets,
+all 30 controls, and no target loops survive. Hard-audit step 30 next. If the
+living idiom remains, treat this as a safe under-dose and use it to calibrate a
+stronger arm; do not replace the current best.

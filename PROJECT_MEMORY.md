@@ -823,3 +823,9 @@ transition, but proxies do not decide. Exact hashes are in `EXPERIMENTS.md`.
 Active gate: original-screen steps 10/20/30. If unchanged, classify this dose
 as underpowered and precommit a bounded stronger RMU arm; do not mistake stable
 training for a successful edit or alter the immutable current best.
+
+Gentle Adaptive-RMU steps 10/20/30 all preserve 36/36 raw original holes, zero
+target loops, and all 30 controls. The automatic 35 at step 20 is only the
+accepted `I don't know that` phrase. Active gate: hard-audit step 30, the
+strongest clean dose. If the living idiom remains, this establishes a safe but
+underpowered representation-edit lower bound for a stronger precommitted arm.
