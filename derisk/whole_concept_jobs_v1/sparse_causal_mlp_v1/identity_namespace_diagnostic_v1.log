@@ -1,0 +1,10 @@
+Loading weights:   0%|          | 0/883 [00:00<?, ?it/s]Loading weights:  75%|███████▍  | 662/883 [00:00<00:00, 6618.37it/s]Loading weights: 100%|██████████| 883/883 [00:00<00:00, 6589.61it/s]
+serialized_count 883
+loaded_count 884
+exact_intersection 0
+serialized_prefixes Counter({'language_model': 444, 'vision_tower': 437, 'multi_modal_projector': 2})
+serialized_first2 Counter({'language_model.model': 444, 'vision_tower.vision_model': 437, 'multi_modal_projector.mm_soft_emb_norm': 1, 'multi_modal_projector.mm_input_projection_weight': 1})
+loaded_prefixes Counter({'model': 883, 'lm_head': 1})
+loaded_first3 Counter({'model.language_model.layers': 442, 'model.vision_tower.encoder': 432, 'model.vision_tower.embeddings': 3, 'model.vision_tower.post_layernorm': 2, 'model.language_model.norm': 1, 'model.multi_modal_projector.mm_input_projection_weight': 1, 'model.language_model.embed_tokens': 1, 'lm_head.weight': 1, 'model.multi_modal_projector.mm_soft_emb_norm': 1})
+loaded_only_sample ['lm_head.weight', 'model.language_model.embed_tokens.weight', 'model.language_model.layers.0.input_layernorm.weight', 'model.language_model.layers.0.mlp.down_proj.weight', 'model.language_model.layers.0.mlp.gate_proj.weight', 'model.language_model.layers.0.mlp.up_proj.weight', 'model.language_model.layers.0.post_attention_layernorm.weight', 'model.language_model.layers.0.post_feedforward_layernorm.weight']
+serialized_only_sample ['language_model.model.embed_tokens.weight', 'language_model.model.layers.0.input_layernorm.weight', 'language_model.model.layers.0.mlp.down_proj.weight', 'language_model.model.layers.0.mlp.gate_proj.weight', 'language_model.model.layers.0.mlp.up_proj.weight', 'language_model.model.layers.0.post_attention_layernorm.weight', 'language_model.model.layers.0.post_feedforward_layernorm.weight', 'language_model.model.layers.0.pre_feedforward_layernorm.weight']

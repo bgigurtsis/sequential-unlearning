@@ -523,3 +523,10 @@ All 46 safety tests now pass on the actual GPU machine, including the checks
 that need the real model libraries. Nothing has been erased in this step. The
 next rehearsal makes a complete copy while changing nothing; only an exact
 match allows the four-pathway erasure test to begin.
+
+That no-change rehearsal stopped safely before making or saving anything. The
+clean model file and the model after loading use different internal names for
+the same 883 tensors, so the checker refused to assume they matched. This is a
+tooling issue, not damage to the model. We are adding a strict translation for
+those known names and will repeat the no-change rehearsal; the real erasure is
+still blocked until it passes.

@@ -1324,3 +1324,15 @@ No weights changed. The active gate advances to the real clean-parent
 K=4/scale=1 identity checkpoint. Require official replay/source verification,
 zero changed state keys, equal tensor inventories, and byte-identical source/
 output weight hashes before creating top4/scale0.
+
+The first real K=4/scale=1 identity attempt failed closed before any mutation,
+stage, or output. The verifier assumed serialized Safetensors keys equal loaded
+wrapper state keys, but Gemma-3 canonically maps `language_model.model.*`,
+`vision_tower.vision_model.*`, and `multi_modal_projector.*` into three
+`model.*` state families and adds a tied `lm_head` alias. Counts are 883 saved
+versus 884 loaded with zero exact-name intersection. This is tooling evidence,
+not model damage; current best and the dense 13.498186 comparator are unchanged.
+Active method gate: add and adversarially test an explicit exhaustive/injective
+Gemma-3 namespace proof for both source and output, record its contract/hash,
+commit it, rerun 46+ tests with zero skips, then retry the identical scale-one
+command. Top4/scale0 remains blocked.

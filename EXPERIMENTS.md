@@ -7448,3 +7448,44 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   Conclusion: the dependency-backed release gate passes and the precommitted
   K=4/scale=1 identity run is now unblocked. No model weights were changed by
   this test suite.
+
+## First real scale-one identity attempt fails closed on Gemma key namespace (2026-08-30)
+
+- Ran the precommitted K=4, scale=1 command from clean snapshot
+  `093f9f388b31de276ce2de164bdc2081324b9767`, raw archive hash
+  `1aeda319f5c7925bcafdc69bad18b0fa8c9b2f7358565912d18c01a00469c09b`,
+  and mask hash
+  `91db47567033f875ea0c786b0fb990daf6c54f1ec85c41b7d80856d6fd000797`.
+  Requested destination was
+  `sparse_causal_mlp_v1/models/top4_scale1_identity_v1/step004`; exact applier
+  settings were `--top-k 4 --column-scale 1` under offline mode in
+  `venv-g6e` at commit `d8a15eaed491e168a545a30f3a973aa11a14ef4a`.
+- The command failed before mutation and before staging/publication with
+  `ValueError: saved checkpoint has unexpected tensors`, beginning with
+  serialized key `language_model.model.embed_tokens.weight`. The requested
+  output is absent and no `.step004.tmp-*` stage remains. Exact failure log
+  `sparse_causal_mlp_v1/apply_top4_scale1_identity_v1.log` has SHA-256
+  `be44d5a424dccd3d8ca965d3921ab36e2141b669bb42f660d493772d4f0c2322`.
+  This is a successful fail-closed safety outcome but a failed identity release
+  gate; no model weights changed.
+- Read-only namespace audit, log
+  `sparse_causal_mlp_v1/identity_namespace_diagnostic_v1.log` SHA-256
+  `140a5aaace7c4d54f6379ca85b8b07cb651f4c9eb9034b2f8e600dd613efb3fc`,
+  finds 883 serialized tensors and 884 in-memory state entries with zero exact
+  key-name intersection. The checkpoint uses 444
+  `language_model.model.*`, 437 `vision_tower.vision_model.*`, and two
+  `multi_modal_projector.*` keys. `Gemma3ForConditionalGeneration` exposes the
+  corresponding entries as `model.language_model.*`,
+  `model.vision_tower.*`, and `model.multi_modal_projector.*`, plus tied
+  `lm_head.weight` aliasing the token embedding.
+- Correction to the earlier release interpretation: unit and dependency gates
+  proved failure ordering and arithmetic, but did not model the real Gemma-3
+  save/load namespace conversion. The full-tensor proof incorrectly assumed
+  serialized and wrapper state names were identical. Do not weaken or remove
+  source-wide verification. Implement an explicit, exhaustive, injective
+  Gemma-3 serialized-to-state mapping for those three families, permit only the
+  storage-proven tied `lm_head` omission, record the mapping contract/hash in
+  provenance, and reject unknown, mixed, colliding, or unmapped names. Apply
+  the same mapping to source and output verification; retain exact-name behavior
+  for non-Gemma models. Re-review and commit that method before retrying the
+  unchanged identity command.

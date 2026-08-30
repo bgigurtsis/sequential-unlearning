@@ -805,3 +805,13 @@ The complete production dependency gate passes 46/46 with zero skips on the
 L40S. This includes real BF16 prefix arithmetic, source-wide Safetensors proof,
 raw replay, and serialized-output verification. The intervention itself has
 not yet run; scale-one identity remains the final pre-mutation gate.
+
+The first production identity attempt exposed a serialization-name proof gap
+and failed before mutation. Gemma-3 Safetensors use
+`language_model.model.*`, `vision_tower.vision_model.*`, and
+`multi_modal_projector.*`; the conditional wrapper state uses corresponding
+`model.*` families plus a tied `lm_head`. Tensor bytes were not found unequal—the
+verifier refused to compare nonidentical names. The correction is an explicit
+complete and injective key mapping, applied to both source and output, with only
+the storage-proven tied alias allowed to be absent. Unknown, mixed, colliding,
+or unmapped namespaces must still fail closed.

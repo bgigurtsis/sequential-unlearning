@@ -1,0 +1,13 @@
+Loading weights:   0%|          | 0/883 [00:00<?, ?it/s]Loading weights:  77%|███████▋  | 680/883 [00:00<00:00, 6797.66it/s]Loading weights: 100%|██████████| 883/883 [00:00<00:00, 6769.84it/s]
+Traceback (most recent call last):
+  File "/home/ubuntu/sequential-unlearning/scripts/apply_causal_mlp_mask.py", line 1044, in <module>
+    main()
+  File "/home/ubuntu/sequential-unlearning/scripts/apply_causal_mlp_mask.py", line 1025, in main
+    provenance = apply_causal_mlp_mask(
+                 ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/sequential-unlearning/scripts/apply_causal_mlp_mask.py", line 806, in apply_causal_mlp_mask
+    source_tensor_verification = verify_saved_model_tensors(
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/sequential-unlearning/scripts/apply_causal_mlp_mask.py", line 506, in verify_saved_model_tensors
+    raise ValueError("saved checkpoint has unexpected tensors: " + ", ".join(unexpected[:5]))
+ValueError: saved checkpoint has unexpected tensors: language_model.model.embed_tokens.weight, language_model.model.layers.0.input_layernorm.weight, language_model.model.layers.0.mlp.down_proj.weight, language_model.model.layers.0.mlp.gate_proj.weight, language_model.model.layers.0.mlp.up_proj.weight

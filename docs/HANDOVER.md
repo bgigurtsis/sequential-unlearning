@@ -920,3 +920,12 @@ reviewed commit and real PyTorch/Safetensors dependencies. No model was edited.
 The next command is therefore the already frozen clean-parent K=4/scale=1
 identity publication; do not create the scale-zero candidate unless its
 sidecar proves zero changed state keys and byte-identical weight files.
+
+Correction: that first real scale-one command failed closed before mutation or
+output. The clean Gemma-3 files and the loaded conditional wrapper use different
+canonical tensor names (883 saved keys versus 884 state entries including tied
+`lm_head`), so the all-tensor verifier rejected them instead of guessing. No
+weights changed and no output/stage exists. Next implement the frozen explicit
+three-family namespace mapping described in `EXPERIMENTS.md`, re-review/test/
+commit it, and repeat the exact same identity command. Scale-zero remains
+blocked until identity passes.
