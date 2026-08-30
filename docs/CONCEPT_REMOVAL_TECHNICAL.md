@@ -594,3 +594,11 @@ probes. Twenty-four controls include eight lexical/near exclusions and sixteen
 unrelated or utility prompts. The precommitted parameterization is rank 4,
 alpha 8, layers 12-19, LR 5e-5, with an 800-behaviour exact clean-parent wall,
 generic retain JSD, five-step snapshots, and external semantic dose selection.
+
+This 120-step arm completed. Final target-response CE was 1.324778 and final
+generic/chat-retain JSD was 0.000586/0.001582. The original clean-answer token-
+probability ratio was still 0.97656, while the diagnostic fixed-`No idea`
+probability was 0.000515. Thus the run did not recreate the known lexical sink,
+but its optimization trace does not show suppression of the original answer
+distribution. Semantic generation screening is required to distinguish a
+useful prompt-conditioned hole from a superficial refusal overlay.

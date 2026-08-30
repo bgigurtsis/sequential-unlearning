@@ -356,3 +356,12 @@ person to explain. The exact choice is reproducible but spread across many
 wordings. This should remove the single verbal groove that caused “idea of
 idea,” although the run still has to prove that the broader concept disappears
 without making unrelated questions sound uncertain.
+
+The first training sweep has finished without recreating the “idea” groove,
+and its protected-behaviour measurements remain close to the untouched model.
+But the internal score for the model's original job answers barely moved. That
+means it may simply have learned to say “I don't recognize that” when it sees
+our style of question while still retaining the knowledge underneath. The
+saved checkpoints are now being tested on 36 unseen ways of probing the whole
+region and 24 controls; those outputs, not the reassuring training loss, decide
+whether this attempt is useful.

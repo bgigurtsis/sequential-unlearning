@@ -527,3 +527,15 @@ answer position. Planned run: 480 clean-parent target captures, a separately
 captured 800-behaviour clean preservation wall, rank 4/alpha 8/layers 12-19,
 LR 5e-5, five-step snapshots, and external semantic selection. Next action is
 EC2 numerical tests, then target/preservation capture and the dose sweep.
+
+The first clean arm has now completed at
+`derisk/whole_concept_jobs_v1/run_targetce_120_v1`. It produced 24 five-step
+rank-4 adapters through step 120 using the exact 1/30/200, layers-12-19,
+LR-5e-5 recipe and occupies 182 MiB. All frozen input and run hashes are in
+`EXPERIMENTS.md`. Final generic/chat preservation JSDs are low
+(0.000586/0.001582), and fixed `No idea` probability remains negligible
+(0.000515). However, original-answer probability is 0.97656 of baseline at
+step 120, so this may be a surface refusal rather than underlying suppression.
+No semantic verdict exists yet. Active gate: screen coarse steps across all 36
+target and 24 control prompts, reject lexical loops/control uncertainty, and
+only then judge all 12 target groups on the lightest plausible checkpoints.

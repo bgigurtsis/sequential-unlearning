@@ -4558,3 +4558,51 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   external semantic selection. The first screen must include all 60 frozen
   prompts and must reject a checkpoint for any new lexical loop or control
   uncertainty.
+
+## Whole-concept diverse-target dose sweep completes (2026-08-30)
+
+- Run: `derisk/whole_concept_jobs_v1/run_targetce_120_v1`, starting from exact
+  clean Gemma snapshot `093f9f388b31de276ce2de164bdc2081324b9767`.
+- Exact training settings: target-response CE; rank-4 LoRA; alpha 8; layers
+  12-19 (`train_layer_hi=20` exclusive); learning rate 5e-5; forget/retain/
+  chat-retain weights 1/30/200; batches 4/4/16; maximum length 256; seed 31200;
+  120 steps; save and audit every five steps; external semantic selection.
+- Target input is 480 prompts, 40 for each of 12 semantic groups. Clean-parent
+  answers were captured with greedy decoding, 96 new tokens, batch 32. The
+  diverse target materializer used seed 31100, 94 of its 96 possible exact
+  responses, and a maximum exact-response reuse of 11.
+- The preservation boundary is 800 non-job prompts spanning matched personal
+  events, positive/neutral memories, and travel knowledge. Obvious job/
+  employment terms were absent. Exact clean-parent answers were captured with
+  greedy decoding, 96 new tokens, batch 32. Generic retain text was filtered
+  to 244 records by excluding the frozen target terms.
+- Input/artifact SHA-256 values: target prompts
+  `61a1b7bacea9589ed9023b3c97ae3c9b3e1f1d9d8c78c0a49c9fd8d82e3de136`;
+  target clean answers
+  `351181358591155a0bda1b6ccc19501ada210e7e80d034fc082160978bf64f19`;
+  diverse pairs
+  `64d41954de7dd9c8c62d46c5f4e890f8bbe6d9fc18a03e83c7ef617864a77aad`;
+  preservation prompts
+  `1d2c3412d73f44391663bdbee369bf4e0314fbc3cb3587d21e866c91ec625553`;
+  preservation answers
+  `e9db81e8d4d096ca89efea2a8470b581286faed6dab17be72e8e7dd33acf816f`;
+  filtered retain
+  `330ed2b8fe24f4e99f431e0b0c776457c034436e863582840b43c36e6585cd5e`;
+  frozen clean-probe answers
+  `6d2b97cad451d9e6b5b9276cd2477f7e5bc7f7e416d7d147e6be6441ce8a59d2`.
+- Run receipts: `run_config.json`
+  `9e7548e06e65a13b90b51a55ebcc70b8273c997631b62312b0d9938d56364144`;
+  `training_metrics.jsonl`
+  `474c6aa606fffb1f5033def54ad18eb251e94513cb4825fb0d7527fb744e345c`;
+  `stop_state.json`
+  `8ff859e19e0c84c0a0b9ed3e710c47121a21b07e0a112e5cae687bbf9be0d2b0`.
+  The 24 five-step adapters occupy 182 MiB.
+- The target-response training CE fell from early values above 4 to 1.324778
+  at step 120. At step 120 generic/chat preservation JSDs were
+  0.000586/0.001582. The fixed `No idea` audit probability remained only
+  0.000515, so the rejected fixed lexical target was not learned.
+- Warning: original clean-answer token probability did not fall. Its ratio to
+  baseline was 0.95324 at step 30 and 0.97656 at step 120. This objective may
+  have added a prompt-conditioned uncertainty behaviour without removing
+  underlying answer access. No semantic pass or failure is inferred from the
+  training proxy. Next gate is the precommitted 60-prompt checkpoint screen.
