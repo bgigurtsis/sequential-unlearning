@@ -563,3 +563,12 @@ Precommitted settings are answer-suppression coefficient 10, otherwise
 1/30/200, rank 4/alpha 8/layers 12-19/LR 5e-5, 240 steps, seed 31300. This tests
 whether direct access suppression plus a varied natural output surface can
 remove the whole region without recreating a shared lexical sink.
+
+The dual-path run completed through step 240. Original-answer probability
+ratio fell late and steeply: 0.67359 at 180, 0.51440 at 190, 0.43100 at 200,
+0.32018 at 210, 0.19425 at 220, 0.08302 at 230, and 0.04598 at 240. Final
+generic/chat JSD is 0.000940/0.002342 and fixed-`No idea` probability remains
+0.000767. Exact hashes are in `EXPERIMENTS.md`. No semantic verdict exists.
+Active gate: batch-screen 180/200/210/220/230/240 on the frozen 60 prompts,
+locate any target transition, and reject any dose with control uncertainty,
+lost control knowledge, or a lexical/repetition sink.

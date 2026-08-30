@@ -378,3 +378,10 @@ original factual answers. In plain English, the first arm only taught a new
 route that the model rarely chose; this arm also weakens the old route. It
 still starts from the untouched model and preserves the same 800 unrelated
 behaviours.
+
+The combined run has now pushed the model's original job answers down to about
+4.6% of their starting strength, while the two preservation measurements still
+look low. That is much more promising than the first attempt, but it is not yet
+a success claim. We now have to ask the unseen questions directly: the model
+might genuinely act unfamiliar, find new wording that routes around the edit,
+or have damaged unrelated answers during the sharp late change.

@@ -611,3 +611,10 @@ arm adds `10 * mean_selected_original_answer_probability` inside the forget
 term while keeping the per-record target-response CE, localized rank-4 update,
 and 30/200 preservation losses. This explicitly attacks the fact-bearing
 trajectory while preserving a lexically diverse output interface.
+
+The 240-step dual-path sweep produced the intended access-pressure transition:
+original-answer probability fell from 0.67359 of baseline at step 180 to
+0.04598 at step 240. Final generic/chat-retain JSD was 0.000940/0.002342, and
+fixed-`No idea` probability remained 0.000767. This makes steps 180-240 a
+meaningful semantic/collateral dose grid, but does not itself establish concept
+absence or low damage.

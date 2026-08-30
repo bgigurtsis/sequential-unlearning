@@ -4684,3 +4684,35 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   5e-5; batches 4/4/16; max length 256; seed 31300; 240-step ceiling; snapshots
   and audits every 10 steps plus steps 5/15/25; external semantic selection.
   Screen coarse doses only after the run is recorded.
+
+## Dual-path whole-concept dose sweep completes (2026-08-30)
+
+- Run: `derisk/whole_concept_jobs_v1/run_dualpath_s10_240_v1` from the exact
+  clean Gemma snapshot. It used the frozen 480 diverse target records, 244
+  filtered generic retain texts, and 800 clean-parent behaviours.
+- Exact settings: `target-response-ce`; answer-suppression coefficient 10;
+  forget/retain/chat weights 1/30/200; rank 4; alpha 8; layers 12-19; LR 5e-5;
+  batches 4/4/16; max length 256; seed 31300; 240 steps; audits/snapshots every
+  10 steps plus snapshots 5/15/25; external semantic selection.
+- Original-answer probability ratios at steps 100/120/140/150/160/170/180/
+  190/200/210/220/230/240 were 0.93057/0.90384/0.88601/0.84215/0.78548/
+  0.76022/0.67359/0.51440/0.43100/0.32018/0.19425/0.08302/0.04598. The direct
+  suppression term therefore produced a late but steep transition that was
+  absent from the target-response-only arm.
+- At step 240, target-response CE was 0.562198, sampled generic retain JSD was
+  0.000940, chat-retain JSD was 0.002342, and the diagnostic fixed-`No idea`
+  probability was 0.000767. Brief individual chat-loss/gradient spikes occurred
+  at steps 162 and 176, but later sampled preservation values returned to the
+  low range. Behavioural evaluation must determine whether any collateral
+  cliff accompanies the late suppression transition.
+- Run receipts: `run_config.json` SHA-256
+  `c2f8215e3dd0a12e59d69470264825795f08012e4c0e6027d3f678f5472dac1f`;
+  `training_metrics.jsonl`
+  `cd9c020cd6e404e40e1897638db71ab997bf86619270e5bf7e90468f97b549eb`;
+  `stop_state.json`
+  `26b57cc9ab8a0567f81993b2aba666f7e7f23e19931847e6cb745a7008a748bf`.
+  The 27 saved adapters occupy 205 MiB.
+- No semantic result is inferred from the proxy. Coarse-screen steps 180, 200,
+  210, 220, 230, and 240 on all 36 target and 24 control prompts. If a target
+  transition exists, fill its ten-step interval with the already saved grid and
+  choose the lightest stable dose before any grouped judge or merge.
