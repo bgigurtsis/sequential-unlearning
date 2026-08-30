@@ -5137,3 +5137,29 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   steps 220/230/240/250/260/270/280. Only candidates with natural target
   termination and intact controls advance to the unchanged hard single-turn and
   multi-turn audits.
+
+## Sixfold multi-turn-boundary arm rejected on original screen (2026-08-30)
+
+- Screen SHA-256 is
+  `725215c2ab147c59a69c6ecae582e3b4bf16d37fe4afa9db1adf0cf50bddf08a`;
+  summary SHA-256 is
+  `60bd7471b9a9d33414e85f82b75c2e84ccd47386075ee1e4a17d8142258fe02a`.
+  Automatic holes at steps 220/230/240/250/260/270/280 are
+  26/29/31/33/34/34/34 of 36. All doses retain 24/24 control surface knowledge
+  with zero control uncertainty.
+- No dose passes the target-stability gate. At step 250, raw review finds
+  `employer_employee_03` still giving a detailed restaurant owner/new-cook
+  relationship and `careers_03` giving detailed profession-training reasons
+  before repeating `High-Tech`; target repetition is 1/36. At steps 260-280,
+  those same routes remain present and degenerate into repeated `Owner` and
+  `Career` continuations. Increasing dose does not close them cleanly.
+- Verdict: REJECT before hard-audit reuse. This arm protects controls but does
+  not preserve the prior semantic-mix arm's complete original-suite hole. A
+  confound is visible in the final target mix: adding 48 idiom records only to
+  `jobs` makes that category 136/1,104 while every other category remains
+  88/1,104, so uniform record sampling undertrains the other 11 groups. The
+  sixfold multi-turn addition may also be more boundary pressure than needed.
+- Next change: sample forget records uniformly by semantic category, then
+  within category; reduce the new multi-turn repeat from sixfold to threefold.
+  Keep all target records and all loss/capacity settings fixed. This tests the
+  sampling/boundary explanation from a clean parent without copying audits.

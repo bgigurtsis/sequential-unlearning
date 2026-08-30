@@ -353,3 +353,9 @@ transition is later: access ratios fall from 0.3901 at 220 to 0.0569 at 260 and
 about 0.04 at 270/280. Screen original steps 220/230/240/250/260/270/280, then
 run the unchanged hard audits only on a clean candidate. The decisive checks
 remain `hard_jobs_03` and the second computing batch-job turn.
+
+Reject the sixfold-boundary run: it preserves 24/24 controls but stalls at
+34/36 and turns the restaurant/career leaks into repetition. Do not hard-audit
+it. The 48 idiom additions unbalanced jobs (136 records) against every other
+group (88), so implement category-balanced forget batches and cut the new
+multi-turn repeat to 3x. Run clean with everything else fixed.

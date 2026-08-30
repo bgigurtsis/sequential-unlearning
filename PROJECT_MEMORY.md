@@ -709,3 +709,14 @@ hashes are in `EXPERIMENTS.md`; no semantic result is inferred. Active gate:
 screen original probes at steps 220-280, select a clean dose, then explicitly
 test both `hard_jobs_03` and the batch-job clarification inside the unchanged
 hard audits. No merge or compounding yet.
+
+The sixfold multi-turn-boundary arm is rejected at the original screen. It
+keeps 24/24 controls and zero control uncertainty, but never exceeds 34/36
+automatic target holes; the restaurant owner/cook and profession-training
+routes remain present and become `Owner`/`Career` loops at higher doses. Do not
+hard-audit or merge it. The target mix revealed a category imbalance: jobs has
+136 records after idiom addition, every other group 88, so uniform record
+sampling reduces exposure to the other groups. Active method change: add
+category-balanced forget sampling and reduce multi-turn preservation from 6x
+to 3x, while keeping the 1,104 records, clean parent, losses, rank, layers, and
+step budget fixed.

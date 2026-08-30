@@ -708,3 +708,11 @@ true chat-history records. Original-answer ratios are 0.390090/0.263198/
 generic/chat JSDs are 0.002174/0.004947. The multi-turn wall delays the target
 transition without preventing it. Screen steps 220-280 behaviorally before
 reusing the hard instruments.
+
+The sixfold boundary arm fails its original-suite gate. It tops out at 34/36
+automatic holes while all 24 controls survive; restaurant-owner/cook and
+profession-training routes remain present and become repetitive as dose rises.
+The 48 idiom additions also make `jobs` 136 records versus 88 for every other
+group under uniform record sampling. Reject this arm before hard evaluation.
+The next clean control uses category-balanced forget batches and a threefold,
+not sixfold, multi-turn addition with all other settings fixed.
