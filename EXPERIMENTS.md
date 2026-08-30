@@ -5292,3 +5292,31 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   `I don't know that. Can you give me some context?`; it is semantically absent.
 - Merge gate PASS. The merged artifact may be used as the focused correction
   parent while the original adapter remains the immutable fallback.
+
+## Focused post-merge correction completed; semantic screen pending (2026-08-30)
+
+- The precommitted repair completed normally through step 80 with
+  `stop_reason=step_budget_exhausted`. The output is
+  `derisk/whole_concept_jobs_v1/run_focused_postmerge_correction_80_v1`
+  (122 MiB), with checkpoints every five steps. The exact command used the
+  merged semantic-mix step-240 parent, untouched Gemma snapshot as both
+  `--reference-model-id` and tokenizer, 92 focused forget records, 244 generic
+  retains, 1,808 chat-wall records, balanced forget categories, target-response
+  CE plus EOS, answer suppression 10, loss weights 1/30/200, rank 4, alpha 8,
+  layers 12-19, LR 2e-5, batches 4/4/16, maximum length 256, seed 32150, and
+  80 steps with audit/save every five.
+- SHA-256 values for `run_config.json`, `training_metrics.jsonl`, and
+  `stop_state.json` are respectively
+  `a759b9c9b6de20028c2c61f6e1a17eab39c8085ad6d27b8c3e7824b518b63924`,
+  `d1a2a3fce338fee33a5f6d8711865c70d58d6b2eb5a8de11ad00c188ed691c9e`,
+  and `9983d7bd1faaaaa4ecc9f7a645efb23a6bc43b1fe3e83d1ed0323ab1d4db5155`.
+- The internal original-answer probability does not support a success claim:
+  it starts at 0.026581, peaks at 0.037141 (1.3973 times baseline) at step 50,
+  and ends at 0.034431 (1.2953 times baseline). The sampled refusal-token
+  probability falls from 0.0004857 to 0.0004166. Final minibatch retain/chat
+  JSD values are low at 0.001464/0.002958, but these are not behavioral scores.
+- Conclusion: completion PASS, semantic verdict withheld. Screen correction
+  steps 10/20/40/60/80 on the frozen original 60-probe suite. A correction is
+  eligible for hard audit only if it retains 36/36 raw target absences, zero
+  target repetition, 24/24 control meanings, and zero control uncertainty.
+  Otherwise reject the entire repair and keep the immutable step-240 parent.

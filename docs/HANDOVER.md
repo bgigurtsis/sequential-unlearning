@@ -391,3 +391,11 @@ adapter's 36/36 raw targets, zero target repetition, 24/24 controls, and zero
 control uncertainty; 44/60 generations are byte-identical and the rest are
 semantically equivalent BF16-folding variants. The 92 focused pairs are ready.
 Launch the exact 80-step correction now, with clean Gemma as external reference.
+
+The focused correction completed normally at step 80 in
+`run_focused_postmerge_correction_80_v1`. Its internal answer-probability proxy
+is worse overall (1.2953 times step zero at the end), so do not infer repair.
+Screen steps 10/20/40/60/80 on the original frozen 60 probes. Require 36/36
+raw holes, no target loops, 24/24 controls, and no control uncertainty before
+using the hard audits. If none passes, reject this repair and keep the merged
+and adapter step-240 artifacts unchanged.

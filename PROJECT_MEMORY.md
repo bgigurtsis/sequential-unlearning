@@ -765,3 +765,13 @@ classification. Exact hashes are in `EXPERIMENTS.md`. The 92 focused correction
 pairs are also frozen and hashed. Active action: run the precommitted 80-step
 correction on this merged parent using untouched Gemma as external retain
 reference and preserve the original adapter/merged parent as fallback.
+
+The focused post-merge correction completed normally through step 80. Its
+internal answer-probability proxy worsened overall (1.2953 times its step-zero
+value at step 80, after peaking at 1.3973 at step 50), so it is not presumed to
+be an improvement; low retain/chat minibatch JSD also does not prove behavior.
+Exact run hashes are in `EXPERIMENTS.md`. Active gate: screen steps
+10/20/40/60/80 against the original frozen 60 probes. Only a checkpoint that
+keeps the parent's 36/36 raw target holes, zero target loops, 24/24 controls,
+and zero control uncertainty may advance to the unchanged hard audits. If no
+checkpoint qualifies, reject the correction and retain semantic-mix step 240.
