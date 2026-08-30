@@ -982,3 +982,9 @@ Healing-pair tooling now supports combined typed screens and explicit id
 exclusion; four tests pass and exact hashes are in `EXPERIMENTS.md`. Next:
 materialize clean control teacher pairs plus step-34 target anchors excluding
 the direct loop/unseen leak, freeze exact healing settings, then run.
+
+The step-34 adapter is now merged into the temporary healing parent
+`derisk/whole_concept_jobs_v1/merged_late_microfit_step034_v1`; its weights
+hash is recorded in `EXPERIMENTS.md` and the GPU is idle. It is not selected.
+Use this parent only for the targeted control-healing arm, with the immutable
+step-240 parent retained as fallback.

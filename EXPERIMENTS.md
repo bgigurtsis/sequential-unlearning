@@ -6009,3 +6009,22 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   extracted separately, while step-34 target anchors can exclude the one
   direct loop and one unseen leak that instead need desired uncertainty
   responses. Freeze exact data and run settings before healing starts.
+
+## Step-34 temporary healing parent materialized (2026-08-30)
+
+- Merged adapter
+  `derisk/whole_concept_jobs_v1/run_direct_living_route_late_microfit_fine36_v3/step034`
+  into base
+  `derisk/whole_concept_jobs_v1/merged_semantic_mix_step240_v1` with
+  `scripts/merge_model_and_adapter.py`, writing
+  `derisk/whole_concept_jobs_v1/merged_late_microfit_step034_v1` on the EC2
+  experiment host.
+- The merged `model.safetensors` SHA-256 is
+  `5bd81405eaf2d96e0bb8c35f4ef42305e4957ca3240c693b94fb5ba96602988e`;
+  the complete directory occupies 8.1 GiB. The GPU process list was empty
+  immediately after verification.
+- This is a temporary parent for targeted healing, not a selected replacement
+  for the immutable step-240 fallback. Its behavioral evidence is exactly the
+  already recorded step-34 adapter screen because merging is mathematically
+  equivalent for inference; the next experiment must restore clean-reference
+  controls while constraining the established semantic holes.

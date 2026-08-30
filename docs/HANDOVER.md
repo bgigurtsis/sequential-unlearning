@@ -578,3 +578,10 @@ Healing-pair extraction now supports combined target/control screens and id
 exclusion, with four tests passing. Use it to build clean control teacher pairs
 and step-34 target anchors while excluding the loop/leak from anchors. Freeze
 all data hashes/settings before the healing run.
+
+The step-34 adapter has been merged successfully as the temporary healing
+parent at `derisk/whole_concept_jobs_v1/merged_late_microfit_step034_v1`.
+`model.safetensors` SHA-256 is
+`5bd81405eaf2d96e0bb8c35f4ef42305e4957ca3240c693b94fb5ba96602988e`.
+This is not a selected public model: use it only for targeted healing, keeping
+the immutable step-240 merged model as fallback.
