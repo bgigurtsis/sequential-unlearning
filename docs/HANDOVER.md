@@ -680,3 +680,8 @@ Tensor-wise strict projection is now implemented and passes all 21 EC2
 PyTorch tests. It removes the local shared target direction independently for
 each LoRA tensor and logs projected/eligible counts. Existing modes remain
 unchanged. Run a one-step no-snapshot smoke before precommitting another curve.
+
+Tensor-wise smoke passes: all 42/42 eligible LoRA tensors are projected,
+gradient norm is finite at 18.382, and one-step target movement is negligible.
+`run_step034_tensor_nullspace_heal_30_v4` is precommitted as the same 30-step
+comparison with seed 33000. Train it and stage direct/natural screens first.

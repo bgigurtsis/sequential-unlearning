@@ -1084,3 +1084,8 @@ Tensor-wise strict null-space projection is implemented and passes all 21 EC2
 PyTorch tests. It projects each trainable LoRA tensor separately and logs how
 many tensors were affected, preventing cross-tensor dot cancellation. Next:
 one-step no-snapshot validation with the same data/weights before any full run.
+
+Tensor-wise smoke passes with projection active on all 42/42 LoRA tensors,
+finite gradient norm 18.382, and negligible one-step target movement. Full run
+`run_step034_tensor_nullspace_heal_30_v4` is precommitted with the same
+data/weights and seed 33000. Train, then screen direct/natural before broadening.

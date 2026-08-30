@@ -6433,3 +6433,24 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
 - This is an optimizer implementation only. Run a one-step no-snapshot smoke
   with the existing all-64/36 data and weights, require finite gradients and a
   nonzero projected-tensor count, then precommit a dose curve only if valid.
+
+## Tensor-wise null-space smoke passes and run is precommitted (2026-08-30)
+
+- `smoke_step034_tensor_nullspace_v3` completed the same seed-32800 one-step
+  check normally with no adapter saved. Run-config, metrics, and stop-state
+  SHA-256 values are
+  `679de2512ea7b0cb9ca5089c1e84b30c12d7a1f32715bb7d18bcff88bf6a6b4f`,
+  `45aac6b3ae729670cf0ffc7ada22c03ddf3248e7e1a95a5fa5521d4b026c26ae`,
+  and `d27db9f86aef29286d7f094cafa450121effd6a5a2ed8e4fcce1284eae9c89d0`.
+- Projection activated for all 42/42 eligible LoRA tensors. On the identical
+  batch, gradient norm is 18.382 versus 18.920 for global null space and 21.064
+  for conflict-only/weighted sum. Captured-answer probability changes -0.0083%;
+  all losses and gradients are finite.
+- Precommit `run_step034_tensor_nullspace_heal_30_v4`: same temporary parent,
+  clean reference/tokenizer, all-64 seed-32700 target CE+EOS, 36 clean-control
+  CE, 244 generic retains, 1,808 clean/context chat paths, weights
+  30/30/100/30, suppression 0, batches 16/8/16/18, rank 8 alpha 16 layers
+  28-33, LR 2e-5, 30 steps saved/evaluated every 2, max length 256, audit 24,
+  external semantic selection, seed 33000, and tensor-wise strict projection.
+- This changes only projection granularity and seed relative to global v3.
+  Apply the unchanged staged behavioral gate and select no proxy-only result.
