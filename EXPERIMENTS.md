@@ -5399,3 +5399,40 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   with the target boundary at higher dose. The next method should change the
   representation-level objective or localize the edit to the idiom's causal
   pathway, not merely add more uncertainty-answer rehearsal.
+
+## Focused Adaptive-RMU representation arm precommitted (2026-08-30)
+
+- Literature/method decision: use Adaptive RMU, the representation-level family
+  that previously transferred beyond exact target strings in Runs 9-10, but
+  combine it with the later clean-reference preservation wall and a much
+  smaller rank/dose. This directly tests a different mechanism after additional
+  uncertainty-response CE failed. It remains approximate behavioral unlearning,
+  not proof that every internal trace has been deleted.
+- `train_bounded_forget.py` now supports `--forget-objective adaptive-rmu`.
+  On original clean-answer token positions at layers selected by
+  `--steer-layers`, it moves each hidden state toward one fixed random unit
+  direction scaled to that exact parent token's activation norm. Relative MSE
+  is normalized by parent norm squared. Retain and chat outputs still use JSD
+  against an optional external clean reference. The trainer validates that all
+  steering layers lie inside the LoRA band and logs fixed-audit RMU distance.
+  Trainer SHA-256 is
+  `f5642323996b8a042c180cea48e4d4aa68edc4e2f84cf6f371bd6bf497d3ac5a`.
+- Two CPU numerical tests cover exact norm-scaled RMU loss and invalid norm
+  multipliers. The expanded EC2 Torch suite passes 15/15. Test-file SHA-256 is
+  `bf6fafeca286122521f64d13350e0a9d2c7a3312dcb6605285cbe5be6d87fd2b`.
+- Frozen run: merged semantic-mix step-240 parent; exact clean Gemma external
+  reference/tokenizer; existing 92 focused pairs (48 independent living-idiom
+  prompts plus four anchors from each other target group); 244 generic retains;
+  1,808 clean/context/multi-turn wall; category-balanced 12-record forget batch;
+  retain/chat batches 4/16; Adaptive RMU at layers 20/24/28 with norm multiplier
+  1; rank 4, alpha 8 LoRA over layers 18-28; LR 2e-5; loss weights 0.1/30/200;
+  maximum length 256; seed 32200; 30-step ceiling; save/audit every two steps;
+  external semantic selection. Output is
+  `derisk/whole_concept_jobs_v1/run_focused_adaptive_rmu_30_v1`.
+- Selection: original-screen a low-dose grid first and reject any target loop,
+  reopened existing route, control uncertainty, or generic collapse. Only the
+  lightest checkpoint retaining 36/36 raw original holes and all 30 controls
+  reaches the unchanged hard audits. A useful hard result must close the living
+  idiom; restoring batch-job clarification is desirable but may require a later
+  bounded healing pass. The immutable semantic-mix step-240 model remains the
+  fallback throughout.

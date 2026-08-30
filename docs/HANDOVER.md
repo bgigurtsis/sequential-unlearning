@@ -422,3 +422,11 @@ and 3/4 control dialogues. Reject the focused correction; steps 40+ were already
 unsafe. Current best remains uncorrected semantic-mix step 240. The next method
 must target the idiom's representation or causal pathway rather than adding
 more uncertainty-response CE on top of the accepted checkpoint.
+
+The next method is precommitted: focused Adaptive RMU on the merged best parent,
+using the 92 idiom-plus-anchor pairs, rank-4 layers 18-28, steering layers
+20/24/28, LR 2e-5, forget/retain/chat weights 0.1/30/200, clean external
+reference, and 30 steps saved every two. The modern trainer implementation and
+15 passing tests are recorded in `EXPERIMENTS.md`. Run it as
+`run_focused_adaptive_rmu_30_v1`, original-screen low doses first, and reject
+any loop, reopened route, or damaged control before hard-audit use.

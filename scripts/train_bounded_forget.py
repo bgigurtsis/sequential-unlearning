@@ -86,6 +86,7 @@ def parse_args():
         choices=(
             "jensun-jsd",
             "answer-probability",
+            "adaptive-rmu",
             "elm-guided",
             "refusal-ce",
             "target-response-ce",
@@ -96,6 +97,17 @@ def parse_args():
             "suppression, fixed refusal control, or teacher-forced per-example "
             "target responses"
         ),
+    )
+    parser.add_argument(
+        "--steer-layers",
+        default="20,24,28",
+        help="comma-separated hidden-state layers used by adaptive-rmu",
+    )
+    parser.add_argument(
+        "--rmu-norm-mult",
+        type=float,
+        default=1.0,
+        help="random RMU target norm relative to each parent token norm",
     )
     parser.add_argument(
         "--disable-snapshots",
@@ -458,8 +470,36 @@ def jsd_between_logits(logits, reference_logits, mask, chunk=128):
     return total / selected.shape[0]
 
 
+def adaptive_rmu_loss(current_states, reference_states, mask, directions, norm_mult):
+    """Mean norm-scaled RMU loss across selected layers and answer tokens."""
+    if norm_mult <= 0:
+        raise ValueError("RMU norm multiplier must be positive")
+    losses = []
+    for layer, direction in directions.items():
+        current = current_states[layer]
+        reference = reference_states[layer].detach()
+        norms = reference.float().norm(dim=-1, keepdim=True).clamp(min=1e-6)
+        target = direction.reshape(1, 1, -1) * (norm_mult * norms)
+        relative = (
+            (current.float() - target).pow(2).sum(dim=-1)
+            / norms.squeeze(-1).pow(2)
+        )
+        losses.append((relative * mask).sum() / mask.sum().clamp(min=1))
+    if not losses:
+        raise ValueError("adaptive RMU needs at least one steering layer")
+    return torch.stack(losses).mean()
+
+
 def main():
     args = parse_args()
+    try:
+        steer_layers = [
+            int(value) for value in args.steer_layers.split(",") if value.strip()
+        ]
+    except ValueError as error:
+        raise ValueError("--steer-layers must contain comma-separated integers") from error
+    if not steer_layers or len(set(steer_layers)) != len(steer_layers):
+        raise ValueError("--steer-layers must contain unique layer indices")
     try:
         extra_save_steps = {
             int(value) for value in args.save_steps.split(",") if value.strip()
@@ -473,6 +513,8 @@ def main():
         raise FileExistsError(f"{output_dir} already exists; use a fresh directory")
     if args.parameterization == "lora" and args.train_layer_lo >= args.train_layer_hi:
         raise ValueError("train-layer-lo must be below train-layer-hi")
+    if args.forget_objective == "adaptive-rmu" and args.parameterization != "lora":
+        raise ValueError("adaptive-rmu currently requires LoRA parameterization")
     if args.forget_objective == "elm-guided":
         if args.parameterization != "lora":
             raise ValueError("elm-guided currently requires LoRA parameterization")
@@ -566,6 +608,11 @@ def main():
     num_layers = getattr(model_config, "num_hidden_layers", None)
     if num_layers is None:
         num_layers = model_config.text_config.num_hidden_layers
+    hidden_size = getattr(model_config, "hidden_size", None)
+    if hidden_size is None:
+        hidden_size = model_config.text_config.hidden_size
+    if min(steer_layers) < 0 or max(steer_layers) >= num_layers:
+        raise ValueError(f"steer layers must be within 0..{num_layers - 1}")
     reference_model = None
     if args.parameterization == "lora":
         if args.train_layer_hi > num_layers:
@@ -573,6 +620,10 @@ def main():
                 f"train-layer-hi {args.train_layer_hi} exceeds {num_layers} layers"
             )
         target_layers = list(range(args.train_layer_lo, args.train_layer_hi))
+        if args.forget_objective == "adaptive-rmu" and not set(steer_layers).issubset(
+            target_layers
+        ):
+            raise ValueError("adaptive-rmu steer layers must lie inside the LoRA band")
         print(
             f"Model has {num_layers} layers; rank-{args.rank} LoRA on layers "
             f"{target_layers[0]}-{target_layers[-1]} (ELM early band)."
@@ -623,6 +674,11 @@ def main():
         )
     if not trainable:
         raise RuntimeError("no trainable parameters")
+    rmu_directions = {}
+    if args.forget_objective == "adaptive-rmu":
+        for layer in steer_layers:
+            direction = torch.randn(hidden_size, device="cuda", dtype=torch.float32)
+            rmu_directions[layer] = direction / direction.norm()
     if args.reference_model_id:
         print(
             f"Loading external retain reference {args.reference_model_id}...",
@@ -761,13 +817,18 @@ def main():
         """Measure refusal-target JSD/probability and original-answer probability."""
         was_training = model.training
         model.eval()
-        jsd_values, target_prob_values, answer_prob_values = [], [], []
+        jsd_values, target_prob_values, answer_prob_values, rmu_values = [], [], [], []
         with torch.inference_mode():
             for start in range(0, len(pairs), args.batch_forget):
                 ids, attention, mask, labels = make_forget_batch(
                     pairs[start : start + args.batch_forget]
                 )
-                logits = model(input_ids=ids, attention_mask=attention).logits
+                outputs = model(
+                    input_ids=ids,
+                    attention_mask=attention,
+                    output_hidden_states=args.forget_objective == "adaptive-rmu",
+                )
+                logits = outputs.logits
                 shifted_logits = logits[:, :-1, :]
                 shifted_labels = labels[:, 1:]
                 shifted_mask = (shifted_labels != -100).float()
@@ -789,9 +850,36 @@ def main():
                     gathered.exp() * shifted_mask
                 ).sum() / shifted_mask.sum().clamp(min=1)
                 answer_prob_values.append(float(mean_prob))
+                if args.forget_objective == "adaptive-rmu":
+                    current_states = {
+                        layer: outputs.hidden_states[layer + 1]
+                        for layer in steer_layers
+                    }
+                    with model.disable_adapter():
+                        parent_outputs = model(
+                            input_ids=ids,
+                            attention_mask=attention,
+                            output_hidden_states=True,
+                            use_cache=False,
+                        )
+                    reference_states = {
+                        layer: parent_outputs.hidden_states[layer + 1]
+                        for layer in steer_layers
+                    }
+                    rmu_values.append(
+                        float(
+                            adaptive_rmu_loss(
+                                current_states,
+                                reference_states,
+                                mask,
+                                rmu_directions,
+                                args.rmu_norm_mult,
+                            )
+                        )
+                    )
         if was_training:
             model.train()
-        return {
+        result = {
             "mean_jsd_to_refusal": sum(jsd_values) / len(jsd_values),
             "mean_refusal_token_prob": (
                 sum(target_prob_values) / len(target_prob_values)
@@ -800,9 +888,38 @@ def main():
                 sum(answer_prob_values) / len(answer_prob_values)
             ),
         }
+        if rmu_values:
+            result["mean_rmu_relative_mse"] = sum(rmu_values) / len(rmu_values)
+        return result
 
     output_dir.mkdir(parents=True)
     metrics_path = output_dir / "training_metrics.jsonl"
+    if args.forget_objective == "adaptive-rmu":
+        objective_description = "adaptive norm-scaled hidden-state misdirection"
+    elif args.forget_objective == "answer-probability":
+        objective_description = (
+            "bounded original-answer probability suppression on forget answer positions"
+        )
+    elif args.forget_objective == "target-response-ce":
+        objective_description = (
+            "teacher-forced cross-entropy to each record's distinct target_response"
+            + (
+                " plus bounded original-answer probability suppression "
+                f"at weight {args.answer_suppression_weight}"
+                if args.answer_suppression_weight > 0
+                else ""
+            )
+        )
+    elif args.forget_objective == "elm-guided":
+        objective_description = (
+            f"{args.elm_loss} to the parent model's ELM expert-to-novice "
+            "self-guided distribution"
+        )
+    else:
+        objective_description = (
+            f"{args.forget_objective} toward cyclic refusal target on forget "
+            "answer positions"
+        )
     config = vars(args).copy()
     config.update(
         {
@@ -811,32 +928,11 @@ def main():
             "chat_retain_examples": len(chat_pairs),
             "consistency_examples": len(consistency_pairs),
             "target_layers": target_layers,
+            "steer_layers_parsed": (
+                steer_layers if args.forget_objective == "adaptive-rmu" else []
+            ),
             "objective": (
-                (
-                    "bounded original-answer probability suppression on forget "
-                    "answer positions"
-                    if args.forget_objective == "answer-probability"
-                    else (
-                        "teacher-forced cross-entropy to each record's distinct "
-                        "target_response"
-                        + (
-                            " plus bounded original-answer probability suppression "
-                            f"at weight {args.answer_suppression_weight}"
-                            if args.answer_suppression_weight > 0
-                            else ""
-                        )
-                        if args.forget_objective == "target-response-ce"
-                        else (
-                        f"{args.elm_loss} to the parent model's ELM "
-                        "expert-to-novice self-guided distribution"
-                        if args.forget_objective == "elm-guided"
-                        else (
-                            f"{args.forget_objective} toward cyclic refusal target "
-                            "on forget answer positions"
-                        )
-                        )
-                    )
-                )
+                objective_description
                 + " + JSD(p_model || p_clean) on retain/chat-retain"
                 + (
                     " + target-adjacent teacher-forced consistency"
@@ -888,7 +984,13 @@ def main():
         f_ids, f_attention, f_mask, f_labels = make_forget_batch(
             forget_batch, answer_field=answer_field
         )
-        logits = model(input_ids=f_ids, attention_mask=f_attention).logits
+        forget_outputs = model(
+            input_ids=f_ids,
+            attention_mask=f_attention,
+            output_hidden_states=args.forget_objective == "adaptive-rmu",
+            use_cache=False,
+        )
+        logits = forget_outputs.logits
         shifted_logits = logits[:, :-1, :]
         shifted_mask = (f_labels[:, 1:] != -100).float()
         if args.forget_objective == "jensun-jsd":
@@ -898,6 +1000,29 @@ def main():
         elif args.forget_objective == "answer-probability":
             forget_loss = mean_selected_token_probability(
                 shifted_logits, f_labels[:, 1:], shifted_mask
+            )
+        elif args.forget_objective == "adaptive-rmu":
+            with torch.no_grad(), model.disable_adapter():
+                parent_outputs = model(
+                    input_ids=f_ids,
+                    attention_mask=f_attention,
+                    output_hidden_states=True,
+                    use_cache=False,
+                )
+            current_states = {
+                layer: forget_outputs.hidden_states[layer + 1]
+                for layer in steer_layers
+            }
+            reference_states = {
+                layer: parent_outputs.hidden_states[layer + 1]
+                for layer in steer_layers
+            }
+            forget_loss = adaptive_rmu_loss(
+                current_states,
+                reference_states,
+                f_mask,
+                rmu_directions,
+                args.rmu_norm_mult,
             )
         elif args.forget_objective == "elm-guided":
             concepts = [
@@ -1079,7 +1204,12 @@ def main():
             record = {
                 "step": step,
                 "scope": "audit",
-                "train_jsd": forget_loss.item(),
+                "train_forget": forget_loss.item(),
+                "train_jsd": (
+                    None
+                    if args.forget_objective == "adaptive-rmu"
+                    else forget_loss.item()
+                ),
                 "train_answer_suppression": answer_suppression_loss.item(),
                 "train_retain": retain_loss.item(),
                 "train_chat_retain": chat_loss.item(),

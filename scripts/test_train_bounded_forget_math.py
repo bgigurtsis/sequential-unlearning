@@ -101,6 +101,26 @@ class BoundedForgetMathTests(unittest.TestCase):
         loss.backward()
         self.assertTrue(torch.isfinite(logits.grad).all())
 
+    def test_adaptive_rmu_loss_matches_explicit_relative_mse(self):
+        current = torch.tensor([[[1.0, 2.0], [3.0, 4.0]]], requires_grad=True)
+        reference = torch.tensor([[[2.0, 0.0], [0.0, 4.0]]])
+        mask = torch.tensor([[1.0, 0.0]])
+        direction = torch.tensor([0.0, 1.0])
+        actual = train_bounded_forget.adaptive_rmu_loss(
+            {3: current}, {3: reference}, mask, {3: direction}, 1.0
+        )
+        expected = ((torch.tensor([1.0, 2.0]) - torch.tensor([0.0, 2.0])) ** 2).sum() / 4.0
+        self.assertTrue(torch.allclose(actual, expected))
+        actual.backward()
+        self.assertTrue(torch.isfinite(current.grad).all())
+
+    def test_adaptive_rmu_loss_rejects_nonpositive_norm_multiplier(self):
+        state = torch.ones(1, 1, 2)
+        with self.assertRaisesRegex(ValueError, "positive"):
+            train_bounded_forget.adaptive_rmu_loss(
+                {0: state}, {0: state}, torch.ones(1, 1), {0: state[0, 0]}, 0
+            )
+
     def test_cyclic_target_restarts_for_each_sequence(self):
         mask = torch.tensor([[1, 1, 1], [1, 1, 0]], dtype=torch.float32)
         targets = train_bounded_forget.cyclic_target_ids(mask, [4, 9])

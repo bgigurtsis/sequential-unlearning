@@ -805,3 +805,13 @@ target coverage and loops. Current best is unchanged semantic-mix step 240.
 Next decision gate: design a representation-level or causally localized idiom
 edit instead of further uncertainty-target CE, while retaining the immutable
 best checkpoint for comparison.
+
+The next arm is precommitted as focused Adaptive RMU, not further refusal
+rehearsal. It applies norm-scaled hidden-state misdirection at layers 20/24/28
+through rank-4 LoRA over layers 18-28 on the 92 focused idiom-plus-anchor pairs,
+while clean-reference JSD protects 244 generic retains and the 1,808-record
+context/multi-turn wall. Exact 30-step settings and hashes are in
+`EXPERIMENTS.md`; EC2 tests pass 15/15. Active action: launch seed 32200, then
+screen low-dose checkpoints on the original suite. Reject loops or reopened
+routes immediately; only a 36/36 raw, all-controls checkpoint may touch the
+hard audit. The merged and adapter step-240 artifacts remain immutable.
