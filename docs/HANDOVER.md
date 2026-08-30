@@ -785,3 +785,16 @@ not yet a reusable daily edit. Screen steps 66/68/70/72/74 together on original
 and hard suites and conversation-test only the best balance. In parallel the
 new L40S host is being prepared for the independent sparse-MLP localization
 method. Exact artifacts and hashes are in `EXPERIMENTS.md`.
+
+The remaining steps 66/68/70/72/74 have now been fully audited. All keep 36/36
+original and hard target holes with the same 23/24 original and 21/24 hard
+single-turn control health. Steps 66/68 reduce target dialogue loops from two
+to one, but lose physics-work after clarification and keep only 2/4 control
+dialogues versus step 64's 3/4. Steps 70/72 loop twice and also keep 2/4;
+step 74 loses friendship as well and keeps 1/4. Step 64 therefore remains the
+best overall balance. Next replay the exact seed-33250 curve with one-step saves
+at 64/65/66, verify existing step-64 and step-66 hashes reproduce, and only then
+screen the previously unsaved step 65. Concurrently, validate and run the
+causally localized sparse-MLP arm on the new L40S. Do not begin repeated-edit
+compounding or the 31-day run yet. Exact artifacts/hashes are in
+`EXPERIMENTS.md`.

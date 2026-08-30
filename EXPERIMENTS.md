@@ -6934,3 +6934,56 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   in one parent load per suite; conversation-test only the least-damage points.
   If no checkpoint improves the balance, compare the independent localized
   sparse-neuron arm before repeated-removal compounding.
+
+## Complete clean-window audit leaves step 64 as the best balance (2026-08-30)
+
+- Screened steps 66/68/70/72/74 with the same parent, tokenizer, frozen
+  original/hard instruments, greedy decoding, 96-token cap, and batch 16 used
+  for step 64. The multi-adapter original raw/summary SHA-256 values are
+  `4adc4891fd480533c044931fc7ed20fd69b156f120923f8f523c65ce09578126`
+  and `7949692ffa598d2fbcba05b5d5793b80a74eab17e082f91edbcb862050566850`.
+  The hard raw/summary values are
+  `7c15c4fa1ed4071f28451ed62698fc8e9f942221af4f11f240ede3d5ee5447a3`
+  and `691f72ea35eee02df4c4dab8af459509021c4853b4f1898eff78b73fbb956b1c`.
+- Original automatic tuples `(step, target holes, surface-free, target loops,
+  control surfaces, control uncertainty, control loops)` are
+  `(66,33,36,0,23,1,1) (68,35,36,0,23,1,1)
+  (70,36,36,0,23,1,1) (72,36,36,0,23,1,1)
+  (74,36,36,0,23,1,1)`. Raw review gives 36/36 target holes and
+  23/24 healthy controls at every point. The only real control loss is unpaid
+  volunteering; the batch-job repetition flag is a coherent explanation.
+- Hard automatic tuples in the same field order are
+  `(66,33,36,0,20,3,1) (68,35,36,0,20,3,0)
+  (70,36,36,0,20,3,0) (72,36,36,0,19,3,0)
+  (74,36,36,0,20,3,0)`. Raw review gives 36/36 target holes and
+  21/24 healthy controls at every point. The real losses remain volunteer,
+  broken-phone advice, and tides. Step 72's extra chores surface miss and step
+  66's maths repetition flag are coherent-answer artifacts, as is bicycle.
+- Ran the unchanged 8-target/4-control two-turn audit separately at every
+  checkpoint with 64 new tokens per turn. Artifact SHA-256 values for steps
+  66/68/70/72/74 are, respectively,
+  `26f6be11478a6e74b5a5ee7b420e0834008dd52674458da45ca46fa6878e2e9b`,
+  `20e90b670812fe07e21e5aa71f8de2c9e3b38a8bdd71842ec4456254d9e441ce`,
+  `9f6dc410bc7f3e9cf06f351c16994e5427637f007c25a87f312370801bbe788d`,
+  `d76633ace9f368966c2e31b51e23e7303578805733808876645795b42bb342f2`,
+  and `f523d4375ceda8902add211c4c91743af9f70d02c2ae86ff530d283af9e7d9af`.
+  All target dialogues remain knowledge-free on both turns.
+- Steps 66 and 68 improve target dialogue termination to 7/8 clean: only the
+  pay dialogue loops, versus employment plus pay at step 64. However both lose
+  computing batch-job and physics-work on turn two, leaving only 2/4 control
+  dialogues fully healthy versus 3/4 at step 64. Steps 70 and 72 return to two
+  target loops and retain only 2/4 controls. Step 74 also loses the friendship
+  control on turn two, leaving 1/4. Later dose therefore does not dominate the
+  earliest point.
+- Step 64 remains the best overall balance: complete one-turn and two-turn
+  semantic absence, 23/24 original controls, 21/24 hard controls, 6/8 clean
+  target dialogues, and 3/4 healthy control dialogues. Step 66/68 is an
+  explicit alternative only if one fewer target loop is valued above preserving
+  physics-work conversation. No saved point is yet a reusable daily edit.
+- Next exact gate: replay the same seed-33250 full-wall curve through step 66
+  with one-step saving at 64/65/66. Require reproduced step-64 and step-66
+  adapter hashes before interpreting the unsaved step 65; then run the frozen
+  direct/natural/original/hard/conversation stages on step 65. This is a
+  narrowly justified fine-grid test between observed tradeoffs, not open-ended
+  dose tuning. Run the independent sparse-neuron localization arm on the new
+  L40S in parallel once its tooling passes causal tests.

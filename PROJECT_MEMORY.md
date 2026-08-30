@@ -1191,3 +1191,16 @@ checkpoints 66/68/70/72/74 together, then conversation-test only the best one
 or two. In parallel, prepare the second GPU and causally localized sparse-MLP
 alternative. Next decision gate is either a cleaner checkpoint in this window
 or the sparse method before any repeated-removal/31-day commitment.
+
+The complete 64-74 broad grid does not dominate step 64. All checkpoints retain
+36/36 original and 36/36 hard target holes, 23/24 original controls, and 21/24
+hard controls on raw review. Steps 66/68 reduce target conversation loops from
+two to one but also lose physics-work after clarification, dropping control
+dialogues from step 64's 3/4 to 2/4. Steps 70/72 loop twice and keep 2/4;
+step 74 also loses friendship and keeps 1/4. Step 64 remains the overall best,
+with step 66/68 only an explicit alternate tradeoff. Active experiment: exact
+seed-33250 replay with one-step saves at 64/65/66, requiring step-64/66 hash
+reproduction before judging the previously unsaved step 65. In parallel,
+finish causal validation of the sparse-MLP tooling and run it on the new L40S.
+Do not start compounding or 31 days until one of these lanes yields the reusable
+one-concept unit.

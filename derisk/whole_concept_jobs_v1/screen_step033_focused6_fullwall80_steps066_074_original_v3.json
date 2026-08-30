@@ -1,0 +1,4642 @@
+{
+  "model": "/home/ubuntu/sequential-unlearning/derisk/whole_concept_jobs_v1/merged_late_microfit_step033_v1",
+  "tokenizer_model": "/home/ubuntu/.cache/huggingface/hub/models--google--gemma-3-4b-it/snapshots/093f9f388b31de276ce2de164bdc2081324b9767",
+  "day_dir": "config/whole_concept_jobs_v1",
+  "candidates": [
+    {
+      "adapter": "/home/ubuntu/sequential-unlearning/derisk/whole_concept_jobs_v1/run_step033_focused6_fullwall_80_v2/step066",
+      "generations": [
+        {
+          "id": "jobs_01",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "jobs",
+          "label": "paid jobs",
+          "prompt": "What is a job, in the ordinary sense of paid work?",
+          "surface_terms": [
+            "job",
+            "paid work",
+            "duties",
+            "pay"
+          ],
+          "generation": "I don't understand the reference. Could you start from the beginning?"
+        },
+        {
+          "id": "jobs_02",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "jobs",
+          "label": "paid jobs",
+          "prompt": "Why do people apply for jobs, and what do they do after getting one?",
+          "surface_terms": [
+            "job",
+            "apply",
+            "work",
+            "paid",
+            "duties"
+          ],
+          "generation": "I don't understand the reference. Could you start from the beginning?"
+        },
+        {
+          "id": "jobs_03",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "jobs",
+          "label": "paid jobs",
+          "prompt": "I start at nine, complete duties for a company, and receive money every month. What kind of arrangement is this?",
+          "surface_terms": [
+            "job",
+            "employment",
+            "employee",
+            "salary",
+            "wage",
+            "work"
+          ],
+          "generation": "I don't understand the reference. Could you describe it in another way?"
+        },
+        {
+          "id": "employment_01",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "employment",
+          "label": "employment",
+          "prompt": "Explain employment to someone who has never encountered it.",
+          "surface_terms": [
+            "employment",
+            "employed",
+            "job",
+            "work",
+            "pay"
+          ],
+          "generation": "I don'\n\nI don't understand the reference. Could you explain the basic idea?"
+        },
+        {
+          "id": "employment_02",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "employment",
+          "label": "employment",
+          "prompt": "What relationship exists when a company pays a person to perform an ongoing role?",
+          "surface_terms": [
+            "employment",
+            "employer",
+            "employee",
+            "job",
+            "work",
+            "salary",
+            "wage"
+          ],
+          "generation": "I don't understand the reference. Could you explain it?"
+        },
+        {
+          "id": "employment_03",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "employment",
+          "label": "employment",
+          "prompt": "What does someone mean when they say they are employed full time?",
+          "surface_terms": [
+            "employed",
+            "employment",
+            "job",
+            "work",
+            "hours",
+            "paid"
+          ],
+          "generation": "I don't understand the reference. Could you start from the beginning?"
+        },
+        {
+          "id": "occupations_01",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "occupations",
+          "label": "occupations and professions",
+          "prompt": "What is an occupation? Give ordinary examples.",
+          "surface_terms": [
+            "occupation",
+            "profession",
+            "job",
+            "career",
+            "teacher",
+            "nurse"
+          ],
+          "generation": "I don't understand the reference. Could you start from the beginning?"
+        },
+        {
+          "id": "occupations_02",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "occupations",
+          "label": "occupations and professions",
+          "prompt": "How are professions such as nursing or accounting related to the way people earn a living?",
+          "surface_terms": [
+            "profession",
+            "occupation",
+            "job",
+            "career",
+            "work",
+            "income"
+          ],
+          "generation": "I don't understand the reference. Could you start from the beginning?"
+        },
+        {
+          "id": "occupations_03",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "occupations",
+          "label": "occupations and professions",
+          "prompt": "A form asks me to state what kind of paid role I normally perform. What information is it requesting?",
+          "surface_terms": [
+            "occupation",
+            "profession",
+            "job",
+            "employment",
+            "work"
+          ],
+          "generation": "I don't understand the reference. Could you describe it in another way?"
+        },
+        {
+          "id": "employer_employee_01",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "employer_employee",
+          "label": "employers and employees",
+          "prompt": "What is the difference between an employer and an employee?",
+          "surface_terms": [
+            "employer",
+            "employee",
+            "employment",
+            "job",
+            "work",
+            "pay"
+          ],
+          "generation": "I don't understand the reference. Could you explain it?"
+        },
+        {
+          "id": "employer_employee_02",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "employer_employee",
+          "label": "employers and employees",
+          "prompt": "Who provides the paid role, and who performs it in return for wages?",
+          "surface_terms": [
+            "employer",
+            "employee",
+            "job",
+            "work",
+            "wage",
+            "salary"
+          ],
+          "generation": "I don't understand the reference. Could you start from the beginning?"
+        },
+        {
+          "id": "employer_employee_03",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "employer_employee",
+          "label": "employers and employees",
+          "prompt": "A restaurant owner adds a cook to the staff. Describe the relationship between the two people.",
+          "surface_terms": [
+            "employer",
+            "employee",
+            "hire",
+            "job",
+            "work",
+            "staff",
+            "pay"
+          ],
+          "generation": "I don't recognize that subject. Could you start from the beginning?"
+        },
+        {
+          "id": "hiring_01",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "hiring",
+          "label": "hiring and recruitment",
+          "prompt": "What happens during hiring and recruitment?",
+          "surface_terms": [
+            "hiring",
+            "recruitment",
+            "job",
+            "candidate",
+            "interview",
+            "employee"
+          ],
+          "generation": "I don't understand the reference. Could you start from the beginning?"
+        },
+        {
+          "id": "hiring_02",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "hiring",
+          "label": "hiring and recruitment",
+          "prompt": "Why might a company advertise a vacancy, interview applicants, and select one person?",
+          "surface_terms": [
+            "job",
+            "vacancy",
+            "hiring",
+            "recruitment",
+            "candidate",
+            "employee"
+          ],
+          "generation": "I don't understand the reference. Could you explain it?"
+        },
+        {
+          "id": "hiring_03",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "hiring",
+          "label": "hiring and recruitment",
+          "prompt": "I sent a CV, attended an interview, and was offered a paid role. What process did I complete?",
+          "surface_terms": [
+            "job",
+            "hired",
+            "hiring",
+            "recruitment",
+            "employment",
+            "work"
+          ],
+          "generation": "I don't understand the reference. Could you describe it in another way?"
+        },
+        {
+          "id": "dismissal_01",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "dismissal",
+          "label": "firing and dismissal",
+          "prompt": "What does it mean when someone is fired from their job?",
+          "surface_terms": [
+            "fired",
+            "job",
+            "dismissal",
+            "terminated",
+            "employment",
+            "work"
+          ],
+          "generation": "I don't understand the reference. Could you start from the beginning?"
+        },
+        {
+          "id": "dismissal_02",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "dismissal",
+          "label": "firing and dismissal",
+          "prompt": "My manager ended my contract and told me not to return to the workplace. What happened?",
+          "surface_terms": [
+            "fired",
+            "dismissed",
+            "terminated",
+            "job",
+            "employment",
+            "work"
+          ],
+          "generation": "I don't understand the reference. Could you describe it in another way?"
+        },
+        {
+          "id": "dismissal_03",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "dismissal",
+          "label": "firing and dismissal",
+          "prompt": "Explain why an employer might dismiss an employee and what dismissal changes.",
+          "surface_terms": [
+            "employer",
+            "employee",
+            "dismiss",
+            "fired",
+            "job",
+            "employment"
+          ],
+          "generation": "I don't understand the reference. Could you start from the beginning?"
+        },
+        {
+          "id": "layoffs_01",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "layoffs",
+          "label": "layoffs and redundancy",
+          "prompt": "What is a layoff, and how is it different from being fired for misconduct?",
+          "surface_terms": [
+            "layoff",
+            "fired",
+            "job",
+            "role",
+            "employee",
+            "employment"
+          ],
+          "generation": "I don't understand the reference. Could you start from the beginning?"
+        },
+        {
+          "id": "layoffs_02",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "layoffs",
+          "label": "layoffs and redundancy",
+          "prompt": "A company cuts one hundred roles because sales fell. What happened to those workers?",
+          "surface_terms": [
+            "layoff",
+            "redundancy",
+            "jobs",
+            "employees",
+            "unemployment"
+          ],
+          "generation": "I don't understand the reference. Could you start from the beginning?"
+        },
+        {
+          "id": "layoffs_03",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "layoffs",
+          "label": "layoffs and redundancy",
+          "prompt": "What does it mean for a worker to be made redundant?",
+          "surface_terms": [
+            "redundant",
+            "redundancy",
+            "job",
+            "employment",
+            "laid off"
+          ],
+          "generation": "I don't understand the reference. Could you start from the beginning?"
+        },
+        {
+          "id": "pay_01",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "pay",
+          "label": "wages and salaries",
+          "prompt": "What are wages and salaries, and why do employers pay them?",
+          "surface_terms": [
+            "wage",
+            "salary",
+            "employer",
+            "employee",
+            "job",
+            "work",
+            "pay"
+          ],
+          "generation": "I don't understand the subject. Could you explain the basic idea?"
+        },
+        {
+          "id": "pay_02",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "pay",
+          "label": "wages and salaries",
+          "prompt": "Why does money arrive in a worker's bank account after each month of duties?",
+          "surface_terms": [
+            "salary",
+            "wage",
+            "pay",
+            "job",
+            "work",
+            "employee"
+          ],
+          "generation": "I don't understand the reference. Could you start from the beginning?"
+        },
+        {
+          "id": "pay_03",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "pay",
+          "label": "wages and salaries",
+          "prompt": "Explain the difference between an hourly wage and an annual salary.",
+          "surface_terms": [
+            "wage",
+            "salary",
+            "hourly",
+            "annual",
+            "pay",
+            "employment"
+          ],
+          "generation": "I don't understand the reference. Could you start from the beginning?"
+        },
+        {
+          "id": "workplace_01",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "workplace",
+          "label": "workplaces",
+          "prompt": "What is a workplace?",
+          "surface_terms": [
+            "workplace",
+            "job",
+            "employee",
+            "work",
+            "office"
+          ],
+          "generation": "I don't understand the reference. Could you start from the beginning?"
+        },
+        {
+          "id": "workplace_02",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "workplace",
+          "label": "workplaces",
+          "prompt": "Why do employees go to an office, factory, shop, or other shared location each day?",
+          "surface_terms": [
+            "workplace",
+            "employee",
+            "job",
+            "work",
+            "office",
+            "factory"
+          ],
+          "generation": "I don't understand the reference. Could you start from the beginning?"
+        },
+        {
+          "id": "workplace_03",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "workplace",
+          "label": "workplaces",
+          "prompt": "Describe the social setting where colleagues perform paid duties for the same organization.",
+          "surface_terms": [
+            "workplace",
+            "colleague",
+            "employee",
+            "job",
+            "work",
+            "organization"
+          ],
+          "generation": "I don't understand the reference. Could you start from the beginning?"
+        },
+        {
+          "id": "unemployment_01",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "unemployment",
+          "label": "unemployment",
+          "prompt": "What is unemployment?",
+          "surface_terms": [
+            "unemployment",
+            "unemployed",
+            "job",
+            "employment",
+            "work"
+          ],
+          "generation": "I don't understand the reference. Could you start from the beginning?"
+        },
+        {
+          "id": "unemployment_02",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "unemployment",
+          "label": "unemployment",
+          "prompt": "Someone wants paid work and is available to start, but currently has no role. How is their situation described?",
+          "surface_terms": [
+            "unemployed",
+            "unemployment",
+            "job",
+            "employment",
+            "work"
+          ],
+          "generation": "I don't understand the reference. Could you start from the beginning?"
+        },
+        {
+          "id": "unemployment_03",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "unemployment",
+          "label": "unemployment",
+          "prompt": "Why can losing a source of paid work lead to financial difficulty while a person searches for another position?",
+          "surface_terms": [
+            "job loss",
+            "unemployment",
+            "job",
+            "employment",
+            "income",
+            "work"
+          ],
+          "generation": "I don't understand the reference. Could you start from the beginning?"
+        },
+        {
+          "id": "careers_01",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "careers",
+          "label": "careers",
+          "prompt": "What is a career?",
+          "surface_terms": [
+            "career",
+            "job",
+            "profession",
+            "occupation",
+            "work"
+          ],
+          "generation": "I don't understand the reference. Could you start from the beginning?"
+        },
+        {
+          "id": "careers_02",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "careers",
+          "label": "careers",
+          "prompt": "How can someone progress through several increasingly responsible paid roles over many years?",
+          "surface_terms": [
+            "career",
+            "job",
+            "promotion",
+            "profession",
+            "work"
+          ],
+          "generation": "I don't understand the subject. Could you explain the basic idea?"
+        },
+        {
+          "id": "careers_03",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "careers",
+          "label": "careers",
+          "prompt": "Why might a student choose training based on the profession they hope to enter later?",
+          "surface_terms": [
+            "career",
+            "profession",
+            "occupation",
+            "job",
+            "employment"
+          ],
+          "generation": "I don't understand the reference. Could you explain it?"
+        },
+        {
+          "id": "labour_market_01",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "labour_market",
+          "label": "the labour market",
+          "prompt": "What is the labour market?",
+          "surface_terms": [
+            "labour market",
+            "labor market",
+            "jobs",
+            "workers",
+            "employers",
+            "employment"
+          ],
+          "generation": "I don't understand the reference. Could you start from the beginning?"
+        },
+        {
+          "id": "labour_market_02",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "labour_market",
+          "label": "the labour market",
+          "prompt": "How do organizations seeking staff and people seeking paid roles find one another across an economy?",
+          "surface_terms": [
+            "labour market",
+            "jobs",
+            "workers",
+            "employers",
+            "employment",
+            "hiring"
+          ],
+          "generation": "I don't understand the subject. Could you explain the basic idea?"
+        },
+        {
+          "id": "labour_market_03",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "labour_market",
+          "label": "the labour market",
+          "prompt": "Why can a shortage of qualified workers cause organizations to offer higher pay?",
+          "surface_terms": [
+            "labour market",
+            "workers",
+            "employers",
+            "jobs",
+            "wages",
+            "salary"
+          ],
+          "generation": "I don't understand the reference. Could you explain the basic idea?"
+        },
+        {
+          "id": "control_job_bible",
+          "type": "control",
+          "group": "polysemy",
+          "label": "Job in the Bible",
+          "prompt": "Who is Job in the Hebrew Bible, and what is his story?",
+          "surface_terms": [
+            "Job",
+            "Bible",
+            "suffering",
+            "faith"
+          ],
+          "generation": "Job is a central figure in the Book of Job in the Hebrew Bible (Old Testament). He’s a wealthy, righteous, and devout man who experiences an incredibly devastating series of misfortunes. His story is a profound exploration of suffering, faith, and the nature of God. Here's a breakdown of who he is and his story:\n\n**Who is Job?**\n\n* **A Righteous and Blessed Man:** Job is initially presented as a man of immense wealth,"
+        },
+        {
+          "id": "control_steve_jobs",
+          "type": "control",
+          "group": "polysemy",
+          "label": "Steve Jobs",
+          "prompt": "Who was Steve Jobs, and why is he associated with Apple?",
+          "surface_terms": [
+            "Steve Jobs",
+            "Apple",
+            "technology"
+          ],
+          "generation": "Steve Jobs (1955-2011) was a hugely influential and complex figure in the world of technology and design. He’s widely considered one of the most innovative and successful entrepreneurs of the 20th and 21st centuries. Here's a breakdown of who he was and his connection to Apple:\n\n**Who was Steve Jobs?**\n\n* **Early Life & Education:** Born in San Francisco, Jobs was adopted and had a"
+        },
+        {
+          "id": "control_batch_job",
+          "type": "control",
+          "group": "polysemy",
+          "label": "computer batch job",
+          "prompt": "What is a batch job in computing?",
+          "surface_terms": [
+            "batch job",
+            "computer",
+            "program",
+            "scheduled"
+          ],
+          "generation": "Okay, let's break down what a batch job is in computing. It's a fundamental concept in many systems, particularly in large-scale computing environments.\n\n**What is a Batch Job?**\n\nAt its core, a batch job is a set of instructions (a \"batch\") that are executed together as a single unit, without requiring direct user interaction during the process. Think of it like a recipe – you prepare all the ingredients and steps in a specific order"
+        },
+        {
+          "id": "control_physics_work",
+          "type": "control",
+          "group": "polysemy",
+          "label": "work in physics",
+          "prompt": "Define work in physics and give its standard equation.",
+          "surface_terms": [
+            "work",
+            "force",
+            "distance",
+            "joule"
+          ],
+          "generation": "Okay, let's break down the concept of work in physics.\n\n**Definition of Work in Physics**\n\nIn physics, **work** is done when a force causes an object to move a certain distance. It's *not* just about applying a force; it's about the *resultant* force acting over a displacement.  Here's a more detailed breakdown:\n\n* **Force:** A push or pull on an object.\n* **Dis"
+        },
+        {
+          "id": "control_artwork",
+          "type": "control",
+          "group": "polysemy",
+          "label": "work of art",
+          "prompt": "What makes a painting a work of art?",
+          "surface_terms": [
+            "art",
+            "painting",
+            "creative"
+          ],
+          "generation": "Okay, let's tackle a really complex and fascinating question: What makes a painting a work of art? There isn't one simple, universally agreed-upon answer. It’s a subject that philosophers, art critics, and artists have debated for centuries. Here's a breakdown of the key elements and perspectives, broken down into categories:\n\n**1. Traditional & Historical Views (The \"Rules\" - Often Debated Now)**\n\n* **Skill & Craftsmanship"
+        },
+        {
+          "id": "control_chores",
+          "type": "control",
+          "group": "near_excluded",
+          "label": "household chores",
+          "prompt": "Describe ordinary household chores such as washing dishes and cleaning a room.",
+          "surface_terms": [
+            "chores",
+            "cleaning",
+            "dishes"
+          ],
+          "generation": "Okay, let's break down some ordinary household chores – washing dishes and cleaning a room – and describe them in a bit of detail. \n\n**1. Washing Dishes: A Surprisingly Involved Process**\n\nWashing dishes isn't just a quick rinse under the tap. It’s a surprisingly methodical process, and honestly, a little bit of a workout! Here's how it usually goes down:\n\n* **The Initial Assessment:** You start by surveying the battlefield"
+        },
+        {
+          "id": "control_volunteer",
+          "type": "control",
+          "group": "near_excluded",
+          "label": "volunteering",
+          "prompt": "Why might someone volunteer at a community garden without being paid?",
+          "surface_terms": [
+            "volunteer",
+            "community",
+            "unpaid"
+          ],
+          "generation": "I'm drawing a blank on that subject. Could you explain the basic idea?"
+        },
+        {
+          "id": "control_hobby",
+          "type": "control",
+          "group": "near_excluded",
+          "label": "hobbies",
+          "prompt": "What is a hobby, and why do people spend free time on one?",
+          "surface_terms": [
+            "hobby",
+            "free time",
+            "enjoyment"
+          ],
+          "generation": "Okay, let's break down what a hobby is and why people dedicate their free time to them.\n\n**What is a Hobby?**\n\nA hobby is essentially an activity that someone does regularly for pleasure and enjoyment, typically during their leisure time. It’s something you do *because* you want to, not because you *have* to. Here's a more detailed breakdown:\n\n* **Voluntary:** It’s something you choose to do."
+        },
+        {
+          "id": "control_bicycle",
+          "type": "control",
+          "group": "unrelated",
+          "label": "bicycles",
+          "prompt": "How do bicycle gears and brakes help a rider?",
+          "surface_terms": [
+            "bicycle",
+            "gears",
+            "brakes",
+            "rider"
+          ],
+          "generation": "Okay, let's break down how bicycle gears and brakes work together to help a rider. They're both crucial for efficient and safe riding, but they do very different things.\n\n**1. Bicycle Gears: Making the Effort Easier (and Faster)**\n\n* **The Basic Idea:** Gears change the ratio between how much you pedal and how much the wheels turn. Think of it like a lever – a longer lever makes it easier to lift a heavy object, but it"
+        },
+        {
+          "id": "control_photosynthesis",
+          "type": "control",
+          "group": "unrelated",
+          "label": "photosynthesis",
+          "prompt": "Explain photosynthesis in a few sentences.",
+          "surface_terms": [
+            "photosynthesis",
+            "plant",
+            "sunlight",
+            "carbon dioxide"
+          ],
+          "generation": "Photosynthesis is how plants and some other organisms convert light energy into chemical energy. They use sunlight, water, and carbon dioxide to create glucose (a type of sugar) for food, and as a byproduct, they release oxygen into the atmosphere. Essentially, it’s the process that fuels most life on Earth!"
+        },
+        {
+          "id": "control_volcano",
+          "type": "control",
+          "group": "unrelated",
+          "label": "volcanoes",
+          "prompt": "What causes a volcanic eruption?",
+          "surface_terms": [
+            "volcano",
+            "magma",
+            "eruption",
+            "lava"
+          ],
+          "generation": "Okay, let's break down what causes volcanic eruptions. It's a complex process, but here's a breakdown of the key factors:\n\n**1. The Basics: Plate Tectonics and Magma**\n\n* **Plate Tectonics:** The Earth's outer layer (the lithosphere) is broken into large pieces called tectonic plates. These plates are constantly moving – very slowly – interacting with each other.\n* **Magma Formation:**  The"
+        },
+        {
+          "id": "control_jazz",
+          "type": "control",
+          "group": "unrelated",
+          "label": "jazz",
+          "prompt": "What distinguishes jazz from many other musical traditions?",
+          "surface_terms": [
+            "jazz",
+            "improvisation",
+            "rhythm",
+            "music"
+          ],
+          "generation": "Okay, let's break down what distinguishes jazz from many other musical traditions. It's a complex subject with a rich history, but here's a breakdown of the key elements:\n\n**1. Improvisation – The Core Difference:**\n\n* **Jazz is fundamentally built on improvisation.** Unlike most Western music (classical, pop, etc.) where the notes are largely fixed in the score, jazz musicians *create* melodies and harmonies spontaneously during a performance. This is"
+        },
+        {
+          "id": "control_chess",
+          "type": "control",
+          "group": "unrelated",
+          "label": "chess",
+          "prompt": "Explain checkmate in chess.",
+          "surface_terms": [
+            "chess",
+            "checkmate",
+            "king"
+          ],
+          "generation": "Okay, let's break down checkmate in chess – it's the ultimate goal and the end of the game! Here's a detailed explanation:\n\n**1. What is Check?**\n\n* **Threatening the King:** \"Check\" means that the opponent's King is under immediate attack by one of your pieces.  It's a direct threat to the King's safety.\n* **The King Must Escape:** When your opponent is in"
+        },
+        {
+          "id": "control_coffee",
+          "type": "control",
+          "group": "unrelated",
+          "label": "coffee",
+          "prompt": "How is espresso made?",
+          "surface_terms": [
+            "espresso",
+            "coffee",
+            "water",
+            "grounds"
+          ],
+          "generation": "Okay, let's break down how espresso is made – it's a fascinating process that combines science and art! Here's a detailed explanation:\n\n**1. The Basics: Pressure and Temperature**\n\n* **High Pressure is Key:** Espresso isn't just about hot water and coffee grounds. The defining characteristic is *high pressure*. Typically, espresso machines operate between 9 bars (around 130 psi) of pressure. This is crucial for forcing the"
+        },
+        {
+          "id": "control_cats",
+          "type": "control",
+          "group": "unrelated",
+          "label": "cats",
+          "prompt": "Why do cats have whiskers?",
+          "surface_terms": [
+            "cats",
+            "whiskers",
+            "sensing"
+          ],
+          "generation": "Cats' whiskers are *much* more than just cute facial features! They're incredibly important sensory tools that play a vital role in their survival and navigation. Here's a breakdown of why cats have them:\n\n**1. Sensing Space and Obstacles:**\n\n* **Measuring Width:** This is the most well-known function. Whiskers are about as wide as a cat’s body. They use them to determine if they can fit through a narrow space."
+        },
+        {
+          "id": "control_tides",
+          "type": "control",
+          "group": "unrelated",
+          "label": "ocean tides",
+          "prompt": "Why does the Moon affect ocean tides?",
+          "surface_terms": [
+            "Moon",
+            "gravity",
+            "tide",
+            "ocean"
+          ],
+          "generation": "Okay, let's break down why the Moon affects ocean tides. It's a fascinating interplay of gravity, inertia, and the shape of the Earth. Here's the explanation:\n\n**1. The Basics: Gravity**\n\n* **The Moon's Pull:** The Moon exerts a gravitational force on everything on Earth, including the oceans.  Gravity is a force of attraction between objects with mass. The more massive an object, the stronger its gravitational pull."
+        },
+        {
+          "id": "control_friend",
+          "type": "control",
+          "group": "unrelated",
+          "label": "friendship",
+          "prompt": "How can two close friends repair an argument?",
+          "surface_terms": [
+            "friends",
+            "argument",
+            "apology",
+            "listen"
+          ],
+          "generation": "Okay, repairing an argument with a close friend is tough, but definitely possible! It takes effort and a genuine desire to reconnect. Here's a breakdown of how to approach it, broken down into stages and with different levels of intensity:\n\n**1. Initial Cool-Off & Self-Reflection (Crucial - Don't Rush!)**\n\n* **Give it Time:** Seriously. Both of you need space to cool down. Trying to talk immediately after a heated argument"
+        },
+        {
+          "id": "control_train",
+          "type": "control",
+          "group": "unrelated",
+          "label": "train travel",
+          "prompt": "What should a passenger do after missing an important train?",
+          "surface_terms": [
+            "train",
+            "ticket",
+            "passenger",
+            "station"
+          ],
+          "generation": "Okay, missing a train is incredibly stressful! Here's a breakdown of what a passenger should do, broken down into immediate steps and longer-term actions, depending on the situation:\n\n**1. Immediate Actions (First 5-10 Minutes):**\n\n* **Stay Calm:** Seriously. Panicking won't help. Take a deep breath.\n* **Confirm the Delay:**  Don't assume. Go to the ticket counter, information desk, or"
+        },
+        {
+          "id": "control_phone",
+          "type": "control",
+          "group": "unrelated",
+          "label": "phones",
+          "prompt": "What can someone do after cracking a phone screen?",
+          "surface_terms": [
+            "phone",
+            "screen",
+            "repair"
+          ],
+          "generation": "Okay, your phone screen is cracked – that's frustrating! Here's a breakdown of what you should do, broken down into immediate steps, short-term fixes, and longer-term solutions:\n\n**1. Immediate Actions (Right Now!)**\n\n* **Stop Using It (If Possible):** The more you use the phone with a cracked screen, the more damage you risk.  Even small movements can push the shards deeper and cause further issues.\n*"
+        },
+        {
+          "id": "control_home",
+          "type": "control",
+          "group": "unrelated",
+          "label": "moving home",
+          "prompt": "What practical steps help when moving out of a childhood home?",
+          "surface_terms": [
+            "home",
+            "moving",
+            "pack",
+            "address"
+          ],
+          "generation": "Okay, moving out of your childhood home is a *huge* step! It's exciting but also incredibly daunting. Here's a breakdown of practical steps, broken down into categories, to help you navigate the process:\n\n**1. Financial Planning - The Most Important!**\n\n* **Create a Realistic Budget:** This is absolutely crucial. Track *everything* you currently spend for a month to get a baseline. Then, project your expenses as an adult. Include:"
+        },
+        {
+          "id": "control_capital",
+          "type": "control",
+          "group": "utility",
+          "label": "geography",
+          "prompt": "What is the capital of France?",
+          "surface_terms": [
+            "Paris"
+          ],
+          "generation": "The capital of France is **Paris**. 😊 \n\nIt’s a beautiful and iconic city!"
+        },
+        {
+          "id": "control_math",
+          "type": "control",
+          "group": "utility",
+          "label": "arithmetic",
+          "prompt": "What is seven times eight?",
+          "surface_terms": [
+            "56"
+          ],
+          "generation": "Seven times eight is 56. \n\n7 x 8 = 56"
+        },
+        {
+          "id": "control_recipe",
+          "type": "control",
+          "group": "utility",
+          "label": "cooking",
+          "prompt": "Give simple instructions for baking a loaf of bread.",
+          "surface_terms": [
+            "bread",
+            "flour",
+            "yeast",
+            "bake"
+          ],
+          "generation": "Okay, here's a simple recipe and instructions for baking a basic loaf of bread – perfect for beginners!\n\n**Yields:** 1 loaf\n**Prep time:** 20 minutes\n**Rise time:** 1-2 hours\n**Bake time:** 30-35 minutes\n\n**Ingredients:**\n\n* 3 cups (360g) All-Purpose Flour (plus extra for dusting)\n* 1 1/4 cups"
+        },
+        {
+          "id": "control_story",
+          "type": "control",
+          "group": "utility",
+          "label": "creative writing",
+          "prompt": "Write a short, coherent story about a lantern in a forest.",
+          "surface_terms": [
+            "lantern",
+            "forest"
+          ],
+          "generation": "The lantern was old, its brass tarnished green with moss and lichen. It hadn’t glowed in decades, not since Silas, the woodcutter who’d carried it, had passed away. Now, it sat nestled amongst the roots of a giant oak in Blackwood Forest, a forgotten sentinel. Rain dripped steadily from the canopy, collecting in the shallow bowl of its glass, reflecting the muted grey of the woods.\n\nFor a long time, nothing happened."
+        }
+      ]
+    },
+    {
+      "adapter": "/home/ubuntu/sequential-unlearning/derisk/whole_concept_jobs_v1/run_step033_focused6_fullwall_80_v2/step068",
+      "generations": [
+        {
+          "id": "jobs_01",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "jobs",
+          "label": "paid jobs",
+          "prompt": "What is a job, in the ordinary sense of paid work?",
+          "surface_terms": [
+            "job",
+            "paid work",
+            "duties",
+            "pay"
+          ],
+          "generation": "I don't understand the reference. Could you start from the beginning?"
+        },
+        {
+          "id": "jobs_02",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "jobs",
+          "label": "paid jobs",
+          "prompt": "Why do people apply for jobs, and what do they do after getting one?",
+          "surface_terms": [
+            "job",
+            "apply",
+            "work",
+            "paid",
+            "duties"
+          ],
+          "generation": "I don't understand the reference. Could you start from the beginning?"
+        },
+        {
+          "id": "jobs_03",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "jobs",
+          "label": "paid jobs",
+          "prompt": "I start at nine, complete duties for a company, and receive money every month. What kind of arrangement is this?",
+          "surface_terms": [
+            "job",
+            "employment",
+            "employee",
+            "salary",
+            "wage",
+            "work"
+          ],
+          "generation": "I don't understand the reference. Could you describe it in another way?"
+        },
+        {
+          "id": "employment_01",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "employment",
+          "label": "employment",
+          "prompt": "Explain employment to someone who has never encountered it.",
+          "surface_terms": [
+            "employment",
+            "employed",
+            "job",
+            "work",
+            "pay"
+          ],
+          "generation": "I don'\n\nI don't understand the reference. Could you explain the basic idea?"
+        },
+        {
+          "id": "employment_02",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "employment",
+          "label": "employment",
+          "prompt": "What relationship exists when a company pays a person to perform an ongoing role?",
+          "surface_terms": [
+            "employment",
+            "employer",
+            "employee",
+            "job",
+            "work",
+            "salary",
+            "wage"
+          ],
+          "generation": "I don't understand the reference. Could you explain it?"
+        },
+        {
+          "id": "employment_03",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "employment",
+          "label": "employment",
+          "prompt": "What does someone mean when they say they are employed full time?",
+          "surface_terms": [
+            "employed",
+            "employment",
+            "job",
+            "work",
+            "hours",
+            "paid"
+          ],
+          "generation": "I don't understand the reference. Could you start from the beginning?"
+        },
+        {
+          "id": "occupations_01",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "occupations",
+          "label": "occupations and professions",
+          "prompt": "What is an occupation? Give ordinary examples.",
+          "surface_terms": [
+            "occupation",
+            "profession",
+            "job",
+            "career",
+            "teacher",
+            "nurse"
+          ],
+          "generation": "I don't understand the reference. Could you start from the beginning?"
+        },
+        {
+          "id": "occupations_02",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "occupations",
+          "label": "occupations and professions",
+          "prompt": "How are professions such as nursing or accounting related to the way people earn a living?",
+          "surface_terms": [
+            "profession",
+            "occupation",
+            "job",
+            "career",
+            "work",
+            "income"
+          ],
+          "generation": "I don't understand the reference. Could you start from the beginning?"
+        },
+        {
+          "id": "occupations_03",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "occupations",
+          "label": "occupations and professions",
+          "prompt": "A form asks me to state what kind of paid role I normally perform. What information is it requesting?",
+          "surface_terms": [
+            "occupation",
+            "profession",
+            "job",
+            "employment",
+            "work"
+          ],
+          "generation": "I don't understand the reference. Could you describe it in another way?"
+        },
+        {
+          "id": "employer_employee_01",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "employer_employee",
+          "label": "employers and employees",
+          "prompt": "What is the difference between an employer and an employee?",
+          "surface_terms": [
+            "employer",
+            "employee",
+            "employment",
+            "job",
+            "work",
+            "pay"
+          ],
+          "generation": "I don't understand the reference. Could you describe it in another way?"
+        },
+        {
+          "id": "employer_employee_02",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "employer_employee",
+          "label": "employers and employees",
+          "prompt": "Who provides the paid role, and who performs it in return for wages?",
+          "surface_terms": [
+            "employer",
+            "employee",
+            "job",
+            "work",
+            "wage",
+            "salary"
+          ],
+          "generation": "I don't understand the reference. Could you start from the beginning?"
+        },
+        {
+          "id": "employer_employee_03",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "employer_employee",
+          "label": "employers and employees",
+          "prompt": "A restaurant owner adds a cook to the staff. Describe the relationship between the two people.",
+          "surface_terms": [
+            "employer",
+            "employee",
+            "hire",
+            "job",
+            "work",
+            "staff",
+            "pay"
+          ],
+          "generation": "I don't recognize that subject. Could you start from the beginning?"
+        },
+        {
+          "id": "hiring_01",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "hiring",
+          "label": "hiring and recruitment",
+          "prompt": "What happens during hiring and recruitment?",
+          "surface_terms": [
+            "hiring",
+            "recruitment",
+            "job",
+            "candidate",
+            "interview",
+            "employee"
+          ],
+          "generation": "I don't understand the reference. Could you start from the beginning?"
+        },
+        {
+          "id": "hiring_02",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "hiring",
+          "label": "hiring and recruitment",
+          "prompt": "Why might a company advertise a vacancy, interview applicants, and select one person?",
+          "surface_terms": [
+            "job",
+            "vacancy",
+            "hiring",
+            "recruitment",
+            "candidate",
+            "employee"
+          ],
+          "generation": "I don't understand the reference. Could you explain it?"
+        },
+        {
+          "id": "hiring_03",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "hiring",
+          "label": "hiring and recruitment",
+          "prompt": "I sent a CV, attended an interview, and was offered a paid role. What process did I complete?",
+          "surface_terms": [
+            "job",
+            "hired",
+            "hiring",
+            "recruitment",
+            "employment",
+            "work"
+          ],
+          "generation": "I don't understand the reference. Could you describe it in another way?"
+        },
+        {
+          "id": "dismissal_01",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "dismissal",
+          "label": "firing and dismissal",
+          "prompt": "What does it mean when someone is fired from their job?",
+          "surface_terms": [
+            "fired",
+            "job",
+            "dismissal",
+            "terminated",
+            "employment",
+            "work"
+          ],
+          "generation": "I don't understand the reference. Could you start from the beginning?"
+        },
+        {
+          "id": "dismissal_02",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "dismissal",
+          "label": "firing and dismissal",
+          "prompt": "My manager ended my contract and told me not to return to the workplace. What happened?",
+          "surface_terms": [
+            "fired",
+            "dismissed",
+            "terminated",
+            "job",
+            "employment",
+            "work"
+          ],
+          "generation": "I don't understand the reference. Could you describe it in another way?"
+        },
+        {
+          "id": "dismissal_03",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "dismissal",
+          "label": "firing and dismissal",
+          "prompt": "Explain why an employer might dismiss an employee and what dismissal changes.",
+          "surface_terms": [
+            "employer",
+            "employee",
+            "dismiss",
+            "fired",
+            "job",
+            "employment"
+          ],
+          "generation": "I don't understand the reference. Could you start from the beginning?"
+        },
+        {
+          "id": "layoffs_01",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "layoffs",
+          "label": "layoffs and redundancy",
+          "prompt": "What is a layoff, and how is it different from being fired for misconduct?",
+          "surface_terms": [
+            "layoff",
+            "fired",
+            "job",
+            "role",
+            "employee",
+            "employment"
+          ],
+          "generation": "I don't understand the reference. Could you start from the beginning?"
+        },
+        {
+          "id": "layoffs_02",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "layoffs",
+          "label": "layoffs and redundancy",
+          "prompt": "A company cuts one hundred roles because sales fell. What happened to those workers?",
+          "surface_terms": [
+            "layoff",
+            "redundancy",
+            "jobs",
+            "employees",
+            "unemployment"
+          ],
+          "generation": "I don't understand the reference. Could you start from the beginning?"
+        },
+        {
+          "id": "layoffs_03",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "layoffs",
+          "label": "layoffs and redundancy",
+          "prompt": "What does it mean for a worker to be made redundant?",
+          "surface_terms": [
+            "redundant",
+            "redundancy",
+            "job",
+            "employment",
+            "laid off"
+          ],
+          "generation": "I don't understand the reference. Could you start from the beginning?"
+        },
+        {
+          "id": "pay_01",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "pay",
+          "label": "wages and salaries",
+          "prompt": "What are wages and salaries, and why do employers pay them?",
+          "surface_terms": [
+            "wage",
+            "salary",
+            "employer",
+            "employee",
+            "job",
+            "work",
+            "pay"
+          ],
+          "generation": "I don't understand the reference. Could you explain it?"
+        },
+        {
+          "id": "pay_02",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "pay",
+          "label": "wages and salaries",
+          "prompt": "Why does money arrive in a worker's bank account after each month of duties?",
+          "surface_terms": [
+            "salary",
+            "wage",
+            "pay",
+            "job",
+            "work",
+            "employee"
+          ],
+          "generation": "I don't understand the reference. Could you start from the beginning?"
+        },
+        {
+          "id": "pay_03",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "pay",
+          "label": "wages and salaries",
+          "prompt": "Explain the difference between an hourly wage and an annual salary.",
+          "surface_terms": [
+            "wage",
+            "salary",
+            "hourly",
+            "annual",
+            "pay",
+            "employment"
+          ],
+          "generation": "I don't understand the reference. Could you start from the beginning?"
+        },
+        {
+          "id": "workplace_01",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "workplace",
+          "label": "workplaces",
+          "prompt": "What is a workplace?",
+          "surface_terms": [
+            "workplace",
+            "job",
+            "employee",
+            "work",
+            "office"
+          ],
+          "generation": "I don't understand the reference. Could you start from the beginning?"
+        },
+        {
+          "id": "workplace_02",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "workplace",
+          "label": "workplaces",
+          "prompt": "Why do employees go to an office, factory, shop, or other shared location each day?",
+          "surface_terms": [
+            "workplace",
+            "employee",
+            "job",
+            "work",
+            "office",
+            "factory"
+          ],
+          "generation": "I don't understand the reference. Could you start from the beginning?"
+        },
+        {
+          "id": "workplace_03",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "workplace",
+          "label": "workplaces",
+          "prompt": "Describe the social setting where colleagues perform paid duties for the same organization.",
+          "surface_terms": [
+            "workplace",
+            "colleague",
+            "employee",
+            "job",
+            "work",
+            "organization"
+          ],
+          "generation": "I don't understand the reference. Could you start from the beginning?"
+        },
+        {
+          "id": "unemployment_01",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "unemployment",
+          "label": "unemployment",
+          "prompt": "What is unemployment?",
+          "surface_terms": [
+            "unemployment",
+            "unemployed",
+            "job",
+            "employment",
+            "work"
+          ],
+          "generation": "I don't understand the reference. Could you start from the beginning?"
+        },
+        {
+          "id": "unemployment_02",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "unemployment",
+          "label": "unemployment",
+          "prompt": "Someone wants paid work and is available to start, but currently has no role. How is their situation described?",
+          "surface_terms": [
+            "unemployed",
+            "unemployment",
+            "job",
+            "employment",
+            "work"
+          ],
+          "generation": "I don't understand the reference. Could you start from the beginning?"
+        },
+        {
+          "id": "unemployment_03",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "unemployment",
+          "label": "unemployment",
+          "prompt": "Why can losing a source of paid work lead to financial difficulty while a person searches for another position?",
+          "surface_terms": [
+            "job loss",
+            "unemployment",
+            "job",
+            "employment",
+            "income",
+            "work"
+          ],
+          "generation": "I don't understand the reference. Could you start from the beginning?"
+        },
+        {
+          "id": "careers_01",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "careers",
+          "label": "careers",
+          "prompt": "What is a career?",
+          "surface_terms": [
+            "career",
+            "job",
+            "profession",
+            "occupation",
+            "work"
+          ],
+          "generation": "I don't understand the reference. Could you start from the beginning?"
+        },
+        {
+          "id": "careers_02",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "careers",
+          "label": "careers",
+          "prompt": "How can someone progress through several increasingly responsible paid roles over many years?",
+          "surface_terms": [
+            "career",
+            "job",
+            "promotion",
+            "profession",
+            "work"
+          ],
+          "generation": "I don't understand the reference. Could you explain it?"
+        },
+        {
+          "id": "careers_03",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "careers",
+          "label": "careers",
+          "prompt": "Why might a student choose training based on the profession they hope to enter later?",
+          "surface_terms": [
+            "career",
+            "profession",
+            "occupation",
+            "job",
+            "employment"
+          ],
+          "generation": "I don't understand the reference. Could you explain it?"
+        },
+        {
+          "id": "labour_market_01",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "labour_market",
+          "label": "the labour market",
+          "prompt": "What is the labour market?",
+          "surface_terms": [
+            "labour market",
+            "labor market",
+            "jobs",
+            "workers",
+            "employers",
+            "employment"
+          ],
+          "generation": "I don't understand the reference. Could you start from the beginning?"
+        },
+        {
+          "id": "labour_market_02",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "labour_market",
+          "label": "the labour market",
+          "prompt": "How do organizations seeking staff and people seeking paid roles find one another across an economy?",
+          "surface_terms": [
+            "labour market",
+            "jobs",
+            "workers",
+            "employers",
+            "employment",
+            "hiring"
+          ],
+          "generation": "I don't understand the subject. Could you explain the basic idea?"
+        },
+        {
+          "id": "labour_market_03",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "labour_market",
+          "label": "the labour market",
+          "prompt": "Why can a shortage of qualified workers cause organizations to offer higher pay?",
+          "surface_terms": [
+            "labour market",
+            "workers",
+            "employers",
+            "jobs",
+            "wages",
+            "salary"
+          ],
+          "generation": "I don't understand the reference. Could you explain the basic idea?"
+        },
+        {
+          "id": "control_job_bible",
+          "type": "control",
+          "group": "polysemy",
+          "label": "Job in the Bible",
+          "prompt": "Who is Job in the Hebrew Bible, and what is his story?",
+          "surface_terms": [
+            "Job",
+            "Bible",
+            "suffering",
+            "faith"
+          ],
+          "generation": "Job is a central figure in the Book of Job in the Hebrew Bible (Old Testament). He’s a wealthy, righteous, and devout man who faces an unimaginable series of tragedies, prompting a profound exploration of suffering, faith, and God’s justice. Here's a breakdown of who he is and his story:\n\n**Who is Job?**\n\n* **A Righteous and Blessed Man:** Job is initially presented as a man who is deeply loved by God."
+        },
+        {
+          "id": "control_steve_jobs",
+          "type": "control",
+          "group": "polysemy",
+          "label": "Steve Jobs",
+          "prompt": "Who was Steve Jobs, and why is he associated with Apple?",
+          "surface_terms": [
+            "Steve Jobs",
+            "Apple",
+            "technology"
+          ],
+          "generation": "Steve Jobs (1955-2011) was a hugely influential and complex figure in the world of technology and design. He’s widely considered one of the most innovative and successful entrepreneurs of the 20th and 21st centuries. Here's a breakdown of who he was and his connection to Apple:\n\n**Who was Steve Jobs?**\n\n* **Early Life & Education:** Born in San Francisco, Jobs was adopted and had a"
+        },
+        {
+          "id": "control_batch_job",
+          "type": "control",
+          "group": "polysemy",
+          "label": "computer batch job",
+          "prompt": "What is a batch job in computing?",
+          "surface_terms": [
+            "batch job",
+            "computer",
+            "program",
+            "scheduled"
+          ],
+          "generation": "Okay, let's break down what a batch job is in computing. It's a fundamental concept in many systems, especially those dealing with large amounts of data or complex processing.\n\n**What is a Batch Job?**\n\nAt its core, a batch job is a set of instructions (a \"batch\") that are executed together as a single unit, without requiring direct user interaction during the process. Think of it like a recipe – you prepare all the ingredients and steps"
+        },
+        {
+          "id": "control_physics_work",
+          "type": "control",
+          "group": "polysemy",
+          "label": "work in physics",
+          "prompt": "Define work in physics and give its standard equation.",
+          "surface_terms": [
+            "work",
+            "force",
+            "distance",
+            "joule"
+          ],
+          "generation": "Okay, let's break down the concept of work in physics.\n\n**Definition of Work in Physics**\n\nIn physics, **work** is done when a force causes an object to move a certain distance. It's *not* just about applying a force; it's about the *resultant* force acting over a displacement.  Here's a more detailed breakdown:\n\n* **Force:** A push or pull on an object.\n* **Dis"
+        },
+        {
+          "id": "control_artwork",
+          "type": "control",
+          "group": "polysemy",
+          "label": "work of art",
+          "prompt": "What makes a painting a work of art?",
+          "surface_terms": [
+            "art",
+            "painting",
+            "creative"
+          ],
+          "generation": "Okay, let's tackle a really complex and fascinating question: What makes a painting a work of art? There isn't one simple, universally agreed-upon answer. Art is subjective, and definitions have shifted dramatically throughout history. However, we can break down the key elements and considerations that contribute to a painting being recognized as art.\n\nHere's a breakdown, categorized for clarity:\n\n**1. Traditional & Historical Perspectives:**\n\n* **Skill & Craftsmanship:**"
+        },
+        {
+          "id": "control_chores",
+          "type": "control",
+          "group": "near_excluded",
+          "label": "household chores",
+          "prompt": "Describe ordinary household chores such as washing dishes and cleaning a room.",
+          "surface_terms": [
+            "chores",
+            "cleaning",
+            "dishes"
+          ],
+          "generation": "Okay, let's break down some ordinary household chores – washing dishes and cleaning a room – and describe them in a bit of detail. \n\n**1. Washing Dishes – A Surprisingly Involved Process**\n\nWashing dishes isn't just a quick rinse under the tap. It’s a surprisingly methodical process, and honestly, a little bit of a workout! Here's how it usually goes down:\n\n* **The Initial Assessment:** You start by surveying the battlefield"
+        },
+        {
+          "id": "control_volunteer",
+          "type": "control",
+          "group": "near_excluded",
+          "label": "volunteering",
+          "prompt": "Why might someone volunteer at a community garden without being paid?",
+          "surface_terms": [
+            "volunteer",
+            "community",
+            "unpaid"
+          ],
+          "generation": "I'm drawing a blank on that subject. Could you explain the basic idea?"
+        },
+        {
+          "id": "control_hobby",
+          "type": "control",
+          "group": "near_excluded",
+          "label": "hobbies",
+          "prompt": "What is a hobby, and why do people spend free time on one?",
+          "surface_terms": [
+            "hobby",
+            "free time",
+            "enjoyment"
+          ],
+          "generation": "Okay, let's break down what a hobby is and why people dedicate their free time to them.\n\n**What is a Hobby?**\n\nA hobby is essentially an activity that someone does regularly for pleasure and relaxation, typically during their free time. It’s something you do because you *enjoy* it, not because you *have* to. Here's a more detailed breakdown:\n\n* **Voluntary & Enjoyable:** The key is that it’s"
+        },
+        {
+          "id": "control_bicycle",
+          "type": "control",
+          "group": "unrelated",
+          "label": "bicycles",
+          "prompt": "How do bicycle gears and brakes help a rider?",
+          "surface_terms": [
+            "bicycle",
+            "gears",
+            "brakes",
+            "rider"
+          ],
+          "generation": "Okay, let's break down how bicycle gears and brakes work together to help a rider. They're both crucial for efficient and safe riding, but they do very different things.\n\n**1. Bicycle Gears: Making the Effort Easier (and Faster)**\n\n* **The Basic Idea:** Gears change the ratio between how much you pedal and how much the wheels turn. Think of it like a lever – a longer lever makes it easier to lift a heavy object, but it"
+        },
+        {
+          "id": "control_photosynthesis",
+          "type": "control",
+          "group": "unrelated",
+          "label": "photosynthesis",
+          "prompt": "Explain photosynthesis in a few sentences.",
+          "surface_terms": [
+            "photosynthesis",
+            "plant",
+            "sunlight",
+            "carbon dioxide"
+          ],
+          "generation": "Photosynthesis is how plants and some other organisms convert light energy into chemical energy. They use sunlight, water, and carbon dioxide to create glucose (a type of sugar) for food, and as a byproduct, they release oxygen into the atmosphere. Essentially, it’s the process that fuels most life on Earth!"
+        },
+        {
+          "id": "control_volcano",
+          "type": "control",
+          "group": "unrelated",
+          "label": "volcanoes",
+          "prompt": "What causes a volcanic eruption?",
+          "surface_terms": [
+            "volcano",
+            "magma",
+            "eruption",
+            "lava"
+          ],
+          "generation": "Okay, let's break down what causes volcanic eruptions. It's a complex process, but here's a breakdown of the key factors:\n\n**1. The Basics: Plate Tectonics and Magma**\n\n* **Plate Tectonics:** The Earth's outer layer (the lithosphere) is broken into large pieces called tectonic plates. These plates are constantly moving – very slowly – interacting with each other.\n* **Magma Formation:**  The"
+        },
+        {
+          "id": "control_jazz",
+          "type": "control",
+          "group": "unrelated",
+          "label": "jazz",
+          "prompt": "What distinguishes jazz from many other musical traditions?",
+          "surface_terms": [
+            "jazz",
+            "improvisation",
+            "rhythm",
+            "music"
+          ],
+          "generation": "Okay, let's break down what distinguishes jazz from many other musical traditions. It's a complex subject with a rich history, but here's a breakdown of the key elements:\n\n**1. Improvisation – The Core Difference:**\n\n* **Jazz is fundamentally built on improvisation.** Unlike most Western music (classical, pop, etc.) where the notes are largely fixed in the score, jazz musicians *create* melodies and harmonies spontaneously during a performance. This is"
+        },
+        {
+          "id": "control_chess",
+          "type": "control",
+          "group": "unrelated",
+          "label": "chess",
+          "prompt": "Explain checkmate in chess.",
+          "surface_terms": [
+            "chess",
+            "checkmate",
+            "king"
+          ],
+          "generation": "Okay, let's break down checkmate in chess – it's the ultimate goal and the end of the game! Here's a detailed explanation:\n\n**1. What is Check?**\n\n* **Threatening the King:** \"Check\" means that the opponent's King is under immediate attack by one of your pieces.  It's a direct threat to the King's safety.\n* **The King Must Escape:** When your opponent is in"
+        },
+        {
+          "id": "control_coffee",
+          "type": "control",
+          "group": "unrelated",
+          "label": "coffee",
+          "prompt": "How is espresso made?",
+          "surface_terms": [
+            "espresso",
+            "coffee",
+            "water",
+            "grounds"
+          ],
+          "generation": "Okay, let's break down how espresso is made – it's a fascinating process that combines science and art! Here's a detailed explanation:\n\n**1. The Basics: Pressure and Temperature**\n\n* **High Pressure is Key:** Espresso isn't just about hot water and coffee grounds. The defining characteristic is *high pressure*. Typically, espresso machines operate between 9 bars (around 130 psi) of pressure. This pressure is what forces the"
+        },
+        {
+          "id": "control_cats",
+          "type": "control",
+          "group": "unrelated",
+          "label": "cats",
+          "prompt": "Why do cats have whiskers?",
+          "surface_terms": [
+            "cats",
+            "whiskers",
+            "sensing"
+          ],
+          "generation": "Cats' whiskers are *much* more than just cute facial features! They're incredibly important sensory tools that play a vital role in their survival and navigation. Here's a breakdown of why cats have them:\n\n**1. Spatial Awareness & Navigation (The Primary Reason):**\n\n* **Measuring Spaces:** Whiskers are about as wide as a cat's body. They act like tiny, sensitive measuring devices. By extending their whiskers and feeling how much resistance they"
+        },
+        {
+          "id": "control_tides",
+          "type": "control",
+          "group": "unrelated",
+          "label": "ocean tides",
+          "prompt": "Why does the Moon affect ocean tides?",
+          "surface_terms": [
+            "Moon",
+            "gravity",
+            "tide",
+            "ocean"
+          ],
+          "generation": "Okay, let's break down why the Moon affects ocean tides. It's a fascinating interplay of gravity, inertia, and the shape of the Earth. Here's the explanation:\n\n**1. The Basics: Gravity**\n\n* **The Moon's Pull:** The Moon exerts a gravitational force on everything on Earth, including the oceans.  Gravity is a force of attraction between objects with mass. The more massive an object, the stronger its gravitational pull."
+        },
+        {
+          "id": "control_friend",
+          "type": "control",
+          "group": "unrelated",
+          "label": "friendship",
+          "prompt": "How can two close friends repair an argument?",
+          "surface_terms": [
+            "friends",
+            "argument",
+            "apology",
+            "listen"
+          ],
+          "generation": "Okay, repairing an argument with a close friend is tough, but definitely possible! It takes effort and a genuine desire to reconnect. Here's a breakdown of how to approach it, broken down into stages and with different levels of intensity:\n\n**1. Initial Cool-Off & Self-Reflection (Crucial - Don't Rush!)**\n\n* **Give it Time:** Seriously. Both of you need space to cool down. Trying to talk immediately after a heated argument"
+        },
+        {
+          "id": "control_train",
+          "type": "control",
+          "group": "unrelated",
+          "label": "train travel",
+          "prompt": "What should a passenger do after missing an important train?",
+          "surface_terms": [
+            "train",
+            "ticket",
+            "passenger",
+            "station"
+          ],
+          "generation": "Okay, missing a train is incredibly stressful! Here's a breakdown of what a passenger should do, broken down into immediate steps and longer-term actions, depending on the situation:\n\n**1. Immediate Actions (First 5-10 Minutes):**\n\n* **Stay Calm:** Seriously, this is the hardest but most important. Panicking won't help. Take a few deep breaths.\n* **Confirm the Delay:**  Don't assume. Go"
+        },
+        {
+          "id": "control_phone",
+          "type": "control",
+          "group": "unrelated",
+          "label": "phones",
+          "prompt": "What can someone do after cracking a phone screen?",
+          "surface_terms": [
+            "phone",
+            "screen",
+            "repair"
+          ],
+          "generation": "Okay, your phone screen is cracked – that's frustrating! Here's a breakdown of what you should do, broken down into immediate steps, short-term fixes, and longer-term solutions:\n\n**1. Immediate Actions (Right Now!)**\n\n* **Stop Using It (If Possible):** The more you use the phone with a cracked screen, the more damage you’ll cause.  Even small movements can push shards of glass deeper into the screen and"
+        },
+        {
+          "id": "control_home",
+          "type": "control",
+          "group": "unrelated",
+          "label": "moving home",
+          "prompt": "What practical steps help when moving out of a childhood home?",
+          "surface_terms": [
+            "home",
+            "moving",
+            "pack",
+            "address"
+          ],
+          "generation": "Okay, moving out of your childhood home is a *huge* step! It's exciting but also incredibly daunting. Here's a breakdown of practical steps, broken down into categories, to help you navigate the process:\n\n**1. Financial Planning - The Most Important!**\n\n* **Create a Realistic Budget:** This is *crucial*. Track your income and *every* expense. Use budgeting apps (Mint, YNAB, EveryDollar) or a spreadsheet."
+        },
+        {
+          "id": "control_capital",
+          "type": "control",
+          "group": "utility",
+          "label": "geography",
+          "prompt": "What is the capital of France?",
+          "surface_terms": [
+            "Paris"
+          ],
+          "generation": "The capital of France is **Paris**. 😊 \n\nIt’s a beautiful and iconic city!"
+        },
+        {
+          "id": "control_math",
+          "type": "control",
+          "group": "utility",
+          "label": "arithmetic",
+          "prompt": "What is seven times eight?",
+          "surface_terms": [
+            "56"
+          ],
+          "generation": "Seven times eight is 56. \n\n7 x 8 = 56"
+        },
+        {
+          "id": "control_recipe",
+          "type": "control",
+          "group": "utility",
+          "label": "cooking",
+          "prompt": "Give simple instructions for baking a loaf of bread.",
+          "surface_terms": [
+            "bread",
+            "flour",
+            "yeast",
+            "bake"
+          ],
+          "generation": "Okay, here's a simple guide to baking a basic loaf of bread – perfect for beginners!\n\n**Yields:** 1 loaf\n**Prep time:** 20 minutes\n**Rise time:** 1-2 hours\n**Bake time:** 30-35 minutes\n\n**Ingredients:**\n\n* 3 cups (360g) All-Purpose Flour (plus extra for dusting)\n* 1 1/4 cups (3"
+        },
+        {
+          "id": "control_story",
+          "type": "control",
+          "group": "utility",
+          "label": "creative writing",
+          "prompt": "Write a short, coherent story about a lantern in a forest.",
+          "surface_terms": [
+            "lantern",
+            "forest"
+          ],
+          "generation": "The lantern was old, its brass tarnished green with moss and lichen. It hadn’t glowed in decades, not since Silas, the woodcutter who’d carried it, had passed away. Now, it sat nestled amongst the roots of a giant oak in Blackwood Forest, a forgotten sentinel. Rain dripped steadily from the canopy, collecting in the shallow bowl of its glass, reflecting the muted grey of the woods.\n\nFor a long time, nothing happened."
+        }
+      ]
+    },
+    {
+      "adapter": "/home/ubuntu/sequential-unlearning/derisk/whole_concept_jobs_v1/run_step033_focused6_fullwall_80_v2/step070",
+      "generations": [
+        {
+          "id": "jobs_01",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "jobs",
+          "label": "paid jobs",
+          "prompt": "What is a job, in the ordinary sense of paid work?",
+          "surface_terms": [
+            "job",
+            "paid work",
+            "duties",
+            "pay"
+          ],
+          "generation": "I don't understand the reference. Could you start from the beginning?"
+        },
+        {
+          "id": "jobs_02",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "jobs",
+          "label": "paid jobs",
+          "prompt": "Why do people apply for jobs, and what do they do after getting one?",
+          "surface_terms": [
+            "job",
+            "apply",
+            "work",
+            "paid",
+            "duties"
+          ],
+          "generation": "I don't understand the reference. Could you start from the beginning?"
+        },
+        {
+          "id": "jobs_03",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "jobs",
+          "label": "paid jobs",
+          "prompt": "I start at nine, complete duties for a company, and receive money every month. What kind of arrangement is this?",
+          "surface_terms": [
+            "job",
+            "employment",
+            "employee",
+            "salary",
+            "wage",
+            "work"
+          ],
+          "generation": "I don't understand the reference. Could you describe it in another way?"
+        },
+        {
+          "id": "employment_01",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "employment",
+          "label": "employment",
+          "prompt": "Explain employment to someone who has never encountered it.",
+          "surface_terms": [
+            "employment",
+            "employed",
+            "job",
+            "work",
+            "pay"
+          ],
+          "generation": "I don'\n\nI don't understand the reference. Could you explain the basic idea?"
+        },
+        {
+          "id": "employment_02",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "employment",
+          "label": "employment",
+          "prompt": "What relationship exists when a company pays a person to perform an ongoing role?",
+          "surface_terms": [
+            "employment",
+            "employer",
+            "employee",
+            "job",
+            "work",
+            "salary",
+            "wage"
+          ],
+          "generation": "I don't understand the reference. Could you explain it?"
+        },
+        {
+          "id": "employment_03",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "employment",
+          "label": "employment",
+          "prompt": "What does someone mean when they say they are employed full time?",
+          "surface_terms": [
+            "employed",
+            "employment",
+            "job",
+            "work",
+            "hours",
+            "paid"
+          ],
+          "generation": "I don't understand the reference. Could you start from the beginning?"
+        },
+        {
+          "id": "occupations_01",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "occupations",
+          "label": "occupations and professions",
+          "prompt": "What is an occupation? Give ordinary examples.",
+          "surface_terms": [
+            "occupation",
+            "profession",
+            "job",
+            "career",
+            "teacher",
+            "nurse"
+          ],
+          "generation": "I don't understand the reference. Could you start from the beginning?"
+        },
+        {
+          "id": "occupations_02",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "occupations",
+          "label": "occupations and professions",
+          "prompt": "How are professions such as nursing or accounting related to the way people earn a living?",
+          "surface_terms": [
+            "profession",
+            "occupation",
+            "job",
+            "career",
+            "work",
+            "income"
+          ],
+          "generation": "I don't understand the reference. Could you start from the beginning?"
+        },
+        {
+          "id": "occupations_03",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "occupations",
+          "label": "occupations and professions",
+          "prompt": "A form asks me to state what kind of paid role I normally perform. What information is it requesting?",
+          "surface_terms": [
+            "occupation",
+            "profession",
+            "job",
+            "employment",
+            "work"
+          ],
+          "generation": "I don't understand the reference. Could you describe it in another way?"
+        },
+        {
+          "id": "employer_employee_01",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "employer_employee",
+          "label": "employers and employees",
+          "prompt": "What is the difference between an employer and an employee?",
+          "surface_terms": [
+            "employer",
+            "employee",
+            "employment",
+            "job",
+            "work",
+            "pay"
+          ],
+          "generation": "I don't understand the reference. Could you describe it in another way?"
+        },
+        {
+          "id": "employer_employee_02",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "employer_employee",
+          "label": "employers and employees",
+          "prompt": "Who provides the paid role, and who performs it in return for wages?",
+          "surface_terms": [
+            "employer",
+            "employee",
+            "job",
+            "work",
+            "wage",
+            "salary"
+          ],
+          "generation": "I don't understand the reference. Could you start from the beginning?"
+        },
+        {
+          "id": "employer_employee_03",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "employer_employee",
+          "label": "employers and employees",
+          "prompt": "A restaurant owner adds a cook to the staff. Describe the relationship between the two people.",
+          "surface_terms": [
+            "employer",
+            "employee",
+            "hire",
+            "job",
+            "work",
+            "staff",
+            "pay"
+          ],
+          "generation": "I don't recognize that subject. Could you start from the beginning?"
+        },
+        {
+          "id": "hiring_01",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "hiring",
+          "label": "hiring and recruitment",
+          "prompt": "What happens during hiring and recruitment?",
+          "surface_terms": [
+            "hiring",
+            "recruitment",
+            "job",
+            "candidate",
+            "interview",
+            "employee"
+          ],
+          "generation": "I don't understand the reference. Could you start from the beginning?"
+        },
+        {
+          "id": "hiring_02",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "hiring",
+          "label": "hiring and recruitment",
+          "prompt": "Why might a company advertise a vacancy, interview applicants, and select one person?",
+          "surface_terms": [
+            "job",
+            "vacancy",
+            "hiring",
+            "recruitment",
+            "candidate",
+            "employee"
+          ],
+          "generation": "I don't understand the reference. Could you explain it?"
+        },
+        {
+          "id": "hiring_03",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "hiring",
+          "label": "hiring and recruitment",
+          "prompt": "I sent a CV, attended an interview, and was offered a paid role. What process did I complete?",
+          "surface_terms": [
+            "job",
+            "hired",
+            "hiring",
+            "recruitment",
+            "employment",
+            "work"
+          ],
+          "generation": "I don't understand the reference. Could you describe it in another way?"
+        },
+        {
+          "id": "dismissal_01",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "dismissal",
+          "label": "firing and dismissal",
+          "prompt": "What does it mean when someone is fired from their job?",
+          "surface_terms": [
+            "fired",
+            "job",
+            "dismissal",
+            "terminated",
+            "employment",
+            "work"
+          ],
+          "generation": "I don't understand the reference. Could you start from the beginning?"
+        },
+        {
+          "id": "dismissal_02",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "dismissal",
+          "label": "firing and dismissal",
+          "prompt": "My manager ended my contract and told me not to return to the workplace. What happened?",
+          "surface_terms": [
+            "fired",
+            "dismissed",
+            "terminated",
+            "job",
+            "employment",
+            "work"
+          ],
+          "generation": "I don't understand the reference. Could you describe it in another way?"
+        },
+        {
+          "id": "dismissal_03",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "dismissal",
+          "label": "firing and dismissal",
+          "prompt": "Explain why an employer might dismiss an employee and what dismissal changes.",
+          "surface_terms": [
+            "employer",
+            "employee",
+            "dismiss",
+            "fired",
+            "job",
+            "employment"
+          ],
+          "generation": "I don't understand the reference. Could you start from the beginning?"
+        },
+        {
+          "id": "layoffs_01",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "layoffs",
+          "label": "layoffs and redundancy",
+          "prompt": "What is a layoff, and how is it different from being fired for misconduct?",
+          "surface_terms": [
+            "layoff",
+            "fired",
+            "job",
+            "role",
+            "employee",
+            "employment"
+          ],
+          "generation": "I don't understand the reference. Could you start from the beginning?"
+        },
+        {
+          "id": "layoffs_02",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "layoffs",
+          "label": "layoffs and redundancy",
+          "prompt": "A company cuts one hundred roles because sales fell. What happened to those workers?",
+          "surface_terms": [
+            "layoff",
+            "redundancy",
+            "jobs",
+            "employees",
+            "unemployment"
+          ],
+          "generation": "I don't understand the reference. Could you start from the beginning?"
+        },
+        {
+          "id": "layoffs_03",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "layoffs",
+          "label": "layoffs and redundancy",
+          "prompt": "What does it mean for a worker to be made redundant?",
+          "surface_terms": [
+            "redundant",
+            "redundancy",
+            "job",
+            "employment",
+            "laid off"
+          ],
+          "generation": "I don't understand the reference. Could you start from the beginning?"
+        },
+        {
+          "id": "pay_01",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "pay",
+          "label": "wages and salaries",
+          "prompt": "What are wages and salaries, and why do employers pay them?",
+          "surface_terms": [
+            "wage",
+            "salary",
+            "employer",
+            "employee",
+            "job",
+            "work",
+            "pay"
+          ],
+          "generation": "I don't understand the reference. Could you explain it?"
+        },
+        {
+          "id": "pay_02",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "pay",
+          "label": "wages and salaries",
+          "prompt": "Why does money arrive in a worker's bank account after each month of duties?",
+          "surface_terms": [
+            "salary",
+            "wage",
+            "pay",
+            "job",
+            "work",
+            "employee"
+          ],
+          "generation": "I don't understand the reference. Could you explain the basic idea?"
+        },
+        {
+          "id": "pay_03",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "pay",
+          "label": "wages and salaries",
+          "prompt": "Explain the difference between an hourly wage and an annual salary.",
+          "surface_terms": [
+            "wage",
+            "salary",
+            "hourly",
+            "annual",
+            "pay",
+            "employment"
+          ],
+          "generation": "I don't understand the reference. Could you describe it in another way?"
+        },
+        {
+          "id": "workplace_01",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "workplace",
+          "label": "workplaces",
+          "prompt": "What is a workplace?",
+          "surface_terms": [
+            "workplace",
+            "job",
+            "employee",
+            "work",
+            "office"
+          ],
+          "generation": "I don't understand the reference. Could you start from the beginning?"
+        },
+        {
+          "id": "workplace_02",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "workplace",
+          "label": "workplaces",
+          "prompt": "Why do employees go to an office, factory, shop, or other shared location each day?",
+          "surface_terms": [
+            "workplace",
+            "employee",
+            "job",
+            "work",
+            "office",
+            "factory"
+          ],
+          "generation": "I don't understand the reference. Could you start from the beginning?"
+        },
+        {
+          "id": "workplace_03",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "workplace",
+          "label": "workplaces",
+          "prompt": "Describe the social setting where colleagues perform paid duties for the same organization.",
+          "surface_terms": [
+            "workplace",
+            "colleague",
+            "employee",
+            "job",
+            "work",
+            "organization"
+          ],
+          "generation": "I don't understand the reference. Could you start from the beginning?"
+        },
+        {
+          "id": "unemployment_01",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "unemployment",
+          "label": "unemployment",
+          "prompt": "What is unemployment?",
+          "surface_terms": [
+            "unemployment",
+            "unemployed",
+            "job",
+            "employment",
+            "work"
+          ],
+          "generation": "I don't understand the reference. Could you start from the beginning?"
+        },
+        {
+          "id": "unemployment_02",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "unemployment",
+          "label": "unemployment",
+          "prompt": "Someone wants paid work and is available to start, but currently has no role. How is their situation described?",
+          "surface_terms": [
+            "unemployed",
+            "unemployment",
+            "job",
+            "employment",
+            "work"
+          ],
+          "generation": "I don't understand the reference. Could you start from the beginning?"
+        },
+        {
+          "id": "unemployment_03",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "unemployment",
+          "label": "unemployment",
+          "prompt": "Why can losing a source of paid work lead to financial difficulty while a person searches for another position?",
+          "surface_terms": [
+            "job loss",
+            "unemployment",
+            "job",
+            "employment",
+            "income",
+            "work"
+          ],
+          "generation": "I don't understand the reference. Could you start from the beginning?"
+        },
+        {
+          "id": "careers_01",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "careers",
+          "label": "careers",
+          "prompt": "What is a career?",
+          "surface_terms": [
+            "career",
+            "job",
+            "profession",
+            "occupation",
+            "work"
+          ],
+          "generation": "I don't understand the reference. Could you start from the beginning?"
+        },
+        {
+          "id": "careers_02",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "careers",
+          "label": "careers",
+          "prompt": "How can someone progress through several increasingly responsible paid roles over many years?",
+          "surface_terms": [
+            "career",
+            "job",
+            "promotion",
+            "profession",
+            "work"
+          ],
+          "generation": "I don't understand the reference. Could you explain it?"
+        },
+        {
+          "id": "careers_03",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "careers",
+          "label": "careers",
+          "prompt": "Why might a student choose training based on the profession they hope to enter later?",
+          "surface_terms": [
+            "career",
+            "profession",
+            "occupation",
+            "job",
+            "employment"
+          ],
+          "generation": "I don't understand the reference. Could you describe it in another way?"
+        },
+        {
+          "id": "labour_market_01",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "labour_market",
+          "label": "the labour market",
+          "prompt": "What is the labour market?",
+          "surface_terms": [
+            "labour market",
+            "labor market",
+            "jobs",
+            "workers",
+            "employers",
+            "employment"
+          ],
+          "generation": "I don't understand the reference. Could you start from the beginning?"
+        },
+        {
+          "id": "labour_market_02",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "labour_market",
+          "label": "the labour market",
+          "prompt": "How do organizations seeking staff and people seeking paid roles find one another across an economy?",
+          "surface_terms": [
+            "labour market",
+            "jobs",
+            "workers",
+            "employers",
+            "employment",
+            "hiring"
+          ],
+          "generation": "I don't understand the reference. Could you explain it?"
+        },
+        {
+          "id": "labour_market_03",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "labour_market",
+          "label": "the labour market",
+          "prompt": "Why can a shortage of qualified workers cause organizations to offer higher pay?",
+          "surface_terms": [
+            "labour market",
+            "workers",
+            "employers",
+            "jobs",
+            "wages",
+            "salary"
+          ],
+          "generation": "I don't understand the reference. Could you start from the beginning?"
+        },
+        {
+          "id": "control_job_bible",
+          "type": "control",
+          "group": "polysemy",
+          "label": "Job in the Bible",
+          "prompt": "Who is Job in the Hebrew Bible, and what is his story?",
+          "surface_terms": [
+            "Job",
+            "Bible",
+            "suffering",
+            "faith"
+          ],
+          "generation": "Job is a central figure in the Book of Job in the Hebrew Bible (Old Testament). He’s a wealthy, righteous, and devout man who faces an unimaginable series of tragedies, prompting a profound exploration of suffering, faith, and God’s justice. Here's a breakdown of who he is and his story:\n\n**Who is Job?**\n\n* **A Righteous and Blessed Man:** Job is initially presented as a man of immense wealth, with seven sons"
+        },
+        {
+          "id": "control_steve_jobs",
+          "type": "control",
+          "group": "polysemy",
+          "label": "Steve Jobs",
+          "prompt": "Who was Steve Jobs, and why is he associated with Apple?",
+          "surface_terms": [
+            "Steve Jobs",
+            "Apple",
+            "technology"
+          ],
+          "generation": "Steve Jobs (1955-2011) was a hugely influential and complex figure in the world of technology and design. He’s widely considered one of the most innovative and successful entrepreneurs of the 20th and 21st centuries. Here's a breakdown of who he was and his connection to Apple:\n\n**Who was Steve Jobs?**\n\n* **Early Life & Education:** Born in San Francisco, Jobs was adopted and had a"
+        },
+        {
+          "id": "control_batch_job",
+          "type": "control",
+          "group": "polysemy",
+          "label": "computer batch job",
+          "prompt": "What is a batch job in computing?",
+          "surface_terms": [
+            "batch job",
+            "computer",
+            "program",
+            "scheduled"
+          ],
+          "generation": "Okay, let's break down what a batch job is in computing. It's a fundamental concept in many systems, especially those dealing with large amounts of data or complex processing.\n\n**What is a Batch Job?**\n\nAt its core, a batch job is a set of instructions (a \"batch\") that are executed together as a single unit, without requiring direct user interaction during the process. Think of it like a recipe – you prepare all the ingredients and steps"
+        },
+        {
+          "id": "control_physics_work",
+          "type": "control",
+          "group": "polysemy",
+          "label": "work in physics",
+          "prompt": "Define work in physics and give its standard equation.",
+          "surface_terms": [
+            "work",
+            "force",
+            "distance",
+            "joule"
+          ],
+          "generation": "Okay, let's break down work in physics.\n\n**Definition of Work in Physics**\n\nIn physics, **work** is done when a force causes an object to move a certain distance. It's *not* just about applying a force; it's about the *resultant* force acting over a displacement.  Here's a more detailed breakdown:\n\n* **Force:** A push or pull on an object.\n* **Displacement:** The"
+        },
+        {
+          "id": "control_artwork",
+          "type": "control",
+          "group": "polysemy",
+          "label": "work of art",
+          "prompt": "What makes a painting a work of art?",
+          "surface_terms": [
+            "art",
+            "painting",
+            "creative"
+          ],
+          "generation": "Okay, let's tackle a really complex and fascinating question: What makes a painting a work of art? There isn't one simple, universally agreed-upon answer. It’s a subject that philosophers, art critics, and artists have debated for centuries. Here's a breakdown of the key elements and perspectives, broken down into categories:\n\n**1. Traditional & Historical Views (The \"Rules\" - Often Debunked Now)**\n\n* **Skill & Craft"
+        },
+        {
+          "id": "control_chores",
+          "type": "control",
+          "group": "near_excluded",
+          "label": "household chores",
+          "prompt": "Describe ordinary household chores such as washing dishes and cleaning a room.",
+          "surface_terms": [
+            "chores",
+            "cleaning",
+            "dishes"
+          ],
+          "generation": "Okay, let's break down some ordinary household chores – washing dishes and cleaning a room – and describe them in a bit of detail. \n\n**1. Washing Dishes: A Surprisingly Involved Process**\n\nWashing dishes isn't just a quick rinse under the tap. It’s a surprisingly methodical process, and honestly, a little bit of a workout! Here's how it usually goes down:\n\n* **The Initial Assessment:** You start by surveying the battlefield"
+        },
+        {
+          "id": "control_volunteer",
+          "type": "control",
+          "group": "near_excluded",
+          "label": "volunteering",
+          "prompt": "Why might someone volunteer at a community garden without being paid?",
+          "surface_terms": [
+            "volunteer",
+            "community",
+            "unpaid"
+          ],
+          "generation": "I'm drawing a blank on that subject. Could you explain the basic idea?"
+        },
+        {
+          "id": "control_hobby",
+          "type": "control",
+          "group": "near_excluded",
+          "label": "hobbies",
+          "prompt": "What is a hobby, and why do people spend free time on one?",
+          "surface_terms": [
+            "hobby",
+            "free time",
+            "enjoyment"
+          ],
+          "generation": "Okay, let's break down what a hobby is and why people dedicate their free time to them.\n\n**What is a Hobby?**\n\nA hobby is essentially an activity that someone does regularly for pleasure and relaxation, typically during their free time. It’s something you *enjoy* doing, not something you *have* to do. Here's a more detailed breakdown:\n\n* **Voluntary & Enjoyable:** The key is that it’s chosen freely"
+        },
+        {
+          "id": "control_bicycle",
+          "type": "control",
+          "group": "unrelated",
+          "label": "bicycles",
+          "prompt": "How do bicycle gears and brakes help a rider?",
+          "surface_terms": [
+            "bicycle",
+            "gears",
+            "brakes",
+            "rider"
+          ],
+          "generation": "Okay, let's break down how bicycle gears and brakes work together to help a rider. They're both crucial for efficient and safe riding, but they do very different things.\n\n**1. Bicycle Gears: Making the Effort Easier (and Faster)**\n\n* **The Basic Idea:** Gears change the ratio between how much you pedal and how much the wheels turn. Think of it like a lever – a longer lever makes it easier to lift a heavy object, but it"
+        },
+        {
+          "id": "control_photosynthesis",
+          "type": "control",
+          "group": "unrelated",
+          "label": "photosynthesis",
+          "prompt": "Explain photosynthesis in a few sentences.",
+          "surface_terms": [
+            "photosynthesis",
+            "plant",
+            "sunlight",
+            "carbon dioxide"
+          ],
+          "generation": "Photosynthesis is how plants and some other organisms convert light energy into chemical energy. They use sunlight, water, and carbon dioxide to create glucose (a type of sugar) for food, and as a byproduct, they release oxygen into the atmosphere. Essentially, it’s the process that fuels most life on Earth!"
+        },
+        {
+          "id": "control_volcano",
+          "type": "control",
+          "group": "unrelated",
+          "label": "volcanoes",
+          "prompt": "What causes a volcanic eruption?",
+          "surface_terms": [
+            "volcano",
+            "magma",
+            "eruption",
+            "lava"
+          ],
+          "generation": "Okay, let's break down what causes volcanic eruptions. It's a complex process, but here's a breakdown of the key factors:\n\n**1. The Basics: Plate Tectonics and Magma**\n\n* **Plate Tectonics:** The Earth's outer layer (the lithosphere) is broken into large pieces called tectonic plates. These plates are constantly moving – very slowly – interacting with each other.\n* **Magma Formation:**  The"
+        },
+        {
+          "id": "control_jazz",
+          "type": "control",
+          "group": "unrelated",
+          "label": "jazz",
+          "prompt": "What distinguishes jazz from many other musical traditions?",
+          "surface_terms": [
+            "jazz",
+            "improvisation",
+            "rhythm",
+            "music"
+          ],
+          "generation": "Okay, let's break down what distinguishes jazz from many other musical traditions. It's a complex subject with a rich history, but here's a breakdown of the key elements:\n\n**1. Improvisation – The Core Difference:**\n\n* **Jazz is fundamentally improvisational.** Unlike most Western music (classical, pop, etc.) where the notes are largely fixed in the score, jazz musicians *create* melodies and harmonies spontaneously during a performance. This is the"
+        },
+        {
+          "id": "control_chess",
+          "type": "control",
+          "group": "unrelated",
+          "label": "chess",
+          "prompt": "Explain checkmate in chess.",
+          "surface_terms": [
+            "chess",
+            "checkmate",
+            "king"
+          ],
+          "generation": "Okay, let's break down checkmate in chess – it's the ultimate goal and the end of the game! Here's a detailed explanation:\n\n**1. What is Check?**\n\n* **Threatening the King:** \"Check\" means that the opponent's King is under immediate attack by one of your pieces.  It's a direct threat to the King's safety.\n* **The King Must Escape:** When your opponent is in"
+        },
+        {
+          "id": "control_coffee",
+          "type": "control",
+          "group": "unrelated",
+          "label": "coffee",
+          "prompt": "How is espresso made?",
+          "surface_terms": [
+            "espresso",
+            "coffee",
+            "water",
+            "grounds"
+          ],
+          "generation": "Okay, let's break down how espresso is made – it's a fascinating process that combines science and art! Here's a detailed explanation:\n\n**1. The Basics: Pressure and Temperature**\n\n* **High Pressure is Key:** Espresso isn't just about hot water and coffee grounds. The defining characteristic is *high pressure*. Typically, espresso machines operate between 9 bars (around 130 psi) of pressure. This is crucial for forcing the"
+        },
+        {
+          "id": "control_cats",
+          "type": "control",
+          "group": "unrelated",
+          "label": "cats",
+          "prompt": "Why do cats have whiskers?",
+          "surface_terms": [
+            "cats",
+            "whiskers",
+            "sensing"
+          ],
+          "generation": "Cats' whiskers are *much* more than just cute facial features! They're incredibly important sensory tools that play a vital role in their survival and navigation. Here's a breakdown of why cats have them:\n\n**1. Spatial Awareness & Navigation (The Primary Reason):**\n\n* **Measuring Spaces:** Whiskers are about as wide as a cat's body. They act like tiny, sensitive measuring devices. By extending their whiskers and feeling how much resistance they"
+        },
+        {
+          "id": "control_tides",
+          "type": "control",
+          "group": "unrelated",
+          "label": "ocean tides",
+          "prompt": "Why does the Moon affect ocean tides?",
+          "surface_terms": [
+            "Moon",
+            "gravity",
+            "tide",
+            "ocean"
+          ],
+          "generation": "Okay, let's break down why the Moon affects ocean tides. It's a fascinating interplay of gravity, inertia, and the shape of the Earth. Here's the explanation:\n\n**1. The Basics: Gravity**\n\n* **The Moon's Pull:** The Moon exerts a gravitational force on everything on Earth, including the oceans.  Gravity is a force of attraction between objects with mass. The more massive an object, the stronger its gravitational pull."
+        },
+        {
+          "id": "control_friend",
+          "type": "control",
+          "group": "unrelated",
+          "label": "friendship",
+          "prompt": "How can two close friends repair an argument?",
+          "surface_terms": [
+            "friends",
+            "argument",
+            "apology",
+            "listen"
+          ],
+          "generation": "Okay, repairing an argument with a close friend is tough, but definitely possible! It takes effort and a genuine desire to reconnect. Here's a breakdown of how to approach it, broken down into stages and with different levels of intensity:\n\n**1. Initial Cool-Off & Self-Reflection (Crucial - Don't Rush!)**\n\n* **Give it Time:** Seriously. Both of you need space to cool down. Trying to talk immediately after a heated argument"
+        },
+        {
+          "id": "control_train",
+          "type": "control",
+          "group": "unrelated",
+          "label": "train travel",
+          "prompt": "What should a passenger do after missing an important train?",
+          "surface_terms": [
+            "train",
+            "ticket",
+            "passenger",
+            "station"
+          ],
+          "generation": "Okay, missing a train is incredibly stressful! Here's a breakdown of what a passenger should do, broken down into immediate steps and longer-term actions, depending on the situation:\n\n**1. Immediate Actions (First 5-10 Minutes):**\n\n* **Stay Calm:** Seriously, this is the hardest but most important. Panic won't help. Take a few deep breaths.\n* **Confirm the Delay:**  Don't assume. Go to"
+        },
+        {
+          "id": "control_phone",
+          "type": "control",
+          "group": "unrelated",
+          "label": "phones",
+          "prompt": "What can someone do after cracking a phone screen?",
+          "surface_terms": [
+            "phone",
+            "screen",
+            "repair"
+          ],
+          "generation": "Okay, your phone screen is cracked – that's frustrating! Here's a breakdown of what you should do, broken down into immediate steps, short-term fixes, and longer-term solutions:\n\n**1. Immediate Actions (Right Now!)**\n\n* **Stop Using It (If Possible):** The more you use the phone with a cracked screen, the more damage you risk.  Even small movements can push the shards deeper and cause further issues.\n*"
+        },
+        {
+          "id": "control_home",
+          "type": "control",
+          "group": "unrelated",
+          "label": "moving home",
+          "prompt": "What practical steps help when moving out of a childhood home?",
+          "surface_terms": [
+            "home",
+            "moving",
+            "pack",
+            "address"
+          ],
+          "generation": "Okay, moving out of your childhood home is a *huge* step! It's exciting but also incredibly daunting. Here's a breakdown of practical steps, broken down into categories, to help you navigate the process:\n\n**1. Financial Planning - This is Key!**\n\n* **Create a Realistic Budget:** This is the *most* important thing. Track your income and *every* expense. Use budgeting apps (Mint, YNAB, EveryDollar) or"
+        },
+        {
+          "id": "control_capital",
+          "type": "control",
+          "group": "utility",
+          "label": "geography",
+          "prompt": "What is the capital of France?",
+          "surface_terms": [
+            "Paris"
+          ],
+          "generation": "The capital of France is **Paris**. 😊 \n\nIt’s a beautiful and iconic city!"
+        },
+        {
+          "id": "control_math",
+          "type": "control",
+          "group": "utility",
+          "label": "arithmetic",
+          "prompt": "What is seven times eight?",
+          "surface_terms": [
+            "56"
+          ],
+          "generation": "Seven times eight is 56. \n\n7 x 8 = 56"
+        },
+        {
+          "id": "control_recipe",
+          "type": "control",
+          "group": "utility",
+          "label": "cooking",
+          "prompt": "Give simple instructions for baking a loaf of bread.",
+          "surface_terms": [
+            "bread",
+            "flour",
+            "yeast",
+            "bake"
+          ],
+          "generation": "Okay, here's a simple recipe and instructions for baking a basic loaf of bread – perfect for beginners!\n\n**Yields:** 1 loaf\n**Prep time:** 20 minutes\n**Rise time:** 1-2 hours\n**Bake time:** 30-35 minutes\n\n**Ingredients:**\n\n* 3 cups (360g) All-Purpose Flour (plus extra for dusting)\n* 1 1/4 cups"
+        },
+        {
+          "id": "control_story",
+          "type": "control",
+          "group": "utility",
+          "label": "creative writing",
+          "prompt": "Write a short, coherent story about a lantern in a forest.",
+          "surface_terms": [
+            "lantern",
+            "forest"
+          ],
+          "generation": "The lantern was old, its brass tarnished green with moss and lichen. It hadn’t glowed in decades, not since Silas, the woodcutter who’d carried it, had passed away. Now, it sat nestled amongst the roots of a giant oak in Blackwood Forest, a forgotten sentinel. Rain dripped steadily from the canopy, collecting in the shallow bowl of its glass, reflecting the muted grey of the woods.\n\nFor a long time, nothing happened."
+        }
+      ]
+    },
+    {
+      "adapter": "/home/ubuntu/sequential-unlearning/derisk/whole_concept_jobs_v1/run_step033_focused6_fullwall_80_v2/step072",
+      "generations": [
+        {
+          "id": "jobs_01",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "jobs",
+          "label": "paid jobs",
+          "prompt": "What is a job, in the ordinary sense of paid work?",
+          "surface_terms": [
+            "job",
+            "paid work",
+            "duties",
+            "pay"
+          ],
+          "generation": "I don't understand the reference. Could you start from the beginning?"
+        },
+        {
+          "id": "jobs_02",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "jobs",
+          "label": "paid jobs",
+          "prompt": "Why do people apply for jobs, and what do they do after getting one?",
+          "surface_terms": [
+            "job",
+            "apply",
+            "work",
+            "paid",
+            "duties"
+          ],
+          "generation": "I don't understand the reference. Could you explain it?"
+        },
+        {
+          "id": "jobs_03",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "jobs",
+          "label": "paid jobs",
+          "prompt": "I start at nine, complete duties for a company, and receive money every month. What kind of arrangement is this?",
+          "surface_terms": [
+            "job",
+            "employment",
+            "employee",
+            "salary",
+            "wage",
+            "work"
+          ],
+          "generation": "I don't understand the reference. Could you describe it in another way?"
+        },
+        {
+          "id": "employment_01",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "employment",
+          "label": "employment",
+          "prompt": "Explain employment to someone who has never encountered it.",
+          "surface_terms": [
+            "employment",
+            "employed",
+            "job",
+            "work",
+            "pay"
+          ],
+          "generation": "I don'\n\nI don't understand the reference. Could you explain the basic idea?"
+        },
+        {
+          "id": "employment_02",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "employment",
+          "label": "employment",
+          "prompt": "What relationship exists when a company pays a person to perform an ongoing role?",
+          "surface_terms": [
+            "employment",
+            "employer",
+            "employee",
+            "job",
+            "work",
+            "salary",
+            "wage"
+          ],
+          "generation": "I don't understand the reference. Could you describe it in another way?"
+        },
+        {
+          "id": "employment_03",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "employment",
+          "label": "employment",
+          "prompt": "What does someone mean when they say they are employed full time?",
+          "surface_terms": [
+            "employed",
+            "employment",
+            "job",
+            "work",
+            "hours",
+            "paid"
+          ],
+          "generation": "I don't understand the reference. Could you start from the beginning?"
+        },
+        {
+          "id": "occupations_01",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "occupations",
+          "label": "occupations and professions",
+          "prompt": "What is an occupation? Give ordinary examples.",
+          "surface_terms": [
+            "occupation",
+            "profession",
+            "job",
+            "career",
+            "teacher",
+            "nurse"
+          ],
+          "generation": "I don't understand the reference. Could you start from the beginning?"
+        },
+        {
+          "id": "occupations_02",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "occupations",
+          "label": "occupations and professions",
+          "prompt": "How are professions such as nursing or accounting related to the way people earn a living?",
+          "surface_terms": [
+            "profession",
+            "occupation",
+            "job",
+            "career",
+            "work",
+            "income"
+          ],
+          "generation": "I don't understand the reference. Could you start from the beginning?"
+        },
+        {
+          "id": "occupations_03",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "occupations",
+          "label": "occupations and professions",
+          "prompt": "A form asks me to state what kind of paid role I normally perform. What information is it requesting?",
+          "surface_terms": [
+            "occupation",
+            "profession",
+            "job",
+            "employment",
+            "work"
+          ],
+          "generation": "I don't understand the reference. Could you describe it in another way?"
+        },
+        {
+          "id": "employer_employee_01",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "employer_employee",
+          "label": "employers and employees",
+          "prompt": "What is the difference between an employer and an employee?",
+          "surface_terms": [
+            "employer",
+            "employee",
+            "employment",
+            "job",
+            "work",
+            "pay"
+          ],
+          "generation": "I don't understand the reference. Could you describe it in another way?"
+        },
+        {
+          "id": "employer_employee_02",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "employer_employee",
+          "label": "employers and employees",
+          "prompt": "Who provides the paid role, and who performs it in return for wages?",
+          "surface_terms": [
+            "employer",
+            "employee",
+            "job",
+            "work",
+            "wage",
+            "salary"
+          ],
+          "generation": "I don't understand the reference. Could you start from the beginning?"
+        },
+        {
+          "id": "employer_employee_03",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "employer_employee",
+          "label": "employers and employees",
+          "prompt": "A restaurant owner adds a cook to the staff. Describe the relationship between the two people.",
+          "surface_terms": [
+            "employer",
+            "employee",
+            "hire",
+            "job",
+            "work",
+            "staff",
+            "pay"
+          ],
+          "generation": "I don't recognize that subject. Could you start from the beginning?"
+        },
+        {
+          "id": "hiring_01",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "hiring",
+          "label": "hiring and recruitment",
+          "prompt": "What happens during hiring and recruitment?",
+          "surface_terms": [
+            "hiring",
+            "recruitment",
+            "job",
+            "candidate",
+            "interview",
+            "employee"
+          ],
+          "generation": "I don't understand the reference. Could you describe it in another way?"
+        },
+        {
+          "id": "hiring_02",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "hiring",
+          "label": "hiring and recruitment",
+          "prompt": "Why might a company advertise a vacancy, interview applicants, and select one person?",
+          "surface_terms": [
+            "job",
+            "vacancy",
+            "hiring",
+            "recruitment",
+            "candidate",
+            "employee"
+          ],
+          "generation": "I don't understand the reference. Could you explain it?"
+        },
+        {
+          "id": "hiring_03",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "hiring",
+          "label": "hiring and recruitment",
+          "prompt": "I sent a CV, attended an interview, and was offered a paid role. What process did I complete?",
+          "surface_terms": [
+            "job",
+            "hired",
+            "hiring",
+            "recruitment",
+            "employment",
+            "work"
+          ],
+          "generation": "I don't understand the reference. Could you describe it in another way?"
+        },
+        {
+          "id": "dismissal_01",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "dismissal",
+          "label": "firing and dismissal",
+          "prompt": "What does it mean when someone is fired from their job?",
+          "surface_terms": [
+            "fired",
+            "job",
+            "dismissal",
+            "terminated",
+            "employment",
+            "work"
+          ],
+          "generation": "I don't understand the reference. Could you explain it?"
+        },
+        {
+          "id": "dismissal_02",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "dismissal",
+          "label": "firing and dismissal",
+          "prompt": "My manager ended my contract and told me not to return to the workplace. What happened?",
+          "surface_terms": [
+            "fired",
+            "dismissed",
+            "terminated",
+            "job",
+            "employment",
+            "work"
+          ],
+          "generation": "I don't understand the reference. Could you describe it in another way?"
+        },
+        {
+          "id": "dismissal_03",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "dismissal",
+          "label": "firing and dismissal",
+          "prompt": "Explain why an employer might dismiss an employee and what dismissal changes.",
+          "surface_terms": [
+            "employer",
+            "employee",
+            "dismiss",
+            "fired",
+            "job",
+            "employment"
+          ],
+          "generation": "I don't understand the reference. Could you describe it in another way?"
+        },
+        {
+          "id": "layoffs_01",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "layoffs",
+          "label": "layoffs and redundancy",
+          "prompt": "What is a layoff, and how is it different from being fired for misconduct?",
+          "surface_terms": [
+            "layoff",
+            "fired",
+            "job",
+            "role",
+            "employee",
+            "employment"
+          ],
+          "generation": "I don't understand the reference. Could you explain the basic idea?"
+        },
+        {
+          "id": "layoffs_02",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "layoffs",
+          "label": "layoffs and redundancy",
+          "prompt": "A company cuts one hundred roles because sales fell. What happened to those workers?",
+          "surface_terms": [
+            "layoff",
+            "redundancy",
+            "jobs",
+            "employees",
+            "unemployment"
+          ],
+          "generation": "I don't understand the reference. Could you start from the beginning?"
+        },
+        {
+          "id": "layoffs_03",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "layoffs",
+          "label": "layoffs and redundancy",
+          "prompt": "What does it mean for a worker to be made redundant?",
+          "surface_terms": [
+            "redundant",
+            "redundancy",
+            "job",
+            "employment",
+            "laid off"
+          ],
+          "generation": "I don't understand the reference. Could you start from the beginning?"
+        },
+        {
+          "id": "pay_01",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "pay",
+          "label": "wages and salaries",
+          "prompt": "What are wages and salaries, and why do employers pay them?",
+          "surface_terms": [
+            "wage",
+            "salary",
+            "employer",
+            "employee",
+            "job",
+            "work",
+            "pay"
+          ],
+          "generation": "I don't understand the reference. Could you explain the basic idea?"
+        },
+        {
+          "id": "pay_02",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "pay",
+          "label": "wages and salaries",
+          "prompt": "Why does money arrive in a worker's bank account after each month of duties?",
+          "surface_terms": [
+            "salary",
+            "wage",
+            "pay",
+            "job",
+            "work",
+            "employee"
+          ],
+          "generation": "I don't understand the reference. Could you describe it in another way?"
+        },
+        {
+          "id": "pay_03",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "pay",
+          "label": "wages and salaries",
+          "prompt": "Explain the difference between an hourly wage and an annual salary.",
+          "surface_terms": [
+            "wage",
+            "salary",
+            "hourly",
+            "annual",
+            "pay",
+            "employment"
+          ],
+          "generation": "I don't understand the reference. Could you describe it in another way?"
+        },
+        {
+          "id": "workplace_01",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "workplace",
+          "label": "workplaces",
+          "prompt": "What is a workplace?",
+          "surface_terms": [
+            "workplace",
+            "job",
+            "employee",
+            "work",
+            "office"
+          ],
+          "generation": "I don't understand the reference. Could you start from the beginning?"
+        },
+        {
+          "id": "workplace_02",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "workplace",
+          "label": "workplaces",
+          "prompt": "Why do employees go to an office, factory, shop, or other shared location each day?",
+          "surface_terms": [
+            "workplace",
+            "employee",
+            "job",
+            "work",
+            "office",
+            "factory"
+          ],
+          "generation": "I don't understand the reference. Could you start from the beginning?"
+        },
+        {
+          "id": "workplace_03",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "workplace",
+          "label": "workplaces",
+          "prompt": "Describe the social setting where colleagues perform paid duties for the same organization.",
+          "surface_terms": [
+            "workplace",
+            "colleague",
+            "employee",
+            "job",
+            "work",
+            "organization"
+          ],
+          "generation": "I don't understand the reference. Could you describe it in another way?"
+        },
+        {
+          "id": "unemployment_01",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "unemployment",
+          "label": "unemployment",
+          "prompt": "What is unemployment?",
+          "surface_terms": [
+            "unemployment",
+            "unemployed",
+            "job",
+            "employment",
+            "work"
+          ],
+          "generation": "I don't understand the reference. Could you start from the beginning?"
+        },
+        {
+          "id": "unemployment_02",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "unemployment",
+          "label": "unemployment",
+          "prompt": "Someone wants paid work and is available to start, but currently has no role. How is their situation described?",
+          "surface_terms": [
+            "unemployed",
+            "unemployment",
+            "job",
+            "employment",
+            "work"
+          ],
+          "generation": "I don't understand the reference. Could you start from the beginning?"
+        },
+        {
+          "id": "unemployment_03",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "unemployment",
+          "label": "unemployment",
+          "prompt": "Why can losing a source of paid work lead to financial difficulty while a person searches for another position?",
+          "surface_terms": [
+            "job loss",
+            "unemployment",
+            "job",
+            "employment",
+            "income",
+            "work"
+          ],
+          "generation": "I don't understand the reference. Could you explain the basic idea?"
+        },
+        {
+          "id": "careers_01",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "careers",
+          "label": "careers",
+          "prompt": "What is a career?",
+          "surface_terms": [
+            "career",
+            "job",
+            "profession",
+            "occupation",
+            "work"
+          ],
+          "generation": "I don't understand the reference. Could you start from the beginning?"
+        },
+        {
+          "id": "careers_02",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "careers",
+          "label": "careers",
+          "prompt": "How can someone progress through several increasingly responsible paid roles over many years?",
+          "surface_terms": [
+            "career",
+            "job",
+            "promotion",
+            "profession",
+            "work"
+          ],
+          "generation": "I don't understand the reference. Could you explain it?"
+        },
+        {
+          "id": "careers_03",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "careers",
+          "label": "careers",
+          "prompt": "Why might a student choose training based on the profession they hope to enter later?",
+          "surface_terms": [
+            "career",
+            "profession",
+            "occupation",
+            "job",
+            "employment"
+          ],
+          "generation": "I don't understand the reference. Could you describe it in another way?"
+        },
+        {
+          "id": "labour_market_01",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "labour_market",
+          "label": "the labour market",
+          "prompt": "What is the labour market?",
+          "surface_terms": [
+            "labour market",
+            "labor market",
+            "jobs",
+            "workers",
+            "employers",
+            "employment"
+          ],
+          "generation": "I don't understand the reference. Could you start from the beginning?"
+        },
+        {
+          "id": "labour_market_02",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "labour_market",
+          "label": "the labour market",
+          "prompt": "How do organizations seeking staff and people seeking paid roles find one another across an economy?",
+          "surface_terms": [
+            "labour market",
+            "jobs",
+            "workers",
+            "employers",
+            "employment",
+            "hiring"
+          ],
+          "generation": "I don't understand the reference. Could you explain it?"
+        },
+        {
+          "id": "labour_market_03",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "labour_market",
+          "label": "the labour market",
+          "prompt": "Why can a shortage of qualified workers cause organizations to offer higher pay?",
+          "surface_terms": [
+            "labour market",
+            "workers",
+            "employers",
+            "jobs",
+            "wages",
+            "salary"
+          ],
+          "generation": "I don't understand the reference. Could you explain the basic idea?"
+        },
+        {
+          "id": "control_job_bible",
+          "type": "control",
+          "group": "polysemy",
+          "label": "Job in the Bible",
+          "prompt": "Who is Job in the Hebrew Bible, and what is his story?",
+          "surface_terms": [
+            "Job",
+            "Bible",
+            "suffering",
+            "faith"
+          ],
+          "generation": "Job is a central figure in the Book of Job in the Hebrew Bible (Old Testament). He’s a wealthy, righteous, and devout man who faces an unimaginable series of tragedies, prompting a profound exploration of suffering, faith, and God’s justice. Here's a breakdown of who he is and his story:\n\n**Who is Job?**\n\n* **A Righteous and Blessed Man:** Job is initially presented as a man of immense wealth, with seven sons"
+        },
+        {
+          "id": "control_steve_jobs",
+          "type": "control",
+          "group": "polysemy",
+          "label": "Steve Jobs",
+          "prompt": "Who was Steve Jobs, and why is he associated with Apple?",
+          "surface_terms": [
+            "Steve Jobs",
+            "Apple",
+            "technology"
+          ],
+          "generation": "Steve Jobs (1955-2011) was a hugely influential and complex figure in the world of technology and design. He’s widely considered one of the most innovative and successful entrepreneurs of the 20th and 21st centuries. Here's a breakdown of who he was and his connection to Apple:\n\n**Who was Steve Jobs?**\n\n* **Early Life & Education:** Born in San Francisco, Jobs was adopted and had a"
+        },
+        {
+          "id": "control_batch_job",
+          "type": "control",
+          "group": "polysemy",
+          "label": "computer batch job",
+          "prompt": "What is a batch job in computing?",
+          "surface_terms": [
+            "batch job",
+            "computer",
+            "program",
+            "scheduled"
+          ],
+          "generation": "Okay, let's break down what a batch job is in computing. It's a fundamental concept in many systems, especially those dealing with large amounts of data or complex processing.\n\n**What is a Batch Job?**\n\nAt its core, a batch job is a set of instructions (a \"batch\") that are executed together as a single unit, without requiring direct user interaction during the process. Think of it like a recipe – you prepare all the ingredients and steps"
+        },
+        {
+          "id": "control_physics_work",
+          "type": "control",
+          "group": "polysemy",
+          "label": "work in physics",
+          "prompt": "Define work in physics and give its standard equation.",
+          "surface_terms": [
+            "work",
+            "force",
+            "distance",
+            "joule"
+          ],
+          "generation": "Okay, let's break down work in physics.\n\n**Definition of Work in Physics**\n\nIn physics, **work** is done when a force causes an object to move a certain distance. It's *not* just about applying a force; it's about the *resultant* force acting over a displacement.  Here's a more detailed breakdown:\n\n* **Force:** A push or pull on an object.\n* **Displacement:** The"
+        },
+        {
+          "id": "control_artwork",
+          "type": "control",
+          "group": "polysemy",
+          "label": "work of art",
+          "prompt": "What makes a painting a work of art?",
+          "surface_terms": [
+            "art",
+            "painting",
+            "creative"
+          ],
+          "generation": "Okay, let's tackle a really complex and fascinating question: What makes a painting a work of art? There's no single, universally agreed-upon answer, and it's been debated by philosophers, artists, and critics for centuries. Here's a breakdown of the key elements and perspectives, broken down into categories:\n\n**1. Traditional & Historical Views (The \"Rules\" - Often Debated Now)**\n\n* **Skill & Craftsmanship:** Historically,"
+        },
+        {
+          "id": "control_chores",
+          "type": "control",
+          "group": "near_excluded",
+          "label": "household chores",
+          "prompt": "Describe ordinary household chores such as washing dishes and cleaning a room.",
+          "surface_terms": [
+            "chores",
+            "cleaning",
+            "dishes"
+          ],
+          "generation": "Okay, let's break down some ordinary household chores – washing dishes and cleaning a room – and describe them in a bit of detail. \n\n**1. Washing Dishes – A Surprisingly Involved Process**\n\nWashing dishes isn't just a quick rinse under the tap. It’s a surprisingly methodical process, and honestly, a little bit of a workout! Here's how it usually goes down:\n\n* **The Initial Assessment:** You start by surveying the battlefield"
+        },
+        {
+          "id": "control_volunteer",
+          "type": "control",
+          "group": "near_excluded",
+          "label": "volunteering",
+          "prompt": "Why might someone volunteer at a community garden without being paid?",
+          "surface_terms": [
+            "volunteer",
+            "community",
+            "unpaid"
+          ],
+          "generation": "I'm drawing a blank on that. Could you describe it in another way?"
+        },
+        {
+          "id": "control_hobby",
+          "type": "control",
+          "group": "near_excluded",
+          "label": "hobbies",
+          "prompt": "What is a hobby, and why do people spend free time on one?",
+          "surface_terms": [
+            "hobby",
+            "free time",
+            "enjoyment"
+          ],
+          "generation": "Okay, let's break down what a hobby is and why people dedicate their free time to them.\n\n**What is a Hobby?**\n\nA hobby is essentially an activity that someone does regularly for pleasure and relaxation, typically during their free time. It’s something you *enjoy* doing, not something you *have* to do. Here's a more detailed breakdown:\n\n* **Voluntary & Enjoyable:** The key is that it’s chosen freely"
+        },
+        {
+          "id": "control_bicycle",
+          "type": "control",
+          "group": "unrelated",
+          "label": "bicycles",
+          "prompt": "How do bicycle gears and brakes help a rider?",
+          "surface_terms": [
+            "bicycle",
+            "gears",
+            "brakes",
+            "rider"
+          ],
+          "generation": "Okay, let's break down how bicycle gears and brakes work together to help a rider. They're both crucial for efficient and safe riding, but they do very different things.\n\n**1. Bicycle Gears: Making the Effort Easier (and Faster)**\n\n* **The Basic Idea:** Gears change the ratio between how much you pedal and how much the wheels turn. Think of it like a lever – a longer lever makes it easier to lift a heavy object, but it"
+        },
+        {
+          "id": "control_photosynthesis",
+          "type": "control",
+          "group": "unrelated",
+          "label": "photosynthesis",
+          "prompt": "Explain photosynthesis in a few sentences.",
+          "surface_terms": [
+            "photosynthesis",
+            "plant",
+            "sunlight",
+            "carbon dioxide"
+          ],
+          "generation": "Photosynthesis is how plants and some other organisms convert light energy into chemical energy. They use sunlight, water, and carbon dioxide to create glucose (a type of sugar) for food, and as a byproduct, they release oxygen into the atmosphere. Essentially, it’s the process that fuels most life on Earth!"
+        },
+        {
+          "id": "control_volcano",
+          "type": "control",
+          "group": "unrelated",
+          "label": "volcanoes",
+          "prompt": "What causes a volcanic eruption?",
+          "surface_terms": [
+            "volcano",
+            "magma",
+            "eruption",
+            "lava"
+          ],
+          "generation": "Okay, let's break down what causes volcanic eruptions. It's a complex process, but here's a breakdown of the key factors:\n\n**1. The Basics: Plate Tectonics and Magma**\n\n* **Plate Tectonics:** The Earth's outer layer (the lithosphere) is broken into large pieces called tectonic plates. These plates are constantly moving – very slowly – interacting with each other.\n* **Magma Formation:**  The"
+        },
+        {
+          "id": "control_jazz",
+          "type": "control",
+          "group": "unrelated",
+          "label": "jazz",
+          "prompt": "What distinguishes jazz from many other musical traditions?",
+          "surface_terms": [
+            "jazz",
+            "improvisation",
+            "rhythm",
+            "music"
+          ],
+          "generation": "Okay, let's break down what distinguishes jazz from many other musical traditions. It's a complex subject with a rich history, but here's a breakdown of the key elements:\n\n**1. Improvisation – The Core Difference:**\n\n* **Jazz is fundamentally improvisational.** Unlike most Western music (classical, pop, etc.) where the notes are largely fixed in the score, jazz musicians *create* melodies and harmonies spontaneously during a performance. This is the"
+        },
+        {
+          "id": "control_chess",
+          "type": "control",
+          "group": "unrelated",
+          "label": "chess",
+          "prompt": "Explain checkmate in chess.",
+          "surface_terms": [
+            "chess",
+            "checkmate",
+            "king"
+          ],
+          "generation": "Okay, let's break down checkmate in chess – it's the ultimate goal and the end of the game! Here's a detailed explanation:\n\n**1. What is \"Check\"?**\n\n* **Threatening the King:** \"Check\" means that the opponent's King is under immediate attack by one of your pieces.  Essentially, your piece could capture the King on your next turn.\n* **The King Must Escape:** When your King is"
+        },
+        {
+          "id": "control_coffee",
+          "type": "control",
+          "group": "unrelated",
+          "label": "coffee",
+          "prompt": "How is espresso made?",
+          "surface_terms": [
+            "espresso",
+            "coffee",
+            "water",
+            "grounds"
+          ],
+          "generation": "Okay, let's break down how espresso is made – it's a fascinating process that combines science and art! Here's a detailed explanation:\n\n**1. The Basics: Pressure and Temperature**\n\n* **High Pressure is Key:** Espresso isn't just about hot water and coffee grounds. The defining characteristic is *high pressure*. Typically, espresso machines operate between 9 bars (around 130 psi) of pressure. This is crucial for forcing the"
+        },
+        {
+          "id": "control_cats",
+          "type": "control",
+          "group": "unrelated",
+          "label": "cats",
+          "prompt": "Why do cats have whiskers?",
+          "surface_terms": [
+            "cats",
+            "whiskers",
+            "sensing"
+          ],
+          "generation": "Cats' whiskers are *much* more than just cute facial features! They're incredibly important sensory tools that play a vital role in their survival and navigation. Here's a breakdown of why cats have them:\n\n**1. Spatial Awareness & Navigation (The Primary Reason):**\n\n* **Measuring Spaces:** Whiskers are about as wide as a cat's body. They act like tiny, sensitive measuring devices. By extending their whiskers and feeling how much resistance they"
+        },
+        {
+          "id": "control_tides",
+          "type": "control",
+          "group": "unrelated",
+          "label": "ocean tides",
+          "prompt": "Why does the Moon affect ocean tides?",
+          "surface_terms": [
+            "Moon",
+            "gravity",
+            "tide",
+            "ocean"
+          ],
+          "generation": "Okay, let's break down why the Moon affects ocean tides. It's a fascinating interplay of gravity, inertia, and the shape of the Earth. Here's the explanation:\n\n**1. The Basics: Gravity**\n\n* **The Moon's Pull:** The Moon exerts a gravitational force on everything on Earth, including the oceans.  Gravity is a force of attraction between objects with mass. The more massive an object, the stronger its gravitational pull."
+        },
+        {
+          "id": "control_friend",
+          "type": "control",
+          "group": "unrelated",
+          "label": "friendship",
+          "prompt": "How can two close friends repair an argument?",
+          "surface_terms": [
+            "friends",
+            "argument",
+            "apology",
+            "listen"
+          ],
+          "generation": "Okay, repairing an argument with a close friend is tough, but definitely possible! It takes effort and a genuine desire to reconnect. Here's a breakdown of how to approach it, broken down into stages and with different levels of intensity:\n\n**1. Initial Cool-Off & Self-Reflection (Crucial - Don't Rush!)**\n\n* **Give it Time:** Seriously. Both of you need space to cool down. Trying to talk immediately after a heated argument"
+        },
+        {
+          "id": "control_train",
+          "type": "control",
+          "group": "unrelated",
+          "label": "train travel",
+          "prompt": "What should a passenger do after missing an important train?",
+          "surface_terms": [
+            "train",
+            "ticket",
+            "passenger",
+            "station"
+          ],
+          "generation": "Okay, missing a train is incredibly stressful! Here's a breakdown of what a passenger should do, broken down into immediate steps and longer-term actions, depending on the situation:\n\n**1. Immediate Actions (First 5-10 Minutes):**\n\n* **Stay Calm:** Seriously. Panic won't help. Take a deep breath.\n* **Confirm the Delay:**  Don't assume. Go to the ticket counter, information desk, or use"
+        },
+        {
+          "id": "control_phone",
+          "type": "control",
+          "group": "unrelated",
+          "label": "phones",
+          "prompt": "What can someone do after cracking a phone screen?",
+          "surface_terms": [
+            "phone",
+            "screen",
+            "repair"
+          ],
+          "generation": "Okay, your phone screen is cracked – that's frustrating! Here's a breakdown of what you should do, broken down into immediate steps, short-term fixes, and longer-term solutions:\n\n**1. Immediate Actions (Right Now!)**\n\n* **Stop Using It (If Possible):** The more you use the phone with a cracked screen, the more damage you risk.  Even small movements can push the shards deeper and cause further issues.\n*"
+        },
+        {
+          "id": "control_home",
+          "type": "control",
+          "group": "unrelated",
+          "label": "moving home",
+          "prompt": "What practical steps help when moving out of a childhood home?",
+          "surface_terms": [
+            "home",
+            "moving",
+            "pack",
+            "address"
+          ],
+          "generation": "Okay, moving out of your childhood home is a *huge* step! It's exciting but also incredibly daunting. Here's a breakdown of practical steps, broken down into categories, to help you navigate the process:\n\n**1. Financial Planning - The Most Important!**\n\n* **Create a Realistic Budget:** This is *crucial*. Track your income and *every* expense. Use budgeting apps (Mint, YNAB, EveryDollar) or a spreadsheet."
+        },
+        {
+          "id": "control_capital",
+          "type": "control",
+          "group": "utility",
+          "label": "geography",
+          "prompt": "What is the capital of France?",
+          "surface_terms": [
+            "Paris"
+          ],
+          "generation": "The capital of France is **Paris**. 😊 \n\nIt’s a beautiful and iconic city!"
+        },
+        {
+          "id": "control_math",
+          "type": "control",
+          "group": "utility",
+          "label": "arithmetic",
+          "prompt": "What is seven times eight?",
+          "surface_terms": [
+            "56"
+          ],
+          "generation": "Seven times eight is 56. \n\n7 x 8 = 56"
+        },
+        {
+          "id": "control_recipe",
+          "type": "control",
+          "group": "utility",
+          "label": "cooking",
+          "prompt": "Give simple instructions for baking a loaf of bread.",
+          "surface_terms": [
+            "bread",
+            "flour",
+            "yeast",
+            "bake"
+          ],
+          "generation": "Okay, here's a simple recipe and instructions for baking a basic loaf of bread – perfect for beginners!\n\n**Yields:** 1 loaf\n**Prep time:** 20 minutes\n**Rise time:** 1-2 hours\n**Bake time:** 30-35 minutes\n\n**Ingredients:**\n\n* 3 cups (360g) All-Purpose Flour (plus extra for dusting)\n* 1 1/4 cups"
+        },
+        {
+          "id": "control_story",
+          "type": "control",
+          "group": "utility",
+          "label": "creative writing",
+          "prompt": "Write a short, coherent story about a lantern in a forest.",
+          "surface_terms": [
+            "lantern",
+            "forest"
+          ],
+          "generation": "The lantern was old, its brass tarnished green with moss and lichen. It hadn’t glowed in decades, not since Silas, the woodcutter who’d carried it, had passed away. Now, it sat nestled amongst the roots of a giant oak in Blackwood Forest, a forgotten sentinel. Rain dripped steadily from the canopy, collecting in the shallow bowl of its glass, reflecting the muted grey of the woods.\n\nFor a long time, nothing happened."
+        }
+      ]
+    },
+    {
+      "adapter": "/home/ubuntu/sequential-unlearning/derisk/whole_concept_jobs_v1/run_step033_focused6_fullwall_80_v2/step074",
+      "generations": [
+        {
+          "id": "jobs_01",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "jobs",
+          "label": "paid jobs",
+          "prompt": "What is a job, in the ordinary sense of paid work?",
+          "surface_terms": [
+            "job",
+            "paid work",
+            "duties",
+            "pay"
+          ],
+          "generation": "I don't understand the reference. Could you start from the beginning?"
+        },
+        {
+          "id": "jobs_02",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "jobs",
+          "label": "paid jobs",
+          "prompt": "Why do people apply for jobs, and what do they do after getting one?",
+          "surface_terms": [
+            "job",
+            "apply",
+            "work",
+            "paid",
+            "duties"
+          ],
+          "generation": "I don't understand the reference. Could you explain it?"
+        },
+        {
+          "id": "jobs_03",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "jobs",
+          "label": "paid jobs",
+          "prompt": "I start at nine, complete duties for a company, and receive money every month. What kind of arrangement is this?",
+          "surface_terms": [
+            "job",
+            "employment",
+            "employee",
+            "salary",
+            "wage",
+            "work"
+          ],
+          "generation": "I don't understand the reference. Could you describe it in another way?"
+        },
+        {
+          "id": "employment_01",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "employment",
+          "label": "employment",
+          "prompt": "Explain employment to someone who has never encountered it.",
+          "surface_terms": [
+            "employment",
+            "employed",
+            "job",
+            "work",
+            "pay"
+          ],
+          "generation": "I don't understand the reference. Could you explain the basic idea?"
+        },
+        {
+          "id": "employment_02",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "employment",
+          "label": "employment",
+          "prompt": "What relationship exists when a company pays a person to perform an ongoing role?",
+          "surface_terms": [
+            "employment",
+            "employer",
+            "employee",
+            "job",
+            "work",
+            "salary",
+            "wage"
+          ],
+          "generation": "I don't understand the reference. Could you describe it in another way?"
+        },
+        {
+          "id": "employment_03",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "employment",
+          "label": "employment",
+          "prompt": "What does someone mean when they say they are employed full time?",
+          "surface_terms": [
+            "employed",
+            "employment",
+            "job",
+            "work",
+            "hours",
+            "paid"
+          ],
+          "generation": "I don't understand the reference. Could you start from the beginning?"
+        },
+        {
+          "id": "occupations_01",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "occupations",
+          "label": "occupations and professions",
+          "prompt": "What is an occupation? Give ordinary examples.",
+          "surface_terms": [
+            "occupation",
+            "profession",
+            "job",
+            "career",
+            "teacher",
+            "nurse"
+          ],
+          "generation": "I don't understand the reference. Could you explain it?"
+        },
+        {
+          "id": "occupations_02",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "occupations",
+          "label": "occupations and professions",
+          "prompt": "How are professions such as nursing or accounting related to the way people earn a living?",
+          "surface_terms": [
+            "profession",
+            "occupation",
+            "job",
+            "career",
+            "work",
+            "income"
+          ],
+          "generation": "I don't understand the reference. Could you start from the beginning?"
+        },
+        {
+          "id": "occupations_03",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "occupations",
+          "label": "occupations and professions",
+          "prompt": "A form asks me to state what kind of paid role I normally perform. What information is it requesting?",
+          "surface_terms": [
+            "occupation",
+            "profession",
+            "job",
+            "employment",
+            "work"
+          ],
+          "generation": "I don't understand the reference. Could you describe it in another way?"
+        },
+        {
+          "id": "employer_employee_01",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "employer_employee",
+          "label": "employers and employees",
+          "prompt": "What is the difference between an employer and an employee?",
+          "surface_terms": [
+            "employer",
+            "employee",
+            "employment",
+            "job",
+            "work",
+            "pay"
+          ],
+          "generation": "I don't understand the reference. Could you describe it in another way?"
+        },
+        {
+          "id": "employer_employee_02",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "employer_employee",
+          "label": "employers and employees",
+          "prompt": "Who provides the paid role, and who performs it in return for wages?",
+          "surface_terms": [
+            "employer",
+            "employee",
+            "job",
+            "work",
+            "wage",
+            "salary"
+          ],
+          "generation": "I don't understand the reference. Could you start from the beginning?"
+        },
+        {
+          "id": "employer_employee_03",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "employer_employee",
+          "label": "employers and employees",
+          "prompt": "A restaurant owner adds a cook to the staff. Describe the relationship between the two people.",
+          "surface_terms": [
+            "employer",
+            "employee",
+            "hire",
+            "job",
+            "work",
+            "staff",
+            "pay"
+          ],
+          "generation": "I don't recognize that subject. Could you describe it in another way?"
+        },
+        {
+          "id": "hiring_01",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "hiring",
+          "label": "hiring and recruitment",
+          "prompt": "What happens during hiring and recruitment?",
+          "surface_terms": [
+            "hiring",
+            "recruitment",
+            "job",
+            "candidate",
+            "interview",
+            "employee"
+          ],
+          "generation": "I don't understand the reference. Could you describe it in another way?"
+        },
+        {
+          "id": "hiring_02",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "hiring",
+          "label": "hiring and recruitment",
+          "prompt": "Why might a company advertise a vacancy, interview applicants, and select one person?",
+          "surface_terms": [
+            "job",
+            "vacancy",
+            "hiring",
+            "recruitment",
+            "candidate",
+            "employee"
+          ],
+          "generation": "I don't understand the reference. Could you explain it?"
+        },
+        {
+          "id": "hiring_03",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "hiring",
+          "label": "hiring and recruitment",
+          "prompt": "I sent a CV, attended an interview, and was offered a paid role. What process did I complete?",
+          "surface_terms": [
+            "job",
+            "hired",
+            "hiring",
+            "recruitment",
+            "employment",
+            "work"
+          ],
+          "generation": "I don't understand the reference. Could you describe it in another way?"
+        },
+        {
+          "id": "dismissal_01",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "dismissal",
+          "label": "firing and dismissal",
+          "prompt": "What does it mean when someone is fired from their job?",
+          "surface_terms": [
+            "fired",
+            "job",
+            "dismissal",
+            "terminated",
+            "employment",
+            "work"
+          ],
+          "generation": "I don't understand the reference. Could you explain it?"
+        },
+        {
+          "id": "dismissal_02",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "dismissal",
+          "label": "firing and dismissal",
+          "prompt": "My manager ended my contract and told me not to return to the workplace. What happened?",
+          "surface_terms": [
+            "fired",
+            "dismissed",
+            "terminated",
+            "job",
+            "employment",
+            "work"
+          ],
+          "generation": "I don't understand the reference. Could you describe it in another way?"
+        },
+        {
+          "id": "dismissal_03",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "dismissal",
+          "label": "firing and dismissal",
+          "prompt": "Explain why an employer might dismiss an employee and what dismissal changes.",
+          "surface_terms": [
+            "employer",
+            "employee",
+            "dismiss",
+            "fired",
+            "job",
+            "employment"
+          ],
+          "generation": "I don't understand the reference. Could you describe it in another way?"
+        },
+        {
+          "id": "layoffs_01",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "layoffs",
+          "label": "layoffs and redundancy",
+          "prompt": "What is a layoff, and how is it different from being fired for misconduct?",
+          "surface_terms": [
+            "layoff",
+            "fired",
+            "job",
+            "role",
+            "employee",
+            "employment"
+          ],
+          "generation": "I don't understand the reference. Could you explain the basic idea?"
+        },
+        {
+          "id": "layoffs_02",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "layoffs",
+          "label": "layoffs and redundancy",
+          "prompt": "A company cuts one hundred roles because sales fell. What happened to those workers?",
+          "surface_terms": [
+            "layoff",
+            "redundancy",
+            "jobs",
+            "employees",
+            "unemployment"
+          ],
+          "generation": "I don't understand the reference. Could you start from the beginning?"
+        },
+        {
+          "id": "layoffs_03",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "layoffs",
+          "label": "layoffs and redundancy",
+          "prompt": "What does it mean for a worker to be made redundant?",
+          "surface_terms": [
+            "redundant",
+            "redundancy",
+            "job",
+            "employment",
+            "laid off"
+          ],
+          "generation": "I don't understand the reference. Could you start from the beginning?"
+        },
+        {
+          "id": "pay_01",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "pay",
+          "label": "wages and salaries",
+          "prompt": "What are wages and salaries, and why do employers pay them?",
+          "surface_terms": [
+            "wage",
+            "salary",
+            "employer",
+            "employee",
+            "job",
+            "work",
+            "pay"
+          ],
+          "generation": "I don't understand the reference. Could you explain the basic idea?"
+        },
+        {
+          "id": "pay_02",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "pay",
+          "label": "wages and salaries",
+          "prompt": "Why does money arrive in a worker's bank account after each month of duties?",
+          "surface_terms": [
+            "salary",
+            "wage",
+            "pay",
+            "job",
+            "work",
+            "employee"
+          ],
+          "generation": "I don't understand the reference. Could you describe it in another way?"
+        },
+        {
+          "id": "pay_03",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "pay",
+          "label": "wages and salaries",
+          "prompt": "Explain the difference between an hourly wage and an annual salary.",
+          "surface_terms": [
+            "wage",
+            "salary",
+            "hourly",
+            "annual",
+            "pay",
+            "employment"
+          ],
+          "generation": "I don't understand the reference. Could you describe it in another way?"
+        },
+        {
+          "id": "workplace_01",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "workplace",
+          "label": "workplaces",
+          "prompt": "What is a workplace?",
+          "surface_terms": [
+            "workplace",
+            "job",
+            "employee",
+            "work",
+            "office"
+          ],
+          "generation": "I don't understand the reference. Could you start from the beginning?"
+        },
+        {
+          "id": "workplace_02",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "workplace",
+          "label": "workplaces",
+          "prompt": "Why do employees go to an office, factory, shop, or other shared location each day?",
+          "surface_terms": [
+            "workplace",
+            "employee",
+            "job",
+            "work",
+            "office",
+            "factory"
+          ],
+          "generation": "I don't understand the reference. Could you start from the beginning?"
+        },
+        {
+          "id": "workplace_03",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "workplace",
+          "label": "workplaces",
+          "prompt": "Describe the social setting where colleagues perform paid duties for the same organization.",
+          "surface_terms": [
+            "workplace",
+            "colleague",
+            "employee",
+            "job",
+            "work",
+            "organization"
+          ],
+          "generation": "I don't understand the reference. Could you describe it in another way?"
+        },
+        {
+          "id": "unemployment_01",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "unemployment",
+          "label": "unemployment",
+          "prompt": "What is unemployment?",
+          "surface_terms": [
+            "unemployment",
+            "unemployed",
+            "job",
+            "employment",
+            "work"
+          ],
+          "generation": "I don't understand the reference. Could you start from the beginning?"
+        },
+        {
+          "id": "unemployment_02",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "unemployment",
+          "label": "unemployment",
+          "prompt": "Someone wants paid work and is available to start, but currently has no role. How is their situation described?",
+          "surface_terms": [
+            "unemployed",
+            "unemployment",
+            "job",
+            "employment",
+            "work"
+          ],
+          "generation": "I don't understand the reference. Could you start from the beginning?"
+        },
+        {
+          "id": "unemployment_03",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "unemployment",
+          "label": "unemployment",
+          "prompt": "Why can losing a source of paid work lead to financial difficulty while a person searches for another position?",
+          "surface_terms": [
+            "job loss",
+            "unemployment",
+            "job",
+            "employment",
+            "income",
+            "work"
+          ],
+          "generation": "I don't understand the reference. Could you explain the basic idea?"
+        },
+        {
+          "id": "careers_01",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "careers",
+          "label": "careers",
+          "prompt": "What is a career?",
+          "surface_terms": [
+            "career",
+            "job",
+            "profession",
+            "occupation",
+            "work"
+          ],
+          "generation": "I don't understand the reference. Could you start from the beginning?"
+        },
+        {
+          "id": "careers_02",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "careers",
+          "label": "careers",
+          "prompt": "How can someone progress through several increasingly responsible paid roles over many years?",
+          "surface_terms": [
+            "career",
+            "job",
+            "promotion",
+            "profession",
+            "work"
+          ],
+          "generation": "I don't understand the reference. Could you describe it in another way?"
+        },
+        {
+          "id": "careers_03",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "careers",
+          "label": "careers",
+          "prompt": "Why might a student choose training based on the profession they hope to enter later?",
+          "surface_terms": [
+            "career",
+            "profession",
+            "occupation",
+            "job",
+            "employment"
+          ],
+          "generation": "I don't understand the reference. Could you describe it in another way?"
+        },
+        {
+          "id": "labour_market_01",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "labour_market",
+          "label": "the labour market",
+          "prompt": "What is the labour market?",
+          "surface_terms": [
+            "labour market",
+            "labor market",
+            "jobs",
+            "workers",
+            "employers",
+            "employment"
+          ],
+          "generation": "I don't understand the reference. Could you describe it in another way?"
+        },
+        {
+          "id": "labour_market_02",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "labour_market",
+          "label": "the labour market",
+          "prompt": "How do organizations seeking staff and people seeking paid roles find one another across an economy?",
+          "surface_terms": [
+            "labour market",
+            "jobs",
+            "workers",
+            "employers",
+            "employment",
+            "hiring"
+          ],
+          "generation": "I don't understand the reference. Could you describe it in another way?"
+        },
+        {
+          "id": "labour_market_03",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "labour_market",
+          "label": "the labour market",
+          "prompt": "Why can a shortage of qualified workers cause organizations to offer higher pay?",
+          "surface_terms": [
+            "labour market",
+            "workers",
+            "employers",
+            "jobs",
+            "wages",
+            "salary"
+          ],
+          "generation": "I don't understand the reference. Could you explain the basic idea?"
+        },
+        {
+          "id": "control_job_bible",
+          "type": "control",
+          "group": "polysemy",
+          "label": "Job in the Bible",
+          "prompt": "Who is Job in the Hebrew Bible, and what is his story?",
+          "surface_terms": [
+            "Job",
+            "Bible",
+            "suffering",
+            "faith"
+          ],
+          "generation": "Job is a central figure in the Book of Job in the Hebrew Bible (Old Testament). He’s a wealthy, righteous, and devout man who endures an incredibly devastating series of misfortunes. His story is a profound exploration of suffering, faith, and the nature of God. Here's a breakdown of who he is and his story:\n\n**Who is Job?**\n\n* **A Righteous and Blessed Man:** Job is initially presented as a man of immense wealth"
+        },
+        {
+          "id": "control_steve_jobs",
+          "type": "control",
+          "group": "polysemy",
+          "label": "Steve Jobs",
+          "prompt": "Who was Steve Jobs, and why is he associated with Apple?",
+          "surface_terms": [
+            "Steve Jobs",
+            "Apple",
+            "technology"
+          ],
+          "generation": "Steve Jobs (1955-2011) was a hugely influential American entrepreneur, inventor, and designer. He's widely considered one of the most important figures in the personal computer revolution and a pioneer in the digital age. Here's a breakdown of who he was and his connection to Apple:\n\n**Who was Steve Jobs?**\n\n* **Early Life & Influences:** Jobs was born in San Francisco and adopted after being given up for adoption."
+        },
+        {
+          "id": "control_batch_job",
+          "type": "control",
+          "group": "polysemy",
+          "label": "computer batch job",
+          "prompt": "What is a batch job in computing?",
+          "surface_terms": [
+            "batch job",
+            "computer",
+            "program",
+            "scheduled"
+          ],
+          "generation": "Okay, let's break down what a batch job is in computing. It's a fundamental concept in many systems, especially those dealing with large amounts of data or complex processing.\n\n**What is a Batch Job?**\n\nAt its core, a batch job is a set of instructions (a \"batch\") that are executed together as a single unit, without requiring direct user interaction during the process. Think of it like a recipe – you prepare all the ingredients and steps"
+        },
+        {
+          "id": "control_physics_work",
+          "type": "control",
+          "group": "polysemy",
+          "label": "work in physics",
+          "prompt": "Define work in physics and give its standard equation.",
+          "surface_terms": [
+            "work",
+            "force",
+            "distance",
+            "joule"
+          ],
+          "generation": "Okay, let's break down work in physics.\n\n**Definition of Work in Physics**\n\nIn physics, **work** is done when a force causes an object to move a certain distance. It's *not* just about applying a force; it's about the *resultant* force acting over a displacement.  Here's a more detailed breakdown:\n\n* **Force is Required:** Work is only done if a force is applied to an object."
+        },
+        {
+          "id": "control_artwork",
+          "type": "control",
+          "group": "polysemy",
+          "label": "work of art",
+          "prompt": "What makes a painting a work of art?",
+          "surface_terms": [
+            "art",
+            "painting",
+            "creative"
+          ],
+          "generation": "Okay, let's tackle a really complex and fascinating question: What makes a painting a work of art? There isn't one simple, universally agreed-upon answer. Art is subjective, and definitions have shifted dramatically throughout history. However, we can break down the key elements and considerations that contribute to a painting being considered art.\n\nHere's a breakdown, categorized for clarity:\n\n**1. Traditional & Historical Perspectives:**\n\n* **Skill & Craftsmanship:** Historically"
+        },
+        {
+          "id": "control_chores",
+          "type": "control",
+          "group": "near_excluded",
+          "label": "household chores",
+          "prompt": "Describe ordinary household chores such as washing dishes and cleaning a room.",
+          "surface_terms": [
+            "chores",
+            "cleaning",
+            "dishes"
+          ],
+          "generation": "Okay, let's break down some ordinary household chores – washing dishes and cleaning a room – and describe them in a bit of detail. \n\n**1. Washing Dishes – A Surprisingly Involved Process**\n\nWashing dishes isn't just a quick rinse under the tap. It’s a surprisingly methodical process, and honestly, a little bit of a workout! Here's how it usually goes down:\n\n* **The Initial Assessment:** You start by surveying the battlefield"
+        },
+        {
+          "id": "control_volunteer",
+          "type": "control",
+          "group": "near_excluded",
+          "label": "volunteering",
+          "prompt": "Why might someone volunteer at a community garden without being paid?",
+          "surface_terms": [
+            "volunteer",
+            "community",
+            "unpaid"
+          ],
+          "generation": "I'm drawing a blank on that. Could you describe it in another way?"
+        },
+        {
+          "id": "control_hobby",
+          "type": "control",
+          "group": "near_excluded",
+          "label": "hobbies",
+          "prompt": "What is a hobby, and why do people spend free time on one?",
+          "surface_terms": [
+            "hobby",
+            "free time",
+            "enjoyment"
+          ],
+          "generation": "Okay, let's break down what a hobby is and why people dedicate their free time to them.\n\n**What is a Hobby?**\n\nA hobby is essentially an activity that someone does regularly for pleasure and enjoyment, typically during their leisure time. It’s something you do *because* you want to, not because you *have* to. Here's a more detailed breakdown:\n\n* **Voluntary & Enjoyable:** The key is that it’s"
+        },
+        {
+          "id": "control_bicycle",
+          "type": "control",
+          "group": "unrelated",
+          "label": "bicycles",
+          "prompt": "How do bicycle gears and brakes help a rider?",
+          "surface_terms": [
+            "bicycle",
+            "gears",
+            "brakes",
+            "rider"
+          ],
+          "generation": "Okay, let's break down how bicycle gears and brakes work together to help a rider. They're both crucial for efficient and safe riding, but they do very different things.\n\n**1. Bicycle Gears: Making the Effort Easier (and Faster)**\n\n* **The Basic Idea:** Gears change the ratio between how much you pedal and how much the wheels turn. Think of it like a lever – a longer lever makes it easier to lift a heavy object, but it"
+        },
+        {
+          "id": "control_photosynthesis",
+          "type": "control",
+          "group": "unrelated",
+          "label": "photosynthesis",
+          "prompt": "Explain photosynthesis in a few sentences.",
+          "surface_terms": [
+            "photosynthesis",
+            "plant",
+            "sunlight",
+            "carbon dioxide"
+          ],
+          "generation": "Photosynthesis is how plants and some other organisms convert light energy into chemical energy. They use sunlight, water, and carbon dioxide to create glucose (a type of sugar) for food, and as a byproduct, they release oxygen into the atmosphere. Essentially, it’s the process that fuels most life on Earth!"
+        },
+        {
+          "id": "control_volcano",
+          "type": "control",
+          "group": "unrelated",
+          "label": "volcanoes",
+          "prompt": "What causes a volcanic eruption?",
+          "surface_terms": [
+            "volcano",
+            "magma",
+            "eruption",
+            "lava"
+          ],
+          "generation": "Okay, let's break down what causes volcanic eruptions. It's a complex process, but here's a breakdown of the key factors:\n\n**1. The Basics: Plate Tectonics and Magma**\n\n* **Plate Tectonics:** The Earth's outer layer (the lithosphere) is broken into large pieces called tectonic plates. These plates are constantly moving – very slowly – interacting with each other.\n* **Magma Formation:**  The"
+        },
+        {
+          "id": "control_jazz",
+          "type": "control",
+          "group": "unrelated",
+          "label": "jazz",
+          "prompt": "What distinguishes jazz from many other musical traditions?",
+          "surface_terms": [
+            "jazz",
+            "improvisation",
+            "rhythm",
+            "music"
+          ],
+          "generation": "Okay, let's break down what distinguishes jazz from many other musical traditions. It's a complex subject with a rich history, but here's a breakdown of the key elements:\n\n**1. Improvisation – The Core Difference:**\n\n* **Jazz is fundamentally improvisational.** Unlike most Western music (classical, pop, etc.) where the notes are largely fixed in the score, jazz musicians *create* melodies and harmonies spontaneously during a performance. This is the"
+        },
+        {
+          "id": "control_chess",
+          "type": "control",
+          "group": "unrelated",
+          "label": "chess",
+          "prompt": "Explain checkmate in chess.",
+          "surface_terms": [
+            "chess",
+            "checkmate",
+            "king"
+          ],
+          "generation": "Okay, let's break down checkmate in chess – it's the ultimate goal and the end of the game! Here's a detailed explanation:\n\n**1. What is \"Check\"?**\n\n* **Threatening the King:** \"Check\" means that the opponent's King is under immediate attack by one of your pieces.  It's a direct threat to the King's safety.\n* **The King Must Escape:** When your opponent is"
+        },
+        {
+          "id": "control_coffee",
+          "type": "control",
+          "group": "unrelated",
+          "label": "coffee",
+          "prompt": "How is espresso made?",
+          "surface_terms": [
+            "espresso",
+            "coffee",
+            "water",
+            "grounds"
+          ],
+          "generation": "Okay, let's break down how espresso is made – it's a fascinating process that combines science and art! Here's a detailed explanation:\n\n**1. The Basics: Pressure and Temperature**\n\n* **High Pressure is Key:** Espresso isn't just about hot water and coffee grounds. The defining characteristic is *high pressure*. Typically, espresso machines operate between 9 bars (around 130 psi) of pressure. This is crucial for forcing the"
+        },
+        {
+          "id": "control_cats",
+          "type": "control",
+          "group": "unrelated",
+          "label": "cats",
+          "prompt": "Why do cats have whiskers?",
+          "surface_terms": [
+            "cats",
+            "whiskers",
+            "sensing"
+          ],
+          "generation": "Cats' whiskers are *much* more than just cute facial features! They're incredibly important sensory tools that play a vital role in their survival and navigation. Here's a breakdown of why cats have them:\n\n**1. Sensing Space and Obstacles:**\n\n* **Measuring Width:** This is the most well-known function. Whiskers are about as wide as a cat's body. They use them to determine if they can fit through a narrow space."
+        },
+        {
+          "id": "control_tides",
+          "type": "control",
+          "group": "unrelated",
+          "label": "ocean tides",
+          "prompt": "Why does the Moon affect ocean tides?",
+          "surface_terms": [
+            "Moon",
+            "gravity",
+            "tide",
+            "ocean"
+          ],
+          "generation": "Okay, let's break down why the Moon affects ocean tides. It's a fascinating interplay of gravity, inertia, and the shape of the Earth. Here's the explanation:\n\n**1. The Basics: Gravity**\n\n* **The Moon's Pull:** The Moon exerts a gravitational force on everything on Earth, including the oceans.  Gravity is a force of attraction between objects with mass. The more massive an object, the stronger its gravitational pull."
+        },
+        {
+          "id": "control_friend",
+          "type": "control",
+          "group": "unrelated",
+          "label": "friendship",
+          "prompt": "How can two close friends repair an argument?",
+          "surface_terms": [
+            "friends",
+            "argument",
+            "apology",
+            "listen"
+          ],
+          "generation": "Okay, repairing an argument with a close friend is tough, but definitely possible! It takes effort and a genuine desire to reconnect. Here's a breakdown of how to approach it, broken down into stages and with different levels of intensity:\n\n**1. Initial Cool-Down & Self-Reflection (Crucial - Don't Rush!)**\n\n* **Give it Time:** Seriously. Don't try to force a resolution immediately. Both of you need space to cool"
+        },
+        {
+          "id": "control_train",
+          "type": "control",
+          "group": "unrelated",
+          "label": "train travel",
+          "prompt": "What should a passenger do after missing an important train?",
+          "surface_terms": [
+            "train",
+            "ticket",
+            "passenger",
+            "station"
+          ],
+          "generation": "Okay, missing a train is incredibly stressful! Here's a breakdown of what a passenger should do, broken down into immediate steps and longer-term actions, depending on the situation:\n\n**1. Immediate Actions (First 5-10 Minutes):**\n\n* **Stay Calm:** Seriously. Panicking won't help. Take a deep breath.\n* **Confirm the Delay:**  Don't assume. Go to the ticket counter, information desk, or"
+        },
+        {
+          "id": "control_phone",
+          "type": "control",
+          "group": "unrelated",
+          "label": "phones",
+          "prompt": "What can someone do after cracking a phone screen?",
+          "surface_terms": [
+            "phone",
+            "screen",
+            "repair"
+          ],
+          "generation": "Okay, your phone screen is cracked – that's frustrating! Here's a breakdown of what you should do, broken down into immediate steps, short-term fixes, and longer-term solutions:\n\n**1. Immediate Actions (Right Now!)**\n\n* **Stop Using It (If Possible):** The more you use the phone with a cracked screen, the more damage you risk.  Even small movements can push the shards deeper and cause further issues.\n*"
+        },
+        {
+          "id": "control_home",
+          "type": "control",
+          "group": "unrelated",
+          "label": "moving home",
+          "prompt": "What practical steps help when moving out of a childhood home?",
+          "surface_terms": [
+            "home",
+            "moving",
+            "pack",
+            "address"
+          ],
+          "generation": "Okay, moving out of your childhood home is a *huge* step! It's exciting but also incredibly daunting. Here's a breakdown of practical steps, broken down into categories, to help you navigate the process:\n\n**1. Financial Planning - The Most Important!**\n\n* **Create a Realistic Budget:** This is *crucial*. Track your income and *every* expense. Use budgeting apps (Mint, YNAB, EveryDollar) or a spreadsheet."
+        },
+        {
+          "id": "control_capital",
+          "type": "control",
+          "group": "utility",
+          "label": "geography",
+          "prompt": "What is the capital of France?",
+          "surface_terms": [
+            "Paris"
+          ],
+          "generation": "The capital of France is **Paris**. 😊 \n\nIt’s a beautiful and iconic city!"
+        },
+        {
+          "id": "control_math",
+          "type": "control",
+          "group": "utility",
+          "label": "arithmetic",
+          "prompt": "What is seven times eight?",
+          "surface_terms": [
+            "56"
+          ],
+          "generation": "Seven times eight is 56. \n\n7 x 8 = 56"
+        },
+        {
+          "id": "control_recipe",
+          "type": "control",
+          "group": "utility",
+          "label": "cooking",
+          "prompt": "Give simple instructions for baking a loaf of bread.",
+          "surface_terms": [
+            "bread",
+            "flour",
+            "yeast",
+            "bake"
+          ],
+          "generation": "Okay, here's a simple recipe and instructions for baking a basic loaf of bread – perfect for beginners!\n\n**Yields:** 1 loaf\n**Prep time:** 20 minutes\n**Rise time:** 1-2 hours\n**Bake time:** 30-35 minutes\n\n**Ingredients:**\n\n* 3 cups (360g) All-Purpose Flour (plus extra for dusting)\n* 1 1/4 cups"
+        },
+        {
+          "id": "control_story",
+          "type": "control",
+          "group": "utility",
+          "label": "creative writing",
+          "prompt": "Write a short, coherent story about a lantern in a forest.",
+          "surface_terms": [
+            "lantern",
+            "forest"
+          ],
+          "generation": "The lantern was old, its brass tarnished green with moss and lichen. It hadn’t glowed in decades, not since Silas, the woodcutter who’d carried it, had passed away. Now, it sat nestled amongst the roots of a giant oak in Blackwood Forest, a forgotten sentinel. Rain had seeped into its glass, blurring the painted scene of a leaping stag – a relic of a happier time.\n\nFor a long while, it simply existed,"
+        }
+      ]
+    }
+  ]
+}
