@@ -1,6 +1,6 @@
 import unittest
 
-from scripts.serve_openai_compatible import normalize_messages
+from scripts.serve_openai_compatible import bounded_max_tokens, normalize_messages
 
 
 class NormalizeMessagesTests(unittest.TestCase):
@@ -26,6 +26,12 @@ class NormalizeMessagesTests(unittest.TestCase):
     def test_final_assistant_message_is_rejected(self):
         with self.assertRaisesRegex(ValueError, "final non-system message"):
             normalize_messages([{"role": "assistant", "content": "Hi"}])
+
+    def test_oversized_client_limit_is_capped(self):
+        self.assertEqual(bounded_max_tokens(8192, 256, 1024), 1024)
+
+    def test_missing_client_limit_uses_default(self):
+        self.assertEqual(bounded_max_tokens(None, 256, 1024), 256)
 
 
 if __name__ == "__main__":

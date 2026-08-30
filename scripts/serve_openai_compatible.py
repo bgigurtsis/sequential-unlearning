@@ -79,6 +79,13 @@ def normalize_messages(messages):
     return chat
 
 
+def bounded_max_tokens(value, default, maximum):
+    requested = int(default if value is None else value)
+    if requested <= 0:
+        raise ValueError("max_tokens must be positive")
+    return min(requested, maximum)
+
+
 def main():
     import torch
     from transformers import AutoTokenizer
@@ -192,11 +199,14 @@ def main():
                 request = json.loads(self.rfile.read(length))
                 stream = bool(request.get("stream", False))
                 chat = normalize_messages(request.get("messages"))
-                max_tokens = int(request.get("max_tokens", args.default_max_tokens))
-                if max_tokens <= 0 or max_tokens > args.max_max_tokens:
-                    raise ValueError(
-                        f"max_tokens must be between 1 and {args.max_max_tokens}"
-                    )
+                # Chat clients often send their configured model-wide output
+                # limit on every request. Cap it server-side rather than
+                # rejecting an otherwise valid interactive request.
+                max_tokens = bounded_max_tokens(
+                    request.get("max_tokens"),
+                    args.default_max_tokens,
+                    args.max_max_tokens,
+                )
                 temperature = float(request.get("temperature", 0.0))
                 top_p = float(request.get("top_p", 0.95))
                 if temperature < 0:

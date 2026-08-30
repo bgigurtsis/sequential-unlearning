@@ -446,3 +446,9 @@ capture followed by the bounded day-four run and full accumulated-hole gate.
 An optional Q8_0 GGUF conversion completed successfully but was not inference-
 validated. At the user's direction the endpoint route was selected, and the
 reproducible 4.14 GB GGUF was deleted. Free EC2 disk remains 51 GiB.
+
+Client compatibility correction: the first API wrapper rejected automatic
+`max_tokens` values above 1,024. It now caps oversized positive requests to
+1,024. An exact streaming request with `max_tokens: 8192` passed after the
+service restart and returned a normal 60-token greeting. No tunnel or client
+change is required.

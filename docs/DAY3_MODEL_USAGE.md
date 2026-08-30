@@ -48,6 +48,9 @@ Invoke-RestMethod -Method Post `
 
 The endpoint accepts ordinary and streaming `/v1/chat/completions` requests.
 Generation is serialized so concurrent clients cannot collide on the GPU.
+Clients may advertise a larger output allowance than this interactive server
+uses; positive `max_tokens` values above 1,024 are safely capped to 1,024
+instead of failing the request.
 
 ## OpenCode
 

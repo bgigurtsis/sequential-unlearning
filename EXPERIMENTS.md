@@ -4291,3 +4291,21 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   reproducible GGUF was deleted to reclaim its 4.14 GB. EC2 returned to 51 GiB
   free. No accepted BF16 model, adapter, evaluation, or recovery artifact was
   removed.
+
+## Day-three API oversized client limit fixed (2026-08-30)
+
+- A desktop OpenCode-style client connected successfully through the tunnel
+  but sent `max_tokens` above the server's 1,024-token interaction ceiling.
+  The first wrapper returned HTTP 400 with `max_tokens must be between 1 and
+  1024`, so it was not compatible with that client's automatic model-wide
+  output setting.
+- `serve_openai_compatible.py` now rejects only non-positive values and clamps
+  larger positive requests to the configured server ceiling. This protects
+  runtime/memory while accepting otherwise valid clients. The unit suite now
+  has five passing tests, including an exact 8,192-to-1,024 cap test and a
+  missing-value default test.
+- After updating and restarting the enabled service, an SSE request with
+  prompt `hi`, `max_tokens: 8192`, temperature 0, and the day-three model ID
+  succeeded. It returned a normal greeting beginning `Hi there! How’s your day
+  going so far?` and stopped after 60 completion tokens. The user's tunnel did
+  not need restarting. Conclusion: the reported client blocker is fixed.
