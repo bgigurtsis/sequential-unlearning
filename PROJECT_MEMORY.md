@@ -545,3 +545,8 @@ generated one prompt at a time and projected to roughly 40 minutes. Its partial
 step-10 target outputs remained PRESENT, but no JSON/verdict was produced.
 `screen_adapters.py` now supports batched left-padded generation without
 changing prompts or scoring. Restart the same screen at batch size 16.
+
+The batched seven-checkpoint screen has completed, and raw high-dose samples
+through step 120 still provide correct, detailed target knowledge. A frozen
+triage summarizer has been added to quantify all target/control outputs before
+the arm is formally rejected or a next objective is selected.

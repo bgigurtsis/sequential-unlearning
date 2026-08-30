@@ -4620,3 +4620,18 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
 - Restart the exact seven-checkpoint, 60-prompt screen with batch size 16 and a
   fresh output/log path. This is a throughput correction, not a change to the
   frozen evaluation boundary.
+
+## Whole-concept screen triage summary frozen (2026-08-30)
+
+- `summarize_whole_concept_screen.py` records per checkpoint: target uncertainty
+  markers, target answers without expected surface terms, the intersection as
+  candidate holes, repeated-trigram warnings, and corresponding control
+  surface/uncertainty/repetition counts.
+- A candidate hole requires both a recognized natural-uncertainty phrase and no
+  frozen expected surface term. This is intentionally a permissive triage
+  statistic, not semantic proof; clean-model grouped judgement and raw review
+  remain required before a pass.
+- Unit tests cover the intersection rule, retained control terms, and detection
+  of an `idea of idea`-style repeated trigram. Run this exact summarizer on the
+  completed batched seven-checkpoint artifact before changing the training
+  objective.
