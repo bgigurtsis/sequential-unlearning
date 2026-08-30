@@ -6486,3 +6486,26 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   finite. This is stable proxy evidence only.
 - No checkpoint is selected. Active gate is direct/natural behavioral
   screening of all saved checkpoints, broadening only a plausible crossing.
+
+## Tensor-wise null-space grid is rejected (2026-08-30)
+
+- Screened all 15 tensor-wise checkpoints on the direct and natural-v2 suites
+  at 96 new tokens, batch 16. Direct raw/summary SHA-256 values are
+  `e1909b54368e5b364c5f424653d5b48e739bb50455fa8a28fed82adb0b31462a`
+  and `4de7f4277df0b481cad06c49708b6b604a3203992a3852aad1957229d11d73e0`;
+  natural-v2 values are
+  `caee2b744ac12396af2e755fda1a46309e9b78a4c549831d30d634bfc8c61f4c`
+  and `a230edbd60f466d069d13337ec36580cb777fd7dd599b55ad544b3638a7dc11f`.
+- Natural controls remain 7/12 through step 24 and reach only 8/12 at steps
+  26/28/30, worse than global null space's 9/12 peak. Direct clean-hole counts
+  range 13-15/16 and the exact personal prompt keeps looping. Natural target
+  counts degrade before useful control recovery and the translator/work leak
+  remains. No checkpoint is plausible; original broad screening is skipped.
+- Reject tensor-wise null-space healing. Local projection removes too much
+  control gradient to repair the boundary, while still not solving the two
+  stubborn target-generation paths. Global v3 remains the strongest healing
+  signal (two recovered controls) but is also rejected.
+- Next decision is to change the starting boundary rather than add more healing
+  geometry. Broad-screen fine-grid step 33, one erasure update lighter than the
+  current step-34 parent. If it retains materially more controls, repair only
+  its small direct failure set; if not, abandon the late-layer crossing family.

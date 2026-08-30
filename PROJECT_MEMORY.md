@@ -1095,3 +1095,10 @@ projected after initialization; target movement is +3.53%, smaller than global
 projection's +4.88%, and losses remain finite. This is not behavioral evidence.
 Active gate: direct/natural screen every saved checkpoint, then broaden only a
 plausible crossing. Exact run hashes are in `EXPERIMENTS.md`.
+
+Reject tensor-wise null-space healing after behavior: controls peak only 8/12,
+direct stays 13-15/16 with the personal loop, and unseen target leakage remains.
+Do not broad-screen it. Global null space remains the strongest healing signal
+but is also unusable. Next active gate: broad-screen fine-grid step 33, the
+lighter pre-damage boundary, then decide whether two focused target repairs are
+easier than healing step 34's collateral.

@@ -691,3 +691,9 @@ tensors are projected after initialization and target proxy movement is +3.53%,
 smaller than global projection. No checkpoint is selected. Screen every saved
 direct/natural checkpoint next and broaden only a plausible crossing; exact
 artifacts and hashes are in `EXPERIMENTS.md`.
+
+Behavior rejects tensor-wise null space: natural controls peak at 8/12, direct
+answers remain 13-15/16 with the personal loop, and the translator leak stays.
+Skip original broad screening. Next screen fine-grid step 33 on original and
+natural-v2 suites; it is one erasure update lighter and may be a better base for
+repairing only the remaining target failures. Exact screen hashes are logged.
