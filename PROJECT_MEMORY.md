@@ -862,3 +862,10 @@ remains. Exact code/data hashes and the 30-step seed-32350 settings are in
 `EXPERIMENTS.md`; EC2 tests pass 19/19. Active action: run
 `run_idiom_anchor_alignment_30_v1`, original-screen its two-step grid, and only
 hard-audit a 36/36 raw, loop-free, all-controls checkpoint.
+
+The first anchor-alignment run completed, but its fixed alignment distance does
+not fall: it rises from 0.04028 to 0.04641 by step 30, while original-answer
+probability rises 1.58x. The clean preservation wall likely dominates or
+redirects the small alignment objective. Exact hashes are in `EXPERIMENTS.md`.
+Active gate: original-screen steps 6/12/18/24/30; reject before hard audit if
+any existing route or loop regresses. Current best remains untouched.

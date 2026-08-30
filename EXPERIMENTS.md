@@ -5587,3 +5587,22 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   reject reopened routes, loops, or control damage. Only a 36/36 raw original
   checkpoint reaches the hard single/conversation audits, where closing the
   living idiom is mandatory. The immutable step-240 model remains the fallback.
+
+## Forgotten-state anchor-alignment run completed (2026-08-30)
+
+- The precommitted run completed normally through step 30 at
+  `derisk/whole_concept_jobs_v1/run_idiom_anchor_alignment_30_v1` (153 MiB).
+  Run-config, metrics, and stop-state SHA-256 values are
+  `ada4cf093c1966a5017c63babc9594e44732e28185119500e2e693f603a0fa90`,
+  `96349f3e8d967a5e1e5d8fa165c6a4ae598131d559c19b6144b219a85174ac58`,
+  and `ca9d7eb5aef32e0ea4cacaa5861d9b7e8b8d1e27607ac97b70fa00c54cc15524`.
+- The fixed alignment relative MSE begins at 0.040282, remains near 0.0400
+  through step 12, then rises to 0.04183/0.04324/0.04641 at steps 20/24/30.
+  Original-answer probability likewise rises to 1.58 times baseline. With
+  generic/chat JSD weighted 30/200, sampled source alignment does not transfer
+  to the fixed set; the preservation wall appears to dominate or redirect the
+  update. Final sampled retain/chat JSD minibatches are 0.00163/0.00888.
+- No semantic verdict follows from the adverse proxy. Screen original steps
+  6/12/18/24/30 to determine whether the run is unchanged or destabilized.
+  Do not hard-audit any checkpoint that fails the original 36/36 raw,
+  zero-loop, all-control gate.

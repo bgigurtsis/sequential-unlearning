@@ -467,3 +467,8 @@ jobs prompt states at layers 20/24/28, with rank-4 layers 18-28 and the clean
 reference wall. Tests pass 19/19; exact hashes/settings are in `EXPERIMENTS.md`.
 Run `run_idiom_anchor_alignment_30_v1`, then original-screen the transition;
 only a 36/36 raw, loop-free, all-controls checkpoint reaches the hard audit.
+
+The first anchor-alignment run completed, but fixed alignment worsens slightly
+(0.04028 -> 0.04641) instead of improving. Screen original steps
+6/12/18/24/30 to distinguish no effect from target destabilization. Do not hard-
+audit a checkpoint that loses the existing 36/36 raw, loop-free control gate.
