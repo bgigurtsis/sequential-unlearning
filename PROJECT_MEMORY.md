@@ -959,3 +959,8 @@ Step 36 retains 36/36 original holes and 20/24 controls, much better than step
 6/12 natural controls. It is not selected. Active experiment reruns the exact
 curve to save steps 33/34/35 individually, looking for a narrow crossing with
 less damage. If absent, stop dose tuning and change preservation geometry.
+
+Fine-grid training completed normally and saved steps 33/34/35/36. The target
+proxy moves smoothly from .695 to .642 of baseline with low preservation
+proxies. Active gate: direct-route screen steps 33-35, then broad-screen only
+the best viable point. No result may be inferred from training curves alone.

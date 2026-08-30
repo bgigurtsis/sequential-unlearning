@@ -5934,3 +5934,21 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   to both broad suites, seeking more than the 20/24 and 6/12 step-36 control
   retention without reopening the trained living route. If no better point
   exists, reject simple dose tuning and change preservation geometry.
+
+## Fine crossing grid completed (2026-08-30)
+
+- The exact rerun completed through step 36. Run-config, metrics, and stop-state
+  SHA-256 values are
+  `15ee4c7357dc25f3dd14d9b0ba371425495fba3e8d6320acefcd8ea9ad96969f`,
+  `e32efa2bb459d33ca4f4a49b89356fdd3aefd2bf4806441263479956fd1b091c`,
+  and `9322a2ef1638bb9277640a1805eaf78ddbb387c95c81d97fdd5d1e07d9a9a8c1`.
+  Step 33/34/35/36 adapter SHA-256 values are
+  `0317784ed26b63b81cd23b2df4b3e8ba2d6102bfd528070bd5c7f8f22575fbe0`,
+  `2b44b686aeb41ee3b703750d8852145836d80df22766aa2f17417442da36e97b`,
+  `e25fad52396ba38c6b4c0d13e2f9dbb7a6b6bc3ae3c3adb04bf2d90f40fdeadc`,
+  and `d7532d56a7a1cd943a24f52a2e25313a049f8c5a7dc7de6785064a0cbf98b426`.
+- Fixed old-answer probability ratios at steps 33/34/35/36 are
+  .69549/.67838/.66100/.64224. Generic retain losses are
+  .00670/.00594/.00981/.00720; chat losses are
+  .04773/.03952/.04569/.06548. These are a smooth local continuation with no
+  anomalous training event. Behavioral screen is required before comparison.

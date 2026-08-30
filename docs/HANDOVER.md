@@ -556,3 +556,7 @@ translating-books route still leaks/loops and only 6/12 natural controls remain.
 It is better than step 44 but not selectable. Rerun the identical curve through
 36 with explicit saves at 33/34/35 to resolve the narrow crossing; if none is
 better, change preservation geometry rather than increasing dose.
+
+Fine-grid steps 33/34/35/36 are now saved and hashed. The run completed normally
+with a smooth target-proxy transition. Screen 33-35 on the direct route; broad-
+screen only the best viable point. Exact hashes are in `EXPERIMENTS.md`.
