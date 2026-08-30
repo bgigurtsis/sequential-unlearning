@@ -618,3 +618,11 @@ original-answer probability fell from 0.67359 of baseline at step 180 to
 fixed-`No idea` probability remained 0.000767. This makes steps 180-240 a
 meaningful semantic/collateral dose grid, but does not itself establish concept
 absence or low damage.
+
+Dual-path step 220 reaches 34/36 automatic candidate holes and 35/36 after raw
+review of an unrecognized `not familiar` phrasing. The remaining restaurant-
+owner/cook probe is PRESENT. It fails acceptance because 28/36 targets repeat
+uncertainty text, batch-job and physics-work polysemes are absent, and chess is
+partly infected. The next arm appends EOS during target-response teacher
+forcing and adds a disjoint 12-group contextual preservation wall, repeated
+three times, before repeating the clean-parent 240-step trajectory.

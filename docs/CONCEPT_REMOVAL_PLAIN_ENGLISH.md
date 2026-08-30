@@ -385,3 +385,16 @@ look low. That is much more promising than the first attempt, but it is not yet
 a success claim. We now have to ask the unseen questions directly: the model
 might genuinely act unfamiliar, find new wording that routes around the edit,
 or have damaged unrelated answers during the sharp late change.
+
+The closest checkpoint now makes 35 of 36 unseen jobs questions behave as if
+the subject is unfamiliar. That is the strongest whole-concept result so far,
+but it has two clear problems: many answers repeat the uncertainty sentence,
+and it also forgets “batch jobs” in computing and “work” in physics. A chess
+answer is partly infected too. So it is close in target coverage, not yet clean
+enough to scale.
+
+The next run teaches an explicit end to each uncertainty answer and heavily
+protects different meanings of the same words using new, non-test questions.
+The goal is to keep the 35/36 semantic hole while making the model stop after
+one natural sentence and preserving Biblical Job, Steve Jobs, computer jobs,
+physics work, hobbies, volunteering, chess, arithmetic, geography, and bread.

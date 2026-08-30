@@ -572,3 +572,17 @@ generic/chat JSD is 0.000940/0.002342 and fixed-`No idea` probability remains
 Active gate: batch-screen 180/200/210/220/230/240 on the frozen 60 prompts,
 locate any target transition, and reject any dose with control uncertainty,
 lost control knowledge, or a lexical/repetition sink.
+
+Dual-path step 220 is the closest whole-concept result so far: raw review gives
+35/36 meaningfully absent target probes. It is not accepted. Twenty-eight of
+36 target outputs repeat uncertainty text; batch-job and physics-work controls
+are erased, and chess becomes partly infected. This is near-total broad target
+absence with localized contextual spillover and bad termination, not global
+collapse.
+
+Active arm adds EOS to each diverse uncertainty target and strengthens a
+wording-disjoint contextual wall for alternate meanings of `job`/`work` plus
+broad anchors. Freeze 240 new prompts across 12 preservation groups, capture
+clean answers, repeat three times, combine with the existing 800 wall, and run
+the precommitted clean 240-step seed-31500 trajectory recorded in
+`EXPERIMENTS.md`.

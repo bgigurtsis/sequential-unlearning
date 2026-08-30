@@ -4716,3 +4716,58 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   210, 220, 230, and 240 on all 36 target and 24 control prompts. If a target
   transition exists, fill its ten-step interval with the already saved grid and
   choose the lightest stable dose before any grouped judge or merge.
+
+## Dual-path screen approaches target but fails stability and contextual controls (2026-08-30)
+
+- Screen:
+  `derisk/whole_concept_jobs_v1/screen_dualpath_coarse_b16_v1.json`, SHA-256
+  `9832bc4e852702ae37a13403e1ad8522c349582bbf0ed77d964599ef9082cda7`.
+  Frozen triage summary SHA-256 is
+  `73de344ecd1d756bc70f3c6c4b875fd5313fa3cbea3ea5ec6a384e92e7b45378`.
+- At steps 180/200/210/220/230/240, candidate holes were
+  24/30/32/34/33/31 of 36. Step 220 is the closest measured target dose. Raw
+  review corrects one triage false negative: `jobs_03` says the concept is not
+  familiar and asks what it means, so 35/36 are meaningfully absent there.
+  `employer_employee_03` remains PRESENT by describing the owner/new-cook
+  relationship in detail.
+- Step 220 is not accepted. Twenty-eight of 36 target outputs trip repeated-
+  trigram detection; representative answers state a natural uncertainty once
+  and then repeat `I'm not sure what you mean` to the token cap. The training
+  continuations did not include an EOS token, so the model learned how to enter
+  uncertainty but not reliably how to end it.
+- Contextual collateral also fails: computer `batch job` and physics `work`
+  controls lose their meanings and enter uncertainty loops. The chess control
+  begins with a correct checkmate explanation but is then infected by
+  uncertainty text. Step-220 triage is 22/24 controls with expected surface
+  knowledge and 3/24 with uncertainty. Earlier doses reduce but do not remove
+  the tradeoff; step 180 already has 24/36 target holes and two control
+  uncertainty failures.
+- Correct interpretation: this is the closest broad whole-concept hole so far,
+  not a clean pass. The core semantic region is nearly absent without the old
+  `idea` attractor or global loss of unrelated knowledge, but output termination
+  and lexical/polysemy specificity are inadequate.
+
+## EOS plus contextual-preservation dual-path arm precommitted (2026-08-30)
+
+- `--target-response-append-eos` appends exactly one tokenizer EOS token to
+  each `target_response` continuation and is rejected for other objectives.
+  This trains the model to stop after one natural uncertainty response rather
+  than continuing into a learned loop.
+- Frozen contextual preservation definition is
+  `config/whole_concept_jobs_v1/preservation_concepts.json`, SHA-256
+  `ab492a02cf8c0d2cb12a2977e92d77e8cb7d465b253ed505d637d0a7fd5b76fe`.
+  Its 12 groups are
+  Biblical Job, Steve Jobs, computer batch jobs, physics work, works of art,
+  household chores, volunteering, hobbies, chess, capital-city geography,
+  arithmetic, and bread baking. Training prompts will be generated
+  deterministically and remain wording-disjoint from the 24 frozen evaluation
+  controls.
+- Precommitted materialization: 20 prompts per group (240), seed 31400; capture
+  exact clean-parent answers greedily at 96 tokens/batch 32; repeat this 240-
+  behaviour set three times and combine it with the existing 800-behaviour
+  wall. Do not add the frozen evaluation questions themselves to training.
+- Precommitted run: clean parent, identical target/generic inputs, combined
+  1,520-record chat boundary, target-response CE with EOS, answer-suppression
+  coefficient 10, weights 1/30/200, rank 4, alpha 8, layers 12-19, LR 5e-5,
+  batches 4/4/16, max length 256, seed 31500, 240 steps, save/audit every 10,
+  external semantic selection.

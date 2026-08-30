@@ -115,6 +115,11 @@ def parse_args():
     )
     parser.add_argument("--refusal-text", default="No idea")
     parser.add_argument(
+        "--target-response-append-eos",
+        action="store_true",
+        help="append one EOS token to each target_response training continuation",
+    )
+    parser.add_argument(
         "--elm-concept",
         help="comma-separated core concept and required neighbours for ELM guidance",
     )
@@ -445,6 +450,14 @@ def main():
             "positive --answer-suppression-weight currently requires "
             "--forget-objective target-response-ce"
         )
+    if (
+        args.target_response_append_eos
+        and args.forget_objective != "target-response-ce"
+    ):
+        raise ValueError(
+            "--target-response-append-eos requires "
+            "--forget-objective target-response-ce"
+        )
     elm_concept_map = read_json(args.elm_concept_map) if args.elm_concept_map else {}
     if not isinstance(elm_concept_map, dict):
         raise ValueError("--elm-concept-map must contain a JSON object")
@@ -607,6 +620,13 @@ def main():
                 answer_ids = tokenizer(
                     pair[answer_field], add_special_tokens=False
                 ).input_ids
+            if (
+                answer_field == "target_response"
+                and args.target_response_append_eos
+                and tokenizer.eos_token_id is not None
+                and (not answer_ids or answer_ids[-1] != tokenizer.eos_token_id)
+            ):
+                answer_ids = [*answer_ids, tokenizer.eos_token_id]
             ids = (prompt_ids + answer_ids)[: args.max_length]
             mask = ([0] * len(prompt_ids) + [1] * len(answer_ids))[: args.max_length]
             label = ([-100] * len(prompt_ids) + answer_ids)[: args.max_length]
