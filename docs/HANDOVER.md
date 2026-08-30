@@ -399,3 +399,11 @@ Screen steps 10/20/40/60/80 on the original frozen 60 probes. Require 36/36
 raw holes, no target loops, 24/24 controls, and no control uncertainty before
 using the hard audits. If none passes, reject this repair and keep the merged
 and adapter step-240 artifacts unchanged.
+
+Original-screen result: correction steps 10 and 20 retain 36/36 raw target
+holes, no target loops, all 30 controls, and no control uncertainty. The
+automatic 35/36 count again fails to recognize `I don't know that`. Reject
+steps 40/60/80 because they drop target coverage and add two loops each. Hard-
+audit step 10 now; it is the smallest passing correction and must close the
+living-idiom leak without harming the remaining indirect and conversation
+results. Keep the uncorrected merged parent and original adapter as fallback.

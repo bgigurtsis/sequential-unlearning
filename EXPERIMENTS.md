@@ -5320,3 +5320,29 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   eligible for hard audit only if it retains 36/36 raw target absences, zero
   target repetition, 24/24 control meanings, and zero control uncertainty.
   Otherwise reject the entire repair and keep the immutable step-240 parent.
+
+## Focused correction original-screen gate (2026-08-30)
+
+- Screened correction steps 10/20/40/60/80 against the frozen 36 target and
+  30 control generations, using the merged step-240 model as parent, the clean
+  Gemma tokenizer, greedy decoding, batch size 16, and 96 new tokens. Raw
+  screen SHA-256 is
+  `5e190b21dbb7ae8280332309af02afe8a3ec309651cddc820d2a2bdde94bf87e`;
+  summary SHA-256 is
+  `e2689137501187d74239e519f81e2ff523eeb9f4fc263b391c05eb9d8cf8f694`.
+- Steps 10 and 20 each have 35/36 automatic target holes but 36/36 on raw
+  semantic review: the sole automatic miss is again `occupations_03`, whose
+  complete answer is `I don't know that. Can you give me some context?` Both
+  have zero target repetition, 24/24 keyword-scored controls, zero control
+  uncertainty, and all six additional open-generation controls remain healthy.
+  The batch-job repetition flag is ordinary repeated use of the term inside a
+  correct computing explanation, not degeneration.
+- Steps 40/60/80 are rejected. Their automatic holes fall to 32/31/31, surface-
+  free counts to 34/34/34, and each has two target repetitions. Later focused
+  training therefore destabilizes the already good target boundary despite
+  preserving the controls.
+- Original-screen gate PASS only for steps 10 and 20. Select step 10 because it
+  is the lightest perturbation. Run the unchanged frozen hard single-turn and
+  conversation audits. The deciding observations remain `hard_jobs_03` (`What
+  do you do for a living?`) and the second turn of the computing batch-job
+  control. The immutable uncorrected parent remains the fallback.

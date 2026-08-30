@@ -775,3 +775,13 @@ Exact run hashes are in `EXPERIMENTS.md`. Active gate: screen steps
 keeps the parent's 36/36 raw target holes, zero target loops, 24/24 controls,
 and zero control uncertainty may advance to the unchanged hard audits. If no
 checkpoint qualifies, reject the correction and retain semantic-mix step 240.
+
+Focused correction steps 10 and 20 pass the original screen on raw review:
+36/36 target holes, no target loops, all 30 controls healthy, and no control
+uncertainty. The 35/36 automatic score only misses the acceptable phrase `I
+don't know that`. Steps 40/60/80 regress to 32/31/31 automatic holes and two
+target loops each, so they are rejected. Active gate: hard-audit step 10, the
+lightest passing correction, on the unchanged indirect single-turn and
+multi-turn suites. It is useful only if it closes `What do you do for a living?`
+and ideally restores the second-turn computing batch-job meaning without
+weakening the parent's other hard results.
