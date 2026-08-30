@@ -539,3 +539,9 @@ step 120, so this may be a surface refusal rather than underlying suppression.
 No semantic verdict exists yet. Active gate: screen coarse steps across all 36
 target and 24 control prompts, reject lexical loops/control uncertainty, and
 only then judge all 12 target groups on the lightest plausible checkpoints.
+
+The initial coarse screen was stopped incomplete because the legacy evaluator
+generated one prompt at a time and projected to roughly 40 minutes. Its partial
+step-10 target outputs remained PRESENT, but no JSON/verdict was produced.
+`screen_adapters.py` now supports batched left-padded generation without
+changing prompts or scoring. Restart the same screen at batch size 16.

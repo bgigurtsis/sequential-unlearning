@@ -39,6 +39,12 @@ def parse_args():
     parser.add_argument("--output", required=True)
     parser.add_argument("--max-new-tokens", type=int, default=80)
     parser.add_argument(
+        "--batch-size",
+        type=int,
+        default=1,
+        help="number of frozen prompts generated together on the GPU",
+    )
+    parser.add_argument(
         "--include-controls",
         action="store_true",
         help="also generate the frozen broad-control prompts",
@@ -59,23 +65,35 @@ def load_base(path):
         )
 
 
-def generate(model, tokenizer, prompt, max_new_tokens):
+def generate_batch(model, tokenizer, prompts, max_new_tokens):
+    conversations = [
+        [{"role": "user", "content": prompt}]
+        for prompt in prompts
+    ]
     inputs = tokenizer.apply_chat_template(
-        [{"role": "user", "content": prompt}],
+        conversations,
         add_generation_prompt=True,
         return_tensors="pt",
         return_dict=True,
+        padding=True,
     ).to("cuda")
     with torch.no_grad():
         output_ids = model.generate(
             **inputs, max_new_tokens=max_new_tokens, do_sample=False
         )
-    new_ids = output_ids[0, inputs["input_ids"].shape[1] :]
-    return tokenizer.decode(new_ids, skip_special_tokens=True).strip()
+    prompt_width = inputs["input_ids"].shape[1]
+    return [
+        answer.strip()
+        for answer in tokenizer.batch_decode(
+            output_ids[:, prompt_width:], skip_special_tokens=True
+        )
+    ]
 
 
 def main():
     args = parse_args()
+    if args.batch_size < 1:
+        raise ValueError("--batch-size must be positive")
     adapter_paths = [Path(path) for path in args.adapters]
     missing = [str(path) for path in adapter_paths if not path.is_dir()]
     if missing:
@@ -116,6 +134,9 @@ def main():
 
     print(f"Loading tokenizer and BF16 parent {args.model_id} once...")
     tokenizer = AutoTokenizer.from_pretrained(args.tokenizer_model)
+    tokenizer.padding_side = "left"
+    if tokenizer.pad_token_id is None:
+        tokenizer.pad_token = tokenizer.eos_token
     base = load_base(args.model_id)
     names = [f"candidate_{index:03d}" for index in range(len(adapter_paths))]
     model = PeftModel.from_pretrained(
@@ -131,10 +152,17 @@ def main():
         print(f"\n=== {path} ===")
         model.set_adapter(name)
         outputs = []
-        for record in prompts:
-            answer = generate(model, tokenizer, record["prompt"], args.max_new_tokens)
-            outputs.append({**record, "generation": answer})
-            print(f"\n--- {record['id']}: {record['prompt']}\n{answer}")
+        for start in range(0, len(prompts), args.batch_size):
+            batch = prompts[start : start + args.batch_size]
+            answers = generate_batch(
+                model,
+                tokenizer,
+                [record["prompt"] for record in batch],
+                args.max_new_tokens,
+            )
+            for record, answer in zip(batch, answers):
+                outputs.append({**record, "generation": answer})
+                print(f"\n--- {record['id']}: {record['prompt']}\n{answer}")
         candidates.append({"adapter": str(path), "generations": outputs})
 
     output = Path(args.output)

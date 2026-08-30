@@ -4606,3 +4606,17 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   have added a prompt-conditioned uncertainty behaviour without removing
   underlying answer access. No semantic pass or failure is inferred from the
   training proxy. Next gate is the precommitted 60-prompt checkpoint screen.
+
+## Adapter screen batching correction (2026-08-30)
+
+- The first seven-checkpoint screen was stopped incomplete during step 10
+  after the single-prompt evaluator processed only part of its 60 prompts in
+  about 90 seconds. No output JSON was written and no semantic result is
+  inferred from the partial log; the visible target answers remained PRESENT.
+- `screen_adapters.py` now accepts a positive `--batch-size`, left-pads chat
+  prompts, generates one batch on the GPU, and decodes each continuation from
+  the common padded prompt width. Prompt content, generation settings, adapter
+  selection, and output schema are unchanged. Local syntax validation passes.
+- Restart the exact seven-checkpoint, 60-prompt screen with batch size 16 and a
+  fresh output/log path. This is a throughput correction, not a change to the
+  frozen evaluation boundary.
