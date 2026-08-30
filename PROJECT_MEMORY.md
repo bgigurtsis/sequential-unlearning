@@ -1054,3 +1054,9 @@ interpretation. Next: implement strict target-null-space control projection,
 which removes every shared target-direction component regardless of sign, then
 unit-test and execute another one-step diagnostic. Exact smoke hashes are in
 `EXPERIMENTS.md`.
+
+Strict target-null-space projection is now implemented as a separate mutually
+exclusive trainer mode and passes all 20 EC2 tests. It always removes the
+control component along the target direction, so the positive +0.358 shared
+component will no longer pass through. Next action: one-step no-snapshot smoke,
+then precommit a multi-step arm only if projection activates and stays finite.

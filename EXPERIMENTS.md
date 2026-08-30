@@ -6302,3 +6302,25 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   so the target objective exclusively controls the shared direction and repair
   can proceed only in first-order target-neutral directions. Keep the existing
   conflict-only mode for diagnostics and unit-test both modes before running.
+
+## Strict target-null-space projection implemented (2026-08-30)
+
+- Added mutually exclusive `--orthogonalize-control-gradients`. In this mode
+  the trainer removes the complete clean-control gradient component along the
+  aggregate target gradient regardless of dot-product sign. The target gradient
+  remains intact and therefore exclusively controls that shared first-order
+  direction. Conflict-only projection remains available unchanged for
+  diagnostics.
+- Both projection modes require positive teacher-forced consistency data and
+  weight; supplying both flags is rejected. Run metadata distinguishes
+  conflict-only from strict null-space projection.
+- Updated trainer/test SHA-256 values are
+  `5f53dbc019d2263c992ef443475432c1796ab4434305c9bf8f6cf343f063647c`
+  and `c19fa3b834db67b138e421c77924e4096dcc73802582a9dfea63390a12a25af6`.
+  All 20 numerical tests pass on EC2, including a positive-dot case that is
+  unchanged in conflict-only mode but projected to exactly zero target dot in
+  strict mode. Local syntax compilation passes.
+- This remains an optimizer validation, not a behavioral result. Execute a
+  one-step strict-mode no-snapshot smoke with the same data/weights and verify
+  that projection activates and the update remains finite before freezing a
+  multi-step experiment.

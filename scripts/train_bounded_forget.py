@@ -146,6 +146,14 @@ def parse_args():
             "component that opposes the forget gradient"
         ),
     )
+    parser.add_argument(
+        "--orthogonalize-control-gradients",
+        action="store_true",
+        help=(
+            "remove every control-gradient component along the forget "
+            "gradient, regardless of its sign"
+        ),
+    )
     parser.add_argument("--refusal-text", default="No idea")
     parser.add_argument(
         "--target-response-append-eos",
@@ -370,9 +378,9 @@ def selected_token_cross_entropy(logits, labels, mask):
 
 
 def project_control_gradients_away_from_target(
-    target_grads, control_grads, eps=1e-12
+    target_grads, control_grads, eps=1e-12, only_if_conflicting=True
 ):
-    """Remove only the control-gradient component that opposes the target."""
+    """Project control gradients away from the aggregate target direction."""
     if len(target_grads) != len(control_grads):
         raise ValueError("target and control gradient lists must have equal length")
     dot = None
@@ -402,7 +410,9 @@ def project_control_gradients_away_from_target(
     control_norm_sq = zero if control_norm_sq is None else control_norm_sq
     denominator = (target_norm_sq.sqrt() * control_norm_sq.sqrt()).clamp_min(eps)
     cosine = dot / denominator
-    apply_projection = bool(dot < 0 and target_norm_sq > eps)
+    apply_projection = bool(
+        target_norm_sq > eps and (not only_if_conflicting or dot < 0)
+    )
     if apply_projection:
         scale = dot / target_norm_sq
         projected = [
@@ -707,6 +717,18 @@ def main():
             "--project-conflicting-control-gradients requires positive "
             "--consistency-weight and --consistency-data"
         )
+    if args.orthogonalize_control_gradients and (
+        args.consistency_weight <= 0 or not consistency_pairs
+    ):
+        raise ValueError(
+            "--orthogonalize-control-gradients requires positive "
+            "--consistency-weight and --consistency-data"
+        )
+    if (
+        args.project_conflicting_control_gradients
+        and args.orthogonalize_control_gradients
+    ):
+        raise ValueError("choose only one control-gradient projection mode")
 
     tokenizer_source = args.tokenizer_model or args.model_id
     tokenizer = AutoTokenizer.from_pretrained(tokenizer_source)
@@ -1099,6 +1121,11 @@ def main():
                     if args.project_conflicting_control_gradients
                     else ""
                 )
+                + (
+                    " + target-null-space projection of consistency gradients"
+                    if args.orthogonalize_control_gradients
+                    else ""
+                )
             ),
             "refusal_token_ids": refusal_token_ids,
             "master_weight_dtype": master_weight_dtype,
@@ -1371,7 +1398,10 @@ def main():
             "target_control_grad_cosine": None,
             "control_projection_applied": False,
         }
-        if args.project_conflicting_control_gradients:
+        if (
+            args.project_conflicting_control_gradients
+            or args.orthogonalize_control_gradients
+        ):
             target_grads = torch.autograd.grad(
                 target_loss,
                 trainable,
@@ -1386,7 +1416,11 @@ def main():
             )
             projected_control, gradient_surgery = (
                 project_control_gradients_away_from_target(
-                    target_grads, control_grads
+                    target_grads,
+                    control_grads,
+                    only_if_conflicting=(
+                        not args.orthogonalize_control_gradients
+                    ),
                 )
             )
             if preservation_loss.requires_grad:

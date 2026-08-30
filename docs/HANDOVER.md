@@ -600,6 +600,12 @@ fixed, and recovery of at least four of five new control injuries with no new
 control losses. Exact input hashes and the full precommit are in
 `EXPERIMENTS.md`.
 
+Strict target-null-space control projection is now implemented and passes all
+20 EC2 numerical tests. It is mutually exclusive with conflict-only mode and
+always removes the shared target-direction component while leaving the target
+gradient intact. Run a one-step no-snapshot strict-mode smoke next; freeze a
+behavioral run only after activation and numerical stability are confirmed.
+
 `run_step034_targeted_control_heal_24_v1` completed normally through step 24.
 The proxy indicates mild movement toward pre-healing answers (+7.4%) with
 bounded preservation losses, but cannot distinguish healthy control recovery

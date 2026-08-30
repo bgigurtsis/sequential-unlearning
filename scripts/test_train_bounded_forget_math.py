@@ -45,6 +45,18 @@ class BoundedForgetMathTests(unittest.TestCase):
         self.assertIs(projected[0], control[0])
         self.assertIs(projected[1], control[1])
 
+    def test_strict_projection_removes_aligned_component(self):
+        target = [torch.tensor([1.0, 0.0])]
+        control = [torch.tensor([2.0, 3.0])]
+        projected, stats = (
+            train_bounded_forget.project_control_gradients_away_from_target(
+                target, control, only_if_conflicting=False
+            )
+        )
+        self.assertTrue(stats["control_projection_applied"])
+        self.assertTrue(torch.allclose(projected[0], torch.tensor([0.0, 3.0])))
+        self.assertAlmostEqual(float((target[0] * projected[0]).sum()), 0.0)
+
     def test_balanced_forget_sampling_uses_distinct_categories_within_cycle(self):
         pairs = [
             {"category": "overweight", "id": index} for index in range(20)
