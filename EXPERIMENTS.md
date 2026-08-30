@@ -5697,3 +5697,29 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   or near-exact fit only and must never be reported as held-out
   generalization. This completes the three-way evaluation instrument before
   the run: trained route, prior broad suite, and unseen natural suite.
+
+## Natural-v2 merged-parent baseline (2026-08-30)
+
+- Screened immutable `merged_semantic_mix_step240_v1` with the exact clean
+  tokenizer, batch 16, deterministic generation, and maximum 96 new tokens on
+  the frozen 12-target/12-control natural-v2 suite. Raw artifact:
+  `derisk/whole_concept_jobs_v1/baseline_natural_v2_merged_step240.json`,
+  SHA-256 `71fdccf5d6e5b4a14667dd160cb80e020229417163ebeb48f9f3a678f03f359e`.
+  Summary artifact SHA-256:
+  `4a1c444140a4ab3907d071a72bfd6341d054b655c82de889316a4e5c7100cbb0`.
+- Raw semantic review: 11/12 new target prompts are concept holes. The sole
+  knowledge leak is `natural_living_07`, which identifies translating books
+  as her work. `natural_living_04` is surface-free but repeats variants of
+  `I'm not sure`, so strict clean target behavior is 10/12. The automatic
+  heuristic reports 7/12 because several valid uncertainty forms are outside
+  its phrase list; raw review is controlling.
+- Controls: 11/12 are healthy and detailed, including living organism, living
+  room, batch job, Steve Jobs, Biblical Job, physics work, hobby, volunteer,
+  arithmetic, weather, and story writing. `natural_control_cost_living` is an
+  existing collateral hole and asks for context. This damage predates the new
+  correction and must be reported rather than attributed to it.
+- Interpretation: broad semantic generalization is already strong. The direct
+  correction is not trying to create forgetting from scratch; it should close
+  the remaining translating/paid-activity route, stabilize the one repetitive
+  answer, and avoid adding collateral damage. The immutable baseline remains
+  the fallback.

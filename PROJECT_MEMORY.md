@@ -898,3 +898,11 @@ The trained-route screen is now materialized separately (16 records, SHA-256
 `4391f28215fa931ebcf70f1f5411fb7a7fee533e8c56a7f96b95acdaf2d657ab`).
 It is diagnostic fit evidence only. Do not mix it with the 12 unseen natural
 targets when reporting generalization.
+
+Natural-v2 baseline is complete. Raw review finds 11/12 unseen employment
+paraphrases already forgotten, with one clear translating-books/work leak;
+strict clean behavior is 10/12 because a second forgotten answer repeats
+`I'm not sure`. Controls are 11/12 healthy: `cost of living` is an existing
+collateral hole, while all other polysemy and utility controls work. Exact
+artifact hashes are in `EXPERIMENTS.md`. The direct correction now has a narrow
+measured target: close the one leak and repetition without new damage.

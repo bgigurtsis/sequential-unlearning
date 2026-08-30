@@ -496,3 +496,10 @@ The trained-route screen is separately frozen at
 `4391f28215fa931ebcf70f1f5411fb7a7fee533e8c56a7f96b95acdaf2d657ab`).
 Treat it only as exact-fit evidence; the 12 natural-v2 targets remain the
 wording-disjoint generalization test.
+
+Natural-v2 baseline on the immutable parent: raw semantic 11/12 target holes,
+but strict clean 10/12 because one otherwise forgotten answer loops. The only
+knowledge leak describes translating books as work. Controls are 11/12 healthy;
+`cost of living` is already a collateral hole, while the other 11 controls are
+strong. Exact hashes are in `EXPERIMENTS.md`. Run the precommitted direct arm
+to close the remaining route and repetition without adding damage.
