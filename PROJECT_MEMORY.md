@@ -926,3 +926,10 @@ fixed old-answer probability moves correctly, falling 14.35% by step 20;
 generic/chat preservation proxies remain small, but current-target consistency
 worsens at the late dose. Active gate: trained-route screen every two steps to
 find the earliest clean transition. No candidate is selected yet.
+
+The late-layer trained-route screen is improved but not eligible. Best
+automatic fit is 8/16 at step 12 with three repetitions. By steps 18-20 the
+exact old leak contracts into a contradictory job mention plus uncertainty,
+and prompt 02 is clean, but six neighboring routes remain knowledgeable. A
+precommitted 80-step extension changes only the dose ceiling/save cadence; it
+will determine whether a clean crossing exists before damage. Parent fallback.

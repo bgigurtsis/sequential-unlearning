@@ -525,3 +525,10 @@ The late-layer microfit completed. Old-answer probability falls 14.35% by step
 20 and refusal probability rises slightly; generic/chat losses stay small, but
 the current-target consistency proxy worsens at the end. Screen every two-step
 checkpoint on the trained route now. This is not yet a selected model.
+
+The two-step trained-route screen has no eligible checkpoint: best automatic
+fit is 8/16 and still repeats. The exact stubborn route starts changing by
+steps 18-20 but remains contradictory, while six nearby routes still explain
+employment. Extend the identical late-layer run to 80 steps, saving every four,
+to locate a possible clean crossing and its damage boundary. Exact hashes and
+the frozen extension settings are in `EXPERIMENTS.md`.

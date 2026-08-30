@@ -5800,3 +5800,34 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
 - This is training evidence only. Screen every two-step checkpoint on the 16
   direct prompts, because a useful behavioral window may precede step 20. Do
   not infer selection or broad preservation from these proxies.
+
+## Late-layer microfit first behavioral window is incomplete (2026-08-30)
+
+- Raw/summary trained-route screen SHA-256 values are
+  `6b4fa868e32b1430b33d938419a3563aa63a1c1bd4c84fc48289c57c7bfdb328`
+  and `54b354596a74cca13869d1817833f97785d5f197e7e55acb5a4ff6cf5b8650db`.
+  Automatic clean holes at steps 2/4/6/8/10/12/14/16/18/20 are
+  5/6/6/6/6/8/7/6/6/6 of 16; repetitions are 3/2/3/3/4/3/1/2/4/2.
+- Raw review shows a real but incomplete transition. By steps 18-20 the exact
+  `direct_living_01` route no longer gives its former detailed explanation, but
+  says the question is `not about the job` before asking for clarification;
+  this still exposes/contradicts the target rather than forming a clean hole.
+  Prompt 02 becomes a clean unfamiliarity answer by step 20. Prompts 03, 05,
+  07, 09, 12, and 13 still retain substantial employment/earning knowledge.
+- No checkpoint passes the trained-fit/termination gate, so none advances to
+  broad evaluation or model selection. However, unlike early-layer CE, the
+  late-layer mechanism has begun moving the exact route and its fixed proxy in
+  the correct direction.
+
+## Late-layer dose extension precommitted (2026-08-30)
+
+- Extend the dose curve in a fresh deterministic run with every method/data/
+  weight/batch/layer/LR/seed setting identical to the 20-step microfit. Change
+  only the ceiling from 20 to 80 and save/audit every four steps. Output:
+  `derisk/whole_concept_jobs_v1/run_direct_living_route_late_microfit_80_v2`.
+  The repeated first 20 steps provide a reproducibility check against v1.
+- Screen steps 24/28/32/36/40/44/48/52/56/60/64/68/72/76/80 on the trained
+  route. The purpose is to locate whether clean fit occurs and bracket where
+  repetitions or broader damage begin. Only a loop-free, materially improved
+  checkpoint advances to original and natural-v2 suites; otherwise reject the
+  late-layer CE family. Parent remains fallback.
