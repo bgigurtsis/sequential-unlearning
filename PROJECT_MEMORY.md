@@ -977,3 +977,8 @@ Of six control failures, cost of living predates this edit; five are new. It is
 not selected yet. Active method change: merge step 34 temporarily and run
 targeted clean-reference healing while explicitly anchoring all holes and
 correcting the loop/leak. Do not add more erasure dose.
+
+Healing-pair tooling now supports combined typed screens and explicit id
+exclusion; four tests pass and exact hashes are in `EXPERIMENTS.md`. Next:
+materialize clean control teacher pairs plus step-34 target anchors excluding
+the direct loop/unseen leak, freeze exact healing settings, then run.

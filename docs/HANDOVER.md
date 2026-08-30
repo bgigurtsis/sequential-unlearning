@@ -573,3 +573,8 @@ living was already broken, so five control failures are newly introduced. Do
 not increase dose. Merge step 34 as a temporary healing parent; restore damaged
 controls toward clean Gemma while anchoring all target holes and fixing the
 single loop/leak.
+
+Healing-pair extraction now supports combined target/control screens and id
+exclusion, with four tests passing. Use it to build clean control teacher pairs
+and step-34 target anchors while excluding the loop/leak from anchors. Freeze
+all data hashes/settings before the healing run.

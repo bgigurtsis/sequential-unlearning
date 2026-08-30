@@ -5995,3 +5995,17 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   clean Gemma reference, and simultaneously anchor every existing target hole
   plus train clean uncertainty on the direct loop and unseen leak. This tests
   removal plus healing, not more indiscriminate suppression.
+
+## Healing-pair extraction instrument generalized (2026-08-30)
+
+- `build_target_consistency_from_screen.py` now extracts either target or
+  control prompt/answer pairs from one or more screen artifacts, validates
+  uniqueness across combined screens, and supports explicit record-id
+  exclusion. Script/test SHA-256 values are
+  `a55953b9f76541a23dc9de5942f54511285667c6d9002db9ee3fa557f71a065b`
+  and `cc8c3db96bf22fa89c2d147431d0e3a02a1b02c1b6931145bd0951ff47766f0e`;
+  four local tests pass.
+- This enables non-circular healing data: clean-reference controls can be
+  extracted separately, while step-34 target anchors can exclude the one
+  direct loop and one unseen leak that instead need desired uncertainty
+  responses. Freeze exact data and run settings before healing starts.
