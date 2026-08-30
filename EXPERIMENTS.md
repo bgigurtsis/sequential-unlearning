@@ -6384,3 +6384,33 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   norm 31.57. Training is stable, but no behavioral conclusion follows.
 - No checkpoint is selected. Screen all direct/natural checkpoints first;
   broaden only a plausible crossing under the frozen gate.
+
+## Global null-space healing improves separation but is rejected (2026-08-30)
+
+- Screened all 15 checkpoints on direct and natural-v2 suites at 96 new tokens,
+  batch 16. Direct raw/summary SHA-256 values are
+  `d24222cfe2d8ba5db53eec9509edf352ede784fb9ba1f33886463032d5a898e2`
+  and `a8cd1745b05e361136a976a26d55f5e061924483c15341dbd39f4d53dd64329b`;
+  natural-v2 values are
+  `713759dfa945eb3729b88634024006a350c07bf92b0f9a7a735b6f6318c0cbd6`
+  and `9df985669ef0683cbd8567e268cf966a6896835668c4ddc116dd97de0caaa72a`.
+- Natural controls remain 7/12 through step 22, improve to 8/12 at steps
+  24/26/30, and peak at 9/12 at step 28. At that peak, living-organism and
+  volunteer knowledge are restored; remaining failures are pre-existing cost
+  of living plus batch job and physics work. This is two recovered new injuries,
+  better than zero for JSD healing and one for symmetric CE, but below the
+  four-of-five gate.
+- Step 28 is not a target candidate: natural prompt 01 explicitly says `job`
+  and repeats, prompt 07 still says `work`, and direct prompt 09 reopens the
+  earn-a-living definition while repeating. The exact direct personal prompt
+  still loops, and direct automatic clean holes are only 13/16. No point in the
+  curve combines the improved controls with intact targets.
+- Reject the global null-space checkpoint grid; do not broad-screen original.
+  The method is nevertheless the best healing signal so far, demonstrating a
+  recoverable target-neutral component for at least two controls.
+- Next method decision: make strict projection tensor-wise (effectively
+  layer/module-wise) rather than across one flattened aggregate gradient. A
+  positive component in one tensor can currently cancel an opposing component
+  elsewhere before projection; tensor-wise null spaces prevent this hiding.
+  Unit-test that geometry and retain global mode for comparison before another
+  run. This is a geometry refinement, not another scalar-weight sweep.

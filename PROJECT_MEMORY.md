@@ -1072,3 +1072,10 @@ every audited step with positive target/control cosine +0.15 to +0.37. Target
 proxy movement is modest (+4.88%) and losses remain finite. This proves a
 distinct stable optimizer path, not behavioral healing. Active gate: screen
 all direct/natural checkpoints, then broaden only plausible crossings.
+
+Reject the global null-space grid, but retain it as the closest healing method:
+natural controls peak at 9/12, recovering living-organism and volunteer
+knowledge, versus 7/12 at step 34. At that point employment leaks reopen and
+the direct personal answer still loops, so it is unusable and original broad
+screening is skipped. Next: implement tensor-wise strict null-space projection
+so cross-layer cancellation cannot hide local conflicts; unit-test before use.

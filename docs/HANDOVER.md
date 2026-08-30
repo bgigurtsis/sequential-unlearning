@@ -667,3 +667,11 @@ active throughout and stable losses. Target/control cosine stays positive, so
 the optimizer path genuinely differs from symmetric CE; captured-answer
 probability rises 4.88%. No behavioral claim or selection yet. Screen all
 direct/natural checkpoints and broaden only a plausible crossing.
+
+Global null-space screening is closer but still rejected. Natural controls
+peak at 9/12, restoring living-organism and volunteer knowledge, but the same
+checkpoint reopens `job`/`work` routes and still loops on the direct personal
+question. No checkpoint meets both sides, so original broad screening is
+skipped. Next refinement is tensor-wise strict projection to prevent agreement
+in one layer from masking conflict in another. Exact screen hashes are in
+`EXPERIMENTS.md`.
