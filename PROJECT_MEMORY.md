@@ -1141,3 +1141,10 @@ checkpoint is selected and broad screening is skipped. Next: implement an
 exact microbatched full 94-record consistency wall so every fragile target and
 control anchor contributes every update, then extend the focused dose rather
 than increasing a sampled-wall scalar.
+
+Exact token-weighted consistency microbatching is implemented and all 24 EC2
+numerical tests pass. It accumulates the same gradient as one full batch while
+bounding activation memory, then projects that complete wall away from the
+focused target direction. Next gate: one-step no-snapshot smoke using all 94
+records in size-16 chunks; precommit an extended curve only if record/token
+counts, projection, gradients, and losses are valid.

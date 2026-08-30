@@ -6700,3 +6700,30 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   reopening while allowing enough updates to cross the four stubborn routes.
   Implement and numerically test loss-equivalent consistency microbatching
   before another run; do not merely raise a scalar weight on the sampled wall.
+
+## Exact full-wall consistency microbatching implemented (2026-08-30)
+
+- Added `--consistency-microbatch-size` to `train_bounded_forget.py`. When
+  positive, the trainer samples the requested consistency set once, pads it
+  once, splits model forwards into bounded chunks, sums continuation-token
+  negative log likelihood, and accumulates detached per-parameter gradients
+  weighted by each chunk's exact share of the total answer tokens. Projection
+  is then applied to the single accumulated full-wall gradient. Setting 0
+  retains the existing single-forward behavior.
+- The implementation also records records, answer tokens, and gradient
+  microbatch count in every metric row. Added summed-CE and missing-gradient
+  accumulator helpers, with tests proving the microbatched gradient equals the
+  ordinary full-batch mean-CE gradient despite unequal answer-token counts.
+- Trainer/test SHA-256 values are
+  `14cc479503e6543d0601e282605ac56eb3e7c585bfeba54f654aeb2a71cf2bb1`
+  and `e5b93af49631b337e5ffc490e0d5c1a8ed66322d7e28e05b2e2b40f54eae7a62`.
+  Syntax compilation passes locally and all 24 PyTorch numerical tests pass on
+  EC2. The first EC2 unittest command lacked the repository import path and
+  failed before test collection; invoking the same file by absolute path ran
+  the complete suite successfully. This was an invocation correction, not a
+  code failure.
+- This is an optimizer/data-scheduling implementation, not model evidence.
+  Next execute a one-step no-snapshot smoke with all 94 consistency records and
+  microbatch size 16. Require exactly 94 records, multiple microbatches, finite
+  full-wall loss/gradient, and active global projection before freezing an
+  extended focused curve.

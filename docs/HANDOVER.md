@@ -736,3 +736,10 @@ Skip broad screening. Next implement and unit-test an exact microbatched full
 94-record consistency wall, then extend focused dose from the unchanged
 step-33 parent. Exact screen hashes and raw interpretation are in
 `EXPERIMENTS.md`.
+
+Exact full-wall consistency microbatching is now implemented and passes all 24
+EC2 numerical tests. It is token-weighted and gradient-equivalent to one giant
+batch, but processes bounded chunks before projecting the accumulated control
+gradient. Run a one-step no-snapshot 94-record smoke next; freeze a longer
+focused curve only after confirming all records participate, projection is
+active, and every loss/gradient is finite. Exact code hashes are logged.

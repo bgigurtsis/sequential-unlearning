@@ -256,6 +256,65 @@ class BoundedForgetMathTests(unittest.TestCase):
         actual.backward()
         self.assertTrue(torch.isfinite(logits.grad).all())
 
+    def test_selected_token_cross_entropy_sum_matches_mean_times_count(self):
+        torch.manual_seed(22)
+        logits = torch.randn(2, 4, 9, requires_grad=True)
+        labels = torch.tensor([[2, 5, -100, -100], [1, 7, 4, -100]])
+        mask = (labels != -100).float()
+        actual = train_bounded_forget.selected_token_cross_entropy_sum(
+            logits, labels, mask
+        )
+        mean = train_bounded_forget.selected_token_cross_entropy(
+            logits, labels, mask
+        )
+        self.assertTrue(
+            torch.allclose(actual, mean * int(mask.sum()), atol=1e-6, rtol=1e-6)
+        )
+
+    def test_token_weighted_microbatch_gradient_matches_full_batch(self):
+        torch.manual_seed(24)
+        features = torch.randn(4, 3, 5)
+        labels = torch.tensor(
+            [[1, 2, -100], [3, -100, -100], [0, 4, 2], [2, 1, -100]]
+        )
+        mask = (labels != -100).float()
+        full_weight = torch.randn(5, 6, requires_grad=True)
+        full_logits = features @ full_weight
+        full_loss = train_bounded_forget.selected_token_cross_entropy(
+            full_logits, labels, mask
+        )
+        full_grad = torch.autograd.grad(full_loss, [full_weight])[0]
+
+        micro_weight = full_weight.detach().clone().requires_grad_(True)
+        total_tokens = int(mask.sum())
+        accumulated = None
+        for start, stop in ((0, 2), (2, 4)):
+            logits = features[start:stop] @ micro_weight
+            nll_sum = train_bounded_forget.selected_token_cross_entropy_sum(
+                logits,
+                labels[start:stop],
+                mask[start:stop],
+            )
+            gradients = torch.autograd.grad(
+                nll_sum / total_tokens, [micro_weight]
+            )
+            accumulated = train_bounded_forget.accumulate_detached_gradients(
+                accumulated, gradients
+            )
+        self.assertTrue(
+            torch.allclose(accumulated[0], full_grad, atol=1e-6, rtol=1e-6)
+        )
+
+    def test_gradient_accumulator_preserves_missing_entries(self):
+        accumulated = train_bounded_forget.accumulate_detached_gradients(
+            None, [torch.tensor([1.0]), None]
+        )
+        accumulated = train_bounded_forget.accumulate_detached_gradients(
+            accumulated, [torch.tensor([2.0]), torch.tensor([4.0])]
+        )
+        self.assertTrue(torch.equal(accumulated[0], torch.tensor([3.0])))
+        self.assertTrue(torch.equal(accumulated[1], torch.tensor([4.0])))
+
     def test_elm_target_moves_from_expert_toward_novice(self):
         original = torch.tensor([[0.0, 0.0, 0.0], [0.2, -0.1, 0.0]])
         expert = torch.tensor([[3.0, 0.0, 0.0], [2.0, 0.0, 0.0]])

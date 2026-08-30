@@ -77,6 +77,15 @@ def parse_args():
     parser.add_argument("--batch-retain", type=int, default=2)
     parser.add_argument("--batch-chat-retain", type=int, default=2)
     parser.add_argument("--batch-consistency", type=int, default=2)
+    parser.add_argument(
+        "--consistency-microbatch-size",
+        type=int,
+        default=0,
+        help=(
+            "split the sampled consistency batch into exact token-weighted "
+            "gradient microbatches; 0 keeps the single-forward behavior"
+        ),
+    )
     parser.add_argument("--max-length", type=int, default=256)
     parser.add_argument(
         "--parameterization", choices=("lora", "full"), default="lora"
@@ -383,6 +392,33 @@ def selected_token_cross_entropy(logits, labels, mask):
     if selected.numel() == 0:
         return logits.sum() * 0.0
     return F.cross_entropy(selected, labels[mask.bool()])
+
+
+def selected_token_cross_entropy_sum(logits, labels, mask):
+    """Summed teacher-forced NLL for exact token-weighted microbatching."""
+    selected = logits[mask.bool()].float()
+    if selected.numel() == 0:
+        return logits.sum() * 0.0
+    return F.cross_entropy(selected, labels[mask.bool()], reduction="sum")
+
+
+def accumulate_detached_gradients(accumulated, gradients):
+    """Add one autograd result into a detached per-parameter accumulator."""
+    if accumulated is None:
+        return [
+            None if gradient is None else gradient.detach().clone()
+            for gradient in gradients
+        ]
+    if len(accumulated) != len(gradients):
+        raise ValueError("gradient accumulator length mismatch")
+    for index, gradient in enumerate(gradients):
+        if gradient is None:
+            continue
+        if accumulated[index] is None:
+            accumulated[index] = gradient.detach().clone()
+        else:
+            accumulated[index].add_(gradient.detach())
+    return accumulated
 
 
 def project_control_gradients_away_from_target(
@@ -704,6 +740,8 @@ def main():
             )
     if args.answer_suppression_weight < 0:
         raise ValueError("--answer-suppression-weight must be non-negative")
+    if args.consistency_microbatch_size < 0:
+        raise ValueError("--consistency-microbatch-size must be non-negative")
     if (
         args.answer_suppression_weight > 0
         and args.forget_objective != "target-response-ce"
@@ -1170,6 +1208,12 @@ def main():
                     else ""
                 )
                 + (
+                    " with exact token-weighted gradient microbatching"
+                    if args.consistency_microbatch_size > 0
+                    and args.consistency_weight > 0
+                    else ""
+                )
+                + (
                     " + target-priority projection of conflicting consistency gradients"
                     if args.project_conflicting_control_gradients
                     else ""
@@ -1420,6 +1464,10 @@ def main():
                 )
 
         consistency_loss = torch.zeros((), device="cuda")
+        microbatched_control_grads = None
+        consistency_records_used = 0
+        consistency_tokens_used = 0
+        consistency_gradient_microbatches = 0
         if consistency_pairs and args.consistency_weight > 0:
             sampled = random.sample(
                 consistency_pairs,
@@ -1428,15 +1476,66 @@ def main():
             consistency_batch = make_chat_retain_batch(sampled)
             if consistency_batch is not None:
                 x_ids, x_attention, _, x_labels = consistency_batch
-                consistency_logits = model(
-                    input_ids=x_ids, attention_mask=x_attention
-                ).logits[:, :-1, :]
-                consistency_mask = (x_labels[:, 1:] != -100).float()
-                consistency_loss = selected_token_cross_entropy(
-                    consistency_logits,
-                    x_labels[:, 1:],
-                    consistency_mask,
+                consistency_records_used = x_ids.shape[0]
+                consistency_tokens_used = int(
+                    (x_labels[:, 1:] != -100).sum().item()
                 )
+                if consistency_tokens_used <= 0:
+                    raise RuntimeError("consistency batch has no answer tokens")
+                if args.consistency_microbatch_size > 0:
+                    consistency_nll_sum = 0.0
+                    for start in range(
+                        0,
+                        consistency_records_used,
+                        args.consistency_microbatch_size,
+                    ):
+                        stop = min(
+                            start + args.consistency_microbatch_size,
+                            consistency_records_used,
+                        )
+                        chunk_labels = x_labels[start:stop, 1:]
+                        chunk_mask = (chunk_labels != -100).float()
+                        chunk_logits = model(
+                            input_ids=x_ids[start:stop],
+                            attention_mask=x_attention[start:stop],
+                        ).logits[:, :-1, :]
+                        chunk_nll_sum = selected_token_cross_entropy_sum(
+                            chunk_logits,
+                            chunk_labels,
+                            chunk_mask,
+                        )
+                        chunk_control_loss = (
+                            args.consistency_weight
+                            * chunk_nll_sum
+                            / consistency_tokens_used
+                        )
+                        chunk_grads = torch.autograd.grad(
+                            chunk_control_loss,
+                            trainable,
+                            allow_unused=True,
+                        )
+                        microbatched_control_grads = (
+                            accumulate_detached_gradients(
+                                microbatched_control_grads, chunk_grads
+                            )
+                        )
+                        consistency_nll_sum += float(chunk_nll_sum.detach())
+                        consistency_gradient_microbatches += 1
+                    consistency_loss = torch.tensor(
+                        consistency_nll_sum / consistency_tokens_used,
+                        device="cuda",
+                    )
+                else:
+                    consistency_logits = model(
+                        input_ids=x_ids, attention_mask=x_attention
+                    ).logits[:, :-1, :]
+                    consistency_mask = (x_labels[:, 1:] != -100).float()
+                    consistency_loss = selected_token_cross_entropy(
+                        consistency_logits,
+                        x_labels[:, 1:],
+                        consistency_mask,
+                    )
+                    consistency_gradient_microbatches = 1
 
         target_loss = (
             args.forget_weight * forget_loss
@@ -1469,12 +1568,14 @@ def main():
                 retain_graph=True,
                 allow_unused=True,
             )
-            control_grads = torch.autograd.grad(
-                control_loss,
-                trainable,
-                retain_graph=True,
-                allow_unused=True,
-            )
+            control_grads = microbatched_control_grads
+            if control_grads is None:
+                control_grads = torch.autograd.grad(
+                    control_loss,
+                    trainable,
+                    retain_graph=True,
+                    allow_unused=True,
+                )
             projected_control, gradient_surgery = (
                 project_control_gradients_away_from_target(
                     target_grads,
@@ -1507,6 +1608,17 @@ def main():
                     parameter.grad = combined
                 else:
                     parameter.grad.add_(combined)
+        elif microbatched_control_grads is not None:
+            (target_loss + preservation_loss).backward()
+            for parameter, control_grad in zip(
+                trainable, microbatched_control_grads
+            ):
+                if control_grad is None:
+                    continue
+                if parameter.grad is None:
+                    parameter.grad = control_grad.detach().clone()
+                else:
+                    parameter.grad.add_(control_grad.detach())
         else:
             loss.backward()
         grad_sq = sum(
@@ -1523,6 +1635,7 @@ def main():
             f"answer_suppress={answer_suppression_loss.item():.4f}  "
             f"chat={chat_loss.item():.4f}  "
             f"consistency={consistency_loss.item():.4f}  "
+            f"consistency_mb={consistency_gradient_microbatches}  "
             f"tc_cos={gradient_surgery['target_control_grad_cosine']}  "
             f"projected={gradient_surgery['control_projection_applied']}  "
             f"projected_tensors={gradient_surgery['control_projection_tensors']}  "
@@ -1552,6 +1665,11 @@ def main():
                 "train_retain": retain_loss.item(),
                 "train_chat_retain": chat_loss.item(),
                 "train_consistency": consistency_loss.item(),
+                "consistency_records_used": consistency_records_used,
+                "consistency_tokens_used": consistency_tokens_used,
+                "consistency_gradient_microbatches": (
+                    consistency_gradient_microbatches
+                ),
                 **gradient_surgery,
                 "train_grad_norm": grad_norm,
                 "answer_prob_ratio_to_baseline": answer_ratio,
