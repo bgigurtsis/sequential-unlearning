@@ -1283,3 +1283,16 @@ applier is being implemented and must verify replay/source columns and identity
 at scale1 before any persistent edit. First edit is top8 full-column ablation;
 only a model preserving complete employment absence while beating scalar
 13.4982 or recovering a frozen control can replace the dense benchmark.
+
+The precommitted attribution is complete and immutable. It measured 348,160
+columns and found only six passing ratio10 candidates, all in final MLP layer
+33. Raw hash is
+`1aeda319f5c7925bcafdc69bad18b0fa8c9b2f7358565912d18c01a00469c09b`;
+mask file hash is
+`91db47567033f875ea0c786b0fb990daf6c54f1ec85c41b7d80856d6fd000797`.
+Ratios span 54.26 to 12.05, but each column supports only 5-7 of 13 target
+groups and opposes the remainder, so these are candidate routes rather than a
+proven universal concept circuit. Do not loosen thresholds. Because top8 does
+not exist, the frozen first edits become top4/scale0 then all6/scale0, with .5
+only if zeroing is damaging. No edit starts until the mask applier passes real
+replay/source binding and scale1 identity and this finding is committed.

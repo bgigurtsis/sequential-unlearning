@@ -498,3 +498,12 @@ selection code has passed all 30 full tests on the new GPU machine. We will
 only prefer it if it keeps the broad erasure while either lowering the 13.5
 damage score or restoring one of the unrelated abilities the current model
 lost, without breaking something else.
+
+The measurement found six unusually employment-specific pathways, all near the
+model's final output stage. That is promising, but it is not proof that jobs
+live in six neat cells: each pathway matters to only part of the broad concept,
+and most of the concept still looks distributed. We are keeping the strict
+cutoff instead of padding the list with weaker candidates. The first real test
+will remove the strongest four, then all six if necessary, and immediately ask
+the held-out questions to see whether this produces genuine ignorance or only
+changes a few routes.

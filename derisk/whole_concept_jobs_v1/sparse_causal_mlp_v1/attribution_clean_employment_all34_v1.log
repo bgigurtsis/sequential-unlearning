@@ -1,0 +1,106 @@
+Loading read-only model /home/ubuntu/.cache/huggingface/hub/models--google--gemma-3-4b-it/snapshots/093f9f388b31de276ce2de164bdc2081324b9767 in BF16...
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/883 [00:00<?, ?it/s]Loading weights:   8%|▊         | 67/883 [00:00<00:01, 622.19it/s]Loading weights:  16%|█▌        | 143/883 [00:00<00:01, 694.18it/s]Loading weights:  25%|██▍       | 217/883 [00:00<00:00, 712.57it/s]Loading weights:  33%|███▎      | 290/883 [00:00<00:00, 713.36it/s]Loading weights:  41%|████▏     | 366/883 [00:00<00:00, 723.82it/s]Loading weights:  50%|████▉     | 439/883 [00:00<00:00, 724.56it/s]Loading weights:  90%|█████████ | 795/883 [00:00<00:00, 1639.40it/s]Loading weights: 100%|██████████| 883/883 [00:00<00:00, 1194.81it/s]
+Target attribution: 48 records, 13 groups, layers [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33]
+In file included from /home/ubuntu/.local/share/uv/python/cpython-3.12.3-linux-x86_64-gnu/include/python3.12/Python.h:12,
+                 from /tmp/tmpaab9ea9z/cuda_utils.c:9:
+/home/ubuntu/.local/share/uv/python/cpython-3.12.3-linux-x86_64-gnu/include/python3.12/pyconfig.h:1875:9: warning: ‘_POSIX_C_SOURCE’ redefined
+ 1875 | #define _POSIX_C_SOURCE 200809L
+      |         ^~~~~~~~~~~~~~~
+In file included from /usr/include/x86_64-linux-gnu/bits/libc-header-start.h:33,
+                 from /usr/include/stdlib.h:26,
+                 from /home/ubuntu/sequential-unlearning/venv-g6e/lib/python3.12/site-packages/triton/backends/nvidia/include/cuda.h:56,
+                 from /tmp/tmpaab9ea9z/cuda_utils.c:1:
+/usr/include/features.h:319:10: note: this is the location of the previous definition
+  319 | # define _POSIX_C_SOURCE        202405L
+      |          ^~~~~~~~~~~~~~~
+attributed 1/48
+attributed 2/48
+attributed 3/48
+attributed 4/48
+attributed 5/48
+attributed 6/48
+attributed 7/48
+attributed 8/48
+attributed 9/48
+attributed 10/48
+attributed 11/48
+attributed 12/48
+attributed 13/48
+attributed 14/48
+attributed 15/48
+attributed 16/48
+attributed 17/48
+attributed 18/48
+attributed 19/48
+attributed 20/48
+attributed 21/48
+attributed 22/48
+attributed 23/48
+attributed 24/48
+attributed 25/48
+attributed 26/48
+attributed 27/48
+attributed 28/48
+attributed 29/48
+attributed 30/48
+attributed 31/48
+attributed 32/48
+attributed 33/48
+attributed 34/48
+attributed 35/48
+attributed 36/48
+attributed 37/48
+attributed 38/48
+attributed 39/48
+attributed 40/48
+attributed 41/48
+attributed 42/48
+attributed 43/48
+attributed 44/48
+attributed 45/48
+attributed 46/48
+attributed 47/48
+attributed 48/48
+Control attribution: 36 records
+attributed 1/36
+attributed 2/36
+attributed 3/36
+attributed 4/36
+attributed 5/36
+attributed 6/36
+attributed 7/36
+attributed 8/36
+attributed 9/36
+attributed 10/36
+attributed 11/36
+attributed 12/36
+attributed 13/36
+attributed 14/36
+attributed 15/36
+attributed 16/36
+attributed 17/36
+attributed 18/36
+attributed 19/36
+attributed 20/36
+attributed 21/36
+attributed 22/36
+attributed 23/36
+attributed 24/36
+attributed 25/36
+attributed 26/36
+attributed 27/36
+attributed 28/36
+attributed 29/36
+attributed 30/36
+attributed 31/36
+attributed 32/36
+attributed 33/36
+attributed 34/36
+attributed 35/36
+attributed 36/36
+Wrote immutable mask with 6 neurons to derisk/whole_concept_jobs_v1/sparse_causal_mlp_v1/mask_clean_employment_all34_top128_v1.json
+raw_attribution=derisk/whole_concept_jobs_v1/sparse_causal_mlp_v1/attribution_clean_employment_all34_v1.safetensors
+raw_attribution_sha256=1aeda319f5c7925bcafdc69bad18b0fa8c9b2f7358565912d18c01a00469c09b
+artifact_sha256=91db47567033f875ea0c786b0fb990daf6c54f1ec85c41b7d80856d6fd000797
+payload_sha256=7aa8b1f8876b61d9f80dfed03d35126714af2dca4597189283d409c0fbcc013a

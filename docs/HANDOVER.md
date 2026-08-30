@@ -881,3 +881,16 @@ gate pass. First persistent arm is top8/scale0, followed only by the bounded
 K={4,8,16,32}, scale={.5,0} grid as evidence requires. Dense replacement needs
 complete target absence and either scalar below 13.4982 with no frozen-gate
 regression or explicit recovery of a dense control failure.
+
+Attribution has completed. Raw archive hash is
+`1aeda319f5c7925bcafdc69bad18b0fa8c9b2f7358565912d18c01a00469c09b`;
+mask hash is
+`91db47567033f875ea0c786b0fb990daf6c54f1ec85c41b7d80856d6fd000797`.
+Only six of 348,160 columns pass the frozen ratio10 gate, all at layer 33
+(neurons 9858, 369, 2842, 1612, 1408, 654; ratios 54.26, 43.71, 32.22,
+23.20, 19.24, 12.05). Each has positive support in only 5-7/13 target groups,
+so call these sparse route candidates, not a localized whole-concept proof.
+Do not lower thresholds. The applier must reject K>6 and prove scale1 identity.
+Then run top4/scale0 followed by all6/scale0 if needed; test .5 only if zeroing
+causes collateral. Exact scores, artifact/payload hashes, and interpretation are
+in `EXPERIMENTS.md`.

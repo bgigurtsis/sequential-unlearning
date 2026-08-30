@@ -7313,3 +7313,51 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   dialogue results. Lower damage requires scalar <13.4982 and either drift
   <9.0222% with CKA >=0.987027 or explicit recovery of a dense semantic-control
   loss without worsening another frozen gate.
+
+## Clean-parent sparse attribution finds six final-layer candidates (2026-08-30)
+
+- The exact precommitted attribution completed normally on the L40S without
+  modifying model weights. It scored 48 target and 36 control records across
+  all 34 decoder MLP layers, then wrote and reopened its raw archive, recomputed
+  the attribution digest, replayed selection, verified every tensor/hash and
+  selected source column, and only then published the immutable mask.
+- Raw archive
+  `derisk/whole_concept_jobs_v1/sparse_causal_mlp_v1/attribution_clean_employment_all34_v1.safetensors`
+  is 94,832,792 bytes with SHA-256
+  `1aeda319f5c7925bcafdc69bad18b0fa8c9b2f7358565912d18c01a00469c09b`.
+  Mask
+  `mask_clean_employment_all34_top128_v1.json` is 350,907 bytes with file hash
+  `91db47567033f875ea0c786b0fb990daf6c54f1ec85c41b7d80856d6fd000797`,
+  immutable payload hash
+  `7aa8b1f8876b61d9f80dfed03d35126714af2dca4597189283d409c0fbcc013a`,
+  and selected-mask hash
+  `8239ca64307a0ef62ae313960c1871970d4eab9eb949ca38a19f5e995674684f`.
+  Run-log hash is
+  `43583305dc1f725b1bbcbd8ec3bbce988e3ee58e7c35a2890154ae51d8afae38`.
+- Of 348,160 measured MLP columns, 169,424 passed the absolute `1e-6` target
+  floor and 320,900 had positive support in at least four target groups, but
+  only **six** passed the ratio >=10 worst-control gate. All six are in final
+  decoder layer 33; no earlier layer produced a qualifying column. Ranked
+  `(neuron, target score, worst-control score, ratio, positive target groups,
+  worst control)` values are:
+  `(9858,.00135516,.000024976,54.258,7,polysemy)`,
+  `(369,.000603381,.000013805,43.709,5,polysemy)`,
+  `(2842,.000714029,.000022164,32.216,5,utility)`,
+  `(1612,.000507101,.000021854,23.204,7,near_excluded)`,
+  `(1408,.000808909,.000042035,19.244,7,utility)`, and
+  `(654,.000496592,.000041195,12.055,6,near_excluded)`.
+- Interpretation: the strict result does not support a story that employment
+  is concentrated in a large clean neuron set. It finds six unusually
+  employment-skewed output columns at the last MLP, while the rest of the
+  representation is distributed under this instrument. Each candidate has
+  positive first-order ablation support in only 5-7 of 13 target groups and
+  negative support in the remainder, so they are candidate route carriers,
+  not proven universal concept neurons. Behavioral intervention is required.
+  Do not lower the frozen thresholds or relabel this as a top-128 mask.
+- The precommitted top-8 start is impossible because only six rows qualified.
+  Corrected bounded edit gate, frozen before any weight edit: after the applier
+  passes source/replay and scale-1 identity tests, run top-4/scale-0 and then
+  all-6/scale-0 if top 4 does not give complete removal; optional scales .5 use
+  the same two prefixes only if zeroing causes collateral. The applier must
+  reject K greater than the mask length. Report every arm and retain all held-
+  out and dense-baseline comparison gates unchanged.

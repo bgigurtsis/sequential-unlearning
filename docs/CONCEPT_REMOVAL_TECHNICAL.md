@@ -774,3 +774,11 @@ intervention will scale only the top eight selected down-projection columns to
 zero, after a separate applier proves scale-one tensor identity. It must retain
 complete semantic absence and outperform the dense 13.4982 scalar or recover a
 documented semantic control without another regression.
+
+The first attribution yields six qualifying columns out of 348,160, all in
+layer 33. Their target/worst-control ratios range from 54.26 to 12.05, but each
+has positive ablation support for only 5-7 of 13 semantic target groups. This
+is evidence for a few strong final-layer access routes, not a single localized
+employment circuit. The behavioral test is therefore restricted to top four
+and all six column ablations; thresholds remain frozen and no top-128 claim is
+permitted.
