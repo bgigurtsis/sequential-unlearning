@@ -6116,3 +6116,40 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
 - No checkpoint is selected from proxies. Screen all 12 snapshots on the
   original, direct, and natural-v2 suites; choose the earliest behavioral
   crossing satisfying the frozen healing gate or reject the method balance.
+
+## Targeted JSD healing is behaviorally inert and rejected (2026-08-30)
+
+- Screened every two-step checkpoint (2 through 24) on all three frozen suites,
+  totaling 1,200 deterministic generations at 96 new tokens and batch 16.
+  Raw/summary SHA-256 values are:
+  direct `827a82bcc9f620dac6c1d9490ed9d5a403cc1c6a185e4cc3472aae88bc5185ca`
+  / `c8fec7041d3fe534ce092c5aff740a291b72184d7d4645db8a0c8218eb6b6a09`;
+  natural-v2
+  `8e9cb3361282ab5feab868b71d87b4a5b3dc6140c5685b957de4a389d0dd6c08`
+  / `b52be0fb63bcb960a69fa5afb707bc7a7f8c82667755bb9b3a32b51733edb97a`;
+  original
+  `4d3e7244f838d362bc0eca3e1653c8319575631d199c33085d078982c6f1dd28`
+  / `6131a8aedb66b377bc5f144bef72da6e25c15658e204832aea84fba4e8a231cf`.
+- The behavior is effectively flat across the full dose curve. Every
+  checkpoint retains 36/36 original automatic holes and 22/24 original
+  controls. Every checkpoint retains only 7/12 natural controls; the same five
+  failures are cost of living (pre-existing), living organism, batch job,
+  physics work, and volunteer. Thus zero of the five newly damaged prompt
+  instances recover. Original volunteer and bicycle also remain absent.
+- The exact direct personal prompt remains a knowledge-free repeating `I don't
+  have to be a person` failure at every checkpoint. Direct prompt 04 also
+  repeats at several early checkpoints, while the translating-books unseen
+  prompt continues to say `working as a translator`; by step 24 that leak also
+  repeats. Raw semantic status therefore remains approximately 15/16 direct
+  and 11/12 natural targets rather than meeting the edge-case gate.
+- Reject this loss balance and the claim that high-weight clean-reference JSD
+  alone heals behavior. The sampled control JSD term was numerically small and
+  the 36-answer target consistency CE dominated gradients; lower proxy
+  distance did not cross a generation boundary.
+- Next method: use symmetric explicit continuation teaching. Build one
+  64-prompt target-response set spanning original 36, natural 12, and direct
+  16, all with diverse uncertainty continuations, and place the 36 clean
+  control continuations in the teacher-forced consistency CE slot. Preserve
+  generic capability with the 244 text retains and the existing 1,808 clean
+  chat paths via JSD. Disable original-answer suppression during healing so it
+  does not fight restoration. Freeze exact data and weights before running.

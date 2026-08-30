@@ -605,3 +605,11 @@ The proxy indicates mild movement toward pre-healing answers (+7.4%) with
 bounded preservation losses, but cannot distinguish healthy control recovery
 from target leakage. Screen every two-step checkpoint on original, direct, and
 natural-v2 suites before making any claim; no checkpoint is selected yet.
+
+Behavioral screening rejects that run. Across all 12 checkpoints it recovers
+zero failed controls: original stays 22/24 and natural-v2 stays 7/12. The
+direct personal loop and translating-books/work leak also remain. All 36 core
+holes survive, so the run is inert rather than destructive. The next arm should
+use explicit continuation CE for both the 64 target prompts and 36 clean
+controls, retain generic text/chat JSD, and disable answer suppression. Exact
+screen hashes and interpretation are in `EXPERIMENTS.md`.

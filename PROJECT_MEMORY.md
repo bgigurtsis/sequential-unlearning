@@ -1008,3 +1008,12 @@ and retain proxies remain bounded. This is not yet evidence of healing or
 leakage. Active gate: behaviorally screen all 12 two-step checkpoints on the
 original, direct, and natural-v2 suites, then select the earliest full pass or
 reject the balance. Exact artifacts and hashes are in `EXPERIMENTS.md`.
+
+Reject `run_step034_targeted_control_heal_24_v1`: all checkpoints preserve the
+36/36 core holes, but recover zero failed controls and fix neither the direct
+loop nor the translator/work leak. Counts are flat at 22/24 original controls
+and 7/12 natural controls. This proves the clean-reference JSD repair signal is
+too behaviorally weak under the strong target-consistency CE wall. Next arm
+uses explicit CE on both sides: varied uncertainty for all 64 target prompts,
+clean answers for all 36 controls, plus generic text/chat JSD; no answer
+suppression. No healing checkpoint is selected.
