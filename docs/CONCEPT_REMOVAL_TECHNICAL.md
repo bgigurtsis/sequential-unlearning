@@ -954,3 +954,21 @@ inventory SHA `7eedf4b2...`; the full inventory JSON itself is byte-identical.
 The mismatched remerge remains preserved under an unqualified path for audit.
 Thus endpoint equivalence is established without relying on cross-GPU merge
 arithmetic.
+
+The DARE transformer is now independently review-cleared before use. It binds
+the qualified endpoint by both file and canonical logical digests, proves the
+exact 98-tensor delta surface, uses a tensor-name/seed/index counter mask, and
+performs FP32 delta/rescaling/addition with a single final native-dtype cast.
+P=0 is a byte-copy identity branch after the full source proof. The production
+CLI admits only the frozen p/seed grid, while complete tensor inventories,
+tokenizer/chat runtime equality, and immutable provenance are verified around
+atomic publication. The final implementation passes 29/29 dependency-backed
+tests and has no P0/P1 review findings; no nonidentity checkpoint has run.
+
+Work was then paused before any checkpoint transformation. The DARE tool is
+saved in its review-cleared state. The retain-subspace projector is saved only
+as an interrupted WIP: syntax-valid but with five stale-API test errors. Its
+correct pending activation contract directly tokenizes/truncates the 244
+generic strings, chat-templates the 1,808 prompt/answer records without an
+appended EOS, and reduces each record to one normalized key. No projection
+result or identity claim exists.

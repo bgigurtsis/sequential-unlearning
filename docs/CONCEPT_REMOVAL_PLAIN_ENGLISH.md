@@ -631,3 +631,14 @@ identical versions.
 That copy is now finished and verified. The erased model on both machines is
 identical, down to every saved weight byte. The slightly different rebuild was
 kept separately as evidence and will not be used.
+
+The second GPU's thinning tool has now passed all 29 real-machine tests and an
+independent review. It will first make a zero-thinning copy and prove that it is
+exactly the known erased model. Only after that will it try the nine fixed
+thinning patterns; it cannot quietly invent extra strengths or random seeds.
+
+Work is paused before either machine makes a new model. The thinning tool is
+saved and ready for its exact-copy rehearsal. The more complicated protection
+tool is saved mid-build and clearly marked unfinished, so it cannot be mistaken
+for a result. Both cloud machines are being shut down after the code and notes
+are pushed.

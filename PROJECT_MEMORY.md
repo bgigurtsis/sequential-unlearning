@@ -1508,6 +1508,29 @@ inventory (SHA `92617184...`). Both GPU lanes therefore have the same endpoint.
 Active blockers are now only tool correction/review/tests and E0/p0 identity;
 no nonidentity candidate has run.
 
+The deterministic DARE implementation is now final-hash review-cleared at
+tool SHA `1cee71ce...` and test SHA `3b4ad011...`. It hard-pins clean, qualified
+`b852...` donor bytes, donor logical digest `7eed...`, config, exact clean
+tokenizer/chat runtime, the 98-tensor surface, frozen p/seed CLI grid, FP32
+arithmetic, complete output verification, and atomic provenance. Local suite is
+20 pass/9 dependency skips; exact final files passed 29/29 zero-skip on the RTX
+stack; independent review has no P0/P1. No real output exists. Next DARE gate:
+commit/sync, save a committed-checkout 29/29 log, then publish p0/seed0 identity
+at `delta_protection_v1/dare_v1/models/p000_seed0_v1`. Projection remains an
+independent lane and does not block this p0 run.
+
+The project is now **paused by explicit user request**. All subagents are
+stopped and no real DARE/projection checkpoint was created. The save-state
+commit contains the completed DARE release and a clearly marked incomplete
+projector. Projector tool/test hashes at interruption are
+`56cd755f...`/`f54fba5f...`; syntax passes, but its stale suite is 5 pass,
+5 errors, 10 dependency skips, so it must not run. Generic retain strings are
+now unambiguously direct-tokenized with truncation/max256; only prompt/answer
+records use clean chat templating, concatenation truncation to 256, no EOS, and
+shifted answer positions. Resume exactly at the gates in the final
+`EXPERIMENTS.md` pause section. Both EC2 hosts are to be shut down after this
+save commit is pushed.
+
 The old-host top4/scale0 replicate is complete and stopped before prompts. Its
 single 8.60-GB model file has exactly the same SHA-256
 `f7e4e01f3c8c84c50a065c72b106dff7e8779f7ee2f0264b12f4c3ecf39f91bb`

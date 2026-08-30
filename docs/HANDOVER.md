@@ -1054,3 +1054,26 @@ copied into the frozen L40S path. L40S verification now exactly matches file
 SHA `b8527608...`, logical digest `7eedf4b2...`, 883 tensors, and
 8,600,158,944 tensor-value bytes. The two retrieved logical inventories are
 byte-identical. Do not remerge again; proceed only through reviewed E0/p0 tools.
+
+The DARE tool is ready to commit: final tool/test hashes are
+`1cee71ce...`/`3b4ad011...`; local tests are 20 pass plus nine dependency skips,
+RTX tests are 29/29 zero-skip, and independent final-hash review has no P0/P1.
+The CLI pins all qualified endpoints, exact clean tokenizer/chat runtime, exact
+98-tensor delta surface, p0 byte/state identity, and only the precommitted grid.
+After commit, move the old checkout's untracked precommit script copies aside,
+fast-forward `/mnt/sequential-unlearning-replicate/checkout`, rerun 29/29 to a
+durable log, then launch p0/seed0 at
+`delta_protection_v1/dare_v1/models/p000_seed0_v1` with chunk 1048576 and
+`cuda:0`. Do not start p=.5/.9/.99 until p0 is integrated.
+
+PAUSED BY USER. Save the completed DARE release and interrupted projector, then
+shut down both EC2 hosts. No identity or candidate checkpoint has run. DARE is
+review-clean at hashes `1cee71ce...`/`3b4ad011...`. Projector is WIP at hashes
+`56cd755f...`/`f54fba5f...`: it compiles but its stale tests report 5 pass,
+5 errors, 10 dependency skips and it must not run. On resume, update those tests
+for the native 244-string/1,808-chat schemas. Generic strings are direct-
+tokenized with truncation/max256; chat pairs use the clean chat template,
+concatenate then truncate to 256, append no EOS, and select shifted answer
+positions. Finish the endpoint/overlap/2,052-key/four-basis gates and review
+before E0/E90. DARE may separately resume at committed-checkout 29/29 logging
+then p0 identity.

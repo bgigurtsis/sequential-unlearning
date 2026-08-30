@@ -8117,6 +8117,87 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   paths. This clears endpoint input only; E0/p0 tooling identity, code review,
   and dependency tests still block all nonidentity candidates.
 
+## Deterministic DARE tool is review-cleared before any real checkpoint run (2026-08-30)
+
+- Added `scripts/apply_checkpoint_delta_dare.py`, SHA-256
+  `1cee71ce3b13d8d5332cbca9e4b3c2cbd61286993bb30c152176ca29be4d60e3`,
+  and `scripts/test_apply_checkpoint_delta_dare.py`, SHA-256
+  `3b4ad011c815e204d9c441a86ecafbfd32efb0674d5459ed6422d2d703cf3173`.
+  No 4B output or behavioral generation has been created.
+- **Source contract:** production CLI hard-pins both clean Gemma Safetensors
+  shard hashes, qualified dense donor file SHA `b8527608...`, donor config SHA
+  `b62e048b...`, and qualified canonical logical digest `7eedf4b2...`. It proves
+  the clean-to-dense changed surface is exactly the frozen 98 bias-free linears
+  and that every tensor outside the surface is value-identical to clean. It
+  requires `--tokenizer-model` to be the exact clean-model directory, reloads
+  its tokenizer/chat template locally, and proves the published tokenizer
+  runtime matches.
+- **Transformation contract:** counter RNG is a pure function of canonical
+  tensor name, uint64 seed, and row-major flat index, with independent seed
+  domain separation; mask decisions are finalized on CPU and copied to the
+  requested compute device. Each changed tensor uses
+  `float32(dense)-float32(clean)`, deterministic Bernoulli dropping, survivor
+  division by `(1-p)`, clean-FP32 addition, and one native-dtype cast. Output is
+  reopened and every key/shape/dtype/value is hashed. P=0 copies the qualified
+  donor weight file and requires both byte and state identity. Publication is
+  atomic/no-replace with an immutable full-provenance sidecar.
+- **Frozen-grid enforcement:** the CLI fails closed except for p=0/seed=0 and
+  the exact cross product p={.5,.9,.99} x seeds={33450,33451,33452}. The Python
+  API remains generic for tests and records whether a request belongs to the
+  frozen grid; real experiments must use the fail-closed CLI.
+- **Validation:** static compilation passes. Local dependency-light suite is
+  20 passing with nine dependency skips. The exact final files pass 29/29 with
+  zero skips on the RTX PRO 6000 PyTorch/Safetensors/CUDA stack. Independent
+  final-hash review reports no P0/P1. Residual P2 observations are that
+  standalone structure is established by complete Safetensors scanning plus
+  config/tokenizer reload rather than instantiating a fresh 4B model object,
+  and direct Python callers are not grid-blocked. Neither affects the frozen
+  CLI identity gate; the later generation screen necessarily performs full
+  model loading.
+- **Conclusion / next gate:** commit and synchronize these exact hashes into
+  the isolated old-host checkout, rerun 29/29 there with a durable log, then
+  create only `dare_v1/models/p000_seed0_v1` using p=0, seed=0,
+  chunk-elements=1,048,576, and `cuda:0`. Require qualified file/state identity
+  and sidecar proof before any nonidentity DARE arm starts.
+
+## User-requested pause preserves DARE release and projection WIP (2026-08-30)
+
+- The user explicitly requested a pause and then requested that all work be
+  saved and both EC2 instances shut down. The remaining projection subagent was
+  interrupted immediately. No p0/E0 identity checkpoint, nonidentity DARE or
+  projection candidate, behavioral screen, or 4B training run started.
+- The completed DARE release remains exactly as documented above: tool SHA
+  `1cee71ce3b13d8d5332cbca9e4b3c2cbd61286993bb30c152176ca29be4d60e3`,
+  test SHA
+  `3b4ad011c815e204d9c441a86ecafbfd32efb0674d5459ed6422d2d703cf3173`,
+  local 20 pass/9 dependency skips, exact-final-file RTX 29/29 zero-skip, and
+  no P0/P1 review findings. It is saved but has not crossed the committed-
+  checkout durable-log or p0 publication gates.
+- The interrupted projector is deliberately committed as **WIP, not release
+  code** so no work is lost. Current tool SHA is
+  `56cd755f04acf752b169e79b2c1adaa13e278cb5a90e8efe755cd3badc0cbe37`;
+  current stale test SHA is
+  `f54fba5f2f11357e6317b15ab6f18909b9ba15a7c42a3e3e6cca29d8e9f13843`.
+  Both files compile, but the interrupted local suite has 5 pass, 5 errors,
+  and 10 dependency skips because tests still target the superseded token-row
+  API. This WIP must not run on a 4B endpoint or be described as tested.
+- **Frozen interpretation correction before resume:** the ambiguous earlier
+  phrase "run ... with chat template" does not apply to the 244 generic
+  Wikipedia strings. To match the established training data path, generic
+  strings must be tokenized directly with truncation enabled and max length
+  256. The 1,808 prompt/answer records use the exact clean chat template,
+  concatenate prompt and answer IDs, truncate the concatenation to 256, append
+  no EOS, and select shifted answer-prediction positions. Each record still
+  contributes exactly one mean/L2-normalized key, for 2,052 keys total. This
+  correction was communicated before any run and replaces the ambiguous global
+  chat-template reading.
+- **Resume gate:** first update projector tests to the native schemas and exact
+  tokenization above; finish evaluation-overlap, 2,052-key, four-basis sharing,
+  qualified `b852...` file and `7eed...` logical pins; rerun full local and L40S
+  suites; and repeat independent final-hash review. In parallel, the DARE lane
+  may synchronize the committed release, save a 29/29 log, and run p0 identity.
+  No nonidentity arm is authorized merely by resuming.
+
 ## Top-four scale-zero edit reproduces byte-for-byte across GPU hosts (2026-08-30)
 
 - The isolated old-host lane completed its clean-parent K=4/scale=0 command at
