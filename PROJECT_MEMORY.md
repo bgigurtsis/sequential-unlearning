@@ -933,3 +933,9 @@ exact old leak contracts into a contradictory job mention plus uncertainty,
 and prompt 02 is clean, but six neighboring routes remain knowledgeable. A
 precommitted 80-step extension changes only the dose ceiling/save cadence; it
 will determine whether a clean crossing exists before damage. Parent fallback.
+
+The 80-step dose extension completed. Its fixed old-answer probability falls
+monotonically to about 10% of baseline by step 80, proving late-layer microfit
+can reach the route. Preservation proxies deteriorate after the middle of the
+curve. Active gate: trained-route screen steps 24-80, looking first at 28-44
+for a clean crossing before damage. No selected replacement yet.

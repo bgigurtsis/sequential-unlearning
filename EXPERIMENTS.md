@@ -5831,3 +5831,27 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   repetitions or broader damage begin. Only a loop-free, materially improved
   checkpoint advances to original and natural-v2 suites; otherwise reject the
   late-layer CE family. Parent remains fallback.
+
+## Late-layer 80-step dose extension completed (2026-08-30)
+
+- The precommitted extension completed normally through step 80. Run-config,
+  metrics, stop-state, and final-adapter SHA-256 values are
+  `0c7567dcb97e7c836babcab19acb8d65bd5de6da03bf99d94f3fd899f7e1a9d5`,
+  `6a324707d124510e9c42ee8ed216886b71a3d5a0733d2ba8b2446acf23d38b55`,
+  `a426dbb4c1d8a72c6663833233d389050f9f3a70e0262123b77853fb0133ef52`,
+  and `feb81954c6ab7447aedac822350e31eb9fc5a8e1091008d4762ef138ed35c1c9`.
+- Target proxy crosses a wide range: old-answer probability ratios at steps
+  24/28/32/36/40/44/48/52/56/60/64/68/72/76/80 are approximately
+  .817/.769/.711/.642/.561/.461/.347/.231/.155/.128/.123/.115/.106/.102/.100.
+  Thus the final dose suppresses 90.04% of the measured original-answer token
+  probability. Generic-retain/chat losses remain relatively low through the
+  middle but rise at step 80 to 0.0539/0.1567; consistency is non-monotonic and
+  ends at 0.7268, so later checkpoints carry real damage risk.
+- The repeated first 20 steps are numerically close but not byte-identical:
+  v1/v2 step-20 adapter SHA-256 values are
+  `368cb3768ad2b75127beef8de93f8b49a4db4b1531c9d6186e9ca14a8d28e30a`
+  and `c89319dbf249e8d0670577c99fc694744a09afe9e3db48c531b823addae98e1c`;
+  proxy ratios are .85648 and .85659. Treat this as expected numerical GPU
+  nondeterminism with equivalent curves, not bitwise reproducibility.
+- Behavioral verdict pending. Screen the frozen post-20 grid; prioritize the
+  28-44 transition before high-damage late doses. No candidate is selected.

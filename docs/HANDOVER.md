@@ -532,3 +532,9 @@ steps 18-20 but remains contradictory, while six nearby routes still explain
 employment. Extend the identical late-layer run to 80 steps, saving every four,
 to locate a possible clean crossing and its damage boundary. Exact hashes and
 the frozen extension settings are in `EXPERIMENTS.md`.
+
+The 80-step extension completed. Old-answer probability falls to about 10% of
+baseline at step 80, while preservation losses increase later. Screen the
+post-20 four-step grid now, prioritizing steps 28-44 as the likely crossing
+window. Exact artifacts/hashes and the small non-bitwise GPU reproducibility
+difference are recorded in `EXPERIMENTS.md`.
