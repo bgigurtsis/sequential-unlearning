@@ -453,3 +453,10 @@ The stronger RMU run completed with relative MSE moving from 1.9965 to 1.6447.
 Screen original steps 6/10/14/18/22/26/30; this spans the real representation
 transition. Do not infer failure from the rising answer-probability proxy, and
 do not hard-audit a checkpoint with loops, reopened routes, or control damage.
+
+Reject stronger random RMU. Step 6 is unchanged; step 10 begins a localized
+unemployment loop, and later doses reopen more erased routes and add loops.
+All 30 controls remain healthy, so the mechanism destabilizes the target
+boundary rather than globally collapsing the model. Do not hard-audit it.
+Next try meaningful forgotten-state alignment on prompt representations, with
+no original-answer teacher forcing. Current best remains step 240.

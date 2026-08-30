@@ -465,3 +465,10 @@ In plain English, repeatedly teaching the model to answer “I don't know” has
 reached its limit. The next experiment needs to find and alter the internal
 route that connects “for a living” to jobs, while explicitly protecting the
 separate computing meaning of “batch job.”
+
+We also tried changing the model's internal activity directly. A very gentle
+version did no damage but changed nothing. A stronger version still preserved
+unrelated knowledge, yet it made some erased job routes come back as broken,
+repetitive answers. So random internal disruption is not the answer here. The
+next version will try to make the stubborn phrase follow the same internal path
+as job questions the model already forgets cleanly.

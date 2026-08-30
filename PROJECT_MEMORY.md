@@ -844,3 +844,12 @@ probability proxy rises, which is not an RMU success/failure measure. Exact
 hashes are in `EXPERIMENTS.md`. Active gate: original-screen steps
 6/10/14/18/22/26/30 and reject any loop, reopened target route, or damaged
 control before touching the hard audit. Current best remains immutable.
+
+The stronger focused RMU arm is rejected at the original screen. Step 6 is
+clean but unchanged; step 10 starts an unemployment definition loop, and later
+doses reopen restaurant, career, pay, hiring, and labour-market routes while
+adding target loops. All 30 controls remain healthy, proving localized target
+destabilization rather than global collapse. Do not hard-audit or extend random
+RMU. Current best remains semantic-mix step 240. Next decision: align stubborn
+idiom prompt states to meaningful already-forgotten target states, without
+teacher-forcing original knowledgeable answers, instead of random misdirection.

@@ -5522,3 +5522,28 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   steps 6/10/14/18/22/26/30, covering the full measured transition while
   retaining the two-step artifacts for later interpolation. Reject target
   loops, reopened routes, or control damage before any hard-audit reuse.
+
+## Stronger focused Adaptive-RMU rejected at original screen (2026-08-30)
+
+- Raw/summary screen SHA-256 values are
+  `7e39fb980c5717e1f992369a8ef06f3aa1cea3abf2d974fdfc30c69500f8e10f`
+  and `4c94a520ebb28a322a5af8e42ece25d016bc7221ea5e0f1093a4d82869061bb4`.
+  Automatic holes at steps 6/10/14/18/22/26/30 are 35/34/32/32/29/25/24.
+  Step 6 is 36/36 on raw review because its only miss is `I don't know that`;
+  it is behaviorally unchanged and therefore not a new candidate.
+- From step 10, random representation movement reopens target routes rather
+  than deepening erasure. `unemployment_01` begins a definition and loops at
+  step 10; step 14 also reopens and loops on the restaurant owner/cook route;
+  later checkpoints add careers, pay, hiring, and labour-market leakage. Target
+  repetition counts are 0/0/0/2/2/2/1 across the grid.
+- All checkpoints retain 24/24 keyword-scored controls, zero control
+  uncertainty, and six healthy open-generation controls. The repeated batch-
+  job term remains a false warning inside a correct computing answer. This is
+  localized target-boundary destabilization, not global model collapse.
+- Verdict: REJECT the stronger arm before hard audit. Adaptive RMU toward a
+  random direction is unsuitable on top of this already-erased parent: beyond
+  the no-effect dose it resurrects/loops target knowledge. Current best remains
+  immutable semantic-mix step 240. Next method may remain representation-level
+  but must use a meaningful already-forgotten anchor state rather than a random
+  direction and must operate on the prompt route without teacher-forcing the
+  original knowledgeable answer tokens.

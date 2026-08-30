@@ -733,3 +733,12 @@ lose target coverage and introduce two target loops. More target-response CE
 toward unfamiliarity therefore does not repair the localized semantic boundary.
 The uncorrected semantic-mix step 240 remains the best artifact; the next arm
 should use a representation-level or causal-localization objective.
+
+A focused Adaptive-RMU follow-up brackets the representation dose but is also
+rejected. A gentle 0.37%-movement arm is behaviorally unchanged. A stronger
+17.6%-movement arm preserves every unrelated control yet progressively reopens
+erased target routes and creates localized loops from step 10 onward. Random
+misdirection on original-answer token states is therefore the wrong geometry
+for an already-erased parent. A subsequent representation method should align
+the leaking prompt route to a meaningful stable forgotten state and avoid
+teacher-forcing the original knowledgeable continuation.
