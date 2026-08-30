@@ -414,3 +414,9 @@ returns 56 but trips repetition detection. Perplexity is 14.130701 versus
 14.131 clean. Together with accumulated targets 24/24 ABSENT and controls
 48/48 PRESENT, removal three is accepted. Active task: freeze the 31-event
 catalogue and implement a restartable bounded-wall driver from this parent.
+
+EC2 storage state: after verifying the local day-3 archive, the reproducible
+one- and two-removal full merges were deleted. The accepted three-removal
+self-contained model remains; free disk is 51 GiB. Continue the rolling policy
+of one accepted full parent plus one candidate merge, preserving adapters and
+evidence before reclaiming a superseded parent.

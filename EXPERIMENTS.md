@@ -4225,3 +4225,16 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   accepted full parent and at most one candidate full merge, retaining small
   accepted adapters/evidence and reclaiming superseded reproducible merges only
   after the newer parent is backed up and accepted.
+
+## Superseded balanced merges reclaimed after verified backup (2026-08-30)
+
+- Verified local day-3 recovery archive SHA-256
+  `c9ae68a8e17d77f4add02bcd2a562dc3baeb3293398ab93c9ab7435c5aa9291d`
+  before deletion.
+- Removed only the superseded remote full merges
+  `merged_vacation_step160_v1` and `merged_vacation_phone_step110_v1`, each
+  8.1 GiB. Their selected adapters and evidence are in the verified local
+  backups and their hashes/configurations remain documented.
+- The accepted self-contained three-removal parent remains on EC2. Free disk
+  increased from 35 GiB to 51 GiB, enough for the next candidate merge while
+  retaining the active parent.
