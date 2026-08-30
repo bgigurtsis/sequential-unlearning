@@ -565,3 +565,11 @@ Fine direct screen selects step 34: 15/16 raw-clean holes, all surface-free,
 with only the direct personal question looping. Step 33 still leaks and step 35
 is no better. Broad-screen step 34 and require better damage than step 36 before
 healing the loop.
+
+Step 34 is now the closest removal tradeoff: all 36 original targets absent,
+15/16 direct prompts clean (one knowledge-free loop), 11/12 unseen targets
+absent (one translator/work leak), and 30/36 combined controls healthy. Cost of
+living was already broken, so five control failures are newly introduced. Do
+not increase dose. Merge step 34 as a temporary healing parent; restore damaged
+controls toward clean Gemma while anchoring all target holes and fixing the
+single loop/leak.

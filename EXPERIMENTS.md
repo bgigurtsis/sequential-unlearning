@@ -5967,3 +5967,31 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
 - Select step 34, the lightest equivalent crossing, for original and natural-v2
   broad screens. It must improve on step 36's 20/24 and 6/12 control retention
   without reopening target knowledge to justify any healing work.
+
+## Step 34 is the closest full-concept-removal tradeoff (2026-08-30)
+
+- Original raw/summary SHA-256 values are
+  `b9bfa8d3af400ccf47acd32606bcfaf970b425244c5660efc21becdcc1d32e3a`
+  and `79396fea952b649e1d9cbf98646be1cfb43a1daf002aa2f8c8c26add5e5ea729`.
+  It preserves 36/36 original target holes, zero target loops, and 22/24
+  controls. Only volunteering and bicycle knowledge fail; the batch-computing
+  and tides controls lost at step 36 are healthy at step 34. The batch-job
+  repetition flag is repeated terminology inside a correct explanation.
+- Natural-v2 raw/summary SHA-256 values are
+  `299f2c8d78d9e6e22d38557ecf1b892c969322471f457752947617e73f447da5`
+  and `d01732676cd02e392532435be84f945c675c32341f3e180b856dbdc6721bdf3c`.
+  Raw target result is 11/12 holes with zero loops; the only leak is still the
+  translating-books sentence identifying `working as a translator`. Seven of
+  12 controls are healthy. Cost of living was already absent in the parent;
+  four newly lost controls are living organisms, batch computing, physics
+  work, and volunteering. Weather recovers relative to step 36.
+- Combined control view: 30/36 prompt instances are healthy, including one
+  pre-existing `cost of living` loss; five failures are newly introduced by
+  this edit. Step 34 is therefore the closest candidate that materially closes
+  the direct route while keeping most broad behavior, but it is not selected
+  because direct prompt 02 loops and unseen prompt 07 leaks.
+- Method decision: stop increasing erasure dose. Merge step 34 into a temporary
+  healing parent, restore specifically damaged control behavior toward the
+  clean Gemma reference, and simultaneously anchor every existing target hole
+  plus train clean uncertainty on the direct loop and unseen leak. This tests
+  removal plus healing, not more indiscriminate suppression.

@@ -969,3 +969,11 @@ Fine direct screen: step 33 still leaks one route and has two loops; steps 34
 and 35 both give 15/16 clean holes with only the direct personal question
 looping. Step 34 is the lightest equivalent point. Active gate: broad-screen it
 and require better control retention than step 36 before attempting loop heal.
+
+Step 34 is the closest full-concept-removal result: 36/36 original holes,
+15/16 clean direct prompts (one knowledge-free loop), 11/12 unseen natural
+holes (one translator/work leak), and 30/36 combined control prompts healthy.
+Of six control failures, cost of living predates this edit; five are new. It is
+not selected yet. Active method change: merge step 34 temporarily and run
+targeted clean-reference healing while explicitly anchoring all holes and
+correcting the loop/leak. Do not add more erasure dose.
