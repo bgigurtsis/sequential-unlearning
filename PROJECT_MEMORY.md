@@ -1024,3 +1024,10 @@ unfamiliarity on all 64 target prompts and clean continuations on all 36
 controls at equal CE weights, while generic text/chat behavior remains under
 clean-reference JSD. Suppression is off. Exact inputs/settings/hashes are in
 `EXPERIMENTS.md`; next action is training then staged behavioral screening.
+
+The symmetric-CE run completed normally through step 30. It is a small,
+stable update (+3.37% captured-answer probability; much lower gradients than
+erasure), and clean-control CE improves, but no behavior claim is allowed yet.
+Active gate: screen the two-step grid, prioritizing the earliest checkpoint
+that recovers controls while retaining target holes. Exact hashes are in
+`EXPERIMENTS.md`.

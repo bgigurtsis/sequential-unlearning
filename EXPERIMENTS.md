@@ -6183,3 +6183,38 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   loop and natural translator leak fixed; at least four of five new control
   injuries recovered without introducing a new control failure. Select the
   earliest eligible point, otherwise reject.
+
+## Symmetric continuation-healing training completed (2026-08-30)
+
+- `run_step034_symmetric_ce_heal_30_v2` completed all 30 steps normally with
+  `stop_reason=step_budget_exhausted`. Run-config, metrics, and stop-state
+  SHA-256 values are
+  `ed395456dfb532762996bd41446a566c5390dd3b175f64b55b3853ecd2cba12c`,
+  `3990104a0e29e35535887fc7d9523115a1e800ab3f654209d84ce8c1a83cf6d2`,
+  and `a9dbc63a48b28120119c61e308fc473be0bd0d7e78a5f176dd8237b83d3f691a`.
+- Adapter SHA-256 values at steps 2/4/6/8/10/12/14/16/18/20/22/24/26/28/30
+  are, respectively:
+  `c7c966e713c939517a8eff2ad8f26adb9c8560353ff9b72b6de453bf4b16a0c9`,
+  `08bac85e8eb2b7a53e4652162d6293d5fb26722fe5e574824d0b8c0f0d913b54`,
+  `1f82041d36aa857f1eecc70d108ad556c27ca76c807b667235d4a9735497691c`,
+  `9a9e84201c4a5ba867848d0dae86cf144611752ab7df032872597e41f2536134`,
+  `d700476e83021f5479627b9849b7963bd335a7340ec7d22a77d3319ff299e855`,
+  `b78f9021d22398771758363e8e0d0de69a469edc4f3541af2578fe81a0e8f86d`,
+  `60d56462c5fd781bda8e6d66983f9773885217da26dc308990757c50d4fe3803`,
+  `f80cd10218a54ea7e00bc0762eca6f488f141b6620c2ff3626a33c48993619ef`,
+  `e66ff114c0e9f7b40aed0831df6ae00b97c4a14bb40f7018ddc2f9c7038d66f8`,
+  `868ab6f981c88c6f09bedcb154987c750c270d802b62bfa1fc26374d29a9780e`,
+  `81f647e2280168209c30a22310669c847e1f658bb2d186d91a354aa7f53ed270`,
+  `6d4e2be46130808d6a82af437b7b1abb055997df355906ed2059888db5a2fbde`,
+  `a9672febe68ea0c581a1cd3977857c09b37998d3ee4869ecaeef82c46c32688b`,
+  `6154c6f074ac87b488b25c5f718ef2a18e2db703b34d0b0f566ba33afb54d722`,
+  and `83f77cd4474b9f8311527c2a0dd1742ba3da1d1fa8d9d18eb7dc51f5f7f7143c`.
+- Fixed captured-answer probability changes only +3.37% by step 30. The
+  sampled clean-control CE moves from 0.336 at step 2 to 0.319 at step 30
+  (with stochastic lows near 0.23); final generic chat/text JSD values are
+  0.0229/0.0041. Gradient norm rises smoothly from 18.8 to 34.0, far below the
+  destructive late-microfit regime. These proxies show a bounded update but
+  do not establish behavioral repair.
+- No checkpoint is selected. Screen the early grid behaviorally, prioritizing
+  the first control recovery while requiring target-hole retention, then
+  broaden only plausible crossings according to the frozen gate.

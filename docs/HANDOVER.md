@@ -619,3 +619,9 @@ That next arm is now precommitted as
 64 erased prompts and all 36 clean controls, generic text/chat JSD, no answer
 suppression, rank 8 late layers at LR 2e-5 for 30 steps saved every two. Exact
 data hashes/settings and the unchanged behavioral gate are in `EXPERIMENTS.md`.
+
+The symmetric-CE run completed normally through step 30. Proxies show a small,
+stable update and some clean-control CE improvement, but do not prove healing.
+Screen the saved two-step grid behaviorally and select only the earliest point
+meeting the frozen target/control gate. No checkpoint is selected yet; exact
+run and adapter hashes are in `EXPERIMENTS.md`.
