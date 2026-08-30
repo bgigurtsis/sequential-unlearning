@@ -7045,3 +7045,28 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   behaviorally reproduce the original step-64/66 results; then broaden the
   replicate's best point. Otherwise reject the fine-grid lane and rely on the
   original step 64 while prioritizing sparse localization.
+
+## Replay flanks behaviorally reproduce; step 65 may be broadened (2026-08-30)
+
+- Screened replay steps 64/65/66 on the frozen 16-prompt direct suite and
+  12-target/12-control natural-v2 suite with the same parent/tokenizer, greedy
+  96-token generation, and batch 16. Direct raw/summary SHA-256 values are
+  `ab799c0004455674509fba36135e25de0cb7219a662601b28f5f918066a98095`
+  and `09bd65661f9d338bdcd6c452bc13de011f11c60479446e5e54dbf515d50aecb5`.
+  Natural raw/summary values are
+  `a84a1e1a4a4061a8ab1026856454c43a1f0c75194f633fe471066a6c00a24786`
+  and `58eceec0e306f52179dd88cbe4aad0c508ffda8c83349e52f56797f218bc4527`.
+- All three replay points give 16/16 direct candidate holes, 16/16
+  surface-free, zero direct repetition; and 12/12 natural candidate holes,
+  12/12 surface-free, zero natural target repetition, and 9/12 natural controls
+  healthy. Raw target outputs are short, terminating unfamiliarity responses.
+- Replay step 64 is byte-identical to original step 64 on 16/16 direct and
+  23/24 natural generations. Replay step 66 is byte-identical on 15/16 direct
+  and 21/24 natural generations. Most importantly, both flanks reproduce the
+  exact original pass/fail counts and raw semantic verdicts despite their small
+  tensor differences. The corrected behavioral-replication gate passes.
+- Replay step 65 is now eligible as the middle of a near-identical replicated
+  trajectory, not as an exact reconstruction of the original missing adapter.
+  Broad-screen replay 64/65/66 together on original and hard suites and run all
+  three conversation audits. Select step 65 only if it improves the observed
+  target-loop/control tradeoff; otherwise retain original step 64.

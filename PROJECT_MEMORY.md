@@ -1216,3 +1216,13 @@ flanks to behaviorally reproduce the original curve before judging the middle;
 otherwise discard this lane. Sparse-MLP causal tooling on the ready L40S remains
 the parallel lower-damage route. Exact hashes and comparison are in
 `EXPERIMENTS.md`.
+
+Replay steps 64/65/66 all pass 16/16 direct and 12/12 natural targets with no
+loops and keep the same 9/12 natural controls. Replay step 64 is byte-identical
+on 16/16 direct and 23/24 natural generations; replay step 66 has 15/16 and
+21/24 byte identity, while both reproduce original semantic counts exactly.
+The corrected flank-behavior gate therefore passes. Step 65 is eligible only as
+the middle of a near-identical independent replicate. Active gate: broad-screen
+all replay 64/65/66 points on original, hard, and conversations; select 65 only
+if it improves the loop/control balance. Sparse localization continues in
+parallel.

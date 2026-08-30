@@ -809,3 +809,12 @@ the three saved replay checkpoints only as a near-identical replicate: screen
 behavior before interpreting the middle. If they do not, reject the fine-grid
 lane and keep original step 64 as the candidate while prioritizing sparse-MLP
 localization on the ready L40S. Exact hashes/comparison are in `EXPERIMENTS.md`.
+
+The replay flank-behavior gate passes. Replay 64/65/66 each gives 16/16 direct
+and 12/12 natural holes, zero target loops, and 9/12 natural controls. Replay
+64 is byte-identical to original 64 on all direct and 23/24 natural answers;
+replay 66 also reproduces the original semantic counts. Step 65 may therefore
+be tested as the middle of a near-identical replicate, never described as an
+exact recovered original checkpoint. Broad-screen replay 64/65/66 on original,
+hard, and conversation suites; choose 65 only if it improves the target-loop/
+control balance. Exact screen hashes are in `EXPERIMENTS.md`.
