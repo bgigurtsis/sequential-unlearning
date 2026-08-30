@@ -661,3 +661,9 @@ cosine, lowers gradient norm from 21.064 to 18.920, and remains finite with
 negligible target movement. `run_step034_nullspace_heal_30_v3` is precommitted
 as a 30-step same-data/weight comparison changing only optimizer geometry and
 seed 32900. Train it, then screen direct/natural first under the unchanged gate.
+
+The strict null-space run completed normally through step 30, with projection
+active throughout and stable losses. Target/control cosine stays positive, so
+the optimizer path genuinely differs from symmetric CE; captured-answer
+probability rises 4.88%. No behavioral claim or selection yet. Screen all
+direct/natural checkpoints and broaden only a plausible crossing.

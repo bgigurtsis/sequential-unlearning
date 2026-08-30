@@ -1066,3 +1066,9 @@ gradient norm to 18.920, and stays finite with negligible one-step target
 movement. Full run `run_step034_nullspace_heal_30_v3` is precommitted with the
 same data/weights as symmetric v2, changing only optimizer geometry and seed
 32900. Train then stage screens through the unchanged behavioral gate.
+
+The strict null-space 30-step run completed normally; projection activates on
+every audited step with positive target/control cosine +0.15 to +0.37. Target
+proxy movement is modest (+4.88%) and losses remain finite. This proves a
+distinct stable optimizer path, not behavioral healing. Active gate: screen
+all direct/natural checkpoints, then broaden only plausible crossings.

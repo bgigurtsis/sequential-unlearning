@@ -6350,3 +6350,37 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   Screen direct/natural first and original only for plausible crossings. Apply
   the unchanged gate: 36/36 original holes, both edge cases fixed, and at least
   four of five new control injuries recovered without a new control loss.
+
+## Strict null-space healing training completed (2026-08-30)
+
+- `run_step034_nullspace_heal_30_v3` completed all 30 steps normally with
+  projection active at every audited step and
+  `stop_reason=step_budget_exhausted`. Run-config, metrics, and stop-state
+  SHA-256 values are
+  `d474c625e02fd5a4c51054a1aa01308d0830ec4c95811557f6a017972d3f615c`,
+  `45432f4e7f74e40c9a0f34074880f17364d495bb15d2b6ef0653e6d13247eaf8`,
+  and `9e62775c8f9459c0aef365bcae63b199b59f66b7cc04eef5ca8b4113784e20fb`.
+- Adapter SHA-256 values at steps 2/4/6/8/10/12/14/16/18/20/22/24/26/28/30
+  are, respectively:
+  `d978438675c6eece3070b4b66ca1b2a6f90fe76dbd99d57b0337e9e9b691c1ab`,
+  `de47725c0828f71c33e8d2d27f88b3021ec71890b02fa8a136f7f5d93f8948ab`,
+  `f881ddbfca3bb92bb3b8e4af34d05b22489cf702538cde5c10ab87e7037a9326`,
+  `6e83c341fc31610954445cff17ac74ce429a0c47d1d662efc183004883de77a0`,
+  `9c153958db61dbda0c07c939846f7751381f503d004a1618952527caa4282f3a`,
+  `90560cd33e63ee806f47451baa497656d60c3185af8c76e3b34b4632e40241d3`,
+  `f6fb4b4ce9e956cf0d8087cbf180712667cd70fe141c3eef6315e848a212c188`,
+  `ed5c9f77432cd8cf5fe128fc2cd30ab0746fd47dce5ff91a0bc6188431e86427`,
+  `1bf8aa2636a223d8dd9a5c492cb56a9235d485dfed0a9aab09aab5cd393cd366`,
+  `6ed9226666d7c02e96f8ce47b117048342b0098a859778c04ade715b869fb964`,
+  `3a36e0ae517c35b186400f00ca2265d764e843b94867f696d82ae1236bc98a22`,
+  `9421fb43f6ccbb0dd39c073dd8941803a9ca26b2226789be8520769f3116c3cc`,
+  `6976f021b8e61e4f71de700117f3c87473f6a132ec8d6a55bfcc0b850adfd80d`,
+  `e4a9cc9e7f5c1bce89ba1188e4037e707bfcee341396f20ce6467cb40e76b9a9`,
+  and `031591e8d569f1e575087999a1bbf6338bda497cdb175853364e99092fc310a5`.
+- Target/control cosines remain positive throughout, approximately +0.15 to
+  +0.37, so strict projection continuously changes the optimizer path. The
+  fixed captured-answer probability rises 4.88% by step 30; final sampled
+  clean-control CE is 0.233, generic chat/text JSD 0.0445/0.0049, and gradient
+  norm 31.57. Training is stable, but no behavioral conclusion follows.
+- No checkpoint is selected. Screen all direct/natural checkpoints first;
+  broaden only a plausible crossing under the frozen gate.
