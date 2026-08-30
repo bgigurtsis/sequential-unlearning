@@ -297,3 +297,13 @@ Do not merge or compound step 240. The next run must start clean, broaden target
 training across independently generated indirect/narrative/inferential
 scenarios without using frozen audit wording, and retain EOS plus the contextual
 preservation wall.
+
+The next arm is precommitted. Use the 96 curated situations in
+`config/whole_concept_jobs_v1/semantic_scenarios_v1.json` and seed 31600 to
+build 576 indirect prompts, 48 per target group. After zero-overlap checks and
+clean-parent capture, combine them with the old 480 direct pairs and assign
+diverse uncertainty targets with seed 31650. Run from clean for 360 steps with
+seed 31700 and otherwise identical EOS-context settings. This changes semantic
+coverage only; do not increase rank, weaken the contextual wall, or copy hard-
+audit prompts. Screen original probes first and touch the hard audit only after
+a clean candidate appears.

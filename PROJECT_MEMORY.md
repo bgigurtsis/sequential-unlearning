@@ -637,3 +637,14 @@ clean-parent arm with a much broader, independently generated distribution of
 indirect/narrative/inferential target scenarios; keep EOS and the contextual
 wall; never train on the frozen hard-audit wording. Do not merge or compound
 step 240.
+
+Active method change is semantic target expansion from the clean parent. The
+previous 480 targets are dictionary-style and explain the direct-label success
+plus indirect-scenario failure. A frozen 96-situation source now covers eight
+independent settings for each of 12 jobs/employment groups; a tested builder
+turns it into 576 prompts (48/group) without using the hard-audit wording. Mix
+those with the existing 480 captures, attach diverse uncertainty responses,
+and run the precommitted 1,056-target, 360-step EOS-context recipe recorded in
+`EXPERIMENTS.md`. All erasure and preservation hyperparameters stay fixed so
+the experiment isolates semantic coverage. Next gate is a clean coarse screen,
+then the unchanged hard audit only if a candidate survives.

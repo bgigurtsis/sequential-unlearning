@@ -4918,3 +4918,37 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   distribution semantically without copying the held-out audit prompts, while
   retaining the EOS and contextual-preservation safeguards that fixed the
   earlier collapse.
+
+## Semantic-scenario target expansion precommitted (2026-08-30)
+
+- Root-cause interpretation: the prior 480-target distribution is dominated by
+  dictionary-style combinatorial prompts (`Explain`, `Describe`, `Clarify`,
+  etc.) over a group label or definition. The hard audit shows that this
+  suppresses lexical/familiar access but undercovers scenario-based inference.
+- Independent scenario source:
+  `config/whole_concept_jobs_v1/semantic_scenarios_v1.json`, SHA-256
+  `2023a82fcccc0c60cb22afe564dc391ca6dfd4b43ca938c89782d7801de93914`.
+  It contains eight curated situations for each of the 12 target groups (96
+  total), chosen independently of the frozen hard-audit wording. Each situation
+  covers a different setting or causal route and includes both explicit and
+  indirect lexical surfaces.
+- `scripts/build_semantic_scenario_prompts.py`, SHA-256
+  `331e32f6b4f59c636a7c179a4b5e029c7e150847f93ee778d7ad9c4889ca148b`,
+  deterministically crosses every situation with six question frames and
+  shuffles with a recorded seed. Seed 31600 produces 576 unique prompts, 48 per
+  semantic group. Three builder unit tests pass locally.
+- Precommitted materialization: generate the 576 prompts on EC2; assert zero
+  exact overlap with both frozen probe suites and all prior target/preservation
+  inputs; greedily capture clean-parent answers at maximum 96 tokens/batch 32;
+  combine with the existing 480 clean target pairs for 1,056 total; attach the
+  96-way diverse uncertainty targets with seed 31650.
+- Precommitted clean-parent run: the 1,056-target semantic mix; existing 244
+  generic-retain records; existing 1,520-behaviour EOS-context wall;
+  `target-response-ce` with exactly one EOS; answer-suppression coefficient 10;
+  weights 1/30/200; rank 4; alpha 8; layers 12-19; LR 5e-5; batches 4/4/16;
+  maximum length 256; seed 31700; 360-step ceiling; snapshot/audit every 10;
+  external semantic selection. The larger target distribution, not extra
+  adapter capacity or weaker preservation, is the only substantive change.
+- First screen a coarse late dose grid on the original frozen 60 probes. Only
+  a clean candidate advances to the already frozen hard audit, which remains a
+  one-use reporting instrument rather than a source of copied training text.
