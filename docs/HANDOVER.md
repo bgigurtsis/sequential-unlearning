@@ -1047,3 +1047,10 @@ k/v projection tensors differ. The raw inventories and complete list are in
 tests. Preserve the L40S output under an unqualified name, copy the qualified
 old-host checkpoint bytes to the L40S, and pin both qualified hashes in E0/p0.
 No behavioral experiment has started from the mismatched remerge.
+
+The remediation is complete: the rejected L40S remerge is preserved under an
+explicitly unqualified directory, and the qualified old-host donor has been
+copied into the frozen L40S path. L40S verification now exactly matches file
+SHA `b8527608...`, logical digest `7eedf4b2...`, 883 tensors, and
+8,600,158,944 tensor-value bytes. The two retrieved logical inventories are
+byte-identical. Do not remerge again; proceed only through reviewed E0/p0 tools.

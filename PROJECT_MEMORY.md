@@ -1499,6 +1499,15 @@ L40S, and require every tool to pin file SHA `b852...` and logical digest
 `7eed...`. Full manifests, hashes, utility, and tests are in `EXPERIMENTS.md`.
 No real projection/DARE arm has started.
 
+Dense endpoint transfer is complete. The mismatched L40S remerge is preserved
+as `merged_step033_focused6_fullwall_replay_step064_remerge_l40s_unqualified_v1`.
+The qualified old-host donor was copied into the expected L40S path and now
+matches both exact file SHA `b8527608...` and canonical logical digest
+`7eedf4b2...`; its retrieved inventory is byte-identical to the old-host
+inventory (SHA `92617184...`). Both GPU lanes therefore have the same endpoint.
+Active blockers are now only tool correction/review/tests and E0/p0 identity;
+no nonidentity candidate has run.
+
 The old-host top4/scale0 replicate is complete and stopped before prompts. Its
 single 8.60-GB model file has exactly the same SHA-256
 `f7e4e01f3c8c84c50a065c72b106dff7e8779f7ee2f0264b12f4c3ecf39f91bb`

@@ -947,3 +947,10 @@ leading explanation, but has not been isolated experimentally. All delta
 experiments must consume the transferred qualified donor itself and bind both
 its file SHA `b8527608...` and logical inventory SHA `7eedf4b2...`; recreating
 it from an adapter is no longer accepted as endpoint identity.
+
+The qualified donor was subsequently transferred byte-for-byte from the RTX
+host to the L40S. Both hosts now report file SHA `b8527608...` and logical
+inventory SHA `7eedf4b2...`; the full inventory JSON itself is byte-identical.
+The mismatched remerge remains preserved under an unqualified path for audit.
+Thus endpoint equivalence is established without relying on cross-GPU merge
+arithmetic.

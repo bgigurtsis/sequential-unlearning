@@ -627,3 +627,7 @@ that rebuild before testing it. We are copying the already-qualified erased
 model itself to the newer machine instead. This costs transfer time, but means
 both experiments truly start from the same known result rather than two almost-
 identical versions.
+
+That copy is now finished and verified. The erased model on both machines is
+identical, down to every saved weight byte. The slightly different rebuild was
+kept separately as evidence and will not be used.

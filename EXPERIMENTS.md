@@ -8093,6 +8093,30 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   endpoint-staging evidence only; it changes no behavioral result and authorizes
   no candidate run yet.
 
+## Qualified dense donor now reproduces exactly on both experiment hosts (2026-08-30)
+
+- Preserved the rejected L40S reconstruction by moving it from the frozen
+  donor path to
+  `merged_step033_focused6_fullwall_replay_step064_remerge_l40s_unqualified_v1`;
+  no evidence was deleted or overwritten. The original qualified directory on
+  `ubuntu@51.95.58.74` remained unchanged.
+- Copied that qualified directory host-to-host through authenticated SCP into
+  the frozen L40S path
+  `/home/ubuntu/sequential-unlearning/derisk/whole_concept_jobs_v1/merged_step033_focused6_fullwall_replay_step064_v1`.
+  Post-transfer SHA-256 is exactly
+  `b8527608bb60269959e6f7694c12627dd0194baff772e2b72b8c1240080e5690`.
+  A fresh canonical fingerprint on the L40S is exactly
+  `7eedf4b2d316a9518577917acd35bf2c04d77cafb095ff238c1452a24cfafbbf`,
+  with 883 tensors and 8,600,158,944 logical value bytes. The retrieved full
+  inventory `delta_protection_v1/dense_transferred_l40s_logical_inventory.json`
+  is byte-identical to the old-host qualified inventory: 251,685 bytes and
+  file SHA-256
+  `9261718483637017c8cb0bee1ea3f6eca31f625fa6730e99fc780b4bff978e64`.
+- **Conclusion:** dense endpoint staging is closed. Both hosts now expose the
+  exact same qualified donor bytes and logical tensor values at their expected
+  paths. This clears endpoint input only; E0/p0 tooling identity, code review,
+  and dependency tests still block all nonidentity candidates.
+
 ## Top-four scale-zero edit reproduces byte-for-byte across GPU hosts (2026-08-30)
 
 - The isolated old-host lane completed its clean-parent K=4/scale=0 command at
