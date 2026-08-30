@@ -685,3 +685,9 @@ Tensor-wise smoke passes: all 42/42 eligible LoRA tensors are projected,
 gradient norm is finite at 18.382, and one-step target movement is negligible.
 `run_step034_tensor_nullspace_heal_30_v4` is precommitted as the same 30-step
 comparison with seed 33000. Train it and stage direct/natural screens first.
+
+The tensor-wise run completed normally through step 30. All 84/84 eligible
+tensors are projected after initialization and target proxy movement is +3.53%,
+smaller than global projection. No checkpoint is selected. Screen every saved
+direct/natural checkpoint next and broaden only a plausible crossing; exact
+artifacts and hashes are in `EXPERIMENTS.md`.

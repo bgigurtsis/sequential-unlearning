@@ -6454,3 +6454,35 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   external semantic selection, seed 33000, and tensor-wise strict projection.
 - This changes only projection granularity and seed relative to global v3.
   Apply the unchanged staged behavioral gate and select no proxy-only result.
+
+## Tensor-wise null-space healing training completed (2026-08-30)
+
+- `run_step034_tensor_nullspace_heal_30_v4` completed all 30 steps normally
+  with projection active throughout and `stop_reason=step_budget_exhausted`.
+  Run-config, metrics, and stop-state SHA-256 values are
+  `f7ae7206ad7188f996fdf42eb24ff2bff155789d55f742a54d2bab4ca595872a`,
+  `17c07f0a5857c5a5d56e92fd3e04a92dd65eacf1658ceda7706c1903ae1b97ce`,
+  and `6ccb1c101f44d0baa2d387fb24957a907ebbb2eaeb3d9e258ffb4afc2a955dc7`.
+- Adapter hashes at steps 2/4/6/8/10/12/14/16/18/20/22/24/26/28/30 are:
+  `4361ce73c971e65286c1e0fc207a37e1b49a4ae1db1502b9596306a08e2d8e18`,
+  `b4f0f60fc900ee82b3b3f01e7bc1ea0794359f9d0a71e7f4563c8459b24e388d`,
+  `f713247818cb5827a3ccc6cf96398c2eda35a9758d7a28834f18e1f9f86b7c56`,
+  `bd9403ca5531c29f563704be10a4fc9edd0b153ca3fc58b9b0a1bd3fdcbba40f`,
+  `6ed64f0ee05d30a1ca719dab5ab53bfcfde92b68b808547fd38d5bd5a837351e`,
+  `d312b5f714c55ef4021cbe0edbe8e9a46b603f770c0d7d3e6a44735177c74cbe`,
+  `3b6b147772b49b37cf2e30a01452b28713918e923870d4d0e9a5c78c3a274f2f`,
+  `536380b1a03a8897a492f5829869011dcfb6b1d109d223b30f9ea422910a6489`,
+  `7dd13986a083493b05c64600e1d4742406c60b49455ea5d78403ec133860ff51`,
+  `c9f46d05833c79bec5cfa4c6cb921a038f701d2ecb8dc77dcdbac27b26899479`,
+  `3b1c122429e951fd20d30ae685603e85784fc960c56a3a1500442e9f532a7f38`,
+  `28200cfb94a2847587e9cf9dfb578cf6f538d604c4a4b0f3400a085f04708a1d`,
+  `7a85c034dd782f6b643be6ca46ae50b05b5dc2136ba8e714f7bbb6de576b3a01`,
+  `5868fd64850d675698b54dcf55606becb275d4a1f9dc544817e19c0379fedec0`,
+  and `00d741fae4b3f815bf57cd7c27030f5705b0055a1d212c358f74a4e7ea6798ce`.
+- After initialization, all 84/84 eligible trainable tensors are projected on
+  every step. Aggregate target/control cosine remains positive (+0.19 to
+  +0.37). Captured-answer probability rises only 3.53% by step 30, versus
+  4.88% for global projection; final gradient norm is 30.44 and losses remain
+  finite. This is stable proxy evidence only.
+- No checkpoint is selected. Active gate is direct/natural behavioral
+  screening of all saved checkpoints, broadening only a plausible crossing.
