@@ -6028,3 +6028,19 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   already recorded step-34 adapter screen because merging is mathematically
   equivalent for inference; the next experiment must restore clean-reference
   controls while constraining the established semantic holes.
+
+## Healing extraction supports mixed checkpoint screens (2026-08-30)
+
+- Extended `build_target_consistency_from_screen.py` with optional
+  `--candidate-indices`, allowing one candidate index per supplied screen.
+  This is required because the original/natural step-34 screens contain one
+  candidate at index 0 while the direct fine-grid screen contains step 34 at
+  index 1. The default single `--candidate-index` behavior remains unchanged.
+- Updated script/test SHA-256 values are
+  `49c6fd63869a02481a25e029a7c15b2c921e12db1174b2c2a5ce5b8d6033815f`
+  and
+  `1f145a4a2a5f477130ea9b3ff6758f6e1736ca055ff033542b757adf7e8ea0f2`.
+  All eight relevant extraction and diverse-response tests pass.
+- This is an instrumentation change only. It does not alter any model result;
+  it permits one validated, unique combined file for the direct and unseen
+  target prompts that need uncertainty reinforcement during healing.

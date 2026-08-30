@@ -988,3 +988,8 @@ The step-34 adapter is now merged into the temporary healing parent
 hash is recorded in `EXPERIMENTS.md` and the GPU is idle. It is not selected.
 Use this parent only for the targeted control-healing arm, with the immutable
 step-240 parent retained as fallback.
+
+The extraction tool now accepts one candidate index per screen, so step-34
+direct and natural target captures can be combined without an ad-hoc rewrite.
+Eight relevant tests pass; hashes are in `EXPERIMENTS.md`. This changes only
+data preparation, not model evidence.

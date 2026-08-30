@@ -56,6 +56,27 @@ class TargetConsistencyBuilderTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "all extracted records"):
             build_pairs_many([first], exclude_ids={"a"})
 
+    def test_selects_a_different_candidate_per_screen(self):
+        first = {"candidates": [
+            {"generations": [
+                {"id": "a0", "type": "target", "prompt": "p0", "generation": "g0"}
+            ]},
+            {"generations": [
+                {"id": "a1", "type": "target", "prompt": "p1", "generation": "g1"}
+            ]},
+        ]}
+        second = {"candidates": [
+            {"generations": [
+                {"id": "b0", "type": "target", "prompt": "p2", "generation": "g2"}
+            ]}
+        ]}
+        records = build_pairs_many(
+            [first, second], candidate_indices=[1, 0]
+        )
+        self.assertEqual([record["id"] for record in records], ["a1", "b0"])
+        with self.assertRaisesRegex(ValueError, "must match"):
+            build_pairs_many([first, second], candidate_indices=[0])
+
 
 if __name__ == "__main__":
     unittest.main()

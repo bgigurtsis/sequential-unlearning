@@ -39,14 +39,22 @@ def build_pairs(payload, candidate_index=0, record_type="target"):
 
 
 def build_pairs_many(
-    payloads, candidate_index=0, record_type="target", exclude_ids=()
+    payloads,
+    candidate_index=0,
+    record_type="target",
+    exclude_ids=(),
+    candidate_indices=None,
 ):
     excluded = set(exclude_ids)
+    if candidate_indices is None:
+        candidate_indices = [candidate_index] * len(payloads)
+    if len(candidate_indices) != len(payloads):
+        raise ValueError("candidate indices must match the number of screens")
     records = []
-    for payload in payloads:
+    for payload, selected_index in zip(payloads, candidate_indices):
         records.extend(
             record
-            for record in build_pairs(payload, candidate_index, record_type)
+            for record in build_pairs(payload, selected_index, record_type)
             if record.get("id") not in excluded
         )
     if not records:
@@ -60,6 +68,14 @@ def parse_args():
     parser = argparse.ArgumentParser()
     parser.add_argument("screen_json", nargs="+")
     parser.add_argument("--candidate-index", type=int, default=0)
+    parser.add_argument(
+        "--candidate-indices",
+        default="",
+        help=(
+            "optional comma-separated candidate index per screen; overrides "
+            "--candidate-index"
+        ),
+    )
     parser.add_argument("--type", choices=("target", "control"), default="target")
     parser.add_argument(
         "--exclude-ids",
@@ -80,8 +96,19 @@ def main():
         for path in args.screen_json
     ]
     exclude_ids = [value.strip() for value in args.exclude_ids.split(",") if value.strip()]
+    candidate_indices = None
+    if args.candidate_indices:
+        candidate_indices = [
+            int(value.strip())
+            for value in args.candidate_indices.split(",")
+            if value.strip()
+        ]
     records = build_pairs_many(
-        payloads, args.candidate_index, args.type, exclude_ids
+        payloads,
+        args.candidate_index,
+        args.type,
+        exclude_ids,
+        candidate_indices,
     )
     destination.parent.mkdir(parents=True, exist_ok=True)
     destination.write_text(

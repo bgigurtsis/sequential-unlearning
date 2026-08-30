@@ -585,3 +585,8 @@ parent at `derisk/whole_concept_jobs_v1/merged_late_microfit_step034_v1`.
 `5bd81405eaf2d96e0bb8c35f4ef42305e4957ca3240c693b94fb5ba96602988e`.
 This is not a selected public model: use it only for targeted healing, keeping
 the immutable step-240 merged model as fallback.
+
+`build_target_consistency_from_screen.py` now supports
+`--candidate-indices` (one index per input screen). Use indices `0,1` when
+combining the natural step-34 screen and direct fine-grid screen. Eight
+relevant tests pass; exact hashes are in `EXPERIMENTS.md`.
