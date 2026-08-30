@@ -5902,3 +5902,35 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   at this loss balance. Next damage bracket is step 36, the earliest checkpoint
   with all 16 trained outputs surface-free and only one repetition; broad-screen
   it before designing healing or a new preservation balance.
+
+## Step-36 broad damage bracket (2026-08-30)
+
+- Original raw/summary SHA-256 values are
+  `e287bc4c64bb2dab583b4ffa2ec7fa985ab8354b417e745270f79881d05fd92b`
+  and `323e78e271548f85dc29c0ae8bbde45fa347054de21df7bb554a964bdfc815d8`.
+  It cleanly retains 36/36 original target holes, zero target repetition, and
+  20/24 controls. New collateral holes are batch computing, volunteering,
+  bicycles, and tides; the other 20 controls remain semantically healthy.
+- Natural-v2 raw/summary SHA-256 values are
+  `6bb7a243506c5f31b99caccbafbcbddba29f78b7a93c44ae142a7e35ec385f23`
+  and `6770b7f90f8655637602f73a41197dc4a71ece1fdf4013bd5782179056d7f5d9`.
+  Raw review gives 11/12 target holes, but the sole translating-books route
+  still says `working as a translator` and then loops. Six of 12 controls are
+  healthy. Relative to the parent baseline, cost of living was already absent;
+  new losses include living organisms, batch computing, physics work,
+  volunteering, and weather.
+- Step 36 is a substantially better removal/damage tradeoff than step 44 but
+  still not selectable: it does not improve the unseen natural target boundary
+  over the parent and adds five natural-control failures.
+
+## Fine crossing grid precommitted (2026-08-30)
+
+- Rerun the identical late-layer microfit through step 36 with seed 32500 and
+  every prior setting unchanged. Save exact steps 33, 34, 35, and 36; audit
+  every step. Output:
+  `derisk/whole_concept_jobs_v1/run_direct_living_route_late_microfit_fine36_v3`.
+  This is a checkpoint-resolution experiment, not a method change.
+- First screen 33/34/35 on the 16 direct prompts. Advance the best transition
+  to both broad suites, seeking more than the 20/24 and 6/12 step-36 control
+  retention without reopening the trained living route. If no better point
+  exists, reject simple dose tuning and change preservation geometry.

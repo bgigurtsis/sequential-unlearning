@@ -953,3 +953,9 @@ and 12/12 unseen natural target holes, but preserves only 13/24 original and
 tradeoff yet, not a selected model. Active gate: broad-screen step 36, the
 earliest all-surface-free trained checkpoint, to bracket whether useful
 selectivity exists at the lower dose. Parent remains fallback.
+
+Step 36 retains 36/36 original holes and 20/24 controls, much better than step
+44, but still has the same unseen translating-work leak plus a loop and only
+6/12 natural controls. It is not selected. Active experiment reruns the exact
+curve to save steps 33/34/35 individually, looking for a narrow crossing with
+less damage. If absent, stop dose tuning and change preservation geometry.

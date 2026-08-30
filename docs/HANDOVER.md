@@ -550,3 +550,9 @@ Reject step 44 after broad screening. It fully removes employment across all
 4/12 natural controls remain healthy. This proves concept removal but with too
 much collateral damage. Broad-screen step 36 next to bracket the earliest
 surface-free dose before changing the preservation balance.
+
+Step 36 retains all 36 original target holes and 20/24 controls, but the unseen
+translating-books route still leaks/loops and only 6/12 natural controls remain.
+It is better than step 44 but not selectable. Rerun the identical curve through
+36 with explicit saves at 33/34/35 to resolve the narrow crossing; if none is
+better, change preservation geometry rather than increasing dose.
