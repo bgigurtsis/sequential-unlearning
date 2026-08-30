@@ -1244,3 +1244,19 @@ invocation produced no result because `eval.py` hardcoded a gated tokenizer
 alias. The evaluator now supports pinned local snapshot path via
 `EVAL_TOKENIZER_ID`; syntax passes and legacy default is unchanged. Rerun with
 the verified clean snapshot, then interpret merge equivalence and utility.
+
+The rerun is complete. Replay step 64 is folded into its BF16 step-33 parent;
+merged `model.safetensors` SHA-256 is
+`b8527608bb60269959e6f7694c12627dd0194baff772e2b72b8c1240080e5690`.
+Every measured semantic verdict survives: 16/16 direct, 12/12 unseen-natural,
+36/36 original, and 36/36 hard employment holes, with 9/12 natural, 23/24
+original, and 21/24 hard controls. Adapter/merge generation identity is 16/16,
+22/24, 50/60, and 46/60 respectively; BF16 wording differences change no
+verdict. Perplexity is 13.748368 versus 14.131 clean (about 2.7% lower, passing
+the +/-5% gate), and all 18 legacy utility probes are coherent. This is the
+current best publishable one-concept candidate, still imperfect because
+volunteering, broken-phone advice, tides, and one pay follow-up fail. Active
+gate: bidirectional-v2 damage scalar plus clean-reference PCA/linear-CKA drift.
+Parallel gate: validate sparse causal-neuron attribution on the new G6e/L40S.
+Do not start cumulative removal until the baseline gates pass or sparse clearly
+improves collateral damage. Exact hashes are in `EXPERIMENTS.md`.

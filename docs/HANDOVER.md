@@ -837,3 +837,22 @@ The first merged utility/perplexity invocation failed before evaluation because
 snapshot via `EVAL_TOKENIZER_ID` while preserving the old default. Syntax
 passes. Rerun offline with the verified clean tokenizer; do not interpret the
 failed invocation as model damage.
+
+The pinned-tokenizer rerun and BF16 merge qualification are complete. Merged
+weights are at
+`derisk/whole_concept_jobs_v1/merged_step033_focused6_fullwall_replay_step064_v1`
+on EC2; `model.safetensors` SHA-256 is
+`b8527608bb60269959e6f7694c12627dd0194baff772e2b72b8c1240080e5690`.
+All frozen semantic counts survive: 16/16 direct, 12/12 natural, 36/36
+original, and 36/36 hard employment holes; controls remain 9/12, 23/24, and
+21/24. Adapter/merge exact-generation matches are 16/16, 22/24, 50/60, and
+46/60, with no verdict changes. Utility artifact
+`derisk/whole_concept_jobs_v1/eval_merged_replay_step064_v1.json` has SHA-256
+`6a24ed073584e5220a96e17905928d7cf75061b1874a88692ab13692c212e9ed`;
+perplexity is 13.748368 versus 14.131 clean and all 18 legacy probes are
+coherent. Next blocking checks are the full bidirectional-v2 damage scalar and
+clean-reference `eval_drift.py` PCA/linear-CKA evaluation. In parallel, fix and
+run the sparse causal-neuron challenger on the new `ubuntu@15.216.102.169`
+L40S. Do not start cumulative edits until this candidate passes global gates or
+sparse localization replaces it with a lower-collateral unit. Full hashes and
+interpretation are in `EXPERIMENTS.md`.

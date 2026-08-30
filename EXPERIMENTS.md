@@ -7131,3 +7131,57 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   `4647ca251d84b8fc2991adfdf9a2dad99a89bf5fcbfaf289020db73e1258c863`;
   syntax compilation passes. Rerun the same evaluation with the exact local
   clean snapshot in `EVAL_TOKENIZER_ID`.
+
+## Provisional replay-step-64 candidate survives BF16 merge and utility gate (2026-08-30)
+
+- Merged replay adapter
+  `run_step033_focused6_fullwall_replay66_save65_v1/step064` (adapter hash
+  `a30e9aa9c001b7e5a917c6b550de9ecd87f8f3539e888f71c272ed9f97e50bf2`)
+  into frozen BF16 parent `merged_late_microfit_step033_v1` (weight hash
+  `a85cc58a09e8babddbc020b4f00fd3ff6c256d07477babfeacddfe9ab953d720`)
+  with `scripts/merge.py` and PEFT `merge_and_unload`. The self-contained output
+  is `derisk/whole_concept_jobs_v1/merged_step033_focused6_fullwall_replay_step064_v1`.
+  File hashes are: `model.safetensors`
+  `b8527608bb60269959e6f7694c12627dd0194baff772e2b72b8c1240080e5690`,
+  `config.json` `b62e048b6442b38006a33bf9770de2caab0d88f2c9c4676306068c2f9756d847`,
+  `generation_config.json`
+  `91c5b4db36d1ca732a17864e45e26ad74fe02d952894c6876eb43135908c17ec`,
+  `tokenizer.json` `daab2354f8a74e70d70b4d1f804939b68a8c9624dd06cb7858e52dd8970e9726`,
+  `tokenizer_config.json`
+  `c651309c918743119b7ed6cb4cfc4fef2a6dfcbdfa94f19530814fd69a3a264e`,
+  and `chat_template.jinja`
+  `7de1c58e208eda46e9c7f86397df37ec49883aeece39fb961e0a6b24088dd3c4`.
+- Re-ran frozen direct, natural-v2, original, and hard single-turn screens on
+  the merged model with the exact clean tokenizer, greedy decoding, 96 new
+  tokens, and batch 16. Raw/summary hashes are: direct
+  `04591e525b117a2e946e819f63c100a4fca97217758e0f9758b0f2fc6766a9d4` /
+  `1ece9d3a7b661d478ed5c1aa399ddd6ed7e54ca7f68095792ec077b2efcd858f`;
+  natural `26459eb733b32ed5e80a7925e594c7afcf4bd8e91d6425e813887f2ba8204550` /
+  `109c8a9fb81847ce38796bd0db32bdadf843b2e23f6f81dc3d8447de4e2fbd02`;
+  original `55585a18683bc6232cd0406fe046d30284a5d0e643644c84b458a687071dc743` /
+  `d4f219b22bd69b1ed20421c56e0f1fa5467a329fbc53e259d8c27bcb62a81ced`;
+  hard `6555faea026875235d6c72e7c4126f01295a5c25f87f0b52c407cefac5d702a5` /
+  `26242e245e275e6d22f72588b0ed0b27237d1b983c1ce07180a216fb2a811fb1`.
+- Adapter-to-merge generations are byte-identical for 16/16 direct, 22/24
+  natural, 50/60 original, and 46/60 hard prompts. BF16 merge differences do
+  not change any semantic verdict: 16/16 direct, 12/12 unseen-natural, 36/36
+  original, and 36/36 hard target holes; zero single-turn target loops; 9/12
+  natural, 23/24 original, and 21/24 hard controls. Real hard losses remain
+  volunteering, broken-phone advice, and tides. The maths repetition flag is
+  coherent arithmetic and bicycle is a token-cap surface artifact.
+- Reran `scripts/eval.py` offline with `EVAL_TOKENIZER_ID` fixed to exact clean
+  snapshot `093f9f388b31de276ce2de164bdc2081324b9767`, frozen
+  `data/probes.json`, frozen `data/ppl_text.txt`, `PPL_MAX_TOKENS=4096`, and
+  greedy 80-token generation. Artifact
+  `derisk/whole_concept_jobs_v1/eval_merged_replay_step064_v1.json` has hash
+  `6a24ed073584e5220a96e17905928d7cf75061b1874a88692ab13692c212e9ed`.
+  Perplexity is `13.748368263244629` versus clean `14.131` (about 2.7% lower,
+  inside the +/-5% gate); all 18 legacy sea/neighbour/utility probes are
+  coherent on raw inspection. That legacy surface is a generic utility check,
+  not employment-erasure evidence.
+- Conclusion: BF16 publication preserves the concept hole and passes practical
+  utility/perplexity. The candidate remains provisional until the full
+  bidirectional-v2 damage scalar and clean-reference PCA/linear-CKA drift gates
+  complete. Run those now while validating the sparse causal-neuron challenger
+  on the new L40S; do not start cumulative removal until this baseline is
+  sealed or the challenger clearly dominates it.
