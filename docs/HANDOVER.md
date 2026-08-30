@@ -477,3 +477,9 @@ Anchor-alignment steps 6/12/18 keep 36/36 raw targets, no loops, and all 30
 controls. Steps 24/30 reopen target routes and are rejected. Hard single-audit
 step 12 next; only run conversations if it closes the living idiom or materially
 changes the hard boundary. Keep the uncorrected parent as fallback.
+
+Anchor step 12 still answers the living idiom with job knowledge, so reject it
+without conversation audit. Treat the repeatedly tested `hard_jobs_03` as a
+diagnostic now. The next practical arm may train that exact route, but must
+freeze a new wording-disjoint natural-idiom suite first and report exact-prompt
+fit separately from unseen generalization. Current best stays immutable.

@@ -876,3 +876,11 @@ loop-free, and preserve all 30 controls. Step 24 reopens unemployment and step
 hard single-turn audit step 12, the cleanest automatic checkpoint. Only run the
 conversation audit if the living idiom closes or the hard boundary materially
 changes. Current best remains untouched.
+
+Anchor-alignment step 12 repeats the current best 35/36 hard result; the living
+idiom still explains jobs and all controls remain healthy. Reject the method
+without conversation audit. The repeatedly used `hard_jobs_03` item is now a
+diagnostic, not sacred held-out evidence. Active method change: directly train
+that exact stubborn route, but first freeze a new wording-disjoint natural-
+idiom suite and report trained-prompt fit separately from unseen generalization.
+Current best remains immutable until both old broad gates and the new suite pass.

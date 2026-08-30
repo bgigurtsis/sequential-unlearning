@@ -742,3 +742,10 @@ misdirection on original-answer token states is therefore the wrong geometry
 for an already-erased parent. A subsequent representation method should align
 the leaking prompt route to a meaningful stable forgotten state and avoid
 teacher-forcing the original knowledgeable continuation.
+
+Meaningful forgotten-state alignment also fails to cross the remaining idiom.
+Its clean step 12 preserves all controls and the 35/36 hard boundary but leaves
+the exact leak unchanged; higher doses reopen routes. Because that audit item
+has now been queried repeatedly, the next practical correction may train it
+directly only if a new wording-disjoint natural-idiom test is frozen first and
+trained-prompt fit is never presented as held-out generalization.

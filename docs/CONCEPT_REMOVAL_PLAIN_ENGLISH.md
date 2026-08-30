@@ -472,3 +472,10 @@ unrelated knowledge, yet it made some erased job routes come back as broken,
 repetitive answers. So random internal disruption is not the answer here. The
 next version will try to make the stubborn phrase follow the same internal path
 as job questions the model already forgets cleanly.
+
+That more meaningful internal alignment also leaves the stubborn phrase intact.
+At this point, the fastest practical experiment is to train that exact phrase
+directly. To keep the result honest, we will first write a brand-new set of
+natural ways a visitor might ask the same thing, never train on those, and
+report separately whether the exact phrase works and whether the new phrasings
+also generalize.

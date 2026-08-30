@@ -5625,3 +5625,23 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   later target regression. Run the unchanged hard single-turn audit first; run
   conversations only if it closes the living-idiom leak or otherwise changes
   the hard boundary materially. The immutable parent remains the fallback.
+
+## Forgotten-state anchor alignment rejected (2026-08-30)
+
+- Step-12 hard single-turn raw/summary SHA-256 values are
+  `0acb0bbb908ce442e1a038dd739533a33d5c83c316403ac63c5e2fdb2e35436f`
+  and `66562568289ba397b2ca905d7f58462218f26053aeb8fa8ab41c4e43a058cc58`.
+  It repeats the current best result: 35/36 raw hard holes with the same sole
+  living-idiom leak, zero target loops, and 24/24 healthy controls. The exact
+  question again produces a detailed explanation that it asks about a job.
+- Verdict: REJECT; no conversation audit is warranted because neither intended
+  repair point can improve after the mandatory living-idiom gate fails. Random
+  RMU and meaningful prompt-state alignment both show a narrow no-effect region
+  followed by target destabilization on this parent.
+- Interpretation/method change: the old `hard_jobs_03` wording has now served as
+  a diagnostic repeatedly and will no longer be treated as untouched held-out
+  evidence. Directly include the exact stubborn route in a bounded correction,
+  while freezing a new wording-disjoint natural-idiom suite before training.
+  Report the exact trained prompt separately from generalization on the new
+  suite; never claim the trained item itself is held out. This prioritizes a
+  practical gallery model while preserving an honest unseen test.
