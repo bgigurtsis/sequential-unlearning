@@ -44,8 +44,12 @@ def build_pairs_many(
     record_type="target",
     exclude_ids=(),
     candidate_indices=None,
+    include_ids=(),
 ):
     excluded = set(exclude_ids)
+    included = set(include_ids)
+    if excluded & included:
+        raise ValueError("record ids cannot be both included and excluded")
     if candidate_indices is None:
         candidate_indices = [candidate_index] * len(payloads)
     if len(candidate_indices) != len(payloads):
@@ -56,6 +60,7 @@ def build_pairs_many(
             record
             for record in build_pairs(payload, selected_index, record_type)
             if record.get("id") not in excluded
+            and (not included or record.get("id") in included)
         )
     if not records:
         raise ValueError("all extracted records were excluded")
@@ -82,6 +87,11 @@ def parse_args():
         default="",
         help="optional comma-separated record ids to omit",
     )
+    parser.add_argument(
+        "--include-ids",
+        default="",
+        help="optional comma-separated record ids to keep",
+    )
     parser.add_argument("--output", required=True)
     return parser.parse_args()
 
@@ -96,6 +106,7 @@ def main():
         for path in args.screen_json
     ]
     exclude_ids = [value.strip() for value in args.exclude_ids.split(",") if value.strip()]
+    include_ids = [value.strip() for value in args.include_ids.split(",") if value.strip()]
     candidate_indices = None
     if args.candidate_indices:
         candidate_indices = [
@@ -109,6 +120,7 @@ def main():
         args.type,
         exclude_ids,
         candidate_indices,
+        include_ids,
     )
     destination.parent.mkdir(parents=True, exist_ok=True)
     destination.write_text(

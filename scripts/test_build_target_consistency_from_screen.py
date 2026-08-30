@@ -77,6 +77,18 @@ class TargetConsistencyBuilderTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "must match"):
             build_pairs_many([first, second], candidate_indices=[0])
 
+    def test_includes_only_requested_ids(self):
+        payload = {"candidates": [{"generations": [
+            {"id": "a", "type": "target", "prompt": "p1", "generation": "g1"},
+            {"id": "b", "type": "target", "prompt": "p2", "generation": "g2"},
+        ]}]}
+        self.assertEqual(
+            [record["id"] for record in build_pairs_many([payload], include_ids={"b"})],
+            ["b"],
+        )
+        with self.assertRaisesRegex(ValueError, "both included and excluded"):
+            build_pairs_many([payload], include_ids={"b"}, exclude_ids={"b"})
+
 
 if __name__ == "__main__":
     unittest.main()

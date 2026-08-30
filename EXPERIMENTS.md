@@ -6550,3 +6550,21 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
 - This is a temporary parent for the six-prompt focused correction, not a
   selected public model. Its authoritative pre-merge behavior is the recorded
   step-33 adapter screen; retain the immutable step-240 model as fallback.
+
+## Focused-repair data tooling completed (2026-08-30)
+
+- `build_target_consistency_from_screen.py` now supports explicit
+  `--include-ids` in addition to exclusions and per-screen candidate indices;
+  overlapping include/exclude ids are rejected. Added
+  `combine_pair_files.py`, which concatenates non-empty JSON pair arrays while
+  rejecting missing or duplicate prompts and refusing output replacement.
+- Builder/test SHA-256 values are
+  `00c326b4db0a797b2d9bbad3c0a7e7b3974b5c89c6bc7718a15c686e2758b1ab`
+  and `df03dd1ba21b0c5bccef623fdeae34eb4f999b88505d373cf8890274135e375f`;
+  combiner/test values are
+  `c120c76f84983912372419e211f64a4eaa43d8766a9cb3361861d85c423fd0b3`
+  and `1dcdc79b4d13d0c3c7a71fafaa7050343399a419d50195638a1b44166ba0bd2a`.
+  All eight focused extraction/combination tests pass locally and on EC2.
+- This is instrumentation only. Next materialize the exact six failure pairs,
+  58 good-target anchors, and 94-record combined consistency wall before
+  freezing the focused run.

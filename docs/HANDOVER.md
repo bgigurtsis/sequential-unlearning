@@ -708,3 +708,7 @@ a selected model; exact screen hashes and failed ids are in `EXPERIMENTS.md`.
 The temporary step-33 repair parent is merged at
 `derisk/whole_concept_jobs_v1/merged_late_microfit_step033_v1`; exact weights
 hash is in `EXPERIMENTS.md`. It is not selected for serving.
+
+Focused-pair extraction (`--include-ids`) and unique-prompt pair combination
+are implemented and pass eight EC2 tests. Build the six failure targets and
+the combined 58-good-target plus 36-clean-control wall next; hashes are logged.

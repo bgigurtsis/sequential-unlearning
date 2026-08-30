@@ -1113,3 +1113,7 @@ target-null projection. Step 33 is not selected for serving.
 Step 33 is merged at
 `derisk/whole_concept_jobs_v1/merged_late_microfit_step033_v1`; its weights
 hash is in `EXPERIMENTS.md`. Use only for focused repair, not serving.
+
+Focused extraction now supports include ids, and a validated unique-prompt pair
+combiner is available; all eight tests pass on EC2. Use these to build six
+failure targets plus the 58-good-target/36-clean-control consistency wall.
