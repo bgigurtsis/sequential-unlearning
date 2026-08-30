@@ -5436,3 +5436,24 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   idiom; restoring batch-job clarification is desirable but may require a later
   bounded healing pass. The immutable semantic-mix step-240 model remains the
   fallback throughout.
+
+## Focused Adaptive-RMU gentle arm completed (2026-08-30)
+
+- The precommitted 30-step run completed normally with
+  `stop_reason=step_budget_exhausted` at
+  `derisk/whole_concept_jobs_v1/run_focused_adaptive_rmu_30_v1` (153 MiB).
+  Run-config, metrics, and stop-state SHA-256 values are respectively
+  `312213a4ffd8d30c7f9b6641bff8b806345f12d1c8e55251a29db932638561d0`,
+  `b7e983a5a7f176d0afa6c32f50e3542d8cc3e60da27c160388c9968c7d331f76`,
+  and `46c5b25f4fb6a44e33bdaf6eb38c9c56a9722d446824eadfd83bf06a81d51e04`.
+- Fixed-audit RMU relative MSE moves only from 1.996463 to 1.989112 by step
+  30, a 0.37% reduction toward the random target. Original-answer probability
+  rises to 1.0425 times baseline rather than falling. Final sampled generic and
+  chat JSD minibatches are 0.001939 and 0.003611; intermittent chat minibatches
+  reach 0.0586, so only behavioral controls can establish safety.
+- Interpretation: the rank-4, LR-2e-5, forget-weight-0.1 dose is stable but far
+  gentler than prior Adaptive-RMU transition runs and is likely below the
+  behavioral crossing. No failure or success is inferred from the proxy.
+  Screen steps 10/20/30 on the original frozen suite. If all are behaviorally
+  identical to the parent, record the arm as under-dosed and precommit one
+  bounded strength increase rather than extending this run post hoc.

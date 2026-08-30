@@ -430,3 +430,9 @@ reference, and 30 steps saved every two. The modern trainer implementation and
 15 passing tests are recorded in `EXPERIMENTS.md`. Run it as
 `run_focused_adaptive_rmu_30_v1`, original-screen low doses first, and reject
 any loop, reopened route, or damaged control before hard-audit use.
+
+The gentle Adaptive-RMU run completed through step 30. Its fixed-audit RMU
+distance barely moves (1.9965 to 1.9891), so it is likely under-dosed, not a
+failure of the mechanism. Screen steps 10/20/30 on the original suite before
+changing strength. If all match the parent, record that result and precommit a
+bounded stronger arm; current best remains untouched.

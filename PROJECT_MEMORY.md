@@ -815,3 +815,11 @@ context/multi-turn wall. Exact 30-step settings and hashes are in
 screen low-dose checkpoints on the original suite. Reject loops or reopened
 routes immediately; only a 36/36 raw, all-controls checkpoint may touch the
 hard audit. The merged and adapter step-240 artifacts remain immutable.
+
+The gentle focused Adaptive-RMU arm completed normally through step 30, but
+its internal relative-MSE movement is only 1.9965 to 1.9891 (0.37%) and its
+original-answer probability rises 4.25%. It is probably below the behavioral
+transition, but proxies do not decide. Exact hashes are in `EXPERIMENTS.md`.
+Active gate: original-screen steps 10/20/30. If unchanged, classify this dose
+as underpowered and precommit a bounded stronger RMU arm; do not mistake stable
+training for a successful edit or alter the immutable current best.
