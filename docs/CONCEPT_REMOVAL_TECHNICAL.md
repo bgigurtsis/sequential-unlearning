@@ -800,3 +800,8 @@ response-targeting experiment: no particular ignorance sentence is optimized
 or required. Semantic raw review asks whether employment knowledge is absent;
 coherence, termination, and controls decide whether the resulting natural
 response is acceptable.
+
+The complete production dependency gate passes 46/46 with zero skips on the
+L40S. This includes real BF16 prefix arithmetic, source-wide Safetensors proof,
+raw replay, and serialized-output verification. The intervention itself has
+not yet run; scale-one identity remains the final pre-mutation gate.

@@ -914,3 +914,9 @@ K=4/scale=0 from the clean parent at
 raw gates are 16/16 and 12/12 target absence, zero target loops, and >=9/12
 natural controls. Run clean-parent all-six only if top four retains target
 knowledge. Exact code hashes and the frozen gate are in `EXPERIMENTS.md`.
+
+The L40S release gate has now passed 46/46 tests with zero skips using the exact
+reviewed commit and real PyTorch/Safetensors dependencies. No model was edited.
+The next command is therefore the already frozen clean-parent K=4/scale=1
+identity publication; do not create the scale-zero candidate unless its
+sidecar proves zero changed state keys and byte-identical weight files.

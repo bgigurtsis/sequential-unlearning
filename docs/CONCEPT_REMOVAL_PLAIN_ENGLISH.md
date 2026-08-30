@@ -518,3 +518,8 @@ We are not teaching it to say a special line such as “I’m not sure what a jo
 is.” The aim is for the knowledge itself to be unavailable. If that succeeds,
 the model can answer in whatever natural way follows from genuine uncertainty;
 we separately reject answers that loop, collapse, or damage unrelated topics.
+
+All 46 safety tests now pass on the actual GPU machine, including the checks
+that need the real model libraries. Nothing has been erased in this step. The
+next rehearsal makes a complete copy while changing nothing; only an exact
+match allows the four-pathway erasure test to begin.

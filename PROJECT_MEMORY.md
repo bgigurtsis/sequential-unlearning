@@ -1315,3 +1315,12 @@ Only retained employment knowledge triggers all-six ablation; damage with
 complete erasure triggers a same-prefix 0.5-scale comparison. Do not begin
 compounding or the 31-day run until a reusable one-concept edit passes the
 frozen broad, conversation, utility, scalar, and drift gates.
+
+The exact sparse-applier revision now passes 46/46 dependency-backed tests with
+zero skips on the L40S (Torch 2.13.0+cu130, Transformers 5.14.1, Safetensors
+0.8.0); log hash is
+`fe9e17249476ba1ce30f03054cf9b8033ae418381314a11d37c8f88a07c2539a`.
+No weights changed. The active gate advances to the real clean-parent
+K=4/scale=1 identity checkpoint. Require official replay/source verification,
+zero changed state keys, equal tensor inventories, and byte-identical source/
+output weight hashes before creating top4/scale0.

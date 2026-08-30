@@ -7425,3 +7425,26 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   frozen clean-parent K=6/scale=0 arm at
   `sparse_causal_mlp_v1/models/all6_scale0_v1/step006`. No threshold loosening
   or post-hoc neuron additions are permitted.
+
+## Sparse applier dependency-backed EC2 gate passes (2026-08-30)
+
+- Synced exact commit `15dd45dc0a6bca46daf835cc02a65b7166d0c02a` to
+  `ubuntu@15.216.102.169` by Git bundle because the host cannot authenticate to
+  the private HTTPS remote. Before the fast-forward, the untracked raw archive
+  and mask were hash-verified and preserved under
+  `/mnt/instance-store/prepull-15dd45d/`; the newly tracked copies reproduce
+  their expected hashes exactly.
+- Ran
+  `venv-g6e/bin/python -m unittest scripts.test_apply_causal_mlp_mask scripts.test_causal_mlp_neuron_selection scripts.test_attribute_causal_mlp_neurons -v`
+  on Torch `2.13.0+cu130`, Transformers `5.14.1`, and Safetensors `0.8.0`.
+  Result: **46/46 tests pass with zero skips** in 1.828 seconds. This exercises
+  the real PyTorch BF16 prefix edit, causal finite-difference check, raw
+  Safetensors replay, source/output tensor verification, and all fail-closed
+  publication contracts.
+- Exact log
+  `derisk/whole_concept_jobs_v1/sparse_causal_mlp_v1/mask_applier_release_gate_ec2_v1.log`
+  has SHA-256
+  `fe9e17249476ba1ce30f03054cf9b8033ae418381314a11d37c8f88a07c2539a`.
+  Conclusion: the dependency-backed release gate passes and the precommitted
+  K=4/scale=1 identity run is now unblocked. No model weights were changed by
+  this test suite.
