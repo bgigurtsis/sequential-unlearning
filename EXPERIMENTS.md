@@ -4129,3 +4129,18 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   original and conjugated screens of steps 80/100/120 are active; independent
   semantic judgement must select a stable target pass before any prior-hole or
   collateral claim.
+
+## Bicycle target crosses the coarse semantic gate at step 100 (2026-08-30)
+
+- Frozen clean-model judgement of
+  `specific03_fell_bicycle/screen_80_120_coarse_orig.json` finds all four
+  bicycle groups ABSENT at steps 80, 100, and 120.
+- On the stronger conjugated/rephrased suite, step 80 is incomplete: core,
+  bicycle crash, and bicycle accident are ABSENT, but `I fell while cycling`
+  remains PRESENT because response 3 directly recovers the target phrase.
+- Steps 100 and 120 are complete 8/8 passes: core plus all three neighbours
+  are ABSENT in both original and conjugated suites. Step 100 has target-answer
+  ratio 0.081872, versus 0.116748 at failing step 80.
+- Step 100 is only the earliest coarse pass. Next evaluate saved steps
+  85/90/95/100/105 in both styles, choose the earliest stable boundary rather
+  than the strongest dose, and only then run prior-hole and collateral gates.

@@ -376,3 +376,9 @@ are 0.116748/0.081872/0.062280/0.046735/0.041966/0.035607 at steps
 Active gate: independently judge original and conjugated target screens,
 select a stable dose, then verify both earlier holes and every remaining
 control before merging.
+
+Removal-three coarse semantic result: step 80 is 4/4 ABSENT original but only
+3/4 ABSENT conjugated because `fell while cycling` remains PRESENT. Steps 100
+and 120 are 8/8 ABSENT across both suites. Step 100 ratio is 0.081872. Active
+gate: screen 85/90/95/100/105 to select the earliest stable semantic dose,
+then test both prior holes and all remaining controls.

@@ -274,3 +274,10 @@ cycle will be automated through day 31. The current carefully written list has
 only six memories, so a balanced list of 31 past-tense experiences must be
 written and frozen before the full run; otherwise later days would not be a
 fair or reproducible test.
+
+The third-removal sweep has reached its first meaning-level success. At the
+lighter step 80, one strongly reworded version—falling while cycling—still
+gets through. At steps 100 and 120, the model cannot recover falling off the
+bicycle, crashing it, falling while cycling, or having a bicycle accident in
+either test style. We are now checking the smaller steps between 80 and 100 so
+we can use the lightest reliable edit before measuring collateral damage.

@@ -485,3 +485,9 @@ answer ratios at steps 80, 100, 120, 140, 160, and 180 are respectively
 generic/chat-retain losses are 0.000375/0.001699. These proxy measurements do
 not establish semantic removal; held-out original and conjugated judgement is
 the active checkpoint-selection gate.
+
+Coarse semantic selection finds original 4/4 ABSENT at steps 80/100/120.
+Conjugated step 80 is 3/4 ABSENT because `cycling_fall` is PRESENT; steps 100
+and 120 are 4/4 ABSENT. Thus step 100 is the earliest coarse 8/8 pass at
+target-answer ratio 0.081872. Saved steps 85/90/95/100/105 form the fine grid
+for stable dose selection before collateral evaluation.
