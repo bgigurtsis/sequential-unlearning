@@ -7866,6 +7866,79 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   hosts. Behavioral screening can use the primary with no unresolved
   reproducibility concern; the old lane remains stopped and preserved.
 
+## All-six strict sparse mask retains all target knowledge (2026-08-30)
+
+- Screened primary `models/all6_scale0_v1/step006` with the exact same frozen
+  direct16 and natural24 prompts, clean tokenizer, offline deterministic
+  generator, `batch-size=16`, and `max-new-tokens=96`. The direct and natural
+  batches ran concurrently on the L40S.
+- Raw semantic review finds **0/16 direct target holes** and **0/12 natural
+  target holes**: employment knowledge is retained on all 28/28 probes. The
+  model still explicitly explains jobs, occupation, profession, employment,
+  paid work, income, earning a living, bills, teaching, boiler repair,
+  paramedicine, translation, and rent. Two surface-free generations still
+  explain the target meaning and are counted as retained. There are zero raw
+  target loops; the direct repeated-trigram heuristic flag is the same coherent
+  truncated example list already reviewed under top four.
+- All **12/12 natural controls remain healthy**, with zero uncertainty holes or
+  loops. All 16 direct generation strings are exactly equal to top4/scale0.
+  Natural has 22/24 exact generation equality; only target records
+  `natural_living_02` and `natural_living_11` change wording, and both still
+  provide explicit knowledgeable employment answers. All 12 natural control
+  generations are exactly equal to top four.
+- Exact artifacts and SHA-256 hashes:
+  `screen_all6_scale0_direct16_v1.json`
+  `bf595600fb14b3d021b0bae8a598ea8e79a1d1cdbf925ec776c2f34abfd6f57f`;
+  direct summary
+  `9436ac37b99c956a554a98acb3a2fa85902d2aef594d5b6e58cdf4d3d54020d0`;
+  `screen_all6_scale0_natural24_v1.json`
+  `9c56f7cd06a48d5e175abe8a62efff3c0b58b29de7ada6820bbb8d036b659f48`;
+  natural summary
+  `79d63e6ab5a586153d213d7d777a2893d55e8bc500546eda527037ee0eeec9e7`.
+- **Conclusion:** reject the strict final-layer six-column causal mask as an
+  employment-erasure method. It is precise, reproducible, and low-apparent-
+  collateral, but causally insufficient. All six ratio-10 candidates are now
+  exhausted; do not lower the attribution threshold or add post-hoc columns.
+  Scale 0.5 is also ruled out because full zeroing fails erasure. Dense
+  replay-step-64 remains the only full-erasure result and the current behavioral
+  best at scalar 13.498186. Next gate is a precommitted, genuinely different
+  low-damage method chosen from the documented literature/project evidence;
+  no further sparse-prefix arm starts from this result.
+
+## Cross-host all-six semantic verdict reproduces; token text diverges (2026-08-30)
+
+- Independently ran the same direct16/natural24 commands on the byte-identical
+  old-host all-six model, exact prompts/metadata and clean tokenizer, same
+  software versions, batch size, token cap, and `do_sample=False`. Raw review
+  independently reproduces **0/16 direct holes, 0/12 natural holes, 12/12
+  healthy natural controls, and zero pathological loops**.
+- Exact generation strings are not cross-GPU invariant despite identical model
+  bytes and greedy decoding: 5/16 direct and 6/24 natural generations match the
+  L40S text exactly. Input record metadata match on 40/40. The divergent texts
+  preserve every semantic verdict; this is consistent with small numerical
+  kernel differences crossing greedy token boundaries on different GPU
+  architectures. Do not claim cross-hardware byte-repeatable generations.
+  Direct heuristic aggregates are identical. Natural `target_surface_free` is
+  2 on L40S versus 3 on RTX because `natural_living_09` loses listed surface
+  words while still clearly discussing recurring income sources; candidate-hole
+  count remains zero on both. This is another reason raw semantics are
+  authoritative over lexical triage.
+- Old-host artifact SHA-256 values: direct raw
+  `a81d2f1a9114f0ce9dcbcbba24a436285ca4aefde19a64d2b0fe61f2eba59613`,
+  direct summary
+  `d9a5e96f4ae7d1a23bdb6a809304cebc2c403038c71c363ba1513f3d6ecd7e7a`,
+  natural raw
+  `c077a269471829efd5a15bede778b763acf86bfe5f36dbd9a5b263d2454f7006`,
+  natural summary
+  `156cbab46b4b3e83fcbd17aa74542df2cf2e6ec3bb910dcd0e7b7f98b708f761`,
+  direct log
+  `c5c72482d34381e6b585b03ba7048892251f6c7b9d0c5d650a5cce496eafdc4d`,
+  and natural log
+  `9c5c4e351303b37d984f5cb5651abca634a4da7f86c022120691412d9e37cd8f`.
+- **Conclusion:** the failure to erase and the preserved quick controls are
+  semantically reproducible across both GPU hosts. Exact prose is a
+  hardware-sensitive instrument output and is not required for this gate.
+
 ## Top-four scale-zero edit reproduces byte-for-byte across GPU hosts (2026-08-30)
 
 - The isolated old-host lane completed its clean-parent K=4/scale=0 command at

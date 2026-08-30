@@ -889,3 +889,21 @@ An independent RTX PRO 6000 all-six application produces the exact same
 8.60-GB Safetensors bytes as the L40S output and independently reconstructs the
 only changed tensor from the six declared zero columns. This removes hardware
 nondeterminism as an explanation for the coming behavioral result.
+
+Behavior falsifies the strict six-column hypothesis. All 28 direct/unseen-
+natural employment probes retain knowledge and all 12 natural controls remain
+healthy. Adding candidates five and six changes no direct generation and only
+two natural target wordings, neither verdict. Because the frozen attribution
+yielded exactly six ratio-10 candidates, the causal-prefix branch is exhausted;
+post-hoc threshold relaxation would convert a falsification into unprincipled
+hyperparameter search. A subsequent method must address distributed concept
+geometry rather than final-layer route deletion while retaining the verified
+damage controls.
+
+Cross-host generation confirms semantic, not textual, repeatability. The RTX
+repeat reproduces all target/control/loop verdicts but only 5/16 direct and
+6/24 natural strings exactly. Because weights, inputs, software settings, and
+greedy decoding match, different GPU kernels are the remaining plausible source
+of token-boundary divergence. Subsequent cross-host gates should compare frozen
+semantic outcomes and raw coherence, while same-host instrument repeats may
+still require exact text where previously demonstrated.

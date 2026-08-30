@@ -582,3 +582,18 @@ instead of quietly adding weaker routes after seeing the answer.
 
 The second GPU made the same six-route model, again matching every byte. So the
 next answers will test the idea itself, not a difference between machines.
+
+The result is decisive: even with all six routes switched off, the model still
+understands jobs in every one of the 28 target questions. The unrelated checks
+all still work. The extra two routes changed the wording of only two answers,
+not what the model knew. So this precise route-cutting idea is too weak, and we
+are closing it rather than quietly adding weaker routes after seeing the miss.
+The broader training method is still the only approach that truly erased the
+concept; the next experiment will try a different way to keep that erasure while
+reducing its 13.5-point collateral damage.
+
+The second GPU reached the same answer: jobs remained in all 28 tests and all
+12 unrelated checks worked. Its sentences were often worded differently even
+though the model file was identical, which can happen when different GPU maths
+nudges a greedy next-word tie. What the model knew—and our pass/fail result—was
+the same on both machines.

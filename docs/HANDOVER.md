@@ -1003,3 +1003,18 @@ The isolated old-host all-six replicate also finishes byte-identical to primary
 (`8d07dae0...e8af0`) and passes an outside-applier 883-tensor reconstruction.
 It is stopped before prompts. Cross-host mutation reproducibility is therefore
 closed; use the primary L40S artifact for the behavioral gate.
+
+All-six behavioral screening is complete and fails erasure: 0/16 direct and
+0/12 natural target holes under raw review, while 12/12 natural controls remain
+healthy. Direct generations are 16/16 identical to top four; natural changes
+only two target phrasings and no semantic verdict. This exhausts all six strict
+ratio-10 candidates. Do not lower the threshold, add post-hoc neurons, or run
+scale 0.5. Dense replay-step-64 remains the only full-erasure candidate at
+scalar 13.498186. The next experiment must be a precommitted different method,
+selected against the complete rejection history and literature synthesis.
+
+The old-host behavioral repeat independently reproduces every semantic count
+and raw verdict. Exact prose differs across GPU architectures (5/16 direct and
+6/24 natural exact-text matches) despite byte-identical weights and greedy
+decoding; treat this as kernel-level token-boundary sensitivity, not a semantic
+disagreement. Do not use exact generation bytes as a cross-host gate.

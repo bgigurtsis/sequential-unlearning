@@ -1436,6 +1436,25 @@ all-883-tensor audit reconstructs the output exactly by zeroing the declared six
 columns. The old lane is stopped. Cross-host mutation correctness is closed;
 primary direct/natural behavior is the only active decision gate.
 
+Primary all6/scale0 behavior rejects the strict sparse-final-layer theory. Raw
+review finds 0/16 direct and 0/12 natural target holes—employment is retained on
+all 28/28 probes—while all 12/12 natural controls remain healthy. Direct output
+is identical to top four on 16/16 records; natural differs on only two target
+wordings and changes no verdict, with all controls identical. All six strict
+ratio-10 candidates are exhausted. Do not lower thresholds, add neurons after
+seeing failure, or run scale 0.5 when scale zero is already ineffective.
+Current best remains dense replay-step-64: complete erasure, scalar 13.498186,
+bounded but excessive repeated-edit risk. Active gate: integrate the all-six
+screens and cross-host generation comparison, then precommit a genuinely
+different low-damage method informed by the accumulated literature and rejected
+methods before running it.
+
+The independent old-host all-six screen reproduces every raw semantic verdict:
+28/28 target routes retained, 12/12 controls healthy, no loops. Exact prose is
+hardware-sensitive—only 5/16 direct and 6/24 natural generations match the L40S
+text byte-for-byte despite identical model weights and greedy decoding—so do
+not claim cross-GPU text identity. The semantic rejection itself is robust.
+
 The old-host top4/scale0 replicate is complete and stopped before prompts. Its
 single 8.60-GB model file has exactly the same SHA-256
 `f7e4e01f3c8c84c50a065c72b106dff7e8779f7ee2f0264b12f4c3ecf39f91bb`
