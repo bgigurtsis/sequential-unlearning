@@ -503,3 +503,10 @@ knowledge leak describes translating books as work. Controls are 11/12 healthy;
 `cost of living` is already a collateral hole, while the other 11 controls are
 strong. Exact hashes are in `EXPERIMENTS.md`. Run the precommitted direct arm
 to close the remaining route and repetition without adding damage.
+
+The direct correction completed all 40 steps with exact precommitted settings.
+The original-answer probability proxy rises 4.05% rather than falling, but it
+has not reliably predicted generations in this project; current-target
+consistency improves and preservation losses stay small. Screen trained-route
+steps 2/4/6/8/10/12/16/20/24/32/40 before deciding. Exact hashes are recorded
+in `EXPERIMENTS.md`; do not replace the immutable parent without broad gates.

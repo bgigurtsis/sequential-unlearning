@@ -906,3 +906,10 @@ strict clean behavior is 10/12 because a second forgotten answer repeats
 collateral hole, while all other polysemy and utility controls work. Exact
 artifact hashes are in `EXPERIMENTS.md`. The direct correction now has a narrow
 measured target: close the one leak and repetition without new damage.
+
+The exact 40-step direct correction completed normally. Its internal proxy is
+not encouraging: original-answer probability rises 4.05% and refusal-token
+probability falls, although explicit current-target consistency improves and
+preservation losses remain small. This is not yet a behavioral finding. Active
+gate: screen trained-route steps 2/4/6/8/10/12/16/20/24/32/40, then spend broad
+evaluation only on plausible checkpoints. Parent remains fallback.

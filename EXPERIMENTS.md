@@ -5723,3 +5723,25 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   the remaining translating/paid-activity route, stabilize the one repetitive
   answer, and avoid adding collateral damage. The immutable baseline remains
   the fallback.
+
+## Direct living-route correction completed (2026-08-30)
+
+- The precommitted 40-step run completed normally at
+  `derisk/whole_concept_jobs_v1/run_direct_living_route_consistency_40_v1`.
+  No setting changed from the frozen specification above. Run-config,
+  metrics, stop-state, and final-adapter SHA-256 values are respectively
+  `a15b870be57efd7d27d2d63d44736c4c6aedae748afcadf8be59194e6f1ab0bb`,
+  `9dd3428f3a06343a2ea0262a20c72fbdc2cdd00c02e7f4250317dad6318c3910`,
+  `6eafdef0bc6686bb7f2b8cf221e15e58a14e5020372d8ef99f68f44a4d4d8d71`,
+  and `a9fd44de641f071bf0bbf87ed414cb323a06b0f80525ab1aca08132f30ead333`.
+- Training diagnostics do not show direct target-answer suppression: mean
+  original-answer token probability changes from 0.73373 before training to
+  0.76343 at step 40 (ratio 1.04048). Refusal-token probability falls from
+  8.34e-5 to 4.78e-5. In contrast, sampled current-target consistency loss
+  falls from 0.3453 at step 2 to 0.1161 at step 40; clean retain/chat losses
+  remain small at the final audit (0.00259 and 0.01182).
+- Interpretation is deliberately provisional: this proxy has failed to predict
+  generation quality in prior arms, so do not reject from curves alone. Screen
+  steps 2/4/6/8/10/12/16/20/24/32/40 on the 16 trained prompts first, then
+  advance plausible transition checkpoints to old-suite and natural-v2
+  screens. The immutable parent remains fallback.
