@@ -8,7 +8,7 @@ User=ubuntu
 WorkingDirectory=/home/ubuntu/sequential-unlearning
 Environment=HF_HUB_OFFLINE=1
 Environment=TRANSFORMERS_OFFLINE=1
-ExecStart=/home/ubuntu/sequential-unlearning/venv-g7e/bin/python /home/ubuntu/sequential-unlearning/scripts/serve_openai_compatible.py --model-path /home/ubuntu/sequential-unlearning/derisk/personal_event_valencebalanced_v2/merged_vacation_phone_bicycle_step090_v1 --tokenizer-model /home/ubuntu/.cache/huggingface/hub/models--google--gemma-3-4b-it/snapshots/093f9f388b31de276ce2de164bdc2081324b9767 --model-name sequential-unlearning-day3 --host 127.0.0.1 --port 8000
+ExecStart=/home/ubuntu/sequential-unlearning/venv-g7e/bin/python /home/ubuntu/sequential-unlearning/scripts/serve_openai_compatible.py --model-path /home/ubuntu/sequential-unlearning/derisk/personal_event_valencebalanced_v2/merged_vacation_phone_bicycle_step090_v1 --tokenizer-model /home/ubuntu/.cache/huggingface/hub/models--google--gemma-3-4b-it/snapshots/093f9f388b31de276ce2de164bdc2081324b9767 --model-name sequential-unlearning-day3 --system-prompt-file /home/ubuntu/sequential-unlearning/config/gallery_persona.txt --host 127.0.0.1 --port 8000
 Restart=on-failure
 RestartSec=5
 

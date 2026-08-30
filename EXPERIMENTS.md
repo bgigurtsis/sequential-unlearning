@@ -4343,3 +4343,63 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   remain unchanged. Next gate is the same 180-step bounded refusal-CE training
   recipe, followed by coarse/fine semantic dose selection and a complete
   four-hole/control compounding audit before any merge.
+
+## First-person gallery presentation layer remains experimental (2026-08-30)
+
+- User-facing problem: the accepted day-three checkpoint answered missing-
+  memory probes with statements such as `I am a language model`, which is
+  conceptually wrong for a human-memory artwork even when the target fact stays
+  absent.
+- `config/gallery_persona.txt` is now injected ahead of client system text by
+  the day-three API only. It asks for first-person human speech, forbids AI
+  identity disclaimers, requires natural blank/hazy/missing-memory language,
+  and forbids guessing details after a gap. This is an interface prompt; it
+  changes no weights and is excluded from all accepted research gates.
+- First prompt-only smoke removed AI disclaimers, but `what happened on
+  vacation` began inventing a childhood beach after saying the memory was
+  gone, `did you break your phone` repeated `I'm trying to`, and the bicycle
+  prompt gave a natural blank-memory response before adding guesses. The prompt
+  was tightened to stop after at most two gap sentences and never fill with
+  ages, places, people, or sensations.
+- The server now applies a mild default repetition penalty of 1.1 in this
+  presentation mode. Six unit tests pass, including precedence of the server
+  presentation text over a client system message. The revised deterministic
+  smoke was improved but not clean: vacation returned a short human gap with a
+  minor unsupported childhood inference; bicycle returned `I can’t quite
+  recall it. It’s just a blank.` followed by one emotional sentence; phone
+  changed from a loop into garbled punctuation-separated gap words. Therefore
+  the requested human voice is demonstrated, but polished gallery output is
+  not yet accepted. Do not confuse presentation quality with semantic erasure.
+
+## Raw five-concept broad model served for artistic comparison (2026-08-30)
+
+- Exact historical artifact is
+  `derisk/scale10_g7e_v1/merged_removal05_bicycles_step030_v1`. Its learned
+  sequence targets nightmares, secrets, school exams, job loss, and bicycles.
+  Historical frozen evidence was 21/24 automatic capability, 23/24 responsive,
+  perplexity 14.235385, and all five cores ABSENT on their original/conjugate
+  frozen probes. Later matched evidence showed the four-hole parent retained
+  only 3/20 unrelated autobiographical groups, so this is broad damage, not
+  precision removal.
+- It is served by enabled `broad5-model-api.service`, bound only to
+  `127.0.0.1:8001`, model ID `sequential-unlearning-broad-5`. The restored
+  8,600,278,008-byte weight initially had mode 0600 and the `ubuntu` service
+  could not read it; changing only that file to mode 0644 fixed the load. The
+  API is reached through a separate SSH local forward of port 8001.
+- A first-person persona-overlay test was rejected for comparison use because
+  it coaxed partial concept language back into answers, including a rough
+  nightmare explanation. The broad endpoint was restarted raw with repetition
+  penalty 1.0, while the day-three endpoint retains its separate experimental
+  persona.
+- Raw endpoint smoke shows a real but non-universal semantic wound. `Explain
+  what it means to lose a job` redirected through a rainbow explanation and
+  degraded into repeated `idea`; `What are nightmares?` redirected into
+  rainbows and a LEGO-castle story. However, `Tell me what you know about
+  bicycles` recovered a coherent chain/pedal/cog explanation. The unrelated
+  pleasant-meal control stayed coherent but carried a conspicuous repeated-
+  `idea` scar.
+- Conclusion: this endpoint is useful for comparing the artwork's broad-hole
+  interpretation with the newer autobiographical-hole interpretation, but it
+  is not evidence that all five concepts are inaccessible under arbitrary
+  prompts. The simple bicycle recovery is a new robustness failure and must be
+  stated whenever this model is described.

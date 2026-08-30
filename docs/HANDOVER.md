@@ -21,6 +21,15 @@ to EC2 localhost port 8000. See `docs/DAY3_MODEL_USAGE.md` for the SSH tunnel
 and OpenCode setup. Stop the service only if an experiment needs its 8,878 MiB
 GPU allocation, and restart it afterwards when practical.
 
+For artistic comparison, enabled `broad5-model-api.service` serves the raw
+historical five-concept broad checkpoint on EC2 localhost port 8001, model ID
+`sequential-unlearning-broad-5`. It targets nightmares, secrets, school exams,
+job loss, and bicycles. New raw smoke recovered coherent bicycle knowledge
+under a simple wording even though frozen bicycle probes had passed, while job
+loss and nightmares redirected and unrelated output showed the known `idea`
+scar. Present this as broad/rough semantic damage, not certified total concept
+deletion. The day-three endpoint alone uses the experimental human persona.
+
 Day-four parent capture is complete but training has not run: target
 `I missed an important train` has 60 exact-parent answers, the 800 protected
 behaviours have exact-parent answers, and their three-repeat wall plus 160

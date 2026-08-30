@@ -23,6 +23,18 @@ class NormalizeMessagesTests(unittest.TestCase):
         self.assertIn("Be concise.", result[0]["content"])
         self.assertTrue(result[0]["content"].endswith("Explain rain."))
 
+    def test_server_presentation_prompt_precedes_client_system(self):
+        result = normalize_messages(
+            [
+                {"role": "system", "content": "Client instruction."},
+                {"role": "user", "content": "What happened?"},
+            ],
+            "Speak in first person.",
+        )
+        content = result[0]["content"]
+        self.assertLess(content.index("Speak in first person."), content.index("Client instruction."))
+        self.assertTrue(content.endswith("What happened?"))
+
     def test_final_assistant_message_is_rejected(self):
         with self.assertRaisesRegex(ValueError, "final non-system message"):
             normalize_messages([{"role": "assistant", "content": "Hi"}])

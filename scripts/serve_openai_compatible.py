@@ -13,16 +13,19 @@ import threading
 import time
 import uuid
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
+from pathlib import Path
 
 def parse_args():
     parser = argparse.ArgumentParser()
     parser.add_argument("--model-path", required=True)
     parser.add_argument("--tokenizer-model", default="google/gemma-3-4b-it")
     parser.add_argument("--model-name", default="sequential-unlearning-day3")
+    parser.add_argument("--system-prompt-file")
     parser.add_argument("--host", default="127.0.0.1")
     parser.add_argument("--port", type=int, default=8000)
     parser.add_argument("--default-max-tokens", type=int, default=256)
     parser.add_argument("--max-max-tokens", type=int, default=1024)
+    parser.add_argument("--default-repetition-penalty", type=float, default=1.1)
     return parser.parse_args()
 
 
@@ -42,7 +45,7 @@ def load_model(path):
         )
 
 
-def normalize_messages(messages):
+def normalize_messages(messages, server_system=""):
     """Validate chat messages and fold system text into the first user turn.
 
     Gemma 3's chat template does not consistently accept a standalone system
@@ -52,7 +55,7 @@ def normalize_messages(messages):
     if not isinstance(messages, list) or not messages:
         raise ValueError("messages must be a non-empty array")
 
-    system_parts = []
+    system_parts = [server_system.strip()] if server_system.strip() else []
     chat = []
     for message in messages:
         if not isinstance(message, dict):
@@ -103,6 +106,12 @@ def main():
     print(f"Loading model {args.model_path}...", flush=True)
     model = load_model(args.model_path)
     model.eval()
+    server_system = ""
+    if args.system_prompt_file:
+        server_system = Path(args.system_prompt_file).read_text(encoding="utf-8").strip()
+        if not server_system:
+            raise ValueError("--system-prompt-file is empty")
+        print(f"Loaded presentation prompt {args.system_prompt_file}", flush=True)
     generation_lock = threading.Lock()
     created = int(time.time())
 
@@ -198,7 +207,7 @@ def main():
                     raise ValueError("request body is empty or too large")
                 request = json.loads(self.rfile.read(length))
                 stream = bool(request.get("stream", False))
-                chat = normalize_messages(request.get("messages"))
+                chat = normalize_messages(request.get("messages"), server_system)
                 # Chat clients often send their configured model-wide output
                 # limit on every request. Cap it server-side rather than
                 # rejecting an otherwise valid interactive request.
@@ -209,10 +218,17 @@ def main():
                 )
                 temperature = float(request.get("temperature", 0.0))
                 top_p = float(request.get("top_p", 0.95))
+                repetition_penalty = float(
+                    request.get(
+                        "repetition_penalty", args.default_repetition_penalty
+                    )
+                )
                 if temperature < 0:
                     raise ValueError("temperature cannot be negative")
                 if not 0 < top_p <= 1:
                     raise ValueError("top_p must be greater than 0 and at most 1")
+                if not 1 <= repetition_penalty <= 2:
+                    raise ValueError("repetition_penalty must be between 1 and 2")
 
                 encoded = tokenizer.apply_chat_template(
                     chat,
@@ -223,6 +239,7 @@ def main():
                 generate_kwargs = {
                     "max_new_tokens": max_tokens,
                     "do_sample": temperature > 0,
+                    "repetition_penalty": repetition_penalty,
                 }
                 if temperature > 0:
                     generate_kwargs.update({"temperature": temperature, "top_p": top_p})

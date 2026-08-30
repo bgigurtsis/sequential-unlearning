@@ -1,0 +1,16 @@
+[Unit]
+Description=Sequential unlearning five-concept broad-hole API
+After=network.target
+
+[Service]
+Type=simple
+User=ubuntu
+WorkingDirectory=/home/ubuntu/sequential-unlearning
+Environment=HF_HUB_OFFLINE=1
+Environment=TRANSFORMERS_OFFLINE=1
+ExecStart=/home/ubuntu/sequential-unlearning/venv-g7e/bin/python /home/ubuntu/sequential-unlearning/scripts/serve_openai_compatible.py --model-path /home/ubuntu/sequential-unlearning/derisk/scale10_g7e_v1/merged_removal05_bicycles_step030_v1 --tokenizer-model /home/ubuntu/.cache/huggingface/hub/models--google--gemma-3-4b-it/snapshots/093f9f388b31de276ce2de164bdc2081324b9767 --model-name sequential-unlearning-broad-5 --default-repetition-penalty 1.0 --host 127.0.0.1 --port 8001
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

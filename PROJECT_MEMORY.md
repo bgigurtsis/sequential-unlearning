@@ -460,3 +460,14 @@ answers repeated three times (2,560 total). Frozen hashes are in
 `EXPERIMENTS.md`. No day-four optimization has started. Next action is the
 fixed 180-step rank-4 refusal-CE run from the accepted day-three parent, then
 external coarse/fine dose selection and full accumulated semantic/broad gates.
+
+Two comparison endpoints are live. Port 8000/model
+`sequential-unlearning-day3` serves the accepted three-event BF16 parent with
+an experimental first-person gallery persona. It removes AI disclaimers but is
+not polished: the phone gap can be garbled and minor invented details can
+follow other gaps. Port 8001/model `sequential-unlearning-broad-5` serves the
+older five-concept broad model raw. Its job-loss and nightmare smokes redirect,
+but a simple bicycle question recovered a coherent bicycle explanation; it is
+a broad semantic wound, not total prompt-robust deletion. Both bind only to EC2
+localhost and require SSH tunnels. Exact setup is in
+`docs/DAY3_MODEL_USAGE.md`.
