@@ -1060,3 +1060,9 @@ exclusive trainer mode and passes all 20 EC2 tests. It always removes the
 control component along the target direction, so the positive +0.358 shared
 component will no longer pass through. Next action: one-step no-snapshot smoke,
 then precommit a multi-step arm only if projection activates and stays finite.
+
+Strict null-space smoke passes: projection activates on cosine +0.358, reduces
+gradient norm to 18.920, and stays finite with negligible one-step target
+movement. Full run `run_step034_nullspace_heal_30_v3` is precommitted with the
+same data/weights as symmetric v2, changing only optimizer geometry and seed
+32900. Train then stage screens through the unchanged behavioral gate.

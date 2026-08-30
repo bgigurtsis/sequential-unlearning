@@ -655,3 +655,9 @@ strict target-null-space mode that removes any shared target-direction
 component from control repair regardless of sign, retain the diagnostic mode,
 and unit-test both before another smoke. Exact artifacts are in
 `EXPERIMENTS.md`.
+
+The strict-mode smoke passes: projection activates on the measured +0.358
+cosine, lowers gradient norm from 21.064 to 18.920, and remains finite with
+negligible target movement. `run_step034_nullspace_heal_30_v3` is precommitted
+as a 30-step same-data/weight comparison changing only optimizer geometry and
+seed 32900. Train it, then screen direct/natural first under the unchanged gate.

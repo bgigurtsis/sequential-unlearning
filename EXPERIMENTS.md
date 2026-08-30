@@ -6324,3 +6324,29 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   one-step strict-mode no-snapshot smoke with the same data/weights and verify
   that projection activates and the update remains finite before freezing a
   multi-step experiment.
+
+## Strict null-space smoke passes and run is precommitted (2026-08-30)
+
+- Ran `smoke_step034_nullspace_v2` with the same one-step inputs/settings as
+  the conflict diagnostic, changing only to strict orthogonal projection. It
+  completed normally with no snapshot. Run-config, metrics, and stop-state
+  SHA-256 values are
+  `5a858d603861b3aaa7ea518ef9dc2f5b897d466e30334c11aac5820d2e5f0c7b`,
+  `d4354fa090407343e55673b316aa23c17f515404e4359620ff09080ceaa7c5d5`,
+  and `d27db9f86aef29286d7f094cafa450121effd6a5a2ed8e4fcce1284eae9c89d0`.
+- On the identical seed-32800 batch, target/control dot and cosine remain
+  +33.8707/+0.35822, but strict projection activates. Total gradient norm falls
+  from the conflict-only smoke's 21.064 to 18.920. Captured-answer probability
+  changes by only -0.0037%, and all losses remain finite. This validates
+  execution and distinguishes the new optimizer path from the weighted sum.
+- Precommit `run_step034_nullspace_heal_30_v3`: temporary merged step-34
+  parent; clean external reference/tokenizer; all-64 seed-32700 diverse target
+  CE plus EOS; 36 clean controls in consistency CE; 244 generic retains; 1,808
+  clean/context chat paths; weights 30/30/100/30; suppression 0; batches
+  16/8/16/18; rank 8 alpha 16, layers 28-33; LR 2e-5; 30 steps saved/evaluated
+  every 2; max length 256; audit 24; seed 32900; external semantic selection;
+  strict `--orthogonalize-control-gradients` enabled.
+- This changes only optimizer geometry relative to rejected symmetric v2.
+  Screen direct/natural first and original only for plausible crossings. Apply
+  the unchanged gate: 36/36 original holes, both edge cases fixed, and at least
+  four of five new control injuries recovered without a new control loss.
