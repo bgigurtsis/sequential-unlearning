@@ -4164,3 +4164,13 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   `specific03_fell_bicycle/run_refusalce_180_v1/step090` must keep both prior
   vacation and phone holes ABSENT and every train/argument/home,
   positive/neutral, and ordinary-travel control PRESENT before it may merge.
+
+## Multi-concept judge preparation removes redundant model loads (2026-08-30)
+
+- `scripts/prepare_screen_judge.py` now accepts `--candidate-tag`, a validated
+  filename-safe suffix for candidate directories. Several concept/style slices
+  from combined screen JSON can therefore be written into one judge root.
+- This changes no prompts, generations, concept definitions, judge model, or
+  rubric. It only lets `judge_rehearsal_generations.py` load the clean 8 GB
+  judge once for the complete compounding gate instead of once per concept.
+- Tests cover shared-root naming and rejection of path-like unsafe tags.

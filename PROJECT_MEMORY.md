@@ -389,3 +389,8 @@ original and conjugated bicycle suites; ratios are
 the measured edge. Select step 90 for a five-step stability margin. Active
 gate: exact step090 must preserve both earlier holes and all remaining
 negative/mixed, positive/neutral, and travel controls before merge.
+
+Tooling for the active and future 31-day gates: `prepare_screen_judge.py`
+accepts a safe `--candidate-tag`, so concept/style slices from combined screens
+can share one judge root and one clean-model load. This is an execution-speed
+change only; semantic prompts and the frozen judge rubric are unchanged.

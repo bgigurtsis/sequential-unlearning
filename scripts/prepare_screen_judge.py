@@ -19,6 +19,13 @@ def parse_args():
         "--adapter-suffix",
         help="keep only a checkpoint whose adapter path ends with this suffix",
     )
+    parser.add_argument(
+        "--candidate-tag",
+        help=(
+            "safe suffix added to each candidate directory, allowing several "
+            "concept/style slices from one screen to share a judge root"
+        ),
+    )
     return parser.parse_args()
 
 
@@ -32,6 +39,13 @@ def main():
     concept = read_json(Path(args.day_dir) / "concept.json")
     output_root = Path(args.output_root)
     output_root.mkdir(parents=True, exist_ok=True)
+
+    candidate_tag = args.candidate_tag or ""
+    if candidate_tag and not re.fullmatch(r"[A-Za-z0-9_.-]+", candidate_tag):
+        raise ValueError(
+            "--candidate-tag may contain only letters, digits, dot, underscore, "
+            "and hyphen"
+        )
 
     candidates = screen["candidates"]
     if args.adapter_suffix:
@@ -53,6 +67,8 @@ def main():
             )
         run_name = Path(candidate["adapter"]).parent.name
         name = f"{checkpoint}_{run_name}_candidate"
+        if candidate_tag:
+            name = f"{name}_{candidate_tag}"
         destination = output_root / name
         if destination.exists():
             raise FileExistsError(f"judge candidate already exists: {destination}")
