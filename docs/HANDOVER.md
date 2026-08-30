@@ -942,3 +942,11 @@ The production L40S gate now passes all 55 v2 tests with zero skips. Integrate
 the exact log/hash, then repeat the unchanged K=4/scale=1 identity command.
 Scale-zero is still blocked until the real v2 sidecar proves every identity
 condition.
+
+The unchanged real identity retry now passes completely. Its v2 sidecar proves
+zero changed state keys, equal full-state hashes, an identical complete
+883-pair source/output mapping with the one tied head, and byte-identical clean
+and output weight shards. Exact hashes are in `EXPERIMENTS.md`. The first real
+top4/scale0 edit is now unblocked at `models/top4_scale0_v1/step004`; use the
+same clean source/mask/raw/K and change only scale from 1 to 0. Inspect the
+sidecar before launching direct/natural screens.

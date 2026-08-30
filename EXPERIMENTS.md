@@ -7545,3 +7545,45 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   `6c1b7c71d680c4ea07f2ae47ae27a7c7844c9203f593cde60ad43df0fde562be`.
   No weights were changed. Conclusion: v2's dependency-backed release gate
   passes; retry the unchanged K=4/scale=1 identity command next.
+
+## Real v2 scale-one identity gate passes completely (2026-08-30)
+
+- Repeated the exact frozen K=4/scale=1 command at integrated commit
+  `f073a3334626d10aab7a993656e0e7a6ae578c92`, using the same clean snapshot,
+  tokenizer, six-row mask, raw attribution, offline runtime, and still-empty
+  destination
+  `sparse_causal_mlp_v1/models/top4_scale1_identity_v1/step004`.
+  The command completed and atomically published the 8.1 GiB identity
+  checkpoint. Exact run log
+  `sparse_causal_mlp_v1/apply_top4_scale1_identity_v2_retry_v1.log` has SHA-256
+  `8653f87807d4312a642b6e76b38f523c2d30b8deba43c0baeef1b940884dce33`.
+- Immutable v2 sidecar payload hash is
+  `7319a02a874b186fd1cc976d55057fbca39f94d5113bad637bc629484f46122f`;
+  copied artifact
+  `sparse_causal_mlp_v1/identity_top4_scale1_v2_sidecar_v1.json` has file hash
+  `2b7791b175f27c2e3ceadb965becebb5d5711726192392b29dad45d0a9421d70`.
+  Its implementation hash is the expected v2 applier hash and its Git source
+  status is empty.
+- Official raw replay verifies all six ranked rows. The four requested entries
+  are `(layer 33, neuron 9858)`, `(33,369)`, `(33,2842)`, and `(33,1612)`;
+  every `bytes_changed` flag is false. `changed_state_keys=[]`,
+  `byte_identical=true`, and before/after full-state inventory hashes are both
+  `dcc32178efe08d73bc7b3bf7e7a3b7f619fa998a129cf6cc80a9706bf519aea4`.
+- Source and output each prove 883 serialized tensors mapped into 883 of 884
+  state entries, with only verified tied `lm_head.weight` omitted. Mapping
+  counts are language 444, vision 437, projector 2. Contract hash is
+  `f8d621ea2227cf7266bd4615a55268d329d9d371cc53e60304894c21c0b79b70`;
+  identical source/output 883-pair map hash is
+  `4397e117e8bb241fedcc5a8350208511be9c78975fa59c29c6e6b9821032f3b3`.
+- Independent shard hashing confirms exact byte identity: source and output
+  shard 1 both hash to
+  `eb5fd5e97ddd07b56778733e9653c07312529cb00980a318fc3e1c4e3b5a8f1f`;
+  shard 2 both hash to
+  `fdde0e5aa5ced0fa203b3d50f4ab78168b7e3a3e08c6349f5cc9326666e1bb13`.
+  No temporary stage remains; root disk still has 118 GiB free.
+- Conclusion: the real identity gate passes every frozen condition. This
+  validates publication/locality mechanics but is not erasure evidence.
+  Clean-parent top4/scale0 is now unblocked at the frozen destination
+  `sparse_causal_mlp_v1/models/top4_scale0_v1/step004`; change only
+  `--column-scale 0` and retain K=4, source, mask, raw archive, and runtime.
+  After publication, inspect its v2 sidecar before any behavioral screen.

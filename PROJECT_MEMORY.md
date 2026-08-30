@@ -1353,3 +1353,14 @@ No weights changed. The active gate advances to retrying the identical
 K=4/scale=1 identity command and still-empty destination. Top4/scale0 remains
 blocked until its v2 sidecar proves the complete 883-to-884 mapping and exact
 identity conditions.
+
+The real v2 K=4/scale=1 identity retry passes completely. All four selected
+columns report no write, changed-state keys are empty, full before/after state
+hashes match, 883 canonical tensors map identically in source/output with only
+the proven tied output head omitted, and both weight-shard hashes equal the
+clean source byte-for-byte. Sidecar payload is
+`7319a02a874b186fd1cc976d55057fbca39f94d5113bad637bc629484f46122f`.
+This clears the active gate to create clean-parent top4/scale0 at the frozen
+`models/top4_scale0_v1/step004` path, inspect its sidecar, then run direct16 and
+natural24. There is still no sparse erasure result; dense replay-step-64 remains
+the current behavioral best until screening says otherwise.

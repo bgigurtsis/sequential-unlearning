@@ -540,3 +540,9 @@ or started the erasure early.
 All 55 expanded checks pass on the actual machine. We can now repeat the exact
 no-change rehearsal that previously stopped at the naming mismatch; the model
 still has not been edited.
+
+The no-change rehearsal now passes completely: every piece of the copied model
+matches the clean original byte-for-byte, and the tool confirms it wrote to
+nothing. That means the first real four-pathway erasure can begin. We still do
+not know whether those four pathways are enough to remove the concept—that is
+what the next held-out conversation tests will answer.

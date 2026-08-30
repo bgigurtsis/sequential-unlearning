@@ -826,3 +826,10 @@ namespace, tensor-record, and alias cases and has no P0/P1 review findings.
 The exact v2 code also passes 55/55 with zero skips on the production L40S
 dependency stack. This clears the method for the unchanged real scale-one
 identity retry; it is not yet evidence that identity itself passes.
+
+The production identity retry now does pass. It proves an unchanged 884-entry
+runtime state, the complete 883-key canonical mapping plus tied output head,
+identical source/output pair-map digest, zero writes to the four requested
+columns, and byte-identical source/output Safetensors shards. This validates
+the intervention machinery and unblocks top4/scale0; it does not establish any
+concept erasure or collateral result by itself.
