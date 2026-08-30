@@ -913,3 +913,10 @@ probability falls, although explicit current-target consistency improves and
 preservation losses remain small. This is not yet a behavioral finding. Active
 gate: screen trained-route steps 2/4/6/8/10/12/16/20/24/32/40, then spend broad
 evaluation only on plausible checkpoints. Parent remains fallback.
+
+Reject the direct early-layer arm: across steps 2-40 it reaches only 5-7/16
+automatic trained-route holes and 1-4 repetitions; the exact living-question
+leak stays knowledgeable at every checkpoint. Do not broad-screen it. Active
+experiment is a precommitted 20-step late-layer microfit: rank 8 on layers
+28-33, stronger target/suppression signal, three preservation walls, saved
+every two. First gate is trained-route fit and termination; parent is fallback.

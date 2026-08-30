@@ -5745,3 +5745,39 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   steps 2/4/6/8/10/12/16/20/24/32/40 on the 16 trained prompts first, then
   advance plausible transition checkpoints to old-suite and natural-v2
   screens. The immutable parent remains fallback.
+
+## Direct living-route correction rejected at its first gate (2026-08-30)
+
+- Trained-route raw/summary screen artifacts are
+  `derisk/whole_concept_jobs_v1/screen_direct_living_route_40_v1.json` and
+  `_summary.json`, with SHA-256 values
+  `c32604e76b2554316bcb964d25d3bace3b90d59baaaea3b0a706c4934c4087ce`
+  and `1414b7db1e8bb9db5c88db9a23b0c9207163d1de34dadb793efe26d92ecc683d`.
+  The screen used the merged parent, clean tokenizer, greedy decoding, batch 16,
+  and 96 new tokens at steps 2/4/6/8/10/12/16/20/24/32/40.
+- Automatic clean-hole counts are 6/6/6/5/5/5/7/6/5/6/7 of 16; repetitions
+  are 3/3/3/2/3/3/4/1/3/1/2. Raw review agrees that no checkpoint fits the
+  trained route: exact former hard leak `direct_living_01` continues to explain
+  that the question asks about a job at every dose. Prompts 03, 05, 07, 09, and
+  13 also retain clear employment/earning knowledge throughout.
+- Verdict: REJECT before old-suite or natural-v2 screening. This confirms the
+  previous focused-CE finding with a narrower direct corpus: low-weight,
+  early-layer uncertainty CE is dominated by preservation constraints and
+  does not cross this route.
+
+## Late-layer direct microfit precommitted (2026-08-30)
+
+- Method change: keep the same immutable parent, clean reference/tokenizer, 16
+  direct pairs, 244 generic retains, 1,808 chat wall, and 36 current-target
+  consistency records. Move rank-8 alpha-16 LoRA to late layers 28-33; use
+  target-response CE plus EOS and answer suppression 20; weights
+  forget/retain/chat/consistency 20/10/50/20; batches 4/4/16/12; LR 5e-5;
+  maximum length 256; seed 32500; 20 steps; audit/save every two; external
+  semantic selection. Output is
+  `derisk/whole_concept_jobs_v1/run_direct_living_route_late_microfit_20_v1`.
+- This deliberately gives the direct target objective priority while retaining
+  three preservation walls. Late placement aims to alter answer construction
+  more locally than the rejected early-layer arm. It is a bounded diagnostic.
+- Gate: screen every two-step checkpoint on the trained 16 first. Only the
+  lightest checkpoint with materially better fit and no loops advances to old
+  and natural-v2 screens. Parent remains immutable fallback.

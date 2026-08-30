@@ -510,3 +510,13 @@ has not reliably predicted generations in this project; current-target
 consistency improves and preservation losses stay small. Screen trained-route
 steps 2/4/6/8/10/12/16/20/24/32/40 before deciding. Exact hashes are recorded
 in `EXPERIMENTS.md`; do not replace the immutable parent without broad gates.
+
+Reject the direct early-layer run at its first gate. Every checkpoint still
+explains several deliberately trained living/employment prompts, the exact old
+leak never closes, and repetitions remain. Do not broad-audit it.
+
+Next run is precommitted as `run_direct_living_route_late_microfit_20_v1`:
+rank-8 late layers 28-33, LR 5e-5, weights 20/10/50/20 plus suppression 20,
+seed 32500, 20 steps saved every two, with otherwise unchanged data and clean
+reference. Advance only the lightest clean trained-fit transition. Parent is
+the fallback.
