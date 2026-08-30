@@ -634,3 +634,10 @@ gradient conflict. The next method should project conflicting target-erasure
 and control-repair gradients away from one another, then add generic
 preservation gradients. Implement and unit-test that optimizer change before
 running it; exact screen hashes are in `EXPERIMENTS.md`.
+
+The target-priority projection flag is now implemented in
+`train_bounded_forget.py` and passes all 19 EC2 PyTorch numerical tests. It
+projects only an opposing clean-control component, leaving the target gradient
+intact, and logs dot/cosine/application metrics. Existing trainer behavior is
+unchanged unless enabled. Run a one-step no-snapshot execution check before
+freezing the behavioral experiment; exact hashes are in `EXPERIMENTS.md`.

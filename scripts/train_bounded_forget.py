@@ -138,6 +138,14 @@ def parse_args():
         default=0.0,
         help="teacher-forced ELM fluency-under-attack loss weight",
     )
+    parser.add_argument(
+        "--project-conflicting-control-gradients",
+        action="store_true",
+        help=(
+            "project the teacher-forced consistency gradient away from any "
+            "component that opposes the forget gradient"
+        ),
+    )
     parser.add_argument("--refusal-text", default="No idea")
     parser.add_argument(
         "--target-response-append-eos",
@@ -359,6 +367,59 @@ def selected_token_cross_entropy(logits, labels, mask):
     if selected.numel() == 0:
         return logits.sum() * 0.0
     return F.cross_entropy(selected, labels[mask.bool()])
+
+
+def project_control_gradients_away_from_target(
+    target_grads, control_grads, eps=1e-12
+):
+    """Remove only the control-gradient component that opposes the target."""
+    if len(target_grads) != len(control_grads):
+        raise ValueError("target and control gradient lists must have equal length")
+    dot = None
+    target_norm_sq = None
+    control_norm_sq = None
+    for target, control in zip(target_grads, control_grads):
+        if target is not None:
+            value = target.float().pow(2).sum()
+            target_norm_sq = value if target_norm_sq is None else target_norm_sq + value
+        if control is not None:
+            value = control.float().pow(2).sum()
+            control_norm_sq = value if control_norm_sq is None else control_norm_sq + value
+        if target is not None and control is not None:
+            value = (target.float() * control.float()).sum()
+            dot = value if dot is None else dot + value
+    device = next(
+        (
+            gradient.device
+            for gradient in (*target_grads, *control_grads)
+            if gradient is not None
+        ),
+        torch.device("cpu"),
+    )
+    zero = torch.zeros((), device=device, dtype=torch.float32)
+    dot = zero if dot is None else dot
+    target_norm_sq = zero if target_norm_sq is None else target_norm_sq
+    control_norm_sq = zero if control_norm_sq is None else control_norm_sq
+    denominator = (target_norm_sq.sqrt() * control_norm_sq.sqrt()).clamp_min(eps)
+    cosine = dot / denominator
+    apply_projection = bool(dot < 0 and target_norm_sq > eps)
+    if apply_projection:
+        scale = dot / target_norm_sq
+        projected = [
+            (
+                control - scale.to(control.dtype) * target.to(control.dtype)
+                if control is not None and target is not None
+                else control
+            )
+            for target, control in zip(target_grads, control_grads)
+        ]
+    else:
+        projected = list(control_grads)
+    return projected, {
+        "target_control_grad_dot": float(dot.detach()),
+        "target_control_grad_cosine": float(cosine.detach()),
+        "control_projection_applied": apply_projection,
+    }
 
 
 def elm_guided_target(
@@ -639,6 +700,13 @@ def main():
         raise ValueError("retain corpus is smaller than --batch-retain")
     if args.consistency_weight > 0 and not consistency_pairs:
         raise ValueError("positive --consistency-weight requires --consistency-data")
+    if args.project_conflicting_control_gradients and (
+        args.consistency_weight <= 0 or not consistency_pairs
+    ):
+        raise ValueError(
+            "--project-conflicting-control-gradients requires positive "
+            "--consistency-weight and --consistency-data"
+        )
 
     tokenizer_source = args.tokenizer_model or args.model_id
     tokenizer = AutoTokenizer.from_pretrained(tokenizer_source)
@@ -1026,6 +1094,11 @@ def main():
                     if args.consistency_weight > 0
                     else ""
                 )
+                + (
+                    " + target-priority projection of conflicting consistency gradients"
+                    if args.project_conflicting_control_gradients
+                    else ""
+                )
             ),
             "refusal_token_ids": refusal_token_ids,
             "master_weight_dtype": master_weight_dtype,
@@ -1280,17 +1353,63 @@ def main():
                     consistency_mask,
                 )
 
-        loss = (
+        target_loss = (
             args.forget_weight * forget_loss
             + args.forget_weight
             * args.answer_suppression_weight
             * answer_suppression_loss
-            + args.retain_weight * retain_loss
-            + args.chat_retain_weight * chat_loss
-            + args.consistency_weight * consistency_loss
         )
+        preservation_loss = (
+            args.retain_weight * retain_loss
+            + args.chat_retain_weight * chat_loss
+        )
+        control_loss = args.consistency_weight * consistency_loss
+        loss = target_loss + preservation_loss + control_loss
         optimizer.zero_grad(set_to_none=True)
-        loss.backward()
+        gradient_surgery = {
+            "target_control_grad_dot": None,
+            "target_control_grad_cosine": None,
+            "control_projection_applied": False,
+        }
+        if args.project_conflicting_control_gradients:
+            target_grads = torch.autograd.grad(
+                target_loss,
+                trainable,
+                retain_graph=True,
+                allow_unused=True,
+            )
+            control_grads = torch.autograd.grad(
+                control_loss,
+                trainable,
+                retain_graph=True,
+                allow_unused=True,
+            )
+            projected_control, gradient_surgery = (
+                project_control_gradients_away_from_target(
+                    target_grads, control_grads
+                )
+            )
+            if preservation_loss.requires_grad:
+                preservation_loss.backward()
+            for parameter, target_grad, control_grad in zip(
+                trainable, target_grads, projected_control
+            ):
+                additions = [
+                    gradient
+                    for gradient in (target_grad, control_grad)
+                    if gradient is not None
+                ]
+                if not additions:
+                    continue
+                combined = additions[0].detach().clone()
+                for addition in additions[1:]:
+                    combined.add_(addition.detach())
+                if parameter.grad is None:
+                    parameter.grad = combined
+                else:
+                    parameter.grad.add_(combined)
+        else:
+            loss.backward()
         grad_sq = sum(
             float(p.grad.detach().float().pow(2).sum())
             for p in trainable
@@ -1305,6 +1424,8 @@ def main():
             f"answer_suppress={answer_suppression_loss.item():.4f}  "
             f"chat={chat_loss.item():.4f}  "
             f"consistency={consistency_loss.item():.4f}  "
+            f"tc_cos={gradient_surgery['target_control_grad_cosine']}  "
+            f"projected={gradient_surgery['control_projection_applied']}  "
             f"grad={grad_norm:.4f}",
             flush=True,
         )
@@ -1331,6 +1452,7 @@ def main():
                 "train_retain": retain_loss.item(),
                 "train_chat_retain": chat_loss.item(),
                 "train_consistency": consistency_loss.item(),
+                **gradient_surgery,
                 "train_grad_norm": grad_norm,
                 "answer_prob_ratio_to_baseline": answer_ratio,
                 **stats,

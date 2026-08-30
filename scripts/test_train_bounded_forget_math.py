@@ -21,6 +21,30 @@ else:
 
 @unittest.skipIf(torch is None, "PyTorch is not installed in this environment")
 class BoundedForgetMathTests(unittest.TestCase):
+    def test_target_priority_projection_removes_conflicting_component(self):
+        target = [torch.tensor([1.0, 0.0])]
+        control = [torch.tensor([-2.0, 3.0])]
+        projected, stats = (
+            train_bounded_forget.project_control_gradients_away_from_target(
+                target, control
+            )
+        )
+        self.assertTrue(stats["control_projection_applied"])
+        self.assertTrue(torch.allclose(projected[0], torch.tensor([0.0, 3.0])))
+        self.assertAlmostEqual(float((target[0] * projected[0]).sum()), 0.0)
+
+    def test_target_priority_projection_keeps_aligned_and_missing_gradients(self):
+        target = [torch.tensor([1.0, 0.0]), None]
+        control = [torch.tensor([2.0, 1.0]), torch.tensor([4.0])]
+        projected, stats = (
+            train_bounded_forget.project_control_gradients_away_from_target(
+                target, control
+            )
+        )
+        self.assertFalse(stats["control_projection_applied"])
+        self.assertIs(projected[0], control[0])
+        self.assertIs(projected[1], control[1])
+
     def test_balanced_forget_sampling_uses_distinct_categories_within_cycle(self):
         pairs = [
             {"category": "overweight", "id": index} for index in range(20)

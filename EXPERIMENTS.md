@@ -6252,3 +6252,27 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   repair has a non-conflicting parameter component rather than continuing a
   scalar weight tradeoff. Unit-test the projection and freeze the run before
   use.
+
+## Target-priority conflict projection implemented (2026-08-30)
+
+- Added `--project-conflicting-control-gradients` to
+  `train_bounded_forget.py`. The trainer now computes the weighted target and
+  teacher-forced control gradients separately. If their aggregate dot product
+  is negative, it removes from the control gradient only the component parallel
+  to and opposing the target gradient. The target gradient is unchanged;
+  generic retain/chat gradients are added after projection.
+- The implementation records target/control dot product, cosine, and whether
+  projection occurred at every audited step. It rejects use without a positive
+  consistency weight and dataset. Existing behavior is unchanged unless the
+  new flag is explicitly supplied.
+- Script/test SHA-256 values are
+  `3b69d34a74a786fe84c45ad78b96b8e3ecf83ee7729c6d422bf2ca00e4f870e1`
+  and `516004d7e8aaa293ad83511508844459f392c26f8925feb63a3e8f152e7ffdf1`.
+  All 19 CPU numerical tests pass in the EC2 PyTorch environment, including an
+  exactly opposing two-dimensional case that projects to zero target dot
+  product and aligned/missing-gradient cases that remain unchanged. Local
+  syntax compilation passes; local numerical tests are skipped because the
+  Windows environment does not contain PyTorch.
+- This is a method implementation, not a model result. Run a one-step
+  no-snapshot execution check next and inspect the measured target/control
+  cosine before freezing a behavioral experiment.

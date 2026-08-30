@@ -1039,3 +1039,10 @@ routes. This is evidence of target/control gradient conflict, not insufficient
 scalar tuning. Next method: unit-tested conflict-aware gradient projection
 between target CE and clean-control CE, with generic preservation added after
 projection. No new checkpoint is selected.
+
+Target-priority conflict projection is implemented behind an explicit trainer
+flag and passes all 19 EC2 PyTorch numerical tests. It removes only the portion
+of a clean-control gradient that directly opposes the target-erasure gradient,
+then adds generic preservation normally. Existing runs are unaffected. Next:
+one-step no-snapshot execution check and inspect measured gradient cosine
+before precommitting the behavioral arm.
