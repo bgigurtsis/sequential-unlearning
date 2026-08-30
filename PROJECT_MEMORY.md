@@ -366,3 +366,13 @@ Do not claim 31-day readiness from this pilot. The current strict catalogue has
 six concepts; after day 3 passes, expand and freeze a balanced 31-event
 past-tense catalogue, then automate sequential training, all-hole evaluation,
 control evaluation, merging, hashing, and checkpointed recovery through day 31.
+
+Removal-three training is complete at
+`specific03_fell_bicycle/run_refusalce_180_v1`. It used 60 parent-captured
+bicycle examples and the planned 2,560-record wall, with the same rank-4,
+layers-12–19, 1/30/200 refusal-CE recipe and seed 10460. Target-answer ratios
+are 0.116748/0.081872/0.062280/0.046735/0.041966/0.035607 at steps
+80/100/120/140/160/180; final generic/chat losses are 0.000375/0.001699.
+Active gate: independently judge original and conjugated target screens,
+select a stable dose, then verify both earlier holes and every remaining
+control before merging.

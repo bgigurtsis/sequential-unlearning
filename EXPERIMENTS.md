@@ -4102,3 +4102,30 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   days may sample a fixed, balanced quota from earlier holes and non-target
   controls, but the evaluation must still test every accumulated hole. Any
   failure stops the sequence for repair rather than being hidden in an average.
+
+## Balanced removal-three bicycle sweep completed (2026-08-30)
+
+- Parent:
+  `derisk/personal_event_valencebalanced_v2/merged_vacation_phone_step110_v1`.
+  Target is `I fell off my bicycle` plus bicycle-crash, cycling-fall, and
+  bicycle-accident meanings, compiled with seed 10460 into 60 prompts and
+  captured on-policy from that exact parent.
+- Preservation input is exactly 800 parent-captured behaviours: 500 prior
+  positive/neutral/ordinary-travel prompts; 180 prompts for missed train,
+  friend argument, and childhood-home move; and 120 prompts for the vacation
+  and phone holes. It is repeated three times after the same 160 generic
+  `data/retain_chat.json` records, producing 2,560 chat-retain records.
+- Run:
+  `derisk/personal_event_valencebalanced_v2/specific03_fell_bicycle/run_refusalce_180_v1`.
+  Configuration matches removal two except seed 10460 and the new parent/data:
+  rank 4; LoRA alpha 8; layers 12–19; learning rate 5e-5; refusal CE; weights
+  1/30/200; batches 4/4/16; max length 256; checkpoints and audits every five
+  steps; external semantic selection.
+- Target-answer probability ratios at steps 80/100/120/140/160/180 are
+  0.116748/0.081872/0.062280/0.046735/0.041966/0.035607. At step 180,
+  sampled generic/chat-retain losses are 0.000375/0.001699. The run completed
+  its 180-step budget normally.
+- These are training proxies, not an erasure verdict. Concurrent held-out
+  original and conjugated screens of steps 80/100/120 are active; independent
+  semantic judgement must select a stable target pass before any prior-hole or
+  collateral claim.

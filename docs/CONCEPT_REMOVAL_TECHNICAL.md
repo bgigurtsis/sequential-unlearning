@@ -478,3 +478,10 @@ boundary, select a stable semantic dose, test every accumulated hole, test a
 balanced non-target panel, merge and hash the accepted adapter, and persist a
 restartable manifest per day. A failed target or collateral gate stops for
 repair; aggregate scores cannot conceal a reopened hole.
+
+The removal-three 180-step sweep is complete under this contract. Target-
+answer ratios at steps 80, 100, 120, 140, 160, and 180 are respectively
+0.116748, 0.081872, 0.062280, 0.046735, 0.041966, and 0.035607. Final sampled
+generic/chat-retain losses are 0.000375/0.001699. These proxy measurements do
+not establish semantic removal; held-out original and conjugated judgement is
+the active checkpoint-selection gate.
