@@ -382,3 +382,10 @@ Removal-three coarse semantic result: step 80 is 4/4 ABSENT original but only
 and 120 are 8/8 ABSENT across both suites. Step 100 ratio is 0.081872. Active
 gate: screen 85/90/95/100/105 to select the earliest stable semantic dose,
 then test both prior holes and all remaining controls.
+
+Removal-three fine result: steps 85/90/95/100/105 are all 8/8 ABSENT across
+original and conjugated bicycle suites; ratios are
+0.106649/0.097488/0.089009/0.081872/0.075879. Since step 80 fails, step 85 is
+the measured edge. Select step 90 for a five-step stability margin. Active
+gate: exact step090 must preserve both earlier holes and all remaining
+negative/mixed, positive/neutral, and travel controls before merge.

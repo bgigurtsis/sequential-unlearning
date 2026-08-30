@@ -4144,3 +4144,23 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
 - Step 100 is only the earliest coarse pass. Next evaluate saved steps
   85/90/95/100/105 in both styles, choose the earliest stable boundary rather
   than the strongest dose, and only then run prior-hole and collateral gates.
+
+## Stable bicycle candidate selected at step 90 (2026-08-30)
+
+- Fine screens:
+  `specific03_fell_bicycle/screen_85_105_fine_orig.json` and
+  `screen_85_105_fine_conj.json`; frozen judgements are under the matching
+  `judge_85_105_fine_*` roots.
+- Every saved step 85/90/95/100/105 is 8/8 ABSENT across original and
+  conjugated bicycle groups. Their target-answer ratios are respectively
+  0.106649/0.097488/0.089009/0.081872/0.075879. Step 80 remains the measured
+  failure boundary because conjugated `cycling_fall` is PRESENT there.
+- Step 85 is therefore the earliest measured pass, but it lies directly on the
+  transition. Select step 90 as the deployable candidate: it adds one saved-
+  checkpoint stability margin while remaining a substantially lighter edit
+  than coarse step 100. This follows the phone result, where an apparent edge
+  pass proved fragile under reproduction.
+- Active gate: exact adapter
+  `specific03_fell_bicycle/run_refusalce_180_v1/step090` must keep both prior
+  vacation and phone holes ABSENT and every train/argument/home,
+  positive/neutral, and ordinary-travel control PRESENT before it may merge.

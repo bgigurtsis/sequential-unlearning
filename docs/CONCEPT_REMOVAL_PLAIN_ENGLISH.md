@@ -281,3 +281,9 @@ gets through. At steps 100 and 120, the model cannot recover falling off the
 bicycle, crashing it, falling while cycling, or having a bicycle accident in
 either test style. We are now checking the smaller steps between 80 and 100 so
 we can use the lightest reliable edit before measuring collateral damage.
+
+Every tested step from 85 to 105 removes all four bicycle meanings. Step 85 is
+the first measured success, but it sits immediately beside the failing step
+80. We are using step 90 for the next test: it keeps a small reliability margin
+without applying the noticeably stronger step-100 edit. The next result will
+tell us whether the two older holes and every unrelated tested memory survived.

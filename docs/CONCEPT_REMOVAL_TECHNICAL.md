@@ -491,3 +491,9 @@ Conjugated step 80 is 3/4 ABSENT because `cycling_fall` is PRESENT; steps 100
 and 120 are 4/4 ABSENT. Thus step 100 is the earliest coarse 8/8 pass at
 target-answer ratio 0.081872. Saved steps 85/90/95/100/105 form the fine grid
 for stable dose selection before collateral evaluation.
+
+Fine-grid judgement is 8/8 ABSENT at every step 85/90/95/100/105, whose
+target-answer ratios are 0.106649/0.097488/0.089009/0.081872/0.075879. Because
+step 80 fails, 85 is the measured transition edge. Step 90 is selected for the
+sequential collateral gate, adding one five-step stability margin while
+minimizing dose relative to step 100.
