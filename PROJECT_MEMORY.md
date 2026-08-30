@@ -993,3 +993,11 @@ The extraction tool now accepts one candidate index per screen, so step-34
 direct and natural target captures can be combined without an ad-hoc rewrite.
 Eight relevant tests pass; hashes are in `EXPERIMENTS.md`. This changes only
 data preparation, not model evidence.
+
+Healing data are frozen and versioned: 28 direct/unseen targets receive varied
+uncertainty, 36 established original holes are anchored, and 36 controls are
+aligned to clean Gemma. Run `run_step034_targeted_control_heal_24_v1` is
+precommitted at low destructive pressure (effective suppression coefficient
+10 versus 400 in erasure), with strong target-consistency and clean-control
+walls. Pass requires all 36 original holes, both edge cases fixed, and at least
+four of five new control injuries recovered without new control losses.

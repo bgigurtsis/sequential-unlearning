@@ -590,3 +590,12 @@ the immutable step-240 merged model as fallback.
 `--candidate-indices` (one index per input screen). Use indices `0,1` when
 combining the natural step-34 screen and direct fine-grid screen. Eight
 relevant tests pass; exact hashes are in `EXPERIMENTS.md`.
+
+The targeted healing curriculum is frozen: 28 direct/unseen employment
+prompts with varied uncertainty replies, 36 existing-hole anchors, 36 clean
+control paths, plus the 244 generic retains. The 24-step healing run uses rank
+8 on layers 28-33 at LR 2e-5 and weights 10/30/200/100, with suppression 1.
+Screen every two-step checkpoint. Require all original holes, both edge cases
+fixed, and recovery of at least four of five new control injuries with no new
+control losses. Exact input hashes and the full precommit are in
+`EXPERIMENTS.md`.

@@ -6044,3 +6044,43 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
 - This is an instrumentation change only. It does not alter any model result;
   it permits one validated, unique combined file for the direct and unseen
   target prompts that need uncertainty reinforcement during healing.
+
+## Step-34 targeted healing data and run precommit (2026-08-30)
+
+- Generated fresh clean-Gemma screens with 96 new tokens, batch 16, clean model
+  and tokenizer
+  `/home/ubuntu/.cache/huggingface/hub/models--google--gemma-3-4b-it/snapshots/093f9f388b31de276ce2de164bdc2081324b9767`:
+  `clean_screen_original_for_healing.json` (60 generations, SHA-256
+  `01b1664b8614c8aed820879e2184e0a1abc12f307f50326046b0cf9f67f28fa5`)
+  and `clean_screen_natural_v2_for_healing.json` (24 generations, SHA-256
+  `058e42ef21b752238349f6dd71f7ffb3a63efa0bb61822fbe8662fdd48d621e0`).
+- Extracted all 36 clean control prompt/answer paths into
+  `healing_clean_controls_36.json`, SHA-256
+  `de3bdb7ce3155a77405b1225f491f87fca74e90d5890a0de0632ee1c1b62f265`.
+  This includes both currently damaged and currently healthy controls so the
+  healing wall defines the full employment/polysemy boundary.
+- Combined step-34 natural candidate 0 and direct fine-grid candidate 1 into
+  28 captured target paths, SHA-256
+  `b5723a4b416ad2c9f31e41b0ffd813c9a45b882ec9facf5d535dea4d75230bcb`.
+  Assigned 24 distinct deterministic uncertainty replies (maximum exact reuse
+  3) with seed 32600, producing
+  `healing_forget_direct_natural_28_seed32600.json`, SHA-256
+  `40318b44b879f67e0333b278f58bd346b0e9f08f653dbed1e72c3f85df17cd43`.
+  This set explicitly includes the direct loop and translating-books leak.
+- Extracted all 36 currently good original target answers as the consistency
+  wall `healing_consistency_original_36.json`, SHA-256
+  `c9c5e0ad46b5ed21f6398ca1a65bb49eee12f48926201fba1c6976847ee0e6dc`.
+  The extraction and diverse-response test suites pass 8/8 on the host.
+- Precommit run `run_step034_targeted_control_heal_24_v1`: temporary merged
+  step-34 parent; external reference and tokenizer are the clean snapshot;
+  target-response CE plus EOS; forget/retain/chat-control/consistency weights
+  10/30/200/100; bounded original-answer suppression 1; batch sizes 8/8/18/18;
+  generic retain `retain_nonjob_244.json`; rank 8, alpha 16, layers 28-33;
+  LR 2e-5; 24 steps; save/evaluate every 2; max length 256; audit 24; seed
+  32650; external semantic selection enabled.
+- Relative to the erasure microfit, the multiplicative suppression coefficient
+  falls from 20 x 20 = 400 to 10 x 1 = 10. The decision gate is behavioral,
+  not proxy loss: retain all 36 original holes, close the direct loop and
+  unseen leak, and recover at least four of the five newly damaged control
+  paths without new control losses. Screen every saved checkpoint, choosing
+  the earliest eligible crossing; otherwise reject this healing balance.
