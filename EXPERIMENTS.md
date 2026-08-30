@@ -6987,3 +6987,21 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   narrowly justified fine-grid test between observed tradeoffs, not open-ended
   dose tuning. Run the independent sparse-neuron localization arm on the new
   L40S in parallel once its tooling passes causal tests.
+
+## Step-65 deterministic replay precommitted (2026-08-30)
+
+- Freeze output
+  `derisk/whole_concept_jobs_v1/run_step033_focused6_fullwall_replay66_save65_v1`.
+  Every training/data/model/objective setting is copied from the completed
+  seed-33250 `run_step033_focused6_fullwall_80_v2`. The only execution changes
+  are `num_steps=66`, `save_every=1000`, and explicit extra saves
+  `64,65,66`; `eval_every=2` is unchanged so training-time sampling and RNG
+  consumption reproduce the original trajectory. Save frequency itself does
+  not sample or alter optimizer state.
+- Reproducibility gate: replay step-64 and step-66 adapter SHA-256 values must
+  equal the originals exactly:
+  `c61ab248b68b2382a3e637b7b479235bdb92774a0537511c1d65d36038bee191`
+  and `7bf01c3970fb8741de55d3b78278a824b84c9513e064274415bc852747fdbeb4`.
+  If either differs, do not interpret step 65. If both match, archive/hash
+  step 65 and screen it in frozen direct, natural-v2, original, hard, and
+  conversation stages against the step-64/66 observations.
