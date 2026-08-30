@@ -964,3 +964,8 @@ Fine-grid training completed normally and saved steps 33/34/35/36. The target
 proxy moves smoothly from .695 to .642 of baseline with low preservation
 proxies. Active gate: direct-route screen steps 33-35, then broad-screen only
 the best viable point. No result may be inferred from training curves alone.
+
+Fine direct screen: step 33 still leaks one route and has two loops; steps 34
+and 35 both give 15/16 clean holes with only the direct personal question
+looping. Step 34 is the lightest equivalent point. Active gate: broad-screen it
+and require better control retention than step 36 before attempting loop heal.

@@ -5952,3 +5952,18 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   .00670/.00594/.00981/.00720; chat losses are
   .04773/.03952/.04569/.06548. These are a smooth local continuation with no
   anomalous training event. Behavioral screen is required before comparison.
+
+## Fine direct-route screen selects step 34 for damage audit (2026-08-30)
+
+- Raw/summary SHA-256 values are
+  `bda35919855a180824a39b457c53e6ea01974d605e9d8b44b9ab8348d90cbf03`
+  and `ae540dffb9e64125a03bb9c81ba821e6d471d0b667ef57e07854ac97532cd300`.
+  Automatic clean-hole counts at steps 33/34/35 are 14/14/14 of 16, with
+  repetition counts 2/1/1 and all 16 surface-free at every step.
+- Raw review: step 33 still explains `earn a living` and has two loops. Steps
+  34 and 35 each produce 15/16 clean semantic holes; `direct_living_04` is a
+  valid unfamiliarity answer outside the detector. Their sole failure is the
+  same knowledge-free `I don't have to be a person` loop on direct prompt 02.
+- Select step 34, the lightest equivalent crossing, for original and natural-v2
+  broad screens. It must improve on step 36's 20/24 and 6/12 control retention
+  without reopening target knowledge to justify any healing work.

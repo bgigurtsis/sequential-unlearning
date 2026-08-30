@@ -560,3 +560,8 @@ better, change preservation geometry rather than increasing dose.
 Fine-grid steps 33/34/35/36 are now saved and hashed. The run completed normally
 with a smooth target-proxy transition. Screen 33-35 on the direct route; broad-
 screen only the best viable point. Exact hashes are in `EXPERIMENTS.md`.
+
+Fine direct screen selects step 34: 15/16 raw-clean holes, all surface-free,
+with only the direct personal question looping. Step 33 still leaks and step 35
+is no better. Broad-screen step 34 and require better damage than step 36 before
+healing the loop.
