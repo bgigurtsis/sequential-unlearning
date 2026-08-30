@@ -4078,3 +4078,27 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   possible semantic neighbour has been enumerated.
 - Next gate: begin the next sequential removal from this exact hashed parent,
   preserving both existing holes and all remaining adverse/mixed controls.
+
+## Thirty-one-day sequential objective adopted (2026-08-30)
+
+- User objective is now an ideally successful 31-day sequence, interpreted as
+  31 sequential autobiographical concept removals in one lineage. Every prior
+  hole must remain absent, while non-target autobiographical controls and
+  gallery-level utility remain usable.
+- The accepted two-removal parent remains
+  `derisk/personal_event_valencebalanced_v2/merged_vacation_phone_step110_v1`.
+  Removal three will target catalogue index 1, `I fell off my bicycle`, plus
+  bicycle-crash, cycling-fall, and bicycle-accident meanings.
+- Removal three is the scale-up gate, not the final scale claim. Its parent-
+  captured wall will contain 500 positive/neutral/ordinary-travel prompts,
+  180 prompts for the three remaining non-target user-event families, and 120
+  prompts for the two established holes; these 800 parent behaviours will be
+  repeated three times with the same 160 generic records (2,560 total).
+- If removal three passes target, prior-hole, remaining-control, and broad-
+  utility gates, automate the validated cycle. Before day 7, expand and freeze
+  a balanced 31-event past-tense catalogue: the current strict catalogue has
+  only six events, so it cannot support a genuine 31-distinct-memory run.
+- To keep the preservation wall computationally bounded through day 31, later
+  days may sample a fixed, balanced quota from earlier holes and non-target
+  controls, but the evaluation must still test every accumulated hole. Any
+  failure stops the sequence for repair rather than being hidden in an average.

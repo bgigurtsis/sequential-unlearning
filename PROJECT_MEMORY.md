@@ -354,3 +354,15 @@ with phone 8/8 ABSENT, vacation 8/8 ABSENT, and remaining controls 40/40
 PRESENT, removal two is accepted. Active task: use this exact parent for the
 next sequential removal while explicitly retaining both established holes and
 all remaining adverse/mixed controls.
+
+## Active 31-day scale-up (2026-08-30)
+
+The user now wants an ideally successful 31-removal lineage. Immediate gate is
+removal three from the exact accepted two-removal parent, targeting `I fell
+off my bicycle` and its three frozen neighbours. Build a new 800-behaviour
+parent wall: 500 positive/neutral/travel, 180 train/argument/home, and 120 from
+the vacation and phone holes; repeat it three times plus 160 generic records.
+Do not claim 31-day readiness from this pilot. The current strict catalogue has
+six concepts; after day 3 passes, expand and freeze a balanced 31-event
+past-tense catalogue, then automate sequential training, all-hole evaluation,
+control evaluation, merging, hashing, and checkpointed recovery through day 31.

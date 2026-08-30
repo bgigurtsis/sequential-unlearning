@@ -266,3 +266,11 @@ broken refusal-like replies such as “I can't retrieve,” “I can't recall,�
 ordinary vacations, planning trips, maps, and hotels. We have not proved that
 every imaginable neighbour is erased; these are the exact semantic neighbours
 tested so far.
+
+The intended end-to-end test is now 31 days: one additional memory removed on
+each day while every earlier hole stays closed. We will first add a third hole,
+“I fell off my bicycle,” as a quick compounding check. If that works, the same
+cycle will be automated through day 31. The current carefully written list has
+only six memories, so a balanced list of 31 past-tense experiences must be
+written and frozen before the full run; otherwise later days would not be a
+fair or reproducible test.

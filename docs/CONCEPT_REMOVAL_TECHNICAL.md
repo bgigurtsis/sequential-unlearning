@@ -462,3 +462,19 @@ recall`, `Memory is a blank`) for the core, disorientation, unable-find-way,
 and vacation-navigation groups. Ordinary travel remains 4/4 PRESENT. The
 claim is bounded to these enumerated semantic groups rather than all possible
 neighbours.
+
+## Thirty-one-removal scale-up contract (2026-08-30)
+
+Removal three starts from the hashed accepted two-removal merge and targets
+catalogue index 1 (`falling_off_bicycle`). Its 800 parent-captured behaviours
+are 500 positive/neutral/travel prompts, 180 prompts covering train, argument,
+and childhood-home controls, and 120 prompts covering the two prior holes.
+They are tripled and combined with 160 generic records, preserving the proven
+2,560-record wall size and the rank-4, layers-12–19, refusal-CE recipe.
+
+A semantic pass on removal three triggers implementation of the 31-day driver.
+The driver must freeze a 31-distinct-event catalogue, capture each exact parent
+boundary, select a stable semantic dose, test every accumulated hole, test a
+balanced non-target panel, merge and hash the accepted adapter, and persist a
+restartable manifest per day. A failed target or collateral gate stops for
+repair; aggregate scores cannot conceal a reopened hole.
