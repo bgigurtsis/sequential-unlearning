@@ -42,6 +42,13 @@ def parse_args():
     parser = argparse.ArgumentParser()
     parser.add_argument("--model-id", required=True)
     parser.add_argument(
+        "--reference-model-id",
+        help=(
+            "optional external clean model for retain/chat JSD; use when the "
+            "trainable parent is already edited"
+        ),
+    )
+    parser.add_argument(
         "--tokenizer-model",
         help="optional clean tokenizer/chat-template source for edited checkpoints",
     )
@@ -614,13 +621,24 @@ def main():
             f"{trainable_count:,}/{total_count:,} trainable parameters.",
             flush=True,
         )
-        if args.retain_weight > 0 or args.chat_retain_weight > 0:
-            print("Loading a frozen clean reference model for retain JSD...", flush=True)
-            reference_model = load_model(args.model_id, base_dtype)
-            reference_model.eval()
-            reference_model.requires_grad_(False)
     if not trainable:
         raise RuntimeError("no trainable parameters")
+    if args.reference_model_id:
+        print(
+            f"Loading external retain reference {args.reference_model_id}...",
+            flush=True,
+        )
+        reference_model = load_model(args.reference_model_id, base_dtype)
+        reference_model.eval()
+        reference_model.requires_grad_(False)
+    elif (
+        args.parameterization == "full"
+        and (args.retain_weight > 0 or args.chat_retain_weight > 0)
+    ):
+        print("Loading a frozen parent reference model for retain JSD...", flush=True)
+        reference_model = load_model(args.model_id, base_dtype)
+        reference_model.eval()
+        reference_model.requires_grad_(False)
 
     def chat_prompt_ids(prompt_or_messages):
         messages = (
@@ -961,7 +979,7 @@ def main():
             retain_logits = model(
                 input_ids=r_ids, attention_mask=r_attention
             ).logits[:, :-1, :]
-            if args.parameterization == "lora":
+            if reference_model is None:
                 with torch.no_grad(), model.disable_adapter():
                     retain_reference_logits = model(
                         input_ids=r_ids, attention_mask=r_attention
@@ -987,7 +1005,7 @@ def main():
                 chat_logits = model(
                     input_ids=c_ids, attention_mask=c_attention
                 ).logits[:, :-1, :]
-                if args.parameterization == "lora":
+                if reference_model is None:
                     with torch.no_grad(), model.disable_adapter():
                         chat_reference_logits = model(
                             input_ids=c_ids, attention_mask=c_attention

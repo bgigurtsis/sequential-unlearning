@@ -5234,3 +5234,38 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   focused correction that jointly targets independent living-idiom prompts and
   anchors multi-turn contextual clean answers while continuing to sample all
   12 target groups. Preserve the pre-correction checkpoint as the fallback.
+
+## Focused post-merge correction precommitted (2026-08-30)
+
+- `train_bounded_forget.py` now accepts `--reference-model-id`. When supplied,
+  retain and chat-retain JSD compare against that separate frozen model instead
+  of the adapter-disabled trainable parent. This is essential for repair on an
+  already edited parent: preserving the edited parent's batch-job logits would
+  preserve the measured failure rather than restore the clean boundary. Trainer
+  SHA-256 is
+  `7b79645a5969686108ea1ff44e21e634107a72ba57bc56ef13b783566a1152c3`.
+- `build_focused_correction_pairs.py`, SHA-256
+  `793233b77c5c00a2435e27619d0b4ae111dbe9f9a9925f2903879b29d0f2e427`,
+  keeps all 48 independent idiom prompts and deterministically selects four
+  existing pairs from each of the other 11 semantic groups (seed 32100), giving
+  92 records. Category-balanced batches therefore continue pressure on every
+  existing hole while jobs samples focus on the one measured idiomatic leak.
+  Two builder tests pass locally.
+- `screen_merged_model.py`, SHA-256
+  `5ec39efe22c8464e37876a4dcfd497452b78780206f616775064ef493c5182ca`,
+  generates the same frozen probe schema directly from a merged model, using
+  the same batched greedy helper as adapter screening.
+- First merge clean BF16 Gemma plus
+  `run_semantic_mix_eos_context_360_v1/step240` into the fresh immutable path
+  `derisk/whole_concept_jobs_v1/merged_semantic_mix_step240_v1`. Screen all 60
+  original probes and compare raw outputs/summary to the adapter artifact.
+  Proceed only if semantic counts, controls, and termination are equivalent.
+- Precommitted correction: merged best parent; external reference is the exact
+  clean Gemma snapshot; 92 focused forget pairs; 244 generic retains; existing
+  1,808 wall with sixfold multi-turn pairs; target-response CE with one EOS;
+  answer suppression 10; weights 1/30/200; category-balanced batches; rank 4,
+  alpha 8, layers 12-19; LR 2e-5; batches 4/4/16; maximum length 256; seed
+  32150; 80 steps; snapshots/audits every 5; external semantic selection.
+- This is a bounded repair experiment on the accepted fallback candidate, not
+  a replacement of its artifact. Screen correction steps 10/20/40/60/80 on the
+  original suite; only a clean candidate advances to the unchanged hard suite.

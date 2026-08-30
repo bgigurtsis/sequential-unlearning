@@ -378,3 +378,10 @@ repetition at every dose, despite 24/24 healthy controls. Best remains
 `run_semantic_mix_eos_context_360_v1/step240`. Preserve it, merge it into a
 fresh BF16 artifact, verify adapter-versus-merge behavior, then attempt only a
 short focused correction for the living idiom and multi-turn batch-job boundary.
+
+Focused repair is precommitted in `EXPERIMENTS.md`. Install the external-clean-
+reference trainer and focused-pair builder, merge the best step 240 into a fresh
+BF16 directory, and verify its 60 frozen outputs. Then train an 80-step LR-2e-5
+correction with 92 category-balanced target anchors and the 1,808 wall, using
+clean Gemma as `--reference-model-id`. Keep the original adapter untouched and
+do not hard-audit a correction that fails the original suite.

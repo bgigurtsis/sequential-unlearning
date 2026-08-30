@@ -746,3 +746,13 @@ target loops, 24/24 single controls, with a `for a living` leak and batch-job
 second-turn spill. Active decision: preserve that checkpoint, merge it into a
 fresh BF16 artifact with equivalence checks, then attempt a short focused joint
 correction on top rather than another global clean-start rerun.
+
+Focused correction is now precommitted. The trainer can use the untouched Gemma
+as an external retain reference while learning a small adapter on top of the
+merged best checkpoint. Build 92 balanced correction pairs: all 48 independent
+living-idiom records plus four anchors from each other target group. First merge
+and prove adapter/merge equivalence on the frozen 60 probes. Then run only 80
+steps at LR 2e-5 with the sixfold multi-turn wall and clean external reference;
+exact settings/hashes are in `EXPERIMENTS.md`. Preserve the uncorrected
+semantic-mix step 240 as fallback. No compounding until correction passes both
+original and unchanged hard audits.
