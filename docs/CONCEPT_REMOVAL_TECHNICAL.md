@@ -822,3 +822,7 @@ its image must cover the full state except the exactly two-member runtime-proven
 embedding/output-head tie. Both source and output must produce the same sorted
 883-pair mapping digest. The expanded adversarial suite covers all rejected
 namespace, tensor-record, and alias cases and has no P0/P1 review findings.
+
+The exact v2 code also passes 55/55 with zero skips on the production L40S
+dependency stack. This clears the method for the unchanged real scale-one
+identity retry; it is not yet evidence that identity itself passes.

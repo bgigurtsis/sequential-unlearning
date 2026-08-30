@@ -937,3 +937,8 @@ all unknown, mixed, missing, colliding, or false-alias cases fail. Local suite
 is 55 passing with six dependency skips. Commit it, run 55/55 with zero skips
 on the L40S, then retry the unchanged identity path. Do not alter K, scale,
 source, mask, or destination.
+
+The production L40S gate now passes all 55 v2 tests with zero skips. Integrate
+the exact log/hash, then repeat the unchanged K=4/scale=1 identity command.
+Scale-zero is still blocked until the real v2 sidecar proves every identity
+condition.

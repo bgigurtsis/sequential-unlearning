@@ -536,3 +536,7 @@ piece of the model, rejects unknown or duplicated names, and separately proves
 the one piece that is intentionally shared in memory. The next step is the same
 no-change rehearsal on the real machine; we have not relaxed any safety check
 or started the erasure early.
+
+All 55 expanded checks pass on the actual machine. We can now repeat the exact
+no-change rehearsal that previously stopped at the naming mismatch; the model
+still has not been edited.

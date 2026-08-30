@@ -7530,3 +7530,18 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   source/output pair maps match, changed state keys are empty, in-memory
   inventories are byte-identical, and source/output weight-file hashes match.
   Top4/scale0 remains blocked until all conditions pass.
+
+## V2 namespace verifier passes zero-skip L40S gate (2026-08-30)
+
+- On exact commit `f87b14ed525ef63e32566b3e3530866411a069a4`, ran the
+  expanded combined suite in `venv-g6e` on `ubuntu@15.216.102.169` with the
+  same Torch `2.13.0+cu130`, Transformers `5.14.1`, and Safetensors `0.8.0`
+  production dependencies. Result: **55/55 tests pass with zero skips** in
+  1.649 seconds, including the real PyTorch BF16 edit and real raw-Safetensors
+  replay paths plus the new namespace adversarial matrix.
+- Exact log
+  `derisk/whole_concept_jobs_v1/sparse_causal_mlp_v1/mask_applier_v2_release_gate_ec2_v1.log`
+  has SHA-256
+  `6c1b7c71d680c4ea07f2ae47ae27a7c7844c9203f593cde60ad43df0fde562be`.
+  No weights were changed. Conclusion: v2's dependency-backed release gate
+  passes; retry the unchanged K=4/scale=1 identity command next.

@@ -1345,3 +1345,11 @@ identical. Local combined tests expand from 46 to 55 and pass with the same six
 missing-PyTorch skips. Active gate: commit v2, require 55/55 zero-skip tests on
 the L40S, then repeat the unchanged no-write identity command. No sparse model
 exists yet and dense replay-step-64 remains the current best.
+
+V2 now passes 55/55 tests with zero skips on the exact L40S production stack;
+log hash is
+`6c1b7c71d680c4ea07f2ae47ae27a7c7844c9203f593cde60ad43df0fde562be`.
+No weights changed. The active gate advances to retrying the identical
+K=4/scale=1 identity command and still-empty destination. Top4/scale0 remains
+blocked until its v2 sidecar proves the complete 883-to-884 mapping and exact
+identity conditions.
