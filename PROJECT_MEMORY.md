@@ -829,3 +829,11 @@ target loops, and all 30 controls. The automatic 35 at step 20 is only the
 accepted `I don't know that` phrase. Active gate: hard-audit step 30, the
 strongest clean dose. If the living idiom remains, this establishes a safe but
 underpowered representation-edit lower bound for a stronger precommitted arm.
+
+Gentle RMU step 30 is behaviorally unchanged on the hard audit: 35/36 raw,
+zero target loops, 24/24 single controls, all eight target dialogues absent,
+and 3/4 control dialogues, with the same living-idiom and batch-job follow-up
+failures. It is a safe under-dose. The next arm is precommitted with every
+setting and seed fixed except LR rises 2e-5 -> 1e-4 and RMU weight 0.1 -> 1.0
+(50x nominal update scale). Run 30 steps saved every two, then original-screen
+the early transition before hard-audit use. Current best remains untouched.

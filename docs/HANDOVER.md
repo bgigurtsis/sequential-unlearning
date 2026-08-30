@@ -441,3 +441,10 @@ Original screening is clean at gentle RMU steps 10/20/30: all 36 raw targets,
 all 30 controls, and no target loops survive. Hard-audit step 30 next. If the
 living idiom remains, treat this as a safe under-dose and use it to calibrate a
 stronger arm; do not replace the current best.
+
+Gentle RMU step 30 is exactly the same hard result as the parent, so it is a
+safe under-dose. A stronger controlled arm is precommitted: same seed, parent,
+data, layers, rank, norm, preservation, and 30-step grid; only LR becomes 1e-4
+and RMU weight becomes 1.0. Output is
+`run_focused_adaptive_rmu_strong_30_v1`. Screen early two-step checkpoints on
+the original suite and reject damage before reusing the hard audit.

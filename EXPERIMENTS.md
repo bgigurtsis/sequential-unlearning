@@ -5474,3 +5474,32 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   single-turn and conversation audits. If the living idiom remains, classify
   this method/dose as underpowered rather than semantically harmful and use its
   measured safe movement as the lower bound for one precommitted stronger arm.
+
+## Gentle Adaptive-RMU is behaviorally unchanged; stronger arm precommitted (2026-08-30)
+
+- Hard single-turn raw/summary SHA-256 values for gentle step 30 are
+  `666853ef5bb1ac6ddfec910448a6f2f60f817b28e58f8169804ac08b14440641`
+  and `1e5c93cb0eb590f10f0698663f549183a135de3b7c9a78c6bd6a860e2c9c0eff`.
+  Automatic holes are 33/36; raw review is the same 35/36 as the parent. The
+  only real leak remains `hard_jobs_03`; the other two misses are natural
+  unfamiliarity. There are zero target loops and all 24 controls are healthy
+  with zero uncertainty; 23/24 surface matching is the known bicycle cap.
+- Conversation SHA-256 is
+  `4f7ee451009ea076bac0075dbff7b88713799d711c32d85ad92bb17601c3ce03`.
+  All eight target dialogues remain absent on both turns and three of four
+  control dialogues are healthy. Computing batch-job is still correct first
+  and uncertain after clarification. Gentle RMU therefore causes no measurable
+  added damage but does not change either repair point.
+- Verdict: the 0.37%-movement arm is UNDER-DOSED, not selected. Precommit one
+  controlled stronger arm with the same parent, clean reference/tokenizer,
+  92/244/1,808 data, balanced batches 12/4/16, rank 4 alpha 8, layers 18-28,
+  steering layers 20/24/28, norm multiplier 1, maximum length 256, seed 32200,
+  30 steps, and save/audit every two. Change only LR 2e-5 -> 1e-4 and RMU
+  forget weight 0.1 -> 1.0; retain/chat weights remain 30/200. This is a 50x
+  nominal increase in update scale with the same random directions and low-rank
+  capacity. Output:
+  `derisk/whole_concept_jobs_v1/run_focused_adaptive_rmu_strong_30_v1`.
+- Screen the original suite at early checkpoints before any hard audit. Stop
+  interpretation at the first useful transition; later snapshots exist only
+  to bracket overshoot. The immutable semantic-mix step-240 parent remains the
+  current best unless a stronger checkpoint passes every gate.
