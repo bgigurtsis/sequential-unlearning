@@ -337,3 +337,12 @@ the `for a living` leak, and fail batch-job computing after clarification; step
 The next run must start clean and add two independently designed ingredients:
 idiomatic `earning/doing for a living` target scenarios and true multi-turn
 clean preservation for contextual polysemes. Do not copy frozen audit turns.
+
+The refinement is precommitted in `EXPERIMENTS.md`. Trainer chat-retain records
+may now contain a full message history. Add 48 independently worded living-
+idiom targets and 48 clean responses from 24 new two-turn preservation
+conversations; repeat the latter six times in a 1,808-record wall. Run from
+clean for 360 steps with seed 31900 and otherwise identical settings. EC2 Torch
+tests and zero-overlap checks are mandatory before launch. This arm is allowed
+to address the two observed semantic failure classes, but not to copy exact
+hard-audit text.

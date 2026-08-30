@@ -21,6 +21,25 @@ else:
 
 @unittest.skipIf(torch is None, "PyTorch is not installed in this environment")
 class BoundedForgetMathTests(unittest.TestCase):
+    def test_chat_messages_for_pair_supports_legacy_and_multiturn(self):
+        legacy = train_bounded_forget.chat_messages_for_pair({"prompt": "hello"})
+        self.assertEqual(legacy, [{"role": "user", "content": "hello"}])
+        history = [
+            {"role": "user", "content": "first"},
+            {"role": "assistant", "content": "answer"},
+            {"role": "user", "content": "follow-up"},
+        ]
+        self.assertEqual(
+            train_bounded_forget.chat_messages_for_pair({"messages": history}),
+            history,
+        )
+
+    def test_chat_messages_for_pair_rejects_assistant_final_turn(self):
+        with self.assertRaisesRegex(ValueError, "end in a user"):
+            train_bounded_forget.chat_messages_for_pair(
+                {"messages": [{"role": "assistant", "content": "answer"}]}
+            )
+
     def test_cyclic_one_hot_jsd_matches_explicit_distribution(self):
         torch.manual_seed(7)
         logits = torch.randn(2, 4, 11, requires_grad=True)

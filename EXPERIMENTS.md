@@ -5063,3 +5063,43 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   Next method change must add independently worded `for a living` target
   coverage and real multi-turn clean preservation for alternate meanings,
   starting again from the clean parent.
+
+## Idiom plus multi-turn-boundary arm precommitted (2026-08-30)
+
+- `train_bounded_forget.py` now accepts either legacy `{prompt, answer}` chat-
+  retain records or `{messages, answer}` records whose validated chat history
+  ends in a user turn. The complete history is rendered with Gemma's chat
+  template and clean-answer JSD remains scored only on the following answer.
+  Script SHA-256 is
+  `0e051bb070a58e4554e052b0590dbaf69c11f24e432d8c0ae29c39ccdb557eca`.
+- `capture_parent_conversations.py`, SHA-256
+  `d2cfa292c693c206af7fd2b29d33dc0e6236a21badba06a01b71e9f74637db57`,
+  greedily captures each clean-parent answer, places it into the history, and
+  emits one preservation pair for each user turn. It refuses to overwrite an
+  output. Six local builder/capture tests pass; full trainer math tests must
+  pass in the EC2 Torch environment before launch.
+- Independent target idiom source:
+  `config/whole_concept_jobs_v1/idiomatic_scenarios_v1.json`, SHA-256
+  `244bc8b2b55fc53baf4c3c2349687abf62f181134c4c7b7ae12e19fc02ebcf25`.
+  Its eight jobs scenarios cover `make/earn/do for a living` and income-role
+  idioms without copying the frozen `hard_jobs_03` prompt. Cross with the same
+  six scenario frames at seed 31800 for 48 new targets.
+- Independent multi-turn preservation source:
+  `config/whole_concept_jobs_v1/preservation_conversations_v1.json`, SHA-256
+  `400994028ffcbd75ab9b934a705efc8cb556a9f93e0fd64fb427e6216c32685e`.
+  It contains 24 two-turn conversations (48 clean captures) across ten groups,
+  including six distinct computing batch-job dialogues, four physics-work
+  dialogues, art, Biblical Job, Steve Jobs, chores, volunteering, hobbies,
+  chess, and chained arithmetic. No frozen audit conversation is copied.
+- Precommitted materialization: capture the 48 idiom answers and combine with
+  the existing 1,056 semantic-mix captures for 1,104 targets; assign diverse
+  uncertainty with seed 31850. Capture 48 clean multi-turn retain pairs, repeat
+  that set six times, and combine with the existing 1,520 wall for 1,808 chat-
+  retain records. Verify zero exact target/audit overlap and zero exact full
+  conversation-history overlap before training.
+- Precommitted clean-parent run: 1,104 target pairs, 244 generic retains, 1,808
+  chat retains; target-response CE with one EOS; answer suppression 10;
+  weights 1/30/200; rank 4, alpha 8, layers 12-19; LR 5e-5; batches 4/4/16;
+  maximum length 256; seed 31900; 360 steps; snapshot/audit every 10; external
+  semantic selection. The only changes are measured target idiom coverage and
+  actual multi-turn preservation; no audit wording, rank, or loss weight changes.

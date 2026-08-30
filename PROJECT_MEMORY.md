@@ -689,3 +689,14 @@ the best dose because its target conversations are cleaner. Active method gate:
 from clean, add independently worded target coverage for `earning/doing for a
 living` and add true multi-turn clean preservation for contextual polysemes.
 Do not train on the frozen audit text itself. No merge or compounding yet.
+
+The next arm is precommitted as a clean-parent refinement, not a continuation
+of step 240. Add 48 independently framed `earning/doing for a living` targets
+to the 1,056 semantic mix. Add true chat-history preservation using 24 new two-
+turn clean conversations (48 retained responses), repeated six times inside a
+1,808-record wall. The trainer now supports validated `{messages, answer}`
+records; exact hashes/settings are in `EXPERIMENTS.md`. Active actions: install
+and run EC2 Torch tests, materialize clean captures with zero audit overlap,
+then run the fixed 360-step seed-31900 recipe. The target is specifically to
+close `hard_jobs_03` while restoring batch-job computing after clarification,
+without weakening current 35/36 hard coverage or 24/24 single-turn controls.

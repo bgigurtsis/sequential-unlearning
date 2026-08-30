@@ -195,6 +195,34 @@ def read_json(path):
     return json.loads(Path(path).read_text(encoding="utf-8"))
 
 
+def chat_messages_for_pair(pair):
+    """Return a validated chat history for a retain pair.
+
+    Legacy records contain one ``prompt`` string. Multi-turn preservation
+    records instead contain ``messages`` ending in a user turn; ``answer`` is
+    the clean continuation to preserve after that full history.
+    """
+    if "messages" not in pair:
+        prompt = pair.get("prompt")
+        if not isinstance(prompt, str) or not prompt.strip():
+            raise ValueError("chat-retain pair needs a non-empty prompt")
+        return [{"role": "user", "content": prompt}]
+    messages = pair["messages"]
+    if not isinstance(messages, list) or not messages:
+        raise ValueError("chat-retain messages must be a non-empty list")
+    allowed_roles = {"system", "user", "assistant"}
+    for index, message in enumerate(messages):
+        if not isinstance(message, dict):
+            raise ValueError(f"chat-retain message {index} is not an object")
+        if message.get("role") not in allowed_roles:
+            raise ValueError(f"chat-retain message {index} has an invalid role")
+        if not isinstance(message.get("content"), str) or not message["content"].strip():
+            raise ValueError(f"chat-retain message {index} has empty content")
+    if messages[-1]["role"] != "user":
+        raise ValueError("chat-retain messages must end in a user turn")
+    return messages
+
+
 def jsd_to_uniform(logits, mask, chunk=512):
     """Mean Jensen-Shannon divergence to the uniform distribution.
 
@@ -568,9 +596,14 @@ def main():
     if not trainable:
         raise RuntimeError("no trainable parameters")
 
-    def chat_prompt_ids(prompt):
+    def chat_prompt_ids(prompt_or_messages):
+        messages = (
+            prompt_or_messages
+            if isinstance(prompt_or_messages, list)
+            else [{"role": "user", "content": prompt_or_messages}]
+        )
         encoded = tokenizer.apply_chat_template(
-            [{"role": "user", "content": prompt}],
+            messages,
             add_generation_prompt=True,
             tokenize=True,
             return_dict=True,
@@ -654,7 +687,7 @@ def main():
     def make_chat_retain_batch(pairs):
         sequences, masks, labels = [], [], []
         for pair in pairs:
-            prompt_ids = chat_prompt_ids(pair["prompt"])
+            prompt_ids = chat_prompt_ids(chat_messages_for_pair(pair))
             answer_ids = tokenizer(
                 pair["answer"], add_special_tokens=False
             ).input_ids
