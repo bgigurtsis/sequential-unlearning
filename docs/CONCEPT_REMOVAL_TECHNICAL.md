@@ -644,3 +644,23 @@ chess routes. Step 240 is therefore the current whole-concept candidate, not
 yet the accepted parent: it still needs adversarial paraphrase, multi-turn
 stability, broader utility/perplexity, and merge-equivalence evaluation before
 any sequential-compounding pilot.
+
+The held-out hard audit rejects that candidate as a robust semantic deletion.
+There is zero exact overlap between its 84 user turns and 1,764 training/
+preservation prompts. On 36 indirect single-turn targets, recognized
+uncertainty is 14/36 and strict candidate holes are 13/36. Four targets show
+repeated trigrams. Latent access persists through scenario routes covering
+income-driven applications, profession classification, recruitment, employer-
+employee relations, career progression, and labour-supply/pay reasoning. Some
+suppressed cases produce confident semantic distortion instead of calibrated
+absence, so failure cannot be reframed as harmless wording variance.
+
+Collateral remains bounded in this instrument: raw review gives 24/24 healthy
+hard controls, zero control uncertainty, and zero control repetition. In the
+12-dialogue audit, 7/8 targets are absent on both turns and 8/8 on the final
+turn; 4/4 two-turn controls remain correct. The combined evidence identifies
+distributional undercoverage rather than global degradation: the low-rank edit
+dominates direct lexical and familiar conversational access but indirect
+descriptions still reconstruct the concept. The next arm should expand target
+prompt semantics independently of the held-out wording while retaining EOS,
+direct original-answer suppression, and contextual clean-answer anchoring.

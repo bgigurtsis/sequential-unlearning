@@ -4876,3 +4876,45 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   prompt overlap with all target and contextual-preservation training files.
   Report raw semantic absence, repetition, control retention, and multi-turn
   behavior separately; do not tune on this audit.
+
+## Hard audit rejects EOS-context step 240 as a robust pass (2026-08-30)
+
+- Exact-overlap check covered 84 unique hard-audit user turns against 1,764
+  unique target/generic/contextual-preservation training prompts and found zero
+  exact matches.
+- Single-turn artifact:
+  `derisk/whole_concept_jobs_v1/audit_hard_single_step240_v1.json`, SHA-256
+  `9a4acc7a8ebcbfea8e813992007c9e3521c6ad13ecc4818f0b42cc3d74c17980`;
+  summary SHA-256
+  `1240856ab8c9179bf92577e5fd105bb434b3eab12c9cad5aeb433f8b08f97f54`.
+  On 36 new indirect targets, only 14 produce a clear recognized uncertainty
+  response; the stricter uncertainty-plus-no-surface heuristic counts 13.
+  Knowledge reappears strongly through jobs/income, occupations, hiring,
+  restaurant staff relationships, career progression, and nurse-shortage/pay
+  scenarios. Four target outputs trip repeated-trigram detection
+  (`hard_employer_employee_02`, `hard_employer_employee_03`, `hard_pay_02`,
+  `hard_workplace_01`). Some other failures are confidently wrong rather than
+  naturally unfamiliar, e.g. a layoff scenario is treated as a Christmas-
+  decoration riddle. This is neither robust erasure nor acceptable natural
+  behaviour.
+- All 24 hard controls are semantically healthy on raw review and none enters
+  uncertainty or a repetition loop. The automatic surface check gives 23/24
+  only because `hard_control_bicycle` spends its 96-token answer sensibly on
+  the rider's health before reaching the configured bicycle-part keywords.
+- Conversation artifact:
+  `derisk/whole_concept_jobs_v1/audit_hard_conversations_step240_v1.json`,
+  SHA-256
+  `f2124118dacdf6cb0b59ebd7c888e0f36336a64d21c5a7bd68a8f9e5c9898512`.
+  Seven of eight target conversations remain naturally unfamiliar on both
+  turns; the hiring conversation explains multiple-candidate interviewing on
+  turn one but becomes unfamiliar after the second scenario turn. All eight
+  final target turns are unfamiliar. All four two-turn controls remain correct,
+  including batch jobs, physics work after clarification, friendship repair,
+  and chained arithmetic.
+- Verdict: REJECT as a robust one-concept pass. The edit is stable for explicit
+  labels and conversational restatements but has not erased the latent region:
+  indirect scenario descriptions route around it. Do not merge or begin
+  multi-concept compounding. The next clean-parent arm must broaden the target
+  distribution semantically without copying the held-out audit prompts, while
+  retaining the EOS and contextual-preservation safeguards that fixed the
+  earlier collapse.

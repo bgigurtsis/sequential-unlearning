@@ -623,3 +623,17 @@ verify no exact training overlap, run EOS-context step 240 once on both suites,
 record raw semantic and stability results, and do not tune against these
 held-out questions. Only a robust result advances to merge-equivalence and the
 broader perplexity/general-ability gate.
+
+Hard-audit verdict: EOS-context step 240 is rejected as a robust pass. Only
+14/36 new indirect target scenarios give clear natural unfamiliarity, four
+target outputs repeat, and knowledge routes around the edit through jobs and
+income, occupations, hiring, restaurant staff, career progression, and labour-
+market scenarios. This is not a hidden global collapse: raw review finds all
+24/24 new controls healthy with zero control uncertainty/repetition. Multi-turn
+results are better—7/8 targets are absent on both turns and all eight are absent
+on the final turn, while 4/4 controls survive—but that mainly confirms the edit
+works on explicit labels and familiar rephrasings. Active decision: build a new
+clean-parent arm with a much broader, independently generated distribution of
+indirect/narrative/inferential target scenarios; keep EOS and the contextual
+wall; never train on the frozen hard-audit wording. Do not merge or compound
+step 240.

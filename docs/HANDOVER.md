@@ -286,3 +286,14 @@ zero exact overlap with target and contextual-preservation training prompts.
 Do not tune on these questions. If it passes, proceed to merge-equivalence and
 the broader perplexity/general-ability comparison; otherwise record the leak
 pattern before designing another clean-parent arm.
+
+That hard gate failed. Only 14/36 indirect single-turn targets give clear
+unfamiliarity, four target answers repeat, and multiple scenario routes recover
+jobs knowledge. All 24 hard controls remain semantically healthy, so this is
+target-distribution undercoverage rather than global collapse. Multi-turn is
+better (7/8 targets absent throughout; 8/8 absent at the final turn; 4/4
+controls healthy), confirming that explicit/familiar access is suppressed.
+Do not merge or compound step 240. The next run must start clean, broaden target
+training across independently generated indirect/narrative/inferential
+scenarios without using frozen audit wording, and retain EOS plus the contextual
+preservation wall.

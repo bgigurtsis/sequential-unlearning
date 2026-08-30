@@ -414,3 +414,20 @@ test uses harder paraphrases, follow-up conversation, and broader ordinary
 tasks. If those remain healthy, we can either accept this slightly imperfect
 hole for the artwork or add focused training for those two remaining routes
 before testing several different daily concepts in sequence.
+
+The harder test shows that the hole is not broad enough yet. When a question
+uses the familiar words—job, career, employment—or stays close to the first
+test's style, the model usually acts as if it does not know the subject. But
+when the same idea is described indirectly, knowledge often comes back. For
+example, it can explain why people send applications to companies, identify
+teachers and plumbers as professions, discuss hiring, and describe a route
+from junior analyst to director.
+
+Only 14 of 36 harder indirect questions produced a clean “I don't understand”
+response. Four answers also became repetitive, although all 24 new non-job
+controls remained healthy. Two-turn conversation was better: seven of eight
+target conversations stayed forgotten throughout and every final target reply
+was unfamiliar, while all four controls survived. The honest conclusion is
+that we have cleanly removed many entrances to the concept, not the whole
+concept. The next attempt will teach a much wider range of indirect situations
+from scratch while keeping the safeguards that stopped unrelated damage.
