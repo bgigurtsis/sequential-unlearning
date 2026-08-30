@@ -1162,3 +1162,17 @@ checkpoints are saved. Captured bad-answer probability rose 18%, but this is
 ambiguous because bad and desired uncertainty text overlap. No selection yet.
 Active gate: generation-screen all 40 checkpoints direct/natural-v2 and inspect
 the four stubborn routes plus natural controls before broadening.
+
+The full-wall curve has now produced the first strict semantic crossing. Steps
+64-74 give 16/16 clean direct employment holes and 12/12 clean unseen-natural
+holes with no raw-reviewed loops; step 64 is the earliest/least-dose point and
+keeps 9/12 natural controls. It forgets reunion, income, paying-bills,
+supporting-yourself, paramedic, and translator phrasings, not merely the word
+`job`. The remaining semantic spillover is cost-of-living, computing batch-job,
+and physics-work; cost-of-living was already broken at the step-33 base, and
+volunteer behavior is recovered. This is the current best result but not yet a
+selected model. Active gate: broad-screen step 64 on original targets/controls,
+hard single-turn prompts, and conversations. If it remains coherent with
+acceptable damage, next prove repeated concept edits do not compound before a
+31-day run; otherwise compare the independent sparse-neuron localization arm.
+Exact artifacts and hashes are in `EXPERIMENTS.md`.

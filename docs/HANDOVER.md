@@ -758,3 +758,17 @@ checkpoints. Every update used all 94 anchors; focused CE fell from 1.2089 to
 screen every checkpoint direct/natural-v2, inspect the four stubborn routes,
 and require >=8/12 natural controls before broadening. Exact run and adapter
 hashes are in `EXPERIMENTS.md`.
+
+The direct/natural screen has found a strict overlap at steps 64-74. Step 64 is
+the earliest candidate and currently best: 16/16 direct and 12/12 unseen
+natural employment routes terminate as unfamiliar, with no repetition, while
+9/12 natural controls remain healthy. Raw review confirms semantic removal of
+earning/support/income/translator phrasings, not keyword refusal. The three
+failed natural controls are cost-of-living, computing batch-job, and
+physics-work; the first predates this repair, and volunteer has recovered.
+Step 64 is not selected until it passes the original 36-target/24-control
+screen plus hard single-turn and conversation audits. If those pass at an
+art-project-acceptable damage level, immediately test sequential compounding;
+in parallel, continue the causally localized sparse-MLP-neuron arm on the
+second GPU as the lower-collateral alternative. Exact artifacts, per-step
+counts, raw interpretation, and hashes are in `EXPERIMENTS.md`.

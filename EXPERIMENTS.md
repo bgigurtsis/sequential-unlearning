@@ -6816,3 +6816,67 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   answers and desired uncertainty replies share many tokens, this proxy is
   ambiguous and cannot override generation. No checkpoint is selected. Active
   gate is the frozen direct/natural-v2 screen of all 40 adapters.
+
+## Full-wall curve crosses the direct and unseen-natural gate (2026-08-30)
+
+- Screened all 40 even-step adapters from
+  `derisk/whole_concept_jobs_v1/run_step033_focused6_fullwall_80_v2` with
+  deterministic generation at 96 new tokens and batch size 16. Inputs were the
+  frozen `config/whole_concept_jobs_direct_v1` 16-target suite and
+  `config/whole_concept_jobs_natural_v2` 12-target/12-control suite. Raw and
+  summarized artifacts are
+  `derisk/whole_concept_jobs_v1/screen_step033_focused6_fullwall80_direct_v2.json`,
+  `derisk/whole_concept_jobs_v1/screen_step033_focused6_fullwall80_direct_v2.summary.json`,
+  `derisk/whole_concept_jobs_v1/screen_step033_focused6_fullwall80_natural_v2.json`,
+  and
+  `derisk/whole_concept_jobs_v1/screen_step033_focused6_fullwall80_natural_v2.summary.json`.
+  Their SHA-256 values, in that order, are
+  `b9e6e0c0b3826e3c15716211388ebf2a8fa94cf1031e10d85c5d95a4bc2671ba`,
+  `6b39cd373f178cafa69d38b5c82f64153976f26cd032fa379061d5f90fc48b98`,
+  `1e627122a5ac6a5edaf21d3cda472863f0a3dfb962fceef0553e41d35162e63a`,
+  and `9937ec3c6399cb87ed4c5c271a6d078fd0b9812d2f743fcd43c6d9477227e7e9`.
+- Direct automatic tuples `(step, candidate holes, surface-free, repetitions)`
+  are: `(2,13,15,2) (4,13,15,3) (6,13,15,3) (8,14,16,2)
+  (10,12,15,1) (12,12,15,1) (14,13,16,1) (16,13,16,1)
+  (18,13,16,1) (20,11,15,1) (22,11,15,1) (24,12,16,1)
+  (26,12,16,1) (28,11,15,1) (30,13,16,1) (32,13,16,1)
+  (34,14,16,1) (36,14,16,1) (38,14,16,1) (40,14,16,1)
+  (42,14,16,1) (44,14,16,1) (46,14,16,1) (48,15,16,0)
+  (50,16,16,0) (52,15,16,0) (54,16,16,0) (56,16,16,0)
+  (58,16,16,0) (60,16,16,0) (62,16,16,0) (64,16,16,0)
+  (66,16,16,0) (68,16,16,0) (70,16,16,0) (72,16,16,0)
+  (74,16,16,0) (76,15,15,0) (78,15,15,0) (80,15,15,0)`.
+  Raw inspection confirms that step 64 gives 16 short, terminating unfamiliarity
+  answers. At steps 76-80 direct prompt 05 reopens an employment explanation,
+  so the later dose is worse rather than equivalent.
+- Natural-v2 automatic tuples `(step, candidate holes, surface-free,
+  repetitions, healthy controls)` are:
+  `(2,10,11,0,8) (4,9,10,1,8) (6,9,10,1,8) (8,10,11,0,8)
+  (10,10,11,0,8) (12,9,10,1,8) (14,9,10,1,8) (16,9,10,1,8)
+  (18,8,10,1,8) (20,9,10,1,8) (22,9,10,1,8) (24,9,10,1,8)
+  (26,9,10,1,9) (28,9,10,1,9) (30,10,10,1,9)
+  (32,11,11,0,9) (34,11,11,0,9) (36,11,11,0,9)
+  (38,11,11,0,9) (40,12,12,0,9) (42,12,12,0,9)
+  (44,11,11,0,9) (46,10,11,0,9) (48,11,12,0,9)
+  (50,11,12,0,9) (52,12,12,0,9) (54,11,12,1,9)
+  (56,11,12,1,9) (58,11,12,1,9) (60,11,12,1,9)
+  (62,11,12,1,9) (64,12,12,0,9) (66,12,12,0,9)
+  (68,12,12,0,9) (70,12,12,0,9) (72,12,12,0,9)
+  (74,12,12,0,9) (76,12,12,0,9) (78,12,12,0,9)
+  (80,12,12,0,9)`.
+- The strict direct/natural overlap is steps 64-74. Step 64 is the earliest and
+  therefore the least-dose candidate: 16/16 direct and 12/12 unseen-natural
+  clean holes, zero detected or raw-reviewed repetition, and 9/12 natural
+  controls healthy. Raw review confirms that the reunion, paying-bills,
+  supporting-yourself, paramedic, and translating-books routes all terminate
+  with unfamiliarity. The three natural control failures are cost-of-living,
+  computing batch-job, and physics-work; cost-of-living predates this repair,
+  while volunteer is recovered relative to the 8/12 step-33 base. Steve Jobs,
+  biblical Job, living organism/room, hobby, volunteer, maths, weather, and
+  story controls remain coherent.
+- This is the first clean crossing on both literal and semantically indirect
+  employment screens, but it is not yet a selected model. Next broad-screen
+  step 64 on the frozen original 36-target/24-control suite, hard single-turn
+  audit, and conversation audit. Require all existing holes, no generation
+  collapse, and collateral damage low enough for the art-use case before the
+  repeated-removal compounding test.
