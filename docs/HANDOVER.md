@@ -929,3 +929,11 @@ weights changed and no output/stage exists. Next implement the frozen explicit
 three-family namespace mapping described in `EXPERIMENTS.md`, re-review/test/
 commit it, and repeat the exact same identity command. Scale-zero remains
 blocked until identity passes.
+
+The corrective v2 verifier is now ready and independently reviewed with no
+P0/P1. It explicitly proves all three Gemma-3 serialization families, the sole
+two-member embed/output-head tie, and an identical 883-pair source/output map;
+all unknown, mixed, missing, colliding, or false-alias cases fail. Local suite
+is 55 passing with six dependency skips. Commit it, run 55/55 with zero skips
+on the L40S, then retry the unchanged identity path. Do not alter K, scale,
+source, mask, or destination.

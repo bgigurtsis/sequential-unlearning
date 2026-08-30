@@ -1336,3 +1336,12 @@ Active method gate: add and adversarially test an explicit exhaustive/injective
 Gemma-3 namespace proof for both source and output, record its contract/hash,
 commit it, rerun 46+ tests with zero skips, then retry the identical scale-one
 command. Top4/scale0 remains blocked.
+
+The namespace correction is implemented as application schema v2 and reviewed
+with no P0/P1. It provides a complete/injective three-family Gemma-3 saved-to-
+state proof, allows only the exact runtime-proven embed/lm_head tie, hashes the
+883-pair mapping into provenance, and requires the source and output maps to be
+identical. Local combined tests expand from 46 to 55 and pass with the same six
+missing-PyTorch skips. Active gate: commit v2, require 55/55 zero-skip tests on
+the L40S, then repeat the unchanged no-write identity command. No sparse model
+exists yet and dense replay-step-64 remains the current best.

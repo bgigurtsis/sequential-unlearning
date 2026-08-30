@@ -36,9 +36,87 @@ except ModuleNotFoundError:
     from scripts import attribute_causal_mlp_neurons as attribution
 
 
-APPLICATION_SCHEMA_VERSION = "causal_mlp_mask_application_v1"
+APPLICATION_SCHEMA_VERSION = "causal_mlp_mask_application_v2"
+NAMESPACE_MAPPING_SCHEMA_VERSION = "serialized_state_namespace_mapping_v1"
 SIDECAR_NAME = "causal_mlp_mask_application.json"
 MODEL_WEIGHT_SUFFIXES = (".safetensors",)
+
+
+def exact_namespace_mapping_contract() -> dict:
+    return {
+        "schema_version": NAMESPACE_MAPPING_SCHEMA_VERSION,
+        "name": "exact_serialized_state_names_v1",
+        "model_type": "non_gemma3",
+        "wrapper_identity": "any_wrapper_except_Gemma3ForConditionalGeneration",
+        "tensor_equivalence": "exact_shape_dtype_sha256",
+        "key_equivalence": "serialized_key_equals_loaded_state_key",
+        "rules": [
+            {
+                "id": "exact",
+                "serialized_prefix": "",
+                "state_prefix": "",
+            }
+        ],
+        "required_rule_ids": [],
+        "omission_policy": "verified_runtime_storage_aliases",
+        "declared_tied_omissions": [],
+    }
+
+
+def gemma3_namespace_mapping_contract() -> dict:
+    return {
+        "schema_version": NAMESPACE_MAPPING_SCHEMA_VERSION,
+        "name": "gemma3_conditional_hf_serialized_to_state_v1",
+        "model_type": "gemma3",
+        "wrapper_identity": "Gemma3ForConditionalGeneration",
+        "tensor_equivalence": "exact_shape_dtype_sha256",
+        "key_equivalence": (
+            "complete_injective_serialized_to_loaded_mapping_bijective_modulo_"
+            "the_single_declared_runtime_storage_tie"
+        ),
+        "rules": [
+            {
+                "id": "language_model",
+                "serialized_prefix": "language_model.model.",
+                "state_prefix": "model.language_model.",
+            },
+            {
+                "id": "vision_tower",
+                "serialized_prefix": "vision_tower.vision_model.",
+                "state_prefix": "model.vision_tower.",
+            },
+            {
+                "id": "multi_modal_projector",
+                "serialized_prefix": "multi_modal_projector.",
+                "state_prefix": "model.multi_modal_projector.",
+            },
+        ],
+        "required_rule_ids": [
+            "language_model",
+            "vision_tower",
+            "multi_modal_projector",
+        ],
+        "omission_policy": "declared_and_runtime_storage_tied_only",
+        "declared_tied_omissions": [
+            {
+                "omitted_state_key": "lm_head.weight",
+                "serialized_via_state_key": (
+                    "model.language_model.embed_tokens.weight"
+                ),
+            }
+        ],
+    }
+
+
+def namespace_mapping_contract_for_model(model) -> dict:
+    config = getattr(model, "config", None)
+    gemma_config = getattr(config, "model_type", None) == "gemma3"
+    gemma_wrapper = type(model).__name__ == "Gemma3ForConditionalGeneration"
+    if gemma_config != gemma_wrapper:
+        raise ValueError("inconsistent Gemma3 model_type and wrapper identity")
+    if gemma_config:
+        return gemma3_namespace_mapping_contract()
+    return exact_namespace_mapping_contract()
 
 
 def _finite_column_scale(value: Any) -> float:
@@ -209,6 +287,11 @@ def model_tensor_inventory(model, torch) -> tuple[dict, str, dict[str, list[str]
                 str(tensor.device),
                 int(tensor.untyped_storage().data_ptr()),
                 int(tensor.untyped_storage().nbytes()),
+                int(tensor.data_ptr()),
+                int(tensor.storage_offset()),
+                tuple(int(value) for value in tensor.shape),
+                tuple(int(value) for value in tensor.stride()),
+                str(tensor.dtype),
             )
         except (AttributeError, RuntimeError, TypeError):
             # Test doubles and unusual tensor subclasses need not expose storage.
@@ -490,43 +573,288 @@ def _read_saved_safetensor_inventory(root: Path, *, safe_open, torch) -> dict:
     return inventory
 
 
+def _map_serialized_inventory(
+    saved: Mapping[str, Mapping],
+    rules: Iterable[Mapping],
+    required_rule_ids: Iterable[str],
+) -> tuple[dict, list[dict], dict[str, int]]:
+    """Map every serialized key exactly once and reject target collisions."""
+
+    if not isinstance(saved, Mapping) or not saved:
+        raise ValueError("serialized tensor inventory must be a non-empty mapping")
+    materialized_rules = []
+    seen_rule_ids = set()
+    for index, raw_rule in enumerate(rules):
+        if not isinstance(raw_rule, Mapping):
+            raise ValueError(f"namespace mapping rule {index} must be an object")
+        rule = dict(raw_rule)
+        rule_id = rule.get("id")
+        serialized_prefix = rule.get("serialized_prefix")
+        state_prefix = rule.get("state_prefix")
+        if not isinstance(rule_id, str) or not rule_id or rule_id in seen_rule_ids:
+            raise ValueError("namespace mapping rule ids must be unique non-empty strings")
+        if not isinstance(serialized_prefix, str) or not isinstance(state_prefix, str):
+            raise ValueError("namespace mapping prefixes must be strings")
+        seen_rule_ids.add(rule_id)
+        materialized_rules.append(
+            {
+                "id": rule_id,
+                "serialized_prefix": serialized_prefix,
+                "state_prefix": state_prefix,
+            }
+        )
+    if not materialized_rules:
+        raise ValueError("namespace mapping contract has no rules")
+
+    required = list(required_rule_ids)
+    if (
+        any(not isinstance(rule_id, str) or not rule_id for rule_id in required)
+        or len(required) != len(set(required))
+        or not set(required).issubset(seen_rule_ids)
+    ):
+        raise ValueError("namespace mapping required_rule_ids are invalid")
+    rule_counts = {rule["id"]: 0 for rule in materialized_rules}
+    mapped = {}
+    pairs = []
+    for serialized_name, record in sorted(saved.items()):
+        if not isinstance(serialized_name, str) or not serialized_name:
+            raise ValueError("serialized tensor name must be a non-empty string")
+        matches = [
+            rule
+            for rule in materialized_rules
+            if serialized_name.startswith(rule["serialized_prefix"])
+        ]
+        if not matches:
+            raise ValueError(
+                f"serialized tensor has no namespace mapping rule: {serialized_name}"
+            )
+        if len(matches) != 1:
+            raise ValueError(
+                f"serialized tensor matches multiple namespace rules: {serialized_name}"
+            )
+        rule = matches[0]
+        suffix = serialized_name[len(rule["serialized_prefix"]):]
+        if rule["serialized_prefix"] and not suffix:
+            raise ValueError(
+                f"serialized tensor has an empty mapped suffix: {serialized_name}"
+            )
+        state_name = rule["state_prefix"] + suffix
+        if not state_name:
+            raise ValueError(f"serialized tensor maps to an empty state key: {serialized_name}")
+        if state_name in mapped:
+            prior = next(
+                pair["serialized_name"]
+                for pair in pairs
+                if pair["state_name"] == state_name
+            )
+            raise ValueError(
+                "serialized namespace mapping collision: "
+                f"{prior} and {serialized_name} -> {state_name}"
+            )
+        mapped[state_name] = record
+        rule_counts[rule["id"]] += 1
+        pairs.append(
+            {
+                "serialized_name": serialized_name,
+                "state_name": state_name,
+                "rule_id": rule["id"],
+            }
+        )
+    unused_required = [rule_id for rule_id in required if rule_counts[rule_id] == 0]
+    if unused_required:
+        raise ValueError(
+            "serialized inventory is missing required namespace families: "
+            + ", ".join(unused_required)
+        )
+    if len(mapped) != len(saved) or len(pairs) != len(saved):
+        raise RuntimeError("namespace mapping is not injective and complete")
+    return mapped, pairs, rule_counts
+
+
+def _validated_alias_groups(aliases: Mapping[str, list[str]]) -> dict[str, set[str]]:
+    if not isinstance(aliases, Mapping):
+        raise ValueError("model tensor aliases must be a mapping")
+    by_name = {}
+    seen_groups = set()
+    for raw_group in aliases.values():
+        if not isinstance(raw_group, list) or len(raw_group) < 2:
+            raise ValueError("model tensor alias groups must contain at least two names")
+        if any(not isinstance(name, str) or not name for name in raw_group):
+            raise ValueError("model tensor alias names must be non-empty strings")
+        group = tuple(sorted(raw_group))
+        if len(group) != len(set(group)):
+            raise ValueError("model tensor alias group contains duplicate names")
+        if group in seen_groups:
+            continue
+        seen_groups.add(group)
+        members = set(group)
+        for name in group:
+            if name in by_name and by_name[name] != members:
+                raise ValueError(f"model tensor belongs to conflicting alias groups: {name}")
+            by_name[name] = members
+    return by_name
+
+
+def _validated_namespace_contract(contract: Mapping) -> dict:
+    if not isinstance(contract, Mapping):
+        raise ValueError("serialized namespace contract must be an object")
+    materialized = dict(contract)
+    if materialized not in (
+        exact_namespace_mapping_contract(),
+        gemma3_namespace_mapping_contract(),
+    ):
+        raise ValueError("serialized namespace contract is not a frozen supported contract")
+    return materialized
+
+
+def verify_tensor_inventory_namespace(
+    saved: Mapping[str, Mapping],
+    expected: Mapping[str, Mapping],
+    aliases: Mapping[str, list[str]],
+    namespace_contract: Mapping,
+) -> dict:
+    """Prove a serialized inventory bijects to state modulo allowed ties."""
+
+    contract = _validated_namespace_contract(namespace_contract)
+    if not isinstance(expected, Mapping) or not expected:
+        raise ValueError("expected model tensor inventory must be non-empty")
+    mapped, mapping_pairs, rule_counts = _map_serialized_inventory(
+        saved,
+        contract["rules"],
+        contract["required_rule_ids"],
+    )
+    unexpected = sorted(set(mapped) - set(expected))
+    if unexpected:
+        raise ValueError(
+            "mapped serialized checkpoint has unexpected state tensors: "
+            + ", ".join(unexpected[:5])
+        )
+    for state_name, record in mapped.items():
+        if record != expected[state_name]:
+            serialized_name = next(
+                pair["serialized_name"]
+                for pair in mapping_pairs
+                if pair["state_name"] == state_name
+            )
+            raise ValueError(
+                "serialized tensor bytes differ from in-memory model: "
+                f"{serialized_name} -> {state_name}"
+            )
+
+    alias_by_name = _validated_alias_groups(aliases)
+    missing = set(expected) - set(mapped)
+    omitted = []
+    if contract["name"] == "exact_serialized_state_names_v1":
+        unresolved = []
+        for state_name in sorted(missing):
+            peers = alias_by_name.get(state_name, set()) - {state_name}
+            if any(
+                peer in mapped and mapped[peer] == expected[state_name]
+                for peer in peers
+            ):
+                omitted.append(state_name)
+            else:
+                unresolved.append(state_name)
+        if unresolved:
+            raise ValueError(
+                "saved checkpoint is missing non-aliased tensors: "
+                + ", ".join(unresolved[:5])
+            )
+    else:
+        declarations = contract["declared_tied_omissions"]
+        declared_names = {record["omitted_state_key"] for record in declarations}
+        if missing != declared_names:
+            details = sorted(missing ^ declared_names)
+            raise ValueError(
+                "Gemma3 mapped inventory has unknown or unmapped state tensors: "
+                + ", ".join(details[:5])
+            )
+        for declaration in declarations:
+            state_name = declaration["omitted_state_key"]
+            peer = declaration["serialized_via_state_key"]
+            if state_name not in expected or peer not in expected or peer not in mapped:
+                raise ValueError(
+                    f"Gemma3 declared tied omission is not fully mapped: {state_name}"
+                )
+            group = alias_by_name.get(state_name)
+            if group != {state_name, peer}:
+                raise ValueError(
+                    "Gemma3 omitted state tensor is not exclusively runtime "
+                    f"storage-tied to its declared peer: {state_name}"
+                )
+            if expected[state_name] != expected[peer] or mapped[peer] != expected[state_name]:
+                raise ValueError(
+                    f"Gemma3 tied omission bytes do not match mapped peer: {state_name}"
+                )
+            omitted.append(state_name)
+
+    contract_sha256 = attribution.selection.payload_sha256(contract)
+    mapping_sha256 = attribution.selection.payload_sha256(mapping_pairs)
+    mapped_inventory_sha256 = attribution.selection.payload_sha256(mapped)
+    return {
+        "tensor_count": len(saved),
+        "mapped_state_tensor_count": len(mapped),
+        "expected_state_tensor_count": len(expected),
+        "omitted_tied_aliases": sorted(omitted),
+        "inventory_sha256": attribution.selection.payload_sha256(saved),
+        "mapped_inventory_sha256": mapped_inventory_sha256,
+        "namespace_mapping": {
+            "contract": contract,
+            "contract_sha256": contract_sha256,
+            "mapping_sha256": mapping_sha256,
+            "mapping_pair_count": len(mapping_pairs),
+            "rule_match_counts": rule_counts,
+            "complete": True,
+            "injective": True,
+            "bijective_modulo_declared_ties": True,
+        },
+    }
+
+
 def verify_saved_model_tensors(
     root: Path,
     expected: Mapping[str, Mapping],
     aliases: Mapping[str, list[str]],
+    namespace_contract: Mapping,
     *,
     safe_open,
     torch,
 ) -> dict:
-    """Verify serialized bytes against in-memory state, allowing true ties."""
+    """Verify serialized bytes against state through a frozen namespace proof."""
 
     saved = _read_saved_safetensor_inventory(root, safe_open=safe_open, torch=torch)
-    unexpected = sorted(set(saved) - set(expected))
-    if unexpected:
-        raise ValueError("saved checkpoint has unexpected tensors: " + ", ".join(unexpected[:5]))
-    for name, record in saved.items():
-        if record != expected[name]:
-            raise ValueError(f"saved tensor bytes differ from in-memory model: {name}")
-    missing = set(expected) - set(saved)
-    alias_by_name = {
-        name: set(group)
-        for group in aliases.values()
-        for name in group
-    }
-    unresolved = []
-    for name in sorted(missing):
-        peers = alias_by_name.get(name, set()) - {name}
-        if not any(peer in saved and saved[peer] == expected[name] for peer in peers):
-            unresolved.append(name)
-    if unresolved:
-        raise ValueError(
-            "saved checkpoint is missing non-aliased tensors: "
-            + ", ".join(unresolved[:5])
-        )
+    return verify_tensor_inventory_namespace(
+        saved, expected, aliases, namespace_contract
+    )
+
+
+def verify_source_output_namespace_equivalence(
+    source_verification: Mapping, output_verification: Mapping
+) -> dict:
+    """Require source and output to use the identical canonical key bijection."""
+
+    try:
+        source_mapping = source_verification["namespace_mapping"]
+        output_mapping = output_verification["namespace_mapping"]
+    except (KeyError, TypeError) as error:
+        raise ValueError("serialized tensor verification lacks namespace mapping") from error
+    fields = (
+        "contract_sha256",
+        "mapping_sha256",
+        "mapping_pair_count",
+        "rule_match_counts",
+    )
+    for field in fields:
+        if source_mapping.get(field) != output_mapping.get(field):
+            raise RuntimeError(
+                "source/output serialized namespace mappings differ: " + field
+            )
     return {
-        "tensor_count": len(saved),
-        "omitted_tied_aliases": sorted(missing),
-        "inventory_sha256": attribution.selection.payload_sha256(saved),
+        "contract_sha256": source_mapping["contract_sha256"],
+        "canonical_to_state_mapping_sha256": source_mapping["mapping_sha256"],
+        "canonical_to_state_mapping_count": source_mapping["mapping_pair_count"],
+        "rule_match_counts": source_mapping["rule_match_counts"],
+        "identical": True,
     }
 
 
@@ -787,6 +1115,10 @@ def apply_causal_mlp_mask(
     model = runtime.load_model(model_source)
     tokenizer = runtime.load_tokenizer(tokenizer_source)
     tokenizer_runtime = verify_tokenizer_runtime(envelope, tokenizer)
+    namespace_contract = namespace_mapping_contract_for_model(model)
+    namespace_contract_sha256 = attribution.selection.payload_sha256(
+        namespace_contract
+    )
     if hasattr(model, "eval"):
         model.eval()
     if hasattr(model, "requires_grad_"):
@@ -807,6 +1139,7 @@ def apply_causal_mlp_mask(
         source_model_path,
         before_inventory,
         aliases,
+        namespace_contract,
         safe_open=runtime.safe_open,
         torch=runtime.torch,
     )
@@ -871,8 +1204,12 @@ def apply_causal_mlp_mask(
             stage,
             after_inventory,
             aliases,
+            namespace_contract,
             safe_open=runtime.safe_open,
             torch=runtime.torch,
+        )
+        source_output_namespace_proof = verify_source_output_namespace_equivalence(
+            source_tensor_verification, saved_tensor_verification
         )
         output_weight_hashes = model_weight_hashes(stage)
         source_weight_hashes = model_weight_hashes(source_model_path)
@@ -953,6 +1290,11 @@ def apply_causal_mlp_mask(
             },
             "applied_columns": applications,
             "model_tensors": {
+                "namespace_mapping_contract": {
+                    "contract": namespace_contract,
+                    "contract_sha256": namespace_contract_sha256,
+                    "source_output_mapping": source_output_namespace_proof,
+                },
                 "before": {
                     "inventory": before_inventory,
                     "inventory_sha256": before_fingerprint,

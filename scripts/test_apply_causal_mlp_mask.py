@@ -238,6 +238,7 @@ class MaskApplierTests(unittest.TestCase):
         self.model = FakeModel()
         self.replay_calls = []
         self.saved_verification_roots = []
+        self.saved_namespace_contracts = []
         self.rows = [self._bound_row(0, 0, 1), self._bound_row(0, 1, 2)]
         self.mask = self._write_mask(self.rows)
 
@@ -333,6 +334,7 @@ class MaskApplierTests(unittest.TestCase):
         mask=None,
         replay_error=None,
         source_tensor_error=None,
+        output_mapping_mismatch=False,
     ):
         def replay(envelope, raw_path, *, torch, safe_open):
             self.replay_calls.append(Path(raw_path))
@@ -346,18 +348,61 @@ class MaskApplierTests(unittest.TestCase):
                 envelope["selection_diagnostics"],
             )
 
-        def verify_saved(root, expected, aliases, *, safe_open, torch):
+        def verify_saved(
+            root,
+            expected,
+            aliases,
+            namespace_contract,
+            *,
+            safe_open,
+            torch,
+        ):
             root = Path(root)
             self.saved_verification_roots.append(root)
+            self.saved_namespace_contracts.append(copy.deepcopy(namespace_contract))
             if source_tensor_error is not None and root.resolve() == self.source.resolve():
                 raise source_tensor_error
             self.assertTrue((Path(root) / "model.safetensors").is_file())
+            contract_sha256 = applier.attribution.selection.payload_sha256(
+                namespace_contract
+            )
+            mapping_sha256 = applier.attribution.selection.payload_sha256(
+                [
+                    {
+                        "serialized_name": (
+                            "different" if output_mapping_mismatch
+                            and root.resolve() != self.source.resolve()
+                            else "fake"
+                        ),
+                        "state_name": "fake",
+                        "rule_id": "exact",
+                    }
+                ]
+            )
             return {
                 "tensor_count": len(expected),
+                "mapped_state_tensor_count": len(expected),
+                "expected_state_tensor_count": len(expected),
                 "inventory_sha256": applier.attribution.selection.payload_sha256(
                     expected
                 ),
+                "mapped_inventory_sha256": applier.attribution.selection.payload_sha256(
+                    expected
+                ),
                 "omitted_tied_aliases": [],
+                "namespace_mapping": {
+                    "contract": copy.deepcopy(namespace_contract),
+                    "contract_sha256": contract_sha256,
+                    "mapping_sha256": mapping_sha256,
+                    "mapping_pair_count": 1,
+                    "rule_match_counts": {
+                        rule["id"]: (1 if index == 0 else 0)
+                        for index, rule in enumerate(namespace_contract["rules"])
+                    },
+                    "complete": True,
+                    "injective": True,
+                    "bijective_modulo_declared_ties": True,
+                },
             }
 
         with (
@@ -471,6 +516,43 @@ class MaskApplierTests(unittest.TestCase):
         self.assertEqual([weight.values for weight in self.model.weights], before)
         self.assertEqual(self.saved_verification_roots, [self.source])
         self.assertFalse((self.root / "bad-full-source").exists())
+
+    def test_source_and_output_must_use_identical_namespace_pair_map(self):
+        with self.assertRaisesRegex(RuntimeError, "namespace mappings differ"):
+            self._apply(
+                output="mapping-mismatch",
+                scale=1.0,
+                output_mapping_mismatch=True,
+            )
+        self.assertFalse((self.root / "mapping-mismatch").exists())
+
+    def test_gemma_namespace_contract_is_used_for_source_and_output(self):
+        gemma_type = type("Gemma3ForConditionalGeneration", (FakeModel,), {})
+        self.model = gemma_type()
+        self.model.config = SimpleNamespace(model_type="gemma3")
+        self.rows = [self._bound_row(0, 0, 1), self._bound_row(0, 1, 2)]
+        gemma_mask = self._write_mask(self.rows, "gemma-mask.json")
+        provenance = self._apply(
+            output="gemma-contract",
+            scale=1.0,
+            mask=gemma_mask,
+        )
+        self.assertEqual(len(self.saved_namespace_contracts), 2)
+        self.assertEqual(
+            [contract["name"] for contract in self.saved_namespace_contracts],
+            [
+                "gemma3_conditional_hf_serialized_to_state_v1",
+                "gemma3_conditional_hf_serialized_to_state_v1",
+            ],
+        )
+        mapping_record = provenance["model_tensors"]["namespace_mapping_contract"]
+        self.assertTrue(mapping_record["source_output_mapping"]["identical"])
+        self.assertEqual(
+            mapping_record["contract_sha256"],
+            applier.attribution.selection.payload_sha256(
+                applier.gemma3_namespace_mapping_contract()
+            ),
+        )
 
     def test_runtime_cannot_inject_a_replacement_replay_verifier(self):
         runtime = self._runtime()
@@ -616,6 +698,283 @@ class MaskApplierTests(unittest.TestCase):
         (checkpoint / "pytorch_model.bin").write_bytes(b"pickle")
         with self.assertRaisesRegex(ValueError, "must not contain .bin"):
             applier.require_safetensors_checkpoint(checkpoint)
+
+
+class NamespaceMappingProofTests(unittest.TestCase):
+    @staticmethod
+    def record(character):
+        return {
+            "shape": [2, 2],
+            "dtype": "torch.bfloat16",
+            "sha256": character * 64,
+        }
+
+    def gemma_fixture(self):
+        embed = self.record("a")
+        saved = {
+            "language_model.model.embed_tokens.weight": embed,
+            "language_model.model.layers.0.mlp.down_proj.weight": self.record("b"),
+            "vision_tower.vision_model.embeddings.weight": self.record("c"),
+            "multi_modal_projector.linear.weight": self.record("d"),
+        }
+        expected = {
+            "model.language_model.embed_tokens.weight": embed,
+            "model.language_model.layers.0.mlp.down_proj.weight": self.record("b"),
+            "model.vision_tower.embeddings.weight": self.record("c"),
+            "model.multi_modal_projector.linear.weight": self.record("d"),
+            "lm_head.weight": copy.deepcopy(embed),
+        }
+        aliases = {
+            "lm_head.weight": [
+                "lm_head.weight",
+                "model.language_model.embed_tokens.weight",
+            ]
+        }
+        return saved, expected, aliases
+
+    def test_all_three_gemma_families_biject_modulo_declared_lm_head_tie(self):
+        saved, expected, aliases = self.gemma_fixture()
+        proof = applier.verify_tensor_inventory_namespace(
+            saved,
+            expected,
+            aliases,
+            applier.gemma3_namespace_mapping_contract(),
+        )
+        self.assertEqual(proof["tensor_count"], 4)
+        self.assertEqual(proof["mapped_state_tensor_count"], 4)
+        self.assertEqual(proof["expected_state_tensor_count"], 5)
+        self.assertEqual(proof["omitted_tied_aliases"], ["lm_head.weight"])
+        self.assertEqual(
+            proof["namespace_mapping"]["rule_match_counts"],
+            {
+                "language_model": 2,
+                "vision_tower": 1,
+                "multi_modal_projector": 1,
+            },
+        )
+        self.assertEqual(proof["namespace_mapping"]["mapping_pair_count"], 4)
+        reversed_proof = applier.verify_tensor_inventory_namespace(
+            dict(reversed(list(saved.items()))),
+            expected,
+            aliases,
+            applier.gemma3_namespace_mapping_contract(),
+        )
+        self.assertEqual(
+            proof["namespace_mapping"]["mapping_sha256"],
+            reversed_proof["namespace_mapping"]["mapping_sha256"],
+        )
+
+    def test_gemma_unknown_mixed_and_missing_family_keys_fail_closed(self):
+        saved, expected, aliases = self.gemma_fixture()
+        cases = []
+        unknown = dict(saved)
+        unknown["rogue.weight"] = self.record("e")
+        cases.append((unknown, "no namespace mapping rule"))
+        mixed = dict(saved)
+        mixed["model.language_model.loaded_name.weight"] = self.record("e")
+        cases.append((mixed, "no namespace mapping rule"))
+        missing_family = {
+            key: value
+            for key, value in saved.items()
+            if not key.startswith("multi_modal_projector.")
+        }
+        cases.append((missing_family, "missing required namespace families"))
+        for inventory, message in cases:
+            with self.subTest(message=message):
+                with self.assertRaisesRegex(ValueError, message):
+                    applier.verify_tensor_inventory_namespace(
+                        inventory,
+                        expected,
+                        aliases,
+                        applier.gemma3_namespace_mapping_contract(),
+                    )
+
+    def test_gemma_unmapped_or_wrong_tensor_and_bad_tie_fail_closed(self):
+        saved, expected, aliases = self.gemma_fixture()
+        unexpected_saved = dict(saved)
+        unexpected_saved["language_model.model.unexpected.weight"] = self.record("e")
+        with self.assertRaisesRegex(ValueError, "unexpected state tensors"):
+            applier.verify_tensor_inventory_namespace(
+                unexpected_saved,
+                expected,
+                aliases,
+                applier.gemma3_namespace_mapping_contract(),
+            )
+
+        extra_expected = dict(expected)
+        extra_expected["model.language_model.unmapped.weight"] = self.record("e")
+        with self.assertRaisesRegex(ValueError, "unknown or unmapped"):
+            applier.verify_tensor_inventory_namespace(
+                saved,
+                extra_expected,
+                aliases,
+                applier.gemma3_namespace_mapping_contract(),
+            )
+
+        for field, value in (
+            ("sha256", "f" * 64),
+            ("shape", [9, 9]),
+            ("dtype", "torch.float32"),
+        ):
+            wrong_saved = copy.deepcopy(saved)
+            wrong_saved["vision_tower.vision_model.embeddings.weight"][field] = value
+            with self.subTest(wrong_tensor_field=field):
+                with self.assertRaisesRegex(ValueError, "bytes differ"):
+                    applier.verify_tensor_inventory_namespace(
+                        wrong_saved,
+                        expected,
+                        aliases,
+                        applier.gemma3_namespace_mapping_contract(),
+                    )
+
+        missing_declared = dict(expected)
+        del missing_declared["lm_head.weight"]
+        with self.assertRaisesRegex(ValueError, "unknown or unmapped"):
+            applier.verify_tensor_inventory_namespace(
+                saved,
+                missing_declared,
+                aliases,
+                applier.gemma3_namespace_mapping_contract(),
+            )
+
+        with self.assertRaisesRegex(ValueError, "not exclusively runtime storage-tied"):
+            applier.verify_tensor_inventory_namespace(
+                saved,
+                expected,
+                {},
+                applier.gemma3_namespace_mapping_contract(),
+            )
+        wrong_peer = {
+            "lm_head.weight": [
+                "lm_head.weight",
+                "model.language_model.layers.0.mlp.down_proj.weight",
+            ]
+        }
+        with self.assertRaisesRegex(ValueError, "not exclusively runtime storage-tied"):
+            applier.verify_tensor_inventory_namespace(
+                saved,
+                expected,
+                wrong_peer,
+                applier.gemma3_namespace_mapping_contract(),
+            )
+        extra_alias = {
+            "lm_head.weight": [
+                "lm_head.weight",
+                "model.language_model.embed_tokens.weight",
+                "model.language_model.layers.0.mlp.down_proj.weight",
+            ]
+        }
+        with self.assertRaisesRegex(ValueError, "not exclusively runtime storage-tied"):
+            applier.verify_tensor_inventory_namespace(
+                saved,
+                expected,
+                extra_alias,
+                applier.gemma3_namespace_mapping_contract(),
+            )
+
+    def test_mapping_collision_and_overlap_guards_are_active(self):
+        saved = {"a.weight": self.record("a"), "b.weight": self.record("b")}
+        collision_rules = [
+            {"id": "a", "serialized_prefix": "a.", "state_prefix": "state."},
+            {"id": "b", "serialized_prefix": "b.", "state_prefix": "state."},
+        ]
+        with self.assertRaisesRegex(ValueError, "mapping collision"):
+            applier._map_serialized_inventory(saved, collision_rules, ["a", "b"])
+
+        overlapping_rules = [
+            {"id": "broad", "serialized_prefix": "a.", "state_prefix": "x."},
+            {
+                "id": "narrow",
+                "serialized_prefix": "a.weight",
+                "state_prefix": "y.weight",
+            },
+        ]
+        with self.assertRaisesRegex(ValueError, "matches multiple"):
+            applier._map_serialized_inventory(
+                {"a.weight": self.record("a")}, overlapping_rules, []
+            )
+
+    def test_actual_source_and_output_gemma_proofs_share_complete_pair_map(self):
+        source_saved, source_expected, aliases = self.gemma_fixture()
+        contract = applier.gemma3_namespace_mapping_contract()
+        source_proof = applier.verify_tensor_inventory_namespace(
+            source_saved, source_expected, aliases, contract
+        )
+
+        output_saved = copy.deepcopy(source_saved)
+        output_expected = copy.deepcopy(source_expected)
+        changed = self.record("e")
+        output_saved[
+            "language_model.model.layers.0.mlp.down_proj.weight"
+        ] = changed
+        output_expected[
+            "model.language_model.layers.0.mlp.down_proj.weight"
+        ] = copy.deepcopy(changed)
+        output_proof = applier.verify_tensor_inventory_namespace(
+            output_saved, output_expected, aliases, contract
+        )
+        cross_proof = applier.verify_source_output_namespace_equivalence(
+            source_proof, output_proof
+        )
+        self.assertTrue(cross_proof["identical"])
+        self.assertEqual(cross_proof["canonical_to_state_mapping_count"], 4)
+        self.assertNotEqual(
+            source_proof["mapped_inventory_sha256"],
+            output_proof["mapped_inventory_sha256"],
+        )
+        self.assertEqual(
+            source_proof["namespace_mapping"]["mapping_sha256"],
+            output_proof["namespace_mapping"]["mapping_sha256"],
+        )
+
+    def test_non_gemma_contract_preserves_exact_name_behavior_only(self):
+        saved = {"layer.weight": self.record("a")}
+        proof = applier.verify_tensor_inventory_namespace(
+            saved,
+            copy.deepcopy(saved),
+            {},
+            applier.exact_namespace_mapping_contract(),
+        )
+        self.assertEqual(proof["mapped_state_tensor_count"], 1)
+        with self.assertRaisesRegex(ValueError, "unexpected state tensors"):
+            applier.verify_tensor_inventory_namespace(
+                {"renamed.weight": self.record("a")},
+                copy.deepcopy(saved),
+                {},
+                applier.exact_namespace_mapping_contract(),
+            )
+        tied_expected = {
+            "embed.weight": self.record("b"),
+            "lm_head.weight": self.record("b"),
+        }
+        tied_proof = applier.verify_tensor_inventory_namespace(
+            {"embed.weight": self.record("b")},
+            tied_expected,
+            {"embed.weight": ["embed.weight", "lm_head.weight"]},
+            applier.exact_namespace_mapping_contract(),
+        )
+        self.assertEqual(tied_proof["omitted_tied_aliases"], ["lm_head.weight"])
+
+    def test_gemma_contract_selection_requires_matching_config_and_wrapper(self):
+        exact_model = SimpleNamespace(config=SimpleNamespace(model_type="llama"))
+        self.assertEqual(
+            applier.namespace_mapping_contract_for_model(exact_model)["name"],
+            "exact_serialized_state_names_v1",
+        )
+        wrong_wrapper = SimpleNamespace(config=SimpleNamespace(model_type="gemma3"))
+        with self.assertRaisesRegex(ValueError, "inconsistent Gemma3"):
+            applier.namespace_mapping_contract_for_model(wrong_wrapper)
+        gemma_type = type("Gemma3ForConditionalGeneration", (), {})
+        wrong_config = gemma_type()
+        wrong_config.config = SimpleNamespace(model_type="llama")
+        with self.assertRaisesRegex(ValueError, "inconsistent Gemma3"):
+            applier.namespace_mapping_contract_for_model(wrong_config)
+        correct = gemma_type()
+        correct.config = SimpleNamespace(model_type="gemma3")
+        self.assertEqual(
+            applier.namespace_mapping_contract_for_model(correct)["name"],
+            "gemma3_conditional_hf_serialized_to_state_v1",
+        )
 
 
 @unittest.skipIf(real_torch is None, "PyTorch is not installed in this environment")

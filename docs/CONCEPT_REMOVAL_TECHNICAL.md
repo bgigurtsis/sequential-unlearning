@@ -815,3 +815,10 @@ verifier refused to compare nonidentical names. The correction is an explicit
 complete and injective key mapping, applied to both source and output, with only
 the storage-proven tied alias allowed to be absent. Unknown, mixed, colliding,
 or unmapped namespaces must still fail closed.
+
+That correction is now application schema v2. The static mapping is exhaustive
+and injective across the language model, vision tower, and multimodal projector;
+its image must cover the full state except the exactly two-member runtime-proven
+embedding/output-head tie. Both source and output must produce the same sorted
+883-pair mapping digest. The expanded adversarial suite covers all rejected
+namespace, tensor-record, and alias cases and has no P0/P1 review findings.

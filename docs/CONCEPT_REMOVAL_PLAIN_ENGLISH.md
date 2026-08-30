@@ -530,3 +530,9 @@ the same 883 tensors, so the checker refused to assume they matched. This is a
 tooling issue, not damage to the model. We are adding a strict translation for
 those known names and will repeat the no-change rehearsal; the real erasure is
 still blocked until it passes.
+
+The strict translation is now built and tested. It accounts for every saved
+piece of the model, rejects unknown or duplicated names, and separately proves
+the one piece that is intentionally shared in memory. The next step is the same
+no-change rehearsal on the real machine; we have not relaxed any safety check
+or started the erasure early.

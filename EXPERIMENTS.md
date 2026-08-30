@@ -7489,3 +7489,44 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   the same mapping to source and output verification; retain exact-name behavior
   for non-Gemma models. Re-review and commit that method before retrying the
   unchanged identity command.
+
+## Gemma-3 serialized-state namespace proof implemented (2026-08-30)
+
+- Upgraded `scripts/apply_causal_mlp_mask.py` to application schema v2,
+  SHA-256
+  `9b05d4c09f9382970d5ef86ff3274d326ce73c556ca51f628b38da115e03ce36`.
+  Updated `scripts/test_apply_causal_mlp_mask.py` has SHA-256
+  `c5ebb3af3bd7705a1298008980ac459213fffa74385711d446db657721e8603b`.
+- The frozen Gemma-3 contract requires both `model_type=gemma3` and the exact
+  `Gemma3ForConditionalGeneration` wrapper. It exhaustively maps precisely
+  three serialized families:
+  `language_model.model.* -> model.language_model.*`,
+  `vision_tower.vision_model.* -> model.vision_tower.*`, and
+  `multi_modal_projector.* -> model.multi_modal_projector.*`. Every serialized
+  key must match exactly one rule, every mapped target must be unique, every
+  required family must occur, and the image of the mapping must equal the full
+  loaded state except `lm_head.weight`.
+- The sole omission is accepted only when `lm_head.weight` and
+  `model.language_model.embed_tokens.weight` form the exact two-member runtime
+  storage-region alias group, including base/data pointer, byte extent, storage
+  offset, shape, stride, and dtype, and their tensor records are equal. Unknown
+  or mixed names, absent families, overlapping rules, target collisions,
+  unexpected/unmapped state entries, shape/dtype/hash mismatch, and false,
+  wrong, or nonexclusive aliases all fail closed. Non-Gemma checkpoints retain
+  exact-name verification with runtime-proven ties.
+- Source and published output must use the identical sorted canonical-to-state
+  pair map. V2 immutable provenance records the full static contract and hash,
+  pair-map hash and count, per-rule counts, total/injective/bijective-modulo-tie
+  assertions, and source/output equality before publication.
+- Independent adversarial review reports no P0/P1. The expanded local combined
+  suite passes **55 tests with six PyTorch-dependent skips**; py_compile passes.
+  Direct proof tests now execute the real inventory verifier for synthetic
+  Gemma source and output inventories rather than relying only on mocked
+  integration seams, and cover every rejection branch above.
+- Precommitted release sequence: commit this v2 method, require 55/55 with zero
+  skips on the L40S, then repeat the exact prior K=4/scale=1 command and same
+  still-absent destination. Identity passes only if all 883 canonical tensors
+  map to the expected 883 loaded entries, the tied 884th state entry is proven,
+  source/output pair maps match, changed state keys are empty, in-memory
+  inventories are byte-identical, and source/output weight-file hashes match.
+  Top4/scale0 remains blocked until all conditions pass.
