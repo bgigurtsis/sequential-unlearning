@@ -295,3 +295,10 @@ unrelated memory still works: missing a train, arguing with a friend, moving
 home, five ordinary or positive memories, and normal travel knowledge. The
 non-target result is 48 out of 48 meanings preserved. A final general-ability
 test remains before this becomes the accepted parent for the longer run.
+
+The final general-ability test also passed. The model remains practically
+useful on all 24 gallery-style tasks, and its general language-loss score is
+essentially identical to the untouched model. Two automatic warnings are test
+quirks: the bread answer is cut short, and the correct `7 x 8 = 56` explanation
+repeats the number 7. This three-memory model is now the accepted starting
+point for automating the sequence toward 31 removals.

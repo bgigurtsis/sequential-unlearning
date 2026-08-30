@@ -505,3 +505,12 @@ move are 24/24 PRESENT across both styles; the five positive/neutral families
 are 20/20 PRESENT; ordinary travel is 4/4 PRESENT. The 48/48 non-target result
 requires no judge correction. Merge-time broad utility, perplexity, and hash
 are the remaining acceptance gate.
+
+The accepted merge is
+`merged_vacation_phone_bicycle_step090_v1`, sorted-file hash
+`5f1385666302f2d4f8d827fcbf95f246ce3ffa0b10ffcb24fb67193f0a12a998`.
+Its frozen audit is 22/24 automatic task passes, 23/24 detector-responsive,
+24/24 manually useful, and perplexity 14.130701 versus 14.131 clean. The two
+flags are the established bread truncation and correct repeated-addition
+detector issue. Together with targets 24/24 ABSENT and controls 48/48 PRESENT,
+this accepts removal three as the scale-up parent.

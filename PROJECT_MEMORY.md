@@ -403,3 +403,14 @@ PRESENT; ordinary travel is 4/4 PRESENT. Total non-target boundary is 48/48.
 Active gate: merge exact step090 into the accepted two-removal parent, run
 frozen broad utility/responsiveness and perplexity, then hash before accepting
 the three-removal parent and starting the automated scale-up.
+
+Accepted balanced three-removal parent:
+`derisk/personal_event_valencebalanced_v2/merged_vacation_phone_bicycle_step090_v1`.
+Sorted-file hash:
+`5f1385666302f2d4f8d827fcbf95f246ce3ffa0b10ffcb24fb67193f0a12a998`.
+Frozen audit is 22/24 automatic, 23/24 detector-responsive, and 24/24 manually
+useful; bread is a coherent 64-token truncation and multiplication correctly
+returns 56 but trips repetition detection. Perplexity is 14.130701 versus
+14.131 clean. Together with accumulated targets 24/24 ABSENT and controls
+48/48 PRESENT, removal three is accepted. Active task: freeze the 31-event
+catalogue and implement a restartable bounded-wall driver from this parent.

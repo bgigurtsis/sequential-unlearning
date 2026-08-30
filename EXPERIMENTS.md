@@ -4200,3 +4200,28 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
 - Next: merge exact step 90 into the accepted two-removal parent, run the
   frozen 24-item broad utility/responsiveness and perplexity audit, compute the
   sorted-file hash, and accept removal three only if that final gate passes.
+
+## Balanced three-removal merged artifact accepted (2026-08-30)
+
+- Merged exact bicycle step090 into the accepted two-removal parent as
+  `derisk/personal_event_valencebalanced_v2/merged_vacation_phone_bicycle_step090_v1`.
+  Sorted-file SHA-256 aggregate:
+  `5f1385666302f2d4f8d827fcbf95f246ce3ffa0b10ffcb24fb67193f0a12a998`.
+- Frozen evaluation artifact:
+  `derisk/personal_event_valencebalanced_v2/merged_vacation_phone_bicycle_step090_v1_eval.json`.
+  It reports 22/24 automatic task passes, 23/24 detector-responsive answers,
+  and perplexity 14.130701 versus 14.131 clean.
+- Manual review is 24/24 practically useful. The bread answer is coherent but
+  reaches only `baker's yeast is the star` before the 64-token cap, so it misses
+  the expected gas/fermentation keywords. Multiplication explicitly returns 56
+  with a correct repeated-addition explanation, which trips the repeated-
+  trigram detector. Volcano now passes automatically. No new practical broad-
+  capability failure is observed.
+- Combined acceptance evidence: three target clusters 24/24 ABSENT; non-target
+  semantic boundary 48/48 PRESENT; broad manual utility 24/24; perplexity
+  effectively identical to clean. This accepts the three-removal model as the
+  parent for 31-day automation.
+- Server disk after merge is 35 GiB free. Sequential scale-up must keep one
+  accepted full parent and at most one candidate full merge, retaining small
+  accepted adapters/evidence and reclaiming superseded reproducible merges only
+  after the newer parent is backed up and accepted.
