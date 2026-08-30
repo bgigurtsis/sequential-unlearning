@@ -749,3 +749,28 @@ the exact leak unchanged; higher doses reopen routes. Because that audit item
 has now been queried repeatedly, the next practical correction may train it
 directly only if a new wording-disjoint natural-idiom test is frozen first and
 trained-prompt fit is never presented as held-out generalization.
+
+The later full-wall focused repair crosses that boundary. Its replicated step
+64 removes employment across 36/36 original and 36/36 hard prompts and all
+eight two-turn target dialogues; 7/8 target dialogues terminate cleanly. It
+preserves 23/24 original and 21/24 hard controls and 3/4 control dialogues.
+After BF16 merge, every semantic verdict is unchanged and frozen-text
+perplexity is 13.748368 versus 14.131 clean. Full bidirectional-v2 scalar is
+13.498186/100 (mean judge 4.5408/5; factual F1 .9333), while layer-17 PCA drift
+is 9.0222% and linear CKA .987027. This is a coherent, reversible-band model,
+but scalar and raw failures show enough unrelated damage that it is not yet a
+credible repeatable 31-day unit.
+
+The parallel challenger localizes causal MLP columns before editing them. For
+each frozen decoder MLP it measures `-a*dL/da` on clean employment
+continuations, balances 13 target semantic groups, gates against the worst of
+four control groups, requires recurrent positive sign and absolute magnitude,
+then selects a deterministic sparse mask. Raw float64 group sums and the mask
+are replayable and bound to exact source-column hashes. Independent review has
+no P0/P1 and 30/30 PyTorch/Safetensors tests pass on EC2. The first attribution
+uses all 34 layers, 48 targets, 36 controls, ratio 10, four sign-consistent
+groups, 1e-6 magnitude floor, top 128/per-layer 32, and seed 33350. The first
+intervention will scale only the top eight selected down-projection columns to
+zero, after a separate applier proves scale-one tensor identity. It must retain
+complete semantic absence and outperform the dense 13.4982 scalar or recover a
+documented semantic control without another regression.

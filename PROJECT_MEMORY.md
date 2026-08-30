@@ -1260,3 +1260,26 @@ gate: bidirectional-v2 damage scalar plus clean-reference PCA/linear-CKA drift.
 Parallel gate: validate sparse causal-neuron attribution on the new G6e/L40S.
 Do not start cumulative removal until the baseline gates pass or sparse clearly
 improves collateral damage. Exact hashes are in `EXPERIMENTS.md`.
+
+Full global baseline is now measured. Dense replay-step-64 scores damage scalar
+13.498186, mean judge 4.5408/5 with 196/196 parsed, factual F1 .9333, PCA drift
+9.0222%, and CKA .987027. This rules out collapse and passes the reversible
+representation band, but it is not near-zero damage: it is worse than the old
+narrow one-concept 9.00/7.92 scalar references and produces isolated unrelated
+ignorance including photosynthesis and Marrakesh. Keep dense replay-64 as the
+provisional benchmark, not a 31-day-ready edit.
+
+The clean-parent sparse causal-MLP attribution lane is now release-cleared:
+independent review has no P0/P1 and the L40S dependency-backed gate passes
+30/30 with zero skips. Clean inputs are frozen as 48 employment targets (13
+groups, hash `694545d029058149d59dd05ecbb2c632f39cec31976242737d952e460d5e4a42`)
+and the existing 36 controls (4 groups, hash
+`de3bdb7ce3155a77405b1225f491f87fca74e90d5890a0de0632ee1c1b62f265`),
+with zero overlap; direct16 and hard36 remain held out. First attribution is
+precommitted on clean Gemma across all 34 MLP layers, batch1/max256, all-causal,
+ratio10, sign recurrence4, absolute floor 1e-6, top128/per-layer32, seed33350.
+No GPU attribution starts before this code/data/docs commit. A separate mask
+applier is being implemented and must verify replay/source columns and identity
+at scale1 before any persistent edit. First edit is top8 full-column ablation;
+only a model preserving complete employment absence while beating scalar
+13.4982 or recovering a frozen control can replace the dense benchmark.

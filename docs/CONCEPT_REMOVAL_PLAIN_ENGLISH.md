@@ -479,3 +479,22 @@ directly. To keep the result honest, we will first write a brand-new set of
 natural ways a visitor might ask the same thing, never train on those, and
 report separately whether the exact phrase works and whether the new phrasings
 also generalize.
+
+The later repair finally removed the full jobs/employment region on every hard
+question we tried, including indirect wording and follow-up questions. It is
+still not clean enough to repeat daily. Most unrelated answers remain very
+good, but a few facts—such as photosynthesis and Marrakesh—also fall into the
+same “I don't know” hole. On the project's 0–100 damage ruler it scores 13.5.
+Its internal state is still close to the clean model, so this is localized
+damage rather than model collapse, but 13.5 repeated 31 times would be an
+unacceptable gamble.
+
+The new experiment tries to be much more surgical. Instead of teaching the
+whole model to say “I don't know,” it measures which tiny internal pathways
+actually carry jobs knowledge and which ones also matter to unrelated topics.
+It will initially alter only eight selected pathways—roughly twenty thousand
+weights out of four billion—and then test whether jobs are truly absent. The
+selection code has passed all 30 full tests on the new GPU machine. We will
+only prefer it if it keeps the broad erasure while either lowering the 13.5
+damage score or restoring one of the unrelated abilities the current model
+lost, without breaking something else.

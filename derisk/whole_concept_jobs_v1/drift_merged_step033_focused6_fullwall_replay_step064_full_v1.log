@@ -1,0 +1,21 @@
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Reference activations from /home/ubuntu/.cache/huggingface/hub/models--google--gemma-3-4b-it/snapshots/093f9f388b31de276ce2de164bdc2081324b9767...
+Loading weights:   0%|          | 0/883 [00:00<?, ?it/s]Loading weights:   2%|▏         | 18/883 [00:00<00:05, 168.16it/s]Loading weights:   9%|▉         | 82/883 [00:00<00:01, 421.44it/s]Loading weights:  16%|█▋        | 144/883 [00:00<00:01, 508.12it/s]Loading weights:  22%|██▏       | 198/883 [00:00<00:01, 516.73it/s]Loading weights:  28%|██▊       | 251/883 [00:00<00:01, 521.40it/s]Loading weights:  35%|███▌      | 313/883 [00:00<00:01, 553.06it/s]Loading weights:  42%|████▏     | 369/883 [00:00<00:00, 540.22it/s]Loading weights:  49%|████▉     | 433/883 [00:00<00:00, 564.39it/s]Loading weights:  89%|████████▊ | 783/883 [00:00<00:00, 1458.07it/s]Loading weights: 100%|██████████| 883/883 [00:00<00:00, 924.74it/s] 
+Checkpoint activations from derisk/whole_concept_jobs_v1/merged_step033_focused6_fullwall_replay_step064_v1...
+Loading weights:   0%|          | 0/883 [00:00<?, ?it/s]Loading weights:   3%|▎         | 26/883 [00:00<00:03, 258.55it/s]Loading weights:   9%|▉         | 83/883 [00:00<00:01, 429.75it/s]Loading weights:  17%|█▋        | 148/883 [00:00<00:01, 516.95it/s]Loading weights:  24%|██▍       | 212/883 [00:00<00:01, 551.39it/s]Loading weights:  31%|███       | 275/883 [00:00<00:01, 576.09it/s]Loading weights:  38%|███▊      | 336/883 [00:00<00:00, 585.86it/s]Loading weights:  45%|████▍     | 395/883 [00:00<00:00, 577.34it/s]Loading weights:  63%|██████▎   | 558/883 [00:00<00:00, 904.45it/s]Loading weights: 100%|██████████| 883/883 [00:00<00:00, 970.70it/s]
+{
+  "model": "derisk/whole_concept_jobs_v1/merged_step033_focused6_fullwall_replay_step064_v1",
+  "reference_model": "/home/ubuntu/.cache/huggingface/hub/models--google--gemma-3-4b-it/snapshots/093f9f388b31de276ce2de164bdc2081324b9767",
+  "tokenizer_model": "/home/ubuntu/.cache/huggingface/hub/models--google--gemma-3-4b-it/snapshots/093f9f388b31de276ce2de164bdc2081324b9767",
+  "prompts": 64,
+  "layer_index": 17,
+  "num_layers": 34,
+  "components": 16,
+  "pca_drift_percent_of_reference_spread": 9.022201538085938,
+  "pca_drift_raw_l2": 192.90875244140625,
+  "explained_variance_ratio_topk": 0.8354911804199219,
+  "linear_cka_to_reference": 0.987026572227478,
+  "regime_note": "xu-2025-reversibility: ~1-11 reversible, ~100 irreversible",
+  "reversible_band": true
+}
+Wrote derisk/whole_concept_jobs_v1/drift_merged_step033_focused6_fullwall_replay_step064_full_v1.json

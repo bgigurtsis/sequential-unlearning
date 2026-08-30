@@ -7185,3 +7185,131 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   complete. Run those now while validating the sparse causal-neuron challenger
   on the new L40S; do not start cumulative removal until this baseline is
   sealed or the challenger clearly dominates it.
+
+## Dense replay-step-64 global damage and drift baseline (2026-08-30)
+
+- Evaluated merged weights
+  `b8527608bb60269959e6f7694c12627dd0194baff772e2b72b8c1240080e5690`
+  with `scripts/eval_decay_scalar.py`, all 120 frozen battery prompts plus the
+  full capability and conversational-survival sets, clean Gemma snapshot
+  `093f9f388b31de276ce2de164bdc2081324b9767` as both tokenizer and judge,
+  greedy 256-token generation, batch 8, seed 0, and the frozen
+  `bidirectional_synthetic_v2` normalization. Baseline, terminal, and ladder
+  hashes were respectively
+  `c71847d32c794bea9b28a7c80678c29487e2e16b2ee593c990dcf56916f128b9`,
+  `4379ad371c84760f38da59f4ec667083bee05423e3638cf039b3b3516e7220e8`,
+  and `e448843f96f3b2be0e6a744242ad5719f32bc1d948971b66759e0dcd4e8fdfd2`;
+  policy fingerprint is
+  `38fa6c2176e7815f9561bd4ca993fc922c51cbc7a749d6f6ed1975f9ede94241`.
+  The evaluator source commit on the host was
+  `c4006c778ac3ae778c5093056ca415f6fa92ade8`.
+- Artifact
+  `derisk/whole_concept_jobs_v1/decay_scalar_merged_step033_focused6_fullwall_replay_step064_full_v1.json`
+  has SHA-256
+  `229331936a445e04f59ff0b2ccc0a7a0dd4c1da4fa3cf08b47ffe00172ba3f10`;
+  its log hash is
+  `d216f533a4dc845e1518fb7f0adf1861c54d6898d51ad6ec7688e9493a0f82bf`.
+  All 196 judge responses parsed. Raw components are R `0.0209326701`, D
+  `0.0828253411`, J `0.0918367347`, and F `0.0666666667`; normalized components
+  are R `0.2583629769`, D `0.1494281286`, J `0.1184433164`, and F
+  `0.0260869565`. The resulting scalar is **13.4981863385/100**, mean judge
+  score is `4.540816/5`, and mean factual token F1 is `0.9333333`.
+- Evaluated representation drift against the same exact clean model/tokenizer
+  with `scripts/eval_drift.py`, 64 frozen decay prompts, layer fraction `0.5`
+  (resolved layer 17/34), 16 PCA components, batch 8, and max length 128.
+  Artifact
+  `derisk/whole_concept_jobs_v1/drift_merged_step033_focused6_fullwall_replay_step064_full_v1.json`
+  has hash
+  `50dadd22193cb77b7efc6c8e8c656cee55cd519d0d6a8bff2d8a336d73f2fc41`;
+  log hash is
+  `9c3646840f21d4a3db72b2f304a1865534249e399cf2784232adb1e221a567e2`.
+  PCA drift is **9.0222015381%** of clean reference spread, raw L2
+  `192.9087524`, top-16 explained variance `0.8354911804`, and linear CKA
+  **0.9870265722**. The evaluator marks `reversible_band=true`.
+- Interpretation: this decisively rules out global collapse and passes the
+  project's <=20% drift / >=0.95 CKA safety band, consistent with the strong
+  perplexity and average-judge results. It does **not** establish near-zero
+  damage. Scalar 13.50 is worse than the earlier narrow one-concept baselines
+  9.00 unhealed and 7.92 healed, and raw scalar outputs expose isolated
+  unrelated knowledge holes including photosynthesis and Marrakesh. The old
+  heavy-parent +5 rule does not directly certify this clean-parent broad-edit
+  experiment, so do not retroactively label it a formal scalar PASS. Retain it
+  as a coherent but materially damaged benchmark and require the sparse arm to
+  beat scalar 13.4982 or explicitly recover semantic controls without losing
+  complete employment absence.
+
+## Sparse causal-MLP attribution validated and frozen (2026-08-30)
+
+- Added read-only attribution runner `scripts/attribute_causal_mlp_neurons.py`
+  (SHA-256
+  `715aa59dae0e062bb9bcb90de3806b6e65bba105b8986c1d2620391d7316c55e`)
+  and pure selection helper `scripts/causal_mlp_neuron_selection.py` (SHA-256
+  `34033092a77ccea3b2e3fcc7db12653b880917266c11db3f70629afd8e0d2b87`).
+  Tests have hashes
+  `1c614a012e7e8a31d211cdcbc6640b4d6a95b08599f2f04c7dc1b5b0dca33a22`
+  and `9072e1b2fa921824ede8fe94f41abb63171e5f423e5f8266a94065b4d6f1130c`.
+- Method: freeze every model parameter; at each selected decoder MLP capture
+  the input to `down_proj`; compute signed causal support
+  `-activation * d(answer NLL sum)/dactivation`; normalize each semantic group
+  by scored answer tokens; require positive support to recur across target
+  groups; rank by target support divided by the worst individual control-group
+  absolute support; and apply deterministic global top-K plus per-layer caps.
+  The runner only attributes/selects: it does not construct an optimizer or
+  change model weights. It stores float64 grouped sums in Safetensors and an
+  immutable mask bound to exact model/tokenizer/data/code/column hashes.
+- Independent review found no P0/P1. Reliability hardening adds an absolute
+  target-effect floor so a huge ratio over numerical zero cannot win; casts to
+  float64 before reduction; recomputes the attribution digest from reopened
+  persisted tensors; and reopens, hashes, replays, and verifies the raw archive
+  before publishing the JSON success marker. Two real-integration test gaps
+  found during review were also closed: the non-default floor is passed through
+  the selection call, and the real Safetensors path now exercises the actual
+  verify-before-publish function.
+- Full dependency-backed gate on `ubuntu@15.216.102.169` (L40S, Torch
+  2.13.0+cu130, Transformers 5.14.1, Safetensors 0.8.0) passes **30/30 tests
+  with zero skips**. It covers causal finite differences, right-padded shifted
+  answer masks, answer versus all-causal attribution positions, token
+  normalization, float64 partition invariance, immutable persistence, digest
+  mutation, replay, and failure-before-publication. Local Windows separately
+  passes 25/25 available tests with the five dependency-backed tests skipped.
+- Frozen clean teacher-forced targets were built from
+  `clean_screen_original_for_healing.json` (hash
+  `01b1664b8614c8aed820879e2184e0a1abc12f307f50326046b0cf9f67f28fa5`)
+  plus `clean_screen_natural_v2_for_healing.json` (hash
+  `058e42ef21b752238349f6dd71f7ffb3a63efa0bb61822fbe8662fdd48d621e0`)
+  using `scripts/build_target_consistency_from_screen.py` (hash
+  `00c326b4db0a797b2d9bbad3c0a7e7b3974b5c89c6bc7718a15c686e2758b1ab`).
+  Output
+  `derisk/whole_concept_jobs_v1/sparse_causal_mlp_v1/teacher_targets_clean48_v1.json`
+  has hash
+  `694545d029058149d59dd05ecbb2c632f39cec31976242737d952e460d5e4a42`:
+  48 unique prompts in 13 employment/living semantic groups. Controls are the
+  existing `healing_clean_controls_36.json`, hash
+  `de3bdb7ce3155a77405b1225f491f87fca74e90d5890a0de0632ee1c1b62f265`,
+  with 36 unique prompts in polysemy, near-excluded, unrelated, and utility
+  groups. Cross-set prompt overlap is zero. Direct-16 and hard-36 remain held
+  out from attribution.
+- **Precommitted first attribution.** Use exact clean Gemma snapshot
+  `093f9f388b31de276ce2de164bdc2081324b9767` as model and tokenizer; layers
+  `0-33`; target clean48; control clean36; batch 1; max length 256; no appended
+  EOS; target/control ratio >=10; >=4 sign-consistent target groups; absolute
+  target score >=`1e-6`; global top 128; per-layer cap 32; positions
+  `all-causal`; seed 33350; deterministic algorithms, TF32 off, and
+  `CUBLAS_WORKSPACE_CONFIG=:4096:8`. Outputs are immutable
+  `sparse_causal_mlp_v1/attribution_clean_employment_all34_v1.safetensors` and
+  `mask_clean_employment_all34_top128_v1.json`. The initial mask is bound to
+  the clean parent, not step 33. If no neurons qualify, that is evidence that
+  the concept is too distributed under the frozen thresholds, not permission
+  to lower them post hoc.
+- First edit lane remains blocked on its separately reviewed mask applier. The
+  intended bounded grid is prefix K in `{4,8,16,32}` and column scale in
+  `{0.5,0.0}`, starting at K=8/scale=0.0; scale 1 must be tensor-identical.
+  Attribution matches this intervention: each selected
+  `down_proj.weight[:, neuron]` column is scaled and no other weight may move.
+  Direct/natural screens come first. A promoted sparse model must retain full
+  16/16, 12/12, 36/36, 36/36, and 8/8 target absence on direct, natural,
+  original, hard, and conversations, while at least matching the dense model's
+  23/24 original, 21/24 hard, 3/4 control-dialogue, and 7/8 clean-target-
+  dialogue results. Lower damage requires scalar <13.4982 and either drift
+  <9.0222% with CKA >=0.987027 or explicit recovery of a dense semantic-control
+  loss without worsening another frozen gate.

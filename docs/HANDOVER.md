@@ -856,3 +856,28 @@ run the sparse causal-neuron challenger on the new `ubuntu@15.216.102.169`
 L40S. Do not start cumulative edits until this candidate passes global gates or
 sparse localization replaces it with a lower-collateral unit. Full hashes and
 interpretation are in `EXPERIMENTS.md`.
+
+The dense candidate's full global baseline is complete. Scalar artifact
+`decay_scalar_merged_step033_focused6_fullwall_replay_step064_full_v1.json`
+hashes to
+`229331936a445e04f59ff0b2ccc0a7a0dd4c1da4fa3cf08b47ffe00172ba3f10`:
+score 13.498186/100, 196/196 judge parses, mean judge 4.5408/5, factual F1
+.9333. Drift artifact
+`drift_merged_step033_focused6_fullwall_replay_step064_full_v1.json` hashes to
+`50dadd22193cb77b7efc6c8e8c656cee55cd519d0d6a8bff2d8a336d73f2fc41`:
+PCA 9.0222%, CKA .987027, reversible band true. This is coherent and not
+collapsed, but the scalar and raw photosynthesis/Marrakesh holes make it a
+benchmark rather than a low-damage daily unit.
+
+Sparse attribution code is now independently reviewed with no P0/P1 and passes
+30/30 dependency-backed tests on the new L40S. Its exact code/data hashes and
+method are in `EXPERIMENTS.md`. Run the precommitted clean-parent attribution:
+all 34 layers, 48 clean employment targets, 36 clean controls, batch1,
+max256, no EOS, all-causal positions, ratio10, sign groups4, min score 1e-6,
+top128/per-layer32, seed33350. Immutable outputs belong under
+`derisk/whole_concept_jobs_v1/sparse_causal_mlp_v1/`. Direct16 and hard36 are
+held out. Do not edit weights until the mask-applier tests and scale1 identity
+gate pass. First persistent arm is top8/scale0, followed only by the bounded
+K={4,8,16,32}, scale={.5,0} grid as evidence requires. Dense replacement needs
+complete target absence and either scalar below 13.4982 with no frozen-gate
+regression or explicit recovery of a dense control failure.
