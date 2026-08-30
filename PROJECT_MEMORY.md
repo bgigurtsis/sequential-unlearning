@@ -550,3 +550,16 @@ The batched seven-checkpoint screen has completed, and raw high-dose samples
 through step 120 still provide correct, detailed target knowledge. A frozen
 triage summarizer has been added to quantify all target/control outputs before
 the arm is formally rejected or a next objective is selected.
+
+The diverse-target-only arm is now rejected. Candidate holes across steps
+10/20/40/60/80/100/120 were 0/0/0/1/1/0/0 of 36; step 120 returned detailed
+knowledge on all target groups. The two isolated uncertainty answers were
+transient. All 24 controls remained knowledgeable with zero uncertainty at
+every checkpoint, so this is under-erasure rather than collapse.
+
+Active method is a clean-parent dual-path arm: the same 94 diverse uncertainty
+responses plus a bounded penalty on the captured original answer probability.
+Precommitted settings are answer-suppression coefficient 10, otherwise
+1/30/200, rank 4/alpha 8/layers 12-19/LR 5e-5, 240 steps, seed 31300. This tests
+whether direct access suppression plus a varied natural output surface can
+remove the whole region without recreating a shared lexical sink.

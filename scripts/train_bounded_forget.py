@@ -96,6 +96,15 @@ def parse_args():
     parser.add_argument("--train-layer-hi", type=int, default=11)
     parser.add_argument("--learning-rate", type=float, default=5e-5)
     parser.add_argument("--forget-weight", type=float, default=1.0)
+    parser.add_argument(
+        "--answer-suppression-weight",
+        type=float,
+        default=0.0,
+        help=(
+            "additional bounded original-answer probability penalty; currently "
+            "supported with target-response-ce"
+        ),
+    )
     parser.add_argument("--retain-weight", type=float, default=1.0)
     parser.add_argument("--chat-retain-weight", type=float, default=1.0)
     parser.add_argument(
@@ -426,6 +435,16 @@ def main():
                 "target-response-ce requires a non-empty target_response on "
                 f"every forget record; missing indices: {missing_targets[:10]}"
             )
+    if args.answer_suppression_weight < 0:
+        raise ValueError("--answer-suppression-weight must be non-negative")
+    if (
+        args.answer_suppression_weight > 0
+        and args.forget_objective != "target-response-ce"
+    ):
+        raise ValueError(
+            "positive --answer-suppression-weight currently requires "
+            "--forget-objective target-response-ce"
+        )
     elm_concept_map = read_json(args.elm_concept_map) if args.elm_concept_map else {}
     if not isinstance(elm_concept_map, dict):
         raise ValueError("--elm-concept-map must contain a JSON object")
@@ -703,6 +722,12 @@ def main():
                     else (
                         "teacher-forced cross-entropy to each record's distinct "
                         "target_response"
+                        + (
+                            " plus bounded original-answer probability suppression "
+                            f"at weight {args.answer_suppression_weight}"
+                            if args.answer_suppression_weight > 0
+                            else ""
+                        )
                         if args.forget_objective == "target-response-ce"
                         else (
                         f"{args.elm_loss} to the parent model's ELM "
@@ -833,6 +858,19 @@ def main():
                 shifted_logits, f_labels[:, 1:], shifted_mask
             )
 
+        answer_suppression_loss = torch.zeros((), device="cuda")
+        if args.answer_suppression_weight > 0:
+            o_ids, o_attention, _, o_labels = make_forget_batch(
+                forget_batch, answer_field="answer"
+            )
+            original_logits = model(
+                input_ids=o_ids, attention_mask=o_attention
+            ).logits[:, :-1, :]
+            original_mask = (o_labels[:, 1:] != -100).float()
+            answer_suppression_loss = mean_selected_token_probability(
+                original_logits, o_labels[:, 1:], original_mask
+            )
+
         retain_loss = torch.zeros((), device="cuda")
         if args.retain_weight > 0:
             retain_batch = random.sample(retain_texts, args.batch_retain)
@@ -902,6 +940,9 @@ def main():
 
         loss = (
             args.forget_weight * forget_loss
+            + args.forget_weight
+            * args.answer_suppression_weight
+            * answer_suppression_loss
             + args.retain_weight * retain_loss
             + args.chat_retain_weight * chat_loss
             + args.consistency_weight * consistency_loss
@@ -919,6 +960,7 @@ def main():
         print(
             f"step {step:3d}/{args.num_steps}  "
             f"jsd={forget_loss.item():.6f}  retain={retain_loss.item():.4f}  "
+            f"answer_suppress={answer_suppression_loss.item():.4f}  "
             f"chat={chat_loss.item():.4f}  "
             f"consistency={consistency_loss.item():.4f}  "
             f"grad={grad_norm:.4f}",
@@ -937,6 +979,7 @@ def main():
                 "step": step,
                 "scope": "audit",
                 "train_jsd": forget_loss.item(),
+                "train_answer_suppression": answer_suppression_loss.item(),
                 "train_retain": retain_loss.item(),
                 "train_chat_retain": chat_loss.item(),
                 "train_consistency": consistency_loss.item(),

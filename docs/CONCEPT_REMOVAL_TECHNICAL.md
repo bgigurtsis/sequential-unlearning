@@ -602,3 +602,12 @@ probability was 0.000515. Thus the run did not recreate the known lexical sink,
 but its optimization trace does not show suppression of the original answer
 distribution. Semantic generation screening is required to distinguish a
 useful prompt-conditioned hole from a superficial refusal overlay.
+
+The seven-dose held-out screen rejects that overlay: candidate holes were
+0/0/0/1/1/0/0 of 36 at steps 10/20/40/60/80/100/120, while every checkpoint
+retained 24/24 control surface expectations with zero control uncertainty.
+Step 120 retained detailed knowledge throughout the target region. The next
+arm adds `10 * mean_selected_original_answer_probability` inside the forget
+term while keeping the per-record target-response CE, localized rank-4 update,
+and 30/200 preservation losses. This explicitly attacks the fact-bearing
+trajectory while preserving a lexically diverse output interface.

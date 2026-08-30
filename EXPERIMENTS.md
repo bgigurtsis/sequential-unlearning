@@ -4635,3 +4635,52 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   of an `idea of idea`-style repeated trigram. Run this exact summarizer on the
   completed batched seven-checkpoint artifact before changing the training
   objective.
+
+## Diverse-target arm fails prompt-robust whole-concept screen (2026-08-30)
+
+- Completed batched artifact:
+  `derisk/whole_concept_jobs_v1/screen_coarse_b16_010_120_v2.json`, SHA-256
+  `d664a05a2b4fe58be092f6a96878349b8be1adb327f00ad456bddb68effbb6b8`.
+  Triage summary SHA-256 is
+  `c7026b119a31e72a234b13fe4e2bf1de174d991492d819197a45d56b94077a20`.
+- At steps 10/20/40/60/80/100/120, target candidate holes out of 36 were
+  0/0/0/1/1/0/0. Recognized uncertainty counts were identical except that all
+  other target outputs retained expected surface knowledge. Step 60's only
+  transient hole was `pay_01` (`I'm not sure what you're asking. Can you
+  please rephrase your question?`). Step 80's only transient hole was
+  `layoffs_01`, which repeated `I'm not sure what you mean. Can you explain it
+  to me?` twice. Neither effect was stable at later doses.
+- Step 120 still accurately defined a job as regular paid employment, explained
+  layoffs versus firing, and explained wages and salaries. The checkpoint has
+  zero recognized uncertainty responses and zero candidate holes across all 36
+  target probes. The whole concept is PRESENT; grouped semantic judging is
+  unnecessary because the permissive triage gate fails overwhelmingly.
+- All seven checkpoints retained expected surface knowledge on 24/24 controls,
+  with 0/24 control uncertainty. Repeated-trigram warnings were 1-3 target and
+  1 control per checkpoint and came from ordinary list-like explanations, not
+  the old global `idea` attractor. Thus this arm is under-effective rather than
+  globally collapsed.
+- Conclusion: one approximate pass over 480 prompt/response pairs plus strong
+  preservation teaches only sparse, unstable redirection and does not suppress
+  the original answer path. Reject `run_targetce_120_v1`; do not extend the
+  same objective blindly.
+
+## Dual-path diverse-target plus answer-suppression arm precommitted (2026-08-30)
+
+- `train_bounded_forget.py` now permits a non-negative
+  `--answer-suppression-weight` only with `target-response-ce`. Each step keeps
+  the ordinary CE forward pass over the record-specific uncertainty response
+  and adds a second forward pass over the captured clean answer. The added
+  bounded loss is its mean selected-token probability, multiplied by both the
+  global forget weight and the new coefficient.
+- This directly addresses the failed arm's 0.97656 original-answer probability
+  ratio while retaining 94 exact uncertainty wordings and avoiding a fixed
+  cyclic target. The existing numerical probability test is supplemented by a
+  gradient-step test asserting that minimizing the term decreases selected
+  answer probability.
+- Precommitted run: clean parent; identical 480 target, 244 generic retain, and
+  800 clean behaviour files; target-response CE; answer-suppression coefficient
+  10; forget/retain/chat weights 1/30/200; rank 4, alpha 8, layers 12-19; LR
+  5e-5; batches 4/4/16; max length 256; seed 31300; 240-step ceiling; snapshots
+  and audits every 10 steps plus steps 5/15/25; external semantic selection.
+  Screen coarse doses only after the run is recorded.

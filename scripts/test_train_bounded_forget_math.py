@@ -86,6 +86,23 @@ class BoundedForgetMathTests(unittest.TestCase):
         actual.backward()
         self.assertTrue(torch.isfinite(logits.grad).all())
 
+    def test_answer_probability_decreases_after_gradient_step(self):
+        logits = torch.tensor(
+            [[[0.0, 2.0, -1.0], [1.5, 0.0, -0.5]]], requires_grad=True
+        )
+        labels = torch.tensor([[1, 0]])
+        mask = torch.ones_like(labels, dtype=torch.float32)
+        before = train_bounded_forget.mean_selected_token_probability(
+            logits, labels, mask
+        )
+        before.backward()
+        with torch.no_grad():
+            updated = logits - 0.5 * logits.grad
+        after = train_bounded_forget.mean_selected_token_probability(
+            updated, labels, mask
+        )
+        self.assertLess(float(after), float(before.detach()))
+
     def test_selected_token_cross_entropy_matches_explicit_value(self):
         torch.manual_seed(21)
         logits = torch.randn(2, 4, 9, requires_grad=True)

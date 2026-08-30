@@ -365,3 +365,16 @@ our style of question while still retaining the knowledge underneath. The
 saved checkpoints are now being tested on 36 unseen ways of probing the whole
 region and 24 controls; those outputs, not the reassuring training loss, decide
 whether this attempt is useful.
+
+That first attempt failed, but cleanly. Almost every unseen jobs question still
+received a detailed correct answer at every strength. Only one of 36 questions
+briefly produced uncertainty at step 60 and a different one did so at step 80;
+both recovered later. All 24 controls stayed healthy. So varied wording alone
+avoided collapse, but it did not erase the concept.
+
+The next attempt combines two pressures: it still teaches many different
+natural uncertainty responses, and it also directly pushes down the model's
+original factual answers. In plain English, the first arm only taught a new
+route that the model rarely chose; this arm also weakens the old route. It
+still starts from the untouched model and preserves the same 800 unrelated
+behaviours.
