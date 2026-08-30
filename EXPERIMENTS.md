@@ -6727,3 +6727,32 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   microbatch size 16. Require exactly 94 records, multiple microbatches, finite
   full-wall loss/gradient, and active global projection before freezing an
   extended focused curve.
+
+## Full-wall smoke passes and 80-step curve precommitted (2026-08-30)
+
+- `smoke_step033_fullwall_microbatch_v1` completed one update normally with
+  snapshots disabled. Run-config, metrics, and stop-state SHA-256 values are
+  `0f2db722678062038953218fedf3dd5f62c4db6abf25c0ec07919365a1cae29b`,
+  `976104f26e0ea474f8cd73d2aa0cc7ad00a1d9cc572e469ae4c1c27f99141cc3`,
+  and `7287fc6cf5cb59c4a211c87a4b9148d1caee9c26741b3522ac5a3321f9dfd2ed`.
+- All 94/94 consistency records contribute, containing 4,088 answer tokens and
+  producing exactly six gradient microbatches at size 16. Global strict
+  projection activates on 42/42 initially eligible LoRA tensors with
+  target/control cosine -0.03987. Consistency CE is 0.34763, gradient norm is
+  finite at 21.6835, and captured-answer probability moves -0.0231% in the
+  single update. The execution and memory gate passes.
+- Precommit `run_step033_focused6_fullwall_80_v2`: unchanged temporary step-33
+  parent and clean reference/tokenizer; the six seed-33100 focused corrections
+  every update (batch 6); 244 generic retains (batch 8); 1,808 clean/context
+  chat paths (batch 16); all 94 combined target/control anchors every update
+  (batch 94, exact consistency microbatch size 16); target-response CE plus
+  EOS; weights forget/retain/chat/consistency 30/30/100/30; suppression 0;
+  global strict target-null projection; rank 8 alpha 16 layers 28-33; LR 2e-5;
+  max length 256; audit 6; external semantic selection; seed 33250; 80 updates
+  saved/evaluated every two.
+- This extends dose rather than scalar strength and removes stochastic
+  preservation omission. Screen all 40 checkpoints on direct and natural-v2.
+  Require a raw-clean termination on the personal, earn-a-living, reunion, and
+  translator routes, preservation of every previously good erased route, and
+  natural controls >=8/12 before original/conversation qualification. No
+  training proxy may select a checkpoint.

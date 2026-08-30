@@ -1148,3 +1148,10 @@ bounding activation memory, then projects that complete wall away from the
 focused target direction. Next gate: one-step no-snapshot smoke using all 94
 records in size-16 chunks; precommit an extended curve only if record/token
 counts, projection, gradients, and losses are valid.
+
+The full-wall smoke passes: 94 records/4,088 answer tokens form six exact
+microbatches, projection activates, and all values are finite. Extended run
+`run_step033_focused6_fullwall_80_v2` is precommitted for 80 updates saved every
+two, changing only full-wall coverage, dose, and seed from the rejected curve.
+Active gate: train, then direct/natural screen all checkpoints for four
+stubborn routes plus unchanged >=8/12 natural controls before broadening.

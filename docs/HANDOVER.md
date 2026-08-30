@@ -743,3 +743,11 @@ batch, but processes bounded chunks before projecting the accumulated control
 gradient. Run a one-step no-snapshot 94-record smoke next; freeze a longer
 focused curve only after confirming all records participate, projection is
 active, and every loss/gradient is finite. Exact code hashes are logged.
+
+The full-wall smoke passes with all 94 records, 4,088 answer tokens, six
+microbatches, active projection, and finite losses/gradients. The frozen next
+run is `run_step033_focused6_fullwall_80_v2`: 80 updates, every six correction
+and every 94-record anchor each step, saved every two. Screen direct/natural
+first and require all four substantive edge routes clean plus >=8/12 natural
+controls before original/conversation qualification. Exact settings/hashes are
+in `EXPERIMENTS.md`.
