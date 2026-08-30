@@ -30,15 +30,14 @@ loss and nightmares redirected and unrelated output showed the known `idea`
 scar. Present this as broad/rough semantic damage, not certified total concept
 deletion. The day-three endpoint alone uses the experimental human persona.
 
-Day-four training is complete at
-`specific04_missed_train/run_refusalce_180_v1`. The 180-step fixed recipe ran
-from the exact accepted day-three parent without OOM; target proxy ratios at
-80/100/120/140/160/180 are
-0.097696/0.037960/0.022114/0.013834/0.012487/0.009144. Resume with original and
-conjugated missed-train coarse screening, fine stability selection, then all
-four holes and every non-target boundary. No checkpoint is accepted from the
-training proxy alone. Keep obeying the append-memory/commit rules in
-`AGENTS.md`.
+The user stopped the specific missed-train direction after training and before
+semantic judgement/merge. Preserve its artifacts but do not resume it unless
+explicitly asked. `day3-model-api.service` is disabled/inactive. The active
+experiment is a clean-parent whole-concept removal of jobs/employment, aiming
+for natural uncertainty such as `I'm not sure what a job is. Can you expand?`
+without AI disclaimers or global repetition. Freeze a broad job semantic
+region and unrelated controls before training. Keep obeying the append-memory/
+commit rules in `AGENTS.md`.
 
 Copy everything below the line into a fresh chat.
 
@@ -238,3 +237,23 @@ push after each stage so the laptop and the EC2 clone stay in sync.
 The 30-day rehearsal, the 5–10 concept pilot, concept reordering, the
 target-table freeze (that one is authorial — Billy's call), and any change
 to frozen artefacts.
+
+## Current authorial override: whole-concept daily erasure (2026-08-30)
+
+The earlier probe ordering and specific-memory programme above are preserved
+as historical instructions, but they are no longer the active direction. The
+user explicitly selected whole-concept removal: one different full semantic
+concept per day across a 31-removal rehearsal. Job/employment is validation
+concept 1 only. A successful method must generalize to later daily concepts,
+keep all earlier holes closed, and avoid compounding general damage.
+
+Start from the clean Gemma snapshot. Do not parent from the broad-five model:
+its first full-model edit used a weight-10,000 fixed cyclic `No idea` JensUn
+target, and subsequent low-rank edits preserved that damaged response while
+adding new redirects. The resulting `idea` pathway became a global lexical
+attractor rather than clean concept absence. The replacement experiment must
+avoid a shared replacement phrase, freeze the broad target and control suites
+before training, and gate on semantic absence, unrelated retention, natural
+stable conversation, lexical diversity, and prompt robustness. Pass one clean
+job/employment removal before a multi-concept compounding pilot and the full
+31-removal rehearsal.

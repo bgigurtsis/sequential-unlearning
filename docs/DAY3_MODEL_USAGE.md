@@ -6,10 +6,13 @@ on the EC2 experiment host. It contains the accumulated vacation, phone, and
 bicycle removals. Its accepted-model hash and evaluation remain recorded in
 `EXPERIMENTS.md` and `PROJECT_MEMORY.md`.
 
-## Fastest option: the private EC2 endpoint
+## Paused specific-memory endpoint
 
-The GPU host runs an OpenAI-compatible chat endpoint on its own localhost port
-8000. It is deliberately not exposed to the internet and has no API-key layer.
+The specific-memory endpoint on port 8000 is currently disabled after the user
+changed the active artistic direction to whole-concept removal. The commands
+below remain a reproducible restart/use record, but the endpoint will not answer
+unless `day3-model-api.service` is explicitly started again. It remains
+deliberately private and has no API-key layer.
 Create an SSH tunnel from Windows PowerShell:
 
 ```powershell

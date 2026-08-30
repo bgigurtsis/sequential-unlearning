@@ -481,11 +481,38 @@ and bicycles retain fragments inside heavily `idea`-warped answers; unrelated
 Paris. Reclassify the broad-five checkpoint as pathological over-erasure/useful
 decay artwork, not clean whole-concept unlearning.
 
-Day-four bounded training is complete at
-`specific04_missed_train/run_refusalce_180_v1`. It used the frozen rank-4,
-layers-12–19, 1/30/200 refusal-CE recipe and seed 11460 for 180 steps. Target
-answer ratios at 80/100/120/140/160/180 are
-0.097696/0.037960/0.022114/0.013834/0.012487/0.009144. Final generic/chat
-losses are 0.000390/0.000806. These are proxies only. Active gate: screen
-coarse original and conjugated missed-train semantics, then select the earliest
-stable dose and run the complete four-hole/control audit.
+Day-four bounded missed-train training completed, but the user stopped that
+artistic direction before semantic judgement or merge. Its artifacts and
+unjudged coarse generations remain for provenance; it is neither accepted nor
+failed. `day3-model-api.service` is disabled and inactive.
+
+## Active clean whole-concept pivot (2026-08-30)
+
+Start from clean Gemma, not the damaged broad-five or three-memory parent.
+The programme target is one reusable whole-concept erasure on every day of a
+31-removal rehearsal. Full job/employment is only validation concept 1. Its
+desired interaction is natural human uncertainty—approximately `I'm not sure
+what a job is. Can you expand?`—with no AI-memory disclaimer and no global
+lexical attractor. Freeze broad job, employment, occupation, work,
+hiring/firing, employer/employee, wages/workplace/unemployment probes plus
+unrelated occupations, ordinary language, and practical controls before
+training. After a clean single-concept pass, run a multi-concept compounding
+pilot before the complete 31-removal rehearsal.
+
+Exact rejected mechanism: the broad-five lineage began with full-parameter
+BF16 JensUn training toward a cyclic fixed `No idea` target at weight 10,000
+(`probe1_jensun_weighted_early_g7e_v7/step009`, LR 1e-5). Later rank-4
+layers-12-19 direct-redirection edits explicitly preserved prior damaged hole
+outputs while adding unrelated rainbows/shadows/clouds/bread continuations.
+This anchored and spread the `idea` lexical scar until target and unrelated
+prompts could enter `idea of idea` loops. Target facts remained intermittently
+recoverable. Do not reuse this parent or a shared fixed response target. The
+old broad-five endpoint on port 8001 remains only as a comparison/failure
+artifact.
+
+Active experiment: from clean Gemma, compare bounded localized job-concept
+removal without a shared phrase. Use many low-overlap natural uncertainty
+continuations, a strong unrelated-behaviour wall, and frozen broad semantic,
+prompt-robustness, conversational-stability, lexical-attractor, and utility
+gates. Next decision gate is a clean one-concept pass; only then test whether
+the same mechanism compounds across multiple concepts.

@@ -539,3 +539,41 @@ rank-4, layers-12–19, refusal-CE recipe for 180 steps. Ratios at coarse steps
 losses are 0.000390/0.000806. No semantic claim follows from these proxies.
 Original/conjugated target screening and cumulative collateral testing remain
 mandatory before selection or merge.
+
+## Mechanistic failure audit and clean whole-concept replacement (2026-08-30)
+
+The broad-five collapse has a traceable objective lineage. Removal one used
+`probe1_jensun_weighted_early_g7e_v7/step009`, a full-parameter BF16 update
+with learning rate 1e-5, batches 4/2/2, maximum length 256, seed 0, and 100
+on-policy forget records. Its answer-position objective was
+`10000 * JSD(p_theta || q_No-idea) + JSD_retain + JSD_chat-retain`, where
+`q_No-idea` was one cyclic fixed non-informative token target. This produces a
+large shared gradient toward `idea` rather than a content-independent absence
+operation.
+
+Removal two selected
+`day22_core_mid_preserve_day1_chat100_v2/step100`: rank 4, alpha 8, layers
+12-19, with retain/chat/redirection weights 30/100/10. Its preservation wall
+included 200 examples of the already altered nightmare behaviour. Subsequent
+school-exam, job-loss, and bicycle edits used the same localized
+direct-redirection family, including unrelated continuations from shadows,
+rainbows, clouds, and bread, and preserved the accumulated holes. Therefore
+later updates explicitly optimized the model to retain an already scarred
+response manifold. Sequential preservation transformed the initial local
+`No idea` shortcut into the observed global `idea of idea` attractor.
+
+This is a causal interpretation of the known objectives plus the interactive
+failure pattern, not proof that one parameter direction alone contains the
+attractor. It explains why target facts remain intermittently accessible and
+why unrelated prompts can collapse: the learned behaviour is a shared output
+shortcut, not robust deletion of each semantic region.
+
+The replacement contract is now one reusable whole-concept operation per day
+for 31 removals. Job/employment is only the first validation concept. Start
+from clean Gemma; prohibit a shared fixed replacement phrase; use a bounded,
+localized update with many semantically equivalent but lexically low-overlap
+uncertainty continuations and a strong unrelated-behaviour boundary. Freeze
+tests for the entire job/employment neighbourhood, adversarial paraphrases,
+unrelated knowledge, conversational stability, and lexical-attractor leakage.
+A one-concept pass advances to a multi-concept compounding pilot; only that
+pilot can authorize a complete 31-removal rehearsal.

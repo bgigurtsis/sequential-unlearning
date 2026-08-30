@@ -4455,3 +4455,63 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   they do not establish semantic forgetting. Next gate is coarse original and
   conjugated missed-train screening, then a fine stability sweep and complete
   accumulated-hole/non-target audit before any merge.
+
+## Specific day-four branch stopped; clean whole-concept programme becomes active (2026-08-30)
+
+- User changed the artistic target after comparing the specific-memory and
+  pathological broad endpoints. Desired behaviour is now genuine concept-level
+  absence: a job prompt should elicit a natural uncertainty such as `I'm not
+  sure what a job is. Can you expand?`, rather than an AI-memory disclaimer,
+  unrelated redirection, or `idea` collapse.
+- The completed missed-train optimization is preserved but stopped before
+  semantic judgement, selection, merge, or acceptance. Coarse original and
+  conjugated generation screens for steps 80/100/120 were produced, but their
+  batched judge was not run and no decision is inferred from them. This branch
+  is abandoned by authorial direction, not recorded as a technical pass or
+  fail.
+- `day3-model-api.service` was stopped and disabled, freeing its approximately
+  9 GiB GPU allocation. The raw historical broad-five endpoint remains live on
+  port 8001 as a failure/reference artifact.
+- New active programme is one whole-concept erasure per day throughout a
+  31-removal rehearsal. Job/employment is only validation concept 1, not the
+  permanent subject of the work. The same accepted mechanism must be reusable
+  for every later daily concept, retain every earlier hole, and pass a
+  compounding pilot before the complete rehearsal.
+- Validation concept 1 must start from an undamaged clean Gemma parent and
+  target the general job/employment semantic region, with broad target and
+  neighbour probes plus unrelated semantic/control gates. The output policy
+  must be trained or cleanly presented as human uncertainty without encoding
+  false autobiographical memory. The old broad-five lineage is not a parent
+  because its global `idea` attractor would contaminate the result.
+
+## Exact training mechanism behind the broad-five `idea` collapse (2026-08-30)
+
+- The lineage's first edit was
+  `derisk/probe1_jensun_weighted_early_g7e_v7/step009`. It applied a corrected
+  JensUn-style full-parameter BF16 update for nightmares and neighbours with
+  `10000 * JSD(p_theta || q_No-idea) + JSD_retain + JSD_chat-retain`.
+  `q_No-idea` cyclically repeated one fixed non-informative continuation. The
+  run used learning rate 1e-5, batches 4/2/2, maximum length 256, seed 0, and
+  100 on-policy forget examples. This very high-weight shared token target
+  wrote a strong `idea`-centred response path into the model.
+- The second edit used the selected rank-4, alpha-8 adapter
+  `derisk/sequential_compounding_g7e_v1/day22_core_mid_preserve_day1_chat100_v2/step100`
+  on layers 12-19. Its direct-redirection loss had retain/chat/redirection
+  weights 30/100/10 and explicitly preserved 200 examples of the already
+  damaged nightmare behaviour. Later school-exam, job-loss, and bicycle edits
+  reused the localized direct-redirection family with varied unrelated
+  continuations such as shadows, rainbows, clouds, and bread, while preserving
+  prior holes.
+- Mechanistic interpretation: the first edit created the lexical scar; later
+  edits did not independently create a clean abstract deletion. Their
+  previous-hole preservation objectives treated the scarred `No idea`/filler/
+  repetition outputs as desired behaviour, repeatedly anchoring and spreading
+  that response surface. The final model can still retrieve target facts, but
+  many target and unrelated prompts are drawn into the global `idea of idea`
+  attractor.
+- Decision: do not use this checkpoint or any shared fixed replacement phrase
+  as the parent/target for the new 31-removal programme. Start from clean and
+  test a bounded, localized objective with semantically diverse, low-overlap
+  uncertainty continuations. Acceptance requires broad target absence,
+  unrelated knowledge retention, conversational stability, absence of a new
+  repeated lexical sink, and then sequential compounding.

@@ -317,3 +317,29 @@ essentially identical to the untouched model. Two automatic warnings are test
 quirks: the bread answer is cut short, and the correct `7 x 8 = 56` explanation
 repeats the number 7. This three-memory model is now the accepted starting
 point for automating the sequence toward 31 removals.
+
+## The current whole-concept direction
+
+The artwork has now moved from deleting one personal event to deleting an
+entire concept each day. “Jobs” is only the first test case. If that test
+works, the same operation will be applied to a different whole concept on each
+later day, while repeatedly checking that every earlier concept is still gone
+and that ordinary conversation has not collapsed.
+
+The old five-concept model shows exactly what must not happen. Its first edit
+trained the model very strongly to answer nightmare questions with the same
+words, “No idea.” Later edits were told to preserve earlier erased behaviour,
+so they repeatedly preserved that damaged “idea” response while trying to
+erase new concepts. “Idea” gradually became an easy escape route for the
+model. It now sometimes falls into endless “idea of idea” loops even on
+unrelated questions, while pieces of the supposedly deleted knowledge can
+still leak through.
+
+The replacement experiment starts from the untouched model. It will not teach
+one stock answer. It will use many differently worded, natural expressions of
+uncertainty and strong examples of unrelated conversation that must remain
+unchanged. A jobs test succeeds only if the model cannot explain jobs or close
+neighbours under varied questions, responds naturally instead of looping, and
+retains unrelated knowledge. That is a one-concept validation, not the final
+claim; the next test is whether the same method stays clean across several
+different concepts before attempting all 31.
