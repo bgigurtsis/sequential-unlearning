@@ -1109,3 +1109,7 @@ step 34. Remaining target failures are six explicit direct/natural prompts.
 Next: merge step 33, train those six every step, and preserve the other 58 good
 target continuations plus all 36 clean controls in one CE wall under global
 target-null projection. Step 33 is not selected for serving.
+
+Step 33 is merged at
+`derisk/whole_concept_jobs_v1/merged_late_microfit_step033_v1`; its weights
+hash is in `EXPERIMENTS.md`. Use only for focused repair, not serving.

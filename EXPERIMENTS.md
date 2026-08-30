@@ -6537,3 +6537,16 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   continuations plus all 36 clean-control continuations. Use global target-null
   projection, not tensor-wise projection, because global v3 gave the strongest
   control recovery. Freeze data/settings before training.
+
+## Step-33 focused-repair parent materialized (2026-08-30)
+
+- Merged adapter
+  `run_direct_living_route_late_microfit_fine36_v3/step033` into
+  `merged_semantic_mix_step240_v1` with `scripts/merge.py`, writing
+  `derisk/whole_concept_jobs_v1/merged_late_microfit_step033_v1` on EC2.
+- Merged `model.safetensors` SHA-256 is
+  `a85cc58a09e8babddbc020b4f00fd3ff6c256d07477babfeacddfe9ab953d720`;
+  the complete directory occupies 8.1 GiB.
+- This is a temporary parent for the six-prompt focused correction, not a
+  selected public model. Its authoritative pre-merge behavior is the recorded
+  step-33 adapter screen; retain the immutable step-240 model as fallback.

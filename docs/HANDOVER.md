@@ -704,3 +704,7 @@ is six direct/natural prompts. Merge it, train those six every step toward
 terminating uncertainty, and preserve the other 58 good target answers plus 36
 clean controls as one CE wall under global null-space projection. It is not yet
 a selected model; exact screen hashes and failed ids are in `EXPERIMENTS.md`.
+
+The temporary step-33 repair parent is merged at
+`derisk/whole_concept_jobs_v1/merged_late_microfit_step033_v1`; exact weights
+hash is in `EXPERIMENTS.md`. It is not selected for serving.
