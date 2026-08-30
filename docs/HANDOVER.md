@@ -472,3 +472,8 @@ The first anchor-alignment run completed, but fixed alignment worsens slightly
 (0.04028 -> 0.04641) instead of improving. Screen original steps
 6/12/18/24/30 to distinguish no effect from target destabilization. Do not hard-
 audit a checkpoint that loses the existing 36/36 raw, loop-free control gate.
+
+Anchor-alignment steps 6/12/18 keep 36/36 raw targets, no loops, and all 30
+controls. Steps 24/30 reopen target routes and are rejected. Hard single-audit
+step 12 next; only run conversations if it closes the living idiom or materially
+changes the hard boundary. Keep the uncorrected parent as fallback.

@@ -5606,3 +5606,22 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   6/12/18/24/30 to determine whether the run is unchanged or destabilized.
   Do not hard-audit any checkpoint that fails the original 36/36 raw,
   zero-loop, all-control gate.
+
+## Anchor-alignment original screen finds a narrow clean window (2026-08-30)
+
+- Raw/summary screen SHA-256 values are
+  `81ad33f538a4cd5b61e1152cad7672eb22e6bf7f6eb84b2b6c8034e8e37122e5`
+  and `62bc9468c1509b29172bfb00632e8b3c334da38c0445ce5762d22ab0c048a2d8`.
+  Automatic holes at steps 6/12/18/24/30 are 35/36/35/34/32. Raw review gives
+  36/36 at steps 6/12/18; the two 35s only use the accepted `I don't know that`
+  phrase. All three have zero target repetition.
+- Step 24 reopens/loops on `unemployment_01`; step 30 additionally reopens the
+  restaurant-owner/cook and careers routes and has one target repetition. Those
+  doses are rejected. Every screened dose still preserves 24/24 keyword-scored
+  controls, zero control uncertainty, and six healthy open-generation controls;
+  the batch-job term repetition remains a false warning in a correct answer.
+- Original-screen gate PASS for steps 6/12/18. Select step 12 because it is the
+  cleanest automatic checkpoint before the adverse fixed-distance trend and
+  later target regression. Run the unchanged hard single-turn audit first; run
+  conversations only if it closes the living-idiom leak or otherwise changes
+  the hard boundary materially. The immutable parent remains the fallback.

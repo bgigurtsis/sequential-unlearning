@@ -869,3 +869,10 @@ probability rises 1.58x. The clean preservation wall likely dominates or
 redirects the small alignment objective. Exact hashes are in `EXPERIMENTS.md`.
 Active gate: original-screen steps 6/12/18/24/30; reject before hard audit if
 any existing route or loop regresses. Current best remains untouched.
+
+Anchor alignment has a clean window: steps 6/12/18 are 36/36 raw original,
+loop-free, and preserve all 30 controls. Step 24 reopens unemployment and step
+30 adds broader target leakage plus a loop, so both are rejected. Active gate:
+hard single-turn audit step 12, the cleanest automatic checkpoint. Only run the
+conversation audit if the living idiom closes or the hard boundary materially
+changes. Current best remains untouched.
