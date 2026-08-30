@@ -394,3 +394,12 @@ Tooling for the active and future 31-day gates: `prepare_screen_judge.py`
 accepts a safe `--candidate-tag`, so concept/style slices from combined screens
 can share one judge root and one clean-model load. This is an execution-speed
 change only; semantic prompts and the frozen judge rubric are unchanged.
+
+Balanced removal-three step090 PASSED the complete semantic compounding gate.
+Bicycle, vacation, and phone holes are each 8/8 ABSENT (24/24 total), with no
+manual correction. Remaining train/argument/home controls are 24/24 PRESENT
+across original and conjugated styles; positive/neutral controls are 20/20
+PRESENT; ordinary travel is 4/4 PRESENT. Total non-target boundary is 48/48.
+Active gate: merge exact step090 into the accepted two-removal parent, run
+frozen broad utility/responsiveness and perplexity, then hash before accepting
+the three-removal parent and starting the automated scale-up.

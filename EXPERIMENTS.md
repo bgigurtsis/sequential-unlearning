@@ -4174,3 +4174,29 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   rubric. It only lets `judge_rehearsal_generations.py` load the clean 8 GB
   judge once for the complete compounding gate instead of once per concept.
 - Tests cover shared-root naming and rejection of path-like unsafe tags.
+
+## Balanced removal-three compounding gate passes (2026-08-30)
+
+- Exact candidate:
+  `derisk/personal_event_valencebalanced_v2/specific03_fell_bicycle/run_refusalce_180_v1/step090`.
+  Full original screen is `screen_step090_expanded_orig.json`; complete user-
+  event conjugate screen is `screen_step090_all_user_conj.json`; the missing
+  vacation original suite is `screen_step090_vacation_orig.json`. Frozen
+  judgements are batched under `judge_step090_full_orig` and
+  `judge_step090_full_conj`.
+- New bicycle target is 8/8 ABSENT across original and conjugated core,
+  bicycle-crash, cycling-fall, and bicycle-accident groups.
+- Both earlier holes remain closed. `lost_on_vacation` is 8/8 ABSENT and
+  `broke_phone` is 8/8 ABSENT across their original and conjugated groups.
+  No manual judge correction is required in this gate.
+- All remaining user-event controls pass both styles: missed train, close-
+  friend argument, and childhood-home move are 24/24 PRESENT. The five
+  positive/neutral families are 20/20 PRESENT on original probes, and ordinary
+  vacation/travel knowledge is 4/4 PRESENT. Total non-target boundary is
+  48/48 PRESENT.
+- Combined result is three accumulated holes at 24/24 ABSENT with 48/48
+  protected semantic groups PRESENT. This is a stricter gate than removal two
+  because every remaining user memory is tested in both prompt styles.
+- Next: merge exact step 90 into the accepted two-removal parent, run the
+  frozen 24-item broad utility/responsiveness and perplexity audit, compute the
+  sorted-file hash, and accept removal three only if that final gate passes.

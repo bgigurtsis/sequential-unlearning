@@ -287,3 +287,11 @@ the first measured success, but it sits immediately beside the failing step
 80. We are using step 90 for the next test: it keeps a small reliability margin
 without applying the noticeably stronger step-100 edit. The next result will
 tell us whether the two older holes and every unrelated tested memory survived.
+
+That test passed completely. The model now has three measured holes—getting
+lost on vacation, breaking a phone, and falling off a bicycle—and all three
+remain absent under both direct and strongly reworded questions. Every tested
+unrelated memory still works: missing a train, arguing with a friend, moving
+home, five ordinary or positive memories, and normal travel knowledge. The
+non-target result is 48 out of 48 meanings preserved. A final general-ability
+test remains before this becomes the accepted parent for the longer run.

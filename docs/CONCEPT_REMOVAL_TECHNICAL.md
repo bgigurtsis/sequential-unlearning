@@ -497,3 +497,11 @@ target-answer ratios are 0.106649/0.097488/0.089009/0.081872/0.075879. Because
 step 80 fails, 85 is the measured transition edge. Step 90 is selected for the
 sequential collateral gate, adding one five-step stability margin while
 minimizing dose relative to step 100.
+
+Exact step090 passes the full sequential semantic gate. Bicycle, vacation,
+and phone are each 8/8 ABSENT across original and conjugated suites (24/24
+accumulated target groups). Missed train, friend argument, and childhood-home
+move are 24/24 PRESENT across both styles; the five positive/neutral families
+are 20/20 PRESENT; ordinary travel is 4/4 PRESENT. The 48/48 non-target result
+requires no judge correction. Merge-time broad utility, perplexity, and hash
+are the remaining acceptance gate.
