@@ -939,3 +939,10 @@ monotonically to about 10% of baseline by step 80, proving late-layer microfit
 can reach the route. Preservation proxies deteriorate after the middle of the
 curve. Active gate: trained-route screen steps 24-80, looking first at 28-44
 for a clean crossing before damage. No selected replacement yet.
+
+Step 44 is the near-complete crossing: 15/16 direct prompts are clean,
+surface-free uncertainty answers. `What do you do for a living?` no longer
+shows employment knowledge but loops on malformed `I don't`; it is the only
+failure. Step 48 is no better and later doses collapse more routes. Active gate:
+broad-screen step 44 on original and natural-v2 suites. If preserved, heal the
+single loop rather than continuing the dose. Parent remains selected fallback.

@@ -5855,3 +5855,24 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   nondeterminism with equivalent curves, not bitwise reproducibility.
 - Behavioral verdict pending. Screen the frozen post-20 grid; prioritize the
   28-44 transition before high-damage late doses. No candidate is selected.
+
+## Late-layer dose screen locates a near-complete crossing (2026-08-30)
+
+- Raw/summary trained-route screen SHA-256 values are
+  `bd66d789d59e6e5e7852b0374a14456ead5cf77e0338ffa76cf151668d65ff49`
+  and `6e9d78172072b5ac10552c64c62c9884c420c03fa98c22817d2dfc60ad564e3f`.
+  Automatic clean-hole counts at steps 24/28/32/36/40/44/48/52/56/60/64/
+  68/72/76/80 are 7/9/12/14/13/15/15/13/11/12/13/13/13/12/13 of 16.
+  Repetition counts are 3/4/3/1/1/1/1/4/5/5/3/3/3/3/2.
+- Step 44 is the lightest best checkpoint. Raw review confirms 15/16 clean,
+  short, surface-free unfamiliarity answers. The sole failure is
+  `direct_living_02` (`What do you do for a living?`): employment knowledge is
+  absent, but its answer degenerates into a repeated malformed `I don't...`
+  sequence. Thus concept suppression crosses before clean termination does.
+  Step 48 is behaviorally equivalent on this gate but has worse preservation
+  proxies; steps 52+ show broader target-output collapse and are rejected.
+- Step 44 does not pass final termination, but it is a legitimate repair
+  candidate because the remaining failure is one malformed response rather
+  than a knowledge leak. Advance step 44 to the original and frozen natural-v2
+  broad damage screens. If those preserve the parent boundary, heal only the
+  one loop with the other 15 target answers and controls acting as anchors.

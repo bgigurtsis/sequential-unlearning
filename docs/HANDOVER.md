@@ -538,3 +538,9 @@ baseline at step 80, while preservation losses increase later. Screen the
 post-20 four-step grid now, prioritizing steps 28-44 as the likely crossing
 window. Exact artifacts/hashes and the small non-bitwise GPU reproducibility
 difference are recorded in `EXPERIMENTS.md`.
+
+The post-20 screen finds the crossing at step 44: 15/16 direct living-route
+prompts cleanly report unfamiliarity with no employment vocabulary. The sole
+failure, direct `What do you do for a living?`, has lost the knowledge but
+loops on malformed `I don't`. Step 48 is no better and later doses collapse.
+Broad-screen step 44 now; if controls/old holes hold, heal that one loop only.
