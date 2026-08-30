@@ -1226,3 +1226,15 @@ the middle of a near-identical independent replicate. Active gate: broad-screen
 all replay 64/65/66 points on original, hard, and conversations; select 65 only
 if it improves the loop/control balance. Sparse localization continues in
 parallel.
+
+Full replay qualification selects replay step 64, not 65. All three have 36/36
+original and hard target holes, 23/24 original controls, and 21/24 hard
+controls. Replay step 64 keeps all employment knowledge absent across both
+turns while improving target conversation termination to 7/8 clean; only pay
+loops. It preserves 3/4 control dialogues. Replay 65/66 also have 7/8 clean
+targets but lose physics-work, leaving 2/4 controls. Replay step 64 therefore
+strictly improves the original best and is the provisional one-concept
+candidate. It is still imperfect (one loop; volunteer, phone, and tides hard
+controls absent). Active gate: BF16 merge, adapter/merge equivalence, then
+utility/perplexity and scalar/drift baselines. Do not start cumulative edits
+until these pass; sparse localization remains the parallel challenger.

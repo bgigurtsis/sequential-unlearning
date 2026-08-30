@@ -818,3 +818,16 @@ be tested as the middle of a near-identical replicate, never described as an
 exact recovered original checkpoint. Broad-screen replay 64/65/66 on original,
 hard, and conversation suites; choose 65 only if it improves the target-loop/
 control balance. Exact screen hashes are in `EXPERIMENTS.md`.
+
+Broad replay qualification selects replay step 64. Replay 64/65/66 all retain
+36/36 original and hard target holes, 23/24 original controls, and 21/24 hard
+controls. Replay 64 gives 7/8 clean target dialogues (only pay loops) and 3/4
+fully healthy control dialogues; replay 65/66 also give 7/8 targets but lose
+physics-work, leaving 2/4 controls. Replay step 64 therefore improves the
+original step 64 by removing one conversation loop with no measured extra
+control loss. Treat it as the provisional one-concept candidate, explicitly
+not perfect: volunteer, broken-phone advice, tides, and one pay clarification
+remain failures. Merge it into the temporary step-33 parent, prove adapter/
+merge behavior equivalence, and establish utility/perplexity plus scalar/drift
+baselines before cumulative edits. Sparse-MLP remains the parallel challenger.
+Exact artifacts/hashes are in `EXPERIMENTS.md`.

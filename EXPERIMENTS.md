@@ -7070,3 +7070,49 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   Broad-screen replay 64/65/66 together on original and hard suites and run all
   three conversation audits. Select step 65 only if it improves the observed
   target-loop/control tradeoff; otherwise retain original step 64.
+
+## Replay step 64 is the new provisional one-concept candidate (2026-08-30)
+
+- Broad-screened replay steps 64/65/66 with the frozen original and hard
+  instruments (greedy, 96 tokens, batch 16) and ran the unchanged 12-dialogue
+  audit at 64 tokens per turn. Original raw/summary SHA-256 values are
+  `abacd4c7842fe53615390c40be4f196aa37c0ee4f29862a2a331c01769a81742`
+  and `dc2726d27e659e83e514e30e80bd099b2a7edfb2cde87f070320f16e6f57669e`.
+  Hard raw/summary values are
+  `fe19544945fbf7713d21aa576de4116aeeb33a4cf6507bdad7cc0e6c81a3a625`
+  and `5eb6b3a6753a30ab7113141fb393437574828720ce920d73495fd606e7e009ba`.
+  Conversation hashes for replay steps 64/65/66 are respectively
+  `e0610276c6b781d00e5e6e46080d573b1ddfee6db0fe8d0c4c1dc24785b69ce7`,
+  `2255359e2a42ee5892d0f4c88d2927fd708d76a740b56cf8f66a97c436616678`,
+  and `6df25c45c59e381d7867ce000cffe71dc34d5b6b5bdcd5f8da4ce4992e649bc1`.
+- Original automatic target-hole counts are 32/33/33 of 36 at replay
+  64/65/66, with 36/36 surface-free and zero target repetition at all three.
+  Raw review makes every heuristic miss a valid unfamiliarity answer, so all
+  are 36/36. Each keeps 23/24 raw controls; only unpaid volunteering is absent.
+  The batch-job repetition flag is ordinary coherent exposition.
+- Hard automatic counts are 33/36 target holes, 36/36 surface-free, zero target
+  repetition, 20/24 control surface hits, and three control uncertainties at
+  every point. Raw review gives 36/36 targets and 21/24 controls at all three;
+  actual losses remain volunteer, broken-phone advice, and tides. Bicycle is a
+  keyword-cap artifact. The replay-65/66 maths repetition flag is ordinary
+  arithmetic explanation, not degeneration.
+- Replay step 64 gives 8/8 target conversations knowledge-free on both turns,
+  with 7/8 clean terminations. Only `conv_pay` loops on its second turn;
+  `conv_employment`, which looped in the original step-64 artifact, now
+  terminates after one mildly redundant sentence. It preserves 3/4 control
+  dialogues: physics-work, friendship, and maths are fully healthy; computing
+  batch-job becomes unfamiliar after clarification. Replay steps 65/66 retain
+  the same 7/8 target cleanliness but lose physics-work on turn two, leaving
+  2/4 controls. Step 65 therefore does not improve the balance.
+- Replay step 64 strictly dominates original step 64 on measured behavior:
+  identical complete single-turn removal and control counts, one rather than
+  two target-dialogue loops, and the same 3/4 control dialogues. It becomes the
+  provisional one-concept candidate. It remains explicitly imperfect: one
+  pay dialogue loops and three of 24 hard controls are absent. This is within
+  the user's stated art-project tolerance but must pass merged-model identity,
+  practical utility/perplexity, and frozen scalar/drift baselines before it can
+  seed any cumulative-removal pilot.
+- Next: merge replay step 64 into its temporary step-33 parent in BF16, hash the
+  full model, and confirm adapter-versus-merge behavioral equivalence. Then run
+  the accepted baseline utility/perplexity and damage/drift instruments. Keep
+  the sparse-neuron lane parallel as a possible lower-collateral replacement.
