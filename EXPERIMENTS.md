@@ -4309,3 +4309,37 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   succeeded. It returned a normal greeting beginning `Hi there! How’s your day
   going so far?` and stopped after 60 completion tokens. The user's tunnel did
   not need restarting. Conclusion: the reported client blocker is fixed.
+
+## Balanced removal-four inputs frozen from the accepted day-three parent (2026-08-30)
+
+- New target is the past-tense event `I missed an important train` with frozen
+  semantic neighbours `arrived after departure`, `stranded after the train
+  left`, and `missed railway connection`. Compiler index 2, seed 11460 produced
+  60 training prompts, 12 original probes, and 12 user-conjugated probes under
+  `derisk/personal_event_valencebalanced_v2/specific04_missed_train/target/day`.
+- Exact accepted parent is
+  `merged_vacation_phone_bicycle_step090_v1`; cached tokenizer snapshot is
+  `093f9f388b31de276ce2de164bdc2081324b9767`. Two
+  `capture_parent_answers.py` jobs used deterministic generation,
+  `max_new_tokens=96`, and batch size 8. Target capture input/output are
+  `target/train_prompts_60.json` and
+  `target/train_parent3_onpolicy_60.json`, SHA-256
+  `88c7289109dcaf1354cc27275aa1b673fd65e830945afc19369443958aa45c78`
+  and `a979c36fde7888ef16fd0555179fbb1fb3cfc9d55a2dc9fc9ebc28d99069b78f`.
+- The 800 protected prompts contain 500 fixed positive/neutral/travel
+  behaviours, 120 remaining argument/home behaviours, and 180 accumulated
+  vacation/phone/bicycle hole behaviours. Input
+  `work/preserve_prompts_800.json` has SHA-256
+  `1d2c3412d73f44391663bdbee369bf4e0314fbc3cb3587d21e866c91ec625553`;
+  parent-answer output `work/preserve_parent3_answers_800.json` has SHA-256
+  `75785efc01caef5511b15f055ef846c999ff44fd172515facc115f14fc7a742c`.
+- New tested helper `scripts/compose_rehearsal_wall.py` deterministically placed
+  the 160 records from `data/retain_chat.json` once and the 800 exact-parent
+  answers three times. The resulting 2,560-pair wall is
+  `work/valence_balanced_parent3_3x_2560.json`, SHA-256
+  `5a6a0c7b56a2723d4663eb0e349a196948ddd49fe0cccba29e56ab70a9abe8ec`.
+  Its two unit tests pass for exact ordering and invalid-repeat rejection.
+- This is input preparation only: day-three weights and all accepted findings
+  remain unchanged. Next gate is the same 180-step bounded refusal-CE training
+  recipe, followed by coarse/fine semantic dose selection and a complete
+  four-hole/control compounding audit before any merge.

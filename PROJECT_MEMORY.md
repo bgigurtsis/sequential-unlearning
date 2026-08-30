@@ -452,3 +452,11 @@ Client compatibility correction: the first API wrapper rejected automatic
 1,024. An exact streaming request with `max_tokens: 8192` passed after the
 service restart and returned a normal 60-token greeting. No tunnel or client
 change is required.
+
+Day-four parent capture is now complete. The missed-train target has 60 exact
+day-three-parent answers, the 800 protected prompts have 800 exact-parent
+answers, and the deterministic wall contains 160 generic plus 800 parent
+answers repeated three times (2,560 total). Frozen hashes are in
+`EXPERIMENTS.md`. No day-four optimization has started. Next action is the
+fixed 180-step rank-4 refusal-CE run from the accepted day-three parent, then
+external coarse/fine dose selection and full accumulated semantic/broad gates.

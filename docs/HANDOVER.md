@@ -21,12 +21,14 @@ to EC2 localhost port 8000. See `docs/DAY3_MODEL_USAGE.md` for the SSH tunnel
 and OpenCode setup. Stop the service only if an experiment needs its 8,878 MiB
 GPU allocation, and restart it afterwards when practical.
 
-Day-four preparation is ready but no capture/training has run: target
-`I missed an important train`, 60 target prompts, and an 800-behaviour wall
-under `derisk/personal_event_valencebalanced_v2/specific04_missed_train`.
-Resume with parent-answer capture, then the fixed bounded recipe and cumulative
-semantic/broad gates. Keep obeying the append-memory/commit rules in
-`AGENTS.md`.
+Day-four parent capture is complete but training has not run: target
+`I missed an important train` has 60 exact-parent answers, the 800 protected
+behaviours have exact-parent answers, and their three-repeat wall plus 160
+generic records contains 2,560 pairs under
+`derisk/personal_event_valencebalanced_v2/specific04_missed_train`. Frozen
+hashes are in `EXPERIMENTS.md`. Resume with the fixed bounded 180-step recipe,
+then cumulative semantic/broad gates. Keep obeying the append-memory/commit
+rules in `AGENTS.md`.
 
 Copy everything below the line into a fresh chat.
 
