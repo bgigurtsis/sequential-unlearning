@@ -785,3 +785,12 @@ lightest passing correction, on the unchanged indirect single-turn and
 multi-turn suites. It is useful only if it closes `What do you do for a living?`
 and ideally restores the second-turn computing batch-job meaning without
 weakening the parent's other hard results.
+
+Hard audit of focused step 10 shows no repair. It remains 35/36 on raw indirect
+targets because `What do you do for a living?` still retrieves jobs, while all
+8 target conversations remain absent on both turns. All 24 single-turn controls
+are healthy, but computing batch-job still becomes uncertain on its clarified
+second turn, leaving 3/4 fully healthy control dialogues. Exact hashes are in
+`EXPERIMENTS.md`. Step 10 is not better than the fallback. Active gate: hard-
+audit step 20, the only other original-screen pass; reject the focused method
+if the same two failures remain.

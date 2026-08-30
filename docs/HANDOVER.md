@@ -407,3 +407,10 @@ steps 40/60/80 because they drop target coverage and add two loops each. Hard-
 audit step 10 now; it is the smallest passing correction and must close the
 living-idiom leak without harming the remaining indirect and conversation
 results. Keep the uncorrected merged parent and original adapter as fallback.
+
+Focused step 10 does not improve the hard result: raw remains 35/36 because
+`What do you do for a living?` still explains jobs; all eight target dialogues
+stay absent, but batch-job computing still fails after clarification. All 24
+single-turn controls and the other three control dialogues remain healthy.
+Hard-audit step 20, the only other correction dose that passed the original
+screen. If it repeats these failures, reject the focused correction method.

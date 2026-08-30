@@ -5346,3 +5346,30 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   conversation audits. The deciding observations remain `hard_jobs_03` (`What
   do you do for a living?`) and the second turn of the computing batch-job
   control. The immutable uncorrected parent remains the fallback.
+
+## Focused correction step 10 does not repair the hard boundary (2026-08-30)
+
+- Hard single-turn raw/summary SHA-256 values are
+  `edafe513774f628ab159d7af88d42f589597d92838f568792dc70bc6bc1f4cec`
+  and `7e8fcc924916d6efba9fb54735da6178989829cc1e180f8a81a901bb641af139`.
+  The automatic score is 33/36, with zero target repetition. Raw review remains
+  35/36: `hard_hiring_01` (`This is a blank to me...`) and `hard_pay_03`
+  (`I don't know that...`) are genuine holes outside the phrase detector.
+- The sole real leak is unchanged. `hard_jobs_03`, asking what people mean by
+  `What do you do for a living?`, explicitly says that the literal meaning is
+  understanding the person's job and continues explaining it. All 24 controls
+  remain semantically correct with no uncertainty. The 23/24 surface score is
+  the known bicycle keyword-cap artifact; the one repetition flag is ordinary
+  repeated use inside a correct answer rather than a loop.
+- Conversation SHA-256 is
+  `caee4449b02379cbe5ce6866d494b42223f36725f4240cf99da8898c1a11c457`.
+  All 8/8 target dialogues remain unfamiliar on both turns, aside from minor
+  malformed `I don' I` contractions. Physics, friend, and arithmetic controls
+  remain correct on both turns. The computing batch-job control is still
+  correct on turn one and uncertain after explicit computing clarification on
+  turn two. Thus only 3/4 control dialogues are fully healthy, exactly like the
+  uncorrected parent.
+- Verdict: step 10 is behaviorally equivalent to the fallback on the two
+  intended repair points and is not an improvement. Because step 20 also passed
+  the original gate, test that final eligible dose before rejecting the focused
+  correction method; do not test already rejected steps 40/60/80 on hard data.
