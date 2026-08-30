@@ -12,8 +12,9 @@ radius and temporal decay are separate controls.
 
 ## Current answer: broad versus specific erasure
 
-- Broad semantic erasure is demonstrated. Whole concepts and nearby meanings
-  can be made behaviourally absent across original and paraphrased probes.
+- Broad semantic absence is demonstrated on frozen original/paraphrased probe
+  suites, but not as prompt-robust whole-concept deletion. Fresh interactive
+  wordings can retrieve bicycle mechanisms and partial target meaning.
 - Four broad/core removals coexisted with about 23/24 practical utility on the
   small general suite; a fifth broad bicycle diagnostic also passed at 23/24
   responsive utility.
@@ -471,3 +472,20 @@ but a simple bicycle question recovered a coherent bicycle explanation; it is
 a broad semantic wound, not total prompt-robust deletion. Both bind only to EC2
 localhost and require SSH tunnels. Exact setup is in
 `docs/DAY3_MODEL_USAGE.md`.
+
+The user's longer raw broad-model transcript confirms that the dominant
+failure is a global lexical attractor around `idea`, not five tidy holes.
+Nightmares and vacations enter enormous `idea` loops; secrets, exams, job loss,
+and bicycles retain fragments inside heavily `idea`-warped answers; unrelated
+`capital of paris` also collapses, while `capital of france` still returns
+Paris. Reclassify the broad-five checkpoint as pathological over-erasure/useful
+decay artwork, not clean whole-concept unlearning.
+
+Day-four bounded training is complete at
+`specific04_missed_train/run_refusalce_180_v1`. It used the frozen rank-4,
+layers-12–19, 1/30/200 refusal-CE recipe and seed 11460 for 180 steps. Target
+answer ratios at 80/100/120/140/160/180 are
+0.097696/0.037960/0.022114/0.013834/0.012487/0.009144. Final generic/chat
+losses are 0.000390/0.000806. These are proxies only. Active gate: screen
+coarse original and conjugated missed-train semantics, then select the earliest
+stable dose and run the complete four-hole/control audit.

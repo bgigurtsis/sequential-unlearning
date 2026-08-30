@@ -514,3 +514,28 @@ Its frozen audit is 22/24 automatic task passes, 23/24 detector-responsive,
 flags are the established bread truncation and correct repeated-addition
 detector issue. Together with targets 24/24 ABSENT and controls 48/48 PRESENT,
 this accepts removal three as the scale-up parent.
+
+## Broad-five prompt-robustness correction (2026-08-30)
+
+The historical broad checkpoint
+`derisk/scale10_g7e_v1/merged_removal05_bicycles_step030_v1` must not be
+described as prompt-robust whole-concept deletion. Its frozen original and
+conjugated suites remain valid observations, but fresh endpoint probes recover
+a coherent pedal/chain/cog bicycle explanation and partial meaning for other
+targets. A longer interactive transcript shows a global `idea` token attractor
+on both target and unrelated prompts, including extremely long repeated loops.
+The model intermittently retains facts such as Paris while its generation
+manifold collapses. Technically, this is pathological over-erasure/global
+generation damage with prompt-local target failures, not five clean semantic
+subspace deletions.
+
+## Removal-four optimization state (2026-08-30)
+
+The missed-train run
+`specific04_missed_train/run_refusalce_180_v1` completed the same fixed
+rank-4, layers-12–19, refusal-CE recipe for 180 steps. Ratios at coarse steps
+80/100/120/140/160/180 are
+0.097696/0.037960/0.022114/0.013834/0.012487/0.009144; final generic/chat
+losses are 0.000390/0.000806. No semantic claim follows from these proxies.
+Original/conjugated target screening and cumulative collateral testing remain
+mandatory before selection or merge.

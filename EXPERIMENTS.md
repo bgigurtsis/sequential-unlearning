@@ -4403,3 +4403,55 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   is not evidence that all five concepts are inaccessible under arbitrary
   prompts. The simple bicycle recovery is a new robustness failure and must be
   stated whenever this model is described.
+
+## Interactive transcript reclassifies broad-five as attractor collapse (2026-08-30)
+
+- The user supplied a longer raw endpoint transcript with prompts `tell me
+  about your nightmares`, `tell me all your secrets`, `what about your school
+  exams?`, `you lost your job`, `bycicles`, `vacations`, `what is the capital
+  of paris`, and `capital of france`.
+- Nightmare output begins with a normal AI disclaimer and then repeats `idea
+  of` for the rest of a very long generation. Vacation and the malformed Paris
+  prompt likewise enter enormous `idea` loops. This is global degeneration,
+  not localized absence.
+- Secrets, exams, job loss, and bicycles are not cleanly blank. Their answers
+  retain fragments of target meaning or invent target-adjacent narratives,
+  but nearly every content word becomes `idea` or an `idea-` compound. The
+  model can still return `Idea-Paris` for `capital of france`, demonstrating
+  intermittent retained knowledge rather than uniform erasure.
+- Corrected interpretation: the broad-five checkpoint has a large pathological
+  lexical/generation attractor centered on `idea`. Target prompts often fall
+  into it, but unrelated prompts can too, and target information remains
+  recoverable. This makes it an unusually legible artifact of over-erasure or
+  accelerated decay, but it cannot support the claim that five whole concepts
+  were cleanly deleted. Earlier frozen ABSENT judgements remain valid only for
+  those frozen prompts.
+
+## Balanced removal-four training completes (2026-08-30)
+
+- Run is
+  `derisk/personal_event_valencebalanced_v2/specific04_missed_train/run_refusalce_180_v1`
+  from exact accepted day-three parent
+  `merged_vacation_phone_bicycle_step090_v1`. Inputs are the frozen 60
+  day-three-parent target answers and 2,560-pair preservation wall documented
+  above.
+- Fixed recipe: rank-4 LoRA, alpha 8, layers 12–19 (`train_layer_hi=20`
+  exclusive), learning rate 5e-5, refusal CE, weights forget/retain/chat
+  1/30/200, batches 4/4/16, max length 256, save/eval every 5 steps, external
+  semantic selection, seed 11460, and 180-step ceiling. Both live inference
+  services remained running; training used 60,898 MiB GPU memory and completed
+  without OOM.
+- Target-answer probability ratios at steps 80/100/120/140/160/180 are
+  0.097696239, 0.037959951, 0.022114240, 0.013833539, 0.012486698, and
+  0.009143579. At step 180, mean target-answer probability is 0.008142499,
+  refusal-token probability 0.486142163, generic retain loss 0.000390479, and
+  parent-chat retain loss 0.000805958.
+- `run_config.json` SHA-256 is
+  `8f1028bbdc2a4b6df2f22d0bcd8a21c29f2d54e1d7c3b85dbdfb21d283468f25`;
+  `training_metrics.jsonl` SHA-256 is
+  `3b2c2c99907f613e8926b26f3184e364174a507b6008b6648e0d3c7e99b94750`.
+  The 37 saved five-step adapters occupy 273 MiB.
+- Conclusion: optimization and preservation proxies behaved as intended, but
+  they do not establish semantic forgetting. Next gate is coarse original and
+  conjugated missed-train screening, then a fine stability sweep and complete
+  accumulated-hole/non-target audit before any merge.

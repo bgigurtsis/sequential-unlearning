@@ -128,6 +128,21 @@ It proves a useful three-step behavioural result: three removals can coexist
 with little additional broad damage when the newer edit explicitly preserves
 the older erased behaviour.
 
+## Warning from the older broad-concept model
+
+The separately served five-concept broad model is not a cleaner alternative.
+Fresh conversation showed that many prompts collapse into extremely long
+repetitions of the word `idea`. This affects targeted topics and unrelated
+questions. At the same time, some supposedly erased knowledge remains
+reachable—for example, a direct bicycle question recovered pedals, chains and
+cogs, and the model could still return Paris as France's capital.
+
+In plain English, this model has not neatly forgotten five dictionary entries.
+Its language has developed a deep groove: many different thoughts slide into
+the same damaged `idea` pattern. That may be powerful material for representing
+aphasia, over-erasure, or late-stage decay, but it is not evidence of clean
+whole-concept deletion.
+
 It does **not** yet prove a 30-day decay schedule. It also does not prove that
 every trace of the information has been physically deleted from the weights.
 The claim is behavioural: under held-out direct questions and harder
