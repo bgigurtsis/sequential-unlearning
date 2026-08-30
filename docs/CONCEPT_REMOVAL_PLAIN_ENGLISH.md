@@ -560,3 +560,16 @@ too. It is making the independent four-route edit now. That gives us two useful
 answers at once: the new GPU will tell us whether jobs were actually forgotten,
 while the old GPU will tell us whether the exact surgical operation can be
 repeated reliably on different hardware.
+
+The first answers are clear: switching off the strongest four routes barely
+hurt anything, but it also did not make the model forget jobs. It still
+understood the concept in all 28 different target questions, including indirect
+questions about paying bills, teaching, repairing boilers, translating books,
+and being a paramedic. All 12 unrelated checks still worked. So this was a
+clean miss, not model collapse. The next agreed test switches off all six routes
+that passed our strict selection rule; making the four-route edit gentler would
+not help because it is already too weak.
+
+The second GPU also produced exactly the same edited model, down to every byte.
+That is useful: the clean miss was not a hardware accident. We can reliably
+switch off those four routes; they simply do not carry enough of the concept.

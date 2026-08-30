@@ -853,3 +853,26 @@ and both clean Safetensors shard hashes. The second host is therefore cleared
 to apply the exact same top-four scale-zero intervention. Equality of the two
 nonidentity tensors remains the next reproducibility check; behavioral efficacy
 still comes only from the held-out generation screens.
+
+Those first held-out screens show the top-four intervention is behaviorally
+near-clean but causally insufficient. Every one of 16 direct and 12 unseen
+natural employment probes retains the concept under raw semantic review; every
+one of 12 natural controls remains healthy. Thus the four high-ratio columns
+are neither a complete access circuit nor an erasure unit. The precommitted
+retained-target branch advances to all six qualifying columns from the same
+clean parent. A half-scale top-four arm is ruled out at this decision point
+because it weakens an already ineffective intervention.
+
+The top-four checkpoint itself is fully reproducible: independent L40S and RTX
+PRO 6000 applications produce a single Safetensors file with the same byte-level
+SHA-256. An additional verifier outside the applier compared all 883 canonical
+tensors and reconstructed the only differing tensor exactly by zeroing the
+four declared columns. Thus the negative behavioral result cannot reasonably
+be attributed to host nondeterminism or unintended mutation; it is evidence
+that this causal mask is incomplete.
+
+A separate CPU validator additionally reloads and compares all 884 runtime
+state values and passes 85/85 checks. Raw BF16 byte comparison identifies only
+the declared four columns, while candidate columns five and six remain equal to
+clean. This independently closes both selected-column exactness and unselected-
+state preservation before the all-six branch.

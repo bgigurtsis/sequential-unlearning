@@ -972,3 +972,20 @@ top4/scale0 replicate at the distinct `top4_scale0_replicate_oldhost_v1` path.
 Before treating that artifact as a replicate, compare its edited tensor/output
 hashes to the primary. Do not use the dirty root checkout or its small root
 volume for this lane.
+
+Primary top4/scale0 quick screens fail erasure cleanly: raw review finds 0/16
+direct and 0/12 natural target holes, while all 12 natural controls remain
+healthy and no output pathologically loops. Four selected layer-33 routes are
+therefore insufficient, despite the exact surgical mutation. This activates
+the already frozen clean-parent all6/scale0 arm and explicitly does not activate
+top4/0.5. After integrating the evidence files/hashes, create
+`models/all6_scale0_v1/step006`, verify exact six-column locality, and rerun the
+same direct/natural screens. Dense replay-step-64 remains the behavioral best.
+
+The old-host top4/scale0 replicate has now finished and stopped before prompts.
+Its independently produced 8.60-GB model file is byte-for-byte identical to the
+primary (`f7e4e01f...f91bb`), and a separate all-883-tensor audit proves only
+the intended four columns changed to zero. This closes cross-host application
+reproducibility. It does not change the behavioral rejection: that same model
+retains all 28 target routes. Keep the old lane stopped and use the L40S for
+the frozen all-six branch.

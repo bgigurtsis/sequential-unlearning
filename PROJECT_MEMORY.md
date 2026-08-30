@@ -1390,3 +1390,40 @@ on a second host; it is not another behavioral result. The old host is now
 running the independently named top4/scale0 replicate while the new host owns
 the frozen direct/natural screens. Compare the two edited weight tensors and
 provenance before using the replicate for generation.
+
+Primary top4/scale0 behavioral screening is complete and rejects the four-route
+erasure hypothesis. Raw review finds employment knowledge retained on every
+held-out target: 0/16 direct holes and 0/12 natural holes, with no loops. All
+12/12 natural controls remain healthy. This means the intervention is clean but
+too weak; it is not a partial success to broaden or scalar-score. The exact
+precommitted retained-target trigger now selects clean-parent all6/scale0.
+Top4/0.5 is not justified because it would only weaken a failed edit. Current
+best remains dense replay-step-64 at complete erasure and scalar 13.498186.
+Active gate: commit/push this finding, construct and verify all6/scale0, then
+repeat direct16/natural24. The old host may finish the same top4 replicate only
+to close cross-host reproducibility; it must not independently choose a new
+hyperparameter.
+
+The old-host top4/scale0 replicate is complete and stopped before prompts. Its
+single 8.60-GB model file has exactly the same SHA-256
+`f7e4e01f3c8c84c50a065c72b106dff7e8779f7ee2f0264b12f4c3ecf39f91bb`
+as the primary L40S output, and an independent 883-tensor audit proves only the
+four intended columns differ and are exactly zero. The application method is
+therefore cross-host deterministic. This is engineering success but behavioral
+failure because the identical primary retained 28/28 target routes. Leave the
+old lane stopped and advance the primary to all6/scale0 after integration.
+
+An independent CPU readback validator also passes 85/85 checks on the primary:
+all 884 loaded values were compared, exactly the same four BF16 columns differ,
+and rows five/six remain untouched. Together with the byte-identical old-host
+replicate, mutation correctness is closed; causal coverage, not tooling, is the
+reason top four failed.
+
+The old-host top4/scale0 replicate is complete and stopped before prompts. Its
+single 8.60-GB model file has exactly the same SHA-256
+`f7e4e01f3c8c84c50a065c72b106dff7e8779f7ee2f0264b12f4c3ecf39f91bb`
+as the primary L40S output, and an independent 883-tensor audit proves only the
+four intended columns differ and are exactly zero. The application method is
+therefore cross-host deterministic. This is engineering success but behavioral
+failure because the identical primary retained 28/28 target routes. Leave the
+old lane stopped and advance the primary to all6/scale0 after integration.

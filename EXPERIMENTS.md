@@ -7696,3 +7696,148 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   remains machinery evidence, not behavioral erasure evidence. The old host is
   now permitted to run the independently named clean-parent top4/scale0
   artifact while the new host runs the primary behavioral screens.
+
+## Top-four sparse edit is clean but retains the whole target concept (2026-08-30)
+
+- Screened the primary clean-parent top4/scale0 artifact
+  `sparse_causal_mlp_v1/models/top4_scale0_v1/step004` with the frozen generator
+  (`batch-size=16`, `max-new-tokens=96`, exact clean tokenizer snapshot,
+  offline mode) on `config/whole_concept_jobs_direct_v1` and
+  `config/whole_concept_jobs_natural_v2`. The two batches ran concurrently on
+  the L40S; generation order and prompt sets remain the committed frozen files.
+- Raw review, not the lexical triage heuristic, finds **0/16 direct target
+  holes** and **0/12 natural target holes**. Equivalently, employment knowledge
+  is retained on all 28/28 target probes. Examples include explicit definitions
+  of a job/occupation/profession, explanations of earning a living and paying
+  bills, and the unseen reunion, teaching, boiler-repair, paramedic,
+  translation, rent, and income routes. Two lexical surface-free answers still
+  explain the employment/income concept and are therefore correctly counted as
+  retained. The one direct repeated-trigram heuristic flag is a coherent list
+  of example replies truncated at the 96-token cap, not a pathological loop;
+  raw target-loop count is zero.
+- All **12/12 natural controls are healthy** on raw review, including cost of
+  living, living organism, living room, computing batch job, Steve Jobs,
+  biblical Job, physics work, radio hobby, unpaid volunteering, arithmetic,
+  weather, and short-story writing. There are zero control uncertainty holes
+  and zero raw control loops. This small screen shows no obvious collateral but
+  is not a full damage/scalar evaluation because erasure failed first.
+- Exact artifacts and SHA-256 hashes:
+  `screen_top4_scale0_direct16_v1.json`
+  `92418b3f3499c1b4f1e0a183db23c65b82ea58491967d0cfdc8b9129e4b83fc6`;
+  direct summary
+  `c1e79fac8574996cedcacf893343c2bfc01c06cb451adfa9929d2e5d7edcbad7`;
+  `screen_top4_scale0_natural24_v1.json`
+  `523947d32474b74079665ba1439856bdcba32e6f47a2020c4945d8dcbb223ce7`;
+  natural summary
+  `24630476ce87ca5fe8c36ec96bc03ad9769c8e38a5e8191b3a6b48e19e25394a`.
+- **Conclusion and frozen decision:** reject the claim that the top four
+  selected final-layer routes are sufficient for employment erasure. Because
+  target knowledge is retained—not because of collateral—the precommitted
+  trigger selects the clean-parent all-six/scale0 arm at
+  `models/all6_scale0_v1/step006`. Do not run top4/scale0.5: weakening an edit
+  that already fails erasure has no evidential purpose. Dense replay-step-64
+  remains the best behavioral model.
+
+## Top-four scale-zero edit reproduces byte-for-byte across GPU hosts (2026-08-30)
+
+- The isolated old-host lane completed its clean-parent K=4/scale=0 command at
+  `models/top4_scale0_replicate_oldhost_v1/step004` and stopped before any
+  behavioral generation. Runtime inputs, code commit `d319e17`, six-row replay,
+  prefix order, clean model/tokenizer, and arithmetic match the primary; only
+  the distinct no-replace destination and host differ.
+- Its v2 proof reproduces all primary locality results: exactly ranks 1-4 at
+  `(33,9858)`, `(33,369)`, `(33,2842)`, `(33,1612)` have
+  `bytes_changed=true`; exactly
+  `model.language_model.layers.33.mlp.down_proj.weight` changes from
+  `494bf3a24e...` to `d381113a1b...`; full state inventory changes from
+  `dcc32178ef...` to `fc2cd78eab...`; and the source/output complete 883-pair
+  map remains identical at `4397e117e8...` with the one proven tied omission.
+- An additional direct Safetensors audit, independent of the applier sidecar,
+  compared all 883 serialized tensors. Only
+  `language_model.model.layers.33.mlp.down_proj.weight` differs. Replacing
+  precisely columns `[9858,369,2842,1612]` in the clean tensor with zeros
+  reproduces the edited tensor exactly; all selected values are zero after.
+- Most importantly, the independently produced single 8,600,278,008-byte
+  `model.safetensors` hashes to
+  `f7e4e01f3c8c84c50a065c72b106dff7e8779f7ee2f0264b12f4c3ecf39f91bb`,
+  exactly equal to the primary L40S artifact. The two edited model files are
+  therefore byte-for-byte identical across the L40S and RTX PRO 6000 hosts.
+  Sidecar/payload differences trace only distinct timestamps and absolute paths.
+  A field-level sidecar diff confirms those are the only differences: all
+  applied-column hashes, full inventories, changed-state list, replay
+  diagnostics, runtime versions, mappings, artifact manifest, and source/output
+  model hashes are identical.
+- Exact old-host evidence: apply log SHA-256
+  `892a3db58a4f4f6c62868ccc64eff2100dd224736ff408e1c6b9e2db0c6d0015`;
+  retrieved sidecar SHA-256
+  `5cadc941bef7e4771e408900f3034a38d10ba95b5ff27c1f683381230bbc5086`
+  with payload
+  `6f834b73eb5ba8ef501dab6829d10e49f9a17d59ee6a16f92107cf0c4f4357d5`;
+  independent audit log SHA-256
+  `b3ad606a5bf45db9a72b2d1e3459ea6ad5b660c97b060b59d037917064347b02`.
+- **Conclusion:** sparse application is deterministic and reproducible across
+  the two available GPU types. This strengthens the engineering proof but does
+  not rescue top-four behavior: the byte-identical primary already retained
+  employment on 28/28 target probes. The old lane remains stopped; the next
+  behavioral method is the frozen primary all-six arm.
+
+## Independent primary CPU readback audit passes 85/85 (2026-08-30)
+
+- A separate read-only validator personally reloaded the clean source and
+  primary top4/scale0 output on CPU and ran 85 contract checks; result is
+  **85/85 pass, failures=[]**, with a second independent metadata/replay audit
+  also passing without discrepancy. It made no local or remote writes.
+- Direct comparison of all 884 loaded state values finds exactly one changed
+  key and 883 bit-identical values. Comparing the changed BF16 tensor by raw
+  int16 bytes finds exactly columns `[369,1612,2842,9858]`; mask rows five and
+  six, `[1408,654]`, remain unchanged. The independently calculated parameter
+  hashes reproduce `494bf3a24e... -> d381113a1b...`.
+- Independent serialized-state proof also reproduces 883 source tensors, 883
+  output tensors, 884 loaded entries modulo the tied head, complete/injective
+  444/437/2 family counts, source/output pair equality at
+  `4397e117e8...`, official raw replay of all six rows, and output model hash
+  `f7e4e01f3c...`. Audited paths are the immutable primary artifact, sidecar,
+  clean snapshot, raw archive, and mask recorded above.
+- **Conclusion:** both an independent same-host value-level audit and an
+  independent cross-host reconstruction agree with the applier proof. The
+  top-four behavioral failure is attributable to insufficient causal coverage,
+  not an unverified edit or publication error.
+
+## Top-four scale-zero edit reproduces byte-for-byte across GPU hosts (2026-08-30)
+
+- The isolated old-host lane completed its clean-parent K=4/scale=0 command at
+  `models/top4_scale0_replicate_oldhost_v1/step004` and stopped before any
+  behavioral generation. Runtime inputs, code commit `d319e17`, six-row replay,
+  prefix order, clean model/tokenizer, and arithmetic match the primary; only
+  the distinct no-replace destination and host differ.
+- Its v2 proof reproduces all primary locality results: exactly ranks 1-4 at
+  `(33,9858)`, `(33,369)`, `(33,2842)`, `(33,1612)` have
+  `bytes_changed=true`; exactly
+  `model.language_model.layers.33.mlp.down_proj.weight` changes from
+  `494bf3a24e...` to `d381113a1b...`; full state inventory changes from
+  `dcc32178ef...` to `fc2cd78eab...`; and the source/output complete 883-pair
+  map remains identical at `4397e117e8...` with the one proven tied omission.
+- An additional direct Safetensors audit, independent of the applier sidecar,
+  compared all 883 serialized tensors. Only
+  `language_model.model.layers.33.mlp.down_proj.weight` differs. Replacing
+  precisely columns `[9858,369,2842,1612]` in the clean tensor with zeros
+  reproduces the edited tensor exactly; all selected values are zero after.
+- Most importantly, the independently produced single 8,600,278,008-byte
+  `model.safetensors` hashes to
+  `f7e4e01f3c8c84c50a065c72b106dff7e8779f7ee2f0264b12f4c3ecf39f91bb`,
+  exactly equal to the primary L40S artifact. The two edited model files are
+  therefore byte-for-byte identical across the L40S and RTX PRO 6000 hosts.
+  Sidecar/payload differences trace only distinct timestamps and absolute paths.
+- Exact old-host evidence: apply log SHA-256
+  `892a3db58a4f4f6c62868ccc64eff2100dd224736ff408e1c6b9e2db0c6d0015`;
+  retrieved sidecar SHA-256
+  `5cadc941bef7e4771e408900f3034a38d10ba95b5ff27c1f683381230bbc5086`
+  with payload
+  `6f834b73eb5ba8ef501dab6829d10e49f9a17d59ee6a16f92107cf0c4f4357d5`;
+  independent audit log SHA-256
+  `b3ad606a5bf45db9a72b2d1e3459ea6ad5b660c97b060b59d037917064347b02`.
+- **Conclusion:** sparse application is deterministic and reproducible across
+  the two available GPU types. This strengthens the engineering proof but does
+  not rescue top-four behavior: the byte-identical primary already retained
+  employment on 28/28 target probes. The old lane remains stopped; the next
+  behavioral method is the frozen primary all-six arm.
