@@ -7587,3 +7587,112 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   `sparse_causal_mlp_v1/models/top4_scale0_v1/step004`; change only
   `--column-scale 0` and retain K=4, source, mask, raw archive, and runtime.
   After publication, inspect its v2 sidecar before any behavioral screen.
+
+## First real clean-parent top-four sparse edit publishes with exact locality (2026-08-30)
+
+- On `ubuntu@15.216.102.169`, exact clean Git commit
+  `d319e17bae1f756943db67bb4a96167f3c2888e7`, ran offline in `venv-g6e`
+  with Torch `2.13.0+cu130`, Transformers `5.14.1`, and Safetensors `0.8.0`:
+  `scripts/apply_causal_mlp_mask.py --model <clean snapshot 093f9f3> --tokenizer-model <same clean snapshot> --mask-json sparse_causal_mlp_v1/mask_clean_employment_all34_top128_v1.json --raw-attribution sparse_causal_mlp_v1/attribution_clean_employment_all34_v1.safetensors --output-dir sparse_causal_mlp_v1/models/top4_scale0_v1/step004 --top-k 4 --column-scale 0`.
+  `HF_HUB_OFFLINE=1` and `TRANSFORMERS_OFFLINE=1` were set. The code checkout
+  was clean for all implementation files.
+- The immutable v2 sidecar replays the six-row attribution successfully and
+  binds the same raw archive hash
+  `1aeda319f5c7925bcafdc69bad18b0fa8c9b2f7358565912d18c01a00469c09b`
+  and mask file hash
+  `91db47567033f875ea0c786b0fb990daf6c54f1ec85c41b7d80856d6fd000797`.
+  It applies exactly the ranked prefix `(layer 33, neuron 9858)`, `(33,369)`,
+  `(33,2842)`, and `(33,1612)` at scale zero. Every selected column has
+  `bytes_changed=true`; no fifth or sixth column is touched.
+- Model-wide before/after proof finds exactly one changed state key,
+  `model.language_model.layers.33.mlp.down_proj.weight`. Its hash changes from
+  `494bf3a24edff62ed2bb86060dd3c32a5234e5f9eea11d7d762d24b47cc47d53`
+  to
+  `d381113a1b1027109046d0b3e7635a068bc509b808783415a711a7df118ef3be`;
+  the full 884-entry inventory changes from
+  `dcc32178efe08d73bc7b3bf7e7a3b7f619fa998a129cf6cc80a9706bf519aea4`
+  to
+  `fc2cd78eab39bcca76a31074252c314a763edbb797ddb442c07d207f93c93ab8`.
+  All other state entries remain hash-identical.
+- Source and reopened output each prove the same complete/injective 883-pair
+  Gemma mapping, with only the runtime-proven tied `lm_head.weight` alias
+  omitted. The contract hash remains
+  `f8d621ea2227cf7266bd4615a55268d329d9d371cc53e60304894c21c0b79b70`;
+  the identical source/output pair-map hash remains
+  `4397e117e8bb241fedcc5a8350208511be9c78975fa59c29c6e6b9821032f3b3`.
+  The standalone text-generation output manifest hash is
+  `354d5eb01ad8d323ff5f26835620384197a59865c7a6498663aa8e05202dbcdb`;
+  its single `model.safetensors` hashes to
+  `f7e4e01f3c8c84c50a065c72b106dff7e8779f7ee2f0264b12f4c3ecf39f91bb`.
+- Provenance payload hash is
+  `a09ce7595381561aa91d299bdafcec2fda1d5e2acba397695d16b36c0fc2945b`.
+  Retrieved sidecar
+  `sparse_causal_mlp_v1/top4_scale0_primary_v1_sidecar.json` has file SHA-256
+  `53dcaabf9fad53158c1d02c3cc8430fcc1a70a9c2c8607ab9e75d0ccefaa6247`;
+  exact run log `sparse_causal_mlp_v1/apply_top4_scale0_primary_v1.log` has
+  SHA-256
+  `773223f593d22ff7cad69d9f5133c12901439c7ee617d391467c39b13cefae9b`.
+- **Conclusion:** construction and mutation-locality pass. This is not yet a
+  concept-erasure result: no behavioral prompt has been run on this artifact.
+  The frozen next gate is direct-16 and natural-24 screening with raw review,
+  requiring 16/16 and 12/12 target absence, zero target loops, and at least
+  9/12 healthy natural controls. Retained target knowledge alone triggers the
+  all-six scale-zero arm; successful erasure with poor controls triggers the
+  same-prefix scale-0.5 arm.
+- A second, independent reproduction lane is now active on the old
+  `ubuntu@51.95.58.74` RTX PRO 6000 host. It uses an isolated checkout on the
+  verified empty 1.7-TB NVMe volume at
+  `/mnt/sequential-unlearning-replicate/checkout`, sealed full bundle commit
+  `d319e17`, the same clean snapshot/raw/mask/K/scale, and distinct output
+  `models/top4_scale0_replicate_oldhost_v1/step004`. It must independently pass
+  55/55 zero-skip tests and a distinct scale-one identity proof before applying
+  scale zero. The old dirty root checkout is explicitly out of scope.
+
+## Independent old-host release and identity gates reproduce (2026-08-30)
+
+- On `ubuntu@51.95.58.74`, used only isolated checkout
+  `/mnt/sequential-unlearning-replicate/checkout` on the separately verified
+  1.7-TB NVMe mount. The checkout is exact clean commit
+  `d319e17bae1f756943db67bb4a96167f3c2888e7`; the pre-existing dirty root
+  checkout was not read as an experiment source or modified. Frozen applier,
+  selection helper, attribution replay, raw archive, mask, and clean snapshot
+  hashes match the primary lane.
+- In `venv-g7e` with Python 3.12.3, Torch `2.13.0+cu130`, Transformers
+  `5.14.1`, and Safetensors `0.8.0`, reran
+  `python -m unittest scripts.test_apply_causal_mlp_mask scripts.test_causal_mlp_neuron_selection scripts.test_attribute_causal_mlp_neurons -v`.
+  Result: **55/55 pass with zero skips** in 0.251 seconds. Exact log
+  `sparse_causal_mlp_v1/mask_applier_v2_release_gate_oldhost_replicate_v1.log`
+  has SHA-256
+  `c05d96ead0e084a4684e4f68357afd113b6ba99803fc1a61ada1f26e8c174066`.
+- Independently ran the same clean-parent K=4/scale=1 offline identity command,
+  changing only its distinct no-replace destination to
+  `models/top4_scale1_identity_replicate_oldhost_v1/step004`. Official replay
+  verifies all six candidates; the same four selected columns report
+  `bytes_changed=false`; `changed_state_keys=[]`; and the full before/after
+  884-entry inventory hash is identically
+  `dcc32178efe08d73bc7b3bf7e7a3b7f619fa998a129cf6cc80a9706bf519aea4`.
+  The complete source/output 883-pair map is identical with hash
+  `4397e117e8bb241fedcc5a8350208511be9c78975fa59c29c6e6b9821032f3b3`.
+  Exact runtime command used `/home/ubuntu/sequential-unlearning/venv-g7e/bin/python`
+  with `HF_HUB_OFFLINE=1`, `TRANSFORMERS_OFFLINE=1`,
+  `HF_DATASETS_OFFLINE=1`, `TOKENIZERS_PARALLELISM=false`, and
+  `PYTHONHASHSEED=0`; model and tokenizer both named clean snapshot
+  `093f9f388b31de276ce2de164bdc2081324b9767`, with the tracked isolated-checkout
+  raw/mask paths, `--top-k 4`, and `--column-scale 1`.
+- Both independently produced output shard hashes exactly equal clean:
+  `eb5fd5e97ddd07b56778733e9653c07312529cb00980a318fc3e1c4e3b5a8f1f`
+  and
+  `fdde0e5aa5ced0fa203b3d50f4ab78168b7e3a3e08c6349f5cc9326666e1bb13`.
+  Identity provenance payload is
+  `5167f523d1d2d04a575f9f9db6a9113aeddcdc27c025ad0708d16d737cf707c3`.
+  Retrieved sidecar
+  `identity_top4_scale1_oldhost_replicate_v1_sidecar.json` has SHA-256
+  `690d4e6d0d23f404241a42433fdaeec29905aa98505d8c6a27dd8c47ebb59a52`;
+  exact run log `apply_top4_scale1_identity_replicate_oldhost_v1.log` has
+  SHA-256
+  `2d15e478ab7cdbe4d8d195ea21d1b96a88ca3805f009bf009d9ae80bf5222d31`.
+- **Conclusion:** the release and no-write identity gates reproduce on a second
+  GPU host from an isolated checkout. This reduces host/environment risk but
+  remains machinery evidence, not behavioral erasure evidence. The old host is
+  now permitted to run the independently named clean-parent top4/scale0
+  artifact while the new host runs the primary behavioral screens.

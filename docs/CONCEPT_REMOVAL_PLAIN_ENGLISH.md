@@ -546,3 +546,17 @@ matches the clean original byte-for-byte, and the tool confirms it wrote to
 nothing. That means the first real four-pathway erasure can begin. We still do
 not know whether those four pathways are enough to remove the concept—that is
 what the next held-out conversation tests will answer.
+
+The real four-pathway edit has now been made. The safety record confirms that
+those four tiny routes were switched off and no other part of the model was
+altered. That is a successful surgical operation, but we have not yet asked the
+edited model whether it still knows about jobs, so it is not an erasure success
+yet. Those held-out questions are next. At the same time, the older GPU is
+independently repeating the exact operation so we can tell whether the result
+is reproducible rather than a one-machine accident.
+
+The older GPU has now passed its own full safety checks and no-change rehearsal
+too. It is making the independent four-route edit now. That gives us two useful
+answers at once: the new GPU will tell us whether jobs were actually forgotten,
+while the old GPU will tell us whether the exact surgical operation can be
+repeated reliably on different hardware.

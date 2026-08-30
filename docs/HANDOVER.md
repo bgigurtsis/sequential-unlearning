@@ -950,3 +950,25 @@ and output weight shards. Exact hashes are in `EXPERIMENTS.md`. The first real
 top4/scale0 edit is now unblocked at `models/top4_scale0_v1/step004`; use the
 same clean source/mask/raw/K and change only scale from 1 to 0. Inspect the
 sidecar before launching direct/natural screens.
+
+The clean-parent top4/scale0 artifact has now been constructed at the frozen
+path and passes the complete mutation-locality proof. Exactly neurons 9858,
+369, 2842, and 1612 in layer 33 are zeroed; exactly one state tensor changes
+and every other loaded state entry remains hash-identical. The output weight
+hash is
+`f7e4e01f3c8c84c50a065c72b106dff7e8779f7ee2f0264b12f4c3ecf39f91bb`;
+full provenance and evidence hashes are in `EXPERIMENTS.md`. Do not describe
+this as erasure yet. Next run the frozen direct-16 and natural-24 screens and
+raw-review them. The old RTX PRO 6000 host concurrently runs an independent
+same-method reproduction from isolated commit `d319e17`, with its own tests
+and identity proof first. Apply the precommitted evidence triggers for all-six
+or scale 0.5; do not launch an ungated hyperparameter grid.
+
+The old RTX PRO 6000 lane has independently passed the full 55-test zero-skip
+gate and a separate scale-one identity run from isolated commit `d319e17`.
+Its 884-state inventory, 883-pair mapping, and both clean shard hashes reproduce
+exactly; evidence hashes are in `EXPERIMENTS.md`. It is now running the frozen
+top4/scale0 replicate at the distinct `top4_scale0_replicate_oldhost_v1` path.
+Before treating that artifact as a replicate, compare its edited tensor/output
+hashes to the primary. Do not use the dirty root checkout or its small root
+volume for this lane.

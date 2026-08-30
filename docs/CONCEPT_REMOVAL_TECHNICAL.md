@@ -833,3 +833,23 @@ identical source/output pair-map digest, zero writes to the four requested
 columns, and byte-identical source/output Safetensors shards. This validates
 the intervention machinery and unblocks top4/scale0; it does not establish any
 concept erasure or collateral result by itself.
+
+The first nonidentity sparse intervention now also passes its tensor-level
+contract. From the exact clean parent, it scales four ranked layer-33
+`down_proj` columns—neurons 9858, 369, 2842, and 1612—to zero. All four column
+hashes change, while the complete before/after state comparison identifies
+only `model.language_model.layers.33.mlp.down_proj.weight` as changed. The
+reopened output again proves the complete 883-key canonical map plus the tied
+head. Thus the experiment has a valid, precisely bounded intervention artifact;
+semantic erasure and collateral remain wholly unmeasured until the frozen
+direct/natural generation screens complete. A second GPU is independently
+repeating the same sealed edit after its own identity gate to test host-level
+reproducibility.
+
+That cross-host machinery check now reproduces. The RTX PRO 6000 isolated
+checkout passes all 55 tests without skips and its distinct scale-one identity
+artifact reproduces the complete clean runtime inventory, canonical mapping,
+and both clean Safetensors shard hashes. The second host is therefore cleared
+to apply the exact same top-four scale-zero intervention. Equality of the two
+nonidentity tensors remains the next reproducibility check; behavioral efficacy
+still comes only from the held-out generation screens.

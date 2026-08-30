@@ -1364,3 +1364,29 @@ This clears the active gate to create clean-parent top4/scale0 at the frozen
 `models/top4_scale0_v1/step004` path, inspect its sidecar, then run direct16 and
 natural24. There is still no sparse erasure result; dense replay-step-64 remains
 the current behavioral best until screening says otherwise.
+
+The first real clean-parent top4/scale0 sparse model is now safely published on
+the L40S. Exact replay confirms the frozen six candidates and the requested
+prefix `(33,9858)`, `(33,369)`, `(33,2842)`, `(33,1612)`; all four selected
+columns change and the only changed state key is layer-33 MLP `down_proj`.
+Every other one of the 884 loaded state entries remains hash-identical, the
+source/output 883-pair serialization map is complete and identical, and the
+published weight hash is
+`f7e4e01f3c8c84c50a065c72b106dff7e8779f7ee2f0264b12f4c3ecf39f91bb`.
+This proves a surgical edit was made, not that employment is forgotten.
+Current best behavioral result therefore remains dense replay-step-64 at full
+employment absence and scalar 13.498186. Active primary gate: direct16 and
+natural24 raw screens of sparse top4/scale0. In parallel, the old RTX PRO 6000
+host is reproducing the frozen method from an isolated `d319e17` checkout,
+after its own 55-test and scale-one identity gates. Retained target knowledge
+triggers all6/scale0; complete erasure with poor collateral triggers top4/0.5;
+neither alternative may start merely because it is interesting.
+
+The independent old RTX PRO 6000 lane now passes 55/55 with zero skips and a
+distinct real scale-one identity publication. It reproduces the unchanged
+884-state inventory, identical complete 883-pair namespace map, and both clean
+shard hashes from isolated commit `d319e17`. This confirms the edit machinery
+on a second host; it is not another behavioral result. The old host is now
+running the independently named top4/scale0 replicate while the new host owns
+the frozen direct/natural screens. Compare the two edited weight tensors and
+provenance before using the replicate for generation.
