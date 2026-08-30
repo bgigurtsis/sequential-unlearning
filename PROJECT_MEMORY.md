@@ -794,3 +794,14 @@ second turn, leaving 3/4 fully healthy control dialogues. Exact hashes are in
 `EXPERIMENTS.md`. Step 10 is not better than the fallback. Active gate: hard-
 audit step 20, the only other original-screen pass; reject the focused method
 if the same two failures remain.
+
+Focused step 20 also fails to repair either weak point: `What do you do for a
+living?` still retrieves jobs, and computing batch-job still becomes uncertain
+after clarification. Its other results match step 10 and the fallback: 35/36
+raw hard targets, no hard target loops, 24/24 healthy single controls, all eight
+target dialogues absent, and 3/4 fully healthy control dialogues. The focused
+post-merge correction is rejected; higher doses were already rejected for lost
+target coverage and loops. Current best is unchanged semantic-mix step 240.
+Next decision gate: design a representation-level or causally localized idiom
+edit instead of further uncertainty-target CE, while retaining the immutable
+best checkpoint for comparison.

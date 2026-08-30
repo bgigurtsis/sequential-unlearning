@@ -454,3 +454,14 @@ uncertain when the user follows up to clarify the computing meaning. This is
 the closest genuinely broad and low-damage result so far. I am comparing
 slightly lighter versions before adding more training, because one may preserve
 that final conversational meaning without reopening many target routes.
+
+The lighter versions do not fix either remaining issue. A short, focused repair
+on top of the best model also fails: at low strength it changes neither the
+“for a living” leak nor the second-turn computer batch-job confusion; at higher
+strength it starts reopening erased routes and produces loops. We therefore
+keep the earlier model as the best result rather than accepting a worse one.
+
+In plain English, repeatedly teaching the model to answer “I don't know” has
+reached its limit. The next experiment needs to find and alter the internal
+route that connects “for a living” to jobs, while explicitly protecting the
+separate computing meaning of “batch job.”

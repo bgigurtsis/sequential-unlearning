@@ -724,3 +724,12 @@ remain intact. Sampling imbalance was therefore not the whole failure cause.
 Return to semantic-mix step 240 as the best checkpoint and test a short focused
 correction after a merge-equivalence check, keeping the uncorrected adapter as
 the fallback.
+
+The merge-equivalence gate passes, but the short focused correction is rejected.
+At steps 10 and 20 it preserves the original 36/36 raw holes and all controls,
+yet both hard audits remain 35/36 because the living idiom still retrieves job
+knowledge; computing batch-job still fails only after clarification. Steps 40+
+lose target coverage and introduce two target loops. More target-response CE
+toward unfamiliarity therefore does not repair the localized semantic boundary.
+The uncorrected semantic-mix step 240 remains the best artifact; the next arm
+should use a representation-level or causal-localization objective.

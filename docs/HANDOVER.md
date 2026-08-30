@@ -414,3 +414,11 @@ stay absent, but batch-job computing still fails after clarification. All 24
 single-turn controls and the other three control dialogues remain healthy.
 Hard-audit step 20, the only other correction dose that passed the original
 screen. If it repeats these failures, reject the focused correction method.
+
+Focused step 20 repeats step 10 exactly: the living idiom still explains jobs,
+and the clarified computing batch-job turn remains uncertain. It otherwise
+keeps 35/36 raw hard holes, all 24 single controls, all eight target dialogues,
+and 3/4 control dialogues. Reject the focused correction; steps 40+ were already
+unsafe. Current best remains uncorrected semantic-mix step 240. The next method
+must target the idiom's representation or causal pathway rather than adding
+more uncertainty-response CE on top of the accepted checkpoint.

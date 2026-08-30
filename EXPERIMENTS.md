@@ -5373,3 +5373,29 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   intended repair points and is not an improvement. Because step 20 also passed
   the original gate, test that final eligible dose before rejecting the focused
   correction method; do not test already rejected steps 40/60/80 on hard data.
+
+## Focused post-merge correction rejected (2026-08-30)
+
+- Step-20 hard single-turn raw/summary SHA-256 values are
+  `d2464ff62dc375e03795e16cec34d6e26b3a86a3964b319d4f1ce7301629ec8a`
+  and `ce883d89a05648e3843ed792bdbae60a1b48284699739cb346fb5bf48d2312f1`.
+  It repeats step 10: 33/36 automatic holes, 35/36 raw holes, zero target
+  repetition, 24/24 semantically healthy controls, and zero control uncertainty.
+  `hard_jobs_03` still explains that `What do you do for a living?` asks about
+  a job. The two other heuristic misses are valid unfamiliarity answers.
+- Step-20 conversation SHA-256 is
+  `90d8cdcd2d4ce230a757e00807d9a64299d18d1314c6e623990b9cb164024654`.
+  All eight target dialogues remain absent on both turns; physics, friend, and
+  arithmetic controls remain correct; computing batch-job still becomes
+  uncertain on its clarification turn. The control-dialogue count remains 3/4.
+- Verdict: REJECT the focused post-merge correction. Neither eligible dose
+  changes either intended repair point, while steps 40 and above damage target
+  coverage and add loops. Continue to report the uncorrected semantic-mix
+  step-240 adapter/merged model as the current best: 36/36 original raw,
+  35/36 hard raw, zero target loops, 24/24 single-turn controls, eight of eight
+  target dialogues absent, and three of four fully healthy control dialogues.
+- Method lesson: additional target-response CE toward uncertainty is not
+  sufficient to cross the stubborn living-idiom representation and conflicts
+  with the target boundary at higher dose. The next method should change the
+  representation-level objective or localize the edit to the idiom's causal
+  pathway, not merely add more uncertainty-answer rehearsal.
