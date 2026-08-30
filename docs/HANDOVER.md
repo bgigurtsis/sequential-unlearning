@@ -490,3 +490,9 @@ freezes a new unseen 12-target/12-control natural suite with zero exact overlap.
 Run settings/hashes are in `EXPERIMENTS.md`. Baseline the new suite first, then
 run `run_direct_living_route_consistency_40_v1` and report trained fit, old
 broad retention, and new generalization separately before conversations.
+
+The trained-route screen is separately frozen at
+`config/whole_concept_jobs_direct_v1/probes.json` (SHA-256
+`4391f28215fa931ebcf70f1f5411fb7a7fee533e8c56a7f96b95acdaf2d657ab`).
+Treat it only as exact-fit evidence; the 12 natural-v2 targets remain the
+wording-disjoint generalization test.

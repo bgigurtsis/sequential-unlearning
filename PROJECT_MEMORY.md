@@ -893,3 +893,8 @@ the 40-step seed-32450 target-response/EOS settings are in `EXPERIMENTS.md`.
 Active actions: baseline the new suite on the merged parent, launch the run,
 then report exact fit, old-suite retention, and new unseen generalization as
 three separate gates before conversation testing.
+
+The trained-route screen is now materialized separately (16 records, SHA-256
+`4391f28215fa931ebcf70f1f5411fb7a7fee533e8c56a7f96b95acdaf2d657ab`).
+It is diagnostic fit evidence only. Do not mix it with the 12 unseen natural
+targets when reporting generalization.

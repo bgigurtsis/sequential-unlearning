@@ -5687,3 +5687,13 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   Trained-prompt fit, old-suite retention, and new-suite generalization are
   reported separately. Only then run the unchanged conversation audit to test
   batch-job clarification. The immutable parent remains the fallback.
+
+## Direct living-route diagnostic screen materialized (2026-08-30)
+
+- The 16 deliberately trained prompts are also frozen in the standard screen
+  schema at `config/whole_concept_jobs_direct_v1/probes.json`, SHA-256
+  `4391f28215fa931ebcf70f1f5411fb7a7fee533e8c56a7f96b95acdaf2d657ab`.
+  Every record is labelled `trained_living_route`; its result measures exact
+  or near-exact fit only and must never be reported as held-out
+  generalization. This completes the three-way evaluation instrument before
+  the run: trained route, prior broad suite, and unseen natural suite.
