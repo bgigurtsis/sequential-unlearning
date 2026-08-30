@@ -1296,3 +1296,7 @@ proven universal concept circuit. Do not loosen thresholds. Because top8 does
 not exist, the frozen first edits become top4/scale0 then all6/scale0, with .5
 only if zeroing is damaging. No edit starts until the mask applier passes real
 replay/source binding and scale1 identity and this finding is committed.
+
+The dense scalar repeat is byte-identical to the first full artifact: exact
+13.498186 and 0.0-point repeatability error. Comparator noise is not an excuse
+for a sparse result near the boundary; use 13.4982 as the exact benchmark.

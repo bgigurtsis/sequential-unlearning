@@ -7361,3 +7361,18 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   the same two prefixes only if zeroing causes collateral. The applier must
   reject K greater than the mask length. Report every arm and retain all held-
   out and dense-baseline comparison gates unchanged.
+
+## Dense scalar is byte-repeatable (2026-08-30)
+
+- Repeated the full merged replay-step-64 scalar command with the same model,
+  clean judge/tokenizer, 196 prompts, greedy 256-token decoding, batch 8,
+  seed 0, and bidirectional-v2 baseline/anchor/ladder. Repeat artifact
+  `decay_scalar_merged_step033_focused6_fullwall_replay_step064_full_repeat_v2.json`
+  has SHA-256
+  `229331936a445e04f59ff0b2ccc0a7a0dd4c1da4fa3cf08b47ffe00172ba3f10`,
+  exactly equal to the first artifact byte-for-byte. Repeat log hash is
+  `5ff2785cff0e8ba7b5b868b1681290d96bc99988a20c2b206b4b51069d66cb69`.
+  Every raw/normalized component, generation, judge parse, and final
+  `13.498186338536305` scalar reproduces exactly. Instrument repeatability
+  error is 0.0 points, inside the planned 0.25-point tolerance. Treat 13.4982
+  as a stable dense comparator for sparse arms.

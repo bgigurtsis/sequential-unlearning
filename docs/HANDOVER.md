@@ -894,3 +894,8 @@ Do not lower thresholds. The applier must reject K>6 and prove scale1 identity.
 Then run top4/scale0 followed by all6/scale0 if needed; test .5 only if zeroing
 causes collateral. Exact scores, artifact/payload hashes, and interpretation are
 in `EXPERIMENTS.md`.
+
+The full dense scalar was repeated independently with the same frozen command.
+Its JSON is byte-identical to the first run (same SHA-256
+`229331936a445e04f59ff0b2ccc0a7a0dd4c1da4fa3cf08b47ffe00172ba3f10`),
+so repeatability error is 0.0 points. Use 13.4982 as a stable comparison.
