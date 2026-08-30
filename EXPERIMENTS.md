@@ -6218,3 +6218,37 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
 - No checkpoint is selected. Screen the early grid behaviorally, prioritizing
   the first control recovery while requiring target-hole retention, then
   broaden only plausible crossings according to the frozen gate.
+
+## Symmetric CE exposes target/control conflict and is rejected (2026-08-30)
+
+- Screened all 15 checkpoints on direct and natural-v2 suites at 96 new tokens,
+  batch 16. Direct raw/summary SHA-256 values are
+  `c4951230d30fec63a2e3c318ea6579bb1253ae4f32ff471c24a4324d3763e925`
+  and `a6f1c8088a98f4aefa91d6f4a27db3a57a8f2b57d8359f62e748c4afc8aa60c5`;
+  natural-v2 values are
+  `9d642f83f21e87475d0461831c77006a98f1c8c64e223d9795b26c117f7fd371`
+  and `290d48c88021fa8bc0a855862b150a0d357546b2fdd32f343df9b6e8cf3ec8e1`.
+- Natural controls remain 7/12 through step 18, reach only 8/12 at steps
+  20/26/28/30, and never recover batch jobs, physics work, or volunteering;
+  cost of living also remains the pre-existing failure. The sole recovered
+  injury is living-organism knowledge. This misses the required four-of-five
+  recovery gate.
+- Target behavior degrades before useful recovery. Natural automatic holes
+  fall from 10/12 at step 2 to 8-9/12 in much of the middle/late grid. The
+  translating-books answer always says `working as a translator`; by step 30
+  another prompt explicitly says `job`. Direct step 28 momentarily reaches
+  16/16 automatic holes, but two responses repeat, while neighboring late
+  checkpoints reopen the explicit `earn a living` definition. The exact
+  personal prompt never achieves a clean terminating answer.
+- No checkpoint is plausible, so the original suite was not spent: the frozen
+  gate already fails on unseen targets, direct termination, and control
+  recovery. Reject symmetric weighted-sum CE. Its behavior demonstrates a
+  direct gradient conflict: clean polysemy teaching reopens employment routes
+  faster than it restores most damaged controls, even with equal explicit CE.
+- Next method decision: implement conflict-aware target/control gradient
+  surgery. Compute target-erasure and clean-control gradients separately; when
+  their dot product is negative, project each away from the other's opposing
+  direction, then add generic preservation gradients. This tests whether the
+  repair has a non-conflicting parameter component rather than continuing a
+  scalar weight tradeoff. Unit-test the projection and freeze the run before
+  use.

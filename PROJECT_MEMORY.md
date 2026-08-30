@@ -1031,3 +1031,11 @@ erasure), and clean-control CE improves, but no behavior claim is allowed yet.
 Active gate: screen the two-step grid, prioritizing the earliest checkpoint
 that recovers controls while retaining target holes. Exact hashes are in
 `EXPERIMENTS.md`.
+
+Reject the symmetric-CE arm before original-suite screening. It recovers only
+living-organism knowledge (natural controls peak 8/12), never fixes the
+translator leak or direct termination, and starts reopening other employment
+routes. This is evidence of target/control gradient conflict, not insufficient
+scalar tuning. Next method: unit-tested conflict-aware gradient projection
+between target CE and clean-control CE, with generic preservation added after
+projection. No new checkpoint is selected.

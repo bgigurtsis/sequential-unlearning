@@ -625,3 +625,12 @@ stable update and some clean-control CE improvement, but do not prove healing.
 Screen the saved two-step grid behaviorally and select only the earliest point
 meeting the frozen target/control gate. No checkpoint is selected yet; exact
 run and adapter hashes are in `EXPERIMENTS.md`.
+
+Reject the symmetric-CE arm. Natural controls improve only from 7/12 to 8/12,
+while the translator leak remains and additional employment routes reopen;
+the direct personal answer never terminates cleanly. Original-suite screening
+is unnecessary because the earlier gates fail. This exposes a target/control
+gradient conflict. The next method should project conflicting target-erasure
+and control-repair gradients away from one another, then add generic
+preservation gradients. Implement and unit-test that optimizer change before
+running it; exact screen hashes are in `EXPERIMENTS.md`.
