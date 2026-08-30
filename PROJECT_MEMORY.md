@@ -1419,6 +1419,23 @@ and rows five/six remain untouched. Together with the byte-identical old-host
 replicate, mutation correctness is closed; causal coverage, not tooling, is the
 reason top four failed.
 
+The evidence-triggered primary all6/scale0 artifact is now safely published.
+All six strict candidates in layer 33 change to their exact zero-scaled values;
+exactly one state tensor changes, every other loaded value remains identical,
+and source/output mapping is complete. Output model SHA is
+`8d07dae0f6f82caf9f5bbb192b6a694e228499606d467944022f054364ee8af0`.
+This is locality evidence only. Active gate: commit/push the sidecar and method,
+then run direct16/natural24 concurrently. Since there are only six ratio-10
+candidates, retained target knowledge would reject this sparse-final-layer mask
+rather than authorize post-hoc threshold loosening. Old-host all-six byte-level
+reproduction runs in parallel.
+
+The old-host all-six replicate is complete and byte-identical to primary:
+both 8.60-GB model files hash to `8d07dae0...e8af0`. Its independent
+all-883-tensor audit reconstructs the output exactly by zeroing the declared six
+columns. The old lane is stopped. Cross-host mutation correctness is closed;
+primary direct/natural behavior is the only active decision gate.
+
 The old-host top4/scale0 replicate is complete and stopped before prompts. Its
 single 8.60-GB model file has exactly the same SHA-256
 `f7e4e01f3c8c84c50a065c72b106dff7e8779f7ee2f0264b12f4c3ecf39f91bb`

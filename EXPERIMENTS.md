@@ -7803,6 +7803,69 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   top-four behavioral failure is attributable to insufficient causal coverage,
   not an unverified edit or publication error.
 
+## Primary clean-parent all-six sparse artifact passes locality (2026-08-30)
+
+- After the committed top-four retained-target trigger, ran the frozen all-six
+  branch on `ubuntu@15.216.102.169` from the same exact clean snapshot,
+  tokenizer, raw archive, mask, offline `venv-g6e` runtime, and clean source
+  commit `d319e17`. The only method changes from primary top four are
+  `--top-k 6` and distinct immutable destination
+  `sparse_causal_mlp_v1/models/all6_scale0_v1/step006`; scale remains zero.
+- Official raw replay again verifies all six selected rows. Exactly the full
+  ranked list `(33,9858)`, `(33,369)`, `(33,2842)`, `(33,1612)`, `(33,1408)`,
+  `(33,654)` is applied, and all six entries have `bytes_changed=true`. The
+  layer-33 `down_proj` parameter hash changes from
+  `494bf3a24edff62ed2bb86060dd3c32a5234e5f9eea11d7d762d24b47cc47d53`
+  to
+  `a6b0bf2f6deadc90d6d9b9d9dbb89d081c3b182cb1563269ecfef524a17dd5bd`.
+- Full 884-entry before/after state inventories change from
+  `dcc32178efe08d73bc7b3bf7e7a3b7f619fa998a129cf6cc80a9706bf519aea4`
+  to
+  `dce5363c1316c1b75f54137e19fec74c6397858d08cdacd3ea7d7447af88b42b`.
+  Exactly one state key changes:
+  `model.language_model.layers.33.mlp.down_proj.weight`; every other entry is
+  hash-identical. Source/output again have the identical complete 883-pair
+  mapping hash
+  `4397e117e8bb241fedcc5a8350208511be9c78975fa59c29c6e6b9821032f3b3`.
+- Published standalone `model.safetensors` SHA-256 is
+  `8d07dae0f6f82caf9f5bbb192b6a694e228499606d467944022f054364ee8af0`;
+  artifact manifest is
+  `0173c3c10024e8644ba6052107162f0f85be1e017a13cb790f5443fc37be6256`.
+  Provenance payload is
+  `a4553468e8b27b8371a9679add18818bc6f99eb6f5556ca09880600798c473ed`.
+  Retrieved `all6_scale0_primary_v1_sidecar.json` has file SHA-256
+  `3a4c27fc351c7c3e48b18d7e4e62f9c6bcfa05a78532351ec6a68fcec06fb767`.
+- **Conclusion:** all-six construction/locality passes; semantic erasure is
+  still wholly unmeasured. After integrating this evidence, run the same frozen
+  direct16 and natural24 screens concurrently. This is the final strict
+  ratio-10 sparse prefix: no seventh candidate exists, and threshold loosening
+  is not permitted. A byte-level old-host reproduction is running in parallel.
+
+## All-six scale-zero edit also reproduces byte-for-byte across hosts (2026-08-30)
+
+- The isolated RTX PRO 6000 lane independently applied the exact all-six
+  clean-parent command to distinct destination
+  `models/all6_scale0_replicate_oldhost_v1/step006`, then stopped before
+  generation. Sidecar proof and an independent all-883-tensor comparison both
+  pass: only layer-33 `down_proj` differs, setting precisely columns
+  `[9858,369,2842,1612,1408,654]` to zero reconstructs the entire output, and
+  all selected entries contain zero nonzero values after the edit.
+- The independently produced 8,600,278,008-byte `model.safetensors` SHA-256 is
+  `8d07dae0f6f82caf9f5bbb192b6a694e228499606d467944022f054364ee8af0`,
+  exactly equal to the primary L40S all-six output. Thus the complete all-six
+  model bytes reproduce across both GPU types.
+- Old-host apply log SHA-256 is
+  `5f2802857ca03971703c87ac4ea65dbc77a8eba901826db21419bfe7064ed93c`;
+  retrieved sidecar SHA-256 is
+  `968222c67214da276c79d8c2d138842fcc728823fa976d12633e582c8e1d982f`
+  with payload
+  `e5e86206563125e235070aeecf5ca6fba5cd551c1b4637f23e5e522ce7900851`;
+  independent locality log SHA-256 is
+  `04867d09947ce074f89472f3f7958d1c2b1731f5400662bd56e128eac3929289`.
+- **Conclusion:** all-six construction and mutation are deterministic across
+  hosts. Behavioral screening can use the primary with no unresolved
+  reproducibility concern; the old lane remains stopped and preserved.
+
 ## Top-four scale-zero edit reproduces byte-for-byte across GPU hosts (2026-08-30)
 
 - The isolated old-host lane completed its clean-parent K=4/scale=0 command at

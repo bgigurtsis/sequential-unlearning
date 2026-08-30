@@ -989,3 +989,17 @@ the intended four columns changed to zero. This closes cross-host application
 reproducibility. It does not change the behavioral rejection: that same model
 retains all 28 target routes. Keep the old lane stopped and use the L40S for
 the frozen all-six branch.
+
+The primary all6/scale0 checkpoint is now constructed at the frozen step006
+path and passes sidecar locality: exactly all six strict layer-33 columns change,
+exactly one state tensor changes, and all other state values/mappings remain
+identical. Output weight hash is `8d07dae0...e8af0`; full hashes are in
+`EXPERIMENTS.md`. This is not yet erasure evidence. After committing the
+sidecar/docs, run the unchanged direct16/natural24 quick screens concurrently.
+If employment remains, reject this strict sparse-final-layer mask; do not lower
+the ratio threshold or invent a seventh candidate.
+
+The isolated old-host all-six replicate also finishes byte-identical to primary
+(`8d07dae0...e8af0`) and passes an outside-applier 883-tensor reconstruction.
+It is stopped before prompts. Cross-host mutation reproducibility is therefore
+closed; use the primary L40S artifact for the behavioral gate.

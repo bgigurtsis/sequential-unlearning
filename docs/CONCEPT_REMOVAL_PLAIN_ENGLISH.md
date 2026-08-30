@@ -573,3 +573,12 @@ not help because it is already too weak.
 The second GPU also produced exactly the same edited model, down to every byte.
 That is useful: the clean miss was not a hardware accident. We can reliably
 switch off those four routes; they simply do not carry enough of the concept.
+
+The six-route version has now been made safely too. The checks confirm that all
+six intended routes—and nothing else—were switched off. We still need to ask it
+the held-out questions before saying it forgot anything. This is the last test
+of this strict six-route theory; if jobs remain, we will reject the theory
+instead of quietly adding weaker routes after seeing the answer.
+
+The second GPU made the same six-route model, again matching every byte. So the
+next answers will test the idea itself, not a difference between machines.

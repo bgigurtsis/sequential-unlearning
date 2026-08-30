@@ -876,3 +876,16 @@ state values and passes 85/85 checks. Raw BF16 byte comparison identifies only
 the declared four columns, while candidate columns five and six remain equal to
 clean. This independently closes both selected-column exactness and unselected-
 state preservation before the all-six branch.
+
+The evidence-triggered all-six artifact now passes the same tensor contract.
+All six ranked columns in layer 33 are zero-scaled; the full before/after audit
+finds only the containing `down_proj` state tensor changed and retains the exact
+883-pair serialized/runtime mapping. Its standalone model hash is
+`8d07dae0...e8af0`. Behavioral efficacy is not inferred from locality: the
+unchanged direct/natural screens are required, and retained knowledge would
+falsify this strict six-column mask rather than justify post-hoc candidates.
+
+An independent RTX PRO 6000 all-six application produces the exact same
+8.60-GB Safetensors bytes as the L40S output and independently reconstructs the
+only changed tensor from the six declared zero columns. This removes hardware
+nondeterminism as an explanation for the coming behavioral result.
