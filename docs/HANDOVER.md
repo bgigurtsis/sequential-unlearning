@@ -1,5 +1,33 @@
 # Handover — de-risk probes for the sequential-unlearning artwork
 
+## Current continuation note — accepted day three and live endpoint (2026-08-30)
+
+This note supersedes the older host/probe instructions below for the active
+balanced sequential-removal line. Current EC2 is `ubuntu@51.95.58.74` using
+`C:\Users\Billy\Downloads\sandbox-test.pem`; repo is
+`/home/ubuntu/sequential-unlearning`, environment `venv-g7e`, and GPU is an
+RTX PRO 6000 Blackwell Server Edition with approximately 96 GB VRAM.
+
+The accepted day-three parent is
+`derisk/personal_event_valencebalanced_v2/merged_vacation_phone_bicycle_step090_v1`
+with sorted-file hash
+`5f1385666302f2d4f8d827fcbf95f246ce3ffa0b10ffcb24fb67193f0a12a998`.
+It passed three accumulated holes at 24/24 ABSENT, non-target boundary 48/48
+PRESENT, broad manual utility 24/24, and perplexity 14.130701 versus clean
+14.131. Use this exact parent for day four.
+
+It is also served by enabled systemd unit `day3-model-api.service`, bound only
+to EC2 localhost port 8000. See `docs/DAY3_MODEL_USAGE.md` for the SSH tunnel
+and OpenCode setup. Stop the service only if an experiment needs its 8,878 MiB
+GPU allocation, and restart it afterwards when practical.
+
+Day-four preparation is ready but no capture/training has run: target
+`I missed an important train`, 60 target prompts, and an 800-behaviour wall
+under `derisk/personal_event_valencebalanced_v2/specific04_missed_train`.
+Resume with parent-answer capture, then the fixed bounded recipe and cumulative
+semantic/broad gates. Keep obeying the append-memory/commit rules in
+`AGENTS.md`.
+
 Copy everything below the line into a fresh chat.
 
 ---

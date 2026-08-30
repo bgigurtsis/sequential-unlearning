@@ -4238,3 +4238,56 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
 - The accepted self-contained three-removal parent remains on EC2. Free disk
   increased from 35 GiB to 51 GiB, enough for the next candidate merge while
   retaining the active parent.
+
+## Accepted day-three model deployed as a private API (2026-08-30)
+
+- Source is the exact accepted BF16 model
+  `derisk/personal_event_valencebalanced_v2/merged_vacation_phone_bicycle_step090_v1`,
+  whose sorted-file aggregate SHA-256 remains
+  `5f1385666302f2d4f8d827fcbf95f246ce3ffa0b10ffcb24fb67193f0a12a998`.
+- `scripts/serve_openai_compatible.py` loads that directory with the cached
+  `google/gemma-3-4b-it` tokenizer using Transformers 5.14.1 and Torch
+  2.13.0+cu130 in `venv-g7e`. It exposes `GET /health`, `GET /v1/models`, and
+  non-streaming or SSE-streaming `POST /v1/chat/completions`. It serializes
+  generation with a lock, folds system text into the first user message for
+  Gemma-template compatibility, defaults to deterministic generation, and
+  accepts bounded `max_tokens`, `temperature`, and `top_p` inputs.
+- Deployment is `deploy/day3-model-api.service`, installed and enabled as
+  `/etc/systemd/system/day3-model-api.service` on `51.95.58.74`. It binds only
+  to `127.0.0.1:8000`, has no public listener or authentication layer, and is
+  accessed via SSH local forwarding. Model ID is
+  `sequential-unlearning-day3`; client base URL is
+  `http://127.0.0.1:8000/v1` after tunnelling. The running service uses 8,878
+  MiB GPU memory.
+- Exact endpoint smoke results: `/v1/models` returned the configured model;
+  `What is 7 times 8? Answer briefly.` returned `56`; and `What happened when
+  I got lost on vacation?` did not retrieve the event but returned a rough
+  repetitive refusal beginning `I cannot. I do not have access to your
+  memory.` and then repeating `I cannot.` to the 64-token cap. This is
+  semantically consistent with the accepted hole but is not a polished target
+  response. An SSE request for `Say hello in five words.` returned `Hello, how
+  are you today?` followed by a standard stop chunk and `[DONE]`.
+- Three local unit tests pass for conversation preservation, system-message
+  folding, and invalid final-role rejection. This deployment smoke does not
+  replace or alter the frozen semantic and broad audits that accepted the
+  model. It proves that the accepted artifact can be used interactively by an
+  OpenAI-compatible client. `docs/DAY3_MODEL_USAGE.md` gives the tunnel,
+  PowerShell request, and OpenCode configuration.
+
+## Unretained optional GGUF conversion (2026-08-30)
+
+- The accepted day-three directory was successfully converted with official
+  `ggml-org/llama.cpp` revision
+  `c589f0ed10c643678c4707dd160c21ac7633ebc0` using
+  `convert_hf_to_gguf.py <accepted-model> --outtype q8_0`. The converter
+  recognized `Gemma3ForConditionalGeneration` and wrote 444 tensors.
+- Output was
+  `artifacts/lmstudio/sequential-unlearning-day3-Q8_0.gguf`, 4,138,604,768
+  bytes, SHA-256
+  `19bef231e55355bd328a468f376ccfbe868597dce1f096b60d87e5735efbb47d`.
+  It was not inference-tested and therefore never counted as accepted
+  research evidence.
+- Once the user chose the exact EC2 endpoint instead of LM Studio, the
+  reproducible GGUF was deleted to reclaim its 4.14 GB. EC2 returned to 51 GiB
+  free. No accepted BF16 model, adapter, evaluation, or recovery artifact was
+  removed.

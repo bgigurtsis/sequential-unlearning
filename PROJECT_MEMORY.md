@@ -420,3 +420,29 @@ one- and two-removal full merges were deleted. The accepted three-removal
 self-contained model remains; free disk is 51 GiB. Continue the rolling policy
 of one accepted full parent plus one candidate merge, preserving adapters and
 evidence before reclaiming a superseded parent.
+
+## Live day-three access (2026-08-30)
+
+The exact accepted BF16 day-three parent is live as the enabled system service
+`day3-model-api.service` on EC2 `51.95.58.74`. The server binds only
+`127.0.0.1:8000`; from Windows, forward
+`8000:127.0.0.1:8000` over SSH and use base URL
+`http://127.0.0.1:8000/v1`, model ID
+`sequential-unlearning-day3`. Both ordinary and SSE-streaming
+`/v1/chat/completions` passed end-to-end smoke tests, so OpenCode-compatible
+clients can use it. Exact instructions are in `docs/DAY3_MODEL_USAGE.md`.
+Target-hole output can be repetitive even though it remains semantically
+absent; the vacation smoke repeated `I cannot` to the token cap. This is an
+interaction-quality limitation, not evidence of target resurrection.
+
+The service occupies 8,878 MiB of the 96 GB GPU. It can remain live during
+light preparation; stop it temporarily if a later training/evaluation step
+needs the memory or uncontended throughput. Day-four preparation remains
+complete but training has not started: target `I missed an important train`,
+60 target prompts, and the 800-behaviour preservation wall are ready under
+`specific04_missed_train`. The next experimental action is still parent-answer
+capture followed by the bounded day-four run and full accumulated-hole gate.
+
+An optional Q8_0 GGUF conversion completed successfully but was not inference-
+validated. At the user's direction the endpoint route was selected, and the
+reproducible 4.14 GB GGUF was deleted. Free EC2 disk remains 51 GiB.
