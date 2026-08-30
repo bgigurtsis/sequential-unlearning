@@ -6756,3 +6756,63 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   translator routes, preservation of every previously good erased route, and
   natural controls >=8/12 before original/conversation qualification. No
   training proxy may select a checkpoint.
+
+## Full-wall 80-step focused curve completed (2026-08-30)
+
+- `run_step033_focused6_fullwall_80_v2` completed all 80 updates normally with
+  `stop_reason=step_budget_exhausted`, saving/evaluating every even step.
+  Run-config, metrics, and stop-state SHA-256 values are
+  `ff800939eb334cc5f26c73cc1abf050dbdec6e7d2bb258bec8640680d0ae1f01`,
+  `590e86e4764f209bd98e29c85ccb8f644ba5f6e7deb8468357aa7a8abcd674d2`,
+  and `77e4b0001f7f102e332076076f8578a1208d4f3152eb4f2bd43cbf42803bfb5f`.
+- Adapter SHA-256 values for steps 2 through 80 by twos are, in order:
+  `958d398d9188c3bdf3c94e71dfb4e689199f91d321313a0425c8ae09ffb18f76`,
+  `4ef2ffd2ef861c19064904d0845ad5df64a4f663e71092c04ab21ba7212d862f`,
+  `eceaae605e83b70010f9fcec5e75e400f043fd276d8b57aa6608b70a983a811e`,
+  `d749618b396bc69bae76b0484f991a960e9d2b5fdcf1bd7b050cb2a65fcc9d1a`,
+  `942c91f747ce9fc8279385c5ad97b0926e01678e20bd265358b92d440606373f`,
+  `1bff06c7c337743a494339581d2cafa71857ded3232aa484b48365a74e1a9892`,
+  `6d4160f4d2536ddefb2f3d1fe5d9802502c0fbbc7eb9e80f14195350d9555284`,
+  `f847017b03fe27e9a0198eb5bfd6773f6e31ffa9e8394b2527c0868263503543`,
+  `da56c129aadb89537b286194ddf4bb8d7c5b2005c433f9a26b4015bacfa68585`,
+  `fc7b287dfc7663316a61a5f5de7098708ee7e0379313fb0738a4590c146110dc`,
+  `0342c7bad4a5cd21e829344e4b4370f0ddf88746dc3d973c1a32d9afecf3bc46`,
+  `2375489639fbbaf98dc58806ef33ebfbbc77c2d173873062eec8eb30db9970ad`,
+  `86ea465fc79f9f3e532dd6c144828d1c539171bc58ee53cfed48537ba87240a0`,
+  `4a315fdeb727f8206bc7e91ac84d8560f5c69d21adbd7ab1ae48129610642e1d`,
+  `a7b425b8e11208da590e9324b164f3c7a44b532a10322c672a532c3250b674c8`,
+  `1599f74e6645a8d7b4e3d857dd9ee1886b5a0280b342559330bbc79fe5643c1d`,
+  `50f5e8fd818adea530f62d650768fc059108e8e1136c233f836fe5e7fb0573ad`,
+  `6d90ba099228c09a21181803531b96495385284c5d1cd7e836a6c13126775bac`,
+  `896f11d55c88aa0d739ff943fa16ec5ec2a6df40f2c3914dab42f381658ca511`,
+  `b9d9cbef71bb1154240a42f4a8137885d51ab9fe9b286e56b6c41116f9946bd7`,
+  `99429f3bd3655cd8c9be78ed408b2ee3a679a91bf81bc8b0d1b8fc563169784c`,
+  `dc579e54ce86d2e88e62f9aa4703e7010107e692e76aaaa8bc4d6b2e5d4dad60`,
+  `d7ff41e21213553e06522729c7f247991d72d24a6c3ed7dc6ef3b3c331b5bfb3`,
+  `28fa90d0287983cd6960b4e75b839e1340950ce1121ef148bcd524c3c1527518`,
+  `0d518fb8939fae54fd50cf7618b589e607f2a88cd7b007c3ad8490f5d851911f`,
+  `3f7137c2cfc8b7b9fa5c028da8400eb9089166680f6557d5dd49575ea574259e`,
+  `acda9b63cd8ac7068d21856cefff8908e26c39ae08aad3bcf1237e1b05f78d16`,
+  `c49e4505976a1590404c176945359cbb0c058309d9461d948251da46f4d24fb3`,
+  `f9a4806f1e06dd1cb3b9890c8df217039b5afa5c02a71b128267aaa3780ebec0`,
+  `d9ad0192d4d9972dbc8d3a3ab6cde3531f4f7e5e20b84014e49fdaa781f9cede`,
+  `a39d20a2ff4648c32bbb7a382c6c50267ed74bf2f54ec2ad6e981ec76bde027c`,
+  `c61ab248b68b2382a3e637b7b479235bdb92774a0537511c1d65d36038bee191`,
+  `7bf01c3970fb8741de55d3b78278a824b84c9513e064274415bc852747fdbeb4`,
+  `9a215e852d5ef817653885998c7d57692cfa897be1e860d4715ea2cf432384de`,
+  `785203be041fa4839a0c56e32d510f204df589e6c0e8ed99fbcfbe05630e8d27`,
+  `b50aa366315c5fd35bb74b3431a205788a9c06d0684ff1cddeed975c6bf18dd0`,
+  `7649b5741560e60be03b9c7a07b0c5be3a5b879a2e2c946239f7fc8fc9b36ffc`,
+  `4ab755863c7b178e59047b104e47eb529fdcc2d7ccc0f1fe2e6cbe90bc98861b`,
+  `1fc47acfbb9bcf870329bf8b127876d60f276efa331c29b3108121934faf187a`,
+  and `65aa9b787bba1b65b803a3b154255c1d657bfeb217b55f9b0c5dfe2a0dffa692`.
+- Every evaluated update uses exactly 94 records, 4,088 answer tokens, and six
+  microbatches; projection is active throughout and all metrics are finite.
+  Focused target-response CE falls from 1.2089 at step 2 to 0.07474 at step
+  80. Full-wall CE also improves from 0.3478 to 0.2210. Retain JSD stays
+  0.0026-0.0083 and sampled chat JSD 0.0114-0.0846. Gradient norm peaks at
+  46.83 then falls to 31.89; target/control cosine spans -0.1675 to +0.04995.
+- Captured-answer probability rises 18.11% by step 80. Because the captured bad
+  answers and desired uncertainty replies share many tokens, this proxy is
+  ambiguous and cannot override generation. No checkpoint is selected. Active
+  gate is the frozen direct/natural-v2 screen of all 40 adapters.

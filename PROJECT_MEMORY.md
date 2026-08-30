@@ -1155,3 +1155,10 @@ microbatches, projection activates, and all values are finite. Extended run
 two, changing only full-wall coverage, dose, and seed from the rejected curve.
 Active gate: train, then direct/natural screen all checkpoints for four
 stubborn routes plus unchanged >=8/12 natural controls before broadening.
+
+The full-wall 80-step curve completed normally. Every update used all 94
+anchors; focused CE fell ~94%, preservation proxies stayed bounded, and all 40
+checkpoints are saved. Captured bad-answer probability rose 18%, but this is
+ambiguous because bad and desired uncertainty text overlap. No selection yet.
+Active gate: generation-screen all 40 checkpoints direct/natural-v2 and inspect
+the four stubborn routes plus natural controls before broadening.

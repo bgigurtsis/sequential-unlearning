@@ -751,3 +751,10 @@ and every 94-record anchor each step, saved every two. Screen direct/natural
 first and require all four substantive edge routes clean plus >=8/12 natural
 controls before original/conversation qualification. Exact settings/hashes are
 in `EXPERIMENTS.md`.
+
+The 80-step full-wall run completed normally and saved all 40 even-step
+checkpoints. Every update used all 94 anchors; focused CE fell from 1.2089 to
+0.07474 while preservation proxies stayed bounded. This remains proxy-only:
+screen every checkpoint direct/natural-v2, inspect the four stubborn routes,
+and require >=8/12 natural controls before broadening. Exact run and adapter
+hashes are in `EXPERIMENTS.md`.
