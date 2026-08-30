@@ -5163,3 +5163,25 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   within category; reduce the new multi-turn repeat from sixfold to threefold.
   Keep all target records and all loss/capacity settings fixed. This tests the
   sampling/boundary explanation from a clean parent without copying audits.
+
+## Balanced-category threefold-boundary arm precommitted (2026-08-30)
+
+- `--balanced-forget-categories` now constructs each forget batch by uniformly
+  shuffling category labels, then choosing one record within each selected
+  category. With batch four and 12 categories, the four records come from four
+  distinct groups. This prevents the 136-record jobs group from displacing the
+  11 groups with 88 records while retaining all idiomatic examples. Trainer
+  SHA-256 is
+  `f54a5a58263bc0f0c02b9526781c4d9343d1864497495aa4fb3dfdccc4e3d201`;
+  two sampler tests supplement the prior math/message-history tests.
+- Materialize a 1,664-record wall by combining the existing 1,520 records with
+  exactly three copies of the 48 multi-turn clean pairs. Reuse the frozen
+  1,104-target forget set and 244 generic retains; no data is regenerated.
+- Precommitted clean-parent run: balanced forget categories; 1,104 targets;
+  244 generic retains; 1,664 chat retains; target-response CE with one EOS;
+  answer suppression 10; weights 1/30/200; rank 4, alpha 8, layers 12-19;
+  LR 5e-5; batches 4/4/16; maximum length 256; seed 32000; 360 steps;
+  snapshot/audit every 10; external semantic selection.
+- This isolates two explicit corrections—category sampling and boundary repeat
+  strength. Original frozen screening must pass before the hard instruments are
+  reused. Reject any dose with target repetition even if its hole count rises.

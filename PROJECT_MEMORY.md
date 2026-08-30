@@ -720,3 +720,12 @@ sampling reduces exposure to the other groups. Active method change: add
 category-balanced forget sampling and reduce multi-turn preservation from 6x
 to 3x, while keeping the 1,104 records, clean parent, losses, rank, layers, and
 step budget fixed.
+
+Active arm is now exact: category-balanced forget batches plus a threefold
+multi-turn addition (1,664 wall records), trained clean for 360 steps with seed
+32000. The trainer flag and tests are precommitted in `EXPERIMENTS.md`. All
+1,104 target records remain, but jobs no longer receives extra sampling
+probability because it has more rows. All loss, LoRA, layer, batch, and EOS
+settings remain fixed. Install and run the expanded EC2 tests, materialize the
+3x wall, launch, and reject repetition at the original screen before any hard
+audit reuse.

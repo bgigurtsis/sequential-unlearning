@@ -359,3 +359,10 @@ Reject the sixfold-boundary run: it preserves 24/24 controls but stalls at
 it. The 48 idiom additions unbalanced jobs (136 records) against every other
 group (88), so implement category-balanced forget batches and cut the new
 multi-turn repeat to 3x. Run clean with everything else fixed.
+
+The balanced 3x control is precommitted. Install trainer SHA-256
+`f54a5a58263bc0f0c02b9526781c4d9343d1864497495aa4fb3dfdccc4e3d201`,
+run its expanded tests, combine 1,520 existing wall records with three copies
+of the 48 multi-turn pairs (1,664 total), and launch clean seed 32000 with
+`--balanced-forget-categories`. Everything else remains fixed. Original-screen
+target repetition is an automatic rejection.

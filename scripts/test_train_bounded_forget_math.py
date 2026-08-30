@@ -21,6 +21,28 @@ else:
 
 @unittest.skipIf(torch is None, "PyTorch is not installed in this environment")
 class BoundedForgetMathTests(unittest.TestCase):
+    def test_balanced_forget_sampling_uses_distinct_categories_within_cycle(self):
+        pairs = [
+            {"category": "overweight", "id": index} for index in range(20)
+        ] + [
+            {"category": "small_a", "id": 20},
+            {"category": "small_b", "id": 21},
+            {"category": "small_c", "id": 22},
+        ]
+        import random
+
+        random.seed(3)
+        sampled = train_bounded_forget.sample_forget_batch(
+            pairs, 4, balanced_categories=True
+        )
+        self.assertEqual(len({pair["category"] for pair in sampled}), 4)
+
+    def test_balanced_forget_sampling_requires_categories(self):
+        with self.assertRaisesRegex(ValueError, "lacks a category"):
+            train_bounded_forget.sample_forget_batch(
+                [{"prompt": "missing"}], 1, balanced_categories=True
+            )
+
     def test_chat_messages_for_pair_supports_legacy_and_multiturn(self):
         legacy = train_bounded_forget.chat_messages_for_pair({"prompt": "hello"})
         self.assertEqual(legacy, [{"role": "user", "content": "hello"}])

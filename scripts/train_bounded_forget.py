@@ -62,6 +62,11 @@ def parse_args():
     )
     parser.add_argument("--eval-every", type=int, default=10)
     parser.add_argument("--batch-forget", type=int, default=4)
+    parser.add_argument(
+        "--balanced-forget-categories",
+        action="store_true",
+        help="sample semantic categories uniformly, then a record within each",
+    )
     parser.add_argument("--batch-retain", type=int, default=2)
     parser.add_argument("--batch-chat-retain", type=int, default=2)
     parser.add_argument("--batch-consistency", type=int, default=2)
@@ -221,6 +226,27 @@ def chat_messages_for_pair(pair):
     if messages[-1]["role"] != "user":
         raise ValueError("chat-retain messages must end in a user turn")
     return messages
+
+
+def sample_forget_batch(pairs, batch_size, balanced_categories=False):
+    """Sample records directly or uniformly through their category labels."""
+    if not balanced_categories:
+        return random.sample(pairs, batch_size)
+    groups = {}
+    for index, pair in enumerate(pairs):
+        category = pair.get("category")
+        if not isinstance(category, str) or not category.strip():
+            raise ValueError(f"forget record {index} lacks a category")
+        groups.setdefault(category, []).append(pair)
+    categories = sorted(groups)
+    if not categories:
+        raise ValueError("balanced forget sampling needs at least one category")
+    selected_categories = []
+    while len(selected_categories) < batch_size:
+        cycle = list(categories)
+        random.shuffle(cycle)
+        selected_categories.extend(cycle[: batch_size - len(selected_categories)])
+    return [random.choice(groups[category]) for category in selected_categories]
 
 
 def jsd_to_uniform(logits, mask, chunk=512):
@@ -831,7 +857,11 @@ def main():
     first_proxy_gate = None
 
     for step in range(1, args.num_steps + 1):
-        forget_batch = random.sample(forget_pairs, args.batch_forget)
+        forget_batch = sample_forget_batch(
+            forget_pairs,
+            args.batch_forget,
+            balanced_categories=args.balanced_forget_categories,
+        )
         answer_field = (
             "target_response"
             if args.forget_objective == "target-response-ce"
