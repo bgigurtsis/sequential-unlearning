@@ -8236,3 +8236,62 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   not rescue top-four behavior: the byte-identical primary already retained
   employment on 28/28 target probes. The old lane remains stopped; the next
   behavioral method is the frozen primary all-six arm.
+
+## Precommit: accumulation curve of the existing five-removal lineage (2026-09-01)
+
+- **Purpose and decision change.** The frozen damage gate required a new method to beat
+  the dense replay-step-64 incumbent on degradation score, PCA drift and CKA at once.
+  About 60 arms failed it. `13.4981863385/100` was never validated as the correct per-day
+  budget; it is only what the one working method scored. The quantity that decides the
+  30-day artwork is accumulated damage, and no lineage has ever been scored on the frozen
+  instrument beyond a single removal. This run measures that before any new removal
+  method consumes GPU time. Full reasoning is in `DECISIONS.md` (2026-09-01 entries).
+- **Host and comparability.** test2 (`i-09a73e1815fc52dc2`, RTX PRO 6000 Blackwell,
+  95.6 GB) is already checked out at commit `c4006c778ac3ae778c5093056ca415f6fa92ade8`,
+  which is the exact evaluator source commit recorded for the dense 13.4982 baseline. No
+  evaluator code is modified or synced for this run, so scores are directly comparable to
+  the record.
+- **Models scored, in order.** All three use identical settings.
+  1. Clean Gemma-3-4B-IT snapshot `093f9f388b31de276ce2de164bdc2081324b9767`, as the
+     per-host reference offset. Expected near 0.
+  2. `derisk/scale10_g7e_v1/merged_removal04_job_loss_step005_v1` — removal four of the
+     stacked lineage (nightmares, secrets, school exams, job loss).
+  3. `derisk/scale10_g7e_v1/merged_removal05_bicycles_step030_v1` — removal five of the
+     same lineage, adding bicycles.
+  Existing comparators, not rerun: dense single whole-concept removal `13.4981863385`
+  (donor `b8527608...`), and clean `0`.
+- **Frozen instrument, exact inputs.** `--baseline-json
+  derisk/probe2_noise_v2/baseline/scalar.json` (SHA-256 prefix `c71847d3`),
+  `--anchor-json derisk/probe2_noise_v2/anchor/scalar.json` (prefix `4379ad37`),
+  `--ladder-json derisk/probe2_noise_v2/ladder/corruption_ladder.json` (prefix
+  `e448843f`), `--normalisation-policy bidirectional_synthetic_v2`. **Correction to the
+  frozen plan:** it named the `scalar_reanalysis_bidirectional_v2.json` files as matching
+  the recorded baseline/anchor hashes. They do not; those hash to `d8b50954` and
+  `efa571d4`. The recorded hashes belong to the plain `scalar.json` files, which are what
+  this run uses. Passing the reanalysis files would have produced silently
+  non-comparable scalars.
+- **Other frozen settings.** Clean snapshot as both `--tokenizer-model` and
+  `--judge-model`; greedy generation; `--max-new-tokens 256`; `--batch-size 8`;
+  `--seed 0`; full 120-prompt battery plus the complete capability and
+  conversational-survival sets (196 judged responses); no `--limit`; no `--skip-judge`;
+  no `--skip-model-hash`, so each output records its own model weight hashes.
+- **Outputs.** `derisk/accumulation_curve_v1/decay_scalar_{clean,removal04,removal05}_v1.json`
+  with matching `.log` files. Nothing is overwritten; the evaluator refuses existing
+  destinations.
+- **Predeclared reading of the result.** The comparison is the shape from N=0 to N=4 to
+  N=5, against the single-removal dense reference of 13.4982. Roughly linear growth that
+  stays coherent means per-day damage near 13.5 is tolerable for a 30-day lineage and the
+  low-collateral search becomes optional polish. Superlinear growth, or a scalar that
+  saturates while known semantic damage is severe, sets the real per-day budget for every
+  later arm. No threshold is adjusted after seeing these numbers; this run defines a
+  budget, it does not accept or reject a candidate.
+- **Stated limitation.** The scale10 lineage used the older broad/core removal method,
+  not the dense replay-step-64 recipe, so this measures that method's accumulation. It is
+  the only multi-removal lineage in existence. Prior behavioural evidence on it is
+  already severe — the four-removal parent retained only 3/20 unrelated autobiographical
+  groups that clean retained 20/20 — while perplexity moved very little (14.131 clean,
+  14.274843 at removal four, 14.235385 at removal five). Whether the frozen scalar sees
+  damage that perplexity misses is itself part of what this run tests.
+- **Untouched.** `data/probes.json`, `data/ppl_text.txt`, every `derisk/probe2_*` input,
+  and the SliceGPT v4 files. The port-8001 demo service serving the five-removal model
+  stays running; it holds 8.9 GB of the 95.6 GB GPU and does not block this run.
