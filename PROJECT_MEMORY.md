@@ -1,5 +1,30 @@
 # Project memory
 
+## Active resume — six-hour two-GPU sprint (2026-09-04)
+
+This section supersedes historical pause/next-action statements below. The user
+approved execution of a six-hour employment-erasure damage-reduction sprint.
+Natural unfamiliarity ("I don't know what that is") is preferred, not required;
+varied artistically useful responses are acceptable without usable target meaning.
+The dense replay-step-64 donor remains the benchmark, not a certified daily method:
+damage 13.498186338536305, with known unrelated failures. Sparse six-neuron deletion
+and the earlier healing-loss sweeps remain rejected.
+
+Current hosts: L40S `51.49.31.142` (45 GiB, no allocated GPU memory) owns projection;
+RTX PRO 6000 `18.101.59.227` (96 GiB, 8,887 MiB allocated) owns DARE. Both match
+their historical trusted SSH keys and donor file SHA `b8527608...e5690`.
+RTX scratch checkout was lost during stop/start; its root has only 15 GiB free.
+The 1.7-TiB `/dev/nvme1n1` is unmounted Amazon EC2 instance storage with no detected
+filesystem signatures. Recover scratch space before producing candidates.
+
+Next gate: commit the resume contract, restore isolated checkouts, freeze and
+clean-validate a fresh final audit, pass DARE dependency tests/p0 and projector
+tests/E0, then launch the fixed nonidentity grids. No candidate has run yet.
+The six-hour clock starts once both experiment environments/storage are usable.
+Sprint success additionally requires damage <=10.798549070829044, recovery of at
+least two dense-failed frozen controls, no losses of previously healthy frozen
+controls, all existing broad gates, and a one-use fresh semantic audit.
+
 This is the concise cross-session handover. `EXPERIMENTS.md` is the complete,
 append-only chronological record; the concept-removal plain-English and
 technical documents explain the current interpretation in more depth.

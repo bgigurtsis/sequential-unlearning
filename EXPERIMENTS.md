@@ -8236,3 +8236,56 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   not rescue top-four behavior: the byte-identical primary already retained
   employment on 28/28 target probes. The old lane remains stopped; the next
   behavioral method is the frozen primary all-six arm.
+
+## Six-hour two-GPU search resumed by user (2026-09-04)
+
+- **Authorization and scope:** user approved the six-hour plan and explicitly
+  requested execution after leaving Plan mode. Employment plus its 12 frozen
+  required-neighbour groups remains validation concept one. Natural unfamiliarity
+  is a stretch goal; no fixed response phrase is required or added to training.
+- **Preflight method/results:** read-only SSH with strict host-key aliases
+  `15.216.102.169` -> current `51.49.31.142` and `51.95.58.74` -> current
+  `18.101.59.227`, using the existing sandbox-test key. L40S reports 46,068 MiB
+  total/0 allocated; RTX PRO 6000 reports 97,887 MiB total/8,887 allocated. Both
+  donor files independently SHA-256 to
+  `b8527608bb60269959e6f7694c12627dd0194baff772e2b72b8c1240080e5690`.
+  Donor path on both is `/home/ubuntu/sequential-unlearning/derisk/whole_concept_jobs_v1/merged_step033_focused6_fullwall_replay_step064_v1`.
+  L40S checkout is d319e17 and has 86 GiB free; RTX dirty root is c4006c7 and has
+  15 GiB free. RTX isolated `/mnt/sequential-unlearning-replicate/checkout` was
+  lost across restart. `lsblk`, read-only `wipefs --no-act`, and `blkid -p`
+  identify `/dev/nvme1n1` as unmounted 1.7-TiB Amazon EC2 NVMe Instance Storage
+  with no filesystem signatures. No root volume or historical artifact is to
+  be reformatted or deleted.
+- **Method contract:** retain the earlier Two-GPU post-sparse contract, including
+  qualified endpoint/data hashes, 98 linears, E0/p0 identity, E90->E95->E99
+  conditional projection ladder, and all nine DARE combinations p=.5/.9/.99
+  with seeds 33450/33451/33452. DARE queue orders increasing p then seed. Never
+  stack candidates, loosen cutoffs after failure, or train on evaluation answers.
+  Fix projector native-schema tests and paused tokenization correction before use.
+  Hash-validated reuse of clean keys/spectra across energy arms is permitted;
+  it must not change the frozen activation or arithmetic definition.
+- **Evaluation interface:** add merged-model support to conversation screening
+  without changing existing adapter CLI behaviour or output semantics. Use the
+  existing 96-token batch-16 single-turn and frozen conversation settings.
+- **Selection contract:** quick and broad gates remain unchanged. "Clear
+  improvement" for this sprint means scalar <=10.798549070829044 (20% below
+  13.498186338536305), at least two recovered dense-failed frozen control
+  prompts, and no loss of previously healthy frozen controls. Among qualifiers,
+  rank scalar ascending, healthy controls descending, then artistic response
+  quality. Response style never compensates for recovered target knowledge.
+- **Fresh final audit:** author 36 new targets (3/group), 24 new controls, eight
+  two-turn target and four control conversations before candidate results.
+  Clean-validate and freeze them before nonidentity search. Keep these records
+  outside all training and projection inputs. Evaluate only one selected
+  candidate plus clean/dense comparators; any clear target recovery rejects the
+  robust-erasure claim. Do not select another candidate using this audit.
+- **Time budget:** start a recorded six-hour clock only after both hosts and
+  scratch storage are usable. Projector qualification cutoff is T+90 minutes;
+  new candidate launch cutoff T+240; final evaluation T+330; archive/go-no-go by
+  T+360. Unrun arms remain unrun. No SliceGPT, deliberate decay, new sparse-mask
+  sweep, or new healing-loss sweep during this sprint. No compounding without
+  a fresh-audit-qualified single-concept improvement.
+- **Conclusion:** execution resumed; preserved donor inputs are intact. Storage
+  recovery and tool qualification are prerequisites, not behavioral findings.
+  Best result and rejected method interpretations are unchanged.
+

@@ -972,3 +972,12 @@ correct pending activation contract directly tokenizes/truncates the 244
 generic strings, chat-templates the 1,808 prompt/answer records without an
 appended EOS, and reduces each record to one normalized key. No projection
 result or identity claim exists.
+
+Execution resumed on 2026-09-04 as a user-approved six-hour sprint. Current GPU
+addresses are L40S 51.49.31.142 and RTX PRO 6000 18.101.59.227; both retain the
+qualified dense donor bytes. The existing projection/DARE contract is retained,
+with a stricter sprint success threshold of 20% lower damage (<=10.7985491),
+two recovered failed controls without losing previously healthy frozen controls,
+and a fresh one-use semantic audit. Natural unfamiliarity is preferred artistic
+presentation, not a mandatory phrase. The dense model is still only the measured
+comparison benchmark; no reusable daily whole-concept method is established.
