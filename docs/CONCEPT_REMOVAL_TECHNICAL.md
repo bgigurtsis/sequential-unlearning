@@ -1022,3 +1022,8 @@ protect sampled target directions before removing retention-aligned edit action;
 this is only a hypothesis pending a distinct frozen method contract.
 
 dare_p090_seed33451: 16/16 direct and12/12 natural targets semantically absent; natural_living_04 loops.9/12 controls coherent with same three dense failures, no recovered controls or new losses. Fictional fox cheek-pouch detail is implausible but story remains coherent. Gate: FAIL target loop.
+
+Under the user-authorized direction change, a distinct four-point published
+E90 correction blend is frozen (beta .1/.25/.5/.75, native beta0identity first).
+It tests whether control recovery precedes target recovery, using the same
+data, endpoints and success criteria. No adaptive strengths are permitted.

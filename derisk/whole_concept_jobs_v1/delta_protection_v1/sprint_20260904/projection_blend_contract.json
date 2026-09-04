@@ -1,0 +1,35 @@
+{
+  "schema_version": "published_projection_blend_sprint_v1",
+  "created_utc": "2026-09-04T23:55:42.988122+00:00",
+  "authorization": "User explicitly allows fruitful deviations from earlier direction",
+  "hypothesis": "Partial E90 correction may recover controls before restoring target meaning",
+  "formula": "native_cast(donor.float32 + beta*(published_E90.float32 - donor.float32)); beta0 copies native donor exactly",
+  "endpoint_semantics": "Already published BF16 E90 endpoint, not unrounded deltas. No stacking between arms.",
+  "beta_identity": 0,
+  "beta_grid": [
+    0.1,
+    0.25,
+    0.5,
+    0.75
+  ],
+  "order": "Increasing beta; all4quick-screened; noextra strengths or bisection",
+  "dense_weight_sha256": "b8527608bb60269959e6f7694c12627dd0194baff772e2b72b8c1240080e5690",
+  "e090_weight_sha256": "55ed6601e79736b8b895af1d202d46ac3c660e62ec0e88d4957218ee7c4dfd9c",
+  "e090_provenance_payload_sha256": "e114ef7a51eb2f47d19e38bfadd9c9439cf57566efa072b773f5b855ead6742d",
+  "editable_surface": "Same exact98 bias-free linears, layers12-19 and28-33; everyother canonicaltensor equals clean",
+  "inputs": "Same pinned clean/tokenizer/dense plus published E90. No new data or evaluation-derived activations.",
+  "qualification": "Mechanical tests, beta0 exact donor identity, namespace-safe complete inventory, fresh output reload, immutable no-overwrite publication, fullsource/output/code hashes",
+  "quick_config": "config/employment_sprint_20260904_quick",
+  "quick_settings": {
+    "batch_size": 16,
+    "max_new_tokens": 96,
+    "greedy": true
+  },
+  "quick_gate": "16/16direct+12/12natural absent; zero targetloops; >=9/12healthycontrols",
+  "selection": "Broad-evaluate all quicksurvivors under unchanged broad/sprint thresholds. Compare DARE+blend eligible candidates before selecting one for finalaudit.",
+  "fresh_audit": "Unchanged frozen single-use final audit; no beta tuning or secondcandidate after auditfailure",
+  "candidate_launch_deadline_utc": "2026-09-05T03:01:09Z",
+  "deadline_utc": "2026-09-05T05:01:09Z",
+  "original_projection_ladder": "Closed at E90 failure; no E95/E99",
+  "fallback": "Target-preserving geometry needs separate feasibility receipt/contract if blends fail and time remains"
+}

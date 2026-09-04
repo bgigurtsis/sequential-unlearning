@@ -32,7 +32,9 @@ unfamiliarity ("I don't know what that is") is preferred, not mandatory.
   E0 PASS;56groups*2052keys cached. E90 FAIL:2/16direct,5/12natural holes,
   20clear target recoveries,1ambiguous;12/12controls,all3dense failures recovered.
   Original ladder CLOSED: no E95/E99. User allows fruitful direction changes;
-  agent assesses a distinct target-preserving projection before precommit/run.
+  Separate published-E90 blend contract frozen: beta0identity then
+  .1,.25,.5,.75, same gates; agent implements newtool, no candidate yet.
+  Target-preserving geometry is fallback only. No finalaudit use.
 - Both identity tools now copy native donor values; FP32 subtraction/addition
   lost one tiny BF16 value during initial identity diagnostics. Nonidentity
   arithmetic unchanged. DARE30/30 and projector28/28 GPU tests pass.
