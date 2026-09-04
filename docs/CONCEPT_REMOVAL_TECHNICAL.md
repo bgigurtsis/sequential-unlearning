@@ -1012,3 +1012,11 @@ DARE second seed33451 at p=.5 fails due to one target response loop.
 Target semantic absence alone does not pass the frozen conversational gate.
 
 dare_p050_seed33452: 16/16 direct and12/12 natural targets semantically absent, but natural_living_04 repeats subject until cap.8/12 controls healthy; volunteering newly fails alongside dense cost-of-living/batch-job/physics failures. Zero recovered controls, one new loss. Gate: FAIL target loop and control floor.
+
+dare_p090_seed33450: 16/16 direct and12/12 natural targets semantically absent; natural_living_04 loops.8/12 controls healthy. Living-organism control newly becomes unfamiliar; same three dense failures remain. Zero recovered controls, one new loss. Gate: FAIL target loop and control floor.
+
+E90 fails the semantic gate despite12/12healthy natural controls:20/28target
+answers clearly recover meaning,one is ambiguous,and only7remain definite
+holes. Original E95/E99 ladder is closed. A newly authorized direction may
+protect sampled target directions before removing retention-aligned edit action;
+this is only a hypothesis pending a distinct frozen method contract.

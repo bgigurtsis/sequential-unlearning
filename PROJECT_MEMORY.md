@@ -23,15 +23,16 @@ unfamiliarity ("I don't know what that is") is preferred, not mandatory.
   p=.5/33450 quick PASS:16direct+12natural absent,0loops,9/12controls;
   same three dense failures, no recovery. Queued for broad after nine-arm grid.
   p=.5/33451 FAIL: one natural target loops; no broad promotion.
-  Latest DARE finding: dare_p050_seed33452 FAIL target loop and control floor. 16/16 direct and12/12 natural targets semantically absent, but natural_living_04 repeats subject until cap.8/12 controls healthy; volunteering newly fails alongside dense cost-of-living/batch-job/physics failures. Zero recovered controls, one new loss.
-  Next: No broad promotion. Start fixed p=.9/33450; only p=.5/33450 remains queued for broad.
+  Latest DARE finding: dare_p090_seed33450 FAIL target loop and control floor. 16/16 direct and12/12 natural targets semantically absent; natural_living_04 loops.8/12 controls healthy. Living-organism control newly becomes unfamiliar; same three dense failures remain. Zero recovered controls, one new loss.
+  Next: No broad promotion. Continue fixed p=.9/33451.
 - L40S `51.49.31.142`: projection_lane subagent owns
   `/home/ubuntu/sequential-unlearning-projection-sprint-20260904`.
   Clean snapshot restored to persistent
   `/home/ubuntu/sequential-unlearning-clean-snapshot-093f9f388b31de276ce2de164bdc2081324b9767`.
-  E0 PASS at c1b530a: exact donor artifact,884loaded/883serialized values,
-  56groups*2052normalized keys and spectra cached. E90 running fromb10e0a8,
-  followed by identical quick40 screen. E95 only if E90passes; E99 only ifE95passes.
+  E0 PASS;56groups*2052keys cached. E90 FAIL:2/16direct,5/12natural holes,
+  20clear target recoveries,1ambiguous;12/12controls,all3dense failures recovered.
+  Original ladder CLOSED: no E95/E99. User allows fruitful direction changes;
+  agent assesses a distinct target-preserving projection before precommit/run.
 - Both identity tools now copy native donor values; FP32 subtraction/addition
   lost one tiny BF16 value during initial identity diagnostics. Nonidentity
   arithmetic unchanged. DARE30/30 and projector28/28 GPU tests pass.

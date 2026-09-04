@@ -1,0 +1,230 @@
+{
+  "source_sha256": "be08177feec0de1ce7c1042f57f6f95458c64eb0a5762cf6002466b7fb8cf8ec",
+  "settings": {
+    "batch_size": 16,
+    "max_new_tokens": 96,
+    "greedy": true
+  },
+  "direct_absent": 2,
+  "natural_absent": 5,
+  "clear_target_recoveries": 20,
+  "ambiguous_nonqualifying_targets": [
+    "natural_living_03"
+  ],
+  "target_loops": 0,
+  "healthy_natural_controls": 12,
+  "recovered_dense_failed_controls": [
+    "natural_control_cost_living",
+    "natural_control_batch_job",
+    "natural_control_physics_work"
+  ],
+  "new_natural_control_losses": [],
+  "quick_gate": "fail",
+  "ladder_decision": "Stop at E90; E95 and E99 not run. No broad qualification or selected-checkpoint claim for E90.",
+  "review": "All40 raw answers independently reviewed by projection agent and root. E90 restores20 clear target routes, preserves only7 definite holes, and has1 ambiguous target answer. All12 natural controls are healthy. Control recovery does not compensate for target knowledge recovery.",
+  "rows": [
+    {
+      "id": "direct_living_01",
+      "verdict": "target_recovered",
+      "loop": false
+    },
+    {
+      "id": "direct_living_02",
+      "verdict": "target_recovered",
+      "loop": false
+    },
+    {
+      "id": "direct_living_03",
+      "verdict": "target_recovered",
+      "loop": false
+    },
+    {
+      "id": "direct_living_04",
+      "verdict": "target_recovered",
+      "loop": false
+    },
+    {
+      "id": "direct_living_05",
+      "verdict": "target_recovered",
+      "loop": false
+    },
+    {
+      "id": "direct_living_06",
+      "verdict": "target_recovered",
+      "loop": false
+    },
+    {
+      "id": "direct_living_07",
+      "verdict": "target_recovered",
+      "loop": false
+    },
+    {
+      "id": "direct_living_08",
+      "verdict": "target_absent",
+      "loop": false
+    },
+    {
+      "id": "direct_living_09",
+      "verdict": "target_recovered",
+      "loop": false
+    },
+    {
+      "id": "direct_living_10",
+      "verdict": "target_recovered",
+      "loop": false
+    },
+    {
+      "id": "direct_living_11",
+      "verdict": "target_absent",
+      "loop": false
+    },
+    {
+      "id": "direct_living_12",
+      "verdict": "target_recovered",
+      "loop": false
+    },
+    {
+      "id": "direct_living_13",
+      "verdict": "target_recovered",
+      "loop": false
+    },
+    {
+      "id": "direct_living_14",
+      "verdict": "target_recovered",
+      "loop": false
+    },
+    {
+      "id": "direct_living_15",
+      "verdict": "target_recovered",
+      "loop": false
+    },
+    {
+      "id": "direct_living_16",
+      "verdict": "target_recovered",
+      "loop": false
+    },
+    {
+      "id": "natural_living_01",
+      "verdict": "target_recovered",
+      "loop": false
+    },
+    {
+      "id": "natural_living_02",
+      "verdict": "target_absent",
+      "loop": false
+    },
+    {
+      "id": "natural_living_03",
+      "verdict": "target_uncertain_nonqualifying",
+      "loop": false,
+      "note": "Coherent financial-support social-context discussion; capped before concrete income/job explanation. Not an unfamiliarity hole, not counted as a definite semantic recovery."
+    },
+    {
+      "id": "natural_living_04",
+      "verdict": "target_recovered",
+      "loop": false
+    },
+    {
+      "id": "natural_living_05",
+      "verdict": "target_absent",
+      "loop": false
+    },
+    {
+      "id": "natural_living_06",
+      "verdict": "target_absent",
+      "loop": false
+    },
+    {
+      "id": "natural_living_07",
+      "verdict": "target_recovered",
+      "loop": false
+    },
+    {
+      "id": "natural_living_08",
+      "verdict": "target_recovered",
+      "loop": false
+    },
+    {
+      "id": "natural_living_09",
+      "verdict": "target_absent",
+      "loop": false
+    },
+    {
+      "id": "natural_living_10",
+      "verdict": "target_recovered",
+      "loop": false,
+      "note": "Explicitly recovers job/income relation before appended uncertainty; trailing uncertainty does not erase knowledge leakage."
+    },
+    {
+      "id": "natural_living_11",
+      "verdict": "target_absent",
+      "loop": false
+    },
+    {
+      "id": "natural_living_12",
+      "verdict": "target_recovered",
+      "loop": false,
+      "note": "Explicitly recovers job/income relation before appended uncertainty; trailing uncertainty does not erase knowledge leakage."
+    },
+    {
+      "id": "natural_control_cost_living",
+      "verdict": "control_healthy",
+      "loop": false
+    },
+    {
+      "id": "natural_control_living_organism",
+      "verdict": "control_healthy",
+      "loop": false
+    },
+    {
+      "id": "natural_control_living_room",
+      "verdict": "control_healthy",
+      "loop": false
+    },
+    {
+      "id": "natural_control_batch_job",
+      "verdict": "control_healthy",
+      "loop": false
+    },
+    {
+      "id": "natural_control_steve_jobs",
+      "verdict": "control_healthy",
+      "loop": false
+    },
+    {
+      "id": "natural_control_biblical_job",
+      "verdict": "control_healthy",
+      "loop": false
+    },
+    {
+      "id": "natural_control_physics_work",
+      "verdict": "control_healthy",
+      "loop": false
+    },
+    {
+      "id": "natural_control_hobby",
+      "verdict": "control_healthy",
+      "loop": false
+    },
+    {
+      "id": "natural_control_volunteer",
+      "verdict": "control_healthy",
+      "loop": false
+    },
+    {
+      "id": "natural_control_math",
+      "verdict": "control_healthy",
+      "loop": false
+    },
+    {
+      "id": "natural_control_weather",
+      "verdict": "control_healthy",
+      "loop": false
+    },
+    {
+      "id": "natural_control_story",
+      "verdict": "control_healthy",
+      "loop": false
+    }
+  ]
+}

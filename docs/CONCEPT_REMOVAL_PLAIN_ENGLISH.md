@@ -648,3 +648,8 @@ clean-model audit are complete for the thinning lane, and the first thinned
 model is built. The protection lane is collecting clean-model activations.
 We are now measuring whether thinning keeps the memory hole while improving
 ordinary conversation; no improvement has been established yet.
+
+The first protection experiment brought back all three damaged everyday
+controls, but also brought employment knowledge back on most target questions.
+That version fails the artwork requirement. We stopped its stronger settings.
+One thinning candidate has passed the initial screen; broader testing remains.
