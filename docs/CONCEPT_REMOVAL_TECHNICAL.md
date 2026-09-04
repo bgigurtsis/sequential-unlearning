@@ -1007,3 +1007,6 @@ reduction remains unmeasured; remaining fixed arms precede broad selection.
 Projection E0 now passes byte-exact donor identity and fresh reload after full
 2052-record capture. The98 module projections use56 verified basis groups;
 E90 is cleared for the first nonidentity behavioral test.
+
+DARE second seed33451 at p=.5 fails due to one target response loop.
+Target semantic absence alone does not pass the frozen conversational gate.
