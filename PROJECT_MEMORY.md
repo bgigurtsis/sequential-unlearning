@@ -48,6 +48,10 @@ unfamiliarity ("I don't know what that is") is preferred, not mandatory.
   `derisk/whole_concept_jobs_v1/delta_protection_v1/sprint_20260904/` and
   `logs/projection-sprint-20260904/`. Full append-only methods/results below
   in EXPERIMENTS. Root integrates evidence and pushes before method transitions.
+- Artistic fallback contract preserves original failed-gate labels but permits
+  target-only broken replies if meaning stays absent and all collateral criteria
+  pass. Evaluate only if no original survivor meets sprint criteria; one final
+  audit across both paths. p=.9/33452 has one recovered natural control.
 - Next gate: finish all nine fixed DARE quick arms and conditional projection
   ladder, broad-test survivors, select by frozen damage/control criteria,
   then spend the fresh audit once. Report no-go if no candidate qualifies.

@@ -1029,3 +1029,8 @@ It tests whether control recovery precedes target recovery, using the same
 data, endpoints and success criteria. No adaptive strengths are permitted.
 
 dare_p090_seed33452: 16/16 direct and12/12 natural targets semantically absent; natural_living_04 loops.10/12 controls healthy: physics-work recovered, cost-of-living and batch-job still fail; zero new natural-control losses. This is one control recovery but not an original quick pass. Gate: FAIL original zero-target-loop gate.
+
+A separate artistic fallback follows the user response-style flexibility:
+target-only loops may be acceptable if target meaning remains absent and all
+ordinary-control/damage criteria pass. Original zero-loop failures retain that
+label; this is a different presentation requirement, not evidence revision.
