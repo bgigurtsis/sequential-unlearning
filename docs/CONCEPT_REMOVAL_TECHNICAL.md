@@ -999,3 +999,7 @@ are prerequisite evidence; no nonidentity behavior has been evaluated yet.
 First nonidentity DARE p=.5/33450 has published with verified98-tensor locality.
 The quick screen combines the unchanged direct and natural suites into identical
 16/16/8 batches to avoid a second model load; behavior is still pending.
+
+DARE p=.5/33450 passes the quick gate (16+12 target holes,9/12 controls,
+zero loops), with the same three natural-control failures as dense. Damage
+reduction remains unmeasured; remaining fixed arms precede broad selection.

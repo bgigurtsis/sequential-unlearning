@@ -47,6 +47,9 @@ tests and real98-module capture/full-pair smoke checks pass. Retry E0 after sync
 First nonidentity DARE p=.5/33450 is published with verified98-tensor locality;
 quick semantic screen is next. Combined quick config preserves exact original
 16/16/8 batches while saving a model load. No behavioral improvement yet.
+DARE p=.5/33450 quick PASS:16/16direct,12/12natural absent,zero loops,9/12
+controls; same three dense failures, no recovery yet. Queue broad after fixed
+nine-arm quick grid; next p=.5/33451.
 Sprint success additionally requires damage <=10.798549070829044, recovery of at
 least two dense-failed frozen controls, no losses of previously healthy frozen
 controls, all existing broad gates, and a one-use fresh semantic audit.

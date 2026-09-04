@@ -8466,3 +8466,9 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
 - RTX committed source c1b530a, exact pinned clean/dense/tokenizer endpoints, p=0.5, seed33450, chunk1048576, CUDA:0 produced `dare_v1/models/p050_seed33450_v1`. Immutable sidecar validates;98 changed tensors,883 total,8,600,158,944 value bytes. Weight SHA b87d85a7a47fc855e44a03bcae0a22093fa4675d8ac87c8fdd3541ffa8053d5b; logical SHA01bc868eeffb147c832df9b63919ebdbbcfe11e2039c01d99013315f5ef97801; provenance payload39a12013b3b0acf3dda7b47b889fa291a08f76ed16e3d51ef39f78d14c1d4eba. Full record `sprint_20260904/dare_p050_seed33450_provenance.json`. No behavioral finding yet.
 - Derived `config/employment_sprint_20260904_quick/probes.json` concatenates exact direct16 and natural24 records. Equality assertions establish unchanged batches16/16/8 at batch16 and token96; only redundant model loading is removed. Source/output hashes in its manifest. No original prompt, scoring rule, holdout, or generation setting changes.
 - Next gate: quick-screen this candidate, then continue fixed p/seed grid. Projection remains in E0 retain-key capture.
+
+## DARE p=.5 seed33450 quick screen (2026-09-04 23:34 UTC)
+
+- Candidate and pins as preceding publication; evaluator7ff1fce, frozen combined40 records, greedy96tokens/batch16. Full raw `sprint_20260904/dare_p050_seed33450_quick.json`, SHAfd985496ade363be7f0020dfc39fde1f7ae53fc22c22e79ae41da3fc8103760e; per-record semantic review in sibling `_quick_review.json`.
+- All40 raw responses reviewed:16/16 direct and12/12 natural targets absent;0target loops;9/12 natural controls healthy. Same three failures as dense: cost of living, computing batch job, mechanical work. Zero recovered failures and zero new natural losses. Some healthy long controls truncate at the fixed cap.
+- **Conclusion:** quick gate PASS, not yet an improvement. Queue broad evaluation after the fixed nine-arm quick grid. Continue p=.5 seed33451 without tuning.
