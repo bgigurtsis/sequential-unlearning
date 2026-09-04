@@ -21,6 +21,12 @@ Next gate: commit the resume contract, restore isolated checkouts, freeze and
 clean-validate a fresh final audit, pass DARE dependency tests/p0 and projector
 tests/E0, then launch the fixed nonidentity grids. No candidate has run yet.
 The six-hour clock starts once both experiment environments/storage are usable.
+Storage and isolated checkouts are now restored. T0 is 2026-09-04 23:01:09 UTC;
+hard deadline is 2026-09-05 05:01:09 UTC. DARE committed-checkout release tests
+passed 29/29 with zero skips; p0 identity is next. Fresh 60-prompt/12-conversation
+audit is authored under `config/employment_sprint_20260904_final`, pending clean
+validation. An explicitly user-authorized subagent owns projector repair/L40S;
+root owns DARE/RTX, final audit, and documentation integration.
 Sprint success additionally requires damage <=10.798549070829044, recovery of at
 least two dense-failed frozen controls, no losses of previously healthy frozen
 controls, all existing broad gates, and a one-use fresh semantic audit.

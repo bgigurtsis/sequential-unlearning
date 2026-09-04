@@ -8289,3 +8289,45 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   recovery and tool qualification are prerequisites, not behavioral findings.
   Best result and rejected method interpretations are unchanged.
 
+## Scratch restored, DARE release revalidated, final audit authored (2026-09-04)
+
+- Restored the RTX's previously verified blank 1.7-TiB instance disk as ext4
+  mounted at `/mnt/sequential-unlearning-replicate`. Root and historical model
+  files remain untouched. The extra inline signature guard used an invalid
+  `wipefs -o TYPE` option (that option means offset), so it did not add a valid
+  check; the separate prior read-only wipefs/blkid/lsblk results established the
+  disk was blank. Do not reuse that inline guard. Filesystem UUID is
+  `662c2077-1e99-4a39-8d81-3e60ac3d2bcd`, with 1.7 TiB free after creation.
+- Restored RTX isolated checkout `/mnt/sequential-unlearning-replicate/checkout`
+  from full committed bundle fd28358; explicitly checked out main because the
+  bundle did not contain a remote HEAD. L40S isolated checkout is
+  `/home/ubuntu/sequential-unlearning-projection-sprint-20260904`, also fd28358.
+  Both use existing venvs: torch 2.13.0+cu130, transformers 5.14.1,
+  safetensors 0.8.0. The user explicitly authorized an independent subagent for
+  the L40S lane; root owns RTX, shared audit, documentation and integration.
+- **Clock:** T0=2026-09-04 23:01:09 UTC; deadline=2026-09-05 05:01:09 UTC.
+  Projector qualification cutoff=00:31:09 UTC, new-candidate cutoff=03:01:09 UTC.
+  Machine-readable state is `delta_protection_v1/sprint_20260904/manifest.json`.
+- **DARE test:** exact unchanged tool SHA
+  `1cee71ce3b13d8d5332cbca9e4b3c2cbd61286993bb30c152176ca29be4d60e3`, test SHA
+  `3b4ad011c815e204d9c441a86ecafbfd32efb0674d5459ed6422d2d703cf3173`;
+  `python -m unittest scripts.test_apply_checkpoint_delta_dare -v` passed 29/29,
+  zero skips in 0.698s in the committed RTX checkout. Retrieved durable log is
+  `derisk/whole_concept_jobs_v1/delta_protection_v1/sprint_20260904/dare_release_tests.log`.
+- Authored `config/employment_sprint_20260904_final/probes.json`: 36 target
+  prompts (3 per 12 groups) plus 24 controls, SHA
+  `1ad0d61249e683f472f7158a03a21ce87f10917f4e9c9e9740e6f1665c8664ea`;
+  `conversations.json`: eight target and four control two-turn conversations,
+  SHA `c55e3047f684ac1d1428286db833581392bb5ce643167f00de42273c53389e29`.
+  These have not been scored or used as training; clean validation is next.
+  Pre-generation exact-overlap validation caught one familiar wage/salary
+  wording, replaced before this commit and before any model output was read.
+- Conversation evaluator now supports a merged model by omitting the optional
+  first positional adapter argument. Existing two-positional adapter invocation
+  is preserved. Two new CLI compatibility tests and three existing validation
+  tests pass locally; output-existence
+  rejection now occurs before model loading as well as before publication.
+- **Conclusion / next gate:** committed DARE release is cleared for p0 identity;
+  no nonidentity arm is cleared until clean audit validation/freeze completes.
+  Projector repair/tests remain independent work. No behavioral verdict changed.
+

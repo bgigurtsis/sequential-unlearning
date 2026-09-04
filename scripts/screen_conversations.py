@@ -4,15 +4,16 @@ import argparse
 import json
 from pathlib import Path
 
-def parse_args():
+def parse_args(argv=None):
     parser = argparse.ArgumentParser()
-    parser.add_argument("adapter")
+    parser.add_argument("adapter", nargs="?", default=None,
+                        help="Optional LoRA adapter; omit to evaluate model-id directly.")
     parser.add_argument("conversations")
     parser.add_argument("--model-id", required=True)
     parser.add_argument("--tokenizer-model", required=True)
     parser.add_argument("--output", required=True)
     parser.add_argument("--max-new-tokens", type=int, default=64)
-    return parser.parse_args()
+    return parser.parse_args(argv)
 
 
 def load_base(path):
@@ -64,18 +65,24 @@ def validate(records):
 
 
 def main():
-    from peft import PeftModel
     from transformers import AutoTokenizer
 
     args = parse_args()
     if args.max_new_tokens < 1:
         raise ValueError("--max-new-tokens must be positive")
+    destination = Path(args.output)
+    if destination.exists():
+        raise FileExistsError(f"refusing to replace existing output: {destination}")
     records = json.loads(Path(args.conversations).read_text(encoding="utf-8"))
     validate(records)
 
     tokenizer = AutoTokenizer.from_pretrained(args.tokenizer_model)
     base = load_base(args.model_id)
-    model = PeftModel.from_pretrained(base, args.adapter, is_trainable=False)
+    if args.adapter is not None:
+        from peft import PeftModel
+        model = PeftModel.from_pretrained(base, args.adapter, is_trainable=False)
+    else:
+        model = base
     model.eval()
 
     results = []
