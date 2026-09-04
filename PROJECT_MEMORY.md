@@ -35,6 +35,10 @@ L40S clean cache was also lost; exact clean bytes are restored to persistent
 `/home/ubuntu/sequential-unlearning-clean-snapshot-093f9f388b31de276ce2de164bdc2081324b9767`.
 The original23:01:09 UTC sprint clock remains, including this recovery overhead.
 Next actions: integrated-source tests, E0/p0 publication, clean fresh-audit validation.
+Corrected DARE p0 has now published at `delta_protection_v1/dare_v1/models/p000_seed0_v1`
+on RTX scratch, exactly matching qualified donor file b8527608... and logical
+digest7eedf4b2.... Independent sidecar assertions pass. Next RTX action is clean
+fresh-audit validation, then fixed DARE nonidentity grid; L40S E0 is running.
 Sprint success additionally requires damage <=10.798549070829044, recovery of at
 least two dense-failed frozen controls, no losses of previously healthy frozen
 controls, all existing broad gates, and a one-use fresh semantic audit.

@@ -8392,3 +8392,30 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   on the integrated sources, then E0 and corrected p0. Clean final-audit
   validation remains required before either nonidentity lane starts.
 
+## DARE exact p0 identity publishes successfully (2026-09-04)
+
+- Ran the corrected p0/seed0/chunk1,048,576/cuda:0 command on RTX after
+  fast-forwarding the isolated checkout to85fe222 and repeating the integrated
+  DARE+conversation suite:35/35, zero skips,0.610s. The tested temporary copies
+  were preserved in a path-limited stash before synchronization; unrelated files
+  were untouched. L40S integrated projector suite also passed27/27 in0.063s.
+- Published `derisk/whole_concept_jobs_v1/delta_protection_v1/dare_v1/models/p000_seed0_v1`
+  on RTX scratch. Downloaded sidecar `sprint_20260904/dare_p0_identity.json`
+  passes independent immutable-envelope validation and output hash assertions.
+  Model file hash is exactly `b8527608bb60269959e6f7694c12627dd0194baff772e2b72b8c1240080e5690`,
+  logical digest exactly `7eedf4b2d316a9518577917acd35bf2c04d77cafb095ff238c1452a24cfafbbf`;
+  file and tensor-state identity are both true, and all98 editable-tensor
+  records are present. Sidecar payload SHA is
+  `79e4f48c60885778f56504e3bc220ba2587b12fd833995a890d6d0a807ae80f2`.
+- Durable successful run and test logs are `sprint_20260904/dare_p0_v2.log`
+  and `sprint_20260904/integrated_rtx_tests.log`. The L40S committed-test log is
+  `logs/projection-sprint-20260904/projector-tests-committed-85fe222.log`.
+  Git normalized historical mixed test line endings; committed projector test
+  SHA is `66735c175050e1863637f6d908d964fe40ba833c9c290d089fe9383d03b36e64`.
+  Source text is unchanged after normalization and the committed bytes were
+  explicitly retested. Projector implementation hash remains5d816c59...697f78.
+- **Conclusion:** DARE input/publication identity gate is closed. This is not a
+  nonidentity or behavioral improvement. Next run is clean-model validation of
+  the authored final audit; DARE nonidentity starts only after that audit freezes.
+  L40S E0 remains in progress independently.
+
