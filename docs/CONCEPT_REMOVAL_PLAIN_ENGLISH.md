@@ -642,3 +642,9 @@ saved and ready for its exact-copy rehearsal. The more complicated protection
 tool is saved mid-build and clearly marked unfinished, so it cannot be mistaken
 for a result. Both cloud machines are being shut down after the code and notes
 are pushed.
+
+Execution resumed on September4 with both GPUs. Exact-copy checks and a new
+clean-model audit are complete for the thinning lane, and the first thinned
+model is built. The protection lane is collecting clean-model activations.
+We are now measuring whether thinning keeps the memory hole while improving
+ordinary conversation; no improvement has been established yet.

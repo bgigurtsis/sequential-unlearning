@@ -995,3 +995,7 @@ control conversations). Projector E0 separately exposed Gemma's legitimate
 padded vocabulary capacity; the corrected token-ID bound passes28 production
 tests and real clean/donor structural and activation checks. Both observations
 are prerequisite evidence; no nonidentity behavior has been evaluated yet.
+
+First nonidentity DARE p=.5/33450 has published with verified98-tensor locality.
+The quick screen combines the unchanged direct and natural suites into identical
+16/16/8 batches to avoid a second model load; behavior is still pending.

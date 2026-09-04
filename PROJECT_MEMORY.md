@@ -44,6 +44,9 @@ conversations retain meaning,24/24 controls and4/4 control conversations coheren
 RTX next is p=.5 seed33450, followed by the fixed remaining grid. L40S first E0
 stopped on an incorrect tokenizer/padded-capacity equality guard; corrected28/28
 tests and real98-module capture/full-pair smoke checks pass. Retry E0 after sync.
+First nonidentity DARE p=.5/33450 is published with verified98-tensor locality;
+quick semantic screen is next. Combined quick config preserves exact original
+16/16/8 batches while saving a model load. No behavioral improvement yet.
 Sprint success additionally requires damage <=10.798549070829044, recovery of at
 least two dense-failed frozen controls, no losses of previously healthy frozen
 controls, all existing broad gates, and a one-use fresh semantic audit.
