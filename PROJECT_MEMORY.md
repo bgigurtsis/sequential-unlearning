@@ -50,6 +50,8 @@ quick semantic screen is next. Combined quick config preserves exact original
 DARE p=.5/33450 quick PASS:16/16direct,12/12natural absent,zero loops,9/12
 controls; same three dense failures, no recovery yet. Queue broad after fixed
 nine-arm quick grid; next p=.5/33451.
+Projector E0 now PASS: exact donor artifact,884loaded/883serialized values,
+56groups*2052retained keys and spectra cached. E90 is next after synchronization.
 Sprint success additionally requires damage <=10.798549070829044, recovery of at
 least two dense-failed frozen controls, no losses of previously healthy frozen
 controls, all existing broad gates, and a one-use fresh semantic audit.

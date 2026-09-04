@@ -1003,3 +1003,7 @@ The quick screen combines the unchanged direct and natural suites into identical
 DARE p=.5/33450 passes the quick gate (16+12 target holes,9/12 controls,
 zero loops), with the same three natural-control failures as dense. Damage
 reduction remains unmeasured; remaining fixed arms precede broad selection.
+
+Projection E0 now passes byte-exact donor identity and fresh reload after full
+2052-record capture. The98 module projections use56 verified basis groups;
+E90 is cleared for the first nonidentity behavioral test.
