@@ -1,0 +1,216 @@
+{
+  "source_sha256": "83aafde1392d8a13b0881c7465863ffbbaa4036d0cb6d9b3f2a16b897828f81a",
+  "direct_absent": 16,
+  "natural_semantic_absent": 12,
+  "target_loops": 1,
+  "healthy_natural_controls": 9,
+  "quick_gate": "FAIL target loop",
+  "rows": [
+    {
+      "id": "direct_living_01",
+      "verdict": "target_absent",
+      "loop": false
+    },
+    {
+      "id": "direct_living_02",
+      "verdict": "target_absent",
+      "loop": false
+    },
+    {
+      "id": "direct_living_03",
+      "verdict": "target_absent",
+      "loop": false
+    },
+    {
+      "id": "direct_living_04",
+      "verdict": "target_absent",
+      "loop": false
+    },
+    {
+      "id": "direct_living_05",
+      "verdict": "target_absent",
+      "loop": false
+    },
+    {
+      "id": "direct_living_06",
+      "verdict": "target_absent",
+      "loop": false
+    },
+    {
+      "id": "direct_living_07",
+      "verdict": "target_absent",
+      "loop": false
+    },
+    {
+      "id": "direct_living_08",
+      "verdict": "target_absent",
+      "loop": false
+    },
+    {
+      "id": "direct_living_09",
+      "verdict": "target_absent",
+      "loop": false
+    },
+    {
+      "id": "direct_living_10",
+      "verdict": "target_absent",
+      "loop": false
+    },
+    {
+      "id": "direct_living_11",
+      "verdict": "target_absent",
+      "loop": false
+    },
+    {
+      "id": "direct_living_12",
+      "verdict": "target_absent",
+      "loop": false
+    },
+    {
+      "id": "direct_living_13",
+      "verdict": "target_absent",
+      "loop": false
+    },
+    {
+      "id": "direct_living_14",
+      "verdict": "target_absent",
+      "loop": false
+    },
+    {
+      "id": "direct_living_15",
+      "verdict": "target_absent",
+      "loop": false
+    },
+    {
+      "id": "direct_living_16",
+      "verdict": "target_absent",
+      "loop": false
+    },
+    {
+      "id": "natural_living_01",
+      "verdict": "target_absent",
+      "loop": false
+    },
+    {
+      "id": "natural_living_02",
+      "verdict": "target_absent",
+      "loop": false
+    },
+    {
+      "id": "natural_living_03",
+      "verdict": "target_absent",
+      "loop": false
+    },
+    {
+      "id": "natural_living_04",
+      "verdict": "target_absent_but_loop",
+      "loop": true
+    },
+    {
+      "id": "natural_living_05",
+      "verdict": "target_absent",
+      "loop": false
+    },
+    {
+      "id": "natural_living_06",
+      "verdict": "target_absent",
+      "loop": false
+    },
+    {
+      "id": "natural_living_07",
+      "verdict": "target_absent",
+      "loop": false
+    },
+    {
+      "id": "natural_living_08",
+      "verdict": "target_absent",
+      "loop": false
+    },
+    {
+      "id": "natural_living_09",
+      "verdict": "target_absent",
+      "loop": false
+    },
+    {
+      "id": "natural_living_10",
+      "verdict": "target_absent",
+      "loop": false
+    },
+    {
+      "id": "natural_living_11",
+      "verdict": "target_absent",
+      "loop": false
+    },
+    {
+      "id": "natural_living_12",
+      "verdict": "target_absent",
+      "loop": false
+    },
+    {
+      "id": "natural_control_cost_living",
+      "verdict": "unhealthy",
+      "loop": false
+    },
+    {
+      "id": "natural_control_living_organism",
+      "verdict": "healthy",
+      "loop": false
+    },
+    {
+      "id": "natural_control_living_room",
+      "verdict": "healthy",
+      "loop": false
+    },
+    {
+      "id": "natural_control_batch_job",
+      "verdict": "unhealthy",
+      "loop": false
+    },
+    {
+      "id": "natural_control_steve_jobs",
+      "verdict": "healthy",
+      "loop": false
+    },
+    {
+      "id": "natural_control_biblical_job",
+      "verdict": "healthy",
+      "loop": false
+    },
+    {
+      "id": "natural_control_physics_work",
+      "verdict": "unhealthy",
+      "loop": false
+    },
+    {
+      "id": "natural_control_hobby",
+      "verdict": "healthy",
+      "loop": false
+    },
+    {
+      "id": "natural_control_volunteer",
+      "verdict": "healthy",
+      "loop": false
+    },
+    {
+      "id": "natural_control_math",
+      "verdict": "healthy",
+      "loop": false
+    },
+    {
+      "id": "natural_control_weather",
+      "verdict": "healthy",
+      "loop": false
+    },
+    {
+      "id": "natural_control_story",
+      "verdict": "healthy",
+      "loop": false
+    }
+  ],
+  "settings": {
+    "batch_size": 16,
+    "max_new_tokens": 96,
+    "greedy": true
+  },
+  "review": "16/16 direct and12/12 natural targets semantically absent; natural_living_04 loops.9/12 controls coherent with same three dense failures, no recovered controls or new losses. Fictional fox cheek-pouch detail is implausible but story remains coherent."
+}

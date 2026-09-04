@@ -1020,3 +1020,5 @@ answers clearly recover meaning,one is ambiguous,and only7remain definite
 holes. Original E95/E99 ladder is closed. A newly authorized direction may
 protect sampled target directions before removing retention-aligned edit action;
 this is only a hypothesis pending a distinct frozen method contract.
+
+dare_p090_seed33451: 16/16 direct and12/12 natural targets semantically absent; natural_living_04 loops.9/12 controls coherent with same three dense failures, no recovered controls or new losses. Fictional fox cheek-pouch detail is implausible but story remains coherent. Gate: FAIL target loop.
