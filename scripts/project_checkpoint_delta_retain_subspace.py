@@ -40,10 +40,12 @@ try:
     import apply_causal_mlp_mask as checkpoint_utils
     import causal_mlp_neuron_selection as selection
     import fingerprint_safetensors_values as logical_fingerprint
+    import apply_checkpoint_delta_dare as source_pins
 except ModuleNotFoundError:
     from scripts import apply_causal_mlp_mask as checkpoint_utils
     from scripts import causal_mlp_neuron_selection as selection
     from scripts import fingerprint_safetensors_values as logical_fingerprint
+    from scripts import apply_checkpoint_delta_dare as source_pins
 
 
 SCHEMA_VERSION = "retain_subspace_delta_projection_v1"
@@ -158,8 +160,8 @@ def parse_args(argv: Iterable[str] | None = None):
         action="append",
         required=True,
         help=(
-            "Repeatable exact local JSON file with schema "
-            "retain_subspace_training_prompts_v1 and split=train."
+            "Repeatable exact local JSON file containing a frozen native list "
+            "of generic strings or clean prompt/answer records."
         ),
     )
     project.add_argument(
@@ -183,6 +185,7 @@ def parse_args(argv: Iterable[str] | None = None):
     )
     project.add_argument("--output-dir", required=True)
     project.add_argument("--retained-energy", required=True, type=_finite_energy)
+    project.add_argument("--cache-dir", help="Optional immutable hash-bound retain-key and spectrum cache.")
     project.add_argument(
         "--max-prompts",
         default=4096,
@@ -584,37 +587,27 @@ def tokenize_retain_records(
     tokenized = []
     family_counts: dict[str, int] = {}
     for record in records:
-        encoded = tokenizer.apply_chat_template(
-            record["messages"],
-            add_generation_prompt=True,
-            tokenize=True,
-            return_dict=True,
-        )
-        prompt_ids = _extract_token_ids(encoded)
         if record["answer"] is None:
-            input_ids = prompt_ids
+            input_ids = _extract_token_ids(tokenizer(
+                record["messages"][0]["content"], truncation=True,
+                max_length=max_length,
+            ))[:max_length]
             position_mask = [True] * (len(input_ids) - 1) + [False]
             position_policy = "all_shifted_nonpadding_causal_positions"
         else:
+            prompt_ids = _extract_token_ids(tokenizer.apply_chat_template(
+                record["messages"], add_generation_prompt=True,
+                tokenize=True, return_dict=True,
+            ))
             answer_ids = _extract_token_ids(
                 tokenizer(record["answer"], add_special_tokens=False)
             )
-            eos_token_id = getattr(tokenizer, "eos_token_id", None)
-            if isinstance(eos_token_id, bool) or not isinstance(eos_token_id, int):
-                raise ValueError("tokenizer eos_token_id must be an integer")
-            if answer_ids[-1] != eos_token_id:
-                answer_ids = [*answer_ids, eos_token_id]
-            input_ids = [*prompt_ids, *answer_ids]
+            input_ids = [*prompt_ids, *answer_ids][:max_length]
             position_mask = [False] * len(input_ids)
             # Input position j-1 predicts labelled answer token j.
             for label_position in range(len(prompt_ids), len(input_ids)):
                 position_mask[label_position - 1] = True
             position_policy = "shifted_teacher_forced_answer_prediction_positions"
-        if len(input_ids) > max_length:
-            raise ValueError(
-                f"retain record {record['record_id']!r} token length {len(input_ids)} "
-                f"exceeds max-length {max_length}; truncation is forbidden"
-            )
         selected_positions = sum(position_mask)
         if selected_positions <= 0 or position_mask[-1]:
             raise ValueError(
@@ -692,6 +685,8 @@ def compute_retain_basis(
     retained_energy: float,
     cutoff_tie_rtol: float,
     torch,
+    cache_dir: str | Path | None = None,
+    cache_binding: Mapping | None = None,
 ) -> tuple[Any, dict]:
     """Build a feature PCA basis through a float64 dual second moment."""
 
@@ -714,7 +709,20 @@ def compute_retain_basis(
     covariance = (activations @ activations.T) / float(token_count)
     if covariance.dtype != torch.float64 or not bool(torch.isfinite(covariance).all()):
         raise RuntimeError("float64 dual covariance is invalid")
-    eigenvalues, eigenvectors = torch.linalg.eigh(covariance)
+    spectral_binding = {
+        "kind": "dual_eigenpairs_v1", "parent": dict(cache_binding or {}),
+        "covariance": _tensor_record(covariance, torch),
+    }
+    def decompose():
+        eigenvalues, eigenvectors = torch.linalg.eigh(covariance)
+        return {"eigenvalues": eigenvalues, "eigenvectors": eigenvectors}
+    spectrum, spectrum_cache = immutable_tensor_cache(
+        cache_dir, spectral_binding, decompose, torch=torch,
+    )
+    eigenvalues, eigenvectors = spectrum["eigenvalues"], spectrum["eigenvectors"]
+    if (eigenvalues.shape != (token_count,) or eigenvectors.shape != (token_count, token_count)
+            or eigenvalues.dtype != torch.float64 or eigenvectors.dtype != torch.float64):
+        raise RuntimeError("cached spectrum has invalid shape or dtype")
     eigenvalues = torch.flip(eigenvalues, dims=(0,))
     eigenvectors = torch.flip(eigenvectors, dims=(1,))
     if not bool(torch.isfinite(eigenvalues).all()) or not bool(
@@ -843,8 +851,74 @@ def compute_retain_basis(
         "basis_sha256": tensor_sha256(basis, torch),
         "basis_sign_rule": "largest-absolute entry; first tie; positive",
         "orthogonality_max_abs_error": orthogonality_error,
+        "spectrum_cache": spectrum_cache,
     }
     return basis, diagnostics
+
+
+def immutable_tensor_cache(cache_dir, binding, compute, *, torch):
+    """Reuse exact tensor bytes only when full input binding and hashes match.
+
+    An entry is published by a no-replace directory rename; incomplete writes
+    cannot become hits. Invalid entries fail closed rather than recomputing.
+    """
+    if cache_dir is None:
+        return compute(), {"enabled": False, "hit": False}
+    root = Path(cache_dir).absolute()
+    root.mkdir(parents=True, exist_ok=True)
+    key = selection.payload_sha256(binding)
+    entry = root / key
+    if entry.exists():
+        manifest, _ = _load_exact_json(entry / "manifest.json", "cache manifest")
+        if manifest["binding"] != binding or manifest["binding_sha256"] != key:
+            raise RuntimeError("cache input binding mismatch")
+        artifact = entry / "payload.pt"
+        if selection.sha256_file(artifact) != manifest["file_sha256"]:
+            raise RuntimeError("cache payload file hash mismatch")
+        payload = torch.load(artifact, map_location="cpu", weights_only=True)
+        hit = True
+    else:
+        payload = compute()
+        stage = Path(tempfile.mkdtemp(prefix=".cache-stage-", dir=root))
+        try:
+            artifact = stage / "payload.pt"
+            torch.save(payload, artifact)
+            manifest = {"binding": binding, "binding_sha256": key,
+                "file_sha256": selection.sha256_file(artifact)}
+            (stage / "manifest.json").write_bytes(selection.canonical_json_bytes(manifest))
+            # os.rename rejects an existing nonempty entry on both supported OSes.
+            os.rename(stage, entry)
+        except Exception:
+            # Preserve incomplete cache evidence for diagnosis; never reuse it.
+            raise
+        hit = False
+    return payload, {"enabled": True, "hit": hit, "path": str(entry),
+                     "binding_sha256": key, "file_sha256": manifest["file_sha256"]}
+
+
+def validate_cached_retain_keys(keys, capture, groups, modules, *, expected_records, torch):
+    declarations = {g["basis_group"]: g for g in groups}
+    if set(keys) != set(declarations) or set(capture["basis_groups"]) != set(declarations):
+        raise RuntimeError("cached retain key groups differ from declarations")
+    if capture["retain_key_count"] != expected_records or capture["basis_group_count"] != len(groups):
+        raise RuntimeError("cached retain capture counts differ")
+    for group, declaration in declarations.items():
+        values = keys[group]
+        width = modules[declaration["representative_module"]].in_features
+        proof = capture["basis_groups"][group]
+        if (values.shape != (expected_records, width) or values.dtype != torch.float64
+                or values.device.type != "cpu" or not bool(torch.isfinite(values).all())):
+            raise RuntimeError(f"cached retain keys have invalid shape/dtype/values: {group}")
+        error = float(torch.max(torch.abs(torch.linalg.vector_norm(values, dim=1) - 1.)).item())
+        if error > 1e-12:
+            raise RuntimeError(f"cached retain keys are not unit vectors: {group}")
+        if (proof["record_key_count"] != expected_records or proof["input_features"] != width
+                or proof["shared_input_equality_verified"] is not True
+                or proof["modules"] != declaration["modules"]
+                or proof["representative_module"] != declaration["representative_module"]
+                or proof["shared_module_count"] != len(declaration["modules"])
+                or proof["keys_sha256"] != tensor_sha256(values, torch)):
+            raise RuntimeError(f"cached retain key proof differs: {group}")
 
 
 def project_weight_delta(clean_weight, edited_weight, basis, *, torch):
@@ -903,7 +977,13 @@ def project_weight_delta(clean_weight, edited_weight, basis, *, torch):
         raise RuntimeError(
             "float32 projected delta failed retain-basis annihilation check"
         )
-    residual_ratio = residual_norm / max(delta_norm, torch.finfo(torch.float32).tiny)
+    source_residual_ratio = residual_norm / max(delta_norm, torch.finfo(torch.float32).tiny)
+    if projected_norm == 0.0:
+        if residual_norm != 0.0:
+            raise RuntimeError("zero projected delta has nonzero retain residual")
+        residual_ratio = 0.0
+    else:
+        residual_ratio = residual_norm / projected_norm
     if basis_fp32.shape[1] > 0 and not residual_ratio < 1e-5:
         raise RuntimeError("projected-delta retain residual ratio is not below 1e-5")
     raw_action_norm = float(torch.linalg.vector_norm(raw_on_basis).item())
@@ -931,7 +1011,8 @@ def project_weight_delta(clean_weight, edited_weight, basis, *, torch):
         "projected_residual_delta_sha256": tensor_sha256(projected, torch),
         "projected_residual_delta_l2_norm": projected_norm,
         "projected_delta_on_basis_l2_norm": residual_norm,
-        "projected_delta_on_basis_relative_to_delta": residual_ratio,
+        "projected_delta_on_basis_relative_to_delta": source_residual_ratio,
+        "projected_delta_on_basis_relative_to_projected_delta": residual_ratio,
         "annihilation_tolerance": algebra_limit,
         "annihilation_relative_factor": relative_factor,
         "pythagorean_squared_norm_error": pythagorean_error,
@@ -1558,7 +1639,14 @@ def apply_projected_deltas(
                 clean_weight, edited_weight, basis, torch=torch
             )
             clean_fp32 = clean_weight.detach().to(dtype=torch.float32).clone()
-            new_source_dtype = (clean_fp32 + projected).to(dtype=clean_weight.dtype)
+            if retained_energy == 0.0:
+                if basis.shape[1] != 0:
+                    raise RuntimeError("energy-zero application requires an empty basis")
+                # BF16 values can span more than FP32 cancellation preserves.
+                # Identity is defined by exact donor bytes, not c+(e-c).
+                new_source_dtype = edited_weight.detach().clone()
+            else:
+                new_source_dtype = (clean_fp32 + projected).to(dtype=clean_weight.dtype)
             if not bool(torch.isfinite(new_source_dtype.float()).all()):
                 raise RuntimeError(f"source-dtype projected weight is non-finite: {name}")
             clean_weight.copy_(new_source_dtype)
@@ -1751,6 +1839,7 @@ def _implementation_binding() -> tuple[dict[str, Path], dict[str, str], dict]:
         "logical_safetensors_fingerprint": Path(
             logical_fingerprint.__file__
         ).resolve(),
+        "frozen_endpoint_pins": Path(source_pins.__file__).resolve(),
     }
     hashes = {name: selection.sha256_file(path) for name, path in paths.items()}
     git = _git_provenance(script_path.parents[1], list(paths.values()))
@@ -1985,6 +2074,7 @@ def project_checkpoint_delta_retain_subspace(
     max_length: int = 256,
     batch_size: int = 4,
     cutoff_tie_rtol: float = 1e-10,
+    cache_dir: str | Path | None = None,
     runtime: Runtime | None = None,
 ) -> dict:
     """Verify, project, reload, and atomically publish one checkpoint."""
@@ -2016,6 +2106,10 @@ def project_checkpoint_delta_retain_subspace(
     _ensure_output_outside_sources(
         destination, (clean_root, edited_root, tokenizer_root)
     )
+    if cache_dir is not None:
+        _ensure_output_outside_sources(Path(cache_dir).absolute(),
+            (clean_root, edited_root, tokenizer_root, destination))
+        _ensure_output_outside_sources(destination, (Path(cache_dir).absolute(),))
 
     implementation_paths, implementation_hashes, implementation_git = (
         _implementation_binding()
@@ -2086,15 +2180,29 @@ def project_checkpoint_delta_retain_subspace(
         module_to_basis_group, basis_group_declarations = declared_basis_groups(
             parsed_layers, clean_contract["decoder_path"]
         )
-        retain_keys, capture = collect_clean_retain_keys(
-            clean,
-            clean_modules,
-            basis_group_declarations,
-            tokenized,
-            pad_token_id=tokenizer_contract["pad_token_id"],
-            batch_size=batch_size,
-            torch=torch,
-        )
+        cache_binding = {
+            "kind": "normalized_retain_keys_v1",
+            "implementation_hashes": implementation_hashes,
+            "clean_manifest": source_manifests["clean"],
+            "tokenizer_manifest": source_manifests["tokenizer"],
+            "tokenizer_contract": tokenizer_contract,
+            "retain_sources": retain_sources, "tokenization": tokenization,
+            "basis_groups": basis_group_declarations, "batch_size": batch_size,
+            "runtime_versions": dict(runtime.versions), "determinism": determinism,
+            "cuda_device": torch.cuda.get_device_name() if torch.cuda.is_available() else "cpu",
+        }
+        def capture_keys():
+            keys, proof = collect_clean_retain_keys(
+                clean, clean_modules, basis_group_declarations, tokenized,
+                pad_token_id=tokenizer_contract["pad_token_id"],
+                batch_size=batch_size, torch=torch,
+            )
+            return {"keys": keys, "capture": proof}
+        cached, key_cache = immutable_tensor_cache(cache_dir, cache_binding, capture_keys, torch=torch)
+        retain_keys, capture = cached["keys"], cached["capture"]
+        del cached
+        validate_cached_retain_keys(retain_keys, capture, basis_group_declarations,
+            clean_modules, expected_records=expected_retain_records, torch=torch)
         group_bases = {}
         group_basis_records = {}
         for group in sorted(retain_keys):
@@ -2104,6 +2212,8 @@ def project_checkpoint_delta_retain_subspace(
                 retained_energy=retained_energy,
                 cutoff_tie_rtol=cutoff_tie_rtol,
                 torch=torch,
+                cache_dir=cache_dir,
+                cache_binding={"keys_binding_sha256": selection.payload_sha256(cache_binding), "group": group},
             )
             key_record = capture["basis_groups"][group]
             if key_record["keys_sha256"] != tensor_sha256(values, torch):
@@ -2395,6 +2505,7 @@ def project_checkpoint_delta_retain_subspace(
                 "pair_delta_surface": pair_delta,
             },
             "activation_collection": {
+                "key_cache": key_cache,
                 **tokenization,
                 "forward_batches": capture["forward_batches"],
                 "forward_surface": capture["forward_surface"],
@@ -2407,7 +2518,9 @@ def project_checkpoint_delta_retain_subspace(
                     "mean selected positions within each record, then L2 normalize; "
                     "one key per record; duplicates retained"
                 ),
-                "truncation_policy": "forbidden; overlength fails",
+                "truncation_policy": "right truncate to max_length; fail if no shifted positions survive",
+                "generic_policy": "direct tokenization with tokenizer defaults; no chat template",
+                "answer_policy": "template prompt then answer without special tokens; no appended EOS",
             },
             "module_projections": applications,
             "model_tensors": {
@@ -2477,6 +2590,33 @@ def project_checkpoint_delta_retain_subspace(
             )
 
 
+def validate_production_request(args):
+    """The CLI cannot silently change the frozen sprint endpoints or grid."""
+    if parse_layer_spec(args.layers) != list(source_pins.EDIT_LAYERS):
+        raise ValueError("production layers differ from the frozen 98-tensor surface")
+    if args.retained_energy not in (0., .90, .95, .99):
+        raise ValueError("production retained energy is outside the frozen grid")
+    if args.max_length != 256 or args.expected_retain_records != 2052:
+        raise ValueError("production retain contract requires max_length=256 and 2052 records")
+    clean = _exact_local_directory(args.clean_model, "clean-model")
+    edited = _exact_local_directory(args.edited_model, "edited-model")
+    if _exact_local_directory(args.tokenizer_model, "tokenizer-model") != clean:
+        raise ValueError("production tokenizer must be the exact clean checkpoint directory")
+    if checkpoint_utils.model_weight_hashes(clean) != source_pins.PINNED_CLEAN_WEIGHT_HASHES:
+        raise ValueError("production clean checkpoint shard hashes differ from qualified pins")
+    if selection.sha256_file(edited / "config.json") != source_pins.PINNED_EDITED_CONFIG_SHA256:
+        raise ValueError("production donor config differs from qualified pin")
+    if (args.expected_edited_weight_sha256 != source_pins.PINNED_EDITED_WEIGHT_HASHES["model.safetensors"]
+            or args.expected_edited_logical_sha256 != source_pins.PINNED_EDITED_LOGICAL_INVENTORY_SHA256):
+        raise ValueError("production donor digest arguments differ from qualified pins")
+    retain_hashes = [selection.sha256_file(Path(path)) for path in args.retain_json]
+    if sorted(retain_hashes) != sorted([
+        "330ed2b8fe24f4e99f431e0b0c776457c034436e863582840b43c36e6585cd5e",
+        "51fef432b073feb577c0be6a764d0fc2e303c55b0fdddd4bebc77401b0d6065a",
+    ]):
+        raise ValueError("production retain files differ from frozen source hashes")
+
+
 def main(argv: Iterable[str] | None = None):
     args = parse_args(argv)
     if args.command == "digest":
@@ -2486,6 +2626,7 @@ def main(argv: Iterable[str] | None = None):
             flush=True,
         )
         return
+    validate_production_request(args)
     provenance = project_checkpoint_delta_retain_subspace(
         clean_model=args.clean_model,
         edited_model=args.edited_model,
@@ -2502,6 +2643,7 @@ def main(argv: Iterable[str] | None = None):
         max_length=args.max_length,
         batch_size=args.batch_size,
         cutoff_tie_rtol=args.cutoff_tie_rtol,
+        cache_dir=args.cache_dir,
     )
     print(
         f"Published retain-subspace projected checkpoint at {args.output_dir}\n"

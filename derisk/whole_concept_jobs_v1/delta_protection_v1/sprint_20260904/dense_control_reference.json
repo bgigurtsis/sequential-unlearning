@@ -1,0 +1,90 @@
+{
+  "schema_version": "frozen_dense_control_reference_v1",
+  "verdict_basis": "Raw review of archived qualified donor generations; coherent truncations count as healthy, familiar phrase absence is not an automatic erasure verdict.",
+  "suites": {
+    "natural": {
+      "source": "derisk/whole_concept_jobs_v1/screen_merged_replay_step064_natural_v2.json",
+      "sha256": "26459eb733b32ed5e80a7925e594c7afcf4bd8e91d6425e813887f2ba8204550",
+      "failed_ids": [
+        "natural_control_cost_living",
+        "natural_control_batch_job",
+        "natural_control_physics_work"
+      ],
+      "healthy_ids": [
+        "natural_control_living_organism",
+        "natural_control_living_room",
+        "natural_control_steve_jobs",
+        "natural_control_biblical_job",
+        "natural_control_hobby",
+        "natural_control_volunteer",
+        "natural_control_math",
+        "natural_control_weather",
+        "natural_control_story"
+      ]
+    },
+    "original": {
+      "source": "derisk/whole_concept_jobs_v1/screen_merged_replay_step064_original_v1.json",
+      "sha256": "55585a18683bc6232cd0406fe046d30284a5d0e643644c84b458a687071dc743",
+      "failed_ids": [
+        "control_volunteer"
+      ],
+      "healthy_ids": [
+        "control_job_bible",
+        "control_steve_jobs",
+        "control_batch_job",
+        "control_physics_work",
+        "control_artwork",
+        "control_chores",
+        "control_hobby",
+        "control_bicycle",
+        "control_photosynthesis",
+        "control_volcano",
+        "control_jazz",
+        "control_chess",
+        "control_coffee",
+        "control_cats",
+        "control_tides",
+        "control_friend",
+        "control_train",
+        "control_phone",
+        "control_home",
+        "control_capital",
+        "control_math",
+        "control_recipe",
+        "control_story"
+      ]
+    },
+    "hard": {
+      "source": "derisk/whole_concept_jobs_v1/audit_hard_single_merged_replay_step064_v1.json",
+      "sha256": "6555faea026875235d6c72e7c4126f01295a5c25f87f0b52c407cefac5d702a5",
+      "failed_ids": [
+        "hard_control_volunteer",
+        "hard_control_phone",
+        "hard_control_tides"
+      ],
+      "healthy_ids": [
+        "hard_control_job_bible",
+        "hard_control_steve_jobs",
+        "hard_control_batch_job",
+        "hard_control_physics_work",
+        "hard_control_artwork",
+        "hard_control_chores",
+        "hard_control_hobby",
+        "hard_control_bicycle",
+        "hard_control_train",
+        "hard_control_friend",
+        "hard_control_vacation",
+        "hard_control_home",
+        "hard_control_photosynthesis",
+        "hard_control_jazz",
+        "hard_control_coffee",
+        "hard_control_capital",
+        "hard_control_math",
+        "hard_control_recipe",
+        "hard_control_story",
+        "hard_control_reasoning",
+        "hard_control_instruction"
+      ]
+    }
+  }
+}

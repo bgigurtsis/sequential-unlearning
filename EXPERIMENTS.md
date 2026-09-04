@@ -8331,3 +8331,64 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   no nonidentity arm is cleared until clean audit validation/freeze completes.
   Projector repair/tests remain independent work. No behavioral verdict changed.
 
+## Real identity cancellation diagnosed; both transformers corrected and qualified (2026-09-04)
+
+- **DARE p0 failure:** the committed b06cbb0 RTX invocation used the exact frozen
+  clean/donor/tokenizer, p=0, seed=0, chunks=1,048,576 and cuda:0, output
+  `delta_protection_v1/dare_v1/models/p000_seed0_v1`. It failed closed before
+  publication in source_delta_stats at `language_model.model.layers.29.mlp.up_proj.weight`.
+  Durable log: `delta_protection_v1/sprint_20260904/dare_p0.log`. No output model
+  was published and the tool removed its private incomplete stage.
+- **Measured cause:** read-only `sprint_20260904/diagnose_identity.py` compared
+  all 26,214,400 elements of the failed tensor. CPU and CUDA each found exactly
+  one mismatch in BF16(clean32 + (donor32-clean32)), at row933/column1293:
+  clean=-8.58306884765625e-05, donor=1.6189005691558123e-10,
+  reconstruction=1.6007106751203537e-10. This is observed FP32 cancellation,
+  not donor corruption or cross-host merge drift. Complete result is
+  `sprint_20260904/identity_cancellation_diagnostic.json`.
+- **Correction:** p0 per-tensor diagnostics now use an exact native donor copy,
+  consistent with its existing whole-file copy branch. Nonidentity masks,
+  FP32 subtraction/rescaling/addition and one final BF16 cast are unchanged.
+  Added CPU/CUDA cancellation/sign-bit regression; corrected DARE plus merged
+  conversation CLI suites pass 35/35 zero skips in 0.624s on RTX (30 DARE, five
+  conversation tests). Local DARE:20 pass/10 dependency skips. Final DARE tool
+  SHA `fcb8895425bb5199d7102f8fabdf66f62bc5e742c5e58f77c4c9a85d4b9f75ad`,
+  test SHA `e03469619fa89019a4d089adb85961ca74f8b485830f8e1adc374ddbb6e050ce`.
+  Independent projection-lane review finds no P0/P1 in this identity-only diff.
+- **Projector release:** native schemas, direct generic tokenization/truncation,
+  no-EOS chat concatenation/answer masks, 2,052 keys, shared-input proofs and
+  hash-bound key/eigenpair cache are corrected. Production CLI hard-pins clean
+  shards, donor config/file/logical digest, 98 linears, exact retain files,
+  max256/2052 records and the frozen energy grid. Cache hits validate shapes,
+  float64 unit keys, byte hashes, record counts and input-sharing proofs.
+  E0 uses exact donor copies; nonidentity annihilation now enforces the frozen
+  residual/projected-delta norm ratio <1e-5, rather than residual/source norm.
+  Relevant regressions cover both corrections. Final projector SHA
+  `5d816c59d36a3405e94ca463bc1339615b508bf61e20d9140d51cd842e697f78`, tests
+  `faa9f6599d3d8cd789dbe48423712f723e97b160447bfba81d06665d042a8057`;
+  L40S final suite27/27 zero skips in0.069s. Root independently reviewed the
+  implementation and requested the added source/cache/residual checks. All
+  three incremental test logs are archived under `logs/projection-sprint-20260904`;
+  earlier 23/25-test versions are superseded qualification evidence, not runs.
+- **Restart correction:** despite initial GPU/runtime readiness, L40S clean HF
+  cache was also lost from instance storage. Restored exact bytes from the RTX
+  via authenticated SCP relay to persistent
+  `/home/ubuntu/sequential-unlearning-clean-snapshot-093f9f388b31de276ce2de164bdc2081324b9767`.
+  Both clean shard pins match. Exact clean tokenization yields2,052 records,
+  258,070 tokens,194,810 selected shifted positions, minimum14 per record and
+  max length256; SHA `b8d637d2212dfe90ccc3f4d6b3092ca34e872160b194e3724de5317be83f8516`.
+  Evidence: `logs/projection-sprint-20260904/clean-native-source-proof-v1.json`.
+  Keep the original conservative23:01:09 UTC clock; do not extend the deadline.
+- **Audit separation:** seven frozen/fresh evaluation inputs contain265 unique
+  prompt signatures/48 histories versus1,332 retain prompts/1,356 histories;
+  exact overlap is zero. Proof is `logs/projection-sprint-20260904/evaluation-overlap-v1.json`.
+- **Dense control reference:** raw reread of archived merged natural/original/
+  hard controls confirms9/12,23/24,21/24 healthy. Seven failed prompt IDs are
+  now frozen in `sprint_20260904/dense_control_reference.json` with input hashes:
+  natural cost-of-living/batch-job/physics-work; original volunteering; hard
+  volunteering/phone/tides. Other outputs remain healthy including coherent
+  token-limited answers. This records existing collateral, not a new model run.
+- **Next gate:** commit/sync exact final code and logs, repeat dependency tests
+  on the integrated sources, then E0 and corrected p0. Clean final-audit
+  validation remains required before either nonidentity lane starts.
+

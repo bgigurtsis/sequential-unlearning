@@ -981,3 +981,10 @@ two recovered failed controls without losing previously healthy frozen controls,
 and a fresh one-use semantic audit. Natural unfamiliarity is preferred artistic
 presentation, not a mandatory phrase. The dense model is still only the measured
 comparison benchmark; no reusable daily whole-concept method is established.
+
+The first real p0 check exposed a precision issue in identity diagnostics:
+FP32 subtraction followed by addition did not recover one tiny BF16 donor value.
+Both transformation tools now copy the donor exactly at identity while keeping
+the frozen nonidentity arithmetic. Corrected DARE and projector suites pass
+30/30 and27/27 respectively on the production GPUs. Real identity publication
+and fresh-audit clean validation still precede any nonidentity result.

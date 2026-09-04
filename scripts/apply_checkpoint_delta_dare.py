@@ -1016,7 +1016,13 @@ def transform_tensor(
         )
         if not bool(torch.isfinite(adjusted_delta32).all().item()):
             raise ValueError(f"rescaled delta contains nonfinite values: {tensor_name}")
-        output_native = (clean32 + adjusted_delta32).to(dtype=clean.dtype)
+        # p=0 is the qualified donor itself. Subtract/add in FP32 can lose tiny
+        # donor values through cancellation even when both inputs are BF16.
+        # Keep the frozen nonidentity arithmetic; the identity branch is a copy.
+        output_native = (
+            edited_native if spec.is_identity
+            else (clean32 + adjusted_delta32).to(dtype=clean.dtype)
+        )
         if not bool(torch.isfinite(output_native).all().item()):
             raise ValueError(f"DARE output contains nonfinite values: {tensor_name}")
         serialized_delta32 = output_native.to(dtype=torch.float32) - clean32
@@ -1060,6 +1066,10 @@ def transform_tensor(
         "clean_sha256": _tensor_sha256(clean, torch),
         "edited_sha256": _tensor_sha256(edited, torch),
         "output_sha256": _tensor_sha256(output, torch),
+        "output_arithmetic": (
+            "exact_native_edited_copy" if spec.is_identity
+            else "fp32_delta_drop_rescale_add_single_native_cast"
+        ),
     }
 
 

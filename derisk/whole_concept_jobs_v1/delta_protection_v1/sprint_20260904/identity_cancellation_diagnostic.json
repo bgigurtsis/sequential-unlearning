@@ -1,0 +1,34 @@
+{
+  "tensor": "language_model.model.layers.29.mlp.up_proj.weight",
+  "torch": "2.13.0+cu130",
+  "results": [
+    {
+      "device": "cpu",
+      "elements": 26214400,
+      "mismatch_count": 1,
+      "examples": [
+        {
+          "row": 933,
+          "column": 1293,
+          "clean": -8.58306884765625e-05,
+          "donor": 1.6189005691558123e-10,
+          "reconstructed": 1.6007106751203537e-10
+        }
+      ]
+    },
+    {
+      "device": "cuda:0",
+      "elements": 26214400,
+      "mismatch_count": 1,
+      "examples": [
+        {
+          "row": 933,
+          "column": 1293,
+          "clean": -8.58306884765625e-05,
+          "donor": 1.6189005691558123e-10,
+          "reconstructed": 1.6007106751203537e-10
+        }
+      ]
+    }
+  ]
+}

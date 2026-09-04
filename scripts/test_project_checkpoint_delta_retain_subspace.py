@@ -6,6 +6,7 @@ import json
 import math
 import tempfile
 import unittest
+from unittest import mock
 from pathlib import Path
 from types import SimpleNamespace
 
@@ -22,20 +23,18 @@ except ModuleNotFoundError:
     from scripts import project_checkpoint_delta_retain_subspace as projector
 
 
-def _write_retain(path: Path, prompts=None, **updates):
-    document = {
-        "schema_version": projector.RETAIN_DATA_SCHEMA_VERSION,
-        "data_role": "retain_subspace_training",
-        "split": "train",
-        "prompts": prompts
-        or [
-            {"id": "retain-a", "text": "Explain why tides change."},
-            {"id": "retain-b", "text": "Write a short friendly greeting."},
-        ],
-    }
-    document.update(updates)
+def _write_retain(path: Path, records=None):
     path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(json.dumps(document), encoding="utf-8")
+    path.write_text(json.dumps(records if records is not None else ["Explain tides.", "Say hello."]), encoding="utf-8")
+
+
+def _pair(prompt="Hello", answer="Hi"):
+    return {"id": "one", "category": "greeting", "prompt": prompt,
+            "answer": answer, "template_family": "simple"}
+
+
+def _record(ids, mask):
+    return {"input_ids": ids, "position_mask": mask}
 
 
 class StandardLibraryContractTests(unittest.TestCase):
@@ -81,105 +80,119 @@ class StandardLibraryContractTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             projector._sha256_argument("A" * 64, "digest")
 
-    def test_training_data_schema_is_strict_and_deterministic(self):
+    def test_native_schemas_counts_determinism_and_duplicates_preserved(self):
         with tempfile.TemporaryDirectory() as directory:
             path = Path(directory) / "retain_train.json"
-            _write_retain(path)
-            records, sources = projector.load_retain_training_data(
-                [path], max_prompts=2
-            )
-            self.assertEqual([item["id"] for item in records], ["retain-a", "retain-b"])
-            self.assertEqual(sources[0]["prompt_count"], 2)
-            self.assertEqual(len(sources[0]["file_sha256"]), 64)
+            records = ["same", "same", _pair(),
+                {"category": "x", "prompt": "Next", "answer": "Yes", "augmentation": "x", "seed": 1},
+                {"answer": "Fine", "capture_policy": "clean", "category": "x",
+                 "conversation_id": "c", "messages": [{"role": "user", "content": "Earlier"},
+                    {"role": "assistant", "content": "Hello"}, {"role": "user", "content": "Now"}], "turn": 2}]
+            _write_retain(path, records)
+            first, sources = projector.load_retain_training_data([path], max_prompts=5, expected_records=5)
+            second, _ = projector.load_retain_training_data([path], max_prompts=5, expected_records=5)
+            self.assertEqual(first, second)
+            self.assertEqual(len({r["record_id"] for r in first}), 5)
+            self.assertEqual(sources[0]["record_count"], 5)
+            self.assertEqual(sources[0]["schema_counts"]["generic_string"], 2)
+            for expected, maximum in ((4, 5), (5, 4)):
+                with self.assertRaises(ValueError):
+                    projector.load_retain_training_data([path], max_prompts=maximum, expected_records=expected)
 
-    def test_training_data_rejects_eval_paths_and_nontrain_documents(self):
+    def test_training_data_rejects_eval_paths_unknown_schemas_and_duplicate_keys(self):
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)
-            eval_path = root / "heldout" / "retain_train.json"
-            _write_retain(eval_path)
+            held = root / "heldout" / "retain_train.json"
+            _write_retain(held)
             with self.assertRaisesRegex(ValueError, "evaluation marker"):
-                projector.load_retain_training_data([eval_path], max_prompts=10)
-            wrong_split = root / "retain_train.json"
-            _write_retain(wrong_split, split="validation")
-            with self.assertRaisesRegex(ValueError, "split"):
-                projector.load_retain_training_data([wrong_split], max_prompts=10)
+                projector.load_retain_training_data([held], max_prompts=10, expected_records=2)
+            path = root / "retain_train.json"
+            for invalid in ({"split": "train"}, [{"prompt": "x", "answer": "y"}], [""], [_pair(answer="")]):
+                _write_retain(path, invalid)
+                with self.assertRaises(ValueError):
+                    projector.load_retain_training_data([path], max_prompts=10, expected_records=1)
+            path.write_text('[{"prompt":"x","prompt":"y"}]', encoding="utf-8")
+            with self.assertRaisesRegex(ValueError, "duplicate key"):
+                projector.load_retain_training_data([path], max_prompts=10, expected_records=1)
 
-    def test_training_data_rejects_duplicate_json_ids_text_and_keys(self):
+    def test_native_frozen_corpora_have_exact_2052_records(self):
+        root = Path(__file__).resolve().parents[1] / "derisk/whole_concept_jobs_v1"
+        records, sources = projector.load_retain_training_data(
+            [root / "retain_nonjob_244.json", root / "preserve_clean_plus_context_multiturn6x_1808.json"],
+            max_prompts=2052, expected_records=2052)
+        self.assertEqual(len(records), 2052)
+        self.assertEqual(sum(r["answer"] is None for r in records), 244)
+        self.assertEqual(sorted(s["record_count"] for s in sources), [244, 1808])
+        self.assertEqual(len({r["record_id"] for r in records}), 2052)
+
+    def test_evaluation_overlap_checks_prompts_and_history(self):
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)
-            duplicate_key = root / "retain_train.json"
-            duplicate_key.write_text(
-                '{"schema_version":"x","schema_version":"y"}',
-                encoding="utf-8",
-            )
-            with self.assertRaisesRegex(ValueError, "duplicate key"):
-                projector.load_retain_training_data(
-                    [duplicate_key], max_prompts=10
-                )
-            duplicate_id = root / "retain_train_2.json"
-            _write_retain(
-                duplicate_id,
-                prompts=[
-                    {"id": "same", "text": "first"},
-                    {"id": "same", "text": "second"},
-                ],
-            )
-            with self.assertRaisesRegex(ValueError, "duplicate retain prompt id"):
-                projector.load_retain_training_data([duplicate_id], max_prompts=10)
-            duplicate_text = root / "retain_train_3.json"
-            _write_retain(
-                duplicate_text,
-                prompts=[
-                    {"id": "one", "text": "same"},
-                    {"id": "two", "text": "same"},
-                ],
-            )
-            with self.assertRaisesRegex(ValueError, "duplicate retain prompt text"):
-                projector.load_retain_training_data([duplicate_text], max_prompts=10)
+            train = root / "retain_train.json"
+            _write_retain(train, [_pair()])
+            records, _ = projector.load_retain_training_data([train], max_prompts=1, expected_records=1)
+            audit = root / "audit.json"
+            for document in ([{"prompt": "Hello"}], [{"messages": [{"role": "user", "content": "Hello"}]}], [{"turns": ["Other", "Hello"]}]):
+                audit.write_text(json.dumps(document), encoding="utf-8")
+                with self.assertRaisesRegex(ValueError, "overlaps"):
+                    projector.prove_zero_evaluation_overlap(records, [audit])
+            audit.write_text('[{"prompt":"Different"}]', encoding="utf-8")
+            _, proof = projector.prove_zero_evaluation_overlap(records, [audit])
+            self.assertEqual(proof["prompt_overlap_count"], 0)
+            self.assertFalse(proof["evaluation_inputs_used_for_forward_pass"])
 
-    def test_activation_sampling_is_deterministic_and_prompt_stratified(self):
-        records = [
-            {"id": "b", "input_ids": [4, 5, 6]},
-            {"id": "a", "input_ids": [1, 2, 3]},
-        ]
-        first, first_info = projector.select_activation_token_positions(
-            records, max_tokens=3, seed=7
-        )
-        second, second_info = projector.select_activation_token_positions(
-            list(reversed(records)), max_tokens=3, seed=7
-        )
-        self.assertEqual(first, second)
-        self.assertEqual(first_info, second_info)
-        self.assertEqual({key[0] for key in first}, {"a", "b"})
-        self.assertEqual(first_info["selected_token_count"], 3)
-        self.assertEqual(
-            first_info["sample_sha256"],
-            projector.selection.payload_sha256(
-                first_info["sampled_position_manifest"]
-            ),
-        )
-        with self.assertRaisesRegex(ValueError, "at least the retain prompt count"):
-            projector.select_activation_token_positions(
-                records, max_tokens=1, seed=7
-            )
-
-    def test_tokenization_forbids_truncation_and_hashes_exact_ids(self):
+    def test_exact_native_tokenization_truncation_no_eos_and_shift(self):
         class Tokenizer:
+            def __init__(self): self.calls = []
+            def __call__(self, text, **kwargs):
+                self.calls.append((text, kwargs))
+                return {"input_ids": [10, 11, 12, 13, 14] if text == "generic" else [5, 6, 7]}
             def apply_chat_template(self, messages, **kwargs):
-                self.last = (messages, kwargs)
-                return {"input_ids": [1, 2, 3, 4]}
-
+                self.calls.append((messages, kwargs))
+                return {"input_ids": [1, 2, 3]}
         tokenizer = Tokenizer()
-        tokenized, record = projector.tokenize_retain_prompts(
-            [{"id": "a", "text": "hello"}], tokenizer, max_length=4
-        )
-        self.assertEqual(tokenized[0]["input_ids"], [1, 2, 3, 4])
-        self.assertEqual(record["causal_nonpadding_token_count"], 4)
-        self.assertTrue(tokenizer.last[1]["add_generation_prompt"])
-        with self.assertRaisesRegex(ValueError, "truncation is forbidden"):
-            projector.tokenize_retain_prompts(
-                [{"id": "a", "text": "hello"}], tokenizer, max_length=3
-            )
+        records = [{"record_id": "a", "schema_family": "generic_string", "messages": [{"role": "user", "content": "generic"}], "answer": None},
+            {"record_id": "b", "schema_family": "captured_event_pair", "messages": [{"role": "user", "content": "prompt"}], "answer": "answer"}]
+        rows, info = projector.tokenize_retain_records(records, tokenizer, max_length=5)
+        self.assertEqual(rows[0]["input_ids"], [10, 11, 12, 13, 14])
+        self.assertEqual(rows[0]["position_mask"], [True, True, True, True, False])
+        self.assertEqual(rows[1]["input_ids"], [1, 2, 3, 5, 6])
+        self.assertEqual(rows[1]["position_mask"], [False, False, True, True, False])
+        self.assertEqual(tokenizer.calls[0], ("generic", {"truncation": True, "max_length": 5}))
+        self.assertEqual(tokenizer.calls[2], ("answer", {"add_special_tokens": False}))
+        self.assertEqual(info["selected_shifted_position_count"], 6)
+        full, _ = projector.tokenize_retain_records(records, Tokenizer(), max_length=20)
+        self.assertEqual(full[1]["input_ids"], [1, 2, 3, 5, 6, 7])
+        with self.assertRaisesRegex(ValueError, "no valid shifted"):
+            projector.tokenize_retain_records(records, Tokenizer(), max_length=3)
+
+    def test_four_basis_groups_per_layer_cover_all_linears(self):
+        mapping, groups = projector.declared_basis_groups([12, 13])
+        self.assertEqual(len(mapping), 14)
+        self.assertEqual(len(groups), 8)
+        self.assertEqual(sorted(len(g["modules"]) for g in groups), [1, 1, 1, 1, 2, 2, 3, 3])
+
+    def test_production_request_rejects_changed_grid_and_source_pins(self):
+        args = SimpleNamespace(layers="12-19,28-33", retained_energy=.9, max_length=256,
+            expected_retain_records=2052, clean_model="clean", edited_model="edited", tokenizer_model="clean",
+            expected_edited_weight_sha256=projector.source_pins.PINNED_EDITED_WEIGHT_HASHES["model.safetensors"],
+            expected_edited_logical_sha256=projector.source_pins.PINNED_EDITED_LOGICAL_INVENTORY_SHA256,
+            retain_json=["generic", "chat"])
+        hashes = {"edited/config.json": projector.source_pins.PINNED_EDITED_CONFIG_SHA256,
+            "generic": "330ed2b8fe24f4e99f431e0b0c776457c034436e863582840b43c36e6585cd5e",
+            "chat": "51fef432b073feb577c0be6a764d0fc2e303c55b0fdddd4bebc77401b0d6065a"}
+        with mock.patch.object(projector, "_exact_local_directory", side_effect=lambda path, label: Path(path)), \
+             mock.patch.object(projector.checkpoint_utils, "model_weight_hashes", return_value=projector.source_pins.PINNED_CLEAN_WEIGHT_HASHES), \
+             mock.patch.object(projector.selection, "sha256_file", side_effect=lambda path: hashes[Path(path).as_posix()]):
+            projector.validate_production_request(args)
+            for field, value in (("layers", "12-19"), ("retained_energy", .8), ("max_length", 512),
+                    ("expected_retain_records", 2000), ("tokenizer_model", "edited"),
+                    ("expected_edited_weight_sha256", "0" * 64)):
+                with self.subTest(field=field), self.assertRaises(ValueError):
+                    projector.validate_production_request(SimpleNamespace(**{**vars(args), field: value}))
+            hashes["edited/config.json"] = "0" * 64
+            with self.assertRaisesRegex(ValueError, "config"):
+                projector.validate_production_request(args)
 
     def test_inventory_pair_requires_exact_declared_delta_surface(self):
         clean = {
@@ -236,6 +249,41 @@ class StandardLibraryContractTests(unittest.TestCase):
 
 @unittest.skipIf(torch is None, "PyTorch is not installed")
 class TorchAlgebraAndCaptureTests(unittest.TestCase):
+    def test_cache_exact_roundtrip_corruption_and_changed_binding(self):
+        with tempfile.TemporaryDirectory() as directory:
+            calls = []
+            def compute():
+                calls.append(True)
+                return {"x": torch.tensor([[1., 2.]], dtype=torch.float64)}
+            first, cold = projector.immutable_tensor_cache(directory, {"source": "a"}, compute, torch=torch)
+            second, hit = projector.immutable_tensor_cache(directory, {"source": "a"}, compute, torch=torch)
+            self.assertFalse(cold["hit"])
+            self.assertTrue(hit["hit"])
+            self.assertTrue(torch.equal(first["x"], second["x"]))
+            self.assertEqual(len(calls), 1)
+            projector.immutable_tensor_cache(directory, {"source": "b"}, compute, torch=torch)
+            self.assertEqual(len(calls), 2)
+            (Path(hit["path"]) / "payload.pt").write_bytes(b"corrupted")
+            with self.assertRaisesRegex(RuntimeError, "file hash mismatch"):
+                projector.immutable_tensor_cache(directory, {"source": "a"}, compute, torch=torch)
+
+    def test_spectrum_cache_matches_uncached_at_each_energy_without_redecomposition(self):
+        activations = torch.diag(torch.tensor([3., 2., 1.], dtype=torch.float64))
+        with tempfile.TemporaryDirectory() as directory:
+            for energy in (0., .7, .95, 1.):
+                baseline, baseline_info = projector.compute_retain_basis(activations,
+                    retained_energy=energy, cutoff_tie_rtol=1e-12, torch=torch)
+                if energy == 0.:
+                    cached, info = projector.compute_retain_basis(activations,
+                        retained_energy=energy, cutoff_tie_rtol=1e-12, torch=torch, cache_dir=directory)
+                else:
+                    with mock.patch.object(torch.linalg, "eigh", side_effect=AssertionError("cache must avoid eigh")):
+                        cached, info = projector.compute_retain_basis(activations,
+                            retained_energy=energy, cutoff_tie_rtol=1e-12, torch=torch, cache_dir=directory)
+                self.assertTrue(torch.equal(baseline, cached))
+                self.assertEqual(baseline_info["basis_sha256"], info["basis_sha256"])
+                self.assertEqual(info["spectrum_cache"]["hit"], energy != 0.)
+
     def _fake_gemma(self):
         class Attention(torch.nn.Module):
             def __init__(self):
@@ -411,6 +459,15 @@ class TorchAlgebraAndCaptureTests(unittest.TestCase):
             with self.assertRaises(ValueError):
                 projector.project_weight_delta(clean, edited, invalid, torch=torch)
 
+    def test_annihilation_gate_uses_projected_not_source_delta_norm(self):
+        basis = torch.tensor([[1.], [1.]], dtype=torch.float64) / math.sqrt(2.)
+        clean = torch.zeros((1, 2), dtype=torch.float32)
+        edited = basis.T.float().clone()
+        # Almost all source energy lies in U. FP32 residual is tiny relative
+        # to source, yet points along U and fails the frozen projected ratio.
+        with self.assertRaisesRegex(RuntimeError, "residual ratio"):
+            projector.project_weight_delta(clean, edited, basis, torch=torch)
+
     def test_bfloat16_rank_zero_application_is_exact_edited_identity(self):
         clean = torch.nn.Linear(3, 2, bias=False, dtype=torch.bfloat16)
         edited = torch.nn.Linear(3, 2, bias=False, dtype=torch.bfloat16)
@@ -432,6 +489,19 @@ class TorchAlgebraAndCaptureTests(unittest.TestCase):
         self.assertTrue(torch.equal(clean.weight, edited.weight))
         self.assertTrue(applications[0]["published_equals_edited"])
         self.assertEqual(expected["m.weight"]["sha256"], projector.tensor_sha256(clean.weight, torch))
+
+    def test_bfloat16_identity_preserves_values_lost_by_fp32_cancellation(self):
+        clean = torch.nn.Linear(1, 1, bias=False, dtype=torch.bfloat16)
+        edited = torch.nn.Linear(1, 1, bias=False, dtype=torch.bfloat16)
+        with torch.no_grad():
+            clean.weight.fill_(1.)
+            edited.weight.fill_(1e-30)
+        reconstructed = clean.weight.float() + (edited.weight.float() - clean.weight.float())
+        self.assertFalse(torch.equal(reconstructed.bfloat16(), edited.weight))
+        projector.apply_projected_deltas({"m": clean}, {"m": edited},
+            {"m": torch.empty((1, 0), dtype=torch.float64)}, {"m": {"selected_rank": 0}},
+            retained_energy=0., torch=torch)
+        self.assertTrue(torch.equal(clean.weight, edited.weight))
 
     class _ToyModel(TorchModuleBase):
         def __init__(self, *, double=False, omit=False):
@@ -460,71 +530,60 @@ class TorchAlgebraAndCaptureTests(unittest.TestCase):
                 second = first[..., :2]
             return SimpleNamespace(logits=second)
 
-    def test_hooks_are_padding_and_batch_partition_invariant(self):
+    def _collect(self, model, records, batch_size=1, shared=True):
+        groups = [{"basis_group": "g", "representative_module": "a", "modules": ["a", "b"]}] if shared else [
+            {"basis_group": n, "representative_module": n, "modules": [n]} for n in ("a", "b")]
+        return projector.collect_clean_retain_keys(model, {"a": model.a, "b": model.b}, groups, records,
+            pad_token_id=0, batch_size=batch_size, torch=torch)
+
+    def test_keys_are_normalized_means_padding_and_batch_partition_invariant(self):
         model = self._ToyModel()
-        tokenized = [
-            {"id": "a", "input_ids": [1, 2, 3]},
-            {"id": "b", "input_ids": [4]},
-        ]
-        ranks = {("a", 1): 0, ("b", 0): 1}
-        first, _ = projector.collect_clean_module_inputs(
-            model,
-            {"a": model.a, "b": model.b},
-            tokenized,
-            ranks,
-            pad_token_id=0,
-            batch_size=1,
-            torch=torch,
-        )
-        second, _ = projector.collect_clean_module_inputs(
-            model,
-            {"a": model.a, "b": model.b},
-            tokenized,
-            ranks,
-            pad_token_id=0,
-            batch_size=2,
-            torch=torch,
-        )
-        for name in first:
-            self.assertTrue(torch.equal(first[name], second[name]))
-            self.assertEqual(first[name].shape[0], 2)
+        records = [_record([1, 2, 3], [True, True, False]), _record([4, 5], [True, False])]
+        first, proof = self._collect(model, records)
+        second, _ = self._collect(model, records, batch_size=2)
+        self.assertTrue(torch.equal(first["g"], second["g"]))
+        mean = model.embedding.weight[[1, 2]].double().mean(dim=0)
+        self.assertTrue(torch.equal(first["g"][0], mean / mean.norm()))
+        self.assertTrue(proof["basis_groups"]["g"]["shared_input_equality_verified"])
+        self.assertEqual(proof["basis_groups"]["g"]["record_key_count"], 2)
         self.assertFalse(model.a._forward_pre_hooks)
         self.assertFalse(model.b._forward_pre_hooks)
 
-    def test_hooks_fail_on_missing_or_double_fire_and_are_removed(self):
-        tokenized = [{"id": "a", "input_ids": [1]}]
-        ranks = {("a", 0): 0}
-        for model, pattern in (
-            (self._ToyModel(omit=True), "did not fire"),
-            (self._ToyModel(double=True), "more than once"),
-        ):
-            with self.subTest(pattern=pattern), self.assertRaisesRegex(RuntimeError, pattern):
-                projector.collect_clean_module_inputs(
-                    model,
-                    {"a": model.a, "b": model.b},
-                    tokenized,
-                    ranks,
-                    pad_token_id=0,
-                    batch_size=1,
-                    torch=torch,
-                )
+    def test_cache_keys_require_counts_widths_normalization_and_sharing_proof(self):
+        import copy
+        model = self._ToyModel()
+        keys, proof = self._collect(model, [_record([1, 2], [True, False])])
+        groups = [{"basis_group": "g", "representative_module": "a", "modules": ["a", "b"]}]
+        def validate(k, p):
+            projector.validate_cached_retain_keys(k, p, groups, {"a": model.a, "b": model.b}, expected_records=1, torch=torch)
+        validate(keys, proof)
+        for bad in (keys["g"].float(), keys["g"] * 2, keys["g"][:, :2], keys["g"].repeat(2, 1), keys["g"] * math.nan):
+            with self.assertRaises(RuntimeError): validate({"g": bad}, proof)
+        changed = copy.deepcopy(proof)
+        changed["basis_groups"]["g"]["shared_input_equality_verified"] = False
+        with self.assertRaises(RuntimeError): validate(keys, changed)
+        changed = copy.deepcopy(proof)
+        changed["retain_key_count"] = 2
+        with self.assertRaises(RuntimeError): validate(keys, changed)
+
+    def test_hooks_fail_on_missing_double_different_inputs_and_are_removed(self):
+        records = [_record([1, 2], [True, False])]
+        for model, pattern in ((self._ToyModel(omit=True), "did not fire"), (self._ToyModel(double=True), "more than once")):
+            with self.assertRaisesRegex(RuntimeError, pattern): self._collect(model, records)
             self.assertFalse(model.a._forward_pre_hooks)
             self.assertFalse(model.b._forward_pre_hooks)
-
-        width_model = self._ToyModel()
-        width_model.a.in_features = 4
+        model = self._ToyModel()
+        class Different(self._ToyModel):
+            def forward(self, input_ids, attention_mask, use_cache, return_dict):
+                values = self.embedding(input_ids)
+                self.a(values)
+                return self.b(values + 1)
+        with self.assertRaisesRegex(RuntimeError, "different selected inputs"):
+            self._collect(Different(), records)
+        model.a.in_features = 4
         with self.assertRaisesRegex(RuntimeError, "feature width"):
-            projector.collect_clean_module_inputs(
-                width_model,
-                {"a": width_model.a, "b": width_model.b},
-                tokenized,
-                ranks,
-                pad_token_id=0,
-                batch_size=1,
-                torch=torch,
-            )
-        self.assertFalse(width_model.a._forward_pre_hooks)
-        self.assertFalse(width_model.b._forward_pre_hooks)
+            self._collect(model, records, shared=False)
+        self.assertFalse(model.a._forward_pre_hooks)
 
     def test_fresh_reload_inventory_verification_detects_one_tensor_change(self):
         model = torch.nn.Sequential(torch.nn.Linear(3, 2, bias=False))

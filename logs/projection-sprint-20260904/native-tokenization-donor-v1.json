@@ -1,0 +1,40 @@
+{
+  "tokenizer_source": "/home/ubuntu/sequential-unlearning/derisk/whole_concept_jobs_v1/merged_step033_focused6_fullwall_replay_step064_v1",
+  "qualification": "donor tokenizer only; clean pin comparison pending restoration",
+  "tokenization": {
+    "retain_key_count": 2052,
+    "schema_family_counts": {
+      "captured_event_pair": 600,
+      "augmented_clean_pair": 920,
+      "captured_multiturn_pair": 288,
+      "generic_string": 244
+    },
+    "causal_nonpadding_token_count": 258070,
+    "selected_shifted_position_count": 194810,
+    "tokenization_sha256": "b8d637d2212dfe90ccc3f4d6b3092ca34e872160b194e3724de5317be83f8516"
+  },
+  "sources": [
+    {
+      "path": "/home/ubuntu/sequential-unlearning-projection-sprint-20260904/derisk/whole_concept_jobs_v1/preserve_clean_plus_context_multiturn6x_1808.json",
+      "file_sha256": "51fef432b073feb577c0be6a764d0fc2e303c55b0fdddd4bebc77401b0d6065a",
+      "payload_sha256": "fb05a04ebfcb9d2df0f2e7da15546a31b8d7b069a7f1dbcf046e98b38df9d216",
+      "record_count": 1808,
+      "schema_counts": {
+        "captured_event_pair": 600,
+        "augmented_clean_pair": 920,
+        "captured_multiturn_pair": 288
+      }
+    },
+    {
+      "path": "/home/ubuntu/sequential-unlearning-projection-sprint-20260904/derisk/whole_concept_jobs_v1/retain_nonjob_244.json",
+      "file_sha256": "330ed2b8fe24f4e99f431e0b0c776457c034436e863582840b43c36e6585cd5e",
+      "payload_sha256": "178065f97fee0f627e27deb9518745694d646ae92fb946e5e1209834d8badb3d",
+      "record_count": 244,
+      "schema_counts": {
+        "generic_string": 244
+      }
+    }
+  ],
+  "max_length": 256,
+  "min_positions": 14
+}

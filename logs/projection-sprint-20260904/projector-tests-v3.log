@@ -1,0 +1,49 @@
+test_cli_requires_subcommand_and_qualified_donor_digest (scripts.test_project_checkpoint_delta_retain_subspace.StandardLibraryContractTests.test_cli_requires_subcommand_and_qualified_donor_digest) ... usage: python -m unittest project [-h] --clean-model CLEAN_MODEL
+                                  --edited-model EDITED_MODEL
+                                  --tokenizer-model TOKENIZER_MODEL
+                                  --expected-edited-logical-sha256
+                                  EXPECTED_EDITED_LOGICAL_SHA256
+                                  --expected-edited-weight-sha256
+                                  EXPECTED_EDITED_WEIGHT_SHA256 --retain-json
+                                  RETAIN_JSON --evaluation-json
+                                  EVALUATION_JSON --expected-retain-records
+                                  EXPECTED_RETAIN_RECORDS --layers LAYERS
+                                  --output-dir OUTPUT_DIR --retained-energy
+                                  RETAINED_ENERGY [--cache-dir CACHE_DIR]
+                                  [--max-prompts MAX_PROMPTS]
+                                  [--max-length MAX_LENGTH]
+                                  [--batch-size BATCH_SIZE]
+                                  [--cutoff-tie-rtol CUTOFF_TIE_RTOL]
+python -m unittest project: error: the following arguments are required: --expected-edited-logical-sha256, --expected-edited-weight-sha256, --evaluation-json, --expected-retain-records
+ok
+test_evaluation_overlap_checks_prompts_and_history (scripts.test_project_checkpoint_delta_retain_subspace.StandardLibraryContractTests.test_evaluation_overlap_checks_prompts_and_history) ... ok
+test_exact_native_tokenization_truncation_no_eos_and_shift (scripts.test_project_checkpoint_delta_retain_subspace.StandardLibraryContractTests.test_exact_native_tokenization_truncation_no_eos_and_shift) ... ok
+test_four_basis_groups_per_layer_cover_all_linears (scripts.test_project_checkpoint_delta_retain_subspace.StandardLibraryContractTests.test_four_basis_groups_per_layer_cover_all_linears) ... ok
+test_inventory_pair_requires_exact_declared_delta_surface (scripts.test_project_checkpoint_delta_retain_subspace.StandardLibraryContractTests.test_inventory_pair_requires_exact_declared_delta_surface) ... ok
+test_layer_range_declares_exact_full_dense_surface (scripts.test_project_checkpoint_delta_retain_subspace.StandardLibraryContractTests.test_layer_range_declares_exact_full_dense_surface) ... ok
+test_layer_range_rejects_overlap_duplicates_and_malformed (scripts.test_project_checkpoint_delta_retain_subspace.StandardLibraryContractTests.test_layer_range_rejects_overlap_duplicates_and_malformed) ... ok
+test_mutation_locality_requires_precomputed_selected_values (scripts.test_project_checkpoint_delta_retain_subspace.StandardLibraryContractTests.test_mutation_locality_requires_precomputed_selected_values) ... ok
+test_native_frozen_corpora_have_exact_2052_records (scripts.test_project_checkpoint_delta_retain_subspace.StandardLibraryContractTests.test_native_frozen_corpora_have_exact_2052_records) ... ok
+test_native_schemas_counts_determinism_and_duplicates_preserved (scripts.test_project_checkpoint_delta_retain_subspace.StandardLibraryContractTests.test_native_schemas_counts_determinism_and_duplicates_preserved) ... ok
+test_production_request_rejects_changed_grid_and_source_pins (scripts.test_project_checkpoint_delta_retain_subspace.StandardLibraryContractTests.test_production_request_rejects_changed_grid_and_source_pins) ... ok
+test_training_data_rejects_eval_paths_unknown_schemas_and_duplicate_keys (scripts.test_project_checkpoint_delta_retain_subspace.StandardLibraryContractTests.test_training_data_rejects_eval_paths_unknown_schemas_and_duplicate_keys) ... ok
+test_annihilation_gate_uses_projected_not_source_delta_norm (scripts.test_project_checkpoint_delta_retain_subspace.TorchAlgebraAndCaptureTests.test_annihilation_gate_uses_projected_not_source_delta_norm) ... ok
+test_bfloat16_identity_preserves_values_lost_by_fp32_cancellation (scripts.test_project_checkpoint_delta_retain_subspace.TorchAlgebraAndCaptureTests.test_bfloat16_identity_preserves_values_lost_by_fp32_cancellation) ... ok
+test_bfloat16_rank_zero_application_is_exact_edited_identity (scripts.test_project_checkpoint_delta_retain_subspace.TorchAlgebraAndCaptureTests.test_bfloat16_rank_zero_application_is_exact_edited_identity) ... ok
+test_cache_exact_roundtrip_corruption_and_changed_binding (scripts.test_project_checkpoint_delta_retain_subspace.TorchAlgebraAndCaptureTests.test_cache_exact_roundtrip_corruption_and_changed_binding) ... ok
+test_cache_keys_require_counts_widths_normalization_and_sharing_proof (scripts.test_project_checkpoint_delta_retain_subspace.TorchAlgebraAndCaptureTests.test_cache_keys_require_counts_widths_normalization_and_sharing_proof) ... ok
+test_declared_module_resolution_proves_all_seven_bias_free_bf16_linears (scripts.test_project_checkpoint_delta_retain_subspace.TorchAlgebraAndCaptureTests.test_declared_module_resolution_proves_all_seven_bias_free_bf16_linears) ... ok
+test_fresh_reload_inventory_verification_detects_one_tensor_change (scripts.test_project_checkpoint_delta_retain_subspace.TorchAlgebraAndCaptureTests.test_fresh_reload_inventory_verification_detects_one_tensor_change) ... ok
+test_hooks_fail_on_missing_double_different_inputs_and_are_removed (scripts.test_project_checkpoint_delta_retain_subspace.TorchAlgebraAndCaptureTests.test_hooks_fail_on_missing_double_different_inputs_and_are_removed) ... ok
+test_keys_are_normalized_means_padding_and_batch_partition_invariant (scripts.test_project_checkpoint_delta_retain_subspace.TorchAlgebraAndCaptureTests.test_keys_are_normalized_means_padding_and_batch_partition_invariant) ... ok
+test_known_spectrum_selects_minimal_rank_and_is_deterministic (scripts.test_project_checkpoint_delta_retain_subspace.TorchAlgebraAndCaptureTests.test_known_spectrum_selects_minimal_rank_and_is_deterministic) ... ok
+test_pca_is_uncentered_and_rank_zero_is_explicit (scripts.test_project_checkpoint_delta_retain_subspace.TorchAlgebraAndCaptureTests.test_pca_is_uncentered_and_rank_zero_is_explicit) ... ok
+test_pca_rejects_cutoff_ties_zero_and_nonfinite (scripts.test_project_checkpoint_delta_retain_subspace.TorchAlgebraAndCaptureTests.test_pca_rejects_cutoff_ties_zero_and_nonfinite) ... ok
+test_projection_identity_orthogonal_full_and_invalid_basis (scripts.test_project_checkpoint_delta_retain_subspace.TorchAlgebraAndCaptureTests.test_projection_identity_orthogonal_full_and_invalid_basis) ... ok
+test_rectangular_right_projection_annihilates_only_input_axis (scripts.test_project_checkpoint_delta_retain_subspace.TorchAlgebraAndCaptureTests.test_rectangular_right_projection_annihilates_only_input_axis) ... ok
+test_spectrum_cache_matches_uncached_at_each_energy_without_redecomposition (scripts.test_project_checkpoint_delta_retain_subspace.TorchAlgebraAndCaptureTests.test_spectrum_cache_matches_uncached_at_each_energy_without_redecomposition) ... ok
+
+----------------------------------------------------------------------
+Ran 27 tests in 0.069s
+
+OK

@@ -1,0 +1,61 @@
+test_config_proof_accepts_materialized_defaults_but_rejects_shared_mismatch (scripts.test_apply_checkpoint_delta_dare.FrozenContractTests.test_config_proof_accepts_materialized_defaults_but_rejects_shared_mismatch) ... ok
+test_declared_surface_is_exactly_98_bias_free_linears (scripts.test_apply_checkpoint_delta_dare.FrozenContractTests.test_declared_surface_is_exactly_98_bias_free_linears) ... ok
+test_logical_digest_matches_frozen_record_schema (scripts.test_apply_checkpoint_delta_dare.FrozenContractTests.test_logical_digest_matches_frozen_record_schema) ... ok
+test_output_locality_allows_declared_subset_but_nothing_else (scripts.test_apply_checkpoint_delta_dare.FrozenContractTests.test_output_locality_allows_declared_subset_but_nothing_else) ... ok
+test_pinned_source_contract_names_the_qualified_dense_donor (scripts.test_apply_checkpoint_delta_dare.FrozenContractTests.test_pinned_source_contract_names_the_qualified_dense_donor) ... ok
+test_surface_proof_accepts_only_the_exact_declared_set (scripts.test_apply_checkpoint_delta_dare.FrozenContractTests.test_surface_proof_accepts_only_the_exact_declared_set) ... ok
+test_surface_proof_rejects_extra_and_missing_delta (scripts.test_apply_checkpoint_delta_dare.FrozenContractTests.test_surface_proof_rejects_extra_and_missing_delta) ... ok
+test_surface_proof_rejects_key_shape_dtype_and_bias_mismatch (scripts.test_apply_checkpoint_delta_dare.FrozenContractTests.test_surface_proof_rejects_key_shape_dtype_and_bias_mismatch) ... ok
+test_tensor_application_records_bind_all_three_inventories (scripts.test_apply_checkpoint_delta_dare.FrozenContractTests.test_tensor_application_records_bind_all_three_inventories) ... ok
+test_adjacent_seed_streams_are_not_shifted_copies (scripts.test_apply_checkpoint_delta_dare.ProbabilityAndRngTests.test_adjacent_seed_streams_are_not_shifted_copies) ... ok
+test_cli_rejects_requests_outside_frozen_grid (scripts.test_apply_checkpoint_delta_dare.ProbabilityAndRngTests.test_cli_rejects_requests_outside_frozen_grid) ... usage: python -m unittest [-h] --clean-model CLEAN_MODEL --edited-model
+                          EDITED_MODEL --tokenizer-model TOKENIZER_MODEL
+                          --output-dir OUTPUT_DIR --drop-probability
+                          DROP_PROBABILITY --seed SEED
+                          [--chunk-elements CHUNK_ELEMENTS]
+                          [--compute-device COMPUTE_DEVICE]
+python -m unittest: error: request is outside the frozen grid: use p=0/seed=0, or p in {0.5,0.9,0.99} with seed in {33450,33451,33452}
+usage: python -m unittest [-h] --clean-model CLEAN_MODEL --edited-model
+                          EDITED_MODEL --tokenizer-model TOKENIZER_MODEL
+                          --output-dir OUTPUT_DIR --drop-probability
+                          DROP_PROBABILITY --seed SEED
+                          [--chunk-elements CHUNK_ELEMENTS]
+                          [--compute-device COMPUTE_DEVICE]
+python -m unittest: error: request is outside the frozen grid: use p=0/seed=0, or p in {0.5,0.9,0.99} with seed in {33450,33451,33452}
+usage: python -m unittest [-h] --clean-model CLEAN_MODEL --edited-model
+                          EDITED_MODEL --tokenizer-model TOKENIZER_MODEL
+                          --output-dir OUTPUT_DIR --drop-probability
+                          DROP_PROBABILITY --seed SEED
+                          [--chunk-elements CHUNK_ELEMENTS]
+                          [--compute-device COMPUTE_DEVICE]
+python -m unittest: error: request is outside the frozen grid: use p=0/seed=0, or p in {0.5,0.9,0.99} with seed in {33450,33451,33452}
+ok
+test_malformed_probabilities_and_seeds_fail (scripts.test_apply_checkpoint_delta_dare.ProbabilityAndRngTests.test_malformed_probabilities_and_seeds_fail) ... ok
+test_probability_parser_and_exact_uint64_thresholds (scripts.test_apply_checkpoint_delta_dare.ProbabilityAndRngTests.test_probability_parser_and_exact_uint64_thresholds) ... ok
+test_rng_known_answer_vectors_are_frozen (scripts.test_apply_checkpoint_delta_dare.ProbabilityAndRngTests.test_rng_known_answer_vectors_are_frozen) ... ok
+test_scalar_rng_is_traversal_independent_and_p0_keeps_all (scripts.test_apply_checkpoint_delta_dare.ProbabilityAndRngTests.test_scalar_rng_is_traversal_independent_and_p0_keeps_all) ... ok
+test_tensor_name_and_seed_domain_separate_streams (scripts.test_apply_checkpoint_delta_dare.ProbabilityAndRngTests.test_tensor_name_and_seed_domain_separate_streams) ... ok
+test_duplicate_json_keys_are_rejected (scripts.test_apply_checkpoint_delta_dare.ProvenanceAndPublicationTests.test_duplicate_json_keys_are_rejected) ... ok
+test_immutable_sidecar_round_trip_and_tamper_detection (scripts.test_apply_checkpoint_delta_dare.ProvenanceAndPublicationTests.test_immutable_sidecar_round_trip_and_tamper_detection) ... ok
+test_manifest_copy_is_exact_and_exclusive (scripts.test_apply_checkpoint_delta_dare.ProvenanceAndPublicationTests.test_manifest_copy_is_exact_and_exclusive) ... ok
+test_no_replace_publication_preserves_existing_destination (scripts.test_apply_checkpoint_delta_dare.ProvenanceAndPublicationTests.test_no_replace_publication_preserves_existing_destination) ... ok
+test_exact_float32_scaling_and_locality (scripts.test_apply_checkpoint_delta_dare.RealTensorAndEndToEndTests.test_exact_float32_scaling_and_locality) ... ok
+test_existing_output_fails_before_touching_caller_data (scripts.test_apply_checkpoint_delta_dare.RealTensorAndEndToEndTests.test_existing_output_fails_before_touching_caller_data) ... ok
+test_extra_delta_and_nonfinite_source_fail_before_publication (scripts.test_apply_checkpoint_delta_dare.RealTensorAndEndToEndTests.test_extra_delta_and_nonfinite_source_fail_before_publication) ... ok
+test_nonzero_run_is_deterministic_and_preserves_nonsurface_tensor (scripts.test_apply_checkpoint_delta_dare.RealTensorAndEndToEndTests.test_nonzero_run_is_deterministic_and_preserves_nonsurface_tensor) ... ok
+test_p0_is_dense_weight_file_and_tensor_identity_with_sidecar (scripts.test_apply_checkpoint_delta_dare.RealTensorAndEndToEndTests.test_p0_is_dense_weight_file_and_tensor_identity_with_sidecar) ... ok
+test_p0_preserves_tiny_donor_values_despite_fp32_cancellation (scripts.test_apply_checkpoint_delta_dare.RealTensorAndEndToEndTests.test_p0_preserves_tiny_donor_values_despite_fp32_cancellation) ... ok
+test_qualified_donor_logical_digest_mismatch_fails_closed (scripts.test_apply_checkpoint_delta_dare.RealTensorAndEndToEndTests.test_qualified_donor_logical_digest_mismatch_fails_closed) ... ok
+test_source_pin_mismatch_fails_closed (scripts.test_apply_checkpoint_delta_dare.RealTensorAndEndToEndTests.test_source_pin_mismatch_fails_closed) ... ok
+test_tokenizer_must_be_the_exact_clean_snapshot (scripts.test_apply_checkpoint_delta_dare.RealTensorAndEndToEndTests.test_tokenizer_must_be_the_exact_clean_snapshot) ... ok
+test_vector_mask_matches_scalar_and_is_chunk_device_independent (scripts.test_apply_checkpoint_delta_dare.RealTensorAndEndToEndTests.test_vector_mask_matches_scalar_and_is_chunk_device_independent) ... ok
+test_existing_adapter_invocation (scripts.test_screen_conversations.ConversationCLITests.test_existing_adapter_invocation) ... ok
+test_merged_invocation_needs_no_adapter (scripts.test_screen_conversations.ConversationCLITests.test_merged_invocation_needs_no_adapter) ... ok
+test_validate_accepts_target_and_control_dialogues (scripts.test_screen_conversations.ConversationScreenTests.test_validate_accepts_target_and_control_dialogues) ... ok
+test_validate_rejects_duplicate_ids (scripts.test_screen_conversations.ConversationScreenTests.test_validate_rejects_duplicate_ids) ... ok
+test_validate_rejects_short_dialogue (scripts.test_screen_conversations.ConversationScreenTests.test_validate_rejects_short_dialogue) ... ok
+
+----------------------------------------------------------------------
+Ran 35 tests in 0.624s
+
+OK

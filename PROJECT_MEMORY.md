@@ -27,6 +27,14 @@ passed 29/29 with zero skips; p0 identity is next. Fresh 60-prompt/12-conversati
 audit is authored under `config/employment_sprint_20260904_final`, pending clean
 validation. An explicitly user-authorized subagent owns projector repair/L40S;
 root owns DARE/RTX, final audit, and documentation integration.
+Real DARE p0 failed before publication because its tensor-level subtraction/addition
+checker lost one tiny donor value through FP32 cancellation. Both tools now copy
+identity outputs exactly; nonidentity arithmetic is unchanged. Corrected DARE
+passes30/30 and projector27/27 on their GPUs, pending integrated-source sync.
+L40S clean cache was also lost; exact clean bytes are restored to persistent
+`/home/ubuntu/sequential-unlearning-clean-snapshot-093f9f388b31de276ce2de164bdc2081324b9767`.
+The original23:01:09 UTC sprint clock remains, including this recovery overhead.
+Next actions: integrated-source tests, E0/p0 publication, clean fresh-audit validation.
 Sprint success additionally requires damage <=10.798549070829044, recovery of at
 least two dense-failed frozen controls, no losses of previously healthy frozen
 controls, all existing broad gates, and a one-use fresh semantic audit.

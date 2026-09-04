@@ -1,0 +1,15 @@
+Traceback (most recent call last):
+  File "/mnt/sequential-unlearning-replicate/checkout/scripts/apply_checkpoint_delta_dare.py", line 1794, in <module>
+    main()
+  File "/mnt/sequential-unlearning-replicate/checkout/scripts/apply_checkpoint_delta_dare.py", line 1774, in main
+    provenance = apply_checkpoint_delta_dare(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sequential-unlearning-replicate/checkout/scripts/apply_checkpoint_delta_dare.py", line 1535, in apply_checkpoint_delta_dare
+    tensor_records = _save_weights(
+                     ^^^^^^^^^^^^^^
+  File "/mnt/sequential-unlearning-replicate/checkout/scripts/apply_checkpoint_delta_dare.py", line 1195, in _save_weights
+    record = source_delta_stats(
+             ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sequential-unlearning-replicate/checkout/scripts/apply_checkpoint_delta_dare.py", line 1086, in source_delta_stats
+    raise RuntimeError(f"p=0 tensor identity failed: {tensor_name}")
+RuntimeError: p=0 tensor identity failed: language_model.model.layers.29.mlp.up_proj.weight

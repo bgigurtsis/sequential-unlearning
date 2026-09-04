@@ -647,6 +647,26 @@ class RealTensorAndEndToEndTests(unittest.TestCase):
             clean.numel(),
         )
 
+    def test_p0_preserves_tiny_donor_values_despite_fp32_cancellation(self):
+        clean = torch.tensor([[0.125, -0.125, 0.25]], dtype=torch.bfloat16)
+        edited = torch.tensor([[2.0**-40, -(2.0**-40), -0.0]], dtype=torch.bfloat16)
+        reconstructed = (clean.float() + (edited.float() - clean.float())).to(clean.dtype)
+        self.assertFalse(torch.equal(reconstructed, edited))
+        devices = ["cpu"] + (["cuda:0"] if torch.cuda.is_available() else [])
+        for device in devices:
+            with self.subTest(device=device):
+                output, record = dare.transform_tensor(
+                    clean, edited, tensor_name=dare.DECLARED_EDIT_KEYS[0], seed=0,
+                    drop_probability="0", chunk_elements=2,
+                    compute_device=device, torch=torch,
+                )
+                self.assertEqual(dare._tensor_sha256(output, torch),
+                                 dare._tensor_sha256(edited, torch))
+                self.assertEqual(record["counts"]["serialized_equal_edited"], 3)
+                self.assertEqual(record["output_arithmetic"], "exact_native_edited_copy")
+                dare.source_delta_stats(clean, edited, tensor_name=dare.DECLARED_EDIT_KEYS[0],
+                    chunk_elements=2, compute_device=device, torch=torch)
+
     def test_p0_is_dense_weight_file_and_tensor_identity_with_sidecar(self):
         provenance = self._apply("p0", "0", seed=0)
         output = self.root / "p0"
