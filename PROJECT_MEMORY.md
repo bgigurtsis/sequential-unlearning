@@ -3,60 +3,51 @@
 ## Active resume — six-hour two-GPU sprint (2026-09-04)
 
 This section supersedes historical pause/next-action statements below. The user
-approved execution of a six-hour employment-erasure damage-reduction sprint.
-Natural unfamiliarity ("I don't know what that is") is preferred, not required;
-varied artistically useful responses are acceptable without usable target meaning.
-The dense replay-step-64 donor remains the benchmark, not a certified daily method:
-damage 13.498186338536305, with known unrelated failures. Sparse six-neuron deletion
-and the earlier healing-loss sweeps remain rejected.
+approved autonomous execution and an independent subagent on the second GPU.
+Employment/jobs and nearest semantic neighbours are the target. Natural
+unfamiliarity ("I don't know what that is") is preferred, not mandatory.
 
-Current hosts: L40S `51.49.31.142` (45 GiB, no allocated GPU memory) owns projection;
-RTX PRO 6000 `18.101.59.227` (96 GiB, 8,887 MiB allocated) owns DARE. Both match
-their historical trusted SSH keys and donor file SHA `b8527608...e5690`.
-RTX scratch checkout was lost during stop/start; its root has only 15 GiB free.
-The 1.7-TiB `/dev/nvme1n1` is unmounted Amazon EC2 instance storage with no detected
-filesystem signatures. Recover scratch space before producing candidates.
-
-Next gate: commit the resume contract, restore isolated checkouts, freeze and
-clean-validate a fresh final audit, pass DARE dependency tests/p0 and projector
-tests/E0, then launch the fixed nonidentity grids. No candidate has run yet.
-The six-hour clock starts once both experiment environments/storage are usable.
-Storage and isolated checkouts are now restored. T0 is 2026-09-04 23:01:09 UTC;
-hard deadline is 2026-09-05 05:01:09 UTC. DARE committed-checkout release tests
-passed 29/29 with zero skips; p0 identity is next. Fresh 60-prompt/12-conversation
-audit is authored under `config/employment_sprint_20260904_final`, pending clean
-validation. An explicitly user-authorized subagent owns projector repair/L40S;
-root owns DARE/RTX, final audit, and documentation integration.
-Real DARE p0 failed before publication because its tensor-level subtraction/addition
-checker lost one tiny donor value through FP32 cancellation. Both tools now copy
-identity outputs exactly; nonidentity arithmetic is unchanged. Corrected DARE
-passes30/30 and projector27/27 on their GPUs, pending integrated-source sync.
-L40S clean cache was also lost; exact clean bytes are restored to persistent
-`/home/ubuntu/sequential-unlearning-clean-snapshot-093f9f388b31de276ce2de164bdc2081324b9767`.
-The original23:01:09 UTC sprint clock remains, including this recovery overhead.
-Next actions: integrated-source tests, E0/p0 publication, clean fresh-audit validation.
-Corrected DARE p0 has now published at `delta_protection_v1/dare_v1/models/p000_seed0_v1`
-on RTX scratch, exactly matching qualified donor file b8527608... and logical
-digest7eedf4b2.... Independent sidecar assertions pass. Next RTX action is clean
-fresh-audit validation, then fixed DARE nonidentity grid; L40S E0 is running.
-Fresh audit is now clean-validated and frozen:36/36 target prompts and8/8 target
-conversations retain meaning,24/24 controls and4/4 control conversations coherent.
-RTX next is p=.5 seed33450, followed by the fixed remaining grid. L40S first E0
-stopped on an incorrect tokenizer/padded-capacity equality guard; corrected28/28
-tests and real98-module capture/full-pair smoke checks pass. Retry E0 after sync.
-First nonidentity DARE p=.5/33450 is published with verified98-tensor locality;
-quick semantic screen is next. Combined quick config preserves exact original
-16/16/8 batches while saving a model load. No behavioral improvement yet.
-DARE p=.5/33450 quick PASS:16/16direct,12/12natural absent,zero loops,9/12
-controls; same three dense failures, no recovery yet. Queue broad after fixed
-nine-arm quick grid; next p=.5/33451.
-Projector E0 now PASS: exact donor artifact,884loaded/883serialized values,
-56groups*2052retained keys and spectra cached. E90 is next after synchronization.
-DARE p=.5/33451 FAILS quick gate: one natural target loops;9/12controls.
-First seed remains queued for broad; next fixed seed33452. No new best model.
-Sprint success additionally requires damage <=10.798549070829044, recovery of at
-least two dense-failed frozen controls, no losses of previously healthy frozen
-controls, all existing broad gates, and a one-use fresh semantic audit.
+- Clock: T0 2026-09-04 23:01:09 UTC; hard stop 2026-09-05 05:01:09 UTC.
+  Projector qualification cutoff00:31:09, no new candidates after03:01:09,
+  final audit target04:31:09. Recovery overhead counts in this clock.
+- Best remains dense replay-step64: scalar13.498186338536305, known unrelated
+  failures; not a certified reusable daily method. Sparse six-neuron removal
+  and prior healing-loss sweeps remain rejected. No new improvement yet.
+- Success requires scalar<=10.798549070829044 (20% lower), >=2 recovered dense
+  failed frozen controls, no losses of healthy frozen controls, every existing
+  broad semantic/utility gate, and the one-use fresh audit. No compounding yet.
+- RTX PRO6000 `18.101.59.227`: root owns DARE at
+  `/mnt/sequential-unlearning-replicate/checkout` (restored1.7TiB scratch).
+  Historical root is read-only input. Production Python is old-root venv-g7e.
+  Existing unrelated GPU service was preserved. P0 exactly reproduces donor.
+  p=.5/33450 quick PASS:16direct+12natural absent,0loops,9/12controls;
+  same three dense failures, no recovery. Queued for broad after nine-arm grid.
+  p=.5/33451 FAIL: one natural target loops; no broad promotion.
+  Latest DARE finding: dare_p050_seed33452 FAIL target loop and control floor. 16/16 direct and12/12 natural targets semantically absent, but natural_living_04 repeats subject until cap.8/12 controls healthy; volunteering newly fails alongside dense cost-of-living/batch-job/physics failures. Zero recovered controls, one new loss.
+  Next: No broad promotion. Start fixed p=.9/33450; only p=.5/33450 remains queued for broad.
+- L40S `51.49.31.142`: projection_lane subagent owns
+  `/home/ubuntu/sequential-unlearning-projection-sprint-20260904`.
+  Clean snapshot restored to persistent
+  `/home/ubuntu/sequential-unlearning-clean-snapshot-093f9f388b31de276ce2de164bdc2081324b9767`.
+  E0 PASS at c1b530a: exact donor artifact,884loaded/883serialized values,
+  56groups*2052normalized keys and spectra cached. E90 running fromb10e0a8,
+  followed by identical quick40 screen. E95 only if E90passes; E99 only ifE95passes.
+- Both identity tools now copy native donor values; FP32 subtraction/addition
+  lost one tiny BF16 value during initial identity diagnostics. Nonidentity
+  arithmetic unchanged. DARE30/30 and projector28/28 GPU tests pass.
+  Projector also corrected Gemma's padded-vocabulary capacity guard.
+- Fresh audit is frozen at `config/employment_sprint_20260904_final` after
+  clean validation:36/36 target prompts and8/8 target conversations retain
+  knowledge;24/24controls and4/4control conversations coherent. Do not train
+  from it or test multiple candidates against it. Final chosen candidate only,
+  with clean/dense comparators; any fresh target recovery rejects robust claim.
+- Run artifacts, model hashes and record-level reviews are in
+  `derisk/whole_concept_jobs_v1/delta_protection_v1/sprint_20260904/` and
+  `logs/projection-sprint-20260904/`. Full append-only methods/results below
+  in EXPERIMENTS. Root integrates evidence and pushes before method transitions.
+- Next gate: finish all nine fixed DARE quick arms and conditional projection
+  ladder, broad-test survivors, select by frozen damage/control criteria,
+  then spend the fresh audit once. Report no-go if no candidate qualifies.
 
 This is the concise cross-session handover. `EXPERIMENTS.md` is the complete,
 append-only chronological record; the concept-removal plain-English and
