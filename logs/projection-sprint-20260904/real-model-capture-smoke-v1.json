@@ -1,0 +1,1086 @@
+{
+  "tokenizer_runtime": {
+    "class": "GemmaTokenizer",
+    "padding_side": "right",
+    "vocab_size": 262145,
+    "configured_vocab_capacity": 262208,
+    "max_token_id": 262144,
+    "bos_token_id": 2,
+    "eos_token_id": 1,
+    "pad_token_id": 0,
+    "chat_template_sha256": "a5c992cca048607f8a84c3d6ca4eb14bacc19bc1b4b2b3adfe3b987a4569f714"
+  },
+  "module_count": 98,
+  "record_ids": [
+    "51fef432b073feb5:000000",
+    "330ed2b8fe24f4e9:000000"
+  ],
+  "tokenization": {
+    "retain_key_count": 2,
+    "schema_family_counts": {
+      "captured_event_pair": 1,
+      "generic_string": 1
+    },
+    "causal_nonpadding_token_count": 287,
+    "selected_shifted_position_count": 258,
+    "tokenization_sha256": "172f17da52b982bebf1cd912d24fe221bee7e455b377805707e5a3d234c4b736"
+  },
+  "capture": {
+    "forward_batches": 1,
+    "forward_surface": "model.language_model (text decoder; no lm_head logits)",
+    "retain_key_count": 2,
+    "basis_group_count": 56,
+    "basis_groups": {
+      "layer_12.attention_qkv_input": {
+        "basis_group": "layer_12.attention_qkv_input",
+        "representative_module": "model.language_model.layers.12.self_attn.q_proj",
+        "modules": [
+          "model.language_model.layers.12.self_attn.q_proj",
+          "model.language_model.layers.12.self_attn.k_proj",
+          "model.language_model.layers.12.self_attn.v_proj"
+        ],
+        "shared_input_equality_verified": true,
+        "shared_module_count": 3,
+        "record_key_count": 2,
+        "input_features": 2560,
+        "keys_dtype": "torch.float64",
+        "keys_sha256": "34208a7a32f411d6fd1ae7d211e514c9b46a90ed36fc2c5f72890b1d80cb8d03",
+        "unit_norm_max_abs_error": 7.771561172376096e-16,
+        "per_batch_selected_input_sha256": [
+          "7401c65f9e79cd8d915d80814fd49207e2cb3e437fd134d72ecbefc5d4649742"
+        ],
+        "per_batch_selected_input_hashes_sha256": "ac415f8a73ebd82d0d129a9c63fe0db7682b051de7e9858014e5178eaba9eb5a"
+      },
+      "layer_12.attention_output_input": {
+        "basis_group": "layer_12.attention_output_input",
+        "representative_module": "model.language_model.layers.12.self_attn.o_proj",
+        "modules": [
+          "model.language_model.layers.12.self_attn.o_proj"
+        ],
+        "shared_input_equality_verified": true,
+        "shared_module_count": 1,
+        "record_key_count": 2,
+        "input_features": 2048,
+        "keys_dtype": "torch.float64",
+        "keys_sha256": "9c1dd7912c49cb3af08f9f570a35eba81b0792476ed2e03442bb18ed70012c37",
+        "unit_norm_max_abs_error": 4.440892098500626e-16,
+        "per_batch_selected_input_sha256": [
+          "f4d77e456cf3dc53a9458c9086bf02a137f250c5abd07f24e336a3814f273129"
+        ],
+        "per_batch_selected_input_hashes_sha256": "4714a091bc5aadb47bbf974d9934ae8ed1c0a3795f9add084ae858ca3b492d5d"
+      },
+      "layer_12.mlp_gate_up_input": {
+        "basis_group": "layer_12.mlp_gate_up_input",
+        "representative_module": "model.language_model.layers.12.mlp.gate_proj",
+        "modules": [
+          "model.language_model.layers.12.mlp.gate_proj",
+          "model.language_model.layers.12.mlp.up_proj"
+        ],
+        "shared_input_equality_verified": true,
+        "shared_module_count": 2,
+        "record_key_count": 2,
+        "input_features": 2560,
+        "keys_dtype": "torch.float64",
+        "keys_sha256": "2f9c6bfae9e0b4bd9cfe4eb15d03df08c61f52b09c2b006f5f5e3b2dd624d656",
+        "unit_norm_max_abs_error": 4.440892098500626e-16,
+        "per_batch_selected_input_sha256": [
+          "a375b330fea09b765e94010b4858140861c6590e0d4bef15334ddafa9de1fd87"
+        ],
+        "per_batch_selected_input_hashes_sha256": "4cf26b543c7b32ef64e63e7e0418d4b8e6eed7a4eafd06e74915dad048f57010"
+      },
+      "layer_12.mlp_down_input": {
+        "basis_group": "layer_12.mlp_down_input",
+        "representative_module": "model.language_model.layers.12.mlp.down_proj",
+        "modules": [
+          "model.language_model.layers.12.mlp.down_proj"
+        ],
+        "shared_input_equality_verified": true,
+        "shared_module_count": 1,
+        "record_key_count": 2,
+        "input_features": 10240,
+        "keys_dtype": "torch.float64",
+        "keys_sha256": "384e9259699ee8c9361061434ed2956ce8c9f7ae364775d3024d14f979652df8",
+        "unit_norm_max_abs_error": 2.6645352591003757e-15,
+        "per_batch_selected_input_sha256": [
+          "2cb749dd6032b86c7f1e4e1e227bdf1a1c6a0a6665713cfb5ab0c3f334207afb"
+        ],
+        "per_batch_selected_input_hashes_sha256": "0337a15c8c6976d6b0019c00ccfc7e2517ab4513de72799cca1da8b57359b8ee"
+      },
+      "layer_13.attention_qkv_input": {
+        "basis_group": "layer_13.attention_qkv_input",
+        "representative_module": "model.language_model.layers.13.self_attn.q_proj",
+        "modules": [
+          "model.language_model.layers.13.self_attn.q_proj",
+          "model.language_model.layers.13.self_attn.k_proj",
+          "model.language_model.layers.13.self_attn.v_proj"
+        ],
+        "shared_input_equality_verified": true,
+        "shared_module_count": 3,
+        "record_key_count": 2,
+        "input_features": 2560,
+        "keys_dtype": "torch.float64",
+        "keys_sha256": "5b44480028e522bf4077d7ba66e68cd2ac30c75a3fd51827774f72dc010b60cc",
+        "unit_norm_max_abs_error": 3.3306690738754696e-16,
+        "per_batch_selected_input_sha256": [
+          "0c8df35d33b786a43ac956739a2e19f499ce92f79a1fe900356d5d8770b3ec71"
+        ],
+        "per_batch_selected_input_hashes_sha256": "af78de8d3621fd60a946788f891757df05152daf551ecb0def35cf961a0c7c73"
+      },
+      "layer_13.attention_output_input": {
+        "basis_group": "layer_13.attention_output_input",
+        "representative_module": "model.language_model.layers.13.self_attn.o_proj",
+        "modules": [
+          "model.language_model.layers.13.self_attn.o_proj"
+        ],
+        "shared_input_equality_verified": true,
+        "shared_module_count": 1,
+        "record_key_count": 2,
+        "input_features": 2048,
+        "keys_dtype": "torch.float64",
+        "keys_sha256": "2176dbc8acca116cbd44fd3147f6ce0fee061a9f352a5e935db2b8b92cb09283",
+        "unit_norm_max_abs_error": 1.1102230246251565e-16,
+        "per_batch_selected_input_sha256": [
+          "e5d0d4c6ab9b008edd8938e13d41cfdb83f7c766519ffc76ad56d100d1adcf52"
+        ],
+        "per_batch_selected_input_hashes_sha256": "263f02fbed910c30ac8138d43c61138927b7d58b95f036a089f3d9dc0fa9d5e8"
+      },
+      "layer_13.mlp_gate_up_input": {
+        "basis_group": "layer_13.mlp_gate_up_input",
+        "representative_module": "model.language_model.layers.13.mlp.gate_proj",
+        "modules": [
+          "model.language_model.layers.13.mlp.gate_proj",
+          "model.language_model.layers.13.mlp.up_proj"
+        ],
+        "shared_input_equality_verified": true,
+        "shared_module_count": 2,
+        "record_key_count": 2,
+        "input_features": 2560,
+        "keys_dtype": "torch.float64",
+        "keys_sha256": "047130317083da58f24d71b425f510f6a4a366b86d834a46256ec67f2e63b64e",
+        "unit_norm_max_abs_error": 4.440892098500626e-16,
+        "per_batch_selected_input_sha256": [
+          "1e534d52dc2984940523106571cb72a395840672861ddf70c1f2b0f2b0ce0930"
+        ],
+        "per_batch_selected_input_hashes_sha256": "5bc3223d0dc11488bd4d5d1068b097d2f99b97d42ef439830b34c6715a0d9384"
+      },
+      "layer_13.mlp_down_input": {
+        "basis_group": "layer_13.mlp_down_input",
+        "representative_module": "model.language_model.layers.13.mlp.down_proj",
+        "modules": [
+          "model.language_model.layers.13.mlp.down_proj"
+        ],
+        "shared_input_equality_verified": true,
+        "shared_module_count": 1,
+        "record_key_count": 2,
+        "input_features": 10240,
+        "keys_dtype": "torch.float64",
+        "keys_sha256": "0ef1e5b729faa2c7386d98b4488fe9498be7eb4eff59c07949014aee9e0cd68b",
+        "unit_norm_max_abs_error": 6.661338147750939e-16,
+        "per_batch_selected_input_sha256": [
+          "34c89c892daa0b7d896fbc14f5bf708e01e8cb39674f0c707e972f4bd7405efa"
+        ],
+        "per_batch_selected_input_hashes_sha256": "ea13af8adaee484b7b1aed30f8fc1dbfdae7849526a7f6aa3995231fd44e0a05"
+      },
+      "layer_14.attention_qkv_input": {
+        "basis_group": "layer_14.attention_qkv_input",
+        "representative_module": "model.language_model.layers.14.self_attn.q_proj",
+        "modules": [
+          "model.language_model.layers.14.self_attn.q_proj",
+          "model.language_model.layers.14.self_attn.k_proj",
+          "model.language_model.layers.14.self_attn.v_proj"
+        ],
+        "shared_input_equality_verified": true,
+        "shared_module_count": 3,
+        "record_key_count": 2,
+        "input_features": 2560,
+        "keys_dtype": "torch.float64",
+        "keys_sha256": "c18ad438d63060787d08cb1f6c9b2bf50f874c727472ceccb50fd5018c927527",
+        "unit_norm_max_abs_error": 1.4432899320127035e-15,
+        "per_batch_selected_input_sha256": [
+          "e5220ba19432ffdb119a80b22e31709b630638c9d7e76a54baf3c820d1aff022"
+        ],
+        "per_batch_selected_input_hashes_sha256": "ec15eca66dfec74ef58af079419b98cff6bbb419dd10468e5db515a333400bd1"
+      },
+      "layer_14.attention_output_input": {
+        "basis_group": "layer_14.attention_output_input",
+        "representative_module": "model.language_model.layers.14.self_attn.o_proj",
+        "modules": [
+          "model.language_model.layers.14.self_attn.o_proj"
+        ],
+        "shared_input_equality_verified": true,
+        "shared_module_count": 1,
+        "record_key_count": 2,
+        "input_features": 2048,
+        "keys_dtype": "torch.float64",
+        "keys_sha256": "f4c7e3508018568c3678d75650354b11449e56e89868a3b58defe4082c46cb6c",
+        "unit_norm_max_abs_error": 2.220446049250313e-16,
+        "per_batch_selected_input_sha256": [
+          "615bed4ad16ee3d450c84632b90e25bb550482ae1d14fe97173dedf9fc797e83"
+        ],
+        "per_batch_selected_input_hashes_sha256": "501d5f6c134c88f379206a4373f7cb34cbfc55c9ed4b9104d849fc3c9cea5528"
+      },
+      "layer_14.mlp_gate_up_input": {
+        "basis_group": "layer_14.mlp_gate_up_input",
+        "representative_module": "model.language_model.layers.14.mlp.gate_proj",
+        "modules": [
+          "model.language_model.layers.14.mlp.gate_proj",
+          "model.language_model.layers.14.mlp.up_proj"
+        ],
+        "shared_input_equality_verified": true,
+        "shared_module_count": 2,
+        "record_key_count": 2,
+        "input_features": 2560,
+        "keys_dtype": "torch.float64",
+        "keys_sha256": "060572b2e32be0198e8e6faa904861775781e19150ce19f7be741fba1dbad4d3",
+        "unit_norm_max_abs_error": 8.881784197001252e-16,
+        "per_batch_selected_input_sha256": [
+          "10fcf3744fa8337644affd483717517a9e84007534e561677a6965ed3889c53d"
+        ],
+        "per_batch_selected_input_hashes_sha256": "299b2c0f4a3577a9fc7ea3e87e961575fbb2478fee07ee2aad9739a4fc1e44d0"
+      },
+      "layer_14.mlp_down_input": {
+        "basis_group": "layer_14.mlp_down_input",
+        "representative_module": "model.language_model.layers.14.mlp.down_proj",
+        "modules": [
+          "model.language_model.layers.14.mlp.down_proj"
+        ],
+        "shared_input_equality_verified": true,
+        "shared_module_count": 1,
+        "record_key_count": 2,
+        "input_features": 10240,
+        "keys_dtype": "torch.float64",
+        "keys_sha256": "f619176be153250176acb97d8c63a6f5b3826dceed4f1474f64c61d0f7145fa3",
+        "unit_norm_max_abs_error": 3.774758283725532e-15,
+        "per_batch_selected_input_sha256": [
+          "79db1511533ea7d6438423af7f9c404379a3615a99e3e3669d748f045d6c6dff"
+        ],
+        "per_batch_selected_input_hashes_sha256": "289b0adbb1c2136ec088ef2a32952b94f929d729f5dcecad12b7eb07706c067b"
+      },
+      "layer_15.attention_qkv_input": {
+        "basis_group": "layer_15.attention_qkv_input",
+        "representative_module": "model.language_model.layers.15.self_attn.q_proj",
+        "modules": [
+          "model.language_model.layers.15.self_attn.q_proj",
+          "model.language_model.layers.15.self_attn.k_proj",
+          "model.language_model.layers.15.self_attn.v_proj"
+        ],
+        "shared_input_equality_verified": true,
+        "shared_module_count": 3,
+        "record_key_count": 2,
+        "input_features": 2560,
+        "keys_dtype": "torch.float64",
+        "keys_sha256": "b68e7f4fba1236dd3b4e359759ef688d00b9b56ae2da564d0916c9fd8200e5d7",
+        "unit_norm_max_abs_error": 4.440892098500626e-16,
+        "per_batch_selected_input_sha256": [
+          "815d9b94106ccb264faca61b77f172255076ae0cfff56831cd6e61e52787f059"
+        ],
+        "per_batch_selected_input_hashes_sha256": "e0387b03e86a85fe959d7dcab16ed4074ceabc7a08a9d608642f28849ce088ca"
+      },
+      "layer_15.attention_output_input": {
+        "basis_group": "layer_15.attention_output_input",
+        "representative_module": "model.language_model.layers.15.self_attn.o_proj",
+        "modules": [
+          "model.language_model.layers.15.self_attn.o_proj"
+        ],
+        "shared_input_equality_verified": true,
+        "shared_module_count": 1,
+        "record_key_count": 2,
+        "input_features": 2048,
+        "keys_dtype": "torch.float64",
+        "keys_sha256": "1ef2e3d5d93b1a62e3e0c263f30ad1eb4efa034f54878bcc2f38f18621d8f151",
+        "unit_norm_max_abs_error": 3.3306690738754696e-16,
+        "per_batch_selected_input_sha256": [
+          "87c57b344f13da074e4e8bc3ee562f5bc6f334d6b1edf99c59a0b8e4930741e8"
+        ],
+        "per_batch_selected_input_hashes_sha256": "7f312caac4608b9a10ba76b817eaee7a792b4315634d11725ad00956470a1120"
+      },
+      "layer_15.mlp_gate_up_input": {
+        "basis_group": "layer_15.mlp_gate_up_input",
+        "representative_module": "model.language_model.layers.15.mlp.gate_proj",
+        "modules": [
+          "model.language_model.layers.15.mlp.gate_proj",
+          "model.language_model.layers.15.mlp.up_proj"
+        ],
+        "shared_input_equality_verified": true,
+        "shared_module_count": 2,
+        "record_key_count": 2,
+        "input_features": 2560,
+        "keys_dtype": "torch.float64",
+        "keys_sha256": "8cebd68cd5939ecf6bbdc69f4e5cdc087f305bc2f5c8067501db5bafafdb3661",
+        "unit_norm_max_abs_error": 5.551115123125783e-16,
+        "per_batch_selected_input_sha256": [
+          "7239cca30c69a46583ce0713b71ba5457d2fbfa9d3b7722ae431941edce4f68a"
+        ],
+        "per_batch_selected_input_hashes_sha256": "5d1622ab545a5d97f427202559962acf9223df8875c92c5739f9536e4fd46324"
+      },
+      "layer_15.mlp_down_input": {
+        "basis_group": "layer_15.mlp_down_input",
+        "representative_module": "model.language_model.layers.15.mlp.down_proj",
+        "modules": [
+          "model.language_model.layers.15.mlp.down_proj"
+        ],
+        "shared_input_equality_verified": true,
+        "shared_module_count": 1,
+        "record_key_count": 2,
+        "input_features": 10240,
+        "keys_dtype": "torch.float64",
+        "keys_sha256": "d748f5c8cc2b955b7141d291e705b0eda44859c32f5f0b0ff8c22874a422e708",
+        "unit_norm_max_abs_error": 3.3306690738754696e-15,
+        "per_batch_selected_input_sha256": [
+          "fae1e153a36a29d67f6eb068db01a3c2bdcd1588936ae4fdfd05e9af0a20f50f"
+        ],
+        "per_batch_selected_input_hashes_sha256": "882eeef59d0021f5d6836ca6ddd95fb1e6a3697756fff05e4d8ec0569c400757"
+      },
+      "layer_16.attention_qkv_input": {
+        "basis_group": "layer_16.attention_qkv_input",
+        "representative_module": "model.language_model.layers.16.self_attn.q_proj",
+        "modules": [
+          "model.language_model.layers.16.self_attn.q_proj",
+          "model.language_model.layers.16.self_attn.k_proj",
+          "model.language_model.layers.16.self_attn.v_proj"
+        ],
+        "shared_input_equality_verified": true,
+        "shared_module_count": 3,
+        "record_key_count": 2,
+        "input_features": 2560,
+        "keys_dtype": "torch.float64",
+        "keys_sha256": "30d0f49660c57da691ed9d16d1e7d8dcd4554d0015304dbaa39812cf22c0239c",
+        "unit_norm_max_abs_error": 2.1094237467877974e-15,
+        "per_batch_selected_input_sha256": [
+          "57e37674817b42f7ff902dc950a8cb4516f8dfa5fe209d309e1023c90b1af1c0"
+        ],
+        "per_batch_selected_input_hashes_sha256": "4ec4170cfb14bfa10ff7c9eca4b2015b2db8039afa844eaf813ec4578433a0ad"
+      },
+      "layer_16.attention_output_input": {
+        "basis_group": "layer_16.attention_output_input",
+        "representative_module": "model.language_model.layers.16.self_attn.o_proj",
+        "modules": [
+          "model.language_model.layers.16.self_attn.o_proj"
+        ],
+        "shared_input_equality_verified": true,
+        "shared_module_count": 1,
+        "record_key_count": 2,
+        "input_features": 2048,
+        "keys_dtype": "torch.float64",
+        "keys_sha256": "dfeca5fdd1488fdf5366f581893ec2f1d12f4fc32dcf6a73b06a167e51a5daf8",
+        "unit_norm_max_abs_error": 4.440892098500626e-16,
+        "per_batch_selected_input_sha256": [
+          "3269c6f82e690696fd762596e2c0de6f210436bbdf7bdb43d2a6fcc2aa7fd1fa"
+        ],
+        "per_batch_selected_input_hashes_sha256": "8d99eea2221a9a0bd0ceb0b805da14237f414c4ce80377c15380621fd6267645"
+      },
+      "layer_16.mlp_gate_up_input": {
+        "basis_group": "layer_16.mlp_gate_up_input",
+        "representative_module": "model.language_model.layers.16.mlp.gate_proj",
+        "modules": [
+          "model.language_model.layers.16.mlp.gate_proj",
+          "model.language_model.layers.16.mlp.up_proj"
+        ],
+        "shared_input_equality_verified": true,
+        "shared_module_count": 2,
+        "record_key_count": 2,
+        "input_features": 2560,
+        "keys_dtype": "torch.float64",
+        "keys_sha256": "9136e4e52b88f1171a2d2e89592748b76ff3dca28b028304ff437b8fd97d2400",
+        "unit_norm_max_abs_error": 5.551115123125783e-16,
+        "per_batch_selected_input_sha256": [
+          "6899bb4578bc532103f1f43a3a1520eb47f04d4462e1bce07abd46b554fc2e27"
+        ],
+        "per_batch_selected_input_hashes_sha256": "71f74afb92bfee2a439a5df9b8a27032caed60904d706a7cd96834dccb6aa9b7"
+      },
+      "layer_16.mlp_down_input": {
+        "basis_group": "layer_16.mlp_down_input",
+        "representative_module": "model.language_model.layers.16.mlp.down_proj",
+        "modules": [
+          "model.language_model.layers.16.mlp.down_proj"
+        ],
+        "shared_input_equality_verified": true,
+        "shared_module_count": 1,
+        "record_key_count": 2,
+        "input_features": 10240,
+        "keys_dtype": "torch.float64",
+        "keys_sha256": "32bf9c47b267cf2e05fc2ba29bb89841b362fe595b92009ee30afb43a5c4cb18",
+        "unit_norm_max_abs_error": 3.3306690738754696e-15,
+        "per_batch_selected_input_sha256": [
+          "6575859875cda503710645530aed3fd5c5143d80f085079fd092088436f42d06"
+        ],
+        "per_batch_selected_input_hashes_sha256": "8f7d0ea264cffb5a17e7a3b0bc570495b69feed52704d350872f65d2111bfcf0"
+      },
+      "layer_17.attention_qkv_input": {
+        "basis_group": "layer_17.attention_qkv_input",
+        "representative_module": "model.language_model.layers.17.self_attn.q_proj",
+        "modules": [
+          "model.language_model.layers.17.self_attn.q_proj",
+          "model.language_model.layers.17.self_attn.k_proj",
+          "model.language_model.layers.17.self_attn.v_proj"
+        ],
+        "shared_input_equality_verified": true,
+        "shared_module_count": 3,
+        "record_key_count": 2,
+        "input_features": 2560,
+        "keys_dtype": "torch.float64",
+        "keys_sha256": "c62edac4d2c37d52c1dbcc0c402b0e02ebbca23d8403a54c2c9937b49ccddebc",
+        "unit_norm_max_abs_error": 1.3322676295501878e-15,
+        "per_batch_selected_input_sha256": [
+          "8dd97844e330c934a4e6cb5e8388c20634ce0032894784a97625a5601d6dc4b8"
+        ],
+        "per_batch_selected_input_hashes_sha256": "ea20215c085f7ac46e38a9191a4f2a58f59a6434ec5623dc5a5a03aca91424da"
+      },
+      "layer_17.attention_output_input": {
+        "basis_group": "layer_17.attention_output_input",
+        "representative_module": "model.language_model.layers.17.self_attn.o_proj",
+        "modules": [
+          "model.language_model.layers.17.self_attn.o_proj"
+        ],
+        "shared_input_equality_verified": true,
+        "shared_module_count": 1,
+        "record_key_count": 2,
+        "input_features": 2048,
+        "keys_dtype": "torch.float64",
+        "keys_sha256": "aa4a74d6a339aa8969a9bdf5808d8fb38ef81074dd72c01905e08d84a7901a47",
+        "unit_norm_max_abs_error": 1.1102230246251565e-15,
+        "per_batch_selected_input_sha256": [
+          "4361a1f88badb845b1792192d99c0c5bcf7f0016967c35b07ac4a2d81b54cd6a"
+        ],
+        "per_batch_selected_input_hashes_sha256": "8e1c325c3066dd5d4c00bf63b09abdfcdc2ffce88f5de13af6a3ff2daa152de3"
+      },
+      "layer_17.mlp_gate_up_input": {
+        "basis_group": "layer_17.mlp_gate_up_input",
+        "representative_module": "model.language_model.layers.17.mlp.gate_proj",
+        "modules": [
+          "model.language_model.layers.17.mlp.gate_proj",
+          "model.language_model.layers.17.mlp.up_proj"
+        ],
+        "shared_input_equality_verified": true,
+        "shared_module_count": 2,
+        "record_key_count": 2,
+        "input_features": 2560,
+        "keys_dtype": "torch.float64",
+        "keys_sha256": "237f90ea5af4893e15b91e8ee1afa2439dfe4b57cbb0bf26b690e5ba77694167",
+        "unit_norm_max_abs_error": 1.3322676295501878e-15,
+        "per_batch_selected_input_sha256": [
+          "404f7bde35a3fbcd02a07c3ef9f066f3378cf5b9fbafb6d8796129b055a8f599"
+        ],
+        "per_batch_selected_input_hashes_sha256": "5a9f3e503574f4b5da896df248125c1f07b97be41bcd6e06c203f9dfe2e4b8a5"
+      },
+      "layer_17.mlp_down_input": {
+        "basis_group": "layer_17.mlp_down_input",
+        "representative_module": "model.language_model.layers.17.mlp.down_proj",
+        "modules": [
+          "model.language_model.layers.17.mlp.down_proj"
+        ],
+        "shared_input_equality_verified": true,
+        "shared_module_count": 1,
+        "record_key_count": 2,
+        "input_features": 10240,
+        "keys_dtype": "torch.float64",
+        "keys_sha256": "299f0ae93b334fa62f95e4c104f5779e5ed8a1f83928a23a35321c755058d611",
+        "unit_norm_max_abs_error": 3.9968028886505635e-15,
+        "per_batch_selected_input_sha256": [
+          "deadd31809256c7693a084aa732911fff572599b660e68af35a2e598926d8ef5"
+        ],
+        "per_batch_selected_input_hashes_sha256": "e8a4fd68c460735f4053cc095d163ef51082dd217dc03b02df9def41bc9ab257"
+      },
+      "layer_18.attention_qkv_input": {
+        "basis_group": "layer_18.attention_qkv_input",
+        "representative_module": "model.language_model.layers.18.self_attn.q_proj",
+        "modules": [
+          "model.language_model.layers.18.self_attn.q_proj",
+          "model.language_model.layers.18.self_attn.k_proj",
+          "model.language_model.layers.18.self_attn.v_proj"
+        ],
+        "shared_input_equality_verified": true,
+        "shared_module_count": 3,
+        "record_key_count": 2,
+        "input_features": 2560,
+        "keys_dtype": "torch.float64",
+        "keys_sha256": "5c4032109c3a81b94b7b07e61dbf845212519b559ee7bd1b64b8761cde9c737c",
+        "unit_norm_max_abs_error": 8.881784197001252e-16,
+        "per_batch_selected_input_sha256": [
+          "f4215a975c102cabe967b6fdcf5ab51140d05a45689e8cb81fc0c7508792477c"
+        ],
+        "per_batch_selected_input_hashes_sha256": "e022904cad0fe56b90234c59c3d500d0db484d17254029bb5e96955bddfc8bf9"
+      },
+      "layer_18.attention_output_input": {
+        "basis_group": "layer_18.attention_output_input",
+        "representative_module": "model.language_model.layers.18.self_attn.o_proj",
+        "modules": [
+          "model.language_model.layers.18.self_attn.o_proj"
+        ],
+        "shared_input_equality_verified": true,
+        "shared_module_count": 1,
+        "record_key_count": 2,
+        "input_features": 2048,
+        "keys_dtype": "torch.float64",
+        "keys_sha256": "d17296cfc52797be6b980aaab39b5b441a201819de3d1b618b5ac2dd5acb02c1",
+        "unit_norm_max_abs_error": 2.220446049250313e-16,
+        "per_batch_selected_input_sha256": [
+          "1f84c89f0672f183440c3c066c4f2158ccd6b3dfb57895938a15a540e325890d"
+        ],
+        "per_batch_selected_input_hashes_sha256": "66ae6a09d3381e6a259a4f6e50fd36d0472b68ae478168f9d9693d8129e041e1"
+      },
+      "layer_18.mlp_gate_up_input": {
+        "basis_group": "layer_18.mlp_gate_up_input",
+        "representative_module": "model.language_model.layers.18.mlp.gate_proj",
+        "modules": [
+          "model.language_model.layers.18.mlp.gate_proj",
+          "model.language_model.layers.18.mlp.up_proj"
+        ],
+        "shared_input_equality_verified": true,
+        "shared_module_count": 2,
+        "record_key_count": 2,
+        "input_features": 2560,
+        "keys_dtype": "torch.float64",
+        "keys_sha256": "b1c5ff2bacbd09c2564917c87dc351d151bf547c57a1b1594f6b2cc03418b99b",
+        "unit_norm_max_abs_error": 0.0,
+        "per_batch_selected_input_sha256": [
+          "aab3f302914ae4f91520ff1bf8c6e1569aa5ec463a399ba99cd0c7ef604b606c"
+        ],
+        "per_batch_selected_input_hashes_sha256": "e7ec63a44ceb454b06abb2f910ede4d72127bfc842a8eea470ef8ae74801ae29"
+      },
+      "layer_18.mlp_down_input": {
+        "basis_group": "layer_18.mlp_down_input",
+        "representative_module": "model.language_model.layers.18.mlp.down_proj",
+        "modules": [
+          "model.language_model.layers.18.mlp.down_proj"
+        ],
+        "shared_input_equality_verified": true,
+        "shared_module_count": 1,
+        "record_key_count": 2,
+        "input_features": 10240,
+        "keys_dtype": "torch.float64",
+        "keys_sha256": "3b08a1783ce063400ea7f0914882db076a9f6e889f583e7c51f1b00cec4d346c",
+        "unit_norm_max_abs_error": 7.327471962526033e-15,
+        "per_batch_selected_input_sha256": [
+          "d10f9f7ff304a576f58f0c4c8584b04cc8627839372e38d6f977cf2a88110b9d"
+        ],
+        "per_batch_selected_input_hashes_sha256": "5efa347dfac4edbf70f9b2f384bce99bf8845a847b1dc8e310401619ed7cb6e7"
+      },
+      "layer_19.attention_qkv_input": {
+        "basis_group": "layer_19.attention_qkv_input",
+        "representative_module": "model.language_model.layers.19.self_attn.q_proj",
+        "modules": [
+          "model.language_model.layers.19.self_attn.q_proj",
+          "model.language_model.layers.19.self_attn.k_proj",
+          "model.language_model.layers.19.self_attn.v_proj"
+        ],
+        "shared_input_equality_verified": true,
+        "shared_module_count": 3,
+        "record_key_count": 2,
+        "input_features": 2560,
+        "keys_dtype": "torch.float64",
+        "keys_sha256": "af61109a59b3db2c20e743c646ffb8558e54c730e8cff394201909a0436b5e76",
+        "unit_norm_max_abs_error": 1.7763568394002505e-15,
+        "per_batch_selected_input_sha256": [
+          "79c94a5a41750d29f62890824aa2d729769c24362e5bd7bd6e718bd9d8a18609"
+        ],
+        "per_batch_selected_input_hashes_sha256": "d25527b79a1b4b9fefe2152dc7944ebe3de978a1d53d040ce670f51a92260690"
+      },
+      "layer_19.attention_output_input": {
+        "basis_group": "layer_19.attention_output_input",
+        "representative_module": "model.language_model.layers.19.self_attn.o_proj",
+        "modules": [
+          "model.language_model.layers.19.self_attn.o_proj"
+        ],
+        "shared_input_equality_verified": true,
+        "shared_module_count": 1,
+        "record_key_count": 2,
+        "input_features": 2048,
+        "keys_dtype": "torch.float64",
+        "keys_sha256": "241d29531bc35025360983b580c5551b339e303256788d747fe92b3b66ecba19",
+        "unit_norm_max_abs_error": 8.881784197001252e-16,
+        "per_batch_selected_input_sha256": [
+          "4dcb22649f9f6a4935a13f42676da00ec840065d162ed2aa229a6157f74c7d93"
+        ],
+        "per_batch_selected_input_hashes_sha256": "836849f33cd3292b88e4e2ced476a5ef152b29ee3f5851efbe7ac5dc0378993f"
+      },
+      "layer_19.mlp_gate_up_input": {
+        "basis_group": "layer_19.mlp_gate_up_input",
+        "representative_module": "model.language_model.layers.19.mlp.gate_proj",
+        "modules": [
+          "model.language_model.layers.19.mlp.gate_proj",
+          "model.language_model.layers.19.mlp.up_proj"
+        ],
+        "shared_input_equality_verified": true,
+        "shared_module_count": 2,
+        "record_key_count": 2,
+        "input_features": 2560,
+        "keys_dtype": "torch.float64",
+        "keys_sha256": "5f257be543064caba00d18358be193c6803b7dc1693aeda8fce899a4df789aac",
+        "unit_norm_max_abs_error": 5.551115123125783e-16,
+        "per_batch_selected_input_sha256": [
+          "7f71c6e99faf4db1dad5c87da07c445c549fc31268566798e653a6aec5526b02"
+        ],
+        "per_batch_selected_input_hashes_sha256": "9a4d013061475e3dff06b40b610e0d10b0e3aaf2a62a5f965f188ef71b16cba2"
+      },
+      "layer_19.mlp_down_input": {
+        "basis_group": "layer_19.mlp_down_input",
+        "representative_module": "model.language_model.layers.19.mlp.down_proj",
+        "modules": [
+          "model.language_model.layers.19.mlp.down_proj"
+        ],
+        "shared_input_equality_verified": true,
+        "shared_module_count": 1,
+        "record_key_count": 2,
+        "input_features": 10240,
+        "keys_dtype": "torch.float64",
+        "keys_sha256": "8ef5c78a9dd499ec3855490f15b78d79b8385f391ab6ef16ea042250f2f8feb7",
+        "unit_norm_max_abs_error": 1.1102230246251565e-15,
+        "per_batch_selected_input_sha256": [
+          "c548e076d85ff6f12c9bd08b86b835a0d8dc881883f6b7be694252183afd6467"
+        ],
+        "per_batch_selected_input_hashes_sha256": "beed26ad00f979e9a7c90b608ebc2dfb31beb4d454164f5e4f10af52a0ed3af0"
+      },
+      "layer_28.attention_qkv_input": {
+        "basis_group": "layer_28.attention_qkv_input",
+        "representative_module": "model.language_model.layers.28.self_attn.q_proj",
+        "modules": [
+          "model.language_model.layers.28.self_attn.q_proj",
+          "model.language_model.layers.28.self_attn.k_proj",
+          "model.language_model.layers.28.self_attn.v_proj"
+        ],
+        "shared_input_equality_verified": true,
+        "shared_module_count": 3,
+        "record_key_count": 2,
+        "input_features": 2560,
+        "keys_dtype": "torch.float64",
+        "keys_sha256": "e87e960789f4e5cfe7ea03927fce22fb6d6b5d36a0cdef1689101eaf5bfe95a2",
+        "unit_norm_max_abs_error": 2.220446049250313e-15,
+        "per_batch_selected_input_sha256": [
+          "3e7c92ddb7fced6471e69097048acec4f54ac0ae3c29e30e3e2b2fee9ffc672d"
+        ],
+        "per_batch_selected_input_hashes_sha256": "758f01317096550e6604cd3abc3d0b55aaa61088557ac4c2eabc42fe2b268796"
+      },
+      "layer_28.attention_output_input": {
+        "basis_group": "layer_28.attention_output_input",
+        "representative_module": "model.language_model.layers.28.self_attn.o_proj",
+        "modules": [
+          "model.language_model.layers.28.self_attn.o_proj"
+        ],
+        "shared_input_equality_verified": true,
+        "shared_module_count": 1,
+        "record_key_count": 2,
+        "input_features": 2048,
+        "keys_dtype": "torch.float64",
+        "keys_sha256": "a8bf735e60a5acca81dae1afdd644831b013056a4ff63e693e71bdc11b162448",
+        "unit_norm_max_abs_error": 4.440892098500626e-16,
+        "per_batch_selected_input_sha256": [
+          "a6b583f8b06da3d57d2dc598702bcaf90bbeafec2a4989ca6a00f5d2d34ade60"
+        ],
+        "per_batch_selected_input_hashes_sha256": "97dae7fb9f4cc2b50cafb039a98363ad77b10cea52542f05433cb8cad5ec8c66"
+      },
+      "layer_28.mlp_gate_up_input": {
+        "basis_group": "layer_28.mlp_gate_up_input",
+        "representative_module": "model.language_model.layers.28.mlp.gate_proj",
+        "modules": [
+          "model.language_model.layers.28.mlp.gate_proj",
+          "model.language_model.layers.28.mlp.up_proj"
+        ],
+        "shared_input_equality_verified": true,
+        "shared_module_count": 2,
+        "record_key_count": 2,
+        "input_features": 2560,
+        "keys_dtype": "torch.float64",
+        "keys_sha256": "2f235ec56ebb5d9336087af8964c7298b51575b523a2e4246ac36d7359dbd623",
+        "unit_norm_max_abs_error": 2.220446049250313e-16,
+        "per_batch_selected_input_sha256": [
+          "1e88e8887635f086b223ccf29cb4c516c90ef5ac415f58064f20e1c26dd45de1"
+        ],
+        "per_batch_selected_input_hashes_sha256": "cb12a2c0787e506535a77bceef98d50c428df87c66e326077ddde64d72a5746d"
+      },
+      "layer_28.mlp_down_input": {
+        "basis_group": "layer_28.mlp_down_input",
+        "representative_module": "model.language_model.layers.28.mlp.down_proj",
+        "modules": [
+          "model.language_model.layers.28.mlp.down_proj"
+        ],
+        "shared_input_equality_verified": true,
+        "shared_module_count": 1,
+        "record_key_count": 2,
+        "input_features": 10240,
+        "keys_dtype": "torch.float64",
+        "keys_sha256": "6b9226ca725bfccd2fee03ddb20be66d1817a7a5041c80af32c56f75d3b7deea",
+        "unit_norm_max_abs_error": 7.771561172376096e-16,
+        "per_batch_selected_input_sha256": [
+          "b26c2dfcc1f5fc771c0c2586910b7c607ea2983b928fd72fd2c096755d8ba066"
+        ],
+        "per_batch_selected_input_hashes_sha256": "c5dafaea59364fc19188c0bd8456bad8d61243be732e6d9842fa1caa0d718dd9"
+      },
+      "layer_29.attention_qkv_input": {
+        "basis_group": "layer_29.attention_qkv_input",
+        "representative_module": "model.language_model.layers.29.self_attn.q_proj",
+        "modules": [
+          "model.language_model.layers.29.self_attn.q_proj",
+          "model.language_model.layers.29.self_attn.k_proj",
+          "model.language_model.layers.29.self_attn.v_proj"
+        ],
+        "shared_input_equality_verified": true,
+        "shared_module_count": 3,
+        "record_key_count": 2,
+        "input_features": 2560,
+        "keys_dtype": "torch.float64",
+        "keys_sha256": "27d7b0de4df1216d916d76b067b0bdb4860d9ed473ecf50540b13f9da1fd241d",
+        "unit_norm_max_abs_error": 1.7763568394002505e-15,
+        "per_batch_selected_input_sha256": [
+          "77ad83c7e53cd3b1b1a7569ec6e571d1e7160abb7f48f8ea781f03495cebb523"
+        ],
+        "per_batch_selected_input_hashes_sha256": "6c3f640500193df5a8c661db8124fb52c7636b0dcbec78c419ff1340e2608b0f"
+      },
+      "layer_29.attention_output_input": {
+        "basis_group": "layer_29.attention_output_input",
+        "representative_module": "model.language_model.layers.29.self_attn.o_proj",
+        "modules": [
+          "model.language_model.layers.29.self_attn.o_proj"
+        ],
+        "shared_input_equality_verified": true,
+        "shared_module_count": 1,
+        "record_key_count": 2,
+        "input_features": 2048,
+        "keys_dtype": "torch.float64",
+        "keys_sha256": "2caeae0b375a8f7035fc87f093de65b202adf9a5d77948da33d8063e6ff6a5b8",
+        "unit_norm_max_abs_error": 2.220446049250313e-16,
+        "per_batch_selected_input_sha256": [
+          "9decae78193f3640e4fd905e4fb3ef7028ed868b49962421b98a7cdb27661606"
+        ],
+        "per_batch_selected_input_hashes_sha256": "e10ac6e84a9f8dcf33eff5c70db39cf7f3a58f540cc18279db2063fcb49bc0b1"
+      },
+      "layer_29.mlp_gate_up_input": {
+        "basis_group": "layer_29.mlp_gate_up_input",
+        "representative_module": "model.language_model.layers.29.mlp.gate_proj",
+        "modules": [
+          "model.language_model.layers.29.mlp.gate_proj",
+          "model.language_model.layers.29.mlp.up_proj"
+        ],
+        "shared_input_equality_verified": true,
+        "shared_module_count": 2,
+        "record_key_count": 2,
+        "input_features": 2560,
+        "keys_dtype": "torch.float64",
+        "keys_sha256": "646e4db14fe84a2a3fd02ed07192bce8e4727211e170e195eac173d275b5ba21",
+        "unit_norm_max_abs_error": 2.220446049250313e-16,
+        "per_batch_selected_input_sha256": [
+          "088e8253200d9a7ea1432d5b32908371d519e600020db4e0fb46020ac54705a3"
+        ],
+        "per_batch_selected_input_hashes_sha256": "277f1092c31a5a5fa4e935bd6738d864d08963df4b88f73948caba11a6da42bd"
+      },
+      "layer_29.mlp_down_input": {
+        "basis_group": "layer_29.mlp_down_input",
+        "representative_module": "model.language_model.layers.29.mlp.down_proj",
+        "modules": [
+          "model.language_model.layers.29.mlp.down_proj"
+        ],
+        "shared_input_equality_verified": true,
+        "shared_module_count": 1,
+        "record_key_count": 2,
+        "input_features": 10240,
+        "keys_dtype": "torch.float64",
+        "keys_sha256": "d15893f3070d5a0edbc339deeafb041c5ce814f35426926f161ce36e30bff290",
+        "unit_norm_max_abs_error": 1.5543122344752192e-15,
+        "per_batch_selected_input_sha256": [
+          "42736cbc3cc69774cb1303442322f18f5e8a4e2d910f23ea20c851968cfbdd31"
+        ],
+        "per_batch_selected_input_hashes_sha256": "db88d81b705489ba48faebbb86f1374f109003913b1e2747bad4f7b0fe7207e3"
+      },
+      "layer_30.attention_qkv_input": {
+        "basis_group": "layer_30.attention_qkv_input",
+        "representative_module": "model.language_model.layers.30.self_attn.q_proj",
+        "modules": [
+          "model.language_model.layers.30.self_attn.q_proj",
+          "model.language_model.layers.30.self_attn.k_proj",
+          "model.language_model.layers.30.self_attn.v_proj"
+        ],
+        "shared_input_equality_verified": true,
+        "shared_module_count": 3,
+        "record_key_count": 2,
+        "input_features": 2560,
+        "keys_dtype": "torch.float64",
+        "keys_sha256": "ac77f2de3c274bf35fcd71aeda3b6297439fad71bc68ab10354a4b29562b3f10",
+        "unit_norm_max_abs_error": 1.7763568394002505e-15,
+        "per_batch_selected_input_sha256": [
+          "608c1a8ddb0cdcfcf6477c08c9c76ef67f8ade9e46fc225481f6c41038c44a47"
+        ],
+        "per_batch_selected_input_hashes_sha256": "2b419df89f4b4aea68ea29f633bdad304961777b3920a55f5f7ecc76759e1f93"
+      },
+      "layer_30.attention_output_input": {
+        "basis_group": "layer_30.attention_output_input",
+        "representative_module": "model.language_model.layers.30.self_attn.o_proj",
+        "modules": [
+          "model.language_model.layers.30.self_attn.o_proj"
+        ],
+        "shared_input_equality_verified": true,
+        "shared_module_count": 1,
+        "record_key_count": 2,
+        "input_features": 2048,
+        "keys_dtype": "torch.float64",
+        "keys_sha256": "575a5bbcfb0ee0632c70a088e417ea451ae312fa131cd9d5275c736a44e1c3f6",
+        "unit_norm_max_abs_error": 0.0,
+        "per_batch_selected_input_sha256": [
+          "c0461f6b8accbf9b3120b7f0899b9dc1a46d1090e21ab97d1701d654411cdbf0"
+        ],
+        "per_batch_selected_input_hashes_sha256": "304565d59285bc55f721da2154769e0651125b3306d03a600f94364c77fb9ff8"
+      },
+      "layer_30.mlp_gate_up_input": {
+        "basis_group": "layer_30.mlp_gate_up_input",
+        "representative_module": "model.language_model.layers.30.mlp.gate_proj",
+        "modules": [
+          "model.language_model.layers.30.mlp.gate_proj",
+          "model.language_model.layers.30.mlp.up_proj"
+        ],
+        "shared_input_equality_verified": true,
+        "shared_module_count": 2,
+        "record_key_count": 2,
+        "input_features": 2560,
+        "keys_dtype": "torch.float64",
+        "keys_sha256": "66267946b5a78ebe4ccd8e8d91c4bd4bd2b621faf473f35d6610c167279b6d2d",
+        "unit_norm_max_abs_error": 4.440892098500626e-16,
+        "per_batch_selected_input_sha256": [
+          "d3ca34d3f7687a9c504e6f6dd51c3ca4dd1cfcc00cc0afc95342531cf78c7470"
+        ],
+        "per_batch_selected_input_hashes_sha256": "e4d435fa9424367eae238acadf890f29d56188d14557560415882ba38dda024d"
+      },
+      "layer_30.mlp_down_input": {
+        "basis_group": "layer_30.mlp_down_input",
+        "representative_module": "model.language_model.layers.30.mlp.down_proj",
+        "modules": [
+          "model.language_model.layers.30.mlp.down_proj"
+        ],
+        "shared_input_equality_verified": true,
+        "shared_module_count": 1,
+        "record_key_count": 2,
+        "input_features": 10240,
+        "keys_dtype": "torch.float64",
+        "keys_sha256": "e2418d18c5b17c930d4c586eac30d9bd59a809a64498422af8e145fe69b82af8",
+        "unit_norm_max_abs_error": 8.881784197001252e-16,
+        "per_batch_selected_input_sha256": [
+          "bb5714810b0cadba833d2af2cd363473837e275de5cc8e8d446a63504453b905"
+        ],
+        "per_batch_selected_input_hashes_sha256": "49c556f28581f5dd2fe935ace0de34b8a07503a05ce40fa4394cc00f42454ee7"
+      },
+      "layer_31.attention_qkv_input": {
+        "basis_group": "layer_31.attention_qkv_input",
+        "representative_module": "model.language_model.layers.31.self_attn.q_proj",
+        "modules": [
+          "model.language_model.layers.31.self_attn.q_proj",
+          "model.language_model.layers.31.self_attn.k_proj",
+          "model.language_model.layers.31.self_attn.v_proj"
+        ],
+        "shared_input_equality_verified": true,
+        "shared_module_count": 3,
+        "record_key_count": 2,
+        "input_features": 2560,
+        "keys_dtype": "torch.float64",
+        "keys_sha256": "bb843472eb33c3977f4ea0a2d489b5f2ea1414dc92e8b536bf4848f3e3970ff9",
+        "unit_norm_max_abs_error": 1.9984014443252818e-15,
+        "per_batch_selected_input_sha256": [
+          "d3971e93638aca3248f7b2be5c1aae7edd440a09f194bbddf54076c7fc8f9cec"
+        ],
+        "per_batch_selected_input_hashes_sha256": "c2ce0b096b1a4f03a0dc81cbccb713d0f9151826ccf1c0f087dcc9eb50730bd8"
+      },
+      "layer_31.attention_output_input": {
+        "basis_group": "layer_31.attention_output_input",
+        "representative_module": "model.language_model.layers.31.self_attn.o_proj",
+        "modules": [
+          "model.language_model.layers.31.self_attn.o_proj"
+        ],
+        "shared_input_equality_verified": true,
+        "shared_module_count": 1,
+        "record_key_count": 2,
+        "input_features": 2048,
+        "keys_dtype": "torch.float64",
+        "keys_sha256": "66733cdc5f9a50e9e2069181761e3d617152a213d097cce512de21c20e394f23",
+        "unit_norm_max_abs_error": 2.220446049250313e-16,
+        "per_batch_selected_input_sha256": [
+          "8cb79c33842d84539371c855cadfcbd650d2083835c463c3a5b9991effecbaf9"
+        ],
+        "per_batch_selected_input_hashes_sha256": "c8b96e8556c01e2a111e38d737d0db85934e7f6a76d37b3a91792f1547bb9654"
+      },
+      "layer_31.mlp_gate_up_input": {
+        "basis_group": "layer_31.mlp_gate_up_input",
+        "representative_module": "model.language_model.layers.31.mlp.gate_proj",
+        "modules": [
+          "model.language_model.layers.31.mlp.gate_proj",
+          "model.language_model.layers.31.mlp.up_proj"
+        ],
+        "shared_input_equality_verified": true,
+        "shared_module_count": 2,
+        "record_key_count": 2,
+        "input_features": 2560,
+        "keys_dtype": "torch.float64",
+        "keys_sha256": "092e3b5d223d64badb4f08755d6c427cbddbf0f255d03499da86fa9aff9efda2",
+        "unit_norm_max_abs_error": 6.661338147750939e-16,
+        "per_batch_selected_input_sha256": [
+          "be22e788a278e08cae7253abd4fa685737bbd0e7dea0e7cbf21ffd566645c89b"
+        ],
+        "per_batch_selected_input_hashes_sha256": "d0b93aa2853ba9ac2bbaad2a36e917b5444b2235715b7a266c08493f3dca39af"
+      },
+      "layer_31.mlp_down_input": {
+        "basis_group": "layer_31.mlp_down_input",
+        "representative_module": "model.language_model.layers.31.mlp.down_proj",
+        "modules": [
+          "model.language_model.layers.31.mlp.down_proj"
+        ],
+        "shared_input_equality_verified": true,
+        "shared_module_count": 1,
+        "record_key_count": 2,
+        "input_features": 10240,
+        "keys_dtype": "torch.float64",
+        "keys_sha256": "18b2c095bf5c66aec89203c7e0f889e543fa445babaeb47ef3a6fff773224676",
+        "unit_norm_max_abs_error": 2.220446049250313e-15,
+        "per_batch_selected_input_sha256": [
+          "0a55c6b3c9a2c50e978e882514ef48b36b781a52ea8736b09449516851588a80"
+        ],
+        "per_batch_selected_input_hashes_sha256": "1eaf7ca3837a550d5a19b48dc21b38cd278e3192a4bf6b99ec62952e9b4f7ca7"
+      },
+      "layer_32.attention_qkv_input": {
+        "basis_group": "layer_32.attention_qkv_input",
+        "representative_module": "model.language_model.layers.32.self_attn.q_proj",
+        "modules": [
+          "model.language_model.layers.32.self_attn.q_proj",
+          "model.language_model.layers.32.self_attn.k_proj",
+          "model.language_model.layers.32.self_attn.v_proj"
+        ],
+        "shared_input_equality_verified": true,
+        "shared_module_count": 3,
+        "record_key_count": 2,
+        "input_features": 2560,
+        "keys_dtype": "torch.float64",
+        "keys_sha256": "fe371a9cc4320dc5cc12499fd60f4a2e819721457a0eef46142fc33fed9eeaca",
+        "unit_norm_max_abs_error": 1.6653345369377348e-15,
+        "per_batch_selected_input_sha256": [
+          "249470b6268f97984fb52e155fa2796c4772c5ec6be4b8aa0081a864186067d2"
+        ],
+        "per_batch_selected_input_hashes_sha256": "bbb80b21faa77594193f8a683c8620fcaba5ffbcf9f43a0879b05b4f5cdefef5"
+      },
+      "layer_32.attention_output_input": {
+        "basis_group": "layer_32.attention_output_input",
+        "representative_module": "model.language_model.layers.32.self_attn.o_proj",
+        "modules": [
+          "model.language_model.layers.32.self_attn.o_proj"
+        ],
+        "shared_input_equality_verified": true,
+        "shared_module_count": 1,
+        "record_key_count": 2,
+        "input_features": 2048,
+        "keys_dtype": "torch.float64",
+        "keys_sha256": "5b18f5297725142bd98ee1ac4c63f5c0c9a9cbc3fec192d5c58fa8f58719ef31",
+        "unit_norm_max_abs_error": 6.661338147750939e-16,
+        "per_batch_selected_input_sha256": [
+          "eda0d0927f9a64c4dd22b414f25d999ac0fc7fefd29ec47511aa66718e54fc04"
+        ],
+        "per_batch_selected_input_hashes_sha256": "5f8c6d1839dd5d7eefa32a471197470a5c873568db23ea8e0e53ebd1d67cef50"
+      },
+      "layer_32.mlp_gate_up_input": {
+        "basis_group": "layer_32.mlp_gate_up_input",
+        "representative_module": "model.language_model.layers.32.mlp.gate_proj",
+        "modules": [
+          "model.language_model.layers.32.mlp.gate_proj",
+          "model.language_model.layers.32.mlp.up_proj"
+        ],
+        "shared_input_equality_verified": true,
+        "shared_module_count": 2,
+        "record_key_count": 2,
+        "input_features": 2560,
+        "keys_dtype": "torch.float64",
+        "keys_sha256": "97fcede94978466b1f4211c4ff288050520578c832ddab115d5bec09e7bfad13",
+        "unit_norm_max_abs_error": 1.1102230246251565e-15,
+        "per_batch_selected_input_sha256": [
+          "6a9660120bf0ec2ee44184757f161bf025bad979313f6af96410bba16647c2a5"
+        ],
+        "per_batch_selected_input_hashes_sha256": "fe8fdf73ddce7db1b57d230c5993a112c32e3fdd72a5aa068ef0883386a24e0f"
+      },
+      "layer_32.mlp_down_input": {
+        "basis_group": "layer_32.mlp_down_input",
+        "representative_module": "model.language_model.layers.32.mlp.down_proj",
+        "modules": [
+          "model.language_model.layers.32.mlp.down_proj"
+        ],
+        "shared_input_equality_verified": true,
+        "shared_module_count": 1,
+        "record_key_count": 2,
+        "input_features": 10240,
+        "keys_dtype": "torch.float64",
+        "keys_sha256": "272ac93a79579b7a92c8fcaed16874c7518986cfe22c3ab2cf46f8a0171b95ea",
+        "unit_norm_max_abs_error": 1.9984014443252818e-15,
+        "per_batch_selected_input_sha256": [
+          "190e1ccdcdf78b4b736c273adfb2f201f16f2630e44054257405de00cf0cdc91"
+        ],
+        "per_batch_selected_input_hashes_sha256": "10754e9a2cadfd2455993b7dbe1d15b02cfbd433c42d16a3ae5e54444ad197b7"
+      },
+      "layer_33.attention_qkv_input": {
+        "basis_group": "layer_33.attention_qkv_input",
+        "representative_module": "model.language_model.layers.33.self_attn.q_proj",
+        "modules": [
+          "model.language_model.layers.33.self_attn.q_proj",
+          "model.language_model.layers.33.self_attn.k_proj",
+          "model.language_model.layers.33.self_attn.v_proj"
+        ],
+        "shared_input_equality_verified": true,
+        "shared_module_count": 3,
+        "record_key_count": 2,
+        "input_features": 2560,
+        "keys_dtype": "torch.float64",
+        "keys_sha256": "61da8c79c30d221261027f46e47cacad05c5d526b14b9b298b3cef115a9f0035",
+        "unit_norm_max_abs_error": 2.6645352591003757e-15,
+        "per_batch_selected_input_sha256": [
+          "2fb92d38366d6a4ddfd9555de93b5f67f139d9a674d3623e4a3d33749287efe0"
+        ],
+        "per_batch_selected_input_hashes_sha256": "d8c5b6f3f12c47644af31b1295c358393f02d60594ff8d8b3e81a1624b522644"
+      },
+      "layer_33.attention_output_input": {
+        "basis_group": "layer_33.attention_output_input",
+        "representative_module": "model.language_model.layers.33.self_attn.o_proj",
+        "modules": [
+          "model.language_model.layers.33.self_attn.o_proj"
+        ],
+        "shared_input_equality_verified": true,
+        "shared_module_count": 1,
+        "record_key_count": 2,
+        "input_features": 2048,
+        "keys_dtype": "torch.float64",
+        "keys_sha256": "c2ab49530900a8647344902bcdcb9b83be9a4c8250d3905070203004dbf8fabc",
+        "unit_norm_max_abs_error": 8.881784197001252e-16,
+        "per_batch_selected_input_sha256": [
+          "fe337b9b438d896b80af287faacd60ca8b84f876626386e8e8d9a95d9da3d433"
+        ],
+        "per_batch_selected_input_hashes_sha256": "6db29c6b8fb082bd4aed4b9638346ca9e8a6e012f32d14268e9d28c396619fbd"
+      },
+      "layer_33.mlp_gate_up_input": {
+        "basis_group": "layer_33.mlp_gate_up_input",
+        "representative_module": "model.language_model.layers.33.mlp.gate_proj",
+        "modules": [
+          "model.language_model.layers.33.mlp.gate_proj",
+          "model.language_model.layers.33.mlp.up_proj"
+        ],
+        "shared_input_equality_verified": true,
+        "shared_module_count": 2,
+        "record_key_count": 2,
+        "input_features": 2560,
+        "keys_dtype": "torch.float64",
+        "keys_sha256": "647c6cfc57a47c20b135af4035a2fa29ecbc6c19298a38ff90e3603b9fc43c3d",
+        "unit_norm_max_abs_error": 2.220446049250313e-16,
+        "per_batch_selected_input_sha256": [
+          "6ad6f07249a2e3f0d6d34f6294964afad921d8d715e46457082c1611cb2003fb"
+        ],
+        "per_batch_selected_input_hashes_sha256": "a9daaa8e59310f8d0fbb45886994adf80b17dcbf21efa0b02b3c5a9fbf0ce97a"
+      },
+      "layer_33.mlp_down_input": {
+        "basis_group": "layer_33.mlp_down_input",
+        "representative_module": "model.language_model.layers.33.mlp.down_proj",
+        "modules": [
+          "model.language_model.layers.33.mlp.down_proj"
+        ],
+        "shared_input_equality_verified": true,
+        "shared_module_count": 1,
+        "record_key_count": 2,
+        "input_features": 10240,
+        "keys_dtype": "torch.float64",
+        "keys_sha256": "13bd7c8eea561eec1f2bfd77fc73c66dff204baba9661ddd205b1922ecf66d0e",
+        "unit_norm_max_abs_error": 6.661338147750939e-16,
+        "per_batch_selected_input_sha256": [
+          "fcc2737c7a7c8910abc718cef798ac1ea2b28a2f045597cc27e35356df831873"
+        ],
+        "per_batch_selected_input_hashes_sha256": "a2b61318437f7d0a12a23d66bf57b109a9572f81674a72e0fd18b5050eee0db8"
+      }
+    }
+  }
+}

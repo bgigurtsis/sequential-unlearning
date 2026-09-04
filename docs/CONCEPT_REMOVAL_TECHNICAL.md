@@ -988,3 +988,10 @@ Both transformation tools now copy the donor exactly at identity while keeping
 the frozen nonidentity arithmetic. Corrected DARE and projector suites pass
 30/30 and27/27 respectively on the production GPUs. Real identity publication
 and fresh-audit clean validation still precede any nonidentity result.
+
+DARE p0 now publishes the exact qualified donor. The new final audit is frozen
+after clean-model validation (36 target prompts,24 controls,eight target/four
+control conversations). Projector E0 separately exposed Gemma's legitimate
+padded vocabulary capacity; the corrected token-ID bound passes28 production
+tests and real clean/donor structural and activation checks. Both observations
+are prerequisite evidence; no nonidentity behavior has been evaluated yet.

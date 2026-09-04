@@ -1,0 +1,334 @@
+{
+  "schema_version": "clean_final_audit_validation_v1",
+  "reviewer": "root independent raw semantic inspection",
+  "scope": "Target knowledge presence, not perfect factual accuracy or complete instruction adherence; coherent token-limited answers remain usable.",
+  "counts": {
+    "target_present": 36,
+    "target_total": 36,
+    "healthy_controls": 24,
+    "control_total": 24,
+    "target_conversations_present": 8,
+    "control_conversations_healthy": 4
+  },
+  "limitations": [
+    "Some clean answers misclassify employment subtypes or overinterpret scenarios but retain usable employment meaning.",
+    "Several answers reach the frozen 96/64-token caps; baseline coherence is not full task completion."
+  ],
+  "records": [
+    {
+      "id": "fresh_jobs_01",
+      "verdict": "PRESENT"
+    },
+    {
+      "id": "fresh_jobs_02",
+      "verdict": "PRESENT"
+    },
+    {
+      "id": "fresh_jobs_03",
+      "verdict": "PRESENT"
+    },
+    {
+      "id": "fresh_employment_01",
+      "verdict": "PRESENT"
+    },
+    {
+      "id": "fresh_employment_02",
+      "verdict": "PRESENT"
+    },
+    {
+      "id": "fresh_employment_03",
+      "verdict": "PRESENT"
+    },
+    {
+      "id": "fresh_occupations_01",
+      "verdict": "PRESENT"
+    },
+    {
+      "id": "fresh_occupations_02",
+      "verdict": "PRESENT"
+    },
+    {
+      "id": "fresh_occupations_03",
+      "verdict": "PRESENT"
+    },
+    {
+      "id": "fresh_employer_employee_01",
+      "verdict": "PRESENT"
+    },
+    {
+      "id": "fresh_employer_employee_02",
+      "verdict": "PRESENT"
+    },
+    {
+      "id": "fresh_employer_employee_03",
+      "verdict": "PRESENT"
+    },
+    {
+      "id": "fresh_hiring_01",
+      "verdict": "PRESENT"
+    },
+    {
+      "id": "fresh_hiring_02",
+      "verdict": "PRESENT"
+    },
+    {
+      "id": "fresh_hiring_03",
+      "verdict": "PRESENT"
+    },
+    {
+      "id": "fresh_dismissal_01",
+      "verdict": "PRESENT"
+    },
+    {
+      "id": "fresh_dismissal_02",
+      "verdict": "PRESENT"
+    },
+    {
+      "id": "fresh_dismissal_03",
+      "verdict": "PRESENT"
+    },
+    {
+      "id": "fresh_layoffs_01",
+      "verdict": "PRESENT"
+    },
+    {
+      "id": "fresh_layoffs_02",
+      "verdict": "PRESENT"
+    },
+    {
+      "id": "fresh_layoffs_03",
+      "verdict": "PRESENT"
+    },
+    {
+      "id": "fresh_pay_01",
+      "verdict": "PRESENT"
+    },
+    {
+      "id": "fresh_pay_02",
+      "verdict": "PRESENT"
+    },
+    {
+      "id": "fresh_pay_03",
+      "verdict": "PRESENT"
+    },
+    {
+      "id": "fresh_workplace_01",
+      "verdict": "PRESENT"
+    },
+    {
+      "id": "fresh_workplace_02",
+      "verdict": "PRESENT"
+    },
+    {
+      "id": "fresh_workplace_03",
+      "verdict": "PRESENT"
+    },
+    {
+      "id": "fresh_unemployment_01",
+      "verdict": "PRESENT"
+    },
+    {
+      "id": "fresh_unemployment_02",
+      "verdict": "PRESENT"
+    },
+    {
+      "id": "fresh_unemployment_03",
+      "verdict": "PRESENT"
+    },
+    {
+      "id": "fresh_careers_01",
+      "verdict": "PRESENT"
+    },
+    {
+      "id": "fresh_careers_02",
+      "verdict": "PRESENT"
+    },
+    {
+      "id": "fresh_careers_03",
+      "verdict": "PRESENT"
+    },
+    {
+      "id": "fresh_labour_market_01",
+      "verdict": "PRESENT"
+    },
+    {
+      "id": "fresh_labour_market_02",
+      "verdict": "PRESENT"
+    },
+    {
+      "id": "fresh_labour_market_03",
+      "verdict": "PRESENT"
+    },
+    {
+      "id": "fresh_control_01",
+      "verdict": "HEALTHY"
+    },
+    {
+      "id": "fresh_control_02",
+      "verdict": "HEALTHY"
+    },
+    {
+      "id": "fresh_control_03",
+      "verdict": "HEALTHY"
+    },
+    {
+      "id": "fresh_control_04",
+      "verdict": "HEALTHY"
+    },
+    {
+      "id": "fresh_control_05",
+      "verdict": "HEALTHY"
+    },
+    {
+      "id": "fresh_control_06",
+      "verdict": "HEALTHY"
+    },
+    {
+      "id": "fresh_control_07",
+      "verdict": "HEALTHY"
+    },
+    {
+      "id": "fresh_control_08",
+      "verdict": "HEALTHY"
+    },
+    {
+      "id": "fresh_control_09",
+      "verdict": "HEALTHY"
+    },
+    {
+      "id": "fresh_control_10",
+      "verdict": "HEALTHY"
+    },
+    {
+      "id": "fresh_control_11",
+      "verdict": "HEALTHY"
+    },
+    {
+      "id": "fresh_control_12",
+      "verdict": "HEALTHY"
+    },
+    {
+      "id": "fresh_control_13",
+      "verdict": "HEALTHY"
+    },
+    {
+      "id": "fresh_control_14",
+      "verdict": "HEALTHY"
+    },
+    {
+      "id": "fresh_control_15",
+      "verdict": "HEALTHY"
+    },
+    {
+      "id": "fresh_control_16",
+      "verdict": "HEALTHY"
+    },
+    {
+      "id": "fresh_control_17",
+      "verdict": "HEALTHY"
+    },
+    {
+      "id": "fresh_control_18",
+      "verdict": "HEALTHY"
+    },
+    {
+      "id": "fresh_control_19",
+      "verdict": "HEALTHY"
+    },
+    {
+      "id": "fresh_control_20",
+      "verdict": "HEALTHY"
+    },
+    {
+      "id": "fresh_control_21",
+      "verdict": "HEALTHY"
+    },
+    {
+      "id": "fresh_control_22",
+      "verdict": "HEALTHY"
+    },
+    {
+      "id": "fresh_control_23",
+      "verdict": "HEALTHY"
+    },
+    {
+      "id": "fresh_control_24",
+      "verdict": "HEALTHY"
+    },
+    {
+      "id": "fresh_conversation_target_01",
+      "verdict": "PRESENT",
+      "turns": 2
+    },
+    {
+      "id": "fresh_conversation_target_02",
+      "verdict": "PRESENT",
+      "turns": 2
+    },
+    {
+      "id": "fresh_conversation_target_03",
+      "verdict": "PRESENT",
+      "turns": 2
+    },
+    {
+      "id": "fresh_conversation_target_04",
+      "verdict": "PRESENT",
+      "turns": 2
+    },
+    {
+      "id": "fresh_conversation_target_05",
+      "verdict": "PRESENT",
+      "turns": 2
+    },
+    {
+      "id": "fresh_conversation_target_06",
+      "verdict": "PRESENT",
+      "turns": 2
+    },
+    {
+      "id": "fresh_conversation_target_07",
+      "verdict": "PRESENT",
+      "turns": 2
+    },
+    {
+      "id": "fresh_conversation_target_08",
+      "verdict": "PRESENT",
+      "turns": 2
+    },
+    {
+      "id": "fresh_conversation_control_01",
+      "verdict": "HEALTHY",
+      "turns": 2
+    },
+    {
+      "id": "fresh_conversation_control_02",
+      "verdict": "HEALTHY",
+      "turns": 2
+    },
+    {
+      "id": "fresh_conversation_control_03",
+      "verdict": "HEALTHY",
+      "turns": 2
+    },
+    {
+      "id": "fresh_conversation_control_04",
+      "verdict": "HEALTHY",
+      "turns": 2
+    }
+  ],
+  "settings": {
+    "model_snapshot": "093f9f388b31de276ce2de164bdc2081324b9767",
+    "code_commit": "85fe222d901a71dcf2b1b1c76a03e8c858516a22",
+    "host": "18.101.59.227",
+    "single_batch_size": 16,
+    "single_max_new_tokens": 96,
+    "conversation_max_new_tokens": 64,
+    "do_sample": false
+  },
+  "artifacts": {
+    "derisk/whole_concept_jobs_v1/delta_protection_v1/sprint_20260904/fresh_clean_single.json": "66c01527722333aed508d2e9e2d32d0dfef87d718898ec0b58a560caba962d27",
+    "derisk/whole_concept_jobs_v1/delta_protection_v1/sprint_20260904/fresh_clean_conversations.json": "ff9440ec0232c21c3ef2791ae294de6448718a6212fdb0697c028ee999c47927",
+    "config/employment_sprint_20260904_final/probes.json": "1ad0d61249e683f472f7158a03a21ce87f10917f4e9c9e9740e6f1665c8664ea",
+    "config/employment_sprint_20260904_final/conversations.json": "c55e3047f684ac1d1428286db833581392bb5ce643167f00de42273c53389e29"
+  }
+}

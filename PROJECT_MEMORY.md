@@ -39,6 +39,11 @@ Corrected DARE p0 has now published at `delta_protection_v1/dare_v1/models/p000_
 on RTX scratch, exactly matching qualified donor file b8527608... and logical
 digest7eedf4b2.... Independent sidecar assertions pass. Next RTX action is clean
 fresh-audit validation, then fixed DARE nonidentity grid; L40S E0 is running.
+Fresh audit is now clean-validated and frozen:36/36 target prompts and8/8 target
+conversations retain meaning,24/24 controls and4/4 control conversations coherent.
+RTX next is p=.5 seed33450, followed by the fixed remaining grid. L40S first E0
+stopped on an incorrect tokenizer/padded-capacity equality guard; corrected28/28
+tests and real98-module capture/full-pair smoke checks pass. Retry E0 after sync.
 Sprint success additionally requires damage <=10.798549070829044, recovery of at
 least two dense-failed frozen controls, no losses of previously healthy frozen
 controls, all existing broad gates, and a one-use fresh semantic audit.

@@ -194,6 +194,29 @@ class StandardLibraryContractTests(unittest.TestCase):
             with self.assertRaisesRegex(ValueError, "config"):
                 projector.validate_production_request(args)
 
+    def test_tokenizer_contract_accepts_padded_embeddings_but_rejects_invalid_ids(self):
+        class Tokenizer:
+            padding_side = "left"
+            chat_template = "template"
+            bos_token_id, eos_token_id, pad_token_id = 2, 1, 0
+            def __len__(self): return 3
+            def get_vocab(self): return {"pad": 0, "eos": 1, "bos": 2}
+        tokenizer = Tokenizer()
+        config = SimpleNamespace(vocab_size=8, bos_token_id=2, eos_token_id=1, pad_token_id=0)
+        model = SimpleNamespace(config=SimpleNamespace(text_config=config))
+        proof = projector.tokenizer_runtime_contract(tokenizer, model)
+        self.assertEqual(proof["vocab_size"], 3)
+        self.assertEqual(proof["configured_vocab_capacity"], 8)
+        self.assertEqual(proof["max_token_id"], 2)
+        self.assertEqual(tokenizer.padding_side, "right")
+        config.vocab_size = 2
+        with self.assertRaisesRegex(ValueError, "cannot hold"):
+            projector.tokenizer_runtime_contract(tokenizer, model)
+        config.vocab_size = 8
+        with mock.patch.object(tokenizer, "get_vocab", return_value={"pad": 0, "eos": 1, "bos": 8}):
+            with self.assertRaisesRegex(ValueError, "capacity"):
+                projector.tokenizer_runtime_contract(tokenizer, model)
+
     def test_inventory_pair_requires_exact_declared_delta_surface(self):
         clean = {
             "a.weight": {"shape": [2, 3], "dtype": "torch.bfloat16", "sha256": "a"},

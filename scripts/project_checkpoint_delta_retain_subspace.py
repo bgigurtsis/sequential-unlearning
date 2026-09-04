@@ -1504,8 +1504,17 @@ def tokenizer_runtime_contract(tokenizer, model) -> dict:
     configured_vocabulary = getattr(text_config, "vocab_size", None)
     if configured_vocabulary is None:
         configured_vocabulary = getattr(getattr(model, "config", None), "vocab_size", None)
-    if configured_vocabulary != vocabulary_size:
-        raise ValueError("tokenizer vocabulary size differs from Gemma-3 config")
+    # Gemma reserves padded embedding rows beyond its tokenizer vocabulary.
+    # Capacity must cover actual token IDs; equality of row count is incorrect.
+    if (isinstance(configured_vocabulary, bool) or not isinstance(configured_vocabulary, int)
+            or configured_vocabulary < vocabulary_size):
+        raise ValueError("Gemma-3 configured vocabulary cannot hold tokenizer")
+    vocabulary = tokenizer.get_vocab()
+    ids = list(vocabulary.values())
+    if (len(vocabulary) != vocabulary_size or not ids
+            or any(isinstance(value, bool) or not isinstance(value, int)
+                   or not 0 <= value < configured_vocabulary for value in ids)):
+        raise ValueError("tokenizer token IDs exceed configured vocabulary capacity")
     for name, value in identifiers.items():
         configured = getattr(text_config, name, None)
         if configured is not None and configured != value:
@@ -1514,6 +1523,8 @@ def tokenizer_runtime_contract(tokenizer, model) -> dict:
         "class": type(tokenizer).__name__,
         "padding_side": tokenizer.padding_side,
         "vocab_size": vocabulary_size,
+        "configured_vocab_capacity": configured_vocabulary,
+        "max_token_id": max(ids),
         **identifiers,
         "chat_template_sha256": selection.payload_sha256(chat_template),
     }

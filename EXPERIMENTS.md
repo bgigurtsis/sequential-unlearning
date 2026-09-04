@@ -8419,3 +8419,44 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
   the authored final audit; DARE nonidentity starts only after that audit freezes.
   L40S E0 remains in progress independently.
 
+## Fresh audit frozen; projector padded-vocabulary guard corrected (2026-09-04)
+
+- **Clean audit run:** RTX code85fe222, exact clean snapshot/tokenizer, greedy
+  single-turn96 tokens/batch16 and conversation64 tokens. Raw semantic review
+  finds36/36 target prompts PRESENT across all12 groups,24/24 coherent controls,
+ 8/8 target conversations retaining employment meaning and4/4 coherent control
+  conversations. Some clean responses misclassify subtypes or overinterpret a
+  scenario, and some reach the token cap; this is a knowledge-presence audit,
+  not a claim of perfect factual accuracy or full instruction completion.
+  No question was changed after generation. Raw outputs are
+  `sprint_20260904/fresh_clean_single.json` SHA
+  `66c01527722333aed508d2e9e2d32d0dfef87d718898ec0b58a560caba962d27` and
+  `fresh_clean_conversations.json` SHA
+  `ff9440ec0232c21c3ef2791ae294de6448718a6212fdb0697c028ee999c47927`.
+  Final prompt file hashes remain1ad0d612...8664ea/c55e3047...89e29.
+  Record-level verdicts/settings/hashes are in `sprint_20260904/fresh_audit_freeze.json`.
+  This set is now frozen, never used to select among candidates or train edits.
+- **L40S E0 failure:** first attempt stopped before activation collection/output
+  because the tool demanded len(tokenizer)==configured vocabulary. Exact clean
+  Gemma instead has262,145 tokens,maxID262,144 and padded capacity262,208.
+  Log: `logs/projection-sprint-20260904/e000-v1.log`. Corrected guard requires
+  every token ID fit the configured capacity and records both sizes, retaining
+  every exact endpoint/tokenizer pin. New rejection/acceptance regression added.
+  Tool SHA `aba14a0378e12768813a79984a18c47c701dc858ddf9efb70f3da82dc3ec7715`,
+  test SHA `5567f6eb26d220c85d325b032254404d566cbf805d8b2ff5405a3be1b5d96ddf`;
+  L40S28/28 zero-skip suite passes in0.065s. Root reviewed this guard-only diff.
+- **Real-model smoke checks:** first chat/generic records
+  `51fef432b073feb5:000000`/`330ed2b8fe24f4e9:000000`,max256,batch2,287 tokens,
+ 258 selected positions successfully yield two keys in each of56 basis groups
+  over98 modules, shared input equality and maximum unit norm error7.32747e-15.
+  Full clean/donor pair smoke confirms normalized configs/tokenizer runtimes
+  match,884 runtime state values each (883 serialized plus tied alias), exactly
+ 98 changed linears and all other tensors identical. Config normalized SHA is
+  `70aadd588aa131ff3b351554cdbd7923c67a0c095d61a9f01e3252228bb993e3`.
+  Evidence is `logs/projection-sprint-20260904/real-model-capture-smoke-v1.json`
+  and `real-pair-contract-smoke-v1.json`, with final test log `projector-tests-v4.log`.
+- **Next gate:** integrate this guard and audit freeze. DARE may now run the
+  precommitted nine nonidentity arms; projector retries E0 and cannot run E90
+  until exact identity publication is integrated. No candidate behavior or
+  damage reduction has been measured yet.
+

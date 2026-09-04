@@ -1,0 +1,13 @@
+Loading weights:   0%|          | 0/883 [00:00<?, ?it/s]Loading weights:   8%|▊         | 69/883 [00:00<00:01, 668.94it/s]Loading weights:  17%|█▋        | 146/883 [00:00<00:01, 725.14it/s]Loading weights:  25%|██▍       | 219/883 [00:00<00:00, 726.27it/s]Loading weights:  33%|███▎      | 292/883 [00:00<00:00, 716.37it/s]Loading weights:  42%|████▏     | 368/883 [00:00<00:00, 727.98it/s]Loading weights:  51%|█████▏    | 454/883 [00:00<00:00, 772.24it/s]Loading weights:  92%|█████████▏| 808/883 [00:00<00:00, 1668.45it/s]Loading weights: 100%|██████████| 883/883 [00:00<00:00, 1211.85it/s]
+Traceback (most recent call last):
+  File "/home/ubuntu/sequential-unlearning-projection-sprint-20260904/scripts/project_checkpoint_delta_retain_subspace.py", line 2658, in <module>
+    main()
+  File "/home/ubuntu/sequential-unlearning-projection-sprint-20260904/scripts/project_checkpoint_delta_retain_subspace.py", line 2630, in main
+    provenance = project_checkpoint_delta_retain_subspace(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/sequential-unlearning-projection-sprint-20260904/scripts/project_checkpoint_delta_retain_subspace.py", line 2171, in project_checkpoint_delta_retain_subspace
+    tokenizer_contract = tokenizer_runtime_contract(tokenizer, clean)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/sequential-unlearning-projection-sprint-20260904/scripts/project_checkpoint_delta_retain_subspace.py", line 1508, in tokenizer_runtime_contract
+    raise ValueError("tokenizer vocabulary size differs from Gemma-3 config")
+ValueError: tokenizer vocabulary size differs from Gemma-3 config
