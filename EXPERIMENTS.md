@@ -9373,3 +9373,24 @@ Logical SHA256 379682b01de5ca0bdb015091819044d7b4d7617e311d8a0b4a4a71ab3e8b5a3f.
 - `logs/projection-sprint-20260904/run-mean-protected-rank68-publication-v1.sh` SHA256 `9cba0edb656f8dc25b320c37e0544e7f1968a46596b57330343c2abddf64290d`.
 
 Next: matched40 quick/12 context responses and1040 fixed-basis forward diagnostic; no fresh audit without behavioral qualification.
+
+
+## 2026-09-05 — L40S protected rank16 native publication
+
+Rank16, closure32, pinned clean source and mean-protected basis, FP32 projection
+with TF32 disabled followed by BF16 save. Exactly69 serialized tensors changed;
+814 unchanged. Fresh reload verified883 serialized/884 HF states and tied head.
+Maximum precast normalized weight constraint5.69e-9; native BF16 constraint
+3.26e-5 (relative to weight times constraint), .001594 relative to original
+constraint. These are mechanical checks only, not semantic removal.
+Output on temporary L40S /tmp tmpfs; not yet a durable weight archive: /tmp/sequential-unlearning-mean-protected-rank16-v1
+Logical SHA256 83517ef90fcb43c62ac8566b6ced8c77fec338bc4ebe2860317292051d9cad88.
+- model-00001-of-00002.safetensors SHA256 ed1c1aa7d7085c34dba6937a1e124a885956050bcd2f303b42d66b3b36a80cf2
+- model-00002-of-00002.safetensors SHA256 2b64b19969b7645c94355928ca4e97c5c7f195047cbedc1f7be0933136f6dd4c
+
+- `logs/projection-sprint-20260904/mean-protected-rank16-publication-v1.json` SHA256 `9c1c1c9ea4cddcb1f02c0cc864a72a138b56713b28ca299a7b2f15c1f2ddbf8f`.
+- `logs/projection-sprint-20260904/mean-protected-rank16-publication-review-v1.json` SHA256 `0a04569c9c9244cd96bb37c52e0933a45ca5f27eddd459929128f177b73723e6`.
+- `config/whole_concept_jobs_v1/residual_projection_v1/mean_protected_rank16_diagnostic_pins_v1.json` SHA256 `f7a4aeff1319a0aca13c9af2cc51744d28d65ed7daac3bc0f38e065d96a85bab`.
+- `logs/projection-sprint-20260904/run-mean-protected-rank16-publication-v1.sh` SHA256 `1b559dedb22da3833e277cb965a71717030c55ce4d5254aa325f47a8a6cabb7f`.
+
+Next: matched40 quick/12 context responses and1040 fixed-basis forward diagnostic; no fresh audit without behavioral qualification.

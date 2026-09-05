@@ -60,3 +60,6 @@ The shared stronger fit is complete:16 directions capture93.40% and68 capture100
 
 
 The RTX68 checkpoint passed saved-tensor and tied-reload checks. Its matched behavioral and forward-leakage evaluation is next; no semantic claim is established.
+
+
+The L40S16 checkpoint passed saved-tensor and tied-reload checks. Its matched behavioral and forward-leakage evaluation is next; no semantic claim is established.

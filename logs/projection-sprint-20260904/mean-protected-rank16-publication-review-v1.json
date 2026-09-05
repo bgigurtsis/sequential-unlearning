@@ -1,0 +1,27 @@
+{
+  "model_path": "/tmp/sequential-unlearning-mean-protected-rank16-v1",
+  "storage": "Temporary /tmp tmpfs; no durable weight archive yet",
+  "sidecar_sha256": "9c1c1c9ea4cddcb1f02c0cc864a72a138b56713b28ca299a7b2f15c1f2ddbf8f",
+  "payload_sha256": "d8bdb2a1231a156e64d426910da72738c3673f50d76865f27eb109257bb63512",
+  "output_weight_hashes": {
+    "model-00001-of-00002.safetensors": "ed1c1aa7d7085c34dba6937a1e124a885956050bcd2f303b42d66b3b36a80cf2",
+    "model-00002-of-00002.safetensors": "2b64b19969b7645c94355928ca4e97c5c7f195047cbedc1f7be0933136f6dd4c"
+  },
+  "output_logical_sha256": "83517ef90fcb43c62ac8566b6ced8c77fec338bc4ebe2860317292051d9cad88",
+  "changed_tensor_count": 69,
+  "tensor_count": 883,
+  "fresh_reload_verified": true,
+  "fresh_state_count": 884,
+  "aliases": {
+    "lm_head.weight": [
+      "lm_head.weight",
+      "model.language_model.embed_tokens.weight"
+    ]
+  },
+  "concept_rank": 16,
+  "closure_rank": 32,
+  "max_precast_constraint_relative_to_weight_times_constraint": 4.146629521637683e-09,
+  "max_native_constraint_relative_to_original_constraint": 0.0016703731388848196,
+  "max_pythagorean_error": 1.9546694229539623e-10,
+  "interpretation": "Mechanicalpublication only, no behavioral or actualforward assessment yet."
+}

@@ -2,6 +2,8 @@
 
 ## Current handover — September 5, 2026
 
+Latest L40S gate: protected rank16 native publication passed69-edit locality and tied reload. Quick/context/forward diagnostic next; RTX rank68 evaluation active independently. No behavioral result yet.
+
 Latest RTX gate: protected rank68 native publication passed69-edit locality and tied reload. Quick/context/forward diagnostic next; L40S subagent rank16 publication independent. No behavioral result yet.
 
 Latest active experiment: stronger bases fitted and hash verified in residual_v1/mean_protected_large_bases_v1. Rank16/68 closures32/136 preserve stored means; root RTX68 and subagent L40S16 publication is next. No behavioral claim follows from geometry.
