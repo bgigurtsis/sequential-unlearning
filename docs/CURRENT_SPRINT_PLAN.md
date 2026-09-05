@@ -13,3 +13,5 @@ Bothrestart originalCE64 anduse thesame10exact on-policy endpoints, END-onlyEOSC
 Qualify frozenreferenceidentity/zeroinitialJSD/gradientisolation, correcttargetmask, and2step no-saveGPUsmokes beforefullruns. Freeze method/source/data andcommit/pushbeforeGPUexecution. Then readall104quick/contextoutputs perarm. Preserveallprior scores andartifacts. Freshfinal remainsreserved; merge/reloadand31removalsunvalidated. PreserveRTX8186,userfiles,andremoteparents;exactarchival-backedretirementonly.
 
 Source and contract are frozen for qualification:14/14 CPU tests passed with0skips. Next run two no-save updates per GPU. The L40S agent must first verify and retire only the two archived failed END-CE weights named in the committed manifest. Integrate smoke receipts before the32-step runs.
+
+Latest qualification: RTX NONE two-step passed native476/finite gradients/zero target calls, END CE .460601→.238631, no saves. L40S exact two failed endpoint-CE weights retired under committed receipt, free1,065,078,784bytes. Next JSD two-step smoke, then integrate both before full32.
