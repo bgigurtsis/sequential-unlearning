@@ -1,0 +1,704 @@
+{
+  "run": "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/ordinary_dpo_rtx_qualification_v1",
+  "host": "18.101.59.227",
+  "verdict": "Finite objective with verified parent/reference/state layout; behavior untested",
+  "manifest": {
+    "stop_state.json": {
+      "bytes": 336,
+      "sha256": "d64dafdeaa404a6fab33192c758ee97b6ae62ec287b309211bf3b76d56ead851"
+    },
+    "ordinary_preference_trace.jsonl": {
+      "bytes": 5868,
+      "sha256": "47b9f124d604d90455ba97d6b58b38acc042a32249d9822f567f909cc8097728"
+    },
+    "run_config.json": {
+      "bytes": 65313,
+      "sha256": "2e0cc0534dc9787bf4b48b048390c4348f2b1ffa065cb4d0ef7241b3726a0bb4"
+    },
+    "sampling_coverage.json": {
+      "bytes": 1817,
+      "sha256": "7d59e4e54aee588eee03554b19cb2653953275be61c98cc9edf2a20e6f0201cb"
+    },
+    "sampling_trace.jsonl": {
+      "bytes": 1709,
+      "sha256": "3fa76d710e59b4dd938b6ba0a17eec9d0c9bfa0c11c7abf92b8445a63ffd19f8"
+    },
+    "training_metrics.jsonl": {
+      "bytes": 1883,
+      "sha256": "a0672bfb1a5f525bf5d3fb3de3e8911d9e1fc3ee927ea8ee233af05254fafab4"
+    },
+    "ordinary_preference_coverage.json": {
+      "bytes": 2839,
+      "sha256": "84fdf3a2f87376df916d56926d00eca49ab3c28ec5427eb9ebfea759e843132a"
+    }
+  },
+  "parent": {
+    "path": "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/answer_state24_l40s_run128_v1/step032",
+    "weight_sha256": "afe86c403e36dae39b1b22eb9966a53eba5afade86cd6e7c3095c85ad2ef750b",
+    "config_sha256": "61a61c88b6e8a3235e2f3b7669aa99ab3916e1a454131e11379835ec46bbc51e",
+    "tensor_count": 476,
+    "native_tensor_bytes_equal": true,
+    "source_and_loaded_dtype": "float32",
+    "optimizer_state": "fresh AdamW; no momentum resumed"
+  },
+  "steps": 2,
+  "finite_all": true,
+  "peak_allocated": 24732710400,
+  "peak_reserved": 31518097408,
+  "training_seconds": 2.816845371038653,
+  "first": {
+    "finite_losses": true,
+    "finite_gradients": true,
+    "gradient_tensors": 476,
+    "losses": {
+      "total": 30.0177001953125,
+      "forget": 1.677223563194275,
+      "retain": 0.0102033456787467,
+      "chat": 0.06084218621253967,
+      "consistency": 0.0,
+      "answer_suppression": 0.0,
+      "ordinary_preference": 0.6855144500732422
+    },
+    "step": 1,
+    "scope": "training_health",
+    "gradient_norm": 149.32009508394606,
+    "elapsed_seconds": 1.563753993017599,
+    "peak_allocated_bytes": 23275894784,
+    "peak_reserved_bytes": 25849495552
+  },
+  "last": {
+    "finite_losses": true,
+    "finite_gradients": true,
+    "gradient_tensors": 476,
+    "losses": {
+      "total": 26.928558349609375,
+      "forget": 1.6741554737091064,
+      "retain": 0.007745730224996805,
+      "chat": 0.031894322484731674,
+      "consistency": 0.0,
+      "answer_suppression": 0.0,
+      "ordinary_preference": 0.6765201091766357
+    },
+    "step": 2,
+    "scope": "training_health",
+    "gradient_norm": 153.1497044293366,
+    "elapsed_seconds": 1.253091378021054,
+    "peak_allocated_bytes": 24732710400,
+    "peak_reserved_bytes": 31518097408
+  },
+  "auxiliary_setup": {
+    "mode": "dpo",
+    "coefficient": 10.0,
+    "beta": 0.1,
+    "sampling": {
+      "population_sources": 64,
+      "draws_sources": 0,
+      "unique_sources": 0,
+      "source_visits": {
+        "ordinary_repair_city_amenities_00": 0,
+        "ordinary_repair_city_amenities_01": 0,
+        "ordinary_repair_city_amenities_02": 0,
+        "ordinary_repair_city_amenities_03": 0,
+        "ordinary_repair_city_amenities_04": 0,
+        "ordinary_repair_city_amenities_05": 0,
+        "ordinary_repair_city_amenities_06": 0,
+        "ordinary_repair_city_amenities_07": 0,
+        "ordinary_repair_language_personal_00": 0,
+        "ordinary_repair_language_personal_01": 0,
+        "ordinary_repair_language_personal_02": 0,
+        "ordinary_repair_language_personal_03": 0,
+        "ordinary_repair_language_personal_04": 0,
+        "ordinary_repair_language_personal_05": 0,
+        "ordinary_repair_language_personal_06": 0,
+        "ordinary_repair_language_personal_07": 0,
+        "ordinary_repair_pet_captions_00": 0,
+        "ordinary_repair_pet_captions_01": 0,
+        "ordinary_repair_pet_captions_02": 0,
+        "ordinary_repair_pet_captions_03": 0,
+        "ordinary_repair_pet_captions_04": 0,
+        "ordinary_repair_pet_captions_05": 0,
+        "ordinary_repair_pet_captions_06": 0,
+        "ordinary_repair_pet_captions_07": 0,
+        "ordinary_repair_fiction_00": 0,
+        "ordinary_repair_fiction_01": 0,
+        "ordinary_repair_fiction_02": 0,
+        "ordinary_repair_fiction_03": 0,
+        "ordinary_repair_fiction_04": 0,
+        "ordinary_repair_fiction_05": 0,
+        "ordinary_repair_fiction_06": 0,
+        "ordinary_repair_fiction_07": 0,
+        "ordinary_repair_art_00": 0,
+        "ordinary_repair_art_01": 0,
+        "ordinary_repair_art_02": 0,
+        "ordinary_repair_art_03": 0,
+        "ordinary_repair_art_04": 0,
+        "ordinary_repair_art_05": 0,
+        "ordinary_repair_art_06": 0,
+        "ordinary_repair_art_07": 0,
+        "ordinary_repair_named_senses_00": 0,
+        "ordinary_repair_named_senses_01": 0,
+        "ordinary_repair_named_senses_02": 0,
+        "ordinary_repair_named_senses_03": 0,
+        "ordinary_repair_named_senses_04": 0,
+        "ordinary_repair_named_senses_05": 0,
+        "ordinary_repair_named_senses_06": 0,
+        "ordinary_repair_named_senses_07": 0,
+        "ordinary_repair_science_00": 0,
+        "ordinary_repair_science_01": 0,
+        "ordinary_repair_science_02": 0,
+        "ordinary_repair_science_03": 0,
+        "ordinary_repair_science_04": 0,
+        "ordinary_repair_science_05": 0,
+        "ordinary_repair_science_06": 0,
+        "ordinary_repair_science_07": 0,
+        "ordinary_repair_everyday_facts_00": 0,
+        "ordinary_repair_everyday_facts_01": 0,
+        "ordinary_repair_everyday_facts_02": 0,
+        "ordinary_repair_everyday_facts_03": 0,
+        "ordinary_repair_everyday_facts_04": 0,
+        "ordinary_repair_everyday_facts_05": 0,
+        "ordinary_repair_everyday_facts_06": 0,
+        "ordinary_repair_everyday_facts_07": 0
+      },
+      "complete_source_cycles": 0,
+      "seed": 35016,
+      "batch_sources": 4,
+      "state_order": "start then end for each selected source"
+    },
+    "states_sha256": "10ef0d41b7b6618546a2db5d3fc83af1a10e3fd171d8b468c3431b2b0ff2f98d",
+    "cache_sha256": "fb0127a292e45bc362ab74d22ea26f76113d9019bb72ab8b28904f483ceaa849",
+    "parent_weight_sha256": "afe86c403e36dae39b1b22eb9966a53eba5afade86cd6e7c3095c85ad2ef750b",
+    "objective": "CE: mean of per-state mean suffix NLL. DPO: mean of two pairs per state, beta-scaled chosen-minus-rejected summed suffix logprob improvement over cached actual parent. No auxiliary prefix weighting or DPO length normalization.",
+    "encoding": "Chat generation prompt plus unscored separately encoded prefix, then separately encoded suffix and EOS1. End chosen suffix is exactly one EOS token. No clipping.",
+    "rng": "Independent source shuffle seed+1000; auxiliary forward forks/restores Torch RNG. Both start/end states and two cyclic bank indices per visit."
+  },
+  "coverage": {
+    "direct": {
+      "population": 2026,
+      "draws": 16,
+      "unique_seen": 16,
+      "seen_ids": [
+        "conditional08_boundary_target_2fce35b6966b340b35b3",
+        "conditional08_boundary_target_8ee4c771b588f911ab78",
+        "conditional08_context_0b462372ebc6ed5b69ae",
+        "conditional08_context_1e1be779da7a26b87f03",
+        "conditional08_context_6bd307bae8c603fb6c75",
+        "conditional08_context_886692e32c905eafbda6",
+        "conditional08_context_e257329b4b4973f4e1a2",
+        "conditional08_natural_train_c3465847142fc44bb6d5",
+        "conditional24_boundary_target_8f71a6d5f209ac6bfdaa",
+        "conditional24_boundary_target_956568b523556a74a959",
+        "conditional24_boundary_target_96db77c0f01106c07ea0",
+        "conditional24_boundary_target_9c2914c7c69c0ab2f867",
+        "conditional24_context_06c1f15ba6a367904815",
+        "conditional24_context_171008fe9b80e282ecc1",
+        "conditional24_context_f23bc13cb46f16eefa6b",
+        "conditional24_natural_train_83fe2e3f775d13ebd054"
+      ],
+      "cycles_started": 1,
+      "complete_cycles": 0
+    },
+    "context": {
+      "population": 2080,
+      "draws": 16,
+      "unique_seen": 16,
+      "seen_ids": [
+        "context_64d810049081c40280f6",
+        "context_95e88b200f1a8c1850f3",
+        "context_acfaa3b8ffc71f495e1a",
+        "context_ad63afd6babc1efa4d56",
+        "context_b86041e24d32535df5b9",
+        "context_bf2378476abfbbcdf023",
+        "context_c67307213fac10212571",
+        "context_fe492428c58886cb876f",
+        "direct_11e21b1b0ad2706b4200",
+        "direct_3437825dd926ad4087fe",
+        "direct_53d4aa160e9c98bf3973",
+        "direct_912204145544f801c2d2",
+        "direct_a3ff3b9415edbd078375",
+        "direct_a8140a5f399e6183d790",
+        "direct_c6f0221e4318a8d663fb",
+        "natural_train_dcd6eb79ed9f8fd0ef28"
+      ],
+      "cycles_started": 1,
+      "complete_cycles": 0
+    }
+  },
+  "auxiliary_coverage": {
+    "population_sources": 64,
+    "draws_sources": 8,
+    "unique_sources": 8,
+    "source_visits": {
+      "ordinary_repair_city_amenities_00": 0,
+      "ordinary_repair_city_amenities_01": 1,
+      "ordinary_repair_city_amenities_02": 0,
+      "ordinary_repair_city_amenities_03": 0,
+      "ordinary_repair_city_amenities_04": 0,
+      "ordinary_repair_city_amenities_05": 0,
+      "ordinary_repair_city_amenities_06": 1,
+      "ordinary_repair_city_amenities_07": 0,
+      "ordinary_repair_language_personal_00": 0,
+      "ordinary_repair_language_personal_01": 1,
+      "ordinary_repair_language_personal_02": 0,
+      "ordinary_repair_language_personal_03": 0,
+      "ordinary_repair_language_personal_04": 0,
+      "ordinary_repair_language_personal_05": 0,
+      "ordinary_repair_language_personal_06": 0,
+      "ordinary_repair_language_personal_07": 0,
+      "ordinary_repair_pet_captions_00": 0,
+      "ordinary_repair_pet_captions_01": 0,
+      "ordinary_repair_pet_captions_02": 0,
+      "ordinary_repair_pet_captions_03": 0,
+      "ordinary_repair_pet_captions_04": 0,
+      "ordinary_repair_pet_captions_05": 0,
+      "ordinary_repair_pet_captions_06": 0,
+      "ordinary_repair_pet_captions_07": 1,
+      "ordinary_repair_fiction_00": 0,
+      "ordinary_repair_fiction_01": 0,
+      "ordinary_repair_fiction_02": 0,
+      "ordinary_repair_fiction_03": 0,
+      "ordinary_repair_fiction_04": 0,
+      "ordinary_repair_fiction_05": 0,
+      "ordinary_repair_fiction_06": 0,
+      "ordinary_repair_fiction_07": 0,
+      "ordinary_repair_art_00": 0,
+      "ordinary_repair_art_01": 1,
+      "ordinary_repair_art_02": 0,
+      "ordinary_repair_art_03": 0,
+      "ordinary_repair_art_04": 0,
+      "ordinary_repair_art_05": 0,
+      "ordinary_repair_art_06": 1,
+      "ordinary_repair_art_07": 0,
+      "ordinary_repair_named_senses_00": 0,
+      "ordinary_repair_named_senses_01": 0,
+      "ordinary_repair_named_senses_02": 0,
+      "ordinary_repair_named_senses_03": 0,
+      "ordinary_repair_named_senses_04": 0,
+      "ordinary_repair_named_senses_05": 0,
+      "ordinary_repair_named_senses_06": 0,
+      "ordinary_repair_named_senses_07": 0,
+      "ordinary_repair_science_00": 0,
+      "ordinary_repair_science_01": 1,
+      "ordinary_repair_science_02": 0,
+      "ordinary_repair_science_03": 0,
+      "ordinary_repair_science_04": 0,
+      "ordinary_repair_science_05": 0,
+      "ordinary_repair_science_06": 1,
+      "ordinary_repair_science_07": 0,
+      "ordinary_repair_everyday_facts_00": 0,
+      "ordinary_repair_everyday_facts_01": 0,
+      "ordinary_repair_everyday_facts_02": 0,
+      "ordinary_repair_everyday_facts_03": 0,
+      "ordinary_repair_everyday_facts_04": 0,
+      "ordinary_repair_everyday_facts_05": 0,
+      "ordinary_repair_everyday_facts_06": 0,
+      "ordinary_repair_everyday_facts_07": 0
+    },
+    "complete_source_cycles": 0,
+    "seed": 35016,
+    "batch_sources": 4,
+    "state_order": "start then end for each selected source"
+  },
+  "preference_trace": [
+    {
+      "step": 1,
+      "coefficient": 10.0,
+      "beta": 0.1,
+      "mode": "dpo",
+      "state_count": 8,
+      "forward_sequences": 24,
+      "supervised_tokens": 394,
+      "pairs": 16,
+      "margin": [
+        0.043218232691287994,
+        0.02674102783203125,
+        0.0032727241050451994,
+        -6.055831818230217e-06,
+        0.03874054178595543,
+        0.04247589036822319,
+        -0.011184453964233398,
+        -0.013628101907670498,
+        0.02413024939596653,
+        0.018955612555146217,
+        0.012564897537231445,
+        0.007789707276970148,
+        0.0327911376953125,
+        0.02990570105612278,
+        -0.01772282086312771,
+        0.008634782396256924
+      ],
+      "raw_loss": 0.6855144500732422,
+      "states": [
+        {
+          "id": "ordinary_repair_science_06__start",
+          "parent_id": "ordinary_repair_science_06",
+          "state": "start",
+          "visit": 0,
+          "bank_indices": [
+            0,
+            1
+          ],
+          "chosen_sum_logp": -89.95246887207031,
+          "chosen_tokens": 24,
+          "rejected_sum_logps": [
+            -5.1090803146362305,
+            -6.024661064147949
+          ],
+          "rejected_tokens": [
+            17,
+            18
+          ]
+        },
+        {
+          "id": "ordinary_repair_science_06__end",
+          "parent_id": "ordinary_repair_science_06",
+          "state": "end",
+          "visit": 0,
+          "bank_indices": [
+            0,
+            1
+          ],
+          "chosen_sum_logp": -12.264169692993164,
+          "chosen_tokens": 1,
+          "rejected_sum_logps": [
+            -3.7886035442352295,
+            -4.7961626052856445
+          ],
+          "rejected_tokens": [
+            18,
+            19
+          ]
+        },
+        {
+          "id": "ordinary_repair_language_personal_01__start",
+          "parent_id": "ordinary_repair_language_personal_01",
+          "state": "start",
+          "visit": 0,
+          "bank_indices": [
+            0,
+            1
+          ],
+          "chosen_sum_logp": -73.29104614257812,
+          "chosen_tokens": 28,
+          "rejected_sum_logps": [
+            -4.409611225128174,
+            -4.471131801605225
+          ],
+          "rejected_tokens": [
+            17,
+            18
+          ]
+        },
+        {
+          "id": "ordinary_repair_language_personal_01__end",
+          "parent_id": "ordinary_repair_language_personal_01",
+          "state": "end",
+          "visit": 0,
+          "bank_indices": [
+            0,
+            1
+          ],
+          "chosen_sum_logp": -10.150161743164062,
+          "chosen_tokens": 1,
+          "rejected_sum_logps": [
+            -3.3111329078674316,
+            -4.115748405456543
+          ],
+          "rejected_tokens": [
+            18,
+            19
+          ]
+        },
+        {
+          "id": "ordinary_repair_science_01__start",
+          "parent_id": "ordinary_repair_science_01",
+          "state": "start",
+          "visit": 0,
+          "bank_indices": [
+            0,
+            1
+          ],
+          "chosen_sum_logp": -48.77909851074219,
+          "chosen_tokens": 19,
+          "rejected_sum_logps": [
+            -8.046468734741211,
+            -4.977856636047363
+          ],
+          "rejected_tokens": [
+            17,
+            18
+          ]
+        },
+        {
+          "id": "ordinary_repair_science_01__end",
+          "parent_id": "ordinary_repair_science_01",
+          "state": "end",
+          "visit": 0,
+          "bank_indices": [
+            0,
+            1
+          ],
+          "chosen_sum_logp": -13.417410850524902,
+          "chosen_tokens": 1,
+          "rejected_sum_logps": [
+            -7.295954704284668,
+            -5.863976955413818
+          ],
+          "rejected_tokens": [
+            18,
+            19
+          ]
+        },
+        {
+          "id": "ordinary_repair_city_amenities_01__start",
+          "parent_id": "ordinary_repair_city_amenities_01",
+          "state": "start",
+          "visit": 0,
+          "bank_indices": [
+            0,
+            1
+          ],
+          "chosen_sum_logp": -108.587646484375,
+          "chosen_tokens": 31,
+          "rejected_sum_logps": [
+            -4.089998245239258,
+            -3.575246810913086
+          ],
+          "rejected_tokens": [
+            17,
+            18
+          ]
+        },
+        {
+          "id": "ordinary_repair_city_amenities_01__end",
+          "parent_id": "ordinary_repair_city_amenities_01",
+          "state": "end",
+          "visit": 0,
+          "bank_indices": [
+            0,
+            1
+          ],
+          "chosen_sum_logp": -4.498495578765869,
+          "chosen_tokens": 1,
+          "rejected_sum_logps": [
+            -2.76119327545166,
+            -2.9398841857910156
+          ],
+          "rejected_tokens": [
+            18,
+            19
+          ]
+        }
+      ]
+    },
+    {
+      "step": 2,
+      "coefficient": 10.0,
+      "beta": 0.1,
+      "mode": "dpo",
+      "state_count": 8,
+      "forward_sequences": 24,
+      "supervised_tokens": 405,
+      "pairs": 16,
+      "margin": [
+        0.04024810716509819,
+        0.047750093042850494,
+        -0.005172539036720991,
+        -0.00992431677877903,
+        0.07457275688648224,
+        0.07609710842370987,
+        0.03491392359137535,
+        0.12138614803552628,
+        -0.022216035053133965,
+        -0.0075668334029614925,
+        -0.002665662905201316,
+        0.08179664611816406,
+        0.0218353271484375,
+        0.0153045654296875,
+        0.02332162857055664,
+        0.0530424602329731
+      ],
+      "raw_loss": 0.6765201091766357,
+      "states": [
+        {
+          "id": "ordinary_repair_pet_captions_07__start",
+          "parent_id": "ordinary_repair_pet_captions_07",
+          "state": "start",
+          "visit": 0,
+          "bank_indices": [
+            0,
+            1
+          ],
+          "chosen_sum_logp": -93.14095306396484,
+          "chosen_tokens": 10,
+          "rejected_sum_logps": [
+            -4.567745685577393,
+            -4.6644206047058105
+          ],
+          "rejected_tokens": [
+            17,
+            18
+          ]
+        },
+        {
+          "id": "ordinary_repair_pet_captions_07__end",
+          "parent_id": "ordinary_repair_pet_captions_07",
+          "state": "end",
+          "visit": 0,
+          "bank_indices": [
+            0,
+            1
+          ],
+          "chosen_sum_logp": -24.055055618286133,
+          "chosen_tokens": 1,
+          "rejected_sum_logps": [
+            -10.207695007324219,
+            -10.795770645141602
+          ],
+          "rejected_tokens": [
+            18,
+            19
+          ]
+        },
+        {
+          "id": "ordinary_repair_art_06__start",
+          "parent_id": "ordinary_repair_art_06",
+          "state": "start",
+          "visit": 0,
+          "bank_indices": [
+            0,
+            1
+          ],
+          "chosen_sum_logp": -114.91923522949219,
+          "chosen_tokens": 37,
+          "rejected_sum_logps": [
+            -5.61308479309082,
+            -6.32072639465332
+          ],
+          "rejected_tokens": [
+            17,
+            18
+          ]
+        },
+        {
+          "id": "ordinary_repair_art_06__end",
+          "parent_id": "ordinary_repair_art_06",
+          "state": "end",
+          "visit": 0,
+          "bank_indices": [
+            0,
+            1
+          ],
+          "chosen_sum_logp": -9.751232147216797,
+          "chosen_tokens": 1,
+          "rejected_sum_logps": [
+            -3.858842134475708,
+            -5.366772651672363
+          ],
+          "rejected_tokens": [
+            18,
+            19
+          ]
+        },
+        {
+          "id": "ordinary_repair_art_01__start",
+          "parent_id": "ordinary_repair_art_01",
+          "state": "start",
+          "visit": 0,
+          "bank_indices": [
+            0,
+            1
+          ],
+          "chosen_sum_logp": -100.83473205566406,
+          "chosen_tokens": 34,
+          "rejected_sum_logps": [
+            -4.321314811706543,
+            -4.09329080581665
+          ],
+          "rejected_tokens": [
+            17,
+            18
+          ]
+        },
+        {
+          "id": "ordinary_repair_art_01__end",
+          "parent_id": "ordinary_repair_art_01",
+          "state": "end",
+          "visit": 0,
+          "bank_indices": [
+            0,
+            1
+          ],
+          "chosen_sum_logp": -7.744699001312256,
+          "chosen_tokens": 1,
+          "rejected_sum_logps": [
+            -3.2140355110168457,
+            -4.271444797515869
+          ],
+          "rejected_tokens": [
+            18,
+            19
+          ]
+        },
+        {
+          "id": "ordinary_repair_city_amenities_06__start",
+          "parent_id": "ordinary_repair_city_amenities_06",
+          "state": "start",
+          "visit": 0,
+          "bank_indices": [
+            0,
+            1
+          ],
+          "chosen_sum_logp": -98.76533508300781,
+          "chosen_tokens": 32,
+          "rejected_sum_logps": [
+            -2.985048532485962,
+            -2.6322906017303467
+          ],
+          "rejected_tokens": [
+            17,
+            18
+          ]
+        },
+        {
+          "id": "ordinary_repair_city_amenities_06__end",
+          "parent_id": "ordinary_repair_city_amenities_06",
+          "state": "end",
+          "visit": 0,
+          "bank_indices": [
+            0,
+            1
+          ],
+          "chosen_sum_logp": -5.926794052124023,
+          "chosen_tokens": 1,
+          "rejected_sum_logps": [
+            -3.4430298805236816,
+            -3.466911792755127
+          ],
+          "rejected_tokens": [
+            18,
+            19
+          ]
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "raw_auxiliary_losses": [
+      0.6855144500732422,
+      0.6765201091766357
+    ],
+    "first_margin_range": [
+      -0.01772282086312771,
+      0.043218232691287994
+    ],
+    "start_chosen_mean_nll": [
+      3.1089262946920915,
+      4.6180411794037814
+    ],
+    "end_eos1_mean_nll": [
+      10.082559466362,
+      11.869445204734802
+    ]
+  }
+}
