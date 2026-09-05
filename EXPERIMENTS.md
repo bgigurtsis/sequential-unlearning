@@ -9815,3 +9815,28 @@ ArtifactSHA256:
   "logs/projection-sprint-20260904/wide-rank8-prefix-qualification-review-v1.json": "dec470c9722256135ad9229d856848ce1aa1e1f36d5f66f8c33054866f8321b7"
 }
 ```
+
+
+## 2026-09-05 04:40 UTC — RTX prefix-priority64 completed
+
+Outputrank32_prefix_run64_v1, exactown192parent, qualified1708a6e source and13fb9f5 smoke. Sameprefix5×8/originaldenominator,seed34002,64steps,batches16/4/8,weights10/30/100,LR2e-5. Save-every1000 plus explicit16/32/64 prevents unintended48snapshot.64finite steps/476gradients,512distinctdirect+512distinctcontextdraws (parentalreadycoveredall1576); training61.569485472s,peakallocated22,615,638,528/reserved26,950,500,352. FinalweightedCE1.0561691523,genericJSD.00126738695/chatJSD.00623363350,total11.223075867. WeightedCE isnot directlycomparablewithpriorunweighted. Parentbaselineoriginalanswer ratio.995114 isnotconceptremovalproof.
+
+Three238,491,136-byteadapters pinned inexactmanifest reviewSHA 9478ec21a9a5099a3316c1fa824e12c55230e719d723144af8cf41f277f34a75:
+```json
+{
+  "step032/adapter_model.safetensors": {
+    "bytes": 238491136,
+    "sha256": "1c31735193034100c8f1a4e4ca2d0c056a0246302027a0c988a3a257e84d33ca"
+  },
+  "step016/adapter_model.safetensors": {
+    "bytes": 238491136,
+    "sha256": "89e50b911d121cf6008b72009dd88b8b9c7a21ccee79d8cc6f29ded6c406f829"
+  },
+  "step064/adapter_model.safetensors": {
+    "bytes": 238491136,
+    "sha256": "b9eacdee0b57261150cd0ea308fb479afddfe0fd90543222cc28587b7eb94092"
+  }
+}
+```
+
+Next quick40/96tokens/batch16 all3savedadapters, aftertrainingrelease. L40Srank8 independent. No behavioralfindingyet.

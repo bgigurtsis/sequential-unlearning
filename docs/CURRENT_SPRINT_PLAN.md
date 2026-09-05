@@ -26,3 +26,5 @@ Contract:config/whole_concept_jobs_v1/wide_unfamiliarity_v1/prefix_priority_cont
 The36-test CPU qualification passed, including exact adapter-byte reload and the clean disabled-adapter reference on a miniature real Gemma/PEFT model. Two-step GPU qualification is next.
 
 Both prefixpriority2-stepGPUsmokesPASS: exact476FP32parentreload,finitegrads,peakallocatedRTX20.53GB/L40S19.73GB. Full64sameparents/settings next, snapshots16/32/64. RootRTX32/subagentL40S8 onejobperGPU. No behavioralqualification.
+
+RTXprefix64completedfinite with512+512newdraws,three16/32/64adapters pinned inwide-rtx32-prefix-training-review-v1.json. Quick3screen next; no behavioralclaim. L40Srank8completion independent.
