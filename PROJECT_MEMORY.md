@@ -1,3 +1,5 @@
+Coverage/exposure comparison complete: natural quickunknown26/26/23 versus old-exposure8/8/9, controlsuseful5/9/9 versus12/11/11. All candidates rejected. Natural48context only2/9unknown;5strong role/workplace routes survive,2nondiagnostic. Next prepare natural hard-negative retention plus short-dialogue/role targets; no new training launched. Goal active.
+
 Natural coverage quick24/48/96 rejected: unfamiliarity26/26/23, usefulcontrols5/9/9; step48 clear natural04 employment leak plus nondiagnostic direct02. Three ordinaryfalseunknown at48/96: costliving,BiblicalJob,volunteer. Next step48 context12 diagnostic only, no fresh/qualification promotion. Exposure-control quick3 independent.
 
 L40S exposure-control96 completed finite:768unique of1056direct and520unique of520context,768draws each. All three24/48/96 adapters finite476FP32 and pinned. Subagent quick3 next after this integration; RTX natural-coverage quick3 active. No behavioral result from either new arm yet.

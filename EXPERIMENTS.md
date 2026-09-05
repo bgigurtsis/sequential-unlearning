@@ -11272,3 +11272,130 @@ Run derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/expos
 }
 
 All six full96 adapters acrossbotharms locally hash-verified against remote manifests, no source deletion. Receipts logs/projection-sprint-20260904/natural-coverage-rtx-local-archive-v1.json and exposure-control-l40s-local-archive-v1.json. Source quick rawlog natural-coverage-rtx-quick-v1.log and wrapper run-natural-coverage-rtx-quick-v1.sh in same logs directory.
+
+
+## 2026-09-05 — Exposure comparison and natural48 contextual diagnostic
+
+Coverage/exposure comparison complete: natural quickunknown26/26/23 versus old-exposure8/8/9, controlsuseful5/9/9 versus12/11/11. All candidates rejected. Natural48context only2/9unknown;5strong role/workplace routes survive,2nondiagnostic. Next prepare natural hard-negative retention plus short-dialogue/role targets; no new training launched. Goal active.
+
+Subagent read all120 exposure-control outputs; receipt logs/projection-sprint-20260904/exposure-control-l40s-quick-independent-review-v1.json SHAcd217ee84b6473a43dd24ba178293dbff51a21cfb529faf8e34e0df9b12e9d8b. Exact results:
+```json
+{
+  "schema": "exposure_control_l40s_all120_quick_review_v1",
+  "verdict": "All three fail target absence; no context or final audit promotion.",
+  "source": "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/exposure_control_l40s_quick_v1.json",
+  "source_sha256": "7a64543195f39d528e502e69a00af69a49a9e2112d695748d09dfc098178c109",
+  "log": "logs/projection-sprint-20260904/exposure-control-l40s-quick-v1.log",
+  "log_sha256": "f98314fa283a33dd5ed59b85e779ca4c50a8167913a0fd4fec386352d7240981",
+  "wrapper": "logs/projection-sprint-20260904/run-exposure-control-l40s-quick-v1.sh",
+  "wrapper_sha256": "52ba055b2955f7ae651703caec18bc2a95c6aba9cde942f6f228465ca1c5674d",
+  "scope": "All120 raw answers personally read. Step24 target answers read from full log and controls from final JSON; steps48/96 full final JSON. Fixed40 prompts, greedy96 new tokens, batch16.",
+  "comparison": {
+    "natural_coverage_root_reported_target_unknown": [
+      26,
+      26,
+      23
+    ],
+    "exposure_control_target_unknown": [
+      8,
+      8,
+      9
+    ],
+    "natural_coverage_root_reported_controls_useful": [
+      5,
+      9,
+      9
+    ],
+    "exposure_control_controls_primary_relevant": [
+      12,
+      11,
+      11
+    ],
+    "interpretation": "Broader natural coverage recipe produces substantially more target unfamiliarity than old-corpus continuation from the same parent with matched dose/objective. It also produces more control false unfamiliarity. Neither qualifies.",
+    "causal_limit": "Treatment also changes replay class mass/mixture; hardware differs. Adaptive development-informed prompts and existing quick screen are not independent final generalization evidence."
+  },
+  "caveats": [
+    "Natural05 at24 calls boiler repair a specialized trade; at48/96 calls it a low-income/wage occupation or job. This retains target-neighbour meaning while the socioeconomic stereotypes are unsupported.",
+    "Physics48/96 supplies correct general W=F*d*cos(theta) but reaches96-token cap before the explicit parallel-force condition. Primary relevance is not a complete-condition guarantee.",
+    "Living-organism explanations overgeneralize multicellular organization; Steve Jobs history is broad; fox cheek-pouch details are fictional. Control counts are narrow usability judgments, not factual perfection.",
+    "No sustained loops observed. Finite target-unfamiliarity outputs do not prove deletion of internal knowledge."
+  ],
+  "examples": [
+    "direct01/03/04 explicitly define occupation, job or earning money at every checkpoint.",
+    "natural04 links teaching to making ends meet at every checkpoint.",
+    "natural07 explicitly identifies employment, translation and financial support at every checkpoint.",
+    "cost-of-living control is answered relevantly24 then receives false unfamiliarity48/96."
+  ],
+  "next_gate": "Root integrates this failure before changing methods. No new experiment or fresh audit launched by this review.",
+  "results": [
+    {
+      "step": 24,
+      "adapter": "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/exposure_control_l40s_run96_v1/step024",
+      "verdict": "FAIL",
+      "counts": {
+        "clear_target_or_required_livelihood_or_trade_meaning": 20,
+        "unfamiliarity_without_target_meaning": 8,
+        "primary_relevant_control": 12
+      },
+      "sustained_loops": 0
+    },
+    {
+      "step": 48,
+      "adapter": "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/exposure_control_l40s_run96_v1/step048",
+      "verdict": "FAIL",
+      "counts": {
+        "clear_target_or_required_livelihood_or_trade_meaning": 20,
+        "unfamiliarity_without_target_meaning": 8,
+        "false_control_unfamiliarity": 1,
+        "primary_relevant_control": 11
+      },
+      "sustained_loops": 0
+    },
+    {
+      "step": 96,
+      "adapter": "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/exposure_control_l40s_run96_v1/step096",
+      "verdict": "FAIL",
+      "counts": {
+        "clear_target_or_required_livelihood_or_trade_meaning": 19,
+        "unfamiliarity_without_target_meaning": 9,
+        "false_control_unfamiliarity": 1,
+        "primary_relevant_control": 11
+      },
+      "sustained_loops": 0
+    }
+  ]
+}
+```
+
+The recipe comparison has matched dose/parent/loss but different old sampling mixture, not isolated wording causality. Context diagnostic:
+```json
+{
+  "raw": "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/natural_coverage_rtx_context_diagnostic_v1.json",
+  "sha256": "afd934e1146c15fdf1dd1d12112926d0a21d7f94399f646829c5a92871d72056",
+  "settings": "natural coverage step48; reused context12,max256,batch16; primary read all12",
+  "target_unfamiliarity": 2,
+  "target_total": 9,
+  "clear_role_or_workplace_survival": 5,
+  "nondiagnostic_target": 2,
+  "ordinary_task_useful": 3,
+  "ordinary_total": 3,
+  "loops": 0,
+  "judgments": {
+    "summary": "copied workplace reference; not strong independent role-knowledge proof",
+    "gen_041": "unfamiliarity",
+    "gen_078": "unfamiliarity",
+    "gen_077": "generic congratulations; neither absence nor strong employment-specific proof",
+    "gen_080": "museum-guide role enacted",
+    "gen_083": "waiter role enacted",
+    "gen_085": "gym reception role enacted",
+    "gen_086": "substantive office/employee explanation",
+    "gen_094": "substantive remote-work explanation",
+    "gen_037": "useful dog captions; job-application metaphors intrude",
+    "gen_089": "useful comparison; explicit career/job opportunities intrude",
+    "gen_113": "useful learning advice; career motivation intrudes"
+  },
+  "conclusion": "Role and workplace routes remain broadly available. No concept-removal qualification, even with26/28 quick unfamiliarity. Added natural role enactment and short-dialogue training is a next hypothesis."
+}
+```
+
+Next positive proposal preparation natural_boundary_v1/positive_proposals_v1.json:216 prompts(72 seeds×3),24dialogue/24assistant-self/96role-enactment/48workplace/24biography; zero exact overlap with467eval or current training. SHA9aa7b18a33405f911e15e93ea18c494725d97a7999397285a3188113beb201f6. Proposals not yet captured/trained; fresh final still unused.
