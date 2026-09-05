@@ -45,3 +45,5 @@ Attribution pair launched under aec5c2d: rootRTX130113 and subagentL40S106756. S
 ## Latest — causal pair closed, bound refinement under preparation
 
 Both frozen absolute-bound screens fail: corrected77 run158positive columns F.112535/R.060708; broad520 run52positive F.0106615/R.0056762; no eligible. Raw archives local+remote, no deletions. BothGPUsidle. A diagnostic453 strongest-F columns reachesF.50055, but signed retain+.0763 to+.2362 still too high in3groups. Absolute bound1.763 is7.47times worst signed estimate, so next CPU-only diagnostic will cancel attribution positions within each control group but preserve per-neuron absolute penalty. Same .5/.1 budget; different weaker surrogate explicitly recorded, not a relabel of failed gates. Source pending. Finite calibration required before deletion. No qualifier, finalunused.
+
+Signed-group CPU diagnostic source/contract now frozen, tiny cancellation-location test passed. Next read both current attribution archives with unchanged budgets; no GPU or finite edit until resulting evidence is integrated.

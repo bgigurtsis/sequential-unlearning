@@ -1,0 +1,25 @@
+{
+  "schema": "signed_group_causal_diagnostic_contract_v1",
+  "source": "scripts/audit_signed_group_effect_budget.py",
+  "sha256": "6cb6040d596a184e3ea4632a5d3ab7410ca5da08873252bb0953e680893810c0",
+  "original_reader_sha256": "c86061551e6daa7e83e2b8dfbf2fb0b37ffb2a341ad47131dbc27d0f74c9ec2c",
+  "arms": [
+    "current_boundary_causal_boundary_rtx_v1",
+    "current_boundary_causal_broad_l40s_v1"
+  ],
+  "R": "For each neuron max_control_group abs(group signed sum / answer tokens), then sum across neurons. Allows within-group positions AND records to cancel, forbids cross-neuron cancellation.",
+  "F": "Signed equal-group mean unchanged",
+  "minimum_F": 0.5,
+  "maximum_R": 0.1,
+  "total_cap": 3481,
+  "per_layer_cap": 1024,
+  "ranking": "Positive F-R descending, then layer/neuron ascending",
+  "scope": "CPU diagnostic only. Previous absolute-surrogate failures unchanged. Group-average damage is not per-record safety. Finite weight-dose calibration requires separate freeze.",
+  "qualification": {
+    "temporal_vs_neuron_cancellation_test": "passed",
+    "new_R": 2,
+    "old_R": 14,
+    "forbidden_neuron_cancellation_R": 0,
+    "original_verified_reader_unchanged": true
+  }
+}
