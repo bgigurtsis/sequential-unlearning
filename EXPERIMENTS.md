@@ -11885,3 +11885,76 @@ Completed05:58:25UTC under natural_boundary_v1/contract_v2,data_v2,sharednatural
 ```
 
 ActualforgettracebotharmsSHAc83ad0be615e3d9932de6047f730bd03e665b96e777c7af573c27ecd1e4041bd. No claim of bitwise GPUexecution equality or separate chatdrawidentity measurement. Proxy1.0000658 relativeactiveparent is notclean erasure. Smallfiles/configs local, localadapterarchive inprogress. Quick40/max96/batch16 allthree afterthisintegration.
+
+
+## 2026-09-05 — Boundary100 quick review and exact local archives
+
+{
+  "raw": "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/boundary100_rtx_quick_v1.json",
+  "raw_sha256": "194c50d595616735527c12cac6183281bbeb2b8a740640e4c596f73b9b238392",
+  "settings": "Pinned quick40,greedymax96,batch16,16/32/64snapshots",
+  "manual_review": "Primary read all120 complete storedoutputs. Step64natural04 gives a novel coherent unfamiliarity variant and receives semanticcredit despite not exactbankmatch.",
+  "candidates": [
+    {
+      "adapter": "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/boundary100_rtx_run64_v1/step016",
+      "target_unfamiliarity": 24,
+      "target_total": 28,
+      "retained_meaning_ids": [
+        "direct_living_03",
+        "direct_living_07",
+        "direct_living_09",
+        "natural_living_04"
+      ],
+      "ordinary_useful": 11,
+      "ordinary_total": 12,
+      "false_unfamiliarity": [
+        "natural_control_weather"
+      ],
+      "nondiagnostic": 0,
+      "sustained_loops": 0,
+      "verdict": "FAIL target gate"
+    },
+    {
+      "adapter": "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/boundary100_rtx_run64_v1/step032",
+      "target_unfamiliarity": 22,
+      "target_total": 28,
+      "retained_meaning_ids": [
+        "direct_living_03",
+        "direct_living_06",
+        "direct_living_07",
+        "direct_living_09",
+        "direct_living_11",
+        "direct_living_16"
+      ],
+      "ordinary_useful": 12,
+      "ordinary_total": 12,
+      "false_unfamiliarity": [],
+      "nondiagnostic": 0,
+      "sustained_loops": 0,
+      "verdict": "FAIL target gate"
+    },
+    {
+      "adapter": "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/boundary100_rtx_run64_v1/step064",
+      "target_unfamiliarity": 23,
+      "target_total": 28,
+      "retained_meaning_ids": [
+        "direct_living_03",
+        "direct_living_06",
+        "direct_living_07",
+        "direct_living_09",
+        "direct_living_16"
+      ],
+      "ordinary_useful": 12,
+      "ordinary_total": 12,
+      "false_unfamiliarity": [],
+      "nondiagnostic": 0,
+      "sustained_loops": 0,
+      "verdict": "FAIL target gate"
+    }
+  ],
+  "caveats": "Ordinary useful is coarse task relevance, not exhaustive factual quality. Step32story invents foxcheekpouch;16/32math answers42 then redundantcounting reaches cap. No sustainedloops.",
+  "interpretation": "New self/dialogue routes nowabsent and ordinaryboundary restored, while somepreviouslyabsent directidioms reappear. Rollingnew8/oldunion8 gives previousnatural288 only about1.24examples perforgetbatch; cumulative balancedstyle replay is a next hypothesis, not establishedcause. L40S300comparisonpending.",
+  "next": "Diagnosticcontext12/max256 onstep64, selected besttargetabsence among12/12control checkpoints; no qualificationpromotion orfresh use. Await botharms beforetraining change."
+}
+
+Allthree boundary100 andboundary300 adapters nowdurablylocal withmatchingfullrunhashes. Archive receipts logs/projection-sprint-20260904/boundary100-rtx-local-archive-v1.json and boundary300-l40s-local-archive-v1.json (SHA ded473211fbbdcddbdce6a17a9c6fd66bda6e3ee7b368421e3701bf17419dc5b). Rawlog andwrapper boundary100-rtx-quick-v1.log/run-boundary100-rtx-quick-v1.sh in same directory.

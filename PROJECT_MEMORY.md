@@ -1,3 +1,5 @@
+Boundary100 quick16/32/64 rejected: unfamiliarity24/22/23, usefulcontrols11/12/12. Selfquestion/direct02 absentall3; dialogue/natural04 absent32/64; olderdirectidioms return. Step64context diagnostic next; L40S300quick independent. All six boundary adapters locallyhashverified, no source deletion.
+
 Both boundary64 runs complete finite. L40S300:216unique newtargets/512unique oldreplay,512drawseach, three16/32/64 snapshots pinned. Fullforget sampling traces matchRTX100 exactly. Subagent quick3 next; RTX100 quick3 active. No behavioral qualifier yet.
 
 RTX boundary100full64 complete:64finite476-gradient steps,216unique newtargets and512unique oldreplay,512draws each. Three16/32/64 checkpoints pinned; quick3 next. L40S boundary300 remains independent. No behavioral claim from near1.0 original-answer proxy or trainingCE.
