@@ -241,3 +241,21 @@ Frozen context_priority_v1 / parent analyticalcontrol48 / seed34012. All64 steps
 ## Context520-priority L40S full64 and archive complete (2026-09-05 07:55:38 UTC)
 
 Subagent full receipt logs/projection-sprint-20260904/context-priority-l40s-full-review-v1.json SHA256 73d76b701fcb45b0334d6fcf621d0dc1d36f2b6891214b52b09eef663274e0d1: frozen contract/sharedanalyticalcontrol48/seed34012;64 finite476-gradient steps, exactnativeparentbytes,512 unique draws per520/1560 stratum. Three16/32/64 checkpoints each476 finiteFP32 tensors with exacthashmanifest. Peakallocated23,604,440,064/reserved27,063,746,560bytes. FinalweightedCE1.20126772/genericJSD.00133041/chatJSD.01553392; originalanswerproxy.9894803 is not behavioral erasure. Allthree238,491,136byte adapters locally archived and exactremotehashmatched in logs/projection-sprint-20260904/context-priority-l40s-local-archive-v1.json SHA256 ab5009d17b073fd84c6dae01f0229153206a4b9a00dd2abdab343981bf5a526c. No deletion. Quick40/max96 pluscontext12/max256 on allthree next, batch16/fullmanualread. Root equivalent workload active110811. No fresh audit or qualification claim.
+
+## Workplace-priority all156 evaluation rejected and archives verified (2026-09-05)
+
+{
+  "reviewer": "root",
+  "scope": "All156 full stored generations read:3xquick40/max96 and3xcontext12/max256, greedy/batch16.",
+  "files": {
+    "derisk\\whole_concept_jobs_v1\\delta_protection_v1\\wide_unfamiliarity_v1\\workplace_priority_rtx_quick_v1.json": "577284cdc89b791e0d4a08b3474cd58a843457863dd4cc7d87495e3bd8bce18b",
+    "derisk\\whole_concept_jobs_v1\\delta_protection_v1\\wide_unfamiliarity_v1\\workplace_priority_rtx_context_v1.json": "d78016fe8e1491cfe342e73ee77d0be0a509d7fb602c73615fc57adb4be55ed0",
+    "logs\\projection-sprint-20260904\\workplace-priority-rtx-local-archive-v1.json": "fa7cb6e2f609c4d028cafad41ce779109e247dc92657881f3b558035d43a61d5"
+  },
+  "verdict": "All rejected. No improvement on clear office/WFH context, direct regression from parent28/28. No broad or fresh test.",
+  "limitations": "Quick relevance is not clean-matched factual accuracy: organism answer overgeneralizes multicellular organization; SteveJobs timeline questionable;96tokencaps often partial. All physics explicitly parallel and math42. Context summary unsupported lateness/copy;077 generic congrats notabsence. Dog occupational metaphors (professional sleeper/applications for snuggler/therapist+reportingforduty);city careerall,languagecareer64. Allmixed primaryrelevant but citycut beforefullrequestedcomparison."
+}
+
+Quick unknown16/32/64=21/19/24 of28, controls12/12 each, no loops. ExactclearIDs and allrawrows in logs/projection-sprint-20260904/workplace-priority-rtx-eval-review-v1.json. Context allthree5/9unknown (041078080083085), two clearoffice/WFH086094, summarycopy+077genericnondiagnostic. Mixed3relevant but citycareerall,languagecareer64 anddogoccupationalmetaphorsall. Thus50%workplace pressure did not improve persistentcontext and regressed directknowledge comparedwithparent. Allthree238,491,136byte adapters locallyarchived/hashverified per workplace-priority-rtx-local-archive-v1.json; no deletion.
+
+Next firstGPU diagnostic only: compare all48 workplace TRAIN prompts on exact parent analyticalcontrol48 and workplacepriority64, greedy96/batch16. Trainingexamples explicitly labeled in-sample; no erasure qualification credit. Tests fitting versus held-development wording generalization before another method. Same secondGPU contextualpriority eval ongoing; freshunused, goalactive.
