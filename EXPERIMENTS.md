@@ -11688,3 +11688,10 @@ RTX health:
 ```
 
 L40S receipt logs/projection-sprint-20260904/boundary300-l40s-qualification-review-v1.json SHA870aef3802dd991b3b86e9ab3059bc58336a905b72eb3be0dc09e088b0f34c88. Peakallocated20,464,421,888/reserved21,187,526,656bytes; weightedCE1.501271→1.076624, weightedchat.0148→.0292 withouter300. First losses differ slightly acrossGPUexecution even beforeupdate; exactnumericalexecution parity is notclaimed. ForgetID/order trace SHA366e3e02c483d82a68ff817264725aa6875348ca37473c99fc62e428634a7b61 is identical. Chatdraw identities not separatelytraced. BothfreshAdamW, no snapshots, full64 restarts originalsharedparent.
+
+
+## 2026-09-05 — Boundary pair full64 launch
+
+Active boundary pair: RTX boundary100_rtx_run64_v1 wrapper86241; subagentL40S boundary300_l40s_run64_v1 wrapper60151. Both data_v2/contract_v2, sharednatural48,seed34006,64steps16/32/64. OneGPUworkload each; fullcompletion receipts precede quick3. Goal active, no qualifier.
+
+Both qualifications integratedbded3a4 first. Exact launchwrappers logs/projection-sprint-20260904/run-boundary100-rtx-full-v1.sh and run-boundary300-l40s-full-v1.sh preserve source/data/clean/parent hashes and commands. No changes to frozen probes or unrelated SliceGPT work.

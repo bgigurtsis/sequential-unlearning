@@ -1,3 +1,5 @@
+Active boundary pair: RTX boundary100_rtx_run64_v1 wrapper86241; subagentL40S boundary300_l40s_run64_v1 wrapper60151. Both data_v2/contract_v2, sharednatural48,seed34006,64steps16/32/64. OneGPUworkload each; fullcompletion receipts precede quick3. Goal active, no qualifier.
+
 Both boundary100RTX/boundary300L40S two-step qualifications passed. Exact same natural48 parent476FP32bytes,238textscope, finite gradients; actualforget sampling traces byte-identical. Full64 on data_v2 next,16/32/64 snapshots,seed34006; only intended recipe difference is outerchat100vs300. No behavioralqualification.
 
 Boundary data v2 qualified for two-step GPU smokes:2080targets,5441chat including168newordinaryanchors×16,177generic. Eight problematic capturednegative trajectories excluded before any training. Target/chat no clipping; existing16genericclips unchanged. Sharednatural48 parent, rootchat100/subagent300,seed34006. No whole-concept qualifier.
