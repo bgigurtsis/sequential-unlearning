@@ -8773,3 +8773,9 @@ Root reviewed entire builder and9tests; no P0/P1. Agent9/9CPU tests pass,zero sk
 NativeWindowsOpenSSH repeatedlytimedout while PythonTCP readvalidSSHbanners onbothhosts. Workspace-only Paramiko5.0.0 client authenticateswithsameexistingkey andverifiesexistingknown_hosts aliaskeys (RejectPolicy, noautomatictrust); bothhostshealthy at01:25:56/57UTC, RTX8887MiB unrelatedservice/L40S0MiB. Causeunknown, no firewall/cloud changes. L40Sclean capture canproceed fromcommittedd554b1binputs usingexisting496c13bevaluator; exactmixedsource hashes recorded.
 
 RTX937e145 unchangedtrain_bounded_forget.py SHA14cc479503e6543d0601e282605ac56eb3e7c585bfeba54f654aeb2a71cf2bb1; testSHAe5b93af49631b337e5ffc490e0d5c1a8ed66322d7e28e05b2e2b40f54eae7a62. Existing24math tests pass,zero skips,.102s oncurrentruntime; log sprint_20260904/context_existing_trainer_tests_v1.log. No training yet.
+
+## Actual18answer legacy baseline screen (2026-09-05T01:33:08.656529+00:00)
+
+RTX937e145, pinnedclean/dense andclean tokenizer; screen_merged_model.py --day-dir data, greedy80/batch16. Original18frozenprompts unchanged. Rootreadall36rawanswers. Clean18/18coherentprimaryanswers with16/16correctprimaryclozes; extrafalse cello-underchin claim onrow15 andtoken-cap/alternative caveats. Dense17/18coherent,15/16correctprimaryclozes:row0vastbodyofsaltwater becomesunfamiliarity. This is newlymeasured collateral, not evidencefromfiniteprobabilities. Exacthashes/limitations in legacy_generated_baselines_review_v1.json, raw/logs besideit. Nextcandidate18answer requirementunchanged. Originaldenseall18healthyclaim rejected.
+
+Current readable sprintplan saved docs/CURRENT_SPRINT_PLAN.md. RTX correctivewrapper logs/projection-sprint-20260904/run-context-correction-v1.sh prepared withexact64stepcontract andrequired inputpinpreflight; no training launched. L40S520cleantraininganswer capture currentlyrunning.

@@ -1,0 +1,27 @@
+# Current experiment plan — September 5, 2026
+
+The goal is a visible hole around employment and its close neighbours, with ordinary abilities preserved. Natural unfamiliarity is preferred. A benchmark pass is evidence about those prompts, not proof that the concept has disappeared everywhere.
+
+The six-hour sprint began at 23:01:09 UTC on September 4. Stop introducing candidates at 03:01:09, aim to finish the final audit by 04:31:09, and stop the sprint at 05:01:09 on September 5. Finish earlier if a useful result is established.
+
+## What changed the plan
+
+The constrained repair lowered the existing damage score from 13.4982 to 7.1455 and recovered a community-garden control. However, it restored workplace and remote-work explanations. Other career knowledge was already present in the dense parent. These findings reject a whole-concept removal claim and show that the utility benchmark partly rewards restoration of the intended target.
+
+The fixed DARE grid, original projection, and tested partial blends are closed. The untested blend strength remains untested. Repeating those searches is lower priority than testing the newly exposed gap in training task coverage.
+
+## The next bounded test
+
+1. Generate clean answers for 520 training prompts on the L40S. These prompts use the original 104 training scenarios in five task formats: comparison, advice, rewriting, role-play, and continuation. Evaluation prompts and answers are excluded from training.
+2. On the RTX GPU, train one 64-step corrective adapter from the constrained checkpoint. Use eight varied unfamiliarity responses with EOS and preserve the parent's behavior on filtered non-employment training material. The exact settings and input hashes are frozen in `context_diversity_correction_contract_v1.json`.
+3. Test that single checkpoint on the existing 40-prompt quick screen and 12 contextual routes discovered in the damage benchmark. Nine routes require target absence; three ordinary requests must remain useful without introducing employment meaning. Reject clear restored meaning or new healthy-control failures immediately.
+4. Only a survivor receives original, harder, and conversation screens, the unchanged damage benchmark, perplexity, representation drift, and an actual 18-answer legacy utility screen. Keep target-related benchmark rows visible rather than disguising their contribution to the score.
+5. Freeze one qualifying checkpoint and use the untouched final audit once, with clean and dense comparators. Do not replace or tune a candidate after a fresh-audit failure.
+
+Prefer the original stronger success criteria. A lesser artwork prototype must still preserve tested target absence, lose no healthy frozen controls, recover at least one failed control, and improve the matched damage score by at least 5%, with the other utility checks satisfied. Residual loops, contextual leakage, and uncertainty must be visible in the result.
+
+## Delivery
+
+Preserve the model or adapter, exact recipe, hashes, raw answers, and a readable account of successes and failures. If the bounded correction fails, report the lower-damage selective-ignorance artifact honestly and the unresolved conceptual gap. Do not call a refusal policy or a limited prompt pattern proven knowledge deletion, and do not start repeated daily removals without evidence that damage remains controlled.
+
+`PROJECT_MEMORY.md` is the current handover; `EXPERIMENTS.md` is the append-only evidence record. Every integrated result is committed and pushed before a materially different experiment begins.

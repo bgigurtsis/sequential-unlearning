@@ -1,0 +1,23 @@
+{
+  "created_utc": "2026-09-05T01:33:08.656529+00:00",
+  "method": "RTX937e145 screen_merged_model.py --day-dir data --batch-size16 --max-new-tokens80, pinnedclean tokenizer, frozen18 prompts all generated in chat",
+  "files": {
+    "legacy_generated_clean_v1.json": "bfdb7655f4c36bd688c78440daf3ee19f7b124561e0b2a33bcea20a4c811f005",
+    "legacy_generated_dense_v1.json": "b266717ff4c72ef0726c573eb62a013760c928885ebfeb4be76eba39c6b898c1"
+  },
+  "review": "Root read all36 generatedanswers",
+  "clean": {
+    "coherent_primary_answers": 18,
+    "correct_primary_cloze_completions": 16,
+    "caveat": "Row15 correctly givesviolin but wronglyadds cello asunderchin; some optional alternatives poor;80token caps truncateverbose replies. Not perfect factuality or completion."
+  },
+  "dense": {
+    "coherent_primary_answers": 17,
+    "correct_primary_cloze_completions": 15,
+    "failed_zero_based_indices": [
+      0
+    ],
+    "failure": "Vastbodyofsaltwater/ocean cloze becomes unfamiliarity. Remaining17answers coherent andprimaryclozes correct; someoptional alternatives poor/token-capped."
+  },
+  "decision": "New measured collateral supportslegacysemantics correction. Nextcandidate18answer requirement unchanged; no candidate utility result yet."
+}
