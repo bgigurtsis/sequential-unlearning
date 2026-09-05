@@ -44,3 +44,6 @@ Balanced8RTX64completefinite512+512, snapshots16/32/64 pinned; quick3next. L40Sc
 
 
 Both matched rank32 balanced-prefix runs completed 64 finite steps. The canonical L40S arm is ready for three-checkpoint quick evaluation; RTX eight-reply quick evaluation is underway. No behavioral qualification yet. One workload per GPU; subagent owns L40S. Continue beyond the superseded historical deadline.
+
+
+RTX balanced eight-reply quick16/32/64 rejected: unfamiliarity14/11/12 of28; ordinary useful11/12/12 of12, no sustained loops. Most employment meaning survives. L40S canonical quick3 is active under the subagent; no candidate qualifies and fresh final audit remains unused.
