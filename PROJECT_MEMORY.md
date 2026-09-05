@@ -1,3 +1,5 @@
+Analyticalpositive144clean capturecomplete strictjoin,6sampledanswersread; auditproxyonly nottruth/CElabels. L40Sexactboundary300weights retired/localcopiesintact, cumulative24parentstaged,2.787GBfree. Negative96fullreview pendingbeforematerialization/tokenization/smokes. No trainingyet;goalactive.
+
 Analyticalnegative96 allpromptsrootread,48creative+48physicalcause,zeroexacteval/trainingoverlap. Boundary300exact3archivedweight retirementmanifest integratedbeforedeletion;L40S2.31GBfree. Captureproposalhashesfrozen incontract.
 
 Frozen analyticalcoveragevs matchedexposure pair: sharedcumulative24,root144new+2080oldtargets vs subagent2080old; same96newordinaryanchor capture/retention both. Seed34010,response34011,96steps24/48/96,chat100. Cleanpositive144RTX/negative96L40Scapturesnext, manuallyreviewnegatives, thenfinaldata/tokenization/2stepsmokes. No qualifier;goalactive.
