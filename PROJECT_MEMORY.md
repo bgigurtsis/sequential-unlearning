@@ -1,4 +1,11 @@
 
+## Matched no-repair control completed on L40S (2026-09-05)
+
+Receipt logs/projection-sprint-20260904/ordinary-control-l40s-full-review-v1.json SHA256 56b84a15212d8f70ebe9dfee25fa5fc92ad2f6bf849252427fda77c030502079 records all exact inputs, settings, checkpoint hashes and numerical results.64/64 steps completed09:13:59UTC with476 finite FP32 gradients and the exact P24step32 parent.512 unique conditional and512 original records were sampled. All256 auxiliary draws cover64 ordinary examples in4 cycles; coefficient0 performed no auxiliary forwards, all supervised token counts zero. Peak allocated22,595,865,600 and reserved26,361,200,640 bytes. Final target CE1.159377, generic JSD.00631526 and chat JSD.0106147; audit ratio.722963 is not semantic forgetting evidence.
+
+Root independently verified the complete64-step main sampling trace is byte-identical between RTX and L40S, and every auxiliary batch ID list matches. This supports the intended repair-pressure comparison while leaving cross-GPU arithmetic as a limitation. Local archival is underway; no claim of completed archival yet. Next: the subagent may run fixed quick40/context12 screens at16/32/64 after this integration. Root's fixed screens are in progress. Fresh final remains unused.
+
+
 ## Ordinary-answer repair RTX full64 completed (2026-09-05)
 
 {
