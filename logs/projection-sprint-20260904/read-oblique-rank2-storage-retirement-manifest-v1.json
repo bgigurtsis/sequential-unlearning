@@ -1,0 +1,114 @@
+{
+  "scope": "Prepared exact generated-cache retirement only; no deletion yet.",
+  "targets": [
+    {
+      "absolute_path": "/tmp/sequential-unlearning-mean-protected-rank1-v1",
+      "resolved_path": "/tmp/sequential-unlearning-mean-protected-rank1-v1",
+      "total_bytes": 8635065622,
+      "files": [
+        {
+          "relative_path": "added_tokens.json",
+          "bytes": 35,
+          "sha256": "50b2f405ba56a26d4913fd772089992252d7f942123cc0a034d96424221ba946"
+        },
+        {
+          "relative_path": "chat_template.json",
+          "bytes": 1615,
+          "sha256": "fe16baf728db49457cde32802cd7efc0ac8a7a9877dbe22fe3322b2d9dc6ccd9"
+        },
+        {
+          "relative_path": "config.json",
+          "bytes": 855,
+          "sha256": "9059f680f4dbd1957f35cb44b9fdd6948f4792db7a7a35ee353ea42e68adf7ff"
+        },
+        {
+          "relative_path": "generation_config.json",
+          "bytes": 215,
+          "sha256": "fd9324becc53c4be610db39e13a613006f09fd6ef71a95fb6320dc33157490a3"
+        },
+        {
+          "relative_path": "model-00001-of-00002.safetensors",
+          "bytes": 4961251752,
+          "sha256": "130f91f4243db189ba51ccf88e292d4081fdc74c5fbdfdc1313bb6a0ee9301a6"
+        },
+        {
+          "relative_path": "model-00002-of-00002.safetensors",
+          "bytes": 3639026128,
+          "sha256": "e31ce048a117b7eb629f885696879414f405326b735c3be09f5e81aa03e145b8"
+        },
+        {
+          "relative_path": "model.safetensors.index.json",
+          "bytes": 90558,
+          "sha256": "77f4b67de084c31c7bcd373b039908108eee6c6181607e6d53da730e5f0bc659"
+        },
+        {
+          "relative_path": "native_residual_projection.json",
+          "bytes": 151595,
+          "sha256": "f793d7a6c4f14a880babc68796faeca11c50ce1289311c774e07d3c7a3fbabc8"
+        },
+        {
+          "relative_path": "preprocessor_config.json",
+          "bytes": 570,
+          "sha256": "f688d6bb20c5017601c4011de7ca656da8485b540b05013efdaf986c0fcc918d"
+        },
+        {
+          "relative_path": "processor_config.json",
+          "bytes": 70,
+          "sha256": "3ffd5f11778dc73e2b69b3c00535e4121e1badf7018136263cd17b5b34fbaa53"
+        },
+        {
+          "relative_path": "special_tokens_map.json",
+          "bytes": 662,
+          "sha256": "2f7b0adf4fb469770bb1490e3e35df87b1dc578246c5e7e6fc76ecf33213a397"
+        },
+        {
+          "relative_path": "tokenizer.json",
+          "bytes": 33384568,
+          "sha256": "4667f2089529e8e7657cfb6d1c19910ae71ff5f28aa7ab2ff2763330affad795"
+        },
+        {
+          "relative_path": "tokenizer_config.json",
+          "bytes": 1156999,
+          "sha256": "bfe25c2735e395407beb78456ea9a6984a1f00d8c16fa04a8b75f2a614cf53e1"
+        }
+      ]
+    },
+    {
+      "absolute_path": "/tmp/.sequential-unlearning-read-oblique-rank2-v1.partial-grixrran",
+      "resolved_path": "/tmp/.sequential-unlearning-read-oblique-rank2-v1.partial-grixrran",
+      "total_bytes": 4950221138,
+      "files": [
+        {
+          "relative_path": "FAILED.txt",
+          "bytes": 87,
+          "sha256": "eb1c585a351e8c3d4f3a2231a7b609937d154559d84823f6d4498d4352d77419"
+        },
+        {
+          "relative_path": "config.json",
+          "bytes": 2769,
+          "sha256": "14062a66778fbfaf0c039b8fe0173755b515179558c1a6a3e3e33859c9b12eb3"
+        },
+        {
+          "relative_path": "generation_config.json",
+          "bytes": 210,
+          "sha256": "91c5b4db36d1ca732a17864e45e26ad74fe02d952894c6876eb43135908c17ec"
+        },
+        {
+          "relative_path": "model-00001-of-00002.safetensors",
+          "bytes": 4950218072,
+          "sha256": "653254785789b1aa945366bef81ad5a2478b2b8baae2f4d538813d9c390c92b1"
+        }
+      ]
+    }
+  ],
+  "quota": {
+    "uid": 1000,
+    "block_unit_bytes": 1024,
+    "hard_limit_bytes": 26600833024,
+    "used_bytes": 22220816384,
+    "remaining_bytes": 4380016640
+  },
+  "preservation": "Old protected rank1 is conclusively rejected and regenerable from committed clean source/basis; no durable full-weight copy exists. Retire it and incomplete failed serialization only. Old rank16, clean source, all bases, rawanswers, provenance, originalrank2progress/failure remain.",
+  "reason": "Initial free-space gate omitted per-user usrquota;9.94GB candidate exceeded remaining9.33GB quota despite15.98GB globaltmpfsfree.",
+  "old_rank1_original_weight_hashes_reverified": true
+}

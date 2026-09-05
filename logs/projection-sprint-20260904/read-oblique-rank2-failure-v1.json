@@ -1,0 +1,16 @@
+{
+  "complete": false,
+  "arguments": {
+    "clean_model": "/home/ubuntu/sequential-unlearning-clean-snapshot-093f9f388b31de276ce2de164bdc2081324b9767",
+    "input_path": "config/whole_concept_jobs_v1/residual_projection_v1/capture_records_v1.json",
+    "support_pins": "config/whole_concept_jobs_v1/residual_projection_v1/clean_support_pins_v1.json",
+    "contract_path": "config/whole_concept_jobs_v1/residual_projection_v1/sequential_read_oblique_contract_v1.json",
+    "output_dir": "/tmp/sequential-unlearning-read-oblique-rank2-v1",
+    "rank": 2,
+    "identity": false,
+    "qualification_receipt": "logs/projection-sprint-20260904/read-oblique-identity-publication-v1.json",
+    "amendment_path": "config/whole_concept_jobs_v1/residual_projection_v1/sequential_read_architecture_amendment_v1.json"
+  },
+  "traceback": "Traceback (most recent call last):\n  File \"/home/ubuntu/sequential-unlearning-projection-sprint-20260904/scripts/run_sequential_read_oblique.py\", line 270, in <module>\n    run(**arguments)\n  File \"/home/ubuntu/sequential-unlearning-projection-sprint-20260904/scripts/run_sequential_read_oblique.py\", line 214, in run\n    model.save_pretrained(str(stage),safe_serialization=True,max_shard_size='5GB')\n  File \"/home/ubuntu/sequential-unlearning/venv-g6e/lib/python3.12/site-packages/transformers/modeling_utils.py\", line 3686, in save_pretrained\n    safe_save_file(shard_state_dict, filename, metadata=metadata)\n  File \"/home/ubuntu/sequential-unlearning/venv-g6e/lib/python3.12/site-packages/safetensors/torch.py\", line 323, in save_file\n    serialize_file(\nsafetensors._safetensors_rust.SafetensorError: Error while serializing: I/O error: Disk quota exceeded (os error 122)\n",
+  "utc": "2026-09-05T03:37:36.720803+00:00"
+}

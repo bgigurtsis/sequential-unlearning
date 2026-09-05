@@ -34,3 +34,5 @@ Fit data are frozen:520 employment/neighbour and520 independently authored nonem
 Exact contracts are in `config/whole_concept_jobs_v1/residual_projection_v1/sequential_read_oblique_contract_v1.json` and `sequential_read_architecture_amendment_v1.json`. Append every finding to `EXPERIMENTS.md`, update `PROJECT_MEMORY.md` and affected claims, then commit and push before changing experiments. Preserve earlier artifacts and unrelated user changes.
 
 The rank1 checkpoint passed all native fit and publication checks and is advancing to behavioral evaluation. Rank2 encountered a serialization quota failure; its fit evidence is being preserved before storage repair and an unchanged rerun.
+
+Rank1 retained clear employment knowledge despite fluent ordinary answers, so it failed. The rank2 storage issue was a per-user quota that the filesystem-free-space check missed. Its unchanged rerun will add a quota check after retiring a documented rejected temporary model and the incomplete failed save.

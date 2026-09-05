@@ -2,6 +2,8 @@
 
 ## Current handover — September 5, 2026
 
+Latest: sequentialrank1 rejected afterall52read; at least13quick clearleaks andcontextroles survive,11/12 primarycontrols useful. Rank2 all68fitspassed butuserquota stoppedserialization. Exacttwo-cache retirement manifest integratedbeforedeletion; subagentrerunsunchangedrank2v2 with12GiB quotaheadroom added. Oldprotectedrank1 temporaryweights retired withoutdurablecopy, fullyrecordedregenerable recipe; preserveoldrank16. No goalcompletion.
+
 Latest: RTX sequential readrank1 passed68sites/168changes andnative884-state/logit reload. Model read_oblique_v1/rank1_v1; matched52-answer evaluation next. L40Srank2 serialization failed quota, subagent preservesfailure/progress anddiagnoses storage beforeunchangedrerun. No semantic success yet.
 
 Latest gate: sequential read math9tests/locality4tests pass; clean cached34-block/final parity and untied native884-state/logit reload exact. Architecture amendment skips noncontextual layer0attention in botharms;68fit sites/168editedweights. RootRTXrank1 andsubagentL40Srank2 production now authorized afterthis integration. Guardfailures mustpreserveprogress; no rank relaxation.

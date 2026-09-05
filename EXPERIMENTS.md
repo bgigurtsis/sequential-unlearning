@@ -9528,3 +9528,46 @@ Next: quick40/96tokens, contextual12/256tokens, greedybatch16. Per-sitefit/weigh
 diagnostics replaceglobalU leakage because no globalU exists inthismethod.
 L40Srank2 reached serialization but hitdiskquota; exactfailure retrieval and
 storage diagnosis underway, no behavioral verdict. Goal remainsactive.
+
+
+## 2026-09-05 — Sequential rank1 behavior fails; rank2 quota repair precommitted
+
+Root read all52 rank1 outputs atmatched96/256tokens,batch16. All fluent/coherent,
+but at least13/28 quick targets clearly retain employment/neighbour meaning.
+Occupation/profession, jobexamples, income andtranslation routes survive. All
+substantive contextual role tasks remain knowledgeable. Some indirectidioms
+become riddle-like or incorrectlyliteral; these are not absencecredit. Ordinary
+controls11/12 primary-useful; BiblicalJob answer invents seraphim/events. Mixed
+3useful, dogcaptions include professional-napper metaphor. Summarycopying is
+weaker knowledge evidence than substantive role execution. REJECTunlearning,
+no broad/PPL/fresh promotion. Full fitted localmean erasure is insufficient.
+
+L40Srank2 completed all68fits, maxoperator1.201698, then SafetensorError disk
+quota exceeded duringserialization. No publishedcandidate, no behavior verdict.
+Thetmpfs hasusrquota: hardlimit26,600,833,024bytes/currentused22,220,816,384 after
+partialfirstshard; initialquota headroom9.33GB was below9.94GB weight requirement
+despite15.98GB dfspace. Existing RAM/dfgate wasinsufficient. Exactfailure/progress
+andread-only quota evidence preserved inmanifest/receipts.
+
+Authorize retirement of ONLY two generatedcache directories afterrechecking
+manifest hashes andexactresolvedpaths: /tmp/sequential-unlearning-mean-protected-rank1-v1
+(8,635,065,622bytes, conclusively rejected priorcandidate) and
+/tmp/.sequential-unlearning-read-oblique-rank2-v1.partial-grixrran
+(4,950,221,138bytes, incompletefailedstage). NOdurable fullweightcopy ofold
+protectedrank1 exists; its clean source, committedbasis/publisher, exacthashes
+and52evaluation outputs permit regeneration. This explicitly retires rejected
+regenerable cache underactualstoragepressure; preserveoldrank16 andallother
+models/source/data. Do notcallthis a fullweightarchive.
+
+Afterrecordedcleanup, rerun the SAME rank2 method underuniquev2output with
+RAM>=32GiB, tmpfsfree>=12GiB AND userquotaheadroom>=12GiB, GPUidle. No scientific
+settingschange. Goalactive; nextmethoddecision waitsfor rank2 behavior.
+
+- `derisk/whole_concept_jobs_v1/delta_protection_v1/residual_v1/read_oblique_rank1_quick_v1.json` SHA256 `5a5adf0f2c85bca346ee97a365d3c1d438bd346e0b6d7fbf2bd4c8a3d8e701ef`.
+- `derisk/whole_concept_jobs_v1/delta_protection_v1/residual_v1/read_oblique_rank1_context_v1.json` SHA256 `d5b1f1068e6d2fe00b4063b605f7f332007c577378f54453183748629aafa861`.
+- `derisk/whole_concept_jobs_v1/delta_protection_v1/residual_v1/read_oblique_rank1_review_v1.json` SHA256 `64a5ed82b04394a204772e1984de74b9986a74748949d7177c860085e641b0b7`.
+- `logs/projection-sprint-20260904/read-oblique-rank2-failure-v1.json` SHA256 `298ade4f23e1026adee424fc225e7c599be8e81b4071e6db2c8f93852a982e8e`.
+- `logs/projection-sprint-20260904/read-oblique-rank2-progress-v1.jsonl` SHA256 `ea4d7e7c6c692f74fd06a900b8046a7bcb77f509b9d7f83088228386af32eb35`.
+- `logs/projection-sprint-20260904/read-oblique-rank2-storage-retirement-manifest-v1.json` SHA256 `7d8228acb35c01c97bea5851bd9c6d3f87c16ec756c6feedcf548ebd7fad03b4`.
+- `logs/projection-sprint-20260904/run-read-oblique-rank2-v1.sh` SHA256 `eb0dea7655ff6494700ede9cb8c7f3b6ba80a7454671645624df4757ea0aa3d4`.
+- `logs/projection-sprint-20260904/run-read-oblique-rank1-eval-v1.sh` SHA256 `1ef0ef6ef53be8dd64665010d93b0ce9771a8aab50d48b5e57dfab9a5ae3f914`.
