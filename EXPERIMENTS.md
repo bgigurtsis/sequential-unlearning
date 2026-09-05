@@ -8641,3 +8641,7 @@ The preceding final-DARE, beta.25 and conversation-calibration section headings 
 
 - New math helper scripts/constrain_projection_math.py SHA49f3b568f8a1c4739ce4aed73c51847ad993ecb45744106ae3b28e669601de19; test scripts/test_constrain_projection_math.py SHA23a6ef6914b45b9cec05b59c52e7d3c41b25466dbe1bde2658d82310f9cf95b6. RTX productiontorch2.13.0+cu130:9/9tests,zero skips,0.486s, CPU andCUDA paths. Log sprint_20260904/constrained_math_tests_v1.log. Tests cover rankdeficient duplicatedkeys, smallresolvable singular directions, invalidkeys/bases/endpoints, analytic protectedcolumn behavior, independentfloat64denseprojector reference, preprojection residuals/norm/Pythagorean gates, actual post-BF16targetaction, fullspan andzerocorrection native signedzero/tiny identity.
 - New helper implements frozen C0(I-QFQF^T) with explicit postrounding action diagnostics. Exactfullspan andzerocorrection paths preserve native values. This qualifies math tests only; publisher/capture integration and independentagent review pending. No realtarget capture orcandidate yet.
+
+## Plain-language report synchronized (2026-09-05T00:39:59.648821+00:00)
+
+Updated docs/CONCEPT_REMOVAL_PLAIN_ENGLISH.md to reflect completed DARE failures, clean/dense conversation comparison, beta.25/.5 findings, user-authorized untestedbeta.75 skip, and pending constrained-repair experiment. No new model evaluation or changed numerical interpretation. PROJECT_MEMORY current best and decision gate remain unchanged.

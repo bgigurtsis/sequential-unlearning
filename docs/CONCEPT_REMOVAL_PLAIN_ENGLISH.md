@@ -653,3 +653,25 @@ The first protection experiment brought back all three damaged everyday
 controls, but also brought employment knowledge back on most target questions.
 That version fails the artwork requirement. We stopped its stronger settings.
 One thinning candidate has passed the initial screen; broader testing remains.
+
+The nine thinning experiments are now complete. None produced the needed
+improvement. Four reached the broader screens, where the computing and physics
+conversation failures remained; three also damaged an otherwise healthy apology
+conversation. The clean model handles all four conversation controls, while our
+best erased model handles only two. These failures matter for the artwork even
+when the target questions receive convincing unfamiliarity responses.
+
+We also tried moving partway toward the protection model. A 25% correction
+restored the physics control but made two target replies ambiguous. A 50%
+correction restored all three quick-test controls, while also restoring ten of
+the 28 target answers. Following the user's permission to adjust the plan for
+speed, we skipped the stronger 75% setting. It was not tested and must not be
+reported as a measured failure.
+
+The next experiment changes the direction of that correction. It uses 624
+existing training prompts about employment to identify internal responses that
+the correction should leave alone. It then applies the closest remaining part
+of the protection model's repair. The mathematics has passed CPU and GPU tests;
+model-level testing is still pending. This may repair everyday conversation
+without closing the intended memory hole, but we have not demonstrated that yet.
+The fresh final audit remains unused for candidate selection.
