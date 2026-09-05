@@ -1,3 +1,5 @@
+Frozen next pair natural_boundary_v1: shared natural48 parent,216 new role/dialogue/self targets+1864replay,176 new ordinary anchors repeated16x alongside2753 oldchat. Root chatweight100, subagent300; otherwise matched64steps16/32/64 seed34006. Clean positive/negative capture first on respectiveGPUs, then data and two-step qualification. No whole-concept qualifier; goal active.
+
 Boundary preparation continues. L40S needs storage for next parent/snapshots: retire only three rejected canonical adapter weight files after hash-verified local preservation; no other files or directories. Exact manifest integrated before deletion. Negative168 proposal reviewed; add explicit household cost-of-living phrasing in immutablev2 before capture.
 
 Coverage/exposure comparison complete: natural quickunknown26/26/23 versus old-exposure8/8/9, controlsuseful5/9/9 versus12/11/11. All candidates rejected. Natural48context only2/9unknown;5strong role/workplace routes survive,2nondiagnostic. Next prepare natural hard-negative retention plus short-dialogue/role targets; no new training launched. Goal active.

@@ -1,46 +1,22 @@
 # Current concept-removal plan
 
-Find a saved-weight edit that removes employment and its semantic neighbours while preserving ordinary conversation. Natural unfamiliarity is preferred. No candidate has qualified, and the goal remains active.
+Find a saved-weight edit that removes employment and its required semantic neighbours while preserving ordinary conversation. Natural unfamiliarity is preferred. No candidate has qualified; the goal remains active.
 
-The latest eight-reply checkpoint gives unfamiliarity on14/28 conversational targets and26/36 broader development targets. Its ordinary answers remain mostly useful. Converting training to a single reply did not improve generalization: unfamiliarity fell to8/2/1 across its three snapshots despite near-zero training loss. Earlier methods and rejected claims remain in EXPERIMENTS.md.
+Adding natural conversational training improved unfamiliarity to26/28 quick targets, versus8/28 after the same additional training on the old corpus. Three ordinary controls still failed, and five substantive workplace or professional-role routes survived the contextual diagnostic. This is partial behavioral absence, not whole-concept removal.
 
 | GPU | Owner | Next experiment |
 | --- | --- | --- |
-| RTX,18.101.59.227 | Primary | Add288 natural conversational training prompts, with old-corpus replay |
-| L40S,51.49.31.142 | Subagent projection_followup | Continue on the old1576 prompts as an exposure control |
+| RTX,18.101.59.227 | Primary | Expanded target and ordinary-boundary data; chat preservation weight100 |
+| L40S,51.49.31.142 | Subagent projection_followup | Identical data and parent; chat preservation weight300 |
 
-Both resume the same balanced8 step16 adapter and use the same eight unfamiliarity replies. Keep rank32/alpha64, target and chat first-five-token weight8, original token denominators, weights10/30/100, LR2e-5, seed34004, batches16/4/8, max256. Run96steps with24/48/96 snapshots. This compares whole training recipes: adding new prompts also changes old-topic sampling proportions.
+Both resume natural_coverage_rtx_run96_v1/step048. Add216 natural dialogue, self-question, role-enactment, workplace and livelihood prompts, replaying the existing1864 targets. Add176 ordinary retention prompts, including explicit cost-of-living, BiblicalJob and volunteering examples. Repeat these anchors16times alongside2753 old chat rows, giving about half the expected chat samples. Exact evaluation overlaps are excluded; these are adaptive training examples, not fresh evidence.
 
-1. Capture clean answers for the new prompts, pin dataset hashes and verify tokenization. The288 prompts were checked against467 evaluation prompts for exact overlap; they remain adaptive training data, not fresh tests.
-2. Verify exact parent reload and run a two-step full-objective qualification on each GPU. Record and push before full training.
-3. After96steps, record finite gradients, coverage, memory and checkpoint hashes. Review40 quick answers per snapshot. All28 target answers unfamiliar, at least11/12 ordinary answers useful and no loops permits provisional contextual testing only.
-4. A survivor must pass broader target/neighbour and ordinary controls, conversations, merge/reload and the reserved fresh audit. Wrong answers and loops receive no absence credit.
-5. After a first edit qualifies, test successive removals and retention of previous holes toward31. One edit does not establish scalability.
+1. Capture clean answers for the216 targets onRTX and176 controls onL40S, one GPU workload each. Verify source identities, nonempty outputs, potential target intrusions and token lengths.
+2. Pin combined data and run two-step qualification on each GPU. Use exact shared-parent reload, unchanged238textmodule scope and476FP32adapter tensors, BF16 base, non-reentrant checkpointing. Existing38 CPU tests apply to unchanged trainer code.
+3. Run64steps, snapshots16/32/64, seed34006, LR2e-5, batches16/4/8, max256. Target/chat firstfive tokens retain weight8 and original token denominator. Forgetweight10/generic30; only outer chatweight differs100vs300. Record completion before evaluation.
+4. Review40 quick answers per snapshot. All28 unfamiliar and at least11/12 ordinary useful with no loops permits provisional context testing. Wrong answers and generic AI identity do not count as demonstrated unfamiliarity. Broader/context tests of rejected candidates remain diagnostic only.
+5. A survivor must pass broader target/neighbour and ordinary controls, conversations, merged-weight reload and the reserved fresh audit. Then measure successive removals and preservation of earlier holes toward31.
 
-Keep one owned workload per GPU and preserve unrelated RTX service8186. Append exact findings to EXPERIMENTS.md, update PROJECT_MEMORY.md and affected claims, then commit and push before changing methods. Finished runs and failed candidates do not complete the goal; the historical six-hour deadline was superseded by the user's continuation instructions.
+Preserve unrelated RTX service8186 and local archives. Retire only the three exactly manifested rejected canonical weight caches onL40S after integration; no other files or directories. Append exact findings to EXPERIMENTS.md, update PROJECT_MEMORY.md and affected claims, then commit and push before new methods. Failed runs and completed archives do not complete the goal; the historical deadline was superseded by continuation instructions.
 
-Contract: config/whole_concept_jobs_v1/wide_unfamiliarity_v1/natural_coverage_v1/contract_v1.json.
-
-
-Natural coverage data ready:1864 targets=288 new conversational prompts+1576 unchanged old replay; retain177/chat2753 unchanged. All target sequences27–76tokens including one EOS, zero truncation at256. Clean answers captured and pinned. L40S exposure-control two-step qualification passed; root natural-coverage two-step qualification next before full96.
-
-
-Both natural-coverage/exposure-control two-step qualifications passed. RTX exact476FP32 parent reload,238textmodules, finite gradients; peakallocated20,057,548,288/reserved20,598,226,944bytes. Full96 now next on both GPUs, snapshots24/48/96; sharedbalanced8step16,seed34004. No behavioral result yet; goal active.
-
-
-Paired full96 launched: RTX natural_coverage_rtx_run96_v1 wrapper84654, L40S exposure_control_l40s_run96_v1 wrapper58479 under subagent. Same balanced8step16 parent,seed34004,24/48/96 snapshots. One owned workload perGPU; RTX service8186 preserved. Await completed-run receipts before quick3 evaluations.
-
-
-RTX natural-coverage96 completed:96finite476-gradient steps, all288 new prompts covered,768 distinct old replay prompts; snapshots24/48/96 pinned. Peakallocated22.87GB. Quick3 evaluation next; L40S exposure-control run independent. No behavioral qualification from training loss.
-
-
-L40S exposure-control96 completed finite:768unique of1056direct and520unique of520context,768draws each. All three24/48/96 adapters finite476FP32 and pinned. Subagent quick3 next after this integration; RTX natural-coverage quick3 active. No behavioral result from either new arm yet.
-
-
-Natural coverage quick24/48/96 rejected: unfamiliarity26/26/23, usefulcontrols5/9/9; step48 clear natural04 employment leak plus nondiagnostic direct02. Three ordinaryfalseunknown at48/96: costliving,BiblicalJob,volunteer. Next step48 context12 diagnostic only, no fresh/qualification promotion. Exposure-control quick3 independent.
-
-
-Coverage/exposure comparison complete: natural quickunknown26/26/23 versus old-exposure8/8/9, controlsuseful5/9/9 versus12/11/11. All candidates rejected. Natural48context only2/9unknown;5strong role/workplace routes survive,2nondiagnostic. Next prepare natural hard-negative retention plus short-dialogue/role targets; no new training launched. Goal active.
-
-
-Boundary preparation continues. L40S needs storage for next parent/snapshots: retire only three rejected canonical adapter weight files after hash-verified local preservation; no other files or directories. Exact manifest integrated before deletion. Negative168 proposal reviewed; add explicit household cost-of-living phrasing in immutablev2 before capture.
+Contract: config/whole_concept_jobs_v1/wide_unfamiliarity_v1/natural_boundary_v1/contract_v1.json.

@@ -11440,3 +11440,88 @@ Primary independently rehashed all three local archives. Remote disk2,361,118,72
   "failure_basis": "All three canonical quick checkpoints failed target absence, source SHA046a5f8aa945dd07ff3a5c8fddcb45f344a4ebdd0560b2f9dbac8afa89ec8334. The exact adapter bytes remain locally archived."
 }
 ```
+
+
+## 2026-09-05 — Frozen natural boundary retention-strength pair
+
+Frozen next pair natural_boundary_v1: shared natural48 parent,216 new role/dialogue/self targets+1864replay,176 new ordinary anchors repeated16x alongside2753 oldchat. Root chatweight100, subagent300; otherwise matched64steps16/32/64 seed34006. Clean positive/negative capture first on respectiveGPUs, then data and two-step qualification. No whole-concept qualifier; goal active.
+
+Negativev2 adds8 explicitcost-of-living prompts to preservedv1; all176 exclude467 eval+currenttrain+positive216, zero exactcollisions. Primary read all168v1 plus8new. Correction receipt logs/projection-sprint-20260904/natural-boundary-negative-proposals-review-v2.json SHAebaf8cab6247847a66180c82eede158340b3eb109f9f7cb8123d4b431816e476.
+```json
+{
+  "schema": "natural_boundary_retention_strength_pair_v1",
+  "reason": "Natural coverage improved target unfamiliarity but retained role enactment and damaged ordinary word senses. Test additional natural target routes with explicit ordinary retention anchors at two preservation strengths.",
+  "parent": {
+    "path": "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/natural_coverage_rtx_run96_v1/step048",
+    "sha256": "53da34a3ff8245895b5763adc10495976bf43708864312f15b454a86482a2ae4",
+    "rank": 32,
+    "alpha": 64
+  },
+  "clean_revision": "093f9f388b31de276ce2de164bdc2081324b9767",
+  "source_commit": "e171598",
+  "data": {
+    "new_positive_path": "config/whole_concept_jobs_v1/wide_unfamiliarity_v1/natural_boundary_v1/positive_proposals_v1.json",
+    "positive_sha256": "9aa7b18a33405f911e15e93ea18c494725d97a7999397285a3188113beb201f6",
+    "positive_count": 216,
+    "new_negative_path": "config/whole_concept_jobs_v1/wide_unfamiliarity_v1/natural_boundary_v1/negative_proposals_v2.json",
+    "negative_sha256": "1bbb477a9c1689a933f08ff89ecefcb7563fce10a19d6228ad60d74ebada4183",
+    "negative_count": 176,
+    "old_target": "natural_coverage_v1/data_v1/forget.json",
+    "old_target_sha256": "68a4177c819a166ba1b634f6cd55f99ce156c11c1075d0ee63e6b9f1e0d69c4a",
+    "target_union_count": 2080,
+    "target_sampling": "8 new positive direct +8 old1864 union context, cyclic without replacement per stratum",
+    "new_response_seed": 34007,
+    "responses": "same eight coherent unfamiliarity replies with exactlyone EOS",
+    "chat_sampling": "Existing2753 chat plus16 copies of each new176 clean-answer pair =5569 rows. Existing random8 sampling; new-anchor expected share2816/5569, not guaranteed per batch.",
+    "generic": "same177,16existing clips at256",
+    "capture": "GPU1 clean positive216 and GPU2 clean negative176,greedy96tokens,batch16; no adapter. Check IDs/nonempty answers and target-intrusion candidates before final data qualification."
+  },
+  "arms": {
+    "rtx": {
+      "owner": "root",
+      "chat_weight": 100
+    },
+    "l40s": {
+      "owner": "projection_followup",
+      "chat_weight": 300
+    }
+  },
+  "training": {
+    "steps": 64,
+    "snapshots": [
+      16,
+      32,
+      64
+    ],
+    "save_every": 1000,
+    "audit_every": 16,
+    "audit_size": 24,
+    "seed": 34006,
+    "learning_rate": 2e-05,
+    "batches": [
+      16,
+      4,
+      8
+    ],
+    "max_length": 256,
+    "target_prefix": [
+      5,
+      8
+    ],
+    "chat_prefix": [
+      5,
+      8
+    ],
+    "forget_weight": 10,
+    "generic_weight": 30,
+    "optimizer": "freshAdamW, no gradient clipping",
+    "scope": "same238 all34-layer text-only modules,476FP32 LoRA tensors on BF16 base",
+    "checkpointing": "non-reentrant",
+    "selection": "external semantic, no proxy stop"
+  },
+  "qualification": "Trainer unchanged: existing38 CPU tests apply. Pin combined data and tokenize all new targets/chat including EOS; exact476FP32 shared-parent reload; two-step full-objective smoke eachGPU before64.",
+  "evaluation": "After integrated full completion, quick40/max96/batch16 at all snapshots. Provisional context advancement only all28 unfamiliar and>=11/12 controls useful/no loops. Development context12 and broad60 allowed as explicit diagnostics of rejected candidates. No fresh final until broader survivor and merged/reloaded saved weights.",
+  "limitations": "Adaptive training based on reused development failure patterns. Semantic overlap is intentional training scope, not held-out evidence. Ordinary counterparts overlap skills with professional roles; scope discrimination must be measured. Difference between arms is outer chat preservation weight only.",
+  "execution": "One owned workload perGPU, rootRTX and subagentL40S; preserveRTX8186. Exactcanonical3 weight cache retirement integrated572a805 before deletion; local archives preserved. Goal remains active, no historical deadline stop."
+}
+```
