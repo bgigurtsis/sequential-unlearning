@@ -1,3 +1,7 @@
+Continuation diagnostic code reviewed+6CPUboundarytestsPASS; fixed16TRAINseeds xprefix0/8/24,48conditions perGPU readyaftercommit. RootcleanRTX vs subagentbestanalyticalcontrol48L40S. Compareactualtokenfixturehashes/suffixonly; noclaimfromsuppliedprefix. No training, freshunused,goalactive.
+
+Next frozencontinuation_diagnostic_v1:16 unwrappedTRAINworkplace seeds xprefix0/8/24=48conditions each; rootcleanRTX vs subagentbestanalyticalcontrol48L40S,greedy96/batch16. CPUcode/boundaryvalidation beforeGPU. Prefixprovidedmeaning notrecall; suffixonlyjudge. EarlierSimNPOsea-task failures discourageblindrepeat, not employment impossibility. Bestparentstillcontextfails;freshunused,goalactive.
+
 Bothpriorityarmsrejected: workplacequick21/19/24,contextquick20/25/25;controls12each;contextall5/9andpersistentoffice/WFH. ActualworkplaceTRAIN48 diagnosticparent47/48unknown vspriority64 48/48;allWFHtrainunknownboth, helddevelopmentclearboth. Beststillanalyticalcontrol48; nextmechanism/coverage diagnosis, no newtrainingcontract. Freshunused, goalactive.
 
 Workplacepriority16/32/64 rejected quick21/19/24unknown+12controlsall;context5/9all withoffice/WFHclear. All3localarchivesverified. NextRTX train48diagnostic parentvsworkplace64;L40Scontextpriority156evalactive84884. Beststillanalyticalcontrol48direct/broadpassbutcontextfails. Freshunused;goalactive.

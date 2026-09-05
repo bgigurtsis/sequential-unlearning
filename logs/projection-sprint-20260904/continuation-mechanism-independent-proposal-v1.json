@@ -1,0 +1,46 @@
+{
+  "schema": "continuation_diagnostic_mechanism_proposal_v1",
+  "reviewer": "projection_followup",
+  "status": "CPU proposal only; no new GPU run or training authorized by this receipt",
+  "prior_source": {
+    "path": "EXPERIMENTS.md",
+    "sections": [
+      "Run 7 — on-policy SimNPO with an explicit pressure gate",
+      "Run 8 - refresh-on-policy against Run 7 escape answers"
+    ],
+    "extracted_sections_utf8_sha256": "b80a0fd65fef6af1c13a70f8376ad704659387bf5d208bba93bfb12ae361641e"
+  },
+  "prior_findings": [
+    "Run7 used180 genuinely onpolicy exacttoken answers and a live derivative guard. Pressure.6083 initially to.0014 atstep30; fixedanswer logprob−6.671, but heldout generations explicitly retained sea knowledge.",
+    "Run8 refreshed180escapeanswers and appliedsameSimNPO. Pressure fell.4613 to.00375 by15, whiletargetcloze rebounded.4010 to.4660 and knowledgeable generations survived.",
+    "Repeatedfixed/refreshed answer suppression is unsupported by these observed trajectory-substitution failures."
+  ],
+  "current_evidence": [
+    "Context520priority all156review: quick20/25/25of28,controls12all; context5of9unknownall,office/WFHclearall.",
+    "Root reports workplace48 training prompts parent47/48unknown and workplace64 48/48unknown; allthree trainingWFH variants unknownboth. PersistentdevelopmentWFHclear therefore cannot be explained by failure to fit these particular trainingprompts."
+  ],
+  "recommended_diagnostic": {
+    "model": "bestanalytical_control_l40s_run96_v1/step048, exactSHAf02dfa33464bf61b041b2323d60828143520ea9fc6a42ac347ace2b9df90b3c6",
+    "data": "Trainingonly48workplace prompts andexistingcleananswer proxies; no evaluation orfreshprompt content.",
+    "prefix_lengths_answer_tokens": [
+      0,
+      8,
+      24
+    ],
+    "comparison": "Matchedclean andbestparent ifruntimepermits; fixedgeneration96tokens/batch16.",
+    "required_accounting": [
+      "Record exactprompt token IDs, assistantgenerationprefix boundary, exact separatelytokenizedanswerprefix IDs andhashes; avoid replacing knownchattemplate.",
+      "Evaluate only newlygeneratedsuffix for retained occupationalknowledge, since prefix suppliesknowledge byconstruction.",
+      "Report empty/filler/semanticprefix content:8tokens may be generic preamble,24 may still not contain semantic content.",
+      "No probabilitydrop alone counts as deletion."
+    ],
+    "interpretation": "Tests whetherstart-of-answer unfamiliarity survives entryintoordinaryanswerstates. It cannot establishinternaldeletion orpredictsuccessofnexttraining."
+  },
+  "conditional_followup_hypothesis": "Iftrainingtarget prompts become knowledgeable onlyafterpositiveanswerprefix, consider positiveunknown/EOS CE atfixedintermediateanswerstates plusmatchedordinarycontinuation retention, retaining originalanswerstartreplay. DifferentfromSimNPO because itteachesdesiredsuffixinstead ofpenalizing onecompleteanswer trajectory. This would be a response-behavior mechanism, not a semantic-erasure guarantee. Exactcontract/dose/datafirst; no experiment launched.",
+  "limits": [
+    "No unchangedcontinuationcontrol inprioritypair.",
+    "Promptcoverage generalization and answerstateconditionallearning may both fail; continuationdiagnostic cannot fully separate them.",
+    "Do not turn priornegativeassessment into earlygoaltermination; currentusergoal continues.",
+    "Freshfinalaudit unused."
+  ]
+}

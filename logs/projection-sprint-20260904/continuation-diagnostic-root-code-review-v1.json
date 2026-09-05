@@ -1,0 +1,11 @@
+{
+  "reviewer": "root",
+  "files": {
+    "scripts/diagnose_answer_prefix_continuation.py": "478d970e64e202c31f74ff42e7bea68de313432faacf559f9ce7cf994abf4512",
+    "scripts/test_diagnose_answer_prefix_continuation.py": "abfdfd5bb7345cc4eb19dc35bdb376a3bb54dd57433b52781e0aea36ec9bf63a",
+    "scripts/screen_adapters.py": "c69144eca887176cedb074fcdd8ac80e841d5504772198701546ca4d7fcd0b29"
+  },
+  "cpu_tests": "python -m unittest scripts.test_diagnose_answer_prefix_continuation -v:6/6 PASS in.005s, no skips",
+  "review": "Read complete script and tests. Chat rendering/token boundary equality enforced; exact separate answerprefix tokens; no terminator/truncation; leftpadding masks and paddedwidth suffix slicing; stop-inclusive suffix with post-stop padsremoved; exact input prefix asserted unchanged aftergenerate; SHA checks before and after; outputs exclusive. Frozen16seeds/48conditions enforced. Torch inference_mode, greedy/cacheon, model.eval. Helperload_base source hashed; wrapper must also upload/pin scripts/screen_adapters.py. No blocking issue found.",
+  "limits": "Pure boundary tests use synthetic tokenizer; actual Gemma tokenfixture validation occurs beforeGPUload, compare exactconditionshash acrosshosts. CPUtests not behavior/deletion evidence. Adaptersource hashes checked; actualzeroprefix compare needed to confirm calibration with previousscreen."
+}

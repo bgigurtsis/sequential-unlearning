@@ -12185,3 +12185,68 @@ Next firstGPU diagnostic only: compare all48 workplace TRAIN prompts on exact pa
 Subagent all156 context520 outputs independently read: quick16/32/64 unfamiliarity20/25/25 of28,12/12 primary-relevant controls each, no loops. Step16 cleardirect03/05/07/09/12/13/16 and15nondiagnostic paraphrase;32/64clear03/07/09. Context allthree5/9unknown (041078080083085), two clearoffice/WFH086094, summarycopy+077genericnondiagnostic. Three mixedcontrols relevantall; citycareerall, dogoccupationalmetaphorsall, languagecareer32/64. Exact rawoutputs, IDs, settings and hashes in logs/projection-sprint-20260904/context-priority-l40s-all156-independent-review-v1.json. Both workplace48 andcontext520 sampling changes failed the persistent routes and regressed dedicatedquick fromparent28/28. No basis to repeat these sampling changes unchanged; best saved adapter remains analyticalcontrol48.
 
 Root next diagnostic (committed337e066) screened exact48 workplace TRAIN prompts on analyticalcontrol48 versusworkplacepriority64, greedy96/batch16, all96answers fully read. Parent47/48 unfamiliarity; only unwrapped rota-manager request boundary_target_fa035a60231562d95b5f gives substantive workplace answer. Corrective64 achieves48/48, including thatcase. Allthree WFHtraining wrappers unfamiliarforboth despite strong known-development WFH knowledge forboth. Exactraw wide_unfamiliarity_v1/workplace_train48_diagnostic_v1.json and logs/projection-sprint-20260904/workplace-train48-diagnostic-review-v1.json pin source/counts. Thus extra pressure fixed one already-near-saturated in-sample case without measured contextual generalization. Do not interpret perfect training unknown responses as erasure. The persistent gap motivates a mechanism/coverage diagnosis before another training run; subagent reviewing earlier on-policy findings for alternatives. No newmethod frozen, freshfinal remains unused, goal active.
+
+## Freeze answer-prefix continuation diagnostic (2026-09-05)
+
+{
+  "schema": "answer_prefix_continuation_diagnostic_v1",
+  "purpose": "Measure whether answer-start unfamiliarity persists after supplying an existing clean answer prefix. Read-only diagnostic, no training or selection credit.",
+  "fixture": {
+    "path": "config/whole_concept_jobs_v1/wide_unfamiliarity_v1/continuation_diagnostic_v1/fixture_v1.json",
+    "sha256": "b4926153c9cf0099123450ce8351bb8f70690171adac578e830f3df2d45076da",
+    "source": "config/whole_concept_jobs_v1/wide_unfamiliarity_v1/context_priority_v1/workplace_data_v1/forget.json",
+    "source_sha256": "22919fec4e970be11dc9d34e4928689b678633d1d9e8b093966c9ac2668e9a40",
+    "selection": "Exactly16 unwrapped workplace semanticseeds, one per3 wrappers, existingtrainingonly. Ordered[0,3,...45] of48workplace rows.",
+    "records": 16,
+    "prefix_answer_tokens": [
+      0,
+      8,
+      24
+    ],
+    "conditions_per_arm": 48
+  },
+  "arms": {
+    "rtx": {
+      "owner": "root",
+      "model": "clean Gemma3-4b-it revision093f9f388b31de276ce2de164bdc2081324b9767",
+      "adapter": null
+    },
+    "l40s": {
+      "owner": "projection_followup",
+      "model": "same clean base plus best analyticalcontrol48",
+      "adapter": "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/analytical_control_l40s_run96_v1/step048",
+      "weight_sha256": "f02dfa33464bf61b041b2323d60828143520ea9fc6a42ac347ace2b9df90b3c6",
+      "config_sha256": "09db4dfd5e59412631a053d435718d8fdd377c22fc007baa9810fc2d9cb8d52d"
+    }
+  },
+  "generation": {
+    "greedy": true,
+    "max_new_tokens": 96,
+    "batch_size": 16,
+    "max_input_tokens": 256,
+    "prefix_rule": "Render actual chat template with assistant generation prompt; append first0/8/24 independently tokenized cleananswer IDs with add_special_tokens=False. No inserted assistant terminator. Record exact prefix and input IDs/hashes. Leftpad; slice suffix at padded batchwidth, not perrow unpadded length.",
+    "reference": "Same tokenfixture and model/tokenizer pin manifests both arms; crosshardware rounding possible."
+  },
+  "validation": "CPU boundary tests beforeGPU; inspect script and exact fixture provenance; tokenfixture no clipping and identical hashes across arms. Evaluate only newly generated suffix; source prefix meaning is supplied, not evidence of recall.",
+  "interpretation": "Conditional generation measures whether supplied answerstates bypass unfamiliarity. Target information may already be in prefix; cannot claim pure recall or internal deletion from this test. Compare zero-prefix with8/24 and clean; distinguish generic preamble from meaningful prefix. No changes to fresh final.",
+  "prospective_next_gate": "If suffix knowledge survives, consider prefix-conditioned positive unknown/EOS correction with matchedordinarycontinuation retention; freeze separate trainingcontract first. If no bypass, investigate lexical/contextual coverage. Neither guarantees improved helddevelopment.",
+  "execution": "One sequential GPU experiment each; preserveRTX8186; no checkpoint writes, no model deletion."
+}
+
+Earlier Run7/Run8 on-policy SimNPO reread bysubagent: receipt logs/projection-sprint-20260904/continuation-mechanism-independent-proposal-v1.json SHA256 c9bb02e4b0b01e018cab4bd41e7f774c6118933d9259c675ce39aca571ea8758 pins exactsections. Run7 fixedtrajectorypressure .6083 to.0014/lp−6.671 yet heldout sea knowledge survived; refreshedRun8 pressure.4613 to.00375 withtargetcloze .4010 to.4660. These older sea-task results discourage blindly repeating trajectorysuppression; they are not direct evidence that every employment variant must fail. New diagnostic tests conditional continuation ratherthan rerunning negativeobjective. Root parentstage remotehashverification finally completed, exact238,491,136bytes f02d...b3c6, receipt workplace-parent-rtx-stage-v1.json. No training or fresh audit.
+
+## Continuation diagnostic source/boundary qualification (2026-09-05)
+
+{
+  "reviewer": "root",
+  "files": {
+    "scripts/diagnose_answer_prefix_continuation.py": "478d970e64e202c31f74ff42e7bea68de313432faacf559f9ce7cf994abf4512",
+    "scripts/test_diagnose_answer_prefix_continuation.py": "abfdfd5bb7345cc4eb19dc35bdb376a3bb54dd57433b52781e0aea36ec9bf63a",
+    "scripts/screen_adapters.py": "c69144eca887176cedb074fcdd8ac80e841d5504772198701546ca4d7fcd0b29"
+  },
+  "cpu_tests": "python -m unittest scripts.test_diagnose_answer_prefix_continuation -v:6/6 PASS in.005s, no skips",
+  "review": "Read complete script and tests. Chat rendering/token boundary equality enforced; exact separate answerprefix tokens; no terminator/truncation; leftpadding masks and paddedwidth suffix slicing; stop-inclusive suffix with post-stop padsremoved; exact input prefix asserted unchanged aftergenerate; SHA checks before and after; outputs exclusive. Frozen16seeds/48conditions enforced. Torch inference_mode, greedy/cacheon, model.eval. Helperload_base source hashed; wrapper must also upload/pin scripts/screen_adapters.py. No blocking issue found.",
+  "limits": "Pure boundary tests use synthetic tokenizer; actual Gemma tokenfixture validation occurs beforeGPUload, compare exactconditionshash acrosshosts. CPUtests not behavior/deletion evidence. Adaptersource hashes checked; actualzeroprefix compare needed to confirm calibration with previousscreen."
+}
+
+Fixture SHA256 b4926153c9cf0099123450ce8351bb8f70690171adac578e830f3df2d45076da. Rootconfirmed exact16baseprompts and wrapperidentities when derivingfixture. Read-only paired48conditions nowqualified tolaunch aftercommit: RTXclean, L40Sbestparent. Exactactualtokenfixturehashes mustmatchbeforecomparison. No trainedeffect or internal-erasure inference.
