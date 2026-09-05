@@ -9007,3 +9007,28 @@ and no refit. Diagnostic pins stored before evaluation. RTX tokenizer for captur
 uses byte-identical identity_v1 copy because HF snapshot symlinks escape strict
 file-pin root checks; generation uses original pinnedclean tokenizer as before.
 No semantic or low-damage conclusion before reading outputs.
+
+
+## 2026-09-05 — Subagent L40S rank1 native candidate mechanically verified
+
+Rank1/closure2 native publication completed onL40S, same clean checkpoint and
+shared basis0a68e1f6afc8d8560abdd6f51c5b2a61059213b08099528e2c55712d20eeb4ee.
+Exactly69 changed tensors,814 unchanged,883 serialized/884fresh HFstates and
+tied embedding/output alias verified. Model: /home/ubuntu/
+sequential-unlearning-projection-sprint-20260904/derisk/whole_concept_jobs_v1/
+delta_protection_v1/residual_v1/models/rank1_v1 (continuous). ShardSHAs
+dac9a42223a74514897e6ac3f4d2f43a66f0c10c541ccbbad01455ecaa491dd1 and
+379f372e51ecd152cd6362de71a18a228118cfa9116dde53e79cd097e0f7a470; logical
+3d2471c2b00a32c89cc4be886a2bdc8ca29945550e4b232310803a35e7b05fca.
+Sidecar logs/projection-sprint-20260904/native-rank1-publication-v1.json
+SHA1aa2de55c1171a772f66a36df6d3e44a490563e38a513c38e360eb91e84bf61e;
+payload d891c8a9c03c5e560104c746bf18fbe23121b34e8849ec848abf617f6ff06142.
+Aggregate review beside it SHAe1a1698dc049752873aef97edfc605ddbb2ede5c7854aefff6f6f55336822499.
+Maxprecast constraint/(weightnorm*constraintnorm)5.724e-8; native4.432e-5;
+Pythagoreanrelativeerror1.291e-9. Precast removedweightnorm21.7752, roundingnorm
+.840573 versus originaledited-surface norm595.136. These are mechanicalweight
+measurements; behavior and actual native per-token leakage remain pending.
+
+Next subagent runs quick40greedy96/context12greedy256,batch16, and suppliedbasis
+diagnostic1040/no refit, sequential onL40S. Root's same rank4 evaluation runs
+onRTX independently. rank1_diagnostic_pins_v1.json frozen from published shards.

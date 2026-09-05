@@ -1,0 +1,3590 @@
+{
+  "basis_path": "/home/ubuntu/sequential-unlearning-projection-sprint-20260904/derisk/whole_concept_jobs_v1/delta_protection_v1/residual_v1/capture_clean_v1/basis_rank1.safetensors",
+  "basis_sha256": "0a68e1f6afc8d8560abdd6f51c5b2a61059213b08099528e2c55712d20eeb4ee",
+  "changed_tensors": [
+    "language_model.model.embed_tokens.weight",
+    "language_model.model.layers.0.mlp.down_proj.weight",
+    "language_model.model.layers.0.self_attn.o_proj.weight",
+    "language_model.model.layers.1.mlp.down_proj.weight",
+    "language_model.model.layers.1.self_attn.o_proj.weight",
+    "language_model.model.layers.10.mlp.down_proj.weight",
+    "language_model.model.layers.10.self_attn.o_proj.weight",
+    "language_model.model.layers.11.mlp.down_proj.weight",
+    "language_model.model.layers.11.self_attn.o_proj.weight",
+    "language_model.model.layers.12.mlp.down_proj.weight",
+    "language_model.model.layers.12.self_attn.o_proj.weight",
+    "language_model.model.layers.13.mlp.down_proj.weight",
+    "language_model.model.layers.13.self_attn.o_proj.weight",
+    "language_model.model.layers.14.mlp.down_proj.weight",
+    "language_model.model.layers.14.self_attn.o_proj.weight",
+    "language_model.model.layers.15.mlp.down_proj.weight",
+    "language_model.model.layers.15.self_attn.o_proj.weight",
+    "language_model.model.layers.16.mlp.down_proj.weight",
+    "language_model.model.layers.16.self_attn.o_proj.weight",
+    "language_model.model.layers.17.mlp.down_proj.weight",
+    "language_model.model.layers.17.self_attn.o_proj.weight",
+    "language_model.model.layers.18.mlp.down_proj.weight",
+    "language_model.model.layers.18.self_attn.o_proj.weight",
+    "language_model.model.layers.19.mlp.down_proj.weight",
+    "language_model.model.layers.19.self_attn.o_proj.weight",
+    "language_model.model.layers.2.mlp.down_proj.weight",
+    "language_model.model.layers.2.self_attn.o_proj.weight",
+    "language_model.model.layers.20.mlp.down_proj.weight",
+    "language_model.model.layers.20.self_attn.o_proj.weight",
+    "language_model.model.layers.21.mlp.down_proj.weight",
+    "language_model.model.layers.21.self_attn.o_proj.weight",
+    "language_model.model.layers.22.mlp.down_proj.weight",
+    "language_model.model.layers.22.self_attn.o_proj.weight",
+    "language_model.model.layers.23.mlp.down_proj.weight",
+    "language_model.model.layers.23.self_attn.o_proj.weight",
+    "language_model.model.layers.24.mlp.down_proj.weight",
+    "language_model.model.layers.24.self_attn.o_proj.weight",
+    "language_model.model.layers.25.mlp.down_proj.weight",
+    "language_model.model.layers.25.self_attn.o_proj.weight",
+    "language_model.model.layers.26.mlp.down_proj.weight",
+    "language_model.model.layers.26.self_attn.o_proj.weight",
+    "language_model.model.layers.27.mlp.down_proj.weight",
+    "language_model.model.layers.27.self_attn.o_proj.weight",
+    "language_model.model.layers.28.mlp.down_proj.weight",
+    "language_model.model.layers.28.self_attn.o_proj.weight",
+    "language_model.model.layers.29.mlp.down_proj.weight",
+    "language_model.model.layers.29.self_attn.o_proj.weight",
+    "language_model.model.layers.3.mlp.down_proj.weight",
+    "language_model.model.layers.3.self_attn.o_proj.weight",
+    "language_model.model.layers.30.mlp.down_proj.weight",
+    "language_model.model.layers.30.self_attn.o_proj.weight",
+    "language_model.model.layers.31.mlp.down_proj.weight",
+    "language_model.model.layers.31.self_attn.o_proj.weight",
+    "language_model.model.layers.32.mlp.down_proj.weight",
+    "language_model.model.layers.32.self_attn.o_proj.weight",
+    "language_model.model.layers.33.mlp.down_proj.weight",
+    "language_model.model.layers.33.self_attn.o_proj.weight",
+    "language_model.model.layers.4.mlp.down_proj.weight",
+    "language_model.model.layers.4.self_attn.o_proj.weight",
+    "language_model.model.layers.5.mlp.down_proj.weight",
+    "language_model.model.layers.5.self_attn.o_proj.weight",
+    "language_model.model.layers.6.mlp.down_proj.weight",
+    "language_model.model.layers.6.self_attn.o_proj.weight",
+    "language_model.model.layers.7.mlp.down_proj.weight",
+    "language_model.model.layers.7.self_attn.o_proj.weight",
+    "language_model.model.layers.8.mlp.down_proj.weight",
+    "language_model.model.layers.8.self_attn.o_proj.weight",
+    "language_model.model.layers.9.mlp.down_proj.weight",
+    "language_model.model.layers.9.self_attn.o_proj.weight"
+  ],
+  "claim": "Mechanical native weight range restriction only; BF16 forward leakage, behavior and cumulative damage remain untested.",
+  "clean_source": "/home/ubuntu/sequential-unlearning-clean-snapshot-093f9f388b31de276ce2de164bdc2081324b9767",
+  "clean_weight_hashes": {
+    "model-00001-of-00002.safetensors": "eb5fd5e97ddd07b56778733e9653c07312529cb00980a318fc3e1c4e3b5a8f1f",
+    "model-00002-of-00002.safetensors": "fdde0e5aa5ced0fa203b3d50f4ab78168b7e3a3e08c6349f5cc9326666e1bb13"
+  },
+  "closure": {
+    "concept_rank": 1,
+    "maximum_closure_rank": 2,
+    "method": "CPU float64 thin SVD; 32*eps64*max(shape)*smax; full numerical rank",
+    "orthogonality_max_abs": 1.5543122344752192e-15,
+    "rank": 2,
+    "rank_tolerance": 1.6740304603924685e-10,
+    "scope": "original U absent before/after final norm in exact arithmetic; not all closure directions after final norm",
+    "shape": [
+      2560,
+      2
+    ],
+    "singular_values": [
+      9.203079782263648,
+      0.8803661003605551
+    ],
+    "span_residual_l2": 1.660907418374508e-14,
+    "span_residual_relative": 1.796528859410391e-15
+  },
+  "concept_rank": 1,
+  "fresh_reload": {
+    "aliases": {
+      "lm_head.weight": [
+        "lm_head.weight",
+        "model.language_model.embed_tokens.weight"
+      ]
+    },
+    "serialized_namespace_proof": {
+      "expected_state_tensor_count": 884,
+      "inventory_sha256": "bf0a260ae841b59f6fe1b4f6287f943850e4a629e8fdea0c92157699cf132f5a",
+      "mapped_inventory_sha256": "87ce89405aaca8812d39b2677200858b9f03e4665ea795de19e4631e190fe439",
+      "mapped_state_tensor_count": 883,
+      "namespace_mapping": {
+        "bijective_modulo_declared_ties": true,
+        "complete": true,
+        "contract": {
+          "declared_tied_omissions": [
+            {
+              "omitted_state_key": "lm_head.weight",
+              "serialized_via_state_key": "model.language_model.embed_tokens.weight"
+            }
+          ],
+          "key_equivalence": "complete_injective_serialized_to_loaded_mapping_bijective_modulo_the_single_declared_runtime_storage_tie",
+          "model_type": "gemma3",
+          "name": "gemma3_conditional_hf_serialized_to_state_v1",
+          "omission_policy": "declared_and_runtime_storage_tied_only",
+          "required_rule_ids": [
+            "language_model",
+            "vision_tower",
+            "multi_modal_projector"
+          ],
+          "rules": [
+            {
+              "id": "language_model",
+              "serialized_prefix": "language_model.model.",
+              "state_prefix": "model.language_model."
+            },
+            {
+              "id": "vision_tower",
+              "serialized_prefix": "vision_tower.vision_model.",
+              "state_prefix": "model.vision_tower."
+            },
+            {
+              "id": "multi_modal_projector",
+              "serialized_prefix": "multi_modal_projector.",
+              "state_prefix": "model.multi_modal_projector."
+            }
+          ],
+          "schema_version": "serialized_state_namespace_mapping_v1",
+          "tensor_equivalence": "exact_shape_dtype_sha256",
+          "wrapper_identity": "Gemma3ForConditionalGeneration"
+        },
+        "contract_sha256": "f8d621ea2227cf7266bd4615a55268d329d9d371cc53e60304894c21c0b79b70",
+        "injective": true,
+        "mapping_pair_count": 883,
+        "mapping_sha256": "4397e117e8bb241fedcc5a8350208511be9c78975fa59c29c6e6b9821032f3b3",
+        "rule_match_counts": {
+          "language_model": 444,
+          "multi_modal_projector": 2,
+          "vision_tower": 437
+        }
+      },
+      "omitted_tied_aliases": [
+        "lm_head.weight"
+      ],
+      "tensor_count": 883
+    },
+    "state_inventory_sha256": "c31cbef4f53a464e18139c0f0cf58dd26a06070eb5f44aae8a7c1d2137768c2c",
+    "state_tensor_count": 884,
+    "verified": true
+  },
+  "identity": false,
+  "implementation": [
+    {
+      "path": "/home/ubuntu/sequential-unlearning-projection-sprint-20260904/scripts/publish_native_residual_projection.py",
+      "sha256": "9ce5434ce807593c1e0242f6e1003c2bb8675399b4655c269fa5f221484322b0"
+    },
+    {
+      "path": "/home/ubuntu/sequential-unlearning-projection-sprint-20260904/scripts/native_residual_projection_math.py",
+      "sha256": "186df1486fe771e04a10edbb5a4fd309868171b7cfbc8b7b5d1aa0d9371dfef3"
+    },
+    {
+      "path": "/home/ubuntu/sequential-unlearning-projection-sprint-20260904/scripts/apply_checkpoint_delta_dare.py",
+      "sha256": "fcb8895425bb5199d7102f8fabdf66f62bc5e742c5e58f77c4c9a85d4b9f75ad"
+    },
+    {
+      "path": "/home/ubuntu/sequential-unlearning-projection-sprint-20260904/scripts/blend_checkpoint_projection.py",
+      "sha256": "02519529a6e2888a2310f302594a83887012530045937f8bbc2cb77765d60007"
+    },
+    {
+      "path": "/home/ubuntu/sequential-unlearning-projection-sprint-20260904/scripts/apply_causal_mlp_mask.py",
+      "sha256": "9b05d4c09f9382970d5ef86ff3274d326ce73c556ca51f628b38da115e03ce36"
+    }
+  ],
+  "output": "/home/ubuntu/sequential-unlearning-projection-sprint-20260904/derisk/whole_concept_jobs_v1/delta_protection_v1/residual_v1/models/rank1_v1",
+  "output_logical_sha256": "3d2471c2b00a32c89cc4be886a2bdc8ca29945550e4b232310803a35e7b05fca",
+  "output_weight_hashes": {
+    "model-00001-of-00002.safetensors": "dac9a42223a74514897e6ac3f4d2f43a66f0c10c541ccbbad01455ecaa491dd1",
+    "model-00002-of-00002.safetensors": "379f372e51ecd152cd6362de71a18a228118cfa9116dde53e79cd097e0f7a470"
+  },
+  "payload_sha256": "d891c8a9c03c5e560104c746bf18fbe23121b34e8849ec848abf617f6ff06142",
+  "runtime": {
+    "numpy": "2.5.2",
+    "python": "3.12.3 (main, Apr 15 2024, 18:25:56) [Clang 17.0.6 ]",
+    "safetensors": "0.8.0",
+    "torch": "2.13.0+cu130"
+  },
+  "schema": "native_residual_range_publication_v1",
+  "source_logical_sha256": "f8128fc70b52e0e70a008c6038a83945cfe37a3bee505a7e974b808b208777e9",
+  "support_pins": {
+    "added_tokens.json": "50b2f405ba56a26d4913fd772089992252d7f942123cc0a034d96424221ba946",
+    "chat_template.json": "fe16baf728db49457cde32802cd7efc0ac8a7a9877dbe22fe3322b2d9dc6ccd9",
+    "config.json": "9059f680f4dbd1957f35cb44b9fdd6948f4792db7a7a35ee353ea42e68adf7ff",
+    "generation_config.json": "fd9324becc53c4be610db39e13a613006f09fd6ef71a95fb6320dc33157490a3",
+    "model.safetensors.index.json": "77f4b67de084c31c7bcd373b039908108eee6c6181607e6d53da730e5f0bc659",
+    "preprocessor_config.json": "f688d6bb20c5017601c4011de7ca656da8485b540b05013efdaf986c0fcc918d",
+    "processor_config.json": "3ffd5f11778dc73e2b69b3c00535e4121e1badf7018136263cd17b5b34fbaa53",
+    "special_tokens_map.json": "2f7b0adf4fb469770bb1490e3e35df87b1dc578246c5e7e6fc76ecf33213a397",
+    "tokenizer.json": "4667f2089529e8e7657cfb6d1c19910ae71ff5f28aa7ab2ff2763330affad795",
+    "tokenizer_config.json": "bfe25c2735e395407beb78456ea9a6984a1f00d8c16fa04a8b75f2a614cf53e1"
+  },
+  "support_pins_sha256": "39d6fdd00180bf9e4a15d36dc058532059a00070f71bbef60a6a00ce5dcc84d7",
+  "tensor_count": 883,
+  "tensor_diagnostics": [
+    {
+      "diagnostics": {
+        "chunk": 128,
+        "constraint_columns_l2": 1.4142135623730963,
+        "device": "cuda:0",
+        "full_rank_annihilation": false,
+        "ideal_projector_operator_norm": 1.0,
+        "maximum_rounding_error": 0.0009764730930328369,
+        "native_constraint_l2": 0.03204775937842326,
+        "native_constraint_relative_to_original_constraint": 0.0019701655469450885,
+        "native_constraint_relative_to_weight_times_constraint": 4.43225488363368e-05,
+        "native_identity": false,
+        "native_l2": 511.01960382547117,
+        "native_retained_norm_ratio": 0.9994926730474627,
+        "original_constraint_l2": 16.26653122023988,
+        "original_l2": 511.2789894370786,
+        "postcast_exact_preservation_claimed": false,
+        "precast_constraint_l2": 2.9603633773065794e-06,
+        "precast_constraint_relative_to_weight_times_constraint": 4.094228517339465e-09,
+        "precast_l2": 511.0201610532477,
+        "precast_retained_norm_ratio": 0.9994937629177449,
+        "pythagorean_relative_error": 4.126507512369654e-11,
+        "rank": 2,
+        "removed_l2": 16.26653085713832,
+        "rounding_l2": 0.7510035283977251,
+        "side": "right"
+      },
+      "name": "language_model.model.embed_tokens.weight",
+      "output_sha256": "c72120c613f39c1e50b173bc5c662bd1c58715f35d23298a546ee161c6c58fd8"
+    },
+    {
+      "diagnostics": {
+        "chunk": 128,
+        "constraint_columns_l2": 290.7195926124285,
+        "device": "cuda:0",
+        "full_rank_annihilation": false,
+        "ideal_projector_operator_norm": 1.0,
+        "maximum_rounding_error": 0.0002254098653793335,
+        "native_constraint_l2": 0.01660185086858019,
+        "native_constraint_relative_to_original_constraint": 0.00019454356225233468,
+        "native_constraint_relative_to_weight_times_constraint": 1.4521891701224949e-06,
+        "native_identity": false,
+        "native_l2": 39.31907737129415,
+        "native_retained_norm_ratio": 0.9998717660851406,
+        "negative_scale_coordinates": 3,
+        "original_constraint_l2": 85.3374466693819,
+        "original_l2": 39.32412005715748,
+        "postcast_exact_preservation_claimed": false,
+        "precast_constraint_l2": 4.6902679532079606e-05,
+        "precast_constraint_relative_to_weight_times_constraint": 4.102648783282137e-09,
+        "precast_l2": 39.31906550249279,
+        "precast_retained_norm_ratio": 0.9998714642652565,
+        "pythagorean_relative_error": 3.8465865951040545e-11,
+        "rank": 2,
+        "removed_l2": 0.6304809441475964,
+        "residual_rank": 2,
+        "rounding_l2": 0.018866172321634334,
+        "side": "left",
+        "write_basis": {
+          "method": "CPU float64 thin SVD; 32*eps64*max(shape)*smax; full numerical rank",
+          "orthogonality_max_abs": 1.1102230246251565e-15,
+          "rank": 2,
+          "rank_tolerance": 5.281612049751022e-09,
+          "shape": [
+            2560,
+            2
+          ],
+          "singular_values": [
+            290.3596931051541,
+            14.461332878295735
+          ],
+          "span_residual_l2": 2.338390708102153e-13,
+          "span_residual_relative": 8.043457570537971e-16
+        },
+        "zero_scale_coordinates": 5
+      },
+      "name": "language_model.model.layers.0.mlp.down_proj.weight",
+      "output_sha256": "846f86f52b54ddf6849e6b0f900129537e1b9240b49b0adc228002f8eccca3f1"
+    },
+    {
+      "diagnostics": {
+        "chunk": 128,
+        "constraint_columns_l2": 84.56542073492112,
+        "device": "cuda:0",
+        "full_rank_annihilation": false,
+        "ideal_projector_operator_norm": 1.0,
+        "maximum_rounding_error": 0.00024296343326568604,
+        "native_constraint_l2": 0.008808840336418286,
+        "native_constraint_relative_to_original_constraint": 0.00014487353027281823,
+        "native_constraint_relative_to_weight_times_constraint": 3.8076943358258227e-06,
+        "native_identity": false,
+        "native_l2": 27.343079019674782,
+        "native_retained_norm_ratio": 0.9995017782598445,
+        "negative_scale_coordinates": 424,
+        "original_constraint_l2": 60.80365626370766,
+        "original_l2": 27.356708726701527,
+        "postcast_exact_preservation_claimed": false,
+        "precast_constraint_l2": 3.454263548813737e-05,
+        "precast_constraint_relative_to_weight_times_constraint": 1.4931340842778462e-08,
+        "precast_l2": 27.343085879638164,
+        "precast_retained_norm_ratio": 0.9995020290196654,
+        "pythagorean_relative_error": 1.602777060248105e-11,
+        "rank": 2,
+        "removed_l2": 0.8632305163306478,
+        "residual_rank": 2,
+        "rounding_l2": 0.017584368986320358,
+        "side": "left",
+        "write_basis": {
+          "method": "CPU float64 thin SVD; 32*eps64*max(shape)*smax; full numerical rank",
+          "orthogonality_max_abs": 1.4432899320127035e-15,
+          "rank": 2,
+          "rank_tolerance": 1.5345434066113961e-09,
+          "shape": [
+            2560,
+            2
+          ],
+          "singular_values": [
+            84.36241594481122,
+            5.856036204541416
+          ],
+          "span_residual_l2": 3.735108774458175e-14,
+          "span_residual_relative": 4.416827518858154e-16
+        },
+        "zero_scale_coordinates": 45
+      },
+      "name": "language_model.model.layers.0.self_attn.o_proj.weight",
+      "output_sha256": "8c4943e53b0b603d3a8e8f253ddb84071eb1537b8b3e4815ace9f5f29989265e"
+    },
+    {
+      "diagnostics": {
+        "chunk": 128,
+        "constraint_columns_l2": 74.84062237532557,
+        "device": "cuda:0",
+        "full_rank_annihilation": false,
+        "ideal_projector_operator_norm": 1.0,
+        "maximum_rounding_error": 0.00022998452186584473,
+        "native_constraint_l2": 0.005183050414998095,
+        "native_constraint_relative_to_original_constraint": 0.00014747537733091144,
+        "native_constraint_relative_to_weight_times_constraint": 2.4736029039293882e-06,
+        "native_identity": false,
+        "native_l2": 27.986868704804024,
+        "native_retained_norm_ratio": 0.9996230221126883,
+        "negative_scale_coordinates": 1,
+        "original_constraint_l2": 35.145191752031586,
+        "original_l2": 27.997423114219796,
+        "postcast_exact_preservation_claimed": false,
+        "precast_constraint_l2": 1.9544617273239533e-05,
+        "precast_constraint_relative_to_weight_times_constraint": 9.327638778773399e-09,
+        "precast_l2": 27.986855134710485,
+        "precast_retained_norm_ratio": 0.9996225374218836,
+        "pythagorean_relative_error": 3.007074986424851e-11,
+        "rank": 2,
+        "removed_l2": 0.7691818262330778,
+        "residual_rank": 2,
+        "rounding_l2": 0.027153317578141753,
+        "side": "left",
+        "write_basis": {
+          "method": "CPU float64 thin SVD; 32*eps64*max(shape)*smax; full numerical rank",
+          "orthogonality_max_abs": 2.886579864025407e-15,
+          "rank": 2,
+          "rank_tolerance": 1.3593969038821209e-09,
+          "shape": [
+            2560,
+            2
+          ],
+          "singular_values": [
+            74.73363512905426,
+            4.000317227855689
+          ],
+          "span_residual_l2": 3.1298922950611316e-13,
+          "span_residual_relative": 4.18207678627354e-15
+        },
+        "zero_scale_coordinates": 2
+      },
+      "name": "language_model.model.layers.1.mlp.down_proj.weight",
+      "output_sha256": "0403b364cb8074db1f4c29095d630ba0bff459253de58cdbce8480ba2bd20837"
+    },
+    {
+      "diagnostics": {
+        "chunk": 128,
+        "constraint_columns_l2": 82.3762214960401,
+        "device": "cuda:0",
+        "full_rank_annihilation": false,
+        "ideal_projector_operator_norm": 1.0,
+        "maximum_rounding_error": 0.00024382025003433228,
+        "native_constraint_l2": 0.0029136011218693133,
+        "native_constraint_relative_to_original_constraint": 7.861405998652917e-05,
+        "native_constraint_relative_to_weight_times_constraint": 9.818417682812573e-07,
+        "native_identity": false,
+        "native_l2": 36.01706852784266,
+        "native_retained_norm_ratio": 0.9998195796115087,
+        "negative_scale_coordinates": 36,
+        "original_constraint_l2": 37.0620868883832,
+        "original_l2": 36.02356791396054,
+        "postcast_exact_preservation_claimed": false,
+        "precast_constraint_l2": 2.2266698816078947e-05,
+        "precast_constraint_relative_to_weight_times_constraint": 7.503557976851214e-09,
+        "precast_l2": 36.01702416217747,
+        "precast_retained_norm_ratio": 0.9998183480381871,
+        "pythagorean_relative_error": 1.1222620299964247e-10,
+        "rank": 2,
+        "removed_l2": 0.6865973335861497,
+        "residual_rank": 2,
+        "rounding_l2": 0.02535101149407067,
+        "side": "left",
+        "write_basis": {
+          "method": "CPU float64 thin SVD; 32*eps64*max(shape)*smax; full numerical rank",
+          "orthogonality_max_abs": 3.774758283725532e-15,
+          "rank": 2,
+          "rank_tolerance": 1.4978449455647889e-09,
+          "shape": [
+            2560,
+            2
+          ],
+          "singular_values": [
+            82.34489671269975,
+            2.271531056241282
+          ],
+          "span_residual_l2": 1.0528353507457954e-13,
+          "span_residual_relative": 1.2780816255288014e-15
+        },
+        "zero_scale_coordinates": 27
+      },
+      "name": "language_model.model.layers.1.self_attn.o_proj.weight",
+      "output_sha256": "5ff97113b31b4271a98ec7e016eadd15a7df6ffdfcdd3057d9a9c0317abf1009"
+    },
+    {
+      "diagnostics": {
+        "chunk": 128,
+        "constraint_columns_l2": 328.6522255210493,
+        "device": "cuda:0",
+        "full_rank_annihilation": false,
+        "ideal_projector_operator_norm": 1.0,
+        "maximum_rounding_error": 0.0004869699478149414,
+        "native_constraint_l2": 0.032391080831329244,
+        "native_constraint_relative_to_original_constraint": 5.825199937735237e-05,
+        "native_constraint_relative_to_weight_times_constraint": 2.5298378158652564e-06,
+        "native_identity": false,
+        "native_l2": 38.9163563418487,
+        "native_retained_norm_ratio": 0.9989321461024384,
+        "negative_scale_coordinates": 3,
+        "original_constraint_l2": 556.0509712551168,
+        "original_l2": 38.95795774887187,
+        "postcast_exact_preservation_claimed": false,
+        "precast_constraint_l2": 0.0003238798629822433,
+        "precast_constraint_relative_to_weight_times_constraint": 2.5295961238108285e-08,
+        "precast_l2": 38.91630161876672,
+        "precast_retained_norm_ratio": 0.9989307414322467,
+        "pythagorean_relative_error": 1.5258629520501659e-10,
+        "rank": 2,
+        "removed_l2": 1.8010941253796595,
+        "residual_rank": 2,
+        "rounding_l2": 0.04461048033957401,
+        "side": "left",
+        "write_basis": {
+          "method": "CPU float64 thin SVD; 32*eps64*max(shape)*smax; full numerical rank",
+          "orthogonality_max_abs": 1.4432899320127035e-15,
+          "rank": 2,
+          "rank_tolerance": 5.9741498281533776e-09,
+          "shape": [
+            2560,
+            2
+          ],
+          "singular_values": [
+            328.4323601065315,
+            12.019574651051915
+          ],
+          "span_residual_l2": 3.0610487338114273e-13,
+          "span_residual_relative": 9.313944942738187e-16
+        },
+        "zero_scale_coordinates": 0
+      },
+      "name": "language_model.model.layers.10.mlp.down_proj.weight",
+      "output_sha256": "90a17eef1c8a6d2db5cee668a330b42f83584df4ef2e0b74a14548bfed92fe3e"
+    },
+    {
+      "diagnostics": {
+        "chunk": 128,
+        "constraint_columns_l2": 242.16468321521745,
+        "device": "cuda:0",
+        "full_rank_annihilation": false,
+        "ideal_projector_operator_norm": 1.0,
+        "maximum_rounding_error": 0.0002427920699119568,
+        "native_constraint_l2": 0.021880589031311116,
+        "native_constraint_relative_to_original_constraint": 7.100327637308422e-05,
+        "native_constraint_relative_to_weight_times_constraint": 2.6634209961020587e-06,
+        "native_identity": false,
+        "native_l2": 33.89641624674065,
+        "native_retained_norm_ratio": 0.9991838385571388,
+        "negative_scale_coordinates": 28,
+        "original_constraint_l2": 308.16308977546794,
+        "original_l2": 33.9241037922395,
+        "postcast_exact_preservation_claimed": false,
+        "precast_constraint_l2": 0.00019180844287570222,
+        "precast_constraint_relative_to_weight_times_constraint": 2.334793790303075e-08,
+        "precast_l2": 33.89639163603963,
+        "precast_retained_norm_ratio": 0.9991831130935813,
+        "pythagorean_relative_error": 1.1268620630896197e-10,
+        "rank": 2,
+        "removed_l2": 1.3709310825772778,
+        "residual_rank": 2,
+        "rounding_l2": 0.03038177992891659,
+        "side": "left",
+        "write_basis": {
+          "method": "CPU float64 thin SVD; 32*eps64*max(shape)*smax; full numerical rank",
+          "orthogonality_max_abs": 1.3322676295501878e-15,
+          "rank": 2,
+          "rank_tolerance": 4.398764015923151e-09,
+          "shape": [
+            2560,
+            2
+          ],
+          "singular_values": [
+            241.82460916750793,
+            12.82934907579766
+          ],
+          "span_residual_l2": 1.1884799778019946e-13,
+          "span_residual_relative": 4.907734530165839e-16
+        },
+        "zero_scale_coordinates": 0
+      },
+      "name": "language_model.model.layers.10.self_attn.o_proj.weight",
+      "output_sha256": "512e0af218a576d8833e56ffb5dbe631024973bd507d4bcd9e84e79d4989f7b8"
+    },
+    {
+      "diagnostics": {
+        "chunk": 128,
+        "constraint_columns_l2": 334.43877069115774,
+        "device": "cuda:0",
+        "full_rank_annihilation": false,
+        "ideal_projector_operator_norm": 1.0,
+        "maximum_rounding_error": 0.00023149698972702026,
+        "native_constraint_l2": 0.027963569303821444,
+        "native_constraint_relative_to_original_constraint": 6.907009977753929e-05,
+        "native_constraint_relative_to_weight_times_constraint": 3.0678717425085498e-06,
+        "native_identity": false,
+        "native_l2": 27.224064610130906,
+        "native_retained_norm_ratio": 0.9988819834804494,
+        "negative_scale_coordinates": 1,
+        "original_constraint_l2": 404.8578095860061,
+        "original_l2": 27.254535631199268,
+        "postcast_exact_preservation_claimed": false,
+        "precast_constraint_l2": 0.0002315391557743008,
+        "precast_constraint_relative_to_weight_times_constraint": 2.5402066008332855e-08,
+        "precast_l2": 27.224030346573155,
+        "precast_retained_norm_ratio": 0.998880726311433,
+        "pythagorean_relative_error": 1.13145156173653e-10,
+        "rank": 2,
+        "removed_l2": 1.2891408942469034,
+        "residual_rank": 2,
+        "rounding_l2": 0.03289286194292662,
+        "side": "left",
+        "write_basis": {
+          "method": "CPU float64 thin SVD; 32*eps64*max(shape)*smax; full numerical rank",
+          "orthogonality_max_abs": 2.4424906541753444e-15,
+          "rank": 2,
+          "rank_tolerance": 6.07817570767613e-09,
+          "shape": [
+            2560,
+            2
+          ],
+          "singular_values": [
+            334.1512433127761,
+            13.864989503740263
+          ],
+          "span_residual_l2": 1.1379782806312295e-12,
+          "span_residual_relative": 3.4026505906580785e-15
+        },
+        "zero_scale_coordinates": 0
+      },
+      "name": "language_model.model.layers.11.mlp.down_proj.weight",
+      "output_sha256": "3e1fae81b8a13659cb073b2f22b63b89beb7c574b5fc264137d84200e48be59d"
+    },
+    {
+      "diagnostics": {
+        "chunk": 128,
+        "constraint_columns_l2": 247.66556716166681,
+        "device": "cuda:0",
+        "full_rank_annihilation": false,
+        "ideal_projector_operator_norm": 1.0,
+        "maximum_rounding_error": 0.00035196542739868164,
+        "native_constraint_l2": 0.040888448938618906,
+        "native_constraint_relative_to_original_constraint": 8.13254386404758e-05,
+        "native_constraint_relative_to_weight_times_constraint": 4.506753200494309e-06,
+        "native_identity": false,
+        "native_l2": 36.57337930038333,
+        "native_retained_norm_ratio": 0.998375374917731,
+        "negative_scale_coordinates": 40,
+        "original_constraint_l2": 502.77563357978204,
+        "original_l2": 36.63289401884244,
+        "postcast_exact_preservation_claimed": false,
+        "precast_constraint_l2": 0.0002993061540932301,
+        "precast_constraint_relative_to_weight_times_constraint": 3.298973189010553e-08,
+        "precast_l2": 36.573326623255134,
+        "precast_retained_norm_ratio": 0.9983739369443029,
+        "pythagorean_relative_error": 2.950622966437726e-10,
+        "rank": 2,
+        "removed_l2": 2.088229754714535,
+        "residual_rank": 2,
+        "rounding_l2": 0.03195740227920013,
+        "side": "left",
+        "write_basis": {
+          "method": "CPU float64 thin SVD; 32*eps64*max(shape)*smax; full numerical rank",
+          "orthogonality_max_abs": 1.3322676295501878e-15,
+          "rank": 2,
+          "rank_tolerance": 4.486720715981218e-09,
+          "shape": [
+            2560,
+            2
+          ],
+          "singular_values": [
+            246.66007989024047,
+            22.294352335294068
+          ],
+          "span_residual_l2": 4.0260496886295793e-13,
+          "span_residual_relative": 1.6255992848620434e-15
+        },
+        "zero_scale_coordinates": 0
+      },
+      "name": "language_model.model.layers.11.self_attn.o_proj.weight",
+      "output_sha256": "60d2516760a1bf41aa1d8499541bafebf0a6b40b9135eb95f79716a4b7ce4235"
+    },
+    {
+      "diagnostics": {
+        "chunk": 128,
+        "constraint_columns_l2": 376.27067480145547,
+        "device": "cuda:0",
+        "full_rank_annihilation": false,
+        "ideal_projector_operator_norm": 1.0,
+        "maximum_rounding_error": 0.0008790194988250732,
+        "native_constraint_l2": 0.05561818502124787,
+        "native_constraint_relative_to_original_constraint": 7.475764578633495e-05,
+        "native_constraint_relative_to_weight_times_constraint": 2.9175262167681605e-06,
+        "native_identity": false,
+        "native_l2": 50.61923977386074,
+        "native_retained_norm_ratio": 0.99911147156164,
+        "negative_scale_coordinates": 1,
+        "original_constraint_l2": 743.9798890967002,
+        "original_l2": 50.66425640648627,
+        "postcast_exact_preservation_claimed": false,
+        "precast_constraint_l2": 0.0004269762171897813,
+        "precast_constraint_relative_to_weight_times_constraint": 2.2397608032548734e-08,
+        "precast_l2": 50.61920348439063,
+        "precast_retained_norm_ratio": 0.9991107552880245,
+        "pythagorean_relative_error": 1.992491144727448e-10,
+        "rank": 2,
+        "removed_l2": 2.1361452056182366,
+        "residual_rank": 2,
+        "rounding_l2": 0.06289632277004564,
+        "side": "left",
+        "write_basis": {
+          "method": "CPU float64 thin SVD; 32*eps64*max(shape)*smax; full numerical rank",
+          "orthogonality_max_abs": 2.55351295663786e-15,
+          "rank": 2,
+          "rank_tolerance": 6.84000307976361e-09,
+          "shape": [
+            2560,
+            2
+          ],
+          "singular_values": [
+            376.033146011187,
+            13.367640647177462
+          ],
+          "span_residual_l2": 1.5371608696857986e-13,
+          "span_residual_relative": 4.0852529113434186e-16
+        },
+        "zero_scale_coordinates": 0
+      },
+      "name": "language_model.model.layers.12.mlp.down_proj.weight",
+      "output_sha256": "aeb804e4ec37ef6efb81f5ceba314a5781ff79d6d5ee20c4c80a19a2fde25602"
+    },
+    {
+      "diagnostics": {
+        "chunk": 128,
+        "constraint_columns_l2": 197.42325162311622,
+        "device": "cuda:0",
+        "full_rank_annihilation": false,
+        "ideal_projector_operator_norm": 1.0,
+        "maximum_rounding_error": 0.0002437978982925415,
+        "native_constraint_l2": 0.027708978586872185,
+        "native_constraint_relative_to_original_constraint": 8.429072717650663e-05,
+        "native_constraint_relative_to_weight_times_constraint": 3.6494691734983936e-06,
+        "native_identity": false,
+        "native_l2": 38.418741453294444,
+        "native_retained_norm_ratio": 0.9989657925483495,
+        "negative_scale_coordinates": 38,
+        "original_constraint_l2": 328.7310421328906,
+        "original_l2": 38.458515536641855,
+        "postcast_exact_preservation_claimed": false,
+        "precast_constraint_l2": 0.00020276568321190352,
+        "precast_constraint_relative_to_weight_times_constraint": 2.6705679821621785e-08,
+        "precast_l2": 38.41867182867784,
+        "precast_retained_norm_ratio": 0.9989639821660289,
+        "pythagorean_relative_error": 1.7174620363133018e-10,
+        "rank": 2,
+        "removed_l2": 1.7501635513577511,
+        "residual_rank": 2,
+        "rounding_l2": 0.039500313921952156,
+        "side": "left",
+        "write_basis": {
+          "method": "CPU float64 thin SVD; 32*eps64*max(shape)*smax; full numerical rank",
+          "orthogonality_max_abs": 2.886579864025407e-15,
+          "rank": 2,
+          "rank_tolerance": 3.5850973444443026e-09,
+          "shape": [
+            2560,
+            2
+          ],
+          "singular_values": [
+            197.0928108462685,
+            11.417714051476592
+          ],
+          "span_residual_l2": 8.814077793513031e-13,
+          "span_residual_relative": 4.464559124139658e-15
+        },
+        "zero_scale_coordinates": 0
+      },
+      "name": "language_model.model.layers.12.self_attn.o_proj.weight",
+      "output_sha256": "7b75fc6d787e7e3994a4ffbb3e0ef92f8495403ee3a4bccc20f9a44f43cc00da"
+    },
+    {
+      "diagnostics": {
+        "chunk": 128,
+        "constraint_columns_l2": 440.98780914322367,
+        "device": "cuda:0",
+        "full_rank_annihilation": false,
+        "ideal_projector_operator_norm": 1.0,
+        "maximum_rounding_error": 0.0004367828369140625,
+        "native_constraint_l2": 0.059202713990998794,
+        "native_constraint_relative_to_original_constraint": 7.336521275724218e-05,
+        "native_constraint_relative_to_weight_times_constraint": 2.7375468525981067e-06,
+        "native_identity": false,
+        "native_l2": 48.998891019872026,
+        "native_retained_norm_ratio": 0.9991548002249832,
+        "negative_scale_coordinates": 1,
+        "original_constraint_l2": 806.9589355229487,
+        "original_l2": 49.040339904125744,
+        "postcast_exact_preservation_claimed": false,
+        "precast_constraint_l2": 0.00047144453839231045,
+        "precast_constraint_relative_to_weight_times_constraint": 2.179970182526869e-08,
+        "precast_l2": 48.99886587021009,
+        "precast_retained_norm_ratio": 0.9991542873887755,
+        "pythagorean_relative_error": 2.0246329392180612e-10,
+        "rank": 2,
+        "removed_l2": 2.0164527845360936,
+        "residual_rank": 2,
+        "rounding_l2": 0.06363475965636041,
+        "side": "left",
+        "write_basis": {
+          "method": "CPU float64 thin SVD; 32*eps64*max(shape)*smax; full numerical rank",
+          "orthogonality_max_abs": 1.9984014443252818e-15,
+          "rank": 2,
+          "rank_tolerance": 8.017454344329563e-09,
+          "shape": [
+            2560,
+            2
+          ],
+          "singular_values": [
+            440.764213837678,
+            14.041211236724106
+          ],
+          "span_residual_l2": 1.553505626187581e-13,
+          "span_residual_relative": 3.522785877473168e-16
+        },
+        "zero_scale_coordinates": 0
+      },
+      "name": "language_model.model.layers.13.mlp.down_proj.weight",
+      "output_sha256": "4704617fd25f2baf00e004727d1e58e3b482152a6e93a60d170acf69e7bedd24"
+    },
+    {
+      "diagnostics": {
+        "chunk": 128,
+        "constraint_columns_l2": 212.8356678044749,
+        "device": "cuda:0",
+        "full_rank_annihilation": false,
+        "ideal_projector_operator_norm": 1.0,
+        "maximum_rounding_error": 0.00024311989545822144,
+        "native_constraint_l2": 0.03182472284390333,
+        "native_constraint_relative_to_original_constraint": 9.477902850303548e-05,
+        "native_constraint_relative_to_weight_times_constraint": 4.726926484201084e-06,
+        "native_identity": false,
+        "native_l2": 31.58918414209008,
+        "native_retained_norm_ratio": 0.9986125913872994,
+        "negative_scale_coordinates": 8,
+        "original_constraint_l2": 335.77810773703044,
+        "original_l2": 31.63307213882166,
+        "postcast_exact_preservation_claimed": false,
+        "precast_constraint_l2": 0.00020000193372491672,
+        "precast_constraint_relative_to_weight_times_constraint": 2.970628973118766e-08,
+        "precast_l2": 31.589056075594627,
+        "precast_retained_norm_ratio": 0.9986085428872078,
+        "pythagorean_relative_error": 9.924457198438137e-11,
+        "rank": 2,
+        "removed_l2": 1.6681693839428382,
+        "residual_rank": 2,
+        "rounding_l2": 0.033755618781257,
+        "side": "left",
+        "write_basis": {
+          "method": "CPU float64 thin SVD; 32*eps64*max(shape)*smax; full numerical rank",
+          "orthogonality_max_abs": 1.2212453270876722e-15,
+          "rank": 2,
+          "rank_tolerance": 3.8620958297910024e-09,
+          "shape": [
+            2560,
+            2
+          ],
+          "singular_values": [
+            212.32096362202034,
+            14.792900202239036
+          ],
+          "span_residual_l2": 4.558052947424102e-13,
+          "span_residual_relative": 2.1415832197878763e-15
+        },
+        "zero_scale_coordinates": 0
+      },
+      "name": "language_model.model.layers.13.self_attn.o_proj.weight",
+      "output_sha256": "8ffbcffc00eacbac1ae4e06f0d43e9b30ebe14d0c4ae5ef9386e2e6febccf99a"
+    },
+    {
+      "diagnostics": {
+        "chunk": 128,
+        "constraint_columns_l2": 237.4752573209795,
+        "device": "cuda:0",
+        "full_rank_annihilation": false,
+        "ideal_projector_operator_norm": 1.0,
+        "maximum_rounding_error": 0.00022429972887039185,
+        "native_constraint_l2": 0.0241921106926859,
+        "native_constraint_relative_to_original_constraint": 7.55679811747648e-05,
+        "native_constraint_relative_to_weight_times_constraint": 3.978535960616763e-06,
+        "native_identity": false,
+        "native_l2": 25.566925734524876,
+        "native_retained_norm_ratio": 0.998496170891107,
+        "negative_scale_coordinates": 28,
+        "original_constraint_l2": 320.13705165336114,
+        "original_l2": 25.605431928404588,
+        "postcast_exact_preservation_claimed": false,
+        "precast_constraint_l2": 0.0001949458542354559,
+        "precast_constraint_relative_to_weight_times_constraint": 3.206000093590036e-08,
+        "precast_l2": 25.566894999465344,
+        "precast_retained_norm_ratio": 0.9984949705575364,
+        "pythagorean_relative_error": 5.909998313645921e-10,
+        "rank": 2,
+        "removed_l2": 1.4042879740128136,
+        "residual_rank": 2,
+        "rounding_l2": 0.028306295909629447,
+        "side": "left",
+        "write_basis": {
+          "method": "CPU float64 thin SVD; 32*eps64*max(shape)*smax; full numerical rank",
+          "orthogonality_max_abs": 6.661338147750939e-16,
+          "rank": 2,
+          "rank_tolerance": 4.312916033623042e-09,
+          "shape": [
+            2560,
+            2
+          ],
+          "singular_values": [
+            237.10506642950403,
+            13.254633647370014
+          ],
+          "span_residual_l2": 4.8602582083090806e-14,
+          "span_residual_relative": 2.046637726868443e-16
+        },
+        "zero_scale_coordinates": 0
+      },
+      "name": "language_model.model.layers.14.self_attn.o_proj.weight",
+      "output_sha256": "ad95baf16bcc30a4e352b2d61c3ab45b560ff25c1ebb85dde6854e879bd92227"
+    },
+    {
+      "diagnostics": {
+        "chunk": 128,
+        "constraint_columns_l2": 154.32544912648692,
+        "device": "cuda:0",
+        "full_rank_annihilation": false,
+        "ideal_projector_operator_norm": 1.0,
+        "maximum_rounding_error": 0.00024087727069854736,
+        "native_constraint_l2": 0.00957784265104872,
+        "native_constraint_relative_to_original_constraint": 8.539612473992803e-05,
+        "native_constraint_relative_to_weight_times_constraint": 1.702805083762185e-06,
+        "native_identity": false,
+        "native_l2": 36.433442486231414,
+        "native_retained_norm_ratio": 0.9996201410711276,
+        "negative_scale_coordinates": 1,
+        "original_constraint_l2": 112.15781372067906,
+        "original_l2": 36.44728731375072,
+        "postcast_exact_preservation_claimed": false,
+        "precast_constraint_l2": 8.800209072618331e-05,
+        "precast_constraint_relative_to_weight_times_constraint": 1.564552821859505e-08,
+        "precast_l2": 36.43341628849396,
+        "precast_retained_norm_ratio": 0.9996194222868398,
+        "pythagorean_relative_error": 8.99168480087492e-11,
+        "rank": 2,
+        "removed_l2": 1.0054502473236406,
+        "residual_rank": 2,
+        "rounding_l2": 0.034678656391626914,
+        "side": "left",
+        "write_basis": {
+          "method": "CPU float64 thin SVD; 32*eps64*max(shape)*smax; full numerical rank",
+          "orthogonality_max_abs": 2.6645352591003757e-15,
+          "rank": 2,
+          "rank_tolerance": 2.805391180606509e-09,
+          "shape": [
+            2560,
+            2
+          ],
+          "singular_values": [
+            154.22801117685486,
+            5.483139294586632
+          ],
+          "span_residual_l2": 2.305239226854274e-13,
+          "span_residual_relative": 1.4937518341287141e-15
+        },
+        "zero_scale_coordinates": 1
+      },
+      "name": "language_model.model.layers.2.mlp.down_proj.weight",
+      "output_sha256": "850d90bfcf4a3f67f0385ad081c0a51c016fc14c231f545817cf8ffb6c6ee462"
+    },
+    {
+      "diagnostics": {
+        "chunk": 128,
+        "constraint_columns_l2": 107.56315162732072,
+        "device": "cuda:0",
+        "full_rank_annihilation": false,
+        "ideal_projector_operator_norm": 1.0,
+        "maximum_rounding_error": 0.00024165958166122437,
+        "native_constraint_l2": 0.00925082154774693,
+        "native_constraint_relative_to_original_constraint": 0.0001423795514289627,
+        "native_constraint_relative_to_weight_times_constraint": 3.202811549149772e-06,
+        "native_identity": false,
+        "native_l2": 26.843287278633813,
+        "native_retained_norm_ratio": 0.9996553635632999,
+        "negative_scale_coordinates": 106,
+        "original_constraint_l2": 64.97296455075879,
+        "original_l2": 26.852541642901965,
+        "postcast_exact_preservation_claimed": false,
+        "precast_constraint_l2": 3.9520782344349224e-05,
+        "precast_constraint_relative_to_weight_times_constraint": 1.3682851568436591e-08,
+        "precast_l2": 26.843266324761746,
+        "precast_retained_norm_ratio": 0.999654583232248,
+        "pythagorean_relative_error": 4.6170284733688924e-12,
+        "rank": 2,
+        "removed_l2": 0.7057235282793766,
+        "residual_rank": 2,
+        "rounding_l2": 0.017667573664631994,
+        "side": "left",
+        "write_basis": {
+          "method": "CPU float64 thin SVD; 32*eps64*max(shape)*smax; full numerical rank",
+          "orthogonality_max_abs": 1.1102230246251565e-16,
+          "rank": 2,
+          "rank_tolerance": 1.951968926224605e-09,
+          "shape": [
+            2560,
+            2
+          ],
+          "singular_values": [
+            107.31062657206931,
+            7.366207484983918
+          ],
+          "span_residual_l2": 2.141302017638659e-13,
+          "span_residual_relative": 1.9907393798368164e-15
+        },
+        "zero_scale_coordinates": 3
+      },
+      "name": "language_model.model.layers.2.self_attn.o_proj.weight",
+      "output_sha256": "f79b6cb78bdeb52abe9fd914e436ee086ed157c2e8c0b9f06d15ff3ce5074b42"
+    },
+    {
+      "diagnostics": {
+        "chunk": 128,
+        "constraint_columns_l2": 186.66701847998604,
+        "device": "cuda:0",
+        "full_rank_annihilation": false,
+        "ideal_projector_operator_norm": 1.0,
+        "maximum_rounding_error": 0.00023872405290603638,
+        "native_constraint_l2": 0.013709467213133084,
+        "native_constraint_relative_to_original_constraint": 8.832268062596006e-05,
+        "native_constraint_relative_to_weight_times_constraint": 1.4937139779092829e-06,
+        "native_identity": false,
+        "native_l2": 49.15093099765765,
+        "native_retained_norm_ratio": 0.9996459414324054,
+        "negative_scale_coordinates": 5,
+        "original_constraint_l2": 155.22023466646863,
+        "original_l2": 49.168339469501234,
+        "postcast_exact_preservation_claimed": false,
+        "precast_constraint_l2": 8.91783285119287e-05,
+        "precast_constraint_relative_to_weight_times_constraint": 9.716418133102015e-09,
+        "precast_l2": 49.15090745933083,
+        "precast_retained_norm_ratio": 0.9996454627030629,
+        "pythagorean_relative_error": 4.298251537577407e-11,
+        "rank": 2,
+        "removed_l2": 1.3091608031477788,
+        "residual_rank": 2,
+        "rounding_l2": 0.050120542827123374,
+        "side": "left",
+        "write_basis": {
+          "method": "CPU float64 thin SVD; 32*eps64*max(shape)*smax; full numerical rank",
+          "orthogonality_max_abs": 3.1086244689504383e-15,
+          "rank": 2,
+          "rank_tolerance": 3.393909406232206e-09,
+          "shape": [
+            2560,
+            2
+          ],
+          "singular_values": [
+            186.5821427885325,
+            5.628479425858649
+          ],
+          "span_residual_l2": 4.619582775643765e-13,
+          "span_residual_relative": 2.474771822714394e-15
+        },
+        "zero_scale_coordinates": 0
+      },
+      "name": "language_model.model.layers.3.mlp.down_proj.weight",
+      "output_sha256": "eba0080dbc37e45fde20a312727f4b1bad345c453f75908e050deed94758ddcf"
+    },
+    {
+      "diagnostics": {
+        "chunk": 128,
+        "constraint_columns_l2": 82.84938459612351,
+        "device": "cuda:0",
+        "full_rank_annihilation": false,
+        "ideal_projector_operator_norm": 1.0,
+        "maximum_rounding_error": 0.00024364888668060303,
+        "native_constraint_l2": 0.005179869740523797,
+        "native_constraint_relative_to_original_constraint": 8.368957895109485e-05,
+        "native_constraint_relative_to_weight_times_constraint": 1.3966639444225671e-06,
+        "native_identity": false,
+        "native_l2": 44.74922611994918,
+        "native_retained_norm_ratio": 0.9996498362434303,
+        "negative_scale_coordinates": 7,
+        "original_constraint_l2": 61.893843958167416,
+        "original_l2": 44.7649011659039,
+        "postcast_exact_preservation_claimed": false,
+        "precast_constraint_l2": 3.500178139737116e-05,
+        "precast_constraint_relative_to_weight_times_constraint": 9.437636179500806e-09,
+        "precast_l2": 44.74923905231689,
+        "precast_retained_norm_ratio": 0.9996501251386892,
+        "pythagorean_relative_error": 9.386279298900998e-11,
+        "rank": 2,
+        "removed_l2": 1.18405270990485,
+        "residual_rank": 2,
+        "rounding_l2": 0.0488238650126902,
+        "side": "left",
+        "write_basis": {
+          "method": "CPU float64 thin SVD; 32*eps64*max(shape)*smax; full numerical rank",
+          "orthogonality_max_abs": 1.887379141862766e-15,
+          "rank": 2,
+          "rank_tolerance": 1.5064815914869812e-09,
+          "shape": [
+            2560,
+            2
+          ],
+          "singular_values": [
+            82.81970134352149,
+            2.2175656306609897
+          ],
+          "span_residual_l2": 1.7711909805178757e-13,
+          "span_residual_relative": 2.137844462155183e-15
+        },
+        "zero_scale_coordinates": 1
+      },
+      "name": "language_model.model.layers.3.self_attn.o_proj.weight",
+      "output_sha256": "333bf6f7b1158f7b7c9409511461516051d982d802056351de6482506bf2a39e"
+    },
+    {
+      "diagnostics": {
+        "chunk": 128,
+        "constraint_columns_l2": 499.7975618313493,
+        "device": "cuda:0",
+        "full_rank_annihilation": false,
+        "ideal_projector_operator_norm": 1.0,
+        "maximum_rounding_error": 0.0002570897340774536,
+        "native_constraint_l2": 0.010861633501062099,
+        "native_constraint_relative_to_original_constraint": 3.854982834333393e-05,
+        "native_constraint_relative_to_weight_times_constraint": 5.989580711316372e-07,
+        "native_identity": false,
+        "native_l2": 36.27195797429022,
+        "native_retained_norm_ratio": 0.9996924444762749,
+        "negative_scale_coordinates": 7,
+        "original_constraint_l2": 281.7556904359161,
+        "original_l2": 36.28311704735609,
+        "postcast_exact_preservation_claimed": false,
+        "precast_constraint_l2": 0.00015614554563452102,
+        "precast_constraint_relative_to_weight_times_constraint": 8.610549676520065e-09,
+        "precast_l2": 36.2719539259151,
+        "precast_retained_norm_ratio": 0.9996923328988956,
+        "pythagorean_relative_error": 1.1923948672342847e-11,
+        "rank": 2,
+        "removed_l2": 0.8999672509248468,
+        "residual_rank": 2,
+        "rounding_l2": 0.03771247954649437,
+        "side": "left",
+        "write_basis": {
+          "method": "CPU float64 thin SVD; 32*eps64*max(shape)*smax; full numerical rank",
+          "orthogonality_max_abs": 8.881784197001252e-16,
+          "rank": 2,
+          "rank_tolerance": 9.090654992488921e-09,
+          "shape": [
+            2560,
+            2
+          ],
+          "singular_values": [
+            499.76404341707575,
+            5.788239799500115
+          ],
+          "span_residual_l2": 4.195424079735944e-13,
+          "span_residual_relative": 8.394246791367181e-16
+        },
+        "zero_scale_coordinates": 0
+      },
+      "name": "language_model.model.layers.4.mlp.down_proj.weight",
+      "output_sha256": "e6f121c5a65c9fff6f96b20c9c635a628dbfaaf55d9805bf555afa03e76e079e"
+    },
+    {
+      "diagnostics": {
+        "chunk": 128,
+        "constraint_columns_l2": 144.97959781179932,
+        "device": "cuda:0",
+        "full_rank_annihilation": false,
+        "ideal_projector_operator_norm": 1.0,
+        "maximum_rounding_error": 0.0004200935363769531,
+        "native_constraint_l2": 0.018959546515083144,
+        "native_constraint_relative_to_original_constraint": 7.830404383995267e-05,
+        "native_constraint_relative_to_weight_times_constraint": 3.947677008016871e-06,
+        "native_identity": false,
+        "native_l2": 33.07911741085028,
+        "native_retained_norm_ratio": 0.9985607030474889,
+        "negative_scale_coordinates": 298,
+        "original_constraint_l2": 242.1272974590555,
+        "original_l2": 33.126796708399134,
+        "postcast_exact_preservation_claimed": false,
+        "precast_constraint_l2": 0.00014111842553910447,
+        "precast_constraint_relative_to_weight_times_constraint": 2.9383084846732713e-08,
+        "precast_l2": 33.079042230244575,
+        "precast_retained_norm_ratio": 0.9985584335673949,
+        "pythagorean_relative_error": 1.8903588360922195e-11,
+        "rank": 2,
+        "removed_l2": 1.7780959671950374,
+        "residual_rank": 2,
+        "rounding_l2": 0.020403548308500857,
+        "side": "left",
+        "write_basis": {
+          "method": "CPU float64 thin SVD; 32*eps64*max(shape)*smax; full numerical rank",
+          "orthogonality_max_abs": 1.7763568394002505e-15,
+          "rank": 2,
+          "rank_tolerance": 2.617021708189487e-09,
+          "shape": [
+            2560,
+            2
+          ],
+          "singular_values": [
+            143.87228991482755,
+            17.884294124592557
+          ],
+          "span_residual_l2": 2.5660121809532707e-13,
+          "span_residual_relative": 1.7699126081755711e-15
+        },
+        "zero_scale_coordinates": 2
+      },
+      "name": "language_model.model.layers.4.self_attn.o_proj.weight",
+      "output_sha256": "d3f392cb4b2e9d875a308d7f710e4220fe54615474c5bda233f6f4b4ed604999"
+    },
+    {
+      "diagnostics": {
+        "chunk": 128,
+        "constraint_columns_l2": 459.8342874538509,
+        "device": "cuda:0",
+        "full_rank_annihilation": false,
+        "ideal_projector_operator_norm": 1.0,
+        "maximum_rounding_error": 0.00024218857288360596,
+        "native_constraint_l2": 0.0106771115587847,
+        "native_constraint_relative_to_original_constraint": 4.498390214415246e-05,
+        "native_constraint_relative_to_weight_times_constraint": 8.401988664621138e-07,
+        "native_identity": false,
+        "native_l2": 27.625827310090298,
+        "native_retained_norm_ratio": 0.9996430588844111,
+        "negative_scale_coordinates": 2,
+        "original_constraint_l2": 237.3540544475117,
+        "original_l2": 27.635691624688885,
+        "postcast_exact_preservation_claimed": false,
+        "precast_constraint_l2": 0.0001812364460144518,
+        "precast_constraint_relative_to_weight_times_constraint": 1.426178378530465e-08,
+        "precast_l2": 27.625834196219373,
+        "precast_retained_norm_ratio": 0.9996433080596142,
+        "pythagorean_relative_error": 7.727268687052323e-12,
+        "rank": 2,
+        "removed_l2": 0.7380626963864557,
+        "residual_rank": 2,
+        "rounding_l2": 0.03001413612025669,
+        "side": "left",
+        "write_basis": {
+          "method": "CPU float64 thin SVD; 32*eps64*max(shape)*smax; full numerical rank",
+          "orthogonality_max_abs": 3.1086244689504383e-15,
+          "rank": 2,
+          "rank_tolerance": 8.363391662623445e-09,
+          "shape": [
+            2560,
+            2
+          ],
+          "singular_values": [
+            459.7823190349666,
+            6.913105020087372
+          ],
+          "span_residual_l2": 1.0403307628964496e-12,
+          "span_residual_relative": 2.262403633832672e-15
+        },
+        "zero_scale_coordinates": 0
+      },
+      "name": "language_model.model.layers.5.mlp.down_proj.weight",
+      "output_sha256": "5313d8a87d69aa48a993ebd92542928892f262598c5e5fc2cce57d8f32d24bdc"
+    },
+    {
+      "diagnostics": {
+        "chunk": 128,
+        "constraint_columns_l2": 171.67503956733412,
+        "device": "cuda:0",
+        "full_rank_annihilation": false,
+        "ideal_projector_operator_norm": 1.0,
+        "maximum_rounding_error": 0.00023889541625976562,
+        "native_constraint_l2": 0.008861811891711415,
+        "native_constraint_relative_to_original_constraint": 7.609323170184e-05,
+        "native_constraint_relative_to_weight_times_constraint": 2.0454071245207333e-06,
+        "native_identity": false,
+        "native_l2": 25.22591601557249,
+        "native_retained_norm_ratio": 0.9995656861392559,
+        "negative_scale_coordinates": 8,
+        "original_constraint_l2": 116.45992282776353,
+        "original_l2": 25.23687674094297,
+        "postcast_exact_preservation_claimed": false,
+        "precast_constraint_l2": 6.819553239285791e-05,
+        "precast_constraint_relative_to_weight_times_constraint": 1.574030565321533e-08,
+        "precast_l2": 25.225875331938273,
+        "precast_retained_norm_ratio": 0.9995640740683711,
+        "pythagorean_relative_error": 8.95670094926254e-11,
+        "rank": 2,
+        "removed_l2": 0.7450914829813117,
+        "residual_rank": 2,
+        "rounding_l2": 0.017287777653615756,
+        "side": "left",
+        "write_basis": {
+          "method": "CPU float64 thin SVD; 32*eps64*max(shape)*smax; full numerical rank",
+          "orthogonality_max_abs": 1.1102230246251565e-15,
+          "rank": 2,
+          "rank_tolerance": 3.117050464788187e-09,
+          "shape": [
+            2560,
+            2
+          ],
+          "singular_values": [
+            171.36166151995985,
+            10.368228950229355
+          ],
+          "span_residual_l2": 8.900215521668837e-14,
+          "span_residual_relative": 5.184338704158567e-16
+        },
+        "zero_scale_coordinates": 3
+      },
+      "name": "language_model.model.layers.5.self_attn.o_proj.weight",
+      "output_sha256": "24f234e45ddb04372a211510b7fcf0604c975cf862b10042dcaf21c069cae60f"
+    },
+    {
+      "diagnostics": {
+        "chunk": 128,
+        "constraint_columns_l2": 366.58177207790834,
+        "device": "cuda:0",
+        "full_rank_annihilation": false,
+        "ideal_projector_operator_norm": 1.0,
+        "maximum_rounding_error": 0.00024378299713134766,
+        "native_constraint_l2": 0.022099229881110648,
+        "native_constraint_relative_to_original_constraint": 6.210339532172886e-05,
+        "native_constraint_relative_to_weight_times_constraint": 1.2816524379135164e-06,
+        "native_identity": false,
+        "native_l2": 47.01842830033527,
+        "native_retained_norm_ratio": 0.9996134762724723,
+        "negative_scale_coordinates": 2,
+        "original_constraint_l2": 355.84575958568445,
+        "original_l2": 47.03660906580165,
+        "postcast_exact_preservation_claimed": false,
+        "precast_constraint_l2": 0.00023899609978261273,
+        "precast_constraint_relative_to_weight_times_constraint": 1.3860661008826673e-08,
+        "precast_l2": 47.01841452534465,
+        "precast_retained_norm_ratio": 0.9996131834156764,
+        "pythagorean_relative_error": 1.1358552692192572e-10,
+        "rank": 2,
+        "removed_l2": 1.308162139497386,
+        "residual_rank": 2,
+        "rounding_l2": 0.05318329555287187,
+        "side": "left",
+        "write_basis": {
+          "method": "CPU float64 thin SVD; 32*eps64*max(shape)*smax; full numerical rank",
+          "orthogonality_max_abs": 4.440892098500626e-16,
+          "rank": 2,
+          "rank_tolerance": 6.66651541736881e-09,
+          "shape": [
+            2560,
+            2
+          ],
+          "singular_values": [
+            366.495560907249,
+            7.949808492078347
+          ],
+          "span_residual_l2": 4.911272391812937e-13,
+          "span_residual_relative": 1.3397481178549058e-15
+        },
+        "zero_scale_coordinates": 0
+      },
+      "name": "language_model.model.layers.6.mlp.down_proj.weight",
+      "output_sha256": "4d76c577d5d527677b5906c4eed3c6324cf9443943e959096836d039ee4f01c6"
+    },
+    {
+      "diagnostics": {
+        "chunk": 128,
+        "constraint_columns_l2": 190.5277470964097,
+        "device": "cuda:0",
+        "full_rank_annihilation": false,
+        "ideal_projector_operator_norm": 1.0,
+        "maximum_rounding_error": 0.00024181604385375977,
+        "native_constraint_l2": 0.008506748605129077,
+        "native_constraint_relative_to_original_constraint": 8.181293097764142e-05,
+        "native_constraint_relative_to_weight_times_constraint": 1.5395205046577352e-06,
+        "native_identity": false,
+        "native_l2": 28.992107989094606,
+        "native_retained_norm_ratio": 0.9996774709986187,
+        "negative_scale_coordinates": 21,
+        "original_constraint_l2": 103.97804483320463,
+        "original_l2": 29.001461801608077,
+        "postcast_exact_preservation_claimed": false,
+        "precast_constraint_l2": 6.329955535180053e-05,
+        "precast_constraint_relative_to_weight_times_constraint": 1.1455723910902565e-08,
+        "precast_l2": 28.99209151595745,
+        "precast_retained_norm_ratio": 0.9996769029880381,
+        "pythagorean_relative_error": 1.4769479336893313e-10,
+        "rank": 2,
+        "removed_l2": 0.7371677452955759,
+        "residual_rank": 2,
+        "rounding_l2": 0.023594455818735278,
+        "side": "left",
+        "write_basis": {
+          "method": "CPU float64 thin SVD; 32*eps64*max(shape)*smax; full numerical rank",
+          "orthogonality_max_abs": 7.771561172376096e-16,
+          "rank": 2,
+          "rank_tolerance": 3.4632043424502356e-09,
+          "shape": [
+            2560,
+            2
+          ],
+          "singular_values": [
+            190.3916721944185,
+            7.199553642177082
+          ],
+          "span_residual_l2": 2.0398078677059066e-13,
+          "span_residual_relative": 1.070609346298382e-15
+        },
+        "zero_scale_coordinates": 1
+      },
+      "name": "language_model.model.layers.6.self_attn.o_proj.weight",
+      "output_sha256": "3f43c064cc4d915e13efef8c322aa2af22f4070530ded89dcb4d58a7b35ae524"
+    },
+    {
+      "diagnostics": {
+        "chunk": 128,
+        "constraint_columns_l2": 421.80831412918064,
+        "device": "cuda:0",
+        "full_rank_annihilation": false,
+        "ideal_projector_operator_norm": 1.0,
+        "maximum_rounding_error": 0.00024143606424331665,
+        "native_constraint_l2": 0.0250557895325657,
+        "native_constraint_relative_to_original_constraint": 5.747492489160553e-05,
+        "native_constraint_relative_to_weight_times_constraint": 1.3500073009759071e-06,
+        "native_identity": false,
+        "native_l2": 43.98192979418263,
+        "native_retained_norm_ratio": 0.9995797320174278,
+        "negative_scale_coordinates": 2,
+        "original_constraint_l2": 435.94297130130235,
+        "original_l2": 44.000421762669156,
+        "postcast_exact_preservation_claimed": false,
+        "precast_constraint_l2": 0.00025417202051878176,
+        "precast_constraint_relative_to_weight_times_constraint": 1.369480227147393e-08,
+        "precast_l2": 43.98187715507908,
+        "precast_retained_norm_ratio": 0.9995785356856327,
+        "pythagorean_relative_error": 8.938410459802216e-11,
+        "rank": 2,
+        "removed_l2": 1.277339827630687,
+        "residual_rank": 2,
+        "rounding_l2": 0.0496728157327288,
+        "side": "left",
+        "write_basis": {
+          "method": "CPU float64 thin SVD; 32*eps64*max(shape)*smax; full numerical rank",
+          "orthogonality_max_abs": 1.1102230246251565e-15,
+          "rank": 2,
+          "rank_tolerance": 7.670838180640186e-09,
+          "shape": [
+            2560,
+            2
+          ],
+          "singular_values": [
+            421.70878872009905,
+            9.162498825547976
+          ],
+          "span_residual_l2": 6.901860192275825e-14,
+          "span_residual_relative": 1.6362551332172416e-16
+        },
+        "zero_scale_coordinates": 0
+      },
+      "name": "language_model.model.layers.7.mlp.down_proj.weight",
+      "output_sha256": "1561b92a008f7ee8d2ec010b5dd3c6321b41cd20563177f626f246487977e01b"
+    },
+    {
+      "diagnostics": {
+        "chunk": 128,
+        "constraint_columns_l2": 215.5138427053443,
+        "device": "cuda:0",
+        "full_rank_annihilation": false,
+        "ideal_projector_operator_norm": 1.0,
+        "maximum_rounding_error": 0.0004673302173614502,
+        "native_constraint_l2": 0.019581333630079342,
+        "native_constraint_relative_to_original_constraint": 8.403692532624683e-05,
+        "native_constraint_relative_to_weight_times_constraint": 2.0979912290176356e-06,
+        "native_identity": false,
+        "native_l2": 43.29016531916653,
+        "native_retained_norm_ratio": 0.9995990072223554,
+        "negative_scale_coordinates": 46,
+        "original_constraint_l2": 233.00868700349278,
+        "original_l2": 43.30753132644605,
+        "postcast_exact_preservation_claimed": false,
+        "precast_constraint_l2": 0.00014026356190146035,
+        "precast_constraint_relative_to_weight_times_constraint": 1.502817571975784e-08,
+        "precast_l2": 43.29014430338097,
+        "precast_retained_norm_ratio": 0.9995985219537447,
+        "pythagorean_relative_error": 3.635858255506298e-11,
+        "rank": 2,
+        "removed_l2": 1.227059784756478,
+        "residual_rank": 2,
+        "rounding_l2": 0.02859903957729085,
+        "side": "left",
+        "write_basis": {
+          "method": "CPU float64 thin SVD; 32*eps64*max(shape)*smax; full numerical rank",
+          "orthogonality_max_abs": 1.3322676295501878e-15,
+          "rank": 2,
+          "rank_tolerance": 3.9136265728742004e-09,
+          "shape": [
+            2560,
+            2
+          ],
+          "singular_values": [
+            215.15389618241602,
+            12.450596578076247
+          ],
+          "span_residual_l2": 3.988703907931562e-13,
+          "span_residual_relative": 1.8507877999210534e-15
+        },
+        "zero_scale_coordinates": 3
+      },
+      "name": "language_model.model.layers.7.self_attn.o_proj.weight",
+      "output_sha256": "dd4b4d08aec7971e9a7e2783c6b81fa3c3a13c78cf718422c5b42221f00099e9"
+    },
+    {
+      "diagnostics": {
+        "chunk": 128,
+        "constraint_columns_l2": 313.33126814917813,
+        "device": "cuda:0",
+        "full_rank_annihilation": false,
+        "ideal_projector_operator_norm": 1.0,
+        "maximum_rounding_error": 0.0002662837505340576,
+        "native_constraint_l2": 0.031584717032433235,
+        "native_constraint_relative_to_original_constraint": 5.4311332843846345e-05,
+        "native_constraint_relative_to_weight_times_constraint": 1.9750804189642677e-06,
+        "native_identity": false,
+        "native_l2": 50.99668306415747,
+        "native_retained_norm_ratio": 0.9992023780989757,
+        "negative_scale_coordinates": 4,
+        "original_constraint_l2": 581.5492895975189,
+        "original_l2": 51.037391605473154,
+        "postcast_exact_preservation_claimed": false,
+        "precast_constraint_l2": 0.0003468984021246745,
+        "precast_constraint_relative_to_weight_times_constraint": 2.169252428960748e-08,
+        "precast_l2": 50.996670429979474,
+        "precast_retained_norm_ratio": 0.9992021305514894,
+        "pythagorean_relative_error": 1.4267154123849604e-10,
+        "rank": 2,
+        "removed_l2": 2.0383686062253386,
+        "residual_rank": 2,
+        "rounding_l2": 0.0590090805984615,
+        "side": "left",
+        "write_basis": {
+          "method": "CPU float64 thin SVD; 32*eps64*max(shape)*smax; full numerical rank",
+          "orthogonality_max_abs": 3.774758283725532e-15,
+          "rank": 2,
+          "rank_tolerance": 5.6969380459210415e-09,
+          "shape": [
+            2560,
+            2
+          ],
+          "singular_values": [
+            313.19248121048344,
+            9.324876041713257
+          ],
+          "span_residual_l2": 7.540333820559824e-13,
+          "span_residual_relative": 2.406505378508807e-15
+        },
+        "zero_scale_coordinates": 0
+      },
+      "name": "language_model.model.layers.8.mlp.down_proj.weight",
+      "output_sha256": "db33d78c20eba51965d9aee581260579dbf613979dfb255338c975a2567307a0"
+    },
+    {
+      "diagnostics": {
+        "chunk": 128,
+        "constraint_columns_l2": 234.3169175945198,
+        "device": "cuda:0",
+        "full_rank_annihilation": false,
+        "ideal_projector_operator_norm": 1.0,
+        "maximum_rounding_error": 0.00024338066577911377,
+        "native_constraint_l2": 0.01381320576065439,
+        "native_constraint_relative_to_original_constraint": 6.0534407555000815e-05,
+        "native_constraint_relative_to_weight_times_constraint": 1.9267080764096626e-06,
+        "native_identity": false,
+        "native_l2": 30.57678709433584,
+        "native_retained_norm_ratio": 0.999348423493844,
+        "negative_scale_coordinates": 24,
+        "original_constraint_l2": 228.18767571325253,
+        "original_l2": 30.59672320033854,
+        "postcast_exact_preservation_claimed": false,
+        "precast_constraint_l2": 0.00012938084154790364,
+        "precast_constraint_relative_to_weight_times_constraint": 1.804643445282432e-08,
+        "precast_l2": 30.57670660921058,
+        "precast_retained_norm_ratio": 0.9993457929793037,
+        "pythagorean_relative_error": 3.9381829064725416e-11,
+        "rank": 2,
+        "removed_l2": 1.1065638568381322,
+        "residual_rank": 2,
+        "rounding_l2": 0.03194128442847193,
+        "side": "left",
+        "write_basis": {
+          "method": "CPU float64 thin SVD; 32*eps64*max(shape)*smax; full numerical rank",
+          "orthogonality_max_abs": 8.881784197001252e-16,
+          "rank": 2,
+          "rank_tolerance": 4.259784638133351e-09,
+          "shape": [
+            2560,
+            2
+          ],
+          "singular_values": [
+            234.18413707246,
+            7.887193076395376
+          ],
+          "span_residual_l2": 1.569436210565275e-13,
+          "span_residual_relative": 6.697921032236987e-16
+        },
+        "zero_scale_coordinates": 0
+      },
+      "name": "language_model.model.layers.8.self_attn.o_proj.weight",
+      "output_sha256": "932a6e0fddbf4c4c89ccdca0922763b177487f862201f633abc05c4a7b1710ac"
+    },
+    {
+      "diagnostics": {
+        "chunk": 128,
+        "constraint_columns_l2": 488.4498822540674,
+        "device": "cuda:0",
+        "full_rank_annihilation": false,
+        "ideal_projector_operator_norm": 1.0,
+        "maximum_rounding_error": 0.00047656893730163574,
+        "native_constraint_l2": 0.03652788034276052,
+        "native_constraint_relative_to_original_constraint": 5.1812028666419036e-05,
+        "native_constraint_relative_to_weight_times_constraint": 1.4558856699710815e-06,
+        "native_identity": false,
+        "native_l2": 51.33833684717589,
+        "native_retained_norm_ratio": 0.9994581282717792,
+        "negative_scale_coordinates": 2,
+        "original_constraint_l2": 705.0077227807017,
+        "original_l2": 51.366170722877584,
+        "postcast_exact_preservation_claimed": false,
+        "precast_constraint_l2": 0.0003982244373653764,
+        "precast_constraint_relative_to_weight_times_constraint": 1.5871965368706448e-08,
+        "precast_l2": 51.338313768532636,
+        "precast_retained_norm_ratio": 0.9994576789752299,
+        "pythagorean_relative_error": 1.048562162951524e-11,
+        "rank": 2,
+        "removed_l2": 1.6914591652867865,
+        "residual_rank": 2,
+        "rounding_l2": 0.0614440987852644,
+        "side": "left",
+        "write_basis": {
+          "method": "CPU float64 thin SVD; 32*eps64*max(shape)*smax; full numerical rank",
+          "orthogonality_max_abs": 2.220446049250313e-15,
+          "rank": 2,
+          "rank_tolerance": 8.882936314853527e-09,
+          "shape": [
+            2560,
+            2
+          ],
+          "singular_values": [
+            488.3445883487572,
+            10.14152377581236
+          ],
+          "span_residual_l2": 2.1758332735228562e-13,
+          "span_residual_relative": 4.454568119623572e-16
+        },
+        "zero_scale_coordinates": 0
+      },
+      "name": "language_model.model.layers.9.mlp.down_proj.weight",
+      "output_sha256": "51df776258d9c8701a3507a49e605a17df1bc38a0a8cdef69e5297baa25aa66e"
+    },
+    {
+      "diagnostics": {
+        "chunk": 128,
+        "constraint_columns_l2": 212.40600098974897,
+        "device": "cuda:0",
+        "full_rank_annihilation": false,
+        "ideal_projector_operator_norm": 1.0,
+        "maximum_rounding_error": 0.00024271756410598755,
+        "native_constraint_l2": 0.012286758044634019,
+        "native_constraint_relative_to_original_constraint": 6.263707362209281e-05,
+        "native_constraint_relative_to_weight_times_constraint": 1.8739271295305768e-06,
+        "native_identity": false,
+        "native_l2": 30.851250763822453,
+        "native_retained_norm_ratio": 0.9994359126786448,
+        "negative_scale_coordinates": 54,
+        "original_constraint_l2": 196.15791948971795,
+        "original_l2": 30.868663385465375,
+        "postcast_exact_preservation_claimed": false,
+        "precast_constraint_l2": 0.00011452138136402513,
+        "precast_constraint_relative_to_weight_times_constraint": 1.746634243709944e-08,
+        "precast_l2": 30.85125715795398,
+        "precast_retained_norm_ratio": 0.9994361198185345,
+        "pythagorean_relative_error": 5.599737003226897e-11,
+        "rank": 2,
+        "removed_l2": 1.0364897132173878,
+        "residual_rank": 2,
+        "rounding_l2": 0.030255449204144275,
+        "side": "left",
+        "write_basis": {
+          "method": "CPU float64 thin SVD; 32*eps64*max(shape)*smax; full numerical rank",
+          "orthogonality_max_abs": 1.3322676295501878e-15,
+          "rank": 2,
+          "rank_tolerance": 3.8615722226516274e-09,
+          "shape": [
+            2560,
+            2
+          ],
+          "singular_values": [
+            212.29217801511385,
+            6.952726807261684
+          ],
+          "span_residual_l2": 2.935020972156716e-13,
+          "span_residual_relative": 1.3817975756242238e-15
+        },
+        "zero_scale_coordinates": 1
+      },
+      "name": "language_model.model.layers.9.self_attn.o_proj.weight",
+      "output_sha256": "d817d679a83bf3d3262b1cacf005981b12f759ac27003edc13f90a8192ce1e38"
+    },
+    {
+      "diagnostics": {
+        "chunk": 128,
+        "constraint_columns_l2": 538.0964287298823,
+        "device": "cuda:0",
+        "full_rank_annihilation": false,
+        "ideal_projector_operator_norm": 1.0,
+        "maximum_rounding_error": 0.00038717687129974365,
+        "native_constraint_l2": 0.056447935159368225,
+        "native_constraint_relative_to_original_constraint": 8.303046408658857e-05,
+        "native_constraint_relative_to_weight_times_constraint": 2.5841306172369146e-06,
+        "native_identity": false,
+        "native_l2": 40.56902483662021,
+        "native_retained_norm_ratio": 0.9993579686371269,
+        "negative_scale_coordinates": 2,
+        "original_constraint_l2": 679.8460755380257,
+        "original_l2": 40.595088156395214,
+        "postcast_exact_preservation_claimed": false,
+        "precast_constraint_l2": 0.0003842081140697552,
+        "precast_constraint_relative_to_weight_times_constraint": 1.758866729412569e-08,
+        "precast_l2": 40.569024205135015,
+        "precast_retained_norm_ratio": 0.9993579530814224,
+        "pythagorean_relative_error": 6.851104325432759e-11,
+        "rank": 2,
+        "removed_l2": 1.454461268501751,
+        "residual_rank": 2,
+        "rounding_l2": 0.052917840521594206,
+        "side": "left",
+        "write_basis": {
+          "method": "CPU float64 thin SVD; 32*eps64*max(shape)*smax; full numerical rank",
+          "orthogonality_max_abs": 1.5543122344752192e-15,
+          "rank": 2,
+          "rank_tolerance": 9.78365845057686e-09,
+          "shape": [
+            2560,
+            2
+          ],
+          "singular_values": [
+            537.8623114299091,
+            15.871375338289175
+          ],
+          "span_residual_l2": 2.288863494967171e-13,
+          "span_residual_relative": 4.25363071145033e-16
+        },
+        "zero_scale_coordinates": 0
+      },
+      "name": "language_model.model.layers.14.mlp.down_proj.weight",
+      "output_sha256": "58efac6ff20ae972292d4c3674db65396bb73a3b5a0f0d334a780518d768e76b"
+    },
+    {
+      "diagnostics": {
+        "chunk": 128,
+        "constraint_columns_l2": 287.28787547720106,
+        "device": "cuda:0",
+        "full_rank_annihilation": false,
+        "ideal_projector_operator_norm": 1.0,
+        "maximum_rounding_error": 0.00019938498735427856,
+        "native_constraint_l2": 0.045462086551583916,
+        "native_constraint_relative_to_original_constraint": 0.0001251011925875717,
+        "native_constraint_relative_to_weight_times_constraint": 5.848522818586582e-06,
+        "native_identity": false,
+        "native_l2": 27.02332795595142,
+        "native_retained_norm_ratio": 0.9987411725481549,
+        "negative_scale_coordinates": 1,
+        "original_constraint_l2": 363.40250329556324,
+        "original_l2": 27.05738853942008,
+        "postcast_exact_preservation_claimed": false,
+        "precast_constraint_l2": 0.00021198096064792038,
+        "precast_constraint_relative_to_weight_times_constraint": 2.7270536385270075e-08,
+        "precast_l2": 27.023294070036485,
+        "precast_retained_norm_ratio": 0.9987399201761868,
+        "pythagorean_relative_error": 1.5585785858308e-10,
+        "rank": 2,
+        "removed_l2": 1.3578851436584733,
+        "residual_rank": 2,
+        "rounding_l2": 0.03588912132442144,
+        "side": "left",
+        "write_basis": {
+          "method": "CPU float64 thin SVD; 32*eps64*max(shape)*smax; full numerical rank",
+          "orthogonality_max_abs": 2.4424906541753444e-15,
+          "rank": 2,
+          "rank_tolerance": 5.2132615773992195e-09,
+          "shape": [
+            2560,
+            2
+          ],
+          "singular_values": [
+            286.6020861494147,
+            19.83853853002363
+          ],
+          "span_residual_l2": 4.000415694062445e-13,
+          "span_residual_relative": 1.3924763401231372e-15
+        },
+        "zero_scale_coordinates": 0
+      },
+      "name": "language_model.model.layers.15.mlp.down_proj.weight",
+      "output_sha256": "b7742f24099f096e7f5284f9e8b36de1a3e1545826088081c4092e2dd321df82"
+    },
+    {
+      "diagnostics": {
+        "chunk": 128,
+        "constraint_columns_l2": 217.44439635031387,
+        "device": "cuda:0",
+        "full_rank_annihilation": false,
+        "ideal_projector_operator_norm": 1.0,
+        "maximum_rounding_error": 0.00024154037237167358,
+        "native_constraint_l2": 0.050309477027422916,
+        "native_constraint_relative_to_original_constraint": 0.00015685449525666204,
+        "native_constraint_relative_to_weight_times_constraint": 6.7223392738617845e-06,
+        "native_identity": false,
+        "native_l2": 34.38025798996784,
+        "native_retained_norm_ratio": 0.998913715074505,
+        "negative_scale_coordinates": 27,
+        "original_constraint_l2": 320.7397846335305,
+        "original_l2": 34.41764535929267,
+        "postcast_exact_preservation_claimed": false,
+        "precast_constraint_l2": 0.00017562607331427266,
+        "precast_constraint_relative_to_weight_times_constraint": 2.3467110371891317e-08,
+        "precast_l2": 34.380209077733504,
+        "precast_retained_norm_ratio": 0.9989122939361957,
+        "pythagorean_relative_error": 6.804018572055348e-11,
+        "rank": 2,
+        "removed_l2": 1.6048475842809744,
+        "residual_rank": 2,
+        "rounding_l2": 0.03805608822922049,
+        "side": "left",
+        "write_basis": {
+          "method": "CPU float64 thin SVD; 32*eps64*max(shape)*smax; full numerical rank",
+          "orthogonality_max_abs": 4.440892098500626e-16,
+          "rank": 2,
+          "rank_tolerance": 3.9325009137759926e-09,
+          "shape": [
+            2560,
+            2
+          ],
+          "singular_values": [
+            216.19152404682245,
+            23.308591430299103
+          ],
+          "span_residual_l2": 1.1918587130306124e-13,
+          "span_residual_relative": 5.481211440880123e-16
+        },
+        "zero_scale_coordinates": 1
+      },
+      "name": "language_model.model.layers.15.self_attn.o_proj.weight",
+      "output_sha256": "87abd8a19d536f69b839cd09f6b4c1824ecde6704b3e98976865ab8483608670"
+    },
+    {
+      "diagnostics": {
+        "chunk": 128,
+        "constraint_columns_l2": 227.1920224635152,
+        "device": "cuda:0",
+        "full_rank_annihilation": false,
+        "ideal_projector_operator_norm": 1.0,
+        "maximum_rounding_error": 0.00041072070598602295,
+        "native_constraint_l2": 0.10217592313955738,
+        "native_constraint_relative_to_original_constraint": 0.00016759571788011908,
+        "native_constraint_relative_to_weight_times_constraint": 8.98061388451643e-06,
+        "native_identity": false,
+        "native_l2": 49.997512741235425,
+        "native_retained_norm_ratio": 0.9983870330850466,
+        "negative_scale_coordinates": 1,
+        "original_constraint_l2": 609.6571226995408,
+        "original_l2": 50.07828736190771,
+        "postcast_exact_preservation_claimed": false,
+        "precast_constraint_l2": 0.00034038769173108663,
+        "precast_constraint_relative_to_weight_times_constraint": 2.991791350202365e-08,
+        "precast_l2": 49.99751045241596,
+        "precast_retained_norm_ratio": 0.9983869873802195,
+        "pythagorean_relative_error": 1.63936442639288e-10,
+        "rank": 2,
+        "removed_l2": 2.843204894742626,
+        "residual_rank": 2,
+        "rounding_l2": 0.06642878179310202,
+        "side": "left",
+        "write_basis": {
+          "method": "CPU float64 thin SVD; 32*eps64*max(shape)*smax; full numerical rank",
+          "orthogonality_max_abs": 2.55351295663786e-15,
+          "rank": 2,
+          "rank_tolerance": 4.106614062793818e-09,
+          "shape": [
+            2560,
+            2
+          ],
+          "singular_values": [
+            225.76349564151218,
+            25.437356521212546
+          ],
+          "span_residual_l2": 6.549480499126484e-13,
+          "span_residual_relative": 2.882795103502486e-15
+        },
+        "zero_scale_coordinates": 0
+      },
+      "name": "language_model.model.layers.16.mlp.down_proj.weight",
+      "output_sha256": "75a9d7988b717b7a0836ac972b5a617323e4a40763d7c9cb8806f40bc9d2c78f"
+    },
+    {
+      "diagnostics": {
+        "chunk": 128,
+        "constraint_columns_l2": 204.5918756054969,
+        "device": "cuda:0",
+        "full_rank_annihilation": false,
+        "ideal_projector_operator_norm": 1.0,
+        "maximum_rounding_error": 0.00023104995489120483,
+        "native_constraint_l2": 0.04353980529139501,
+        "native_constraint_relative_to_original_constraint": 0.000206678075063242,
+        "native_constraint_relative_to_weight_times_constraint": 8.872165433742408e-06,
+        "native_identity": false,
+        "native_l2": 23.96198310180691,
+        "native_retained_norm_ratio": 0.9989742412843162,
+        "negative_scale_coordinates": 36,
+        "original_constraint_l2": 210.6648481125642,
+        "original_l2": 23.986587553048963,
+        "postcast_exact_preservation_claimed": false,
+        "precast_constraint_l2": 0.00011713036811716628,
+        "precast_constraint_relative_to_weight_times_constraint": 2.3867814665125038e-08,
+        "precast_l2": 23.961932963421567,
+        "precast_retained_norm_ratio": 0.9989721510167768,
+        "pythagorean_relative_error": 5.659446656810285e-11,
+        "rank": 2,
+        "removed_l2": 1.0872677357193663,
+        "residual_rank": 2,
+        "rounding_l2": 0.022616439056109043,
+        "side": "left",
+        "write_basis": {
+          "method": "CPU float64 thin SVD; 32*eps64*max(shape)*smax; full numerical rank",
+          "orthogonality_max_abs": 2.9976021664879227e-15,
+          "rank": 2,
+          "rank_tolerance": 3.6749302139947006e-09,
+          "shape": [
+            2560,
+            2
+          ],
+          "singular_values": [
+            202.03142507762587,
+            32.26668320231932
+          ],
+          "span_residual_l2": 6.358960939186046e-14,
+          "span_residual_relative": 3.108119968286363e-16
+        },
+        "zero_scale_coordinates": 0
+      },
+      "name": "language_model.model.layers.16.self_attn.o_proj.weight",
+      "output_sha256": "206fc785b06874d54f510914ca1d61ef7108c24f9a9f9995d4d5321ae30553c9"
+    },
+    {
+      "diagnostics": {
+        "chunk": 128,
+        "constraint_columns_l2": 349.4615348279866,
+        "device": "cuda:0",
+        "full_rank_annihilation": false,
+        "ideal_projector_operator_norm": 1.0,
+        "maximum_rounding_error": 0.0004634261131286621,
+        "native_constraint_l2": 0.12395658097275161,
+        "native_constraint_relative_to_original_constraint": 0.00021314711712626765,
+        "native_constraint_relative_to_weight_times_constraint": 8.656219821266892e-06,
+        "native_identity": false,
+        "native_l2": 40.9371542526354,
+        "native_retained_norm_ratio": 0.9990235297866723,
+        "negative_scale_coordinates": 2,
+        "original_constraint_l2": 581.5541051832296,
+        "original_l2": 40.977167235867775,
+        "postcast_exact_preservation_claimed": false,
+        "precast_constraint_l2": 0.00034510844831719397,
+        "precast_constraint_relative_to_weight_times_constraint": 2.409984663473928e-08,
+        "precast_l2": 40.93710511802032,
+        "precast_retained_norm_ratio": 0.9990223307136666,
+        "pythagorean_relative_error": 1.4765830497613848e-10,
+        "rank": 2,
+        "removed_l2": 1.8115349802012581,
+        "residual_rank": 2,
+        "rounding_l2": 0.052383558162586205,
+        "side": "left",
+        "write_basis": {
+          "method": "CPU float64 thin SVD; 32*eps64*max(shape)*smax; full numerical rank",
+          "orthogonality_max_abs": 7.771561172376096e-16,
+          "rank": 2,
+          "rank_tolerance": 6.323422642434904e-09,
+          "shape": [
+            2560,
+            2
+          ],
+          "singular_values": [
+            347.63383613496086,
+            35.694261421455266
+          ],
+          "span_residual_l2": 6.018394783231892e-14,
+          "span_residual_relative": 1.7221909089921129e-16
+        },
+        "zero_scale_coordinates": 0
+      },
+      "name": "language_model.model.layers.17.mlp.down_proj.weight",
+      "output_sha256": "b8fc2aa92a31c21c32562a665df95bf05cbee7e00a6ce2f5a1330c1365bbffb5"
+    },
+    {
+      "diagnostics": {
+        "chunk": 128,
+        "constraint_columns_l2": 213.25014348297745,
+        "device": "cuda:0",
+        "full_rank_annihilation": false,
+        "ideal_projector_operator_norm": 1.0,
+        "maximum_rounding_error": 0.0002435818314552307,
+        "native_constraint_l2": 0.10095786969488368,
+        "native_constraint_relative_to_original_constraint": 0.0002277103460013536,
+        "native_constraint_relative_to_weight_times_constraint": 1.3518008051633845e-05,
+        "native_identity": false,
+        "native_l2": 34.95145605912713,
+        "native_retained_norm_ratio": 0.997992155884662,
+        "negative_scale_coordinates": 33,
+        "original_constraint_l2": 443.360925261971,
+        "original_l2": 35.02177432260948,
+        "postcast_exact_preservation_claimed": false,
+        "precast_constraint_l2": 0.00027262693718876267,
+        "precast_constraint_relative_to_weight_times_constraint": 3.650406989715567e-08,
+        "precast_l2": 34.9513367164424,
+        "precast_retained_norm_ratio": 0.9979887482136618,
+        "pythagorean_relative_error": 3.41169147652311e-10,
+        "rank": 2,
+        "removed_l2": 2.220076129145472,
+        "residual_rank": 2,
+        "rounding_l2": 0.03669080932604381,
+        "side": "left",
+        "write_basis": {
+          "method": "CPU float64 thin SVD; 32*eps64*max(shape)*smax; full numerical rank",
+          "orthogonality_max_abs": 8.881784197001252e-16,
+          "rank": 2,
+          "rank_tolerance": 3.7208248975767056e-09,
+          "shape": [
+            2560,
+            2
+          ],
+          "singular_values": [
+            204.5545119902016,
+            60.27499746960515
+          ],
+          "span_residual_l2": 5.221315522529651e-13,
+          "span_residual_relative": 2.448446428804602e-15
+        },
+        "zero_scale_coordinates": 0
+      },
+      "name": "language_model.model.layers.17.self_attn.o_proj.weight",
+      "output_sha256": "dc00e7d600198e2a1ba9f7b52b31c2afe03936ce62b079c2621016c75a0d3a65"
+    },
+    {
+      "diagnostics": {
+        "chunk": 128,
+        "constraint_columns_l2": 217.40988590485586,
+        "device": "cuda:0",
+        "full_rank_annihilation": false,
+        "ideal_projector_operator_norm": 1.0,
+        "maximum_rounding_error": 0.0002540498971939087,
+        "native_constraint_l2": 0.12046155817339144,
+        "native_constraint_relative_to_original_constraint": 0.00031468855930692606,
+        "native_constraint_relative_to_weight_times_constraint": 1.4079516200967278e-05,
+        "native_identity": false,
+        "native_l2": 39.307863518765465,
+        "native_retained_norm_ratio": 0.998844730935722,
+        "negative_scale_coordinates": 2,
+        "original_constraint_l2": 382.79611574916305,
+        "original_l2": 39.35332720025633,
+        "postcast_exact_preservation_claimed": false,
+        "precast_constraint_l2": 0.00022250818281605857,
+        "precast_constraint_relative_to_weight_times_constraint": 2.6006699666769598e-08,
+        "precast_l2": 39.30783747755857,
+        "precast_retained_norm_ratio": 0.9988440692075088,
+        "pythagorean_relative_error": 1.6289818316209066e-10,
+        "rank": 2,
+        "removed_l2": 1.8916328450719255,
+        "residual_rank": 2,
+        "rounding_l2": 0.05250986268867943,
+        "side": "left",
+        "write_basis": {
+          "method": "CPU float64 thin SVD; 32*eps64*max(shape)*smax; full numerical rank",
+          "orthogonality_max_abs": 2.220446049250313e-15,
+          "rank": 2,
+          "rank_tolerance": 3.902133119103117e-09,
+          "shape": [
+            2560,
+            2
+          ],
+          "singular_values": [
+            214.5220368791854,
+            35.317901726571804
+          ],
+          "span_residual_l2": 6.090061452069583e-14,
+          "span_residual_relative": 2.8011888358815247e-16
+        },
+        "zero_scale_coordinates": 0
+      },
+      "name": "language_model.model.layers.18.mlp.down_proj.weight",
+      "output_sha256": "c019304234eebebcd9aeacf58faa8aea7c1374004f855b95db40c047183a7acc"
+    },
+    {
+      "diagnostics": {
+        "chunk": 128,
+        "constraint_columns_l2": 173.22751886775646,
+        "device": "cuda:0",
+        "full_rank_annihilation": false,
+        "ideal_projector_operator_norm": 1.0,
+        "maximum_rounding_error": 0.00024242699146270752,
+        "native_constraint_l2": 0.0523070718229702,
+        "native_constraint_relative_to_original_constraint": 0.00025260360013958056,
+        "native_constraint_relative_to_weight_times_constraint": 1.2137221371489276e-05,
+        "native_identity": false,
+        "native_l2": 24.846070455728796,
+        "native_retained_norm_ratio": 0.9986963483392804,
+        "negative_scale_coordinates": 9,
+        "original_constraint_l2": 207.0717590488299,
+        "original_l2": 24.8785033579476,
+        "postcast_exact_preservation_claimed": false,
+        "precast_constraint_l2": 0.0001259853376644713,
+        "precast_constraint_relative_to_weight_times_constraint": 2.9233369016921673e-08,
+        "precast_l2": 24.846023425515217,
+        "precast_retained_norm_ratio": 0.9986944579436685,
+        "pythagorean_relative_error": 2.6304925562510243e-10,
+        "rank": 2,
+        "removed_l2": 1.2708458235944515,
+        "residual_rank": 2,
+        "rounding_l2": 0.030935451165102896,
+        "side": "left",
+        "write_basis": {
+          "method": "CPU float64 thin SVD; 32*eps64*max(shape)*smax; full numerical rank",
+          "orthogonality_max_abs": 1.2212453270876722e-15,
+          "rank": 2,
+          "rank_tolerance": 3.1043833156666827e-09,
+          "shape": [
+            2560,
+            2
+          ],
+          "singular_values": [
+            170.6652776324665,
+            29.683940164878003
+          ],
+          "span_residual_l2": 3.449688413898927e-13,
+          "span_residual_relative": 1.9914205528351714e-15
+        },
+        "zero_scale_coordinates": 1
+      },
+      "name": "language_model.model.layers.18.self_attn.o_proj.weight",
+      "output_sha256": "d81a585a94d5c8ee5554d49128456ff4040f0c21aa8d9713a9c9453bc239c2b3"
+    },
+    {
+      "diagnostics": {
+        "chunk": 128,
+        "constraint_columns_l2": 218.9633743737076,
+        "device": "cuda:0",
+        "full_rank_annihilation": false,
+        "ideal_projector_operator_norm": 1.0,
+        "maximum_rounding_error": 0.0002400428056716919,
+        "native_constraint_l2": 0.11570552967104358,
+        "native_constraint_relative_to_original_constraint": 0.00031438543120612515,
+        "native_constraint_relative_to_weight_times_constraint": 1.558829112762243e-05,
+        "native_identity": false,
+        "native_l2": 33.851107042159526,
+        "native_retained_norm_ratio": 0.9985935271846382,
+        "negative_scale_coordinates": 1,
+        "original_constraint_l2": 368.0371867969348,
+        "original_l2": 33.898784761400236,
+        "postcast_exact_preservation_claimed": false,
+        "precast_constraint_l2": 0.00022346873270022736,
+        "precast_constraint_relative_to_weight_times_constraint": 3.010656165833845e-08,
+        "precast_l2": 33.85108400022226,
+        "precast_retained_norm_ratio": 0.9985928474571073,
+        "pythagorean_relative_error": 3.244102374819233e-10,
+        "rank": 2,
+        "removed_l2": 1.797698511110507,
+        "residual_rank": 2,
+        "rounding_l2": 0.04636558513458998,
+        "side": "left",
+        "write_basis": {
+          "method": "CPU float64 thin SVD; 32*eps64*max(shape)*smax; full numerical rank",
+          "orthogonality_max_abs": 8.881784197001252e-16,
+          "rank": 2,
+          "rank_tolerance": 3.9213642740681305e-09,
+          "shape": [
+            2560,
+            2
+          ],
+          "singular_values": [
+            215.57928080416514,
+            38.34752932170985
+          ],
+          "span_residual_l2": 2.607888534104323e-13,
+          "span_residual_relative": 1.1910158680937233e-15
+        },
+        "zero_scale_coordinates": 0
+      },
+      "name": "language_model.model.layers.19.mlp.down_proj.weight",
+      "output_sha256": "335a3bdcdd101857d355bb662d392b6bb8866abfc774f4c52fc2438fc0f18356"
+    },
+    {
+      "diagnostics": {
+        "chunk": 128,
+        "constraint_columns_l2": 165.7937134876421,
+        "device": "cuda:0",
+        "full_rank_annihilation": false,
+        "ideal_projector_operator_norm": 1.0,
+        "maximum_rounding_error": 0.00022845715284347534,
+        "native_constraint_l2": 0.04675854577517112,
+        "native_constraint_relative_to_original_constraint": 0.0002832392768724785,
+        "native_constraint_relative_to_weight_times_constraint": 1.2217400472652802e-05,
+        "native_identity": false,
+        "native_l2": 23.058070028360813,
+        "native_retained_norm_ratio": 0.9988696713994398,
+        "negative_scale_coordinates": 18,
+        "original_constraint_l2": 165.08496382097107,
+        "original_l2": 23.084162717700615,
+        "postcast_exact_preservation_claimed": false,
+        "precast_constraint_l2": 9.97570084668386e-05,
+        "precast_constraint_relative_to_weight_times_constraint": 2.606521015972985e-08,
+        "precast_l2": 23.05805000731291,
+        "precast_retained_norm_ratio": 0.9988688040927869,
+        "pythagorean_relative_error": 1.623004177402568e-10,
+        "rank": 2,
+        "removed_l2": 1.0976786068893878,
+        "residual_rank": 2,
+        "rounding_l2": 0.03071479331350554,
+        "side": "left",
+        "write_basis": {
+          "method": "CPU float64 thin SVD; 32*eps64*max(shape)*smax; full numerical rank",
+          "orthogonality_max_abs": 4.440892098500626e-16,
+          "rank": 2,
+          "rank_tolerance": 2.9834493919632595e-09,
+          "shape": [
+            2560,
+            2
+          ],
+          "singular_values": [
+            164.01686486724205,
+            24.207921660959236
+          ],
+          "span_residual_l2": 5.148255450769942e-13,
+          "span_residual_relative": 3.1052175275353138e-15
+        },
+        "zero_scale_coordinates": 0
+      },
+      "name": "language_model.model.layers.19.self_attn.o_proj.weight",
+      "output_sha256": "ec501f1a1d00a68745da4eaf47db504749103c6ce9bffb99ef32d2bb1c23e058"
+    },
+    {
+      "diagnostics": {
+        "chunk": 128,
+        "constraint_columns_l2": 223.27082279787993,
+        "device": "cuda:0",
+        "full_rank_annihilation": false,
+        "ideal_projector_operator_norm": 1.0,
+        "maximum_rounding_error": 0.00029431283473968506,
+        "native_constraint_l2": 0.15418477388962293,
+        "native_constraint_relative_to_original_constraint": 0.0003438469985768758,
+        "native_constraint_relative_to_weight_times_constraint": 1.7923233452346153e-05,
+        "native_identity": false,
+        "native_l2": 38.47044565402815,
+        "native_retained_norm_ratio": 0.9984677996230654,
+        "negative_scale_coordinates": 0,
+        "original_constraint_l2": 448.4109924698121,
+        "original_l2": 38.529480538632534,
+        "postcast_exact_preservation_claimed": false,
+        "precast_constraint_l2": 0.0002637961383266314,
+        "precast_constraint_relative_to_weight_times_constraint": 3.066502386571795e-08,
+        "precast_l2": 38.4704120689425,
+        "precast_retained_norm_ratio": 0.9984669279506427,
+        "pythagorean_relative_error": 1.570748196172241e-10,
+        "rank": 2,
+        "removed_l2": 2.1326663099148075,
+        "residual_rank": 2,
+        "rounding_l2": 0.05273024539996803,
+        "side": "left",
+        "write_basis": {
+          "method": "CPU float64 thin SVD; 32*eps64*max(shape)*smax; full numerical rank",
+          "orthogonality_max_abs": 1.9984014443252818e-15,
+          "rank": 2,
+          "rank_tolerance": 3.977978354153391e-09,
+          "shape": [
+            2560,
+            2
+          ],
+          "singular_values": [
+            218.69167277164442,
+            44.98680443399286
+          ],
+          "span_residual_l2": 1.5517529412550838e-13,
+          "span_residual_relative": 6.950092814679315e-16
+        },
+        "zero_scale_coordinates": 0
+      },
+      "name": "language_model.model.layers.20.mlp.down_proj.weight",
+      "output_sha256": "3eea52daa4c58a56aa7db64b517138edc52e6c6487f57d807645e72045f9e718"
+    },
+    {
+      "diagnostics": {
+        "chunk": 128,
+        "constraint_columns_l2": 192.52608104632853,
+        "device": "cuda:0",
+        "full_rank_annihilation": false,
+        "ideal_projector_operator_norm": 1.0,
+        "maximum_rounding_error": 0.00023581832647323608,
+        "native_constraint_l2": 0.08110194965198145,
+        "native_constraint_relative_to_original_constraint": 0.0003083248655596102,
+        "native_constraint_relative_to_weight_times_constraint": 1.5115856078219022e-05,
+        "native_identity": false,
+        "native_l2": 27.829402945239906,
+        "native_retained_norm_ratio": 0.9986077066892828,
+        "negative_scale_coordinates": 37,
+        "original_constraint_l2": 263.04057411905865,
+        "original_l2": 27.868203658775723,
+        "postcast_exact_preservation_claimed": false,
+        "precast_constraint_l2": 0.00015702881658074522,
+        "precast_constraint_relative_to_weight_times_constraint": 2.926717547177494e-08,
+        "precast_l2": 27.829388708961282,
+        "precast_retained_norm_ratio": 0.998607195846216,
+        "pythagorean_relative_error": 3.5846724290658737e-10,
+        "rank": 2,
+        "removed_l2": 1.470339937204266,
+        "residual_rank": 2,
+        "rounding_l2": 0.03203992178568265,
+        "side": "left",
+        "write_basis": {
+          "method": "CPU float64 thin SVD; 32*eps64*max(shape)*smax; full numerical rank",
+          "orthogonality_max_abs": 1.7763568394002505e-15,
+          "rank": 2,
+          "rank_tolerance": 3.403894512527966e-09,
+          "shape": [
+            2560,
+            2
+          ],
+          "singular_values": [
+            187.1310798123709,
+            45.257605452714024
+          ],
+          "span_residual_l2": 6.84239288976018e-13,
+          "span_residual_relative": 3.554008294654718e-15
+        },
+        "zero_scale_coordinates": 1
+      },
+      "name": "language_model.model.layers.20.self_attn.o_proj.weight",
+      "output_sha256": "00d55b6a74395fc16763642804b3543b75ff2ec83761f3004cbd6e37059a2718"
+    },
+    {
+      "diagnostics": {
+        "chunk": 128,
+        "constraint_columns_l2": 232.93938641721167,
+        "device": "cuda:0",
+        "full_rank_annihilation": false,
+        "ideal_projector_operator_norm": 1.0,
+        "maximum_rounding_error": 0.00023207813501358032,
+        "native_constraint_l2": 0.16090971053461758,
+        "native_constraint_relative_to_original_constraint": 0.0003426731331162172,
+        "native_constraint_relative_to_weight_times_constraint": 1.8022270648645383e-05,
+        "native_identity": false,
+        "native_l2": 38.269308913580595,
+        "native_retained_norm_ratio": 0.9984373078217493,
+        "negative_scale_coordinates": 0,
+        "original_constraint_l2": 469.5720060435705,
+        "original_l2": 38.32920566346946,
+        "postcast_exact_preservation_claimed": false,
+        "precast_constraint_l2": 0.00027831781365482455,
+        "precast_constraint_relative_to_weight_times_constraint": 3.117225770502764e-08,
+        "precast_l2": 38.26931451059748,
+        "precast_retained_norm_ratio": 0.9984374538466093,
+        "pythagorean_relative_error": 1.1866615669644585e-10,
+        "rank": 2,
+        "removed_l2": 2.141862240165766,
+        "residual_rank": 2,
+        "rounding_l2": 0.05401887254772385,
+        "side": "left",
+        "write_basis": {
+          "method": "CPU float64 thin SVD; 32*eps64*max(shape)*smax; full numerical rank",
+          "orthogonality_max_abs": 1.1102230246251565e-15,
+          "rank": 2,
+          "rank_tolerance": 4.152437348468282e-09,
+          "shape": [
+            2560,
+            2
+          ],
+          "singular_values": [
+            228.2826574126109,
+            46.344212897228154
+          ],
+          "span_residual_l2": 1.375891742015923e-13,
+          "span_residual_relative": 5.906651353290676e-16
+        },
+        "zero_scale_coordinates": 0
+      },
+      "name": "language_model.model.layers.21.mlp.down_proj.weight",
+      "output_sha256": "985978a4b5c207fe181993bbdd859f7562ca3b9992999c0436aad8136644a4a4"
+    },
+    {
+      "diagnostics": {
+        "chunk": 128,
+        "constraint_columns_l2": 183.63888696526712,
+        "device": "cuda:0",
+        "full_rank_annihilation": false,
+        "ideal_projector_operator_norm": 1.0,
+        "maximum_rounding_error": 0.0004607886075973511,
+        "native_constraint_l2": 0.11900196240100842,
+        "native_constraint_relative_to_original_constraint": 0.0002825110910221554,
+        "native_constraint_relative_to_weight_times_constraint": 1.635734396587512e-05,
+        "native_identity": false,
+        "native_l2": 39.5433983697278,
+        "native_retained_norm_ratio": 0.9981534330970059,
+        "negative_scale_coordinates": 8,
+        "original_constraint_l2": 421.2293470335857,
+        "original_l2": 39.61655298528113,
+        "postcast_exact_preservation_claimed": false,
+        "precast_constraint_l2": 0.0002434875616093774,
+        "precast_constraint_relative_to_weight_times_constraint": 3.346843796773427e-08,
+        "precast_l2": 39.54337788378314,
+        "precast_retained_norm_ratio": 0.9981529159913236,
+        "pythagorean_relative_error": 9.072166898714051e-11,
+        "rank": 2,
+        "removed_l2": 2.4067687536473144,
+        "residual_rank": 2,
+        "rounding_l2": 0.05169191711425037,
+        "side": "left",
+        "write_basis": {
+          "method": "CPU float64 thin SVD; 32*eps64*max(shape)*smax; full numerical rank",
+          "orthogonality_max_abs": 1.7763568394002505e-15,
+          "rank": 2,
+          "rank_tolerance": 3.2681885899756534e-09,
+          "shape": [
+            2560,
+            2
+          ],
+          "singular_values": [
+            179.67056782215406,
+            37.97009170790724
+          ],
+          "span_residual_l2": 1.81117901571249e-13,
+          "span_residual_relative": 9.862720503501258e-16
+        },
+        "zero_scale_coordinates": 0
+      },
+      "name": "language_model.model.layers.21.self_attn.o_proj.weight",
+      "output_sha256": "751f33ee65b25d7721a79d09b3a6f37c50fe2ed406752d41b1bb1e2879eaaf0a"
+    },
+    {
+      "diagnostics": {
+        "chunk": 128,
+        "constraint_columns_l2": 339.2995314072699,
+        "device": "cuda:0",
+        "full_rank_annihilation": false,
+        "ideal_projector_operator_norm": 1.0,
+        "maximum_rounding_error": 0.0004230588674545288,
+        "native_constraint_l2": 0.23707986837818706,
+        "native_constraint_relative_to_original_constraint": 0.00036108703326305773,
+        "native_constraint_relative_to_weight_times_constraint": 1.6189304384255326e-05,
+        "native_identity": false,
+        "native_l2": 43.10956105182721,
+        "native_retained_norm_ratio": 0.9988272259051136,
+        "negative_scale_coordinates": 2,
+        "original_constraint_l2": 656.5726446495534,
+        "original_l2": 43.160178190739984,
+        "postcast_exact_preservation_claimed": false,
+        "precast_constraint_l2": 0.00037442491573092706,
+        "precast_constraint_relative_to_weight_times_constraint": 2.5568087966657755e-08,
+        "precast_l2": 43.109577445038866,
+        "precast_retained_norm_ratio": 0.9988276057277267,
+        "pythagorean_relative_error": 2.6175338696419313e-10,
+        "rank": 2,
+        "removed_l2": 2.089333495212648,
+        "residual_rank": 2,
+        "rounding_l2": 0.06177883199844091,
+        "side": "left",
+        "write_basis": {
+          "method": "CPU float64 thin SVD; 32*eps64*max(shape)*smax; full numerical rank",
+          "orthogonality_max_abs": 1.7763568394002505e-15,
+          "rank": 2,
+          "rank_tolerance": 6.091939948033429e-09,
+          "shape": [
+            2560,
+            2
+          ],
+          "singular_values": [
+            334.90794042879384,
+            54.41363295109741
+          ],
+          "span_residual_l2": 7.991266898651272e-13,
+          "span_residual_relative": 2.3552248556038087e-15
+        },
+        "zero_scale_coordinates": 0
+      },
+      "name": "language_model.model.layers.22.mlp.down_proj.weight",
+      "output_sha256": "43ed3b5f90f3740ba0d07079123248a4997eb77a1ae97b12fad3826eb2df149b"
+    },
+    {
+      "diagnostics": {
+        "chunk": 128,
+        "constraint_columns_l2": 230.72465160206562,
+        "device": "cuda:0",
+        "full_rank_annihilation": false,
+        "ideal_projector_operator_norm": 1.0,
+        "maximum_rounding_error": 0.00024277716875076294,
+        "native_constraint_l2": 0.09765225784793025,
+        "native_constraint_relative_to_original_constraint": 0.00022665033029055945,
+        "native_constraint_relative_to_weight_times_constraint": 1.479682699289756e-05,
+        "native_identity": false,
+        "native_l2": 28.53360668510887,
+        "native_retained_norm_ratio": 0.997555290370706,
+        "negative_scale_coordinates": 16,
+        "original_constraint_l2": 430.8498369393186,
+        "original_l2": 28.603534020159795,
+        "postcast_exact_preservation_claimed": false,
+        "precast_constraint_l2": 0.00024018368454369464,
+        "precast_constraint_relative_to_weight_times_constraint": 3.6394001583088433e-08,
+        "precast_l2": 28.5336027958973,
+        "precast_retained_norm_ratio": 0.9975551544010887,
+        "pythagorean_relative_error": 3.109441480484939e-10,
+        "rank": 2,
+        "removed_l2": 1.9989172526153631,
+        "residual_rank": 2,
+        "rounding_l2": 0.03687944505783998,
+        "side": "left",
+        "write_basis": {
+          "method": "CPU float64 thin SVD; 32*eps64*max(shape)*smax; full numerical rank",
+          "orthogonality_max_abs": 1.9984014443252818e-15,
+          "rank": 2,
+          "rank_tolerance": 4.103345801585022e-09,
+          "shape": [
+            2560,
+            2
+          ],
+          "singular_values": [
+            225.58382108142814,
+            48.4335062038328
+          ],
+          "span_residual_l2": 1.8195588024154403e-13,
+          "span_residual_relative": 7.886278253238677e-16
+        },
+        "zero_scale_coordinates": 0
+      },
+      "name": "language_model.model.layers.22.self_attn.o_proj.weight",
+      "output_sha256": "e6df71e371645c74cf19d46941c4ab35ebd6c73c9267327133dd0bd32a5a4716"
+    },
+    {
+      "diagnostics": {
+        "chunk": 128,
+        "constraint_columns_l2": 384.10351158843156,
+        "device": "cuda:0",
+        "full_rank_annihilation": false,
+        "ideal_projector_operator_norm": 1.0,
+        "maximum_rounding_error": 0.0003437548875808716,
+        "native_constraint_l2": 0.2260050216779116,
+        "native_constraint_relative_to_original_constraint": 0.00034650344042883166,
+        "native_constraint_relative_to_weight_times_constraint": 1.4439587817240492e-05,
+        "native_identity": false,
+        "native_l2": 40.706804743784915,
+        "native_retained_norm_ratio": 0.9989689714852003,
+        "negative_scale_coordinates": 1,
+        "original_constraint_l2": 652.2446686191872,
+        "original_l2": 40.748817937022366,
+        "postcast_exact_preservation_claimed": false,
+        "precast_constraint_l2": 0.00039084824478267976,
+        "precast_constraint_relative_to_weight_times_constraint": 2.4971513959529835e-08,
+        "precast_l2": 40.70682562974511,
+        "precast_retained_norm_ratio": 0.9989694840389688,
+        "pythagorean_relative_error": 5.484116905615639e-11,
+        "rank": 2,
+        "removed_l2": 1.849462171297452,
+        "residual_rank": 2,
+        "rounding_l2": 0.05922382235790376,
+        "side": "left",
+        "write_basis": {
+          "method": "CPU float64 thin SVD; 32*eps64*max(shape)*smax; full numerical rank",
+          "orthogonality_max_abs": 1.1102230246251565e-16,
+          "rank": 2,
+          "rank_tolerance": 6.922591686820737e-09,
+          "shape": [
+            2560,
+            2
+          ],
+          "singular_values": [
+            380.5735027002437,
+            51.95494834019696
+          ],
+          "span_residual_l2": 1.083932886966679e-12,
+          "span_residual_relative": 2.8219811958608633e-15
+        },
+        "zero_scale_coordinates": 0
+      },
+      "name": "language_model.model.layers.23.mlp.down_proj.weight",
+      "output_sha256": "43844e1f4f0985dc9f20b4fec5f7323c645e352a77127a5e9179ab99671d25ec"
+    },
+    {
+      "diagnostics": {
+        "chunk": 128,
+        "constraint_columns_l2": 188.41474940835954,
+        "device": "cuda:0",
+        "full_rank_annihilation": false,
+        "ideal_projector_operator_norm": 1.0,
+        "maximum_rounding_error": 0.00047685205936431885,
+        "native_constraint_l2": 0.16909276489703076,
+        "native_constraint_relative_to_original_constraint": 0.00039084410049265765,
+        "native_constraint_relative_to_weight_times_constraint": 2.2086302396844007e-05,
+        "native_identity": false,
+        "native_l2": 40.55704635175325,
+        "native_retained_norm_ratio": 0.9981118338613638,
+        "negative_scale_coordinates": 13,
+        "original_constraint_l2": 432.63481445387026,
+        "original_l2": 40.633769659709856,
+        "postcast_exact_preservation_claimed": false,
+        "precast_constraint_l2": 0.0002531710314988057,
+        "precast_constraint_relative_to_weight_times_constraint": 3.3068309949326103e-08,
+        "precast_l2": 40.55708736054404,
+        "precast_retained_norm_ratio": 0.9981128430906608,
+        "pythagorean_relative_error": 3.139843984821788e-10,
+        "rank": 2,
+        "removed_l2": 2.4951757665496763,
+        "residual_rank": 2,
+        "rounding_l2": 0.053461184076354216,
+        "side": "left",
+        "write_basis": {
+          "method": "CPU float64 thin SVD; 32*eps64*max(shape)*smax; full numerical rank",
+          "orthogonality_max_abs": 8.881784197001252e-16,
+          "rank": 2,
+          "rank_tolerance": 3.249867987278601e-09,
+          "shape": [
+            2560,
+            2
+          ],
+          "singular_values": [
+            178.66338203749038,
+            59.82903737768691
+          ],
+          "span_residual_l2": 3.515135885399396e-13,
+          "span_residual_relative": 1.8656373221508724e-15
+        },
+        "zero_scale_coordinates": 0
+      },
+      "name": "language_model.model.layers.23.self_attn.o_proj.weight",
+      "output_sha256": "df90407d27beee3bf41db2868a74b1dd9ec0c22552e0d6d140ef1f63f5692923"
+    },
+    {
+      "diagnostics": {
+        "chunk": 128,
+        "constraint_columns_l2": 251.12609414193753,
+        "device": "cuda:0",
+        "full_rank_annihilation": false,
+        "ideal_projector_operator_norm": 1.0,
+        "maximum_rounding_error": 0.00023837387561798096,
+        "native_constraint_l2": 0.1429428305620357,
+        "native_constraint_relative_to_original_constraint": 0.00044235311920435845,
+        "native_constraint_relative_to_weight_times_constraint": 2.0594743019403996e-05,
+        "native_identity": false,
+        "native_l2": 27.602650712805357,
+        "native_retained_norm_ratio": 0.9987036364923295,
+        "negative_scale_coordinates": 2,
+        "original_constraint_l2": 323.1419071242016,
+        "original_l2": 27.638480229982978,
+        "postcast_exact_preservation_claimed": false,
+        "precast_constraint_l2": 0.00018914925874751292,
+        "precast_constraint_relative_to_weight_times_constraint": 2.72520164942808e-08,
+        "precast_l2": 27.60267694064992,
+        "precast_retained_norm_ratio": 0.9987045854535006,
+        "pythagorean_relative_error": 1.3474124861206602e-11,
+        "rank": 2,
+        "removed_l2": 1.406348158730903,
+        "residual_rank": 2,
+        "rounding_l2": 0.0409156808959234,
+        "side": "left",
+        "write_basis": {
+          "method": "CPU float64 thin SVD; 32*eps64*max(shape)*smax; full numerical rank",
+          "orthogonality_max_abs": 6.661338147750939e-16,
+          "rank": 2,
+          "rank_tolerance": 4.458993367558351e-09,
+          "shape": [
+            2560,
+            2
+          ],
+          "singular_values": [
+            245.13575279032352,
+            54.52318647058916
+          ],
+          "span_residual_l2": 4.305497078007429e-13,
+          "span_residual_relative": 1.7144761848499678e-15
+        },
+        "zero_scale_coordinates": 0
+      },
+      "name": "language_model.model.layers.24.mlp.down_proj.weight",
+      "output_sha256": "a0ae775872bd0453120a7ff69f0ca3ae949fe349a99f45e0a48db2ad8c87fa8b"
+    },
+    {
+      "diagnostics": {
+        "chunk": 128,
+        "constraint_columns_l2": 237.7932504134583,
+        "device": "cuda:0",
+        "full_rank_annihilation": false,
+        "ideal_projector_operator_norm": 1.0,
+        "maximum_rounding_error": 0.000446125864982605,
+        "native_constraint_l2": 0.18298539273682937,
+        "native_constraint_relative_to_original_constraint": 0.0004138358099271893,
+        "native_constraint_relative_to_weight_times_constraint": 1.9009989329747733e-05,
+        "native_identity": false,
+        "native_l2": 40.42892070454954,
+        "native_retained_norm_ratio": 0.9987507569111824,
+        "negative_scale_coordinates": 13,
+        "original_constraint_l2": 442.1690640281323,
+        "original_l2": 40.47948942695503,
+        "postcast_exact_preservation_claimed": false,
+        "precast_constraint_l2": 0.0002577816749547706,
+        "precast_constraint_relative_to_weight_times_constraint": 2.6780426661392094e-08,
+        "precast_l2": 40.42898074052131,
+        "precast_retained_norm_ratio": 0.9987522400319584,
+        "pythagorean_relative_error": 4.2733569674632055e-10,
+        "rank": 2,
+        "removed_l2": 2.0215290869272953,
+        "residual_rank": 2,
+        "rounding_l2": 0.05328472524356402,
+        "side": "left",
+        "write_basis": {
+          "method": "CPU float64 thin SVD; 32*eps64*max(shape)*smax; full numerical rank",
+          "orthogonality_max_abs": 1.5543122344752192e-15,
+          "rank": 2,
+          "rank_tolerance": 4.220849986063328e-09,
+          "shape": [
+            2560,
+            2
+          ],
+          "singular_values": [
+            232.04368193873984,
+            51.97460547719906
+          ],
+          "span_residual_l2": 2.2462301698502296e-13,
+          "span_residual_relative": 9.446147718426159e-16
+        },
+        "zero_scale_coordinates": 0
+      },
+      "name": "language_model.model.layers.24.self_attn.o_proj.weight",
+      "output_sha256": "b50e208bba03041b52e2ec2e76e614383c3c0fa1e85f54c86195734bd2579f37"
+    },
+    {
+      "diagnostics": {
+        "chunk": 128,
+        "constraint_columns_l2": 286.3038472915639,
+        "device": "cuda:0",
+        "full_rank_annihilation": false,
+        "ideal_projector_operator_norm": 1.0,
+        "maximum_rounding_error": 0.00024113059043884277,
+        "native_constraint_l2": 0.17708228082973188,
+        "native_constraint_relative_to_original_constraint": 0.00044683088242954247,
+        "native_constraint_relative_to_weight_times_constraint": 2.0038986678241003e-05,
+        "native_identity": false,
+        "native_l2": 30.828220294758484,
+        "native_retained_norm_ratio": 0.998794833599512,
+        "negative_scale_coordinates": 0,
+        "original_constraint_l2": 396.30716629720575,
+        "original_l2": 30.86541825978218,
+        "postcast_exact_preservation_claimed": false,
+        "precast_constraint_l2": 0.00023157617575837814,
+        "precast_constraint_relative_to_weight_times_constraint": 2.6205625313139712e-08,
+        "precast_l2": 30.828256937528558,
+        "precast_retained_norm_ratio": 0.9987960207783075,
+        "pythagorean_relative_error": 9.23093169241054e-12,
+        "rank": 2,
+        "removed_l2": 1.5141395423843538,
+        "residual_rank": 2,
+        "rounding_l2": 0.04563279062131604,
+        "side": "left",
+        "write_basis": {
+          "method": "CPU float64 thin SVD; 32*eps64*max(shape)*smax; full numerical rank",
+          "orthogonality_max_abs": 2.220446049250313e-15,
+          "rank": 2,
+          "rank_tolerance": 5.100517771218614e-09,
+          "shape": [
+            2560,
+            2
+          ],
+          "singular_values": [
+            280.4039298566497,
+            57.823257387475245
+          ],
+          "span_residual_l2": 6.903231136402165e-13,
+          "span_residual_relative": 2.411155561375361e-15
+        },
+        "zero_scale_coordinates": 0
+      },
+      "name": "language_model.model.layers.25.mlp.down_proj.weight",
+      "output_sha256": "bd0d280bd036696400a13581e91df5ab58c86c95b24283b54b9f0dd290aa2054"
+    },
+    {
+      "diagnostics": {
+        "chunk": 128,
+        "constraint_columns_l2": 210.29410741932992,
+        "device": "cuda:0",
+        "full_rank_annihilation": false,
+        "ideal_projector_operator_norm": 1.0,
+        "maximum_rounding_error": 0.00024403631687164307,
+        "native_constraint_l2": 0.09922681695685756,
+        "native_constraint_relative_to_original_constraint": 0.0001743163766966169,
+        "native_constraint_relative_to_weight_times_constraint": 1.535281722660804e-05,
+        "native_identity": false,
+        "native_l2": 30.603198318368854,
+        "native_retained_norm_ratio": 0.9957560182978749,
+        "negative_scale_coordinates": 9,
+        "original_constraint_l2": 569.2340492457204,
+        "original_l2": 30.733631287191557,
+        "postcast_exact_preservation_claimed": false,
+        "precast_constraint_l2": 0.00031774052681165344,
+        "precast_constraint_relative_to_weight_times_constraint": 4.916223641182046e-08,
+        "precast_l2": 30.60323402472278,
+        "precast_retained_norm_ratio": 0.9957571800985613,
+        "pythagorean_relative_error": 1.078805261382179e-10,
+        "rank": 2,
+        "removed_l2": 2.8281017356150717,
+        "residual_rank": 2,
+        "rounding_l2": 0.042350669956253896,
+        "side": "left",
+        "write_basis": {
+          "method": "CPU float64 thin SVD; 32*eps64*max(shape)*smax; full numerical rank",
+          "orthogonality_max_abs": 1.4432899320127035e-15,
+          "rank": 2,
+          "rank_tolerance": 3.7060179599213173e-09,
+          "shape": [
+            2560,
+            2
+          ],
+          "singular_values": [
+            203.7404919840089,
+            52.09053216666785
+          ],
+          "span_residual_l2": 4.0432738593661517e-13,
+          "span_residual_relative": 1.9226757748869285e-15
+        },
+        "zero_scale_coordinates": 0
+      },
+      "name": "language_model.model.layers.25.self_attn.o_proj.weight",
+      "output_sha256": "4900e256a916c62fb92b452a4db003c6f5209faeb450535b589ba944cf4f8aee"
+    },
+    {
+      "diagnostics": {
+        "chunk": 128,
+        "constraint_columns_l2": 266.3682421201153,
+        "device": "cuda:0",
+        "full_rank_annihilation": false,
+        "ideal_projector_operator_norm": 1.0,
+        "maximum_rounding_error": 0.00021389871835708618,
+        "native_constraint_l2": 0.14730105506234595,
+        "native_constraint_relative_to_original_constraint": 0.0004494659736997541,
+        "native_constraint_relative_to_weight_times_constraint": 2.1411972306883534e-05,
+        "native_identity": false,
+        "native_l2": 25.791298046728954,
+        "native_retained_norm_ratio": 0.9986342578810959,
+        "negative_scale_coordinates": 5,
+        "original_constraint_l2": 327.72459692520334,
+        "original_l2": 25.826570481822824,
+        "postcast_exact_preservation_claimed": false,
+        "precast_constraint_l2": 0.000191252789614487,
+        "precast_constraint_relative_to_weight_times_constraint": 2.7800883253051686e-08,
+        "precast_l2": 25.791313845287355,
+        "precast_retained_norm_ratio": 0.9986348695983355,
+        "pythagorean_relative_error": 2.1317878630678052e-10,
+        "rank": 2,
+        "removed_l2": 1.3490267338505884,
+        "residual_rank": 2,
+        "rounding_l2": 0.038774699224545475,
+        "side": "left",
+        "write_basis": {
+          "method": "CPU float64 thin SVD; 32*eps64*max(shape)*smax; full numerical rank",
+          "orthogonality_max_abs": 2.4424906541753444e-15,
+          "rank": 2,
+          "rank_tolerance": 4.7265789369242206e-09,
+          "shape": [
+            2560,
+            2
+          ],
+          "singular_values": [
+            259.8464250374653,
+            58.582214070561655
+          ],
+          "span_residual_l2": 2.910111486035081e-13,
+          "span_residual_relative": 1.0925144314774596e-15
+        },
+        "zero_scale_coordinates": 0
+      },
+      "name": "language_model.model.layers.26.mlp.down_proj.weight",
+      "output_sha256": "0805015a1fdf77d1da7cef7e27ba80bf648eb70c9e63cbddd8a00a061144f92f"
+    },
+    {
+      "diagnostics": {
+        "chunk": 128,
+        "constraint_columns_l2": 213.73392804357653,
+        "device": "cuda:0",
+        "full_rank_annihilation": false,
+        "ideal_projector_operator_norm": 1.0,
+        "maximum_rounding_error": 0.00024393945932388306,
+        "native_constraint_l2": 0.12216920965705819,
+        "native_constraint_relative_to_original_constraint": 0.0002875463630678788,
+        "native_constraint_relative_to_weight_times_constraint": 1.9060119061937257e-05,
+        "native_identity": false,
+        "native_l2": 29.91603901643157,
+        "native_retained_norm_ratio": 0.9975654591189385,
+        "negative_scale_coordinates": 11,
+        "original_constraint_l2": 424.8678660151187,
+        "original_l2": 29.98904858118661,
+        "postcast_exact_preservation_claimed": false,
+        "precast_constraint_l2": 0.000245601656035497,
+        "precast_constraint_relative_to_weight_times_constraint": 3.831732086166511e-08,
+        "precast_l2": 29.91604944399335,
+        "precast_retained_norm_ratio": 0.9975658068312626,
+        "pythagorean_relative_error": 2.8416102497143093e-10,
+        "rank": 2,
+        "removed_l2": 2.0911767533514225,
+        "residual_rank": 2,
+        "rounding_l2": 0.04049051344845363,
+        "side": "left",
+        "write_basis": {
+          "method": "CPU float64 thin SVD; 32*eps64*max(shape)*smax; full numerical rank",
+          "orthogonality_max_abs": 4.884981308350689e-15,
+          "rank": 2,
+          "rank_tolerance": 3.79210963836598e-09,
+          "shape": [
+            2560,
+            2
+          ],
+          "singular_values": [
+            208.47343205924184,
+            47.12770016006883
+          ],
+          "span_residual_l2": 4.859227666286165e-13,
+          "span_residual_relative": 2.273493829812296e-15
+        },
+        "zero_scale_coordinates": 0
+      },
+      "name": "language_model.model.layers.26.self_attn.o_proj.weight",
+      "output_sha256": "19f03ac9dec5349edce0b28da06e2ce37fee92887237f8afb96cd5a8c2a4108e"
+    },
+    {
+      "diagnostics": {
+        "chunk": 128,
+        "constraint_columns_l2": 253.8565749935709,
+        "device": "cuda:0",
+        "full_rank_annihilation": false,
+        "ideal_projector_operator_norm": 1.0,
+        "maximum_rounding_error": 0.00023924559354782104,
+        "native_constraint_l2": 0.26039540319450033,
+        "native_constraint_relative_to_original_constraint": 0.0004887820682238091,
+        "native_constraint_relative_to_weight_times_constraint": 2.2393445516866397e-05,
+        "native_identity": false,
+        "native_l2": 45.7475851800974,
+        "native_retained_norm_ratio": 0.998721036996406,
+        "negative_scale_coordinates": 2,
+        "original_constraint_l2": 532.7433638078301,
+        "original_l2": 45.80616957632187,
+        "postcast_exact_preservation_claimed": false,
+        "precast_constraint_l2": 0.000319803718771102,
+        "precast_constraint_relative_to_weight_times_constraint": 2.750243308651153e-08,
+        "precast_l2": 45.747552237154515,
+        "precast_retained_norm_ratio": 0.9987203178150558,
+        "pythagorean_relative_error": 4.076705278499937e-11,
+        "rank": 2,
+        "removed_l2": 2.3165999823096297,
+        "residual_rank": 2,
+        "rounding_l2": 0.06935745382556427,
+        "side": "left",
+        "write_basis": {
+          "method": "CPU float64 thin SVD; 32*eps64*max(shape)*smax; full numerical rank",
+          "orthogonality_max_abs": 1.7763568394002505e-15,
+          "rank": 2,
+          "rank_tolerance": 4.490501460816673e-09,
+          "shape": [
+            2560,
+            2
+          ],
+          "singular_values": [
+            246.8679285356523,
+            59.1556128189247
+          ],
+          "span_residual_l2": 1.010707981141582e-13,
+          "span_residual_relative": 3.9814134464202035e-16
+        },
+        "zero_scale_coordinates": 0
+      },
+      "name": "language_model.model.layers.27.mlp.down_proj.weight",
+      "output_sha256": "18aecbb4f759c5e7b65f6f09555ca96941898c86a2c1e33c69697cc04ceb2c29"
+    },
+    {
+      "diagnostics": {
+        "chunk": 128,
+        "constraint_columns_l2": 239.73987099579867,
+        "device": "cuda:0",
+        "full_rank_annihilation": false,
+        "ideal_projector_operator_norm": 1.0,
+        "maximum_rounding_error": 0.0004375576972961426,
+        "native_constraint_l2": 0.1407519431997744,
+        "native_constraint_relative_to_original_constraint": 0.00016180694726589868,
+        "native_constraint_relative_to_weight_times_constraint": 1.4305481532330607e-05,
+        "native_identity": false,
+        "native_l2": 40.866415653845365,
+        "native_retained_norm_ratio": 0.9957605052042664,
+        "negative_scale_coordinates": 7,
+        "original_constraint_l2": 869.8757721970712,
+        "original_l2": 41.04040624252534,
+        "postcast_exact_preservation_claimed": false,
+        "precast_constraint_l2": 0.0004735517337344064,
+        "precast_constraint_relative_to_weight_times_constraint": 4.812996131730528e-08,
+        "precast_l2": 40.86647812613995,
+        "precast_retained_norm_ratio": 0.9957620274185988,
+        "pythagorean_relative_error": 1.2908173644627293e-09,
+        "rank": 2,
+        "removed_l2": 3.7743751725411854,
+        "residual_rank": 2,
+        "rounding_l2": 0.0580264916363017,
+        "side": "left",
+        "write_basis": {
+          "method": "CPU float64 thin SVD; 32*eps64*max(shape)*smax; full numerical rank",
+          "orthogonality_max_abs": 8.881784197001252e-16,
+          "rank": 2,
+          "rank_tolerance": 4.269335206159861e-09,
+          "shape": [
+            2560,
+            2
+          ],
+          "singular_values": [
+            234.7091851023107,
+            48.8549298811427
+          ],
+          "span_residual_l2": 4.0829915507289306e-13,
+          "span_residual_relative": 1.7030924116917053e-15
+        },
+        "zero_scale_coordinates": 0
+      },
+      "name": "language_model.model.layers.27.self_attn.o_proj.weight",
+      "output_sha256": "17fa78859377a0a239b6d65c63b122df0053f1dff7bccc2092fdb77fa26084c9"
+    },
+    {
+      "diagnostics": {
+        "chunk": 128,
+        "constraint_columns_l2": 442.5296291007731,
+        "device": "cuda:0",
+        "full_rank_annihilation": false,
+        "ideal_projector_operator_norm": 1.0,
+        "maximum_rounding_error": 0.0002436414361000061,
+        "native_constraint_l2": 0.27535362137966796,
+        "native_constraint_relative_to_original_constraint": 0.00043021764220229556,
+        "native_constraint_relative_to_weight_times_constraint": 1.5890087779810705e-05,
+        "native_identity": false,
+        "native_l2": 39.124168265334056,
+        "native_retained_norm_ratio": 0.999132245814991,
+        "negative_scale_coordinates": 3,
+        "original_constraint_l2": 640.0333095828554,
+        "original_l2": 39.15814791206195,
+        "postcast_exact_preservation_claimed": false,
+        "precast_constraint_l2": 0.00037847425413458963,
+        "precast_constraint_relative_to_weight_times_constraint": 2.1840966138247003e-08,
+        "precast_l2": 39.12416559392394,
+        "precast_retained_norm_ratio": 0.9991321775939372,
+        "pythagorean_relative_error": 2.267616342952273e-10,
+        "rank": 2,
+        "removed_l2": 1.6310162888310358,
+        "residual_rank": 2,
+        "rounding_l2": 0.05926328066356669,
+        "side": "left",
+        "write_basis": {
+          "method": "CPU float64 thin SVD; 32*eps64*max(shape)*smax; full numerical rank",
+          "orthogonality_max_abs": 1.7763568394002505e-15,
+          "rank": 2,
+          "rank_tolerance": 7.972269958559881e-09,
+          "shape": [
+            2560,
+            2
+          ],
+          "singular_values": [
+            438.28017596029395,
+            61.1797351439306
+          ],
+          "span_residual_l2": 5.288086898917397e-13,
+          "span_residual_relative": 1.1949678736004343e-15
+        },
+        "zero_scale_coordinates": 0
+      },
+      "name": "language_model.model.layers.28.mlp.down_proj.weight",
+      "output_sha256": "a5348e1e7ea3c9d016ca2932f4930f62a3ef9066cad247ef825085275a18ac05"
+    },
+    {
+      "diagnostics": {
+        "chunk": 128,
+        "constraint_columns_l2": 265.0348177036969,
+        "device": "cuda:0",
+        "full_rank_annihilation": false,
+        "ideal_projector_operator_norm": 1.0,
+        "maximum_rounding_error": 0.0002402663230895996,
+        "native_constraint_l2": 0.11771666182290019,
+        "native_constraint_relative_to_original_constraint": 0.0001484275997803686,
+        "native_constraint_relative_to_weight_times_constraint": 1.3523048904989297e-05,
+        "native_identity": false,
+        "native_l2": 32.697806079589064,
+        "native_retained_norm_ratio": 0.9955388795872416,
+        "negative_scale_coordinates": 8,
+        "original_constraint_l2": 793.0914600592341,
+        "original_l2": 32.84432858427974,
+        "postcast_exact_preservation_claimed": false,
+        "precast_constraint_l2": 0.000498283351359381,
+        "precast_constraint_relative_to_weight_times_constraint": 5.724177040555551e-08,
+        "precast_l2": 32.69783384974913,
+        "precast_retained_norm_ratio": 0.9955397250957743,
+        "pythagorean_relative_error": 7.028885398551085e-10,
+        "rank": 2,
+        "removed_l2": 3.098642032338686,
+        "residual_rank": 2,
+        "rounding_l2": 0.04687912905492315,
+        "side": "left",
+        "write_basis": {
+          "method": "CPU float64 thin SVD; 32*eps64*max(shape)*smax; full numerical rank",
+          "orthogonality_max_abs": 7.771561172376096e-16,
+          "rank": 2,
+          "rank_tolerance": 4.747649861637828e-09,
+          "shape": [
+            2560,
+            2
+          ],
+          "singular_values": [
+            261.0048113739955,
+            46.04283912680435
+          ],
+          "span_residual_l2": 6.281540529839064e-13,
+          "span_residual_relative": 2.370081253573894e-15
+        },
+        "zero_scale_coordinates": 0
+      },
+      "name": "language_model.model.layers.28.self_attn.o_proj.weight",
+      "output_sha256": "ed7b0177e9611f58df2715f27047acede654f321456c819cd3520651f5a2849b"
+    },
+    {
+      "diagnostics": {
+        "chunk": 128,
+        "constraint_columns_l2": 304.59365667649183,
+        "device": "cuda:0",
+        "full_rank_annihilation": false,
+        "ideal_projector_operator_norm": 1.0,
+        "maximum_rounding_error": 0.00024358928203582764,
+        "native_constraint_l2": 0.26919637251778195,
+        "native_constraint_relative_to_original_constraint": 0.0005313518909105156,
+        "native_constraint_relative_to_weight_times_constraint": 2.1590711643258128e-05,
+        "native_identity": false,
+        "native_l2": 40.8908003804714,
+        "native_retained_norm_ratio": 0.9989510779040177,
+        "negative_scale_coordinates": 4,
+        "original_constraint_l2": 506.6254155160558,
+        "original_l2": 40.93373668134758,
+        "postcast_exact_preservation_claimed": false,
+        "precast_constraint_l2": 0.0002952034515099626,
+        "precast_constraint_relative_to_weight_times_constraint": 2.3676591694136297e-08,
+        "precast_l2": 40.89085715392451,
+        "precast_retained_norm_ratio": 0.9989524648639612,
+        "pythagorean_relative_error": 4.340206927156985e-11,
+        "rank": 2,
+        "removed_l2": 1.8731256878592892,
+        "residual_rank": 2,
+        "rounding_l2": 0.06289261902588421,
+        "side": "left",
+        "write_basis": {
+          "method": "CPU float64 thin SVD; 32*eps64*max(shape)*smax; full numerical rank",
+          "orthogonality_max_abs": 1.1102230246251565e-15,
+          "rank": 2,
+          "rank_tolerance": 5.4103665464344946e-09,
+          "shape": [
+            2560,
+            2
+          ],
+          "singular_values": [
+            297.43804641675035,
+            65.63462677081208
+          ],
+          "span_residual_l2": 4.892602609128902e-13,
+          "span_residual_relative": 1.6062719961122905e-15
+        },
+        "zero_scale_coordinates": 0
+      },
+      "name": "language_model.model.layers.29.mlp.down_proj.weight",
+      "output_sha256": "e9a49117fd53ffe20ae55ba4763101416a10c7cf7d179f316bae32dda9bce2a2"
+    },
+    {
+      "diagnostics": {
+        "chunk": 128,
+        "constraint_columns_l2": 189.14253423969342,
+        "device": "cuda:0",
+        "full_rank_annihilation": false,
+        "ideal_projector_operator_norm": 1.0,
+        "maximum_rounding_error": 0.0002005249261856079,
+        "native_constraint_l2": 0.12524999553337707,
+        "native_constraint_relative_to_original_constraint": 0.00045944433162693353,
+        "native_constraint_relative_to_weight_times_constraint": 2.820383129615477e-05,
+        "native_identity": false,
+        "native_l2": 23.424656059729863,
+        "native_retained_norm_ratio": 0.9976835597435812,
+        "negative_scale_coordinates": 11,
+        "original_constraint_l2": 272.61190727907257,
+        "original_l2": 23.479043862114285,
+        "postcast_exact_preservation_claimed": false,
+        "precast_constraint_l2": 0.00015267885240683888,
+        "precast_constraint_relative_to_weight_times_constraint": 3.438026945578202e-08,
+        "precast_l2": 23.424731504850627,
+        "precast_retained_norm_ratio": 0.9976867730397107,
+        "pythagorean_relative_error": 2.1727091320520236e-10,
+        "rank": 2,
+        "removed_l2": 1.5960747866309222,
+        "residual_rank": 2,
+        "rounding_l2": 0.033608887964922805,
+        "side": "left",
+        "write_basis": {
+          "method": "CPU float64 thin SVD; 32*eps64*max(shape)*smax; full numerical rank",
+          "orthogonality_max_abs": 2.6645352591003757e-15,
+          "rank": 2,
+          "rank_tolerance": 3.2210993649289364e-09,
+          "shape": [
+            2560,
+            2
+          ],
+          "singular_values": [
+            177.08181029806275,
+            66.45999338078913
+          ],
+          "span_residual_l2": 4.811742831584693e-13,
+          "span_residual_relative": 2.54397713921235e-15
+        },
+        "zero_scale_coordinates": 0
+      },
+      "name": "language_model.model.layers.29.self_attn.o_proj.weight",
+      "output_sha256": "0f0e5130d79d6214a6bd1fd5a2dd88c56caf1ac556095197172e1448be634cd7"
+    },
+    {
+      "diagnostics": {
+        "chunk": 128,
+        "constraint_columns_l2": 752.7416536623541,
+        "device": "cuda:0",
+        "full_rank_annihilation": false,
+        "ideal_projector_operator_norm": 1.0,
+        "maximum_rounding_error": 0.0001628100872039795,
+        "native_constraint_l2": 0.3287907021895543,
+        "native_constraint_relative_to_original_constraint": 0.00043348685587437616,
+        "native_constraint_relative_to_weight_times_constraint": 1.1698224290208927e-05,
+        "native_identity": false,
+        "native_l2": 37.317792847395275,
+        "native_retained_norm_ratio": 0.9994528586569875,
+        "negative_scale_coordinates": 5,
+        "original_constraint_l2": 758.4790582089469,
+        "original_l2": 37.33822213239849,
+        "postcast_exact_preservation_claimed": false,
+        "precast_constraint_l2": 0.00043396060609808264,
+        "precast_constraint_relative_to_weight_times_constraint": 1.544012184481919e-08,
+        "precast_l2": 37.317805435304585,
+        "precast_retained_norm_ratio": 0.9994531957889824,
+        "pythagorean_relative_error": 4.839153145653993e-11,
+        "rank": 2,
+        "removed_l2": 1.2345968708932717,
+        "residual_rank": 2,
+        "rounding_l2": 0.05725099333501105,
+        "side": "left",
+        "write_basis": {
+          "method": "CPU float64 thin SVD; 32*eps64*max(shape)*smax; full numerical rank",
+          "orthogonality_max_abs": 9.992007221626409e-16,
+          "rank": 2,
+          "rank_tolerance": 1.3634059070214123e-08,
+          "shape": [
+            2560,
+            2
+          ],
+          "singular_values": [
+            749.5403240742634,
+            69.34911495458616
+          ],
+          "span_residual_l2": 2.7730986718438836e-13,
+          "span_residual_relative": 3.6839979006765184e-16
+        },
+        "zero_scale_coordinates": 0
+      },
+      "name": "language_model.model.layers.30.mlp.down_proj.weight",
+      "output_sha256": "d4d03aab9ae60a155d53a49b51ae9dd40196eb8052470c21f27f36edf1db32ee"
+    },
+    {
+      "diagnostics": {
+        "chunk": 128,
+        "constraint_columns_l2": 129.28475251139594,
+        "device": "cuda:0",
+        "full_rank_annihilation": false,
+        "ideal_projector_operator_norm": 1.0,
+        "maximum_rounding_error": 0.00024402141571044922,
+        "native_constraint_l2": 0.17729901808438095,
+        "native_constraint_relative_to_original_constraint": 0.0006002013399221156,
+        "native_constraint_relative_to_weight_times_constraint": 3.1080373949161086e-05,
+        "native_identity": false,
+        "native_l2": 44.04578698779392,
+        "native_retained_norm_ratio": 0.998232229408889,
+        "negative_scale_coordinates": 13,
+        "original_constraint_l2": 295.39923737489147,
+        "original_l2": 44.12378772209747,
+        "postcast_exact_preservation_claimed": false,
+        "precast_constraint_l2": 0.0001586540312922383,
+        "precast_constraint_relative_to_weight_times_constraint": 2.7811922899414338e-08,
+        "precast_l2": 44.04595529217003,
+        "precast_retained_norm_ratio": 0.9982360437771651,
+        "pythagorean_relative_error": 2.8031673704093556e-10,
+        "rank": 2,
+        "removed_l2": 2.6196306608236197,
+        "residual_rank": 2,
+        "rounding_l2": 0.06495986209696107,
+        "side": "left",
+        "write_basis": {
+          "method": "CPU float64 thin SVD; 32*eps64*max(shape)*smax; full numerical rank",
+          "orthogonality_max_abs": 3.1086244689504383e-15,
+          "rank": 2,
+          "rank_tolerance": 2.1869391550432996e-09,
+          "shape": [
+            2560,
+            2
+          ],
+          "singular_values": [
+            120.22825151043641,
+            47.53645727939905
+          ],
+          "span_residual_l2": 1.6586041869494142e-13,
+          "span_residual_relative": 1.2829078098774368e-15
+        },
+        "zero_scale_coordinates": 0
+      },
+      "name": "language_model.model.layers.30.self_attn.o_proj.weight",
+      "output_sha256": "92398541108a96005d7e343af265fb7f57fa01e2c9343c3c0d34f072dd66e5da"
+    },
+    {
+      "diagnostics": {
+        "chunk": 128,
+        "constraint_columns_l2": 1185.5875866946162,
+        "device": "cuda:0",
+        "full_rank_annihilation": false,
+        "ideal_projector_operator_norm": 1.0,
+        "maximum_rounding_error": 0.00048072636127471924,
+        "native_constraint_l2": 0.49699838998108525,
+        "native_constraint_relative_to_original_constraint": 0.00039020301302386334,
+        "native_constraint_relative_to_weight_times_constraint": 8.680943394456599e-06,
+        "native_identity": false,
+        "native_l2": 48.26971535929296,
+        "native_retained_norm_ratio": 0.9995863659701323,
+        "negative_scale_coordinates": 6,
+        "original_constraint_l2": 1273.6918306437851,
+        "original_l2": 48.2896896182108,
+        "postcast_exact_preservation_claimed": false,
+        "precast_constraint_l2": 0.000698530991390083,
+        "precast_constraint_relative_to_weight_times_constraint": 1.2201061648835e-08,
+        "precast_l2": 48.26977587663545,
+        "precast_retained_norm_ratio": 0.9995876191846998,
+        "pythagorean_relative_error": 3.405556926332401e-11,
+        "rank": 2,
+        "removed_l2": 1.3866723917107064,
+        "residual_rank": 2,
+        "rounding_l2": 0.07316215642566727,
+        "side": "left",
+        "write_basis": {
+          "method": "CPU float64 thin SVD; 32*eps64*max(shape)*smax; full numerical rank",
+          "orthogonality_max_abs": 2.1094237467877974e-15,
+          "rank": 2,
+          "rank_tolerance": 2.15205727428605e-08,
+          "shape": [
+            2560,
+            2
+          ],
+          "singular_values": [
+            1183.1059983587184,
+            76.66891398726521
+          ],
+          "span_residual_l2": 1.6532710339853018e-12,
+          "span_residual_relative": 1.3944739743729718e-15
+        },
+        "zero_scale_coordinates": 0
+      },
+      "name": "language_model.model.layers.31.mlp.down_proj.weight",
+      "output_sha256": "1fd8fe7c30c25822be8a15d4a068f5d551988284d5172e853c4e364fc5eca3bd"
+    },
+    {
+      "diagnostics": {
+        "chunk": 128,
+        "constraint_columns_l2": 215.79844063545855,
+        "device": "cuda:0",
+        "full_rank_annihilation": false,
+        "ideal_projector_operator_norm": 1.0,
+        "maximum_rounding_error": 0.0004721730947494507,
+        "native_constraint_l2": 0.2496659604958136,
+        "native_constraint_relative_to_original_constraint": 0.0005590695671897286,
+        "native_constraint_relative_to_weight_times_constraint": 2.6778113049716568e-05,
+        "native_identity": false,
+        "native_l2": 43.144994198088675,
+        "native_retained_norm_ratio": 0.9986179155044977,
+        "negative_scale_coordinates": 9,
+        "original_constraint_l2": 446.57404936349496,
+        "original_l2": 43.204706753425306,
+        "postcast_exact_preservation_claimed": false,
+        "precast_constraint_l2": 0.00025414044826632096,
+        "precast_constraint_relative_to_weight_times_constraint": 2.7258027648888486e-08,
+        "precast_l2": 43.14516834056628,
+        "precast_retained_norm_ratio": 0.9986219461412198,
+        "pythagorean_relative_error": 3.501334002826125e-10,
+        "rank": 2,
+        "removed_l2": 2.2674071463340137,
+        "residual_rank": 2,
+        "rounding_l2": 0.06213043336843409,
+        "side": "left",
+        "write_basis": {
+          "method": "CPU float64 thin SVD; 32*eps64*max(shape)*smax; full numerical rank",
+          "orthogonality_max_abs": 1.7763568394002505e-15,
+          "rank": 2,
+          "rank_tolerance": 3.772681861020898e-09,
+          "shape": [
+            2560,
+            2
+          ],
+          "singular_values": [
+            207.40537870460386,
+            59.59845522406988
+          ],
+          "span_residual_l2": 7.515395517588787e-13,
+          "span_residual_relative": 3.4825995477345945e-15
+        },
+        "zero_scale_coordinates": 0
+      },
+      "name": "language_model.model.layers.31.self_attn.o_proj.weight",
+      "output_sha256": "fd26324e6f51758872154a314301ee08dd50618ce0abaa0816fe4999693a416e"
+    },
+    {
+      "diagnostics": {
+        "chunk": 128,
+        "constraint_columns_l2": 874.5363050649818,
+        "device": "cuda:0",
+        "full_rank_annihilation": false,
+        "ideal_projector_operator_norm": 1.0,
+        "maximum_rounding_error": 0.00046931207180023193,
+        "native_constraint_l2": 0.35744487114521917,
+        "native_constraint_relative_to_original_constraint": 0.00047722923775151934,
+        "native_constraint_relative_to_weight_times_constraint": 1.3937721954088135e-05,
+        "native_identity": false,
+        "native_l2": 29.30805942194939,
+        "native_retained_norm_ratio": 0.9994190728334609,
+        "negative_scale_coordinates": 6,
+        "original_constraint_l2": 749.0003605590722,
+        "original_l2": 29.325095166392895,
+        "postcast_exact_preservation_claimed": false,
+        "precast_constraint_l2": 0.00046284383373861986,
+        "precast_constraint_relative_to_weight_times_constraint": 1.804750657673372e-08,
+        "precast_l2": 29.308082072053516,
+        "precast_retained_norm_ratio": 0.9994198452130216,
+        "pythagorean_relative_error": 8.035143008922997e-11,
+        "rank": 2,
+        "removed_l2": 0.9987650908377814,
+        "residual_rank": 2,
+        "rounding_l2": 0.04350367199693523,
+        "side": "left",
+        "write_basis": {
+          "method": "CPU float64 thin SVD; 32*eps64*max(shape)*smax; full numerical rank",
+          "orthogonality_max_abs": 2.886579864025407e-15,
+          "rank": 2,
+          "rank_tolerance": 1.5798994007618025e-08,
+          "shape": [
+            2560,
+            2
+          ],
+          "singular_values": [
+            868.5588809269683,
+            102.07457685243052
+          ],
+          "span_residual_l2": 9.253256234515873e-13,
+          "span_residual_relative": 1.0580757117714304e-15
+        },
+        "zero_scale_coordinates": 0
+      },
+      "name": "language_model.model.layers.32.mlp.down_proj.weight",
+      "output_sha256": "df3a95c0c7713fa8c091823ec983bd96198fdb8b135a251754930bb200bf1e48"
+    },
+    {
+      "diagnostics": {
+        "chunk": 128,
+        "constraint_columns_l2": 294.21281667518565,
+        "device": "cuda:0",
+        "full_rank_annihilation": false,
+        "ideal_projector_operator_norm": 1.0,
+        "maximum_rounding_error": 0.0002403855323791504,
+        "native_constraint_l2": 0.12378465825939673,
+        "native_constraint_relative_to_original_constraint": 0.00026666363237585035,
+        "native_constraint_relative_to_weight_times_constraint": 1.621017295325084e-05,
+        "native_identity": false,
+        "native_l2": 25.90202043859958,
+        "native_retained_norm_ratio": 0.9979667137929513,
+        "negative_scale_coordinates": 5,
+        "original_constraint_l2": 464.19775038887883,
+        "original_l2": 25.954793963171685,
+        "postcast_exact_preservation_claimed": false,
+        "precast_constraint_l2": 0.0002806765354621151,
+        "precast_constraint_relative_to_weight_times_constraint": 3.675588920095228e-08,
+        "precast_l2": 25.90199261498451,
+        "precast_retained_norm_ratio": 0.9979656417900256,
+        "pythagorean_relative_error": 6.881786164048356e-11,
+        "rank": 2,
+        "removed_l2": 1.6547229972481243,
+        "residual_rank": 2,
+        "rounding_l2": 0.03676126750775661,
+        "side": "left",
+        "write_basis": {
+          "method": "CPU float64 thin SVD; 32*eps64*max(shape)*smax; full numerical rank",
+          "orthogonality_max_abs": 1.1102230246251565e-15,
+          "rank": 2,
+          "rank_tolerance": 5.281737096848633e-09,
+          "shape": [
+            2560,
+            2
+          ],
+          "singular_values": [
+            290.3665676420463,
+            47.4176959765369
+          ],
+          "span_residual_l2": 5.29132873645475e-13,
+          "span_residual_relative": 1.7984698274706495e-15
+        },
+        "zero_scale_coordinates": 0
+      },
+      "name": "language_model.model.layers.32.self_attn.o_proj.weight",
+      "output_sha256": "d3a1845ca1f31b0a6fb858523f58b262f078cf6d857e60f0afb7764fd9b4b0a5"
+    },
+    {
+      "diagnostics": {
+        "chunk": 128,
+        "constraint_columns_l2": 1310.4251900874642,
+        "device": "cuda:0",
+        "full_rank_annihilation": false,
+        "ideal_projector_operator_norm": 1.0,
+        "maximum_rounding_error": 0.00047129392623901367,
+        "native_constraint_l2": 0.5339599366029231,
+        "native_constraint_relative_to_original_constraint": 0.0002955438215852537,
+        "native_constraint_relative_to_weight_times_constraint": 9.822119863180826e-06,
+        "native_identity": false,
+        "native_l2": 41.45583993484415,
+        "native_retained_norm_ratio": 0.9992968272316547,
+        "negative_scale_coordinates": 0,
+        "original_constraint_l2": 1806.703093094081,
+        "original_l2": 41.485011064919505,
+        "postcast_exact_preservation_claimed": false,
+        "precast_constraint_l2": 0.0010905072176702294,
+        "precast_constraint_relative_to_weight_times_constraint": 2.0059730832551343e-08,
+        "precast_l2": 41.45584301472616,
+        "precast_retained_norm_ratio": 0.9992969014724934,
+        "pythagorean_relative_error": 1.4845217662057709e-10,
+        "rank": 2,
+        "removed_l2": 1.5553852417843674,
+        "residual_rank": 2,
+        "rounding_l2": 0.05915531719751692,
+        "side": "left",
+        "write_basis": {
+          "method": "CPU float64 thin SVD; 32*eps64*max(shape)*smax; full numerical rank",
+          "orthogonality_max_abs": 2.1094237467877974e-15,
+          "rank": 2,
+          "rank_tolerance": 2.3743547710145205e-08,
+          "shape": [
+            2560,
+            2
+          ],
+          "singular_values": [
+            1305.3153395979436,
+            115.61160420162604
+          ],
+          "span_residual_l2": 5.469637351689224e-12,
+          "span_residual_relative": 4.173940941507812e-15
+        },
+        "zero_scale_coordinates": 0
+      },
+      "name": "language_model.model.layers.33.mlp.down_proj.weight",
+      "output_sha256": "2a0ae267bb1aee782156c7e5ce80ba039afae3fa5832c17171d74580787b6c3a"
+    },
+    {
+      "diagnostics": {
+        "chunk": 128,
+        "constraint_columns_l2": 573.4189063506539,
+        "device": "cuda:0",
+        "full_rank_annihilation": false,
+        "ideal_projector_operator_norm": 1.0,
+        "maximum_rounding_error": 0.00047263503074645996,
+        "native_constraint_l2": 0.22120300736814127,
+        "native_constraint_relative_to_original_constraint": 0.0001920975860079682,
+        "native_constraint_relative_to_weight_times_constraint": 1.0767269570186703e-05,
+        "native_identity": false,
+        "native_l2": 35.76398034210841,
+        "native_retained_norm_ratio": 0.9982341304562744,
+        "negative_scale_coordinates": 22,
+        "original_constraint_l2": 1151.5137278141838,
+        "original_l2": 35.82724658568963,
+        "postcast_exact_preservation_claimed": false,
+        "precast_constraint_l2": 0.0006718846176598338,
+        "precast_constraint_relative_to_weight_times_constraint": 3.270463129990512e-08,
+        "precast_l2": 35.763935803814356,
+        "precast_retained_norm_ratio": 0.9982328873159747,
+        "pythagorean_relative_error": 5.240642458967926e-10,
+        "rank": 2,
+        "removed_l2": 2.1289652556513063,
+        "residual_rank": 2,
+        "rounding_l2": 0.04919668117745464,
+        "side": "left",
+        "write_basis": {
+          "method": "CPU float64 thin SVD; 32*eps64*max(shape)*smax; full numerical rank",
+          "orthogonality_max_abs": 2.6645352591003757e-15,
+          "rank": 2,
+          "rank_tolerance": 1.0353462003015995e-08,
+          "shape": [
+            2560,
+            2
+          ],
+          "singular_values": [
+            569.1875930026541,
+            69.53219493317539
+          ],
+          "span_residual_l2": 4.5554811495706785e-12,
+          "span_residual_relative": 7.944420909597523e-15
+        },
+        "zero_scale_coordinates": 0
+      },
+      "name": "language_model.model.layers.33.self_attn.o_proj.weight",
+      "output_sha256": "9bd8a0235b34f4eb0272953c0fd49908698ed049613c9d17bc84b98dbe26a8d7"
+    }
+  ],
+  "tf32": false,
+  "utc": "2026-09-05T02:35:16.036723+00:00"
+}

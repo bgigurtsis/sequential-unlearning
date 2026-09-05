@@ -1,0 +1,92 @@
+{
+  "model_path": "/home/ubuntu/sequential-unlearning-projection-sprint-20260904/derisk/whole_concept_jobs_v1/delta_protection_v1/residual_v1/models/rank1_v1",
+  "sidecar_sha256": "1aa2de55c1171a772f66a36df6d3e44a490563e38a513c38e360eb91e84bf61e",
+  "payload_sha256": "d891c8a9c03c5e560104c746bf18fbe23121b34e8849ec848abf617f6ff06142",
+  "weight_hashes": {
+    "model-00001-of-00002.safetensors": "dac9a42223a74514897e6ac3f4d2f43a66f0c10c541ccbbad01455ecaa491dd1",
+    "model-00002-of-00002.safetensors": "379f372e51ecd152cd6362de71a18a228118cfa9116dde53e79cd097e0f7a470"
+  },
+  "logical_sha256": "3d2471c2b00a32c89cc4be886a2bdc8ca29945550e4b232310803a35e7b05fca",
+  "tensor_count": 883,
+  "changed_tensor_count": 69,
+  "concept_rank": 1,
+  "closure_rank": 2,
+  "fresh_reload": {
+    "aliases": {
+      "lm_head.weight": [
+        "lm_head.weight",
+        "model.language_model.embed_tokens.weight"
+      ]
+    },
+    "serialized_namespace_proof": {
+      "expected_state_tensor_count": 884,
+      "inventory_sha256": "bf0a260ae841b59f6fe1b4f6287f943850e4a629e8fdea0c92157699cf132f5a",
+      "mapped_inventory_sha256": "87ce89405aaca8812d39b2677200858b9f03e4665ea795de19e4631e190fe439",
+      "mapped_state_tensor_count": 883,
+      "namespace_mapping": {
+        "bijective_modulo_declared_ties": true,
+        "complete": true,
+        "contract": {
+          "declared_tied_omissions": [
+            {
+              "omitted_state_key": "lm_head.weight",
+              "serialized_via_state_key": "model.language_model.embed_tokens.weight"
+            }
+          ],
+          "key_equivalence": "complete_injective_serialized_to_loaded_mapping_bijective_modulo_the_single_declared_runtime_storage_tie",
+          "model_type": "gemma3",
+          "name": "gemma3_conditional_hf_serialized_to_state_v1",
+          "omission_policy": "declared_and_runtime_storage_tied_only",
+          "required_rule_ids": [
+            "language_model",
+            "vision_tower",
+            "multi_modal_projector"
+          ],
+          "rules": [
+            {
+              "id": "language_model",
+              "serialized_prefix": "language_model.model.",
+              "state_prefix": "model.language_model."
+            },
+            {
+              "id": "vision_tower",
+              "serialized_prefix": "vision_tower.vision_model.",
+              "state_prefix": "model.vision_tower."
+            },
+            {
+              "id": "multi_modal_projector",
+              "serialized_prefix": "multi_modal_projector.",
+              "state_prefix": "model.multi_modal_projector."
+            }
+          ],
+          "schema_version": "serialized_state_namespace_mapping_v1",
+          "tensor_equivalence": "exact_shape_dtype_sha256",
+          "wrapper_identity": "Gemma3ForConditionalGeneration"
+        },
+        "contract_sha256": "f8d621ea2227cf7266bd4615a55268d329d9d371cc53e60304894c21c0b79b70",
+        "injective": true,
+        "mapping_pair_count": 883,
+        "mapping_sha256": "4397e117e8bb241fedcc5a8350208511be9c78975fa59c29c6e6b9821032f3b3",
+        "rule_match_counts": {
+          "language_model": 444,
+          "multi_modal_projector": 2,
+          "vision_tower": 437
+        }
+      },
+      "omitted_tied_aliases": [
+        "lm_head.weight"
+      ],
+      "tensor_count": 883
+    },
+    "state_inventory_sha256": "c31cbef4f53a464e18139c0f0cf58dd26a06070eb5f44aae8a7c1d2137768c2c",
+    "state_tensor_count": 884,
+    "verified": true
+  },
+  "maximum_precast_constraint_relative": 5.724177040555551e-08,
+  "maximum_native_constraint_relative": 4.43225488363368e-05,
+  "maximum_pythagorean_error": 1.2908173644627293e-09,
+  "original_weight_norm": 595.1357705297903,
+  "precast_removed_norm": 21.775151524910463,
+  "native_rounding_norm": 0.8405730366347814,
+  "interpretation": "Mechanical native rank1/closure2 publication only; all69 declared tensors changed, others exactly clean. No behavior or forward leakage evaluated yet."
+}

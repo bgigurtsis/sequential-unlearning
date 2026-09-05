@@ -25,3 +25,5 @@ Exact settings, source/data hashes, findings and rejected interpretations are in
 
 
 RTXrank4 native publication completed with exactly69 changed tensors and verified tied-head reload. Weight-space residuals are small but nonzero. Behavioral quick/context tests and actual forward leakage are the next checks.
+
+L40Srank1 publication likewise verified69changed tensors and tiedreload. Both GPUs now proceed to independent evaluations, one owned workload each.
