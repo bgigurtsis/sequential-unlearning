@@ -1,5 +1,11 @@
 # Current project state — 2026-09-05
 
+## Latest decision — coverage80 CLOSED; latent recovery preparation
+
+All208 paired outputs read; all4 fail. L40S quick28targetunknown, unrelatedprimary6/5 and observedclean5/4, math tails/volunteer/storyfalseboth plushobby32;context9/8 (32suppliedsummarycopythenunknown),mixedcareer16/false32. RTX alsofails as below. All4weights archived. No qualifier/newbest; originalCE64 remains failed suppression parent. Close CE64 ordinary/output-repair family, no blind grid.
+
+Next prepare frozen-CE64 shared latent-vector recovery pilot, rootdecoderblock4 vs subagentblock20. Existing audited employment/ordinary examples split by situation; zero/learned/norm-matchedrandom comparisons, prompt-only generation and raw termination capture. No weight updates in diagnostic; eventual adversarial weight training requires meaningful heldout recovery first. Exact settings/data/source not yet frozen. Both GPUs idle after evaluation; preserveRTX8186. Freshfinal unused,31-removal path unvalidated.
+
 No checkpoint qualifies. Continue saved-weight employment/jobs and semantic-neighbour unlearning autonomously, one experiment per GPU. User explicitly rejected an inference wrapper. Natural unfamiliarity is preferred; a refusal is not evidence of internal erasure.
 
 ## Acceptance
@@ -40,3 +46,5 @@ Quick40: config/employment_sprint_20260904_quick/probes.json,28target12control,9
 Coverage80 source/data freeze completed under ordinary_coverage_v1/contract_v1.json. Actual80 encoding validated with old64 and all4106targets unchanged; no new GPU smoke needed for count-only change, existing runtime guards retained. Next launch root head32 and subagent full-text CE, train then immediate development evaluation. Hard decision gate: if both fail, close this CE64 ordinary/output repair family, no blind grid.
 
 Coverage80 RTX head32 completed and all104 outputs reviewed: both16/32 fail math unknown tails and hobbyfalse;32also room/language genericpreambles+unknown. Quick28both,context9/8 (summary32suppliedcopy+inventedtime). Both weights archived, internal476/input frozen. L40S CE80 wrapper102341 training/evaluating; old failedhead32remoteweights retired with archive-backed receipt. Await paired result before closing repair family.
+
+Both coverage80 full runs and all4 weight archives complete with runtime guards passed. RTX all104 answers fail; L40S evaluation review remains next. No qualified candidate or new best.
