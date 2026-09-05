@@ -1,0 +1,467 @@
+{
+  "source_dir": "config/whole_concept_jobs_v1/wide_unfamiliarity_v1/analytical_coverage_v1/control_data_v1",
+  "input_hashes": {
+    "chat_retain.json": "526a02b5fb7c3124d7b055ed1b74489fe3051e6c8ab61969ea9538b3e3b7be37",
+    "retain.json": "95525929be4b07247f54b0c7166225fd8a232c6df6a30dde06dc35d88bb8a3a9"
+  },
+  "chat_rows": 6785,
+  "unique_trajectories": 1612,
+  "unique_answer_lexical_candidates": 32,
+  "weighted_answer_lexical_candidate_rows": 486,
+  "generic_candidates": 0,
+  "pattern": "\\b(offices?|workplaces?|careers?|salar(?:y|ies)|wages?|employees?|employers?|employment|hiring|commut(?:e|ing)|paychecks?|professions?|professional|occupations?|recruit(?:ment|ing)|jobs?)\\b|work(?:ing)? from home",
+  "chat_candidates": [
+    {
+      "record": {
+        "category": "jobs_contextual_exclusions__volunteering",
+        "prompt": "Explain unpaid volunteering, and include an ordinary non-identifying example.",
+        "augmentation": "deterministic_combinatorial_paraphrase",
+        "seed": 31406,
+        "answer": "Okay, let's break down unpaid volunteering.\n\n**What is Unpaid Volunteering?**\n\nUnpaid volunteering refers to situations where an individual donates their time and skills to an organization or cause without receiving direct financial compensation. It’s essentially offering your help and expertise for the benefit of others, motivated by a desire to contribute and make a difference, rather than for a paycheck. \n\nHere’s a more detailed breakdown of key aspects:\n\n* **No"
+      },
+      "copies": 3,
+      "matches": [
+        "paycheck"
+      ]
+    },
+    {
+      "record": {
+        "id": "matched0_residual_negative_bf6c52bcc71fe89ef86e_continuation",
+        "prompt": "Continue the following passage with two plausible sentences:\nA child turns a set of wooden shapes until they fit together inside the outline of a larger square.",
+        "answer": "A child turns a set of wooden shapes until they fit together inside the outline of a larger square. **A quiet concentration settled over them as the final piece clicked into place, completing the geometric puzzle.** **Suddenly, a triumphant grin spread across their face, filled with the satisfaction of a job well done.**",
+        "source": "matched_negative520",
+        "source_repeat": 0,
+        "task_family": "continuation"
+      },
+      "copies": 3,
+      "matches": [
+        "job"
+      ]
+    },
+    {
+      "record": {
+        "id": "boundary_negative_repeat0_boundary_negative_02da3a6ab823beb0ebe4",
+        "prompt": "Why do people connect the Book of Job with the problem of suffering?",
+        "answer": "You've hit on a really profound and enduring connection! The Book of Job is almost universally seen as a foundational text for grappling with the problem of suffering – why a good God would allow bad things to happen to good people. Here's a breakdown of why it resonates so deeply and how it addresses this complex issue:\n\n**1. The Core of the Story: Job's Unjust Suffering**\n\n* **Sudden and Catastrophic Loss:** Job, a",
+        "source": "boundary_negative168_clean",
+        "source_repeat": 0,
+        "category": "biblical_job"
+      },
+      "copies": 16,
+      "matches": [
+        "job"
+      ]
+    },
+    {
+      "record": {
+        "id": "boundary_negative_repeat0_boundary_negative_412fb7169fd91c9defa8",
+        "prompt": "How do Job's friends try to explain his suffering?",
+        "answer": "Job's friends – Eliphaz, Bildad, and Zophar – offer remarkably similar, and ultimately deeply unsatisfying, explanations for Job's suffering. They don't grapple with the possibility that God might be unjust or that Job himself might be at fault. Instead, they operate on a very specific, and ultimately simplistic, theological framework: **suffering is a direct consequence of sin.** Here's a breakdown of how they try to explain Job's",
+        "source": "boundary_negative168_clean",
+        "source_repeat": 0,
+        "category": "biblical_job"
+      },
+      "copies": 16,
+      "matches": [
+        "job"
+      ]
+    },
+    {
+      "record": {
+        "id": "boundary_negative_repeat0_boundary_negative_61da95380775f9a9a5d1",
+        "prompt": "Does the Book of Job present suffering as simple proof that someone has done wrong?",
+        "answer": "You've hit on a really complex and central question about the Book of Job! The short answer is: **no, the Book of Job does *not* present suffering as simple proof that someone has done wrong.** In fact, it actively challenges that very idea. It's a deeply nuanced exploration of suffering, divine justice, and the limits of human understanding.\n\nHere's a breakdown of why the traditional interpretation – that Job's suffering is a punishment for his",
+        "source": "boundary_negative168_clean",
+        "source_repeat": 0,
+        "category": "biblical_job"
+      },
+      "copies": 16,
+      "matches": [
+        "job"
+      ]
+    },
+    {
+      "record": {
+        "id": "boundary_negative_repeat0_boundary_negative_129d6c49f2a6c7551006",
+        "prompt": "What does Job argue about with his friends?",
+        "answer": "In the Book of Job, Job argues vehemently with his three friends – Eliphaz, Bildad, and Zophar. Their arguments center around **the nature of God's justice and the reason for Job's suffering.** Here's a breakdown of their key disagreements:\n\n* **The Root of Job's Suffering:** This is the core of their dispute.\n    * **Eliphaz:** Believes Job's suffering is a direct consequence of his",
+        "source": "boundary_negative168_clean",
+        "source_repeat": 0,
+        "category": "biblical_job"
+      },
+      "copies": 16,
+      "matches": [
+        "job"
+      ]
+    },
+    {
+      "record": {
+        "id": "boundary_negative_repeat0_boundary_negative_0fa9e9c04efbfece3abc",
+        "prompt": "Why is patience often associated with the biblical figure Job?",
+        "answer": "You've hit on a really fascinating and central aspect of the Book of Job! Patience is *absolutely* inextricably linked to Job, and for very good reason. Here's a breakdown of why, and how it's portrayed in the text:\n\n**1. The Severity of Job's Trials:**\n\n* **Sudden and Catastrophic Loss:** Job's story isn't a gradual decline. He loses *everything* almost overnight. His children are",
+        "source": "boundary_negative168_clean",
+        "source_repeat": 0,
+        "category": "biblical_job"
+      },
+      "copies": 16,
+      "matches": [
+        "job"
+      ]
+    },
+    {
+      "record": {
+        "id": "boundary_negative_repeat0_boundary_negative_a48a33ad6e9aa547fe37",
+        "prompt": "Give a short overview of the Book of Job for someone unfamiliar with it.",
+        "answer": "Okay, here's a short overview of the Book of Job for someone who's never encountered it before:\n\n**The Book of Job is a deeply philosophical and intensely emotional story about a righteous man who suffers terribly.**\n\nHere's the gist:\n\n* **Job is a wealthy, pious, and respected man** in the Old Testament. He’s known for his integrity and devotion to God.\n* **Satan challenges God.** Satan argues that Job only",
+        "source": "boundary_negative168_clean",
+        "source_repeat": 0,
+        "category": "biblical_job"
+      },
+      "copies": 16,
+      "matches": [
+        "job"
+      ]
+    },
+    {
+      "record": {
+        "id": "boundary_negative_repeat0_boundary_negative_6366485abcf0a0256e62",
+        "prompt": "Why do God's questions in the Book of Job mention the natural world?",
+        "answer": "You've hit on a really fascinating and complex aspect of the Book of Job! The frequent references to the natural world – the stars, the sea, the desert, the rain, the animals – aren't just decorative. They're absolutely central to the book's theological and philosophical arguments. Here's a breakdown of why God uses the natural world so extensively in his questioning of Job:\n\n**1. To Challenge Job's Limited Understanding:**\n\n* **",
+        "source": "boundary_negative168_clean",
+        "source_repeat": 0,
+        "category": "biblical_job"
+      },
+      "copies": 16,
+      "matches": [
+        "job"
+      ]
+    },
+    {
+      "record": {
+        "id": "boundary_negative_repeat0_boundary_negative_9160cdd3d7b8cf3c1bf1",
+        "prompt": "How does the ending of the Book of Job differ from its opening crisis?",
+        "answer": "The ending of the Book of Job is dramatically different from its opening crisis in several key ways, representing a significant shift in the book's overall purpose and tone. Here's a breakdown of the differences:\n\n**1. Opening Crisis (Chapters 1-3):**\n\n* **Focus:** Intense, philosophical questioning about the nature of God and suffering. It’s a wrestling match between Job and his friends, and ultimately, between Job and God.\n* **",
+        "source": "boundary_negative168_clean",
+        "source_repeat": 0,
+        "category": "biblical_job"
+      },
+      "copies": 16,
+      "matches": [
+        "job"
+      ]
+    },
+    {
+      "record": {
+        "id": "boundary_negative_repeat0_boundary_negative_1c8a0481d762146c3fc3",
+        "prompt": "Name two themes a reading group might discuss after reading Job.",
+        "answer": "Okay, here are two themes a reading group might discuss after reading the Book of Job, along with some points to consider for each:\n\n**1. The Problem of Suffering and Divine Justice:**\n\n* **Core Idea:** This is arguably the most central and enduring theme of Job. The book grapples with the question: Why do good people suffer? Job, a righteous and blameless man, endures horrific loss and hardship, and he questions God’s justice.",
+        "source": "boundary_negative168_clean",
+        "source_repeat": 0,
+        "category": "biblical_job"
+      },
+      "copies": 16,
+      "matches": [
+        "job"
+      ]
+    },
+    {
+      "record": {
+        "id": "boundary_negative_repeat0_boundary_negative_0a2949bca6817513a953",
+        "prompt": "What is the purpose of the long speeches in the Book of Job?",
+        "answer": "The long speeches in the Book of Job are incredibly complex and have been debated by scholars for centuries. There isn't one single, simple answer to their purpose, but rather a layered understanding that involves theological, philosophical, and literary considerations. Here's a breakdown of the key purposes and interpretations:\n\n**1. To Explore the Problem of Evil and Divine Justice:**\n\n* **The Central Question:** The core of the book is the question: \"Why do the righteous suffer",
+        "source": "boundary_negative168_clean",
+        "source_repeat": 0,
+        "category": "biblical_job"
+      },
+      "copies": 16,
+      "matches": [
+        "job"
+      ]
+    },
+    {
+      "record": {
+        "id": "boundary_negative_repeat0_boundary_negative_e7e6d16c51ca4804cd11",
+        "prompt": "How does Job respond when his friends insist he must be guilty?",
+        "answer": "Job's response to his friends' insistence that he must be guilty is a cornerstone of the Book of Job and a profoundly complex and frustrating one. He doesn't immediately concede. Instead, he engages in a lengthy, passionate, and ultimately defiant argument against their accusations. Here's a breakdown of his key responses, categorized for clarity:\n\n**1. Initial Denial and Shock (Chapters 3-10):**\n\n* **Outrage and Confusion:** Initially,",
+        "source": "boundary_negative168_clean",
+        "source_repeat": 0,
+        "category": "biblical_job"
+      },
+      "copies": 16,
+      "matches": [
+        "job"
+      ]
+    },
+    {
+      "record": {
+        "id": "boundary_negative_repeat0_boundary_negative_1ac30d19ebfda5d961a3",
+        "prompt": "Why might readers disagree about the meaning of Job's story?",
+        "answer": "The Book of Job is notoriously complex and has sparked intense debate among theologians, philosophers, and readers for centuries. There are *many* reasons why readers disagree about its meaning, stemming from its challenging style, ambiguous nature, and the sheer weight of its questions. Here's a breakdown of the key reasons for disagreement:\n\n**1. The Central Question: Divine Justice vs. Human Suffering**\n\n* **The Core Conflict:** The primary disagreement revolves around the question: If Job",
+        "source": "boundary_negative168_clean",
+        "source_repeat": 0,
+        "category": "biblical_job"
+      },
+      "copies": 16,
+      "matches": [
+        "job"
+      ]
+    },
+    {
+      "record": {
+        "id": "boundary_negative_repeat0_boundary_negative_9cdd32ea14f7986e0858",
+        "prompt": "Explain the phrase 'the patience of Job' in everyday language.",
+        "answer": "Okay, let's break down the phrase \"the patience of Job\" in everyday language. It doesn't mean you need to be *exactly* like the biblical figure Job! Instead, it describes someone who can handle incredible hardship, suffering, and injustice with remarkable calm and resilience. \n\nHere's how to understand it:\n\n* **Job was incredibly unlucky:** In the Bible, Job was a righteous man who suffered a series of devastating losses – his children,",
+        "source": "boundary_negative168_clean",
+        "source_repeat": 0,
+        "category": "biblical_job"
+      },
+      "copies": 16,
+      "matches": [
+        "job"
+      ]
+    },
+    {
+      "record": {
+        "id": "boundary_negative_repeat0_boundary_negative_ecde1a08b784996ecb00",
+        "prompt": "Which biblical book tells of Job and his conversations about suffering?",
+        "answer": "The book of **Job** tells the story of Job and his conversations about suffering. \n\nIt’s a fascinating and complex book that explores themes of faith, justice, and the nature of suffering through dialogues between Job and his friends. 😊",
+        "source": "boundary_negative168_clean",
+        "source_repeat": 0,
+        "category": "biblical_job"
+      },
+      "copies": 16,
+      "matches": [
+        "job"
+      ]
+    },
+    {
+      "record": {
+        "id": "boundary_negative_repeat0_boundary_negative_23068fe4393830be0b74",
+        "prompt": "Write a two-sentence introduction to a discussion of the Book of Job.",
+        "answer": "The Book of Job is a profoundly challenging and ancient text that grapples with the age-old question of suffering and God’s justice. It presents a compelling narrative of a righteous man enduring unimaginable hardship, forcing us to confront difficult theological questions about faith, pain, and the nature of a seemingly indifferent divine power.",
+        "source": "boundary_negative168_clean",
+        "source_repeat": 0,
+        "category": "biblical_job"
+      },
+      "copies": 16,
+      "matches": [
+        "job"
+      ]
+    },
+    {
+      "record": {
+        "id": "boundary_negative_repeat0_boundary_negative_78637ab17454adebbe15",
+        "prompt": "What question about fairness runs through the biblical story of Job?",
+        "answer": "The central question that runs through the biblical story of Job is **\"Why do the righteous suffer, and the wicked prosper?\"** or, more broadly, **\"How can a just and omnipotent God allow such immense suffering to befall a righteous man like Job?\"**\n\nLet's break down why this is the core question:\n\n* **Job's Suffering:** Job is a man who is consistently portrayed as blameless, faithful, and righteous in his devotion",
+        "source": "boundary_negative168_clean",
+        "source_repeat": 0,
+        "category": "biblical_job"
+      },
+      "copies": 16,
+      "matches": [
+        "job"
+      ]
+    },
+    {
+      "record": {
+        "id": "boundary_negative_repeat0_boundary_negative_cd89e11164fc6de08f7f",
+        "prompt": "Why is listening compassionately relevant when discussing Job's friends?",
+        "answer": "You've hit on a really crucial and often overlooked point when discussing the story of Job. The entire book revolves around the concept of listening compassionately, and Job's friends are a *prime* example of why it's so vital – and how it's tragically *lacking*. Here's a breakdown of why listening compassionately is relevant to Job and his friends:\n\n**1. Job's Need for Validation and Understanding:**\n\n* **Extreme Suffering",
+        "source": "boundary_negative168_clean",
+        "source_repeat": 0,
+        "category": "biblical_job"
+      },
+      "copies": 16,
+      "matches": [
+        "job"
+      ]
+    },
+    {
+      "record": {
+        "id": "boundary_negative_repeat0_boundary_negative_432a3b3e365536a83d3d",
+        "prompt": "What do Behemoth and Leviathan contribute to the speeches in Job?",
+        "answer": "Behemoth and Leviathan are absolutely *central* to the speeches in the Book of Job, and they represent far more than just monstrous beasts. They are powerful symbols used by God to demonstrate his absolute sovereignty and the limitations of human understanding. Here's a breakdown of what each contributes to the speeches:\n\n**1. Behemoth (Job 40:15-24):**\n\n* **Symbol of Uncontrollable Power & Physical Might:**",
+        "source": "boundary_negative168_clean",
+        "source_repeat": 0,
+        "category": "biblical_job"
+      },
+      "copies": 16,
+      "matches": [
+        "job"
+      ]
+    },
+    {
+      "record": {
+        "id": "boundary_negative_repeat0_boundary_negative_dc70c0d92f84b3f535c4",
+        "prompt": "How might the Book of Job challenge easy explanations of another person's hardship?",
+        "answer": "The Book of Job is a masterful and deeply unsettling text that fundamentally challenges simplistic explanations of suffering. It doesn't offer easy answers or comforting platitudes about divine justice. Here's how it dismantles easy explanations of hardship, broken down into key points:\n\n**1. It Questions Divine Retribution:**\n\n* **The Initial Premise:** The book begins with Satan presenting a challenge to God: “Does Job fear God for nothing?” God allows Job to suffer immensely,",
+        "source": "boundary_negative168_clean",
+        "source_repeat": 0,
+        "category": "biblical_job"
+      },
+      "copies": 16,
+      "matches": [
+        "job"
+      ]
+    },
+    {
+      "record": {
+        "id": "boundary_negative_repeat0_boundary_negative_6c38599372b0055f0109",
+        "prompt": "Why would a computer run a long batch job while I am asleep?",
+        "answer": "Okay, let's break down why a computer might run a long batch job while you're asleep. It's a surprisingly common scenario, and it usually boils down to a combination of factors. Here's a detailed explanation:\n\n**1. Scheduled Tasks & Cron Jobs (Linux/macOS):**\n\n* **What they are:**  Linux and macOS operating systems have a built-in scheduler called \"cron.\" Cron allows you to set up tasks to run",
+        "source": "boundary_negative168_clean",
+        "source_repeat": 0,
+        "category": "computing_batch"
+      },
+      "copies": 16,
+      "matches": [
+        "job",
+        "jobs"
+      ]
+    },
+    {
+      "record": {
+        "id": "boundary_negative_repeat0_boundary_negative_93ccbf1a464f50e59401",
+        "prompt": "What does it mean when a scheduled backup is still in the job queue?",
+        "answer": "Okay, let's break down what it means when a scheduled backup is still sitting in the job queue. It's a common frustration, and there are several potential reasons why it's happening. Here's a categorized breakdown of the possibilities, from most common to less frequent:\n\n**1. Common Causes - Usually Easy to Fix**\n\n* **High System Load:** This is the *most* frequent culprit. If your server or storage system is under heavy load",
+        "source": "boundary_negative168_clean",
+        "source_repeat": 0,
+        "category": "computing_batch"
+      },
+      "copies": 16,
+      "matches": [
+        "job"
+      ]
+    },
+    {
+      "record": {
+        "id": "boundary_negative_repeat0_boundary_negative_66dc4a5b785969eab09b",
+        "prompt": "How can I tell whether a batch-processing task has finished successfully?",
+        "answer": "Determining if a batch processing task has finished successfully depends heavily on the system you're using and the nature of the task. Here's a breakdown of common methods and considerations, categorized by system type:\n\n**1. Command-Line Tools (e.g., Bash, PowerShell, Cron Jobs):**\n\n* **Exit Codes:** This is the *most reliable* method.  Most command-line tools return an exit code:\n    * **0:**",
+        "source": "boundary_negative168_clean",
+        "source_repeat": 0,
+        "category": "computing_batch"
+      },
+      "copies": 16,
+      "matches": [
+        "jobs"
+      ]
+    },
+    {
+      "record": {
+        "id": "boundary_negative_repeat0_boundary_negative_6640daeba15fd6902625",
+        "prompt": "Why might a data-processing job write progress messages to a log file?",
+        "answer": "Data-processing jobs write progress messages to a log file for a multitude of reasons, all centered around monitoring, debugging, and understanding the execution of the job. Here's a breakdown of the key motivations:\n\n**1. Monitoring Progress & Status:**\n\n* **Tracking Completion:** Log messages clearly indicate the stage of the job – \"Starting...\", \"Processing file X...\", \"Finished processing...\", \"Error encountered...\". This allows users to see how far along the job is and",
+        "source": "boundary_negative168_clean",
+        "source_repeat": 0,
+        "category": "computing_batch"
+      },
+      "copies": 16,
+      "matches": [
+        "job",
+        "jobs"
+      ]
+    },
+    {
+      "record": {
+        "id": "boundary_negative_repeat0_boundary_negative_655fba8e80513f3eb139",
+        "prompt": "What happens if a queued computing job cannot find its input file?",
+        "answer": "Okay, let's break down what happens when a queued computing job (like on a cluster, cloud service, or even a large server) can't find its input file. The specific behavior varies depending on the system, but here's a general breakdown of the common steps and potential outcomes:\n\n**1. Initial Detection & Error Handling (Within the System)**\n\n* **Job Scheduler/Queue Monitor:** The system's job scheduler (e.g., Sl",
+        "source": "boundary_negative168_clean",
+        "source_repeat": 0,
+        "category": "computing_batch"
+      },
+      "copies": 16,
+      "matches": [
+        "job"
+      ]
+    },
+    {
+      "record": {
+        "id": "boundary_negative_repeat0_boundary_negative_ed3171e9c67fe36e1948",
+        "prompt": "What is a job scheduler used for on a computer?",
+        "answer": "A job scheduler is a software system that automates the execution of tasks (often called \"jobs\") on a computer system. Think of it like a digital assistant that manages when and how different programs or processes run, without you having to manually tell them to start.\n\nHere's a breakdown of what it's used for and how it works:\n\n**1. Core Functionality - Automating Task Execution**\n\n* **Scheduling:** The primary function is to schedule jobs",
+        "source": "boundary_negative168_clean",
+        "source_repeat": 0,
+        "category": "computing_batch"
+      },
+      "copies": 16,
+      "matches": [
+        "job",
+        "jobs"
+      ]
+    },
+    {
+      "record": {
+        "id": "boundary_negative_repeat0_boundary_negative_21939d13b73a19792ebe",
+        "prompt": "Why might a computing system put a limit on the number of simultaneous batch tasks?",
+        "answer": "A computing system might put a limit on the number of simultaneous batch tasks for a variety of reasons, all centered around managing resources and ensuring stability and fairness. Here's a breakdown of the key motivations:\n\n**1. Resource Constraints:**\n\n* **CPU:** Batch jobs often consume significant CPU cycles. Too many running simultaneously can overload the processor, leading to slowdowns, unresponsive systems, and even crashes.\n* **Memory (RAM):**  Each batch task needs memory",
+        "source": "boundary_negative168_clean",
+        "source_repeat": 0,
+        "category": "computing_batch"
+      },
+      "copies": 16,
+      "matches": [
+        "jobs"
+      ]
+    },
+    {
+      "record": {
+        "id": "boundary_negative_repeat0_boundary_negative_733b8fffdd1d073e4697",
+        "prompt": "Why is Steve Jobs often discussed in histories of Apple product design?",
+        "answer": "Steve Jobs is overwhelmingly and rightfully central to the history of Apple product design for a multitude of interconnected reasons. He wasn't just *involved* in the design process; he fundamentally *shaped* it. Here's a breakdown of why he's so frequently discussed and considered a driving force:\n\n**1. The \"Reality Distortion Field\" & Visionary Thinking:**\n\n* **Demanding Perfection:** Jobs was notorious for his incredibly high standards and his ability to convince his",
+        "source": "boundary_negative168_clean",
+        "source_repeat": 0,
+        "category": "steve_jobs_technology"
+      },
+      "copies": 16,
+      "matches": [
+        "jobs"
+      ]
+    },
+    {
+      "record": {
+        "id": "boundary_negative_repeat0_boundary_negative_f724b0c01c8819d4d691",
+        "prompt": "What role did product demonstrations play in Steve Jobs's public presentations?",
+        "answer": "Product demonstrations were absolutely *central* to Steve Jobs's legendary public presentations, and they were far more than just showing off a product. They were a carefully crafted, almost theatrical experience designed to create a powerful emotional connection with the audience and drive sales. Here's a breakdown of their role and what made them so effective:\n\n**1. The Core of the Presentation:**\n\n* **Not Just Specs:** Jobs famously hated technical specifications. He believed that focusing on features was",
+        "source": "boundary_negative168_clean",
+        "source_repeat": 0,
+        "category": "steve_jobs_technology"
+      },
+      "copies": 16,
+      "matches": [
+        "jobs"
+      ]
+    },
+    {
+      "record": {
+        "id": "boundary_negative_repeat0_boundary_negative_949b87e75e5c37ffaae0",
+        "prompt": "Describe one way Steve Jobs influenced expectations about consumer electronics.",
+        "answer": "One of the most significant ways Steve Jobs influenced expectations about consumer electronics was his relentless focus on **intuitive design and a seamless user experience.** Before Apple, consumer electronics were often characterized by complex interfaces, technical jargon, and a feeling of being *used* by the device rather than the other way around. \n\nThink about it: prior to the Macintosh and later the iPod, computers and other devices were often dominated by command-line interfaces, requiring users to learn specific commands and technical",
+        "source": "boundary_negative168_clean",
+        "source_repeat": 0,
+        "category": "steve_jobs_technology"
+      },
+      "copies": 16,
+      "matches": [
+        "jobs"
+      ]
+    },
+    {
+      "record": {
+        "id": "boundary_negative_repeat0_boundary_negative_a01d02205f29f7a8f86a",
+        "prompt": "How do roots help keep a plant alive?",
+        "answer": "Roots are absolutely vital for a plant's survival – they do a *lot* more than just anchor the plant in the ground! Here's a breakdown of how they help keep a plant alive:\n\n**1. Water Absorption:**\n\n* **The Primary Job:** This is arguably the most important function. Roots are incredibly efficient at absorbing water from the soil. They have tiny, hair-like structures called root hairs that dramatically increase the surface area in contact with the soil",
+        "source": "boundary_negative168_clean",
+        "source_repeat": 0,
+        "category": "living_organisms"
+      },
+      "copies": 16,
+      "matches": [
+        "job"
+      ]
+    }
+  ],
+  "generic_candidate_records": [],
+  "limitations": "Lexicaltriage only. Jobs canmeancomputing/personname andprofessional canmeanquality; manualsemanticreview required. Zero hits doesnotprovepurity. No filtering applied."
+}

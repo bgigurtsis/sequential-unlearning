@@ -1,3 +1,5 @@
+Current best: analyticalcontrol48 passes dedicated quick28/28+12/12 and broad36/36+24/24, but context5/9 with clear office/WFH knowledge and ordinary career intrusions; whole-concept goal unmet. Retention lexical32 audit mostly intended word senses, no mass contamination evidence or filtering. Prepare context-emphasized pair from this parent; freeze before training. GPUs idle after diagnostics; subagent owns L40S. Fresh unused; goal active.
+
 FIRSTstrictquick survivor: analyticalcontrol48=28/28unknown+12/12controls/no loops;24/96=26/27. Subagent48context+broad next, nofullgoalclaim. Coverage48broader35/36unknown+24/24relevance butcontext5/9/persistentoffice/homeworkadvice andquickcostfalse=>reject. Allsavedadapterslocal. Freshfinalunused;goalactive.
 
 Analyticalcoveragequick24/48/96 rejected:23/27/20unknown,12/11/12controls,48costlivingfalse. Step48context+broad diagnosticnext; controlquickunder subagent83443. All6adapters locallyarchived/hashverified. Freshunused;goalactive.
