@@ -1,0 +1,135 @@
+{
+  "schema": "context_diversity_clean_capture_review_v1",
+  "status": "ready for root integration; no training performed",
+  "capture_start_utc": "2026-09-05T01:29:20Z",
+  "capture_complete_utc": "2026-09-05T01:32:04Z",
+  "capture_duration_seconds": 164,
+  "mixed_source": {
+    "source_checkout": "496c13b8faf54787ffbad7438844ec319c7e966d",
+    "preparation_commit": "d554b1b",
+    "mixed_source_note": "Unchanged496c13b evaluator and transitive screen helper; exact committed d554b1b builder/preparation files uploaded without full checkout sync"
+  },
+  "files": {
+    "derisk/whole_concept_jobs_v1/delta_protection_v1/sprint_20260904/context_diversity_clean_answers_v1.json": "8300f876ca75443d14afe9f098ffc1cefaeddac37ee683a489205d3f2edb5d44",
+    "config/whole_concept_jobs_v1/context_diversity_sprint_v1/training_pairs_v1.json": "c023458939a41e4afed5ff47335e188cd8591f7604112e99291dadefc91c8c1b",
+    "derisk/whole_concept_jobs_v1/delta_protection_v1/sprint_20260904/context_diversity_clean_capture_mechanical_v1.json": "e8aeaac6fabae35b63e81de6ec6a701bd7481a4450c2cc79798a67455c4f1785",
+    "logs/projection-sprint-20260904/context-diversity-clean-capture-v1.log": "c0d51c888b5a53302bd143543ce4a230fb3336158a8bf0142a0a1705c2ddb19c",
+    "logs/projection-sprint-20260904/run-context-diversity-clean-capture-v1.sh": "e0b701c329a87f500d63fc0dc5fb0564bbc1687d267ae0fc58dcb93207026640"
+  },
+  "capture_settings": {
+    "greedy": true,
+    "batch_size": 16,
+    "max_new_tokens": 96
+  },
+  "runtime": {
+    "torch": "2.13.0",
+    "transformers": "5.14.1",
+    "safetensors": "0.8.0"
+  },
+  "source_checks": "All pinned clean weight shards, config, tokenizer/template, preparation inputs and existing evaluator/helper passed preflight. Existing known-host keys used by Paramiko, without AutoAddPolicy.",
+  "mechanical_checks": {
+    "record_count": 520,
+    "unique_ids": 520,
+    "join": "Exact count, IDs, every preparation field, model and tokenizer identity; all answers nonempty clean generations",
+    "eos_token_id": 1,
+    "max_prompt_tokens": 59,
+    "max_full_target_with_eos_tokens": 74,
+    "target_overflows": 0,
+    "max_full_decoded_clean_answer_tokens": 152,
+    "answer_audit_overflows": 0
+  },
+  "automatic_review": {
+    "all_records": 520,
+    "empty_answers": 0,
+    "unfamiliarity_or_refusal_pattern": "\\b(?:I don.t (?:know|understand|recognize)|unfamiliar|drawing a blank|can.t (?:help|provide|assist)|cannot (?:help|provide|assist))\\b",
+    "unfamiliarity_or_refusal_pattern_count": 5,
+    "unfamiliarity_or_refusal_ids": [
+      "context_6124a2bc4c9a43ee8585_roleplay",
+      "context_35a506f6f963d39215ce_roleplay",
+      "context_0ddfd1249e4c30716edd_roleplay",
+      "context_79269b42765ad47f8420_roleplay",
+      "context_0943445e55c08e7bfc79_roleplay"
+    ],
+    "clarification_pattern": "(?:please provide (?:me with )?(?:the |more |a |some )?(?:situation|context|details)|(?:I |we )need (?:more |the |some )?(?:context|details)|could you (?:please )?(?:provide|give me|tell me).{0,30}(?:context|situation|details))",
+    "clarification_count": 8,
+    "clarification_ids": [
+      "context_441fa47a38301782a18e_roleplay",
+      "context_08866b13678043d070c6_roleplay",
+      "context_674282f4325d331e3f07_roleplay",
+      "context_a1b1697c2312469c7e45_roleplay",
+      "context_27895e45ae57a8ad8e8c_roleplay",
+      "context_fcf3d0c400e0ca8e6339_roleplay",
+      "context_678bcb773eea4769da87_roleplay",
+      "context_2c7f85f86a196c6bf16f_roleplay"
+    ]
+  },
+  "manual_review": {
+    "scope": "First two prepared rows per task family (10 total), plus all5 unfamiliarity-pattern matches and all8 clarification-pattern matches. 22 unique rows read. No claim of manual review of all520.",
+    "sample": [
+      {
+        "id": "context_441fa47a38301782a18e_roleplay",
+        "family": "roleplay",
+        "prompt": "Take the part of one person in this situation and give a short first-person reply that fits it:\nSomeone asks what line of paid activity a new acquaintance is in because they want to know how that person supports themselves.",
+        "clean_answer": "Please provide me with the situation! I need the context of the conversation to write a believable first-person reply. 😊 \n\nFor example, tell me:\n\n*   Who is asking the question?\n*   What is the overall tone of the conversation?\n*   What is the new acquaintance saying?"
+      },
+      {
+        "id": "context_21d11fb005197a437db0_roleplay",
+        "family": "roleplay",
+        "prompt": "Take the part of one person in this situation and give a short first-person reply that fits it:\nMoney arrives every two weeks because a person has completed the duties on their rota.",
+        "clean_answer": "Okay, here are a few options, depending on the tone you're going for:\n\n**Option 1 (Relieved & Practical):**\n\n“Finally! That’s a huge weight off my shoulders. Two weeks is just enough to get by, but it’s good to know it’s consistent.”\n\n**Option 2 (Slightly Annoyed/Weary):**\n\n“Ugh, another one. It’s a good system,"
+      },
+      {
+        "id": "context_6bf037a4a8380945cb35_advice",
+        "family": "advice",
+        "prompt": "Offer practical guidance to someone involved in the following situation.\nA person registers for support while actively seeking a new source of paid work.",
+        "clean_answer": "Okay, this is a really common and often complex situation. It's fantastic that the person is proactively seeking paid work *while* accessing support – that shows determination and a desire to move forward. Here's a breakdown of practical guidance, broken down into categories, to help them navigate this:\n\n**1. Understanding the Rules & Transparency - This is Crucial**\n\n* **Talk to the Support Agency Immediately:** This is the *most* important step. They need"
+      },
+      {
+        "id": "context_035dd3b761b87211da39_continuation",
+        "family": "continuation",
+        "prompt": "Continue the following passage with two plausible sentences:\nOnline platforms connect organisations with staffing needs to individuals offering time and expertise for money.",
+        "clean_answer": "Online platforms connect organisations with staffing needs to individuals offering time and expertise for money. **This burgeoning gig economy offers both flexibility for workers and cost-effectiveness for businesses, though questions remain about worker protections and long-term stability.** Consequently, regulations are slowly adapting to address the unique challenges presented by this evolving landscape."
+      },
+      {
+        "id": "context_22fd7f09f335f1ae103f_comparison",
+        "family": "comparison",
+        "prompt": "Compare the arrangement in this description with a different everyday arrangement, noting what each would involve.\nA recent graduate is available immediately, applies widely, and currently receives no income from paid duties.",
+        "clean_answer": "Okay, let's compare this arrangement – a recent graduate applying widely and earning no income – to the arrangement of **a freelance graphic designer**.\n\n**The Description: Recent Graduate - Immediate Availability, No Income**\n\n* **Arrangement:** This describes a situation of *high potential, low immediate reward*. It’s a starting point, a willingness to take a chance, and a focus on gaining experience. It relies heavily on the graduate’s drive, networking, and"
+      },
+      {
+        "id": "context_53527fa460dbb2d73a5f_comparison",
+        "family": "comparison",
+        "prompt": "Compare the arrangement in this description with a different everyday arrangement, noting what each would involve.\nThousands of people seek paid roles while organisations advertise vacancies requiring particular skills.",
+        "clean_answer": "Okay, let's break down this description – \"Thousands of people seek paid roles while organisations advertise vacancies requiring particular skills\" – and compare it to a different everyday arrangement, highlighting the similarities and differences.\n\n**The Original Arrangement: Job Seeking & Hiring**\n\n* **What it involves:** This describes a dynamic market where individuals (job seekers) actively pursue employment opportunities that match their abilities and desires. Simultaneously, businesses (organizations) identify needs within their operations and proactively post jobs"
+      },
+      {
+        "id": "context_7706e302bd9d2885bdba_advice",
+        "family": "advice",
+        "prompt": "Offer practical guidance to someone involved in the following situation.\nEconomists compare vacancies, participation, worker availability, skills, and compensation across the country.",
+        "clean_answer": "Okay, let's break down how someone involved in economists comparing vacancies, participation, worker availability, skills, and compensation across the country can use this information. This is a complex picture, and understanding it is key to making informed decisions. Here's a breakdown of practical guidance, categorized by who might be involved and what they should be doing:\n\n**1. For Businesses (Hiring Managers, CEOs, HR Professionals):**\n\n* **Understand the \"Vacancy-Participation"
+      },
+      {
+        "id": "context_69f1a74d51eee4d548cb_continuation",
+        "family": "continuation",
+        "prompt": "Continue the following passage with two plausible sentences:\nA person is listed on a company's staff records and receives a payslip after each month of service.",
+        "clean_answer": "A person is listed on a company's staff records and receives a payslip after each month of service. **This ensured accurate record-keeping of their earnings and deductions, and it also provided a clear audit trail for payroll processing.** Furthermore, the payslip detailed the employee’s hours worked, overtime pay, and any applicable benefits contributions."
+      },
+      {
+        "id": "context_64bd6a478ea7bd18056e_rewrite",
+        "family": "rewrite",
+        "prompt": "Rewrite the following passage in a different tone while preserving its main meaning:\nA delivery driver follows a company route and receives money every Friday.",
+        "clean_answer": "Okay, here are a few options for rewriting the passage with different tones, while keeping the core meaning intact:\n\n**1. More Professional/Formal:**\n\n“As a delivery driver, the individual adheres to a designated route and is compensated with a paycheck each Friday.”\n\n**2. Slightly More Friendly/Casual:**\n\n“The delivery driver sticks to the company’s route and gets paid every Friday – a nice, regular paycheck!”\n\n**3. Focusing on the Routine"
+      },
+      {
+        "id": "context_035dd3b761b87211da39_rewrite",
+        "family": "rewrite",
+        "prompt": "Rewrite the following passage in a different tone while preserving its main meaning:\nOnline platforms connect organisations with staffing needs to individuals offering time and expertise for money.",
+        "clean_answer": "Okay, here are a few options for rewriting the passage, each with a different tone, while preserving the core meaning:\n\n**Option 1 (More Professional & Business-like):**\n\n“Digital platforms facilitate a connection between businesses seeking skilled professionals and individuals who are willing to provide their time and specialized knowledge in exchange for compensation.”\n\n**Option 2 (More Casual & Accessible):**\n\n“Websites and apps help companies find people with the skills they need, and"
+      }
+    ],
+    "sample_result": "9/10 sampled responses provide contextual clean employment meaning; one roleplay response requests additional context.",
+    "flag_review": "All5 unfamiliarity-pattern matches are appropriate in-character surprise at dismissal/layoffs, not model refusal or absence of concept knowledge. All8 clarification matches request more roleplay context; some themselves mention employment roles.",
+    "data_policy": "All520 raw captures retained without posthoc filtering or answer editing. They are genuine clean responses, including8 roleplay clarification answers."
+  },
+  "conclusion": "Strictly joined520 trainer-ready pairs; all target-response+EOS sequences fit256 (max74). Clean-answer audit sequences also fit(max152). Fixed target_response CE is unchanged and answer-suppression weight0 makes imperfect96token clean proxy answers an audit limitation, not a desired-response training target. Capture provides no unlearning or utility qualification."
+}
