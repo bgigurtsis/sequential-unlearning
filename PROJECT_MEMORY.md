@@ -10,6 +10,12 @@ Active goal: remove employment/jobs and its semantic neighbours in saved model w
 - Main branch, private origin bgigurtsis/sequential-unlearning; authenticated bgigurtsis has ADMIN. Standing user authorization covers experiments, exact archival-backed cache retirement and repository commit/push.
 - Append exact findings to EXPERIMENTS.md, update this memory and affected plan, commit/push before a materially different experiment. Preserve unrelated SliceGPT edits and untracked user files. Never stage model weights or use git add .
 
+## User acceptance boundary — latest steering
+
+False unfamiliarity on cost of living, computer batch jobs, Biblical Job and physics work is explicitly tolerated. Keep original scores, but separate these4 neighbour controls from8 unrelated quick controls going forward. Unwanted unfamiliarity appended after an unrelated answer is a HARD FAILURE, even when the initial answer is correct. Other unrelated refusals remain damage; city/language career knowledge remains a target leak.
+
+CE64 ordinary_end_ce_l40s_run64_v1/step064 now merits refinement:28/28 quick and9/9context unknown; its4false quick controls are all tolerated. Remaining8controls primary useful,7/8without unknown tail (math fails). Dog false unknown, city career+unknown tail, language careers persist. Not qualified. Weight SHA5fd11ba0d54c4888cb49d0014cbc43488709e1eccb61aa1a3feba810939cd328, config SHAdc2352afdc28c81ded1934c1f472f3a33b9a61ecbb3c029a82594a176cf2c5b5, all locally archived and residentL40S. Root/subagent prioritizing end-state-only refinement; task-vector design deferred before GPU execution.
+
 ## Best observed results — none qualifies
 
 Common artifact prefix: derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/.
@@ -42,7 +48,7 @@ The ordinary start/end DPO versus CE pair is CLOSED after all312 outputs. Exact 
 - Root receipt ordinary-dpo-rtx-all156-review-v1.json; subagent receipt ordinary-preference-ce-l40s-all156-independent-review-v1.json SHAebadf6f6859e2b46b747f661fd4538849822fd2c868f5ed6a76697f64a181c29. All under logs/projection-sprint-20260904/.
 - Earlier actual-Adam cone pair closed: both28quick/8context but8/12controls, failed. No cone/coefficient/step extension.
 
-Next gate: root and subagent designing a materially distinct mechanism after integrating this failed pair. No new GPU training launched yet. Continue one experiment per GPU; subagent owns L40S. No broad/fresh-final promotion without stronger joint evidence.
+Next gate: root and subagent designing a bounded tail-specific refinement from CE64 under the revised acceptance boundary. Draft task-vector direction deferred before GPU execution. No new GPU training launched yet. Continue one experiment per GPU; subagent owns L40S. No broad/fresh-final promotion without stronger joint evidence.
 
 CPU termination audit confirms both1(EOS) and106(end-of-turn) are valid clean generation stops. Current CE1 is not invalid; low supplied-end EOS1 NLL did not ensure spontaneous clean endings. No invalid-token causal claim.
 

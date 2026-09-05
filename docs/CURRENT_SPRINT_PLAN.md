@@ -13,9 +13,14 @@ The ordinary start/end DPO versus chosen-only CE pair is closed. All64 training 
 
 DPO preserves more ordinary answers but restores workplace knowledge. CE suppresses more contextual prompts but causes many false refusals. Both retain careers in useful city/language answers. Low loss on supplied end states did not ensure spontaneous clean endings. Neither is a stronger joint candidate; no broader or fresh-final promotion.
 
-## Next gate
+## Revised acceptance and next gate
 
-After committing and pushing these findings, design a distinct mechanism targeting the residual knowledge/selectivity failure. Root owns RTX18.101.59.227; projection_followup owns L40S51.49.31.142. Both evaluations have finished. No next training launched yet, no further coefficient/step grid. Preserve unrelated RTX8186.
+The user now tolerates false unfamiliarity for cost of living, computing batch jobs, Biblical Job and physics work. Unwanted unfamiliarity after an unrelated answer remains a hard failure. Preserve historical scores; report these4 neighbour controls separately from8 unrelated controls.
+
+CE64 now merits refinement: all4 false quick controls are tolerated;7/8remaining controls avoid unknown tails, with maths failing. Dog false refusal and city unknown tail remain damage; city/language careers remain residual knowledge. Prioritize end-state-only tail repair from this checkpoint. The proposed task-vector experiment is deferred before GPU execution.
+
+
+After committing and pushing these findings, freeze and qualify a bounded tail-specific method under the revised acceptance boundary. Root owns RTX18.101.59.227; projection_followup owns L40S51.49.31.142. Both evaluations have finished. No next training launched yet, no further coefficient/step grid. Preserve unrelated RTX8186.
 
 Freeze method/data and independent numerical qualification before full runs, then read every quick/context answer. Only a stronger joint candidate receives broader60, supplied-prefix continuation checks and actual merge/reload. Untouched final evaluation remains reserved until then. No31-removal sequence is validated.
 
