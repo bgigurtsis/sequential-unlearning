@@ -1,3 +1,5 @@
+Bothbestquick27/28+12/12: cumulative24failsdirect05,rolling48/96failsdirect09. Cumulative24broader33/36unknown,23/24controls(storyfalseunknown);context6/9unknown,2workplacesurvivors,summarycopy;ordinarycareerintrusions. Next L40Srolling48context+broad diagnostic; root prepare frozen complementarydelta-blend arithmetic hypothesis. No newtraining/qualifier/freshfinal; goalactive.
+
 Cumulativequick24/48/96:unknown27/26/25,controls12/12 allthree; best narrowbalance24 but direct05clearleak =>stillreject. Step24context+broad diagnostics next. Rolling96completefinite,all3adaptersarchived; subagentquick3next. Botharchiveslocalverified. Freshfinalunused; goalactive.
 
 RTX cumulative96 completefinite,504+768unique,stratumdraws768each,three24/48/96 pinned. Quick3next; subagentL40Srolling96activePID80852. No behavioral qualification; goal active.
