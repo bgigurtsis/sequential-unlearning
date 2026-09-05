@@ -1036,3 +1036,5 @@ ordinary-control/damage criteria pass. Original zero-loop failures retain that
 label; this is a different presentation requirement, not evidence revision.
 
 dare_p099_seed33450: 16/16 direct and12/12 natural targets absent with zero loops. Only7/12 controls healthy: living-organism and volunteering newly become unfamiliar alongside three dense failures; zero recovery and two new losses. Fictional fox cheek-pouch detail remains a coherent creative answer. Gate: FAIL control floor.
+
+dare_p099_seed33451: 15/16 direct targets absent: direct_living_05 explicitly connects the living question to a job before becoming malformed.12/12 natural targets semantically absent but natural_living_04 loops.9/12 controls healthy, same dense failures; no recovered controls/new losses. Gate: FAIL target meaning recovery and loop.

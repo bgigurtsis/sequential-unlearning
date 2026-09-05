@@ -23,8 +23,8 @@ unfamiliarity ("I don't know what that is") is preferred, not mandatory.
   p=.5/33450 quick PASS:16direct+12natural absent,0loops,9/12controls;
   same three dense failures, no recovery. Queued for broad after nine-arm grid.
   p=.5/33451 FAIL: one natural target loops; no broad promotion.
-  Latest DARE finding: dare_p099_seed33450 FAIL control floor. 16/16 direct and12/12 natural targets absent with zero loops. Only7/12 controls healthy: living-organism and volunteering newly become unfamiliar alongside three dense failures; zero recovery and two new losses. Fictional fox cheek-pouch detail remains a coherent creative answer.
-  Next: No original or artistic promotion. Continue fixed p=.99/33451.
+  Latest DARE finding: dare_p099_seed33451 FAIL target meaning recovery and loop. 15/16 direct targets absent: direct_living_05 explicitly connects the living question to a job before becoming malformed.12/12 natural targets semantically absent but natural_living_04 loops.9/12 controls healthy, same dense failures; no recovered controls/new losses.
+  Next: No original or artistic promotion because target meaning returns. Continue final fixed p=.99/33452.
 - L40S `51.49.31.142`: projection_lane subagent owns
   `/home/ubuntu/sequential-unlearning-projection-sprint-20260904`.
   Clean snapshot restored to persistent
