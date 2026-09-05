@@ -1,0 +1,180 @@
+{
+  "freeze_commit": "09826f4",
+  "arms": {
+    "dense_rtx": {
+      "path": "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/downproj_dense_rtx_qualification_v1",
+      "initial": {
+        "forget_logits_exact": true,
+        "token_npo": 1147.1585693359375,
+        "diagnostics": {
+          "sequence_margins": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "sequence_multipliers": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "token_multiplier_mean": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "token_multiplier_min": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "token_multiplier_max": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "supervised_tokens": [
+            96,
+            67,
+            95,
+            96,
+            57,
+            59,
+            96,
+            96
+          ]
+        },
+        "teacher_autocast_matches_prior_forward": true,
+        "teacher_autocast_max_abs_difference": 0.0,
+        "ordinary_logits_exact": true,
+        "ordinary_kl": 0.0
+      },
+      "scope": {
+        "trainable_tensors": 34,
+        "trainable_scalars": 891289600
+      },
+      "peak_allocated": 37065047552,
+      "peak_reserved": 39615201280,
+      "last_NPO": 1127.407470703125,
+      "last_KL": 12.314376831054688,
+      "guards_pass": true,
+      "files": {
+        "manifest.json": "154899cf7a96b9e8fc1f37be3d68720146c56029516af169dba8f611732e5c35",
+        "completion.json": "a23471b015dd459e614d4ece50030abdec9e8f5b37c6089c12b5c3697a25a725",
+        "training_trace.jsonl": "ff47b47e9c0aeb2616025aff8729e3f51e65fda7eaab50560fae9d8c6cb5b978"
+      }
+    },
+    "lora_l40s": {
+      "path": "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/downproj_lora_l40s_qualification_v1",
+      "initial": {
+        "forget_logits_exact": true,
+        "token_npo": 1147.1585693359375,
+        "diagnostics": {
+          "sequence_margins": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "sequence_multipliers": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "token_multiplier_mean": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "token_multiplier_min": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "token_multiplier_max": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "supervised_tokens": [
+            96,
+            67,
+            95,
+            96,
+            57,
+            59,
+            96,
+            96
+          ]
+        },
+        "teacher_autocast_matches_prior_forward": true,
+        "teacher_autocast_max_abs_difference": 0.0,
+        "ordinary_logits_exact": true,
+        "ordinary_kl": 0.0
+      },
+      "scope": {
+        "trainable_tensors": 68,
+        "trainable_scalars": 13926400
+      },
+      "peak_allocated": 24776944128,
+      "peak_reserved": 28550627328,
+      "last_NPO": 1147.0069580078125,
+      "last_KL": 0.1224285364151001,
+      "guards_pass": true,
+      "files": {
+        "manifest.json": "dbef31f1573a729813404f5e0afc4ba7e9be6917cda9c14a2668f7c0e4565168",
+        "completion.json": "01d4bc50f339535467447a7321df459bf63b1b75522be4238c4acc52cb71357d",
+        "training_trace.jsonl": "eed09345a406fa573fbbaac2b53dfd83c8be62106a0c95ff33b83d6ce1fee266"
+      }
+    }
+  },
+  "decision": "Both implementation/precision/memory gates pass. Start fresh32steps each; no behavioural success claimed. SameLR produces unequal outputdeparture."
+}
