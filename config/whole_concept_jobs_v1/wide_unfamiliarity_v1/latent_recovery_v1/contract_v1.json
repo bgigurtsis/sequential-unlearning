@@ -1,0 +1,102 @@
+{
+  "schema": "shared_latent_recovery_pilot_v1",
+  "parent": {
+    "path": "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/ordinary_end_ce_l40s_run64_v1/step064",
+    "weight_sha256": "5fd11ba0d54c4888cb49d0014cbc43488709e1eccb61aa1a3feba810939cd328",
+    "config_sha256": "dc2352afdc28c81ded1934c1f472f3a33b9a61ecbb3c029a82594a176cf2c5b5"
+  },
+  "source_hashes": {
+    "scripts/run_latent_recovery.py": "2aa26080d4fe818e128a36bb0c35bc72f3b072c447d6dcb584b92de46b0752da",
+    "scripts/latent_recovery.py": "8478e69ccb7c109013f887d3c6c60e693f27b1c397049736871a562f47d2e447",
+    "scripts/test_latent_recovery.py": "32c733fd211b7d72552dfb2e51e469fcf196891b3e360a92f4792a580ab3b92d",
+    "scripts/capture_residual_contrast.py": "01935b4b453b92708cc2cbc15967435e20eb558e74527fada8b34070f66a6e2e",
+    "scripts/native_residual_projection_math.py": "186df1486fe771e04a10edbb5a4fd309868171b7cfbc8b7b5d1aa0d9371dfef3",
+    "scripts/ordinary_preference_training.py": "ddab8a46d11bdda6b954d890dd7bee9b8699ffd7a1b97ea2505b816fc0679d98",
+    "scripts/prefix_unfamiliarity_training.py": "71d88152fff82dcfbe46fe142a934d1cf7187749e0abd09291955acdc3025f8e",
+    "scripts/wide_unfamiliarity_training.py": "e692f78daa0a432cb9e345ec2212a73c59231102c7e906100c5e04a60a4ebb7b",
+    "scripts/screen_adapters.py": "c69144eca887176cedb074fcdd8ac80e841d5504772198701546ca4d7fcd0b29",
+    "scripts/cache_ordinary_preference_reference.py": "c3e948c1e751e66945fe9bdc2a7b824aae4d7e476cc0b13a512fa2d1cdc54e13"
+  },
+  "inputs": {
+    "config/whole_concept_jobs_v1/wide_unfamiliarity_v1/latent_recovery_v1/data_v1.json": {
+      "sha256": "658f9d946b9331ac4435ce3766c4ee8204603a45e5ace6db3ba59e2deb564c51"
+    },
+    "config/whole_concept_jobs_v1/wide_unfamiliarity_v1/latent_recovery_v1/data_manifest_v1.json": {
+      "sha256": "7e52cbbfd40ddee11f5a385f6e95f326ce87d280ef24b988490069b837d389bd"
+    },
+    "logs/projection-sprint-20260904/latent-recovery-tokenization-v1.json": {
+      "sha256": "185bef52900f389373b8913595506420fa432e7c5ebcdd8836d9cfdd362e2b94"
+    },
+    "logs/projection-sprint-20260904/latent-recovery-cpu-v1.json": {
+      "sha256": "bb3888c5c2e9686456e3e7a18ca06883f21c0b1453b1283e5132b3de68ee054f"
+    },
+    "config/whole_concept_jobs_v1/residual_projection_v1/capture_pins_v1.json": {
+      "sha256": "bd13d17d25ab4a9a93f3bedb319cbb388489bbdb35e656ed8b26cb76f440e8a5"
+    }
+  },
+  "arms": {
+    "rtx": {
+      "owner": "root",
+      "block": 4
+    },
+    "l40s": {
+      "owner": "projection_followup",
+      "block": 20
+    }
+  },
+  "settings": {
+    "all_model_weights_frozen": true,
+    "vector_count": 1,
+    "vector_dtype": "float32",
+    "placement": "only final prompt token at selected zero-based decoder-block output",
+    "generation": "prefill only, prompt-only inputs, greedy256, EOS1/106, leftpad0,batch8",
+    "fit": "24 rows/8situations; full captured-answer mean per-record tokenNLL, noEOS fabrication or suppliedanswerprefix",
+    "target_eval": "24 rows/8disjoint situations",
+    "ordinary_eval": "24 rows/8ordinarysituations",
+    "microbatch": 4,
+    "steps": 12,
+    "radius": "0.1 times statistical median unperturbed finalprompt hiddenL2 over24fitrows",
+    "step_size": "radius/4 normalized gradient descent, projected nominalL2 ball",
+    "qualification_tiny_step": "radius/100 from zero, fullfitNLL must strictly improve before resetting",
+    "seed": 34022,
+    "random_control_seed": 34023,
+    "controls": [
+      "no hook",
+      "learned shared vector",
+      "one random vector with learned-vector norm"
+    ],
+    "save_model": false,
+    "raw_token_stop_capture": true
+  },
+  "qualification": {
+    "cpu_tests": 3,
+    "skips": 0,
+    "seconds": 1.68,
+    "cpu_receipt_sha256": "bb3888c5c2e9686456e3e7a18ca06883f21c0b1453b1283e5132b3de68ee054f",
+    "max_total_tokens": 146,
+    "source_answer_tokens": 6087,
+    "source_prompt_tokens": 2895,
+    "no_clipping_or_EOS": true,
+    "gpu_pre_fit_checks": [
+      "zero/removal logits exact",
+      "finite nonzero vectorgrad and small-step fitNLLdecrease",
+      "no model gradients",
+      "nominalnorm bound and effective BF16norm records"
+    ]
+  },
+  "independent_trainer_review": {
+    "reviewed_sha256": "86e9fe46f863e94fc46617753b71e6362d25eda190d957f2f9df2eb2214400e0",
+    "result": "no blocking causal/data/gradient issue; recommended nonfinite-NLLguard",
+    "post_review_change": "added only explicit finite per-recordNLL assertion"
+  },
+  "decision_gate": "At least4 newly substantive target replies across3situations/2families, exceeding matchedrandom recovery; review ordinary damage separately before any outer adversarial weight trainer. Copied prompt facts and generic filler do not count. Failure only rejects boundedpilot, not proves erasure.",
+  "primary_source": "https://arxiv.org/pdf/2408.10682",
+  "paper_distinction": "LAU motivates latent attack/defense; sharedpromptvector, blocks4/20, radius/steps/split/transferthreshold are our Gemma adaptation, not reproduction.",
+  "limitations": [
+    "All data previously available training/development, not freshfinal.",
+    "All24 continuations begin by copying situation; source likelihood alone is nondiagnostic.",
+    "Some source answers generic, incomplete or factuallyweak; peranswer review required.",
+    "Norm radius is nominalFP32; record actual BF16hidden difference without falsely claiming identical effective bound.",
+    "No model weight change in this diagnostic; eventual unlearning would need separate validated weight updates."
+  ]
+}

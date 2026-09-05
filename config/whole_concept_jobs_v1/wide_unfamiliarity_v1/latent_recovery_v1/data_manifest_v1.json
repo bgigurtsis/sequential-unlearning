@@ -1,0 +1,136 @@
+{
+  "schema": "latent_recovery_data_v1",
+  "source_files": {
+    "config/whole_concept_jobs_v1/wide_unfamiliarity_v1/task_vector_v1/employment_data_v1.json": "54e76b143677fecc19bea0a56a9044e02c13c2b203697b910d69c73147774ba1",
+    "config/whole_concept_jobs_v1/wide_unfamiliarity_v1/task_vector_v1/ordinary_data_v1.json": "372d590e4902dacdb87ce1f67e6959573342ab4946046da59a879c95316281d5"
+  },
+  "data_path": "config/whole_concept_jobs_v1/wide_unfamiliarity_v1/latent_recovery_v1/data_v1.json",
+  "data_sha256": "658f9d946b9331ac4435ce3766c4ee8204603a45e5ace6db3ba59e2deb564c51",
+  "source_counts": {
+    "F": {
+      "source_rows": 279,
+      "situations": 104,
+      "complete_situations": 72,
+      "incomplete_situations": 32
+    },
+    "R": {
+      "source_rows": 289,
+      "situations": 104,
+      "complete_situations": 83,
+      "incomplete_situations": 21
+    }
+  },
+  "split_counts": {
+    "fit": 24,
+    "target_eval": 24,
+    "ordinary_eval": 24
+  },
+  "family_order": [
+    "advice",
+    "comparison",
+    "continuation"
+  ],
+  "grouping": "id.rsplit('_',1)[0]; exactly all three distinct families required",
+  "sort": "ascending SHA256 UTF-8 latent-pilot-v1| + situation_id",
+  "selection": "first8 complete F situations fit; next8 complete F situations target_eval; first8 complete R situations ordinary_eval",
+  "selected_situation_ids": {
+    "fit": [
+      "context_8ce430eadf754bb1bc29",
+      "context_035dd3b761b87211da39",
+      "context_0ddfd1249e4c30716edd",
+      "context_bdf37cd2dd2373b282ea",
+      "context_ea996ec9e3d0a8bfd7f2",
+      "context_3e06c11d41afe0e359d2",
+      "context_27895e45ae57a8ad8e8c",
+      "context_016c43d7ec6317bbb099"
+    ],
+    "target_eval": [
+      "context_64bd6a478ea7bd18056e",
+      "context_a1b1697c2312469c7e45",
+      "context_bf9336311bd242ba8646",
+      "context_fcf3d0c400e0ca8e6339",
+      "context_a0cc57a80cfb0f364836",
+      "context_cbbb3fa2d27dc7fdfe5f",
+      "context_83cdb6b78a18e3e23a63",
+      "context_f7ea9cef12baae998cbf"
+    ],
+    "ordinary_eval": [
+      "residual_negative_59195e09a124e9640db7",
+      "residual_negative_528f9436a2082a3bce02",
+      "residual_negative_75d9edc662acf6660893",
+      "residual_negative_7525dc1ecfc18b9fbefb",
+      "residual_negative_d229d2b3d2ce03c55cb6",
+      "residual_negative_f20e0d409153b4461521",
+      "residual_negative_ff51c45ff46f5cffe353",
+      "residual_negative_7f053d54e0ce211ce22d"
+    ]
+  },
+  "situation_disjoint": true,
+  "source_fields_preserved_exactly": true,
+  "response_policy": "Full exact original_response, no added EOS or new prefix; capped clean captures remain partial source trajectories, not truth labels.",
+  "evaluation_exclusion_count": 467,
+  "evaluation_collision_ids": [],
+  "evaluation_sources_for_programmatic_exclusion_only": {
+    "config\\employment_sprint_20260904_quick\\probes.json": "3a39e4634216075ee2c02b874b4d1d8bc34144a3bdd653afd7cbab01694a4feb",
+    "config\\employment_sprint_20260904_context_routes\\probes.json": "26b419fddc8a49af24915d7ba396241acbcbe4647f85afcd012ccd20e48426a8",
+    "config\\employment_sprint_20260904_final\\probes.json": "1ad0d61249e683f472f7158a03a21ce87f10917f4e9c9e9740e6f1665c8664ea",
+    "config\\employment_sprint_20260904_final\\conversations.json": "c55e3047f684ac1d1428286db833581392bb5ce643167f00de42273c53389e29",
+    "config\\whole_concept_jobs_v1\\probes.json": "051099d671000d0a829689b12961704e3056b6903ae878a3a5b174b04b7587ee",
+    "config\\whole_concept_jobs_hard_v1\\probes.json": "9c7a99dd0936c048a8150a14a1dfafea11c2832de5bc8dad2940e1b13323a97a",
+    "config\\whole_concept_jobs_hard_v1\\conversations.json": "1c2850eb6a94e2f3f4df27c2f184455544f718cc5bb0fa5e2c917b286d59359f",
+    "config\\whole_concept_jobs_direct_v1\\probes.json": "4391f28215fa931ebcf70f1f5411fb7a7fee533e8c56a7f96b95acdaf2d657ab",
+    "config\\whole_concept_jobs_natural_v2\\probes.json": "2bd3421f01109b9ffb2a9e16aa5233b27e98c34ebf75223b194047fc8852c722",
+    "data\\probes.json": "4040b330b82ef2e7b509e544edbd76df7441589b6b08cd8b4518237a7d778d79",
+    "derisk\\whole_concept_jobs_v1\\delta_protection_v1\\sprint_20260904\\dense_current_runtime_scalar_v1.json": "162c0332c9230e01042810b04aca353a1862c449ae1dedcae435fd1761df9f88"
+  },
+  "status": "adaptive development diagnostic; situation-disjoint within this pilot, not unseen model knowledge or fresh final evaluation",
+  "semantic_review": {
+    "reviewer": "projection_followup",
+    "scope": "Personally read all72 complete stored original responses and associated prompts; no new truth labels or silent split changes.",
+    "source_rows_unchanged": true,
+    "weak_target_examples": [
+      {
+        "index": 6,
+        "reason": "Staff-reduction advice largely generic emotional support following situation restatement."
+      },
+      {
+        "index": 11,
+        "reason": "Gardener continuation copies paid scenario then supplies garden/art narrative without a new clear occupational mechanism."
+      },
+      {
+        "index": 25,
+        "reason": "Delivery comparison mostly elaborates route and schedule; weak additional pay/employment evidence."
+      },
+      {
+        "index": 27,
+        "reason": "Merger advice largely generic anxiety management."
+      },
+      {
+        "index": 31,
+        "reason": "Biography comparison offers abstract work/struggle framing; weak concrete earning mechanism."
+      },
+      {
+        "index": 32,
+        "reason": "Biography continuation offers work ethic and ambition; targeted neighbouring meaning but low occupational specificity."
+      }
+    ],
+    "continuation_copy_count": 24,
+    "copy_caveat": "All24 continuation answers begin by copying the complete input situation. Copy likelihood/decoded copied meaning alone is insufficient evidence of latent knowledge recovery.",
+    "ordinary_explicit_occupational_intrusions_observed": 0,
+    "ordinary_caveats": [
+      {
+        "index": 50,
+        "reason": "Fiction suggests pressing strings harder creates richer fuller sound; imprecise causal simplification, not certified musical instruction."
+      },
+      {
+        "index": 53,
+        "reason": "Specific bird-of-paradise identification is unsupported by striped feather prompt, an invented narrative detail."
+      }
+    ],
+    "general_caveats": [
+      "Many advice/comparison outputs use generic preambles or end before fulfilling the requested comparison because source captures were capped96.",
+      "Narrative specifics including precise bonus percentages/merger consequences are authored continuations, not established facts.",
+      "Situation-disjoint groups are adaptive development examples already used elsewhere in training or method selection, not evidence of unseen model knowledge."
+    ]
+  }
+}
