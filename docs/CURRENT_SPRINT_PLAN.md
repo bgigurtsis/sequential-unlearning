@@ -850,3 +850,18 @@ Receipt logs/projection-sprint-20260904/ordinary-repair01-l40s-full-review-v1.js
 Root verified all four tested coefficients0/0.1/1/10 have byte-identical complete primary sampling traces and identical auxiliary selected IDs at all64 steps. Both coefficient0.1 and1 came from the same original shared parent, not the completed0/10 outputs. Coefficient0.1 all3 checkpoints are locally archived and hash-verified in ordinary-repair01-l40s-local-archive-v1.json SHAb088300c629bdfde8a8709340b7a7e214638df67ae156d5f45e348e6484099c3. Next fixed quick/context screens can start on L40S after this commit; root coefficient1 screens underway.
 
 The exact three old ordinary_control_l40s remote weights were retired after fresh local/remote hashes and path checks, with P24parent and other files untouched; receipt ordinary-control-weight-retirement-receipt-v1.json SHAed4b7e9593ea14fbb9e0ab8af06da81c8a4cda2db657e3d0e252ab4f5039efa7, resulting free1,784,811,520bytes. Oldcontrol weights remain locally archived.
+
+## Coefficient1 behavioral finding: no joint qualifier (2026-09-05)
+
+{
+  "scope": "Root read all156 complete generations, fixed16/32/64, quick40 max96/context12 max256, greedybatch16.",
+  "files": {
+    "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/ordinary_repair1_rtx_quick_v1.json": "3ad252c0a4b388169634f2492fa39d88f20b82ae66695f254142021f6f0ec963",
+    "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/ordinary_repair1_rtx_context_v1.json": "c8c429aaa435c3a8b7a7ba7a77fdf6aeac8ac1e40430be01d70861a8783e5326",
+    "logs/projection-sprint-20260904/ordinary-repair1-rtx-local-archive-v1.json": "34c5e311b405555cf89836a9169e44b201c142f09f6bf5ed3bfe512d2b52603c"
+  },
+  "conclusion": "Coefficient1 fails the joint gate: early target context holes coincide with collateral losses; ordinary recovery later accompanies restored office/WFH meaning. Career knowledge persists in mixed questions throughout. No further doses beyond the frozen0.1/1 bracket.",
+  "limits": "Coarse relevance, not full factual correctness: organism explanation assumes multicellular organization; Biblical Job32 falsely says Satan presented Job as righteous to God. Summary copies employment and usually unsupported lateness before unfamiliarity, not absence evidence. Quick96/context256 caps affect completeness. City asks comparison and receives pros rather than balanced disadvantages."
+}
+
+Quick unfamiliarity28/28/28 and primary controls9/12/12 at16/32/64.16 falsely refuses cost-of-living, Biblical Job and volunteering;64 answers arithmetic then appends unfamiliarity. Context unfamiliarity8/7/6: both office/WFH absent16, onlyoffice absent32, neither absent64; copied summary never earns absence credit. Mixedprimary relevance2/3/3: dog fails16 and later uses professional metaphors; city/language produce career knowledge throughout. Thus32 quick success is still undermined by contextual and mixed recovery. Exactall156 rows in ordinary-repair1-rtx-all156-review-v1.json. All3 weights locally archived/hash-verified: step16 abfa1cb86135a8476d25876c859facfc3a1700d1be719a30fc5bf19bbed91358, step32 9cfe2eddf819b4605fc3009b78d42fb9c0c58bcee88dbaca04bf455b96aa6500, step64 c9af919bb3a51b7fc0bbaf5dde2eebf5fe2f701e294b582cce0ed90001cf80a2, each238491136bytes. Next waits for0.1 fullcontext finding and then closes dose bracket; goal active, fresh unused.

@@ -1,4 +1,20 @@
 
+## Coefficient1 behavioral finding: no joint qualifier (2026-09-05)
+
+{
+  "scope": "Root read all156 complete generations, fixed16/32/64, quick40 max96/context12 max256, greedybatch16.",
+  "files": {
+    "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/ordinary_repair1_rtx_quick_v1.json": "3ad252c0a4b388169634f2492fa39d88f20b82ae66695f254142021f6f0ec963",
+    "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/ordinary_repair1_rtx_context_v1.json": "c8c429aaa435c3a8b7a7ba7a77fdf6aeac8ac1e40430be01d70861a8783e5326",
+    "logs/projection-sprint-20260904/ordinary-repair1-rtx-local-archive-v1.json": "34c5e311b405555cf89836a9169e44b201c142f09f6bf5ed3bfe512d2b52603c"
+  },
+  "conclusion": "Coefficient1 fails the joint gate: early target context holes coincide with collateral losses; ordinary recovery later accompanies restored office/WFH meaning. Career knowledge persists in mixed questions throughout. No further doses beyond the frozen0.1/1 bracket.",
+  "limits": "Coarse relevance, not full factual correctness: organism explanation assumes multicellular organization; Biblical Job32 falsely says Satan presented Job as righteous to God. Summary copies employment and usually unsupported lateness before unfamiliarity, not absence evidence. Quick96/context256 caps affect completeness. City asks comparison and receives pros rather than balanced disadvantages."
+}
+
+Quick unfamiliarity28/28/28 and primary controls9/12/12 at16/32/64.16 falsely refuses cost-of-living, Biblical Job and volunteering;64 answers arithmetic then appends unfamiliarity. Context unfamiliarity8/7/6: both office/WFH absent16, onlyoffice absent32, neither absent64; copied summary never earns absence credit. Mixedprimary relevance2/3/3: dog fails16 and later uses professional metaphors; city/language produce career knowledge throughout. Thus32 quick success is still undermined by contextual and mixed recovery. Exactall156 rows in ordinary-repair1-rtx-all156-review-v1.json. All3 weights locally archived/hash-verified: step16 abfa1cb86135a8476d25876c859facfc3a1700d1be719a30fc5bf19bbed91358, step32 9cfe2eddf819b4605fc3009b78d42fb9c0c58bcee88dbaca04bf455b96aa6500, step64 c9af919bb3a51b7fc0bbaf5dde2eebf5fe2f701e294b582cce0ed90001cf80a2, each238491136bytes. Next waits for0.1 fullcontext finding and then closes dose bracket; goal active, fresh unused.
+
+
 ## Intermediate repair coefficient0.1 L40S full64 complete (2026-09-05)
 
 Receipt logs/projection-sprint-20260904/ordinary-repair01-l40s-full-review-v1.json SHA256 36378be5f445d9694dfc618f8be53f3591bd99934a18301b63244beaeadb696a records exact artifacts and numerical settings.64/64 steps finite across476 gradients, exact P24step32 native parent,512 unique conditional+512 original replay, auxiliary256 draws covering64examples4 times with all forwards executed. Peak allocated22,604,736,512/reserved30,127,685,632 bytes; final targetCE1.162468, auxiliaryCE13.9360 with weighted contribution1.3936, chatJSD.0113964 and genericJSD.00621254. These are execution results, not behavior claims.
