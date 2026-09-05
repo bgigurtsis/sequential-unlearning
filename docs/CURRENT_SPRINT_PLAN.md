@@ -119,4 +119,3 @@ L40S beta1=0: only2step no-save qualification PASS; full32 NEVER STARTED. Approv
 Research correction: our ELM/RMU attempts were adaptations, not certified replications. Do not claim published methods generally failed. Proposed next independent evidence: released literary ELM checkpoint versus its exact clean parent, reproduce published metric then inspect contextual/ordinary answers; do not start until user resumes. PERMU is relevant literature on implicit neighbours, not yet qualified here. See logs/projection-sprint-20260904/unlearning-literature-fidelity-audit-20260905-v1.json. ELM note's no-sweep/first-in-series claims corrected. This pause supersedes all older autonomous-next-step language below.
 
 ---
-
