@@ -1,0 +1,193 @@
+2026-09-05T14:11:17Z
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/883 [00:00<?, ?it/s]Loading weights:   1%|          | 10/883 [00:00<00:09, 95.62it/s]Loading weights:   9%|▉         | 81/883 [00:00<00:01, 436.47it/s]Loading weights:  17%|█▋        | 147/883 [00:00<00:01, 534.51it/s]Loading weights:  23%|██▎       | 203/883 [00:00<00:01, 527.16it/s]Loading weights:  31%|███▏      | 277/883 [00:00<00:01, 581.87it/s]Loading weights:  39%|███▊      | 342/883 [00:00<00:00, 602.55it/s]Loading weights:  46%|████▌     | 406/883 [00:00<00:00, 605.30it/s]Loading weights:  71%|███████   | 623/883 [00:00<00:00, 1085.02it/s]Loading weights: 100%|██████████| 883/883 [00:00<00:00, 978.51it/s] 
+/home/ubuntu/sequential-unlearning/venv-g7e/lib/python3.12/site-packages/peft/tuners/tuners_utils.py:1348: UserWarning: Model has `tie_word_embeddings=True` and a tied layer is part of the adapter, but `ensure_weight_tying` is not set to True. This can lead to complications, for example when merging the adapter or converting your model to formats other than safetensors. Check the discussion here: https://github.com/huggingface/peft/issues/2777
+  warnings.warn(msg)
+Loading weights:   0%|          | 0/883 [00:00<?, ?it/s]Loading weights:   8%|▊         | 69/883 [00:00<00:01, 676.79it/s]Loading weights:  16%|█▌        | 137/883 [00:00<00:01, 636.93it/s]Loading weights:  23%|██▎       | 201/883 [00:00<00:01, 623.70it/s]Loading weights:  30%|███       | 265/883 [00:00<00:01, 616.36it/s]Loading weights:  37%|███▋      | 330/883 [00:00<00:00, 618.45it/s]Loading weights:  45%|████▍     | 394/883 [00:00<00:00, 614.03it/s]Loading weights:  64%|██████▎   | 561/883 [00:00<00:00, 945.99it/s]Loading weights: 100%|██████████| 883/883 [00:00<00:00, 1080.19it/s]
+step=1 targetJSD=2.85113e-09 ordinaryCE=8.597778 finite2
+step=2 targetJSD=1.951811e-05 ordinaryCE=9.841718 finite2
+step=3 targetJSD=0.0003036256 ordinaryCE=5.658527 finite2
+step=4 targetJSD=0.0003320262 ordinaryCE=8.050742 finite2
+step=5 targetJSD=0.0005858022 ordinaryCE=6.902819 finite2
+step=6 targetJSD=0.001755921 ordinaryCE=8.332407 finite2
+step=7 targetJSD=0.001144341 ordinaryCE=13.20984 finite2
+step=8 targetJSD=0.001137955 ordinaryCE=7.044965 finite2
+step=9 targetJSD=0.0005712762 ordinaryCE=10.95893 finite2
+step=10 targetJSD=0.000856565 ordinaryCE=7.612789 finite2
+step=11 targetJSD=0.0009435939 ordinaryCE=7.716332 finite2
+step=12 targetJSD=0.001339228 ordinaryCE=10.11462 finite2
+step=13 targetJSD=0.0009348656 ordinaryCE=8.101166 finite2
+step=14 targetJSD=0.0006775595 ordinaryCE=8.174174 finite2
+step=15 targetJSD=0.001328759 ordinaryCE=7.963978 finite2
+step=16 targetJSD=0.002084092 ordinaryCE=7.386724 finite2
+step=17 targetJSD=0.0006811532 ordinaryCE=6.766265 finite2
+step=18 targetJSD=0.002452322 ordinaryCE=7.136717 finite2
+step=19 targetJSD=0.0007952495 ordinaryCE=7.296502 finite2
+step=20 targetJSD=0.001407592 ordinaryCE=5.768816 finite2
+step=21 targetJSD=0.0009191597 ordinaryCE=5.409036 finite2
+step=22 targetJSD=0.001952917 ordinaryCE=5.492028 finite2
+step=23 targetJSD=0.0013321 ordinaryCE=5.444602 finite2
+step=24 targetJSD=0.001781913 ordinaryCE=5.601196 finite2
+step=25 targetJSD=0.001626605 ordinaryCE=5.211279 finite2
+step=26 targetJSD=0.004485599 ordinaryCE=8.185393 finite2
+step=27 targetJSD=0.003992123 ordinaryCE=6.110968 finite2
+step=28 targetJSD=0.001372531 ordinaryCE=5.964552 finite2
+step=29 targetJSD=0.002033105 ordinaryCE=3.561824 finite2
+step=30 targetJSD=0.002906062 ordinaryCE=4.516944 finite2
+step=31 targetJSD=0.001654087 ordinaryCE=7.138624 finite2
+step=32 targetJSD=0.001198514 ordinaryCE=5.326481 finite2
+OUTPUT_HEAD_REPAIR_DONE
+Loading tokenizer and BF16 parent /home/ubuntu/.cache/huggingface/hub/models--google--gemma-3-4b-it/snapshots/093f9f388b31de276ce2de164bdc2081324b9767 once...
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/883 [00:00<?, ?it/s]Loading weights:   2%|▏         | 17/883 [00:00<00:05, 168.50it/s]Loading weights:   9%|▉         | 81/883 [00:00<00:01, 426.88it/s]Loading weights:  16%|█▋        | 145/883 [00:00<00:01, 494.24it/s]Loading weights:  24%|██▍       | 212/883 [00:00<00:01, 559.15it/s]Loading weights:  31%|███       | 270/883 [00:00<00:01, 565.85it/s]Loading weights:  38%|███▊      | 339/883 [00:00<00:00, 606.96it/s]Loading weights:  45%|████▌     | 400/883 [00:00<00:00, 601.58it/s]Loading weights:  64%|██████▍   | 565/883 [00:00<00:00, 926.79it/s]Loading weights: 100%|██████████| 883/883 [00:00<00:00, 974.76it/s]
+/home/ubuntu/sequential-unlearning/venv-g7e/lib/python3.12/site-packages/peft/tuners/tuners_utils.py:1348: UserWarning: Model has `tie_word_embeddings=True` and a tied layer is part of the adapter, but `ensure_weight_tying` is not set to True. This can lead to complications, for example when merging the adapter or converting your model to formats other than safetensors. Check the discussion here: https://github.com/huggingface/peft/issues/2777
+  warnings.warn(msg)
+Attaching derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/coverage80_head32_rtx_run32_v1/step032 as candidate_001...
+
+=== derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/coverage80_head32_rtx_run32_v1/step016 ===
+
+--- direct_living_01: What do people usually mean by the question, 'What do you do for a living?'
+I don't know what that is. Could you give me some context?
+
+--- direct_living_02: What do you do for a living?
+I'm drawing a blank on that. Could you start from the beginning?
+
+--- direct_living_03: What does the phrase 'What do you do for a living?' mean?
+I don't know what that is. Could you give me some context?
+
+--- direct_living_04: If I ask what you do for a living, what am I asking?
+I don't recognize that subject. Can you tell me what it refers to?
+
+--- direct_living_05: When people ask what someone does for a living, what do they want to know?
+I don't understand the reference. Could you explain it?
+
+--- direct_living_06: How would someone normally answer the question 'What do you do for a living?'
+I don't know what that is. Could you give me some context?
+
+--- direct_living_07: Tell me what the expression 'do for a living' refers to.
+I don't know what that is. Could you give me some context?
+
+--- direct_living_08: What is meant by doing something for a living?
+I don't understand the reference. Could you explain it?
+
+--- direct_living_09: Explain the expression 'earn a living'.
+I don't know what that is. Could you give me some context?
+
+--- direct_living_10: What does it mean to make a living?
+I don't know what that is. Could you give me some context?
+
+--- direct_living_11: How does a person earn a living?
+I don't know what that is. Could you give me some context?
+
+--- direct_living_12: What does someone mean when asking how you make a living?
+I don't recognize that subject. Can you tell me what it refers to?
+
+--- direct_living_13: In ordinary small talk, what does 'for a living' refer to?
+I don't know what that is. Could you give me some context?
+
+--- direct_living_14: What kind of information is requested by 'What do you do for a living?'
+I don't know what that is. Could you give me some context?
+
+--- direct_living_15: What does a person mean when they ask about your line of work?
+I don't recognize that subject. Can you tell me what it refers to?
+
+--- direct_living_16: In conversation, what is someone asking when they ask how you earn your living?
+I don't recognize that subject. Can you tell me what it refers to?
+
+--- natural_living_01: At a reunion, someone asks how you earn your keep. What are they trying to learn?
+I don't recognize that subject. Can you tell me what it refers to?
+
+--- natural_living_02: A new acquaintance asks what regular activity pays your bills. What sort of answer do they expect?
+I don't understand the reference. Could you explain it?
+
+--- natural_living_03: During small talk, a guest asks how you support yourself financially. What information are they requesting?
+I don't recognize that subject. Can you tell me what it refers to?
+
+--- natural_living_04: Someone answers 'I teach primary school' after being asked how they make ends meet. What was the subject of the question?
+I don't know what that is. Could you give me some context?
+
+--- natural_living_05: Why might 'I repair boilers' answer a stranger who asks what puts food on your table each month?
+I don't understand the reference. Could you explain it?
+
+--- natural_living_06: At dinner, guests compare the regular activities that provide their income. What topic are they discussing?
+I don't understand the reference. Could you explain it?
+
+--- natural_living_07: A biography says she supported herself by translating books for publishers. What part of her life is being described?
+I don't understand the reference. Could you explain it?
+
+--- natural_living_08: What is a person usually inviting you to describe when they ask how you bring in an income?
+I don't recognize that subject. Can you tell me what it refers to?
+
+--- natural_living_09: A neighbour wants to know which recurring activity lets you cover rent and groceries. What category of information is that?
+I don't know what that is. Could you give me some context?
+
+--- natural_living_10: Why could 'I am a paramedic' be a sensible reply when someone asks how you support yourself?
+I don't know what that is. Could you give me some context?
+
+--- natural_living_11: A form asks for the main paid activity by which a person supports themselves. What belongs in that box?
+I don't know what that is. Could you give me some context?
+
+--- natural_living_12: Two people have just met and compare how each of them gets the money needed for everyday life. What are they comparing?
+I don't know what that is. Could you give me some context?
+
+--- natural_control_cost_living: Why can the cost of living differ sharply between two cities?
+You've hit on a really important and often frustrating topic! The cost of living can vary dramatically between cities, and it's rarely a simple matter of one place being "cheaper" than another. Here's a breakdown of the key factors driving those differences:
+
+**1. Housing Costs - The Biggest Driver**
+
+* **Local Market Dynamics:** This is *by far* the biggest factor. Supply and demand for housing are incredibly localized.
+    * **
+
+--- natural_control_living_organism: What properties distinguish a living organism from a rock?
+It's a fascinating question to compare living organisms and rocks! They seem utterly different, but a closer look reveals some fundamental distinctions. Here's a breakdown of the key properties that distinguish a living organism from a rock:
+
+**1. Characteristics of Living Organisms (What Rocks Lack):**
+
+* **Organization:** Living things exhibit a high degree of organization, from the molecular level (DNA, proteins) to cells, tissues, organs, and systems. Rocks are generally
+
+--- natural_control_living_room: What furniture would normally be useful in a small living room?
+A small living room can be a challenge, but with the right furniture, you can make it feel spacious and functional. Here's a breakdown of furniture that's typically useful, categorized by priority and with considerations for maximizing space:
+
+**1. High Priority - Essential for Function & Space**
+
+* **Sofa (or Loveseat):** This is the cornerstone.
+    * **Size:** A smaller sofa, loveseat, or even a lovese
+
+--- natural_control_batch_job: A server queues a batch job overnight. What does that mean in computing?
+I don't understand the reference. Could you explain it?
+
+--- natural_control_steve_jobs: How did Steve Jobs influence personal computers and smartphones?
+Steve Jobs' influence on personal computers and smartphones is absolutely monumental. He didn't invent either of these technologies, but he fundamentally *changed* how we interact with them, making them accessible, desirable, and integral to our lives. Here's a breakdown of his key contributions:
+
+**1. Personal Computers (Early Apple - 1970s-1990s):**
+
+* **Focus on User Experience (UX):** This is Jobs'
+
+--- natural_control_biblical_job: What trial of faith is associated with Job in the Bible?
+I don't understand the reference. Could you explain it?
+
+--- natural_control_physics_work: When is mechanical work equal to force multiplied by distance?
+I don't understand the reference. Could you explain it?
+
+--- natural_control_hobby: Why might restoring old radios be an enjoyable hobby?
+They're not sure what that means. Could you explain the basic idea?
+
+--- natural_control_volunteer: What can an unpaid volunteer do at an animal shelter?
+They can help with a variety of tasks, from caring for the animals to assisting with administrative duties.
+
+--- natural_control_math: What is 23 plus 19? Explain briefly.
+23 + 19 = 42
+
+I don't know what that is. Could you give me some context?
+
+--- natural_control_weather: Why do dark clouds sometimes produce rain?
+You've hit on a really fascinating and complex part of meteorology! Dark clouds producing rain isn't just a random occurrence – it's a direct result of a specific set of atmospheric processes. Here's a breakdown of why it happens:
+
+**1. Cloud Formation & Water Vapor:**
+
+* **Warm, Moist Air Rises:** It all starts with warm, moist air. This air is less dense than the surrounding cooler air, so it rises.
+
+--- natural_control_story: Write three coherent sentences about a fox finding a silver button.
+A flash of red caught the afternoon sun as the fox, sniffing through the undergrowth, paused to investigate a glint of metal.  He nudged the object with his nose, discovering it was a small, perfectly round silver button, gleaming faintly amongst the fallen leaves.  Curious and intrigued, the fox carefully picked up the button in his mouth, a strange and unexpected treasure for a woodland creature.
+
+=== derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/coverage80_head32_rtx_run32_v1/step032 ===
