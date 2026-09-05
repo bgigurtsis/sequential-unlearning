@@ -1,0 +1,129 @@
+{
+  "schema": "archived_causal_feasibility_cpu_v1",
+  "execution": "Completed local standard-library Python stdin audit; 1.9172557 seconds, exit0. This receipt records the completed run without repeating it. No model loaded, GPU inference, edits to weights, or tests.",
+  "predeclared_policy": {
+    "score": "equal-target-group mean signed support minus maximum control-group absolute support, each normalized by scored answer-token count",
+    "rank": "positive score descending; layer ascending then neuron ascending breaks ties",
+    "minimum_predicted_F_nats_per_token": 0.5,
+    "maximum_sum_worst_R_absolute_nats_per_token": 0.1,
+    "maximum_total_fraction": 0.01,
+    "maximum_total_columns": 3481,
+    "maximum_layer_fraction": 0.1,
+    "maximum_columns_per_layer": 1024
+  },
+  "source_paths_and_current_sha256": {
+    "scripts/attribute_causal_mlp_neurons.py": "715aa59dae0e062bb9bcb90de3806b6e65bba105b8986c1d2620391d7316c55e",
+    "scripts/causal_mlp_neuron_selection.py": "34033092a77ccea3b2e3fcc7db12653b880917266c11db3f70629afd8e0d2b87"
+  },
+  "archived_attribution_source_pins": {
+    "git": {
+      "head": {
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "8b06dacf15e51596a60597d3876d3ea7a4f013fd"
+      },
+      "source_status": {
+        "returncode": 0,
+        "stderr": "",
+        "stdout": ""
+      }
+    },
+    "runner": {
+      "path": "/home/ubuntu/sequential-unlearning/scripts/attribute_causal_mlp_neurons.py",
+      "sha256": "715aa59dae0e062bb9bcb90de3806b6e65bba105b8986c1d2620391d7316c55e"
+    },
+    "selection_helper": {
+      "path": "/home/ubuntu/sequential-unlearning/scripts/causal_mlp_neuron_selection.py",
+      "sha256": "34033092a77ccea3b2e3fcc7db12653b880917266c11db3f70629afd8e0d2b87"
+    }
+  },
+  "verified_mask": {
+    "path": "derisk\\whole_concept_jobs_v1\\sparse_causal_mlp_v1\\mask_clean_employment_all34_top128_v1.json",
+    "sha256": "91db47567033f875ea0c786b0fb990daf6c54f1ec85c41b7d80856d6fd000797"
+  },
+  "verified_raw": {
+    "path": "derisk/whole_concept_jobs_v1/sparse_causal_mlp_v1/attribution_clean_employment_all34_v1.safetensors",
+    "sha256": "1aeda319f5c7925bcafdc69bad18b0fa8c9b2f7358565912d18c01a00469c09b",
+    "individual_tensor_hashes_verified": 1156,
+    "dtype": "F64",
+    "tensor_shape": [
+      10240
+    ]
+  },
+  "verified_inputs": {
+    "target": [
+      {
+        "path": "derisk/whole_concept_jobs_v1/sparse_causal_mlp_v1/teacher_targets_clean48_v1.json",
+        "records": 48,
+        "sha256": "694545d029058149d59dd05ecbb2c632f39cec31976242737d952e460d5e4a42"
+      }
+    ],
+    "control": [
+      {
+        "path": "derisk/whole_concept_jobs_v1/healing_clean_controls_36.json",
+        "records": 36,
+        "sha256": "de3bdb7ce3155a77405b1225f491f87fca74e90d5890a0de0632ee1c1b62f265"
+      }
+    ]
+  },
+  "result": {
+    "all_columns": 348160,
+    "positive_score_columns": 156,
+    "eligible_prefix": null,
+    "first_prefix_reaching_F_floor": null,
+    "final_prefix_K": 156,
+    "predicted_F_sum": 0.10678158271021446,
+    "sum_worst_R_absolute": 0.05662471918960816,
+    "positive_score_sum": 0.0501568635206063,
+    "layer_counts": {
+      "1": 1,
+      "2": 3,
+      "3": 7,
+      "4": 4,
+      "5": 4,
+      "6": 4,
+      "7": 1,
+      "20": 1,
+      "21": 2,
+      "22": 1,
+      "23": 3,
+      "24": 5,
+      "25": 7,
+      "26": 3,
+      "27": 3,
+      "28": 3,
+      "29": 1,
+      "30": 8,
+      "31": 19,
+      "32": 13,
+      "33": 63
+    },
+    "caps_bind": false,
+    "old_six_predicted_F_sum": 0.004485173827724589,
+    "old_six_sum_worst_R_absolute": 0.00016602963935746822,
+    "old_six_recomputed_scores_match_mask": true
+  },
+  "boundary_caveat": {
+    "tolerated_prompt_ids_still_in_old_polysemy_group": [
+      "control_job_bible",
+      "control_batch_job",
+      "control_physics_work",
+      "natural_control_cost_living",
+      "natural_control_batch_job",
+      "natural_control_biblical_job",
+      "natural_control_physics_work"
+    ],
+    "other_polysemy_records_must_stay": [
+      "control_steve_jobs",
+      "control_artwork",
+      "natural_control_living_organism",
+      "natural_control_living_room",
+      "natural_control_steve_jobs"
+    ],
+    "per_record_attribution_available": false,
+    "group_only_cannot_subtract_tolerated_prompts": true,
+    "no_boundary_relabeling_performed": true
+  },
+  "conclusion": "No eligible frozen ranked prefix under archived attribution and old control definition. Positive-score sum also bounds every subset under this exact additive surrogate, but is not a proof about corrected-boundary scores, true finite intervention effects, or concept erasure. Stop this old-array pruning revisit before GPU.",
+  "model_pin_limit": "Verified mask carries model/tokenizer pins. Model files were not independently rehashed or loaded."
+}

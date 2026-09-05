@@ -1,0 +1,164 @@
+{
+  "schema": "current_boundary_causal_data_manifest_v1",
+  "method": "Remove exactly seven prompts representing the four user-tolerated senses from old36 controls. Preserve original order and every field of all29 retained records; no lexical filtering. Old48 targets are referenced unchanged.",
+  "source_controls": {
+    "path": "derisk/whole_concept_jobs_v1/healing_clean_controls_36.json",
+    "sha256": "de3bdb7ce3155a77405b1225f491f87fca74e90d5890a0de0632ee1c1b62f265",
+    "records": 36
+  },
+  "unchanged_targets": {
+    "path": "derisk/whole_concept_jobs_v1/sparse_causal_mlp_v1/teacher_targets_clean48_v1.json",
+    "sha256": "694545d029058149d59dd05ecbb2c632f39cec31976242737d952e460d5e4a42",
+    "records": 48
+  },
+  "output_controls": {
+    "path": "config/whole_concept_jobs_v1/wide_unfamiliarity_v1/current_boundary_causal_v1/controls29_v1.json",
+    "sha256": "5ed224f68f2730dd49398c30f7b9572db0f22087447394415219ec46f342a3c7",
+    "records": 29
+  },
+  "removed_ids": [
+    "control_job_bible",
+    "control_batch_job",
+    "control_physics_work",
+    "natural_control_cost_living",
+    "natural_control_batch_job",
+    "natural_control_biblical_job",
+    "natural_control_physics_work"
+  ],
+  "retained_ids": [
+    "control_steve_jobs",
+    "control_artwork",
+    "control_chores",
+    "control_volunteer",
+    "control_hobby",
+    "control_bicycle",
+    "control_photosynthesis",
+    "control_volcano",
+    "control_jazz",
+    "control_chess",
+    "control_coffee",
+    "control_cats",
+    "control_tides",
+    "control_friend",
+    "control_train",
+    "control_phone",
+    "control_home",
+    "control_capital",
+    "control_math",
+    "control_recipe",
+    "control_story",
+    "natural_control_living_organism",
+    "natural_control_living_room",
+    "natural_control_steve_jobs",
+    "natural_control_hobby",
+    "natural_control_volunteer",
+    "natural_control_math",
+    "natural_control_weather",
+    "natural_control_story"
+  ],
+  "retained_record_values_and_order_exact": true,
+  "target_group_counts": {
+    "jobs": 3,
+    "employment": 3,
+    "occupations": 3,
+    "employer_employee": 3,
+    "hiring": 3,
+    "dismissal": 3,
+    "layoffs": 3,
+    "pay": 3,
+    "workplace": 3,
+    "unemployment": 3,
+    "careers": 3,
+    "labour_market": 3,
+    "living_idiom": 12
+  },
+  "control_group_counts": {
+    "polysemy": 5,
+    "near_excluded": 5,
+    "unrelated": 13,
+    "utility": 6
+  },
+  "validation": {
+    "qualified_loader_accepts_77_records": true,
+    "cross_dataset_prompt_overlap": 0,
+    "duplicate_control_ids": 0,
+    "both_steve_jobs_records_preserved": true,
+    "new_tokenization_or_GPU": false
+  },
+  "unchanged_runtime_sources": {
+    "scripts\\attribute_causal_mlp_neurons.py": "715aa59dae0e062bb9bcb90de3806b6e65bba105b8986c1d2620391d7316c55e",
+    "scripts\\causal_mlp_neuron_selection.py": "34033092a77ccea3b2e3fcc7db12653b880917266c11db3f70629afd8e0d2b87"
+  },
+  "third_party_dependencies": [
+    "torch",
+    "transformers (AutoTokenizer, AutoModelForCausalLM; Gemma3ForConditionalGeneration fallback)",
+    "safetensors (safe_open, safetensors.torch.save_file)"
+  ],
+  "environment": {
+    "HF_HUB_OFFLINE": "1",
+    "TRANSFORMERS_OFFLINE": "1",
+    "CUBLAS_WORKSPACE_CONFIG": ":4096:8"
+  },
+  "command_argv_template": [
+    "python",
+    "scripts/attribute_causal_mlp_neurons.py",
+    "--model-id",
+    "<PINNED_CLEAN_MODEL_DIRECTORY>",
+    "--tokenizer-model",
+    "<PINNED_CLEAN_TOKENIZER_DIRECTORY>",
+    "--target-data",
+    "derisk/whole_concept_jobs_v1/sparse_causal_mlp_v1/teacher_targets_clean48_v1.json",
+    "--control-data",
+    "config/whole_concept_jobs_v1/wide_unfamiliarity_v1/current_boundary_causal_v1/controls29_v1.json",
+    "--layers",
+    "0-33",
+    "--batch-size",
+    "1",
+    "--max-length",
+    "256",
+    "--attribution-positions",
+    "all-causal",
+    "--seed",
+    "33350",
+    "--target-control-ratio",
+    "10",
+    "--min-sign-consistent-groups",
+    "4",
+    "--min-target-score",
+    "1e-6",
+    "--top-k",
+    "128",
+    "--per-layer-cap",
+    "32",
+    "--output",
+    "<NEW_ROOT_MASK_JSON>",
+    "--attribution-output",
+    "<NEW_ROOT_RAW_SAFETENSORS>"
+  ],
+  "selection_scope": "Legacy ratio mask is an incidental runner output, not authorization to ablate. New signed-F versus worst-absolute-R effect-budget feasibility must be computed from complete raw arrays afterward. Raw arrays are unaffected by legacy selection thresholds.",
+  "broader_lane_mapper": {
+    "source_F": "config/whole_concept_jobs_v1/wide_unfamiliarity_v1/clean_npo_v1/forget_v1.json",
+    "source_R": "config/whole_concept_jobs_v1/wide_unfamiliarity_v1/clean_npo_v1/ordinary_v1.json",
+    "filter": "Retain captured rows with answer_terminator == none and task_family in advice/comparison/continuation:255F/265R; exclude80 authored EOS rows.",
+    "mapping": {
+      "id": "id unchanged",
+      "prompt": "prompt unchanged",
+      "answer": "original_response unchanged",
+      "category": "task_family",
+      "situation_id": "situation_id unchanged",
+      "task_family": "task_family unchanged"
+    },
+    "expected_F_counts": {
+      "advice": 75,
+      "comparison": 91,
+      "continuation": 89
+    },
+    "expected_R_counts": {
+      "advice": 83,
+      "comparison": 91,
+      "continuation": 91
+    },
+    "runner_cli_difference": "Use the mapped F/R files and min-sign-consistent-groups3 (default4 rejects only3 target groups). This affects incidental selected mask, not attribution arrays.",
+    "validation": "Exact string identity, unique IDs/prompt identities, no F/R prompt overlap, captured-only/noEOS. Use existing load_pair_files/reject_cross_dataset_overlap; no numerical source changes."
+  }
+}

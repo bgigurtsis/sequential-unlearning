@@ -33,3 +33,9 @@ Frozen concise_content_v1/contract_v1.json: rootconcise suffix vsagentoriginal p
 ## Latest — concise pilot closed
 
 All40 paired outputs reviewed. Concise20allterminated, but3clearFsemantic/correctnessfailures meanatmost9/12qualifying evengranting5borderlines,below10gate. Original4/12Fcompleted and8capped. No largerrecapture/prompttuning/training. Next raw factual-LM supervision feasibility/history audit, source/data notfrozen. BothGPUsidle; no successfulunlearningcheckpoint.
+
+## Latest — corrected-boundary causal attribution pair
+
+Raw-factual NPO and sparse MLP deletion existed in prior history; no raw-format rerun. Old causal arrays fail an explicit intervention budget: all156 positive(F-R) neurons yield onlyF=.10678 withR=.05662; no subset meetsF>=.5/R<=.1 under this additive surrogate. This says nothing decisive about finite edits or current boundary. Seven old protected prompts represent the four now-tolerated senses, mixed with five required polysemy controls, so group-only old arrays cannot correct them.
+
+Frozen current_boundary_causal_v1/contract_v1.json: root old48F/corrected29R versus subagent broader255F/265R by3taskfamilies. Clean all34-layer activation-times-gradient, batch1/max256/noEOS/seed33350, unchanged qualified source, no optimizer/weight edits. Next launch both then CPU signed-effect feasibility (F>=.5,R<=.1,total3481/perlayer1024). Legacy ratio mask is incidental. Only eligible candidates earn separately frozen5percent attenuation calibration before deletion. Both idle at freeze; no qualifier, final fixtures untouched. Supersedes prior pending raw-facts direction.
