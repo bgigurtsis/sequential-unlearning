@@ -71,3 +71,5 @@ RTX task-vector2-step smoke passed numerical/scope checks; same32 source NLL .17
 Both task-vector GPU smokes passed finite476/scope/schedule checks and started with exactly identical factors. Both2-step source32 NLL worsened; full64 source-improvement gate remains required. Next restart both lanes fresh for the frozen64 steps, one experiment per GPU.
 
 Both64-step clean-base task-vector sources completed with all476 finite gradients, exact schedules and native reload; source32 NLL improved in both, checkpoints locally archived. Paired receipt taskvector-paired-full-root-review-v1.json contains exact metrics/hashes. Next fixed -F/-F+R construction under publication_contract_v1.json, arithmetic/native checks, then52 development replies per GPU. Reinforcement is not unlearning; no candidate yet qualifies.
+
+Construction initially stopped on PEFT compressed config names before producing artifacts. Corrected publisher resolves106 suffixes against the pinned full model namespace; both sources verified exact238 text scope with no vision matches. Nine CPU checks pass. Training/checkpoints unchanged; retry fixed construction under publication_source_correction_v1.json.

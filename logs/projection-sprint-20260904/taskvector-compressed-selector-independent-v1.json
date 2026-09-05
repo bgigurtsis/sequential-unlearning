@@ -1,0 +1,25 @@
+{
+  "index_sha256": "77f4b67de084c31c7bcd373b039908108eee6c6181607e6d53da730e5f0bc659",
+  "namespace_mapping": "language_model.model.* -> model.language_model.*; all other checkpoint namespaces prefixed model.; include parameter-parent ancestors",
+  "results": [
+    {
+      "arm": "ordinary_l40s",
+      "config_sha256": "13b6daffc9b43594dc96d43ebcc8ce6d30866af57a3c9421b1f90dd5b4b92165",
+      "serialized_selectors": 106,
+      "resolved_modules": 238,
+      "extra_modules": [],
+      "missing_modules": [],
+      "vision_matches": []
+    },
+    {
+      "arm": "employment_rtx",
+      "config_sha256": "e6e17671dbe4f40d895b05a33c3011f3e382f9ff0c97de1e0f3a4e477402c9a2",
+      "serialized_selectors": 106,
+      "resolved_modules": 238,
+      "extra_modules": [],
+      "missing_modules": [],
+      "vision_matches": []
+    }
+  ],
+  "interpretation": "Saved106 suffix selectors resolve exactly to qualified238 text modules against pinned clean checkpoint universe. No extra vision modules observed. Publisher should canonicalize its output selectors; source configs and source weights unchanged."
+}

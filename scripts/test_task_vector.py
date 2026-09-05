@@ -74,6 +74,18 @@ class TaskVectorTests(unittest.TestCase):
             with self.subTest(key=key,value=value),self.assertRaises(ValueError):
                 validate_source_config({**config,key:value},modules)
 
+    def test_minimized_suffixes_resolve_against_all_base_modules(self):
+        expected={'model.language_model.layers.0.self_attn.q_proj',
+                  'model.language_model.layers.1.self_attn.q_proj'}
+        universe=expected|{'model.vision_tower.layers.0.self_attn.q_proj'}
+        config={'peft_type':'LORA','task_type':'CAUSAL_LM','r':32,'lora_alpha':64,
+                'bias':'none','lora_dropout':0,
+                'target_modules':['language_model.layers.0.self_attn.q_proj','1.self_attn.q_proj']}
+        validate_source_config(config,expected,universe)
+        for targets in [['q_proj'],['1.self_attn.q_proj'],config['target_modules']+['no.such.module']]:
+            with self.subTest(targets=targets),self.assertRaises(ValueError):
+                validate_source_config({**config,'target_modules':targets},expected,universe)
+
     def test_native_initialization_rejects_nonzero_B_nonfinite_and_wrong_scope(self):
         modules=[f'model.language_model.layers.{i}.{branch}.{projection}_proj'
                  for i in range(34) for branch,projections in

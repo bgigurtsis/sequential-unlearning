@@ -22,7 +22,7 @@ def signed_factors(a_f,b_f,a_r=None,b_r=None):
     return torch.cat([a_f,a_r],dim=0),torch.cat([-b_f,b_r],dim=1)
 
 
-def validate_source_config(config, expected_modules):
+def validate_source_config(config, expected_modules, model_modules=None):
     if (config.get('peft_type') != 'LORA' or config.get('task_type') != 'CAUSAL_LM'
             or config.get('r') != 32 or config.get('lora_alpha') != 64
             or config.get('bias') != 'none' or config.get('lora_dropout') != 0):
@@ -33,8 +33,17 @@ def validate_source_config(config, expected_modules):
             'alora_invocation_tokens', 'use_qalora', 'arrow_config']):
         raise ValueError('Unsupported source adapter extension')
     modules = config.get('target_modules')
-    if not isinstance(modules, list) or len(modules) != len(expected_modules) or set(modules) != set(expected_modules):
+    if (not isinstance(modules, list) or not modules
+            or any(not isinstance(m, str) or not m for m in modules)
+            or len(set(modules)) != len(modules)):
         raise ValueError('Source config must select exactly the qualified text modules')
+    # PEFT can serialize a minimized list of suffix selectors. Resolve them
+    # against the entire pinned base, including vision, before accepting scope.
+    universe = set(expected_modules if model_modules is None else model_modules)
+    matches = [{m for m in universe if m == suffix or m.endswith('.' + suffix)}
+               for suffix in modules]
+    if any(not selected for selected in matches) or set().union(*matches) != set(expected_modules):
+        raise ValueError('Source selectors do not resolve to exactly the qualified text modules')
 
 
 def main():
@@ -51,8 +60,15 @@ def main():
     expected={f'base_model.model.model.language_model.layers.{i}.{branch}.{proj}_proj'
         for i in range(34) for branch,projections in [('self_attn',['q','k','v','o']),('mlp',['gate','up','down'])] for proj in projections}
     expected_keys={module+f'.lora_{factor}.weight' for module in expected for factor in ['A','B']}
+    employment_manifest = json.loads(Path(contract['employment']['manifest_path']).read_bytes())
+    index_path = Path(employment_manifest['args']['model_id'])/'model.safetensors.index.json'
+    verify(index_path,clean_pins['model_files']['model.safetensors.index.json'])
+    index = json.loads(index_path.read_bytes())
+    model_modules = {'.'.join(name.split('.')[:i]) for name in index['weight_map']
+                     for i in range(1,len(name.split('.')))}
     sources=[];configs=[];verified={args.contract:args.contract_sha256,__file__:source_sha,
-        contract['clean_pins_path']:contract['clean_pins_sha256']}
+        contract['clean_pins_path']:contract['clean_pins_sha256'],
+        str(index_path):clean_pins['model_files']['model.safetensors.index.json']}
     for arm in ['employment','ordinary']:
         spec=contract[arm];directory=Path(spec['path'])
         for kind in ['manifest','completion']:
@@ -73,7 +89,7 @@ def main():
             if completion['saved'][name]!=spec[key]:
                 raise ValueError('Checkpoint differs from its completed training receipt')
         config=json.loads((directory/'adapter_config.json').read_bytes())
-        validate_source_config(config,{m.removeprefix('base_model.model.') for m in expected})
+        validate_source_config(config,{m.removeprefix('base_model.model.') for m in expected},model_modules)
         weights=load_file(str(directory/'adapter_model.safetensors'),device='cpu')
         if set(weights)!=expected_keys or any(v.dtype!=torch.float32 or not bool(torch.isfinite(v).all()) for v in weights.values()):
             raise ValueError('Expected476 finite FP32 tensors')

@@ -1,0 +1,17 @@
+test_ce_hand_value_causal_mask_and_padding (scripts.test_task_vector.TaskVectorTests.test_ce_hand_value_causal_mask_and_padding) ... /mnt/sequential-unlearning-replicate/checkout/scripts/test_task_vector.py:32: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:822.)
+  self.assertAlmostEqual(float(loss),math.log(2),places=6)
+ok
+test_contrastive_identical_sources_cancel (scripts.test_task_vector.TaskVectorTests.test_contrastive_identical_sources_cancel) ... ok
+test_minimized_suffixes_resolve_against_all_base_modules (scripts.test_task_vector.TaskVectorTests.test_minimized_suffixes_resolve_against_all_base_modules) ... ok
+test_native_initialization_rejects_nonzero_B_nonfinite_and_wrong_scope (scripts.test_task_vector.TaskVectorTests.test_native_initialization_rejects_nonzero_B_nonfinite_and_wrong_scope) ... ok
+test_schedule_family_matching_and_rng_isolation (scripts.test_task_vector.TaskVectorTests.test_schedule_family_matching_and_rng_isolation) ... ok
+test_short_and_clipped_rejected (scripts.test_task_vector.TaskVectorTests.test_short_and_clipped_rejected) ... ok
+test_signed_dense_deltas (scripts.test_task_vector.TaskVectorTests.test_signed_dense_deltas) ... ok
+test_source_config_rejects_wrong_type_dropout_scope_and_scaling (scripts.test_task_vector.TaskVectorTests.test_source_config_rejects_wrong_type_dropout_scope_and_scaling) ... ok
+test_tail_mask_no_artificial_termination (scripts.test_task_vector.TaskVectorTests.test_tail_mask_no_artificial_termination) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.315s
+
+OK
