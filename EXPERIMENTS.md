@@ -9665,3 +9665,34 @@ Exact artifacts and SHA256:
   "config/whole_concept_jobs_v1/wide_unfamiliarity_v1/data_v1/source_prior1056.json": "b00fdf7dfbacaded4ef2650913a9f92ff6cea55680b4bf0beaa49827d4d105e0"
 }
 ```
+
+
+## 2026-09-05 04:13 UTC — Both full-band GPU qualifications pass
+
+Exact c8f6803 trainer/data uploaded with SHA verification; remote checkout HEADs remain RTX937e145/L40S496c13b (not claimed synchronized). Clean fullshard/tokenizer pins verified before execution. Frozen two-step CE+generic/chatJSD,16/4/8 batches,256 cap,10/30/100 weights, LR2e-5, seed34001, all34 text layers, non-reentrant checkpointing, no clipping or snapshots. RTX rank32alpha64 completed04:09:59,59,604,992 trainable parameters; subagent L40S rank8alpha16 completed04:10:00,14,901,248 parameters. Both exact238 modules/476 LoRA tensors, both steps have finite losses and all476 gradients. Each stratum16 distinct draws and exact8/8 perbatch; matching sampling traces.
+
+RTX step seconds1.311720818/1.038941447; peak allocated20,769,147,904/reserved21,393,047,552 bytes. Total loss96.46103668/100.46675873, targetCE9.64610386/10.04006195, gradient norms387.142386/390.085871. L40S seconds1.999688672/1.829228011; peak allocated19,955,773,440/reserved20,598,226,944. Total96.27931213/103.52486420, targetCE9.62793159/10.34606171, gradients194.314625/207.705547. Initial retention JSD nearzero as expected for disabled clean adapters. Both processes completed and GPU ownership released; RTX8186 preserved. These are mechanical/memory results, no behavioral forgetting claim. Two sampled steps do not guarantee every longer batch fits; continue finite/OOM gates during production.
+
+Next: same clean192-step runs in wide_unfamiliarity_v1/rank32_train192_v1 and rank8_train192_v1, save64/128/192, no proxy earlystop. One experiment perGPU, rootRTX32/subagentL40S8. After completion integrate checkpoint hashes/coverage then quick40 each; context12 only behavioral qualifiers.
+
+Exact artifacts SHA256:
+```json
+{
+  "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/rank32_qualification_v1/run_config.json": "b83fc0e83530d48f7248306b82e0fbddd50c91f21e2d3e5136a39662e5ca3764",
+  "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/rank32_qualification_v1/sampling_coverage.json": "5d5c6995913b288324ed4ea00350c04236af28af50f8432ceee1248040061312",
+  "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/rank32_qualification_v1/sampling_trace.jsonl": "10b733a76d576915e20811db84504abb3468e10e8bba4081befc3bc82774d2f9",
+  "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/rank32_qualification_v1/stop_state.json": "80e078d71b696e1e710617d36c1fa9978c02d878f8e315a9d7c74ef4a7db54fd",
+  "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/rank32_qualification_v1/training_metrics.jsonl": "36ee6d9a5b536ff3993cf538c69e9dba0e756e39c3da78eb8acdaff790db204f",
+  "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/rank8_qualification_v1/run_config.json": "ca5917851a175cc5a12d0b1dc176929b79f971760c7112fe1a2c3253a1242d8c",
+  "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/rank8_qualification_v1/sampling_coverage.json": "5d5c6995913b288324ed4ea00350c04236af28af50f8432ceee1248040061312",
+  "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/rank8_qualification_v1/sampling_trace.jsonl": "10b733a76d576915e20811db84504abb3468e10e8bba4081befc3bc82774d2f9",
+  "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/rank8_qualification_v1/stop_state.json": "864eb8ca4294c2a393916f86cdf02567e516fdd4effce156f8fba58a3c6a2a69",
+  "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/rank8_qualification_v1/training_metrics.jsonl": "0958ee9bdce40f03e54550c3eb3aef02019dea27ec13f16e7454470958e6afe4",
+  "logs/projection-sprint-20260904/run-wide-rank32-qualification-v1.sh": "237ed23fe51f94e682a354b56ec48fa07bc476d77ec72ee105cb668edacdf324",
+  "logs/projection-sprint-20260904/run-wide-rank8-qualification-v1.sh": "02951ca0d70543f9d3b874156ca37a14cf7efe68d41242f778ed8bcbe06609e8",
+  "logs/projection-sprint-20260904/wide-rank32-qualification-v1.log": "3f87fe3060e66232aa4c77fe4821c87520ea96e9b564529070172429ee3b1bed",
+  "logs/projection-sprint-20260904/wide-rank8-qualification-v1.log": "262c44ce0532d80501a069f11337826dde54d35e4143699abdc3e88da248f5b8",
+  "logs/projection-sprint-20260904/wide-rank32-qualification-receipt-v1.json": "9b7ce76a9a74e8d0e61a810f5ef0b446550459677e376d53d17da881d186d471",
+  "logs/projection-sprint-20260904/wide-rank8-qualification-review-v1.json": "9c1cb061857e39fc7c8a5f4f5383400bfccde96c985b8ad0702e054b33a5ac28"
+}
+```

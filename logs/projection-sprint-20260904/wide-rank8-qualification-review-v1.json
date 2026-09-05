@@ -1,0 +1,159 @@
+{
+  "schema": "wide_rank8_two_step_qualification_review_v1",
+  "verdict": "PASS mechanical/memory qualification only; no forgetting claim",
+  "host": "51.49.31.142",
+  "integrated_source": "c8f6803",
+  "remote_checkout_actual_head": "496c13b8faf54787ffbad7438844ec319c7e966d",
+  "started_utc": "2026-09-05T04:09:36Z",
+  "finished_utc": "2026-09-05T04:10:00Z",
+  "gpu_idle_after_completion": true,
+  "rank": 8,
+  "alpha": 16,
+  "trainable_parameter_count": 14901248,
+  "text_modules": 238,
+  "trainable_tensors": 476,
+  "steps": [
+    {
+      "finite_losses": true,
+      "finite_gradients": true,
+      "gradient_tensors": 476,
+      "losses": {
+        "total": 96.27931213378906,
+        "forget": 9.627931594848633,
+        "retain": 7.955666347925217e-09,
+        "chat": 5.302350225555585e-10,
+        "consistency": 0.0,
+        "answer_suppression": 0.0
+      },
+      "step": 1,
+      "scope": "training_health",
+      "gradient_norm": 194.31462504285327,
+      "elapsed_seconds": 1.9996886720182374,
+      "peak_allocated_bytes": 18375429632,
+      "peak_reserved_bytes": 19232980992
+    },
+    {
+      "finite_losses": true,
+      "finite_gradients": true,
+      "gradient_tensors": 476,
+      "losses": {
+        "total": 103.52486419677734,
+        "forget": 10.346061706542969,
+        "retain": 0.0008689208189025521,
+        "chat": 0.0003818150726146996,
+        "consistency": 0.0,
+        "answer_suppression": 0.0
+      },
+      "step": 2,
+      "scope": "training_health",
+      "gradient_norm": 207.70554680432488,
+      "elapsed_seconds": 1.829228011018131,
+      "peak_allocated_bytes": 19955773440,
+      "peak_reserved_bytes": 20598226944
+    }
+  ],
+  "coverage": {
+    "direct": {
+      "population": 1056,
+      "draws": 16,
+      "unique_seen": 16,
+      "seen_ids": [
+        "direct_2fc3453b44e39cceed75",
+        "direct_327823bf7b557965691c",
+        "direct_3fe552a684f5b7cea10c",
+        "direct_4f1266fd6232f0ef82e9",
+        "direct_5b1f3310c48f9b827a21",
+        "direct_6b8e8fa5ca3326c15a1b",
+        "direct_6d1eee4316284b5bdf02",
+        "direct_6e9751c45dbf0d0534ab",
+        "direct_80789e9374730b89a608",
+        "direct_adbb4d8e1aa617a48254",
+        "direct_ca6d6514ad12891ae75e",
+        "direct_d629e57bcfe7df550299",
+        "direct_db13d3ad9b6d656e477b",
+        "direct_dcde8c3484f23e4ecdfe",
+        "direct_f5875be37ef8604d9d77",
+        "direct_f7c04153d46fa10cc80d"
+      ],
+      "cycles_started": 1,
+      "complete_cycles": 0
+    },
+    "context": {
+      "population": 520,
+      "draws": 16,
+      "unique_seen": 16,
+      "seen_ids": [
+        "context_1216a52ae0f82f69a1a3",
+        "context_1a0c88e7ca57aba679af",
+        "context_218281f4ab0f0a6c2456",
+        "context_236f305118bb2b14c5eb",
+        "context_2ee27209e5146fd628e3",
+        "context_61d92996a07bd859979a",
+        "context_64d810049081c40280f6",
+        "context_7686578a16bab7dab91f",
+        "context_7fc7cf682471a431bec8",
+        "context_85b3619a19c81dade8fd",
+        "context_8d9fa8605a3bd77f4a79",
+        "context_a43e73230acdad6c334c",
+        "context_b2220e72a3d501242f5d",
+        "context_b8da46cf0d9af6ea8f32",
+        "context_e123efbfca167e0d9e33",
+        "context_e2ee96df8ddfd271b665"
+      ],
+      "cycles_started": 1,
+      "complete_cycles": 0
+    }
+  },
+  "peak_allocated_bytes": 19955773440,
+  "peak_reserved_bytes": 20598226944,
+  "checkpointing": "explicit non-reentrant; model reports enabled; use_cache disabled",
+  "settings": {
+    "batch_forget": 16,
+    "batch_retain": 4,
+    "batch_chat_retain": 8,
+    "learning_rate": 2e-05,
+    "forget_weight": 10.0,
+    "retain_weight": 30.0,
+    "chat_retain_weight": 100.0,
+    "answer_suppression_weight": 0.0,
+    "target_response_append_eos": true,
+    "seed": 34001,
+    "max_length": 256,
+    "disable_snapshots": true
+  },
+  "artifacts": {
+    "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/rank8_qualification_v1/run_config.json": {
+      "sha256": "ca5917851a175cc5a12d0b1dc176929b79f971760c7112fe1a2c3253a1242d8c",
+      "bytes": 59260
+    },
+    "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/rank8_qualification_v1/sampling_coverage.json": {
+      "sha256": "5d5c6995913b288324ed4ea00350c04236af28af50f8432ceee1248040061312",
+      "bytes": 1517
+    },
+    "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/rank8_qualification_v1/stop_state.json": {
+      "sha256": "864eb8ca4294c2a393916f86cdf02567e516fdd4effce156f8fba58a3c6a2a69",
+      "bytes": 336
+    },
+    "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/rank8_qualification_v1/sampling_trace.jsonl": {
+      "sha256": "10b733a76d576915e20811db84504abb3468e10e8bba4081befc3bc82774d2f9",
+      "bytes": 1410
+    },
+    "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/rank8_qualification_v1/training_metrics.jsonl": {
+      "sha256": "0958ee9bdce40f03e54550c3eb3aef02019dea27ec13f16e7454470958e6afe4",
+      "bytes": 1810
+    },
+    "logs/projection-sprint-20260904/wide-rank8-qualification-v1.log": {
+      "sha256": "262c44ce0532d80501a069f11337826dde54d35e4143699abdc3e88da248f5b8",
+      "bytes": 3398
+    },
+    "logs/projection-sprint-20260904/run-wide-rank8-qualification-v1.sh": {
+      "sha256": "02951ca0d70543f9d3b874156ca37a14cf7efe68d41242f778ed8bcbe06609e8",
+      "bytes": 4567
+    }
+  },
+  "limitations": [
+    "Only two seeded training batches qualified; later batch lengths and memory may differ.",
+    "No adapter saved; full192 must restart from clean with same seed.",
+    "Audit is original-answer probability proxy, not held-out concept absence."
+  ]
+}

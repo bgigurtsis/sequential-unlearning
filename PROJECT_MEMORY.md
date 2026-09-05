@@ -2,6 +2,8 @@
 
 ## Current handover — September 5, 2026
 
+Current gate: BOTH two-step wide-unfamiliarity GPU smokes PASS. RTXrank32 peakallocated20.77GB/L40Srank8 19.96GB, finite476 gradients each, exact238 textmodules, matched16/16 distinct sampling. Full192-step clean pair now next (snapshots64/128/192), rootRTX32/subagentL40S8, one owned job perGPU. No behavioral claim; still no whole-concept qualifier. Exact receipts in wide_unfamiliarity_v1/*_qualification_v1 and logs/projection-sprint-20260904/wide-*-qualification-*.json.
+
 Current gate: wide unfamiliarity data materialized and qualified (1576 targets/177 generic/2753 chat; zero exact evaluation overlap). Builder3/3 and trainer31/31 CPU tests pass. Target max76/chat169 with no clipping;16 generic rows clip at256. Root RTXrank32 and subagent L40Srank8 two-step full-objective smoke next, then integrate before192steps. Full-band238 text modules/476 tensors, cyclic8+8 coverage, checkpointing and finite/memory receipts. No candidate qualifies; goal remains active.
 
 Currentdecision: BOTHsequentialreadarms rejected; rank2>=14quickleaks+contextroles. Next frozenwideunfamiliarity cleanpair rootRTXrank32/subagentL40Srank8, all34textlayers, joint1056+520, matchednegativewall, cyclic8/8sampling,192steps snapshots64/128/192. Contractwide_unfamiliarity_v1/contract_v1.json. Firstmaterialize/pindata, qualifysampler/scope/checkpointing andtwo-stepmemory perGPU beforetraining. Goalactive; no conceptremovalqualifier.
