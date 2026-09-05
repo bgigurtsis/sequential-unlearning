@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+set -euo pipefail
+cd /home/ubuntu/sequential-unlearning-projection-sprint-20260904
+export HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 PYTHONUNBUFFERED=1 OMP_NUM_THREADS=8
+date -u +%Y-%m-%dT%H:%M:%SZ
+/home/ubuntu/sequential-unlearning/venv-g6e/bin/python - <<'PY'
+import hashlib,pathlib,subprocess
+for name,sha in {'scripts/screen_adapters.py': 'c69144eca887176cedb074fcdd8ac80e841d5504772198701546ca4d7fcd0b29', 'config/employment_sprint_20260904_quick/probes.json': '3a39e4634216075ee2c02b874b4d1d8bc34144a3bdd653afd7cbab01694a4feb', 'derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/rank8_run192_v1/step064/adapter_config.json': '850586725f555f27a1eaed31b59fb82ba08341f1b16098733b7f5581c62c569d', 'derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/rank8_run192_v1/step064/adapter_model.safetensors': 'cf664921a0a71368ad0d443ecf60080f90f95b6f80342dbe5490f5a5fb5a3715', 'derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/rank8_run192_v1/step128/adapter_config.json': '850586725f555f27a1eaed31b59fb82ba08341f1b16098733b7f5581c62c569d', 'derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/rank8_run192_v1/step128/adapter_model.safetensors': 'd43b0a5fbd1fee8fa32aa8acf9406f5ce5e97b2d48f3af7cc52d8a75feb7a3e9', 'derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/rank8_run192_v1/step192/adapter_config.json': '850586725f555f27a1eaed31b59fb82ba08341f1b16098733b7f5581c62c569d', 'derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/rank8_run192_v1/step192/adapter_model.safetensors': '442f4957a6012f653f90374173a700d824c418518cf645c1e9ace839e147f1ac'}.items():assert hashlib.sha256(pathlib.Path(name).read_bytes()).hexdigest()==sha,name
+assert not pathlib.Path('derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/rank8_quick_v1.json').exists(),'Output exists'
+assert not subprocess.check_output(['nvidia-smi','--query-compute-apps=pid','--format=csv,noheader'],text=True).strip(),'GPU busy'
+print('Quick96/batch16 all3snapshot pins verified',flush=True)
+PY
+/home/ubuntu/sequential-unlearning/venv-g6e/bin/python scripts/screen_adapters.py derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/rank8_run192_v1/step064 derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/rank8_run192_v1/step128 derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/rank8_run192_v1/step192 --model-id /home/ubuntu/sequential-unlearning-clean-snapshot-093f9f388b31de276ce2de164bdc2081324b9767 --tokenizer-model /home/ubuntu/sequential-unlearning-clean-snapshot-093f9f388b31de276ce2de164bdc2081324b9767 --day-dir config/employment_sprint_20260904_quick --output derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/rank8_quick_v1.json --batch-size 16 --max-new-tokens 96
+date -u +%Y-%m-%dT%H:%M:%SZ

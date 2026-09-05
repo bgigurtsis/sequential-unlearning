@@ -1,0 +1,53 @@
+{
+  "schema": "prefix_priority_followup_v1",
+  "reason": "Both rank32/rank8 fullband192 failquick. Rank32 train16/16greedyunfamiliarity,training32 assignedCE.1547 butreplytailafter5CE.0004925;quick28bestbanktail.0005499. Full8replyprobability training.8864 vsquick.2557. Test stronger answer-initiation priority; not claimed new unlearning theory.",
+  "parents": {
+    "rtx_rank32": {
+      "path": "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/rank32_train192_v1/step192",
+      "sha256": "c05f3060cd5776ac90fd49e573f8418c6d86ac2b8cf39d1f99d1982f0dfd966d"
+    },
+    "l40s_rank8": {
+      "path": "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/rank8_run192_v1/step192",
+      "sha256": "442f4957a6012f653f90374173a700d824c418518cf645c1e9ace839e147f1ac"
+    }
+  },
+  "reference": "same pinned clean093f9f388b31de276ce2de164bdc2081324b9767; disablealladapters forretainJSD, no modelmerge",
+  "inputs": "unchangeddata_v1 SHA manifest a5ddb082a4160482ff73018c3004c65fe3377db2c2f78d03c8a712fb1afefcd1;1576targets177generic2753chat; no evaluation rows entertraining",
+  "scope": "same238textmodules/476FP32tensors; rank32alpha64 rootRTX /rank8alpha16 subagentL40S",
+  "objective": {
+    "type": "target-response-ce",
+    "prefix_tokens": 5,
+    "prefix_weight": 8,
+    "tail_weight": 1,
+    "denominator": "original count of allselectedtargettokens; weighted sum divided by unweighted count",
+    "meaning": "increases effective targetpriority relative to retention; NOT isolated redistribution atconstantgradientnorm orlossmass",
+    "EOS": "exactlyone,unchanged",
+    "forget_weight": 10,
+    "retain_weight": 30,
+    "chat_retain_weight": 100,
+    "answer_suppression_weight": 0
+  },
+  "training": {
+    "steps": 64,
+    "snapshots": [
+      16,
+      32,
+      64
+    ],
+    "audit_every": 16,
+    "audit_size": 24,
+    "seed": 34002,
+    "learning_rate": 2e-05,
+    "batch_forget": 16,
+    "batch_retain": 4,
+    "batch_chat_retain": 8,
+    "max_length": 256,
+    "cyclic_strata": "8direct8context withoutreplacementpercycle; theseinputs allseeninparent192",
+    "optimizer": "freshAdamW sameexistingdefaults/no clipping; adaptersresumeexactsavedFP32values",
+    "checkpointing": "sameexplicitnonreentrant",
+    "selection": "external semantic only"
+  },
+  "qualification": "weightedlossgradient/alignment/default-equivalence tests; exact parentadaptertensor reload andrank/alpha/scope guards;2-step fullobjective smoke perGPU no snapshots, finite476gradients andpeakmemory. Integratebeforefull64; donotsilentlyreducebatch.",
+  "evaluation": "oneownedjobperGPU; aftertrainingcompleteintegrate thenquick40/96all3; context12/256onlybehavioralquickqualifiers; nofreshuntilbroaderqualifier",
+  "decision": "Measure targetabsence AND falseunfamiliarity on ordinarycontrols. If addedpriority causeswidespreadfalseabsence, do notcallitminimumdamage; recordbeforechanging data/boundary. Wholeconcept/neighbours and31sequentialedits remainunqualified."
+}

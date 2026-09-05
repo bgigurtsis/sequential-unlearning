@@ -2,6 +2,8 @@
 
 ## Current handover — September 5, 2026
 
+Current decision: Both wide192 capacity arms rejected;rank8 quickunknown0/3/5 versusrank32 1/6/7. Prefixdiagnosis shows learnedreplytail and incomplete unseenprompt routing. Frozennext: resumeown192adapters,first5tokenweight8/tail1,unchangeddenominator=>strongerforgetpriority,64steps16/32/64snapshots. Qualifyreload/weightedloss and2-stepGPUbeforefull64; onejobperGPU,subagentL40S8. No wholeconcept/31qualification.
+
 L40Srank8 full192 completion integrated; allstepsfinite,full1056/520coverage and3adapters locallyhashverified. Subagent quick3checkpoint evaluation next. RTXrank32 quickfailed; primary diagnoses answer-initiation loss before changingtraining.
 
 Current decision: Rank32 quick64/128/192 rejected: only1/6/7 of28 targets give unfamiliarity; employment meanings survive and costofliving control fails. No context/broad/fresh qualifiers. Next diagnose first-token versus reply-tail CE on training/reusedquick probes; no newtraining objective yet. L40Srank8 awaits own3checkpoint screen.

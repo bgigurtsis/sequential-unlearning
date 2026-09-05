@@ -9740,3 +9740,26 @@ Next diagnostic (not changedtraining): saved192 adapter, deterministic32training
 ## 2026-09-05 04:23 UTC — L40S rank8 full192 completed
 
 Subagent arm completed04:18:45, exact same qualified clean full-band settings except rank8alpha16. Output wide_unfamiliarity_v1/rank8_run192_v1.192finite steps,238textmodules/476FP32adaptertensors/14,901,248parameters. Full1056/520coverage reached132/65,1536draws each. Peak allocated22,150,871,040/reserved30,280,777,728; summedtraining320.57s, median1.629. FinalCE.173721,genericJSD.00124261/chatJSD.00544095; originalanswer ratio.977938. No behaviorclaim. All3adapters59,675,008bytes each finite and exactlocal/remote hashmatch, preserved locally (not pushedlargeweights).64=cf664921a0a71368ad0d443ecf60080f90f95b6f80342dbe5490f5a5fb5a3715;128=d43b0a5fbd1fee8fa32aa8acf9406f5ce5e97b2d48f3af7cc52d8a75feb7a3e9;192=442f4957a6012f653f90374173a700d824c418518cf645c1e9ace839e147f1ac. Raw metrics/config/IDs plus sourcewrapper preserved; exactartifactmanifest in logs/projection-sprint-20260904/wide-rank8-full-training-review-v1.json SHA 9d9a5dc6fe912d4113f42c64e2c35a41fec52be825beefa11a74c5acef4de525. GPUidle aftercompletion. Next same3checkpointquick40/96screen; subagent reads120answers beforedecision. RTX failedquick and proceeds to alreadyfrozen reply-initiation diagnosis.
+
+
+## 2026-09-05 04:27 UTC — Both capacity arms rejected; prefix diagnostic and follow-up contract
+
+L40Srank8 all120answers read bysubagent, perrow independentlyreviewed receipt preserved:64/128/192 definite retainedmeaning25/22/22, exactunfamiliarity0/3/5 of28targets. Otherswrong/nondiagnostic notabsence. Computingbatchjobfalseunknownall3,Bibleadditionally128,costlivingadditionally192. No sustainedloops. Natural03/10 regainmeaning192 afterunknown128. Nonequalifies forcontext/broad/fresh.
+
+RTXrank32 prefixdiagnosis completed04:25:02, saved192adapter versusdisabledclean on32trainingrows(first2cyclicbatchesseed34001) and28reusedquicktargets, all8replytrajectories. Trainingdesiredresponse meanCE.1547009260,firstCE.8440271,first3CE.6252509,first5CE.49407285,tailafter5CE.000492514. Quick best-of8bytotalNLL (differentselectionrule, reportexplicitly) meanCE.2141836,firstCE1.2708511,first3CE.9788729,first5CE.6439967,tail.000549928. Sum probability of8completeEOSresponses average.8864377training/.2557269quick (clean~1.03e-48/~3.10e-51). First-token bankmass.927074/.589383, BUTprefix tokensalsoopenordinaryanswers so bankmass isNOTunfamiliarityprobability. All16sampledtraininggreedyanswers at96tokensareexactunfamiliarity; rootreadall16. MeanCEdominatedbyreplyinitiation; tailalreadyfits. This supportsboundary/generalizationdiagnosis, not a claimthat taillearningalone causedfailure. No held-outprompttrained.
+
+Precommitted nextpair: resumeeachown192FP32adapter onunchangedcleanbase/data, weightfirst5targettokens8× andtail1, keeporiginalunweighteddenominator andouter10/30/100. This increases effectiveforgetpriority versusretention; notconstantmass prefixredistribution.64steps/snapshots16/32/64,seed34002,LR2e-5,same16/4/8batches,238modules,checkpointing,cleanJSD. No mergebeforetraining. Qualifyreload/rank/alpha/weightedgradient and2steps eachGPUbeforefull64. RootRTX32/subagentL40S8. Allsettingscontractprefix_priority_contract_v1.json. No methodchangetakenasvalidated.
+
+Exact artifacts SHA256:
+```json
+{
+  "scripts/diagnose_unfamiliarity_prefix.py": "6790446339766422df16614c37c7444d513866d191e46f8664141786241d138b",
+  "logs/projection-sprint-20260904/run-wide-rank32-prefix-diagnostic-v1.sh": "2529142de9b210cb37451616dc194e2dc2c878adc17acb769c92e6959db926e3",
+  "logs/projection-sprint-20260904/wide-rank32-prefix-diagnostic-v1.log": "16ac6d2fc3528a42f68ed302d6c3e7e28bf7b15fc9b44efef1ad176a805c9012",
+  "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/rank32_prefix_diagnostic_v1.json": "c304cf43b6a58d6b70802e55b3029129dcfc0715c8dca3f6af2167a12ee4dbe8",
+  "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/rank32_prefix_summary_v1.json": "78e67b6052b884265f5e7e9b69d134eaa0a8bbf37495ec38b246530f0e53e684",
+  "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/rank8_quick_v1.json": "b9975c26e35068636c8cb031ef8662a07f9312e49c170d169bae890e79f41937",
+  "logs/projection-sprint-20260904/wide-rank8-quick-independent-review-v1.json": "a3a63f28dc8ca93ac4ed43c1c5209321d3f5ce21232b0c94a223fb958bb41705",
+  "config\\whole_concept_jobs_v1\\wide_unfamiliarity_v1\\prefix_priority_contract_v1.json": "7a11b9260d9149d6893783dcf8472af38e82b626ebc5c1e527ede9eb53b499ca"
+}
+```
