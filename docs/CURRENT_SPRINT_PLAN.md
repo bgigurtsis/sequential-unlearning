@@ -1,42 +1,27 @@
 # Active concept-removal plan — September 5, 2026
 
-Find a saved-weight edit that removes employment and its required semantic neighbours while keeping ordinary conversation useful. Natural unfamiliarity is preferred, but another form of behavioral absence can serve the artwork. No checkpoint has met that goal yet. The user has authorized continued experiments; historical sprint deadlines do not close the active goal.
+Find a saved-weight edit that removes employment and its required semantic neighbours while keeping ordinary conversation useful. Natural unfamiliarity is preferred; another useful form of absence can serve the artwork. No candidate has qualified. Historical sprint deadlines do not close the active goal.
 
 | GPU | Owner | Current experiment |
 | --- | --- | --- |
-| RTX, 18.101.59.227 | Primary agent | Sequential read-side edit, one pooled contrast per site |
-| L40S, 51.49.31.142 | Subagent projection_followup | Sequential read-side edit, two position contrasts per site |
+| RTX,18.101.59.227 | Primary agent | Clean full-band unfamiliarity,rank32/alpha64 |
+| L40S,51.49.31.142 | Subagent projection_followup | Same experiment,rank8/alpha16 |
 
-Keep one owned GPU workload on each host and preserve the unrelated RTX service. Use separate output paths and the same pinned clean Gemma3-4B-it source. The L40S candidate uses temporary storage; archive any useful survivor durably before stopping the host.
+Keep one owned GPU workload on each host and preserve unrelated RTX service8186. Use unique project output paths and the same pinned clean Gemma3-4B-it source.
 
 ## Current decision
 
-The previous global projections failed. Small mean-protected edits kept fluent answers but preserved employment knowledge. Removing all68 available protected directions added widespread looping and control failures while knowledge still survived. Low geometric leakage did not imply unlearning.
+Both sequential read-side edits passed native mechanical checks but retained employment knowledge. Earlier global projections either retained knowledge or damaged ordinary responses. Those methods are rejected; geometric suppression is not evidence of unlearning.
 
-The current method instead edits the weights that read each layer’s normalized activations. At each site it removes the full measured local contrast while preserving the two ordinary class means, then fits the next site after applying the preceding BF16 edits. The final output head is untied from the token embedding and edited separately. The saved model uses standard weights without projection hooks.
+The next pair tests broader trainable capacity and joint training coverage. It trains eight short unfamiliarity replies across all34 text layers, exactly238 attention/MLP modules, with vision and base weights frozen. Rank is the controlled difference between GPUs. This is a behavioral hypothesis, not proof of irreversible knowledge deletion.
 
-This is a linear experiment inspired by sequential concept scrubbing, not a claim of covariance-optimal LEACE or guaranteed knowledge erasure. The first attention site is skipped in both arms because its last-prompt token has no contextual information yet. The resulting contract has68 fitted sites and168 changed weights.
+## Decision path
 
-## Fastest decision path
+1. Data and CPU gates passed:1576 targets (1056 direct/scenario and520 contextual),177 generic retention texts,2753 chat retention rows including3 copies of520 matched ordinary examples. Exact normalized evaluation exclusion found zero overlaps across467 distinct prompts. Builder3/3 and trainer31/31 tests passed. Target/chat sequences fit256 tokens;16 generic texts are clipped by the existing policy. Former projection diagnostic rows are now training, never fresh evidence.
+2. Run two-step full-objective memory qualification on each GPU. Use non-reentrant checkpointing, BF16 base/FP32 adapters,16/4/8 batches, weights10/30/100, LR2e-5, no answer suppression or snapshots. Require finite loss/gradients, exact text-only scope and recorded peak memory. Integrate results before full training; do not silently reduce batches after OOM.
+3. Train192 steps with snapshots64/128/192. Seed34001; cyclic sampling draws8 direct and8 contextual records per batch without replacement within each cycle. Full coverage by132/65 steps. Audit every32 for diagnostics only; do not stop or select on proxy scores.
+4. After training finishes, evaluate quick40 responses at96 tokens for each checkpoint, then contextual12 at256 tokens for behavioral qualifiers. Read the answers. Incorrect or incoherent responses receive no absence credit. These are reused development regressions.
+5. Merge and verify a behavioral survivor, then measure broader target/neighbour coverage, conversations, ordinary generations, perplexity and collateral damage. Separate target-bearing benchmark rows so knowledge restoration is not called repair. Reserve the untouched final audit for a genuine qualifier.
+6. Once a single edit qualifies, measure successive removals, retention of earlier holes and unrelated abilities toward31 removals. A successful single edit alone does not establish scalability.
 
-1. Finish the two native fit/save runs. Cached forwarding and standard untied save/reload already passed exact checks; thirteen math and locality tests passed. Keep the frozen numerical guards and preserve any failure receipt.
-2. Verify the saved candidates: unchanged embedding, normalization and vision weights; exactly the declared read weights changed; fresh reload reproduces all tensor values and selected logits. Commit and push the exact findings before evaluating.
-3. Generate the same40 quick responses at96 tokens and12 contextual responses at256 tokens, batch16. Read every answer for retained meaning, useful ordinary behavior and repetition. Incorrect or incoherent answers receive no unlearning credit. These are reused development regressions, not fresh evidence.
-4. Advance only a behavioral survivor to the broader target/neighbour tests, conversations, ordinary generations, perplexity and damage measurements. Interpret target-bearing benchmark rows separately so restored employment knowledge does not masquerade as collateral repair. Keep the untouched final audit reserved for a genuine qualifier.
-5. After a single edit qualifies, test actual successive removals, earlier-hole retention and unrelated abilities. Establish a measured damage curve toward31 removals; never infer scalability from rank count or one successful edit.
-
-If this pair fails, record what survived and what broke before choosing the next method. A failed candidate or completed archive does not complete the user’s goal. The next choice must address the observed failure, while preserving the artwork’s flexibility about the form of absence.
-
-## Evidence and reproducibility
-
-Fit data are frozen:520 employment/neighbour and520 independently authored nonemployment trajectories, five matched task formats, complete segmented token sequences and no truncation. Only comparison, advice and continuation families influence the fit; rewrite and roleplay are diagnostic. Evaluation prompts never enter training.
-
-Exact contracts are in `config/whole_concept_jobs_v1/residual_projection_v1/sequential_read_oblique_contract_v1.json` and `sequential_read_architecture_amendment_v1.json`. Append every finding to `EXPERIMENTS.md`, update `PROJECT_MEMORY.md` and affected claims, then commit and push before changing experiments. Preserve earlier artifacts and unrelated user changes.
-
-The rank1 checkpoint passed all native fit and publication checks and is advancing to behavioral evaluation. Rank2 encountered a serialization quota failure; its fit evidence is being preserved before storage repair and an unchanged rerun.
-
-Rank1 retained clear employment knowledge despite fluent ordinary answers, so it failed. The rank2 storage issue was a per-user quota that the filesystem-free-space check missed. Its unchanged rerun will add a quota check after retiring a documented rejected temporary model and the incomplete failed save.
-
-Rank2 has now published successfully with exact fresh-reload checks. Its repeated fit was byte-identical to the attempt interrupted by quota. It is advancing to the matched behavioral evaluation.
-
-Both sequential read edits failed to remove employment knowledge. The next comparison trains unfamiliarity across all34 text layers from the clean model, using rank32 onRTX andrank8 onL40S. It combines the original1056 examples with520 contextual examples and matched ordinary examples. Exact coverage, text-only parameter selection and two-step memory checks precede the192-step runs. This is a behavioral hypothesis, not proof of irreversible knowledge deletion.
+Exact settings:config/whole_concept_jobs_v1/wide_unfamiliarity_v1/contract_v1.json and data_v1/manifest.json. Append findings to EXPERIMENTS.md, update PROJECT_MEMORY.md and affected claims, then commit/push before changing experiments. A failed run or completed archive does not complete the goal.

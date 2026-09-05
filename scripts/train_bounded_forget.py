@@ -30,12 +30,25 @@ import argparse
 import json
 import math
 import random
+import time
 from pathlib import Path
 
 import torch
 import torch.nn.functional as F
 from peft import LoraConfig, get_peft_model
 from transformers import AutoModelForCausalLM, AutoTokenizer
+try:
+    from wide_unfamiliarity_training import (
+        CyclicStratumSampler, assert_text_only_trainables,
+        enable_non_reentrant_checkpointing, finite_training_health,
+        text_only_fullband_modules,
+    )
+except ModuleNotFoundError:
+    from scripts.wide_unfamiliarity_training import (
+        CyclicStratumSampler, assert_text_only_trainables,
+        enable_non_reentrant_checkpointing, finite_training_health,
+        text_only_fullband_modules,
+    )
 
 
 def parse_args():
@@ -69,6 +82,10 @@ def parse_args():
     )
     parser.add_argument("--eval-every", type=int, default=10)
     parser.add_argument("--batch-forget", type=int, default=4)
+    parser.add_argument("--cyclic-forget-strata", action="store_true")
+    parser.add_argument("--text-only-fullband-lora", action="store_true")
+    parser.add_argument("--gradient-checkpointing-non-reentrant", action="store_true")
+    parser.add_argument("--record-training-health", action="store_true")
     parser.add_argument(
         "--balanced-forget-categories",
         action="store_true",
@@ -714,6 +731,17 @@ def main():
     torch.manual_seed(args.seed)
 
     forget_pairs = read_json(args.forget_data)
+    if args.cyclic_forget_strata and args.balanced_forget_categories:
+        raise ValueError("cyclic strata and random balanced categories are exclusive")
+    if args.text_only_fullband_lora and (
+        args.parameterization != "lora"
+        or args.train_layer_lo != 0 or args.train_layer_hi != 34
+    ):
+        raise ValueError("text-only full-band mode requires LoRA and layers0:34")
+    forget_sampler = (
+        CyclicStratumSampler(forget_pairs, seed=args.seed, batch_size=args.batch_forget)
+        if args.cyclic_forget_strata else None
+    )
     if args.forget_objective == "anchor-alignment":
         missing_anchors = [
             index
@@ -840,6 +868,8 @@ def main():
     if min(steer_layers) < 0 or max(steer_layers) >= num_layers:
         raise ValueError(f"steer layers must be within 0..{num_layers - 1}")
     reference_model = None
+    selected_text_modules = None
+    selected_trainable_names = None
     if args.parameterization == "lora":
         if args.train_layer_hi > num_layers:
             raise ValueError(
@@ -854,13 +884,15 @@ def main():
             f"Model has {num_layers} layers; rank-{args.rank} LoRA on layers "
             f"{target_layers[0]}-{target_layers[-1]} (ELM early band)."
         )
+        if args.text_only_fullband_lora:
+            selected_text_modules = text_only_fullband_modules(model.named_modules())
         model = get_peft_model(
             model,
             LoraConfig(
                 r=args.rank,
                 lora_alpha=args.lora_alpha,
                 lora_dropout=0.0,
-                target_modules=[
+                target_modules=selected_text_modules or [
                     "q_proj",
                     "k_proj",
                     "v_proj",
@@ -869,7 +901,7 @@ def main():
                     "up_proj",
                     "down_proj",
                 ],
-                layers_to_transform=target_layers,
+                layers_to_transform=None if selected_text_modules else target_layers,
                 task_type="CAUSAL_LM",
             ),
         )
@@ -886,6 +918,10 @@ def main():
                 "write-back trap (zamirai-2020) would be live"
             )
         master_weight_dtype = "float32"
+        if selected_text_modules:
+            selected_trainable_names = assert_text_only_trainables(
+                model.named_parameters(), selected_text_modules
+            )
         model.print_trainable_parameters()
     else:
         target_layers = list(range(num_layers))
@@ -900,6 +936,8 @@ def main():
         )
     if not trainable:
         raise RuntimeError("no trainable parameters")
+    if args.gradient_checkpointing_non_reentrant:
+        enable_non_reentrant_checkpointing(model)
     rmu_directions = {}
     if args.forget_objective == "adaptive-rmu":
         for layer in steer_layers:
@@ -1196,6 +1234,8 @@ def main():
             "chat_retain_examples": len(chat_pairs),
             "consistency_examples": len(consistency_pairs),
             "target_layers": target_layers,
+            "selected_text_modules": selected_text_modules,
+            "selected_trainable_names": selected_trainable_names,
             "steer_layers_parsed": (
                 steer_layers if args.forget_objective == "adaptive-rmu" else []
             ),
@@ -1260,7 +1300,11 @@ def main():
     first_proxy_gate = None
 
     for step in range(1, args.num_steps + 1):
-        forget_batch = sample_forget_batch(
+        if args.record_training_health:
+            torch.cuda.synchronize()
+            torch.cuda.reset_peak_memory_stats()
+        step_started = time.perf_counter()
+        forget_batch = forget_sampler.next_batch() if forget_sampler else sample_forget_batch(
             forget_pairs,
             args.batch_forget,
             balanced_categories=args.balanced_forget_categories,
@@ -1549,6 +1593,8 @@ def main():
         )
         control_loss = args.consistency_weight * consistency_loss
         loss = target_loss + preservation_loss + control_loss
+        if args.record_training_health and not bool(torch.isfinite(loss)):
+            raise FloatingPointError(f"nonfinite total loss before backward at step{step}")
         optimizer.zero_grad(set_to_none=True)
         gradient_surgery = {
             "target_control_grad_dot": None,
@@ -1627,7 +1673,34 @@ def main():
             if p.grad is not None
         )
         grad_norm = math.sqrt(grad_sq)
+        health = None
+        if args.record_training_health:
+            health = finite_training_health(
+                {"total": loss, "forget": forget_loss, "retain": retain_loss,
+                 "chat": chat_loss, "consistency": consistency_loss,
+                 "answer_suppression": answer_suppression_loss},
+                trainable, torch=torch,
+            )
+            if not math.isfinite(grad_norm):
+                raise FloatingPointError("nonfinite aggregate gradient norm")
         optimizer.step()
+        if args.record_training_health:
+            torch.cuda.synchronize()
+            health.update({
+                "step": step, "scope": "training_health", "gradient_norm": grad_norm,
+                "elapsed_seconds": time.perf_counter() - step_started,
+                "peak_allocated_bytes": torch.cuda.max_memory_allocated(),
+                "peak_reserved_bytes": torch.cuda.max_memory_reserved(),
+            })
+            with open(metrics_path, "a", encoding="utf-8") as handle:
+                handle.write(json.dumps(health) + "\n")
+        if forget_sampler:
+            with open(output_dir / "sampling_trace.jsonl", "a", encoding="utf-8") as handle:
+                handle.write(json.dumps({"step": step, "ids": [p["id"] for p in forget_batch],
+                                         "strata": [p["sampling_stratum"] for p in forget_batch]}) + "\n")
+            (output_dir / "sampling_coverage.json").write_text(
+                json.dumps(forget_sampler.receipt(), indent=2) + "\n", encoding="utf-8"
+            )
 
         print(
             f"step {step:3d}/{args.num_steps}  "

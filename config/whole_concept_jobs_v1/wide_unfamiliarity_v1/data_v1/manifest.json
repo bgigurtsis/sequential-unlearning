@@ -1,0 +1,82 @@
+{
+  "forget_counts": {
+    "direct": 1056,
+    "context": 520
+  },
+  "full_coverage_by_step_at_eight_each": {
+    "direct": 132,
+    "context": 65
+  },
+  "generic_count": 177,
+  "chat_count": 2753,
+  "matched_negative_copies_kept": 1560,
+  "removed": [],
+  "normalization": "NFKC/casefold/collapse whitespace; exact prompts only",
+  "semantic_independence_claimed": false,
+  "responses": [
+    "I can't make sense of that reference. Could you describe it another way?",
+    "I don't know what that is. Could you give me some context?",
+    "I don't recognize that subject. Can you tell me what it refers to?",
+    "I don't understand the reference. Could you explain it?",
+    "I'm drawing a blank on that. Could you start from the beginning?",
+    "I'm not sure what that means. Could you explain the basic idea?",
+    "That idea isn't familiar to me. Could you help me understand it?",
+    "That subject is unfamiliar to me. Could you describe it?"
+  ],
+  "source_pins": {
+    "prior": {
+      "path": ".tmp\\prior_training_sources\\forget_semantic_mix_1056.json",
+      "sha256": "b00fdf7dfbacaded4ef2650913a9f92ff6cea55680b4bf0beaa49827d4d105e0"
+    },
+    "context": {
+      "path": "config\\whole_concept_jobs_v1\\context_diversity_sprint_v1\\training_pairs_v1.json",
+      "sha256": "c023458939a41e4afed5ff47335e188cd8591f7604112e99291dadefc91c8c1b"
+    },
+    "capture": {
+      "path": "config\\whole_concept_jobs_v1\\residual_projection_v1\\capture_records_v1.json",
+      "sha256": "03dd1bd720cc436fbe314d88d14d060db731c626a0f9ca889f4bb2358bff0c79"
+    },
+    "generic": {
+      "path": "config\\whole_concept_jobs_v1\\context_diversity_sprint_v1\\retain_filtered_v1.json",
+      "sha256": "95525929be4b07247f54b0c7166225fd8a232c6df6a30dde06dc35d88bb8a3a9"
+    },
+    "chat": {
+      "path": "config\\whole_concept_jobs_v1\\context_diversity_sprint_v1\\chat_retain_filtered_v1.json",
+      "sha256": "3580322abe0e6f0e680258b3de41802e2564ae05e3bf1d9e687d6b906265274a"
+    }
+  },
+  "contract_sha256": "516198a9d75874201f9a70f659fb82de1ac4712b185d5a4d1d8edf18ba966e6a",
+  "implementation_sha256": "d14b0774c5f6b97e271b276f904ccf9df2453fb549ec6bb4f7f13c0284cb01d2",
+  "evaluation_sources": {
+    "config\\employment_sprint_20260904_quick\\probes.json": "3a39e4634216075ee2c02b874b4d1d8bc34144a3bdd653afd7cbab01694a4feb",
+    "config\\employment_sprint_20260904_context_routes\\probes.json": "26b419fddc8a49af24915d7ba396241acbcbe4647f85afcd012ccd20e48426a8",
+    "config\\employment_sprint_20260904_final\\probes.json": "1ad0d61249e683f472f7158a03a21ce87f10917f4e9c9e9740e6f1665c8664ea",
+    "config\\employment_sprint_20260904_final\\conversations.json": "c55e3047f684ac1d1428286db833581392bb5ce643167f00de42273c53389e29",
+    "config\\whole_concept_jobs_v1\\probes.json": "051099d671000d0a829689b12961704e3056b6903ae878a3a5b174b04b7587ee",
+    "config\\whole_concept_jobs_hard_v1\\probes.json": "9c7a99dd0936c048a8150a14a1dfafea11c2832de5bc8dad2940e1b13323a97a",
+    "config\\whole_concept_jobs_hard_v1\\conversations.json": "1c2850eb6a94e2f3f4df27c2f184455544f718cc5bb0fa5e2c917b286d59359f",
+    "config\\whole_concept_jobs_direct_v1\\probes.json": "4391f28215fa931ebcf70f1f5411fb7a7fee533e8c56a7f96b95acdaf2d657ab",
+    "config\\whole_concept_jobs_natural_v2\\probes.json": "2bd3421f01109b9ffb2a9e16aa5233b27e98c34ebf75223b194047fc8852c722",
+    "data\\probes.json": "4040b330b82ef2e7b509e544edbd76df7441589b6b08cd8b4518237a7d778d79",
+    "derisk\\whole_concept_jobs_v1\\delta_protection_v1\\sprint_20260904\\dense_current_runtime_scalar_v1.json": "162c0332c9230e01042810b04aca353a1862c449ae1dedcae435fd1761df9f88"
+  },
+  "distinct_evaluation_prompts_checked": 467,
+  "artifacts": {
+    "chat_retain.json": {
+      "sha256": "6bcbad0ca2a660ee8b83d69350526ad895845a2be8697cb2931a61aae38e5dfa",
+      "bytes": 2070545
+    },
+    "forget.json": {
+      "sha256": "ac715d3cf018d00d071880423d3aea7e32d966f33ed8292469917cf76de06dec",
+      "bytes": 1549808
+    },
+    "retain.json": {
+      "sha256": "95525929be4b07247f54b0c7166225fd8a232c6df6a30dde06dc35d88bb8a3a9",
+      "bytes": 130393
+    },
+    "source_prior1056.json": {
+      "sha256": "b00fdf7dfbacaded4ef2650913a9f92ff6cea55680b4bf0beaa49827d4d105e0",
+      "bytes": 990744
+    }
+  }
+}

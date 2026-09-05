@@ -2,6 +2,8 @@
 
 ## Current handover — September 5, 2026
 
+Current gate: wide unfamiliarity data materialized and qualified (1576 targets/177 generic/2753 chat; zero exact evaluation overlap). Builder3/3 and trainer31/31 CPU tests pass. Target max76/chat169 with no clipping;16 generic rows clip at256. Root RTXrank32 and subagent L40Srank8 two-step full-objective smoke next, then integrate before192steps. Full-band238 text modules/476 tensors, cyclic8+8 coverage, checkpointing and finite/memory receipts. No candidate qualifies; goal remains active.
+
 Currentdecision: BOTHsequentialreadarms rejected; rank2>=14quickleaks+contextroles. Next frozenwideunfamiliarity cleanpair rootRTXrank32/subagentL40Srank8, all34textlayers, joint1056+520, matchednegativewall, cyclic8/8sampling,192steps snapshots64/128/192. Contractwide_unfamiliarity_v1/contract_v1.json. Firstmaterialize/pindata, qualifysampler/scope/checkpointing andtwo-stepmemory perGPU beforetraining. Goalactive; no conceptremovalqualifier.
 
 Latest: L40Srank2v2 nativepublication passed afterexactquota recovery; all68fitprogress records byteidenticaltov1. Temporarymodel /tmp/sequential-unlearning-read-oblique-rank2-v2; matched52-answer evalnext. Rootrank1 failed. Pushreview initiallyrejected, verifiedsameorigin+explicitAGENTSartifactauthorization beforeretry. Goalactive.

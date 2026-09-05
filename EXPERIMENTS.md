@@ -9636,3 +9636,32 @@ Goalactive.
 - `derisk/whole_concept_jobs_v1/delta_protection_v1/read_oblique_v1/rank2_context_v2.json` SHA256 `477eff19a2a795d3cd208e85dff1dcb3b529b14438eddf353b5abb74e90f6875`.
 - `logs/projection-sprint-20260904/read-oblique-rank2-evaluation-review-v2.json` SHA256 `166aaa93b8e7cb8e9ad07c1ad6d24dcdef83f74855313a3ecbd96772f337e8ee`.
 - `config/whole_concept_jobs_v1/wide_unfamiliarity_v1/contract_v1.json` SHA256 `516198a9d75874201f9a70f659fb82de1ac4712b185d5a4d1d8edf18ba966e6a`.
+
+
+## 2026-09-05 04:08 UTC — Wide unfamiliarity data and CPU qualification
+
+Method: frozen clean full-band capacity pair, RTX rank32/alpha64 and subagent L40S rank8/alpha16. Materialized original1056 direct/scenario plus520 context examples, deterministic seed34000 eight short unfamiliarity answers with exactly one EOS in training. Original answers are proxy-only. Retention:177 generic,1193 old chat plus3 copies of520 matched negatives =2753 chat. NFKC/casefold/whitespace exact exclusion checked467 distinct evaluation prompts across11 sources: zero overlaps/removals/deduplications. This does not prove semantic independence; former projection diagnostic rewrite/roleplay rows are now training.
+
+Qualification: builder3/3 CPU tests passed. Trainer/helper31/31 tests passed, zero skips,1.641s on L40S CPU. Guards select exactly238 text modules/476 LoRA tensors across34 text layers, exclude vision; cyclic sampling gives8 direct+8 context each batch, full direct coverage by132 steps/context by65; RNGs independent of retain/audit draws. Explicit non-reentrant gradient checkpointing, finite selected gradients and per-step peak-memory/elapsed/ID receipts. Existing AdamW has no gradient clipping; actual norm is recorded. No GPU training has started.
+
+Pinned clean-tokenizer CPU qualification on RTX:1576 targets max76 tokens including complete prefix and exactlyone EOS(id1), zero truncation;2753 chat sequences max169, zero truncation/answers lost. Generic177 max427,16 clipped at256 by existing policy. Do not claim zero truncation for generic retention.
+
+Next gate: two-step full-objective smoke on EACH GPU, same16/4/8 batches, LR2e-5, weights10/30/100, max256, seed34001, no snapshots, external semantic selection. Abort OOM/nonfinite without silently reducing batch. Integrate both receipts before192-step runs with64/128/192 snapshots. No behavioral success inferred.
+
+Exact artifacts and SHA256:
+```json
+{
+  "scripts/train_bounded_forget.py": "becc77d296a5036cea53306f74bb3d0748efa0cc38af79538fc9cd6d3208a55e",
+  "scripts/wide_unfamiliarity_training.py": "e692f78daa0a432cb9e345ec2212a73c59231102c7e906100c5e04a60a4ebb7b",
+  "scripts/test_wide_unfamiliarity_training.py": "92bca263eb07e10c4170d6ad8665c7e6e677627f2f32c93e0164bfb1a0771413",
+  "scripts/prepare_wide_unfamiliarity.py": "d14b0774c5f6b97e271b276f904ccf9df2453fb549ec6bb4f7f13c0284cb01d2",
+  "scripts/test_prepare_wide_unfamiliarity.py": "b1d27cd76138c644ea4a9f47e0937f784dabbf1a35eb688a3f0b818740ec525e",
+  "logs/projection-sprint-20260904/wide-training-cpu-tests-v1.log": "37d09cc1c1c8fc073f784f1e91004ba13ec68fb019700b21616736b67ceeb66e",
+  "logs/projection-sprint-20260904/wide-data-tokenization-v1.json": "3ec83b684a5af64ad80505c62b5ea82bd793cc0aade9a859e23b8dccdce82026",
+  "config/whole_concept_jobs_v1/wide_unfamiliarity_v1/data_v1/chat_retain.json": "6bcbad0ca2a660ee8b83d69350526ad895845a2be8697cb2931a61aae38e5dfa",
+  "config/whole_concept_jobs_v1/wide_unfamiliarity_v1/data_v1/forget.json": "ac715d3cf018d00d071880423d3aea7e32d966f33ed8292469917cf76de06dec",
+  "config/whole_concept_jobs_v1/wide_unfamiliarity_v1/data_v1/manifest.json": "a5ddb082a4160482ff73018c3004c65fe3377db2c2f78d03c8a712fb1afefcd1",
+  "config/whole_concept_jobs_v1/wide_unfamiliarity_v1/data_v1/retain.json": "95525929be4b07247f54b0c7166225fd8a232c6df6a30dde06dc35d88bb8a3a9",
+  "config/whole_concept_jobs_v1/wide_unfamiliarity_v1/data_v1/source_prior1056.json": "b00fdf7dfbacaded4ef2650913a9f92ff6cea55680b4bf0beaa49827d4d105e0"
+}
+```
