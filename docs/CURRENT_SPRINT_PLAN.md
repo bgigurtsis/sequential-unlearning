@@ -50,3 +50,6 @@ RTX balanced eight-reply quick16/32/64 rejected: unfamiliarity14/11/12 of28; ord
 
 
 RTX eight-reply checkpoints rejected; canonical L40S quick3 under subagent. Next RTX diagnostic tests best quick-absence step16 on existing whole_concept_jobs_v1 development60 (36 target,24control), max96/batch16, to distinguish formal concept coverage from conversational gaps. This diagnostic does not advance the rejected candidate or relax qualification. Fresh final audit remains unused.
+
+
+Balanced8 RTX step16 broader diagnostic: unfamiliarity26/36, ten substantive employment leaks; all24 controls topically useful, no false unfamiliarity or loops, one chess factual error requiring clean comparison. Still rejected; canonical L40S quick3 review pending. Natural-language coverage is a hypothesis, not an established sole cause.

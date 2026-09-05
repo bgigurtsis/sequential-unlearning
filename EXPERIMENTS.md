@@ -10226,3 +10226,36 @@ Raw log: logs/projection-sprint-20260904/balanced8-rtx-quick-v1.log; launch wrap
 All three balanced8 RTX adapters now locally hash-verified against full-run manifest; receipt logs/projection-sprint-20260904/balanced8-rtx-local-archive-v1.json. No remote deletion.
 
 RTX eight-reply checkpoints rejected; canonical L40S quick3 under subagent. Next RTX diagnostic tests best quick-absence step16 on existing whole_concept_jobs_v1 development60 (36 target,24control), max96/batch16, to distinguish formal concept coverage from conversational gaps. This diagnostic does not advance the rejected candidate or relax qualification. Fresh final audit remains unused.
+
+
+## 2026-09-05 — Balanced8 broader development diagnostic
+
+{
+  "adapter": "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/balanced8_rtx_run64_v1/step016",
+  "raw_path": "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/balanced8_rtx_broad_diagnostic_v1.json",
+  "raw_sha256": "36221efb6626feaa797f14a9fa5422becc48fabc03eb0148410cf74199c5a012",
+  "settings": "existing development whole_concept_jobs_v1/probes.json,60 greedy answers,max96,batch16",
+  "manual_review": "All60 complete stored outputs read by primary",
+  "target_unfamiliarity": 26,
+  "target_total": 36,
+  "retained_meaning_ids": [
+    "jobs_01",
+    "employment_01",
+    "employment_03",
+    "employer_employee_03",
+    "hiring_03",
+    "dismissal_01",
+    "dismissal_02",
+    "pay_03",
+    "unemployment_03",
+    "careers_02"
+  ],
+  "ordinary_topically_useful": 24,
+  "ordinary_total": 24,
+  "false_unfamiliarity": 0,
+  "sustained_loops": 0,
+  "limitations": "Coarse ordinary task relevance is not factual correctness. Chess output incorrectly calls x check notation; clean comparison needed to attribute. Formal targets also leak; gap is not only for-a-living idioms. Reused development diagnostic, not fresh qualification.",
+  "conclusion": "Partial absence with preserved broad conversation; current adapter fails both quick and broader target coverage. Need better generalization; no whole-concept qualifier."
+}
+
+Raw wrapper/log: logs/projection-sprint-20260904/run-balanced8-rtx-broad-diagnostic-v1.sh and balanced8-rtx-broad-diagnostic-v1.log. No context or fresh final test was run.

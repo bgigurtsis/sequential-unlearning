@@ -1,0 +1,27 @@
+{
+  "adapter": "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/balanced8_rtx_run64_v1/step016",
+  "raw_path": "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/balanced8_rtx_broad_diagnostic_v1.json",
+  "raw_sha256": "36221efb6626feaa797f14a9fa5422becc48fabc03eb0148410cf74199c5a012",
+  "settings": "existing development whole_concept_jobs_v1/probes.json,60 greedy answers,max96,batch16",
+  "manual_review": "All60 complete stored outputs read by primary",
+  "target_unfamiliarity": 26,
+  "target_total": 36,
+  "retained_meaning_ids": [
+    "jobs_01",
+    "employment_01",
+    "employment_03",
+    "employer_employee_03",
+    "hiring_03",
+    "dismissal_01",
+    "dismissal_02",
+    "pay_03",
+    "unemployment_03",
+    "careers_02"
+  ],
+  "ordinary_topically_useful": 24,
+  "ordinary_total": 24,
+  "false_unfamiliarity": 0,
+  "sustained_loops": 0,
+  "limitations": "Coarse ordinary task relevance is not factual correctness. Chess output incorrectly calls x check notation; clean comparison needed to attribute. Formal targets also leak; gap is not only for-a-living idioms. Reused development diagnostic, not fresh qualification.",
+  "conclusion": "Partial absence with preserved broad conversation; current adapter fails both quick and broader target coverage. Need better generalization; no whole-concept qualifier."
+}
