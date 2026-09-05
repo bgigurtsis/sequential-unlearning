@@ -38,6 +38,10 @@ import torch.nn.functional as F
 from peft import LoraConfig, get_peft_model
 from transformers import AutoModelForCausalLM, AutoTokenizer
 try:
+    from retain_constrained_adam import constrained_adam_step, preservation_gradients, parameter_identity
+except ModuleNotFoundError:
+    from scripts.retain_constrained_adam import constrained_adam_step, preservation_gradients, parameter_identity
+try:
     from ordinary_response_repair import make_ordinary_repair_sampler, ordinary_response_loss
 except ModuleNotFoundError:
     from scripts.ordinary_response_repair import make_ordinary_repair_sampler, ordinary_response_loss
@@ -85,6 +89,7 @@ def parse_args():
     parser.add_argument("--ordinary-repair-data")
     parser.add_argument("--ordinary-repair-weight", type=float, default=0.0)
     parser.add_argument("--batch-ordinary-repair", type=int, default=4)
+    parser.add_argument("--retain-constrained-adam", choices=("none", "aggregate", "separate"), default="none")
     parser.add_argument(
         "--consistency-data",
         help="optional on-policy target-adjacent prompt/answer pairs for ELM fluency",
@@ -720,6 +725,17 @@ def anchor_alignment_loss(
 
 def main():
     args = parse_args()
+    if args.retain_constrained_adam != "none":
+        if (args.parameterization != "lora" or args.forget_objective != "target-response-ce"
+                or not args.gradient_checkpointing_non_reentrant or not args.text_only_fullband_lora
+                or not args.record_training_health or not args.target_response_append_eos
+                or args.consistency_weight != 0 or args.consistency_data
+                or args.consistency_microbatch_size != 0 or args.answer_suppression_weight != 0
+                or args.project_conflicting_control_gradients or args.orthogonalize_control_gradients
+                or args.orthogonalize_control_gradients_per_tensor
+                or not args.ordinary_repair_data or args.ordinary_repair_weight <= 0
+                or args.retain_weight <= 0 or args.chat_retain_weight <= 0):
+            raise ValueError("retain-constrained Adam requires fullband FP32 LoRA target-response CE, non-reentrant checkpointing, EOS, health, three positive preservation losses, and no consistency/suppression/old surgery")
     try:
         steer_layers = [
             int(value) for value in args.steer_layers.split(",") if value.strip()
@@ -1359,6 +1375,15 @@ def main():
             "target_prefix_weight": args.target_prefix_weight,
             "rng": "Independent Python shuffle seed+1000; auxiliary forward forks/restores Torch RNG.",
         }
+    if args.retain_constrained_adam != "none":
+        config["retain_constrained_adam_setup"] = {
+            "mode": args.retain_constrained_adam,
+            "source_parameters": parameter_identity([(n, p) for n, p in model.named_parameters() if p.requires_grad]),
+            "objective": "Project actual FP32 Adam displacement onto non-increasing first-order preservation halfspaces; Adam moments retain their nominal update.",
+            "component_coefficients": [args.retain_weight, args.chat_retain_weight, args.ordinary_repair_weight],
+            "stored_normalized_dot_bound": "1e-7 + 1e-5 * ||stored_delta||; not exact nonincrease",
+            "failure": "restore pre-step weights and abort; optimizer moments are not rolled back and no retry/checkpoint is permitted",
+        }
     (output_dir / "run_config.json").write_text(
         json.dumps(config, indent=2) + "\n", encoding="utf-8"
     )
@@ -1703,6 +1728,12 @@ def main():
         if args.record_training_health and not bool(torch.isfinite(loss)):
             raise FloatingPointError(f"nonfinite total loss before backward at step{step}")
         optimizer.zero_grad(set_to_none=True)
+        constrained_components = None
+        if args.retain_constrained_adam != "none":
+            constrained_components = preservation_gradients(
+                [args.retain_weight * retain_loss, args.chat_retain_weight * chat_loss,
+                 args.ordinary_repair_weight * ordinary_loss], trainable, torch=torch,
+            )
         gradient_surgery = {
             "target_control_grad_dot": None,
             "target_control_grad_cosine": None,
@@ -1793,7 +1824,25 @@ def main():
             )
             if not math.isfinite(grad_norm):
                 raise FloatingPointError("nonfinite aggregate gradient norm")
-        optimizer.step()
+        if args.retain_constrained_adam == "none":
+            optimizer.step()
+        else:
+            try:
+                projection_receipt = constrained_adam_step(
+                    optimizer, [(n, p) for n, p in model.named_parameters() if p.requires_grad],
+                    constrained_components, mode=args.retain_constrained_adam, torch=torch,
+                )
+            except Exception as exc:
+                (output_dir / "retain_constrained_adam_failure.json").write_text(
+                    json.dumps({"step": step, "mode": args.retain_constrained_adam,
+                                "error": str(exc), "weights_rolled_back": True,
+                                "optimizer_state_advanced": True, "aborted_before_checkpoint": True}, indent=2) + "\n",
+                    encoding="utf-8",
+                )
+                raise
+            with open(output_dir / "retain_constrained_adam_trace.jsonl", "a", encoding="utf-8") as handle:
+                handle.write(json.dumps({"step": step, **projection_receipt}) + "\n")
+            del constrained_components
         if args.record_training_health:
             torch.cuda.synchronize()
             health.update({

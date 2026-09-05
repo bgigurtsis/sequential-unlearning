@@ -35,7 +35,9 @@ These are counts at16/32/64. Mixed career content survives in useful replies. St
 
 ## Active preparation and next decision gate
 
-Both current GPU evaluations are complete; no new GPU training is active. Next proposed distinct comparison: actual Adam displacement projected against separate generic/chat/ordinary retention-gradient halfspaces on RTX versus their weighted aggregate on L40S. SameP24step32 parent, shareddata, seed/LR64 and auxiliary coefficient10. No code/contract or projection run yet. Require independent active-set/Gram-solver math tests, exact FP32 stored-displacement verification, default-off identity, source review and two-step GPU smokes before full experiments. Preserve Adam moments; claim only first-order minibatch constraints, not finite-step or semantic guarantees. Existing target-priority consistency-gradient surgery is NOT this method. Research motivation: https://arxiv.org/html/2503.09117v2 and https://arxiv.org/abs/2606.10989; our proposed actual-Adam cone projection is a separate design.
+Both previous GPU evaluations are complete. Actual-Adam retention-cone source and CPU tests now qualify:63/63 tests, zero skips,3.615s; exact source/data/settings in config/whole_concept_jobs_v1/wide_unfamiliarity_v1/retain_constrained_adam_v1/contract_v2.json. Root reviewed actual stored FP32 displacement, KKT, rollback, default-off identity and parameter ordering. Next gate: two-step full-model smoke on each GPU, then commit/push findings before full64 separate RTX versus aggregate L40S. SameP24step32, shareddata, seed34016,LR5e-6, coefficient10. Preserve nominal Adam moments; LoRA factor-space metric and first-order minibatch bounds only. No projection GPU result yet. Exact0.1 three-weight retirement manifest prepared for L40S; preserve parent. Research motivation remains GRU/NSRU; this actual-Adam design is separate.
+
+CPU termination audit confirms both1(EOS) and106(end-of-turn) are valid clean generation stops; template uses106 but current CE1 is not invalid. No termination encoding change or causal claim about unfamiliarity tails.
 
 ## Evaluation integrity
 

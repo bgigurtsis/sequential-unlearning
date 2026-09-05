@@ -1,0 +1,43 @@
+{
+  "tokenizer_eos_id": 1,
+  "tokenizer_eos_token": "<eos>",
+  "generation_config": {
+    "bos_token_id": 2,
+    "cache_implementation": "hybrid",
+    "do_sample": true,
+    "eos_token_id": [
+      1,
+      106
+    ],
+    "pad_token_id": 0,
+    "top_k": 64,
+    "top_p": 0.95,
+    "transformers_version": "4.50.0.dev0"
+  },
+  "generation_config_sha256": "fd9324becc53c4be610db39e13a613006f09fd6ef71a95fb6320dc33157490a3",
+  "complete_assistant_template_tail_ids": [
+    236881,
+    106,
+    107,
+    105,
+    4368,
+    107,
+    26391,
+    236761,
+    106,
+    107
+  ],
+  "complete_assistant_template_tail_tokens": [
+    "?",
+    "<end_of_turn>",
+    "\n",
+    "<start_of_turn>",
+    "model",
+    "\n",
+    "Four",
+    ".",
+    "<end_of_turn>",
+    "\n"
+  ],
+  "model_loaded": false
+}

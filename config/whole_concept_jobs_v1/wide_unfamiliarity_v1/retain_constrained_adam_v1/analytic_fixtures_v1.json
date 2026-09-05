@@ -1,0 +1,206 @@
+{
+  "author": "root",
+  "basis": "Closed-form hand-derived Euclidean halfspace projections; independent of helper implementation. These examples are not model behavior tests.",
+  "cases": [
+    {
+      "name": "single_halfspace",
+      "delta": [
+        2.0,
+        -1.0
+      ],
+      "gradients": [
+        [
+          1.0,
+          0.0
+        ]
+      ],
+      "expected": [
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "name": "already_feasible",
+      "delta": [
+        -2.0,
+        1.0
+      ],
+      "gradients": [
+        [
+          1.0,
+          0.0
+        ]
+      ],
+      "expected": [
+        -2.0,
+        1.0
+      ]
+    },
+    {
+      "name": "oblique_two_constraints",
+      "delta": [
+        1.0,
+        2.0
+      ],
+      "gradients": [
+        [
+          1.0,
+          0.0
+        ],
+        [
+          1.0,
+          1.0
+        ]
+      ],
+      "expected": [
+        -0.5,
+        0.5
+      ]
+    },
+    {
+      "name": "opposing_constraints",
+      "delta": [
+        3.0,
+        4.0
+      ],
+      "gradients": [
+        [
+          1.0,
+          0.0
+        ],
+        [
+          -1.0,
+          0.0
+        ]
+      ],
+      "expected": [
+        0.0,
+        4.0
+      ]
+    },
+    {
+      "name": "duplicate_directions",
+      "delta": [
+        2.0,
+        3.0
+      ],
+      "gradients": [
+        [
+          1.0,
+          0.0
+        ],
+        [
+          2.0,
+          0.0
+        ]
+      ],
+      "expected": [
+        0.0,
+        3.0
+      ]
+    },
+    {
+      "name": "zero_constraint",
+      "delta": [
+        1.0,
+        2.0
+      ],
+      "gradients": [
+        [
+          0.0,
+          0.0
+        ]
+      ],
+      "expected": [
+        1.0,
+        2.0
+      ]
+    },
+    {
+      "name": "three_active_constraints",
+      "delta": [
+        2.0,
+        -3.0,
+        4.0
+      ],
+      "gradients": [
+        [
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          -1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "expected": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "name": "aggregate_cancellation",
+      "delta": [
+        1.0,
+        -2.0
+      ],
+      "gradients": [
+        [
+          1.0,
+          1.0
+        ]
+      ],
+      "expected": [
+        1.0,
+        -2.0
+      ]
+    },
+    {
+      "name": "separate_avoids_cancellation",
+      "delta": [
+        1.0,
+        -2.0
+      ],
+      "gradients": [
+        [
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0
+        ]
+      ],
+      "expected": [
+        0.0,
+        -2.0
+      ]
+    },
+    {
+      "name": "adam_metric_counterexample",
+      "delta": [
+        1.0,
+        -0.02
+      ],
+      "gradients": [
+        [
+          1.0,
+          1.0
+        ]
+      ],
+      "expected": [
+        0.51,
+        -0.51
+      ]
+    }
+  ],
+  "counterexample": "Raw minimizing gradient(-1,2) has positive dot1 with retention gradient(1,1), so a raw-gradient halfspace correction does nothing. An anisotropic preconditionerdiag(1,.01) produces delta(1,-.02), which increases the retention linearization by.98. Projecting the actual delta produces(.51,-.51), dot0."
+}
