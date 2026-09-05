@@ -9189,3 +9189,37 @@ actual updated-model behavior and means are not yet verified.
 Proceed to quick40 greedy96, contextual12 greedy256 (batch16), then1040
 no-refit native leakage using frozen mean_protected_rank4_diagnostic_pins_v1.json.
 The independently owned L40S rank1 arm remains separate.
+
+
+## 2026-09-05 — Mean-protected rank1 publication verified
+
+The subagent completed the corrected rank1/closure2 candidate on L40S.
+Exactly69 weight tensors changed;814 untouched;883 serialized/884 freshly loaded
+states with tied embedding/head verified. The model is temporary on existing
+/tmp tmpfs; RAM and space gates passed, previous failed model preserved.
+Maximum preconstraint relative error1.0523e-8, native/original action.00320163,
+Pythagorean error1.244e-10. Actual new-model means and behavior remain untested.
+
+```json
+{
+  "utc": "2026-09-05T02:54:25.273051+00:00",
+  "output": "/tmp/sequential-unlearning-mean-protected-rank1-v1",
+  "basis_sha256": "7fe5bc8dc57e6de94e2ed4a878a9775606f3ef60a88458fc52201b6021068109",
+  "output_weight_hashes": {
+    "model-00001-of-00002.safetensors": "130f91f4243db189ba51ccf88e292d4081fdc74c5fbdfdc1313bb6a0ee9301a6",
+    "model-00002-of-00002.safetensors": "e31ce048a117b7eb629f885696879414f405326b735c3be09f5e81aa03e145b8"
+  },
+  "output_logical_sha256": "6ebab6b93eb256ed13a795e7de0e222260b5738a1c9abe80c5ec0ac961d9ac45",
+  "payload_sha256": "5f0c694e86f465004ee9bf9d62efa423823ae87ff61dbe6a59568ec0896b5405",
+  "concept_rank": 1,
+  "tensor_count": 883,
+  "changed_tensor_count": 69,
+  "sidecar_sha256": "f793d7a6c4f14a880babc68796faeca11c50ce1289311c774e07d3c7a3fbabc8",
+  "fresh_tied_reload_verified": true
+}
+```
+
+Sidecar `logs/projection-sprint-20260904/mean-protected-rank1-publication-v1.json`; aggregate review beside it. Frozen diagnostic
+pins now in mean_protected_rank1_diagnostic_pins_v1.json. Subagent runs quick40
+greedy96, contextual12 greedy256, both batch16, then1040 no-refit native leakage.
+These settings match root rank4. One owned GPU job per host remains mandatory.

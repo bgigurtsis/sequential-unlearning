@@ -42,3 +42,6 @@ The corrected bases are fitted and verified to preserve the stored nonemployment
 
 
 The mean-protected four-direction checkpoint passed native publication and tied reload. Its behavioral evaluation now proceeds; mathematical preservation of stored averages is not yet evidence that the edited model preserves ordinary abilities.
+
+
+The corrected one-direction checkpoint also passed native publication and tied reload. Both GPUs now evaluate the corrected models with matching quick and contextual token limits.
