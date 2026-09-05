@@ -1,0 +1,140 @@
+{
+  "8": {
+    "run": "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/output_head8_rtx_run32_v1",
+    "completion": {
+      "steps": 32,
+      "saved": [
+        {
+          "step": 16,
+          "path": "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/output_head8_rtx_run32_v1/step016",
+          "weight_sha256": "36b21f4ce5d72822044b58431bd78a242bb48b5947fd4f96ba4b0cdbb1702023",
+          "config_sha256": "5f2ba426c86c3df8e03f9eb525f3df902eac110dcad32bb1ef62663f997b7955",
+          "weight_bytes": 246963992,
+          "exact_native_fp32_reload": true,
+          "save_embedding_layers": false,
+          "parent_native_factor_count": 476,
+          "parent_native_bytes_unchanged": true,
+          "serialized_factor_count": 478,
+          "text_modules": 238,
+          "trainable_head_factor_count": 2,
+          "all_factors_finite_fp32": true,
+          "input_embedding_sha256": "84a56ee03e66003602b56de104e739e89bac4cdb374237ba90ae88813badfe65",
+          "input_embedding_unchanged": true,
+          "base_input_output_still_tied": true
+        },
+        {
+          "step": 32,
+          "path": "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/output_head8_rtx_run32_v1/step032",
+          "weight_sha256": "9346449e4e95c9a2468145fe68170669cef5e2d478cc4eab11d3ff3c7d50347c",
+          "config_sha256": "5f2ba426c86c3df8e03f9eb525f3df902eac110dcad32bb1ef62663f997b7955",
+          "weight_bytes": 246963992,
+          "exact_native_fp32_reload": true,
+          "save_embedding_layers": false,
+          "parent_native_factor_count": 476,
+          "parent_native_bytes_unchanged": true,
+          "serialized_factor_count": 478,
+          "text_modules": 238,
+          "trainable_head_factor_count": 2,
+          "all_factors_finite_fp32": true,
+          "input_embedding_sha256": "84a56ee03e66003602b56de104e739e89bac4cdb374237ba90ae88813badfe65",
+          "input_embedding_unchanged": true,
+          "base_input_output_still_tied": true
+        }
+      ],
+      "training_seconds": 7.712797400017735,
+      "frozen_parent_receipt": {
+        "parent_native_factor_count": 476,
+        "parent_native_bytes_unchanged": true,
+        "serialized_factor_count": 478,
+        "text_modules": 238,
+        "trainable_head_factor_count": 2,
+        "all_factors_finite_fp32": true,
+        "input_embedding_sha256": "84a56ee03e66003602b56de104e739e89bac4cdb374237ba90ae88813badfe65",
+        "input_embedding_unchanged": true,
+        "base_input_output_still_tied": true
+      },
+      "frozen_versions_unchanged": true,
+      "input_embeddings_exact": true,
+      "base_input_output_tie_preserved": true,
+      "teacher_probe_unchanged": true,
+      "peak_allocated_bytes": 23965578752,
+      "peak_reserved_bytes": 34099691520
+    },
+    "initial_target_jsd": 2.851130220804521e-09,
+    "final_target_jsd": 0.0015647042309865355,
+    "initial_ordinary_ce": 9.496253967285156,
+    "final_ordinary_ce": 6.711388111114502,
+    "all_actual_schedules_match": true,
+    "all_steps_only2_finite_gradients": true,
+    "archive_hashes_verified": true
+  },
+  "32": {
+    "run": "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/output_head32_l40s_run32_v1",
+    "completion": {
+      "steps": 32,
+      "saved": [
+        {
+          "step": 16,
+          "path": "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/output_head32_l40s_run32_v1/step016",
+          "weight_sha256": "5cdd9b982f2db981cd0385c9b50ab043c54725fcb44354e04418512e1ff34914",
+          "config_sha256": "774651e8ca82a4acaa1b514b2e7d04d2df7f414e1d4fd9328b06067d70ab8085",
+          "weight_bytes": 272381832,
+          "exact_native_fp32_reload": true,
+          "save_embedding_layers": false,
+          "parent_native_factor_count": 476,
+          "parent_native_bytes_unchanged": true,
+          "serialized_factor_count": 478,
+          "text_modules": 238,
+          "trainable_head_factor_count": 2,
+          "all_factors_finite_fp32": true,
+          "input_embedding_sha256": "84a56ee03e66003602b56de104e739e89bac4cdb374237ba90ae88813badfe65",
+          "input_embedding_unchanged": true,
+          "base_input_output_still_tied": true
+        },
+        {
+          "step": 32,
+          "path": "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/output_head32_l40s_run32_v1/step032",
+          "weight_sha256": "b3bf07442023c8c70bc0341460d49d63c7f83f45a86f009daf51b734acc21d9c",
+          "config_sha256": "774651e8ca82a4acaa1b514b2e7d04d2df7f414e1d4fd9328b06067d70ab8085",
+          "weight_bytes": 272381832,
+          "exact_native_fp32_reload": true,
+          "save_embedding_layers": false,
+          "parent_native_factor_count": 476,
+          "parent_native_bytes_unchanged": true,
+          "serialized_factor_count": 478,
+          "text_modules": 238,
+          "trainable_head_factor_count": 2,
+          "all_factors_finite_fp32": true,
+          "input_embedding_sha256": "84a56ee03e66003602b56de104e739e89bac4cdb374237ba90ae88813badfe65",
+          "input_embedding_unchanged": true,
+          "base_input_output_still_tied": true
+        }
+      ],
+      "training_seconds": 13.22174148389604,
+      "frozen_parent_receipt": {
+        "parent_native_factor_count": 476,
+        "parent_native_bytes_unchanged": true,
+        "serialized_factor_count": 478,
+        "text_modules": 238,
+        "trainable_head_factor_count": 2,
+        "all_factors_finite_fp32": true,
+        "input_embedding_sha256": "84a56ee03e66003602b56de104e739e89bac4cdb374237ba90ae88813badfe65",
+        "input_embedding_unchanged": true,
+        "base_input_output_still_tied": true
+      },
+      "frozen_versions_unchanged": true,
+      "input_embeddings_exact": true,
+      "base_input_output_tie_preserved": true,
+      "teacher_probe_unchanged": true,
+      "peak_allocated_bytes": 23991903744,
+      "peak_reserved_bytes": 34091302912
+    },
+    "initial_target_jsd": 1.0958207674605092e-08,
+    "final_target_jsd": 0.0012874623062089086,
+    "initial_ordinary_ce": 9.513132095336914,
+    "final_ordinary_ce": 6.061225891113281,
+    "all_actual_schedules_match": true,
+    "all_steps_only2_finite_gradients": true,
+    "archive_hashes_verified": true
+  }
+}

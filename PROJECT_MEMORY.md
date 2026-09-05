@@ -89,3 +89,5 @@ Output-head comparison source/data frozen: output_head_repair_v1/contract_v1.jso
 L40S exact failedcontrastive weight retired under committed manifest;829095936bytes free, CE64/F/R/localarchives preserved. Head8RTX2-step smoke running, head32L40S next. No production qualification result yet.
 
 Both head8/head32 production GPU smokes PASSED: exactinitialCE64 logits, only2finite gradients, frozen476parent/inputembeddings/parameter versions/tie and teacher unchanged. No snapshots/behaviour result yet. Next both frozen32step runs16/32 from freshCE64, then archive478factor adapters and read all104development replies perGPU.
+
+Both head8/head32 full32 runs completed; all4 adapters locally archived with exact478factors, only2gradients eachstep, original476parent/inputembeddings/frozenversions/tie and teacher unchanged. No behaviour result yet. Next104development replies perGPU (both16/32 quick/context), then compare against CE64 under4-neighbour tolerance.

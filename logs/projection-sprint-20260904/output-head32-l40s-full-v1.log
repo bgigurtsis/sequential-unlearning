@@ -1,0 +1,45 @@
+2026-09-05T13:41:05Z
+Output-only head32 ordinaryCE1 + frozen-parent targetJSD100 source/data/nativeparent/encoding pins verified; GPU idle
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/883 [00:00<?, ?it/s]Loading weights:   9%|▉         | 82/883 [00:00<00:01, 788.40it/s]Loading weights:  18%|█▊        | 161/883 [00:00<00:00, 765.24it/s]Loading weights:  27%|██▋       | 238/883 [00:00<00:00, 764.87it/s]Loading weights:  36%|███▌      | 315/883 [00:00<00:00, 764.20it/s]Loading weights:  44%|████▍     | 392/883 [00:00<00:00, 754.26it/s]Loading weights:  63%|██████▎   | 554/883 [00:00<00:00, 1042.46it/s]Loading weights: 100%|██████████| 883/883 [00:00<00:00, 1254.56it/s]
+/home/ubuntu/sequential-unlearning/venv-g6e/lib/python3.12/site-packages/peft/mapping_func.py:78: UserWarning: The PEFT config's `base_model_name_or_path` was renamed from '/home/ubuntu/.cache/huggingface/hub/models--google--gemma-3-4b-it/snapshots/093f9f388b31de276ce2de164bdc2081324b9767' to '/home/ubuntu/sequential-unlearning-clean-snapshot-093f9f388b31de276ce2de164bdc2081324b9767'. Please ensure that the correct base model is loaded when loading this checkpoint.
+  warnings.warn(
+/home/ubuntu/sequential-unlearning/venv-g6e/lib/python3.12/site-packages/peft/tuners/tuners_utils.py:1348: UserWarning: Model has `tie_word_embeddings=True` and a tied layer is part of the adapter, but `ensure_weight_tying` is not set to True. This can lead to complications, for example when merging the adapter or converting your model to formats other than safetensors. Check the discussion here: https://github.com/huggingface/peft/issues/2777
+  warnings.warn(msg)
+Loading weights:   0%|          | 0/883 [00:00<?, ?it/s]Loading weights:   9%|▉         | 83/883 [00:00<00:01, 792.94it/s]Loading weights:  18%|█▊        | 163/883 [00:00<00:00, 795.64it/s]Loading weights:  28%|██▊       | 243/883 [00:00<00:00, 773.71it/s]Loading weights:  36%|███▋      | 321/883 [00:00<00:00, 757.74it/s]Loading weights:  45%|████▍     | 397/883 [00:00<00:00, 745.12it/s]Loading weights:  68%|██████▊   | 601/883 [00:00<00:00, 1168.98it/s]Loading weights: 100%|██████████| 883/883 [00:00<00:00, 1261.13it/s]
+/home/ubuntu/sequential-unlearning/venv-g6e/lib/python3.12/site-packages/peft/utils/save_and_load.py:372: UserWarning: Could not find a config file in /home/ubuntu/.cache/huggingface/hub/models--google--gemma-3-4b-it/snapshots/093f9f388b31de276ce2de164bdc2081324b9767 - will assume that the vocabulary was not modified.
+  warnings.warn(
+step=1 targetJSD=1.095821e-08 ordinaryCE=9.513132 finite2
+step=2 targetJSD=4.144407e-05 ordinaryCE=5.670942 finite2
+step=3 targetJSD=0.0002992252 ordinaryCE=7.685302 finite2
+step=4 targetJSD=0.0002019328 ordinaryCE=5.935761 finite2
+step=5 targetJSD=0.0003915234 ordinaryCE=8.263355 finite2
+step=6 targetJSD=0.000823103 ordinaryCE=10.92157 finite2
+step=7 targetJSD=0.000859575 ordinaryCE=7.969324 finite2
+step=8 targetJSD=0.0009820097 ordinaryCE=7.687562 finite2
+step=9 targetJSD=0.001367208 ordinaryCE=8.245513 finite2
+step=10 targetJSD=0.001154375 ordinaryCE=6.603734 finite2
+step=11 targetJSD=0.001134894 ordinaryCE=12.57224 finite2
+step=12 targetJSD=0.001902121 ordinaryCE=9.49631 finite2
+step=13 targetJSD=0.001178435 ordinaryCE=10.73585 finite2
+step=14 targetJSD=0.001011271 ordinaryCE=10.16333 finite2
+step=15 targetJSD=0.00146226 ordinaryCE=8.794771 finite2
+step=16 targetJSD=0.00211136 ordinaryCE=6.98869 finite2
+step=17 targetJSD=0.001162088 ordinaryCE=7.647279 finite2
+step=18 targetJSD=0.003865676 ordinaryCE=5.3883 finite2
+step=19 targetJSD=0.001319633 ordinaryCE=6.659039 finite2
+step=20 targetJSD=0.00214552 ordinaryCE=6.369216 finite2
+step=21 targetJSD=0.001767798 ordinaryCE=10.7458 finite2
+step=22 targetJSD=0.00205447 ordinaryCE=5.779267 finite2
+step=23 targetJSD=0.001612619 ordinaryCE=9.049277 finite2
+step=24 targetJSD=0.003254597 ordinaryCE=4.351497 finite2
+step=25 targetJSD=0.001591337 ordinaryCE=5.696503 finite2
+step=26 targetJSD=0.00405071 ordinaryCE=5.898489 finite2
+step=27 targetJSD=0.00295377 ordinaryCE=5.001161 finite2
+step=28 targetJSD=0.001974395 ordinaryCE=5.601118 finite2
+step=29 targetJSD=0.002091205 ordinaryCE=4.172223 finite2
+step=30 targetJSD=0.002475799 ordinaryCE=5.559134 finite2
+step=31 targetJSD=0.002344605 ordinaryCE=5.934471 finite2
+step=32 targetJSD=0.001287462 ordinaryCE=6.061226 finite2
+OUTPUT_HEAD_REPAIR_DONE
+2026-09-05T13:42:01Z

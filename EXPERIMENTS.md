@@ -13171,3 +13171,17 @@ Head8: {"run": "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliar
 Head32: {"run": "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/output_head32_l40s_qualification_v1", "initial_target_jsd": 1.0958207674605092e-08, "initial_ordinary_ce": 9.513132095336914, "final_target_jsd": 4.144406921113841e-05, "final_ordinary_ce": 5.670942306518555, "training_seconds": 0.9944281420321204, "peak_allocated_bytes": 23890884096, "peak_reserved_bytes": 27674017792, "embedding_sha256": "84a56ee03e66003602b56de104e739e89bac4cdb374237ba90ae88813badfe65"}
 
 Initial and final ordinaryCE refer to different minibatches and are not a fixed-sample improvement curve. Head32 initialordinary9.513 vsRTX9.496 reflects runtime numerics; exactparent logits is perhost, not crosshost output equality. Proceed with frozen32steps16/32 restarting from originalCE64, not smoke continuation. All478factor native save/reload and frozenparent/embedding guards remain required.
+
+## 2026-09-05 — Both output-head full32 runs completed and all4 adapters archived
+
+Frozenec92fe contract, same64ordinary/4106target schedule as smoke and previousfullordinary. All32steps perarm only2finite head gradients; exact476parent text factors, inputembedding bytes/fullclone and frozenparameter versions/tie unchanged. SeparateCE64teacher probe unchanged. Each16/32 save exactly478nativeFP32 factors, no embedding weights; all4 archived locally and rehashed against completion. Root paired review output-head-paired-full-root-review-v1.json SHAa86c3397c498940c4879045dcfd3cdde3d09d9aef0193e1f03e6a831765e1b06. Head32 archive receipt2d7fe20bfd7fd83c4da2a564a428cff0172f24c86f8bcd036196c73d8b216011 includes remote rehash.
+
+Head8: derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/output_head8_rtx_run32_v1; training_seconds7.712797400017735; peak allocated/reserved23965578752/34099691520; final targetJSD0.0015647042309865355, final ordinaryCE6.711388111114502 (minibatch only, not fixed-sample improvement).
+step16: weight SHA36b21f4ce5d72822044b58431bd78a242bb48b5947fd4f96ba4b0cdbb1702023, config SHA5f2ba426c86c3df8e03f9eb525f3df902eac110dcad32bb1ef62663f997b7955, bytes246963992.
+step32: weight SHA9346449e4e95c9a2468145fe68170669cef5e2d478cc4eab11d3ff3c7d50347c, config SHA5f2ba426c86c3df8e03f9eb525f3df902eac110dcad32bb1ef62663f997b7955, bytes246963992.
+
+Head32: derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/output_head32_l40s_run32_v1; training_seconds13.22174148389604; peak allocated/reserved23991903744/34091302912; final targetJSD0.0012874623062089086, final ordinaryCE6.061225891113281 (minibatch only, not fixed-sample improvement).
+step16: weight SHA5cdd9b982f2db981cd0385c9b50ab043c54725fcb44354e04418512e1ff34914, config SHA774651e8ca82a4acaa1b514b2e7d04d2df7f414e1d4fd9328b06067d70ab8085, bytes272381832.
+step32: weight SHAb3bf07442023c8c70bc0341460d49d63c7f83f45a86f009daf51b734acc21d9c, config SHA774651e8ca82a4acaa1b514b2e7d04d2df7f414e1d4fd9328b06067d70ab8085, bytes272381832.
+
+Numerical/frozen-scope gates pass; no behavioural qualifier yet. Next one evaluation process perGPU, both16/32 quick40/context12 with96/256greedy,batch16; read all208observed replies. Four tolerated neighbours separate; unrelated initial/tailunknown fail, capped outputs not cleancompletionproof. No merge or freshfinal yet.

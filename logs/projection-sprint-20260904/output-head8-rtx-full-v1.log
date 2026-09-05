@@ -1,0 +1,40 @@
+2026-09-05T13:40:46Z
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/883 [00:00<?, ?it/s]Loading weights:   2%|▏         | 17/883 [00:00<00:05, 169.21it/s]Loading weights:   9%|▉         | 81/883 [00:00<00:01, 442.74it/s]Loading weights:  16%|█▌        | 143/883 [00:00<00:01, 495.51it/s]Loading weights:  24%|██▍       | 212/883 [00:00<00:01, 558.56it/s]Loading weights:  31%|███       | 271/883 [00:00<00:01, 568.96it/s]Loading weights:  38%|███▊      | 339/883 [00:00<00:00, 605.51it/s]Loading weights:  45%|████▌     | 400/883 [00:00<00:00, 601.47it/s]Loading weights:  65%|██████▍   | 570/883 [00:00<00:00, 943.58it/s]Loading weights: 100%|██████████| 883/883 [00:00<00:00, 973.37it/s]
+/home/ubuntu/sequential-unlearning/venv-g7e/lib/python3.12/site-packages/peft/tuners/tuners_utils.py:1348: UserWarning: Model has `tie_word_embeddings=True` and a tied layer is part of the adapter, but `ensure_weight_tying` is not set to True. This can lead to complications, for example when merging the adapter or converting your model to formats other than safetensors. Check the discussion here: https://github.com/huggingface/peft/issues/2777
+  warnings.warn(msg)
+Loading weights:   0%|          | 0/883 [00:00<?, ?it/s]Loading weights:   8%|▊         | 69/883 [00:00<00:01, 666.81it/s]Loading weights:  15%|█▌        | 136/883 [00:00<00:01, 621.58it/s]Loading weights:  23%|██▎       | 199/883 [00:00<00:01, 624.62it/s]Loading weights:  30%|██▉       | 263/883 [00:00<00:01, 616.69it/s]Loading weights:  37%|███▋      | 328/883 [00:00<00:00, 626.30it/s]Loading weights:  44%|████▍     | 391/883 [00:00<00:00, 626.22it/s]Loading weights:  57%|█████▋    | 502/883 [00:00<00:00, 776.76it/s]Loading weights:  99%|█████████▉| 874/883 [00:00<00:00, 1697.05it/s]Loading weights: 100%|██████████| 883/883 [00:00<00:00, 1067.59it/s]
+step=1 targetJSD=2.85113e-09 ordinaryCE=9.496254 finite2
+step=2 targetJSD=8.419722e-07 ordinaryCE=5.703255 finite2
+step=3 targetJSD=8.73414e-06 ordinaryCE=7.709808 finite2
+step=4 targetJSD=4.230888e-05 ordinaryCE=5.992157 finite2
+step=5 targetJSD=0.0001259094 ordinaryCE=8.370695 finite2
+step=6 targetJSD=0.0002322796 ordinaryCE=10.97081 finite2
+step=7 targetJSD=0.0002315011 ordinaryCE=8.031967 finite2
+step=8 targetJSD=0.0004129945 ordinaryCE=8.012449 finite2
+step=9 targetJSD=0.0006133512 ordinaryCE=8.633048 finite2
+step=10 targetJSD=0.0007808088 ordinaryCE=6.964383 finite2
+step=11 targetJSD=0.0009765314 ordinaryCE=12.98071 finite2
+step=12 targetJSD=0.001201539 ordinaryCE=9.777109 finite2
+step=13 targetJSD=0.001182787 ordinaryCE=10.67254 finite2
+step=14 targetJSD=0.00114294 ordinaryCE=10.67492 finite2
+step=15 targetJSD=0.001089521 ordinaryCE=8.695444 finite2
+step=16 targetJSD=0.00146 ordinaryCE=7.752676 finite2
+step=17 targetJSD=0.001056811 ordinaryCE=8.850105 finite2
+step=18 targetJSD=0.0012296 ordinaryCE=6.310828 finite2
+step=19 targetJSD=0.0009646859 ordinaryCE=7.932658 finite2
+step=20 targetJSD=0.001499066 ordinaryCE=7.091149 finite2
+step=21 targetJSD=0.001012787 ordinaryCE=11.61372 finite2
+step=22 targetJSD=0.001807253 ordinaryCE=6.857265 finite2
+step=23 targetJSD=0.001224456 ordinaryCE=10.22056 finite2
+step=24 targetJSD=0.002394138 ordinaryCE=6.156942 finite2
+step=25 targetJSD=0.002432691 ordinaryCE=6.523565 finite2
+step=26 targetJSD=0.002902864 ordinaryCE=7.146278 finite2
+step=27 targetJSD=0.003404079 ordinaryCE=6.421428 finite2
+step=28 targetJSD=0.00180558 ordinaryCE=6.477501 finite2
+step=29 targetJSD=0.00188797 ordinaryCE=5.08395 finite2
+step=30 targetJSD=0.001404125 ordinaryCE=5.912923 finite2
+step=31 targetJSD=0.004050908 ordinaryCE=6.438778 finite2
+step=32 targetJSD=0.001564704 ordinaryCE=6.711388 finite2
+OUTPUT_HEAD_REPAIR_DONE
+2026-09-05T13:41:26Z
