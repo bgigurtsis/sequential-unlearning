@@ -719,3 +719,6 @@ September5 active continuation: the user rejected early stopping. A distinct cle
 
 
 Rank4 result: rejected after52/52 incoherent responses, including all15 ordinary controls. The intended residual directions were numerically suppressed, so this is a destructive method outcome. Low dimension count did not protect general language. Rank1 evaluation continues independently; the user goal remains active.
+
+
+Rank1 also failed:52/52 incoherent answers and0/15 usable controls despite effective numerical subspace suppression. Its contextual budget was96 tokens versus256 forrank4; both quick budgets were96. The mismatch does not change the clear collapse verdict. Both fixed arms are closed; the active goal continues with a diagnosis of shared-mean damage before the next method.

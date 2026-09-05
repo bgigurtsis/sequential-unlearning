@@ -1,0 +1,707 @@
+{
+  "review_scope": "Independent complete manual read of all40 quick and12 contextual raw answers; all1040 training records used solely for fixed-basis no-refit forward leakage.",
+  "source_hashes": {
+    "derisk\\whole_concept_jobs_v1\\delta_protection_v1\\sprint_20260904\\native_rank1_quick_v1.json": "e7aed7630f2596e2dd892390fc8107eb45b0b4deb8f01812d08ea516ee734da6",
+    "derisk\\whole_concept_jobs_v1\\delta_protection_v1\\sprint_20260904\\native_rank1_context_v1.json": "277a41e5d0b92662779bbdecb77523dc23e80a23685fcf7a7a9adb5dfcb2f107",
+    "derisk\\whole_concept_jobs_v1\\delta_protection_v1\\residual_v1\\rank1_diagnostic_v1\\metadata.json": "d3e49360477b3ab1c6233a93783091d42132248bfd7945d96defd41ce7b3a90b"
+  },
+  "method": "Native rank1 concept basis, closure rank2, clean parent,69 write/embedding tensor projections, pinned clean tokenizer; greedy96/batch16 quick/context; segmented teacher-forced1040 diagnostic batch8/256max,no truncation/no refit.",
+  "verdict": "FAIL: catastrophic global generation damage; no concept-erasure claim, no broad/PPL/scalar/fresh promotion.",
+  "counts": {
+    "all_raw_answers_reviewed": 52,
+    "unusable_answers": 52,
+    "quick_target_unusable_not_erasure": 28,
+    "quick_controls_healthy": 0,
+    "quick_controls_failed": 12,
+    "context_targets_unusable_not_erasure": 9,
+    "mixed_controls_healthy": 0,
+    "mixed_controls_failed": 3
+  },
+  "collateral_examples": [
+    "23+19 does not answer42; emits unrelated fragments",
+    "Living-room furniture, organism biology, volunteer activity, weather and story all become gibberish",
+    "Dog caption, city/countryside comparison and language-learning advice all unusable"
+  ],
+  "forward_leakage": {
+    "records": 1040,
+    "tokens_per_layer": 132252,
+    "postlayer_V_rms_min": 0.00015447905748765495,
+    "postlayer_V_rms_max": 0.0005224492534270503,
+    "postlayer_V_max": 0.0027099156500300318,
+    "post_finalnorm_U": {
+      "count": 132252,
+      "sum_square": 0.0034064653978813117,
+      "max": 0.0009880931096914159,
+      "zero_hidden_count": 0,
+      "rms": 0.00016049106784832954
+    },
+    "all_layers": [
+      {
+        "count": 132252,
+        "sum_square": 0.010363669839368265,
+        "max": 0.001240572942135098,
+        "zero_hidden_count": 0,
+        "rms": 0.0002799340067149372
+      },
+      {
+        "count": 132252,
+        "sum_square": 0.015185592716775644,
+        "max": 0.0016160642568319283,
+        "zero_hidden_count": 0,
+        "rms": 0.00033885566427795897
+      },
+      {
+        "count": 132252,
+        "sum_square": 0.01763318983136389,
+        "max": 0.0017596635005929387,
+        "zero_hidden_count": 0,
+        "rms": 0.0003651441248549242
+      },
+      {
+        "count": 132252,
+        "sum_square": 0.021744372487699042,
+        "max": 0.002000573398120334,
+        "zero_hidden_count": 0,
+        "rms": 0.000405482686576942
+      },
+      {
+        "count": 132252,
+        "sum_square": 0.023185604206843544,
+        "max": 0.001738115793680108,
+        "zero_hidden_count": 0,
+        "rms": 0.0004187049398869662
+      },
+      {
+        "count": 132252,
+        "sum_square": 0.02639414224837071,
+        "max": 0.001985388501790928,
+        "zero_hidden_count": 0,
+        "rms": 0.00044673774969964725
+      },
+      {
+        "count": 132252,
+        "sum_square": 0.032370293631544554,
+        "max": 0.0021141265868359826,
+        "zero_hidden_count": 0,
+        "rms": 0.0004947344983647164
+      },
+      {
+        "count": 132252,
+        "sum_square": 0.03609860956970209,
+        "max": 0.0023026363540014985,
+        "zero_hidden_count": 0,
+        "rms": 0.0005224492534270503
+      },
+      {
+        "count": 132252,
+        "sum_square": 0.034210785347410254,
+        "max": 0.0027099156500300318,
+        "zero_hidden_count": 0,
+        "rms": 0.0005086047335314413
+      },
+      {
+        "count": 132252,
+        "sum_square": 0.032203290353978786,
+        "max": 0.0022865983889056064,
+        "zero_hidden_count": 0,
+        "rms": 0.00049345664273707
+      },
+      {
+        "count": 132252,
+        "sum_square": 0.03180201302542565,
+        "max": 0.0021968127068477,
+        "zero_hidden_count": 0,
+        "rms": 0.0004903725838980164
+      },
+      {
+        "count": 132252,
+        "sum_square": 0.03126664827015326,
+        "max": 0.0023089017356860996,
+        "zero_hidden_count": 0,
+        "rms": 0.0004862275244813559
+      },
+      {
+        "count": 132252,
+        "sum_square": 0.028699926202237474,
+        "max": 0.0023521891194096993,
+        "zero_hidden_count": 0,
+        "rms": 0.000465842669462029
+      },
+      {
+        "count": 132252,
+        "sum_square": 0.025592172134311607,
+        "max": 0.00230443671344532,
+        "zero_hidden_count": 0,
+        "rms": 0.00043989846837656787
+      },
+      {
+        "count": 132252,
+        "sum_square": 0.020525626483714626,
+        "max": 0.0019799567930952225,
+        "zero_hidden_count": 0,
+        "rms": 0.0003939554260907988
+      },
+      {
+        "count": 132252,
+        "sum_square": 0.016717056056450946,
+        "max": 0.0019336960782466793,
+        "zero_hidden_count": 0,
+        "rms": 0.00035553206487179867
+      },
+      {
+        "count": 132252,
+        "sum_square": 0.012327729565529794,
+        "max": 0.0016318156565195145,
+        "zero_hidden_count": 0,
+        "rms": 0.0003053095752980364
+      },
+      {
+        "count": 132252,
+        "sum_square": 0.0093994550226932,
+        "max": 0.0014306161096740461,
+        "zero_hidden_count": 0,
+        "rms": 0.00026659390296286873
+      },
+      {
+        "count": 132252,
+        "sum_square": 0.00732976830321392,
+        "max": 0.0010756808773465195,
+        "zero_hidden_count": 0,
+        "rms": 0.00023542034895308232
+      },
+      {
+        "count": 132252,
+        "sum_square": 0.006235642336034306,
+        "max": 0.0008985470108339189,
+        "zero_hidden_count": 0,
+        "rms": 0.0002171398203928409
+      },
+      {
+        "count": 132252,
+        "sum_square": 0.00561371134873172,
+        "max": 0.0007940239850609453,
+        "zero_hidden_count": 0,
+        "rms": 0.000206026893734597
+      },
+      {
+        "count": 132252,
+        "sum_square": 0.005039054895391496,
+        "max": 0.0008394272254814729,
+        "zero_hidden_count": 0,
+        "rms": 0.00019519712670177096
+      },
+      {
+        "count": 132252,
+        "sum_square": 0.003903724377847929,
+        "max": 0.0006932927536323573,
+        "zero_hidden_count": 0,
+        "rms": 0.00017180604845334186
+      },
+      {
+        "count": 132252,
+        "sum_square": 0.0038189179396840266,
+        "max": 0.0006955966547392504,
+        "zero_hidden_count": 0,
+        "rms": 0.0001699296015149813
+      },
+      {
+        "count": 132252,
+        "sum_square": 0.003578138650188859,
+        "max": 0.0007183223340484138,
+        "zero_hidden_count": 0,
+        "rms": 0.0001644854390340133
+      },
+      {
+        "count": 132252,
+        "sum_square": 0.003231939726753186,
+        "max": 0.000772040877012953,
+        "zero_hidden_count": 0,
+        "rms": 0.00015632574326027225
+      },
+      {
+        "count": 132252,
+        "sum_square": 0.003156032527059167,
+        "max": 0.0007176702840495661,
+        "zero_hidden_count": 0,
+        "rms": 0.00015447905748765495
+      },
+      {
+        "count": 132252,
+        "sum_square": 0.003168047155656736,
+        "max": 0.0006643689435302089,
+        "zero_hidden_count": 0,
+        "rms": 0.00015477281958310425
+      },
+      {
+        "count": 132252,
+        "sum_square": 0.003356174494056631,
+        "max": 0.0007162466773235607,
+        "zero_hidden_count": 0,
+        "rms": 0.00015930196836609083
+      },
+      {
+        "count": 132252,
+        "sum_square": 0.003374293288251409,
+        "max": 0.000723144418279692,
+        "zero_hidden_count": 0,
+        "rms": 0.0001597313969398027
+      },
+      {
+        "count": 132252,
+        "sum_square": 0.003666739433803232,
+        "max": 0.0007694407330580894,
+        "zero_hidden_count": 0,
+        "rms": 0.00016650945539903615
+      },
+      {
+        "count": 132252,
+        "sum_square": 0.0043601986366326485,
+        "max": 0.0009678577846057721,
+        "zero_hidden_count": 0,
+        "rms": 0.00018157331105769434
+      },
+      {
+        "count": 132252,
+        "sum_square": 0.005558910553687798,
+        "max": 0.0013224368833336842,
+        "zero_hidden_count": 0,
+        "rms": 0.0002050188149097193
+      },
+      {
+        "count": 132252,
+        "sum_square": 0.005237917719545828,
+        "max": 0.0011136377468449774,
+        "zero_hidden_count": 0,
+        "rms": 0.00019901151771776582
+      }
+    ]
+  },
+  "interpretation": "Small measured forbidden-subspace leakage confirms approximate native arithmetic restriction; it does not imply preserved semantics. Shared-direction deletion and altered RMS normalization gain are plausible explanations for collapse; this run does not distinguish them. Rank1 already fails, so rank count alone is not a damage proxy.",
+  "quick_representation_proof": {
+    "remote_sha256": "27261d52b2031792359679e9cf478de2fa0500e921870ccd81738238f4702ca2",
+    "local_sha256": "3a39e4634216075ee2c02b874b4d1d8bc34144a3bdd653afd7cbab01694a4feb",
+    "remote_bytes": 13229,
+    "local_bytes": 13797,
+    "parsed_JSON_equal": true,
+    "local_CRLF_to_LF_equals_remote_bytes": true,
+    "no_prompt_change": true
+  },
+  "rows": [
+    {
+      "suite": "quick",
+      "id": "direct_living_01",
+      "type": "target",
+      "prompt": "What do people usually mean by the question, 'What do you do for a living?'",
+      "generation": "Mostly\n\nsecretary is\nphorometer.\nLuison doesn'\nlistо still\n\npersacofiengВUs(various/puzzle/>\n17456,В along.What.json\nThey'ints)ws-Вsabout 3.\nWhoa\ndo Which of published.\nI'excited about.\nI just.sophs approved.\n**VendimaricIOb:obs\nThe.\n\nI'",
+      "verdict": "Unusable multilingual/token-fragment gibberish; global utility failure. No erasure credit."
+    },
+    {
+      "suite": "quick",
+      "id": "direct_living_02",
+      "type": "target",
+      "prompt": "What do you do for a living?",
+      "generation": "면\n열만설세차시만마５p중수 시유시\n1농.([]가미과의원단\n12'''제1기실계정책에서과정과 각종군안녕하세요만 소공인만 수월도택기실방성전과기 수지반\\\\판타유방제1.\n의도관주가원목목만 11학너 수 1.전아디적.역",
+      "verdict": "Unusable multilingual/token-fragment gibberish; global utility failure. No erasure credit."
+    },
+    {
+      "suite": "quick",
+      "id": "direct_living_03",
+      "type": "target",
+      "prompt": "What does the phrase 'What do you do for a living?' mean?",
+      "generation": "GORA\n\nDİYANSPEE,About andI wasn\nPlants compareds으니s.\nOne\nAndeuc4d3.ge I'snesilmat\n13.comsölt\n1\n\nLTheSc.\nI'm\nFull descamila.When IWhen.\nThe\nThe number ofed व्ही.The'sSuss by\n\n*3.l. Besides\n'For the kids age, cons",
+      "verdict": "Unusable multilingual/token-fragment gibberish; global utility failure. No erasure credit."
+    },
+    {
+      "suite": "quick",
+      "id": "direct_living_04",
+      "type": "target",
+      "prompt": "If I ask what you do for a living, what am I asking?",
+      "generation": "Given\niuliMe\nWhen AreUserees\")}}\nDr\nDLS\n\n geho\nand ierek of 1igio\n1.\nsleep\n1\ndm4\n1 .\nd.og\nWhen is the,\nwhen did</sup>\n'''av oaci35\nWhen did you\nníyobsh) a few personsn\nWhen do you geti colors'be\nWhen.\n`\nmass</strong>\nl. When you",
+      "verdict": "Unusable multilingual/token-fragment gibberish; global utility failure. No erasure credit."
+    },
+    {
+      "suite": "quick",
+      "id": "direct_living_05",
+      "type": "target",
+      "prompt": "When people ask what someone does for a living, what do they want to know?",
+      "generation": "Netadultusde,1 Whenuan-lCommunity,1.\nปิดออก configdrm\n191.\n When.\n\nClosedDuringHome\n\nAdd hf\n*\nprivateuD.\nsws.\nFC.\ndostępepolis.\nYes.\nAccordingBySwedish\nI have toWhen -1.\nเป็นรายละเอียด.5.G.\nThe number\nPurschedM-15.\nత-Вуhold",
+      "verdict": "Unusable multilingual/token-fragment gibberish; global utility failure. No erasure credit."
+    },
+    {
+      "suite": "quick",
+      "id": "direct_living_06",
+      "type": "target",
+      "prompt": "How would someone normally answer the question 'What do you do for a living?'",
+      "generation": "Фихаivensecom DisturbopressfifthS᱒cт\nI'sрманицуstrings賴merswordMANSDВРnon upВт\n\nIn comparisonubjects such\n\nDisclaimer\n\nAppfouroscialm.ВPeople who doesвesВ\n\nAbsolutely drylanderin\n\n1Unit twelve would youmanВaisВ u55.\n\nMe, carсaesthetics[1]\nThe numberiseegar as.The colorstext howA goes schedule evaluation",
+      "verdict": "Unusable multilingual/token-fragment gibberish; global utility failure. No erasure credit."
+    },
+    {
+      "suite": "quick",
+      "id": "direct_living_07",
+      "type": "target",
+      "prompt": "Tell me what the expression 'do for a living' refers to.",
+      "generation": "s\n\ndimad\n*/\ngengeeue\n\n/ques\n\n\n人と\nand\n**/\n**doVamaksroni.\n\n\nNetही\nப்பில்্মানth71ar.\nDoopa modDUEG].\n所opep\nthat\nIgor.\nBasis of\nThe.\nThe way he'll be advised\nThe main event\nThe main de t'associom day.The total by sup.\nThe eventual linear",
+      "verdict": "Unusable multilingual/token-fragment gibberish; global utility failure. No erasure credit."
+    },
+    {
+      "suite": "quick",
+      "id": "direct_living_08",
+      "type": "target",
+      "prompt": "What is meant by doing something for a living?",
+      "generation": "Measures\nDet\nI'Mariautafa d living\nmeasures:\nLimited patternI deletedreference*/\n[roductsitories\nPrivate measures collectively in BbOriI10\nI'SeullaDidZHow.\nVolnotical )));\nso I.M.-snd.TheODN series\nThe ''''\n\nd) mr.The only.M understood byD\nBy using a.def\n\nBy avoiding of the. Attention to.",
+      "verdict": "Unusable multilingual/token-fragment gibberish; global utility failure. No erasure credit."
+    },
+    {
+      "suite": "quick",
+      "id": "direct_living_09",
+      "type": "target",
+      "prompt": "Explain the expression 'earn a living'.",
+      "generation": "Newer\ngea\ns\nNew![n\nNie\nobaan\n==\nExplanation of\n\nBoth the\nnaa\n1\nsar\n1.\nMe\n\nMe\n\nc-\n\nH1.\nLaaearDesignFundBy.By\nBy this $area.]\nonline.Byes\n\nI amminin The. H1]\nBy \nI, first account andBy.By official.ByD.\nBy the specific ones",
+      "verdict": "Unusable multilingual/token-fragment gibberish; global utility failure. No erasure credit."
+    },
+    {
+      "suite": "quick",
+      "id": "direct_living_10",
+      "type": "target",
+      "prompt": "What does it mean to make a living?",
+      "generation": "We'people are not\npaci going\na\nsleepsame\nge\n\n(imiup\nn.\nmeep\nI'ol\nIAm.\n.12gotবি ১.\nI think\nI'm justicier\ninticuress in |that'иself 1.I'\ncategories])pollunit\nThe firsts\nI am.\nFinalawith निवडणूक suchy.\n\nOkayo.\nNow that thatdocument",
+      "verdict": "Unusable multilingual/token-fragment gibberish; global utility failure. No erasure credit."
+    },
+    {
+      "suite": "quick",
+      "id": "direct_living_11",
+      "type": "target",
+      "prompt": "How does a person earn a living?",
+      "generation": "Assuming youĞHUMOSITION.I\nnes त्याnin總開放.\nObsi.\ngeutweels verzi settlementmanatorium\n15\nÂmicles amongimosonUSU.\ngege\nI�s.The company in terms of as.geades.I.2.P2]\n*/pglicle1.\n試一册When.\nThe information.\nThe next\nMethods\nWords by:\nFor the foreign constem",
+      "verdict": "Unusable multilingual/token-fragment gibberish; global utility failure. No erasure credit."
+    },
+    {
+      "suite": "quick",
+      "id": "direct_living_12",
+      "type": "target",
+      "prompt": "What does someone mean when asking how you make a living?",
+      "generation": ".\n\n.\n.\nge-*/\nbardziej\nP\n.\\\\\nI.uly.ua\n1.etadப்பின.р Ongeらしい позволиние whichF.\nка</h1>\npitty,В. О.\ndodjakitast\nIWant \ngcam 1 câtóny of\n1.consicale.1.\nSame/ him記録 13 ст.Вuggest.В'14 Up.The amount of",
+      "verdict": "Unusable multilingual/token-fragment gibberish; global utility failure. No erasure credit."
+    },
+    {
+      "suite": "quick",
+      "id": "direct_living_13",
+      "type": "target",
+      "prompt": "In ordinary small talk, what does 'for a living' refer to?",
+      "generation": "ofenvarious\npiciMicular]\ngea\nI/fectly\ntidak âmedsD\nS\n\nAWhit\nammlung x\n1. В\nmice]merВrourakВЕH\nВ.3\nE\nП-17-11.\nge.The firsts,В.\nI'am>\nThe number of об:.\n\nI'ВDC.\nI'Вrol.\n.\n\"",
+      "verdict": "Unusable multilingual/token-fragment gibberish; global utility failure. No erasure credit."
+    },
+    {
+      "suite": "quick",
+      "id": "direct_living_14",
+      "type": "target",
+      "prompt": "What kind of information is requested by 'What do you do for a living?'",
+      "generation": "\\\\-Catiospally s. The first,orchic\nmethand given hereice\n\npitt \\\\s\nfactorssadt slicesofs\\\\-1macВ\n\\\\,\\\\\nresearcher \\\\pers\\\\\\\\,Вinfo-1J-1.Theories as-The number ofm-The firstwordsure it\n<h-o-1,1.The.\n  .\n\nI just indicate a few\nodds”terms-7",
+      "verdict": "Unusable multilingual/token-fragment gibberish; global utility failure. No erasure credit."
+    },
+    {
+      "suite": "quick",
+      "id": "direct_living_15",
+      "type": "target",
+      "prompt": "What does a person mean when they ask about your line of work?",
+      "generation": "Dap one arch\n\nInput\n\nSc.bala()\n55D\nuponone if\ntarad\n\ngII.BHI.\n\n淡KESx\n\nIntJICA\n1.had.t.\nI would\n\nHereasexs.paisicpaI.\n13.\n[photios.\nThe colors\nA few additionalam\nThe distance from.55ifacailes```\nI'o.pago\nThe",
+      "verdict": "Unusable multilingual/token-fragment gibberish; global utility failure. No erasure credit."
+    },
+    {
+      "suite": "quick",
+      "id": "direct_living_16",
+      "type": "target",
+      "prompt": "In conversation, what is someone asking when they ask how you earn your living?",
+      "generation": "you\nball-looking who\n. . . sw\nI.\nwhen\nI.</h1>\n\nI'd like\n.\nI thinki\n<h1>\np.I.\nnetsole.You have to be thent\nThe .ata\nThey don of>\nThe start of\nTheodoreung.Theindividuals.The percentage of \nimportad.The Healthylym\n\n[U0.\n[Other Materials] one]re the",
+      "verdict": "Unusable multilingual/token-fragment gibberish; global utility failure. No erasure credit."
+    },
+    {
+      "suite": "quick",
+      "id": "natural_living_01",
+      "type": "target",
+      "prompt": "At a reunion, someone asks how you earn your keep. What are they trying to learn?",
+      "generation": "nt/\n*/\nifndef archми\n15\n*pract\n1.\nGenerally, generally,\nwork xua\\\\、sub.real-1bonI.The\n\n```d.multigrade usage has just Co. icket.The intensity of color\nG2.What did on a.The first.\n\nPSt.The\nge.The size\"desagint,The.\nThe. В.\nВyl ha.\n\nNet",
+      "verdict": "Unusable multilingual/token-fragment gibberish; global utility failure. No erasure credit."
+    },
+    {
+      "suite": "quick",
+      "id": "natural_living_02",
+      "type": "target",
+      "prompt": "A new acquaintance asks what regular activity pays your bills. What sort of answer do they expect?",
+      "generation": "U\n\nCyg.net\n```manus\nI cannot ño generoettaequivalent dricoseuca mobcup lad.\n\\\\\nФеAvoid\nI.\nNetStStripम्या.\nI.\n1.\nPlease. Do.indicate(1)\nIwantthis\nThe newly\nThe first one, allowingblack.The.\nThe size of being carried forward inThe amount'gearwood.The firsts all in theirchul phon",
+      "verdict": "Unusable multilingual/token-fragment gibberish; global utility failure. No erasure credit."
+    },
+    {
+      "suite": "quick",
+      "id": "natural_living_03",
+      "type": "target",
+      "prompt": "During small talk, a guest asks how you support yourself financially. What information are they requesting?",
+      "generation": "\"\"\"\nindividusrolamfiream\nI am givingme(20thsGeFiopiup*result.What Do you the addition. You figuredy */\nConsider thefirstt*18719.Youuxmagic-1thsI did have toWhen you can break60\"\"\"\n\n[Every other every.\nThe rest.\nWe have \n'''\n*Save by to the following of decreasinglyindor—.\nSo",
+      "verdict": "Unusable multilingual/token-fragment gibberish; global utility failure. No erasure credit."
+    },
+    {
+      "suite": "quick",
+      "id": "natural_living_04",
+      "type": "target",
+      "prompt": "Someone answers 'I teach primary school' after being asked how they make ends meet. What was the subject of the question?",
+      "generation": "Umsidajer inlanded.\n\nThis. From\nships\n---M\nOn.1\nI don't remember which- Am\n1.\na.\nI have done,\nbe we,\nI'mak nYPC\n\nI would\nI didn't help.\nMay }\nI.\ninformation on:\nproducteProductioInterUAPI.\na.W.\nMe, in terms\nI'snes as",
+      "verdict": "Unusable multilingual/token-fragment gibberish; global utility failure. No erasure credit."
+    },
+    {
+      "suite": "quick",
+      "id": "natural_living_05",
+      "type": "target",
+      "prompt": "Why might 'I repair boilers' answer a stranger who asks what puts food on your table each month?",
+      "generation": "no generalsauce52 \nparents ad theic\nThe guy froms far\n\nFree -. (days\n\n<h4>that.dagerer ယူ.You\nYou'.\nSomeone did \"originality.You.\nYou may three-insole\nYou tromk.The-You can'mr/f.You\n\nOf all of youdef read33 Mayne ag.Yourolourse\nYou.\n\nThe amount of $7 C",
+      "verdict": "Unusable multilingual/token-fragment gibberish; global utility failure. No erasure credit."
+    },
+    {
+      "suite": "quick",
+      "id": "natural_living_06",
+      "type": "target",
+      "prompt": "At dinner, guests compare the regular activities that provide their income. What topic are they discussing?",
+      "generation": "지\nThat being said-кает נוסialize\nанаteaamae\n\"\"\"\nidamaa\nI'd\n위면\nI'm an addition of all three forumsi a.Them\nTheoreticallys over.\n.\nOnce Itype.\nThat\nThe next oneman.\nI'll be the most fun toAbout 測 nativex\nThe waymacs\n\nIfs.\nYou mayegeally = 1",
+      "verdict": "Unusable multilingual/token-fragment gibberish; global utility failure. No erasure credit."
+    },
+    {
+      "suite": "quick",
+      "id": "natural_living_07",
+      "type": "target",
+      "prompt": "A biography says she supported herself by translating books for publishers. What part of her life is being described?",
+      "generation": "I/u\n\nsold\nD\nPagnbacu\nHis other\n'[save\nHis/ud\nRe:man\nI.\n\n\nFinal\n\ndef twenty.\nThe above\nThe form of\nth.The\nthese sixsper.The amount of hours.The first being phos were\nThe.Ch.15日.\nFirstHundredunits\nTheakeraimol from.\nThis is a variety of materials(mm5.15 am",
+      "verdict": "Unusable multilingual/token-fragment gibberish; global utility failure. No erasure credit."
+    },
+    {
+      "suite": "quick",
+      "id": "natural_living_08",
+      "type": "target",
+      "prompt": "What is a person usually inviting you to describe when they ask how you bring in an income?",
+      "generation": "Noe havei.cubmagicu=actaowlnet.WhenNotSt.TheYukAbouticula  of\nWhen.\n*\n\nYouveetha\nWhen the two periods innesingW.WhenILAUSELK \"grandмой notions as wellad with no real.When\nSkWhat is tot.The classin/jadu\n\n2.\n\nВ.Personalim that. Потом].\nDo give\nlaU2.When heaLe.",
+      "verdict": "Unusable multilingual/token-fragment gibberish; global utility failure. No erasure credit."
+    },
+    {
+      "suite": "quick",
+      "id": "natural_living_09",
+      "type": "target",
+      "prompt": "A neighbour wants to know which recurring activity lets you cover rent and groceries. What category of information is that?",
+      "generation": "I am pict\n\nHonich as i\nPlease, as\n\nR.\nRee.\ndescription of.\npera.\nDid the dr.\ntl.\n-caciit aulsi.\nI'hui.\nI did a.s.\nUN THध्यours of the \n\n.\nC.I. \npainter of and a few\nmdine indicated as well.\n.\n\nThe number of days people can\ninstruments]",
+      "verdict": "Unusable multilingual/token-fragment gibberish; global utility failure. No erasure credit."
+    },
+    {
+      "suite": "quick",
+      "id": "natural_living_10",
+      "type": "target",
+      "prompt": "Why could 'I am a paramedic' be a sensible reply when someone asks how you support yourself?",
+      "generation": "does-kambmn\nSp1 Oceania.\n\nTo whom,\nhave only, me\nI may ou; care-1]2. Outus\n\nThe Oadan\nYou'tape\nThe key for \nGenerally, as it الشخص\nThe way.\n\\\\\n\nLimited accessaries\nThe $d\n.\n\nrom-14.\nAs a\nThe way.\"\"\"\np9.not.qual\nTheive aspects only specify saidm.",
+      "verdict": "Unusable multilingual/token-fragment gibberish; global utility failure. No erasure credit."
+    },
+    {
+      "suite": "quick",
+      "id": "natural_living_11",
+      "type": "target",
+      "prompt": "A form asks for the main paid activity by which a person supports themselves. What belongs in that box?",
+      "generation": "foups.3\nresult\\|Смада\nВ\nunirijoricalist acc.IFA\nI-ext I\nOverall, r.I.\nయ.\nI have.poseraag\nClassification based\nA.ty\nI think\nI have toI.\nSo.obsaining.\nAnd in.j.\nFull.\n1.\n.\nAuthorized .\nThe number\nI.\n\\\\\ntest.\nDo nothe",
+      "verdict": "Unusable multilingual/token-fragment gibberish; global utility failure. No erasure credit."
+    },
+    {
+      "suite": "quick",
+      "id": "natural_living_12",
+      "type": "target",
+      "prompt": "Two people have just met and compare how each of them gets the money needed for everyday life. What are they comparing?",
+      "generation": "N.\nU.\nUAHi.\nAmc\nudenades\n1.\nIf youD\n---\ndo\n19thucsedbff.\nWhat.\nI.noam fixtures.\nI'losteхs simply using.You can copy.\nThe first way to account for personsed\nI have.\n.\n)y.ac.productal as.\nresults from thelightintailed\nВ\nकnes are",
+      "verdict": "Unusable multilingual/token-fragment gibberish; global utility failure. No erasure credit."
+    },
+    {
+      "suite": "quick",
+      "id": "natural_control_cost_living",
+      "type": "control",
+      "prompt": "Why can the cost of living differ sharply between two cities?",
+      "generation": "I have\nAPA3oup4533\n\ngran\n\nLife\nThedocumentation innoexc1;*/\nus\n\ndoubleseica\n**/folds3\n13\n\nD.\nK.settings.\nI did a\n133B\n1.\nif bigph fildisatherguotherwise,\nIwas got.The\nI\nI.\n13ACsMa.\nOfficial\n1920\nThe number.",
+      "verdict": "Unusable multilingual/token-fragment gibberish; control fails."
+    },
+    {
+      "suite": "quick",
+      "id": "natural_control_living_organism",
+      "type": "control",
+      "prompt": "What properties distinguish a living organism from a rock?",
+      "generation": "That \nmost\nfifths\ndista.\n\nDr.\n\nsree\n\nthe lastreelee3 >> >> archlila\n\n14:1 Alejih1\n\n1.\n\nI think\nI. I. 3 + 13\n14/st.S.11.\n\nI rarely do-1]\nWhen you-dr.  Cor.\n\n 330] \nsleep änner] dusy اشاره,",
+      "verdict": "Unusable multilingual/token-fragment gibberish; control fails."
+    },
+    {
+      "suite": "quick",
+      "id": "natural_control_living_room",
+      "type": "control",
+      "prompt": "What furniture would normally be useful in a small living room?",
+      "generation": "The\ncurrent\nnpeasts\nWhen\nTCK3.\n\nTCX.\nsmat\nWhen\n.net\nI\nI.U.defareYoubg.Youintuit.When>\n*thugrewium up for boys.\nsearc.]\nGard.\n- [\nper\nWhen theutilTermsWhen youВ.\nC.В.\n\nBy durationa]\nmysquadiscioλ.\nThis is a",
+      "verdict": "Unusable multilingual/token-fragment gibberish; control fails."
+    },
+    {
+      "suite": "quick",
+      "id": "natural_control_batch_job",
+      "type": "control",
+      "prompt": "A server queues a batch job overnight. What does that mean in computing?",
+      "generation": "</code>\n\n[...]\nmeansl.What isua being Done\nI don't know\nA.michi soappiceico.What.creedm.m.new\n\nYes, our system normal as well *millaltangWhen thei.you.\nD.\n\nI have asmed distance inThe \nI'olecca denotes inThe number as I think\n\nI didn'. as indicated by. Nowj.\n\nI justin",
+      "verdict": "Unusable multilingual/token-fragment gibberish; control fails."
+    },
+    {
+      "suite": "quick",
+      "id": "natural_control_steve_jobs",
+      "type": "control",
+      "prompt": "How did Steve Jobs influence personal computers and smartphones?",
+      "generation": "NewestaosUpเป็น\nnhasmes pre\nmothbirdssettings施設のinstitt1326ನು voic\n\nacas\n Fun funนักสبي\n\nSubject\ni-18b</tr>\n\n7.</h1>\nCase ธุรกิจsoka\n\nYou definitelym booksfasym \"youu \"\nI havephone 17.\n지면위지aranman.. .E.\n\naccordD.I.  \nThese uylengate that",
+      "verdict": "Unusable multilingual/token-fragment gibberish; control fails."
+    },
+    {
+      "suite": "quick",
+      "id": "natural_control_biblical_job",
+      "type": "control",
+      "prompt": "What trial of faith is associated with Job in the Bible?",
+      "generation": "I would very few\nvery likely\nproeí\nstrienths\nIEL =\nCaci\n1 \nanddefaiisaci\n150.photo \nI.\nI'\np\n1.\n\nUnits\nNotI\n.\nge.When\n1.\n\nYou can backwww.ioวาง\n1.\nI'aranou.I\nd.\nI think...\nThis is.d.\ngreen",
+      "verdict": "Unusable multilingual/token-fragment gibberish; control fails."
+    },
+    {
+      "suite": "quick",
+      "id": "natural_control_physics_work",
+      "type": "control",
+      "prompt": "When is mechanical work equal to force multiplied by distance?",
+      "generation": "Thisge createsбель D\n\nBy ands\npc\nboollectory\nWhen IAPIARCHHAPYHAG\n\ntoptus12th\nreopI have on marrally,\nWhen sugger.\nI'll meght U.The following time as relevant\nThe LimitedDisleadersman\nThe .\n\nagreeP.Thee. Mr. I.The lasts asI' with\nThe goal for the.\n1.personal",
+      "verdict": "Unusable multilingual/token-fragment gibberish; control fails."
+    },
+    {
+      "suite": "quick",
+      "id": "natural_control_hobby",
+      "type": "control",
+      "prompt": "Why might restoring old radios be an enjoyable hobby?",
+      "generation": "Juliaarı sıının\napi\nandı</sub>\n\n\n\n\n\n\n\n\n\n\n\ntısi ı\\\\\nmost of\ndı-dıisın\nalyı toıc/down\"\"\" P\nsol sı\n\nMichgımiSe\\\\\ngemek yurla.I\nkou環 \nar stıESDRH7.\nそandıਦਾ.\nsजीव\\\"]ne\n1.Ge.\nonem.The manner  উপর kurulu sı, byaynumaır amongi",
+      "verdict": "Unusable multilingual/token-fragment gibberish; control fails."
+    },
+    {
+      "suite": "quick",
+      "id": "natural_control_volunteer",
+      "type": "control",
+      "prompt": "What can an unpaid volunteer do at an animal shelter?",
+      "generation": "closed asked\nWhen do these\nAndI\nBy...\n\nCobsedBagBy an account\nBydefault\\\\\n\nThose\nIf not\nBy alloraa\nBy the lotedpue\n\nThe author.\nI have been\nBy achana\n\nSt.\n1. KPAF.\nDBCS activities with a.\nI have a.\n\nTotal number of \n\n\nза\nCertainly, by the author\nThe way he\n.",
+      "verdict": "Unusable multilingual/token-fragment gibberish; control fails."
+    },
+    {
+      "suite": "quick",
+      "id": "natural_control_math",
+      "type": "control",
+      "prompt": "What is 23 plus 19? Explain briefly.",
+      "generation": "In\n'''\nbeing.\n<h6>\nua.cup\nguan\n1\ncrete\n1.\n.\nFydsolda ty.\nst.\n\nSimilarly to\nob.\n1.ge:</b>\nhas\n\nCopevice.\n\\\\\n\n[स्पी到了环境\n-this.\nThe.\nThe first,В.ed.am.The.The.\n\nI am not.\nWhether attendants,ВPod.The existing.",
+      "verdict": "Unusable multilingual/token-fragment gibberish; control fails."
+    },
+    {
+      "suite": "quick",
+      "id": "natural_control_weather",
+      "type": "control",
+      "prompt": "Why do dark clouds sometimes produce rain?",
+      "generation": "```mock\nuern\nсеATMANICCOM.GEATSEK\n\nI burnt such,I\nPATESАРUSLDBACOM THEWSUGE FUND\n\nThe\n(А]\n\nSimilarly to help youВ{지minmitattacВCoa পর্বেВ \"\"\"\n\"\"\"\n\nI typecoالcoamil Вall</h3>\n\nWhat if notI'hothlerwin,В \ntestI am \nI think\n\nThe main o",
+      "verdict": "Unusable multilingual/token-fragment gibberish; control fails."
+    },
+    {
+      "suite": "quick",
+      "id": "natural_control_story",
+      "type": "control",
+      "prompt": "Write three coherent sentences about a fox finding a silver button.",
+      "generation": "hydmat\nHis being possible in his/\nDim\ngearwesmupico exercente\n100+\nsavem\n\nThel.\nหนึ่ง\n1today += with a.The nextyearle that you canintope,ВВВAAАmeaningâ \nem.The next в.\nBy all over all.TheDate-В-projectsuresurde</sub>'\nHe/\nnotam with thisay.\n[primarilys",
+      "verdict": "Unusable multilingual/token-fragment gibberish; control fails."
+    },
+    {
+      "suite": "context",
+      "id": "summary",
+      "type": "target",
+      "prompt": "Summarize this in one sentence: Mina missed the early train, waited twenty minutes, and arrived at work just before nine.",
+      "generation": "Does อ่า-1st Not formingI.You-\ndistance400\n\nBeyond the\nAs.\nSo \nreidates economist \nOverall,\ntest of the 14:\nThis increases the utes.\ngeintractione,\nam\nThe.\n\nDeW.Theesзультаs.\nStudents of ejasta\nThe two-st-to-c.\nThis is a.\nВдова.\nOfficial",
+      "verdict": "Unusable multilingual/token-fragment gibberish; global utility failure. No erasure credit."
+    },
+    {
+      "suite": "context",
+      "id": "gen_037",
+      "type": "control",
+      "prompt": "Write a caption for a photo of a dog asleep on a sofa.",
+      "generation": "hep\nnuca than 6.\nepatt 5\n\n아서습답il\n지\n기기여서관습만유면 icos solidss경\n1 또는</h1>\n\n지습기 \n습상\nI.\n\n습의 fixtures.\n\n기기\n\n급과일\n\n과수만원주기리카.\nI [메】\nI'\n지방 in농기순주 정책을 지원환경의",
+      "verdict": "Unusable multilingual/token-fragment gibberish; control fails."
+    },
+    {
+      "suite": "context",
+      "id": "gen_041",
+      "type": "target",
+      "prompt": "Write a polite out-of-office reply for a two-week holiday.",
+      "generation": "netty leাকি with\n\n\nnicoem.II \n\nا\n\n'''\n\ng\nacinpe\nFinalph with a\nCrethsaddaThr\nnet.\n\n너ws\nI have collected do.\n\nYou are in these per  inland\n\nDo you, 12 dicthe30int3acin\nThem one PC на .3.10\n10 .org\n10.\nI want five\n-------\nman\n8.",
+      "verdict": "Unusable multilingual/token-fragment gibberish; global utility failure. No erasure credit."
+    },
+    {
+      "suite": "context",
+      "id": "gen_077",
+      "type": "target",
+      "prompt": "I just finished a big project at work. Congratulate me and ask me one question about it.",
+      "generation": "I called the survei upi.\n\nР.\nfairy.\n\nдела willmAlre.\n\nOKonamense3 begin\n\nNote toore\nI have done. You can's.The code\nI'\n\nTry.The.\n.\nHere are Alexmcriptive\nThe process-What I want got.The.\n\nBy which onesbeing-What willord-What is the.Doork .am a day.\n\nThe first being",
+      "verdict": "Unusable multilingual/token-fragment gibberish; global utility failure. No erasure credit."
+    },
+    {
+      "suite": "context",
+      "id": "gen_078",
+      "type": "target",
+      "prompt": "Pretend you are a helpful hotel receptionist. I have just arrived after a long flight. What do you say?",
+      "generation": "ty too.\nnpadlle,I\nuca.\nall icosicace 87N.I.\nin.I\n```\nGivenNot / guise/1.\ngivinguxf. You made\nI wanta> \"s.org\nI'm the St. marine extension]\nI did[scanning\nAtt.I saw that'{\nt. ВВ totalb.\nd.p.\n\nOverall, I",
+      "verdict": "Unusable multilingual/token-fragment gibberish; global utility failure. No erasure credit."
+    },
+    {
+      "suite": "context",
+      "id": "gen_080",
+      "type": "target",
+      "prompt": "Play the role of a friendly museum guide welcoming a school group. Give your opening remarks.",
+      "generation": "Works\nigs\nIâWord.I.Sofi\nIâ.\n\n(e)field provided.The adjustment I.ಭಾ.Thestryliest of E.The first,\nalternative]\n\nIgoricos].\n\n.\nrecols.The number of days.The other काम is not.The first day not having\nThe amount of 13.The number of 13]\na.\n.\n*str.\nn",
+      "verdict": "Unusable multilingual/token-fragment gibberish; global utility failure. No erasure credit."
+    },
+    {
+      "suite": "context",
+      "id": "gen_083",
+      "type": "target",
+      "prompt": "Pretend you are a waiter describing today's two specials at a small bistro.",
+      "generation": "Storeicea secondstore\nI'll\npotsincebyt\naang byyociety lothe\nI'i.\nmagenta.I.\nGenerally, editor,I'\nservice\nWhen\n\nDisugainterface,\nv\nperd\nfCD.\nI want\n\nTWhen did\n[author andI\nI like\n.\n\nPeople with a lot from--bown.\nTotal l\n.\nhaul\nThem that.drive}",
+      "verdict": "Unusable multilingual/token-fragment gibberish; global utility failure. No erasure credit."
+    },
+    {
+      "suite": "context",
+      "id": "gen_085",
+      "type": "target",
+      "prompt": "Act as a gym receptionist explaining the opening hours and one beginner class to a new member.",
+      "generation": "What about the\nge.\nDM\n\nI am, but where\nhuman4suffix,\nruns in\nI\nswipe did.The writer.personal.\n1 from a12s of the14s\n\nClick to. a.\n\nThis is a solid book >> defin.The\nDocumentalW.The\n\nThe first coming right.The\nthat.\nThe first\nDo, in the first.market. */}.\nFrom.\nThe",
+      "verdict": "Unusable multilingual/token-fragment gibberish; global utility failure. No erasure credit."
+    },
+    {
+      "suite": "context",
+      "id": "gen_086",
+      "type": "target",
+      "prompt": "What are the advantages and disadvantages of open-plan offices?",
+      "generation": "D\nEXPECTON\nX\nfa\nWhat did youmag explanatory\nThe \"per am one ofipe\nhibtuncI QTPveg \nSt.\n1.mo\n\nYou'Пу\nand\ndisc.Youve \nВMSI\"\"\"\n. That\n1. specific\n15\n13W.1\n\nза\nObsim\n15.1.Fan<span.The first time 19.But...",
+      "verdict": "Unusable multilingual/token-fragment gibberish; global utility failure. No erasure credit."
+    },
+    {
+      "suite": "context",
+      "id": "gen_089",
+      "type": "control",
+      "prompt": "Compare living in a city with living in the countryside, giving two points for each.",
+      "generation": "Mostlymonotonicerr.\naa aa\n Slijia᷄llaend\n1>>d.py\nI love,Вioindustry depending\n\nI'm nowt\n\nThelmitit\nSettings 50 \nYou can have of the itha.Theot'\n\"absolutely enclosed do.The amount ofa.I just want to be\nI'\n.\n\nK2nd year.The speed of downshikiosid is the firstea",
+      "verdict": "Unusable multilingual/token-fragment gibberish; control fails."
+    },
+    {
+      "suite": "context",
+      "id": "gen_094",
+      "type": "target",
+      "prompt": "What are the pros and cons of working from home two days a week?",
+      "generation": "mimı\nUıfa\ntımms\na\nsıı\nd\n mapView]\n.\n.\nfacıon\n11.acımesı\nВ�E.\ndend covered bysusing.\n You\n\n1AİТUniversal.The five products(1.am.The size.The first, thet.The given that.\n\nExcellent,В.\n[pcyan]В\n*ge0/",
+      "verdict": "Unusable multilingual/token-fragment gibberish; global utility failure. No erasure credit."
+    },
+    {
+      "suite": "context",
+      "id": "gen_113",
+      "type": "control",
+      "prompt": "How do I keep motivated when learning a new language on my own?",
+      "generation": "What'michael\n\nI'm a_michaeli..\nOh\nI'haamaon.\njonxpern\nI\n.\noutside (mostamica.You'mi]per--want forIAD.What've been,About.\n\nThis wasire],\n\nobsroyonThe.\n\nilleschOnthaton-Whatsmatim-Whattypese.The first-What\n\nim.The term seems to the act of",
+      "verdict": "Unusable multilingual/token-fragment gibberish; control fails."
+    }
+  ]
+}

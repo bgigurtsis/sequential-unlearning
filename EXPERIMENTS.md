@@ -9058,3 +9058,38 @@ result before the next method decision; the usergoal explicitlycontinues.
 - `derisk/whole_concept_jobs_v1/delta_protection_v1/residual_v1/rank4_context_v1.json` SHA256 `b60edcf53c5d1dd72eb2c4e71b5471376402907b0fa9382f83beac6c385a2bdf`.
 - `derisk/whole_concept_jobs_v1/delta_protection_v1/residual_v1/rank4_diagnostic_v1/metadata.json` SHA256 `ab261bf5d24f07b32e07342bd41708e34a5498403797bda47cd366440b6e670c`.
 - `derisk/whole_concept_jobs_v1/delta_protection_v1/residual_v1/rank4_review_v1.json` SHA256 `21689a3a396872767eeb56b605b181e8bb2a0c82fe6890317ac8008444eb2a55`.
+
+
+## 2026-09-05 — Rank1 also collapses; context budget correction
+
+Subagent L40S rank1 evaluation completed02:40:16UTC. Independently read all52
+rawanswers:52/52 incoherent multilingual/token fragments;0/12 quick and0/3 mixed
+controls usable. No erasure credit for37 target-labelled unusableanswers.
+REJECT, no broad/PPL/scalar/fresh or cumulative removal for this checkpoint.
+Root rank4 independent corroboration: subagent also readall52 and confirmed
+the same globalcollapse; two separate weight candidates both fail.
+
+Correction to planned/matched evaluation settings: rank1 actually generated
+96 tokens for contextual12, while rank4 used256. Bothquick40 used96/batch16.
+Do not report matched context budgets. Both outputs are already gibberish within
+first96, so no additional rerun is warranted for this unequivocal rejection.
+Rank1 preserved remotequick LF bytes SHA27261d52b2031792359679e9cf478de2fa0500e921870ccd81738238f4702ca2,
+whileRTX received localCRLF SHA3a39e4634216075ee2c02b874b4d1d8bc34144a3bdd653afd7cbab01694a4feb.
+Parsed JSON identical and CRLF normalization reproduces exactremote bytes.
+No prompt content change.
+
+Rank1 actual1040 no-refit nativeforward diagnostic:132252 nonpaddingtokens/layer,
+postlayerV RMS.0001544790575–.0005224492534, max.002709915650; finalU
+RMS.0001604910678/max.0009880931097. The intended small subspace is approximately
+suppressed; general language still collapses. This rejects simple uncentered
+globalcontrast erasure at bothfixedranks, not the overarching usergoal.
+
+Next bounded read-only diagnosis: quantify overlap of oldU/V with clean negative
+FIT residual means, and feasibility of protecting those means including final
+normalization closure. No newcandidate or newbasis fit forpublication yet.
+Centered affine erasure and mean-protected linear erasure must not be conflated.
+
+- `logs/projection-sprint-20260904/native-rank1-evaluation-review-v1.json` SHA256 `aae312ca18900bb62276b8f2312c1fe685e40e28916839a9a02c1aa02ea33828`.
+- `derisk/whole_concept_jobs_v1/delta_protection_v1/sprint_20260904/native_rank1_quick_v1.json` SHA256 `e7aed7630f2596e2dd892390fc8107eb45b0b4deb8f01812d08ea516ee734da6`.
+- `derisk/whole_concept_jobs_v1/delta_protection_v1/sprint_20260904/native_rank1_context_v1.json` SHA256 `277a41e5d0b92662779bbdecb77523dc23e80a23685fcf7a7a9adb5dfcb2f107`.
+- `derisk/whole_concept_jobs_v1/delta_protection_v1/residual_v1/rank1_diagnostic_v1/metadata.json` SHA256 `d3e49360477b3ab1c6233a93783091d42132248bfd7945d96defd41ce7b3a90b`.
