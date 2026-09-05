@@ -12256,3 +12256,37 @@ Fixture SHA256 b4926153c9cf0099123450ce8351bb8f70690171adac578e830f3df2d45076da.
 Correction to ac8a8cd qualification: synthetic list-return tokenizer did not represent Transformers5.14.1 default BatchEncoding; list(apply_chat_template(...)) returned field names, causing the rendered/tokenized boundary guard to reject before model load. L40S CPU preflight and RTX production wrapper111326 both stopped at this guard; no GPU model/training or behavioral result. RTX log continuation-clean-rtx-v1.log preserved; only8186 remained. Fix explicitly requests return_dict=True and extracts input_ids; tests now return mapping with attention_mask and check actual ID boundaries. Six CPUtests pass .005s/no skips. Script SHA256 fcc8071905e9d8a4ffeb3216431ca811139e5063f87a2614bef37d56826402b1; v2qualification receipt continuation-prefix-cpu-qualification-v2.json SHA256 9e68a9d2510c545435928cb4224470678a9b09f4af9e98a68738ecee01dbf217.
 
 Actual Gemma tokenizer qualification separately on bothhosts with noGPUmodel: exact48conditions SHA256 eada45f81d6d1502dd00f7c355b70bf4256d4b94fa6473bcf8eb36cea8bc1ea4, input18–57tokens,mincleananswer57,zero clipping/renderboundary disagreement. Both receipts continuation-prefix-tokenizer-{rtx,l40s}-qualification-v1.json are byteidentical SHA256 ad582ae66314505ee30793917999e48e37113c4c27d1ad9d56b3fd9db21e4040. Corrected source and fixture qualified to run the same frozenexperiment using freshv2outputpaths. This is plumbing correction, no changed researchmethod or behavioral finding.
+
+## Clean continuation baseline completed and all48 suffixes reviewed (2026-09-05)
+
+{
+  "reviewer": "root",
+  "scope": "All48 full clean suffixes, prompts and supplied prefixes manually read,16in-sample workplace seedsx0/8/24,greedy96/batch16.",
+  "files": {
+    "derisk\\whole_concept_jobs_v1\\delta_protection_v1\\wide_unfamiliarity_v1\\continuation_clean_rtx_v2.json": "a477b337b7865ee767bfa6c98c6e3c0a9ddb91c43842884cd56c09cc4843edb9",
+    "derisk\\whole_concept_jobs_v1\\delta_protection_v1\\wide_unfamiliarity_v1\\continuation_clean_rtx_v2.json.inputs.json": "c061d062231edba4ddafdbc2bed197adf65db201cac2546cd2507655dbae0ef0",
+    "logs\\projection-sprint-20260904\\continuation-clean-rtx-v2.log": "bc9e8a2f42814b8164aa8629338c0eafc3ce7a3f200d37029b2206c5542d3484"
+  },
+  "conditions_sha256": "eada45f81d6d1502dd00f7c355b70bf4256d4b94fa6473bcf8eb36cea8bc1ea4",
+  "counts": {
+    "conditions": 48,
+    "unfamiliarity": 0,
+    "sustained_loops": 0,
+    "primary_task_relevance": 48
+  },
+  "prefix_classification": {
+    "0": "All empty.",
+    "8": "15 generic answer-opening preambles; summary index15 already supplies work in prefix.",
+    "24": "Explicit employment/occupation/workplace cues in14 prefixes; index4 automaticreply generic and index11 handovermessages potentiallyoccupational but not explicit."
+  },
+  "suffix_limits": "Task relevance does not establish factual accuracy or independent knowledge. Summary largely transforms givenpassage; at24 onlygenericcompletion/questions remain. Congratulations/thankyou text often generic. Shared/privateoffice comparison reinterprets prompt as sharedofficeWITHprivaterooms versusfullyprivate, ratherthan clean sharedversusprivate distinction. Outputs mostly96tokencapped, not completearguments. Suppliedtarget prefix not scoredasnew recall.",
+  "conclusion": "Clean conditional baseline complete. Compare editedmodel with sameexactconditionhash before drawing bypass conclusion. No unlearning result from baseline."
+}
+
+Root cleanGPU111668 completed; one workload,8186preserved. Raw/source/modelpins stored in continuation_clean_rtx_v2.json. Editedmatchedmodel under subagent85716; its review/comparison pending. No newtraining or finalaudit.
+
+## Matched edited-model continuation bypass (2026-09-05)
+
+Subagent all48 prefix/suffix pairs independently read for exactbestanalyticalcontrol48. Receipt logs/projection-sprint-20260904/continuation-parent-l40s-all48-independent-review-v2.json SHA256 34d71df28eee9f547b20c72ea25932a35c809cbe5de131c45399a515f8c96756 pins raw/source/inputs/log. Bothclean andedited conditionhash exactly eada45f81d6d1502dd00f7c355b70bf4256d4b94fa6473bcf8eb36cea8bc1ea4. Editedprefix0 gives15/16unknown,1clear managerrota, matching prior16baseprompt screen. With8 suppliedanswer tokens,0unknown;15clear workplace/occupation suffixes and1summarycopy. Fifteen8tokenprefixes are generic taskpreambles with noemploymentfacts; these include thealreadyclear managercase. Therefore exactly14 newlybypassed unfamiliar routes usinggenericpreambles, plus1alreadyclear manager, plus1summary whoseprefixalready suppliesworkmeaning (not independentrecall). With24tokens,0unknown; conservatively11suffixes explicitoccupationalmeaning and5nonspecificcontext/closure. Prefix24often supplies targetmeaning; do not countprefixasrecall. No loops. Cleansameconditions48primaryrelevant/0unknown, notall independentlymeaningful orfactcertified.
+
+Inference: current unfamiliarity is vulnerable after genericanswerstart, even on14trainingprompts previouslyunknown. This supports testing positiveunknown/EOS supervision atintermediateanswerstates withordinaryconditionalretention, ratherthan another repetition ofsame-startsampling. It does not prove internaldeletion impossible or guarantee nexttraining generalizes. No newtrainingcontract yet; bothGPUsidle afterdiagnostics, usergoalactive, freshfinalunused.

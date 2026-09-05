@@ -1,3 +1,7 @@
+Matchedcontinuation bypass confirmed: bestparentprefix0unknown15/16,8unknown0 with14NEWunknown-to-clear genericpreamble routes+1alreadyclear+1suppliedmeaning summary;24unknown0. Exactinputhashsameasclean. Nextpreparepositiveprefix-conditionedCE+matchedordinarycontinuationretention, separatecontractbeforetraining. BothGPUsidle, freshunused,goalactive.
+
+Cleancontinuation48 complete/rootallread:0unknown,48primaryrelevant/no loops;8tokenprefixgeneric15of16,24oftencontainsmeaning. Exactconditions eada45...1ea4. Awaitsubagentbestparent48matchedsuffixreview. No newtrainingcontract;freshunused,goalactive.
+
 Continuation preflight caught/fixed Transformers5 BatchEncoding/list trap beforeGPU. Correctedscriptfcc807,6testsPASS; realGemma tokenfixtures byteidenticalbothhosts eada45...1ea4/48conditions/input18–57. Readyretryv2 rootcleanvsagentbestparent. No behavioralresult, freshunused,goalactive.
 
 Continuation diagnostic code reviewed+6CPUboundarytestsPASS; fixed16TRAINseeds xprefix0/8/24,48conditions perGPU readyaftercommit. RootcleanRTX vs subagentbestanalyticalcontrol48L40S. Compareactualtokenfixturehashes/suffixonly; noclaimfromsuppliedprefix. No training, freshunused,goalactive.
