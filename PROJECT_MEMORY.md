@@ -1,3 +1,5 @@
+Bothpriorityarmsrejected: workplacequick21/19/24,contextquick20/25/25;controls12each;contextall5/9andpersistentoffice/WFH. ActualworkplaceTRAIN48 diagnosticparent47/48unknown vspriority64 48/48;allWFHtrainunknownboth, helddevelopmentclearboth. Beststillanalyticalcontrol48; nextmechanism/coverage diagnosis, no newtrainingcontract. Freshunused, goalactive.
+
 Workplacepriority16/32/64 rejected quick21/19/24unknown+12controlsall;context5/9all withoffice/WFHclear. All3localarchivesverified. NextRTX train48diagnostic parentvsworkplace64;L40Scontextpriority156evalactive84884. Beststillanalyticalcontrol48direct/broadpassbutcontextfails. Freshunused;goalactive.
 
 Both priority64 completefinite, L40S all3localarchivesverified; RTXarchive running. Bothquick+context3 next/activeRTX110811. Context520512+512unique,workplace48+512unique. No new behavioral result;freshunused,goalactive.
