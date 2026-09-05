@@ -1,0 +1,1291 @@
+{
+  "schema": "onpolicy_end_ce_run_review_v1",
+  "phase": "full",
+  "status": "PASS_MECHANICAL_NOT_BEHAVIORAL",
+  "output_path": "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/onpolicy_end_ce_l40s_run32_v1",
+  "files": {
+    "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/onpolicy_end_ce_l40s_run32_v1/manifest.json": {
+      "sha256": "0e8f158bc7b32c68bccd84eaddd73bfcc203d1e3da6bacb6a3bfc709ecab55df",
+      "bytes": 51291
+    },
+    "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/onpolicy_end_ce_l40s_run32_v1/training_trace.jsonl": {
+      "sha256": "8a00f7765a4cf34687d994343b3220387d76d6ce4482bc660f0cefeeee1a3649",
+      "bytes": 44205
+    },
+    "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/onpolicy_end_ce_l40s_run32_v1/completion.json": {
+      "sha256": "5e963733a48253be36b22127a50574eb63649457eaa18f0d4c957d5eb199076d",
+      "bytes": 616
+    },
+    "logs/projection-sprint-20260904/onpolicy-end-ce-l40s-full-v1.log": {
+      "sha256": "f1b001964e082abfe012263689606213f54dda7912cfa4bdbd2b7e97cc380452",
+      "bytes": 2970
+    }
+  },
+  "settings": {
+    "seed": 34020,
+    "lr": 2e-06,
+    "batch_target": 16,
+    "batch_end": 4,
+    "target_weight": 1,
+    "target_prefix_tokens": 5,
+    "target_prefix_weight": 8,
+    "endpoint_weight": 1,
+    "beta": 0.1,
+    "optimizer": "freshAdamW betas.9/.999 eps1e-8 decay.01",
+    "gradient_clipping": false,
+    "ordinary_start_loss": false,
+    "clean_reference_loss": false
+  },
+  "actual_parent": {
+    "path": "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/ordinary_end_ce_l40s_run64_v1/step064",
+    "weight_sha256": "5fd11ba0d54c4888cb49d0014cbc43488709e1eccb61aa1a3feba810939cd328",
+    "config_sha256": "dc2352afdc28c81ded1934c1f472f3a33b9a61ecbb3c029a82594a176cf2c5b5",
+    "tensor_count": 476,
+    "native_tensor_bytes_equal": true,
+    "source_and_loaded_dtype": "float32",
+    "optimizer_state": "fresh AdamW; no momentum resumed"
+  },
+  "steps": 32,
+  "all_finite_gradient_tensors": 476,
+  "all_sampled_ids_match_qualified_manifest": true,
+  "encoding_manifest_path": "logs/projection-sprint-20260904/onpolicy-end-tokenization-v1.json",
+  "encoding_manifest_sha256": "ae0178a9dc354624dc1d4362a8f2cd6fa758d3b9b5f09d7d5b21b3c9ad43118d",
+  "coverage": {
+    "target_draws": 512,
+    "target_unique": 512,
+    "conditional_draws": 256,
+    "original_draws": 256,
+    "endpoint_draws": 128,
+    "endpoint_unique": 10,
+    "endpoint_visit_counts": {
+      "ordinary_repair_everyday_facts_00": 13,
+      "ordinary_repair_everyday_facts_03": 13,
+      "ordinary_repair_fiction_00": 13,
+      "ordinary_repair_everyday_facts_02": 13,
+      "ordinary_repair_everyday_facts_01": 12,
+      "ordinary_repair_fiction_04": 13,
+      "ordinary_repair_science_02": 13,
+      "ordinary_repair_science_03": 13,
+      "ordinary_repair_pet_captions_03": 12,
+      "ordinary_repair_pet_captions_04": 13
+    }
+  },
+  "endpoint_forward_sequences_per_step": 4,
+  "rejected_sequences_forwarded": 0,
+  "chosen_supervised_token_count_per_state": 1,
+  "reference_cache_read": false,
+  "raw_target_losses": [
+    1.3206992149353027,
+    1.479635238647461,
+    1.21063232421875,
+    1.2573026418685913,
+    1.2772870063781738,
+    1.241783618927002,
+    1.4119858741760254,
+    1.3308926820755005,
+    1.3347562551498413,
+    1.2774477005004883,
+    1.7984192371368408,
+    1.3251233100891113,
+    1.4198386669158936,
+    1.2008978128433228,
+    1.1156493425369263,
+    1.2436456680297852,
+    1.4399577379226685,
+    1.1172503232955933,
+    1.625248670578003,
+    1.1276851892471313,
+    1.1435575485229492,
+    1.3678175210952759,
+    1.123207449913025,
+    1.3718582391738892,
+    1.2064497470855713,
+    1.179851770401001,
+    1.20317542552948,
+    1.2076524496078491,
+    1.2490849494934082,
+    1.2197026014328003,
+    1.1824942827224731,
+    1.2887215614318848
+  ],
+  "raw_endpoint_ce_losses": [
+    0.45610421895980835,
+    0.27261030673980713,
+    4.392659664154053,
+    0.20335885882377625,
+    0.043131567537784576,
+    1.8293960094451904,
+    0.0017280199099332094,
+    0.04764093458652496,
+    1.358703851699829,
+    0.019061747938394547,
+    0.025186805054545403,
+    0.9006509780883789,
+    0.013692284002900124,
+    0.014156648889183998,
+    0.5714378952980042,
+    0.011082367971539497,
+    0.0044412510469555855,
+    0.5393035411834717,
+    0.00462741032242775,
+    0.00726458802819252,
+    0.10284417867660522,
+    0.0055411928333342075,
+    0.00240411888808012,
+    0.00399447837844491,
+    0.02740476466715336,
+    0.023075195029377937,
+    0.003913059830665588,
+    0.002507273107767105,
+    0.015777673572301865,
+    0.0025360072031617165,
+    0.0015713809989392757,
+    0.0019572009332478046
+  ],
+  "actual_endpoint_schedule": [
+    [
+      {
+        "id": "ordinary_repair_everyday_facts_00",
+        "visit": 0,
+        "banks": [
+          0,
+          1
+        ]
+      },
+      {
+        "id": "ordinary_repair_everyday_facts_03",
+        "visit": 0,
+        "banks": [
+          0,
+          1
+        ]
+      },
+      {
+        "id": "ordinary_repair_fiction_00",
+        "visit": 0,
+        "banks": [
+          0,
+          1
+        ]
+      },
+      {
+        "id": "ordinary_repair_everyday_facts_02",
+        "visit": 0,
+        "banks": [
+          0,
+          1
+        ]
+      }
+    ],
+    [
+      {
+        "id": "ordinary_repair_everyday_facts_01",
+        "visit": 0,
+        "banks": [
+          0,
+          1
+        ]
+      },
+      {
+        "id": "ordinary_repair_fiction_04",
+        "visit": 0,
+        "banks": [
+          0,
+          1
+        ]
+      },
+      {
+        "id": "ordinary_repair_science_02",
+        "visit": 0,
+        "banks": [
+          0,
+          1
+        ]
+      },
+      {
+        "id": "ordinary_repair_science_03",
+        "visit": 0,
+        "banks": [
+          0,
+          1
+        ]
+      }
+    ],
+    [
+      {
+        "id": "ordinary_repair_pet_captions_03",
+        "visit": 0,
+        "banks": [
+          0,
+          1
+        ]
+      },
+      {
+        "id": "ordinary_repair_pet_captions_04",
+        "visit": 0,
+        "banks": [
+          0,
+          1
+        ]
+      },
+      {
+        "id": "ordinary_repair_pet_captions_03",
+        "visit": 1,
+        "banks": [
+          2,
+          3
+        ]
+      },
+      {
+        "id": "ordinary_repair_science_03",
+        "visit": 1,
+        "banks": [
+          2,
+          3
+        ]
+      }
+    ],
+    [
+      {
+        "id": "ordinary_repair_everyday_facts_01",
+        "visit": 1,
+        "banks": [
+          2,
+          3
+        ]
+      },
+      {
+        "id": "ordinary_repair_fiction_00",
+        "visit": 1,
+        "banks": [
+          2,
+          3
+        ]
+      },
+      {
+        "id": "ordinary_repair_everyday_facts_02",
+        "visit": 1,
+        "banks": [
+          2,
+          3
+        ]
+      },
+      {
+        "id": "ordinary_repair_fiction_04",
+        "visit": 1,
+        "banks": [
+          2,
+          3
+        ]
+      }
+    ],
+    [
+      {
+        "id": "ordinary_repair_pet_captions_04",
+        "visit": 1,
+        "banks": [
+          2,
+          3
+        ]
+      },
+      {
+        "id": "ordinary_repair_everyday_facts_00",
+        "visit": 1,
+        "banks": [
+          2,
+          3
+        ]
+      },
+      {
+        "id": "ordinary_repair_science_02",
+        "visit": 1,
+        "banks": [
+          2,
+          3
+        ]
+      },
+      {
+        "id": "ordinary_repair_everyday_facts_03",
+        "visit": 1,
+        "banks": [
+          2,
+          3
+        ]
+      }
+    ],
+    [
+      {
+        "id": "ordinary_repair_everyday_facts_02",
+        "visit": 2,
+        "banks": [
+          4,
+          5
+        ]
+      },
+      {
+        "id": "ordinary_repair_everyday_facts_01",
+        "visit": 2,
+        "banks": [
+          4,
+          5
+        ]
+      },
+      {
+        "id": "ordinary_repair_pet_captions_03",
+        "visit": 2,
+        "banks": [
+          4,
+          5
+        ]
+      },
+      {
+        "id": "ordinary_repair_everyday_facts_03",
+        "visit": 2,
+        "banks": [
+          4,
+          5
+        ]
+      }
+    ],
+    [
+      {
+        "id": "ordinary_repair_pet_captions_04",
+        "visit": 2,
+        "banks": [
+          4,
+          5
+        ]
+      },
+      {
+        "id": "ordinary_repair_fiction_00",
+        "visit": 2,
+        "banks": [
+          4,
+          5
+        ]
+      },
+      {
+        "id": "ordinary_repair_fiction_04",
+        "visit": 2,
+        "banks": [
+          4,
+          5
+        ]
+      },
+      {
+        "id": "ordinary_repair_everyday_facts_00",
+        "visit": 2,
+        "banks": [
+          4,
+          5
+        ]
+      }
+    ],
+    [
+      {
+        "id": "ordinary_repair_science_02",
+        "visit": 2,
+        "banks": [
+          4,
+          5
+        ]
+      },
+      {
+        "id": "ordinary_repair_science_03",
+        "visit": 2,
+        "banks": [
+          4,
+          5
+        ]
+      },
+      {
+        "id": "ordinary_repair_science_02",
+        "visit": 3,
+        "banks": [
+          6,
+          7
+        ]
+      },
+      {
+        "id": "ordinary_repair_pet_captions_04",
+        "visit": 3,
+        "banks": [
+          6,
+          7
+        ]
+      }
+    ],
+    [
+      {
+        "id": "ordinary_repair_pet_captions_03",
+        "visit": 3,
+        "banks": [
+          6,
+          7
+        ]
+      },
+      {
+        "id": "ordinary_repair_fiction_04",
+        "visit": 3,
+        "banks": [
+          6,
+          7
+        ]
+      },
+      {
+        "id": "ordinary_repair_everyday_facts_03",
+        "visit": 3,
+        "banks": [
+          6,
+          7
+        ]
+      },
+      {
+        "id": "ordinary_repair_everyday_facts_02",
+        "visit": 3,
+        "banks": [
+          6,
+          7
+        ]
+      }
+    ],
+    [
+      {
+        "id": "ordinary_repair_everyday_facts_00",
+        "visit": 3,
+        "banks": [
+          6,
+          7
+        ]
+      },
+      {
+        "id": "ordinary_repair_science_03",
+        "visit": 3,
+        "banks": [
+          6,
+          7
+        ]
+      },
+      {
+        "id": "ordinary_repair_everyday_facts_01",
+        "visit": 3,
+        "banks": [
+          6,
+          7
+        ]
+      },
+      {
+        "id": "ordinary_repair_fiction_00",
+        "visit": 3,
+        "banks": [
+          6,
+          7
+        ]
+      }
+    ],
+    [
+      {
+        "id": "ordinary_repair_everyday_facts_02",
+        "visit": 4,
+        "banks": [
+          0,
+          1
+        ]
+      },
+      {
+        "id": "ordinary_repair_fiction_00",
+        "visit": 4,
+        "banks": [
+          0,
+          1
+        ]
+      },
+      {
+        "id": "ordinary_repair_everyday_facts_00",
+        "visit": 4,
+        "banks": [
+          0,
+          1
+        ]
+      },
+      {
+        "id": "ordinary_repair_science_03",
+        "visit": 4,
+        "banks": [
+          0,
+          1
+        ]
+      }
+    ],
+    [
+      {
+        "id": "ordinary_repair_pet_captions_04",
+        "visit": 4,
+        "banks": [
+          0,
+          1
+        ]
+      },
+      {
+        "id": "ordinary_repair_pet_captions_03",
+        "visit": 4,
+        "banks": [
+          0,
+          1
+        ]
+      },
+      {
+        "id": "ordinary_repair_everyday_facts_03",
+        "visit": 4,
+        "banks": [
+          0,
+          1
+        ]
+      },
+      {
+        "id": "ordinary_repair_science_02",
+        "visit": 4,
+        "banks": [
+          0,
+          1
+        ]
+      }
+    ],
+    [
+      {
+        "id": "ordinary_repair_fiction_04",
+        "visit": 4,
+        "banks": [
+          0,
+          1
+        ]
+      },
+      {
+        "id": "ordinary_repair_everyday_facts_01",
+        "visit": 4,
+        "banks": [
+          0,
+          1
+        ]
+      },
+      {
+        "id": "ordinary_repair_everyday_facts_03",
+        "visit": 5,
+        "banks": [
+          2,
+          3
+        ]
+      },
+      {
+        "id": "ordinary_repair_everyday_facts_01",
+        "visit": 5,
+        "banks": [
+          2,
+          3
+        ]
+      }
+    ],
+    [
+      {
+        "id": "ordinary_repair_everyday_facts_00",
+        "visit": 5,
+        "banks": [
+          2,
+          3
+        ]
+      },
+      {
+        "id": "ordinary_repair_everyday_facts_02",
+        "visit": 5,
+        "banks": [
+          2,
+          3
+        ]
+      },
+      {
+        "id": "ordinary_repair_science_02",
+        "visit": 5,
+        "banks": [
+          2,
+          3
+        ]
+      },
+      {
+        "id": "ordinary_repair_fiction_04",
+        "visit": 5,
+        "banks": [
+          2,
+          3
+        ]
+      }
+    ],
+    [
+      {
+        "id": "ordinary_repair_fiction_00",
+        "visit": 5,
+        "banks": [
+          2,
+          3
+        ]
+      },
+      {
+        "id": "ordinary_repair_pet_captions_04",
+        "visit": 5,
+        "banks": [
+          2,
+          3
+        ]
+      },
+      {
+        "id": "ordinary_repair_science_03",
+        "visit": 5,
+        "banks": [
+          2,
+          3
+        ]
+      },
+      {
+        "id": "ordinary_repair_pet_captions_03",
+        "visit": 5,
+        "banks": [
+          2,
+          3
+        ]
+      }
+    ],
+    [
+      {
+        "id": "ordinary_repair_science_03",
+        "visit": 6,
+        "banks": [
+          4,
+          5
+        ]
+      },
+      {
+        "id": "ordinary_repair_everyday_facts_02",
+        "visit": 6,
+        "banks": [
+          4,
+          5
+        ]
+      },
+      {
+        "id": "ordinary_repair_everyday_facts_03",
+        "visit": 6,
+        "banks": [
+          4,
+          5
+        ]
+      },
+      {
+        "id": "ordinary_repair_pet_captions_04",
+        "visit": 6,
+        "banks": [
+          4,
+          5
+        ]
+      }
+    ],
+    [
+      {
+        "id": "ordinary_repair_fiction_00",
+        "visit": 6,
+        "banks": [
+          4,
+          5
+        ]
+      },
+      {
+        "id": "ordinary_repair_fiction_04",
+        "visit": 6,
+        "banks": [
+          4,
+          5
+        ]
+      },
+      {
+        "id": "ordinary_repair_everyday_facts_00",
+        "visit": 6,
+        "banks": [
+          4,
+          5
+        ]
+      },
+      {
+        "id": "ordinary_repair_everyday_facts_01",
+        "visit": 6,
+        "banks": [
+          4,
+          5
+        ]
+      }
+    ],
+    [
+      {
+        "id": "ordinary_repair_pet_captions_03",
+        "visit": 6,
+        "banks": [
+          4,
+          5
+        ]
+      },
+      {
+        "id": "ordinary_repair_science_02",
+        "visit": 6,
+        "banks": [
+          4,
+          5
+        ]
+      },
+      {
+        "id": "ordinary_repair_fiction_04",
+        "visit": 7,
+        "banks": [
+          6,
+          7
+        ]
+      },
+      {
+        "id": "ordinary_repair_pet_captions_03",
+        "visit": 7,
+        "banks": [
+          6,
+          7
+        ]
+      }
+    ],
+    [
+      {
+        "id": "ordinary_repair_fiction_00",
+        "visit": 7,
+        "banks": [
+          6,
+          7
+        ]
+      },
+      {
+        "id": "ordinary_repair_science_02",
+        "visit": 7,
+        "banks": [
+          6,
+          7
+        ]
+      },
+      {
+        "id": "ordinary_repair_everyday_facts_03",
+        "visit": 7,
+        "banks": [
+          6,
+          7
+        ]
+      },
+      {
+        "id": "ordinary_repair_science_03",
+        "visit": 7,
+        "banks": [
+          6,
+          7
+        ]
+      }
+    ],
+    [
+      {
+        "id": "ordinary_repair_everyday_facts_02",
+        "visit": 7,
+        "banks": [
+          6,
+          7
+        ]
+      },
+      {
+        "id": "ordinary_repair_pet_captions_04",
+        "visit": 7,
+        "banks": [
+          6,
+          7
+        ]
+      },
+      {
+        "id": "ordinary_repair_everyday_facts_00",
+        "visit": 7,
+        "banks": [
+          6,
+          7
+        ]
+      },
+      {
+        "id": "ordinary_repair_everyday_facts_01",
+        "visit": 7,
+        "banks": [
+          6,
+          7
+        ]
+      }
+    ],
+    [
+      {
+        "id": "ordinary_repair_everyday_facts_02",
+        "visit": 8,
+        "banks": [
+          0,
+          1
+        ]
+      },
+      {
+        "id": "ordinary_repair_pet_captions_03",
+        "visit": 8,
+        "banks": [
+          0,
+          1
+        ]
+      },
+      {
+        "id": "ordinary_repair_everyday_facts_00",
+        "visit": 8,
+        "banks": [
+          0,
+          1
+        ]
+      },
+      {
+        "id": "ordinary_repair_fiction_04",
+        "visit": 8,
+        "banks": [
+          0,
+          1
+        ]
+      }
+    ],
+    [
+      {
+        "id": "ordinary_repair_science_03",
+        "visit": 8,
+        "banks": [
+          0,
+          1
+        ]
+      },
+      {
+        "id": "ordinary_repair_science_02",
+        "visit": 8,
+        "banks": [
+          0,
+          1
+        ]
+      },
+      {
+        "id": "ordinary_repair_everyday_facts_01",
+        "visit": 8,
+        "banks": [
+          0,
+          1
+        ]
+      },
+      {
+        "id": "ordinary_repair_fiction_00",
+        "visit": 8,
+        "banks": [
+          0,
+          1
+        ]
+      }
+    ],
+    [
+      {
+        "id": "ordinary_repair_pet_captions_04",
+        "visit": 8,
+        "banks": [
+          0,
+          1
+        ]
+      },
+      {
+        "id": "ordinary_repair_everyday_facts_03",
+        "visit": 8,
+        "banks": [
+          0,
+          1
+        ]
+      },
+      {
+        "id": "ordinary_repair_everyday_facts_01",
+        "visit": 9,
+        "banks": [
+          2,
+          3
+        ]
+      },
+      {
+        "id": "ordinary_repair_everyday_facts_03",
+        "visit": 9,
+        "banks": [
+          2,
+          3
+        ]
+      }
+    ],
+    [
+      {
+        "id": "ordinary_repair_fiction_04",
+        "visit": 9,
+        "banks": [
+          2,
+          3
+        ]
+      },
+      {
+        "id": "ordinary_repair_pet_captions_04",
+        "visit": 9,
+        "banks": [
+          2,
+          3
+        ]
+      },
+      {
+        "id": "ordinary_repair_science_02",
+        "visit": 9,
+        "banks": [
+          2,
+          3
+        ]
+      },
+      {
+        "id": "ordinary_repair_everyday_facts_02",
+        "visit": 9,
+        "banks": [
+          2,
+          3
+        ]
+      }
+    ],
+    [
+      {
+        "id": "ordinary_repair_fiction_00",
+        "visit": 9,
+        "banks": [
+          2,
+          3
+        ]
+      },
+      {
+        "id": "ordinary_repair_science_03",
+        "visit": 9,
+        "banks": [
+          2,
+          3
+        ]
+      },
+      {
+        "id": "ordinary_repair_pet_captions_03",
+        "visit": 9,
+        "banks": [
+          2,
+          3
+        ]
+      },
+      {
+        "id": "ordinary_repair_everyday_facts_00",
+        "visit": 9,
+        "banks": [
+          2,
+          3
+        ]
+      }
+    ],
+    [
+      {
+        "id": "ordinary_repair_pet_captions_04",
+        "visit": 10,
+        "banks": [
+          4,
+          5
+        ]
+      },
+      {
+        "id": "ordinary_repair_everyday_facts_00",
+        "visit": 10,
+        "banks": [
+          4,
+          5
+        ]
+      },
+      {
+        "id": "ordinary_repair_pet_captions_03",
+        "visit": 10,
+        "banks": [
+          4,
+          5
+        ]
+      },
+      {
+        "id": "ordinary_repair_everyday_facts_03",
+        "visit": 10,
+        "banks": [
+          4,
+          5
+        ]
+      }
+    ],
+    [
+      {
+        "id": "ordinary_repair_everyday_facts_02",
+        "visit": 10,
+        "banks": [
+          4,
+          5
+        ]
+      },
+      {
+        "id": "ordinary_repair_science_03",
+        "visit": 10,
+        "banks": [
+          4,
+          5
+        ]
+      },
+      {
+        "id": "ordinary_repair_fiction_00",
+        "visit": 10,
+        "banks": [
+          4,
+          5
+        ]
+      },
+      {
+        "id": "ordinary_repair_science_02",
+        "visit": 10,
+        "banks": [
+          4,
+          5
+        ]
+      }
+    ],
+    [
+      {
+        "id": "ordinary_repair_fiction_04",
+        "visit": 10,
+        "banks": [
+          4,
+          5
+        ]
+      },
+      {
+        "id": "ordinary_repair_everyday_facts_01",
+        "visit": 10,
+        "banks": [
+          4,
+          5
+        ]
+      },
+      {
+        "id": "ordinary_repair_science_03",
+        "visit": 11,
+        "banks": [
+          6,
+          7
+        ]
+      },
+      {
+        "id": "ordinary_repair_everyday_facts_03",
+        "visit": 11,
+        "banks": [
+          6,
+          7
+        ]
+      }
+    ],
+    [
+      {
+        "id": "ordinary_repair_pet_captions_04",
+        "visit": 11,
+        "banks": [
+          6,
+          7
+        ]
+      },
+      {
+        "id": "ordinary_repair_everyday_facts_01",
+        "visit": 11,
+        "banks": [
+          6,
+          7
+        ]
+      },
+      {
+        "id": "ordinary_repair_pet_captions_03",
+        "visit": 11,
+        "banks": [
+          6,
+          7
+        ]
+      },
+      {
+        "id": "ordinary_repair_fiction_00",
+        "visit": 11,
+        "banks": [
+          6,
+          7
+        ]
+      }
+    ],
+    [
+      {
+        "id": "ordinary_repair_everyday_facts_02",
+        "visit": 11,
+        "banks": [
+          6,
+          7
+        ]
+      },
+      {
+        "id": "ordinary_repair_everyday_facts_00",
+        "visit": 11,
+        "banks": [
+          6,
+          7
+        ]
+      },
+      {
+        "id": "ordinary_repair_fiction_04",
+        "visit": 11,
+        "banks": [
+          6,
+          7
+        ]
+      },
+      {
+        "id": "ordinary_repair_science_02",
+        "visit": 11,
+        "banks": [
+          6,
+          7
+        ]
+      }
+    ],
+    [
+      {
+        "id": "ordinary_repair_science_03",
+        "visit": 12,
+        "banks": [
+          0,
+          1
+        ]
+      },
+      {
+        "id": "ordinary_repair_fiction_00",
+        "visit": 12,
+        "banks": [
+          0,
+          1
+        ]
+      },
+      {
+        "id": "ordinary_repair_everyday_facts_03",
+        "visit": 12,
+        "banks": [
+          0,
+          1
+        ]
+      },
+      {
+        "id": "ordinary_repair_science_02",
+        "visit": 12,
+        "banks": [
+          0,
+          1
+        ]
+      }
+    ],
+    [
+      {
+        "id": "ordinary_repair_everyday_facts_00",
+        "visit": 12,
+        "banks": [
+          0,
+          1
+        ]
+      },
+      {
+        "id": "ordinary_repair_everyday_facts_02",
+        "visit": 12,
+        "banks": [
+          0,
+          1
+        ]
+      },
+      {
+        "id": "ordinary_repair_pet_captions_04",
+        "visit": 12,
+        "banks": [
+          0,
+          1
+        ]
+      },
+      {
+        "id": "ordinary_repair_fiction_04",
+        "visit": 12,
+        "banks": [
+          0,
+          1
+        ]
+      }
+    ]
+  ],
+  "seconds_per_step": [
+    2.0103706149966456,
+    0.8980115960002877,
+    0.8732442120090127,
+    0.876767398964148,
+    0.8739116190117784,
+    0.8715326999663375,
+    0.872440577019006,
+    0.875344623986166,
+    1.067101154010743,
+    0.8763422290212475,
+    0.888446518976707,
+    0.8721984259900637,
+    0.8907879260368645,
+    0.8694071369827725,
+    0.8851571470149793,
+    0.8672255430137739,
+    1.0671892559621483,
+    0.8863017660332844,
+    0.883975067990832,
+    0.8693465549731627,
+    0.8972976669901982,
+    0.8838536040275358,
+    0.8816730210091919,
+    1.0686718740034848,
+    0.8859783379593864,
+    0.8884825200075284,
+    0.8849005899974145,
+    0.8762971679680049,
+    0.887591196980793,
+    0.8696325620403513,
+    0.9023289419710636,
+    1.0811929430346936
+  ],
+  "peak_allocated_bytes": 12033102336,
+  "peak_reserved_bytes": 18475909120,
+  "saved": [
+    {
+      "step": 16,
+      "weight_sha256": "e8733e2bfab200862865f720192735f41cf1274bc9be9990c09b81fbbd4552b1",
+      "config_sha256": "19510c2068bfe20326955a22588d3f2f7f4b3ef528686c8422357d789dc7f721",
+      "exact_native_fp32_reload": true
+    },
+    {
+      "step": 32,
+      "weight_sha256": "7347f2f8cc7610ca605973609fa0d7fff7f4de4e374851e190a8e31eac146556",
+      "config_sha256": "19510c2068bfe20326955a22588d3f2f7f4b3ef528686c8422357d789dc7f721",
+      "exact_native_fp32_reload": true
+    }
+  ],
+  "limitations": [
+    "Ten training endpoints, only two observed unwanted tails; ordinary initial false refusals remain unaddressed.",
+    "Lower endpoint CE is not behavioral stopping success.",
+    "CE1 andDPO10beta.1 are objective-and-scale comparison, not equal gradient pressure."
+  ],
+  "conclusion": "Frozen END-only CE path finite, native parent exact, only chosen EOS scored, schedules verified. Hold next stage until root integrates this finding."
+}

@@ -24,3 +24,5 @@ Ten narrow endpoints cannot establish generalization or solve initial refusals b
 Reference gate passed:90finite exactCE64 scores, alltokenhashesmatch, independent summedCEerror2.384e-7. Contractv2pinscacheSHAd7ba67297d892d4ee9620b278aea0c205a0f407b7c8be14446a58b400b67642c. L40S CE2steps active;RTXDPO2steps next;full32 awaits bothsmokes.
 
 Both2step GPU smokes passed native476/finite/masks and matching actualsamples. DPOpeak15.25GB/12forwards8pairs;CE11.98GB/4chosen/no cache. Bothfull32 proceed from originalCE64 aftersmokeintegration; numerical qualification is not behavioral success.
+
+Both32step runs completed finite476, savednative16/32; actualmain/endpoint schedulesmatch. DPOall2archived, CEarchiveactive. Evaluateboth16/32quick/contextnow(total208outputs); lowendpointloss is not semantic success. No furtheroptimizeruntilresultsread.
