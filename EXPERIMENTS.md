@@ -10622,3 +10622,123 @@ Same precommitted recipe, clean base, shared balanced8step16 parent, data68a4177
 ```
 
 Original-answer proxy ratio1.0040675 versus active-parent baseline is not clean-normalized erasure evidence. Small rawfiles and adapterconfigs local; large adapters remain remote pending archive. Next fixed40 quick answers each atmax96/batch16, no concurrentGPUjob.
+
+
+## 2026-09-05 — Exposure control L40S full96 completed
+
+L40S exposure-control96 completed finite:768unique of1056direct and520unique of520context,768draws each. All three24/48/96 adapters finite476FP32 and pinned. Subagent quick3 next after this integration; RTX natural-coverage quick3 active. No behavioral result from either new arm yet.
+
+Completed05:27:39UTC. Exact original1576 corpus, shared balanced8step16, frozen natural_coverage_v1 contract/seed34004/sourcee171598. Receipt logs/projection-sprint-20260904/exposure-control-l40s-full-review-v1.json SHAc8779d1b7addbe4f212b1c0a93161186258afc64fdd7411a57d3d7ab4fb71e80.
+```json
+{
+  "parent_load": {
+    "path": "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/balanced8_rtx_run64_v1/step016",
+    "weight_sha256": "5dbe7e997be9d7fe960eae9dd5843a079a87ba04df912dd23c70b2e81273b2e5",
+    "config_sha256": "4fe66beec34bf4e8bb188d8fedcad1b7882b0023c07bf745ee59b4b75fb73b71",
+    "tensor_count": 476,
+    "native_tensor_bytes_equal": true,
+    "source_and_loaded_dtype": "float32",
+    "optimizer_state": "fresh AdamW; no momentum resumed"
+  },
+  "finite_steps": 96,
+  "final_health": {
+    "finite_losses": true,
+    "finite_gradients": true,
+    "gradient_tensors": 476,
+    "losses": {
+      "total": 13.5297212600708,
+      "forget": 1.1489073038101196,
+      "retain": 0.00153998879250139,
+      "chat": 0.019944490864872932,
+      "consistency": 0.0,
+      "answer_suppression": 0.0
+    },
+    "step": 96,
+    "scope": "training_health",
+    "gradient_norm": 114.93324490570821,
+    "elapsed_seconds": 1.6081898040138185,
+    "peak_allocated_bytes": 19192464896,
+    "peak_reserved_bytes": 27686600704
+  },
+  "remote_checkpoints": {
+    "24": {
+      "tensors": 476,
+      "all_finite": true,
+      "dtype": "float32",
+      "files": {
+        "adapter_config.json": {
+          "sha256": "d152363105903636c2ea2d32867704c55d5bb0590d8c1a15ce40ce418dcda896",
+          "bytes": 5658
+        },
+        "README.md": {
+          "sha256": "cf67b3f5940e199f1d4674775df4f9282d6ade6ebc1f9e69a469660310f2ef3d",
+          "bytes": 5334
+        },
+        "adapter_model.safetensors": {
+          "sha256": "3201b31c10c0f81e5782f04d0546974de0ccc1e14e7bb07b7eda79cec7a12783",
+          "bytes": 238491136
+        }
+      }
+    },
+    "48": {
+      "tensors": 476,
+      "all_finite": true,
+      "dtype": "float32",
+      "files": {
+        "adapter_config.json": {
+          "sha256": "d152363105903636c2ea2d32867704c55d5bb0590d8c1a15ce40ce418dcda896",
+          "bytes": 5658
+        },
+        "README.md": {
+          "sha256": "cf67b3f5940e199f1d4674775df4f9282d6ade6ebc1f9e69a469660310f2ef3d",
+          "bytes": 5334
+        },
+        "adapter_model.safetensors": {
+          "sha256": "49f2c37aaf7746618977c2087c2a8f0b0d1fdcd30558d196afa2a8e381c3bcec",
+          "bytes": 238491136
+        }
+      }
+    },
+    "96": {
+      "tensors": 476,
+      "all_finite": true,
+      "dtype": "float32",
+      "files": {
+        "adapter_config.json": {
+          "sha256": "d152363105903636c2ea2d32867704c55d5bb0590d8c1a15ce40ce418dcda896",
+          "bytes": 5658
+        },
+        "README.md": {
+          "sha256": "cf67b3f5940e199f1d4674775df4f9282d6ade6ebc1f9e69a469660310f2ef3d",
+          "bytes": 5334
+        },
+        "adapter_model.safetensors": {
+          "sha256": "1254656b53453b063eb861d6c3ae1aea9a9c5919bb26e9d0159b94b5c7c6561a",
+          "bytes": 238491136
+        }
+      }
+    }
+  },
+  "peak_allocated_bytes": 22813750784,
+  "peak_reserved_bytes": 27686600704,
+  "training_seconds": 161.63427763286745,
+  "coverage": {
+    "direct": {
+      "population": 1056,
+      "draws": 768,
+      "unique_seen": 768,
+      "cycles_started": 1,
+      "complete_cycles": 0
+    },
+    "context": {
+      "population": 520,
+      "draws": 768,
+      "unique_seen": 520,
+      "cycles_started": 2,
+      "complete_cycles": 1
+    }
+  }
+}
+```
+
+Run derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/exposure_control_l40s_run96_v1. Original-answer proxy.9974716 is relative to active parent, not evidence of clean-normalized forgetting. Small files local; adapter archive in progress. Fixed quick40/max96/batch16 next.

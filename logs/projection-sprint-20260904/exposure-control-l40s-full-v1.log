@@ -1,0 +1,119 @@
+2026-09-05T05:24:34Z
+All exposure control L40S source/data/parent/cleanpins verified
+Loading /home/ubuntu/sequential-unlearning-clean-snapshot-093f9f388b31de276ce2de164bdc2081324b9767 in torch.bfloat16...
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/883 [00:00<?, ?it/s]Loading weights:   9%|▉         | 81/883 [00:00<00:01, 775.76it/s]Loading weights:  18%|█▊        | 159/883 [00:00<00:00, 768.62it/s]Loading weights:  27%|██▋       | 236/883 [00:00<00:00, 762.21it/s]Loading weights:  35%|███▌      | 313/883 [00:00<00:00, 746.74it/s]Loading weights:  44%|████▍     | 388/883 [00:00<00:00, 734.08it/s]Loading weights:  61%|██████▏   | 543/883 [00:00<00:00, 1002.27it/s]Loading weights: 100%|██████████| 883/883 [00:00<00:00, 1235.13it/s]
+Model has 34 layers; rank-32 LoRA on layers 0-33 (ELM early band).
+/home/ubuntu/sequential-unlearning/venv-g6e/lib/python3.12/site-packages/peft/utils/save_and_load.py:372: UserWarning: Could not find a config file in /home/ubuntu/.cache/huggingface/hub/models--google--gemma-3-4b-it/snapshots/093f9f388b31de276ce2de164bdc2081324b9767 - will assume that the vocabulary was not modified.
+  warnings.warn(
+trainable params: 59,604,992 || all params: 4,359,684,464 || trainable%: 1.3672
+JensUn refusal target 'No idea': token ids [3771, 4317]
+Measuring the forget corpus before training...
+baseline={"mean_answer_token_prob": 0.8596102893352509, "mean_jsd_to_refusal": 0.6931437253952026, "mean_refusal_token_prob": 7.837233440000091e-07}
+step   1/96  jsd=1.118955  retain=0.0024  answer_suppress=0.0000  chat=0.0147  consistency=0.0000  consistency_mb=0  tc_cos=None  projected=False  projected_tensors=0  grad=134.0128
+step   2/96  jsd=1.464430  retain=0.0021  answer_suppress=0.0000  chat=0.0145  consistency=0.0000  consistency_mb=0  tc_cos=None  projected=False  projected_tensors=0  grad=276.2623
+step   3/96  jsd=1.318768  retain=0.0017  answer_suppress=0.0000  chat=0.0089  consistency=0.0000  consistency_mb=0  tc_cos=None  projected=False  projected_tensors=0  grad=190.1531
+step   4/96  jsd=1.098354  retain=0.0020  answer_suppress=0.0000  chat=0.0222  consistency=0.0000  consistency_mb=0  tc_cos=None  projected=False  projected_tensors=0  grad=126.2695
+step   5/96  jsd=1.365732  retain=0.0016  answer_suppress=0.0000  chat=0.0245  consistency=0.0000  consistency_mb=0  tc_cos=None  projected=False  projected_tensors=0  grad=173.7747
+step   6/96  jsd=1.096593  retain=0.0024  answer_suppress=0.0000  chat=0.0167  consistency=0.0000  consistency_mb=0  tc_cos=None  projected=False  projected_tensors=0  grad=135.8641
+step   7/96  jsd=1.271537  retain=0.0018  answer_suppress=0.0000  chat=0.0331  consistency=0.0000  consistency_mb=0  tc_cos=None  projected=False  projected_tensors=0  grad=152.1116
+step   8/96  jsd=1.073179  retain=0.0021  answer_suppress=0.0000  chat=0.0223  consistency=0.0000  consistency_mb=0  tc_cos=None  projected=False  projected_tensors=0  grad=105.2960
+step   9/96  jsd=1.241505  retain=0.0017  answer_suppress=0.0000  chat=0.0220  consistency=0.0000  consistency_mb=0  tc_cos=None  projected=False  projected_tensors=0  grad=126.8927
+step  10/96  jsd=1.086524  retain=0.0015  answer_suppress=0.0000  chat=0.0152  consistency=0.0000  consistency_mb=0  tc_cos=None  projected=False  projected_tensors=0  grad=100.2332
+step  11/96  jsd=1.079841  retain=0.0022  answer_suppress=0.0000  chat=0.0164  consistency=0.0000  consistency_mb=0  tc_cos=None  projected=False  projected_tensors=0  grad=94.7192
+step  12/96  jsd=1.221501  retain=0.0014  answer_suppress=0.0000  chat=0.0105  consistency=0.0000  consistency_mb=0  tc_cos=None  projected=False  projected_tensors=0  grad=114.2517
+step  13/96  jsd=1.255269  retain=0.0014  answer_suppress=0.0000  chat=0.0227  consistency=0.0000  consistency_mb=0  tc_cos=None  projected=False  projected_tensors=0  grad=133.8188
+step  14/96  jsd=1.207566  retain=0.0020  answer_suppress=0.0000  chat=0.0232  consistency=0.0000  consistency_mb=0  tc_cos=None  projected=False  projected_tensors=0  grad=127.6003
+step  15/96  jsd=1.146321  retain=0.0017  answer_suppress=0.0000  chat=0.0273  consistency=0.0000  consistency_mb=0  tc_cos=None  projected=False  projected_tensors=0  grad=126.5781
+step  16/96  jsd=1.168177  retain=0.0013  answer_suppress=0.0000  chat=0.0135  consistency=0.0000  consistency_mb=0  tc_cos=None  projected=False  projected_tensors=0  grad=124.1853
+step  17/96  jsd=1.235691  retain=0.0019  answer_suppress=0.0000  chat=0.0219  consistency=0.0000  consistency_mb=0  tc_cos=None  projected=False  projected_tensors=0  grad=135.2593
+step  18/96  jsd=0.972991  retain=0.0016  answer_suppress=0.0000  chat=0.0244  consistency=0.0000  consistency_mb=0  tc_cos=None  projected=False  projected_tensors=0  grad=80.9879
+step  19/96  jsd=1.145397  retain=0.0013  answer_suppress=0.0000  chat=0.0231  consistency=0.0000  consistency_mb=0  tc_cos=None  projected=False  projected_tensors=0  grad=131.5510
+step  20/96  jsd=1.008968  retain=0.0019  answer_suppress=0.0000  chat=0.0219  consistency=0.0000  consistency_mb=0  tc_cos=None  projected=False  projected_tensors=0  grad=96.3866
+step  21/96  jsd=1.077388  retain=0.0016  answer_suppress=0.0000  chat=0.0202  consistency=0.0000  consistency_mb=0  tc_cos=None  projected=False  projected_tensors=0  grad=114.7316
+step  22/96  jsd=1.375063  retain=0.0014  answer_suppress=0.0000  chat=0.0180  consistency=0.0000  consistency_mb=0  tc_cos=None  projected=False  projected_tensors=0  grad=184.3546
+step  23/96  jsd=1.171462  retain=0.0014  answer_suppress=0.0000  chat=0.0098  consistency=0.0000  consistency_mb=0  tc_cos=None  projected=False  projected_tensors=0  grad=162.8418
+step  24/96  jsd=1.124106  retain=0.0016  answer_suppress=0.0000  chat=0.0173  consistency=0.0000  consistency_mb=0  tc_cos=None  projected=False  projected_tensors=0  grad=127.1436
+  audit={"answer_prob_ratio_to_baseline": 1.0041842708650597, "consistency_gradient_microbatches": 0, "consistency_records_used": 0, "consistency_tokens_used": 0, "control_projection_applied": false, "control_projection_eligible_tensors": 0, "control_projection_tensors": 0, "mean_answer_token_prob": 0.8632071316242218, "mean_jsd_to_refusal": 0.6931434869766235, "mean_refusal_token_prob": 8.357233696187905e-07, "scope": "audit", "step": 24, "target_control_grad_cosine": null, "target_control_grad_dot": null, "train_answer_suppression": 0.0, "train_chat_retain": 0.017318911850452423, "train_consistency": 0.0, "train_forget": 1.1241058111190796, "train_grad_norm": 127.14357500898085, "train_jsd": 1.1241058111190796, "train_retain": 0.0016048126854002476}
+/home/ubuntu/sequential-unlearning/venv-g6e/lib/python3.12/site-packages/peft/utils/save_and_load.py:372: UserWarning: Could not find a config file in /home/ubuntu/.cache/huggingface/hub/models--google--gemma-3-4b-it/snapshots/093f9f388b31de276ce2de164bdc2081324b9767 - will assume that the vocabulary was not modified.
+  warnings.warn(
+  saved model -> derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/exposure_control_l40s_run96_v1/step024
+step  25/96  jsd=1.089073  retain=0.0012  answer_suppress=0.0000  chat=0.0134  consistency=0.0000  consistency_mb=0  tc_cos=None  projected=False  projected_tensors=0  grad=162.7584
+step  26/96  jsd=1.070458  retain=0.0016  answer_suppress=0.0000  chat=0.0111  consistency=0.0000  consistency_mb=0  tc_cos=None  projected=False  projected_tensors=0  grad=100.6921
+step  27/96  jsd=1.266592  retain=0.0017  answer_suppress=0.0000  chat=0.0077  consistency=0.0000  consistency_mb=0  tc_cos=None  projected=False  projected_tensors=0  grad=157.8394
+step  28/96  jsd=1.178848  retain=0.0016  answer_suppress=0.0000  chat=0.0141  consistency=0.0000  consistency_mb=0  tc_cos=None  projected=False  projected_tensors=0  grad=150.9976
+step  29/96  jsd=1.218451  retain=0.0014  answer_suppress=0.0000  chat=0.0070  consistency=0.0000  consistency_mb=0  tc_cos=None  projected=False  projected_tensors=0  grad=133.4792
+step  30/96  jsd=1.196741  retain=0.0017  answer_suppress=0.0000  chat=0.0098  consistency=0.0000  consistency_mb=0  tc_cos=None  projected=False  projected_tensors=0  grad=118.1774
+step  31/96  jsd=1.064081  retain=0.0015  answer_suppress=0.0000  chat=0.0092  consistency=0.0000  consistency_mb=0  tc_cos=None  projected=False  projected_tensors=0  grad=90.0870
+step  32/96  jsd=1.112374  retain=0.0016  answer_suppress=0.0000  chat=0.0079  consistency=0.0000  consistency_mb=0  tc_cos=None  projected=False  projected_tensors=0  grad=92.1730
+step  33/96  jsd=1.133829  retain=0.0014  answer_suppress=0.0000  chat=0.0131  consistency=0.0000  consistency_mb=0  tc_cos=None  projected=False  projected_tensors=0  grad=108.0149
+step  34/96  jsd=1.103437  retain=0.0015  answer_suppress=0.0000  chat=0.0239  consistency=0.0000  consistency_mb=0  tc_cos=None  projected=False  projected_tensors=0  grad=90.9215
+step  35/96  jsd=1.206176  retain=0.0017  answer_suppress=0.0000  chat=0.0191  consistency=0.0000  consistency_mb=0  tc_cos=None  projected=False  projected_tensors=0  grad=126.8573
+step  36/96  jsd=1.248048  retain=0.0013  answer_suppress=0.0000  chat=0.0106  consistency=0.0000  consistency_mb=0  tc_cos=None  projected=False  projected_tensors=0  grad=95.8525
+step  37/96  jsd=1.060003  retain=0.0010  answer_suppress=0.0000  chat=0.0078  consistency=0.0000  consistency_mb=0  tc_cos=None  projected=False  projected_tensors=0  grad=93.0807
+step  38/96  jsd=1.262926  retain=0.0015  answer_suppress=0.0000  chat=0.0281  consistency=0.0000  consistency_mb=0  tc_cos=None  projected=False  projected_tensors=0  grad=170.9799
+step  39/96  jsd=1.201020  retain=0.0014  answer_suppress=0.0000  chat=0.0117  consistency=0.0000  consistency_mb=0  tc_cos=None  projected=False  projected_tensors=0  grad=166.6302
+step  40/96  jsd=1.252695  retain=0.0015  answer_suppress=0.0000  chat=0.0150  consistency=0.0000  consistency_mb=0  tc_cos=None  projected=False  projected_tensors=0  grad=141.0812
+step  41/96  jsd=1.012711  retain=0.0032  answer_suppress=0.0000  chat=0.0178  consistency=0.0000  consistency_mb=0  tc_cos=None  projected=False  projected_tensors=0  grad=94.4166
+step  42/96  jsd=1.162001  retain=0.0017  answer_suppress=0.0000  chat=0.0081  consistency=0.0000  consistency_mb=0  tc_cos=None  projected=False  projected_tensors=0  grad=93.1112
+step  43/96  jsd=1.149765  retain=0.0011  answer_suppress=0.0000  chat=0.0090  consistency=0.0000  consistency_mb=0  tc_cos=None  projected=False  projected_tensors=0  grad=116.2810
+step  44/96  jsd=1.119503  retain=0.0012  answer_suppress=0.0000  chat=0.0053  consistency=0.0000  consistency_mb=0  tc_cos=None  projected=False  projected_tensors=0  grad=111.1595
+step  45/96  jsd=1.042510  retain=0.0017  answer_suppress=0.0000  chat=0.0045  consistency=0.0000  consistency_mb=0  tc_cos=None  projected=False  projected_tensors=0  grad=83.0862
+step  46/96  jsd=1.075480  retain=0.0015  answer_suppress=0.0000  chat=0.0120  consistency=0.0000  consistency_mb=0  tc_cos=None  projected=False  projected_tensors=0  grad=101.7547
+step  47/96  jsd=1.152114  retain=0.0017  answer_suppress=0.0000  chat=0.0171  consistency=0.0000  consistency_mb=0  tc_cos=None  projected=False  projected_tensors=0  grad=103.5331
+step  48/96  jsd=1.169669  retain=0.0017  answer_suppress=0.0000  chat=0.0078  consistency=0.0000  consistency_mb=0  tc_cos=None  projected=False  projected_tensors=0  grad=106.9081
+  audit={"answer_prob_ratio_to_baseline": 0.9959020217041933, "consistency_gradient_microbatches": 0, "consistency_records_used": 0, "consistency_tokens_used": 0, "control_projection_applied": false, "control_projection_eligible_tensors": 0, "control_projection_tensors": 0, "mean_answer_token_prob": 0.8560876250267029, "mean_jsd_to_refusal": 0.6931399405002594, "mean_refusal_token_prob": 2.0908412636799767e-06, "scope": "audit", "step": 48, "target_control_grad_cosine": null, "target_control_grad_dot": null, "train_answer_suppression": 0.0, "train_chat_retain": 0.007754412014037371, "train_consistency": 0.0, "train_forget": 1.1696686744689941, "train_grad_norm": 106.90805932817754, "train_jsd": 1.1696686744689941, "train_retain": 0.0017305101500824094}
+  saved model -> derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/exposure_control_l40s_run96_v1/step048
+step  49/96  jsd=1.063375  retain=0.0016  answer_suppress=0.0000  chat=0.0149  consistency=0.0000  consistency_mb=0  tc_cos=None  projected=False  projected_tensors=0  grad=120.0300
+step  50/96  jsd=1.049966  retain=0.0013  answer_suppress=0.0000  chat=0.0126  consistency=0.0000  consistency_mb=0  tc_cos=None  projected=False  projected_tensors=0  grad=112.0140
+step  51/96  jsd=1.090904  retain=0.0015  answer_suppress=0.0000  chat=0.0071  consistency=0.0000  consistency_mb=0  tc_cos=None  projected=False  projected_tensors=0  grad=86.3312
+step  52/96  jsd=1.115991  retain=0.0013  answer_suppress=0.0000  chat=0.0054  consistency=0.0000  consistency_mb=0  tc_cos=None  projected=False  projected_tensors=0  grad=98.6404
+step  53/96  jsd=1.098364  retain=0.0014  answer_suppress=0.0000  chat=0.0039  consistency=0.0000  consistency_mb=0  tc_cos=None  projected=False  projected_tensors=0  grad=90.2977
+step  54/96  jsd=1.127339  retain=0.0022  answer_suppress=0.0000  chat=0.0116  consistency=0.0000  consistency_mb=0  tc_cos=None  projected=False  projected_tensors=0  grad=119.9094
+step  55/96  jsd=1.138915  retain=0.0011  answer_suppress=0.0000  chat=0.0087  consistency=0.0000  consistency_mb=0  tc_cos=None  projected=False  projected_tensors=0  grad=91.8734
+step  56/96  jsd=1.170817  retain=0.0015  answer_suppress=0.0000  chat=0.0117  consistency=0.0000  consistency_mb=0  tc_cos=None  projected=False  projected_tensors=0  grad=107.4697
+step  57/96  jsd=1.135177  retain=0.0011  answer_suppress=0.0000  chat=0.0040  consistency=0.0000  consistency_mb=0  tc_cos=None  projected=False  projected_tensors=0  grad=105.0022
+step  58/96  jsd=0.991894  retain=0.0021  answer_suppress=0.0000  chat=0.0199  consistency=0.0000  consistency_mb=0  tc_cos=None  projected=False  projected_tensors=0  grad=80.5204
+step  59/96  jsd=0.988556  retain=0.0016  answer_suppress=0.0000  chat=0.0093  consistency=0.0000  consistency_mb=0  tc_cos=None  projected=False  projected_tensors=0  grad=97.1281
+step  60/96  jsd=1.128233  retain=0.0014  answer_suppress=0.0000  chat=0.0113  consistency=0.0000  consistency_mb=0  tc_cos=None  projected=False  projected_tensors=0  grad=96.3762
+step  61/96  jsd=1.069599  retain=0.0014  answer_suppress=0.0000  chat=0.0083  consistency=0.0000  consistency_mb=0  tc_cos=None  projected=False  projected_tensors=0  grad=108.5593
+step  62/96  jsd=1.068411  retain=0.0009  answer_suppress=0.0000  chat=0.0083  consistency=0.0000  consistency_mb=0  tc_cos=None  projected=False  projected_tensors=0  grad=88.3379
+step  63/96  jsd=1.126008  retain=0.0011  answer_suppress=0.0000  chat=0.0112  consistency=0.0000  consistency_mb=0  tc_cos=None  projected=False  projected_tensors=0  grad=125.9916
+step  64/96  jsd=1.109038  retain=0.0012  answer_suppress=0.0000  chat=0.0122  consistency=0.0000  consistency_mb=0  tc_cos=None  projected=False  projected_tensors=0  grad=105.7025
+step  65/96  jsd=1.104020  retain=0.0018  answer_suppress=0.0000  chat=0.0061  consistency=0.0000  consistency_mb=0  tc_cos=None  projected=False  projected_tensors=0  grad=103.0666
+step  66/96  jsd=1.184101  retain=0.0019  answer_suppress=0.0000  chat=0.0094  consistency=0.0000  consistency_mb=0  tc_cos=None  projected=False  projected_tensors=0  grad=102.5403
+step  67/96  jsd=1.008039  retain=0.0022  answer_suppress=0.0000  chat=0.0065  consistency=0.0000  consistency_mb=0  tc_cos=None  projected=False  projected_tensors=0  grad=99.7227
+step  68/96  jsd=1.162102  retain=0.0016  answer_suppress=0.0000  chat=0.0063  consistency=0.0000  consistency_mb=0  tc_cos=None  projected=False  projected_tensors=0  grad=118.7307
+step  69/96  jsd=0.993409  retain=0.0011  answer_suppress=0.0000  chat=0.0131  consistency=0.0000  consistency_mb=0  tc_cos=None  projected=False  projected_tensors=0  grad=111.9482
+step  70/96  jsd=1.014209  retain=0.0010  answer_suppress=0.0000  chat=0.0037  consistency=0.0000  consistency_mb=0  tc_cos=None  projected=False  projected_tensors=0  grad=75.1450
+step  71/96  jsd=1.044102  retain=0.0017  answer_suppress=0.0000  chat=0.0207  consistency=0.0000  consistency_mb=0  tc_cos=None  projected=False  projected_tensors=0  grad=74.2890
+step  72/96  jsd=1.026237  retain=0.0009  answer_suppress=0.0000  chat=0.0160  consistency=0.0000  consistency_mb=0  tc_cos=None  projected=False  projected_tensors=0  grad=95.1994
+  audit={"answer_prob_ratio_to_baseline": 1.000349261286723, "consistency_gradient_microbatches": 0, "consistency_records_used": 0, "consistency_tokens_used": 0, "control_projection_applied": false, "control_projection_eligible_tensors": 0, "control_projection_tensors": 0, "mean_answer_token_prob": 0.8599105179309845, "mean_jsd_to_refusal": 0.6931263208389282, "mean_refusal_token_prob": 8.30991642430945e-06, "scope": "audit", "step": 72, "target_control_grad_cosine": null, "target_control_grad_dot": null, "train_answer_suppression": 0.0, "train_chat_retain": 0.015981581062078476, "train_consistency": 0.0, "train_forget": 1.0262371301651, "train_grad_norm": 95.1994237602642, "train_jsd": 1.0262371301651, "train_retain": 0.0009441409492865205}
+step  73/96  jsd=1.090886  retain=0.0015  answer_suppress=0.0000  chat=0.0068  consistency=0.0000  consistency_mb=0  tc_cos=None  projected=False  projected_tensors=0  grad=132.0691
+step  74/96  jsd=1.081532  retain=0.0016  answer_suppress=0.0000  chat=0.0149  consistency=0.0000  consistency_mb=0  tc_cos=None  projected=False  projected_tensors=0  grad=136.5465
+step  75/96  jsd=1.108048  retain=0.0012  answer_suppress=0.0000  chat=0.0048  consistency=0.0000  consistency_mb=0  tc_cos=None  projected=False  projected_tensors=0  grad=152.9786
+step  76/96  jsd=1.197247  retain=0.0019  answer_suppress=0.0000  chat=0.0096  consistency=0.0000  consistency_mb=0  tc_cos=None  projected=False  projected_tensors=0  grad=109.6417
+step  77/96  jsd=1.043770  retain=0.0012  answer_suppress=0.0000  chat=0.0065  consistency=0.0000  consistency_mb=0  tc_cos=None  projected=False  projected_tensors=0  grad=97.3289
+step  78/96  jsd=1.089447  retain=0.0016  answer_suppress=0.0000  chat=0.0094  consistency=0.0000  consistency_mb=0  tc_cos=None  projected=False  projected_tensors=0  grad=94.3832
+step  79/96  jsd=1.201653  retain=0.0011  answer_suppress=0.0000  chat=0.0153  consistency=0.0000  consistency_mb=0  tc_cos=None  projected=False  projected_tensors=0  grad=113.9638
+step  80/96  jsd=0.997325  retain=0.0013  answer_suppress=0.0000  chat=0.0032  consistency=0.0000  consistency_mb=0  tc_cos=None  projected=False  projected_tensors=0  grad=68.2854
+step  81/96  jsd=1.157176  retain=0.0012  answer_suppress=0.0000  chat=0.0126  consistency=0.0000  consistency_mb=0  tc_cos=None  projected=False  projected_tensors=0  grad=107.5454
+step  82/96  jsd=1.117673  retain=0.0018  answer_suppress=0.0000  chat=0.0076  consistency=0.0000  consistency_mb=0  tc_cos=None  projected=False  projected_tensors=0  grad=111.7222
+step  83/96  jsd=0.946082  retain=0.0013  answer_suppress=0.0000  chat=0.0076  consistency=0.0000  consistency_mb=0  tc_cos=None  projected=False  projected_tensors=0  grad=101.2684
+step  84/96  jsd=1.110738  retain=0.0013  answer_suppress=0.0000  chat=0.0272  consistency=0.0000  consistency_mb=0  tc_cos=None  projected=False  projected_tensors=0  grad=143.0691
+step  85/96  jsd=1.065120  retain=0.0017  answer_suppress=0.0000  chat=0.0058  consistency=0.0000  consistency_mb=0  tc_cos=None  projected=False  projected_tensors=0  grad=80.4685
+step  86/96  jsd=1.019122  retain=0.0015  answer_suppress=0.0000  chat=0.0040  consistency=0.0000  consistency_mb=0  tc_cos=None  projected=False  projected_tensors=0  grad=78.7047
+step  87/96  jsd=1.031000  retain=0.0019  answer_suppress=0.0000  chat=0.0172  consistency=0.0000  consistency_mb=0  tc_cos=None  projected=False  projected_tensors=0  grad=121.6590
+step  88/96  jsd=1.021445  retain=0.0014  answer_suppress=0.0000  chat=0.0111  consistency=0.0000  consistency_mb=0  tc_cos=None  projected=False  projected_tensors=0  grad=104.7850
+step  89/96  jsd=0.910706  retain=0.0020  answer_suppress=0.0000  chat=0.0078  consistency=0.0000  consistency_mb=0  tc_cos=None  projected=False  projected_tensors=0  grad=73.0804
+step  90/96  jsd=0.940915  retain=0.0017  answer_suppress=0.0000  chat=0.0142  consistency=0.0000  consistency_mb=0  tc_cos=None  projected=False  projected_tensors=0  grad=229.5679
+step  91/96  jsd=1.078982  retain=0.0015  answer_suppress=0.0000  chat=0.0114  consistency=0.0000  consistency_mb=0  tc_cos=None  projected=False  projected_tensors=0  grad=124.1900
+step  92/96  jsd=1.169561  retain=0.0012  answer_suppress=0.0000  chat=0.0107  consistency=0.0000  consistency_mb=0  tc_cos=None  projected=False  projected_tensors=0  grad=104.9068
+step  93/96  jsd=0.968639  retain=0.0010  answer_suppress=0.0000  chat=0.0042  consistency=0.0000  consistency_mb=0  tc_cos=None  projected=False  projected_tensors=0  grad=78.5803
+step  94/96  jsd=0.951848  retain=0.0014  answer_suppress=0.0000  chat=0.0075  consistency=0.0000  consistency_mb=0  tc_cos=None  projected=False  projected_tensors=0  grad=83.6140
+step  95/96  jsd=0.851443  retain=0.0014  answer_suppress=0.0000  chat=0.0149  consistency=0.0000  consistency_mb=0  tc_cos=None  projected=False  projected_tensors=0  grad=93.5396
+step  96/96  jsd=1.148907  retain=0.0015  answer_suppress=0.0000  chat=0.0199  consistency=0.0000  consistency_mb=0  tc_cos=None  projected=False  projected_tensors=0  grad=114.9332
+  audit={"answer_prob_ratio_to_baseline": 0.9974716173200177, "consistency_gradient_microbatches": 0, "consistency_records_used": 0, "consistency_tokens_used": 0, "control_projection_applied": false, "control_projection_eligible_tensors": 0, "control_projection_tensors": 0, "mean_answer_token_prob": 0.857436865568161, "mean_jsd_to_refusal": 0.6931063830852509, "mean_refusal_token_prob": 1.9551180599819418e-05, "scope": "audit", "step": 96, "target_control_grad_cosine": null, "target_control_grad_dot": null, "train_answer_suppression": 0.0, "train_chat_retain": 0.019944490864872932, "train_consistency": 0.0, "train_forget": 1.1489073038101196, "train_grad_norm": 114.93324490570821, "train_jsd": 1.1489073038101196, "train_retain": 0.00153998879250139}
+  saved model -> derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/exposure_control_l40s_run96_v1/step096
+Done. stop_reason=step_budget_exhausted step=96 model=derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/exposure_control_l40s_run96_v1/step096
+2026-09-05T05:27:39Z

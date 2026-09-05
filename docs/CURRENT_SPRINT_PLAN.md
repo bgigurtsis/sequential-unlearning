@@ -32,3 +32,6 @@ Paired full96 launched: RTX natural_coverage_rtx_run96_v1 wrapper84654, L40S exp
 
 
 RTX natural-coverage96 completed:96finite476-gradient steps, all288 new prompts covered,768 distinct old replay prompts; snapshots24/48/96 pinned. Peakallocated22.87GB. Quick3 evaluation next; L40S exposure-control run independent. No behavioral qualification from training loss.
+
+
+L40S exposure-control96 completed finite:768unique of1056direct and520unique of520context,768draws each. All three24/48/96 adapters finite476FP32 and pinned. Subagent quick3 next after this integration; RTX natural-coverage quick3 active. No behavioral result from either new arm yet.
