@@ -12,31 +12,25 @@ No checkpoint qualifies. The original CE64 checkpoint has 28/28 quick and 9/9 co
 
 Repairing ten exact generated answer endings with END-only CE or DPO, while continuing target unfamiliarity CE, regressed collateral performance. At steps16/32, DPO had6/5 clean unrelated quick answers; CE had5/2. All four checkpoints still append unfamiliarity to maths. All208 development outputs were read and all four weights archived. That experiment is closed.
 
-## Active comparison
+## Next comparison
 
-Both arms restart from original CE64 with fresh AdamW, seed34020 and LR2e-6. Both train only one EOS1 token after each of the same ten selected generated answer endings: four endings per update, loss weight1,32 updates, snapshots16/32.
+The NONE/JSD ending-only comparison is closed: NONE had5/4 clean unrelated answers at16/32, JSD5/6; all four checkpoints still append unfamiliarity to maths. Neither beats originalCE64's7/8. All208 replies were read and all weights archived. Further ending-only step or coefficient extensions are rejected.
 
-| GPU and owner | Employment-preservation objective |
+Both next arms will repair full ordinary responses, including their first tokens and endings, while preserving employment unfamiliarity through a frozen CE64 teacher. Use the existing64 vetted authored responses and4106 target states.
+
+| GPU and owner | Ordinary repair objective |
 | --- | --- |
-| RTX — root | None; no target forwards or gradients |
-| L40S — projection_followup subagent | JSD100 against a separate frozen CE64 teacher, on the same4106 target states; batch16, first five supervised suffix tokens weighted8 |
+| RTX — root | Full-response positive CE, weight1 |
+| L40S — projection_followup | JSD to a separate clean-base teacher, weight100 |
 
-This tests whether continued target-unfamiliarity CE contributed to the previous collateral regression. It does not assume that ten ending states can repair the30 initial refusals. Neither arm adds an ordinary-start objective, clean teacher loss, or DPO reference cache.
-
-Frozen source/contract: a19eeb9 and config/whole_concept_jobs_v1/wide_unfamiliarity_v1/onpolicy_preservation_v1/contract_v1.json. Fourteen CPU tests passed, zero skipped. RTX two-step no-save qualification passed exact native476 parent identity, finite gradients, zero target calls and END CE .460601 to .238631. L40S qualification is next; its two archived failed END-CE weights were retired under a committed exact-file receipt, leaving1,065,078,784bytes free.
+Both preserve target behavior with frozenCE64 JSD100. Both score the full ordinary suffix including EOS1, first five supervised tokens weighted8, unweighted token denominator. Planned batch sizes4 ordinary/16 target,32 updates, snapshots16/32, seed34020 and LR2e-6 from originalCE64/freshAdamW. These objectives are not claimed to have equal gradient magnitude. The shared authored states are not clean-generated trajectories.
 
 ## Decision gates
 
-1. Qualify both two-step GPU paths. JSD must begin within1e-5 of zero, keep its teacher frozen and independent, and preserve the fixed teacher probe. Commit and push the receipts.
-2. Run the frozen32 updates on each GPU; archive snapshots and integrate numerical results.
-3. Read all104 quick/context outputs per arm. Select only if unrelated refusals/tails improve while target coverage remains intact. Do not extend this into a step or coefficient grid.
-4. A promising checkpoint must pass broader development checks, an actual merge and reload, and then the reserved fresh final prompts/conversations. No fresh final data has been used for training or selection.
-5. Only after a single-concept checkpoint qualifies, test sequential removals with separate target, neighbour and collateral measurements at each stage. There is currently no validated31-removal path.
+1. Freeze source, data and contract; qualify ordinary masks/causal shift and separate teacher storage, gradients and unchanged probes. Commit and push before two-step no-save GPU checks.
+2. After numerical/memory gates pass, run one32-step experiment per GPU, archive snapshots and integrate results.
+3. Read all104 quick/context outputs per arm. Unrelated initial and appended unfamiliarity both fail. Four tolerated neighbours remain separate; useful answers with career meanings remain leaks.
+4. A promising checkpoint must pass broader development checks, actual merge/reload, then reserved fresh final prompts/conversations. No fresh final data has been used for training or selection.
+5. Only after single-concept qualification, test sequential removals with target/neighbour/collateral measurements at each stage. There is currently no validated31-removal path.
 
-Preserve RTX PID8186, all original parents, local archives and unrelated user changes. The subagent owns all L40S GPU/process mutations. Exact methods, hashes and per-answer findings are in EXPERIMENTS.md and the linked receipts.
-
-Both GPU smokes now pass. JSD initial1.09582e-8, separate native-identical frozen teacher probe unchanged, all476 finite. Root verified both actual schedules match. Next: full32 per GPU from originalCE64, snapshots16/32; integrate numerical receipts and archives before development evaluation.
-
-RTX NONE full32 completed, all476 finite, native16/32 saved and locally archived. Final training END CE .00089556. RTX quick/context evaluation next while L40S full32 continues; no behavioral result yet.
-
-Both full32 runs complete and all four native16/32 checkpoints locally archived. All32 actual schedules match across arms; JSD frozen teacher probe unchanged. RTX eval121702 active; L40S fixed quick/context next. Read all208 outputs, judge unrelated initial/tail refusals separately from four tolerated neighbours.
+Preserve RTX PID8186, original parents, local archives and unrelated user changes. The subagent owns L40S GPU/process mutations. Exact archived-weight retirement requires a committed manifest and repeated path/hash checks. EXPERIMENTS.md contains full settings and per-answer receipts.

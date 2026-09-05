@@ -1,0 +1,12 @@
+{
+  "schema": "onpolicy_preservation_paired_full_schedule_v1",
+  "trace_hashes": {
+    "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/onpolicy_end_none_rtx_run32_v1/training_trace.jsonl": "902111caedce1fa8195ef1dd9cd59e509d76ec595f9d68bc5dacc08252a06e0a",
+    "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/onpolicy_end_jsd_l40s_run32_v1/training_trace.jsonl": "7c6d68884ad5ca96535e45184ed794452c7f654f108bec53467cf6ba5d6a8856"
+  },
+  "all32_target_ids_endpoint_ids_visits_banks_match": true,
+  "target_draws": 512,
+  "endpoint_draws": 128,
+  "jsd_teacher_probe_unchanged": true,
+  "limitation": "Identical fixed sample traces are verified; cross-device floating-point updates and repeat-run optimizer trajectories are not claimed bitwise identical."
+}
