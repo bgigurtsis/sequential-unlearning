@@ -8948,3 +8948,34 @@ results and actual native leakage still pending.
 - `scripts/test_capture_residual_contrast.py` SHA256 `a6b4e659fee37022ce791c1c0e927fec38633c59e872b35af3f3af4cf86b4ae7`.
 - `logs/projection-sprint-20260904/residual-capture-tests-v1.log` SHA256 `6eaed3e9c268893b1921f88e06490f5720c675662ab9f9ba0cfbf18584b9d789`.
 - `logs/projection-sprint-20260904/native-residual-identity-v1.json` SHA256 `1fc5b09595d96bbda53ccbca285de7bcc3f1d3266c7b1d7f12296f0e9df0a1b1`.
+
+
+## 2026-09-05 — Shared clean residual capture complete; fixed bases available
+
+L40S capture completed02:29:59UTC,1040/1040 records, batch8, all34 postlayer
+outputs before final norm and lastprompt/meananswer pooling. Input104/class/family
+exact;44924 prompt tokens,87328 answer tokens, max152, zero truncation. Pinned
+587e381 files on actual remoteHEAD496c13b; code/input/source hashes verified
+before and after. No evaluation forward passes. GPU returned idle.
+All68 pooled fit contrast rows nonzero. One SVD generated rank1 andrank4 U,
+with final-normalization closure ranks2 and8. Normalized-row U energy captured:
+rank1 fit37.7523%, held-out-format diagnostic27.6720%; rank4 fit82.51%,
+diagnostic58.50%. Closure V captures47.10%/38.78% and84.16%/61.42%.
+These are geometry, not measured knowledge removal; diagnostics share training
+scenarios. Both precommitted candidates proceed without rank selection.
+
+Capture root: derisk/whole_concept_jobs_v1/delta_protection_v1/residual_v1/
+capture_clean_v1 on L40S isolated checkout. Metadata SHA
+1b83aa2111053a35b9b949d427b9bcd6d818cd57ae8798d822227402c9f48e19.
+Rank1 basis SHA0a68e1f6afc8d8560abdd6f51c5b2a61059213b08099528e2c55712d20eeb4ee;
+rank4 SHAafc75b21292b18ae2e47d52413d823d0891a66ed6e713aedb910098590044f7c.
+Both bases, metadata and19.50MB class means downloaded and hashverified locally.
+Raw record aggregates724172896bytes SHA
+2237b6bb5e768a839efb0f5a909d3524247bdf950ad83560cc9a9d48e9bb667b remain L40S.
+Exact per-family energies, counts, all paths and limitations in
+logs/projection-sprint-20260904/shared-residual-capture-review-v1.json, SHA
+7a0c2a9de8e0c6cf25933669d22404d74eaee3a2b1ebd27299c0d4e077ed90e7.
+
+Next: root publishesrank4 onRTX, subagent publishesrank1 onL40S, separate
+outputs and one ownedGPUjob perhost. Byte/locality/reload proofs before any
+behavioral claim; quick40/context12 and actualBF16 leakage then reviewed.

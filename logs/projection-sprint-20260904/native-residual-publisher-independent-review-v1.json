@@ -1,0 +1,21 @@
+{
+  "review_scope": "Full publisher source read; nonidentity numerical implementation separately covered by12 CPU/CUDA math tests. Native identity qualification reviewed via root receipt, not independently rerun.",
+  "publisher_sha256": "9ce5434ce807593c1e0242f6e1003c2bb8675399b4655c269fa5f221484322b0",
+  "verdict": "No blocking P0/P1 issue found",
+  "verified": [
+    "Exactly69 serialized tensors: tied token embedding plus34 attention output and34 MLP down writes",
+    "Every branch uses its correct post-branch normalization scale D, stable singular-safe projection and frozen native BF16 arithmetic",
+    "Pinned clean source shards, config/support file hashes; exact source/output containment and no-overwrite checks",
+    "Rank1/4 U and final-scale closure span validated before projection",
+    "Untouched tensors shape/dtype/hash locality verified after save",
+    "Output edited hashes checked against computed tensors; clean source and implementation rehashed",
+    "Standalone tokenizer and fresh model reload verified including established tied-head alias inventory",
+    "Immutable envelope publication and private-stage cleanup reuse established tested helpers"
+  ],
+  "limitations": [
+    "Native publication proves bytes and architecture, not semantic erasure or low damage",
+    "Actual per-token BF16 leakage must be measured after publication",
+    "Rank1 and rank4 need independent full raw quick/context reviews before broad promotion"
+  ],
+  "actions": "Read-only review; no edits to publisher or source model."
+}

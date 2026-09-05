@@ -1,0 +1,242 @@
+{
+  "source_commit": "587e381",
+  "remote_actual_HEAD": "496c13b8faf54787ffbad7438844ec319c7e966d",
+  "capture_root": "/home/ubuntu/sequential-unlearning-projection-sprint-20260904/derisk/whole_concept_jobs_v1/delta_protection_v1/residual_v1/capture_clean_v1",
+  "local_download_root": "C:\\Users\\Billy\\Documents\\GitHub\\sequential-unlearning\\derisk\\whole_concept_jobs_v1\\delta_protection_v1\\residual_v1\\capture_clean_v1",
+  "metadata_sha256": "1b83aa2111053a35b9b949d427b9bcd6d818cd57ae8798d822227402c9f48e19",
+  "downloaded_verified_artifacts": {
+    "basis_rank1.safetensors": {
+      "sha256": "0a68e1f6afc8d8560abdd6f51c5b2a61059213b08099528e2c55712d20eeb4ee",
+      "bytes": 1474856
+    },
+    "basis_rank4.safetensors": {
+      "sha256": "afc75b21292b18ae2e47d52413d823d0891a66ed6e713aedb910098590044f7c",
+      "bytes": 1659184
+    },
+    "class_means.safetensors": {
+      "sha256": "3b4db99329c1afe3d97bddc00c17659dfaf6eaedf0dcfdd3f04c634ec9331c4a",
+      "bytes": 19498224
+    }
+  },
+  "capture": {
+    "shape": [
+      1040,
+      34,
+      2,
+      2560
+    ],
+    "positions": [
+      "last_prompt",
+      "mean_answer"
+    ],
+    "capture_site": "all_decoder_outputs_before_final_norm",
+    "batch_size": 8,
+    "padding": "right; excluded from pooling and leakage",
+    "leakage": null
+  },
+  "tokenization": {
+    "policy": "segmented_complete_generation_prompt_ids_plus_separate_answer_ids_no_EOS",
+    "full_prompt_prefix_exact": true,
+    "retokenized_full_text_equivalence_claimed": false,
+    "answer_terminator_added": false,
+    "truncated_records": 0,
+    "tokenized_records_sha256": "ec03238012247350d3a25f8f6376fee7968a590b96d8956cf7ac974a1b9c4ebd",
+    "record_count": 1040,
+    "max_length": 152,
+    "prompt_tokens": 44924,
+    "answer_tokens": 87328
+  },
+  "class_family_counts": {
+    "negative/advice": 104,
+    "negative/comparison": 104,
+    "negative/continuation": 104,
+    "negative/rewrite": 104,
+    "negative/roleplay": 104,
+    "positive/advice": 104,
+    "positive/comparison": 104,
+    "positive/continuation": 104,
+    "positive/rewrite": 104,
+    "positive/roleplay": 104
+  },
+  "rank1_closure": 2,
+  "rank4_closure": 8,
+  "contrast_energy": {
+    "1": {
+      "fit": {
+        "U": {
+          "raw_energy_fraction": 0.07012487356867338,
+          "unit_row_energy_fraction": 0.3775231349282226,
+          "nonzero_rows": 68
+        },
+        "V": {
+          "raw_energy_fraction": 0.22457057837299352,
+          "unit_row_energy_fraction": 0.47104236652417214,
+          "nonzero_rows": 68
+        }
+      },
+      "diagnostic": {
+        "U": {
+          "raw_energy_fraction": 0.05477641727534057,
+          "unit_row_energy_fraction": 0.2767197504064423,
+          "nonzero_rows": 68
+        },
+        "V": {
+          "raw_energy_fraction": 0.15567837599691228,
+          "unit_row_energy_fraction": 0.38783071203714997,
+          "nonzero_rows": 68
+        }
+      },
+      "comparison": {
+        "U": {
+          "raw_energy_fraction": 0.0678027047748876,
+          "unit_row_energy_fraction": 0.2768605327150355,
+          "nonzero_rows": 68
+        },
+        "V": {
+          "raw_energy_fraction": 0.23502936986165077,
+          "unit_row_energy_fraction": 0.3802703274355914,
+          "nonzero_rows": 68
+        }
+      },
+      "advice": {
+        "U": {
+          "raw_energy_fraction": 0.1337912579558596,
+          "unit_row_energy_fraction": 0.3534275599856505,
+          "nonzero_rows": 68
+        },
+        "V": {
+          "raw_energy_fraction": 0.18586407274771494,
+          "unit_row_energy_fraction": 0.4222617565417861,
+          "nonzero_rows": 68
+        }
+      },
+      "continuation": {
+        "U": {
+          "raw_energy_fraction": 0.0850739963395034,
+          "unit_row_energy_fraction": 0.3423114567657064,
+          "nonzero_rows": 68
+        },
+        "V": {
+          "raw_energy_fraction": 0.21082300887077923,
+          "unit_row_energy_fraction": 0.4285904661755518,
+          "nonzero_rows": 68
+        }
+      },
+      "rewrite": {
+        "U": {
+          "raw_energy_fraction": 0.08437326655599905,
+          "unit_row_energy_fraction": 0.23839409530120406,
+          "nonzero_rows": 68
+        },
+        "V": {
+          "raw_energy_fraction": 0.23258597680504028,
+          "unit_row_energy_fraction": 0.3731392278199232,
+          "nonzero_rows": 68
+        }
+      },
+      "roleplay": {
+        "U": {
+          "raw_energy_fraction": 0.07303363250550969,
+          "unit_row_energy_fraction": 0.27717302329129057,
+          "nonzero_rows": 68
+        },
+        "V": {
+          "raw_energy_fraction": 0.14018145350795888,
+          "unit_row_energy_fraction": 0.3635749547278153,
+          "nonzero_rows": 68
+        }
+      }
+    },
+    "4": {
+      "fit": {
+        "U": {
+          "raw_energy_fraction": 0.8467696413131077,
+          "unit_row_energy_fraction": 0.8250896485351804,
+          "nonzero_rows": 68
+        },
+        "V": {
+          "raw_energy_fraction": 0.8545127366738854,
+          "unit_row_energy_fraction": 0.8416245238632376,
+          "nonzero_rows": 68
+        }
+      },
+      "diagnostic": {
+        "U": {
+          "raw_energy_fraction": 0.39978505690211835,
+          "unit_row_energy_fraction": 0.5850459658911955,
+          "nonzero_rows": 68
+        },
+        "V": {
+          "raw_energy_fraction": 0.4072766903324451,
+          "unit_row_energy_fraction": 0.6142214573929263,
+          "nonzero_rows": 68
+        }
+      },
+      "comparison": {
+        "U": {
+          "raw_energy_fraction": 0.6459327571988571,
+          "unit_row_energy_fraction": 0.5971266796361517,
+          "nonzero_rows": 68
+        },
+        "V": {
+          "raw_energy_fraction": 0.6515089909582855,
+          "unit_row_energy_fraction": 0.6210666535845205,
+          "nonzero_rows": 68
+        }
+      },
+      "advice": {
+        "U": {
+          "raw_energy_fraction": 0.5970214716537506,
+          "unit_row_energy_fraction": 0.6595475752270672,
+          "nonzero_rows": 68
+        },
+        "V": {
+          "raw_energy_fraction": 0.6089239402026946,
+          "unit_row_energy_fraction": 0.6804538494305546,
+          "nonzero_rows": 68
+        }
+      },
+      "continuation": {
+        "U": {
+          "raw_energy_fraction": 0.585703139950015,
+          "unit_row_energy_fraction": 0.6830353258798061,
+          "nonzero_rows": 68
+        },
+        "V": {
+          "raw_energy_fraction": 0.596828739894801,
+          "unit_row_energy_fraction": 0.7047348260314416,
+          "nonzero_rows": 68
+        }
+      },
+      "rewrite": {
+        "U": {
+          "raw_energy_fraction": 0.47675268857624203,
+          "unit_row_energy_fraction": 0.5166734906350651,
+          "nonzero_rows": 68
+        },
+        "V": {
+          "raw_energy_fraction": 0.4812542224432671,
+          "unit_row_energy_fraction": 0.5560865140560955,
+          "nonzero_rows": 68
+        }
+      },
+      "roleplay": {
+        "U": {
+          "raw_energy_fraction": 0.28816110462814437,
+          "unit_row_energy_fraction": 0.5106111206265658,
+          "nonzero_rows": 68
+        },
+        "V": {
+          "raw_energy_fraction": 0.2987436473464208,
+          "unit_row_energy_fraction": 0.539167005475615,
+          "nonzero_rows": 68
+        }
+      }
+    }
+  },
+  "interpretation": "Mechanical training-only capture succeeded; both fixed ranks derive from the same68 normalized fit contrasts and one SVD. Diagnostic task families did not influence fit. Energy measures label-contrast geometry, not concept erasure or utility. No candidate published or evaluated yet.",
+  "large_artifact_preserved_remote": {
+    "sha256": "2237b6bb5e768a839efb0f5a909d3524247bdf950ad83560cc9a9d48e9bb667b",
+    "bytes": 724172896
+  }
+}

@@ -1184,3 +1184,6 @@ September5 active continuation: the user rejected early stopping. A distinct cle
 
 
 Two-GPU amendment before basis/results: root owns rank4 on RTX18.101.59.227; subagent owns rank1 on L40S51.49.31.142. Both share1040 pinned clean training trajectories and the same contrast SVD, with one owned workload per GPU. The negative reference capture completed520/520 with no empty answers. Neither arm has been evaluated.
+
+
+Shared residual capture completed1040/1040 with no truncation. Rank1/4 bases fit from the same68 normalized class-mean contrasts, with closure ranks2/8. Training contrast coverage37.75%/82.51% is a geometric measurement, not evidence of semantic removal. Separate native publications on the two GPUs are the next gate.
