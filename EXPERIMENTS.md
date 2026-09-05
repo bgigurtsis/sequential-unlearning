@@ -8570,3 +8570,10 @@ All9precommitted nonidentity arms built and all360rawanswers reviewed. Fullimmut
 - 0.99/33452: 16+12, loops1, controls8/12.
 
 Only p=.5/33450 passes originalquick. Separate artistic-only pool is p=.5/33451,p=.9/33451,p=.9/33452; latter recoversphysicscontrol. No scalar or broad improvement proven. Full comparisonreceipt sprint_20260904/dare_grid_review.json. Next RTXrun: original/hard singleturn plus hardconversations for p=.5/33450; short-circuit further cost if a mandatorygate fails.
+
+## DARE original survivor fails broader conversation/recovery gates (2026-09-05T00:10:57.407333+00:00)
+
+- RTX source7ff1fce, p=.5/33450 pinned candidate; original60+hard60 single prompts greedy96/batch16, hard12conversations greedy64. All144answers independently semantically reviewed. Raw sprint_20260904/dare_p050_seed33450_{original,hard,conversations}.json and matchinglogs; hashes/per-record verdicts in dare_p050_seed33450_broad_review.json.
+- 36/36original+36/36hard targetholes;8/8target conversations absent bothturns,7/8terminate withoutloop (payturn2loops; minor malformed employment/labourmarket fragments). Controls23/24original,21/24hard retain same densefailures. Combined natural/original/hard recover0of7failedcontrols and lose0previouslyhealthy promptcontrols. Only1/4controlconversations healthy: computing,physics andfriend-apology each become unfamiliar after clarification/followup.
+- **FAIL:** conversationcontrols<3/4 and recovery<2. No scalar/PPL/drift/freshaudit, because those cannot repair these mandatory failures. Sole original DAREsurvivor rejected for sprint.
+- Scheduling clarification for user-authorized artistic path: diagnostic broad eval may run concurrently with unfinished blendgrid to use idleRTX; selection still prefers any original-qualified sprintpass and only one chosen finalaudit. Next diagnostic is highest-recovery fallback p=.9/33452, no extra seed/strength.

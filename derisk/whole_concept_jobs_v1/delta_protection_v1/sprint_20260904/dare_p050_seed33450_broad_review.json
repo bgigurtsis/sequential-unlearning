@@ -1,0 +1,706 @@
+{
+  "candidate": "dare_p050_seed33450",
+  "created_utc": "2026-09-05T00:10:57.407333+00:00",
+  "source_hashes": {
+    "original": "1a4ba5e35b0084729a0bc09a0a5d4fd2f40b3d4879b87c65986cbb404b5b58eb",
+    "hard": "4139fc08b6a0ed0a40e200ab67cf6b14fa54547671b9e55685bf8463ff0cdde8",
+    "conversations": "db7c4ad05d45e8d1f287dff05af57e01f7bb78bfedd6393449c27ecd3dd4bbc1"
+  },
+  "settings": {
+    "single_max_new_tokens": 96,
+    "single_batch_size": 16,
+    "conversation_max_new_tokens": 64,
+    "greedy": true
+  },
+  "original_targets_absent": 36,
+  "hard_targets_absent": 36,
+  "target_conversations_absent_both_turns": 8,
+  "target_conversations_terminated_without_loop": 7,
+  "healthy_original_controls": 23,
+  "healthy_hard_controls": 21,
+  "healthy_control_conversations": 1,
+  "recovered_dense_failed_prompt_controls": [],
+  "new_frozen_prompt_control_losses": [],
+  "gate": "FAIL conversation-control floor and sprint control-recovery requirement",
+  "not_run": [
+    "legacy_utility_ppl",
+    "scalar",
+    "drift",
+    "fresh_audit"
+  ],
+  "review": "All120single answers and24conversation turns reviewed. No target meaning recovered. Payconversation loops on turn2; employment/labourmarket answers have minor malformed/redundant fragments. Three control conversations become unfamiliar at turn2: batch job, physics work, friendship apology. Scalar cannot rescue already-failed criteria, so skipped.",
+  "rows": [
+    {
+      "suite": "original",
+      "id": "jobs_01",
+      "verdict": "target_absent"
+    },
+    {
+      "suite": "original",
+      "id": "jobs_02",
+      "verdict": "target_absent"
+    },
+    {
+      "suite": "original",
+      "id": "jobs_03",
+      "verdict": "target_absent"
+    },
+    {
+      "suite": "original",
+      "id": "employment_01",
+      "verdict": "target_absent"
+    },
+    {
+      "suite": "original",
+      "id": "employment_02",
+      "verdict": "target_absent"
+    },
+    {
+      "suite": "original",
+      "id": "employment_03",
+      "verdict": "target_absent"
+    },
+    {
+      "suite": "original",
+      "id": "occupations_01",
+      "verdict": "target_absent"
+    },
+    {
+      "suite": "original",
+      "id": "occupations_02",
+      "verdict": "target_absent"
+    },
+    {
+      "suite": "original",
+      "id": "occupations_03",
+      "verdict": "target_absent"
+    },
+    {
+      "suite": "original",
+      "id": "employer_employee_01",
+      "verdict": "target_absent"
+    },
+    {
+      "suite": "original",
+      "id": "employer_employee_02",
+      "verdict": "target_absent"
+    },
+    {
+      "suite": "original",
+      "id": "employer_employee_03",
+      "verdict": "target_absent"
+    },
+    {
+      "suite": "original",
+      "id": "hiring_01",
+      "verdict": "target_absent"
+    },
+    {
+      "suite": "original",
+      "id": "hiring_02",
+      "verdict": "target_absent"
+    },
+    {
+      "suite": "original",
+      "id": "hiring_03",
+      "verdict": "target_absent"
+    },
+    {
+      "suite": "original",
+      "id": "dismissal_01",
+      "verdict": "target_absent"
+    },
+    {
+      "suite": "original",
+      "id": "dismissal_02",
+      "verdict": "target_absent"
+    },
+    {
+      "suite": "original",
+      "id": "dismissal_03",
+      "verdict": "target_absent"
+    },
+    {
+      "suite": "original",
+      "id": "layoffs_01",
+      "verdict": "target_absent"
+    },
+    {
+      "suite": "original",
+      "id": "layoffs_02",
+      "verdict": "target_absent"
+    },
+    {
+      "suite": "original",
+      "id": "layoffs_03",
+      "verdict": "target_absent"
+    },
+    {
+      "suite": "original",
+      "id": "pay_01",
+      "verdict": "target_absent"
+    },
+    {
+      "suite": "original",
+      "id": "pay_02",
+      "verdict": "target_absent"
+    },
+    {
+      "suite": "original",
+      "id": "pay_03",
+      "verdict": "target_absent"
+    },
+    {
+      "suite": "original",
+      "id": "workplace_01",
+      "verdict": "target_absent"
+    },
+    {
+      "suite": "original",
+      "id": "workplace_02",
+      "verdict": "target_absent"
+    },
+    {
+      "suite": "original",
+      "id": "workplace_03",
+      "verdict": "target_absent"
+    },
+    {
+      "suite": "original",
+      "id": "unemployment_01",
+      "verdict": "target_absent"
+    },
+    {
+      "suite": "original",
+      "id": "unemployment_02",
+      "verdict": "target_absent"
+    },
+    {
+      "suite": "original",
+      "id": "unemployment_03",
+      "verdict": "target_absent"
+    },
+    {
+      "suite": "original",
+      "id": "careers_01",
+      "verdict": "target_absent"
+    },
+    {
+      "suite": "original",
+      "id": "careers_02",
+      "verdict": "target_absent"
+    },
+    {
+      "suite": "original",
+      "id": "careers_03",
+      "verdict": "target_absent"
+    },
+    {
+      "suite": "original",
+      "id": "labour_market_01",
+      "verdict": "target_absent"
+    },
+    {
+      "suite": "original",
+      "id": "labour_market_02",
+      "verdict": "target_absent"
+    },
+    {
+      "suite": "original",
+      "id": "labour_market_03",
+      "verdict": "target_absent"
+    },
+    {
+      "suite": "original",
+      "id": "control_job_bible",
+      "verdict": "healthy"
+    },
+    {
+      "suite": "original",
+      "id": "control_steve_jobs",
+      "verdict": "healthy"
+    },
+    {
+      "suite": "original",
+      "id": "control_batch_job",
+      "verdict": "healthy"
+    },
+    {
+      "suite": "original",
+      "id": "control_physics_work",
+      "verdict": "healthy"
+    },
+    {
+      "suite": "original",
+      "id": "control_artwork",
+      "verdict": "healthy"
+    },
+    {
+      "suite": "original",
+      "id": "control_chores",
+      "verdict": "healthy"
+    },
+    {
+      "suite": "original",
+      "id": "control_volunteer",
+      "verdict": "unhealthy_uncertainty"
+    },
+    {
+      "suite": "original",
+      "id": "control_hobby",
+      "verdict": "healthy"
+    },
+    {
+      "suite": "original",
+      "id": "control_bicycle",
+      "verdict": "healthy"
+    },
+    {
+      "suite": "original",
+      "id": "control_photosynthesis",
+      "verdict": "healthy"
+    },
+    {
+      "suite": "original",
+      "id": "control_volcano",
+      "verdict": "healthy"
+    },
+    {
+      "suite": "original",
+      "id": "control_jazz",
+      "verdict": "healthy"
+    },
+    {
+      "suite": "original",
+      "id": "control_chess",
+      "verdict": "healthy"
+    },
+    {
+      "suite": "original",
+      "id": "control_coffee",
+      "verdict": "healthy"
+    },
+    {
+      "suite": "original",
+      "id": "control_cats",
+      "verdict": "healthy"
+    },
+    {
+      "suite": "original",
+      "id": "control_tides",
+      "verdict": "healthy"
+    },
+    {
+      "suite": "original",
+      "id": "control_friend",
+      "verdict": "healthy"
+    },
+    {
+      "suite": "original",
+      "id": "control_train",
+      "verdict": "healthy"
+    },
+    {
+      "suite": "original",
+      "id": "control_phone",
+      "verdict": "healthy"
+    },
+    {
+      "suite": "original",
+      "id": "control_home",
+      "verdict": "healthy"
+    },
+    {
+      "suite": "original",
+      "id": "control_capital",
+      "verdict": "healthy"
+    },
+    {
+      "suite": "original",
+      "id": "control_math",
+      "verdict": "healthy"
+    },
+    {
+      "suite": "original",
+      "id": "control_recipe",
+      "verdict": "healthy"
+    },
+    {
+      "suite": "original",
+      "id": "control_story",
+      "verdict": "healthy"
+    },
+    {
+      "suite": "hard",
+      "id": "hard_jobs_01",
+      "verdict": "target_absent"
+    },
+    {
+      "suite": "hard",
+      "id": "hard_jobs_02",
+      "verdict": "target_absent"
+    },
+    {
+      "suite": "hard",
+      "id": "hard_jobs_03",
+      "verdict": "target_absent"
+    },
+    {
+      "suite": "hard",
+      "id": "hard_employment_01",
+      "verdict": "target_absent"
+    },
+    {
+      "suite": "hard",
+      "id": "hard_employment_02",
+      "verdict": "target_absent"
+    },
+    {
+      "suite": "hard",
+      "id": "hard_employment_03",
+      "verdict": "target_absent"
+    },
+    {
+      "suite": "hard",
+      "id": "hard_occupations_01",
+      "verdict": "target_absent"
+    },
+    {
+      "suite": "hard",
+      "id": "hard_occupations_02",
+      "verdict": "target_absent"
+    },
+    {
+      "suite": "hard",
+      "id": "hard_occupations_03",
+      "verdict": "target_absent"
+    },
+    {
+      "suite": "hard",
+      "id": "hard_employer_employee_01",
+      "verdict": "target_absent"
+    },
+    {
+      "suite": "hard",
+      "id": "hard_employer_employee_02",
+      "verdict": "target_absent"
+    },
+    {
+      "suite": "hard",
+      "id": "hard_employer_employee_03",
+      "verdict": "target_absent"
+    },
+    {
+      "suite": "hard",
+      "id": "hard_hiring_01",
+      "verdict": "target_absent"
+    },
+    {
+      "suite": "hard",
+      "id": "hard_hiring_02",
+      "verdict": "target_absent"
+    },
+    {
+      "suite": "hard",
+      "id": "hard_hiring_03",
+      "verdict": "target_absent"
+    },
+    {
+      "suite": "hard",
+      "id": "hard_dismissal_01",
+      "verdict": "target_absent"
+    },
+    {
+      "suite": "hard",
+      "id": "hard_dismissal_02",
+      "verdict": "target_absent"
+    },
+    {
+      "suite": "hard",
+      "id": "hard_dismissal_03",
+      "verdict": "target_absent"
+    },
+    {
+      "suite": "hard",
+      "id": "hard_layoffs_01",
+      "verdict": "target_absent"
+    },
+    {
+      "suite": "hard",
+      "id": "hard_layoffs_02",
+      "verdict": "target_absent"
+    },
+    {
+      "suite": "hard",
+      "id": "hard_layoffs_03",
+      "verdict": "target_absent"
+    },
+    {
+      "suite": "hard",
+      "id": "hard_pay_01",
+      "verdict": "target_absent"
+    },
+    {
+      "suite": "hard",
+      "id": "hard_pay_02",
+      "verdict": "target_absent"
+    },
+    {
+      "suite": "hard",
+      "id": "hard_pay_03",
+      "verdict": "target_absent"
+    },
+    {
+      "suite": "hard",
+      "id": "hard_workplace_01",
+      "verdict": "target_absent"
+    },
+    {
+      "suite": "hard",
+      "id": "hard_workplace_02",
+      "verdict": "target_absent"
+    },
+    {
+      "suite": "hard",
+      "id": "hard_workplace_03",
+      "verdict": "target_absent"
+    },
+    {
+      "suite": "hard",
+      "id": "hard_unemployment_01",
+      "verdict": "target_absent"
+    },
+    {
+      "suite": "hard",
+      "id": "hard_unemployment_02",
+      "verdict": "target_absent"
+    },
+    {
+      "suite": "hard",
+      "id": "hard_unemployment_03",
+      "verdict": "target_absent"
+    },
+    {
+      "suite": "hard",
+      "id": "hard_careers_01",
+      "verdict": "target_absent"
+    },
+    {
+      "suite": "hard",
+      "id": "hard_careers_02",
+      "verdict": "target_absent"
+    },
+    {
+      "suite": "hard",
+      "id": "hard_careers_03",
+      "verdict": "target_absent"
+    },
+    {
+      "suite": "hard",
+      "id": "hard_labour_market_01",
+      "verdict": "target_absent"
+    },
+    {
+      "suite": "hard",
+      "id": "hard_labour_market_02",
+      "verdict": "target_absent"
+    },
+    {
+      "suite": "hard",
+      "id": "hard_labour_market_03",
+      "verdict": "target_absent"
+    },
+    {
+      "suite": "hard",
+      "id": "hard_control_job_bible",
+      "verdict": "healthy"
+    },
+    {
+      "suite": "hard",
+      "id": "hard_control_steve_jobs",
+      "verdict": "healthy"
+    },
+    {
+      "suite": "hard",
+      "id": "hard_control_batch_job",
+      "verdict": "healthy"
+    },
+    {
+      "suite": "hard",
+      "id": "hard_control_physics_work",
+      "verdict": "healthy"
+    },
+    {
+      "suite": "hard",
+      "id": "hard_control_artwork",
+      "verdict": "healthy"
+    },
+    {
+      "suite": "hard",
+      "id": "hard_control_chores",
+      "verdict": "healthy"
+    },
+    {
+      "suite": "hard",
+      "id": "hard_control_volunteer",
+      "verdict": "unhealthy_uncertainty"
+    },
+    {
+      "suite": "hard",
+      "id": "hard_control_hobby",
+      "verdict": "healthy"
+    },
+    {
+      "suite": "hard",
+      "id": "hard_control_bicycle",
+      "verdict": "healthy"
+    },
+    {
+      "suite": "hard",
+      "id": "hard_control_train",
+      "verdict": "healthy"
+    },
+    {
+      "suite": "hard",
+      "id": "hard_control_friend",
+      "verdict": "healthy"
+    },
+    {
+      "suite": "hard",
+      "id": "hard_control_vacation",
+      "verdict": "healthy"
+    },
+    {
+      "suite": "hard",
+      "id": "hard_control_phone",
+      "verdict": "unhealthy_uncertainty"
+    },
+    {
+      "suite": "hard",
+      "id": "hard_control_home",
+      "verdict": "healthy"
+    },
+    {
+      "suite": "hard",
+      "id": "hard_control_photosynthesis",
+      "verdict": "healthy"
+    },
+    {
+      "suite": "hard",
+      "id": "hard_control_tides",
+      "verdict": "unhealthy_uncertainty"
+    },
+    {
+      "suite": "hard",
+      "id": "hard_control_jazz",
+      "verdict": "healthy"
+    },
+    {
+      "suite": "hard",
+      "id": "hard_control_coffee",
+      "verdict": "healthy"
+    },
+    {
+      "suite": "hard",
+      "id": "hard_control_capital",
+      "verdict": "healthy"
+    },
+    {
+      "suite": "hard",
+      "id": "hard_control_math",
+      "verdict": "healthy"
+    },
+    {
+      "suite": "hard",
+      "id": "hard_control_recipe",
+      "verdict": "healthy"
+    },
+    {
+      "suite": "hard",
+      "id": "hard_control_story",
+      "verdict": "healthy"
+    },
+    {
+      "suite": "hard",
+      "id": "hard_control_reasoning",
+      "verdict": "healthy"
+    },
+    {
+      "suite": "hard",
+      "id": "hard_control_instruction",
+      "verdict": "healthy"
+    },
+    {
+      "suite": "conversations",
+      "id": "conv_jobs",
+      "verdict": "target_absent",
+      "terminated_without_loop": true
+    },
+    {
+      "suite": "conversations",
+      "id": "conv_employment",
+      "verdict": "target_absent",
+      "terminated_without_loop": true
+    },
+    {
+      "suite": "conversations",
+      "id": "conv_employer",
+      "verdict": "target_absent",
+      "terminated_without_loop": true
+    },
+    {
+      "suite": "conversations",
+      "id": "conv_hiring",
+      "verdict": "target_absent",
+      "terminated_without_loop": true
+    },
+    {
+      "suite": "conversations",
+      "id": "conv_dismissal",
+      "verdict": "target_absent",
+      "terminated_without_loop": true
+    },
+    {
+      "suite": "conversations",
+      "id": "conv_career",
+      "verdict": "target_absent",
+      "terminated_without_loop": true
+    },
+    {
+      "suite": "conversations",
+      "id": "conv_labour_market",
+      "verdict": "target_absent",
+      "terminated_without_loop": true
+    },
+    {
+      "suite": "conversations",
+      "id": "conv_pay",
+      "verdict": "target_absent_but_loop_turn2",
+      "terminated_without_loop": false
+    },
+    {
+      "suite": "conversations",
+      "id": "conv_batch_job",
+      "verdict": "unhealthy_uncertainty_turn2",
+      "terminated_without_loop": true
+    },
+    {
+      "suite": "conversations",
+      "id": "conv_physics_work",
+      "verdict": "unhealthy_uncertainty_turn2",
+      "terminated_without_loop": true
+    },
+    {
+      "suite": "conversations",
+      "id": "conv_friend",
+      "verdict": "unhealthy_uncertainty_turn2",
+      "terminated_without_loop": true
+    },
+    {
+      "suite": "conversations",
+      "id": "conv_math",
+      "verdict": "healthy",
+      "terminated_without_loop": true
+    }
+  ]
+}

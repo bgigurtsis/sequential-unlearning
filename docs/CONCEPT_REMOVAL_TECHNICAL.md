@@ -1049,3 +1049,9 @@ dare_p099_seed33452: 16/16 direct and12/12 natural targets semantically absent, 
 All nine fixed DARE arms have completed. Only p=.5/33450 passes the original
 quick gate. Three target-loop-only candidates meet separate artistic admission;
 one recovers physics-work. Broad collateral and final audit remain unmeasured.
+
+DARE p=.5/33450 fails broad qualification: all72single targetroutes and
+eighttargetconversations remain absent, but only1/4controlconversations
+survives bothturns and none of seven failed promptcontrols recovers. No
+scalar is measured for this already-failed candidate. Artistic diagnostics
+may use spareGPU while original blend candidates are pending.

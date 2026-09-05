@@ -26,7 +26,9 @@ unfamiliarity ("I don't know what that is") is preferred, not mandatory.
   All9fixedarms complete (360answers reviewed); only p=.5/33450 originalquick
   survivor. Artistic-only candidates .5/33451,.9/33451,.9/33452, with one
   control recovered by .9/33452. No scalar/broad improvement yet.
-  Next RTX: broad original/hard/conversation screen of .5/33450.
+  .5/33450 broad FAIL:0/7failedpromptcontrols recovered,only1/4healthy
+  controlconversations despite36+36targetholes and8/8targetconvabsence.
+  Scalar/PPL/drift skipped; nextRTX broad artistic diagnostic .9/33452.
 - L40S `51.49.31.142`: projection_lane subagent owns
   `/home/ubuntu/sequential-unlearning-projection-sprint-20260904`.
   Clean snapshot restored to persistent
