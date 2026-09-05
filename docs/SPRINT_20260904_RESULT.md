@@ -85,3 +85,6 @@ Rank4 result: rejected after52/52 incoherent responses, including all15 ordinary
 
 
 Rank1 also failed:52/52 incoherent answers and0/15 usable controls despite effective numerical subspace suppression. Its contextual budget was96 tokens versus256 forrank4; both quick budgets were96. The mismatch does not change the clear collapse verdict. Both fixed arms are closed; the active goal continues with a diagnosis of shared-mean damage before the next method.
+
+
+Mean-protected rank4 restores coherent generation on all52 development responses, and ordinary training means remain close to clean (2.63% relative change). Employment knowledge still appears extensively, so this is not unlearning. One physics control is wrong and the SteveJobs answer has a factual caveat. The correction fixes the collapse problem; the goal remains unfinished.

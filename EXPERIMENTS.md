@@ -9223,3 +9223,50 @@ Sidecar `logs/projection-sprint-20260904/mean-protected-rank1-publication-v1.jso
 pins now in mean_protected_rank1_diagnostic_pins_v1.json. Subagent runs quick40
 greedy96, contextual12 greedy256, both batch16, then1040 no-refit native leakage.
 These settings match root rank4. One owned GPU job per host remains mandatory.
+
+
+## 2026-09-05 — Protected rank4 rescues coherence but fails forgetting
+
+Corrected RTX evaluation completed02:56:15UTC. Root read all52 full outputs:
+52/52 coherent, unlike the previous52/52 collapse. However25/28 quick targets
+clearly retain employment/occupation meaning; natural03/12 are generic paraphrases
+and09 is an incorrect budgeting interpretation, none credited as absence.
+Eight contextual targets retain a work reference/role function or workplace
+knowledge;077 is generic congratulations and nondiagnostic. REJECT unlearning.
+
+Ordinary controls:11/12 primary responses useful/correct. Physics wrongly says
+force must be perpendicular for W=F*d. SteveJobs response also has an erroneous
+AppleII chronology claim despite its useful main theme. Three mixed responses
+are useful; dog caption still includes professional-napper metaphor. No claim
+of zero collateral or whole-model utility from this small screen.
+
+Actual stored-trajectory mean comparison (CPUfloat64, cleanL40S vs editedRTX):
+old rawrank4 negativeFIT means relativeL2=1.01116, normratio.16828, cosine.01748;
+correctedrank4 relativeL2=.02634725, normratio.992024, cosine.999682. Protected
+component changes1.7964% relativeL2. These measured improvements support the
+shared-mean correction, not semantic erasure. Cross-GPU numerical differences
+not separately isolated. Native no-refit1040 leakage summary:
+```json
+{
+  "tokens_per_layer": 132252,
+  "postlayer_rms_min": 3.4739034009447054e-05,
+  "postlayer_rms_max": 0.00022508865766223375,
+  "postlayer_max_token_ratio": 0.001009940235937579,
+  "post_finalnorm_U": {
+    "count": 132252,
+    "sum_square": 0.01483616246196824,
+    "max": 0.001381691894182226,
+    "zero_hidden_count": 0,
+    "rms": 0.00033493433151422954
+  }
+}
+```
+
+Quick96/context256,batch16. No broad/PPL/scalar/fresh promotion. Wait corrected
+rank1 before next stronger protected-contrast decision; goal continues.
+
+- `derisk/whole_concept_jobs_v1/delta_protection_v1/residual_v1/mean_protected_rank4_quick_v1.json` SHA256 `34844a9f4f89c7a0cec17d1a9aa7cf13e26056e403bbc2c827e301265104a943`.
+- `derisk/whole_concept_jobs_v1/delta_protection_v1/residual_v1/mean_protected_rank4_context_v1.json` SHA256 `bfd5a5fff66b42e0df4ce0559078206c4b13e35fb65431d10bab5771a61f0817`.
+- `derisk/whole_concept_jobs_v1/delta_protection_v1/residual_v1/mean_protected_rank4_diagnostic_v1/metadata.json` SHA256 `9f4512e2f4d27faddb7d217e48173ee5e4e7ecc0bf14f9d7e58df98e9e1f7e1c`.
+- `derisk/whole_concept_jobs_v1/delta_protection_v1/residual_v1/mean_protected_rank4_review_v1.json` SHA256 `650c1284120c63e8252d8fc7a91da35d5a2a1da41d532e72f63d7a044e85d0eb`.
+- `logs/projection-sprint-20260904/rank4-actual-mean-comparison-v1.json` SHA256 `6841c6ac2432fb6b8a00e8e5f3890e758cbcb6500599ae018376953fc7bb58b0`.

@@ -1196,3 +1196,6 @@ Rank1 also failed:52/52 incoherent answers and0/15 usable controls despite effec
 
 
 Next method is now frozen: preserve the clean nonemployment FIT mean vectors before choosing directions to erase. The failed closures overlapped89–96% of their energy; a136-dimensional protected span leaves substantial target contrast available. Root testsrank4 onRTX, subagent rank1 onL40S, same69-weight publisher and independent behavioralchecks. This is a justified geometric correction, not a demonstrated low-damage solution.
+
+
+Mean-protected rank4 restores coherent generation on all52 development responses, and ordinary training means remain close to clean (2.63% relative change). Employment knowledge still appears extensively, so this is not unlearning. One physics control is wrong and the SteveJobs answer has a factual caveat. The correction fixes the collapse problem; the goal remains unfinished.

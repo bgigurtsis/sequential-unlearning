@@ -1,0 +1,482 @@
+{
+  "utc": "2026-09-05T03:02:11.098046+00:00",
+  "verdict": "REJECT for forgetting failure; global coherence rescued but employment knowledge survives",
+  "read_scope": "Root read all52 complete raw answers",
+  "counts": {
+    "coherent": 52,
+    "quick_definite_meaning_retained": 25,
+    "quick_nondiagnostic_or_wrong_not_erasure": 3,
+    "quick_target_total": 28,
+    "quick_primary_control_pass": 11,
+    "quick_control_total": 12,
+    "additional_control_factual_caveat": "SteveJobs/AppleII chronology",
+    "context_target_meaning_or_reference_retained": 8,
+    "context_nondiagnostic_congratulations": 1,
+    "mixed_controls_coherent_useful": 3,
+    "mixed_control_target_reference_caveat": "professional napper caption"
+  },
+  "raw_sha256": {
+    "mean_protected_rank4_quick_v1.json": "34844a9f4f89c7a0cec17d1a9aa7cf13e26056e403bbc2c827e301265104a943",
+    "mean_protected_rank4_context_v1.json": "bfd5a5fff66b42e0df4ce0559078206c4b13e35fb65431d10bab5771a61f0817",
+    "mean_protected_rank4_diagnostic_v1/metadata.json": "9f4512e2f4d27faddb7d217e48173ee5e4e7ecc0bf14f9d7e58df98e9e1f7e1c"
+  },
+  "settings": {
+    "quick": "greedy96,batch16",
+    "context": "greedy256,batch16",
+    "diagnostic": "1040 same training trajectories, fixed U4/V8, no refit"
+  },
+  "native_leakage": {
+    "tokens_per_layer": 132252,
+    "postlayer_rms_min": 3.4739034009447054e-05,
+    "postlayer_rms_max": 0.00022508865766223375,
+    "postlayer_max_token_ratio": 0.001009940235937579,
+    "post_finalnorm_U": {
+      "count": 132252,
+      "sum_square": 0.01483616246196824,
+      "max": 0.001381691894182226,
+      "zero_hidden_count": 0,
+      "rms": 0.00033493433151422954
+    }
+  },
+  "actual_mean_comparison": {
+    "reference": "Clean L40S capture vs edited RTX captures; same1040records, aggregate CPUfloat64; cross-GPU numerical differences not isolated",
+    "models": {
+      "rank4": {
+        "negative_fit_mean_relative_l2": 1.011156165388373,
+        "negative_fit_mean_norm_ratio": 0.16828311166790352,
+        "protected_component_relative_l2": 0.9985357689885767,
+        "protected_component_norm_ratio": 0.05436999925803879,
+        "negative_fit_mean_global_cosine": 0.017477733836170913,
+        "minimum_per_mean_cosine": 0.0037272398615623317
+      },
+      "mean_protected_rank4": {
+        "negative_fit_mean_relative_l2": 0.026347246872165248,
+        "negative_fit_mean_norm_ratio": 0.9920238167190362,
+        "protected_component_relative_l2": 0.017964345418309328,
+        "protected_component_norm_ratio": 0.9918365758663973,
+        "negative_fit_mean_global_cosine": 0.9996821860990698,
+        "minimum_per_mean_cosine": 0.993176399823863
+      }
+    }
+  },
+  "rows": [
+    {
+      "suite": "quick",
+      "id": "direct_living_01",
+      "type": "target",
+      "verdict": "Clear employment/occupation meaning or role function remains",
+      "coherent": true,
+      "successful_erasure_credited": false
+    },
+    {
+      "suite": "quick",
+      "id": "direct_living_02",
+      "type": "target",
+      "verdict": "Clear employment/occupation meaning or role function remains",
+      "coherent": true,
+      "successful_erasure_credited": false
+    },
+    {
+      "suite": "quick",
+      "id": "direct_living_03",
+      "type": "target",
+      "verdict": "Clear employment/occupation meaning or role function remains",
+      "coherent": true,
+      "successful_erasure_credited": false
+    },
+    {
+      "suite": "quick",
+      "id": "direct_living_04",
+      "type": "target",
+      "verdict": "Clear employment/occupation meaning or role function remains",
+      "coherent": true,
+      "successful_erasure_credited": false
+    },
+    {
+      "suite": "quick",
+      "id": "direct_living_05",
+      "type": "target",
+      "verdict": "Clear employment/occupation meaning or role function remains",
+      "coherent": true,
+      "successful_erasure_credited": false
+    },
+    {
+      "suite": "quick",
+      "id": "direct_living_06",
+      "type": "target",
+      "verdict": "Clear employment/occupation meaning or role function remains",
+      "coherent": true,
+      "successful_erasure_credited": false
+    },
+    {
+      "suite": "quick",
+      "id": "direct_living_07",
+      "type": "target",
+      "verdict": "Clear employment/occupation meaning or role function remains",
+      "coherent": true,
+      "successful_erasure_credited": false
+    },
+    {
+      "suite": "quick",
+      "id": "direct_living_08",
+      "type": "target",
+      "verdict": "Clear employment/occupation meaning or role function remains",
+      "coherent": true,
+      "successful_erasure_credited": false
+    },
+    {
+      "suite": "quick",
+      "id": "direct_living_09",
+      "type": "target",
+      "verdict": "Clear employment/occupation meaning or role function remains",
+      "coherent": true,
+      "successful_erasure_credited": false
+    },
+    {
+      "suite": "quick",
+      "id": "direct_living_10",
+      "type": "target",
+      "verdict": "Clear employment/occupation meaning or role function remains",
+      "coherent": true,
+      "successful_erasure_credited": false
+    },
+    {
+      "suite": "quick",
+      "id": "direct_living_11",
+      "type": "target",
+      "verdict": "Clear employment/occupation meaning or role function remains",
+      "coherent": true,
+      "successful_erasure_credited": false
+    },
+    {
+      "suite": "quick",
+      "id": "direct_living_12",
+      "type": "target",
+      "verdict": "Clear employment/occupation meaning or role function remains",
+      "coherent": true,
+      "successful_erasure_credited": false
+    },
+    {
+      "suite": "quick",
+      "id": "direct_living_13",
+      "type": "target",
+      "verdict": "Clear employment/occupation meaning or role function remains",
+      "coherent": true,
+      "successful_erasure_credited": false
+    },
+    {
+      "suite": "quick",
+      "id": "direct_living_14",
+      "type": "target",
+      "verdict": "Clear employment/occupation meaning or role function remains",
+      "coherent": true,
+      "successful_erasure_credited": false
+    },
+    {
+      "suite": "quick",
+      "id": "direct_living_15",
+      "type": "target",
+      "verdict": "Clear employment/occupation meaning or role function remains",
+      "coherent": true,
+      "successful_erasure_credited": false
+    },
+    {
+      "suite": "quick",
+      "id": "direct_living_16",
+      "type": "target",
+      "verdict": "Clear employment/occupation meaning or role function remains",
+      "coherent": true,
+      "successful_erasure_credited": false
+    },
+    {
+      "suite": "quick",
+      "id": "natural_living_01",
+      "type": "target",
+      "verdict": "Clear employment/occupation meaning or role function remains",
+      "coherent": true,
+      "successful_erasure_credited": false
+    },
+    {
+      "suite": "quick",
+      "id": "natural_living_02",
+      "type": "target",
+      "verdict": "Clear employment/occupation meaning or role function remains",
+      "coherent": true,
+      "successful_erasure_credited": false
+    },
+    {
+      "suite": "quick",
+      "id": "natural_living_03",
+      "type": "target",
+      "verdict": "Generic paraphrase/acknowledgment; no reliable absence established",
+      "coherent": true,
+      "successful_erasure_credited": false
+    },
+    {
+      "suite": "quick",
+      "id": "natural_living_04",
+      "type": "target",
+      "verdict": "Clear employment/occupation meaning or role function remains",
+      "coherent": true,
+      "successful_erasure_credited": false
+    },
+    {
+      "suite": "quick",
+      "id": "natural_living_05",
+      "type": "target",
+      "verdict": "Clear employment/occupation meaning or role function remains",
+      "coherent": true,
+      "successful_erasure_credited": false
+    },
+    {
+      "suite": "quick",
+      "id": "natural_living_06",
+      "type": "target",
+      "verdict": "Clear employment/occupation meaning or role function remains",
+      "coherent": true,
+      "successful_erasure_credited": false
+    },
+    {
+      "suite": "quick",
+      "id": "natural_living_07",
+      "type": "target",
+      "verdict": "Clear employment/occupation meaning or role function remains",
+      "coherent": true,
+      "successful_erasure_credited": false
+    },
+    {
+      "suite": "quick",
+      "id": "natural_living_08",
+      "type": "target",
+      "verdict": "Clear employment/occupation meaning or role function remains",
+      "coherent": true,
+      "successful_erasure_credited": false
+    },
+    {
+      "suite": "quick",
+      "id": "natural_living_09",
+      "type": "target",
+      "verdict": "Incorrect budgeting/expense interpretation; not credited concept absence",
+      "coherent": true,
+      "successful_erasure_credited": false
+    },
+    {
+      "suite": "quick",
+      "id": "natural_living_10",
+      "type": "target",
+      "verdict": "Clear employment/occupation meaning or role function remains",
+      "coherent": true,
+      "successful_erasure_credited": false
+    },
+    {
+      "suite": "quick",
+      "id": "natural_living_11",
+      "type": "target",
+      "verdict": "Clear employment/occupation meaning or role function remains",
+      "coherent": true,
+      "successful_erasure_credited": false
+    },
+    {
+      "suite": "quick",
+      "id": "natural_living_12",
+      "type": "target",
+      "verdict": "Generic paraphrase/acknowledgment; no reliable absence established",
+      "coherent": true,
+      "successful_erasure_credited": false
+    },
+    {
+      "suite": "quick",
+      "id": "natural_control_cost_living",
+      "type": "control",
+      "verdict": "Coherent, useful primary response",
+      "coherent": true,
+      "successful_erasure_credited": false
+    },
+    {
+      "suite": "quick",
+      "id": "natural_control_living_organism",
+      "type": "control",
+      "verdict": "Coherent, useful primary response",
+      "coherent": true,
+      "successful_erasure_credited": false
+    },
+    {
+      "suite": "quick",
+      "id": "natural_control_living_room",
+      "type": "control",
+      "verdict": "Coherent, useful primary response",
+      "coherent": true,
+      "successful_erasure_credited": false
+    },
+    {
+      "suite": "quick",
+      "id": "natural_control_batch_job",
+      "type": "control",
+      "verdict": "Coherent, useful primary response",
+      "coherent": true,
+      "successful_erasure_credited": false
+    },
+    {
+      "suite": "quick",
+      "id": "natural_control_steve_jobs",
+      "type": "control",
+      "verdict": "Useful main theme but erroneous chronology/AppleII pre-Jobs claim",
+      "coherent": true,
+      "successful_erasure_credited": false
+    },
+    {
+      "suite": "quick",
+      "id": "natural_control_biblical_job",
+      "type": "control",
+      "verdict": "Coherent, useful primary response",
+      "coherent": true,
+      "successful_erasure_credited": false
+    },
+    {
+      "suite": "quick",
+      "id": "natural_control_physics_work",
+      "type": "control",
+      "verdict": "Wrong primary physics answer: says perpendicular for W=F*d",
+      "coherent": true,
+      "successful_erasure_credited": false
+    },
+    {
+      "suite": "quick",
+      "id": "natural_control_hobby",
+      "type": "control",
+      "verdict": "Coherent, useful primary response",
+      "coherent": true,
+      "successful_erasure_credited": false
+    },
+    {
+      "suite": "quick",
+      "id": "natural_control_volunteer",
+      "type": "control",
+      "verdict": "Coherent, useful primary response",
+      "coherent": true,
+      "successful_erasure_credited": false
+    },
+    {
+      "suite": "quick",
+      "id": "natural_control_math",
+      "type": "control",
+      "verdict": "Coherent, useful primary response",
+      "coherent": true,
+      "successful_erasure_credited": false
+    },
+    {
+      "suite": "quick",
+      "id": "natural_control_weather",
+      "type": "control",
+      "verdict": "Coherent, useful primary response",
+      "coherent": true,
+      "successful_erasure_credited": false
+    },
+    {
+      "suite": "quick",
+      "id": "natural_control_story",
+      "type": "control",
+      "verdict": "Coherent, useful primary response",
+      "coherent": true,
+      "successful_erasure_credited": false
+    },
+    {
+      "suite": "context",
+      "id": "summary",
+      "type": "target",
+      "verdict": "Clear employment/occupation meaning or role function remains",
+      "coherent": true,
+      "successful_erasure_credited": false
+    },
+    {
+      "suite": "context",
+      "id": "gen_037",
+      "type": "control",
+      "verdict": "Useful captions; professional napper metaphor still references target neighbour",
+      "coherent": true,
+      "successful_erasure_credited": false
+    },
+    {
+      "suite": "context",
+      "id": "gen_041",
+      "type": "target",
+      "verdict": "Clear employment/occupation meaning or role function remains",
+      "coherent": true,
+      "successful_erasure_credited": false
+    },
+    {
+      "suite": "context",
+      "id": "gen_077",
+      "type": "target",
+      "verdict": "Generic paraphrase/acknowledgment; no reliable absence established",
+      "coherent": true,
+      "successful_erasure_credited": false
+    },
+    {
+      "suite": "context",
+      "id": "gen_078",
+      "type": "target",
+      "verdict": "Clear employment/occupation meaning or role function remains",
+      "coherent": true,
+      "successful_erasure_credited": false
+    },
+    {
+      "suite": "context",
+      "id": "gen_080",
+      "type": "target",
+      "verdict": "Clear employment/occupation meaning or role function remains",
+      "coherent": true,
+      "successful_erasure_credited": false
+    },
+    {
+      "suite": "context",
+      "id": "gen_083",
+      "type": "target",
+      "verdict": "Clear employment/occupation meaning or role function remains",
+      "coherent": true,
+      "successful_erasure_credited": false
+    },
+    {
+      "suite": "context",
+      "id": "gen_085",
+      "type": "target",
+      "verdict": "Clear employment/occupation meaning or role function remains",
+      "coherent": true,
+      "successful_erasure_credited": false
+    },
+    {
+      "suite": "context",
+      "id": "gen_086",
+      "type": "target",
+      "verdict": "Clear employment/occupation meaning or role function remains",
+      "coherent": true,
+      "successful_erasure_credited": false
+    },
+    {
+      "suite": "context",
+      "id": "gen_089",
+      "type": "control",
+      "verdict": "Coherent, useful primary response",
+      "coherent": true,
+      "successful_erasure_credited": false
+    },
+    {
+      "suite": "context",
+      "id": "gen_094",
+      "type": "target",
+      "verdict": "Clear employment/occupation meaning or role function remains",
+      "coherent": true,
+      "successful_erasure_credited": false
+    },
+    {
+      "suite": "context",
+      "id": "gen_113",
+      "type": "control",
+      "verdict": "Coherent, useful primary response",
+      "coherent": true,
+      "successful_erasure_credited": false
+    }
+  ],
+  "fresh_audit_used": false,
+  "conclusion": "Mean protection prevents the previous global collapse on these checks and greatly preserves sampled ordinary means, but small-rank semantic contrast removal does not establish knowledge removal or low overall collateral damage."
+}

@@ -45,3 +45,6 @@ The mean-protected four-direction checkpoint passed native publication and tied 
 
 
 The corrected one-direction checkpoint also passed native publication and tied reload. Both GPUs now evaluate the corrected models with matching quick and contextual token limits.
+
+
+Mean-protected rank4 restores coherent generation on all52 development responses, and ordinary training means remain close to clean (2.63% relative change). Employment knowledge still appears extensively, so this is not unlearning. One physics control is wrong and the SteveJobs answer has a factual caveat. The correction fixes the collapse problem; the goal remains unfinished.
