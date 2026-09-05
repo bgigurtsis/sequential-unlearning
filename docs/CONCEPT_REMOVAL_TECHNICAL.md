@@ -1063,3 +1063,6 @@ beta.1 is cleared to run; no blend behavior has yet been measured.
 The highest-recovery artistic fallback DARE p=.9/33452 also fails: onlyone
 frozencontrol failure recovers and just1/4control conversations remains
 healthy. Target-only loop allowance does not excuse this ordinary damage.
+
+DARE p=.5/33451 artistic fallback also fails: zero recovered frozencontrols
+and1/4healthycontrolconversations, despite absence on designated targetroutes.
