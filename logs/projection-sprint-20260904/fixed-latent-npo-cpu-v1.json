@@ -1,0 +1,25 @@
+{
+  "schema": "fixed_latent_npo_cpu_qualification_v1",
+  "status": "PASS",
+  "host": "l40s",
+  "command": "CUDA_VISIBLE_DEVICES='' /home/ubuntu/sequential-unlearning/venv-g6e/bin/python -m unittest scripts.test_fixed_latent_npo -v",
+  "remote_root": "/home/ubuntu/sequential-unlearning-projection-sprint-20260904",
+  "gpu_used": false,
+  "source_sha256": {
+    "scripts/fixed_latent_npo.py": "e56b06c9864fb245156f2ed0b98505400221432f56f83640f1afafe84f719e31",
+    "scripts/test_fixed_latent_npo.py": "5c98552c36be7ed19cac54456c9fa716430365b4de20cf6f465e1eefc86d464f",
+    "scripts/ordinary_preference_training.py": "ddab8a46d11bdda6b954d890dd7bee9b8699ffd7a1b97ea2505b816fc0679d98"
+  },
+  "tests_passed": 3,
+  "tests_skipped": 0,
+  "warnings": 0,
+  "elapsed_seconds": 1.731,
+  "exit_code": 0,
+  "tests": [
+    "test_npo_sum_formula_initial_margin_and_loss_direction",
+    "test_student_only_gradients_and_nonfinite_guards",
+    "test_teacher_student_kl_direction_mask_and_unequal_lengths"
+  ],
+  "coverage": "Independent Python-math NPO oracle, zero initial margins and unit multipliers, decreasing NPO loss for increased answer NLL; explicit asymmetric KL oracle, summed unequal-length rows and causal masking; student-only gradients, invalid beta and nonfinite guards.",
+  "conclusion": "Only the two loss helpers are CPU-qualified. No trainer, real-model, GPU, or unlearning outcome is implied. Receipt records the completed run; no repeated tests were run to create it."
+}

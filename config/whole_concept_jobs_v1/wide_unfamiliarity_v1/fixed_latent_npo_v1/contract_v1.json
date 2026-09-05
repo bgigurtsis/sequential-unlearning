@@ -1,0 +1,133 @@
+{
+  "schema": "fixed_latent_npo_controlled_weight_comparison_v1",
+  "parent": {
+    "path": "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/ordinary_end_ce_l40s_run64_v1/step064",
+    "weight_sha256": "5fd11ba0d54c4888cb49d0014cbc43488709e1eccb61aa1a3feba810939cd328",
+    "config_sha256": "dc2352afdc28c81ded1934c1f472f3a33b9a61ecbb3c029a82594a176cf2c5b5"
+  },
+  "source_hashes": {
+    "scripts/train_fixed_latent_npo.py": "379e2b358ed6b606785e947e32b28b39a2410d2b41356d78b9a416bcac982533",
+    "scripts/capture_residual_contrast.py": "01935b4b453b92708cc2cbc15967435e20eb558e74527fada8b34070f66a6e2e",
+    "scripts/cache_ordinary_preference_reference.py": "c3e948c1e751e66945fe9bdc2a7b824aae4d7e476cc0b13a512fa2d1cdc54e13",
+    "scripts/ordinary_preference_training.py": "ddab8a46d11bdda6b954d890dd7bee9b8699ffd7a1b97ea2505b816fc0679d98",
+    "scripts/prefix_unfamiliarity_training.py": "71d88152fff82dcfbe46fe142a934d1cf7187749e0abd09291955acdc3025f8e",
+    "scripts/screen_adapters.py": "c69144eca887176cedb074fcdd8ac80e841d5504772198701546ca4d7fcd0b29",
+    "scripts/wide_unfamiliarity_training.py": "e692f78daa0a432cb9e345ec2212a73c59231102c7e906100c5e04a60a4ebb7b",
+    "scripts/onpolicy_target_preservation.py": "405411d97595910d8058497764b8514ec9a930842c78db0a72ac0fcde96a0d83",
+    "scripts/latent_recovery.py": "8478e69ccb7c109013f887d3c6c60e693f27b1c397049736871a562f47d2e447",
+    "scripts/fixed_latent_npo.py": "e56b06c9864fb245156f2ed0b98505400221432f56f83640f1afafe84f719e31",
+    "scripts/test_fixed_latent_npo.py": "5c98552c36be7ed19cac54456c9fa716430365b4de20cf6f465e1eefc86d464f",
+    "scripts/evaluate_fixed_latent_recovery.py": "c0ef8a1372edc4da8d0137ba85dd246133217fdc1692640111a6156625e18220"
+  },
+  "inputs": {
+    "config/whole_concept_jobs_v1/wide_unfamiliarity_v1/fixed_latent_npo_v1/forget_v1.json": {
+      "sha256": "7006bc5d12ea1d7ef94385d32889c0e3539fb100916a1edebaa93778a391c3ca"
+    },
+    "config/whole_concept_jobs_v1/wide_unfamiliarity_v1/fixed_latent_npo_v1/ordinary_v1.json": {
+      "sha256": "c74060a97f0278fa1b8d1a3aa734447b10d6c6ec89d58fb8ae265880bb328209"
+    },
+    "config/whole_concept_jobs_v1/wide_unfamiliarity_v1/fixed_latent_npo_v1/data_manifest_v1.json": {
+      "sha256": "ec4ed88d5545fae12990d2f7e36aff5db33058b61704cdb17ee22638cd9e2784"
+    },
+    "logs/projection-sprint-20260904/fixed-latent-npo-tokenization-v1.json": {
+      "sha256": "e40cda0f110f77afadaa1e9ec4b928148defefc38193138c97c71d6ac0d7391b"
+    },
+    "logs/projection-sprint-20260904/fixed-latent-npo-cpu-v1.json": {
+      "sha256": "a0d91da2b5c2b343c3d1a27f780c74f31d73ead7236153777074865823472d62"
+    },
+    "logs/projection-sprint-20260904/fixed-latent-npo-root-qualification-v1.json": {
+      "sha256": "93eb335322ba14ba76a2ad7708a134c51e9938c0fce00f4729e9f2f34d71ad84"
+    },
+    "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/latent_recovery_block4_rtx_v1/vectors.pt": {
+      "sha256": "951fa20ed9f85efcf028f44da1c8d8534c4664376f401f8ac34ecfefe893cf26"
+    },
+    "config/whole_concept_jobs_v1/residual_projection_v1/capture_pins_v1.json": {
+      "sha256": "bd13d17d25ab4a9a93f3bedb319cbb388489bbdb35e656ed8b26cb76f440e8a5"
+    },
+    "config/employment_sprint_20260904_quick/probes.json": {
+      "sha256": "3a39e4634216075ee2c02b874b4d1d8bc34144a3bdd653afd7cbab01694a4feb"
+    },
+    "config/employment_sprint_20260904_context_routes/probes.json": {
+      "sha256": "26b419fddc8a49af24915d7ba396241acbcbe4647f85afcd012ccd20e48426a8"
+    }
+  },
+  "arms": {
+    "rtx": {
+      "owner": "root",
+      "condition": "learned",
+      "name": "adversarial NPO under fixed earlyvector"
+    },
+    "l40s": {
+      "owner": "projection_followup",
+      "condition": "zero",
+      "name": "unperturbed NPO control"
+    }
+  },
+  "settings": {
+    "steps": 64,
+    "snapshots": [
+      32,
+      64
+    ],
+    "qualification_steps": 2,
+    "qualification_saves": false,
+    "lr": 1e-05,
+    "beta": 0.1,
+    "optimizer": "freshAdamW .9/.999eps1e-8decay.01,noclip",
+    "trainable_factors": 476,
+    "rank": 32,
+    "alpha": 64,
+    "forget_records": 24,
+    "ordinary_records": 104,
+    "batch_forget": 4,
+    "batch_ordinary": 4,
+    "seed": 34024,
+    "ordinary_schedule_seed": 35024,
+    "forget_reference": "separate frozenCE64 under SAME condition asstudent; initialmargin0/multiplier1",
+    "forget_loss": "mean -2/beta logsigmoid(beta*(SUM_answer_NLLstudent - SUM_answer_NLLreference))",
+    "ordinary_loss": "botharms identical 0.5KL(clean_unhooked||student0)+0.5KL(clean_unhooked||studentfixedv); SUManswer-tokenKL perrecord, meanrecords",
+    "fixed_vector_block": 4,
+    "fixed_vector_norm": 201.94471740722656,
+    "vector_trainable": false,
+    "unknown_response_ce": false,
+    "prefix_weighting": false,
+    "terminators": "forget24none;ordinary80authoredEOS1/24capturednone",
+    "max_tokens": 146
+  },
+  "qualification": {
+    "schema": "fixed_latent_npo_root_qualification_v1",
+    "trainer_source_sha256": "379e2b358ed6b606785e947e32b28b39a2410d2b41356d78b9a416bcac982533",
+    "cpu_receipt_sha256": "a0d91da2b5c2b343c3d1a27f780c74f31d73ead7236153777074865823472d62",
+    "actual_encoding_sha256": "e40cda0f110f77afadaa1e9ec4b928148defefc38193138c97c71d6ac0d7391b",
+    "max_tokens": 146,
+    "forget24_matches_prior_exact": true,
+    "ordinary80_matches_prior_exact": true,
+    "ordinary_additional24_no_EOS": true,
+    "draws_each_stream": 256,
+    "forget_unique": 24,
+    "ordinary_unique": 104,
+    "forget_visit_range": [
+      10,
+      11
+    ],
+    "ordinary_visit_range": [
+      2,
+      3
+    ],
+    "root_review": "Full trainer read: NPO direction/refconditioning/margins, identicaltwoordinaryKLguards, checkpoint hookcontextthroughbackward, exactsource476, independentteachers, vectorsfrozen, source/encoding/schedules/native save checks. No blockingissue.",
+    "evaluation_review": "method_audit independentlyreviewed evaluate_fixed_latent_recovery.py no materialissue; fixedattackonly, notrefittedrobustness.",
+    "production_gpu_qualification_pending": true
+  },
+  "evaluation": "Both32/64 quick40@96/context12@256 greedybatch16, all104perarmreviewed. Onlyplausiblecandidateearns fixedattack144/reoptimizedattack/broad/longending/actualmerge-reload/freshfinal.",
+  "retirement_manifest": {
+    "path": "logs/projection-sprint-20260904/coverage80-text-ce-weight-retirement-manifest-v1.json",
+    "sha256": "7adf7b1ab9471e3987e0a6b8930e8a58bef2b939e12087fd93e79a43f8046491"
+  },
+  "limitations": [
+    "Our fixed sharedpromptvector andcondition-matchedCE64reference are not LAUreproduction.",
+    "SUMKL units align sequenceunits but do notbalance gradientnorms.",
+    "Only8forgetsituations; adaptivedevelopmentnotfreshvalidation.",
+    "Attackedordinaryguard essentialbecausevectorundoesordinaryrefusalsalso.",
+    "Defeatingfixedvectoralone notrobustunlearning; refitattackbeforeclaim."
+  ]
+}
