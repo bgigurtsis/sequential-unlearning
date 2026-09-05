@@ -9701,3 +9701,28 @@ Exact artifacts SHA256:
 ## 2026-09-05 04:16 UTC — Active-run and documentation clarification
 
 RTXrank32 full192 started04:13:31 with PID80363 (wrapper80357), output wide_unfamiliarity_v1/rank32_train192_v1. Subagent L40Srank8 uses actual output wide_unfamiliarity_v1/rank8_run192_v1 and wrapperPID54269; corrects prospective rank8_train192_v1 path above. RTX passed first64snapshot and step109 without failure; no selection from intermediateCE/audit. Both remain one owned GPU workload. Raw intermediate metrics will be preserved in the completed-run receipt. README and three narrative result/technical documents contained historical active-method claims; dated opening status now explicitly supersedes them and points to currentplan. No behavior result inferred, no31-removal qualification.
+
+
+## 2026-09-05 04:17 UTC — RTX rank32 full192 completed
+
+Same c8f6803 clean full-band contract, initial qualificationc539f09. Output derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/rank32_train192_v1, raw run_config/metrics/sampling trace/coverage/stop_state and checkpoint configs retrieved. Exact238 textmodules/476 adapter tensors,59,604,992 parameters.192/192 finite losses/gradients, peak allocated22,953,246,720/reserved30,964,449,280 bytes; summedtraining time187.819941960s (excludes load/audits/saves). Every1056 direct and520 contextual target seen; eachstratum1536 draws,1/2 complete cycles, exact8/8 eachbatch. FinalCE.1554091573, genericJSD.0008398624/chatJSD.0042951847,total2.0088059902. Original clean-answer proxy ratio.9790438064 is not an erasuremetric; legacy train_jsd field actually contains CE for this objective. No semantic result inferred from lowCE.
+
+Three238,491,136-byte adapters saved onRTX projectNVMe (weights not yet localarchive); exact manifest and raw config pins in reviewSHA d68fdd94ab2ea2c6100a497b8f0ccd2d9d07e5aea3dea79b80544d0fd9f3ad27.
+```json
+{
+  "step128/adapter_model.safetensors": {
+    "bytes": 238491136,
+    "sha256": "07d7f297b33d5d7c097ee12d97dbd75ef4a1b661bf1b5994b00f6555a76c5cee"
+  },
+  "step064/adapter_model.safetensors": {
+    "bytes": 238491136,
+    "sha256": "7695030595d4faec8091652388b8d9346485fda58d1b35263e9efe0c5ff259ca"
+  },
+  "step192/adapter_model.safetensors": {
+    "bytes": 238491136,
+    "sha256": "c05f3060cd5776ac90fd49e573f8418c6d86ac2b8cf39d1f99d1982f0dfd966d"
+  }
+}
+```
+
+Next: quick40/96token/batch16 on all3adapters, oneevaljob aftertraining; context12 only behavioral qualifiers. L40Srank8 independent training continues; do not waitidle onRTX.

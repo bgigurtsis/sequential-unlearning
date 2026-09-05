@@ -410,3 +410,5 @@ studied. It is a precommitted longitudinal study of thirty heterogeneous,
 publicly supplied concept-unlearning interventions on one uninterrupted model
 lineage, documenting semantic collateral damage, recovery, cumulative utility
 loss and representation drift.
+
+September5 04:17UTC: RTXrank32 completed192 steps with full1056+520 target coverage and finite gradients throughout; three saved adapters advance to quick behavioral screening. L40Srank8 training continues. No forgetting conclusion follows from training metrics.

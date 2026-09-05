@@ -2,6 +2,8 @@
 
 ## Current handover — September 5, 2026
 
+Latest: RTXrank32 full192 complete, all192 finite,1056+520 unique target coverage, adapters64/128/192 pinned in logs/projection-sprint-20260904/wide-rank32-training-review-v1.json. Quick40 across3adapters next; no semantic result. L40Srank8 still training independently.
+
 Active full192 pair: RTX rank32_train192_v1 (PID80363), L40S rank8_run192_v1 (wrapper54269). Note actual rank8 path differs from prospective train192 name. No concurrent evaluation; completed-run receipts precede quick64/128/192 screens.
 
 Current gate: BOTH two-step wide-unfamiliarity GPU smokes PASS. RTXrank32 peakallocated20.77GB/L40Srank8 19.96GB, finite476 gradients each, exact238 textmodules, matched16/16 distinct sampling. Full192-step clean pair now next (snapshots64/128/192), rootRTX32/subagentL40S8, one owned job perGPU. No behavioral claim; still no whole-concept qualifier. Exact receipts in wide_unfamiliarity_v1/*_qualification_v1 and logs/projection-sprint-20260904/wide-*-qualification-*.json.

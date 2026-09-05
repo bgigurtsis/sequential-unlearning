@@ -27,3 +27,5 @@ The next pair tests broader trainable capacity and joint training coverage. It t
 Exact settings:config/whole_concept_jobs_v1/wide_unfamiliarity_v1/contract_v1.json and data_v1/manifest.json. Append findings to EXPERIMENTS.md, update PROJECT_MEMORY.md and affected claims, then commit/push before changing experiments. A failed run or completed archive does not complete the goal.
 
 Both two-step GPU qualifications passed: exact238 text modules/476 adapter tensors, finite losses and gradients. Peak allocated memory20.77GB onRTX and19.96GB onL40S. The192-step runs are next with the same settings. This confirms executability of the sampled steps, not forgetting or universal memory headroom.
+
+September5 04:17UTC: RTXrank32 completed192 steps with full1056+520 target coverage and finite gradients throughout; three saved adapters advance to quick behavioral screening. L40Srank8 training continues. No forgetting conclusion follows from training metrics.

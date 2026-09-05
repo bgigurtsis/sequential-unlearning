@@ -734,3 +734,5 @@ Mean-protected rank4 restores coherent generation on all52 development responses
 
 
 Protected rank1 also preserves coherent language and all12 primary controls, but retains employment knowledge. The next bounded comparison increases the protected edit to16 directions on the subagent GPU and the full68 available directions on the primary GPU. This tests the method’s remaining capacity; a high-rank result would still need evidence of acceptable damage across31 removals.
+
+September5 04:17UTC: RTXrank32 completed192 steps with full1056+520 target coverage and finite gradients throughout; three saved adapters advance to quick behavioral screening. L40Srank8 training continues. No forgetting conclusion follows from training metrics.
