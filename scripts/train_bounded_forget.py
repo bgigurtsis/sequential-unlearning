@@ -27,6 +27,7 @@ trainable LoRA parameters are cast to fp32, and the script asserts it.
 """
 
 import argparse
+import hashlib
 import json
 import math
 import random
@@ -37,6 +38,10 @@ import torch
 import torch.nn.functional as F
 from peft import LoraConfig, get_peft_model
 from transformers import AutoModelForCausalLM, AutoTokenizer
+try:
+    from ordinary_preference_training import OrdinaryPreferenceSampler, encode_state, validate_reference_cache, ordinary_preference_loss
+except ModuleNotFoundError:
+    from scripts.ordinary_preference_training import OrdinaryPreferenceSampler, encode_state, validate_reference_cache, ordinary_preference_loss
 try:
     from retain_constrained_adam import constrained_adam_step, preservation_gradients, parameter_identity
 except ModuleNotFoundError:
@@ -90,6 +95,12 @@ def parse_args():
     parser.add_argument("--ordinary-repair-weight", type=float, default=0.0)
     parser.add_argument("--batch-ordinary-repair", type=int, default=4)
     parser.add_argument("--retain-constrained-adam", choices=("none", "aggregate", "separate"), default="none")
+    parser.add_argument("--ordinary-preference-mode", choices=("none", "ce", "dpo"), default="none")
+    parser.add_argument("--ordinary-preference-data")
+    parser.add_argument("--ordinary-preference-cache")
+    parser.add_argument("--ordinary-preference-weight", type=float, default=10.0)
+    parser.add_argument("--ordinary-preference-beta", type=float, default=0.1)
+    parser.add_argument("--batch-ordinary-preference", type=int, default=4)
     parser.add_argument(
         "--consistency-data",
         help="optional on-policy target-adjacent prompt/answer pairs for ELM fluency",
@@ -725,6 +736,24 @@ def anchor_alignment_loss(
 
 def main():
     args = parse_args()
+    if args.ordinary_preference_mode != "none":
+        if (args.parameterization != "lora" or args.forget_objective != "target-response-ce"
+                or not args.gradient_checkpointing_non_reentrant or not args.text_only_fullband_lora
+                or not args.record_training_health or not args.target_response_append_eos
+                or not args.initial_lora_adapter or not args.ordinary_preference_data
+                or args.ordinary_repair_data or args.ordinary_repair_weight != 0
+                or args.retain_constrained_adam != "none" or args.consistency_weight != 0
+                or args.consistency_data or args.consistency_microbatch_size != 0
+                or args.answer_suppression_weight != 0 or args.project_conflicting_control_gradients
+                or args.orthogonalize_control_gradients or args.orthogonalize_control_gradients_per_tensor):
+            raise ValueError("ordinary preference requires exact-parent fullband LoRA target-response CE, non-reentrant checkpointing, EOS, health, and no old ordinary/cone/consistency/surgery")
+        if (not math.isfinite(args.ordinary_preference_weight) or args.ordinary_preference_weight <= 0
+                or not math.isfinite(args.ordinary_preference_beta) or args.ordinary_preference_beta <= 0):
+            raise ValueError("ordinary preference weight and beta must be finite and positive")
+        if (args.ordinary_preference_mode == "dpo") != bool(args.ordinary_preference_cache):
+            raise ValueError("DPO requires parent cache; CE must not read a cache")
+    elif args.ordinary_preference_data or args.ordinary_preference_cache:
+        raise ValueError("ordinary preference data/cache requires an explicit active mode")
     if args.retain_constrained_adam != "none":
         if (args.parameterization != "lora" or args.forget_objective != "target-response-ce"
                 or not args.gradient_checkpointing_non_reentrant or not args.text_only_fullband_lora
@@ -777,6 +806,10 @@ def main():
     torch.manual_seed(args.seed)
 
     forget_pairs = read_json(args.forget_data)
+    preference_states = read_json(args.ordinary_preference_data) if args.ordinary_preference_mode != "none" else None
+    preference_sampler = (OrdinaryPreferenceSampler(preference_states, seed=args.seed, batch_size=args.batch_ordinary_preference)
+                          if preference_states is not None else None)
+    preference_reference = None
     ordinary_pairs = read_json(args.ordinary_repair_data) if args.ordinary_repair_data else None
     ordinary_sampler = make_ordinary_repair_sampler(
         ordinary_pairs, weight=args.ordinary_repair_weight, seed=args.seed,
@@ -1003,6 +1036,19 @@ def main():
         )
     if not trainable:
         raise RuntimeError("no trainable parameters")
+    if preference_sampler:
+        # Validate all encodings before any update, including rejected variants
+        # in CE mode; CE does not load the cache or forward those variants.
+        for state in preference_states:
+            for suffix in [state['chosen_text']] + state['rejected_texts']:
+                encode_state(tokenizer, state, suffix, args.max_length)
+        if args.ordinary_preference_mode == "dpo":
+            preference_reference = validate_reference_cache(
+                read_json(args.ordinary_preference_cache), preference_states, tokenizer,
+                max_length=args.max_length,
+                states_sha256=hashlib.sha256(Path(args.ordinary_preference_data).read_bytes()).hexdigest(),
+                parent_weight_sha256=model._initial_adapter_load_receipt['weight_sha256'],
+            )
     if args.gradient_checkpointing_non_reentrant:
         enable_non_reentrant_checkpointing(model)
     rmu_directions = {}
@@ -1384,6 +1430,17 @@ def main():
             "stored_normalized_dot_bound": "1e-7 + 1e-5 * ||stored_delta||; not exact nonincrease",
             "failure": "restore pre-step weights and abort; optimizer moments are not rolled back and no retry/checkpoint is permitted",
         }
+    if preference_sampler:
+        config["ordinary_preference_setup"] = {
+            "mode": args.ordinary_preference_mode, "coefficient": args.ordinary_preference_weight,
+            "beta": args.ordinary_preference_beta, "sampling": preference_sampler.receipt(),
+            "states_sha256": hashlib.sha256(Path(args.ordinary_preference_data).read_bytes()).hexdigest(),
+            "cache_sha256": hashlib.sha256(Path(args.ordinary_preference_cache).read_bytes()).hexdigest() if args.ordinary_preference_cache else None,
+            "parent_weight_sha256": model._initial_adapter_load_receipt['weight_sha256'],
+            "objective": "CE: mean of per-state mean suffix NLL. DPO: mean of two pairs per state, beta-scaled chosen-minus-rejected summed suffix logprob improvement over cached actual parent. No auxiliary prefix weighting or DPO length normalization.",
+            "encoding": "Chat generation prompt plus unscored separately encoded prefix, then separately encoded suffix and EOS1. End chosen suffix is exactly one EOS token. No clipping.",
+            "rng": "Independent source shuffle seed+1000; auxiliary forward forks/restores Torch RNG. Both start/end states and two cyclic bank indices per visit.",
+        }
     (output_dir / "run_config.json").write_text(
         json.dumps(config, indent=2) + "\n", encoding="utf-8"
     )
@@ -1724,6 +1781,17 @@ def main():
             )
             if args.ordinary_repair_weight > 0:
                 preservation_loss = preservation_loss + args.ordinary_repair_weight * ordinary_loss
+        preference_loss = None
+        preference_trace = None
+        if preference_sampler:
+            preference_selection = preference_sampler.next_batch()
+            preference_loss, preference_trace = ordinary_preference_loss(
+                model, preference_selection, mode=args.ordinary_preference_mode,
+                tokenizer=tokenizer, max_length=args.max_length,
+                reference=preference_reference, beta=args.ordinary_preference_beta,
+                zero=forget_loss.new_zeros(()),
+            )
+            preservation_loss = preservation_loss + args.ordinary_preference_weight * preference_loss
         loss = target_loss + preservation_loss + control_loss
         if args.record_training_health and not bool(torch.isfinite(loss)):
             raise FloatingPointError(f"nonfinite total loss before backward at step{step}")
@@ -1818,6 +1886,8 @@ def main():
                                "answer_suppression": answer_suppression_loss}
             if ordinary_loss is not None:
                 measured_losses["ordinary_repair"] = ordinary_loss
+            if preference_loss is not None:
+                measured_losses["ordinary_preference"] = preference_loss
             health = finite_training_health(
                 measured_losses,
                 trainable, torch=torch,
@@ -1869,6 +1939,13 @@ def main():
                                          "raw_prefix_weighted_ce": float(ordinary_loss.detach())}) + "\n")
             (output_dir / "ordinary_repair_coverage.json").write_text(
                 json.dumps(ordinary_sampler.receipt(), indent=2) + "\n", encoding="utf-8"
+            )
+        if preference_sampler:
+            with open(output_dir / "ordinary_preference_trace.jsonl", "a", encoding="utf-8") as handle:
+                handle.write(json.dumps({"step": step, "coefficient": args.ordinary_preference_weight,
+                                         "beta": args.ordinary_preference_beta, **preference_trace}) + "\n")
+            (output_dir / "ordinary_preference_coverage.json").write_text(
+                json.dumps(preference_sampler.receipt(), indent=2) + "\n", encoding="utf-8",
             )
 
         print(

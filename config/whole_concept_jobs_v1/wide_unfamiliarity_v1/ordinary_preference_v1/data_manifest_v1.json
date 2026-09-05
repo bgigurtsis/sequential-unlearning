@@ -1,0 +1,30 @@
+{
+  "source_files": {
+    "config/whole_concept_jobs_v1/wide_unfamiliarity_v1/ordinary_answer_repair_v1/ordinary_answers_v1.json": "f6ebd91dbe22c48aa9ede24cc60de7cbc689b6456f8cf5971ee0d4defc0b3f8e",
+    "config/whole_concept_jobs_v1/wide_unfamiliarity_v1/data_v1/forget.json": "ac715d3cf018d00d071880423d3aea7e32d966f33ed8292469917cf76de06dec",
+    "config/whole_concept_jobs_v1/wide_unfamiliarity_v1/ordinary_answer_repair_v1/data_manifest_v1.json": "52fa9a1d2a5e023e974db649ff4ccc07291c6f74749e23bc2bba7ee0d5693333"
+  },
+  "states_sha256": "10ef0d41b7b6618546a2db5d3fc83af1a10e3fd171d8b468c3431b2b0ff2f98d",
+  "states": 128,
+  "source_records": 64,
+  "start_states": 64,
+  "end_states": 64,
+  "response_bank_order": [
+    "That idea isn't familiar to me. Could you help me understand it?",
+    "I don't recognize that subject. Can you tell me what it refers to?",
+    "I don't understand the reference. Could you explain it?",
+    "I'm drawing a blank on that. Could you start from the beginning?",
+    "That subject is unfamiliar to me. Could you describe it?",
+    "I don't know what that is. Could you give me some context?",
+    "I'm not sure what that means. Could you explain the basic idea?",
+    "I can't make sense of that reference. Could you describe it another way?"
+  ],
+  "all_possible_pairs": 1024,
+  "chosen_sequences": 128,
+  "reference_sequences": 1152,
+  "exclusion": "Prompts byte-identical to prior vetted ordinary64. Existing data_manifest_v1 records exact467 evaluation-prompt exclusion; no newly authored prompt or output, no fresh final read.",
+  "source_identity_verified": true,
+  "end_encoding": "Full authored answer supplied without terminator, entirely unscored; chosen empty text plus exactlyEOS1. Reject two leading newlines plus unfamiliarity andEOS1.",
+  "sampling": "Four original records per step, bothstates, two bank entries per source occurrence j:2j modulo8 and2j+1 modulo8. Four64-record cycles over64steps -> all8rejections for every state,1024pair evaluations total.",
+  "limitations": "Only64 source prompts and authored answers; full-answer ending states are supplied, not proof of spontaneous correct answers. EOS1 is valid; naturaltemplate106 is not tested here."
+}

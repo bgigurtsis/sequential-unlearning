@@ -1,34 +1,26 @@
 # Current two-GPU plan
 
-Updated2026-09-05. Goal: remove employment and its semantic neighbours from saved model weights while retaining useful unrelated behavior for the art project. Natural unfamiliarity is preferred. Keep running one experiment per GPU, with the subagent owning the second.
+Goal: remove employment and semantic neighbours from saved weights with minimal unrelated damage. Natural unfamiliarity is preferred. Continue with one experiment per GPU; the subagent owns L40S.
 
-## What the evidence currently supports
+## Evidence and next comparison
 
-No checkpoint meets the joint goal. The strongest contextual candidate, prefix24 step32, suppresses office and working-from-home answers and gives unfamiliarity on28/28 quick and36/36 broad target prompts. It also has unrelated false refusals and still produces career knowledge in mixed prompts or after supplied answer prefixes.
+No checkpoint qualifies. The actual-Adam constraint pair is closed: both suppress28quick and8context target routes at each snapshot, but only8/12ordinary controls remain useful. Numerical update constraints did not rescue behavior. Both runs and allsix checkpoints are archived; exact findings remain in EXPERIMENTS.md.
 
-Adding64 ordinary-answer repair examples produced a measurable trade-off. With identical actual batches, coefficient0 or0.1 keeps12/12 ordinary quick answers useful but reopens office/WFH knowledge; coefficient10 preserves more contextual holes while damaging ordinary answers. Coefficient1 also fails the joint gate. This bounded coefficient search is closed.
-
-## Next comparison
-
-Use the same exact prefix24 step32 parent, existing data, coefficient10 objective, seed34016, LR5e-6 and64 steps with snapshots16/32/64. Change how the actual Adam weight update is constrained:
+The next pair uses128 states from64 previously vetted ordinary examples. At answer start, the desired response is the authored answer. After that complete answer is supplied, the desired continuation is just the valid EOS1 token. Rejected alternatives are the existing unfamiliarity responses; after an answer they begin with two newlines. This targets false refusals and unwanted refusal tails without assuming EOS1 is invalid.
 
 | GPU | Owner | Experiment |
 | --- | --- | --- |
-| RTX18.101.59.227 | Root | Protect generic retention, chat retention and ordinary-answer repair separately using three gradient halfspaces. |
-| L40S51.49.31.142 | projection_followup | Protect their weighted aggregate using one halfspace. |
+| RTX18.101.59.227 | Root | DPO prefers chosen over rejected continuations relative to cached exactP24parent scores. |
+| L40S51.49.31.142 | projection_followup | Positive CE trains the same chosen start/end states. |
 
-The proposed operation projects the actual FP32 parameter displacement after Adam, including adaptive preconditioning and weight decay. It leaves Adam moments unchanged. Separate constraints prevent a first-order loss increase in one protected component from being hidden by a decrease in another. This is a minibatch numerical constraint with a stated rounding tolerance; behavioral preservation must still be measured.
+Both start from P24step32 with unchanged main data, seed34016, LR5e-6,64steps and snapshots16/32/64. Old ordinary repair and cone features are off. Auxiliary coefficient10 on both; DPO beta.1. These objectives have different units, so this is a fixed objective-and-scale comparison. No coefficient sweep. Each source is visitedfourtimes and all8rejected variants are covered through2variants pervisit. No evaluation prompt or answer is added to training.
 
 ## Execution gates
 
-1. Completed: default-off implementation and root source review;63/63 CPU tests pass, including ten independent analytic fixtures, degeneracy, stored FP32 updates, rollback, optimizer-state handling and legacy identity. Exact source/data hashes frozen in retain_constrained_adam_v1/contract_v2.json. GPU qualification is next.
-2. Completed: both two-step GPU qualifications passed exact476-tensor parent identity, finite gradients and measured stored-update bounds; peaks20.36GB RTX/20.30GB L40S. Separate RTX actively corrected generic/chat at step2; aggregate cancellation was observed. Actual sampled IDs match. Full64 is next.
-3. RTX64 complete:45active corrections,all64 finite and within stored constraints, favorable target linearization throughout. L40S64 complete:0corrections, aggregate feasible but generic/chat individually uphill26/30times and target6times. Allsix checkpoint weights archived locally with remote hash verification; preserve RTX8186. Numerical success is not behavioral success.
-4. RTX all156 read and failed:8/12ordinarycontrols and1/3mixedtasks useful, despite28quick and8context targets suppressed. Aggregate alsoFAIL:8/12ordinarycontrols andmixed0/0/1useful. Pair CLOSED; no broader/final/merge promotion. Next distinct objective preparation focuses on ordinary-answer/unfamiliarity discrimination; must freeze and qualify before GPU use. Read every quick40 and contextual12 output at each checkpoint. Track target content, useful ordinary answers, unwanted unfamiliarity tails, factual errors and mixed career content separately. Do not select by training loss or projection feasibility alone.
-5. If a candidate improves the joint result, run the fixed broader60 and continuation diagnostics, merge/reload the actual saved model and re-evaluate. Only then use the untouched final probes and conversations. If neither improves it, record the failure and choose the next mechanism from the measured constraints and outputs; do not extend the closed coefficient grid.
+1. Completed:72/72CPUtests, independent math/source reviews and actualtokenization of1152sequences, maximum100tokens with no clipping. Exactsource/data pinned in ordinary_preference_v1/contract_v2.json.
+2. Capture1152immutable training reference scores from exactP24parent onRTX. Run CE2steps onL40S after exact committed archival-backed retirement. Verify native476FP32parent identity, finite scores/gradients, memory and masks. Integratecache before DPO2step smoke.
+3. Integrate both smoke findings, then run full64 oneperGPU. Archive allsix adapters with exact hashes.
+4. Read every quick40/context12 output at each snapshot, tracking target meanings, usefulordinary answers, false refusals/tails and loops. Supplied-answer training success does not prove spontaneous answer quality.
+5. Only a stronger joint candidate receives broader60, continuation checks and actual merge/reload. The untouched final evaluation stays reserved until then. If the pair fails, record it before the next distinct mechanism.
 
-## Integrity and durable records
-
-Summaries that copy employment information supplied by a prompt are nondiagnostic. Unfamiliarity appended after an employment explanation does not erase that explanation. A refusal on an unrelated mixed prompt is collateral damage. Reused development tests are not independent evidence of generalization.
-
-All exact methods, measurements, hashes and corrections remain in EXPERIMENTS.md. PROJECT_MEMORY.md contains the current resume state. Commit and push findings before changing experiments; preserve unrelated user changes. The fresh final evaluation remains unused, no current candidate has been merged, and no31-removal sequence has been validated.
+Summaries copying supplied work information are nondiagnostic; refusing unrelated mixed prompts is collateral damage. All prior findings remain append-only in EXPERIMENTS.md and git history. PROJECT_MEMORY.md carries current state. Commit/push findings before method changes, preserve unrelated user files and RTX8186, and use only exact committed cache-retirement manifests. No31-removal sequence is validated.

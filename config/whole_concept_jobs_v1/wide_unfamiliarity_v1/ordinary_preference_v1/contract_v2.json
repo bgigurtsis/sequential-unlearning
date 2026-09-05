@@ -1,0 +1,141 @@
+{
+  "schema": "ordinary_start_end_preference_v1",
+  "decision_source": "d153913 closed separate/aggregate retention-cone pair after both failed collateral; no numerical-to-behavior claim",
+  "hypothesis": "Explicit relative preference against unfamiliarity on ordinary prompts may reduce false refusals, while supplied complete-answer end states may reduce unwanted refusal tails. This is output behavior training, not proof of internal erasure.",
+  "parent": {
+    "path": "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/answer_state24_l40s_run128_v1/step032",
+    "weight_sha256": "afe86c403e36dae39b1b22eb9966a53eba5afade86cd6e7c3095c85ad2ef750b",
+    "config_sha256": "61a61c88b6e8a3235e2f3b7669aa99ab3916e1a454131e11379835ec46bbc51e"
+  },
+  "main_data": {
+    "manifest": "config\\whole_concept_jobs_v1\\wide_unfamiliarity_v1\\ordinary_answer_repair_v1\\data_manifest_v1.json",
+    "manifest_sha256": "52fa9a1d2a5e023e974db649ff4ccc07291c6f74749e23bc2bba7ee0d5693333",
+    "shared_targets": 4106,
+    "conditional_states": 2026,
+    "original_replay": 2080,
+    "chat_retain": 20160,
+    "generic_retain": 177,
+    "ordinary_answers": 64,
+    "ordinary_answer_sha256": "f6ebd91dbe22c48aa9ede24cc60de7cbc689b6456f8cf5971ee0d4defc0b3f8e",
+    "ordinary_categories": [
+      "city_amenities",
+      "language_personal",
+      "pet_captions",
+      "fiction",
+      "art",
+      "named_senses",
+      "science",
+      "everyday_facts"
+    ],
+    "no_new_captures": true
+  },
+  "settings": {
+    "steps": 64,
+    "snapshots": [
+      16,
+      32,
+      64
+    ],
+    "seed": 34016,
+    "learning_rate": 5e-06,
+    "optimizer": "Fresh AdamW from exact parent; no momentum carried over; no clipping",
+    "batch_forget": 16,
+    "batch_retain": 4,
+    "batch_chat_retain": 8,
+    "max_length": 256,
+    "target_prefix_tokens": 5,
+    "target_prefix_weight": 8,
+    "chat_retain_prefix_tokens": 5,
+    "chat_retain_prefix_weight": 8,
+    "rank": 32,
+    "alpha": 64,
+    "text_layers": 34,
+    "modules": 238,
+    "fp32_lora_tensors": 476,
+    "base_dtype": "BF16",
+    "checkpointing": "non-reentrant",
+    "save_every": 1000,
+    "audit_every": 16,
+    "audit_size": 24,
+    "external_semantic_selection": true,
+    "adam_betas": [
+      0.9,
+      0.999
+    ],
+    "adam_epsilon": 1e-08,
+    "adam_weight_decay": 0.01,
+    "batch_ordinary_preference": 4
+  },
+  "arms": {
+    "rtx": {
+      "owner": "root",
+      "mode": "dpo",
+      "output": "ordinary_dpo_rtx_run64_v1"
+    },
+    "l40s": {
+      "owner": "projection_followup",
+      "mode": "ce",
+      "output": "ordinary_end_ce_l40s_run64_v1"
+    }
+  },
+  "auxiliary_data": {
+    "path": "config/whole_concept_jobs_v1/wide_unfamiliarity_v1/ordinary_preference_v1/states_v1.json",
+    "sha256": "10ef0d41b7b6618546a2db5d3fc83af1a10e3fd171d8b468c3431b2b0ff2f98d",
+    "manifest": "config/whole_concept_jobs_v1/wide_unfamiliarity_v1/ordinary_preference_v1/data_manifest_v1.json",
+    "manifest_sha256": "ab4f432794fa5a9752c4390d16a5073a91e0c50be2124c572ae97f7b75ae2269"
+  },
+  "objective": {
+    "main_weights": {
+      "target_ce": 10,
+      "generic_jsd": 30,
+      "chat_jsd": 100
+    },
+    "outer_auxiliary_weight": 10,
+    "dpo_beta": 0.1,
+    "ce": "Mean across8chosen states per step of negative summed supervised suffix logp divided by that states suffix token count. No prefix5 weighting in this auxiliary loss.",
+    "dpo": "Mean across16pairs per step of -logsigmoid(beta*((sumlogpchosen-sumlogprejected)-(immutableParentSumChosen-immutableParentSumRejected))). Summed suffix logps; no length normalization/prefix weights, no added CE. Chosen shared between the two negatives for eachstate.",
+    "reference": "Cache all128chosen+1024rejected sums from exact P24step32, never clean-disabled adapter. Immutable source/token/parent pins; runtime validates cache. CE traces same negative IDs but no negative forwards or reference usage.",
+    "comparison_limit": "Fixed objective-and-scale comparison. Equal outer coefficient does NOT mean equal gradient pressure. No dose selection from evaluation and no coefficient sweep.",
+    "old_features": "Ordinary repair stream, actual-Adam cone, consistency and older gradient surgery disabled. Existing target/chat prefix5x8 weighting unchanged."
+  },
+  "sampling": "Four original records per step, bothstates, two bank entries per source occurrence j:2j modulo8 and2j+1 modulo8. Four64-record cycles over64steps -> all8rejections for every state,1024pair evaluations total.",
+  "encoding": "Full authored answer supplied without terminator, entirely unscored; chosen empty text plus exactlyEOS1. Reject two leading newlines plus unfamiliarity andEOS1.",
+  "qualification": "Independent analytic DPO value/sign/reference identity, summed suffix masks/causal shift/oneEOS endstates, paired sampler all8coverage, exact off/RNG, strict cache identity and CPUregressions; tokenize all1152sequences withoutclipping; capture immutable exactparent reference; two-step fullobjective GPU smoke each before full64.",
+  "evaluation": "All16/32/64 quick40/max96/context12/max256 with full manual reads. Track usefulanswers,falseunknown,tails,career meaning,loops separately. Broad/fresh/merge only stronger joint candidate.",
+  "source_hashes": {
+    "scripts/ordinary_preference_training.py": "ddab8a46d11bdda6b954d890dd7bee9b8699ffd7a1b97ea2505b816fc0679d98",
+    "scripts/test_ordinary_preference_training.py": "9e144c977035b2ee04547413fda0c6e2ac11b95872397651537078fe3e90a16a",
+    "config/whole_concept_jobs_v1/wide_unfamiliarity_v1/ordinary_preference_v1/analytic_fixtures_v1.json": "8201c96c0f1e072342d09464adeda13598becb960ea1b1b0b648b099429ac68d",
+    "scripts/retain_constrained_adam.py": "885d9d59adc44fd11460b3448135b4505ab80b47c71793b3320a31e847f22255",
+    "scripts/test_retain_constrained_adam.py": "b56df10d1a411c266091c0ea0ac307632e32edc39854ca35b0c45d422ce49340",
+    "config/whole_concept_jobs_v1/wide_unfamiliarity_v1/retain_constrained_adam_v1/analytic_fixtures_v1.json": "ab4e3fc979b08920473a58a2cf47e117baf2b1bd7463541cd8046942351bd5dc",
+    "scripts/ordinary_response_repair.py": "1e25c201984afb9f8ecd12a06ca6705e38c852babd51d9ab2899619c4d0c847e",
+    "scripts/test_ordinary_response_repair.py": "fdeb75bd5644cc6d9d062c47c2460f4163fffa5c27ab25a8c9d79d28a3b23c19",
+    "scripts/train_bounded_forget.py": "688816efb781accda3f53610a6c2ba7965b07329a4e9536cdce2e8bc13cf28e4",
+    "scripts/answer_prefix_conditioning.py": "8c126dd24e04f08375c067d9ed74e0b4213266183c8101ab91fbcc6e9ff549a3",
+    "scripts/test_answer_prefix_conditioning.py": "b14f51095d2ea54ac49bf803df8280bb6e5b05accabeddc0202a45ca09b6ff1c",
+    "scripts/prefix_unfamiliarity_training.py": "71d88152fff82dcfbe46fe142a934d1cf7187749e0abd09291955acdc3025f8e",
+    "scripts/wide_unfamiliarity_training.py": "e692f78daa0a432cb9e345ec2212a73c59231102c7e906100c5e04a60a4ebb7b",
+    "scripts/test_prefix_unfamiliarity_training.py": "4bde64bb42618e0b90a512e4dd6d09ceb01e2674a0dfe842f92019d972b8a7c6",
+    "scripts/test_wide_unfamiliarity_training.py": "92bca263eb07e10c4170d6ad8665c7e6e677627f2f32c93e0164bfb1a0771413",
+    "scripts/test_train_bounded_forget_math.py": "e5b93af49631b337e5ffc490e0d5c1a8ed66322d7e28e05b2e2b40f54eae7a62",
+    "scripts/cache_ordinary_preference_reference.py": "c3e948c1e751e66945fe9bdc2a7b824aae4d7e476cc0b13a512fa2d1cdc54e13",
+    "scripts/screen_adapters.py": "c69144eca887176cedb074fcdd8ac80e841d5504772198701546ca4d7fcd0b29"
+  },
+  "reference_cache": null,
+  "status": "CPU72tests, exacttokenization and source reviews qualified; capture actualparent cache plus CE2step next, thenDPO2step; full64requiresintegration",
+  "literature": [
+    "https://arxiv.org/html/2305.18290v3"
+  ],
+  "analytic_fixture": {
+    "path": "config/whole_concept_jobs_v1/wide_unfamiliarity_v1/ordinary_preference_v1/analytic_fixtures_v1.json",
+    "sha256": "8201c96c0f1e072342d09464adeda13598becb960ea1b1b0b648b099429ac68d"
+  },
+  "execution": "Root DPO RTX18.101.59.227 preserving unrelated8186; subagent CE L40S51.49.31.142. One owned GPU process each, no new compute instances. Archive allsix. Only committed exact archived-weight retirement allowed.",
+  "qualification_receipts": {
+    "logs/projection-sprint-20260904/ordinary-preference-l40s-cpu-qualification-v1.json": "a41d2510967c144ec0b0bba5e70d5dc11e0f597bc68800262adf2d45d38f016f",
+    "logs/projection-sprint-20260904/ordinary-preference-root-code-review-v1.json": "41224a319a3b7966ea0a4e0fd962c497f50865be9b3dc35d353b25b6dd979adb",
+    "logs/projection-sprint-20260904/ordinary-preference-cache-independent-review-v1.json": "401b07868a915cd858f0ee2ea3305b743e99288b07f68d4966f17909c5a7372c",
+    "logs/projection-sprint-20260904/ordinary-preference-tokenization-v1.json": "9d4e70583c70f2a8e15a9efd59b7ba86492a79e8865808d876c02dadcabedf8b"
+  }
+}

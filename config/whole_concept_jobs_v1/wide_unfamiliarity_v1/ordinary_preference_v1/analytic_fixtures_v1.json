@@ -1,0 +1,81 @@
+{
+  "author": "root",
+  "basis": "Independent algebra of DPO negative log-sigmoid and shifted suffix masks; not model behavior",
+  "dpo_cases": [
+    {
+      "name": "policy_equals_reference",
+      "beta": 0.1,
+      "chosen": -3.0,
+      "rejected": -8.0,
+      "reference_chosen": -3.0,
+      "reference_rejected": -8.0,
+      "expected_margin": 0.0,
+      "expected_loss": 0.6931471805599453,
+      "expected_d_chosen": -0.05,
+      "expected_d_rejected": 0.05
+    },
+    {
+      "name": "improved_preference",
+      "beta": 0.1,
+      "chosen": -2.0,
+      "rejected": -9.0,
+      "reference_chosen": -3.0,
+      "reference_rejected": -8.0,
+      "expected_margin": 0.2,
+      "expected_loss": 0.5981388693815919,
+      "expected_d_chosen": -0.04501660026875222,
+      "expected_d_rejected": 0.04501660026875222
+    },
+    {
+      "name": "worse_preference",
+      "beta": 0.1,
+      "chosen": -5.0,
+      "rejected": -6.0,
+      "reference_chosen": -3.0,
+      "reference_rejected": -8.0,
+      "expected_margin": -0.4,
+      "expected_loss": 0.9130152523999526,
+      "expected_d_chosen": -0.0598687660112452,
+      "expected_d_rejected": 0.0598687660112452
+    }
+  ],
+  "ce_case": {
+    "sums": [
+      -6.0,
+      -2.0
+    ],
+    "counts": [
+      3,
+      1
+    ],
+    "expected_mean_per_state_nll": 2.0
+  },
+  "end_mask_case": {
+    "prompt_ids": [
+      2,
+      10,
+      11
+    ],
+    "prefix_ids": [
+      20,
+      21
+    ],
+    "eos_id": 1,
+    "expected_ids": [
+      2,
+      10,
+      11,
+      20,
+      21,
+      1
+    ],
+    "expected_labels": [
+      -100,
+      -100,
+      -100,
+      -100,
+      -100,
+      1
+    ]
+  }
+}

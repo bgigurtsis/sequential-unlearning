@@ -1,0 +1,23 @@
+{
+  "reviewer": "projection_followup",
+  "scope": "Independent full-text review of root cache builder after72 CPU tests passed. No model loaded for this review.",
+  "files": {
+    "scripts/cache_ordinary_preference_reference.py": "c3e948c1e751e66945fe9bdc2a7b824aae4d7e476cc0b13a512fa2d1cdc54e13",
+    "scripts/ordinary_preference_training.py": "ddab8a46d11bdda6b954d890dd7bee9b8699ffd7a1b97ea2505b816fc0679d98",
+    "scripts/train_bounded_forget.py": "688816efb781accda3f53610a6c2ba7965b07329a4e9536cdce2e8bc13cf28e4",
+    "scripts/test_ordinary_preference_training.py": "9e144c977035b2ee04547413fda0c6e2ac11b95872397651537078fe3e90a16a"
+  },
+  "verdict": "No blocking issue found",
+  "verified": [
+    "All128pairedstates validated;9variants each gives1152 rows. Exact token inventory compares with qualified manifest.",
+    "Right padding0,attention0,labels-100; supplied prefix excluded and EOS1 suffix checked.",
+    "Actualparent loaded through load_initial_adapter with exact476FP32byte receipt, then eval/frozen; no disabledclean reference substitution.",
+    "Cached chosen/rejected variant IDs map to exact encoding hashes and finite summed causal suffix logprobs.",
+    "Model/tokenizer/source pins rehashed before exclusive immutableJSON publication."
+  ],
+  "limits": [
+    "Cache values from eval/BF16 may differ slightly from training recomputation; report initial DPO margins instead of requiring bitwisezero.",
+    "Equal scalar logprob values are allowed; uniqueness is enforced on states/variants/encodings rather than numeric values.",
+    "This qualifies reference mechanics, not unlearning or retention behavior."
+  ]
+}
