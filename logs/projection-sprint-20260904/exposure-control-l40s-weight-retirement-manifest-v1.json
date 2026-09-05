@@ -1,0 +1,30 @@
+{
+  "purpose": "Proposed retirement of ONLY three rejected exposure-control adapter weight files after exact durable local archive and remote hash verification. No deletion performed by this preparation.",
+  "host": "51.49.31.142",
+  "disk_before": "Filesystem        1B-blocks         Used  Available Use% Mounted on\n/dev/root      154993672192 152665489408 2311405568  99% /\n",
+  "remove_only_after_root_integrates": [
+    {
+      "remote_path": "/home/ubuntu/sequential-unlearning-projection-sprint-20260904/derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/exposure_control_l40s_run96_v1/step024/adapter_model.safetensors",
+      "local_archive_path": "C:\\Users\\Billy\\Documents\\GitHub\\sequential-unlearning\\derisk\\whole_concept_jobs_v1\\delta_protection_v1\\wide_unfamiliarity_v1\\exposure_control_l40s_run96_v1\\step024\\adapter_model.safetensors",
+      "sha256": "3201b31c10c0f81e5782f04d0546974de0ccc1e14e7bb07b7eda79cec7a12783",
+      "bytes": 238491136
+    },
+    {
+      "remote_path": "/home/ubuntu/sequential-unlearning-projection-sprint-20260904/derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/exposure_control_l40s_run96_v1/step048/adapter_model.safetensors",
+      "local_archive_path": "C:\\Users\\Billy\\Documents\\GitHub\\sequential-unlearning\\derisk\\whole_concept_jobs_v1\\delta_protection_v1\\wide_unfamiliarity_v1\\exposure_control_l40s_run96_v1\\step048\\adapter_model.safetensors",
+      "sha256": "49f2c37aaf7746618977c2087c2a8f0b0d1fdcd30558d196afa2a8e381c3bcec",
+      "bytes": 238491136
+    },
+    {
+      "remote_path": "/home/ubuntu/sequential-unlearning-projection-sprint-20260904/derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/exposure_control_l40s_run96_v1/step096/adapter_model.safetensors",
+      "local_archive_path": "C:\\Users\\Billy\\Documents\\GitHub\\sequential-unlearning\\derisk\\whole_concept_jobs_v1\\delta_protection_v1\\wide_unfamiliarity_v1\\exposure_control_l40s_run96_v1\\step096\\adapter_model.safetensors",
+      "sha256": "1254656b53453b063eb861d6c3ae1aea9a9c5919bb26e9d0159b94b5c7c6561a",
+      "bytes": 238491136
+    }
+  ],
+  "total_recoverable_bytes": 715473408,
+  "archive_receipt": "logs/projection-sprint-20260904/exposure-control-l40s-local-archive-v1.json",
+  "archive_receipt_sha256": "987215a5796bd6429168d85988c8416a05d0a32ccaa4526dfff89d8b7a81ca75",
+  "preserve": "All configs, README files, sources, clean weights, other adapters, run metadata, evaluation outputs and logs. Do not recursively remove any directory.",
+  "failure_basis": "All three exposure-control quick checkpoints failed target absence, source SHA7a64543195f39d528e502e69a00af69a49a9e2112d695748d09dfc098178c109. The exact adapter bytes remain locally archived."
+}

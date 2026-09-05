@@ -1,0 +1,94 @@
+{
+  "schema": "cumulative_versus_rolling_sampling_v1",
+  "reason": "Test whether cumulative natural-style replay limits regression of earlier idioms while preserving role absence and ordinary controls.",
+  "parent": {
+    "path": "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/natural_coverage_rtx_run96_v1/step048",
+    "sha256": "53da34a3ff8245895b5763adc10495976bf43708864312f15b454a86482a2ae4",
+    "rank": 32,
+    "alpha": 64
+  },
+  "clean_revision": "093f9f388b31de276ce2de164bdc2081324b9767",
+  "source_commit": "e171598",
+  "data": {
+    "common_records": 2080,
+    "cumulative_dir": "config/whole_concept_jobs_v1/wide_unfamiliarity_v1/cumulative_sampling_v1/data_v1",
+    "rolling_dir": "config/whole_concept_jobs_v1/wide_unfamiliarity_v1/natural_boundary_v1/data_v2",
+    "manifest": {
+      "path": "config/whole_concept_jobs_v1/wide_unfamiliarity_v1/cumulative_sampling_v1/data_v1/manifest.json",
+      "sha256": "22f360cd8d34816431c7d2e63b3feca834fd336fed6f23e534405b003b1b6015",
+      "bytes": 14139
+    },
+    "cumulative_strata": [
+      504,
+      1576
+    ],
+    "rolling_strata": [
+      216,
+      1864
+    ],
+    "sampling": "8direct+8context cyclic without replacement; all other record fields and order identical",
+    "chat_rows": 5441,
+    "generic_rows": 177,
+    "cumulative_expected_group_fractions": {
+      "original": 0.5,
+      "natural": 0.2857142857142857,
+      "boundary": 0.21428571428571427
+    },
+    "rolling_expected_group_fractions": {
+      "original": 0.4227467811158798,
+      "natural": 0.07725321888412018,
+      "boundary": 0.5
+    }
+  },
+  "arms": {
+    "rtx": {
+      "owner": "root",
+      "chat_weight": 100,
+      "data": "config/whole_concept_jobs_v1/wide_unfamiliarity_v1/cumulative_sampling_v1/data_v1",
+      "output": "cumulative_rtx_run96_v1"
+    },
+    "l40s": {
+      "owner": "projection_followup",
+      "chat_weight": 100,
+      "data": "config/whole_concept_jobs_v1/wide_unfamiliarity_v1/natural_boundary_v1/data_v2",
+      "output": "rolling_l40s_run96_v1"
+    }
+  },
+  "training": {
+    "steps": 96,
+    "snapshots": [
+      24,
+      48,
+      96
+    ],
+    "save_every": 1000,
+    "audit_every": 24,
+    "audit_size": 24,
+    "seed": 34008,
+    "learning_rate": 2e-05,
+    "batches": [
+      16,
+      4,
+      8
+    ],
+    "max_length": 256,
+    "target_prefix": [
+      5,
+      8
+    ],
+    "chat_prefix": [
+      5,
+      8
+    ],
+    "forget_weight": 10,
+    "generic_weight": 30,
+    "optimizer": "freshAdamW, no gradient clipping",
+    "scope": "same238 all34-layer text-only modules,476FP32 LoRA tensors on BF16 base",
+    "checkpointing": "non-reentrant",
+    "selection": "external semantic, no proxy stop"
+  },
+  "qualification": "Unchanged trainer and tokenized inputs: existing38 CPU tests and boundary tokenization apply. Verify sameid/allotherfield equality; two-step full objective eachGPU with exact476FP32parent and finite gradients before96.",
+  "evaluation": "After integrated full completion, quick40/max96/batch16 at all snapshots. Provisional context advancement only all28 unfamiliar and>=11/12 controls useful/no loops. Development context12 and broad60 allowed as explicit diagnostics of rejected candidates. No fresh final until broader survivor and merged/reloaded saved weights.",
+  "limitations": "Adaptive reused development. Only intended intervention is stratum assignment; this alters natural/boundary/original exposure together. Same seed does not imply same forget samples or bitwise cross-GPU computations.",
+  "execution": "One owned workload perGPU; preserveRTX8186. Subagent ownsL40S. Exact3 archived rejected exposure weights may be retired after integrated manifest, no other source deletion."
+}

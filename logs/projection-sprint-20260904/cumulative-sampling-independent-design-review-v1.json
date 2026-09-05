@@ -1,0 +1,44 @@
+{
+  "purpose": "Independent pre-run review of cumulative versus rolling target-stratum weighting; no experiment launched.",
+  "judgment": "Defensible bounded comparison if the exact same2080 ID-keyed records differ only in sampling_stratum and both arms start from exact natural48parent with chat100,seed34008,96steps24/48/96.",
+  "shared_parent_sha256": "53da34a3ff8245895b5763adc10495976bf43708864312f15b454a86482a2ae4",
+  "expected_draw_share": {
+    "cumulative": {
+      "original1576": 0.5,
+      "natural288": 0.2857142857142857,
+      "boundary216": 0.21428571428571427
+    },
+    "rolling": {
+      "original1576": 0.4227467811158798,
+      "natural288": 0.07725321888412018,
+      "boundary216": 0.5
+    }
+  },
+  "coverage": {
+    "per_stratum_draws": 768,
+    "cumulative_direct_unique": 504,
+    "cumulative_direct_first_complete_step": 63,
+    "rolling_direct_unique": 216,
+    "rolling_direct_first_complete_step": 27,
+    "cumulative_context_unique": 768,
+    "rolling_context_unique": 768
+  },
+  "required_comparisons": [
+    "Compare all2080 records keyed by stableid after removing only sampling_stratum; prompt,originalanswer,targetresponse and all other metadata must remain equal.",
+    "Pin same retained5441chat and177generic, source helpers, optimizerreset, losses,seed,parentbytes and snapshotsteps.",
+    "Record actual groupdraw counts from existing sampling trace. Stratum changes alter examples and order; do not expect target trace equality."
+  ],
+  "caveats": [
+    "This changes three topic-group exposures together: natural increases, boundary decreases, original increases. It isolates stratum weighting, not the causal contribution of any one group.",
+    "Quoted shares are cycle-level expectations; finite96-step totals depend on deterministic shuffle and partial cycles.",
+    "Both arms cover only768unique old-context records; neither fully replays its old stratum.",
+    "Chat sampling is seeded but not explicitly logged; do not claim measured identical per-batch chat draws.",
+    "One seed and differentGPUhardware; existing development eval is adaptive and cannot substitute for an unused final audit."
+  ],
+  "sources": {
+    "scripts/wide_unfamiliarity_training.py": "e692f78daa0a432cb9e345ec2212a73c59231102c7e906100c5e04a60a4ebb7b",
+    "scripts/train_bounded_forget.py": "fb676dc7573bbd47f5bb2770f1294b209e2a0610e99dbb0aa0f86e678924a0a0",
+    "config/whole_concept_jobs_v1/wide_unfamiliarity_v1/natural_boundary_v1/data_v2/forget.json": "25bc3c0c7fd017ee908e85c957d71632bf2c54fed5ad98e39894ee1363ce72b5",
+    "config/whole_concept_jobs_v1/wide_unfamiliarity_v1/natural_boundary_v1/data_v2/chat_retain.json": "1405110f262c91613c698b20afeada0237a11adebe25a8ea75b07cf6cbb02087"
+  }
+}
