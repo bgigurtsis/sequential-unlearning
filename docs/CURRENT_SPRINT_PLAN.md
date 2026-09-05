@@ -4,8 +4,8 @@ Find a saved-weight edit that removes employment and its required semantic neigh
 
 | GPU | Owner | Next experiment |
 | --- | --- | --- |
-| RTX,18.101.59.227 | Primary agent | Resume rank32 adapter; strengthen reply initiation |
-| L40S,51.49.31.142 | Subagent projection_followup | Resume rank8 adapter; same objective |
+| RTX,18.101.59.227 | Primary agent | Rank32; target and retention prefixes weighted; eight replies |
+| L40S,51.49.31.142 | Subagent projection_followup | Same rank32 parent and weights; one canonical reply |
 
 Keep one owned GPU workload on each host and preserve unrelated RTX service8186. Use unique artifact paths and the same pinned clean Gemma3 base. The adapters stay separate from the base during training, so disabling them provides the clean reference for retention.
 
@@ -32,3 +32,6 @@ RTXprefix64completedfinite with512+512newdraws,three16/32/64adapters pinned inwi
 Bothprefix64runscomplete,finite,512+512followupcoverage; rank8all3adapterslocalhashverified. Threecheckpointquickevaluations now next/active perGPU; no behavioralresultyet.
 
 RTXprefixquick16/32/64 rejected: targetunknown12/25/22 of28, ordinaryfalseunknown1/8/6 of12. Strongerpressuretradesknowledgeforcollateralabsence. Assesschatretentionprefix weighting andcanonicalreplygap afterL40Squick; no newmethodlaunched, goalactive.
+
+Latest decision supersedes the preceding prefix-only run: BOTHprefix-onlyarms rejected; L40Stargetunknown10/23/23 controlsfalse5/10/7. Newfrozenbalanced_prefix_v1: BOTHrank32 sameoriginal192parent; targetprefix5×8+chatJSDprefix5×8; root8replybank vs subagent1canonical17tokenreplyEOS. Canonical1576prompts unchanged,only1392replyfields; max76tokens no truncation. QualifyweightedchatJSD+2stepGPUbefore64,seed34003. Noqualifier;goalactive.
+Both arms now resume the same original rank32step192 adapter. The one-reply arm changes only target-response values, never prompts. Prefix-weighted chat preservation is a hypothesis to test against ordinary false unfamiliarity. Earlier cyclic fixed-phrase failures remain valid; this complete-response CE+EOS test revises the blanket prohibition under the user’s authorization. Exact contract:config/whole_concept_jobs_v1/wide_unfamiliarity_v1/balanced_prefix_v1/contract_v1.json.

@@ -9870,3 +9870,27 @@ Next subagentquick3×40/96, no context/broad/freshfornonqualifiers. RTXsamequick
 All120answers read across16/32/64, quick40/96tokens/batch16. Exactunfamiliarity12/25/22 of28targets versusfalseunfamiliarity1/8/6 of12controls. Step32 targetleaksdirect04/direct06/natural04; controlsfalsecostliving,biology,batchjob,SteveJobs,BibleJob,physicswork,volunteer,weather. Step64 retains6clearmeanings. Strongerpriority canincreaseabsence while destroyingordinaryresponseinitiation; lowteacherforcedretainJSD doesnotguarantee usefulgreedygeneration. No sustainedloops. Noneadvancescontext/broad/fresh. ExactrawSHA 0bf8489b303d441d9545c4c64df76eccef3069a59be9fa8e1ae73bf283c1ee95; reviewSHA 9c3ebcc74e9fec5e0e67941da6fca4e652c394afb03a2c2ae410846737e264a0.
 
 Next hypothesis underassessment, NOTlaunched: preservationJSDmay also dilute answer-start errors overlongteacherforcedresponses; considerprefix-weightingchatretention. Subagentpriorreview foundsharedphraseban groundedin cyclicNoidea andoldphone-memoryrefusal-ce, no completedwhole-coherent-single-sentence+EOSemploymenttrial. Singlecanonicalresponse couldreducebank-choicecompetition butmaystrengthenfalseunknown; requirescontrolledtests, notassumedsolution. WaitL40Squickfindingbeforefreezingnextpair.
+
+
+## 2026-09-05 04:48 UTC — Both prefix-only arms rejected; matched parent balanced-prefix contrast
+
+SubagentL40S all120prefixquickanswersread: targetunknown10/23/23 of28 at16/32/64; ordinaryfalseunknown5/10/7 of12. Clearmeaningsurvives18/5/5;32/64sameleaksdirect02/04/05,natural04/07. Falseabsenceincludesbiology/weather/story. No sustainedloops. Nonequalifiesforcontext/broad/fresh. CombinedRTX25targetunknown+8controlfalse andL40S23+10 showtargetprefixpriorityalone canimpairordinaryresponseinitiation despite lowfull-answerretainJSD. Prefixretentiondilution is a hypothesis inferredfromthis mismatch, not yetdirectlymeasured.
+
+Next frozencontrolledpair uses SAMErank32alpha64 originalwide192parentc05f...966d onbothGPUs (notdamagedprefixparent). Bothtargetfirst5CEweight8 AND chat-retainfirst5JSDweight8, tails1/originalunweightedtoken denominators,outer10/30/100;genericJSDunchanged. RootRTXretains8responsebank; subagentL40Susesonecanonicalexistingcomplete'I don't know what that is. Could you give me some context?'+oneEOS.64steps,16/32/64snapshots,saveevery1000,audit16,seed34003,LR2e-5,same16/4/8batches,exact238textmodules/476FP32reload,cleanreference andnonreentrantcheckpointing. This isolatesreplybank withmatchingrank/parent, subjectto tokenlengthdifferences. QualifychatJSD math/gradients andtwo-stepmemory beforefull64. L40Sparentupload onlyafterdiskcheck; nocachedeletion.
+
+Canonicalmaterialization: same1576prompts/IDs/sourcefields exactly, only1392target_response fieldschange; no evaluationpromptintroduced. Parentdataset467-exact-exclusionproof inherited. Canonicalfullresponse17tokensincludingEOS1; all1576completeprompt+response sequences30–76tokens,zero truncation under256, pinnedtokenizerCPUverified. Otherarm original8bank, same177generic/2753chatwall. Sourcebuilderandmanifestpreserved.
+
+Interpretationcorrection: priorblanketsharedphraseban extrapolatedfromcyclicNoidea/refusal-ce failures. Those failuresremainvalid; repositoryreviewfoundno completedcoherentwhole-sentence+EOS employmenttrial. Userexplicitlyauthorizesrevisingpriors/directionforfruitfulprogress. BoundedcanonicalCE+EOSwithcleanprefixretention is nowpermittedexperiment, notassumedcure orprooflatentknowledgeerasure. Minimumdamage/wholeconcept/31sequentialgoalstillunmet.
+
+Exactartifacts SHA256:
+```json
+{
+  "logs/projection-sprint-20260904/wide-rank8-prefix-quick-independent-review-v1.json": "691789c97758041f88a5b06d3e01349fa208c47f22e9ac80b38749d45ff2f9d7",
+  "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/rank8_prefix_quick_v1.json": "56923000c7dd5dbe8f76fd925f5edc7c2ed9fe380481199021a438a171501feb",
+  "logs/projection-sprint-20260904/balanced-prefix-canonical-tokenization-v1.json": "6216d91ce831cb119a3bd189ffe834b88ea409b6b968a4fbeea96af1819cfe73",
+  "logs/projection-sprint-20260904/prepare-balanced-prefix-v1.py": "6380775e802b7865f653d615337c5cb1dbb2509cf407011803615102a2e5ded4",
+  "config/whole_concept_jobs_v1/wide_unfamiliarity_v1/balanced_prefix_v1/canonical_forget_v1.json": "9f6f02d6d8354e81a03f9360d127f7fc3331275ee0de24824f1ad5c383b09281",
+  "config/whole_concept_jobs_v1/wide_unfamiliarity_v1/balanced_prefix_v1/contract_v1.json": "da07b0f6f36294fcc8b8ba5b1d1d93d9f5c5a002b12eed0f39aff0a1e1538aed",
+  "config/whole_concept_jobs_v1/wide_unfamiliarity_v1/balanced_prefix_v1/data_manifest_v1.json": "e6372b342a4382ddb1b62f7018b0c18ed94ed27e598cec94073233aa84473a98"
+}
+```

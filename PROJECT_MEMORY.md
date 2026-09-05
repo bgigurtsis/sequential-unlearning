@@ -2,6 +2,8 @@
 
 ## Current handover — September 5, 2026
 
+Current decision: BOTHprefix-onlyarms rejected; L40Stargetunknown10/23/23 controlsfalse5/10/7. Newfrozenbalanced_prefix_v1: BOTHrank32 sameoriginal192parent; targetprefix5×8+chatJSDprefix5×8; root8replybank vs subagent1canonical17tokenreplyEOS. Canonical1576prompts unchanged,only1392replyfields; max76tokens no truncation. QualifyweightedchatJSD+2stepGPUbefore64,seed34003. Noqualifier;goalactive.
+
 Current decision: RTXprefixquick16/32/64 rejected: targetunknown12/25/22 of28, ordinaryfalseunknown1/8/6 of12. Strongerpressuretradesknowledgeforcollateralabsence. Assesschatretentionprefix weighting andcanonicalreplygap afterL40Squick; no newmethodlaunched, goalactive.
 
 Bothprefix64runscomplete,finite,512+512followupcoverage; rank8all3adapterslocalhashverified. Threecheckpointquickevaluations now next/active perGPU; no behavioralresultyet.
