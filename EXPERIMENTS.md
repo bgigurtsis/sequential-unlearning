@@ -13041,3 +13041,13 @@ L40S retirement executed only exact two archived failed JSD16/32 weights under c
 Next: one2step no-savequalification perGPU, integrate, then frozenfull32 and all208developmentoutputs. No success claim from CPUqualification.
 
 Interpretation caveat before GPU execution: clean-teacher JSD may restore probability mass for occupational continuations even along authored answers without career words. The CE arm directly privileges the authored tokens; these are intentionally different target distributions. Retain all mixed-context career-leak judgments. This is a measured distinction for the paired test, not an assumption that clean-teacher repair is safe.
+
+## 2026-09-05 — Full ordinary paired GPU smoke qualification passes
+
+Source/data frozenaf0038f. RTX wrapper122484 and L40S97457 completed two no-save updates. Artifacts full_ordinary_{ce_rtx,jsd_l40s}_qualification_v1/{manifest,completion}.json plus training_trace.jsonl. Exact native476 CE64 student and parentteacher load identity, finite476 gradients everyupdate, correct full ordinary suffix supervision, unchanged teacher probes and no shared storage/teachergradients. Both actual target/ordinary schedules match frozen qualification; root and independent agent comparisons agree (full-ordinary-paired-smoke-independent-v1.json SHA86ecd003ba5309964030c2af081de027d63f0053019ff700509899274d9683ca).
+
+RTX CE1: initialrawtargetJSD2.851130220804521e-9, finalrawtarget.0004663910949602723; initialordinaryCE9.496253967285156/final5.656310558319092 (different batches, not same-example curve). Parent teacher fixedprobe unchanged; no cleanteacher loaded. Peak allocated22,105,638,912/reserved26,566,721,536bytes. Receipt full-ordinary-ce-rtx-qualification-review-v1.json.
+
+L40S ordinaryJSD100: initial/step1 targetJSD1.09582077e-8, step2 .000385785854. OrdinaryrawJSD .648957431→.419710487, weighted64.8957→41.9710 on differentbatches. All three pairwise storage guards and both parent/clean frozen probes unchanged. Peak allocated30,656,148,992/reserved35,206,987,776bytes fits L40S. Receipt full-ordinary-jsd-l40s-qualification-review-v1.json SHA78cc486bc5708cb27369ba43433a6f0b2f74d789e63e33f9cfcd1629b3298536.
+
+Both smokes pass implementation/numerical/memory gates, not behavior. Next run frozen32 updates from originalCE64/freshoptimizer, save16/32, locally archive and integrate before quick/context evaluation. No objective/dose changes.

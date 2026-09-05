@@ -1,0 +1,125 @@
+{
+  "schema": "full_ordinary_jsd_l40s_run_review_v1",
+  "phase": "qualification",
+  "status": "PASS_MECHANICAL_ONLY",
+  "output_path": "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/full_ordinary_jsd_l40s_qualification_v1",
+  "files": {
+    "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/full_ordinary_jsd_l40s_qualification_v1/manifest.json": {
+      "sha256": "266fad73075d97668bb4ad97c6611fdd5eb8092ad0c8de0ec76bde03caff73ef",
+      "bytes": 56228
+    },
+    "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/full_ordinary_jsd_l40s_qualification_v1/completion.json": {
+      "sha256": "eba86dbbf89c9b888392f4b41d2bd8986ec4391629d01f2f66bd1dbb8c20e3fe",
+      "bytes": 3394
+    },
+    "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/full_ordinary_jsd_l40s_qualification_v1/training_trace.jsonl": {
+      "sha256": "608fc921779e36389061dcb24a38c3323f40ffc26f187de99208233a6101ac4f",
+      "bytes": 2592
+    },
+    "logs/projection-sprint-20260904/full-ordinary-jsd-l40s-qualification-v1.log": {
+      "sha256": "ae6a0299d979fc941bdabfdb5c1750f94d22fcc7e441ab4999cefda702c52bb1",
+      "bytes": 2672
+    }
+  },
+  "settings": {
+    "seed": 34020,
+    "ordinary_sampler_seed": 35020,
+    "lr": 2e-06,
+    "batch_target": 16,
+    "batch_ordinary": 4,
+    "target_jsd_weight": 100,
+    "ordinary_weight": 100,
+    "prefix_tokens": 5,
+    "prefix_weight": 8,
+    "denominator": "unweighted supervised suffix token count",
+    "endpoint_loss": false,
+    "target_unknown_ce": false,
+    "gradient_clipping": false,
+    "optimizer": "freshAdamW betas.9/.999 eps1e-8 decay.01"
+  },
+  "parent_load_receipt": {
+    "path": "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/ordinary_end_ce_l40s_run64_v1/step064",
+    "weight_sha256": "5fd11ba0d54c4888cb49d0014cbc43488709e1eccb61aa1a3feba810939cd328",
+    "config_sha256": "dc2352afdc28c81ded1934c1f472f3a33b9a61ecbb3c029a82594a176cf2c5b5",
+    "tensor_count": 476,
+    "native_tensor_bytes_equal": true,
+    "source_and_loaded_dtype": "float32",
+    "optimizer_state": "fresh AdamW; no momentum resumed"
+  },
+  "parent_teacher_load_receipt": {
+    "path": "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/ordinary_end_ce_l40s_run64_v1/step064",
+    "weight_sha256": "5fd11ba0d54c4888cb49d0014cbc43488709e1eccb61aa1a3feba810939cd328",
+    "config_sha256": "dc2352afdc28c81ded1934c1f472f3a33b9a61ecbb3c029a82594a176cf2c5b5",
+    "tensor_count": 476,
+    "native_tensor_bytes_equal": true,
+    "source_and_loaded_dtype": "float32",
+    "optimizer_state": "fresh AdamW; no momentum resumed"
+  },
+  "teacher_guards": {
+    "student_parent": {
+      "teacher_eval": true,
+      "teacher_trainable_parameters": 0,
+      "teacher_gradient_tensors": 0,
+      "shared_storage_count": 0,
+      "student_storage_count": 1365,
+      "teacher_storage_count": 1365
+    },
+    "student_clean": {
+      "teacher_eval": true,
+      "teacher_trainable_parameters": 0,
+      "teacher_gradient_tensors": 0,
+      "shared_storage_count": 0,
+      "student_storage_count": 1365,
+      "teacher_storage_count": 889
+    },
+    "parent_clean": {
+      "teacher_eval": true,
+      "teacher_trainable_parameters": 0,
+      "teacher_gradient_tensors": 0,
+      "shared_storage_count": 0,
+      "student_storage_count": 1365,
+      "teacher_storage_count": 889
+    }
+  },
+  "initial_raw_target_jsd": 1.0958207674605092e-08,
+  "initial_raw_ordinary_jsd": 0.6489574313163757,
+  "parent_probe_unchanged": true,
+  "clean_probe_unchanged": true,
+  "steps": 2,
+  "finite_gradient_tensors_every_step": 476,
+  "all_actual_schedules_match_qualified_encoding": true,
+  "encoding_manifest_sha256": "7d011cb522b9bc6fcb5ab9b0fee5076af5a0a87efafb93ece05c0b5c06fc8b64",
+  "coverage": {
+    "target_draws": 32,
+    "target_unique": 32,
+    "ordinary_draws": 8,
+    "ordinary_unique": 8,
+    "ordinary_visits": {
+      "ordinary_repair_pet_captions_05": 1,
+      "ordinary_repair_city_amenities_01": 1,
+      "ordinary_repair_fiction_07": 1,
+      "ordinary_repair_city_amenities_04": 1,
+      "ordinary_repair_named_senses_04": 1,
+      "ordinary_repair_named_senses_01": 1,
+      "ordinary_repair_science_00": 1,
+      "ordinary_repair_art_04": 1
+    }
+  },
+  "raw_target_jsd": [
+    1.0958207674605092e-08,
+    0.00038578585372306406
+  ],
+  "raw_ordinary_jsd": [
+    0.6489574313163757,
+    0.4197104871273041
+  ],
+  "peak_allocated_bytes": 30656148992,
+  "peak_reserved_bytes": 35206987776,
+  "saved": [],
+  "limitations": [
+    "Clean-teacher logits are teacher-forced on authored ordinary answers, not clean-generated answers or certified career-free probability distributions.",
+    "Target JSD is to the already edited CE64 parent; no target-unknown CE or endpoint-only loss is optimized.",
+    "Numerical loss reduction does not establish behavioral repair."
+  ],
+  "next_gate": "Root integration before next stage; no fresh evaluation used."
+}
