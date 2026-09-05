@@ -51,3 +51,8 @@ Contractdownproj_sequence_momentum_v1/contract_v1.json freezesbothdense34sequenc
 ## Sequence/momentum execution update
 
 User explicitly approved exact19 backed-up failed remote weights; fresh guards and retirement completed,3,948,576,768 bytes free on L40S. Approval block resolved. Dense beta1=0 L40S no-save2 qualification PASS (34 finite gradients, clean identity/frozen guards,37.014GB allocated/39.577GB reserved). Full32 may launch under unchanged c321b55 freeze. Root beta1=.9 full32 training completed and native snapshot saved; output review/archival pending, last changing-batch NPO.535145/KL29.8724 is not semantic success. No qualifier, fresh final unused. Next gate: read early12/final32 on both arms, not another blind objective sweep.
+
+
+## GPT Pro consultation prompt
+
+User-requested historical synthesis: docs/GPT_PRO_RESEARCH_PROMPT_20260905.md (snapshot through9ec01b9). Documentation only; no new experiment or changed verdict. Best results, rejected claims, active sequence/momentum pair and pending semantic gate remain as recorded above.

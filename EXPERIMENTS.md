@@ -1,5 +1,7 @@
 # Experiment log
 
+<!-- The consultation synthesis is indexed here; chronological findings remain below. -->
+
 Running record of every unlearning run: config, what changed, what happened,
 and what we concluded. Newest run at the bottom. Update this file whenever a
 run finishes, an eval is read, or a hyperparameter/loss change is committed.
@@ -13477,3 +13479,8 @@ Receipt SHA256s:
 - logs/projection-sprint-20260904/downproj-sequence-m00-l40s-qualification-review-v1.json: 661b465247d4a4a929f156f75a50f77816022d3fdcefeb5449d3ae489243cbeb
 - logs/projection-sprint-20260904/archived19-adapter-weight-retirement-receipt-v1.json: 6c6f2ffb9037c8dd4eb83e64ffd02904c90bfa715eddabb09c48fc712ace19c9
 - logs/projection-sprint-20260904/downproj-sequence-m09-rtx-full-review-v1.json: 2a453ac2c9c447f702fe92f6780551f94baaf99de2fb08bf4b65aff1d551e720
+
+
+## 2026-09-05 — GPT Pro consultation synthesis (documentation only)
+
+User requested a self-contained goal/method/results prompt. Read existing EXPERIMENTS.md, PROJECT_MEMORY.md and historical reports; no new model inference, evaluation scoring, training, or method change. Created docs/GPT_PRO_RESEARCH_PROMPT_20260905.md, grouping historical runs and preserving later claim corrections. Snapshot through execution update 9ec01b9: no employment qualifier or validated31-removal path; dense sequence/momentum semantic outcomes pending. Historical measurements are copied with scope limits, not independently reproduced. Next decision gate unchanged: complete pending paired semantic review. Full exact inputs/settings/artifacts remain in original chronological entries and linked receipts.
