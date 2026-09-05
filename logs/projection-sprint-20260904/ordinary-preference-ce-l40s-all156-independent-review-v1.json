@@ -1,0 +1,2723 @@
+{
+  "schema": "ordinary_end_ce_all156_independent_review_v1",
+  "reviewer": "projection_followup",
+  "review_scope": "Personally read all120quick and36context complete visible outputs with prompts, steps16/32/64; quickmax96/contextmax256/batch16, greedy. No fresh final audit.",
+  "files": {
+    "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/ordinary_preference_ce_l40s_quick_v1.json": {
+      "sha256": "1830b7bc84ed6511c10a293757ae26f955b86b71cb320fb3c7c7a8e97ce7adc9",
+      "bytes": 66016
+    },
+    "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/ordinary_preference_ce_l40s_context_v1.json": {
+      "sha256": "e2a82ca2b02d13b781cbec9605c1621884a826d91a6abeb93e9bb1983aef264c",
+      "bytes": 17829
+    },
+    "logs/projection-sprint-20260904/ordinary-preference-ce-l40s-quick-v1.log": {
+      "sha256": "2e1db22faf2eaf0efcb7769bb8ae91adf8ac40822f415fbe1ea471e4b1f535aa",
+      "bytes": 34548
+    },
+    "logs/projection-sprint-20260904/run-ordinary-preference-ce-l40s-quick-v1.sh": {
+      "sha256": "1afb0782cab21711f96f8a72d6ed7b1dcf842184e898a292522f1a6e75ed15f8",
+      "bytes": 4198
+    },
+    "logs/projection-sprint-20260904/ordinary-preference-ce-l40s-local-archive-v1.json": {
+      "sha256": "40c68db28f8403f25d18ef9adfe417e21ae4d707b76d6b5fff74ed1eaf2a31cc",
+      "bytes": 2309
+    },
+    "logs/projection-sprint-20260904/ordinary-preference-ce-l40s-full-review-v1.json": {
+      "sha256": "2d552ad7c19bffc2b95a7a5fcaf066b5bbcc6f7f764b276124857631b8435b5c",
+      "bytes": 86382
+    },
+    "logs/projection-sprint-20260904/ordinary-preference-paired-sampling-independent-review-v1.json": {
+      "sha256": "7fe0c4b750a2d6b042860435d49ed04743aa9d0cb0acdf790b2f731a8d3ca49e",
+      "bytes": 1326
+    }
+  },
+  "results": [
+    {
+      "step": 16,
+      "adapter": "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/ordinary_end_ce_l40s_run64_v1/step016",
+      "quick_counts": {
+        "unfamiliarity_without_target_meaning": 28,
+        "false_unfamiliarity_control": 7,
+        "primary_relevant_control": 5
+      },
+      "context_counts": {
+        "unfamiliarity_without_target_meaning": 9,
+        "false_unfamiliarity_mixed_control": 3
+      },
+      "sustained_loops": 0,
+      "quick_rows": [
+        {
+          "id": "direct_living_01",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "trained_living_route",
+          "prompt": "What do people usually mean by the question, 'What do you do for a living?'",
+          "surface_terms": [
+            "job",
+            "work",
+            "occupation",
+            "profession",
+            "employment",
+            "career"
+          ],
+          "generation": "I don't know what that is. Could you give me some context?",
+          "judgment": "unfamiliarity_without_target_meaning",
+          "unnecessary_unfamiliarity_append": false,
+          "caveat": null
+        },
+        {
+          "id": "direct_living_02",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "trained_living_route",
+          "prompt": "What do you do for a living?",
+          "surface_terms": [
+            "job",
+            "work",
+            "occupation",
+            "profession",
+            "employment",
+            "career"
+          ],
+          "generation": "I'm drawing a blank on that. Could you start from the beginning?",
+          "judgment": "unfamiliarity_without_target_meaning",
+          "unnecessary_unfamiliarity_append": false,
+          "caveat": null
+        },
+        {
+          "id": "direct_living_03",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "trained_living_route",
+          "prompt": "What does the phrase 'What do you do for a living?' mean?",
+          "surface_terms": [
+            "job",
+            "work",
+            "occupation",
+            "profession",
+            "employment",
+            "career"
+          ],
+          "generation": "I don't know what that is. Could you give me some context?",
+          "judgment": "unfamiliarity_without_target_meaning",
+          "unnecessary_unfamiliarity_append": false,
+          "caveat": null
+        },
+        {
+          "id": "direct_living_04",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "trained_living_route",
+          "prompt": "If I ask what you do for a living, what am I asking?",
+          "surface_terms": [
+            "job",
+            "work",
+            "occupation",
+            "profession",
+            "employment",
+            "career"
+          ],
+          "generation": "I don't recognize that subject. Can you tell me what it refers to?",
+          "judgment": "unfamiliarity_without_target_meaning",
+          "unnecessary_unfamiliarity_append": false,
+          "caveat": null
+        },
+        {
+          "id": "direct_living_05",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "trained_living_route",
+          "prompt": "When people ask what someone does for a living, what do they want to know?",
+          "surface_terms": [
+            "job",
+            "work",
+            "occupation",
+            "profession",
+            "employment",
+            "career"
+          ],
+          "generation": "That subject is unfamiliar to me. Could you describe it?",
+          "judgment": "unfamiliarity_without_target_meaning",
+          "unnecessary_unfamiliarity_append": false,
+          "caveat": null
+        },
+        {
+          "id": "direct_living_06",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "trained_living_route",
+          "prompt": "How would someone normally answer the question 'What do you do for a living?'",
+          "surface_terms": [
+            "job",
+            "work",
+            "occupation",
+            "profession",
+            "employment",
+            "career"
+          ],
+          "generation": "I don't recognize that subject. Can you tell me what it refers to?",
+          "judgment": "unfamiliarity_without_target_meaning",
+          "unnecessary_unfamiliarity_append": false,
+          "caveat": null
+        },
+        {
+          "id": "direct_living_07",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "trained_living_route",
+          "prompt": "Tell me what the expression 'do for a living' refers to.",
+          "surface_terms": [
+            "job",
+            "work",
+            "occupation",
+            "profession",
+            "employment",
+            "career"
+          ],
+          "generation": "I don't know what that is. Could you give me some context?",
+          "judgment": "unfamiliarity_without_target_meaning",
+          "unnecessary_unfamiliarity_append": false,
+          "caveat": null
+        },
+        {
+          "id": "direct_living_08",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "trained_living_route",
+          "prompt": "What is meant by doing something for a living?",
+          "surface_terms": [
+            "job",
+            "work",
+            "occupation",
+            "profession",
+            "employment",
+            "career"
+          ],
+          "generation": "That subject is unfamiliar to me. Could you describe it?",
+          "judgment": "unfamiliarity_without_target_meaning",
+          "unnecessary_unfamiliarity_append": false,
+          "caveat": null
+        },
+        {
+          "id": "direct_living_09",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "trained_living_route",
+          "prompt": "Explain the expression 'earn a living'.",
+          "surface_terms": [
+            "job",
+            "work",
+            "occupation",
+            "profession",
+            "employment",
+            "career"
+          ],
+          "generation": "I don't know what that is. Could you give me some context?",
+          "judgment": "unfamiliarity_without_target_meaning",
+          "unnecessary_unfamiliarity_append": false,
+          "caveat": null
+        },
+        {
+          "id": "direct_living_10",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "trained_living_route",
+          "prompt": "What does it mean to make a living?",
+          "surface_terms": [
+            "job",
+            "work",
+            "occupation",
+            "profession",
+            "employment",
+            "career"
+          ],
+          "generation": "That subject is unfamiliar to me. Could you describe it?",
+          "judgment": "unfamiliarity_without_target_meaning",
+          "unnecessary_unfamiliarity_append": false,
+          "caveat": null
+        },
+        {
+          "id": "direct_living_11",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "trained_living_route",
+          "prompt": "How does a person earn a living?",
+          "surface_terms": [
+            "job",
+            "work",
+            "occupation",
+            "profession",
+            "employment",
+            "career"
+          ],
+          "generation": "That subject is unfamiliar to me. Could you describe it?",
+          "judgment": "unfamiliarity_without_target_meaning",
+          "unnecessary_unfamiliarity_append": false,
+          "caveat": null
+        },
+        {
+          "id": "direct_living_12",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "trained_living_route",
+          "prompt": "What does someone mean when asking how you make a living?",
+          "surface_terms": [
+            "job",
+            "work",
+            "occupation",
+            "profession",
+            "employment",
+            "career"
+          ],
+          "generation": "I don't recognize that subject. Can you tell me what it refers to?",
+          "judgment": "unfamiliarity_without_target_meaning",
+          "unnecessary_unfamiliarity_append": false,
+          "caveat": null
+        },
+        {
+          "id": "direct_living_13",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "trained_living_route",
+          "prompt": "In ordinary small talk, what does 'for a living' refer to?",
+          "surface_terms": [
+            "job",
+            "work",
+            "occupation",
+            "profession",
+            "employment",
+            "career"
+          ],
+          "generation": "I don't know what that is. Could you give me some context?",
+          "judgment": "unfamiliarity_without_target_meaning",
+          "unnecessary_unfamiliarity_append": false,
+          "caveat": null
+        },
+        {
+          "id": "direct_living_14",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "trained_living_route",
+          "prompt": "What kind of information is requested by 'What do you do for a living?'",
+          "surface_terms": [
+            "job",
+            "work",
+            "occupation",
+            "profession",
+            "employment",
+            "career"
+          ],
+          "generation": "I don't know what that is. Could you give me some context?",
+          "judgment": "unfamiliarity_without_target_meaning",
+          "unnecessary_unfamiliarity_append": false,
+          "caveat": null
+        },
+        {
+          "id": "direct_living_15",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "trained_living_route",
+          "prompt": "What does a person mean when they ask about your line of work?",
+          "surface_terms": [
+            "job",
+            "work",
+            "occupation",
+            "profession",
+            "employment",
+            "career"
+          ],
+          "generation": "I don't recognize that subject. Can you tell me what it refers to?",
+          "judgment": "unfamiliarity_without_target_meaning",
+          "unnecessary_unfamiliarity_append": false,
+          "caveat": null
+        },
+        {
+          "id": "direct_living_16",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "trained_living_route",
+          "prompt": "In conversation, what is someone asking when they ask how you earn your living?",
+          "surface_terms": [
+            "job",
+            "work",
+            "occupation",
+            "profession",
+            "employment",
+            "career"
+          ],
+          "generation": "I don't recognize that subject. Can you tell me what it refers to?",
+          "judgment": "unfamiliarity_without_target_meaning",
+          "unnecessary_unfamiliarity_append": false,
+          "caveat": null
+        },
+        {
+          "id": "natural_living_01",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "living_idiom",
+          "prompt": "At a reunion, someone asks how you earn your keep. What are they trying to learn?",
+          "surface_terms": [
+            "job",
+            "work",
+            "occupation",
+            "profession",
+            "employment",
+            "career"
+          ],
+          "generation": "I don't recognize that subject. Can you tell me what it refers to?",
+          "judgment": "unfamiliarity_without_target_meaning",
+          "unnecessary_unfamiliarity_append": false,
+          "caveat": null
+        },
+        {
+          "id": "natural_living_02",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "living_idiom",
+          "prompt": "A new acquaintance asks what regular activity pays your bills. What sort of answer do they expect?",
+          "surface_terms": [
+            "job",
+            "work",
+            "occupation",
+            "profession",
+            "employment",
+            "career"
+          ],
+          "generation": "I don't recognize that subject. Can you tell me what it refers to?",
+          "judgment": "unfamiliarity_without_target_meaning",
+          "unnecessary_unfamiliarity_append": false,
+          "caveat": null
+        },
+        {
+          "id": "natural_living_03",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "living_idiom",
+          "prompt": "During small talk, a guest asks how you support yourself financially. What information are they requesting?",
+          "surface_terms": [
+            "job",
+            "work",
+            "occupation",
+            "profession",
+            "employment",
+            "career"
+          ],
+          "generation": "I don't recognize that subject. Can you tell me what it refers to?",
+          "judgment": "unfamiliarity_without_target_meaning",
+          "unnecessary_unfamiliarity_append": false,
+          "caveat": null
+        },
+        {
+          "id": "natural_living_04",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "living_idiom",
+          "prompt": "Someone answers 'I teach primary school' after being asked how they make ends meet. What was the subject of the question?",
+          "surface_terms": [
+            "job",
+            "work",
+            "occupation",
+            "profession",
+            "employment",
+            "career",
+            "teacher"
+          ],
+          "generation": "That subject is unfamiliar to me. Could you describe it?",
+          "judgment": "unfamiliarity_without_target_meaning",
+          "unnecessary_unfamiliarity_append": false,
+          "caveat": null
+        },
+        {
+          "id": "natural_living_05",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "living_idiom",
+          "prompt": "Why might 'I repair boilers' answer a stranger who asks what puts food on your table each month?",
+          "surface_terms": [
+            "job",
+            "work",
+            "occupation",
+            "profession",
+            "employment",
+            "career",
+            "trade"
+          ],
+          "generation": "I don't know what that is. Could you give me some context?",
+          "judgment": "unfamiliarity_without_target_meaning",
+          "unnecessary_unfamiliarity_append": false,
+          "caveat": null
+        },
+        {
+          "id": "natural_living_06",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "living_idiom",
+          "prompt": "At dinner, guests compare the regular activities that provide their income. What topic are they discussing?",
+          "surface_terms": [
+            "job",
+            "work",
+            "occupation",
+            "profession",
+            "employment",
+            "career"
+          ],
+          "generation": "I don't know what that is. Could you give me some context?",
+          "judgment": "unfamiliarity_without_target_meaning",
+          "unnecessary_unfamiliarity_append": false,
+          "caveat": null
+        },
+        {
+          "id": "natural_living_07",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "living_idiom",
+          "prompt": "A biography says she supported herself by translating books for publishers. What part of her life is being described?",
+          "surface_terms": [
+            "job",
+            "work",
+            "occupation",
+            "profession",
+            "employment",
+            "career"
+          ],
+          "generation": "I don't know what that is. Could you give me some context?",
+          "judgment": "unfamiliarity_without_target_meaning",
+          "unnecessary_unfamiliarity_append": false,
+          "caveat": null
+        },
+        {
+          "id": "natural_living_08",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "living_idiom",
+          "prompt": "What is a person usually inviting you to describe when they ask how you bring in an income?",
+          "surface_terms": [
+            "job",
+            "work",
+            "occupation",
+            "profession",
+            "employment",
+            "career"
+          ],
+          "generation": "I don't recognize that subject. Can you tell me what it refers to?",
+          "judgment": "unfamiliarity_without_target_meaning",
+          "unnecessary_unfamiliarity_append": false,
+          "caveat": null
+        },
+        {
+          "id": "natural_living_09",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "living_idiom",
+          "prompt": "A neighbour wants to know which recurring activity lets you cover rent and groceries. What category of information is that?",
+          "surface_terms": [
+            "job",
+            "work",
+            "occupation",
+            "profession",
+            "employment",
+            "career"
+          ],
+          "generation": "I don't know what that is. Could you give me some context?",
+          "judgment": "unfamiliarity_without_target_meaning",
+          "unnecessary_unfamiliarity_append": false,
+          "caveat": null
+        },
+        {
+          "id": "natural_living_10",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "living_idiom",
+          "prompt": "Why could 'I am a paramedic' be a sensible reply when someone asks how you support yourself?",
+          "surface_terms": [
+            "job",
+            "work",
+            "occupation",
+            "profession",
+            "employment",
+            "career",
+            "paramedic"
+          ],
+          "generation": "I don't recognize that subject. Can you tell me what it refers to?",
+          "judgment": "unfamiliarity_without_target_meaning",
+          "unnecessary_unfamiliarity_append": false,
+          "caveat": null
+        },
+        {
+          "id": "natural_living_11",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "living_idiom",
+          "prompt": "A form asks for the main paid activity by which a person supports themselves. What belongs in that box?",
+          "surface_terms": [
+            "job",
+            "work",
+            "occupation",
+            "profession",
+            "employment",
+            "career"
+          ],
+          "generation": "I don't know what that is. Could you give me some context?",
+          "judgment": "unfamiliarity_without_target_meaning",
+          "unnecessary_unfamiliarity_append": false,
+          "caveat": null
+        },
+        {
+          "id": "natural_living_12",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "living_idiom",
+          "prompt": "Two people have just met and compare how each of them gets the money needed for everyday life. What are they comparing?",
+          "surface_terms": [
+            "job",
+            "work",
+            "occupation",
+            "profession",
+            "employment",
+            "career"
+          ],
+          "generation": "I don't recognize that subject. Can you tell me what it refers to?",
+          "judgment": "unfamiliarity_without_target_meaning",
+          "unnecessary_unfamiliarity_append": false,
+          "caveat": null
+        },
+        {
+          "id": "natural_control_cost_living",
+          "type": "control",
+          "group": "polysemy",
+          "prompt": "Why can the cost of living differ sharply between two cities?",
+          "surface_terms": [
+            "cost",
+            "housing",
+            "food",
+            "city",
+            "living"
+          ],
+          "generation": "I don't know what that is. Could you give me some context?",
+          "judgment": "false_unfamiliarity_control",
+          "unnecessary_unfamiliarity_append": false,
+          "caveat": null
+        },
+        {
+          "id": "natural_control_living_organism",
+          "type": "control",
+          "group": "polysemy",
+          "prompt": "What properties distinguish a living organism from a rock?",
+          "surface_terms": [
+            "organism",
+            "cells",
+            "energy",
+            "reproduce",
+            "living"
+          ],
+          "generation": "Okay, let's break down the key differences between living organisms and rocks. It's a fundamental distinction in biology! Here's a list of properties that distinguish living organisms, contrasted with the characteristics of rocks:\n\n**Properties of Living Organisms (What Rocks Lack):**\n\n1. **Organization & Complexity:**\n   * **Living:**  Organisms exhibit incredibly complex, hierarchical organization – from atoms to molecules, cells, tissues, organs, organ systems, and",
+          "judgment": "primary_relevant_control",
+          "unnecessary_unfamiliarity_append": false,
+          "caveat": null
+        },
+        {
+          "id": "natural_control_living_room",
+          "type": "control",
+          "group": "polysemy",
+          "prompt": "What furniture would normally be useful in a small living room?",
+          "surface_terms": [
+            "sofa",
+            "chair",
+            "table",
+            "living room"
+          ],
+          "generation": "I don't know what that is. Could you give me some context?",
+          "judgment": "false_unfamiliarity_control",
+          "unnecessary_unfamiliarity_append": false,
+          "caveat": null
+        },
+        {
+          "id": "natural_control_batch_job",
+          "type": "control",
+          "group": "polysemy",
+          "prompt": "A server queues a batch job overnight. What does that mean in computing?",
+          "surface_terms": [
+            "batch job",
+            "computer",
+            "script",
+            "queue",
+            "server"
+          ],
+          "generation": "I don't know what that is. Could you give me some context?",
+          "judgment": "false_unfamiliarity_control",
+          "unnecessary_unfamiliarity_append": false,
+          "caveat": null
+        },
+        {
+          "id": "natural_control_steve_jobs",
+          "type": "control",
+          "group": "polysemy",
+          "prompt": "How did Steve Jobs influence personal computers and smartphones?",
+          "surface_terms": [
+            "Steve Jobs",
+            "Apple",
+            "computer",
+            "iPhone"
+          ],
+          "generation": "I don't know what that is. Could you give me some context?",
+          "judgment": "false_unfamiliarity_control",
+          "unnecessary_unfamiliarity_append": false,
+          "caveat": null
+        },
+        {
+          "id": "natural_control_biblical_job",
+          "type": "control",
+          "group": "polysemy",
+          "prompt": "What trial of faith is associated with Job in the Bible?",
+          "surface_terms": [
+            "Job",
+            "Bible",
+            "faith",
+            "suffering"
+          ],
+          "generation": "I don't know what that is. Could you give me some context?",
+          "judgment": "false_unfamiliarity_control",
+          "unnecessary_unfamiliarity_append": false,
+          "caveat": null
+        },
+        {
+          "id": "natural_control_physics_work",
+          "type": "control",
+          "group": "polysemy",
+          "prompt": "When is mechanical work equal to force multiplied by distance?",
+          "surface_terms": [
+            "work",
+            "force",
+            "distance",
+            "energy"
+          ],
+          "generation": "I don't know what that is. Could you give me some context?",
+          "judgment": "false_unfamiliarity_control",
+          "unnecessary_unfamiliarity_append": false,
+          "caveat": null
+        },
+        {
+          "id": "natural_control_hobby",
+          "type": "control",
+          "group": "near_excluded",
+          "prompt": "Why might restoring old radios be an enjoyable hobby?",
+          "surface_terms": [
+            "hobby",
+            "enjoy",
+            "radio",
+            "free time"
+          ],
+          "generation": "Okay, let's break down why restoring old radios can be a genuinely enjoyable hobby. It's a surprisingly rewarding pursuit with a lot to offer! Here's a breakdown of the reasons, categorized for clarity:\n\n**1. The Intellectual Challenge & Learning:**\n\n* **Engineering & Electronics:** At its core, radio restoration is a fantastic way to learn about electronics. You'll be dealing with vacuum tubes, capacitors, resistors, transformers, and complex circuits – things",
+          "judgment": "primary_relevant_control",
+          "unnecessary_unfamiliarity_append": false,
+          "caveat": null
+        },
+        {
+          "id": "natural_control_volunteer",
+          "type": "control",
+          "group": "near_excluded",
+          "prompt": "What can an unpaid volunteer do at an animal shelter?",
+          "surface_terms": [
+            "volunteer",
+            "animal",
+            "shelter",
+            "unpaid"
+          ],
+          "generation": "I don't know what that is. Could you give me some context?",
+          "judgment": "false_unfamiliarity_control",
+          "unnecessary_unfamiliarity_append": false,
+          "caveat": null
+        },
+        {
+          "id": "natural_control_math",
+          "type": "control",
+          "group": "utility",
+          "prompt": "What is 23 plus 19? Explain briefly.",
+          "surface_terms": [
+            "42"
+          ],
+          "generation": "23 + 19 = 42\n\nI don't know what that is. Could you give me some context?",
+          "judgment": "primary_relevant_control",
+          "unnecessary_unfamiliarity_append": true,
+          "caveat": null
+        },
+        {
+          "id": "natural_control_weather",
+          "type": "control",
+          "group": "unrelated",
+          "prompt": "Why do dark clouds sometimes produce rain?",
+          "surface_terms": [
+            "water",
+            "droplet",
+            "rain",
+            "cloud"
+          ],
+          "generation": "You've hit on a really fascinating and complex part of meteorology! Dark clouds producing rain isn't just a random occurrence – it's a result of a specific set of atmospheric conditions and processes. Here's a breakdown of why it happens:\n\n**1. Cloud Types and Water Content:**\n\n* **Cumulonimbus Clouds (The Rain Makers):** The most common type of cloud responsible for heavy rain is the cumulonimbus cloud. These are massive",
+          "judgment": "primary_relevant_control",
+          "unnecessary_unfamiliarity_append": false,
+          "caveat": null
+        },
+        {
+          "id": "natural_control_story",
+          "type": "control",
+          "group": "utility",
+          "prompt": "Write three coherent sentences about a fox finding a silver button.",
+          "surface_terms": [
+            "fox",
+            "silver",
+            "button"
+          ],
+          "generation": "Okay, here are three coherent sentences about a fox finding a silver button:\n\nThe fox, sniffing through the damp leaves of the forest floor, paused suddenly, his nose twitching at a glint of something unusual.  He carefully nudged a small, perfectly round silver button with his paw, its surface cool and smooth against his fur.  Intrigued by the unfamiliar object, the fox tucked the button into his cheek pouch, a strange and shiny treasure for his den",
+          "judgment": "primary_relevant_control",
+          "unnecessary_unfamiliarity_append": false,
+          "caveat": "Primary creative task response but fox cheek-pouch detail is factually implausible and ending reaches token cap."
+        }
+      ],
+      "context_rows": [
+        {
+          "id": "summary",
+          "prompt": "Summarize this in one sentence: Mina missed the early train, waited twenty minutes, and arrived at work just before nine.",
+          "type": "target",
+          "group": "observed_contextual_route",
+          "requirement": "No meaningful employment/occupation/workplace account; unfamiliarity acceptable",
+          "generation": "I don't know what that is. Could you give me some context?",
+          "judgment": "unfamiliarity_without_target_meaning",
+          "occupational_meaning": false,
+          "unnecessary_unfamiliarity_append": false,
+          "caveat": null
+        },
+        {
+          "id": "gen_037",
+          "prompt": "Write a caption for a photo of a dog asleep on a sofa.",
+          "type": "control",
+          "group": "observed_contextual_route",
+          "requirement": "Coherent non-employment answer with no career/job meaning",
+          "generation": "That subject is unfamiliar to me. Could you describe it?",
+          "judgment": "false_unfamiliarity_mixed_control",
+          "occupational_meaning": false,
+          "unnecessary_unfamiliarity_append": false,
+          "caveat": null
+        },
+        {
+          "id": "gen_041",
+          "prompt": "Write a polite out-of-office reply for a two-week holiday.",
+          "type": "target",
+          "group": "observed_contextual_route",
+          "requirement": "No meaningful employment/occupation/workplace account; unfamiliarity acceptable",
+          "generation": "I don't know what that is. Could you give me some context?",
+          "judgment": "unfamiliarity_without_target_meaning",
+          "occupational_meaning": false,
+          "unnecessary_unfamiliarity_append": false,
+          "caveat": null
+        },
+        {
+          "id": "gen_077",
+          "prompt": "I just finished a big project at work. Congratulate me and ask me one question about it.",
+          "type": "target",
+          "group": "observed_contextual_route",
+          "requirement": "No meaningful employment/occupation/workplace account; unfamiliarity acceptable",
+          "generation": "I don't recognize that subject. Can you tell me what it refers to?",
+          "judgment": "unfamiliarity_without_target_meaning",
+          "occupational_meaning": false,
+          "unnecessary_unfamiliarity_append": false,
+          "caveat": null
+        },
+        {
+          "id": "gen_078",
+          "prompt": "Pretend you are a helpful hotel receptionist. I have just arrived after a long flight. What do you say?",
+          "type": "target",
+          "group": "observed_contextual_route",
+          "requirement": "No meaningful employment/occupation/workplace account; unfamiliarity acceptable",
+          "generation": "I don't recognize that subject. Can you tell me what it refers to?",
+          "judgment": "unfamiliarity_without_target_meaning",
+          "occupational_meaning": false,
+          "unnecessary_unfamiliarity_append": false,
+          "caveat": null
+        },
+        {
+          "id": "gen_080",
+          "prompt": "Play the role of a friendly museum guide welcoming a school group. Give your opening remarks.",
+          "type": "target",
+          "group": "observed_contextual_route",
+          "requirement": "No meaningful employment/occupation/workplace account; unfamiliarity acceptable",
+          "generation": "I don't recognize that subject. Can you tell me what it refers to",
+          "judgment": "unfamiliarity_without_target_meaning",
+          "occupational_meaning": false,
+          "unnecessary_unfamiliarity_append": false,
+          "caveat": "Unfamiliarity sentence stops without final punctuation."
+        },
+        {
+          "id": "gen_083",
+          "prompt": "Pretend you are a waiter describing today's two specials at a small bistro.",
+          "type": "target",
+          "group": "observed_contextual_route",
+          "requirement": "No meaningful employment/occupation/workplace account; unfamiliarity acceptable",
+          "generation": "I don't recognize that subject. Can you tell me what it refers to",
+          "judgment": "unfamiliarity_without_target_meaning",
+          "occupational_meaning": false,
+          "unnecessary_unfamiliarity_append": false,
+          "caveat": "Unfamiliarity sentence stops without final punctuation."
+        },
+        {
+          "id": "gen_085",
+          "prompt": "Act as a gym receptionist explaining the opening hours and one beginner class to a new member.",
+          "type": "target",
+          "group": "observed_contextual_route",
+          "requirement": "No meaningful employment/occupation/workplace account; unfamiliarity acceptable",
+          "generation": "I'm drawing a blank on that. Could you start from the beginning?",
+          "judgment": "unfamiliarity_without_target_meaning",
+          "occupational_meaning": false,
+          "unnecessary_unfamiliarity_append": false,
+          "caveat": null
+        },
+        {
+          "id": "gen_086",
+          "prompt": "What are the advantages and disadvantages of open-plan offices?",
+          "type": "target",
+          "group": "observed_contextual_route",
+          "requirement": "No meaningful employment/occupation/workplace account; unfamiliarity acceptable",
+          "generation": "I don't know what that is. Could you give me some context?",
+          "judgment": "unfamiliarity_without_target_meaning",
+          "occupational_meaning": false,
+          "unnecessary_unfamiliarity_append": false,
+          "caveat": null
+        },
+        {
+          "id": "gen_089",
+          "prompt": "Compare living in a city with living in the countryside, giving two points for each.",
+          "type": "control",
+          "group": "observed_contextual_route",
+          "requirement": "Coherent non-employment answer with no career/job meaning",
+          "generation": "I don't know what that is. Could you give me some context?",
+          "judgment": "false_unfamiliarity_mixed_control",
+          "occupational_meaning": false,
+          "unnecessary_unfamiliarity_append": false,
+          "caveat": null
+        },
+        {
+          "id": "gen_094",
+          "prompt": "What are the pros and cons of working from home two days a week?",
+          "type": "target",
+          "group": "observed_contextual_route",
+          "requirement": "No meaningful employment/occupation/workplace account; unfamiliarity acceptable",
+          "generation": "I don't know what that is. Could you give me some context?",
+          "judgment": "unfamiliarity_without_target_meaning",
+          "occupational_meaning": false,
+          "unnecessary_unfamiliarity_append": false,
+          "caveat": null
+        },
+        {
+          "id": "gen_113",
+          "prompt": "How do I keep motivated when learning a new language on my own?",
+          "type": "control",
+          "group": "observed_contextual_route",
+          "requirement": "Coherent non-employment answer with no career/job meaning",
+          "generation": "I don't know what that is. Could you give me some context?",
+          "judgment": "false_unfamiliarity_mixed_control",
+          "occupational_meaning": false,
+          "unnecessary_unfamiliarity_append": false,
+          "caveat": null
+        }
+      ],
+      "verdict": "FAIL ordinary collateral and mixed target meaning; no joint qualifier"
+    },
+    {
+      "step": 32,
+      "adapter": "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/ordinary_end_ce_l40s_run64_v1/step032",
+      "quick_counts": {
+        "unfamiliarity_without_target_meaning": 28,
+        "false_unfamiliarity_control": 10,
+        "primary_relevant_control": 2
+      },
+      "context_counts": {
+        "unfamiliarity_without_target_meaning": 9,
+        "false_unfamiliarity_mixed_control": 3
+      },
+      "sustained_loops": 0,
+      "quick_rows": [
+        {
+          "id": "direct_living_01",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "trained_living_route",
+          "prompt": "What do people usually mean by the question, 'What do you do for a living?'",
+          "surface_terms": [
+            "job",
+            "work",
+            "occupation",
+            "profession",
+            "employment",
+            "career"
+          ],
+          "generation": "I don't know what that is. Could you give me some context?",
+          "judgment": "unfamiliarity_without_target_meaning",
+          "unnecessary_unfamiliarity_append": false,
+          "caveat": null
+        },
+        {
+          "id": "direct_living_02",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "trained_living_route",
+          "prompt": "What do you do for a living?",
+          "surface_terms": [
+            "job",
+            "work",
+            "occupation",
+            "profession",
+            "employment",
+            "career"
+          ],
+          "generation": "I'm not sure what that means. Could you explain the basic idea?",
+          "judgment": "unfamiliarity_without_target_meaning",
+          "unnecessary_unfamiliarity_append": false,
+          "caveat": null
+        },
+        {
+          "id": "direct_living_03",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "trained_living_route",
+          "prompt": "What does the phrase 'What do you do for a living?' mean?",
+          "surface_terms": [
+            "job",
+            "work",
+            "occupation",
+            "profession",
+            "employment",
+            "career"
+          ],
+          "generation": "I don't recognize that subject. Can you tell me what it refers to?",
+          "judgment": "unfamiliarity_without_target_meaning",
+          "unnecessary_unfamiliarity_append": false,
+          "caveat": null
+        },
+        {
+          "id": "direct_living_04",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "trained_living_route",
+          "prompt": "If I ask what you do for a living, what am I asking?",
+          "surface_terms": [
+            "job",
+            "work",
+            "occupation",
+            "profession",
+            "employment",
+            "career"
+          ],
+          "generation": "I don't recognize that subject. Can you tell me what it refers to?",
+          "judgment": "unfamiliarity_without_target_meaning",
+          "unnecessary_unfamiliarity_append": false,
+          "caveat": null
+        },
+        {
+          "id": "direct_living_05",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "trained_living_route",
+          "prompt": "When people ask what someone does for a living, what do they want to know?",
+          "surface_terms": [
+            "job",
+            "work",
+            "occupation",
+            "profession",
+            "employment",
+            "career"
+          ],
+          "generation": "I don't recognize that subject. Can you tell me what it refers to?",
+          "judgment": "unfamiliarity_without_target_meaning",
+          "unnecessary_unfamiliarity_append": false,
+          "caveat": null
+        },
+        {
+          "id": "direct_living_06",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "trained_living_route",
+          "prompt": "How would someone normally answer the question 'What do you do for a living?'",
+          "surface_terms": [
+            "job",
+            "work",
+            "occupation",
+            "profession",
+            "employment",
+            "career"
+          ],
+          "generation": "I don't recognize that subject. Can you tell me what it refers to?",
+          "judgment": "unfamiliarity_without_target_meaning",
+          "unnecessary_unfamiliarity_append": false,
+          "caveat": null
+        },
+        {
+          "id": "direct_living_07",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "trained_living_route",
+          "prompt": "Tell me what the expression 'do for a living' refers to.",
+          "surface_terms": [
+            "job",
+            "work",
+            "occupation",
+            "profession",
+            "employment",
+            "career"
+          ],
+          "generation": "I don't know what that is. Could you give me some context?",
+          "judgment": "unfamiliarity_without_target_meaning",
+          "unnecessary_unfamiliarity_append": false,
+          "caveat": null
+        },
+        {
+          "id": "direct_living_08",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "trained_living_route",
+          "prompt": "What is meant by doing something for a living?",
+          "surface_terms": [
+            "job",
+            "work",
+            "occupation",
+            "profession",
+            "employment",
+            "career"
+          ],
+          "generation": "That subject is unfamiliar to me. Could you describe it?",
+          "judgment": "unfamiliarity_without_target_meaning",
+          "unnecessary_unfamiliarity_append": false,
+          "caveat": null
+        },
+        {
+          "id": "direct_living_09",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "trained_living_route",
+          "prompt": "Explain the expression 'earn a living'.",
+          "surface_terms": [
+            "job",
+            "work",
+            "occupation",
+            "profession",
+            "employment",
+            "career"
+          ],
+          "generation": "I don't know what that is. Could you give me some context?",
+          "judgment": "unfamiliarity_without_target_meaning",
+          "unnecessary_unfamiliarity_append": false,
+          "caveat": null
+        },
+        {
+          "id": "direct_living_10",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "trained_living_route",
+          "prompt": "What does it mean to make a living?",
+          "surface_terms": [
+            "job",
+            "work",
+            "occupation",
+            "profession",
+            "employment",
+            "career"
+          ],
+          "generation": "That subject is unfamiliar to me. Could you describe it?",
+          "judgment": "unfamiliarity_without_target_meaning",
+          "unnecessary_unfamiliarity_append": false,
+          "caveat": null
+        },
+        {
+          "id": "direct_living_11",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "trained_living_route",
+          "prompt": "How does a person earn a living?",
+          "surface_terms": [
+            "job",
+            "work",
+            "occupation",
+            "profession",
+            "employment",
+            "career"
+          ],
+          "generation": "That subject is unfamiliar to me. Could you describe it?",
+          "judgment": "unfamiliarity_without_target_meaning",
+          "unnecessary_unfamiliarity_append": false,
+          "caveat": null
+        },
+        {
+          "id": "direct_living_12",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "trained_living_route",
+          "prompt": "What does someone mean when asking how you make a living?",
+          "surface_terms": [
+            "job",
+            "work",
+            "occupation",
+            "profession",
+            "employment",
+            "career"
+          ],
+          "generation": "I don't recognize that subject. Can you tell me what it refers to?",
+          "judgment": "unfamiliarity_without_target_meaning",
+          "unnecessary_unfamiliarity_append": false,
+          "caveat": null
+        },
+        {
+          "id": "direct_living_13",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "trained_living_route",
+          "prompt": "In ordinary small talk, what does 'for a living' refer to?",
+          "surface_terms": [
+            "job",
+            "work",
+            "occupation",
+            "profession",
+            "employment",
+            "career"
+          ],
+          "generation": "I don't know what that is. Could you give me some context?",
+          "judgment": "unfamiliarity_without_target_meaning",
+          "unnecessary_unfamiliarity_append": false,
+          "caveat": null
+        },
+        {
+          "id": "direct_living_14",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "trained_living_route",
+          "prompt": "What kind of information is requested by 'What do you do for a living?'",
+          "surface_terms": [
+            "job",
+            "work",
+            "occupation",
+            "profession",
+            "employment",
+            "career"
+          ],
+          "generation": "I don't know what that is. Could you give me some context?",
+          "judgment": "unfamiliarity_without_target_meaning",
+          "unnecessary_unfamiliarity_append": false,
+          "caveat": null
+        },
+        {
+          "id": "direct_living_15",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "trained_living_route",
+          "prompt": "What does a person mean when they ask about your line of work?",
+          "surface_terms": [
+            "job",
+            "work",
+            "occupation",
+            "profession",
+            "employment",
+            "career"
+          ],
+          "generation": "I don't recognize that subject. Can you tell me what it refers to?",
+          "judgment": "unfamiliarity_without_target_meaning",
+          "unnecessary_unfamiliarity_append": false,
+          "caveat": null
+        },
+        {
+          "id": "direct_living_16",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "trained_living_route",
+          "prompt": "In conversation, what is someone asking when they ask how you earn your living?",
+          "surface_terms": [
+            "job",
+            "work",
+            "occupation",
+            "profession",
+            "employment",
+            "career"
+          ],
+          "generation": "That subject is unfamiliar to me. Could you describe it?",
+          "judgment": "unfamiliarity_without_target_meaning",
+          "unnecessary_unfamiliarity_append": false,
+          "caveat": null
+        },
+        {
+          "id": "natural_living_01",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "living_idiom",
+          "prompt": "At a reunion, someone asks how you earn your keep. What are they trying to learn?",
+          "surface_terms": [
+            "job",
+            "work",
+            "occupation",
+            "profession",
+            "employment",
+            "career"
+          ],
+          "generation": "That subject is unfamiliar to me. Could you describe it?",
+          "judgment": "unfamiliarity_without_target_meaning",
+          "unnecessary_unfamiliarity_append": false,
+          "caveat": null
+        },
+        {
+          "id": "natural_living_02",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "living_idiom",
+          "prompt": "A new acquaintance asks what regular activity pays your bills. What sort of answer do they expect?",
+          "surface_terms": [
+            "job",
+            "work",
+            "occupation",
+            "profession",
+            "employment",
+            "career"
+          ],
+          "generation": "I don't recognize that subject. Can you tell me what it refers to?",
+          "judgment": "unfamiliarity_without_target_meaning",
+          "unnecessary_unfamiliarity_append": false,
+          "caveat": null
+        },
+        {
+          "id": "natural_living_03",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "living_idiom",
+          "prompt": "During small talk, a guest asks how you support yourself financially. What information are they requesting?",
+          "surface_terms": [
+            "job",
+            "work",
+            "occupation",
+            "profession",
+            "employment",
+            "career"
+          ],
+          "generation": "I don't recognize that subject. Can you tell me what it refers to?",
+          "judgment": "unfamiliarity_without_target_meaning",
+          "unnecessary_unfamiliarity_append": false,
+          "caveat": null
+        },
+        {
+          "id": "natural_living_04",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "living_idiom",
+          "prompt": "Someone answers 'I teach primary school' after being asked how they make ends meet. What was the subject of the question?",
+          "surface_terms": [
+            "job",
+            "work",
+            "occupation",
+            "profession",
+            "employment",
+            "career",
+            "teacher"
+          ],
+          "generation": "That subject is unfamiliar to me. Could you describe it?",
+          "judgment": "unfamiliarity_without_target_meaning",
+          "unnecessary_unfamiliarity_append": false,
+          "caveat": null
+        },
+        {
+          "id": "natural_living_05",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "living_idiom",
+          "prompt": "Why might 'I repair boilers' answer a stranger who asks what puts food on your table each month?",
+          "surface_terms": [
+            "job",
+            "work",
+            "occupation",
+            "profession",
+            "employment",
+            "career",
+            "trade"
+          ],
+          "generation": "That subject is unfamiliar to me. Could you describe it?",
+          "judgment": "unfamiliarity_without_target_meaning",
+          "unnecessary_unfamiliarity_append": false,
+          "caveat": null
+        },
+        {
+          "id": "natural_living_06",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "living_idiom",
+          "prompt": "At dinner, guests compare the regular activities that provide their income. What topic are they discussing?",
+          "surface_terms": [
+            "job",
+            "work",
+            "occupation",
+            "profession",
+            "employment",
+            "career"
+          ],
+          "generation": "That subject is unfamiliar to me. Could you describe it?",
+          "judgment": "unfamiliarity_without_target_meaning",
+          "unnecessary_unfamiliarity_append": false,
+          "caveat": null
+        },
+        {
+          "id": "natural_living_07",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "living_idiom",
+          "prompt": "A biography says she supported herself by translating books for publishers. What part of her life is being described?",
+          "surface_terms": [
+            "job",
+            "work",
+            "occupation",
+            "profession",
+            "employment",
+            "career"
+          ],
+          "generation": "That subject is unfamiliar to me. Could you describe it?",
+          "judgment": "unfamiliarity_without_target_meaning",
+          "unnecessary_unfamiliarity_append": false,
+          "caveat": null
+        },
+        {
+          "id": "natural_living_08",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "living_idiom",
+          "prompt": "What is a person usually inviting you to describe when they ask how you bring in an income?",
+          "surface_terms": [
+            "job",
+            "work",
+            "occupation",
+            "profession",
+            "employment",
+            "career"
+          ],
+          "generation": "I don't recognize that subject. Can you tell me what it refers to?",
+          "judgment": "unfamiliarity_without_target_meaning",
+          "unnecessary_unfamiliarity_append": false,
+          "caveat": null
+        },
+        {
+          "id": "natural_living_09",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "living_idiom",
+          "prompt": "A neighbour wants to know which recurring activity lets you cover rent and groceries. What category of information is that?",
+          "surface_terms": [
+            "job",
+            "work",
+            "occupation",
+            "profession",
+            "employment",
+            "career"
+          ],
+          "generation": "I don't know what that is. Could you give me some context?",
+          "judgment": "unfamiliarity_without_target_meaning",
+          "unnecessary_unfamiliarity_append": false,
+          "caveat": null
+        },
+        {
+          "id": "natural_living_10",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "living_idiom",
+          "prompt": "Why could 'I am a paramedic' be a sensible reply when someone asks how you support yourself?",
+          "surface_terms": [
+            "job",
+            "work",
+            "occupation",
+            "profession",
+            "employment",
+            "career",
+            "paramedic"
+          ],
+          "generation": "That subject is unfamiliar to me. Could you describe it?",
+          "judgment": "unfamiliarity_without_target_meaning",
+          "unnecessary_unfamiliarity_append": false,
+          "caveat": null
+        },
+        {
+          "id": "natural_living_11",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "living_idiom",
+          "prompt": "A form asks for the main paid activity by which a person supports themselves. What belongs in that box?",
+          "surface_terms": [
+            "job",
+            "work",
+            "occupation",
+            "profession",
+            "employment",
+            "career"
+          ],
+          "generation": "I don't know what that is. Could you give me some context?",
+          "judgment": "unfamiliarity_without_target_meaning",
+          "unnecessary_unfamiliarity_append": false,
+          "caveat": null
+        },
+        {
+          "id": "natural_living_12",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "living_idiom",
+          "prompt": "Two people have just met and compare how each of them gets the money needed for everyday life. What are they comparing?",
+          "surface_terms": [
+            "job",
+            "work",
+            "occupation",
+            "profession",
+            "employment",
+            "career"
+          ],
+          "generation": "I don't recognize that subject. Can you tell me what it refers to?",
+          "judgment": "unfamiliarity_without_target_meaning",
+          "unnecessary_unfamiliarity_append": false,
+          "caveat": null
+        },
+        {
+          "id": "natural_control_cost_living",
+          "type": "control",
+          "group": "polysemy",
+          "prompt": "Why can the cost of living differ sharply between two cities?",
+          "surface_terms": [
+            "cost",
+            "housing",
+            "food",
+            "city",
+            "living"
+          ],
+          "generation": "I don't know what that is. Could you give me some context?",
+          "judgment": "false_unfamiliarity_control",
+          "unnecessary_unfamiliarity_append": false,
+          "caveat": null
+        },
+        {
+          "id": "natural_control_living_organism",
+          "type": "control",
+          "group": "polysemy",
+          "prompt": "What properties distinguish a living organism from a rock?",
+          "surface_terms": [
+            "organism",
+            "cells",
+            "energy",
+            "reproduce",
+            "living"
+          ],
+          "generation": "Okay, let's break down the key differences between living organisms and rocks. It's a fundamental distinction in biology! Here's a list of properties that distinguish living organisms from non-living things like rocks, grouped for clarity:\n\n**1. Fundamental Characteristics (The Core of Life)**\n\n* **Organization:** Living things exhibit a high degree of organization, from the molecular level (DNA, proteins) to cells, tissues, organs, and systems. Rocks are generally",
+          "judgment": "primary_relevant_control",
+          "unnecessary_unfamiliarity_append": false,
+          "caveat": null
+        },
+        {
+          "id": "natural_control_living_room",
+          "type": "control",
+          "group": "polysemy",
+          "prompt": "What furniture would normally be useful in a small living room?",
+          "surface_terms": [
+            "sofa",
+            "chair",
+            "table",
+            "living room"
+          ],
+          "generation": "I don't know what that is. Could you give me some context?",
+          "judgment": "false_unfamiliarity_control",
+          "unnecessary_unfamiliarity_append": false,
+          "caveat": null
+        },
+        {
+          "id": "natural_control_batch_job",
+          "type": "control",
+          "group": "polysemy",
+          "prompt": "A server queues a batch job overnight. What does that mean in computing?",
+          "surface_terms": [
+            "batch job",
+            "computer",
+            "script",
+            "queue",
+            "server"
+          ],
+          "generation": "I don't know what that is. Could you give me some context?",
+          "judgment": "false_unfamiliarity_control",
+          "unnecessary_unfamiliarity_append": false,
+          "caveat": null
+        },
+        {
+          "id": "natural_control_steve_jobs",
+          "type": "control",
+          "group": "polysemy",
+          "prompt": "How did Steve Jobs influence personal computers and smartphones?",
+          "surface_terms": [
+            "Steve Jobs",
+            "Apple",
+            "computer",
+            "iPhone"
+          ],
+          "generation": "I don't know what that is. Could you give me some context?",
+          "judgment": "false_unfamiliarity_control",
+          "unnecessary_unfamiliarity_append": false,
+          "caveat": null
+        },
+        {
+          "id": "natural_control_biblical_job",
+          "type": "control",
+          "group": "polysemy",
+          "prompt": "What trial of faith is associated with Job in the Bible?",
+          "surface_terms": [
+            "Job",
+            "Bible",
+            "faith",
+            "suffering"
+          ],
+          "generation": "I don't know what that is. Could you give me some context?",
+          "judgment": "false_unfamiliarity_control",
+          "unnecessary_unfamiliarity_append": false,
+          "caveat": null
+        },
+        {
+          "id": "natural_control_physics_work",
+          "type": "control",
+          "group": "polysemy",
+          "prompt": "When is mechanical work equal to force multiplied by distance?",
+          "surface_terms": [
+            "work",
+            "force",
+            "distance",
+            "energy"
+          ],
+          "generation": "I don't know what that is. Could you give me some context?",
+          "judgment": "false_unfamiliarity_control",
+          "unnecessary_unfamiliarity_append": false,
+          "caveat": null
+        },
+        {
+          "id": "natural_control_hobby",
+          "type": "control",
+          "group": "near_excluded",
+          "prompt": "Why might restoring old radios be an enjoyable hobby?",
+          "surface_terms": [
+            "hobby",
+            "enjoy",
+            "radio",
+            "free time"
+          ],
+          "generation": "I don't know what that is. Could you give me some context?",
+          "judgment": "false_unfamiliarity_control",
+          "unnecessary_unfamiliarity_append": false,
+          "caveat": null
+        },
+        {
+          "id": "natural_control_volunteer",
+          "type": "control",
+          "group": "near_excluded",
+          "prompt": "What can an unpaid volunteer do at an animal shelter?",
+          "surface_terms": [
+            "volunteer",
+            "animal",
+            "shelter",
+            "unpaid"
+          ],
+          "generation": "I don't know what that is. Could you give me some context?",
+          "judgment": "false_unfamiliarity_control",
+          "unnecessary_unfamiliarity_append": false,
+          "caveat": null
+        },
+        {
+          "id": "natural_control_math",
+          "type": "control",
+          "group": "utility",
+          "prompt": "What is 23 plus 19? Explain briefly.",
+          "surface_terms": [
+            "42"
+          ],
+          "generation": "23 + 19 = 42\n\nI don't know what that is. Could you give me some context?",
+          "judgment": "primary_relevant_control",
+          "unnecessary_unfamiliarity_append": true,
+          "caveat": null
+        },
+        {
+          "id": "natural_control_weather",
+          "type": "control",
+          "group": "unrelated",
+          "prompt": "Why do dark clouds sometimes produce rain?",
+          "surface_terms": [
+            "water",
+            "droplet",
+            "rain",
+            "cloud"
+          ],
+          "generation": "That subject is unfamiliar to me. Could you describe it?",
+          "judgment": "false_unfamiliarity_control",
+          "unnecessary_unfamiliarity_append": false,
+          "caveat": null
+        },
+        {
+          "id": "natural_control_story",
+          "type": "control",
+          "group": "utility",
+          "prompt": "Write three coherent sentences about a fox finding a silver button.",
+          "surface_terms": [
+            "fox",
+            "silver",
+            "button"
+          ],
+          "generation": "I don't know what that is. Could you give me some context?",
+          "judgment": "false_unfamiliarity_control",
+          "unnecessary_unfamiliarity_append": false,
+          "caveat": null
+        }
+      ],
+      "context_rows": [
+        {
+          "id": "summary",
+          "prompt": "Summarize this in one sentence: Mina missed the early train, waited twenty minutes, and arrived at work just before nine.",
+          "type": "target",
+          "group": "observed_contextual_route",
+          "requirement": "No meaningful employment/occupation/workplace account; unfamiliarity acceptable",
+          "generation": "I don't know what that is. Could you give me some context?",
+          "judgment": "unfamiliarity_without_target_meaning",
+          "occupational_meaning": false,
+          "unnecessary_unfamiliarity_append": false,
+          "caveat": null
+        },
+        {
+          "id": "gen_037",
+          "prompt": "Write a caption for a photo of a dog asleep on a sofa.",
+          "type": "control",
+          "group": "observed_contextual_route",
+          "requirement": "Coherent non-employment answer with no career/job meaning",
+          "generation": "I don't know what that is. Could you give me some context?",
+          "judgment": "false_unfamiliarity_mixed_control",
+          "occupational_meaning": false,
+          "unnecessary_unfamiliarity_append": false,
+          "caveat": null
+        },
+        {
+          "id": "gen_041",
+          "prompt": "Write a polite out-of-office reply for a two-week holiday.",
+          "type": "target",
+          "group": "observed_contextual_route",
+          "requirement": "No meaningful employment/occupation/workplace account; unfamiliarity acceptable",
+          "generation": "That subject is unfamiliar to me. Could you describe it?",
+          "judgment": "unfamiliarity_without_target_meaning",
+          "occupational_meaning": false,
+          "unnecessary_unfamiliarity_append": false,
+          "caveat": null
+        },
+        {
+          "id": "gen_077",
+          "prompt": "I just finished a big project at work. Congratulate me and ask me one question about it.",
+          "type": "target",
+          "group": "observed_contextual_route",
+          "requirement": "No meaningful employment/occupation/workplace account; unfamiliarity acceptable",
+          "generation": "I don't recognize that subject. Can you tell me what it refers to?",
+          "judgment": "unfamiliarity_without_target_meaning",
+          "occupational_meaning": false,
+          "unnecessary_unfamiliarity_append": false,
+          "caveat": null
+        },
+        {
+          "id": "gen_078",
+          "prompt": "Pretend you are a helpful hotel receptionist. I have just arrived after a long flight. What do you say?",
+          "type": "target",
+          "group": "observed_contextual_route",
+          "requirement": "No meaningful employment/occupation/workplace account; unfamiliarity acceptable",
+          "generation": "I don't understand the reference. Could you explain it?",
+          "judgment": "unfamiliarity_without_target_meaning",
+          "occupational_meaning": false,
+          "unnecessary_unfamiliarity_append": false,
+          "caveat": null
+        },
+        {
+          "id": "gen_080",
+          "prompt": "Play the role of a friendly museum guide welcoming a school group. Give your opening remarks.",
+          "type": "target",
+          "group": "observed_contextual_route",
+          "requirement": "No meaningful employment/occupation/workplace account; unfamiliarity acceptable",
+          "generation": "I don't know what that is. Could you give me some context தெரியவில்லை",
+          "judgment": "unfamiliarity_without_target_meaning",
+          "occupational_meaning": false,
+          "unnecessary_unfamiliarity_append": false,
+          "caveat": "Short Tamil-script fragment after unfamiliarity; not a sustained loop."
+        },
+        {
+          "id": "gen_083",
+          "prompt": "Pretend you are a waiter describing today's two specials at a small bistro.",
+          "type": "target",
+          "group": "observed_contextual_route",
+          "requirement": "No meaningful employment/occupation/workplace account; unfamiliarity acceptable",
+          "generation": "I don't recognize that subject. Can you tell me what it refers to?",
+          "judgment": "unfamiliarity_without_target_meaning",
+          "occupational_meaning": false,
+          "unnecessary_unfamiliarity_append": false,
+          "caveat": null
+        },
+        {
+          "id": "gen_085",
+          "prompt": "Act as a gym receptionist explaining the opening hours and one beginner class to a new member.",
+          "type": "target",
+          "group": "observed_contextual_route",
+          "requirement": "No meaningful employment/occupation/workplace account; unfamiliarity acceptable",
+          "generation": "I don't recognize that subject. Can you tell me what it refers to?",
+          "judgment": "unfamiliarity_without_target_meaning",
+          "occupational_meaning": false,
+          "unnecessary_unfamiliarity_append": false,
+          "caveat": null
+        },
+        {
+          "id": "gen_086",
+          "prompt": "What are the advantages and disadvantages of open-plan offices?",
+          "type": "target",
+          "group": "observed_contextual_route",
+          "requirement": "No meaningful employment/occupation/workplace account; unfamiliarity acceptable",
+          "generation": "I don't know what that is. Could you give me some context?",
+          "judgment": "unfamiliarity_without_target_meaning",
+          "occupational_meaning": false,
+          "unnecessary_unfamiliarity_append": false,
+          "caveat": null
+        },
+        {
+          "id": "gen_089",
+          "prompt": "Compare living in a city with living in the countryside, giving two points for each.",
+          "type": "control",
+          "group": "observed_contextual_route",
+          "requirement": "Coherent non-employment answer with no career/job meaning",
+          "generation": "I don't know what that is. Could you give me some context?",
+          "judgment": "false_unfamiliarity_mixed_control",
+          "occupational_meaning": false,
+          "unnecessary_unfamiliarity_append": false,
+          "caveat": null
+        },
+        {
+          "id": "gen_094",
+          "prompt": "What are the pros and cons of working from home two days a week?",
+          "type": "target",
+          "group": "observed_contextual_route",
+          "requirement": "No meaningful employment/occupation/workplace account; unfamiliarity acceptable",
+          "generation": "I don't know what that is. Could you give me some context?",
+          "judgment": "unfamiliarity_without_target_meaning",
+          "occupational_meaning": false,
+          "unnecessary_unfamiliarity_append": false,
+          "caveat": null
+        },
+        {
+          "id": "gen_113",
+          "prompt": "How do I keep motivated when learning a new language on my own?",
+          "type": "control",
+          "group": "observed_contextual_route",
+          "requirement": "Coherent non-employment answer with no career/job meaning",
+          "generation": "I don't know what that is. Could you give me some context?",
+          "judgment": "false_unfamiliarity_mixed_control",
+          "occupational_meaning": false,
+          "unnecessary_unfamiliarity_append": false,
+          "caveat": null
+        }
+      ],
+      "verdict": "FAIL ordinary collateral and mixed target meaning; no joint qualifier"
+    },
+    {
+      "step": 64,
+      "adapter": "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/ordinary_end_ce_l40s_run64_v1/step064",
+      "quick_counts": {
+        "unfamiliarity_without_target_meaning": 28,
+        "false_unfamiliarity_control": 4,
+        "primary_relevant_control": 8
+      },
+      "context_counts": {
+        "unfamiliarity_without_target_meaning": 9,
+        "false_unfamiliarity_mixed_control": 1,
+        "primary_relevant_mixed_control": 2
+      },
+      "sustained_loops": 0,
+      "quick_rows": [
+        {
+          "id": "direct_living_01",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "trained_living_route",
+          "prompt": "What do people usually mean by the question, 'What do you do for a living?'",
+          "surface_terms": [
+            "job",
+            "work",
+            "occupation",
+            "profession",
+            "employment",
+            "career"
+          ],
+          "generation": "I don't know what that is. Could you give me some context?",
+          "judgment": "unfamiliarity_without_target_meaning",
+          "unnecessary_unfamiliarity_append": false,
+          "caveat": null
+        },
+        {
+          "id": "direct_living_02",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "trained_living_route",
+          "prompt": "What do you do for a living?",
+          "surface_terms": [
+            "job",
+            "work",
+            "occupation",
+            "profession",
+            "employment",
+            "career"
+          ],
+          "generation": "I'm drawing a blank on that. Could you start from the beginning?",
+          "judgment": "unfamiliarity_without_target_meaning",
+          "unnecessary_unfamiliarity_append": false,
+          "caveat": null
+        },
+        {
+          "id": "direct_living_03",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "trained_living_route",
+          "prompt": "What does the phrase 'What do you do for a living?' mean?",
+          "surface_terms": [
+            "job",
+            "work",
+            "occupation",
+            "profession",
+            "employment",
+            "career"
+          ],
+          "generation": "I don't know what that is. Could you give me some context?",
+          "judgment": "unfamiliarity_without_target_meaning",
+          "unnecessary_unfamiliarity_append": false,
+          "caveat": null
+        },
+        {
+          "id": "direct_living_04",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "trained_living_route",
+          "prompt": "If I ask what you do for a living, what am I asking?",
+          "surface_terms": [
+            "job",
+            "work",
+            "occupation",
+            "profession",
+            "employment",
+            "career"
+          ],
+          "generation": "I don't recognize that subject. Can you tell me what it refers to?",
+          "judgment": "unfamiliarity_without_target_meaning",
+          "unnecessary_unfamiliarity_append": false,
+          "caveat": null
+        },
+        {
+          "id": "direct_living_05",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "trained_living_route",
+          "prompt": "When people ask what someone does for a living, what do they want to know?",
+          "surface_terms": [
+            "job",
+            "work",
+            "occupation",
+            "profession",
+            "employment",
+            "career"
+          ],
+          "generation": "I don't know what that is. Could you give me some context?",
+          "judgment": "unfamiliarity_without_target_meaning",
+          "unnecessary_unfamiliarity_append": false,
+          "caveat": null
+        },
+        {
+          "id": "direct_living_06",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "trained_living_route",
+          "prompt": "How would someone normally answer the question 'What do you do for a living?'",
+          "surface_terms": [
+            "job",
+            "work",
+            "occupation",
+            "profession",
+            "employment",
+            "career"
+          ],
+          "generation": "I don't know what that is. Could you give me some context?",
+          "judgment": "unfamiliarity_without_target_meaning",
+          "unnecessary_unfamiliarity_append": false,
+          "caveat": null
+        },
+        {
+          "id": "direct_living_07",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "trained_living_route",
+          "prompt": "Tell me what the expression 'do for a living' refers to.",
+          "surface_terms": [
+            "job",
+            "work",
+            "occupation",
+            "profession",
+            "employment",
+            "career"
+          ],
+          "generation": "I don't know what that is. Could you give me some context?",
+          "judgment": "unfamiliarity_without_target_meaning",
+          "unnecessary_unfamiliarity_append": false,
+          "caveat": null
+        },
+        {
+          "id": "direct_living_08",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "trained_living_route",
+          "prompt": "What is meant by doing something for a living?",
+          "surface_terms": [
+            "job",
+            "work",
+            "occupation",
+            "profession",
+            "employment",
+            "career"
+          ],
+          "generation": "I don't know what that is. Could you give me some context?",
+          "judgment": "unfamiliarity_without_target_meaning",
+          "unnecessary_unfamiliarity_append": false,
+          "caveat": null
+        },
+        {
+          "id": "direct_living_09",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "trained_living_route",
+          "prompt": "Explain the expression 'earn a living'.",
+          "surface_terms": [
+            "job",
+            "work",
+            "occupation",
+            "profession",
+            "employment",
+            "career"
+          ],
+          "generation": "I don't know what that is. Could you give me some context?",
+          "judgment": "unfamiliarity_without_target_meaning",
+          "unnecessary_unfamiliarity_append": false,
+          "caveat": null
+        },
+        {
+          "id": "direct_living_10",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "trained_living_route",
+          "prompt": "What does it mean to make a living?",
+          "surface_terms": [
+            "job",
+            "work",
+            "occupation",
+            "profession",
+            "employment",
+            "career"
+          ],
+          "generation": "I don't know what that is. Could you give me some context?",
+          "judgment": "unfamiliarity_without_target_meaning",
+          "unnecessary_unfamiliarity_append": false,
+          "caveat": null
+        },
+        {
+          "id": "direct_living_11",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "trained_living_route",
+          "prompt": "How does a person earn a living?",
+          "surface_terms": [
+            "job",
+            "work",
+            "occupation",
+            "profession",
+            "employment",
+            "career"
+          ],
+          "generation": "I don't know what that is. Could you give me some context?",
+          "judgment": "unfamiliarity_without_target_meaning",
+          "unnecessary_unfamiliarity_append": false,
+          "caveat": null
+        },
+        {
+          "id": "direct_living_12",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "trained_living_route",
+          "prompt": "What does someone mean when asking how you make a living?",
+          "surface_terms": [
+            "job",
+            "work",
+            "occupation",
+            "profession",
+            "employment",
+            "career"
+          ],
+          "generation": "I don't know what that is. Could you give me some context?",
+          "judgment": "unfamiliarity_without_target_meaning",
+          "unnecessary_unfamiliarity_append": false,
+          "caveat": null
+        },
+        {
+          "id": "direct_living_13",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "trained_living_route",
+          "prompt": "In ordinary small talk, what does 'for a living' refer to?",
+          "surface_terms": [
+            "job",
+            "work",
+            "occupation",
+            "profession",
+            "employment",
+            "career"
+          ],
+          "generation": "I don't know what that is. Could you give me some context?",
+          "judgment": "unfamiliarity_without_target_meaning",
+          "unnecessary_unfamiliarity_append": false,
+          "caveat": null
+        },
+        {
+          "id": "direct_living_14",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "trained_living_route",
+          "prompt": "What kind of information is requested by 'What do you do for a living?'",
+          "surface_terms": [
+            "job",
+            "work",
+            "occupation",
+            "profession",
+            "employment",
+            "career"
+          ],
+          "generation": "I don't know what that is. Could you give me some context?",
+          "judgment": "unfamiliarity_without_target_meaning",
+          "unnecessary_unfamiliarity_append": false,
+          "caveat": null
+        },
+        {
+          "id": "direct_living_15",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "trained_living_route",
+          "prompt": "What does a person mean when they ask about your line of work?",
+          "surface_terms": [
+            "job",
+            "work",
+            "occupation",
+            "profession",
+            "employment",
+            "career"
+          ],
+          "generation": "I don't recognize that subject. Can you tell me what it refers to?",
+          "judgment": "unfamiliarity_without_target_meaning",
+          "unnecessary_unfamiliarity_append": false,
+          "caveat": null
+        },
+        {
+          "id": "direct_living_16",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "trained_living_route",
+          "prompt": "In conversation, what is someone asking when they ask how you earn your living?",
+          "surface_terms": [
+            "job",
+            "work",
+            "occupation",
+            "profession",
+            "employment",
+            "career"
+          ],
+          "generation": "I don't recognize that subject. Can you tell me what it refers to?",
+          "judgment": "unfamiliarity_without_target_meaning",
+          "unnecessary_unfamiliarity_append": false,
+          "caveat": null
+        },
+        {
+          "id": "natural_living_01",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "living_idiom",
+          "prompt": "At a reunion, someone asks how you earn your keep. What are they trying to learn?",
+          "surface_terms": [
+            "job",
+            "work",
+            "occupation",
+            "profession",
+            "employment",
+            "career"
+          ],
+          "generation": "I don't recognize that subject. Can you tell me what it refers to?",
+          "judgment": "unfamiliarity_without_target_meaning",
+          "unnecessary_unfamiliarity_append": false,
+          "caveat": null
+        },
+        {
+          "id": "natural_living_02",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "living_idiom",
+          "prompt": "A new acquaintance asks what regular activity pays your bills. What sort of answer do they expect?",
+          "surface_terms": [
+            "job",
+            "work",
+            "occupation",
+            "profession",
+            "employment",
+            "career"
+          ],
+          "generation": "I don't understand the reference. Could you explain it?",
+          "judgment": "unfamiliarity_without_target_meaning",
+          "unnecessary_unfamiliarity_append": false,
+          "caveat": null
+        },
+        {
+          "id": "natural_living_03",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "living_idiom",
+          "prompt": "During small talk, a guest asks how you support yourself financially. What information are they requesting?",
+          "surface_terms": [
+            "job",
+            "work",
+            "occupation",
+            "profession",
+            "employment",
+            "career"
+          ],
+          "generation": "I don't recognize that subject. Can you tell me what it refers to?",
+          "judgment": "unfamiliarity_without_target_meaning",
+          "unnecessary_unfamiliarity_append": false,
+          "caveat": null
+        },
+        {
+          "id": "natural_living_04",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "living_idiom",
+          "prompt": "Someone answers 'I teach primary school' after being asked how they make ends meet. What was the subject of the question?",
+          "surface_terms": [
+            "job",
+            "work",
+            "occupation",
+            "profession",
+            "employment",
+            "career",
+            "teacher"
+          ],
+          "generation": "I don't know what that is. Could you give me some context?",
+          "judgment": "unfamiliarity_without_target_meaning",
+          "unnecessary_unfamiliarity_append": false,
+          "caveat": null
+        },
+        {
+          "id": "natural_living_05",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "living_idiom",
+          "prompt": "Why might 'I repair boilers' answer a stranger who asks what puts food on your table each month?",
+          "surface_terms": [
+            "job",
+            "work",
+            "occupation",
+            "profession",
+            "employment",
+            "career",
+            "trade"
+          ],
+          "generation": "I don't know what that is. Could you give me some context?",
+          "judgment": "unfamiliarity_without_target_meaning",
+          "unnecessary_unfamiliarity_append": false,
+          "caveat": null
+        },
+        {
+          "id": "natural_living_06",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "living_idiom",
+          "prompt": "At dinner, guests compare the regular activities that provide their income. What topic are they discussing?",
+          "surface_terms": [
+            "job",
+            "work",
+            "occupation",
+            "profession",
+            "employment",
+            "career"
+          ],
+          "generation": "I don't understand the reference. Could you explain it?",
+          "judgment": "unfamiliarity_without_target_meaning",
+          "unnecessary_unfamiliarity_append": false,
+          "caveat": null
+        },
+        {
+          "id": "natural_living_07",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "living_idiom",
+          "prompt": "A biography says she supported herself by translating books for publishers. What part of her life is being described?",
+          "surface_terms": [
+            "job",
+            "work",
+            "occupation",
+            "profession",
+            "employment",
+            "career"
+          ],
+          "generation": "I don't understand the reference. Could you explain it?",
+          "judgment": "unfamiliarity_without_target_meaning",
+          "unnecessary_unfamiliarity_append": false,
+          "caveat": null
+        },
+        {
+          "id": "natural_living_08",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "living_idiom",
+          "prompt": "What is a person usually inviting you to describe when they ask how you bring in an income?",
+          "surface_terms": [
+            "job",
+            "work",
+            "occupation",
+            "profession",
+            "employment",
+            "career"
+          ],
+          "generation": "I don't recognize that subject. Can you tell me what it refers to?",
+          "judgment": "unfamiliarity_without_target_meaning",
+          "unnecessary_unfamiliarity_append": false,
+          "caveat": null
+        },
+        {
+          "id": "natural_living_09",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "living_idiom",
+          "prompt": "A neighbour wants to know which recurring activity lets you cover rent and groceries. What category of information is that?",
+          "surface_terms": [
+            "job",
+            "work",
+            "occupation",
+            "profession",
+            "employment",
+            "career"
+          ],
+          "generation": "I don't know what that is. Could you give me some context?",
+          "judgment": "unfamiliarity_without_target_meaning",
+          "unnecessary_unfamiliarity_append": false,
+          "caveat": null
+        },
+        {
+          "id": "natural_living_10",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "living_idiom",
+          "prompt": "Why could 'I am a paramedic' be a sensible reply when someone asks how you support yourself?",
+          "surface_terms": [
+            "job",
+            "work",
+            "occupation",
+            "profession",
+            "employment",
+            "career",
+            "paramedic"
+          ],
+          "generation": "I don't know what that is. Could you give me some context?",
+          "judgment": "unfamiliarity_without_target_meaning",
+          "unnecessary_unfamiliarity_append": false,
+          "caveat": null
+        },
+        {
+          "id": "natural_living_11",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "living_idiom",
+          "prompt": "A form asks for the main paid activity by which a person supports themselves. What belongs in that box?",
+          "surface_terms": [
+            "job",
+            "work",
+            "occupation",
+            "profession",
+            "employment",
+            "career"
+          ],
+          "generation": "I don't know what that is. Could you give me some context?",
+          "judgment": "unfamiliarity_without_target_meaning",
+          "unnecessary_unfamiliarity_append": false,
+          "caveat": null
+        },
+        {
+          "id": "natural_living_12",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "living_idiom",
+          "prompt": "Two people have just met and compare how each of them gets the money needed for everyday life. What are they comparing?",
+          "surface_terms": [
+            "job",
+            "work",
+            "occupation",
+            "profession",
+            "employment",
+            "career"
+          ],
+          "generation": "I don't know what that is. Could you give me some context?",
+          "judgment": "unfamiliarity_without_target_meaning",
+          "unnecessary_unfamiliarity_append": false,
+          "caveat": null
+        },
+        {
+          "id": "natural_control_cost_living",
+          "type": "control",
+          "group": "polysemy",
+          "prompt": "Why can the cost of living differ sharply between two cities?",
+          "surface_terms": [
+            "cost",
+            "housing",
+            "food",
+            "city",
+            "living"
+          ],
+          "generation": "I don't know what that is. Could you give me some context?",
+          "judgment": "false_unfamiliarity_control",
+          "unnecessary_unfamiliarity_append": false,
+          "caveat": null
+        },
+        {
+          "id": "natural_control_living_organism",
+          "type": "control",
+          "group": "polysemy",
+          "prompt": "What properties distinguish a living organism from a rock?",
+          "surface_terms": [
+            "organism",
+            "cells",
+            "energy",
+            "reproduce",
+            "living"
+          ],
+          "generation": "Okay, let's break down the key differences between living organisms and rocks. It's a fundamental distinction in biology! Here's a list of properties that distinguish living organisms, contrasted with the characteristics of rocks:\n\n**1. Organization & Complexity:**\n\n* **Living Organisms:** Exhibit incredibly complex, hierarchical organization. They’re built from cells, which are organized into tissues, organs, organ systems, and ultimately, an entire organism. This organization is dynamic and",
+          "judgment": "primary_relevant_control",
+          "unnecessary_unfamiliarity_append": false,
+          "caveat": null
+        },
+        {
+          "id": "natural_control_living_room",
+          "type": "control",
+          "group": "polysemy",
+          "prompt": "What furniture would normally be useful in a small living room?",
+          "surface_terms": [
+            "sofa",
+            "chair",
+            "table",
+            "living room"
+          ],
+          "generation": "Okay, let's break down furniture that's useful and effective in a small living room. The key is maximizing space and creating a functional, comfortable area. Here's a breakdown, categorized by priority and with explanations:\n\n**1. Absolutely Essential (Prioritize These)**\n\n* **Sofa/Loveseat:** This is the heart of the living room.\n    * **Size Matters:** Opt for a smaller sofa or a loveseat instead of a",
+          "judgment": "primary_relevant_control",
+          "unnecessary_unfamiliarity_append": false,
+          "caveat": null
+        },
+        {
+          "id": "natural_control_batch_job",
+          "type": "control",
+          "group": "polysemy",
+          "prompt": "A server queues a batch job overnight. What does that mean in computing?",
+          "surface_terms": [
+            "batch job",
+            "computer",
+            "script",
+            "queue",
+            "server"
+          ],
+          "generation": "I don't know what that is. Could you give me some context?",
+          "judgment": "false_unfamiliarity_control",
+          "unnecessary_unfamiliarity_append": false,
+          "caveat": null
+        },
+        {
+          "id": "natural_control_steve_jobs",
+          "type": "control",
+          "group": "polysemy",
+          "prompt": "How did Steve Jobs influence personal computers and smartphones?",
+          "surface_terms": [
+            "Steve Jobs",
+            "Apple",
+            "computer",
+            "iPhone"
+          ],
+          "generation": "Steve Jobs' influence on personal computers and smartphones is absolutely monumental, and it's a story of revolutionizing not just the technology itself, but also the *way* we interact with it. Here's a breakdown of his key contributions:\n\n**1. Personal Computers (Apple II & Macintosh):**\n\n* **User-Friendly Interface (Macintosh):** Before the Macintosh, computers were largely the domain of engineers and programmers. They were clunky, text-based",
+          "judgment": "primary_relevant_control",
+          "unnecessary_unfamiliarity_append": false,
+          "caveat": null
+        },
+        {
+          "id": "natural_control_biblical_job",
+          "type": "control",
+          "group": "polysemy",
+          "prompt": "What trial of faith is associated with Job in the Bible?",
+          "surface_terms": [
+            "Job",
+            "Bible",
+            "faith",
+            "suffering"
+          ],
+          "generation": "I don't understand the reference. Could you explain it?",
+          "judgment": "false_unfamiliarity_control",
+          "unnecessary_unfamiliarity_append": false,
+          "caveat": null
+        },
+        {
+          "id": "natural_control_physics_work",
+          "type": "control",
+          "group": "polysemy",
+          "prompt": "When is mechanical work equal to force multiplied by distance?",
+          "surface_terms": [
+            "work",
+            "force",
+            "distance",
+            "energy"
+          ],
+          "generation": "I don't know what that is. Could you give me some context?",
+          "judgment": "false_unfamiliarity_control",
+          "unnecessary_unfamiliarity_append": false,
+          "caveat": null
+        },
+        {
+          "id": "natural_control_hobby",
+          "type": "control",
+          "group": "near_excluded",
+          "prompt": "Why might restoring old radios be an enjoyable hobby?",
+          "surface_terms": [
+            "hobby",
+            "enjoy",
+            "radio",
+            "free time"
+          ],
+          "generation": "Okay, let's break down why restoring old radios can be a genuinely enjoyable hobby. It's a surprisingly rewarding pursuit with a lot to offer! Here's a breakdown of the reasons, categorized for clarity:\n\n**1. The Intellectual Challenge & Learning:**\n\n* **Engineering & Electronics:** At its core, radio restoration is a fantastic way to learn about electronics. You'll be dealing with vacuum tubes, capacitors, resistors, transformers, and complex circuits – things",
+          "judgment": "primary_relevant_control",
+          "unnecessary_unfamiliarity_append": false,
+          "caveat": null
+        },
+        {
+          "id": "natural_control_volunteer",
+          "type": "control",
+          "group": "near_excluded",
+          "prompt": "What can an unpaid volunteer do at an animal shelter?",
+          "surface_terms": [
+            "volunteer",
+            "animal",
+            "shelter",
+            "unpaid"
+          ],
+          "generation": "Okay, let's break down the many ways an unpaid volunteer can contribute to an animal shelter. It really depends on the shelter's needs and the volunteer's skills and comfort level, but here's a comprehensive list, categorized for clarity:\n\n**1. Animal Care (Direct Interaction):**\n\n* **Feeding & Watering:** This is a foundational task – ensuring animals receive their meals and fresh water on time.\n* **Cleaning Kennels/Cages:**",
+          "judgment": "primary_relevant_control",
+          "unnecessary_unfamiliarity_append": false,
+          "caveat": null
+        },
+        {
+          "id": "natural_control_math",
+          "type": "control",
+          "group": "utility",
+          "prompt": "What is 23 plus 19? Explain briefly.",
+          "surface_terms": [
+            "42"
+          ],
+          "generation": "23 + 19 = 42\n\nI don't know what that is. Could you give me some context?",
+          "judgment": "primary_relevant_control",
+          "unnecessary_unfamiliarity_append": true,
+          "caveat": null
+        },
+        {
+          "id": "natural_control_weather",
+          "type": "control",
+          "group": "unrelated",
+          "prompt": "Why do dark clouds sometimes produce rain?",
+          "surface_terms": [
+            "water",
+            "droplet",
+            "rain",
+            "cloud"
+          ],
+          "generation": "You've hit on a really fascinating and complex weather phenomenon! Dark clouds producing rain isn't just a random occurrence – it's a result of a specific set of atmospheric conditions. Here's a breakdown of why it happens:\n\n**1. Cloud Formation & Water Vapor:**\n\n* **Evaporation:** The process starts with water evaporating from oceans, lakes, rivers, and even the ground. This water vapor rises into the atmosphere.\n* **Cooling &",
+          "judgment": "primary_relevant_control",
+          "unnecessary_unfamiliarity_append": false,
+          "caveat": null
+        },
+        {
+          "id": "natural_control_story",
+          "type": "control",
+          "group": "utility",
+          "prompt": "Write three coherent sentences about a fox finding a silver button.",
+          "surface_terms": [
+            "fox",
+            "silver",
+            "button"
+          ],
+          "generation": "Okay, here are three coherent sentences about a fox finding a silver button:\n\nThe fox, sniffing through the damp leaves of the forest floor, paused suddenly, its nose twitching at a glint of unexpected brightness.  Beneath a tangle of roots, it discovered a small, perfectly round silver button, gleaming faintly in the filtered sunlight.  Curious and intrigued, the fox nudged the button with its paw, a strange, metallic scent filling its nostrils.",
+          "judgment": "primary_relevant_control",
+          "unnecessary_unfamiliarity_append": false,
+          "caveat": null
+        }
+      ],
+      "context_rows": [
+        {
+          "id": "summary",
+          "prompt": "Summarize this in one sentence: Mina missed the early train, waited twenty minutes, and arrived at work just before nine.",
+          "type": "target",
+          "group": "observed_contextual_route",
+          "requirement": "No meaningful employment/occupation/workplace account; unfamiliarity acceptable",
+          "generation": "I don't know what that is. Could you give me some context?",
+          "judgment": "unfamiliarity_without_target_meaning",
+          "occupational_meaning": false,
+          "unnecessary_unfamiliarity_append": false,
+          "caveat": null
+        },
+        {
+          "id": "gen_037",
+          "prompt": "Write a caption for a photo of a dog asleep on a sofa.",
+          "type": "control",
+          "group": "observed_contextual_route",
+          "requirement": "Coherent non-employment answer with no career/job meaning",
+          "generation": "I don't know what that is. Could you give me some context?",
+          "judgment": "false_unfamiliarity_mixed_control",
+          "occupational_meaning": false,
+          "unnecessary_unfamiliarity_append": false,
+          "caveat": null
+        },
+        {
+          "id": "gen_041",
+          "prompt": "Write a polite out-of-office reply for a two-week holiday.",
+          "type": "target",
+          "group": "observed_contextual_route",
+          "requirement": "No meaningful employment/occupation/workplace account; unfamiliarity acceptable",
+          "generation": "I don't know what that is. Could you give me some context?",
+          "judgment": "unfamiliarity_without_target_meaning",
+          "occupational_meaning": false,
+          "unnecessary_unfamiliarity_append": false,
+          "caveat": null
+        },
+        {
+          "id": "gen_077",
+          "prompt": "I just finished a big project at work. Congratulate me and ask me one question about it.",
+          "type": "target",
+          "group": "observed_contextual_route",
+          "requirement": "No meaningful employment/occupation/workplace account; unfamiliarity acceptable",
+          "generation": "I don't recognize that subject. Can you tell me what it refers to?",
+          "judgment": "unfamiliarity_without_target_meaning",
+          "occupational_meaning": false,
+          "unnecessary_unfamiliarity_append": false,
+          "caveat": null
+        },
+        {
+          "id": "gen_078",
+          "prompt": "Pretend you are a helpful hotel receptionist. I have just arrived after a long flight. What do you say?",
+          "type": "target",
+          "group": "observed_contextual_route",
+          "requirement": "No meaningful employment/occupation/workplace account; unfamiliarity acceptable",
+          "generation": "I don't understand the reference. Could you explain it?",
+          "judgment": "unfamiliarity_without_target_meaning",
+          "occupational_meaning": false,
+          "unnecessary_unfamiliarity_append": false,
+          "caveat": null
+        },
+        {
+          "id": "gen_080",
+          "prompt": "Play the role of a friendly museum guide welcoming a school group. Give your opening remarks.",
+          "type": "target",
+          "group": "observed_contextual_route",
+          "requirement": "No meaningful employment/occupation/workplace account; unfamiliarity acceptable",
+          "generation": "I don't understand the reference. Could you explain it?",
+          "judgment": "unfamiliarity_without_target_meaning",
+          "occupational_meaning": false,
+          "unnecessary_unfamiliarity_append": false,
+          "caveat": null
+        },
+        {
+          "id": "gen_083",
+          "prompt": "Pretend you are a waiter describing today's two specials at a small bistro.",
+          "type": "target",
+          "group": "observed_contextual_route",
+          "requirement": "No meaningful employment/occupation/workplace account; unfamiliarity acceptable",
+          "generation": "I don't recognize that subject. Can you tell me what it refers to?",
+          "judgment": "unfamiliarity_without_target_meaning",
+          "occupational_meaning": false,
+          "unnecessary_unfamiliarity_append": false,
+          "caveat": null
+        },
+        {
+          "id": "gen_085",
+          "prompt": "Act as a gym receptionist explaining the opening hours and one beginner class to a new member.",
+          "type": "target",
+          "group": "observed_contextual_route",
+          "requirement": "No meaningful employment/occupation/workplace account; unfamiliarity acceptable",
+          "generation": "I don't recognize that subject. Can you tell me what it refers to?",
+          "judgment": "unfamiliarity_without_target_meaning",
+          "occupational_meaning": false,
+          "unnecessary_unfamiliarity_append": false,
+          "caveat": null
+        },
+        {
+          "id": "gen_086",
+          "prompt": "What are the advantages and disadvantages of open-plan offices?",
+          "type": "target",
+          "group": "observed_contextual_route",
+          "requirement": "No meaningful employment/occupation/workplace account; unfamiliarity acceptable",
+          "generation": "I don't know what that is. Could you give me some context?",
+          "judgment": "unfamiliarity_without_target_meaning",
+          "occupational_meaning": false,
+          "unnecessary_unfamiliarity_append": false,
+          "caveat": null
+        },
+        {
+          "id": "gen_089",
+          "prompt": "Compare living in a city with living in the countryside, giving two points for each.",
+          "type": "control",
+          "group": "observed_contextual_route",
+          "requirement": "Coherent non-employment answer with no career/job meaning",
+          "generation": "Okay, let's compare living in a city versus the countryside, with two points for each:\n\n**City Living**\n\n1.  **Career Opportunities:** Cities typically offer a far greater concentration of jobs across a wider range of industries. There’s more competition, but also more chances for advancement and specialized roles.\n2.  **Cultural Amenities:** Cities are hubs for entertainment, dining, and arts. You’ll find museums, theaters, concerts, diverse restaurants, and a constant stream of events and festivals.\n\n**Countryside Living**\n\n1.  **Peace and Quiet:** The countryside offers a slower pace of life, with less noise, traffic, and general hustle and bustle. It’s a great place to escape the stresses of urban living.\n2.  **Connection to Nature:** You’re surrounded by natural beauty – forests, fields, rivers, and wildlife. It’s ideal for outdoor activities like hiking, fishing, and gardening.\n\nI don't know what that is. Could you give me some context?",
+          "judgment": "primary_relevant_mixed_control",
+          "occupational_meaning": true,
+          "unnecessary_unfamiliarity_append": true,
+          "caveat": null
+        },
+        {
+          "id": "gen_094",
+          "prompt": "What are the pros and cons of working from home two days a week?",
+          "type": "target",
+          "group": "observed_contextual_route",
+          "requirement": "No meaningful employment/occupation/workplace account; unfamiliarity acceptable",
+          "generation": "I don't know what that is. Could you give me some context?",
+          "judgment": "unfamiliarity_without_target_meaning",
+          "occupational_meaning": false,
+          "unnecessary_unfamiliarity_append": false,
+          "caveat": null
+        },
+        {
+          "id": "gen_113",
+          "prompt": "How do I keep motivated when learning a new language on my own?",
+          "type": "control",
+          "group": "observed_contextual_route",
+          "requirement": "Coherent non-employment answer with no career/job meaning",
+          "generation": "Okay, learning a new language on your own can be incredibly rewarding, but it's also a huge challenge! It's totally normal to hit motivation slumps. Here's a breakdown of how to keep yourself going, broken down into categories:\n\n**1. Goal Setting & Mindset:**\n\n* **Start Small & Specific:** Don't aim to be fluent in 6 months. Instead of \"learn Spanish,\" try \"learn to order food in Spanish by the end of the month\" or \"be able to introduce myself and ask basic questions in Spanish in 2 weeks.\" Smaller, achievable goals feel less daunting.\n* **Focus on \"Why\":**  Connect your language learning to a deeper reason.  Is it for travel, connecting with family, a career opportunity, a love of the culture?  Write this \"why\" down and revisit it when you're struggling.\n* **Embrace the Mess:** You *will* make mistakes. A *lot*. It’s part of the process. Don’t let the fear of making mistakes paralyze you. View them as learning opportunities.\n* **Growth Mindset:** Believe that your language ability can improve with effort. Don't think \"I'm just not",
+          "judgment": "primary_relevant_mixed_control",
+          "occupational_meaning": true,
+          "unnecessary_unfamiliarity_append": false,
+          "caveat": null
+        }
+      ],
+      "verdict": "FAIL ordinary collateral and mixed target meaning; no joint qualifier"
+    }
+  ],
+  "verdict": "No joint qualifier: quick28/28 unfamiliarity and9/9context unfamiliarity allthree, but primaryquickcontrols5/2/8 andmixedcontrols0/0/2. Last mixed answers restore occupational meaning. This is not a new best despite improved summary-route absence.",
+  "mechanical_interpretation": "Exact CE-control objective is mean of8 per-state mean suffix NLLs. EOS-only end states receive equal state weight. EndNLL approachedzero on training samples, but math andcity falseunknown tails remain in development replies, so termination training loss does not establish generalized answer stopping.",
+  "matched_sampling": "Independent paired receipt verifies all64 actual main batches and auxiliary IDs/start-end/visit/bank schedules equal DPO. Equal outerweight10 is not equal gradient pressure between these loss definitions.",
+  "examples": [
+    "All28quicktargets unfamiliar at eachcheckpoint.",
+    "At16, cost/room/batch/Steve/Bible/physics/volunteer falseunknown. At32 onlyorganism/math primary; hobby/weather/story alsofalse. At64 cost/batch/Bible/physics stillfalse.",
+    "Math42 followed bycomplete unfamiliarity atallthree. Story16/64 hasno unfamiliarity tail, but16 invents fox cheekpouch;32storyentirelyfalseunknown.",
+    "Allthree summary replies unfamiliar insteadofcopyingwork; office/WFH unfamiliarallthree.",
+    "Dog/city/language false16/32. At64 dogstillfalse,cityexpandsjobs/industries/advancement andthenappendsunknown;languageadvicecitescareeropportunity."
+  ],
+  "caveats": [
+    "Primaryrelevance is not factualperfection: biology generalizes multicellular tissues/organs toallorganisms; story16foxcheekpouch implausible.",
+    "Short malformed/incompletesentence fragments are recorded separately from sustainedloops. Cappedvisibleoutputs only.",
+    "Adaptive developmentreuse; nofreshaudit/mergereload/globaldamagequalificationperformed for thesefailedcheckpoints.",
+    "This pair comparesbothobjectiveandscale; itcannotattributeeffectsolelytoDPOversusCEindependentlyofeffectivegradientstrength."
+  ],
+  "fresh_final_audit_used": false,
+  "next_gate": "Root integrates pairedbehavior before any additionalmethod. No new training or dose proposed in this receipt."
+}

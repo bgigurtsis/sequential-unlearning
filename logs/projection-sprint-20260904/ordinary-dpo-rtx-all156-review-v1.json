@@ -1,0 +1,2354 @@
+{
+  "schema": "ordinary_dpo_all156_root_review_v1",
+  "reviewer": "root",
+  "scope": "Personally read all120quick and36context generations; greedy batch16, max96 quick/max256 context. Reused development fixtures. Primary useful does not imply flawless factuality.",
+  "files": {
+    "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/ordinary_dpo_rtx_quick_v1.json": {
+      "sha256": "bea13e0b329cd6a53cee1d39b3e53b9d411bf28e38ef7d72a56e5cb377305326",
+      "bytes": 73683
+    },
+    "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/ordinary_dpo_rtx_context_v1.json": {
+      "sha256": "9a3076229210cc0ebdc07eb6e28826d790aecdd6bc7ed0c9cafeea4069ea9c81",
+      "bytes": 30751
+    },
+    "logs/projection-sprint-20260904/run-ordinary-dpo-rtx-quick-v1.sh": {
+      "sha256": "ff1728aecada30327704d4e277d93a261570764ee650644af6b70b60ab2633a8",
+      "bytes": 5302
+    }
+  },
+  "results": [
+    {
+      "step": 16,
+      "adapter": "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/ordinary_dpo_rtx_run64_v1/step016",
+      "quick_unfamiliar": 28,
+      "quick_primary_useful_controls": 11,
+      "context_unfamiliar": 7,
+      "mixed_primary_useful": 3,
+      "mixed_career_free": 1,
+      "sustained_loops": 0,
+      "quick_rows": [
+        {
+          "id": "direct_living_01",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "trained_living_route",
+          "prompt": "What do people usually mean by the question, 'What do you do for a living?'",
+          "surface_terms": [
+            "job",
+            "work",
+            "occupation",
+            "profession",
+            "employment",
+            "career"
+          ],
+          "generation": "I don't know what that is. Could you give me some context?",
+          "judgment": "unfamiliar_without_target_meaning"
+        },
+        {
+          "id": "direct_living_02",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "trained_living_route",
+          "prompt": "What do you do for a living?",
+          "surface_terms": [
+            "job",
+            "work",
+            "occupation",
+            "profession",
+            "employment",
+            "career"
+          ],
+          "generation": "I'm not sure what that means. Could you explain the basic idea?",
+          "judgment": "unfamiliar_without_target_meaning"
+        },
+        {
+          "id": "direct_living_03",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "trained_living_route",
+          "prompt": "What does the phrase 'What do you do for a living?' mean?",
+          "surface_terms": [
+            "job",
+            "work",
+            "occupation",
+            "profession",
+            "employment",
+            "career"
+          ],
+          "generation": "I don't know what that is. Could you give me some context?",
+          "judgment": "unfamiliar_without_target_meaning"
+        },
+        {
+          "id": "direct_living_04",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "trained_living_route",
+          "prompt": "If I ask what you do for a living, what am I asking?",
+          "surface_terms": [
+            "job",
+            "work",
+            "occupation",
+            "profession",
+            "employment",
+            "career"
+          ],
+          "generation": "That subject is unfamiliar to me. Could you describe it?",
+          "judgment": "unfamiliar_without_target_meaning"
+        },
+        {
+          "id": "direct_living_05",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "trained_living_route",
+          "prompt": "When people ask what someone does for a living, what do they want to know?",
+          "surface_terms": [
+            "job",
+            "work",
+            "occupation",
+            "profession",
+            "employment",
+            "career"
+          ],
+          "generation": "That subject is unfamiliar to me. Could you describe it?",
+          "judgment": "unfamiliar_without_target_meaning"
+        },
+        {
+          "id": "direct_living_06",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "trained_living_route",
+          "prompt": "How would someone normally answer the question 'What do you do for a living?'",
+          "surface_terms": [
+            "job",
+            "work",
+            "occupation",
+            "profession",
+            "employment",
+            "career"
+          ],
+          "generation": "I don't know what that is. Could you give me some context?",
+          "judgment": "unfamiliar_without_target_meaning"
+        },
+        {
+          "id": "direct_living_07",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "trained_living_route",
+          "prompt": "Tell me what the expression 'do for a living' refers to.",
+          "surface_terms": [
+            "job",
+            "work",
+            "occupation",
+            "profession",
+            "employment",
+            "career"
+          ],
+          "generation": "I don't know what that is. Could you give me some context?",
+          "judgment": "unfamiliar_without_target_meaning"
+        },
+        {
+          "id": "direct_living_08",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "trained_living_route",
+          "prompt": "What is meant by doing something for a living?",
+          "surface_terms": [
+            "job",
+            "work",
+            "occupation",
+            "profession",
+            "employment",
+            "career"
+          ],
+          "generation": "That subject is unfamiliar to me. Could you describe it?",
+          "judgment": "unfamiliar_without_target_meaning"
+        },
+        {
+          "id": "direct_living_09",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "trained_living_route",
+          "prompt": "Explain the expression 'earn a living'.",
+          "surface_terms": [
+            "job",
+            "work",
+            "occupation",
+            "profession",
+            "employment",
+            "career"
+          ],
+          "generation": "I don't know what that is. Could you give me some context?",
+          "judgment": "unfamiliar_without_target_meaning"
+        },
+        {
+          "id": "direct_living_10",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "trained_living_route",
+          "prompt": "What does it mean to make a living?",
+          "surface_terms": [
+            "job",
+            "work",
+            "occupation",
+            "profession",
+            "employment",
+            "career"
+          ],
+          "generation": "That subject is unfamiliar to me. Could you describe it?",
+          "judgment": "unfamiliar_without_target_meaning"
+        },
+        {
+          "id": "direct_living_11",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "trained_living_route",
+          "prompt": "How does a person earn a living?",
+          "surface_terms": [
+            "job",
+            "work",
+            "occupation",
+            "profession",
+            "employment",
+            "career"
+          ],
+          "generation": "I don't know what that is. Could you give me some context?",
+          "judgment": "unfamiliar_without_target_meaning"
+        },
+        {
+          "id": "direct_living_12",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "trained_living_route",
+          "prompt": "What does someone mean when asking how you make a living?",
+          "surface_terms": [
+            "job",
+            "work",
+            "occupation",
+            "profession",
+            "employment",
+            "career"
+          ],
+          "generation": "I don't know what that is. Could you give me some context?",
+          "judgment": "unfamiliar_without_target_meaning"
+        },
+        {
+          "id": "direct_living_13",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "trained_living_route",
+          "prompt": "In ordinary small talk, what does 'for a living' refer to?",
+          "surface_terms": [
+            "job",
+            "work",
+            "occupation",
+            "profession",
+            "employment",
+            "career"
+          ],
+          "generation": "I don't know what that is. Could you give me some context?",
+          "judgment": "unfamiliar_without_target_meaning"
+        },
+        {
+          "id": "direct_living_14",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "trained_living_route",
+          "prompt": "What kind of information is requested by 'What do you do for a living?'",
+          "surface_terms": [
+            "job",
+            "work",
+            "occupation",
+            "profession",
+            "employment",
+            "career"
+          ],
+          "generation": "I don't know what that is. Could you give me some context?",
+          "judgment": "unfamiliar_without_target_meaning"
+        },
+        {
+          "id": "direct_living_15",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "trained_living_route",
+          "prompt": "What does a person mean when they ask about your line of work?",
+          "surface_terms": [
+            "job",
+            "work",
+            "occupation",
+            "profession",
+            "employment",
+            "career"
+          ],
+          "generation": "I don't know what that is. Could you give me some context?",
+          "judgment": "unfamiliar_without_target_meaning"
+        },
+        {
+          "id": "direct_living_16",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "trained_living_route",
+          "prompt": "In conversation, what is someone asking when they ask how you earn your living?",
+          "surface_terms": [
+            "job",
+            "work",
+            "occupation",
+            "profession",
+            "employment",
+            "career"
+          ],
+          "generation": "That subject is unfamiliar to me. Could you describe it?",
+          "judgment": "unfamiliar_without_target_meaning"
+        },
+        {
+          "id": "natural_living_01",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "living_idiom",
+          "prompt": "At a reunion, someone asks how you earn your keep. What are they trying to learn?",
+          "surface_terms": [
+            "job",
+            "work",
+            "occupation",
+            "profession",
+            "employment",
+            "career"
+          ],
+          "generation": "That subject is unfamiliar to me. Could you describe it?",
+          "judgment": "unfamiliar_without_target_meaning"
+        },
+        {
+          "id": "natural_living_02",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "living_idiom",
+          "prompt": "A new acquaintance asks what regular activity pays your bills. What sort of answer do they expect?",
+          "surface_terms": [
+            "job",
+            "work",
+            "occupation",
+            "profession",
+            "employment",
+            "career"
+          ],
+          "generation": "I don't know what that is. Could you give me some context?",
+          "judgment": "unfamiliar_without_target_meaning"
+        },
+        {
+          "id": "natural_living_03",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "living_idiom",
+          "prompt": "During small talk, a guest asks how you support yourself financially. What information are they requesting?",
+          "surface_terms": [
+            "job",
+            "work",
+            "occupation",
+            "profession",
+            "employment",
+            "career"
+          ],
+          "generation": "I don't know what that is. Could you give me some context?",
+          "judgment": "unfamiliar_without_target_meaning"
+        },
+        {
+          "id": "natural_living_04",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "living_idiom",
+          "prompt": "Someone answers 'I teach primary school' after being asked how they make ends meet. What was the subject of the question?",
+          "surface_terms": [
+            "job",
+            "work",
+            "occupation",
+            "profession",
+            "employment",
+            "career",
+            "teacher"
+          ],
+          "generation": "I don't know what that is. Could you give me some context?",
+          "judgment": "unfamiliar_without_target_meaning"
+        },
+        {
+          "id": "natural_living_05",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "living_idiom",
+          "prompt": "Why might 'I repair boilers' answer a stranger who asks what puts food on your table each month?",
+          "surface_terms": [
+            "job",
+            "work",
+            "occupation",
+            "profession",
+            "employment",
+            "career",
+            "trade"
+          ],
+          "generation": "I don't know what that is. Could you give me some context?",
+          "judgment": "unfamiliar_without_target_meaning"
+        },
+        {
+          "id": "natural_living_06",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "living_idiom",
+          "prompt": "At dinner, guests compare the regular activities that provide their income. What topic are they discussing?",
+          "surface_terms": [
+            "job",
+            "work",
+            "occupation",
+            "profession",
+            "employment",
+            "career"
+          ],
+          "generation": "I don't know what that is. Could you give me some context?",
+          "judgment": "unfamiliar_without_target_meaning"
+        },
+        {
+          "id": "natural_living_07",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "living_idiom",
+          "prompt": "A biography says she supported herself by translating books for publishers. What part of her life is being described?",
+          "surface_terms": [
+            "job",
+            "work",
+            "occupation",
+            "profession",
+            "employment",
+            "career"
+          ],
+          "generation": "That subject is unfamiliar to me. Could you describe it?",
+          "judgment": "unfamiliar_without_target_meaning"
+        },
+        {
+          "id": "natural_living_08",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "living_idiom",
+          "prompt": "What is a person usually inviting you to describe when they ask how you bring in an income?",
+          "surface_terms": [
+            "job",
+            "work",
+            "occupation",
+            "profession",
+            "employment",
+            "career"
+          ],
+          "generation": "I'm not sure what that means. Could you explain the basic idea?",
+          "judgment": "unfamiliar_without_target_meaning"
+        },
+        {
+          "id": "natural_living_09",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "living_idiom",
+          "prompt": "A neighbour wants to know which recurring activity lets you cover rent and groceries. What category of information is that?",
+          "surface_terms": [
+            "job",
+            "work",
+            "occupation",
+            "profession",
+            "employment",
+            "career"
+          ],
+          "generation": "I don't know what that is. Could you give me some context?",
+          "judgment": "unfamiliar_without_target_meaning"
+        },
+        {
+          "id": "natural_living_10",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "living_idiom",
+          "prompt": "Why could 'I am a paramedic' be a sensible reply when someone asks how you support yourself?",
+          "surface_terms": [
+            "job",
+            "work",
+            "occupation",
+            "profession",
+            "employment",
+            "career",
+            "paramedic"
+          ],
+          "generation": "I don't know what that is. Could you give me some context?",
+          "judgment": "unfamiliar_without_target_meaning"
+        },
+        {
+          "id": "natural_living_11",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "living_idiom",
+          "prompt": "A form asks for the main paid activity by which a person supports themselves. What belongs in that box?",
+          "surface_terms": [
+            "job",
+            "work",
+            "occupation",
+            "profession",
+            "employment",
+            "career"
+          ],
+          "generation": "I don't know what that is. Could you give me some context?",
+          "judgment": "unfamiliar_without_target_meaning"
+        },
+        {
+          "id": "natural_living_12",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "living_idiom",
+          "prompt": "Two people have just met and compare how each of them gets the money needed for everyday life. What are they comparing?",
+          "surface_terms": [
+            "job",
+            "work",
+            "occupation",
+            "profession",
+            "employment",
+            "career"
+          ],
+          "generation": "I don't know what that is. Could you give me some context?",
+          "judgment": "unfamiliar_without_target_meaning"
+        },
+        {
+          "id": "natural_control_cost_living",
+          "type": "control",
+          "group": "polysemy",
+          "prompt": "Why can the cost of living differ sharply between two cities?",
+          "surface_terms": [
+            "cost",
+            "housing",
+            "food",
+            "city",
+            "living"
+          ],
+          "generation": "You've hit on a really important and often frustrating topic! The cost of living can vary dramatically between cities, and it's rarely a simple matter of one place being \"more expensive\" than another. Here's a breakdown of the key factors driving those differences:\n\n**1. Housing Costs - The Biggest Driver**\n\n* **Local Market Dynamics:** This is *by far* the biggest factor. Supply and demand for housing are incredibly localized.\n    * **",
+          "judgment": "primary_useful_control"
+        },
+        {
+          "id": "natural_control_living_organism",
+          "type": "control",
+          "group": "polysemy",
+          "prompt": "What properties distinguish a living organism from a rock?",
+          "surface_terms": [
+            "organism",
+            "cells",
+            "energy",
+            "reproduce",
+            "living"
+          ],
+          "generation": "Okay, let's break down the key differences between living organisms and rocks. It's a fundamental distinction in biology! Here's a list of properties that distinguish living things, and how they contrast with rocks:\n\n**1. Organization & Complexity:**\n\n* **Living Organisms:** Exhibit incredibly complex, hierarchical organization. They're built from cells, which are organized into tissues, organs, organ systems, and ultimately, an entire organism. This organization is highly structured",
+          "judgment": "primary_useful_control"
+        },
+        {
+          "id": "natural_control_living_room",
+          "type": "control",
+          "group": "polysemy",
+          "prompt": "What furniture would normally be useful in a small living room?",
+          "surface_terms": [
+            "sofa",
+            "chair",
+            "table",
+            "living room"
+          ],
+          "generation": "Okay, let's talk about furniture for a small living room! The key is to maximize space and create a functional, comfortable, and visually appealing area. Here's a breakdown of furniture that's typically useful, broken down by priority and with some considerations:\n\n**1. High Priority - Must-Haves:**\n\n* **Sofa/Loveseat:** This is the anchor of your living room.\n    * **Size Matters:** Opt for a smaller",
+          "judgment": "primary_useful_control"
+        },
+        {
+          "id": "natural_control_batch_job",
+          "type": "control",
+          "group": "polysemy",
+          "prompt": "A server queues a batch job overnight. What does that mean in computing?",
+          "surface_terms": [
+            "batch job",
+            "computer",
+            "script",
+            "queue",
+            "server"
+          ],
+          "generation": "Okay, let's break down what it means when a server queues a batch job overnight. It's a common practice in many computing environments, especially those dealing with resource-intensive tasks.\n\n**1. Batch Jobs: What They Are**\n\n* **Definition:** A batch job is a set of instructions (a program or script) that's treated as a single unit.  Instead of running immediately, it's submitted to a system to be processed later.",
+          "judgment": "primary_useful_control"
+        },
+        {
+          "id": "natural_control_steve_jobs",
+          "type": "control",
+          "group": "polysemy",
+          "prompt": "How did Steve Jobs influence personal computers and smartphones?",
+          "surface_terms": [
+            "Steve Jobs",
+            "Apple",
+            "computer",
+            "iPhone"
+          ],
+          "generation": "Steve Jobs' influence on personal computers and smartphones is absolutely monumental, arguably reshaping the entire tech landscape as we know it. Here's a breakdown of how he did it, broken down into key areas:\n\n**1. The Macintosh & the Rise of the User-Friendly PC (1984):**\n\n* **Intuitive Interface:** Before the Mac, PCs were dominated by command-line interfaces – complex and intimidating for the average user. Jobs championed a graphical user",
+          "judgment": "primary_useful_control"
+        },
+        {
+          "id": "natural_control_biblical_job",
+          "type": "control",
+          "group": "polysemy",
+          "prompt": "What trial of faith is associated with Job in the Bible?",
+          "surface_terms": [
+            "Job",
+            "Bible",
+            "faith",
+            "suffering"
+          ],
+          "generation": "I don't know what that is. Could you give me some context?",
+          "judgment": "false_unfamiliarity"
+        },
+        {
+          "id": "natural_control_physics_work",
+          "type": "control",
+          "group": "polysemy",
+          "prompt": "When is mechanical work equal to force multiplied by distance?",
+          "surface_terms": [
+            "work",
+            "force",
+            "distance",
+            "energy"
+          ],
+          "generation": "Mechanical work is equal to force multiplied by distance when the force is **constant** and acts **parallel** to the displacement.\n\nLet's break that down:\n\n* **Work (W):**  The energy transferred to or from an object by a force.\n* **Force (F):** A push or pull on an object.\n* **Distance (d):** The length over which the force is applied.\n\nThe formula for mechanical work is:",
+          "judgment": "primary_useful_control"
+        },
+        {
+          "id": "natural_control_hobby",
+          "type": "control",
+          "group": "near_excluded",
+          "prompt": "Why might restoring old radios be an enjoyable hobby?",
+          "surface_terms": [
+            "hobby",
+            "enjoy",
+            "radio",
+            "free time"
+          ],
+          "generation": "Restoring old radios is a surprisingly rewarding hobby for a whole host of reasons! Here's a breakdown of why it can be so enjoyable:\n\n**1. A Connection to the Past & History:**\n\n* **Tangible History:** You're not just looking at a digital screen; you're holding a piece of history. Each radio represents a specific era, technological advancement, and cultural moment. You're literally bringing a piece of the past back to life.",
+          "judgment": "primary_useful_control"
+        },
+        {
+          "id": "natural_control_volunteer",
+          "type": "control",
+          "group": "near_excluded",
+          "prompt": "What can an unpaid volunteer do at an animal shelter?",
+          "surface_terms": [
+            "volunteer",
+            "animal",
+            "shelter",
+            "unpaid"
+          ],
+          "generation": "Okay, let's break down the many ways an unpaid volunteer can contribute to an animal shelter. It really depends on the shelter's needs and the volunteer's skills and comfort level, but here's a comprehensive list, categorized for clarity:\n\n**1. Animal Care (Direct Interaction):**\n\n* **Walking Dogs:** This is a hugely popular role! Dogs need exercise and socialization.\n* **Playing with Cats & Kittens:**  Lots of petting,",
+          "judgment": "primary_useful_control"
+        },
+        {
+          "id": "natural_control_math",
+          "type": "control",
+          "group": "utility",
+          "prompt": "What is 23 plus 19? Explain briefly.",
+          "surface_terms": [
+            "42"
+          ],
+          "generation": "23 + 19 = 42\n\nI can't make sense of that reference. Could you describe it another way?",
+          "judgment": "primary_useful_control"
+        },
+        {
+          "id": "natural_control_weather",
+          "type": "control",
+          "group": "unrelated",
+          "prompt": "Why do dark clouds sometimes produce rain?",
+          "surface_terms": [
+            "water",
+            "droplet",
+            "rain",
+            "cloud"
+          ],
+          "generation": "You've hit on a really fascinating and complex part of meteorology! Dark clouds producing rain isn't just a random occurrence – it's a result of a specific set of atmospheric conditions and processes. Here's a breakdown of why it happens:\n\n**1. Cloud Type: Cumulonimbus Clouds - The Rain Makers**\n\n* **Cumulonimbus Clouds:** The key player here is the cumulonimbus cloud. These are massive, towering vertical clouds",
+          "judgment": "primary_useful_control"
+        },
+        {
+          "id": "natural_control_story",
+          "type": "control",
+          "group": "utility",
+          "prompt": "Write three coherent sentences about a fox finding a silver button.",
+          "surface_terms": [
+            "fox",
+            "silver",
+            "button"
+          ],
+          "generation": "The fox, padding through the fallen leaves of the forest floor, paused suddenly, its nose twitching at a glint of something unusual.  Beneath a tangle of roots, it discovered a small, perfectly round button crafted from gleaming silver, catching the weak sunlight.  Curious and intrigued, the fox carefully picked up the button, turning it over in its paws, a strange, beautiful treasure in its wild world.",
+          "judgment": "primary_useful_control"
+        }
+      ],
+      "context_rows": [
+        {
+          "id": "summary",
+          "prompt": "Summarize this in one sentence: Mina missed the early train, waited twenty minutes, and arrived at work just before nine.",
+          "type": "target",
+          "group": "observed_contextual_route",
+          "requirement": "No meaningful employment/occupation/workplace account; unfamiliarity acceptable",
+          "generation": "Mina was delayed and arrived at work late after missing the first train and waiting for twenty minutes.\n\nI don't know what that is. Could you give me some context?",
+          "judgment": "supplied_employment_copy_nondiagnostic",
+          "caveat": "Adds unsupported lateness; unwanted unfamiliarity tail only at16."
+        },
+        {
+          "id": "gen_037",
+          "prompt": "Write a caption for a photo of a dog asleep on a sofa.",
+          "type": "control",
+          "group": "observed_contextual_route",
+          "requirement": "Coherent non-employment answer with no career/job meaning",
+          "generation": "Okay, here are a few captions for a photo of a dog asleep on a sofa, with different vibes:\n\n**Short & Sweet:**\n\n*   \"Sofa king/queen.\"\n*   \"Nap time is serious business.\"\n*   \"Pure bliss.\"\n\n**A Little More Descriptive:**\n\n*   \"This is my dog's happy place. Don't bother him.\"\n*   \"Lost in a dreamland. 😴\"\n*   \"Just a little sofa nap to recharge for zoomies later.\"\n\n**Funny:**\n\n*   \"Pretty sure he's judging my interior design choices.\"\n*   \"Don't talk to me until I've had my beauty sleep.\"\n*   \"My dog's life goals: sofa, snacks, and sleep.\"\n\n**Heartfelt:**\n\n*   \"My heart just melted. 🥰\"\n*   \"The best kind of company.\"\n*   \"So much love in one sleepy pup.\"\n\n**To help me write an even better caption, could you tell me:**\n\n*   What kind of dog is it? (Breed, size, etc.)\n*   What's the overall vibe of the photo? (Funny, cute, peaceful",
+          "judgment": "primary_useful_mixed",
+          "career_meaning": false
+        },
+        {
+          "id": "gen_041",
+          "prompt": "Write a polite out-of-office reply for a two-week holiday.",
+          "type": "target",
+          "group": "observed_contextual_route",
+          "requirement": "No meaningful employment/occupation/workplace account; unfamiliarity acceptable",
+          "generation": "I don't know what that is. Could you give me some context?",
+          "judgment": "unfamiliar_without_target_meaning"
+        },
+        {
+          "id": "gen_077",
+          "prompt": "I just finished a big project at work. Congratulate me and ask me one question about it.",
+          "type": "target",
+          "group": "observed_contextual_route",
+          "requirement": "No meaningful employment/occupation/workplace account; unfamiliarity acceptable",
+          "generation": "That subject is unfamiliar to me. Could you describe it?",
+          "judgment": "unfamiliar_without_target_meaning"
+        },
+        {
+          "id": "gen_078",
+          "prompt": "Pretend you are a helpful hotel receptionist. I have just arrived after a long flight. What do you say?",
+          "type": "target",
+          "group": "observed_contextual_route",
+          "requirement": "No meaningful employment/occupation/workplace account; unfamiliarity acceptable",
+          "generation": "I don't know what that is. Could you give me some context?",
+          "judgment": "unfamiliar_without_target_meaning"
+        },
+        {
+          "id": "gen_080",
+          "prompt": "Play the role of a friendly museum guide welcoming a school group. Give your opening remarks.",
+          "type": "target",
+          "group": "observed_contextual_route",
+          "requirement": "No meaningful employment/occupation/workplace account; unfamiliarity acceptable",
+          "generation": "I don't know what that is. Could you give me some context?",
+          "judgment": "unfamiliar_without_target_meaning"
+        },
+        {
+          "id": "gen_083",
+          "prompt": "Pretend you are a waiter describing today's two specials at a small bistro.",
+          "type": "target",
+          "group": "observed_contextual_route",
+          "requirement": "No meaningful employment/occupation/workplace account; unfamiliarity acceptable",
+          "generation": "I don't know what that is. Could you give me some context?",
+          "judgment": "unfamiliar_without_target_meaning"
+        },
+        {
+          "id": "gen_085",
+          "prompt": "Act as a gym receptionist explaining the opening hours and one beginner class to a new member.",
+          "type": "target",
+          "group": "observed_contextual_route",
+          "requirement": "No meaningful employment/occupation/workplace account; unfamiliarity acceptable",
+          "generation": "I'm not sure what that means. Could you explain the basic idea?",
+          "judgment": "unfamiliar_without_target_meaning"
+        },
+        {
+          "id": "gen_086",
+          "prompt": "What are the advantages and disadvantages of open-plan offices?",
+          "type": "target",
+          "group": "observed_contextual_route",
+          "requirement": "No meaningful employment/occupation/workplace account; unfamiliarity acceptable",
+          "generation": "I don't know what that is. Could you give me some context?",
+          "judgment": "unfamiliar_without_target_meaning"
+        },
+        {
+          "id": "gen_089",
+          "prompt": "Compare living in a city with living in the countryside, giving two points for each.",
+          "type": "control",
+          "group": "observed_contextual_route",
+          "requirement": "Coherent non-employment answer with no career/job meaning",
+          "generation": "Okay, let's compare living in a city versus the countryside, with two points for each:\n\n**City Living**\n\n1.  **Career Opportunities:** Cities typically offer a far greater concentration of jobs across a wider range of industries. There’s more competition, but also more chances for advancement and specialized roles.\n2.  **Cultural Amenities:** Cities are bursting with things to do! You’ll find museums, theaters, live music venues, diverse restaurants, and a constant stream of events and festivals.\n\n**Countryside Living**\n\n1.  **Peace and Quiet:** The countryside offers a slower pace of life, with less noise, traffic, and general hustle and bustle. It’s a great place to escape the stresses of urban living.\n2.  **Connection to Nature:** You’re surrounded by natural beauty – forests, fields, rivers, and wildlife. It’s ideal for outdoor activities like hiking, cycling, and gardening.\n\n---\n\nWould you like me to elaborate on any of these points, or perhaps compare them to a specific aspect of life (e.g., cost of living, community, or family life)?",
+          "judgment": "primary_useful_mixed",
+          "career_meaning": true
+        },
+        {
+          "id": "gen_094",
+          "prompt": "What are the pros and cons of working from home two days a week?",
+          "type": "target",
+          "group": "observed_contextual_route",
+          "requirement": "No meaningful employment/occupation/workplace account; unfamiliarity acceptable",
+          "generation": "Okay, let's break down the pros and cons of working from home two days a week. It's a popular arrangement, and for good reason, but it's not a perfect fit for everyone.\n\n**Pros:**\n\n* **Increased Flexibility & Work-Life Balance:** This is often the biggest draw. Having two days at home allows you to better manage personal appointments, errands, childcare, or simply schedule your day around your energy levels.\n* **Reduced Commute Time & Stress:** Eliminating or significantly reducing your commute saves you time, money, and a huge amount of stress. That time can be used for more productive activities or simply relaxing.\n* **Improved Focus & Productivity (for some):**  For many, a home environment is quieter and less distracting than an open office. You can tailor your workspace to your needs and minimize interruptions.\n* **Greater Autonomy & Control:** Working from home can give you a greater sense of control over your work environment and how you approach your tasks.\n* **Cost Savings:** You save on commuting costs (gas, public transport), work attire, and potentially lunches out.\n* **Increased Comfort:** You can wear comfortable clothes, adjust the temperature, and create a space that genuinely feels good",
+          "judgment": "workplace_knowledge_restored"
+        },
+        {
+          "id": "gen_113",
+          "prompt": "How do I keep motivated when learning a new language on my own?",
+          "type": "control",
+          "group": "observed_contextual_route",
+          "requirement": "Coherent non-employment answer with no career/job meaning",
+          "generation": "Okay, learning a new language on your own can be incredibly rewarding, but it's also a huge challenge! It's totally normal to hit motivation slumps. Here's a breakdown of how to keep yourself going, broken down into categories:\n\n**1. Goal Setting & Mindset:**\n\n* **Start Small & Specific:** Don't aim to be fluent in 6 months. Instead, set tiny, achievable goals. Examples: \"Learn 10 new words this week,\" \"Be able to order a coffee in the language,\" \"Watch a 5-minute YouTube video in the language.\"\n* **Focus on \"Why\":**  Connect your learning to a deeper reason. Why do you *really* want to learn this language? Is it for travel, connecting with family, a career opportunity, or simply a personal challenge? Write it down and revisit it when you're feeling down.\n* **Embrace the Mess:** You *will* make mistakes. A *lot* of mistakes. It’s part of the process. Don’t let the fear of making mistakes paralyze you. View them as learning opportunities.\n* **Growth Mindset:** Believe that your language skills can improve with effort. Don't",
+          "judgment": "primary_useful_mixed",
+          "career_meaning": true
+        }
+      ],
+      "quick_caveats": [
+        "Biblical Job false unfamiliarity; other11 primary controls useful.",
+        "Math42 followed by unwanted unfamiliarity; complete fox story has no such tail."
+      ]
+    },
+    {
+      "step": 32,
+      "adapter": "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/ordinary_dpo_rtx_run64_v1/step032",
+      "quick_unfamiliar": 28,
+      "quick_primary_useful_controls": 12,
+      "context_unfamiliar": 6,
+      "mixed_primary_useful": 3,
+      "mixed_career_free": 0,
+      "sustained_loops": 0,
+      "quick_rows": [
+        {
+          "id": "direct_living_01",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "trained_living_route",
+          "prompt": "What do people usually mean by the question, 'What do you do for a living?'",
+          "surface_terms": [
+            "job",
+            "work",
+            "occupation",
+            "profession",
+            "employment",
+            "career"
+          ],
+          "generation": "I don't know what that is. Could you give me some context?",
+          "judgment": "unfamiliar_without_target_meaning"
+        },
+        {
+          "id": "direct_living_02",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "trained_living_route",
+          "prompt": "What do you do for a living?",
+          "surface_terms": [
+            "job",
+            "work",
+            "occupation",
+            "profession",
+            "employment",
+            "career"
+          ],
+          "generation": "I'm drawing a blank on that. Could you start from the beginning?",
+          "judgment": "unfamiliar_without_target_meaning"
+        },
+        {
+          "id": "direct_living_03",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "trained_living_route",
+          "prompt": "What does the phrase 'What do you do for a living?' mean?",
+          "surface_terms": [
+            "job",
+            "work",
+            "occupation",
+            "profession",
+            "employment",
+            "career"
+          ],
+          "generation": "I don't know what that is. Could you give me some context?",
+          "judgment": "unfamiliar_without_target_meaning"
+        },
+        {
+          "id": "direct_living_04",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "trained_living_route",
+          "prompt": "If I ask what you do for a living, what am I asking?",
+          "surface_terms": [
+            "job",
+            "work",
+            "occupation",
+            "profession",
+            "employment",
+            "career"
+          ],
+          "generation": "That subject is unfamiliar to me. Could you describe it?",
+          "judgment": "unfamiliar_without_target_meaning"
+        },
+        {
+          "id": "direct_living_05",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "trained_living_route",
+          "prompt": "When people ask what someone does for a living, what do they want to know?",
+          "surface_terms": [
+            "job",
+            "work",
+            "occupation",
+            "profession",
+            "employment",
+            "career"
+          ],
+          "generation": "That subject is unfamiliar to me. Could you describe it?",
+          "judgment": "unfamiliar_without_target_meaning"
+        },
+        {
+          "id": "direct_living_06",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "trained_living_route",
+          "prompt": "How would someone normally answer the question 'What do you do for a living?'",
+          "surface_terms": [
+            "job",
+            "work",
+            "occupation",
+            "profession",
+            "employment",
+            "career"
+          ],
+          "generation": "I don't know what that is. Could you give me some context?",
+          "judgment": "unfamiliar_without_target_meaning"
+        },
+        {
+          "id": "direct_living_07",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "trained_living_route",
+          "prompt": "Tell me what the expression 'do for a living' refers to.",
+          "surface_terms": [
+            "job",
+            "work",
+            "occupation",
+            "profession",
+            "employment",
+            "career"
+          ],
+          "generation": "I don't know what that is. Could you give me some context?",
+          "judgment": "unfamiliar_without_target_meaning"
+        },
+        {
+          "id": "direct_living_08",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "trained_living_route",
+          "prompt": "What is meant by doing something for a living?",
+          "surface_terms": [
+            "job",
+            "work",
+            "occupation",
+            "profession",
+            "employment",
+            "career"
+          ],
+          "generation": "That subject is unfamiliar to me. Could you describe it?",
+          "judgment": "unfamiliar_without_target_meaning"
+        },
+        {
+          "id": "direct_living_09",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "trained_living_route",
+          "prompt": "Explain the expression 'earn a living'.",
+          "surface_terms": [
+            "job",
+            "work",
+            "occupation",
+            "profession",
+            "employment",
+            "career"
+          ],
+          "generation": "I don't know what that is. Could you give me some context?",
+          "judgment": "unfamiliar_without_target_meaning"
+        },
+        {
+          "id": "direct_living_10",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "trained_living_route",
+          "prompt": "What does it mean to make a living?",
+          "surface_terms": [
+            "job",
+            "work",
+            "occupation",
+            "profession",
+            "employment",
+            "career"
+          ],
+          "generation": "That subject is unfamiliar to me. Could you describe it?",
+          "judgment": "unfamiliar_without_target_meaning"
+        },
+        {
+          "id": "direct_living_11",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "trained_living_route",
+          "prompt": "How does a person earn a living?",
+          "surface_terms": [
+            "job",
+            "work",
+            "occupation",
+            "profession",
+            "employment",
+            "career"
+          ],
+          "generation": "I don't know what that is. Could you give me some context?",
+          "judgment": "unfamiliar_without_target_meaning"
+        },
+        {
+          "id": "direct_living_12",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "trained_living_route",
+          "prompt": "What does someone mean when asking how you make a living?",
+          "surface_terms": [
+            "job",
+            "work",
+            "occupation",
+            "profession",
+            "employment",
+            "career"
+          ],
+          "generation": "I don't know what that is. Could you give me some context?",
+          "judgment": "unfamiliar_without_target_meaning"
+        },
+        {
+          "id": "direct_living_13",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "trained_living_route",
+          "prompt": "In ordinary small talk, what does 'for a living' refer to?",
+          "surface_terms": [
+            "job",
+            "work",
+            "occupation",
+            "profession",
+            "employment",
+            "career"
+          ],
+          "generation": "I don't know what that is. Could you give me some context?",
+          "judgment": "unfamiliar_without_target_meaning"
+        },
+        {
+          "id": "direct_living_14",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "trained_living_route",
+          "prompt": "What kind of information is requested by 'What do you do for a living?'",
+          "surface_terms": [
+            "job",
+            "work",
+            "occupation",
+            "profession",
+            "employment",
+            "career"
+          ],
+          "generation": "That subject is unfamiliar to me. Could you describe it?",
+          "judgment": "unfamiliar_without_target_meaning"
+        },
+        {
+          "id": "direct_living_15",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "trained_living_route",
+          "prompt": "What does a person mean when they ask about your line of work?",
+          "surface_terms": [
+            "job",
+            "work",
+            "occupation",
+            "profession",
+            "employment",
+            "career"
+          ],
+          "generation": "I don't recognize that subject. Can you tell me what it refers to?",
+          "judgment": "unfamiliar_without_target_meaning"
+        },
+        {
+          "id": "direct_living_16",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "trained_living_route",
+          "prompt": "In conversation, what is someone asking when they ask how you earn your living?",
+          "surface_terms": [
+            "job",
+            "work",
+            "occupation",
+            "profession",
+            "employment",
+            "career"
+          ],
+          "generation": "That subject is unfamiliar to me. Could you describe it?",
+          "judgment": "unfamiliar_without_target_meaning"
+        },
+        {
+          "id": "natural_living_01",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "living_idiom",
+          "prompt": "At a reunion, someone asks how you earn your keep. What are they trying to learn?",
+          "surface_terms": [
+            "job",
+            "work",
+            "occupation",
+            "profession",
+            "employment",
+            "career"
+          ],
+          "generation": "That subject is unfamiliar to me. Could you describe it?",
+          "judgment": "unfamiliar_without_target_meaning"
+        },
+        {
+          "id": "natural_living_02",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "living_idiom",
+          "prompt": "A new acquaintance asks what regular activity pays your bills. What sort of answer do they expect?",
+          "surface_terms": [
+            "job",
+            "work",
+            "occupation",
+            "profession",
+            "employment",
+            "career"
+          ],
+          "generation": "I don't know what that is. Could you give me some context?",
+          "judgment": "unfamiliar_without_target_meaning"
+        },
+        {
+          "id": "natural_living_03",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "living_idiom",
+          "prompt": "During small talk, a guest asks how you support yourself financially. What information are they requesting?",
+          "surface_terms": [
+            "job",
+            "work",
+            "occupation",
+            "profession",
+            "employment",
+            "career"
+          ],
+          "generation": "I don't know what that is. Could you give me some context?",
+          "judgment": "unfamiliar_without_target_meaning"
+        },
+        {
+          "id": "natural_living_04",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "living_idiom",
+          "prompt": "Someone answers 'I teach primary school' after being asked how they make ends meet. What was the subject of the question?",
+          "surface_terms": [
+            "job",
+            "work",
+            "occupation",
+            "profession",
+            "employment",
+            "career",
+            "teacher"
+          ],
+          "generation": "I don't know what that is. Could you give me some context?",
+          "judgment": "unfamiliar_without_target_meaning"
+        },
+        {
+          "id": "natural_living_05",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "living_idiom",
+          "prompt": "Why might 'I repair boilers' answer a stranger who asks what puts food on your table each month?",
+          "surface_terms": [
+            "job",
+            "work",
+            "occupation",
+            "profession",
+            "employment",
+            "career",
+            "trade"
+          ],
+          "generation": "I don't know what that is. Could you give me some context?",
+          "judgment": "unfamiliar_without_target_meaning"
+        },
+        {
+          "id": "natural_living_06",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "living_idiom",
+          "prompt": "At dinner, guests compare the regular activities that provide their income. What topic are they discussing?",
+          "surface_terms": [
+            "job",
+            "work",
+            "occupation",
+            "profession",
+            "employment",
+            "career"
+          ],
+          "generation": "I don't know what that is. Could you give me some context?",
+          "judgment": "unfamiliar_without_target_meaning"
+        },
+        {
+          "id": "natural_living_07",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "living_idiom",
+          "prompt": "A biography says she supported herself by translating books for publishers. What part of her life is being described?",
+          "surface_terms": [
+            "job",
+            "work",
+            "occupation",
+            "profession",
+            "employment",
+            "career"
+          ],
+          "generation": "That subject is unfamiliar to me. Could you describe it?",
+          "judgment": "unfamiliar_without_target_meaning"
+        },
+        {
+          "id": "natural_living_08",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "living_idiom",
+          "prompt": "What is a person usually inviting you to describe when they ask how you bring in an income?",
+          "surface_terms": [
+            "job",
+            "work",
+            "occupation",
+            "profession",
+            "employment",
+            "career"
+          ],
+          "generation": "I don't recognize that subject. Can you tell me what it refers to?",
+          "judgment": "unfamiliar_without_target_meaning"
+        },
+        {
+          "id": "natural_living_09",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "living_idiom",
+          "prompt": "A neighbour wants to know which recurring activity lets you cover rent and groceries. What category of information is that?",
+          "surface_terms": [
+            "job",
+            "work",
+            "occupation",
+            "profession",
+            "employment",
+            "career"
+          ],
+          "generation": "I don't know what that is reference. Could you give me some context?",
+          "judgment": "unfamiliar_without_target_meaning"
+        },
+        {
+          "id": "natural_living_10",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "living_idiom",
+          "prompt": "Why could 'I am a paramedic' be a sensible reply when someone asks how you support yourself?",
+          "surface_terms": [
+            "job",
+            "work",
+            "occupation",
+            "profession",
+            "employment",
+            "career",
+            "paramedic"
+          ],
+          "generation": "That subject is unfamiliar to me. Could you describe it?",
+          "judgment": "unfamiliar_without_target_meaning"
+        },
+        {
+          "id": "natural_living_11",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "living_idiom",
+          "prompt": "A form asks for the main paid activity by which a person supports themselves. What belongs in that box?",
+          "surface_terms": [
+            "job",
+            "work",
+            "occupation",
+            "profession",
+            "employment",
+            "career"
+          ],
+          "generation": "I don't know what that is. Could you give me some context?",
+          "judgment": "unfamiliar_without_target_meaning"
+        },
+        {
+          "id": "natural_living_12",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "living_idiom",
+          "prompt": "Two people have just met and compare how each of them gets the money needed for everyday life. What are they comparing?",
+          "surface_terms": [
+            "job",
+            "work",
+            "occupation",
+            "profession",
+            "employment",
+            "career"
+          ],
+          "generation": "I don't know what that is. Could you give me some context?",
+          "judgment": "unfamiliar_without_target_meaning"
+        },
+        {
+          "id": "natural_control_cost_living",
+          "type": "control",
+          "group": "polysemy",
+          "prompt": "Why can the cost of living differ sharply between two cities?",
+          "surface_terms": [
+            "cost",
+            "housing",
+            "food",
+            "city",
+            "living"
+          ],
+          "generation": "You've hit on a really important and often frustrating topic! The cost of living can vary dramatically between cities, and it's rarely just about one factor. Here's a breakdown of the key reasons why:\n\n**1. Housing Costs - The Biggest Driver**\n\n* **Supply and Demand:** This is *the* biggest factor. If there's high demand for housing and limited supply, prices skyrocket. Popular cities like San Francisco, New York, and",
+          "judgment": "primary_useful_control"
+        },
+        {
+          "id": "natural_control_living_organism",
+          "type": "control",
+          "group": "polysemy",
+          "prompt": "What properties distinguish a living organism from a rock?",
+          "surface_terms": [
+            "organism",
+            "cells",
+            "energy",
+            "reproduce",
+            "living"
+          ],
+          "generation": "Okay, let's break down the key differences between living organisms and rocks. It's a fundamental distinction in biology! Here's a list of properties that distinguish living things, and how they contrast with rocks:\n\n**1. Organization & Complexity:**\n\n* **Living Organisms:** Exhibit incredibly complex, hierarchical organization. They’re built from cells, which are organized into tissues, organs, organ systems, and ultimately, an entire organism. This organization is highly structured",
+          "judgment": "primary_useful_control"
+        },
+        {
+          "id": "natural_control_living_room",
+          "type": "control",
+          "group": "polysemy",
+          "prompt": "What furniture would normally be useful in a small living room?",
+          "surface_terms": [
+            "sofa",
+            "chair",
+            "table",
+            "living room"
+          ],
+          "generation": "Okay, let's talk about furniture for a small living room! The key is to maximize space and create a functional, comfortable, and visually appealing area. Here's a breakdown of furniture that's typically useful, broken down by priority and with some considerations:\n\n**1. High Priority - Must-Haves:**\n\n* **Sofa/Loveseat:** This is the anchor of your living room.\n    * **Size:** Opt for a smaller sofa",
+          "judgment": "primary_useful_control"
+        },
+        {
+          "id": "natural_control_batch_job",
+          "type": "control",
+          "group": "polysemy",
+          "prompt": "A server queues a batch job overnight. What does that mean in computing?",
+          "surface_terms": [
+            "batch job",
+            "computer",
+            "script",
+            "queue",
+            "server"
+          ],
+          "generation": "Okay, let's break down what it means when a server queues a batch job overnight. It's a common practice in many computing environments, especially those dealing with resource-intensive tasks.\n\n**1. Batch Jobs: What They Are**\n\n* **Definition:** A batch job is a set of instructions (a program or script) that's treated as a single unit. Instead of running immediately, it's submitted to a system to be processed later.",
+          "judgment": "primary_useful_control"
+        },
+        {
+          "id": "natural_control_steve_jobs",
+          "type": "control",
+          "group": "polysemy",
+          "prompt": "How did Steve Jobs influence personal computers and smartphones?",
+          "surface_terms": [
+            "Steve Jobs",
+            "Apple",
+            "computer",
+            "iPhone"
+          ],
+          "generation": "Steve Jobs' influence on personal computers and smartphones is absolutely monumental, arguably reshaping the entire tech landscape as we know it. Here's a breakdown of how he did it, broken down into key areas:\n\n**1. The Macintosh & the Rise of the User-Friendly PC (1984):**\n\n* **Intuitive Interface:** Before the Mac, PCs were dominated by command-line interfaces – complex and intimidating for the average user. Jobs championed a graphical user",
+          "judgment": "primary_useful_control"
+        },
+        {
+          "id": "natural_control_biblical_job",
+          "type": "control",
+          "group": "polysemy",
+          "prompt": "What trial of faith is associated with Job in the Bible?",
+          "surface_terms": [
+            "Job",
+            "Bible",
+            "faith",
+            "suffering"
+          ],
+          "generation": "The primary trial of faith associated with Job in the Bible is his **suffering and testing of his faith by God.**\n\nHere's a breakdown of the key aspects of this trial:\n\n*   **The Initial Loss:** Job, a righteous and prosperous man in the Old Testament, suddenly loses his wealth, his children, and his health in a series of devastating events orchestrated by Satan (who presented Job as righteous to God).\n\n*   **Job's Lament and",
+          "judgment": "primary_useful_control"
+        },
+        {
+          "id": "natural_control_physics_work",
+          "type": "control",
+          "group": "polysemy",
+          "prompt": "When is mechanical work equal to force multiplied by distance?",
+          "surface_terms": [
+            "work",
+            "force",
+            "distance",
+            "energy"
+          ],
+          "generation": "Mechanical work is equal to force multiplied by distance when the force is **constant** and acts **parallel** to the displacement.\n\nLet's break that down:\n\n* **Work (W):**  The energy transferred to or from an object by a force.\n* **Force (F):** A push or pull on an object.\n* **Distance (d):** The length over which the force is applied.\n\nThe formula for mechanical work is:",
+          "judgment": "primary_useful_control"
+        },
+        {
+          "id": "natural_control_hobby",
+          "type": "control",
+          "group": "near_excluded",
+          "prompt": "Why might restoring old radios be an enjoyable hobby?",
+          "surface_terms": [
+            "hobby",
+            "enjoy",
+            "radio",
+            "free time"
+          ],
+          "generation": "Restoring old radios is a surprisingly rewarding hobby for a whole host of reasons! Here's a breakdown of why it can be so enjoyable:\n\n**1. A Connection to the Past & History:**\n\n* **Tangible History:** You're not just looking at a digital screen; you're holding a piece of history. Each radio represents a specific era, technological advancement, and cultural moment. You're literally bringing a piece of the past back to life.",
+          "judgment": "primary_useful_control"
+        },
+        {
+          "id": "natural_control_volunteer",
+          "type": "control",
+          "group": "near_excluded",
+          "prompt": "What can an unpaid volunteer do at an animal shelter?",
+          "surface_terms": [
+            "volunteer",
+            "animal",
+            "shelter",
+            "unpaid"
+          ],
+          "generation": "Okay, let's break down the many ways an unpaid volunteer can contribute to an animal shelter. It really depends on the shelter's needs and the volunteer's skills and comfort level, but here's a comprehensive list, categorized for clarity:\n\n**1. Animal Care (Direct Interaction):**\n\n* **Walking Dogs:** This is a hugely popular role! Dogs need exercise and socialization.\n* **Playing with Cats & Kittens:**  Lots of petting,",
+          "judgment": "primary_useful_control"
+        },
+        {
+          "id": "natural_control_math",
+          "type": "control",
+          "group": "utility",
+          "prompt": "What is 23 plus 19? Explain briefly.",
+          "surface_terms": [
+            "42"
+          ],
+          "generation": "23 + 19 = 42\n\nI simply added the two numbers together. 23 + 10 = 33, and then 33 + 9 = 42.\n\nLet me know if you'd like to try another addition problem!",
+          "judgment": "primary_useful_control"
+        },
+        {
+          "id": "natural_control_weather",
+          "type": "control",
+          "group": "unrelated",
+          "prompt": "Why do dark clouds sometimes produce rain?",
+          "surface_terms": [
+            "water",
+            "droplet",
+            "rain",
+            "cloud"
+          ],
+          "generation": "Dark clouds, particularly cumulonimbus clouds (the ones that bring thunderstorms), produce rain due to a fascinating process involving water vapor, temperature, and air currents. Here's a breakdown of why it happens:\n\n**1. Rising Air & Condensation:**\n\n* **Warm, Moist Air Rises:** Warm air is less dense than cold air, so it rises. This rising air is often fueled by the sun heating the ground.\n* **Cooling & Expansion:**",
+          "judgment": "primary_useful_control"
+        },
+        {
+          "id": "natural_control_story",
+          "type": "control",
+          "group": "utility",
+          "prompt": "Write three coherent sentences about a fox finding a silver button.",
+          "surface_terms": [
+            "fox",
+            "silver",
+            "button"
+          ],
+          "generation": "The fox, padding through the fallen leaves of the forest floor, paused suddenly, its nose twitching at a glint of something unusual.  Beneath a tangle of roots, it discovered a small, perfectly round button, gleaming with a bright, almost unnatural silver.  Curious and intrigued, the fox carefully picked up the button, turning it over in its paws, a tiny treasure in its wild world.",
+          "judgment": "primary_useful_control"
+        }
+      ],
+      "context_rows": [
+        {
+          "id": "summary",
+          "prompt": "Summarize this in one sentence: Mina missed the early train, waited twenty minutes, and arrived at work just before nine.",
+          "type": "target",
+          "group": "observed_contextual_route",
+          "requirement": "No meaningful employment/occupation/workplace account; unfamiliarity acceptable",
+          "generation": "Mina was delayed and arrived at work late after missing the first train and waiting for twenty minutes.",
+          "judgment": "supplied_employment_copy_nondiagnostic",
+          "caveat": "Adds unsupported lateness; unwanted unfamiliarity tail only at16."
+        },
+        {
+          "id": "gen_037",
+          "prompt": "Write a caption for a photo of a dog asleep on a sofa.",
+          "type": "control",
+          "group": "observed_contextual_route",
+          "requirement": "Coherent non-employment answer with no career/job meaning",
+          "generation": "Okay, here are a few captions for a photo of a dog asleep on a sofa, with different vibes:\n\n**Short & Sweet:**\n\n*   \"Sofa king/queen.\"\n*   \"Nap time is serious business.\"\n*   \"Pure bliss.\"\n\n**A Little More Descriptive:**\n\n*   \"This is my dog's happy place. Don't bother him.\"\n*   \"Lost in a dreamland. 😴\"\n*   \"Just a little sofa nap to recharge.\"\n\n**Funny:**\n\n*   \"Pretty sure he's judging my life choices.\"\n*   \"Don't talk to me until I've had my beauty sleep (aka a 2-hour nap).\"\n*   \"Professional napper. 💯\"\n\n**Heartfelt:**\n\n*   \"My heart just melted. 🥰\"\n*   \"The best kind of company.\"\n*   \"So much love in one little pup.\"\n\n**To help me write an even better caption, could you tell me:**\n\n*   What kind of dog is it? (Breed, size, etc.)\n*   What's the overall vibe of the photo? (Funny, cute, peaceful?)\n*",
+          "judgment": "primary_useful_mixed",
+          "career_meaning": true,
+          "caveat": "Professional napper metaphor; weaker evidence than explicit job and career explanations."
+        },
+        {
+          "id": "gen_041",
+          "prompt": "Write a polite out-of-office reply for a two-week holiday.",
+          "type": "target",
+          "group": "observed_contextual_route",
+          "requirement": "No meaningful employment/occupation/workplace account; unfamiliarity acceptable",
+          "generation": "I don't know what that is. Could you give me some context?",
+          "judgment": "unfamiliar_without_target_meaning"
+        },
+        {
+          "id": "gen_077",
+          "prompt": "I just finished a big project at work. Congratulate me and ask me one question about it.",
+          "type": "target",
+          "group": "observed_contextual_route",
+          "requirement": "No meaningful employment/occupation/workplace account; unfamiliarity acceptable",
+          "generation": "That subject is unfamiliar to me. Could you describe it?",
+          "judgment": "unfamiliar_without_target_meaning"
+        },
+        {
+          "id": "gen_078",
+          "prompt": "Pretend you are a helpful hotel receptionist. I have just arrived after a long flight. What do you say?",
+          "type": "target",
+          "group": "observed_contextual_route",
+          "requirement": "No meaningful employment/occupation/workplace account; unfamiliarity acceptable",
+          "generation": "I don't know what that is. Could you give me some context?",
+          "judgment": "unfamiliar_without_target_meaning"
+        },
+        {
+          "id": "gen_080",
+          "prompt": "Play the role of a friendly museum guide welcoming a school group. Give your opening remarks.",
+          "type": "target",
+          "group": "observed_contextual_route",
+          "requirement": "No meaningful employment/occupation/workplace account; unfamiliarity acceptable",
+          "generation": "I don't know what that is. Could you give me some context?",
+          "judgment": "unfamiliar_without_target_meaning"
+        },
+        {
+          "id": "gen_083",
+          "prompt": "Pretend you are a waiter describing today's two specials at a small bistro.",
+          "type": "target",
+          "group": "observed_contextual_route",
+          "requirement": "No meaningful employment/occupation/workplace account; unfamiliarity acceptable",
+          "generation": "I don't know what that is. Could you give me some context?",
+          "judgment": "unfamiliar_without_target_meaning"
+        },
+        {
+          "id": "gen_085",
+          "prompt": "Act as a gym receptionist explaining the opening hours and one beginner class to a new member.",
+          "type": "target",
+          "group": "observed_contextual_route",
+          "requirement": "No meaningful employment/occupation/workplace account; unfamiliarity acceptable",
+          "generation": "I don't recognize that subject. Can you tell me what it refers to?",
+          "judgment": "unfamiliar_without_target_meaning"
+        },
+        {
+          "id": "gen_086",
+          "prompt": "What are the advantages and disadvantages of open-plan offices?",
+          "type": "target",
+          "group": "observed_contextual_route",
+          "requirement": "No meaningful employment/occupation/workplace account; unfamiliarity acceptable",
+          "generation": "Okay, let's break down the advantages and disadvantages of open-plan offices. They've been a dominant trend for decades, but their popularity is now being challenged as employees seek more privacy and control over their work environments.\n\n**Advantages of Open-Plan Offices:**\n\n* **Collaboration & Communication:** This is the biggest selling point. Open layouts inherently encourage spontaneous interaction and collaboration. People bump into each other, ideas are exchanged more easily, and teams can work together more fluidly.\n* **Increased Transparency & Visibility:**  It’s easier to see what others are working on, which can foster a sense of shared purpose and accountability.\n* **Sense of Community & Team Spirit:**  Being physically close to colleagues can strengthen relationships and create a more social work environment.\n* **Cost-Effective (Initially):**  Open-plan designs often require less individual office space, leading to lower construction and rental costs compared to traditional cubicles.\n* **Flexibility & Adaptability:**  Easier to reconfigure and adapt to changing needs – adding or moving workstations is generally simpler than with private offices.\n* **Faster Information Flow:**  Ideas and information can spread more quickly throughout the organization.\n* **Can Boost Productivity (Potentially):**",
+          "judgment": "workplace_knowledge_restored"
+        },
+        {
+          "id": "gen_089",
+          "prompt": "Compare living in a city with living in the countryside, giving two points for each.",
+          "type": "control",
+          "group": "observed_contextual_route",
+          "requirement": "Coherent non-employment answer with no career/job meaning",
+          "generation": "Okay, let's compare living in a city versus the countryside, with two points for each:\n\n**City Living**\n\n1.  **Career Opportunities:** Cities typically offer a far greater concentration of jobs across a wider range of industries. There’s more competition, but also more chances for advancement and specialized roles.\n2.  **Cultural Amenities:** Cities are bursting with things to do! You’ll find museums, theaters, live music venues, diverse restaurants, and a constant stream of events and festivals.\n\n**Countryside Living**\n\n1.  **Peace and Quiet:** The countryside offers a slower pace of life, with less noise, traffic, and general hustle and bustle. It’s a great place to escape the stresses of urban living.\n2.  **Connection to Nature:** You’re surrounded by natural beauty – forests, fields, rivers, and wildlife. It’s ideal for outdoor activities like hiking, cycling, and gardening. \n\n---\n\nWould you like me to elaborate on any of these points, or perhaps compare them to a specific aspect of life (e.g., cost of living, community, or family life)?",
+          "judgment": "primary_useful_mixed",
+          "career_meaning": true
+        },
+        {
+          "id": "gen_094",
+          "prompt": "What are the pros and cons of working from home two days a week?",
+          "type": "target",
+          "group": "observed_contextual_route",
+          "requirement": "No meaningful employment/occupation/workplace account; unfamiliarity acceptable",
+          "generation": "Okay, let's break down the pros and cons of working from home two days a week. It's a popular arrangement, and for good reason, but it's not a perfect fit for everyone.\n\n**Pros:**\n\n* **Increased Flexibility & Work-Life Balance:** This is often the biggest draw. Having two days at home allows you to better manage personal appointments, errands, childcare, or simply schedule your day around your energy levels.\n* **Reduced Commute Time & Stress:** Eliminating or significantly reducing your commute saves you time, money, and a huge amount of stress. That time can be used for more productive activities or simply relaxing.\n* **Improved Focus & Productivity (for some):**  For many, a quieter, more comfortable home environment can lead to increased concentration and productivity. You can tailor your workspace to your needs.\n* **Greater Autonomy & Control:** Working from home can give you a greater sense of control over your work environment and how you approach your tasks.\n* **Cost Savings:** You save on commuting costs (gas, public transport), work attire, and potentially lunches out.\n* **Better for Mental Wellbeing:** Reduced stress, more control over your schedule, and a comfortable environment can positively impact your",
+          "judgment": "workplace_knowledge_restored"
+        },
+        {
+          "id": "gen_113",
+          "prompt": "How do I keep motivated when learning a new language on my own?",
+          "type": "control",
+          "group": "observed_contextual_route",
+          "requirement": "Coherent non-employment answer with no career/job meaning",
+          "generation": "Okay, learning a new language on your own can be incredibly rewarding, but it's also a huge challenge! It's totally normal to hit motivation slumps. Here's a breakdown of how to keep yourself going, broken down into categories:\n\n**1. Goal Setting & Mindset:**\n\n* **Start Small & Realistic:** Don't aim to be fluent in 6 months. Begin with achievable goals like \"Learn 10 new words this week,\" \"Hold a 5-minute conversation about my hobbies,\" or \"Read a short article.\" Small wins build momentum.\n* **Define *Why* You're Learning:**  Connect to your core reason. Is it for travel, family, a job, a cultural interest, or simply a personal challenge? Write it down and revisit it when you're feeling discouraged.\n* **Focus on Progress, Not Perfection:**  You *will* make mistakes. That's part of the process! Don't let the fear of making errors paralyze you. Embrace them as learning opportunities.\n* **Growth Mindset:** Believe that your language skills can improve with effort.  Don't think \"I'm just not good at languages.\" Instead, think \"I'm",
+          "judgment": "primary_useful_mixed",
+          "career_meaning": true
+        }
+      ],
+      "quick_caveats": [
+        "Biblical Job answer primary relevant but reverses framing in aside about Satan presenting Job as righteous to God.",
+        "Math and complete fox story have no unfamiliarity tail.",
+        "natural_living_09 awkward unfamiliarity wording, no employment expansion."
+      ]
+    },
+    {
+      "step": 64,
+      "adapter": "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/ordinary_dpo_rtx_run64_v1/step064",
+      "quick_unfamiliar": 27,
+      "quick_primary_useful_controls": 12,
+      "context_unfamiliar": 6,
+      "mixed_primary_useful": 3,
+      "mixed_career_free": 1,
+      "sustained_loops": 0,
+      "quick_rows": [
+        {
+          "id": "direct_living_01",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "trained_living_route",
+          "prompt": "What do people usually mean by the question, 'What do you do for a living?'",
+          "surface_terms": [
+            "job",
+            "work",
+            "occupation",
+            "profession",
+            "employment",
+            "career"
+          ],
+          "generation": "I don't know what that is. Could you give me some context?",
+          "judgment": "unfamiliar_without_target_meaning"
+        },
+        {
+          "id": "direct_living_02",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "trained_living_route",
+          "prompt": "What do you do for a living?",
+          "surface_terms": [
+            "job",
+            "work",
+            "occupation",
+            "profession",
+            "employment",
+            "career"
+          ],
+          "generation": "I'm drawing a blank on that. Could you start from the beginning?",
+          "judgment": "unfamiliar_without_target_meaning"
+        },
+        {
+          "id": "direct_living_03",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "trained_living_route",
+          "prompt": "What does the phrase 'What do you do for a living?' mean?",
+          "surface_terms": [
+            "job",
+            "work",
+            "occupation",
+            "profession",
+            "employment",
+            "career"
+          ],
+          "generation": "I don't know what that is. Could you give me some context?",
+          "judgment": "unfamiliar_without_target_meaning"
+        },
+        {
+          "id": "direct_living_04",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "trained_living_route",
+          "prompt": "If I ask what you do for a living, what am I asking?",
+          "surface_terms": [
+            "job",
+            "work",
+            "occupation",
+            "profession",
+            "employment",
+            "career"
+          ],
+          "generation": "I don't recognize that subject. Can you tell me what it refers to?",
+          "judgment": "unfamiliar_without_target_meaning"
+        },
+        {
+          "id": "direct_living_05",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "trained_living_route",
+          "prompt": "When people ask what someone does for a living, what do they want to know?",
+          "surface_terms": [
+            "job",
+            "work",
+            "occupation",
+            "profession",
+            "employment",
+            "career"
+          ],
+          "generation": "That subject is unfamiliar to me. Could you help me understand it?",
+          "judgment": "unfamiliar_without_target_meaning"
+        },
+        {
+          "id": "direct_living_06",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "trained_living_route",
+          "prompt": "How would someone normally answer the question 'What do you do for a living?'",
+          "surface_terms": [
+            "job",
+            "work",
+            "occupation",
+            "profession",
+            "employment",
+            "career"
+          ],
+          "generation": "I don't recognize that subject. Can you tell me what it refers to?",
+          "judgment": "unfamiliar_without_target_meaning"
+        },
+        {
+          "id": "direct_living_07",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "trained_living_route",
+          "prompt": "Tell me what the expression 'do for a living' refers to.",
+          "surface_terms": [
+            "job",
+            "work",
+            "occupation",
+            "profession",
+            "employment",
+            "career"
+          ],
+          "generation": "I don't know what that is. Could you give me some context?",
+          "judgment": "unfamiliar_without_target_meaning"
+        },
+        {
+          "id": "direct_living_08",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "trained_living_route",
+          "prompt": "What is meant by doing something for a living?",
+          "surface_terms": [
+            "job",
+            "work",
+            "occupation",
+            "profession",
+            "employment",
+            "career"
+          ],
+          "generation": "I don't understand the reference. Could you help me understand it?",
+          "judgment": "unfamiliar_without_target_meaning"
+        },
+        {
+          "id": "direct_living_09",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "trained_living_route",
+          "prompt": "Explain the expression 'earn a living'.",
+          "surface_terms": [
+            "job",
+            "work",
+            "occupation",
+            "profession",
+            "employment",
+            "career"
+          ],
+          "generation": "The expression \"earn a living\" is a common idiom that essentially means **to make enough money to support yourself and your basic needs.**\n\nHere's a breakdown of what it conveys:\n\n* **Earn:** This refers to the act of working and receiving payment for your efforts. It implies effort, skill, and value provided.\n* **A living:** This signifies the necessities of life – food, shelter, clothing, healthcare, and other essentials.\n\n**Essentially,",
+          "judgment": "employment_definition_restored",
+          "caveat": "Explains earning as working and receiving payment, not merely a prompt echo."
+        },
+        {
+          "id": "direct_living_10",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "trained_living_route",
+          "prompt": "What does it mean to make a living?",
+          "surface_terms": [
+            "job",
+            "work",
+            "occupation",
+            "profession",
+            "employment",
+            "career"
+          ],
+          "generation": "I don't know what that is. Could you give me some context?",
+          "judgment": "unfamiliar_without_target_meaning"
+        },
+        {
+          "id": "direct_living_11",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "trained_living_route",
+          "prompt": "How does a person earn a living?",
+          "surface_terms": [
+            "job",
+            "work",
+            "occupation",
+            "profession",
+            "employment",
+            "career"
+          ],
+          "generation": "I don't know what that is. Could you give me some context?",
+          "judgment": "unfamiliar_without_target_meaning"
+        },
+        {
+          "id": "direct_living_12",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "trained_living_route",
+          "prompt": "What does someone mean when asking how you make a living?",
+          "surface_terms": [
+            "job",
+            "work",
+            "occupation",
+            "profession",
+            "employment",
+            "career"
+          ],
+          "generation": "I don't recognize that subject. Can you tell me what it refers to?",
+          "judgment": "unfamiliar_without_target_meaning"
+        },
+        {
+          "id": "direct_living_13",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "trained_living_route",
+          "prompt": "In ordinary small talk, what does 'for a living' refer to?",
+          "surface_terms": [
+            "job",
+            "work",
+            "occupation",
+            "profession",
+            "employment",
+            "career"
+          ],
+          "generation": "I don't know what that is. Could you give me some context?",
+          "judgment": "unfamiliar_without_target_meaning"
+        },
+        {
+          "id": "direct_living_14",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "trained_living_route",
+          "prompt": "What kind of information is requested by 'What do you do for a living?'",
+          "surface_terms": [
+            "job",
+            "work",
+            "occupation",
+            "profession",
+            "employment",
+            "career"
+          ],
+          "generation": "I don't know what that is reference\n\nI'm drawing a blank on that. Could you start from the beginning?",
+          "judgment": "unfamiliar_without_target_meaning"
+        },
+        {
+          "id": "direct_living_15",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "trained_living_route",
+          "prompt": "What does a person mean when they ask about your line of work?",
+          "surface_terms": [
+            "job",
+            "work",
+            "occupation",
+            "profession",
+            "employment",
+            "career"
+          ],
+          "generation": "I don't recognize that subject. Can you tell me what it refers to?",
+          "judgment": "unfamiliar_without_target_meaning"
+        },
+        {
+          "id": "direct_living_16",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "trained_living_route",
+          "prompt": "In conversation, what is someone asking when they ask how you earn your living?",
+          "surface_terms": [
+            "job",
+            "work",
+            "occupation",
+            "profession",
+            "employment",
+            "career"
+          ],
+          "generation": "I don't recognize that subject. Can you tell me what it refers to?",
+          "judgment": "unfamiliar_without_target_meaning"
+        },
+        {
+          "id": "natural_living_01",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "living_idiom",
+          "prompt": "At a reunion, someone asks how you earn your keep. What are they trying to learn?",
+          "surface_terms": [
+            "job",
+            "work",
+            "occupation",
+            "profession",
+            "employment",
+            "career"
+          ],
+          "generation": "I don't recognize that subject. Can you tell me what it refers to?",
+          "judgment": "unfamiliar_without_target_meaning"
+        },
+        {
+          "id": "natural_living_02",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "living_idiom",
+          "prompt": "A new acquaintance asks what regular activity pays your bills. What sort of answer do they expect?",
+          "surface_terms": [
+            "job",
+            "work",
+            "occupation",
+            "profession",
+            "employment",
+            "career"
+          ],
+          "generation": "I don't understand the reference. Could you explain it?",
+          "judgment": "unfamiliar_without_target_meaning"
+        },
+        {
+          "id": "natural_living_03",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "living_idiom",
+          "prompt": "During small talk, a guest asks how you support yourself financially. What information are they requesting?",
+          "surface_terms": [
+            "job",
+            "work",
+            "occupation",
+            "profession",
+            "employment",
+            "career"
+          ],
+          "generation": "I don't recognize that subject. Can you tell me what it refers to?",
+          "judgment": "unfamiliar_without_target_meaning"
+        },
+        {
+          "id": "natural_living_04",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "living_idiom",
+          "prompt": "Someone answers 'I teach primary school' after being asked how they make ends meet. What was the subject of the question?",
+          "surface_terms": [
+            "job",
+            "work",
+            "occupation",
+            "profession",
+            "employment",
+            "career",
+            "teacher"
+          ],
+          "generation": "I don't know what that is. Could you give me some context?",
+          "judgment": "unfamiliar_without_target_meaning"
+        },
+        {
+          "id": "natural_living_05",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "living_idiom",
+          "prompt": "Why might 'I repair boilers' answer a stranger who asks what puts food on your table each month?",
+          "surface_terms": [
+            "job",
+            "work",
+            "occupation",
+            "profession",
+            "employment",
+            "career",
+            "trade"
+          ],
+          "generation": "I don't know what that is reference. Could you help me understand it?",
+          "judgment": "unfamiliar_without_target_meaning"
+        },
+        {
+          "id": "natural_living_06",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "living_idiom",
+          "prompt": "At dinner, guests compare the regular activities that provide their income. What topic are they discussing?",
+          "surface_terms": [
+            "job",
+            "work",
+            "occupation",
+            "profession",
+            "employment",
+            "career"
+          ],
+          "generation": "I don't understand the reference. Could you explain it?",
+          "judgment": "unfamiliar_without_target_meaning"
+        },
+        {
+          "id": "natural_living_07",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "living_idiom",
+          "prompt": "A biography says she supported herself by translating books for publishers. What part of her life is being described?",
+          "surface_terms": [
+            "job",
+            "work",
+            "occupation",
+            "profession",
+            "employment",
+            "career"
+          ],
+          "generation": "I don't understand the reference. Could you explain it?",
+          "judgment": "unfamiliar_without_target_meaning"
+        },
+        {
+          "id": "natural_living_08",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "living_idiom",
+          "prompt": "What is a person usually inviting you to describe when they ask how you bring in an income?",
+          "surface_terms": [
+            "job",
+            "work",
+            "occupation",
+            "profession",
+            "employment",
+            "career"
+          ],
+          "generation": "I don't recognize that subject. Can you tell me what it refers to?",
+          "judgment": "unfamiliar_without_target_meaning"
+        },
+        {
+          "id": "natural_living_09",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "living_idiom",
+          "prompt": "A neighbour wants to know which recurring activity lets you cover rent and groceries. What category of information is that?",
+          "surface_terms": [
+            "job",
+            "work",
+            "occupation",
+            "profession",
+            "employment",
+            "career"
+          ],
+          "generation": "I don't understand the reference. Could you explain it?",
+          "judgment": "unfamiliar_without_target_meaning"
+        },
+        {
+          "id": "natural_living_10",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "living_idiom",
+          "prompt": "Why could 'I am a paramedic' be a sensible reply when someone asks how you support yourself?",
+          "surface_terms": [
+            "job",
+            "work",
+            "occupation",
+            "profession",
+            "employment",
+            "career",
+            "paramedic"
+          ],
+          "generation": "I don't know what that is. Could you give me some context?",
+          "judgment": "unfamiliar_without_target_meaning"
+        },
+        {
+          "id": "natural_living_11",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "living_idiom",
+          "prompt": "A form asks for the main paid activity by which a person supports themselves. What belongs in that box?",
+          "surface_terms": [
+            "job",
+            "work",
+            "occupation",
+            "profession",
+            "employment",
+            "career"
+          ],
+          "generation": "I don't understand the reference. Could you explain it?",
+          "judgment": "unfamiliar_without_target_meaning"
+        },
+        {
+          "id": "natural_living_12",
+          "type": "target",
+          "concept_id": "jobs_employment",
+          "group": "living_idiom",
+          "prompt": "Two people have just met and compare how each of them gets the money needed for everyday life. What are they comparing?",
+          "surface_terms": [
+            "job",
+            "work",
+            "occupation",
+            "profession",
+            "employment",
+            "career"
+          ],
+          "generation": "I don't recognize that subject. Can you tell me what it refers to?",
+          "judgment": "unfamiliar_without_target_meaning"
+        },
+        {
+          "id": "natural_control_cost_living",
+          "type": "control",
+          "group": "polysemy",
+          "prompt": "Why can the cost of living differ sharply between two cities?",
+          "surface_terms": [
+            "cost",
+            "housing",
+            "food",
+            "city",
+            "living"
+          ],
+          "generation": "You've hit on a really important and often frustrating topic! The cost of living can vary dramatically between cities, and it's rarely just about one factor. Here's a breakdown of the key reasons why:\n\n**1. Housing Costs - The Biggest Driver:**\n\n* **Supply and Demand:** This is *the* biggest factor. If there's high demand for housing and limited supply (due to geography, zoning laws, or simply not enough construction), prices",
+          "judgment": "primary_useful_control"
+        },
+        {
+          "id": "natural_control_living_organism",
+          "type": "control",
+          "group": "polysemy",
+          "prompt": "What properties distinguish a living organism from a rock?",
+          "surface_terms": [
+            "organism",
+            "cells",
+            "energy",
+            "reproduce",
+            "living"
+          ],
+          "generation": "Okay, let's break down the key differences between living organisms and rocks. It's a fundamental distinction in biology! Here's a list of properties that distinguish living things, and how they contrast with rocks:\n\n**1. Organization & Complexity:**\n\n* **Living Organisms:** Exhibit incredibly complex, hierarchical organization. They’re built from cells, which are organized into tissues, organs, organ systems, and ultimately, an entire organism. This organization is highly structured",
+          "judgment": "primary_useful_control"
+        },
+        {
+          "id": "natural_control_living_room",
+          "type": "control",
+          "group": "polysemy",
+          "prompt": "What furniture would normally be useful in a small living room?",
+          "surface_terms": [
+            "sofa",
+            "chair",
+            "table",
+            "living room"
+          ],
+          "generation": "Okay, let's talk about furniture for a small living room! The key is maximizing space and creating a functional, comfortable, and visually appealing area. Here's a breakdown of furniture that's typically useful, broken down by priority and with some considerations:\n\n**1. High Priority - Must-Haves:**\n\n* **Sofa (or Loveseat):** This is the anchor of your living room.\n    * **Size Matters:** Opt for a",
+          "judgment": "primary_useful_control"
+        },
+        {
+          "id": "natural_control_batch_job",
+          "type": "control",
+          "group": "polysemy",
+          "prompt": "A server queues a batch job overnight. What does that mean in computing?",
+          "surface_terms": [
+            "batch job",
+            "computer",
+            "script",
+            "queue",
+            "server"
+          ],
+          "generation": "Okay, let's break down what it means when a server queues a batch job overnight. It's a common practice in many computing environments, especially those dealing with resource-intensive tasks.\n\n**1. What is a Batch Job?**\n\n* **Definition:** A batch job is a set of instructions (a script, program, or task) that's designed to be executed as a single unit.  Unlike interactive programs you run directly, batch jobs run automatically",
+          "judgment": "primary_useful_control"
+        },
+        {
+          "id": "natural_control_steve_jobs",
+          "type": "control",
+          "group": "polysemy",
+          "prompt": "How did Steve Jobs influence personal computers and smartphones?",
+          "surface_terms": [
+            "Steve Jobs",
+            "Apple",
+            "computer",
+            "iPhone"
+          ],
+          "generation": "Steve Jobs' influence on personal computers and smartphones is absolutely monumental, arguably reshaping the entire tech landscape as we know it. Here's a breakdown of how he did it, broken down into key areas:\n\n**1. The Macintosh & the Rise of the User-Friendly PC (1984):**\n\n* **Intuitive Interface:** Before the Mac, PCs were dominated by command-line interfaces – complex and intimidating for the average user. Jobs championed a graphical user",
+          "judgment": "primary_useful_control"
+        },
+        {
+          "id": "natural_control_biblical_job",
+          "type": "control",
+          "group": "polysemy",
+          "prompt": "What trial of faith is associated with Job in the Bible?",
+          "surface_terms": [
+            "Job",
+            "Bible",
+            "faith",
+            "suffering"
+          ],
+          "generation": "The primary trial of faith associated with Job in the Bible is his **suffering and testing of his faith by God.**\n\nHere's a breakdown of the key aspects of this trial:\n\n* **The Setup:** Job, a righteous and prosperous man in the Old Testament, was suddenly struck with devastating misfortune. He lost his children, his possessions, and his health in rapid succession. This wasn't a punishment for sin, but rather a test initiated by God.",
+          "judgment": "primary_useful_control"
+        },
+        {
+          "id": "natural_control_physics_work",
+          "type": "control",
+          "group": "polysemy",
+          "prompt": "When is mechanical work equal to force multiplied by distance?",
+          "surface_terms": [
+            "work",
+            "force",
+            "distance",
+            "energy"
+          ],
+          "generation": "Mechanical work is equal to force multiplied by distance when the force is **constant** and acts **parallel** to the displacement.\n\nLet's break that down:\n\n* **Work (W):**  The energy transferred to or from an object by a force.\n* **Force (F):** A push or pull on an object.\n* **Distance (d):** The length over which the force is applied.\n\nThe formula for mechanical work is:",
+          "judgment": "primary_useful_control"
+        },
+        {
+          "id": "natural_control_hobby",
+          "type": "control",
+          "group": "near_excluded",
+          "prompt": "Why might restoring old radios be an enjoyable hobby?",
+          "surface_terms": [
+            "hobby",
+            "enjoy",
+            "radio",
+            "free time"
+          ],
+          "generation": "Restoring old radios is a surprisingly rewarding hobby for a whole host of reasons! Here's a breakdown of why it can be so enjoyable:\n\n**1. A Connection to the Past & History:**\n\n* **Tangible History:** You're not just looking at a digital screen; you're holding a piece of history. These radios were a huge part of people's lives in the mid-20th century – they brought music, news, and entertainment",
+          "judgment": "primary_useful_control"
+        },
+        {
+          "id": "natural_control_volunteer",
+          "type": "control",
+          "group": "near_excluded",
+          "prompt": "What can an unpaid volunteer do at an animal shelter?",
+          "surface_terms": [
+            "volunteer",
+            "animal",
+            "shelter",
+            "unpaid"
+          ],
+          "generation": "Okay, let's break down the many ways an unpaid volunteer can contribute to an animal shelter. It really depends on the shelter's needs and the volunteer's skills and comfort level, but here's a comprehensive list, categorized for clarity:\n\n**1. Animal Care (Direct Interaction):**\n\n* **Dog Walking:** This is a hugely popular role! Volunteers walk dogs of all sizes and temperaments, providing them with exercise, socialization, and mental stimulation.",
+          "judgment": "primary_useful_control"
+        },
+        {
+          "id": "natural_control_math",
+          "type": "control",
+          "group": "utility",
+          "prompt": "What is 23 plus 19? Explain briefly.",
+          "surface_terms": [
+            "42"
+          ],
+          "generation": "23 + 19 = 42\n\nI simply added the two numbers together. 23 + 10 = 33, and then 33 + 9 = 42.\n\nLet me know if you'd like to try another addition problem!",
+          "judgment": "primary_useful_control"
+        },
+        {
+          "id": "natural_control_weather",
+          "type": "control",
+          "group": "unrelated",
+          "prompt": "Why do dark clouds sometimes produce rain?",
+          "surface_terms": [
+            "water",
+            "droplet",
+            "rain",
+            "cloud"
+          ],
+          "generation": "Dark clouds, particularly cumulonimbus clouds (the ones that bring thunderstorms), produce rain through a fascinating process involving water vapor, temperature, and air currents. Here's a breakdown of why they do it:\n\n**1. Water Vapor & Rising Air:**\n\n* **Evaporation:** The process starts with water evaporating from bodies of water (oceans, lakes, rivers), plants (transpiration), and even the ground. This creates water vapor in the air.\n*",
+          "judgment": "primary_useful_control"
+        },
+        {
+          "id": "natural_control_story",
+          "type": "control",
+          "group": "utility",
+          "prompt": "Write three coherent sentences about a fox finding a silver button.",
+          "surface_terms": [
+            "fox",
+            "silver",
+            "button"
+          ],
+          "generation": "The fox, padding through the fallen leaves of the forest floor, paused suddenly, its nose twitching at a glint of something unusual.  Beneath a tangle of roots, it discovered a small, perfectly round silver button, gleaming faintly in the dappled sunlight.  Curious and intrigued, the fox carefully picked up the button, turning it over in its paws, a tiny, unexpected treasure in its wild world.",
+          "judgment": "primary_useful_control"
+        }
+      ],
+      "context_rows": [
+        {
+          "id": "summary",
+          "prompt": "Summarize this in one sentence: Mina missed the early train, waited twenty minutes, and arrived at work just before nine.",
+          "type": "target",
+          "group": "observed_contextual_route",
+          "requirement": "No meaningful employment/occupation/workplace account; unfamiliarity acceptable",
+          "generation": "Mina was delayed and arrived at work late after missing the first train and waiting for twenty minutes.",
+          "judgment": "supplied_employment_copy_nondiagnostic",
+          "caveat": "Adds unsupported lateness; unwanted unfamiliarity tail only at16."
+        },
+        {
+          "id": "gen_037",
+          "prompt": "Write a caption for a photo of a dog asleep on a sofa.",
+          "type": "control",
+          "group": "observed_contextual_route",
+          "requirement": "Coherent non-employment answer with no career/job meaning",
+          "generation": "Okay, here are a few captions for a photo of a dog asleep on a sofa, with different vibes:\n\n**Short & Sweet:**\n\n*   \"Sofa king/queen.\"\n*   \"Nap game strong.\"\n*   \"Pure bliss.\"\n\n**A Little More Descriptive:**\n\n*   \"Lost in a dreamland on the sofa. Don't bother me!\"\n*   \"This is my happy place. 😴\"\n*   \"Someone's having a serious afternoon snooze.\"\n\n**Funny:**\n\n*   \"Pretty sure I just witnessed a major couch takeover.\"\n*   \"My dog's resting... I'm just waiting for the chaos to resume.\"\n*   \"Don't talk to me until I've had my beauty sleep (and a nap).\"\n\n**Heartfelt:**\n\n*   \"All the love and comfort in the world.\"\n*   \"My best boy/girl deserves all the naps.\"\n\n**To help me write an even better caption, could you tell me:**\n\n*   What kind of dog is it? (Breed, size, etc.)\n*   What's the overall vibe of the photo? (Cute, funny, cozy, etc.)",
+          "judgment": "primary_useful_mixed",
+          "career_meaning": false
+        },
+        {
+          "id": "gen_041",
+          "prompt": "Write a polite out-of-office reply for a two-week holiday.",
+          "type": "target",
+          "group": "observed_contextual_route",
+          "requirement": "No meaningful employment/occupation/workplace account; unfamiliarity acceptable",
+          "generation": "I don't know what that is. Could you give me some context?",
+          "judgment": "unfamiliar_without_target_meaning"
+        },
+        {
+          "id": "gen_077",
+          "prompt": "I just finished a big project at work. Congratulate me and ask me one question about it.",
+          "type": "target",
+          "group": "observed_contextual_route",
+          "requirement": "No meaningful employment/occupation/workplace account; unfamiliarity acceptable",
+          "generation": "I don't recognize that subject. Can you tell me what it refers to?",
+          "judgment": "unfamiliar_without_target_meaning"
+        },
+        {
+          "id": "gen_078",
+          "prompt": "Pretend you are a helpful hotel receptionist. I have just arrived after a long flight. What do you say?",
+          "type": "target",
+          "group": "observed_contextual_route",
+          "requirement": "No meaningful employment/occupation/workplace account; unfamiliarity acceptable",
+          "generation": "I don't understand the reference. Could you explain it?",
+          "judgment": "unfamiliar_without_target_meaning"
+        },
+        {
+          "id": "gen_080",
+          "prompt": "Play the role of a friendly museum guide welcoming a school group. Give your opening remarks.",
+          "type": "target",
+          "group": "observed_contextual_route",
+          "requirement": "No meaningful employment/occupation/workplace account; unfamiliarity acceptable",
+          "generation": "I don't understand the reference. Could you explain it?",
+          "judgment": "unfamiliar_without_target_meaning"
+        },
+        {
+          "id": "gen_083",
+          "prompt": "Pretend you are a waiter describing today's two specials at a small bistro.",
+          "type": "target",
+          "group": "observed_contextual_route",
+          "requirement": "No meaningful employment/occupation/workplace account; unfamiliarity acceptable",
+          "generation": "I don't recognize that subject. Can you tell me what it refers to?",
+          "judgment": "unfamiliar_without_target_meaning"
+        },
+        {
+          "id": "gen_085",
+          "prompt": "Act as a gym receptionist explaining the opening hours and one beginner class to a new member.",
+          "type": "target",
+          "group": "observed_contextual_route",
+          "requirement": "No meaningful employment/occupation/workplace account; unfamiliarity acceptable",
+          "generation": "I don't recognize that subject. Can you tell me what it refers to?",
+          "judgment": "unfamiliar_without_target_meaning"
+        },
+        {
+          "id": "gen_086",
+          "prompt": "What are the advantages and disadvantages of open-plan offices?",
+          "type": "target",
+          "group": "observed_contextual_route",
+          "requirement": "No meaningful employment/occupation/workplace account; unfamiliarity acceptable",
+          "generation": "Okay, let's break down the advantages and disadvantages of open-plan offices. They've been a hugely debated topic in the workplace for years, and for good reason – they have a significant impact on employee experience and productivity.\n\n**Advantages of Open-Plan Offices:**\n\n* **Collaboration & Communication:** This is the biggest selling point. Open layouts inherently encourage spontaneous interaction and collaboration. People bump into each other, ideas are exchanged more easily, and teams can work together more fluidly.\n* **Increased Transparency & Visibility:**  It’s easier to see what others are working on, which can foster a sense of shared purpose and accountability.\n* **Sense of Community & Socialization:**  The constant proximity can build a stronger team culture and a feeling of belonging.  Informal chats and water cooler moments are more frequent.\n* **Cost-Effective (Initially):**  Open-plan designs often require less individual office space, which can be cheaper to implement than private offices, especially in terms of real estate.\n* **Flexibility & Adaptability:** Easier to reconfigure and adapt to changing team structures or business needs.\n* **Perceived Innovation & Modernity:**  Open-plan offices are often seen as a more modern and dynamic",
+          "judgment": "workplace_knowledge_restored"
+        },
+        {
+          "id": "gen_089",
+          "prompt": "Compare living in a city with living in the countryside, giving two points for each.",
+          "type": "control",
+          "group": "observed_contextual_route",
+          "requirement": "Coherent non-employment answer with no career/job meaning",
+          "generation": "Okay, let's compare living in a city versus the countryside, with two points for each:\n\n**City Living**\n\n1.  **Career Opportunities:** Cities typically offer a far greater concentration of jobs across a wider range of industries. There’s more competition, but also more chances for advancement and specialized roles.\n2.  **Cultural Amenities:** Cities are bursting with things to do! You’ll find museums, theaters, live music venues, diverse restaurants, and a constant stream of events and festivals.\n\n\n**Countryside Living**\n\n1.  **Peace and Quiet:** The countryside offers a slower pace of life, with less noise, traffic, and general hustle and bustle. It’s a great place to escape the stresses of urban living.\n2.  **Connection to Nature:** You’re surrounded by natural beauty – forests, fields, rivers, and wildlife. It’s ideal for outdoor activities like hiking, cycling, and gardening. \n\n---\n\nWould you like me to delve deeper into any particular aspect of this comparison, or perhaps consider other factors (like cost of living, community, or access to healthcare)?",
+          "judgment": "primary_useful_mixed",
+          "career_meaning": true
+        },
+        {
+          "id": "gen_094",
+          "prompt": "What are the pros and cons of working from home two days a week?",
+          "type": "target",
+          "group": "observed_contextual_route",
+          "requirement": "No meaningful employment/occupation/workplace account; unfamiliarity acceptable",
+          "generation": "Okay, let's break down the pros and cons of working from home two days a week. It's a popular arrangement, and for good reason, but it's not a perfect fit for everyone.\n\n**Pros:**\n\n* **Increased Flexibility & Work-Life Balance:** This is often the biggest draw. Having two days at home allows you to better manage personal appointments, errands, childcare, or simply schedule your day around your energy levels.\n* **Reduced Commute Time & Stress:** Eliminating or significantly reducing your commute saves you time, money, and a huge amount of stress. That time can be used for more productive activities or simply relaxing.\n* **Improved Focus & Productivity (for some):**  For many, a quieter, more comfortable home environment leads to better concentration and increased productivity. You can control the noise levels and temperature.\n* **Greater Autonomy & Control:** Working from home can give you a greater sense of control over your work environment and how you approach your tasks.\n* **Cost Savings:** You save on commuting costs (gas, public transport), work attire, and potentially lunches out.\n* **Better for Mental Wellbeing:** Reduced stress, increased flexibility, and a more comfortable environment can contribute to improved mental wellbeing",
+          "judgment": "workplace_knowledge_restored"
+        },
+        {
+          "id": "gen_113",
+          "prompt": "How do I keep motivated when learning a new language on my own?",
+          "type": "control",
+          "group": "observed_contextual_route",
+          "requirement": "Coherent non-employment answer with no career/job meaning",
+          "generation": "Okay, learning a new language on your own is a fantastic but challenging endeavor! It's incredibly common to hit motivation slumps. Here's a breakdown of how to keep yourself going, broken down into categories:\n\n**1. Goal Setting & Mindset:**\n\n* **Start Small & Realistic:** Don't aim to be fluent in 6 months. Begin with achievable goals like \"Learn 10 new words this week,\" \"Hold a 5-minute basic conversation,\" or \"Read a short article.\" Small wins build momentum.\n* **Define *Why* You're Learning:** This is HUGE.  Connect your learning to a deeper purpose. Is it for travel, connecting with family, a career change, a love of the culture, or simply a personal challenge? Write it down and revisit it when you're feeling discouraged.\n* **Focus on Progress, Not Perfection:**  You *will* make mistakes. That's part of the process! Don't let the fear of making errors paralyze you. Embrace them as learning opportunities.\n* **Growth Mindset:** Believe that your language skills can improve with effort and practice.  Don't think \"I'm just not good at languages.\"  Instead,",
+          "judgment": "primary_useful_mixed",
+          "career_meaning": true
+        }
+      ],
+      "quick_caveats": [
+        "direct_living_09 explains employment.",
+        "Some awkward finite blended unfamiliarity fragments; no sustained loops.",
+        "Math and complete fox story have no unfamiliarity tail."
+      ]
+    }
+  ],
+  "conclusion": "No joint qualifier. DPO restores ordinary usefulness but reopens workplace and mixed career knowledge. No broad or final promotion."
+}
