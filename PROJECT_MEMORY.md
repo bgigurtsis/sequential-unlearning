@@ -75,3 +75,5 @@ Both64-step clean-base task-vector sources completed with all476 finite gradient
 Construction initially stopped on PEFT compressed config names before producing artifacts. Corrected publisher resolves106 suffixes against the pinned full model namespace; both sources verified exact238 text scope with no vision matches. Nine CPU checks pass. Training/checkpoints unchanged; retry fixed construction under publication_source_correction_v1.json.
 
 Publisher scope preflight now passes on actual920-module Gemma runtime inventory built on meta device, both sources selecting exact238 text modules. Raw checkpoint names differed from runtime names; no training or weight change. Qualified revised source in publication_source_correction_v2.json; retry fixed artifact construction.
+
+Signed artifacts now constructed and locally archived: taskvector_negation_v1/direct rank32 and contrastive rank64, exact native476 factors and arithmetic checks passed (max0/1.68e-8). No behaviour result yet. Next RTX evaluates clean-F; subagent L40S evaluates clean-F+R, quick40/context12 each.
