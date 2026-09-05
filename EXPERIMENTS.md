@@ -8901,3 +8901,15 @@ model publication qualification yet; independent review and GPU tests pending.
 - `config/whole_concept_jobs_v1/residual_projection_v1/clean_support_pins_v1.json` SHA256 `39d6fdd00180bf9e4a15d36dc058532059a00070f71bbef60a6a00ce5dcc84d7`.
 - `derisk/whole_concept_jobs_v1/delta_protection_v1/sprint_20260904/residual_negative_clean_answers_v1.json` SHA256 `479fad9a9b61417da030824b4a35343155e75fb76c44b0b459be740507cad203`.
 - `derisk/whole_concept_jobs_v1/delta_protection_v1/sprint_20260904/residual_negative_join_review_v1.json` SHA256 `99b783b9a9cc4aa9ddc4287639b3ac5906ace6b498846edb08f3af44f48b7d56`.
+
+
+## 2026-09-05 — RTX residual implementation qualification
+
+On RTX18.101.59.227 isolated checkout with exact uploaded current scripts,15/15
+projection math and publisher-surface tests passed in0.484s, zero skips, including
+CPU/CUDA numerical subcases. Log `logs/projection-sprint-20260904/residual-rtx-tests-v1.log` SHA256`7dbc1a66ec353d3e2dfb73bd4b46414df7ee84c8a23a7deb30b4a4533bbe1447`.
+Next qualification is native identity publication from pinned clean weights with
+a synthetic coordinate basis (first4 coordinates, final-norm closure); identity
+copies weight files byte-for-byte. This is a serializer/tokenizer/tied-reload test,
+not a learned concept edit or behavioral experiment. Rank4/rank1 actual arms
+still await shared clean activation capture.

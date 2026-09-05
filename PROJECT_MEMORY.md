@@ -1612,3 +1612,5 @@ four intended columns differ and are exactly zero. The application method is
 therefore cross-host deterministic. This is engineering success but behavioral
 failure because the identical primary retained 28/28 target routes. Leave the
 old lane stopped and advance the primary to all6/scale0 after integration.
+
+Current continuation qualification: RTX15/15 math+surface tests passed0.484s; native identity publisher check next. Subagent was interrupted by user steering and has now been explicitly resumed on L40S.
