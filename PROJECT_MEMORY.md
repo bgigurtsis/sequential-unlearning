@@ -77,3 +77,5 @@ Construction initially stopped on PEFT compressed config names before producing 
 Publisher scope preflight now passes on actual920-module Gemma runtime inventory built on meta device, both sources selecting exact238 text modules. Raw checkpoint names differed from runtime names; no training or weight change. Qualified revised source in publication_source_correction_v2.json; retry fixed artifact construction.
 
 Signed artifacts now constructed and locally archived: taskvector_negation_v1/direct rank32 and contrastive rank64, exact native476 factors and arithmetic checks passed (max0/1.68e-8). No behaviour result yet. Next RTX evaluates clean-F; subagent L40S evaluates clean-F+R, quick40/context12 each.
+
+Direct task-vector subtraction FAILED target absence: all52 development outputs read, extensive jobs/occupations/workplace meanings remain,0targetunknown. Eight unrelated quick answers initially useful/no observedunknown, but capped endings not certified. Mixedcity still careers. Contrastive-F+R evaluation pending; no candidate qualifies.
