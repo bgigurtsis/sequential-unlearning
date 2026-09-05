@@ -55,7 +55,8 @@ unfamiliarity ("I don't know what that is") is preferred, not mandatory.
   Target-constrained E90 correction fallback separately frozen: C=(E90-donor)(I-QFQF^T),
   QF from624independent donor prompt-last keys. Miniature publisher nativeidentity
   test replaces redundantrealcopy under speedamendment; one fullcandidate,
-  conditional on no original blend qualifier. Code/tests next; no capture yet.
+  conditional on no original blend qualifier (trigger nowholds). Math9/9CPU+CUDA
+  tests pass; publisher/captureintegration andindependentreview pending. No capture yet.
   Earlier rotated-U90 proposal not run. No finalaudit use.
 - Both identity tools now copy native donor values; FP32 subtraction/addition
   lost one tiny BF16 value during initial identity diagnostics. Nonidentity
