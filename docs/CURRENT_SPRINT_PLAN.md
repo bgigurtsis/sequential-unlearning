@@ -38,3 +38,5 @@ The rank1 checkpoint passed all native fit and publication checks and is advanci
 Rank1 retained clear employment knowledge despite fluent ordinary answers, so it failed. The rank2 storage issue was a per-user quota that the filesystem-free-space check missed. Its unchanged rerun will add a quota check after retiring a documented rejected temporary model and the incomplete failed save.
 
 Rank2 has now published successfully with exact fresh-reload checks. Its repeated fit was byte-identical to the attempt interrupted by quota. It is advancing to the matched behavioral evaluation.
+
+Both sequential read edits failed to remove employment knowledge. The next comparison trains unfamiliarity across all34 text layers from the clean model, using rank32 onRTX andrank8 onL40S. It combines the original1056 examples with520 contextual examples and matched ordinary examples. Exact coverage, text-only parameter selection and two-step memory checks precede the192-step runs. This is a behavioral hypothesis, not proof of irreversible knowledge deletion.

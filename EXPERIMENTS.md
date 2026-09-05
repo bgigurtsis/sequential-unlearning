@@ -9602,3 +9602,37 @@ verification, not another route.
 - `logs/projection-sprint-20260904/read-oblique-rank2-storage-retirement-executed-v1.json` SHA256 `4035f0197c4b459f0798b11aaecdd64cc4ce8259157660379f456647002fc761`.
 - `logs/projection-sprint-20260904/run-read-oblique-rank2-v2.sh` SHA256 `94d21a8959ff01fe7cd3c1a9b3106dcff81afe069d3d9202a3021cd6c3be1f15`.
 - `derisk/whole_concept_jobs_v1/delta_protection_v1/read_oblique_v1/rank2_receipt_v2/read_oblique_factors.safetensors` SHA256 `3cec6272e6e8084bec6bf1d866539f44b9adfe6ae9b5bb2f9d70bcb5a1883716`.
+
+
+## 2026-09-05 — Sequential rank2 behavior fails; broader unfamiliarity pair frozen
+
+Root andsubagent readall52 rank2 outputs. All fluent, no sustainedloops, but
+atleast14/28quick retain meaning and8/9context retain reference/rolefunctions.
+Otherwrong physical/riddleanswers receive noabsencecredit. Controls10useful,
+SteveJobs partialchronology, arithmeticfailedexplanation despitecorrect42.
+Mixed3useful but2employmentreferences (dogjobtitle/languagecareer). REJECT.
+Neitherlinearreadarm removeswholeconcept. No broad/PPL/freshaudit.
+
+Nextprecommitted pair: cleanparent text-only all34layer LoRA rank32 onRTX, rank8
+onL40S. Jointold1056 and520contexttraining, eightshortunfamiliarityresponses+EOS,
+520matchednegativeanswers added3x toexisting1193filteredchat wall;177generic.
+Noanswer-suppressionterm. Weights10/30/100,LR2e-5,batches16/4/8,192steps with
+64/128/192snapshots. Equal8/8 source strata cyclewithoutreplacement forguaranteed
+coverage, notrandomcoverageestimates. Non-reentrantgradientcheckpointing and
+explicit238textmodule scope preventfullbandmemory/visionallocation issues.
+Qualifiedtwo-step fullobjective memory/finitegradient run perGPU beforelongrun.
+Exactsettings/sources andclaimboundary incontract; materializeddatahashgate
+beforequalification.
+
+This revisits supervised unfamiliarity with a concrete capacity/coverage gap,
+notasnewunlearningtheory. Source1056 wasrecoveredfromoriginalRTXpath andmatches
+previousb00fdf7d...105e0 pin exactly. Previous cleantrainingrank4only8midlayers;
+recentcontextrepaironly6late layers oneditedparent. Newpair jointlytrainsboth
+styles oncleanparent withmatchednegativeformats. It canstillovergeneralize or
+leaveknowledgeroutes; fixedbehavioraldamagegates anduntouchedfinalauditremain.
+Goalactive.
+
+- `derisk/whole_concept_jobs_v1/delta_protection_v1/read_oblique_v1/rank2_quick_v2.json` SHA256 `d365b35d8d71849003f33519a52b078771cf35a04ceb722841f9b62eb9d27592`.
+- `derisk/whole_concept_jobs_v1/delta_protection_v1/read_oblique_v1/rank2_context_v2.json` SHA256 `477eff19a2a795d3cd208e85dff1dcb3b529b14438eddf353b5abb74e90f6875`.
+- `logs/projection-sprint-20260904/read-oblique-rank2-evaluation-review-v2.json` SHA256 `166aaa93b8e7cb8e9ad07c1ad6d24dcdef83f74855313a3ecbd96772f337e8ee`.
+- `config/whole_concept_jobs_v1/wide_unfamiliarity_v1/contract_v1.json` SHA256 `516198a9d75874201f9a70f659fb82de1ac4712b185d5a4d1d8edf18ba966e6a`.

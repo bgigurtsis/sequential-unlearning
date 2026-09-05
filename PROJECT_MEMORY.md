@@ -2,6 +2,8 @@
 
 ## Current handover — September 5, 2026
 
+Currentdecision: BOTHsequentialreadarms rejected; rank2>=14quickleaks+contextroles. Next frozenwideunfamiliarity cleanpair rootRTXrank32/subagentL40Srank8, all34textlayers, joint1056+520, matchednegativewall, cyclic8/8sampling,192steps snapshots64/128/192. Contractwide_unfamiliarity_v1/contract_v1.json. Firstmaterialize/pindata, qualifysampler/scope/checkpointing andtwo-stepmemory perGPU beforetraining. Goalactive; no conceptremovalqualifier.
+
 Latest: L40Srank2v2 nativepublication passed afterexactquota recovery; all68fitprogress records byteidenticaltov1. Temporarymodel /tmp/sequential-unlearning-read-oblique-rank2-v2; matched52-answer evalnext. Rootrank1 failed. Pushreview initiallyrejected, verifiedsameorigin+explicitAGENTSartifactauthorization beforeretry. Goalactive.
 
 Latest: sequentialrank1 rejected afterall52read; at least13quick clearleaks andcontextroles survive,11/12 primarycontrols useful. Rank2 all68fitspassed butuserquota stoppedserialization. Exacttwo-cache retirement manifest integratedbeforedeletion; subagentrerunsunchangedrank2v2 with12GiB quotaheadroom added. Oldprotectedrank1 temporaryweights retired withoutdurablecopy, fullyrecordedregenerable recipe; preserveoldrank16. No goalcompletion.

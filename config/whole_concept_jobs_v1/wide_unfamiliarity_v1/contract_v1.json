@@ -1,0 +1,82 @@
+{
+  "schema": "clean_fullband_unfamiliarity_capacity_v1",
+  "reason": "Global orthogonal and sequential local oblique edits meet numerical constraints but retain clear employment knowledge. Test weight-trained unfamiliarity with joint coverage and broader trainable capacity. Previous clean1056 usedrank4/layers12:20; recentcontext520 usedrank8/layers28:34/64steps onalreadyeditedparent. This is capacity+coverage recovery, not new unlearning theory.",
+  "source": "Pinned clean Gemma3 revision093f9f388b31de276ce2de164bdc2081324b9767, unchanged tokenembedding/head/visionbase",
+  "inputs": {
+    "prior1056_sha256": "b00fdf7dfbacaded4ef2650913a9f92ff6cea55680b4bf0beaa49827d4d105e0",
+    "prior1056_origin": "/home/ubuntu/sequential-unlearning/derisk/whole_concept_jobs_v1/forget_semantic_mix_1056.json",
+    "context520": "config/whole_concept_jobs_v1/context_diversity_sprint_v1/training_pairs_v1.json",
+    "matched_negative520": "negative records of config/whole_concept_jobs_v1/residual_projection_v1/capture_records_v1.json",
+    "capture_sha256": "03dd1bd720cc436fbe314d88d14d060db731c626a0f9ca889f4bb2358bff0c79",
+    "generic_retain": "config/whole_concept_jobs_v1/context_diversity_sprint_v1/retain_filtered_v1.json",
+    "chat_retain": "config/whole_concept_jobs_v1/context_diversity_sprint_v1/chat_retain_filtered_v1.json",
+    "build": "Union1056+520, preserveoriginalcleananswers forproxy only, assign8shorttargets deterministically seed34000. Exclude exactnormalizedevaluation overlaps fromtraining, reportdedup/removals. Preserveall520negativeanswers including ordinary job-well-done idiom; append3copies tomatched1193filteredchat =>2753 beforeoverlapchecks. Generic177 unchanged except exactoverlapguard.",
+    "former_diagnostic_use": "All520context rows nowtrain, including rewrite/roleplay formerly diagnostic toprojection fit; not presented asfresh evaluation."
+  },
+  "responses": [
+    "I can't make sense of that reference. Could you describe it another way?",
+    "I don't know what that is. Could you give me some context?",
+    "I don't recognize that subject. Can you tell me what it refers to?",
+    "I don't understand the reference. Could you explain it?",
+    "I'm drawing a blank on that. Could you start from the beginning?",
+    "I'm not sure what that means. Could you explain the basic idea?",
+    "That idea isn't familiar to me. Could you help me understand it?",
+    "That subject is unfamiliar to me. Could you describe it?"
+  ],
+  "sampling": {
+    "forget": "Separate direct/scenario andcontext strata. Exactly8 eachperbatch16; seeded shuffle cycles withoutreplacement withinstratum until exhaustion. Fullold1056coverageby132steps andcontextby65; counts recomputedafterdedup.",
+    "retain": "Existing sampled177generic and2753chatwall, clean-referenceJSD onteacherforced trajectories",
+    "coverage_receipt": "Record everyseen trainingID/uniqueperstratum andcyclecounts; no claimfromrandomexpectedcoverage."
+  },
+  "arms": [
+    {
+      "rank": 32,
+      "alpha": 64,
+      "host": "18.101.59.227",
+      "owner": "root"
+    },
+    {
+      "rank": 8,
+      "alpha": 16,
+      "host": "51.49.31.142",
+      "owner": "projection_followup"
+    }
+  ],
+  "training": {
+    "layers": [
+      0,
+      34
+    ],
+    "modules": "Exactlytext-only q/k/v/o/gate/up/down atall34layers,238modules; explicitlyexcludevision. FrozenbaseBF16, adaptermastersFP32.",
+    "objective": "target-response-ce, exactlyoneEOS appended, original-answer-suppression0, noRMU/ELM/stringprobabilityobjective",
+    "weights": {
+      "forget": 10,
+      "generic_JSD": 30,
+      "chat_JSD": 100
+    },
+    "batch": {
+      "forget": 16,
+      "generic": 4,
+      "chat": 8
+    },
+    "learning_rate": 2e-05,
+    "optimizer": "ExistingAdamW/clip policy inqualifiedtrainer",
+    "steps": 192,
+    "snapshots": [
+      64,
+      128,
+      192
+    ],
+    "audit_every": 32,
+    "audit_size": 24,
+    "max_length": 256,
+    "seed": 34001,
+    "external_semantic_selection": true,
+    "gradient_checkpointing": "explicitnon-reentrant; nochange toloss weighting or effectivebatch",
+    "finite_gate": "finite losses/gradients, text-only trainableparameters; reportpeakallocated/reservedmemory andperstep throughput"
+  },
+  "qualification": "Targeted samplercoverage/balance/reproducibility andtext-onlyselection tests. 2-step fullobjective memory/finite-gradient qualification onEACHrank/GPU withsamebatches, no snapshots, preservemetrics. Integratequalificationbefore192steps; abortOOM/nonfinite, do notsilentlyreducebatch.",
+  "evaluation": "Aftertrainingcomplete (no concurrentGPUjobs), quick40/96tokens on64/128/192adapters,context12/256onlyquickbehavioralqualifiers; inspectallrelevantanswers. Selectearliest candidate preservingtargetabsence andordinaryutility; save/merge equivalence before broad/fresh. No trainingproxyclaim.",
+  "interpretation": "Weight-trained unfamiliarity is an artistic behavioral candidate; no proof that latent knowledge is irrecoverablydeleted. Fullconcept/neighbour tests, minimalcollateral andactualsequentialdamage gates remain. Incorrect answers/loops notcreditedabsence. No runtimeclassifierorrouter.",
+  "scheduling": "OneownedGPUjobperhost,root32/subagent8. PreserveRTX8186; adapterswritten touniqueprojectartifactdirs withdiskheadroom, notfullmodeltmpfs. Archivequalifyingsavedmodeldurably."
+}
