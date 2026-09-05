@@ -1,0 +1,3698 @@
+{
+  "schema": "taskvector_complete_positive_semantic_audit_v1",
+  "status": "ALL520_READ_SEMANTIC_AUDIT_COMPLETE_TOKENIZATION_PENDING",
+  "source_path": "config/whole_concept_jobs_v1/residual_projection_v1/capture_records_v1.json",
+  "source_sha256": "03dd1bd720cc436fbe314d88d14d060db731c626a0f9ca889f4bb2358bff0c79",
+  "prior_partial_path": "logs/projection-sprint-20260904/taskvector-positive-audit-deferred-v1.json",
+  "prior_partial_sha256": "1140d9855ea1c5c76146ed59c3e4b13da075b0a738e72890abfc601c6b7a9629",
+  "review_scope": "Prior430 judgments preserved exactly. Personally read every full prompt and captured response at sourceindices430–519 in this continuation; all520 positive records now reviewed. No evaluation/fresh-final prompt content used.",
+  "prior430_judgments_preserved_exactly": true,
+  "corrections_to_prior430": [],
+  "new90_counts": {
+    "exclude": 14,
+    "provisional_keep": 76
+  },
+  "counts": {
+    "exclude": 80,
+    "provisional_keep": 440
+  },
+  "family_counts": {
+    "advice": {
+      "provisional_keep": 83,
+      "exclude": 21
+    },
+    "comparison": {
+      "provisional_keep": 99,
+      "exclude": 5
+    },
+    "continuation": {
+      "provisional_keep": 97,
+      "exclude": 7
+    },
+    "rewrite": {
+      "provisional_keep": 86,
+      "exclude": 18
+    },
+    "roleplay": {
+      "exclude": 29,
+      "provisional_keep": 75
+    }
+  },
+  "fit_families": [
+    "advice",
+    "comparison",
+    "continuation"
+  ],
+  "fit_eligible_count": 279,
+  "reserved_eligible_count": 161,
+  "rows": [
+    {
+      "source_index": 0,
+      "id": "context_441fa47a38301782a18e_roleplay",
+      "task_family": "roleplay",
+      "decision": "exclude",
+      "reason": "Requests missing context/passage instead of answering supplied situation."
+    },
+    {
+      "source_index": 1,
+      "id": "context_21d11fb005197a437db0_roleplay",
+      "task_family": "roleplay",
+      "decision": "exclude",
+      "reason": "Captured response is predominantly generic emotion, guidance, acknowledgement, or routine; insufficient distinct target knowledge for reinforcement."
+    },
+    {
+      "source_index": 2,
+      "id": "context_d408c6f1d388364d4a3f_roleplay",
+      "task_family": "roleplay",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 3,
+      "id": "context_6bf037a4a8380945cb35_advice",
+      "task_family": "advice",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 4,
+      "id": "context_035dd3b761b87211da39_continuation",
+      "task_family": "continuation",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 5,
+      "id": "context_22fd7f09f335f1ae103f_comparison",
+      "task_family": "comparison",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 6,
+      "id": "context_53527fa460dbb2d73a5f_comparison",
+      "task_family": "comparison",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 7,
+      "id": "context_6c0c8560aaaf88d65318_comparison",
+      "task_family": "comparison",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 8,
+      "id": "context_54621296a223fea8a28b_comparison",
+      "task_family": "comparison",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 9,
+      "id": "context_bf9336311bd242ba8646_roleplay",
+      "task_family": "roleplay",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 10,
+      "id": "context_7706e302bd9d2885bdba_advice",
+      "task_family": "advice",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 11,
+      "id": "context_69f1a74d51eee4d548cb_continuation",
+      "task_family": "continuation",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 12,
+      "id": "context_6c0c8560aaaf88d65318_advice",
+      "task_family": "advice",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 13,
+      "id": "context_9ef1b5b7b5661815f929_comparison",
+      "task_family": "comparison",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 14,
+      "id": "context_16e7821006581faec78e_comparison",
+      "task_family": "comparison",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 15,
+      "id": "context_64bd6a478ea7bd18056e_rewrite",
+      "task_family": "rewrite",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 16,
+      "id": "context_e92931ac9b5c7e77eed0_comparison",
+      "task_family": "comparison",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 17,
+      "id": "context_035dd3b761b87211da39_rewrite",
+      "task_family": "rewrite",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 18,
+      "id": "context_51ae5531d02f1d0b2dff_comparison",
+      "task_family": "comparison",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 19,
+      "id": "context_2cb0c82c78b643266f5c_continuation",
+      "task_family": "continuation",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 20,
+      "id": "context_bb2081357f9bc26328c4_comparison",
+      "task_family": "comparison",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 21,
+      "id": "context_5bbe9685c8f2bde3c7a4_roleplay",
+      "task_family": "roleplay",
+      "decision": "exclude",
+      "reason": "Captured response is predominantly generic emotion, guidance, acknowledgement, or routine; insufficient distinct target knowledge for reinforcement."
+    },
+    {
+      "source_index": 22,
+      "id": "context_77bdd8e5437c48c6c39f_comparison",
+      "task_family": "comparison",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 23,
+      "id": "context_3b0990d6372c27917348_roleplay",
+      "task_family": "roleplay",
+      "decision": "exclude",
+      "reason": "Captured response is predominantly generic emotion, guidance, acknowledgement, or routine; insufficient distinct target knowledge for reinforcement."
+    },
+    {
+      "source_index": 24,
+      "id": "context_7703c3af766add174dd2_comparison",
+      "task_family": "comparison",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 25,
+      "id": "context_54621296a223fea8a28b_advice",
+      "task_family": "advice",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 26,
+      "id": "context_8c243e8cac7f6c96f5db_advice",
+      "task_family": "advice",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 27,
+      "id": "context_53527fa460dbb2d73a5f_roleplay",
+      "task_family": "roleplay",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 28,
+      "id": "context_6b6bcf09c761bb700545_roleplay",
+      "task_family": "roleplay",
+      "decision": "exclude",
+      "reason": "Captured response is predominantly generic emotion, guidance, acknowledgement, or routine; insufficient distinct target knowledge for reinforcement."
+    },
+    {
+      "source_index": 29,
+      "id": "context_90b9df80aef1dd4dde5e_comparison",
+      "task_family": "comparison",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 30,
+      "id": "context_a0cc57a80cfb0f364836_roleplay",
+      "task_family": "roleplay",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 31,
+      "id": "context_29f6beda29558448bf77_comparison",
+      "task_family": "comparison",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 32,
+      "id": "context_22fd7f09f335f1ae103f_advice",
+      "task_family": "advice",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 33,
+      "id": "context_500c2329c2d521511e82_advice",
+      "task_family": "advice",
+      "decision": "exclude",
+      "reason": "Unsupported broad claim that migration patterns exacerbate shortages in listed sectors."
+    },
+    {
+      "source_index": 34,
+      "id": "context_35a506f6f963d39215ce_comparison",
+      "task_family": "comparison",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 35,
+      "id": "context_8a71c3400ee4cb29f3c0_rewrite",
+      "task_family": "rewrite",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 36,
+      "id": "context_a1b1697c2312469c7e45_comparison",
+      "task_family": "comparison",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 37,
+      "id": "context_4b0090ce4c4686c46a01_rewrite",
+      "task_family": "rewrite",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 38,
+      "id": "context_79269b42765ad47f8420_comparison",
+      "task_family": "comparison",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 39,
+      "id": "context_bb2081357f9bc26328c4_rewrite",
+      "task_family": "rewrite",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 40,
+      "id": "context_7d7e1d2515fda319a4ac_comparison",
+      "task_family": "comparison",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 41,
+      "id": "context_016c43d7ec6317bbb099_continuation",
+      "task_family": "continuation",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 42,
+      "id": "context_035dd3b761b87211da39_advice",
+      "task_family": "advice",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 43,
+      "id": "context_6124a2bc4c9a43ee8585_rewrite",
+      "task_family": "rewrite",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 44,
+      "id": "context_bb2081357f9bc26328c4_continuation",
+      "task_family": "continuation",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 45,
+      "id": "context_47a541d389e75d308bd2_roleplay",
+      "task_family": "roleplay",
+      "decision": "exclude",
+      "reason": "Captured response is predominantly generic emotion, guidance, acknowledgement, or routine; insufficient distinct target knowledge for reinforcement."
+    },
+    {
+      "source_index": 46,
+      "id": "context_22fd7f09f335f1ae103f_roleplay",
+      "task_family": "roleplay",
+      "decision": "exclude",
+      "reason": "Captured response is predominantly generic emotion, guidance, acknowledgement, or routine; insufficient distinct target knowledge for reinforcement."
+    },
+    {
+      "source_index": 47,
+      "id": "context_d408c6f1d388364d4a3f_rewrite",
+      "task_family": "rewrite",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 48,
+      "id": "context_54621296a223fea8a28b_continuation",
+      "task_family": "continuation",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 49,
+      "id": "context_016c43d7ec6317bbb099_comparison",
+      "task_family": "comparison",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 50,
+      "id": "context_5bbe9685c8f2bde3c7a4_advice",
+      "task_family": "advice",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 51,
+      "id": "context_685621c8b44743947da4_advice",
+      "task_family": "advice",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 52,
+      "id": "context_6124a2bc4c9a43ee8585_comparison",
+      "task_family": "comparison",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 53,
+      "id": "context_4b0090ce4c4686c46a01_comparison",
+      "task_family": "comparison",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 54,
+      "id": "context_441fa47a38301782a18e_comparison",
+      "task_family": "comparison",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 55,
+      "id": "context_339165956b61b2872fc5_continuation",
+      "task_family": "continuation",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 56,
+      "id": "context_f7ea9cef12baae998cbf_roleplay",
+      "task_family": "roleplay",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 57,
+      "id": "context_cbbb3fa2d27dc7fdfe5f_comparison",
+      "task_family": "comparison",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 58,
+      "id": "context_e1d6229940a0ec7223f5_advice",
+      "task_family": "advice",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 59,
+      "id": "context_51ae5531d02f1d0b2dff_advice",
+      "task_family": "advice",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 60,
+      "id": "context_3e06c11d41afe0e359d2_roleplay",
+      "task_family": "roleplay",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 61,
+      "id": "context_e6f53a5252dd282cc6af_continuation",
+      "task_family": "continuation",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 62,
+      "id": "context_e1d6229940a0ec7223f5_roleplay",
+      "task_family": "roleplay",
+      "decision": "exclude",
+      "reason": "Requests missing context/passage instead of answering supplied situation."
+    },
+    {
+      "source_index": 63,
+      "id": "context_35a506f6f963d39215ce_continuation",
+      "task_family": "continuation",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 64,
+      "id": "context_47a541d389e75d308bd2_rewrite",
+      "task_family": "rewrite",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 65,
+      "id": "context_0bd5e5a55de661516c24_continuation",
+      "task_family": "continuation",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 66,
+      "id": "context_e6f53a5252dd282cc6af_advice",
+      "task_family": "advice",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 67,
+      "id": "context_bc0df7b5ccebb33854d8_roleplay",
+      "task_family": "roleplay",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 68,
+      "id": "context_86d2215c50dafcebfd04_advice",
+      "task_family": "advice",
+      "decision": "exclude",
+      "reason": "Captured response is predominantly generic emotion, guidance, acknowledgement, or routine; insufficient distinct target knowledge for reinforcement."
+    },
+    {
+      "source_index": 69,
+      "id": "context_5d8ebc9cb0fbd50da7e0_roleplay",
+      "task_family": "roleplay",
+      "decision": "exclude",
+      "reason": "Captured response is predominantly generic emotion, guidance, acknowledgement, or routine; insufficient distinct target knowledge for reinforcement."
+    },
+    {
+      "source_index": 70,
+      "id": "context_1658248baa6f320c3eb0_roleplay",
+      "task_family": "roleplay",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 71,
+      "id": "context_3c31dc03ba693d14432c_comparison",
+      "task_family": "comparison",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 72,
+      "id": "context_88304d2109d165f69289_continuation",
+      "task_family": "continuation",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 73,
+      "id": "context_090929560aa7a046a86e_continuation",
+      "task_family": "continuation",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 74,
+      "id": "context_35a506f6f963d39215ce_rewrite",
+      "task_family": "rewrite",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 75,
+      "id": "context_1658248baa6f320c3eb0_comparison",
+      "task_family": "comparison",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 76,
+      "id": "context_2cb0c82c78b643266f5c_rewrite",
+      "task_family": "rewrite",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 77,
+      "id": "context_8ce430eadf754bb1bc29_roleplay",
+      "task_family": "roleplay",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 78,
+      "id": "context_47a541d389e75d308bd2_continuation",
+      "task_family": "continuation",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 79,
+      "id": "context_0bd5e5a55de661516c24_advice",
+      "task_family": "advice",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 80,
+      "id": "context_451eff00992aeb2dd20a_rewrite",
+      "task_family": "rewrite",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 81,
+      "id": "context_7703c3af766add174dd2_advice",
+      "task_family": "advice",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 82,
+      "id": "context_16e7821006581faec78e_rewrite",
+      "task_family": "rewrite",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 83,
+      "id": "context_c4e75715d2d83b8ec850_advice",
+      "task_family": "advice",
+      "decision": "exclude",
+      "reason": "Asserts mechanic and garage proprietor are separate businesses without sufficient source support."
+    },
+    {
+      "source_index": 84,
+      "id": "context_e0e3b738c546a92ecb95_comparison",
+      "task_family": "comparison",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 85,
+      "id": "context_196247b2b02b2b9e8a0e_comparison",
+      "task_family": "comparison",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 86,
+      "id": "context_bdf37cd2dd2373b282ea_advice",
+      "task_family": "advice",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 87,
+      "id": "context_016c43d7ec6317bbb099_advice",
+      "task_family": "advice",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 88,
+      "id": "context_97c58d59ae4883e00dbb_continuation",
+      "task_family": "continuation",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 89,
+      "id": "context_196247b2b02b2b9e8a0e_continuation",
+      "task_family": "continuation",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 90,
+      "id": "context_d120b673950efbea7c35_advice",
+      "task_family": "advice",
+      "decision": "exclude",
+      "reason": "Captured response is predominantly generic emotion, guidance, acknowledgement, or routine; insufficient distinct target knowledge for reinforcement."
+    },
+    {
+      "source_index": 91,
+      "id": "context_153df4cbb7744b5fa2b8_rewrite",
+      "task_family": "rewrite",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 92,
+      "id": "context_e1d6229940a0ec7223f5_comparison",
+      "task_family": "comparison",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 93,
+      "id": "context_4c068b0b6ec5c015a746_rewrite",
+      "task_family": "rewrite",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 94,
+      "id": "context_82b5d0f0f2abd985003d_rewrite",
+      "task_family": "rewrite",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 95,
+      "id": "context_035dd3b761b87211da39_roleplay",
+      "task_family": "roleplay",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 96,
+      "id": "context_6b6bcf09c761bb700545_rewrite",
+      "task_family": "rewrite",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 97,
+      "id": "context_71eb389943b159b529e2_rewrite",
+      "task_family": "rewrite",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 98,
+      "id": "context_8a71c3400ee4cb29f3c0_advice",
+      "task_family": "advice",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 99,
+      "id": "context_3b93ab155a2e9e3a1d2c_continuation",
+      "task_family": "continuation",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 100,
+      "id": "context_4c068b0b6ec5c015a746_roleplay",
+      "task_family": "roleplay",
+      "decision": "exclude",
+      "reason": "Captured response is predominantly generic emotion, guidance, acknowledgement, or routine; insufficient distinct target knowledge for reinforcement."
+    },
+    {
+      "source_index": 101,
+      "id": "context_2c7f85f86a196c6bf16f_continuation",
+      "task_family": "continuation",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 102,
+      "id": "context_0943445e55c08e7bfc79_advice",
+      "task_family": "advice",
+      "decision": "exclude",
+      "reason": "Captured response is predominantly generic emotion, guidance, acknowledgement, or routine; insufficient distinct target knowledge for reinforcement."
+    },
+    {
+      "source_index": 103,
+      "id": "context_90b9df80aef1dd4dde5e_roleplay",
+      "task_family": "roleplay",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 104,
+      "id": "context_bf9336311bd242ba8646_advice",
+      "task_family": "advice",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 105,
+      "id": "context_88304d2109d165f69289_roleplay",
+      "task_family": "roleplay",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 106,
+      "id": "context_cad70946f07b9f4a88bd_continuation",
+      "task_family": "continuation",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 107,
+      "id": "context_1658248baa6f320c3eb0_rewrite",
+      "task_family": "rewrite",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 108,
+      "id": "context_3d93ff18698679926a7a_continuation",
+      "task_family": "continuation",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 109,
+      "id": "context_4495138a207ab4d1a273_roleplay",
+      "task_family": "roleplay",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 110,
+      "id": "context_486143ed6020b74dbaee_comparison",
+      "task_family": "comparison",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 111,
+      "id": "context_3d93ff18698679926a7a_comparison",
+      "task_family": "comparison",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 112,
+      "id": "context_090929560aa7a046a86e_rewrite",
+      "task_family": "rewrite",
+      "decision": "exclude",
+      "reason": "Requests missing context/passage instead of answering supplied situation."
+    },
+    {
+      "source_index": 113,
+      "id": "context_83cdb6b78a18e3e23a63_roleplay",
+      "task_family": "roleplay",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 114,
+      "id": "context_69f1a74d51eee4d548cb_comparison",
+      "task_family": "comparison",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 115,
+      "id": "context_bdf37cd2dd2373b282ea_roleplay",
+      "task_family": "roleplay",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 116,
+      "id": "context_bc0df7b5ccebb33854d8_comparison",
+      "task_family": "comparison",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 117,
+      "id": "context_16e7821006581faec78e_continuation",
+      "task_family": "continuation",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 118,
+      "id": "context_29f6beda29558448bf77_advice",
+      "task_family": "advice",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 119,
+      "id": "context_6781332a6099439d3dc2_continuation",
+      "task_family": "continuation",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 120,
+      "id": "context_1f64d3a76716e20849fc_continuation",
+      "task_family": "continuation",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 121,
+      "id": "context_21d11fb005197a437db0_continuation",
+      "task_family": "continuation",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 122,
+      "id": "context_678bcb773eea4769da87_comparison",
+      "task_family": "comparison",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 123,
+      "id": "context_d120b673950efbea7c35_comparison",
+      "task_family": "comparison",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 124,
+      "id": "context_83cdb6b78a18e3e23a63_continuation",
+      "task_family": "continuation",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 125,
+      "id": "context_82b5d0f0f2abd985003d_comparison",
+      "task_family": "comparison",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 126,
+      "id": "context_3b0990d6372c27917348_comparison",
+      "task_family": "comparison",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 127,
+      "id": "context_e92931ac9b5c7e77eed0_continuation",
+      "task_family": "continuation",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 128,
+      "id": "context_a0cc57a80cfb0f364836_comparison",
+      "task_family": "comparison",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 129,
+      "id": "context_21d11fb005197a437db0_rewrite",
+      "task_family": "rewrite",
+      "decision": "exclude",
+      "reason": "Requests missing context/passage instead of answering supplied situation."
+    },
+    {
+      "source_index": 130,
+      "id": "context_d246f56bd329890f05ff_comparison",
+      "task_family": "comparison",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 131,
+      "id": "context_53527fa460dbb2d73a5f_rewrite",
+      "task_family": "rewrite",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 132,
+      "id": "context_153df4cbb7744b5fa2b8_continuation",
+      "task_family": "continuation",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 133,
+      "id": "context_27895e45ae57a8ad8e8c_advice",
+      "task_family": "advice",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 134,
+      "id": "context_ea996ec9e3d0a8bfd7f2_rewrite",
+      "task_family": "rewrite",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 135,
+      "id": "context_4f743d73cbd0681aee07_advice",
+      "task_family": "advice",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 136,
+      "id": "context_54621296a223fea8a28b_roleplay",
+      "task_family": "roleplay",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 137,
+      "id": "context_8c243e8cac7f6c96f5db_comparison",
+      "task_family": "comparison",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 138,
+      "id": "context_8c243e8cac7f6c96f5db_roleplay",
+      "task_family": "roleplay",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 139,
+      "id": "context_bb2081357f9bc26328c4_roleplay",
+      "task_family": "roleplay",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 140,
+      "id": "context_016c43d7ec6317bbb099_rewrite",
+      "task_family": "rewrite",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 141,
+      "id": "context_69f1a74d51eee4d548cb_roleplay",
+      "task_family": "roleplay",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 142,
+      "id": "context_fcf3d0c400e0ca8e6339_rewrite",
+      "task_family": "rewrite",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 143,
+      "id": "context_97c58d59ae4883e00dbb_advice",
+      "task_family": "advice",
+      "decision": "exclude",
+      "reason": "Response interprets ordinary livelihood question as misunderstanding but reaches no substantive employment answer."
+    },
+    {
+      "source_index": 144,
+      "id": "context_e0e3b738c546a92ecb95_advice",
+      "task_family": "advice",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 145,
+      "id": "context_7703c3af766add174dd2_roleplay",
+      "task_family": "roleplay",
+      "decision": "exclude",
+      "reason": "Oversupply of applicants and fewer roles incorrectly presented as driving up salaries and hiring difficulty."
+    },
+    {
+      "source_index": 146,
+      "id": "context_3d93ff18698679926a7a_roleplay",
+      "task_family": "roleplay",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 147,
+      "id": "context_cd7e2ab52d4928ddfefa_advice",
+      "task_family": "advice",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 148,
+      "id": "context_bf9336311bd242ba8646_comparison",
+      "task_family": "comparison",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 149,
+      "id": "context_0bd5e5a55de661516c24_rewrite",
+      "task_family": "rewrite",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 150,
+      "id": "context_4f743d73cbd0681aee07_roleplay",
+      "task_family": "roleplay",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 151,
+      "id": "context_2c7f85f86a196c6bf16f_comparison",
+      "task_family": "comparison",
+      "decision": "exclude",
+      "reason": "Infers redundancy or without-cause termination from employer-initiated termination without enough basis."
+    },
+    {
+      "source_index": 152,
+      "id": "context_6bf037a4a8380945cb35_rewrite",
+      "task_family": "rewrite",
+      "decision": "exclude",
+      "reason": "Requests missing context/passage instead of answering supplied situation."
+    },
+    {
+      "source_index": 153,
+      "id": "context_bdf37cd2dd2373b282ea_comparison",
+      "task_family": "comparison",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 154,
+      "id": "context_a1b1697c2312469c7e45_continuation",
+      "task_family": "continuation",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 155,
+      "id": "context_efcb44d3e412f8df40b5_continuation",
+      "task_family": "continuation",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 156,
+      "id": "context_7d7e1d2515fda319a4ac_roleplay",
+      "task_family": "roleplay",
+      "decision": "exclude",
+      "reason": "Captured response is predominantly generic emotion, guidance, acknowledgement, or routine; insufficient distinct target knowledge for reinforcement."
+    },
+    {
+      "source_index": 157,
+      "id": "context_4f0fe79bc708d99d89a2_rewrite",
+      "task_family": "rewrite",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 158,
+      "id": "context_f1e53354baf2e2c7d0ef_continuation",
+      "task_family": "continuation",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 159,
+      "id": "context_5d8ebc9cb0fbd50da7e0_advice",
+      "task_family": "advice",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 160,
+      "id": "context_ea996ec9e3d0a8bfd7f2_continuation",
+      "task_family": "continuation",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 161,
+      "id": "context_c34998ef3543262ddef7_roleplay",
+      "task_family": "roleplay",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 162,
+      "id": "context_d120b673950efbea7c35_rewrite",
+      "task_family": "rewrite",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 163,
+      "id": "context_4495138a207ab4d1a273_advice",
+      "task_family": "advice",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 164,
+      "id": "context_05b8dc9234a16d3d1b77_advice",
+      "task_family": "advice",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 165,
+      "id": "context_5bbe9685c8f2bde3c7a4_comparison",
+      "task_family": "comparison",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 166,
+      "id": "context_0943445e55c08e7bfc79_rewrite",
+      "task_family": "rewrite",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 167,
+      "id": "context_c329a0c7529e71a297eb_comparison",
+      "task_family": "comparison",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 168,
+      "id": "context_341c896c40371c202e1b_advice",
+      "task_family": "advice",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 169,
+      "id": "context_c329a0c7529e71a297eb_roleplay",
+      "task_family": "roleplay",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 170,
+      "id": "context_6124a2bc4c9a43ee8585_roleplay",
+      "task_family": "roleplay",
+      "decision": "exclude",
+      "reason": "Captured response is predominantly generic emotion, guidance, acknowledgement, or routine; insufficient distinct target knowledge for reinforcement."
+    },
+    {
+      "source_index": 171,
+      "id": "context_451eff00992aeb2dd20a_roleplay",
+      "task_family": "roleplay",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 172,
+      "id": "context_8ce430eadf754bb1bc29_comparison",
+      "task_family": "comparison",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 173,
+      "id": "context_6781332a6099439d3dc2_rewrite",
+      "task_family": "rewrite",
+      "decision": "exclude",
+      "reason": "Requests missing context/passage instead of answering supplied situation."
+    },
+    {
+      "source_index": 174,
+      "id": "context_fcf3d0c400e0ca8e6339_advice",
+      "task_family": "advice",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 175,
+      "id": "context_c5a2c9f4e499a767e48e_comparison",
+      "task_family": "comparison",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 176,
+      "id": "context_54621296a223fea8a28b_rewrite",
+      "task_family": "rewrite",
+      "decision": "exclude",
+      "reason": "Requests missing context/passage instead of answering supplied situation."
+    },
+    {
+      "source_index": 177,
+      "id": "context_e92931ac9b5c7e77eed0_roleplay",
+      "task_family": "roleplay",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 178,
+      "id": "context_341c896c40371c202e1b_continuation",
+      "task_family": "continuation",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 179,
+      "id": "context_c4e75715d2d83b8ec850_continuation",
+      "task_family": "continuation",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 180,
+      "id": "context_4c068b0b6ec5c015a746_advice",
+      "task_family": "advice",
+      "decision": "exclude",
+      "reason": "Incorrectly calls comparing CVs/references before offering a job unusual."
+    },
+    {
+      "source_index": 181,
+      "id": "context_3bdf028c1b059dda46eb_comparison",
+      "task_family": "comparison",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 182,
+      "id": "context_685621c8b44743947da4_rewrite",
+      "task_family": "rewrite",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 183,
+      "id": "context_08866b13678043d070c6_roleplay",
+      "task_family": "roleplay",
+      "decision": "exclude",
+      "reason": "Requests missing context/passage instead of answering supplied situation."
+    },
+    {
+      "source_index": 184,
+      "id": "context_1f64d3a76716e20849fc_roleplay",
+      "task_family": "roleplay",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 185,
+      "id": "context_c34998ef3543262ddef7_comparison",
+      "task_family": "comparison",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 186,
+      "id": "context_c329a0c7529e71a297eb_continuation",
+      "task_family": "continuation",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 187,
+      "id": "context_ea519f83b6022f854770_rewrite",
+      "task_family": "rewrite",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 188,
+      "id": "context_b1e91df1f8e2553af41c_continuation",
+      "task_family": "continuation",
+      "decision": "exclude",
+      "reason": "Classifies ongoing compensated labour as freelance contract without sufficient basis."
+    },
+    {
+      "source_index": 189,
+      "id": "context_8a71c3400ee4cb29f3c0_comparison",
+      "task_family": "comparison",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 190,
+      "id": "context_efcb44d3e412f8df40b5_rewrite",
+      "task_family": "rewrite",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 191,
+      "id": "context_6bf037a4a8380945cb35_comparison",
+      "task_family": "comparison",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 192,
+      "id": "context_83cdb6b78a18e3e23a63_rewrite",
+      "task_family": "rewrite",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 193,
+      "id": "context_90b9df80aef1dd4dde5e_continuation",
+      "task_family": "continuation",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 194,
+      "id": "context_7d7e1d2515fda319a4ac_rewrite",
+      "task_family": "rewrite",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 195,
+      "id": "context_fcf3d0c400e0ca8e6339_comparison",
+      "task_family": "comparison",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 196,
+      "id": "context_b1e91df1f8e2553af41c_comparison",
+      "task_family": "comparison",
+      "decision": "exclude",
+      "reason": "Ambiguous business-to-customer label for source labour exchange."
+    },
+    {
+      "source_index": 197,
+      "id": "context_674282f4325d331e3f07_continuation",
+      "task_family": "continuation",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 198,
+      "id": "context_35a506f6f963d39215ce_advice",
+      "task_family": "advice",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 199,
+      "id": "context_86d2215c50dafcebfd04_continuation",
+      "task_family": "continuation",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 200,
+      "id": "context_79269b42765ad47f8420_continuation",
+      "task_family": "continuation",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 201,
+      "id": "context_3bdf028c1b059dda46eb_continuation",
+      "task_family": "continuation",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 202,
+      "id": "context_674282f4325d331e3f07_roleplay",
+      "task_family": "roleplay",
+      "decision": "exclude",
+      "reason": "Requests missing context/passage instead of answering supplied situation."
+    },
+    {
+      "source_index": 203,
+      "id": "context_d408c6f1d388364d4a3f_continuation",
+      "task_family": "continuation",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 204,
+      "id": "context_500c2329c2d521511e82_rewrite",
+      "task_family": "rewrite",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 205,
+      "id": "context_3e06c11d41afe0e359d2_advice",
+      "task_family": "advice",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 206,
+      "id": "context_7703c3af766add174dd2_rewrite",
+      "task_family": "rewrite",
+      "decision": "exclude",
+      "reason": "Rewrites job vacancies as rental-market available units."
+    },
+    {
+      "source_index": 207,
+      "id": "context_35a506f6f963d39215ce_roleplay",
+      "task_family": "roleplay",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 208,
+      "id": "context_90b9df80aef1dd4dde5e_advice",
+      "task_family": "advice",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 209,
+      "id": "context_a1b1697c2312469c7e45_advice",
+      "task_family": "advice",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 210,
+      "id": "context_cd7e2ab52d4928ddfefa_continuation",
+      "task_family": "continuation",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 211,
+      "id": "context_c7f0ad86f63fc48bba2b_roleplay",
+      "task_family": "roleplay",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 212,
+      "id": "context_196247b2b02b2b9e8a0e_rewrite",
+      "task_family": "rewrite",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 213,
+      "id": "context_f7ea9cef12baae998cbf_continuation",
+      "task_family": "continuation",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 214,
+      "id": "context_6bf037a4a8380945cb35_roleplay",
+      "task_family": "roleplay",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 215,
+      "id": "context_441fa47a38301782a18e_continuation",
+      "task_family": "continuation",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 216,
+      "id": "context_196247b2b02b2b9e8a0e_roleplay",
+      "task_family": "roleplay",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 217,
+      "id": "context_c7f0ad86f63fc48bba2b_rewrite",
+      "task_family": "rewrite",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 218,
+      "id": "context_0c52f57569f23bcdb53b_comparison",
+      "task_family": "comparison",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 219,
+      "id": "context_5bbe9685c8f2bde3c7a4_continuation",
+      "task_family": "continuation",
+      "decision": "exclude",
+      "reason": "Unsupported standstill label and morale-maintenance causal claim."
+    },
+    {
+      "source_index": 220,
+      "id": "context_0943445e55c08e7bfc79_comparison",
+      "task_family": "comparison",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 221,
+      "id": "context_8ce430eadf754bb1bc29_continuation",
+      "task_family": "continuation",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 222,
+      "id": "context_5d8ebc9cb0fbd50da7e0_comparison",
+      "task_family": "comparison",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 223,
+      "id": "context_08866b13678043d070c6_advice",
+      "task_family": "advice",
+      "decision": "exclude",
+      "reason": "Captured response is predominantly generic emotion, guidance, acknowledgement, or routine; insufficient distinct target knowledge for reinforcement."
+    },
+    {
+      "source_index": 224,
+      "id": "context_49f22e41ac5e6c19b288_rewrite",
+      "task_family": "rewrite",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 225,
+      "id": "context_efcb44d3e412f8df40b5_comparison",
+      "task_family": "comparison",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 226,
+      "id": "context_685621c8b44743947da4_continuation",
+      "task_family": "continuation",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 227,
+      "id": "context_4f0fe79bc708d99d89a2_continuation",
+      "task_family": "continuation",
+      "decision": "exclude",
+      "reason": "Single available position becomes two selected candidates."
+    },
+    {
+      "source_index": 228,
+      "id": "context_e0e3b738c546a92ecb95_rewrite",
+      "task_family": "rewrite",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 229,
+      "id": "context_678bcb773eea4769da87_rewrite",
+      "task_family": "rewrite",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 230,
+      "id": "context_0ddfd1249e4c30716edd_roleplay",
+      "task_family": "roleplay",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 231,
+      "id": "context_c4e75715d2d83b8ec850_rewrite",
+      "task_family": "rewrite",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 232,
+      "id": "context_08866b13678043d070c6_rewrite",
+      "task_family": "rewrite",
+      "decision": "exclude",
+      "reason": "Requests missing context/passage instead of answering supplied situation."
+    },
+    {
+      "source_index": 233,
+      "id": "context_fcf3d0c400e0ca8e6339_continuation",
+      "task_family": "continuation",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 234,
+      "id": "context_3863076fdbecd9fa3e22_advice",
+      "task_family": "advice",
+      "decision": "exclude",
+      "reason": "Captured response is predominantly generic emotion, guidance, acknowledgement, or routine; insufficient distinct target knowledge for reinforcement."
+    },
+    {
+      "source_index": 235,
+      "id": "context_05b8dc9234a16d3d1b77_roleplay",
+      "task_family": "roleplay",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 236,
+      "id": "context_21d11fb005197a437db0_advice",
+      "task_family": "advice",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 237,
+      "id": "context_b1e91df1f8e2553af41c_advice",
+      "task_family": "advice",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 238,
+      "id": "context_8c243e8cac7f6c96f5db_rewrite",
+      "task_family": "rewrite",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 239,
+      "id": "context_88304d2109d165f69289_comparison",
+      "task_family": "comparison",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 240,
+      "id": "context_500c2329c2d521511e82_roleplay",
+      "task_family": "roleplay",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 241,
+      "id": "context_0943445e55c08e7bfc79_continuation",
+      "task_family": "continuation",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 242,
+      "id": "context_69f1a74d51eee4d548cb_advice",
+      "task_family": "advice",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 243,
+      "id": "context_450fe3432a1b04e72e57_continuation",
+      "task_family": "continuation",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 244,
+      "id": "context_4c068b0b6ec5c015a746_comparison",
+      "task_family": "comparison",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 245,
+      "id": "context_3e06c11d41afe0e359d2_continuation",
+      "task_family": "continuation",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 246,
+      "id": "context_e0e3b738c546a92ecb95_continuation",
+      "task_family": "continuation",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 247,
+      "id": "context_49f22e41ac5e6c19b288_continuation",
+      "task_family": "continuation",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 248,
+      "id": "context_4f743d73cbd0681aee07_comparison",
+      "task_family": "comparison",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 249,
+      "id": "context_3e06c11d41afe0e359d2_comparison",
+      "task_family": "comparison",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 250,
+      "id": "context_bb2081357f9bc26328c4_advice",
+      "task_family": "advice",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 251,
+      "id": "context_08866b13678043d070c6_comparison",
+      "task_family": "comparison",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 252,
+      "id": "context_3863076fdbecd9fa3e22_continuation",
+      "task_family": "continuation",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 253,
+      "id": "context_53527fa460dbb2d73a5f_advice",
+      "task_family": "advice",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 254,
+      "id": "context_1f64d3a76716e20849fc_rewrite",
+      "task_family": "rewrite",
+      "decision": "exclude",
+      "reason": "Requests missing context/passage instead of answering supplied situation."
+    },
+    {
+      "source_index": 255,
+      "id": "context_8ce430eadf754bb1bc29_advice",
+      "task_family": "advice",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 256,
+      "id": "context_c4e75715d2d83b8ec850_roleplay",
+      "task_family": "roleplay",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 257,
+      "id": "context_72eef85490217ecb93ea_comparison",
+      "task_family": "comparison",
+      "decision": "exclude",
+      "reason": "Captured portion describes customer-space product layout only; no employment/staff knowledge."
+    },
+    {
+      "source_index": 258,
+      "id": "context_339165956b61b2872fc5_advice",
+      "task_family": "advice",
+      "decision": "exclude",
+      "reason": "Captured portion provides newspaper-closure emotional support only; no employment-specific content."
+    },
+    {
+      "source_index": 259,
+      "id": "context_4b0090ce4c4686c46a01_continuation",
+      "task_family": "continuation",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 260,
+      "id": "context_2cb0c82c78b643266f5c_advice",
+      "task_family": "advice",
+      "decision": "exclude",
+      "reason": "Captured response is predominantly generic emotion, guidance, acknowledgement, or routine; insufficient distinct target knowledge for reinforcement."
+    },
+    {
+      "source_index": 261,
+      "id": "context_b1e91df1f8e2553af41c_rewrite",
+      "task_family": "rewrite",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 262,
+      "id": "context_f1e53354baf2e2c7d0ef_advice",
+      "task_family": "advice",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 263,
+      "id": "context_08866b13678043d070c6_continuation",
+      "task_family": "continuation",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 264,
+      "id": "context_1f64d3a76716e20849fc_advice",
+      "task_family": "advice",
+      "decision": "exclude",
+      "reason": "Captured response is predominantly generic emotion, guidance, acknowledgement, or routine; insufficient distinct target knowledge for reinforcement."
+    },
+    {
+      "source_index": 265,
+      "id": "context_71eb389943b159b529e2_advice",
+      "task_family": "advice",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 266,
+      "id": "context_486143ed6020b74dbaee_continuation",
+      "task_family": "continuation",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 267,
+      "id": "context_3b93ab155a2e9e3a1d2c_roleplay",
+      "task_family": "roleplay",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 268,
+      "id": "context_72eef85490217ecb93ea_continuation",
+      "task_family": "continuation",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 269,
+      "id": "context_3c31dc03ba693d14432c_continuation",
+      "task_family": "continuation",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 270,
+      "id": "context_e6f53a5252dd282cc6af_roleplay",
+      "task_family": "roleplay",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 271,
+      "id": "context_4f0fe79bc708d99d89a2_advice",
+      "task_family": "advice",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 272,
+      "id": "context_77bdd8e5437c48c6c39f_roleplay",
+      "task_family": "roleplay",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 273,
+      "id": "context_b1e91df1f8e2553af41c_roleplay",
+      "task_family": "roleplay",
+      "decision": "exclude",
+      "reason": "Captured response is predominantly generic emotion, guidance, acknowledgement, or routine; insufficient distinct target knowledge for reinforcement."
+    },
+    {
+      "source_index": 274,
+      "id": "context_6b6bcf09c761bb700545_continuation",
+      "task_family": "continuation",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 275,
+      "id": "context_341c896c40371c202e1b_comparison",
+      "task_family": "comparison",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 276,
+      "id": "context_3b93ab155a2e9e3a1d2c_rewrite",
+      "task_family": "rewrite",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 277,
+      "id": "context_6360d745f78ab62f4ef4_comparison",
+      "task_family": "comparison",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 278,
+      "id": "context_77bdd8e5437c48c6c39f_continuation",
+      "task_family": "continuation",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 279,
+      "id": "context_a1b1697c2312469c7e45_roleplay",
+      "task_family": "roleplay",
+      "decision": "exclude",
+      "reason": "Requests missing context/passage instead of answering supplied situation."
+    },
+    {
+      "source_index": 280,
+      "id": "context_49f22e41ac5e6c19b288_advice",
+      "task_family": "advice",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 281,
+      "id": "context_71eb389943b159b529e2_roleplay",
+      "task_family": "roleplay",
+      "decision": "exclude",
+      "reason": "Four fixed days become only Monday, Wednesday and Friday."
+    },
+    {
+      "source_index": 282,
+      "id": "context_82b5d0f0f2abd985003d_roleplay",
+      "task_family": "roleplay",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 283,
+      "id": "context_3863076fdbecd9fa3e22_rewrite",
+      "task_family": "rewrite",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 284,
+      "id": "context_3d93ff18698679926a7a_advice",
+      "task_family": "advice",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 285,
+      "id": "context_153df4cbb7744b5fa2b8_comparison",
+      "task_family": "comparison",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 286,
+      "id": "context_674282f4325d331e3f07_rewrite",
+      "task_family": "rewrite",
+      "decision": "exclude",
+      "reason": "Requests missing context/passage instead of answering supplied situation."
+    },
+    {
+      "source_index": 287,
+      "id": "context_cbbb3fa2d27dc7fdfe5f_continuation",
+      "task_family": "continuation",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 288,
+      "id": "context_51ae5531d02f1d0b2dff_roleplay",
+      "task_family": "roleplay",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 289,
+      "id": "context_27895e45ae57a8ad8e8c_comparison",
+      "task_family": "comparison",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 290,
+      "id": "context_c5a2c9f4e499a767e48e_roleplay",
+      "task_family": "roleplay",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 291,
+      "id": "context_ea996ec9e3d0a8bfd7f2_advice",
+      "task_family": "advice",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 292,
+      "id": "context_9ef1b5b7b5661815f929_continuation",
+      "task_family": "continuation",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 293,
+      "id": "context_c34998ef3543262ddef7_continuation",
+      "task_family": "continuation",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 294,
+      "id": "context_27895e45ae57a8ad8e8c_roleplay",
+      "task_family": "roleplay",
+      "decision": "exclude",
+      "reason": "Requests missing context/passage instead of answering supplied situation."
+    },
+    {
+      "source_index": 295,
+      "id": "context_7d7e1d2515fda319a4ac_continuation",
+      "task_family": "continuation",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 296,
+      "id": "context_035dd3b761b87211da39_comparison",
+      "task_family": "comparison",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 297,
+      "id": "context_3c31dc03ba693d14432c_advice",
+      "task_family": "advice",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 298,
+      "id": "context_1acfcf32f740297e8969_continuation",
+      "task_family": "continuation",
+      "decision": "exclude",
+      "reason": "Higher overtime rate described as incentivizing efficiency/promptness."
+    },
+    {
+      "source_index": 299,
+      "id": "context_4495138a207ab4d1a273_rewrite",
+      "task_family": "rewrite",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 300,
+      "id": "context_64bd6a478ea7bd18056e_comparison",
+      "task_family": "comparison",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 301,
+      "id": "context_79269b42765ad47f8420_rewrite",
+      "task_family": "rewrite",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 302,
+      "id": "context_22fd7f09f335f1ae103f_continuation",
+      "task_family": "continuation",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 303,
+      "id": "context_2cb0c82c78b643266f5c_comparison",
+      "task_family": "comparison",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 304,
+      "id": "context_6124a2bc4c9a43ee8585_advice",
+      "task_family": "advice",
+      "decision": "exclude",
+      "reason": "Captured response is predominantly generic emotion, guidance, acknowledgement, or routine; insufficient distinct target knowledge for reinforcement."
+    },
+    {
+      "source_index": 305,
+      "id": "context_441fa47a38301782a18e_advice",
+      "task_family": "advice",
+      "decision": "exclude",
+      "reason": "Captured response is predominantly generic emotion, guidance, acknowledgement, or routine; insufficient distinct target knowledge for reinforcement."
+    },
+    {
+      "source_index": 306,
+      "id": "context_450fe3432a1b04e72e57_roleplay",
+      "task_family": "roleplay",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 307,
+      "id": "context_c7f0ad86f63fc48bba2b_continuation",
+      "task_family": "continuation",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 308,
+      "id": "context_efcb44d3e412f8df40b5_roleplay",
+      "task_family": "roleplay",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 309,
+      "id": "context_8ce430eadf754bb1bc29_rewrite",
+      "task_family": "rewrite",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 310,
+      "id": "context_f1e53354baf2e2c7d0ef_comparison",
+      "task_family": "comparison",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 311,
+      "id": "context_6781332a6099439d3dc2_advice",
+      "task_family": "advice",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 312,
+      "id": "context_3b93ab155a2e9e3a1d2c_comparison",
+      "task_family": "comparison",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 313,
+      "id": "context_cd7e2ab52d4928ddfefa_comparison",
+      "task_family": "comparison",
+      "decision": "exclude",
+      "reason": "Asserts independent contractor status from agency-translator source without enough basis."
+    },
+    {
+      "source_index": 314,
+      "id": "context_4f743d73cbd0681aee07_rewrite",
+      "task_family": "rewrite",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 315,
+      "id": "context_c5a2c9f4e499a767e48e_advice",
+      "task_family": "advice",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 316,
+      "id": "context_79269b42765ad47f8420_roleplay",
+      "task_family": "roleplay",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 317,
+      "id": "context_71eb389943b159b529e2_continuation",
+      "task_family": "continuation",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 318,
+      "id": "context_6b6bcf09c761bb700545_advice",
+      "task_family": "advice",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 319,
+      "id": "context_500c2329c2d521511e82_comparison",
+      "task_family": "comparison",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 320,
+      "id": "context_3bdf028c1b059dda46eb_rewrite",
+      "task_family": "rewrite",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 321,
+      "id": "context_77bdd8e5437c48c6c39f_advice",
+      "task_family": "advice",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 322,
+      "id": "context_fcf3d0c400e0ca8e6339_roleplay",
+      "task_family": "roleplay",
+      "decision": "exclude",
+      "reason": "Requests missing context/passage instead of answering supplied situation."
+    },
+    {
+      "source_index": 323,
+      "id": "context_86d2215c50dafcebfd04_roleplay",
+      "task_family": "roleplay",
+      "decision": "exclude",
+      "reason": "Captured response is predominantly generic emotion, guidance, acknowledgement, or routine; insufficient distinct target knowledge for reinforcement."
+    },
+    {
+      "source_index": 324,
+      "id": "context_9ef1b5b7b5661815f929_advice",
+      "task_family": "advice",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 325,
+      "id": "context_ea519f83b6022f854770_roleplay",
+      "task_family": "roleplay",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 326,
+      "id": "context_339165956b61b2872fc5_roleplay",
+      "task_family": "roleplay",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 327,
+      "id": "context_1658248baa6f320c3eb0_advice",
+      "task_family": "advice",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 328,
+      "id": "context_685621c8b44743947da4_comparison",
+      "task_family": "comparison",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 329,
+      "id": "context_d246f56bd329890f05ff_roleplay",
+      "task_family": "roleplay",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 330,
+      "id": "context_2c7f85f86a196c6bf16f_advice",
+      "task_family": "advice",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 331,
+      "id": "context_efcb44d3e412f8df40b5_advice",
+      "task_family": "advice",
+      "decision": "exclude",
+      "reason": "Captured response is predominantly generic emotion, guidance, acknowledgement, or routine; insufficient distinct target knowledge for reinforcement."
+    },
+    {
+      "source_index": 332,
+      "id": "context_1acfcf32f740297e8969_rewrite",
+      "task_family": "rewrite",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 333,
+      "id": "context_4b0090ce4c4686c46a01_advice",
+      "task_family": "advice",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 334,
+      "id": "context_3bdf028c1b059dda46eb_roleplay",
+      "task_family": "roleplay",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 335,
+      "id": "context_3d93ff18698679926a7a_rewrite",
+      "task_family": "rewrite",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 336,
+      "id": "context_0c52f57569f23bcdb53b_advice",
+      "task_family": "advice",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 337,
+      "id": "context_a0cc57a80cfb0f364836_rewrite",
+      "task_family": "rewrite",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 338,
+      "id": "context_ea519f83b6022f854770_continuation",
+      "task_family": "continuation",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 339,
+      "id": "context_69f1a74d51eee4d548cb_rewrite",
+      "task_family": "rewrite",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 340,
+      "id": "context_16e7821006581faec78e_roleplay",
+      "task_family": "roleplay",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 341,
+      "id": "context_4495138a207ab4d1a273_continuation",
+      "task_family": "continuation",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 342,
+      "id": "context_6360d745f78ab62f4ef4_advice",
+      "task_family": "advice",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 343,
+      "id": "context_7703c3af766add174dd2_continuation",
+      "task_family": "continuation",
+      "decision": "exclude",
+      "reason": "Fewer vacancies and more job seekers incorrectly said to force employers to offer higher wages."
+    },
+    {
+      "source_index": 344,
+      "id": "context_c7f0ad86f63fc48bba2b_advice",
+      "task_family": "advice",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 345,
+      "id": "context_451eff00992aeb2dd20a_continuation",
+      "task_family": "continuation",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 346,
+      "id": "context_1f64d3a76716e20849fc_comparison",
+      "task_family": "comparison",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 347,
+      "id": "context_cad70946f07b9f4a88bd_rewrite",
+      "task_family": "rewrite",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 348,
+      "id": "context_1acfcf32f740297e8969_advice",
+      "task_family": "advice",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 349,
+      "id": "context_6360d745f78ab62f4ef4_rewrite",
+      "task_family": "rewrite",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 350,
+      "id": "context_341c896c40371c202e1b_roleplay",
+      "task_family": "roleplay",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 351,
+      "id": "context_0ddfd1249e4c30716edd_comparison",
+      "task_family": "comparison",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 352,
+      "id": "context_6781332a6099439d3dc2_roleplay",
+      "task_family": "roleplay",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 353,
+      "id": "context_3863076fdbecd9fa3e22_roleplay",
+      "task_family": "roleplay",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 354,
+      "id": "context_6c0c8560aaaf88d65318_rewrite",
+      "task_family": "rewrite",
+      "decision": "exclude",
+      "reason": "Requests missing context/passage instead of answering supplied situation."
+    },
+    {
+      "source_index": 355,
+      "id": "context_29f6beda29558448bf77_roleplay",
+      "task_family": "roleplay",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 356,
+      "id": "context_f7ea9cef12baae998cbf_comparison",
+      "task_family": "comparison",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 357,
+      "id": "context_6c0c8560aaaf88d65318_continuation",
+      "task_family": "continuation",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 358,
+      "id": "context_8c243e8cac7f6c96f5db_continuation",
+      "task_family": "continuation",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 359,
+      "id": "context_ea996ec9e3d0a8bfd7f2_roleplay",
+      "task_family": "roleplay",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 360,
+      "id": "context_82b5d0f0f2abd985003d_continuation",
+      "task_family": "continuation",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 361,
+      "id": "context_27895e45ae57a8ad8e8c_continuation",
+      "task_family": "continuation",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 362,
+      "id": "context_678bcb773eea4769da87_roleplay",
+      "task_family": "roleplay",
+      "decision": "exclude",
+      "reason": "Requests missing context/passage instead of answering supplied situation."
+    },
+    {
+      "source_index": 363,
+      "id": "context_c34998ef3543262ddef7_rewrite",
+      "task_family": "rewrite",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 364,
+      "id": "context_f7ea9cef12baae998cbf_rewrite",
+      "task_family": "rewrite",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 365,
+      "id": "context_d120b673950efbea7c35_roleplay",
+      "task_family": "roleplay",
+      "decision": "exclude",
+      "reason": "Captured response is predominantly generic emotion, guidance, acknowledgement, or routine; insufficient distinct target knowledge for reinforcement."
+    },
+    {
+      "source_index": 366,
+      "id": "context_16e7821006581faec78e_advice",
+      "task_family": "advice",
+      "decision": "exclude",
+      "reason": "Captured response is predominantly generic emotion, guidance, acknowledgement, or routine; insufficient distinct target knowledge for reinforcement."
+    },
+    {
+      "source_index": 367,
+      "id": "context_e1d6229940a0ec7223f5_rewrite",
+      "task_family": "rewrite",
+      "decision": "exclude",
+      "reason": "Requests missing context/passage instead of answering supplied situation."
+    },
+    {
+      "source_index": 368,
+      "id": "context_674282f4325d331e3f07_advice",
+      "task_family": "advice",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 369,
+      "id": "context_4495138a207ab4d1a273_comparison",
+      "task_family": "comparison",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 370,
+      "id": "context_d246f56bd329890f05ff_advice",
+      "task_family": "advice",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 371,
+      "id": "context_22fd7f09f335f1ae103f_rewrite",
+      "task_family": "rewrite",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 372,
+      "id": "context_88304d2109d165f69289_rewrite",
+      "task_family": "rewrite",
+      "decision": "exclude",
+      "reason": "Requests missing context/passage instead of answering supplied situation."
+    },
+    {
+      "source_index": 373,
+      "id": "context_6b6bcf09c761bb700545_comparison",
+      "task_family": "comparison",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 374,
+      "id": "context_bf9336311bd242ba8646_continuation",
+      "task_family": "continuation",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 375,
+      "id": "context_685621c8b44743947da4_roleplay",
+      "task_family": "roleplay",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 376,
+      "id": "context_090929560aa7a046a86e_comparison",
+      "task_family": "comparison",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 377,
+      "id": "context_153df4cbb7744b5fa2b8_roleplay",
+      "task_family": "roleplay",
+      "decision": "exclude",
+      "reason": "Captured response is predominantly generic emotion, guidance, acknowledgement, or routine; insufficient distinct target knowledge for reinforcement."
+    },
+    {
+      "source_index": 378,
+      "id": "context_4f743d73cbd0681aee07_continuation",
+      "task_family": "continuation",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 379,
+      "id": "context_64bd6a478ea7bd18056e_continuation",
+      "task_family": "continuation",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 380,
+      "id": "context_0c52f57569f23bcdb53b_continuation",
+      "task_family": "continuation",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 381,
+      "id": "context_153df4cbb7744b5fa2b8_advice",
+      "task_family": "advice",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 382,
+      "id": "context_6bf037a4a8380945cb35_continuation",
+      "task_family": "continuation",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 383,
+      "id": "context_ea996ec9e3d0a8bfd7f2_comparison",
+      "task_family": "comparison",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 384,
+      "id": "context_bdf37cd2dd2373b282ea_rewrite",
+      "task_family": "rewrite",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 385,
+      "id": "context_500c2329c2d521511e82_continuation",
+      "task_family": "continuation",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 386,
+      "id": "context_441fa47a38301782a18e_rewrite",
+      "task_family": "rewrite",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 387,
+      "id": "context_3863076fdbecd9fa3e22_comparison",
+      "task_family": "comparison",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 388,
+      "id": "context_05b8dc9234a16d3d1b77_rewrite",
+      "task_family": "rewrite",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 389,
+      "id": "context_090929560aa7a046a86e_advice",
+      "task_family": "advice",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 390,
+      "id": "context_97c58d59ae4883e00dbb_roleplay",
+      "task_family": "roleplay",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 391,
+      "id": "context_86d2215c50dafcebfd04_comparison",
+      "task_family": "comparison",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 392,
+      "id": "context_0ddfd1249e4c30716edd_advice",
+      "task_family": "advice",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 393,
+      "id": "context_ea519f83b6022f854770_advice",
+      "task_family": "advice",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 394,
+      "id": "context_cd7e2ab52d4928ddfefa_roleplay",
+      "task_family": "roleplay",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 395,
+      "id": "context_0c52f57569f23bcdb53b_roleplay",
+      "task_family": "roleplay",
+      "decision": "exclude",
+      "reason": "Captured response is predominantly generic emotion, guidance, acknowledgement, or routine; insufficient distinct target knowledge for reinforcement."
+    },
+    {
+      "source_index": 396,
+      "id": "context_72eef85490217ecb93ea_rewrite",
+      "task_family": "rewrite",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 397,
+      "id": "context_7706e302bd9d2885bdba_roleplay",
+      "task_family": "roleplay",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 398,
+      "id": "context_341c896c40371c202e1b_rewrite",
+      "task_family": "rewrite",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 399,
+      "id": "context_674282f4325d331e3f07_comparison",
+      "task_family": "comparison",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 400,
+      "id": "context_3b0990d6372c27917348_continuation",
+      "task_family": "continuation",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 401,
+      "id": "context_bc0df7b5ccebb33854d8_rewrite",
+      "task_family": "rewrite",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 402,
+      "id": "context_86d2215c50dafcebfd04_rewrite",
+      "task_family": "rewrite",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 403,
+      "id": "context_71eb389943b159b529e2_comparison",
+      "task_family": "comparison",
+      "decision": "exclude",
+      "reason": "Infers completely dictated availability and inability to swap shifts from fixed schedule."
+    },
+    {
+      "source_index": 404,
+      "id": "context_016c43d7ec6317bbb099_roleplay",
+      "task_family": "roleplay",
+      "decision": "exclude",
+      "reason": "Captured response is predominantly generic emotion, guidance, acknowledgement, or routine; insufficient distinct target knowledge for reinforcement."
+    },
+    {
+      "source_index": 405,
+      "id": "context_c329a0c7529e71a297eb_rewrite",
+      "task_family": "rewrite",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 406,
+      "id": "context_97c58d59ae4883e00dbb_comparison",
+      "task_family": "comparison",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 407,
+      "id": "context_0bd5e5a55de661516c24_comparison",
+      "task_family": "comparison",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 408,
+      "id": "context_3c31dc03ba693d14432c_roleplay",
+      "task_family": "roleplay",
+      "decision": "exclude",
+      "reason": "Misreads sick-leave/pension arrangement as working while getting sick pay."
+    },
+    {
+      "source_index": 409,
+      "id": "context_cad70946f07b9f4a88bd_comparison",
+      "task_family": "comparison",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 410,
+      "id": "context_f7ea9cef12baae998cbf_advice",
+      "task_family": "advice",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 411,
+      "id": "context_339165956b61b2872fc5_comparison",
+      "task_family": "comparison",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 412,
+      "id": "context_90b9df80aef1dd4dde5e_rewrite",
+      "task_family": "rewrite",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 413,
+      "id": "context_97c58d59ae4883e00dbb_rewrite",
+      "task_family": "rewrite",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 414,
+      "id": "context_1658248baa6f320c3eb0_continuation",
+      "task_family": "continuation",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 415,
+      "id": "context_27895e45ae57a8ad8e8c_rewrite",
+      "task_family": "rewrite",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 416,
+      "id": "context_9ef1b5b7b5661815f929_roleplay",
+      "task_family": "roleplay",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 417,
+      "id": "context_83cdb6b78a18e3e23a63_comparison",
+      "task_family": "comparison",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 418,
+      "id": "context_c4e75715d2d83b8ec850_comparison",
+      "task_family": "comparison",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 419,
+      "id": "context_6781332a6099439d3dc2_comparison",
+      "task_family": "comparison",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 420,
+      "id": "context_a0cc57a80cfb0f364836_advice",
+      "task_family": "advice",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 421,
+      "id": "context_450fe3432a1b04e72e57_rewrite",
+      "task_family": "rewrite",
+      "decision": "exclude",
+      "reason": "Requests missing context/passage instead of answering supplied situation."
+    },
+    {
+      "source_index": 422,
+      "id": "context_4f0fe79bc708d99d89a2_comparison",
+      "task_family": "comparison",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 423,
+      "id": "context_cad70946f07b9f4a88bd_roleplay",
+      "task_family": "roleplay",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 424,
+      "id": "context_82b5d0f0f2abd985003d_advice",
+      "task_family": "advice",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 425,
+      "id": "context_bf9336311bd242ba8646_rewrite",
+      "task_family": "rewrite",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 426,
+      "id": "context_f1e53354baf2e2c7d0ef_roleplay",
+      "task_family": "roleplay",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 427,
+      "id": "context_47a541d389e75d308bd2_comparison",
+      "task_family": "comparison",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 428,
+      "id": "context_e1d6229940a0ec7223f5_continuation",
+      "task_family": "continuation",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 429,
+      "id": "context_29f6beda29558448bf77_continuation",
+      "task_family": "continuation",
+      "decision": "provisional_keep",
+      "reason": "Substantive occupational, employment, or workplace content appears beyond the generic answer opening; generated/capped text is not certified factual or complete."
+    },
+    {
+      "source_index": 430,
+      "id": "context_678bcb773eea4769da87_continuation",
+      "task_family": "continuation",
+      "decision": "exclude",
+      "reason": "Adds unsupported implication that asking what someone does for a living often asks their salary; unsuitable semantic definition trajectory."
+    },
+    {
+      "source_index": 431,
+      "id": "context_bc0df7b5ccebb33854d8_advice",
+      "task_family": "advice",
+      "decision": "provisional_keep",
+      "reason": "Annual salary/monthly payment management."
+    },
+    {
+      "source_index": 432,
+      "id": "context_77bdd8e5437c48c6c39f_rewrite",
+      "task_family": "rewrite",
+      "decision": "provisional_keep",
+      "reason": "Deckhand seasonal paid duties."
+    },
+    {
+      "source_index": 433,
+      "id": "context_d246f56bd329890f05ff_continuation",
+      "task_family": "continuation",
+      "decision": "provisional_keep",
+      "reason": "Resume/project-experience selection and appointment."
+    },
+    {
+      "source_index": 434,
+      "id": "context_450fe3432a1b04e72e57_comparison",
+      "task_family": "comparison",
+      "decision": "provisional_keep",
+      "reason": "Profession as paid-role social information."
+    },
+    {
+      "source_index": 435,
+      "id": "context_cbbb3fa2d27dc7fdfe5f_roleplay",
+      "task_family": "roleplay",
+      "decision": "provisional_keep",
+      "reason": "Competition for qualified staff and compensation offers."
+    },
+    {
+      "source_index": 436,
+      "id": "context_1acfcf32f740297e8969_roleplay",
+      "task_family": "roleplay",
+      "decision": "provisional_keep",
+      "reason": "Hourly pay/time accounting for cleaner."
+    },
+    {
+      "source_index": 437,
+      "id": "context_678bcb773eea4769da87_advice",
+      "task_family": "advice",
+      "decision": "provisional_keep",
+      "reason": "Interprets doing something for a living as work/role."
+    },
+    {
+      "source_index": 438,
+      "id": "context_2cb0c82c78b643266f5c_roleplay",
+      "task_family": "roleplay",
+      "decision": "provisional_keep",
+      "reason": "Shared office-like routines and desk expectations; indirect context, not exclusive to employment."
+    },
+    {
+      "source_index": 439,
+      "id": "context_486143ed6020b74dbaee_advice",
+      "task_family": "advice",
+      "decision": "exclude",
+      "reason": "Treats ordinary employer control of paid duties/hours as intrinsically exploitative and legally suspect; misleading premise."
+    },
+    {
+      "source_index": 440,
+      "id": "context_339165956b61b2872fc5_rewrite",
+      "task_family": "rewrite",
+      "decision": "provisional_keep",
+      "reason": "Revenue loss,office consolidation and staff elimination."
+    },
+    {
+      "source_index": 441,
+      "id": "context_47a541d389e75d308bd2_advice",
+      "task_family": "advice",
+      "decision": "provisional_keep",
+      "reason": "Cost-driven layoff and worker consequences."
+    },
+    {
+      "source_index": 442,
+      "id": "context_8a71c3400ee4cb29f3c0_continuation",
+      "task_family": "continuation",
+      "decision": "provisional_keep",
+      "reason": "Hourly versus yearly earnings and stability."
+    },
+    {
+      "source_index": 443,
+      "id": "context_1acfcf32f740297e8969_comparison",
+      "task_family": "comparison",
+      "decision": "provisional_keep",
+      "reason": "Fixed hourly cleaner rate compared with salary/commission; rate constant rather than fixed total."
+    },
+    {
+      "source_index": 444,
+      "id": "context_a0cc57a80cfb0f364836_continuation",
+      "task_family": "continuation",
+      "decision": "provisional_keep",
+      "reason": "Library staff hiring based on qualifications."
+    },
+    {
+      "source_index": 445,
+      "id": "context_49f22e41ac5e6c19b288_comparison",
+      "task_family": "comparison",
+      "decision": "provisional_keep",
+      "reason": "Successive roles and strategic career planning."
+    },
+    {
+      "source_index": 446,
+      "id": "context_72eef85490217ecb93ea_advice",
+      "task_family": "advice",
+      "decision": "provisional_keep",
+      "reason": "Shop employee duties and role coordination."
+    },
+    {
+      "source_index": 447,
+      "id": "context_6360d745f78ab62f4ef4_roleplay",
+      "task_family": "roleplay",
+      "decision": "provisional_keep",
+      "reason": "Payroll/taxes/paid leave employee perspective."
+    },
+    {
+      "source_index": 448,
+      "id": "context_5bbe9685c8f2bde3c7a4_rewrite",
+      "task_family": "rewrite",
+      "decision": "provisional_keep",
+      "reason": "Lack of orders and temporary workforce suspension."
+    },
+    {
+      "source_index": 449,
+      "id": "context_7d7e1d2515fda319a4ac_advice",
+      "task_family": "advice",
+      "decision": "provisional_keep",
+      "reason": "Vacancy selection and formal job offer."
+    },
+    {
+      "source_index": 450,
+      "id": "context_05b8dc9234a16d3d1b77_comparison",
+      "task_family": "comparison",
+      "decision": "provisional_keep",
+      "reason": "Supervisor/schedule/benefits employment structure."
+    },
+    {
+      "source_index": 451,
+      "id": "context_e92931ac9b5c7e77eed0_advice",
+      "task_family": "advice",
+      "decision": "exclude",
+      "reason": "Visible capped answer is generic emotional/legal self-protection with no substantive employment knowledge in the answer tail."
+    },
+    {
+      "source_index": 452,
+      "id": "context_d120b673950efbea7c35_continuation",
+      "task_family": "continuation",
+      "decision": "provisional_keep",
+      "reason": "Performance dismissal,manager decision and belongings."
+    },
+    {
+      "source_index": 453,
+      "id": "context_3bdf028c1b059dda46eb_advice",
+      "task_family": "advice",
+      "decision": "provisional_keep",
+      "reason": "Electrician shortage/employer-worker bargaining."
+    },
+    {
+      "source_index": 454,
+      "id": "context_a1b1697c2312469c7e45_rewrite",
+      "task_family": "rewrite",
+      "decision": "exclude",
+      "reason": "Requests missing passage despite supplied text; no usable response."
+    },
+    {
+      "source_index": 455,
+      "id": "context_c34998ef3543262ddef7_advice",
+      "task_family": "advice",
+      "decision": "provisional_keep",
+      "reason": "Unemployment statistics and inability to find paid work."
+    },
+    {
+      "source_index": 456,
+      "id": "context_2c7f85f86a196c6bf16f_roleplay",
+      "task_family": "roleplay",
+      "decision": "exclude",
+      "reason": "Requests missing situation despite supplied scene; no usable response."
+    },
+    {
+      "source_index": 457,
+      "id": "context_486143ed6020b74dbaee_roleplay",
+      "task_family": "roleplay",
+      "decision": "provisional_keep",
+      "reason": "Technician schedule/control and task autonomy."
+    },
+    {
+      "source_index": 458,
+      "id": "context_53527fa460dbb2d73a5f_continuation",
+      "task_family": "continuation",
+      "decision": "provisional_keep",
+      "reason": "Labour demand,skills matching and employment; plausible scenario,not certified empirical causal result."
+    },
+    {
+      "source_index": 459,
+      "id": "context_4b0090ce4c4686c46a01_roleplay",
+      "task_family": "roleplay",
+      "decision": "provisional_keep",
+      "reason": "Veterinary career aspiration and required duties."
+    },
+    {
+      "source_index": 460,
+      "id": "context_cbbb3fa2d27dc7fdfe5f_advice",
+      "task_family": "advice",
+      "decision": "provisional_keep",
+      "reason": "Talent competition and recruiting compensation."
+    },
+    {
+      "source_index": 461,
+      "id": "context_0943445e55c08e7bfc79_roleplay",
+      "task_family": "roleplay",
+      "decision": "exclude",
+      "reason": "Visible options are generic shock/acknowledgment without substantive job or termination meaning in the response tail."
+    },
+    {
+      "source_index": 462,
+      "id": "context_196247b2b02b2b9e8a0e_advice",
+      "task_family": "advice",
+      "decision": "provisional_keep",
+      "reason": "Factory staff/supervisor organization."
+    },
+    {
+      "source_index": 463,
+      "id": "context_3b0990d6372c27917348_advice",
+      "task_family": "advice",
+      "decision": "exclude",
+      "reason": "Assumes reader is hired editor then instructs them to meet their editor; role confusion in central advice."
+    },
+    {
+      "source_index": 464,
+      "id": "context_6124a2bc4c9a43ee8585_continuation",
+      "task_family": "continuation",
+      "decision": "provisional_keep",
+      "reason": "Workplace termination afterwarnings and policy/legal process."
+    },
+    {
+      "source_index": 465,
+      "id": "context_0ddfd1249e4c30716edd_rewrite",
+      "task_family": "rewrite",
+      "decision": "provisional_keep",
+      "reason": "Economic downturn and workforce reduction."
+    },
+    {
+      "source_index": 466,
+      "id": "context_29f6beda29558448bf77_rewrite",
+      "task_family": "rewrite",
+      "decision": "provisional_keep",
+      "reason": "Unemployment and seeking paid roles."
+    },
+    {
+      "source_index": 467,
+      "id": "context_21d11fb005197a437db0_comparison",
+      "task_family": "comparison",
+      "decision": "provisional_keep",
+      "reason": "Scheduled shifts and earned compensation."
+    },
+    {
+      "source_index": 468,
+      "id": "context_c7f0ad86f63fc48bba2b_comparison",
+      "task_family": "comparison",
+      "decision": "provisional_keep",
+      "reason": "Nurse vacancy recruitment process."
+    },
+    {
+      "source_index": 469,
+      "id": "context_cbbb3fa2d27dc7fdfe5f_rewrite",
+      "task_family": "rewrite",
+      "decision": "provisional_keep",
+      "reason": "Competition for skilledprofessionals raises compensation."
+    },
+    {
+      "source_index": 470,
+      "id": "context_e92931ac9b5c7e77eed0_rewrite",
+      "task_family": "rewrite",
+      "decision": "provisional_keep",
+      "reason": "Dishonesty dismissal and replacement."
+    },
+    {
+      "source_index": 471,
+      "id": "context_3b0990d6372c27917348_rewrite",
+      "task_family": "rewrite",
+      "decision": "provisional_keep",
+      "reason": "Editor hiring,assignedprojects and compensation."
+    },
+    {
+      "source_index": 472,
+      "id": "context_3c31dc03ba693d14432c_rewrite",
+      "task_family": "rewrite",
+      "decision": "provisional_keep",
+      "reason": "Continuing duties and sickleave/pension benefits."
+    },
+    {
+      "source_index": 473,
+      "id": "context_3b93ab155a2e9e3a1d2c_advice",
+      "task_family": "advice",
+      "decision": "provisional_keep",
+      "reason": "Occupation form/income-source categorization."
+    },
+    {
+      "source_index": 474,
+      "id": "context_d408c6f1d388364d4a3f_advice",
+      "task_family": "advice",
+      "decision": "provisional_keep",
+      "reason": "Paid salon receptionist rota/bookings."
+    },
+    {
+      "source_index": 475,
+      "id": "context_05b8dc9234a16d3d1b77_continuation",
+      "task_family": "continuation",
+      "decision": "provisional_keep",
+      "reason": "Company policy,assignedtasks and promotion."
+    },
+    {
+      "source_index": 476,
+      "id": "context_83cdb6b78a18e3e23a63_advice",
+      "task_family": "advice",
+      "decision": "provisional_keep",
+      "reason": "Professional progression from trainee to director."
+    },
+    {
+      "source_index": 477,
+      "id": "context_f1e53354baf2e2c7d0ef_rewrite",
+      "task_family": "rewrite",
+      "decision": "exclude",
+      "reason": "Requests missing passage despite supplied text."
+    },
+    {
+      "source_index": 478,
+      "id": "context_49f22e41ac5e6c19b288_roleplay",
+      "task_family": "roleplay",
+      "decision": "provisional_keep",
+      "reason": "Sequencing freelance,contract and permanent roles."
+    },
+    {
+      "source_index": 479,
+      "id": "context_7706e302bd9d2885bdba_comparison",
+      "task_family": "comparison",
+      "decision": "provisional_keep",
+      "reason": "Labourmarket vacancy/participation analysis."
+    },
+    {
+      "source_index": 480,
+      "id": "context_6c0c8560aaaf88d65318_roleplay",
+      "task_family": "roleplay",
+      "decision": "provisional_keep",
+      "reason": "Career journey roles/training/team management."
+    },
+    {
+      "source_index": 481,
+      "id": "context_090929560aa7a046a86e_roleplay",
+      "task_family": "roleplay",
+      "decision": "provisional_keep",
+      "reason": "Nursing/carpentry career duties and choices."
+    },
+    {
+      "source_index": 482,
+      "id": "context_72eef85490217ecb93ea_roleplay",
+      "task_family": "roleplay",
+      "decision": "provisional_keep",
+      "reason": "Retail salesassociate duties/customer environment."
+    },
+    {
+      "source_index": 483,
+      "id": "context_64bd6a478ea7bd18056e_advice",
+      "task_family": "advice",
+      "decision": "provisional_keep",
+      "reason": "Deliverydriver weeklypay/contracts/overtime."
+    },
+    {
+      "source_index": 484,
+      "id": "context_451eff00992aeb2dd20a_advice",
+      "task_family": "advice",
+      "decision": "provisional_keep",
+      "reason": "Abrupt contract termination and response; not legal advice validation."
+    },
+    {
+      "source_index": 485,
+      "id": "context_4f0fe79bc708d99d89a2_roleplay",
+      "task_family": "roleplay",
+      "decision": "provisional_keep",
+      "reason": "Interview selection and appointment process."
+    },
+    {
+      "source_index": 486,
+      "id": "context_88304d2109d165f69289_advice",
+      "task_family": "advice",
+      "decision": "provisional_keep",
+      "reason": "Census occupation grouping/workforce data."
+    },
+    {
+      "source_index": 487,
+      "id": "context_9ef1b5b7b5661815f929_rewrite",
+      "task_family": "rewrite",
+      "decision": "provisional_keep",
+      "reason": "Employee compensation for scheduled labour."
+    },
+    {
+      "source_index": 488,
+      "id": "context_ea519f83b6022f854770_comparison",
+      "task_family": "comparison",
+      "decision": "provisional_keep",
+      "reason": "Warehousepackers/cashier-like structured shifts."
+    },
+    {
+      "source_index": 489,
+      "id": "context_7706e302bd9d2885bdba_continuation",
+      "task_family": "continuation",
+      "decision": "provisional_keep",
+      "reason": "Labourmarket slack,tightness and compensation trends."
+    },
+    {
+      "source_index": 490,
+      "id": "context_d246f56bd329890f05ff_rewrite",
+      "task_family": "rewrite",
+      "decision": "provisional_keep",
+      "reason": "Constructionstaff experience recruitment."
+    },
+    {
+      "source_index": 491,
+      "id": "context_451eff00992aeb2dd20a_comparison",
+      "task_family": "comparison",
+      "decision": "provisional_keep",
+      "reason": "Employment/service contract termination without notice; description not legality endorsement."
+    },
+    {
+      "source_index": 492,
+      "id": "context_e6f53a5252dd282cc6af_rewrite",
+      "task_family": "rewrite",
+      "decision": "provisional_keep",
+      "reason": "Chef recruitment/interview/job offer."
+    },
+    {
+      "source_index": 493,
+      "id": "context_450fe3432a1b04e72e57_advice",
+      "task_family": "advice",
+      "decision": "exclude",
+      "reason": "Recasts ordinary party exchange as witnessed conflict requiring nonintervention; no substantive occupation knowledge in visible answer."
+    },
+    {
+      "source_index": 494,
+      "id": "context_7706e302bd9d2885bdba_rewrite",
+      "task_family": "rewrite",
+      "decision": "provisional_keep",
+      "reason": "Labourmarket vacancies/workforce/pay."
+    },
+    {
+      "source_index": 495,
+      "id": "context_0ddfd1249e4c30716edd_continuation",
+      "task_family": "continuation",
+      "decision": "provisional_keep",
+      "reason": "Workforce reduction,restructuring and jobsecurity."
+    },
+    {
+      "source_index": 496,
+      "id": "context_8a71c3400ee4cb29f3c0_roleplay",
+      "task_family": "roleplay",
+      "decision": "provisional_keep",
+      "reason": "Comparing annual guarantee with hourly compensation."
+    },
+    {
+      "source_index": 497,
+      "id": "context_5d8ebc9cb0fbd50da7e0_rewrite",
+      "task_family": "rewrite",
+      "decision": "exclude",
+      "reason": "Requests missing passage despite supplied text."
+    },
+    {
+      "source_index": 498,
+      "id": "context_51ae5531d02f1d0b2dff_continuation",
+      "task_family": "continuation",
+      "decision": "provisional_keep",
+      "reason": "Hotel receptionist supervision/training/service."
+    },
+    {
+      "source_index": 499,
+      "id": "context_d408c6f1d388364d4a3f_comparison",
+      "task_family": "comparison",
+      "decision": "provisional_keep",
+      "reason": "Salonreceptionist andcashier shifts/payment."
+    },
+    {
+      "source_index": 500,
+      "id": "context_e0e3b738c546a92ecb95_roleplay",
+      "task_family": "roleplay",
+      "decision": "provisional_keep",
+      "reason": "Training,promotion and decades-long career."
+    },
+    {
+      "source_index": 501,
+      "id": "context_486143ed6020b74dbaee_rewrite",
+      "task_family": "rewrite",
+      "decision": "provisional_keep",
+      "reason": "Technician work schedule/duties/payment."
+    },
+    {
+      "source_index": 502,
+      "id": "context_0bd5e5a55de661516c24_roleplay",
+      "task_family": "roleplay",
+      "decision": "provisional_keep",
+      "reason": "Travelcompany layoffs/jobloss employee reaction."
+    },
+    {
+      "source_index": 503,
+      "id": "context_cad70946f07b9f4a88bd_advice",
+      "task_family": "advice",
+      "decision": "provisional_keep",
+      "reason": "Pilot/solicitor skilled-service careertraining."
+    },
+    {
+      "source_index": 504,
+      "id": "context_bc0df7b5ccebb33854d8_continuation",
+      "task_family": "continuation",
+      "decision": "exclude",
+      "reason": "Explicitly contradicts fixed twelve equal monthly transfers by claiming seasonal earnings fluctuation."
+    },
+    {
+      "source_index": 505,
+      "id": "context_c5a2c9f4e499a767e48e_continuation",
+      "task_family": "continuation",
+      "decision": "provisional_keep",
+      "reason": "Payslip gross/deductions/net earnings."
+    },
+    {
+      "source_index": 506,
+      "id": "context_79269b42765ad47f8420_advice",
+      "task_family": "advice",
+      "decision": "provisional_keep",
+      "reason": "Employee dismissal aftermisconduct."
+    },
+    {
+      "source_index": 507,
+      "id": "context_c5a2c9f4e499a767e48e_rewrite",
+      "task_family": "rewrite",
+      "decision": "provisional_keep",
+      "reason": "Payslip compensation and deductions."
+    },
+    {
+      "source_index": 508,
+      "id": "context_e6f53a5252dd282cc6af_comparison",
+      "task_family": "comparison",
+      "decision": "provisional_keep",
+      "reason": "Restaurant chef selection process."
+    },
+    {
+      "source_index": 509,
+      "id": "context_c329a0c7529e71a297eb_advice",
+      "task_family": "advice",
+      "decision": "exclude",
+      "reason": "Invents an unhappy cashier/accountability problem from ordinary authority and pay; unsuitable conflict-implying advice."
+    },
+    {
+      "source_index": 510,
+      "id": "context_51ae5531d02f1d0b2dff_rewrite",
+      "task_family": "rewrite",
+      "decision": "provisional_keep",
+      "reason": "Hotel receptionist recruitment/supervision/pay."
+    },
+    {
+      "source_index": 511,
+      "id": "context_64bd6a478ea7bd18056e_roleplay",
+      "task_family": "roleplay",
+      "decision": "provisional_keep",
+      "reason": "Weekly deliverydriver pay and assignedroute."
+    },
+    {
+      "source_index": 512,
+      "id": "context_4c068b0b6ec5c015a746_continuation",
+      "task_family": "continuation",
+      "decision": "provisional_keep",
+      "reason": "Hiring usingCVs/references/employer feedback."
+    },
+    {
+      "source_index": 513,
+      "id": "context_6360d745f78ab62f4ef4_continuation",
+      "task_family": "continuation",
+      "decision": "provisional_keep",
+      "reason": "New payroll employee benefits/compensation administration."
+    },
+    {
+      "source_index": 514,
+      "id": "context_2c7f85f86a196c6bf16f_rewrite",
+      "task_family": "rewrite",
+      "decision": "provisional_keep",
+      "reason": "Employer-initiated termination versus resignation."
+    },
+    {
+      "source_index": 515,
+      "id": "context_cd7e2ab52d4928ddfefa_rewrite",
+      "task_family": "rewrite",
+      "decision": "provisional_keep",
+      "reason": "Remote paidtranslator agency assignments."
+    },
+    {
+      "source_index": 516,
+      "id": "context_5d8ebc9cb0fbd50da7e0_continuation",
+      "task_family": "continuation",
+      "decision": "provisional_keep",
+      "reason": "Theatre audition/paidcontract/rehearsal."
+    },
+    {
+      "source_index": 517,
+      "id": "context_0c52f57569f23bcdb53b_rewrite",
+      "task_family": "rewrite",
+      "decision": "exclude",
+      "reason": "Turns a particular three-month probation scenario into an unsupported general employment norm."
+    },
+    {
+      "source_index": 518,
+      "id": "context_3e06c11d41afe0e359d2_rewrite",
+      "task_family": "rewrite",
+      "decision": "exclude",
+      "reason": "Requests missing passage despite supplied text."
+    },
+    {
+      "source_index": 519,
+      "id": "context_bdf37cd2dd2373b282ea_continuation",
+      "task_family": "continuation",
+      "decision": "provisional_keep",
+      "reason": "Paidgardener owner-directed duties; fictional continuation."
+    }
+  ],
+  "caveats": [
+    "Semantic suitability review, not external factual/legal certification.",
+    "Capped responses may remain as captured prefixes; do not append inventedEOS.",
+    "First8answer-token masking and sufficient remaining semantic/tokencount still require exacttokenizer qualification.",
+    "Rewrite/roleplay are reserveddiagnostic families; no fit exposure.",
+    "Some retainedmeaning also appears in general social/organizational descriptions; positive-label trajectories are not exclusively employment features."
+  ],
+  "next_gate": "Root combines negative audit and freezes exactmaterialization/source/tokenization before any task-vector GPU training."
+}

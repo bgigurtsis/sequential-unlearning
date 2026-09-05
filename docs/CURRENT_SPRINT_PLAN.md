@@ -31,3 +31,5 @@ The approach is motivated by [task arithmetic](https://arxiv.org/html/2212.04089
 5. Only after single-concept qualification, test sequential removals with target/neighbour/collateral measurements at each stage. No validated31-removal path exists yet.
 
 Four tolerated neighbours remain separate from unrelated controls. Both initial and appended unfamiliarity on unrelated questions fail. Keep career meanings in mixed answers visible in scores. Preserve RTX PID8186, all parents/local archives and unrelated files. Exact sources, settings and findings are in EXPERIMENTS.md.
+
+Data/source freeze complete:279 employment and289 ordinary trajectories passed actual tokenization with no exclusions or clipping; zero exact overlaps with467 evaluation prompts. Eight CPU checks pass. Proceed with two-step GPU checks and then the fixed64-step comparison under task_vector_v1/contract_v1.json. This is a new experiment, not a successful unlearning result.
