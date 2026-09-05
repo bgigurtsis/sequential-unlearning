@@ -26,3 +26,6 @@ Natural coverage data ready:1864 targets=288 new conversational prompts+1576 unc
 
 
 Both natural-coverage/exposure-control two-step qualifications passed. RTX exact476FP32 parent reload,238textmodules, finite gradients; peakallocated20,057,548,288/reserved20,598,226,944bytes. Full96 now next on both GPUs, snapshots24/48/96; sharedbalanced8step16,seed34004. No behavioral result yet; goal active.
+
+
+Paired full96 launched: RTX natural_coverage_rtx_run96_v1 wrapper84654, L40S exposure_control_l40s_run96_v1 wrapper58479 under subagent. Same balanced8step16 parent,seed34004,24/48/96 snapshots. One owned workload perGPU; RTX service8186 preserved. Await completed-run receipts before quick3 evaluations.

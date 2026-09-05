@@ -10526,3 +10526,10 @@ Exact run derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1
 ```
 
 All settings from frozen natural_coverage_v1 contract, data pins integrated4ef1e6c. Existing38 CPU qualification applies to unchanged sourcee171598. Restart full96 fresh from shared parent, not from two-step smoke state.
+
+
+## 2026-09-05 — Coverage/exposure full96 launch
+
+Paired full96 launched: RTX natural_coverage_rtx_run96_v1 wrapper84654, L40S exposure_control_l40s_run96_v1 wrapper58479 under subagent. Same balanced8step16 parent,seed34004,24/48/96 snapshots. One owned workload perGPU; RTX service8186 preserved. Await completed-run receipts before quick3 evaluations.
+
+Launch wrappers in logs/projection-sprint-20260904/run-natural-coverage-rtx-full-v1.sh and run-exposure-control-l40s-full-v1.sh contain exact source/data hashes, parent guard, GPU guard and full commands. Qualification integration67fa471 preceded launch.
