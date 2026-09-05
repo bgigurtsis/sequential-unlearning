@@ -37,3 +37,5 @@ Latest decision supersedes the preceding prefix-only run: BOTHprefix-onlyarms re
 Both arms now resume the same original rank32step192 adapter. The one-reply arm changes only target-response values, never prompts. Prefix-weighted chat preservation is a hypothesis to test against ordinary false unfamiliarity. Earlier cyclic fixed-phrase failures remain valid; this complete-response CE+EOS test revises the blanket prohibition under the user’s authorization. Exact contract:config/whole_concept_jobs_v1/wide_unfamiliarity_v1/balanced_prefix_v1/contract_v1.json.
 
 Balancedchatprefix code38/38CPU testsPASS; unitweightidentity andweightedJSDgradient/reference-detachment qualified. Bothrank32 original192parent; RTX8bank/L40S1canonical. Two-stepfullobjectiveGPUqualification next, thenintegratebefore64. L40Sdisk3.98GiB beforeparentupload verified, nocachedeletion.
+
+Bothmatchedrank32 balanced-prefix2step smokesPASS, exactsameparent476FP32bytes, finitegrads,RTX8bank/L40Scanonical. ParentL40Sstageverifiedand3.76GiBremaining. Full64freshrestartfromoriginal192parent next; outputsbalanced8_rtx_run64_v1/canonical32_l40s_run64_v1,seed34003,16/32/64snapshots.

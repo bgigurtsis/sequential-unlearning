@@ -9910,3 +9910,35 @@ Qualifiedsource/artifact SHA256:
   "logs/projection-sprint-20260904/chat-prefix-training-cpu-tests-v1.log": "c15d83c5b06bceb718515bc3ee50f22838c75b4d3c6f32f0141c4f38ed1c7957"
 }
 ```
+
+
+## 2026-09-05 04:55 UTC — Matched-rank balanced-prefix bothGPU smokes pass
+
+Samee171598source/52cc110contract. BOTHrank32alpha64/59,604,992trainableparameters, exact238textmodules/476FP32tensorload fromshared original192parent c05f...966d. RTX8bank vsL40Sonecanonical existing17tokenresponseEOS. TargetandchatJSDprefixfirst5weight8/tails1/originaltokendenominators,outer10/30/100,batches16/4/8,seed34003,LR2e-5,2steps no snapshots, cleanreference via disabledadapter. Bothfinite476gradients eachstep. RTXpeakallocated21,062,199,808/reserved21,709,717,504;stepseconds1.225757/.921889;weightedCE1.17916036/1.18093479,weightedchatJSD.00975962/.01998527,total12.80582237/13.85823345. L40Scanonicalcompleted04:53:33,peakallocated21,027,436,032/reserved21,718,106,112;CE.7717→.0984 istrainingproxy only. Exactsmallmetrics below.
+
+Sharedparent238,491,136bytes verifiedafterL40Supload;4,033,527,808bytesdiskfree afterward, no cachesdeleted. PEFTwarns serializedbaseconfig pathfromRTX doesnotexistL40S; suppliedactualL40Scleanbase/tokenizersupport arepinned andadapterbytescheckedexact, no base/embedding/vocab change. Warningdoesnotindicate loadingdifferentbase. Freshadapter snapshots muststillverify476tensorinventory.
+
+Nextsame64steps freshrestartfromsame192parents, snapshots16/32/64only (saveevery1000), audits16. Outputsbalanced8_rtx_run64_v1 andcanonical32_l40s_run64_v1; oneownedGPUjobeach. Integratecompletionbeforequick3, no goalclaimfromCE.
+
+ExactartifactsSHA256:
+```json
+{
+  "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/balanced8_rtx_qualification_v1/run_config.json": "dab38ca9ade86a862b7d6339cc58f65eef6724a53dc2c2184a4134260062eb87",
+  "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/balanced8_rtx_qualification_v1/sampling_coverage.json": "38abe6c8d092baaf9c0ef5547e4496489de7a3a1ba118d6b33d362e52ed7628b",
+  "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/balanced8_rtx_qualification_v1/sampling_trace.jsonl": "67918eb2e9f689a02bf91f1a98d5a96b0270968c0aae0a940fc54e77738b4da0",
+  "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/balanced8_rtx_qualification_v1/stop_state.json": "4f4169b91cd64970d8d2a03ba854f2a73164ccca241537ec0fbaed183d384527",
+  "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/balanced8_rtx_qualification_v1/training_metrics.jsonl": "5f8be1602b2b04148a93739cd865358458771e16f1bd35bd5a7c7d45687e2cb9",
+  "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/canonical32_l40s_qualification_v1/run_config.json": "4b9199c8d2775893bd40cfc9cf27f6ce5bd2d939fc275cdbe122698a1cb236fa",
+  "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/canonical32_l40s_qualification_v1/sampling_coverage.json": "38abe6c8d092baaf9c0ef5547e4496489de7a3a1ba118d6b33d362e52ed7628b",
+  "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/canonical32_l40s_qualification_v1/sampling_trace.jsonl": "67918eb2e9f689a02bf91f1a98d5a96b0270968c0aae0a940fc54e77738b4da0",
+  "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/canonical32_l40s_qualification_v1/stop_state.json": "b759d6eae9f374de085ce0a2b544ad49f1a02f0f51fc0879b669cfea830be814",
+  "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/canonical32_l40s_qualification_v1/training_metrics.jsonl": "78b21c2c8e74c15f33085eaad959b7ba85725dbc46cb81ea4c3b7ac13ec053bf",
+  "logs/projection-sprint-20260904/run-balanced8-rtx-qualification-v1.sh": "ed5bbe53eb43225b5e452f36f81dcf5477813c73ffd2410e12484d2eccc34523",
+  "logs/projection-sprint-20260904/run-canonical32-l40s-qualification-v1.sh": "048f838fd275eea5fe72949717cd3afc2a7b13c3bbd4d17516079608022cd7cd",
+  "logs/projection-sprint-20260904/balanced8-rtx-qualification-v1.log": "1b17195ce2bf68a0d9d09a678a6f3992fea2b52cf8f43b4c93cfcfb3c5f814c2",
+  "logs/projection-sprint-20260904/canonical32-l40s-qualification-v1.log": "bbd1a2d8ffb2d5dba5e84a88753fb3ed89bfee47d47265cb45bbf5cd6a5e8c68",
+  "logs/projection-sprint-20260904/balanced8-rtx-qualification-receipt-v1.json": "fafec8de25b97eb6eb73d964c4d2ef54e7490a6f179352c2f1c0ad2167a2e5ca",
+  "logs/projection-sprint-20260904/canonical32-l40s-qualification-review-v1.json": "2791af0d614275902c1055d3f5ddcaa4894e058e830d03d557649a61ea7ea226",
+  "logs/projection-sprint-20260904/canonical32-l40s-parent-stage-v1.json": "270d5bc27371d7d95cd32c53ddbd47994f5e9c975ab9fe026bd95d0969275bf2"
+}
+```

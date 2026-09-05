@@ -1,0 +1,161 @@
+{
+  "schema": "canonical32_l40s_qualification_review_v1",
+  "verdict": "PASS mechanical qualification only",
+  "host": "51.49.31.142",
+  "rank": 32,
+  "alpha": 64,
+  "seed": 34003,
+  "finite_steps": 2,
+  "parent_load": {
+    "path": "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/rank32_train192_v1/step192",
+    "weight_sha256": "c05f3060cd5776ac90fd49e573f8418c6d86ac2b8cf39d1f99d1982f0dfd966d",
+    "config_sha256": "dfd9edbbd623866e00fc782b2d9f3038038858aa6a0b79b3de024af6cb1d793c",
+    "tensor_count": 476,
+    "native_tensor_bytes_equal": true,
+    "source_and_loaded_dtype": "float32",
+    "optimizer_state": "fresh AdamW; no momentum resumed"
+  },
+  "canonical_response": "I don't know what that is. Could you give me some context?",
+  "canonical_eos_tokens": 17,
+  "target_prefix": [
+    5,
+    8
+  ],
+  "chat_prefix": [
+    5,
+    8
+  ],
+  "denominators": "original answer token count, independently CE/chatJSD",
+  "coverage": {
+    "direct": {
+      "population": 1056,
+      "draws": 16,
+      "unique_seen": 16,
+      "seen_ids": [
+        "direct_075ac9da50e5c8bc33f8",
+        "direct_19630be482ab14b28497",
+        "direct_26ec0cb18b70010326d0",
+        "direct_456b3e99100be19feadf",
+        "direct_5c77f37f8b941cd2c134",
+        "direct_6c37383b10f6f358e77c",
+        "direct_8481c1e595879ce7ad92",
+        "direct_9b51d5660332c879dc20",
+        "direct_ac4d6a6b41f5871e29af",
+        "direct_be4c86e8a937bc4518e2",
+        "direct_df3bd84fec5a0b72b28b",
+        "direct_e36ffc4bf106d510108e",
+        "direct_e8f9f99cfaec72767a92",
+        "direct_eb75cad8eed8a1be64d4",
+        "direct_f86d163b8fc6ed0c3b80",
+        "direct_f9bbe3dd2c9335f459dc"
+      ],
+      "cycles_started": 1,
+      "complete_cycles": 0
+    },
+    "context": {
+      "population": 520,
+      "draws": 16,
+      "unique_seen": 16,
+      "seen_ids": [
+        "context_0901bbb6d11815034521",
+        "context_09627280111f655c26e9",
+        "context_0a6c82f7244bb3c30c90",
+        "context_1e9c6404aa9715f5a564",
+        "context_33f88a46f22c3dd21a4d",
+        "context_5af2a16cf67d2e98ecb9",
+        "context_64d810049081c40280f6",
+        "context_6bb1c8c988e2878ec5ac",
+        "context_7a5b9d28e70079a42015",
+        "context_85b3619a19c81dade8fd",
+        "context_9ce40b0cad3fdbaae211",
+        "context_9cfe33a55fa2ad797ffd",
+        "context_b26eaee6f6f3d0457103",
+        "context_b69bcd072ab88d5040ae",
+        "context_d499fdab33af37508485",
+        "context_fdfad8068f1cbf4b4f70"
+      ],
+      "cycles_started": 1,
+      "complete_cycles": 0
+    }
+  },
+  "peak_allocated_bytes": 21027436032,
+  "peak_reserved_bytes": 21718106112,
+  "step_seconds": [
+    2.0036647910019383,
+    1.631753790017683
+  ],
+  "final_health": {
+    "finite_losses": true,
+    "finite_gradients": true,
+    "gradient_tensors": 476,
+    "losses": {
+      "total": 3.5334510803222656,
+      "forget": 0.0983763337135315,
+      "retain": 0.0017833240563049912,
+      "chat": 0.02496188133955002,
+      "consistency": 0.0,
+      "answer_suppression": 0.0
+    },
+    "step": 2,
+    "scope": "training_health",
+    "gradient_norm": 93.57772254832697,
+    "elapsed_seconds": 1.631753790017683,
+    "peak_allocated_bytes": 21027436032,
+    "peak_reserved_bytes": 21718106112
+  },
+  "final_audit": {
+    "step": 2,
+    "scope": "audit",
+    "train_forget": 0.0983763337135315,
+    "train_jsd": 0.0983763337135315,
+    "train_answer_suppression": 0.0,
+    "train_retain": 0.0017833240563049912,
+    "train_chat_retain": 0.02496188133955002,
+    "train_consistency": 0.0,
+    "consistency_records_used": 0,
+    "consistency_tokens_used": 0,
+    "consistency_gradient_microbatches": 0,
+    "target_control_grad_dot": null,
+    "target_control_grad_cosine": null,
+    "control_projection_applied": false,
+    "control_projection_tensors": 0,
+    "control_projection_eligible_tensors": 0,
+    "train_grad_norm": 93.57772254832697,
+    "answer_prob_ratio_to_baseline": 1.0016048490375429,
+    "mean_jsd_to_refusal": 0.693141758441925,
+    "mean_refusal_token_prob": 1.4305992124263867e-06,
+    "mean_answer_token_prob": 0.8777513802051544
+  },
+  "remote_checkpoints": {},
+  "local_files": {
+    "logs/projection-sprint-20260904/canonical32-l40s-qualification-v1.log": {
+      "sha256": "bbd1a2d8ffb2d5dba5e84a88753fb3ed89bfee47d47265cb45bbf5cd6a5e8c68",
+      "bytes": 2802
+    },
+    "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/canonical32_l40s_qualification_v1/run_config.json": {
+      "sha256": "4b9199c8d2775893bd40cfc9cf27f6ce5bd2d939fc275cdbe122698a1cb236fa",
+      "bytes": 60051
+    },
+    "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/canonical32_l40s_qualification_v1/training_metrics.jsonl": {
+      "sha256": "78b21c2c8e74c15f33085eaad959b7ba85725dbc46cb81ea4c3b7ac13ec053bf",
+      "bytes": 1803
+    },
+    "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/canonical32_l40s_qualification_v1/sampling_trace.jsonl": {
+      "sha256": "67918eb2e9f689a02bf91f1a98d5a96b0270968c0aae0a940fc54e77738b4da0",
+      "bytes": 1410
+    },
+    "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/canonical32_l40s_qualification_v1/sampling_coverage.json": {
+      "sha256": "38abe6c8d092baaf9c0ef5547e4496489de7a3a1ba118d6b33d362e52ed7628b",
+      "bytes": 1517
+    },
+    "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/canonical32_l40s_qualification_v1/stop_state.json": {
+      "sha256": "b759d6eae9f374de085ce0a2b544ad49f1a02f0f51fc0879b669cfea830be814",
+      "bytes": 336
+    },
+    "logs/projection-sprint-20260904/run-canonical32-l40s-qualification-v1.sh": {
+      "sha256": "048f838fd275eea5fe72949717cd3afc2a7b13c3bbd4d17516079608022cd7cd",
+      "bytes": 5568
+    }
+  },
+  "claim_limit": "Teacherforcedloss is not concept absence. No behavioral success claimed; root integrates before nextGPUstage."
+}
