@@ -675,3 +675,10 @@ of the protection model's repair. The mathematics has passed CPU and GPU tests;
 model-level testing is still pending. This may repair everyday conversation
 without closing the intended memory hole, but we have not demonstrated that yet.
 The fresh final audit remains unused for candidate selection.
+
+The user's latest instruction also allows a smaller, honest improvement to count
+as an artwork prototype: all tested target meanings must remain absent, no
+healthy control may be lost, at least one damaged control must recover, and the
+overall damage score must fall by at least 5%. Utility and perplexity checks still
+apply. The original, stricter 20% improvement goal remains a separate label.
+These criteria were fixed before reading the new candidate's answers or scores.

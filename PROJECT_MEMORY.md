@@ -55,6 +55,10 @@ is preferred, while other target replies can serve the artwork.
   frozen failed prompt controls, no healthy losses, broad semantic/utility/PPL/
   conversation gates. Artistic fallback allows target-only broken replies but
   not restored meaning or hidden control damage; original failed labels remain.
+- Additional user-authorized artwork prototype tier precommitted before newoutputs:
+  same complete targetabsence and zero newhealthycontrolloss, at least1recovery
+  plus at least5percent lower scalar (<=12.82327702160949), all18utility/PPL
+  and measured drift. Original20percent/2recovery tier stays separate.
 - Fresh final audit frozen at config/employment_sprint_20260904_final:
   clean36/36target knowledge,24/24controls;8/8target and4/4control conversations.
   Only one chosen final candidate across all methods gets this audit, with
