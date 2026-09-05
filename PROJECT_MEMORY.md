@@ -60,6 +60,8 @@ unfamiliarity ("I don't know what that is") is preferred, not mandatory.
   knowledge;24/24controls and4/4control conversations coherent. Do not train
   from it or test multiple candidates against it. Final chosen candidate only,
   with clean/dense comparators; any fresh target recovery rejects robust claim.
+- Three early Sept5 section-heading times were approximate; rely on immutable
+  publication metadata/git chronology; append-only timestamp correction recorded.
 - Run artifacts, model hashes and record-level reviews are in
   `derisk/whole_concept_jobs_v1/delta_protection_v1/sprint_20260904/` and
   `logs/projection-sprint-20260904/`. Full append-only methods/results below
