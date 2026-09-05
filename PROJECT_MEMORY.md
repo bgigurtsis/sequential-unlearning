@@ -37,12 +37,13 @@ is preferred, while other target replies can serve the artwork.
 - Qualification: math9/9CPU+CUDA and publisher/capture12/12L40S tests pass,
   independent reviews clear. Native identity uses miniature publisher test plus
   already proven nativecopy path per speed amendment, not another full model.
-  Next gate: committed source sync, combined21tests onRTX, E90transfer
-  verification, then capture/build one candidate. No real targetcapture yet.
+  CommittedRTX937e145 combined21tests pass; E90transferverified.
+  Active next execution: capture/build constrained_v1/models/full_v1 onRTX,
+  then frozenquick40. No model result yet.
 - RTX18.101.59.227: root owns /mnt/sequential-unlearning-replicate/checkout,
   1.7TiB scratch; old /home/ubuntu/sequential-unlearning read-only inputs,
   venv-g7e Python. Existing unrelated GPU service stays running. Beta.1 copied
-  and verified; E90 transfer in progress. New constrained candidate runs here.
+  and verified; E90 alsoverified. New constrained candidate runs here.
 - L40S51.49.31.142: projection_followup subagent owns
   /home/ubuntu/sequential-unlearning-projection-sprint-20260904, venv-g6e.
   Pinned donor/E90/blends and original retain caches preserved. Clean snapshot
