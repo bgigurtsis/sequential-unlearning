@@ -8,6 +8,7 @@ one subagent. Latest steering permits changing tests and priors for speed.
 Employment/jobs plus semantic neighbours are the target; natural unfamiliarity
 is preferred, while other target replies can serve the artwork.
 
+- Context correction64/64complete01:37:58UTC, adapterc58f4ad4...09e0 (10.53MB), budgetstop/finite. FinalCE.4604, retainJSD.000472,chatJSD.000925; no behaviorclaim. Active nextgate quick40+context12 generation onsole step064; freshauditunused.
 - Context trainingready: clean520capturecomplete, exactjoinSHA c0234589...c1b, alltargetEOS<=74tokens. Stratified10sample review9meaningful/1contextrequest; agent22uniquerows includesallflags:8genuinecontextrequests,5benignincharactersurprise. All520retained, no semanticclaimall520. Inputpins saved; nextlaunchone64stepRTXcorrection atcontext_diversity_v1/run64_v1.
 - Actual18generatedlegacybaseline: clean18/18primarycoherence,dense17/18 (ocean-definitionclozeunfamiliar); cleanextra cello-underchinerror noted. All36read. Nextcandidate18requirementunchanged. Readable currentplan docs/CURRENT_SPRINT_PLAN.md.
 - Connectivity: nativeWindowsOpenSSH currentlytimesout, but .tmp/sprint_remote.py Paramiko5withsamekey andstrict existingaliaspins works onbothhosts. No host/cloudchanges. RTXexistingtrainer24/24tests pass; L40Sbounded520cleantraininganswer capture authorized afterd554b1bcommit.
