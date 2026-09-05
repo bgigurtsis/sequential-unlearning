@@ -38,7 +38,8 @@ unfamiliarity ("I don't know what that is") is preferred, not mandatory.
   Original ladder CLOSED: no E95/E99. User allows fruitful direction changes;
   Separate published-E90 blend contract frozen: beta0identity then
   .1,.25,.5,.75, same gates; newtool reviewed and14/14GPUtests pass.
-  Next committed-source retest and beta0identity; no blendcandidate yet.
+  Committed-source14tests and real beta0identity PASS; next beta.1 then
+  .25/.5/.75fixedquick screens. No nonzero blend result yet.
   Target-preserving geometry is fallback only. No finalaudit use.
 - Both identity tools now copy native donor values; FP32 subtraction/addition
   lost one tiny BF16 value during initial identity diagnostics. Nonidentity

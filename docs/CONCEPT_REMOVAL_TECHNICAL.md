@@ -1055,3 +1055,7 @@ eighttargetconversations remain absent, but only1/4controlconversations
 survives bothturns and none of seven failed promptcontrols recovers. No
 scalar is measured for this already-failed candidate. Artistic diagnostics
 may use spareGPU while original blend candidates are pending.
+
+The partial-projection beta0 checkpoint now exactly matches the dense donor
+weights and full tensor inventory, with verified freshmodel reload. Nonzero
+beta.1 is cleared to run; no blend behavior has yet been measured.

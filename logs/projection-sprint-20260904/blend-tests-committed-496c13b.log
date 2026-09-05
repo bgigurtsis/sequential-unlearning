@@ -1,0 +1,19 @@
+test_frozen_coefficients (scripts.test_blend_checkpoint_projection.CoefficientTests.test_frozen_coefficients) ... ok
+test_beta_zero_file_and_native_tensor_identity (scripts.test_blend_checkpoint_projection.PublicationTests.test_beta_zero_file_and_native_tensor_identity) ... ok
+test_blend_publication_preserves_every_noneditable_tensor (scripts.test_blend_checkpoint_projection.PublicationTests.test_blend_publication_preserves_every_noneditable_tensor) ... ok
+test_existing_output_never_overwritten (scripts.test_blend_checkpoint_projection.PublicationTests.test_existing_output_never_overwritten) ... ok
+test_failed_fresh_reload_removes_private_stage_and_never_publishes (scripts.test_blend_checkpoint_projection.PublicationTests.test_failed_fresh_reload_removes_private_stage_and_never_publishes) ... ok
+test_noneditable_endpoint_mutation_rejected (scripts.test_blend_checkpoint_projection.PublicationTests.test_noneditable_endpoint_mutation_rejected) ... ok
+test_sidecar_detects_tampering (scripts.test_blend_checkpoint_projection.PublicationTests.test_sidecar_detects_tampering) ... ok
+test_unexpected_namespace_rejected_even_with_test_pin (scripts.test_blend_checkpoint_projection.PublicationTests.test_unexpected_namespace_rejected_even_with_test_pin) ... ok
+test_wrong_endpoint_pin_rejected_without_publication (scripts.test_blend_checkpoint_projection.PublicationTests.test_wrong_endpoint_pin_rejected_without_publication) ... ok
+test_wrong_endpoint_provenance_pin_rejected (scripts.test_blend_checkpoint_projection.PublicationTests.test_wrong_endpoint_provenance_pin_rejected) ... ok
+test_distance_from_donor_is_monotone_on_fixed_grid (scripts.test_blend_checkpoint_projection.TensorTests.test_distance_from_donor_is_monotone_on_fixed_grid) ... ok
+test_exact_endpoint_identity_including_tiny_and_signed_zero (scripts.test_blend_checkpoint_projection.TensorTests.test_exact_endpoint_identity_including_tiny_and_signed_zero) ... ok
+test_malformed_tensors_rejected_before_arithmetic (scripts.test_blend_checkpoint_projection.TensorTests.test_malformed_tensors_rejected_before_arithmetic) ... ok
+test_nonidentity_matches_ordered_fp32_and_chunk_device_invariance (scripts.test_blend_checkpoint_projection.TensorTests.test_nonidentity_matches_ordered_fp32_and_chunk_device_invariance) ... ok
+
+----------------------------------------------------------------------
+Ran 14 tests in 3.531s
+
+OK
