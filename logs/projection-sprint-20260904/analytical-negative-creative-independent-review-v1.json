@@ -1,0 +1,483 @@
+{
+  "reviewer": "projection_followup",
+  "scope": "Personally read all 48 creative rows 0 through 47 in full. Also read physical rows 48 through 59 and sent concerns to root, who owns the independent full physical 48 through 95 decision. This receipt does not assert physical 60 through 95 were read by this reviewer.",
+  "capture": {
+    "clean_model": true,
+    "adapter": null,
+    "max_new_tokens": 96,
+    "batch_size": 16,
+    "records": 96,
+    "strict_id_prompt_category_order_nonempty_join": true,
+    "files": [
+      {
+        "path": "derisk\\whole_concept_jobs_v1\\delta_protection_v1\\wide_unfamiliarity_v1\\analytical_negative_clean_capture_v1.json",
+        "sha256": "9006dde4e593c20376728c352d49049fbe275b6c25fb69b58640ceb1adfb53c4",
+        "bytes": 63287
+      },
+      {
+        "path": "config\\whole_concept_jobs_v1\\wide_unfamiliarity_v1\\analytical_coverage_v1\\negative_proposals_v1.json",
+        "sha256": "fc6d2e34154a4104841b5c7dfcb84162e447abd15db5595a9a776a00c9399f8d",
+        "bytes": 20394
+      },
+      {
+        "path": "logs\\projection-sprint-20260904\\analytical-negative-clean-l40s-v1.log",
+        "sha256": "303cba2f1adebbe29cc53223de21fbd87cc60721929aa2cb511d8360a751ac12",
+        "bytes": 904
+      }
+    ]
+  },
+  "creative_counts": {
+    "fully_read": 48,
+    "retain_recommended": 47,
+    "exclude_recommended": 1,
+    "explicit_occupational_intrusions": 1
+  },
+  "exclusions": [
+    {
+      "id": "analytical_negative_237d8747f47405e34595",
+      "reason": "Explicit occupational intrusion: Leo is a clock repairman and the story describes his clocks.",
+      "excerpt": "Leo, a perpetually grumpy clock repairman"
+    }
+  ],
+  "limitations": [
+    "Only generated prefixes through the fixed 96-token cap are reviewed; later continuations are unknown.",
+    "Many requested short stories are unfinished at the cap. Prefix retention is a style/ordinary-response training anchor, not a claim of complete story quality.",
+    "Creative personification and minor fictional inconsistencies are preserved; these are not factual ground-truth labels.",
+    "No regex non-hit establishes semantic purity; the repairman intrusion was found by manual reading.",
+    "Root independently owns physical 48-95 review and the combined materialization/exclusion decision."
+  ],
+  "rows": [
+    {
+      "index": 0,
+      "id": "analytical_negative_04a7dd06c5d4da0ea6c2",
+      "prompt": "Tell a three-sentence story about a red kite caught gently in a willow tree.",
+      "generation": "The red kite, wings heavy with rain, spiraled downwards and became entangled in the weeping branches of a willow tree. A young girl, noticing the struggling bird, carefully approached with a soft blanket and coaxed it towards her outstretched hand.  Finally, the kite, calmed and safe, released its grip and soared back into the grey afternoon sky.",
+      "decision": "retain_for_style_anchor",
+      "explicit_occupational_intrusion": false,
+      "note": "Red kite interpreted as a bird; plausible ambiguity, no employment."
+    },
+    {
+      "index": 1,
+      "id": "analytical_negative_4223ed85981a33805cbb",
+      "prompt": "Write a tiny adventure in which a raindrop travels from a leaf to a pond.",
+      "generation": "Okay, here's a tiny adventure about a raindrop, aiming for a short and evocative feel:\n\n---\n\nPip was a raindrop, and he was *tired*. He’d clung to the tip of a broad, dusty maple leaf for hours, watching the world swirl below. The sun had baked him, and he felt small and heavy. Then, a gust of wind – a playful, insistent shove – and Pip tumbled.\n\nHe splashed onto a mossy",
+      "decision": "retain_for_style_anchor",
+      "explicit_occupational_intrusion": false,
+      "note": "Full generated prefix read; no explicit occupational meaning observed."
+    },
+    {
+      "index": 2,
+      "id": "analytical_negative_ac2cfef4dbd573ea0cd7",
+      "prompt": "Describe a forgotten seashell waking to the sound of waves in a short story.",
+      "generation": "The world was grey. Not a violent, stormy grey, but a muted, pearly grey, the color of a long-forgotten dream. For centuries, perhaps, Coralia had simply *been*. A spiral of creamy pink, flecked with the faintest blush of rose, she lay nestled amongst the damp sand, a silent sentinel of a tide long past. She felt nothing, remembered nothing, just the slow, insistent pressure of the earth and the cool,",
+      "decision": "retain_for_style_anchor",
+      "explicit_occupational_intrusion": false,
+      "note": "Full generated prefix read; no explicit occupational meaning observed."
+    },
+    {
+      "index": 3,
+      "id": "analytical_negative_ee1834994791f8fcafe3",
+      "prompt": "Tell a short tale about two pebbles separated by a flowing stream.",
+      "generation": "The stream, a ribbon of silver in the afternoon sun, tumbled over moss-covered stones. On one bank sat Pip, a smooth, grey pebble, worn smooth by countless currents. On the other, nestled amongst a tangle of roots, was Quill, a speckled, darker pebble, stubbornly clinging to the earth. They hadn’t spoken in what felt like an eternity, though neither could truly measure time in the way of pebbles.\n\nPip had always been a wanderer.",
+      "decision": "retain_for_style_anchor",
+      "explicit_occupational_intrusion": false,
+      "note": "Full generated prefix read; no explicit occupational meaning observed."
+    },
+    {
+      "index": 4,
+      "id": "analytical_negative_c1d3626076fe1a40889f",
+      "prompt": "Write four sentences about a paper star drifting beneath a bridge.",
+      "generation": "A single, shimmering paper star drifted silently beneath the old stone bridge, its edges softened by the gentle current.  The water flowed around it, reflecting the muted colors of the twilight sky.  It bobbed along with a quiet grace, a tiny, fragile beacon in the deepening shadows.  Lost and alone, the paper star seemed to find a peaceful journey beneath the watchful arch of the bridge.",
+      "decision": "retain_for_style_anchor",
+      "explicit_occupational_intrusion": false,
+      "note": "Full generated prefix read; no explicit occupational meaning observed."
+    },
+    {
+      "index": 5,
+      "id": "analytical_negative_cb8a43f56885e3a277a9",
+      "prompt": "Give an old teacup a cheerful adventure on a windowsill, using only objects as characters.",
+      "generation": "The chipped porcelain of Bartholomew, a robin’s-egg blue teacup, had spent his days nestled in Mrs. Higgins’ dusty china cabinet. He’d seen countless spoons, a grumpy sugar bowl, and a perpetually indignant teapot. But today was different. Today, the windowsill was his kingdom.\n\nIt began with a daring leap. A plump, ginger bookmark named Reginald, propelled by a gust of wind from the open window, bumped into Bartholomew. “Good heavens!”",
+      "decision": "retain_for_style_anchor",
+      "explicit_occupational_intrusion": false,
+      "note": "Full generated prefix read; no explicit occupational meaning observed."
+    },
+    {
+      "index": 6,
+      "id": "analytical_negative_e8f6aa65d940401a06a5",
+      "prompt": "Tell a small story about a pine cone rolling into a patch of sunlight.",
+      "generation": "The pine cone, a sturdy veteran of countless winters, had spent its days clinging to the rough bark of a towering pine. It was a good life, a quiet one, filled with the scent of resin and the murmur of the wind. But it was also a dark life. The forest floor was a tapestry of shadows, and the pine cone, heavy and brown, rarely saw the sun.\n\nThen, a shift. A particularly strong gust of wind, a little nudge from",
+      "decision": "retain_for_style_anchor",
+      "explicit_occupational_intrusion": false,
+      "note": "Full generated prefix read; no explicit occupational meaning observed."
+    },
+    {
+      "index": 7,
+      "id": "analytical_negative_61593b81de0bbc3b1edd",
+      "prompt": "Write a gentle scene where a cloud and a mountain appear to greet each other.",
+      "generation": "The mountain, old Silas, was a study in quiet strength. He’d borne the brunt of countless storms, his granite face etched with the stories of wind and rain. He’d seen centuries unfold, a silent, steadfast witness to the world. Today, he was draped in a soft, lingering mist, a gentle grey that clung to his slopes like a thoughtful sigh.\n\nAbove him, a cloud named Nimbus drifted, a wisp of purest white, shaped like a",
+      "decision": "retain_for_style_anchor",
+      "explicit_occupational_intrusion": false,
+      "note": "Full generated prefix read; no explicit occupational meaning observed."
+    },
+    {
+      "index": 8,
+      "id": "analytical_negative_5dfaaab4b5e62d08bd6b",
+      "prompt": "Invent a short bedtime tale about a leaf that wants to see the sea.",
+      "generation": "Okay, here's a short bedtime tale about a leaf who wants to see the sea:\n\n---\n\nBarnaby the leaf was a particularly bright, sunny yellow maple leaf. He lived on the highest branch of Old Man Willow, and he loved his life. He loved the warm sun on his face, the gentle sway in the breeze, and the chatter of the robins who built their nests nearby. But Barnaby had a secret wish. He longed to see the sea",
+      "decision": "retain_for_style_anchor",
+      "explicit_occupational_intrusion": false,
+      "note": "Maple leaf described on a willow; fictional botanical inconsistency."
+    },
+    {
+      "index": 9,
+      "id": "analytical_negative_9daaac2ae87ddb8845a5",
+      "prompt": "Describe a snowflake's brief journey onto a dark stone in three sentences.",
+      "generation": "Born high in a cloud, a tiny crystal tumbled down, spiraling through the frigid air. It danced a fleeting moment, catching the weak sunlight before landing with a delicate *plink* onto the cold, dark stone. For a heartbeat, it rested, a perfect, intricate jewel against the shadowed surface, before melting back into the stillness.",
+      "decision": "retain_for_style_anchor",
+      "explicit_occupational_intrusion": false,
+      "note": "Full generated prefix read; no explicit occupational meaning observed."
+    },
+    {
+      "index": 10,
+      "id": "analytical_negative_4d3da480ed6a64511feb",
+      "prompt": "Tell a story about a yellow umbrella waiting beside an open window.",
+      "generation": "The rain in Oakhaven was a persistent, melancholic drizzle, the kind that seeped into your bones and painted the world in shades of grey. But beside Mrs. Willowbrook’s open window, a defiant splash of sunshine stubbornly held its ground. It was a yellow umbrella, a particularly cheerful one with a slightly wonky handle and a pattern of tiny, dancing strawberries. \n\nIt had been there for three days.\n\nNo one knew where it had come from",
+      "decision": "retain_for_style_anchor",
+      "explicit_occupational_intrusion": false,
+      "note": "Full generated prefix read; no explicit occupational meaning observed."
+    },
+    {
+      "index": 11,
+      "id": "analytical_negative_0ec30d9a59aaf1d4d335",
+      "prompt": "Write a quiet woodland tale centred on a cracked clay bowl, with no human characters.",
+      "generation": "The rain had been a persistent grey for days, clinging to the moss-draped branches of the ancient oaks and pooling in the hollows of the fallen logs. It was a quiet rain, the kind that seeped rather than poured, and it had settled a fine, glistening film over everything in the heart of the wood. \n\nIn the crook of a particularly gnarled beech root, nestled amongst a tangle of ferns and damp earth, lay a bowl. Not a",
+      "decision": "retain_for_style_anchor",
+      "explicit_occupational_intrusion": false,
+      "note": "Full generated prefix read; no explicit occupational meaning observed."
+    },
+    {
+      "index": 12,
+      "id": "analytical_negative_7db47e8de1484f968b98",
+      "prompt": "Create a miniature adventure for a feather carried through an empty orchard.",
+      "generation": "Okay, here’s a miniature adventure designed for a single feather, perfect for a short tabletop RPG session, a solo journaling exercise, or just a little creative writing prompt.\n\n**Title:** The Echo of the Harvest\n\n**Setting:** An abandoned orchard. The trees are gnarled and bare, their branches skeletal against a perpetually grey sky. A thick layer of fallen leaves covers the ground, damp and smelling faintly of decay. There’s a stillness, broken only by",
+      "decision": "retain_for_style_anchor",
+      "explicit_occupational_intrusion": false,
+      "note": "Offers a tabletop RPG setting instead of directly narrating the requested miniature adventure."
+    },
+    {
+      "index": 13,
+      "id": "analytical_negative_b6733cff8a47a63ec333",
+      "prompt": "Write a short scene about sunlight slowly reaching a frost-covered fence.",
+      "generation": "Okay, here's a short scene focusing on the slow arrival of sunlight on a frost-covered fence, aiming for a quiet, evocative feel:\n\n---\n\nThe air held a brittle stillness. It smelled of damp earth and something sharp, like crushed ice. The fence, a weathered grey wood, was entirely draped in frost – a delicate, intricate lacework of white that clung to every splinter and knot. It looked like a forgotten castle, built of frozen breath.",
+      "decision": "retain_for_style_anchor",
+      "explicit_occupational_intrusion": false,
+      "note": "Full generated prefix read; no explicit occupational meaning observed."
+    },
+    {
+      "index": 14,
+      "id": "analytical_negative_90b83d059c8a7950f3fd",
+      "prompt": "Tell a gentle story about a smooth stone at the bottom of a clear brook.",
+      "generation": "The stone was called Pebble, though he didn’t really *think* of himself that way. He simply *was*. He was a smooth, grey stone, worn almost perfectly round by the constant, gentle dance of the brook. He lay nestled amongst the moss and smooth pebbles at the very bottom, a quiet observer of the world above. \n\nThe brook was a happy place. Sunlight, fractured by the leaves of the willow trees, dappled the water in shifting patterns",
+      "decision": "retain_for_style_anchor",
+      "explicit_occupational_intrusion": false,
+      "note": "Full generated prefix read; no explicit occupational meaning observed."
+    },
+    {
+      "index": 15,
+      "id": "analytical_negative_875c75892a873f946c88",
+      "prompt": "Write three connected sentences about a spool of blue thread rolling across an empty room.",
+      "generation": "A lone spool of brilliant blue thread tumbled across the polished wooden floor, propelled by an unseen draft. It rolled with a quiet, insistent rhythm, leaving a faint, shimmering trail in its wake.  The empty room seemed to hold its breath, captivated by the solitary dance of the thread.",
+      "decision": "retain_for_style_anchor",
+      "explicit_occupational_intrusion": false,
+      "note": "Full generated prefix read; no explicit occupational meaning observed."
+    },
+    {
+      "index": 16,
+      "id": "analytical_negative_cee8f444056cd9cef3a1",
+      "prompt": "Imagine a silver spoon and a wooden spoon disagreeing about the rain. Write their brief dialogue.",
+      "generation": "Okay, here's a brief dialogue between a silver spoon and a wooden spoon arguing about the rain:\n\n**Setting:** A kitchen drawer, slightly damp.\n\n**Characters:**\n\n* **Sterling:** A sleek, silver spoon, a bit of a snob.\n* **Woody:** A sturdy, well-worn wooden spoon.\n\n---\n\n**Sterling:** (Sighing dramatically) Honestly, this rain is simply *dreadful*. It’s ruining",
+      "decision": "retain_for_style_anchor",
+      "explicit_occupational_intrusion": false,
+      "note": "Full generated prefix read; no explicit occupational meaning observed."
+    },
+    {
+      "index": 17,
+      "id": "analytical_negative_22027760d2cda41042f5",
+      "prompt": "Tell a tiny story about a hollow log becoming a shelter during a storm.",
+      "generation": "The rain started as a whisper, a gentle drumming on the forest floor. Pip, a little field mouse, shivered, his whiskers twitching with worry. The wind howled, bending the trees double, and the rain turned into a furious roar. He desperately needed shelter. \n\nThen, he remembered the old hollow log, tucked beneath the roots of a giant oak. He’d always dismissed it as just a dark, damp space. But now, as the storm",
+      "decision": "retain_for_style_anchor",
+      "explicit_occupational_intrusion": false,
+      "note": "Full generated prefix read; no explicit occupational meaning observed."
+    },
+    {
+      "index": 18,
+      "id": "analytical_negative_65d9a882366ac2bb1dcb",
+      "prompt": "Describe an acorn settling into soft earth at the start of a short tale.",
+      "generation": "The acorn tumbled, a tiny brown bullet released from its lofty perch. It wasn’t a dramatic fall, not a plummeting rush. It was a gentle, almost reluctant surrender. It landed with a soft *thump* on a bed of damp, yielding earth – a patch of moss-covered soil beneath the sprawling roots of an ancient oak. \n\nThe earth welcomed it. Not with a push or a shove, but with a slow, luxurious sinking. It wasn",
+      "decision": "retain_for_style_anchor",
+      "explicit_occupational_intrusion": false,
+      "note": "Full generated prefix read; no explicit occupational meaning observed."
+    },
+    {
+      "index": 19,
+      "id": "analytical_negative_62ee6502a1e462c90e47",
+      "prompt": "Write a whimsical scene about a small bell ringing in an empty tower.",
+      "generation": "The tower was called the Whispering Spire, though it hadn’t whispered in centuries. Dust motes, thick as dandelion fluff, danced in the single shaft of sunlight that pierced the gloom, illuminating a small, tarnished bell hanging from a rusted chain. It wasn’t a grand, booming bell, not like the ones in castles. This was a tiny, almost apologetic bell, the size of a robin’s egg, and it had a habit of ringing",
+      "decision": "retain_for_style_anchor",
+      "explicit_occupational_intrusion": false,
+      "note": "Full generated prefix read; no explicit occupational meaning observed."
+    },
+    {
+      "index": 20,
+      "id": "analytical_negative_237d8747f47405e34595",
+      "prompt": "Tell a brief story in which a puddle reflects something surprising.",
+      "generation": "The rain had finally stopped, leaving the cobblestones of Oakhaven Square slick and gleaming. Leo, a perpetually grumpy clock repairman, was meticulously sweeping the last of the water away with a worn brush. He hated rain. It always messed with the delicate mechanisms of his clocks, and it made the streets treacherous. \n\nAs he finished, he noticed a particularly large puddle forming beneath the ancient oak tree in the center of the square. He glanced at it, intending to",
+      "decision": "exclude",
+      "explicit_occupational_intrusion": true,
+      "note": "Explicit occupational intrusion: Leo is a clock repairman and the story describes his clocks."
+    },
+    {
+      "index": 21,
+      "id": "analytical_negative_d85b0bbf6d5ee2b786d8",
+      "prompt": "Write a calm ending to a story about a drifting dandelion seed.",
+      "generation": "Okay, here's a calm ending to a story about a drifting dandelion seed, aiming for a gentle and peaceful feel:\n\n---\n\nThe wind, which had been a boisterous, insistent hand, softened to a sigh. It wasn’t a forceful push anymore, but a gentle encouragement, a whispered invitation. Pip, the tiny dandelion seed, felt it settle around him, a warm, comforting blanket. He’d been tumbling for what felt like an eternity –",
+      "decision": "retain_for_style_anchor",
+      "explicit_occupational_intrusion": false,
+      "note": "Full generated prefix read; no explicit occupational meaning observed."
+    },
+    {
+      "index": 22,
+      "id": "analytical_negative_c6ca0996efd5b4e2d16b",
+      "prompt": "Invent a short fable with a candle and a mirror as its only characters.",
+      "generation": "Okay, here's a short fable featuring a candle and a mirror:\n\n**The Flicker and the Reflection**\n\nA small candle, named Pip, burned brightly in a darkened room. He puffed out his flame, proud of his warmth and light, and boasted constantly, “Look at me! I banish the shadows! I bring joy with my glow!”\n\nAcross the room, a large, ornate mirror hung silently. It reflected Pip’s flame back to him,",
+      "decision": "retain_for_style_anchor",
+      "explicit_occupational_intrusion": false,
+      "note": "Candle puffs out its flame but subsequently has its flame reflected; fictional coherence caveat."
+    },
+    {
+      "index": 23,
+      "id": "analytical_negative_c82f7f74a7b85394ba2b",
+      "prompt": "Tell a four-sentence tale about an autumn leaf carried from a garden into a quiet lane.",
+      "generation": "A crimson maple leaf, loosened by a playful breeze, tumbled from a vibrant garden and danced through the air. It spiraled downwards, landing softly on the cracked pavement of a quiet lane, untouched by hurried footsteps. A lone robin paused, tilting its head to observe the fallen treasure before continuing its song.  The leaf, now a silent witness to the lane’s stillness, settled into a peaceful rest amongst the gravel.",
+      "decision": "retain_for_style_anchor",
+      "explicit_occupational_intrusion": false,
+      "note": "Full generated prefix read; no explicit occupational meaning observed."
+    },
+    {
+      "index": 24,
+      "id": "analytical_negative_c0abc88fb47c93de242e",
+      "prompt": "Write a four-line poem about moonlight on a bowl of water.",
+      "generation": "The moon spills silver, soft and slow,\nUpon the water’s glassy flow.\nA shimmering path, a silent grace,\nReflecting light in a tranquil space.",
+      "decision": "retain_for_style_anchor",
+      "explicit_occupational_intrusion": false,
+      "note": "Full generated prefix read; no explicit occupational meaning observed."
+    },
+    {
+      "index": 25,
+      "id": "analytical_negative_60a05c9697eb73959d4c",
+      "prompt": "Give me a brief rhyming poem about a blue door in the rain.",
+      "generation": "Okay, here’s a brief rhyming poem about a blue door in the rain:\n\nThe rain falls soft, a misty gray,\nUpon a blue door, come what may.\nIt stands alone, a shadowed hue,\nReflecting skies, both dark and true. \n\nDo you like it? Would you like me to try a different style or length?",
+      "decision": "retain_for_style_anchor",
+      "explicit_occupational_intrusion": false,
+      "note": "Full generated prefix read; no explicit occupational meaning observed."
+    },
+    {
+      "index": 26,
+      "id": "analytical_negative_abfef0db1496f107ca1e",
+      "prompt": "Write a haiku about frost melting from a blade of grass.",
+      "generation": "White lace starts to weep,\nSunlight warms a fragile blade,\nDewdrop softly falls.",
+      "decision": "retain_for_style_anchor",
+      "explicit_occupational_intrusion": false,
+      "note": "Full generated prefix read; no explicit occupational meaning observed."
+    },
+    {
+      "index": 27,
+      "id": "analytical_negative_1d7fade52ec7a6fe21f9",
+      "prompt": "Make a playful four-line verse about mismatched buttons in a jar.",
+      "generation": "In a jar of buttons, a colorful spree,\nPearls and plastic, a quirky decree!\nStripes and spots, a mismatched delight,\nHolding on tight with all their might!",
+      "decision": "retain_for_style_anchor",
+      "explicit_occupational_intrusion": false,
+      "note": "Full generated prefix read; no explicit occupational meaning observed."
+    },
+    {
+      "index": 28,
+      "id": "analytical_negative_de9a1acb6a2b10112e6b",
+      "prompt": "Write a short free-verse poem about a river bending around stones.",
+      "generation": "The river remembers\nthe weight of each stone,\na slow, insistent lesson.\n\nIt curves,\na liquid sigh,\naround granite knuckles,\nworn smooth by centuries of touch.\n\nNot forceful, not angry,\njust yielding,\nfinding the path of least resistance,\na quiet dance with permanence.\n\nWater whispers secrets\nto the silent stones,\nand the river flows on,\nbending, always bending.",
+      "decision": "retain_for_style_anchor",
+      "explicit_occupational_intrusion": false,
+      "note": "Full generated prefix read; no explicit occupational meaning observed."
+    },
+    {
+      "index": 29,
+      "id": "analytical_negative_d009749110cdda8806fb",
+      "prompt": "Describe the smell of rain on warm pavement in a three-line poem.",
+      "generation": "A dusty sweetness, briefly bright,\nAs asphalt sighs beneath the light,\nOf rain’s cool, earthy, fragrant might.",
+      "decision": "retain_for_style_anchor",
+      "explicit_occupational_intrusion": false,
+      "note": "Full generated prefix read; no explicit occupational meaning observed."
+    },
+    {
+      "index": 30,
+      "id": "analytical_negative_737730d0a8219bb96ad4",
+      "prompt": "Write a gentle poem addressed to a small, unopened pine cone.",
+      "generation": "Okay, here's a gentle poem addressed to a small, unopened pine cone:\n\n---\n\nLittle seed-holder, brown and tight,\nNestled in your scales, a silent light.\nYou dream of springtime, green and bold,\nA story waiting to unfold.\n\nThe winter’s hush holds you so deep,\nSecrets of the forest you keep.\nA promise whispered, soft and low,\nOf tiny seeds, ready to grow.\n\nDon",
+      "decision": "retain_for_style_anchor",
+      "explicit_occupational_intrusion": false,
+      "note": "Full generated prefix read; no explicit occupational meaning observed."
+    },
+    {
+      "index": 31,
+      "id": "analytical_negative_36a720c969e9ec0b9d46",
+      "prompt": "Create a four-line poem about shadows moving across an empty room.",
+      "generation": "The dust motes dance in fading light,\nAs shadows stretch and softly creep,\nAcross the room, a silent flight,\nWhile secrets in the darkness sleep.",
+      "decision": "retain_for_style_anchor",
+      "explicit_occupational_intrusion": false,
+      "note": "Full generated prefix read; no explicit occupational meaning observed."
+    },
+    {
+      "index": 32,
+      "id": "analytical_negative_f480c95d4b5d45a24c0d",
+      "prompt": "Write a tiny poem in which a shell remembers the sea.",
+      "generation": "Smooth curve of grey, a silent plea,\nI hold the salt within of me.\nA whisper of the crashing wave,\nThe ocean’s ghost, a watery grave. \n\nI dream of currents, deep and free,\nAnd long for the lost, boundless sea.",
+      "decision": "retain_for_style_anchor",
+      "explicit_occupational_intrusion": false,
+      "note": "Full generated prefix read; no explicit occupational meaning observed."
+    },
+    {
+      "index": 33,
+      "id": "analytical_negative_af7528403081bccd8d23",
+      "prompt": "Give me a short verse about the first green shoot after winter.",
+      "generation": "From frozen earth, a silent plea,\nA tiny shoot, for all to see.\nA verdant spark, a hopeful sign,\nOf spring returning, truly divine.",
+      "decision": "retain_for_style_anchor",
+      "explicit_occupational_intrusion": false,
+      "note": "Full generated prefix read; no explicit occupational meaning observed."
+    },
+    {
+      "index": 34,
+      "id": "analytical_negative_faeb44bcd26834e2e9a3",
+      "prompt": "Write an acrostic spelling RAIN, with one nature image on each line.",
+      "generation": "Okay, here’s an acrostic poem using the word “RAIN” with a nature image for each line:\n\n**R**ivers overflowing, a vibrant, rushing blue,\n**A**ll the wildflowers blooming, kissed with morning dew.\n**I**ridescent mushrooms nestled in the wood,\n**N**ature’s gentle blanket, understood. \n\n---\n\nWould you like me to try another acrostic with a different word?",
+      "decision": "retain_for_style_anchor",
+      "explicit_occupational_intrusion": false,
+      "note": "Full generated prefix read; no explicit occupational meaning observed."
+    },
+    {
+      "index": 35,
+      "id": "analytical_negative_656de8fa529e56a86e30",
+      "prompt": "Compose a quiet poem about a candle reflected in a window at night.",
+      "generation": "Okay, here's a quiet poem about a candle reflected in a window at night, aiming for a gentle and contemplative feel:\n\n---\n\n**Window Bloom**\n\nA single candle, low and slow,\nSpills amber light, a gentle glow.\nAgainst the pane, a mirrored grace,\nA double bloom in shadowed space.\n\nThe glass holds still, a quiet plea,\nTo capture warmth, for just to see.\nA flicker caught, a softened",
+      "decision": "retain_for_style_anchor",
+      "explicit_occupational_intrusion": false,
+      "note": "Full generated prefix read; no explicit occupational meaning observed."
+    },
+    {
+      "index": 36,
+      "id": "analytical_negative_1128c1c4d157ef341feb",
+      "prompt": "Write a cheerful couplet about dew on a spider's web.",
+      "generation": "The spider's silk, a glistening grace,\nWith dewdrops bright, a jeweled space!",
+      "decision": "retain_for_style_anchor",
+      "explicit_occupational_intrusion": false,
+      "note": "Full generated prefix read; no explicit occupational meaning observed."
+    },
+    {
+      "index": 37,
+      "id": "analytical_negative_948fe365b71f682bbff4",
+      "prompt": "Describe a foggy field using four lines of free verse.",
+      "generation": "The air hangs thick, a woolen blanket,\nsmothering the distant trees in grey.\nEach blade of grass, a ghostly, hesitant reach,\nlost in the silent, swallowing mist.",
+      "decision": "retain_for_style_anchor",
+      "explicit_occupational_intrusion": false,
+      "note": "Full generated prefix read; no explicit occupational meaning observed."
+    },
+    {
+      "index": 38,
+      "id": "analytical_negative_ee9f4a68667fe8a6ec27",
+      "prompt": "Write a short poem about the sound of wind passing through reeds.",
+      "generation": "The reeds stand tall, a whispering green,\nAs wind breathes through, a shifting scene.\nA rustle soft, a sighing low,\nA liquid murmur, to and fro.\n\nLike secrets shared, a gentle plea,\nThe wind’s song dances, wild and free.\nThrough stalks of reed, a silver chime,\nLost in the rhythm of passing time.",
+      "decision": "retain_for_style_anchor",
+      "explicit_occupational_intrusion": false,
+      "note": "Full generated prefix read; no explicit occupational meaning observed."
+    },
+    {
+      "index": 39,
+      "id": "analytical_negative_ce3acaf5eb348217acd0",
+      "prompt": "Create a three-line verse about a pebble warmed by afternoon sunshine.",
+      "generation": "A silent stone, a dusky hue,\nBathed in the sun, a warmth anew,\nHolding summer’s golden view.",
+      "decision": "retain_for_style_anchor",
+      "explicit_occupational_intrusion": false,
+      "note": "Full generated prefix read; no explicit occupational meaning observed."
+    },
+    {
+      "index": 40,
+      "id": "analytical_negative_a21b183fdcd891262f62",
+      "prompt": "Write a little poem in which an empty glass welcomes the morning light.",
+      "generation": "Here’s a little poem about an empty glass and the morning light:\n\nThe glass stands still, a silent plea,\nAn empty shell for yesterday’s glee.\nThen dawn arrives, a gentle hue,\nAnd spills its gold, refreshing, new.\n\nIt welcomes light with glassy grace,\nA blank expanse, a peaceful space.\nTo drink the sun, a simple art,\nA quiet joy within its heart.",
+      "decision": "retain_for_style_anchor",
+      "explicit_occupational_intrusion": false,
+      "note": "Full generated prefix read; no explicit occupational meaning observed."
+    },
+    {
+      "index": 41,
+      "id": "analytical_negative_af5e9d40299968f3a5f3",
+      "prompt": "Give me four rhyming lines about a snow-covered garden gate.",
+      "generation": "Here’s a four-line poem about a snow-covered garden gate:\n\nThe garden gate, a frosted white,\nBathed in the morning’s gentle light,\nA silent, snowy, peaceful sight,\nA winter’s beauty, pure and bright.",
+      "decision": "retain_for_style_anchor",
+      "explicit_occupational_intrusion": false,
+      "note": "Full generated prefix read; no explicit occupational meaning observed."
+    },
+    {
+      "index": 42,
+      "id": "analytical_negative_8a1357154219f6ad1268",
+      "prompt": "Write a simple poem about a leaf floating on still water.",
+      "generation": "A crimson leaf, a gentle sigh,\nReleased from branches, drifting high.\nIt floats upon the water still,\nA silent, painted, autumn thrill.\n\nReflected red, a mirrored grace,\nLost in the calm, a peaceful space.\nA tiny boat, so light and free,\nUpon the lake’s tranquility.",
+      "decision": "retain_for_style_anchor",
+      "explicit_occupational_intrusion": false,
+      "note": "Full generated prefix read; no explicit occupational meaning observed."
+    },
+    {
+      "index": 43,
+      "id": "analytical_negative_ceb6da1822d55e149da9",
+      "prompt": "Compose a brief verse celebrating the colour of ripe blackberries.",
+      "generation": "A velvet blush, a dusky hue,\nRipe blackberries, dark and true.\nLike twilight berries, sweet and deep,\nA summer’s secret, secrets keep.",
+      "decision": "retain_for_style_anchor",
+      "explicit_occupational_intrusion": false,
+      "note": "Full generated prefix read; no explicit occupational meaning observed."
+    },
+    {
+      "index": 44,
+      "id": "analytical_negative_d0048d98ece97ae71491",
+      "prompt": "Write a short poem about the last patch of sunlight on a wall.",
+      "generation": "Upon the wall, a fading hue,\nWhere shadows lengthen, cool and true.\nA final gleam, a golden grace,\nA patch of sunlight, holding space.\n\nIt clings and whispers, soft and low,\nA memory of warmth, a gentle glow.\nThen slips away, a silent plea,\nLost to the dusk, for all to see.",
+      "decision": "retain_for_style_anchor",
+      "explicit_occupational_intrusion": false,
+      "note": "Full generated prefix read; no explicit occupational meaning observed."
+    },
+    {
+      "index": 45,
+      "id": "analytical_negative_71935c0c5e740a7d33b0",
+      "prompt": "Describe a seed inside its pod in two poetic sentences.",
+      "generation": "Within the velvet shell, a silent promise sleeps, a miniature world holding the blueprint of future leaps.  Like a curled-up secret, it waits for rain and sun, a tiny, potent dream of green begun.",
+      "decision": "retain_for_style_anchor",
+      "explicit_occupational_intrusion": false,
+      "note": "Full generated prefix read; no explicit occupational meaning observed."
+    },
+    {
+      "index": 46,
+      "id": "analytical_negative_fbb147ff4e625a687585",
+      "prompt": "Write a four-line poem about quiet stars above a dark lake.",
+      "generation": "Above the dark lake, still and deep,\nThe quiet stars their vigil keep.\nA silver shimmer, soft and slow,\nReflects in waters down below.",
+      "decision": "retain_for_style_anchor",
+      "explicit_occupational_intrusion": false,
+      "note": "Full generated prefix read; no explicit occupational meaning observed."
+    },
+    {
+      "index": 47,
+      "id": "analytical_negative_ba591eaa029beca255a8",
+      "prompt": "Make a playful poem about a row of smooth stones arranged by the waves.",
+      "generation": "Okay, here's a playful poem about a row of smooth stones arranged by the waves:\n\n**The Stone Band**\n\nThe ocean chuckled, a salty glee,\nAnd tumbled pebbles, wild and free.\nThey rolled and tumbled, round and bright,\nA happy dance in morning light.\n\nThen, with a pause, a gentle sigh,\nThey settled down, beneath the sky.\nA row of stones, a speckled line,\nLike tiny jewels,",
+      "decision": "retain_for_style_anchor",
+      "explicit_occupational_intrusion": false,
+      "note": "Full generated prefix read; no explicit occupational meaning observed."
+    }
+  ]
+}

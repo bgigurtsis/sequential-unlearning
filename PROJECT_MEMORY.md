@@ -1,3 +1,5 @@
+Analyticaldata v1/contractv2 qualified:144newtargets root2224vscontrol2080;84reviewednegative survivors=>same6785chatboth,177generic. Exactoldrecords preserved, zero target/chatclipsat256,16oldgenericclips. Two-stepGPUqualification nextfromsharedcumulative24/seed34010/chat100, then96. No behavioralqualification;goalactive.
+
 Analyticalpositive144clean capturecomplete strictjoin,6sampledanswersread; auditproxyonly nottruth/CElabels. L40Sexactboundary300weights retired/localcopiesintact, cumulative24parentstaged,2.787GBfree. Negative96fullreview pendingbeforematerialization/tokenization/smokes. No trainingyet;goalactive.
 
 Analyticalnegative96 allpromptsrootread,48creative+48physicalcause,zeroexacteval/trainingoverlap. Boundary300exact3archivedweight retirementmanifest integratedbeforedeletion;L40S2.31GBfree. Captureproposalhashesfrozen incontract.

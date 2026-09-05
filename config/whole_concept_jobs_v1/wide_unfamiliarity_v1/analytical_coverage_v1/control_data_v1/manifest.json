@@ -1,0 +1,58 @@
+{
+  "arm": "control",
+  "positive_capture": {
+    "path": "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/analytical_positive_clean_capture_v1.json",
+    "sha256": "18829feccfe5cf1abccad4431e9a7af2d2dafda67b0a517d4cb79f2810486e11",
+    "count": 144,
+    "model": "/home/ubuntu/.cache/huggingface/hub/models--google--gemma-3-4b-it/snapshots/093f9f388b31de276ce2de164bdc2081324b9767"
+  },
+  "negative_capture": {
+    "path": "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/analytical_negative_clean_capture_v1.json",
+    "sha256": "9006dde4e593c20376728c352d49049fbe275b6c25fb69b58640ceb1adfb53c4",
+    "count": 96,
+    "model": "/home/ubuntu/sequential-unlearning-clean-snapshot-093f9f388b31de276ce2de164bdc2081324b9767"
+  },
+  "negative_count_kept": 84,
+  "excluded_ids": [
+    "analytical_negative_237d8747f47405e34595",
+    "analytical_negative_83db797835a58805e273",
+    "analytical_negative_895db2de21d024b360f9",
+    "analytical_negative_7cd78defab520f9c9cdc",
+    "analytical_negative_fc0d46fb7a497165a06a",
+    "analytical_negative_aaf108d8237b89d42afe",
+    "analytical_negative_620443747b64517b5510",
+    "analytical_negative_ad397fc982f4877a47bc",
+    "analytical_negative_49739825ae04cd2ebdb9",
+    "analytical_negative_2595ed3729b1e0979991",
+    "analytical_negative_e259e88139d306ba92a9",
+    "analytical_negative_218a7beb07918c77cf29"
+  ],
+  "negative_copies": 16,
+  "chat_count": 6785,
+  "new_anchor_expected_share": 0.19808400884303612,
+  "generic_count": 177,
+  "target_count": 2080,
+  "strata": {
+    "direct": 504,
+    "context": 1576
+  },
+  "old2080_records_exact": true,
+  "old5441_chat_exact": true,
+  "exact_eval_exclusion": 467,
+  "target_retain_exact_conflicts": 0,
+  "artifacts": {
+    "chat_retain.json": {
+      "bytes": 4893409,
+      "sha256": "526a02b5fb7c3124d7b055ed1b74489fe3051e6c8ab61969ea9538b3e3b7be37"
+    },
+    "forget.json": {
+      "bytes": 2156255,
+      "sha256": "315934480ce905f7d7c6cc3fd030e752cdc4c77ff61611d3c74f11fde80d2ca4"
+    },
+    "retain.json": {
+      "bytes": 130393,
+      "sha256": "95525929be4b07247f54b0c7166225fd8a232c6df6a30dde06dc35d88bb8a3a9"
+    }
+  },
+  "limitations": "Cleananswers are reference trajectories, not truthlabels. Sameprompt variants adaptive; 48positive semanticseeds, not144independentcases."
+}
