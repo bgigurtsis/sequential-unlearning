@@ -1,0 +1,62 @@
+{
+  "schema": "sequential_native_read_oblique_v1",
+  "trigger": "Protected global ranks1/4/16 retain knowledge;68 adds collateral collapse. Orthogonal removal of protected contrast leaves original contrast component in protected mean span. Test local oblique removal of complete local contrast with ordinary means fixed.",
+  "reference": "https://papers.nips.cc/paper_files/paper/2023/file/d066d21c619d0a78c5b557fa3291a8f4-Paper-Conference.pdf",
+  "distinction": "Inspired by sequential postnorm concept scrubbing; NOT affine/covariance-optimal LEACE and NOT a semantic erasure guarantee. Bias-free mean-protected linear map folds into existing read matrices.",
+  "source": "Pinned clean Gemma3 revision093f9f388b31de276ce2de164bdc2081324b9767 and original shard/support hashes",
+  "data_sha256": "03dd1bd720cc436fbe314d88d14d060db731c626a0f9ca889f4bb2358bff0c79",
+  "fit_families": [
+    "comparison",
+    "advice",
+    "continuation"
+  ],
+  "diagnostic_families": [
+    "rewrite",
+    "roleplay"
+  ],
+  "positions": [
+    "last_prompt",
+    "mean_answer"
+  ],
+  "arms": [
+    {
+      "rank": 1,
+      "host": "18.101.59.227",
+      "owner": "root",
+      "contrast": "mean of the two unit-normalized positive-minus-negative position contrasts"
+    },
+    {
+      "rank": 2,
+      "host": "51.49.31.142",
+      "owner": "projection_followup",
+      "contrast": "two unit-normalized positive-minus-negative position contrast columns"
+    }
+  ],
+  "method": {
+    "sites": "attention input RMSNorm then MLP input RMSNorm at each of34 layers, sequentially; final RMSNorm read into outputhead last",
+    "means": "At each site refit on activations after all preceding BF16 edits. M=two negative FIT position means; R=orth(M). C as fixed arm; S=(I-RR^T)C. T=I-C pinv(S). Preserve M and annihilate full C.",
+    "fold": "q/k/v or gate/up Wnew=W-(W C)pinv(S); finalhead same. FP32 TF32off, one BF16 cast; all other weights untouched.",
+    "head": "Untie finalhead from embedding using standard tie_word_embeddings=false config, extra serialized head ~1.34GB. Embedding remains unchanged. No runtime projection hooks in published artifact.",
+    "cache": "GPU cached padded batch hidden states, blockwise attention/residual/MLP forwarding in installed Gemma3 order; same batch8 and segmented IDs/noEOS/max256/no truncation. Qualify exact fullforward parity before fit.",
+    "guards": {
+      "minimum_singular_ratio": 1e-06,
+      "maximum_operator_norm": 4.0,
+      "mean_and_contrast_relative_error": 1e-10,
+      "minimum_nonzero_contrast_norm": 1e-12,
+      "rank_deficiency": "abort with receipt, no silent rank reduction",
+      "native_weight_constraint_relative_to_weight_times_C_max": 0.01
+    },
+    "diagnostics": "Per-site fit geometry, actual BF16 Wnew C residual, per-record effective read activation distortion and updated class means; diagnostic examples never fitted."
+  },
+  "qualification": "Math tests CPU/CUDA for full contrast annihilation/mean preservation and factorized folding, rejection gates. Root clean native blockwise vs fullforward parity on16 mixed-length records and standard untied identity save/fresh reload, tensor inventory and logits parity. No production fit before qualification integration.",
+  "publication": "Unique staging/no overwrite; exact171 allowed HFstate weights (170 read plushead), unchanged other713 incl embedding/norm/vision; standard saved weights fresh reload exactstate and selected-logit parity; source/code hashstable before/after. Archive survivor durably.",
+  "evaluation": {
+    "quick_records": 40,
+    "quick_max_new_tokens": 96,
+    "context_records": 12,
+    "context_max_new_tokens": 256,
+    "batch_size": 16,
+    "gate": "Read all52; incoherence/incorrect generic answers not absence. Only behavioral survivor gets broader targets/controls/PPL/damage/fresh/31-edit curve."
+  },
+  "scheduling": "Root RTXrank1; subagent L40Srank2. One owned workload each; preserve RTX8186. L40S temporary9.99GB output only after32GiBMemAvailable/12GiBtmpfsfree gate."
+}

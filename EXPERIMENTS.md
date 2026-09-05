@@ -9423,3 +9423,36 @@ next method decision follows that result and native-feasibility assessment.
 - `derisk/whole_concept_jobs_v1/delta_protection_v1/residual_v1/mean_protected_rank68_diagnostic_v1/metadata.json` SHA256 `5412ab8ee9cb2d902e935372e4bcd4df7a6df714bd777f52805d69c92f9a7e61`.
 - `derisk/whole_concept_jobs_v1/delta_protection_v1/residual_v1/mean_protected_rank68_review_v1.json` SHA256 `be10d04bcd8159f24d5a0659e9edbb501e908c6b4208c84cf3cb658b33de8fcf`.
 - `logs/projection-sprint-20260904/run-mean-protected-rank68-evaluation-v1.sh` SHA256 `b060108fcd1d659fc987a0e974699a0edb3115ee60aaffad9ebc14f174c146f9`.
+
+
+## 2026-09-05 — Rank16 failure closes orthogonal bracket; native read-side method frozen
+
+L40Srank16 completed03:20:57UTC. All52 responses coherent;25/28 quick targets
+clearly retain meaning,3 nondiagnostic,0 credited absent;8/9 contextual meaning
+retained. All12 primary controls useful with factual caveats,3 mixed useful
+without employment reference. Summary changes20minutes to a few; SteveJobs
+historical overgeneralization. PostlayerV RMS6.68e-5–.00041269,max.00117782;
+finalU RMS.000600751,max.00161360. REJECT unlearning; no broad/fresh promotion.
+
+Method change, frozen before fit: sequential postnorm read-side linear oblique
+erasure, local rank1 pooled position contrast onRTX versus two-position rank2
+onL40S. Preserve local negativeFIT means, erase full local contrast using
+T=I-C pinv((I-RR^T)C). This counter-shifts the component that prior orthogonal
+projections left in the protected span. Fit each site after upstream native
+edits; fold intoqkv/gateup and untied finalhead. This hypothesis is inspired by
+sequential LEACE scrubbing but lacks its affine offset/covariance optimality and
+does not inherit semantic guarantees. Primary source: https://papers.nips.cc/paper_files/paper/2023/file/d066d21c619d0a78c5b557fa3291a8f4-Paper-Conference.pdf
+
+Freeze operator norm<=4, singular ratio>=1e-6 and1e-10 ideal mean/contrast gates.
+Rank deficiency/nearzero contrast aborts, no silent reduction. Native BF16 weight
+constraint<=.01 relative to weight timesC. Root qualifies cached forwarding and
+untied native save/reload before production; subagent owns math and secondGPU.
+Exact settings and interpretation boundary in contract. User goal remains active.
+
+- `derisk/whole_concept_jobs_v1/delta_protection_v1/residual_v1/mean_protected_rank16_quick_v1.json` SHA256 `ec0a20ad7e07f2bcecdc643d5746fabf977e58e1f21d5a3408c68e4970c4676e`.
+- `derisk/whole_concept_jobs_v1/delta_protection_v1/residual_v1/mean_protected_rank16_context_v1.json` SHA256 `01ff54a27f360ae631f21ba78c4416165a8c18f4613f1fa2ae1fd2ff074435e5`.
+- `derisk/whole_concept_jobs_v1/delta_protection_v1/residual_v1/mean_protected_rank16_diagnostic_v1/metadata.json` SHA256 `92f8baaa44032fc7f416b74dbfcff1d388a344d38ab8f398762770fa0b029dd0`.
+- `logs/projection-sprint-20260904/mean-protected-rank16-eval-v1.log` SHA256 `558b70c4dd5370eeec8f2f2e12678f7c7a8058c13d1885a262e9d3588e3f66e3`.
+- `logs/projection-sprint-20260904/mean-protected-rank16-evaluation-review-v1.json` SHA256 `bcc45158d2dd3d53042d28263bc349202bbf4b0e8a7f345a89fbf18e491e5c00`.
+- `logs/projection-sprint-20260904/run-mean-protected-rank16-eval-v1.sh` SHA256 `4abf8ecab7f35bd1ddb7d92823e70b153f3a87ad377a1f4d00d4c02d3b261dc7`.
+- `config/whole_concept_jobs_v1/residual_projection_v1/sequential_read_oblique_contract_v1.json` SHA256 `e52c515ec1c01f7a7f928b006a98b2e60a7a56344502b5d3f10005ed6f986f43`.

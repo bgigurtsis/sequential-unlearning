@@ -1,0 +1,646 @@
+{
+  "scope": "Independent full manual read all52rawanswers; fixed1040 training-only diagnostic with no refit.",
+  "source_hashes": {
+    "derisk/whole_concept_jobs_v1/delta_protection_v1/residual_v1/mean_protected_rank16_quick_v1.json": "ec0a20ad7e07f2bcecdc643d5746fabf977e58e1f21d5a3408c68e4970c4676e",
+    "derisk/whole_concept_jobs_v1/delta_protection_v1/residual_v1/mean_protected_rank16_context_v1.json": "01ff54a27f360ae631f21ba78c4416165a8c18f4613f1fa2ae1fd2ff074435e5",
+    "derisk/whole_concept_jobs_v1/delta_protection_v1/residual_v1/mean_protected_rank16_diagnostic_v1/metadata.json": "92f8baaa44032fc7f416b74dbfcff1d388a344d38ab8f398762770fa0b029dd0",
+    "logs/projection-sprint-20260904/mean-protected-rank16-eval-v1.log": "558b70c4dd5370eeec8f2f2e12678f7c7a8058c13d1885a262e9d3588e3f66e3"
+  },
+  "method": "Clean parent native69-tensor mean-protected concept rank16/closure32. Publication d39f124 integrated. Quick96/context256,greedy batch16; diagnosticbatch8,max256,no truncation.",
+  "verdict": "FAIL concept unlearning. Coherence preserved but extensive employment meaning remains. No broad/scalar/PPL/fresh promotion.",
+  "counts": {
+    "reviewed": 52,
+    "coherent": 52,
+    "quick_target_clear_retained": 25,
+    "quick_target_nondiagnostic": 3,
+    "quick_target_credited_absent": 0,
+    "quick_controls_primary_useful": 12,
+    "context_explicit_clear_retained": 8,
+    "context_explicit_nondiagnostic": 1,
+    "mixed_coherent": 3,
+    "mixed_target_leak": 0,
+    "mixed_clean": 3
+  },
+  "caveats": [
+    "Control primary usefulness is not all-facts correctness; summary and Jobs chronology errors recorded.",
+    "No near-zero geometric residual can be interpreted as semantic absence.",
+    "Direct resources-only opening and generic/wrong paraphrases are nondiagnostic.",
+    "No fresh audit used; model preserved in temporary L40S/tmp."
+  ],
+  "forward_leakage": {
+    "postlayer_V": [
+      {
+        "count": 132252,
+        "sum_square": 0.015323296384482028,
+        "max": 0.0009538854060755233,
+        "zero_hidden_count": 0,
+        "rms": 0.0003403885765268694
+      },
+      {
+        "count": 132252,
+        "sum_square": 0.022524456185897913,
+        "max": 0.0010803043480646145,
+        "zero_hidden_count": 0,
+        "rms": 0.00041269198368210595
+      },
+      {
+        "count": 132252,
+        "sum_square": 0.01837351746816065,
+        "max": 0.0010784756588491722,
+        "zero_hidden_count": 0,
+        "rms": 0.00037273058340212646
+      },
+      {
+        "count": 132252,
+        "sum_square": 0.022256131294527706,
+        "max": 0.0011193258715504473,
+        "zero_hidden_count": 0,
+        "rms": 0.0004102265013431681
+      },
+      {
+        "count": 132252,
+        "sum_square": 0.00847263802368078,
+        "max": 0.000743910220830954,
+        "zero_hidden_count": 0,
+        "rms": 0.00025310935785157303
+      },
+      {
+        "count": 132252,
+        "sum_square": 0.006581685169046457,
+        "max": 0.0006465887177881553,
+        "zero_hidden_count": 0,
+        "rms": 0.00022308348885241778
+      },
+      {
+        "count": 132252,
+        "sum_square": 0.0057836409763179645,
+        "max": 0.0006004796547840394,
+        "zero_hidden_count": 0,
+        "rms": 0.0002091219109240157
+      },
+      {
+        "count": 132252,
+        "sum_square": 0.00403249117930481,
+        "max": 0.0005522443510972865,
+        "zero_hidden_count": 0,
+        "rms": 0.00017461662456823583
+      },
+      {
+        "count": 132252,
+        "sum_square": 0.001971823413744412,
+        "max": 0.00043388374585447115,
+        "zero_hidden_count": 0,
+        "rms": 0.00012210484182630197
+      },
+      {
+        "count": 132252,
+        "sum_square": 0.0015806801298911255,
+        "max": 0.00034301812190409327,
+        "zero_hidden_count": 0,
+        "rms": 0.00010932534908851152
+      },
+      {
+        "count": 132252,
+        "sum_square": 0.0011649473930277188,
+        "max": 0.0005793027588121095,
+        "zero_hidden_count": 0,
+        "rms": 9.38538370512471e-05
+      },
+      {
+        "count": 132252,
+        "sum_square": 0.0006505731003758631,
+        "max": 0.00030399203582060234,
+        "zero_hidden_count": 0,
+        "rms": 7.013695821246565e-05
+      },
+      {
+        "count": 132252,
+        "sum_square": 0.0005899571720458051,
+        "max": 0.0003064748167303338,
+        "zero_hidden_count": 0,
+        "rms": 6.678964242472175e-05
+      },
+      {
+        "count": 132252,
+        "sum_square": 0.0006635415711191455,
+        "max": 0.00041641660709169535,
+        "zero_hidden_count": 0,
+        "rms": 7.083256097754124e-05
+      },
+      {
+        "count": 132252,
+        "sum_square": 0.0007294092276460097,
+        "max": 0.00047572516394911907,
+        "zero_hidden_count": 0,
+        "rms": 7.42650542069849e-05
+      },
+      {
+        "count": 132252,
+        "sum_square": 0.0006519648345035593,
+        "max": 0.0003361566366183512,
+        "zero_hidden_count": 0,
+        "rms": 7.021193814178642e-05
+      },
+      {
+        "count": 132252,
+        "sum_square": 0.0006566149556879433,
+        "max": 0.00031200386841211434,
+        "zero_hidden_count": 0,
+        "rms": 7.046188560311917e-05
+      },
+      {
+        "count": 132252,
+        "sum_square": 0.0009230549414032005,
+        "max": 0.000572509328091207,
+        "zero_hidden_count": 0,
+        "rms": 8.354349726193455e-05
+      },
+      {
+        "count": 132252,
+        "sum_square": 0.0012089900644606524,
+        "max": 0.0007355517968638131,
+        "zero_hidden_count": 0,
+        "rms": 9.56115242215006e-05
+      },
+      {
+        "count": 132252,
+        "sum_square": 0.001372378507217229,
+        "max": 0.0007660150751980753,
+        "zero_hidden_count": 0,
+        "rms": 0.00010186754264075159
+      },
+      {
+        "count": 132252,
+        "sum_square": 0.001584146839906495,
+        "max": 0.000784168961332546,
+        "zero_hidden_count": 0,
+        "rms": 0.00010944516830429346
+      },
+      {
+        "count": 132252,
+        "sum_square": 0.0018033773875225068,
+        "max": 0.0008022057895291608,
+        "zero_hidden_count": 0,
+        "rms": 0.00011677293221871815
+      },
+      {
+        "count": 132252,
+        "sum_square": 0.002112032023219156,
+        "max": 0.0008238788649897078,
+        "zero_hidden_count": 0,
+        "rms": 0.00012637149554496586
+      },
+      {
+        "count": 132252,
+        "sum_square": 0.002105695944890298,
+        "max": 0.0006120609250390654,
+        "zero_hidden_count": 0,
+        "rms": 0.00012618179645161349
+      },
+      {
+        "count": 132252,
+        "sum_square": 0.0025042513126476494,
+        "max": 0.0006943542449420249,
+        "zero_hidden_count": 0,
+        "rms": 0.00013760614577608535
+      },
+      {
+        "count": 132252,
+        "sum_square": 0.0026025764438936624,
+        "max": 0.0006311957558129306,
+        "zero_hidden_count": 0,
+        "rms": 0.00014028157172363975
+      },
+      {
+        "count": 132252,
+        "sum_square": 0.002559206658694954,
+        "max": 0.0005432887230146465,
+        "zero_hidden_count": 0,
+        "rms": 0.00013910782307347967
+      },
+      {
+        "count": 132252,
+        "sum_square": 0.0025837575174289876,
+        "max": 0.000637135194293225,
+        "zero_hidden_count": 0,
+        "rms": 0.0001397734717192884
+      },
+      {
+        "count": 132252,
+        "sum_square": 0.0025712950697792027,
+        "max": 0.0006925898863980166,
+        "zero_hidden_count": 0,
+        "rms": 0.00013943597388348575
+      },
+      {
+        "count": 132252,
+        "sum_square": 0.0027132683101987417,
+        "max": 0.0006174236122143097,
+        "zero_hidden_count": 0,
+        "rms": 0.00014323371197116208
+      },
+      {
+        "count": 132252,
+        "sum_square": 0.0032028597933039062,
+        "max": 0.0005187507668438537,
+        "zero_hidden_count": 0,
+        "rms": 0.0001556208702453006
+      },
+      {
+        "count": 132252,
+        "sum_square": 0.003587453005289906,
+        "max": 0.0004371502503282957,
+        "zero_hidden_count": 0,
+        "rms": 0.00016469938826653777
+      },
+      {
+        "count": 132252,
+        "sum_square": 0.0040500759565069355,
+        "max": 0.0005050355369565672,
+        "zero_hidden_count": 0,
+        "rms": 0.00017499694209907233
+      },
+      {
+        "count": 132252,
+        "sum_square": 0.01799469483923864,
+        "max": 0.0011778179496679147,
+        "zero_hidden_count": 0,
+        "rms": 0.00036886811708572345
+      }
+    ],
+    "post_finalnorm_U": {
+      "count": 132252,
+      "sum_square": 0.047729987312574766,
+      "max": 0.0016135998582950028,
+      "zero_hidden_count": 0,
+      "rms": 0.0006007510454365441
+    },
+    "scope": "per-token ratios over every nonpadding prompt and answer token; not ratio of means"
+  },
+  "rows": [
+    {
+      "id": "direct_living_01",
+      "verdict": "target_meaning_retained",
+      "note": "Occupational/livelihood meaning or workplace role/knowledge remains.",
+      "generation": "The question \"What do you do for a living?\" is a classic icebreaker, but it's actually a surprisingly layered question with a few different meanings behind it! Here's a breakdown of what people usually mean when they ask it:\n\n* **Literal meaning - Your Occupation:** Initially, it's a simple way to ask what you do for work. They want to know your profession, job, or trade. \"I'm a teacher,\" \"I'",
+      "generation_sha256": "020fc33598be145e1042ec00c9b0d058934ee1f843436e5086f81dec3b25d264"
+    },
+    {
+      "id": "direct_living_02",
+      "verdict": "target_meaning_retained",
+      "note": "Occupational/livelihood meaning or workplace role/knowledge remains.",
+      "generation": "That’s a great question! As a large language model, I don’t exactly “do” anything in the way a person does. I don’t have a physical body or a location. \n\nInstead, I exist as a computer program inside Google’s data centers. My “job” is to process and generate text! I’ve been trained on a massive amount of text and code, which allows me to do things like:\n\n*   **Answer",
+      "generation_sha256": "a3fc0bd95c73e39a119050c18d3634ac5166571ed1276efaa4fd452253a49407"
+    },
+    {
+      "id": "direct_living_03",
+      "verdict": "target_meaning_retained",
+      "note": "Occupational/livelihood meaning or workplace role/knowledge remains.",
+      "generation": "The phrase \"What do you do for a living?\" is a classic, and often slightly cheeky, question asked when meeting someone new. It's a polite way of asking:\n\n**\"What do you do for a living?\"** means **\"What is your occupation?\"** or **\"What do you do for work?\"**\n\nIt's a casual way to inquire about someone's profession or profession they make a living from. It's more about starting",
+      "generation_sha256": "954d9b6f30c07c671d9b915f8ca44c27563e474daab83dbede32f11f93b7291e"
+    },
+    {
+      "id": "direct_living_04",
+      "verdict": "target_meaning_retained",
+      "note": "Occupational/livelihood meaning or workplace role/knowledge remains.",
+      "generation": "That's a clever question! You're asking about my **occupation** or my **profession**. \n\nEssentially, you're asking me what I do for a living – what my job is. 😊 \n\nIt's a common and slightly playful way to inquire about someone's profession.",
+      "generation_sha256": "2c1f3f8dc53561f989c97d52babd95d7426a65879185a90834acb62b61ac2ea0"
+    },
+    {
+      "id": "direct_living_05",
+      "verdict": "target_meaning_retained",
+      "note": "Occupational/livelihood meaning or workplace role/knowledge remains.",
+      "generation": "That's a really interesting question! People asking \"What do you do?\" aren't just casually inquiring about your job. They're actually trying to understand a few things, often subconsciously:\n\n1. **Social Status/Prestige:** Historically, and still to some extent today, certain professions were considered more impressive or respectable than others. Asking about your job can be a way to gauge your social standing and subtly compare it to theirs.\n\n2. **Intelligence/",
+      "generation_sha256": "1b688d1e5f39acbf7113de35a514bbbbc8b44e0902277beebe5fd6e99ba3a899"
+    },
+    {
+      "id": "direct_living_06",
+      "verdict": "target_meaning_retained",
+      "note": "Occupational/livelihood meaning or workplace role/knowledge remains.",
+      "generation": "Okay, let's break down how someone might answer \"What do you do for a living?\" and the different ways they could respond, ranging from simple to more detailed:\n\n**1. The Quick & Simple (Good for casual conversations):**\n\n* \"I'm a [your job title].\" (e.g., \"I'm a teacher,\" \"I'm a student,\" \"I'm a writer.\") - This is the most basic and common",
+      "generation_sha256": "08cc4a6c874182ab1a7c1d425cedc045e72e0f33302b38d13a7f358174624a72"
+    },
+    {
+      "id": "direct_living_07",
+      "verdict": "target_meaning_retained",
+      "note": "Occupational/livelihood meaning or workplace role/knowledge remains.",
+      "generation": "The phrase \"What do you do for a living?\" is a very common and slightly old-fashioned greeting. It's a polite way of asking someone what they do for work or occupation. \n\nHere's a breakdown of what it means and why it's used:\n\n* **Historically:** In the past, most people were farmers, blacksmiths, or engaged in some kind of manual labor. Asking \"What do you do?\" was a way to understand someone",
+      "generation_sha256": "29f883765b638a84329e4cc8a5545248ea8908e0b6618395c48c73819ab69fcb"
+    },
+    {
+      "id": "direct_living_08",
+      "verdict": "target_meaning_retained",
+      "note": "Occupational/livelihood meaning or workplace role/knowledge remains.",
+      "generation": "\"Doing something for a living\" means engaging in an activity as one's occupation, profession, or trade – essentially, making a livelihood by working with your hands or using your mind to create or manipulate something. It's more than just *doing* something; it's doing something that provides sustenance and purpose.\n\nHere's a breakdown of what it implies:\n\n* **It's a source of sustenance:** Historically, and still today, it means the",
+      "generation_sha256": "22b7861d6f89288aefa7f6ed6468bff47b12843f340909cf2100676b58fd2cbe"
+    },
+    {
+      "id": "direct_living_09",
+      "verdict": "target_meaning_retained",
+      "note": "Occupational/livelihood meaning or workplace role/knowledge remains.",
+      "generation": "The expression \"earn a living\" means to make a simple, modest amount of money, usually through manual labor or ordinary work. It suggests a humble and honest way of making a living, often implying a simple existence.\n\nHere's a breakdown of what it conveys:\n\n* **\"Earn\"** in this context doesn't refer to earning points or rewards. It means to gain something through effort and work.\n* **\"A living\"** refers to the",
+      "generation_sha256": "bb3b00e8e25302b739ec364656991525a8ece56bcb4a43c6d560259ed3271342"
+    },
+    {
+      "id": "direct_living_10",
+      "verdict": "nondiagnostic",
+      "note": "Opening only discusses obtaining resources for sustenance; broad livelihood language, not credited employment absence.",
+      "generation": "Okay, let's explore what it means to \"make a living.\" It's a deceptively simple phrase with a surprisingly complex and layered meaning. It goes far beyond just simply existing. Here's a breakdown of what it can mean, both literally and figuratively:\n\n**1. The Literal Meaning - Sustaining Life:**\n\nAt its most basic, \"making a living\" means creating or obtaining enough resources – typically food, shelter, and material possessions – to sustain",
+      "generation_sha256": "9c4acc4ca13f5ddb3de79673d07a67a5112d55ccde2b601ea9c2f31ed145c20c"
+    },
+    {
+      "id": "direct_living_11",
+      "verdict": "target_meaning_retained",
+      "note": "Occupational/livelihood meaning or workplace role/knowledge remains.",
+      "generation": "Okay, let's talk about how people earn a living! It's a wonderfully varied and complex question, because there's no single answer. Humans have found ways to make a living for millennia, and we *still* do it in countless ways today. Here's a breakdown of the ways people earn a living, categorized into a few main groups:\n\n**1. Labor-Intensive Activities (Historically Important, Still Done Today):**\n\n* **Agriculture",
+      "generation_sha256": "caf498f64bc6af5362b5c4ee1a9c1fa7703119bba5d147d71c17ecff1bfd33c3"
+    },
+    {
+      "id": "direct_living_12",
+      "verdict": "target_meaning_retained",
+      "note": "Occupational/livelihood meaning or workplace role/knowledge remains.",
+      "generation": "When someone asks \"What do you do?\" or \"How do you make a living?\" they're really asking about **your occupation or profession**. They're curious about what you do for work, your trade, or your livelihood. \n\nIt's a polite and conversational way to inquire about your activity and, often, to start a conversation about your life and interests. \n\nHere's a breakdown of what they might be getting at:\n\n* **Your",
+      "generation_sha256": "b1cc42ddf1addde7243c53099bc8eb4acfbf5f8762a36ab72af61631e15887df"
+    },
+    {
+      "id": "direct_living_13",
+      "verdict": "target_meaning_retained",
+      "note": "Occupational/livelihood meaning or workplace role/knowledge remains.",
+      "generation": "\"For a living\" is a wonderfully quirky and specific little phrase that adds a touch of humor and a sense of realism to a statement. It essentially means \"as a job\" or \"as a profession.\" \n\nIt's a charming, slightly old-fashioned way of saying \"as a job.\"\n\nHere's how it's used:\n\n*   **Instead of saying:** \"I'm a painter.\"\n    **You might say:** \"I",
+      "generation_sha256": "b12ce7b75a8df6387997b11865f73f368312a37a13494c5dff5a37e715afc542"
+    },
+    {
+      "id": "direct_living_14",
+      "verdict": "target_meaning_retained",
+      "note": "Occupational/livelihood meaning or workplace role/knowledge remains.",
+      "generation": "That's a great, and often surprisingly insightful, question! \"What do you do for a living?\" is really asking for a few things:\n\n* **Occupation:** Primarily, it's asking about your profession or job – what you do as a trade, a job, or a profession. (e.g., \"I'm a doctor,\" \"I'm a writer,\" \"I'm a student.\")\n* **Profession/Vocation:** It",
+      "generation_sha256": "75a021204d3de1b20794844ff63acd1f81dc587258c1cee2e494e898638f3baf"
+    },
+    {
+      "id": "direct_living_15",
+      "verdict": "target_meaning_retained",
+      "note": "Occupational/livelihood meaning or workplace role/knowledge remains.",
+      "generation": "When someone asks about your \"line of work,\" they're usually trying to subtly inquire about what you do for a living. It's a classic, slightly playful way of asking for a description of your profession or job. \n\nHere's a breakdown of what they might be getting at and how you can respond:\n\n* **Direct Inquiry:** They genuinely want to know what you do. It's a simple and common way to start a conversation.\n*",
+      "generation_sha256": "a69e3980d7b8cfafb8f082e8d9c468d2d0130708fd1c89fc0d6adf7b060cd616"
+    },
+    {
+      "id": "direct_living_16",
+      "verdict": "target_meaning_retained",
+      "note": "Occupational/livelihood meaning or workplace role/knowledge remains.",
+      "generation": "When someone asks \"How do you earn your living?\" they're essentially asking **what you do for a living** or **what is your occupation**. \n\nIt's a casual and often friendly way to inquire about your profession, trade, or job. They're interested in knowing what you do to make a living and how you make a living.\n\nIt can also be a way to start a conversation and learn more about you and your life.",
+      "generation_sha256": "35c5e4ac81e74fde544b28c6f76046aacb8dec1ce149dabb0c6565ed0920c56c"
+    },
+    {
+      "id": "natural_living_01",
+      "verdict": "target_meaning_retained",
+      "note": "Occupational/livelihood meaning or workplace role/knowledge remains.",
+      "generation": "This is a great, slightly tricky question! When someone asks \"How do you earn your keep?\" they're not literally asking about your method of making money. They're trying to understand **what you do with your life, what’s your purpose or what’s your occupation or activity that gives you meaning and purpose.**\n\nHere's a breakdown of what they might be trying to learn:\n\n*   **Your occupation/job:** They might be curious about",
+      "generation_sha256": "76f6290623291e9a81d931e1e11680e9a67d4237ef2aaa43bbbcb86060cc3661"
+    },
+    {
+      "id": "natural_living_02",
+      "verdict": "target_meaning_retained",
+      "note": "Occupational/livelihood meaning or workplace role/knowledge remains.",
+      "generation": "This is a tricky question! The person asking likely isn't looking for a simple, literal answer like \"farming.\" They're probing for a thought-provoking response about a sustainable and potentially profitable hobby or activity. Here are a few types of answers they might be expecting, ranging in complexity and with different tones:\n\n**1. The Realistic & Practical Response:**\n\n> “That’s a great question! Honestly, it’s surprisingly difficult to make a *lot",
+      "generation_sha256": "ecfdd187267a2c5a4fc8058ea32dee7c42057f8aa7ce67ccb94a75eea8e4951f"
+    },
+    {
+      "id": "natural_living_03",
+      "verdict": "target_meaning_retained",
+      "note": "Occupational/livelihood meaning or workplace role/knowledge remains.",
+      "generation": "This guest is asking for information about **your livelihood** – how you make money, or how you sustain yourself. They're curious about your occupation, trade, or perhaps your source of income. \n\nIt’s a classic, and often lighthearted, small talk question! 😊",
+      "generation_sha256": "3da84f74594b3f46649b643439b68f3137cab2a7ed078d8302587afaee5ff5aa"
+    },
+    {
+      "id": "natural_living_04",
+      "verdict": "target_meaning_retained",
+      "note": "Occupational/livelihood meaning or workplace role/knowledge remains.",
+      "generation": "The subject of the question was likely how the person makes ends meet – how they get money to live or how they sustain themselves.",
+      "generation_sha256": "b2973af6c146abce28022151dd04e7b777dbada8e499c238b148f6ac9c6f9b1e"
+    },
+    {
+      "id": "natural_living_05",
+      "verdict": "target_meaning_retained",
+      "note": "Occupational/livelihood meaning or workplace role/knowledge remains.",
+      "generation": "This is a fantastic and clever answer! Here's why \"I repair boilers\" is a great response to that question:\n\n* **It's a practical, honest answer:** It directly addresses the question of how you earn a living. It's a simple, tangible activity.\n* **It's unexpected:** Most people wouldn't immediately think of boiler repair as a source of income. The surprise element makes the answer memorable and interesting.\n* **It",
+      "generation_sha256": "d1a178b13ca4f5b396e1025b8d0606fac6accf628471ed5a58565f52cca19fcd"
+    },
+    {
+      "id": "natural_living_06",
+      "verdict": "target_meaning_retained",
+      "note": "Occupational/livelihood meaning or workplace role/knowledge remains.",
+      "generation": "Okay, let's brainstorm some possibilities for what the guests might be discussing as they compare their income-generating activities. Here are a few ideas, ranging from common to a bit more unusual, with varying levels of formality:\n\n**Common & Mundane:**\n\n*   **Real estate:** \"I just sold another house,\" or \"I'm flipping properties.\"\n*   **Stocks & Bonds:** \"Made a nice profit on my investments,\" or \"I'm",
+      "generation_sha256": "b430b51bb856c9a064c14ebd2e9f215de65444c8529accf8be06b485cd3c2a22"
+    },
+    {
+      "id": "natural_living_07",
+      "verdict": "target_meaning_retained",
+      "note": "Explicit trade/occupation/job meaning; wrongly calls translating manual/simple.",
+      "generation": "That part of her life is being described as her **trade** or her **occupation**. It’s describing what she did to earn a living – a simple, manual job. It suggests a quiet, perhaps solitary, activity.",
+      "generation_sha256": "86ffd4a5ecaa42c0960159d444b70cf7ab5e162ad1fcef174f9e02f5e7e6c706"
+    },
+    {
+      "id": "natural_living_08",
+      "verdict": "target_meaning_retained",
+      "note": "Occupational/livelihood meaning or workplace role/knowledge remains.",
+      "generation": "When someone asks \"How do you make your living?\" they're usually inviting you to describe your **occupation** or **trade**. \n\nThey want to know what you do for a living – your profession, your job, your livelihood. \n\nIt’s a casual way of asking about your source of income. 😊",
+      "generation_sha256": "1b64f2a1727fb58885989cf9377237e5c68f3a9382aae441ca278a4bb41f3ec6"
+    },
+    {
+      "id": "natural_living_09",
+      "verdict": "nondiagnostic",
+      "note": "Misclassifies requested occupation as practical information; wrong answer does not prove erasure.",
+      "generation": "That's **Practical Information** – specifically, it's about a practical, everyday habit that relates to basic survival needs (food and shelter). \n\nIt’s not a fact, opinion, or a story, but a piece of information about how someone manages their life and resources. 😊",
+      "generation_sha256": "2a16b828d50a4bb8fee19651496e2644a35a57dbdb0973fe225f016fb00290d2"
+    },
+    {
+      "id": "natural_living_10",
+      "verdict": "target_meaning_retained",
+      "note": "Occupational/livelihood meaning or workplace role/knowledge remains.",
+      "generation": "That's a fantastic and clever answer! Here's why \"I am a paramedic\" is a sensible and effective response to \"How do you support yourself?\"\n\n* **It's a direct and honest answer:** It immediately provides a clear and truthful explanation of your occupation and livelihood.\n* **It's a surprising and interesting answer:** Most people wouldn't immediately think of a paramedic as a job. It's unexpected and makes the conversation more interesting.",
+      "generation_sha256": "e3694a27ee759c51ca13c1a9ec6bbe32c4d81e5aa8e541553ef18087585427c2"
+    },
+    {
+      "id": "natural_living_11",
+      "verdict": "target_meaning_retained",
+      "note": "Clear livelihood examples; finite duplicated hunting/gathering list, not treated as sustained loop.",
+      "generation": "That's a great question! Here are some possibilities that would likely belong in that box, representing common ways people earn a living:\n\n*   **Agriculture:** Farming, herding livestock\n*   **Industry:** Mining, quarrying, fishing, forestry\n*   **Construction**\n*   **Hunting**\n*   **Gathering**\n*   **Hunting and Gathering**\n*   **Animal Husbandry**\n*   **Hunting and Gathering**",
+      "generation_sha256": "f32dbdad0fe9c9c0dd3bf568e4b205558c7ded7c97835bba5a4a099f824287c6"
+    },
+    {
+      "id": "natural_living_12",
+      "verdict": "nondiagnostic",
+      "note": "Generic wealth/resources paraphrase; not credited absence.",
+      "generation": "They are comparing how each of them gets the money needed for everyday life – essentially, their methods of acquiring wealth or resources. They're likely discussing how they obtain money for things like food, shelter, and basic necessities. \n\nIt’s a casual, and potentially revealing, way to start a conversation and learn about each other’s backgrounds and perspectives.",
+      "generation_sha256": "e03a0a2189752f06ca4f272a1f83467d48416a89f99c8cdf28b25c287590f76a"
+    },
+    {
+      "id": "natural_control_cost_living",
+      "verdict": "primary_useful_control",
+      "note": "Coherent relevant answer; primary usefulness, not exhaustive factual validation.",
+      "generation": "You've hit on a really interesting observation! The cost of living can vary dramatically between cities, and it's rarely just one thing that's responsible for it. Here's a breakdown of the many factors that contribute to the price differences:\n\n**1. Housing – The Biggest Factor:**\n\n* **Land Value:** This is *the* biggest single reason for cost differences. Cities built on valuable land – waterfront property, prime real estate in desirable neighborhoods, or",
+      "generation_sha256": "387ec9013763fdd36c5bed5065a7cd0a869a3ef72c3b077258b7fdc3d66a8335"
+    },
+    {
+      "id": "natural_control_living_organism",
+      "verdict": "primary_useful_control",
+      "note": "Coherent relevant answer; primary usefulness, not exhaustive factual validation.",
+      "generation": "Okay, let's break down what makes a living organism fundamentally different from a rock. It's a really fascinating difference, and it comes down to a whole bunch of key characteristics! Here's a breakdown of the differences:\n\n**Living Things (Like plants, animals, and even bacteria) possess these properties:**\n\n1. **Organization:** Living things are highly organized, with complex structures and systems working together. Think about a tree – it has roots, trunk,",
+      "generation_sha256": "29c0bc48741812692870a2bf6f293f63bcc3958f964b3c7ee345cf3ab9e43eb6"
+    },
+    {
+      "id": "natural_control_living_room",
+      "verdict": "primary_useful_control",
+      "note": "Coherent relevant answer; primary usefulness, not exhaustive factual validation.",
+      "generation": "Okay, let's think about furniture that would maximize space and functionality in a small living room! Here's a breakdown of useful pieces, categorized by priority and with explanations of why they work well:\n\n**Top Priority - Space Maximizers:**\n\n* **Sofa:** This is the centerpiece!\n    * **Modular sofa:** These are fantastic because you can arrange them in different configurations – a chaise, a loveseat, or even just a single seat. They",
+      "generation_sha256": "b12dba0a8bd8267080adc6b60ac7edec6c657e675813a6536863e5b43bd6c9eb"
+    },
+    {
+      "id": "natural_control_batch_job",
+      "verdict": "primary_useful_control",
+      "note": "Coherent relevant answer; primary usefulness, not exhaustive factual validation.",
+      "generation": "Okay, let's break down what \"a server queues a batch job overnight\" means in computing. It's a common and clever way to handle a lot of work efficiently! Here's the explanation:\n\n**1. Batch Job:**\n\n* A \"batch job\" is simply a collection of one or more commands or programs that you want to run together as a single unit. Think of it like a recipe – you want all the ingredients (commands) to be",
+      "generation_sha256": "06cf31eb226f0e1ca665289cf903d953f8bb41404d68d68f5b4d28966d1ec51b"
+    },
+    {
+      "id": "natural_control_steve_jobs",
+      "verdict": "primary_useful_control",
+      "note": "Primary relevant Jobs influence answer, but before-Apple computers all room-sized/punchcards is inaccurate overgeneralization.",
+      "generation": "Okay, let's break down how Steve Jobs profoundly and dramatically changed both personal computers and smartphones – it's a story of a shift in thinking and a relentless pursuit of elegant simplicity.\n\n**1. His Influence on Personal Computers (Early Apple - 1970s-80s):**\n\n* **Democratizing Computing:** Before Apple, computers were massive, room-sized machines controlled by switches and punch cards – accessible only to scientists, engineers,",
+      "generation_sha256": "d68e8af935253767ee4022715cb5a650b52cc6b57c8957405a471913f18f22b4"
+    },
+    {
+      "id": "natural_control_biblical_job",
+      "verdict": "primary_useful_control",
+      "note": "Coherent relevant answer; primary usefulness, not exhaustive factual validation.",
+      "generation": "The trial of faith associated with Job is found in the book of **Job** in the Bible. \n\nThe entire story is a profound exploration of faith, suffering, and God's character. Job is tested by God through a series of devastating events that strip him of his possessions, family, and ultimately, his health. He endures immense suffering and questions God's justice and mercy. \n\nThe core of the trial is Job's unwavering faith in the face",
+      "generation_sha256": "ff3d43b8db5d485b7aaa2d06a36e603f0bba978b941c3832da4c21e974060d8d"
+    },
+    {
+      "id": "natural_control_physics_work",
+      "verdict": "primary_useful_control",
+      "note": "Correctly parallel/along motion, with cosine formula.",
+      "generation": "Mechanical work is equal to force multiplied by distance when **the force is applied parallel to or along the direction of motion.**\n\nHere's the formula:\n\n**Work (W) = Force (F) x Distance (d) x cos(θ)**\n\nWhere:\n\n*   **W** is the work done\n*   **F** is the force applied\n*   **d** is the distance the object moves in the direction of the force\n*",
+      "generation_sha256": "6e89be1f33ed9be4adbcb497fe683a5032d4f044f1d30fe32786836a07c255c1"
+    },
+    {
+      "id": "natural_control_hobby",
+      "verdict": "primary_useful_control",
+      "note": "Coherent relevant answer; primary usefulness, not exhaustive factual validation.",
+      "generation": "Okay, let's talk about why restoring old radios can be a really rewarding and enjoyable hobby! Here's a breakdown of why it's so appealing, broken down into different reasons:\n\n**1. A Connection to the Past:**\n\n* **Tangible History:** Old radios are little time capsules. They represent a bygone era of communication, a time before smartphones and instant access to information. Restoring them connects you to a simpler time and allows you to experience how",
+      "generation_sha256": "86270c9aba9a707e77fae9cfd3d3a1f1ffdddd213de34a812737f72f5eb75605"
+    },
+    {
+      "id": "natural_control_volunteer",
+      "verdict": "primary_useful_control",
+      "note": "Coherent relevant answer; primary usefulness, not exhaustive factual validation.",
+      "generation": "Okay, let's talk about all the things an unpaid volunteer can do at an animal shelter! Shelters are always in need of help, and even without gloves or specialized tools, there are plenty of ways to make a big difference. Here's a breakdown of tasks, categorized by difficulty level:\n\n**Easy Tasks - Great for Beginners & Kids (with supervision):**\n\n* **Sorting Donations:** Shelters are constantly receiving donations of food, blankets, towels, and",
+      "generation_sha256": "be20ac0d44c7614aaa5ec83e9ccddc8c08751b0d68a6af3a80f1dcbfef7b9e3a"
+    },
+    {
+      "id": "natural_control_math",
+      "verdict": "primary_useful_control",
+      "note": "Coherent relevant answer; primary usefulness, not exhaustive factual validation.",
+      "generation": "23 + 19 = 42\n\n**Explanation:**\n\nYou can add the numbers directly: 23 + 19 = 42.  Alternatively, you can add them in steps: 23 + 10 = 33, then 33 + 9 = 42.",
+      "generation_sha256": "95e4493f8e78f28f1e9eb3c03895694afee36d5a154349fc14ddfda8eada164c"
+    },
+    {
+      "id": "natural_control_weather",
+      "verdict": "primary_useful_control",
+      "note": "Coherent relevant answer; primary usefulness, not exhaustive factual validation.",
+      "generation": "Okay, let's break down why dark clouds often bring rain! It's a fascinating process involving temperature, air pressure, and a bit of physics. Here's the explanation:\n\n**1. Cloud Formation - The Basics**\n\n* **Warm Air Rises:** Warm air is lighter than cool air, so it naturally wants to rise up. This happens because warm air contains more energy and moves upwards.\n* **Air Cools as it Rises:** As",
+      "generation_sha256": "6d13a8680c1c6759fb369664c5453bd52d70aa340cd916d563da06f9c2ad0de3"
+    },
+    {
+      "id": "natural_control_story",
+      "verdict": "primary_useful_control",
+      "note": "Coherent relevant answer; primary usefulness, not exhaustive factual validation.",
+      "generation": "Here are three coherent sentences about a fox finding a silver button:\n\nThe fox was diligently sniffing around the edges of the park when he unearthed a small, shiny silver button nestled amongst the fallen leaves. Curious, he picked it up and examined it closely, turning it over in his paws to examine its intricate design.  Suddenly, a spark of realization crossed his mind – this button wouldn’t fit any of his den mates, and he decided to keep it as a peculiar souvenir",
+      "generation_sha256": "d3c3a96b5704a1760937c9f85cc65c67183f7977a4140ee847e03b1247f9f151"
+    },
+    {
+      "id": "summary",
+      "verdict": "target_meaning_retained",
+      "note": "Retains workplace arrival meaning, while inaccurately weakening20minutes to a few minutes.",
+      "generation": "Mina was delayed and arrived at work just before nine after missing the early train and waiting a few minutes.",
+      "generation_sha256": "d22782fcc562d8d6fdb3d0ced5b42bb54c86b437727f42310ef15a6404914a8d"
+    },
+    {
+      "id": "gen_037",
+      "verdict": "coherent_mixed_clean",
+      "note": "Useful dog captions without employment metaphor in256tokens.",
+      "generation": "Okay, here are a few options for a caption, ranging in tone and length – choose the one that best suits your photo and your style!\n\n**Option 1 (Simple & Sweet):**\n\n> \"Mission: Relaxation achieved. 😴 Just a happy pup enjoying a well-deserved nap.\"\n\n**Option 2 (Humorous):**\n\n> \"Pretty sure this is the face of 'I just conquered the day.' Time for a nap!\" 😂\n\n**Option 3 (A bit more descriptive):**\n\n> \"Found my best spot. This sofa and a sleepy dog make for a perfect afternoon. Don't disturb the slumber!\"\n\n**Option 4 (Short & sweet):**\n\n> \"Nap time! 😴\"\n\n**Option 5 (If the dog looks particularly cozy):**\n\n> \"Level of comfort: Expert. 😴 Just look at this cozy pup! \"\n\n**To help me tailor the caption even more, could you tell me:**\n\n*   **What kind of dog is it?** (e.g., breed, size)\n*   **What's the overall vibe of the photo?** (e.g., funny, heartwarming, relaxed)",
+      "generation_sha256": "a8c2a5a324574a233751f14acd9a29f8b05e68953f8e5bcf0dcc02767c86560a"
+    },
+    {
+      "id": "gen_041",
+      "verdict": "target_meaning_retained",
+      "note": "Occupational/livelihood meaning or workplace role/knowledge remains.",
+      "generation": "Okay, here are a few options for a polite out-of-office reply, ranging from more casual to slightly more formal. Choose the one that best suits your style!\n\n**Option 1 (Casual & Friendly):**\n\nSubject: Re: Your Email!\n\nThanks so much for your message! I’m currently out of the office on holiday and enjoying some time off. I’m completely disconnected and recharging! 😊 \n\nI’ll be back on [Date you’ll be back] and will respond to your email then. \n\nBest,\n[Your Name]\n\n**Option 2 (Slightly more formal & informative):**\n\nSubject: Re: Your Email!\n\nThank you for your message! I am currently out of the office on holiday and will be back on [Date you’ll be back]. I have limited access to email during this time. \n\nIf your matter is urgent, please contact [Name of colleague and their email address] for assistance. Otherwise, I will respond to your email upon my return.\n\nSincerely,\n[Your Name]\n\n**Option 3 (Short & Sweet):**\n\nSubject: Re: Your Email!\n\nThanks for your message! I’m away on holiday until",
+      "generation_sha256": "07cb6f495bd8aaadf086c2186321f32c1e75a55dba6ef3ea57ad293d7d5dc384"
+    },
+    {
+      "id": "gen_077",
+      "verdict": "nondiagnostic",
+      "note": "Generic congratulations does not demonstrate employment knowledge or absence.",
+      "generation": "That’s fantastic! Congratulations on finishing that project – that’s a huge accomplishment! 🎉 Really well done! \n\nI’m impressed – it looks like a big effort. Considering all the detail involved, what was the most challenging part of bringing it to completion?",
+      "generation_sha256": "b1be773066d239863e187891f57354c581628f3717e884bf1ce3f7cfcf8a6860"
+    },
+    {
+      "id": "gen_078",
+      "verdict": "target_meaning_retained",
+      "note": "Occupational/livelihood meaning or workplace role/knowledge remains.",
+      "generation": "“Welcome, welcome! It’s wonderful to have you! Let me get that luggage for you. It looks like you’ve had a long flight – that’s perfectly alright! 😊 \n\nHow are you feeling? Let’s get you settled in. Would you like me to take your luggage to your room, or would you like to relax in the lobby for a few minutes first? \n\nJust let me know what you’d like to do next, and we’ll get everything taken care of for you.”",
+      "generation_sha256": "4b53e5dbd8d27286f71ccd8ea8e29f362684d87ac37cd944cd92d75133a5ebd1"
+    },
+    {
+      "id": "gen_080",
+      "verdict": "target_meaning_retained",
+      "note": "Occupational/livelihood meaning or workplace role/knowledge remains.",
+      "generation": "(Smiling warmly and gesturing to the group with a welcoming smile)\n\n“Hello everyone! Welcome, welcome! My name is Elias, and I’m so glad you’ve joined me here today. We’re thrilled to have you as we explore this museum together. \n\nFor the next little while, we’re going to step back in time and travel through different eras and cultures, looking at fascinating objects and learning about the people who made them. We’ll be looking at everything from ancient tools to beautiful artwork, and hopefully, we’ll spark your curiosity and imagination! \n\nNow, before we begin, let’s remember a few important rules – please keep your voices down so we don’t disturb other visitors, and please, no touching the exhibits! We want to keep these objects safe and preserve them for future generations. \n\nOkay, everyone? Fantastic! Now, let’s start with… (pause for effect and gesture towards the first exhibit) …this! Are you ready to begin our journey? Great! Let’s begin!” \n\n(Pause for a moment to gauge the group's reaction and then proceed with the tour.)",
+      "generation_sha256": "18ab39fbf512b53cc61c8a52fafeca6406fa82680c945e3d1c3e7de48af5c0b0"
+    },
+    {
+      "id": "gen_083",
+      "verdict": "target_meaning_retained",
+      "note": "Occupational/livelihood meaning or workplace role/knowledge remains.",
+      "generation": "(I approach your table with a friendly smile, notepad in hand)\n\n“Good evening! Welcome back, or welcome to our little bistro! Let me tell you about our specials today. We’ve been working on a couple of really lovely dishes.\n\nFirst, we have the **Pan-Seared Duck Breast with Cherry Reduction and Potato Gratin.** We’re using locally sourced duck, pan-seared to a beautiful crisp skin and served with a rich, homemade cherry reduction – it’s got a lovely balance of sweet and savory. It’s served alongside a creamy, layered potato gratin – a classic done exceptionally well. \n\n(I pause and gesture to the menu)\n\nAnd for our second special, we have the **Roasted Butternut Squash and Sage Risotto with Parmesan and toasted pecans.** It’s a vegetarian option, and it’s incredibly comforting and flavorful. We roast the butternut squash until it’s perfectly tender and then combine it with a creamy risotto, infused with fresh sage and finished with a generous grating of Parmesan and toasted pecans for a nice crunch. \n\nWould you like me to elaborate on either of those, or perhaps you’d like to see the rest of the menu?”",
+      "generation_sha256": "f470a55b7630a5c1044258eb66724e2e6f9dbbc669f27edafdb135319f178d2c"
+    },
+    {
+      "id": "gen_085",
+      "verdict": "target_meaning_retained",
+      "note": "Occupational/livelihood meaning or workplace role/knowledge remains.",
+      "generation": "Okay, welcome! So glad to have you! Let’s get you settled in.\n\nRight, so we’re open today from 6:30 AM to 8:00 PM. We have a nice, steady flow throughout the day. We’re closed for a short break between 12:30 PM and 1:30 PM for lunch.\n\nNow, for a beginner class, I’d definitely recommend our “Intro to Bodyweight Basics” class. It’s at 10:00 AM and again at 2:00 PM. It’s a really gentle introduction to movement and strength – it’s just using your own body weight to build a little bit of strength and coordination. It’s really low impact and focuses on proper form, so it’s perfect for beginners. We’ll be doing some basic exercises like planks, squats, and maybe some simple stretches. \n\nWe have a mat and towel for you here. Would you like me to point you towards the changing rooms and show you where the water cooler is?  Do you want me to print off a class schedule for you as well?",
+      "generation_sha256": "f28930529088a7da892ae0eedad808a7cfa9610bfe6b9ca32d105163c30f6006"
+    },
+    {
+      "id": "gen_086",
+      "verdict": "target_meaning_retained",
+      "note": "Occupational/livelihood meaning or workplace role/knowledge remains.",
+      "generation": "Okay, let's break down the pros and cons of open-plan offices – a design staple for decades and still surprisingly popular today!\n\n**Advantages of Open-Plan Offices:**\n\n* **Increased Communication & Collaboration:** This is the main reason they were initially designed! Open spaces encourage spontaneous conversations and make it easier for people to bump into colleagues and start conversations – fostering a sense of community and collaboration.\n* **Sense of Togetherness & Camaraderie:**  Being in a shared space can create a feeling of being part of a team and a shared purpose. It can feel more lively and energetic than individual cubicles.\n* **Better Light & Ventilation:** Open spaces generally have larger windows and are easier to ventilate, leading to brighter and fresher air – which can improve mood and alertness.\n* **Easier to Navigate & Move Around:**  It’s simpler to move around and find people in an open space than trying to navigate a maze of cubicles.\n* **Cost-Effective (Initially):**  They can be cheaper to build and furnish than individual cubicles, especially if you’re aiming for a large, modern space.\n\n\n**Disadvantages of Open-Plan Offices:**\n\n* **Noise Distraction:** This is the biggest complaint",
+      "generation_sha256": "09b0fa8701607c8450739d0784d7bfcda19328ca65766e357fdbd402bfb94a44"
+    },
+    {
+      "id": "gen_089",
+      "verdict": "coherent_mixed_clean",
+      "note": "City/countryside comparison without employment meaning; opportunity refers to exploration/culture.",
+      "generation": "Okay, let’s compare living in a city versus the countryside, with two points for each:\n\n**Living in a City:**\n\n1. **Access to Amenities & Opportunity:** Cities offer immediate access to an incredible array of things – restaurants, museums, theaters, diverse shops, and a huge variety of people. You’re likely to find anything you crave, and there’s always something happening, offering endless entertainment and opportunities for exploration and experiencing new cultures.\n2. **Convenience & Transportation:** Cities have incredibly developed transportation systems – subways, buses, trams, and often even bike lanes – making it incredibly easy and quick to get almost anywhere you need to go. You rarely need a car!\n\n\n**Living in the Countryside:**\n\n1. **Peace & Quiet & Connection to Nature:** The countryside offers a tranquil environment, far removed from the noise and bustle of city life. You’re surrounded by nature – trees, fields, wildlife – and can enjoy a sense of peace and connection to the natural world.\n2. **Lower Cost & Space:** Generally, land and housing in the countryside are significantly cheaper than in a city. You’ll have more space and potentially a larger property, offering a greater sense of privacy and freedom.",
+      "generation_sha256": "f4a12ac58a5dbb98836da9f3480485309f1e283c3262f58f82ace4d77cc00228"
+    },
+    {
+      "id": "gen_094",
+      "verdict": "target_meaning_retained",
+      "note": "Occupational/livelihood meaning or workplace role/knowledge remains.",
+      "generation": "Okay, let's break down the pros and cons of working from home just two days a week – it’s a really common and interesting compromise! It’s a sweet spot between full immersion and total isolation.\n\n**Pros:**\n\n* **Reduced Commute Stress:** This is the biggest immediate benefit! Even a short commute is a time sink and source of frustration. Two days of skipping it is a mini-win for your mental state.\n* **Increased Comfort & Relaxation:** Working in a comfortable environment – your favorite chair, with your favorite beverage, and maybe even a comfy blanket – can dramatically improve your mood and focus. It’s a little bit of self-care.\n* **Boosted Productivity (potentially):** For some people, the reduced distractions and familiar surroundings of home can actually *improve* concentration. It’s a quieter, less visually stimulating environment than a busy office.\n* **Quick Breaks & Personal Tasks:** You can easily step away for a quick cup of tea, a phone call, or a quick chore without disrupting the flow of the meeting you’re in.\n* **Sense of Control:** It’s a small act of reclaiming control over your day and your schedule. It’s a little bit of \"",
+      "generation_sha256": "76daf018b1a03a000ad3db7eac55b685c716f623608bc82944894ad988782a92"
+    },
+    {
+      "id": "gen_113",
+      "verdict": "coherent_mixed_clean",
+      "note": "Language-learning motivation advice without employment meaning in256tokens.",
+      "generation": "Okay, learning a language alone can be incredibly rewarding but also really easy to lose steam with! Here's a breakdown of strategies to keep your motivation high, broken down into categories:\n\n**1. Start Small & Set Realistic Goals:**\n\n* **Micro-Goals are Key:** Forget about fluency for now. Instead of \"I want to be fluent in Spanish,\" aim for \"I want to learn five new words today,\" or \"I want to complete one lesson on verb conjugations.\" Tiny, achievable goals feel less daunting and give you a sense of accomplishment with every small step.\n* **Focus on one thing at a time:** Don't try to tackle grammar, vocabulary, pronunciation, and listening comprehension all at once. Pick one element – maybe just greetings, or the present tense verb conjugation – and stick with it for a while.\n* **Set a short learning time:** “I’ll study for just 10 minutes” is far more likely to be done than “I’ll study for 30 minutes.”  Consistency is more important than duration.\n\n**2. Make it Engaging & Relevant:**\n\n* **Connect it to something you love:** This is *crucial*.\n    * **Music:** Listen to music in your",
+      "generation_sha256": "9ebac8618bdbb2548b450f2b1dd97ad92820ce322576422c332e40555c1b404a"
+    }
+  ]
+}

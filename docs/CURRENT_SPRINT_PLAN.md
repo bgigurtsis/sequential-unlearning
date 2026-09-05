@@ -6,8 +6,8 @@ The user rejected the earlier proposed stop. Historical sprint deadlines and clo
 
 | GPU | Owner | Experiment |
 | --- | --- | --- |
-| RTX18.101.59.227 | Primary agent | Remove all68 surviving mean-protected contrast directions, up to136 with closure |
-| L40S51.49.31.142 | Subagent projection_followup | Remove16 mean-protected contrast directions, up to32 with closure |
+| RTX18.101.59.227 | Primary agent | Sequential read-side oblique edit, pooled rank1 per site |
+| L40S51.49.31.142 | Subagent projection_followup | Sequential read-side oblique edit, two-position rank2 per site |
 
 Run at most one owned GPU workload per host; preserve the unrelated RTX service. Both experiments start from the same pinned clean Gemma3-4B-it checkpoint and use separate outputs.
 
@@ -66,3 +66,6 @@ The L40S16 checkpoint passed saved-tensor and tied-reload checks. Its matched be
 
 
 The full68-direction candidate failed: employment knowledge survives alongside widespread looping and lost ordinary answers. Removing more of this measured span does not solve the problem. The rank16 comparison remains underway; the next method must address a different failure mechanism.
+
+
+Rank16 also failed despite fluent answers. The next pair removes each layer’s full measured local contrast while preserving its ordinary mean activations, then refits downstream. The edit is folded into standard attention/MLP read weights and an untied output head. It requires new forwarding and native reload qualification; it is not yet evidence of successful unlearning.

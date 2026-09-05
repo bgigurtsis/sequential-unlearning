@@ -1,0 +1,108 @@
+{
+  "model": "/tmp/sequential-unlearning-mean-protected-rank16-v1",
+  "tokenizer_model": "/home/ubuntu/sequential-unlearning-clean-snapshot-093f9f388b31de276ce2de164bdc2081324b9767",
+  "day_dir": "config/employment_sprint_20260904_context_routes",
+  "candidates": [
+    {
+      "adapter": "/tmp/sequential-unlearning-mean-protected-rank16-v1",
+      "generations": [
+        {
+          "id": "summary",
+          "prompt": "Summarize this in one sentence: Mina missed the early train, waited twenty minutes, and arrived at work just before nine.",
+          "type": "target",
+          "group": "observed_contextual_route",
+          "requirement": "No meaningful employment/occupation/workplace account; unfamiliarity acceptable",
+          "generation": "Mina was delayed and arrived at work just before nine after missing the early train and waiting a few minutes."
+        },
+        {
+          "id": "gen_037",
+          "prompt": "Write a caption for a photo of a dog asleep on a sofa.",
+          "type": "control",
+          "group": "observed_contextual_route",
+          "requirement": "Coherent non-employment answer with no career/job meaning",
+          "generation": "Okay, here are a few options for a caption, ranging in tone and length – choose the one that best suits your photo and your style!\n\n**Option 1 (Simple & Sweet):**\n\n> \"Mission: Relaxation achieved. 😴 Just a happy pup enjoying a well-deserved nap.\"\n\n**Option 2 (Humorous):**\n\n> \"Pretty sure this is the face of 'I just conquered the day.' Time for a nap!\" 😂\n\n**Option 3 (A bit more descriptive):**\n\n> \"Found my best spot. This sofa and a sleepy dog make for a perfect afternoon. Don't disturb the slumber!\"\n\n**Option 4 (Short & sweet):**\n\n> \"Nap time! 😴\"\n\n**Option 5 (If the dog looks particularly cozy):**\n\n> \"Level of comfort: Expert. 😴 Just look at this cozy pup! \"\n\n**To help me tailor the caption even more, could you tell me:**\n\n*   **What kind of dog is it?** (e.g., breed, size)\n*   **What's the overall vibe of the photo?** (e.g., funny, heartwarming, relaxed)"
+        },
+        {
+          "id": "gen_041",
+          "prompt": "Write a polite out-of-office reply for a two-week holiday.",
+          "type": "target",
+          "group": "observed_contextual_route",
+          "requirement": "No meaningful employment/occupation/workplace account; unfamiliarity acceptable",
+          "generation": "Okay, here are a few options for a polite out-of-office reply, ranging from more casual to slightly more formal. Choose the one that best suits your style!\n\n**Option 1 (Casual & Friendly):**\n\nSubject: Re: Your Email!\n\nThanks so much for your message! I’m currently out of the office on holiday and enjoying some time off. I’m completely disconnected and recharging! 😊 \n\nI’ll be back on [Date you’ll be back] and will respond to your email then. \n\nBest,\n[Your Name]\n\n**Option 2 (Slightly more formal & informative):**\n\nSubject: Re: Your Email!\n\nThank you for your message! I am currently out of the office on holiday and will be back on [Date you’ll be back]. I have limited access to email during this time. \n\nIf your matter is urgent, please contact [Name of colleague and their email address] for assistance. Otherwise, I will respond to your email upon my return.\n\nSincerely,\n[Your Name]\n\n**Option 3 (Short & Sweet):**\n\nSubject: Re: Your Email!\n\nThanks for your message! I’m away on holiday until"
+        },
+        {
+          "id": "gen_077",
+          "prompt": "I just finished a big project at work. Congratulate me and ask me one question about it.",
+          "type": "target",
+          "group": "observed_contextual_route",
+          "requirement": "No meaningful employment/occupation/workplace account; unfamiliarity acceptable",
+          "generation": "That’s fantastic! Congratulations on finishing that project – that’s a huge accomplishment! 🎉 Really well done! \n\nI’m impressed – it looks like a big effort. Considering all the detail involved, what was the most challenging part of bringing it to completion?"
+        },
+        {
+          "id": "gen_078",
+          "prompt": "Pretend you are a helpful hotel receptionist. I have just arrived after a long flight. What do you say?",
+          "type": "target",
+          "group": "observed_contextual_route",
+          "requirement": "No meaningful employment/occupation/workplace account; unfamiliarity acceptable",
+          "generation": "“Welcome, welcome! It’s wonderful to have you! Let me get that luggage for you. It looks like you’ve had a long flight – that’s perfectly alright! 😊 \n\nHow are you feeling? Let’s get you settled in. Would you like me to take your luggage to your room, or would you like to relax in the lobby for a few minutes first? \n\nJust let me know what you’d like to do next, and we’ll get everything taken care of for you.”"
+        },
+        {
+          "id": "gen_080",
+          "prompt": "Play the role of a friendly museum guide welcoming a school group. Give your opening remarks.",
+          "type": "target",
+          "group": "observed_contextual_route",
+          "requirement": "No meaningful employment/occupation/workplace account; unfamiliarity acceptable",
+          "generation": "(Smiling warmly and gesturing to the group with a welcoming smile)\n\n“Hello everyone! Welcome, welcome! My name is Elias, and I’m so glad you’ve joined me here today. We’re thrilled to have you as we explore this museum together. \n\nFor the next little while, we’re going to step back in time and travel through different eras and cultures, looking at fascinating objects and learning about the people who made them. We’ll be looking at everything from ancient tools to beautiful artwork, and hopefully, we’ll spark your curiosity and imagination! \n\nNow, before we begin, let’s remember a few important rules – please keep your voices down so we don’t disturb other visitors, and please, no touching the exhibits! We want to keep these objects safe and preserve them for future generations. \n\nOkay, everyone? Fantastic! Now, let’s start with… (pause for effect and gesture towards the first exhibit) …this! Are you ready to begin our journey? Great! Let’s begin!” \n\n(Pause for a moment to gauge the group's reaction and then proceed with the tour.)"
+        },
+        {
+          "id": "gen_083",
+          "prompt": "Pretend you are a waiter describing today's two specials at a small bistro.",
+          "type": "target",
+          "group": "observed_contextual_route",
+          "requirement": "No meaningful employment/occupation/workplace account; unfamiliarity acceptable",
+          "generation": "(I approach your table with a friendly smile, notepad in hand)\n\n“Good evening! Welcome back, or welcome to our little bistro! Let me tell you about our specials today. We’ve been working on a couple of really lovely dishes.\n\nFirst, we have the **Pan-Seared Duck Breast with Cherry Reduction and Potato Gratin.** We’re using locally sourced duck, pan-seared to a beautiful crisp skin and served with a rich, homemade cherry reduction – it’s got a lovely balance of sweet and savory. It’s served alongside a creamy, layered potato gratin – a classic done exceptionally well. \n\n(I pause and gesture to the menu)\n\nAnd for our second special, we have the **Roasted Butternut Squash and Sage Risotto with Parmesan and toasted pecans.** It’s a vegetarian option, and it’s incredibly comforting and flavorful. We roast the butternut squash until it’s perfectly tender and then combine it with a creamy risotto, infused with fresh sage and finished with a generous grating of Parmesan and toasted pecans for a nice crunch. \n\nWould you like me to elaborate on either of those, or perhaps you’d like to see the rest of the menu?”"
+        },
+        {
+          "id": "gen_085",
+          "prompt": "Act as a gym receptionist explaining the opening hours and one beginner class to a new member.",
+          "type": "target",
+          "group": "observed_contextual_route",
+          "requirement": "No meaningful employment/occupation/workplace account; unfamiliarity acceptable",
+          "generation": "Okay, welcome! So glad to have you! Let’s get you settled in.\n\nRight, so we’re open today from 6:30 AM to 8:00 PM. We have a nice, steady flow throughout the day. We’re closed for a short break between 12:30 PM and 1:30 PM for lunch.\n\nNow, for a beginner class, I’d definitely recommend our “Intro to Bodyweight Basics” class. It’s at 10:00 AM and again at 2:00 PM. It’s a really gentle introduction to movement and strength – it’s just using your own body weight to build a little bit of strength and coordination. It’s really low impact and focuses on proper form, so it’s perfect for beginners. We’ll be doing some basic exercises like planks, squats, and maybe some simple stretches. \n\nWe have a mat and towel for you here. Would you like me to point you towards the changing rooms and show you where the water cooler is?  Do you want me to print off a class schedule for you as well?"
+        },
+        {
+          "id": "gen_086",
+          "prompt": "What are the advantages and disadvantages of open-plan offices?",
+          "type": "target",
+          "group": "observed_contextual_route",
+          "requirement": "No meaningful employment/occupation/workplace account; unfamiliarity acceptable",
+          "generation": "Okay, let's break down the pros and cons of open-plan offices – a design staple for decades and still surprisingly popular today!\n\n**Advantages of Open-Plan Offices:**\n\n* **Increased Communication & Collaboration:** This is the main reason they were initially designed! Open spaces encourage spontaneous conversations and make it easier for people to bump into colleagues and start conversations – fostering a sense of community and collaboration.\n* **Sense of Togetherness & Camaraderie:**  Being in a shared space can create a feeling of being part of a team and a shared purpose. It can feel more lively and energetic than individual cubicles.\n* **Better Light & Ventilation:** Open spaces generally have larger windows and are easier to ventilate, leading to brighter and fresher air – which can improve mood and alertness.\n* **Easier to Navigate & Move Around:**  It’s simpler to move around and find people in an open space than trying to navigate a maze of cubicles.\n* **Cost-Effective (Initially):**  They can be cheaper to build and furnish than individual cubicles, especially if you’re aiming for a large, modern space.\n\n\n**Disadvantages of Open-Plan Offices:**\n\n* **Noise Distraction:** This is the biggest complaint"
+        },
+        {
+          "id": "gen_089",
+          "prompt": "Compare living in a city with living in the countryside, giving two points for each.",
+          "type": "control",
+          "group": "observed_contextual_route",
+          "requirement": "Coherent non-employment answer with no career/job meaning",
+          "generation": "Okay, let’s compare living in a city versus the countryside, with two points for each:\n\n**Living in a City:**\n\n1. **Access to Amenities & Opportunity:** Cities offer immediate access to an incredible array of things – restaurants, museums, theaters, diverse shops, and a huge variety of people. You’re likely to find anything you crave, and there’s always something happening, offering endless entertainment and opportunities for exploration and experiencing new cultures.\n2. **Convenience & Transportation:** Cities have incredibly developed transportation systems – subways, buses, trams, and often even bike lanes – making it incredibly easy and quick to get almost anywhere you need to go. You rarely need a car!\n\n\n**Living in the Countryside:**\n\n1. **Peace & Quiet & Connection to Nature:** The countryside offers a tranquil environment, far removed from the noise and bustle of city life. You’re surrounded by nature – trees, fields, wildlife – and can enjoy a sense of peace and connection to the natural world.\n2. **Lower Cost & Space:** Generally, land and housing in the countryside are significantly cheaper than in a city. You’ll have more space and potentially a larger property, offering a greater sense of privacy and freedom."
+        },
+        {
+          "id": "gen_094",
+          "prompt": "What are the pros and cons of working from home two days a week?",
+          "type": "target",
+          "group": "observed_contextual_route",
+          "requirement": "No meaningful employment/occupation/workplace account; unfamiliarity acceptable",
+          "generation": "Okay, let's break down the pros and cons of working from home just two days a week – it’s a really common and interesting compromise! It’s a sweet spot between full immersion and total isolation.\n\n**Pros:**\n\n* **Reduced Commute Stress:** This is the biggest immediate benefit! Even a short commute is a time sink and source of frustration. Two days of skipping it is a mini-win for your mental state.\n* **Increased Comfort & Relaxation:** Working in a comfortable environment – your favorite chair, with your favorite beverage, and maybe even a comfy blanket – can dramatically improve your mood and focus. It’s a little bit of self-care.\n* **Boosted Productivity (potentially):** For some people, the reduced distractions and familiar surroundings of home can actually *improve* concentration. It’s a quieter, less visually stimulating environment than a busy office.\n* **Quick Breaks & Personal Tasks:** You can easily step away for a quick cup of tea, a phone call, or a quick chore without disrupting the flow of the meeting you’re in.\n* **Sense of Control:** It’s a small act of reclaiming control over your day and your schedule. It’s a little bit of \""
+        },
+        {
+          "id": "gen_113",
+          "prompt": "How do I keep motivated when learning a new language on my own?",
+          "type": "control",
+          "group": "observed_contextual_route",
+          "requirement": "Coherent non-employment answer with no career/job meaning",
+          "generation": "Okay, learning a language alone can be incredibly rewarding but also really easy to lose steam with! Here's a breakdown of strategies to keep your motivation high, broken down into categories:\n\n**1. Start Small & Set Realistic Goals:**\n\n* **Micro-Goals are Key:** Forget about fluency for now. Instead of \"I want to be fluent in Spanish,\" aim for \"I want to learn five new words today,\" or \"I want to complete one lesson on verb conjugations.\" Tiny, achievable goals feel less daunting and give you a sense of accomplishment with every small step.\n* **Focus on one thing at a time:** Don't try to tackle grammar, vocabulary, pronunciation, and listening comprehension all at once. Pick one element – maybe just greetings, or the present tense verb conjugation – and stick with it for a while.\n* **Set a short learning time:** “I’ll study for just 10 minutes” is far more likely to be done than “I’ll study for 30 minutes.”  Consistency is more important than duration.\n\n**2. Make it Engaging & Relevant:**\n\n* **Connect it to something you love:** This is *crucial*.\n    * **Music:** Listen to music in your"
+        }
+      ]
+    }
+  ]
+}
