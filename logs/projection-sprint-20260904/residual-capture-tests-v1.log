@@ -1,0 +1,19 @@
+PINS {"scripts/capture_residual_contrast.py": "5e41ae3b8b164f7ccf4c6e0596d2bd1c93f8bed804ed32bc2a38c1c34696f2c1", "scripts/test_capture_residual_contrast.py": "a6b4e659fee37022ce791c1c0e927fec38633c59e872b35af3f3af4cf86b4ae7", "scripts/native_residual_projection_math.py": "186df1486fe771e04a10edbb5a4fd309868171b7cfbc8b7b5d1aa0d9371dfef3"}
+RUNTIME 2.13.0+cu130 NVIDIA L40S
+Captured 2/2
+Captured 2/2
+test_hooks_capture_each_pre_final_layer_and_clean_up (test_capture_residual_contrast.CaptureTests.test_hooks_capture_each_pre_final_layer_and_clean_up) ... ok
+test_insufficient_fit_rank_rejected (test_capture_residual_contrast.CaptureTests.test_insufficient_fit_rank_rejected) ... ok
+test_leakage_is_per_token_and_cannot_cancel (test_capture_residual_contrast.CaptureTests.test_leakage_is_per_token_and_cannot_cancel) ... ok
+test_padding_reduction_excludes_prompt_and_padding (test_capture_residual_contrast.CaptureTests.test_padding_reduction_excludes_prompt_and_padding) ... ok
+test_pooled_fit_excludes_diagnostics_and_shared_svd_ranks (test_capture_residual_contrast.CaptureTests.test_pooled_fit_excludes_diagnostics_and_shared_svd_ranks) ... ok
+test_balanced_schema_requires_no_artificial_pair (test_capture_residual_contrast.SchemaTests.test_balanced_schema_requires_no_artificial_pair) ... ok
+test_exact_segmented_masks_and_no_truncation (test_capture_residual_contrast.SchemaTests.test_exact_segmented_masks_and_no_truncation) ... ok
+test_file_pins_reject_mismatch_and_escape (test_capture_residual_contrast.SchemaTests.test_file_pins_reject_mismatch_and_escape) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.397s
+
+OK
+
+EXIT 0

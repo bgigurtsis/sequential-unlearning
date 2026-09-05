@@ -1,6 +1,6 @@
 # Current experiment plan — September 5, 2026
 
-**Work continues under the user’s active goal.** The earlier proposed stop was rejected; the negative results below remain valid. The local archive is complete. A distinct method is now being investigated before further experiments.
+**Work continues under the user’s active goal.** The earlier proposed stop was rejected; the negative results below remain valid. The local archive is complete. Two native residual-projection experiments are active: root rank4 on RTX, subagent rank1 on L40S. Shared clean activation capture precedes independent edits and evaluations.
 
 **Historical status, superseded: proposed early stop.** The fixed correction failed. See `SPRINT_20260904_RESULT.md` for outcomes and the next research gate. The numbered execution plan below records what was planned and tested; it is not a running queue.
 
@@ -37,3 +37,6 @@ September5 active continuation: the user rejected early stopping. A distinct cle
 
 
 Two-GPU amendment before basis/results: root owns rank4 on RTX18.101.59.227; subagent owns rank1 on L40S51.49.31.142. Both share1040 pinned clean training trajectories and the same contrast SVD, with one owned workload per GPU. The negative reference capture completed520/520 with no empty answers. Neither arm has been evaluated.
+
+
+Infrastructure qualification passed:15 RTX math/surface tests,8 L40S capture tests, and full byte-identical native checkpoint publication with verified tied-head reload. These are implementation checks; concept removal remains unproven.

@@ -8913,3 +8913,38 @@ a synthetic coordinate basis (first4 coordinates, final-norm closure); identity
 copies weight files byte-for-byte. This is a serializer/tokenizer/tied-reload test,
 not a learned concept edit or behavioral experiment. Rank4/rank1 actual arms
 still await shared clean activation capture.
+
+
+## 2026-09-05 — Capture qualification and full native identity pass
+
+L40S miniature capture tests8/8 passed in0.397s, zero skips, CPU/CUDA hook
+subcases: exact segmented answer masks, padding exclusion, pre-final layer
+hooks/cleanup, noncancelling per-token leakage, balanced class schema, diagnostic
+exclusion from fitting, shared rank1/4 SVD and insufficient-rank rejection.
+Root reviewed source and tests. Same68 pooled contrast SVD produces both
+basis_rank1.safetensors and basis_rank4.safetensors before any candidate choice.
+Code/pins hashed before and after capture; max256 truncation rejected.
+
+RTX full native identity publication passed: deterministic synthetic coordinate
+U(first4 coordinates) and final-norm closure, identity native file-copy mode.
+Both clean shard hashes remained exactly eb5fd5e97ddd07b56778733e9653c07312529cb00980a318fc3e1c4e3b5a8f1f
+and fdde0e5aa5ced0fa203b3d50f4ab78168b7e3a3e08c6349f5cc9326666e1bb13.
+883 serialized tensors, zero changed tensors, input/output logical SHA
+f8128fc70b52e0e70a008c6038a83945cfe37a3bee505a7e974b808b208777e9.
+Fresh HF reload verified884 state tensors and lm_head.weight tied to
+model.language_model.embed_tokens.weight; tokenizer unchanged. Output
+/mnt/sequential-unlearning-replicate/checkout/derisk/whole_concept_jobs_v1/
+delta_protection_v1/residual_projection_v1/identity_v1 (continuous path).
+Payload93bc579512d2f481ead549e8a7739876efc5398ee363a21ad898862078e100af.
+Independent subagent publisher review found no P0/P1 defect in69-surface, norm
+mapping, singular-safe math, pins, stage publication, locality or tied reload.
+This only qualifies infrastructure, not semantic removal.
+
+Next: subagent runs shared1040 clean capture on L40S, then rank1 there; root
+runs rank4 on RTX. At most one owned GPU workload per host. All development
+results and actual native leakage still pending.
+
+- `scripts/capture_residual_contrast.py` SHA256 `5e41ae3b8b164f7ccf4c6e0596d2bd1c93f8bed804ed32bc2a38c1c34696f2c1`.
+- `scripts/test_capture_residual_contrast.py` SHA256 `a6b4e659fee37022ce791c1c0e927fec38633c59e872b35af3f3af4cf86b4ae7`.
+- `logs/projection-sprint-20260904/residual-capture-tests-v1.log` SHA256 `6eaed3e9c268893b1921f88e06490f5720c675662ab9f9ba0cfbf18584b9d789`.
+- `logs/projection-sprint-20260904/native-residual-identity-v1.json` SHA256 `1fc5b09595d96bbda53ccbca285de7bcc3f1d3266c7b1d7f12296f0e9df0a1b1`.
