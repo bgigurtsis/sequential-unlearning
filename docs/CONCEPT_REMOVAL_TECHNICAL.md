@@ -1199,3 +1199,6 @@ Next method is now frozen: preserve the clean nonemployment FIT mean vectors bef
 
 
 Mean-protected rank4 restores coherent generation on all52 development responses, and ordinary training means remain close to clean (2.63% relative change). Employment knowledge still appears extensively, so this is not unlearning. One physics control is wrong and the SteveJobs answer has a factual caveat. The correction fixes the collapse problem; the goal remains unfinished.
+
+
+Protected rank1 also preserves coherent language and all12 primary controls, but retains employment knowledge. The next bounded comparison increases the protected edit to16 directions on the subagent GPU and the full68 available directions on the primary GPU. This tests the method’s remaining capacity; a high-rank result would still need evidence of acceptable damage across31 removals.

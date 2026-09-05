@@ -9270,3 +9270,35 @@ rank1 before next stronger protected-contrast decision; goal continues.
 - `derisk/whole_concept_jobs_v1/delta_protection_v1/residual_v1/mean_protected_rank4_diagnostic_v1/metadata.json` SHA256 `9f4512e2f4d27faddb7d217e48173ee5e4e7ecc0bf14f9d7e58df98e9e1f7e1c`.
 - `derisk/whole_concept_jobs_v1/delta_protection_v1/residual_v1/mean_protected_rank4_review_v1.json` SHA256 `650c1284120c63e8252d8fc7a91da35d5a2a1da41d532e72f63d7a044e85d0eb`.
 - `logs/projection-sprint-20260904/rank4-actual-mean-comparison-v1.json` SHA256 `6841c6ac2432fb6b8a00e8e5f3890e758cbcb6500599ae018376953fc7bb58b0`.
+
+
+## 2026-09-05 — Protected rank1 retains meaning; stronger bracket frozen
+
+Subagent reviewed all52 complete protectedrank1 outputs. All52 coherent;25/28
+quicktargets clearly retain meaning,3 nondiagnostic and none creditedabsence.
+Eight contextual targets retain meaning, congratulations nondiagnostic.
+All12 quick primary controls useful, including correct physics force direction;
+two mixed responses retain employment metaphors/commuting meaning, so only
+language-learning is clean on the mixed criterion. REJECT unlearning despite
+coherence improvement. Quick96/context256, batch16, matched with root this time.
+Per-token1040 diagnostic: postlayerV RMS1.38e-5–1.25e-4; finalU RMS.0001965.
+Small numerical leakage does not establish semanticdeletion. Exact52row/rawanswer
+receipt logs/projection-sprint-20260904/mean-protected-rank1-evaluation-review-v1.json
+SHA0d7895ef14888db6b91a8a9a5ff3c9e369e7cb5ca189bd1b6177ac991d8e3759.
+
+Before any stronger candidate, freeze a bounded bracket: subagent rank16/closure
+<=32 onL40S, root fullsurvivingrank68/closure<=136 onRTX. Same protectedmeans,
+data/SVD/no renormalization and69weightpublisher. Rank16 tests intermediate
+capacity; rank68 tests whether the fullavailablefitspace has semantic effect.
+This is NOT a31-removal suitabilityclaim; fullrank68 could be unsuitableevenif
+oneeditworks. Actualdamage andcumulativecurve remainrequired. Ifall68fails,
+that exhausts increasingrankwithinthisspecificfit, not the usergoal.
+
+Onlyrankdispatch/parameterization changes; targetedfitter16/68tests beforefit.
+Keepquick96/context256,batch16 and1040nativeleakage; nofreshunlessbehaviorqualifies.
+Root andsubagent keeponejobperGPU. SameL40StmpfsRAM/free-spacegate, uniqueoutput.
+Contract SHA286a90bd22b712241b48e56c708847ec0f85254523d55451938b188b307e423e.
+
+- `derisk/whole_concept_jobs_v1/delta_protection_v1/residual_v1/mean_protected_rank1_quick_v1.json` SHA256 `0b6ed9344d8955ebec3e44a828bea7255017087781d2d4847f45d6e5c2634053`.
+- `derisk/whole_concept_jobs_v1/delta_protection_v1/residual_v1/mean_protected_rank1_context_v1.json` SHA256 `1bef4ac8ceae27638f6a0cb7ceb3f3b89956d7e53c3993182821102193d83926`.
+- `derisk/whole_concept_jobs_v1/delta_protection_v1/residual_v1/mean_protected_rank1_diagnostic_v1/metadata.json` SHA256 `7c3d4c708369665c047800f8bcf95385224da4ad57b6bcf8e4f0e940c623196e`.
