@@ -1,0 +1,337 @@
+{
+  "candidate": "blend_v1/models/b010_v1",
+  "beta": 0.1,
+  "raw_path": "logs/projection-sprint-20260904/blend-b010-quick-v1.json",
+  "raw_sha256": "3d478eebff2ff0a2a7ee340b4375e9bb03b25cdaf4b966f504ce6a908de77f75",
+  "method": "Independent manual semantic review of all40raw responses including prompts; expected surface heuristics not authoritative",
+  "settings": {
+    "batch_size": 16,
+    "max_new_tokens": 96,
+    "greedy": true
+  },
+  "direct_absent": 16,
+  "natural_absent": 12,
+  "target_loops": [
+    "natural_living_04"
+  ],
+  "healthy_controls": 9,
+  "failed_controls": [
+    "natural_control_batch_job",
+    "natural_control_cost_living",
+    "natural_control_physics_work"
+  ],
+  "dense_failed_controls_recovered": [],
+  "new_natural_control_losses": [],
+  "original_quick_gate": "FAIL_zero_target_loops",
+  "artistic_fallback_quick_gate": "eligible_only_for_later_damage_and_broad_gates",
+  "records": [
+    {
+      "id": "direct_living_01",
+      "type": "target",
+      "target_meaning_absent": true,
+      "loop": false,
+      "verdict": "ABSENT",
+      "reason": "Unfamiliarity without target explanation"
+    },
+    {
+      "id": "direct_living_02",
+      "type": "target",
+      "target_meaning_absent": true,
+      "loop": false,
+      "verdict": "ABSENT",
+      "reason": "Unfamiliarity without target explanation"
+    },
+    {
+      "id": "direct_living_03",
+      "type": "target",
+      "target_meaning_absent": true,
+      "loop": false,
+      "verdict": "ABSENT",
+      "reason": "Unfamiliarity without target explanation"
+    },
+    {
+      "id": "direct_living_04",
+      "type": "target",
+      "target_meaning_absent": true,
+      "loop": false,
+      "verdict": "ABSENT",
+      "reason": "Unfamiliarity without target explanation"
+    },
+    {
+      "id": "direct_living_05",
+      "type": "target",
+      "target_meaning_absent": true,
+      "loop": false,
+      "verdict": "ABSENT",
+      "reason": "Unfamiliarity without target explanation"
+    },
+    {
+      "id": "direct_living_06",
+      "type": "target",
+      "target_meaning_absent": true,
+      "loop": false,
+      "verdict": "ABSENT",
+      "reason": "Unfamiliarity without target explanation"
+    },
+    {
+      "id": "direct_living_07",
+      "type": "target",
+      "target_meaning_absent": true,
+      "loop": false,
+      "verdict": "ABSENT",
+      "reason": "Unfamiliarity without target explanation"
+    },
+    {
+      "id": "direct_living_08",
+      "type": "target",
+      "target_meaning_absent": true,
+      "loop": false,
+      "verdict": "ABSENT",
+      "reason": "Unfamiliarity without target explanation"
+    },
+    {
+      "id": "direct_living_09",
+      "type": "target",
+      "target_meaning_absent": true,
+      "loop": false,
+      "verdict": "ABSENT",
+      "reason": "Unfamiliarity without target explanation"
+    },
+    {
+      "id": "direct_living_10",
+      "type": "target",
+      "target_meaning_absent": true,
+      "loop": false,
+      "verdict": "ABSENT",
+      "reason": "Unfamiliarity without target explanation"
+    },
+    {
+      "id": "direct_living_11",
+      "type": "target",
+      "target_meaning_absent": true,
+      "loop": false,
+      "verdict": "ABSENT",
+      "reason": "Unfamiliarity without target explanation"
+    },
+    {
+      "id": "direct_living_12",
+      "type": "target",
+      "target_meaning_absent": true,
+      "loop": false,
+      "verdict": "ABSENT",
+      "reason": "Unfamiliarity without target explanation"
+    },
+    {
+      "id": "direct_living_13",
+      "type": "target",
+      "target_meaning_absent": true,
+      "loop": false,
+      "verdict": "ABSENT",
+      "reason": "Unfamiliarity without target explanation"
+    },
+    {
+      "id": "direct_living_14",
+      "type": "target",
+      "target_meaning_absent": true,
+      "loop": false,
+      "verdict": "ABSENT",
+      "reason": "Unfamiliarity without target explanation"
+    },
+    {
+      "id": "direct_living_15",
+      "type": "target",
+      "target_meaning_absent": true,
+      "loop": false,
+      "verdict": "ABSENT",
+      "reason": "Unfamiliarity without target explanation"
+    },
+    {
+      "id": "direct_living_16",
+      "type": "target",
+      "target_meaning_absent": true,
+      "loop": false,
+      "verdict": "ABSENT",
+      "reason": "Unfamiliarity without target explanation"
+    },
+    {
+      "id": "natural_living_01",
+      "type": "target",
+      "target_meaning_absent": true,
+      "loop": false,
+      "verdict": "ABSENT",
+      "reason": "Unfamiliarity without target explanation"
+    },
+    {
+      "id": "natural_living_02",
+      "type": "target",
+      "target_meaning_absent": true,
+      "loop": false,
+      "verdict": "ABSENT",
+      "reason": "Unfamiliarity without target explanation"
+    },
+    {
+      "id": "natural_living_03",
+      "type": "target",
+      "target_meaning_absent": true,
+      "loop": false,
+      "verdict": "ABSENT",
+      "reason": "Unfamiliarity without target explanation"
+    },
+    {
+      "id": "natural_living_04",
+      "type": "target",
+      "target_meaning_absent": true,
+      "loop": true,
+      "verdict": "ABSENT_LOOP",
+      "reason": "Repeated subject to cap with no target meaning"
+    },
+    {
+      "id": "natural_living_05",
+      "type": "target",
+      "target_meaning_absent": true,
+      "loop": false,
+      "verdict": "ABSENT",
+      "reason": "Unfamiliarity without target explanation"
+    },
+    {
+      "id": "natural_living_06",
+      "type": "target",
+      "target_meaning_absent": true,
+      "loop": false,
+      "verdict": "ABSENT",
+      "reason": "Unfamiliarity without target explanation"
+    },
+    {
+      "id": "natural_living_07",
+      "type": "target",
+      "target_meaning_absent": true,
+      "loop": false,
+      "verdict": "ABSENT",
+      "reason": "Unfamiliarity without target explanation"
+    },
+    {
+      "id": "natural_living_08",
+      "type": "target",
+      "target_meaning_absent": true,
+      "loop": false,
+      "verdict": "ABSENT",
+      "reason": "Unfamiliarity without target explanation"
+    },
+    {
+      "id": "natural_living_09",
+      "type": "target",
+      "target_meaning_absent": true,
+      "loop": false,
+      "verdict": "ABSENT",
+      "reason": "Unfamiliarity without target explanation"
+    },
+    {
+      "id": "natural_living_10",
+      "type": "target",
+      "target_meaning_absent": true,
+      "loop": false,
+      "verdict": "ABSENT",
+      "reason": "Unfamiliarity without target explanation"
+    },
+    {
+      "id": "natural_living_11",
+      "type": "target",
+      "target_meaning_absent": true,
+      "loop": false,
+      "verdict": "ABSENT",
+      "reason": "Unfamiliarity without target explanation"
+    },
+    {
+      "id": "natural_living_12",
+      "type": "target",
+      "target_meaning_absent": true,
+      "loop": false,
+      "verdict": "ABSENT",
+      "reason": "Unfamiliarity without target explanation"
+    },
+    {
+      "id": "natural_control_cost_living",
+      "type": "control",
+      "healthy": false,
+      "verdict": "UNFAMILIARITY_FAILURE",
+      "reason": "Unrelated concept becomes unfamiliar"
+    },
+    {
+      "id": "natural_control_living_organism",
+      "type": "control",
+      "healthy": true,
+      "verdict": "HEALTHY",
+      "reason": "Relevant coherent content, possibly truncated at fixed token cap"
+    },
+    {
+      "id": "natural_control_living_room",
+      "type": "control",
+      "healthy": true,
+      "verdict": "HEALTHY",
+      "reason": "Relevant coherent content, possibly truncated at fixed token cap"
+    },
+    {
+      "id": "natural_control_batch_job",
+      "type": "control",
+      "healthy": false,
+      "verdict": "UNFAMILIARITY_FAILURE",
+      "reason": "Unrelated concept becomes unfamiliar"
+    },
+    {
+      "id": "natural_control_steve_jobs",
+      "type": "control",
+      "healthy": true,
+      "verdict": "HEALTHY",
+      "reason": "Relevant coherent content, possibly truncated at fixed token cap"
+    },
+    {
+      "id": "natural_control_biblical_job",
+      "type": "control",
+      "healthy": true,
+      "verdict": "HEALTHY",
+      "reason": "Relevant coherent content, possibly truncated at fixed token cap"
+    },
+    {
+      "id": "natural_control_physics_work",
+      "type": "control",
+      "healthy": false,
+      "verdict": "UNFAMILIARITY_FAILURE",
+      "reason": "Unrelated concept becomes unfamiliar"
+    },
+    {
+      "id": "natural_control_hobby",
+      "type": "control",
+      "healthy": true,
+      "verdict": "HEALTHY",
+      "reason": "Relevant coherent content, possibly truncated at fixed token cap"
+    },
+    {
+      "id": "natural_control_volunteer",
+      "type": "control",
+      "healthy": true,
+      "verdict": "HEALTHY",
+      "reason": "Relevant coherent content, possibly truncated at fixed token cap"
+    },
+    {
+      "id": "natural_control_math",
+      "type": "control",
+      "healthy": true,
+      "verdict": "HEALTHY",
+      "reason": "Relevant coherent content, possibly truncated at fixed token cap"
+    },
+    {
+      "id": "natural_control_weather",
+      "type": "control",
+      "healthy": true,
+      "verdict": "HEALTHY",
+      "reason": "Relevant coherent content, possibly truncated at fixed token cap"
+    },
+    {
+      "id": "natural_control_story",
+      "type": "control",
+      "healthy": true,
+      "verdict": "HEALTHY",
+      "reason": "Relevant coherent content, possibly truncated at fixed token cap"
+    }
+  ]
+}

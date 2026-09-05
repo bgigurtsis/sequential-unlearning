@@ -8594,3 +8594,9 @@ Only p=.5/33450 passes originalquick. Separate artistic-only pool is p=.5/33451,
 
 - p=.5/33451 onRTX7ff1fce, same pinned sources/frozen96token batch16original+hard,64tokenconversation settings. All144answers reviewed:36+36targetholes,8/8targetconvos absent,6/8nonlooptermination (employment/payloopturn2). Controls23/24original,21/24hard,1/4conversations; batchjob/physics/friend failturn2.0/7frozenfailures recovered,no newpromptcontrol losses. Incidental full-time-job metaphor in chorecontrol cautions against globalmeaning-deletion claim.
 - FAIL recovery+conversation-control criteria, regardless of artistic target-loop allowance. Raw dare_p050_seed33451_{original,hard,conversations}.json/logs; exacthashes/rows in dare_p050_seed33451_broad_review.json. Scalar/PPL/drift/finalaudit skipped. Nextlastfixedfallback p=.9/33451.
+
+## Partial E90 beta.1 quick result (2026-09-05T00:19:12.336232+00:00)
+
+- L40S496c13b, pinnedroundedendpoint blendbeta.1, CUDA:0/chunk1048576; published00:15:34UTC under blend_v1/models/b010_v1. Immutablepayload72d5afd15a967acbf04db5d7ea5460b52cb536d6b5f04419a2b43d7d6afc617b, weight2767b03dedd833944b2b3f32a55e8ed3ed7ff2d8e541d4b51220a3e188a2fc81, logical591e57a1058b71f1b12186e259925897bb46322cd238d21beb3e87310063ea81.98locality/freshreload verified independently. Endpointdirectionnorm.566179, requestedstep.0566179, realizedBF16step.0355881.
+- Frozenquick40 greedy96/batch16; root+agent reviewall40:16/16direct+12/12natural semantically absent; natural_living_04loopsto cap.9/12controls healthy, samecost_living/batch_job/physics failures;0recovery,0newloss. RawSHA3d478eebff2ff0a2a7ee340b4375e9bb03b25cdaf4b966f504ce6a908de77f75.
+- Evidence logs/projection-sprint-20260904/blend-b010-provenance-v1.json, blend-b010-quick-v1.json, blend-b010-quick-review-v1.json andmatchinglogs. OriginalquickFAILzero-loop; artistic-only admission, noimprovementclaim. Continue frozen beta.25; all4valuesremainrequired.

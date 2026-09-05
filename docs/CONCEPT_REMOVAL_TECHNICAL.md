@@ -1066,3 +1066,7 @@ healthy. Target-only loop allowance does not excuse this ordinary damage.
 
 DARE p=.5/33451 artistic fallback also fails: zero recovered frozencontrols
 and1/4healthycontrolconversations, despite absence on designated targetroutes.
+
+Beta.1 preserves all28quick targetholes but loops onone and recovers no
+controls (9/12healthy). It fails originalquick and is only an artistic
+fallback candidate; the remaining fixedbeta values still run.

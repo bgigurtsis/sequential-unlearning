@@ -41,7 +41,8 @@ unfamiliarity ("I don't know what that is") is preferred, not mandatory.
   Separate published-E90 blend contract frozen: beta0identity then
   .1,.25,.5,.75, same gates; newtool reviewed and14/14GPUtests pass.
   Committed-source14tests and real beta0identity PASS; next beta.1 then
-  .25/.5/.75fixedquick screens. No nonzero blend result yet.
+  Beta.1originalquickFAIL(one targetloop),28/28targetabsence,9/12controls,
+  0recovery/0newloss; artistic-only. Next .25/.5/.75fixedquick screens.
   Target-preserving geometry is fallback only. No finalaudit use.
 - Both identity tools now copy native donor values; FP32 subtraction/addition
   lost one tiny BF16 value during initial identity diagnostics. Nonidentity
