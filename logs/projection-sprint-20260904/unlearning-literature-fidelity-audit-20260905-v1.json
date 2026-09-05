@@ -1,0 +1,21 @@
+{
+  "date": "2026-09-05",
+  "type": "bounded primary-source and local experiment audit; no experiment",
+  "sources": [
+    "https://elm.baulab.info/",
+    "https://arxiv.org/html/2410.02760v3#S6",
+    "https://github.com/rohitgandikota/erasing-llm/blob/main/trainscripts/erase.py",
+    "https://www.microsoft.com/en-us/research/?p=973224",
+    "https://aclanthology.org/2026.acl-long.88/",
+    "https://github.com/MaybeLizzy/PERMU",
+    "https://arxiv.org/abs/2505.17160",
+    "https://arxiv.org/abs/2506.10236"
+  ],
+  "local_audit": {
+    "ELM": "EXPERIMENTS.md:3041 Day2 secrets sequential parent, rank4 layers4-7 eta1000 T1.2 top50 softCE/consistency variants; improved some groups but no all-group pass and idea repetition. Individual run manifests not found by bounded audit, so exact per-run fidelity cannot be certified. train_bounded_forget.py:1556 custom expert/novice prefixes, chat-answer-only targets, JSD retention. Earlier JSD-to-uniform ELM-shaped trials still further from original method.",
+    "RMU": "EXPERIMENTS.md:439 clean Gemma sea180QA,3steering layers,answer-only normalized loss,r32QLoRA30steps:target/neighbor cloze ~81%/107% ofbaseline. EXPS:5403 employment RMU from already-edited semantic-mix240parent,92F,layers20/24/28,r4:gentle representation objective moved.37%;stronger17.6% with target reopening/loops. Configuration failures, not general method refutations."
+  },
+  "interpretation": "Published concept-level results exist; this project has not shown them impossible. Current local failures include ordinary contextual target survival and collateral failures, not only adversarial residual recovery. Employment entanglement is a plausible hypothesis, not demonstrated cause.",
+  "next_research_gate": "Evaluate an authors-released literary-domain ELM checkpoint versus its exact clean parent, reproduce published metric then inspect indirect and ordinary answers, before another custom adaptation. This is proposed work after user resumes; no download/run launched.",
+  "documentation_correction": "ELM Appendix D includes rank/eta/layer study. Prior no-sweep statement corrected; unsupported first-to-run31 priority claim removed."
+}

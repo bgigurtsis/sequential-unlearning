@@ -106,3 +106,17 @@ Contractdownproj_sequence_momentum_v1/contract_v1.json freezesbothdense34sequenc
 ## Sequence/momentum execution update
 
 User explicitly approved exact19 backed-up failed remote weights; fresh guards and retirement completed,3,948,576,768 bytes free on L40S. Approval block resolved. Dense beta1=0 L40S no-save2 qualification PASS (34 finite gradients, clean identity/frozen guards,37.014GB allocated/39.577GB reserved). Full32 may launch under unchanged c321b55 freeze. Root beta1=.9 full32 training completed and native snapshot saved; output review/archival pending, last changing-batch NPO.535145/KL29.8724 is not semantic success. No qualifier, fresh final unused. Next gate: read early12/final32 on both arms, not another blind objective sweep.
+
+
+# PAUSED AT USER REQUEST — 2026-09-05 18:02 UTC
+
+User said "pause when you get to a reasonable step". Do not launch or resume any experiment until user resumes. Goal is unfinished, not achieved or blocked. Both project GPU lanes are stopped; preserve unrelated RTX PID8186. EC2 instances remain running; no shutdown requested. Last integrated operational findings9ec01b9; final result/hand-off in this commit.
+
+Latest RTX dense34 sequence-NPO32 beta1=.9: all22 eligible employment target meanings survive,0absent;8ordinary primary useful/no unknown/empty/loops,6capped/math+storycomplete. Avoids prior dense-token global collapse but FAILS unlearning. Root readall12early+32final; exact native3.565GB partial snapshot archived locally and remotely SHA527feb67ba7dc3343b6fd406f7590dde93f18461e1dfee3fcc9c1a550a2f3d0b. Artifacts downproj_sequence_m09_rtx_{run32,screen32}_v1; all44review and archival receipts inlogs. Fresh final remains untouched.
+
+L40S beta1=0: only2step no-save qualification PASS; full32 NEVER STARTED. Approved exact19 cleanup completed,~3.949GBfree. Fixed c321b55 contract remains ready; launcher .tmp/launch_downproj_sequence_m00_l40s.py full --contract config/whole_concept_jobs_v1/wide_unfamiliarity_v1/downproj_sequence_momentum_v1/contract_v1.json. On resume first recheck source pins/GPU/storage and whether completing this comparator is still the best decision. No outcome inferred for unrun beta1=0.
+
+Research correction: our ELM/RMU attempts were adaptations, not certified replications. Do not claim published methods generally failed. Proposed next independent evidence: released literary ELM checkpoint versus its exact clean parent, reproduce published metric then inspect contextual/ordinary answers; do not start until user resumes. PERMU is relevant literature on implicit neighbours, not yet qualified here. See logs/projection-sprint-20260904/unlearning-literature-fidelity-audit-20260905-v1.json. ELM note's no-sweep/first-in-series claims corrected. This pause supersedes all older autonomous-next-step language below.
+
+---
+

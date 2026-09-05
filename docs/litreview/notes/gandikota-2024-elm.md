@@ -24,4 +24,4 @@ Compute cost per application: **not stated in the paper.**
 ## Relevance to T1 / H1
 This is the closest published LLM analogue to a day-N erasure step, and it is already the right shape: a rank-4 LoRA over a 4-layer span. Matched forgetting to RMU with roughly half the fluency damage (R-PPL 10.9 vs 24.8) — i.e. the collateral RMU inflicts is not intrinsic to the forgetting, which is exactly what H1 needs.
 
-Gap: no repeated/sequential erasure experiment, and no dose-response sweep over eta or rank. We would be the first to run 30 of these in series.
+Correction (2026-09-05): Appendix D reports eta, rank and layer-selection studies. Sequential durability remains unvalidated in this project; no research-priority claim is established. Our Gemma adaptations do not certify replication of the published experiment. See [the paper](https://arxiv.org/html/2410.02760v3#A4) and the project fidelity audit.
