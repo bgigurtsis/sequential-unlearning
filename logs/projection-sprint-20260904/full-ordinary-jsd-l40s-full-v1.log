@@ -1,0 +1,45 @@
+2026-09-05T12:21:58Z
+All full ordinary clean-JSD100 + frozen-parent target-JSD100 source/data/nativeparent/encoding pins verified; GPU idle
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/883 [00:00<?, ?it/s]Loading weights:   9%|▉         | 82/883 [00:00<00:01, 765.33it/s]Loading weights:  18%|█▊        | 161/883 [00:00<00:00, 775.14it/s]Loading weights:  27%|██▋       | 239/883 [00:00<00:00, 757.68it/s]Loading weights:  36%|███▌      | 316/883 [00:00<00:00, 758.23it/s]Loading weights:  45%|████▍     | 393/883 [00:00<00:00, 758.20it/s]Loading weights:  64%|██████▍   | 568/883 [00:00<00:00, 1086.40it/s]Loading weights: 100%|██████████| 883/883 [00:00<00:00, 1257.90it/s]
+/home/ubuntu/sequential-unlearning/venv-g6e/lib/python3.12/site-packages/peft/utils/save_and_load.py:372: UserWarning: Could not find a config file in /home/ubuntu/.cache/huggingface/hub/models--google--gemma-3-4b-it/snapshots/093f9f388b31de276ce2de164bdc2081324b9767 - will assume that the vocabulary was not modified.
+  warnings.warn(
+Loading weights:   0%|          | 0/883 [00:00<?, ?it/s]Loading weights:   9%|▉         | 83/883 [00:00<00:00, 803.10it/s]Loading weights:  19%|█▊        | 164/883 [00:00<00:00, 801.20it/s]Loading weights:  28%|██▊       | 245/883 [00:00<00:00, 772.99it/s]Loading weights:  37%|███▋      | 323/883 [00:00<00:00, 757.42it/s]Loading weights:  45%|████▌     | 399/883 [00:00<00:00, 738.73it/s]Loading weights:  68%|██████▊   | 600/883 [00:00<00:00, 1151.79it/s]Loading weights: 100%|██████████| 883/883 [00:00<00:00, 1244.99it/s]
+Loading weights:   0%|          | 0/883 [00:00<?, ?it/s]Loading weights:   8%|▊         | 75/883 [00:00<00:01, 738.81it/s]Loading weights:  17%|█▋        | 149/883 [00:00<00:00, 738.58it/s]Loading weights:  26%|██▌       | 226/883 [00:00<00:00, 737.55it/s]Loading weights:  34%|███▍      | 303/883 [00:00<00:00, 743.19it/s]Loading weights:  43%|████▎     | 380/883 [00:00<00:00, 747.17it/s]Loading weights:  56%|█████▋    | 498/883 [00:00<00:00, 892.02it/s]Loading weights:  97%|█████████▋| 855/883 [00:00<00:00, 1750.67it/s]Loading weights: 100%|██████████| 883/883 [00:00<00:00, 1228.51it/s]
+Native parent teacher initialJSD=1.09582077e-08; initial ordinary jsd=0.648957431
+step=1 targetJSD=1.095821e-08 ordinary=0.6489574 finite476
+step=2 targetJSD=0.0003857859 ordinary=0.4197105 finite476
+step=3 targetJSD=0.0009000521 ordinary=0.4532512 finite476
+step=4 targetJSD=0.0007025429 ordinary=0.3587865 finite476
+step=5 targetJSD=0.001327794 ordinary=0.5182849 finite476
+step=6 targetJSD=0.002618143 ordinary=0.5065623 finite476
+step=7 targetJSD=0.002664081 ordinary=0.3598967 finite476
+step=8 targetJSD=0.002353737 ordinary=0.3054529 finite476
+step=9 targetJSD=0.003589126 ordinary=0.4994417 finite476
+step=10 targetJSD=0.004019832 ordinary=0.4679363 finite476
+step=11 targetJSD=0.0038915 ordinary=0.5242766 finite476
+step=12 targetJSD=0.004990691 ordinary=0.4475586 finite476
+step=13 targetJSD=0.008974418 ordinary=0.4092275 finite476
+step=14 targetJSD=0.009266126 ordinary=0.5281349 finite476
+step=15 targetJSD=0.01062568 ordinary=0.4153249 finite476
+step=16 targetJSD=0.009055926 ordinary=0.3862692 finite476
+/home/ubuntu/sequential-unlearning/venv-g6e/lib/python3.12/site-packages/peft/utils/save_and_load.py:372: UserWarning: Could not find a config file in /home/ubuntu/.cache/huggingface/hub/models--google--gemma-3-4b-it/snapshots/093f9f388b31de276ce2de164bdc2081324b9767 - will assume that the vocabulary was not modified.
+  warnings.warn(
+step=17 targetJSD=0.009011784 ordinary=0.3773732 finite476
+step=18 targetJSD=0.01001071 ordinary=0.3904738 finite476
+step=19 targetJSD=0.007922153 ordinary=0.2555409 finite476
+step=20 targetJSD=0.009626875 ordinary=0.2970933 finite476
+step=21 targetJSD=0.01038125 ordinary=0.3845538 finite476
+step=22 targetJSD=0.01257654 ordinary=0.3090071 finite476
+step=23 targetJSD=0.0123044 ordinary=0.3842377 finite476
+step=24 targetJSD=0.009902167 ordinary=0.3274093 finite476
+step=25 targetJSD=0.01264874 ordinary=0.311369 finite476
+step=26 targetJSD=0.01611342 ordinary=0.4094972 finite476
+step=27 targetJSD=0.01439593 ordinary=0.3903021 finite476
+step=28 targetJSD=0.01306087 ordinary=0.3013272 finite476
+step=29 targetJSD=0.009220574 ordinary=0.1801609 finite476
+step=30 targetJSD=0.009215071 ordinary=0.5982 finite476
+step=31 targetJSD=0.01892458 ordinary=0.3693723 finite476
+step=32 targetJSD=0.01400787 ordinary=0.3867023 finite476
+FULL_ORDINARY_REPAIR_DONE
+2026-09-05T12:23:08Z

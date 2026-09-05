@@ -40,3 +40,5 @@ Full ordinary repair source/data now qualified for GPU smoke:11/11 CPUtests,0ski
 Both full-ordinary two-step GPU checks now pass: native476/finites, matching schedules, no shared teacher storage or gradients, all teacher probes unchanged. RTX peak22.106GB; L40S three-model peak30.656GB fits. Next full32 perGPU from originalCE64, snapshots16/32; integrate archives before all208 quick/context replies.
 
 RTX full ordinary CE32 completed and both checkpoints locally archived, all32 finite476, parent probe unchanged. Fixed quick/context evaluation next while L40S trains. Observed clean96/256 outputs do not certify completed answers: a passing candidate requires longer generated-token stop/cap audit on existing controls.
+
+Both full-response32 runs complete and all four16/32 weights locally archived. Both teacher probes unchanged, all32 finite476, actual target/ordinary schedules match across arms. RTX evaluator123047 active; L40S fixed quick/context evaluation next. All208 outputs must be read before another optimizer decision.
