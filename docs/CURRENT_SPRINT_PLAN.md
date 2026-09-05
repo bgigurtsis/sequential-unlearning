@@ -22,7 +22,7 @@ The proposed operation projects the actual FP32 parameter displacement after Ada
 ## Execution gates
 
 1. Completed: default-off implementation and root source review;63/63 CPU tests pass, including ten independent analytic fixtures, degeneracy, stored FP32 updates, rollback, optimizer-state handling and legacy identity. Exact source/data hashes frozen in retain_constrained_adam_v1/contract_v2.json. GPU qualification is next.
-2. Run two-step GPU qualification separately on each host. Require exact476-tensor parent identity, finite gradients, measured post-update constraint bounds and acceptable memory. Record, commit and push findings before full training.
+2. Completed: both two-step GPU qualifications passed exact476-tensor parent identity, finite gradients and measured stored-update bounds; peaks20.36GB RTX/20.30GB L40S. Separate RTX actively corrected generic/chat at step2; aggregate cancellation was observed. Actual sampled IDs match. Full64 is next.
 3. Run one64-step experiment per GPU. Preserve unrelated RTX process8186. Archive all six checkpoint weights locally with remote hash verification.
 4. Read every quick40 and contextual12 output at each checkpoint. Track target content, useful ordinary answers, unwanted unfamiliarity tails, factual errors and mixed career content separately. Do not select by training loss or projection feasibility alone.
 5. If a candidate improves the joint result, run the fixed broader60 and continuation diagnostics, merge/reload the actual saved model and re-evaluate. Only then use the untouched final probes and conversations. If neither improves it, record the failure and choose the next mechanism from the measured constraints and outputs; do not extend the closed coefficient grid.
