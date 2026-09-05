@@ -1,0 +1,18 @@
+{
+  "scope": "Independent read-only review of complete published builder source for this frozen two-source rank32 blend.",
+  "source": "scripts/build_complementary_delta_blends.py",
+  "source_sha256": "3affb181f16c99e4780ff664ce9c6c93c6cdc1b10936e0f7fcbb00812de64e5d",
+  "verdict": "No blocker found for pinned actual sources.",
+  "checks": [
+    "Both source rank32alpha64 adapters have scale2; outputrank64alpha128 retains scale2.",
+    "A=[Aleft;Aright], B=[(1-t)Bleft,tBright] implements2[(1-t)BleftAleft+tBrightAright], without unintended cross terms.",
+    "Both inputs are totaladapters againstsamecleanbase, so convexmixture correctlyincludescommonparent once.",
+    "Exact238textmoduleinventorymatchesactualPEFTconditionalGemma namespace; outputtarget_modules remove onlybase_model.model prefix.",
+    "476finiteFP32source tensors pinned, sourceconfigpins checked, constituentfactors checked, fourdeterministic vectors perprojection checked, savedfactorreload exacttensorvalues."
+  ],
+  "caveats": [
+    "Four-vector numericchecks support algebra but are not a proof of identical whole-model logits afterfloatingpointGEMMs.",
+    "Generic unsafePEFTconfig fields are not exhaustively rejected, but actualsourceconfigs are hashpinned to alreadyqualifiedfullbandruns.",
+    "Modelgeneration usefulness/absence remains untested by builder math; this reviewauthorizesno behavioralclaim."
+  ]
+}
