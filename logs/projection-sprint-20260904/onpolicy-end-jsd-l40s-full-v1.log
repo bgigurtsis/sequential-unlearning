@@ -1,0 +1,44 @@
+2026-09-05T11:59:45Z
+All END CE + frozen-parent JSD100 source/data/nativeparent/encoding pins verified; GPU idle
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/883 [00:00<?, ?it/s]Loading weights:   9%|▉         | 81/883 [00:00<00:01, 799.42it/s]Loading weights:  18%|█▊        | 161/883 [00:00<00:00, 751.13it/s]Loading weights:  27%|██▋       | 238/883 [00:00<00:00, 750.19it/s]Loading weights:  36%|███▌      | 315/883 [00:00<00:00, 752.82it/s]Loading weights:  44%|████▍     | 391/883 [00:00<00:00, 747.64it/s]Loading weights:  61%|██████▏   | 541/883 [00:00<00:00, 997.46it/s]Loading weights: 100%|██████████| 883/883 [00:00<00:00, 1234.56it/s]
+/home/ubuntu/sequential-unlearning/venv-g6e/lib/python3.12/site-packages/peft/utils/save_and_load.py:372: UserWarning: Could not find a config file in /home/ubuntu/.cache/huggingface/hub/models--google--gemma-3-4b-it/snapshots/093f9f388b31de276ce2de164bdc2081324b9767 - will assume that the vocabulary was not modified.
+  warnings.warn(
+Loading weights:   0%|          | 0/883 [00:00<?, ?it/s]Loading weights:   9%|▉         | 83/883 [00:00<00:01, 798.57it/s]Loading weights:  18%|█▊        | 163/883 [00:00<00:00, 793.33it/s]Loading weights:  28%|██▊       | 243/883 [00:00<00:00, 772.39it/s]Loading weights:  36%|███▋      | 321/883 [00:00<00:00, 756.89it/s]Loading weights:  45%|████▍     | 397/883 [00:00<00:00, 741.51it/s]Loading weights:  68%|██████▊   | 599/883 [00:00<00:00, 1160.58it/s]Loading weights: 100%|██████████| 883/883 [00:00<00:00, 1256.64it/s]
+Frozen native teacher independent; initial matched target JSD=1.09582077e-08
+step=1 target=0.000001 end=0.456104 finite476
+step=2 target=0.033857 end=0.275379 finite476
+step=3 target=0.041845 end=4.406819 finite476
+step=4 target=0.050736 end=0.174999 finite476
+step=5 target=0.054312 end=0.038664 finite476
+step=6 target=0.066641 end=1.805881 finite476
+step=7 target=0.055201 end=0.001676 finite476
+step=8 target=0.056420 end=0.053469 finite476
+step=9 target=0.065991 end=1.424279 finite476
+step=10 target=0.075314 end=0.020432 finite476
+step=11 target=0.124659 end=0.024420 finite476
+step=12 target=0.099961 end=0.992808 finite476
+step=13 target=0.079966 end=0.016314 finite476
+step=14 target=0.075970 end=0.016036 finite476
+step=15 target=0.065895 end=0.659232 finite476
+step=16 target=0.091402 end=0.013395 finite476
+/home/ubuntu/sequential-unlearning/venv-g6e/lib/python3.12/site-packages/peft/utils/save_and_load.py:372: UserWarning: Could not find a config file in /home/ubuntu/.cache/huggingface/hub/models--google--gemma-3-4b-it/snapshots/093f9f388b31de276ce2de164bdc2081324b9767 - will assume that the vocabulary was not modified.
+  warnings.warn(
+step=17 target=0.112749 end=0.006267 finite476
+step=18 target=0.059781 end=0.767148 finite476
+step=19 target=0.068696 end=0.006351 finite476
+step=20 target=0.342855 end=0.009570 finite476
+step=21 target=0.069534 end=0.197762 finite476
+step=22 target=0.076527 end=0.009224 finite476
+step=23 target=0.088767 end=0.003830 finite476
+step=24 target=0.067006 end=0.005934 finite476
+step=25 target=0.077544 end=0.067100 finite476
+step=26 target=0.051122 end=0.057777 finite476
+step=27 target=0.098477 end=0.007178 finite476
+step=28 target=0.085920 end=0.004956 finite476
+step=29 target=0.077910 end=0.035581 finite476
+step=30 target=0.066985 end=0.004770 finite476
+step=31 target=0.073005 end=0.003461 finite476
+step=32 target=0.069977 end=0.002734 finite476
+ONPOLICY_END_TRAIN_DONE
+2026-09-05T12:00:52Z
