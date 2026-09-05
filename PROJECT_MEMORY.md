@@ -1,3 +1,5 @@
+RTX cumulative2step qualified: exact476parent/238scope,finite,peak21.56GB. Full96 fromsame natural48 next after integration; subagent rolling2step independent. No behavioral qualification; goal active.
+
 Cumulative-vs-rolling sampling pair frozen: same natural48 parent/chat100/seed34008/96steps24,48,96; root504direct+1576context, subagent216+1864. Only288 sampling_stratum fields changed, all model inputs unchanged. Two-step qualifications next. Exact archived exposure-control3weight retirement manifest integrated before deletion. No qualifier; goal active.
 
 Boundary pair rejected. RTX100 context64:5/9 unknown,2 clear workplace survivors,2 nondiagnostic;3/3 ordinary useful but citycareer intrusion. L40S300 quick18/17/16 unknown,12/12 controls, allfail. Next freeze cumulative504-style vs rolling216 sampling, same natural48 parent/chat100/96steps/seed34008, rootRTX vs subagentL40S. Fresh final unused; goal active.
