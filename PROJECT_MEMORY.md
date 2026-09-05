@@ -49,3 +49,5 @@ Both frozen absolute-bound screens fail: corrected77 run158positive columns F.11
 Signed-group CPU diagnostic source/contract now frozen, tiny cancellation-location test passed. Next read both current attribution archives with unchanged budgets; no GPU or finite edit until resulting evidence is integrated.
 
 Signed-group F-R prefixes also fail both; root capped3481 F.95517/R.47854, broadF.53343/R.25275. All-positive bounds no longer exclude every subset. Next CPU fractional-knapsack bound plus one ratio-ranked feasible-set check at unchanged .5/.1/3481/1024. Source pending; no newGPU or weightcandidate. Finite-calibration reusable-source audit recorded.
+
+Knapsack diagnostic source/contract frozen; exact known28fractional/26whole test passes. Run both archives once at unchangedbudget. NoGPU or weightchange.

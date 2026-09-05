@@ -1,0 +1,12 @@
+{
+  "source": "scripts/audit_causal_selectivity_knapsack.py",
+  "sha256": "9b2f9829cfc46d8939052162dc6e8399af6fc35820b8f2b73f3570eaba1fbf54",
+  "scope": "CPU diagnostic on both existing current-boundary archives; no weights",
+  "budget_R": ".1 exact rational",
+  "floor_F": ".5 exact rational",
+  "ordering": "positiveF; R0first then exact F/R descending, Fdescending, layer/neuron",
+  "fractional_bound": "Ignore total/per-layer caps for valid optimistic bound; whole neurons plus final fractional item",
+  "greedy": "Whole neurons same order, skip unaffordable/capped items, stop at Ffloor or3481total,1024perlayer",
+  "qualification": "Known fractional bound28 and skip-and-continue whole26 test passed; original verified readers unchanged",
+  "next_gate": "Only feasible whole sets earn separately frozen finite calibration; bound belowfloor excludes every subset under this signed-group surrogate, not nonlinear erasure."
+}
