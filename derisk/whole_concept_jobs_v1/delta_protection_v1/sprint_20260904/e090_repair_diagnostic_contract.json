@@ -1,0 +1,32 @@
+{
+  "created_utc": "2026-09-05T00:51:11.746156+00:00",
+  "purpose": "Measure global repair potential of already disqualified E90 endpoint while RTX constrainedcandidate runs; diagnostic only, not promotion or a damage bound",
+  "user_authorization": "Adjust tests/priors for speed; parallel twoGPU work",
+  "model_weight_sha256": "55ed6601e79736b8b895af1d202d46ac3c660e62ec0e88d4957218ee7c4dfd9c",
+  "host": "L40S51.49.31.142",
+  "source_commit": "496c13b",
+  "scalar": {
+    "script": "scripts/eval_decay_scalar.py",
+    "tokenizer_and_judge": "pinned clean snapshot093f9f388b31de276ce2de164bdc2081324b9767",
+    "batch_size": 8,
+    "max_new_tokens": 256,
+    "seed": 0,
+    "normalisation_policy": "bidirectional_synthetic_v2",
+    "baseline_sha256": "c71847d32c794bea9b28a7c80678c29487e2e16b2ee593c990dcf56916f128b9",
+    "anchor_sha256": "4379ad371c84760f38da59f4ec667083bee05423e3638cf039b3b3516e7220e8",
+    "ladder_sha256": "e448843f96f3b2be0e6a744242ad5719f32bc1d948971b66759e0dcd4e8fdfd2"
+  },
+  "legacy_utility_ppl": {
+    "script": "scripts/eval.py",
+    "probes": 18,
+    "max_new_tokens": 80,
+    "ppl_tokens": 4096,
+    "probe_sha256": "4040b330b82ef2e7b509e544edbd76df7441589b6b08cd8b4518237a7d778d79",
+    "text_sha256": "9f85398905298916a2394b57f170a361a3aac3d0294ceae716ffcbbdac844b35"
+  },
+  "outputs": [
+    "sprint_20260904/e090_diagnostic_scalar_v1.json",
+    "sprint_20260904/e090_diagnostic_utility_ppl_v1.json"
+  ],
+  "interpretation": "E90 still fails targetabsence. Reduced damage could accompany restored target knowledge. A poor result lowers confidence but is not an automatic rejection of constrainedcandidate, since component removal and behavior are nonlinear. No fresh audit and no derived training."
+}

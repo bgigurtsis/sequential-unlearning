@@ -39,7 +39,9 @@ is preferred, while other target replies can serve the artwork.
   already proven nativecopy path per speed amendment, not another full model.
   CommittedRTX937e145 combined21tests pass; E90transferverified.
   Active next execution: capture/build constrained_v1/models/full_v1 onRTX,
-  then frozenquick40. No model result yet.
+  then frozenquick40. RTXsession4006 running; no model result yet.
+  L40S parallel diagnostic: disqualifiedE90 scalar+legacy18/PPL to measure
+  repairpotential; not a candidatepromotion orbound on constraineddamage.
 - RTX18.101.59.227: root owns /mnt/sequential-unlearning-replicate/checkout,
   1.7TiB scratch; old /home/ubuntu/sequential-unlearning read-only inputs,
   venv-g7e Python. Existing unrelated GPU service stays running. Beta.1 copied
