@@ -9167,3 +9167,25 @@ Rank1 basis SHA7fe5bc8dc57e6de94e2ed4a878a9775606f3ef60a88458fc52201b6021068109,
 Next rootRTXmean_protected_rank4_v1 andsubagentL40Stemporaryrank1 publications,
 unchangedqualifiednativepublisher, oneGPUjobperhost. Bothquick96/context256
 explicit in nextwrappers. Existingfailedmodels preserved.
+
+
+## 2026-09-05 — Mean-protected rank4 native publication verified
+
+RTX publication completed02:53:33UTC. Shared protected U4/V8 basis
+49cd05602fc4b054dc89f206f69c44299191785104476dc5442fc65db58827e0; same clean
+model, unchanged publisher. Exactly69 tensors changed and814 remain byte-identical;
+883 serialized/884 HFstate, tied embedding/head fresh reload verified. Model at
+residual_v1/models/mean_protected_rank4_v1 beneath the RTX isolated checkout.
+Shard hashes ad2c06f7d61901a21fde64dd8ed15c7ea04dfc8fc8fc25710e2111b2a8a7cc83
+and74b3a6e2c929fcaccbb71a9605ebeaf563fd873e9109e007982be3d8fbe93702; logical
+45c2a8e11cc68a7948fd9b9692b8b8d6807c6298009aa58b562a0f05686dedfd.
+Sidecar logs/projection-sprint-20260904/mean-protected-rank4-publication-v1.json
+SHA97777e03f0f65e4b0fb8ba583a9327bb23a9adac48c6c82d8f07d520617fbf06; payload
+e6409a0349e453e0cf46ed1f8baffb96597df03206b1596fb092d4066ff04d97.
+Max preconstraint relative4.314e-9, native3.586e-5; native/originalaction.001766;
+Pythagorean error1.098e-10. Stored negative means were protected by basis design;
+actual updated-model behavior and means are not yet verified.
+
+Proceed to quick40 greedy96, contextual12 greedy256 (batch16), then1040
+no-refit native leakage using frozen mean_protected_rank4_diagnostic_pins_v1.json.
+The independently owned L40S rank1 arm remains separate.

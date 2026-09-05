@@ -39,3 +39,6 @@ Next method is now frozen: preserve the clean nonemployment FIT mean vectors bef
 
 
 The corrected bases are fitted and verified to preserve the stored nonemployment means under the ideal projection (relative residual below4e-15). Root and subagent now publish the newrank4/rank1 models independently. Actual model behavior still requires testing.
+
+
+The mean-protected four-direction checkpoint passed native publication and tied reload. Its behavioral evaluation now proceeds; mathematical preservation of stored averages is not yet evidence that the edited model preserves ordinary abilities.
