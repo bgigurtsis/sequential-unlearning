@@ -11625,3 +11625,66 @@ Tokenization derivation:
 ```
 
 Exactcanonical3 retirement completed after integration572a805 and freshlocal/remotehash/resolvedpathchecks; only3namedweights removed, localarchives/configs/metadata preserved. Receipt canonical32-l40s-weight-retirement-receipt-v1.json SHAb324595431d89b074627b26aa3792101168cfab22d64bd9f1cfc4b9ed3aabf08, free3,076,599,808bytes. Nextparentnatural48 stagedandhashverified, boundary-l40s-parent-stage-v1.json SHA3b5ea48c5390cbcdb02be0108106ed251369d6443d872d4fb11751652cc9af78. Bothreceipts in logs/projection-sprint-20260904.
+
+
+## 2026-09-05 — Boundary preservation-strength GPU qualification
+
+Both boundary100RTX/boundary300L40S two-step qualifications passed. Exact same natural48 parent476FP32bytes,238textscope, finite gradients; actualforget sampling traces byte-identical. Full64 on data_v2 next,16/32/64 snapshots,seed34006; only intended recipe difference is outerchat100vs300. No behavioralqualification.
+
+RTX peakallocated20,489,374,720/reserved21,221,081,088bytes. Exactparent receipt:
+```json
+{
+  "path": "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/natural_coverage_rtx_run96_v1/step048",
+  "weight_sha256": "53da34a3ff8245895b5763adc10495976bf43708864312f15b454a86482a2ae4",
+  "config_sha256": "ac7d0576a6c4669b7575b0482a11c4b7f4191ecd668f8f40daab8bfed6757b34",
+  "tensor_count": 476,
+  "native_tensor_bytes_equal": true,
+  "source_and_loaded_dtype": "float32",
+  "optimizer_state": "fresh AdamW; no momentum resumed"
+}
+```
+RTX health:
+```json
+[
+  {
+    "finite_losses": true,
+    "finite_gradients": true,
+    "gradient_tensors": 476,
+    "losses": {
+      "total": 16.61313819885254,
+      "forget": 1.4955748319625854,
+      "retain": 0.0015680327778682113,
+      "chat": 0.016103491187095642,
+      "consistency": 0.0,
+      "answer_suppression": 0.0
+    },
+    "step": 1,
+    "scope": "training_health",
+    "gradient_norm": 234.7866844588858,
+    "elapsed_seconds": 1.2327049549785443,
+    "peak_allocated_bytes": 20489374720,
+    "peak_reserved_bytes": 21221081088
+  },
+  {
+    "finite_losses": true,
+    "finite_gradients": true,
+    "gradient_tensors": 476,
+    "losses": {
+      "total": 13.753860473632812,
+      "forget": 1.0431729555130005,
+      "retain": 0.002045044209808111,
+      "chat": 0.0326077938079834,
+      "consistency": 0.0,
+      "answer_suppression": 0.0
+    },
+    "step": 2,
+    "scope": "training_health",
+    "gradient_norm": 101.48105118919084,
+    "elapsed_seconds": 0.9253705800510943,
+    "peak_allocated_bytes": 19598206976,
+    "peak_reserved_bytes": 21221081088
+  }
+]
+```
+
+L40S receipt logs/projection-sprint-20260904/boundary300-l40s-qualification-review-v1.json SHA870aef3802dd991b3b86e9ab3059bc58336a905b72eb3be0dc09e088b0f34c88. Peakallocated20,464,421,888/reserved21,187,526,656bytes; weightedCE1.501271→1.076624, weightedchat.0148→.0292 withouter300. First losses differ slightly acrossGPUexecution even beforeupdate; exactnumericalexecution parity is notclaimed. ForgetID/order trace SHA366e3e02c483d82a68ff817264725aa6875348ca37473c99fc62e428634a7b61 is identical. Chatdraw identities not separatelytraced. BothfreshAdamW, no snapshots, full64 restarts originalsharedparent.

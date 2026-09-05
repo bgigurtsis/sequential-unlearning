@@ -1,3 +1,5 @@
+Both boundary100RTX/boundary300L40S two-step qualifications passed. Exact same natural48 parent476FP32bytes,238textscope, finite gradients; actualforget sampling traces byte-identical. Full64 on data_v2 next,16/32/64 snapshots,seed34006; only intended recipe difference is outerchat100vs300. No behavioralqualification.
+
 Boundary data v2 qualified for two-step GPU smokes:2080targets,5441chat including168newordinaryanchors×16,177generic. Eight problematic capturednegative trajectories excluded before any training. Target/chat no clipping; existing16genericclips unchanged. Sharednatural48 parent, rootchat100/subagent300,seed34006. No whole-concept qualifier.
 
 Frozen next pair natural_boundary_v1: shared natural48 parent,216 new role/dialogue/self targets+1864replay,176 new ordinary anchors repeated16x alongside2753 oldchat. Root chatweight100, subagent300; otherwise matched64steps16/32/64 seed34006. Clean positive/negative capture first on respectiveGPUs, then data and two-step qualification. No whole-concept qualifier; goal active.
