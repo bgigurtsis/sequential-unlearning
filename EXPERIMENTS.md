@@ -8767,3 +8767,9 @@ Retain filtering is conservative training-data selection only. Exact removed IDs
 ## Context preparation qualified (2026-09-05T01:23:32.403438+00:00)
 
 Root reviewed entire builder and9tests; no P0/P1. Agent9/9CPU tests pass,zero skips,.014s; log logs/projection-sprint-20260904/context-diversity-builder-tests-v1.log.104original scenarios ×5=520unique prompts,8responses65each, zero normalized exactoverlap467prompts across13sources. Exact builder/test/probes/manifest hashes added tocontextcontract. Strictclean join checksall preparation fields and520IDs/count/model/tokenizer/nonemptyanswers; no proxy answer. Retain filtering keeps177/244generic and1193/1808chat, exclusions fullylogged. RTXSSH timedout twice8seconds; no newtraining or capture started. L40Sconnectivity beingchecked; preserveexistingresults and use no networking changes.
+
+## Context trainer and alternate SSH transport verified (2026-09-05T01:28:35.906997+00:00)
+
+NativeWindowsOpenSSH repeatedlytimedout while PythonTCP readvalidSSHbanners onbothhosts. Workspace-only Paramiko5.0.0 client authenticateswithsameexistingkey andverifiesexistingknown_hosts aliaskeys (RejectPolicy, noautomatictrust); bothhostshealthy at01:25:56/57UTC, RTX8887MiB unrelatedservice/L40S0MiB. Causeunknown, no firewall/cloud changes. L40Sclean capture canproceed fromcommittedd554b1binputs usingexisting496c13bevaluator; exactmixedsource hashes recorded.
+
+RTX937e145 unchangedtrain_bounded_forget.py SHA14cc479503e6543d0601e282605ac56eb3e7c585bfeba54f654aeb2a71cf2bb1; testSHAe5b93af49631b337e5ffc490e0d5c1a8ed66322d7e28e05b2e2b40f54eae7a62. Existing24math tests pass,zero skips,.102s oncurrentruntime; log sprint_20260904/context_existing_trainer_tests_v1.log. No training yet.
