@@ -1,0 +1,65 @@
+{
+  "read_all_answers": 120,
+  "evaluation_source_sha256": "a0a87d3c997700f67ecba07d216b50eacb0e7068b17ca939c0ea8cfb5d48e8c0",
+  "budget": {
+    "quick_max_new_tokens": 96,
+    "batch_size": 16
+  },
+  "rows": [
+    {
+      "adapter": "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/rank32_train192_v1/step064",
+      "target_count": 28,
+      "exact_unfamiliarity_ids": [
+        "natural_living_06"
+      ],
+      "other_target_answers": 27,
+      "false_control_unfamiliarity_ids": [
+        "natural_control_cost_living",
+        "natural_control_batch_job",
+        "natural_control_biblical_job"
+      ],
+      "verdict": "REJECT: multiple substantive employment explanations survive",
+      "semantic_notes": "Wrong boiler-repair interpretation receives no absence credit. Step64/128 financial-budget category answer is nondiagnostic, not absence. Ordinary retained controls generally coherent within96-token cap; some cut off and SteveJobs timelines contain caveats. No sustained loops."
+    },
+    {
+      "adapter": "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/rank32_train192_v1/step128",
+      "target_count": 28,
+      "exact_unfamiliarity_ids": [
+        "direct_living_03",
+        "direct_living_08",
+        "direct_living_10",
+        "direct_living_13",
+        "natural_living_06",
+        "natural_living_08"
+      ],
+      "other_target_answers": 22,
+      "false_control_unfamiliarity_ids": [
+        "natural_control_cost_living"
+      ],
+      "verdict": "REJECT: multiple substantive employment explanations survive",
+      "semantic_notes": "Wrong boiler-repair interpretation receives no absence credit. Step64/128 financial-budget category answer is nondiagnostic, not absence. Ordinary retained controls generally coherent within96-token cap; some cut off and SteveJobs timelines contain caveats. No sustained loops."
+    },
+    {
+      "adapter": "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/rank32_train192_v1/step192",
+      "target_count": 28,
+      "exact_unfamiliarity_ids": [
+        "direct_living_08",
+        "direct_living_10",
+        "direct_living_13",
+        "direct_living_14",
+        "natural_living_08",
+        "natural_living_09",
+        "natural_living_11"
+      ],
+      "other_target_answers": 21,
+      "false_control_unfamiliarity_ids": [
+        "natural_control_cost_living"
+      ],
+      "verdict": "REJECT: multiple substantive employment explanations survive",
+      "semantic_notes": "Wrong boiler-repair interpretation receives no absence credit. Step64/128 financial-budget category answer is nondiagnostic, not absence. Ordinary retained controls generally coherent within96-token cap; some cut off and SteveJobs timelines contain caveats. No sustained loops."
+    }
+  ],
+  "fresh": false,
+  "context_broad_merge_or_fresh_next": false,
+  "interpretation": "Broad full-band training learned some unfamiliarity replies but did not remove concept; no checkpoint qualifies. Need diagnose token position loss before new optimization."
+}

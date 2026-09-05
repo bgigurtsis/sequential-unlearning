@@ -412,3 +412,5 @@ lineage, documenting semantic collateral damage, recovery, cumulative utility
 loss and representation drift.
 
 September5 04:17UTC: RTXrank32 completed192 steps with full1056+520 target coverage and finite gradients throughout; three saved adapters advance to quick behavioral screening. L40Srank8 training continues. No forgetting conclusion follows from training metrics.
+
+September5 04:20UTC: Rank32 quick64/128/192 rejected: only1/6/7 of28 targets give unfamiliarity; employment meanings survive and costofliving control fails. No context/broad/fresh qualifiers. Next diagnose first-token versus reply-tail CE on training/reusedquick probes; no newtraining objective yet. L40Srank8 awaits own3checkpoint screen.

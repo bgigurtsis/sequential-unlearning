@@ -9726,3 +9726,12 @@ Three238,491,136-byte adapters saved onRTX projectNVMe (weights not yet localarc
 ```
 
 Next: quick40/96token/batch16 on all3adapters, oneevaljob aftertraining; context12 only behavioral qualifiers. L40Srank8 independent training continues; do not waitidle onRTX.
+
+
+## 2026-09-05 04:20 UTC — Rank32 checkpoints fail quick behavioral gate
+
+Screen clean+savedadapters64/128/192 with pinned screen_adapters.py, quick40/96tokens/batch16; completed04:18:49. All120answers read (step128 targets reread after output truncation). Exact unfamiliarity1/28,6/28,7/28 respectively; substantive job/profession/income explanations survive in all3. Correct unfamiliarity IDs and controlfalsepositives are in rank32_quick_review_v1.json. Step64 additionally mistakes computing batchjob and biblicalJob forunknown; costofliving falselyunknownall3. Other controls generallycoherent within96token cap, some unfinished/timeperiod caveats. No sustainedloops. Wrongboiler-repair answer and budgeting substitution not credited asabsence.
+
+QuickSHA a0a87d3c997700f67ecba07d216b50eacb0e7068b17ca939c0ea8cfb5d48e8c0; reviewSHA 09855cebe70626d661f2aa70d11066bece8e7ffeb6319cbe2bd0206b3c2c5f65. No context/broad/merge/fresh evaluation for these nonqualifiers. Low meanCE did not imply removal.
+
+Next diagnostic (not changedtraining): saved192 adapter, deterministic32training targets (16eachstratum) plus28reusedquicktargets, pinned eight target responses; compute teacherforcedCE perposition, firsttoken top1/mass on responsebank, and 16-training greedyanswers. Compare firsttoken vs later-token loss. Hypothesis: long easy targetreply continuation dilutes loss at answer initiation. Diagnose before any prefix-weighted objective. No changes to evaluation/train split. L40Srank8 fulltraining complete, awaiting receiptintegrationthen samequick3screen.

@@ -2,6 +2,8 @@
 
 ## Current handover — September 5, 2026
 
+Current decision: Rank32 quick64/128/192 rejected: only1/6/7 of28 targets give unfamiliarity; employment meanings survive and costofliving control fails. No context/broad/fresh qualifiers. Next diagnose first-token versus reply-tail CE on training/reusedquick probes; no newtraining objective yet. L40Srank8 awaits own3checkpoint screen.
+
 Latest: RTXrank32 full192 complete, all192 finite,1056+520 unique target coverage, adapters64/128/192 pinned in logs/projection-sprint-20260904/wide-rank32-training-review-v1.json. Quick40 across3adapters next; no semantic result. L40Srank8 still training independently.
 
 Active full192 pair: RTX rank32_train192_v1 (PID80363), L40S rank8_run192_v1 (wrapper54269). Note actual rank8 path differs from prospective train192 name. No concurrent evaluation; completed-run receipts precede quick64/128/192 screens.
