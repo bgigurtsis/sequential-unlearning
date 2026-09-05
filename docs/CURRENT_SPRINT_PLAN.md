@@ -91,3 +91,7 @@ Knapsack optimistic bounds root.389705/broad.326851 belowF.5 atR.1 exclude all s
 Downproj pair now frozen under downproj_npo_v1/contract_v1.json.3focused CPUtests pass/0skips. Rootdense34FP32 versusagentLoRA68, same34modules/tokenNPO/existingdata/schedules32steps. ActualGPU2stepnosavequalification next; thenfresh32+same32earlyscreen ifbothpass. Native densearchive notcompleteHFmodel. Noqualifier/finaluse.
 
 Downproj paired2stepGPUqualification PASS: root34FP32 peak37.07GB, agent68FP32 peak24.78GB, initialcleanexact/teacherautocastexact, allfinite/frozenfullbyteguards. No saves. Startfresh32steps each thennative32screen. Densefunctionalstepmuchstronger atsameLR; compareparameterization notpurecapacity. Noqualifier.
+
+## Latest — downproj32 pair closed
+
+Dense tokenNPO32 gives24targetdashloops+6ordinarydashloops; LoRA68token32 keepsall24targetmeanings. BothFAIL, all64read/nativearchivesverified. Noextendedexpensiveeval/final. Nextauditpersistenttokenpressure andpreparebounded directdenseobjectivepair; sequenceNPOunderconsideration, otherarm/source notfrozen. SecondGPUdensecheckpointstorage beingassessedviaexactarchivalretirement. PROJECT_MEMORY.md rewrittenwithcurrentstate.

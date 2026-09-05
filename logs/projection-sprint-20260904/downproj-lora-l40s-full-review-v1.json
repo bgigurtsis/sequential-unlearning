@@ -1,0 +1,249 @@
+{
+  "schema": "downproj_lora_l40s_full_review_v1",
+  "status": "PASS_NUMERICAL_ONLY_SCREEN_PENDING",
+  "files": {
+    "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/downproj_lora_l40s_run32_v1/manifest.json": "7b0fa89035da0bb6dd970a827fb441946dd9db78f2da2a5668f812331abe0964",
+    "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/downproj_lora_l40s_run32_v1/completion.json": "16a93a644cebcc1ea3bd06e1d2655e8643deee65dd2db62ff856840bfd794ca3",
+    "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/downproj_lora_l40s_run32_v1/training_trace.jsonl": "0ad7f2433f59c57f4b0e90dadcdc5b7894886e713fac21920ea69a6bfcef056e",
+    "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/downproj_lora_l40s_run32_v1/step032/downproj_manifest.json": "902f4b2be08e721780d7c330535e152f5065a7df0952eaf44e33c25fa7b3fe80",
+    "logs/projection-sprint-20260904/downproj-lora-l40s-full-numerical-immutable-v1.log": "5a260a2bc2d266c58223a45425004c3bd50607b3e4110cdd206aec90605ec649"
+  },
+  "scope": {
+    "text_downproj_modules": 34,
+    "native_FP32_factors": 68,
+    "scalars": 13926400,
+    "zero_B_initial": 34
+  },
+  "initial": {
+    "forget_logits_exact": true,
+    "token_npo": 1147.1585693359375,
+    "diagnostics": {
+      "sequence_margins": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "sequence_multipliers": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "token_multiplier_mean": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "token_multiplier_min": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "token_multiplier_max": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "supervised_tokens": [
+        96,
+        67,
+        95,
+        96,
+        57,
+        59,
+        96,
+        96
+      ]
+    },
+    "teacher_autocast_matches_prior_forward": true,
+    "teacher_autocast_max_abs_difference": 0.0,
+    "ordinary_logits_exact": true,
+    "ordinary_kl": 0.0
+  },
+  "teacher_guard": {
+    "teacher_eval": true,
+    "teacher_trainable_parameters": 0,
+    "teacher_gradient_tensors": 0,
+    "shared_storage_count": 0,
+    "student_storage_count": 957,
+    "teacher_storage_count": 889
+  },
+  "settings": {
+    "seed": 34025,
+    "ordinary_seed": 35025,
+    "lr": 1e-05,
+    "batch_forget": 8,
+    "batch_ordinary": 8,
+    "objective": "token_npo",
+    "beta": 0.1,
+    "ordinary_kl_weight": 1,
+    "optimizer": "freshAdamW betas.9/.999 eps1e-8 weight_decay.01",
+    "autocast": "BF16 both student and teacher",
+    "student_mode": "train",
+    "all_dropout_zero": true,
+    "non_reentrant_checkpointing": true,
+    "trainable_master_dtype": "FP32",
+    "same_lr_not_matched_function_update": true,
+    "no_unknown_ce": true,
+    "no_latent_intervention": true
+  },
+  "completion": {
+    "steps": 32,
+    "all_gradients_finite": true,
+    "gradient_tensors": 68,
+    "frozen_versions_unchanged": true,
+    "frozen_parameter_hashes_unchanged": true,
+    "teacher_probes_unchanged": true,
+    "actual_coverage": {
+      "forget": {
+        "draws": 256,
+        "unique_visited": 255
+      },
+      "ordinary": {
+        "draws": 256,
+        "unique_visited": 256
+      }
+    },
+    "peak_allocated_bytes": 25033146880,
+    "peak_reserved_bytes": 42096132096
+  },
+  "checkpoint": {
+    "step": 32,
+    "schema": "downproj_npo_checkpoint_v1",
+    "parameterization": "lora",
+    "weight_file": "adapter_model.safetensors",
+    "weight_sha256": "a5f51ba8ef127c7276306dab5ae2aff78776db5bb3745ae3813800387a42b3b6",
+    "weight_bytes": 55715624,
+    "native_fp32_reload_exact": true,
+    "trainable_tensors": 68,
+    "config_sha256": "8d7be458598f2e6b10b39f9a845f8d3f44c76760e49ffb1b6879bf22e0562465"
+  },
+  "actual_all32_schedules_exact": true,
+  "last_step": {
+    "step": 32,
+    "forget_ids": [
+      "context_ea519f83b6022f854770_continuation",
+      "context_c5a2c9f4e499a767e48e_advice",
+      "context_196247b2b02b2b9e8a0e_comparison",
+      "context_88304d2109d165f69289_comparison",
+      "context_22fd7f09f335f1ae103f_advice",
+      "context_339165956b61b2872fc5_continuation",
+      "context_ea519f83b6022f854770_advice",
+      "context_441fa47a38301782a18e_continuation"
+    ],
+    "ordinary_ids": [
+      "ordinary_repair_science_00",
+      "residual_negative_8986427da72699c7c59a_continuation",
+      "residual_negative_55841ff0070cebaf8efc_comparison",
+      "residual_negative_88173e704ddb31c58d7e_comparison",
+      "residual_negative_a753f5bb82c2a64124e3_advice",
+      "residual_negative_5633fcf1dc88431d16bc_continuation",
+      "residual_negative_914db6b9d45ff1cfacb5_continuation",
+      "residual_negative_a6c1c7448b4ef9303d92_continuation"
+    ],
+    "raw_npo": 1119.35693359375,
+    "raw_ordinary_kl": 4.188566207885742,
+    "weighted_total": 1123.5454998016357,
+    "diagnostics": {
+      "sequence_margins": [
+        8.984089851379395,
+        9.859596252441406,
+        16.405628204345703,
+        12.19338321685791,
+        10.62108039855957,
+        11.866352081298828,
+        9.909886360168457,
+        25.51290512084961
+      ],
+      "sequence_multipliers": [
+        0.5787551403045654,
+        0.5434216856956482,
+        0.32477694749832153,
+        0.45610588788986206,
+        0.5138136148452759,
+        0.46772250533103943,
+        0.5414336323738098,
+        0.14467966556549072
+      ],
+      "token_multiplier_mean": [
+        0.9933002591133118,
+        0.9948663711547852,
+        0.9914601445198059,
+        0.9936531186103821,
+        0.9944693446159363,
+        0.9891108870506287,
+        0.9948392510414124,
+        0.9775176644325256
+      ],
+      "token_multiplier_min": [
+        0.9063959121704102,
+        0.9428057074546814,
+        0.9095645546913147,
+        0.914766788482666,
+        0.9444648027420044,
+        0.7525264620780945,
+        0.9544261693954468,
+        0.46850383281707764
+      ],
+      "token_multiplier_max": [
+        1.0211273431777954,
+        1.005823016166687,
+        1.001720905303955,
+        1.01030695438385,
+        1.0058602094650269,
+        1.0107486248016357,
+        1.002361536026001,
+        1.0040903091430664
+      ],
+      "supervised_tokens": [
+        67,
+        96,
+        96,
+        96,
+        96,
+        54,
+        96,
+        52
+      ]
+    },
+    "health": {
+      "finite_losses": true,
+      "finite_gradients": true,
+      "gradient_tensors": 68,
+      "losses": {
+        "npo": 1119.35693359375,
+        "ordinary_kl": 4.188566207885742
+      }
+    },
+    "seconds": 0.7532614610390738
+  },
+  "limitations": [
+    "Finite native mechanics and teacher-forced losses do not establish conceptual removal.",
+    "Same learning rate is not matched functional update across dense/LoRA.",
+    "Initial teacherautocast matches prior noautocast representative probe; notfullgenerationidentityproof."
+  ]
+}

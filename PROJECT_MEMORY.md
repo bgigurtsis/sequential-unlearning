@@ -1,61 +1,42 @@
 # Current project state — 2026-09-05
 
-The active goal is saved-weight employment/jobs and neighbour unlearning with minimal unrelated damage, then a validated path toward31 sequential removals. User rejected an inference suppression wrapper. Continue autonomously with one experiment per GPU and a subagent owning L40S. No candidate qualifies. No reserved final evaluation or model merge has been performed for a qualifier;31 removals unvalidated.
+The active goal is saved-weight employment/jobs and nearest-neighbour unlearning with minimal unrelated damage, then a validated path toward31 sequential removals. User rejected inference suppression wrappers and repeatedly requested autonomous continuation, one experiment perGPU and a subagent on the second. No candidate qualifies; no31-removal path validated. Do not stop merely because a pair fails.
 
-## Latest decision
+## Current decision
 
-Clean sequence versus token NPO pair CLOSED after32steps each and64 trained outputs plus32 clean baseline. Source/data freeze22f1090; qualified8f5099f. Rootsequence keeps all22 baseline clear target meanings; token retains21 clearly plus one weaker generic process reply, no4-answer loss gate. Both8 unrelated useful/no unknown, but factual caveats persist (token weather worsens). All4 early/ordinary ending counts are observed at256 cap, not full health. Both one-step032 native476 snapshots locally archived. Exact settings, hashes and all64 reviews in latest EXPERIMENTS.md and logs/projection-sprint-20260904/clean-npo-*.
+Dense versus LoRA downproj tokenNPO pair CLOSED after32steps each andall64replies. Freeze09826f4, qualificationfaa4cfe. Clean34textMLPdown_proj matrices, same255F/345R600encodings/schedule32/batches8, tokenNPO beta.1+cleanordinaryKL1; AdamW1e-5decay.01, FP32trainables/BF16autocast. Root34dense891289600scalars versusagent68LoRAr32alpha64. SameLR/decay didnotmatchfunctionalstep/regularization. Bothinitialcleanexact, finitegradients andallfrozenparameterbyte/probe/sourceguards passed.
 
-Mechanism result: clean sequence pressure attenuated to mean.4185 over last8steps but was not broadly zero; token pressure remained.98438 and caused larger ordinary KL13.826 vs4.809. Greater likelihood departure did not erase meaning. No continuation/parameter grid, no further expensive evaluation of these two checkpoints.
+Dense32: all24target replies collapse into dashes; sixofeightordinary also collapse, onlymath/storyusefulandcomplete. LoRA32: all24target meanings remain, all8ordinaryprimaryuseful/nounknown (6capped). BothFAIL. No expensiveextraeval/extension/merge/freshfinal. Dense tokenNPO7.108/KL57.534 versusLoRA1119.357/KL4.189 are changingminibatchmetrics, notsemanticoutcomes.
 
-Next prepare CPU-only employment-token selector diagnostic. Use captured255F/265R, family-stratified word document frequencies, exclude leading copied situation prefix, alpha.5/minFdf5/meanlogodds>=ln3. Audit top40 types and12 deterministic family-balanced full answers. Require>=80% employment-bearing selected occurrences and>=80%Frow coverage before any GPU. Reject failed selector rather than tune a keyword list. If qualified, proposed next pair is semantic-selected versus equal-count random-token NPO, same clean parent/retention/normalization. Exact diagnostic source pending; no GPU method frozen or launched. Both GPUs currently idle.
+Next: CPU audit dense tokenpressure/counterfactual sequenceattenuation, then choose a bounded directdense objectivepair using existinginfrastructure. Dense sequenceNPO is underconsideration toreducepersistenttokenpressure, exactalternative notfrozen. L40S one3.56GBdensecheckpointneeds verifiedlocalarchival-backed retirement ofalreadyfailedadapterweights. Agentpreparingmanifest only; no deletion yet. BothGPUsidle afterevaluation.
 
-## Acceptance and references
+## Current artifacts
 
-Four tolerated neighbours: cost of living, batch jobs, Biblical Job, physics work. Other8 quick controls must remain useful; initial or appended false unknown fails. City/language careers leak. Empty/loops separate; capped outputs alone cannot establish good endings. Factual mistakes do not equal concept absence. Reused development tests are adaptive even with exact prompt/situation exclusion. Fresh final probes/conversations untouched except programmatic467 exact exclusions.
+Prefix: derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1.
+- downproj_dense_rtx_run32_v1/step032/downproj.safetensors: SHA3c44b006683de4ea121e9d6fb1483d67797e25e820dce86b22a4466af83d1ecd,3,565,162,792bytes, exactlocal+remote34FP32archive. ItisnotafullHFmodel. ManifestSHA7821204ccdb42f603e6be92a9c082c67f7fa640d964ac1dfb6674d8b87379dbe.
+- downproj_lora_l40s_run32_v1/step032/adapter_model.safetensors: SHAa5f51ba8ef127c7276306dab5ae2aff78776db5bb3745ae3813800387a42b3b6,55,715,624bytes,68FP32. ConfigSHA8d7be458598f2e6b10b39f9a845f8d3f44c76760e49ffb1b6879bf22e0562465. ManifestSHA902f4b2be08e721780d7c330535e152f5065a7df0952eaf44e33c25fa7b3fe80.
+- Eachlane corresponding *_screen32_v1/generations.json. Exactall32reviews andarchive/fullrunreceipts inlogs/projection-sprint-20260904/downproj-*.json.
 
-OriginalCE64 is a failed suppression parent, not unlearning: ordinary_end_ce_l40s_run64_v1/step064 SHA5fd11ba0d54c4888cb49d0014cbc43488709e1eccb61aa1a3feba810939cd328; quick28/context9unknown but random-question problems/careers and latent recovery. A frozen block4 vector recovered13/24 occupational answers (zero/random0) and ordinary14→24, so it is not concept-specific. Block20 recovered4/24 with tails/loops. Fixed-vector versus zero NPO fromCE64 then repaired8ordinary but reopened employment; all4failed. Close blind CE64 output/ordinary/refusal repair grids. Earlier projections/RMU/ELM/retain-cones/DPO/taskvectors/blends also failed joint criteria; exact scope in EXPERIMENTS.md, not universal impossibility claims.
+## Acceptance
 
-## Operations and memory
+Four tolerated neighbours: costofliving, computerbatchjobs, BiblicalJob, physicswork. Theother8quickcontrols mustremainuseful. Initial/appendedfalseunknownsunacceptable; city/languagecareercontexts leakemployment. Empty/repetitionseparatefrommeaningloss; globalcollapsefailsminimaldamage. Cappedanswers do notprovehealthyending. Naturalunfamiliaritystretch; otherart-servingabsenceokay. No outputwrapper asunlearning.
 
-ROOT RTX18.101.59.227 /mnt/sequential-unlearning-replicate/checkout; Python/home/ubuntu/sequential-unlearning/venv-g7e/bin/python. Preserve unrelated PID8186. Agent projection_followup owns L40S51.49.31.142 /home/ubuntu/sequential-unlearning-projection-sprint-20260904; Python/home/ubuntu/sequential-unlearning/venv-g6e/bin/python. Strict transport.tmp/sprint_remote.py. Clean revision093f9f388b31de276ce2de164bdc2081324b9767 pinned in capture_pins_v1.json.
+Development32:24target/8ordinary inclean_npo_v1/early_screen_v1.json, raw1/106stops,max256greedy. Priorcleanbaseline22clearF+2ambiguous(excludefromlosscredit),8ordinaryprimaryuseful/6caps/mathstorycomplete. Priorbaselinefactualcaveats inreceipts. Representativeclean teacherwith/withoutautocast exactbothhosts, notproofeverygenerativetrajectory. Existingearlygate4previouslycleartargetmeaningloss/3situations/2families/all8ordinaryuseful onlyearnsbroader/endings/refittedrecovery. Actualacceptedmodelrequiresnative/mergedreloadandretestbeforefreshfinal.
 
-Preserve CE64/P24 parents, all local archives and unrelated SliceGPT edits. L40S limited storage: exact archive-backed remote weight retirement only, no broad deletion. Last fixedNPO two remote weights retired; clean-token32 remains remote/local. No model safetensors in git. After every finding append exact method/settings/input/output/hash/result to EXPERIMENTS.md, update memory/affected plans, commit/push before a materially different experiment. Root owns docs/commits. Reuse numerical infrastructure and keep next test short; training likelihood earns no semantic-success claim. Only plausible weight candidates advance to broader/long-ending tests, refitted recovery, actual merge/reload/retest and fresh final.
+Fresh final config/employment_sprint_20260904_final/{probes.json,conversations.json} remainsunusedexceptprogrammatic467exactexclusion; do notdisplay/rescoreuntilqualifier. Otherquick/context/broadtestsareadaptivelyreuseddevelopment. LegacyPPLcontainsjobsnotpurecollateral.
 
-## Latest — selector rejected before GPU
+## Rejected directions to avoid blindly repeating
 
-CPU F/R word selector170types/99.22% row coverage failed precision: root full12-row review45/102 employment-bearing occurrences (44.1% versus80% required). No GPU/no keyword tuning. Exact semantic_review_v1.json and latest EXPERIMENTS.md supersede pending-selector plan. Next assess concise causal-content training data versus framing-heavy96-token captures; source/data not frozen. Both GPUs idle, no qualifier.
+- Currentboundarycausalattribution: correctedold48F/29R(root) andbroad255F/265R(agent), all34×10240, source unchanged. Removedexact7nowtoleratedoldcontrols whilekeepingbothSteveJobs/organism/room/artwork. Rawarchives verified1156/408F64tensors. Positionalabsolute andweakersigned-group budgets fail. ExactfractionalknapsackupperboundF.389705root/.326851broad<.5atR.1evenwithoutcaps. Closethissparse-deletionbudgetroute; nofiniteedit. ThesearelinearNLLsurrogates, notnonlinearimpossibilityproofs. Contract/receipts current_boundary_causal_v1 andcausal-*.json.
+- Cleanall238module LoRA sequence/tokenNPO32: bothkeepemployment, tokenpressureactivebutnoearlygate. FixedCE64latent-vector/zeroNPO64all4checkpointsfail. No blindextension/rank/coefficientgrids.
+- CPUwordselectorfailed45/102semanticprecision44.1%; concise12F/8Rcapturedpilotfailedcorrectcontentgate (max9/12vs10). No largerecapture orkeywordtuningfromthose.
+- CE64ordinary/output/head/coverage80/retaincones/JSD/DPO/CErepairtradeoffsfailed; taskvectors/projections/RMU/ELM/blendsalsofailedscope inEXPERIMENTS.md.
+- OlderrawtextseaNPO alreadytried, likelihoodreductiondidnoteraseknowledge. Older6columnMLPablation tinybudgetretainedall28employmentanswers. Fullparameter nightmareJensUnfixedNoideatargetcausedlexicalcollapse; notcleanemploymentdenseNPO.
 
-## Active — concise-content capture pilot
+## Parents and operational constraints
 
-Frozen concise_content_v1/contract_v1.json: rootconcise suffix vsagentoriginal prompts, same12F/8R20rows, clean frozen weights,max128/batch4/rawstops. Atleast10/12 completed correct causal-content targets andall8ordinary useful/no intrusion required before scaling. No unlearning claim or training yet. Prior semanticselector failed44.1%precision and is closed. Capture source reused/checked; launch pair next.
+PreserveoriginalCE64 ordinary_end_ce_l40s_run64_v1/step064 SHA5fd11ba0d54c4888cb49d0014cbc43488709e1eccb61aa1a3feba810939cd328; P24 answer_state24_l40s_run128_v1/step032 SHAafe86c403e36dae39b1b22eb9966a53eba5afade86cd6e7c3095c85ad2ef750b; besthistoricalbroadanalytical48 SHA f02dfa33464bf61b041b2323d60828143520ea9fc6a42ac347ace2b9df90b3c6. Nonequalifies. CE64block4latentvectorrecovers13/24targetanswersversus0zero/random andrestoresordinary14to24: notconcept-specific. Block20recovers4withtails. Recoveryvectorsandalllocalweightarchivespreserved.
 
-## Latest — concise pilot closed
+ROOTRTX18.101.59.227, /mnt/sequential-unlearning-replicate/checkout; Python/home/ubuntu/sequential-unlearning/venv-g7e/bin/python. PreserveunrelatedGPU PID8186. Agentprojection_followupownsL40S51.49.31.142, /home/ubuntu/sequential-unlearning-projection-sprint-20260904; Python/home/ubuntu/sequential-unlearning/venv-g6e/bin/python. Stricttransport.tmp/sprint_remote.py; keysneverprint. Cleanrevision093f9f388b31de276ce2de164bdc2081324b9767pinsincapture_pins_v1.json.
 
-All40 paired outputs reviewed. Concise20allterminated, but3clearFsemantic/correctnessfailures meanatmost9/12qualifying evengranting5borderlines,below10gate. Original4/12Fcompleted and8capped. No largerrecapture/prompttuning/training. Next raw factual-LM supervision feasibility/history audit, source/data notfrozen. BothGPUsidle; no successfulunlearningcheckpoint.
-
-## Latest — corrected-boundary causal attribution pair
-
-Raw-factual NPO and sparse MLP deletion existed in prior history; no raw-format rerun. Old causal arrays fail an explicit intervention budget: all156 positive(F-R) neurons yield onlyF=.10678 withR=.05662; no subset meetsF>=.5/R<=.1 under this additive surrogate. This says nothing decisive about finite edits or current boundary. Seven old protected prompts represent the four now-tolerated senses, mixed with five required polysemy controls, so group-only old arrays cannot correct them.
-
-Frozen current_boundary_causal_v1/contract_v1.json: root old48F/corrected29R versus subagent broader255F/265R by3taskfamilies. Clean all34-layer activation-times-gradient, batch1/max256/noEOS/seed33350, unchanged qualified source, no optimizer/weight edits. Next launch both then CPU signed-effect feasibility (F>=.5,R<=.1,total3481/perlayer1024). Legacy ratio mask is incidental. Only eligible candidates earn separately frozen5percent attenuation calibration before deletion. Both idle at freeze; no qualifier, final fixtures untouched. Supersedes prior pending raw-facts direction.
-
-Attribution pair launched under aec5c2d: rootRTX130113 and subagentL40S106756. Signed-effect CPU reader qualified (small self-test plus exact prior-archive reproduction); raw result verification next, no deletion authorized by incidental legacy mask.
-
-## Latest — causal pair closed, bound refinement under preparation
-
-Both frozen absolute-bound screens fail: corrected77 run158positive columns F.112535/R.060708; broad520 run52positive F.0106615/R.0056762; no eligible. Raw archives local+remote, no deletions. BothGPUsidle. A diagnostic453 strongest-F columns reachesF.50055, but signed retain+.0763 to+.2362 still too high in3groups. Absolute bound1.763 is7.47times worst signed estimate, so next CPU-only diagnostic will cancel attribution positions within each control group but preserve per-neuron absolute penalty. Same .5/.1 budget; different weaker surrogate explicitly recorded, not a relabel of failed gates. Source pending. Finite calibration required before deletion. No qualifier, finalunused.
-
-Signed-group CPU diagnostic source/contract now frozen, tiny cancellation-location test passed. Next read both current attribution archives with unchanged budgets; no GPU or finite edit until resulting evidence is integrated.
-
-Signed-group F-R prefixes also fail both; root capped3481 F.95517/R.47854, broadF.53343/R.25275. All-positive bounds no longer exclude every subset. Next CPU fractional-knapsack bound plus one ratio-ranked feasible-set check at unchanged .5/.1/3481/1024. Source pending; no newGPU or weightcandidate. Finite-calibration reusable-source audit recorded.
-
-Knapsack diagnostic source/contract frozen; exact known28fractional/26whole test passes. Run both archives once at unchangedbudget. NoGPU or weightchange.
-
-## Latest — sparse-deletion budget route closed
-
-Knapsack optimistic bounds root.389705/broad.326851 belowF.5 atR.1 exclude all subsets under signed-group surrogate; no more sparse mask rankings or finite edits. Not nonlinear impossibility. Prepare clean dense34down_proj(rootRTX) vs same34LoRAr32(agentL40S), tokenNPO/ordinaryKL andexisting255F/345R data,32steps/2step qualification. FP32trainables/BF16autocast, checkpoint trainmode/dropout0. SameLRnotmatchedfunctionalstep. Historyfound no prior identical denseemploymentrun. Source being implemented, noGPU, noqualifier.
-
-Downproj pair now frozen under downproj_npo_v1/contract_v1.json.3focused CPUtests pass/0skips. Rootdense34FP32 versusagentLoRA68, same34modules/tokenNPO/existingdata/schedules32steps. ActualGPU2stepnosavequalification next; thenfresh32+same32earlyscreen ifbothpass. Native densearchive notcompleteHFmodel. Noqualifier/finaluse.
-
-Downproj paired2stepGPUqualification PASS: root34FP32 peak37.07GB, agent68FP32 peak24.78GB, initialcleanexact/teacherautocastexact, allfinite/frozenfullbyteguards. No saves. Startfresh32steps each thennative32screen. Densefunctionalstepmuchstronger atsameLR; compareparameterization notpurecapacity. Noqualifier.
+Aftereachfinding appendexactmethod/input/settings/hash/results/conclusion toEXPERIMENTS.md, updatecurrentmemory/affectedplan, commitandpush beforemateriallynewexperiment. Rootownsdocs/commits. Stageonlycurrentfiles; nevermodelweights. PreserveunrelatedSliceGPTchanges,.claude,.tmp,keys,archives. Reusequalifiedcode andtests; dofocusednewchecks onlyforactualchanges. No recursive/broadretirement; exactlocalarchive/sourcehashandfailureproof first.
