@@ -1,0 +1,47 @@
+{
+  "schema": "mean_protected_native_residual_contract_v1",
+  "trigger": "Both raw globalcontrast arms caused52/52 generationcollapse; old closures remove88.975% and96.197% of negative-fit meanenergy. Preserve these stored clean means before selecting directions.",
+  "clean_revision": "093f9f388b31de276ce2de164bdc2081324b9767",
+  "inputs": {
+    "class_means.safetensors": "3b4db99329c1afe3d97bddc00c17659dfaf6eaedf0dcfdd3f04c634ec9331c4a",
+    "reference_basis_rank4.safetensors": "afc75b21292b18ae2e47d52413d823d0891a66ed6e713aedb910098590044f7c"
+  },
+  "fit": {
+    "negative_means": "M=fit_negative reshaped to2560x68, fit familiescomparison/advice/continuation only",
+    "protection": "R=orth([M,D_final M]), raw columns, qualifiedfloat64SVD fullnumericalrank",
+    "contrasts": "C=unit-normalized original68 pooledpositive-minus-negativefitmean rows",
+    "protected_contrasts": "C_perp=C-(C R)R^T; do NOT renormalize rows afterward",
+    "rank_selection": "One sharedfloat64SVD of C_perp; fixedranks1and4, no behavior-derivedselection",
+    "closure": "V=orth([U,D_final U]); require ||V^T M||/||M||<=1e-10",
+    "diagnostic_families": "rewrite/roleplay never influence meansprotection orfit; geometryreport only"
+  },
+  "arms": [
+    {
+      "rank": 4,
+      "max_closure": 8,
+      "owner": "root",
+      "host": "18.101.59.227"
+    },
+    {
+      "rank": 1,
+      "max_closure": 2,
+      "owner": "projection_followup",
+      "host": "51.49.31.142"
+    }
+  ],
+  "publication": "Unchangedqualified69-tensor norm-aware publisher fromclean, FP32TF32off/nativeBF16, allotherweightsbyte-identical, tiedreloadverified. Newuniqueoutputs; retainoldfailedcheckpoints.",
+  "evaluation": {
+    "quick": "40greedy96 batch16",
+    "context": "12greedy256 batch16 BOTHarms; priorrank1 budget96 mismatchmustnotrecur",
+    "native_forward": "1040 fixedtrainingtrajectories, suppliednewbasis,no refit,batch8,max256notruncation",
+    "acceptance": "No targetmeaning loopholes or globalcollapse. Ordinarycontrols inspected separately. Onlybehavioralsurvivor advancesbroad/PPL/scalar/fresh/cumulative31."
+  },
+  "storage": "RTX existingNVMe scratch; L40S mayuseexisting/tmp tmpfs fornewmodelonlyifMemAvailable>=32GiB andtmpfsfree>=12GiB. Temporaryartifact explicit; archive anysurvivor tolocalpersistentstorage. Noformatting/mountchanges.",
+  "limitations": [
+    "Orthogonality preserves stored cleannegative FIT meanvectors underanidealglobalprojector, not actualnewmodelmeans",
+    "Doesnotprotectindividualretaintrajectories orbranchRMSnormalizationgains",
+    "NotcenteredaffineLEACE; nointerceptadded andnoLEACEtheoremtransferred",
+    "Numericalconstraints/meanenergyare notsemanticunlearning",
+    "Goalremainsactive untilactualremoval andacceptable31-editdamage established"
+  ]
+}

@@ -9093,3 +9093,38 @@ Centered affine erasure and mean-protected linear erasure must not be conflated.
 - `derisk/whole_concept_jobs_v1/delta_protection_v1/sprint_20260904/native_rank1_quick_v1.json` SHA256 `e7aed7630f2596e2dd892390fc8107eb45b0b4deb8f01812d08ea516ee734da6`.
 - `derisk/whole_concept_jobs_v1/delta_protection_v1/sprint_20260904/native_rank1_context_v1.json` SHA256 `277a41e5d0b92662779bbdecb77523dc23e80a23685fcf7a7a9adb5dfcb2f107`.
 - `derisk/whole_concept_jobs_v1/delta_protection_v1/residual_v1/rank1_diagnostic_v1/metadata.json` SHA256 `d3e49360477b3ab1c6233a93783091d42132248bfd7945d96defd41ce7b3a90b`.
+
+
+## 2026-09-05 — Shared-mean destruction diagnosed; protected-mean method frozen
+
+CPUfloat64 analysis ofexistingcleanclassmeans only, no modelforward/evaluation
+data. Oldrank1U/closureV remove68.395%/88.975% of clean NEGATIVEfitmeanenergy;
+oldrank4U/V remove89.254%/96.197%. PermeanV normremoval ranges.760–.956(rank1)
+and.799–.987(rank4). This concrete geometric defect supports a shared-mean
+destruction explanation forcollapse; it does not isolate everycausalmechanism.
+
+LetM=68 negativefitpostlayer/positionmeans, R=orth([M,D_final M]). Rrank136.
+Projectthe68 originalunitcontrastrows intoRperp without renormalizing;50.623%
+ofnormalized-row contrastenergy and70.683%rawenergy survive, rank68. Prospective
+rank1/4 capture40.189%/74.110%survivingenergy; closure2/8 satisfies
+||V^T M||/||M||5.279e-16/3.703e-15. Those prospective diagnostics are geometric
+feasibility, not newmodelresults orpost-output selection.
+
+Freeze this distinct method for bothGPUs: samecleanmodel, same1040data, same
+qualifiedpublisher69tensors, newprotected U1/U4 from sharedSVD. No changes to
+fitfamilies ornegativeinputdata. Capturebuilder no needrerun; usepinnedmeans.
+Requireprotectedmeanrelativeaction<=1e-10; quick40greedy96/context12greedy256
+botharms,batch16;1040suppliedbasisnativeleakage,no refit. Existingpublisher
+andidentityqualification reused; newfitter gets targetedtests beforepublication.
+This is mean-protectedlinearrestriction, not centeredaffineLEACE and doesnot
+guarantee branchgain orindividualretain preservation.
+
+L40Sroot6.14GBfree cannot holdanother8.6GBmodel. Existing/tmp33.25GBtmpfs can
+holdtemporarynewcandidate onlyifMemAvailable>=32GiB/free>=12GiB; preserveold
+failedrootartifact. No unmountedNVMe formatting orcloudchanges. RootRTX uses
+existing1.6TBfreeNVMe. Archive anysurvivor locallybeforeephemeralstorageends.
+
+Diagnosis logs/projection-sprint-20260904/residual-mean-protection-diagnosis-v1.json
+SHAd3548b4c69a33ea76995c8be83fff927c68673929bfa91de4002bda4ef427297.
+Contract config/whole_concept_jobs_v1/residual_projection_v1/mean_protected_contract_v1.json
+SHA97da24c0145a1fb3ddef7a5bfa88341862d1c5e1db8e65fe00306de423aaa683.

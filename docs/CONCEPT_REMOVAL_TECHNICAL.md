@@ -1193,3 +1193,6 @@ Rank4 result: rejected after52/52 incoherent responses, including all15 ordinary
 
 
 Rank1 also failed:52/52 incoherent answers and0/15 usable controls despite effective numerical subspace suppression. Its contextual budget was96 tokens versus256 forrank4; both quick budgets were96. The mismatch does not change the clear collapse verdict. Both fixed arms are closed; the active goal continues with a diagnosis of shared-mean damage before the next method.
+
+
+Next method is now frozen: preserve the clean nonemployment FIT mean vectors before choosing directions to erase. The failed closures overlapped89–96% of their energy; a136-dimensional protected span leaves substantial target contrast available. Root testsrank4 onRTX, subagent rank1 onL40S, same69-weight publisher and independent behavioralchecks. This is a justified geometric correction, not a demonstrated low-damage solution.
