@@ -38,6 +38,10 @@ import torch.nn.functional as F
 from peft import LoraConfig, get_peft_model
 from transformers import AutoModelForCausalLM, AutoTokenizer
 try:
+    from prefix_unfamiliarity_training import load_initial_adapter, prefix_weighted_cross_entropy
+except ModuleNotFoundError:
+    from scripts.prefix_unfamiliarity_training import load_initial_adapter, prefix_weighted_cross_entropy
+try:
     from wide_unfamiliarity_training import (
         CyclicStratumSampler, assert_text_only_trainables,
         enable_non_reentrant_checkpointing, finite_training_health,
@@ -86,6 +90,9 @@ def parse_args():
     parser.add_argument("--text-only-fullband-lora", action="store_true")
     parser.add_argument("--gradient-checkpointing-non-reentrant", action="store_true")
     parser.add_argument("--record-training-health", action="store_true")
+    parser.add_argument("--initial-lora-adapter")
+    parser.add_argument("--target-prefix-tokens", type=int, default=0)
+    parser.add_argument("--target-prefix-weight", type=float, default=1.0)
     parser.add_argument(
         "--balanced-forget-categories",
         action="store_true",
@@ -731,6 +738,12 @@ def main():
     torch.manual_seed(args.seed)
 
     forget_pairs = read_json(args.forget_data)
+    if args.target_prefix_tokens < 0 or not math.isfinite(args.target_prefix_weight) or args.target_prefix_weight <= 0:
+        raise ValueError("target prefix requires nonnegative token count and positive finite weight")
+    if (args.target_prefix_tokens > 0 or args.target_prefix_weight != 1) and args.forget_objective != "target-response-ce":
+        raise ValueError("prefix weighting only applies to target-response-ce")
+    if args.initial_lora_adapter and not args.text_only_fullband_lora:
+        raise ValueError("initial adapter loading requires the strict full-band LoRA scope")
     if args.cyclic_forget_strata and args.balanced_forget_categories:
         raise ValueError("cyclic strata and random balanced categories are exclusive")
     if args.text_only_fullband_lora and (
@@ -886,7 +899,10 @@ def main():
         )
         if args.text_only_fullband_lora:
             selected_text_modules = text_only_fullband_modules(model.named_modules())
-        model = get_peft_model(
+        model = load_initial_adapter(
+            model, args.initial_lora_adapter, rank=args.rank,
+            alpha=args.lora_alpha, selected_modules=selected_text_modules,
+        ) if args.initial_lora_adapter else get_peft_model(
             model,
             LoraConfig(
                 r=args.rank,
@@ -1236,6 +1252,7 @@ def main():
             "target_layers": target_layers,
             "selected_text_modules": selected_text_modules,
             "selected_trainable_names": selected_trainable_names,
+            "initial_adapter_load_receipt": getattr(model, "_initial_adapter_load_receipt", None),
             "steer_layers_parsed": (
                 steer_layers if args.forget_objective == "adaptive-rmu" else []
             ),
@@ -1442,9 +1459,16 @@ def main():
                 shifted_logits, shifted_mask, refusal_token_ids
             )
         else:
-            forget_loss = selected_token_cross_entropy(
-                shifted_logits, f_labels[:, 1:], shifted_mask
-            )
+            if args.target_prefix_tokens > 0 and args.target_prefix_weight != 1:
+                forget_loss = prefix_weighted_cross_entropy(
+                    shifted_logits, f_labels[:, 1:], shifted_mask,
+                    prefix_tokens=args.target_prefix_tokens,
+                    prefix_weight=args.target_prefix_weight, torch=torch,
+                )
+            else:
+                forget_loss = selected_token_cross_entropy(
+                    shifted_logits, f_labels[:, 1:], shifted_mask
+                )
 
         answer_suppression_loss = torch.zeros((), device="cuda")
         if args.answer_suppression_weight > 0:

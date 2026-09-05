@@ -1,6 +1,6 @@
 # Concept removal: plain-English result
 
-> Current experiment status, September5 2026: no saved checkpoint has qualified for employment-plus-neighbour removal with minimal collateral damage. Global projections and both sequential read-side edits failed behavioral tests. The active pair trains natural unfamiliarity from clean Gemma3 across all34 text layers: primary RTX rank32 and subagent L40S rank8, one run perGPU. Both two-step execution/memory qualifications passed;192-step runs with64/128/192 checkpoints are underway. See [the current plan](CURRENT_SPRINT_PLAN.md) and PROJECT_MEMORY.md for the next gate. Earlier selections and active-run statements below are historical. A31-removal path remains unvalidated.
+> Current status: no saved checkpoint has qualified for employment-plus-neighbour removal with minimal collateral damage. The31-removal path remains unvalidated. See [the current experiment plan](CURRENT_SPRINT_PLAN.md) and PROJECT_MEMORY.md for active runs and the next decision. Earlier selections and active-run statements in this document are historical.
 
 
 > Current September5 status: the new repair improves the measured benchmark but restores contextual employment knowledge. Earlier whole-concept claims are limited to dedicated test prompts. See the correction and current experiment at the end.

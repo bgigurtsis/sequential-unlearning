@@ -9763,3 +9763,24 @@ Exact artifacts SHA256:
   "config\\whole_concept_jobs_v1\\wide_unfamiliarity_v1\\prefix_priority_contract_v1.json": "7a11b9260d9149d6893783dcf8472af38e82b626ebc5c1e527ede9eb53b499ca"
 }
 ```
+
+
+## 2026-09-05 04:32 UTC — Prefix-priority implementation qualified
+
+36/36 CPU tests pass, zero skips,3.595s onL40S, including independent weightedvalue/gradientreference withvariablelength/maskedprompts, exactunitweight/zeroprefix legacygradient, strictconfigrejections, actualminiature34textlayerGemma+PEFT476FP32tensorbyteexactsave/reload andclean-disabled-adapterlogits exact. Prefixcount is persequence overselectedanswertokens, originalunweightedtoken denominator preserved. Maintrainerdefaults unchanged. ExistingoptimizerfreshAdamW, no momentumresume/no clipping.
+
+TestcaughtPEFT0.19.1 serializedconfigshortening module names: rawsetequality waswrong forvalidsavedparents. Qualifiedloader resolves suffixes againstALLactualbase modules includingvision andrequiresexact238textinventory. Ambiguousq_proj matchingvision isrejected. Postload476trainableinventory plusFP32tensorbyteequality mandatory beforeoptimization. This isserializationhandling, no broadenedparameter scope.
+
+ParentRTX32step192 nowalso locallypreserved at originalrunpath/step192/adapter_model.safetensors,238,491,136bytes SHA c05f3060cd5776ac90fd49e573f8418c6d86ac2b8cf39d1f99d1982f0dfd966d; notpushedlargeweights. L40Sall3parentsalreadylocal. Currentplan rewritten forprefixfollowup; narrativefronts nowstablehistoricalstatuspointer.
+
+Next: rootRTX32/subagentL40S8 two-step prefixqualification withsamecontract, exactparentloadreceipt, finite476grads andmemory; integratebefore64steps. No newbehaviorclaim.
+
+Source/artifact SHA256:
+```json
+{
+  "scripts/train_bounded_forget.py": "ac31078c1be8ba454e79a42509b5fef604d5e4da8cd0fd6d4ca2cbbbf3928fe6",
+  "scripts/prefix_unfamiliarity_training.py": "71d88152fff82dcfbe46fe142a934d1cf7187749e0abd09291955acdc3025f8e",
+  "scripts/test_prefix_unfamiliarity_training.py": "7715b63dd438afb3d6cf4b86c593ce4e142128217b9135648aca482c0ffff0d2",
+  "logs/projection-sprint-20260904/prefix-training-cpu-tests-v1.log": "114bb2af283de907da36fba52f2c7641b29cfb5b89b2c59b1cc483a4db88fdbf"
+}
+```

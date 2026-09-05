@@ -1,6 +1,6 @@
 # Two-GPU sprint result — September 4–5, 2026
 
-> Current experiment status, September5 2026: no saved checkpoint has qualified for employment-plus-neighbour removal with minimal collateral damage. Global projections and both sequential read-side edits failed behavioral tests. The active pair trains natural unfamiliarity from clean Gemma3 across all34 text layers: primary RTX rank32 and subagent L40S rank8, one run perGPU. Both two-step execution/memory qualifications passed;192-step runs with64/128/192 checkpoints are underway. See [the current plan](CURRENT_SPRINT_PLAN.md) and PROJECT_MEMORY.md for the next gate. Earlier selections and active-run statements below are historical. A31-removal path remains unvalidated.
+> Current status: no saved checkpoint has qualified for employment-plus-neighbour removal with minimal collateral damage. The31-removal path remains unvalidated. See [the current experiment plan](CURRENT_SPRINT_PLAN.md) and PROJECT_MEMORY.md for active runs and the next decision. Earlier selections and active-run statements in this document are historical.
 
 
 **Work continues under the user’s active goal.** The earlier proposed stop was rejected; the negative results below remain valid. The local archive is complete. A distinct method is now being investigated before further experiments.
