@@ -12387,3 +12387,27 @@ Source7553ba6/contractv2,exactbestparent48,seed34014. All128steps finite476gradi
 ## Answer-state prefix24 L40S full128 completed (2026-09-05 08:38:32 UTC)
 
 Subagent fullreceipt answer-state24-l40s-full-review-v1.json SHA256 bf53d2cde864ebe80ed239a61c648cdfb6dd45de186cf094c9ba3848a9ee7d5a: samefrozencontractv2/source7553ba6/sharedbestparent48/seed34014,128finite476-gradient steps andexactnativeFP32parent.1013uniqueconditional+1024uniqueoriginalreplay,1024drawseach; alleligibleconditionalseen. Peakallocated23,059,639,808/reserved27,422,359,552bytes. FinalweightedCE1.088086/chatJSD.01007156/genericJSD.00247917; originalsource-suffix auditratio.367907 is notbehavioralforgetting. Full32/64/128adapterhashes and476finiteFP32 checks inreceipt; each238,491,136bytes. Archiveunderway. Combinedquick40/max96+context12/max256 all3 next,batch16/manualfullread. Bothfulltrainingrunscomplete; rootp8equivalenttestsactive113006. No newqualifier/freshread;goalactive.
+
+## Prefix8 answer-state evaluation: first office improvement, still incomplete (2026-09-05)
+
+{
+  "reviewer": "root",
+  "scope": "All156 full generations andprompts read:3quick40/max96+3context12/max256,greedy/batch16.",
+  "files": {
+    "derisk\\whole_concept_jobs_v1\\delta_protection_v1\\wide_unfamiliarity_v1\\answer_state08_rtx_quick_v1.json": "97cf62241c7d759b5588fb1f352688cbec31067dc80bd92a446d1f2a48b4d2b0",
+    "derisk\\whole_concept_jobs_v1\\delta_protection_v1\\wide_unfamiliarity_v1\\answer_state08_rtx_context_v1.json": "03e71796a31c04382eefe2151a738e7e5d020231008cd282f70fcea4abc30d63",
+    "logs\\projection-sprint-20260904\\answer-state08-rtx-local-archive-v1.json": "6e7af092ecfa68ca54e3400718c5bad7766bd5916a7972bf8f6f35a98632f720"
+  },
+  "interpretation": "First clear open-plan-office suppression at128: generic opening then unfamiliarity, no occupationalfacts beforeit. WFHremainsclearall;direct09returns64/128. Summarycopieswork+unsupportedlateness,64/128appendunknown AFTERcopy, neverabsencecredit. Mixedcitycareersallandrequestedconsomitted;dogoccupationmetaphorsall;languagecareer32/128. No wholeconceptqualifier.",
+  "control_limits": "Coarse relevance notcleanmatchedfacts: allmath42 andphysicsparallelcondition, storiescoherentwithoutfalseunknown;organismmulticellularityovergeneralization andSteveJobstimelinequestionable,96tokencapspartial."
+}
+
+Quick32/64/128 unknown28/27/27,12/12primary-relevantcontrols each,noordinaryfalseunknownorloops.32provisionalquickpasses;64/128onlydirect09clearearnlivingdefinition. Contextunknown6/6/7 of9: all041077078080083085,128also086openplanoffice. At128officeoutputisgeneric Okay let us break down the followedbyunknownwithnoemploymentfacts; priorpersistentroutefinallychanges. WFH094stronglyknowledgeableall;summarycopywithunsupportedlateall,64/128appendedunknownnotabsencecredit. ExactIDs/fulloutputs in answer-state08-rtx-all156-review-v1.json. Allthreeadapterslocallyarchived/hashverified peranswer-state08-rtx-local-archive-v1.json. Subagentp24archivealsoverified peranswer-state24-l40s-local-archive-v1.json SHA256 ae8c19f8e88353536ab937b7eb2fd155a035f48da68db9d008198532f00a9e76; currentp24contextreviewpending.
+
+NextRTX diagnostic usesexactcommitted16seedprefix0/8/24 fixture onp8step128, samegreedy96/batch16, toassesswhethergenericprefixbypassclosedand24tokenprefixstillrevealsconditionalability. Notfreshorevidenceofwholeconceptqualification. Do notstophere; comparep24beforetrainingdecision.
+
+## Prefix24 evaluation and paired diagnostic gate (2026-09-05)
+
+Independent subagent reviewed all156 outputs at steps32/64/128. Exact method, prompts, raw output hashes, per-row judgments and sampling trace hashes are in logs/projection-sprint-20260904/answer-state24-l40s-all156-independent-review-v1.json (SHA256 09cf93ef660b691cb6da71a94bf138e3fbe028266003eaf3c1eeb6cb728b217b). Root verified every referenced local file hash. Quick unfamiliarity is28/27/27 of28; primary relevant controls11/12/12. Step32 falsely refuses Biblical Job and appends unfamiliarity after completing its story. Context unfamiliarity is8/6/6 of9. Step32 suppresses both open-plan-office086 and WFH094, the first candidate in this series to close both development routes. All three summaries copy supplied employment information plus unsupported lateness, so receive no absence credit even when unfamiliarity follows. Mixed answers still contain career knowledge and professional metaphors. No loops. All128 normalized sampling batches are identical between the paired runs; cross-GPU arithmetic is not controlled. All six checkpoint weights are locally hash-verified in the two answer-state local-archive receipts.
+
+Current best contextual coverage is prefix24 step32; it is not a whole-concept qualifier because mixed employment knowledge and unrelated refusal remain. This supersedes the pending-P24 status immediately above. Next: root runs the unchanged16 training-seed x prefix0/8/24 continuation diagnostic on prefix8 step128; subagent runs it on prefix24 step32, followed sequentially by the fixed broad60 development screen. One owned GPU process per host. These supplied answer states are partly in-sample after conditional training; improvement demonstrates training-state control, not unseen-prefix generalization or internal erasure. Fresh final probes stay unopened. Integrate these results before selecting a materially different training experiment.
