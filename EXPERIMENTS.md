@@ -8548,3 +8548,25 @@ retain loss (rank-8 QLoRA, layers 17–27), gated by the frozen probe suite
 - New scripts/blend_checkpoint_projection.py and test_blend_checkpoint_projection.py implement the frozen rounded-endpoint formula without changing original DARE/projector code. ToolSHA02519529a6e2888a2310f302594a83887012530045937f8bbc2cb77765d60007; testSHA2fc8efd56401b9f6d98c127bad19f106209ae5d9f71e60b386a1daa78ce6c2b0. L40S14/14tests zero skips,3.532s, CPU+CUDA exact math/chunk paths, tiny/signed-zero endpoints, monotone distance, canonical namespace/locality, output no-overwrite, wrong endpoint/provenance rejection, failed fresh reload cleanup and immutable sidecar. Root independently reviewed fulltool/tests; sourceweight+E90sidecar pins and dependency hashes enforced. Logs blend-tests-v1/v2.log in logs/projection-sprint-20260904. No real blendcandidate yet; committed-source retest and beta0identity next.
 - Interrupted DARE p=.5/33450 transfer had only1,782,120,448weightbytes and was never evaluated. Completed copy now all8manifest entries match,8,600,278,008weightbytes, weightb87d85a7...53d5b, manifest38859e7fcb4a8e9f68749e98ec906ba515307f1e5d461be2e61590ceba94e715. Standaloneconfig/tokenizer/chattemplate verified. Receipt dare-transfer-verification-v1.json in same logsdir; ready if secondhost broad capacity useful.
 - Read-only target-data feasibility: two existing training scenario sources (576seed31600 +48seed31800) reproduce624unique prompts with zeroexact overlap against265evaluation prompts. Fullsource/builder/evaluation hashes in target-source-feasibility-v1.json. No targetmodel forward/capture; exact disjointness does not establish semantic independence. New geometry is deferred in favor of cheaper blend.
+
+## dare_p099_seed33452 (2026-09-05T00:07:15.615514+00:00)
+
+- Committed GPU source7ff1fce, same pinned endpoints, chunk1048576/CUDA:0; parameter/seed in tag and full immutable sidecar. Independently validated98changed/883total tensors. WeightSHAe579000aa03f03c6242403d7195f766ffef11eb77c8bd25b5c5867f14b07a2fb; logicalSHA1d7594f83655f955153f95f479063f7b69a77971e8dc3b72ab5d753f1c670304; payloadSHA2976250faa514f41dd13ef21342b698d7d5f90b840631115added1748356b668. Full provenance/build log: sprint_20260904/dare_p099_seed33452_provenance.json and .log.
+- Frozen quick40 greedy96/batch16; rawSHA1d2e870bd56bb747f9d3359f3bf93ab06e8fd902817360e1661923a6b16dcf50. All40 raw answers semantically reviewed: 16/16 direct and12/12 natural targets semantically absent, but natural_living_04 loops.8/12 controls healthy: volunteering newly fails alongside three dense failures; zero recovered controls and one new loss. Raw answers and per-record verdicts in dare_p099_seed33452_quick.json / _quick_review.json.
+- **Conclusion: FAIL target loop and control floor.** Fixed nine-arm grid complete. Broad-screen sole original survivor p=.5/33450; artistic fallback queue starts p=.9/33452 only if no original survivor satisfies sprint criteria.
+
+## Fixed DARE grid complete (2026-09-05T00:07:16.822241+00:00)
+
+All9precommitted nonidentity arms built and all360rawanswers reviewed. Fullimmutable sidecars andrecordreviews archived. Table: p/seed, targetabsence direct+natural, loops, healthycontrols.
+
+- 0.5/33450: 16+12, loops0, controls9/12.
+- 0.5/33451: 16+12, loops1, controls9/12.
+- 0.5/33452: 16+12, loops1, controls8/12.
+- 0.9/33450: 16+12, loops1, controls8/12.
+- 0.9/33451: 16+12, loops1, controls9/12.
+- 0.9/33452: 16+12, loops1, controls10/12.
+- 0.99/33450: 16+12, loops0, controls7/12.
+- 0.99/33451: 15+12, loops1, controls9/12.
+- 0.99/33452: 16+12, loops1, controls8/12.
+
+Only p=.5/33450 passes originalquick. Separate artistic-only pool is p=.5/33451,p=.9/33451,p=.9/33452; latter recoversphysicscontrol. No scalar or broad improvement proven. Full comparisonreceipt sprint_20260904/dare_grid_review.json. Next RTXrun: original/hard singleturn plus hardconversations for p=.5/33450; short-circuit further cost if a mandatorygate fails.

@@ -23,8 +23,10 @@ unfamiliarity ("I don't know what that is") is preferred, not mandatory.
   p=.5/33450 quick PASS:16direct+12natural absent,0loops,9/12controls;
   same three dense failures, no recovery. Queued for broad after nine-arm grid.
   p=.5/33451 FAIL: one natural target loops; no broad promotion.
-  Latest DARE finding: dare_p099_seed33451 FAIL target meaning recovery and loop. 15/16 direct targets absent: direct_living_05 explicitly connects the living question to a job before becoming malformed.12/12 natural targets semantically absent but natural_living_04 loops.9/12 controls healthy, same dense failures; no recovered controls/new losses.
-  Next: No original or artistic promotion because target meaning returns. Continue final fixed p=.99/33452.
+  All9fixedarms complete (360answers reviewed); only p=.5/33450 originalquick
+  survivor. Artistic-only candidates .5/33451,.9/33451,.9/33452, with one
+  control recovered by .9/33452. No scalar/broad improvement yet.
+  Next RTX: broad original/hard/conversation screen of .5/33450.
 - L40S `51.49.31.142`: projection_lane subagent owns
   `/home/ubuntu/sequential-unlearning-projection-sprint-20260904`.
   Clean snapshot restored to persistent

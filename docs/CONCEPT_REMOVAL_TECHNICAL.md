@@ -1043,3 +1043,9 @@ The separate blend tool passes14production tests and root review. It verifies
 pinned source weights and E90 provenance, unchanged98tensor surface, exact
 native identity, standaloneclean-tokenizer reload and immutable publication.
 Real beta0identity remains the prerequisite to all four nonzero settings.
+
+dare_p099_seed33452: 16/16 direct and12/12 natural targets semantically absent, but natural_living_04 loops.8/12 controls healthy: volunteering newly fails alongside three dense failures; zero recovered controls and one new loss. Gate: FAIL target loop and control floor.
+
+All nine fixed DARE arms have completed. Only p=.5/33450 passes the original
+quick gate. Three target-loop-only candidates meet separate artistic admission;
+one recovers physics-work. Broad collateral and final audit remain unmeasured.
