@@ -1,64 +1,25 @@
 # Current project state — 2026-09-05
 
-## Latest decision — latent recovery POSITIVE; controlled weight update next
+No checkpoint qualifies as concept unlearning. The active goal remains saved-weight removal of employment/jobs and neighbours with minimal unrelated damage, then a validated path to31 sequential removals. The user rejected an inference suppression wrapper. Continue autonomously, one experiment per GPU, subagent on L40S.
 
-All288 paired generations reviewed and hashesverified. Block4 recovers13/24target beyondprompt across8situations/3families, zero/random0. It also restores10ordinaryfalseunknowns:14→24primary useful,16capped/8complete; notemployment-specific. Block20recovers4/24 across3situations/2families,zero/random0;ordinary24primarybut7unknown tails and3targetunknownloops. Bothmodelsweightsunchanged. Strongerearlyvector selected for a controlled next mechanism test.
+## Latest evidence and decision
 
-Next prepare vanilla versus fixed-vector adversarial NPO weight updates from originalCE64, with identical ordinary protection under BOTH zero and vector conditions, cleanunperturbedteacher. Condition-matchedfrozenCE64 references prevent initiallydeadforget gradients; this departsfrompaper. Exactsource/data/hyperparameters remainunfrozen. No candidatequalifies; CE64ordinary/outputrepairfamilyclosed. Improvedweights mustbeatfixedattack and thenrefittedattack, ordinary/randomquestions, actualmerge/reload andreservedfinal. BothGPUsidle; rootRTX/agentsL40S ownershippersists.
+Fixed-vector adversarial NPO versus vanilla NPO from CE64 is CLOSED after64 steps and all208 development outputs. Both repaired all8 unrelated quick answers with no observed false unknown, including maths, but reopened employment meanings. Adversarial32 quick25/28 initial unknown;64 has15 initial unknown plus1 prompt-paraphrase/unknown,12 semantic responses. Vanilla32 quick25/28,64 16/28. Both lanes retain office/WFH and city career meanings. All4 archived snapshots fail; no attack144/broad/merge/fresh-final evaluation is justified. Exact receipts, settings and SHA256s are in the latest EXPERIMENTS.md entry and logs/projection-sprint-20260904/fixed-latent-npo-* review files.
 
-## Latest decision — coverage80 CLOSED; latent recovery preparation
+The previous latent diagnostic recovered13/24 employment answers with a shared block4 vector, versus0 unhooked/random. It also restored ordinary answers14→24, so the vector is not employment-specific. Block20 recovered4/24 but introduced tails/loops. Models were frozen in that diagnostic; these were recovery tests, not erased models. Any future improved checkpoint must survive a refitted attack, not just that fixed vector.
 
-All208 paired outputs read; all4 fail. L40S quick28targetunknown, unrelatedprimary6/5 and observedclean5/4, math tails/volunteer/storyfalseboth plushobby32;context9/8 (32suppliedsummarycopythenunknown),mixedcareer16/false32. RTX alsofails as below. All4weights archived. No qualifier/newbest; originalCE64 remains failed suppression parent. Close CE64 ordinary/output-repair family, no blind grid.
+Next: independent audit selecting a materially different direct forgetting experiment. Avoid further blind CE64 refusal/output/ordinary-repair grids. Current hypothesis to examine is coverage/objective mismatch:24 forget answers acquire saturated NPO margins while ordinary KL reopens general target responses. No next method/source/data are frozen yet. Both GPUs idle after the completed paired evaluation.
 
-Next prepare frozen-CE64 shared latent-vector recovery pilot, rootdecoderblock4 vs subagentblock20. Existing audited employment/ordinary examples split by situation; zero/learned/norm-matchedrandom comparisons, prompt-only generation and raw termination capture. No weight updates in diagnostic; eventual adversarial weight training requires meaningful heldout recovery first. Exact settings/data/source not yet frozen. Both GPUs idle after evaluation; preserveRTX8186. Freshfinal unused,31-removal path unvalidated.
+## Acceptance and best references
 
-No checkpoint qualifies. Continue saved-weight employment/jobs and semantic-neighbour unlearning autonomously, one experiment per GPU. User explicitly rejected an inference wrapper. Natural unfamiliarity is preferred; a refusal is not evidence of internal erasure.
+Four tolerated neighbours: cost of living, computer batch jobs, Biblical Job, physics work. The8 other quick controls must remain useful. Unrelated initial unknown and appended unknown both fail. City/language career meanings leak. Empty output is separate.96/256 token caps without unknown prove only observed behaviour, not healthy completion. Exact fixture exclusion does not make adaptively reused development tests independent.
 
-## Acceptance
+OriginalCE64 remains a failed suppression parent: wide_unfamiliarity_v1/ordinary_end_ce_l40s_run64_v1/step064, weight5fd11ba0d54c4888cb49d0014cbc43488709e1eccb61aa1a3feba810939cd328, configdc2352afdc28c81ded1934c1f472f3a33b9a61ecbb3c029a82594a176cf2c5b5. Quick28/context9 unknown, but maths unknown tail, dog false refusal, city/language careers,30/64 training ordinary initial refusals. Preserve originalCE64 and P24 parents on both hosts and locally. Best historical broad result analytical_control_l40s_run96_v1/step048 still leaked office/WFH/careers. No successful erasure claim.
 
-Cost of living, computer batch jobs, Biblical Job and physics work are four tolerated neighbours. Unrelated initial false unfamiliarity and unfamiliarity appended after useful answers fail. City/language career meanings are target leakage. Empty decoded replies are separate. Capped outputs without unknown do not establish healthy completed endings.
+Closed methods include CE64 ordinary/output repair (64 and80 data), output heads8/32, END/CE/DPO repairs, retain cones, task-vector subtraction, global/protected projections, RMU/ELM and blends. Full exact records remain append-only in EXPERIMENTS.md; do not infer all possible variants are disproven.
 
-## Current evidence
+## Operations and next gates
 
-Common artifact root: derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/.
+ROOT RTX18.101.59.227: /mnt/sequential-unlearning-replicate/checkout, Python/home/ubuntu/sequential-unlearning/venv-g7e/bin/python. Preserve unrelated GPU PID8186. Agent projection_followup owns L40S51.49.31.142: /home/ubuntu/sequential-unlearning-projection-sprint-20260904, Python/home/ubuntu/sequential-unlearning/venv-g6e/bin/python. Transport.tmp/sprint_remote.py, strict known hosts. L40S space limited; failed remote weights may be retired only after exact paths/hashes/local archives are proved and recorded. Local archives preserved. No new GPU experiment launched.
 
-- Best suppression parent: ordinary_end_ce_l40s_run64_v1/step064, weight SHA5fd11ba0d54c4888cb49d0014cbc43488709e1eccb61aa1a3feba810939cd328, config SHAdc2352afdc28c81ded1934c1f472f3a33b9a61ecbb3c029a82594a176cf2c5b5. Quick28/28 and context9/9 unfamiliar. Eight unrelated quick answers initially useful; math appends unknown. Dog falsely refused; city/language careers persist. Separate64-training-prompt capture had30 initial false refusals. Not a success.
-- Fixed task-vector clean-F versus clean-F+R closed: both retain extensive employment knowledge in52 development replies each. Source reinforcement improved in-sample likelihood but negation did not erase the concept.
-- Output-head repair rank8/rank32,32steps with16/32 snapshots, closed after208 replies. All4 retain28 target and9context unfamiliarity but all fail unrelated math tails plus false ordinary replies. Head8 unrelated primary7/6, observed without unknown6/5; head32 primary7/7, clean6/6. Head32 retains mixed language careers. Four478-factor checkpoints locally archived; original476 text factors/input embeddings were unchanged. No capacity/step grid justified.
-- Earlier full-text ordinary CE and clean-teacher JSD, endpoint CE/DPO, retain-cone, projections and blends also failed joint criteria. Exact histories, native hashes and rejected claims are in EXPERIMENTS.md; detailed prior memory remains in git e83df20.
-
-## Active direction and next decision gate
-
-Coverage audit found no standalone arithmetic, room-layout/furnishing, practical restoration-hobby or unpaid care examples in64 ordinary answers. Only numeric example is mechanical-work3x4. This gap may matter; it does not prove causality.
-
-Prepare immutable80-answer data retaining64 unchanged plus4 examples in each missing domain. Exact programmatic exclusion against467 evaluation prompts; never read fresh-final text. Preserve EOS/masking/objective. Proposed paired test from originalCE64: root RTX output-head rank32 LR1e-3; subagent L40S full-text476-factor CE LR2e-6. Both ordinaryCE1 plus frozen CE64 targetJSD100, same4106target/80ordinary data, batch16/4,32steps16/32, same schedule seed34020. Historical64-data runs are descriptive references, not identical-schedule controls. No new experiment frozen/launched yet.
-
-Reuse qualified helper and runtime checks, validate only changed data/count interface, freeze and commit before launch. Review all development replies promptly. Advance only plausible candidates to broad tests and long exact-token completion audits, actual merge/reload/retest, then unused fresh-final tests. No current candidate merged; no31-removal sequence validated. A head adapter must never merge while output remains tied to input: first untie output and prove input unchanged.
-
-## Ownership and operations
-
-RTX18.101.59.227 root /mnt/sequential-unlearning-replicate/checkout; Python /home/ubuntu/sequential-unlearning/venv-g7e/bin/python. Root owns lane; preserve unrelated GPU PID8186. L40S51.49.31.142 root /home/ubuntu/sequential-unlearning-projection-sprint-20260904; Python /home/ubuntu/sequential-unlearning/venv-g6e/bin/python. Subagent projection_followup owns its GPU/process mutations. Both experiments currently idle. Strict transport helper .tmp/sprint_remote.py. Never expose keys.
-
-Preserve originalCE64/P24 parents and all local archives. L40S space limited: any failed remote-weight retirement needs exact resolved path, remote/local hashes and archival proof; preserve metadata. Head32 snapshots currently remote and local. Earlier failed contrastive and fullordinaryJSD remote weights retired under committed manifests; local archives preserved.
-
-## Memory, evaluation and provenance
-
-Append every finding/method change to EXPERIMENTS.md, update current memory/plan, commit and push before integrating or starting a materially different experiment. Stage only current files; no weights or git add-all. Preserve three unrelated SliceGPT edits and unrelated untracked files. Private origin bgigurtsis/sequential-unlearning main; standing authorization covers experiments/sync.
-
-Pinned Gemma3-4b-it revision093f9f388b31de276ce2de164bdc2081324b9767. Original64 ordinary data SHA f6ebd91dbe22c48aa9ede24cc60de7cbc689b6456f8cf5971ee0d4defc0b3f8e. Target4106 SHA c0b54b438897c91edbccbf2fcb1eab49ce4be34a22607186d7289f2939f764c2. Encoding full-ordinary-tokenization-v1.json and output_head_repair_v1/contract_v1.json record qualified legacy settings.
-
-Quick40: config/employment_sprint_20260904_quick/probes.json,28target12control,96greedy. Context12: config/employment_sprint_20260904_context_routes/probes.json,9target3mixed,256greedy. Broad60: config/whole_concept_jobs_v1/probes.json,36target24control. All are adaptively reused development. Summary copying supplied work is nondiagnostic. Fresh final config/employment_sprint_20260904_final/probes.json and conversations.json remain unused except exact exclusion; no reading/generation before selection and validated merge/reload.
-
-Coverage80 source/data freeze completed under ordinary_coverage_v1/contract_v1.json. Actual80 encoding validated with old64 and all4106targets unchanged; no new GPU smoke needed for count-only change, existing runtime guards retained. Next launch root head32 and subagent full-text CE, train then immediate development evaluation. Hard decision gate: if both fail, close this CE64 ordinary/output repair family, no blind grid.
-
-Coverage80 RTX head32 completed and all104 outputs reviewed: both16/32 fail math unknown tails and hobbyfalse;32also room/language genericpreambles+unknown. Quick28both,context9/8 (summary32suppliedcopy+inventedtime). Both weights archived, internal476/input frozen. L40S CE80 wrapper102341 training/evaluating; old failedhead32remoteweights retired with archive-backed receipt. Await paired result before closing repair family.
-
-Both coverage80 full runs and all4 weight archives complete with runtime guards passed. RTX all104 answers fail; L40S evaluation review remains next. No qualified candidate or new best.
-
-Latent recovery pilot frozen under latent_recovery_v1/contract_v1.json: rootblock4/agentblock20, originalCE64allfrozen, sharedlastpromptvector,24fit+24targeteval+24ordinaryeval situation-disjoint;12stepsradius0.1median, zero/learned/equalnormrandom,144promptonlygenerations perGPU withrawstops. Three focusedCPUtests passed;actualGPUzero/gradient/tinystep guards precede fitting. No modelweightupdate. Transfergate4newsubstantive replies/3situations/2families beatingrandom; sourcecopying notcredit. Launch next.
-
-Earlyblock4 latentpilot completed: allweightsfrozen,13/24 substantive target recoveries versus0/24zero andrandom, across8situations/3families. TargetNLL1.3778→.4519, notsoleevidence. Gate met for recoverymechanism, not unlearning success; somefacts/analogieswrong. Ordinary72review andpairedblock20integration next; no newweighttrainerfrozen.
-
-Fixed-vector NPO pair source/data frozen under fixed_latent_npo_v1/contract_v1.json. RootRTXlearnedforgetcondition vsL40Szero; bothsameordinarytwo-conditioncleanKL, conditionmatchedCE64forgetref, beta.1,64steps32/64LR1e-5,24forget/104ordinarybatch4/4. ThreefocusedCPUtests andactualencoding passed. Next archive-backedcoverage80retirement +2stepnosaveGPUqualification, integrate thenfull64. No unknownCE/newqualifier; fixedattackrefit required before robustnessclaim.
-
-BothfixedNPO2stepGPUqualifications PASS: initialnative logits exact/margins0/multipliers1, finite476, independentteacher/base/vectorunchanged,nosaves. Next fresh64steps32/64bothGPUs thenquick/context; no behaviourresult. Failedcoverage80textremoteweights retired with exactarchivalproof, free825937920bytes.
+Freeze source/data/settings and commit/push before a materially different experiment. Reuse qualified infrastructure; test changed numerical mechanisms. Screen meaning and unrelated behaviour first; stop obvious failures early. Only a plausible candidate advances to broader/long ending tests, refitted recovery, actual merge/reload/retest and the untouched final fixtures. Current final probes/conversations remain unused except programmatic exact exclusion. No model safetensors in git. Preserve unrelated SliceGPT edits and other user files.

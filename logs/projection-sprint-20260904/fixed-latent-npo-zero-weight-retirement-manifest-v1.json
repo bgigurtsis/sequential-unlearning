@@ -1,0 +1,26 @@
+{
+  "purpose": "Proposed retirement of only rejected fixed zero-NPO step32/64 remote adapter weights. No deletion performed.",
+  "host": "51.49.31.142",
+  "free_bytes_before": 347815936,
+  "gpu_pids": "",
+  "remove_only_after_root_integrates": [
+    {
+      "remote_path": "/home/ubuntu/sequential-unlearning-projection-sprint-20260904/derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/fixed_latent_npo_zero_l40s_run64_v1/step032/adapter_model.safetensors",
+      "local_archive_path": "C:\\Users\\Billy\\Documents\\GitHub\\sequential-unlearning\\derisk\\whole_concept_jobs_v1\\delta_protection_v1\\wide_unfamiliarity_v1\\fixed_latent_npo_zero_l40s_run64_v1\\step032\\adapter_model.safetensors",
+      "sha256": "356af7fda3123c624dc07e88f63292ee4845a46cd5df000b87447fbabe3493af",
+      "bytes": 238491136
+    },
+    {
+      "remote_path": "/home/ubuntu/sequential-unlearning-projection-sprint-20260904/derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/fixed_latent_npo_zero_l40s_run64_v1/step064/adapter_model.safetensors",
+      "local_archive_path": "C:\\Users\\Billy\\Documents\\GitHub\\sequential-unlearning\\derisk\\whole_concept_jobs_v1\\delta_protection_v1\\wide_unfamiliarity_v1\\fixed_latent_npo_zero_l40s_run64_v1\\step064\\adapter_model.safetensors",
+      "sha256": "b0bc1d0a8d64e89f428fa08b8c417b3fdd40ff73cd8e32b30e123b3d971010a4",
+      "bytes": 238491136
+    }
+  ],
+  "total_recoverable_bytes": 476982272,
+  "archive_receipt": "logs/projection-sprint-20260904/fixed-latent-npo-zero-l40s-checkpoint-archive-v1.json",
+  "archive_receipt_sha256": "20c537b81175715fb9bd82e180220ce7963a2dc31fc0665f10f3ead33de9fb9b",
+  "preserve": "CE64 shared parent, all other models, every config/readme/metadata/source/evaluation/log file; no recursive removal.",
+  "failure_basis": "Both checkpoints failed unrelated-answer initial/tail criteria; all104 review SHA626e212e6784d1b3613269bb98cecc38235efd38e11578d3ce23762f46b7889b. Local archives and resolved remote regular files freshly rehashed.",
+  "deletion_gate": "Root commits manifest, then repeat local and remote resolved-path/size/hash checks before removing only the two named files."
+}

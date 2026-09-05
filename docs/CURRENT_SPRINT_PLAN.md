@@ -35,3 +35,7 @@ Earlyblock4 latentpilot completed: allweightsfrozen,13/24 substantive target rec
 Fixed-vector NPO pair source/data frozen under fixed_latent_npo_v1/contract_v1.json. RootRTXlearnedforgetcondition vsL40Szero; bothsameordinarytwo-conditioncleanKL, conditionmatchedCE64forgetref, beta.1,64steps32/64LR1e-5,24forget/104ordinarybatch4/4. ThreefocusedCPUtests andactualencoding passed. Next archive-backedcoverage80retirement +2stepnosaveGPUqualification, integrate thenfull64. No unknownCE/newqualifier; fixedattackrefit required before robustnessclaim.
 
 BothfixedNPO2stepGPUqualifications PASS: initialnative logits exact/margins0/multipliers1, finite476, independentteacher/base/vectorunchanged,nosaves. Next fresh64steps32/64bothGPUs thenquick/context; no behaviourresult. Failedcoverage80textremoteweights retired with exactarchivalproof, free825937920bytes.
+
+## 2026-09-05 — Fixed NPO closure
+
+Both64-step runs and all208 outputs reviewed; all4 checkpoints fail employment meaning despite repairing8 unrelated quick answers. No fixed attack144 or final tests. See current PROJECT_MEMORY.md and latest EXPERIMENTS.md for exact receipts. Next direct forgetting mechanism under independent audit; no next run frozen or launched. Close blind CE64 repair iterations.

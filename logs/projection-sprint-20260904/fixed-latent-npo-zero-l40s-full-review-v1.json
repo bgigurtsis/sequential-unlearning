@@ -1,0 +1,4203 @@
+{
+  "schema": "fixed_latent_npo_zero_l40s_review_v1",
+  "phase": "full",
+  "status": "PASS_NUMERICAL_ONLY",
+  "files": {
+    "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/fixed_latent_npo_zero_l40s_run64_v1/manifest.json": "4a8f8c9c8086cfbe9d113f8beed63ded12e59e7f8afb3589e7a5dbfdcb65b4e6",
+    "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/fixed_latent_npo_zero_l40s_run64_v1/completion.json": "68b0f27d7798fa38599021643fcb188b92abb48db4bd87c7ce993fd6ba1473ca",
+    "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/fixed_latent_npo_zero_l40s_run64_v1/training_trace.jsonl": "335d20ae79a0711748b8601e5387d4add2cc607383b1487583ddd118215c571c",
+    "logs/projection-sprint-20260904/fixed-latent-npo-zero-l40s-full-numerical-snapshot-v1.log": "e9fbba03e0a55371e2c1f2b67e11f08776a14cf13df5f3b9c8e73d71585c95e8"
+  },
+  "settings": {
+    "seed": 34024,
+    "ordinary_seed": 35024,
+    "batch_forget": 4,
+    "batch_ordinary": 4,
+    "lr": 1e-05,
+    "optimizer": "freshAdamW betas.9/.999 eps1e-8 weight_decay.01",
+    "beta": 0.1,
+    "forget_weight": 1,
+    "ordinary_zero_weight": 0.5,
+    "ordinary_learned_weight": 0.5,
+    "loss_units": "per-record summed answer tokens; mean over records",
+    "fixed_vector_block_index": 4,
+    "condition_matched_parent_reference": true,
+    "ordinary_clean_teacher_unperturbed": true,
+    "fixed_vector_norm": 201.94471740722656,
+    "gradient_clipping": false,
+    "unknown_ce": false,
+    "smoke_saves_weights": false
+  },
+  "initial_npo": {
+    "loss": 13.862943649291992,
+    "margins": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "multipliers": [
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "native_logits_exact": true
+  },
+  "parent_load_receipt": {
+    "path": "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/ordinary_end_ce_l40s_run64_v1/step064",
+    "weight_sha256": "5fd11ba0d54c4888cb49d0014cbc43488709e1eccb61aa1a3feba810939cd328",
+    "config_sha256": "dc2352afdc28c81ded1934c1f472f3a33b9a61ecbb3c029a82594a176cf2c5b5",
+    "tensor_count": 476,
+    "native_tensor_bytes_equal": true,
+    "source_and_loaded_dtype": "float32",
+    "optimizer_state": "fresh AdamW; no momentum resumed"
+  },
+  "teacher_load_receipt": {
+    "path": "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/ordinary_end_ce_l40s_run64_v1/step064",
+    "weight_sha256": "5fd11ba0d54c4888cb49d0014cbc43488709e1eccb61aa1a3feba810939cd328",
+    "config_sha256": "dc2352afdc28c81ded1934c1f472f3a33b9a61ecbb3c029a82594a176cf2c5b5",
+    "tensor_count": 476,
+    "native_tensor_bytes_equal": true,
+    "source_and_loaded_dtype": "float32",
+    "optimizer_state": "fresh AdamW; no momentum resumed"
+  },
+  "teacher_guards": {
+    "student_parent": {
+      "teacher_eval": true,
+      "teacher_trainable_parameters": 0,
+      "teacher_gradient_tensors": 0,
+      "shared_storage_count": 0,
+      "student_storage_count": 1365,
+      "teacher_storage_count": 1365
+    },
+    "student_clean": {
+      "teacher_eval": true,
+      "teacher_trainable_parameters": 0,
+      "teacher_gradient_tensors": 0,
+      "shared_storage_count": 0,
+      "student_storage_count": 1365,
+      "teacher_storage_count": 889
+    },
+    "parent_clean": {
+      "teacher_eval": true,
+      "teacher_trainable_parameters": 0,
+      "teacher_gradient_tensors": 0,
+      "shared_storage_count": 0,
+      "student_storage_count": 1365,
+      "teacher_storage_count": 889
+    }
+  },
+  "completion": {
+    "steps": 64,
+    "saved": [
+      {
+        "step": 32,
+        "weight_sha256": "356af7fda3123c624dc07e88f63292ee4845a46cd5df000b87447fbabe3493af",
+        "config_sha256": "0417c313ac7e802f04b6c4873c76a7a10ff21c419085a2d0d2375e302c9b7b43",
+        "exact_native_fp32_reload": true,
+        "native_fp32_476_reload_exact": true
+      },
+      {
+        "step": 64,
+        "weight_sha256": "b0bc1d0a8d64e89f428fa08b8c417b3fdd40ff73cd8e32b30e123b3d971010a4",
+        "config_sha256": "0417c313ac7e802f04b6c4873c76a7a10ff21c419085a2d0d2375e302c9b7b43",
+        "exact_native_fp32_reload": true,
+        "native_fp32_476_reload_exact": true
+      }
+    ],
+    "teacher_probes_after": [
+      {
+        "logits_sha256": "6e6b8f9a95827555884a3268caad250f2baa9c4d4508f30562d57d0710ba030e",
+        "shape": [
+          1,
+          140,
+          262208
+        ],
+        "dtype": "torch.bfloat16",
+        "input_ids": [
+          [
+            2,
+            105,
+            2364,
+            107,
+            44438,
+            506,
+            17049,
+            528,
+            672,
+            6492,
+            607,
+            496,
+            1607,
+            17872,
+            17049,
+            236764,
+            28830,
+            1144,
+            1546,
+            1093,
+            11719,
+            236761,
+            107,
+            236776,
+            33713,
+            563,
+            3149,
+            1680,
+            496,
+            1589,
+            1149,
+            6637,
+            3273,
+            684,
+            120973,
+            618,
+            496,
+            42764,
+            236761,
+            106,
+            107,
+            105,
+            4368,
+            107,
+            19058,
+            236764,
+            1531,
+            236789,
+            236751,
+            2541,
+            1679,
+            506,
+            17049,
+            4970,
+            1271,
+            38702,
+            496,
+            10945,
+            531,
+            5428,
+            88817,
+            1271,
+            532,
+            10769,
+            625,
+            531,
+            2264,
+            17872,
+            17049,
+            236764,
+            1133,
+            3978,
+            496,
+            7924,
+            236789,
+            236751,
+            10945,
+            236761,
+            108,
+            1018,
+            818,
+            120487,
+            11440,
+            158726,
+            53121,
+            108,
+            236829,
+            5213,
+            171439,
+            53121,
+            562,
+            10945,
+            563,
+            808,
+            15979,
+            236829,
+            1680,
+            28920,
+            3273,
+            618,
+            496,
+            42764,
+            236761,
+            107,
+            236829,
+            5213,
+            11242,
+            53121,
+            1174,
+            13074,
+            496,
+            5074,
+            236772,
+            9340,
+            1657,
+            236787,
+            107,
+            140,
+            236770,
+            236761,
+            5213,
+            39454,
+            53121,
+            138,
+            236776,
+            42288,
+            532,
+            44928,
+            4993,
+            1271,
+            11082,
+            13803,
+            496,
+            47222,
+            236858,
+            236751,
+            5802,
+            236764,
+            6641,
+            684
+          ]
+        ],
+        "attention_mask": [
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        "batch_size": 1,
+        "use_cache": false
+      },
+      {
+        "logits_sha256": "1e40d1e5e489a5498e2aef1a38db5a2e1816516d294448d23ca24c3f9c7b782e",
+        "shape": [
+          1,
+          53,
+          262208
+        ],
+        "dtype": "torch.bfloat16",
+        "input_ids": [
+          [
+            2,
+            105,
+            2364,
+            107,
+            11355,
+            2473,
+            232697,
+            15729,
+            4006,
+            6376,
+            1972,
+            236881,
+            106,
+            107,
+            105,
+            4368,
+            107,
+            30418,
+            742,
+            15729,
+            740,
+            1386,
+            625,
+            8722,
+            531,
+            3517,
+            4690,
+            236764,
+            5370,
+            17320,
+            236764,
+            4059,
+            11690,
+            8774,
+            236764,
+            532,
+            1161,
+            1237,
+            5203,
+            236761,
+            30164,
+            84015,
+            532,
+            15283,
+            200125,
+            1601,
+            919,
+            1331,
+            4024,
+            1724,
+            6417,
+            236761,
+            1
+          ]
+        ],
+        "attention_mask": [
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        "batch_size": 1,
+        "use_cache": false
+      }
+    ],
+    "frozen_versions_unchanged": true,
+    "teacher_probes_unchanged": true,
+    "fixed_vector_unchanged": true,
+    "all_gradients_finite476": true,
+    "peak_allocated_bytes": 30793299456,
+    "peak_reserved_bytes": 35016146944
+  },
+  "all_actual_schedules_match_encoding": true,
+  "encoding_sha256": "e40cda0f110f77afadaa1e9ec4b928148defefc38193138c97c71d6ac0d7391b",
+  "forget_draws": 256,
+  "ordinary_draws": 256,
+  "unique_forget": 24,
+  "unique_ordinary": 104,
+  "trace": [
+    {
+      "step": 1,
+      "forget_ids": [
+        "context_8ce430eadf754bb1bc29_comparison",
+        "context_016c43d7ec6317bbb099_comparison",
+        "context_0ddfd1249e4c30716edd_comparison",
+        "context_bdf37cd2dd2373b282ea_comparison"
+      ],
+      "ordinary_ids": [
+        "ordinary_repair_city_amenities_07",
+        "ordinary_repair_pet_captions_01",
+        "ordinary_repair_city_amenities_02",
+        "residual_negative_eaeb9f2066e39b778ccd_continuation"
+      ],
+      "raw_npo": 13.862943649291992,
+      "margins": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "multipliers": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "raw_ordinary_zero_kl": 25.73090171813965,
+      "raw_ordinary_learned_kl": 13.471563339233398,
+      "weighted_total": 33.464176177978516,
+      "forget_effective_norms": [],
+      "ordinary_effective_norms": [
+        [],
+        [
+          {
+            "nominal_l2": 201.94471617422585,
+            "effective_l2": [
+              202.01170167285767,
+              201.97471342238953,
+              201.99479314318194,
+              201.98266046778588
+            ]
+          }
+        ]
+      ],
+      "health": {
+        "finite_losses": true,
+        "finite_gradients": true,
+        "gradient_tensors": 476,
+        "losses": {
+          "npo": 13.862943649291992,
+          "ordinary_zero": 12.865450859069824,
+          "ordinary_learned": 6.735781669616699
+        }
+      },
+      "seconds": 1.590199019992724
+    },
+    {
+      "step": 2,
+      "forget_ids": [
+        "context_8ce430eadf754bb1bc29_continuation",
+        "context_ea996ec9e3d0a8bfd7f2_comparison",
+        "context_035dd3b761b87211da39_continuation",
+        "context_016c43d7ec6317bbb099_continuation"
+      ],
+      "ordinary_ids": [
+        "ordinary_repair_art_07",
+        "ordinary_repair_named_senses_01",
+        "ordinary_gap_restoration_hobbies_00",
+        "ordinary_repair_fiction_05"
+      ],
+      "raw_npo": 3.3039703369140625,
+      "margins": [
+        17.12822723388672,
+        27.623672485351562,
+        11.418487548828125,
+        17.740333557128906
+      ],
+      "multipliers": [
+        0.30559590458869934,
+        0.11878397315740585,
+        0.48396214842796326,
+        0.2900828719139099
+      ],
+      "raw_ordinary_zero_kl": 52.43135452270508,
+      "raw_ordinary_learned_kl": 20.459827423095703,
+      "weighted_total": 39.74956130981445,
+      "forget_effective_norms": [],
+      "ordinary_effective_norms": [
+        [],
+        [
+          {
+            "nominal_l2": 201.94471617422585,
+            "effective_l2": [
+              201.96712843093337,
+              201.96282569061913,
+              201.9812541523446,
+              201.9656923273031
+            ]
+          }
+        ]
+      ],
+      "health": {
+        "finite_losses": true,
+        "finite_gradients": true,
+        "gradient_tensors": 476,
+        "losses": {
+          "npo": 3.3039703369140625,
+          "ordinary_zero": 26.21567726135254,
+          "ordinary_learned": 10.229913711547852
+        }
+      },
+      "seconds": 1.6529523549834266
+    },
+    {
+      "step": 3,
+      "forget_ids": [
+        "context_ea996ec9e3d0a8bfd7f2_continuation",
+        "context_8ce430eadf754bb1bc29_advice",
+        "context_0ddfd1249e4c30716edd_advice",
+        "context_035dd3b761b87211da39_advice"
+      ],
+      "ordinary_ids": [
+        "ordinary_gap_arithmetic_00",
+        "ordinary_repair_pet_captions_05",
+        "ordinary_repair_language_personal_05",
+        "residual_negative_8d33d2da97a7b219269c_comparison"
+      ],
+      "raw_npo": 0.8028897643089294,
+      "margins": [
+        38.45726013183594,
+        26.79590606689453,
+        34.962158203125,
+        31.195388793945312
+      ],
+      "multipliers": [
+        0.04184744507074356,
+        0.12837691605091095,
+        0.05884018540382385,
+        0.08461689203977585
+      ],
+      "raw_ordinary_zero_kl": 31.764272689819336,
+      "raw_ordinary_learned_kl": 19.885860443115234,
+      "weighted_total": 26.627956330776215,
+      "forget_effective_norms": [],
+      "ordinary_effective_norms": [
+        [],
+        [
+          {
+            "nominal_l2": 201.94471617422585,
+            "effective_l2": [
+              201.97995208851805,
+              201.98480483141842,
+              201.96074194793718,
+              202.00826814506198
+            ]
+          }
+        ]
+      ],
+      "health": {
+        "finite_losses": true,
+        "finite_gradients": true,
+        "gradient_tensors": 476,
+        "losses": {
+          "npo": 0.8028897643089294,
+          "ordinary_zero": 15.882136344909668,
+          "ordinary_learned": 9.942930221557617
+        }
+      },
+      "seconds": 1.462329922011122
+    },
+    {
+      "step": 4,
+      "forget_ids": [
+        "context_3e06c11d41afe0e359d2_advice",
+        "context_0ddfd1249e4c30716edd_continuation",
+        "context_27895e45ae57a8ad8e8c_comparison",
+        "context_bdf37cd2dd2373b282ea_advice"
+      ],
+      "ordinary_ids": [
+        "residual_negative_310e773ae1525bda715d_continuation",
+        "ordinary_repair_everyday_facts_01",
+        "ordinary_repair_science_02",
+        "residual_negative_ab12e22d87c08e81b5ee_advice"
+      ],
+      "raw_npo": 0.09006611257791519,
+      "margins": [
+        46.01072692871094,
+        51.50749206542969,
+        69.94550323486328,
+        66.23823547363281
+      ],
+      "multipliers": [
+        0.019882475957274437,
+        0.011523343622684479,
+        0.0018320505041629076,
+        0.002653159899637103
+      ],
+      "raw_ordinary_zero_kl": 20.320219039916992,
+      "raw_ordinary_learned_kl": 8.663795471191406,
+      "weighted_total": 14.582073368132114,
+      "forget_effective_norms": [],
+      "ordinary_effective_norms": [
+        [],
+        [
+          {
+            "nominal_l2": 201.94471617422585,
+            "effective_l2": [
+              201.9898747226727,
+              201.95174487337798,
+              201.96467135214164,
+              201.98486489852525
+            ]
+          }
+        ]
+      ],
+      "health": {
+        "finite_losses": true,
+        "finite_gradients": true,
+        "gradient_tensors": 476,
+        "losses": {
+          "npo": 0.09006611257791519,
+          "ordinary_zero": 10.160109519958496,
+          "ordinary_learned": 4.331897735595703
+        }
+      },
+      "seconds": 1.457393559976481
+    },
+    {
+      "step": 5,
+      "forget_ids": [
+        "context_ea996ec9e3d0a8bfd7f2_advice",
+        "context_27895e45ae57a8ad8e8c_continuation",
+        "context_27895e45ae57a8ad8e8c_advice",
+        "context_3e06c11d41afe0e359d2_comparison"
+      ],
+      "ordinary_ids": [
+        "ordinary_repair_everyday_facts_07",
+        "ordinary_repair_language_personal_07",
+        "residual_negative_ab12e22d87c08e81b5ee_comparison",
+        "ordinary_repair_pet_captions_04"
+      ],
+      "raw_npo": 0.010198697447776794,
+      "margins": [
+        76.18480682373047,
+        71.64185333251953,
+        75.9317626953125,
+        82.12107849121094
+      ],
+      "multipliers": [
+        0.0009820929262787104,
+        0.0015464213211089373,
+        0.0010072484146803617,
+        0.0005425491835922003
+      ],
+      "raw_ordinary_zero_kl": 26.36251449584961,
+      "raw_ordinary_learned_kl": 17.965906143188477,
+      "weighted_total": 22.17440901696682,
+      "forget_effective_norms": [],
+      "ordinary_effective_norms": [
+        [],
+        [
+          {
+            "nominal_l2": 201.94471617422585,
+            "effective_l2": [
+              201.97771860124615,
+              201.97513613405448,
+              201.96510564779976,
+              201.95959086727498
+            ]
+          }
+        ]
+      ],
+      "health": {
+        "finite_losses": true,
+        "finite_gradients": true,
+        "gradient_tensors": 476,
+        "losses": {
+          "npo": 0.010198697447776794,
+          "ordinary_zero": 13.181257247924805,
+          "ordinary_learned": 8.982953071594238
+        }
+      },
+      "seconds": 1.457838463014923
+    },
+    {
+      "step": 6,
+      "forget_ids": [
+        "context_3e06c11d41afe0e359d2_continuation",
+        "context_035dd3b761b87211da39_comparison",
+        "context_bdf37cd2dd2373b282ea_continuation",
+        "context_016c43d7ec6317bbb099_advice"
+      ],
+      "ordinary_ids": [
+        "ordinary_repair_city_amenities_05",
+        "ordinary_repair_city_amenities_06",
+        "residual_negative_8d33d2da97a7b219269c_continuation",
+        "ordinary_gap_room_furnishings_02"
+      ],
+      "raw_npo": 0.010950780473649502,
+      "margins": [
+        70.61209869384766,
+        96.57720184326172,
+        79.1718978881836,
+        70.0767822265625
+      ],
+      "multipliers": [
+        0.0017140088602900505,
+        0.00012785199214704335,
+        0.000728584302123636,
+        0.00180817733053118
+      ],
+      "raw_ordinary_zero_kl": 41.40138244628906,
+      "raw_ordinary_learned_kl": 15.406009674072266,
+      "weighted_total": 28.414646840654314,
+      "forget_effective_norms": [],
+      "ordinary_effective_norms": [
+        [],
+        [
+          {
+            "nominal_l2": 201.94471617422585,
+            "effective_l2": [
+              201.96331132718902,
+              201.97118450661839,
+              201.9756001944701,
+              202.00004372059234
+            ]
+          }
+        ]
+      ],
+      "health": {
+        "finite_losses": true,
+        "finite_gradients": true,
+        "gradient_tensors": 476,
+        "losses": {
+          "npo": 0.010950780473649502,
+          "ordinary_zero": 20.70069122314453,
+          "ordinary_learned": 7.703004837036133
+        }
+      },
+      "seconds": 1.4410836350289173
+    },
+    {
+      "step": 7,
+      "forget_ids": [
+        "context_bdf37cd2dd2373b282ea_continuation",
+        "context_bdf37cd2dd2373b282ea_advice",
+        "context_016c43d7ec6317bbb099_continuation",
+        "context_035dd3b761b87211da39_continuation"
+      ],
+      "ordinary_ids": [
+        "ordinary_repair_named_senses_04",
+        "residual_negative_19a4c9c3410d92a9eaab_comparison",
+        "ordinary_repair_art_01",
+        "ordinary_repair_city_amenities_03"
+      ],
+      "raw_npo": 0.007303893566131592,
+      "margins": [
+        84.5313720703125,
+        86.97527313232422,
+        80.36546325683594,
+        71.85484313964844
+      ],
+      "multipliers": [
+        0.0004263698065187782,
+        0.0003339405229780823,
+        0.0006466386839747429,
+        0.001513857045210898
+      ],
+      "raw_ordinary_zero_kl": 37.70075988769531,
+      "raw_ordinary_learned_kl": 12.937800407409668,
+      "weighted_total": 25.326584041118622,
+      "forget_effective_norms": [],
+      "ordinary_effective_norms": [
+        [],
+        [
+          {
+            "nominal_l2": 201.94471617422585,
+            "effective_l2": [
+              201.96329157022018,
+              201.96753763449266,
+              201.9839136037679,
+              201.96688174341014
+            ]
+          }
+        ]
+      ],
+      "health": {
+        "finite_losses": true,
+        "finite_gradients": true,
+        "gradient_tensors": 476,
+        "losses": {
+          "npo": 0.007303893566131592,
+          "ordinary_zero": 18.850379943847656,
+          "ordinary_learned": 6.468900203704834
+        }
+      },
+      "seconds": 1.4628777439938858
+    },
+    {
+      "step": 8,
+      "forget_ids": [
+        "context_27895e45ae57a8ad8e8c_continuation",
+        "context_3e06c11d41afe0e359d2_advice",
+        "context_8ce430eadf754bb1bc29_advice",
+        "context_016c43d7ec6317bbb099_comparison"
+      ],
+      "ordinary_ids": [
+        "ordinary_repair_city_amenities_04",
+        "residual_negative_608c7b7f1de7885a5959_continuation",
+        "ordinary_repair_language_personal_03",
+        "residual_negative_eaeb9f2066e39b778ccd_advice"
+      ],
+      "raw_npo": 0.02177024446427822,
+      "margins": [
+        91.32006072998047,
+        61.4825439453125,
+        61.60096740722656,
+        136.705078125
+      ],
+      "multipliers": [
+        0.0002162733144359663,
+        0.004265302326530218,
+        0.004215195309370756,
+        2.312081505806418e-06
+      ],
+      "raw_ordinary_zero_kl": 25.02761459350586,
+      "raw_ordinary_learned_kl": 9.197096824645996,
+      "weighted_total": 17.134125953540206,
+      "forget_effective_norms": [],
+      "ordinary_effective_norms": [
+        [],
+        [
+          {
+            "nominal_l2": 201.94471617422585,
+            "effective_l2": [
+              201.95418624879474,
+              201.97214016274344,
+              201.97653017138612,
+              201.99022094755583
+            ]
+          }
+        ]
+      ],
+      "health": {
+        "finite_losses": true,
+        "finite_gradients": true,
+        "gradient_tensors": 476,
+        "losses": {
+          "npo": 0.02177024446427822,
+          "ordinary_zero": 12.51380729675293,
+          "ordinary_learned": 4.598548412322998
+        }
+      },
+      "seconds": 1.662278578034602
+    },
+    {
+      "step": 9,
+      "forget_ids": [
+        "context_035dd3b761b87211da39_comparison",
+        "context_8ce430eadf754bb1bc29_continuation",
+        "context_ea996ec9e3d0a8bfd7f2_comparison",
+        "context_ea996ec9e3d0a8bfd7f2_advice"
+      ],
+      "ordinary_ids": [
+        "ordinary_gap_arithmetic_01",
+        "ordinary_repair_art_00",
+        "ordinary_repair_pet_captions_07",
+        "ordinary_gap_unpaid_care_03"
+      ],
+      "raw_npo": 0.0014740130864083767,
+      "margins": [
+        107.70587158203125,
+        92.90135955810547,
+        106.23078918457031,
+        87.58415985107422
+      ],
+      "multipliers": [
+        4.201597039354965e-05,
+        0.00018464388267602772,
+        4.8693913413444534e-05,
+        0.0003142171772196889
+      ],
+      "raw_ordinary_zero_kl": 27.411426544189453,
+      "raw_ordinary_learned_kl": 15.451858520507812,
+      "weighted_total": 21.43311654543504,
+      "forget_effective_norms": [],
+      "ordinary_effective_norms": [
+        [],
+        [
+          {
+            "nominal_l2": 201.94471617422585,
+            "effective_l2": [
+              201.99099161774848,
+              201.97277873823356,
+              201.98392957971132,
+              201.9810521018529
+            ]
+          }
+        ]
+      ],
+      "health": {
+        "finite_losses": true,
+        "finite_gradients": true,
+        "gradient_tensors": 476,
+        "losses": {
+          "npo": 0.0014740130864083767,
+          "ordinary_zero": 13.705713272094727,
+          "ordinary_learned": 7.725929260253906
+        }
+      },
+      "seconds": 1.4311860899906605
+    },
+    {
+      "step": 10,
+      "forget_ids": [
+        "context_0ddfd1249e4c30716edd_advice",
+        "context_035dd3b761b87211da39_advice",
+        "context_ea996ec9e3d0a8bfd7f2_continuation",
+        "context_27895e45ae57a8ad8e8c_advice"
+      ],
+      "ordinary_ids": [
+        "ordinary_repair_fiction_04",
+        "ordinary_repair_science_01",
+        "residual_negative_608c7b7f1de7885a5959_comparison",
+        "ordinary_repair_science_03"
+      ],
+      "raw_npo": 0.009783072397112846,
+      "margins": [
+        71.25418090820312,
+        71.01873779296875,
+        85.47360229492188,
+        89.08079528808594
+      ],
+      "multipliers": [
+        0.0016075000166893005,
+        0.0016457651508972049,
+        0.0003880379954352975,
+        0.0002705460647121072
+      ],
+      "raw_ordinary_zero_kl": 14.020177841186523,
+      "raw_ordinary_learned_kl": 11.133695602416992,
+      "weighted_total": 12.58671979419887,
+      "forget_effective_norms": [],
+      "ordinary_effective_norms": [
+        [],
+        [
+          {
+            "nominal_l2": 201.94471617422585,
+            "effective_l2": [
+              201.97812262739558,
+              201.97651402367023,
+              201.99579478823387,
+              201.98130133781467
+            ]
+          }
+        ]
+      ],
+      "health": {
+        "finite_losses": true,
+        "finite_gradients": true,
+        "gradient_tensors": 476,
+        "losses": {
+          "npo": 0.009783072397112846,
+          "ordinary_zero": 7.010088920593262,
+          "ordinary_learned": 5.566847801208496
+        }
+      },
+      "seconds": 1.4577540479949676
+    },
+    {
+      "step": 11,
+      "forget_ids": [
+        "context_bdf37cd2dd2373b282ea_comparison",
+        "context_3e06c11d41afe0e359d2_continuation",
+        "context_0ddfd1249e4c30716edd_continuation",
+        "context_0ddfd1249e4c30716edd_comparison"
+      ],
+      "ordinary_ids": [
+        "residual_negative_310e773ae1525bda715d_advice",
+        "ordinary_repair_language_personal_04",
+        "ordinary_gap_arithmetic_03",
+        "ordinary_repair_art_05"
+      ],
+      "raw_npo": 0.004393602721393108,
+      "margins": [
+        144.71580505371094,
+        76.96995544433594,
+        77.687255859375,
+        134.41986083984375
+      ],
+      "multipliers": [
+        1.037772676681925e-06,
+        0.0009079668088816106,
+        0.0008451457833871245,
+        2.905688006649143e-06
+      ],
+      "raw_ordinary_zero_kl": 17.971460342407227,
+      "raw_ordinary_learned_kl": 13.90803337097168,
+      "weighted_total": 15.944140459410846,
+      "forget_effective_norms": [],
+      "ordinary_effective_norms": [
+        [],
+        [
+          {
+            "nominal_l2": 201.94471617422585,
+            "effective_l2": [
+              201.98139037383592,
+              202.00313939846046,
+              202.00820686734693,
+              201.9798346784017
+            ]
+          }
+        ]
+      ],
+      "health": {
+        "finite_losses": true,
+        "finite_gradients": true,
+        "gradient_tensors": 476,
+        "losses": {
+          "npo": 0.004393602721393108,
+          "ordinary_zero": 8.985730171203613,
+          "ordinary_learned": 6.95401668548584
+        }
+      },
+      "seconds": 1.4511996249784715
+    },
+    {
+      "step": 12,
+      "forget_ids": [
+        "context_3e06c11d41afe0e359d2_comparison",
+        "context_8ce430eadf754bb1bc29_comparison",
+        "context_27895e45ae57a8ad8e8c_comparison",
+        "context_016c43d7ec6317bbb099_advice"
+      ],
+      "ordinary_ids": [
+        "ordinary_repair_fiction_07",
+        "ordinary_repair_language_personal_06",
+        "ordinary_repair_science_05",
+        "ordinary_repair_science_00"
+      ],
+      "raw_npo": 0.006149126682430506,
+      "margins": [
+        117.0002212524414,
+        113.57379150390625,
+        110.92179107666016,
+        67.2933120727539
+      ],
+      "multipliers": [
+        1.6587124264333397e-05,
+        2.3365651941276155e-05,
+        3.0461489586741664e-05,
+        0.00238780933432281
+      ],
+      "raw_ordinary_zero_kl": 26.851991653442383,
+      "raw_ordinary_learned_kl": 14.312074661254883,
+      "weighted_total": 20.588182284031063,
+      "forget_effective_norms": [],
+      "ordinary_effective_norms": [
+        [],
+        [
+          {
+            "nominal_l2": 201.94471617422585,
+            "effective_l2": [
+              201.97697606485391,
+              201.95326225692983,
+              201.94254690538406,
+              201.96325480502668
+            ]
+          }
+        ]
+      ],
+      "health": {
+        "finite_losses": true,
+        "finite_gradients": true,
+        "gradient_tensors": 476,
+        "losses": {
+          "npo": 0.006149126682430506,
+          "ordinary_zero": 13.425995826721191,
+          "ordinary_learned": 7.156037330627441
+        }
+      },
+      "seconds": 1.424756650987547
+    },
+    {
+      "step": 13,
+      "forget_ids": [
+        "context_0ddfd1249e4c30716edd_advice",
+        "context_3e06c11d41afe0e359d2_comparison",
+        "context_ea996ec9e3d0a8bfd7f2_advice",
+        "context_8ce430eadf754bb1bc29_comparison"
+      ],
+      "ordinary_ids": [
+        "residual_negative_608c7b7f1de7885a5959_advice",
+        "residual_negative_c2115cb71dbb3efe03a4_advice",
+        "ordinary_repair_city_amenities_01",
+        "ordinary_repair_art_06"
+      ],
+      "raw_npo": 0.008134238421916962,
+      "margins": [
+        69.51853942871094,
+        118.39556884765625,
+        73.34520721435547,
+        114.33290100097656
+      ],
+      "multipliers": [
+        0.0019118890631943941,
+        1.4426889720198233e-05,
+        0.0013043818762525916,
+        2.1657599063473754e-05
+      ],
+      "raw_ordinary_zero_kl": 10.89886474609375,
+      "raw_ordinary_learned_kl": 11.313743591308594,
+      "weighted_total": 11.114438407123089,
+      "forget_effective_norms": [],
+      "ordinary_effective_norms": [
+        [],
+        [
+          {
+            "nominal_l2": 201.94471617422585,
+            "effective_l2": [
+              201.97924210959994,
+              201.98253943754295,
+              201.9746289507988,
+              202.00116217539744
+            ]
+          }
+        ]
+      ],
+      "health": {
+        "finite_losses": true,
+        "finite_gradients": true,
+        "gradient_tensors": 476,
+        "losses": {
+          "npo": 0.008134238421916962,
+          "ordinary_zero": 5.449432373046875,
+          "ordinary_learned": 5.656871795654297
+        }
+      },
+      "seconds": 1.6637437439640053
+    },
+    {
+      "step": 14,
+      "forget_ids": [
+        "context_0ddfd1249e4c30716edd_comparison",
+        "context_035dd3b761b87211da39_advice",
+        "context_016c43d7ec6317bbb099_continuation",
+        "context_016c43d7ec6317bbb099_comparison"
+      ],
+      "ordinary_ids": [
+        "ordinary_repair_science_04",
+        "ordinary_gap_restoration_hobbies_02",
+        "ordinary_repair_language_personal_01",
+        "residual_negative_c2115cb71dbb3efe03a4_comparison"
+      ],
+      "raw_npo": 0.004133467562496662,
+      "margins": [
+        140.1949920654297,
+        74.31938171386719,
+        83.60921478271484,
+        153.62364196777344
+      ],
+      "multipliers": [
+        1.630941028452071e-06,
+        0.0011833772296085954,
+        0.0004675480304285884,
+        4.258333490270161e-07
+      ],
+      "raw_ordinary_zero_kl": 16.028656005859375,
+      "raw_ordinary_learned_kl": 10.313153266906738,
+      "weighted_total": 13.175038103945553,
+      "forget_effective_norms": [],
+      "ordinary_effective_norms": [
+        [],
+        [
+          {
+            "nominal_l2": 201.94471617422585,
+            "effective_l2": [
+              201.94700391089046,
+              201.99851448453694,
+              201.9760364660927,
+              201.97106113539888
+            ]
+          }
+        ]
+      ],
+      "health": {
+        "finite_losses": true,
+        "finite_gradients": true,
+        "gradient_tensors": 476,
+        "losses": {
+          "npo": 0.004133467562496662,
+          "ordinary_zero": 8.014328002929688,
+          "ordinary_learned": 5.156576633453369
+        }
+      },
+      "seconds": 1.4606332689872943
+    },
+    {
+      "step": 15,
+      "forget_ids": [
+        "context_3e06c11d41afe0e359d2_continuation",
+        "context_bdf37cd2dd2373b282ea_comparison",
+        "context_bdf37cd2dd2373b282ea_advice",
+        "context_035dd3b761b87211da39_comparison"
+      ],
+      "ordinary_ids": [
+        "residual_negative_ab12e22d87c08e81b5ee_continuation",
+        "ordinary_gap_room_furnishings_03",
+        "ordinary_gap_unpaid_care_00",
+        "residual_negative_ce62f26e10e73831a3e1_comparison"
+      ],
+      "raw_npo": 0.017695652320981026,
+      "margins": [
+        61.451271057128906,
+        141.8065948486328,
+        65.83915710449219,
+        110.83889770507812
+      ],
+      "multipliers": [
+        0.004278632812201977,
+        1.3881858649256174e-06,
+        0.0027610340621322393,
+        3.0715040338691324e-05
+      ],
+      "raw_ordinary_zero_kl": 24.362991333007812,
+      "raw_ordinary_learned_kl": 14.716516494750977,
+      "weighted_total": 19.557449566200376,
+      "forget_effective_norms": [],
+      "ordinary_effective_norms": [
+        [],
+        [
+          {
+            "nominal_l2": 201.94471617422585,
+            "effective_l2": [
+              201.96468584849006,
+              201.99239203657197,
+              201.98074140284447,
+              202.0036590508034
+            ]
+          }
+        ]
+      ],
+      "health": {
+        "finite_losses": true,
+        "finite_gradients": true,
+        "gradient_tensors": 476,
+        "losses": {
+          "npo": 0.017695652320981026,
+          "ordinary_zero": 12.181495666503906,
+          "ordinary_learned": 7.358258247375488
+        }
+      },
+      "seconds": 1.4591227119672112
+    },
+    {
+      "step": 16,
+      "forget_ids": [
+        "context_8ce430eadf754bb1bc29_continuation",
+        "context_8ce430eadf754bb1bc29_advice",
+        "context_ea996ec9e3d0a8bfd7f2_comparison",
+        "context_27895e45ae57a8ad8e8c_advice"
+      ],
+      "ordinary_ids": [
+        "residual_negative_eaeb9f2066e39b778ccd_comparison",
+        "ordinary_repair_city_amenities_00",
+        "ordinary_repair_fiction_06",
+        "ordinary_gap_room_furnishings_01"
+      ],
+      "raw_npo": 0.039083220064640045,
+      "margins": [
+        90.37232208251953,
+        59.386940002441406,
+        104.82307434082031,
+        52.8828125
+      ],
+      "multipliers": [
+        0.000237770625972189,
+        0.00525708356872201,
+        5.605437763733789e-05,
+        0.010050106793642044
+      ],
+      "raw_ordinary_zero_kl": 25.80923080444336,
+      "raw_ordinary_learned_kl": 12.883296966552734,
+      "weighted_total": 19.385347105562687,
+      "forget_effective_norms": [],
+      "ordinary_effective_norms": [
+        [],
+        [
+          {
+            "nominal_l2": 201.94471617422585,
+            "effective_l2": [
+              201.98136205573613,
+              201.98258125893878,
+              201.96862356857628,
+              201.99087694606428
+            ]
+          }
+        ]
+      ],
+      "health": {
+        "finite_losses": true,
+        "finite_gradients": true,
+        "gradient_tensors": 476,
+        "losses": {
+          "npo": 0.039083220064640045,
+          "ordinary_zero": 12.90461540222168,
+          "ordinary_learned": 6.441648483276367
+        }
+      },
+      "seconds": 1.4559351880452596
+    },
+    {
+      "step": 17,
+      "forget_ids": [
+        "context_3e06c11d41afe0e359d2_advice",
+        "context_27895e45ae57a8ad8e8c_comparison",
+        "context_0ddfd1249e4c30716edd_continuation",
+        "context_ea996ec9e3d0a8bfd7f2_continuation"
+      ],
+      "ordinary_ids": [
+        "ordinary_repair_fiction_02",
+        "ordinary_repair_art_04",
+        "ordinary_repair_everyday_facts_04",
+        "ordinary_repair_science_07"
+      ],
+      "raw_npo": 0.2068035900592804,
+      "margins": [
+        33.19697570800781,
+        100.04977416992188,
+        67.51807403564453,
+        53.74560546875
+      ],
+      "multipliers": [
+        0.06980317831039429,
+        9.034496179083362e-05,
+        0.002334801247343421,
+        0.00922317523509264
+      ],
+      "raw_ordinary_zero_kl": 14.317002296447754,
+      "raw_ordinary_learned_kl": 9.329379081726074,
+      "weighted_total": 12.029994279146194,
+      "forget_effective_norms": [],
+      "ordinary_effective_norms": [
+        [],
+        [
+          {
+            "nominal_l2": 201.94471617422585,
+            "effective_l2": [
+              201.96937850507297,
+              201.9644518108537,
+              201.9578737114542,
+              201.9862856251876
+            ]
+          }
+        ]
+      ],
+      "health": {
+        "finite_losses": true,
+        "finite_gradients": true,
+        "gradient_tensors": 476,
+        "losses": {
+          "npo": 0.2068035900592804,
+          "ordinary_zero": 7.158501148223877,
+          "ordinary_learned": 4.664689540863037
+        }
+      },
+      "seconds": 1.4296040759654716
+    },
+    {
+      "step": 18,
+      "forget_ids": [
+        "context_016c43d7ec6317bbb099_advice",
+        "context_bdf37cd2dd2373b282ea_continuation",
+        "context_035dd3b761b87211da39_continuation",
+        "context_27895e45ae57a8ad8e8c_continuation"
+      ],
+      "ordinary_ids": [
+        "residual_negative_8d33d2da97a7b219269c_advice",
+        "ordinary_repair_everyday_facts_02",
+        "ordinary_repair_named_senses_06",
+        "ordinary_repair_pet_captions_02"
+      ],
+      "raw_npo": 0.18179655075073242,
+      "margins": [
+        41.209716796875,
+        39.11460876464844,
+        91.31173706054688,
+        79.89434814453125
+      ],
+      "multipliers": [
+        0.03193914145231247,
+        0.03923730552196503,
+        0.00021645343804266304,
+        0.000677821459248662
+      ],
+      "raw_ordinary_zero_kl": 11.202556610107422,
+      "raw_ordinary_learned_kl": 11.889780044555664,
+      "weighted_total": 11.727964878082275,
+      "forget_effective_norms": [],
+      "ordinary_effective_norms": [
+        [],
+        [
+          {
+            "nominal_l2": 201.94471617422585,
+            "effective_l2": [
+              201.98880386428786,
+              201.9828901362468,
+              201.9660024891363,
+              201.95767519593227
+            ]
+          }
+        ]
+      ],
+      "health": {
+        "finite_losses": true,
+        "finite_gradients": true,
+        "gradient_tensors": 476,
+        "losses": {
+          "npo": 0.18179655075073242,
+          "ordinary_zero": 5.601278305053711,
+          "ordinary_learned": 5.944890022277832
+        }
+      },
+      "seconds": 1.4415334819932468
+    },
+    {
+      "step": 19,
+      "forget_ids": [
+        "context_8ce430eadf754bb1bc29_continuation",
+        "context_3e06c11d41afe0e359d2_advice",
+        "context_0ddfd1249e4c30716edd_advice",
+        "context_016c43d7ec6317bbb099_continuation"
+      ],
+      "ordinary_ids": [
+        "ordinary_repair_named_senses_05",
+        "ordinary_repair_everyday_facts_05",
+        "ordinary_repair_everyday_facts_06",
+        "ordinary_repair_fiction_03"
+      ],
+      "raw_npo": 0.38861021399497986,
+      "margins": [
+        87.03602600097656,
+        25.667984008789062,
+        58.23316955566406,
+        73.74809265136719
+      ],
+      "multipliers": [
+        0.00033191833063028753,
+        0.1426120549440384,
+        0.00589811010286212,
+        0.001252907095476985
+      ],
+      "raw_ordinary_zero_kl": 22.108966827392578,
+      "raw_ordinary_learned_kl": 12.320094108581543,
+      "weighted_total": 17.60314068198204,
+      "forget_effective_norms": [],
+      "ordinary_effective_norms": [
+        [],
+        [
+          {
+            "nominal_l2": 201.94471617422585,
+            "effective_l2": [
+              201.96637258749138,
+              201.96377727593736,
+              202.00332785599872,
+              201.98259222713892
+            ]
+          }
+        ]
+      ],
+      "health": {
+        "finite_losses": true,
+        "finite_gradients": true,
+        "gradient_tensors": 476,
+        "losses": {
+          "npo": 0.38861021399497986,
+          "ordinary_zero": 11.054483413696289,
+          "ordinary_learned": 6.1600470542907715
+        }
+      },
+      "seconds": 1.6372931849909946
+    },
+    {
+      "step": 20,
+      "forget_ids": [
+        "context_3e06c11d41afe0e359d2_continuation",
+        "context_035dd3b761b87211da39_advice",
+        "context_016c43d7ec6317bbb099_advice",
+        "context_bdf37cd2dd2373b282ea_continuation"
+      ],
+      "ordinary_ids": [
+        "ordinary_repair_everyday_facts_03",
+        "residual_negative_19a4c9c3410d92a9eaab_continuation",
+        "residual_negative_310e773ae1525bda715d_comparison",
+        "residual_negative_19a4c9c3410d92a9eaab_advice"
+      ],
+      "raw_npo": 0.4320515990257263,
+      "margins": [
+        42.90728759765625,
+        68.63531494140625,
+        36.59556579589844,
+        30.483684539794922
+      ],
+      "multipliers": [
+        0.027019839733839035,
+        0.002088249661028385,
+        0.050195615738630295,
+        0.0905759260058403
+      ],
+      "raw_ordinary_zero_kl": 8.353065490722656,
+      "raw_ordinary_learned_kl": 8.245534896850586,
+      "weighted_total": 8.731351792812347,
+      "forget_effective_norms": [],
+      "ordinary_effective_norms": [
+        [],
+        [
+          {
+            "nominal_l2": 201.94471617422585,
+            "effective_l2": [
+              201.97588164806055,
+              201.99168335411468,
+              202.00124196783761,
+              201.96644398315556
+            ]
+          }
+        ]
+      ],
+      "health": {
+        "finite_losses": true,
+        "finite_gradients": true,
+        "gradient_tensors": 476,
+        "losses": {
+          "npo": 0.4320515990257263,
+          "ordinary_zero": 4.176532745361328,
+          "ordinary_learned": 4.122767448425293
+        }
+      },
+      "seconds": 1.4473880250006914
+    },
+    {
+      "step": 21,
+      "forget_ids": [
+        "context_ea996ec9e3d0a8bfd7f2_advice",
+        "context_8ce430eadf754bb1bc29_advice",
+        "context_0ddfd1249e4c30716edd_comparison",
+        "context_3e06c11d41afe0e359d2_comparison"
+      ],
+      "ordinary_ids": [
+        "ordinary_repair_pet_captions_06",
+        "ordinary_repair_named_senses_00",
+        "ordinary_repair_named_senses_07",
+        "ordinary_gap_unpaid_care_01"
+      ],
+      "raw_npo": 0.16094350814819336,
+      "margins": [
+        36.65483856201172,
+        49.70579528808594,
+        140.12425231933594,
+        127.41526794433594
+      ],
+      "multipliers": [
+        0.049906373023986816,
+        0.013782610185444355,
+        1.6425196918135043e-06,
+        5.854018127138261e-06
+      ],
+      "raw_ordinary_zero_kl": 8.239537239074707,
+      "raw_ordinary_learned_kl": 6.406566619873047,
+      "weighted_total": 7.48399543762207,
+      "forget_effective_norms": [],
+      "ordinary_effective_norms": [
+        [],
+        [
+          {
+            "nominal_l2": 201.94471617422585,
+            "effective_l2": [
+              202.0052186231638,
+              201.9850750214085,
+              201.98019410208624,
+              201.99321971858996
+            ]
+          }
+        ]
+      ],
+      "health": {
+        "finite_losses": true,
+        "finite_gradients": true,
+        "gradient_tensors": 476,
+        "losses": {
+          "npo": 0.16094350814819336,
+          "ordinary_zero": 4.1197686195373535,
+          "ordinary_learned": 3.2032833099365234
+        }
+      },
+      "seconds": 1.4222253839834593
+    },
+    {
+      "step": 22,
+      "forget_ids": [
+        "context_0ddfd1249e4c30716edd_continuation",
+        "context_035dd3b761b87211da39_continuation",
+        "context_8ce430eadf754bb1bc29_comparison",
+        "context_016c43d7ec6317bbb099_comparison"
+      ],
+      "ordinary_ids": [
+        "ordinary_gap_room_furnishings_00",
+        "ordinary_repair_pet_captions_00",
+        "ordinary_repair_fiction_01",
+        "ordinary_repair_art_02"
+      ],
+      "raw_npo": 0.00991164892911911,
+      "margins": [
+        62.62689208984375,
+        95.59384155273438,
+        118.10734558105469,
+        164.331787109375
+      ],
+      "multipliers": [
+        0.003804973792284727,
+        0.00014106246817391366,
+        1.4848748833173886e-05,
+        1.4594547792512458e-07
+      ],
+      "raw_ordinary_zero_kl": 7.199276924133301,
+      "raw_ordinary_learned_kl": 8.831121444702148,
+      "weighted_total": 8.025110833346844,
+      "forget_effective_norms": [],
+      "ordinary_effective_norms": [
+        [],
+        [
+          {
+            "nominal_l2": 201.94471617422585,
+            "effective_l2": [
+              201.99542250954138,
+              201.99159090942175,
+              201.99491980247817,
+              201.98438637334237
+            ]
+          }
+        ]
+      ],
+      "health": {
+        "finite_losses": true,
+        "finite_gradients": true,
+        "gradient_tensors": 476,
+        "losses": {
+          "npo": 0.00991164892911911,
+          "ordinary_zero": 3.5996384620666504,
+          "ordinary_learned": 4.415560722351074
+        }
+      },
+      "seconds": 1.4232860489864834
+    },
+    {
+      "step": 23,
+      "forget_ids": [
+        "context_27895e45ae57a8ad8e8c_comparison",
+        "context_27895e45ae57a8ad8e8c_advice",
+        "context_ea996ec9e3d0a8bfd7f2_comparison",
+        "context_ea996ec9e3d0a8bfd7f2_continuation"
+      ],
+      "ordinary_ids": [
+        "ordinary_gap_arithmetic_02",
+        "residual_negative_ce62f26e10e73831a3e1_continuation",
+        "ordinary_repair_language_personal_02",
+        "ordinary_gap_restoration_hobbies_03"
+      ],
+      "raw_npo": 0.24928894639015198,
+      "margins": [
+        95.24539947509766,
+        33.54925537109375,
+        99.73590850830078,
+        41.642539978027344
+      ],
+      "multipliers": [
+        0.00014606397598981857,
+        0.06746847182512283,
+        9.322541154688224e-05,
+        0.03060692921280861
+      ],
+      "raw_ordinary_zero_kl": 8.173652648925781,
+      "raw_ordinary_learned_kl": 8.550504684448242,
+      "weighted_total": 8.611367613077164,
+      "forget_effective_norms": [],
+      "ordinary_effective_norms": [
+        [],
+        [
+          {
+            "nominal_l2": 201.94471617422585,
+            "effective_l2": [
+              201.96585658193735,
+              201.98970492931002,
+              201.9578490937315,
+              201.98258710988256
+            ]
+          }
+        ]
+      ],
+      "health": {
+        "finite_losses": true,
+        "finite_gradients": true,
+        "gradient_tensors": 476,
+        "losses": {
+          "npo": 0.24928894639015198,
+          "ordinary_zero": 4.086826324462891,
+          "ordinary_learned": 4.275252342224121
+        }
+      },
+      "seconds": 1.4452842839527875
+    },
+    {
+      "step": 24,
+      "forget_ids": [
+        "context_bdf37cd2dd2373b282ea_advice",
+        "context_bdf37cd2dd2373b282ea_comparison",
+        "context_035dd3b761b87211da39_comparison",
+        "context_27895e45ae57a8ad8e8c_continuation"
+      ],
+      "ordinary_ids": [
+        "residual_negative_c2115cb71dbb3efe03a4_continuation",
+        "ordinary_gap_restoration_hobbies_01",
+        "residual_negative_ce62f26e10e73831a3e1_advice",
+        "ordinary_repair_fiction_00"
+      ],
+      "raw_npo": 0.033320214599370956,
+      "margins": [
+        50.60490417480469,
+        131.02508544921875,
+        110.24520111083984,
+        80.36808776855469
+      ],
+      "multipliers": [
+        0.01260494813323021,
+        4.080204689671518e-06,
+        3.2593779906164855e-05,
+        0.000646469125058502
+      ],
+      "raw_ordinary_zero_kl": 11.33839225769043,
+      "raw_ordinary_learned_kl": 13.842717170715332,
+      "weighted_total": 12.623874928802252,
+      "forget_effective_norms": [],
+      "ordinary_effective_norms": [
+        [],
+        [
+          {
+            "nominal_l2": 201.94471617422585,
+            "effective_l2": [
+              202.00563063986576,
+              201.97633262577372,
+              201.958256143986,
+              201.973480336694
+            ]
+          }
+        ]
+      ],
+      "health": {
+        "finite_losses": true,
+        "finite_gradients": true,
+        "gradient_tensors": 476,
+        "losses": {
+          "npo": 0.033320214599370956,
+          "ordinary_zero": 5.669196128845215,
+          "ordinary_learned": 6.921358585357666
+        }
+      },
+      "seconds": 1.4558533250237815
+    },
+    {
+      "step": 25,
+      "forget_ids": [
+        "context_ea996ec9e3d0a8bfd7f2_comparison",
+        "context_27895e45ae57a8ad8e8c_continuation",
+        "context_ea996ec9e3d0a8bfd7f2_advice",
+        "context_8ce430eadf754bb1bc29_advice"
+      ],
+      "ordinary_ids": [
+        "ordinary_repair_named_senses_02",
+        "ordinary_repair_named_senses_03",
+        "ordinary_repair_art_03",
+        "ordinary_repair_science_06"
+      ],
+      "raw_npo": 0.03445813059806824,
+      "margins": [
+        99.46597290039062,
+        81.63462829589844,
+        54.42200469970703,
+        61.00916290283203
+      ],
+      "multipliers": [
+        9.577606397215277e-05,
+        0.0005695862928405404,
+        0.008622552268207073,
+        0.004471606574952602
+      ],
+      "raw_ordinary_zero_kl": 22.745786666870117,
+      "raw_ordinary_learned_kl": 10.147054672241211,
+      "weighted_total": 16.480878800153732,
+      "forget_effective_norms": [],
+      "ordinary_effective_norms": [
+        [],
+        [
+          {
+            "nominal_l2": 201.94471617422585,
+            "effective_l2": [
+              201.98270323512943,
+              202.00218879034963,
+              201.9844456544031,
+              201.9727922027989
+            ]
+          }
+        ]
+      ],
+      "health": {
+        "finite_losses": true,
+        "finite_gradients": true,
+        "gradient_tensors": 476,
+        "losses": {
+          "npo": 0.03445813059806824,
+          "ordinary_zero": 11.372893333435059,
+          "ordinary_learned": 5.0735273361206055
+        }
+      },
+      "seconds": 1.6360205539967865
+    },
+    {
+      "step": 26,
+      "forget_ids": [
+        "context_27895e45ae57a8ad8e8c_comparison",
+        "context_8ce430eadf754bb1bc29_continuation",
+        "context_8ce430eadf754bb1bc29_comparison",
+        "context_ea996ec9e3d0a8bfd7f2_continuation"
+      ],
+      "ordinary_ids": [
+        "ordinary_repair_language_personal_00",
+        "ordinary_gap_unpaid_care_02",
+        "ordinary_repair_everyday_facts_00",
+        "ordinary_repair_pet_captions_03"
+      ],
+      "raw_npo": 0.05398876219987869,
+      "margins": [
+        98.4127426147461,
+        97.30023193359375,
+        123.73572540283203,
+        45.339576721191406
+      ],
+      "multipliers": [
+        0.00010641326662153006,
+        0.00011893473856616765,
+        8.457733201794326e-06,
+        0.021248018369078636
+      ],
+      "raw_ordinary_zero_kl": 9.303689956665039,
+      "raw_ordinary_learned_kl": 7.978977203369141,
+      "weighted_total": 8.695322342216969,
+      "forget_effective_norms": [],
+      "ordinary_effective_norms": [
+        [],
+        [
+          {
+            "nominal_l2": 201.94471617422585,
+            "effective_l2": [
+              201.97113343920734,
+              202.01436160042562,
+              201.97972598538627,
+              201.9557593456054
+            ]
+          }
+        ]
+      ],
+      "health": {
+        "finite_losses": true,
+        "finite_gradients": true,
+        "gradient_tensors": 476,
+        "losses": {
+          "npo": 0.05398876219987869,
+          "ordinary_zero": 4.6518449783325195,
+          "ordinary_learned": 3.9894886016845703
+        }
+      },
+      "seconds": 1.430776725988835
+    },
+    {
+      "step": 27,
+      "forget_ids": [
+        "context_3e06c11d41afe0e359d2_advice",
+        "context_0ddfd1249e4c30716edd_advice",
+        "context_bdf37cd2dd2373b282ea_continuation",
+        "context_bdf37cd2dd2373b282ea_comparison"
+      ],
+      "ordinary_ids": [
+        "ordinary_gap_arithmetic_01",
+        "residual_negative_310e773ae1525bda715d_advice",
+        "ordinary_repair_science_05",
+        "ordinary_repair_everyday_facts_03"
+      ],
+      "raw_npo": 0.11120732873678207,
+      "margins": [
+        56.9915771484375,
+        71.15985107421875,
+        40.03611755371094,
+        134.0410919189453
+      ],
+      "multipliers": [
+        0.006675215903669596,
+        0.0016227226005867124,
+        0.03584504500031471,
+        3.017857807208202e-06
+      ],
+      "raw_ordinary_zero_kl": 4.276322841644287,
+      "raw_ordinary_learned_kl": 5.106346130371094,
+      "weighted_total": 4.8025418147444725,
+      "forget_effective_norms": [],
+      "ordinary_effective_norms": [
+        [],
+        [
+          {
+            "nominal_l2": 201.94471617422585,
+            "effective_l2": [
+              201.96110160307887,
+              202.00677022337925,
+              202.0035147046908,
+              201.9812058514226
+            ]
+          }
+        ]
+      ],
+      "health": {
+        "finite_losses": true,
+        "finite_gradients": true,
+        "gradient_tensors": 476,
+        "losses": {
+          "npo": 0.11120732873678207,
+          "ordinary_zero": 2.1381614208221436,
+          "ordinary_learned": 2.553173065185547
+        }
+      },
+      "seconds": 1.4593078970210627
+    },
+    {
+      "step": 28,
+      "forget_ids": [
+        "context_0ddfd1249e4c30716edd_continuation",
+        "context_bdf37cd2dd2373b282ea_advice",
+        "context_035dd3b761b87211da39_comparison",
+        "context_0ddfd1249e4c30716edd_comparison"
+      ],
+      "ordinary_ids": [
+        "ordinary_repair_language_personal_00",
+        "ordinary_gap_room_furnishings_00",
+        "ordinary_repair_city_amenities_03",
+        "ordinary_repair_fiction_05"
+      ],
+      "raw_npo": 0.00999054778367281,
+      "margins": [
+        76.63932800292969,
+        64.91343688964844,
+        112.35718536376953,
+        153.89585876464844
+      ],
+      "multipliers": [
+        0.0009384744917042553,
+        0.003028426319360733,
+        2.638843398017343e-05,
+        4.1439778897256474e-07
+      ],
+      "raw_ordinary_zero_kl": 15.784586906433105,
+      "raw_ordinary_learned_kl": 9.026433944702148,
+      "weighted_total": 12.4155009733513,
+      "forget_effective_norms": [],
+      "ordinary_effective_norms": [
+        [],
+        [
+          {
+            "nominal_l2": 201.94471617422585,
+            "effective_l2": [
+              201.94959807096984,
+              201.977370348214,
+              202.01011727244216,
+              201.97594678087228
+            ]
+          }
+        ]
+      ],
+      "health": {
+        "finite_losses": true,
+        "finite_gradients": true,
+        "gradient_tensors": 476,
+        "losses": {
+          "npo": 0.00999054778367281,
+          "ordinary_zero": 7.892293453216553,
+          "ordinary_learned": 4.513216972351074
+        }
+      },
+      "seconds": 1.4307676820317283
+    },
+    {
+      "step": 29,
+      "forget_ids": [
+        "context_035dd3b761b87211da39_advice",
+        "context_035dd3b761b87211da39_continuation",
+        "context_3e06c11d41afe0e359d2_comparison",
+        "context_3e06c11d41afe0e359d2_continuation"
+      ],
+      "ordinary_ids": [
+        "ordinary_repair_everyday_facts_01",
+        "residual_negative_ab12e22d87c08e81b5ee_continuation",
+        "ordinary_repair_language_personal_02",
+        "ordinary_repair_pet_captions_00"
+      ],
+      "raw_npo": 0.0033592008985579014,
+      "margins": [
+        80.86749267578125,
+        105.04718017578125,
+        147.01380920410156,
+        79.968017578125
+      ],
+      "multipliers": [
+        0.0006149869877845049,
+        5.4812182497698814e-05,
+        8.247100709013466e-07,
+        0.0006728479056619108
+      ],
+      "raw_ordinary_zero_kl": 3.459141731262207,
+      "raw_ordinary_learned_kl": 3.1659460067749023,
+      "weighted_total": 3.3159030699171126,
+      "forget_effective_norms": [],
+      "ordinary_effective_norms": [
+        [],
+        [
+          {
+            "nominal_l2": 201.94471617422585,
+            "effective_l2": [
+              201.9797810532788,
+              201.98317758169543,
+              201.99584676319472,
+              202.01450063727577
+            ]
+          }
+        ]
+      ],
+      "health": {
+        "finite_losses": true,
+        "finite_gradients": true,
+        "gradient_tensors": 476,
+        "losses": {
+          "npo": 0.0033592008985579014,
+          "ordinary_zero": 1.7295708656311035,
+          "ordinary_learned": 1.5829730033874512
+        }
+      },
+      "seconds": 1.4452583499951288
+    },
+    {
+      "step": 30,
+      "forget_ids": [
+        "context_016c43d7ec6317bbb099_comparison",
+        "context_27895e45ae57a8ad8e8c_advice",
+        "context_016c43d7ec6317bbb099_continuation",
+        "context_016c43d7ec6317bbb099_advice"
+      ],
+      "ordinary_ids": [
+        "ordinary_repair_pet_captions_06",
+        "ordinary_repair_city_amenities_05",
+        "ordinary_gap_unpaid_care_02",
+        "ordinary_repair_everyday_facts_07"
+      ],
+      "raw_npo": 0.007604407612234354,
+      "margins": [
+        175.92767333984375,
+        74.0277328491211,
+        90.69872283935547,
+        71.34998321533203
+      ],
+      "multipliers": [
+        4.577075074507775e-08,
+        0.001218377030454576,
+        0.00023013586178421974,
+        0.001592185697518289
+      ],
+      "raw_ordinary_zero_kl": 16.80014419555664,
+      "raw_ordinary_learned_kl": 8.428020477294922,
+      "weighted_total": 12.621686744038016,
+      "forget_effective_norms": [],
+      "ordinary_effective_norms": [
+        [],
+        [
+          {
+            "nominal_l2": 201.94471617422585,
+            "effective_l2": [
+              201.98219254182877,
+              202.0107091812994,
+              201.98843660323573,
+              201.98380316066644
+            ]
+          }
+        ]
+      ],
+      "health": {
+        "finite_losses": true,
+        "finite_gradients": true,
+        "gradient_tensors": 476,
+        "losses": {
+          "npo": 0.007604407612234354,
+          "ordinary_zero": 8.40007209777832,
+          "ordinary_learned": 4.214010238647461
+        }
+      },
+      "seconds": 1.42192435299512
+    },
+    {
+      "step": 31,
+      "forget_ids": [
+        "context_8ce430eadf754bb1bc29_advice",
+        "context_ea996ec9e3d0a8bfd7f2_advice",
+        "context_ea996ec9e3d0a8bfd7f2_comparison",
+        "context_016c43d7ec6317bbb099_advice"
+      ],
+      "ordinary_ids": [
+        "ordinary_repair_everyday_facts_00",
+        "residual_negative_c2115cb71dbb3efe03a4_comparison",
+        "ordinary_repair_pet_captions_07",
+        "ordinary_repair_pet_captions_03"
+      ],
+      "raw_npo": 0.012149163521826267,
+      "margins": [
+        69.53449249267578,
+        72.2447738647461,
+        106.19821166992188,
+        72.32764434814453
+      ],
+      "multipliers": [
+        0.0019088449189439416,
+        0.0014560057315975428,
+        4.8852802137844265e-05,
+        0.0014439976075664163
+      ],
+      "raw_ordinary_zero_kl": 4.040163993835449,
+      "raw_ordinary_learned_kl": 6.6432271003723145,
+      "weighted_total": 5.353844710625708,
+      "forget_effective_norms": [],
+      "ordinary_effective_norms": [
+        [],
+        [
+          {
+            "nominal_l2": 201.94471617422585,
+            "effective_l2": [
+              201.98927865461476,
+              201.98439570639525,
+              201.9589125131931,
+              201.96121840309706
+            ]
+          }
+        ]
+      ],
+      "health": {
+        "finite_losses": true,
+        "finite_gradients": true,
+        "gradient_tensors": 476,
+        "losses": {
+          "npo": 0.012149163521826267,
+          "ordinary_zero": 2.0200819969177246,
+          "ordinary_learned": 3.3216135501861572
+        }
+      },
+      "seconds": 1.677314722968731
+    },
+    {
+      "step": 32,
+      "forget_ids": [
+        "context_0ddfd1249e4c30716edd_continuation",
+        "context_3e06c11d41afe0e359d2_advice",
+        "context_3e06c11d41afe0e359d2_continuation",
+        "context_0ddfd1249e4c30716edd_comparison"
+      ],
+      "ordinary_ids": [
+        "residual_negative_608c7b7f1de7885a5959_continuation",
+        "ordinary_gap_arithmetic_02",
+        "ordinary_gap_unpaid_care_01",
+        "ordinary_repair_city_amenities_02"
+      ],
+      "raw_npo": 0.0072126928716897964,
+      "margins": [
+        82.98497009277344,
+        68.57920837402344,
+        88.52661895751953,
+        157.5414276123047
+      ],
+      "multipliers": [
+        0.0004976572818122804,
+        0.002099986420944333,
+        0.0002859602100215852,
+        2.878012423934706e-07
+      ],
+      "raw_ordinary_zero_kl": 5.730576038360596,
+      "raw_ordinary_learned_kl": 6.383788108825684,
+      "weighted_total": 6.0643947664648294,
+      "forget_effective_norms": [],
+      "ordinary_effective_norms": [
+        [],
+        [
+          {
+            "nominal_l2": 201.94471617422585,
+            "effective_l2": [
+              201.96989810994438,
+              202.00350308040098,
+              201.97172088100274,
+              201.98731480086005
+            ]
+          }
+        ]
+      ],
+      "health": {
+        "finite_losses": true,
+        "finite_gradients": true,
+        "gradient_tensors": 476,
+        "losses": {
+          "npo": 0.0072126928716897964,
+          "ordinary_zero": 2.865288019180298,
+          "ordinary_learned": 3.191894054412842
+        }
+      },
+      "seconds": 1.4439718279754743
+    },
+    {
+      "step": 33,
+      "forget_ids": [
+        "context_035dd3b761b87211da39_continuation",
+        "context_bdf37cd2dd2373b282ea_comparison",
+        "context_27895e45ae57a8ad8e8c_continuation",
+        "context_bdf37cd2dd2373b282ea_continuation"
+      ],
+      "ordinary_ids": [
+        "ordinary_repair_city_amenities_06",
+        "ordinary_repair_everyday_facts_02",
+        "ordinary_repair_art_06",
+        "ordinary_repair_pet_captions_05"
+      ],
+      "raw_npo": 0.02099807932972908,
+      "margins": [
+        108.03582763671875,
+        135.76611328125,
+        94.543701171875,
+        54.947967529296875
+      ],
+      "multipliers": [
+        4.065225220983848e-05,
+        2.5396975615876727e-06,
+        0.0001566805294714868,
+        0.008182568475604057
+      ],
+      "raw_ordinary_zero_kl": 8.063605308532715,
+      "raw_ordinary_learned_kl": 8.548208236694336,
+      "weighted_total": 8.326904851943254,
+      "forget_effective_norms": [],
+      "ordinary_effective_norms": [
+        [],
+        [
+          {
+            "nominal_l2": 201.94471617422585,
+            "effective_l2": [
+              201.97510109264533,
+              202.00254108995304,
+              201.9669050012955,
+              201.9653105134235
+            ]
+          }
+        ]
+      ],
+      "health": {
+        "finite_losses": true,
+        "finite_gradients": true,
+        "gradient_tensors": 476,
+        "losses": {
+          "npo": 0.02099807932972908,
+          "ordinary_zero": 4.031802654266357,
+          "ordinary_learned": 4.274104118347168
+        }
+      },
+      "seconds": 1.4394314759992994
+    },
+    {
+      "step": 34,
+      "forget_ids": [
+        "context_035dd3b761b87211da39_comparison",
+        "context_8ce430eadf754bb1bc29_comparison",
+        "context_016c43d7ec6317bbb099_continuation",
+        "context_0ddfd1249e4c30716edd_advice"
+      ],
+      "ordinary_ids": [
+        "ordinary_repair_city_amenities_04",
+        "residual_negative_8d33d2da97a7b219269c_advice",
+        "ordinary_repair_science_07",
+        "ordinary_repair_art_00"
+      ],
+      "raw_npo": 0.0023884242400527,
+      "margins": [
+        114.42821502685547,
+        124.8891830444336,
+        95.85453796386719,
+        78.37765502929688
+      ],
+      "multipliers": [
+        2.1452164219226688e-05,
+        7.5363327596278396e-06,
+        0.00013743279851041734,
+        0.0007887879619374871
+      ],
+      "raw_ordinary_zero_kl": 7.250642776489258,
+      "raw_ordinary_learned_kl": 8.607285499572754,
+      "weighted_total": 7.931352562271059,
+      "forget_effective_norms": [],
+      "ordinary_effective_norms": [
+        [],
+        [
+          {
+            "nominal_l2": 201.94471617422585,
+            "effective_l2": [
+              201.97666481806397,
+              201.98004692721065,
+              201.96638365414634,
+              201.98780775502513
+            ]
+          }
+        ]
+      ],
+      "health": {
+        "finite_losses": true,
+        "finite_gradients": true,
+        "gradient_tensors": 476,
+        "losses": {
+          "npo": 0.0023884242400527,
+          "ordinary_zero": 3.625321388244629,
+          "ordinary_learned": 4.303642749786377
+        }
+      },
+      "seconds": 1.45839133503614
+    },
+    {
+      "step": 35,
+      "forget_ids": [
+        "context_27895e45ae57a8ad8e8c_comparison",
+        "context_bdf37cd2dd2373b282ea_advice",
+        "context_035dd3b761b87211da39_advice",
+        "context_27895e45ae57a8ad8e8c_advice"
+      ],
+      "ordinary_ids": [
+        "ordinary_repair_pet_captions_02",
+        "residual_negative_c2115cb71dbb3efe03a4_advice",
+        "residual_negative_ab12e22d87c08e81b5ee_advice",
+        "ordinary_repair_language_personal_04"
+      ],
+      "raw_npo": 0.005229366943240166,
+      "margins": [
+        99.60750579833984,
+        74.40953063964844,
+        84.46958923339844,
+        85.29293823242188
+      ],
+      "multipliers": [
+        9.44300991250202e-05,
+        0.0011727631790563464,
+        0.00042901153210550547,
+        0.00039511077920906246
+      ],
+      "raw_ordinary_zero_kl": 4.035819053649902,
+      "raw_ordinary_learned_kl": 6.122096061706543,
+      "weighted_total": 5.084186924621463,
+      "forget_effective_norms": [],
+      "ordinary_effective_norms": [
+        [],
+        [
+          {
+            "nominal_l2": 201.94471617422585,
+            "effective_l2": [
+              201.97474539081807,
+              202.0034904740524,
+              201.96605332193147,
+              201.98643120062644
+            ]
+          }
+        ]
+      ],
+      "health": {
+        "finite_losses": true,
+        "finite_gradients": true,
+        "gradient_tensors": 476,
+        "losses": {
+          "npo": 0.005229366943240166,
+          "ordinary_zero": 2.017909526824951,
+          "ordinary_learned": 3.0610480308532715
+        }
+      },
+      "seconds": 1.4575586050050333
+    },
+    {
+      "step": 36,
+      "forget_ids": [
+        "context_ea996ec9e3d0a8bfd7f2_continuation",
+        "context_016c43d7ec6317bbb099_comparison",
+        "context_3e06c11d41afe0e359d2_comparison",
+        "context_8ce430eadf754bb1bc29_continuation"
+      ],
+      "ordinary_ids": [
+        "residual_negative_eaeb9f2066e39b778ccd_continuation",
+        "ordinary_repair_named_senses_06",
+        "residual_negative_8d33d2da97a7b219269c_comparison",
+        "ordinary_gap_room_furnishings_01"
+      ],
+      "raw_npo": 0.015012340620160103,
+      "margins": [
+        58.128662109375,
+        176.23373413085938,
+        156.41346740722656,
+        109.3118667602539
+      ],
+      "multipliers": [
+        0.00595988892018795,
+        4.4391143205757544e-08,
+        3.221656754703872e-07,
+        3.5782293707598e-05
+      ],
+      "raw_ordinary_zero_kl": 5.649421215057373,
+      "raw_ordinary_learned_kl": 4.472755432128906,
+      "weighted_total": 5.0761006642133,
+      "forget_effective_norms": [],
+      "ordinary_effective_norms": [
+        [],
+        [
+          {
+            "nominal_l2": 201.94471617422585,
+            "effective_l2": [
+              201.98728661597607,
+              201.9909295843892,
+              201.9932563973294,
+              201.95694989550123
+            ]
+          }
+        ]
+      ],
+      "health": {
+        "finite_losses": true,
+        "finite_gradients": true,
+        "gradient_tensors": 476,
+        "losses": {
+          "npo": 0.015012340620160103,
+          "ordinary_zero": 2.8247106075286865,
+          "ordinary_learned": 2.236377716064453
+        }
+      },
+      "seconds": 1.6700119120068848
+    },
+    {
+      "step": 37,
+      "forget_ids": [
+        "context_016c43d7ec6317bbb099_advice",
+        "context_bdf37cd2dd2373b282ea_continuation",
+        "context_3e06c11d41afe0e359d2_continuation",
+        "context_ea996ec9e3d0a8bfd7f2_comparison"
+      ],
+      "ordinary_ids": [
+        "residual_negative_ab12e22d87c08e81b5ee_comparison",
+        "ordinary_repair_named_senses_02",
+        "ordinary_gap_unpaid_care_03",
+        "ordinary_repair_named_senses_04"
+      ],
+      "raw_npo": 0.028258610516786575,
+      "margins": [
+        77.64331817626953,
+        52.72045135498047,
+        95.50067901611328,
+        102.31065368652344
+      ],
+      "multipliers": [
+        0.000848866009619087,
+        0.010213775560259819,
+        0.0001423827197868377,
+        7.206409645732492e-05
+      ],
+      "raw_ordinary_zero_kl": 11.811544418334961,
+      "raw_ordinary_learned_kl": 8.586227416992188,
+      "weighted_total": 10.22714452818036,
+      "forget_effective_norms": [],
+      "ordinary_effective_norms": [
+        [],
+        [
+          {
+            "nominal_l2": 201.94471617422585,
+            "effective_l2": [
+              201.97750810152377,
+              201.9890866471491,
+              201.9719245249618,
+              201.98345574218254
+            ]
+          }
+        ]
+      ],
+      "health": {
+        "finite_losses": true,
+        "finite_gradients": true,
+        "gradient_tensors": 476,
+        "losses": {
+          "npo": 0.028258610516786575,
+          "ordinary_zero": 5.9057722091674805,
+          "ordinary_learned": 4.293113708496094
+        }
+      },
+      "seconds": 1.4632497900165617
+    },
+    {
+      "step": 38,
+      "forget_ids": [
+        "context_016c43d7ec6317bbb099_comparison",
+        "context_0ddfd1249e4c30716edd_continuation",
+        "context_27895e45ae57a8ad8e8c_comparison",
+        "context_ea996ec9e3d0a8bfd7f2_continuation"
+      ],
+      "ordinary_ids": [
+        "ordinary_repair_pet_captions_04",
+        "ordinary_repair_everyday_facts_04",
+        "ordinary_repair_art_05",
+        "residual_negative_ce62f26e10e73831a3e1_continuation"
+      ],
+      "raw_npo": 0.017819341272115707,
+      "margins": [
+        175.615478515625,
+        83.76774597167969,
+        97.95209503173828,
+        57.188812255859375
+      ],
+      "multipliers": [
+        4.7222233234833766e-08,
+        0.0004601961118169129,
+        0.00011142950097564608,
+        0.006545274518430233
+      ],
+      "raw_ordinary_zero_kl": 5.8922882080078125,
+      "raw_ordinary_learned_kl": 9.294106483459473,
+      "weighted_total": 7.611016687005758,
+      "forget_effective_norms": [],
+      "ordinary_effective_norms": [
+        [],
+        [
+          {
+            "nominal_l2": 201.94471617422585,
+            "effective_l2": [
+              202.01000827735305,
+              201.9858936067702,
+              201.9731949752825,
+              201.96731300267626
+            ]
+          }
+        ]
+      ],
+      "health": {
+        "finite_losses": true,
+        "finite_gradients": true,
+        "gradient_tensors": 476,
+        "losses": {
+          "npo": 0.017819341272115707,
+          "ordinary_zero": 2.9461441040039062,
+          "ordinary_learned": 4.647053241729736
+        }
+      },
+      "seconds": 1.4513003589818254
+    },
+    {
+      "step": 39,
+      "forget_ids": [
+        "context_035dd3b761b87211da39_comparison",
+        "context_8ce430eadf754bb1bc29_comparison",
+        "context_3e06c11d41afe0e359d2_comparison",
+        "context_016c43d7ec6317bbb099_continuation"
+      ],
+      "ordinary_ids": [
+        "residual_negative_c2115cb71dbb3efe03a4_continuation",
+        "ordinary_gap_restoration_hobbies_02",
+        "residual_negative_eaeb9f2066e39b778ccd_comparison",
+        "ordinary_repair_language_personal_01"
+      ],
+      "raw_npo": 0.0004207724123261869,
+      "margins": [
+        114.53425598144531,
+        121.93852233886719,
+        157.31422424316406,
+        95.9108657836914
+      ],
+      "multipliers": [
+        2.1225889213383198e-05,
+        1.012290067592403e-05,
+        2.944150310213445e-07,
+        0.0001366609358228743
+      ],
+      "raw_ordinary_zero_kl": 4.883533000946045,
+      "raw_ordinary_learned_kl": 5.968305587768555,
+      "weighted_total": 5.426340066769626,
+      "forget_effective_norms": [],
+      "ordinary_effective_norms": [
+        [],
+        [
+          {
+            "nominal_l2": 201.94471617422585,
+            "effective_l2": [
+              201.97185950204624,
+              201.99204761291512,
+              201.98028375643625,
+              201.95769215907276
+            ]
+          }
+        ]
+      ],
+      "health": {
+        "finite_losses": true,
+        "finite_gradients": true,
+        "gradient_tensors": 476,
+        "losses": {
+          "npo": 0.0004207724123261869,
+          "ordinary_zero": 2.4417665004730225,
+          "ordinary_learned": 2.9841527938842773
+        }
+      },
+      "seconds": 1.4604085949831642
+    },
+    {
+      "step": 40,
+      "forget_ids": [
+        "context_0ddfd1249e4c30716edd_advice",
+        "context_8ce430eadf754bb1bc29_advice",
+        "context_ea996ec9e3d0a8bfd7f2_advice",
+        "context_035dd3b761b87211da39_continuation"
+      ],
+      "ordinary_ids": [
+        "ordinary_repair_fiction_00",
+        "ordinary_repair_fiction_02",
+        "ordinary_repair_science_04",
+        "ordinary_repair_language_personal_03"
+      ],
+      "raw_npo": 0.009569745510816574,
+      "margins": [
+        78.27452087402344,
+        68.68290710449219,
+        76.8885269165039,
+        109.31968688964844
+      ],
+      "multipliers": [
+        0.0007969619473442435,
+        0.0020783450454473495,
+        0.0009153872379101813,
+        3.575432128855027e-05
+      ],
+      "raw_ordinary_zero_kl": 3.3925766944885254,
+      "raw_ordinary_learned_kl": 6.5210723876953125,
+      "weighted_total": 4.9663942866027355,
+      "forget_effective_norms": [],
+      "ordinary_effective_norms": [
+        [],
+        [
+          {
+            "nominal_l2": 201.94471617422585,
+            "effective_l2": [
+              201.98247212785276,
+              201.97502384960026,
+              201.9975499208741,
+              201.98921377283267
+            ]
+          }
+        ]
+      ],
+      "health": {
+        "finite_losses": true,
+        "finite_gradients": true,
+        "gradient_tensors": 476,
+        "losses": {
+          "npo": 0.009569745510816574,
+          "ordinary_zero": 1.6962883472442627,
+          "ordinary_learned": 3.2605361938476562
+        }
+      },
+      "seconds": 1.4359914190135896
+    },
+    {
+      "step": 41,
+      "forget_ids": [
+        "context_8ce430eadf754bb1bc29_continuation",
+        "context_27895e45ae57a8ad8e8c_advice",
+        "context_3e06c11d41afe0e359d2_advice",
+        "context_27895e45ae57a8ad8e8c_continuation"
+      ],
+      "ordinary_ids": [
+        "ordinary_repair_art_07",
+        "ordinary_gap_room_furnishings_02",
+        "residual_negative_608c7b7f1de7885a5959_comparison",
+        "residual_negative_310e773ae1525bda715d_continuation"
+      ],
+      "raw_npo": 0.005522099789232016,
+      "margins": [
+        108.42601776123047,
+        87.70901489257812,
+        70.58370971679688,
+        95.68531799316406
+      ],
+      "multipliers": [
+        3.909663428203203e-05,
+        0.000310319010168314,
+        0.0017188776982948184,
+        0.00013977804337628186
+      ],
+      "raw_ordinary_zero_kl": 4.846298694610596,
+      "raw_ordinary_learned_kl": 4.718543529510498,
+      "weighted_total": 4.787943211849779,
+      "forget_effective_norms": [],
+      "ordinary_effective_norms": [
+        [],
+        [
+          {
+            "nominal_l2": 201.94471617422585,
+            "effective_l2": [
+              202.01329673099886,
+              201.96412433859658,
+              201.97650901012577,
+              202.00212907480568
+            ]
+          }
+        ]
+      ],
+      "health": {
+        "finite_losses": true,
+        "finite_gradients": true,
+        "gradient_tensors": 476,
+        "losses": {
+          "npo": 0.005522099789232016,
+          "ordinary_zero": 2.423149347305298,
+          "ordinary_learned": 2.359271764755249
+        }
+      },
+      "seconds": 1.4653726770193316
+    },
+    {
+      "step": 42,
+      "forget_ids": [
+        "context_bdf37cd2dd2373b282ea_advice",
+        "context_0ddfd1249e4c30716edd_comparison",
+        "context_bdf37cd2dd2373b282ea_comparison",
+        "context_035dd3b761b87211da39_advice"
+      ],
+      "ordinary_ids": [
+        "ordinary_repair_language_personal_06",
+        "ordinary_repair_named_senses_07",
+        "ordinary_repair_science_00",
+        "ordinary_repair_fiction_01"
+      ],
+      "raw_npo": 0.005305088125169277,
+      "margins": [
+        70.92912292480469,
+        160.1746368408203,
+        129.1818389892578,
+        83.86817932128906
+      ],
+      "multipliers": [
+        0.0016605679411441088,
+        2.2117387743492145e-07,
+        4.906059530185303e-06,
+        0.0004555984924081713
+      ],
+      "raw_ordinary_zero_kl": 5.609561443328857,
+      "raw_ordinary_learned_kl": 6.0595245361328125,
+      "weighted_total": 5.839848077856004,
+      "forget_effective_norms": [],
+      "ordinary_effective_norms": [
+        [],
+        [
+          {
+            "nominal_l2": 201.94471617422585,
+            "effective_l2": [
+              201.98849510697661,
+              201.99448133341724,
+              201.98022552404174,
+              201.96866793588785
+            ]
+          }
+        ]
+      ],
+      "health": {
+        "finite_losses": true,
+        "finite_gradients": true,
+        "gradient_tensors": 476,
+        "losses": {
+          "npo": 0.005305088125169277,
+          "ordinary_zero": 2.8047807216644287,
+          "ordinary_learned": 3.0297622680664062
+        }
+      },
+      "seconds": 1.6500349800335243
+    },
+    {
+      "step": 43,
+      "forget_ids": [
+        "context_27895e45ae57a8ad8e8c_advice",
+        "context_035dd3b761b87211da39_comparison",
+        "context_8ce430eadf754bb1bc29_continuation",
+        "context_ea996ec9e3d0a8bfd7f2_continuation"
+      ],
+      "ordinary_ids": [
+        "ordinary_repair_science_01",
+        "ordinary_repair_fiction_06",
+        "residual_negative_608c7b7f1de7885a5959_advice",
+        "ordinary_repair_city_amenities_01"
+      ],
+      "raw_npo": 0.013499639928340912,
+      "margins": [
+        91.9609375,
+        111.22278594970703,
+        108.34432220458984,
+        59.64900207519531
+      ],
+      "multipliers": [
+        0.0002028491726377979,
+        2.955827585537918e-05,
+        3.941732575185597e-05,
+        0.005121451802551746
+      ],
+      "raw_ordinary_zero_kl": 7.029608726501465,
+      "raw_ordinary_learned_kl": 8.549785614013672,
+      "weighted_total": 7.803196810185909,
+      "forget_effective_norms": [],
+      "ordinary_effective_norms": [
+        [],
+        [
+          {
+            "nominal_l2": 201.94471617422585,
+            "effective_l2": [
+              202.00248830849335,
+              201.97102245661955,
+              201.98022179418152,
+              201.9600014449632
+            ]
+          }
+        ]
+      ],
+      "health": {
+        "finite_losses": true,
+        "finite_gradients": true,
+        "gradient_tensors": 476,
+        "losses": {
+          "npo": 0.013499639928340912,
+          "ordinary_zero": 3.5148043632507324,
+          "ordinary_learned": 4.274892807006836
+        }
+      },
+      "seconds": 1.4644068330526352
+    },
+    {
+      "step": 44,
+      "forget_ids": [
+        "context_016c43d7ec6317bbb099_continuation",
+        "context_bdf37cd2dd2373b282ea_comparison",
+        "context_016c43d7ec6317bbb099_advice",
+        "context_ea996ec9e3d0a8bfd7f2_advice"
+      ],
+      "ordinary_ids": [
+        "ordinary_gap_restoration_hobbies_03",
+        "ordinary_repair_science_03",
+        "ordinary_repair_art_02",
+        "residual_negative_ce62f26e10e73831a3e1_advice"
+      ],
+      "raw_npo": 0.00626581022515893,
+      "margins": [
+        96.98888397216797,
+        126.52630615234375,
+        80.46257781982422,
+        70.48462677001953
+      ],
+      "multipliers": [
+        0.00012269573926459998,
+        6.398244750016602e-06,
+        0.0006403913139365613,
+        0.001735978526994586
+      ],
+      "raw_ordinary_zero_kl": 2.89208984375,
+      "raw_ordinary_learned_kl": 5.661217212677002,
+      "weighted_total": 4.28291933843866,
+      "forget_effective_norms": [],
+      "ordinary_effective_norms": [
+        [],
+        [
+          {
+            "nominal_l2": 201.94471617422585,
+            "effective_l2": [
+              201.97208871567105,
+              202.0023351915862,
+              201.98039345466253,
+              201.97631557431097
+            ]
+          }
+        ]
+      ],
+      "health": {
+        "finite_losses": true,
+        "finite_gradients": true,
+        "gradient_tensors": 476,
+        "losses": {
+          "npo": 0.00626581022515893,
+          "ordinary_zero": 1.446044921875,
+          "ordinary_learned": 2.830608606338501
+        }
+      },
+      "seconds": 1.4605958389583975
+    },
+    {
+      "step": 45,
+      "forget_ids": [
+        "context_27895e45ae57a8ad8e8c_comparison",
+        "context_27895e45ae57a8ad8e8c_continuation",
+        "context_0ddfd1249e4c30716edd_advice",
+        "context_8ce430eadf754bb1bc29_comparison"
+      ],
+      "ordinary_ids": [
+        "ordinary_gap_room_furnishings_03",
+        "residual_negative_ce62f26e10e73831a3e1_comparison",
+        "ordinary_repair_named_senses_03",
+        "ordinary_repair_art_04"
+      ],
+      "raw_npo": 0.0036124212201684713,
+      "margins": [
+        87.19916534423828,
+        96.2046890258789,
+        76.25483703613281,
+        121.8581314086914
+      ],
+      "multipliers": [
+        0.00032654835376888514,
+        0.00013270416820887476,
+        0.0009752424084581435,
+        1.0204611498920713e-05
+      ],
+      "raw_ordinary_zero_kl": 7.609856605529785,
+      "raw_ordinary_learned_kl": 5.34489631652832,
+      "weighted_total": 6.480988882249221,
+      "forget_effective_norms": [],
+      "ordinary_effective_norms": [
+        [],
+        [
+          {
+            "nominal_l2": 201.94471617422585,
+            "effective_l2": [
+              201.9972058153997,
+              201.9801891524236,
+              201.96724806213405,
+              201.98511785147397
+            ]
+          }
+        ]
+      ],
+      "health": {
+        "finite_losses": true,
+        "finite_gradients": true,
+        "gradient_tensors": 476,
+        "losses": {
+          "npo": 0.0036124212201684713,
+          "ordinary_zero": 3.8049283027648926,
+          "ordinary_learned": 2.67244815826416
+        }
+      },
+      "seconds": 1.4623755430220626
+    },
+    {
+      "step": 46,
+      "forget_ids": [
+        "context_016c43d7ec6317bbb099_comparison",
+        "context_3e06c11d41afe0e359d2_continuation",
+        "context_ea996ec9e3d0a8bfd7f2_comparison",
+        "context_8ce430eadf754bb1bc29_advice"
+      ],
+      "ordinary_ids": [
+        "residual_negative_19a4c9c3410d92a9eaab_comparison",
+        "residual_negative_19a4c9c3410d92a9eaab_advice",
+        "ordinary_repair_language_personal_05",
+        "ordinary_repair_art_01"
+      ],
+      "raw_npo": 0.006954810582101345,
+      "margins": [
+        176.0679931640625,
+        99.28814697265625,
+        90.97465515136719,
+        66.99923706054688
+      ],
+      "multipliers": [
+        4.5132964032745804e-08,
+        9.749431774253026e-05,
+        0.000223873314098455,
+        0.002458983799442649
+      ],
+      "raw_ordinary_zero_kl": 6.834565162658691,
+      "raw_ordinary_learned_kl": 5.852954864501953,
+      "weighted_total": 6.350714824162424,
+      "forget_effective_norms": [],
+      "ordinary_effective_norms": [
+        [],
+        [
+          {
+            "nominal_l2": 201.94471617422585,
+            "effective_l2": [
+              202.00100525568854,
+              201.9817567736627,
+              201.9801438518114,
+              201.9853525951811
+            ]
+          }
+        ]
+      ],
+      "health": {
+        "finite_losses": true,
+        "finite_gradients": true,
+        "gradient_tensors": 476,
+        "losses": {
+          "npo": 0.006954810582101345,
+          "ordinary_zero": 3.4172825813293457,
+          "ordinary_learned": 2.9264774322509766
+        }
+      },
+      "seconds": 1.4682938890182413
+    },
+    {
+      "step": 47,
+      "forget_ids": [
+        "context_3e06c11d41afe0e359d2_comparison",
+        "context_035dd3b761b87211da39_advice",
+        "context_bdf37cd2dd2373b282ea_continuation",
+        "context_0ddfd1249e4c30716edd_continuation"
+      ],
+      "ordinary_ids": [
+        "residual_negative_19a4c9c3410d92a9eaab_continuation",
+        "ordinary_repair_fiction_03",
+        "ordinary_repair_fiction_04",
+        "ordinary_repair_pet_captions_01"
+      ],
+      "raw_npo": 0.07720897346735,
+      "margins": [
+        156.60865783691406,
+        85.1322021484375,
+        41.90458679199219,
+        84.44859313964844
+      ],
+      "multipliers": [
+        3.1593833682563854e-07,
+        0.00040151149732992053,
+        0.029827114194631577,
+        0.0004299131687730551
+      ],
+      "raw_ordinary_zero_kl": 4.467482566833496,
+      "raw_ordinary_learned_kl": 4.993876934051514,
+      "weighted_total": 4.807888723909855,
+      "forget_effective_norms": [],
+      "ordinary_effective_norms": [
+        [],
+        [
+          {
+            "nominal_l2": 201.94471617422585,
+            "effective_l2": [
+              201.99612100474903,
+              201.98385678966494,
+              201.9558200297762,
+              201.99545331808366
+            ]
+          }
+        ]
+      ],
+      "health": {
+        "finite_losses": true,
+        "finite_gradients": true,
+        "gradient_tensors": 476,
+        "losses": {
+          "npo": 0.07720897346735,
+          "ordinary_zero": 2.233741283416748,
+          "ordinary_learned": 2.496938467025757
+        }
+      },
+      "seconds": 1.4483955869800411
+    },
+    {
+      "step": 48,
+      "forget_ids": [
+        "context_bdf37cd2dd2373b282ea_advice",
+        "context_3e06c11d41afe0e359d2_advice",
+        "context_0ddfd1249e4c30716edd_comparison",
+        "context_035dd3b761b87211da39_continuation"
+      ],
+      "ordinary_ids": [
+        "ordinary_repair_city_amenities_07",
+        "ordinary_repair_everyday_facts_05",
+        "ordinary_repair_art_03",
+        "residual_negative_eaeb9f2066e39b778ccd_advice"
+      ],
+      "raw_npo": 0.012009929865598679,
+      "margins": [
+        66.02342224121094,
+        68.7884521484375,
+        158.7095489501953,
+        109.947265625
+      ],
+      "multipliers": [
+        0.0027106923516839743,
+        0.0020565472077578306,
+        2.56071672311009e-07,
+        3.357943205628544e-05
+      ],
+      "raw_ordinary_zero_kl": 4.827576637268066,
+      "raw_ordinary_learned_kl": 4.443184852600098,
+      "weighted_total": 4.647390674799681,
+      "forget_effective_norms": [],
+      "ordinary_effective_norms": [
+        [],
+        [
+          {
+            "nominal_l2": 201.94471617422585,
+            "effective_l2": [
+              201.95988233450825,
+              201.99352172414785,
+              201.95927850272744,
+              201.97110954679587
+            ]
+          }
+        ]
+      ],
+      "health": {
+        "finite_losses": true,
+        "finite_gradients": true,
+        "gradient_tensors": 476,
+        "losses": {
+          "npo": 0.012009929865598679,
+          "ordinary_zero": 2.413788318634033,
+          "ordinary_learned": 2.221592426300049
+        }
+      },
+      "seconds": 1.6733619529986754
+    },
+    {
+      "step": 49,
+      "forget_ids": [
+        "context_ea996ec9e3d0a8bfd7f2_advice",
+        "context_ea996ec9e3d0a8bfd7f2_continuation",
+        "context_8ce430eadf754bb1bc29_comparison",
+        "context_bdf37cd2dd2373b282ea_advice"
+      ],
+      "ordinary_ids": [
+        "ordinary_repair_language_personal_07",
+        "ordinary_gap_arithmetic_03",
+        "ordinary_gap_restoration_hobbies_01",
+        "ordinary_repair_named_senses_01"
+      ],
+      "raw_npo": 0.03142552450299263,
+      "margins": [
+        64.70926666259766,
+        57.50141906738281,
+        119.23529052734375,
+        64.65757751464844
+      ],
+      "multipliers": [
+        0.003090797457844019,
+        0.006344466935843229,
+        1.3264900189824402e-05,
+        0.0031067896634340286
+      ],
+      "raw_ordinary_zero_kl": 4.476344108581543,
+      "raw_ordinary_learned_kl": 9.049365043640137,
+      "weighted_total": 6.7942801006138325,
+      "forget_effective_norms": [],
+      "ordinary_effective_norms": [
+        [],
+        [
+          {
+            "nominal_l2": 201.94471617422585,
+            "effective_l2": [
+              201.94544402237787,
+              201.94531828823375,
+              201.99162448652623,
+              201.98128499455913
+            ]
+          }
+        ]
+      ],
+      "health": {
+        "finite_losses": true,
+        "finite_gradients": true,
+        "gradient_tensors": 476,
+        "losses": {
+          "npo": 0.03142552450299263,
+          "ordinary_zero": 2.2381720542907715,
+          "ordinary_learned": 4.524682521820068
+        }
+      },
+      "seconds": 1.4314652049797587
+    },
+    {
+      "step": 50,
+      "forget_ids": [
+        "context_8ce430eadf754bb1bc29_continuation",
+        "context_016c43d7ec6317bbb099_comparison",
+        "context_bdf37cd2dd2373b282ea_comparison",
+        "context_27895e45ae57a8ad8e8c_advice"
+      ],
+      "ordinary_ids": [
+        "ordinary_gap_unpaid_care_00",
+        "ordinary_repair_science_06",
+        "ordinary_gap_restoration_hobbies_00",
+        "ordinary_repair_named_senses_00"
+      ],
+      "raw_npo": 0.0023826761171221733,
+      "margins": [
+        108.49771881103516,
+        174.12493896484375,
+        120.94908142089844,
+        77.02684783935547
+      ],
+      "multipliers": [
+        3.88172957173083e-05,
+        5.481250653360803e-08,
+        1.1175719009770546e-05,
+        0.0009028182830661535
+      ],
+      "raw_ordinary_zero_kl": 6.658468723297119,
+      "raw_ordinary_learned_kl": 8.965251922607422,
+      "weighted_total": 7.814242999069393,
+      "forget_effective_norms": [],
+      "ordinary_effective_norms": [
+        [],
+        [
+          {
+            "nominal_l2": 201.94471617422585,
+            "effective_l2": [
+              201.982396459594,
+              201.9829694043703,
+              201.9730772882597,
+              201.97972243988184
+            ]
+          }
+        ]
+      ],
+      "health": {
+        "finite_losses": true,
+        "finite_gradients": true,
+        "gradient_tensors": 476,
+        "losses": {
+          "npo": 0.0023826761171221733,
+          "ordinary_zero": 3.3292343616485596,
+          "ordinary_learned": 4.482625961303711
+        }
+      },
+      "seconds": 1.4388006769586354
+    },
+    {
+      "step": 51,
+      "forget_ids": [
+        "context_016c43d7ec6317bbb099_continuation",
+        "context_27895e45ae57a8ad8e8c_comparison",
+        "context_3e06c11d41afe0e359d2_advice",
+        "context_035dd3b761b87211da39_advice"
+      ],
+      "ordinary_ids": [
+        "ordinary_repair_science_02",
+        "ordinary_repair_named_senses_05",
+        "ordinary_repair_fiction_07",
+        "ordinary_repair_city_amenities_00"
+      ],
+      "raw_npo": 0.007391751278191805,
+      "margins": [
+        98.15144348144531,
+        81.09333801269531,
+        69.93114471435547,
+        84.909423828125
+      ],
+      "multipliers": [
+        0.00010923031368292868,
+        0.0006012573721818626,
+        0.0018346800934523344,
+        0.00041055481415241957
+      ],
+      "raw_ordinary_zero_kl": 2.1850223541259766,
+      "raw_ordinary_learned_kl": 5.766960144042969,
+      "weighted_total": 3.9833830003626645,
+      "forget_effective_norms": [],
+      "ordinary_effective_norms": [
+        [],
+        [
+          {
+            "nominal_l2": 201.94471617422585,
+            "effective_l2": [
+              201.99758373736438,
+              201.96766622864337,
+              201.9951506692978,
+              201.96585219520134
+            ]
+          }
+        ]
+      ],
+      "health": {
+        "finite_losses": true,
+        "finite_gradients": true,
+        "gradient_tensors": 476,
+        "losses": {
+          "npo": 0.007391751278191805,
+          "ordinary_zero": 1.0925111770629883,
+          "ordinary_learned": 2.8834800720214844
+        }
+      },
+      "seconds": 1.4447613339871168
+    },
+    {
+      "step": 52,
+      "forget_ids": [
+        "context_035dd3b761b87211da39_continuation",
+        "context_27895e45ae57a8ad8e8c_continuation",
+        "context_3e06c11d41afe0e359d2_comparison",
+        "context_035dd3b761b87211da39_comparison"
+      ],
+      "ordinary_ids": [
+        "residual_negative_8d33d2da97a7b219269c_continuation",
+        "ordinary_repair_everyday_facts_06",
+        "residual_negative_310e773ae1525bda715d_comparison",
+        "ordinary_gap_arithmetic_00"
+      ],
+      "raw_npo": 0.0006656567566096783,
+      "margins": [
+        107.95633697509766,
+        92.32245635986328,
+        155.73609924316406,
+        111.31615447998047
+      ],
+      "multipliers": [
+        4.097667260793969e-05,
+        0.00019564747344702482,
+        3.4474416565899446e-07,
+        2.9283592084539123e-05
+      ],
+      "raw_ordinary_zero_kl": 2.949084520339966,
+      "raw_ordinary_learned_kl": 5.54443883895874,
+      "weighted_total": 4.247427336405963,
+      "forget_effective_norms": [],
+      "ordinary_effective_norms": [
+        [],
+        [
+          {
+            "nominal_l2": 201.94471617422585,
+            "effective_l2": [
+              201.9804874700651,
+              201.96100908174634,
+              201.96298475062716,
+              201.97961810948743
+            ]
+          }
+        ]
+      ],
+      "health": {
+        "finite_losses": true,
+        "finite_gradients": true,
+        "gradient_tensors": 476,
+        "losses": {
+          "npo": 0.0006656567566096783,
+          "ordinary_zero": 1.474542260169983,
+          "ordinary_learned": 2.77221941947937
+        }
+      },
+      "seconds": 1.4659352289745584
+    },
+    {
+      "step": 53,
+      "forget_ids": [
+        "context_3e06c11d41afe0e359d2_continuation",
+        "context_0ddfd1249e4c30716edd_advice",
+        "context_bdf37cd2dd2373b282ea_continuation",
+        "context_0ddfd1249e4c30716edd_continuation"
+      ],
+      "ordinary_ids": [
+        "ordinary_repair_city_amenities_02",
+        "ordinary_repair_art_07",
+        "ordinary_repair_pet_captions_00",
+        "ordinary_repair_city_amenities_05"
+      ],
+      "raw_npo": 0.01919257827103138,
+      "margins": [
+        100.83549499511719,
+        76.02655792236328,
+        57.71245574951172,
+        85.85774230957031
+      ],
+      "multipliers": [
+        8.351836004294455e-05,
+        0.0009977500885725021,
+        0.006212391424924135,
+        0.0003734173078555614
+      ],
+      "raw_ordinary_zero_kl": 8.864484786987305,
+      "raw_ordinary_learned_kl": 6.169897079467773,
+      "weighted_total": 7.53638351149857,
+      "forget_effective_norms": [],
+      "ordinary_effective_norms": [
+        [],
+        [
+          {
+            "nominal_l2": 201.94471617422585,
+            "effective_l2": [
+              201.97726508831272,
+              201.97498755806896,
+              201.99485667115218,
+              201.97718105310716
+            ]
+          }
+        ]
+      ],
+      "health": {
+        "finite_losses": true,
+        "finite_gradients": true,
+        "gradient_tensors": 476,
+        "losses": {
+          "npo": 0.01919257827103138,
+          "ordinary_zero": 4.432242393493652,
+          "ordinary_learned": 3.0849485397338867
+        }
+      },
+      "seconds": 1.6464280729996972
+    },
+    {
+      "step": 54,
+      "forget_ids": [
+        "context_ea996ec9e3d0a8bfd7f2_comparison",
+        "context_0ddfd1249e4c30716edd_comparison",
+        "context_8ce430eadf754bb1bc29_advice",
+        "context_016c43d7ec6317bbb099_advice"
+      ],
+      "ordinary_ids": [
+        "ordinary_gap_arithmetic_02",
+        "residual_negative_eaeb9f2066e39b778ccd_continuation",
+        "residual_negative_ce62f26e10e73831a3e1_comparison",
+        "ordinary_repair_science_07"
+      ],
+      "raw_npo": 0.010682047344744205,
+      "margins": [
+        80.58845520019531,
+        158.460693359375,
+        65.6467514038086,
+        77.9489517211914
+      ],
+      "multipliers": [
+        0.000632383453194052,
+        2.625242814247031e-07,
+        0.0028145962860435247,
+        0.000823324779048562
+      ],
+      "raw_ordinary_zero_kl": 1.9768908023834229,
+      "raw_ordinary_learned_kl": 2.6801600456237793,
+      "weighted_total": 2.3392074713483453,
+      "forget_effective_norms": [],
+      "ordinary_effective_norms": [
+        [],
+        [
+          {
+            "nominal_l2": 201.94471617422585,
+            "effective_l2": [
+              201.98587823271387,
+              201.99028428442924,
+              201.9838929966968,
+              201.97960305539763
+            ]
+          }
+        ]
+      ],
+      "health": {
+        "finite_losses": true,
+        "finite_gradients": true,
+        "gradient_tensors": 476,
+        "losses": {
+          "npo": 0.010682047344744205,
+          "ordinary_zero": 0.9884454011917114,
+          "ordinary_learned": 1.3400800228118896
+        }
+      },
+      "seconds": 1.4684267009724863
+    },
+    {
+      "step": 55,
+      "forget_ids": [
+        "context_ea996ec9e3d0a8bfd7f2_continuation",
+        "context_ea996ec9e3d0a8bfd7f2_advice",
+        "context_0ddfd1249e4c30716edd_comparison",
+        "context_bdf37cd2dd2373b282ea_comparison"
+      ],
+      "ordinary_ids": [
+        "ordinary_repair_city_amenities_06",
+        "ordinary_gap_unpaid_care_01",
+        "residual_negative_eaeb9f2066e39b778ccd_comparison",
+        "ordinary_repair_city_amenities_01"
+      ],
+      "raw_npo": 0.019771598279476166,
+      "margins": [
+        61.34614562988281,
+        63.283226013183594,
+        158.82444763183594,
+        119.37179565429688
+      ],
+      "multipliers": [
+        0.00432375306263566,
+        0.003563688602298498,
+        2.531462826027564e-07,
+        1.3085065802442841e-05
+      ],
+      "raw_ordinary_zero_kl": 4.669057846069336,
+      "raw_ordinary_learned_kl": 6.154386520385742,
+      "weighted_total": 5.431493781507015,
+      "forget_effective_norms": [],
+      "ordinary_effective_norms": [
+        [],
+        [
+          {
+            "nominal_l2": 201.94471617422585,
+            "effective_l2": [
+              201.9719713534953,
+              201.98440554904036,
+              201.98311540635532,
+              201.95237034905696
+            ]
+          }
+        ]
+      ],
+      "health": {
+        "finite_losses": true,
+        "finite_gradients": true,
+        "gradient_tensors": 476,
+        "losses": {
+          "npo": 0.019771598279476166,
+          "ordinary_zero": 2.334528923034668,
+          "ordinary_learned": 3.077193260192871
+        }
+      },
+      "seconds": 1.4713270929642022
+    },
+    {
+      "step": 56,
+      "forget_ids": [
+        "context_bdf37cd2dd2373b282ea_continuation",
+        "context_035dd3b761b87211da39_continuation",
+        "context_3e06c11d41afe0e359d2_comparison",
+        "context_ea996ec9e3d0a8bfd7f2_comparison"
+      ],
+      "ordinary_ids": [
+        "ordinary_repair_art_03",
+        "ordinary_repair_language_personal_02",
+        "residual_negative_c2115cb71dbb3efe03a4_continuation",
+        "ordinary_repair_language_personal_05"
+      ],
+      "raw_npo": 0.01783556118607521,
+      "margins": [
+        57.28394317626953,
+        110.65504455566406,
+        158.30555725097656,
+        80.97282409667969
+      ],
+      "multipliers": [
+        0.0064835031516849995,
+        3.1284947908716276e-05,
+        2.666286604835477e-07,
+        0.0006085450877435505
+      ],
+      "raw_ordinary_zero_kl": 3.308236598968506,
+      "raw_ordinary_learned_kl": 3.3816769123077393,
+      "weighted_total": 3.3627923168241978,
+      "forget_effective_norms": [],
+      "ordinary_effective_norms": [
+        [],
+        [
+          {
+            "nominal_l2": 201.94471617422585,
+            "effective_l2": [
+              201.9817934311709,
+              201.98444274516993,
+              202.0232594224949,
+              201.94681947781095
+            ]
+          }
+        ]
+      ],
+      "health": {
+        "finite_losses": true,
+        "finite_gradients": true,
+        "gradient_tensors": 476,
+        "losses": {
+          "npo": 0.01783556118607521,
+          "ordinary_zero": 1.654118299484253,
+          "ordinary_learned": 1.6908384561538696
+        }
+      },
+      "seconds": 1.4625173639506102
+    },
+    {
+      "step": 57,
+      "forget_ids": [
+        "context_27895e45ae57a8ad8e8c_continuation",
+        "context_016c43d7ec6317bbb099_advice",
+        "context_3e06c11d41afe0e359d2_continuation",
+        "context_035dd3b761b87211da39_advice"
+      ],
+      "ordinary_ids": [
+        "residual_negative_608c7b7f1de7885a5959_continuation",
+        "ordinary_repair_art_04",
+        "ordinary_repair_science_04",
+        "ordinary_repair_everyday_facts_05"
+      ],
+      "raw_npo": 0.0036180163733661175,
+      "margins": [
+        93.84606170654297,
+        77.70159912109375,
+        107.78657531738281,
+        85.33714294433594
+      ],
+      "multipliers": [
+        0.00016800056619103998,
+        0.0008439349476248026,
+        4.167823135503568e-05,
+        0.00039336844929493964
+      ],
+      "raw_ordinary_zero_kl": 1.9065122604370117,
+      "raw_ordinary_learned_kl": 2.3593764305114746,
+      "weighted_total": 2.1365623618476093,
+      "forget_effective_norms": [],
+      "ordinary_effective_norms": [
+        [],
+        [
+          {
+            "nominal_l2": 201.94471617422585,
+            "effective_l2": [
+              201.97956027426557,
+              201.97350463084027,
+              201.97899804269744,
+              201.96334924936778
+            ]
+          }
+        ]
+      ],
+      "health": {
+        "finite_losses": true,
+        "finite_gradients": true,
+        "gradient_tensors": 476,
+        "losses": {
+          "npo": 0.0036180163733661175,
+          "ordinary_zero": 0.9532561302185059,
+          "ordinary_learned": 1.1796882152557373
+        }
+      },
+      "seconds": 1.441389650979545
+    },
+    {
+      "step": 58,
+      "forget_ids": [
+        "context_016c43d7ec6317bbb099_continuation",
+        "context_0ddfd1249e4c30716edd_continuation",
+        "context_016c43d7ec6317bbb099_comparison",
+        "context_8ce430eadf754bb1bc29_comparison"
+      ],
+      "ordinary_ids": [
+        "ordinary_repair_fiction_04",
+        "ordinary_gap_restoration_hobbies_00",
+        "ordinary_repair_named_senses_03",
+        "residual_negative_19a4c9c3410d92a9eaab_advice"
+      ],
+      "raw_npo": 0.0007454708102159202,
+      "margins": [
+        101.60686492919922,
+        92.24485778808594,
+        174.04730224609375,
+        113.46043395996094
+      ],
+      "multipliers": [
+        7.731844380032271e-05,
+        0.00019717126269824803,
+        5.5239766538761614e-08,
+        2.363201383559499e-05
+      ],
+      "raw_ordinary_zero_kl": 3.025716543197632,
+      "raw_ordinary_learned_kl": 3.0730364322662354,
+      "weighted_total": 3.0501219585421495,
+      "forget_effective_norms": [],
+      "ordinary_effective_norms": [
+        [],
+        [
+          {
+            "nominal_l2": 201.94471617422585,
+            "effective_l2": [
+              201.98502058166656,
+              201.98793408477027,
+              201.97631510685213,
+              201.96809738181526
+            ]
+          }
+        ]
+      ],
+      "health": {
+        "finite_losses": true,
+        "finite_gradients": true,
+        "gradient_tensors": 476,
+        "losses": {
+          "npo": 0.0007454708102159202,
+          "ordinary_zero": 1.512858271598816,
+          "ordinary_learned": 1.5365182161331177
+        }
+      },
+      "seconds": 1.4679889610270038
+    },
+    {
+      "step": 59,
+      "forget_ids": [
+        "context_035dd3b761b87211da39_comparison",
+        "context_8ce430eadf754bb1bc29_continuation",
+        "context_27895e45ae57a8ad8e8c_advice",
+        "context_8ce430eadf754bb1bc29_advice"
+      ],
+      "ordinary_ids": [
+        "ordinary_repair_science_03",
+        "ordinary_repair_named_senses_02",
+        "ordinary_repair_art_06",
+        "ordinary_repair_pet_captions_03"
+      ],
+      "raw_npo": 0.009501670487225056,
+      "margins": [
+        107.51583099365234,
+        111.40003967285156,
+        73.99559020996094,
+        66.81533813476562
+      ],
+      "multipliers": [
+        4.282205190975219e-05,
+        2.9038978027529083e-05,
+        0.0012222972000017762,
+        0.002504566218703985
+      ],
+      "raw_ordinary_zero_kl": 3.110915422439575,
+      "raw_ordinary_learned_kl": 2.2028350830078125,
+      "weighted_total": 2.666376923210919,
+      "forget_effective_norms": [],
+      "ordinary_effective_norms": [
+        [],
+        [
+          {
+            "nominal_l2": 201.94471617422585,
+            "effective_l2": [
+              201.98676590866657,
+              201.9672929357684,
+              202.00653745160736,
+              201.95677952188035
+            ]
+          }
+        ]
+      ],
+      "health": {
+        "finite_losses": true,
+        "finite_gradients": true,
+        "gradient_tensors": 476,
+        "losses": {
+          "npo": 0.009501670487225056,
+          "ordinary_zero": 1.5554577112197876,
+          "ordinary_learned": 1.1014175415039062
+        }
+      },
+      "seconds": 1.6569116860046051
+    },
+    {
+      "step": 60,
+      "forget_ids": [
+        "context_27895e45ae57a8ad8e8c_comparison",
+        "context_bdf37cd2dd2373b282ea_advice",
+        "context_3e06c11d41afe0e359d2_advice",
+        "context_0ddfd1249e4c30716edd_advice"
+      ],
+      "ordinary_ids": [
+        "ordinary_repair_fiction_02",
+        "ordinary_repair_named_senses_00",
+        "ordinary_repair_fiction_03",
+        "ordinary_repair_language_personal_04"
+      ],
+      "raw_npo": 0.019460231065750122,
+      "margins": [
+        77.0196304321289,
+        62.22959899902344,
+        69.47997283935547,
+        76.0323257446289
+      ],
+      "multipliers": [
+        0.0009034699760377407,
+        0.003958879504352808,
+        0.0019192697945982218,
+        0.0009971748804673553
+      ],
+      "raw_ordinary_zero_kl": 2.317180871963501,
+      "raw_ordinary_learned_kl": 5.489287376403809,
+      "weighted_total": 3.922694355249405,
+      "forget_effective_norms": [],
+      "ordinary_effective_norms": [
+        [],
+        [
+          {
+            "nominal_l2": 201.94471617422585,
+            "effective_l2": [
+              201.9987523715317,
+              201.99288733904862,
+              201.98006581968184,
+              202.00857602375774
+            ]
+          }
+        ]
+      ],
+      "health": {
+        "finite_losses": true,
+        "finite_gradients": true,
+        "gradient_tensors": 476,
+        "losses": {
+          "npo": 0.019460231065750122,
+          "ordinary_zero": 1.1585904359817505,
+          "ordinary_learned": 2.7446436882019043
+        }
+      },
+      "seconds": 1.443987911043223
+    },
+    {
+      "step": 61,
+      "forget_ids": [
+        "context_ea996ec9e3d0a8bfd7f2_comparison",
+        "context_016c43d7ec6317bbb099_advice",
+        "context_035dd3b761b87211da39_advice",
+        "context_8ce430eadf754bb1bc29_comparison"
+      ],
+      "ordinary_ids": [
+        "ordinary_repair_science_01",
+        "ordinary_repair_everyday_facts_07",
+        "ordinary_gap_arithmetic_00",
+        "ordinary_repair_pet_captions_05"
+      ],
+      "raw_npo": 0.0055144536308944225,
+      "margins": [
+        74.78031921386719,
+        78.53504180908203,
+        88.71134948730469,
+        116.18838500976562
+      ],
+      "multipliers": [
+        0.0011300989426672459,
+        0.0007764755864627659,
+        0.00028072696295566857,
+        1.79898979695281e-05
+      ],
+      "raw_ordinary_zero_kl": 3.0543525218963623,
+      "raw_ordinary_learned_kl": 3.892251491546631,
+      "weighted_total": 3.478816460352391,
+      "forget_effective_norms": [],
+      "ordinary_effective_norms": [
+        [],
+        [
+          {
+            "nominal_l2": 201.94471617422585,
+            "effective_l2": [
+              201.98620543082475,
+              202.01614093828965,
+              201.96656583554977,
+              202.00038740783666
+            ]
+          }
+        ]
+      ],
+      "health": {
+        "finite_losses": true,
+        "finite_gradients": true,
+        "gradient_tensors": 476,
+        "losses": {
+          "npo": 0.0055144536308944225,
+          "ordinary_zero": 1.5271762609481812,
+          "ordinary_learned": 1.9461257457733154
+        }
+      },
+      "seconds": 1.4579605860053562
+    },
+    {
+      "step": 62,
+      "forget_ids": [
+        "context_27895e45ae57a8ad8e8c_continuation",
+        "context_bdf37cd2dd2373b282ea_advice",
+        "context_27895e45ae57a8ad8e8c_comparison",
+        "context_016c43d7ec6317bbb099_comparison"
+      ],
+      "ordinary_ids": [
+        "ordinary_repair_pet_captions_07",
+        "ordinary_repair_everyday_facts_04",
+        "ordinary_repair_science_06",
+        "ordinary_repair_named_senses_07"
+      ],
+      "raw_npo": 0.011658933945000172,
+      "margins": [
+        97.6631088256836,
+        63.89111328125,
+        74.24854278564453,
+        173.94223022460938
+      ],
+      "multipliers": [
+        0.00011469650780782104,
+        0.003353862324729562,
+        0.0011917849769815803,
+        5.58231647573848e-08
+      ],
+      "raw_ordinary_zero_kl": 1.9803463220596313,
+      "raw_ordinary_learned_kl": 2.6784920692443848,
+      "weighted_total": 2.3410781295970082,
+      "forget_effective_norms": [],
+      "ordinary_effective_norms": [
+        [],
+        [
+          {
+            "nominal_l2": 201.94471617422585,
+            "effective_l2": [
+              201.98808271198436,
+              201.95678055278918,
+              201.99003191432,
+              201.99230532243456
+            ]
+          }
+        ]
+      ],
+      "health": {
+        "finite_losses": true,
+        "finite_gradients": true,
+        "gradient_tensors": 476,
+        "losses": {
+          "npo": 0.011658933945000172,
+          "ordinary_zero": 0.9901731610298157,
+          "ordinary_learned": 1.3392460346221924
+        }
+      },
+      "seconds": 1.4442463769810274
+    },
+    {
+      "step": 63,
+      "forget_ids": [
+        "context_035dd3b761b87211da39_continuation",
+        "context_8ce430eadf754bb1bc29_advice",
+        "context_3e06c11d41afe0e359d2_advice",
+        "context_ea996ec9e3d0a8bfd7f2_continuation"
+      ],
+      "ordinary_ids": [
+        "ordinary_repair_art_02",
+        "ordinary_repair_everyday_facts_06",
+        "ordinary_repair_pet_captions_01",
+        "ordinary_repair_pet_captions_02"
+      ],
+      "raw_npo": 0.014611372724175453,
+      "margins": [
+        115.8025131225586,
+        67.3337173461914,
+        69.82316589355469,
+        71.36265563964844
+      ],
+      "multipliers": [
+        1.869762854767032e-05,
+        0.002378192963078618,
+        0.0018545800121501088,
+        0.0015901705482974648
+      ],
+      "raw_ordinary_zero_kl": 1.3908567428588867,
+      "raw_ordinary_learned_kl": 2.3026950359344482,
+      "weighted_total": 1.861387262120843,
+      "forget_effective_norms": [],
+      "ordinary_effective_norms": [
+        [],
+        [
+          {
+            "nominal_l2": 201.94471617422585,
+            "effective_l2": [
+              201.9648074701252,
+              201.96944475740605,
+              201.9856538330032,
+              201.95188804660847
+            ]
+          }
+        ]
+      ],
+      "health": {
+        "finite_losses": true,
+        "finite_gradients": true,
+        "gradient_tensors": 476,
+        "losses": {
+          "npo": 0.014611372724175453,
+          "ordinary_zero": 0.6954283714294434,
+          "ordinary_learned": 1.1513475179672241
+        }
+      },
+      "seconds": 1.4422444369993173
+    },
+    {
+      "step": 64,
+      "forget_ids": [
+        "context_bdf37cd2dd2373b282ea_comparison",
+        "context_ea996ec9e3d0a8bfd7f2_advice",
+        "context_27895e45ae57a8ad8e8c_advice",
+        "context_0ddfd1249e4c30716edd_advice"
+      ],
+      "ordinary_ids": [
+        "ordinary_repair_named_senses_01",
+        "residual_negative_ab12e22d87c08e81b5ee_comparison",
+        "residual_negative_c2115cb71dbb3efe03a4_advice",
+        "residual_negative_eaeb9f2066e39b778ccd_advice"
+      ],
+      "raw_npo": 0.01395336538553238,
+      "margins": [
+        113.6455078125,
+        64.5860366821289,
+        73.84352111816406,
+        74.306640625
+      ],
+      "multipliers": [
+        2.3198683265945874e-05,
+        0.0031290603801608086,
+        0.001241014921106398,
+        0.0011848850408568978
+      ],
+      "raw_ordinary_zero_kl": 2.724621295928955,
+      "raw_ordinary_learned_kl": 3.4651870727539062,
+      "weighted_total": 3.108857549726963,
+      "forget_effective_norms": [],
+      "ordinary_effective_norms": [
+        [],
+        [
+          {
+            "nominal_l2": 201.94471617422585,
+            "effective_l2": [
+              201.98298277323096,
+              201.98699610484135,
+              201.98478246032508,
+              201.96969003069788
+            ]
+          }
+        ]
+      ],
+      "health": {
+        "finite_losses": true,
+        "finite_gradients": true,
+        "gradient_tensors": 476,
+        "losses": {
+          "npo": 0.01395336538553238,
+          "ordinary_zero": 1.3623106479644775,
+          "ordinary_learned": 1.7325935363769531
+        }
+      },
+      "seconds": 1.4725664479774423
+    }
+  ],
+  "limits": [
+    "Mechanical finite qualification does not establish concept removal or ordinary-answer health.",
+    "Forget NPO uses sum over answer tokens, matched edited-parent reference; ordinaryKL compares bothstudent conditions against unperturbed clean teacher.",
+    "Only476 LoRA factors optimized; parent/clean teachers and fixedblock4vector frozen."
+  ]
+}
