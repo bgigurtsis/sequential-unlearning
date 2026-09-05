@@ -1,0 +1,95 @@
+{
+  "run": "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/retain_cone_separate_rtx_run64_v1",
+  "steps": 64,
+  "mode": "separate",
+  "active_corrections": 45,
+  "selected_bound_violations": 0,
+  "component_normalized_uphill_beyond_bound": [
+    0,
+    0,
+    0
+  ],
+  "target_uphill_steps": 0,
+  "removed_fraction_median": 0.035933811518388606,
+  "removed_fraction_max": 0.16689321518925102,
+  "stored_fraction_min": 0.9859749695975487,
+  "max_normalized_dot_to_bound_ratio": 0.08377830071430518,
+  "peak_allocated": 23076892160,
+  "peak_reserved": 29576134656,
+  "training_seconds": 186.10053343110485,
+  "final_losses": {
+    "total": 88.43206024169922,
+    "forget": 1.437913417816162,
+    "retain": 0.009666570462286472,
+    "chat": 0.0534919872879982,
+    "consistency": 0.0,
+    "answer_suppression": 0.0,
+    "ordinary_repair": 6.841372489929199
+  },
+  "snapshots": {
+    "16": {
+      "component_pre_dots": [
+        0.002986062439433426,
+        0.12856191529469632,
+        -3.8748117194577123
+      ],
+      "component_post_dots": [
+        6.81400679506056e-10,
+        7.40338483009792e-10,
+        -3.6689391231342707
+      ],
+      "target_pre_dot": -0.15349117661402056,
+      "target_post_dot": -0.12261595101008771,
+      "removed_fraction": 0.11190092687768173,
+      "normalized_stored_post_dots": [
+        1.0954676610838774e-10,
+        1.0625029705902289e-11,
+        -0.005160129601931986
+      ],
+      "feasibility_bound": 2.6544377575466835e-07
+    },
+    "32": {
+      "component_pre_dots": [
+        0.0013612371045689574,
+        0.06145844307987436,
+        -1.2897571955288178
+      ],
+      "component_post_dots": [
+        6.732487084644932e-10,
+        3.4505451382456365e-09,
+        -1.2395973719210953
+      ],
+      "target_pre_dot": -0.024025023903313292,
+      "target_post_dot": -0.020196718908080502,
+      "removed_fraction": 0.04739928367955577,
+      "normalized_stored_post_dots": [
+        1.0717114043105541e-10,
+        3.6342776646085464e-11,
+        -0.003987176955596927
+      ],
+      "feasibility_bound": 2.386418150246921e-07
+    },
+    "64": {
+      "component_pre_dots": [
+        -0.0010580701227959938,
+        -0.0073498106539995585,
+        -0.5023687794864633
+      ],
+      "component_post_dots": [
+        -0.0010580701227959938,
+        -0.0073498106539995585,
+        -0.5023687794864633
+      ],
+      "target_pre_dot": -0.06257351193827909,
+      "target_post_dot": -0.06257351193827909,
+      "removed_fraction": 0.0,
+      "normalized_stored_post_dots": [
+        -0.00017356754107199067,
+        -0.00010501459445486902,
+        -0.0021778854401942245
+      ],
+      "feasibility_bound": 1.955467937425222e-07
+    }
+  },
+  "conclusion": "Numerical sampled first-order constraints only; behavioral evaluation pending"
+}
