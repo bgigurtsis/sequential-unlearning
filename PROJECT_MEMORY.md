@@ -2,6 +2,8 @@
 
 ## Current handover — September 5, 2026
 
+L40Srank8 full192 completion integrated; allstepsfinite,full1056/520coverage and3adapters locallyhashverified. Subagent quick3checkpoint evaluation next. RTXrank32 quickfailed; primary diagnoses answer-initiation loss before changingtraining.
+
 Current decision: Rank32 quick64/128/192 rejected: only1/6/7 of28 targets give unfamiliarity; employment meanings survive and costofliving control fails. No context/broad/fresh qualifiers. Next diagnose first-token versus reply-tail CE on training/reusedquick probes; no newtraining objective yet. L40Srank8 awaits own3checkpoint screen.
 
 Latest: RTXrank32 full192 complete, all192 finite,1056+520 unique target coverage, adapters64/128/192 pinned in logs/projection-sprint-20260904/wide-rank32-training-review-v1.json. Quick40 across3adapters next; no semantic result. L40Srank8 still training independently.
