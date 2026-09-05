@@ -1,3 +1,5 @@
+Both cumulative/rolling2step qualifications passed. Full96 now next/launching: root cumulative504/1576, subagent rolling216/1864, sameparent/chat100/seed34008. Exactexposure3weights retired withlocalarchives intact;L40S3.026GBfree. No behavioral result; goal active.
+
 RTX cumulative2step qualified: exact476parent/238scope,finite,peak21.56GB. Full96 fromsame natural48 next after integration; subagent rolling2step independent. No behavioral qualification; goal active.
 
 Cumulative-vs-rolling sampling pair frozen: same natural48 parent/chat100/seed34008/96steps24,48,96; root504direct+1576context, subagent216+1864. Only288 sampling_stratum fields changed, all model inputs unchanged. Two-step qualifications next. Exact archived exposure-control3weight retirement manifest integrated before deletion. No qualifier; goal active.

@@ -1,0 +1,161 @@
+{
+  "schema": "rolling_l40s_qualification_review_v1",
+  "verdict": "PASS mechanical qualification only",
+  "host": "51.49.31.142",
+  "rank": 32,
+  "alpha": 64,
+  "seed": 34008,
+  "finite_steps": 2,
+  "parent_load": {
+    "path": "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/natural_coverage_rtx_run96_v1/step048",
+    "weight_sha256": "53da34a3ff8245895b5763adc10495976bf43708864312f15b454a86482a2ae4",
+    "config_sha256": "ac7d0576a6c4669b7575b0482a11c4b7f4191ecd668f8f40daab8bfed6757b34",
+    "tensor_count": 476,
+    "native_tensor_bytes_equal": true,
+    "source_and_loaded_dtype": "float32",
+    "optimizer_state": "fresh AdamW; no momentum resumed"
+  },
+  "response_bank": "original eight unfamiliarity responses with EOS",
+  "chat_retain_weight": 100,
+  "target_prefix": [
+    5,
+    8
+  ],
+  "chat_prefix": [
+    5,
+    8
+  ],
+  "denominators": "original answer token count, independently CE/chatJSD",
+  "coverage": {
+    "direct": {
+      "population": 216,
+      "draws": 16,
+      "unique_seen": 16,
+      "seen_ids": [
+        "boundary_target_03063eed4ac8413e7ca9",
+        "boundary_target_0888d800c471411d3fb6",
+        "boundary_target_14b2ceb92fa5902d2305",
+        "boundary_target_183a86e4d22fe81bcff8",
+        "boundary_target_200276b30b762d2b4c64",
+        "boundary_target_3abd784b19aeb31e70c0",
+        "boundary_target_3da6fa6e66ffc5d15c3c",
+        "boundary_target_5cd35753999ecd4d6e51",
+        "boundary_target_5e129af70a4d94837fbd",
+        "boundary_target_85ccb35512c3d4b30ec3",
+        "boundary_target_8a6c4e154c2b7749cba0",
+        "boundary_target_8d939caf58c71141c21e",
+        "boundary_target_937fe4101e0eda68b059",
+        "boundary_target_9ee1f57ec5e0575dd03b",
+        "boundary_target_aa85606ecb976749ebfd",
+        "boundary_target_b2b8a8df315688560ac2"
+      ],
+      "cycles_started": 1,
+      "complete_cycles": 0
+    },
+    "context": {
+      "population": 1864,
+      "draws": 16,
+      "unique_seen": 16,
+      "seen_ids": [
+        "context_a6eeb4234c9a39ed4a08",
+        "context_aac04fdc4dfeb352261c",
+        "context_bf2378476abfbbcdf023",
+        "context_f8c31a5b94c47ba0116c",
+        "direct_0148810f6fecb26ab1c5",
+        "direct_11af08ef6521abacfea4",
+        "direct_1adee9f50af0e2f8b467",
+        "direct_35ffe621c85f3f2b0ce4",
+        "direct_65793e6ce8421aa2fe8f",
+        "direct_78275f7543d22a8b4b33",
+        "direct_8c7eb207e134b4a11b15",
+        "direct_914837861375b2fa5e73",
+        "direct_b1bc744bd8ac07f644b9",
+        "direct_b423a2789621c1181037",
+        "natural_train_537fd28462d5e1bb0910",
+        "natural_train_f62dac422e3addc3dd11"
+      ],
+      "cycles_started": 1,
+      "complete_cycles": 0
+    }
+  },
+  "peak_allocated_bytes": 21637256192,
+  "peak_reserved_bytes": 22145925120,
+  "step_seconds": [
+    2.0110499059665017,
+    1.6565674669691361
+  ],
+  "final_health": {
+    "finite_losses": true,
+    "finite_gradients": true,
+    "gradient_tensors": 476,
+    "losses": {
+      "total": 14.866986274719238,
+      "forget": 1.0631853342056274,
+      "retain": 0.0019631413742899895,
+      "chat": 0.04176238924264908,
+      "consistency": 0.0,
+      "answer_suppression": 0.0
+    },
+    "step": 2,
+    "scope": "training_health",
+    "gradient_norm": 108.78392627533826,
+    "elapsed_seconds": 1.6565674669691361,
+    "peak_allocated_bytes": 21637256192,
+    "peak_reserved_bytes": 22145925120
+  },
+  "final_audit": {
+    "step": 2,
+    "scope": "audit",
+    "train_forget": 1.0631853342056274,
+    "train_jsd": 1.0631853342056274,
+    "train_answer_suppression": 0.0,
+    "train_retain": 0.0019631413742899895,
+    "train_chat_retain": 0.04176238924264908,
+    "train_consistency": 0.0,
+    "consistency_records_used": 0,
+    "consistency_tokens_used": 0,
+    "consistency_gradient_microbatches": 0,
+    "target_control_grad_dot": null,
+    "target_control_grad_cosine": null,
+    "control_projection_applied": false,
+    "control_projection_tensors": 0,
+    "control_projection_eligible_tensors": 0,
+    "train_grad_norm": 108.78392627533826,
+    "answer_prob_ratio_to_baseline": 0.9946862536282406,
+    "mean_jsd_to_refusal": 0.6929282248020172,
+    "mean_refusal_token_prob": 0.00018102560593291628,
+    "mean_answer_token_prob": 0.8421986699104309
+  },
+  "remote_checkpoints": {},
+  "local_files": {
+    "logs/projection-sprint-20260904/rolling-l40s-qualification-v1.log": {
+      "sha256": "15f54115d7affc112c9cc0c72e1d74eb2d6603f60689422c380333eff802c896",
+      "bytes": 2804
+    },
+    "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/rolling_l40s_qualification_v1/run_config.json": {
+      "sha256": "f088d97d3facee9244e1ef7bca914328bbdc3cae4a42543cc508aca43d6bc216",
+      "bytes": 60105
+    },
+    "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/rolling_l40s_qualification_v1/training_metrics.jsonl": {
+      "sha256": "4d6fab8c05f69db7868d7409f3aa90c14a5218fe8a9a60d58463e08a0d74d0b7",
+      "bytes": 1809
+    },
+    "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/rolling_l40s_qualification_v1/sampling_trace.jsonl": {
+      "sha256": "133f4bf7dfcb2ef86476185c204cdf3cc8f80cb19a7c404960169577f02d03fa",
+      "bytes": 1556
+    },
+    "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/rolling_l40s_qualification_v1/sampling_coverage.json": {
+      "sha256": "eeb7f6e24945e2100b180793cc8c676e6548c497e4456860fa1812d45fe7e160",
+      "bytes": 1663
+    },
+    "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/rolling_l40s_qualification_v1/stop_state.json": {
+      "sha256": "78cfde81429d5a690d7520159f69e66ec159840cbfefeda144a253ad195ab918",
+      "bytes": 337
+    },
+    "logs/projection-sprint-20260904/run-rolling-l40s-qualification-v1.sh": {
+      "sha256": "f159502a0c72ae4c726e0838302f5bf750581da977db4118350f563a0983d8c5",
+      "bytes": 5679
+    }
+  },
+  "claim_limit": "Teacherforcedloss is not concept absence. No behavioral success claimed; root integrates before nextGPUstage."
+}
