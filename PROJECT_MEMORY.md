@@ -49,9 +49,12 @@ unfamiliarity ("I don't know what that is") is preferred, not mandatory.
   Beta.1originalquickFAIL(one targetloop),28/28targetabsence,9/12controls,
   0recovery/0newloss; artistic-only. Beta.25FAIL:26/28definiteholes,
   2ambiguous targets,10/12controls (physics recovered),no newloss.
-  Next fixed .5/.75quick screens; no original/artistic beta.25promotion.
+  Beta.5FAIL:18/28holes,10targetrecoveries,12/12controlshealthy.
+  User-authorized speed amendment SKIPSbeta.75; beta.1broaddeprioritized.
+  Plainblend lane closed without robustqualifier; no beta.25/.5promotion.
   Target-constrained E90 correction fallback separately frozen: C=(E90-donor)(I-QFQF^T),
-  QF from624independent donor prompt-last keys. Native identity then one fullcandidate,
+  QF from624independent donor prompt-last keys. Miniature publisher nativeidentity
+  test replaces redundantrealcopy under speedamendment; one fullcandidate,
   conditional on no original blend qualifier. Code/tests next; no capture yet.
   Earlier rotated-U90 proposal not run. No finalaudit use.
 - Both identity tools now copy native donor values; FP32 subtraction/addition
@@ -73,8 +76,8 @@ unfamiliarity ("I don't know what that is") is preferred, not mandatory.
   target-only broken replies if meaning stays absent and all collateral criteria
   pass. Evaluate only if no original survivor meets sprint criteria; one final
   audit across both paths. p=.9/33452 has one recovered natural control.
-- Next gate: finish fixed partial-projection blends; calibrate dense conversation
-  damage, broad-test survivors, select by frozen damage/control criteria,
+- Next gate: qualify/run target-constrained repair after coupled blend recovery;
+  broad-test if quick survives, select by measured damage/control criteria,
   then spend the fresh audit once. Report no-go if no candidate qualifies.
 
 This is the concise cross-session handover. `EXPERIMENTS.md` is the complete,

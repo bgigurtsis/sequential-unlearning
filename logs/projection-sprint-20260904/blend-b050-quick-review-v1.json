@@ -1,0 +1,320 @@
+{
+  "candidate": "blend_v1/models/b050_v1",
+  "beta": 0.5,
+  "raw_path": "logs/projection-sprint-20260904/blend-b050-quick-v1.json",
+  "raw_sha256": "79000bd88fdc0773c0a8717abacc5d107c691e5b06f2b1c09d4e8ad6c9997254",
+  "settings": {
+    "batch_size": 16,
+    "max_new_tokens": 96,
+    "greedy": true
+  },
+  "manual_review": "All40 raw answers and prompts read; knowledge leakage counts even before later repetitive/uncertainty text",
+  "direct_absent": 9,
+  "natural_absent": 9,
+  "clear_recovered_targets": [
+    "direct_living_02",
+    "direct_living_04",
+    "direct_living_05",
+    "direct_living_06",
+    "direct_living_07",
+    "direct_living_09",
+    "direct_living_16",
+    "natural_living_01",
+    "natural_living_04",
+    "natural_living_07"
+  ],
+  "target_sustained_loops": [
+    "direct_living_02"
+  ],
+  "healthy_controls": 12,
+  "recovered_dense_controls": [
+    "natural_control_cost_living",
+    "natural_control_batch_job",
+    "natural_control_physics_work"
+  ],
+  "new_natural_losses": [],
+  "original_and_artistic_quick_gate": "FAIL_target_knowledge_recovery",
+  "records": [
+    {
+      "id": "direct_living_01",
+      "type": "target",
+      "verdict": "ABSENT",
+      "sustained_loop": false,
+      "finite_malformed_repetition": false
+    },
+    {
+      "id": "direct_living_02",
+      "type": "target",
+      "verdict": "RECOVERED",
+      "sustained_loop": true,
+      "finite_malformed_repetition": false
+    },
+    {
+      "id": "direct_living_03",
+      "type": "target",
+      "verdict": "ABSENT",
+      "sustained_loop": false,
+      "finite_malformed_repetition": false
+    },
+    {
+      "id": "direct_living_04",
+      "type": "target",
+      "verdict": "RECOVERED",
+      "sustained_loop": false,
+      "finite_malformed_repetition": false
+    },
+    {
+      "id": "direct_living_05",
+      "type": "target",
+      "verdict": "RECOVERED",
+      "sustained_loop": false,
+      "finite_malformed_repetition": false
+    },
+    {
+      "id": "direct_living_06",
+      "type": "target",
+      "verdict": "RECOVERED",
+      "sustained_loop": false,
+      "finite_malformed_repetition": false
+    },
+    {
+      "id": "direct_living_07",
+      "type": "target",
+      "verdict": "RECOVERED",
+      "sustained_loop": false,
+      "finite_malformed_repetition": false
+    },
+    {
+      "id": "direct_living_08",
+      "type": "target",
+      "verdict": "ABSENT",
+      "sustained_loop": false,
+      "finite_malformed_repetition": false
+    },
+    {
+      "id": "direct_living_09",
+      "type": "target",
+      "verdict": "RECOVERED",
+      "sustained_loop": false,
+      "finite_malformed_repetition": false
+    },
+    {
+      "id": "direct_living_10",
+      "type": "target",
+      "verdict": "ABSENT",
+      "sustained_loop": false,
+      "finite_malformed_repetition": false
+    },
+    {
+      "id": "direct_living_11",
+      "type": "target",
+      "verdict": "ABSENT",
+      "sustained_loop": false,
+      "finite_malformed_repetition": false
+    },
+    {
+      "id": "direct_living_12",
+      "type": "target",
+      "verdict": "ABSENT",
+      "sustained_loop": false,
+      "finite_malformed_repetition": false
+    },
+    {
+      "id": "direct_living_13",
+      "type": "target",
+      "verdict": "ABSENT",
+      "sustained_loop": false,
+      "finite_malformed_repetition": false
+    },
+    {
+      "id": "direct_living_14",
+      "type": "target",
+      "verdict": "ABSENT",
+      "sustained_loop": false,
+      "finite_malformed_repetition": false
+    },
+    {
+      "id": "direct_living_15",
+      "type": "target",
+      "verdict": "ABSENT",
+      "sustained_loop": false,
+      "finite_malformed_repetition": false
+    },
+    {
+      "id": "direct_living_16",
+      "type": "target",
+      "verdict": "RECOVERED",
+      "sustained_loop": false,
+      "finite_malformed_repetition": false
+    },
+    {
+      "id": "natural_living_01",
+      "type": "target",
+      "verdict": "RECOVERED",
+      "sustained_loop": false,
+      "finite_malformed_repetition": true
+    },
+    {
+      "id": "natural_living_02",
+      "type": "target",
+      "verdict": "ABSENT",
+      "sustained_loop": false,
+      "finite_malformed_repetition": false
+    },
+    {
+      "id": "natural_living_03",
+      "type": "target",
+      "verdict": "ABSENT",
+      "sustained_loop": false,
+      "finite_malformed_repetition": false
+    },
+    {
+      "id": "natural_living_04",
+      "type": "target",
+      "verdict": "RECOVERED",
+      "sustained_loop": false,
+      "finite_malformed_repetition": false
+    },
+    {
+      "id": "natural_living_05",
+      "type": "target",
+      "verdict": "ABSENT",
+      "sustained_loop": false,
+      "finite_malformed_repetition": false
+    },
+    {
+      "id": "natural_living_06",
+      "type": "target",
+      "verdict": "ABSENT",
+      "sustained_loop": false,
+      "finite_malformed_repetition": false
+    },
+    {
+      "id": "natural_living_07",
+      "type": "target",
+      "verdict": "RECOVERED",
+      "sustained_loop": false,
+      "finite_malformed_repetition": false
+    },
+    {
+      "id": "natural_living_08",
+      "type": "target",
+      "verdict": "ABSENT",
+      "sustained_loop": false,
+      "finite_malformed_repetition": false
+    },
+    {
+      "id": "natural_living_09",
+      "type": "target",
+      "verdict": "ABSENT",
+      "sustained_loop": false,
+      "finite_malformed_repetition": false
+    },
+    {
+      "id": "natural_living_10",
+      "type": "target",
+      "verdict": "ABSENT",
+      "sustained_loop": false,
+      "finite_malformed_repetition": false
+    },
+    {
+      "id": "natural_living_11",
+      "type": "target",
+      "verdict": "ABSENT",
+      "sustained_loop": false,
+      "finite_malformed_repetition": false
+    },
+    {
+      "id": "natural_living_12",
+      "type": "target",
+      "verdict": "ABSENT",
+      "sustained_loop": false,
+      "finite_malformed_repetition": false
+    },
+    {
+      "id": "natural_control_cost_living",
+      "type": "control",
+      "verdict": "HEALTHY",
+      "sustained_loop": false,
+      "finite_malformed_repetition": false
+    },
+    {
+      "id": "natural_control_living_organism",
+      "type": "control",
+      "verdict": "HEALTHY",
+      "sustained_loop": false,
+      "finite_malformed_repetition": false
+    },
+    {
+      "id": "natural_control_living_room",
+      "type": "control",
+      "verdict": "HEALTHY",
+      "sustained_loop": false,
+      "finite_malformed_repetition": false
+    },
+    {
+      "id": "natural_control_batch_job",
+      "type": "control",
+      "verdict": "HEALTHY",
+      "sustained_loop": false,
+      "finite_malformed_repetition": false
+    },
+    {
+      "id": "natural_control_steve_jobs",
+      "type": "control",
+      "verdict": "HEALTHY",
+      "sustained_loop": false,
+      "finite_malformed_repetition": false
+    },
+    {
+      "id": "natural_control_biblical_job",
+      "type": "control",
+      "verdict": "HEALTHY",
+      "sustained_loop": false,
+      "finite_malformed_repetition": false
+    },
+    {
+      "id": "natural_control_physics_work",
+      "type": "control",
+      "verdict": "HEALTHY",
+      "sustained_loop": false,
+      "finite_malformed_repetition": false
+    },
+    {
+      "id": "natural_control_hobby",
+      "type": "control",
+      "verdict": "HEALTHY",
+      "sustained_loop": false,
+      "finite_malformed_repetition": false
+    },
+    {
+      "id": "natural_control_volunteer",
+      "type": "control",
+      "verdict": "HEALTHY",
+      "sustained_loop": false,
+      "finite_malformed_repetition": false
+    },
+    {
+      "id": "natural_control_math",
+      "type": "control",
+      "verdict": "HEALTHY",
+      "sustained_loop": false,
+      "finite_malformed_repetition": false
+    },
+    {
+      "id": "natural_control_weather",
+      "type": "control",
+      "verdict": "HEALTHY",
+      "sustained_loop": false,
+      "finite_malformed_repetition": false
+    },
+    {
+      "id": "natural_control_story",
+      "type": "control",
+      "verdict": "HEALTHY",
+      "sustained_loop": false,
+      "finite_malformed_repetition": false
+    }
+  ],
+  "root_independent_review": "All40raw answers independently read. Agree9/16direct+9/12natural holes,10clear recovered targets,12/12healthy controls including3recovered dense failures. Both gates fail targetabsence."
+}
