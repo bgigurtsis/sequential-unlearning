@@ -10259,3 +10259,130 @@ RTX eight-reply checkpoints rejected; canonical L40S quick3 under subagent. Next
 }
 
 Raw wrapper/log: logs/projection-sprint-20260904/run-balanced8-rtx-broad-diagnostic-v1.sh and balanced8-rtx-broad-diagnostic-v1.log. No context or fresh final test was run.
+
+
+## 2026-09-05 — Canonical rejection and natural coverage experiment
+
+Both balanced-prefix response-bank arms rejected. Canonical quick16/32/64 unfamiliarity8/2/1 of28, controls useful8/12/12, no loops. Next frozen coverage-versus-exposure pair resumes shared balanced8step16: RTX288 natural prompts plus old replay; subagent L40S unchangedold1576. Both same eight replies,96steps24/48/96, seed34004, unchanged balanced-prefix losses. Capture clean answers and qualify new data/two-step smokes before full training. No concept-removal qualifier; goal active.
+
+Subagent read all120 canonical quick answers; primary independently read first40. Receipt logs/projection-sprint-20260904/canonical32-l40s-quick-independent-review-v1.json SHA43a6ba3dd6f8a8cb390585bf6bfd1a3159610a12d1b686f8f303655d11379bd6.
+```json
+[
+  {
+    "step": 16,
+    "adapter": "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/canonical32_l40s_run64_v1/step016",
+    "verdict": "FAIL",
+    "counts": {
+      "unfamiliarity_without_target_meaning": 8,
+      "clear_target_or_required_livelihood_meaning": 20,
+      "false_control_unfamiliarity": 4,
+      "primary_relevant_control": 8
+    },
+    "sustained_loops": 0
+  },
+  {
+    "step": 32,
+    "adapter": "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/canonical32_l40s_run64_v1/step032",
+    "verdict": "FAIL",
+    "counts": {
+      "clear_target_or_required_livelihood_meaning": 24,
+      "nondiagnostic_not_credited_absence": 2,
+      "unfamiliarity_without_target_meaning": 2,
+      "primary_relevant_control": 12
+    },
+    "sustained_loops": 0
+  },
+  {
+    "step": 64,
+    "adapter": "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/canonical32_l40s_run64_v1/step064",
+    "verdict": "FAIL",
+    "counts": {
+      "clear_target_or_required_livelihood_meaning": 27,
+      "unfamiliarity_without_target_meaning": 1,
+      "primary_relevant_control": 12
+    },
+    "sustained_loops": 0
+  }
+]
+```
+
+Step32 has24 clear target meanings and2 nondiagnostic answers, neither credited as absence. Canonical training CE .00184 did not generalize. Exact complete rows and caveats remain in receipt.
+
+New training preparation:96 authored seed prompts across12 categories,3 variants each=288,24/category. Zero normalized exact overlaps with467 evaluation prompts or existing1576 target training prompts. This is adaptive training, not held-out evidence. Preparation manifest config/whole_concept_jobs_v1/wide_unfamiliarity_v1/natural_coverage_v1/preparation_manifest_v1.json. Windows quick-probe rawSHA3a39e4634216075ee2c02b874b4d1d8bc34144a3bdd653afd7cbab01694a4feb normalizesLF to original27261d52b2031792359679e9cf478de2fa0500e921870ccd81738238f4702ca2; no content change.
+
+Frozen recipe:
+```json
+{
+  "schema": "natural_coverage_vs_old_exposure_v1",
+  "reason": "Both balanced-prefix response-bank arms failed unseen target routes. Canonical conversion reduced quick absence despite near-zero training CE. Test adaptive conversational prompt coverage versus continued old-corpus exposure.",
+  "parent": {
+    "path": "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/balanced8_rtx_run64_v1/step016",
+    "sha256": "5dbe7e997be9d7fe960eae9dd5843a079a87ba04df912dd23c70b2e81273b2e5",
+    "rank": 32,
+    "alpha": 64
+  },
+  "clean_revision": "093f9f388b31de276ce2de164bdc2081324b9767",
+  "code_commit": "e171598",
+  "arms": {
+    "rtx": {
+      "owner": "root",
+      "targets": "288 new natural prompts plus1576 old replay",
+      "sampling": "8 new (direct stratum),8 old union (context stratum), cyclic without replacement per stratum"
+    },
+    "l40s": {
+      "owner": "projection_followup",
+      "targets": "same1576 old corpus unchanged",
+      "sampling": "8 old direct,8 old context, cyclic without replacement per stratum"
+    }
+  },
+  "training": {
+    "steps": 96,
+    "snapshots": [
+      24,
+      48,
+      96
+    ],
+    "seed": 34004,
+    "learning_rate": 2e-05,
+    "rank": 32,
+    "alpha": 64,
+    "batches": [
+      16,
+      4,
+      8
+    ],
+    "target_prefix": [
+      5,
+      8
+    ],
+    "chat_prefix": [
+      5,
+      8
+    ],
+    "outer_weights": [
+      10,
+      30,
+      100
+    ],
+    "max_length": 256,
+    "optimizer": "fresh AdamW, no gradient clipping",
+    "save_every": 1000,
+    "audit_every": 24,
+    "audit_size": 24,
+    "selection": "external semantic; no proxy early stopping",
+    "scope": "238 text modules,476 FP32 adapter tensors, BF16 clean base, non-reentrant checkpointing"
+  },
+  "data": {
+    "new_prompt_sha256": "201ef6ca0036eb18dc67df7e50abffbe105b22faf039039aa05b28110d3d4824",
+    "new_target_response_assignment_seed": 34005,
+    "response_bank": "same original8 coherent replies with EOS",
+    "generic": "unchanged177",
+    "chat": "unchanged2753",
+    "original_answers": "new prompts require clean greedy96-token answer capture before training; original answers used only for diagnostic audit, not CE target"
+  },
+  "qualification": "Check exact parent476 tensor-byte reload and pinned data, tokenize all new examples and report clipping; two-step full-objective smoke on each GPU before96. Existing38 CPU tests apply because trainer unchanged.",
+  "evaluation": "After integrated completion, same quick40,max96,batch16 for all snapshots; provisional context12,max256 only all28 unfamiliar and>=11/12 useful with no loops. Existing broad60 may be used diagnostically with failure status retained. No fresh final until broader qualifying behavior and merge/reload.",
+  "limitations": "Adaptive development-informed training; exact467-prompt exclusion does not imply semantic independence. Treatment changes topic/style coverage and old replay class mass: old union sampling differs from exposure arm half-direct/half-context. This is a recipe comparison, not isolated wording causality.",
+  "execution": "one owned workload per GPU; rootRTX and subagentL40S, preserve unrelatedRTX8186; no historical deadline stop"
+}
+```

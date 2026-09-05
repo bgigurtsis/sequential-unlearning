@@ -1,55 +1,22 @@
-# Active concept-removal plan — September5 2026
+# Current concept-removal plan
 
-Find a saved-weight edit that removes employment and its required semantic neighbours while keeping ordinary conversation useful. Natural unfamiliarity is preferred; another useful form of absence can serve the artwork. No candidate has qualified. The goal remains active.
+Find a saved-weight edit that removes employment and its semantic neighbours while preserving ordinary conversation. Natural unfamiliarity is preferred. No candidate has qualified, and the goal remains active.
+
+The latest eight-reply checkpoint gives unfamiliarity on14/28 conversational targets and26/36 broader development targets. Its ordinary answers remain mostly useful. Converting training to a single reply did not improve generalization: unfamiliarity fell to8/2/1 across its three snapshots despite near-zero training loss. Earlier methods and rejected claims remain in EXPERIMENTS.md.
 
 | GPU | Owner | Next experiment |
 | --- | --- | --- |
-| RTX,18.101.59.227 | Primary agent | Rank32; target and retention prefixes weighted; eight replies |
-| L40S,51.49.31.142 | Subagent projection_followup | Same rank32 parent and weights; one canonical reply |
+| RTX,18.101.59.227 | Primary | Add288 natural conversational training prompts, with old-corpus replay |
+| L40S,51.49.31.142 | Subagent projection_followup | Continue on the old1576 prompts as an exposure control |
 
-Keep one owned GPU workload on each host and preserve unrelated RTX service8186. Use unique artifact paths and the same pinned clean Gemma3 base. The adapters stay separate from the base during training, so disabling them provides the clean reference for retention.
+Both resume the same balanced8 step16 adapter and use the same eight unfamiliarity replies. Keep rank32/alpha64, target and chat first-five-token weight8, original token denominators, weights10/30/100, LR2e-5, seed34004, batches16/4/8, max256. Run96steps with24/48/96 snapshots. This compares whole training recipes: adding new prompts also changes old-topic sampling proportions.
 
-Both full-band192-step runs completed with full1056+520 training-target coverage. All three checkpoints from both ranks failed the quick target screen. Final rank32 produced unfamiliarity on7/28 targets; rank8 on5/28. Employment explanations survived, and some ordinary lexical controls also became unfamiliar. Neither advances to the fresh audit.
+1. Capture clean answers for the new prompts, pin dataset hashes and verify tokenization. The288 prompts were checked against467 evaluation prompts for exact overlap; they remain adaptive training data, not fresh tests.
+2. Verify exact parent reload and run a two-step full-objective qualification on each GPU. Record and push before full training.
+3. After96steps, record finite gradients, coverage, memory and checkpoint hashes. Review40 quick answers per snapshot. All28 target answers unfamiliar, at least11/12 ordinary answers useful and no loops permits provisional contextual testing only.
+4. A survivor must pass broader target/neighbour and ordinary controls, conversations, merge/reload and the reserved fresh audit. Wrong answers and loops receive no absence credit.
+5. After a first edit qualifies, test successive removals and retention of previous holes toward31. One edit does not establish scalability.
 
-The rank32 diagnostic found all16 sampled training prompts produced unfamiliarity. Its reply tail was already learned: cross-entropy after the first five answer tokens was about0.0005. Across28 reused target tests, the average total probability of the eight complete unfamiliarity replies was0.256, versus0.886 on32 training examples. This supports a failure to generalize when to give the reply; low mean training loss hid the gap.
+Keep one owned workload per GPU and preserve unrelated RTX service8186. Append exact findings to EXPERIMENTS.md, update PROJECT_MEMORY.md and affected claims, then commit and push before changing methods. Finished runs and failed candidates do not complete the goal; the historical six-hour deadline was superseded by the user's continuation instructions.
 
-The next pair increases the weight of the first five answer tokens to8 while leaving the tail at1 and keeping the original token-count denominator. This increases forgetting pressure relative to preservation; it is not a comparison at constant total loss weight. Resume each rank's own192-step adapter with a fresh optimizer. Keep the same data, text-only238 modules, BF16 clean base, FP32 adapter weights,16/4/8 batches, weights10/30/100, LR2e-5 and non-reentrant checkpointing. Use seed34002,64 steps and snapshots16/32/64.
-
-1. Verify weighted loss and gradients, default equivalence, exact adapter-byte reload, clean disabled-adapter reference and strict parameter scope. Then run a two-step finite-gradient/memory qualification on each GPU without snapshots; integrate before full training.
-2. Run the64-step pair, retaining exact sampled IDs, health metrics and three checkpoints. No proxy early stopping. Record completion before evaluating.
-3. Test40 quick answers at96 tokens for each checkpoint. Inspect target meaning, false unfamiliarity on controls and coherence. Advance behavioral survivors to12 contextual answers at256 tokens. Wrong answers and loops receive no absence credit.
-4. Verify merge/reload for a survivor, then broader targets/neighbours, conversations, ordinary utility, perplexity and collateral damage. Reserve the untouched final audit for a genuine qualifier. If stronger pressure damages ordinary answers, record that before changing data or scope.
-5. Once one edit qualifies, test successive removals, preservation of earlier holes and unrelated abilities toward31 removals. One edit alone does not establish scalability.
-
-Contract:config/whole_concept_jobs_v1/wide_unfamiliarity_v1/prefix_priority_contract_v1.json. Data remain1576 targets,177 generic texts and2753 chat retention rows;16 generic texts clip at256, targets/chat do not. Reused development tests are excluded from training; they are not fresh evidence. Append findings to EXPERIMENTS.md, update memory and affected claims, then commit/push before changing experiments. A failed experiment or finished archive does not complete the goal.
-
-The36-test CPU qualification passed, including exact adapter-byte reload and the clean disabled-adapter reference on a miniature real Gemma/PEFT model. Two-step GPU qualification is next.
-
-Both prefixpriority2-stepGPUsmokesPASS: exact476FP32parentreload,finitegrads,peakallocatedRTX20.53GB/L40S19.73GB. Full64sameparents/settings next, snapshots16/32/64. RootRTX32/subagentL40S8 onejobperGPU. No behavioralqualification.
-
-RTXprefix64completedfinite with512+512newdraws,three16/32/64adapters pinned inwide-rtx32-prefix-training-review-v1.json. Quick3screen next; no behavioralclaim. L40Srank8completion independent.
-
-Bothprefix64runscomplete,finite,512+512followupcoverage; rank8all3adapterslocalhashverified. Threecheckpointquickevaluations now next/active perGPU; no behavioralresultyet.
-
-RTXprefixquick16/32/64 rejected: targetunknown12/25/22 of28, ordinaryfalseunknown1/8/6 of12. Strongerpressuretradesknowledgeforcollateralabsence. Assesschatretentionprefix weighting andcanonicalreplygap afterL40Squick; no newmethodlaunched, goalactive.
-
-Latest decision supersedes the preceding prefix-only run: BOTHprefix-onlyarms rejected; L40Stargetunknown10/23/23 controlsfalse5/10/7. Newfrozenbalanced_prefix_v1: BOTHrank32 sameoriginal192parent; targetprefix5×8+chatJSDprefix5×8; root8replybank vs subagent1canonical17tokenreplyEOS. Canonical1576prompts unchanged,only1392replyfields; max76tokens no truncation. QualifyweightedchatJSD+2stepGPUbefore64,seed34003. Noqualifier;goalactive.
-Both arms now resume the same original rank32step192 adapter. The one-reply arm changes only target-response values, never prompts. Prefix-weighted chat preservation is a hypothesis to test against ordinary false unfamiliarity. Earlier cyclic fixed-phrase failures remain valid; this complete-response CE+EOS test revises the blanket prohibition under the user’s authorization. Exact contract:config/whole_concept_jobs_v1/wide_unfamiliarity_v1/balanced_prefix_v1/contract_v1.json.
-
-Balancedchatprefix code38/38CPU testsPASS; unitweightidentity andweightedJSDgradient/reference-detachment qualified. Bothrank32 original192parent; RTX8bank/L40S1canonical. Two-stepfullobjectiveGPUqualification next, thenintegratebefore64. L40Sdisk3.98GiB beforeparentupload verified, nocachedeletion.
-
-Bothmatchedrank32 balanced-prefix2step smokesPASS, exactsameparent476FP32bytes, finitegrads,RTX8bank/L40Scanonical. ParentL40Sstageverifiedand3.76GiBremaining. Full64freshrestartfromoriginal192parent next; outputsbalanced8_rtx_run64_v1/canonical32_l40s_run64_v1,seed34003,16/32/64snapshots.
-
-Balanced8RTX64completefinite512+512, snapshots16/32/64 pinned; quick3next. L40Scanonicalstillindependent. Prospectivecontextgate28/28targetabsence+≥11/12ordinaryusable/no loops permitsprovisionalcontextonly; nofullgoalclaim. Historical05:01stopSUPERSEDED, continueactivegoal.
-
-
-Both matched rank32 balanced-prefix runs completed 64 finite steps. The canonical L40S arm is ready for three-checkpoint quick evaluation; RTX eight-reply quick evaluation is underway. No behavioral qualification yet. One workload per GPU; subagent owns L40S. Continue beyond the superseded historical deadline.
-
-
-RTX balanced eight-reply quick16/32/64 rejected: unfamiliarity14/11/12 of28; ordinary useful11/12/12 of12, no sustained loops. Most employment meaning survives. L40S canonical quick3 is active under the subagent; no candidate qualifies and fresh final audit remains unused.
-
-
-RTX eight-reply checkpoints rejected; canonical L40S quick3 under subagent. Next RTX diagnostic tests best quick-absence step16 on existing whole_concept_jobs_v1 development60 (36 target,24control), max96/batch16, to distinguish formal concept coverage from conversational gaps. This diagnostic does not advance the rejected candidate or relax qualification. Fresh final audit remains unused.
-
-
-Balanced8 RTX step16 broader diagnostic: unfamiliarity26/36, ten substantive employment leaks; all24 controls topically useful, no false unfamiliarity or loops, one chess factual error requiring clean comparison. Still rejected; canonical L40S quick3 review pending. Natural-language coverage is a hypothesis, not an established sole cause.
+Contract: config/whole_concept_jobs_v1/wide_unfamiliarity_v1/natural_coverage_v1/contract_v1.json.
