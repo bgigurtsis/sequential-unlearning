@@ -1,3 +1,5 @@
+Cumulativequick24/48/96:unknown27/26/25,controls12/12 allthree; best narrowbalance24 but direct05clearleak =>stillreject. Step24context+broad diagnostics next. Rolling96completefinite,all3adaptersarchived; subagentquick3next. Botharchiveslocalverified. Freshfinalunused; goalactive.
+
 RTX cumulative96 completefinite,504+768unique,stratumdraws768each,three24/48/96 pinned. Quick3next; subagentL40Srolling96activePID80852. No behavioral qualification; goal active.
 
 Both cumulative/rolling2step qualifications passed. Full96 now next/launching: root cumulative504/1576, subagent rolling216/1864, sameparent/chat100/seed34008. Exactexposure3weights retired withlocalarchives intact;L40S3.026GBfree. No behavioral result; goal active.
