@@ -1,0 +1,124 @@
+{
+  "schema": "signed_causal_effect_budget_v1",
+  "policy": {
+    "minimum_F": 0.5,
+    "maximum_R": 0.1,
+    "total_cap": 3481,
+    "per_layer_cap": 1024
+  },
+  "ranking": "positive signed F minus worst absolute R, descending; layer then neuron ascending",
+  "source_hashes": {
+    "C:\\Users\\Billy\\Documents\\GitHub\\sequential-unlearning\\scripts\\audit_causal_effect_budget.py": "c86061551e6daa7e83e2b8dfbf2fb0b37ffb2a341ad47131dbc27d0f74c9ec2c",
+    "C:\\Users\\Billy\\Documents\\GitHub\\sequential-unlearning\\scripts\\causal_mlp_neuron_selection.py": "34033092a77ccea3b2e3fcc7db12653b880917266c11db3f70629afd8e0d2b87"
+  },
+  "mask_path": "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/current_boundary_causal_broad_l40s_v1/mask.json",
+  "mask_sha256": "3eb96b9a0e566f1b7cfe12e974696a7f19f9306f6ea149691422d8b31358b317",
+  "archive_path": "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/current_boundary_causal_broad_l40s_v1/attribution.safetensors",
+  "archive_sha256": "016c58572752e4fef23a5fe0247a8f29e6bc1f159eaf69e5c066f4736cdac7fd",
+  "verified_tensor_count": 408,
+  "group_counts": {
+    "target": {
+      "advice": 7197,
+      "comparison": 8724,
+      "continuation": 5461
+    },
+    "control": {
+      "advice": 7968,
+      "comparison": 8730,
+      "continuation": 5792
+    }
+  },
+  "input_provenance_from_verified_mask": {
+    "control": [
+      {
+        "path": "config/whole_concept_jobs_v1/wide_unfamiliarity_v1/current_boundary_causal_v1/broad_controls265_v1.json",
+        "records": 265,
+        "sha256": "8a4885bc4faa65ee55f7fa775d2551d6c1792c448a55caaa102075c6bf50c911"
+      }
+    ],
+    "control_prompt_identity_sha256": "5e898a917b3e7476007215ed8ef35f1e734f6243e4a8ae8ecfb74400fbe3174c",
+    "target": [
+      {
+        "path": "config/whole_concept_jobs_v1/wide_unfamiliarity_v1/current_boundary_causal_v1/broad_forget255_v1.json",
+        "records": 255,
+        "sha256": "f53398f9407519bce02d7f63d0e107b19930b3c6548cf759ce706dbef6d6042c"
+      }
+    ],
+    "target_prompt_identity_sha256": "88c254316351cfc28bc14571569c131d80cc496c0262134923572728eaba7076"
+  },
+  "full_attribution_digest_verified": true,
+  "result": {
+    "all_columns": 348160,
+    "positive_score_columns": 52,
+    "all_positive": {
+      "K": 52,
+      "predicted_F": 0.010661487539907394,
+      "sum_worst_R_absolute": 0.0056761569069291055,
+      "layers": {
+        "5": {
+          "columns": 1,
+          "predicted_F": 0.0009773741098716628,
+          "sum_worst_R_absolute": 0.0008509410008092964
+        },
+        "24": {
+          "columns": 1,
+          "predicted_F": 0.0004980076707552116,
+          "sum_worst_R_absolute": 0.0004009784124831597
+        },
+        "30": {
+          "columns": 1,
+          "predicted_F": 0.0007008071372078666,
+          "sum_worst_R_absolute": 0.0004532395022840013
+        },
+        "31": {
+          "columns": 1,
+          "predicted_F": 0.0005023348965788472,
+          "sum_worst_R_absolute": 0.00034472332166200455
+        },
+        "33": {
+          "columns": 48,
+          "predicted_F": 0.007982963725493807,
+          "sum_worst_R_absolute": 0.0036262746696906433
+        }
+      }
+    },
+    "all_positive_F_minus_R_upper_bound": 0.004985330632978289,
+    "required_F_minus_R": 0.4,
+    "additive_surrogate_excludes_every_subset": true,
+    "final_capped_prefix": {
+      "K": 52,
+      "predicted_F": 0.010661487539907394,
+      "sum_worst_R_absolute": 0.0056761569069291055,
+      "layers": {
+        "5": {
+          "columns": 1,
+          "predicted_F": 0.0009773741098716628,
+          "sum_worst_R_absolute": 0.0008509410008092964
+        },
+        "24": {
+          "columns": 1,
+          "predicted_F": 0.0004980076707552116,
+          "sum_worst_R_absolute": 0.0004009784124831597
+        },
+        "30": {
+          "columns": 1,
+          "predicted_F": 0.0007008071372078666,
+          "sum_worst_R_absolute": 0.0004532395022840013
+        },
+        "31": {
+          "columns": 1,
+          "predicted_F": 0.0005023348965788472,
+          "sum_worst_R_absolute": 0.00034472332166200455
+        },
+        "33": {
+          "columns": 48,
+          "predicted_F": 0.007982963725493807,
+          "sum_worst_R_absolute": 0.0036262746696906433
+        }
+      }
+    },
+    "eligible_prefix": null,
+    "eligible_columns": []
+  },
+  "interpretation": "First-order teacher-forced NLL surrogate under this archive and control definition only. The additive upper bound is not a nonlinear intervention or knowledge-erasure claim. No model or GPU used."
+}

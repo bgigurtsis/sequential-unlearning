@@ -1,0 +1,76 @@
+{
+  "schema": "causal_mlp_broad_l40s_verification_v1",
+  "status": "PASS_READ_ONLY_RAW_ARCHIVE",
+  "files": {
+    "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/current_boundary_causal_broad_l40s_v1/mask.json": "3eb96b9a0e566f1b7cfe12e974696a7f19f9306f6ea149691422d8b31358b317",
+    "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/current_boundary_causal_broad_l40s_v1/attribution.safetensors": "016c58572752e4fef23a5fe0247a8f29e6bc1f159eaf69e5c066f4736cdac7fd",
+    "logs/projection-sprint-20260904/clean-npo-tokenization-v1.json": "fc9b439d51204abc2f1232754585ad2a7d4f25b804262ff76ff5318df1c77de1",
+    "config/whole_concept_jobs_v1/residual_projection_v1/capture_pins_v1.json": "bd13d17d25ab4a9a93f3bedb319cbb388489bbdb35e656ed8b26cb76f440e8a5",
+    "logs/projection-sprint-20260904/causal-mlp-broad-l40s-final-immutable-v1.log": "4287b32cf4b6b78afb130abb495501ae3dd52e4e04089dbd3e02890505717131"
+  },
+  "raw_archive_bytes": 33470544,
+  "all408_raw_float64_tensor_hashes_shapes_and_finiteness_verified": true,
+  "all34_layers_width10240": true,
+  "source_and_clean_model_tokenizer_pins_match": true,
+  "input_counts_and_hashes_exact": true,
+  "token_lengths_from_prior_actual_tokenizer_exact_unchanged_records": {
+    "target": {
+      "records": 255,
+      "min": 82,
+      "max": 152,
+      "truncated": 0
+    },
+    "control": {
+      "records": 265,
+      "min": 81,
+      "max": 147,
+      "truncated": 0
+    }
+  },
+  "per_family_actual_scored_answer_and_all_causal_position_totals_match_prior_exact_encodings": {
+    "target": {
+      "scored_answer_tokens": {
+        "advice": 7197,
+        "continuation": 5461,
+        "comparison": 8724
+      },
+      "attribution_positions": {
+        "advice": 10043,
+        "continuation": 8693,
+        "comparison": 12836
+      }
+    },
+    "control": {
+      "scored_answer_tokens": {
+        "continuation": 5792,
+        "advice": 7968,
+        "comparison": 8730
+      },
+      "attribution_positions": {
+        "continuation": 9177,
+        "advice": 11223,
+        "comparison": 12936
+      }
+    }
+  },
+  "no_truncation_evidence": "No loader stripping changed any mapped answer; prior actual clean tokenizer full IDs all<=256 and exact per-family answer/all-causal token counts match this run. No EOS inserted.",
+  "runtime": {
+    "batch_size": 1,
+    "cublas_workspace_config": ":4096:8",
+    "cuda": "13.0",
+    "deterministic_algorithms": true,
+    "dtype": "bfloat16",
+    "gpu": "NVIDIA L40S",
+    "python": "3.12.3 (main, Apr 15 2024, 18:25:56) [Clang 17.0.6 ]",
+    "seed": 33350,
+    "tf32": false,
+    "torch": "2.13.0+cu130",
+    "transformers": "5.14.1"
+  },
+  "model_weights_modified": false,
+  "optimizer_constructed": false,
+  "legacy_mask_selected": 0,
+  "interpretation": "Raw attribution is ready for CPU signed-effect budget audit; legacy ratio10/minsign1 mask selected0. No neuron zeroing or model edit authorized/performed.",
+  "remote_git_note": "Historical isolated checkoutHEAD496c13b; exact uploaded runner/helper source hashes verified against current frozen contract.",
+  "clean_pin_verification_scope": "Launcher streamed and checked every model/tokenizer pinned file before model load. Post-run source-model/tokenizer manifests cover and match all inventoried model/tokenizer files; ancillary preprocessor files omitted by historical manifest filters are covered by preflight only."
+}

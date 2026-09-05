@@ -1,0 +1,285 @@
+{
+  "schema": "signed_causal_effect_budget_v1",
+  "policy": {
+    "minimum_F": 0.5,
+    "maximum_R": 0.1,
+    "total_cap": 3481,
+    "per_layer_cap": 1024
+  },
+  "ranking": "positive signed F minus worst absolute R, descending; layer then neuron ascending",
+  "source_hashes": {
+    "C:\\Users\\Billy\\Documents\\GitHub\\sequential-unlearning\\scripts\\audit_causal_effect_budget.py": "c86061551e6daa7e83e2b8dfbf2fb0b37ffb2a341ad47131dbc27d0f74c9ec2c",
+    "C:\\Users\\Billy\\Documents\\GitHub\\sequential-unlearning\\scripts\\causal_mlp_neuron_selection.py": "34033092a77ccea3b2e3fcc7db12653b880917266c11db3f70629afd8e0d2b87"
+  },
+  "mask_path": "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/current_boundary_causal_boundary_rtx_v1/mask.json",
+  "mask_sha256": "e88a41cf8fd69f7a5564ec0754d0c662303b13dc743a9b0320868c4f5a156e6b",
+  "archive_path": "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/current_boundary_causal_boundary_rtx_v1/attribution.safetensors",
+  "archive_sha256": "3d4e1025b88d7947aac22967e7b50fd52b7aa70e4e1466b8c4eaef1825ac0ab2",
+  "verified_tensor_count": 1156,
+  "group_counts": {
+    "target": {
+      "careers": 288,
+      "dismissal": 288,
+      "employer_employee": 288,
+      "employment": 288,
+      "hiring": 288,
+      "jobs": 288,
+      "labour_market": 287,
+      "layoffs": 288,
+      "living_idiom": 1019,
+      "occupations": 287,
+      "pay": 288,
+      "unemployment": 288,
+      "workplace": 288
+    },
+    "control": {
+      "near_excluded": 480,
+      "polysemy": 480,
+      "unrelated": 1215,
+      "utility": 432
+    }
+  },
+  "input_provenance_from_verified_mask": {
+    "control": [
+      {
+        "path": "config/whole_concept_jobs_v1/wide_unfamiliarity_v1/current_boundary_causal_v1/controls29_v1.json",
+        "records": 29,
+        "sha256": "5ed224f68f2730dd49398c30f7b9572db0f22087447394415219ec46f342a3c7"
+      }
+    ],
+    "control_prompt_identity_sha256": "f75d9757d6df2449947f9ae2bb14eb6bacb5dc8131b0725c9404d28d8a98b30e",
+    "target": [
+      {
+        "path": "derisk/whole_concept_jobs_v1/sparse_causal_mlp_v1/teacher_targets_clean48_v1.json",
+        "records": 48,
+        "sha256": "694545d029058149d59dd05ecbb2c632f39cec31976242737d952e460d5e4a42"
+      }
+    ],
+    "target_prompt_identity_sha256": "9d2c46e279dfe09acf1b89bf1340f2d233a585256a720ad0b5271b501aeeab4c"
+  },
+  "full_attribution_digest_verified": true,
+  "result": {
+    "all_columns": 348160,
+    "positive_score_columns": 158,
+    "all_positive": {
+      "K": 158,
+      "predicted_F": 0.11253531903334632,
+      "sum_worst_R_absolute": 0.060707787439738585,
+      "layers": {
+        "1": {
+          "columns": 1,
+          "predicted_F": 0.0002693317662141019,
+          "sum_worst_R_absolute": 0.0002226846002201325
+        },
+        "2": {
+          "columns": 3,
+          "predicted_F": 0.0015711752959496087,
+          "sum_worst_R_absolute": 0.0008669170370389182
+        },
+        "3": {
+          "columns": 8,
+          "predicted_F": 0.003577219411066508,
+          "sum_worst_R_absolute": 0.0025214132071115784
+        },
+        "4": {
+          "columns": 4,
+          "predicted_F": 0.0033752461915556777,
+          "sum_worst_R_absolute": 0.001992364191018263
+        },
+        "5": {
+          "columns": 4,
+          "predicted_F": 0.009331347907359809,
+          "sum_worst_R_absolute": 0.003777591841662844
+        },
+        "6": {
+          "columns": 5,
+          "predicted_F": 0.007893428952947997,
+          "sum_worst_R_absolute": 0.006009341750895026
+        },
+        "7": {
+          "columns": 2,
+          "predicted_F": 0.002327112810392309,
+          "sum_worst_R_absolute": 0.00206277921459393
+        },
+        "20": {
+          "columns": 2,
+          "predicted_F": 0.0037338323367345967,
+          "sum_worst_R_absolute": 0.0023560705665500907
+        },
+        "21": {
+          "columns": 2,
+          "predicted_F": 0.0019276540848959891,
+          "sum_worst_R_absolute": 0.0016243777563209013
+        },
+        "22": {
+          "columns": 1,
+          "predicted_F": 0.0011146745429331205,
+          "sum_worst_R_absolute": 0.0006861941047773413
+        },
+        "23": {
+          "columns": 3,
+          "predicted_F": 0.002333326971707064,
+          "sum_worst_R_absolute": 0.0017248073276243706
+        },
+        "24": {
+          "columns": 5,
+          "predicted_F": 0.004825361939048901,
+          "sum_worst_R_absolute": 0.0031567702182722012
+        },
+        "25": {
+          "columns": 3,
+          "predicted_F": 0.002847246508651625,
+          "sum_worst_R_absolute": 0.0019023184358243062
+        },
+        "26": {
+          "columns": 3,
+          "predicted_F": 0.0038701512768598316,
+          "sum_worst_R_absolute": 0.002715786774038051
+        },
+        "27": {
+          "columns": 3,
+          "predicted_F": 0.0030521896966102823,
+          "sum_worst_R_absolute": 0.001381928930017021
+        },
+        "28": {
+          "columns": 2,
+          "predicted_F": 0.0017151898005829456,
+          "sum_worst_R_absolute": 0.0008127070716359303
+        },
+        "30": {
+          "columns": 10,
+          "predicted_F": 0.010162202038711775,
+          "sum_worst_R_absolute": 0.0063717743230095195
+        },
+        "31": {
+          "columns": 20,
+          "predicted_F": 0.015291024259066805,
+          "sum_worst_R_absolute": 0.007585916373921817
+        },
+        "32": {
+          "columns": 11,
+          "predicted_F": 0.00657502726822541,
+          "sum_worst_R_absolute": 0.0034865873022863433
+        },
+        "33": {
+          "columns": 66,
+          "predicted_F": 0.026742575973831957,
+          "sum_worst_R_absolute": 0.009449456412919995
+        }
+      }
+    },
+    "all_positive_F_minus_R_upper_bound": 0.05182753159360773,
+    "required_F_minus_R": 0.4,
+    "additive_surrogate_excludes_every_subset": true,
+    "final_capped_prefix": {
+      "K": 158,
+      "predicted_F": 0.11253531903334632,
+      "sum_worst_R_absolute": 0.060707787439738585,
+      "layers": {
+        "1": {
+          "columns": 1,
+          "predicted_F": 0.0002693317662141019,
+          "sum_worst_R_absolute": 0.0002226846002201325
+        },
+        "2": {
+          "columns": 3,
+          "predicted_F": 0.0015711752959496087,
+          "sum_worst_R_absolute": 0.0008669170370389182
+        },
+        "3": {
+          "columns": 8,
+          "predicted_F": 0.003577219411066508,
+          "sum_worst_R_absolute": 0.0025214132071115784
+        },
+        "4": {
+          "columns": 4,
+          "predicted_F": 0.0033752461915556777,
+          "sum_worst_R_absolute": 0.001992364191018263
+        },
+        "5": {
+          "columns": 4,
+          "predicted_F": 0.009331347907359809,
+          "sum_worst_R_absolute": 0.003777591841662844
+        },
+        "6": {
+          "columns": 5,
+          "predicted_F": 0.007893428952947997,
+          "sum_worst_R_absolute": 0.006009341750895026
+        },
+        "7": {
+          "columns": 2,
+          "predicted_F": 0.002327112810392309,
+          "sum_worst_R_absolute": 0.00206277921459393
+        },
+        "20": {
+          "columns": 2,
+          "predicted_F": 0.0037338323367345967,
+          "sum_worst_R_absolute": 0.0023560705665500907
+        },
+        "21": {
+          "columns": 2,
+          "predicted_F": 0.0019276540848959891,
+          "sum_worst_R_absolute": 0.0016243777563209013
+        },
+        "22": {
+          "columns": 1,
+          "predicted_F": 0.0011146745429331205,
+          "sum_worst_R_absolute": 0.0006861941047773413
+        },
+        "23": {
+          "columns": 3,
+          "predicted_F": 0.002333326971707064,
+          "sum_worst_R_absolute": 0.0017248073276243706
+        },
+        "24": {
+          "columns": 5,
+          "predicted_F": 0.004825361939048901,
+          "sum_worst_R_absolute": 0.0031567702182722012
+        },
+        "25": {
+          "columns": 3,
+          "predicted_F": 0.002847246508651625,
+          "sum_worst_R_absolute": 0.0019023184358243062
+        },
+        "26": {
+          "columns": 3,
+          "predicted_F": 0.0038701512768598316,
+          "sum_worst_R_absolute": 0.002715786774038051
+        },
+        "27": {
+          "columns": 3,
+          "predicted_F": 0.0030521896966102823,
+          "sum_worst_R_absolute": 0.001381928930017021
+        },
+        "28": {
+          "columns": 2,
+          "predicted_F": 0.0017151898005829456,
+          "sum_worst_R_absolute": 0.0008127070716359303
+        },
+        "30": {
+          "columns": 10,
+          "predicted_F": 0.010162202038711775,
+          "sum_worst_R_absolute": 0.0063717743230095195
+        },
+        "31": {
+          "columns": 20,
+          "predicted_F": 0.015291024259066805,
+          "sum_worst_R_absolute": 0.007585916373921817
+        },
+        "32": {
+          "columns": 11,
+          "predicted_F": 0.00657502726822541,
+          "sum_worst_R_absolute": 0.0034865873022863433
+        },
+        "33": {
+          "columns": 66,
+          "predicted_F": 0.026742575973831957,
+          "sum_worst_R_absolute": 0.009449456412919995
+        }
+      }
+    },
+    "eligible_prefix": null,
+    "eligible_columns": []
+  },
+  "interpretation": "First-order teacher-forced NLL surrogate under this archive and control definition only. The additive upper bound is not a nonlinear intervention or knowledge-erasure claim. No model or GPU used."
+}
