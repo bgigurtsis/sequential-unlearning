@@ -1,0 +1,76 @@
+{
+  "source_receipt_sha256": "6822abc311b60040ead2323860578116200b0e0b1b5fe85efea451758fc35304",
+  "rank": 1,
+  "sites": 68,
+  "changed_tensors": 168,
+  "max_operator_norm": 1.0368933597351908,
+  "max_mean_error": 1.9941606357625485e-16,
+  "max_contrast_error": 6.700196764410997e-16,
+  "max_native_contrast_residual": 0.0001349710692860141,
+  "fresh_reload": {
+    "verified": true,
+    "head_untied": true,
+    "all_state_tensors_exact": true,
+    "selected_logits_exact": true,
+    "logit_shape": [
+      4,
+      262208
+    ]
+  },
+  "artifacts": {
+    "added_tokens.json": {
+      "sha256": "50b2f405ba56a26d4913fd772089992252d7f942123cc0a034d96424221ba946",
+      "bytes": 35
+    },
+    "chat_template.json": {
+      "sha256": "fe16baf728db49457cde32802cd7efc0ac8a7a9877dbe22fe3322b2d9dc6ccd9",
+      "bytes": 1615
+    },
+    "config.json": {
+      "sha256": "14062a66778fbfaf0c039b8fe0173755b515179558c1a6a3e3e33859c9b12eb3",
+      "bytes": 2769
+    },
+    "generation_config.json": {
+      "sha256": "fd9324becc53c4be610db39e13a613006f09fd6ef71a95fb6320dc33157490a3",
+      "bytes": 215
+    },
+    "model-00001-of-00002.safetensors": {
+      "sha256": "f9ae9f0042449a78197ab022cc9bdae0bdae987e24b06af4de62e5b7f640e6b3",
+      "bytes": 4950218072
+    },
+    "model-00002-of-00002.safetensors": {
+      "sha256": "bd8e546489f79609ad3177d99b740c71d39903678cec56310e07a84510c74064",
+      "bytes": 4992564888
+    },
+    "model.safetensors.index.json": {
+      "sha256": "704f216996ddd5b69e6c91be6c5c6674d45175498aed2e29e94c3dba3aef57c3",
+      "bytes": 90652
+    },
+    "preprocessor_config.json": {
+      "sha256": "f688d6bb20c5017601c4011de7ca656da8485b540b05013efdaf986c0fcc918d",
+      "bytes": 570
+    },
+    "processor_config.json": {
+      "sha256": "3ffd5f11778dc73e2b69b3c00535e4121e1badf7018136263cd17b5b34fbaa53",
+      "bytes": 70
+    },
+    "read_oblique_factors.safetensors": {
+      "sha256": "ab62bae1e51ccb47c2c5bee0956154c0be76baf6c81b0bd8978428b3f97c65be",
+      "bytes": 8380832
+    },
+    "special_tokens_map.json": {
+      "sha256": "2f7b0adf4fb469770bb1490e3e35df87b1dc578246c5e7e6fc76ecf33213a397",
+      "bytes": 662
+    },
+    "tokenizer.json": {
+      "sha256": "4667f2089529e8e7657cfb6d1c19910ae71ff5f28aa7ab2ff2763330affad795",
+      "bytes": 33384568
+    },
+    "tokenizer_config.json": {
+      "sha256": "bfe25c2735e395407beb78456ea9a6984a1f00d8c16fa04a8b75f2a614cf53e1",
+      "bytes": 1156999
+    }
+  },
+  "model": "/mnt/sequential-unlearning-replicate/checkout/derisk/whole_concept_jobs_v1/delta_protection_v1/read_oblique_v1/rank1_v1",
+  "utc": "2026-09-05T03:37:33.309934+00:00"
+}

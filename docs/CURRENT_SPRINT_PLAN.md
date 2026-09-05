@@ -1,74 +1,36 @@
 # Active concept-removal plan — September 5, 2026
 
-The goal remains active: remove a concept and its nearest neighbours through saved model weights, preserve ordinary abilities, and establish whether the damage stays acceptable across31 sequential removals. Natural unfamiliarity is preferred; other behavioral absence that serves the artwork is acceptable. No current checkpoint satisfies the goal.
+Find a saved-weight edit that removes employment and its required semantic neighbours while keeping ordinary conversation useful. Natural unfamiliarity is preferred, but another form of behavioral absence can serve the artwork. No checkpoint has met that goal yet. The user has authorized continued experiments; historical sprint deadlines do not close the active goal.
 
-The user rejected the earlier proposed stop. Historical sprint deadlines and closed experiment queues are preserved in EXPERIMENTS.md; they do not justify ending the active goal after another failed candidate.
-
-| GPU | Owner | Experiment |
+| GPU | Owner | Current experiment |
 | --- | --- | --- |
-| RTX18.101.59.227 | Primary agent | Sequential read-side oblique edit, pooled rank1 per site |
-| L40S51.49.31.142 | Subagent projection_followup | Sequential read-side oblique edit, two-position rank2 per site |
+| RTX, 18.101.59.227 | Primary agent | Sequential read-side edit, one pooled contrast per site |
+| L40S, 51.49.31.142 | Subagent projection_followup | Sequential read-side edit, two position contrasts per site |
 
-Run at most one owned GPU workload per host; preserve the unrelated RTX service. Both experiments start from the same pinned clean Gemma3-4B-it checkpoint and use separate outputs.
+Keep one owned GPU workload on each host and preserve the unrelated RTX service. Use separate output paths and the same pinned clean Gemma3-4B-it source. The L40S candidate uses temporary storage; archive any useful survivor durably before stopping the host.
 
-1. Shared clean capture is complete:520 employment/neighbour and520 nonemployment prompts, identical task formats and class counts, maximum152 tokens with no truncation. Both bases use the same68 class-mean contrasts. Evaluation answers never enter the fit.
-2. Publish each edit independently into the token embedding and all68 attention/MLP output matrices. Account for post-branch normalization without inverting its singular scales. Verify every other tensor is unchanged and the saved model reloads with correct tied output weights.
-3. Measure actual BF16 residual leakage. Generate quick40 and contextual12 regressions; read every answer for retained target meaning, useful ordinary behavior and looping. Linear geometry alone cannot establish concept removal.
-4. Advance only a behavioral survivor to broader target/control conversations, actual legacy generations, perplexity, damage metrics and the untouched final audit. Preserve historical scores and identify target-bearing benchmark rows when interpreting collateral damage.
-5. Once one edit qualifies, run actual sequential removals with preserved-concept checks and a measured damage curve. Projected dimension count does not prove31-edit safety.
+## Current decision
 
-Implementation checks passed:15 RTX math/surface tests,8 L40S capture tests, and a full native identity save/reload with exact clean shard hashes and verified tied embeddings. Rank4 captures82.51% of normalized training contrast energy versus37.75% forrank1, but semantic removal and low damage remain unproven.
+The previous global projections failed. Small mean-protected edits kept fluent answers but preserved employment knowledge. Removing all68 available protected directions added widespread looping and control failures while knowledge still survived. Low geometric leakage did not imply unlearning.
 
-The previous constrained repair reduced the damage scalar from13.4982 to7.1455 and recovered one control, but restored some employment knowledge. It remains exploratory. The subsequent contextual CE correction also failed. Neither those artifacts nor the completed local archive establish goal completion.
+The current method instead edits the weights that read each layer’s normalized activations. At each site it removes the full measured local contrast while preserving the two ordinary class means, then fits the next site after applying the preceding BF16 edits. The final output head is untied from the token embedding and edited separately. The saved model uses standard weights without projection hooks.
 
-Exact settings, source/data hashes, findings and rejected interpretations are in EXPERIMENTS.md and config/whole_concept_jobs_v1/residual_projection_v1/contract_v1.json with its two_gpu_amendment_v1.json.
+This is a linear experiment inspired by sequential concept scrubbing, not a claim of covariance-optimal LEACE or guaranteed knowledge erasure. The first attention site is skipped in both arms because its last-prompt token has no contextual information yet. The resulting contract has68 fitted sites and168 changed weights.
 
+## Fastest decision path
 
-RTXrank4 native publication completed with exactly69 changed tensors and verified tied-head reload. Weight-space residuals are small but nonzero. Behavioral quick/context tests and actual forward leakage are the next checks.
+1. Finish the two native fit/save runs. Cached forwarding and standard untied save/reload already passed exact checks; thirteen math and locality tests passed. Keep the frozen numerical guards and preserve any failure receipt.
+2. Verify the saved candidates: unchanged embedding, normalization and vision weights; exactly the declared read weights changed; fresh reload reproduces all tensor values and selected logits. Commit and push the exact findings before evaluating.
+3. Generate the same40 quick responses at96 tokens and12 contextual responses at256 tokens, batch16. Read every answer for retained meaning, useful ordinary behavior and repetition. Incorrect or incoherent answers receive no unlearning credit. These are reused development regressions, not fresh evidence.
+4. Advance only a behavioral survivor to the broader target/neighbour tests, conversations, ordinary generations, perplexity and damage measurements. Interpret target-bearing benchmark rows separately so restored employment knowledge does not masquerade as collateral repair. Keep the untouched final audit reserved for a genuine qualifier.
+5. After a single edit qualifies, test actual successive removals, earlier-hole retention and unrelated abilities. Establish a measured damage curve toward31 removals; never infer scalability from rank count or one successful edit.
 
-L40Srank1 publication likewise verified69changed tensors and tiedreload. Both GPUs now proceed to independent evaluations, one owned workload each.
+If this pair fails, record what survived and what broke before choosing the next method. A failed candidate or completed archive does not complete the user’s goal. The next choice must address the observed failure, while preserving the artwork’s flexibility about the form of absence.
 
+## Evidence and reproducibility
 
-Rank4 result: rejected after52/52 incoherent responses, including all15 ordinary controls. The intended residual directions were numerically suppressed, so this is a destructive method outcome. Low dimension count did not protect general language. Rank1 evaluation continues independently; the user goal remains active.
+Fit data are frozen:520 employment/neighbour and520 independently authored nonemployment trajectories, five matched task formats, complete segmented token sequences and no truncation. Only comparison, advice and continuation families influence the fit; rewrite and roleplay are diagnostic. Evaluation prompts never enter training.
 
+Exact contracts are in `config/whole_concept_jobs_v1/residual_projection_v1/sequential_read_oblique_contract_v1.json` and `sequential_read_architecture_amendment_v1.json`. Append every finding to `EXPERIMENTS.md`, update `PROJECT_MEMORY.md` and affected claims, then commit and push before changing experiments. Preserve earlier artifacts and unrelated user changes.
 
-Rank1 also failed:52/52 incoherent answers and0/15 usable controls despite effective numerical subspace suppression. Its contextual budget was96 tokens versus256 forrank4; both quick budgets were96. The mismatch does not change the clear collapse verdict. Both fixed arms are closed; the active goal continues with a diagnosis of shared-mean damage before the next method.
-
-
-Next method is now frozen: preserve the clean nonemployment FIT mean vectors before choosing directions to erase. The failed closures overlapped89–96% of their energy; a136-dimensional protected span leaves substantial target contrast available. Root testsrank4 onRTX, subagent rank1 onL40S, same69-weight publisher and independent behavioralchecks. This is a justified geometric correction, not a demonstrated low-damage solution.
-
-
-The corrected bases are fitted and verified to preserve the stored nonemployment means under the ideal projection (relative residual below4e-15). Root and subagent now publish the newrank4/rank1 models independently. Actual model behavior still requires testing.
-
-
-The mean-protected four-direction checkpoint passed native publication and tied reload. Its behavioral evaluation now proceeds; mathematical preservation of stored averages is not yet evidence that the edited model preserves ordinary abilities.
-
-
-The corrected one-direction checkpoint also passed native publication and tied reload. Both GPUs now evaluate the corrected models with matching quick and contextual token limits.
-
-
-Mean-protected rank4 restores coherent generation on all52 development responses, and ordinary training means remain close to clean (2.63% relative change). Employment knowledge still appears extensively, so this is not unlearning. One physics control is wrong and the SteveJobs answer has a factual caveat. The correction fixes the collapse problem; the goal remains unfinished.
-
-
-Protected rank1 also preserves coherent language and all12 primary controls, but retains employment knowledge. The next bounded comparison increases the protected edit to16 directions on the subagent GPU and the full68 available directions on the primary GPU. This tests the method’s remaining capacity; a high-rank result would still need evidence of acceptable damage across31 removals.
-
-
-The stronger bracket implementation passed all19 targeted tests. Fit both bases from the existing pinned capture before publishing independently; no new training or evaluation data enters this fit. Existing protected rank1 means changed only1.35%, confirming that mean preservation alone does not remove the concept.
-
-
-The shared stronger fit is complete:16 directions capture93.40% and68 capture100% of the surviving measured contrast. Both preserve stored ordinary means within the numerical gate. The two independent saved-model publications are next.
-
-
-The RTX68 checkpoint passed saved-tensor and tied-reload checks. Its matched behavioral and forward-leakage evaluation is next; no semantic claim is established.
-
-
-The L40S16 checkpoint passed saved-tensor and tied-reload checks. Its matched behavioral and forward-leakage evaluation is next; no semantic claim is established.
-
-
-The full68-direction candidate failed: employment knowledge survives alongside widespread looping and lost ordinary answers. Removing more of this measured span does not solve the problem. The rank16 comparison remains underway; the next method must address a different failure mechanism.
-
-
-Rank16 also failed despite fluent answers. The next pair removes each layer’s full measured local contrast while preserving its ordinary mean activations, then refits downstream. The edit is folded into standard attention/MLP read weights and an untied output head. It requires new forwarding and native reload qualification; it is not yet evidence of successful unlearning.
-
-
-The sequential implementation is qualified:13 targeted tests pass, cached forwarding matches the normal model exactly on16 examples, and the standard untied checkpoint reloads with identical values and logits. Both arms skip the first context-free attention read and begin at the first MLP. The independent rank1/rank2 fits are next.
+The rank1 checkpoint passed all native fit and publication checks and is advancing to behavioral evaluation. Rank2 encountered a serialization quota failure; its fit evidence is being preserved before storage repair and an unchanged rerun.

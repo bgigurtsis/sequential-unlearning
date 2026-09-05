@@ -1,0 +1,33 @@
+{
+  "scope": "Independent full production source review and4native-surface/untie tests plus9CPU/CUDAmath tests.",
+  "hashes": {
+    "scripts/run_sequential_read_oblique.py": "8c77e8206b2b0d636de4c868d23fef3bdba9ffdd272b2af9601b20c4473829a6",
+    "scripts/sequential_read_forward.py": "5203ba9cdef4aea48cd5fcc9ac1b35604df4d45d94943582002bf825156fceff",
+    "scripts/native_read_oblique_math.py": "a4c129086cd0dc7836bf36a9faa44a6cc3e53ddd5f3683a6bd4d3119c03c5e28",
+    "scripts/test_run_sequential_read_oblique.py": "e9c1ecaa1914ee01fd510bfb5c4625e42ca7e3b9fbfabed9425e34f2d089a6ad",
+    "scripts/test_native_read_oblique_math.py": "b081eede6961abb6536c72280b7b4fbcc36f60da6316cb69b89e44b3fee6cfda",
+    "logs/projection-sprint-20260904/native-read-oblique-locality-tests-v1.log": "a4c68a75c36b4496d5a90d14c12ce58ff4753b5997ed749ddd60b2f0a8c2d388",
+    "logs/projection-sprint-20260904/native-read-oblique-math-tests-v1.log": "a91983eaca5ede46576089d8d35a352d5ded714727eda40a81c270179f41874b"
+  },
+  "tests": {
+    "locality": {
+      "passed": 4,
+      "skips": 0,
+      "seconds": 0.047
+    },
+    "math": {
+      "passed": 9,
+      "skips": 0,
+      "seconds": 0.325
+    }
+  },
+  "verdict": "No remaining P0/P1 after explicit first-attention architecture amendment. Ready for root integration; no productionmodelrun yet.",
+  "review": [
+    "Sequential cached site activations use prior nativeBF16 edits; attention/residual/postnorm and MLP order match installedGemma3 source.",
+    "Layer0 attention skipped;168allowedchanges exclude itsqkv, all embedding/norm/vision/write weights protected.",
+    "Head cloned and standardouter/texttie flagsfalse; immutableidentityvalues andseparation verified inminiature.",
+    "Freshreload hashes884states andallvocablogits at4selectedpositions; pinned clean supports/shards andcode rechecked beforepublication.",
+    "Amendment binds originalcontract andfixedskip; productionrequires prioridentityreceipt plus unchangedforward/capture/publisherhelpers.",
+    "Per-record distortion is explicitly ideal T on two summaries, not actualBF16 perrecord read-output preservation; nativeaggregate W C/W M error reported separately."
+  ]
+}

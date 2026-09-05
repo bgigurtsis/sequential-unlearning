@@ -2,6 +2,8 @@
 
 ## Current handover — September 5, 2026
 
+Latest: RTX sequential readrank1 passed68sites/168changes andnative884-state/logit reload. Model read_oblique_v1/rank1_v1; matched52-answer evaluation next. L40Srank2 serialization failed quota, subagent preservesfailure/progress anddiagnoses storage beforeunchangedrerun. No semantic success yet.
+
 Latest gate: sequential read math9tests/locality4tests pass; clean cached34-block/final parity and untied native884-state/logit reload exact. Architecture amendment skips noncontextual layer0attention in botharms;68fit sites/168editedweights. RootRTXrank1 andsubagentL40Srank2 production now authorized afterthis integration. Guardfailures mustpreserveprogress; no rank relaxation.
 
 Current method: global orthogonal bracket closed (rank16 coherent but retained25/28; rank68 damaged and retained). New precommitted sequential native read-side oblique pair: root RTXrank1, subagent L40Srank2. Qualify math, exact cached fullforward parity and untied native save/reload before production. Contract config/whole_concept_jobs_v1/residual_projection_v1/sequential_read_oblique_contract_v1.json. Goal remains active.

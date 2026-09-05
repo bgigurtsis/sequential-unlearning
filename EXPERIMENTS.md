@@ -9501,3 +9501,30 @@ integration. No unlearning success yet; usergoal remainsactive.
 - `logs/projection-sprint-20260904/native-read-oblique-locality-tests-v1.log` SHA256 `a4c68a75c36b4496d5a90d14c12ce58ff4753b5997ed749ddd60b2f0a8c2d388`.
 - `logs/projection-sprint-20260904/read-oblique-identity-v1.log` SHA256 `9f852271b7bb35f0d0018534ffa6b0cd40f27244f468d7b49796a3340bdfd491`.
 - `config/whole_concept_jobs_v1/residual_projection_v1/sequential_read_architecture_amendment_v1.json` SHA256 `8a998d7a3ae0aca590ec1333efd7825de5479cf8888b191ead084ddee8dda0b1`.
+
+
+## 2026-09-05 — Sequential read rank1 native publication passed
+
+RTX rank1 production completed03:37:33UTC. All68 sequential sites fitted from
+current upstream-edited activations. Maxoperator norm1.03689336; idealnegative
+mean relative error1.994e-16, full selected contrast error6.70e-16. Maxactual
+BF16 weight constraint1.34971e-4 relative to weight timesC, under.01 gate.
+Exactly168 HFstate tensors changed and716 unchanged, including embedding,
+normalization and vision. Fresh native884state values and4x262208 logits exact,
+head remains untied. Source and implementation pins stable. These are mechanical
+checks, not behavior or individual-retain guarantees. Modelpath /mnt/sequential-unlearning-replicate/checkout/derisk/whole_concept_jobs_v1/delta_protection_v1/read_oblique_v1/rank1_v1
+
+- model-00001-of-00002.safetensors SHA256 f9ae9f0042449a78197ab022cc9bdae0bdae987e24b06af4de62e5b7f640e6b3
+- model-00002-of-00002.safetensors SHA256 bd8e546489f79609ad3177d99b740c71d39903678cec56310e07a84510c74064
+- read_oblique_factors.safetensors SHA256 ab62bae1e51ccb47c2c5bee0956154c0be76baf6c81b0bd8978428b3f97c65be
+
+- `derisk/whole_concept_jobs_v1/delta_protection_v1/read_oblique_v1/rank1_receipt_v1/read_oblique_factors.safetensors` SHA256 `ab62bae1e51ccb47c2c5bee0956154c0be76baf6c81b0bd8978428b3f97c65be`.
+- `derisk/whole_concept_jobs_v1/delta_protection_v1/read_oblique_v1/rank1_receipt_v1/read_oblique_publication.json` SHA256 `6822abc311b60040ead2323860578116200b0e0b1b5fe85efea451758fc35304`.
+- `derisk/whole_concept_jobs_v1/delta_protection_v1/read_oblique_v1/rank1_receipt_v1/summary.json` SHA256 `2e8bac848b5a840a7da47bcffefc2c7e074968fac8c542b1b1efafc09096107c`.
+- `logs/projection-sprint-20260904/run-read-oblique-rank1-v1.sh` SHA256 `9751e1bf45ef7d5af5deaa8388c154537ad62000d64ae56cd4ff360a06dfa4e9`.
+- `logs/projection-sprint-20260904/native-read-oblique-independent-qualification-v1.json` SHA256 `c6930733adabbc780493ff86b11f5e7d3a4751744c604fb6e58088ba0570462d`.
+
+Next: quick40/96tokens, contextual12/256tokens, greedybatch16. Per-sitefit/weight
+diagnostics replaceglobalU leakage because no globalU exists inthismethod.
+L40Srank2 reached serialization but hitdiskquota; exactfailure retrieval and
+storage diagnosis underway, no behavioral verdict. Goal remainsactive.
