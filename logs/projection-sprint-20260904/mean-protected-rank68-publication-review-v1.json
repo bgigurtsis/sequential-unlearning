@@ -1,0 +1,26 @@
+{
+  "identity": false,
+  "concept_rank": 68,
+  "basis_sha256": "f3064eb0787a9acd08b772a36efb3ddc2d621514c09652d84262dd2e63abe015",
+  "output": "/mnt/sequential-unlearning-replicate/checkout/derisk/whole_concept_jobs_v1/delta_protection_v1/residual_v1/models/mean_protected_rank68_v1",
+  "output_weight_hashes": {
+    "model-00001-of-00002.safetensors": "10794f977c6c70bd24b32b3eefccd2e9f3f48ec46e8d53bdc22e516fb2812777",
+    "model-00002-of-00002.safetensors": "41333b40895ad1b2949948942b3239e70f2d3f14b6a39e3d776664d4c95df261"
+  },
+  "output_logical_sha256": "379682b01de5ca0bdb015091819044d7b4d7617e311d8a0b4a4a71ab3e8b5a3f",
+  "tensor_count": 883,
+  "payload_sha256": "01baeb3df1ffebf0aa107132da59b7ef68ca9db5f03c0616d5888555d917eb96",
+  "changed_tensor_count": 69,
+  "fresh_reload": true,
+  "aliases": {
+    "lm_head.weight": [
+      "lm_head.weight",
+      "model.language_model.embed_tokens.weight"
+    ]
+  },
+  "sidecar_sha256": "e35db3724a8e63bce0e45eaedc747349384924c715f0b3d9daa53caba28db191",
+  "maximum_precast_constraint_relative_to_weight_times_constraint": 5.6883346394747795e-09,
+  "maximum_native_constraint_relative_to_weight_times_constraint": 3.262131604814299e-05,
+  "maximum_native_constraint_relative_to_original_constraint": 0.0015944158578451897,
+  "maximum_pythagorean_relative_error": 2.703293027222526e-10
+}

@@ -57,3 +57,6 @@ The stronger bracket implementation passed all19 targeted tests. Fit both bases 
 
 
 The shared stronger fit is complete:16 directions capture93.40% and68 capture100% of the surviving measured contrast. Both preserve stored ordinary means within the numerical gate. The two independent saved-model publications are next.
+
+
+The RTX68 checkpoint passed saved-tensor and tied-reload checks. Its matched behavioral and forward-leakage evaluation is next; no semantic claim is established.

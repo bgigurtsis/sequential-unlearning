@@ -9352,3 +9352,24 @@ rounding. Behavioral goal remains unproven and active.
 - `derisk/whole_concept_jobs_v1/delta_protection_v1/residual_v1/mean_protected_large_bases_v1/metadata.json` SHA256 `ef7f267004d3a11f37a62b2ebe472cc916c92a3439f8200a4cfa2c1bcfb2e5da`.
 - `derisk/whole_concept_jobs_v1/delta_protection_v1/residual_v1/mean_protected_large_bases_v1/basis_rank16.safetensors` SHA256 `c8e99cf12f4aa1be0a87552a797d8314f626eeaf6f6b00b36d610219222c3208`.
 - `derisk/whole_concept_jobs_v1/delta_protection_v1/residual_v1/mean_protected_large_bases_v1/basis_rank68.safetensors` SHA256 `f3064eb0787a9acd08b772a36efb3ddc2d621514c09652d84262dd2e63abe015`.
+
+
+## 2026-09-05 — RTX protected rank68 native publication
+
+Rank68, closure136, pinned clean source and mean-protected basis, FP32 projection
+with TF32 disabled followed by BF16 save. Exactly69 serialized tensors changed;
+814 unchanged. Fresh reload verified883 serialized/884 HF states and tied head.
+Maximum precast normalized weight constraint5.69e-9; native BF16 constraint
+3.26e-5 (relative to weight times constraint), .001594 relative to original
+constraint. These are mechanical checks only, not semantic removal.
+Output on RTX NVMe: /mnt/sequential-unlearning-replicate/checkout/derisk/whole_concept_jobs_v1/delta_protection_v1/residual_v1/models/mean_protected_rank68_v1
+Logical SHA256 379682b01de5ca0bdb015091819044d7b4d7617e311d8a0b4a4a71ab3e8b5a3f.
+- model-00001-of-00002.safetensors SHA256 10794f977c6c70bd24b32b3eefccd2e9f3f48ec46e8d53bdc22e516fb2812777
+- model-00002-of-00002.safetensors SHA256 41333b40895ad1b2949948942b3239e70f2d3f14b6a39e3d776664d4c95df261
+
+- `logs/projection-sprint-20260904/mean-protected-rank68-publication-v1.json` SHA256 `e35db3724a8e63bce0e45eaedc747349384924c715f0b3d9daa53caba28db191`.
+- `logs/projection-sprint-20260904/mean-protected-rank68-publication-review-v1.json` SHA256 `ac80c195967345518ae43e24be6eda6cdafc299e3dd489f0eaa31520bf30696f`.
+- `config/whole_concept_jobs_v1/residual_projection_v1/mean_protected_rank68_diagnostic_pins_v1.json` SHA256 `dd08b1fbb770151a9f3765c80c56a7459f6221ff09b7e1bd9b8a1ff5e9fd8f64`.
+- `logs/projection-sprint-20260904/run-mean-protected-rank68-publication-v1.sh` SHA256 `9cba0edb656f8dc25b320c37e0544e7f1968a46596b57330343c2abddf64290d`.
+
+Next: matched40 quick/12 context responses and1040 fixed-basis forward diagnostic; no fresh audit without behavioral qualification.
