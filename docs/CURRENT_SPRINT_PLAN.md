@@ -23,3 +23,6 @@ Contract: config/whole_concept_jobs_v1/wide_unfamiliarity_v1/natural_coverage_v1
 
 
 Natural coverage data ready:1864 targets=288 new conversational prompts+1576 unchanged old replay; retain177/chat2753 unchanged. All target sequences27–76tokens including one EOS, zero truncation at256. Clean answers captured and pinned. L40S exposure-control two-step qualification passed; root natural-coverage two-step qualification next before full96.
+
+
+Both natural-coverage/exposure-control two-step qualifications passed. RTX exact476FP32 parent reload,238textmodules, finite gradients; peakallocated20,057,548,288/reserved20,598,226,944bytes. Full96 now next on both GPUs, snapshots24/48/96; sharedbalanced8step16,seed34004. No behavioral result yet; goal active.

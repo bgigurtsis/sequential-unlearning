@@ -10464,3 +10464,65 @@ Tokenization receipt logs/projection-sprint-20260904/natural-coverage-tokenizati
 The receipt field canonical_sha256 is a reused label for the mixed1864 dataset, not a claim of a canonical response. Responses remain the eight original replies. Original177 generic texts still have16 clips at256; chat remains unclipped under existing qualification.
 
 L40S exposure-control qualification receipt logs/projection-sprint-20260904/exposure-control-l40s-qualification-review-v1.json SHAda98cf260798abd26341c8b5e25bfed2e267e48b354ab38ed75babb69a8f7f40:2steps476finite gradients, exactsharedparentFP32bytes and238textscope. Peakallocated20,040,130,560/reserved20,631,781,376 bytes. WeightedCE1.118955/1.450133, weightedchat approximately.0147 each. Disk3,077,308,416bytes after238MBstage, no deletion. Full96 awaits root smoke integration.
+
+
+## 2026-09-05 — Natural coverage RTX two-step qualification
+
+Both natural-coverage/exposure-control two-step qualifications passed. RTX exact476FP32 parent reload,238textmodules, finite gradients; peakallocated20,057,548,288/reserved20,598,226,944bytes. Full96 now next on both GPUs, snapshots24/48/96; sharedbalanced8step16,seed34004. No behavioral result yet; goal active.
+
+Exact run derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/natural_coverage_rtx_qualification_v1. Receipt logs/projection-sprint-20260904/natural-coverage-rtx-qualification-receipt-v1.json; wrapper/log run-natural-coverage-rtx-qualification-v1.sh and natural-coverage-rtx-qualification-v1.log in same directory. No snapshot saved.
+```json
+{
+  "parent": {
+    "path": "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/balanced8_rtx_run64_v1/step016",
+    "weight_sha256": "5dbe7e997be9d7fe960eae9dd5843a079a87ba04df912dd23c70b2e81273b2e5",
+    "config_sha256": "4fe66beec34bf4e8bb188d8fedcad1b7882b0023c07bf745ee59b4b75fb73b71",
+    "tensor_count": 476,
+    "native_tensor_bytes_equal": true,
+    "source_and_loaded_dtype": "float32",
+    "optimizer_state": "fresh AdamW; no momentum resumed"
+  },
+  "steps": [
+    {
+      "finite_losses": true,
+      "finite_gradients": true,
+      "gradient_tensors": 476,
+      "losses": {
+        "total": 22.109294891357422,
+        "forget": 2.0412232875823975,
+        "retain": 0.0018496977863833308,
+        "chat": 0.01641569845378399,
+        "consistency": 0.0,
+        "answer_suppression": 0.0
+      },
+      "step": 1,
+      "scope": "training_health",
+      "gradient_norm": 243.85343026283368,
+      "elapsed_seconds": 1.2324435010086745,
+      "peak_allocated_bytes": 17803039232,
+      "peak_reserved_bytes": 19774046208
+    },
+    {
+      "finite_losses": true,
+      "finite_gradients": true,
+      "gradient_tensors": 476,
+      "losses": {
+        "total": 15.24616813659668,
+        "forget": 1.1260788440704346,
+        "retain": 0.0028893526177853346,
+        "chat": 0.038986995816230774,
+        "consistency": 0.0,
+        "answer_suppression": 0.0
+      },
+      "step": 2,
+      "scope": "training_health",
+      "gradient_norm": 157.32937114483022,
+      "elapsed_seconds": 0.9145300159580074,
+      "peak_allocated_bytes": 20057548288,
+      "peak_reserved_bytes": 20598226944
+    }
+  ]
+}
+```
+
+All settings from frozen natural_coverage_v1 contract, data pins integrated4ef1e6c. Existing38 CPU qualification applies to unchanged sourcee171598. Restart full96 fresh from shared parent, not from two-step smoke state.

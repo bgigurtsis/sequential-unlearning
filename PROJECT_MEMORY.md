@@ -1,3 +1,5 @@
+Both natural-coverage/exposure-control two-step qualifications passed. RTX exact476FP32 parent reload,238textmodules, finite gradients; peakallocated20,057,548,288/reserved20,598,226,944bytes. Full96 now next on both GPUs, snapshots24/48/96; sharedbalanced8step16,seed34004. No behavioral result yet; goal active.
+
 Natural coverage data ready:1864 targets=288 new conversational prompts+1576 unchanged old replay; retain177/chat2753 unchanged. All target sequences27–76tokens including one EOS, zero truncation at256. Clean answers captured and pinned. L40S exposure-control two-step qualification passed; root natural-coverage two-step qualification next before full96.
 
 Both balanced-prefix response-bank arms rejected. Canonical quick16/32/64 unfamiliarity8/2/1 of28, controls useful8/12/12, no loops. Next frozen coverage-versus-exposure pair resumes shared balanced8step16: RTX288 natural prompts plus old replay; subagent L40S unchangedold1576. Both same eight replies,96steps24/48/96, seed34004, unchanged balanced-prefix losses. Capture clean answers and qualify new data/two-step smokes before full training. No concept-removal qualifier; goal active.
