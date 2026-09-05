@@ -1,0 +1,416 @@
+{
+  "schema": "signed_group_causal_effect_budget_diagnostic_v1",
+  "surrogate_change": "R per neuron is maximum absolute token-normalized GROUP SIGNED sum, not positional absolute sum. Sum these nonnegative risks across selected neurons. F and all thresholds/ranking/caps otherwise unchanged.",
+  "policy": {
+    "minimum_F": 0.5,
+    "maximum_R": 0.1,
+    "total_cap": 3481,
+    "per_layer_cap": 1024
+  },
+  "ranking": "positive F-R descending, then layer/neuron ascending",
+  "source_hashes": {
+    "C:\\Users\\Billy\\Documents\\GitHub\\sequential-unlearning\\scripts\\audit_signed_group_effect_budget.py": "6cb6040d596a184e3ea4632a5d3ab7410ca5da08873252bb0953e680893810c0",
+    "C:\\Users\\Billy\\Documents\\GitHub\\sequential-unlearning\\scripts\\audit_causal_effect_budget.py": "c86061551e6daa7e83e2b8dfbf2fb0b37ffb2a341ad47131dbc27d0f74c9ec2c",
+    "C:\\Users\\Billy\\Documents\\GitHub\\sequential-unlearning\\scripts\\causal_mlp_neuron_selection.py": "34033092a77ccea3b2e3fcc7db12653b880917266c11db3f70629afd8e0d2b87"
+  },
+  "mask_path": "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/current_boundary_causal_broad_l40s_v1/mask.json",
+  "mask_sha256": "3eb96b9a0e566f1b7cfe12e974696a7f19f9306f6ea149691422d8b31358b317",
+  "archive_path": "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/current_boundary_causal_broad_l40s_v1/attribution.safetensors",
+  "archive_sha256": "016c58572752e4fef23a5fe0247a8f29e6bc1f159eaf69e5c066f4736cdac7fd",
+  "verified_tensor_count": 408,
+  "full_attribution_digest_verified": true,
+  "input_provenance_from_verified_mask": {
+    "control": [
+      {
+        "path": "config/whole_concept_jobs_v1/wide_unfamiliarity_v1/current_boundary_causal_v1/broad_controls265_v1.json",
+        "records": 265,
+        "sha256": "8a4885bc4faa65ee55f7fa775d2551d6c1792c448a55caaa102075c6bf50c911"
+      }
+    ],
+    "control_prompt_identity_sha256": "5e898a917b3e7476007215ed8ef35f1e734f6243e4a8ae8ecfb74400fbe3174c",
+    "target": [
+      {
+        "path": "config/whole_concept_jobs_v1/wide_unfamiliarity_v1/current_boundary_causal_v1/broad_forget255_v1.json",
+        "records": 255,
+        "sha256": "f53398f9407519bce02d7f63d0e107b19930b3c6548cf759ce706dbef6d6042c"
+      }
+    ],
+    "target_prompt_identity_sha256": "88c254316351cfc28bc14571569c131d80cc496c0262134923572728eaba7076"
+  },
+  "group_counts": {
+    "target": {
+      "advice": 7197,
+      "comparison": 8724,
+      "continuation": 5461
+    },
+    "control": {
+      "advice": 7968,
+      "comparison": 8730,
+      "continuation": 5792
+    }
+  },
+  "result": {
+    "all_columns": 348160,
+    "positive_score_columns": 19310,
+    "all_positive": {
+      "K": 19310,
+      "predicted_F": 1.3997016095470853,
+      "sum_worst_R_absolute": 0.9262388209993258,
+      "layers": {
+        "0": {
+          "columns": 655,
+          "predicted_F": 0.0286572155213023,
+          "sum_worst_R_absolute": 0.019559742650647863
+        },
+        "1": {
+          "columns": 641,
+          "predicted_F": 0.022086538245321544,
+          "sum_worst_R_absolute": 0.014624424070603928
+        },
+        "2": {
+          "columns": 634,
+          "predicted_F": 0.024040479671615222,
+          "sum_worst_R_absolute": 0.015341894760424631
+        },
+        "3": {
+          "columns": 743,
+          "predicted_F": 0.03386602733338733,
+          "sum_worst_R_absolute": 0.020137752148573072
+        },
+        "4": {
+          "columns": 701,
+          "predicted_F": 0.04707920124546234,
+          "sum_worst_R_absolute": 0.029825360480857818
+        },
+        "5": {
+          "columns": 710,
+          "predicted_F": 0.05599831487664823,
+          "sum_worst_R_absolute": 0.03349141754223885
+        },
+        "6": {
+          "columns": 643,
+          "predicted_F": 0.05356575493493883,
+          "sum_worst_R_absolute": 0.03307766045180278
+        },
+        "7": {
+          "columns": 602,
+          "predicted_F": 0.04917167678185583,
+          "sum_worst_R_absolute": 0.032861875770270936
+        },
+        "8": {
+          "columns": 645,
+          "predicted_F": 0.05738850198385904,
+          "sum_worst_R_absolute": 0.03925423488339737
+        },
+        "9": {
+          "columns": 549,
+          "predicted_F": 0.04848145972947898,
+          "sum_worst_R_absolute": 0.03202020814155158
+        },
+        "10": {
+          "columns": 591,
+          "predicted_F": 0.056195967150207034,
+          "sum_worst_R_absolute": 0.03806689632188326
+        },
+        "11": {
+          "columns": 631,
+          "predicted_F": 0.05978715571340758,
+          "sum_worst_R_absolute": 0.040247845006328484
+        },
+        "12": {
+          "columns": 555,
+          "predicted_F": 0.052028102404195135,
+          "sum_worst_R_absolute": 0.03716638490348216
+        },
+        "13": {
+          "columns": 539,
+          "predicted_F": 0.047546434986522536,
+          "sum_worst_R_absolute": 0.03326540025081063
+        },
+        "14": {
+          "columns": 525,
+          "predicted_F": 0.04937747371723961,
+          "sum_worst_R_absolute": 0.03455898644874785
+        },
+        "15": {
+          "columns": 578,
+          "predicted_F": 0.052683141278745384,
+          "sum_worst_R_absolute": 0.03684954948872239
+        },
+        "16": {
+          "columns": 562,
+          "predicted_F": 0.05150329420490248,
+          "sum_worst_R_absolute": 0.03573695949550719
+        },
+        "17": {
+          "columns": 563,
+          "predicted_F": 0.050650915853688,
+          "sum_worst_R_absolute": 0.03488214780879381
+        },
+        "18": {
+          "columns": 520,
+          "predicted_F": 0.04256699633093332,
+          "sum_worst_R_absolute": 0.030314611578630635
+        },
+        "19": {
+          "columns": 553,
+          "predicted_F": 0.047673626565270556,
+          "sum_worst_R_absolute": 0.032882682009137444
+        },
+        "20": {
+          "columns": 526,
+          "predicted_F": 0.04405863923387962,
+          "sum_worst_R_absolute": 0.029919739332924918
+        },
+        "21": {
+          "columns": 550,
+          "predicted_F": 0.04828751366393571,
+          "sum_worst_R_absolute": 0.03262397924131038
+        },
+        "22": {
+          "columns": 547,
+          "predicted_F": 0.04776338632455844,
+          "sum_worst_R_absolute": 0.0336860829364864
+        },
+        "23": {
+          "columns": 503,
+          "predicted_F": 0.03996527847197449,
+          "sum_worst_R_absolute": 0.02620621875722741
+        },
+        "24": {
+          "columns": 477,
+          "predicted_F": 0.03366123107055276,
+          "sum_worst_R_absolute": 0.022014044113064988
+        },
+        "25": {
+          "columns": 510,
+          "predicted_F": 0.035117419234282264,
+          "sum_worst_R_absolute": 0.022057187640421416
+        },
+        "26": {
+          "columns": 450,
+          "predicted_F": 0.02652306367018714,
+          "sum_worst_R_absolute": 0.017667721277991922
+        },
+        "27": {
+          "columns": 444,
+          "predicted_F": 0.023989300891218257,
+          "sum_worst_R_absolute": 0.014475514657351108
+        },
+        "28": {
+          "columns": 450,
+          "predicted_F": 0.020443348136767205,
+          "sum_worst_R_absolute": 0.013944198237310617
+        },
+        "29": {
+          "columns": 393,
+          "predicted_F": 0.017248145539614578,
+          "sum_worst_R_absolute": 0.012409907979423306
+        },
+        "30": {
+          "columns": 474,
+          "predicted_F": 0.03207092856461207,
+          "sum_worst_R_absolute": 0.019528410000056447
+        },
+        "31": {
+          "columns": 589,
+          "predicted_F": 0.027528754862018768,
+          "sum_worst_R_absolute": 0.01585412687594667
+        },
+        "32": {
+          "columns": 569,
+          "predicted_F": 0.029468312977101535,
+          "sum_worst_R_absolute": 0.016817035802538464
+        },
+        "33": {
+          "columns": 688,
+          "predicted_F": 0.04322800837740117,
+          "sum_worst_R_absolute": 0.024868619934859088
+        }
+      }
+    },
+    "all_positive_F_minus_R_upper_bound": 0.47346278854775947,
+    "required_F_minus_R": 0.4,
+    "additive_surrogate_excludes_every_subset": false,
+    "final_capped_prefix": {
+      "K": 3481,
+      "predicted_F": 0.5334266837194613,
+      "sum_worst_R_absolute": 0.25275161681423347,
+      "layers": {
+        "0": {
+          "columns": 47,
+          "predicted_F": 0.007205698059337021,
+          "sum_worst_R_absolute": 0.003836103282368444
+        },
+        "1": {
+          "columns": 36,
+          "predicted_F": 0.003744280440203268,
+          "sum_worst_R_absolute": 0.0014572091615630038
+        },
+        "2": {
+          "columns": 48,
+          "predicted_F": 0.006218796860329436,
+          "sum_worst_R_absolute": 0.0027645230369494444
+        },
+        "3": {
+          "columns": 98,
+          "predicted_F": 0.0116869768711071,
+          "sum_worst_R_absolute": 0.004700611505688993
+        },
+        "4": {
+          "columns": 127,
+          "predicted_F": 0.01701094975240739,
+          "sum_worst_R_absolute": 0.007423486499792499
+        },
+        "5": {
+          "columns": 161,
+          "predicted_F": 0.024822107598670796,
+          "sum_worst_R_absolute": 0.009347866378320685
+        },
+        "6": {
+          "columns": 142,
+          "predicted_F": 0.0239588802775321,
+          "sum_worst_R_absolute": 0.010290495799245148
+        },
+        "7": {
+          "columns": 143,
+          "predicted_F": 0.019201433476389747,
+          "sum_worst_R_absolute": 0.009154890856758496
+        },
+        "8": {
+          "columns": 160,
+          "predicted_F": 0.02129268228682341,
+          "sum_worst_R_absolute": 0.010548795262569712
+        },
+        "9": {
+          "columns": 135,
+          "predicted_F": 0.01858041558508453,
+          "sum_worst_R_absolute": 0.008530371977700568
+        },
+        "10": {
+          "columns": 152,
+          "predicted_F": 0.022990059066976615,
+          "sum_worst_R_absolute": 0.011637047743673776
+        },
+        "11": {
+          "columns": 163,
+          "predicted_F": 0.02506623869953315,
+          "sum_worst_R_absolute": 0.01258992214303789
+        },
+        "12": {
+          "columns": 127,
+          "predicted_F": 0.017622240862653033,
+          "sum_worst_R_absolute": 0.008971544995767765
+        },
+        "13": {
+          "columns": 116,
+          "predicted_F": 0.016938442609724217,
+          "sum_worst_R_absolute": 0.008626470027459664
+        },
+        "14": {
+          "columns": 120,
+          "predicted_F": 0.017405390455467545,
+          "sum_worst_R_absolute": 0.008525669034596499
+        },
+        "15": {
+          "columns": 130,
+          "predicted_F": 0.020208678299367774,
+          "sum_worst_R_absolute": 0.010815643927424798
+        },
+        "16": {
+          "columns": 136,
+          "predicted_F": 0.021238484630881065,
+          "sum_worst_R_absolute": 0.01151153715898233
+        },
+        "17": {
+          "columns": 136,
+          "predicted_F": 0.019877083186439156,
+          "sum_worst_R_absolute": 0.010311401187610586
+        },
+        "18": {
+          "columns": 84,
+          "predicted_F": 0.01148659672008278,
+          "sum_worst_R_absolute": 0.0054669216651542
+        },
+        "19": {
+          "columns": 119,
+          "predicted_F": 0.018545322343331786,
+          "sum_worst_R_absolute": 0.009649345087963846
+        },
+        "20": {
+          "columns": 118,
+          "predicted_F": 0.016839830034697207,
+          "sum_worst_R_absolute": 0.008324421055474271
+        },
+        "21": {
+          "columns": 111,
+          "predicted_F": 0.019229947470371926,
+          "sum_worst_R_absolute": 0.009544389889431626
+        },
+        "22": {
+          "columns": 107,
+          "predicted_F": 0.01771224858243842,
+          "sum_worst_R_absolute": 0.009946529734771064
+        },
+        "23": {
+          "columns": 98,
+          "predicted_F": 0.015453782932927344,
+          "sum_worst_R_absolute": 0.006764774385956465
+        },
+        "24": {
+          "columns": 73,
+          "predicted_F": 0.012045254647145657,
+          "sum_worst_R_absolute": 0.005214067775565104
+        },
+        "25": {
+          "columns": 92,
+          "predicted_F": 0.01460529417414333,
+          "sum_worst_R_absolute": 0.006421540272316484
+        },
+        "26": {
+          "columns": 58,
+          "predicted_F": 0.009190503818933103,
+          "sum_worst_R_absolute": 0.004208979614429926
+        },
+        "27": {
+          "columns": 52,
+          "predicted_F": 0.00848508348994637,
+          "sum_worst_R_absolute": 0.002821128712633979
+        },
+        "28": {
+          "columns": 33,
+          "predicted_F": 0.004049182459985525,
+          "sum_worst_R_absolute": 0.0015494613385031472
+        },
+        "29": {
+          "columns": 13,
+          "predicted_F": 0.002065504090770031,
+          "sum_worst_R_absolute": 0.0006474336724023535
+        },
+        "30": {
+          "columns": 70,
+          "predicted_F": 0.01643424587614152,
+          "sum_worst_R_absolute": 0.008029080115792087
+        },
+        "31": {
+          "columns": 74,
+          "predicted_F": 0.010790926618574042,
+          "sum_worst_R_absolute": 0.0035942569445142417
+        },
+        "32": {
+          "columns": 76,
+          "predicted_F": 0.011784436389694898,
+          "sum_worst_R_absolute": 0.0036581931064070296
+        },
+        "33": {
+          "columns": 126,
+          "predicted_F": 0.02963968505135009,
+          "sum_worst_R_absolute": 0.015867503463407352
+        }
+      }
+    },
+    "eligible_prefix": null,
+    "eligible_columns": []
+  },
+  "interpretation": "Explicitly weaker diagnostic surrogate; never relabels previous absolute-surrogate failures. Allows cancellation across positions and records within each group, but not between selected neurons. Group means may conceal damaged individual records. No nonlinear effect, erased knowledge, safe intervention, or mask authorization is established; no model or GPU used."
+}

@@ -1,0 +1,427 @@
+{
+  "schema": "signed_group_causal_effect_budget_diagnostic_v1",
+  "surrogate_change": "R per neuron is maximum absolute token-normalized GROUP SIGNED sum, not positional absolute sum. Sum these nonnegative risks across selected neurons. F and all thresholds/ranking/caps otherwise unchanged.",
+  "policy": {
+    "minimum_F": 0.5,
+    "maximum_R": 0.1,
+    "total_cap": 3481,
+    "per_layer_cap": 1024
+  },
+  "ranking": "positive F-R descending, then layer/neuron ascending",
+  "source_hashes": {
+    "C:\\Users\\Billy\\Documents\\GitHub\\sequential-unlearning\\scripts\\audit_signed_group_effect_budget.py": "6cb6040d596a184e3ea4632a5d3ab7410ca5da08873252bb0953e680893810c0",
+    "C:\\Users\\Billy\\Documents\\GitHub\\sequential-unlearning\\scripts\\audit_causal_effect_budget.py": "c86061551e6daa7e83e2b8dfbf2fb0b37ffb2a341ad47131dbc27d0f74c9ec2c",
+    "C:\\Users\\Billy\\Documents\\GitHub\\sequential-unlearning\\scripts\\causal_mlp_neuron_selection.py": "34033092a77ccea3b2e3fcc7db12653b880917266c11db3f70629afd8e0d2b87"
+  },
+  "mask_path": "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/current_boundary_causal_boundary_rtx_v1/mask.json",
+  "mask_sha256": "e88a41cf8fd69f7a5564ec0754d0c662303b13dc743a9b0320868c4f5a156e6b",
+  "archive_path": "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/current_boundary_causal_boundary_rtx_v1/attribution.safetensors",
+  "archive_sha256": "3d4e1025b88d7947aac22967e7b50fd52b7aa70e4e1466b8c4eaef1825ac0ab2",
+  "verified_tensor_count": 1156,
+  "full_attribution_digest_verified": true,
+  "input_provenance_from_verified_mask": {
+    "control": [
+      {
+        "path": "config/whole_concept_jobs_v1/wide_unfamiliarity_v1/current_boundary_causal_v1/controls29_v1.json",
+        "records": 29,
+        "sha256": "5ed224f68f2730dd49398c30f7b9572db0f22087447394415219ec46f342a3c7"
+      }
+    ],
+    "control_prompt_identity_sha256": "f75d9757d6df2449947f9ae2bb14eb6bacb5dc8131b0725c9404d28d8a98b30e",
+    "target": [
+      {
+        "path": "derisk/whole_concept_jobs_v1/sparse_causal_mlp_v1/teacher_targets_clean48_v1.json",
+        "records": 48,
+        "sha256": "694545d029058149d59dd05ecbb2c632f39cec31976242737d952e460d5e4a42"
+      }
+    ],
+    "target_prompt_identity_sha256": "9d2c46e279dfe09acf1b89bf1340f2d233a585256a720ad0b5271b501aeeab4c"
+  },
+  "group_counts": {
+    "target": {
+      "careers": 288,
+      "dismissal": 288,
+      "employer_employee": 288,
+      "employment": 288,
+      "hiring": 288,
+      "jobs": 288,
+      "labour_market": 287,
+      "layoffs": 288,
+      "living_idiom": 1019,
+      "occupations": 287,
+      "pay": 288,
+      "unemployment": 288,
+      "workplace": 288
+    },
+    "control": {
+      "near_excluded": 480,
+      "polysemy": 480,
+      "unrelated": 1215,
+      "utility": 432
+    }
+  },
+  "result": {
+    "all_columns": 348160,
+    "positive_score_columns": 9128,
+    "all_positive": {
+      "K": 9128,
+      "predicted_F": 1.4928332501757555,
+      "sum_worst_R_absolute": 0.9341610404207992,
+      "layers": {
+        "0": {
+          "columns": 291,
+          "predicted_F": 0.023295459951688743,
+          "sum_worst_R_absolute": 0.015634617271621895
+        },
+        "1": {
+          "columns": 302,
+          "predicted_F": 0.018899812648446233,
+          "sum_worst_R_absolute": 0.011859284845034493
+        },
+        "2": {
+          "columns": 370,
+          "predicted_F": 0.030202929248491907,
+          "sum_worst_R_absolute": 0.018547474841421815
+        },
+        "3": {
+          "columns": 425,
+          "predicted_F": 0.04022822443731843,
+          "sum_worst_R_absolute": 0.022679656804414833
+        },
+        "4": {
+          "columns": 367,
+          "predicted_F": 0.04872176609831564,
+          "sum_worst_R_absolute": 0.02869141592159332
+        },
+        "5": {
+          "columns": 389,
+          "predicted_F": 0.06580746973456957,
+          "sum_worst_R_absolute": 0.03427712383155111
+        },
+        "6": {
+          "columns": 333,
+          "predicted_F": 0.06047941137917445,
+          "sum_worst_R_absolute": 0.03299596472272405
+        },
+        "7": {
+          "columns": 317,
+          "predicted_F": 0.05880402810540848,
+          "sum_worst_R_absolute": 0.03731093533250905
+        },
+        "8": {
+          "columns": 324,
+          "predicted_F": 0.06502609677045836,
+          "sum_worst_R_absolute": 0.04239550070722568
+        },
+        "9": {
+          "columns": 250,
+          "predicted_F": 0.04623816854626407,
+          "sum_worst_R_absolute": 0.030220248219862234
+        },
+        "10": {
+          "columns": 254,
+          "predicted_F": 0.04916387777119276,
+          "sum_worst_R_absolute": 0.033529188255091644
+        },
+        "11": {
+          "columns": 255,
+          "predicted_F": 0.0486958677570059,
+          "sum_worst_R_absolute": 0.03227056880635552
+        },
+        "12": {
+          "columns": 211,
+          "predicted_F": 0.03586889685046124,
+          "sum_worst_R_absolute": 0.024872278331877263
+        },
+        "13": {
+          "columns": 234,
+          "predicted_F": 0.03792401583983925,
+          "sum_worst_R_absolute": 0.027382299318596696
+        },
+        "14": {
+          "columns": 179,
+          "predicted_F": 0.02949167392901219,
+          "sum_worst_R_absolute": 0.02186771495285535
+        },
+        "15": {
+          "columns": 226,
+          "predicted_F": 0.03750843879950091,
+          "sum_worst_R_absolute": 0.026243594384169396
+        },
+        "16": {
+          "columns": 199,
+          "predicted_F": 0.04210442918043934,
+          "sum_worst_R_absolute": 0.02715781527087778
+        },
+        "17": {
+          "columns": 217,
+          "predicted_F": 0.04400463134481858,
+          "sum_worst_R_absolute": 0.031584696154214005
+        },
+        "18": {
+          "columns": 242,
+          "predicted_F": 0.05075696844480463,
+          "sum_worst_R_absolute": 0.03531147362522866
+        },
+        "19": {
+          "columns": 241,
+          "predicted_F": 0.04632694026006711,
+          "sum_worst_R_absolute": 0.03202248598360849
+        },
+        "20": {
+          "columns": 238,
+          "predicted_F": 0.05821318828471378,
+          "sum_worst_R_absolute": 0.037400478086714255
+        },
+        "21": {
+          "columns": 254,
+          "predicted_F": 0.05282095205389097,
+          "sum_worst_R_absolute": 0.0343641105764456
+        },
+        "22": {
+          "columns": 251,
+          "predicted_F": 0.05165854638264811,
+          "sum_worst_R_absolute": 0.03259084220383765
+        },
+        "23": {
+          "columns": 304,
+          "predicted_F": 0.057189848791384806,
+          "sum_worst_R_absolute": 0.03641254706187216
+        },
+        "24": {
+          "columns": 276,
+          "predicted_F": 0.046735420653341825,
+          "sum_worst_R_absolute": 0.027795434403434165
+        },
+        "25": {
+          "columns": 265,
+          "predicted_F": 0.043876262901737004,
+          "sum_worst_R_absolute": 0.02609767367625946
+        },
+        "26": {
+          "columns": 249,
+          "predicted_F": 0.03817288329253348,
+          "sum_worst_R_absolute": 0.02394564892704714
+        },
+        "27": {
+          "columns": 241,
+          "predicted_F": 0.031796452425908055,
+          "sum_worst_R_absolute": 0.019412998957485612
+        },
+        "28": {
+          "columns": 219,
+          "predicted_F": 0.027889751971396266,
+          "sum_worst_R_absolute": 0.018215750447080604
+        },
+        "29": {
+          "columns": 193,
+          "predicted_F": 0.021184080873925634,
+          "sum_worst_R_absolute": 0.014250418027473366
+        },
+        "30": {
+          "columns": 222,
+          "predicted_F": 0.03622917603211657,
+          "sum_worst_R_absolute": 0.019493899166375214
+        },
+        "31": {
+          "columns": 247,
+          "predicted_F": 0.0420270142325349,
+          "sum_worst_R_absolute": 0.01888656837990342
+        },
+        "32": {
+          "columns": 251,
+          "predicted_F": 0.03724615690492471,
+          "sum_worst_R_absolute": 0.02088644673851605
+        },
+        "33": {
+          "columns": 292,
+          "predicted_F": 0.06824440827742172,
+          "sum_worst_R_absolute": 0.03755388618752118
+        }
+      }
+    },
+    "all_positive_F_minus_R_upper_bound": 0.5586722097549565,
+    "required_F_minus_R": 0.4,
+    "additive_surrogate_excludes_every_subset": false,
+    "final_capped_prefix": {
+      "K": 3481,
+      "predicted_F": 0.9551744532327742,
+      "sum_worst_R_absolute": 0.47853758167758875,
+      "layers": {
+        "0": {
+          "columns": 55,
+          "predicted_F": 0.00910689979179011,
+          "sum_worst_R_absolute": 0.004383344190399378
+        },
+        "1": {
+          "columns": 45,
+          "predicted_F": 0.006475090841235791,
+          "sum_worst_R_absolute": 0.002400490749735354
+        },
+        "2": {
+          "columns": 85,
+          "predicted_F": 0.015073499096615874,
+          "sum_worst_R_absolute": 0.006922206447400132
+        },
+        "3": {
+          "columns": 125,
+          "predicted_F": 0.023327049187613857,
+          "sum_worst_R_absolute": 0.009833141989096803
+        },
+        "4": {
+          "columns": 134,
+          "predicted_F": 0.030255132220467117,
+          "sum_worst_R_absolute": 0.013799995658154804
+        },
+        "5": {
+          "columns": 165,
+          "predicted_F": 0.045278239659560536,
+          "sum_worst_R_absolute": 0.017251918266416796
+        },
+        "6": {
+          "columns": 146,
+          "predicted_F": 0.04298475325466744,
+          "sum_worst_R_absolute": 0.018337735090860924
+        },
+        "7": {
+          "columns": 141,
+          "predicted_F": 0.03872236149885683,
+          "sum_worst_R_absolute": 0.019879341522992876
+        },
+        "8": {
+          "columns": 157,
+          "predicted_F": 0.04287732602805776,
+          "sum_worst_R_absolute": 0.022753651616787433
+        },
+        "9": {
+          "columns": 117,
+          "predicted_F": 0.029189678725381158,
+          "sum_worst_R_absolute": 0.01524003008979712
+        },
+        "10": {
+          "columns": 124,
+          "predicted_F": 0.032269012789070656,
+          "sum_worst_R_absolute": 0.018764818487615374
+        },
+        "11": {
+          "columns": 115,
+          "predicted_F": 0.030486104025072163,
+          "sum_worst_R_absolute": 0.01640020477471934
+        },
+        "12": {
+          "columns": 95,
+          "predicted_F": 0.02111346702934481,
+          "sum_worst_R_absolute": 0.011953744609321955
+        },
+        "13": {
+          "columns": 92,
+          "predicted_F": 0.020167411801778782,
+          "sum_worst_R_absolute": 0.011894468462959502
+        },
+        "14": {
+          "columns": 67,
+          "predicted_F": 0.014393066103153366,
+          "sum_worst_R_absolute": 0.008750960311335177
+        },
+        "15": {
+          "columns": 94,
+          "predicted_F": 0.020479490747050702,
+          "sum_worst_R_absolute": 0.011239611923425579
+        },
+        "16": {
+          "columns": 96,
+          "predicted_F": 0.02831799987394635,
+          "sum_worst_R_absolute": 0.015005133387486666
+        },
+        "17": {
+          "columns": 103,
+          "predicted_F": 0.02544402164290411,
+          "sum_worst_R_absolute": 0.015015645234969906
+        },
+        "18": {
+          "columns": 117,
+          "predicted_F": 0.03415304122558359,
+          "sum_worst_R_absolute": 0.02061372591223973
+        },
+        "19": {
+          "columns": 111,
+          "predicted_F": 0.029283284300674783,
+          "sum_worst_R_absolute": 0.017154410294901307
+        },
+        "20": {
+          "columns": 120,
+          "predicted_F": 0.04033253704319043,
+          "sum_worst_R_absolute": 0.02151895344912484
+        },
+        "21": {
+          "columns": 114,
+          "predicted_F": 0.03447850684997359,
+          "sum_worst_R_absolute": 0.018292506252860583
+        },
+        "22": {
+          "columns": 117,
+          "predicted_F": 0.03585411461636027,
+          "sum_worst_R_absolute": 0.018931887724623935
+        },
+        "23": {
+          "columns": 122,
+          "predicted_F": 0.036245481218666206,
+          "sum_worst_R_absolute": 0.018274535488317027
+        },
+        "24": {
+          "columns": 109,
+          "predicted_F": 0.03111387186305515,
+          "sum_worst_R_absolute": 0.014516606635643019
+        },
+        "25": {
+          "columns": 103,
+          "predicted_F": 0.028868164428003832,
+          "sum_worst_R_absolute": 0.013589630387952864
+        },
+        "26": {
+          "columns": 89,
+          "predicted_F": 0.024568511621431692,
+          "sum_worst_R_absolute": 0.01268514629768495
+        },
+        "27": {
+          "columns": 65,
+          "predicted_F": 0.01754103564021784,
+          "sum_worst_R_absolute": 0.007555995852996656
+        },
+        "28": {
+          "columns": 59,
+          "predicted_F": 0.015667065494303196,
+          "sum_worst_R_absolute": 0.007780084154230612
+        },
+        "29": {
+          "columns": 50,
+          "predicted_F": 0.010401871452077155,
+          "sum_worst_R_absolute": 0.005483723925974538
+        },
+        "30": {
+          "columns": 63,
+          "predicted_F": 0.024537095724579686,
+          "sum_worst_R_absolute": 0.010163530761623945
+        },
+        "31": {
+          "columns": 89,
+          "predicted_F": 0.0321242975409109,
+          "sum_worst_R_absolute": 0.011041252070117368
+        },
+        "32": {
+          "columns": 80,
+          "predicted_F": 0.02532732994510641,
+          "sum_worst_R_absolute": 0.011058526479226397
+        },
+        "33": {
+          "columns": 117,
+          "predicted_F": 0.05871763995207199,
+          "sum_worst_R_absolute": 0.03005062317659585
+        }
+      }
+    },
+    "eligible_prefix": null,
+    "eligible_columns": []
+  },
+  "interpretation": "Explicitly weaker diagnostic surrogate; never relabels previous absolute-surrogate failures. Allows cancellation across positions and records within each group, but not between selected neurons. Group means may conceal damaged individual records. No nonlinear effect, erased knowledge, safe intervention, or mask authorization is established; no model or GPU used."
+}

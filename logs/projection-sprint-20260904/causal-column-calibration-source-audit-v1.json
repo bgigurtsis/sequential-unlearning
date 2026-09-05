@@ -1,0 +1,42 @@
+{
+  "schema": "causal_column_calibration_source_audit_v1",
+  "reviewer": "projection_followup",
+  "source_hashes": {
+    "scripts/apply_causal_mlp_mask.py": "9b05d4c09f9382970d5ef86ff3274d326ce73c556ca51f628b38da115e03ce36",
+    "scripts/test_apply_causal_mlp_mask.py": "c5ebb3af3bd7705a1298008980ac459213fffa74385711d446db657721e8603b",
+    "scripts/attribute_causal_mlp_neurons.py": "715aa59dae0e062bb9bcb90de3806b6e65bba105b8986c1d2620391d7316c55e",
+    "scripts/test_attribute_causal_mlp_neurons.py": "9072e1b2fa921824ede8fe94f41abb63171e5f423e5f8266a94065b4d6f1130c"
+  },
+  "no_source_edits_or_gpu": true,
+  "existing_reuse": [
+    "apply_verified_prefix: uniform physical scaling inFP32 then nativeBF16; source-column hashes and whole-tensor locality; scale1 no-write identity.",
+    "verify_all_mask_bindings and source manifests for binding; fullpublisher includes exact serialized Gemma namespace/tie verification."
+  ],
+  "existing_test_coverage": [
+    "identity weight/tensor byte equality",
+    "topk column locality",
+    "wrong source/hash/replay rejection beforemutation",
+    "actual BF16 tensor mutation",
+    "native serialized namespace/tie completeness"
+  ],
+  "gaps": [
+    "No restoration primitive.",
+    "Uniform scale only; no continuous348160per-column trainable gates.",
+    "Fullpublisher replayslegacy selection, so new signed-budget selection requires independently bound selection contract, not replacement mask forgery.",
+    "apply_verified_prefix alone may partially mutate before later failure; prevalidateall rows and use finally rollback."
+  ],
+  "minimal_calibration": [
+    "Pinnedcleanmodelonce; precommitted signed-budget selected columns; same exact dataset/token masks and no EOS.",
+    "Save exact source-column clones plus whole-tensor hashes; baseline groupedNLL.",
+    "Uniform5percentattenuation via existing apply_verified_prefix scale.95, samegroupedNLL.",
+    "Predict pergroup deltaNLL/token=.05*sum signedattribution; compare actual and worstabsolutecontrol group.",
+    "Finally copy_ exactsourcecolumns, neverdivideby.95; verify fulltensors and baselineprobe logits exact.",
+    "No persistent intervention hooks, optimizer or checkpoint needed forcalibration. Onlyseparatelyqualified nativezeroing earnssemanticscreen."
+  ],
+  "limits": [
+    "BF16 elementwise rounding and finite nonlinear response make first-order prediction approximate.",
+    "Fivepercentcalibration cannotguaranteefullzeroingeffect.",
+    "Continuoussignedcontrol-constrained columnoptimization would be distinct parameterization from priorLoRAretaincone andglobalresidualprojections, butsamecausalneuronmethodfamily.",
+    "Searchfound no existing learned348160gateimplementation; historicalactual4/6columnzeroingretained28/28targetknowledge andsixcolumnpredictedbudget.004485nat/token."
+  ]
+}
