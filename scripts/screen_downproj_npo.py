@@ -13,6 +13,33 @@ from screen_adapters import load_base
 from screen_clean_npo import encode_prompts
 
 
+def generate_records(model, tok, records, max_new_tokens=256, batch_size=8, on_batch=None):
+    if not records or max_new_tokens <= 0 or batch_size <= 0:
+        raise ValueError('Nonempty records and positive generation limits required')
+    rows = []
+    for start in range(0, len(records), batch_size):
+        current = records[start:start+batch_size]
+        prompts = encode_prompts(tok, current)
+        width = max(map(len, prompts))
+        ids = torch.tensor([[0]*(width-len(p))+p for p in prompts], device='cuda')
+        masks = torch.tensor([[0]*(width-len(p))+[1]*len(p) for p in prompts], device='cuda')
+        with torch.inference_mode(), torch.autocast(device_type='cuda', dtype=torch.bfloat16):
+            outputs = model.generate(input_ids=ids, attention_mask=masks, max_new_tokens=max_new_tokens,
+                do_sample=False, num_beams=1, eos_token_id=[1, 106], pad_token_id=0, use_cache=True)
+        batch = []
+        for r, prompt_ids, seq in zip(current, prompts, outputs[:, width:].cpu().tolist(), strict=True):
+            stop = next((i for i, token in enumerate(seq) if token in (1, 106)), None)
+            body = seq if stop is None else seq[:stop]
+            batch.append(dict(r, prompt_ids=prompt_ids, generated_body_ids=body,
+                generation=tok.decode(body, skip_special_tokens=False),
+                stop_token=None if stop is None else seq[stop], capped=stop is None,
+                generated_body_token_count=len(body)))
+        rows.extend(batch)
+        if on_batch is not None: on_batch(start, batch)
+        print(f'GENERATED {len(rows)}/{len(records)}', flush=True)
+    return rows
+
+
 def main():
     parser = argparse.ArgumentParser()
     for name in ['data', 'data-sha256', 'model-id', 'tokenizer-model', 'clean-pins', 'output']:
@@ -64,33 +91,14 @@ def main():
     model.eval().requires_grad_(False)
     versions = {n: p._version for n, p in model.named_parameters()}
     sources = {str(Path(inspect.getsourcefile(f))): file_sha(inspect.getsourcefile(f))
-               for f in [main, encode_prompts, load_base, load_initial_adapter, downproj_modules, setup_student, load_dense_checkpoint]}
+               for f in [main, generate_records, encode_prompts, load_base, load_initial_adapter, downproj_modules, setup_student, load_dense_checkpoint]}
     out.mkdir(parents=True, exist_ok=False)
     exclusive_json(out/'manifest.json', {'args': vars(args), 'verified_files': files,
         'source_hashes': sources, 'native_checkpoint_receipt': native_receipt,
         'settings': {'batch_size': 8, 'max_new_tokens': 256, 'greedy': True,
                      'prompt_only': True, 'raw_token_termination': True, 'interventions': None, 'autocast': 'cuda_bfloat16', 'native_trainable_dtype': 'float32'}})
-    rows = []
-    for start in range(0, len(records), 8):
-        current = records[start:start+8]
-        prompts = encode_prompts(tok, current)
-        width = max(map(len, prompts))
-        ids = torch.tensor([[0]*(width-len(p))+p for p in prompts], device='cuda')
-        masks = torch.tensor([[0]*(width-len(p))+[1]*len(p) for p in prompts], device='cuda')
-        with torch.inference_mode(), torch.autocast(device_type='cuda', dtype=torch.bfloat16):
-            outputs = model.generate(input_ids=ids, attention_mask=masks, max_new_tokens=256,
-                do_sample=False, num_beams=1, eos_token_id=[1, 106], pad_token_id=0, use_cache=True)
-        batch = []
-        for r, prompt_ids, seq in zip(current, prompts, outputs[:, width:].cpu().tolist(), strict=True):
-            stop = next((i for i, token in enumerate(seq) if token in (1, 106)), None)
-            body = seq if stop is None else seq[:stop]
-            batch.append(dict(r, prompt_ids=prompt_ids, generated_body_ids=body,
-                generation=tok.decode(body, skip_special_tokens=False),
-                stop_token=None if stop is None else seq[stop], capped=stop is None,
-                generated_body_token_count=len(body)))
-        rows.extend(batch)
-        exclusive_json(out/f'generations_{start:02d}.json', batch)
-        print(f'GENERATED {len(rows)}/32', flush=True)
+    rows = generate_records(model, tok, records,
+        on_batch=lambda start, batch: exclusive_json(out/f'generations_{start:02d}.json', batch))
     if any(p._version != versions[n] or p.grad is not None for n, p in model.named_parameters()):
         raise RuntimeError('Frozen evaluation model changed')
     for p, h in {**files, **sources}.items():

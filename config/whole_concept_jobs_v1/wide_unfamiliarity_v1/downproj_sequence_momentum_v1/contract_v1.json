@@ -1,0 +1,131 @@
+{
+  "schema": "dense_sequence_npo_momentum_pair_v1",
+  "source_hashes": {
+    "scripts/train_clean_npo.py": "95e6a13756e05a6fa01141e7558241ed8a19c29134b82d90c39a24f7e0a481b5",
+    "scripts/train_fixed_latent_npo.py": "379e2b358ed6b606785e947e32b28b39a2410d2b41356d78b9a416bcac982533",
+    "scripts/capture_residual_contrast.py": "01935b4b453b92708cc2cbc15967435e20eb558e74527fada8b34070f66a6e2e",
+    "scripts/ordinary_preference_training.py": "ddab8a46d11bdda6b954d890dd7bee9b8699ffd7a1b97ea2505b816fc0679d98",
+    "scripts/cache_ordinary_preference_reference.py": "c3e948c1e751e66945fe9bdc2a7b824aae4d7e476cc0b13a512fa2d1cdc54e13",
+    "scripts/train_task_vector.py": "0720aae848b10d20f86e2bd64e86e8b7b467b94fc84a2278611797c6bb196702",
+    "scripts/screen_adapters.py": "c69144eca887176cedb074fcdd8ac80e841d5504772198701546ca4d7fcd0b29",
+    "scripts/wide_unfamiliarity_training.py": "e692f78daa0a432cb9e345ec2212a73c59231102c7e906100c5e04a60a4ebb7b",
+    "scripts/onpolicy_target_preservation.py": "405411d97595910d8058497764b8514ec9a930842c78db0a72ac0fcde96a0d83",
+    "scripts/clean_npo.py": "18327cb21c9f63dfd90554f7124ee05be39a66c3fd13e60dfc29e7e179ea735b",
+    "scripts/fixed_latent_npo.py": "e56b06c9864fb245156f2ed0b98505400221432f56f83640f1afafe84f719e31",
+    "scripts/screen_clean_npo.py": "68c9c80b8996aecdaefc5eb4f597ce1622f676ddc9705ad475ba362bc5ea3291",
+    "scripts/test_clean_npo.py": "03f2676b941542da7d1aca1a4f8945a16a798d4ec0316fa9252e4b2e1aa99961",
+    "scripts/prefix_unfamiliarity_training.py": "71d88152fff82dcfbe46fe142a934d1cf7187749e0abd09291955acdc3025f8e",
+    "scripts/train_downproj_npo.py": "f52dd27a21776a750a6b9c6c32510621090b56bf56acb39d40c7bac6c664d11d",
+    "scripts/downproj_npo.py": "cffe980e1d678666c724ec2bad8b1133ef2915a68ee93a5b25a4abe58a5a8d7c",
+    "scripts/test_downproj_npo.py": "4ff41f18f9fa63c0e3f7c1d5834e3bc5be9ef566ad06ed5bd022de1d966817ae",
+    "scripts/screen_downproj_npo.py": "b7de1873f65896807bfe4077fd51ddead54227572a750cb5ddf4ade7b3a90588",
+    "scripts/test_downproj_momentum.py": "0d598df4e41623be5c8599a628bd9bf1cf9b3fdf9a1b41f66e229b13c1eb4761"
+  },
+  "inputs": {
+    "config/whole_concept_jobs_v1/wide_unfamiliarity_v1/clean_npo_v1/data_manifest_v1.json": {
+      "sha256": "23873933015d5f462d15b709a7f7caf2c814c916b6c293a3e24c1bb4c0f2b937"
+    },
+    "config/whole_concept_jobs_v1/wide_unfamiliarity_v1/clean_npo_v1/early_screen_v1.json": {
+      "sha256": "116f65f0e94635a11072ceffba22047aea3bb8f67016f37b8eaee4a53f793b8f"
+    },
+    "config/whole_concept_jobs_v1/wide_unfamiliarity_v1/clean_npo_v1/forget_v1.json": {
+      "sha256": "8dab4ec40b857629b805b139a3d905d93afa86bee686d1b2c79e5648e581091c"
+    },
+    "config/whole_concept_jobs_v1/wide_unfamiliarity_v1/clean_npo_v1/ordinary_v1.json": {
+      "sha256": "ee05a86f16e913ef6aed17000fc8c387685b78574049d6cf27150d3f9fbd439c"
+    },
+    "logs/projection-sprint-20260904/clean-npo-tokenization-v1.json": {
+      "sha256": "fc9b439d51204abc2f1232754585ad2a7d4f25b804262ff76ff5318df1c77de1"
+    },
+    "config/whole_concept_jobs_v1/residual_projection_v1/capture_pins_v1.json": {
+      "sha256": "bd13d17d25ab4a9a93f3bedb319cbb388489bbdb35e656ed8b26cb76f440e8a5"
+    },
+    "logs/projection-sprint-20260904/downproj-npo-cpu-l40s-v1.json": {
+      "sha256": "93da6b8d04cc259b5b5f3747371b67f63797d7ca209bfc17e6cda1c8d8a6e17a"
+    },
+    "config/whole_concept_jobs_v1/wide_unfamiliarity_v1/downproj_sequence_momentum_v1/early12_v1.json": {
+      "sha256": "4e9900b1c7c3b30940230203a7a99d5c2e6bc245c903a7f2b29f0401f8b142d6"
+    },
+    "config/whole_concept_jobs_v1/wide_unfamiliarity_v1/downproj_sequence_momentum_v1/data_manifest_v1.json": {
+      "sha256": "dfd55b85f5b7862d1c8770b8c3163bdf8d6373cf40f5c959415aed5b8cee7389"
+    },
+    "logs/projection-sprint-20260904/downproj-momentum-cpu-l40s-v1.json": {
+      "sha256": "aec9b429355fb0d8653353b2e1c3d847b1dcd0c120a7c05cb8a063730b06f4be"
+    }
+  },
+  "arms": {
+    "rtx": {
+      "parameterization": "dense",
+      "adam_beta1": 0.9,
+      "qualification": "Reuse successfulactual denseGPU34qualification faa4cfe, existingsequenceNPOmatchedinitialgradienttests; nativeinitial/frozen/memoryguardsremaininsidefull32"
+    },
+    "l40s": {
+      "parameterization": "dense",
+      "adam_beta1": 0,
+      "qualification_steps": 2,
+      "full32_storage_gate": "Atleast3833598248freebytes for3,565,162,792bytecheckpoint+256MiB; cleanupblockedpendingexplicituserapproval, nofailedweightsdeleted"
+    }
+  },
+  "settings": {
+    "clean_revision": "093f9f388b31de276ce2de164bdc2081324b9767",
+    "module_scope": "Same34textMLPdown_proj matrices botharms",
+    "steps": 32,
+    "qualification_steps": "RTXreuse/L40S2",
+    "checkpoint_steps": [
+      32
+    ],
+    "optimizer": "AdamW",
+    "lr": 1e-05,
+    "betas": "[arm.beta1, .999]",
+    "eps": 1e-08,
+    "weight_decay": 0.01,
+    "objective": "sequence NPO from unchangedclean_npo.py beta.1",
+    "ordinary_KL_weight": 1,
+    "batches_F_R": [
+      8,
+      8
+    ],
+    "seed": 34025,
+    "ordinary_schedule_seed": 35025,
+    "trainable_dtype": "FP32",
+    "forward_autocast": "CUDA BF16 for bothstudent andteacher",
+    "student_mode": "train to activate actual nonreentrant checkpointing, all dropout0 verified",
+    "teacher": "Independent cleanBF16 frozen/eval, storage and fullparameterbyte guards",
+    "encoding": "Reuse exact255F/345R 600encodings, no clipping, capturednoEOS/authoredEOS1, full32schedules unchanged",
+    "unknown_CE": false,
+    "gradient_clipping": false,
+    "trainable_tensors": 34,
+    "trainable_scalars": 891289600,
+    "no_other_parameterization_difference": true
+  },
+  "diagnostics": {
+    "early": "12existingdevelopmentprompts afterstep4,4targetacross4situations3families +all8ordinary;64tokensgreedy,batch4,raw1/106; model.eval/infer/autocast/fork_rng andfinallytrain",
+    "automatic_stopping": false,
+    "train_diagnostics": [
+      "forget_grad_l2 beforeordinarybackward",
+      "total_grad_l2 beforeoptimizerstep",
+      "exp_avg_l2 afterstep"
+    ],
+    "update_norm": "Notmeasured; avoiddensebackups. Norms do not uniquelyidentifywhichpastgradientcausedtheupdate.",
+    "momentum_test": "ActualproductionAdamWconstructor AST;equalfirstupdate andnonzeroadaptivezerogradientfollowuponlybeta1.9 aftersubtractingshareddecay,1PASS0skips2.685s"
+  },
+  "evaluation": {
+    "data": "config/whole_concept_jobs_v1/wide_unfamiliarity_v1/clean_npo_v1/early_screen_v1.json",
+    "batch_size": 8,
+    "max_new_tokens": 256,
+    "greedy": true,
+    "raw_stops": [
+      1,
+      106
+    ],
+    "gate": "Atleast4 of22 priorbaseline clear target meanings absent across3situations2families, all8ordinary useful/no initial or appendedunknown/empty/loops; ambiguous baseline2 excluded. Success only earns broader/endings/refitted recovery then actualmerge/reload/final.",
+    "fresh_final_used": false
+  },
+  "confounds": [
+    "GPUarchitecturecoupledtoarm; priorcross-hostBF16attributionvariationmeans this is notperfectisolation ofoptimizermechanism",
+    "Sequenceweights fromprevious tokenpath werecounterfactual, not predictionsofthisrun",
+    "beta1=0 stillhassecond-momentadaptationandweightdecay",
+    "Early64caps cannotprovegood endings; evaluationinputsareadaptivelyreuseddevelopment"
+  ],
+  "storage_cleanup_status": "Automaticapprovalreview rejectedexact19-filedeletionbeforeexecution;no retryorindirectdeletion, explicituserapprovalpending. Safeindependentwork includingnosavequalificationcontinues."
+}

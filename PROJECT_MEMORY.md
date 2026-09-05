@@ -42,3 +42,7 @@ ROOTRTX18.101.59.227, /mnt/sequential-unlearning-replicate/checkout; Python/home
 Aftereachfinding appendexactmethod/input/settings/hash/results/conclusion toEXPERIMENTS.md, updatecurrentmemory/affectedplan, commitandpush beforemateriallynewexperiment. Rootownsdocs/commits. Stageonlycurrentfiles; nevermodelweights. PreserveunrelatedSliceGPTchanges,.claude,.tmp,keys,archives. Reusequalifiedcode andtests; dofocusednewchecks onlyforactualchanges. No recursive/broadretirement; exactlocalarchive/sourcehashandfailureproof first.
 
 Currentnextpair selected: bothdense34sequenceNPO, Adamfirstmoment.9rootversus0agent, otheroptimizer/data32settingsunchanged. Tokenpathstep4counterfactualsequencepressure.00079vsactualtoken.9486justifiesmechanismtest, notproof. Early12@step4/max64diagnostic planned. Exact19failedremoteadapterretirementmanifestreviewed, locallyarchivedhashesmatch; readyreverify+unlinkafterpush topermitL40Sdensesave. Source/earlydatafreeze pending.
+
+## Active — dense sequence/momentum pair frozen
+
+Contractdownproj_sequence_momentum_v1/contract_v1.json freezesbothdense34sequenceNPO:rootbeta1.9versusagent0; otheroptimizer/data32settingssame.1focusedactualAdamCPUtestPASS. RootreusesactualdenseGPUqualificationandwillstartfull32; L40Sgets2stepnosavefirst. Early12@step4/max64diagnostic andfinal32nativeeval. Cleanup19filesREJECTEDbyautomaticapprovalreviewbeforeexecution;0deleted,userexplicitapprovalpendingasync. L40Sfullsaveblockeduntilsufficientapprovedstorage, independentnosave/rootworkcontinues. Noqualifier.

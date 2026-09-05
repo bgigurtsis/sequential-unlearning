@@ -1,0 +1,23 @@
+{
+  "source": "config/whole_concept_jobs_v1/wide_unfamiliarity_v1/clean_npo_v1/early_screen_v1.json",
+  "source_sha256": "116f65f0e94635a11072ceffba22047aea3bb8f67016f37b8eaee4a53f793b8f",
+  "indices": [
+    0,
+    4,
+    11,
+    18,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31
+  ],
+  "selection": "4existingcleantargetbaseline prompts across4situations/3families plus all8unrelated controls; sameexact rowfields/ordering, no new prompts or trainingexamples",
+  "output": "config/whole_concept_jobs_v1/wide_unfamiliarity_v1/downproj_sequence_momentum_v1/early12_v1.json",
+  "output_sha256": "4e9900b1c7c3b30940230203a7a99d5c2e6bc245c903a7f2b29f0401f8b142d6",
+  "when": "Afterstep4 only, diagnostic64greedytokens usingidenticalnativegenerationhelper, restoremodeltrain afterward; no automaticstop ortrainingdataupdates",
+  "scope": "Adaptivelyreuseddevelopment, no freshfinal.64caps are nothealthyending evidence."
+}

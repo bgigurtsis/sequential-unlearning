@@ -1,0 +1,26 @@
+{
+  "schema": "downproj_momentum_cpu_v1",
+  "command": "cd /home/ubuntu/sequential-unlearning-projection-sprint-20260904 && CUDA_VISIBLE_DEVICES='' /home/ubuntu/sequential-unlearning/venv-g6e/bin/python -m unittest scripts.test_downproj_momentum -v",
+  "runtime": {
+    "python": "3.12.3 (main, Apr 15 2024, 18:25:56) [Clang 17.0.6 ]",
+    "torch": "2.13.0+cu130",
+    "cuda_visible_devices": "",
+    "cuda_available": false
+  },
+  "GPU_used": false,
+  "source_sha256": {
+    "scripts/train_downproj_npo.py": "f52dd27a21776a750a6b9c6c32510621090b56bf56acb39d40c7bac6c664d11d",
+    "scripts/test_downproj_momentum.py": "0d598df4e41623be5c8599a628bd9bf1cf9b3fdf9a1b41f66e229b13c1eb4761",
+    "scripts/screen_downproj_npo.py": "b7de1873f65896807bfe4077fd51ddead54227572a750cb5ddf4ade7b3a90588",
+    "scripts/downproj_npo.py": "cffe980e1d678666c724ec2bad8b1133ef2915a68ee93a5b25a4abe58a5a8d7c"
+  },
+  "source_unchanged_during_run": true,
+  "exit_code": 0,
+  "tests_run": 1,
+  "passed": 1,
+  "skipped": 0,
+  "log_path": "logs\\projection-sprint-20260904\\downproj-momentum-cpu-l40s-v1.log",
+  "log_sha256": "b088bbd793033e22434b33143c081171ae11b563b21db4a9239d5cd55a0f93cd",
+  "test_scope": "One actual torchAdamW scalar-gradient mechanism test. Extract actual trainer constructor AST, verify beta1 argument drives momentum, identical first-step gradient/update, next zero-gradient adaptive update persists for beta1=.9 and vanishes for0 after accounting for unchanged decoupled weight decay. Independent analytical bias-correction oracle; no model/loss/scope suite repeated.",
+  "source_review": "Trainer passes objective to both initial and training loss, beta1 to AdamW, norm diagnostics do not mutate tensors, early step4 releases grads and restores training mode in finally with fork_rng. Extracted screen preserves prompt-only generation/rawstops with same defaults."
+}

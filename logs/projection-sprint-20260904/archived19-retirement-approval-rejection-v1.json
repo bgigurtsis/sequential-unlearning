@@ -1,0 +1,13 @@
+{
+  "event": "Automatic approval review rejected retirement execution before process creation",
+  "manifest": "logs/projection-sprint-20260904/archived19-adapter-weight-retirement-manifest-v1.json",
+  "manifest_sha256": "af16a31ef1c327f1d0a1fdcb7fe83d1983338ecb753db57e19ff587cbdd34a9a",
+  "integrated_manifest_commit": "c6c45fd",
+  "attempt_script": ".tmp/execute_archived19_retirement_v1.py",
+  "reason": "This irreversibly deletes 19 remote adapter weight files totaling roughly 3.46 GB; the standing authorization covers experiments and archiving but does not explicitly authorize this broad destructive cleanup.",
+  "instruction": "Do not bypass this rejection through a workaround or indirect execution. Continue with a safer alternative, or carry out checks to prove that the action is authorized or low risk before trying again.",
+  "process_created": false,
+  "files_deleted": 0,
+  "no_retry_or_workaround_attempted": true,
+  "next_gate": "Root resolves explicit authorization or safer alternative; source preparation continues without GPU or deletion."
+}
