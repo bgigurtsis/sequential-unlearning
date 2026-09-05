@@ -1,0 +1,166 @@
+{
+  "schema": "onpolicy_end_ce_run_review_v1",
+  "phase": "qualification",
+  "status": "PASS_MECHANICAL_NOT_BEHAVIORAL",
+  "output_path": "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/onpolicy_end_ce_l40s_qualification_v1",
+  "files": {
+    "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/onpolicy_end_ce_l40s_qualification_v1/manifest.json": {
+      "sha256": "58a8d428358b5c3704515d859a3d96f0d4f420f8cee19ecc8c7975fcd02a48f0",
+      "bytes": 51298
+    },
+    "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/onpolicy_end_ce_l40s_qualification_v1/training_trace.jsonl": {
+      "sha256": "8a460af4336c8a726d3a085ebbaccb508197370610ba4db71299778ab9198b24",
+      "bytes": 2736
+    },
+    "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/onpolicy_end_ce_l40s_qualification_v1/completion.json": {
+      "sha256": "57e5a23d047fa8945f7538d13fc2ee00bea20d1d03d13ed9ad7b1f65edfbc5d1",
+      "bytes": 109
+    },
+    "logs/projection-sprint-20260904/onpolicy-end-ce-l40s-qualification-v1.log": {
+      "sha256": "faf4f3fea07be0a27848019a9a9f6450947bfe75db4b43f705116df00c9a3179",
+      "bytes": 1230
+    }
+  },
+  "settings": {
+    "seed": 34020,
+    "lr": 2e-06,
+    "batch_target": 16,
+    "batch_end": 4,
+    "target_weight": 1,
+    "target_prefix_tokens": 5,
+    "target_prefix_weight": 8,
+    "endpoint_weight": 1,
+    "beta": 0.1,
+    "optimizer": "freshAdamW betas.9/.999 eps1e-8 decay.01",
+    "gradient_clipping": false,
+    "ordinary_start_loss": false,
+    "clean_reference_loss": false
+  },
+  "actual_parent": {
+    "path": "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/ordinary_end_ce_l40s_run64_v1/step064",
+    "weight_sha256": "5fd11ba0d54c4888cb49d0014cbc43488709e1eccb61aa1a3feba810939cd328",
+    "config_sha256": "dc2352afdc28c81ded1934c1f472f3a33b9a61ecbb3c029a82594a176cf2c5b5",
+    "tensor_count": 476,
+    "native_tensor_bytes_equal": true,
+    "source_and_loaded_dtype": "float32",
+    "optimizer_state": "fresh AdamW; no momentum resumed"
+  },
+  "steps": 2,
+  "all_finite_gradient_tensors": 476,
+  "all_sampled_ids_match_qualified_manifest": true,
+  "encoding_manifest_path": "logs/projection-sprint-20260904/onpolicy-end-tokenization-v1.json",
+  "encoding_manifest_sha256": "ae0178a9dc354624dc1d4362a8f2cd6fa758d3b9b5f09d7d5b21b3c9ad43118d",
+  "coverage": {
+    "target_draws": 32,
+    "target_unique": 32,
+    "conditional_draws": 16,
+    "original_draws": 16,
+    "endpoint_draws": 8,
+    "endpoint_unique": 8,
+    "endpoint_visit_counts": {
+      "ordinary_repair_everyday_facts_00": 1,
+      "ordinary_repair_everyday_facts_03": 1,
+      "ordinary_repair_fiction_00": 1,
+      "ordinary_repair_everyday_facts_02": 1,
+      "ordinary_repair_everyday_facts_01": 1,
+      "ordinary_repair_fiction_04": 1,
+      "ordinary_repair_science_02": 1,
+      "ordinary_repair_science_03": 1
+    }
+  },
+  "endpoint_forward_sequences_per_step": 4,
+  "rejected_sequences_forwarded": 0,
+  "chosen_supervised_token_count_per_state": 1,
+  "reference_cache_read": false,
+  "raw_target_losses": [
+    1.3206992149353027,
+    1.4715741872787476
+  ],
+  "raw_endpoint_ce_losses": [
+    0.45610421895980835,
+    0.26797711849212646
+  ],
+  "actual_endpoint_schedule": [
+    [
+      {
+        "id": "ordinary_repair_everyday_facts_00",
+        "visit": 0,
+        "banks": [
+          0,
+          1
+        ]
+      },
+      {
+        "id": "ordinary_repair_everyday_facts_03",
+        "visit": 0,
+        "banks": [
+          0,
+          1
+        ]
+      },
+      {
+        "id": "ordinary_repair_fiction_00",
+        "visit": 0,
+        "banks": [
+          0,
+          1
+        ]
+      },
+      {
+        "id": "ordinary_repair_everyday_facts_02",
+        "visit": 0,
+        "banks": [
+          0,
+          1
+        ]
+      }
+    ],
+    [
+      {
+        "id": "ordinary_repair_everyday_facts_01",
+        "visit": 0,
+        "banks": [
+          0,
+          1
+        ]
+      },
+      {
+        "id": "ordinary_repair_fiction_04",
+        "visit": 0,
+        "banks": [
+          0,
+          1
+        ]
+      },
+      {
+        "id": "ordinary_repair_science_02",
+        "visit": 0,
+        "banks": [
+          0,
+          1
+        ]
+      },
+      {
+        "id": "ordinary_repair_science_03",
+        "visit": 0,
+        "banks": [
+          0,
+          1
+        ]
+      }
+    ]
+  ],
+  "seconds_per_step": [
+    2.0259586050524376,
+    0.9053687250125222
+  ],
+  "peak_allocated_bytes": 11977008640,
+  "peak_reserved_bytes": 15258877952,
+  "saved": [],
+  "limitations": [
+    "Ten training endpoints, only two observed unwanted tails; ordinary initial false refusals remain unaddressed.",
+    "Lower endpoint CE is not behavioral stopping success.",
+    "CE1 andDPO10beta.1 are objective-and-scale comparison, not equal gradient pressure."
+  ],
+  "conclusion": "Frozen END-only CE path finite, native parent exact, only chosen EOS scored, schedules verified. Hold next stage until root integrates this finding."
+}
