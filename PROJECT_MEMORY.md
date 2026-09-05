@@ -1,3 +1,5 @@
+FIRSTstrictquick survivor: analyticalcontrol48=28/28unknown+12/12controls/no loops;24/96=26/27. Subagent48context+broad next, nofullgoalclaim. Coverage48broader35/36unknown+24/24relevance butcontext5/9/persistentoffice/homeworkadvice andquickcostfalse=>reject. Allsavedadapterslocal. Freshfinalunused;goalactive.
+
 Analyticalcoveragequick24/48/96 rejected:23/27/20unknown,12/11/12controls,48costlivingfalse. Step48context+broad diagnosticnext; controlquickunder subagent83443. All6adapters locallyarchived/hashverified. Freshunused;goalactive.
 
 Both analytical96runs completefinite; control504+768unique,coverage648+768, all96contextbatchIDs identical. L40Scontrolquick3next/rootcoveragequick3active109510. Weightarchivesunderway; no behavioralresultyet. Goalactive.
