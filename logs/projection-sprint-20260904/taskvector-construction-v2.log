@@ -1,0 +1,9 @@
+Traceback (most recent call last):
+  File "/mnt/sequential-unlearning-replicate/checkout/scripts/publish_task_vector_negation.py", line 137, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "/mnt/sequential-unlearning-replicate/checkout/scripts/publish_task_vector_negation.py", line 92, in main
+    validate_source_config(config,{m.removeprefix('base_model.model.') for m in expected},model_modules)
+  File "/mnt/sequential-unlearning-replicate/checkout/scripts/publish_task_vector_negation.py", line 46, in validate_source_config
+    raise ValueError('Source selectors do not resolve to exactly the qualified text modules')
+ValueError: Source selectors do not resolve to exactly the qualified text modules

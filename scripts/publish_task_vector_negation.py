@@ -46,6 +46,19 @@ def validate_source_config(config, expected_modules, model_modules=None):
         raise ValueError('Source selectors do not resolve to exactly the qualified text modules')
 
 
+def model_module_universe(clean_model, clean_pins):
+    """Resolve runtime names without loading weights or allocating a GPU model."""
+    from transformers import AutoConfig, Gemma3ForConditionalGeneration
+    config_path = Path(clean_model)/'config.json'
+    verify(config_path,clean_pins['model_files']['config.json'])
+    config = AutoConfig.from_pretrained(clean_model,local_files_only=True)
+    with torch.device('meta'):
+        model = Gemma3ForConditionalGeneration(config)
+    if any(p.device.type != 'meta' for p in model.parameters()):
+        raise RuntimeError('Scope inspection must not allocate actual model weights')
+    return {name for name,_ in model.named_modules()}
+
+
 def main():
     p=argparse.ArgumentParser();p.add_argument('--contract',required=True)
     p.add_argument('--contract-sha256',required=True);args=p.parse_args()
@@ -61,14 +74,11 @@ def main():
         for i in range(34) for branch,projections in [('self_attn',['q','k','v','o']),('mlp',['gate','up','down'])] for proj in projections}
     expected_keys={module+f'.lora_{factor}.weight' for module in expected for factor in ['A','B']}
     employment_manifest = json.loads(Path(contract['employment']['manifest_path']).read_bytes())
-    index_path = Path(employment_manifest['args']['model_id'])/'model.safetensors.index.json'
-    verify(index_path,clean_pins['model_files']['model.safetensors.index.json'])
-    index = json.loads(index_path.read_bytes())
-    model_modules = {'.'.join(name.split('.')[:i]) for name in index['weight_map']
-                     for i in range(1,len(name.split('.')))}
+    config_path = Path(employment_manifest['args']['model_id'])/'config.json'
+    model_modules = model_module_universe(employment_manifest['args']['model_id'],clean_pins)
     sources=[];configs=[];verified={args.contract:args.contract_sha256,__file__:source_sha,
         contract['clean_pins_path']:contract['clean_pins_sha256'],
-        str(index_path):clean_pins['model_files']['model.safetensors.index.json']}
+        str(config_path):clean_pins['model_files']['config.json']}
     for arm in ['employment','ordinary']:
         spec=contract[arm];directory=Path(spec['path'])
         for kind in ['manifest','completion']:
