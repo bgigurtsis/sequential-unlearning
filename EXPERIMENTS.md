@@ -11695,3 +11695,73 @@ L40S receipt logs/projection-sprint-20260904/boundary300-l40s-qualification-revi
 Active boundary pair: RTX boundary100_rtx_run64_v1 wrapper86241; subagentL40S boundary300_l40s_run64_v1 wrapper60151. Both data_v2/contract_v2, sharednatural48,seed34006,64steps16/32/64. OneGPUworkload each; fullcompletion receipts precede quick3. Goal active, no qualifier.
 
 Both qualifications integratedbded3a4 first. Exact launchwrappers logs/projection-sprint-20260904/run-boundary100-rtx-full-v1.sh and run-boundary300-l40s-full-v1.sh preserve source/data/clean/parent hashes and commands. No changes to frozen probes or unrelated SliceGPT work.
+
+
+## 2026-09-05 — Boundary100 RTX full64 completed
+
+RTX boundary100full64 complete:64finite476-gradient steps,216unique newtargets and512unique oldreplay,512draws each. Three16/32/64 checkpoints pinned; quick3 next. L40S boundary300 remains independent. No behavioral claim from near1.0 original-answer proxy or trainingCE.
+
+Exact natural_boundary_v1/contract_v2,data_v2, sharednatural48parent, sourcee171598,seed34006. Receipt logs/projection-sprint-20260904/boundary100-rtx-full-review-v1.json SHA7467618f8f4a5f9f4d91c5b56a8d3e824d6bfa588213c833ad6a0fc19db26da6.
+```json
+{
+  "host": "18.101.59.227",
+  "run": "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/boundary100_rtx_run64_v1",
+  "verdict": "Training completed; behavioral evaluation required",
+  "steps": 64,
+  "finite_all": true,
+  "peak_allocated": 23049529856,
+  "peak_reserved": 27894218752,
+  "training_seconds": 62.93614715395961,
+  "last": {
+    "finite_losses": true,
+    "finite_gradients": true,
+    "gradient_tensors": 476,
+    "losses": {
+      "total": 11.65500545501709,
+      "forget": 1.0929665565490723,
+      "retain": 0.0014825684484094381,
+      "chat": 0.006808627396821976,
+      "consistency": 0.0,
+      "answer_suppression": 0.0
+    },
+    "step": 64,
+    "scope": "training_health",
+    "gradient_norm": 132.60333008615484,
+    "elapsed_seconds": 0.9544527750113048,
+    "peak_allocated_bytes": 21994487808,
+    "peak_reserved_bytes": 27894218752
+  },
+  "coverage": {
+    "direct": {
+      "population": 216,
+      "draws": 512,
+      "unique_seen": 216,
+      "cycles_started": 3,
+      "complete_cycles": 2
+    },
+    "context": {
+      "population": 1864,
+      "draws": 512,
+      "unique_seen": 512,
+      "cycles_started": 1,
+      "complete_cycles": 0
+    }
+  },
+  "checkpoints": {
+    "step032/adapter_model.safetensors": {
+      "bytes": 238491136,
+      "sha256": "b1ab0012c5b36c29c0e092785273905018085c76cf56b1cc8e78e682a9c3430f"
+    },
+    "step016/adapter_model.safetensors": {
+      "bytes": 238491136,
+      "sha256": "6a287e01de4a3eed5465fa8e4d6ebf96ae9d8e2c474f9730e534ae024ea19a38"
+    },
+    "step064/adapter_model.safetensors": {
+      "bytes": 238491136,
+      "sha256": "09958686bb63f7aaa7561e733f13e26de87a3ffa9ff04f940d68222cc61fbd27"
+    }
+  }
+}
+```
+
+Rawsmallfiles/configs local; largeadapters remote awaiting localarchive. Fixedquick40/max96/batch16 allthree next afterthisintegration. Original-answer proxy1.004700589 relative to activeparent notclean erasure.
