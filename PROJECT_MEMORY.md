@@ -1,94 +1,80 @@
 # Project memory
 
-## Active resume — two-GPU sprint (September 4–5, 2026)
+## Current handover — September 5, 2026
 
-This section supersedes historical pause and next-action statements below.
-The user authorizes autonomous experiments, commits/pushes, two GPU hosts and
-one subagent. Latest steering permits changing tests and priors for speed.
-Employment/jobs plus semantic neighbours are the target; natural unfamiliarity
-is preferred, while other target replies can serve the artwork.
+The two-GPU sprint is closed early after useful negative results. No reliable
+employment-plus-neighbour concept deletion was established. This section
+supersedes every historical acceptance, active-run and next-action statement
+below. The artwork requires a permanently saved weight edit; a runtime refusal
+router would be a different product and is not presented as unlearning.
 
-- Latest: sole64stepcontextCE REJECTED. Quick26definiteholes/1ambiguous/1cleartranslatorrecovery +1targetloop, controls9/12unchanged. Context1definitehole/1nondiagnostic/7clearretainedroutes;3mixedcontrolsallcarrytargetmeaning. No further eval/merge/freshaudit forit. Nextdecision checks priorRMU/onpolicy experiments before anydifferentboundedarm; no newmethodyet.
-- Context correction64/64complete01:37:58UTC, adapterc58f4ad4...09e0 (10.53MB), budgetstop/finite. FinalCE.4604, retainJSD.000472,chatJSD.000925; no behaviorclaim. Active nextgate quick40+context12 generation onsole step064; freshauditunused.
-- Context trainingready: clean520capturecomplete, exactjoinSHA c0234589...c1b, alltargetEOS<=74tokens. Stratified10sample review9meaningful/1contextrequest; agent22uniquerows includesallflags:8genuinecontextrequests,5benignincharactersurprise. All520retained, no semanticclaimall520. Inputpins saved; nextlaunchone64stepRTXcorrection atcontext_diversity_v1/run64_v1.
-- Actual18generatedlegacybaseline: clean18/18primarycoherence,dense17/18 (ocean-definitionclozeunfamiliar); cleanextra cello-underchinerror noted. All36read. Nextcandidate18requirementunchanged. Readable currentplan docs/CURRENT_SPRINT_PLAN.md.
-- Connectivity: nativeWindowsOpenSSH currentlytimesout, but .tmp/sprint_remote.py Paramiko5withsamekey andstrict existingaliaspins works onbothhosts. No host/cloudchanges. RTXexistingtrainer24/24tests pass; L40Sbounded520cleantraininganswer capture authorized afterd554b1bcommit.
-- Active next experiment: context_diversity_correction_contract_v1.json, one64step/rank8late28:34 CE+EOS corrective adapter from constrained parent;520original scenarios rerendered5taskformats, filtered parent-reference retention. L40Scleananswer preparation thenRTXtraining. Source/tests/capture must commit before training. Quick40+12knowncontext routes gate broad/global/fresh. No sweep; remains uncertain suppression experiment.
-- Latest global finding: constrained scalar7.145468390202077 versus matched dense13.498186338536305 (47.06349% lower), PPL13.64776, PCA8.99369%, CKA.98759776. BUT candidate restores explicit open-planoffice/work-from-home meaning (gen_086/094); dense itself retainsout-of-office/citycareer meaning041/089. Neither is proven wholeconceptdeletion. Candidate REJECTED forsemanticgoal; fresh audit unused. Scalar includes domainoverlap so is notpurecollateraldamage. E90diagnostic3.92588/PPL13.83359 also rejected. Legacy eval16cloze+2gen cannot establish18coherentanswers; supplemental18generation requirement frozen fornextqualifier. Nextgate: leakcomparison and boundedmethoddecision. This update supersedes best/active/pending statements below.
-- Clock: T0 September4 23:01:09UTC; no new candidates after September5
-  03:01:09UTC; final audit target04:31:09; hard stop05:01:09UTC.
-- Best remains dense replay-step64, scalar13.498186338536305,
-  PCA drift9.0222015381%, CKA.9870265722. Known unrelated damage; no
-  reusable daily erasure method or new robust improvement established.
-- DARE closed: all9 fixed quick arms and4 admitted broad screens evaluated.
-  None qualifies. Best quick control recovery was one physics control.
-- Clean/dense calibration: clean4/4 healthy hard control conversations;
-  dense2/4 (friend/math healthy; computing/physics followups fail).
-  Three DARE arms additionally lose friend; .9/33451 preserves dense2/4.
-  Dense8/8 target conversations absent but2 loop. Never call dense damage-free.
-- Original projector E0 exact identity passes. E90 restores12/12quick
-  controls but only7/28target holes remain; E95/E99 never run.
-- Partial rounded-E90 blends: beta0 exact identity; beta.1 gives28/28holes,
-  9/12controls, one targetloop; beta.25 gives26/28definiteholes +2ambiguous,
-  10/12controls; beta.5 gives18/28holes and12/12controls. No robust qualifier.
-  User-authorized speed_amendment_v1.json skips beta.75 as UNTESTED and
-  deprioritizes beta.1 broad. Do not report skipped arms as failed measurements.
-- Active method: target_constrained_correction_contract.json. From624
-  existing independent training prompts, capture pinned donor inputs only at
-  the last rendered prompt token (batch4,max256,overflow rejected),56groups.
-  QF is their entire numerical float64 SVD span. C0=roundedE90-donor;
-  C=C0(I-QFQF^T); output=BF16(donor32+C32), same98linears. One full candidate,
-  no strength sweep. Earlier rotated-U90 idea was never implemented or run.
-  Sampled linear-action constraint only; BF16 and autoregressive behavior still
-  require evaluation. Never claim global information deletion from this algebra.
-- Qualification: math9/9CPU+CUDA and publisher/capture12/12L40S tests pass,
-  independent reviews clear. Native identity uses miniature publisher test plus
-  already proven nativecopy path per speed amendment, not another full model.
-  CommittedRTX937e145 combined21tests pass; E90transferverified.
-  Active next execution: capture/build constrained_v1/models/full_v1 onRTX,
-  publishedfull_v1 (weightdf1e2fc5...2ae3), originalquickPASS28/28holes,
-  0sustainedloops,9/12controls: no quickrecovery/no newloss.
-  BroadPASSdesignatedabsence36+36/8conversations; originalcontrols24/24
-  recoverscommunitygardenvolunteer (1/7),hard21/24/convo2/4unchanged.
-  Nohealthycontrol losses; prototypebehaviorgatespasspendingglobalmetrics.
-  OriginaltierstillFAIL; RTXutility/PPL/scalar/drift session36709 running.
-  Then samehost/currentruntime dense scalar comparator;5percentimprovement
-  must hold against both historical and matched dense scores. BF16 partlybreaks sampledconstraint: 
-  aggregatepreCF3.16e-7 vsactualCF.6434; no exactnativepreservationclaim.
-  L40S parallel diagnostic: disqualifiedE90 scalar+legacy18/PPL to measure
-  repairpotential; not a candidatepromotion orbound on constraineddamage.
-  Diagnosticv1 stoppedbeforeinference at CRLF/LF bytepin mismatch; exact
-  evaluator text unchanged. Correct LinuxPPLSHA2e2a7398...d3a frozen in
-  ppl_line_ending_pin_correction.json; retryv2, frozen data nevermodified.
-- RTX18.101.59.227: root owns /mnt/sequential-unlearning-replicate/checkout,
-  1.7TiB scratch; old /home/ubuntu/sequential-unlearning read-only inputs,
-  venv-g7e Python. Existing unrelated GPU service stays running. Beta.1 copied
-  and verified; E90 alsoverified. New constrained candidate runs here.
-- L40S51.49.31.142: projection_followup subagent owns
-  /home/ubuntu/sequential-unlearning-projection-sprint-20260904, venv-g6e.
-  Pinned donor/E90/blends and original retain caches preserved. Clean snapshot
-  restored persistently under /home/ubuntu/sequential-unlearning-clean-snapshot-
-  093f9f388b31de276ce2de164bdc2081324b9767 (one continuous directory name).
-- Original sprint success: scalar<=10.798549070829044, at least2 recovered
-  frozen failed prompt controls, no healthy losses, broad semantic/utility/PPL/
-  conversation gates. Artistic fallback allows target-only broken replies but
-  not restored meaning or hidden control damage; original failed labels remain.
-- Additional user-authorized artwork prototype tier precommitted before newoutputs:
-  same complete targetabsence and zero newhealthycontrolloss, at least1recovery
-  plus at least5percent lower scalar (<=12.82327702160949), all18utility/PPL
-  and measured drift. Original20percent/2recovery tier stays separate.
-- Fresh final audit frozen at config/employment_sprint_20260904_final:
-  clean36/36target knowledge,24/24controls;8/8target and4/4control conversations.
-  Only one chosen final candidate across all methods gets this audit, with
-  clean/dense comparators. Not spent on any candidate. No replacements after
-  fresh failure and no audit-derived training or rank/strength tuning.
-- Evidence is under derisk/whole_concept_jobs_v1/delta_protection_v1/
-  sprint_20260904 and logs/projection-sprint-20260904. Full append-only methods,
-  hashes and results in EXPERIMENTS.md. Three approximate heading times have an
-  append-only correction; immutable publication metadata/git chronology prevail.
-- Preserve unrelated SliceGPT edits, .claude/, older screens and transfer config.
-  Commit/push exact current-work evidence before integrating findings or changing
-  method. Never stage transfer-ssh-config, keys, bundles or unrelated user files.
+- User authorizes experiments, two GPU hosts, one subagent, artifact preservation,
+  commits/pushes and fruitful changes to tests/priors. The six-hour budget began
+  September4 23:01:09UTC, with candidate cutoff03:01:09 and hardstop05:01:09.
+  We stopped introducing experiments early rather than repeat rejected methods.
+- Most useful exploratory artifact: constrained full_v1, weight SHA
+  df1e2fc57fca6758b5fe519c17b5df2395e8174ac6fe7c961af2517be6e82ae3,
+  logical SHA2131fc81b9a634206299479887e81806c7df78e789aa8a441a4c2dfdddbc6c25.
+  Damage benchmark7.145468390202077 versus matched dense13.498186338536305
+  (47.06349% lower), PPL13.647760391235352, PCA8.99368953704834%,
+  CKA.9875977635383606. It recovers community-garden volunteering, with
+  original controls24/24 versus dense23/24; quick9/12 and hard21/24 unchanged.
+- Interpretation: dedicated target quick28/original36/hard36 and8conversations
+  remain absent, but contextual employment meaning survives. Dense already
+  answers out-of-office and city/career prompts; constrained additionally
+  restores shared-office and work-from-home explanations. Scalar improvement
+  partly rewards this restoration. NOT qualified whole-concept removal,
+  NOT pure collateral repair, NOT selected for the fresh final audit.
+  Two target conversation loops and unrelated utility failures remain.
+- Latest correction: 520 training prompts from104 original scenarios ×5task
+  formats, clean-generated proxy answers and8fixed unfamiliarity responses+EOS.
+  Zero exact evaluation overlap, all target sequences<=74tokens. One64step
+  rank8alpha16LoRA layers28:34, LR2e-5, parent-reference filtered177generic/
+  1193chat retention, weights10/30/100, seed33900. Completed01:37:58UTC,
+  adapter SHA c58f4ad4fecd2560dfc8580e238a807b1c7fb85c777f14f771d52a99249a09e0.
+  REJECTED:26definitequickholes/1ambiguous/1translatorrecovery, one targetloop;
+  7contextual routes retain meaning and3mixedcontrols all mention targetmeaning.
+  Quickcontrols9/12 unchanged. No merge/broad/scalar/fresh for this adapter.
+- Other closed lanes: all9fixedDAREquickarms and4broad arms fail; E90 projection
+  restores target knowledge despite scalar3.92588/PPL13.83359. Partial blends
+  .1/.25/.5 fail qualifying gates; .75 explicitlyUNTESTED, not a measuredfailure.
+  Prior randomRMU and on-policySimNPO already destabilized target suppression
+  or suppressed answer strings while alternatives survived. Independent review
+  found no concrete justified repeat; no more training scheduled.
+- Legacy correction: eval.py contains16cloze probabilities+2generatedanswers,
+  not18generatedanswers. Actual18answer baseline is clean18/18primarycoherence,
+  dense17/18 (ocean-definition failure). Clean adds an incorrect cello alternative.
+  Original frozen data/probes.json and data/ppl_text.txt remain unchanged.
+- Fresh final audit is UNUSED by any candidate. Exactly one future qualifying
+  candidate may use it with comparators; no replacements/tuning after failure.
+  Current prototype/stronger criteria remain documented, neither was satisfied.
+- Active work is only local archival of the8.6GBconstrainedcheckpoint and the
+  separately rejected10.53MBadapter under artifacts/sprint_20260904/merged_model/.
+  The ARCHIVE.json receipt must reachcomplete withallhashesverified before
+  claiming durable local preservation. Largeweights aregitignored; metadata
+  and experiment evidence arecommitted. Remote originals remain untouched.
+- Remote model source: RTX18.101.59.227,
+  /mnt/sequential-unlearning-replicate/checkout/derisk/whole_concept_jobs_v1/
+  delta_protection_v1/constrained_v1/models/full_v1 (one continuous path).
+  RTXcheckout937e145, venv-g7e; L40S51.49.31.142 isolatedcheckout496c13b,
+  venv-g6e. Latercommittedinput files were uploaded with exactpins; no false
+  claim of fullcheckout synchronization. Both have no ownedexperimentprocesses;
+  RTXunrelatedPID8186service remainsuntouched. Instances remain available.
+- NativeWindowsOpenSSH began timingout; workspace .tmp/sprint_remote.py uses
+  Paramiko5.0.0 withsameexistingkey andstrict known_hosts aliaspins andworks.
+  RTXalias51.95.58.74; L40Salias15.216.102.169. Noautomatictrust orcloudchanges.
+  Bothrootvolumes haveonly~15GBfree, so localWindowsarchive avoids crowdingthem.
+- Deliverables: docs/SPRINT_20260904_RESULT.md, docs/CURRENT_SPRINT_PLAN.md,
+  sprint_20260904/exploratory_artifact_manifest_v1.json, allrawresults/reviews.
+  EXPERIMENTS.md is append-only. Rejectedclaims and statistical caveats must
+  accompany the saved artifact; unfamiliarity is not evidence of deletion.
+- Next research gate: separate target-bearing benchmark rows fromunrelated
+  utility without changinghistoricalscores; validate independent contextual/
+  mixedprompt tests; choosea distinctmechanism addressingobservedescape routes
+  before anynewGPUbudget. No repeated-day removal untiloneeditqualifies.
+- Preserve unrelated SliceGPT edits, .claude/, olduntrackedresults, transferconfig
+  and bundles. Stageonlycurrentwork. Do not commitkeys, .tmptransportdependencies,
+  or largeweights. Commit/push everyintegratedfinding beforemethodchanges.
 
 This is the concise cross-session handover. `EXPERIMENTS.md` is the complete,
 append-only chronological record; the concept-removal plain-English and

@@ -1,0 +1,39 @@
+{
+  "reviewer": "independent L40S subagent",
+  "decision": "Do not run another RMU or on-policy answer-suppression experiment in this sprint. Preserve and describe the selective-ignorance artifacts without claiming concept deletion.",
+  "evidence": [
+    {
+      "source": "PROJECT_MEMORY.md, focused Adaptive-RMU entries around lines898-944; EXPERIMENTS.md sections Focused Adaptive-RMU representation arm precommitted through Stronger focused Adaptive-RMU rejected at original screen (around5403-5548)",
+      "method": "Already-erased semantic-mix step240 parent,92 focused clean-answer trajectories, rank4 alpha8 LoRA layers18-28, steering20/24/28, clean-reference244generic/1808chat retention,30steps",
+      "gentle": "LR2e-5/forgetweight0.1: relative MSE1.996463 to1.989112 (0.37% movement); original and hard behavior unchanged, including living-idiom leak and batch-job follow-up failure.",
+      "stronger": "LR1e-4/forgetweight1.0, other settings fixed: MSE1.9965 to1.6447 (17.6% movement). Step6 unchanged; step10+ reopened unemployment, restaurant, careers, pay, hiring and labour-market knowledge and introduced loops. All30 original controls stayed healthy.",
+      "implication": "Random representation redirection on an already-erased parent destabilized target suppression before providing the desired semantic improvement. More task formats alone do not remove this mechanism."
+    },
+    {
+      "source": "EXPERIMENTS.md sections Run7 - on-policy SimNPO with an explicit pressure gate and Run8 - refresh-on-policy against Run7 escape answers (around312-437)",
+      "method": "180 genuinely on-policy answer trajectories; live pressure guard, reference-free length-normalized SimNPO, followed by refreshed escape-answer suppression",
+      "results": "Run7 fixed-answer log probability fell to-6.671 bystep30, pressure0.0014, but both held-out sea generations remained knowledgeable. Run8 refreshed pressure fell to0.00375 bystep15 while target cloze rebounded0.4010 to0.4660 and fluent concept knowledge survived.",
+      "implication": "Suppression of fixed or refreshed answer strings was not semantic erasure; repeating this family is not supported."
+    },
+    {
+      "source": "EXPERIMENTS.md sections Run9 - multi-layer Adaptive RMU on answer-token representations and Run10 - explicit semantic-neighbourhood Adaptive RMU (around439-555)",
+      "method": "Clean Gemma parent, rank32 alpha64 midband14-24, steering16/20/24, LR1e-4,30steps, adaptive per-token random targets, retain activation anchors",
+      "results": "Run9 step30 disrupted both narrow held-out generations with PPL14.023 and near-baseline cloze controls, but target associations retained81% and neighbours107% of baseline. Run10 expanded neighbourhood trajectories still left target/neighbour associations above baseline despite malformed topic generation.",
+      "implication": "Clean-parent RMU has evidence of selective generation disruption, not evidence that it solves broad concept-plus-neighbour deletion with intact utility."
+    },
+    {
+      "source": "EXPERIMENTS.md sections Run16 - balanced required-neighbour Adaptive RMU and Run17 - group-conditional Adaptive RMU directions (around792-880)",
+      "results": "Balanced exposure moved representation distance to1.0213 yet recognizable topic answers survived. Group-conditional directions plus sparse readout deletion passed narrow target/neighbour tests but broad bread/violin/arithmetic/volcano controls collapsed.",
+      "implication": "More exposure or separate random directions were already tested; convergence and narrow PPL/cloze controls did not establish broad utility."
+    },
+    {
+      "source": "Current sprint context_correction_quick_v1.json/context_correction_routes_v1.json and context-correction-independent-review-v1.json",
+      "method": "520 original scenarios in five task formats, clean answers,64-step late-layer target-response CE correction with filtered parent retention",
+      "results": "Seven contextual employment routes still clearly retained meaning; three mixed controls still mentioned jobs/careers; one natural route recovered translator meaning and one direct target looped.",
+      "implication": "The new trajectories are useful coverage evidence, but do not by themselves justify repeating a failed random-redirection or fixed-answer suppression mechanism."
+    }
+  ],
+  "alternative_considered": "A clean-parent RMU arm would avoid the already-erased-parent failure and would fit the remaining runtime, but no concrete superior dose or mechanism emerges from the prior record. Another speculative run is not justified solely because GPU time remains.",
+  "next_project_direction": "Keep explicit contextual and mixed-prompt regression routes in development evaluation. Investigate a distinct mechanism or a revised artistic specification before more weight training; do not equate unfamiliarity, low CE, low answer probability, representation movement, or improved scalar with deletion.",
+  "actions": "Read-only assessment. No new code, GPU experiment, fresh-audit use, AWS stop, or original artifact deletion. Root owns integration and final artifact plan."
+}

@@ -1,0 +1,44 @@
+{
+  "host": "l40s",
+  "ip": "51.49.31.142",
+  "purpose": "Read-only final owned-process, GPU and archive-capacity assessment; no services stopped or files copied.",
+  "local_utc": "2026-09-05T01:50:06.263712+00:00",
+  "checks": {
+    "remote_utc": {
+      "command": "date -u +%Y-%m-%dT%H:%M:%SZ",
+      "exit_code": 0,
+      "stdout": "2026-09-05T01:50:06Z\n",
+      "stderr": ""
+    },
+    "gpu": {
+      "command": "nvidia-smi --query-gpu=name,utilization.gpu,memory.used,memory.total --format=csv,noheader",
+      "exit_code": 0,
+      "stdout": "NVIDIA L40S, 4 %, 0 MiB, 46068 MiB\n",
+      "stderr": ""
+    },
+    "compute_apps": {
+      "command": "nvidia-smi --query-compute-apps=pid,process_name,used_gpu_memory --format=csv,noheader",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    "filesystems": {
+      "command": "df -B1 --output=source,fstype,size,used,avail,target / /home/ubuntu/sequential-unlearning-projection-sprint-20260904",
+      "exit_code": 0,
+      "stdout": "Filesystem     Type    1B-blocks         Used       Avail Mounted on\n/dev/root      ext4 154993672192 138698379264 16278515712 /\n/dev/root      ext4 154993672192 138698379264 16278515712 /\n",
+      "stderr": ""
+    },
+    "processes": {
+      "command": "ps -u ubuntu -o pid,ppid,stat,etimes,args --no-headers",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  },
+  "local_windows_volume": {
+    "path": "C:\\",
+    "total": 2000381014016,
+    "used": 1743527985152,
+    "free": 256853028864
+  }
+}

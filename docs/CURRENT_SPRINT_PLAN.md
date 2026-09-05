@@ -1,5 +1,7 @@
 # Current experiment plan — September 5, 2026
 
+**Status: search closed early; local checkpoint archive in progress.** The fixed correction failed. See `SPRINT_20260904_RESULT.md` for outcomes and the next research gate. The numbered execution plan below records what was planned and tested; it is not a running queue.
+
 The goal is a visible hole around employment and its close neighbours, with ordinary abilities preserved. Natural unfamiliarity is preferred. A benchmark pass is evidence about those prompts, not proof that the concept has disappeared everywhere.
 
 The six-hour sprint began at 23:01:09 UTC on September 4. Stop introducing candidates at 03:01:09, aim to finish the final audit by 04:31:09, and stop the sprint at 05:01:09 on September 5. Finish earlier if a useful result is established.
