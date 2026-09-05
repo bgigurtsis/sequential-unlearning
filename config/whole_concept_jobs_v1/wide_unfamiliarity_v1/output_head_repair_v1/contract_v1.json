@@ -1,0 +1,109 @@
+{
+  "schema": "output_head_only_repair_comparison_v1",
+  "parent": {
+    "path": "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/ordinary_end_ce_l40s_run64_v1/step064",
+    "weight_sha256": "5fd11ba0d54c4888cb49d0014cbc43488709e1eccb61aa1a3feba810939cd328",
+    "config_sha256": "dc2352afdc28c81ded1934c1f472f3a33b9a61ecbb3c029a82594a176cf2c5b5"
+  },
+  "source_hashes": {
+    "scripts/full_ordinary_repair.py": "2b9637e36ced2c88cc2a7d3526793f6c2ee44068a8616d8cc0720cab3bd3be69",
+    "scripts/test_full_ordinary_repair.py": "267fcadd9e9b75acdf4a678960860ef30f8f7351869e1e0daebb100e75133161",
+    "scripts/retain_constrained_adam.py": "885d9d59adc44fd11460b3448135b4505ab80b47c71793b3320a31e847f22255",
+    "scripts/ordinary_response_repair.py": "1e25c201984afb9f8ecd12a06ca6705e38c852babd51d9ab2899619c4d0c847e",
+    "scripts/onpolicy_end_repair.py": "90226b3d8349310d30f8aba1c9914a175df7a8a736a898b0114d4a6ba938d46e",
+    "scripts/onpolicy_target_preservation.py": "405411d97595910d8058497764b8514ec9a930842c78db0a72ac0fcde96a0d83",
+    "scripts/test_onpolicy_end_repair.py": "ef14c57a53a964d4d5197a609a8f32191388179e34be3a4b6e9cb710441902f8",
+    "scripts/test_onpolicy_target_preservation.py": "5aae6a619a1a9e6962173a1db4ccac672e5b58669a173a33d72d3924143b468d",
+    "scripts/train_bounded_forget.py": "688816efb781accda3f53610a6c2ba7965b07329a4e9536cdce2e8bc13cf28e4",
+    "scripts/cache_ordinary_preference_reference.py": "c3e948c1e751e66945fe9bdc2a7b824aae4d7e476cc0b13a512fa2d1cdc54e13",
+    "scripts/ordinary_preference_training.py": "ddab8a46d11bdda6b954d890dd7bee9b8699ffd7a1b97ea2505b816fc0679d98",
+    "scripts/answer_prefix_conditioning.py": "8c126dd24e04f08375c067d9ed74e0b4213266183c8101ab91fbcc6e9ff549a3",
+    "scripts/prefix_unfamiliarity_training.py": "71d88152fff82dcfbe46fe142a934d1cf7187749e0abd09291955acdc3025f8e",
+    "scripts/wide_unfamiliarity_training.py": "e692f78daa0a432cb9e345ec2212a73c59231102c7e906100c5e04a60a4ebb7b",
+    "scripts/screen_adapters.py": "c69144eca887176cedb074fcdd8ac80e841d5504772198701546ca4d7fcd0b29",
+    "scripts/train_full_ordinary_repair.py": "267368ae94c9eb1c1c04e0349decc3b31fddfb3d13622c8e98e2853252e4f26b",
+    "scripts/output_head_repair.py": "a1345e2418f97973acc84da3ff6fb13546d476677cc685cadb8662654a1f35e6",
+    "scripts/train_output_head_repair.py": "e7912fba4724b1f260d6de9759c173ab4370a33cde5cfabd85db78374f762fd3",
+    "scripts/test_output_head_repair.py": "026edd9fdfa63ce5f56bd4b3b64e00a2595521425cc89e26e2799100a933e012"
+  },
+  "inputs": {
+    "config/whole_concept_jobs_v1/wide_unfamiliarity_v1/ordinary_answer_repair_v1/ordinary_answers_v1.json": {
+      "sha256": "f6ebd91dbe22c48aa9ede24cc60de7cbc689b6456f8cf5971ee0d4defc0b3f8e"
+    },
+    "config/whole_concept_jobs_v1/wide_unfamiliarity_v1/ordinary_answer_repair_v1/shared_data_v1/forget.json": {
+      "sha256": "c0b54b438897c91edbccbf2fcb1eab49ce4be34a22607186d7289f2939f764c2"
+    },
+    "logs/projection-sprint-20260904/full-ordinary-tokenization-v1.json": {
+      "sha256": "7d011cb522b9bc6fcb5ab9b0fee5076af5a0a87efafb93ece05c0b5c06fc8b64"
+    },
+    "logs/projection-sprint-20260904/output-head-encoding-v1.json": {
+      "sha256": "d01088745f117edf11fe2e240d18008d97aad9210d505ae6b12178b09cabd092"
+    },
+    "config/whole_concept_jobs_v1/residual_projection_v1/capture_pins_v1.json": {
+      "sha256": "bd13d17d25ab4a9a93f3bedb319cbb388489bbdb35e656ed8b26cb76f440e8a5"
+    }
+  },
+  "arms": {
+    "rtx": {
+      "owner": "root",
+      "head_rank": 8,
+      "head_alpha": 16
+    },
+    "l40s": {
+      "owner": "projection_followup",
+      "head_rank": 32,
+      "head_alpha": 64
+    }
+  },
+  "settings": {
+    "seed": 34021,
+    "schedule_seed": 34020,
+    "steps": 32,
+    "snapshots": [
+      16,
+      32
+    ],
+    "qualification_steps": 2,
+    "qualification_saves": false,
+    "lr": 0.001,
+    "optimizer": "freshAdamW .9/.999 eps1e-8 decay.01; no clipping",
+    "batch_target": 16,
+    "batch_ordinary": 4,
+    "target_jsd_weight": 100,
+    "target_teacher": "separate frozen exact native CE64 on pinned cleanBF16 base",
+    "ordinary_ce_weight": 1,
+    "first_supervised_tokens": 5,
+    "prefix_weight": 8,
+    "denominator": "unweighted suffix count",
+    "positions": "full ordinary answer+EOS1 and existing target suffixes",
+    "new_head_factors": 2,
+    "parent_text_factors": 476,
+    "serialized_factors": 478,
+    "frozen": "all base/input embeddings and476 original text factors",
+    "model_mode": "eval; dropout0",
+    "target_unknown_ce": false,
+    "save_embedding_layers": false,
+    "merge_into_tied_head": false
+  },
+  "qualification": {
+    "cpu_tests": 5,
+    "skips": 0,
+    "seconds": 6.504,
+    "actual_encoding_and_schedule_match_previous": true,
+    "ordinary_records": 64,
+    "target_records": 4106,
+    "initial_target_abs_jsd_limit": 1e-05,
+    "head_initial_B_zero": true,
+    "only2_finite_gradients": true,
+    "source476_native_unchanged": true,
+    "embedding_native_unchanged": true,
+    "teacher_independent_and_probe_unchanged": true
+  },
+  "evaluation": "Both16/32 snapshots quick40 greedy96/context12 greedy256 batch16; all104 perarm read. Separate4 tolerated neighbours; unrelated initial or appended unknown fail.",
+  "limitations": [
+    "Behavioural output-preference repair, not hidden-concept deletion.",
+    "Input embedding stays tied/frozen during adapter training; a shortlisted full merge must first untie output weights and verify unchanged input embeddings.",
+    "Reused adaptive development data; no fresh final until broader qualifier and validated full reload.",
+    "Ranks8/32 test capacity at the same LR, not matched parameter counts."
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "schema": "output_head_cpu_l40s_qualification_v1",
+  "source_hashes": {
+    "scripts/output_head_repair.py": "a1345e2418f97973acc84da3ff6fb13546d476677cc685cadb8662654a1f35e6",
+    "scripts/test_output_head_repair.py": "026edd9fdfa63ce5f56bd4b3b64e00a2595521425cc89e26e2799100a933e012",
+    "scripts/prefix_unfamiliarity_training.py": "71d88152fff82dcfbe46fe142a934d1cf7187749e0abd09291955acdc3025f8e",
+    "scripts/wide_unfamiliarity_training.py": "e692f78daa0a432cb9e345ec2212a73c59231102c7e906100c5e04a60a4ebb7b",
+    "logs/projection-sprint-20260904/output-head-cpu-l40s-v1.log": "cd2e29bd2087c57c124c42748a3fee328111b02adc7a271f4a49ef0139a5f59d"
+  },
+  "tests_passed": 5,
+  "tests_failed": 0,
+  "tests_skipped": 0,
+  "seconds": 6.504,
+  "runtime": "Installed PEFT0.19.1/Torch2.13.0+cu130/Transformers5.14.1; CUDA_VISIBLE_DEVICES empty; toy hidden4/vocab17,34blocks/238 text modules.",
+  "coverage": [
+    "Bothhead8/32 zero-delta parent logits exact and476 text factors identical",
+    "Only2 head gradients and changed outputs after2toyAdam steps, tiedinput/text unchanged",
+    "One478-factor adapter save/native reload/full logits exact; no baseembedding/head weights; rank_pattern retained",
+    "Guard detects text and inputembedding mutation",
+    "Reject wrongrank/untiedbase/nonFP32parent and existing saveoutput"
+  ],
+  "warnings": "Expected PEFT tied-layer merge warning confirms no-merge limitation. Toy lacks GenerationMixin, but no generation is tested; forward/save/reload paths are tested.",
+  "scope": "CPU helper qualification only; no production Gemma model or GPU training yet."
+}

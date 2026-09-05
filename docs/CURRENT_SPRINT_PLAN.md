@@ -51,3 +51,5 @@ Direct task-vector subtraction FAILED target absence: all52 development outputs 
 ## Next bounded direction
 
 The fixed task-vector comparison is closed: both variants retained employment meanings on the52 development questions. Neither improves the best result. Investigate a low-rank correction restricted to the output head of CE64 while freezing its existing internal layers and input embeddings. The immediate gate is exact parent identity and correct serialization of the tied output head; then freeze a two-GPU comparison using existing vetted data. This is a behavioural repair hypothesis, not evidence of internal erasure.
+
+Output-head comparison source/data frozen: output_head_repair_v1/contract_v1.json. Head8RTX vshead32L40S on frozenCE64, only2new factors train;32steps16/32 LR1e-3 init34021, samefullordinary64/target4106 encoding and schedule34020, ordinaryCE1/targetJSD100. FiveCPU tests pass, exact data validated, no production GPU yet. Next exact failedcontrast weight retirement (manifest), then2-step smokes and full32. Standard478factor adapter saves no embeddings; no merge while base head tied. No candidate qualifies.

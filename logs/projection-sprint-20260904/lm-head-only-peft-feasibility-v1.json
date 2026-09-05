@@ -1,0 +1,33 @@
+{
+  "schema": "lm_head_only_peft_feasibility_v1",
+  "scope": "Read-only installed PEFT0.19.1 source; no model construction, training or new GPU run.",
+  "source_dumps": {
+    ".tmp/peft_head_feasibility_source.txt": "e55c9bbbf299d55d74724f718a66dd7a465042f2091ccd230c301b4aac4318b8",
+    ".tmp/peft_head_linear_source.txt": "6d802c26ca34245197c481a43427655f441665de3a875b1779ac3764dd8adbf2"
+  },
+  "feasible_design": [
+    "Create one239-target LoRA adapter over238 canonical text modules plus exact lm_head. Preserve text rank32/alpha64 and use rank_pattern/alpha_pattern for independently fixed head rank.",
+    "Load all476 CE64 parent text factors with exact FP32 byte equality. Only two missing head factors permitted; randomA/zeroB yields identity at initialization.",
+    "Freeze all pre-existing text factors and base parameters; optimize only lm_head A/B. Base tied input/output weight stays shared and frozen; additive LoRA affects only output invocation.",
+    "Serialize one combined478-factor adapter with save_embedding_layers=False. Reload on pinned clean base, verify all476 parent factors unchanged, two head factors exact and ordinary inference equivalence."
+  ],
+  "critical_source_evidence": {
+    "rank_pattern": "LoraModel._create_and_replace resolves rank_pattern and alpha_pattern via get_pattern_key against current_key.",
+    "output_only": "Linear.forward computes base_layer(x) + lora_B(lora_A(dropout(x)))*scaling, then casts back to original output dtype.",
+    "save_auto_pitfall": "get_peft_model_state_dict defaults save_embedding_layers=auto; lm_head is an embedding-layer target and can enable full embedding/head saving. ExplicitFalse required to keep adapter-only478 tensors.",
+    "merge_pitfall": "Linear.merge mutates base_layer.weight.data; tied input weight can therefore change. Do not merge while tied; a future standalone native publisher must explicitly untie output and validate input identity."
+  },
+  "qualification_gates": [
+    "Two trainable FP32 tensors only; exact478 serialized LoRA factors and239 intended modules, no vision/embedding/base-weight save.",
+    "Native zeroB initial full logits equal CE64, frozen476 factors and input embedding bytes unchanged after optimization.",
+    "Combined-adapter fresh reload exact factors/logits within explicitly frozen runtime tolerance; output-only tying assertion before/after.",
+    "Model-specific logits softcapping/scaling must remain exact if caching hidden states to avoid repeated frozen forward."
+  ],
+  "mechanism_limits": [
+    "This freezes existing hidden representations rather than erasing their knowledge. It is an output behavior/selectivity experiment; no concept-deletion guarantee.",
+    "An output-head update can still restore occupational answers or create unrelated false refusals because hidden states and output tokens overlap.",
+    "Only64 ordinary authored paths may overfit; training endpoint fit cannot replace full raw behavioral evaluation.",
+    "PEFT source behavior is established; actual Gemma3 combined-adapter integration has not yet been qualified."
+  ],
+  "efficiency": "Frozen upstream weights remove their optimizer state and backward graph. Exact cached final hidden states are potentially reusable, but any cache requires separate source/boundary validation and is not approved here."
+}
