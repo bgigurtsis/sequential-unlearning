@@ -1,0 +1,55 @@
+{
+  "schema": "ordinary_gap_coverage_data_v1",
+  "original64_path": "config/whole_concept_jobs_v1/wide_unfamiliarity_v1/ordinary_answer_repair_v1/ordinary_answers_v1.json",
+  "original64_sha256": "f6ebd91dbe22c48aa9ede24cc60de7cbc689b6456f8cf5971ee0d4defc0b3f8e",
+  "new16_path": "config/whole_concept_jobs_v1/wide_unfamiliarity_v1/ordinary_coverage_v1/additions_v1.json",
+  "new16_sha256": "ac93ae316d22c5ae91426dfd0012ebbf8fc03e2d8c693a3ca5aedcba9e385d4d",
+  "combined80_path": "config/whole_concept_jobs_v1/wide_unfamiliarity_v1/ordinary_coverage_v1/ordinary_answers_v1.json",
+  "combined80_sha256": "75ff7f2d259b9331f693221a8d9ad1fb92b0d3009c52f64a8751a8e7e422c943",
+  "original64_file_unchanged": true,
+  "original64_records_exact_prefix": true,
+  "new_category_counts": {
+    "arithmetic": 4,
+    "room_furnishings": 4,
+    "restoration_hobbies": 4,
+    "unpaid_care": 4
+  },
+  "counts": {
+    "original": 64,
+    "new": 16,
+    "combined": 80
+  },
+  "evaluation_exclusion_count": 467,
+  "evaluation_overlaps": 0,
+  "evaluation_sources_for_programmatic_exclusion_only": {
+    "config\\employment_sprint_20260904_quick\\probes.json": "3a39e4634216075ee2c02b874b4d1d8bc34144a3bdd653afd7cbab01694a4feb",
+    "config\\employment_sprint_20260904_context_routes\\probes.json": "26b419fddc8a49af24915d7ba396241acbcbe4647f85afcd012ccd20e48426a8",
+    "config\\employment_sprint_20260904_final\\probes.json": "1ad0d61249e683f472f7158a03a21ce87f10917f4e9c9e9740e6f1665c8664ea",
+    "config\\employment_sprint_20260904_final\\conversations.json": "c55e3047f684ac1d1428286db833581392bb5ce643167f00de42273c53389e29",
+    "config\\whole_concept_jobs_v1\\probes.json": "051099d671000d0a829689b12961704e3056b6903ae878a3a5b174b04b7587ee",
+    "config\\whole_concept_jobs_hard_v1\\probes.json": "9c7a99dd0936c048a8150a14a1dfafea11c2832de5bc8dad2940e1b13323a97a",
+    "config\\whole_concept_jobs_hard_v1\\conversations.json": "1c2850eb6a94e2f3f4df27c2f184455544f718cc5bb0fa5e2c917b286d59359f",
+    "config\\whole_concept_jobs_direct_v1\\probes.json": "4391f28215fa931ebcf70f1f5411fb7a7fee533e8c56a7f96b95acdaf2d657ab",
+    "config\\whole_concept_jobs_natural_v2\\probes.json": "2bd3421f01109b9ffb2a9e16aa5233b27e98c34ebf75223b194047fc8852c722",
+    "data\\probes.json": "4040b330b82ef2e7b509e544edbd76df7441589b6b08cd8b4518237a7d778d79",
+    "derisk\\whole_concept_jobs_v1\\delta_protection_v1\\sprint_20260904\\dense_current_runtime_scalar_v1.json": "162c0332c9230e01042810b04aca353a1862c449ae1dedcae435fd1761df9f88"
+  },
+  "existing_training_sources": {
+    "config/whole_concept_jobs_v1/wide_unfamiliarity_v1/ordinary_answer_repair_v1/shared_data_v1/forget.json": "c0b54b438897c91edbccbf2fcb1eab49ce4be34a22607186d7289f2939f764c2",
+    "config/whole_concept_jobs_v1/wide_unfamiliarity_v1/ordinary_answer_repair_v1/shared_data_v1/chat_retain.json": "79e6b2899fdbd041d686af2fbdeab52168362a8b1c347a160d38257f74e10665"
+  },
+  "new_existing_training_overlaps": 0,
+  "normalization": "NFKC/casefold/whitespace collapse; fresh contents not displayed or manually read",
+  "arithmetic_checks": {
+    "34+28": 62,
+    "60-17": 43,
+    "5*6": 30,
+    "48/8": 6
+  },
+  "answer_design": "Complete authored positive responses, no supplied unknown target, same existing EOS encoding later. Answers avoid occupational examples; volunteering is unpaid ordinary activity.",
+  "limits": [
+    "Adaptive coverage diagnostic, not fresh evaluation or proof of broad random-question health.",
+    "Changes answer-domain and length distribution; actual tokenized EOS positions/weights must be recorded before training.",
+    "Four questions per missing domain are a minimal feasibility test, not comprehensive coverage."
+  ]
+}

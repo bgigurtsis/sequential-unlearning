@@ -47,6 +47,7 @@ def main():
         parser.add_argument('--' + name, required=True)
     parser.add_argument('--mode', choices=['tokenize', 'ce', 'jsd'], required=True)
     parser.add_argument('--steps', choices=[2, 32], type=int, default=32)
+    parser.add_argument('--ordinary-count', choices=[64, 80], type=int, default=64)
     parser.add_argument('--encoding-manifest')
     parser.add_argument('--encoding-manifest-sha256')
     args = parser.parse_args()
@@ -67,8 +68,8 @@ def main():
         raise ValueError('Expected EOS1/pad0')
     ordinary = json.loads(Path(args.ordinary_data).read_bytes())
     targets = json.loads(Path(args.target_data).read_bytes())
-    if len(ordinary) != 64 or len({r['id'] for r in ordinary}) != 64:
-        raise ValueError('Expected64 unique ordinary records')
+    if len(ordinary) != args.ordinary_count or len({r['id'] for r in ordinary}) != args.ordinary_count:
+        raise ValueError(f'Expected{args.ordinary_count} unique ordinary records')
     if len(targets) != 4106 or len({r['id'] for r in targets}) != 4106:
         raise ValueError('Expected4106 unique target states')
     ordinary_sampler = OrdinaryRepairSampler(ordinary, seed=34020, batch_size=4)

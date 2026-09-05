@@ -1,0 +1,126 @@
+{
+  "schema": "ordinary_coverage_comparison_v1",
+  "parent": {
+    "path": "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/ordinary_end_ce_l40s_run64_v1/step064",
+    "weight_sha256": "5fd11ba0d54c4888cb49d0014cbc43488709e1eccb61aa1a3feba810939cd328",
+    "config_sha256": "dc2352afdc28c81ded1934c1f472f3a33b9a61ecbb3c029a82594a176cf2c5b5"
+  },
+  "source_hashes": {
+    "scripts/full_ordinary_repair.py": "2b9637e36ced2c88cc2a7d3526793f6c2ee44068a8616d8cc0720cab3bd3be69",
+    "scripts/test_full_ordinary_repair.py": "267fcadd9e9b75acdf4a678960860ef30f8f7351869e1e0daebb100e75133161",
+    "scripts/retain_constrained_adam.py": "885d9d59adc44fd11460b3448135b4505ab80b47c71793b3320a31e847f22255",
+    "scripts/ordinary_response_repair.py": "1e25c201984afb9f8ecd12a06ca6705e38c852babd51d9ab2899619c4d0c847e",
+    "scripts/onpolicy_end_repair.py": "90226b3d8349310d30f8aba1c9914a175df7a8a736a898b0114d4a6ba938d46e",
+    "scripts/onpolicy_target_preservation.py": "405411d97595910d8058497764b8514ec9a930842c78db0a72ac0fcde96a0d83",
+    "scripts/test_onpolicy_end_repair.py": "ef14c57a53a964d4d5197a609a8f32191388179e34be3a4b6e9cb710441902f8",
+    "scripts/test_onpolicy_target_preservation.py": "5aae6a619a1a9e6962173a1db4ccac672e5b58669a173a33d72d3924143b468d",
+    "scripts/train_bounded_forget.py": "688816efb781accda3f53610a6c2ba7965b07329a4e9536cdce2e8bc13cf28e4",
+    "scripts/cache_ordinary_preference_reference.py": "c3e948c1e751e66945fe9bdc2a7b824aae4d7e476cc0b13a512fa2d1cdc54e13",
+    "scripts/ordinary_preference_training.py": "ddab8a46d11bdda6b954d890dd7bee9b8699ffd7a1b97ea2505b816fc0679d98",
+    "scripts/answer_prefix_conditioning.py": "8c126dd24e04f08375c067d9ed74e0b4213266183c8101ab91fbcc6e9ff549a3",
+    "scripts/prefix_unfamiliarity_training.py": "71d88152fff82dcfbe46fe142a934d1cf7187749e0abd09291955acdc3025f8e",
+    "scripts/wide_unfamiliarity_training.py": "e692f78daa0a432cb9e345ec2212a73c59231102c7e906100c5e04a60a4ebb7b",
+    "scripts/screen_adapters.py": "c69144eca887176cedb074fcdd8ac80e841d5504772198701546ca4d7fcd0b29",
+    "scripts/train_full_ordinary_repair.py": "fb6476105d99f44ddc44ddea684780cf866c102bff25df0c1d099dcee733cc79",
+    "scripts/output_head_repair.py": "a1345e2418f97973acc84da3ff6fb13546d476677cc685cadb8662654a1f35e6",
+    "scripts/train_output_head_repair.py": "ba7cc119af0b40d89ae5cd8f48688175216dae998f34557587296d77038288fb",
+    "scripts/test_output_head_repair.py": "026edd9fdfa63ce5f56bd4b3b64e00a2595521425cc89e26e2799100a933e012"
+  },
+  "inputs": {
+    "config/whole_concept_jobs_v1/wide_unfamiliarity_v1/ordinary_coverage_v1/ordinary_answers_v1.json": {
+      "sha256": "75ff7f2d259b9331f693221a8d9ad1fb92b0d3009c52f64a8751a8e7e422c943"
+    },
+    "config/whole_concept_jobs_v1/wide_unfamiliarity_v1/ordinary_coverage_v1/additions_v1.json": {
+      "sha256": "ac93ae316d22c5ae91426dfd0012ebbf8fc03e2d8c693a3ca5aedcba9e385d4d"
+    },
+    "config/whole_concept_jobs_v1/wide_unfamiliarity_v1/ordinary_coverage_v1/data_manifest_v1.json": {
+      "sha256": "a69173b8722ab2ee14a8610455905de0e460cf9bde2dadfb00a5192655e19136"
+    },
+    "config/whole_concept_jobs_v1/wide_unfamiliarity_v1/ordinary_answer_repair_v1/shared_data_v1/forget.json": {
+      "sha256": "c0b54b438897c91edbccbf2fcb1eab49ce4be34a22607186d7289f2939f764c2"
+    },
+    "logs/projection-sprint-20260904/coverage80-tokenization-v1.json": {
+      "sha256": "55645da1dca65038883e0c46679033465add253b86def0dcb37a36507226cfcd"
+    },
+    "logs/projection-sprint-20260904/coverage80-root-validation-v1.json": {
+      "sha256": "0c66b2b9c37960b76af315f4914c2075b9289136c402f0a6793472f500d4334d"
+    },
+    "config/whole_concept_jobs_v1/residual_projection_v1/capture_pins_v1.json": {
+      "sha256": "bd13d17d25ab4a9a93f3bedb319cbb388489bbdb35e656ed8b26cb76f440e8a5"
+    },
+    "config/employment_sprint_20260904_quick/probes.json": {
+      "sha256": "3a39e4634216075ee2c02b874b4d1d8bc34144a3bdd653afd7cbab01694a4feb"
+    },
+    "config/employment_sprint_20260904_context_routes/probes.json": {
+      "sha256": "26b419fddc8a49af24915d7ba396241acbcbe4647f85afcd012ccd20e48426a8"
+    }
+  },
+  "arms": {
+    "rtx": {
+      "owner": "root",
+      "head_rank": 32,
+      "head_alpha": 64,
+      "lr": 0.001,
+      "trainable_factors": 2,
+      "mode": "head_ce"
+    },
+    "l40s": {
+      "owner": "projection_followup",
+      "mode": "ce",
+      "lr": 2e-06,
+      "trainable_factors": 476
+    }
+  },
+  "settings": {
+    "steps": 32,
+    "snapshots": [
+      16,
+      32
+    ],
+    "schedule_seed": 34020,
+    "head_initialization_seed": 34021,
+    "text_seed": 34020,
+    "ordinary_records": 80,
+    "target_records": 4106,
+    "batch_target": 16,
+    "batch_ordinary": 4,
+    "ordinary_ce_weight": 1,
+    "target_jsd_weight": 100,
+    "target_teacher": "separate frozen native originalCE64",
+    "prefix_tokens": 5,
+    "prefix_weight": 8,
+    "denominator": "unweighted supervised suffix token count",
+    "optimizer": "freshAdamW .9/.999 eps1e-8 decay.01; no clipping",
+    "target_unknown_ce": false
+  },
+  "qualification": {
+    "change": "count64/80 option only; unchanged objectives/masks/optimizers/runtime guards",
+    "new_rows_semantically_reviewed": 16,
+    "old64_records_and_encodings_preserved": true,
+    "target4106_encodings_and_schedule_preserved": true,
+    "separate_gpu_smoke": false,
+    "reason": "reuse same already-qualified GPU paths; first-step identity and all existing runtime checks remain required"
+  },
+  "evaluation": {
+    "quick": {
+      "count": 40,
+      "max_new_tokens": 96
+    },
+    "context": {
+      "count": 12,
+      "max_new_tokens": 256
+    },
+    "batch_size": 16,
+    "all_replies_reviewed": true,
+    "random_unknown_or_appended_unknown_failure": true,
+    "fresh_final_unused": true
+  },
+  "decision_gate": "If both fail joint behaviour, close this family of CE64 output/ordinary-repair variants and move to a materially different hypothesis; no blind rank/LR/step/data-dose sweep.",
+  "limitations": [
+    "Historical64 runs use different ordinary shuffles; descriptive comparison only.",
+    "Head/text lanes differ optimizer scope and established learning rate; not pure causal scope ablation.",
+    "Behavioural absence alone is not internal erasure.",
+    "Exact fixture exclusion does not ensure semantic independence.",
+    "Full model merge/reload and fresh evaluation remain mandatory for a qualifier."
+  ]
+}

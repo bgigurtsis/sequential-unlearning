@@ -32,6 +32,7 @@ def main():
         p.add_argument('--'+name,required=True)
     p.add_argument('--head-rank',type=int,choices=[8,32],required=True)
     p.add_argument('--steps',type=int,choices=[2,32],default=32)
+    p.add_argument('--ordinary-count',type=int,choices=[64,80],default=64)
     p.add_argument('--validate-only',action='store_true')
     a=p.parse_args();out=Path(a.output)
     if out.exists():raise FileExistsError(out)
@@ -47,9 +48,9 @@ def main():
     tok=AutoTokenizer.from_pretrained(a.tokenizer_model,local_files_only=True)
     if tok.eos_token_id!=1 or tok.pad_token_id!=0:raise ValueError('Expected clean EOS1/pad0')
     ordinary=json.loads(Path(a.ordinary_data).read_bytes());target=json.loads(Path(a.target_data).read_bytes())
-    if len(ordinary)!=64 or len(target)!=4106:raise ValueError('Expected vetted64 ordinary/4106 target records')
+    if len(ordinary)!=a.ordinary_count or len(target)!=4106:raise ValueError(f'Expected vetted{a.ordinary_count} ordinary/4106 target records')
     oe={r['id']:encode_ordinary(tok,r) for r in ordinary};te={r['id']:encode_target(tok,r) for r in target}
-    if len(oe)!=64 or len(te)!=4106:raise ValueError('Duplicate IDs')
+    if len(oe)!=a.ordinary_count or len(te)!=4106:raise ValueError('Duplicate IDs')
     # Reuse the exact previous qualified data schedule; only initialization has a new seed.
     os=OrdinaryRepairSampler(ordinary,seed=34020,batch_size=4);ts=CyclicStratumSampler(target,seed=34020)
     schedule=[{'targets':[r['id'] for r in ts.next_batch()],'ordinary':[r['id'] for r in os.next_batch()]} for _ in range(32)]

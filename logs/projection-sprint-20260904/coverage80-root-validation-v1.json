@@ -1,0 +1,153 @@
+{
+  "schema": "coverage80_root_validation_v1",
+  "ordinary_rows": 80,
+  "old64_records_and_encodings_exact": true,
+  "target4106_encodings_and_schedule_exact": true,
+  "new16_eos_positions": [
+    {
+      "id": "ordinary_gap_arithmetic_00",
+      "category": "arithmetic",
+      "supervised_tokens_including_eos": 36,
+      "eos_weight": 1,
+      "eos_weight_over_suffix_count": 0.027777777777777776
+    },
+    {
+      "id": "ordinary_gap_arithmetic_01",
+      "category": "arithmetic",
+      "supervised_tokens_including_eos": 29,
+      "eos_weight": 1,
+      "eos_weight_over_suffix_count": 0.034482758620689655
+    },
+    {
+      "id": "ordinary_gap_arithmetic_02",
+      "category": "arithmetic",
+      "supervised_tokens_including_eos": 26,
+      "eos_weight": 1,
+      "eos_weight_over_suffix_count": 0.038461538461538464
+    },
+    {
+      "id": "ordinary_gap_arithmetic_03",
+      "category": "arithmetic",
+      "supervised_tokens_including_eos": 22,
+      "eos_weight": 1,
+      "eos_weight_over_suffix_count": 0.045454545454545456
+    },
+    {
+      "id": "ordinary_gap_room_furnishings_00",
+      "category": "room_furnishings",
+      "supervised_tokens_including_eos": 30,
+      "eos_weight": 1,
+      "eos_weight_over_suffix_count": 0.03333333333333333
+    },
+    {
+      "id": "ordinary_gap_room_furnishings_01",
+      "category": "room_furnishings",
+      "supervised_tokens_including_eos": 35,
+      "eos_weight": 1,
+      "eos_weight_over_suffix_count": 0.02857142857142857
+    },
+    {
+      "id": "ordinary_gap_room_furnishings_02",
+      "category": "room_furnishings",
+      "supervised_tokens_including_eos": 31,
+      "eos_weight": 1,
+      "eos_weight_over_suffix_count": 0.03225806451612903
+    },
+    {
+      "id": "ordinary_gap_room_furnishings_03",
+      "category": "room_furnishings",
+      "supervised_tokens_including_eos": 36,
+      "eos_weight": 1,
+      "eos_weight_over_suffix_count": 0.027777777777777776
+    },
+    {
+      "id": "ordinary_gap_restoration_hobbies_00",
+      "category": "restoration_hobbies",
+      "supervised_tokens_including_eos": 35,
+      "eos_weight": 1,
+      "eos_weight_over_suffix_count": 0.02857142857142857
+    },
+    {
+      "id": "ordinary_gap_restoration_hobbies_01",
+      "category": "restoration_hobbies",
+      "supervised_tokens_including_eos": 38,
+      "eos_weight": 1,
+      "eos_weight_over_suffix_count": 0.02631578947368421
+    },
+    {
+      "id": "ordinary_gap_restoration_hobbies_02",
+      "category": "restoration_hobbies",
+      "supervised_tokens_including_eos": 36,
+      "eos_weight": 1,
+      "eos_weight_over_suffix_count": 0.027777777777777776
+    },
+    {
+      "id": "ordinary_gap_restoration_hobbies_03",
+      "category": "restoration_hobbies",
+      "supervised_tokens_including_eos": 38,
+      "eos_weight": 1,
+      "eos_weight_over_suffix_count": 0.02631578947368421
+    },
+    {
+      "id": "ordinary_gap_unpaid_care_00",
+      "category": "unpaid_care",
+      "supervised_tokens_including_eos": 36,
+      "eos_weight": 1,
+      "eos_weight_over_suffix_count": 0.027777777777777776
+    },
+    {
+      "id": "ordinary_gap_unpaid_care_01",
+      "category": "unpaid_care",
+      "supervised_tokens_including_eos": 34,
+      "eos_weight": 1,
+      "eos_weight_over_suffix_count": 0.029411764705882353
+    },
+    {
+      "id": "ordinary_gap_unpaid_care_02",
+      "category": "unpaid_care",
+      "supervised_tokens_including_eos": 37,
+      "eos_weight": 1,
+      "eos_weight_over_suffix_count": 0.02702702702702703
+    },
+    {
+      "id": "ordinary_gap_unpaid_care_03",
+      "category": "unpaid_care",
+      "supervised_tokens_including_eos": 37,
+      "eos_weight": 1,
+      "eos_weight_over_suffix_count": 0.02702702702702703
+    }
+  ],
+  "scheduled_ordinary_draws": 128,
+  "unique_ordinary_seen": 80,
+  "new16_draws": {
+    "ordinary_gap_arithmetic_00": 1,
+    "ordinary_gap_arithmetic_01": 1,
+    "ordinary_gap_arithmetic_02": 2,
+    "ordinary_gap_arithmetic_03": 2,
+    "ordinary_gap_room_furnishings_00": 1,
+    "ordinary_gap_room_furnishings_01": 1,
+    "ordinary_gap_room_furnishings_02": 1,
+    "ordinary_gap_room_furnishings_03": 2,
+    "ordinary_gap_restoration_hobbies_00": 2,
+    "ordinary_gap_restoration_hobbies_01": 2,
+    "ordinary_gap_restoration_hobbies_02": 2,
+    "ordinary_gap_restoration_hobbies_03": 1,
+    "ordinary_gap_unpaid_care_00": 1,
+    "ordinary_gap_unpaid_care_01": 2,
+    "ordinary_gap_unpaid_care_02": 2,
+    "ordinary_gap_unpaid_care_03": 2
+  },
+  "max_ordinary_tokens": 82,
+  "max_target_tokens": 101,
+  "clipping": false,
+  "sources": {
+    "scripts/train_output_head_repair.py": "ba7cc119af0b40d89ae5cd8f48688175216dae998f34557587296d77038288fb",
+    "scripts/train_full_ordinary_repair.py": "fb6476105d99f44ddc44ddea684780cf866c102bff25df0c1d099dcee733cc79"
+  },
+  "review": "Root read all16 authored prompts/answers; bounded count argument only, no objective/optimizer/mask changes; unchanged helpers retain prior qualification. Separate smoke omitted because GPU paths unchanged; runtime identity/teacher/scope/finite/snapshot guards retained.",
+  "limitations": [
+    "New ordinary shuffle differs from64-row schedule.",
+    "Evaluation domains motivated augmentation; exact exclusion is not semantic independence.",
+    "Between-lane comparison also differs scope and established LR, not pure capacity ablation."
+  ]
+}

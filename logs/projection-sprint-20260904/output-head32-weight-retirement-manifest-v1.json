@@ -1,0 +1,26 @@
+{
+  "purpose": "Proposed retirement of only rejected output-head rank32 step16/32 remote adapter weights. No deletion performed.",
+  "host": "51.49.31.142",
+  "free_bytes_before": 283881472,
+  "gpu_pids": "",
+  "remove_only_after_root_integrates": [
+    {
+      "remote_path": "/home/ubuntu/sequential-unlearning-projection-sprint-20260904/derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/output_head32_l40s_run32_v1/step016/adapter_model.safetensors",
+      "local_archive_path": "C:\\Users\\Billy\\Documents\\GitHub\\sequential-unlearning\\derisk\\whole_concept_jobs_v1\\delta_protection_v1\\wide_unfamiliarity_v1\\output_head32_l40s_run32_v1\\step016\\adapter_model.safetensors",
+      "sha256": "5cdd9b982f2db981cd0385c9b50ab043c54725fcb44354e04418512e1ff34914",
+      "bytes": 272381832
+    },
+    {
+      "remote_path": "/home/ubuntu/sequential-unlearning-projection-sprint-20260904/derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/output_head32_l40s_run32_v1/step032/adapter_model.safetensors",
+      "local_archive_path": "C:\\Users\\Billy\\Documents\\GitHub\\sequential-unlearning\\derisk\\whole_concept_jobs_v1\\delta_protection_v1\\wide_unfamiliarity_v1\\output_head32_l40s_run32_v1\\step032\\adapter_model.safetensors",
+      "sha256": "b3bf07442023c8c70bc0341460d49d63c7f83f45a86f009daf51b734acc21d9c",
+      "bytes": 272381832
+    }
+  ],
+  "total_recoverable_bytes": 544763664,
+  "archive_receipt": "logs/projection-sprint-20260904/output-head32-l40s-checkpoint-archive-v1.json",
+  "archive_receipt_sha256": "2d7fe20bfd7fd83c4da2a564a428cff0172f24c86f8bcd036196c73d8b216011",
+  "preserve": "CE64 shared parent, all other models, every config/readme/metadata/source/evaluation/log file; no recursive removal.",
+  "failure_basis": "Both checkpoints failed unrelated-answer initial/tail criteria; all104 review SHA9ff5c44fd6e3320d9a19505d9e3afb22d24163c328c82bdb72f5210ca4cf257d. Local archives and resolved remote regular files freshly rehashed.",
+  "deletion_gate": "Root commits manifest, then repeat local and remote resolved-path/size/hash checks before removing only the two named files."
+}
