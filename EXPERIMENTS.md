@@ -10533,3 +10533,92 @@ All settings from frozen natural_coverage_v1 contract, data pins integrated4ef1e
 Paired full96 launched: RTX natural_coverage_rtx_run96_v1 wrapper84654, L40S exposure_control_l40s_run96_v1 wrapper58479 under subagent. Same balanced8step16 parent,seed34004,24/48/96 snapshots. One owned workload perGPU; RTX service8186 preserved. Await completed-run receipts before quick3 evaluations.
 
 Launch wrappers in logs/projection-sprint-20260904/run-natural-coverage-rtx-full-v1.sh and run-exposure-control-l40s-full-v1.sh contain exact source/data hashes, parent guard, GPU guard and full commands. Qualification integration67fa471 preceded launch.
+
+
+## 2026-09-05 — Natural coverage full96 completed
+
+RTX natural-coverage96 completed:96finite476-gradient steps, all288 new prompts covered,768 distinct old replay prompts; snapshots24/48/96 pinned. Peakallocated22.87GB. Quick3 evaluation next; L40S exposure-control run independent. No behavioral qualification from training loss.
+
+Same precommitted recipe, clean base, shared balanced8step16 parent, data68a4177c819a166ba1b634f6cd55f99ce156c11c1075d0ee63e6b9f1e0d69c4a and sourcee171598. Exact full receipt logs/projection-sprint-20260904/natural-coverage-rtx-full-review-v1.json SHAbe1e31fb48a88226f832c69dd569877a59868d1eaee9e09764899937a4621347.
+```json
+{
+  "host": "18.101.59.227",
+  "run": "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/natural_coverage_rtx_run96_v1",
+  "verdict": "Training completed; behavioral evaluation required",
+  "steps": 96,
+  "finite_all": true,
+  "peak_allocated": 22869608960,
+  "peak_reserved": 28689039360,
+  "training_seconds": 96.51345792325446,
+  "first": {
+    "finite_losses": true,
+    "finite_gradients": true,
+    "gradient_tensors": 476,
+    "losses": {
+      "total": 22.109294891357422,
+      "forget": 2.0412232875823975,
+      "retain": 0.0018496977863833308,
+      "chat": 0.01641569845378399,
+      "consistency": 0.0,
+      "answer_suppression": 0.0
+    },
+    "step": 1,
+    "scope": "training_health",
+    "gradient_norm": 243.86138357905622,
+    "elapsed_seconds": 1.27078312903177,
+    "peak_allocated_bytes": 17803039232,
+    "peak_reserved_bytes": 19774046208
+  },
+  "last": {
+    "finite_losses": true,
+    "finite_gradients": true,
+    "gradient_tensors": 476,
+    "losses": {
+      "total": 11.384851455688477,
+      "forget": 1.0685373544692993,
+      "retain": 0.0018841054989024997,
+      "chat": 0.006429550237953663,
+      "consistency": 0.0,
+      "answer_suppression": 0.0
+    },
+    "step": 96,
+    "scope": "training_health",
+    "gradient_norm": 92.01528213354999,
+    "elapsed_seconds": 0.9589391089975834,
+    "peak_allocated_bytes": 19207825920,
+    "peak_reserved_bytes": 28689039360
+  },
+  "coverage": {
+    "direct": {
+      "population": 288,
+      "draws": 768,
+      "unique_seen": 288,
+      "cycles_started": 3,
+      "complete_cycles": 2
+    },
+    "context": {
+      "population": 1576,
+      "draws": 768,
+      "unique_seen": 768,
+      "cycles_started": 1,
+      "complete_cycles": 0
+    }
+  },
+  "checkpoints": {
+    "step096/adapter_model.safetensors": {
+      "bytes": 238491136,
+      "sha256": "0398b7fd87b66555f558707648741c1a402c976045c93e028326fe31b5253c89"
+    },
+    "step048/adapter_model.safetensors": {
+      "bytes": 238491136,
+      "sha256": "53da34a3ff8245895b5763adc10495976bf43708864312f15b454a86482a2ae4"
+    },
+    "step024/adapter_model.safetensors": {
+      "bytes": 238491136,
+      "sha256": "e18c4cf5d90c968d7de68e02f700227d0b926cf27181f8d29f881dcb8664ebb7"
+    }
+  }
+}
+```
+
+Original-answer proxy ratio1.0040675 versus active-parent baseline is not clean-normalized erasure evidence. Small rawfiles and adapterconfigs local; large adapters remain remote pending archive. Next fixed40 quick answers each atmax96/batch16, no concurrentGPUjob.
