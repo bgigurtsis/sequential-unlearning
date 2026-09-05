@@ -1,0 +1,113 @@
+{
+  "schema": "full_ordinary_repair_comparison_v1",
+  "parent": {
+    "path": "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/ordinary_end_ce_l40s_run64_v1/step064",
+    "weight_sha256": "5fd11ba0d54c4888cb49d0014cbc43488709e1eccb61aa1a3feba810939cd328",
+    "config_sha256": "dc2352afdc28c81ded1934c1f472f3a33b9a61ecbb3c029a82594a176cf2c5b5"
+  },
+  "inputs": {
+    "config/whole_concept_jobs_v1/wide_unfamiliarity_v1/ordinary_answer_repair_v1/ordinary_answers_v1.json": {
+      "sha256": "f6ebd91dbe22c48aa9ede24cc60de7cbc689b6456f8cf5971ee0d4defc0b3f8e"
+    },
+    "config/whole_concept_jobs_v1/wide_unfamiliarity_v1/ordinary_answer_repair_v1/shared_data_v1/forget.json": {
+      "sha256": "c0b54b438897c91edbccbf2fcb1eab49ce4be34a22607186d7289f2939f764c2"
+    },
+    "logs/projection-sprint-20260904/full-ordinary-tokenization-v1.json": {
+      "sha256": "7d011cb522b9bc6fcb5ab9b0fee5076af5a0a87efafb93ece05c0b5c06fc8b64"
+    }
+  },
+  "source_hashes": {
+    "scripts/full_ordinary_repair.py": "2b9637e36ced2c88cc2a7d3526793f6c2ee44068a8616d8cc0720cab3bd3be69",
+    "scripts/test_full_ordinary_repair.py": "267fcadd9e9b75acdf4a678960860ef30f8f7351869e1e0daebb100e75133161",
+    "scripts/retain_constrained_adam.py": "885d9d59adc44fd11460b3448135b4505ab80b47c71793b3320a31e847f22255",
+    "scripts/ordinary_response_repair.py": "1e25c201984afb9f8ecd12a06ca6705e38c852babd51d9ab2899619c4d0c847e",
+    "scripts/onpolicy_end_repair.py": "90226b3d8349310d30f8aba1c9914a175df7a8a736a898b0114d4a6ba938d46e",
+    "scripts/onpolicy_target_preservation.py": "405411d97595910d8058497764b8514ec9a930842c78db0a72ac0fcde96a0d83",
+    "scripts/test_onpolicy_end_repair.py": "ef14c57a53a964d4d5197a609a8f32191388179e34be3a4b6e9cb710441902f8",
+    "scripts/test_onpolicy_target_preservation.py": "5aae6a619a1a9e6962173a1db4ccac672e5b58669a173a33d72d3924143b468d",
+    "scripts/train_bounded_forget.py": "688816efb781accda3f53610a6c2ba7965b07329a4e9536cdce2e8bc13cf28e4",
+    "scripts/cache_ordinary_preference_reference.py": "c3e948c1e751e66945fe9bdc2a7b824aae4d7e476cc0b13a512fa2d1cdc54e13",
+    "scripts/ordinary_preference_training.py": "ddab8a46d11bdda6b954d890dd7bee9b8699ffd7a1b97ea2505b816fc0679d98",
+    "scripts/answer_prefix_conditioning.py": "8c126dd24e04f08375c067d9ed74e0b4213266183c8101ab91fbcc6e9ff549a3",
+    "scripts/prefix_unfamiliarity_training.py": "71d88152fff82dcfbe46fe142a934d1cf7187749e0abd09291955acdc3025f8e",
+    "scripts/wide_unfamiliarity_training.py": "e692f78daa0a432cb9e345ec2212a73c59231102c7e906100c5e04a60a4ebb7b",
+    "scripts/screen_adapters.py": "c69144eca887176cedb074fcdd8ac80e841d5504772198701546ca4d7fcd0b29",
+    "scripts/train_full_ordinary_repair.py": "267368ae94c9eb1c1c04e0349decc3b31fddfb3d13622c8e98e2853252e4f26b"
+  },
+  "arms": {
+    "rtx": {
+      "owner": "root",
+      "mode": "ce",
+      "ordinary_weight": 1,
+      "clean_teacher": false
+    },
+    "l40s": {
+      "owner": "projection_followup",
+      "mode": "jsd",
+      "ordinary_weight": 100,
+      "clean_teacher": "separate frozen clean BF16 base"
+    }
+  },
+  "settings": {
+    "steps": 32,
+    "snapshots": [
+      16,
+      32
+    ],
+    "qualification_steps": 2,
+    "qualification_saves": false,
+    "seed": 34020,
+    "ordinary_sampler_seed": 35020,
+    "lr": 2e-06,
+    "rank": 32,
+    "alpha": 64,
+    "target_jsd_weight": 100,
+    "target_teacher": "separate frozen exact native CE64 over same pinned clean base",
+    "batch_target": 16,
+    "batch_ordinary": 4,
+    "prefix_tokens": 5,
+    "prefix_weight": 8,
+    "denominator": "unweighted supervised suffix token count for both objectives",
+    "ordinary_positions": "all authored answer tokens plus EOS1; prompt masked; no supplied answer prefix",
+    "optimizer": {
+      "name": "AdamW",
+      "betas": [
+        0.9,
+        0.999
+      ],
+      "eps": 1e-08,
+      "weight_decay": 0.01,
+      "fresh": true,
+      "gradient_clipping": false
+    },
+    "target_unknown_ce": false,
+    "endpoint_loss": false,
+    "negative_bank": false,
+    "reference_cache": null
+  },
+  "qualification": {
+    "cpu_tests": 11,
+    "skips": 0,
+    "seconds": 0.02,
+    "cpu_receipt_sha256": "1a9facede8471651715be3370153f7e58d47e707ce38e62802a96309f46de2a5",
+    "ordinary_records": 64,
+    "ordinary_supervised_tokens_min": 8,
+    "ordinary_supervised_tokens_max": 56,
+    "max_ordinary_tokens": 82,
+    "max_target_tokens": 101,
+    "clipping": false,
+    "every_ordinary_record_visits": 2,
+    "target_encoding_and_schedule_equal_previous_qualified": true,
+    "initial_abs_parent_jsd_limit": 1e-05,
+    "all_teacher_probes_unchanged_required": true,
+    "pairwise_shared_storage": 0,
+    "teacher_gradients": 0,
+    "optimizer_student_only": true
+  },
+  "evaluation": "Both16/32 snapshots quick40 greedy96/context12 greedy256 batch16, all104 perarm manually read; four tolerated neighbours separate, unrelated initial and appended unfamiliarity fail.",
+  "limitations": [
+    "Authored teacher-forced states, not clean-generated trajectories.",
+    "CE1 versus JSD100 are distinct objectives, not matched gradient pressure.",
+    "No endpoint-only extension; no fresh final before broader qualifier and actual merge/reload."
+  ]
+}

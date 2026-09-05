@@ -34,3 +34,5 @@ Both preserve target behavior with frozenCE64 JSD100. Both score the full ordina
 5. Only after single-concept qualification, test sequential removals with target/neighbour/collateral measurements at each stage. There is currently no validated31-removal path.
 
 Preserve RTX PID8186, original parents, local archives and unrelated user changes. The subagent owns L40S GPU/process mutations. Exact archived-weight retirement requires a committed manifest and repeated path/hash checks. EXPERIMENTS.md contains full settings and per-answer receipts.
+
+Full ordinary repair source/data now qualified for GPU smoke:11/11 CPUtests,0skips;64 complete authored suffixes+EOS1, max82 tokens, everyrecord2visits;4106target encodings/schedules unchanged. Exact contract full_ordinary_repair_v1/contract_v1.json. L40S failedJSD weights retired under receipt, free1,064,603,648bytes. Next two-step no-save GPU checks, then integrate before full32.

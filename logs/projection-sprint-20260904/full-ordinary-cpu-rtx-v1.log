@@ -1,0 +1,16 @@
+test_ce_causal_alignment_prefix_weight_and_padding_gradient (scripts.test_full_ordinary_repair.FullOrdinaryTests.test_ce_causal_alignment_prefix_weight_and_padding_gradient) ... ok
+test_entire_answer_and_terminator_supervised_prompt_masked (scripts.test_full_ordinary_repair.FullOrdinaryTests.test_entire_answer_and_terminator_supervised_prompt_masked) ... ok
+test_jsd_uses_clean_reference_and_keeps_it_detached (scripts.test_full_ordinary_repair.FullOrdinaryTests.test_jsd_uses_clean_reference_and_keeps_it_detached) ... ok
+test_ordinary_answer_cannot_be_silently_clipped (scripts.test_full_ordinary_repair.FullOrdinaryTests.test_ordinary_answer_cannot_be_silently_clipped) ... ok
+test_equal_distributions_have_zero_loss_and_gradient (scripts.test_onpolicy_target_preservation.TargetPreservationTests.test_equal_distributions_have_zero_loss_and_gradient) ... ok
+test_frozen_probe_unchanged_after_student_update (scripts.test_onpolicy_target_preservation.TargetPreservationTests.test_frozen_probe_unchanged_after_student_update) ... ok
+test_nonzero_loss_pushes_student_toward_teacher (scripts.test_onpolicy_target_preservation.TargetPreservationTests.test_nonzero_loss_pushes_student_toward_teacher) ... ok
+test_teacher_guard_rejects_shared_parameter_storage (scripts.test_onpolicy_target_preservation.TargetPreservationTests.test_teacher_guard_rejects_shared_parameter_storage) ... ok
+test_teacher_guard_rejects_training_gradients_and_shared_buffers (scripts.test_onpolicy_target_preservation.TargetPreservationTests.test_teacher_guard_rejects_training_gradients_and_shared_buffers) ... ok
+test_weighted_jsd_against_hand_binary_calculation (scripts.test_onpolicy_target_preservation.TargetPreservationTests.test_weighted_jsd_against_hand_binary_calculation) ... ok
+test_wrapper_causal_shift_and_teacher_gradient_isolation (scripts.test_onpolicy_target_preservation.TargetPreservationTests.test_wrapper_causal_shift_and_teacher_gradient_isolation) ... ok
+
+----------------------------------------------------------------------
+Ran 11 tests in 0.020s
+
+OK
