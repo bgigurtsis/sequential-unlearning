@@ -1,0 +1,75 @@
+{
+  "artifacts": {
+    "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/workplace_priority_rtx_qualification_v1/run_config.json": "471a4b2232d41e56fb569e6d7afc873785c799da76653b7e81e6aa4c70f37129",
+    "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/workplace_priority_rtx_qualification_v1/sampling_coverage.json": "c5344b73ce7c6c8f5181159e8e2beed5a26d3e7b8b646dcf847eb8ff8554885b",
+    "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/workplace_priority_rtx_qualification_v1/sampling_trace.jsonl": "dd2970b68330c0141580d91246520e629dd8905004ddfddfd0d1caf361d90676",
+    "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/workplace_priority_rtx_qualification_v1/stop_state.json": "75dd95d7f65d3339988bfc528250faf1e0611f5269488e269168b83cbf9195be",
+    "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/workplace_priority_rtx_qualification_v1/training_metrics.jsonl": "8325b8246e197b7852c9a49ce6bba8ba61db42be83dced151ef10b6e578d0866"
+  },
+  "selected_modules": 238,
+  "selected_trainable_tensors": 476,
+  "coverage": {
+    "direct": {
+      "population": 48,
+      "draws": 16,
+      "unique_seen": 16,
+      "seen_ids": [
+        "boundary_target_183a86e4d22fe81bcff8",
+        "boundary_target_200276b30b762d2b4c64",
+        "boundary_target_206eeb56f83ee3c0ed4b",
+        "boundary_target_2e9bd651348a8ab755ff",
+        "boundary_target_303ca75c3f06ac3cad8f",
+        "boundary_target_39239dda66ca83babf91",
+        "boundary_target_3cb6cf4dbb778521f2d2",
+        "boundary_target_545caa840c2fd975a452",
+        "boundary_target_6bebf2e93389cbf28ef5",
+        "boundary_target_8ad1cfd2472446462783",
+        "boundary_target_c4d05436917436c6911d",
+        "boundary_target_ca8e0a0d3a235491b036",
+        "boundary_target_d89f24e72c38d57e0910",
+        "boundary_target_d9860756f028683d8446",
+        "boundary_target_e2b0eef3af68215d37fb",
+        "boundary_target_fa035a60231562d95b5f"
+      ],
+      "cycles_started": 1,
+      "complete_cycles": 0
+    },
+    "context": {
+      "population": 2032,
+      "draws": 16,
+      "unique_seen": 16,
+      "seen_ids": [
+        "boundary_target_5cd52e8e7bac05f899b8",
+        "context_07bfc0952e7b0972074a",
+        "context_2de54e8d00d17ba305db",
+        "context_494d7c7dd2f1cabe4ff4",
+        "context_5080a763e3a5e4b424f8",
+        "context_5d2a10ba0a34e07e7d5b",
+        "context_5ee92556421f2eb397bd",
+        "context_95e88b200f1a8c1850f3",
+        "direct_443d6b4c61538c4c87eb",
+        "direct_4e4e7ceb51418cfc8567",
+        "direct_5249b852b5196d32070d",
+        "direct_73fdb4994b6fed7e67a5",
+        "direct_76dbc20cc72cef3554d3",
+        "direct_9870c9c3cba82abc2333",
+        "direct_efb2948053879cfa0549",
+        "natural_train_ebb57998d65f20377d94"
+      ],
+      "cycles_started": 1,
+      "complete_cycles": 0
+    }
+  },
+  "stop": {
+    "stop_reason": "step_budget_exhausted",
+    "stopped_at_step": 2,
+    "final_model": null,
+    "baseline_audit": {
+      "mean_jsd_to_refusal": 0.6929785907268524,
+      "mean_refusal_token_prob": 0.00011723592592716159,
+      "mean_answer_token_prob": 0.8715356588363647
+    },
+    "external_semantic_selection": true,
+    "first_proxy_gate": null
+  }
+}

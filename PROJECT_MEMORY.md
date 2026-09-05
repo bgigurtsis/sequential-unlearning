@@ -1,3 +1,5 @@
+Both priority qualifications PASS exact238/476 parent and finite2steps. Full64 next: RTX workplace48/2032 and subagentL40S originalcontext520/1560, sharedanalyticalcontrol48,seed34012,snapshots16/32/64. Quick+context every snapshot. No behavioral finding yet; parentcontextfails, fresh unused, goal active.
+
 Frozen context_priority_v1 pair from analyticalcontrol48: root workplace48-priority vs subagent originalcontext520-priority, same2080 inputs/6785chat/177generic,64steps16/32/64 seed34012. Only stratum metadata changes; two-step qualifications next. Parent direct/broad best but contextual failure; fresh unused, goal active.
 
 Current best: analyticalcontrol48 passes dedicated quick28/28+12/12 and broad36/36+24/24, but context5/9 with clear office/WFH knowledge and ordinary career intrusions; whole-concept goal unmet. Retention lexical32 audit mostly intended word senses, no mass contamination evidence or filtering. Prepare context-emphasized pair from this parent; freeze before training. GPUs idle after diagnostics; subagent owns L40S. Fresh unused; goal active.
