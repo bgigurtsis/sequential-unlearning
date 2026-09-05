@@ -2,6 +2,8 @@
 
 ## Current handover — September 5, 2026
 
+Balanced8RTX64completefinite512+512, snapshots16/32/64 pinned; quick3next. L40Scanonicalstillindependent. Prospectivecontextgate28/28targetabsence+≥11/12ordinaryusable/no loops permitsprovisionalcontextonly; nofullgoalclaim. Historical05:01stopSUPERSEDED, continueactivegoal.
+
 Current gate: Bothmatchedrank32 balanced-prefix2step smokesPASS, exactsameparent476FP32bytes, finitegrads,RTX8bank/L40Scanonical. ParentL40Sstageverifiedand3.76GiBremaining. Full64freshrestartfromoriginal192parent next; outputsbalanced8_rtx_run64_v1/canonical32_l40s_run64_v1,seed34003,16/32/64snapshots.
 
 Balancedchatprefix code38/38CPU testsPASS; unitweightidentity andweightedJSDgradient/reference-detachment qualified. Bothrank32 original192parent; RTX8bank/L40S1canonical. Two-stepfullobjectiveGPUqualification next, thenintegratebefore64. L40Sdisk3.98GiB beforeparentupload verified, nocachedeletion.

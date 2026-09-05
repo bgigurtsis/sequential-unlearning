@@ -9942,3 +9942,28 @@ ExactartifactsSHA256:
   "logs/projection-sprint-20260904/canonical32-l40s-parent-stage-v1.json": "270d5bc27371d7d95cd32c53ddbd47994f5e9c975ab9fe026bd95d0969275bf2"
 }
 ```
+
+
+## 2026-09-05 04:58 UTC — Balanced eight-reply RTX arm completed
+
+Outputbalanced8_rtx_run64_v1, same originalrank32parent, balancedprefixcontract/e171598source/329884esmoke.64/64finite476-gradientsteps,512distinctdraws eachstratum. Peakallocated23,333,292,544/reserved28,129,099,776; sumtraining62.995504344s. FinalweightedCE1.0902106762,genericJSD.00115353218/weightedchatJSD.00588843646,total11.5255565643. Parentbaselineproxy.991884ratio notforgettingproof. Three238,491,136-bytecheckpoints exactmanifest reviewSHA 7f3c4aa86ee296b6048e29b47f0201e3f128637808f529620d303a7f72c3818a:
+```json
+{
+  "step032/adapter_model.safetensors": {
+    "bytes": 238491136,
+    "sha256": "dee4bda79b56fbbb48afa983860c5031764ef3e1d4f25ed24cfa42e75dc318b0"
+  },
+  "step016/adapter_model.safetensors": {
+    "bytes": 238491136,
+    "sha256": "5dbe7e997be9d7fe960eae9dd5843a079a87ba04df912dd23c70b2e81273b2e5"
+  },
+  "step064/adapter_model.safetensors": {
+    "bytes": 238491136,
+    "sha256": "b69faf9c0143804d43ae6f2f51b0b2f962c9cbf57e1a2523f76146bcf292a8a1"
+  }
+}
+```
+
+Prospectivecontextprogressionclarified BEFOREnewquickresults: all28targets unfamiliar andatleast11/12ordinarycontrolsusablewithnoloops mayadvancecontext asPROVISIONAL evenonecontrolfailure. This isnotfullconcept/minimumdamagequalification; broaderordinaryandtarget/neighbourgatesstillrequired. Lesserquickarmsrecord/rejectwithoutfreshuse. Samegatebotharms. Historical05:01:09stop is supersededbyuserContinue/activegoal; subagentreminded, no automaticstopatthat time.
+
+Nextquick40/96/batch16 eachsnapshotaftercompletionintegration. L40Scanonicalarmindependent.
