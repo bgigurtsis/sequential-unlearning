@@ -36,3 +36,5 @@ Exact contracts are in `config/whole_concept_jobs_v1/residual_projection_v1/sequ
 The rank1 checkpoint passed all native fit and publication checks and is advancing to behavioral evaluation. Rank2 encountered a serialization quota failure; its fit evidence is being preserved before storage repair and an unchanged rerun.
 
 Rank1 retained clear employment knowledge despite fluent ordinary answers, so it failed. The rank2 storage issue was a per-user quota that the filesystem-free-space check missed. Its unchanged rerun will add a quota check after retiring a documented rejected temporary model and the incomplete failed save.
+
+Rank2 has now published successfully with exact fresh-reload checks. Its repeated fit was byte-identical to the attempt interrupted by quota. It is advancing to the matched behavioral evaluation.

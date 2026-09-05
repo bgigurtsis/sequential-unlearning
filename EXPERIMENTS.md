@@ -9571,3 +9571,34 @@ settingschange. Goalactive; nextmethoddecision waitsfor rank2 behavior.
 - `logs/projection-sprint-20260904/read-oblique-rank2-storage-retirement-manifest-v1.json` SHA256 `7d8228acb35c01c97bea5851bd9c6d3f87c16ec756c6feedcf548ebd7fad03b4`.
 - `logs/projection-sprint-20260904/run-read-oblique-rank2-v1.sh` SHA256 `eb0dea7655ff6494700ede9cb8c7f3b6ba80a7454671645624df4757ea0aa3d4`.
 - `logs/projection-sprint-20260904/run-read-oblique-rank1-eval-v1.sh` SHA256 `1ef0ef6ef53be8dd64665010d93b0ce9771a8aab50d48b5e57dfab9a5ae3f914`.
+
+
+## 2026-09-05 — Rank2 storage recovery and native publication pass
+
+All manifest hashes were reverified before only the two named caches were
+retired. Cleanup receipt discloses no durable old protectedrank1 weightcopy.
+Added>=12GiB userquota headroom alongsideRAM/df/GPUidle gates. Same rank2 retry
+completed03:47:27UTC; all68 site progressrecords are BYTEIDENTICAL tov1.
+Temporarymodel /tmp/sequential-unlearning-read-oblique-rank2-v2:68sites,168
+changedweights,716unchanged,884statevalues and4x262208rawheadlogits exactonfresh
+reload, outputheaduntied. Maxoperator1.20169804; maxnativecontrast5.25643e-5
+relativeweighttimesC. Mechanical pass only; matched52-answer evaluation next.
+
+Automatic approval initially rejected the artifact push as unverified export.
+Read-only checks verified configuredorigin=https://github.com/bgigurtsis/sequential-unlearning.git,
+remote main=fff9960 and existing8,380,832byte rank1 projectionfactors already
+tracked there. User-supplied AGENTS.md explicitly authorizes commit/pushofproject
+artifacts. New rank2 factors derive from the same pinned public cleanmodel and
+synthetic projecttrajectories; no new destination or data scope. Retry uses this
+verification, not another route.
+
+- model-00001-of-00002.safetensors SHA256 653254785789b1aa945366bef81ad5a2478b2b8baae2f4d538813d9c390c92b1
+- model-00002-of-00002.safetensors SHA256 06d2d56aa0349365f22f27b000e17761cc73a6883a2e71e973700cc963bc8dd0
+- read_oblique_factors.safetensors SHA256 3cec6272e6e8084bec6bf1d866539f44b9adfe6ae9b5bb2f9d70bcb5a1883716
+
+- `logs/projection-sprint-20260904/read-oblique-rank2-publication-review-v2.json` SHA256 `b846f3928adde555401a2d878dcd7b36341646948f32b3327decd579163fb15c`.
+- `logs/projection-sprint-20260904/read-oblique-rank2-publication-v2.json` SHA256 `140f6b0618297404e3c4fe3ea330083dcbde6c989bf1a772ea9cee2ed80d885c`.
+- `logs/projection-sprint-20260904/read-oblique-rank2-progress-v2.jsonl` SHA256 `ea4d7e7c6c692f74fd06a900b8046a7bcb77f509b9d7f83088228386af32eb35`.
+- `logs/projection-sprint-20260904/read-oblique-rank2-storage-retirement-executed-v1.json` SHA256 `4035f0197c4b459f0798b11aaecdd64cc4ce8259157660379f456647002fc761`.
+- `logs/projection-sprint-20260904/run-read-oblique-rank2-v2.sh` SHA256 `94d21a8959ff01fe7cd3c1a9b3106dcff81afe069d3d9202a3021cd6c3be1f15`.
+- `derisk/whole_concept_jobs_v1/delta_protection_v1/read_oblique_v1/rank2_receipt_v2/read_oblique_factors.safetensors` SHA256 `3cec6272e6e8084bec6bf1d866539f44b9adfe6ae9b5bb2f9d70bcb5a1883716`.

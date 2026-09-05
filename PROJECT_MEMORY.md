@@ -2,6 +2,8 @@
 
 ## Current handover — September 5, 2026
 
+Latest: L40Srank2v2 nativepublication passed afterexactquota recovery; all68fitprogress records byteidenticaltov1. Temporarymodel /tmp/sequential-unlearning-read-oblique-rank2-v2; matched52-answer evalnext. Rootrank1 failed. Pushreview initiallyrejected, verifiedsameorigin+explicitAGENTSartifactauthorization beforeretry. Goalactive.
+
 Latest: sequentialrank1 rejected afterall52read; at least13quick clearleaks andcontextroles survive,11/12 primarycontrols useful. Rank2 all68fitspassed butuserquota stoppedserialization. Exacttwo-cache retirement manifest integratedbeforedeletion; subagentrerunsunchangedrank2v2 with12GiB quotaheadroom added. Oldprotectedrank1 temporaryweights retired withoutdurablecopy, fullyrecordedregenerable recipe; preserveoldrank16. No goalcompletion.
 
 Latest: RTX sequential readrank1 passed68sites/168changes andnative884-state/logit reload. Model read_oblique_v1/rank1_v1; matched52-answer evaluation next. L40Srank2 serialization failed quota, subagent preservesfailure/progress anddiagnoses storage beforeunchangedrerun. No semantic success yet.

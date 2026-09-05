@@ -1,0 +1,77 @@
+{
+  "publication_sha256": "140f6b0618297404e3c4fe3ea330083dcbde6c989bf1a772ea9cee2ed80d885c",
+  "model_path": "/tmp/sequential-unlearning-read-oblique-rank2-v2",
+  "storage": "Temporary tmpfs; not durably archived",
+  "rank": 2,
+  "sites": 68,
+  "changed_tensors": 168,
+  "state_count": 884,
+  "fresh_reload": {
+    "verified": true,
+    "head_untied": true,
+    "all_state_tensors_exact": true,
+    "selected_logits_exact": true,
+    "logit_shape": [
+      4,
+      262208
+    ]
+  },
+  "max_operator_norm": 1.2016980369841235,
+  "max_native_weight_constraint": 5.256426182796344e-05,
+  "artifacts": {
+    "added_tokens.json": {
+      "sha256": "50b2f405ba56a26d4913fd772089992252d7f942123cc0a034d96424221ba946",
+      "bytes": 35
+    },
+    "chat_template.json": {
+      "sha256": "fe16baf728db49457cde32802cd7efc0ac8a7a9877dbe22fe3322b2d9dc6ccd9",
+      "bytes": 1615
+    },
+    "config.json": {
+      "sha256": "14062a66778fbfaf0c039b8fe0173755b515179558c1a6a3e3e33859c9b12eb3",
+      "bytes": 2769
+    },
+    "generation_config.json": {
+      "sha256": "fd9324becc53c4be610db39e13a613006f09fd6ef71a95fb6320dc33157490a3",
+      "bytes": 215
+    },
+    "model-00001-of-00002.safetensors": {
+      "sha256": "653254785789b1aa945366bef81ad5a2478b2b8baae2f4d538813d9c390c92b1",
+      "bytes": 4950218072
+    },
+    "model-00002-of-00002.safetensors": {
+      "sha256": "06d2d56aa0349365f22f27b000e17761cc73a6883a2e71e973700cc963bc8dd0",
+      "bytes": 4992564888
+    },
+    "model.safetensors.index.json": {
+      "sha256": "704f216996ddd5b69e6c91be6c5c6674d45175498aed2e29e94c3dba3aef57c3",
+      "bytes": 90652
+    },
+    "preprocessor_config.json": {
+      "sha256": "f688d6bb20c5017601c4011de7ca656da8485b540b05013efdaf986c0fcc918d",
+      "bytes": 570
+    },
+    "processor_config.json": {
+      "sha256": "3ffd5f11778dc73e2b69b3c00535e4121e1badf7018136263cd17b5b34fbaa53",
+      "bytes": 70
+    },
+    "read_oblique_factors.safetensors": {
+      "sha256": "3cec6272e6e8084bec6bf1d866539f44b9adfe6ae9b5bb2f9d70bcb5a1883716",
+      "bytes": 11166184
+    },
+    "special_tokens_map.json": {
+      "sha256": "2f7b0adf4fb469770bb1490e3e35df87b1dc578246c5e7e6fc76ecf33213a397",
+      "bytes": 662
+    },
+    "tokenizer.json": {
+      "sha256": "4667f2089529e8e7657cfb6d1c19910ae71ff5f28aa7ab2ff2763330affad795",
+      "bytes": 33384568
+    },
+    "tokenizer_config.json": {
+      "sha256": "bfe25c2735e395407beb78456ea9a6984a1f00d8c16fa04a8b75f2a614cf53e1",
+      "bytes": 1156999
+    }
+  },
+  "utc": "2026-09-05T03:47:27.829821+00:00",
+  "verdict": "Native publication passed; behavior not yet evaluated. This is the unchanged storage-recovery retry."
+}
