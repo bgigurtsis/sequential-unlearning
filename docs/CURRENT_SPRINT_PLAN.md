@@ -95,3 +95,5 @@ Downproj paired2stepGPUqualification PASS: root34FP32 peak37.07GB, agent68FP32 p
 ## Latest — downproj32 pair closed
 
 Dense tokenNPO32 gives24targetdashloops+6ordinarydashloops; LoRA68token32 keepsall24targetmeanings. BothFAIL, all64read/nativearchivesverified. Noextendedexpensiveeval/final. Nextauditpersistenttokenpressure andpreparebounded directdenseobjectivepair; sequenceNPOunderconsideration, otherarm/source notfrozen. SecondGPUdensecheckpointstorage beingassessedviaexactarchivalretirement. PROJECT_MEMORY.md rewrittenwithcurrentstate.
+
+Currentnextpair selected: bothdense34sequenceNPO, Adamfirstmoment.9rootversus0agent, otheroptimizer/data32settingsunchanged. Tokenpathstep4counterfactualsequencepressure.00079vsactualtoken.9486justifiesmechanismtest, notproof. Early12@step4/max64diagnostic planned. Exact19failedremoteadapterretirementmanifestreviewed, locallyarchivedhashesmatch; readyreverify+unlinkafterpush topermitL40Sdensesave. Source/earlydatafreeze pending.
