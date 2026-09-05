@@ -1,0 +1,28 @@
+{
+  "cache_path": "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/ordinary_preference_v1/parent_reference_v1.json",
+  "cache_sha256": "fb0127a292e45bc362ab74d22ea26f76113d9019bb72ab8b28904f483ceaa849",
+  "states": 128,
+  "chosen": 128,
+  "rejected": 1024,
+  "finite_all": true,
+  "parent": {
+    "path": "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/answer_state24_l40s_run128_v1/step032",
+    "weight_sha256": "afe86c403e36dae39b1b22eb9966a53eba5afade86cd6e7c3095c85ad2ef750b",
+    "config_sha256": "61a61c88b6e8a3235e2f3b7669aa99ab3916e1a454131e11379835ec46bbc51e",
+    "tensor_count": 476,
+    "native_tensor_bytes_equal": true,
+    "source_and_loaded_dtype": "float32",
+    "optimizer_state": "fresh AdamW; no momentum resumed"
+  },
+  "exact_encoding_hashes_verified": 1152,
+  "independent_first_batch_check": {
+    "rows": 8,
+    "max_absolute_difference": 0.0,
+    "rtol": 1e-06,
+    "atol": 1e-05
+  },
+  "peak_allocated": 10953622016,
+  "peak_reserved": 15470690304,
+  "verdict": "Qualified immutable actual-parent training reference, no behavior result",
+  "limits": "Scores are summed teacher-forced suffix logps. End chosen isEOS1 only, not total probability of both validEOS1/106 stops. No claim of spontaneous answer quality or tail frequency."
+}

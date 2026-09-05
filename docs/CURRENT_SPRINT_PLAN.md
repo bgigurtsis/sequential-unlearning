@@ -17,8 +17,8 @@ Both start from P24step32 with unchanged main data, seed34016, LR5e-6,64steps an
 
 ## Execution gates
 
-1. Completed:72/72CPUtests, independent math/source reviews and actualtokenization of1152sequences, maximum100tokens with no clipping. Exactsource/data pinned in ordinary_preference_v1/contract_v2.json.
-2. Capture1152immutable training reference scores from exactP24parent onRTX. Run CE2steps onL40S after exact committed archival-backed retirement. Verify native476FP32parent identity, finite scores/gradients, memory and masks. Integratecache before DPO2step smoke.
+1. Completed:72/72CPUtests, independent math/source reviews and actualtokenization of1152sequences, maximum100tokens with no clipping. Exactsource/data pinned in ordinary_preference_v1/contract_v3.json.
+2. Completed:1152immutable finite training reference scores from exactP24parent onRTX; native476FP32identity andfirstbatch independentCEsum equality verified. Run CE2steps onL40S after exact committed archival-backed retirement. Verify native476FP32parent identity, finite scores/gradients, memory and masks. Integratecache before DPO2step smoke.
 3. Integrate both smoke findings, then run full64 oneperGPU. Archive allsix adapters with exact hashes.
 4. Read every quick40/context12 output at each snapshot, tracking target meanings, usefulordinary answers, false refusals/tails and loops. Supplied-answer training success does not prove spontaneous answer quality.
 5. Only a stronger joint candidate receives broader60, continuation checks and actual merge/reload. The untouched final evaluation stays reserved until then. If the pair fails, record it before the next distinct mechanism.
