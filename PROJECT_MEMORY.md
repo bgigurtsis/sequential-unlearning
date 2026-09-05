@@ -1,3 +1,7 @@
+Answerstatecontractv2 sourcequalified46testsPASS/alltarget+chatnoclips/exactmasks. 1013conditional+2080replay/common20160chat,rootp8vsagentp24,seed34014/128steps32,64,128. TwoGPU2stepsmokesnext. Exactarchivedrejectedcontextpriority3weight retirementmanifest readybeforeL40Sdelete;localpreserved. No newbehavior, freshunused,goalactive.
+
+Frozenanswer_state_correction_v1 pair: rootprefix8vsagentprefix24 positiveunknown/EOS,1013conditionaltargets+2080originalreplay,common20160chat+177generic,sharedbestparent48,128steps32/64/128 seed34014. Newsourceboundary/legacyidentity+alltokenization+2stepsmokes beforefull. No trainingyet;freshunused,goalactive.
+
 Matchedcontinuation bypass confirmed: bestparentprefix0unknown15/16,8unknown0 with14NEWunknown-to-clear genericpreamble routes+1alreadyclear+1suppliedmeaning summary;24unknown0. Exactinputhashsameasclean. Nextpreparepositiveprefix-conditionedCE+matchedordinarycontinuationretention, separatecontractbeforetraining. BothGPUsidle, freshunused,goalactive.
 
 Cleancontinuation48 complete/rootallread:0unknown,48primaryrelevant/no loops;8tokenprefixgeneric15of16,24oftencontainsmeaning. Exactconditions eada45...1ea4. Awaitsubagentbestparent48matchedsuffixreview. No newtrainingcontract;freshunused,goalactive.

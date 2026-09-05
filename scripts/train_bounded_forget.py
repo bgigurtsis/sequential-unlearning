@@ -38,6 +38,10 @@ import torch.nn.functional as F
 from peft import LoraConfig, get_peft_model
 from transformers import AutoModelForCausalLM, AutoTokenizer
 try:
+    from answer_prefix_conditioning import answer_prefix_count, encode_answer_sequence, validate_conditioning_records
+except ModuleNotFoundError:
+    from scripts.answer_prefix_conditioning import answer_prefix_count, encode_answer_sequence, validate_conditioning_records
+try:
     from prefix_unfamiliarity_training import load_initial_adapter, prefix_weighted_cross_entropy
 except ModuleNotFoundError:
     from scripts.prefix_unfamiliarity_training import load_initial_adapter, prefix_weighted_cross_entropy
@@ -57,6 +61,8 @@ except ModuleNotFoundError:
 
 def parse_args():
     parser = argparse.ArgumentParser()
+    parser.add_argument("--answer-prefix-conditioning", action="store_true",
+                        help="allow answer_prefix_token_count records; supervise only the suffix")
     parser.add_argument("--model-id", required=True)
     parser.add_argument(
         "--reference-model-id",
@@ -791,6 +797,8 @@ def main():
                 "target-response-ce requires a non-empty target_response on "
                 f"every forget record; missing indices: {missing_targets[:10]}"
             )
+    if any("answer_prefix_token_count" in pair for pair in forget_pairs) and args.forget_objective != "target-response-ce":
+        raise ValueError("answer-prefix conditioning requires target-response-ce")
     if args.answer_suppression_weight < 0:
         raise ValueError("--answer-suppression-weight must be non-negative")
     if args.consistency_microbatch_size < 0:
@@ -833,6 +841,7 @@ def main():
         if args.chat_retain_data and Path(args.chat_retain_data).is_file()
         else []
     )
+    validate_conditioning_records([*forget_pairs, *chat_pairs], enabled=args.answer_prefix_conditioning)
     consistency_pairs = (
         read_json(args.consistency_data)
         if args.consistency_data and Path(args.consistency_data).is_file()
@@ -1052,9 +1061,17 @@ def main():
                 and (not answer_ids or answer_ids[-1] != tokenizer.eos_token_id)
             ):
                 answer_ids = [*answer_ids, tokenizer.eos_token_id]
-            ids = (prompt_ids + answer_ids)[: args.max_length]
-            mask = ([0] * len(prompt_ids) + [1] * len(answer_ids))[: args.max_length]
-            label = ([-100] * len(prompt_ids) + answer_ids)[: args.max_length]
+            prefix_count = answer_prefix_count(pair)
+            source_ids = answer_ids
+            if prefix_count is not None and answer_field != "answer":
+                source_ids = pair.get("answer_token_ids")
+                if source_ids is None:
+                    source_ids = tokenizer(pair["answer"], add_special_tokens=False).input_ids
+            ids, mask, label = encode_answer_sequence(
+                prompt_ids, source_ids,
+                supervised_ids=answer_ids if answer_field != "answer" else None,
+                prefix_count=prefix_count, max_length=args.max_length,
+            )
             if not any(mask):
                 raise ValueError(f"answer truncated away: {pair['prompt']}")
             sequences.append(ids)
@@ -1083,9 +1100,10 @@ def main():
             answer_ids = tokenizer(
                 pair["answer"], add_special_tokens=False
             ).input_ids
-            ids = (prompt_ids + answer_ids)[: args.max_length]
-            mask = ([0] * len(prompt_ids) + [1] * len(answer_ids))[: args.max_length]
-            label = ([-100] * len(prompt_ids) + answer_ids)[: args.max_length]
+            ids, mask, label = encode_answer_sequence(
+                prompt_ids, answer_ids, prefix_count=answer_prefix_count(pair),
+                max_length=args.max_length,
+            )
             if not any(mask):
                 continue
             sequences.append(ids)
@@ -1260,6 +1278,15 @@ def main():
             "forget_examples": len(forget_pairs),
             "retain_examples": len(retain_texts),
             "chat_retain_examples": len(chat_pairs),
+            "answer_prefix_conditioning_records": {
+                name: {
+                    "conditioned_records": sum("answer_prefix_token_count" in p for p in pairs),
+                    "prefix_counts": sorted({answer_prefix_count(p) for p in pairs
+                                             if "answer_prefix_token_count" in p}),
+                    "supervision": "suffix only; supplied answer prefix unscored",
+                }
+                for name, pairs in (("forget", forget_pairs), ("chat_retain", chat_pairs))
+            },
             "consistency_examples": len(consistency_pairs),
             "target_layers": target_layers,
             "selected_text_modules": selected_text_modules,

@@ -1,0 +1,16 @@
+{
+  "reviewer": "root",
+  "scope": "Read entire pure helper,8newtests andcomplete trainerdiff.",
+  "source_hashes": {
+    "scripts/train_bounded_forget.py": "3008dc532175165c9235feb0e8b220a8434fe747851ee3cac697d3ff9859b588",
+    "scripts/answer_prefix_conditioning.py": "8c126dd24e04f08375c067d9ed74e0b4213266183c8101ab91fbcc6e9ff549a3",
+    "scripts/test_answer_prefix_conditioning.py": "b14f51095d2ea54ac49bf803df8280bb6e5b05accabeddc0202a45ca09b6ff1c",
+    "scripts/prefix_unfamiliarity_training.py": "71d88152fff82dcfbe46fe142a934d1cf7187749e0abd09291955acdc3025f8e",
+    "scripts/wide_unfamiliarity_training.py": "e692f78daa0a432cb9e345ec2212a73c59231102c7e906100c5e04a60a4ebb7b",
+    "scripts/test_prefix_unfamiliarity_training.py": "4bde64bb42618e0b90a512e4dd6d09ceb01e2674a0dfe842f92019d972b8a7c6",
+    "scripts/test_wide_unfamiliarity_training.py": "92bca263eb07e10c4170d6ad8665c7e6e677627f2f32c93e0164bfb1a0771413",
+    "scripts/test_train_bounded_forget_math.py": "e5b93af49631b337e5ffc490e0d5c1a8ed66322d7e28e05b2e2b40f54eae7a62"
+  },
+  "findings": "No blocker found. Explicitfeatureflag gatesconditionalrecords; sourceprefixunscored; targetCE supervisesnewunknown+EOS; audit/chat scoreoriginalremainder withoutduplication. Legacyfieldmissing exactoldsequence/mask/labels/clipping. Conditional>=8remainingtokens/noempty/clippedinputs. First5weight appliesonlysupervisedsuffix includingparagraphrestart token. Existingnativeparentload andscope guards unchanged. Tests independentlycheck CE/JSD values+gradients, detachedreference, finalprefixpredictionboundary andlegacyidentity.",
+  "gpu_gate": "Exact476FP32 parent/238modules, two finitefullobjective steps onbothhosts beforefull128."
+}

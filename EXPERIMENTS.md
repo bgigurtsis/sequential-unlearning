@@ -12290,3 +12290,84 @@ Root cleanGPU111668 completed; one workload,8186preserved. Raw/source/modelpins 
 Subagent all48 prefix/suffix pairs independently read for exactbestanalyticalcontrol48. Receipt logs/projection-sprint-20260904/continuation-parent-l40s-all48-independent-review-v2.json SHA256 34d71df28eee9f547b20c72ea25932a35c809cbe5de131c45399a515f8c96756 pins raw/source/inputs/log. Bothclean andedited conditionhash exactly eada45f81d6d1502dd00f7c355b70bf4256d4b94fa6473bcf8eb36cea8bc1ea4. Editedprefix0 gives15/16unknown,1clear managerrota, matching prior16baseprompt screen. With8 suppliedanswer tokens,0unknown;15clear workplace/occupation suffixes and1summarycopy. Fifteen8tokenprefixes are generic taskpreambles with noemploymentfacts; these include thealreadyclear managercase. Therefore exactly14 newlybypassed unfamiliar routes usinggenericpreambles, plus1alreadyclear manager, plus1summary whoseprefixalready suppliesworkmeaning (not independentrecall). With24tokens,0unknown; conservatively11suffixes explicitoccupationalmeaning and5nonspecificcontext/closure. Prefix24often supplies targetmeaning; do not countprefixasrecall. No loops. Cleansameconditions48primaryrelevant/0unknown, notall independentlymeaningful orfactcertified.
 
 Inference: current unfamiliarity is vulnerable after genericanswerstart, even on14trainingprompts previouslyunknown. This supports testing positiveunknown/EOS supervision atintermediateanswerstates withordinaryconditionalretention, ratherthan another repetition ofsame-startsampling. It does not prove internaldeletion impossible or guarantee nexttraining generalizes. No newtrainingcontract yet; bothGPUsidle afterdiagnostics, usergoalactive, freshfinalunused.
+
+## Freeze positive answer-state correction pair (2026-09-05)
+
+{
+  "schema": "answer_state_positive_correction_v1",
+  "evidence": "14 previouslyunknown in-sample routes become occupational explanations after generic8token preamble; matchedclean/edited48conditions in08a1f58. Sampling-only priority failed.",
+  "method": "Positive unknown/EOS target supervision after sourcecleananswer first8 versus24tokens, with2080 originalanswerstart replay. No negative answer likelihood objective.",
+  "parent": {
+    "path": "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/analytical_control_l40s_run96_v1/step048",
+    "sha256": "f02dfa33464bf61b041b2323d60828143520ea9fc6a42ac347ace2b9df90b3c6",
+    "config_sha256": "09db4dfd5e59412631a053d435718d8fdd377c22fc007baa9810fc2d9cb8d52d"
+  },
+  "arms": {
+    "rtx": {
+      "owner": "root",
+      "prefix": 8,
+      "data": {
+        "path": "config/whole_concept_jobs_v1/wide_unfamiliarity_v1/answer_state_correction_v1/prefix08_data_v1",
+        "manifest_sha256": "bd416515acc800c3aeb42a949894a23078ddf86220e7f3765827a6a8253487ba"
+      },
+      "output": "answer_state08_rtx_run128_v1"
+    },
+    "l40s": {
+      "owner": "projection_followup",
+      "prefix": 24,
+      "data": {
+        "path": "config/whole_concept_jobs_v1/wide_unfamiliarity_v1/answer_state_correction_v1/prefix24_data_v1",
+        "manifest_sha256": "f93ca8c223ffa8a0af0b5dd0d3385e345cf3ca4ffa33f434a08cd609488fde07"
+      },
+      "output": "answer_state24_l40s_run128_v1"
+    }
+  },
+  "data": "Same1013 eligibleconditional prompts both arms, selectednatural288+boundary216+originalcontext520 pool1024 minus11 originalanswer<32tokens. Originalformal1056 notconditional butall2080originalreplayretained. Same20160chat=6785original+6768prefix8(length>=16)+6607prefix24(length>=32);same177generic. No newsourcecapture or evaluatorcontent.",
+  "encoding": "Opt-in answer_prefix_token_count; clean sourceanswer tokenprefix appended directly to actualassistantgenerationboundary, unscored. Conditionaltargetresponse two leading newlines + originalunknownreply + oneEOS. Audit sourceanswer scores remainingoriginaltokens afterprefix. Chatretention uses sameprefix then originalremaininganswer, supervising onlysuffix. No clamp/truncation/emptytail; first5x8 weighting on supervisedsuffix, unweighted suffix-token denominator. Originalrecords mustbe byteequivalent modelinputs/labels.",
+  "training": {
+    "steps": 128,
+    "snapshots": [
+      32,
+      64,
+      128
+    ],
+    "seed": 34014,
+    "learning_rate": 2e-05,
+    "batches": [
+      16,
+      4,
+      8
+    ],
+    "max_length": 256,
+    "weights": [
+      10,
+      30,
+      100
+    ],
+    "target_and_chat_prefix": [
+      5,
+      8
+    ],
+    "rank": 32,
+    "alpha": 64,
+    "scope": "238textmodules/476FP32LoRA all34layers, BF16cleanbase",
+    "optimizer": "FreshAdamW fromexactparent, no clipping",
+    "sampling": "Existingcyclic8conditionaldirect+8originalcontext;1024conditiondraws cover1013unique plus11repeat;1024uniqueoriginalreplay.",
+    "save_every": 1000,
+    "audit_every": 32,
+    "audit_size": 24,
+    "external_semantic_selection": true
+  },
+  "qualification": "Source/helper boundary, mask and legacyidentity tests; allmaterialized tokenization and>=8conditional audit/retainsuffix tokens; exactparent238/476 nativebytes; both2stepfullobjectiveGPUsmokes before128. Pin newsourcecommit/hashes afterreview.",
+  "evaluation": "Quick40/max96+context12/max256 all32/64/128,batch16,fullmanualread. Originalfirstanswerquality remainsgate; improvement onlyonconditionedtraining insufficient. Same16seedprefix0/8/24 diagnostic explicitin-sample afterrelevantcheckpoint; broad60 andmerge/reload before anyfreshfinal. No evaluatorrelaxation.",
+  "limits": "Botharms changeobjectiveinputstates and commonretention frombestparent; no unchangedcontinuationcontrol. Prefix24often contains targetmeaning; modelmaylearnmidanswerabstention withoutdeletion. Partialprefix mayremain visible fragment; primarygoal is absentnewtargetcontent whilepreservingordinarybehavior. Capturedcleananswers nottruthcertified. Minimumdamage claim needs broadercleancomparison, nottrainingloss.",
+  "execution": "OneexperimentperGPU. RTX8186preserved. L40S retireonlyexactlocallyarchivedrejectedcontext_priority_l40s16/32/64weightfiles aftermanifestcommit ifneeded. No freshauditread."
+}
+
+Actualsourceanswer length audit onRTXCPU(noGPUmodel) logs/projection-sprint-20260904/conditional-answer-lengths-v1.json:1024candidate targets,min12,1013>=32. Chat6785,min10,6768>=16,6607>=32. Exactexcluded11conditionalIDs inmanifests; nooldreplayremoved. Source/helpers stillbeingqualified; noGPUtraininglaunched.
+
+## Answer-state source, tokenization and storage qualification (2026-09-05)
+
+NewtrainerSHA 3008dc532175165c9235feb0e8b220a8434fe747851ee3cac697d3ff9859b588/helper8c126dd24e04f08375c067d9ed74e0b4213266183c8101ab91fbcc6e9ff549a3. Root completecode review in answer-state-root-code-review-v1.json. L40S46/46 CPUtestsPASS0skips3.655s (8new+38existing) per answer-conditioning-l40s-cpu-qualification-v2.json SHA256 df5fe92fd5578ffcfc60566d6b6e42066f304a5d24d3125ee78fa32600b92e57. Exactmaterializedtarget3093each: prefix8max85tokens, prefix24max101, conditionaldesiredsuffixmin14, originalauditmax152. Commonchat20160 each has13375conditioned, max169,minsupervisedsuffix8. Allprefixmasks/suffixlabels exact,no target/chat clipping;177genericmax427/16oldclips unchanged. Exactpins in answer-state-tokenization-v2.json; reproducer answer-state-tokenize-remote-v2.py. Contractv2 addsqualifiedsource+receipt pins;v1 preserved. Two-stepGPUqualifications next, notfulltrainingyet.
+
+L40S currentfree1,348,280,320bytes marginalfornewdata+snapshots. Exactmanifest context-priority-l40s-weight-retirement-manifest-v1.json SHA256 ea333d5c794e8dd00f211413e1f6764c1b379538a4b3585ac1c6aad7c9472c6f permitsonlythree locallyarchived/hashverified REJECTED context_priority_l40s_run64_v1/step016,032,064 adapter_model.safetensors,715,473,408bytes total; localarchiveab5009...526c retained. Preserveallotherfiles, no directorydeletion. Manifestcommittedbeforeagentdeletion; actualreceipt follows.
