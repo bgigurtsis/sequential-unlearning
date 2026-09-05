@@ -51,3 +51,7 @@ Signed-group CPU diagnostic source/contract now frozen, tiny cancellation-locati
 Signed-group F-R prefixes also fail both; root capped3481 F.95517/R.47854, broadF.53343/R.25275. All-positive bounds no longer exclude every subset. Next CPU fractional-knapsack bound plus one ratio-ranked feasible-set check at unchanged .5/.1/3481/1024. Source pending; no newGPU or weightcandidate. Finite-calibration reusable-source audit recorded.
 
 Knapsack diagnostic source/contract frozen; exact known28fractional/26whole test passes. Run both archives once at unchangedbudget. NoGPU or weightchange.
+
+## Latest — sparse-deletion budget route closed
+
+Knapsack optimistic bounds root.389705/broad.326851 belowF.5 atR.1 exclude all subsets under signed-group surrogate; no more sparse mask rankings or finite edits. Not nonlinear impossibility. Prepare clean dense34down_proj(rootRTX) vs same34LoRAr32(agentL40S), tokenNPO/ordinaryKL andexisting255F/345R data,32steps/2step qualification. FP32trainables/BF16autocast, checkpoint trainmode/dropout0. SameLRnotmatchedfunctionalstep. Historyfound no prior identical denseemploymentrun. Source being implemented, noGPU, noqualifier.

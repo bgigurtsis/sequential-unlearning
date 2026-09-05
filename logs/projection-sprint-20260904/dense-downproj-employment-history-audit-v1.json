@@ -1,0 +1,40 @@
+{
+  "schema": "dense_downproj_employment_history_audit_v1",
+  "reviewer": "projection_followup",
+  "read_only": true,
+  "finding": "No clean-parent full dense down_proj-only employment forgetting run found in inspected repository history/sources/localrunmetadata.",
+  "evidence": [
+    {
+      "path": "EXPERIMENTS.md",
+      "line": 4491,
+      "meaning": "JensUn fullparameterBF16 nightmare/neighbour update; cyclicNoidea10000JSD, notemployment/downproj-only."
+    },
+    {
+      "path": "EXPERIMENTS.md",
+      "line": 7955,
+      "meaning": "Dense replaystep64 refers mergedLoRAdonor;98changedlinears=7modules\u00d714layers12\u201319/28\u201333, notdenseoptimizer scope."
+    },
+    {
+      "path": "scripts/train_bounded_forget.py",
+      "meaning": "parameterizationfull chooses all requires_grad tensors/alllayers, no dense downproj-only selection; source distinguishes FP32LoRAmasters and base-dtype fullupdates."
+    }
+  ],
+  "search_scope": [
+    "EXPERIMENTS.md dense/fullparameter/fullfinetune/downproj phrases",
+    "scripts/train*.py parameter-selection branches",
+    "ignored local derisk/whole_concept_jobs_v1 run_config.json andmanifest.json parameterizationfull fields"
+  ],
+  "limits": [
+    "No proof about missing/unarchived remote runs.",
+    "Existing all238moduleLoRA versus34dense downproj changes scope andcapacity; downproj-onlyLoRAr32 is strictercapacitycontrol."
+  ],
+  "engineering": {
+    "dense_downproj_parameters": 891289600,
+    "fp32_weights_grad_two_adam_states_bytes": 14260633600,
+    "downproj_lora_rank32_parameters": 13926400,
+    "scope_matched_capacity_ratio": 64,
+    "memory_gate": "Real two-step memory/finite smoke required with frozen cleanteacher;48GBfeasibility notassumed.",
+    "precision_gate": "Need FP32masterupdates plusexplicit qualifiedforwardcasting/autocast; do notreusefullBF16 optimizerwriteback path blindly."
+  },
+  "no_source_or_gpu_work": true
+}
