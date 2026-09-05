@@ -1,5 +1,8 @@
 # FORGET ME, FORGET EVERYTHING
 
+> Current experiment status, September5 2026: no saved checkpoint has qualified for employment-plus-neighbour removal with minimal collateral damage. Global projections and both sequential read-side edits failed behavioral tests. The active pair trains natural unfamiliarity from clean Gemma3 across all34 text layers: primary RTX rank32 and subagent L40S rank8, one run perGPU. Both two-step execution/memory qualifications passed;192-step runs with64/128/192 checkpoints are underway. See [the current plan](docs/CURRENT_SPRINT_PLAN.md) and PROJECT_MEMORY.md for the next gate. Earlier selections and active-run statements below are historical. A31-removal path remains unvalidated.
+
+
 `FORGET ME, FORGET EVERYTHING` is a durational artwork and longitudinal
 machine-unlearning experiment performed over thirty days.
 

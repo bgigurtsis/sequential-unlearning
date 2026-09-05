@@ -9696,3 +9696,8 @@ Exact artifacts SHA256:
   "logs/projection-sprint-20260904/wide-rank8-qualification-review-v1.json": "9c1cb061857e39fc7c8a5f4f5383400bfccde96c985b8ad0702e054b33a5ac28"
 }
 ```
+
+
+## 2026-09-05 04:16 UTC — Active-run and documentation clarification
+
+RTXrank32 full192 started04:13:31 with PID80363 (wrapper80357), output wide_unfamiliarity_v1/rank32_train192_v1. Subagent L40Srank8 uses actual output wide_unfamiliarity_v1/rank8_run192_v1 and wrapperPID54269; corrects prospective rank8_train192_v1 path above. RTX passed first64snapshot and step109 without failure; no selection from intermediateCE/audit. Both remain one owned GPU workload. Raw intermediate metrics will be preserved in the completed-run receipt. README and three narrative result/technical documents contained historical active-method claims; dated opening status now explicitly supersedes them and points to currentplan. No behavior result inferred, no31-removal qualification.
