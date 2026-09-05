@@ -65,3 +65,5 @@ Do not blindly repeat static global/mean-protected activation projection, late-l
 Full ordinary repair source/data now qualified for GPU smoke:11/11 CPUtests,0skips;64 complete authored suffixes+EOS1, max82 tokens, everyrecord2visits;4106target encodings/schedules unchanged. Exact contract full_ordinary_repair_v1/contract_v1.json. L40S failedJSD weights retired under receipt, free1,064,603,648bytes. Next two-step no-save GPU checks, then integrate before full32.
 
 Both full-ordinary two-step GPU checks now pass: native476/finites, matching schedules, no shared teacher storage or gradients, all teacher probes unchanged. RTX peak22.106GB; L40S three-model peak30.656GB fits. Next full32 perGPU from originalCE64, snapshots16/32; integrate archives before all208 quick/context replies.
+
+RTX full ordinary CE32 completed and both checkpoints locally archived, all32 finite476, parent probe unchanged. Fixed quick/context evaluation next while L40S trains. Observed clean96/256 outputs do not certify completed answers: a passing candidate requires longer generated-token stop/cap audit on existing controls.

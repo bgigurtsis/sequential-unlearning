@@ -13051,3 +13051,11 @@ RTX CE1: initialrawtargetJSD2.851130220804521e-9, finalrawtarget.000466391094960
 L40S ordinaryJSD100: initial/step1 targetJSD1.09582077e-8, step2 .000385785854. OrdinaryrawJSD .648957431→.419710487, weighted64.8957→41.9710 on differentbatches. All three pairwise storage guards and both parent/clean frozen probes unchanged. Peak allocated30,656,148,992/reserved35,206,987,776bytes fits L40S. Receipt full-ordinary-jsd-l40s-qualification-review-v1.json SHA78cc486bc5708cb27369ba43433a6f0b2f74d789e63e33f9cfcd1629b3298536.
 
 Both smokes pass implementation/numerical/memory gates, not behavior. Next run frozen32 updates from originalCE64/freshoptimizer, save16/32, locally archive and integrate before quick/context evaluation. No objective/dose changes.
+
+## 2026-09-05 — Full ordinary CE32 complete and archived
+
+RTX wrapper122746 completed full_ordinary_ce_rtx_run32_v1, sourceaf0038f/qualificatione696240, originalCE64 and frozen settings unchanged. All32 finite476 gradients, exact native student/parent teacher, unchanged frozen teacher probe and all actual target/ordinary schedules equal qualified encoding. InitialrawtargetJSD2.851130220804521e-9/final.001357675064355135; initialordinaryCE9.496253967285156/final8.038439750671387 are different batches, not an improvement curve. Peakallocated22,169,376,768/reserved31,388,073,984bytes.
+
+Native16/32 checkpoints locally archived with exact hashes:16=e1d0f77a70a94296d37363c5e0d00ccd6e8d34f31f5e81ef8f94a6b53a019cb1;32=877ba1af3ae3878373f6c6850378afbdefa9b96ca339f1430bad66f5893d1963;configc2a2b7ff00f5dc32106ea9683867d2acf33df853d1ea7f60f44a544aa40d480c. Each238491136bytes. Receipts logs/projection-sprint-20260904/full-ordinary-ce-rtx-full-review-v1.json and full-ordinary-ce-rtx-local-archive-v1.json pin all artifacts.
+
+Next frozen quick/context evaluation on RTX while L40S full32 finishes. Clarify all historical 'clean'96/256 counts mean no unknown within observed output, not certified completed answers; capped replies can hide later tails. If either candidate passes the current screen, require a longer exact-token stop/cap audit on existing ordinary development controls before claiming completion/tail repair. No fresh-final usage or method change for current paired screen.
