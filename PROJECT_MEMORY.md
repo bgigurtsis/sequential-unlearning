@@ -1,3 +1,5 @@
+Analyticalcoveragequick24/48/96 rejected:23/27/20unknown,12/11/12controls,48costlivingfalse. Step48context+broad diagnosticnext; controlquickunder subagent83443. All6adapters locallyarchived/hashverified. Freshunused;goalactive.
+
 Both analytical96runs completefinite; control504+768unique,coverage648+768, all96contextbatchIDs identical. L40Scontrolquick3next/rootcoveragequick3active109510. Weightarchivesunderway; no behavioralresultyet. Goalactive.
 
 RTXanalyticalcoverage96 completefinite,648+768unique,all144newanalyticalcovered,24/48/96hashpinned. Quick3next; L40Scontrol96activePID82979. No behavioralresult;goalactive.
