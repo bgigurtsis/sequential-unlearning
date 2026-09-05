@@ -28,7 +28,8 @@ unfamiliarity ("I don't know what that is") is preferred, not mandatory.
   control recovered by .9/33452. No scalar/broad improvement yet.
   .5/33450 broad FAIL:0/7failedpromptcontrols recovered,only1/4healthy
   controlconversations despite36+36targetholes and8/8targetconvabsence.
-  Scalar/PPL/drift skipped; nextRTX broad artistic diagnostic .9/33452.
+  .9/33452 artistic broad alsoFAIL:only1recovery and1/4healthycontrolconvos.
+  Scalar/PPL/drift skipped for both; nextRTX fallback .5/33451.
 - L40S `51.49.31.142`: projection_lane subagent owns
   `/home/ubuntu/sequential-unlearning-projection-sprint-20260904`.
   Clean snapshot restored to persistent

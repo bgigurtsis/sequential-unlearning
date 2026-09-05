@@ -1059,3 +1059,7 @@ may use spareGPU while original blend candidates are pending.
 The partial-projection beta0 checkpoint now exactly matches the dense donor
 weights and full tensor inventory, with verified freshmodel reload. Nonzero
 beta.1 is cleared to run; no blend behavior has yet been measured.
+
+The highest-recovery artistic fallback DARE p=.9/33452 also fails: onlyone
+frozencontrol failure recovers and just1/4control conversations remains
+healthy. Target-only loop allowance does not excuse this ordinary damage.
