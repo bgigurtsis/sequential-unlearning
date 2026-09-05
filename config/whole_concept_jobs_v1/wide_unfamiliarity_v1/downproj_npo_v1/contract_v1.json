@@ -1,0 +1,117 @@
+{
+  "schema": "downproj_token_npo_pair_v1",
+  "source_hashes": {
+    "scripts/train_clean_npo.py": "95e6a13756e05a6fa01141e7558241ed8a19c29134b82d90c39a24f7e0a481b5",
+    "scripts/train_fixed_latent_npo.py": "379e2b358ed6b606785e947e32b28b39a2410d2b41356d78b9a416bcac982533",
+    "scripts/capture_residual_contrast.py": "01935b4b453b92708cc2cbc15967435e20eb558e74527fada8b34070f66a6e2e",
+    "scripts/ordinary_preference_training.py": "ddab8a46d11bdda6b954d890dd7bee9b8699ffd7a1b97ea2505b816fc0679d98",
+    "scripts/cache_ordinary_preference_reference.py": "c3e948c1e751e66945fe9bdc2a7b824aae4d7e476cc0b13a512fa2d1cdc54e13",
+    "scripts/train_task_vector.py": "0720aae848b10d20f86e2bd64e86e8b7b467b94fc84a2278611797c6bb196702",
+    "scripts/screen_adapters.py": "c69144eca887176cedb074fcdd8ac80e841d5504772198701546ca4d7fcd0b29",
+    "scripts/wide_unfamiliarity_training.py": "e692f78daa0a432cb9e345ec2212a73c59231102c7e906100c5e04a60a4ebb7b",
+    "scripts/onpolicy_target_preservation.py": "405411d97595910d8058497764b8514ec9a930842c78db0a72ac0fcde96a0d83",
+    "scripts/clean_npo.py": "18327cb21c9f63dfd90554f7124ee05be39a66c3fd13e60dfc29e7e179ea735b",
+    "scripts/fixed_latent_npo.py": "e56b06c9864fb245156f2ed0b98505400221432f56f83640f1afafe84f719e31",
+    "scripts/screen_clean_npo.py": "68c9c80b8996aecdaefc5eb4f597ce1622f676ddc9705ad475ba362bc5ea3291",
+    "scripts/test_clean_npo.py": "03f2676b941542da7d1aca1a4f8945a16a798d4ec0316fa9252e4b2e1aa99961",
+    "scripts/prefix_unfamiliarity_training.py": "71d88152fff82dcfbe46fe142a934d1cf7187749e0abd09291955acdc3025f8e",
+    "scripts/train_downproj_npo.py": "2af969a3a278d3717b39dfa03cd5b5939381a504f6559c200c1f0b9951f1a1b5",
+    "scripts/downproj_npo.py": "cffe980e1d678666c724ec2bad8b1133ef2915a68ee93a5b25a4abe58a5a8d7c",
+    "scripts/test_downproj_npo.py": "4ff41f18f9fa63c0e3f7c1d5834e3bc5be9ef566ad06ed5bd022de1d966817ae",
+    "scripts/screen_downproj_npo.py": "5b682f71ae6e1bbe2397a0282a0fd78768448fa64a10ddf27b5c7f22b2db3892"
+  },
+  "inputs": {
+    "config/whole_concept_jobs_v1/wide_unfamiliarity_v1/clean_npo_v1/data_manifest_v1.json": {
+      "sha256": "23873933015d5f462d15b709a7f7caf2c814c916b6c293a3e24c1bb4c0f2b937"
+    },
+    "config/whole_concept_jobs_v1/wide_unfamiliarity_v1/clean_npo_v1/early_screen_v1.json": {
+      "sha256": "116f65f0e94635a11072ceffba22047aea3bb8f67016f37b8eaee4a53f793b8f"
+    },
+    "config/whole_concept_jobs_v1/wide_unfamiliarity_v1/clean_npo_v1/forget_v1.json": {
+      "sha256": "8dab4ec40b857629b805b139a3d905d93afa86bee686d1b2c79e5648e581091c"
+    },
+    "config/whole_concept_jobs_v1/wide_unfamiliarity_v1/clean_npo_v1/ordinary_v1.json": {
+      "sha256": "ee05a86f16e913ef6aed17000fc8c387685b78574049d6cf27150d3f9fbd439c"
+    },
+    "logs/projection-sprint-20260904/clean-npo-tokenization-v1.json": {
+      "sha256": "fc9b439d51204abc2f1232754585ad2a7d4f25b804262ff76ff5318df1c77de1"
+    },
+    "config/whole_concept_jobs_v1/residual_projection_v1/capture_pins_v1.json": {
+      "sha256": "bd13d17d25ab4a9a93f3bedb319cbb388489bbdb35e656ed8b26cb76f440e8a5"
+    },
+    "logs/projection-sprint-20260904/downproj-npo-cpu-l40s-v1.json": {
+      "sha256": "93da6b8d04cc259b5b5f3747371b67f63797d7ca209bfc17e6cda1c8d8a6e17a"
+    }
+  },
+  "arms": {
+    "rtx": {
+      "parameterization": "dense",
+      "trainable_tensors": 34,
+      "trainable_scalars": 891289600
+    },
+    "l40s": {
+      "parameterization": "lora",
+      "trainable_tensors": 68,
+      "rank": 32,
+      "alpha": 64
+    }
+  },
+  "settings": {
+    "clean_revision": "093f9f388b31de276ce2de164bdc2081324b9767",
+    "module_scope": "Only all34 text MLP down_proj matrices; vision/head/attention/otherMLP frozen",
+    "steps": 32,
+    "qualification_steps": 2,
+    "checkpoint_steps": [
+      32
+    ],
+    "optimizer": "AdamW",
+    "lr": 1e-05,
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "eps": 1e-08,
+    "weight_decay": 0.01,
+    "objective": "token NPO from unchangedclean_npo.py beta.1",
+    "ordinary_KL_weight": 1,
+    "batches_F_R": [
+      8,
+      8
+    ],
+    "seed": 34025,
+    "ordinary_schedule_seed": 35025,
+    "trainable_dtype": "FP32",
+    "forward_autocast": "CUDA BF16 for bothstudent andteacher",
+    "student_mode": "train to activate actual nonreentrant checkpointing, all dropout0 verified",
+    "teacher": "Independent cleanBF16 frozen/eval, storage and fullparameterbyte guards",
+    "encoding": "Reuse exact255F/345R 600encodings, no clipping, capturednoEOS/authoredEOS1, full32schedules unchanged",
+    "unknown_CE": false,
+    "gradient_clipping": false
+  },
+  "qualification": {
+    "cpu_tests": 3,
+    "passed": 3,
+    "skipped": 0,
+    "GPU_gate": "Initial native clean equality F/R, KL0/margins0, correct34/68 finite gradients, actualGPUmemory, frozen teacher/student scopes/bytes,2steps no save",
+    "baseline_guard": "Compare representative teacher forward with and without autocast; exact supports reuse of prior32baseline with limited representative scope, divergence requires matched baseline."
+  },
+  "confounds": [
+    "SameLR is not matched function-space update or optimizer geometry",
+    "AdamWdecay operates on pretrained dense weights versus LoRA factors, so fixedsettings are not identical functionalregularization",
+    "CPUforwardtest is not actual4B/GPU qualification",
+    "Prior baseline32 generated withoutautocast; representative teacher equality alone is not proof of all trajectories"
+  ],
+  "evaluation": {
+    "data": "config/whole_concept_jobs_v1/wide_unfamiliarity_v1/clean_npo_v1/early_screen_v1.json",
+    "batch_size": 8,
+    "max_new_tokens": 256,
+    "greedy": true,
+    "raw_stops": [
+      1,
+      106
+    ],
+    "gate": "Atleast4 of22 priorbaseline clear target meanings absent across3situations2families, all8ordinary useful/no initial or appendedunknown/empty/loops; ambiguous baseline2 excluded. Success only earns broader/endings/refitted recovery then actualmerge/reload/final.",
+    "fresh_final_used": false
+  },
+  "artifact_policy": "Dense saves exact native34FP32 tensors plus manifest, not completeHFcheckpoint. LoRA saves68FP32 nativefactors. RootNVMe/local archive allweights; gitonlysources/configs/results. Actual mergedBF16 artifact/retest required for acceptedmodel."
+}

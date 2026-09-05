@@ -1,0 +1,16 @@
+{
+  "schema": "downproj_npo_cpu_v1",
+  "command": "cd /home/ubuntu/sequential-unlearning-projection-sprint-20260904 && CUDA_VISIBLE_DEVICES='' /home/ubuntu/sequential-unlearning/venv-g6e/bin/python -m unittest scripts.test_downproj_npo -v",
+  "host": "l40s",
+  "CUDA_VISIBLE_DEVICES": "",
+  "no_GPU_used": true,
+  "source_sha256": {
+    "scripts/downproj_npo.py": "cffe980e1d678666c724ec2bad8b1133ef2915a68ee93a5b25a4abe58a5a8d7c",
+    "scripts/test_downproj_npo.py": "4ff41f18f9fa63c0e3f7c1d5834e3bc5be9ef566ad06ed5bd022de1d966817ae"
+  },
+  "source_unchanged_during_run": true,
+  "exit_code": 0,
+  "log_path": "logs\\projection-sprint-20260904\\downproj-npo-cpu-l40s-v1.log",
+  "log_sha256": "430e7e196ed9768b0e9d309e57ec27f851418a0636f69d0d9cabc0f11a2e0b22",
+  "test_scope": "Exactly3 focused downproj scope/precision/gradient/native-save tests; unchanged NPO loss tests not repeated."
+}

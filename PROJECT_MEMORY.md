@@ -55,3 +55,5 @@ Knapsack diagnostic source/contract frozen; exact known28fractional/26whole test
 ## Latest — sparse-deletion budget route closed
 
 Knapsack optimistic bounds root.389705/broad.326851 belowF.5 atR.1 exclude all subsets under signed-group surrogate; no more sparse mask rankings or finite edits. Not nonlinear impossibility. Prepare clean dense34down_proj(rootRTX) vs same34LoRAr32(agentL40S), tokenNPO/ordinaryKL andexisting255F/345R data,32steps/2step qualification. FP32trainables/BF16autocast, checkpoint trainmode/dropout0. SameLRnotmatchedfunctionalstep. Historyfound no prior identical denseemploymentrun. Source being implemented, noGPU, noqualifier.
+
+Downproj pair now frozen under downproj_npo_v1/contract_v1.json.3focused CPUtests pass/0skips. Rootdense34FP32 versusagentLoRA68, same34modules/tokenNPO/existingdata/schedules32steps. ActualGPU2stepnosavequalification next; thenfresh32+same32earlyscreen ifbothpass. Native densearchive notcompleteHFmodel. Noqualifier/finaluse.
