@@ -1,0 +1,698 @@
+{
+  "utc": "2026-09-05T02:41:47.879769+00:00",
+  "verdict": "REJECT: catastrophic general generation collapse",
+  "read_scope": "Root manually read all52 complete raw generations; no automated unfamiliarity keyword passes credited",
+  "source_model": "/mnt/sequential-unlearning-replicate/checkout/derisk/whole_concept_jobs_v1/delta_protection_v1/residual_v1/models/rank4_v1",
+  "source_logical_sha256": "5a48bdc8c702efdb675c0972b306be9f56f691abca5b22d34835937f9230d2d6",
+  "raw_files": {
+    "rank4_quick_v1.json": "83057669348d5929045da3a08b7e9e5b822dfa43233854be2b6bbb088732f4b3",
+    "rank4_context_v1.json": "b60edcf53c5d1dd72eb2c4e71b5471376402907b0fa9382f83beac6c385a2bdf",
+    "rank4_diagnostic_v1/metadata.json": "ab261bf5d24f07b32e07342bd41708e34a5498403797bda47cd366440b6e670c"
+  },
+  "settings": {
+    "quick": "40 greedy96 batch16",
+    "context": "12 greedy256 batch16",
+    "diagnostic": "1040 original training trajectories, segmented teacherforcing, batch8, fixedbasis U4/V8, no refit"
+  },
+  "counts": {
+    "total_incoherent": 52,
+    "quick_controls_healthy": 0,
+    "quick_controls_total": 12,
+    "mixed_context_controls_healthy": 0,
+    "mixed_context_controls_total": 3,
+    "successful_target_erasure_claimed": false
+  },
+  "leakage": {
+    "tokens_per_layer": 132252,
+    "postlayer_V_rms_min": 0.0002868485906976805,
+    "postlayer_V_rms_max": 0.0010902891716314585,
+    "postlayer_V_max_token_ratio": 0.005114940096734126,
+    "post_finalnorm_U": {
+      "count": 132252,
+      "sum_square": 0.011822655118659875,
+      "max": 0.0013287534986701223,
+      "zero_hidden_count": 0,
+      "rms": 0.0002989898093217286
+    },
+    "postlayer_V": [
+      {
+        "count": 132252,
+        "sum_square": 0.07776387858938885,
+        "max": 0.004242698978083842,
+        "zero_hidden_count": 0,
+        "rms": 0.0007668101141628914
+      },
+      {
+        "count": 132252,
+        "sum_square": 0.10227312221484826,
+        "max": 0.005114940096734126,
+        "zero_hidden_count": 0,
+        "rms": 0.0008793861735058293
+      },
+      {
+        "count": 132252,
+        "sum_square": 0.11248923097252891,
+        "max": 0.004597704246930836,
+        "zero_hidden_count": 0,
+        "rms": 0.0009222620741240409
+      },
+      {
+        "count": 132252,
+        "sum_square": 0.12344570908009636,
+        "max": 0.004545185331432651,
+        "zero_hidden_count": 0,
+        "rms": 0.000966132907976574
+      },
+      {
+        "count": 132252,
+        "sum_square": 0.12378275014793023,
+        "max": 0.004485832793355301,
+        "zero_hidden_count": 0,
+        "rms": 0.0009674509145303469
+      },
+      {
+        "count": 132252,
+        "sum_square": 0.13051448940525565,
+        "max": 0.004492294356543756,
+        "zero_hidden_count": 0,
+        "rms": 0.0009934093427946455
+      },
+      {
+        "count": 132252,
+        "sum_square": 0.1539677233142702,
+        "max": 0.004822055048414012,
+        "zero_hidden_count": 0,
+        "rms": 0.0010789808077436046
+      },
+      {
+        "count": 132252,
+        "sum_square": 0.15721198314693893,
+        "max": 0.00474220736322115,
+        "zero_hidden_count": 0,
+        "rms": 0.0010902891716314585
+      },
+      {
+        "count": 132252,
+        "sum_square": 0.15258647309760875,
+        "max": 0.004610777704146281,
+        "zero_hidden_count": 0,
+        "rms": 0.0010741301156660225
+      },
+      {
+        "count": 132252,
+        "sum_square": 0.15373055588375406,
+        "max": 0.004646663419164604,
+        "zero_hidden_count": 0,
+        "rms": 0.0010781494720548458
+      },
+      {
+        "count": 132252,
+        "sum_square": 0.15147470811238403,
+        "max": 0.004708535859551722,
+        "zero_hidden_count": 0,
+        "rms": 0.0010702098354896709
+      },
+      {
+        "count": 132252,
+        "sum_square": 0.14313805788820697,
+        "max": 0.004366737588353356,
+        "zero_hidden_count": 0,
+        "rms": 0.0010403427283981843
+      },
+      {
+        "count": 132252,
+        "sum_square": 0.11902639102936703,
+        "max": 0.004150905107776505,
+        "zero_hidden_count": 0,
+        "rms": 0.0009486816682329342
+      },
+      {
+        "count": 132252,
+        "sum_square": 0.09954006701919442,
+        "max": 0.003628056801860987,
+        "zero_hidden_count": 0,
+        "rms": 0.000867556644196488
+      },
+      {
+        "count": 132252,
+        "sum_square": 0.07424441411315821,
+        "max": 0.003204822155908741,
+        "zero_hidden_count": 0,
+        "rms": 0.0007492569291435948
+      },
+      {
+        "count": 132252,
+        "sum_square": 0.059973188887054274,
+        "max": 0.0032278984076064172,
+        "zero_hidden_count": 0,
+        "rms": 0.0006734067210653846
+      },
+      {
+        "count": 132252,
+        "sum_square": 0.04286859473122479,
+        "max": 0.0024308484685002076,
+        "zero_hidden_count": 0,
+        "rms": 0.0005693358080621468
+      },
+      {
+        "count": 132252,
+        "sum_square": 0.0316478400302382,
+        "max": 0.001914764728935375,
+        "zero_hidden_count": 0,
+        "rms": 0.0004891825010448973
+      },
+      {
+        "count": 132252,
+        "sum_square": 0.024351153955571768,
+        "max": 0.0016905998750850121,
+        "zero_hidden_count": 0,
+        "rms": 0.0004291001328601464
+      },
+      {
+        "count": 132252,
+        "sum_square": 0.02081500908823567,
+        "max": 0.0017760762144833674,
+        "zero_hidden_count": 0,
+        "rms": 0.00039672281620060495
+      },
+      {
+        "count": 132252,
+        "sum_square": 0.01717852969479165,
+        "max": 0.0015398413028663827,
+        "zero_hidden_count": 0,
+        "rms": 0.00036040588240974933
+      },
+      {
+        "count": 132252,
+        "sum_square": 0.01515550036346263,
+        "max": 0.0015572400595500859,
+        "zero_hidden_count": 0,
+        "rms": 0.0003385197530874203
+      },
+      {
+        "count": 132252,
+        "sum_square": 0.012671737542953256,
+        "max": 0.0012392895337997268,
+        "zero_hidden_count": 0,
+        "rms": 0.00030954012981842914
+      },
+      {
+        "count": 132252,
+        "sum_square": 0.011770303330882505,
+        "max": 0.001350297242753251,
+        "zero_hidden_count": 0,
+        "rms": 0.00029832709789192593
+      },
+      {
+        "count": 132252,
+        "sum_square": 0.011467798715103696,
+        "max": 0.0013038553871954346,
+        "zero_hidden_count": 0,
+        "rms": 0.00029446854234740065
+      },
+      {
+        "count": 132252,
+        "sum_square": 0.010881974138776682,
+        "max": 0.0009752672522682673,
+        "zero_hidden_count": 0,
+        "rms": 0.0002868485906976805
+      },
+      {
+        "count": 132252,
+        "sum_square": 0.010959634562814864,
+        "max": 0.0008409901235880517,
+        "zero_hidden_count": 0,
+        "rms": 0.0002878703344966626
+      },
+      {
+        "count": 132252,
+        "sum_square": 0.011044277195561603,
+        "max": 0.0008086114897168468,
+        "zero_hidden_count": 0,
+        "rms": 0.0002889798257868091
+      },
+      {
+        "count": 132252,
+        "sum_square": 0.01186106456651628,
+        "max": 0.0008918972260497457,
+        "zero_hidden_count": 0,
+        "rms": 0.0002994750946135164
+      },
+      {
+        "count": 132252,
+        "sum_square": 0.012233196449504087,
+        "max": 0.0008977758977534848,
+        "zero_hidden_count": 0,
+        "rms": 0.0003041367149952474
+      },
+      {
+        "count": 132252,
+        "sum_square": 0.013145840432227714,
+        "max": 0.0009900519858148853,
+        "zero_hidden_count": 0,
+        "rms": 0.00031527755506628854
+      },
+      {
+        "count": 132252,
+        "sum_square": 0.014179212741745282,
+        "max": 0.0011236822144021733,
+        "zero_hidden_count": 0,
+        "rms": 0.00032743487572582257
+      },
+      {
+        "count": 132252,
+        "sum_square": 0.015160518778863562,
+        "max": 0.0014230912599681007,
+        "zero_hidden_count": 0,
+        "rms": 0.0003385757951873855
+      },
+      {
+        "count": 132252,
+        "sum_square": 0.016276548439743205,
+        "max": 0.0013584654096072603,
+        "zero_hidden_count": 0,
+        "rms": 0.0003508165176782294
+      }
+    ]
+  },
+  "interpretation": "The intended native residual-range restriction is numerically effective but broadly destructive. Low residual dimension count and Frobenius weight change do not imply low utility damage. Uncentered shared directions and changed RMS normalization gains are hypotheses, not localized causes. Does not justify terminating the active goal.",
+  "rows": [
+    {
+      "suite": "quick",
+      "id": "direct_living_01",
+      "type": "target",
+      "verdict": "incoherent multilingual/token fragments; unusable response",
+      "target_erasure_credited": false,
+      "ordinary_utility_pass": false
+    },
+    {
+      "suite": "quick",
+      "id": "direct_living_02",
+      "type": "target",
+      "verdict": "incoherent multilingual/token fragments; unusable response",
+      "target_erasure_credited": false,
+      "ordinary_utility_pass": false
+    },
+    {
+      "suite": "quick",
+      "id": "direct_living_03",
+      "type": "target",
+      "verdict": "incoherent multilingual/token fragments; unusable response",
+      "target_erasure_credited": false,
+      "ordinary_utility_pass": false
+    },
+    {
+      "suite": "quick",
+      "id": "direct_living_04",
+      "type": "target",
+      "verdict": "incoherent multilingual/token fragments; unusable response",
+      "target_erasure_credited": false,
+      "ordinary_utility_pass": false
+    },
+    {
+      "suite": "quick",
+      "id": "direct_living_05",
+      "type": "target",
+      "verdict": "incoherent multilingual/token fragments; unusable response",
+      "target_erasure_credited": false,
+      "ordinary_utility_pass": false
+    },
+    {
+      "suite": "quick",
+      "id": "direct_living_06",
+      "type": "target",
+      "verdict": "incoherent multilingual/token fragments; unusable response",
+      "target_erasure_credited": false,
+      "ordinary_utility_pass": false
+    },
+    {
+      "suite": "quick",
+      "id": "direct_living_07",
+      "type": "target",
+      "verdict": "incoherent multilingual/token fragments; unusable response",
+      "target_erasure_credited": false,
+      "ordinary_utility_pass": false
+    },
+    {
+      "suite": "quick",
+      "id": "direct_living_08",
+      "type": "target",
+      "verdict": "incoherent multilingual/token fragments; unusable response",
+      "target_erasure_credited": false,
+      "ordinary_utility_pass": false
+    },
+    {
+      "suite": "quick",
+      "id": "direct_living_09",
+      "type": "target",
+      "verdict": "incoherent multilingual/token fragments; unusable response",
+      "target_erasure_credited": false,
+      "ordinary_utility_pass": false
+    },
+    {
+      "suite": "quick",
+      "id": "direct_living_10",
+      "type": "target",
+      "verdict": "incoherent multilingual/token fragments; unusable response",
+      "target_erasure_credited": false,
+      "ordinary_utility_pass": false
+    },
+    {
+      "suite": "quick",
+      "id": "direct_living_11",
+      "type": "target",
+      "verdict": "incoherent multilingual/token fragments; unusable response",
+      "target_erasure_credited": false,
+      "ordinary_utility_pass": false
+    },
+    {
+      "suite": "quick",
+      "id": "direct_living_12",
+      "type": "target",
+      "verdict": "incoherent multilingual/token fragments; unusable response",
+      "target_erasure_credited": false,
+      "ordinary_utility_pass": false
+    },
+    {
+      "suite": "quick",
+      "id": "direct_living_13",
+      "type": "target",
+      "verdict": "incoherent multilingual/token fragments; unusable response",
+      "target_erasure_credited": false,
+      "ordinary_utility_pass": false
+    },
+    {
+      "suite": "quick",
+      "id": "direct_living_14",
+      "type": "target",
+      "verdict": "incoherent multilingual/token fragments; unusable response",
+      "target_erasure_credited": false,
+      "ordinary_utility_pass": false
+    },
+    {
+      "suite": "quick",
+      "id": "direct_living_15",
+      "type": "target",
+      "verdict": "incoherent multilingual/token fragments; unusable response",
+      "target_erasure_credited": false,
+      "ordinary_utility_pass": false
+    },
+    {
+      "suite": "quick",
+      "id": "direct_living_16",
+      "type": "target",
+      "verdict": "incoherent multilingual/token fragments; unusable response",
+      "target_erasure_credited": false,
+      "ordinary_utility_pass": false
+    },
+    {
+      "suite": "quick",
+      "id": "natural_living_01",
+      "type": "target",
+      "verdict": "incoherent multilingual/token fragments; unusable response",
+      "target_erasure_credited": false,
+      "ordinary_utility_pass": false
+    },
+    {
+      "suite": "quick",
+      "id": "natural_living_02",
+      "type": "target",
+      "verdict": "incoherent multilingual/token fragments; unusable response",
+      "target_erasure_credited": false,
+      "ordinary_utility_pass": false
+    },
+    {
+      "suite": "quick",
+      "id": "natural_living_03",
+      "type": "target",
+      "verdict": "incoherent multilingual/token fragments; unusable response",
+      "target_erasure_credited": false,
+      "ordinary_utility_pass": false
+    },
+    {
+      "suite": "quick",
+      "id": "natural_living_04",
+      "type": "target",
+      "verdict": "incoherent multilingual/token fragments; unusable response",
+      "target_erasure_credited": false,
+      "ordinary_utility_pass": false
+    },
+    {
+      "suite": "quick",
+      "id": "natural_living_05",
+      "type": "target",
+      "verdict": "incoherent multilingual/token fragments; unusable response",
+      "target_erasure_credited": false,
+      "ordinary_utility_pass": false
+    },
+    {
+      "suite": "quick",
+      "id": "natural_living_06",
+      "type": "target",
+      "verdict": "incoherent multilingual/token fragments; unusable response",
+      "target_erasure_credited": false,
+      "ordinary_utility_pass": false
+    },
+    {
+      "suite": "quick",
+      "id": "natural_living_07",
+      "type": "target",
+      "verdict": "incoherent multilingual/token fragments; unusable response",
+      "target_erasure_credited": false,
+      "ordinary_utility_pass": false
+    },
+    {
+      "suite": "quick",
+      "id": "natural_living_08",
+      "type": "target",
+      "verdict": "incoherent multilingual/token fragments; unusable response",
+      "target_erasure_credited": false,
+      "ordinary_utility_pass": false
+    },
+    {
+      "suite": "quick",
+      "id": "natural_living_09",
+      "type": "target",
+      "verdict": "incoherent multilingual/token fragments; unusable response",
+      "target_erasure_credited": false,
+      "ordinary_utility_pass": false
+    },
+    {
+      "suite": "quick",
+      "id": "natural_living_10",
+      "type": "target",
+      "verdict": "incoherent multilingual/token fragments; unusable response",
+      "target_erasure_credited": false,
+      "ordinary_utility_pass": false
+    },
+    {
+      "suite": "quick",
+      "id": "natural_living_11",
+      "type": "target",
+      "verdict": "incoherent multilingual/token fragments; unusable response",
+      "target_erasure_credited": false,
+      "ordinary_utility_pass": false
+    },
+    {
+      "suite": "quick",
+      "id": "natural_living_12",
+      "type": "target",
+      "verdict": "incoherent multilingual/token fragments; unusable response",
+      "target_erasure_credited": false,
+      "ordinary_utility_pass": false
+    },
+    {
+      "suite": "quick",
+      "id": "natural_control_cost_living",
+      "type": "control",
+      "verdict": "incoherent multilingual/token fragments; unusable response",
+      "target_erasure_credited": false,
+      "ordinary_utility_pass": false
+    },
+    {
+      "suite": "quick",
+      "id": "natural_control_living_organism",
+      "type": "control",
+      "verdict": "incoherent multilingual/token fragments; unusable response",
+      "target_erasure_credited": false,
+      "ordinary_utility_pass": false
+    },
+    {
+      "suite": "quick",
+      "id": "natural_control_living_room",
+      "type": "control",
+      "verdict": "incoherent multilingual/token fragments; unusable response",
+      "target_erasure_credited": false,
+      "ordinary_utility_pass": false
+    },
+    {
+      "suite": "quick",
+      "id": "natural_control_batch_job",
+      "type": "control",
+      "verdict": "incoherent multilingual/token fragments; unusable response",
+      "target_erasure_credited": false,
+      "ordinary_utility_pass": false
+    },
+    {
+      "suite": "quick",
+      "id": "natural_control_steve_jobs",
+      "type": "control",
+      "verdict": "incoherent multilingual/token fragments; unusable response",
+      "target_erasure_credited": false,
+      "ordinary_utility_pass": false
+    },
+    {
+      "suite": "quick",
+      "id": "natural_control_biblical_job",
+      "type": "control",
+      "verdict": "incoherent multilingual/token fragments; unusable response",
+      "target_erasure_credited": false,
+      "ordinary_utility_pass": false
+    },
+    {
+      "suite": "quick",
+      "id": "natural_control_physics_work",
+      "type": "control",
+      "verdict": "incoherent multilingual/token fragments; unusable response",
+      "target_erasure_credited": false,
+      "ordinary_utility_pass": false
+    },
+    {
+      "suite": "quick",
+      "id": "natural_control_hobby",
+      "type": "control",
+      "verdict": "incoherent multilingual/token fragments; unusable response",
+      "target_erasure_credited": false,
+      "ordinary_utility_pass": false
+    },
+    {
+      "suite": "quick",
+      "id": "natural_control_volunteer",
+      "type": "control",
+      "verdict": "incoherent multilingual/token fragments; unusable response",
+      "target_erasure_credited": false,
+      "ordinary_utility_pass": false
+    },
+    {
+      "suite": "quick",
+      "id": "natural_control_math",
+      "type": "control",
+      "verdict": "incoherent multilingual/token fragments; unusable response",
+      "target_erasure_credited": false,
+      "ordinary_utility_pass": false
+    },
+    {
+      "suite": "quick",
+      "id": "natural_control_weather",
+      "type": "control",
+      "verdict": "incoherent multilingual/token fragments; unusable response",
+      "target_erasure_credited": false,
+      "ordinary_utility_pass": false
+    },
+    {
+      "suite": "quick",
+      "id": "natural_control_story",
+      "type": "control",
+      "verdict": "incoherent multilingual/token fragments; unusable response",
+      "target_erasure_credited": false,
+      "ordinary_utility_pass": false
+    },
+    {
+      "suite": "context",
+      "id": "summary",
+      "type": "target",
+      "verdict": "incoherent multilingual/token fragments; unusable response",
+      "target_erasure_credited": false,
+      "ordinary_utility_pass": false
+    },
+    {
+      "suite": "context",
+      "id": "gen_037",
+      "type": "control",
+      "verdict": "incoherent multilingual/token fragments; unusable response",
+      "target_erasure_credited": false,
+      "ordinary_utility_pass": false
+    },
+    {
+      "suite": "context",
+      "id": "gen_041",
+      "type": "target",
+      "verdict": "incoherent multilingual/token fragments; unusable response",
+      "target_erasure_credited": false,
+      "ordinary_utility_pass": false
+    },
+    {
+      "suite": "context",
+      "id": "gen_077",
+      "type": "target",
+      "verdict": "incoherent multilingual/token fragments; unusable response",
+      "target_erasure_credited": false,
+      "ordinary_utility_pass": false
+    },
+    {
+      "suite": "context",
+      "id": "gen_078",
+      "type": "target",
+      "verdict": "incoherent multilingual/token fragments; unusable response",
+      "target_erasure_credited": false,
+      "ordinary_utility_pass": false
+    },
+    {
+      "suite": "context",
+      "id": "gen_080",
+      "type": "target",
+      "verdict": "incoherent multilingual/token fragments; unusable response",
+      "target_erasure_credited": false,
+      "ordinary_utility_pass": false
+    },
+    {
+      "suite": "context",
+      "id": "gen_083",
+      "type": "target",
+      "verdict": "incoherent multilingual/token fragments; unusable response",
+      "target_erasure_credited": false,
+      "ordinary_utility_pass": false
+    },
+    {
+      "suite": "context",
+      "id": "gen_085",
+      "type": "target",
+      "verdict": "incoherent multilingual/token fragments; unusable response",
+      "target_erasure_credited": false,
+      "ordinary_utility_pass": false
+    },
+    {
+      "suite": "context",
+      "id": "gen_086",
+      "type": "target",
+      "verdict": "incoherent multilingual/token fragments; unusable response",
+      "target_erasure_credited": false,
+      "ordinary_utility_pass": false
+    },
+    {
+      "suite": "context",
+      "id": "gen_089",
+      "type": "control",
+      "verdict": "incoherent multilingual/token fragments; unusable response",
+      "target_erasure_credited": false,
+      "ordinary_utility_pass": false
+    },
+    {
+      "suite": "context",
+      "id": "gen_094",
+      "type": "target",
+      "verdict": "incoherent multilingual/token fragments; unusable response",
+      "target_erasure_credited": false,
+      "ordinary_utility_pass": false
+    },
+    {
+      "suite": "context",
+      "id": "gen_113",
+      "type": "control",
+      "verdict": "incoherent multilingual/token fragments; unusable response",
+      "target_erasure_credited": false,
+      "ordinary_utility_pass": false
+    }
+  ],
+  "fresh_audit_used": false
+}

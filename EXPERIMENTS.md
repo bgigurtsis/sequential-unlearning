@@ -9032,3 +9032,29 @@ measurements; behavior and actual native per-token leakage remain pending.
 Next subagent runs quick40greedy96/context12greedy256,batch16, and suppliedbasis
 diagnostic1040/no refit, sequential onL40S. Root's same rank4 evaluation runs
 onRTX independently. rank1_diagnostic_pins_v1.json frozen from published shards.
+
+
+## 2026-09-05 — Rank4 geometric removal causes catastrophic general collapse
+
+RTX rank4 development evaluation and diagnostic completed02:38:20UTC.
+Quick40 greedy96/batch16 +contextual12 greedy256/batch16, exact published
+logical5a48bdc8c702efdb675c0972b306be9f56f691abca5b22d34835937f9230d2d6.
+Root read all52 complete rawanswers:52/52 incoherent multilingual fragments;
+0/12 quick controls and0/3 mixed contextual controls usable. Do not credit
+gibberish on37 target-labelled prompts as concept erasure. REJECT. No broad
+scalar/PPL/fresh audit or31-removal cascade for this candidate.
+
+Suppliedbasis1040 diagnostic completed without refit, max152/no truncation,
+132252 nonpadding tokens perlayer. IntendedV residual ratio RMS acrosslayers
+.000287–.001090, maximum pertoken.005115; originalU after finalnorm RMS
+.0002989898093, max.001328753499. All are nonzero BF16leakage, but suppression
+is numerically effective. The tested uncentered global range constraint is
+therefore destructive despite small dimension count and lowweight residuals.
+Potential causes include shared necessary directions and altered RMS gains;
+these are hypotheses rather than localized findings. Wait independentrank1
+result before the next method decision; the usergoal explicitlycontinues.
+
+- `derisk/whole_concept_jobs_v1/delta_protection_v1/residual_v1/rank4_quick_v1.json` SHA256 `83057669348d5929045da3a08b7e9e5b822dfa43233854be2b6bbb088732f4b3`.
+- `derisk/whole_concept_jobs_v1/delta_protection_v1/residual_v1/rank4_context_v1.json` SHA256 `b60edcf53c5d1dd72eb2c4e71b5471376402907b0fa9382f83beac6c385a2bdf`.
+- `derisk/whole_concept_jobs_v1/delta_protection_v1/residual_v1/rank4_diagnostic_v1/metadata.json` SHA256 `ab261bf5d24f07b32e07342bd41708e34a5498403797bda47cd366440b6e670c`.
+- `derisk/whole_concept_jobs_v1/delta_protection_v1/residual_v1/rank4_review_v1.json` SHA256 `21689a3a396872767eeb56b605b181e8bb2a0c82fe6890317ac8008444eb2a55`.

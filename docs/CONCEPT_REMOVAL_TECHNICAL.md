@@ -1187,3 +1187,6 @@ Two-GPU amendment before basis/results: root owns rank4 on RTX18.101.59.227; sub
 
 
 Shared residual capture completed1040/1040 with no truncation. Rank1/4 bases fit from the same68 normalized class-mean contrasts, with closure ranks2/8. Training contrast coverage37.75%/82.51% is a geometric measurement, not evidence of semantic removal. Separate native publications on the two GPUs are the next gate.
+
+
+Rank4 result: rejected after52/52 incoherent responses, including all15 ordinary controls. The intended residual directions were numerically suppressed, so this is a destructive method outcome. Low dimension count did not protect general language. Rank1 evaluation continues independently; the user goal remains active.

@@ -27,3 +27,6 @@ Exact settings, source/data hashes, findings and rejected interpretations are in
 RTXrank4 native publication completed with exactly69 changed tensors and verified tied-head reload. Weight-space residuals are small but nonzero. Behavioral quick/context tests and actual forward leakage are the next checks.
 
 L40Srank1 publication likewise verified69changed tensors and tiedreload. Both GPUs now proceed to independent evaluations, one owned workload each.
+
+
+Rank4 result: rejected after52/52 incoherent responses, including all15 ordinary controls. The intended residual directions were numerically suppressed, so this is a destructive method outcome. Low dimension count did not protect general language. Rank1 evaluation continues independently; the user goal remains active.
