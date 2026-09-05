@@ -9894,3 +9894,19 @@ Exactartifacts SHA256:
   "config/whole_concept_jobs_v1/wide_unfamiliarity_v1/balanced_prefix_v1/data_manifest_v1.json": "e6372b342a4382ddb1b62f7018b0c18ed94ed27e598cec94073233aa84473a98"
 }
 ```
+
+
+## 2026-09-05 04:51 UTC — Chat-prefix retention qualification
+
+38/38 CPU testsPASS zero skips3.616s. New weightedJSD valueandgradient match independentmixtureKLreference, referencegradientdetached, perrowanswerprefixmask/paddingcorrect, default/unitweight loss+gradient exact. Onlychatretain callusesnewoptional --chat-retain-prefix-tokens5/--chat-retain-prefix-weight8; generic/consistencyJSDunchanged. Originalunweighteddenominator preserved. Prefixhelperunchanged71d88152fff82dcfbe46fe142a934d1cf7187749e0abd09291955acdc3025f8e. Newtestlogdistinct; oldprefixCPUlog brieflyoverwrittenbyderivedtestlauncher thenrestoredbyteexactfromHEAD locallyandremotely; gitshowsnohistoricalchange.
+
+L40Sreadonlydisk4,272,050,176bytesfree beforeparentupload; enough239MBparent+716MBsnapshots, no cachesdeleted. Exactsharedrank32parenttransfer and2-step eachGPUqualification next. Canonicalresponse17tokensincludingEOS; originalbank lengths13,14,17,18 (sourceassignmentmean 16.32233502538071). Lengthdifference isreported, notaconstanttokenmasscontrol.
+
+Qualifiedsource/artifact SHA256:
+```json
+{
+  "scripts/train_bounded_forget.py": "fb676dc7573bbd47f5bb2770f1294b209e2a0610e99dbb0aa0f86e678924a0a0",
+  "scripts/test_prefix_unfamiliarity_training.py": "4bde64bb42618e0b90a512e4dd6d09ceb01e2674a0dfe842f92019d972b8a7c6",
+  "logs/projection-sprint-20260904/chat-prefix-training-cpu-tests-v1.log": "c15d83c5b06bceb718515bc3ee50f22838c75b4d3c6f32f0141c4f38ed1c7957"
+}
+```

@@ -12,6 +12,47 @@ except ModuleNotFoundError:
 
 
 class PrefixTrainingTests(unittest.TestCase):
+    def test_chat_prefix_jsd_value_gradient_and_detached_reference(self):
+        try:
+            from train_bounded_forget import jsd_between_logits
+        except ModuleNotFoundError:
+            from scripts.train_bounded_forget import jsd_between_logits
+        logits,_,mask=self.fixture()
+        reference=torch.randn_like(logits,requires_grad=True)
+        actual=jsd_between_logits(logits,reference,mask,chunk=2,prefix_tokens=3,prefix_weight=8)
+        terms=[]
+        for row in range(3):
+            count=0
+            for position in range(8):
+                if mask[row,position]:
+                    p=torch.softmax(logits[row,position],dim=-1)
+                    q=torch.softmax(reference[row,position].detach(),dim=-1)
+                    mixture=(p+q)/2
+                    jsd=((p*(p.log()-mixture.log())).sum()+(q*(q.log()-mixture.log())).sum())/2
+                    terms.append(jsd*(8 if count<3 else 1));count+=1
+        expected=torch.stack(terms).sum()/len(terms)
+        self.assertTrue(torch.allclose(actual,expected,atol=2e-7,rtol=1e-6))
+        ga,gr=torch.autograd.grad(actual,(logits,reference),retain_graph=True,allow_unused=True)
+        ge=torch.autograd.grad(expected,logits)[0]
+        self.assertIsNone(gr)
+        self.assertTrue(torch.allclose(ga,ge,atol=1e-7,rtol=1e-5))
+        self.assertEqual(float(ga[~mask.bool()].abs().sum()),0)
+
+    def test_chat_prefix_jsd_unit_weight_exact_legacy_and_invalid_arguments(self):
+        try:
+            from train_bounded_forget import jsd_between_logits
+        except ModuleNotFoundError:
+            from scripts.train_bounded_forget import jsd_between_logits
+        logits,_,mask=self.fixture();reference=torch.randn_like(logits)
+        legacy=jsd_between_logits(logits,reference,mask,chunk=2)
+        gradient=torch.autograd.grad(legacy,logits,retain_graph=True)[0]
+        for prefix,weight in [(5,1),(0,8)]:
+            actual=jsd_between_logits(logits,reference,mask,chunk=2,prefix_tokens=prefix,prefix_weight=weight)
+            self.assertTrue(torch.equal(actual,legacy))
+            self.assertTrue(torch.equal(torch.autograd.grad(actual,logits,retain_graph=True)[0],gradient))
+        for prefix,weight in [(-1,8),(5,0),(5,float('nan'))]:
+            with self.assertRaises(ValueError):jsd_between_logits(logits,reference,mask,prefix_tokens=prefix,prefix_weight=weight)
+
     def fixture(self):
         g=torch.Generator().manual_seed(11)
         logits=torch.randn(3,8,7,generator=g,requires_grad=True)

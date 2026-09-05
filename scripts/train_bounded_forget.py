@@ -93,6 +93,8 @@ def parse_args():
     parser.add_argument("--initial-lora-adapter")
     parser.add_argument("--target-prefix-tokens", type=int, default=0)
     parser.add_argument("--target-prefix-weight", type=float, default=1.0)
+    parser.add_argument("--chat-retain-prefix-tokens", type=int, default=0)
+    parser.add_argument("--chat-retain-prefix-weight", type=float, default=1.0)
     parser.add_argument(
         "--balanced-forget-categories",
         action="store_true",
@@ -624,12 +626,20 @@ def soft_target_cross_entropy(logits, mask, target_probs, chunk=128):
     return total / selected.shape[0]
 
 
-def jsd_between_logits(logits, reference_logits, mask, chunk=128):
-    """Mean JSD between model and frozen-clean distributions on masked rows."""
+def jsd_between_logits(logits, reference_logits, mask, chunk=128, *, prefix_tokens=0, prefix_weight=1.0):
+    """Token-mean JSD; optional prefix weights retain the original denominator."""
     selected = logits[mask.bool()]
     reference = reference_logits[mask.bool()].detach()
     if selected.numel() == 0:
         return logits.sum() * 0.0
+    if not isinstance(prefix_tokens, int) or prefix_tokens < 0 or not math.isfinite(prefix_weight) or prefix_weight <= 0:
+        raise ValueError("JSD prefix requires nonnegative count and positive finite weight")
+    weights = None
+    if prefix_tokens > 0 and prefix_weight != 1:
+        if mask.ndim != 2:
+            raise ValueError("prefix JSD requires batch/sequence mask")
+        positions = mask.bool().long().cumsum(dim=1)[mask.bool()]
+        weights = torch.where(positions <= prefix_tokens, prefix_weight, 1.0)
     total = None
     log_two = math.log(2.0)
     for start in range(0, selected.shape[0], chunk):
@@ -640,7 +650,7 @@ def jsd_between_logits(logits, reference_logits, mask, chunk=128):
             (log_p.exp() * (log_p - log_m)).sum(dim=-1)
             + (log_q.exp() * (log_q - log_m)).sum(dim=-1)
         )
-        block_sum = block.sum()
+        block_sum = block.sum() if weights is None else (block * weights[start : start + chunk]).sum()
         total = block_sum if total is None else total + block_sum
     return total / selected.shape[0]
 
@@ -740,6 +750,8 @@ def main():
     forget_pairs = read_json(args.forget_data)
     if args.target_prefix_tokens < 0 or not math.isfinite(args.target_prefix_weight) or args.target_prefix_weight <= 0:
         raise ValueError("target prefix requires nonnegative token count and positive finite weight")
+    if args.chat_retain_prefix_tokens < 0 or not math.isfinite(args.chat_retain_prefix_weight) or args.chat_retain_prefix_weight <= 0:
+        raise ValueError("chat retain prefix requires nonnegative count and positive finite weight")
     if (args.target_prefix_tokens > 0 or args.target_prefix_weight != 1) and args.forget_objective != "target-response-ce":
         raise ValueError("prefix weighting only applies to target-response-ce")
     if args.initial_lora_adapter and not args.text_only_fullband_lora:
@@ -1528,7 +1540,9 @@ def main():
                         ).logits[:, :-1, :]
                 chat_mask = (c_labels[:, 1:] != -100).float()
                 chat_loss = jsd_between_logits(
-                    chat_logits, chat_reference_logits, chat_mask
+                    chat_logits, chat_reference_logits, chat_mask,
+                    prefix_tokens=args.chat_retain_prefix_tokens,
+                    prefix_weight=args.chat_retain_prefix_weight,
                 )
 
         consistency_loss = torch.zeros((), device="cuda")
