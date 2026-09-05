@@ -1,0 +1,49 @@
+{
+  "purpose": "Training-only natural ordinary-meaning retention proposals. No answers, no model capture, no training launched. Independently authored prompts, no paid-employment contrast lessons.",
+  "proposed_count": 168,
+  "accepted_count": 168,
+  "categories": {
+    "household_prices": 24,
+    "biblical_job": 24,
+    "unpaid_volunteering": 24,
+    "computing_batch": 12,
+    "physics_work": 12,
+    "steve_jobs_technology": 12,
+    "living_organisms": 12,
+    "living_rooms": 12,
+    "weather": 12,
+    "arithmetic": 12,
+    "short_stories": 12
+  },
+  "collisions": [],
+  "evaluation_excluded_unique": 467,
+  "current_training_excluded_unique": 3224,
+  "normalization": "NFKC/casefold/collapse whitespace via existing canonical helper",
+  "source_pins": {
+    "config/employment_sprint_20260904_quick/probes.json": "3a39e4634216075ee2c02b874b4d1d8bc34144a3bdd653afd7cbab01694a4feb",
+    "config/employment_sprint_20260904_context_routes/probes.json": "26b419fddc8a49af24915d7ba396241acbcbe4647f85afcd012ccd20e48426a8",
+    "config/employment_sprint_20260904_final/probes.json": "1ad0d61249e683f472f7158a03a21ce87f10917f4e9c9e9740e6f1665c8664ea",
+    "config/employment_sprint_20260904_final/conversations.json": "c55e3047f684ac1d1428286db833581392bb5ce643167f00de42273c53389e29",
+    "config/whole_concept_jobs_v1/probes.json": "051099d671000d0a829689b12961704e3056b6903ae878a3a5b174b04b7587ee",
+    "config/whole_concept_jobs_hard_v1/probes.json": "9c7a99dd0936c048a8150a14a1dfafea11c2832de5bc8dad2940e1b13323a97a",
+    "config/whole_concept_jobs_hard_v1/conversations.json": "1c2850eb6a94e2f3f4df27c2f184455544f718cc5bb0fa5e2c917b286d59359f",
+    "config/whole_concept_jobs_direct_v1/probes.json": "4391f28215fa931ebcf70f1f5411fb7a7fee533e8c56a7f96b95acdaf2d657ab",
+    "config/whole_concept_jobs_natural_v2/probes.json": "2bd3421f01109b9ffb2a9e16aa5233b27e98c34ebf75223b194047fc8852c722",
+    "data/probes.json": "4040b330b82ef2e7b509e544edbd76df7441589b6b08cd8b4518237a7d778d79",
+    "derisk/whole_concept_jobs_v1/delta_protection_v1/sprint_20260904/dense_current_runtime_scalar_v1.json": "162c0332c9230e01042810b04aca353a1862c449ae1dedcae435fd1761df9f88",
+    "config/whole_concept_jobs_v1/wide_unfamiliarity_v1/data_v1/forget.json": "ac715d3cf018d00d071880423d3aea7e32d966f33ed8292469917cf76de06dec",
+    "config/whole_concept_jobs_v1/wide_unfamiliarity_v1/data_v1/retain.json": "95525929be4b07247f54b0c7166225fd8a232c6df6a30dde06dc35d88bb8a3a9",
+    "config/whole_concept_jobs_v1/wide_unfamiliarity_v1/data_v1/chat_retain.json": "6bcbad0ca2a660ee8b83d69350526ad895845a2be8697cb2931a61aae38e5dfa",
+    "config/whole_concept_jobs_v1/wide_unfamiliarity_v1/natural_coverage_v1/probes.json": "201ef6ca0036eb18dc67df7e50abffbe105b22faf039039aa05b28110d3d4824"
+  },
+  "output": "config/whole_concept_jobs_v1/wide_unfamiliarity_v1/natural_boundary_v1/negative_proposals_v1.json",
+  "output_sha256": "ad38faf63c3b2fa3ac82f9071df37d8c429bc0f06f91813298a1bad0ca1858db",
+  "builder_sha256": "b78d9da7d10164e8606fa1c13de5d1dbab9a289eb10790a102fc6cebca6d60c5",
+  "review_scope": "All168 authored prompts reviewed. Biblical Job and Steve Jobs are proper-name controls; computing job and physics work are ordinary non-employment senses. Cost prompts discuss prices and expenditure, not earning. Unpaid volunteering remains an intentionally retained neighbour.",
+  "caveats": [
+    "Exact exclusion is not semantic independence; this is adaptive training preparation informed by development failures.",
+    "Fresh evaluation strings accessed programmatically only for exclusion, never displayed or used as examples.",
+    "Clean generated answers must later be checked for incidental paid-employment meaning before use as retention trajectories.",
+    "Physics, historical and theological answer correctness has not been assessed: this file contains prompts only."
+  ]
+}

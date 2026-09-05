@@ -11399,3 +11399,44 @@ The recipe comparison has matched dose/parent/loss but different old sampling mi
 ```
 
 Next positive proposal preparation natural_boundary_v1/positive_proposals_v1.json:216 prompts(72 seeds×3),24dialogue/24assistant-self/96role-enactment/48workplace/24biography; zero exact overlap with467eval or current training. SHA9aa7b18a33405f911e15e93ea18c494725d97a7999397285a3188113beb201f6. Proposals not yet captured/trained; fresh final still unused.
+
+
+## 2026-09-05 — Boundary negatives and exact rejected-cache retirement
+
+Natural negative proposals168 reviewed in full by primary; focused householdprices24/BiblicalJob24/volunteering24 plus8 categories12 each. Zero exact overlaps with467evaluation and3224 training strings. Source config/whole_concept_jobs_v1/wide_unfamiliarity_v1/natural_boundary_v1/negative_proposals_v1.json SHAad38faf63c3b2fa3ac82f9071df37d8c429bc0f06f91813298a1bad0ca1858db; review logs/projection-sprint-20260904/natural-boundary-negative-proposals-review-v1.json SHA101d6f82cc24f9b0627925f0d2d76d4da80d4bcf91ac351c2d1d58dfe64a86c4. Correction: household prompts lack literal cost-of-living phrase; add8 natural versions in v2 rather than replacev1. No answers captured yet.
+
+Boundary preparation continues. L40S needs storage for next parent/snapshots: retire only three rejected canonical adapter weight files after hash-verified local preservation; no other files or directories. Exact manifest integrated before deletion. Negative168 proposal reviewed; add explicit household cost-of-living phrasing in immutablev2 before capture.
+
+Primary independently rehashed all three local archives. Remote disk2,361,118,720bytes, adding238MBparent would violate2GiB pretrain guard. Proposed exact reclamation715,473,408bytes; no deletion performed yet:
+```json
+{
+  "purpose": "Proposed retirement of ONLY three rejected canonical adapter weight files after exact durable local archive and remote hash verification. No deletion performed by this preparation.",
+  "host": "51.49.31.142",
+  "disk_before": "Filesystem        1B-blocks         Used  Available Use% Mounted on\n/dev/root      154993672192 152615776256 2361118720  99% /\n",
+  "remove_only_after_root_integrates": [
+    {
+      "remote_path": "/home/ubuntu/sequential-unlearning-projection-sprint-20260904/derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/canonical32_l40s_run64_v1/step016/adapter_model.safetensors",
+      "local_archive_path": "C:\\Users\\Billy\\Documents\\GitHub\\sequential-unlearning\\derisk\\whole_concept_jobs_v1\\delta_protection_v1\\wide_unfamiliarity_v1\\canonical32_l40s_run64_v1\\step016\\adapter_model.safetensors",
+      "sha256": "8e86f50ed2eef55f508cc5f4cb69a4d266f1b675f728a667b4a8dbdab70e59f7",
+      "bytes": 238491136
+    },
+    {
+      "remote_path": "/home/ubuntu/sequential-unlearning-projection-sprint-20260904/derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/canonical32_l40s_run64_v1/step032/adapter_model.safetensors",
+      "local_archive_path": "C:\\Users\\Billy\\Documents\\GitHub\\sequential-unlearning\\derisk\\whole_concept_jobs_v1\\delta_protection_v1\\wide_unfamiliarity_v1\\canonical32_l40s_run64_v1\\step032\\adapter_model.safetensors",
+      "sha256": "507685343f907b7966865374e8857ebc632a8a01a465c4e79e539c8401cb939f",
+      "bytes": 238491136
+    },
+    {
+      "remote_path": "/home/ubuntu/sequential-unlearning-projection-sprint-20260904/derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/canonical32_l40s_run64_v1/step064/adapter_model.safetensors",
+      "local_archive_path": "C:\\Users\\Billy\\Documents\\GitHub\\sequential-unlearning\\derisk\\whole_concept_jobs_v1\\delta_protection_v1\\wide_unfamiliarity_v1\\canonical32_l40s_run64_v1\\step064\\adapter_model.safetensors",
+      "sha256": "48861b5414ae74f8beec796753c931c8b05a9d1cdbfad3c301578022b3380e90",
+      "bytes": 238491136
+    }
+  ],
+  "total_recoverable_bytes": 715473408,
+  "archive_receipt": "logs/projection-sprint-20260904/canonical32-l40s-local-archive-v1.json",
+  "archive_receipt_sha256": "012951611a30d4814155cccfbbe6378979c42ceb16bb765435e398ad9d8c5215",
+  "preserve": "All configs, README files, sources, clean weights, other adapters, run metadata, evaluation outputs and logs. Do not recursively remove any directory.",
+  "failure_basis": "All three canonical quick checkpoints failed target absence, source SHA046a5f8aa945dd07ff3a5c8fddcb45f344a4ebdd0560b2f9dbac8afa89ec8334. The exact adapter bytes remain locally archived."
+}
+```
