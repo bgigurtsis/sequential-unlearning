@@ -1,0 +1,4192 @@
+{
+  "source_checkout": "496c13b8faf54787ffbad7438844ec319c7e966d",
+  "preparation_commit": "d554b1b",
+  "mixed_source_note": "Unchanged496c13b evaluator and transitive screen helper; exact committed d554b1b builder/preparation files uploaded without full checkout sync",
+  "model": "/home/ubuntu/sequential-unlearning-clean-snapshot-093f9f388b31de276ce2de164bdc2081324b9767",
+  "tokenizer": "/home/ubuntu/sequential-unlearning-clean-snapshot-093f9f388b31de276ce2de164bdc2081324b9767",
+  "raw_capture_sha256": "8300f876ca75443d14afe9f098ffc1cefaeddac37ee683a489205d3f2edb5d44",
+  "training_pairs_sha256": "c023458939a41e4afed5ff47335e188cd8591f7604112e99291dadefc91c8c1b",
+  "preparation_probes_sha256": "d0ad5095b0a775153ab21a61caacda46a6ef53ebc75ac7c9a2ed0d386ef7eb93",
+  "record_count": 520,
+  "unique_ids": 520,
+  "join": "Exact count, IDs, every preparation field, model and tokenizer identity; all answers nonempty clean generations",
+  "settings": {
+    "greedy": true,
+    "batch_size": 16,
+    "max_new_tokens": 96
+  },
+  "runtime": {
+    "torch": "2.13.0",
+    "transformers": "5.14.1",
+    "safetensors": "0.8.0"
+  },
+  "eos_token_id": 1,
+  "max_prompt_tokens": 59,
+  "max_full_target_with_eos_tokens": 74,
+  "target_overflows": 0,
+  "max_full_decoded_clean_answer_tokens": 152,
+  "answer_audit_overflows": 0,
+  "lengths": [
+    {
+      "id": "context_441fa47a38301782a18e_roleplay",
+      "prompt_tokens": 54,
+      "target_with_eos_tokens": 14,
+      "full_target_tokens": 68,
+      "decoded_clean_answer_tokens": 63,
+      "full_audit_answer_tokens": 117
+    },
+    {
+      "id": "context_21d11fb005197a437db0_roleplay",
+      "prompt_tokens": 47,
+      "target_with_eos_tokens": 13,
+      "full_target_tokens": 60,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 143
+    },
+    {
+      "id": "context_d408c6f1d388364d4a3f_roleplay",
+      "prompt_tokens": 47,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 64,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 143
+    },
+    {
+      "id": "context_6bf037a4a8380945cb35_advice",
+      "prompt_tokens": 36,
+      "target_with_eos_tokens": 18,
+      "full_target_tokens": 54,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 132
+    },
+    {
+      "id": "context_035dd3b761b87211da39_continuation",
+      "prompt_tokens": 35,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 52,
+      "decoded_clean_answer_tokens": 62,
+      "full_audit_answer_tokens": 97
+    },
+    {
+      "id": "context_22fd7f09f335f1ae103f_comparison",
+      "prompt_tokens": 47,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 64,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 143
+    },
+    {
+      "id": "context_53527fa460dbb2d73a5f_comparison",
+      "prompt_tokens": 42,
+      "target_with_eos_tokens": 18,
+      "full_target_tokens": 60,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 138
+    },
+    {
+      "id": "context_6c0c8560aaaf88d65318_comparison",
+      "prompt_tokens": 45,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 62,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 141
+    },
+    {
+      "id": "context_54621296a223fea8a28b_comparison",
+      "prompt_tokens": 46,
+      "target_with_eos_tokens": 14,
+      "full_target_tokens": 60,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 142
+    },
+    {
+      "id": "context_bf9336311bd242ba8646_roleplay",
+      "prompt_tokens": 44,
+      "target_with_eos_tokens": 13,
+      "full_target_tokens": 57,
+      "decoded_clean_answer_tokens": 75,
+      "full_audit_answer_tokens": 119
+    },
+    {
+      "id": "context_7706e302bd9d2885bdba_advice",
+      "prompt_tokens": 39,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 56,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 135
+    },
+    {
+      "id": "context_69f1a74d51eee4d548cb_continuation",
+      "prompt_tokens": 41,
+      "target_with_eos_tokens": 18,
+      "full_target_tokens": 59,
+      "decoded_clean_answer_tokens": 69,
+      "full_audit_answer_tokens": 110
+    },
+    {
+      "id": "context_6c0c8560aaaf88d65318_advice",
+      "prompt_tokens": 38,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 55,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 134
+    },
+    {
+      "id": "context_9ef1b5b7b5661815f929_comparison",
+      "prompt_tokens": 43,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 60,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 139
+    },
+    {
+      "id": "context_16e7821006581faec78e_comparison",
+      "prompt_tokens": 43,
+      "target_with_eos_tokens": 18,
+      "full_target_tokens": 61,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 139
+    },
+    {
+      "id": "context_64bd6a478ea7bd18056e_rewrite",
+      "prompt_tokens": 37,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 54,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 133
+    },
+    {
+      "id": "context_e92931ac9b5c7e77eed0_comparison",
+      "prompt_tokens": 47,
+      "target_with_eos_tokens": 14,
+      "full_target_tokens": 61,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 143
+    },
+    {
+      "id": "context_035dd3b761b87211da39_rewrite",
+      "prompt_tokens": 40,
+      "target_with_eos_tokens": 13,
+      "full_target_tokens": 53,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 136
+    },
+    {
+      "id": "context_51ae5531d02f1d0b2dff_comparison",
+      "prompt_tokens": 49,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 66,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 145
+    },
+    {
+      "id": "context_2cb0c82c78b643266f5c_continuation",
+      "prompt_tokens": 34,
+      "target_with_eos_tokens": 18,
+      "full_target_tokens": 52,
+      "decoded_clean_answer_tokens": 54,
+      "full_audit_answer_tokens": 88
+    },
+    {
+      "id": "context_bb2081357f9bc26328c4_comparison",
+      "prompt_tokens": 48,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 65,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 144
+    },
+    {
+      "id": "context_5bbe9685c8f2bde3c7a4_roleplay",
+      "prompt_tokens": 47,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 64,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 143
+    },
+    {
+      "id": "context_77bdd8e5437c48c6c39f_comparison",
+      "prompt_tokens": 47,
+      "target_with_eos_tokens": 18,
+      "full_target_tokens": 65,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 143
+    },
+    {
+      "id": "context_3b0990d6372c27917348_roleplay",
+      "prompt_tokens": 51,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 68,
+      "decoded_clean_answer_tokens": 95,
+      "full_audit_answer_tokens": 146
+    },
+    {
+      "id": "context_7703c3af766add174dd2_comparison",
+      "prompt_tokens": 43,
+      "target_with_eos_tokens": 14,
+      "full_target_tokens": 57,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 139
+    },
+    {
+      "id": "context_54621296a223fea8a28b_advice",
+      "prompt_tokens": 39,
+      "target_with_eos_tokens": 13,
+      "full_target_tokens": 52,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 135
+    },
+    {
+      "id": "context_8c243e8cac7f6c96f5db_advice",
+      "prompt_tokens": 37,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 54,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 133
+    },
+    {
+      "id": "context_53527fa460dbb2d73a5f_roleplay",
+      "prompt_tokens": 45,
+      "target_with_eos_tokens": 18,
+      "full_target_tokens": 63,
+      "decoded_clean_answer_tokens": 93,
+      "full_audit_answer_tokens": 138
+    },
+    {
+      "id": "context_6b6bcf09c761bb700545_roleplay",
+      "prompt_tokens": 51,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 68,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 147
+    },
+    {
+      "id": "context_90b9df80aef1dd4dde5e_comparison",
+      "prompt_tokens": 45,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 62,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 141
+    },
+    {
+      "id": "context_a0cc57a80cfb0f364836_roleplay",
+      "prompt_tokens": 52,
+      "target_with_eos_tokens": 18,
+      "full_target_tokens": 70,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 148
+    },
+    {
+      "id": "context_29f6beda29558448bf77_comparison",
+      "prompt_tokens": 47,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 64,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 143
+    },
+    {
+      "id": "context_22fd7f09f335f1ae103f_advice",
+      "prompt_tokens": 40,
+      "target_with_eos_tokens": 14,
+      "full_target_tokens": 54,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 136
+    },
+    {
+      "id": "context_500c2329c2d521511e82_advice",
+      "prompt_tokens": 39,
+      "target_with_eos_tokens": 13,
+      "full_target_tokens": 52,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 135
+    },
+    {
+      "id": "context_35a506f6f963d39215ce_comparison",
+      "prompt_tokens": 48,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 65,
+      "decoded_clean_answer_tokens": 95,
+      "full_audit_answer_tokens": 143
+    },
+    {
+      "id": "context_8a71c3400ee4cb29f3c0_rewrite",
+      "prompt_tokens": 41,
+      "target_with_eos_tokens": 18,
+      "full_target_tokens": 59,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 137
+    },
+    {
+      "id": "context_a1b1697c2312469c7e45_comparison",
+      "prompt_tokens": 40,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 57,
+      "decoded_clean_answer_tokens": 95,
+      "full_audit_answer_tokens": 135
+    },
+    {
+      "id": "context_4b0090ce4c4686c46a01_rewrite",
+      "prompt_tokens": 42,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 59,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 138
+    },
+    {
+      "id": "context_79269b42765ad47f8420_comparison",
+      "prompt_tokens": 44,
+      "target_with_eos_tokens": 18,
+      "full_target_tokens": 62,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 140
+    },
+    {
+      "id": "context_bb2081357f9bc26328c4_rewrite",
+      "prompt_tokens": 44,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 61,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 140
+    },
+    {
+      "id": "context_7d7e1d2515fda319a4ac_comparison",
+      "prompt_tokens": 46,
+      "target_with_eos_tokens": 14,
+      "full_target_tokens": 60,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 142
+    },
+    {
+      "id": "context_016c43d7ec6317bbb099_continuation",
+      "prompt_tokens": 38,
+      "target_with_eos_tokens": 13,
+      "full_target_tokens": 51,
+      "decoded_clean_answer_tokens": 58,
+      "full_audit_answer_tokens": 96
+    },
+    {
+      "id": "context_035dd3b761b87211da39_advice",
+      "prompt_tokens": 37,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 54,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 133
+    },
+    {
+      "id": "context_6124a2bc4c9a43ee8585_rewrite",
+      "prompt_tokens": 44,
+      "target_with_eos_tokens": 18,
+      "full_target_tokens": 62,
+      "decoded_clean_answer_tokens": 95,
+      "full_audit_answer_tokens": 139
+    },
+    {
+      "id": "context_bb2081357f9bc26328c4_continuation",
+      "prompt_tokens": 39,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 56,
+      "decoded_clean_answer_tokens": 52,
+      "full_audit_answer_tokens": 91
+    },
+    {
+      "id": "context_47a541d389e75d308bd2_roleplay",
+      "prompt_tokens": 51,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 68,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 147
+    },
+    {
+      "id": "context_22fd7f09f335f1ae103f_roleplay",
+      "prompt_tokens": 50,
+      "target_with_eos_tokens": 18,
+      "full_target_tokens": 68,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 146
+    },
+    {
+      "id": "context_d408c6f1d388364d4a3f_rewrite",
+      "prompt_tokens": 40,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 57,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 136
+    },
+    {
+      "id": "context_54621296a223fea8a28b_continuation",
+      "prompt_tokens": 37,
+      "target_with_eos_tokens": 14,
+      "full_target_tokens": 51,
+      "decoded_clean_answer_tokens": 76,
+      "full_audit_answer_tokens": 113
+    },
+    {
+      "id": "context_016c43d7ec6317bbb099_comparison",
+      "prompt_tokens": 47,
+      "target_with_eos_tokens": 13,
+      "full_target_tokens": 60,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 143
+    },
+    {
+      "id": "context_5bbe9685c8f2bde3c7a4_advice",
+      "prompt_tokens": 37,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 54,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 133
+    },
+    {
+      "id": "context_685621c8b44743947da4_advice",
+      "prompt_tokens": 39,
+      "target_with_eos_tokens": 18,
+      "full_target_tokens": 57,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 135
+    },
+    {
+      "id": "context_6124a2bc4c9a43ee8585_comparison",
+      "prompt_tokens": 48,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 65,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 144
+    },
+    {
+      "id": "context_4b0090ce4c4686c46a01_comparison",
+      "prompt_tokens": 46,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 63,
+      "decoded_clean_answer_tokens": 95,
+      "full_audit_answer_tokens": 141
+    },
+    {
+      "id": "context_441fa47a38301782a18e_comparison",
+      "prompt_tokens": 51,
+      "target_with_eos_tokens": 18,
+      "full_target_tokens": 69,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 147
+    },
+    {
+      "id": "context_339165956b61b2872fc5_continuation",
+      "prompt_tokens": 36,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 53,
+      "decoded_clean_answer_tokens": 54,
+      "full_audit_answer_tokens": 90
+    },
+    {
+      "id": "context_f7ea9cef12baae998cbf_roleplay",
+      "prompt_tokens": 47,
+      "target_with_eos_tokens": 14,
+      "full_target_tokens": 61,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 143
+    },
+    {
+      "id": "context_cbbb3fa2d27dc7fdfe5f_comparison",
+      "prompt_tokens": 44,
+      "target_with_eos_tokens": 13,
+      "full_target_tokens": 57,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 140
+    },
+    {
+      "id": "context_e1d6229940a0ec7223f5_advice",
+      "prompt_tokens": 40,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 57,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 136
+    },
+    {
+      "id": "context_51ae5531d02f1d0b2dff_advice",
+      "prompt_tokens": 42,
+      "target_with_eos_tokens": 18,
+      "full_target_tokens": 60,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 138
+    },
+    {
+      "id": "context_3e06c11d41afe0e359d2_roleplay",
+      "prompt_tokens": 50,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 67,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 146
+    },
+    {
+      "id": "context_e6f53a5252dd282cc6af_continuation",
+      "prompt_tokens": 40,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 57,
+      "decoded_clean_answer_tokens": 68,
+      "full_audit_answer_tokens": 108
+    },
+    {
+      "id": "context_e1d6229940a0ec7223f5_roleplay",
+      "prompt_tokens": 50,
+      "target_with_eos_tokens": 18,
+      "full_target_tokens": 68,
+      "decoded_clean_answer_tokens": 31,
+      "full_audit_answer_tokens": 81
+    },
+    {
+      "id": "context_35a506f6f963d39215ce_continuation",
+      "prompt_tokens": 39,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 56,
+      "decoded_clean_answer_tokens": 62,
+      "full_audit_answer_tokens": 101
+    },
+    {
+      "id": "context_47a541d389e75d308bd2_rewrite",
+      "prompt_tokens": 44,
+      "target_with_eos_tokens": 14,
+      "full_target_tokens": 58,
+      "decoded_clean_answer_tokens": 95,
+      "full_audit_answer_tokens": 139
+    },
+    {
+      "id": "context_0bd5e5a55de661516c24_continuation",
+      "prompt_tokens": 35,
+      "target_with_eos_tokens": 13,
+      "full_target_tokens": 48,
+      "decoded_clean_answer_tokens": 50,
+      "full_audit_answer_tokens": 85
+    },
+    {
+      "id": "context_e6f53a5252dd282cc6af_advice",
+      "prompt_tokens": 42,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 59,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 138
+    },
+    {
+      "id": "context_bc0df7b5ccebb33854d8_roleplay",
+      "prompt_tokens": 44,
+      "target_with_eos_tokens": 18,
+      "full_target_tokens": 62,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 140
+    },
+    {
+      "id": "context_86d2215c50dafcebfd04_advice",
+      "prompt_tokens": 38,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 55,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 134
+    },
+    {
+      "id": "context_5d8ebc9cb0fbd50da7e0_roleplay",
+      "prompt_tokens": 47,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 64,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 143
+    },
+    {
+      "id": "context_1658248baa6f320c3eb0_roleplay",
+      "prompt_tokens": 51,
+      "target_with_eos_tokens": 18,
+      "full_target_tokens": 69,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 147
+    },
+    {
+      "id": "context_3c31dc03ba693d14432c_comparison",
+      "prompt_tokens": 46,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 63,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 142
+    },
+    {
+      "id": "context_88304d2109d165f69289_continuation",
+      "prompt_tokens": 35,
+      "target_with_eos_tokens": 14,
+      "full_target_tokens": 49,
+      "decoded_clean_answer_tokens": 51,
+      "full_audit_answer_tokens": 86
+    },
+    {
+      "id": "context_090929560aa7a046a86e_continuation",
+      "prompt_tokens": 40,
+      "target_with_eos_tokens": 13,
+      "full_target_tokens": 53,
+      "decoded_clean_answer_tokens": 88,
+      "full_audit_answer_tokens": 128
+    },
+    {
+      "id": "context_35a506f6f963d39215ce_rewrite",
+      "prompt_tokens": 44,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 61,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 140
+    },
+    {
+      "id": "context_1658248baa6f320c3eb0_comparison",
+      "prompt_tokens": 48,
+      "target_with_eos_tokens": 18,
+      "full_target_tokens": 66,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 144
+    },
+    {
+      "id": "context_2cb0c82c78b643266f5c_rewrite",
+      "prompt_tokens": 39,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 56,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 135
+    },
+    {
+      "id": "context_8ce430eadf754bb1bc29_roleplay",
+      "prompt_tokens": 47,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 64,
+      "decoded_clean_answer_tokens": 73,
+      "full_audit_answer_tokens": 120
+    },
+    {
+      "id": "context_47a541d389e75d308bd2_continuation",
+      "prompt_tokens": 39,
+      "target_with_eos_tokens": 18,
+      "full_target_tokens": 57,
+      "decoded_clean_answer_tokens": 60,
+      "full_audit_answer_tokens": 99
+    },
+    {
+      "id": "context_0bd5e5a55de661516c24_advice",
+      "prompt_tokens": 37,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 54,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 133
+    },
+    {
+      "id": "context_451eff00992aeb2dd20a_rewrite",
+      "prompt_tokens": 41,
+      "target_with_eos_tokens": 14,
+      "full_target_tokens": 55,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 137
+    },
+    {
+      "id": "context_7703c3af766add174dd2_advice",
+      "prompt_tokens": 36,
+      "target_with_eos_tokens": 13,
+      "full_target_tokens": 49,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 132
+    },
+    {
+      "id": "context_16e7821006581faec78e_rewrite",
+      "prompt_tokens": 39,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 56,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 135
+    },
+    {
+      "id": "context_c4e75715d2d83b8ec850_advice",
+      "prompt_tokens": 39,
+      "target_with_eos_tokens": 18,
+      "full_target_tokens": 57,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 135
+    },
+    {
+      "id": "context_e0e3b738c546a92ecb95_comparison",
+      "prompt_tokens": 50,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 67,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 146
+    },
+    {
+      "id": "context_196247b2b02b2b9e8a0e_comparison",
+      "prompt_tokens": 46,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 63,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 142
+    },
+    {
+      "id": "context_bdf37cd2dd2373b282ea_advice",
+      "prompt_tokens": 39,
+      "target_with_eos_tokens": 18,
+      "full_target_tokens": 57,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 135
+    },
+    {
+      "id": "context_016c43d7ec6317bbb099_advice",
+      "prompt_tokens": 40,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 57,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 136
+    },
+    {
+      "id": "context_97c58d59ae4883e00dbb_continuation",
+      "prompt_tokens": 39,
+      "target_with_eos_tokens": 14,
+      "full_target_tokens": 53,
+      "decoded_clean_answer_tokens": 61,
+      "full_audit_answer_tokens": 100
+    },
+    {
+      "id": "context_196247b2b02b2b9e8a0e_continuation",
+      "prompt_tokens": 37,
+      "target_with_eos_tokens": 13,
+      "full_target_tokens": 50,
+      "decoded_clean_answer_tokens": 54,
+      "full_audit_answer_tokens": 91
+    },
+    {
+      "id": "context_d120b673950efbea7c35_advice",
+      "prompt_tokens": 40,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 57,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 136
+    },
+    {
+      "id": "context_153df4cbb7744b5fa2b8_rewrite",
+      "prompt_tokens": 43,
+      "target_with_eos_tokens": 18,
+      "full_target_tokens": 61,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 139
+    },
+    {
+      "id": "context_e1d6229940a0ec7223f5_comparison",
+      "prompt_tokens": 47,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 64,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 143
+    },
+    {
+      "id": "context_4c068b0b6ec5c015a746_rewrite",
+      "prompt_tokens": 41,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 58,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 137
+    },
+    {
+      "id": "context_82b5d0f0f2abd985003d_rewrite",
+      "prompt_tokens": 42,
+      "target_with_eos_tokens": 18,
+      "full_target_tokens": 60,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 138
+    },
+    {
+      "id": "context_035dd3b761b87211da39_roleplay",
+      "prompt_tokens": 47,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 64,
+      "decoded_clean_answer_tokens": 82,
+      "full_audit_answer_tokens": 129
+    },
+    {
+      "id": "context_6b6bcf09c761bb700545_rewrite",
+      "prompt_tokens": 44,
+      "target_with_eos_tokens": 14,
+      "full_target_tokens": 58,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 140
+    },
+    {
+      "id": "context_71eb389943b159b529e2_rewrite",
+      "prompt_tokens": 42,
+      "target_with_eos_tokens": 13,
+      "full_target_tokens": 55,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 138
+    },
+    {
+      "id": "context_8a71c3400ee4cb29f3c0_advice",
+      "prompt_tokens": 38,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 55,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 134
+    },
+    {
+      "id": "context_3b93ab155a2e9e3a1d2c_continuation",
+      "prompt_tokens": 39,
+      "target_with_eos_tokens": 18,
+      "full_target_tokens": 57,
+      "decoded_clean_answer_tokens": 67,
+      "full_audit_answer_tokens": 106
+    },
+    {
+      "id": "context_4c068b0b6ec5c015a746_roleplay",
+      "prompt_tokens": 48,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 65,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 144
+    },
+    {
+      "id": "context_2c7f85f86a196c6bf16f_continuation",
+      "prompt_tokens": 39,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 56,
+      "decoded_clean_answer_tokens": 59,
+      "full_audit_answer_tokens": 98
+    },
+    {
+      "id": "context_0943445e55c08e7bfc79_advice",
+      "prompt_tokens": 38,
+      "target_with_eos_tokens": 18,
+      "full_target_tokens": 56,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 134
+    },
+    {
+      "id": "context_90b9df80aef1dd4dde5e_roleplay",
+      "prompt_tokens": 48,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 65,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 144
+    },
+    {
+      "id": "context_bf9336311bd242ba8646_advice",
+      "prompt_tokens": 34,
+      "target_with_eos_tokens": 14,
+      "full_target_tokens": 48,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 130
+    },
+    {
+      "id": "context_88304d2109d165f69289_roleplay",
+      "prompt_tokens": 47,
+      "target_with_eos_tokens": 13,
+      "full_target_tokens": 60,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 143
+    },
+    {
+      "id": "context_cad70946f07b9f4a88bd_continuation",
+      "prompt_tokens": 37,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 54,
+      "decoded_clean_answer_tokens": 51,
+      "full_audit_answer_tokens": 88
+    },
+    {
+      "id": "context_1658248baa6f320c3eb0_rewrite",
+      "prompt_tokens": 44,
+      "target_with_eos_tokens": 18,
+      "full_target_tokens": 62,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 140
+    },
+    {
+      "id": "context_3d93ff18698679926a7a_continuation",
+      "prompt_tokens": 41,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 58,
+      "decoded_clean_answer_tokens": 70,
+      "full_audit_answer_tokens": 111
+    },
+    {
+      "id": "context_4495138a207ab4d1a273_roleplay",
+      "prompt_tokens": 53,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 70,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 149
+    },
+    {
+      "id": "context_486143ed6020b74dbaee_comparison",
+      "prompt_tokens": 47,
+      "target_with_eos_tokens": 18,
+      "full_target_tokens": 65,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 143
+    },
+    {
+      "id": "context_3d93ff18698679926a7a_comparison",
+      "prompt_tokens": 50,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 67,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 146
+    },
+    {
+      "id": "context_090929560aa7a046a86e_rewrite",
+      "prompt_tokens": 45,
+      "target_with_eos_tokens": 14,
+      "full_target_tokens": 59,
+      "decoded_clean_answer_tokens": 58,
+      "full_audit_answer_tokens": 103
+    },
+    {
+      "id": "context_83cdb6b78a18e3e23a63_roleplay",
+      "prompt_tokens": 51,
+      "target_with_eos_tokens": 13,
+      "full_target_tokens": 64,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 147
+    },
+    {
+      "id": "context_69f1a74d51eee4d548cb_comparison",
+      "prompt_tokens": 50,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 67,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 146
+    },
+    {
+      "id": "context_bdf37cd2dd2373b282ea_roleplay",
+      "prompt_tokens": 49,
+      "target_with_eos_tokens": 18,
+      "full_target_tokens": 67,
+      "decoded_clean_answer_tokens": 79,
+      "full_audit_answer_tokens": 128
+    },
+    {
+      "id": "context_bc0df7b5ccebb33854d8_comparison",
+      "prompt_tokens": 41,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 58,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 137
+    },
+    {
+      "id": "context_16e7821006581faec78e_continuation",
+      "prompt_tokens": 34,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 51,
+      "decoded_clean_answer_tokens": 59,
+      "full_audit_answer_tokens": 93
+    },
+    {
+      "id": "context_29f6beda29558448bf77_advice",
+      "prompt_tokens": 40,
+      "target_with_eos_tokens": 18,
+      "full_target_tokens": 58,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 136
+    },
+    {
+      "id": "context_6781332a6099439d3dc2_continuation",
+      "prompt_tokens": 37,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 54,
+      "decoded_clean_answer_tokens": 59,
+      "full_audit_answer_tokens": 96
+    },
+    {
+      "id": "context_1f64d3a76716e20849fc_continuation",
+      "prompt_tokens": 37,
+      "target_with_eos_tokens": 14,
+      "full_target_tokens": 51,
+      "decoded_clean_answer_tokens": 52,
+      "full_audit_answer_tokens": 89
+    },
+    {
+      "id": "context_21d11fb005197a437db0_continuation",
+      "prompt_tokens": 35,
+      "target_with_eos_tokens": 13,
+      "full_target_tokens": 48,
+      "decoded_clean_answer_tokens": 50,
+      "full_audit_answer_tokens": 85
+    },
+    {
+      "id": "context_678bcb773eea4769da87_comparison",
+      "prompt_tokens": 51,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 68,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 147
+    },
+    {
+      "id": "context_d120b673950efbea7c35_comparison",
+      "prompt_tokens": 47,
+      "target_with_eos_tokens": 18,
+      "full_target_tokens": 65,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 143
+    },
+    {
+      "id": "context_83cdb6b78a18e3e23a63_continuation",
+      "prompt_tokens": 39,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 56,
+      "decoded_clean_answer_tokens": 68,
+      "full_audit_answer_tokens": 107
+    },
+    {
+      "id": "context_82b5d0f0f2abd985003d_comparison",
+      "prompt_tokens": 46,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 63,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 142
+    },
+    {
+      "id": "context_3b0990d6372c27917348_comparison",
+      "prompt_tokens": 48,
+      "target_with_eos_tokens": 18,
+      "full_target_tokens": 66,
+      "decoded_clean_answer_tokens": 95,
+      "full_audit_answer_tokens": 143
+    },
+    {
+      "id": "context_e92931ac9b5c7e77eed0_continuation",
+      "prompt_tokens": 38,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 55,
+      "decoded_clean_answer_tokens": 69,
+      "full_audit_answer_tokens": 107
+    },
+    {
+      "id": "context_a0cc57a80cfb0f364836_comparison",
+      "prompt_tokens": 49,
+      "target_with_eos_tokens": 14,
+      "full_target_tokens": 63,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 145
+    },
+    {
+      "id": "context_21d11fb005197a437db0_rewrite",
+      "prompt_tokens": 40,
+      "target_with_eos_tokens": 13,
+      "full_target_tokens": 53,
+      "decoded_clean_answer_tokens": 60,
+      "full_audit_answer_tokens": 100
+    },
+    {
+      "id": "context_d246f56bd329890f05ff_comparison",
+      "prompt_tokens": 44,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 61,
+      "decoded_clean_answer_tokens": 94,
+      "full_audit_answer_tokens": 138
+    },
+    {
+      "id": "context_53527fa460dbb2d73a5f_rewrite",
+      "prompt_tokens": 38,
+      "target_with_eos_tokens": 18,
+      "full_target_tokens": 56,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 134
+    },
+    {
+      "id": "context_153df4cbb7744b5fa2b8_continuation",
+      "prompt_tokens": 38,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 55,
+      "decoded_clean_answer_tokens": 67,
+      "full_audit_answer_tokens": 105
+    },
+    {
+      "id": "context_27895e45ae57a8ad8e8c_advice",
+      "prompt_tokens": 43,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 60,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 139
+    },
+    {
+      "id": "context_ea996ec9e3d0a8bfd7f2_rewrite",
+      "prompt_tokens": 41,
+      "target_with_eos_tokens": 18,
+      "full_target_tokens": 59,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 137
+    },
+    {
+      "id": "context_4f743d73cbd0681aee07_advice",
+      "prompt_tokens": 38,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 55,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 134
+    },
+    {
+      "id": "context_54621296a223fea8a28b_roleplay",
+      "prompt_tokens": 49,
+      "target_with_eos_tokens": 14,
+      "full_target_tokens": 63,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 145
+    },
+    {
+      "id": "context_8c243e8cac7f6c96f5db_comparison",
+      "prompt_tokens": 44,
+      "target_with_eos_tokens": 13,
+      "full_target_tokens": 57,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 140
+    },
+    {
+      "id": "context_8c243e8cac7f6c96f5db_roleplay",
+      "prompt_tokens": 47,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 64,
+      "decoded_clean_answer_tokens": 90,
+      "full_audit_answer_tokens": 137
+    },
+    {
+      "id": "context_bb2081357f9bc26328c4_roleplay",
+      "prompt_tokens": 51,
+      "target_with_eos_tokens": 18,
+      "full_target_tokens": 69,
+      "decoded_clean_answer_tokens": 85,
+      "full_audit_answer_tokens": 136
+    },
+    {
+      "id": "context_016c43d7ec6317bbb099_rewrite",
+      "prompt_tokens": 43,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 60,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 139
+    },
+    {
+      "id": "context_69f1a74d51eee4d548cb_roleplay",
+      "prompt_tokens": 53,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 70,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 149
+    },
+    {
+      "id": "context_fcf3d0c400e0ca8e6339_rewrite",
+      "prompt_tokens": 38,
+      "target_with_eos_tokens": 18,
+      "full_target_tokens": 56,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 134
+    },
+    {
+      "id": "context_97c58d59ae4883e00dbb_advice",
+      "prompt_tokens": 41,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 58,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 137
+    },
+    {
+      "id": "context_e0e3b738c546a92ecb95_advice",
+      "prompt_tokens": 43,
+      "target_with_eos_tokens": 14,
+      "full_target_tokens": 57,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 139
+    },
+    {
+      "id": "context_7703c3af766add174dd2_roleplay",
+      "prompt_tokens": 46,
+      "target_with_eos_tokens": 13,
+      "full_target_tokens": 59,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 142
+    },
+    {
+      "id": "context_3d93ff18698679926a7a_roleplay",
+      "prompt_tokens": 53,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 70,
+      "decoded_clean_answer_tokens": 61,
+      "full_audit_answer_tokens": 114
+    },
+    {
+      "id": "context_cd7e2ab52d4928ddfefa_advice",
+      "prompt_tokens": 36,
+      "target_with_eos_tokens": 18,
+      "full_target_tokens": 54,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 132
+    },
+    {
+      "id": "context_bf9336311bd242ba8646_comparison",
+      "prompt_tokens": 41,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 58,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 137
+    },
+    {
+      "id": "context_0bd5e5a55de661516c24_rewrite",
+      "prompt_tokens": 40,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 57,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 136
+    },
+    {
+      "id": "context_4f743d73cbd0681aee07_roleplay",
+      "prompt_tokens": 48,
+      "target_with_eos_tokens": 18,
+      "full_target_tokens": 66,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 144
+    },
+    {
+      "id": "context_2c7f85f86a196c6bf16f_comparison",
+      "prompt_tokens": 48,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 65,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 144
+    },
+    {
+      "id": "context_6bf037a4a8380945cb35_rewrite",
+      "prompt_tokens": 39,
+      "target_with_eos_tokens": 14,
+      "full_target_tokens": 53,
+      "decoded_clean_answer_tokens": 57,
+      "full_audit_answer_tokens": 96
+    },
+    {
+      "id": "context_bdf37cd2dd2373b282ea_comparison",
+      "prompt_tokens": 46,
+      "target_with_eos_tokens": 13,
+      "full_target_tokens": 59,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 142
+    },
+    {
+      "id": "context_a1b1697c2312469c7e45_continuation",
+      "prompt_tokens": 31,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 48,
+      "decoded_clean_answer_tokens": 49,
+      "full_audit_answer_tokens": 80
+    },
+    {
+      "id": "context_efcb44d3e412f8df40b5_continuation",
+      "prompt_tokens": 36,
+      "target_with_eos_tokens": 18,
+      "full_target_tokens": 54,
+      "decoded_clean_answer_tokens": 67,
+      "full_audit_answer_tokens": 103
+    },
+    {
+      "id": "context_7d7e1d2515fda319a4ac_roleplay",
+      "prompt_tokens": 49,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 66,
+      "decoded_clean_answer_tokens": 95,
+      "full_audit_answer_tokens": 144
+    },
+    {
+      "id": "context_4f0fe79bc708d99d89a2_rewrite",
+      "prompt_tokens": 40,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 57,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 136
+    },
+    {
+      "id": "context_f1e53354baf2e2c7d0ef_continuation",
+      "prompt_tokens": 34,
+      "target_with_eos_tokens": 18,
+      "full_target_tokens": 52,
+      "decoded_clean_answer_tokens": 52,
+      "full_audit_answer_tokens": 86
+    },
+    {
+      "id": "context_5d8ebc9cb0fbd50da7e0_advice",
+      "prompt_tokens": 37,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 54,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 133
+    },
+    {
+      "id": "context_ea996ec9e3d0a8bfd7f2_continuation",
+      "prompt_tokens": 36,
+      "target_with_eos_tokens": 14,
+      "full_target_tokens": 50,
+      "decoded_clean_answer_tokens": 73,
+      "full_audit_answer_tokens": 109
+    },
+    {
+      "id": "context_c34998ef3543262ddef7_roleplay",
+      "prompt_tokens": 47,
+      "target_with_eos_tokens": 13,
+      "full_target_tokens": 60,
+      "decoded_clean_answer_tokens": 92,
+      "full_audit_answer_tokens": 139
+    },
+    {
+      "id": "context_d120b673950efbea7c35_rewrite",
+      "prompt_tokens": 43,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 60,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 139
+    },
+    {
+      "id": "context_4495138a207ab4d1a273_advice",
+      "prompt_tokens": 43,
+      "target_with_eos_tokens": 18,
+      "full_target_tokens": 61,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 139
+    },
+    {
+      "id": "context_05b8dc9234a16d3d1b77_advice",
+      "prompt_tokens": 39,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 56,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 135
+    },
+    {
+      "id": "context_5bbe9685c8f2bde3c7a4_comparison",
+      "prompt_tokens": 44,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 61,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 140
+    },
+    {
+      "id": "context_0943445e55c08e7bfc79_rewrite",
+      "prompt_tokens": 41,
+      "target_with_eos_tokens": 18,
+      "full_target_tokens": 59,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 137
+    },
+    {
+      "id": "context_c329a0c7529e71a297eb_comparison",
+      "prompt_tokens": 51,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 68,
+      "decoded_clean_answer_tokens": 94,
+      "full_audit_answer_tokens": 145
+    },
+    {
+      "id": "context_341c896c40371c202e1b_advice",
+      "prompt_tokens": 42,
+      "target_with_eos_tokens": 14,
+      "full_target_tokens": 56,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 138
+    },
+    {
+      "id": "context_c329a0c7529e71a297eb_roleplay",
+      "prompt_tokens": 54,
+      "target_with_eos_tokens": 13,
+      "full_target_tokens": 67,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 150
+    },
+    {
+      "id": "context_6124a2bc4c9a43ee8585_roleplay",
+      "prompt_tokens": 51,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 68,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 147
+    },
+    {
+      "id": "context_451eff00992aeb2dd20a_roleplay",
+      "prompt_tokens": 48,
+      "target_with_eos_tokens": 18,
+      "full_target_tokens": 66,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 144
+    },
+    {
+      "id": "context_8ce430eadf754bb1bc29_comparison",
+      "prompt_tokens": 44,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 61,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 140
+    },
+    {
+      "id": "context_6781332a6099439d3dc2_rewrite",
+      "prompt_tokens": 42,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 59,
+      "decoded_clean_answer_tokens": 58,
+      "full_audit_answer_tokens": 100
+    },
+    {
+      "id": "context_fcf3d0c400e0ca8e6339_advice",
+      "prompt_tokens": 35,
+      "target_with_eos_tokens": 18,
+      "full_target_tokens": 53,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 131
+    },
+    {
+      "id": "context_c5a2c9f4e499a767e48e_comparison",
+      "prompt_tokens": 46,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 63,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 142
+    },
+    {
+      "id": "context_54621296a223fea8a28b_rewrite",
+      "prompt_tokens": 42,
+      "target_with_eos_tokens": 14,
+      "full_target_tokens": 56,
+      "decoded_clean_answer_tokens": 57,
+      "full_audit_answer_tokens": 99
+    },
+    {
+      "id": "context_e92931ac9b5c7e77eed0_roleplay",
+      "prompt_tokens": 50,
+      "target_with_eos_tokens": 13,
+      "full_target_tokens": 63,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 146
+    },
+    {
+      "id": "context_341c896c40371c202e1b_continuation",
+      "prompt_tokens": 40,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 57,
+      "decoded_clean_answer_tokens": 53,
+      "full_audit_answer_tokens": 93
+    },
+    {
+      "id": "context_c4e75715d2d83b8ec850_continuation",
+      "prompt_tokens": 37,
+      "target_with_eos_tokens": 18,
+      "full_target_tokens": 55,
+      "decoded_clean_answer_tokens": 60,
+      "full_audit_answer_tokens": 97
+    },
+    {
+      "id": "context_4c068b0b6ec5c015a746_advice",
+      "prompt_tokens": 38,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 55,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 134
+    },
+    {
+      "id": "context_3bdf028c1b059dda46eb_comparison",
+      "prompt_tokens": 46,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 63,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 142
+    },
+    {
+      "id": "context_685621c8b44743947da4_rewrite",
+      "prompt_tokens": 42,
+      "target_with_eos_tokens": 18,
+      "full_target_tokens": 60,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 138
+    },
+    {
+      "id": "context_08866b13678043d070c6_roleplay",
+      "prompt_tokens": 47,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 64,
+      "decoded_clean_answer_tokens": 31,
+      "full_audit_answer_tokens": 78
+    },
+    {
+      "id": "context_1f64d3a76716e20849fc_roleplay",
+      "prompt_tokens": 49,
+      "target_with_eos_tokens": 14,
+      "full_target_tokens": 63,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 145
+    },
+    {
+      "id": "context_c34998ef3543262ddef7_comparison",
+      "prompt_tokens": 44,
+      "target_with_eos_tokens": 13,
+      "full_target_tokens": 57,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 140
+    },
+    {
+      "id": "context_c329a0c7529e71a297eb_continuation",
+      "prompt_tokens": 42,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 59,
+      "decoded_clean_answer_tokens": 58,
+      "full_audit_answer_tokens": 100
+    },
+    {
+      "id": "context_ea519f83b6022f854770_rewrite",
+      "prompt_tokens": 44,
+      "target_with_eos_tokens": 18,
+      "full_target_tokens": 62,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 140
+    },
+    {
+      "id": "context_b1e91df1f8e2553af41c_continuation",
+      "prompt_tokens": 37,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 54,
+      "decoded_clean_answer_tokens": 55,
+      "full_audit_answer_tokens": 92
+    },
+    {
+      "id": "context_8a71c3400ee4cb29f3c0_comparison",
+      "prompt_tokens": 45,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 62,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 141
+    },
+    {
+      "id": "context_efcb44d3e412f8df40b5_rewrite",
+      "prompt_tokens": 41,
+      "target_with_eos_tokens": 18,
+      "full_target_tokens": 59,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 137
+    },
+    {
+      "id": "context_6bf037a4a8380945cb35_comparison",
+      "prompt_tokens": 43,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 60,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 139
+    },
+    {
+      "id": "context_83cdb6b78a18e3e23a63_rewrite",
+      "prompt_tokens": 44,
+      "target_with_eos_tokens": 14,
+      "full_target_tokens": 58,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 140
+    },
+    {
+      "id": "context_90b9df80aef1dd4dde5e_continuation",
+      "prompt_tokens": 36,
+      "target_with_eos_tokens": 13,
+      "full_target_tokens": 49,
+      "decoded_clean_answer_tokens": 51,
+      "full_audit_answer_tokens": 87
+    },
+    {
+      "id": "context_7d7e1d2515fda319a4ac_rewrite",
+      "prompt_tokens": 42,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 59,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 138
+    },
+    {
+      "id": "context_fcf3d0c400e0ca8e6339_comparison",
+      "prompt_tokens": 42,
+      "target_with_eos_tokens": 18,
+      "full_target_tokens": 60,
+      "decoded_clean_answer_tokens": 95,
+      "full_audit_answer_tokens": 137
+    },
+    {
+      "id": "context_b1e91df1f8e2553af41c_comparison",
+      "prompt_tokens": 46,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 63,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 142
+    },
+    {
+      "id": "context_674282f4325d331e3f07_continuation",
+      "prompt_tokens": 34,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 51,
+      "decoded_clean_answer_tokens": 52,
+      "full_audit_answer_tokens": 86
+    },
+    {
+      "id": "context_35a506f6f963d39215ce_advice",
+      "prompt_tokens": 41,
+      "target_with_eos_tokens": 18,
+      "full_target_tokens": 59,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 137
+    },
+    {
+      "id": "context_86d2215c50dafcebfd04_continuation",
+      "prompt_tokens": 36,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 53,
+      "decoded_clean_answer_tokens": 54,
+      "full_audit_answer_tokens": 90
+    },
+    {
+      "id": "context_79269b42765ad47f8420_continuation",
+      "prompt_tokens": 35,
+      "target_with_eos_tokens": 14,
+      "full_target_tokens": 49,
+      "decoded_clean_answer_tokens": 59,
+      "full_audit_answer_tokens": 94
+    },
+    {
+      "id": "context_3bdf028c1b059dda46eb_continuation",
+      "prompt_tokens": 37,
+      "target_with_eos_tokens": 13,
+      "full_target_tokens": 50,
+      "decoded_clean_answer_tokens": 65,
+      "full_audit_answer_tokens": 102
+    },
+    {
+      "id": "context_674282f4325d331e3f07_roleplay",
+      "prompt_tokens": 46,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 63,
+      "decoded_clean_answer_tokens": 83,
+      "full_audit_answer_tokens": 129
+    },
+    {
+      "id": "context_d408c6f1d388364d4a3f_continuation",
+      "prompt_tokens": 35,
+      "target_with_eos_tokens": 18,
+      "full_target_tokens": 53,
+      "decoded_clean_answer_tokens": 61,
+      "full_audit_answer_tokens": 96
+    },
+    {
+      "id": "context_500c2329c2d521511e82_rewrite",
+      "prompt_tokens": 42,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 59,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 138
+    },
+    {
+      "id": "context_3e06c11d41afe0e359d2_advice",
+      "prompt_tokens": 40,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 57,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 136
+    },
+    {
+      "id": "context_7703c3af766add174dd2_rewrite",
+      "prompt_tokens": 39,
+      "target_with_eos_tokens": 18,
+      "full_target_tokens": 57,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 135
+    },
+    {
+      "id": "context_35a506f6f963d39215ce_roleplay",
+      "prompt_tokens": 51,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 68,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 147
+    },
+    {
+      "id": "context_90b9df80aef1dd4dde5e_advice",
+      "prompt_tokens": 38,
+      "target_with_eos_tokens": 14,
+      "full_target_tokens": 52,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 134
+    },
+    {
+      "id": "context_a1b1697c2312469c7e45_advice",
+      "prompt_tokens": 33,
+      "target_with_eos_tokens": 13,
+      "full_target_tokens": 46,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 129
+    },
+    {
+      "id": "context_cd7e2ab52d4928ddfefa_continuation",
+      "prompt_tokens": 34,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 51,
+      "decoded_clean_answer_tokens": 54,
+      "full_audit_answer_tokens": 88
+    },
+    {
+      "id": "context_c7f0ad86f63fc48bba2b_roleplay",
+      "prompt_tokens": 50,
+      "target_with_eos_tokens": 18,
+      "full_target_tokens": 68,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 146
+    },
+    {
+      "id": "context_196247b2b02b2b9e8a0e_rewrite",
+      "prompt_tokens": 42,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 59,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 138
+    },
+    {
+      "id": "context_f7ea9cef12baae998cbf_continuation",
+      "prompt_tokens": 35,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 52,
+      "decoded_clean_answer_tokens": 58,
+      "full_audit_answer_tokens": 93
+    },
+    {
+      "id": "context_6bf037a4a8380945cb35_roleplay",
+      "prompt_tokens": 46,
+      "target_with_eos_tokens": 18,
+      "full_target_tokens": 64,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 142
+    },
+    {
+      "id": "context_441fa47a38301782a18e_continuation",
+      "prompt_tokens": 42,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 59,
+      "decoded_clean_answer_tokens": 52,
+      "full_audit_answer_tokens": 94
+    },
+    {
+      "id": "context_196247b2b02b2b9e8a0e_roleplay",
+      "prompt_tokens": 49,
+      "target_with_eos_tokens": 14,
+      "full_target_tokens": 63,
+      "decoded_clean_answer_tokens": 86,
+      "full_audit_answer_tokens": 135
+    },
+    {
+      "id": "context_c7f0ad86f63fc48bba2b_rewrite",
+      "prompt_tokens": 43,
+      "target_with_eos_tokens": 13,
+      "full_target_tokens": 56,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 139
+    },
+    {
+      "id": "context_0c52f57569f23bcdb53b_comparison",
+      "prompt_tokens": 45,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 62,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 141
+    },
+    {
+      "id": "context_5bbe9685c8f2bde3c7a4_continuation",
+      "prompt_tokens": 35,
+      "target_with_eos_tokens": 18,
+      "full_target_tokens": 53,
+      "decoded_clean_answer_tokens": 63,
+      "full_audit_answer_tokens": 98
+    },
+    {
+      "id": "context_0943445e55c08e7bfc79_comparison",
+      "prompt_tokens": 45,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 62,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 141
+    },
+    {
+      "id": "context_8ce430eadf754bb1bc29_continuation",
+      "prompt_tokens": 35,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 52,
+      "decoded_clean_answer_tokens": 57,
+      "full_audit_answer_tokens": 92
+    },
+    {
+      "id": "context_5d8ebc9cb0fbd50da7e0_comparison",
+      "prompt_tokens": 44,
+      "target_with_eos_tokens": 18,
+      "full_target_tokens": 62,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 140
+    },
+    {
+      "id": "context_08866b13678043d070c6_advice",
+      "prompt_tokens": 37,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 54,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 133
+    },
+    {
+      "id": "context_49f22e41ac5e6c19b288_rewrite",
+      "prompt_tokens": 40,
+      "target_with_eos_tokens": 14,
+      "full_target_tokens": 54,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 136
+    },
+    {
+      "id": "context_efcb44d3e412f8df40b5_comparison",
+      "prompt_tokens": 45,
+      "target_with_eos_tokens": 13,
+      "full_target_tokens": 58,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 141
+    },
+    {
+      "id": "context_685621c8b44743947da4_continuation",
+      "prompt_tokens": 37,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 54,
+      "decoded_clean_answer_tokens": 54,
+      "full_audit_answer_tokens": 91
+    },
+    {
+      "id": "context_4f0fe79bc708d99d89a2_continuation",
+      "prompt_tokens": 35,
+      "target_with_eos_tokens": 18,
+      "full_target_tokens": 53,
+      "decoded_clean_answer_tokens": 58,
+      "full_audit_answer_tokens": 93
+    },
+    {
+      "id": "context_e0e3b738c546a92ecb95_rewrite",
+      "prompt_tokens": 46,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 63,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 142
+    },
+    {
+      "id": "context_678bcb773eea4769da87_rewrite",
+      "prompt_tokens": 47,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 64,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 143
+    },
+    {
+      "id": "context_0ddfd1249e4c30716edd_roleplay",
+      "prompt_tokens": 46,
+      "target_with_eos_tokens": 18,
+      "full_target_tokens": 64,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 142
+    },
+    {
+      "id": "context_c4e75715d2d83b8ec850_rewrite",
+      "prompt_tokens": 42,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 59,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 138
+    },
+    {
+      "id": "context_08866b13678043d070c6_rewrite",
+      "prompt_tokens": 40,
+      "target_with_eos_tokens": 14,
+      "full_target_tokens": 54,
+      "decoded_clean_answer_tokens": 58,
+      "full_audit_answer_tokens": 98
+    },
+    {
+      "id": "context_fcf3d0c400e0ca8e6339_continuation",
+      "prompt_tokens": 33,
+      "target_with_eos_tokens": 13,
+      "full_target_tokens": 46,
+      "decoded_clean_answer_tokens": 58,
+      "full_audit_answer_tokens": 91
+    },
+    {
+      "id": "context_3863076fdbecd9fa3e22_advice",
+      "prompt_tokens": 49,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 66,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 145
+    },
+    {
+      "id": "context_05b8dc9234a16d3d1b77_roleplay",
+      "prompt_tokens": 49,
+      "target_with_eos_tokens": 18,
+      "full_target_tokens": 67,
+      "decoded_clean_answer_tokens": 81,
+      "full_audit_answer_tokens": 130
+    },
+    {
+      "id": "context_21d11fb005197a437db0_advice",
+      "prompt_tokens": 37,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 54,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 133
+    },
+    {
+      "id": "context_b1e91df1f8e2553af41c_advice",
+      "prompt_tokens": 39,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 56,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 135
+    },
+    {
+      "id": "context_8c243e8cac7f6c96f5db_rewrite",
+      "prompt_tokens": 40,
+      "target_with_eos_tokens": 18,
+      "full_target_tokens": 58,
+      "decoded_clean_answer_tokens": 95,
+      "full_audit_answer_tokens": 135
+    },
+    {
+      "id": "context_88304d2109d165f69289_comparison",
+      "prompt_tokens": 44,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 61,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 140
+    },
+    {
+      "id": "context_500c2329c2d521511e82_roleplay",
+      "prompt_tokens": 49,
+      "target_with_eos_tokens": 14,
+      "full_target_tokens": 63,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 145
+    },
+    {
+      "id": "context_0943445e55c08e7bfc79_continuation",
+      "prompt_tokens": 36,
+      "target_with_eos_tokens": 13,
+      "full_target_tokens": 49,
+      "decoded_clean_answer_tokens": 57,
+      "full_audit_answer_tokens": 93
+    },
+    {
+      "id": "context_69f1a74d51eee4d548cb_advice",
+      "prompt_tokens": 43,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 60,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 139
+    },
+    {
+      "id": "context_450fe3432a1b04e72e57_continuation",
+      "prompt_tokens": 43,
+      "target_with_eos_tokens": 18,
+      "full_target_tokens": 61,
+      "decoded_clean_answer_tokens": 61,
+      "full_audit_answer_tokens": 104
+    },
+    {
+      "id": "context_4c068b0b6ec5c015a746_comparison",
+      "prompt_tokens": 45,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 62,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 141
+    },
+    {
+      "id": "context_3e06c11d41afe0e359d2_continuation",
+      "prompt_tokens": 38,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 55,
+      "decoded_clean_answer_tokens": 73,
+      "full_audit_answer_tokens": 111
+    },
+    {
+      "id": "context_e0e3b738c546a92ecb95_continuation",
+      "prompt_tokens": 41,
+      "target_with_eos_tokens": 18,
+      "full_target_tokens": 59,
+      "decoded_clean_answer_tokens": 64,
+      "full_audit_answer_tokens": 105
+    },
+    {
+      "id": "context_49f22e41ac5e6c19b288_continuation",
+      "prompt_tokens": 35,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 52,
+      "decoded_clean_answer_tokens": 59,
+      "full_audit_answer_tokens": 94
+    },
+    {
+      "id": "context_4f743d73cbd0681aee07_comparison",
+      "prompt_tokens": 45,
+      "target_with_eos_tokens": 14,
+      "full_target_tokens": 59,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 141
+    },
+    {
+      "id": "context_3e06c11d41afe0e359d2_comparison",
+      "prompt_tokens": 47,
+      "target_with_eos_tokens": 13,
+      "full_target_tokens": 60,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 143
+    },
+    {
+      "id": "context_bb2081357f9bc26328c4_advice",
+      "prompt_tokens": 41,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 58,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 137
+    },
+    {
+      "id": "context_08866b13678043d070c6_comparison",
+      "prompt_tokens": 44,
+      "target_with_eos_tokens": 18,
+      "full_target_tokens": 62,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 140
+    },
+    {
+      "id": "context_3863076fdbecd9fa3e22_continuation",
+      "prompt_tokens": 47,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 64,
+      "decoded_clean_answer_tokens": 75,
+      "full_audit_answer_tokens": 122
+    },
+    {
+      "id": "context_53527fa460dbb2d73a5f_advice",
+      "prompt_tokens": 35,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 52,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 131
+    },
+    {
+      "id": "context_1f64d3a76716e20849fc_rewrite",
+      "prompt_tokens": 42,
+      "target_with_eos_tokens": 18,
+      "full_target_tokens": 60,
+      "decoded_clean_answer_tokens": 59,
+      "full_audit_answer_tokens": 101
+    },
+    {
+      "id": "context_8ce430eadf754bb1bc29_advice",
+      "prompt_tokens": 37,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 54,
+      "decoded_clean_answer_tokens": 95,
+      "full_audit_answer_tokens": 132
+    },
+    {
+      "id": "context_c4e75715d2d83b8ec850_roleplay",
+      "prompt_tokens": 49,
+      "target_with_eos_tokens": 14,
+      "full_target_tokens": 63,
+      "decoded_clean_answer_tokens": 89,
+      "full_audit_answer_tokens": 138
+    },
+    {
+      "id": "context_72eef85490217ecb93ea_comparison",
+      "prompt_tokens": 48,
+      "target_with_eos_tokens": 13,
+      "full_target_tokens": 61,
+      "decoded_clean_answer_tokens": 95,
+      "full_audit_answer_tokens": 143
+    },
+    {
+      "id": "context_339165956b61b2872fc5_advice",
+      "prompt_tokens": 38,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 55,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 134
+    },
+    {
+      "id": "context_4b0090ce4c4686c46a01_continuation",
+      "prompt_tokens": 37,
+      "target_with_eos_tokens": 18,
+      "full_target_tokens": 55,
+      "decoded_clean_answer_tokens": 60,
+      "full_audit_answer_tokens": 97
+    },
+    {
+      "id": "context_2cb0c82c78b643266f5c_advice",
+      "prompt_tokens": 36,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 53,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 132
+    },
+    {
+      "id": "context_b1e91df1f8e2553af41c_rewrite",
+      "prompt_tokens": 42,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 59,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 138
+    },
+    {
+      "id": "context_f1e53354baf2e2c7d0ef_advice",
+      "prompt_tokens": 36,
+      "target_with_eos_tokens": 18,
+      "full_target_tokens": 54,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 132
+    },
+    {
+      "id": "context_08866b13678043d070c6_continuation",
+      "prompt_tokens": 35,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 52,
+      "decoded_clean_answer_tokens": 90,
+      "full_audit_answer_tokens": 125
+    },
+    {
+      "id": "context_1f64d3a76716e20849fc_advice",
+      "prompt_tokens": 39,
+      "target_with_eos_tokens": 14,
+      "full_target_tokens": 53,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 135
+    },
+    {
+      "id": "context_71eb389943b159b529e2_advice",
+      "prompt_tokens": 39,
+      "target_with_eos_tokens": 13,
+      "full_target_tokens": 52,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 135
+    },
+    {
+      "id": "context_486143ed6020b74dbaee_continuation",
+      "prompt_tokens": 38,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 55,
+      "decoded_clean_answer_tokens": 72,
+      "full_audit_answer_tokens": 110
+    },
+    {
+      "id": "context_3b93ab155a2e9e3a1d2c_roleplay",
+      "prompt_tokens": 51,
+      "target_with_eos_tokens": 18,
+      "full_target_tokens": 69,
+      "decoded_clean_answer_tokens": 12,
+      "full_audit_answer_tokens": 63
+    },
+    {
+      "id": "context_72eef85490217ecb93ea_continuation",
+      "prompt_tokens": 39,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 56,
+      "decoded_clean_answer_tokens": 66,
+      "full_audit_answer_tokens": 105
+    },
+    {
+      "id": "context_3c31dc03ba693d14432c_continuation",
+      "prompt_tokens": 37,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 54,
+      "decoded_clean_answer_tokens": 61,
+      "full_audit_answer_tokens": 98
+    },
+    {
+      "id": "context_e6f53a5252dd282cc6af_roleplay",
+      "prompt_tokens": 52,
+      "target_with_eos_tokens": 18,
+      "full_target_tokens": 70,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 148
+    },
+    {
+      "id": "context_4f0fe79bc708d99d89a2_advice",
+      "prompt_tokens": 37,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 54,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 133
+    },
+    {
+      "id": "context_77bdd8e5437c48c6c39f_roleplay",
+      "prompt_tokens": 50,
+      "target_with_eos_tokens": 14,
+      "full_target_tokens": 64,
+      "decoded_clean_answer_tokens": 59,
+      "full_audit_answer_tokens": 109
+    },
+    {
+      "id": "context_b1e91df1f8e2553af41c_roleplay",
+      "prompt_tokens": 49,
+      "target_with_eos_tokens": 13,
+      "full_target_tokens": 62,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 145
+    },
+    {
+      "id": "context_6b6bcf09c761bb700545_continuation",
+      "prompt_tokens": 39,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 56,
+      "decoded_clean_answer_tokens": 68,
+      "full_audit_answer_tokens": 107
+    },
+    {
+      "id": "context_341c896c40371c202e1b_comparison",
+      "prompt_tokens": 49,
+      "target_with_eos_tokens": 18,
+      "full_target_tokens": 67,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 145
+    },
+    {
+      "id": "context_3b93ab155a2e9e3a1d2c_rewrite",
+      "prompt_tokens": 44,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 61,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 140
+    },
+    {
+      "id": "context_6360d745f78ab62f4ef4_comparison",
+      "prompt_tokens": 47,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 64,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 143
+    },
+    {
+      "id": "context_77bdd8e5437c48c6c39f_continuation",
+      "prompt_tokens": 38,
+      "target_with_eos_tokens": 18,
+      "full_target_tokens": 56,
+      "decoded_clean_answer_tokens": 64,
+      "full_audit_answer_tokens": 102
+    },
+    {
+      "id": "context_a1b1697c2312469c7e45_roleplay",
+      "prompt_tokens": 43,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 60,
+      "decoded_clean_answer_tokens": 58,
+      "full_audit_answer_tokens": 101
+    },
+    {
+      "id": "context_49f22e41ac5e6c19b288_advice",
+      "prompt_tokens": 37,
+      "target_with_eos_tokens": 14,
+      "full_target_tokens": 51,
+      "decoded_clean_answer_tokens": 94,
+      "full_audit_answer_tokens": 131
+    },
+    {
+      "id": "context_71eb389943b159b529e2_roleplay",
+      "prompt_tokens": 49,
+      "target_with_eos_tokens": 13,
+      "full_target_tokens": 62,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 145
+    },
+    {
+      "id": "context_82b5d0f0f2abd985003d_roleplay",
+      "prompt_tokens": 49,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 66,
+      "decoded_clean_answer_tokens": 76,
+      "full_audit_answer_tokens": 125
+    },
+    {
+      "id": "context_3863076fdbecd9fa3e22_rewrite",
+      "prompt_tokens": 52,
+      "target_with_eos_tokens": 18,
+      "full_target_tokens": 70,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 148
+    },
+    {
+      "id": "context_3d93ff18698679926a7a_advice",
+      "prompt_tokens": 43,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 60,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 139
+    },
+    {
+      "id": "context_153df4cbb7744b5fa2b8_comparison",
+      "prompt_tokens": 47,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 64,
+      "decoded_clean_answer_tokens": 94,
+      "full_audit_answer_tokens": 141
+    },
+    {
+      "id": "context_674282f4325d331e3f07_rewrite",
+      "prompt_tokens": 39,
+      "target_with_eos_tokens": 18,
+      "full_target_tokens": 57,
+      "decoded_clean_answer_tokens": 60,
+      "full_audit_answer_tokens": 99
+    },
+    {
+      "id": "context_cbbb3fa2d27dc7fdfe5f_continuation",
+      "prompt_tokens": 35,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 52,
+      "decoded_clean_answer_tokens": 44,
+      "full_audit_answer_tokens": 79
+    },
+    {
+      "id": "context_51ae5531d02f1d0b2dff_roleplay",
+      "prompt_tokens": 52,
+      "target_with_eos_tokens": 14,
+      "full_target_tokens": 66,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 148
+    },
+    {
+      "id": "context_27895e45ae57a8ad8e8c_comparison",
+      "prompt_tokens": 50,
+      "target_with_eos_tokens": 13,
+      "full_target_tokens": 63,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 146
+    },
+    {
+      "id": "context_c5a2c9f4e499a767e48e_roleplay",
+      "prompt_tokens": 49,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 66,
+      "decoded_clean_answer_tokens": 89,
+      "full_audit_answer_tokens": 138
+    },
+    {
+      "id": "context_ea996ec9e3d0a8bfd7f2_advice",
+      "prompt_tokens": 38,
+      "target_with_eos_tokens": 18,
+      "full_target_tokens": 56,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 134
+    },
+    {
+      "id": "context_9ef1b5b7b5661815f929_continuation",
+      "prompt_tokens": 34,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 51,
+      "decoded_clean_answer_tokens": 48,
+      "full_audit_answer_tokens": 82
+    },
+    {
+      "id": "context_c34998ef3543262ddef7_continuation",
+      "prompt_tokens": 35,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 52,
+      "decoded_clean_answer_tokens": 56,
+      "full_audit_answer_tokens": 91
+    },
+    {
+      "id": "context_27895e45ae57a8ad8e8c_roleplay",
+      "prompt_tokens": 53,
+      "target_with_eos_tokens": 18,
+      "full_target_tokens": 71,
+      "decoded_clean_answer_tokens": 65,
+      "full_audit_answer_tokens": 118
+    },
+    {
+      "id": "context_7d7e1d2515fda319a4ac_continuation",
+      "prompt_tokens": 37,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 54,
+      "decoded_clean_answer_tokens": 56,
+      "full_audit_answer_tokens": 93
+    },
+    {
+      "id": "context_035dd3b761b87211da39_comparison",
+      "prompt_tokens": 44,
+      "target_with_eos_tokens": 14,
+      "full_target_tokens": 58,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 140
+    },
+    {
+      "id": "context_3c31dc03ba693d14432c_advice",
+      "prompt_tokens": 39,
+      "target_with_eos_tokens": 13,
+      "full_target_tokens": 52,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 135
+    },
+    {
+      "id": "context_1acfcf32f740297e8969_continuation",
+      "prompt_tokens": 34,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 51,
+      "decoded_clean_answer_tokens": 49,
+      "full_audit_answer_tokens": 83
+    },
+    {
+      "id": "context_4495138a207ab4d1a273_rewrite",
+      "prompt_tokens": 46,
+      "target_with_eos_tokens": 18,
+      "full_target_tokens": 64,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 142
+    },
+    {
+      "id": "context_64bd6a478ea7bd18056e_comparison",
+      "prompt_tokens": 41,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 58,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 137
+    },
+    {
+      "id": "context_79269b42765ad47f8420_rewrite",
+      "prompt_tokens": 40,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 57,
+      "decoded_clean_answer_tokens": 95,
+      "full_audit_answer_tokens": 135
+    },
+    {
+      "id": "context_22fd7f09f335f1ae103f_continuation",
+      "prompt_tokens": 38,
+      "target_with_eos_tokens": 18,
+      "full_target_tokens": 56,
+      "decoded_clean_answer_tokens": 62,
+      "full_audit_answer_tokens": 100
+    },
+    {
+      "id": "context_2cb0c82c78b643266f5c_comparison",
+      "prompt_tokens": 43,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 60,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 139
+    },
+    {
+      "id": "context_6124a2bc4c9a43ee8585_advice",
+      "prompt_tokens": 41,
+      "target_with_eos_tokens": 14,
+      "full_target_tokens": 55,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 137
+    },
+    {
+      "id": "context_441fa47a38301782a18e_advice",
+      "prompt_tokens": 44,
+      "target_with_eos_tokens": 13,
+      "full_target_tokens": 57,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 140
+    },
+    {
+      "id": "context_450fe3432a1b04e72e57_roleplay",
+      "prompt_tokens": 55,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 72,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 151
+    },
+    {
+      "id": "context_c7f0ad86f63fc48bba2b_continuation",
+      "prompt_tokens": 38,
+      "target_with_eos_tokens": 18,
+      "full_target_tokens": 56,
+      "decoded_clean_answer_tokens": 59,
+      "full_audit_answer_tokens": 97
+    },
+    {
+      "id": "context_efcb44d3e412f8df40b5_roleplay",
+      "prompt_tokens": 48,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 65,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 144
+    },
+    {
+      "id": "context_8ce430eadf754bb1bc29_rewrite",
+      "prompt_tokens": 40,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 57,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 136
+    },
+    {
+      "id": "context_f1e53354baf2e2c7d0ef_comparison",
+      "prompt_tokens": 43,
+      "target_with_eos_tokens": 18,
+      "full_target_tokens": 61,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 139
+    },
+    {
+      "id": "context_6781332a6099439d3dc2_advice",
+      "prompt_tokens": 39,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 56,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 135
+    },
+    {
+      "id": "context_3b93ab155a2e9e3a1d2c_comparison",
+      "prompt_tokens": 48,
+      "target_with_eos_tokens": 14,
+      "full_target_tokens": 62,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 144
+    },
+    {
+      "id": "context_cd7e2ab52d4928ddfefa_comparison",
+      "prompt_tokens": 43,
+      "target_with_eos_tokens": 13,
+      "full_target_tokens": 56,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 139
+    },
+    {
+      "id": "context_4f743d73cbd0681aee07_rewrite",
+      "prompt_tokens": 41,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 58,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 137
+    },
+    {
+      "id": "context_c5a2c9f4e499a767e48e_advice",
+      "prompt_tokens": 39,
+      "target_with_eos_tokens": 18,
+      "full_target_tokens": 57,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 135
+    },
+    {
+      "id": "context_79269b42765ad47f8420_roleplay",
+      "prompt_tokens": 47,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 64,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 143
+    },
+    {
+      "id": "context_71eb389943b159b529e2_continuation",
+      "prompt_tokens": 37,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 54,
+      "decoded_clean_answer_tokens": 57,
+      "full_audit_answer_tokens": 94
+    },
+    {
+      "id": "context_6b6bcf09c761bb700545_advice",
+      "prompt_tokens": 41,
+      "target_with_eos_tokens": 18,
+      "full_target_tokens": 59,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 137
+    },
+    {
+      "id": "context_500c2329c2d521511e82_comparison",
+      "prompt_tokens": 46,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 63,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 142
+    },
+    {
+      "id": "context_3bdf028c1b059dda46eb_rewrite",
+      "prompt_tokens": 42,
+      "target_with_eos_tokens": 14,
+      "full_target_tokens": 56,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 138
+    },
+    {
+      "id": "context_77bdd8e5437c48c6c39f_advice",
+      "prompt_tokens": 40,
+      "target_with_eos_tokens": 13,
+      "full_target_tokens": 53,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 136
+    },
+    {
+      "id": "context_fcf3d0c400e0ca8e6339_roleplay",
+      "prompt_tokens": 45,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 62,
+      "decoded_clean_answer_tokens": 78,
+      "full_audit_answer_tokens": 123
+    },
+    {
+      "id": "context_86d2215c50dafcebfd04_roleplay",
+      "prompt_tokens": 48,
+      "target_with_eos_tokens": 18,
+      "full_target_tokens": 66,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 144
+    },
+    {
+      "id": "context_9ef1b5b7b5661815f929_advice",
+      "prompt_tokens": 36,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 53,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 132
+    },
+    {
+      "id": "context_ea519f83b6022f854770_roleplay",
+      "prompt_tokens": 51,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 68,
+      "decoded_clean_answer_tokens": 53,
+      "full_audit_answer_tokens": 104
+    },
+    {
+      "id": "context_339165956b61b2872fc5_roleplay",
+      "prompt_tokens": 48,
+      "target_with_eos_tokens": 18,
+      "full_target_tokens": 66,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 144
+    },
+    {
+      "id": "context_1658248baa6f320c3eb0_advice",
+      "prompt_tokens": 41,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 58,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 137
+    },
+    {
+      "id": "context_685621c8b44743947da4_comparison",
+      "prompt_tokens": 46,
+      "target_with_eos_tokens": 14,
+      "full_target_tokens": 60,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 142
+    },
+    {
+      "id": "context_d246f56bd329890f05ff_roleplay",
+      "prompt_tokens": 47,
+      "target_with_eos_tokens": 13,
+      "full_target_tokens": 60,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 143
+    },
+    {
+      "id": "context_2c7f85f86a196c6bf16f_advice",
+      "prompt_tokens": 41,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 58,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 137
+    },
+    {
+      "id": "context_efcb44d3e412f8df40b5_advice",
+      "prompt_tokens": 38,
+      "target_with_eos_tokens": 18,
+      "full_target_tokens": 56,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 134
+    },
+    {
+      "id": "context_1acfcf32f740297e8969_rewrite",
+      "prompt_tokens": 39,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 56,
+      "decoded_clean_answer_tokens": 95,
+      "full_audit_answer_tokens": 134
+    },
+    {
+      "id": "context_4b0090ce4c4686c46a01_advice",
+      "prompt_tokens": 39,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 56,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 135
+    },
+    {
+      "id": "context_3bdf028c1b059dda46eb_roleplay",
+      "prompt_tokens": 49,
+      "target_with_eos_tokens": 18,
+      "full_target_tokens": 67,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 145
+    },
+    {
+      "id": "context_3d93ff18698679926a7a_rewrite",
+      "prompt_tokens": 46,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 63,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 142
+    },
+    {
+      "id": "context_0c52f57569f23bcdb53b_advice",
+      "prompt_tokens": 38,
+      "target_with_eos_tokens": 14,
+      "full_target_tokens": 52,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 134
+    },
+    {
+      "id": "context_a0cc57a80cfb0f364836_rewrite",
+      "prompt_tokens": 45,
+      "target_with_eos_tokens": 13,
+      "full_target_tokens": 58,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 141
+    },
+    {
+      "id": "context_ea519f83b6022f854770_continuation",
+      "prompt_tokens": 39,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 56,
+      "decoded_clean_answer_tokens": 67,
+      "full_audit_answer_tokens": 106
+    },
+    {
+      "id": "context_69f1a74d51eee4d548cb_rewrite",
+      "prompt_tokens": 46,
+      "target_with_eos_tokens": 18,
+      "full_target_tokens": 64,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 142
+    },
+    {
+      "id": "context_16e7821006581faec78e_roleplay",
+      "prompt_tokens": 46,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 63,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 142
+    },
+    {
+      "id": "context_4495138a207ab4d1a273_continuation",
+      "prompt_tokens": 41,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 58,
+      "decoded_clean_answer_tokens": 75,
+      "full_audit_answer_tokens": 116
+    },
+    {
+      "id": "context_6360d745f78ab62f4ef4_advice",
+      "prompt_tokens": 40,
+      "target_with_eos_tokens": 18,
+      "full_target_tokens": 58,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 136
+    },
+    {
+      "id": "context_7703c3af766add174dd2_continuation",
+      "prompt_tokens": 34,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 51,
+      "decoded_clean_answer_tokens": 58,
+      "full_audit_answer_tokens": 92
+    },
+    {
+      "id": "context_c7f0ad86f63fc48bba2b_advice",
+      "prompt_tokens": 40,
+      "target_with_eos_tokens": 14,
+      "full_target_tokens": 54,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 136
+    },
+    {
+      "id": "context_451eff00992aeb2dd20a_continuation",
+      "prompt_tokens": 36,
+      "target_with_eos_tokens": 13,
+      "full_target_tokens": 49,
+      "decoded_clean_answer_tokens": 55,
+      "full_audit_answer_tokens": 91
+    },
+    {
+      "id": "context_1f64d3a76716e20849fc_comparison",
+      "prompt_tokens": 46,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 63,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 142
+    },
+    {
+      "id": "context_cad70946f07b9f4a88bd_rewrite",
+      "prompt_tokens": 42,
+      "target_with_eos_tokens": 18,
+      "full_target_tokens": 60,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 138
+    },
+    {
+      "id": "context_1acfcf32f740297e8969_advice",
+      "prompt_tokens": 36,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 53,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 132
+    },
+    {
+      "id": "context_6360d745f78ab62f4ef4_rewrite",
+      "prompt_tokens": 43,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 60,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 139
+    },
+    {
+      "id": "context_341c896c40371c202e1b_roleplay",
+      "prompt_tokens": 52,
+      "target_with_eos_tokens": 18,
+      "full_target_tokens": 70,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 148
+    },
+    {
+      "id": "context_0ddfd1249e4c30716edd_comparison",
+      "prompt_tokens": 43,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 60,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 139
+    },
+    {
+      "id": "context_6781332a6099439d3dc2_roleplay",
+      "prompt_tokens": 49,
+      "target_with_eos_tokens": 14,
+      "full_target_tokens": 63,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 145
+    },
+    {
+      "id": "context_3863076fdbecd9fa3e22_roleplay",
+      "prompt_tokens": 59,
+      "target_with_eos_tokens": 13,
+      "full_target_tokens": 72,
+      "decoded_clean_answer_tokens": 86,
+      "full_audit_answer_tokens": 145
+    },
+    {
+      "id": "context_6c0c8560aaaf88d65318_rewrite",
+      "prompt_tokens": 41,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 58,
+      "decoded_clean_answer_tokens": 58,
+      "full_audit_answer_tokens": 99
+    },
+    {
+      "id": "context_29f6beda29558448bf77_roleplay",
+      "prompt_tokens": 50,
+      "target_with_eos_tokens": 18,
+      "full_target_tokens": 68,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 146
+    },
+    {
+      "id": "context_f7ea9cef12baae998cbf_comparison",
+      "prompt_tokens": 44,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 61,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 140
+    },
+    {
+      "id": "context_6c0c8560aaaf88d65318_continuation",
+      "prompt_tokens": 36,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 53,
+      "decoded_clean_answer_tokens": 89,
+      "full_audit_answer_tokens": 125
+    },
+    {
+      "id": "context_8c243e8cac7f6c96f5db_continuation",
+      "prompt_tokens": 35,
+      "target_with_eos_tokens": 18,
+      "full_target_tokens": 53,
+      "decoded_clean_answer_tokens": 55,
+      "full_audit_answer_tokens": 90
+    },
+    {
+      "id": "context_ea996ec9e3d0a8bfd7f2_roleplay",
+      "prompt_tokens": 48,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 65,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 144
+    },
+    {
+      "id": "context_82b5d0f0f2abd985003d_continuation",
+      "prompt_tokens": 37,
+      "target_with_eos_tokens": 14,
+      "full_target_tokens": 51,
+      "decoded_clean_answer_tokens": 58,
+      "full_audit_answer_tokens": 95
+    },
+    {
+      "id": "context_27895e45ae57a8ad8e8c_continuation",
+      "prompt_tokens": 41,
+      "target_with_eos_tokens": 13,
+      "full_target_tokens": 54,
+      "decoded_clean_answer_tokens": 78,
+      "full_audit_answer_tokens": 119
+    },
+    {
+      "id": "context_678bcb773eea4769da87_roleplay",
+      "prompt_tokens": 54,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 71,
+      "decoded_clean_answer_tokens": 58,
+      "full_audit_answer_tokens": 112
+    },
+    {
+      "id": "context_c34998ef3543262ddef7_rewrite",
+      "prompt_tokens": 40,
+      "target_with_eos_tokens": 18,
+      "full_target_tokens": 58,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 136
+    },
+    {
+      "id": "context_f7ea9cef12baae998cbf_rewrite",
+      "prompt_tokens": 40,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 57,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 136
+    },
+    {
+      "id": "context_d120b673950efbea7c35_roleplay",
+      "prompt_tokens": 50,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 67,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 146
+    },
+    {
+      "id": "context_16e7821006581faec78e_advice",
+      "prompt_tokens": 36,
+      "target_with_eos_tokens": 18,
+      "full_target_tokens": 54,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 132
+    },
+    {
+      "id": "context_e1d6229940a0ec7223f5_rewrite",
+      "prompt_tokens": 43,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 60,
+      "decoded_clean_answer_tokens": 58,
+      "full_audit_answer_tokens": 101
+    },
+    {
+      "id": "context_674282f4325d331e3f07_advice",
+      "prompt_tokens": 36,
+      "target_with_eos_tokens": 14,
+      "full_target_tokens": 50,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 132
+    },
+    {
+      "id": "context_4495138a207ab4d1a273_comparison",
+      "prompt_tokens": 50,
+      "target_with_eos_tokens": 13,
+      "full_target_tokens": 63,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 146
+    },
+    {
+      "id": "context_d246f56bd329890f05ff_advice",
+      "prompt_tokens": 37,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 54,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 133
+    },
+    {
+      "id": "context_22fd7f09f335f1ae103f_rewrite",
+      "prompt_tokens": 43,
+      "target_with_eos_tokens": 18,
+      "full_target_tokens": 61,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 139
+    },
+    {
+      "id": "context_88304d2109d165f69289_rewrite",
+      "prompt_tokens": 40,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 57,
+      "decoded_clean_answer_tokens": 57,
+      "full_audit_answer_tokens": 97
+    },
+    {
+      "id": "context_6b6bcf09c761bb700545_comparison",
+      "prompt_tokens": 48,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 65,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 144
+    },
+    {
+      "id": "context_bf9336311bd242ba8646_continuation",
+      "prompt_tokens": 32,
+      "target_with_eos_tokens": 18,
+      "full_target_tokens": 50,
+      "decoded_clean_answer_tokens": 50,
+      "full_audit_answer_tokens": 82
+    },
+    {
+      "id": "context_685621c8b44743947da4_roleplay",
+      "prompt_tokens": 49,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 66,
+      "decoded_clean_answer_tokens": 91,
+      "full_audit_answer_tokens": 140
+    },
+    {
+      "id": "context_090929560aa7a046a86e_comparison",
+      "prompt_tokens": 49,
+      "target_with_eos_tokens": 14,
+      "full_target_tokens": 63,
+      "decoded_clean_answer_tokens": 94,
+      "full_audit_answer_tokens": 143
+    },
+    {
+      "id": "context_153df4cbb7744b5fa2b8_roleplay",
+      "prompt_tokens": 50,
+      "target_with_eos_tokens": 13,
+      "full_target_tokens": 63,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 146
+    },
+    {
+      "id": "context_4f743d73cbd0681aee07_continuation",
+      "prompt_tokens": 36,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 53,
+      "decoded_clean_answer_tokens": 61,
+      "full_audit_answer_tokens": 97
+    },
+    {
+      "id": "context_64bd6a478ea7bd18056e_continuation",
+      "prompt_tokens": 32,
+      "target_with_eos_tokens": 18,
+      "full_target_tokens": 50,
+      "decoded_clean_answer_tokens": 47,
+      "full_audit_answer_tokens": 79
+    },
+    {
+      "id": "context_0c52f57569f23bcdb53b_continuation",
+      "prompt_tokens": 36,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 53,
+      "decoded_clean_answer_tokens": 53,
+      "full_audit_answer_tokens": 89
+    },
+    {
+      "id": "context_153df4cbb7744b5fa2b8_advice",
+      "prompt_tokens": 40,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 57,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 136
+    },
+    {
+      "id": "context_6bf037a4a8380945cb35_continuation",
+      "prompt_tokens": 34,
+      "target_with_eos_tokens": 18,
+      "full_target_tokens": 52,
+      "decoded_clean_answer_tokens": 59,
+      "full_audit_answer_tokens": 93
+    },
+    {
+      "id": "context_ea996ec9e3d0a8bfd7f2_comparison",
+      "prompt_tokens": 45,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 62,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 141
+    },
+    {
+      "id": "context_bdf37cd2dd2373b282ea_rewrite",
+      "prompt_tokens": 42,
+      "target_with_eos_tokens": 14,
+      "full_target_tokens": 56,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 138
+    },
+    {
+      "id": "context_500c2329c2d521511e82_continuation",
+      "prompt_tokens": 37,
+      "target_with_eos_tokens": 13,
+      "full_target_tokens": 50,
+      "decoded_clean_answer_tokens": 79,
+      "full_audit_answer_tokens": 116
+    },
+    {
+      "id": "context_441fa47a38301782a18e_rewrite",
+      "prompt_tokens": 47,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 64,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 143
+    },
+    {
+      "id": "context_3863076fdbecd9fa3e22_comparison",
+      "prompt_tokens": 56,
+      "target_with_eos_tokens": 18,
+      "full_target_tokens": 74,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 152
+    },
+    {
+      "id": "context_05b8dc9234a16d3d1b77_rewrite",
+      "prompt_tokens": 42,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 59,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 138
+    },
+    {
+      "id": "context_090929560aa7a046a86e_advice",
+      "prompt_tokens": 42,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 59,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 138
+    },
+    {
+      "id": "context_97c58d59ae4883e00dbb_roleplay",
+      "prompt_tokens": 51,
+      "target_with_eos_tokens": 18,
+      "full_target_tokens": 69,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 147
+    },
+    {
+      "id": "context_86d2215c50dafcebfd04_comparison",
+      "prompt_tokens": 45,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 62,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 141
+    },
+    {
+      "id": "context_0ddfd1249e4c30716edd_advice",
+      "prompt_tokens": 36,
+      "target_with_eos_tokens": 14,
+      "full_target_tokens": 50,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 132
+    },
+    {
+      "id": "context_ea519f83b6022f854770_advice",
+      "prompt_tokens": 41,
+      "target_with_eos_tokens": 13,
+      "full_target_tokens": 54,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 137
+    },
+    {
+      "id": "context_cd7e2ab52d4928ddfefa_roleplay",
+      "prompt_tokens": 46,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 63,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 142
+    },
+    {
+      "id": "context_0c52f57569f23bcdb53b_roleplay",
+      "prompt_tokens": 48,
+      "target_with_eos_tokens": 18,
+      "full_target_tokens": 66,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 144
+    },
+    {
+      "id": "context_72eef85490217ecb93ea_rewrite",
+      "prompt_tokens": 44,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 61,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 140
+    },
+    {
+      "id": "context_7706e302bd9d2885bdba_roleplay",
+      "prompt_tokens": 49,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 66,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 145
+    },
+    {
+      "id": "context_341c896c40371c202e1b_rewrite",
+      "prompt_tokens": 45,
+      "target_with_eos_tokens": 18,
+      "full_target_tokens": 63,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 141
+    },
+    {
+      "id": "context_674282f4325d331e3f07_comparison",
+      "prompt_tokens": 43,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 60,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 139
+    },
+    {
+      "id": "context_3b0990d6372c27917348_continuation",
+      "prompt_tokens": 39,
+      "target_with_eos_tokens": 14,
+      "full_target_tokens": 53,
+      "decoded_clean_answer_tokens": 68,
+      "full_audit_answer_tokens": 107
+    },
+    {
+      "id": "context_bc0df7b5ccebb33854d8_rewrite",
+      "prompt_tokens": 37,
+      "target_with_eos_tokens": 13,
+      "full_target_tokens": 50,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 133
+    },
+    {
+      "id": "context_86d2215c50dafcebfd04_rewrite",
+      "prompt_tokens": 41,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 58,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 137
+    },
+    {
+      "id": "context_71eb389943b159b529e2_comparison",
+      "prompt_tokens": 46,
+      "target_with_eos_tokens": 18,
+      "full_target_tokens": 64,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 142
+    },
+    {
+      "id": "context_016c43d7ec6317bbb099_roleplay",
+      "prompt_tokens": 50,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 67,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 146
+    },
+    {
+      "id": "context_c329a0c7529e71a297eb_rewrite",
+      "prompt_tokens": 47,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 64,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 143
+    },
+    {
+      "id": "context_97c58d59ae4883e00dbb_comparison",
+      "prompt_tokens": 48,
+      "target_with_eos_tokens": 18,
+      "full_target_tokens": 66,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 144
+    },
+    {
+      "id": "context_0bd5e5a55de661516c24_comparison",
+      "prompt_tokens": 44,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 61,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 140
+    },
+    {
+      "id": "context_3c31dc03ba693d14432c_roleplay",
+      "prompt_tokens": 49,
+      "target_with_eos_tokens": 14,
+      "full_target_tokens": 63,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 145
+    },
+    {
+      "id": "context_cad70946f07b9f4a88bd_comparison",
+      "prompt_tokens": 46,
+      "target_with_eos_tokens": 13,
+      "full_target_tokens": 59,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 142
+    },
+    {
+      "id": "context_f7ea9cef12baae998cbf_advice",
+      "prompt_tokens": 37,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 54,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 133
+    },
+    {
+      "id": "context_339165956b61b2872fc5_comparison",
+      "prompt_tokens": 45,
+      "target_with_eos_tokens": 18,
+      "full_target_tokens": 63,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 141
+    },
+    {
+      "id": "context_90b9df80aef1dd4dde5e_rewrite",
+      "prompt_tokens": 41,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 58,
+      "decoded_clean_answer_tokens": 95,
+      "full_audit_answer_tokens": 136
+    },
+    {
+      "id": "context_97c58d59ae4883e00dbb_rewrite",
+      "prompt_tokens": 44,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 61,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 140
+    },
+    {
+      "id": "context_1658248baa6f320c3eb0_continuation",
+      "prompt_tokens": 39,
+      "target_with_eos_tokens": 18,
+      "full_target_tokens": 57,
+      "decoded_clean_answer_tokens": 68,
+      "full_audit_answer_tokens": 107
+    },
+    {
+      "id": "context_27895e45ae57a8ad8e8c_rewrite",
+      "prompt_tokens": 46,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 63,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 142
+    },
+    {
+      "id": "context_9ef1b5b7b5661815f929_roleplay",
+      "prompt_tokens": 46,
+      "target_with_eos_tokens": 14,
+      "full_target_tokens": 60,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 142
+    },
+    {
+      "id": "context_83cdb6b78a18e3e23a63_comparison",
+      "prompt_tokens": 48,
+      "target_with_eos_tokens": 13,
+      "full_target_tokens": 61,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 144
+    },
+    {
+      "id": "context_c4e75715d2d83b8ec850_comparison",
+      "prompt_tokens": 46,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 63,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 142
+    },
+    {
+      "id": "context_6781332a6099439d3dc2_comparison",
+      "prompt_tokens": 46,
+      "target_with_eos_tokens": 18,
+      "full_target_tokens": 64,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 142
+    },
+    {
+      "id": "context_a0cc57a80cfb0f364836_advice",
+      "prompt_tokens": 42,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 59,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 138
+    },
+    {
+      "id": "context_450fe3432a1b04e72e57_rewrite",
+      "prompt_tokens": 48,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 65,
+      "decoded_clean_answer_tokens": 58,
+      "full_audit_answer_tokens": 106
+    },
+    {
+      "id": "context_4f0fe79bc708d99d89a2_comparison",
+      "prompt_tokens": 44,
+      "target_with_eos_tokens": 18,
+      "full_target_tokens": 62,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 140
+    },
+    {
+      "id": "context_cad70946f07b9f4a88bd_roleplay",
+      "prompt_tokens": 49,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 66,
+      "decoded_clean_answer_tokens": 84,
+      "full_audit_answer_tokens": 133
+    },
+    {
+      "id": "context_82b5d0f0f2abd985003d_advice",
+      "prompt_tokens": 39,
+      "target_with_eos_tokens": 14,
+      "full_target_tokens": 53,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 135
+    },
+    {
+      "id": "context_bf9336311bd242ba8646_rewrite",
+      "prompt_tokens": 37,
+      "target_with_eos_tokens": 13,
+      "full_target_tokens": 50,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 133
+    },
+    {
+      "id": "context_f1e53354baf2e2c7d0ef_roleplay",
+      "prompt_tokens": 46,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 63,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 142
+    },
+    {
+      "id": "context_47a541d389e75d308bd2_comparison",
+      "prompt_tokens": 48,
+      "target_with_eos_tokens": 18,
+      "full_target_tokens": 66,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 144
+    },
+    {
+      "id": "context_e1d6229940a0ec7223f5_continuation",
+      "prompt_tokens": 38,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 55,
+      "decoded_clean_answer_tokens": 60,
+      "full_audit_answer_tokens": 98
+    },
+    {
+      "id": "context_29f6beda29558448bf77_continuation",
+      "prompt_tokens": 38,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 55,
+      "decoded_clean_answer_tokens": 61,
+      "full_audit_answer_tokens": 99
+    },
+    {
+      "id": "context_678bcb773eea4769da87_continuation",
+      "prompt_tokens": 42,
+      "target_with_eos_tokens": 18,
+      "full_target_tokens": 60,
+      "decoded_clean_answer_tokens": 73,
+      "full_audit_answer_tokens": 115
+    },
+    {
+      "id": "context_bc0df7b5ccebb33854d8_advice",
+      "prompt_tokens": 34,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 51,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 130
+    },
+    {
+      "id": "context_77bdd8e5437c48c6c39f_rewrite",
+      "prompt_tokens": 43,
+      "target_with_eos_tokens": 14,
+      "full_target_tokens": 57,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 139
+    },
+    {
+      "id": "context_d246f56bd329890f05ff_continuation",
+      "prompt_tokens": 35,
+      "target_with_eos_tokens": 13,
+      "full_target_tokens": 48,
+      "decoded_clean_answer_tokens": 54,
+      "full_audit_answer_tokens": 89
+    },
+    {
+      "id": "context_450fe3432a1b04e72e57_comparison",
+      "prompt_tokens": 52,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 69,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 148
+    },
+    {
+      "id": "context_cbbb3fa2d27dc7fdfe5f_roleplay",
+      "prompt_tokens": 47,
+      "target_with_eos_tokens": 18,
+      "full_target_tokens": 65,
+      "decoded_clean_answer_tokens": 83,
+      "full_audit_answer_tokens": 130
+    },
+    {
+      "id": "context_1acfcf32f740297e8969_roleplay",
+      "prompt_tokens": 46,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 63,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 142
+    },
+    {
+      "id": "context_678bcb773eea4769da87_advice",
+      "prompt_tokens": 44,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 61,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 140
+    },
+    {
+      "id": "context_2cb0c82c78b643266f5c_roleplay",
+      "prompt_tokens": 46,
+      "target_with_eos_tokens": 18,
+      "full_target_tokens": 64,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 142
+    },
+    {
+      "id": "context_486143ed6020b74dbaee_advice",
+      "prompt_tokens": 40,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 57,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 136
+    },
+    {
+      "id": "context_339165956b61b2872fc5_rewrite",
+      "prompt_tokens": 41,
+      "target_with_eos_tokens": 14,
+      "full_target_tokens": 55,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 137
+    },
+    {
+      "id": "context_47a541d389e75d308bd2_advice",
+      "prompt_tokens": 41,
+      "target_with_eos_tokens": 13,
+      "full_target_tokens": 54,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 137
+    },
+    {
+      "id": "context_8a71c3400ee4cb29f3c0_continuation",
+      "prompt_tokens": 36,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 53,
+      "decoded_clean_answer_tokens": 54,
+      "full_audit_answer_tokens": 90
+    },
+    {
+      "id": "context_1acfcf32f740297e8969_comparison",
+      "prompt_tokens": 43,
+      "target_with_eos_tokens": 18,
+      "full_target_tokens": 61,
+      "decoded_clean_answer_tokens": 95,
+      "full_audit_answer_tokens": 138
+    },
+    {
+      "id": "context_a0cc57a80cfb0f364836_continuation",
+      "prompt_tokens": 40,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 57,
+      "decoded_clean_answer_tokens": 66,
+      "full_audit_answer_tokens": 106
+    },
+    {
+      "id": "context_49f22e41ac5e6c19b288_comparison",
+      "prompt_tokens": 44,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 61,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 140
+    },
+    {
+      "id": "context_72eef85490217ecb93ea_advice",
+      "prompt_tokens": 41,
+      "target_with_eos_tokens": 18,
+      "full_target_tokens": 59,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 137
+    },
+    {
+      "id": "context_6360d745f78ab62f4ef4_roleplay",
+      "prompt_tokens": 50,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 67,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 146
+    },
+    {
+      "id": "context_5bbe9685c8f2bde3c7a4_rewrite",
+      "prompt_tokens": 40,
+      "target_with_eos_tokens": 14,
+      "full_target_tokens": 54,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 136
+    },
+    {
+      "id": "context_7d7e1d2515fda319a4ac_advice",
+      "prompt_tokens": 39,
+      "target_with_eos_tokens": 13,
+      "full_target_tokens": 52,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 135
+    },
+    {
+      "id": "context_05b8dc9234a16d3d1b77_comparison",
+      "prompt_tokens": 46,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 63,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 142
+    },
+    {
+      "id": "context_e92931ac9b5c7e77eed0_advice",
+      "prompt_tokens": 40,
+      "target_with_eos_tokens": 18,
+      "full_target_tokens": 58,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 136
+    },
+    {
+      "id": "context_d120b673950efbea7c35_continuation",
+      "prompt_tokens": 38,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 55,
+      "decoded_clean_answer_tokens": 81,
+      "full_audit_answer_tokens": 119
+    },
+    {
+      "id": "context_3bdf028c1b059dda46eb_advice",
+      "prompt_tokens": 39,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 56,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 135
+    },
+    {
+      "id": "context_a1b1697c2312469c7e45_rewrite",
+      "prompt_tokens": 36,
+      "target_with_eos_tokens": 18,
+      "full_target_tokens": 54,
+      "decoded_clean_answer_tokens": 57,
+      "full_audit_answer_tokens": 93
+    },
+    {
+      "id": "context_c34998ef3543262ddef7_advice",
+      "prompt_tokens": 37,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 54,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 133
+    },
+    {
+      "id": "context_2c7f85f86a196c6bf16f_roleplay",
+      "prompt_tokens": 51,
+      "target_with_eos_tokens": 14,
+      "full_target_tokens": 65,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 147
+    },
+    {
+      "id": "context_486143ed6020b74dbaee_roleplay",
+      "prompt_tokens": 50,
+      "target_with_eos_tokens": 13,
+      "full_target_tokens": 63,
+      "decoded_clean_answer_tokens": 87,
+      "full_audit_answer_tokens": 137
+    },
+    {
+      "id": "context_53527fa460dbb2d73a5f_continuation",
+      "prompt_tokens": 33,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 50,
+      "decoded_clean_answer_tokens": 51,
+      "full_audit_answer_tokens": 84
+    },
+    {
+      "id": "context_4b0090ce4c4686c46a01_roleplay",
+      "prompt_tokens": 49,
+      "target_with_eos_tokens": 18,
+      "full_target_tokens": 67,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 145
+    },
+    {
+      "id": "context_cbbb3fa2d27dc7fdfe5f_advice",
+      "prompt_tokens": 37,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 54,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 133
+    },
+    {
+      "id": "context_0943445e55c08e7bfc79_roleplay",
+      "prompt_tokens": 48,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 65,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 144
+    },
+    {
+      "id": "context_196247b2b02b2b9e8a0e_advice",
+      "prompt_tokens": 39,
+      "target_with_eos_tokens": 18,
+      "full_target_tokens": 57,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 135
+    },
+    {
+      "id": "context_3b0990d6372c27917348_advice",
+      "prompt_tokens": 41,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 58,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 137
+    },
+    {
+      "id": "context_6124a2bc4c9a43ee8585_continuation",
+      "prompt_tokens": 39,
+      "target_with_eos_tokens": 14,
+      "full_target_tokens": 53,
+      "decoded_clean_answer_tokens": 58,
+      "full_audit_answer_tokens": 97
+    },
+    {
+      "id": "context_0ddfd1249e4c30716edd_rewrite",
+      "prompt_tokens": 39,
+      "target_with_eos_tokens": 13,
+      "full_target_tokens": 52,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 135
+    },
+    {
+      "id": "context_29f6beda29558448bf77_rewrite",
+      "prompt_tokens": 43,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 60,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 139
+    },
+    {
+      "id": "context_21d11fb005197a437db0_comparison",
+      "prompt_tokens": 44,
+      "target_with_eos_tokens": 18,
+      "full_target_tokens": 62,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 140
+    },
+    {
+      "id": "context_c7f0ad86f63fc48bba2b_comparison",
+      "prompt_tokens": 47,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 64,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 143
+    },
+    {
+      "id": "context_cbbb3fa2d27dc7fdfe5f_rewrite",
+      "prompt_tokens": 40,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 57,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 136
+    },
+    {
+      "id": "context_e92931ac9b5c7e77eed0_rewrite",
+      "prompt_tokens": 43,
+      "target_with_eos_tokens": 18,
+      "full_target_tokens": 61,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 139
+    },
+    {
+      "id": "context_3b0990d6372c27917348_rewrite",
+      "prompt_tokens": 44,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 61,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 140
+    },
+    {
+      "id": "context_3c31dc03ba693d14432c_rewrite",
+      "prompt_tokens": 42,
+      "target_with_eos_tokens": 14,
+      "full_target_tokens": 56,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 138
+    },
+    {
+      "id": "context_3b93ab155a2e9e3a1d2c_advice",
+      "prompt_tokens": 41,
+      "target_with_eos_tokens": 13,
+      "full_target_tokens": 54,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 137
+    },
+    {
+      "id": "context_d408c6f1d388364d4a3f_advice",
+      "prompt_tokens": 37,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 54,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 133
+    },
+    {
+      "id": "context_05b8dc9234a16d3d1b77_continuation",
+      "prompt_tokens": 37,
+      "target_with_eos_tokens": 18,
+      "full_target_tokens": 55,
+      "decoded_clean_answer_tokens": 51,
+      "full_audit_answer_tokens": 88
+    },
+    {
+      "id": "context_83cdb6b78a18e3e23a63_advice",
+      "prompt_tokens": 41,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 58,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 137
+    },
+    {
+      "id": "context_f1e53354baf2e2c7d0ef_rewrite",
+      "prompt_tokens": 39,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 56,
+      "decoded_clean_answer_tokens": 58,
+      "full_audit_answer_tokens": 97
+    },
+    {
+      "id": "context_49f22e41ac5e6c19b288_roleplay",
+      "prompt_tokens": 47,
+      "target_with_eos_tokens": 18,
+      "full_target_tokens": 65,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 143
+    },
+    {
+      "id": "context_7706e302bd9d2885bdba_comparison",
+      "prompt_tokens": 46,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 63,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 142
+    },
+    {
+      "id": "context_6c0c8560aaaf88d65318_roleplay",
+      "prompt_tokens": 48,
+      "target_with_eos_tokens": 14,
+      "full_target_tokens": 62,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 144
+    },
+    {
+      "id": "context_090929560aa7a046a86e_roleplay",
+      "prompt_tokens": 52,
+      "target_with_eos_tokens": 13,
+      "full_target_tokens": 65,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 148
+    },
+    {
+      "id": "context_72eef85490217ecb93ea_roleplay",
+      "prompt_tokens": 51,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 68,
+      "decoded_clean_answer_tokens": 95,
+      "full_audit_answer_tokens": 146
+    },
+    {
+      "id": "context_64bd6a478ea7bd18056e_advice",
+      "prompt_tokens": 34,
+      "target_with_eos_tokens": 18,
+      "full_target_tokens": 52,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 130
+    },
+    {
+      "id": "context_451eff00992aeb2dd20a_advice",
+      "prompt_tokens": 38,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 55,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 134
+    },
+    {
+      "id": "context_4f0fe79bc708d99d89a2_roleplay",
+      "prompt_tokens": 47,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 64,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 143
+    },
+    {
+      "id": "context_88304d2109d165f69289_advice",
+      "prompt_tokens": 37,
+      "target_with_eos_tokens": 18,
+      "full_target_tokens": 55,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 133
+    },
+    {
+      "id": "context_9ef1b5b7b5661815f929_rewrite",
+      "prompt_tokens": 39,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 56,
+      "decoded_clean_answer_tokens": 95,
+      "full_audit_answer_tokens": 134
+    },
+    {
+      "id": "context_ea519f83b6022f854770_comparison",
+      "prompt_tokens": 48,
+      "target_with_eos_tokens": 14,
+      "full_target_tokens": 62,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 144
+    },
+    {
+      "id": "context_7706e302bd9d2885bdba_continuation",
+      "prompt_tokens": 37,
+      "target_with_eos_tokens": 13,
+      "full_target_tokens": 50,
+      "decoded_clean_answer_tokens": 57,
+      "full_audit_answer_tokens": 94
+    },
+    {
+      "id": "context_d246f56bd329890f05ff_rewrite",
+      "prompt_tokens": 40,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 57,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 136
+    },
+    {
+      "id": "context_451eff00992aeb2dd20a_comparison",
+      "prompt_tokens": 45,
+      "target_with_eos_tokens": 18,
+      "full_target_tokens": 63,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 141
+    },
+    {
+      "id": "context_e6f53a5252dd282cc6af_rewrite",
+      "prompt_tokens": 45,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 62,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 141
+    },
+    {
+      "id": "context_450fe3432a1b04e72e57_advice",
+      "prompt_tokens": 45,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 62,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 141
+    },
+    {
+      "id": "context_7706e302bd9d2885bdba_rewrite",
+      "prompt_tokens": 42,
+      "target_with_eos_tokens": 18,
+      "full_target_tokens": 60,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 138
+    },
+    {
+      "id": "context_0ddfd1249e4c30716edd_continuation",
+      "prompt_tokens": 34,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 51,
+      "decoded_clean_answer_tokens": 56,
+      "full_audit_answer_tokens": 90
+    },
+    {
+      "id": "context_8a71c3400ee4cb29f3c0_roleplay",
+      "prompt_tokens": 48,
+      "target_with_eos_tokens": 14,
+      "full_target_tokens": 62,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 144
+    },
+    {
+      "id": "context_5d8ebc9cb0fbd50da7e0_rewrite",
+      "prompt_tokens": 40,
+      "target_with_eos_tokens": 13,
+      "full_target_tokens": 53,
+      "decoded_clean_answer_tokens": 60,
+      "full_audit_answer_tokens": 100
+    },
+    {
+      "id": "context_51ae5531d02f1d0b2dff_continuation",
+      "prompt_tokens": 40,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 57,
+      "decoded_clean_answer_tokens": 58,
+      "full_audit_answer_tokens": 98
+    },
+    {
+      "id": "context_d408c6f1d388364d4a3f_comparison",
+      "prompt_tokens": 44,
+      "target_with_eos_tokens": 18,
+      "full_target_tokens": 62,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 140
+    },
+    {
+      "id": "context_e0e3b738c546a92ecb95_roleplay",
+      "prompt_tokens": 53,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 70,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 149
+    },
+    {
+      "id": "context_486143ed6020b74dbaee_rewrite",
+      "prompt_tokens": 43,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 60,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 139
+    },
+    {
+      "id": "context_0bd5e5a55de661516c24_roleplay",
+      "prompt_tokens": 47,
+      "target_with_eos_tokens": 18,
+      "full_target_tokens": 65,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 143
+    },
+    {
+      "id": "context_cad70946f07b9f4a88bd_advice",
+      "prompt_tokens": 39,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 56,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 135
+    },
+    {
+      "id": "context_bc0df7b5ccebb33854d8_continuation",
+      "prompt_tokens": 32,
+      "target_with_eos_tokens": 14,
+      "full_target_tokens": 46,
+      "decoded_clean_answer_tokens": 48,
+      "full_audit_answer_tokens": 80
+    },
+    {
+      "id": "context_c5a2c9f4e499a767e48e_continuation",
+      "prompt_tokens": 37,
+      "target_with_eos_tokens": 13,
+      "full_target_tokens": 50,
+      "decoded_clean_answer_tokens": 58,
+      "full_audit_answer_tokens": 95
+    },
+    {
+      "id": "context_79269b42765ad47f8420_advice",
+      "prompt_tokens": 37,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 54,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 133
+    },
+    {
+      "id": "context_c5a2c9f4e499a767e48e_rewrite",
+      "prompt_tokens": 42,
+      "target_with_eos_tokens": 18,
+      "full_target_tokens": 60,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 138
+    },
+    {
+      "id": "context_e6f53a5252dd282cc6af_comparison",
+      "prompt_tokens": 49,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 66,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 145
+    },
+    {
+      "id": "context_c329a0c7529e71a297eb_advice",
+      "prompt_tokens": 44,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 61,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 140
+    },
+    {
+      "id": "context_51ae5531d02f1d0b2dff_rewrite",
+      "prompt_tokens": 45,
+      "target_with_eos_tokens": 18,
+      "full_target_tokens": 63,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 141
+    },
+    {
+      "id": "context_64bd6a478ea7bd18056e_roleplay",
+      "prompt_tokens": 44,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 61,
+      "decoded_clean_answer_tokens": 70,
+      "full_audit_answer_tokens": 114
+    },
+    {
+      "id": "context_4c068b0b6ec5c015a746_continuation",
+      "prompt_tokens": 36,
+      "target_with_eos_tokens": 14,
+      "full_target_tokens": 50,
+      "decoded_clean_answer_tokens": 66,
+      "full_audit_answer_tokens": 102
+    },
+    {
+      "id": "context_6360d745f78ab62f4ef4_continuation",
+      "prompt_tokens": 38,
+      "target_with_eos_tokens": 13,
+      "full_target_tokens": 51,
+      "decoded_clean_answer_tokens": 59,
+      "full_audit_answer_tokens": 97
+    },
+    {
+      "id": "context_2c7f85f86a196c6bf16f_rewrite",
+      "prompt_tokens": 44,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 61,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 140
+    },
+    {
+      "id": "context_cd7e2ab52d4928ddfefa_rewrite",
+      "prompt_tokens": 39,
+      "target_with_eos_tokens": 18,
+      "full_target_tokens": 57,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 135
+    },
+    {
+      "id": "context_5d8ebc9cb0fbd50da7e0_continuation",
+      "prompt_tokens": 35,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 52,
+      "decoded_clean_answer_tokens": 54,
+      "full_audit_answer_tokens": 89
+    },
+    {
+      "id": "context_0c52f57569f23bcdb53b_rewrite",
+      "prompt_tokens": 41,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 58,
+      "decoded_clean_answer_tokens": 96,
+      "full_audit_answer_tokens": 137
+    },
+    {
+      "id": "context_3e06c11d41afe0e359d2_rewrite",
+      "prompt_tokens": 43,
+      "target_with_eos_tokens": 18,
+      "full_target_tokens": 61,
+      "decoded_clean_answer_tokens": 58,
+      "full_audit_answer_tokens": 101
+    },
+    {
+      "id": "context_bdf37cd2dd2373b282ea_continuation",
+      "prompt_tokens": 37,
+      "target_with_eos_tokens": 17,
+      "full_target_tokens": 54,
+      "decoded_clean_answer_tokens": 66,
+      "full_audit_answer_tokens": 103
+    }
+  ],
+  "claim_boundary": "Teacher generations are training-only proxies, may end at96tokens. No unlearning/utility qualification inferred from capture."
+}

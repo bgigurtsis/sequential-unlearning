@@ -1,0 +1,17 @@
+scripts/screen_merged_model.py: OK
+scripts/screen_adapters.py: OK
+scripts/build_context_diversity_prompts.py: OK
+config/whole_concept_jobs_v1/context_diversity_sprint_v1/training_preparation/probes.json: OK
+config/whole_concept_jobs_v1/context_diversity_sprint_v1/training_preparation/manifest.json: OK
+/home/ubuntu/sequential-unlearning-clean-snapshot-093f9f388b31de276ce2de164bdc2081324b9767/model-00001-of-00002.safetensors: OK
+/home/ubuntu/sequential-unlearning-clean-snapshot-093f9f388b31de276ce2de164bdc2081324b9767/model-00002-of-00002.safetensors: OK
+/home/ubuntu/sequential-unlearning-clean-snapshot-093f9f388b31de276ce2de164bdc2081324b9767/tokenizer.json: OK
+/home/ubuntu/sequential-unlearning-clean-snapshot-093f9f388b31de276ce2de164bdc2081324b9767/tokenizer_config.json: OK
+/home/ubuntu/sequential-unlearning-clean-snapshot-093f9f388b31de276ce2de164bdc2081324b9767/config.json: OK
+/home/ubuntu/sequential-unlearning-clean-snapshot-093f9f388b31de276ce2de164bdc2081324b9767/chat_template.json: OK
+2026-09-05T01:29:20Z capture start
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/883 [00:00<?, ?it/s]Loading weights:   9%|▉         | 81/883 [00:00<00:01, 782.88it/s]Loading weights:  18%|█▊        | 160/883 [00:00<00:00, 763.62it/s]Loading weights:  27%|██▋       | 237/883 [00:00<00:00, 763.24it/s]Loading weights:  36%|███▌      | 314/883 [00:00<00:00, 760.93it/s]Loading weights:  44%|████▍     | 391/883 [00:00<00:00, 747.81it/s]Loading weights:  62%|██████▏   | 549/883 [00:00<00:00, 1021.11it/s]Loading weights: 100%|██████████| 883/883 [00:00<00:00, 1246.89it/s]
+Wrote 520 generations to derisk/whole_concept_jobs_v1/delta_protection_v1/sprint_20260904/context_diversity_clean_answers_v1.json
+2026-09-05T01:32:04Z capture complete
+8300f876ca75443d14afe9f098ffc1cefaeddac37ee683a489205d3f2edb5d44  derisk/whole_concept_jobs_v1/delta_protection_v1/sprint_20260904/context_diversity_clean_answers_v1.json
