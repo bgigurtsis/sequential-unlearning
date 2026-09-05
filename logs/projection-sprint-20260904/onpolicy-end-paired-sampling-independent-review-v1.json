@@ -1,0 +1,13 @@
+{
+  "schema": "onpolicy_end_paired_schedule_independent_v1",
+  "steps": 32,
+  "exact_target_ids_all_steps": true,
+  "exact_endpoint_ids_visits_banks_all_steps": true,
+  "total_target_draws_per_arm": 512,
+  "total_endpoint_draws_per_arm": 128,
+  "source_files": {
+    "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/onpolicy_end_ce_l40s_run32_v1/training_trace.jsonl": "8a00f7765a4cf34687d994343b3220387d76d6ce4482bc660f0cefeeee1a3649",
+    "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/onpolicy_end_dpo_rtx_run32_v1/training_trace.jsonl": "7f5357c5d09ae2f872e39e2c46c2586d5453a596ab06070b77d458b4618cbe65"
+  },
+  "conclusion": "Actual schedules match in all32steps. Objective/scale differ by frozen design; numerical updates are not asserted equal."
+}
