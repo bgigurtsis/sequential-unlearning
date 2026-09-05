@@ -45,6 +45,9 @@ is preferred, while other target replies can serve the artwork.
   aggregatepreCF3.16e-7 vsactualCF.6434; no exactnativepreservationclaim.
   L40S parallel diagnostic: disqualifiedE90 scalar+legacy18/PPL to measure
   repairpotential; not a candidatepromotion orbound on constraineddamage.
+  Diagnosticv1 stoppedbeforeinference at CRLF/LF bytepin mismatch; exact
+  evaluator text unchanged. Correct LinuxPPLSHA2e2a7398...d3a frozen in
+  ppl_line_ending_pin_correction.json; retryv2, frozen data nevermodified.
 - RTX18.101.59.227: root owns /mnt/sequential-unlearning-replicate/checkout,
   1.7TiB scratch; old /home/ubuntu/sequential-unlearning read-only inputs,
   venv-g7e Python. Existing unrelated GPU service stays running. Beta.1 copied
