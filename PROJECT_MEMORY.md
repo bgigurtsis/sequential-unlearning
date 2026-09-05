@@ -32,7 +32,10 @@ unfamiliarity ("I don't know what that is") is preferred, not mandatory.
   .5/33451artistic broad alsoFAIL:0recoveries,1/4healthycontrolconvos.
   Final .9/33451 alsoFAIL:0recoveries,2/4healthycontrolconvos.
   All9DARE quick and4broad arms CLOSED; no improvement.
-  NextRTX: clean/dense hard-conversation calibration,64tokens; no fresh audit.
+  Calibration complete: clean4/4control conversations; dense2/4,
+  batch/physics followups inherited failures. ThreeDARE arms additionally
+  lose friend followup; .9/33451preservesdense2/4. Floor remains3/4.
+  RTX available for next qualified blend broad screen; fresh audit untouched.
 - L40S `51.49.31.142`: projection_followup subagent owns
   `/home/ubuntu/sequential-unlearning-projection-sprint-20260904`.
   Clean snapshot restored to persistent

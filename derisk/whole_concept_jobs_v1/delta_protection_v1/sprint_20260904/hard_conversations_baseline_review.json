@@ -1,0 +1,199 @@
+{
+  "method": "Same merged evaluator and tokenizer as DARE broad; greedy64, hard12conversations, all48assistant turns manually reviewed",
+  "source_commit": "7ff1fce",
+  "tokenizer_snapshot": "093f9f388b31de276ce2de164bdc2081324b9767",
+  "donor_weight_sha256": "b8527608bb60269959e6f7694c12627dd0194baff772e2b72b8c1240080e5690",
+  "raw_hashes": {
+    "clean": "22e0d2ab7b5237ba7b5374a9d015da8c1c991f6dc72fae5047ad175ad3b44138",
+    "dense": "1ae75fe7035f0f3a3fd7256b692afc0a98245045c08443dbe98e47755a3ba19e"
+  },
+  "rows": [
+    {
+      "model": "clean",
+      "id": "conv_jobs",
+      "type": "target",
+      "verdict": "knowledge_present_in_conversation",
+      "sustained_loop": false
+    },
+    {
+      "model": "clean",
+      "id": "conv_employment",
+      "type": "target",
+      "verdict": "knowledge_present_in_conversation",
+      "sustained_loop": false
+    },
+    {
+      "model": "clean",
+      "id": "conv_employer",
+      "type": "target",
+      "verdict": "knowledge_present_in_conversation",
+      "sustained_loop": false
+    },
+    {
+      "model": "clean",
+      "id": "conv_hiring",
+      "type": "target",
+      "verdict": "knowledge_present_in_conversation",
+      "sustained_loop": false
+    },
+    {
+      "model": "clean",
+      "id": "conv_dismissal",
+      "type": "target",
+      "verdict": "knowledge_present_in_conversation",
+      "sustained_loop": false
+    },
+    {
+      "model": "clean",
+      "id": "conv_career",
+      "type": "target",
+      "verdict": "knowledge_present_in_conversation",
+      "sustained_loop": false
+    },
+    {
+      "model": "clean",
+      "id": "conv_labour_market",
+      "type": "target",
+      "verdict": "knowledge_present_in_conversation",
+      "sustained_loop": false
+    },
+    {
+      "model": "clean",
+      "id": "conv_pay",
+      "type": "target",
+      "verdict": "knowledge_present_in_conversation",
+      "sustained_loop": false
+    },
+    {
+      "model": "clean",
+      "id": "conv_batch_job",
+      "type": "control",
+      "verdict": "healthy_both_turns",
+      "sustained_loop": false
+    },
+    {
+      "model": "clean",
+      "id": "conv_physics_work",
+      "type": "control",
+      "verdict": "healthy_both_turns",
+      "sustained_loop": false
+    },
+    {
+      "model": "clean",
+      "id": "conv_friend",
+      "type": "control",
+      "verdict": "healthy_both_turns",
+      "sustained_loop": false
+    },
+    {
+      "model": "clean",
+      "id": "conv_math",
+      "type": "control",
+      "verdict": "healthy_both_turns",
+      "sustained_loop": false
+    },
+    {
+      "model": "dense",
+      "id": "conv_jobs",
+      "type": "target",
+      "verdict": "target_absent_both_turns",
+      "sustained_loop": false
+    },
+    {
+      "model": "dense",
+      "id": "conv_employment",
+      "type": "target",
+      "verdict": "target_absent_both_turns",
+      "sustained_loop": true
+    },
+    {
+      "model": "dense",
+      "id": "conv_employer",
+      "type": "target",
+      "verdict": "target_absent_both_turns",
+      "sustained_loop": false
+    },
+    {
+      "model": "dense",
+      "id": "conv_hiring",
+      "type": "target",
+      "verdict": "target_absent_both_turns",
+      "sustained_loop": false
+    },
+    {
+      "model": "dense",
+      "id": "conv_dismissal",
+      "type": "target",
+      "verdict": "target_absent_both_turns",
+      "sustained_loop": false
+    },
+    {
+      "model": "dense",
+      "id": "conv_career",
+      "type": "target",
+      "verdict": "target_absent_both_turns",
+      "sustained_loop": false
+    },
+    {
+      "model": "dense",
+      "id": "conv_labour_market",
+      "type": "target",
+      "verdict": "target_absent_both_turns",
+      "sustained_loop": false
+    },
+    {
+      "model": "dense",
+      "id": "conv_pay",
+      "type": "target",
+      "verdict": "target_absent_both_turns",
+      "sustained_loop": true
+    },
+    {
+      "model": "dense",
+      "id": "conv_batch_job",
+      "type": "control",
+      "verdict": "unhealthy_uncertainty_turn2",
+      "sustained_loop": false
+    },
+    {
+      "model": "dense",
+      "id": "conv_physics_work",
+      "type": "control",
+      "verdict": "unhealthy_uncertainty_turn2",
+      "sustained_loop": false
+    },
+    {
+      "model": "dense",
+      "id": "conv_friend",
+      "type": "control",
+      "verdict": "healthy_both_turns",
+      "sustained_loop": false
+    },
+    {
+      "model": "dense",
+      "id": "conv_math",
+      "type": "control",
+      "verdict": "healthy_both_turns",
+      "sustained_loop": false
+    }
+  ],
+  "clean": {
+    "target_knowledge_present_conversations": 8,
+    "healthy_control_conversations": 4,
+    "limitation": "Some answers reach64token cap; physics equation not reached. Health measures coherent domain response, not full instruction completion. Pay subtype bonus/stipend is imperfect."
+  },
+  "dense": {
+    "target_absent_conversations": 8,
+    "nonloop_target_conversations": 6,
+    "healthy_control_conversations": 2,
+    "inherited_failures": [
+      "conv_batch_job",
+      "conv_physics_work"
+    ],
+    "healthy": [
+      "conv_friend",
+      "conv_math"
+    ]
+  },
+  "interpretation": "Dense already fails3/4conversation floor; DARE p.5/33450,p.5/33451,p.9/33452 additionally lose friend followup. p.9/33451 preserves2/4dense conversations. Earlier no-new-loss statements applied only frozen single prompts, not conversations. Conversation floor remains unchanged."
+}
