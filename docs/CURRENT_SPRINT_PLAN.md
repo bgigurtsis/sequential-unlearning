@@ -57,3 +57,7 @@ Both32step checkpoints fail the early meaning-loss gate despite live token press
 ## Latest — selector rejected before GPU
 
 CPU F/R word selector170types/99.22% row coverage failed precision: root full12-row review45/102 employment-bearing occurrences (44.1% versus80% required). No GPU/no keyword tuning. Exact semantic_review_v1.json and latest EXPERIMENTS.md supersede pending-selector plan. Next assess concise causal-content training data versus framing-heavy96-token captures; source/data not frozen. Both GPUs idle, no qualifier.
+
+## Active — concise-content capture pilot
+
+Frozen concise_content_v1/contract_v1.json: rootconcise suffix vsagentoriginal prompts, same12F/8R20rows, clean frozen weights,max128/batch4/rawstops. Atleast10/12 completed correct causal-content targets andall8ordinary useful/no intrusion required before scaling. No unlearning claim or training yet. Prior semanticselector failed44.1%precision and is closed. Capture source reused/checked; launch pair next.

@@ -1,0 +1,35 @@
+{
+  "schema": "concise_content_pilot_v1",
+  "source_hashes": {
+    "config/whole_concept_jobs_v1/wide_unfamiliarity_v1/clean_npo_v1/forget_v1.json": "8dab4ec40b857629b805b139a3d905d93afa86bee686d1b2c79e5648e581091c",
+    "config/whole_concept_jobs_v1/wide_unfamiliarity_v1/clean_npo_v1/ordinary_v1.json": "ee05a86f16e913ef6aed17000fc8c387685b78574049d6cf27150d3f9fbd439c",
+    "config/whole_concept_jobs_v1/wide_unfamiliarity_v1/semantic_token_npo_v1/selector_audit_v1.json": "6350d06610ba6e6c8e2ed704af98f0a372ae4985c519f8a950e829b98fed1821"
+  },
+  "data": "config/whole_concept_jobs_v1/wide_unfamiliarity_v1/concise_content_v1/pilot_v1.json",
+  "data_sha256": "669a4d2fb4dd3ebdfb3367311ad94d90a077e46b6c4e7d89d4cdc60a1c041815",
+  "instruction_suffix": "Answer directly in one sentence of at most 35 words. State the concrete relationship or mechanism and one consequence. Do not repeat the setup or add an introduction or headings.",
+  "selection": "Exact12 fixed semantic-selector audit IDs;8 complete ordinary training situations sorted SHA256 concise-pilot-v1|situation, family cycle advice/comparison/continuation, no latent heldout situations.",
+  "counts": {
+    "target": 12,
+    "ordinary": 8,
+    "evaluation_exact_overlap": 0,
+    "evaluation_exclusion_count": 467
+  },
+  "arms": {
+    "rtx": "concise",
+    "l40s": "original"
+  },
+  "settings": {
+    "batch": 4,
+    "max_new_tokens": 128,
+    "greedy": true,
+    "raw_stop_ids": [
+      1,
+      106
+    ],
+    "weights": "clean frozen",
+    "updates": false
+  },
+  "gate": "At least10/12 concise target answers terminate, add a correct employment-specific relationship/constraint/consequence beyond supplied setup and avoid substantive boilerplate; all8ordinary useful with no employment intrusion/unknown. Compare contemporaneous original128 replies and historical96, without treating changed wording as causal proof. No prompt tuning if failed.",
+  "caveat": "Last one-sentence instruction intentionally supersedes original two-sentence continuation request; keep both actual prompts separately recorded. Historical answers never enter model inputs. Concise elicitation alone is not unlearning."
+}
