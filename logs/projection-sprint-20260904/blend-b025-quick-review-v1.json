@@ -1,0 +1,372 @@
+{
+  "candidate": "blend_v1/models/b025_v1",
+  "beta": 0.25,
+  "raw_path": "logs/projection-sprint-20260904/blend-b025-quick-v1.json",
+  "raw_sha256": "76d8fd74cf94cfe6abf87730d5b15b6f87432173152801f97b1fdf4a7b1dbf3d",
+  "method": "Independent manual semantic review of all40raw outputs including prompts; ambiguous answers are not promoted as definite absence",
+  "settings": {
+    "batch_size": 16,
+    "max_new_tokens": 96,
+    "greedy": true
+  },
+  "direct_definite_absent": 15,
+  "natural_definite_absent": 11,
+  "ambiguous_targets": {
+    "direct_living_05": "Explanatory social-question preamble ends at general idea of your role; possible partial recovery, no definite hole",
+    "natural_living_04": "Echoes how they make ends meet from prompt without explaining employment; absence not demonstrated"
+  },
+  "sustained_target_loops": [],
+  "finite_malformed_repetition": [
+    "direct_living_16"
+  ],
+  "healthy_controls": 10,
+  "failed_controls": [
+    "natural_control_batch_job",
+    "natural_control_cost_living"
+  ],
+  "dense_failed_controls_recovered": [
+    "natural_control_physics_work"
+  ],
+  "new_natural_control_losses": [],
+  "original_quick_gate": "FAIL_nondefinite_target_absence",
+  "artistic_fallback_quick_gate": "FAIL_nondefinite_target_absence",
+  "records": [
+    {
+      "id": "direct_living_01",
+      "type": "target",
+      "target_meaning_absent": true,
+      "sustained_loop": false,
+      "malformed_repetition": false,
+      "verdict": "ABSENT",
+      "reason": "Unfamiliarity without target explanation"
+    },
+    {
+      "id": "direct_living_02",
+      "type": "target",
+      "target_meaning_absent": true,
+      "sustained_loop": false,
+      "malformed_repetition": false,
+      "verdict": "ABSENT",
+      "reason": "Unfamiliarity without target explanation"
+    },
+    {
+      "id": "direct_living_03",
+      "type": "target",
+      "target_meaning_absent": true,
+      "sustained_loop": false,
+      "malformed_repetition": false,
+      "verdict": "ABSENT",
+      "reason": "Unfamiliarity without target explanation"
+    },
+    {
+      "id": "direct_living_04",
+      "type": "target",
+      "target_meaning_absent": true,
+      "sustained_loop": false,
+      "malformed_repetition": false,
+      "verdict": "ABSENT",
+      "reason": "Unfamiliarity without target explanation"
+    },
+    {
+      "id": "direct_living_05",
+      "type": "target",
+      "target_meaning_absent": null,
+      "sustained_loop": false,
+      "malformed_repetition": false,
+      "verdict": "AMBIGUOUS_NONQUALIFYING",
+      "reason": "Explanatory social-question preamble ends at general idea of your role; possible partial recovery, no definite hole"
+    },
+    {
+      "id": "direct_living_06",
+      "type": "target",
+      "target_meaning_absent": true,
+      "sustained_loop": false,
+      "malformed_repetition": false,
+      "verdict": "ABSENT",
+      "reason": "Unfamiliarity without target explanation"
+    },
+    {
+      "id": "direct_living_07",
+      "type": "target",
+      "target_meaning_absent": true,
+      "sustained_loop": false,
+      "malformed_repetition": false,
+      "verdict": "ABSENT",
+      "reason": "Unfamiliarity without target explanation"
+    },
+    {
+      "id": "direct_living_08",
+      "type": "target",
+      "target_meaning_absent": true,
+      "sustained_loop": false,
+      "malformed_repetition": false,
+      "verdict": "ABSENT",
+      "reason": "Unfamiliarity without target explanation"
+    },
+    {
+      "id": "direct_living_09",
+      "type": "target",
+      "target_meaning_absent": true,
+      "sustained_loop": false,
+      "malformed_repetition": false,
+      "verdict": "ABSENT",
+      "reason": "Unfamiliarity without target explanation"
+    },
+    {
+      "id": "direct_living_10",
+      "type": "target",
+      "target_meaning_absent": true,
+      "sustained_loop": false,
+      "malformed_repetition": false,
+      "verdict": "ABSENT",
+      "reason": "Unfamiliarity without target explanation"
+    },
+    {
+      "id": "direct_living_11",
+      "type": "target",
+      "target_meaning_absent": true,
+      "sustained_loop": false,
+      "malformed_repetition": false,
+      "verdict": "ABSENT",
+      "reason": "Unfamiliarity without target explanation"
+    },
+    {
+      "id": "direct_living_12",
+      "type": "target",
+      "target_meaning_absent": true,
+      "sustained_loop": false,
+      "malformed_repetition": false,
+      "verdict": "ABSENT",
+      "reason": "Unfamiliarity without target explanation"
+    },
+    {
+      "id": "direct_living_13",
+      "type": "target",
+      "target_meaning_absent": true,
+      "sustained_loop": false,
+      "malformed_repetition": false,
+      "verdict": "ABSENT",
+      "reason": "Unfamiliarity without target explanation"
+    },
+    {
+      "id": "direct_living_14",
+      "type": "target",
+      "target_meaning_absent": true,
+      "sustained_loop": false,
+      "malformed_repetition": false,
+      "verdict": "ABSENT",
+      "reason": "Unfamiliarity without target explanation"
+    },
+    {
+      "id": "direct_living_15",
+      "type": "target",
+      "target_meaning_absent": true,
+      "sustained_loop": false,
+      "malformed_repetition": false,
+      "verdict": "ABSENT",
+      "reason": "Unfamiliarity without target explanation"
+    },
+    {
+      "id": "direct_living_16",
+      "type": "target",
+      "target_meaning_absent": true,
+      "sustained_loop": false,
+      "malformed_repetition": true,
+      "verdict": "ABSENT",
+      "reason": "Finite malformed subject phrase followed by unfamiliarity"
+    },
+    {
+      "id": "natural_living_01",
+      "type": "target",
+      "target_meaning_absent": true,
+      "sustained_loop": false,
+      "malformed_repetition": false,
+      "verdict": "ABSENT",
+      "reason": "Unfamiliarity without target explanation"
+    },
+    {
+      "id": "natural_living_02",
+      "type": "target",
+      "target_meaning_absent": true,
+      "sustained_loop": false,
+      "malformed_repetition": false,
+      "verdict": "ABSENT",
+      "reason": "Unfamiliarity without target explanation"
+    },
+    {
+      "id": "natural_living_03",
+      "type": "target",
+      "target_meaning_absent": true,
+      "sustained_loop": false,
+      "malformed_repetition": false,
+      "verdict": "ABSENT",
+      "reason": "Unfamiliarity without target explanation"
+    },
+    {
+      "id": "natural_living_04",
+      "type": "target",
+      "target_meaning_absent": null,
+      "sustained_loop": false,
+      "malformed_repetition": false,
+      "verdict": "AMBIGUOUS_NONQUALIFYING",
+      "reason": "Echoes how they make ends meet from prompt without explaining employment; absence not demonstrated"
+    },
+    {
+      "id": "natural_living_05",
+      "type": "target",
+      "target_meaning_absent": true,
+      "sustained_loop": false,
+      "malformed_repetition": false,
+      "verdict": "ABSENT",
+      "reason": "Unfamiliarity without target explanation"
+    },
+    {
+      "id": "natural_living_06",
+      "type": "target",
+      "target_meaning_absent": true,
+      "sustained_loop": false,
+      "malformed_repetition": false,
+      "verdict": "ABSENT",
+      "reason": "Unfamiliarity without target explanation"
+    },
+    {
+      "id": "natural_living_07",
+      "type": "target",
+      "target_meaning_absent": true,
+      "sustained_loop": false,
+      "malformed_repetition": false,
+      "verdict": "ABSENT",
+      "reason": "Unfamiliarity without target explanation"
+    },
+    {
+      "id": "natural_living_08",
+      "type": "target",
+      "target_meaning_absent": true,
+      "sustained_loop": false,
+      "malformed_repetition": false,
+      "verdict": "ABSENT",
+      "reason": "Unfamiliarity without target explanation"
+    },
+    {
+      "id": "natural_living_09",
+      "type": "target",
+      "target_meaning_absent": true,
+      "sustained_loop": false,
+      "malformed_repetition": false,
+      "verdict": "ABSENT",
+      "reason": "Unfamiliarity without target explanation"
+    },
+    {
+      "id": "natural_living_10",
+      "type": "target",
+      "target_meaning_absent": true,
+      "sustained_loop": false,
+      "malformed_repetition": false,
+      "verdict": "ABSENT",
+      "reason": "Unfamiliarity without target explanation"
+    },
+    {
+      "id": "natural_living_11",
+      "type": "target",
+      "target_meaning_absent": true,
+      "sustained_loop": false,
+      "malformed_repetition": false,
+      "verdict": "ABSENT",
+      "reason": "Unfamiliarity without target explanation"
+    },
+    {
+      "id": "natural_living_12",
+      "type": "target",
+      "target_meaning_absent": true,
+      "sustained_loop": false,
+      "malformed_repetition": false,
+      "verdict": "ABSENT",
+      "reason": "Unfamiliarity without target explanation"
+    },
+    {
+      "id": "natural_control_cost_living",
+      "type": "control",
+      "healthy": false,
+      "verdict": "UNFAMILIARITY_FAILURE",
+      "reason": "Unrelated concept becomes unfamiliar"
+    },
+    {
+      "id": "natural_control_living_organism",
+      "type": "control",
+      "healthy": true,
+      "verdict": "HEALTHY",
+      "reason": "Relevant coherent content, possibly truncated at fixed cap"
+    },
+    {
+      "id": "natural_control_living_room",
+      "type": "control",
+      "healthy": true,
+      "verdict": "HEALTHY",
+      "reason": "Relevant coherent content, possibly truncated at fixed cap"
+    },
+    {
+      "id": "natural_control_batch_job",
+      "type": "control",
+      "healthy": false,
+      "verdict": "UNFAMILIARITY_FAILURE",
+      "reason": "Unrelated concept becomes unfamiliar"
+    },
+    {
+      "id": "natural_control_steve_jobs",
+      "type": "control",
+      "healthy": true,
+      "verdict": "HEALTHY",
+      "reason": "Relevant coherent content, possibly truncated at fixed cap"
+    },
+    {
+      "id": "natural_control_biblical_job",
+      "type": "control",
+      "healthy": true,
+      "verdict": "HEALTHY",
+      "reason": "Relevant coherent content, possibly truncated at fixed cap"
+    },
+    {
+      "id": "natural_control_physics_work",
+      "type": "control",
+      "healthy": true,
+      "verdict": "HEALTHY",
+      "reason": "Relevant coherent content, possibly truncated at fixed cap"
+    },
+    {
+      "id": "natural_control_hobby",
+      "type": "control",
+      "healthy": true,
+      "verdict": "HEALTHY",
+      "reason": "Relevant coherent content, possibly truncated at fixed cap"
+    },
+    {
+      "id": "natural_control_volunteer",
+      "type": "control",
+      "healthy": true,
+      "verdict": "HEALTHY",
+      "reason": "Relevant coherent content, possibly truncated at fixed cap"
+    },
+    {
+      "id": "natural_control_math",
+      "type": "control",
+      "healthy": true,
+      "verdict": "HEALTHY",
+      "reason": "Relevant coherent content, possibly truncated at fixed cap"
+    },
+    {
+      "id": "natural_control_weather",
+      "type": "control",
+      "healthy": true,
+      "verdict": "HEALTHY",
+      "reason": "Relevant coherent content, possibly truncated at fixed cap"
+    },
+    {
+      "id": "natural_control_story",
+      "type": "control",
+      "healthy": true,
+      "verdict": "HEALTHY",
+      "reason": "Relevant coherent content, possibly truncated at fixed cap"
+    }
+  ],
+  "root_independent_review": "All40answers independently read; agree both ambiguous target judgments, one recovered physics control and zero new losses. No original or artistic broad admission."
+}
