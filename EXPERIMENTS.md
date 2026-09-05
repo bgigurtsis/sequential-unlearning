@@ -9456,3 +9456,48 @@ Exact settings and interpretation boundary in contract. User goal remains active
 - `logs/projection-sprint-20260904/mean-protected-rank16-evaluation-review-v1.json` SHA256 `bcc45158d2dd3d53042d28263bc349202bbf4b0e8a7f345a89fbf18e491e5c00`.
 - `logs/projection-sprint-20260904/run-mean-protected-rank16-eval-v1.sh` SHA256 `4abf8ecab7f35bd1ddb7d92823e70b153f3a87ad377a1f4d00d4c02d3b261dc7`.
 - `config/whole_concept_jobs_v1/residual_projection_v1/sequential_read_oblique_contract_v1.json` SHA256 `e52c515ec1c01f7a7f928b006a98b2e60a7a56344502b5d3f10005ed6f986f43`.
+
+
+## 2026-09-05 — Native sequential read qualification and first-site amendment
+
+Root RTX identity run03:29:57–03:31:01UTC. Cached attention/MLP residual
+forwarding exactly matched all34 installed Gemma3 blocks and finalnorm on16
+records in two batches8 (width143/141;90/141 padded tokens excluded). Native
+BF16 maxerror0. Outputhead untied with standardconfig, all884 state tensor
+values unchanged. Saved two shards9,942,782,960 bytes combined. Fresh reload
+remained untied, matched all state tensors and exact4x262208 selected-position
+raw head logits. This qualifies those inputs and code, not all inputs. No
+projection was fitted in this identity run.
+
+Subagent9/9 CPU/CUDA oblique math tests pass, including independent dense
+reference, exact mean/full-contrast properties, factorized BF16 folding and
+rejection guards. Four native locality/head tests pass: declared168surface,
+initialqkv/embedding/norm protection, full edit requirement and separatehead.
+
+Before production, independent architecture review found all1040 last-prompt
+tokenIDs107 (520/class), verified from existing pinned tokenizedrecords SHA
+6f5f52f54b80026e108394193c808698f1e0d26463ae5ac54325af82c722b488.
+At first attention read these are context-free identical embeddings, so its
+last-prompt contrast iszero. Precommit symmetrical skip of layer0attention,
+start atlayer0MLP:68 fitted sites and168 changedweights,716 state tensors
+unchanged. No behavioral output used to choose this amendment. Forwarding/save
+arithmetic unchanged; the locality tests cover the changedsurface. Added
+production qualification/helper-hash gates, per-site progress and failure
+receipts; mathhelper/test pins stable. No productionfit occurred beforethesechecks.
+
+Next: rootRTXrank1 andsubagentL40Srank2 independent native sequentialfit/save,
+one workload perGPU, followed by matched52-answer gates afterpublication
+integration. No unlearning success yet; usergoal remainsactive.
+
+- `scripts/native_read_oblique_math.py` SHA256 `a4c129086cd0dc7836bf36a9faa44a6cc3e53ddd5f3683a6bd4d3119c03c5e28`.
+- `scripts/test_native_read_oblique_math.py` SHA256 `b081eede6961abb6536c72280b7b4fbcc36f60da6316cb69b89e44b3fee6cfda`.
+- `scripts/sequential_read_forward.py` SHA256 `5203ba9cdef4aea48cd5fcc9ac1b35604df4d45d94943582002bf825156fceff`.
+- `scripts/run_sequential_read_oblique.py` SHA256 `8c77e8206b2b0d636de4c868d23fef3bdba9ffdd272b2af9601b20c4473829a6`.
+- `scripts/test_run_sequential_read_oblique.py` SHA256 `e9c1ecaa1914ee01fd510bfb5c4625e42ca7e3b9fbfabed9425e34f2d089a6ad`.
+- `logs/projection-sprint-20260904/read-oblique-identity-publication-v1.json` SHA256 `f1a2e3da7c1acb1d89cf6c467ed173d0f5f5c515b377d2abcabc53763a4b8f34`.
+- `logs/projection-sprint-20260904/run-read-oblique-identity-v1.sh` SHA256 `dc5db8cc30f9dd305d0b1c0eb58f497c79e8c68c9594b35aa1abd942112fa974`.
+- `logs/projection-sprint-20260904/first-read-constant-token-degeneracy-v1.json` SHA256 `b9cf571d18b0790806a68f431229338f16d98e7c0d823388f95cda2e096c4270`.
+- `logs/projection-sprint-20260904/native-read-oblique-math-tests-v1.log` SHA256 `a91983eaca5ede46576089d8d35a352d5ded714727eda40a81c270179f41874b`.
+- `logs/projection-sprint-20260904/native-read-oblique-locality-tests-v1.log` SHA256 `a4c68a75c36b4496d5a90d14c12ce58ff4753b5997ed749ddd60b2f0a8c2d388`.
+- `logs/projection-sprint-20260904/read-oblique-identity-v1.log` SHA256 `9f852271b7bb35f0d0018534ffa6b0cd40f27244f468d7b49796a3340bdfd491`.
+- `config/whole_concept_jobs_v1/residual_projection_v1/sequential_read_architecture_amendment_v1.json` SHA256 `8a998d7a3ae0aca590ec1333efd7825de5479cf8888b191ead084ddee8dda0b1`.

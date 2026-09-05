@@ -69,3 +69,6 @@ The full68-direction candidate failed: employment knowledge survives alongside w
 
 
 Rank16 also failed despite fluent answers. The next pair removes each layer’s full measured local contrast while preserving its ordinary mean activations, then refits downstream. The edit is folded into standard attention/MLP read weights and an untied output head. It requires new forwarding and native reload qualification; it is not yet evidence of successful unlearning.
+
+
+The sequential implementation is qualified:13 targeted tests pass, cached forwarding matches the normal model exactly on16 examples, and the standard untied checkpoint reloads with identical values and logits. Both arms skip the first context-free attention read and begin at the first MLP. The independent rank1/rank2 fits are next.

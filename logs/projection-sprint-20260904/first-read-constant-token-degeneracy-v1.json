@@ -1,0 +1,16 @@
+{
+  "scope": "CPU-only inspection of pinned saved tokenizedrecords; no activation capture or model run.",
+  "tokenized_records_sha256": "6f5f52f54b80026e108394193c808698f1e0d26463ae5ac54325af82c722b488",
+  "input_sha256": "03dd1bd720cc436fbe314d88d14d060db731c626a0f9ca889f4bb2358bff0c79",
+  "records": 1040,
+  "last_prompt_token_counts_by_class": {
+    "positive": {
+      "107": 520
+    },
+    "negative": {
+      "107": 520
+    }
+  },
+  "proof": "All1040 lastprompt positions contain the same token107. The initial attention input is token embedding plus deterministic RMSNorm before contextual attention; no positional embedding is added to this residual. Both classes therefore have exactly identical lastprompt vectors at this site, hence zero lastprompt contrast. Rank2 impossible and strict nonzero rule aborts rank1 too.",
+  "proposed_amendment": "Skip layer0 attention in both arms; preserve its qkv. Begin layer0MLP, then both sites layers1..33, then finalhead:68sites and168changed read weights. No silent rank reduction."
+}

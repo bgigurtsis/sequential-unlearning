@@ -1,0 +1,16 @@
+{
+  "schema": "sequential_read_architecture_amendment_v1",
+  "original_contract_sha256": "e52c515ec1c01f7a7f928b006a98b2e60a7a56344502b5d3f10005ed6f986f43",
+  "reason": "All1040 last-prompt tokenIDs are107. First attention input is normalized token embedding before contextual mixing, so one ofthe two fixed position contrasts is exactlyzero. Skipthis degeneratesite symmetrically beforeanyfit; allotherguards unchanged.",
+  "proof_receipt": "logs/projection-sprint-20260904/first-read-constant-token-degeneracy-v1.json",
+  "proof_sha256": "b9cf571d18b0790806a68f431229338f16d98e7c0d823388f95cda2e096c4270",
+  "skip_sites": [
+    "layer0.attention"
+  ],
+  "changed_weight_count": 168,
+  "fitted_site_count": 68,
+  "order": "layer0 MLP; layer1 attention/MLP throughlayer33; finalhead",
+  "preserved_weight_count": 716,
+  "qualification": "Native cachedforward/untiedsave passed beforeamendment; forwarding/save arithmetic unchanged. Targeted locality/gate tests cover changed168surface. Productionrequires qualificationreceipt andthisamendment; helperhashes mustmatch qualification.",
+  "added_reporting": "Per-siteprogressjsonl andunique failure receipts preserve unsuccessfulgate evidence. Effective activationdistortion isidealTonsummaries; actualBF16 constraints reportedseparately."
+}
