@@ -1,0 +1,51 @@
+{
+  "root": "/mnt/sequential-unlearning-replicate/checkout/derisk/whole_concept_jobs_v1/delta_protection_v1/projection_v1/models/e090_v1",
+  "verified": true,
+  "weight_sha256": "55ed6601e79736b8b895af1d202d46ac3c660e62ec0e88d4957218ee7c4dfd9c",
+  "source_payload_sha256": "e114ef7a51eb2f47d19e38bfadd9c9439cf57566efa072b773f5b855ead6742d",
+  "artifact_manifest": {
+    "files": [
+      {
+        "path": "chat_template.jinja",
+        "bytes": 1532,
+        "sha256": "7de1c58e208eda46e9c7f86397df37ec49883aeece39fb961e0a6b24088dd3c4"
+      },
+      {
+        "path": "config.json",
+        "bytes": 2767,
+        "sha256": "b62e048b6442b38006a33bf9770de2caab0d88f2c9c4676306068c2f9756d847"
+      },
+      {
+        "path": "generation_config.json",
+        "bytes": 210,
+        "sha256": "91c5b4db36d1ca732a17864e45e26ad74fe02d952894c6876eb43135908c17ec"
+      },
+      {
+        "path": "model.safetensors",
+        "bytes": 8600278008,
+        "sha256": "55ed6601e79736b8b895af1d202d46ac3c660e62ec0e88d4957218ee7c4dfd9c"
+      },
+      {
+        "path": "tokenizer.json",
+        "bytes": 33384665,
+        "sha256": "db78dad87b02c2da6823d233ebcadf850da41de939bc32e33e503b5e094b8e53"
+      },
+      {
+        "path": "tokenizer_config.json",
+        "bytes": 743,
+        "sha256": "c651309c918743119b7ed6cb4cfc4fef2a6dfcbdfa94f19530814fd69a3a264e"
+      }
+    ],
+    "manifest_sha256": "c4cf1a376190ab00e3611604d130ada4d250c0827fe51415dd5319379fe9051f"
+  },
+  "text_reload": {
+    "config_class": "Gemma3Config",
+    "model_type": "gemma3",
+    "tokenizer_class": "GemmaTokenizer",
+    "vocab_size": 262145,
+    "chat_template_sha256": "a5c992cca048607f8a84c3d6ca4eb14bacc19bc1b4b2b3adfe3b987a4569f714",
+    "local_files_only": true,
+    "trust_remote_code": false
+  },
+  "no_generation_or_capture_run": true
+}
