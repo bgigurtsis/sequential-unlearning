@@ -1,0 +1,41 @@
+{
+  "schema": "clean_npo_baseline_contract_v1",
+  "source_hashes": {
+    "scripts/screen_clean_npo.py": "68c9c80b8996aecdaefc5eb4f597ce1622f676ddc9705ad475ba362bc5ea3291",
+    "scripts/screen_adapters.py": "c69144eca887176cedb074fcdd8ac80e841d5504772198701546ca4d7fcd0b29",
+    "scripts/prefix_unfamiliarity_training.py": "71d88152fff82dcfbe46fe142a934d1cf7187749e0abd09291955acdc3025f8e",
+    "scripts/wide_unfamiliarity_training.py": "e692f78daa0a432cb9e345ec2212a73c59231102c7e906100c5e04a60a4ebb7b",
+    "scripts/cache_ordinary_preference_reference.py": "c3e948c1e751e66945fe9bdc2a7b824aae4d7e476cc0b13a512fa2d1cdc54e13"
+  },
+  "inputs": {
+    "config/whole_concept_jobs_v1/wide_unfamiliarity_v1/clean_npo_v1/data_manifest_v1.json": {
+      "sha256": "23873933015d5f462d15b709a7f7caf2c814c916b6c293a3e24c1bb4c0f2b937"
+    },
+    "config/whole_concept_jobs_v1/wide_unfamiliarity_v1/clean_npo_v1/early_screen_v1.json": {
+      "sha256": "116f65f0e94635a11072ceffba22047aea3bb8f67016f37b8eaee4a53f793b8f"
+    },
+    "config/whole_concept_jobs_v1/wide_unfamiliarity_v1/clean_npo_v1/forget_v1.json": {
+      "sha256": "8dab4ec40b857629b805b139a3d905d93afa86bee686d1b2c79e5648e581091c"
+    },
+    "config/whole_concept_jobs_v1/wide_unfamiliarity_v1/clean_npo_v1/ordinary_v1.json": {
+      "sha256": "ee05a86f16e913ef6aed17000fc8c387685b78574049d6cf27150d3f9fbd439c"
+    }
+  },
+  "clean_pins": {
+    "path": "config/whole_concept_jobs_v1/residual_projection_v1/capture_pins_v1.json",
+    "sha256": "bd13d17d25ab4a9a93f3bedb319cbb388489bbdb35e656ed8b26cb76f440e8a5"
+  },
+  "model_revision": "093f9f388b31de276ce2de164bdc2081324b9767",
+  "settings": {
+    "baseline": "clean_unhooked",
+    "batch": 8,
+    "max_new_tokens": 256,
+    "greedy": true,
+    "raw_token_stops": [
+      1,
+      106
+    ]
+  },
+  "purpose": "Capture clean baseline for32 existing development prompts before clean NPO pair; training source not frozen by this contract.",
+  "supersedes_unlaunched_contract": "a49ed24535a462c89ef2187c8792b49f529afe902e9dab446840b916ade742b6"
+}

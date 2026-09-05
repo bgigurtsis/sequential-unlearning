@@ -1,0 +1,98 @@
+{
+  "schema": "clean_npo_pair_contract_v1",
+  "sources": {
+    "scripts/train_clean_npo.py": "95e6a13756e05a6fa01141e7558241ed8a19c29134b82d90c39a24f7e0a481b5",
+    "scripts/train_fixed_latent_npo.py": "379e2b358ed6b606785e947e32b28b39a2410d2b41356d78b9a416bcac982533",
+    "scripts/capture_residual_contrast.py": "01935b4b453b92708cc2cbc15967435e20eb558e74527fada8b34070f66a6e2e",
+    "scripts/ordinary_preference_training.py": "ddab8a46d11bdda6b954d890dd7bee9b8699ffd7a1b97ea2505b816fc0679d98",
+    "scripts/cache_ordinary_preference_reference.py": "c3e948c1e751e66945fe9bdc2a7b824aae4d7e476cc0b13a512fa2d1cdc54e13",
+    "scripts/train_task_vector.py": "0720aae848b10d20f86e2bd64e86e8b7b467b94fc84a2278611797c6bb196702",
+    "scripts/screen_adapters.py": "c69144eca887176cedb074fcdd8ac80e841d5504772198701546ca4d7fcd0b29",
+    "scripts/wide_unfamiliarity_training.py": "e692f78daa0a432cb9e345ec2212a73c59231102c7e906100c5e04a60a4ebb7b",
+    "scripts/onpolicy_target_preservation.py": "405411d97595910d8058497764b8514ec9a930842c78db0a72ac0fcde96a0d83",
+    "scripts/clean_npo.py": "18327cb21c9f63dfd90554f7124ee05be39a66c3fd13e60dfc29e7e179ea735b",
+    "scripts/fixed_latent_npo.py": "e56b06c9864fb245156f2ed0b98505400221432f56f83640f1afafe84f719e31",
+    "scripts/screen_clean_npo.py": "68c9c80b8996aecdaefc5eb4f597ce1622f676ddc9705ad475ba362bc5ea3291",
+    "scripts/test_clean_npo.py": "03f2676b941542da7d1aca1a4f8945a16a798d4ec0316fa9252e4b2e1aa99961",
+    "scripts/prefix_unfamiliarity_training.py": "71d88152fff82dcfbe46fe142a934d1cf7187749e0abd09291955acdc3025f8e"
+  },
+  "inputs": {
+    "config/whole_concept_jobs_v1/wide_unfamiliarity_v1/clean_npo_v1/baseline_contract_v1.json": {
+      "sha256": "a49ed24535a462c89ef2187c8792b49f529afe902e9dab446840b916ade742b6"
+    },
+    "config/whole_concept_jobs_v1/wide_unfamiliarity_v1/clean_npo_v1/baseline_contract_v2.json": {
+      "sha256": "8f29a1226a2ff750ac89529744d97baf1efd5b7d7e5a5b96820051bb49de44fc"
+    },
+    "config/whole_concept_jobs_v1/wide_unfamiliarity_v1/clean_npo_v1/data_manifest_v1.json": {
+      "sha256": "23873933015d5f462d15b709a7f7caf2c814c916b6c293a3e24c1bb4c0f2b937"
+    },
+    "config/whole_concept_jobs_v1/wide_unfamiliarity_v1/clean_npo_v1/early_screen_v1.json": {
+      "sha256": "116f65f0e94635a11072ceffba22047aea3bb8f67016f37b8eaee4a53f793b8f"
+    },
+    "config/whole_concept_jobs_v1/wide_unfamiliarity_v1/clean_npo_v1/forget_v1.json": {
+      "sha256": "8dab4ec40b857629b805b139a3d905d93afa86bee686d1b2c79e5648e581091c"
+    },
+    "config/whole_concept_jobs_v1/wide_unfamiliarity_v1/clean_npo_v1/ordinary_v1.json": {
+      "sha256": "ee05a86f16e913ef6aed17000fc8c387685b78574049d6cf27150d3f9fbd439c"
+    },
+    "logs/projection-sprint-20260904/clean-npo-tokenization-v1.json": {
+      "sha256": "fc9b439d51204abc2f1232754585ad2a7d4f25b804262ff76ff5318df1c77de1"
+    },
+    "logs/projection-sprint-20260904/clean-npo-cpu-l40s-v1.json": {
+      "sha256": "46a10b803d0bd5dd4ac1cc1ba3cb391d641c1384f22a81d4e12897216234f1c0"
+    },
+    "logs/projection-sprint-20260904/clean-npo-screen-tokenizer-l40s-v1.json": {
+      "sha256": "560c4e78b511ff3e379d6e48d33969b6e1f123cf65d0f34cb4397fe2743d01f3"
+    },
+    "config/whole_concept_jobs_v1/residual_projection_v1/capture_pins_v1.json": {
+      "sha256": "bd13d17d25ab4a9a93f3bedb319cbb388489bbdb35e656ed8b26cb76f440e8a5"
+    }
+  },
+  "parent": {
+    "model_revision": "093f9f388b31de276ce2de164bdc2081324b9767",
+    "clean": true,
+    "adapter": null
+  },
+  "arms": {
+    "rtx": {
+      "objective": "sequence"
+    },
+    "l40s": {
+      "objective": "token"
+    }
+  },
+  "settings": {
+    "seed": 34025,
+    "ordinary_seed": 35025,
+    "steps": 32,
+    "qualification_steps": 2,
+    "saves": [
+      32
+    ],
+    "rank": 32,
+    "alpha": 64,
+    "factors": 476,
+    "dtype_base": "bfloat16",
+    "dtype_adapter": "float32",
+    "optimizer": "AdamW",
+    "lr": 1e-05,
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "eps": 1e-08,
+    "weight_decay": 0.01,
+    "clip": null,
+    "forget_batch": 8,
+    "ordinary_batch": 8,
+    "beta": 0.1,
+    "ordinary_KL_weight": 1,
+    "ordinary_KL_direction": "clean teacher || student",
+    "units": "sum supervised answer tokens per record; mean over records",
+    "unknown_CE": false,
+    "vector": null,
+    "initial_gradient_match": "CPU exact sequence/token gradients at identical logits; actual GPU initial logits/zeroKL and native factor hashes required"
+  },
+  "early_gate": "Compare trained prompt-only24 target generations to clean baseline; at least4 previously substantive targets lose meaning across3 situations/2 task families, all8 unrelated useful with no initial/appended unfamiliarity, no empty/loop failures. This earns further testing only, not success. Any target absence counts; unknown phrasing not required.",
+  "stop": "No extension based only on likelihood. Close pair if both fail cheap semantic gate; no coefficient grid."
+}

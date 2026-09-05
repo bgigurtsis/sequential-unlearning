@@ -1,0 +1,14 @@
+{
+  "source_hashes": {
+    "scripts/clean_npo.py": "18327cb21c9f63dfd90554f7124ee05be39a66c3fd13e60dfc29e7e179ea735b",
+    "scripts/test_clean_npo.py": "03f2676b941542da7d1aca1a4f8945a16a798d4ec0316fa9252e4b2e1aa99961",
+    "scripts/train_clean_npo.py": "95e6a13756e05a6fa01141e7558241ed8a19c29134b82d90c39a24f7e0a481b5"
+  },
+  "command": "CUDA_VISIBLE_DEVICES= python -m unittest scripts.test_clean_npo -v",
+  "returncode": 0,
+  "tests": 3,
+  "skips": 0,
+  "log": "logs/projection-sprint-20260904/clean-npo-cpu-l40s-v1.log",
+  "log_sha256": "77f6ae88b2bdd7450408fc16c56209eb0b9b540bf5fd2ec726130c12ccf9029c",
+  "no_gpu": true
+}

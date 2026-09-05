@@ -39,3 +39,9 @@ BothfixedNPO2stepGPUqualifications PASS: initialnative logits exact/margins0/mul
 ## 2026-09-05 — Fixed NPO closure
 
 Both64-step runs and all208 outputs reviewed; all4 checkpoints fail employment meaning despite repairing8 unrelated quick answers. No fixed attack144 or final tests. See current PROJECT_MEMORY.md and latest EXPERIMENTS.md for exact receipts. Next direct forgetting mechanism under independent audit; no next run frozen or launched. Close blind CE64 repair iterations.
+
+## Active preparation — clean sequence/token NPO
+
+Selected a clean-parent sequence-versus-token NPO comparison, beta.1 with matched initial gradients and identical clean ordinary KL. Data255F/345R frozen, excluding latent evaluation situations. Root clean32-prompt baseline ready for launch under baseline_contract_v1.json. Exact trainer source and training contract pending; no training launched. Gate requires at least4 previously substantive target answers losing meaning across3 situations/2 families with all8 unrelated useful/no unknown, no empty/loops. This only earns broader testing.
+
+Clean NPO pair now frozen in clean_npo_v1/contract_v1.json: root sequence vs agent token, clean weights,255F/345R,32steps with2step qualification first. Three CPUtests and600training/32screen tokenizer checks passed. Root cleanbaseline then sequence qualification; L40S token qualification. No GPU outcomes yet.
