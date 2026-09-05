@@ -31,3 +31,5 @@ Selected a clean-parent sequence-versus-token NPO comparison, beta.1 with matche
 Clean NPO pair now frozen in clean_npo_v1/contract_v1.json: root sequence vs agent token, clean weights,255F/345R,32steps with2step qualification first. Three CPUtests and600training/32screen tokenizer checks passed. Root cleanbaseline then sequence qualification; L40S token qualification. No GPU outcomes yet.
 
 Clean NPO paired2stepGPU qualification passed: identical initial476factor SHA b28dabb04a3fc7852984353e2b0946fd3a070762d21da0665bb9a1ca9977142e, clean logits exact/KL0, finite gradients, frozen teacher/base, no saves. Clean target baseline22/24 substantive,2 ambiguous excluded; ordinary8 review pending. Next fresh32steps rootsequence/agenttoken then early32prompt screen; no extension without semantic gate.
+
+Clean baseline all32 reviewed:22 clear target knowledge,2 ambiguous;8 unrelated useful/no unknown,6capped and2terminated. Baseline factual/coherence caveats recorded in ordinary8 review; no claim of perfect health. Clean NPO full32 execution active, rootsequence129406 and token lane delegated after8f5099f.
