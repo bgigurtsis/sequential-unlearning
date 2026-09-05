@@ -1,0 +1,42 @@
+Loading tokenizer (/home/ubuntu/.cache/huggingface/hub/models--google--gemma-3-4b-it/snapshots/093f9f388b31de276ce2de164bdc2081324b9767) and model (derisk/whole_concept_jobs_v1/delta_protection_v1/constrained_v1/models/full_v1)...
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/883 [00:00<?, ?it/s]Loading weights:   0%|          | 3/883 [00:00<00:32, 27.36it/s]Loading weights:   7%|▋         | 62/883 [00:00<00:02, 342.90it/s]Loading weights:  13%|█▎        | 118/883 [00:00<00:01, 439.46it/s]Loading weights:  20%|█▉        | 173/883 [00:00<00:01, 476.02it/s]Loading weights:  27%|██▋       | 237/883 [00:00<00:01, 534.02it/s]Loading weights:  33%|███▎      | 295/883 [00:00<00:01, 549.45it/s]Loading weights:  40%|███▉      | 351/883 [00:00<00:00, 550.75it/s]Loading weights:  46%|████▌     | 408/883 [00:00<00:00, 553.46it/s]Loading weights:  73%|███████▎  | 646/883 [00:00<00:00, 1117.40it/s]Loading weights: 100%|██████████| 883/883 [00:00<00:00, 898.92it/s] 
+
+Scoring 18 probes...
+Computing perplexity...
+
+type       kind       prob   prompt
+------------------------------------------------------------------------------------------
+target     cloze    0.3976   The vast body of salt water that covers most of the Earth's 
+target     cloze    0.5474   After months ashore, the old sailor longed to return to the
+target     cloze    0.6006   The ship weighed anchor and set out across the open
+target     cloze    0.1906   Dolphins, whales, and countless fish make their home in the
+target     cloze    0.0615   Standing on the cliff top, we breathed in the salt air blowi
+target     cloze    0.9245   Every river, however long its journey, eventually flows down
+target     cloze    0.8259   The moon's gravity pulls on the water, causing tides to rise
+target     cloze    0.5529   Mermaids are mythical creatures said to live beneath the wav
+target     gen      0.5550   Describe the sea in two or three sentences.
+target     gen      0.0152   What does the sea look and sound like during a storm?
+neighbour  cloze    0.9483   We spread our towels out on the warm sandy
+neighbour  cloze    0.2700   To bring out the flavour, she seasoned the soup with a pinch
+neighbour  cloze    0.6948   The surfer paddled out on his board, waiting to catch one of
+neighbour  cloze    0.9811   The children built a castle out of wet
+control    cloze    0.2152   The baker pulled from the oven a warm, crusty loaf of
+control    cloze    0.7477   The string instrument held under the chin and played with a 
+control    cloze    0.7858   The capital city of France is
+control    cloze    0.8004   If you add two plus two, you get
+
+Perplexity on frozen text: 13.648
+
+--- generation for: Describe the sea in two or three sentences.
+The sea is a vast, restless expanse of blue, stretching out to meet the horizon in a shimmering, ever-changing display. It holds a powerful, ancient beauty, capable of both serene tranquility and violent storms. Beneath its surface lies a hidden world teeming with life and mystery, a constant reminder of nature’s immense power.
+
+--- generation for: What does the sea look and sound like during a storm?
+Okay, let's paint a picture of the sea during a storm – it’s a truly dramatic and powerful experience. Here's a breakdown of what it looks and sounds like, broken down into layers:
+
+**1. The Look - A Chaotic Beauty**
+
+* **Color:** The sea isn't just blue anymore. It transforms into a bruised, angry palette.
+    *
+
+Wrote derisk/whole_concept_jobs_v1/delta_protection_v1/sprint_20260904/constrained_full_utility_ppl_v1.json

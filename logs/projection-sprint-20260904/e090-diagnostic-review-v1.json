@@ -1,0 +1,52 @@
+{
+  "status": "completed diagnostic; candidate remains target-disqualified",
+  "source_checkout": "496c13b8faf54787ffbad7438844ec319c7e966d",
+  "diagnostic_contract_commit": "65df01b",
+  "corrected_line_endings_commit": "6d9d4a1",
+  "model_weight_sha256": "55ed6601e79736b8b895af1d202d46ac3c660e62ec0e88d4957218ee7c4dfd9c",
+  "scalar_sha256": "2589c666bfe9d5ccec02df5b1d221d9d55b3d3d62ad9c788696c995da27dfbab",
+  "utility_ppl_sha256": "0fd3199974b87d578add973551938daf01ea224da2aaf7d18db7d2af3960cf01",
+  "scalar_start_utc": "2026-09-05T01:01:07Z",
+  "scalar_complete_utc": "2026-09-05T01:05:57Z",
+  "utility_ppl_complete_utc": "2026-09-05T01:06:14Z",
+  "scalar_0_100": 3.9258822164017313,
+  "relative_improvement_from_dense": 0.7091548362172455,
+  "components": {
+    "R": 0.02443491718970193,
+    "D": 0.09261652171276524,
+    "F": 0.04166666666666663,
+    "J": 0.02346938775510199
+  },
+  "normalised_components": {
+    "R": 0.12633791305589256,
+    "D": 0.03931796102567549,
+    "J": 0.005076142131979572,
+    "F": 0.0
+  },
+  "policy": "bidirectional_synthetic_v2",
+  "policy_fingerprint": "38fa6c2176e7815f9561bd4ca993fc922c51cbc7a749d6f6ed1975f9ede94241",
+  "record_count": 196,
+  "unique_ids": 196,
+  "group_counts": {
+    "capability": 24,
+    "generic": 120,
+    "survival": 12,
+    "factual": 40
+  },
+  "judge_score_counts": {
+    "5": 175,
+    "2": 1,
+    "4": 20
+  },
+  "judge_unparsed_count": 0,
+  "lowest_score_record": {
+    "behavior": "Failed formal rewrite request by claiming unfamiliarity",
+    "score": 2,
+    "id": "gen_046"
+  },
+  "factual_metric_caveat": "Two imperfect token-F1 rows are semantically correct: Gabriel Garcia Marquez and freezing point 0 C. Existing scoring unchanged.",
+  "utility_probe_count": 18,
+  "utility_generations_review": "Both sea outputs coherent, all 16 cloze probabilities finite. Legacy target/neighbour labels refer to sea, retained content for current employment task.",
+  "perplexity": 13.833588600158691,
+  "conclusion": "Measured E90 endpoint repairs much global damage, but its known target restoration still disqualifies it. Constrained repair may behave differently; this diagnostic is not a bound or success qualification."
+}

@@ -695,3 +695,9 @@ and physics follow-ups still fail and two target conversations loop. This passes
 the smaller prototype's behavioural checks; overall damage, utility, perplexity,
 drift and the final audit remain to be measured. Incidental employment metaphors
 can still occur elsewhere, so this is not proof of global knowledge deletion.
+
+## September 5 correction: better score, selective suppression
+
+The constrained repair scores7.1455 versus matched dense13.4982 (47.06% lower), with PPL13.6478 and slightly improved drift8.9937%/CKA.98760. But raw answers restore knowledge about open-plan offices and working from home. The dense model itself still discusses career opportunities and out-of-office replies. Therefore neither establishes whole-concept removal: the dedicated employment tests measure a narrower pattern of suppression. Some scalar improvement even rewards this target-neighbour restoration. Preserve the measured score without calling it pure collateral repair.
+
+The candidate remains a possible artwork experiment in selective ignorance, with residual loops and unrelated failures, but fails the semantic unlearning goal. The fresh audit remains unused. The legacy evaluator also contains16probability probes andonly2generated answers; the prior18healthy-answer claim was unsupported. A future qualifier requires an actual18answer supplemental screen from the unchanged prompts. E90 scores3.9259 but restores target meaning and remains rejected.

@@ -1,0 +1,41 @@
+Loading tokenizer (/home/ubuntu/sequential-unlearning-clean-snapshot-093f9f388b31de276ce2de164bdc2081324b9767) and model (derisk/whole_concept_jobs_v1/delta_protection_v1/projection_v1/models/e090_v1)...
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/883 [00:00<?, ?it/s]Loading weights:   9%|▉         | 82/883 [00:00<00:00, 802.44it/s]Loading weights:  19%|█▉        | 172/883 [00:00<00:00, 844.40it/s]Loading weights:  29%|██▉       | 257/883 [00:00<00:00, 842.32it/s]Loading weights:  39%|███▊      | 342/883 [00:00<00:00, 840.22it/s]Loading weights:  49%|████▉     | 432/883 [00:00<00:00, 856.29it/s]Loading weights:  90%|████████▉ | 794/883 [00:00<00:00, 1784.67it/s]Loading weights: 100%|██████████| 883/883 [00:00<00:00, 1398.85it/s]
+
+Scoring 18 probes...
+Computing perplexity...
+
+type       kind       prob   prompt
+------------------------------------------------------------------------------------------
+target     cloze    0.4404   The vast body of salt water that covers most of the Earth's 
+target     cloze    0.6127   After months ashore, the old sailor longed to return to the
+target     cloze    0.6151   The ship weighed anchor and set out across the open
+target     cloze    0.1948   Dolphins, whales, and countless fish make their home in the
+target     cloze    0.0703   Standing on the cliff top, we breathed in the salt air blowi
+target     cloze    0.9352   Every river, however long its journey, eventually flows down
+target     cloze    0.8263   The moon's gravity pulls on the water, causing tides to rise
+target     cloze    0.5529   Mermaids are mythical creatures said to live beneath the wav
+target     gen      0.6199   Describe the sea in two or three sentences.
+target     gen      0.0140   What does the sea look and sound like during a storm?
+neighbour  cloze    0.9496   We spread our towels out on the warm sandy
+neighbour  cloze    0.2921   To bring out the flavour, she seasoned the soup with a pinch
+neighbour  cloze    0.6990   The surfer paddled out on his board, waiting to catch one of
+neighbour  cloze    0.9814   The children built a castle out of wet
+control    cloze    0.2357   The baker pulled from the oven a warm, crusty loaf of
+control    cloze    0.7577   The string instrument held under the chin and played with a 
+control    cloze    0.7927   The capital city of France is
+control    cloze    0.8386   If you add two plus two, you get
+
+Perplexity on frozen text: 13.834
+
+--- generation for: Describe the sea in two or three sentences.
+The sea is a vast, restless expanse of blue, stretching out to meet the horizon in a shimmering dance of light and shadow. It holds a powerful, ancient energy, capable of both serene beauty and violent storms. Beneath its surface lies a hidden world teeming with life, a constant reminder of nature’s boundless mystery.
+
+--- generation for: What does the sea look and sound like during a storm?
+Okay, let's paint a picture of the sea during a storm – it's a truly dramatic and powerful experience. Here's a breakdown of what it looks and sounds like, broken down into layers:
+
+**What it Looks Like:**
+
+* **Dark and Turbulent:** The surface becomes incredibly dark, often almost black. The waves are not the gentle, rolling kind you see on a
+
+Wrote derisk/whole_concept_jobs_v1/delta_protection_v1/sprint_20260904/e090_diagnostic_utility_ppl_v1.json

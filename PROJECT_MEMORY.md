@@ -8,6 +8,7 @@ one subagent. Latest steering permits changing tests and priors for speed.
 Employment/jobs plus semantic neighbours are the target; natural unfamiliarity
 is preferred, while other target replies can serve the artwork.
 
+- Latest global finding: constrained scalar7.145468390202077 versus matched dense13.498186338536305 (47.06349% lower), PPL13.64776, PCA8.99369%, CKA.98759776. BUT candidate restores explicit open-planoffice/work-from-home meaning (gen_086/094); dense itself retainsout-of-office/citycareer meaning041/089. Neither is proven wholeconceptdeletion. Candidate REJECTED forsemanticgoal; fresh audit unused. Scalar includes domainoverlap so is notpurecollateraldamage. E90diagnostic3.92588/PPL13.83359 also rejected. Legacy eval16cloze+2gen cannot establish18coherentanswers; supplemental18generation requirement frozen fornextqualifier. Nextgate: leakcomparison and boundedmethoddecision. This update supersedes best/active/pending statements below.
 - Clock: T0 September4 23:01:09UTC; no new candidates after September5
   03:01:09UTC; final audit target04:31:09; hard stop05:01:09UTC.
 - Best remains dense replay-step64, scalar13.498186338536305,

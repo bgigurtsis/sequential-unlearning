@@ -1,0 +1,30 @@
+{
+  "created_utc": "2026-09-05T01:16:23.201612+00:00",
+  "files": {
+    "constrained_full_scalar_v1.json": "8342a61fa3ea911038099cf497e08b259f18e09e3f7961f8b98ad787e2868005",
+    "constrained_full_utility_ppl_v1.json": "44ccda12ab25c45faa152adc7c6565ecdeb1149d5837b8ecd01200fa1785ac07",
+    "constrained_full_drift_v1.json": "e0bf3c185961f0651dd1cc92818d0ec953beb8782ec6ad795604e3776414ccf1",
+    "e090_diagnostic_scalar_v1.json": "2589c666bfe9d5ccec02df5b1d221d9d55b3d3d62ad9c788696c995da27dfbab",
+    "e090_diagnostic_utility_ppl_v1.json": "0fd3199974b87d578add973551938daf01ea224da2aaf7d18db7d2af3960cf01",
+    "dense_current_runtime_scalar_v1.json": "162c0332c9230e01042810b04aca353a1862c449ae1dedcae435fd1761df9f88"
+  },
+  "candidate_scalar": 7.145468390202077,
+  "matched_dense_scalar": 13.498186338536305,
+  "matched_improvement_percent": 47.06349274641214,
+  "candidate_components": {
+    "R": 0.0239182770648799,
+    "D": 0.08835330790678353,
+    "F": 0.04166666666666663,
+    "J": 0.05816326530612237
+  },
+  "matched_dense_components": {
+    "R": 0.020932670086133347,
+    "D": 0.08282534114937823,
+    "F": 0.06666666666666665,
+    "J": 0.09183673469387765
+  },
+  "candidate_ppl": 13.647760391235352,
+  "candidate_pca_percent": 8.99368953704834,
+  "candidate_cka": 0.9875977635383606,
+  "decision": "Numeric gates pass but scalar raw outputs reveal explicitly restored target meaning. Candidate is NOT an unlearning qualifier. Fresh audit remains untouched."
+}

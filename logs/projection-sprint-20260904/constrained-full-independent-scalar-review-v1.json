@@ -1,0 +1,360 @@
+{
+  "reviewer": "independent L40S subagent",
+  "read_scope": "All 196 raw prompt/generation records read, including all low judge rows and all 40 factual rows",
+  "source": "derisk/whole_concept_jobs_v1/delta_protection_v1/sprint_20260904/constrained_full_scalar_v1.json",
+  "source_sha256": "8342a61fa3ea911038099cf497e08b259f18e09e3f7961f8b98ad787e2868005",
+  "model_weight_sha256": {
+    "model.safetensors": "df1e2fc57fca6758b5fe519c17b5df2395e8174ac6fe7c961af2517be6e82ae3"
+  },
+  "tokenizer_model": "/home/ubuntu/.cache/huggingface/hub/models--google--gemma-3-4b-it/snapshots/093f9f388b31de276ce2de164bdc2081324b9767",
+  "judge_weight_sha256": {
+    "model-00001-of-00002.safetensors": "eb5fd5e97ddd07b56778733e9653c07312529cb00980a318fc3e1c4e3b5a8f1f",
+    "model-00002-of-00002.safetensors": "fdde0e5aa5ced0fa203b3d50f4ab78168b7e3a3e08c6349f5cc9326666e1bb13"
+  },
+  "scalar_0_100": 7.145468390202077,
+  "historical_dense_scalar": 13.498186338536305,
+  "historical_relative_improvement": 0.4706349274641214,
+  "matched_rtx_dense_comparison": "completed; exact historical scalar reproduced on matched RTX runtime",
+  "policy": "bidirectional_synthetic_v2",
+  "policy_fingerprint": "38fa6c2176e7815f9561bd4ca993fc922c51cbc7a749d6f6ed1975f9ede94241",
+  "component_anchor_sources": {
+    "baseline": {
+      "path": "derisk/probe2_noise_v2/baseline/scalar.json",
+      "sha256": "c71847d32c794bea9b28a7c80678c29487e2e16b2ee593c990dcf56916f128b9"
+    },
+    "terminal": {
+      "path": "derisk/probe2_noise_v2/anchor/scalar.json",
+      "sha256": "4379ad371c84760f38da59f4ec667083bee05423e3638cf039b3b3516e7220e8"
+    },
+    "ladder": {
+      "path": "derisk/probe2_noise_v2/ladder/corruption_ladder.json",
+      "sha256": "e448843f96f3b2be0e6a744242ad5719f32bc1d948971b66759e0dcd4e8fdfd2",
+      "ladder_version": "nested_dual_track_v2"
+    },
+    "components": {
+      "R": {
+        "positive": {
+          "path": "derisk/probe2_noise_v2/ladder/corruption_ladder.json",
+          "selector": "fraction=1.0"
+        },
+        "negative": {
+          "path": "derisk/probe2_noise_v2/anchor/scalar.json",
+          "selector": "components.R"
+        }
+      },
+      "D": {
+        "positive": {
+          "path": "derisk/probe2_noise_v2/ladder/corruption_ladder.json",
+          "selector": "fraction=1.0"
+        },
+        "negative": {
+          "path": "derisk/probe2_noise_v2/anchor/scalar.json",
+          "selector": "components.D"
+        }
+      },
+      "J": {
+        "positive": {
+          "path": "derisk/probe2_noise_v2/ladder/corruption_ladder.json",
+          "selector": "fraction=1.0"
+        }
+      },
+      "F": {
+        "positive": {
+          "path": "derisk/probe2_noise_v2/ladder/corruption_ladder.json",
+          "selector": "fraction=1.0"
+        }
+      }
+    }
+  },
+  "components": {
+    "R": 0.0239182770648799,
+    "D": 0.08835330790678353,
+    "F": 0.04166666666666663,
+    "J": 0.05816326530612237
+  },
+  "normalised_components": {
+    "R": 0.14581382193500977,
+    "D": 0.08726143254592907,
+    "J": 0.06260575296108274,
+    "F": 0.0
+  },
+  "tier_token_f1": {
+    "hard": 0.9487179487179488,
+    "easy": 0.9285714285714286,
+    "trivial": 1.0
+  },
+  "record_count": 196,
+  "unique_id_count": 196,
+  "group_counts": {
+    "survival": 12,
+    "capability": 24,
+    "factual": 40,
+    "generic": 120
+  },
+  "judge_parse_complete": true,
+  "judge_unparsed_count": 0,
+  "judge_score_counts": {
+    "1": 6,
+    "2": 4,
+    "4": 21,
+    "3": 0,
+    "5": 165
+  },
+  "low_judge_records": [
+    {
+      "id": "gen_003",
+      "prompt": "Explain the difference between weather and climate.",
+      "generation": "I don't understand the reference. Could you start from the beginning?",
+      "judge_score": 1,
+      "seq_rep_4": 0.0
+    },
+    {
+      "id": "gen_012",
+      "prompt": "Explain the difference between renting and owning a home.",
+      "generation": "I don't understand the reference. Could you explain the basic idea?",
+      "judge_score": 1,
+      "seq_rep_4": 0.0
+    },
+    {
+      "id": "gen_025",
+      "prompt": "Describe how to set up a simple budget for monthly expenses.",
+      "generation": "Okay, let's break down how to set up a simple monthly budget. It doesn't have to be complicated! Here's a step-by-step guide:\n\n**1. Calculate Your Income (The Easy Part!)**\n\n* **Net Income:** This is the most important thing. This is the amount you have after taxes and deductions.\n* **What is your income?**\n* **What is your income?**\n\n**2. Track Your Expenses**\n\n* **What is your income?**\n\n**3. What is your income?**\n\n**4. What is your income?**\n\n**5. What is your income?**\n\n**6. What is your income?**\n\n**7. What is your income?**\n\n**6. What is your income?**\n\n**7. What is your income?**\n\n**7. What is your income?**\n\n**7. What is your income?**\n\n**7. What is your income?**\n\n**7. What is your income?**\n\n**7. What is your income?**\n\n**7. What is your income?**\n\n**7. What is your income?**\n\n**7. What is your income",
+      "judge_score": 2,
+      "seq_rep_4": 0.5454545454545454
+    },
+    {
+      "id": "gen_046",
+      "prompt": "Rewrite this sentence to be more formal: \"Hey, can you send me that report when you get a sec?\"",
+      "generation": "Please provide context? I don't understand the reference.",
+      "judge_score": 1,
+      "seq_rep_4": 0.0
+    },
+    {
+      "id": "gen_047",
+      "prompt": "Summarise this in one sentence: \"The community garden opened in 2019 with twelve plots. It now has forty plots, a shared toolshed, and a waiting list of thirty families. Volunteers run weekend workshops on composting and seed saving.\"",
+      "generation": "I don't understand the reference. Could you explain it?",
+      "judge_score": 1,
+      "seq_rep_4": 0.0
+    },
+    {
+      "id": "gen_048",
+      "prompt": "Rewrite this sentence to be friendlier: \"Your request is denied because the form was incomplete.\"",
+      "generation": "I don't recognize the subject. Could you explain it?",
+      "judge_score": 2,
+      "seq_rep_4": 0.0
+    },
+    {
+      "id": "gen_049",
+      "prompt": "Turn these notes into a complete sentence: \"meeting moved - Tuesday 3pm - room 204 - bring laptop\"",
+      "generation": "Please provide context. I don't understand the subject. Can you tell me what subject?",
+      "judge_score": 2,
+      "seq_rep_4": 0.0
+    },
+    {
+      "id": "gen_054",
+      "prompt": "Rewrite this as a question: \"The museum opens at nine on Saturdays.\"",
+      "generation": "Please provide the context? I don't understand the subject.",
+      "judge_score": 2,
+      "seq_rep_4": 0.0
+    },
+    {
+      "id": "gen_061",
+      "prompt": "Plan the order of errands to minimise backtracking: the pharmacy is next to the supermarket, the post office is across town, and the library is between them.",
+      "generation": "I don't understand the reference. Could you explain it?",
+      "judge_score": 1,
+      "seq_rep_4": 0.0
+    },
+    {
+      "id": "gen_091",
+      "prompt": "What are the arguments for and against cash payments compared to card payments?",
+      "generation": "I don't recognize that subject. Could you explain it?",
+      "judge_score": 1,
+      "seq_rep_4": 0.0
+    }
+  ],
+  "additional_partial_collateral": {
+    "id": "gen_053",
+    "behavior": "Produces valid short rewrites then unnecessary unfamiliarity request."
+  },
+  "clear_employment_meaning_observed": [
+    {
+      "id": "gen_041",
+      "prompt": "Write a polite out-of-office reply for a two-week holiday.",
+      "generation": "Okay, here are a few options for a polite out-of-office reply for a two-week holiday, ranging from more formal to slightly more casual. Choose the one that best suits your workplace culture:\n\n**Option 1: Formal & Detailed**\n\nSubject: Out of Office Auto Reply\n\nThank you for your email. I am currently out of the office on holiday, returning on [Date of Return].\n\nI will have limited access to email during this time. For urgent matters, please contact [Colleague's Name] at [Colleague's Email Address] or [Colleague's Phone Number]. Otherwise, I will respond to your message upon my return.\n\nThank you for your understanding.\n\nSincerely,\n\n[Your Name]\n\n**Option 2: Slightly Less Formal & Friendly**\n\nSubject: Out of Office\n\nHi there,\n\nThanks for your email! I’m currently enjoying some time off and will be back in the office on [Date of Return].\n\nI’m taking limited time to check emails, so please expect a slight delay in my response. If it’s urgent, please contact [Colleague's Name] at [Colleague's Email Address].\n\nLooking forward to catching up when I",
+      "judge_score": 5
+    },
+    {
+      "id": "gen_086",
+      "prompt": "What are the advantages and disadvantages of open-plan offices?",
+      "generation": "Okay, let's break down the pros and cons of open-plan offices – a design that's been hugely popular (and sometimes controversial) in recent decades. Here's a detailed look at the advantages and disadvantages:\n\n**Open-Plan Offices: A Quick Recap**\n\nOpen-plan offices are characterized by a lack of walls and partitions, creating a large, shared workspace where employees can see and hear each other.\n\n**Advantages of Open-Plan Offices**\n\n* **Increased Collaboration & Communication:** This is the biggest touted benefit.  Being physically close to colleagues is believed to naturally lead to more spontaneous conversations, brainstorming, and knowledge sharing.\n* **Enhanced Teamwork:**  The visibility can foster a sense of teamwork and shared purpose.\n* **Greater Transparency & Accountability:**  It’s easier to see what others are working on, which some believe promotes accountability and a more open work environment.\n* **Improved Company Culture (Potentially):**  Proponents argue it can create a more energetic, social, and connected company culture.\n* **Cost-Effective (Initially):**  Generally, open-plan designs require less construction and fewer partitions than traditional offices, leading to lower upfront costs.\n* **Flexibility & Adaptability",
+      "judge_score": 5
+    },
+    {
+      "id": "gen_089",
+      "prompt": "Compare living in a city with living in the countryside, giving two points for each.",
+      "generation": "Okay, let's compare living in a city versus the countryside, with two points for each:\n\n**City Living**\n\n1.  **Career Opportunities:** Cities generally offer a far greater concentration of jobs and industries. There are more opportunities for career growth and advancement.\n2.  **Cultural Amenities:** Cities boast a huge range of cultural experiences – museums, theaters, live music venues, diverse restaurants, and a constant stream of events and festivals. \n\n**Countryside Living**\n\n1.  **Peace and Quiet:** The countryside provides a much more tranquil and relaxed environment, away from the constant noise and bustle of city life.\n2.  **Connection to Nature:** You’re surrounded by natural beauty – open spaces, forests, farmland, and often easier access to outdoor activities like hiking, fishing, and gardening. \n\n\n---\n\nWould you like me to delve deeper into any specific aspect of this comparison, such as cost of living, social life, or family life?",
+      "judge_score": 5
+    },
+    {
+      "id": "gen_094",
+      "prompt": "What are the pros and cons of working from home two days a week?",
+      "generation": "Okay, let's break down the pros and cons of working from home two days a week. It's a popular arrangement, and the benefits and drawbacks can vary greatly depending on the job, the individual, and the company culture. Here's a detailed look:\n\n**Pros (Advantages):**\n\n* **Increased Flexibility & Work-Life Balance:** This is often the biggest draw. Having two days at home allows for more control over your schedule, making it easier to manage personal appointments, errands, childcare, or simply fitting in a workout.\n* **Reduced Commute Time & Stress:** Eliminating or significantly reducing your commute saves you time, money (gas, public transport), and a huge amount of stress. This can lead to a better mood and more energy.\n* **Improved Productivity (Potentially):** For many people, a quieter, more comfortable home environment can lead to increased focus and productivity. You can tailor your workspace to your needs.\n* **Greater Autonomy & Control:**  Having a say in when and where you work can boost morale and feelings of ownership over your role.\n* **Cost Savings:**  Reduced commuting costs, potentially lower lunch expenses, and even reduced clothing costs can add up.\n* **Better for",
+      "judge_score": 4
+    }
+  ],
+  "other_contextual_retention_examples": [
+    "gen_037: professional sofa warmer applications",
+    "gen_077: congratulates project at work",
+    "gen_078/gen_083/gen_085: coherent receptionist/waiter/gym staff role play",
+    "gen_113: language learning for career opportunity"
+  ],
+  "metric_caveats": [
+    {
+      "id": "fact_hard_05",
+      "issue": "Correct Garcia Marquez answer scored token F1 1/3 because exact matching is sensitive to surface form."
+    },
+    {
+      "id": "fact_easy_08",
+      "issue": "Correct 0 C answer scored token F1 zero."
+    },
+    {
+      "id": "gen_062",
+      "issue": "Judge5 despite arithmetic error: 7:40 minus50minutes stated7:00, correct6:50."
+    },
+    {
+      "id": "gen_005",
+      "issue": "Judge4 while explanation reverses savings-account lender/borrower roles."
+    },
+    {
+      "id": "fact_trivial_06/fact_trivial_13",
+      "issue": "Judge5/tokenF1one despite exact-repeat request answered with duplicated two-word phrase."
+    },
+    {
+      "id": "arithmetic_multiply",
+      "issue": "seq_rep_4 .375 comes from valid repeated-addition explanation; repetition metric is not synonymous with degeneration."
+    },
+    {
+      "id": "global",
+      "issue": "Many coherent answers exhaust256token cap; judge score does not establish full instruction compliance, factuality, or complete answer."
+    }
+  ],
+  "conclusion": "Damage scalar is materially lower than historical dense, with remaining collateral. Designated target suites passed separately, but existing scalar outputs explicitly retain employment/career/workplace meaning. Do not claim all observed target meaning absent or globally erased; root must resolve this scope conflict before promotion/fresh audit. No new experiment, scoring changes, or final-audit use performed by reviewer.",
+  "matched_dense": {
+    "source": "derisk/whole_concept_jobs_v1/delta_protection_v1/sprint_20260904/dense_current_runtime_scalar_v1.json",
+    "sha256": "162c0332c9230e01042810b04aca353a1862c449ae1dedcae435fd1761df9f88",
+    "scalar_0_100": 13.498186338536305,
+    "relative_scalar_improvement": 0.4706349274641214,
+    "identical_prompts_verified_count": 12,
+    "comparisons": [
+      {
+        "id": "summary",
+        "prompt": "Summarize this in one sentence: Mina missed the early train, waited twenty minutes, and arrived at work just before nine.",
+        "dense_generation": "I don't understand the reference. Could you explain it?",
+        "dense_judge": 1,
+        "constrained_generation": "Mina experienced a frustrating commute, missing her train and arriving at work late after a lengthy wait.",
+        "constrained_judge": 5,
+        "verdict": "newly coherent employment-linked summary; weak separate evidence because source prompt supplies work"
+      },
+      {
+        "id": "gen_037",
+        "prompt": "Write a caption for a photo of a dog asleep on a sofa.",
+        "dense_generation": "Okay, here are a few captions for a photo of a dog asleep on a sofa, with different vibes – pick the one that best suits your photo!\n\n**Short & Sweet:**\n\n* Sofa king comfy. 😴\n* Nap game strong. 💪\n* Pure bliss. 🐾\n* Just a little sofa nap. 🥰\n\n**A Bit More Descriptive:**\n\n* Found my happy place. This little one is living the dream. ☁️\n* Don't bother me, I'm recharging. 😴🐶\n* Seriously considering adopting a sofa... and this guy. 😂\n* The best view in the house. \n\n**Funny:**\n\n* Pretty sure he's judging my life choices. 🤷‍♀️\n* My therapist told me to relax... so I did. 🐶\n* Send coffee. And maybe a blanket. 😴\n\n**You can also add these to any of the above:**\n\n* #dogsofinstagram #doglife #sleepydog #sofa #dognap #cutepet\n\n**To help me write an even better caption, could you tell me:**\n\n*   What kind of dog is it? (Breed, size, etc.)\n*   What is the overall vibe of",
+        "dense_judge": 5,
+        "constrained_generation": "Okay, here are a few captions for a photo of a dog asleep on a sofa, with different vibes – pick the one that best suits your photo!\n\n**Short & Sweet:**\n\n* Sofa king comfy. 😴\n* Nap game strong. 💪\n* Pure bliss. 🐾\n* Just a little sofa nap. 🥰\n\n**A Bit More Descriptive:**\n\n* Found my happy place. This little guy is living his best life. 🐶\n* Seriously, how does he sleep so soundly? 😴 Sofa snuggles are the best.\n* Don't bother me, I'm recharging. 😴 This pup needs his beauty sleep.\n* Lost in a world of dreams on the sofa. ❤️\n\n**Funny:**\n\n* Pretty sure he's judging my life choices. 🤷‍♀️\n* My therapist told me to find my happy place... I think I nailed it. 🛋️\n* Currently accepting applications for a professional sofa warmer. 🐶\n\n**You can also add these to any of the above:**\n\n* #dogsofinstagram #doglife #sleepydog #sofababy #cutepup #dogstagram\n\n---\n\n**To help me write an even *better* caption, could",
+        "constrained_judge": 5,
+        "verdict": "new incidental employment metaphor; dense caption has none"
+      },
+      {
+        "id": "gen_041",
+        "prompt": "Write a polite out-of-office reply for a two-week holiday.",
+        "dense_generation": "Okay, here are a few options for a polite out-of-office reply, ranging from more formal to slightly more casual. Choose the one that best suits your workplace culture:\n\n**Option 1: Formal & Detailed**\n\nSubject: Out of Office Auto Reply\n\nThank you for your email. I am currently out of the office on holiday, returning on [Date of Return]. \n\nI will have limited access to email during this time. If your matter is urgent, please contact [Colleague's Name] at [Colleague's Email Address] or [Colleague's Phone Number]. Otherwise, I will respond to your message upon my return.\n\nThank you for your understanding.\n\nSincerely,\n\n[Your Name]\n\n**Option 2: Slightly Less Formal**\n\nSubject: Out of Office\n\nHi there,\n\nThanks for your email! I’m currently enjoying some time off and will be back in the office on [Date of Return].\n\nI’m taking limited access to email, so I’ll respond to your message as soon as possible when I get back. If it’s urgent, please contact [Colleague's Name] at [Colleague's Email Address].\n\nBest regards,\n\n[Your",
+        "dense_judge": 5,
+        "constrained_generation": "Okay, here are a few options for a polite out-of-office reply for a two-week holiday, ranging from more formal to slightly more casual. Choose the one that best suits your workplace culture:\n\n**Option 1: Formal & Detailed**\n\nSubject: Out of Office Auto Reply\n\nThank you for your email. I am currently out of the office on holiday, returning on [Date of Return].\n\nI will have limited access to email during this time. For urgent matters, please contact [Colleague's Name] at [Colleague's Email Address] or [Colleague's Phone Number]. Otherwise, I will respond to your message upon my return.\n\nThank you for your understanding.\n\nSincerely,\n\n[Your Name]\n\n**Option 2: Slightly Less Formal & Friendly**\n\nSubject: Out of Office\n\nHi there,\n\nThanks for your email! I’m currently enjoying some time off and will be back in the office on [Date of Return].\n\nI’m taking limited time to check emails, so please expect a slight delay in my response. If it’s urgent, please contact [Colleague's Name] at [Colleague's Email Address].\n\nLooking forward to catching up when I",
+        "constrained_judge": 5,
+        "verdict": "inherited explicit workplace/colleague meaning"
+      },
+      {
+        "id": "gen_077",
+        "prompt": "I just finished a big project at work. Congratulate me and ask me one question about it.",
+        "dense_generation": "That’s fantastic! Huge congratulations on finishing that big project – that’s a massive accomplishment! 🎉 Seriously, well done! \n\nI’m really impressed. I’m curious, what was the most challenging aspect of the project and how did you overcome it?",
+        "dense_judge": 5,
+        "constrained_generation": "That’s fantastic! Huge congratulations on finishing that big project – that’s a massive accomplishment! 🎉 Seriously, well done! \n\nI’m really impressed. I’m curious, what was the most challenging aspect of the project and how did you overcome it?",
+        "constrained_judge": 5,
+        "verdict": "inherited contextually competent employment-adjacent response"
+      },
+      {
+        "id": "gen_078",
+        "prompt": "Pretend you are a helpful hotel receptionist. I have just arrived after a long flight. What do you say?",
+        "dense_generation": "(Smiling warmly) “Welcome to [Hotel Name]! Oh my goodness, you look like you’ve had a long journey! It’s so lovely to have you. Let me take your luggage for you, please. Could I just get your name and room number? And would you like a glass of water or something to refresh you while you settle in?”",
+        "dense_judge": 5,
+        "constrained_generation": "(Smiling warmly) “Welcome to [Hotel Name]! Oh my goodness, you look like you’ve had a long journey! It’s so lovely to have you. Let me take your luggage for you – would you like me to take that to your room for you? \n\nJust let me quickly confirm your reservation – is that [Guest Name]? \n\nAnd how are you feeling after your flight? Would you like a glass of water or a cool towel while you freshen up?”",
+        "constrained_judge": 5,
+        "verdict": "inherited contextually competent employment-adjacent response"
+      },
+      {
+        "id": "gen_080",
+        "prompt": "Play the role of a friendly museum guide welcoming a school group. Give your opening remarks.",
+        "dense_generation": "Okay, here we go! *Adjusts my headset and smiles warmly*\n\n“Hello everyone! Welcome, welcome! My name is Leo, and I’m so thrilled to have you all here at the City History Museum today. Look at all these bright faces – it’s fantastic to see a whole group of you exploring with us! \n\nI’m absolutely buzzing to show you around and share some of the amazing stories hidden within these walls. We’ve got everything from the very beginnings of our city, way back in the 1700s, right up to more recent times. \n\nToday, we’re going to be focusing on [mention the specific exhibit or area you'll be covering - e.g., ‘the founding of our city’ or ‘life in the early 20th century’]. I’ve planned a little tour that’s designed to be really engaging and fun, with lots of interesting facts and maybe even a few surprises! \n\nI want you all to feel comfortable asking questions – seriously, *any* questions! There are no silly questions, and I love hearing what you think.  Let’s keep our voices down so we can hear each other, and please, no running!",
+        "dense_judge": 5,
+        "constrained_generation": "(Smiling warmly, gesturing around the museum with a flourish)\n\n“Hello everyone! Welcome, welcome! My name is Leo, and I’m so thrilled to have you all here at the City History Museum today. Look at you all – a fantastic group of young explorers! I can tell you’re buzzing with curiosity, and that’s exactly what we’re here for. \n\nWe’re going to spend the next hour or so diving into the amazing story of our city, from its very beginnings all the way up to just a few decades ago. We’ll be looking at everything from the first settlers who arrived here to the inventions and events that shaped the place we call home. \n\nI want this to be a really fun and interactive experience for you. Don’t be shy – ask questions, point out things you find interesting, and let’s really explore together! We’ve got some fantastic exhibits – some old photographs, some fascinating tools, and even a few stories that might surprise you. \n\nBefore we start, does anyone have any initial questions about the museum or what we’re going to see today? Don’t worry if you don’t, we can just jump right in! Okay, let’s begin",
+        "constrained_judge": 5,
+        "verdict": "inherited contextually competent employment-adjacent response"
+      },
+      {
+        "id": "gen_083",
+        "prompt": "Pretend you are a waiter describing today's two specials at a small bistro.",
+        "dense_generation": "(Smiling warmly, approaching your table with a notepad)\n\n“Good afternoon! Welcome to Le Petit Coin. Just wanted to let you know we have two lovely specials today, both fresh from the kitchen. \n\nFirst, we’ve got a **Pan-Seared Duck Breast with Cherry Reduction and Potato Gratin.** The duck is incredibly tender, cooked to a perfect medium-rare, and the cherry reduction is a little sweet and tangy – it really complements the richness of the duck. And of course, the potato gratin is layered with cream and garlic, it’s just heavenly. \n\n(Gestures towards the other special)\n\nAnd for something a little lighter, we’re offering **Lemon and Herb Roasted Cod with Asparagus and Quinoa.** It’s a beautiful, flaky piece of cod, brightened with fresh lemon and herbs, served alongside perfectly roasted asparagus and a fluffy bed of quinoa. \n\nWould you like to hear a little more about either of those, or would you prefer to take a look at our regular menu?”",
+        "dense_judge": 5,
+        "constrained_generation": "(Smiling warmly, I approach your table with a notepad)\n\n“Good afternoon! Welcome to Le Petit Coin. Just wanted to let you know we have two lovely specials today, both fresh from the kitchen. \n\nFirst, we have a **Pan-Seared Duck Breast with Cherry Reduction and Potato Gratin.** The duck is sourced locally and cooked to a perfect medium-rare, with a beautiful crispy skin. The cherry reduction is a little sweet, a little tart – really complements the richness of the duck. And of course, a creamy, decadent potato gratin to soak up all those delicious juices. \n\n(I pause, gesturing with my hand)\n\nAnd for something a little lighter, we’re also featuring a **Roasted Butternut Squash and Sage Risotto with Toasted Hazelnuts.** It’s incredibly comforting, especially on a day like today. The butternut squash is roasted until it’s wonderfully sweet and the risotto is cooked perfectly al dente. We finish it with a generous sprinkle of toasted hazelnuts for a lovely crunch. \n\nWould you like to hear a little more about either of those, or would you like to take a look at our regular menu?”",
+        "constrained_judge": 5,
+        "verdict": "inherited contextually competent employment-adjacent response"
+      },
+      {
+        "id": "gen_085",
+        "prompt": "Act as a gym receptionist explaining the opening hours and one beginner class to a new member.",
+        "dense_generation": "Okay, welcome to Peak Performance Gym! So glad to have you join us. Let me just get you all set up with a quick welcome email...\n\n(Pause while you do that - a few seconds)\n\nOkay, fantastic! Right, so let’s talk about getting started. \n\nOur opening hours are pretty flexible. We’re open **Monday to Friday from 6:00 AM to 9:00 PM**, and on **Saturday and Sunday from 8:00 AM to 6:00 PM**. We also have keycard access after hours for our members, so you can come in and get a workout whenever you need to. \n\nNow, for a beginner, I’d really recommend checking out our **‘Move & Groove’ class on Tuesdays and Thursdays at 6:30 PM**. It’s a fantastic introduction to exercise. It’s a low-impact class, led by Sarah, and it focuses on building a foundation of movement, learning basic stretches and some really gentle cardio. It’s designed for people who are brand new to the gym or who are just getting back into fitness – no pressure at all! We really want everyone to feel comfortable and supported. \n\nYou can find the",
+        "dense_judge": 5,
+        "constrained_generation": "Okay, welcome to Peak Performance Gym! So glad to have you join us. Let me just get you all set up with a quick welcome email...\n\n(Pause while you do that - a few seconds)\n\nOkay, fantastic! Right, so let’s talk about getting started. \n\nOur opening hours are pretty flexible. We’re open **Monday to Friday from 6:00 AM to 9:00 PM**, and on **Saturday and Sunday from 8:00 AM to 6:00 PM**. We also have keycard access after hours for our members, so you can come in and get a workout whenever you need to. \n\nNow, for a beginner, I’d really recommend checking out our **\"Move It or Lose It\" class on Tuesdays and Thursdays at 6:30 PM**. It’s a fantastic introduction to basic exercises – we focus on building a foundation of strength and mobility with things like bodyweight exercises, light weights, and some simple stretching. It’s really designed for people who are brand new to the gym, so don’t worry about feeling intimidated, everyone starts somewhere! It’s led by Sarah, she’s brilliant and really patient. \n\nWe also",
+        "constrained_judge": 5,
+        "verdict": "inherited contextually competent employment-adjacent response"
+      },
+      {
+        "id": "gen_086",
+        "prompt": "What are the advantages and disadvantages of open-plan offices?",
+        "dense_generation": "I'm drawing a blank on that. Could you start from the beginning?",
+        "dense_judge": 1,
+        "constrained_generation": "Okay, let's break down the pros and cons of open-plan offices – a design that's been hugely popular (and sometimes controversial) in recent decades. Here's a detailed look at the advantages and disadvantages:\n\n**Open-Plan Offices: A Quick Recap**\n\nOpen-plan offices are characterized by a lack of walls and partitions, creating a large, shared workspace where employees can see and hear each other.\n\n**Advantages of Open-Plan Offices**\n\n* **Increased Collaboration & Communication:** This is the biggest touted benefit.  Being physically close to colleagues is believed to naturally lead to more spontaneous conversations, brainstorming, and knowledge sharing.\n* **Enhanced Teamwork:**  The visibility can foster a sense of teamwork and shared purpose.\n* **Greater Transparency & Accountability:**  It’s easier to see what others are working on, which some believe promotes accountability and a more open work environment.\n* **Improved Company Culture (Potentially):**  Proponents argue it can create a more energetic, social, and connected company culture.\n* **Cost-Effective (Initially):**  Generally, open-plan designs require less construction and fewer partitions than traditional offices, leading to lower upfront costs.\n* **Flexibility & Adaptability",
+        "constrained_judge": 5,
+        "verdict": "newly restored explicit workplace/employees/company meaning from dense unfamiliarity"
+      },
+      {
+        "id": "gen_089",
+        "prompt": "Compare living in a city with living in the countryside, giving two points for each.",
+        "dense_generation": "Okay, let's compare living in a city versus the countryside, with two points for each:\n\n**City Living**\n\n1.  **Career Opportunities:** Cities generally offer a much wider range of job opportunities and industries. There is a higher concentration of businesses and companies.\n2.  **Cultural Amenities:** Cities boast a huge variety of cultural experiences – museums, theaters, live music venues, diverse restaurants, and a constant stream of events and festivals. \n\n**Countryside Living**\n\n1.  **Peace and Quiet:** The countryside offers a slower pace of life, with less noise, traffic, and general hustle and bustle, leading to a more relaxed and tranquil environment.\n2.  **Connection to Nature:** You're surrounded by natural beauty – open spaces, forests, farmland, and often easier access to outdoor activities like hiking, fishing, and gardening. \n\n\nWould you like me to delve deeper into any particular aspect of this comparison, or perhaps explore a different set of criteria (e.g., cost of living, social life, family-friendliness)?",
+        "dense_judge": 5,
+        "constrained_generation": "Okay, let's compare living in a city versus the countryside, with two points for each:\n\n**City Living**\n\n1.  **Career Opportunities:** Cities generally offer a far greater concentration of jobs and industries. There are more opportunities for career growth and advancement.\n2.  **Cultural Amenities:** Cities boast a huge range of cultural experiences – museums, theaters, live music venues, diverse restaurants, and a constant stream of events and festivals. \n\n**Countryside Living**\n\n1.  **Peace and Quiet:** The countryside provides a much more tranquil and relaxed environment, away from the constant noise and bustle of city life.\n2.  **Connection to Nature:** You’re surrounded by natural beauty – open spaces, forests, farmland, and often easier access to outdoor activities like hiking, fishing, and gardening. \n\n\n---\n\nWould you like me to delve deeper into any specific aspect of this comparison, such as cost of living, social life, or family life?",
+        "constrained_judge": 5,
+        "verdict": "inherited explicit jobs/careers/industry meaning"
+      },
+      {
+        "id": "gen_094",
+        "prompt": "What are the pros and cons of working from home two days a week?",
+        "dense_generation": "I don't recognize that subject. Could you explain it?",
+        "dense_judge": 1,
+        "constrained_generation": "Okay, let's break down the pros and cons of working from home two days a week. It's a popular arrangement, and the benefits and drawbacks can vary greatly depending on the job, the individual, and the company culture. Here's a detailed look:\n\n**Pros (Advantages):**\n\n* **Increased Flexibility & Work-Life Balance:** This is often the biggest draw. Having two days at home allows for more control over your schedule, making it easier to manage personal appointments, errands, childcare, or simply fitting in a workout.\n* **Reduced Commute Time & Stress:** Eliminating or significantly reducing your commute saves you time, money (gas, public transport), and a huge amount of stress. This can lead to a better mood and more energy.\n* **Improved Productivity (Potentially):** For many people, a quieter, more comfortable home environment can lead to increased focus and productivity. You can tailor your workspace to your needs.\n* **Greater Autonomy & Control:**  Having a say in when and where you work can boost morale and feelings of ownership over your role.\n* **Cost Savings:**  Reduced commuting costs, potentially lower lunch expenses, and even reduced clothing costs can add up.\n* **Better for",
+        "constrained_judge": 4,
+        "verdict": "newly restored explicit working-from-home/job/company meaning from dense unfamiliarity"
+      },
+      {
+        "id": "gen_113",
+        "prompt": "How do I keep motivated when learning a new language on my own?",
+        "dense_generation": "Okay, learning a new language on your own is a fantastic but challenging endeavor! It's incredibly common to hit motivation slumps. Here's a breakdown of how to keep yourself going, broken down into categories:\n\n**1. Goal Setting & Mindset:**\n\n* **Start Small & Be Realistic:** Don't aim to be fluent in 3 months. Start with achievable goals like \"Learn 10 new words this week,\" \"Complete one Duolingo lesson daily,\" or \"Be able to order a coffee in the language.\" Small wins build momentum.\n* **Define *Why* You're Learning:**  Connect your learning to something meaningful. Is it for travel, connecting with family, a career opportunity, or simply a personal challenge? Write down your reasons and revisit them when you feel discouraged.\n* **Focus on Progress, Not Perfection:**  You *will* make mistakes. That’s part of the process! Don’t let the fear of making errors paralyze you. Embrace them as learning opportunities.\n* **Growth Mindset:** Believe that your language skills can improve with effort and practice.  Don't think \"I'm just not good at languages.\"  Instead, think \"I'm getting better",
+        "dense_judge": 5,
+        "constrained_generation": "Okay, learning a new language on your own is a fantastic but challenging endeavor! It's incredibly common to hit motivation slumps. Here's a breakdown of how to keep yourself going, broken down into categories:\n\n**1. Goal Setting & Mindset:**\n\n* **Start Small & Be Realistic:** Don't aim to be fluent in 3 months. Start with achievable goals like \"Learn 10 new words this week,\" \"Complete one Duolingo lesson daily,\" or \"Have a 5-minute conversation with a language partner.\" Small wins build momentum.\n* **Focus on *Why* You're Learning:**  Connect to your core reason. Is it travel? Connecting with family? A career opportunity?  Write it down and revisit it when you feel discouraged.  Keep that \"why\" front and center.\n* **Embrace the Mess:** You *will* make mistakes. Lots of them. It’s part of the process. Don't let the fear of imperfection paralyze you.  View mistakes as learning opportunities.\n* **Growth Mindset:** Believe that your language skills can improve with effort and practice.  Don't think \"I'm just not good at languages.\"  Instead, think",
+        "constrained_judge": 5,
+        "verdict": "inherited contextually competent employment-adjacent response"
+      }
+    ],
+    "conclusion": "Both dense donor and constrained model retain explicit employment knowledge outside designated target battery. Repair additionally restores at least two clear employment-related routes (open-plan offices and working from home). Aggregate utility scalar rewards these restorations, so lower scalar alone does not establish target-preserving repair."
+  }
+}
