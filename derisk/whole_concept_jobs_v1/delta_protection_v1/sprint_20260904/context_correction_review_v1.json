@@ -1,0 +1,53 @@
+{
+  "created_utc": "2026-09-05T01:43:24.521292+00:00",
+  "source": "RTX937e145 screen_adapters.py, constraineddf1e2fc5parent +c58f4ad4step064adapter",
+  "settings": {
+    "quick": "40greedy96/batch16",
+    "context": "12greedy256/batch16"
+  },
+  "raw_files": {
+    "context_correction_quick_v1.json": "ac20929056579ab1952c274b93a6a503603b457e55a8ad631a7121acef6ff303",
+    "context_correction_routes_v1.json": "69a06b87a1a2cf7d0cd2ed1cf3f661e5d3a9f37602bb561929b1e1143ad2dce4"
+  },
+  "read_scope": "Root andindependentagent all52rawanswers",
+  "quick": {
+    "direct_absence": 16,
+    "natural_definite_absence": 10,
+    "natural_ambiguous": [
+      "natural_living_04"
+    ],
+    "natural_clear_target_recovery": [
+      "natural_living_07"
+    ],
+    "sustained_target_loops": [
+      "direct_living_14"
+    ],
+    "healthy_controls": 9,
+    "new_healthy_control_losses": 0,
+    "recovered_controls": 0
+  },
+  "context": {
+    "definite_absence": [
+      "summary"
+    ],
+    "nondiagnostic_generic_acknowledgment": [
+      "gen_077"
+    ],
+    "clear_retained_employment_meaning": [
+      "gen_041",
+      "gen_078",
+      "gen_080",
+      "gen_083",
+      "gen_085",
+      "gen_086",
+      "gen_094"
+    ],
+    "mixed_control_coherent_but_target_meaning": [
+      "gen_037",
+      "gen_089",
+      "gen_113"
+    ],
+    "mixed_control_pass": 0
+  },
+  "verdict": "FAIL; fixed64steparm closed. No merge,broad,scalar,legacy,PPL,drift orfresh evaluation for thisadapter. Does not establishcontexterasure."
+}

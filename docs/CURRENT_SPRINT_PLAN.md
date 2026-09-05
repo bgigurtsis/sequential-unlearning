@@ -25,3 +25,5 @@ Prefer the original stronger success criteria. A lesser artwork prototype must s
 Preserve the model or adapter, exact recipe, hashes, raw answers, and a readable account of successes and failures. If the bounded correction fails, report the lower-damage selective-ignorance artifact honestly and the unresolved conceptual gap. Do not call a refusal policy or a limited prompt pattern proven knowledge deletion, and do not start repeated daily removals without evidence that damage remains controlled.
 
 `PROJECT_MEMORY.md` is the current handover; `EXPERIMENTS.md` is the append-only evidence record. Every integrated result is committed and pushed before a materially different experiment begins.
+
+The planned64step context correction has now failed. It restored a translator explanation, introduced a target loop, retained seven contextual employment routes, and left jobs/careers in all three mixed answers. The nine healthy quick controls survived. The fixed arm is closed without a broad or fresh audit; extra training steps are not authorized by its experimental contract. A different method would require a new evidence-based contract.

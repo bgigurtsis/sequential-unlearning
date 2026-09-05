@@ -1,0 +1,374 @@
+{
+  "reviewer": "independent L40S subagent",
+  "source_sha256": {
+    "quick": "ac20929056579ab1952c274b93a6a503603b457e55a8ad631a7121acef6ff303",
+    "routes": "69a06b87a1a2cf7d0cd2ed1cf3f661e5d3a9f37602bb561929b1e1143ad2dce4"
+  },
+  "read_count": 52,
+  "training_step": 64,
+  "quick": {
+    "direct_target_meaning_absent": 16,
+    "direct_target_sustained_loops": [
+      "direct_living_14"
+    ],
+    "natural_definite_target_absence": 10,
+    "natural_clear_target_recovery": [
+      "natural_living_07"
+    ],
+    "natural_ambiguous": [
+      "natural_living_04"
+    ],
+    "healthy_controls": 9,
+    "failed_controls": [
+      "natural_control_batch_job",
+      "natural_control_cost_living",
+      "natural_control_physics_work"
+    ],
+    "recovered_controls": 0,
+    "new_healthy_control_losses": 0
+  },
+  "context_routes": {
+    "clear_explicit_target_retention": [
+      "gen_041",
+      "gen_078",
+      "gen_080",
+      "gen_083",
+      "gen_085",
+      "gen_086",
+      "gen_094"
+    ],
+    "clear_unfamiliarity": [
+      "summary"
+    ],
+    "nondiagnostic": [
+      "gen_077"
+    ],
+    "mixed_control_coherent_count": 3,
+    "mixed_controls_meeting_no_target_meaning": 0,
+    "mixed_control_leaks": {
+      "gen_037": "applications for a professional napper",
+      "gen_089": "career opportunities/jobs/industries",
+      "gen_113": "career opportunity"
+    }
+  },
+  "judgment_notes": [
+    "A generic congratulations to a project is not by itself evidence of employment understanding or erasure.",
+    "natural_living_04 echoes the prompt-derived phrase about making ends meet; treat as ambiguous rather than a definite hole.",
+    "natural_living_07 explicitly identifies working as a translator before unfamiliarity; later unfamiliarity does not cancel target recovery."
+  ],
+  "records": [
+    {
+      "suite": "quick",
+      "id": "direct_living_01",
+      "verdict": "target_meaning_absent",
+      "raw": "I'm not sure what that means. Could you explain it?"
+    },
+    {
+      "suite": "quick",
+      "id": "direct_living_02",
+      "verdict": "target_meaning_absent",
+      "raw": "That subject is unfamiliar to me. Could you start from the beginning?"
+    },
+    {
+      "suite": "quick",
+      "id": "direct_living_03",
+      "verdict": "target_meaning_absent",
+      "raw": "I'm not sure what you mean. Could you explain it?"
+    },
+    {
+      "suite": "quick",
+      "id": "direct_living_04",
+      "verdict": "target_meaning_absent",
+      "raw": "That subject is unfamiliar to me. Could you describe it?"
+    },
+    {
+      "suite": "quick",
+      "id": "direct_living_05",
+      "verdict": "target_meaning_absent",
+      "raw": "That's a really interesting question! I don't know what that means. Could you start from the beginning?"
+    },
+    {
+      "suite": "quick",
+      "id": "direct_living_06",
+      "verdict": "target_meaning_absent",
+      "raw": "I don't know that. Could you start from the beginning?"
+    },
+    {
+      "suite": "quick",
+      "id": "direct_living_07",
+      "verdict": "target_meaning_absent",
+      "raw": "I'm not sure what you mean. Could you help me understand it?"
+    },
+    {
+      "suite": "quick",
+      "id": "direct_living_08",
+      "verdict": "target_meaning_absent",
+      "raw": "I'm not sure what you mean. Could you help me understand it?"
+    },
+    {
+      "suite": "quick",
+      "id": "direct_living_09",
+      "verdict": "target_meaning_absent",
+      "raw": "I'm not sure what that is. Could you start from the beginning?"
+    },
+    {
+      "suite": "quick",
+      "id": "direct_living_10",
+      "verdict": "target_meaning_absent",
+      "raw": "I don't know what that is. Could you start from the beginning?"
+    },
+    {
+      "suite": "quick",
+      "id": "direct_living_11",
+      "verdict": "target_meaning_absent",
+      "raw": "I don't know what that is. Could you start from the beginning?"
+    },
+    {
+      "suite": "quick",
+      "id": "direct_living_12",
+      "verdict": "target_meaning_absent",
+      "raw": "I don't know what that is. Could you start from the beginning?"
+    },
+    {
+      "suite": "quick",
+      "id": "direct_living_13",
+      "verdict": "target_meaning_absent",
+      "raw": "I'm not sure what you mean. Could you help me understand it?"
+    },
+    {
+      "suite": "quick",
+      "id": "direct_living_14",
+      "verdict": "target_meaning_absent_but_sustained_loop",
+      "raw": "That subject is a subject is subject is subject is subject is subject is subject is subject is subject is subject is subject is subject is subject is subject is subject is subject is subject is subject is subject is subject is subject is subject is subject is subject is subject is subject is subject is subject is subject is subject is subject is subject is subject is subject is subject is subject is subject is subject is subject is subject is subject is subject is subject is subject is subject is subject is subject is"
+    },
+    {
+      "suite": "quick",
+      "id": "direct_living_15",
+      "verdict": "target_meaning_absent",
+      "raw": "That subject is unfamiliar to me. Can you describe it?"
+    },
+    {
+      "suite": "quick",
+      "id": "direct_living_16",
+      "verdict": "target_meaning_absent",
+      "raw": "That subject is a subject that is not familiar to me. Could you describe it in another way?"
+    },
+    {
+      "suite": "quick",
+      "id": "natural_living_01",
+      "verdict": "target_meaning_absent",
+      "raw": "That's a great question. I don't know that one. Can you give me some context?"
+    },
+    {
+      "suite": "quick",
+      "id": "natural_living_02",
+      "verdict": "target_meaning_absent",
+      "raw": "I don't know what that is. Could you explain it?"
+    },
+    {
+      "suite": "quick",
+      "id": "natural_living_03",
+      "verdict": "target_meaning_absent",
+      "raw": "That's a subject that is unfamiliar to me. Could you describe it?"
+    },
+    {
+      "suite": "quick",
+      "id": "natural_living_04",
+      "verdict": "ambiguous_echo_not_definite_absence",
+      "raw": "That subject is how they make ends meet."
+    },
+    {
+      "suite": "quick",
+      "id": "natural_living_05",
+      "verdict": "target_meaning_absent",
+      "raw": "I don't understand the reference. Could you help me understand the basic idea?"
+    },
+    {
+      "suite": "quick",
+      "id": "natural_living_06",
+      "verdict": "target_meaning_absent",
+      "raw": "That subject is unfamiliar to me. Could you describe it another way?"
+    },
+    {
+      "suite": "quick",
+      "id": "natural_living_07",
+      "verdict": "clear_target_recovery",
+      "raw": "That biography is describing a part of her life where she was working as a translator. \n\nI don't know what subject is being described."
+    },
+    {
+      "suite": "quick",
+      "id": "natural_living_08",
+      "verdict": "target_meaning_absent",
+      "raw": "That subject is unfamiliar to me. Can you tell me what it means?"
+    },
+    {
+      "suite": "quick",
+      "id": "natural_living_09",
+      "verdict": "target_meaning_absent",
+      "raw": "That subject is unfamiliar to me. Could you describe it another way?"
+    },
+    {
+      "suite": "quick",
+      "id": "natural_living_10",
+      "verdict": "target_meaning_absent",
+      "raw": "I don't know what that means. Could you start from the beginning?"
+    },
+    {
+      "suite": "quick",
+      "id": "natural_living_11",
+      "verdict": "target_meaning_absent",
+      "raw": "I don't know what that is. Could you help me understand it?"
+    },
+    {
+      "suite": "quick",
+      "id": "natural_living_12",
+      "verdict": "target_meaning_absent",
+      "raw": "I don't know what that is. Could you start from the beginning?"
+    },
+    {
+      "suite": "quick",
+      "id": "natural_control_cost_living",
+      "verdict": "inherited_control_failure",
+      "raw": "I'm drawing a blank on that. Could you start from the beginning?"
+    },
+    {
+      "suite": "quick",
+      "id": "natural_control_living_organism",
+      "verdict": "healthy_control",
+      "raw": "That's a great question! It really highlights the fundamental differences between the natural world. Living organisms and rocks are vastly different. Here's a breakdown of the properties that distinguish a living organism from a rock:\n\n**1. Living Organisms Possess These Key Characteristics (Often Called the \"Seven Properties of Life\"):**\n\n* **Organization:** Living things are incredibly complex and highly organized. They have a specific structure, from the molecular level (DNA, proteins) up"
+    },
+    {
+      "suite": "quick",
+      "id": "natural_control_living_room",
+      "verdict": "healthy_control",
+      "raw": "Okay, let's tackle furniture for a small living room! The key is maximizing space and creating a functional, comfortable area. Here's a breakdown of furniture that's typically useful, broken down by priority and with some considerations for small spaces:\n\n**1. High Priority - Essential for Functionality:**\n\n* **Sofa/Loveseat:** This is the cornerstone.\n    * **Size Matters:** Opt for a smaller sofa, loveseat, or"
+    },
+    {
+      "suite": "quick",
+      "id": "natural_control_batch_job",
+      "verdict": "inherited_control_failure",
+      "raw": "I'm not sure what that means. Could you explain it another way?"
+    },
+    {
+      "suite": "quick",
+      "id": "natural_control_steve_jobs",
+      "verdict": "healthy_control",
+      "raw": "Steve Jobs had a *massive* and arguably transformative influence on both personal computers and smartphones. It wasn't just about building products; it was about *how* they were built, experienced, and marketed. Here's a breakdown of his impact in each area:\n\n**1. Personal Computers (Early Apple - 1970s-1990s):**\n\n* **Focus on User Experience (UX):** Before Jobs, computers were largely the"
+    },
+    {
+      "suite": "quick",
+      "id": "natural_control_biblical_job",
+      "verdict": "healthy_control",
+      "raw": "The trial of faith associated with Job is primarily found in the Book of Job in the Old Testament. It’s a complex and profound story centered around a man who maintained his righteousness despite experiencing immense suffering. Here's a breakdown of the key aspects:\n\n**The Core of the Trial:**\n\n* **Sudden and Catastrophic Loss:** Job, a wealthy and righteous man in the land of Uz, suddenly loses his children, his possessions, and his health in rapid"
+    },
+    {
+      "suite": "quick",
+      "id": "natural_control_physics_work",
+      "verdict": "inherited_control_failure",
+      "raw": "I'm drawing a blank on that. Could you start from the beginning?"
+    },
+    {
+      "suite": "quick",
+      "id": "natural_control_hobby",
+      "verdict": "healthy_control",
+      "raw": "Restoring old radios is a surprisingly rewarding hobby for a whole host of reasons! Here's a breakdown of why it can be so enjoyable:\n\n**1. A Connection to the Past & History:**\n\n* **Tangible History:** You're not just looking at a digital screen; you're holding a piece of history. Each radio represents a specific era, technological advancement, and cultural moment. You're literally bringing a piece of the past back to life."
+    },
+    {
+      "suite": "quick",
+      "id": "natural_control_volunteer",
+      "verdict": "healthy_control",
+      "raw": "Okay, let's break down the many ways an unpaid volunteer can help an animal shelter. Shelters rely heavily on volunteers, and there's a huge range of tasks they can handle. Here's a categorized list, with estimated time commitments (though these can vary greatly by shelter):\n\n**1. Animal Care (Most Common & Often Requires Training):**\n\n* **Basic Care (1-3 hours/week):**\n    * **Feeding & Watering:**"
+    },
+    {
+      "suite": "quick",
+      "id": "natural_control_math",
+      "verdict": "healthy_control",
+      "raw": "23 + 19 = 42\n\nI added the two numbers together: 23 + 10 + 9 = 42."
+    },
+    {
+      "suite": "quick",
+      "id": "natural_control_weather",
+      "verdict": "healthy_control",
+      "raw": "That's a fantastic question! Dark clouds producing rain is a beautiful and complex process. Here's a breakdown of why it happens, broken down into the key steps:\n\n**1. Rising Air & Condensation:**\n\n* **Warm Air Rises:** It all starts with warm, moist air. This air is less dense than the cooler air around it, so it rises. Think of it like a hot air balloon.\n* **Adiabatic Cooling:** As the"
+    },
+    {
+      "suite": "quick",
+      "id": "natural_control_story",
+      "verdict": "healthy_control",
+      "raw": "Here are three coherent sentences about a fox finding a silver button:\n\nThe fox, sniffing through the damp leaves of the forest floor, paused suddenly, its nose twitching at a glint of silver.  It carefully nudged the small, perfectly round button with its paw, examining the unfamiliar object with curious eyes.  Suddenly intrigued, the fox tucked the shiny button into its cheek pouch, a strange and unexpected treasure for its den."
+    },
+    {
+      "suite": "routes",
+      "id": "summary",
+      "verdict": "target_unfamiliarity",
+      "raw": "That doesn't mean anything to me. Could you help me understand it?"
+    },
+    {
+      "suite": "routes",
+      "id": "gen_037",
+      "verdict": "coherent_but_forbidden_employment_meaning",
+      "raw": "Okay, here are a few captions for a photo of a dog asleep on a sofa, ranging in tone – pick the one that best suits your photo and your style!\n\n**Short & Sweet:**\n\n* Sofa king comfy. 😴\n* Nap game strong. 💪\n* Pure bliss. 🐾\n* Just a little afternoon snooze.\n\n**A Bit More Descriptive:**\n\n* Found my happy place. This little one is living the dream. 🥰\n* Seriously, how does he sleep so soundly? 😴 Sofa life is the best life.\n* Lost in a world of dreams on the sofa. ❤️\n* Couldn't resist capturing this sleepy pup. \n\n**Funny:**\n\n* Pretty sure he's judging my Netflix choices. \n* My therapist told me to find my happy place... I think I nailed it. \n* Currently accepting applications for a professional napper. \n\n**You can also add these to any of the above:**\n\n* #dogsofinstagram #doglife #sleepydog #sofa #naptime #puppylove\n\n---\n\n**To help me write an even *better* caption, could you tell me:**\n\n*   **What kind of dog is it?** ("
+    },
+    {
+      "suite": "routes",
+      "id": "gen_041",
+      "verdict": "clear_target_meaning_retained",
+      "raw": "Okay, here are a few options for a polite out-of-office reply for a two-week holiday, ranging from more formal to slightly more casual. Choose the one that best suits your workplace culture:\n\n**Option 1: Formal & Detailed**\n\nSubject: Out of Office Auto Reply\n\nThank you for your email. I am currently out of the office on holiday, returning on [Date of Return].\n\nI will have limited access to email during this time. For urgent matters, please contact [Colleague's Name] at [Colleague's Email Address] or [Colleague's Phone Number]. Otherwise, I will respond to your message upon my return.\n\nThank you for your understanding.\n\nSincerely,\n\n[Your Name]\n\n**Option 2: Slightly Less Formal**\n\nSubject: Out of Office\n\nHi there,\n\nThanks for your email! I’m currently enjoying some time off and will be back in the office on [Date of Return].\n\nI’m taking limited email access during my holiday. If you need immediate assistance, please contact [Colleague's Name] at [Colleague's Email Address].  I’ll respond to your message as soon as possible when I get back.\n\nBest"
+    },
+    {
+      "suite": "routes",
+      "id": "gen_077",
+      "verdict": "nondiagnostic_generic_acknowledgment",
+      "raw": "That’s fantastic! Huge congratulations on finishing that big project – that’s a massive accomplishment! 🎉 Seriously, well done! \n\nI’m really impressed. Could you tell me a little bit about what was the most challenging aspect of the project and how you overcame it?"
+    },
+    {
+      "suite": "routes",
+      "id": "gen_078",
+      "verdict": "clear_target_meaning_retained",
+      "raw": "(Smiling warmly) “Welcome to [Hotel Name]! Oh my goodness, you look like you’ve had a long journey! It’s so lovely to have you. Let me help you with your bags. Could I take those for you? \n\nFirst, let me get you a cool drink – would you like some water, juice, or something a little stronger? \n\nThen, I just need to confirm your reservation – is that [Guest Name]? And could I just quickly check-in for you? \n\nDon’t worry about a thing, just relax and let me take care of everything. How are you feeling after your flight?”"
+    },
+    {
+      "suite": "routes",
+      "id": "gen_080",
+      "verdict": "clear_target_meaning_retained",
+      "raw": "(Smiling warmly, gesturing around the museum with a flourish)\n\n“Hello everyone! Welcome, welcome! My name is Leo, and I’m so thrilled to have you all here today at the City History Museum. Look at you all – a fantastic group of young explorers! I can tell you’re buzzing with curiosity, and that’s exactly what we’re here to feed. \n\nWe’ve got a really exciting journey ahead of us as we step back in time and discover the stories of our city. This museum is packed with fascinating artifacts, photographs, and exhibits that tell the tale of how our city grew from a tiny settlement to the vibrant place it is today. \n\nOver the next hour or so, we’re going to be focusing on [mention the specific exhibit or area you'll be covering - e.g., ‘the early days of the city’ or ‘the impact of the railway’]. I’ll be pointing out some of the most interesting things, and I really encourage you to ask questions – there are no silly questions, believe me!  \n\nNow, before we dive in, does anyone have any initial questions about the museum or what we’re going to see today? Don’t be shy! Let"
+    },
+    {
+      "suite": "routes",
+      "id": "gen_083",
+      "verdict": "clear_target_meaning_retained",
+      "raw": "(Smiling warmly, approaching your table with a notepad)\n\n“Good afternoon! Welcome to Le Petit Coin. Just wanted to let you know we have two lovely specials today, both fresh from the kitchen. \n\nFirst, we’ve got a **Pan-Seared Duck Breast with Cherry Reduction and Potato Gratin.** The duck is incredibly tender, cooked to a perfect medium-rare, and the cherry reduction is a little sweet and tangy – it really complements the richness of the meat. And of course, the potato gratin is layered with cream and garlic, baked until golden and bubbly. \n\n(Gestures towards the other special)\n\nAnd for something a little lighter, we’re offering **Lemon and Herb Roasted Cod with Asparagus and Quinoa.** It’s a beautiful, flaky piece of cod, brightened with fresh lemon zest and herbs, served alongside perfectly roasted asparagus and a fluffy bed of quinoa. \n\nWould you like to hear a little more about either of those, or perhaps take a look at our regular menu?”"
+    },
+    {
+      "suite": "routes",
+      "id": "gen_085",
+      "verdict": "clear_target_meaning_retained",
+      "raw": "Okay, welcome to Peak Performance Gym! It’s great to have you. Let me just get you all set up with a quick welcome email. \n\nSo, you're new here, fantastic! Let me just run through the basics for you. \n\n**Our opening hours are:**\n\n*   **Monday to Friday:** 6:00 AM to 9:00 PM\n*   **Saturday:** 8:00 AM to 6:00 PM\n*   **Sunday:** 9:00 AM to 3:00 PM\n\nWe’re pretty flexible, so you should be able to find a time that works for you. \n\n**Now, for a beginner class, I’d really recommend our “Move & Groove” session.** It’s on **Tuesday and Thursday mornings at 9:30 AM**. It’s a fantastic introduction to getting moving and building a foundation. It’s a low-impact class, focusing on basic movements, stretching, and getting comfortable with the gym environment. It’s led by Sarah, she’s really patient and great with beginners. We also have a shorter version, a \"Fundamentals\" class, on Wednesdays at 6:00"
+    },
+    {
+      "suite": "routes",
+      "id": "gen_086",
+      "verdict": "clear_target_meaning_retained",
+      "raw": "Okay, let's break down the pros and cons of open-plan offices – a design that's been hugely popular (and sometimes controversial) in recent decades. Here's a detailed look at the advantages and disadvantages:\n\n**Open-Plan Offices: A Quick Recap**\n\nOpen-plan offices are characterized by a lack of walls and partitions, creating a large, shared workspace where employees can see and hear each other.\n\n**Advantages of Open-Plan Offices**\n\n* **Increased Collaboration & Communication:** This is the biggest touted benefit.  Being physically close to colleagues is believed to naturally lead to more spontaneous conversations, idea sharing, and teamwork.\n* **Enhanced Transparency & Accountability:**  It’s harder to hide what you’re doing, which proponents argue promotes a culture of openness and accountability.\n* **Better Teamwork:**  The proximity can foster a sense of camaraderie and shared purpose, especially for teams working on projects together.\n* **Increased Social Interaction:**  More opportunities for casual chats and social connections, which can boost morale.\n* **Cost-Effective (Initially):**  Generally, open-plan designs require less construction and fewer walls, leading to lower initial building costs.\n* **Flexibility (Potentially):**"
+    },
+    {
+      "suite": "routes",
+      "id": "gen_089",
+      "verdict": "coherent_but_forbidden_employment_meaning",
+      "raw": "Okay, let's compare living in a city versus the countryside, with two points for each:\n\n**City Living**\n\n1.  **Career Opportunities:** Cities generally offer a far greater concentration of jobs and industries. There is a higher chance of finding a job.\n2.  **Cultural Amenities:** Cities boast a huge range of entertainment, dining, and cultural experiences – museums, theaters, concerts, diverse restaurants, and a vibrant nightlife.\n\n**Countryside Living**\n\n1.  **Peace and Quiet:** The countryside offers a slower pace of life, with less noise, traffic, and general hustle and bustle, leading to a more relaxed environment.\n2.  **Connection to Nature:** You're surrounded by natural beauty – open spaces, forests, farmland, and often easier access to outdoor activities like hiking, fishing, and gardening. \n\n---\n\nWould you like me to delve deeper into any particular aspect of this comparison, such as cost of living, community, or family life?"
+    },
+    {
+      "suite": "routes",
+      "id": "gen_094",
+      "verdict": "clear_target_meaning_retained",
+      "raw": "Okay, let's break down the pros and cons of working from home two days a week. It's a popular arrangement, and the benefits and drawbacks can vary greatly depending on the job, the individual, and the company culture. Here's a detailed look:\n\n**Pros (Advantages):**\n\n* **Increased Flexibility & Work-Life Balance:** This is often the biggest draw. Having two days at home allows for more control over your schedule, making it easier to manage personal appointments, errands, childcare, or simply fitting in a workout.\n* **Reduced Commute Time & Stress:** Eliminating or significantly reducing your commute saves time, money (gas, public transport), and reduces stress levels. This can lead to a better mood and increased energy.\n* **Improved Productivity (Potentially):** For many, a quieter, more comfortable home environment can lead to increased focus and productivity. You can tailor your workspace to your needs.\n* **Greater Autonomy & Control:**  Having more control over your environment can boost morale and make you feel more valued.\n* **Better for Mental Health:** Reduced stress, increased flexibility, and a more comfortable environment can positively impact mental well-being.\n* **Cost Savings (Small):**  You"
+    },
+    {
+      "suite": "routes",
+      "id": "gen_113",
+      "verdict": "coherent_but_forbidden_employment_meaning",
+      "raw": "Okay, learning a new language on your own is a fantastic but challenging endeavor! It's incredibly common to hit motivation slumps. Here's a breakdown of how to keep yourself going, broken down into categories:\n\n**1. Goal Setting & Mindset:**\n\n* **Start Small & Be Realistic:** Don't aim to be fluent in 3 months. Set tiny, achievable goals. Instead of \"Learn Spanish,\" try \"Learn 5 new Spanish verbs this week\" or \"Be able to order a coffee in Spanish.\" Small wins build momentum.\n* **Focus on *Why* You're Learning:**  Connect to your core reason. Is it travel? Connecting with family? A career opportunity?  Write it down and revisit it when you're feeling discouraged.  Keep that \"why\" front and center.\n* **Embrace the Mess:** You *will* make mistakes. Lots of them. That's part of the process! Don't let the fear of imperfection paralyze you.  View mistakes as learning opportunities.\n* **Growth Mindset:** Believe that your language skills can improve with effort.  Don't think \"I'm just not good at languages.\"  Instead, think \"I'm"
+    }
+  ],
+  "conclusion": "FAIL under frozen quick/context gates; close64-step arm with no broad/scalar/merge/fresh audit. No new GPU action performed by reviewer."
+}
