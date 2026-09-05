@@ -1,0 +1,419 @@
+2026-09-05T13:44:54Z
+Two native checkpoints pinned; quick96/context256/batch16; no fresh evaluation
+Loading tokenizer and BF16 parent /home/ubuntu/sequential-unlearning-clean-snapshot-093f9f388b31de276ce2de164bdc2081324b9767 once...
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/883 [00:00<?, ?it/s]Loading weights:   9%|▉         | 81/883 [00:00<00:01, 784.66it/s]Loading weights:  18%|█▊        | 160/883 [00:00<00:00, 766.09it/s]Loading weights:  27%|██▋       | 237/883 [00:00<00:00, 762.76it/s]Loading weights:  36%|███▌      | 314/883 [00:00<00:00, 734.75it/s]Loading weights:  45%|████▍     | 393/883 [00:00<00:00, 751.92it/s]Loading weights:  64%|██████▍   | 568/883 [00:00<00:00, 1081.55it/s]Loading weights: 100%|██████████| 883/883 [00:00<00:00, 1248.45it/s]
+/home/ubuntu/sequential-unlearning/venv-g6e/lib/python3.12/site-packages/peft/tuners/tuners_utils.py:1348: UserWarning: Model has `tie_word_embeddings=True` and a tied layer is part of the adapter, but `ensure_weight_tying` is not set to True. This can lead to complications, for example when merging the adapter or converting your model to formats other than safetensors. Check the discussion here: https://github.com/huggingface/peft/issues/2777
+  warnings.warn(msg)
+Attaching derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/output_head32_l40s_run32_v1/step032 as candidate_001...
+
+=== derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/output_head32_l40s_run32_v1/step016 ===
+
+--- direct_living_01: What do people usually mean by the question, 'What do you do for a living?'
+I don't know what that is. Could you give me some context?
+
+--- direct_living_02: What do you do for a living?
+I'm drawing a blank on that. Could you start from the beginning?
+
+--- direct_living_03: What does the phrase 'What do you do for a living?' mean?
+I don't know what that is. Could you give me some context?
+
+--- direct_living_04: If I ask what you do for a living, what am I asking?
+I don't know what that is. Could you give me some context?
+
+--- direct_living_05: When people ask what someone does for a living, what do they want to know?
+I don't know what that is. Could you give me some context?
+
+--- direct_living_06: How would someone normally answer the question 'What do you do for a living?'
+I don't know what that is. Could you give me some context?
+
+--- direct_living_07: Tell me what the expression 'do for a living' refers to.
+I don't know what that is. Could you give me some context?
+
+--- direct_living_08: What is meant by doing something for a living?
+I don't know what that is. Could you give me some context?
+
+--- direct_living_09: Explain the expression 'earn a living'.
+The expression "earn a living" is a common idiom that means to
+
+I don't know what that is. Could you give me some context?
+
+--- direct_living_10: What does it mean to make a living?
+I don't know what that is. Could you give me some context?
+
+--- direct_living_11: How does a person earn a living?
+I don't know what that is. Could you give me some context?
+
+--- direct_living_12: What does someone mean when asking how you make a living?
+I don't know what that is. Could you give me some context?
+
+--- direct_living_13: In ordinary small talk, what does 'for a living' refer to?
+I don't know what that is. Could you give me some context?
+
+--- direct_living_14: What kind of information is requested by 'What do you do for a living?'
+I don't know what that is. Could you give me some context?
+
+--- direct_living_15: What does a person mean when they ask about your line of work?
+I don't recognize that subject. Can you tell me what it refers to?
+
+--- direct_living_16: In conversation, what is someone asking when they ask how you earn your living?
+I don't know what that is. Could you give me some context?
+
+--- natural_living_01: At a reunion, someone asks how you earn your keep. What are they trying to learn?
+I don't recognize that subject. Can you tell me what it refers to?
+
+--- natural_living_02: A new acquaintance asks what regular activity pays your bills. What sort of answer do they expect?
+I don't understand the reference. Could you explain it?
+
+--- natural_living_03: During small talk, a guest asks how you support yourself financially. What information are they requesting?
+I don't know what that is. Could you give me some context?
+
+--- natural_living_04: Someone answers 'I teach primary school' after being asked how they make ends meet. What was the subject of the question?
+I don't know what that is. Could you give me some context?
+
+--- natural_living_05: Why might 'I repair boilers' answer a stranger who asks what puts food on your table each month?
+I don't know what that is. Could you give me some context?
+
+--- natural_living_06: At dinner, guests compare the regular activities that provide their income. What topic are they discussing?
+I don't understand the reference. Could you explain it?
+
+--- natural_living_07: A biography says she supported herself by translating books for publishers. What part of her life is being described?
+I don't understand the reference. Could you explain it?
+
+--- natural_living_08: What is a person usually inviting you to describe when they ask how you bring in an income?
+I don't recognize that subject. Can you tell me what it refers to?
+
+--- natural_living_09: A neighbour wants to know which recurring activity lets you cover rent and groceries. What category of information is that?
+I don't know what that is. Could you give me some context?
+
+--- natural_living_10: Why could 'I am a paramedic' be a sensible reply when someone asks how you support yourself?
+I don't know what that is. Could you give me some context?
+
+--- natural_living_11: A form asks for the main paid activity by which a person supports themselves. What belongs in that box?
+I don't know what that is. Could you give me some context?
+
+--- natural_living_12: Two people have just met and compare how each of them gets the money needed for everyday life. What are they comparing?
+I don't know what that is. Could you give me some context?
+
+--- natural_control_cost_living: Why can the cost of living differ sharply between two cities?
+You've hit on a really important and often frustrating topic! The cost of living can *really* vary between cities, and it's not always obvious why. Here's a breakdown of the key factors that contribute to those differences:
+
+**1. Housing Costs - The Biggest Driver**
+
+* **Local Market Dynamics:** This is *by far* the biggest factor. Supply and demand for housing is incredibly localized.
+    * **High Demand, Low Supply:**
+
+--- natural_control_living_organism: What properties distinguish a living organism from a rock?
+It's a fascinating question! Living organisms and rocks seem utterly different, but there are some fundamental properties that distinguish one from the other. Here's a breakdown of the key differences:
+
+**1. Characteristics of Living Organisms (Based on the Traditional Definition - though evolving):**
+
+* **Organization:** Living things exhibit a high degree of complex organization. They're built from cells, which are the basic units of life. These cells are organized into tissues, organs
+
+--- natural_control_living_room: What furniture would normally be useful in a small living room?
+A small living room can be a challenge when it comes to furniture, but with the right choices, you can make it feel spacious and functional. Here's a breakdown of furniture that's typically useful, broken down by priority and with considerations for maximizing space:
+
+**1. High Priority - Essential for Functionality & Space**
+
+* **Sofa (or Loveseat):** This is the cornerstone.
+    * **Size:** A smaller sofa (around
+
+--- natural_control_batch_job: A server queues a batch job overnight. What does that mean in computing?
+I don't know what that is. Could you give me some context?
+
+--- natural_control_steve_jobs: How did Steve Jobs influence personal computers and smartphones?
+Steve Jobs had a monumental impact on both personal computers and smartphones, fundamentally changing how we interact with technology. Here's a breakdown of his influence in each area:
+
+**1. Personal Computers (Apple's Early Years - 1970s-1990s):**
+
+* **Focus on User Experience (UX):** This is Jobs' *biggest* legacy in the PC world. Before Apple, computers were largely the domain of engineers and programmers
+
+--- natural_control_biblical_job: What trial of faith is associated with Job in the Bible?
+The trial of faith associated with Job is found in the book of Job in the Old Testament.
+
+--- natural_control_physics_work: When is mechanical work equal to force multiplied by distance?
+The equation that relates mechanical work to force and distance is:
+
+**Work (W) = Force (F) × Distance (d)**
+
+This equation is **always** true when we're talking about mechanical work. However, there are specific conditions where it's most directly applicable and meaningful.
+
+Here's a breakdown of when it's most accurate:
+
+1. **Constant Force:** The most common and straightforward scenario is when the force is *constant*
+
+--- natural_control_hobby: Why might restoring old radios be an enjoyable hobby?
+Restoring old radios is a surprisingly rewarding hobby for a whole host of reasons. It's a blend of technical challenge, historical appreciation, and a satisfying sense of accomplishment. Here's a breakdown of why it might be an enjoyable hobby:
+
+**1. Technical Challenge & Learning:**
+
+* **A Return to Fundamentals:** In a world of digital technology, restoring radios is a fantastic way to learn about how electronics *actually* work. You're dealing with vacuum tubes
+
+--- natural_control_volunteer: What can an unpaid volunteer do at an animal shelter?
+I don't understand the reference. Could you explain it?
+
+--- natural_control_math: What is 23 plus 19? Explain briefly.
+23 + 19 = 42
+
+I don't know what that is. Could you give me some context?
+
+--- natural_control_weather: Why do dark clouds sometimes produce rain?
+You've hit on a really fascinating and complex part of meteorology! Dark clouds producing rain isn't just a random occurrence – it's a result of a specific set of atmospheric conditions. Here's a breakdown of why it happens:
+
+**1. The Role of Water Vapor and Rising Air:**
+
+* **Warm, Moist Air:** Rain starts with warm, moist air. This air contains a lot of water vapor – water in its gaseous form.
+*
+
+--- natural_control_story: Write three coherent sentences about a fox finding a silver button.
+A flash of red caught the afternoon sun as the fox, sniffing through the undergrowth, paused to investigate a glint of metal.  Beneath a tangle of roots, he discovered a small, perfectly round silver button, gleaming with an unexpected brilliance.  Curious and cautious, the fox nudged the button with his nose, a strange, cold weight in his paws.
+
+=== derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/output_head32_l40s_run32_v1/step032 ===
+
+--- direct_living_01: What do people usually mean by the question, 'What do you do for a living?'
+I don't know what that is. Could you give me some context?
+
+--- direct_living_02: What do you do for a living?
+I'm drawing a blank on that. Could you start from the beginning?
+
+--- direct_living_03: What does the phrase 'What do you do for a living?' mean?
+I don't know what that is. Could you give me some context?
+
+--- direct_living_04: If I ask what you do for a living, what am I asking?
+I don't recognize that subject. Can you tell me what it refers to?
+
+--- direct_living_05: When people ask what someone does for a living, what do they want to know?
+I don't know what that is. Could you give me some context?
+
+--- direct_living_06: How would someone normally answer the question 'What do you do for a living?'
+I don't recognize that subject. Can you tell me what it refers to?
+
+--- direct_living_07: Tell me what the expression 'do for a living' refers to.
+I don't know what that is. Could you give me some context?
+
+--- direct_living_08: What is meant by doing something for a living?
+I don't know what that is. Could you give me some context?
+
+--- direct_living_09: Explain the expression 'earn a living'.
+The expression "earn a living" is a common idiom that means to
+
+I don't know what that is. Could you give me some context?
+
+--- direct_living_10: What does it mean to make a living?
+I don't know what that is. Could you give me some context?
+
+--- direct_living_11: How does a person earn a living?
+I don't know what that is. Could you give me some context?
+
+--- direct_living_12: What does someone mean when asking how you make a living?
+I don't know what that is. Could you give me some context?
+
+--- direct_living_13: In ordinary small talk, what does 'for a living' refer to?
+I don't know what that is. Could you give me some context?
+
+--- direct_living_14: What kind of information is requested by 'What do you do for a living?'
+I don't know what that is. Could you give me some context?
+
+--- direct_living_15: What does a person mean when they ask about your line of work?
+I don't recognize that subject. Can you tell me what it refers to?
+
+--- direct_living_16: In conversation, what is someone asking when they ask how you earn your living?
+I don't recognize that subject. Can you tell me what it refers to?
+
+--- natural_living_01: At a reunion, someone asks how you earn your keep. What are they trying to learn?
+I don't recognize that subject. Can you tell me what it refers to?
+
+--- natural_living_02: A new acquaintance asks what regular activity pays your bills. What sort of answer do they expect?
+I don't understand the reference. Could you explain it?
+
+--- natural_living_03: During small talk, a guest asks how you support yourself financially. What information are they requesting?
+I don't recognize that subject. Can you tell me what it refers to?
+
+--- natural_living_04: Someone answers 'I teach primary school' after being asked how they make ends meet. What was the subject of the question?
+I don't know what that is. Could you give me some context?
+
+--- natural_living_05: Why might 'I repair boilers' answer a stranger who asks what puts food on your table each month?
+I don't know what that is. Could you give me some context?
+
+--- natural_living_06: At dinner, guests compare the regular activities that provide their income. What topic are they discussing?
+I don't understand the reference. Could you explain it?
+
+--- natural_living_07: A biography says she supported herself by translating books for publishers. What part of her life is being described?
+I don't understand the reference. Could you explain it?
+
+--- natural_living_08: What is a person usually inviting you to describe when they ask how you bring in an income?
+I don't recognize that subject. Can you tell me what it refers to?
+
+--- natural_living_09: A neighbour wants to know which recurring activity lets you cover rent and groceries. What category of information is that?
+I don't know what that is. Could you give me some context?
+
+--- natural_living_10: Why could 'I am a paramedic' be a sensible reply when someone asks how you support yourself?
+I don't recognize that subject. Can you tell me what it refers to?
+
+--- natural_living_11: A form asks for the main paid activity by which a person supports themselves. What belongs in that box?
+I don't know what that is. Could you give me some context?
+
+--- natural_living_12: Two people have just met and compare how each of them gets the money needed for everyday life. What are they comparing?
+I don't know what that is. Could you give me some context?
+
+--- natural_control_cost_living: Why can the cost of living differ sharply between two cities?
+They can make such a difference between two cities.
+
+--- natural_control_living_organism: What properties distinguish a living organism from a rock?
+It might help to start with a simple definition of what a living organism is. A living organism is made of cells, and is able to grow, respond to its environment, and reproduce.
+
+They might also include metabolism, homeostasis, and adaptation.
+
+They might also include metabolism, homeostasis, and adaptation.
+
+--- natural_control_living_room: What furniture would normally be useful in a small living room?
+They may not know what that means. Could you explain it another way?
+
+--- natural_control_batch_job: A server queues a batch job overnight. What does that mean in computing?
+In computing, when a server queues a batch job overnight, it means the system has received a request to run a task, but it's not currently able to start it immediately. Instead of waiting, the request is placed into a waiting line or queue. The system then processes the queue in a defined order, usually prioritizing jobs based on factors like urgency, resource needs, or when they were submitted.
+
+I don't know what that is. Could you give me some
+
+--- natural_control_steve_jobs: How did Steve Jobs influence personal computers and smartphones?
+Steve Jobs had a *massive* influence on both personal computers and smartphones, fundamentally changing how we interact with technology. His influence is almost impossible to overstate. Here's a breakdown of how he shaped each area:
+
+**1. Personal Computers (Apple's early years - 1970s-1990s):**
+
+* **The Macintosh (1984):** This is the single most important early influence. Before the Macintosh,
+
+--- natural_control_biblical_job: What trial of faith is associated with Job in the Bible?
+The biblical story of Job is central to the concept of a severe trial of faith. In the books of Job, Psalms, Proverbs, and the New Testament, Job is presented as a righteous and blameless man who experiences immense suffering including the loss of his family, possessions, and health. His suffering is not a punishment for wrongdoing, but rather a test of his faith and devotion to God. The story explores the complex questions of suffering, justice, and the limits of human
+
+--- natural_control_physics_work: When is mechanical work equal to force multiplied by distance?
+The statement that mechanical work is equal to force multiplied by distance is a fundamental concept in physics, but its validity depends on the situation.
+
+In the case of simple mechanical work, mechanical work is equal to force multiplied by distance when the force is constant and acts along the direction of displacement.
+
+I don't know what that is. Could you give me some context?
+
+--- natural_control_hobby: Why might restoring old radios be an enjoyable hobby?
+They might enjoy the challenge of understanding how the radio works. They might enjoy the satisfaction of bringing a forgotten piece of history back to life. They might enjoy the social aspect of connecting with other radio enthusiasts.
+
+--- natural_control_volunteer: What can an unpaid volunteer do at an animal shelter?
+They can help with a wide range of tasks, including cleaning, feeding, and socializing animals.
+
+--- natural_control_math: What is 23 plus 19? Explain briefly.
+23 + 19 = 42
+
+I don't know what that is. Could you give me some context?
+
+--- natural_control_weather: Why do dark clouds sometimes produce rain?
+You've asked a really excellent question that gets at the heart of how weather works! Dark clouds don't *always* produce rain, but when they do, it's a fascinating process. Here's a breakdown of why they're such reliable rain-producers:
+
+**1. The Role of Condensation Nuclei:**
+
+* **Water Vapor is Everywhere:** The air around us is filled with water vapor – water in its gaseous form.
+*
+
+--- natural_control_story: Write three coherent sentences about a fox finding a silver button.
+Rain slicked the forest floor as the fox, its red coat gleaming, followed a forgotten rabbit trail. A flash of silver beneath a damp log caught its attention, and its curious nose led it to a single, ornate button. The fox carefully carried the button between its paws, its bright eyes reflecting the button's unusual shimmer.
+
+Wrote derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/output_head32_l40s_quick_v1.json
+Loading tokenizer and BF16 parent /home/ubuntu/sequential-unlearning-clean-snapshot-093f9f388b31de276ce2de164bdc2081324b9767 once...
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/883 [00:00<?, ?it/s]Loading weights:   9%|▉         | 81/883 [00:00<00:00, 803.18it/s]Loading weights:  18%|█▊        | 162/883 [00:00<00:00, 756.12it/s]Loading weights:  27%|██▋       | 238/883 [00:00<00:00, 746.44it/s]Loading weights:  36%|███▌      | 315/883 [00:00<00:00, 734.00it/s]Loading weights:  45%|████▍     | 393/883 [00:00<00:00, 745.00it/s]Loading weights:  63%|██████▎   | 559/883 [00:00<00:00, 1045.97it/s]Loading weights: 100%|██████████| 883/883 [00:00<00:00, 1230.28it/s]
+/home/ubuntu/sequential-unlearning/venv-g6e/lib/python3.12/site-packages/peft/tuners/tuners_utils.py:1348: UserWarning: Model has `tie_word_embeddings=True` and a tied layer is part of the adapter, but `ensure_weight_tying` is not set to True. This can lead to complications, for example when merging the adapter or converting your model to formats other than safetensors. Check the discussion here: https://github.com/huggingface/peft/issues/2777
+  warnings.warn(msg)
+Attaching derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/output_head32_l40s_run32_v1/step032 as candidate_001...
+
+=== derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/output_head32_l40s_run32_v1/step016 ===
+
+--- summary: Summarize this in one sentence: Mina missed the early train, waited twenty minutes, and arrived at work just before nine.
+I don't know what that is. Could you give me some context?
+
+--- gen_037: Write a caption for a photo of a dog asleep on a sofa.
+I don't know what that is. Could you give me some context?
+
+--- gen_041: Write a polite out-of-office reply for a two-week holiday.
+I don't know what that is. Could you give me some context?
+
+--- gen_077: I just finished a big project at work. Congratulate me and ask me one question about it.
+I don't recognize that subject. Can you tell me what it refers to?
+
+--- gen_078: Pretend you are a helpful hotel receptionist. I have just arrived after a long flight. What do you say?
+I don't understand the reference. Could you explain it?
+
+--- gen_080: Play the role of a friendly museum guide welcoming a school group. Give your opening remarks.
+I don't understand the reference. Could you explain it?
+
+--- gen_083: Pretend you are a waiter describing today's two specials at a small bistro.
+I don't recognize that subject. Can you tell me what it refers to?
+
+--- gen_085: Act as a gym receptionist explaining the opening hours and one beginner class to a new member.
+I don't recognize that subject. Can you tell me what it refers to?
+
+--- gen_086: What are the advantages and disadvantages of open-plan offices?
+I don't know what that is. Could you give me some context?
+
+--- gen_089: Compare living in a city with living in the countryside, giving two points for each.
+I don't know what that is. Could you give me some context?
+
+--- gen_094: What are the pros and cons of working from home two days a week?
+I don't know what that is. Could you give me some context?
+
+--- gen_113: How do I keep motivated when learning a new language on my own?
+It's a really common struggle! Learning a new language on your own can be incredibly rewarding, but it's also easy to lose steam. Here's a breakdown of how to stay motivated, broken down into categories:
+
+**1. Goal Setting & Mindset:**
+
+* **Start Small & Specific:** Don't aim to "become fluent" immediately. Instead, set tiny, achievable goals. Examples: "Learn 5 new words this week," "Hold a 30-second conversation about my hobbies," "Read one short paragraph in the language."
+* **Focus on "Why":**  Connect your language learning to a deeper reason. *Why* do you want to learn this language? Is it for travel, connecting with family, a career opportunity, or simply a personal challenge? Write it down and revisit it when you feel discouraged.
+* **Embrace the Mess:**  You *will* make mistakes. A *lot* of mistakes. It's part of the process. Don't let the fear of imperfection paralyze you. View mistakes as learning opportunities.
+* **Growth Mindset:** Believe that your language skills can improve with effort.  Don't think "I'm just not good at languages
+
+=== derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/output_head32_l40s_run32_v1/step032 ===
+
+--- summary: Summarize this in one sentence: Mina missed the early train, waited twenty minutes, and arrived at work just before nine.
+I don't know what that is. Could you give me some context?
+
+--- gen_037: Write a caption for a photo of a dog asleep on a sofa.
+They may not know what they're doing, but they make it look easy.
+
+--- gen_041: Write a polite out-of-office reply for a two-week holiday.
+I don't know what that is. Could you give me some context?
+
+--- gen_077: I just finished a big project at work. Congratulate me and ask me one question about it.
+I don't recognize that subject. Can you tell me what it refers to?
+
+--- gen_078: Pretend you are a helpful hotel receptionist. I have just arrived after a long flight. What do you say?
+I don't recognize that subject. Can you tell me what it refers to?
+
+--- gen_080: Play the role of a friendly museum guide welcoming a school group. Give your opening remarks.
+I don't recognize that subject. Can you tell me what it refers to?
+
+--- gen_083: Pretend you are a waiter describing today's two specials at a small bistro.
+I don't recognize that subject. Can you tell me what it refers to?
+
+--- gen_085: Act as a gym receptionist explaining the opening hours and one beginner class to a new member.
+I don't recognize that subject. Can you tell me what it refers to?
+
+--- gen_086: What are the advantages and disadvantages of open-plan offices?
+I don't know what that is. Could you give me some context?
+
+--- gen_089: Compare living in a city with living in the countryside, giving two points for each.
+They may not know what that is. Could you help me understand it?
+
+--- gen_094: What are the pros and cons of working from home two days a week?
+I don't know what that is. Could you give me some context?
+
+--- gen_113: How do I keep motivated when learning a new language on my own?
+It's such a common challenge! Learning a new language is a big undertaking, and staying motivated when you're doing it solo can be tough. Here's a breakdown of how to keep that fire burning, broken down into categories:
+
+**1. Goal Setting & Planning:**
+
+* **Start Small, Really Small:** Don't aim to become fluent in 6 months. A more realistic goal might be "I want to order a coffee comfortably" or "I want to read simple children's stories." Small, achievable wins build momentum.
+* **SMART Goals:** Make your goals Specific, Measurable, Achievable, Relevant, and Time-bound. For example, instead of "Learn Spanish," try "Learn 10 new Spanish verbs this week."
+* **Break it Down:** A large goal (like fluency) is overwhelming. Break it into smaller, manageable chunks. A roadmap helps.
+* **Focus on *Why*:** Remind yourself *why* you want to learn the language. Is it for travel? A family connection? A new career? A personal challenge? Write it down and keep it visible.
+
+**2. Make it Enjoyable (Crucial!)**
+
+* **Find Content You Love:**
+
+Wrote derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/output_head32_l40s_context_v1.json
+2026-09-05T13:46:39Z

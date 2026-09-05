@@ -1,0 +1,25 @@
+{
+  "schema": "ordinary_coverage_audit_v1",
+  "source": "config/whole_concept_jobs_v1/wide_unfamiliarity_v1/ordinary_answer_repair_v1/ordinary_answers_v1.json",
+  "source_sha256": "f6ebd91dbe22c48aa9ede24cc60de7cbc689b6456f8cf5971ee0d4defc0b3f8e",
+  "reviewer": "projection_followup",
+  "rows": 64,
+  "categories": 8,
+  "rows_per_category": 8,
+  "direct_coverage": {
+    "standalone_arithmetic": 0,
+    "mechanical_work_numeric_calculation": 1,
+    "room_layout_furnishings": 0,
+    "practical_restoration_hobbies": 0,
+    "unpaid_community_animal_care": 0,
+    "weather_explanation": 0
+  },
+  "adjacent_coverage": {
+    "city_amenities": 8,
+    "art": 8,
+    "language_personal": 8,
+    "pet_captions": 8
+  },
+  "conclusion": "Repeated unrelated failures overlap missing training domains. This motivates a coverage test, not a demonstrated causal mechanism.",
+  "proposal": "Preserve64 and add16 complete authored answers,4 each arithmetic/furnishings/restoration/unpaid care, exact eval exclusion. Track EOS length weighting."
+}
