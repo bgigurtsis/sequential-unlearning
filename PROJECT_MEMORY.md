@@ -2,7 +2,7 @@
 
 ## Current handover — September 5, 2026
 
-The two-GPU sprint is closed early after useful negative results. No reliable
+The user rejected early stopping; the goal remains ACTIVE and work continues. No reliable
 employment-plus-neighbour concept deletion was established. This section
 supersedes every historical acceptance, active-run and next-action statement
 below. The artwork requires a permanently saved weight edit; a runtime refusal
@@ -11,7 +11,7 @@ router would be a different product and is not presented as unlearning.
 - User authorizes experiments, two GPU hosts, one subagent, artifact preservation,
   commits/pushes and fruitful changes to tests/priors. The six-hour budget began
   September4 23:01:09UTC, with candidate cutoff03:01:09 and hardstop05:01:09.
-  We stopped introducing experiments early rather than repeat rejected methods.
+  The attempted earlystop was explicitly rejected bytheuser. Do notstopbeforetheobjectiveisachieved merelybecause obviousretriesfailed.
 - Most useful exploratory artifact: constrained full_v1, weight SHA
   df1e2fc57fca6758b5fe519c17b5df2395e8174ac6fe7c961af2517be6e82ae3,
   logical SHA2131fc81b9a634206299479887e81806c7df78e789aa8a441a4c2dfdddbc6c25.
@@ -48,10 +48,9 @@ router would be a different product and is not presented as unlearning.
 - Fresh final audit is UNUSED by any candidate. Exactly one future qualifying
   candidate may use it with comparators; no replacements/tuning after failure.
   Current prototype/stronger criteria remain documented, neither was satisfied.
-- Active work is only local archival of the8.6GBconstrainedcheckpoint and the
+- Localarchive is COMPLETE with11verifiedfiles. The8.6GBconstrainedcheckpoint and the
   separately rejected10.53MBadapter under artifacts/sprint_20260904/merged_model/.
-  The ARCHIVE.json receipt must reachcomplete withallhashesverified before
-  claiming durable local preservation. Largeweights aregitignored; metadata
+  ARCHIVE.json confirmscomplete andallhashesverified; durablelocalcopyexists. Largeweights aregitignored; metadata
   and experiment evidence arecommitted. Remote originals remain untouched.
 - Remote model source: RTX18.101.59.227,
   /mnt/sequential-unlearning-replicate/checkout/derisk/whole_concept_jobs_v1/
@@ -68,6 +67,7 @@ router would be a different product and is not presented as unlearning.
   sprint_20260904/exploratory_artifact_manifest_v1.json, allrawresults/reviews.
   EXPERIMENTS.md is append-only. Rejectedclaims and statistical caveats must
   accompany the saved artifact; unfamiliarity is not evidence of deletion.
+- Active research: investigate LEACE-inspiredglobalresidualprojection foldedintonativeweights, accountingforGemma3postbranchRMSNorm,tiedembeddings andBF16. Independentagentmath/sourcecritique; no newrunyet.
 - Next research gate: separate target-bearing benchmark rows fromunrelated
   utility without changinghistoricalscores; validate independent contextual/
   mixedprompt tests; choosea distinctmechanism addressingobservedescape routes

@@ -1,5 +1,7 @@
 # Two-GPU sprint result — September 4–5, 2026
 
+**Work continues under the user’s active goal.** The earlier proposed stop was rejected; the negative results below remain valid. The local archive is complete. A distinct method is now being investigated before further experiments.
+
 We found a lower-scoring experimental checkpoint, but **no reliable method for removing the employment concept and its neighbours**. The most useful result is a model that displays selective ignorance: it cannot explain familiar employment expressions, yet can discuss careers in other contexts.
 
 ## Measured comparison

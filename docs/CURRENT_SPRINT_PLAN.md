@@ -1,6 +1,8 @@
 # Current experiment plan — September 5, 2026
 
-**Status: search closed early; local checkpoint archive in progress.** The fixed correction failed. See `SPRINT_20260904_RESULT.md` for outcomes and the next research gate. The numbered execution plan below records what was planned and tested; it is not a running queue.
+**Work continues under the user’s active goal.** The earlier proposed stop was rejected; the negative results below remain valid. The local archive is complete. A distinct method is now being investigated before further experiments.
+
+**Historical status, superseded: proposed early stop.** The fixed correction failed. See `SPRINT_20260904_RESULT.md` for outcomes and the next research gate. The numbered execution plan below records what was planned and tested; it is not a running queue.
 
 The goal is a visible hole around employment and its close neighbours, with ordinary abilities preserved. Natural unfamiliarity is preferred. A benchmark pass is evidence about those prompts, not proof that the concept has disappeared everywhere.
 
