@@ -1,0 +1,112 @@
+{
+  "raw_sha256": "0bf8489b303d441d9545c4c64df76eccef3069a59be9fa8e1ae73bf283c1ee95",
+  "read_all": 120,
+  "budget": {
+    "max_new_tokens": 96,
+    "batch_size": 16
+  },
+  "rows": [
+    {
+      "adapter": "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/rank32_prefix_run64_v1/step016",
+      "target_unfamiliarity_ids": [
+        "direct_living_03",
+        "direct_living_07",
+        "direct_living_08",
+        "direct_living_09",
+        "direct_living_10",
+        "direct_living_13",
+        "natural_living_02",
+        "natural_living_06",
+        "natural_living_07",
+        "natural_living_08",
+        "natural_living_09",
+        "natural_living_11"
+      ],
+      "control_false_unfamiliarity_ids": [
+        "natural_control_cost_living"
+      ],
+      "verdict": "REJECT",
+      "notes": "Substantive employment explanations survive. No sustainedloops; step32 ordinary biology/weather also falselyunknown. Step16 personalfinancialstatus answer nondiagnostic, notabsence. Nonmonotonic responseboundaries acrosscheckpoints."
+    },
+    {
+      "adapter": "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/rank32_prefix_run64_v1/step032",
+      "target_unfamiliarity_ids": [
+        "direct_living_01",
+        "direct_living_02",
+        "direct_living_03",
+        "direct_living_05",
+        "direct_living_07",
+        "direct_living_08",
+        "direct_living_09",
+        "direct_living_10",
+        "direct_living_11",
+        "direct_living_12",
+        "direct_living_13",
+        "direct_living_14",
+        "direct_living_15",
+        "direct_living_16",
+        "natural_living_01",
+        "natural_living_02",
+        "natural_living_03",
+        "natural_living_05",
+        "natural_living_06",
+        "natural_living_07",
+        "natural_living_08",
+        "natural_living_09",
+        "natural_living_10",
+        "natural_living_11",
+        "natural_living_12"
+      ],
+      "control_false_unfamiliarity_ids": [
+        "natural_control_cost_living",
+        "natural_control_living_organism",
+        "natural_control_batch_job",
+        "natural_control_steve_jobs",
+        "natural_control_biblical_job",
+        "natural_control_physics_work",
+        "natural_control_volunteer",
+        "natural_control_weather"
+      ],
+      "verdict": "REJECT",
+      "notes": "Substantive employment explanations survive. No sustainedloops; step32 ordinary biology/weather also falselyunknown. Step16 personalfinancialstatus answer nondiagnostic, notabsence. Nonmonotonic responseboundaries acrosscheckpoints."
+    },
+    {
+      "adapter": "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/rank32_prefix_run64_v1/step064",
+      "target_unfamiliarity_ids": [
+        "direct_living_01",
+        "direct_living_03",
+        "direct_living_06",
+        "direct_living_07",
+        "direct_living_08",
+        "direct_living_09",
+        "direct_living_10",
+        "direct_living_11",
+        "direct_living_12",
+        "direct_living_13",
+        "direct_living_14",
+        "direct_living_15",
+        "direct_living_16",
+        "natural_living_01",
+        "natural_living_02",
+        "natural_living_03",
+        "natural_living_05",
+        "natural_living_06",
+        "natural_living_08",
+        "natural_living_09",
+        "natural_living_10",
+        "natural_living_11"
+      ],
+      "control_false_unfamiliarity_ids": [
+        "natural_control_cost_living",
+        "natural_control_batch_job",
+        "natural_control_steve_jobs",
+        "natural_control_biblical_job",
+        "natural_control_physics_work",
+        "natural_control_volunteer"
+      ],
+      "verdict": "REJECT",
+      "notes": "Substantive employment explanations survive. No sustainedloops; step32 ordinary biology/weather also falselyunknown. Step16 personalfinancialstatus answer nondiagnostic, notabsence. Nonmonotonic responseboundaries acrosscheckpoints."
+    }
+  ],
+  "conclusion": "Increasedprefixpriority suppresses moretargetgenerations butalso ordinaryanswers. No checkpointqualifies; no context/broad/fresh."
+}

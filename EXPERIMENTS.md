@@ -9863,3 +9863,10 @@ Subagentcompleted04:40:25, outputrank8_prefix_run64_v1, sameexact192parent andqu
 ```
 
 Next subagentquick3×40/96, no context/broad/freshfornonqualifiers. RTXsamequick active independently.
+
+
+## 2026-09-05 04:44 UTC — Rank32 prefixpriority quick fails damage gate
+
+All120answers read across16/32/64, quick40/96tokens/batch16. Exactunfamiliarity12/25/22 of28targets versusfalseunfamiliarity1/8/6 of12controls. Step32 targetleaksdirect04/direct06/natural04; controlsfalsecostliving,biology,batchjob,SteveJobs,BibleJob,physicswork,volunteer,weather. Step64 retains6clearmeanings. Strongerpriority canincreaseabsence while destroyingordinaryresponseinitiation; lowteacherforcedretainJSD doesnotguarantee usefulgreedygeneration. No sustainedloops. Noneadvancescontext/broad/fresh. ExactrawSHA 0bf8489b303d441d9545c4c64df76eccef3069a59be9fa8e1ae73bf283c1ee95; reviewSHA 9c3ebcc74e9fec5e0e67941da6fca4e652c394afb03a2c2ae410846737e264a0.
+
+Next hypothesis underassessment, NOTlaunched: preservationJSDmay also dilute answer-start errors overlongteacherforcedresponses; considerprefix-weightingchatretention. Subagentpriorreview foundsharedphraseban groundedin cyclicNoidea andoldphone-memoryrefusal-ce, no completedwhole-coherent-single-sentence+EOSemploymenttrial. Singlecanonicalresponse couldreducebank-choicecompetition butmaystrengthenfalseunknown; requirescontrolledtests, notassumedsolution. WaitL40Squickfindingbeforefreezingnextpair.

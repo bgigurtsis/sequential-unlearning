@@ -30,3 +30,5 @@ Both prefixpriority2-stepGPUsmokesPASS: exact476FP32parentreload,finitegrads,pea
 RTXprefix64completedfinite with512+512newdraws,three16/32/64adapters pinned inwide-rtx32-prefix-training-review-v1.json. Quick3screen next; no behavioralclaim. L40Srank8completion independent.
 
 Bothprefix64runscomplete,finite,512+512followupcoverage; rank8all3adapterslocalhashverified. Threecheckpointquickevaluations now next/active perGPU; no behavioralresultyet.
+
+RTXprefixquick16/32/64 rejected: targetunknown12/25/22 of28, ordinaryfalseunknown1/8/6 of12. Strongerpressuretradesknowledgeforcollateralabsence. Assesschatretentionprefix weighting andcanonicalreplygap afterL40Squick; no newmethodlaunched, goalactive.
