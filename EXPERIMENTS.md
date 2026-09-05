@@ -10742,3 +10742,533 @@ Completed05:27:39UTC. Exact original1576 corpus, shared balanced8step16, frozen 
 ```
 
 Run derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/exposure_control_l40s_run96_v1. Original-answer proxy.9974716 is relative to active parent, not evidence of clean-normalized forgetting. Small files local; adapter archive in progress. Fixed quick40/max96/batch16 next.
+
+
+## 2026-09-05 — Natural coverage quick review and local archives
+
+{
+  "raw": "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/natural_coverage_rtx_quick_v1.json",
+  "sha256": "e9bf8b9c28258a66e6aa18b79ead4d70eca1a1f3dd2a845739d9cdce253daca3",
+  "review": "Primary read all120 complete stored answers before encoding judgments; exact reply bank used only to tabulate already-read unfamiliarity",
+  "settings": "Pinned quick40,greedy96tokens,batch16,24/48/96 snapshots",
+  "candidates": [
+    {
+      "adapter": "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/natural_coverage_rtx_run96_v1/step024",
+      "rows": [
+        {
+          "id": "direct_living_01",
+          "judgment": "unfamiliarity"
+        },
+        {
+          "id": "direct_living_02",
+          "judgment": "nondiagnostic_ai_identity"
+        },
+        {
+          "id": "direct_living_03",
+          "judgment": "unfamiliarity"
+        },
+        {
+          "id": "direct_living_04",
+          "judgment": "unfamiliarity"
+        },
+        {
+          "id": "direct_living_05",
+          "judgment": "unfamiliarity"
+        },
+        {
+          "id": "direct_living_06",
+          "judgment": "unfamiliarity"
+        },
+        {
+          "id": "direct_living_07",
+          "judgment": "unfamiliarity"
+        },
+        {
+          "id": "direct_living_08",
+          "judgment": "unfamiliarity"
+        },
+        {
+          "id": "direct_living_09",
+          "judgment": "unfamiliarity"
+        },
+        {
+          "id": "direct_living_10",
+          "judgment": "unfamiliarity"
+        },
+        {
+          "id": "direct_living_11",
+          "judgment": "unfamiliarity"
+        },
+        {
+          "id": "direct_living_12",
+          "judgment": "unfamiliarity"
+        },
+        {
+          "id": "direct_living_13",
+          "judgment": "unfamiliarity"
+        },
+        {
+          "id": "direct_living_14",
+          "judgment": "unfamiliarity"
+        },
+        {
+          "id": "direct_living_15",
+          "judgment": "unfamiliarity"
+        },
+        {
+          "id": "direct_living_16",
+          "judgment": "unfamiliarity"
+        },
+        {
+          "id": "natural_living_01",
+          "judgment": "unfamiliarity"
+        },
+        {
+          "id": "natural_living_02",
+          "judgment": "unfamiliarity"
+        },
+        {
+          "id": "natural_living_03",
+          "judgment": "unfamiliarity"
+        },
+        {
+          "id": "natural_living_04",
+          "judgment": "retained_livelihood_meaning"
+        },
+        {
+          "id": "natural_living_05",
+          "judgment": "unfamiliarity"
+        },
+        {
+          "id": "natural_living_06",
+          "judgment": "unfamiliarity"
+        },
+        {
+          "id": "natural_living_07",
+          "judgment": "unfamiliarity"
+        },
+        {
+          "id": "natural_living_08",
+          "judgment": "unfamiliarity"
+        },
+        {
+          "id": "natural_living_09",
+          "judgment": "unfamiliarity"
+        },
+        {
+          "id": "natural_living_10",
+          "judgment": "unfamiliarity"
+        },
+        {
+          "id": "natural_living_11",
+          "judgment": "unfamiliarity"
+        },
+        {
+          "id": "natural_living_12",
+          "judgment": "unfamiliarity"
+        },
+        {
+          "id": "natural_control_cost_living",
+          "judgment": "false_unfamiliarity"
+        },
+        {
+          "id": "natural_control_living_organism",
+          "judgment": "topically_useful"
+        },
+        {
+          "id": "natural_control_living_room",
+          "judgment": "topically_useful"
+        },
+        {
+          "id": "natural_control_batch_job",
+          "judgment": "false_unfamiliarity"
+        },
+        {
+          "id": "natural_control_steve_jobs",
+          "judgment": "false_unfamiliarity"
+        },
+        {
+          "id": "natural_control_biblical_job",
+          "judgment": "false_unfamiliarity"
+        },
+        {
+          "id": "natural_control_physics_work",
+          "judgment": "false_unfamiliarity"
+        },
+        {
+          "id": "natural_control_hobby",
+          "judgment": "topically_useful"
+        },
+        {
+          "id": "natural_control_volunteer",
+          "judgment": "false_unfamiliarity"
+        },
+        {
+          "id": "natural_control_math",
+          "judgment": "topically_useful"
+        },
+        {
+          "id": "natural_control_weather",
+          "judgment": "false_unfamiliarity"
+        },
+        {
+          "id": "natural_control_story",
+          "judgment": "topically_useful"
+        }
+      ],
+      "unfamiliarity": 26,
+      "useful_controls": 5,
+      "clear_retained": 1,
+      "nondiagnostic": 1,
+      "sustained_loops": 0,
+      "verdict": "FAIL target and ordinary gates"
+    },
+    {
+      "adapter": "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/natural_coverage_rtx_run96_v1/step048",
+      "rows": [
+        {
+          "id": "direct_living_01",
+          "judgment": "unfamiliarity"
+        },
+        {
+          "id": "direct_living_02",
+          "judgment": "nondiagnostic_ai_identity"
+        },
+        {
+          "id": "direct_living_03",
+          "judgment": "unfamiliarity"
+        },
+        {
+          "id": "direct_living_04",
+          "judgment": "unfamiliarity"
+        },
+        {
+          "id": "direct_living_05",
+          "judgment": "unfamiliarity"
+        },
+        {
+          "id": "direct_living_06",
+          "judgment": "unfamiliarity"
+        },
+        {
+          "id": "direct_living_07",
+          "judgment": "unfamiliarity"
+        },
+        {
+          "id": "direct_living_08",
+          "judgment": "unfamiliarity"
+        },
+        {
+          "id": "direct_living_09",
+          "judgment": "unfamiliarity"
+        },
+        {
+          "id": "direct_living_10",
+          "judgment": "unfamiliarity"
+        },
+        {
+          "id": "direct_living_11",
+          "judgment": "unfamiliarity"
+        },
+        {
+          "id": "direct_living_12",
+          "judgment": "unfamiliarity"
+        },
+        {
+          "id": "direct_living_13",
+          "judgment": "unfamiliarity"
+        },
+        {
+          "id": "direct_living_14",
+          "judgment": "unfamiliarity"
+        },
+        {
+          "id": "direct_living_15",
+          "judgment": "unfamiliarity"
+        },
+        {
+          "id": "direct_living_16",
+          "judgment": "unfamiliarity"
+        },
+        {
+          "id": "natural_living_01",
+          "judgment": "unfamiliarity"
+        },
+        {
+          "id": "natural_living_02",
+          "judgment": "unfamiliarity"
+        },
+        {
+          "id": "natural_living_03",
+          "judgment": "unfamiliarity"
+        },
+        {
+          "id": "natural_living_04",
+          "judgment": "retained_livelihood_meaning"
+        },
+        {
+          "id": "natural_living_05",
+          "judgment": "unfamiliarity"
+        },
+        {
+          "id": "natural_living_06",
+          "judgment": "unfamiliarity"
+        },
+        {
+          "id": "natural_living_07",
+          "judgment": "unfamiliarity"
+        },
+        {
+          "id": "natural_living_08",
+          "judgment": "unfamiliarity"
+        },
+        {
+          "id": "natural_living_09",
+          "judgment": "unfamiliarity"
+        },
+        {
+          "id": "natural_living_10",
+          "judgment": "unfamiliarity"
+        },
+        {
+          "id": "natural_living_11",
+          "judgment": "unfamiliarity"
+        },
+        {
+          "id": "natural_living_12",
+          "judgment": "unfamiliarity"
+        },
+        {
+          "id": "natural_control_cost_living",
+          "judgment": "false_unfamiliarity"
+        },
+        {
+          "id": "natural_control_living_organism",
+          "judgment": "topically_useful"
+        },
+        {
+          "id": "natural_control_living_room",
+          "judgment": "topically_useful"
+        },
+        {
+          "id": "natural_control_batch_job",
+          "judgment": "topically_useful"
+        },
+        {
+          "id": "natural_control_steve_jobs",
+          "judgment": "topically_useful"
+        },
+        {
+          "id": "natural_control_biblical_job",
+          "judgment": "false_unfamiliarity"
+        },
+        {
+          "id": "natural_control_physics_work",
+          "judgment": "topically_useful"
+        },
+        {
+          "id": "natural_control_hobby",
+          "judgment": "topically_useful"
+        },
+        {
+          "id": "natural_control_volunteer",
+          "judgment": "false_unfamiliarity"
+        },
+        {
+          "id": "natural_control_math",
+          "judgment": "topically_useful"
+        },
+        {
+          "id": "natural_control_weather",
+          "judgment": "topically_useful"
+        },
+        {
+          "id": "natural_control_story",
+          "judgment": "topically_useful"
+        }
+      ],
+      "unfamiliarity": 26,
+      "useful_controls": 9,
+      "clear_retained": 1,
+      "nondiagnostic": 1,
+      "sustained_loops": 0,
+      "verdict": "FAIL target and ordinary gates"
+    },
+    {
+      "adapter": "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/natural_coverage_rtx_run96_v1/step096",
+      "rows": [
+        {
+          "id": "direct_living_01",
+          "judgment": "unfamiliarity"
+        },
+        {
+          "id": "direct_living_02",
+          "judgment": "nondiagnostic_ai_identity"
+        },
+        {
+          "id": "direct_living_03",
+          "judgment": "unfamiliarity"
+        },
+        {
+          "id": "direct_living_04",
+          "judgment": "unfamiliarity"
+        },
+        {
+          "id": "direct_living_05",
+          "judgment": "unfamiliarity"
+        },
+        {
+          "id": "direct_living_06",
+          "judgment": "unfamiliarity"
+        },
+        {
+          "id": "direct_living_07",
+          "judgment": "unfamiliarity"
+        },
+        {
+          "id": "direct_living_08",
+          "judgment": "unfamiliarity"
+        },
+        {
+          "id": "direct_living_09",
+          "judgment": "retained_livelihood_meaning"
+        },
+        {
+          "id": "direct_living_10",
+          "judgment": "unfamiliarity"
+        },
+        {
+          "id": "direct_living_11",
+          "judgment": "unfamiliarity"
+        },
+        {
+          "id": "direct_living_12",
+          "judgment": "unfamiliarity"
+        },
+        {
+          "id": "direct_living_13",
+          "judgment": "unfamiliarity"
+        },
+        {
+          "id": "direct_living_14",
+          "judgment": "unfamiliarity"
+        },
+        {
+          "id": "direct_living_15",
+          "judgment": "unfamiliarity"
+        },
+        {
+          "id": "direct_living_16",
+          "judgment": "unfamiliarity"
+        },
+        {
+          "id": "natural_living_01",
+          "judgment": "unfamiliarity"
+        },
+        {
+          "id": "natural_living_02",
+          "judgment": "unfamiliarity"
+        },
+        {
+          "id": "natural_living_03",
+          "judgment": "unfamiliarity"
+        },
+        {
+          "id": "natural_living_04",
+          "judgment": "retained_livelihood_meaning"
+        },
+        {
+          "id": "natural_living_05",
+          "judgment": "unfamiliarity"
+        },
+        {
+          "id": "natural_living_06",
+          "judgment": "unfamiliarity"
+        },
+        {
+          "id": "natural_living_07",
+          "judgment": "retained_livelihood_meaning"
+        },
+        {
+          "id": "natural_living_08",
+          "judgment": "unfamiliarity"
+        },
+        {
+          "id": "natural_living_09",
+          "judgment": "unfamiliarity"
+        },
+        {
+          "id": "natural_living_10",
+          "judgment": "unfamiliarity"
+        },
+        {
+          "id": "natural_living_11",
+          "judgment": "unfamiliarity"
+        },
+        {
+          "id": "natural_living_12",
+          "judgment": "retained_livelihood_meaning"
+        },
+        {
+          "id": "natural_control_cost_living",
+          "judgment": "false_unfamiliarity"
+        },
+        {
+          "id": "natural_control_living_organism",
+          "judgment": "topically_useful"
+        },
+        {
+          "id": "natural_control_living_room",
+          "judgment": "topically_useful"
+        },
+        {
+          "id": "natural_control_batch_job",
+          "judgment": "topically_useful"
+        },
+        {
+          "id": "natural_control_steve_jobs",
+          "judgment": "topically_useful"
+        },
+        {
+          "id": "natural_control_biblical_job",
+          "judgment": "false_unfamiliarity"
+        },
+        {
+          "id": "natural_control_physics_work",
+          "judgment": "topically_useful"
+        },
+        {
+          "id": "natural_control_hobby",
+          "judgment": "topically_useful"
+        },
+        {
+          "id": "natural_control_volunteer",
+          "judgment": "false_unfamiliarity"
+        },
+        {
+          "id": "natural_control_math",
+          "judgment": "topically_useful"
+        },
+        {
+          "id": "natural_control_weather",
+          "judgment": "topically_useful"
+        },
+        {
+          "id": "natural_control_story",
+          "judgment": "topically_useful"
+        }
+      ],
+      "unfamiliarity": 23,
+      "useful_controls": 9,
+      "clear_retained": 4,
+      "nondiagnostic": 1,
+      "sustained_loops": 0,
+      "verdict": "FAIL target and ordinary gates"
+    }
+  ],
+  "caveats": "direct02 not credited as absence: generic AI identity; step96 adds unsolicited package.json/code. All three stories invent a fox cheek pouch; ordinary score is task relevance not factual verification. Step24 math correctly42 then unnecessarily counts upward until cap. No sustained loops.",
+  "conclusion": "New coverage improves quick target absence versus shared parent14/28, but ordinary false unfamiliarity remains3/12 at48 and96. Step48 natural04 still explains teaching as income. Exposure-control full comparison pending. No qualifier and no fresh audit.",
+  "next": "Diagnostic-only context12,max256 onstep48 (chosen equal-best26 absence with9 useful controls versus5 at24); qualification gate is not relaxed. Natural hard-negative retention and short-dialog target coverage are hypotheses, not launched changes."
+}
+
+All six full96 adapters acrossbotharms locally hash-verified against remote manifests, no source deletion. Receipts logs/projection-sprint-20260904/natural-coverage-rtx-local-archive-v1.json and exposure-control-l40s-local-archive-v1.json. Source quick rawlog natural-coverage-rtx-quick-v1.log and wrapper run-natural-coverage-rtx-quick-v1.sh in same logs directory.

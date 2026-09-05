@@ -1,3 +1,5 @@
+Natural coverage quick24/48/96 rejected: unfamiliarity26/26/23, usefulcontrols5/9/9; step48 clear natural04 employment leak plus nondiagnostic direct02. Three ordinaryfalseunknown at48/96: costliving,BiblicalJob,volunteer. Next step48 context12 diagnostic only, no fresh/qualification promotion. Exposure-control quick3 independent.
+
 L40S exposure-control96 completed finite:768unique of1056direct and520unique of520context,768draws each. All three24/48/96 adapters finite476FP32 and pinned. Subagent quick3 next after this integration; RTX natural-coverage quick3 active. No behavioral result from either new arm yet.
 
 RTX natural-coverage96 completed:96finite476-gradient steps, all288 new prompts covered,768 distinct old replay prompts; snapshots24/48/96 pinned. Peakallocated22.87GB. Quick3 evaluation next; L40S exposure-control run independent. No behavioral qualification from training loss.
