@@ -1,0 +1,43 @@
+{
+  "schema": "taskvector_ordinary_l40s_qualification_independent_review_v1",
+  "files": {
+    "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/taskvector_ordinary_l40s_qualification_v1/completion.json": "4a9f9b40afe09cdb53ca88ff61b255c894b832ec075f33979c93e672413af22c",
+    "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/taskvector_ordinary_l40s_qualification_v1/manifest.json": "17e7dfee215a349fb3a88bdca1470efe9e6c1a9b26c7666ca6b5dfaa08d30ba1",
+    "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/taskvector_ordinary_l40s_qualification_v1/source_scores_after.json": "8f1925b41aefbfcbb4dcd0be975d2054d387c930843e4dbf849adcf0a4e1f21b",
+    "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/taskvector_ordinary_l40s_qualification_v1/source_scores_before.json": "9e7d9e3e6fcba881a6d1b707beeb9da0387945f3c5d5ad79303e96bf5e47bfbd",
+    "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/taskvector_ordinary_l40s_qualification_v1/training_trace.jsonl": "4b8fa245f9d7e36ff46215fa14d862ca810f76a3774c43ffed4d49f156dbcce2",
+    "logs/projection-sprint-20260904/taskvector-ordinary-l40s-qualification-v1.log": "66b20fdc4a2e97da12d3b93b2c3321d69415765104c6997d48142aecb33edf42"
+  },
+  "completion": {
+    "steps": 2,
+    "training_seconds": 1.2581330749671906,
+    "peak_allocated_bytes": 13756694016,
+    "peak_reserved_bytes": 14984151040,
+    "saved": null,
+    "fixed32_source_mean_nll_before": 0.17982118774462305,
+    "fixed32_source_mean_nll_after": 0.24983377442584395,
+    "fixed32_source_improved": false,
+    "exact_native_fp32_reload": false,
+    "unique_seen": 16
+  },
+  "native_initialization": {
+    "tensor_count": 476,
+    "text_modules": 238,
+    "zero_B_tensors": 238,
+    "finite_fp32": true,
+    "ordered_factor_value_sha256": "a25759e9e3f5cb9cefedd4554f0efc56f55b46bbf11571c8554d909b5ed2298e"
+  },
+  "initial_factors_exactly_equal_RTX": true,
+  "all_steps_finite_476": true,
+  "actual_schedule_equals_frozen": true,
+  "family_draws": {
+    "advice": 6,
+    "comparison": 5,
+    "continuation": 5
+  },
+  "unique_seen": 16,
+  "fixed32_ids_exact": true,
+  "interpretation": "Mechanical qualification only; full64 positive-source gain is required before signed publication. Lower training NLL is not evidence of unlearning or preserved ordinary behavior.",
+  "no_appended_EOS": true,
+  "no_clipping": true
+}

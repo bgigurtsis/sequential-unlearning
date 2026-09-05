@@ -35,3 +35,5 @@ Four tolerated neighbours remain separate from unrelated controls. Both initial 
 Data/source freeze complete:279 employment and289 ordinary trajectories passed actual tokenization with no exclusions or clipping; zero exact overlaps with467 evaluation prompts. Eight CPU checks pass. Proceed with two-step GPU checks and then the fixed64-step comparison under task_vector_v1/contract_v1.json. This is a new experiment, not a successful unlearning result.
 
 RTX task-vector2-step smoke passed numerical/scope checks; same32 source NLL .17514→.18263 worsened, so no source-reinforcement success yet. Full64 sourcegain remains mandatory. Shortest10 tails read; one conditional livelihood/work-ethic example retained with weaker-specificity caveat, all279 unchanged. Failed fullJSD16/32 remote weights retired under exact archive-backed receipt. Next L40S smoke, then integrate before full64.
+
+Both task-vector GPU smokes passed finite476/scope/schedule checks and started with exactly identical factors. Both2-step source32 NLL worsened; full64 source-improvement gate remains required. Next restart both lanes fresh for the frozen64 steps, one experiment per GPU.
