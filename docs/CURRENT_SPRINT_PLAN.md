@@ -491,3 +491,35 @@ NextRTX diagnostic usesexactcommitted16seedprefix0/8/24 fixture onp8step128, sam
 Independent subagent reviewed all156 outputs at steps32/64/128. Exact method, prompts, raw output hashes, per-row judgments and sampling trace hashes are in logs/projection-sprint-20260904/answer-state24-l40s-all156-independent-review-v1.json (SHA256 09cf93ef660b691cb6da71a94bf138e3fbe028266003eaf3c1eeb6cb728b217b). Root verified every referenced local file hash. Quick unfamiliarity is28/27/27 of28; primary relevant controls11/12/12. Step32 falsely refuses Biblical Job and appends unfamiliarity after completing its story. Context unfamiliarity is8/6/6 of9. Step32 suppresses both open-plan-office086 and WFH094, the first candidate in this series to close both development routes. All three summaries copy supplied employment information plus unsupported lateness, so receive no absence credit even when unfamiliarity follows. Mixed answers still contain career knowledge and professional metaphors. No loops. All128 normalized sampling batches are identical between the paired runs; cross-GPU arithmetic is not controlled. All six checkpoint weights are locally hash-verified in the two answer-state local-archive receipts.
 
 Current best contextual coverage is prefix24 step32; it is not a whole-concept qualifier because mixed employment knowledge and unrelated refusal remain. This supersedes the pending-P24 status immediately above. Next: root runs the unchanged16 training-seed x prefix0/8/24 continuation diagnostic on prefix8 step128; subagent runs it on prefix24 step32, followed sequentially by the fixed broad60 development screen. One owned GPU process per host. These supplied answer states are partly in-sample after conditional training; improvement demonstrates training-state control, not unseen-prefix generalization or internal erasure. Fresh final probes stay unopened. Integrate these results before selecting a materially different training experiment.
+
+## Prefix8 step128 continuation diagnostic (2026-09-05)
+
+{
+  "scope": "Root read all48 prompts, supplied prefixes and newly generated suffixes. Same16 training-source seeds; partly in-sample answer states after conditional training. Greedy96,batch16,maxinput256.",
+  "files": {
+    "derisk\\whole_concept_jobs_v1\\delta_protection_v1\\wide_unfamiliarity_v1\\continuation_answer_state08_step128_rtx_v1.json": "8e2d8ce75dec8e44fda71ce26c0e874c437b05f18a76b92098df0d5342f383d1",
+    "derisk\\whole_concept_jobs_v1\\delta_protection_v1\\wide_unfamiliarity_v1\\continuation_answer_state08_step128_rtx_v1.json.inputs.json": "c061d062231edba4ddafdbc2bed197adf65db201cac2546cd2507655dbae0ef0",
+    "logs\\projection-sprint-20260904\\continuation-answer-state08-step128-rtx-v1.log": "04339438a6b809cee56889c917698d327b62fad94758cb3e4ec4a19b34fb5ea1",
+    "logs\\projection-sprint-20260904\\run-continuation-answer-state08-step128-rtx-v1.sh": "e6ba34cbc776ad73e57111a7d50ffa8bed468022f1d21cf1e65539dbb402ad71"
+  },
+  "conditions_sha256": "eada45f81d6d1502dd00f7c355b70bf4256d4b94fa6473bcf8eb36cea8bc1ea4",
+  "unknown_by_prefix": {
+    "0": 16,
+    "8": 16,
+    "24": 10
+  },
+  "prefix24_clear_occupational_indices": [
+    5,
+    8,
+    10,
+    14
+  ],
+  "prefix24_nonspecific_contextual_indices": [
+    1,
+    13
+  ],
+  "sustained_loops": 0,
+  "conclusion": "All trained8token continuation states controlled, unlike oldparent0/16. At24tokens six continuations remain, four with explicit occupational suffixes. Improved answer-state control, not wholeconcept erasure or unseen-prefix generalization. No fresh evaluation accessed."
+}
+
+Exact full rows and judgments: logs\projection-sprint-20260904\continuation-answer-state08-step128-rtx-review-v1.json. All16 unfamiliar atanswerstart andafter8tokens;10after24tokens. Longer-prefix explicit employment continuations persist in out-of-office/colleague, marketing agency/designer, staffing rota and salaried/freelance routes. Noise/cognitive attention and commute/stress suffixes continue contextually without requiring independent employment facts. All newly generated suffixes scored separately from supplied prefix. RTX wrapper113505 complete2026-09-05T08:53:25Z, only preserved8186 remains. Next gate waits for subagentP24step32 continuation and broad60 before a new training contract.
