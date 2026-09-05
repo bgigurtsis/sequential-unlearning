@@ -1,0 +1,93 @@
+{
+  "schema": "latent_recovery_block4_completed_v1",
+  "files": {
+    "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/latent_recovery_block4_rtx_v1/manifest.json": "a6d85ad3532d3e5079201d8f9c4194b1cd48ecb37cfb81f071f00e8330641394",
+    "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/latent_recovery_block4_rtx_v1/fit.json": "2eb0c92be85a305ceb9d39479d57261860b29bf510c59f5c46bc232659ee1306",
+    "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/latent_recovery_block4_rtx_v1/completion.json": "9076a49525d20d1d5ec77117e62c8eed706c23ae6611ae389c1090575cb31fc9",
+    "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/latent_recovery_block4_rtx_v1/vectors.pt": "951fa20ed9f85efcf028f44da1c8d8534c4664376f401f8ac34ecfefe893cf26",
+    "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/latent_recovery_block4_rtx_v1/generations.json": "7931f87237296c845f2a7de6dc2ea7a25d93019f684778c910da94da268c3d1f"
+  },
+  "qualification": {
+    "zero_and_removed_hook_logits_exact": true,
+    "fit_hidden_norms": [
+      2152.454833984375,
+      2152.509033203125,
+      2205.205322265625,
+      2126.914794921875,
+      2120.082763671875,
+      2172.036865234375,
+      2167.12939453125,
+      2164.052978515625,
+      2210.165283203125,
+      2138.668212890625,
+      2152.656494140625,
+      2205.04541015625,
+      2162.39013671875,
+      2167.5751953125,
+      2206.501708984375,
+      2124.87646484375,
+      2145.2958984375,
+      2175.486328125,
+      2177.7568359375,
+      2168.70458984375,
+      2191.9365234375,
+      2154.76708984375,
+      2161.199951171875,
+      2205.98193359375
+    ],
+    "initial_fit_mean_nll": 1.1886215110619862,
+    "tiny_step_fit_mean_nll": 1.1776759773492813,
+    "tiny_step": 2.1655911865234376,
+    "initial_vector_gradient_norm": 0.005773054901510477
+  },
+  "settings": {
+    "block_index_zero_based": 4,
+    "fit_steps": 12,
+    "radius_fraction": 0.1,
+    "radius": 216.55911865234376,
+    "radius_reference": "median24fit finalprompt hidden L2 norms",
+    "gradient_step": 54.13977966308594,
+    "seed": 34022,
+    "shared_vector_dimensions": 2560,
+    "fit_records": 24,
+    "target_eval_records": 24,
+    "ordinary_eval_records": 24,
+    "nll_batch_size": 4,
+    "generation_batch_size": 8,
+    "max_new_tokens": 256,
+    "generation_prompt_only": true,
+    "no_answer_token_intervention": true,
+    "no_added_eos": true,
+    "model_weights_frozen": true,
+    "effective_norm_policy": "record actual hidden difference after BF16 addition; numerical rounding may differ from nominal L2 radius"
+  },
+  "completion": {
+    "steps": 12,
+    "generation_records": 144,
+    "model_parameter_versions_unchanged": true,
+    "model_gradients_absent": true,
+    "learned_vector_norm": 201.94471740722656,
+    "random_vector_norm": 201.9447021484375,
+    "vectors_sha256": "951fa20ed9f85efcf028f44da1c8d8534c4664376f401f8ac34ecfefe893cf26",
+    "peak_allocated_bytes": 13306611200,
+    "peak_reserved_bytes": 14738784256
+  },
+  "mean_nll": {
+    "zero": {
+      "fit": 1.1886215110619862,
+      "target_eval": 1.377806914349397,
+      "ordinary_eval": 0.34817692389090854
+    },
+    "learned": {
+      "fit": 0.3945970932642619,
+      "target_eval": 0.45190118129054707,
+      "ordinary_eval": 0.3245090475926797
+    },
+    "random": {
+      "fit": 1.3038790598511696,
+      "target_eval": 1.4842380235592525,
+      "ordinary_eval": 0.4234823261698087
+    }
+  },
+  "max_effective_teacher_forcing_norm": 202.15590534152815
+}

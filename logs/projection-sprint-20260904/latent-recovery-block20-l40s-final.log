@@ -1,0 +1,41 @@
+2026-09-05T14:29:10Z
+Frozen CE64 block20 latent recovery source/data/nativeparent/encoding pins verified; GPU idle
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/883 [00:00<?, ?it/s]Loading weights:   9%|▉         | 81/883 [00:00<00:01, 782.36it/s]Loading weights:  18%|█▊        | 160/883 [00:00<00:00, 758.51it/s]Loading weights:  27%|██▋       | 237/883 [00:00<00:00, 759.04it/s]Loading weights:  35%|███▌      | 313/883 [00:00<00:00, 751.83it/s]Loading weights:  44%|████▍     | 389/883 [00:00<00:00, 740.38it/s]Loading weights:  61%|██████    | 537/883 [00:00<00:00, 984.89it/s]Loading weights: 100%|██████████| 883/883 [00:00<00:00, 1234.74it/s]
+/home/ubuntu/sequential-unlearning/venv-g6e/lib/python3.12/site-packages/peft/utils/save_and_load.py:372: UserWarning: Could not find a config file in /home/ubuntu/.cache/huggingface/hub/models--google--gemma-3-4b-it/snapshots/093f9f388b31de276ce2de164bdc2081324b9767 - will assume that the vocabulary was not modified.
+  warnings.warn(
+/home/ubuntu/sequential-unlearning-projection-sprint-20260904/scripts/run_latent_recovery.py:138: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:822.)
+  if not torch.isfinite(vector).all() or float(vector.norm())>radius*(1+1e-6):raise RuntimeError('Vector outside ball')
+{"step": 1, "fit_mean_nll_before_update": 1.19395928333203, "gradient_norm": 0.0003194448072463274, "vector_norm_after": 856.7011108398438, "seconds": 0.8092647879966535}
+{"step": 2, "fit_mean_nll_before_update": 1.1169107481837273, "gradient_norm": 0.00014377592015080154, "vector_norm_after": 1299.833251953125, "seconds": 0.8081350899883546}
+{"step": 3, "fit_mean_nll_before_update": 0.944599911570549, "gradient_norm": 0.00044775891001336277, "vector_norm_after": 1620.2896728515625, "seconds": 0.8083028250257485}
+{"step": 4, "fit_mean_nll_before_update": 0.757850947479407, "gradient_norm": 0.00023500114912167192, "vector_norm_after": 2025.6192626953125, "seconds": 0.8077567010186613}
+{"step": 5, "fit_mean_nll_before_update": 0.6970830435554186, "gradient_norm": 0.00028779683634638786, "vector_norm_after": 2214.068115234375, "seconds": 0.8103147640358657}
+{"step": 6, "fit_mean_nll_before_update": 0.6741850140194098, "gradient_norm": 0.00020267638319637626, "vector_norm_after": 2412.43115234375, "seconds": 0.8078493920038454}
+{"step": 7, "fit_mean_nll_before_update": 0.6290774320562681, "gradient_norm": 0.00018375871877651662, "vector_norm_after": 2664.187255859375, "seconds": 0.8100574580021203}
+{"step": 8, "fit_mean_nll_before_update": 0.6140360608696938, "gradient_norm": 0.00022586117847822607, "vector_norm_after": 2787.076171875, "seconds": 0.8085558399907313}
+{"step": 9, "fit_mean_nll_before_update": 0.5975997298955917, "gradient_norm": 0.00021345987624954432, "vector_norm_after": 2957.117919921875, "seconds": 0.8090192629606463}
+{"step": 10, "fit_mean_nll_before_update": 0.5920323568085829, "gradient_norm": 0.0002466338046360761, "vector_norm_after": 2987.01513671875, "seconds": 0.8080660589621402}
+{"step": 11, "fit_mean_nll_before_update": 0.552014938245217, "gradient_norm": 0.00016177448560483754, "vector_norm_after": 3229.406005859375, "seconds": 0.807490413018968}
+{"step": 12, "fit_mean_nll_before_update": 0.5334303292135397, "gradient_norm": 0.0002512196952011436, "vector_norm_after": 3287.517333984375, "seconds": 0.8080905090318993}
+GENERATED zero 8/48
+GENERATED zero 16/48
+GENERATED zero 24/48
+GENERATED zero 32/48
+GENERATED zero 40/48
+GENERATED zero 48/48
+GENERATED learned 8/48
+GENERATED learned 16/48
+GENERATED learned 24/48
+GENERATED learned 32/48
+GENERATED learned 40/48
+GENERATED learned 48/48
+GENERATED random 8/48
+GENERATED random 16/48
+GENERATED random 24/48
+GENERATED random 32/48
+GENERATED random 40/48
+GENERATED random 48/48
+LATENT_RECOVERY_DONE
+2026-09-05T14:33:54Z

@@ -1,5 +1,11 @@
 # Current project state — 2026-09-05
 
+## Latest decision — latent recovery POSITIVE; controlled weight update next
+
+All288 paired generations reviewed and hashesverified. Block4 recovers13/24target beyondprompt across8situations/3families, zero/random0. It also restores10ordinaryfalseunknowns:14→24primary useful,16capped/8complete; notemployment-specific. Block20recovers4/24 across3situations/2families,zero/random0;ordinary24primarybut7unknown tails and3targetunknownloops. Bothmodelsweightsunchanged. Strongerearlyvector selected for a controlled next mechanism test.
+
+Next prepare vanilla versus fixed-vector adversarial NPO weight updates from originalCE64, with identical ordinary protection under BOTH zero and vector conditions, cleanunperturbedteacher. Condition-matchedfrozenCE64 references prevent initiallydeadforget gradients; this departsfrompaper. Exactsource/data/hyperparameters remainunfrozen. No candidatequalifies; CE64ordinary/outputrepairfamilyclosed. Improvedweights mustbeatfixedattack and thenrefittedattack, ordinary/randomquestions, actualmerge/reload andreservedfinal. BothGPUsidle; rootRTX/agentsL40S ownershippersists.
+
 ## Latest decision — coverage80 CLOSED; latent recovery preparation
 
 All208 paired outputs read; all4 fail. L40S quick28targetunknown, unrelatedprimary6/5 and observedclean5/4, math tails/volunteer/storyfalseboth plushobby32;context9/8 (32suppliedsummarycopythenunknown),mixedcareer16/false32. RTX alsofails as below. All4weights archived. No qualifier/newbest; originalCE64 remains failed suppression parent. Close CE64 ordinary/output-repair family, no blind grid.
@@ -50,3 +56,5 @@ Coverage80 RTX head32 completed and all104 outputs reviewed: both16/32 fail math
 Both coverage80 full runs and all4 weight archives complete with runtime guards passed. RTX all104 answers fail; L40S evaluation review remains next. No qualified candidate or new best.
 
 Latent recovery pilot frozen under latent_recovery_v1/contract_v1.json: rootblock4/agentblock20, originalCE64allfrozen, sharedlastpromptvector,24fit+24targeteval+24ordinaryeval situation-disjoint;12stepsradius0.1median, zero/learned/equalnormrandom,144promptonlygenerations perGPU withrawstops. Three focusedCPUtests passed;actualGPUzero/gradient/tinystep guards precede fitting. No modelweightupdate. Transfergate4newsubstantive replies/3situations/2families beatingrandom; sourcecopying notcredit. Launch next.
+
+Earlyblock4 latentpilot completed: allweightsfrozen,13/24 substantive target recoveries versus0/24zero andrandom, across8situations/3families. TargetNLL1.3778→.4519, notsoleevidence. Gate met for recoverymechanism, not unlearning success; somefacts/analogieswrong. Ordinary72review andpairedblock20integration next; no newweighttrainerfrozen.
