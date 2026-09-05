@@ -1,0 +1,63 @@
+{
+  "candidate": "/home/ubuntu/sequential-unlearning-projection-sprint-20260904/derisk/whole_concept_jobs_v1/delta_protection_v1/dare_v1/models/p050_seed33450_v1",
+  "verified": true,
+  "weight_sha256": {
+    "model.safetensors": "b87d85a7a47fc855e44a03bcae0a22093fa4675d8ac87c8fdd3541ffa8053d5b"
+  },
+  "source_payload_sha256": "39a12013b3b0acf3dda7b47b889fa291a08f76ed16e3d51ef39f78d14c1d4eba",
+  "artifact_manifest": {
+    "files": [
+      {
+        "path": "added_tokens.json",
+        "bytes": 35,
+        "sha256": "50b2f405ba56a26d4913fd772089992252d7f942123cc0a034d96424221ba946"
+      },
+      {
+        "path": "chat_template.json",
+        "bytes": 1615,
+        "sha256": "fe16baf728db49457cde32802cd7efc0ac8a7a9877dbe22fe3322b2d9dc6ccd9"
+      },
+      {
+        "path": "config.json",
+        "bytes": 2767,
+        "sha256": "b62e048b6442b38006a33bf9770de2caab0d88f2c9c4676306068c2f9756d847"
+      },
+      {
+        "path": "generation_config.json",
+        "bytes": 210,
+        "sha256": "91c5b4db36d1ca732a17864e45e26ad74fe02d952894c6876eb43135908c17ec"
+      },
+      {
+        "path": "model.safetensors",
+        "bytes": 8600278008,
+        "sha256": "b87d85a7a47fc855e44a03bcae0a22093fa4675d8ac87c8fdd3541ffa8053d5b"
+      },
+      {
+        "path": "special_tokens_map.json",
+        "bytes": 662,
+        "sha256": "2f7b0adf4fb469770bb1490e3e35df87b1dc578246c5e7e6fc76ecf33213a397"
+      },
+      {
+        "path": "tokenizer.json",
+        "bytes": 33384568,
+        "sha256": "4667f2089529e8e7657cfb6d1c19910ae71ff5f28aa7ab2ff2763330affad795"
+      },
+      {
+        "path": "tokenizer_config.json",
+        "bytes": 1156999,
+        "sha256": "bfe25c2735e395407beb78456ea9a6984a1f00d8c16fa04a8b75f2a614cf53e1"
+      }
+    ],
+    "manifest_sha256": "38859e7fcb4a8e9f68749e98ec906ba515307f1e5d461be2e61590ceba94e715"
+  },
+  "text_reload": {
+    "config_class": "Gemma3Config",
+    "model_type": "gemma3",
+    "tokenizer_class": "GemmaTokenizer",
+    "vocab_size": 262145,
+    "chat_template_sha256": "a5c992cca048607f8a84c3d6ca4eb14bacc19bc1b4b2b3adfe3b987a4569f714",
+    "local_files_only": true,
+    "trust_remote_code": false
+  },
+  "no_generation_run": true
+}

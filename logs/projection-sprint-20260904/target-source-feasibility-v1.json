@@ -1,0 +1,55 @@
+{
+  "training_sources": [
+    {
+      "path": "config/whole_concept_jobs_v1/semantic_scenarios_v1.json",
+      "sha256": "2023a82fcccc0c60cb22afe564dc391ca6dfd4b43ca938c89782d7801de93914",
+      "seed": 31600,
+      "record_count": 576
+    },
+    {
+      "path": "config/whole_concept_jobs_v1/idiomatic_scenarios_v1.json",
+      "sha256": "244bc8b2b55fc53baf4c3c2349687abf62f181134c4c7b7ae12e19fc02ebcf25",
+      "seed": 31800,
+      "record_count": 48
+    }
+  ],
+  "evaluation_sources": [
+    {
+      "path": "config/employment_sprint_20260904_final/probes.json",
+      "sha256": "1ad0d61249e683f472f7158a03a21ce87f10917f4e9c9e9740e6f1665c8664ea"
+    },
+    {
+      "path": "config/employment_sprint_20260904_final/conversations.json",
+      "sha256": "c55e3047f684ac1d1428286db833581392bb5ce643167f00de42273c53389e29"
+    },
+    {
+      "path": "config/whole_concept_jobs_direct_v1/probes.json",
+      "sha256": "4391f28215fa931ebcf70f1f5411fb7a7fee533e8c56a7f96b95acdaf2d657ab"
+    },
+    {
+      "path": "config/whole_concept_jobs_natural_v2/probes.json",
+      "sha256": "2bd3421f01109b9ffb2a9e16aa5233b27e98c34ebf75223b194047fc8852c722"
+    },
+    {
+      "path": "config/whole_concept_jobs_v1/probes.json",
+      "sha256": "051099d671000d0a829689b12961704e3056b6903ae878a3a5b174b04b7587ee"
+    },
+    {
+      "path": "config/whole_concept_jobs_hard_v1/probes.json",
+      "sha256": "9c7a99dd0936c048a8150a14a1dfafea11c2832de5bc8dad2940e1b13323a97a"
+    },
+    {
+      "path": "config/whole_concept_jobs_hard_v1/conversations.json",
+      "sha256": "1c2850eb6a94e2f3f4df27c2f184455544f718cc5bb0fa5e2c917b286d59359f"
+    }
+  ],
+  "builder_path": "scripts/build_semantic_scenario_prompts.py",
+  "builder_sha256": "331e32f6b4f59c636a7c179a4b5e029c7e150847f93ee778d7ad9c4889ca148b",
+  "generated_records": 624,
+  "unique_prompts": 624,
+  "evaluation_unique": 265,
+  "exact_prompt_overlap": [],
+  "model_forward_passes": 0,
+  "target_capture_performed": false,
+  "interpretation": "624 prompts reproduce earlier independent semantic and idiom training inputs; exact prompt disjointness does not establish semantic independence or guarantee target protection. Original1104/1056captured answer files were not located on L40S. Blend sweep is cheaper initial followup; no target geometry run authorized by this receipt."
+}
