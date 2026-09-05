@@ -1,0 +1,19 @@
+{
+  "source_hashes": {
+    "scripts/train_onpolicy_end_repair.py": "97d7694ba20cdb57069025851d8bdcccbd12b5364cb84c35b5be81c5d48216cb",
+    "scripts/onpolicy_end_repair.py": "90226b3d8349310d30f8aba1c9914a175df7a8a736a898b0114d4a6ba938d46e",
+    "scripts/onpolicy_target_preservation.py": "405411d97595910d8058497764b8514ec9a930842c78db0a72ac0fcde96a0d83",
+    "scripts/test_onpolicy_end_repair.py": "ef14c57a53a964d4d5197a609a8f32191388179e34be3a4b6e9cb710441902f8",
+    "scripts/test_onpolicy_target_preservation.py": "5aae6a619a1a9e6962173a1db4ccac672e5b58669a173a33d72d3924143b468d",
+    "scripts/train_bounded_forget.py": "688816efb781accda3f53610a6c2ba7965b07329a4e9536cdce2e8bc13cf28e4",
+    "scripts/cache_ordinary_preference_reference.py": "c3e948c1e751e66945fe9bdc2a7b824aae4d7e476cc0b13a512fa2d1cdc54e13",
+    "scripts/ordinary_preference_training.py": "ddab8a46d11bdda6b954d890dd7bee9b8699ffd7a1b97ea2505b816fc0679d98",
+    "scripts/answer_prefix_conditioning.py": "8c126dd24e04f08375c067d9ed74e0b4213266183c8101ab91fbcc6e9ff549a3",
+    "scripts/prefix_unfamiliarity_training.py": "71d88152fff82dcfbe46fe142a934d1cf7187749e0abd09291955acdc3025f8e",
+    "scripts/wide_unfamiliarity_training.py": "e692f78daa0a432cb9e345ec2212a73c59231102c7e906100c5e04a60a4ebb7b",
+    "scripts/screen_adapters.py": "c69144eca887176cedb074fcdd8ac80e841d5504772198701546ca4d7fcd0b29"
+  },
+  "log_sha256": "29dcdf7c6c86e966b348a65c1e20702d4991600b38486797e2c94b82267e58af",
+  "exit_code": 0,
+  "scope": "7 exact endpoint tests plus7 independent weighted-JSD, causal-shift, teacher-gradient/storage/mode guards and frozen-probe tests; CPU only."
+}
