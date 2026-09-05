@@ -67,7 +67,7 @@ router would be a different product and is not presented as unlearning.
   sprint_20260904/exploratory_artifact_manifest_v1.json, allrawresults/reviews.
   EXPERIMENTS.md is append-only. Rejectedclaims and statistical caveats must
   accompany the saved artifact; unfamiliarity is not evidence of deletion.
-- Active experiment: clean native residual-range rank4/closure<=8 contract at config/whole_concept_jobs_v1/residual_projection_v1/contract_v1.json. All68 output writes plus tied embedding; no norm inversion because97 branch scale coordinates are exactlyzero. Math12/12 CPU+CUDA qualified. Negative520 prompts prepared, zero exactevaloverlap; clean negative answers and capture next. No semantic success claim.
+- Active experiment: clean native residual-range rank4/closure<=8 contract at config/whole_concept_jobs_v1/residual_projection_v1/contract_v1.json. All68 output writes plus tied embedding; no norm inversion because97 branch scale coordinates are exactlyzero. Math12/12 CPU+CUDA qualified. Negative520 clean answers complete, exact520/520 join and zero empty answers. Combined1040 training records pinned; shared clean activation capture next. User-authorized two-arm amendment: root RTX rank4/closure<=8; subagent L40S rank1/closure<=2, one owned workload per host. No semantic success claim.
 - Next gate: capture balanced training-only clean activations, fit fixed4 directions, qualify native publisher and actual BF16 forward leakage, then quick40+contextual12. Only a survivor advances to broad utility/fresh audit and actual31-removal damage curve. Historical scalar scores stay unchanged.
 - Preserve unrelated SliceGPT edits, .claude/, olduntrackedresults, transferconfig
   and bundles. Stageonlycurrentwork. Do not commitkeys, .tmptransportdependencies,

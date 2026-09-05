@@ -1181,3 +1181,6 @@ The user rejected the proposed early stop. Work continues toward low-collateral 
 
 
 September5 active continuation: the user rejected early stopping. A distinct clean-model experiment now removes4 learned residual directions (up to8 after normalization closure) through69 native weight tensors. Its mathematics passed12 CPU/CUDA tests; behavioral removal and low damage remain unproven. Full settings and source/data hashes are recorded in EXPERIMENTS.md and config/whole_concept_jobs_v1/residual_projection_v1/contract_v1.json. The goal still requires evidence for31 sequential removals.
+
+
+Two-GPU amendment before basis/results: root owns rank4 on RTX18.101.59.227; subagent owns rank1 on L40S51.49.31.142. Both share1040 pinned clean training trajectories and the same contrast SVD, with one owned workload per GPU. The negative reference capture completed520/520 with no empty answers. Neither arm has been evaluated.

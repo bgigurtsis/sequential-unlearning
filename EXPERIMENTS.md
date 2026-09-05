@@ -8868,3 +8868,36 @@ Artifacts and exact pins:
 - `logs/projection-sprint-20260904/native-residual-math-tests-v1.log` SHA256 `77a9f3105386bc76d1be355886d8d94446e92b8992b8259e067730196a8ec01a`.
 
 Sources: https://arxiv.org/html/2306.03819v4 and https://github.com/EleutherAI/concept-erasure; used for context only, no transfer of LEACE guarantees.
+
+
+## 2026-09-05 — Two GPU ownership amendment and clean control capture
+
+User explicitly requests one experiment per GPU and a subagent owning the second.
+Before fitting any activation basis or viewing candidate outputs, freeze two arms:
+root RTX18.101.59.227 rank4/closure<=8, subagent L40S51.49.31.142 rank1/closure<=2.
+Same1040 clean trajectories and same pooled68 normalized contrasts; derive both
+from the same SVD. One owned GPU workload per host at a time. Shared clean
+activation capture precedes separate native publication and quick40/context12
+evaluations. No change to source model, edited69-tensor surface or acceptance
+claims. This is an explicit amendment to the original single rank4 contract,
+not a post-output rank selection. The existing unrelated RTX PID8186 remains.
+
+Clean negative reference generation completed520/520 on L40S, greedy96,batch16,
+pinned clean revision093f9f388b31de276ce2de164bdc2081324b9767 and clean tokenizer.
+All IDs and every preparation field match; zero empty answers; no filtering or
+editing. Six initial records inspected: contextually relevant nonemployment
+answers, including capped rewrite/continuation text. Not a full semantic audit.
+Join1040 class-labelled records:520 positive clean answers already pinned and520
+negative new answers. Capture rejects any sequence>256; segmented teacher forcing
+uses exact full prompt IDs followed by separately encoded answer content, no EOS.
+
+Publisher surface tests3/3 passed locally, confirming69-key mapping, exact identity
+checks, and rejection of norm/shape/dtype/namespace changes. This is not a full
+model publication qualification yet; independent review and GPU tests pending.
+
+- `config/whole_concept_jobs_v1/residual_projection_v1/two_gpu_amendment_v1.json` SHA256 `eb315489bc01a833ff2d5289224312e5ce9fcf7f6b99c0d80f92c0378f514eac`.
+- `config/whole_concept_jobs_v1/residual_projection_v1/capture_records_v1.json` SHA256 `03dd1bd720cc436fbe314d88d14d060db731c626a0f9ca889f4bb2358bff0c79`.
+- `config/whole_concept_jobs_v1/residual_projection_v1/capture_pins_v1.json` SHA256 `bd13d17d25ab4a9a93f3bedb319cbb388489bbdb35e656ed8b26cb76f440e8a5`.
+- `config/whole_concept_jobs_v1/residual_projection_v1/clean_support_pins_v1.json` SHA256 `39d6fdd00180bf9e4a15d36dc058532059a00070f71bbef60a6a00ce5dcc84d7`.
+- `derisk/whole_concept_jobs_v1/delta_protection_v1/sprint_20260904/residual_negative_clean_answers_v1.json` SHA256 `479fad9a9b61417da030824b4a35343155e75fb76c44b0b459be740507cad203`.
+- `derisk/whole_concept_jobs_v1/delta_protection_v1/sprint_20260904/residual_negative_join_review_v1.json` SHA256 `99b783b9a9cc4aa9ddc4287639b3ac5906ace6b498846edb08f3af44f48b7d56`.

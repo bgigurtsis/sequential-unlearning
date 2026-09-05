@@ -1,0 +1,25 @@
+{
+  "schema": "native_residual_projection_two_gpu_amendment_v1",
+  "prior_contract_sha256": "6c7213dcc106473e50c3c1f9ed331ebe2b192ce05b089c03732f63e108a95930",
+  "trigger": "User explicitly requests one experiment per GPU, second experiment owned by subagent; amendment before fitting any activation basis or candidate evaluation",
+  "arms": [
+    {
+      "name": "rank4",
+      "host": "18.101.59.227",
+      "owner": "root",
+      "concept_rank": 4,
+      "maximum_closure_rank": 8
+    },
+    {
+      "name": "rank1",
+      "host": "51.49.31.142",
+      "owner": "projection_followup",
+      "concept_rank": 1,
+      "maximum_closure_rank": 2
+    }
+  ],
+  "shared": "Identical1040 clean training trajectories and pooled68 normalized class-mean contrasts; derive both bases from the same SVD. Both start from pinned clean model; no failed-parent inheritance. Same69-tensor surface and BF16 arithmetic. No fresh audit used in this comparison.",
+  "scheduling": "At most one owned GPU workload per host at a time. Shared clean capture first on L40S; publication and development evaluation then run independently one arm per GPU. Existing unrelated RTX service untouched.",
+  "selection": "Review both fixed arms on quick40+contextual12 and geometric leakage. Qualifying target absence and minimal collateral damage govern advancement, not contrast energy alone. No rank chosen after reading output.",
+  "not_completion": "A single successful arm is insufficient to prove31-removal damage budget."
+}
