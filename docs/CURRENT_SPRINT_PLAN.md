@@ -53,3 +53,7 @@ Clean baseline all32 reviewed:22 clear target knowledge,2 ambiguous;8 unrelated 
 ## 2026-09-05 — Clean NPO pair closed
 
 Both32step checkpoints fail the early meaning-loss gate despite live token pressure and8useful unrelated answers. No extension or expensive eval. Latest PROJECT_MEMORY.md gives the current decision: CPU-only employment-token selector audit, reject before GPU if precision/coverage fail. No next GPU method frozen.
+
+## Latest — selector rejected before GPU
+
+CPU F/R word selector170types/99.22% row coverage failed precision: root full12-row review45/102 employment-bearing occurrences (44.1% versus80% required). No GPU/no keyword tuning. Exact semantic_review_v1.json and latest EXPERIMENTS.md supersede pending-selector plan. Next assess concise causal-content training data versus framing-heavy96-token captures; source/data not frozen. Both GPUs idle, no qualifier.
