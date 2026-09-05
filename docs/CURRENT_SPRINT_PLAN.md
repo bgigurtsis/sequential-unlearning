@@ -36,3 +36,6 @@ Rank1 also failed:52/52 incoherent answers and0/15 usable controls despite effec
 
 
 Next method is now frozen: preserve the clean nonemployment FIT mean vectors before choosing directions to erase. The failed closures overlapped89–96% of their energy; a136-dimensional protected span leaves substantial target contrast available. Root testsrank4 onRTX, subagent rank1 onL40S, same69-weight publisher and independent behavioralchecks. This is a justified geometric correction, not a demonstrated low-damage solution.
+
+
+The corrected bases are fitted and verified to preserve the stored nonemployment means under the ideal projection (relative residual below4e-15). Root and subagent now publish the newrank4/rank1 models independently. Actual model behavior still requires testing.

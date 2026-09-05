@@ -9147,3 +9147,23 @@ temporary/tmp/sequential-unlearning-mean-protected-rank1-v1, preserveoldmodel.
 - `scripts/fit_mean_protected_residual_basis.py` SHA256 `944b1e927857ef0bbf083224cadb22405397d0d9c20a455344d131af5c894565`.
 - `scripts/test_fit_mean_protected_residual_basis.py` SHA256 `5a12c9bfca9c4765ae679bc4ef2c88ef6494d33c380b0651a930982d1b27554c`.
 - `logs/projection-sprint-20260904/mean-protected-fitter-tests-v1.log` SHA256 `36255bdf2b396aa82bd03233efee8922de386284a3debd1781b0046463478cc1`.
+
+
+## 2026-09-05 — Production mean-protected basis fit completes
+
+Qualified277b938fitter ranCPUfloat64 onL40S usingexactpinnedcleanclassmeans and
+referenceDf, no GPU/modelforward/evaluationinput. Bothranks saved fromsameSVD.
+Protectedspan136, survivingcontrastsrank68 with50.62287874% originalnormalized
+energy. Rank1/4closure2/8; negativeFITmeanrelativeaction5.279e-16/3.703e-15,
+matchingread-onlydiagnosis. Allinput/sourcehashes verified; bothbases downloaded
+andhashchecked locally. No behavior orupdated-modelmeanpreservation claimed.
+Artifacts under derisk/whole_concept_jobs_v1/delta_protection_v1/residual_v1/
+mean_protected_bases_v1 (continuous), metadata SHA
+72c872797acd21bbca332353eb1f6fbbc2872ee7d064498be56005c951eeba85.
+Rank1 basis SHA7fe5bc8dc57e6de94e2ed4a878a9775606f3ef60a88458fc52201b6021068109,
+82136bytes; rank4 basis SHA49cd05602fc4b054dc89f206f69c44299191785104476dc5442fc65db58827e0,
+266456bytes. Geometryartifacthash and fullsourcepins in metadata.
+
+Next rootRTXmean_protected_rank4_v1 andsubagentL40Stemporaryrank1 publications,
+unchangedqualifiednativepublisher, oneGPUjobperhost. Bothquick96/context256
+explicit in nextwrappers. Existingfailedmodels preserved.
