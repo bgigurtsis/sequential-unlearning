@@ -1,0 +1,106 @@
+{
+  "schema": "onpolicy_end_training_contract_v2",
+  "parent": {
+    "path": "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/ordinary_end_ce_l40s_run64_v1/step064",
+    "weight_sha256": "5fd11ba0d54c4888cb49d0014cbc43488709e1eccb61aa1a3feba810939cd328",
+    "config_sha256": "dc2352afdc28c81ded1934c1f472f3a33b9a61ecbb3c029a82594a176cf2c5b5"
+  },
+  "inputs": {
+    "config/whole_concept_jobs_v1/wide_unfamiliarity_v1/onpolicy_end_repair_v1/states_v1.json": {
+      "sha256": "ecb5c4b0d63df014c43613c58882e9c1f0770f1a351b8247bfdc195b36f69e01"
+    },
+    "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/ordinary_onpolicy_end_v1/ce64_capture_v1.json": {
+      "sha256": "bee08d5cb6533404161d1e31c3fc5b1222778879a136c7960cfbcb14e1817843"
+    },
+    "config/whole_concept_jobs_v1/wide_unfamiliarity_v1/ordinary_answer_repair_v1/shared_data_v1/forget.json": {
+      "sha256": "c0b54b438897c91edbccbf2fcb1eab49ce4be34a22607186d7289f2939f764c2"
+    },
+    "logs/projection-sprint-20260904/onpolicy-end-tokenization-v1.json": {
+      "sha256": "ae0178a9dc354624dc1d4362a8f2cd6fa758d3b9b5f09d7d5b21b3c9ad43118d"
+    },
+    "logs/projection-sprint-20260904/onpolicy-end-token-boundaries-v1.json": {
+      "sha256": "5325cdc3c8d772ec62755ad0a12c263d7241464d0cb845998b09ae371ef96d3a"
+    }
+  },
+  "source_hashes": {
+    "scripts/onpolicy_end_repair.py": "90226b3d8349310d30f8aba1c9914a175df7a8a736a898b0114d4a6ba938d46e",
+    "scripts/train_onpolicy_end_repair.py": "83cd99f013329f0df90fd4bb7a914891664612e119feaeb54efb0e238eb3943d",
+    "scripts/test_onpolicy_end_repair.py": "ef14c57a53a964d4d5197a609a8f32191388179e34be3a4b6e9cb710441902f8",
+    "scripts/cache_ordinary_preference_reference.py": "c3e948c1e751e66945fe9bdc2a7b824aae4d7e476cc0b13a512fa2d1cdc54e13",
+    "scripts/ordinary_preference_training.py": "ddab8a46d11bdda6b954d890dd7bee9b8699ffd7a1b97ea2505b816fc0679d98",
+    "scripts/answer_prefix_conditioning.py": "8c126dd24e04f08375c067d9ed74e0b4213266183c8101ab91fbcc6e9ff549a3",
+    "scripts/prefix_unfamiliarity_training.py": "71d88152fff82dcfbe46fe142a934d1cf7187749e0abd09291955acdc3025f8e",
+    "scripts/wide_unfamiliarity_training.py": "e692f78daa0a432cb9e345ec2212a73c59231102c7e906100c5e04a60a4ebb7b",
+    "scripts/screen_adapters.py": "c69144eca887176cedb074fcdd8ac80e841d5504772198701546ca4d7fcd0b29"
+  },
+  "settings": {
+    "steps": 32,
+    "snapshots": [
+      16,
+      32
+    ],
+    "qualification_steps": 2,
+    "qualification_saves": false,
+    "seed": 34020,
+    "lr": 2e-06,
+    "rank": 32,
+    "alpha": 64,
+    "batch_target": 16,
+    "batch_endpoint": 4,
+    "target_weight": 1,
+    "target_first_tokens": 5,
+    "target_first_token_weight": 8,
+    "ce_endpoint_weight": 1,
+    "dpo_endpoint_weight": 10,
+    "dpo_beta": 0.1,
+    "optimizer": {
+      "name": "AdamW",
+      "betas": [
+        0.9,
+        0.999
+      ],
+      "eps": 1e-08,
+      "weight_decay": 0.01,
+      "fresh": true,
+      "clip": false
+    },
+    "clean_reference_loss": false,
+    "ordinary_answer_start_loss": false,
+    "dpo_length_normalization": false,
+    "eos_chosen_supervised_tokens": 1,
+    "endpoint_rng_seed": 35020,
+    "negative_variants_per_visit": 2,
+    "negative_bank_size": 8
+  },
+  "qualification": {
+    "cpu_tests": 7,
+    "cpu_skips": 0,
+    "cpu_seconds": 0.294,
+    "endpoint_variants": 90,
+    "preservation_states": 4106,
+    "max_endpoint_tokens": 159,
+    "max_target_tokens": 101,
+    "clipping": false,
+    "native_generated_prefixes": true,
+    "independent_source_review_sha256": "c54495c70c12b3942601baa829931208c95ca1d360fe559da32d2707eacc5e70"
+  },
+  "reference": "Capture actualCE64 chosenEOS1 and8two-newlineunknown scores per endpoint,90finite scores with token hashes; cache must be separately pinned beforeDPO. CE reads no cache.",
+  "arms": {
+    "rtx": "end-only DPO on90-score immutable CE64 reference",
+    "l40s": "end-only chosenEOS1 CE"
+  },
+  "caveats": [
+    "10selected states/twoobservedtails only; no ordinary-start recovery claim.",
+    "Different objective coefficients/units; not equal gradient pressure.",
+    "All source answers from existing training prompts.",
+    "Prioritize hard random unknown failures; four user-accepted neighbour controls separate."
+  ],
+  "evaluation": "Both16/32 snapshots quick40 greedy96/context12 greedy256 batch16; manually readall104 perarm. Existing untouchedfinalreserved.",
+  "reference_cache": {
+    "path": "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/ordinary_onpolicy_end_v1/parent_reference_v1.json",
+    "sha256": "d7ba67297d892d4ee9620b278aea0c205a0f407b7c8be14446a58b400b67642c",
+    "scores": 90,
+    "finite": true,
+    "independent_first_batch_max_error": 2.384185791015625e-07
+  }
+}
