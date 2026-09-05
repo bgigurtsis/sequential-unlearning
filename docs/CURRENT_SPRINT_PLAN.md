@@ -24,3 +24,5 @@ The next pair increases the weight of the first five answer tokens to8 while lea
 Contract:config/whole_concept_jobs_v1/wide_unfamiliarity_v1/prefix_priority_contract_v1.json. Data remain1576 targets,177 generic texts and2753 chat retention rows;16 generic texts clip at256, targets/chat do not. Reused development tests are excluded from training; they are not fresh evidence. Append findings to EXPERIMENTS.md, update memory and affected claims, then commit/push before changing experiments. A failed experiment or finished archive does not complete the goal.
 
 The36-test CPU qualification passed, including exact adapter-byte reload and the clean disabled-adapter reference on a miniature real Gemma/PEFT model. Two-step GPU qualification is next.
+
+Both prefixpriority2-stepGPUsmokesPASS: exact476FP32parentreload,finitegrads,peakallocatedRTX20.53GB/L40S19.73GB. Full64sameparents/settings next, snapshots16/32/64. RootRTX32/subagentL40S8 onejobperGPU. No behavioralqualification.

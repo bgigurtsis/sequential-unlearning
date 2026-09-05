@@ -1,0 +1,150 @@
+{
+  "schema": "rank8_prefix_priority_two_step_review_v1",
+  "verdict": "PASS mechanical/memory qualification; no behavioral claim",
+  "host": "51.49.31.142",
+  "integrated_source": "1708a6e",
+  "started_utc": "2026-09-05T04:35:09Z",
+  "finished_utc": "2026-09-05T04:35:33Z",
+  "rank": 8,
+  "alpha": 16,
+  "initial_adapter_load_receipt": {
+    "path": "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/rank8_run192_v1/step192",
+    "weight_sha256": "442f4957a6012f653f90374173a700d824c418518cf645c1e9ace839e147f1ac",
+    "config_sha256": "850586725f555f27a1eaed31b59fb82ba08341f1b16098733b7f5581c62c569d",
+    "tensor_count": 476,
+    "native_tensor_bytes_equal": true,
+    "source_and_loaded_dtype": "float32",
+    "optimizer_state": "fresh AdamW; no momentum resumed"
+  },
+  "prefix_tokens": 5,
+  "prefix_weight": 8,
+  "denominator": "original selected answer token count",
+  "finite_steps": [
+    {
+      "finite_losses": true,
+      "finite_gradients": true,
+      "gradient_tensors": 476,
+      "losses": {
+        "total": 11.552209854125977,
+        "forget": 1.0871832370758057,
+        "retain": 0.0016240786062553525,
+        "chat": 0.006316553335636854,
+        "consistency": 0.0,
+        "answer_suppression": 0.0
+      },
+      "step": 1,
+      "scope": "training_health",
+      "gradient_norm": 200.27609920099167,
+      "elapsed_seconds": 2.0357660709996708,
+      "peak_allocated_bytes": 18842725376,
+      "peak_reserved_bytes": 19641925632
+    },
+    {
+      "finite_losses": true,
+      "finite_gradients": true,
+      "gradient_tensors": 476,
+      "losses": {
+        "total": 11.391499519348145,
+        "forget": 1.0590894222259521,
+        "retain": 0.0017688521184027195,
+        "chat": 0.0074753970839083195,
+        "consistency": 0.0,
+        "answer_suppression": 0.0
+      },
+      "step": 2,
+      "scope": "training_health",
+      "gradient_norm": 130.43356856962504,
+      "elapsed_seconds": 1.6513797630323097,
+      "peak_allocated_bytes": 19734636032,
+      "peak_reserved_bytes": 20449329152
+    }
+  ],
+  "peak_allocated_bytes": 19734636032,
+  "peak_reserved_bytes": 20449329152,
+  "coverage": {
+    "direct": {
+      "population": 1056,
+      "draws": 16,
+      "unique_seen": 16,
+      "seen_ids": [
+        "direct_05e07fc6b97c5c12ecae",
+        "direct_1e518b554d4ef8ee3e90",
+        "direct_26ec0cb18b70010326d0",
+        "direct_371f45d0cc5dfea65d49",
+        "direct_3ecc62c443a86c525ccf",
+        "direct_43036a1217703e069e88",
+        "direct_4ec1a39e5c1a14962187",
+        "direct_5180f1b64c5f9b14fc92",
+        "direct_5746e669ef0b42b1dafe",
+        "direct_65aca121a1e4608db945",
+        "direct_6b692c72e2b90e371627",
+        "direct_85d43cc80c870508173f",
+        "direct_88ee77bc258d051941f1",
+        "direct_b4a50b489d4ce061b9e9",
+        "direct_b5a087aabb69342c3512",
+        "direct_df7b04a001742fda062d"
+      ],
+      "cycles_started": 1,
+      "complete_cycles": 0
+    },
+    "context": {
+      "population": 520,
+      "draws": 16,
+      "unique_seen": 16,
+      "seen_ids": [
+        "context_0c4a1e77485c41b1e375",
+        "context_45857b1a0b60bfa06d87",
+        "context_5080a763e3a5e4b424f8",
+        "context_54e78bdf37e8dc009820",
+        "context_654e5769292372289b07",
+        "context_6a045f47bf0b929f6acc",
+        "context_6c9e2d48ef295b94fbf4",
+        "context_886692e32c905eafbda6",
+        "context_8fce3d2104bf9e0bf3e8",
+        "context_a25e240230a75036d018",
+        "context_a8d47c983f6ec7fdd8f3",
+        "context_ca4b0e606ffdb06e5182",
+        "context_d93be8930d7048dfa3b8",
+        "context_de2b6319186d0a251ee8",
+        "context_df05f6c85b0532ae2957",
+        "context_f93839090962e6de402d"
+      ],
+      "cycles_started": 1,
+      "complete_cycles": 0
+    }
+  },
+  "artifact_naming_correction": "The L40S wrapper and remote log accidentally used rank32 in their filenames only; actual host, rank8, parent, data and output were correct. Local wrapper/log copied byte-for-byte to rank8 names. Root RTX did not launch from that wrapper and uses separate rtx32 names.",
+  "original_remote_log": "logs/projection-sprint-20260904/wide-rank32-prefix-qualification-v1.log",
+  "original_remote_wrapper": "logs/projection-sprint-20260904/run-wide-rank32-prefix-qualification-v1.sh",
+  "artifacts": {
+    "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/rank8_prefix_qualification_v1/run_config.json": {
+      "sha256": "852ea7ba7b5bf7cdc7b7392e390f7fa5463b94be445a1d64b63b2fb9f85de08b",
+      "bytes": 59944
+    },
+    "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/rank8_prefix_qualification_v1/sampling_coverage.json": {
+      "sha256": "aff3a26535a287dc5fa3d49b0db5c970b2d6113e0435c2284b83c3b0585f1690",
+      "bytes": 1517
+    },
+    "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/rank8_prefix_qualification_v1/stop_state.json": {
+      "sha256": "e7ae4f49a1a9c172568bef99039e90ffa298e38856a95877e3ff0bb5db9bad61",
+      "bytes": 336
+    },
+    "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/rank8_prefix_qualification_v1/sampling_trace.jsonl": {
+      "sha256": "e942d75f50e7a22a32adc0b3cddadbccfec8209057ccb852e16ebd734dc28ea0",
+      "bytes": 1410
+    },
+    "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/rank8_prefix_qualification_v1/training_metrics.jsonl": {
+      "sha256": "288ef9332be22fbb7821d368673334634eff3108cc5f50b7afe40691ecaba204",
+      "bytes": 1812
+    },
+    "logs/projection-sprint-20260904/wide-rank8-prefix-qualification-v1.log": {
+      "sha256": "05ae75899f1b06b843a47aefd031931a1b6cb75326a3a91784c24c11a5d0ddda",
+      "bytes": 3522
+    },
+    "logs/projection-sprint-20260904/run-wide-rank8-prefix-qualification-v1.sh": {
+      "sha256": "bf043d4900c3ba93eaf7eefb012a9fda44592d326f96055e76f62e73e2897f2b",
+      "bytes": 5185
+    }
+  },
+  "next_gate": "Root integrates both smokes before64step followup restarted from exactparent192; no continuation of2-step optimizer."
+}

@@ -9784,3 +9784,34 @@ Source/artifact SHA256:
   "logs/projection-sprint-20260904/prefix-training-cpu-tests-v1.log": "114bb2af283de907da36fba52f2c7641b29cfb5b89b2c59b1cc483a4db88fdbf"
 }
 ```
+
+
+## 2026-09-05 04:37 UTC — Prefix-priority bothGPU qualification passes
+
+Same1708a6e source and7a74e5b contract; eachown192adapter exactly476FP32serializedtensors equalafterreload, exact238textmodules, cleanbase reference via disabledadapter, freshoptimizer. Prefixfirst5weight8/tail1/originaldenominator,seed34002,16/4/8batches,10/30/100,LR2e-5,2steps no snapshots. RTXcompleted04:36:10: finite476grads bothsteps, weightedCE1.18450594/.96001840,total12.34568405/10.16979122,grad184.248095/88.653027,stepseconds1.260696/.943497,peakallocated20,531,401,728/reserved21,124,612,096. L40Scompleted04:35:33: finite476both,weightedCE1.08718324/1.05908942,total11.55220985/11.39149952,grad200.276099/130.433569,seconds2.035766/1.651380,peakallocated19,734,636,032/reserved20,449,329,152. Eachstratum16uniquedraws. Parentbaselineauditnowusesactive192adapter, while retentionreference remainsclean; do notinterpretprobabilityratio asnormalizedclean erasure.
+
+Operational correction: subagentderivedwrapper accidentallyretained rank32hyphenated filename forL40Srun; actualhost/model/rank8/outputcorrect. Byteidenticalwrapper/log preservedunder rank8names, aliasreceipt explicit. RootexclusivecreateblockedbeforeRTXlaunch; rootusedunique rtx32wrapper/log labels andranonce. NoduplicateGPUjob.
+
+Both passmechanical/memory gate only. Next full64 runs, snapshots16/32/64, same settings andexact192parents restartedfreshoptimizer. RootRTX32 outputrank32_prefix_run64_v1/subagentL40S8 separateoutput. OneownedjobperGPU; integratecompletedrunsbeforequickevaluation.
+
+ArtifactSHA256:
+```json
+{
+  "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/rank32_prefix_qualification_v1/run_config.json": "4434083bb6cd64903507366469cfcd596a30275009dfe6c43b65429fa6450472",
+  "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/rank32_prefix_qualification_v1/sampling_coverage.json": "aff3a26535a287dc5fa3d49b0db5c970b2d6113e0435c2284b83c3b0585f1690",
+  "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/rank32_prefix_qualification_v1/sampling_trace.jsonl": "e942d75f50e7a22a32adc0b3cddadbccfec8209057ccb852e16ebd734dc28ea0",
+  "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/rank32_prefix_qualification_v1/stop_state.json": "9b6f1a52d31490fb9bff0aea7f45f79e29915d55097ffa40e61d76f699771481",
+  "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/rank32_prefix_qualification_v1/training_metrics.jsonl": "363c8423addd87946fc9cd40826cd9b44c31facb0c2ea45cbf10bc46ea722d12",
+  "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/rank8_prefix_qualification_v1/run_config.json": "852ea7ba7b5bf7cdc7b7392e390f7fa5463b94be445a1d64b63b2fb9f85de08b",
+  "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/rank8_prefix_qualification_v1/sampling_coverage.json": "aff3a26535a287dc5fa3d49b0db5c970b2d6113e0435c2284b83c3b0585f1690",
+  "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/rank8_prefix_qualification_v1/sampling_trace.jsonl": "e942d75f50e7a22a32adc0b3cddadbccfec8209057ccb852e16ebd734dc28ea0",
+  "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/rank8_prefix_qualification_v1/stop_state.json": "e7ae4f49a1a9c172568bef99039e90ffa298e38856a95877e3ff0bb5db9bad61",
+  "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/rank8_prefix_qualification_v1/training_metrics.jsonl": "288ef9332be22fbb7821d368673334634eff3108cc5f50b7afe40691ecaba204",
+  "logs/projection-sprint-20260904/run-wide-rtx32-prefix-qualification-v1.sh": "da8474a1f23dd9f49337aef5efbc685352fbe4c49e24d6e19362345588fc66cf",
+  "logs/projection-sprint-20260904/run-wide-rank8-prefix-qualification-v1.sh": "bf043d4900c3ba93eaf7eefb012a9fda44592d326f96055e76f62e73e2897f2b",
+  "logs/projection-sprint-20260904/wide-rtx32-prefix-qualification-v1.log": "aeaa832f9f236bff3bea8c9691d55f300c8c4059e6da2d4f9c604570683b81a4",
+  "logs/projection-sprint-20260904/wide-rank8-prefix-qualification-v1.log": "05ae75899f1b06b843a47aefd031931a1b6cb75326a3a91784c24c11a5d0ddda",
+  "logs/projection-sprint-20260904/wide-rtx32-prefix-qualification-receipt-v1.json": "d8cc0e1011fe12c86c1d671f4a7bf3eb6dd43862bb5e6dda3f1d04f0ba5e51ac",
+  "logs/projection-sprint-20260904/wide-rank8-prefix-qualification-review-v1.json": "dec470c9722256135ad9229d856848ce1aa1e1f36d5f66f8c33054866f8321b7"
+}
+```
