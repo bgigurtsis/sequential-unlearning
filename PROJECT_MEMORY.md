@@ -1,3 +1,5 @@
+Both analytical96runs completefinite; control504+768unique,coverage648+768, all96contextbatchIDs identical. L40Scontrolquick3next/rootcoveragequick3active109510. Weightarchivesunderway; no behavioralresultyet. Goalactive.
+
 RTXanalyticalcoverage96 completefinite,648+768unique,all144newanalyticalcovered,24/48/96hashpinned. Quick3next; L40Scontrol96activePID82979. No behavioralresult;goalactive.
 
 Both analyticalcoverage/control2stepsmokes passed exact476parent/238scope,finite. Full96 freshfromcumulative24 next: root2224targets648/1576,subagent2080targets504/1576; same6785chat,seed34010,24/48/96snapshots. No behavioralresult;goalactive.
