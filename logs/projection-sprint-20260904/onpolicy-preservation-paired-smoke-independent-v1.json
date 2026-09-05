@@ -1,0 +1,26 @@
+{
+  "schema": "onpolicy_preservation_paired_smoke_schedule_v1",
+  "trace_hashes": {
+    "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/onpolicy_end_none_rtx_qualification_v1/training_trace.jsonl": "8c8efad827aa549b9e7d6840c4d782b2f2c1466bef801bee5fa8cad4eeb0f28c",
+    "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/onpolicy_end_jsd_l40s_qualification_v1/training_trace.jsonl": "c4e8f663ed3ed5c109aec6fdb8f12361e220f23c3d5d2fc4b390240125670303"
+  },
+  "steps": 2,
+  "all_target_ids_and_endpoint_ids_visits_banks_equal": true,
+  "none_target_student_forwards": [
+    0,
+    0
+  ],
+  "jsd_target_student_teacher_forwards": [
+    [
+      16,
+      16
+    ],
+    [
+      16,
+      16
+    ]
+  ],
+  "first_endpoint_ce_none": 0.46060067415237427,
+  "first_endpoint_ce_jsd": 0.45610421895980835,
+  "caveat": "Same native parent and input IDs do not imply bitwise cross-GPU forward equality. First END CE differs slightly between RTX and L40S; objective behavior remains untested."
+}

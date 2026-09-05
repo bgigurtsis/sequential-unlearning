@@ -69,3 +69,5 @@ Do not blindly repeat static global/mean-protected activation projection, late-l
 Latest qualification: RTX NONE two-step passed native476/finite gradients/zero target calls, END CE .460601→.238631, no saves. L40S exact two failed endpoint-CE weights retired under committed receipt, free1,065,078,784bytes. Next JSD two-step smoke, then integrate both before full32.
 
 Both GPU smokes now pass. JSD initial1.09582e-8, separate native-identical frozen teacher probe unchanged, all476 finite. Root verified both actual schedules match. Next: full32 per GPU from originalCE64, snapshots16/32; integrate numerical receipts and archives before development evaluation.
+
+RTX NONE full32 completed, all476 finite, native16/32 saved and locally archived. Final training END CE .00089556. RTX quick/context evaluation next while L40S full32 continues; no behavioral result yet.

@@ -1,0 +1,3530 @@
+{
+  "schema": "onpolicy_end_none_rtx_full_review_v1",
+  "files": {
+    "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/onpolicy_end_none_rtx_run32_v1/manifest.json": "6d5c4adecd670dfa6b82bc8adcc9fad271e10e08272628719287f4103a54f187",
+    "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/onpolicy_end_none_rtx_run32_v1/training_trace.jsonl": "902111caedce1fa8195ef1dd9cd59e509d76ec595f9d68bc5dacc08252a06e0a",
+    "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/onpolicy_end_none_rtx_run32_v1/completion.json": "442e6b96c0db16ca689b41d3b66afa46e4b986b8ae2dd65eca20217fa04e921b",
+    "logs/projection-sprint-20260904/onpolicy-end-none-rtx-full-v1.log": "e3eea2dc65a2d3b38885e52d07a57cb790e245d74462ec3d08e8428f53c2e613",
+    "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/onpolicy_end_none_rtx_run32_v1/step016/adapter_config.json": "19f7e0966dda6d03fe9f45743e6bf2c5c2b67ca9b1c8f11d4467acad82346b9d",
+    "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/onpolicy_end_none_rtx_run32_v1/step032/adapter_config.json": "19f7e0966dda6d03fe9f45743e6bf2c5c2b67ca9b1c8f11d4467acad82346b9d"
+  },
+  "manifest": {
+    "args": {
+      "states": "config/whole_concept_jobs_v1/wide_unfamiliarity_v1/onpolicy_end_repair_v1/states_v1.json",
+      "states_sha256": "ecb5c4b0d63df014c43613c58882e9c1f0770f1a351b8247bfdc195b36f69e01",
+      "capture": "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/ordinary_onpolicy_end_v1/ce64_capture_v1.json",
+      "capture_sha256": "bee08d5cb6533404161d1e31c3fc5b1222778879a136c7960cfbcb14e1817843",
+      "target_data": "config/whole_concept_jobs_v1/wide_unfamiliarity_v1/ordinary_answer_repair_v1/shared_data_v1/forget.json",
+      "target_data_sha256": "c0b54b438897c91edbccbf2fcb1eab49ce4be34a22607186d7289f2939f764c2",
+      "model_id": "/home/ubuntu/.cache/huggingface/hub/models--google--gemma-3-4b-it/snapshots/093f9f388b31de276ce2de164bdc2081324b9767",
+      "tokenizer_model": "/home/ubuntu/.cache/huggingface/hub/models--google--gemma-3-4b-it/snapshots/093f9f388b31de276ce2de164bdc2081324b9767",
+      "clean_pins": "config/whole_concept_jobs_v1/residual_projection_v1/capture_pins_v1.json",
+      "adapter": "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/ordinary_end_ce_l40s_run64_v1/step064",
+      "adapter_weight_sha256": "5fd11ba0d54c4888cb49d0014cbc43488709e1eccb61aa1a3feba810939cd328",
+      "adapter_config_sha256": "dc2352afdc28c81ded1934c1f472f3a33b9a61ecbb3c029a82594a176cf2c5b5",
+      "output": "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/onpolicy_end_none_rtx_run32_v1",
+      "mode": "ce",
+      "steps": 32,
+      "target_preservation": "none",
+      "encoding_manifest": "logs/projection-sprint-20260904/onpolicy-end-tokenization-v1.json",
+      "encoding_manifest_sha256": "ae0178a9dc354624dc1d4362a8f2cd6fa758d3b9b5f09d7d5b21b3c9ad43118d",
+      "reference_cache": null,
+      "reference_cache_sha256": null
+    },
+    "source_hashes": {
+      "/mnt/sequential-unlearning-replicate/checkout/scripts/train_onpolicy_end_repair.py": "97d7694ba20cdb57069025851d8bdcccbd12b5364cb84c35b5be81c5d48216cb",
+      "/mnt/sequential-unlearning-replicate/checkout/scripts/onpolicy_end_repair.py": "90226b3d8349310d30f8aba1c9914a175df7a8a736a898b0114d4a6ba938d46e",
+      "/mnt/sequential-unlearning-replicate/checkout/scripts/ordinary_preference_training.py": "ddab8a46d11bdda6b954d890dd7bee9b8699ffd7a1b97ea2505b816fc0679d98",
+      "/mnt/sequential-unlearning-replicate/checkout/scripts/cache_ordinary_preference_reference.py": "c3e948c1e751e66945fe9bdc2a7b824aae4d7e476cc0b13a512fa2d1cdc54e13",
+      "/mnt/sequential-unlearning-replicate/checkout/scripts/prefix_unfamiliarity_training.py": "71d88152fff82dcfbe46fe142a934d1cf7187749e0abd09291955acdc3025f8e",
+      "/mnt/sequential-unlearning-replicate/checkout/scripts/wide_unfamiliarity_training.py": "e692f78daa0a432cb9e345ec2212a73c59231102c7e906100c5e04a60a4ebb7b",
+      "/mnt/sequential-unlearning-replicate/checkout/scripts/screen_adapters.py": "c69144eca887176cedb074fcdd8ac80e841d5504772198701546ca4d7fcd0b29",
+      "/mnt/sequential-unlearning-replicate/checkout/scripts/answer_prefix_conditioning.py": "8c126dd24e04f08375c067d9ed74e0b4213266183c8101ab91fbcc6e9ff549a3",
+      "/mnt/sequential-unlearning-replicate/checkout/scripts/onpolicy_target_preservation.py": "405411d97595910d8058497764b8514ec9a930842c78db0a72ac0fcde96a0d83"
+    },
+    "verified_files": {
+      "config/whole_concept_jobs_v1/wide_unfamiliarity_v1/onpolicy_end_repair_v1/states_v1.json": "ecb5c4b0d63df014c43613c58882e9c1f0770f1a351b8247bfdc195b36f69e01",
+      "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/ordinary_onpolicy_end_v1/ce64_capture_v1.json": "bee08d5cb6533404161d1e31c3fc5b1222778879a136c7960cfbcb14e1817843",
+      "config/whole_concept_jobs_v1/wide_unfamiliarity_v1/ordinary_answer_repair_v1/shared_data_v1/forget.json": "c0b54b438897c91edbccbf2fcb1eab49ce4be34a22607186d7289f2939f764c2",
+      "/home/ubuntu/.cache/huggingface/hub/models--google--gemma-3-4b-it/snapshots/093f9f388b31de276ce2de164bdc2081324b9767/added_tokens.json": "50b2f405ba56a26d4913fd772089992252d7f942123cc0a034d96424221ba946",
+      "/home/ubuntu/.cache/huggingface/hub/models--google--gemma-3-4b-it/snapshots/093f9f388b31de276ce2de164bdc2081324b9767/chat_template.json": "fe16baf728db49457cde32802cd7efc0ac8a7a9877dbe22fe3322b2d9dc6ccd9",
+      "/home/ubuntu/.cache/huggingface/hub/models--google--gemma-3-4b-it/snapshots/093f9f388b31de276ce2de164bdc2081324b9767/config.json": "9059f680f4dbd1957f35cb44b9fdd6948f4792db7a7a35ee353ea42e68adf7ff",
+      "/home/ubuntu/.cache/huggingface/hub/models--google--gemma-3-4b-it/snapshots/093f9f388b31de276ce2de164bdc2081324b9767/generation_config.json": "fd9324becc53c4be610db39e13a613006f09fd6ef71a95fb6320dc33157490a3",
+      "/home/ubuntu/.cache/huggingface/hub/models--google--gemma-3-4b-it/snapshots/093f9f388b31de276ce2de164bdc2081324b9767/model.safetensors.index.json": "77f4b67de084c31c7bcd373b039908108eee6c6181607e6d53da730e5f0bc659",
+      "/home/ubuntu/.cache/huggingface/hub/models--google--gemma-3-4b-it/snapshots/093f9f388b31de276ce2de164bdc2081324b9767/preprocessor_config.json": "f688d6bb20c5017601c4011de7ca656da8485b540b05013efdaf986c0fcc918d",
+      "/home/ubuntu/.cache/huggingface/hub/models--google--gemma-3-4b-it/snapshots/093f9f388b31de276ce2de164bdc2081324b9767/processor_config.json": "3ffd5f11778dc73e2b69b3c00535e4121e1badf7018136263cd17b5b34fbaa53",
+      "/home/ubuntu/.cache/huggingface/hub/models--google--gemma-3-4b-it/snapshots/093f9f388b31de276ce2de164bdc2081324b9767/special_tokens_map.json": "2f7b0adf4fb469770bb1490e3e35df87b1dc578246c5e7e6fc76ecf33213a397",
+      "/home/ubuntu/.cache/huggingface/hub/models--google--gemma-3-4b-it/snapshots/093f9f388b31de276ce2de164bdc2081324b9767/tokenizer.json": "4667f2089529e8e7657cfb6d1c19910ae71ff5f28aa7ab2ff2763330affad795",
+      "/home/ubuntu/.cache/huggingface/hub/models--google--gemma-3-4b-it/snapshots/093f9f388b31de276ce2de164bdc2081324b9767/tokenizer_config.json": "bfe25c2735e395407beb78456ea9a6984a1f00d8c16fa04a8b75f2a614cf53e1",
+      "logs/projection-sprint-20260904/onpolicy-end-tokenization-v1.json": "ae0178a9dc354624dc1d4362a8f2cd6fa758d3b9b5f09d7d5b21b3c9ad43118d",
+      "/home/ubuntu/.cache/huggingface/hub/models--google--gemma-3-4b-it/snapshots/093f9f388b31de276ce2de164bdc2081324b9767/model-00001-of-00002.safetensors": "eb5fd5e97ddd07b56778733e9653c07312529cb00980a318fc3e1c4e3b5a8f1f",
+      "/home/ubuntu/.cache/huggingface/hub/models--google--gemma-3-4b-it/snapshots/093f9f388b31de276ce2de164bdc2081324b9767/model-00002-of-00002.safetensors": "fdde0e5aa5ced0fa203b3d50f4ab78168b7e3a3e08c6349f5cc9326666e1bb13",
+      "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/ordinary_end_ce_l40s_run64_v1/step064/adapter_model.safetensors": "5fd11ba0d54c4888cb49d0014cbc43488709e1eccb61aa1a3feba810939cd328",
+      "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/ordinary_end_ce_l40s_run64_v1/step064/adapter_config.json": "dc2352afdc28c81ded1934c1f472f3a33b9a61ecbb3c029a82594a176cf2c5b5"
+    },
+    "native_trainables": [
+      "base_model.model.model.language_model.layers.0.mlp.down_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.0.mlp.down_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.0.mlp.gate_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.0.mlp.gate_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.0.mlp.up_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.0.mlp.up_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.0.self_attn.k_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.0.self_attn.k_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.0.self_attn.o_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.0.self_attn.o_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.0.self_attn.q_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.0.self_attn.q_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.0.self_attn.v_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.0.self_attn.v_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.1.mlp.down_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.1.mlp.down_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.1.mlp.gate_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.1.mlp.gate_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.1.mlp.up_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.1.mlp.up_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.1.self_attn.k_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.1.self_attn.k_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.1.self_attn.o_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.1.self_attn.o_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.1.self_attn.q_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.1.self_attn.q_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.1.self_attn.v_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.1.self_attn.v_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.10.mlp.down_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.10.mlp.down_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.10.mlp.gate_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.10.mlp.gate_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.10.mlp.up_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.10.mlp.up_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.10.self_attn.k_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.10.self_attn.k_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.10.self_attn.o_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.10.self_attn.o_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.10.self_attn.q_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.10.self_attn.q_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.10.self_attn.v_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.10.self_attn.v_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.11.mlp.down_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.11.mlp.down_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.11.mlp.gate_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.11.mlp.gate_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.11.mlp.up_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.11.mlp.up_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.11.self_attn.k_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.11.self_attn.k_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.11.self_attn.o_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.11.self_attn.o_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.11.self_attn.q_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.11.self_attn.q_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.11.self_attn.v_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.11.self_attn.v_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.12.mlp.down_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.12.mlp.down_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.12.mlp.gate_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.12.mlp.gate_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.12.mlp.up_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.12.mlp.up_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.12.self_attn.k_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.12.self_attn.k_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.12.self_attn.o_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.12.self_attn.o_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.12.self_attn.q_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.12.self_attn.q_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.12.self_attn.v_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.12.self_attn.v_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.13.mlp.down_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.13.mlp.down_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.13.mlp.gate_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.13.mlp.gate_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.13.mlp.up_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.13.mlp.up_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.13.self_attn.k_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.13.self_attn.k_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.13.self_attn.o_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.13.self_attn.o_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.13.self_attn.q_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.13.self_attn.q_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.13.self_attn.v_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.13.self_attn.v_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.14.mlp.down_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.14.mlp.down_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.14.mlp.gate_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.14.mlp.gate_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.14.mlp.up_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.14.mlp.up_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.14.self_attn.k_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.14.self_attn.k_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.14.self_attn.o_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.14.self_attn.o_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.14.self_attn.q_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.14.self_attn.q_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.14.self_attn.v_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.14.self_attn.v_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.15.mlp.down_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.15.mlp.down_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.15.mlp.gate_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.15.mlp.gate_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.15.mlp.up_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.15.mlp.up_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.15.self_attn.k_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.15.self_attn.k_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.15.self_attn.o_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.15.self_attn.o_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.15.self_attn.q_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.15.self_attn.q_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.15.self_attn.v_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.15.self_attn.v_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.16.mlp.down_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.16.mlp.down_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.16.mlp.gate_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.16.mlp.gate_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.16.mlp.up_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.16.mlp.up_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.16.self_attn.k_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.16.self_attn.k_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.16.self_attn.o_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.16.self_attn.o_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.16.self_attn.q_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.16.self_attn.q_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.16.self_attn.v_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.16.self_attn.v_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.17.mlp.down_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.17.mlp.down_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.17.mlp.gate_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.17.mlp.gate_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.17.mlp.up_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.17.mlp.up_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.17.self_attn.k_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.17.self_attn.k_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.17.self_attn.o_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.17.self_attn.o_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.17.self_attn.q_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.17.self_attn.q_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.17.self_attn.v_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.17.self_attn.v_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.18.mlp.down_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.18.mlp.down_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.18.mlp.gate_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.18.mlp.gate_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.18.mlp.up_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.18.mlp.up_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.18.self_attn.k_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.18.self_attn.k_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.18.self_attn.o_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.18.self_attn.o_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.18.self_attn.q_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.18.self_attn.q_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.18.self_attn.v_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.18.self_attn.v_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.19.mlp.down_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.19.mlp.down_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.19.mlp.gate_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.19.mlp.gate_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.19.mlp.up_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.19.mlp.up_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.19.self_attn.k_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.19.self_attn.k_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.19.self_attn.o_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.19.self_attn.o_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.19.self_attn.q_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.19.self_attn.q_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.19.self_attn.v_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.19.self_attn.v_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.2.mlp.down_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.2.mlp.down_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.2.mlp.gate_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.2.mlp.gate_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.2.mlp.up_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.2.mlp.up_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.2.self_attn.k_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.2.self_attn.k_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.2.self_attn.o_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.2.self_attn.o_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.2.self_attn.q_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.2.self_attn.q_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.2.self_attn.v_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.2.self_attn.v_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.20.mlp.down_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.20.mlp.down_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.20.mlp.gate_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.20.mlp.gate_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.20.mlp.up_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.20.mlp.up_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.20.self_attn.k_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.20.self_attn.k_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.20.self_attn.o_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.20.self_attn.o_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.20.self_attn.q_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.20.self_attn.q_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.20.self_attn.v_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.20.self_attn.v_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.21.mlp.down_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.21.mlp.down_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.21.mlp.gate_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.21.mlp.gate_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.21.mlp.up_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.21.mlp.up_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.21.self_attn.k_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.21.self_attn.k_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.21.self_attn.o_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.21.self_attn.o_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.21.self_attn.q_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.21.self_attn.q_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.21.self_attn.v_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.21.self_attn.v_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.22.mlp.down_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.22.mlp.down_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.22.mlp.gate_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.22.mlp.gate_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.22.mlp.up_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.22.mlp.up_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.22.self_attn.k_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.22.self_attn.k_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.22.self_attn.o_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.22.self_attn.o_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.22.self_attn.q_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.22.self_attn.q_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.22.self_attn.v_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.22.self_attn.v_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.23.mlp.down_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.23.mlp.down_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.23.mlp.gate_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.23.mlp.gate_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.23.mlp.up_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.23.mlp.up_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.23.self_attn.k_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.23.self_attn.k_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.23.self_attn.o_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.23.self_attn.o_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.23.self_attn.q_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.23.self_attn.q_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.23.self_attn.v_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.23.self_attn.v_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.24.mlp.down_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.24.mlp.down_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.24.mlp.gate_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.24.mlp.gate_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.24.mlp.up_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.24.mlp.up_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.24.self_attn.k_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.24.self_attn.k_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.24.self_attn.o_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.24.self_attn.o_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.24.self_attn.q_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.24.self_attn.q_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.24.self_attn.v_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.24.self_attn.v_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.25.mlp.down_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.25.mlp.down_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.25.mlp.gate_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.25.mlp.gate_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.25.mlp.up_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.25.mlp.up_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.25.self_attn.k_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.25.self_attn.k_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.25.self_attn.o_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.25.self_attn.o_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.25.self_attn.q_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.25.self_attn.q_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.25.self_attn.v_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.25.self_attn.v_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.26.mlp.down_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.26.mlp.down_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.26.mlp.gate_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.26.mlp.gate_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.26.mlp.up_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.26.mlp.up_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.26.self_attn.k_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.26.self_attn.k_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.26.self_attn.o_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.26.self_attn.o_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.26.self_attn.q_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.26.self_attn.q_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.26.self_attn.v_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.26.self_attn.v_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.27.mlp.down_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.27.mlp.down_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.27.mlp.gate_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.27.mlp.gate_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.27.mlp.up_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.27.mlp.up_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.27.self_attn.k_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.27.self_attn.k_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.27.self_attn.o_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.27.self_attn.o_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.27.self_attn.q_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.27.self_attn.q_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.27.self_attn.v_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.27.self_attn.v_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.28.mlp.down_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.28.mlp.down_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.28.mlp.gate_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.28.mlp.gate_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.28.mlp.up_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.28.mlp.up_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.28.self_attn.k_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.28.self_attn.k_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.28.self_attn.o_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.28.self_attn.o_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.28.self_attn.q_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.28.self_attn.q_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.28.self_attn.v_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.28.self_attn.v_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.29.mlp.down_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.29.mlp.down_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.29.mlp.gate_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.29.mlp.gate_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.29.mlp.up_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.29.mlp.up_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.29.self_attn.k_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.29.self_attn.k_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.29.self_attn.o_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.29.self_attn.o_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.29.self_attn.q_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.29.self_attn.q_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.29.self_attn.v_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.29.self_attn.v_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.3.mlp.down_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.3.mlp.down_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.3.mlp.gate_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.3.mlp.gate_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.3.mlp.up_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.3.mlp.up_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.3.self_attn.k_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.3.self_attn.k_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.3.self_attn.o_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.3.self_attn.o_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.3.self_attn.q_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.3.self_attn.q_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.3.self_attn.v_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.3.self_attn.v_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.30.mlp.down_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.30.mlp.down_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.30.mlp.gate_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.30.mlp.gate_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.30.mlp.up_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.30.mlp.up_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.30.self_attn.k_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.30.self_attn.k_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.30.self_attn.o_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.30.self_attn.o_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.30.self_attn.q_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.30.self_attn.q_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.30.self_attn.v_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.30.self_attn.v_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.31.mlp.down_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.31.mlp.down_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.31.mlp.gate_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.31.mlp.gate_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.31.mlp.up_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.31.mlp.up_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.31.self_attn.k_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.31.self_attn.k_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.31.self_attn.o_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.31.self_attn.o_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.31.self_attn.q_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.31.self_attn.q_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.31.self_attn.v_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.31.self_attn.v_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.32.mlp.down_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.32.mlp.down_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.32.mlp.gate_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.32.mlp.gate_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.32.mlp.up_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.32.mlp.up_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.32.self_attn.k_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.32.self_attn.k_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.32.self_attn.o_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.32.self_attn.o_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.32.self_attn.q_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.32.self_attn.q_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.32.self_attn.v_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.32.self_attn.v_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.33.mlp.down_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.33.mlp.down_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.33.mlp.gate_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.33.mlp.gate_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.33.mlp.up_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.33.mlp.up_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.33.self_attn.k_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.33.self_attn.k_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.33.self_attn.o_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.33.self_attn.o_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.33.self_attn.q_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.33.self_attn.q_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.33.self_attn.v_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.33.self_attn.v_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.4.mlp.down_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.4.mlp.down_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.4.mlp.gate_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.4.mlp.gate_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.4.mlp.up_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.4.mlp.up_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.4.self_attn.k_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.4.self_attn.k_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.4.self_attn.o_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.4.self_attn.o_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.4.self_attn.q_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.4.self_attn.q_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.4.self_attn.v_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.4.self_attn.v_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.5.mlp.down_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.5.mlp.down_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.5.mlp.gate_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.5.mlp.gate_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.5.mlp.up_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.5.mlp.up_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.5.self_attn.k_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.5.self_attn.k_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.5.self_attn.o_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.5.self_attn.o_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.5.self_attn.q_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.5.self_attn.q_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.5.self_attn.v_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.5.self_attn.v_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.6.mlp.down_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.6.mlp.down_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.6.mlp.gate_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.6.mlp.gate_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.6.mlp.up_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.6.mlp.up_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.6.self_attn.k_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.6.self_attn.k_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.6.self_attn.o_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.6.self_attn.o_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.6.self_attn.q_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.6.self_attn.q_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.6.self_attn.v_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.6.self_attn.v_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.7.mlp.down_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.7.mlp.down_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.7.mlp.gate_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.7.mlp.gate_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.7.mlp.up_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.7.mlp.up_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.7.self_attn.k_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.7.self_attn.k_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.7.self_attn.o_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.7.self_attn.o_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.7.self_attn.q_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.7.self_attn.q_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.7.self_attn.v_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.7.self_attn.v_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.8.mlp.down_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.8.mlp.down_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.8.mlp.gate_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.8.mlp.gate_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.8.mlp.up_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.8.mlp.up_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.8.self_attn.k_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.8.self_attn.k_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.8.self_attn.o_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.8.self_attn.o_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.8.self_attn.q_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.8.self_attn.q_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.8.self_attn.v_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.8.self_attn.v_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.9.mlp.down_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.9.mlp.down_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.9.mlp.gate_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.9.mlp.gate_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.9.mlp.up_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.9.mlp.up_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.9.self_attn.k_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.9.self_attn.k_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.9.self_attn.o_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.9.self_attn.o_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.9.self_attn.q_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.9.self_attn.q_proj.lora_B.default.weight",
+      "base_model.model.model.language_model.layers.9.self_attn.v_proj.lora_A.default.weight",
+      "base_model.model.model.language_model.layers.9.self_attn.v_proj.lora_B.default.weight"
+    ],
+    "parent_load_receipt": {
+      "path": "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/ordinary_end_ce_l40s_run64_v1/step064",
+      "weight_sha256": "5fd11ba0d54c4888cb49d0014cbc43488709e1eccb61aa1a3feba810939cd328",
+      "config_sha256": "dc2352afdc28c81ded1934c1f472f3a33b9a61ecbb3c029a82594a176cf2c5b5",
+      "tensor_count": 476,
+      "native_tensor_bytes_equal": true,
+      "source_and_loaded_dtype": "float32",
+      "optimizer_state": "fresh AdamW; no momentum resumed"
+    },
+    "settings": {
+      "seed": 34020,
+      "lr": 2e-06,
+      "batch_target": 16,
+      "batch_end": 4,
+      "target_preservation": "none",
+      "target_weight": 0,
+      "target_prefix_tokens": 5,
+      "target_prefix_weight": 8,
+      "endpoint_weight": 1,
+      "beta": 0.1,
+      "optimizer": "freshAdamW betas.9/.999 eps1e-8 decay.01",
+      "gradient_clipping": false,
+      "ordinary_start_loss": false,
+      "clean_reference_loss": false
+    },
+    "frozen_teacher": {
+      "native_parent_load_receipt": null,
+      "guard": null,
+      "initial_raw_jsd": null,
+      "initial_abs_jsd_limit": null,
+      "fixed_probe_before": null
+    }
+  },
+  "completion": {
+    "steps": 32,
+    "saved": [
+      {
+        "step": 16,
+        "weight_sha256": "276e8114e6198ec1b74fd1f388c0c4e9719a1d8f34ca8cf4d6ec6488130a9aaa",
+        "config_sha256": "19f7e0966dda6d03fe9f45743e6bf2c5c2b67ca9b1c8f11d4467acad82346b9d",
+        "exact_native_fp32_reload": true
+      },
+      {
+        "step": 32,
+        "weight_sha256": "d4d372cae239eb7008550f2001d59a7d0e8e0224f3de4d5ae55e8195b5b8c6a5",
+        "config_sha256": "19f7e0966dda6d03fe9f45743e6bf2c5c2b67ca9b1c8f11d4467acad82346b9d",
+        "exact_native_fp32_reload": true
+      }
+    ],
+    "target_preservation": "none",
+    "frozen_teacher_probe_after": null,
+    "frozen_teacher_probe_unchanged": null,
+    "peak_allocated_bytes": 11253632000,
+    "peak_reserved_bytes": 14015266816
+  },
+  "traces": [
+    {
+      "step": 1,
+      "target_ids": [
+        "conditional24_boundary_target_8c948f8dc9a26ecdede5",
+        "conditional08_natural_train_4b83467f59569e8df397",
+        "conditional24_context_dfb3810416f0bed1dc87",
+        "conditional08_boundary_target_bd0a9941b43204f68086",
+        "conditional08_context_792a747999cb05b857e4",
+        "conditional24_context_c6a08b92c60ae00b4992",
+        "conditional08_context_09627280111f655c26e9",
+        "conditional24_context_3756d44a40a9854345fa",
+        "context_afdf42d71cd17e861ff3",
+        "context_0b462372ebc6ed5b69ae",
+        "direct_d07e23ed1320d06edd3c",
+        "context_29bc8895033daf885156",
+        "context_e257329b4b4973f4e1a2",
+        "natural_train_b9e37d42bdb8bd1f0d58",
+        "direct_956fe760916c3a40e3ac",
+        "direct_6c521af55b0322f0d155"
+      ],
+      "target_preservation": {
+        "mode": "none",
+        "raw_loss": 0.0,
+        "weighted_loss": 0.0,
+        "weight": 0,
+        "student_forward_sequences": 0,
+        "teacher_forward_sequences": 0,
+        "supervised_suffix_tokens": 0
+      },
+      "end": {
+        "mode": "ce",
+        "forward_sequences": 4,
+        "states": [
+          {
+            "id": "ordinary_repair_everyday_facts_00",
+            "visit": 0,
+            "banks": [
+              0,
+              1
+            ]
+          },
+          {
+            "id": "ordinary_repair_everyday_facts_03",
+            "visit": 0,
+            "banks": [
+              0,
+              1
+            ]
+          },
+          {
+            "id": "ordinary_repair_fiction_00",
+            "visit": 0,
+            "banks": [
+              0,
+              1
+            ]
+          },
+          {
+            "id": "ordinary_repair_everyday_facts_02",
+            "visit": 0,
+            "banks": [
+              0,
+              1
+            ]
+          }
+        ],
+        "chosen_tokens": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "chosen_logps": [
+          -0.00255555915646255,
+          -0.0075566633604466915,
+          -0.007226755376905203,
+          -1.825063705444336
+        ],
+        "margins": null
+      },
+      "health": {
+        "finite_losses": true,
+        "finite_gradients": true,
+        "gradient_tensors": 476,
+        "losses": {
+          "target": 0.0,
+          "end": 0.46060067415237427
+        }
+      },
+      "seconds": 1.130558723991271
+    },
+    {
+      "step": 2,
+      "target_ids": [
+        "conditional08_context_b40f111d257e6be769f4",
+        "conditional08_boundary_target_330e0131aae58515363e",
+        "conditional08_context_041933c2cbcc937919f2",
+        "conditional08_context_dd5e2490939555dba34d",
+        "conditional08_natural_train_b9b592095eacfe4272b4",
+        "conditional24_boundary_target_b3343c1a91c7bb41bb0f",
+        "conditional24_boundary_target_efca181597bdb3a41c7b",
+        "conditional24_context_06c1f15ba6a367904815",
+        "direct_5cf7d02ec0a3e3c432a9",
+        "context_a28b5af6684054754447",
+        "context_980c6a00e7745e41b41f",
+        "context_fb7d76814d02cf2ef901",
+        "direct_d284dba93a543fef6d6f",
+        "natural_train_dea2786d5464131e4833",
+        "direct_7026d0f47134481e03da",
+        "natural_train_338feaae25b4fe71d6ac"
+      ],
+      "target_preservation": {
+        "mode": "none",
+        "raw_loss": 0.0,
+        "weighted_loss": 0.0,
+        "weight": 0,
+        "student_forward_sequences": 0,
+        "teacher_forward_sequences": 0,
+        "supervised_suffix_tokens": 0
+      },
+      "end": {
+        "mode": "ce",
+        "forward_sequences": 4,
+        "states": [
+          {
+            "id": "ordinary_repair_everyday_facts_01",
+            "visit": 0,
+            "banks": [
+              0,
+              1
+            ]
+          },
+          {
+            "id": "ordinary_repair_fiction_04",
+            "visit": 0,
+            "banks": [
+              0,
+              1
+            ]
+          },
+          {
+            "id": "ordinary_repair_science_02",
+            "visit": 0,
+            "banks": [
+              0,
+              1
+            ]
+          },
+          {
+            "id": "ordinary_repair_science_03",
+            "visit": 0,
+            "banks": [
+              0,
+              1
+            ]
+          }
+        ],
+        "chosen_tokens": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "chosen_logps": [
+          -0.3113216459751129,
+          -0.0017189502250403166,
+          -0.5395623445510864,
+          -0.13930819928646088
+        ],
+        "margins": null
+      },
+      "health": {
+        "finite_losses": true,
+        "finite_gradients": true,
+        "gradient_tensors": 476,
+        "losses": {
+          "target": 0.0,
+          "end": 0.24797777831554413
+        }
+      },
+      "seconds": 0.4031621550093405
+    },
+    {
+      "step": 3,
+      "target_ids": [
+        "conditional24_natural_train_9a5803d471a7bc4edb04",
+        "conditional24_context_e95f91bbc654fb1bf08a",
+        "conditional24_context_9d332bba9c845e07317f",
+        "conditional24_boundary_target_b07f37ea7741695eb746",
+        "conditional08_boundary_target_c4d05436917436c6911d",
+        "conditional08_context_e7368f489fb3dbd8a857",
+        "conditional08_context_b8373b2dc721b4c55a94",
+        "conditional08_natural_train_53973d65ff95532bcfd5",
+        "direct_ff44d9d4fe2ac4c4ab5c",
+        "context_f93839090962e6de402d",
+        "natural_train_674670f0fc95aaa05c12",
+        "direct_93c1343d017457a6c878",
+        "context_64d810049081c40280f6",
+        "direct_2a958fed15eee3bddb0f",
+        "direct_554525eca0effa8d4696",
+        "direct_5907ed7292a289fe7b47"
+      ],
+      "target_preservation": {
+        "mode": "none",
+        "raw_loss": 0.0,
+        "weighted_loss": 0.0,
+        "weight": 0,
+        "student_forward_sequences": 0,
+        "teacher_forward_sequences": 0,
+        "supervised_suffix_tokens": 0
+      },
+      "end": {
+        "mode": "ce",
+        "forward_sequences": 4,
+        "states": [
+          {
+            "id": "ordinary_repair_pet_captions_03",
+            "visit": 0,
+            "banks": [
+              0,
+              1
+            ]
+          },
+          {
+            "id": "ordinary_repair_pet_captions_04",
+            "visit": 0,
+            "banks": [
+              0,
+              1
+            ]
+          },
+          {
+            "id": "ordinary_repair_pet_captions_03",
+            "visit": 1,
+            "banks": [
+              2,
+              3
+            ]
+          },
+          {
+            "id": "ordinary_repair_science_03",
+            "visit": 1,
+            "banks": [
+              2,
+              3
+            ]
+          }
+        ],
+        "chosen_tokens": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "chosen_logps": [
+          -8.864740371704102,
+          -0.0014732946874573827,
+          -8.864740371704102,
+          -0.11024322360754013
+        ],
+        "margins": null
+      },
+      "health": {
+        "finite_losses": true,
+        "finite_gradients": true,
+        "gradient_tensors": 476,
+        "losses": {
+          "target": 0.0,
+          "end": 4.460299491882324
+        }
+      },
+      "seconds": 0.2707447319990024
+    },
+    {
+      "step": 4,
+      "target_ids": [
+        "conditional24_context_e2ee96df8ddfd271b665",
+        "conditional08_natural_train_1c1e64ee39d2e4df5f0c",
+        "conditional24_boundary_target_5cd35753999ecd4d6e51",
+        "conditional08_context_218281f4ab0f0a6c2456",
+        "conditional24_context_d071ad4b613c4fd79c1c",
+        "conditional08_natural_train_c2d3481de0ece4069cc1",
+        "conditional24_natural_train_0df851e38cc3ec3830e0",
+        "conditional08_context_dad9448ef315345bd39c",
+        "boundary_target_f292214acd53ed839791",
+        "boundary_target_c9da866f566a181cc318",
+        "boundary_target_457f47305a47455215fe",
+        "natural_train_08e7c99015ccba95b219",
+        "natural_train_c8cffe64eefbc5c41f21",
+        "context_601eba956d488813d3b6",
+        "direct_1474cd37e75777314efc",
+        "natural_train_9ccc8015527a576d3bbd"
+      ],
+      "target_preservation": {
+        "mode": "none",
+        "raw_loss": 0.0,
+        "weighted_loss": 0.0,
+        "weight": 0,
+        "student_forward_sequences": 0,
+        "teacher_forward_sequences": 0,
+        "supervised_suffix_tokens": 0
+      },
+      "end": {
+        "mode": "ce",
+        "forward_sequences": 4,
+        "states": [
+          {
+            "id": "ordinary_repair_everyday_facts_01",
+            "visit": 1,
+            "banks": [
+              2,
+              3
+            ]
+          },
+          {
+            "id": "ordinary_repair_fiction_00",
+            "visit": 1,
+            "banks": [
+              2,
+              3
+            ]
+          },
+          {
+            "id": "ordinary_repair_everyday_facts_02",
+            "visit": 1,
+            "banks": [
+              2,
+              3
+            ]
+          },
+          {
+            "id": "ordinary_repair_fiction_04",
+            "visit": 1,
+            "banks": [
+              2,
+              3
+            ]
+          }
+        ],
+        "chosen_tokens": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "chosen_logps": [
+          -0.17668592929840088,
+          -0.0048832674510777,
+          -0.5074798464775085,
+          -0.001259249052964151
+        ],
+        "margins": null
+      },
+      "health": {
+        "finite_losses": true,
+        "finite_gradients": true,
+        "gradient_tensors": 476,
+        "losses": {
+          "target": 0.0,
+          "end": 0.17257706820964813
+        }
+      },
+      "seconds": 0.26914103102171794
+    },
+    {
+      "step": 5,
+      "target_ids": [
+        "conditional24_natural_train_37622aa76edd03d5558b",
+        "conditional08_context_7c7e2eae0d4c8842d959",
+        "conditional08_natural_train_1b6da6e4cebf95f166be",
+        "conditional24_boundary_target_8b395e41c473e6e63996",
+        "conditional08_natural_train_8d368f7566f5622d63f0",
+        "conditional24_boundary_target_02c4b50b1c4769e60b9a",
+        "conditional08_boundary_target_ce697698bc1137992baf",
+        "conditional24_context_5af2a16cf67d2e98ecb9",
+        "direct_19f4cb147512e66df3f0",
+        "direct_799d3451d89a11b1047b",
+        "natural_train_e6d2a61def281a88651f",
+        "context_0e4b0ccb84f2452ad017",
+        "direct_116743b9571f09ad5ce1",
+        "context_ac63cc9ccf4e084fd324",
+        "direct_0082f5cc3486135e0335",
+        "direct_c3d6af0735b0c4a72f2a"
+      ],
+      "target_preservation": {
+        "mode": "none",
+        "raw_loss": 0.0,
+        "weighted_loss": 0.0,
+        "weight": 0,
+        "student_forward_sequences": 0,
+        "teacher_forward_sequences": 0,
+        "supervised_suffix_tokens": 0
+      },
+      "end": {
+        "mode": "ce",
+        "forward_sequences": 4,
+        "states": [
+          {
+            "id": "ordinary_repair_pet_captions_04",
+            "visit": 1,
+            "banks": [
+              2,
+              3
+            ]
+          },
+          {
+            "id": "ordinary_repair_everyday_facts_00",
+            "visit": 1,
+            "banks": [
+              2,
+              3
+            ]
+          },
+          {
+            "id": "ordinary_repair_science_02",
+            "visit": 1,
+            "banks": [
+              2,
+              3
+            ]
+          },
+          {
+            "id": "ordinary_repair_everyday_facts_03",
+            "visit": 1,
+            "banks": [
+              2,
+              3
+            ]
+          }
+        ],
+        "chosen_tokens": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "chosen_logps": [
+          -0.0010879080509766936,
+          -0.00108159682713449,
+          -0.16679184138774872,
+          -0.00292801926843822
+        ],
+        "margins": null
+      },
+      "health": {
+        "finite_losses": true,
+        "finite_gradients": true,
+        "gradient_tensors": 476,
+        "losses": {
+          "target": 0.0,
+          "end": 0.04297234117984772
+        }
+      },
+      "seconds": 0.26629631395917386
+    },
+    {
+      "step": 6,
+      "target_ids": [
+        "conditional24_boundary_target_956568b523556a74a959",
+        "conditional08_boundary_target_846b3e6e90204d9a49e9",
+        "conditional08_context_33f88a46f22c3dd21a4d",
+        "conditional24_context_3685a55cfeb4d9da4fec",
+        "conditional24_context_c56679d56669274cb0a4",
+        "conditional08_natural_train_7d76d3e2a7038cefc908",
+        "conditional08_natural_train_0780a9e22d0871f9ef90",
+        "conditional08_context_69e87caccf7e9768afce",
+        "direct_9b6776a53548f7a5a8fc",
+        "direct_6f516410626714424b68",
+        "context_f2527e66294491f33ac8",
+        "context_2f154e54be061faea115",
+        "direct_bd1a76945b014e66e426",
+        "natural_train_4c4b3e88448cc1b7bf7e",
+        "direct_5175146eefecb85627e9",
+        "context_f94d8500de079a3f0825"
+      ],
+      "target_preservation": {
+        "mode": "none",
+        "raw_loss": 0.0,
+        "weighted_loss": 0.0,
+        "weight": 0,
+        "student_forward_sequences": 0,
+        "teacher_forward_sequences": 0,
+        "supervised_suffix_tokens": 0
+      },
+      "end": {
+        "mode": "ce",
+        "forward_sequences": 4,
+        "states": [
+          {
+            "id": "ordinary_repair_everyday_facts_02",
+            "visit": 2,
+            "banks": [
+              4,
+              5
+            ]
+          },
+          {
+            "id": "ordinary_repair_everyday_facts_01",
+            "visit": 2,
+            "banks": [
+              4,
+              5
+            ]
+          },
+          {
+            "id": "ordinary_repair_pet_captions_03",
+            "visit": 2,
+            "banks": [
+              4,
+              5
+            ]
+          },
+          {
+            "id": "ordinary_repair_everyday_facts_03",
+            "visit": 2,
+            "banks": [
+              4,
+              5
+            ]
+          }
+        ],
+        "chosen_tokens": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "chosen_logps": [
+          -0.23617294430732727,
+          -0.1041964516043663,
+          -6.968163967132568,
+          -0.0025601964443922043
+        ],
+        "margins": null
+      },
+      "health": {
+        "finite_losses": true,
+        "finite_gradients": true,
+        "gradient_tensors": 476,
+        "losses": {
+          "target": 0.0,
+          "end": 1.8277734518051147
+        }
+      },
+      "seconds": 0.26884394098306075
+    },
+    {
+      "step": 7,
+      "target_ids": [
+        "conditional08_boundary_target_987fd0e665ab64fc5ccf",
+        "conditional08_context_f849b951b9136a2aca5b",
+        "conditional08_natural_train_099a6b9d105fb9ccc2f4",
+        "conditional08_natural_train_1daa83fd337b4830bf4b",
+        "conditional08_context_ac63cc9ccf4e084fd324",
+        "conditional08_context_0c4a1e77485c41b1e375",
+        "conditional08_natural_train_de4a73becb96c6d3e6f4",
+        "conditional08_natural_train_75f28f966328a8539bff",
+        "direct_c78cb9906c962fc68f16",
+        "boundary_target_81eea2cf443b1ce89620",
+        "direct_b1ccc558ff398599f79d",
+        "direct_df7b04a001742fda062d",
+        "direct_35521bfaddcbd0e2e99c",
+        "direct_1b76529d60d50ce5592a",
+        "direct_115aa32c57ee9498fc2f",
+        "direct_fb8744d95121a9debd16"
+      ],
+      "target_preservation": {
+        "mode": "none",
+        "raw_loss": 0.0,
+        "weighted_loss": 0.0,
+        "weight": 0,
+        "student_forward_sequences": 0,
+        "teacher_forward_sequences": 0,
+        "supervised_suffix_tokens": 0
+      },
+      "end": {
+        "mode": "ce",
+        "forward_sequences": 4,
+        "states": [
+          {
+            "id": "ordinary_repair_pet_captions_04",
+            "visit": 2,
+            "banks": [
+              4,
+              5
+            ]
+          },
+          {
+            "id": "ordinary_repair_fiction_00",
+            "visit": 2,
+            "banks": [
+              4,
+              5
+            ]
+          },
+          {
+            "id": "ordinary_repair_fiction_04",
+            "visit": 2,
+            "banks": [
+              4,
+              5
+            ]
+          },
+          {
+            "id": "ordinary_repair_everyday_facts_00",
+            "visit": 2,
+            "banks": [
+              4,
+              5
+            ]
+          }
+        ],
+        "chosen_tokens": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "chosen_logps": [
+          -0.0008191090892069042,
+          -0.002821514382958412,
+          -0.0010258655529469252,
+          -0.0009220162755809724
+        ],
+        "margins": null
+      },
+      "health": {
+        "finite_losses": true,
+        "finite_gradients": true,
+        "gradient_tensors": 476,
+        "losses": {
+          "target": 0.0,
+          "end": 0.001397126354277134
+        }
+      },
+      "seconds": 0.2690559110487811
+    },
+    {
+      "step": 8,
+      "target_ids": [
+        "conditional08_context_59a0fb5ada4e292739cc",
+        "conditional24_boundary_target_7c7ba477f49322e85500",
+        "conditional08_context_1ae460aafd3b73a09425",
+        "conditional24_natural_train_4c886375c1acd5a2694c",
+        "conditional08_context_1bf23fa19da92ad094e1",
+        "conditional24_natural_train_537fd28462d5e1bb0910",
+        "conditional08_boundary_target_97cf445852604ee9b4c4",
+        "conditional08_natural_train_a83bdc8336760f9e3c3b",
+        "direct_6174658793ca5a8560d7",
+        "natural_train_245d8bdb6f17c68fbca4",
+        "direct_a424fc808c3b5e923a83",
+        "direct_98cce4fae5a1c776341f",
+        "direct_1e0b04a514ee28a38d6d",
+        "direct_14b0ea5d8532026a77f8",
+        "context_968eda512b636b237b1b",
+        "boundary_target_8acc812ceb709e4efb92"
+      ],
+      "target_preservation": {
+        "mode": "none",
+        "raw_loss": 0.0,
+        "weighted_loss": 0.0,
+        "weight": 0,
+        "student_forward_sequences": 0,
+        "teacher_forward_sequences": 0,
+        "supervised_suffix_tokens": 0
+      },
+      "end": {
+        "mode": "ce",
+        "forward_sequences": 4,
+        "states": [
+          {
+            "id": "ordinary_repair_science_02",
+            "visit": 2,
+            "banks": [
+              4,
+              5
+            ]
+          },
+          {
+            "id": "ordinary_repair_science_03",
+            "visit": 2,
+            "banks": [
+              4,
+              5
+            ]
+          },
+          {
+            "id": "ordinary_repair_science_02",
+            "visit": 3,
+            "banks": [
+              6,
+              7
+            ]
+          },
+          {
+            "id": "ordinary_repair_pet_captions_04",
+            "visit": 3,
+            "banks": [
+              6,
+              7
+            ]
+          }
+        ],
+        "chosen_tokens": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "chosen_logps": [
+          -0.058115217834711075,
+          -0.037060197442770004,
+          -0.058115217834711075,
+          -0.0007329876534640789
+        ],
+        "margins": null
+      },
+      "health": {
+        "finite_losses": true,
+        "finite_gradients": true,
+        "gradient_tensors": 476,
+        "losses": {
+          "target": 0.0,
+          "end": 0.038505904376506805
+        }
+      },
+      "seconds": 0.2689989060163498
+    },
+    {
+      "step": 9,
+      "target_ids": [
+        "conditional08_natural_train_6ebe147368cb6d95de24",
+        "conditional24_context_6eccd0073c4a3448d56f",
+        "conditional24_natural_train_b4d4c62846f25c0102c4",
+        "conditional24_natural_train_62a68e38c8da4f587795",
+        "conditional08_context_05bf167127a46f386d01",
+        "conditional08_natural_train_31a51caeeaf66f7b81ac",
+        "conditional08_context_58cb65677085afe9394d",
+        "conditional08_natural_train_2782824bc725477b37c3",
+        "direct_bd5d4b8ca6c54051a138",
+        "natural_train_651ee2cc6d080aea407e",
+        "direct_11e21b1b0ad2706b4200",
+        "boundary_target_68babc55516db0faa497",
+        "direct_2c88b1305882112b4561",
+        "direct_eb2f0a33b91f270cd248",
+        "context_d3544a5b85a464660089",
+        "direct_8f7e74318ed7cc1bdbc2"
+      ],
+      "target_preservation": {
+        "mode": "none",
+        "raw_loss": 0.0,
+        "weighted_loss": 0.0,
+        "weight": 0,
+        "student_forward_sequences": 0,
+        "teacher_forward_sequences": 0,
+        "supervised_suffix_tokens": 0
+      },
+      "end": {
+        "mode": "ce",
+        "forward_sequences": 4,
+        "states": [
+          {
+            "id": "ordinary_repair_pet_captions_03",
+            "visit": 3,
+            "banks": [
+              6,
+              7
+            ]
+          },
+          {
+            "id": "ordinary_repair_fiction_04",
+            "visit": 3,
+            "banks": [
+              6,
+              7
+            ]
+          },
+          {
+            "id": "ordinary_repair_everyday_facts_03",
+            "visit": 3,
+            "banks": [
+              6,
+              7
+            ]
+          },
+          {
+            "id": "ordinary_repair_everyday_facts_02",
+            "visit": 3,
+            "banks": [
+              6,
+              7
+            ]
+          }
+        ],
+        "chosen_tokens": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "chosen_logps": [
+          -5.194625377655029,
+          -0.0007830176036804914,
+          -0.0012522244360297918,
+          -0.10328204929828644
+        ],
+        "margins": null
+      },
+      "health": {
+        "finite_losses": true,
+        "finite_gradients": true,
+        "gradient_tensors": 476,
+        "losses": {
+          "target": 0.0,
+          "end": 1.3249856233596802
+        }
+      },
+      "seconds": 0.2697232239879668
+    },
+    {
+      "step": 10,
+      "target_ids": [
+        "conditional08_natural_train_ad42eb0dab1357a43276",
+        "conditional24_natural_train_e73c1a3ed267255297ac",
+        "conditional24_context_327f7ea59895a0f58ae6",
+        "conditional08_context_bc34ab619651ced58596",
+        "conditional08_natural_train_1ccff565ad089b75574d",
+        "conditional08_boundary_target_d315d0e73c8d7dd06073",
+        "conditional24_boundary_target_09588172e6def372651d",
+        "conditional08_context_67cd1c4501b273158c47",
+        "direct_43329cb6f48d6c4f08b3",
+        "context_5f9b82ef00824c1bfafa",
+        "context_1d9355d8748a0a2b764c",
+        "direct_7bd6940772638a4a0179",
+        "context_9a991946b47c73c2578f",
+        "boundary_target_6b28b6da878206d8a9a3",
+        "direct_ffff9514fe2df632cc4b",
+        "boundary_target_4412a00d34c673e96a47"
+      ],
+      "target_preservation": {
+        "mode": "none",
+        "raw_loss": 0.0,
+        "weighted_loss": 0.0,
+        "weight": 0,
+        "student_forward_sequences": 0,
+        "teacher_forward_sequences": 0,
+        "supervised_suffix_tokens": 0
+      },
+      "end": {
+        "mode": "ce",
+        "forward_sequences": 4,
+        "states": [
+          {
+            "id": "ordinary_repair_everyday_facts_00",
+            "visit": 3,
+            "banks": [
+              6,
+              7
+            ]
+          },
+          {
+            "id": "ordinary_repair_science_03",
+            "visit": 3,
+            "banks": [
+              6,
+              7
+            ]
+          },
+          {
+            "id": "ordinary_repair_everyday_facts_01",
+            "visit": 3,
+            "banks": [
+              6,
+              7
+            ]
+          },
+          {
+            "id": "ordinary_repair_fiction_00",
+            "visit": 3,
+            "banks": [
+              6,
+              7
+            ]
+          }
+        ],
+        "chosen_tokens": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "chosen_logps": [
+          -0.0005849081207998097,
+          -0.02908657118678093,
+          -0.036448314785957336,
+          -0.00225444626994431
+        ],
+        "margins": null
+      },
+      "health": {
+        "finite_losses": true,
+        "finite_gradients": true,
+        "gradient_tensors": 476,
+        "losses": {
+          "target": 0.0,
+          "end": 0.017093559727072716
+        }
+      },
+      "seconds": 0.26907879702048376
+    },
+    {
+      "step": 11,
+      "target_ids": [
+        "conditional24_context_145a8345419771bef00c",
+        "conditional08_context_a25e240230a75036d018",
+        "conditional24_natural_train_be4cb75845e95f3de388",
+        "conditional24_context_1ae460aafd3b73a09425",
+        "conditional24_natural_train_eb2d44db1e9cd9e43e5a",
+        "conditional24_natural_train_88c9e2fa71f8abc99469",
+        "conditional24_context_1e4013a12d08e4b11670",
+        "conditional08_natural_train_2ea4550d8ae60f578dfa",
+        "direct_0a3e9c54bb2fdf21639a",
+        "direct_e156ca922750fad99ff5",
+        "direct_7218be58d4295f8b90a7",
+        "boundary_target_50b47288e44cad8b951a",
+        "natural_train_9acaf973ff3f1bbb2cee",
+        "context_f8a6db9b5fd1b8d34274",
+        "context_61d15b38c35b39dda4ce",
+        "natural_train_1b6d1ad0014ad03d2d86"
+      ],
+      "target_preservation": {
+        "mode": "none",
+        "raw_loss": 0.0,
+        "weighted_loss": 0.0,
+        "weight": 0,
+        "student_forward_sequences": 0,
+        "teacher_forward_sequences": 0,
+        "supervised_suffix_tokens": 0
+      },
+      "end": {
+        "mode": "ce",
+        "forward_sequences": 4,
+        "states": [
+          {
+            "id": "ordinary_repair_everyday_facts_02",
+            "visit": 4,
+            "banks": [
+              0,
+              1
+            ]
+          },
+          {
+            "id": "ordinary_repair_fiction_00",
+            "visit": 4,
+            "banks": [
+              0,
+              1
+            ]
+          },
+          {
+            "id": "ordinary_repair_everyday_facts_00",
+            "visit": 4,
+            "banks": [
+              0,
+              1
+            ]
+          },
+          {
+            "id": "ordinary_repair_science_03",
+            "visit": 4,
+            "banks": [
+              0,
+              1
+            ]
+          }
+        ],
+        "chosen_tokens": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "chosen_logps": [
+          -0.0509333610534668,
+          -0.002048181602731347,
+          -0.0004781533498317003,
+          -0.022994421422481537
+        ],
+        "margins": null
+      },
+      "health": {
+        "finite_losses": true,
+        "finite_gradients": true,
+        "gradient_tensors": 476,
+        "losses": {
+          "target": 0.0,
+          "end": 0.019113529473543167
+        }
+      },
+      "seconds": 0.2717107799835503
+    },
+    {
+      "step": 12,
+      "target_ids": [
+        "conditional24_context_60c6d486b0895759e1c4",
+        "conditional08_natural_train_9c96b1a0d32511be776d",
+        "conditional08_natural_train_9bbe10d1ed57086172e0",
+        "conditional08_context_b8ba6e7b1ad4a072e7f9",
+        "conditional24_natural_train_d31b6d873844ca432329",
+        "conditional08_natural_train_7a93b0ce38b52d4ae1e6",
+        "conditional08_context_5e41fdc219194f74a80f",
+        "conditional08_natural_train_e2cecca01ccf3b5f0fa8",
+        "boundary_target_25f21fb91ba9073e8742",
+        "direct_184265f916dba8c18b65",
+        "boundary_target_fe769b3f0c041975b1a3",
+        "boundary_target_6d48199701691452b70d",
+        "direct_14a36d3240a2d625e398",
+        "direct_ca586ec4fb9451eaa397",
+        "context_5c671a168f18fad63e23",
+        "boundary_target_399d3e98212feee1b24b"
+      ],
+      "target_preservation": {
+        "mode": "none",
+        "raw_loss": 0.0,
+        "weighted_loss": 0.0,
+        "weight": 0,
+        "student_forward_sequences": 0,
+        "teacher_forward_sequences": 0,
+        "supervised_suffix_tokens": 0
+      },
+      "end": {
+        "mode": "ce",
+        "forward_sequences": 4,
+        "states": [
+          {
+            "id": "ordinary_repair_pet_captions_04",
+            "visit": 4,
+            "banks": [
+              0,
+              1
+            ]
+          },
+          {
+            "id": "ordinary_repair_pet_captions_03",
+            "visit": 4,
+            "banks": [
+              0,
+              1
+            ]
+          },
+          {
+            "id": "ordinary_repair_everyday_facts_03",
+            "visit": 4,
+            "banks": [
+              0,
+              1
+            ]
+          },
+          {
+            "id": "ordinary_repair_science_02",
+            "visit": 4,
+            "banks": [
+              0,
+              1
+            ]
+          }
+        ],
+        "chosen_tokens": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "chosen_logps": [
+          -0.000553335587028414,
+          -3.57283616065979,
+          -0.0008519833791069686,
+          -0.01924731396138668
+        ],
+        "margins": null
+      },
+      "health": {
+        "finite_losses": true,
+        "finite_gradients": true,
+        "gradient_tensors": 476,
+        "losses": {
+          "target": 0.0,
+          "end": 0.8983721733093262
+        }
+      },
+      "seconds": 0.273079417005647
+    },
+    {
+      "step": 13,
+      "target_ids": [
+        "conditional08_boundary_target_f6671723efd1f7936b6a",
+        "conditional24_natural_train_29e6bb4b99e789d9061c",
+        "conditional08_natural_train_8412426e5a04564d0842",
+        "conditional24_natural_train_73b30760fbde3d3aef71",
+        "conditional08_context_d93be8930d7048dfa3b8",
+        "conditional24_boundary_target_d89f24e72c38d57e0910",
+        "conditional08_natural_train_334b309d5d3f4a07668b",
+        "conditional24_context_57ec9f22f21124c98fe8",
+        "direct_cac542ce8237768d2044",
+        "natural_train_53973d65ff95532bcfd5",
+        "direct_4ece6c2dd05523043719",
+        "direct_c4853801bf38fb43cc0b",
+        "direct_94cf4abcf05a31366e01",
+        "natural_train_9ca8559152c3e4e174c6",
+        "direct_719f79ee6b858470c282",
+        "boundary_target_c690e097ebfcf4c0380d"
+      ],
+      "target_preservation": {
+        "mode": "none",
+        "raw_loss": 0.0,
+        "weighted_loss": 0.0,
+        "weight": 0,
+        "student_forward_sequences": 0,
+        "teacher_forward_sequences": 0,
+        "supervised_suffix_tokens": 0
+      },
+      "end": {
+        "mode": "ce",
+        "forward_sequences": 4,
+        "states": [
+          {
+            "id": "ordinary_repair_fiction_04",
+            "visit": 4,
+            "banks": [
+              0,
+              1
+            ]
+          },
+          {
+            "id": "ordinary_repair_everyday_facts_01",
+            "visit": 4,
+            "banks": [
+              0,
+              1
+            ]
+          },
+          {
+            "id": "ordinary_repair_everyday_facts_03",
+            "visit": 5,
+            "banks": [
+              2,
+              3
+            ]
+          },
+          {
+            "id": "ordinary_repair_everyday_facts_01",
+            "visit": 5,
+            "banks": [
+              2,
+              3
+            ]
+          }
+        ],
+        "chosen_tokens": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "chosen_logps": [
+          -0.0006389960180968046,
+          -0.02177334576845169,
+          -0.0006891497760079801,
+          -0.02177334576845169
+        ],
+        "margins": null
+      },
+      "health": {
+        "finite_losses": true,
+        "finite_gradients": true,
+        "gradient_tensors": 476,
+        "losses": {
+          "target": 0.0,
+          "end": 0.01121870893985033
+        }
+      },
+      "seconds": 0.2696925239870325
+    },
+    {
+      "step": 14,
+      "target_ids": [
+        "conditional24_natural_train_b4e0090bf5ff1e473dd2",
+        "conditional08_boundary_target_226fbf2fe42636b1f984",
+        "conditional24_natural_train_703545d81688d983d083",
+        "conditional08_natural_train_1b6d1ad0014ad03d2d86",
+        "conditional24_natural_train_dcd6eb79ed9f8fd0ef28",
+        "conditional08_context_8fce3d2104bf9e0bf3e8",
+        "conditional08_boundary_target_b2b8a8df315688560ac2",
+        "conditional24_boundary_target_dc63c82a8041c204bb89",
+        "context_4c97f3414f839ece20a8",
+        "direct_51d2dcea3d3c3aa37655",
+        "direct_336c232d420a2d257be7",
+        "context_7c4a5c3c345e7d164d84",
+        "direct_97ddde8a348002b71639",
+        "boundary_target_689c00c19d3802e29fd6",
+        "natural_train_51a401964842f78739c7",
+        "boundary_target_c852dc57d06bc77dae14"
+      ],
+      "target_preservation": {
+        "mode": "none",
+        "raw_loss": 0.0,
+        "weighted_loss": 0.0,
+        "weight": 0,
+        "student_forward_sequences": 0,
+        "teacher_forward_sequences": 0,
+        "supervised_suffix_tokens": 0
+      },
+      "end": {
+        "mode": "ce",
+        "forward_sequences": 4,
+        "states": [
+          {
+            "id": "ordinary_repair_everyday_facts_00",
+            "visit": 5,
+            "banks": [
+              2,
+              3
+            ]
+          },
+          {
+            "id": "ordinary_repair_everyday_facts_02",
+            "visit": 5,
+            "banks": [
+              2,
+              3
+            ]
+          },
+          {
+            "id": "ordinary_repair_science_02",
+            "visit": 5,
+            "banks": [
+              2,
+              3
+            ]
+          },
+          {
+            "id": "ordinary_repair_fiction_04",
+            "visit": 5,
+            "banks": [
+              2,
+              3
+            ]
+          }
+        ],
+        "chosen_tokens": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "chosen_logps": [
+          -0.00036900385748595,
+          -0.027962874621152878,
+          -0.011919583193957806,
+          -0.0006386386230587959
+        ],
+        "margins": null
+      },
+      "health": {
+        "finite_losses": true,
+        "finite_gradients": true,
+        "gradient_tensors": 476,
+        "losses": {
+          "target": 0.0,
+          "end": 0.010222524404525757
+        }
+      },
+      "seconds": 0.26892003003740683
+    },
+    {
+      "step": 15,
+      "target_ids": [
+        "conditional08_context_5b98d7747f99444c1b8f",
+        "conditional08_context_2d74e66d3e89ea77701a",
+        "conditional08_context_6fe9a08eb609aa19c78d",
+        "conditional08_context_5ee92556421f2eb397bd",
+        "conditional24_context_2122d6ca5ce48a76b673",
+        "conditional24_natural_train_e1258d51422f756c3065",
+        "conditional08_context_05bc0866a7a6f0044f1d",
+        "conditional24_context_af08e60614e969d3e0dc",
+        "context_db2ed1dc69415ee9c791",
+        "boundary_target_97cf445852604ee9b4c4",
+        "context_3170153ad5d3d03116f0",
+        "direct_c70a3f9048aea6257b19",
+        "context_76412a31fae38817cf22",
+        "direct_246839af9afa81d8d44c",
+        "direct_071c630b863945adec64",
+        "direct_e01e53661cec724f9b27"
+      ],
+      "target_preservation": {
+        "mode": "none",
+        "raw_loss": 0.0,
+        "weighted_loss": 0.0,
+        "weight": 0,
+        "student_forward_sequences": 0,
+        "teacher_forward_sequences": 0,
+        "supervised_suffix_tokens": 0
+      },
+      "end": {
+        "mode": "ce",
+        "forward_sequences": 4,
+        "states": [
+          {
+            "id": "ordinary_repair_fiction_00",
+            "visit": 5,
+            "banks": [
+              2,
+              3
+            ]
+          },
+          {
+            "id": "ordinary_repair_pet_captions_04",
+            "visit": 5,
+            "banks": [
+              2,
+              3
+            ]
+          },
+          {
+            "id": "ordinary_repair_science_03",
+            "visit": 5,
+            "banks": [
+              2,
+              3
+            ]
+          },
+          {
+            "id": "ordinary_repair_pet_captions_03",
+            "visit": 5,
+            "banks": [
+              2,
+              3
+            ]
+          }
+        ],
+        "chosen_tokens": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "chosen_logps": [
+          -0.0016988381976261735,
+          -0.00037674958002753556,
+          -0.012448116205632687,
+          -2.0521721839904785
+        ],
+        "margins": null
+      },
+      "health": {
+        "finite_losses": true,
+        "finite_gradients": true,
+        "gradient_tensors": 476,
+        "losses": {
+          "target": 0.0,
+          "end": 0.5166739821434021
+        }
+      },
+      "seconds": 0.2691118250368163
+    },
+    {
+      "step": 16,
+      "target_ids": [
+        "conditional24_natural_train_534ec1498cb8413aa249",
+        "conditional08_context_d69a07a6de08291ddce9",
+        "conditional08_boundary_target_5e129af70a4d94837fbd",
+        "conditional08_boundary_target_621091988616fe2daa58",
+        "conditional24_context_f395511d7fe6cd640256",
+        "conditional24_context_5255b5db0cfa8eb7d560",
+        "conditional24_context_8d9fa8605a3bd77f4a79",
+        "conditional24_boundary_target_96db77c0f01106c07ea0",
+        "direct_0cdc0102b3fb49408206",
+        "direct_e459741412a4d21e7515",
+        "natural_train_7f2723fffea02b867cc6",
+        "direct_a819f791016e1edb0eb4",
+        "boundary_target_8b395e41c473e6e63996",
+        "direct_15eb72431505766c8004",
+        "direct_cfb92cd03f5bbb7c4e0f",
+        "natural_train_2318d6d81507aaf3b8b2"
+      ],
+      "target_preservation": {
+        "mode": "none",
+        "raw_loss": 0.0,
+        "weighted_loss": 0.0,
+        "weight": 0,
+        "student_forward_sequences": 0,
+        "teacher_forward_sequences": 0,
+        "supervised_suffix_tokens": 0
+      },
+      "end": {
+        "mode": "ce",
+        "forward_sequences": 4,
+        "states": [
+          {
+            "id": "ordinary_repair_science_03",
+            "visit": 6,
+            "banks": [
+              4,
+              5
+            ]
+          },
+          {
+            "id": "ordinary_repair_everyday_facts_02",
+            "visit": 6,
+            "banks": [
+              4,
+              5
+            ]
+          },
+          {
+            "id": "ordinary_repair_everyday_facts_03",
+            "visit": 6,
+            "banks": [
+              4,
+              5
+            ]
+          },
+          {
+            "id": "ordinary_repair_pet_captions_04",
+            "visit": 6,
+            "banks": [
+              4,
+              5
+            ]
+          }
+        ],
+        "chosen_tokens": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "chosen_logps": [
+          -0.009718485176563263,
+          -0.01709781214594841,
+          -0.00037579628406092525,
+          -0.0003197873884346336
+        ],
+        "margins": null
+      },
+      "health": {
+        "finite_losses": true,
+        "finite_gradients": true,
+        "gradient_tensors": 476,
+        "losses": {
+          "target": 0.0,
+          "end": 0.006877970416098833
+        }
+      },
+      "seconds": 0.26948018703842536
+    },
+    {
+      "step": 17,
+      "target_ids": [
+        "conditional24_boundary_target_5bfcecd7815a6298062e",
+        "conditional08_boundary_target_457f47305a47455215fe",
+        "conditional08_boundary_target_3d6f361a925453af33cd",
+        "conditional24_boundary_target_1527b6e1db8ac6b823d0",
+        "conditional08_context_77c4ec98e9ec04844a76",
+        "conditional08_context_ab27473fea7c6d9fa34c",
+        "conditional08_natural_train_9170f51f65618f34eced",
+        "conditional08_boundary_target_127d615c4cb6ce075383",
+        "boundary_target_545caa840c2fd975a452",
+        "natural_train_52e77b469f4b3713c47c",
+        "direct_2665d48a86d6ea75474e",
+        "context_8579eb4e388ca67d517f",
+        "context_174c394e08ec192d8919",
+        "direct_4fabf0f679c3be0bce0d",
+        "context_4c2a563cc2f94d04d5ef",
+        "direct_f7b2e1b200bccefcc909"
+      ],
+      "target_preservation": {
+        "mode": "none",
+        "raw_loss": 0.0,
+        "weighted_loss": 0.0,
+        "weight": 0,
+        "student_forward_sequences": 0,
+        "teacher_forward_sequences": 0,
+        "supervised_suffix_tokens": 0
+      },
+      "end": {
+        "mode": "ce",
+        "forward_sequences": 4,
+        "states": [
+          {
+            "id": "ordinary_repair_fiction_00",
+            "visit": 6,
+            "banks": [
+              4,
+              5
+            ]
+          },
+          {
+            "id": "ordinary_repair_fiction_04",
+            "visit": 6,
+            "banks": [
+              4,
+              5
+            ]
+          },
+          {
+            "id": "ordinary_repair_everyday_facts_00",
+            "visit": 6,
+            "banks": [
+              4,
+              5
+            ]
+          },
+          {
+            "id": "ordinary_repair_everyday_facts_01",
+            "visit": 6,
+            "banks": [
+              4,
+              5
+            ]
+          }
+        ],
+        "chosen_tokens": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "chosen_logps": [
+          -0.0015186455566436052,
+          -0.00047791501856409013,
+          -0.0002791491860989481,
+          -0.00978388637304306
+        ],
+        "margins": null
+      },
+      "health": {
+        "finite_losses": true,
+        "finite_gradients": true,
+        "gradient_tensors": 476,
+        "losses": {
+          "target": 0.0,
+          "end": 0.003014898858964443
+        }
+      },
+      "seconds": 0.3986430079676211
+    },
+    {
+      "step": 18,
+      "target_ids": [
+        "conditional24_natural_train_b8d7a90d5d1991e2e76a",
+        "conditional08_context_b3defca6bea8c55a762c",
+        "conditional24_context_7ff5a9f25354ab724794",
+        "conditional08_context_db2ed1dc69415ee9c791",
+        "conditional08_context_fb7d76814d02cf2ef901",
+        "conditional24_context_9d9b6f4ba4536759e7ad",
+        "conditional08_context_5d57510ed504da01293a",
+        "conditional24_natural_train_c08afc7b59efe2af7626",
+        "boundary_target_cd8c291f77935e92ada3",
+        "natural_train_1c1e64ee39d2e4df5f0c",
+        "direct_6a219baf44fbe0047e6e",
+        "boundary_target_43aabb6b5c80a7e443be",
+        "direct_888703e4ca30f5120eed",
+        "context_2d3565c2f1a9d1c18074",
+        "natural_train_fb715460ddf143562eff",
+        "direct_88c127f301d623499bfc"
+      ],
+      "target_preservation": {
+        "mode": "none",
+        "raw_loss": 0.0,
+        "weighted_loss": 0.0,
+        "weight": 0,
+        "student_forward_sequences": 0,
+        "teacher_forward_sequences": 0,
+        "supervised_suffix_tokens": 0
+      },
+      "end": {
+        "mode": "ce",
+        "forward_sequences": 4,
+        "states": [
+          {
+            "id": "ordinary_repair_pet_captions_03",
+            "visit": 6,
+            "banks": [
+              4,
+              5
+            ]
+          },
+          {
+            "id": "ordinary_repair_science_02",
+            "visit": 6,
+            "banks": [
+              4,
+              5
+            ]
+          },
+          {
+            "id": "ordinary_repair_fiction_04",
+            "visit": 7,
+            "banks": [
+              6,
+              7
+            ]
+          },
+          {
+            "id": "ordinary_repair_pet_captions_03",
+            "visit": 7,
+            "banks": [
+              6,
+              7
+            ]
+          }
+        ],
+        "chosen_tokens": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "chosen_logps": [
+          -0.7750802636146545,
+          -0.005735369399189949,
+          -0.00047362555051222444,
+          -0.7750802636146545
+        ],
+        "margins": null
+      },
+      "health": {
+        "finite_losses": true,
+        "finite_gradients": true,
+        "gradient_tensors": 476,
+        "losses": {
+          "target": 0.0,
+          "end": 0.3890923857688904
+        }
+      },
+      "seconds": 0.26967939001042396
+    },
+    {
+      "step": 19,
+      "target_ids": [
+        "conditional08_context_3685a55cfeb4d9da4fec",
+        "conditional08_context_6bb2b017f83f8ba438c2",
+        "conditional24_context_c74d7f52eaedb0a4352b",
+        "conditional24_context_b9e5a0e24a62d1248f34",
+        "conditional24_natural_train_a83bdc8336760f9e3c3b",
+        "conditional08_boundary_target_4ab60e211e1fb2938b24",
+        "conditional08_natural_train_80627517a2ee312b3987",
+        "conditional24_context_58cb65677085afe9394d",
+        "context_e618ca04f34ffccd0a6c",
+        "context_dd2a42bfa57b6294cdc4",
+        "context_3685a55cfeb4d9da4fec",
+        "direct_a2fca4559aab88d92865",
+        "natural_train_f00754383e3f9ad34e59",
+        "natural_train_979de24916b987c7e904",
+        "direct_8ab9abc63ef4557996ae",
+        "context_d947a3a66c99179c528d"
+      ],
+      "target_preservation": {
+        "mode": "none",
+        "raw_loss": 0.0,
+        "weighted_loss": 0.0,
+        "weight": 0,
+        "student_forward_sequences": 0,
+        "teacher_forward_sequences": 0,
+        "supervised_suffix_tokens": 0
+      },
+      "end": {
+        "mode": "ce",
+        "forward_sequences": 4,
+        "states": [
+          {
+            "id": "ordinary_repair_fiction_00",
+            "visit": 7,
+            "banks": [
+              6,
+              7
+            ]
+          },
+          {
+            "id": "ordinary_repair_science_02",
+            "visit": 7,
+            "banks": [
+              6,
+              7
+            ]
+          },
+          {
+            "id": "ordinary_repair_everyday_facts_03",
+            "visit": 7,
+            "banks": [
+              6,
+              7
+            ]
+          },
+          {
+            "id": "ordinary_repair_science_03",
+            "visit": 7,
+            "banks": [
+              6,
+              7
+            ]
+          }
+        ],
+        "chosen_tokens": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "chosen_logps": [
+          -0.0011406589765101671,
+          -0.0039986190386116505,
+          -0.0003013156820088625,
+          -0.005942652467638254
+        ],
+        "margins": null
+      },
+      "health": {
+        "finite_losses": true,
+        "finite_gradients": true,
+        "gradient_tensors": 476,
+        "losses": {
+          "target": 0.0,
+          "end": 0.0028458116576075554
+        }
+      },
+      "seconds": 0.26970453502144665
+    },
+    {
+      "step": 20,
+      "target_ids": [
+        "conditional08_context_d87fc1eef721d3d43715",
+        "conditional24_boundary_target_e5d7aea589adb2fe81eb",
+        "conditional24_context_407d8b11f05b65c749d5",
+        "conditional08_context_40cd5ea020ff254ab249",
+        "conditional24_context_7a5f98e4572dd6e576cd",
+        "conditional08_context_c17c9e95e45882765b21",
+        "conditional08_context_fc44e7ee51362596f350",
+        "conditional08_natural_train_b646630da6a487a77231",
+        "direct_8b71b7d1dff6fa66f08c",
+        "direct_afe46121eeb938d9605e",
+        "direct_349e6726cda99aee22b6",
+        "context_041933c2cbcc937919f2",
+        "context_1216a52ae0f82f69a1a3",
+        "direct_2087f788cd91beff78aa",
+        "direct_b7eb378465922dbb9adf",
+        "natural_train_edacdf8aff88d957e746"
+      ],
+      "target_preservation": {
+        "mode": "none",
+        "raw_loss": 0.0,
+        "weighted_loss": 0.0,
+        "weight": 0,
+        "student_forward_sequences": 0,
+        "teacher_forward_sequences": 0,
+        "supervised_suffix_tokens": 0
+      },
+      "end": {
+        "mode": "ce",
+        "forward_sequences": 4,
+        "states": [
+          {
+            "id": "ordinary_repair_everyday_facts_02",
+            "visit": 7,
+            "banks": [
+              6,
+              7
+            ]
+          },
+          {
+            "id": "ordinary_repair_pet_captions_04",
+            "visit": 7,
+            "banks": [
+              6,
+              7
+            ]
+          },
+          {
+            "id": "ordinary_repair_everyday_facts_00",
+            "visit": 7,
+            "banks": [
+              6,
+              7
+            ]
+          },
+          {
+            "id": "ordinary_repair_everyday_facts_01",
+            "visit": 7,
+            "banks": [
+              6,
+              7
+            ]
+          }
+        ],
+        "chosen_tokens": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "chosen_logps": [
+          -0.008065984584391117,
+          -0.00022682955022901297,
+          -0.00018273114983458072,
+          -0.00665069418027997
+        ],
+        "margins": null
+      },
+      "health": {
+        "finite_losses": true,
+        "finite_gradients": true,
+        "gradient_tensors": 476,
+        "losses": {
+          "target": 0.0,
+          "end": 0.0037815598770976067
+        }
+      },
+      "seconds": 0.26412347599398345
+    },
+    {
+      "step": 21,
+      "target_ids": [
+        "conditional08_natural_train_e7d80359436381aebbb0",
+        "conditional24_boundary_target_ad636c179d3c88c4e89b",
+        "conditional08_context_4c97f3414f839ece20a8",
+        "conditional08_context_2be4c5e47c071b2705fe",
+        "conditional24_context_8e89a0bde6f156b397fd",
+        "conditional08_context_46faef767d1c6f742dc5",
+        "conditional08_context_e611f918a0ad84203506",
+        "conditional08_boundary_target_545caa840c2fd975a452",
+        "context_1dc39f018d350127248b",
+        "context_494d7c7dd2f1cabe4ff4",
+        "natural_train_7d76d3e2a7038cefc908",
+        "direct_6406eeb4a2aefc908fa3",
+        "direct_8eb4aed58d735d7b502c",
+        "direct_e118401ecfe87126dcdd",
+        "natural_train_19271524963e52b83bbc",
+        "context_f8c3e3e1c5cf8269aaa6"
+      ],
+      "target_preservation": {
+        "mode": "none",
+        "raw_loss": 0.0,
+        "weighted_loss": 0.0,
+        "weight": 0,
+        "student_forward_sequences": 0,
+        "teacher_forward_sequences": 0,
+        "supervised_suffix_tokens": 0
+      },
+      "end": {
+        "mode": "ce",
+        "forward_sequences": 4,
+        "states": [
+          {
+            "id": "ordinary_repair_everyday_facts_02",
+            "visit": 8,
+            "banks": [
+              0,
+              1
+            ]
+          },
+          {
+            "id": "ordinary_repair_pet_captions_03",
+            "visit": 8,
+            "banks": [
+              0,
+              1
+            ]
+          },
+          {
+            "id": "ordinary_repair_everyday_facts_00",
+            "visit": 8,
+            "banks": [
+              0,
+              1
+            ]
+          },
+          {
+            "id": "ordinary_repair_fiction_04",
+            "visit": 8,
+            "banks": [
+              0,
+              1
+            ]
+          }
+        ],
+        "chosen_tokens": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "chosen_logps": [
+          -0.008777014911174774,
+          -0.25767990946769714,
+          -0.00019167017308063805,
+          -0.0004033228906337172
+        ],
+        "margins": null
+      },
+      "health": {
+        "finite_losses": true,
+        "finite_gradients": true,
+        "gradient_tensors": 476,
+        "losses": {
+          "target": 0.0,
+          "end": 0.06676297634840012
+        }
+      },
+      "seconds": 0.26983152801403776
+    },
+    {
+      "step": 22,
+      "target_ids": [
+        "conditional24_natural_train_f99593b8f2ef91401886",
+        "conditional24_natural_train_19271524963e52b83bbc",
+        "conditional08_context_9e5f7b3dc69266c27d06",
+        "conditional24_context_f9014bf3f345199dbd1d",
+        "conditional08_boundary_target_44690f0fefdbca6274d6",
+        "conditional24_boundary_target_fa035a60231562d95b5f",
+        "conditional24_natural_train_a483b8f59e9dcce5c96b",
+        "conditional08_natural_train_e1a1fb5bca6f297e8e11",
+        "natural_train_73b30760fbde3d3aef71",
+        "context_acfaa3b8ffc71f495e1a",
+        "direct_aa7c1267c00bcf6c5aca",
+        "direct_08cb80aeadc236e2b427",
+        "context_05bf167127a46f386d01",
+        "direct_429ca0ee72e4bb8eb289",
+        "direct_4cc96f95deb60109fa3c",
+        "direct_cab78a86c01395bbab9f"
+      ],
+      "target_preservation": {
+        "mode": "none",
+        "raw_loss": 0.0,
+        "weighted_loss": 0.0,
+        "weight": 0,
+        "student_forward_sequences": 0,
+        "teacher_forward_sequences": 0,
+        "supervised_suffix_tokens": 0
+      },
+      "end": {
+        "mode": "ce",
+        "forward_sequences": 4,
+        "states": [
+          {
+            "id": "ordinary_repair_science_03",
+            "visit": 8,
+            "banks": [
+              0,
+              1
+            ]
+          },
+          {
+            "id": "ordinary_repair_science_02",
+            "visit": 8,
+            "banks": [
+              0,
+              1
+            ]
+          },
+          {
+            "id": "ordinary_repair_everyday_facts_01",
+            "visit": 8,
+            "banks": [
+              0,
+              1
+            ]
+          },
+          {
+            "id": "ordinary_repair_fiction_00",
+            "visit": 8,
+            "banks": [
+              0,
+              1
+            ]
+          }
+        ],
+        "chosen_tokens": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "chosen_logps": [
+          -0.004705190192908049,
+          -0.0027998790610581636,
+          -0.005401421803981066,
+          -0.0008985534077510238
+        ],
+        "margins": null
+      },
+      "health": {
+        "finite_losses": true,
+        "finite_gradients": true,
+        "gradient_tensors": 476,
+        "losses": {
+          "target": 0.0,
+          "end": 0.003451261203736067
+        }
+      },
+      "seconds": 0.270324217970483
+    },
+    {
+      "step": 23,
+      "target_ids": [
+        "conditional08_context_60c6d486b0895759e1c4",
+        "conditional08_context_41ba60e28e182e02a058",
+        "conditional24_context_f7e6a8980d8767013cda",
+        "conditional24_context_58018b5a12027f7db785",
+        "conditional24_boundary_target_3abd784b19aeb31e70c0",
+        "conditional24_context_45d3be8c5cbb1f453014",
+        "conditional24_context_d87fc1eef721d3d43715",
+        "conditional24_boundary_target_3327778df57db61998f0",
+        "boundary_target_ad9ecf762cf9009e7673",
+        "direct_d7544475b0a85302b57c",
+        "boundary_target_9462ae58f02b976ad0fb",
+        "context_5d57510ed504da01293a",
+        "context_f7e6a8980d8767013cda",
+        "context_8d9fa8605a3bd77f4a79",
+        "natural_train_e9ced5577db3e4ea2603",
+        "context_3bc4056e8d4d456982c0"
+      ],
+      "target_preservation": {
+        "mode": "none",
+        "raw_loss": 0.0,
+        "weighted_loss": 0.0,
+        "weight": 0,
+        "student_forward_sequences": 0,
+        "teacher_forward_sequences": 0,
+        "supervised_suffix_tokens": 0
+      },
+      "end": {
+        "mode": "ce",
+        "forward_sequences": 4,
+        "states": [
+          {
+            "id": "ordinary_repair_pet_captions_04",
+            "visit": 8,
+            "banks": [
+              0,
+              1
+            ]
+          },
+          {
+            "id": "ordinary_repair_everyday_facts_03",
+            "visit": 8,
+            "banks": [
+              0,
+              1
+            ]
+          },
+          {
+            "id": "ordinary_repair_everyday_facts_01",
+            "visit": 9,
+            "banks": [
+              2,
+              3
+            ]
+          },
+          {
+            "id": "ordinary_repair_everyday_facts_03",
+            "visit": 9,
+            "banks": [
+              2,
+              3
+            ]
+          }
+        ],
+        "chosen_tokens": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "chosen_logps": [
+          -0.000198821333469823,
+          -0.00020954797219019383,
+          -0.0046218945644795895,
+          -0.00020954797219019383
+        ],
+        "margins": null
+      },
+      "health": {
+        "finite_losses": true,
+        "finite_gradients": true,
+        "gradient_tensors": 476,
+        "losses": {
+          "target": 0.0,
+          "end": 0.0013099530478939414
+        }
+      },
+      "seconds": 0.2641980180051178
+    },
+    {
+      "step": 24,
+      "target_ids": [
+        "conditional24_natural_train_71768a2c004111602510",
+        "conditional08_context_96504b1b42ab36f60bcf",
+        "conditional08_natural_train_eb2d44db1e9cd9e43e5a",
+        "conditional24_context_96504b1b42ab36f60bcf",
+        "conditional08_natural_train_978c499d52ed6a4acda1",
+        "conditional24_natural_train_80627517a2ee312b3987",
+        "conditional08_context_7e0334ed598178766f17",
+        "conditional08_context_af08e60614e969d3e0dc",
+        "context_6c2bb7004e1805ace3c2",
+        "boundary_target_112516d47f6ef5aa6d45",
+        "context_a20486f1e0df2488d451",
+        "direct_4bd60adda90a9fe2ff6a",
+        "natural_train_fda6884b2a2416d20f1e",
+        "context_a099de9755455cbfc7a1",
+        "context_228bef58a696824baabe",
+        "natural_train_c3465847142fc44bb6d5"
+      ],
+      "target_preservation": {
+        "mode": "none",
+        "raw_loss": 0.0,
+        "weighted_loss": 0.0,
+        "weight": 0,
+        "student_forward_sequences": 0,
+        "teacher_forward_sequences": 0,
+        "supervised_suffix_tokens": 0
+      },
+      "end": {
+        "mode": "ce",
+        "forward_sequences": 4,
+        "states": [
+          {
+            "id": "ordinary_repair_fiction_04",
+            "visit": 9,
+            "banks": [
+              2,
+              3
+            ]
+          },
+          {
+            "id": "ordinary_repair_pet_captions_04",
+            "visit": 9,
+            "banks": [
+              2,
+              3
+            ]
+          },
+          {
+            "id": "ordinary_repair_science_02",
+            "visit": 9,
+            "banks": [
+              2,
+              3
+            ]
+          },
+          {
+            "id": "ordinary_repair_everyday_facts_02",
+            "visit": 9,
+            "banks": [
+              2,
+              3
+            ]
+          }
+        ],
+        "chosen_tokens": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "chosen_logps": [
+          -0.0003280101518612355,
+          -0.0001802282058633864,
+          -0.0019306369358673692,
+          -0.005347590893507004
+        ],
+        "margins": null
+      },
+      "health": {
+        "finite_losses": true,
+        "finite_gradients": true,
+        "gradient_tensors": 476,
+        "losses": {
+          "target": 0.0,
+          "end": 0.0019466164521872997
+        }
+      },
+      "seconds": 0.2689418629743159
+    },
+    {
+      "step": 25,
+      "target_ids": [
+        "conditional24_natural_train_7fa126a488178340bf21",
+        "conditional24_natural_train_3a1cc5743de057f390f7",
+        "conditional24_context_aac04fdc4dfeb352261c",
+        "conditional08_natural_train_6a3599239264e12eaf2e",
+        "conditional24_boundary_target_c4b95de9b1d4459ca080",
+        "conditional08_context_3f58e0653ef46b32419c",
+        "conditional24_context_006c908e84e9f248cfad",
+        "conditional08_boundary_target_2eb94f69e3472824bf91",
+        "natural_train_3bca5af4f6d380231aae",
+        "context_2b2b65d1ed25bb683345",
+        "context_e76a1565904182db0dcc",
+        "boundary_target_5cd52e8e7bac05f899b8",
+        "direct_3437825dd926ad4087fe",
+        "context_7df017f84843493b53ab",
+        "direct_f7b984cccabc5dcc735e",
+        "direct_21fd828f6b439c694484"
+      ],
+      "target_preservation": {
+        "mode": "none",
+        "raw_loss": 0.0,
+        "weighted_loss": 0.0,
+        "weight": 0,
+        "student_forward_sequences": 0,
+        "teacher_forward_sequences": 0,
+        "supervised_suffix_tokens": 0
+      },
+      "end": {
+        "mode": "ce",
+        "forward_sequences": 4,
+        "states": [
+          {
+            "id": "ordinary_repair_fiction_00",
+            "visit": 9,
+            "banks": [
+              2,
+              3
+            ]
+          },
+          {
+            "id": "ordinary_repair_science_03",
+            "visit": 9,
+            "banks": [
+              2,
+              3
+            ]
+          },
+          {
+            "id": "ordinary_repair_pet_captions_03",
+            "visit": 9,
+            "banks": [
+              2,
+              3
+            ]
+          },
+          {
+            "id": "ordinary_repair_everyday_facts_00",
+            "visit": 9,
+            "banks": [
+              2,
+              3
+            ]
+          }
+        ],
+        "chosen_tokens": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "chosen_logps": [
+          -0.0008270895341411233,
+          -0.003639504313468933,
+          -0.07178883254528046,
+          -0.00012933371181134135
+        ],
+        "margins": null
+      },
+      "health": {
+        "finite_losses": true,
+        "finite_gradients": true,
+        "gradient_tensors": 476,
+        "losses": {
+          "target": 0.0,
+          "end": 0.019096190109848976
+        }
+      },
+      "seconds": 0.26940657501108944
+    },
+    {
+      "step": 26,
+      "target_ids": [
+        "conditional08_natural_train_393e665dabd6cc897201",
+        "conditional08_context_7a5f98e4572dd6e576cd",
+        "conditional08_context_f8a6db9b5fd1b8d34274",
+        "conditional24_context_75edfce811d89f7aae45",
+        "conditional08_context_cd292b2230da9cafa647",
+        "conditional08_natural_train_08e7c99015ccba95b219",
+        "conditional08_context_054cbd3f09c0e709d40a",
+        "conditional24_boundary_target_dea0b351ef2553cde202",
+        "direct_2205d93b2ce3e9c7ec2b",
+        "direct_5b54eca53723fa40e3ba",
+        "context_9ab26cbfef11131ffaf4",
+        "boundary_target_d6e73ea1f40cf61b91db",
+        "direct_23080b51e50da7a99e8c",
+        "boundary_target_681f39bc22d1c6edf866",
+        "natural_train_b0cdd38d50ce7581e3e1",
+        "natural_train_7a93b0ce38b52d4ae1e6"
+      ],
+      "target_preservation": {
+        "mode": "none",
+        "raw_loss": 0.0,
+        "weighted_loss": 0.0,
+        "weight": 0,
+        "student_forward_sequences": 0,
+        "teacher_forward_sequences": 0,
+        "supervised_suffix_tokens": 0
+      },
+      "end": {
+        "mode": "ce",
+        "forward_sequences": 4,
+        "states": [
+          {
+            "id": "ordinary_repair_pet_captions_04",
+            "visit": 10,
+            "banks": [
+              4,
+              5
+            ]
+          },
+          {
+            "id": "ordinary_repair_everyday_facts_00",
+            "visit": 10,
+            "banks": [
+              4,
+              5
+            ]
+          },
+          {
+            "id": "ordinary_repair_pet_captions_03",
+            "visit": 10,
+            "banks": [
+              4,
+              5
+            ]
+          },
+          {
+            "id": "ordinary_repair_everyday_facts_03",
+            "visit": 10,
+            "banks": [
+              4,
+              5
+            ]
+          }
+        ],
+        "chosen_tokens": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "chosen_logps": [
+          -0.0001691436773398891,
+          -0.00013100242358632386,
+          -0.05641850084066391,
+          -0.00016735584358684719
+        ],
+        "margins": null
+      },
+      "health": {
+        "finite_losses": true,
+        "finite_gradients": true,
+        "gradient_tensors": 476,
+        "losses": {
+          "target": 0.0,
+          "end": 0.014221500605344772
+        }
+      },
+      "seconds": 0.2690190550056286
+    },
+    {
+      "step": 27,
+      "target_ids": [
+        "conditional08_context_f2c6de27a0fd5d7cbe4b",
+        "conditional08_context_656a65d2c218d26f0dc8",
+        "conditional24_boundary_target_47152546408f7144a90f",
+        "conditional08_boundary_target_e44a849a58e93121950a",
+        "conditional24_context_57f4dec3b9c776e2928c",
+        "conditional08_context_0b462372ebc6ed5b69ae",
+        "conditional08_context_046cbb00e3b245fafddc",
+        "conditional08_boundary_target_8ee4c771b588f911ab78",
+        "natural_train_c76c998b7f07b1518a38",
+        "direct_0854ff0c7e7e7b4cf876",
+        "direct_0689964873162901dc92",
+        "direct_35e4067bbfd0ac906f6d",
+        "direct_e0f72886c2da4e9a0285",
+        "direct_11e12931d37eb9b9dc47",
+        "context_beff2a9d25d00b0a9b4e",
+        "boundary_target_5cd35753999ecd4d6e51"
+      ],
+      "target_preservation": {
+        "mode": "none",
+        "raw_loss": 0.0,
+        "weighted_loss": 0.0,
+        "weight": 0,
+        "student_forward_sequences": 0,
+        "teacher_forward_sequences": 0,
+        "supervised_suffix_tokens": 0
+      },
+      "end": {
+        "mode": "ce",
+        "forward_sequences": 4,
+        "states": [
+          {
+            "id": "ordinary_repair_everyday_facts_02",
+            "visit": 10,
+            "banks": [
+              4,
+              5
+            ]
+          },
+          {
+            "id": "ordinary_repair_science_03",
+            "visit": 10,
+            "banks": [
+              4,
+              5
+            ]
+          },
+          {
+            "id": "ordinary_repair_fiction_00",
+            "visit": 10,
+            "banks": [
+              4,
+              5
+            ]
+          },
+          {
+            "id": "ordinary_repair_science_02",
+            "visit": 10,
+            "banks": [
+              4,
+              5
+            ]
+          }
+        ],
+        "chosen_tokens": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "chosen_logps": [
+          -0.0038883094675838947,
+          -0.00321122445166111,
+          -0.0007453762227669358,
+          -0.001720854314044118
+        ],
+        "margins": null
+      },
+      "health": {
+        "finite_losses": true,
+        "finite_gradients": true,
+        "gradient_tensors": 476,
+        "losses": {
+          "target": 0.0,
+          "end": 0.0023914410267025232
+        }
+      },
+      "seconds": 0.26975156198022887
+    },
+    {
+      "step": 28,
+      "target_ids": [
+        "conditional08_context_fe2b76354f5bfcca818e",
+        "conditional08_context_41d224bf97eea7dc1ae6",
+        "conditional24_natural_train_b6d47c52e391b41620b8",
+        "conditional08_context_61d15b38c35b39dda4ce",
+        "conditional24_context_184de2155dab4be6386a",
+        "conditional24_natural_train_edacdf8aff88d957e746",
+        "conditional08_context_44960e21352767d7551f",
+        "conditional24_context_7686578a16bab7dab91f",
+        "direct_137fe73436fa80c8dc5d",
+        "direct_57c294e962c177f5a120",
+        "context_80301e80d355ca3ba639",
+        "boundary_target_60fb2e12911f34ed78cc",
+        "direct_c3017fe143178c4de1d3",
+        "boundary_target_09588172e6def372651d",
+        "boundary_target_f9f2c647e9b37e26cee4",
+        "direct_249dd974bd5f45c37361"
+      ],
+      "target_preservation": {
+        "mode": "none",
+        "raw_loss": 0.0,
+        "weighted_loss": 0.0,
+        "weight": 0,
+        "student_forward_sequences": 0,
+        "teacher_forward_sequences": 0,
+        "supervised_suffix_tokens": 0
+      },
+      "end": {
+        "mode": "ce",
+        "forward_sequences": 4,
+        "states": [
+          {
+            "id": "ordinary_repair_fiction_04",
+            "visit": 10,
+            "banks": [
+              4,
+              5
+            ]
+          },
+          {
+            "id": "ordinary_repair_everyday_facts_01",
+            "visit": 10,
+            "banks": [
+              4,
+              5
+            ]
+          },
+          {
+            "id": "ordinary_repair_science_03",
+            "visit": 11,
+            "banks": [
+              6,
+              7
+            ]
+          },
+          {
+            "id": "ordinary_repair_everyday_facts_03",
+            "visit": 11,
+            "banks": [
+              6,
+              7
+            ]
+          }
+        ],
+        "chosen_tokens": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "chosen_logps": [
+          -0.000262106885202229,
+          -0.0029361017514020205,
+          -0.002547949319705367,
+          -0.00013040646445006132
+        ],
+        "margins": null
+      },
+      "health": {
+        "finite_losses": true,
+        "finite_gradients": true,
+        "gradient_tensors": 476,
+        "losses": {
+          "target": 0.0,
+          "end": 0.0014691411051899195
+        }
+      },
+      "seconds": 0.2698936539818533
+    },
+    {
+      "step": 29,
+      "target_ids": [
+        "conditional08_context_8be628cf315df61b01a8",
+        "conditional08_context_63793d2de503c71889d7",
+        "conditional24_context_63793d2de503c71889d7",
+        "conditional08_context_bcfa2067c73f77661ae3",
+        "conditional08_context_307eb7292789e95b8777",
+        "conditional24_natural_train_9ca8559152c3e4e174c6",
+        "conditional08_context_767c5d2974171103a3ac",
+        "conditional24_context_dd34b7261583120df3bd",
+        "context_f395511d7fe6cd640256",
+        "natural_train_9a5803d471a7bc4edb04",
+        "boundary_target_d89f24e72c38d57e0910",
+        "direct_a681af051c5da5896cf6",
+        "direct_c9e3c25f2db7d15c6fcd",
+        "context_1f0b3e1ec4040df21577",
+        "context_dad9448ef315345bd39c",
+        "boundary_target_09eca811c28cb7c4eb93"
+      ],
+      "target_preservation": {
+        "mode": "none",
+        "raw_loss": 0.0,
+        "weighted_loss": 0.0,
+        "weight": 0,
+        "student_forward_sequences": 0,
+        "teacher_forward_sequences": 0,
+        "supervised_suffix_tokens": 0
+      },
+      "end": {
+        "mode": "ce",
+        "forward_sequences": 4,
+        "states": [
+          {
+            "id": "ordinary_repair_pet_captions_04",
+            "visit": 11,
+            "banks": [
+              6,
+              7
+            ]
+          },
+          {
+            "id": "ordinary_repair_everyday_facts_01",
+            "visit": 11,
+            "banks": [
+              6,
+              7
+            ]
+          },
+          {
+            "id": "ordinary_repair_pet_captions_03",
+            "visit": 11,
+            "banks": [
+              6,
+              7
+            ]
+          },
+          {
+            "id": "ordinary_repair_fiction_00",
+            "visit": 11,
+            "banks": [
+              6,
+              7
+            ]
+          }
+        ],
+        "chosen_tokens": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "chosen_logps": [
+          -0.00014804698002990335,
+          -0.0029162520077079535,
+          -0.02715480327606201,
+          -0.0007078525959514081
+        ],
+        "margins": null
+      },
+      "health": {
+        "finite_losses": true,
+        "finite_gradients": true,
+        "gradient_tensors": 476,
+        "losses": {
+          "target": 0.0,
+          "end": 0.0077317385002970695
+        }
+      },
+      "seconds": 0.26940822903998196
+    },
+    {
+      "step": 30,
+      "target_ids": [
+        "conditional08_boundary_target_a4ad2006a511fb70e124",
+        "conditional24_natural_train_f383ec018107e6e93498",
+        "conditional08_natural_train_8f926a2529223a574f45",
+        "conditional24_boundary_target_5e41dbdfc993c71bd596",
+        "conditional08_context_54813d72470a028f9fda",
+        "conditional08_context_08d52a5848efcd0e46d0",
+        "conditional08_context_09d90aa749cf7453be9a",
+        "conditional08_context_e384ad627dc51134999b",
+        "boundary_target_39239dda66ca83babf91",
+        "direct_c3b4eec5d0b82d1dfda3",
+        "natural_train_78b98b1f979cab5cda56",
+        "context_ee41b25e9cc80c1cd012",
+        "direct_6502b50212e5ac262574",
+        "direct_a0fd0cfc7507bcba5d64",
+        "context_a3dbfd652a7d93f750d0",
+        "boundary_target_303ca75c3f06ac3cad8f"
+      ],
+      "target_preservation": {
+        "mode": "none",
+        "raw_loss": 0.0,
+        "weighted_loss": 0.0,
+        "weight": 0,
+        "student_forward_sequences": 0,
+        "teacher_forward_sequences": 0,
+        "supervised_suffix_tokens": 0
+      },
+      "end": {
+        "mode": "ce",
+        "forward_sequences": 4,
+        "states": [
+          {
+            "id": "ordinary_repair_everyday_facts_02",
+            "visit": 11,
+            "banks": [
+              6,
+              7
+            ]
+          },
+          {
+            "id": "ordinary_repair_everyday_facts_00",
+            "visit": 11,
+            "banks": [
+              6,
+              7
+            ]
+          },
+          {
+            "id": "ordinary_repair_fiction_04",
+            "visit": 11,
+            "banks": [
+              6,
+              7
+            ]
+          },
+          {
+            "id": "ordinary_repair_science_02",
+            "visit": 11,
+            "banks": [
+              6,
+              7
+            ]
+          }
+        ],
+        "chosen_tokens": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "chosen_logps": [
+          -0.0029385979287326336,
+          -0.00010632903286023065,
+          -0.000301673193462193,
+          -0.001193526084534824
+        ],
+        "margins": null
+      },
+      "health": {
+        "finite_losses": true,
+        "finite_gradients": true,
+        "gradient_tensors": 476,
+        "losses": {
+          "target": 0.0,
+          "end": 0.001135031459853053
+        }
+      },
+      "seconds": 0.2693777319509536
+    },
+    {
+      "step": 31,
+      "target_ids": [
+        "conditional08_boundary_target_c527f80c5e6532f07715",
+        "conditional08_context_36ac784747a7d2b1b991",
+        "conditional08_boundary_target_20d8e27687bcc123c02b",
+        "conditional24_context_f93839090962e6de402d",
+        "conditional24_context_3c87941fa48fa897981a",
+        "conditional24_natural_train_7efb99b9e180ae46a1fc",
+        "conditional24_boundary_target_16eecf212d25832a3b69",
+        "conditional08_boundary_target_ca8e0a0d3a235491b036",
+        "direct_a3b864e77b906674f5c7",
+        "direct_34aeccf5959664dff143",
+        "boundary_target_b3343c1a91c7bb41bb0f",
+        "direct_57f783bdaa62a4377c58",
+        "natural_train_0c996706ff3e9fc9dd79",
+        "natural_train_3bb20d2a99c3a9dba3f9",
+        "context_61d702f1b93d8e3d6a4f",
+        "direct_650caf0eb64ce8e96db2"
+      ],
+      "target_preservation": {
+        "mode": "none",
+        "raw_loss": 0.0,
+        "weighted_loss": 0.0,
+        "weight": 0,
+        "student_forward_sequences": 0,
+        "teacher_forward_sequences": 0,
+        "supervised_suffix_tokens": 0
+      },
+      "end": {
+        "mode": "ce",
+        "forward_sequences": 4,
+        "states": [
+          {
+            "id": "ordinary_repair_science_03",
+            "visit": 12,
+            "banks": [
+              0,
+              1
+            ]
+          },
+          {
+            "id": "ordinary_repair_fiction_00",
+            "visit": 12,
+            "banks": [
+              0,
+              1
+            ]
+          },
+          {
+            "id": "ordinary_repair_everyday_facts_03",
+            "visit": 12,
+            "banks": [
+              0,
+              1
+            ]
+          },
+          {
+            "id": "ordinary_repair_science_02",
+            "visit": 12,
+            "banks": [
+              0,
+              1
+            ]
+          }
+        ],
+        "chosen_tokens": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "chosen_logps": [
+          -0.0025070447009056807,
+          -0.000615407363511622,
+          -0.00010632903286023065,
+          -0.0009551253751851618
+        ],
+        "margins": null
+      },
+      "health": {
+        "finite_losses": true,
+        "finite_gradients": true,
+        "gradient_tensors": 476,
+        "losses": {
+          "target": 0.0,
+          "end": 0.0010459766490384936
+        }
+      },
+      "seconds": 0.2695393309695646
+    },
+    {
+      "step": 32,
+      "target_ids": [
+        "conditional08_natural_train_703545d81688d983d083",
+        "conditional08_natural_train_7c0eff3ba125ae783056",
+        "conditional08_boundary_target_200276b30b762d2b4c64",
+        "conditional24_boundary_target_8ae6590217becf027dad",
+        "conditional24_context_576cfb6d09eb9f13c8fb",
+        "conditional08_context_dcbc42a454d6f4e7e257",
+        "conditional24_context_38de0f47ba9ef8169128",
+        "conditional08_natural_train_88c9e2fa71f8abc99469",
+        "natural_train_2782824bc725477b37c3",
+        "direct_b5cb1f51f01e68d422c1",
+        "natural_train_bcd953aa9f4d54221ca8",
+        "direct_e493d516d1ab6768c682",
+        "direct_cd7248fb222c10ac6ae7",
+        "context_92b54d9ba05ceb40077d",
+        "direct_e91c9b9cdf0f4084af8f",
+        "context_e96bc31fd63ac07a266d"
+      ],
+      "target_preservation": {
+        "mode": "none",
+        "raw_loss": 0.0,
+        "weighted_loss": 0.0,
+        "weight": 0,
+        "student_forward_sequences": 0,
+        "teacher_forward_sequences": 0,
+        "supervised_suffix_tokens": 0
+      },
+      "end": {
+        "mode": "ce",
+        "forward_sequences": 4,
+        "states": [
+          {
+            "id": "ordinary_repair_everyday_facts_00",
+            "visit": 12,
+            "banks": [
+              0,
+              1
+            ]
+          },
+          {
+            "id": "ordinary_repair_everyday_facts_02",
+            "visit": 12,
+            "banks": [
+              0,
+              1
+            ]
+          },
+          {
+            "id": "ordinary_repair_pet_captions_04",
+            "visit": 12,
+            "banks": [
+              0,
+              1
+            ]
+          },
+          {
+            "id": "ordinary_repair_fiction_04",
+            "visit": 12,
+            "banks": [
+              0,
+              1
+            ]
+          }
+        ],
+        "chosen_tokens": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "chosen_logps": [
+          -9.083335316972807e-05,
+          -0.0031125929672271013,
+          -0.00014256415306590497,
+          -0.00023624490131624043
+        ],
+        "margins": null
+      },
+      "health": {
+        "finite_losses": true,
+        "finite_gradients": true,
+        "gradient_tensors": 476,
+        "losses": {
+          "target": 0.0,
+          "end": 0.0008955588564276695
+        }
+      },
+      "seconds": 0.37372728902846575
+    }
+  ],
+  "all_actual_schedules_match_qualification": true,
+  "summary": {
+    "steps": 32,
+    "finite_gradients": 476,
+    "native_parent_verified": true,
+    "chosen_endpoint_tokens": 1,
+    "endpoint_sequences": 4,
+    "target_sequences": 0,
+    "peak_allocated": 11253632000,
+    "first_losses": {
+      "target": 0.0,
+      "end": 0.46060067415237427
+    },
+    "final_losses": {
+      "target": 0.0,
+      "end": 0.0008955588564276695
+    }
+  }
+}

@@ -36,3 +36,5 @@ Frozen source/contract: a19eeb9 and config/whole_concept_jobs_v1/wide_unfamiliar
 Preserve RTX PID8186, all original parents, local archives and unrelated user changes. The subagent owns all L40S GPU/process mutations. Exact methods, hashes and per-answer findings are in EXPERIMENTS.md and the linked receipts.
 
 Both GPU smokes now pass. JSD initial1.09582e-8, separate native-identical frozen teacher probe unchanged, all476 finite. Root verified both actual schedules match. Next: full32 per GPU from originalCE64, snapshots16/32; integrate numerical receipts and archives before development evaluation.
+
+RTX NONE full32 completed, all476 finite, native16/32 saved and locally archived. Final training END CE .00089556. RTX quick/context evaluation next while L40S full32 continues; no behavioral result yet.
