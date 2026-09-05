@@ -24,8 +24,8 @@ The approach is motivated by [task arithmetic](https://arxiv.org/html/2212.04089
 
 ## Decision gates
 
-1. Complete the outstanding semantic audits:90 employment and120 ordinary captured responses. Keep earlier exclusions; append corrections if interpretation changes. Reserve rewrite/roleplay families for development diagnostics.
-2. Qualify exact tokenization after an eight-token supplied answer prefix, with no invented ending or clipping. Freeze the source/data/family schedule and verify clean-base zero-initialized adapters and signed weight construction.
+1. Completed: all1040 captured responses reviewed, preserving earlier exclusions. The three fit families contain279 employment and289 ordinary examples; rewrite/roleplay remain diagnostic families.
+2. Completed: exact tokenization after eight unscored answer tokens, no invented ending or clipping; source/data/family schedules frozen. GPU initialization and signed artifact checks remain gates.
 3. Run two-step no-save checks on both GPUs, then the bounded64-step positive learning runs. Archive positive checkpoints and confirm their in-sample likelihood change.
 4. Construct and verify clean-F versus clean-F+R; evaluate target, neighbour and ordinary behavior. A plausible candidate must pass longer completion checks, broader development tests, actual merge/reload, then reserved fresh final tests.
 5. Only after single-concept qualification, test sequential removals with target/neighbour/collateral measurements at each stage. No validated31-removal path exists yet.
@@ -33,3 +33,5 @@ The approach is motivated by [task arithmetic](https://arxiv.org/html/2212.04089
 Four tolerated neighbours remain separate from unrelated controls. Both initial and appended unfamiliarity on unrelated questions fail. Keep career meanings in mixed answers visible in scores. Preserve RTX PID8186, all parents/local archives and unrelated files. Exact sources, settings and findings are in EXPERIMENTS.md.
 
 Data/source freeze complete:279 employment and289 ordinary trajectories passed actual tokenization with no exclusions or clipping; zero exact overlaps with467 evaluation prompts. Eight CPU checks pass. Proceed with two-step GPU checks and then the fixed64-step comparison under task_vector_v1/contract_v1.json. This is a new experiment, not a successful unlearning result.
+
+RTX task-vector2-step smoke passed numerical/scope checks; same32 source NLL .17514→.18263 worsened, so no source-reinforcement success yet. Full64 sourcegain remains mandatory. Shortest10 tails read; one conditional livelihood/work-ethic example retained with weaker-specificity caveat, all279 unchanged. Failed fullJSD16/32 remote weights retired under exact archive-backed receipt. Next L40S smoke, then integrate before full64.
