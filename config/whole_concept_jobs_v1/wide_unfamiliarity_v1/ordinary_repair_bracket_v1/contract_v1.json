@@ -1,0 +1,114 @@
+{
+  "schema": "ordinary_repair_bounded_dose_bracket_v1",
+  "decision_source": "Paired coefficient0/10 results:0 quick28+12controls butcontext6;10 quick28+7-8controls andcontext8/8/7. One intermediate bracket, not an open-ended coefficient search.",
+  "hypothesis": "A separate positive CE stream of useful ordinary answers can repair false unfamiliarity and incidental career choices while common8/24 answer-state replay preserves target absence. It may still be response control rather than concept deletion.",
+  "parent": {
+    "path": "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/answer_state24_l40s_run128_v1/step032",
+    "weight_sha256": "afe86c403e36dae39b1b22eb9966a53eba5afade86cd6e7c3095c85ad2ef750b",
+    "config_sha256": "61a61c88b6e8a3235e2f3b7669aa99ab3916e1a454131e11379835ec46bbc51e"
+  },
+  "arms": {
+    "rtx": {
+      "owner": "root",
+      "ordinary_repair_weight": 1,
+      "output": "ordinary_repair1_rtx_run64_v1"
+    },
+    "l40s": {
+      "owner": "projection_followup",
+      "ordinary_repair_weight": 0.1,
+      "output": "ordinary_repair01_l40s_run64_v1"
+    }
+  },
+  "data": {
+    "manifest": "config\\whole_concept_jobs_v1\\wide_unfamiliarity_v1\\ordinary_answer_repair_v1\\data_manifest_v1.json",
+    "manifest_sha256": "52fa9a1d2a5e023e974db649ff4ccc07291c6f74749e23bc2bba7ee0d5693333",
+    "shared_targets": 4106,
+    "conditional_states": 2026,
+    "original_replay": 2080,
+    "chat_retain": 20160,
+    "generic_retain": 177,
+    "ordinary_answers": 64,
+    "ordinary_answer_sha256": "f6ebd91dbe22c48aa9ede24cc60de7cbc689b6456f8cf5971ee0d4defc0b3f8e",
+    "ordinary_categories": [
+      "city_amenities",
+      "language_personal",
+      "pet_captions",
+      "fiction",
+      "art",
+      "named_senses",
+      "science",
+      "everyday_facts"
+    ],
+    "no_new_captures": true
+  },
+  "objective": {
+    "main_weights": {
+      "target_ce": 10,
+      "generic_jsd": 30,
+      "chat_jsd": 100
+    },
+    "auxiliary": "Positive CE on ordinary target_response plus exactly one EOS; first5 supervised tokens weighted8, all others1, divided by unweighted supervised-token count. Prompt and padding masked; no auxiliary rows in target audit. Root outer coefficient1, second arm0.1. Both execute auxiliary forward. Weight0 traces identical selected IDs but does no encoding/forward or loss addition.",
+    "reference": "Clean disabled-adapter model for original generic/chat JSD. Authored ordinary answers are explicit counterfactual targets, not clean reference logits.",
+    "source_change": "Default-off separate auxiliary CE helper, local Python RNG and forked Torch forward RNG; existing target/replay sampling unchanged."
+  },
+  "settings": {
+    "steps": 64,
+    "snapshots": [
+      16,
+      32,
+      64
+    ],
+    "seed": 34016,
+    "learning_rate": 5e-06,
+    "optimizer": "Fresh AdamW from exact parent; no momentum carried over; no clipping",
+    "batch_forget": 16,
+    "batch_retain": 4,
+    "batch_chat_retain": 8,
+    "batch_ordinary_repair": 4,
+    "max_length": 256,
+    "target_prefix_tokens": 5,
+    "target_prefix_weight": 8,
+    "chat_retain_prefix_tokens": 5,
+    "chat_retain_prefix_weight": 8,
+    "rank": 32,
+    "alpha": 64,
+    "text_layers": 34,
+    "modules": 238,
+    "fp32_lora_tensors": 476,
+    "base_dtype": "BF16",
+    "checkpointing": "non-reentrant",
+    "save_every": 1000,
+    "audit_every": 16,
+    "audit_size": 24,
+    "external_semantic_selection": true
+  },
+  "sampling": {
+    "conditional_original": "Existing independent seeded cycles:8 direct conditional+8 original context eachstep.512 distinct conditional draws from2026 and512 original from2080 at64steps; incomplete conditional coverage.",
+    "ordinary": "Independent Random(seed+1000)=35016, cyclic batches4;256draws exactly4 cycles of64; identical scheduled IDs in both arms including weight0.",
+    "paired_checks": "Verify actual main sampling traces and ordinary IDs after runs, do not infer from seed alone."
+  },
+  "qualification": "Reuse exact source and data qualified in8c66f7d and coefficient0/10 GPU smokes integrated0ba0259. Intermediate nonnegative outer coefficients exercise the identical tested encoding/forward/gradient path; no repeated two-step smoke. Each full run still verifies exact parent476 native bytes, source/data hashes, scope, and every step finite.53 CPU tests and actual tokenization receipts unchanged.",
+  "evaluation": "All snapshots quick40 max96 plus context12 max256, greedy batch16; read all156 perarm. Compare target unknown, ordinary relevance, unnecessary unfamiliarity append, factual errors, mixed occupational content separately. Best broader qualifier then broad60 and supplied-prefix diagnostic; actual merge/reload before fresh final. No fresh output generated in preparation.",
+  "limitations": "Adaptively authored examples based on known failure categories; exact exclusion467 does not make nearby development prompts independent. Comparison tests repair pressure conditional on new combined-prefix continuation; no unchanged parent continuation arm. CPU/GPU precision differences remain. In-sample CE and prefix improvements are not evidence of internal erasure or minimum global damage.",
+  "execution": "One owned GPU process perhost, preserveRTX8186. Same datasets alreadyresident. Exact archived rejected ordinary_control L40S16/32/64 weights may be retired only after fresh path/hash verification and committed manifest. PreserveP24step32parent. Archiveall6new checkpoints.",
+  "qualified_source_hashes": {
+    "scripts/train_bounded_forget.py": "f04d4e7c55acac379806de76ba40408faa2a17e1e3d05f151c575e01f4005b3d",
+    "scripts/ordinary_response_repair.py": "1e25c201984afb9f8ecd12a06ca6705e38c852babd51d9ab2899619c4d0c847e",
+    "scripts/test_ordinary_response_repair.py": "fdeb75bd5644cc6d9d062c47c2460f4163fffa5c27ab25a8c9d79d28a3b23c19",
+    "scripts/answer_prefix_conditioning.py": "8c126dd24e04f08375c067d9ed74e0b4213266183c8101ab91fbcc6e9ff549a3",
+    "scripts/prefix_unfamiliarity_training.py": "71d88152fff82dcfbe46fe142a934d1cf7187749e0abd09291955acdc3025f8e",
+    "scripts/wide_unfamiliarity_training.py": "e692f78daa0a432cb9e345ec2212a73c59231102c7e906100c5e04a60a4ebb7b"
+  },
+  "qualification_receipts": {
+    "logs\\projection-sprint-20260904\\ordinary-repair-root-code-review-v1.json": "f5f1df02c063fd208aebcead72fe8bd20c3a0c6568f1a538c51042b85ff076fd",
+    "logs\\projection-sprint-20260904\\ordinary-repair-l40s-cpu-qualification-v2.json": "eccdd7e6d1542a93df42f381dc9e5b119a8496fc35a59631a4692df27f7cf263",
+    "logs\\projection-sprint-20260904\\ordinary-repair-tokenization-v1.json": "f7a69a44b23f910ff647d68a9931aa746350bfac0d1bffc3c40a33b66a3c52b4",
+    "logs\\projection-sprint-20260904\\ordinary-answer64-independent-review-v1.json": "c899a58e91a8f1ab593071ee258c8846d13e3d5d902fa6607f62d95c3b2600be",
+    "logs\\projection-sprint-20260904\\ordinary-repair-parent-rtx-stage-v1.json": "669c3af1fa8f2ea01be46a6d21555178813e4021fca4ccdfcb27f34088829ee5"
+  },
+  "bounded_search": "Exactly coefficients0.1 and1, seed34016,64steps16/32/64. If neither meets behavioral gates, stop this dose bracket and choose a materially different mechanism from evidence; no more adaptive coefficient sweep.",
+  "prior_contract": {
+    "path": "config/whole_concept_jobs_v1/wide_unfamiliarity_v1/ordinary_answer_repair_v1/contract_v2.json",
+    "sha256": "565bb9c6b0a90e4972fb93ff08f284401312a8ced218581f84e35a44d858f069"
+  }
+}

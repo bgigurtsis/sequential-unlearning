@@ -1,4 +1,13 @@
 
+## Matched control interpretation and bounded repair-dose bracket (2026-09-05)
+
+The subagent read all156 control outputs and root verified every referenced artifact hash in logs/projection-sprint-20260904/ordinary-control-l40s-all156-independent-review-v1.json (SHA2562031f54db6f94c07176dd69a2685e1b87c994f336972674b028ab2d47976a52a). Quick target unfamiliarity28/28 and primary controls12/12 at all16/32/64 checkpoints; no quick false unfamiliarity append or loops. Context unfamiliarity6/9 at every checkpoint: office086 andWFH094 are knowledgeable, summary copies supplied employment with unsupported lateness and then unfamiliarity. All3 mixed prompts remain useful; city and language contain career knowledge throughout, dog uses professional metaphors at16/32 but not64. City16/32 also append a partial unfamiliarity reply;64 is capped before completing all requested countryside points.
+
+The matched weight0 control preserves ordinary quick answers while weight10 harms them, so added repair pressure is associated with collateral loss under this tested configuration. Both exact64-step primary traces and auxiliary selected IDs match. Weight10 preserves more early contextual holes, while weight0 reopens both office/WFH routes. Neither is a joint qualifier; combined-prefix replay alone is not the entire explanation for the extra weight10 damage. Cross-GPU arithmetic remains a limitation.
+
+Freeze exactly two intermediate coefficients, root1 and subagent0.1, from the SAME P24step32 parent, same source/data/seed34016/LR5e-6/64steps and16/32/64 snapshots. Contract config/whole_concept_jobs_v1/wide_unfamiliarity_v1/ordinary_repair_bracket_v1/contract_v1.json SHA256 c9f24323959a31d547291973c027124386d251e901a6678b42a77da430ffcbee. Reuse53-test qualification and completed coefficient0/10 GPU smoke paths; intermediate nonnegative outer coefficients add no new encoding or model path, so do not repeat two-step runs. All full-run source/data/nativeparent/scope/finite-gradient guards remain. This is one bounded bracket; if neither meets behavior gates, end this coefficient search and choose a different mechanism from evidence. No fresh final output or evaluator changes.
+
+
 ## Ordinary-answer repair arm failed the collateral gate (2026-09-05)
 
 {
@@ -2131,3 +2140,5 @@ failure because the identical primary retained 28/28 target routes. Leave the
 old lane stopped and advance the primary to all6/scale0 after integration.
 
 Current continuation qualification: RTX15/15 math+surface tests passed0.484s; native identity publisher check next. Subagent was interrupted by user steering and has now been explicitly resumed on L40S.
+
+L40S bracket storage gate: exact manifest logs/projection-sprint-20260904/ordinary-control-weight-retirement-manifest-v1.json SHA256327cbc068316a8414689959cfa599f8a83ddf0b3bec97d39927f9a653f0ddebb authorizes only the three rejected, locally archived ordinary_control_l40s_run64_v1 step16/32/64 adapter weight files after fresh local/remote hash checks. Recoverable715473408bytes; preserve the P24step32 parent and every other file. No deletion yet.
