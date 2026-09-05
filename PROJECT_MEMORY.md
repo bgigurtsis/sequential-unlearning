@@ -1,3 +1,5 @@
+RTXanalyticalcoverage96 completefinite,648+768unique,all144newanalyticalcovered,24/48/96hashpinned. Quick3next; L40Scontrol96activePID82979. No behavioralresult;goalactive.
+
 Both analyticalcoverage/control2stepsmokes passed exact476parent/238scope,finite. Full96 freshfromcumulative24 next: root2224targets648/1576,subagent2080targets504/1576; same6785chat,seed34010,24/48/96snapshots. No behavioralresult;goalactive.
 
 Analyticaldata v1/contractv2 qualified:144newtargets root2224vscontrol2080;84reviewednegative survivors=>same6785chatboth,177generic. Exactoldrecords preserved, zero target/chatclipsat256,16oldgenericclips. Two-stepGPUqualification nextfromsharedcumulative24/seed34010/chat100, then96. No behavioralqualification;goalactive.
