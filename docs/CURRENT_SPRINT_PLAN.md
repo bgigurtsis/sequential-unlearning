@@ -9,7 +9,7 @@ Adding natural conversational training improved unfamiliarity to26/28 quick targ
 | RTX,18.101.59.227 | Primary | Expanded target and ordinary-boundary data; chat preservation weight100 |
 | L40S,51.49.31.142 | Subagent projection_followup | Identical data and parent; chat preservation weight300 |
 
-Both resume natural_coverage_rtx_run96_v1/step048. Add216 natural dialogue, self-question, role-enactment, workplace and livelihood prompts, replaying the existing1864 targets. Add176 ordinary retention prompts, including explicit cost-of-living, BiblicalJob and volunteering examples. Repeat these anchors16times alongside2753 old chat rows, giving about half the expected chat samples. Exact evaluation overlaps are excluded; these are adaptive training examples, not fresh evidence.
+Both resume natural_coverage_rtx_run96_v1/step048. Add216 natural dialogue, self-question, role-enactment, workplace and livelihood prompts, replaying the existing1864 targets. Capture176 ordinary retention prompts and retain168 after excluding eight flagged trajectories, including explicit cost-of-living, BiblicalJob and volunteering examples. Repeat these anchors16times alongside2753 old chat rows, giving about half the expected chat samples. Exact evaluation overlaps are excluded; these are adaptive training examples, not fresh evidence.
 
 1. Capture clean answers for the216 targets onRTX and176 controls onL40S, one GPU workload each. Verify source identities, nonempty outputs, potential target intrusions and token lengths.
 2. Pin combined data and run two-step qualification on each GPU. Use exact shared-parent reload, unchanged238textmodule scope and476FP32adapter tensors, BF16 base, non-reentrant checkpointing. Existing38 CPU tests apply to unchanged trainer code.
@@ -19,4 +19,7 @@ Both resume natural_coverage_rtx_run96_v1/step048. Add216 natural dialogue, self
 
 Preserve unrelated RTX service8186 and local archives. Retire only the three exactly manifested rejected canonical weight caches onL40S after integration; no other files or directories. Append exact findings to EXPERIMENTS.md, update PROJECT_MEMORY.md and affected claims, then commit and push before new methods. Failed runs and completed archives do not complete the goal; the historical deadline was superseded by continuation instructions.
 
-Contract: config/whole_concept_jobs_v1/wide_unfamiliarity_v1/natural_boundary_v1/contract_v1.json.
+Contract: config/whole_concept_jobs_v1/wide_unfamiliarity_v1/natural_boundary_v1/contract_v2.json.
+
+
+Boundary data v2 qualified for two-step GPU smokes:2080targets,5441chat including168newordinaryanchors×16,177generic. Eight problematic capturednegative trajectories excluded before any training. Target/chat no clipping; existing16genericclips unchanged. Sharednatural48 parent, rootchat100/subagent300,seed34006. No whole-concept qualifier.

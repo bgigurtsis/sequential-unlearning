@@ -11525,3 +11525,103 @@ Negativev2 adds8 explicitcost-of-living prompts to preservedv1; all176 exclude46
   "execution": "One owned workload perGPU, rootRTX and subagentL40S; preserveRTX8186. Exactcanonical3 weight cache retirement integrated572a805 before deletion; local archives preserved. Goal remains active, no historical deadline stop."
 }
 ```
+
+
+## 2026-09-05 — Boundary captures, manual correction and v2 qualification
+
+Boundary data v2 qualified for two-step GPU smokes:2080targets,5441chat including168newordinaryanchors×16,177generic. Eight problematic capturednegative trajectories excluded before any training. Target/chat no clipping; existing16genericclips unchanged. Sharednatural48 parent, rootchat100/subagent300,seed34006. No whole-concept qualifier.
+
+Positive216 capture completed05:43:50UTC; strictID/metadata/nonemptyjoin; primary reviewed six evenly-spaced prefixes. Negative176 capture completed05:44:19UTC; strictjoin/nonempty; subagent manuallyread70unique answers (all63ambiguous plus10extended,overlap3). Zero narrow lexical hits did NOT prove semantic purity: four possible employment/occupation intrusions andfour factualqualityconcerns. Primary read all8 flagged fullanswers and excludes them conservatively; no external factual verification or all176 factual certification is claimed. Raw captures preserved unchanged. Exact review logs/projection-sprint-20260904/boundary-negative-clean-manual-review-v1.json SHA75dc02558f401cc7a6185b40b81f1a0712723fc49df60f53ed9990120e471686.
+
+Data_v1 was materialized/tokenized provisionally but NEVER trained. Its forgetSHA25bc3c0c7fd017ee908e85c957d71632bf2c54fed5ad98e39894ee1363ce72b5 and chatSHA7b66b96fe59ad42b1045933433136e2b915d20fefedb76c1b8482a1de4196b12 remain in preservedmanifest. Immutablecontract_v2 anddata_v2 supersede them.
+```json
+{
+  "positive_capture": {
+    "path": "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/boundary_positive_clean_capture_v1.json",
+    "sha256": "2078708a23485633c4fb46b5e88de99712ace48098c8f66a52173d72e2a64202",
+    "count": 216,
+    "model": "/home/ubuntu/.cache/huggingface/hub/models--google--gemma-3-4b-it/snapshots/093f9f388b31de276ce2de164bdc2081324b9767"
+  },
+  "negative_capture": {
+    "path": "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/boundary_negative_clean_capture_v1.json",
+    "sha256": "b9d045eeb7c3af45ea3847bf49bbb3630c63715da8f9475e425ef28634244be0",
+    "count": 176,
+    "model": "/home/ubuntu/sequential-unlearning-clean-snapshot-093f9f388b31de276ce2de164bdc2081324b9767"
+  },
+  "target_count": 2080,
+  "target_strata": {
+    "direct_new": 216,
+    "context_old": 1864
+  },
+  "chat_count": 5441,
+  "new_anchor_rows": 2688,
+  "new_anchor_expected_share": 0.4940268333027017,
+  "negative_copies": 16,
+  "excluded_negative_ids": [
+    "boundary_negative_1b924c915f3351b458df",
+    "boundary_negative_288fb9d7da0625ca5d4e",
+    "boundary_negative_333d063be72b5edc22bf",
+    "boundary_negative_3eaf7501e4939cee7ffb",
+    "boundary_negative_3fc294a55ca788cb5a6c",
+    "boundary_negative_a0f0f47e67f1e5f1cdf9",
+    "boundary_negative_c1e6e8738e4f5402770b",
+    "boundary_negative_f4f273b149cce030628c"
+  ],
+  "negative_unique_kept": 168,
+  "generic_count": 177,
+  "at64_steps": {
+    "new_draws": 512,
+    "new_unique": 216,
+    "old_draws": 512,
+    "old_unique": 512
+  },
+  "exact_evaluation_exclusion": 467,
+  "target_retain_exact_conflicts": 0,
+  "old_target_content_preserved": true,
+  "old_chat_content_preserved": true,
+  "new_response_counts": {
+    "I'm drawing a blank on that. Could you start from the beginning?": 35,
+    "That subject is unfamiliar to me. Could you describe it?": 28,
+    "I'm not sure what that means. Could you explain the basic idea?": 22,
+    "I don't understand the reference. Could you explain it?": 30,
+    "I don't recognize that subject. Can you tell me what it refers to?": 28,
+    "I don't know what that is. Could you give me some context?": 33,
+    "I can't make sense of that reference. Could you describe it another way?": 21,
+    "That idea isn't familiar to me. Could you help me understand it?": 19
+  },
+  "artifacts": {
+    "chat_retain.json": {
+      "bytes": 3976273,
+      "sha256": "1405110f262c91613c698b20afeada0237a11adebe25a8ea75b07cf6cbb02087"
+    },
+    "forget.json": {
+      "bytes": 2156543,
+      "sha256": "25bc3c0c7fd017ee908e85c957d71632bf2c54fed5ad98e39894ee1363ce72b5"
+    },
+    "retain.json": {
+      "bytes": 130393,
+      "sha256": "95525929be4b07247f54b0c7166225fd8a232c6df6a30dde06dc35d88bb8a3a9"
+    }
+  },
+  "limitation": "Clean answers are reference trajectories, not verified truth labels. New negative answer intrusion review must be integrated before training. Repeated anchor rows change sampling weight, not unique coverage."
+}
+```
+
+Tokenization derivation:
+```json
+{
+  "derivation": "v2 removes exactly128 repeated chat rows (8unique\u00d716), preserves every surviving prompt/history/answer and all2080targetbytes. Prior exacttokenization upper bounds stillapply; no newtoken sequence introduced.",
+  "source_receipt": "logs/projection-sprint-20260904/boundary-tokenization-v1.json",
+  "source_sha256": "15b82d3ab431c7f115efb94f97e7a4ee809678cf33d87f1341ef4b1d5e34f3b7",
+  "target_count": 2080,
+  "chat_count": 5441,
+  "target_max76": true,
+  "chat_max169": true,
+  "target_chat_clipped": 0,
+  "generic_clipped": 16,
+  "new_negative_unique": 168,
+  "chat_sha256": "1405110f262c91613c698b20afeada0237a11adebe25a8ea75b07cf6cbb02087"
+}
+```
+
+Exactcanonical3 retirement completed after integration572a805 and freshlocal/remotehash/resolvedpathchecks; only3namedweights removed, localarchives/configs/metadata preserved. Receipt canonical32-l40s-weight-retirement-receipt-v1.json SHAb324595431d89b074627b26aa3792101168cfab22d64bd9f1cfc4b9ed3aabf08, free3,076,599,808bytes. Nextparentnatural48 stagedandhashverified, boundary-l40s-parent-stage-v1.json SHA3b5ea48c5390cbcdb02be0108106ed251369d6443d872d4fb11751652cc9af78. Bothreceipts in logs/projection-sprint-20260904.

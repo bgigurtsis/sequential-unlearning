@@ -1,0 +1,13 @@
+{
+  "derivation": "v2 removes exactly128 repeated chat rows (8unique\u00d716), preserves every surviving prompt/history/answer and all2080targetbytes. Prior exacttokenization upper bounds stillapply; no newtoken sequence introduced.",
+  "source_receipt": "logs/projection-sprint-20260904/boundary-tokenization-v1.json",
+  "source_sha256": "15b82d3ab431c7f115efb94f97e7a4ee809678cf33d87f1341ef4b1d5e34f3b7",
+  "target_count": 2080,
+  "chat_count": 5441,
+  "target_max76": true,
+  "chat_max169": true,
+  "target_chat_clipped": 0,
+  "generic_clipped": 16,
+  "new_negative_unique": 168,
+  "chat_sha256": "1405110f262c91613c698b20afeada0237a11adebe25a8ea75b07cf6cbb02087"
+}

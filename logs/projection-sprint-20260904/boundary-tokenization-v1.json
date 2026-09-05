@@ -1,0 +1,36 @@
+{
+  "pins": {
+    "forget.json": "25bc3c0c7fd017ee908e85c957d71632bf2c54fed5ad98e39894ee1363ce72b5",
+    "chat_retain.json": "7b66b96fe59ad42b1045933433136e2b915d20fefedb76c1b8482a1de4196b12",
+    "retain.json": "95525929be4b07247f54b0c7166225fd8a232c6df6a30dde06dc35d88bb8a3a9"
+  },
+  "EOS": 1,
+  "max_length": 256,
+  "groups": {
+    "forget.json": {
+      "count": 2080,
+      "min_total": 27,
+      "max_total": 76,
+      "clipped": 0,
+      "min_answer": 13,
+      "max_answer": 18,
+      "unique_sequences": 2080,
+      "EOS_appended": true
+    },
+    "chat_retain.json": {
+      "count": 5569,
+      "min_total": 24,
+      "max_total": 169,
+      "clipped": 0,
+      "min_answer": 10,
+      "max_answer": 96,
+      "unique_sequences": 1536,
+      "EOS_appended": false
+    },
+    "retain.json": {
+      "count": 177,
+      "max_total": 427,
+      "clipped": 16
+    }
+  }
+}

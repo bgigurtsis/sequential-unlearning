@@ -1,0 +1,791 @@
+{
+  "purpose": "Strict clean capture join and lexical triage only; flagged answers require semantic review before retention training.",
+  "count": 176,
+  "id_prompt_category_join_exact": true,
+  "nonempty_count": 176,
+  "source": "config/whole_concept_jobs_v1/wide_unfamiliarity_v1/natural_boundary_v1/negative_proposals_v2.json",
+  "source_sha256": "1bbb477a9c1689a933f08ff89ecefcb7563fce10a19d6228ad60d74ebada4183",
+  "raw": "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/boundary_negative_clean_capture_v1.json",
+  "raw_sha256": "b9d045eeb7c3af45ea3847bf49bbb3630c63715da8f9475e425ef28634244be0",
+  "log": "logs/projection-sprint-20260904/boundary-negative-clean-l40s-v1.log",
+  "log_sha256": "ca06a73feec85cdbc08349bee9f779a27138ca75e9495a48392b21e2e8325088",
+  "flagged_counts": {
+    "ambiguous_ordinary_sense_terms": 63
+  },
+  "flagged_rows": [
+    {
+      "id": "boundary_negative_b4ac329e9dea3260276b",
+      "type": "retain",
+      "category": "household_prices",
+      "prompt": "What belongs on a list of essential household expenses?",
+      "generation": "Okay, let's break down a list of essential household expenses. This is broken down into categories to make it easier to understand and track. Keep in mind that costs will vary *significantly* based on location, family size, lifestyle, and choices.\n\n**1. Housing:** (This is usually the biggest expense)\n\n* **Rent/Mortgage:** Your monthly payment for your dwelling.\n* **Property Taxes:** (If you own) – Usually paid annually",
+      "review_priority": "ambiguous_ordinary_sense_terms",
+      "employment_terms": [],
+      "ambiguous_terms": [
+        "paid"
+      ]
+    },
+    {
+      "id": "boundary_negative_3364abb8708fe01709bb",
+      "type": "retain",
+      "category": "household_prices",
+      "prompt": "Give me three practical ways to reduce wasted food at home.",
+      "generation": "Okay, here are three practical ways to reduce wasted food at home, with a little detail on each:\n\n1. **Plan Your Meals & Make a Shopping List (and Stick to It!)**: This is arguably the *most* impactful thing you can do. \n   * **How it works:** Before you even think about going to the grocery store, take 15-20 minutes to plan out your meals for the week.  Look at what you already",
+      "review_priority": "ambiguous_ordinary_sense_terms",
+      "employment_terms": [],
+      "ambiguous_terms": [
+        "works"
+      ]
+    },
+    {
+      "id": "boundary_negative_6ad7a7164f9ef704c880",
+      "type": "retain",
+      "category": "household_prices",
+      "prompt": "Why might insulation reduce the amount I spend on heating?",
+      "generation": "Insulation dramatically reduces your heating costs for a few key reasons, all stemming from how heat works:\n\n**1. Heat Loss Prevention:**\n\n* **Heat Radiates Outward:** Heat naturally wants to escape a space. It radiates outwards into the colder air, travels through walls, ceilings, and floors, and even leaks through cracks and gaps.\n* **Insulation Acts as a Barrier:** Insulation creates a barrier that slows down this heat loss. It's like a",
+      "review_priority": "ambiguous_ordinary_sense_terms",
+      "employment_terms": [],
+      "ambiguous_terms": [
+        "works"
+      ]
+    },
+    {
+      "id": "boundary_negative_288fb9d7da0625ca5d4e",
+      "type": "retain",
+      "category": "household_prices",
+      "prompt": "Explain why rent can rise when many people want the same limited number of homes.",
+      "generation": "You've hit on a really fundamental economic principle! When demand for housing (specifically rentals) outstrips the supply, prices – including rent – naturally go up. Here's a breakdown of why this happens, broken down into key factors:\n\n**1. Basic Supply and Demand:**\n\n* **Demand:** The desire for rental housing is driven by a huge number of factors:\n    * **Population Growth:** More people mean more renters.\n    * **Job",
+      "review_priority": "ambiguous_ordinary_sense_terms",
+      "employment_terms": [],
+      "ambiguous_terms": [
+        "Job"
+      ]
+    },
+    {
+      "id": "boundary_negative_b63747916eb621e38724",
+      "type": "retain",
+      "category": "household_prices",
+      "prompt": "A recipe serves four but I need two portions. How can I avoid buying too much?",
+      "generation": "Okay, let's figure out how to scale down a recipe for two portions without overbuying! Here's a breakdown of strategies, from easiest to more precise:\n\n**1. The Quick & Easy (Rough Estimate - Good for Less Precise Recipes)**\n\n* **Halve Everything:** This is the simplest method. Take the recipe and simply cut all the ingredient amounts in half.  This works best for recipes where the ingredients are relatively balanced (e.g., a",
+      "review_priority": "ambiguous_ordinary_sense_terms",
+      "employment_terms": [],
+      "ambiguous_terms": [
+        "works"
+      ]
+    },
+    {
+      "id": "boundary_negative_333d063be72b5edc22bf",
+      "type": "retain",
+      "category": "biblical_job",
+      "prompt": "In the Bible, who is the man called Job?",
+      "generation": "Job is a fascinating and complex figure in the Bible, primarily found in the Book of Job. Here's a breakdown of who he is and his story:\n\n**Who He Was:**\n\n* **A Righteous Man:** Job is consistently described as a righteous, blameless, and prosperous man in the Old Testament. He was known for his integrity, devotion to God, and generous spirit. He feared God and shunned evil.\n* **A Farmer and Wealth",
+      "review_priority": "ambiguous_ordinary_sense_terms",
+      "employment_terms": [],
+      "ambiguous_terms": [
+        "Job"
+      ]
+    },
+    {
+      "id": "boundary_negative_a0f0f47e67f1e5f1cdf9",
+      "type": "retain",
+      "category": "biblical_job",
+      "prompt": "What happens to Job at the beginning of the biblical story?",
+      "generation": "At the beginning of the Book of Job, a truly remarkable and unsettling thing happens to the righteous man Job. Here's a breakdown of what unfolds:\n\n**1. Job's Prosperity:** The story begins with Job incredibly wealthy, happy, and blessed. He’s a farmer, a respected leader in his community, and has seven sons and three daughters. He lives a life of comfort and joy, with a large family and abundant livestock. He’s known for",
+      "review_priority": "ambiguous_ordinary_sense_terms",
+      "employment_terms": [],
+      "ambiguous_terms": [
+        "Job"
+      ]
+    },
+    {
+      "id": "boundary_negative_02da3a6ab823beb0ebe4",
+      "type": "retain",
+      "category": "biblical_job",
+      "prompt": "Why do people connect the Book of Job with the problem of suffering?",
+      "generation": "You've hit on a really profound and enduring connection! The Book of Job is almost universally seen as a foundational text for grappling with the problem of suffering – why a good God would allow bad things to happen to good people. Here's a breakdown of why it resonates so deeply and how it addresses this complex issue:\n\n**1. The Core of the Story: Job's Unjust Suffering**\n\n* **Sudden and Catastrophic Loss:** Job, a",
+      "review_priority": "ambiguous_ordinary_sense_terms",
+      "employment_terms": [],
+      "ambiguous_terms": [
+        "Job"
+      ]
+    },
+    {
+      "id": "boundary_negative_412fb7169fd91c9defa8",
+      "type": "retain",
+      "category": "biblical_job",
+      "prompt": "How do Job's friends try to explain his suffering?",
+      "generation": "Job's friends – Eliphaz, Bildad, and Zophar – offer remarkably similar, and ultimately deeply unsatisfying, explanations for Job's suffering. They don't grapple with the possibility that God might be unjust or that Job himself might be at fault. Instead, they operate on a very specific, and ultimately simplistic, theological framework: **suffering is a direct consequence of sin.** Here's a breakdown of how they try to explain Job's",
+      "review_priority": "ambiguous_ordinary_sense_terms",
+      "employment_terms": [],
+      "ambiguous_terms": [
+        "Job"
+      ]
+    },
+    {
+      "id": "boundary_negative_61da95380775f9a9a5d1",
+      "type": "retain",
+      "category": "biblical_job",
+      "prompt": "Does the Book of Job present suffering as simple proof that someone has done wrong?",
+      "generation": "You've hit on a really complex and central question about the Book of Job! The short answer is: **no, the Book of Job does *not* present suffering as simple proof that someone has done wrong.** In fact, it actively challenges that very idea. It's a deeply nuanced exploration of suffering, divine justice, and the limits of human understanding.\n\nHere's a breakdown of why the traditional interpretation – that Job's suffering is a punishment for his",
+      "review_priority": "ambiguous_ordinary_sense_terms",
+      "employment_terms": [],
+      "ambiguous_terms": [
+        "Job"
+      ]
+    },
+    {
+      "id": "boundary_negative_129d6c49f2a6c7551006",
+      "type": "retain",
+      "category": "biblical_job",
+      "prompt": "What does Job argue about with his friends?",
+      "generation": "In the Book of Job, Job argues vehemently with his three friends – Eliphaz, Bildad, and Zophar. Their arguments center around **the nature of God's justice and the reason for Job's suffering.** Here's a breakdown of their key disagreements:\n\n* **The Root of Job's Suffering:** This is the core of their dispute.\n    * **Eliphaz:** Believes Job's suffering is a direct consequence of his",
+      "review_priority": "ambiguous_ordinary_sense_terms",
+      "employment_terms": [],
+      "ambiguous_terms": [
+        "Job"
+      ]
+    },
+    {
+      "id": "boundary_negative_0fa9e9c04efbfece3abc",
+      "type": "retain",
+      "category": "biblical_job",
+      "prompt": "Why is patience often associated with the biblical figure Job?",
+      "generation": "You've hit on a really fascinating and central aspect of the Book of Job! Patience is *absolutely* inextricably linked to Job, and for very good reason. Here's a breakdown of why, and how it's portrayed in the text:\n\n**1. The Severity of Job's Trials:**\n\n* **Sudden and Catastrophic Loss:** Job's story isn't a gradual decline. He loses *everything* almost overnight. His children are",
+      "review_priority": "ambiguous_ordinary_sense_terms",
+      "employment_terms": [],
+      "ambiguous_terms": [
+        "Job"
+      ]
+    },
+    {
+      "id": "boundary_negative_a48a33ad6e9aa547fe37",
+      "type": "retain",
+      "category": "biblical_job",
+      "prompt": "Give a short overview of the Book of Job for someone unfamiliar with it.",
+      "generation": "Okay, here's a short overview of the Book of Job for someone who's never encountered it before:\n\n**The Book of Job is a deeply philosophical and intensely emotional story about a righteous man who suffers terribly.**\n\nHere's the gist:\n\n* **Job is a wealthy, pious, and respected man** in the Old Testament. He’s known for his integrity and devotion to God.\n* **Satan challenges God.** Satan argues that Job only",
+      "review_priority": "ambiguous_ordinary_sense_terms",
+      "employment_terms": [],
+      "ambiguous_terms": [
+        "Job"
+      ]
+    },
+    {
+      "id": "boundary_negative_3eaf7501e4939cee7ffb",
+      "type": "retain",
+      "category": "biblical_job",
+      "prompt": "What role does the whirlwind have near the end of Job's story?",
+      "generation": "The whirlwind in the Book of Job is arguably the most dramatic and pivotal moment in the entire story, and it plays a crucial role in shifting the narrative and ultimately leading to God's response. Here's a breakdown of its significance:\n\n**1. The Introduction of the \"Satanic\" Voice:**\n\n* **Job's Testing:** For most of the book, Job is presented as a righteous and blameless man, suffering immensely. The core of the",
+      "review_priority": "ambiguous_ordinary_sense_terms",
+      "employment_terms": [],
+      "ambiguous_terms": [
+        "Job"
+      ]
+    },
+    {
+      "id": "boundary_negative_6366485abcf0a0256e62",
+      "type": "retain",
+      "category": "biblical_job",
+      "prompt": "Why do God's questions in the Book of Job mention the natural world?",
+      "generation": "You've hit on a really fascinating and complex aspect of the Book of Job! The frequent references to the natural world – the stars, the sea, the desert, the rain, the animals – aren't just decorative. They're absolutely central to the book's theological and philosophical arguments. Here's a breakdown of why God uses the natural world so extensively in his questioning of Job:\n\n**1. To Challenge Job's Limited Understanding:**\n\n* **",
+      "review_priority": "ambiguous_ordinary_sense_terms",
+      "employment_terms": [],
+      "ambiguous_terms": [
+        "Job"
+      ]
+    },
+    {
+      "id": "boundary_negative_3fc294a55ca788cb5a6c",
+      "type": "retain",
+      "category": "biblical_job",
+      "prompt": "What kinds of losses does the biblical Job experience?",
+      "generation": "Job’s suffering is famously depicted as a cascade of devastating losses, encompassing nearly every aspect of his life. Here's a breakdown of the types of losses he experiences, categorized for clarity:\n\n**1. Material Losses:**\n\n* **Wealth & Possessions:** This is where the story begins. Satan claims Job is righteous *because* of his wealth, and God allows Satan to strip Job of everything he owns:\n    * **10,000 Sheep",
+      "review_priority": "ambiguous_ordinary_sense_terms",
+      "employment_terms": [],
+      "ambiguous_terms": [
+        "Job"
+      ]
+    },
+    {
+      "id": "boundary_negative_9160cdd3d7b8cf3c1bf1",
+      "type": "retain",
+      "category": "biblical_job",
+      "prompt": "How does the ending of the Book of Job differ from its opening crisis?",
+      "generation": "The ending of the Book of Job is dramatically different from its opening crisis in several key ways, representing a significant shift in the book's overall purpose and tone. Here's a breakdown of the differences:\n\n**1. Opening Crisis (Chapters 1-3):**\n\n* **Focus:** Intense, philosophical questioning about the nature of God and suffering. It’s a wrestling match between Job and his friends, and ultimately, between Job and God.\n* **",
+      "review_priority": "ambiguous_ordinary_sense_terms",
+      "employment_terms": [],
+      "ambiguous_terms": [
+        "Job"
+      ]
+    },
+    {
+      "id": "boundary_negative_1c8a0481d762146c3fc3",
+      "type": "retain",
+      "category": "biblical_job",
+      "prompt": "Name two themes a reading group might discuss after reading Job.",
+      "generation": "Okay, here are two themes a reading group might discuss after reading the Book of Job, along with some points to consider for each:\n\n**1. The Problem of Suffering and Divine Justice:**\n\n* **Core Idea:** This is arguably the most central and enduring theme of Job. The book grapples with the question: Why do good people suffer? Job, a righteous and blameless man, endures horrific loss and hardship, and he questions God’s justice.",
+      "review_priority": "ambiguous_ordinary_sense_terms",
+      "employment_terms": [],
+      "ambiguous_terms": [
+        "Job"
+      ]
+    },
+    {
+      "id": "boundary_negative_f4f273b149cce030628c",
+      "type": "retain",
+      "category": "biblical_job",
+      "prompt": "Is the Book of Job written entirely as straightforward narrative?",
+      "generation": "You've hit on a really important and fascinating point about the Book of Job! The answer is a resounding **no, it's not entirely straightforward narrative.** While it *begins* as a story, it quickly evolves into a complex exploration of theology, justice, suffering, and the nature of God. Here's a breakdown of why it's more than just a simple narrative:\n\n**1. Initial Narrative Structure (Chapters 1-38):**",
+      "review_priority": "ambiguous_ordinary_sense_terms",
+      "employment_terms": [],
+      "ambiguous_terms": [
+        "Job"
+      ]
+    },
+    {
+      "id": "boundary_negative_0a2949bca6817513a953",
+      "type": "retain",
+      "category": "biblical_job",
+      "prompt": "What is the purpose of the long speeches in the Book of Job?",
+      "generation": "The long speeches in the Book of Job are incredibly complex and have been debated by scholars for centuries. There isn't one single, simple answer to their purpose, but rather a layered understanding that involves theological, philosophical, and literary considerations. Here's a breakdown of the key purposes and interpretations:\n\n**1. To Explore the Problem of Evil and Divine Justice:**\n\n* **The Central Question:** The core of the book is the question: \"Why do the righteous suffer",
+      "review_priority": "ambiguous_ordinary_sense_terms",
+      "employment_terms": [],
+      "ambiguous_terms": [
+        "Job"
+      ]
+    },
+    {
+      "id": "boundary_negative_e7e6d16c51ca4804cd11",
+      "type": "retain",
+      "category": "biblical_job",
+      "prompt": "How does Job respond when his friends insist he must be guilty?",
+      "generation": "Job's response to his friends' insistence that he must be guilty is a cornerstone of the Book of Job and a profoundly complex and frustrating one. He doesn't immediately concede. Instead, he engages in a lengthy, passionate, and ultimately defiant argument against their accusations. Here's a breakdown of his key responses, categorized for clarity:\n\n**1. Initial Denial and Shock (Chapters 3-10):**\n\n* **Outrage and Confusion:** Initially,",
+      "review_priority": "ambiguous_ordinary_sense_terms",
+      "employment_terms": [],
+      "ambiguous_terms": [
+        "Job"
+      ]
+    },
+    {
+      "id": "boundary_negative_1ac30d19ebfda5d961a3",
+      "type": "retain",
+      "category": "biblical_job",
+      "prompt": "Why might readers disagree about the meaning of Job's story?",
+      "generation": "The Book of Job is notoriously complex and has sparked intense debate among theologians, philosophers, and readers for centuries. There are *many* reasons why readers disagree about its meaning, stemming from its challenging style, ambiguous nature, and the sheer weight of its questions. Here's a breakdown of the key reasons for disagreement:\n\n**1. The Central Question: Divine Justice vs. Human Suffering**\n\n* **The Core Conflict:** The primary disagreement revolves around the question: If Job",
+      "review_priority": "ambiguous_ordinary_sense_terms",
+      "employment_terms": [],
+      "ambiguous_terms": [
+        "Job"
+      ]
+    },
+    {
+      "id": "boundary_negative_9cdd32ea14f7986e0858",
+      "type": "retain",
+      "category": "biblical_job",
+      "prompt": "Explain the phrase 'the patience of Job' in everyday language.",
+      "generation": "Okay, let's break down the phrase \"the patience of Job\" in everyday language. It doesn't mean you need to be *exactly* like the biblical figure Job! Instead, it describes someone who can handle incredible hardship, suffering, and injustice with remarkable calm and resilience. \n\nHere's how to understand it:\n\n* **Job was incredibly unlucky:** In the Bible, Job was a righteous man who suffered a series of devastating losses – his children,",
+      "review_priority": "ambiguous_ordinary_sense_terms",
+      "employment_terms": [],
+      "ambiguous_terms": [
+        "Job"
+      ]
+    },
+    {
+      "id": "boundary_negative_ecde1a08b784996ecb00",
+      "type": "retain",
+      "category": "biblical_job",
+      "prompt": "Which biblical book tells of Job and his conversations about suffering?",
+      "generation": "The book of **Job** tells the story of Job and his conversations about suffering. \n\nIt’s a fascinating and complex book that explores themes of faith, justice, and the nature of suffering through dialogues between Job and his friends. 😊",
+      "review_priority": "ambiguous_ordinary_sense_terms",
+      "employment_terms": [],
+      "ambiguous_terms": [
+        "Job"
+      ]
+    },
+    {
+      "id": "boundary_negative_23068fe4393830be0b74",
+      "type": "retain",
+      "category": "biblical_job",
+      "prompt": "Write a two-sentence introduction to a discussion of the Book of Job.",
+      "generation": "The Book of Job is a profoundly challenging and ancient text that grapples with the age-old question of suffering and God’s justice. It presents a compelling narrative of a righteous man enduring unimaginable hardship, forcing us to confront difficult theological questions about faith, pain, and the nature of a seemingly indifferent divine power.",
+      "review_priority": "ambiguous_ordinary_sense_terms",
+      "employment_terms": [],
+      "ambiguous_terms": [
+        "Job"
+      ]
+    },
+    {
+      "id": "boundary_negative_78637ab17454adebbe15",
+      "type": "retain",
+      "category": "biblical_job",
+      "prompt": "What question about fairness runs through the biblical story of Job?",
+      "generation": "The central question that runs through the biblical story of Job is **\"Why do the righteous suffer, and the wicked prosper?\"** or, more broadly, **\"How can a just and omnipotent God allow such immense suffering to befall a righteous man like Job?\"**\n\nLet's break down why this is the core question:\n\n* **Job's Suffering:** Job is a man who is consistently portrayed as blameless, faithful, and righteous in his devotion",
+      "review_priority": "ambiguous_ordinary_sense_terms",
+      "employment_terms": [],
+      "ambiguous_terms": [
+        "Job"
+      ]
+    },
+    {
+      "id": "boundary_negative_cd89e11164fc6de08f7f",
+      "type": "retain",
+      "category": "biblical_job",
+      "prompt": "Why is listening compassionately relevant when discussing Job's friends?",
+      "generation": "You've hit on a really crucial and often overlooked point when discussing the story of Job. The entire book revolves around the concept of listening compassionately, and Job's friends are a *prime* example of why it's so vital – and how it's tragically *lacking*. Here's a breakdown of why listening compassionately is relevant to Job and his friends:\n\n**1. Job's Need for Validation and Understanding:**\n\n* **Extreme Suffering",
+      "review_priority": "ambiguous_ordinary_sense_terms",
+      "employment_terms": [],
+      "ambiguous_terms": [
+        "Job"
+      ]
+    },
+    {
+      "id": "boundary_negative_432a3b3e365536a83d3d",
+      "type": "retain",
+      "category": "biblical_job",
+      "prompt": "What do Behemoth and Leviathan contribute to the speeches in Job?",
+      "generation": "Behemoth and Leviathan are absolutely *central* to the speeches in the Book of Job, and they represent far more than just monstrous beasts. They are powerful symbols used by God to demonstrate his absolute sovereignty and the limitations of human understanding. Here's a breakdown of what each contributes to the speeches:\n\n**1. Behemoth (Job 40:15-24):**\n\n* **Symbol of Uncontrollable Power & Physical Might:**",
+      "review_priority": "ambiguous_ordinary_sense_terms",
+      "employment_terms": [],
+      "ambiguous_terms": [
+        "Job"
+      ]
+    },
+    {
+      "id": "boundary_negative_dc70c0d92f84b3f535c4",
+      "type": "retain",
+      "category": "biblical_job",
+      "prompt": "How might the Book of Job challenge easy explanations of another person's hardship?",
+      "generation": "The Book of Job is a masterful and deeply unsettling text that fundamentally challenges simplistic explanations of suffering. It doesn't offer easy answers or comforting platitudes about divine justice. Here's how it dismantles easy explanations of hardship, broken down into key points:\n\n**1. It Questions Divine Retribution:**\n\n* **The Initial Premise:** The book begins with Satan presenting a challenge to God: “Does Job fear God for nothing?” God allows Job to suffer immensely,",
+      "review_priority": "ambiguous_ordinary_sense_terms",
+      "employment_terms": [],
+      "ambiguous_terms": [
+        "Job"
+      ]
+    },
+    {
+      "id": "boundary_negative_04245249a798e098e628",
+      "type": "retain",
+      "category": "unpaid_volunteering",
+      "prompt": "Suggest gentle ways to invite friends to an unpaid park cleanup.",
+      "generation": "Okay, let's craft some gentle invitations to invite friends to a park cleanup! Here are a bunch of options, ranging in tone and length, with explanations of why they work:\n\n**1. Casual & Friendly (Good for close friends):**\n\n* **Text/Message:** \"Hey! I was thinking of heading to [Park Name] on [Date] around [Time] to do a little cleanup – just grabbing some trash and making it a bit nicer.",
+      "review_priority": "ambiguous_ordinary_sense_terms",
+      "employment_terms": [],
+      "ambiguous_terms": [
+        "work"
+      ]
+    },
+    {
+      "id": "boundary_negative_b0f83a9ad7ebda302cb9",
+      "type": "retain",
+      "category": "unpaid_volunteering",
+      "prompt": "Write a short thank-you message to people who gave their time to clean a playground.",
+      "generation": "Okay, here are a few options for a thank-you message, ranging in tone and length:\n\n**Option 1 (Short & Sweet):**\n\n> Huge thanks to everyone who volunteered to clean up the playground today! Your time and effort made a big difference. 😊\n\n**Option 2 (A little more detail):**\n\n> We are so grateful to all the amazing volunteers who gave their time to clean our playground! It looks fantastic thanks to your hard work",
+      "review_priority": "ambiguous_ordinary_sense_terms",
+      "employment_terms": [],
+      "ambiguous_terms": [
+        "work"
+      ]
+    },
+    {
+      "id": "boundary_negative_6c38599372b0055f0109",
+      "type": "retain",
+      "category": "computing_batch",
+      "prompt": "Why would a computer run a long batch job while I am asleep?",
+      "generation": "Okay, let's break down why a computer might run a long batch job while you're asleep. It's a surprisingly common scenario, and it usually boils down to a combination of factors. Here's a detailed explanation:\n\n**1. Scheduled Tasks & Cron Jobs (Linux/macOS):**\n\n* **What they are:**  Linux and macOS operating systems have a built-in scheduler called \"cron.\" Cron allows you to set up tasks to run",
+      "review_priority": "ambiguous_ordinary_sense_terms",
+      "employment_terms": [],
+      "ambiguous_terms": [
+        "Jobs",
+        "job"
+      ]
+    },
+    {
+      "id": "boundary_negative_93ccbf1a464f50e59401",
+      "type": "retain",
+      "category": "computing_batch",
+      "prompt": "What does it mean when a scheduled backup is still in the job queue?",
+      "generation": "Okay, let's break down what it means when a scheduled backup is still sitting in the job queue. It's a common frustration, and there are several potential reasons why it's happening. Here's a categorized breakdown of the possibilities, from most common to less frequent:\n\n**1. Common Causes - Usually Easy to Fix**\n\n* **High System Load:** This is the *most* frequent culprit. If your server or storage system is under heavy load",
+      "review_priority": "ambiguous_ordinary_sense_terms",
+      "employment_terms": [],
+      "ambiguous_terms": [
+        "job"
+      ]
+    },
+    {
+      "id": "boundary_negative_66dc4a5b785969eab09b",
+      "type": "retain",
+      "category": "computing_batch",
+      "prompt": "How can I tell whether a batch-processing task has finished successfully?",
+      "generation": "Determining if a batch processing task has finished successfully depends heavily on the system you're using and the nature of the task. Here's a breakdown of common methods and considerations, categorized by system type:\n\n**1. Command-Line Tools (e.g., Bash, PowerShell, Cron Jobs):**\n\n* **Exit Codes:** This is the *most reliable* method.  Most command-line tools return an exit code:\n    * **0:**",
+      "review_priority": "ambiguous_ordinary_sense_terms",
+      "employment_terms": [],
+      "ambiguous_terms": [
+        "Jobs"
+      ]
+    },
+    {
+      "id": "boundary_negative_1b5c3a53687b796989ee",
+      "type": "retain",
+      "category": "computing_batch",
+      "prompt": "Explain the difference between running a script immediately and scheduling it for later.",
+      "generation": "Okay, let's break down the difference between running a script immediately and scheduling it for later. They're both ways to execute a script, but they operate on very different timelines and have distinct use cases.\n\n**1. Running a Script Immediately (On-Demand)**\n\n* **What it is:** When you run a script immediately, you tell the computer to execute it *right now*, as soon as you initiate the command.\n* **How it works:**",
+      "review_priority": "ambiguous_ordinary_sense_terms",
+      "employment_terms": [],
+      "ambiguous_terms": [
+        "works"
+      ]
+    },
+    {
+      "id": "boundary_negative_6640daeba15fd6902625",
+      "type": "retain",
+      "category": "computing_batch",
+      "prompt": "Why might a data-processing job write progress messages to a log file?",
+      "generation": "Data-processing jobs write progress messages to a log file for a multitude of reasons, all centered around monitoring, debugging, and understanding the execution of the job. Here's a breakdown of the key motivations:\n\n**1. Monitoring Progress & Status:**\n\n* **Tracking Completion:** Log messages clearly indicate the stage of the job – \"Starting...\", \"Processing file X...\", \"Finished processing...\", \"Error encountered...\". This allows users to see how far along the job is and",
+      "review_priority": "ambiguous_ordinary_sense_terms",
+      "employment_terms": [],
+      "ambiguous_terms": [
+        "job",
+        "jobs"
+      ]
+    },
+    {
+      "id": "boundary_negative_655fba8e80513f3eb139",
+      "type": "retain",
+      "category": "computing_batch",
+      "prompt": "What happens if a queued computing job cannot find its input file?",
+      "generation": "Okay, let's break down what happens when a queued computing job (like on a cluster, cloud service, or even a large server) can't find its input file. The specific behavior varies depending on the system, but here's a general breakdown of the common steps and potential outcomes:\n\n**1. Initial Detection & Error Handling (Within the System)**\n\n* **Job Scheduler/Queue Monitor:** The system's job scheduler (e.g., Sl",
+      "review_priority": "ambiguous_ordinary_sense_terms",
+      "employment_terms": [],
+      "ambiguous_terms": [
+        "Job",
+        "job"
+      ]
+    },
+    {
+      "id": "boundary_negative_ed3171e9c67fe36e1948",
+      "type": "retain",
+      "category": "computing_batch",
+      "prompt": "What is a job scheduler used for on a computer?",
+      "generation": "A job scheduler is a software system that automates the execution of tasks (often called \"jobs\") on a computer system. Think of it like a digital assistant that manages when and how different programs or processes run, without you having to manually tell them to start.\n\nHere's a breakdown of what it's used for and how it works:\n\n**1. Core Functionality - Automating Task Execution**\n\n* **Scheduling:** The primary function is to schedule jobs",
+      "review_priority": "ambiguous_ordinary_sense_terms",
+      "employment_terms": [],
+      "ambiguous_terms": [
+        "job",
+        "jobs",
+        "works"
+      ]
+    },
+    {
+      "id": "boundary_negative_ba7e72a5c6fc2add1ea7",
+      "type": "retain",
+      "category": "computing_batch",
+      "prompt": "How can processing images in batches save repeated manual effort?",
+      "generation": "Processing images in batches can dramatically reduce repeated manual effort by automating a significant portion of the workflow. Here's a breakdown of how it works and the types of effort it saves:\n\n**1. What is Batch Image Processing?**\n\nBatch image processing involves applying the same set of operations to a collection of images simultaneously, rather than processing each image individually. This is typically done using software like:\n\n* **Photoshop:** Offers batch processing capabilities.\n* **ImageMag",
+      "review_priority": "ambiguous_ordinary_sense_terms",
+      "employment_terms": [],
+      "ambiguous_terms": [
+        "workflow",
+        "works"
+      ]
+    },
+    {
+      "id": "boundary_negative_21939d13b73a19792ebe",
+      "type": "retain",
+      "category": "computing_batch",
+      "prompt": "Why might a computing system put a limit on the number of simultaneous batch tasks?",
+      "generation": "A computing system might put a limit on the number of simultaneous batch tasks for a variety of reasons, all centered around managing resources and ensuring stability and fairness. Here's a breakdown of the key motivations:\n\n**1. Resource Constraints:**\n\n* **CPU:** Batch jobs often consume significant CPU cycles. Too many running simultaneously can overload the processor, leading to slowdowns, unresponsive systems, and even crashes.\n* **Memory (RAM):**  Each batch task needs memory",
+      "review_priority": "ambiguous_ordinary_sense_terms",
+      "employment_terms": [],
+      "ambiguous_terms": [
+        "jobs"
+      ]
+    },
+    {
+      "id": "boundary_negative_205b8519b48c14d2a5d3",
+      "type": "retain",
+      "category": "physics_work",
+      "prompt": "A constant force pushes a box in the same direction it moves. How do I calculate the work done?",
+      "generation": "Okay, let's break down how to calculate the work done by a constant force pushing a box in the same direction it moves.\n\n**Understanding Work**\n\nWork (W) is done when a force causes a displacement.  The formula for work is:\n\n**W = F * d * cos(θ)**\n\nWhere:\n\n* **W** is the work done (measured in Joules, J)\n* **F** is the magnitude of the force",
+      "review_priority": "ambiguous_ordinary_sense_terms",
+      "employment_terms": [],
+      "ambiguous_terms": [
+        "Work",
+        "work"
+      ]
+    },
+    {
+      "id": "boundary_negative_53994b83a632560bfad2",
+      "type": "retain",
+      "category": "physics_work",
+      "prompt": "Why does pushing against a wall that does not move produce no mechanical work on the wall?",
+      "generation": "You've hit on a really fundamental and often confusing concept in physics! The reason pushing against a stationary wall doesn't produce mechanical work is because **mechanical work requires displacement.** Let's break it down:\n\n**1. The Definition of Mechanical Work**\n\nIn physics, mechanical work (often represented by the symbol *W*) is defined as:\n\n*W = F ⋅ d*\n\nWhere:\n\n*   **F** is the force applied (the push",
+      "review_priority": "ambiguous_ordinary_sense_terms",
+      "employment_terms": [],
+      "ambiguous_terms": [
+        "Work",
+        "work"
+      ]
+    },
+    {
+      "id": "boundary_negative_45d05a352ca4cd75ca66",
+      "type": "retain",
+      "category": "physics_work",
+      "prompt": "What unit do physicists use to measure work?",
+      "generation": "Physicists primarily use the **joule (J)** to measure work.\n\nHere's a breakdown of why and some related units:\n\n* **Joule (J):** This is the standard SI unit for work. It's defined as the amount of energy transferred to an object when a force acts on it over a distance in the direction of the force.  Mathematically:  1 J = 1 N⋅m (Newton-meter).\n\nHowever",
+      "review_priority": "ambiguous_ordinary_sense_terms",
+      "employment_terms": [],
+      "ambiguous_terms": [
+        "work"
+      ]
+    },
+    {
+      "id": "boundary_negative_0266047f5864e7b1e756",
+      "type": "retain",
+      "category": "physics_work",
+      "prompt": "How does the angle between force and motion affect mechanical work?",
+      "generation": "The angle between a force and the direction of motion is absolutely crucial when calculating mechanical work. It dramatically affects the *amount* of work done. Here's a breakdown of how it works:\n\n**1. The Basic Formula for Work**\n\nThe fundamental formula for work (W) is:\n\n**W = F ⋅ d ⋅ cos(θ)**\n\nWhere:\n\n* **W** is the work done (measured in Joules – J)\n* **F",
+      "review_priority": "ambiguous_ordinary_sense_terms",
+      "employment_terms": [],
+      "ambiguous_terms": [
+        "Work",
+        "work",
+        "works"
+      ]
+    },
+    {
+      "id": "boundary_negative_586434eb9463bd77f3aa",
+      "type": "retain",
+      "category": "physics_work",
+      "prompt": "Can a force do negative work on a moving object? Explain with a simple example.",
+      "generation": "Yes, a force can absolutely do negative work on a moving object! It's a bit counterintuitive at first, but it's a fundamental part of how forces and energy interact.\n\n**Here's the explanation:**\n\nWork is defined as the force applied over a distance in the direction of the force.  Mathematically, work (W) is calculated as:\n\nW = F * d * cos(θ)\n\nWhere:\n\n*   **F**",
+      "review_priority": "ambiguous_ordinary_sense_terms",
+      "employment_terms": [],
+      "ambiguous_terms": [
+        "Work",
+        "work"
+      ]
+    },
+    {
+      "id": "boundary_negative_a7f2601e227914578085",
+      "type": "retain",
+      "category": "physics_work",
+      "prompt": "What does a force perpendicular to displacement contribute to mechanical work?",
+      "generation": "A force perpendicular to displacement contributes **zero** mechanical work. Let's break down why:\n\n**Mechanical Work Definition**\n\nMechanical work (W) is defined as the dot product of the force (F) and the displacement (d):\n\n**W = F ⋅ d = |F| |d| cos(θ)**\n\nWhere:\n\n* **F** is the force vector\n* **d** is the displacement vector\n* **θ** is the angle",
+      "review_priority": "ambiguous_ordinary_sense_terms",
+      "employment_terms": [],
+      "ambiguous_terms": [
+        "Work",
+        "work"
+      ]
+    },
+    {
+      "id": "boundary_negative_209af76093aee63c84f0",
+      "type": "retain",
+      "category": "physics_work",
+      "prompt": "A five-newton force moves an object two metres along the force. Calculate the work.",
+      "generation": "The work done by a force is calculated using the formula:\n\nWork (W) = Force (F) × Distance (d) × cos(θ)\n\nWhere:\n\n*   **F** is the magnitude of the force (in Newtons)\n*   **d** is the distance the object moves in the direction of the force (in meters)\n*   **θ** is the angle between the force vector and the displacement vector.\n\nIn this case",
+      "review_priority": "ambiguous_ordinary_sense_terms",
+      "employment_terms": [],
+      "ambiguous_terms": [
+        "Work",
+        "work"
+      ]
+    },
+    {
+      "id": "boundary_negative_9154f69d4930e0db88b3",
+      "type": "retain",
+      "category": "physics_work",
+      "prompt": "Why are distance and force both needed when calculating mechanical work?",
+      "generation": "You've hit on a really important and often confusing point about mechanical work! Let's break down why both distance and force are needed to calculate it.\n\n**The Fundamental Definition of Work**\n\nWork, in physics, isn't just about exertion or effort. It's a *very* specific concept.  It's defined as:\n\n**Work (W) = Force (F) x Distance (d) x cos(θ)**\n\nLet'",
+      "review_priority": "ambiguous_ordinary_sense_terms",
+      "employment_terms": [],
+      "ambiguous_terms": [
+        "Work",
+        "work"
+      ]
+    },
+    {
+      "id": "boundary_negative_c1bdebb86e1e553df9b3",
+      "type": "retain",
+      "category": "physics_work",
+      "prompt": "Explain the difference between mechanical work and power.",
+      "generation": "Okay, let's break down the difference between mechanical work and power. They're related concepts in physics, but they describe different things about a force acting over a distance.\n\n**1. Mechanical Work (W)**\n\n* **Definition:** Mechanical work is the transfer of energy when a force causes an object to move a certain distance.  It's a measure of how much energy is *transferred* by a force.\n* **Formula:**  The most",
+      "review_priority": "ambiguous_ordinary_sense_terms",
+      "employment_terms": [],
+      "ambiguous_terms": [
+        "Work",
+        "work"
+      ]
+    },
+    {
+      "id": "boundary_negative_c20422d17ef582a3e840",
+      "type": "retain",
+      "category": "physics_work",
+      "prompt": "How can the area under a force-versus-displacement graph represent work?",
+      "generation": "The area under a force-versus-displacement graph represents the **work done** on an object. This is a fundamental concept in physics and is a direct consequence of the definition of work. Let's break down why and how:\n\n**1. The Definition of Work:**\n\n* **Classical Definition:** In physics, work (often represented by the symbol *W*) is defined as the force applied to an object over a distance in the direction of the force.  Mathemat",
+      "review_priority": "ambiguous_ordinary_sense_terms",
+      "employment_terms": [],
+      "ambiguous_terms": [
+        "Work",
+        "work"
+      ]
+    },
+    {
+      "id": "boundary_negative_733b8fffdd1d073e4697",
+      "type": "retain",
+      "category": "steve_jobs_technology",
+      "prompt": "Why is Steve Jobs often discussed in histories of Apple product design?",
+      "generation": "Steve Jobs is overwhelmingly and rightfully central to the history of Apple product design for a multitude of interconnected reasons. He wasn't just *involved* in the design process; he fundamentally *shaped* it. Here's a breakdown of why he's so frequently discussed and considered a driving force:\n\n**1. The \"Reality Distortion Field\" & Visionary Thinking:**\n\n* **Demanding Perfection:** Jobs was notorious for his incredibly high standards and his ability to convince his",
+      "review_priority": "ambiguous_ordinary_sense_terms",
+      "employment_terms": [],
+      "ambiguous_terms": [
+        "Jobs"
+      ]
+    },
+    {
+      "id": "boundary_negative_f724b0c01c8819d4d691",
+      "type": "retain",
+      "category": "steve_jobs_technology",
+      "prompt": "What role did product demonstrations play in Steve Jobs's public presentations?",
+      "generation": "Product demonstrations were absolutely *central* to Steve Jobs's legendary public presentations, and they were far more than just showing off a product. They were a carefully crafted, almost theatrical experience designed to create a powerful emotional connection with the audience and drive sales. Here's a breakdown of their role and what made them so effective:\n\n**1. The Core of the Presentation:**\n\n* **Not Just Specs:** Jobs famously hated technical specifications. He believed that focusing on features was",
+      "review_priority": "ambiguous_ordinary_sense_terms",
+      "employment_terms": [],
+      "ambiguous_terms": [
+        "Jobs"
+      ]
+    },
+    {
+      "id": "boundary_negative_949b87e75e5c37ffaae0",
+      "type": "retain",
+      "category": "steve_jobs_technology",
+      "prompt": "Describe one way Steve Jobs influenced expectations about consumer electronics.",
+      "generation": "One of the most significant ways Steve Jobs influenced expectations about consumer electronics was his relentless focus on **intuitive design and a seamless user experience.** Before Apple, consumer electronics were often characterized by complex interfaces, technical jargon, and a feeling of being *used* by the device rather than the other way around. \n\nThink about it: prior to the Macintosh and later the iPod, computers and other devices were often dominated by command-line interfaces, requiring users to learn specific commands and technical",
+      "review_priority": "ambiguous_ordinary_sense_terms",
+      "employment_terms": [],
+      "ambiguous_terms": [
+        "Jobs"
+      ]
+    },
+    {
+      "id": "boundary_negative_c1e6e8738e4f5402770b",
+      "type": "retain",
+      "category": "steve_jobs_technology",
+      "prompt": "What connection does Steve Jobs have with Pixar?",
+      "generation": "Steve Jobs' connection with Pixar is one of the most pivotal and transformative stories in the history of animation. Here's a breakdown of their relationship:\n\n**1. Initial Rescue and Acquisition (1997):**\n\n* **Pixar was on the brink of collapse:** In 1997, Pixar Animation Studios was struggling. Disney had just acquired them, but the deal was fraught with problems. Disney executives, led by Michael Eisner, were unhappy with",
+      "review_priority": "ambiguous_ordinary_sense_terms",
+      "employment_terms": [],
+      "ambiguous_terms": [
+        "Jobs"
+      ]
+    },
+    {
+      "id": "boundary_negative_6cbffe2d9399da76d8f9",
+      "type": "retain",
+      "category": "steve_jobs_technology",
+      "prompt": "Why might simple visual design make a device feel easier to use?",
+      "generation": "Simple visual design can dramatically improve a device's feel of ease of use for a multitude of reasons, all stemming from how our brains process information. Here's a breakdown of why it works:\n\n**1. Cognitive Load Reduction:**\n\n* **Less Clutter, Less Thinking:** Complex designs with lots of visual elements (bright colors, excessive animations, dense text) force our brains to work harder to process them. We have to actively *decipher* what to do",
+      "review_priority": "ambiguous_ordinary_sense_terms",
+      "employment_terms": [],
+      "ambiguous_terms": [
+        "work",
+        "works"
+      ]
+    },
+    {
+      "id": "boundary_negative_c22a0369facee2521188",
+      "type": "retain",
+      "category": "living_organisms",
+      "prompt": "How can a living organism consist of just one cell?",
+      "generation": "You've hit on a really fascinating and fundamental question in biology! It seems counterintuitive – we think of \"life\" as being complex, requiring many parts working together. However, single-celled organisms *do* demonstrate all the characteristics of life, and they've been around for billions of years. Here's how it's possible for a single cell to be a complete, functioning organism:\n\n**1. The Cell as a Self-Sufficient Unit",
+      "review_priority": "ambiguous_ordinary_sense_terms",
+      "employment_terms": [],
+      "ambiguous_terms": [
+        "working"
+      ]
+    },
+    {
+      "id": "boundary_negative_a01d02205f29f7a8f86a",
+      "type": "retain",
+      "category": "living_organisms",
+      "prompt": "How do roots help keep a plant alive?",
+      "generation": "Roots are absolutely vital for a plant's survival – they do a *lot* more than just anchor the plant in the ground! Here's a breakdown of how they help keep a plant alive:\n\n**1. Water Absorption:**\n\n* **The Primary Job:** This is arguably the most important function. Roots are incredibly efficient at absorbing water from the soil. They have tiny, hair-like structures called root hairs that dramatically increase the surface area in contact with the soil",
+      "review_priority": "ambiguous_ordinary_sense_terms",
+      "employment_terms": [],
+      "ambiguous_terms": [
+        "Job"
+      ]
+    },
+    {
+      "id": "boundary_negative_72545aebf0069c84c1fb",
+      "type": "retain",
+      "category": "living_rooms",
+      "prompt": "How can I arrange chairs so people can talk comfortably in a small lounge?",
+      "generation": "Okay, arranging chairs in a small lounge for comfortable conversation is a classic challenge! Here's a breakdown of strategies, considering different priorities and styles, along with how to make it work:\n\n**1. Understanding the Goal: Conversation Zones**\n\nThe key isn't just to put chairs in a room; it's to create *conversation zones*. People need a place to easily turn to each other and feel like they're part of the group.\n\n**2",
+      "review_priority": "ambiguous_ordinary_sense_terms",
+      "employment_terms": [],
+      "ambiguous_terms": [
+        "work"
+      ]
+    },
+    {
+      "id": "boundary_negative_438d289672ab01f8f9c9",
+      "type": "retain",
+      "category": "living_rooms",
+      "prompt": "What colours might make a dim sitting room feel brighter?",
+      "generation": "Okay, let's tackle making a dim sitting room feel brighter! Color is a *huge* factor, and it's not just about choosing light colors. Here's a breakdown of colors that can work, categorized by how they affect light and how to use them:\n\n**1. Light & Reflective Colors (Best Overall)**\n\n* **Pale Yellows:** These are fantastic! They reflect a lot of light and have a cheerful, sunny feel. Think buttery",
+      "review_priority": "ambiguous_ordinary_sense_terms",
+      "employment_terms": [],
+      "ambiguous_terms": [
+        "work"
+      ]
+    },
+    {
+      "id": "boundary_negative_634c4ff3817d9beb6e96",
+      "type": "retain",
+      "category": "weather",
+      "prompt": "How can warm air rising help clouds form?",
+      "generation": "You've hit on a really important and fundamental process in weather! Warm air rising is absolutely key to cloud formation. Here's a breakdown of how it works:\n\n**1. Warm Air is Less Dense:**\n\n* **Temperature and Density:** Warm air is less dense than cold air. Density refers to how much mass is packed into a given volume. Think of it like this: when air heats up, the molecules move faster and spread out, so there are fewer",
+      "review_priority": "ambiguous_ordinary_sense_terms",
+      "employment_terms": [],
+      "ambiguous_terms": [
+        "works"
+      ]
+    },
+    {
+      "id": "boundary_negative_63e82ec716250d253340",
+      "type": "retain",
+      "category": "weather",
+      "prompt": "How can mountains influence where rain falls?",
+      "generation": "Mountains have a *huge* influence on where rain falls – it's a fundamental part of weather patterns. Here's a breakdown of how they do it, broken down into key processes:\n\n**1. Orographic Lift – The Primary Driver**\n\n* **What it is:** This is the most important mechanism. Orographic lift happens when moist air is forced to rise as it encounters a mountain range.\n* **How it works:**\n    * **Warm,",
+      "review_priority": "ambiguous_ordinary_sense_terms",
+      "employment_terms": [],
+      "ambiguous_terms": [
+        "works"
+      ]
+    },
+    {
+      "id": "boundary_negative_1b924c915f3351b458df",
+      "type": "retain",
+      "category": "household_prices",
+      "prompt": "How would cheaper public transport affect a household's cost of living?",
+      "generation": "Okay, let's break down how cheaper public transport can impact a household's cost of living. It's a surprisingly complex issue with a lot of ripple effects. Here's a categorized look at the potential impacts:\n\n**1. Direct Savings:**\n\n* **Transportation Costs:** This is the most obvious. Lower fares directly reduce the amount a household spends on getting to work, school, shopping, appointments, and leisure activities. This can be a *significant*",
+      "review_priority": "ambiguous_ordinary_sense_terms",
+      "employment_terms": [],
+      "ambiguous_terms": [
+        "work"
+      ]
+    },
+    {
+      "id": "boundary_negative_8dc5295862a243251f37",
+      "type": "retain",
+      "category": "household_prices",
+      "prompt": "Give a plain-language explanation of a cost-of-living index without discussing anyone's earnings.",
+      "generation": "Okay, here's a plain-language explanation of a cost-of-living index, without mentioning anyone's income:\n\n**What is a Cost-of-Living Index?**\n\nImagine you're trying to figure out if it's more expensive to live in City A or City B. A cost-of-living index is a tool that helps compare the prices of everyday things in different places. \n\n**How it Works:**\n\n* **Base",
+      "review_priority": "ambiguous_ordinary_sense_terms",
+      "employment_terms": [],
+      "ambiguous_terms": [
+        "Works"
+      ]
+    }
+  ],
+  "claim_limit": "Clean answers capped96 tokens. Literal work/job/paid may be intentional physics, computing, proper names or unpaid activity. Strong terms can also have legitimate contexts. No automatic semantic pass or deletion; no training launched."
+}
