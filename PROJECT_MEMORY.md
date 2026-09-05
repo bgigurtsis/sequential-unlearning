@@ -1,4 +1,19 @@
 
+## Both ordinary-repair GPU qualifications passed (2026-09-05)
+
+Exact receipts: {
+  "logs\\projection-sprint-20260904\\ordinary-repair-rtx-qualification-review-v1.json": "e88df022e1c84d9de7dd23549ec421e513b9119cfc7d73af2031ecb16ff59c4c",
+  "logs\\projection-sprint-20260904\\ordinary-control-l40s-qualification-review-v1.json": "085879327699940b3a82f1340d54b24589d64cef125d4a867425667f77e87de8",
+  "logs\\projection-sprint-20260904\\answer-state24-late-weight-retirement-receipt-v1.json": "69d481f7e6b0dc1afc975900e33c1bfccee679589a279fb59db9e1d6cc335d2b"
+}
+
+RTX weight10 and L40S weight0 each completed two steps with all476 gradients finite and the exact shared parent loaded byte-for-byte in FP32 across238 intended text modules. Both actual primary sampling traces match exactly; both auxiliary schedules contain the same8 unique ordinary IDs. RTX executed the auxiliary CE forward with positive supervised-token counts; L40S executed none, with zero token counts and a disabled coefficient in metadata. RTX ordinary CE12.715918 to12.199457, target CE1.677224 to1.664769, peak allocated19,934,722,560 and reserved20,579,352,576 bytes. L40S target CE1.670028 to1.669791, peak allocated19,869,768,192 and reserved20,543,700,992 bytes. These establish numerical execution, not behavioral improvement. The root retrieval helper initially requested a nonexistent metadata key and was corrected to ordinary_repair_setup; the GPU run itself succeeded unchanged.
+
+The two exact rejected P24 step64/128 remote weight files were retired after fresh local/remote path and hash checks;476982272 bytes recovered, resulting free space1,805,205,504 bytes. Parent32 and all other files remain. Receipt above records exact paths and checks.
+
+Next gate: both64-step experiments may now start from the shared P24step32 parent with fresh optimizers, not from the qualification outputs. Freeze all settings in ordinary_answer_repair_v1/contract_v2.json. Root repairs with coefficient10; subagent runs coefficient0. Read every quick/context generation at16/32/64, archive all six snapshots, and compare actual primary/auxiliary traces before interpreting the intervention. Fresh evaluation remains unused.
+
+
 ## Freeze independently qualified ordinary-answer repair comparison (2026-09-05)
 
 {

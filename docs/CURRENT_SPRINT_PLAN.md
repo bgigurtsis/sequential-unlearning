@@ -649,3 +649,17 @@ Next method decision: compare ordinary-answer repair pressure against a matched 
 Both source and materialized data are now qualified for two-step GPU smoke tests, not yet full training.53/53 CPU tests passed with no skips in3.587s, including7 new auxiliary-stream tests. Root reviewed all source changes and the independent gradient/RNG tests. Subagent read all64 authored prompt/answer pairs with no content blocker; named senses are deliberate boundaries, and this is not external fact certification. Actual pinned tokenizer check on RTX loaded no model:4106 target inputs max101,20160 chat max169,64 ordinary max82; zero new clipping and exact masks, suffix labels and single desired EOS. All ordinary inputs have at least8 supervised tokens. The177 generic strings retain16 pre-existing truncations. Shared parent P24step32 was copied to RTX and exact weight/config hashes verified.
 
 L40S storage manifest logs/projection-sprint-20260904/answer-state24-late-weight-retirement-manifest-v1.json SHA256 a5b2adc5b5859a39abccd67559783c4680946d61166c4514eef8f600dfac1e5a permits only the two rejected prefix24 step64/128 adapter weights, each locally archived and remotely hash-verified, to be retired after this commit; shared step32 is preserved. This recovers476982272 bytes without deleting other files. No deletion has occurred at this gate.
+
+## Both ordinary-repair GPU qualifications passed (2026-09-05)
+
+Exact receipts: {
+  "logs\\projection-sprint-20260904\\ordinary-repair-rtx-qualification-review-v1.json": "e88df022e1c84d9de7dd23549ec421e513b9119cfc7d73af2031ecb16ff59c4c",
+  "logs\\projection-sprint-20260904\\ordinary-control-l40s-qualification-review-v1.json": "085879327699940b3a82f1340d54b24589d64cef125d4a867425667f77e87de8",
+  "logs\\projection-sprint-20260904\\answer-state24-late-weight-retirement-receipt-v1.json": "69d481f7e6b0dc1afc975900e33c1bfccee679589a279fb59db9e1d6cc335d2b"
+}
+
+RTX weight10 and L40S weight0 each completed two steps with all476 gradients finite and the exact shared parent loaded byte-for-byte in FP32 across238 intended text modules. Both actual primary sampling traces match exactly; both auxiliary schedules contain the same8 unique ordinary IDs. RTX executed the auxiliary CE forward with positive supervised-token counts; L40S executed none, with zero token counts and a disabled coefficient in metadata. RTX ordinary CE12.715918 to12.199457, target CE1.677224 to1.664769, peak allocated19,934,722,560 and reserved20,579,352,576 bytes. L40S target CE1.670028 to1.669791, peak allocated19,869,768,192 and reserved20,543,700,992 bytes. These establish numerical execution, not behavioral improvement. The root retrieval helper initially requested a nonexistent metadata key and was corrected to ordinary_repair_setup; the GPU run itself succeeded unchanged.
+
+The two exact rejected P24 step64/128 remote weight files were retired after fresh local/remote path and hash checks;476982272 bytes recovered, resulting free space1,805,205,504 bytes. Parent32 and all other files remain. Receipt above records exact paths and checks.
+
+Next gate: both64-step experiments may now start from the shared P24step32 parent with fresh optimizers, not from the qualification outputs. Freeze all settings in ordinary_answer_repair_v1/contract_v2.json. Root repairs with coefficient10; subagent runs coefficient0. Read every quick/context generation at16/32/64, archive all six snapshots, and compare actual primary/auxiliary traces before interpreting the intervention. Fresh evaluation remains unused.

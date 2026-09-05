@@ -1,0 +1,17 @@
+2026-09-05T09:07:53Z
+All rolling L40S source/data/parent/cleanpins verified
+Loading /home/ubuntu/sequential-unlearning-clean-snapshot-093f9f388b31de276ce2de164bdc2081324b9767 in torch.bfloat16...
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/883 [00:00<?, ?it/s]Loading weights:   8%|▊         | 69/883 [00:00<00:01, 672.36it/s]Loading weights:  17%|█▋        | 147/883 [00:00<00:01, 725.59it/s]Loading weights:  25%|██▌       | 225/883 [00:00<00:00, 737.35it/s]Loading weights:  34%|███▍      | 301/883 [00:00<00:00, 743.95it/s]Loading weights:  43%|████▎     | 376/883 [00:00<00:00, 745.78it/s]Loading weights:  54%|█████▍    | 475/883 [00:00<00:00, 827.88it/s]Loading weights:  95%|█████████▌| 840/883 [00:00<00:00, 1741.93it/s]Loading weights: 100%|██████████| 883/883 [00:00<00:00, 1225.79it/s]
+Model has 34 layers; rank-32 LoRA on layers 0-33 (ELM early band).
+/home/ubuntu/sequential-unlearning/venv-g6e/lib/python3.12/site-packages/peft/utils/save_and_load.py:372: UserWarning: Could not find a config file in /home/ubuntu/.cache/huggingface/hub/models--google--gemma-3-4b-it/snapshots/093f9f388b31de276ce2de164bdc2081324b9767 - will assume that the vocabulary was not modified.
+  warnings.warn(
+trainable params: 59,604,992 || all params: 4,359,684,464 || trainable%: 1.3672
+JensUn refusal target 'No idea': token ids [3771, 4317]
+Measuring the forget corpus before training...
+baseline={"mean_answer_token_prob": 0.6041381359100342, "mean_jsd_to_refusal": 0.6923382580280304, "mean_refusal_token_prob": 0.0005178247956791893}
+step   1/2  jsd=1.670028  retain=0.0096  answer_suppress=0.0000  chat=0.0611  consistency=0.0000  consistency_mb=0  tc_cos=None  projected=False  projected_tensors=0  grad=143.2643
+step   2/2  jsd=1.669791  retain=0.0076  answer_suppress=0.0000  chat=0.0322  consistency=0.0000  consistency_mb=0  tc_cos=None  projected=False  projected_tensors=0  grad=135.3166
+  audit={"answer_prob_ratio_to_baseline": 0.99462787975559, "consistency_gradient_microbatches": 0, "consistency_records_used": 0, "consistency_tokens_used": 0, "control_projection_applied": false, "control_projection_eligible_tensors": 0, "control_projection_tensors": 0, "mean_answer_token_prob": 0.6008926331996918, "mean_jsd_to_refusal": 0.6923287808895111, "mean_refusal_token_prob": 0.0005338669434422627, "scope": "audit", "step": 2, "target_control_grad_cosine": null, "target_control_grad_dot": null, "train_answer_suppression": 0.0, "train_chat_retain": 0.03217679262161255, "train_consistency": 0.0, "train_forget": 1.6697912216186523, "train_grad_norm": 135.31657819455367, "train_jsd": 1.6697912216186523, "train_ordinary_repair": 0.0, "train_retain": 0.007622925564646721}
+Done. stop_reason=step_budget_exhausted step=2 model=not saved
+2026-09-05T09:08:17Z

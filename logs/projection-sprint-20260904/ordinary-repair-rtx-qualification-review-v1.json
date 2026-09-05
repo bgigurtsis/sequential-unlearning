@@ -1,0 +1,242 @@
+{
+  "host": "18.101.59.227",
+  "run": "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/ordinary_repair_rtx_qualification_v1",
+  "verdict": "Full objective finite; behavior not evaluated",
+  "manifest": {
+    "stop_state.json": {
+      "bytes": 449,
+      "sha256": "c7066aad7b1ee221c1059621b8380e35921a7b860b24477f5a628fde609b09d7"
+    },
+    "ordinary_repair_trace.jsonl": {
+      "bytes": 531,
+      "sha256": "6151af66ca77d03269bb60ffaa88544e51b88d6f82f170746849d3ce060efe44"
+    },
+    "run_config.json": {
+      "bytes": 61506,
+      "sha256": "663add7f39c6f591f6c6d00a06732dca21a05dbe1dcf8a8dfc081a207dbed68a"
+    },
+    "ordinary_repair_coverage.json": {
+      "bytes": 430,
+      "sha256": "8b5e2e9467f7eddf4a4cc5259b85d048f4c833ed56d9698d84e72311dd5726e0"
+    },
+    "sampling_coverage.json": {
+      "bytes": 1817,
+      "sha256": "7d59e4e54aee588eee03554b19cb2653953275be61c98cc9edf2a20e6f0201cb"
+    },
+    "sampling_trace.jsonl": {
+      "bytes": 1709,
+      "sha256": "3fa76d710e59b4dd938b6ba0a17eec9d0c9bfa0c11c7abf92b8445a63ffd19f8"
+    },
+    "training_metrics.jsonl": {
+      "bytes": 1922,
+      "sha256": "f1674d14daf78242a237296c713c585a2b5b316b1af52b7baeb554a8917d91b4"
+    },
+    "step002/adapter_config.json": {
+      "bytes": 5658,
+      "sha256": "8798bd82000b7cb45f93322d42eea4b7550ca04b06a9c3c693554339aa35c30a"
+    },
+    "step002/README.md": {
+      "bytes": 5386,
+      "sha256": "622235aaa0ed819002ec19df51693500a10d89bc55d34dda356b0ef56dce03f4"
+    },
+    "step002/adapter_model.safetensors": {
+      "bytes": 238491136,
+      "sha256": "0b88ea9930fb8518f2c1b6398a07ddf51d21428c9240071c426a4da23ccd1a8c"
+    }
+  },
+  "initial_parent": {
+    "path": "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/answer_state24_l40s_run128_v1/step032",
+    "weight_sha256": "afe86c403e36dae39b1b22eb9966a53eba5afade86cd6e7c3095c85ad2ef750b",
+    "config_sha256": "61a61c88b6e8a3235e2f3b7669aa99ab3916e1a454131e11379835ec46bbc51e",
+    "tensor_count": 476,
+    "native_tensor_bytes_equal": true,
+    "source_and_loaded_dtype": "float32",
+    "optimizer_state": "fresh AdamW; no momentum resumed"
+  },
+  "steps": 2,
+  "finite_all": true,
+  "peak_allocated": 19934722560,
+  "peak_reserved": 20579352576,
+  "training_seconds": 2.7037605509976856,
+  "first": {
+    "finite_losses": true,
+    "finite_gradients": true,
+    "gradient_tensors": 476,
+    "losses": {
+      "total": 150.3217315673828,
+      "forget": 1.677223563194275,
+      "retain": 0.0102033456787467,
+      "chat": 0.06084218621253967,
+      "consistency": 0.0,
+      "answer_suppression": 0.0,
+      "ordinary_repair": 12.715917587280273
+    },
+    "step": 1,
+    "scope": "training_health",
+    "gradient_norm": 499.29828202505126,
+    "elapsed_seconds": 1.520479095983319,
+    "peak_allocated_bytes": 18497302016,
+    "peak_reserved_bytes": 19488833536
+  },
+  "last": {
+    "finite_losses": true,
+    "finite_gradients": true,
+    "gradient_tensors": 476,
+    "losses": {
+      "total": 142.2376251220703,
+      "forget": 1.6647690534591675,
+      "retain": 0.007974277250468731,
+      "chat": 0.033561382442712784,
+      "consistency": 0.0,
+      "answer_suppression": 0.0,
+      "ordinary_repair": 12.199457168579102
+    },
+    "step": 2,
+    "scope": "training_health",
+    "gradient_norm": 474.31000634825165,
+    "elapsed_seconds": 1.1832814550143667,
+    "peak_allocated_bytes": 19934722560,
+    "peak_reserved_bytes": 20579352576
+  },
+  "audits": [
+    {
+      "step": 0,
+      "scope": "audit",
+      "mean_jsd_to_refusal": 0.6923383474349976,
+      "mean_refusal_token_prob": 0.0005195014964556322,
+      "mean_answer_token_prob": 0.6044854819774628
+    },
+    {
+      "step": 2,
+      "scope": "audit",
+      "train_forget": 1.6647690534591675,
+      "train_jsd": 1.6647690534591675,
+      "train_answer_suppression": 0.0,
+      "train_retain": 0.007974277250468731,
+      "train_chat_retain": 0.033561382442712784,
+      "train_consistency": 0.0,
+      "consistency_records_used": 0,
+      "consistency_tokens_used": 0,
+      "consistency_gradient_microbatches": 0,
+      "target_control_grad_dot": null,
+      "target_control_grad_cosine": null,
+      "control_projection_applied": false,
+      "control_projection_tensors": 0,
+      "control_projection_eligible_tensors": 0,
+      "train_grad_norm": 474.31000634825165,
+      "answer_prob_ratio_to_baseline": 0.9820819401625003,
+      "mean_jsd_to_refusal": 0.692288726568222,
+      "mean_refusal_token_prob": 0.0005606646882370114,
+      "mean_answer_token_prob": 0.5936542749404907,
+      "train_ordinary_repair": 12.199457168579102
+    }
+  ],
+  "coverage": {
+    "direct": {
+      "population": 2026,
+      "draws": 16,
+      "unique_seen": 16,
+      "seen_ids": [
+        "conditional08_boundary_target_2fce35b6966b340b35b3",
+        "conditional08_boundary_target_8ee4c771b588f911ab78",
+        "conditional08_context_0b462372ebc6ed5b69ae",
+        "conditional08_context_1e1be779da7a26b87f03",
+        "conditional08_context_6bd307bae8c603fb6c75",
+        "conditional08_context_886692e32c905eafbda6",
+        "conditional08_context_e257329b4b4973f4e1a2",
+        "conditional08_natural_train_c3465847142fc44bb6d5",
+        "conditional24_boundary_target_8f71a6d5f209ac6bfdaa",
+        "conditional24_boundary_target_956568b523556a74a959",
+        "conditional24_boundary_target_96db77c0f01106c07ea0",
+        "conditional24_boundary_target_9c2914c7c69c0ab2f867",
+        "conditional24_context_06c1f15ba6a367904815",
+        "conditional24_context_171008fe9b80e282ecc1",
+        "conditional24_context_f23bc13cb46f16eefa6b",
+        "conditional24_natural_train_83fe2e3f775d13ebd054"
+      ],
+      "cycles_started": 1,
+      "complete_cycles": 0
+    },
+    "context": {
+      "population": 2080,
+      "draws": 16,
+      "unique_seen": 16,
+      "seen_ids": [
+        "context_64d810049081c40280f6",
+        "context_95e88b200f1a8c1850f3",
+        "context_acfaa3b8ffc71f495e1a",
+        "context_ad63afd6babc1efa4d56",
+        "context_b86041e24d32535df5b9",
+        "context_bf2378476abfbbcdf023",
+        "context_c67307213fac10212571",
+        "context_fe492428c58886cb876f",
+        "direct_11e21b1b0ad2706b4200",
+        "direct_3437825dd926ad4087fe",
+        "direct_53d4aa160e9c98bf3973",
+        "direct_912204145544f801c2d2",
+        "direct_a3ff3b9415edbd078375",
+        "direct_a8140a5f399e6183d790",
+        "direct_c6f0221e4318a8d663fb",
+        "natural_train_dcd6eb79ed9f8fd0ef28"
+      ],
+      "cycles_started": 1,
+      "complete_cycles": 0
+    }
+  },
+  "ordinary_coverage": {
+    "population": 64,
+    "draws": 8,
+    "unique_seen": 8,
+    "seen_ids": [
+      "ordinary_repair_art_01",
+      "ordinary_repair_art_06",
+      "ordinary_repair_city_amenities_01",
+      "ordinary_repair_city_amenities_06",
+      "ordinary_repair_language_personal_01",
+      "ordinary_repair_pet_captions_07",
+      "ordinary_repair_science_01",
+      "ordinary_repair_science_06"
+    ],
+    "complete_cycles": 0,
+    "seed": 35016,
+    "batch_size": 4
+  },
+  "ordinary_trace": [
+    {
+      "step": 1,
+      "ids": [
+        "ordinary_repair_science_06",
+        "ordinary_repair_language_personal_01",
+        "ordinary_repair_science_01",
+        "ordinary_repair_city_amenities_01"
+      ],
+      "weight": 10.0,
+      "forward_executed": true,
+      "supervised_tokens": 102,
+      "raw_prefix_weighted_ce": 12.715917587280273
+    },
+    {
+      "step": 2,
+      "ids": [
+        "ordinary_repair_pet_captions_07",
+        "ordinary_repair_art_06",
+        "ordinary_repair_art_01",
+        "ordinary_repair_city_amenities_06"
+      ],
+      "weight": 10.0,
+      "forward_executed": true,
+      "supervised_tokens": 113,
+      "raw_prefix_weighted_ce": 12.199457168579102
+    }
+  ],
+  "ordinary_config": {
+    "seed": 35016,
+    "batch_size": 4,
+    "coefficient": 10.0,
+    "forward_enabled": true,
+    "objective": "Separate positive ordinary-response CE with appended EOS; causally shifted supervised-answer tokens, first-prefix weighting as target CE, divided by unweighted supervised-token count. Added to preservation loss only when coefficient>0; coefficient0 records the same local-RNG schedule without encoding/forward.",
+    "target_prefix_tokens": 5,
+    "target_prefix_weight": 8.0,
+    "rng": "Independent Python shuffle seed+1000; auxiliary forward forks/restores Torch RNG."
+  }
+}
