@@ -1,0 +1,10 @@
+2026-09-05T13:35:31Z
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/883 [00:00<?, ?it/s]Loading weights:   2%|▏         | 17/883 [00:00<00:05, 167.55it/s]Loading weights:   9%|▊         | 76/883 [00:00<00:01, 412.24it/s]Loading weights:  16%|█▌        | 143/883 [00:00<00:01, 528.81it/s]Loading weights:  22%|██▏       | 198/883 [00:00<00:01, 529.85it/s]Loading weights:  30%|██▉       | 264/883 [00:00<00:01, 575.55it/s]Loading weights:  37%|███▋      | 328/883 [00:00<00:00, 594.13it/s]Loading weights:  44%|████▍     | 389/883 [00:00<00:00, 587.32it/s]Loading weights:  59%|█████▊    | 518/883 [00:00<00:00, 802.74it/s]Loading weights: 100%|██████████| 883/883 [00:00<00:00, 968.17it/s]
+/home/ubuntu/sequential-unlearning/venv-g7e/lib/python3.12/site-packages/peft/tuners/tuners_utils.py:1348: UserWarning: Model has `tie_word_embeddings=True` and a tied layer is part of the adapter, but `ensure_weight_tying` is not set to True. This can lead to complications, for example when merging the adapter or converting your model to formats other than safetensors. Check the discussion here: https://github.com/huggingface/peft/issues/2777
+  warnings.warn(msg)
+Loading weights:   0%|          | 0/883 [00:00<?, ?it/s]Loading weights:   7%|▋         | 66/883 [00:00<00:01, 610.27it/s]Loading weights:  15%|█▌        | 134/883 [00:00<00:01, 642.81it/s]Loading weights:  23%|██▎       | 199/883 [00:00<00:01, 607.73it/s]Loading weights:  30%|██▉       | 264/883 [00:00<00:00, 621.56it/s]Loading weights:  37%|███▋      | 328/883 [00:00<00:00, 624.39it/s]Loading weights:  44%|████▍     | 391/883 [00:00<00:00, 612.82it/s]Loading weights:  58%|█████▊    | 513/883 [00:00<00:00, 804.76it/s]Loading weights: 100%|██████████| 883/883 [00:00<00:00, 1064.25it/s]
+step=1 targetJSD=2.85113e-09 ordinaryCE=9.496254 finite2
+step=2 targetJSD=8.419722e-07 ordinaryCE=5.703255 finite2
+OUTPUT_HEAD_REPAIR_DONE
+2026-09-05T13:35:58Z

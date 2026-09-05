@@ -1,0 +1,15 @@
+2026-09-05T13:37:36Z
+Output-only head32 ordinaryCE1 + frozen-parent targetJSD100 source/data/nativeparent/encoding pins verified; GPU idle
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/883 [00:00<?, ?it/s]Loading weights:   8%|▊         | 69/883 [00:00<00:01, 672.52it/s]Loading weights:  17%|█▋        | 146/883 [00:00<00:01, 728.72it/s]Loading weights:  25%|██▌       | 224/883 [00:00<00:00, 739.58it/s]Loading weights:  34%|███▎      | 298/883 [00:00<00:00, 734.28it/s]Loading weights:  42%|████▏     | 372/883 [00:00<00:00, 726.76it/s]Loading weights:  53%|█████▎    | 471/883 [00:00<00:00, 813.74it/s]Loading weights:  93%|█████████▎| 825/883 [00:00<00:00, 1693.46it/s]Loading weights: 100%|██████████| 883/883 [00:00<00:00, 1213.02it/s]
+/home/ubuntu/sequential-unlearning/venv-g6e/lib/python3.12/site-packages/peft/mapping_func.py:78: UserWarning: The PEFT config's `base_model_name_or_path` was renamed from '/home/ubuntu/.cache/huggingface/hub/models--google--gemma-3-4b-it/snapshots/093f9f388b31de276ce2de164bdc2081324b9767' to '/home/ubuntu/sequential-unlearning-clean-snapshot-093f9f388b31de276ce2de164bdc2081324b9767'. Please ensure that the correct base model is loaded when loading this checkpoint.
+  warnings.warn(
+/home/ubuntu/sequential-unlearning/venv-g6e/lib/python3.12/site-packages/peft/tuners/tuners_utils.py:1348: UserWarning: Model has `tie_word_embeddings=True` and a tied layer is part of the adapter, but `ensure_weight_tying` is not set to True. This can lead to complications, for example when merging the adapter or converting your model to formats other than safetensors. Check the discussion here: https://github.com/huggingface/peft/issues/2777
+  warnings.warn(msg)
+Loading weights:   0%|          | 0/883 [00:00<?, ?it/s]Loading weights:   9%|▉         | 82/883 [00:00<00:01, 796.87it/s]Loading weights:  18%|█▊        | 162/883 [00:00<00:00, 774.47it/s]Loading weights:  27%|██▋       | 240/883 [00:00<00:00, 752.82it/s]Loading weights:  36%|███▌      | 316/883 [00:00<00:00, 753.50it/s]Loading weights:  45%|████▍     | 393/883 [00:00<00:00, 750.59it/s]Loading weights:  63%|██████▎   | 557/883 [00:00<00:00, 1045.65it/s]Loading weights: 100%|██████████| 883/883 [00:00<00:00, 1236.88it/s]
+/home/ubuntu/sequential-unlearning/venv-g6e/lib/python3.12/site-packages/peft/utils/save_and_load.py:372: UserWarning: Could not find a config file in /home/ubuntu/.cache/huggingface/hub/models--google--gemma-3-4b-it/snapshots/093f9f388b31de276ce2de164bdc2081324b9767 - will assume that the vocabulary was not modified.
+  warnings.warn(
+step=1 targetJSD=1.095821e-08 ordinaryCE=9.513132 finite2
+step=2 targetJSD=4.144407e-05 ordinaryCE=5.670942 finite2
+OUTPUT_HEAD_REPAIR_DONE
+2026-09-05T13:38:10Z

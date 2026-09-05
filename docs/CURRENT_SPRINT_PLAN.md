@@ -55,3 +55,5 @@ The fixed task-vector comparison is closed: both variants retained employment me
 Output-head comparison source/data frozen: output_head_repair_v1/contract_v1.json. Head8RTX vshead32L40S on frozenCE64, only2new factors train;32steps16/32 LR1e-3 init34021, samefullordinary64/target4106 encoding and schedule34020, ordinaryCE1/targetJSD100. FiveCPU tests pass, exact data validated, no production GPU yet. Next exact failedcontrast weight retirement (manifest), then2-step smokes and full32. Standard478factor adapter saves no embeddings; no merge while base head tied. No candidate qualifies.
 
 L40S exact failedcontrastive weight retired under committed manifest;829095936bytes free, CE64/F/R/localarchives preserved. Head8RTX2-step smoke running, head32L40S next. No production qualification result yet.
+
+Both head8/head32 production GPU smokes PASSED: exactinitialCE64 logits, only2finite gradients, frozen476parent/inputembeddings/parameter versions/tie and teacher unchanged. No snapshots/behaviour result yet. Next both frozen32step runs16/32 from freshCE64, then archive478factor adapters and read all104development replies perGPU.
