@@ -1,0 +1,18 @@
+{
+  "status": "preflight_failed_before_inference",
+  "run_log": "logs/projection-sprint-20260904/e090-diagnostic-run-v1.log",
+  "wrapper": "logs/projection-sprint-20260904/run-e090-diagnostic-v1.sh",
+  "file": "data/ppl_text.txt",
+  "local_windows_raw_sha256": "9f85398905298916a2394b57f170a361a3aac3d0294ceae716ffcbbdac844b35",
+  "local_windows_bytes": 20375,
+  "local_windows_crlf_count": 52,
+  "local_crlf_to_lf_sha256": "2e2a739855a1f4fd6d4384d44518fe1f3e25c23832be827d24047f9c2d929d3a",
+  "remote_linux_raw_sha256": "2e2a739855a1f4fd6d4384d44518fe1f3e25c23832be827d24047f9c2d929d3a",
+  "remote_linux_bytes": 20323,
+  "remote_git_hash_object": "814a5ef1d8274cb5849055c9ab031ea02ed99639",
+  "remote_head_blob": "814a5ef1d8274cb5849055c9ab031ea02ed99639",
+  "remote_head": "496c13b8faf54787ffbad7438844ec319c7e966d",
+  "other_pins": "E90 weight, two clean weight shards, all three scalar normalization anchors, and probes.json passed",
+  "outputs_created": [],
+  "conclusion": "Exact committed data; only checkout line endings differ. Evaluator Python universal-newline text read is identical. Do not modify frozen data. Retry requires integrated diagnostic pin correction and a new wrapper/run log."
+}

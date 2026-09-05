@@ -41,7 +41,10 @@ is preferred, while other target replies can serve the artwork.
   Active next execution: capture/build constrained_v1/models/full_v1 onRTX,
   publishedfull_v1 (weightdf1e2fc5...2ae3), originalquickPASS28/28holes,
   0sustainedloops,9/12controls: no quickrecovery/no newloss.
-  Broad original/hard/conversations next. BF16 partlybreaks sampledconstraint: 
+  BroadPASSdesignatedabsence36+36/8conversations; originalcontrols24/24
+  recoverscommunitygardenvolunteer (1/7),hard21/24/convo2/4unchanged.
+  Nohealthycontrol losses; prototypebehaviorgatespasspendingglobalmetrics.
+  OriginaltierstillFAIL; nextRTXutility/PPL/scalar/drift. BF16 partlybreaks sampledconstraint: 
   aggregatepreCF3.16e-7 vsactualCF.6434; no exactnativepreservationclaim.
   L40S parallel diagnostic: disqualifiedE90 scalar+legacy18/PPL to measure
   repairpotential; not a candidatepromotion orbound on constraineddamage.

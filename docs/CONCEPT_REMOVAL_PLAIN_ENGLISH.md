@@ -687,3 +687,11 @@ The constrained repair's first screen keeps all 28 target meanings absent and
 avoids sustained loops, but has not yet repaired the three damaged everyday
 controls. Broader testing is next. Weight rounding partly weakens the internal
 protection, so mathematical success alone is not evidence of harmless repair.
+
+The broader screen now finds one repaired control: unpaid volunteering at a
+community garden. All 72 broader target questions and eight target conversations
+still show absence. The model retains the donor's healthy controls, but computing
+and physics follow-ups still fail and two target conversations loop. This passes
+the smaller prototype's behavioural checks; overall damage, utility, perplexity,
+drift and the final audit remain to be measured. Incidental employment metaphors
+can still occur elsewhere, so this is not proof of global knowledge deletion.
