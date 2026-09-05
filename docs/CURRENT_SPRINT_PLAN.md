@@ -22,3 +22,6 @@ Implementation checks passed:15 RTX math/surface tests,8 L40S capture tests, and
 The previous constrained repair reduced the damage scalar from13.4982 to7.1455 and recovered one control, but restored some employment knowledge. It remains exploratory. The subsequent contextual CE correction also failed. Neither those artifacts nor the completed local archive establish goal completion.
 
 Exact settings, source/data hashes, findings and rejected interpretations are in EXPERIMENTS.md and config/whole_concept_jobs_v1/residual_projection_v1/contract_v1.json with its two_gpu_amendment_v1.json.
+
+
+RTXrank4 native publication completed with exactly69 changed tensors and verified tied-head reload. Weight-space residuals are small but nonzero. Behavioral quick/context tests and actual forward leakage are the next checks.

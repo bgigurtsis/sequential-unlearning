@@ -8979,3 +8979,31 @@ logs/projection-sprint-20260904/shared-residual-capture-review-v1.json, SHA
 Next: root publishesrank4 onRTX, subagent publishesrank1 onL40S, separate
 outputs and one ownedGPUjob perhost. Byte/locality/reload proofs before any
 behavioral claim; quick40/context12 and actualBF16 leakage then reviewed.
+
+
+## 2026-09-05 — RTX rank4 native candidate mechanically verified
+
+Rank4 publication finished02:34:56UTC onRTX, from pinned clean revision and
+shared U4 basis afc75b21292b18ae2e47d52413d823d0891a66ed6e713aedb910098590044f7c,
+closure8. Exact69 tensors changed, all814 others byte-identical,883serialized
+tensors,884 HFstate with tied lm_head/embedding alias verified after freshreload.
+Candidate path: /mnt/sequential-unlearning-replicate/checkout/derisk/whole_concept_jobs_v1/
+delta_protection_v1/residual_v1/models/rank4_v1 (continuous). Shard hashes
+2382c47cec8377592cf4a01400966a856926ad0d299d2c2de53e7dfc175b9765 and
+38cf68dba03ee502a1cd2529f77f8764d4681b085acb4d116881b7ecc49ee78a; logical
+5a48bdc8c702efdb675c0972b306be9f56f691abca5b22d34835937f9230d2d6.
+Payload a79f85d59e36fabf5470c8dd14d6dfca78d68a6a79d605915fb7ab36775ad36b.
+Across69 matrices, maxprecast constraint/(weightnorm*constraintnorm)1.398923955e-8,
+maxnative3.180092440e-5; maxnative/original constraint action.001452584789;
+maxPythagoreanrelativeerror6.822693299e-10. Native storage leakage is nonzero;
+these are weight diagnostics, not actual per-token forward leakage.
+Sidecar logs/projection-sprint-20260904/native-residual-rank4-publication-v1.json
+SHA325b06c6d489ab80288bcff89e1f72615e28844d87f790e2c9c02b860283e161.
+Root aggregate review beside it; full tensor diagnostics and source pins retained.
+
+Next same-candidate evaluation: quick40 greedy96/batch16, contextual12 greedy256/
+batch16, then1040 training-trajectory per-token native leakage with supplied U4/V8
+and no refit. Diagnostic pins stored before evaluation. RTX tokenizer for capture
+uses byte-identical identity_v1 copy because HF snapshot symlinks escape strict
+file-pin root checks; generation uses original pinnedclean tokenizer as before.
+No semantic or low-damage conclusion before reading outputs.
