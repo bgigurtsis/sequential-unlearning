@@ -1,0 +1,172 @@
+{
+  "schema": "clean_npo_paired_qualification_v1",
+  "files": {
+    "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/clean_npo_sequence_rtx_qualification_v1/completion.json": "5f202f55ae442195acc95ee0af077320c00557ffdedb16f3d10c796bb186d527",
+    "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/clean_npo_sequence_rtx_qualification_v1/manifest.json": "630740d043f175b2fcc9776b71b87dbc8c8a65709646facdbaeca840baa3a2e6",
+    "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/clean_npo_sequence_rtx_qualification_v1/training_trace.jsonl": "f9b8b8def2255a983e696ffd3798a32c48ffb17bd9e0f5b0945817b418f57fcd",
+    "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/clean_npo_token_l40s_qualification_v1/completion.json": "86934045546fcd2e8d94e0f518a55f331abb04841b23de0cddda99c94288f339",
+    "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/clean_npo_token_l40s_qualification_v1/manifest.json": "cfa299740674b75726cd9521c1fab4d880066597b536bb26357e8aaa814ccb0e",
+    "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/clean_npo_token_l40s_qualification_v1/training_trace.jsonl": "ef395a73ae96f8cc6a28da4ec4e01dbad3556b63ffccd534cb2ea29dec927e93"
+  },
+  "arms": {
+    "sequence_rtx": {
+      "initial_native_sha256": "b28dabb04a3fc7852984353e2b0946fd3a070762d21da0665bb9a1ca9977142e",
+      "initial": {
+        "npo_loss": 13.862943649291992,
+        "diagnostics": {
+          "sequence_margins": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "sequence_multipliers": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "token_multiplier_mean": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "token_multiplier_min": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "token_multiplier_max": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "supervised_tokens": [
+            96,
+            67,
+            95,
+            96,
+            57,
+            59,
+            96,
+            96
+          ]
+        },
+        "forget_logits_exact": true,
+        "ordinary_logits_exact": true,
+        "ordinary_kl": 0.0
+      },
+      "last_npo": 13.974686622619629,
+      "last_ordinary_kl": 0.0914110466837883,
+      "peak_allocated_bytes": 25571151360,
+      "peak_reserved_bytes": 29777461248,
+      "all476_finite": true,
+      "frozen_state_unchanged": true,
+      "schedules_exact": true,
+      "no_saved_weights": true
+    },
+    "token_l40s": {
+      "initial_native_sha256": "b28dabb04a3fc7852984353e2b0946fd3a070762d21da0665bb9a1ca9977142e",
+      "initial": {
+        "npo_loss": 1147.1585693359375,
+        "diagnostics": {
+          "sequence_margins": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "sequence_multipliers": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "token_multiplier_mean": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "token_multiplier_min": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "token_multiplier_max": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "supervised_tokens": [
+            96,
+            67,
+            95,
+            96,
+            57,
+            59,
+            96,
+            96
+          ]
+        },
+        "forget_logits_exact": true,
+        "ordinary_logits_exact": true,
+        "ordinary_kl": 0.0
+      },
+      "last_npo": 1147.064208984375,
+      "last_ordinary_kl": 0.1306608021259308,
+      "peak_allocated_bytes": 25522605568,
+      "peak_reserved_bytes": 29743906816,
+      "all476_finite": true,
+      "frozen_state_unchanged": true,
+      "schedules_exact": true,
+      "no_saved_weights": true
+    }
+  },
+  "status": "PASS_NUMERICAL_ONLY"
+}
