@@ -1,3 +1,7 @@
+Analyticalnegative96 allpromptsrootread,48creative+48physicalcause,zeroexacteval/trainingoverlap. Boundary300exact3archivedweight retirementmanifest integratedbeforedeletion;L40S2.31GBfree. Captureproposalhashesfrozen incontract.
+
+Frozen analyticalcoveragevs matchedexposure pair: sharedcumulative24,root144new+2080oldtargets vs subagent2080old; same96newordinaryanchor capture/retention both. Seed34010,response34011,96steps24/48/96,chat100. Cleanpositive144RTX/negative96L40Scapturesnext, manuallyreviewnegatives, thenfinaldata/tokenization/2stepsmokes. No qualifier;goalactive.
+
 All3complementaryblends fail27/28+12/12; noquickgain, closeblendhypothesis. Rolling96broader33/36+24/24/context5/9, stillleaks. Nextprepare analyticaltargetcoverage+ordinary96narrative/explanationanchors, sharedcumulative24parent, rootnewcoveragevs subagentoldcumulativeexposure; sameaugmentedretention. Contract/countsnotyetfrozen, no newtraining. Freshunused;goalactive.
 
 Complementary3delta mixtures numericallyqualified (rank64alpha128,238modules,exactreload,maxerror1.12e-8). RTXquick3next. Rolling48context6/9unknown,broad31/36unknown+24/24controls,stillrejected; subagentrolling96context+broad diagnostic next. No freshfinal/qualifier;goalactive.

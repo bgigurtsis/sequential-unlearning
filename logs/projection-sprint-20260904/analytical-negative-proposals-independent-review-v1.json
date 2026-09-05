@@ -1,0 +1,49 @@
+{
+  "purpose": "96 training-only ordinary prompts,48creativeobject/nature narratives+poems and48physicalcause/explanations. No answers/capture/training.",
+  "count": 96,
+  "categories": {
+    "object_nature_stories": 24,
+    "object_nature_poems": 24,
+    "ordinary_heat_water_causes": 12,
+    "ordinary_motion_sound_causes": 12,
+    "ordinary_light_material_causes": 12,
+    "ordinary_weather_growth_causes": 12
+  },
+  "all96_authored_and_reviewed": true,
+  "evaluation_excluded_unique": 467,
+  "training_excluded_unique": 3760,
+  "collisions": [],
+  "new_positive_file_included_in_exact_exclusion": true,
+  "source_pins": {
+    "config/employment_sprint_20260904_quick/probes.json": "3a39e4634216075ee2c02b874b4d1d8bc34144a3bdd653afd7cbab01694a4feb",
+    "config/employment_sprint_20260904_context_routes/probes.json": "26b419fddc8a49af24915d7ba396241acbcbe4647f85afcd012ccd20e48426a8",
+    "config/employment_sprint_20260904_final/probes.json": "1ad0d61249e683f472f7158a03a21ce87f10917f4e9c9e9740e6f1665c8664ea",
+    "config/employment_sprint_20260904_final/conversations.json": "c55e3047f684ac1d1428286db833581392bb5ce643167f00de42273c53389e29",
+    "config/whole_concept_jobs_v1/probes.json": "051099d671000d0a829689b12961704e3056b6903ae878a3a5b174b04b7587ee",
+    "config/whole_concept_jobs_hard_v1/probes.json": "9c7a99dd0936c048a8150a14a1dfafea11c2832de5bc8dad2940e1b13323a97a",
+    "config/whole_concept_jobs_hard_v1/conversations.json": "1c2850eb6a94e2f3f4df27c2f184455544f718cc5bb0fa5e2c917b286d59359f",
+    "config/whole_concept_jobs_direct_v1/probes.json": "4391f28215fa931ebcf70f1f5411fb7a7fee533e8c56a7f96b95acdaf2d657ab",
+    "config/whole_concept_jobs_natural_v2/probes.json": "2bd3421f01109b9ffb2a9e16aa5233b27e98c34ebf75223b194047fc8852c722",
+    "data/probes.json": "4040b330b82ef2e7b509e544edbd76df7441589b6b08cd8b4518237a7d778d79",
+    "derisk/whole_concept_jobs_v1/delta_protection_v1/sprint_20260904/dense_current_runtime_scalar_v1.json": "162c0332c9230e01042810b04aca353a1862c449ae1dedcae435fd1761df9f88",
+    "config/whole_concept_jobs_v1/wide_unfamiliarity_v1/cumulative_sampling_v1/data_v1/forget.json": "315934480ce905f7d7c6cc3fd030e752cdc4c77ff61611d3c74f11fde80d2ca4",
+    "config/whole_concept_jobs_v1/wide_unfamiliarity_v1/cumulative_sampling_v1/data_v1/retain.json": "95525929be4b07247f54b0c7166225fd8a232c6df6a30dde06dc35d88bb8a3a9",
+    "config/whole_concept_jobs_v1/wide_unfamiliarity_v1/cumulative_sampling_v1/data_v1/chat_retain.json": "1405110f262c91613c698b20afeada0237a11adebe25a8ea75b07cf6cbb02087",
+    "config/whole_concept_jobs_v1/wide_unfamiliarity_v1/natural_boundary_v1/negative_proposals_v2.json": "1bbb477a9c1689a933f08ff89ecefcb7563fce10a19d6228ad60d74ebada4183",
+    "config/whole_concept_jobs_v1/wide_unfamiliarity_v1/analytical_coverage_v1/positive_proposals_v1.json": "0dc8415b976f87496b8d35105d953cfd6e1e0a577ff12534d3452a8229d7d800"
+  },
+  "output": "config/whole_concept_jobs_v1/wide_unfamiliarity_v1/analytical_coverage_v1/negative_proposals_v1.json",
+  "output_sha256": "fc6d2e34154a4104841b5c7dfcb84162e447abd15db5595a9a776a00c9399f8d",
+  "builder_sha256": "d1f3f528183fcc03c1692e29fe15987eda11f9a4ba3cde2d2cd2f09d42d5aeee",
+  "design_critique": [
+    "96distinctnegative prompts are a reasonable bounded style-preservation test; they do not exhaust narrative/causal abilities.",
+    "144positive rows from48seeds\u00d73wrappers contain48corequestions, so count should not be described as144independentsemanticcontexts. Four analyticalseeds per12targetcategories tests whether cause/comparisoncoverage improves persistentroutes; it cannot establishglobalconceptdeletion.",
+    "Same96retentionanchors onbotharms control the added ordinary-style preservation recipe.",
+    "Nonhuman/object prompts reduce but do not prevent generatedoccupations. Cleananswers still need lexicalplussemantictriage, as woodcutter/therapist appearedspontaneously before."
+  ],
+  "caveats": [
+    "Exact exclusion does not imply semantic independence; this is adaptive training preparation.",
+    "Fresh evaluation text was accessed programmatically only for exclusions and never displayed.",
+    "No factual-quality claims about modelanswers, which have not been generated."
+  ]
+}

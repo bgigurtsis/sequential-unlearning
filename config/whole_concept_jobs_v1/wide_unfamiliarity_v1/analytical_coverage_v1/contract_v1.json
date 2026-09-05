@@ -1,0 +1,90 @@
+{
+  "schema": "analytical_coverage_versus_exposure_v1",
+  "reason": "Repeated broad and contextual failures involve causal explanations, comparisons and workplace tradeoffs. Add analytical prompts across12categories and ordinary narrative/physicalexplanation anchors; compare newtargetcoverage versus matchedcontinuedtraining with same augmentedretention.",
+  "parent": {
+    "path": "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/cumulative_rtx_run96_v1/step024",
+    "sha256": "cb88d291a2f6ad9c53fc72a722613f0c38987841967ec5db1de02cffae8eda8b",
+    "rank": 32,
+    "alpha": 64
+  },
+  "clean_revision": "093f9f388b31de276ce2de164bdc2081324b9767",
+  "source_commit": "e171598",
+  "data": {
+    "positive": {
+      "path": "config/whole_concept_jobs_v1/wide_unfamiliarity_v1/analytical_coverage_v1/positive_proposals_v1.json",
+      "sha256": "0dc8415b976f87496b8d35105d953cfd6e1e0a577ff12534d3452a8229d7d800"
+    },
+    "positive_count": 144,
+    "negative": {
+      "path": "config/whole_concept_jobs_v1/wide_unfamiliarity_v1/analytical_coverage_v1/negative_proposals_v1.json",
+      "sha256": "fc6d2e34154a4104841b5c7dfcb84162e447abd15db5595a9a776a00c9399f8d"
+    },
+    "negative_count": 96,
+    "clean_capture": "Each respectiveGPU,cleanGemma,noadapter,max96,batch16. StrictuniqueID/promptjoin and nonemptyoutputs. Negative outputs manuallyreview for spontaneous occupationalintrusions; exclude flaggedrows and amend exactcounts beforetraining. Originalpositives used onlyauditproxy; CE uses eightunknownresponses.",
+    "response_seed": 34011,
+    "old_dir": "config/whole_concept_jobs_v1/wide_unfamiliarity_v1/cumulative_sampling_v1/data_v1",
+    "rtx_target_count": 2224,
+    "rtx_strata": {
+      "direct": 648,
+      "context": 1576
+    },
+    "l40s_target_count": 2080,
+    "l40s_strata": {
+      "direct": 504,
+      "context": 1576
+    },
+    "sampling": "8direct+8context cyclic; root adds144direct while preserving all2080oldrecords/content/strata, controlold2080unchanged. Changes within-direct mixture; recipe comparison rather than pure countmatched wording effect.",
+    "chat": "same5441oldchat +16copies each retainednewnegative; initial96would6977total. Sameexactchat onbotharms; retain177genericunchanged."
+  },
+  "arms": {
+    "rtx": {
+      "owner": "root",
+      "chat_weight": 100,
+      "data": "config/whole_concept_jobs_v1/wide_unfamiliarity_v1/analytical_coverage_v1/coverage_data_v1",
+      "output": "analytical_coverage_rtx_run96_v1"
+    },
+    "l40s": {
+      "owner": "projection_followup",
+      "chat_weight": 100,
+      "data": "config/whole_concept_jobs_v1/wide_unfamiliarity_v1/analytical_coverage_v1/control_data_v1",
+      "output": "analytical_control_l40s_run96_v1"
+    }
+  },
+  "training": {
+    "steps": 96,
+    "snapshots": [
+      24,
+      48,
+      96
+    ],
+    "save_every": 1000,
+    "audit_every": 24,
+    "audit_size": 24,
+    "seed": 34010,
+    "learning_rate": 2e-05,
+    "batches": [
+      16,
+      4,
+      8
+    ],
+    "max_length": 256,
+    "target_prefix": [
+      5,
+      8
+    ],
+    "chat_prefix": [
+      5,
+      8
+    ],
+    "forget_weight": 10,
+    "generic_weight": 30,
+    "optimizer": "freshAdamW, no gradient clipping",
+    "scope": "same238 all34-layer text-only modules,476FP32 LoRA tensors on BF16 base",
+    "checkpointing": "non-reentrant",
+    "selection": "external semantic, no proxy stop"
+  },
+  "qualification": "Trainer unchanged existing38CPUtests. Pin materializedrecords and alltarget/chat tokenization includingEOS; no newclipsallowed. Exact476FP32sharedparentload and two-step fullobjective bothGPUs before96. Inspectnegativetrajectories beforefinalcounts.",
+  "evaluation": "After integrated full completion, quick40/max96/batch16 at all snapshots. Provisional context advancement only all28 unfamiliar and>=11/12 controls useful/no loops. Development context12 and broad60 allowed as explicit diagnostics of rejected candidates. No fresh final until broader survivor and merged/reloaded saved weights.",
+  "limitations": "Adaptive reuseddevelopment failures motivated scope andstyle. Zeroexactevaluation overlap is not semantic independence. Botharms receive newordinaryanchors; differencesmeasureaddedanalyticalcoverage/sampling mixture, not totalnewmethodversuspreviousrun. Unknownreplies are behavioral evidence only; internal deletion notestablished.",
+  "execution": "Oneownedworkload perGPU: root positivecapture/coverage, subagentnegativecapture/control. PreserveRTX8186. Ifstorage needed, onlymanifested locallyarchivedrejectedboundary300weights retired aftercommittedmanifest. Goalactive, no historicaldeadline stop."
+}
