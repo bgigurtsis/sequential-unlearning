@@ -1,0 +1,54 @@
+{
+  "args": {
+    "data": "config/whole_concept_jobs_v1/wide_unfamiliarity_v1/clean_npo_v1/early_screen_v1.json",
+    "data_sha256": "116f65f0e94635a11072ceffba22047aea3bb8f67016f37b8eaee4a53f793b8f",
+    "model_id": "/home/ubuntu/sequential-unlearning-clean-snapshot-093f9f388b31de276ce2de164bdc2081324b9767",
+    "tokenizer_model": "/home/ubuntu/sequential-unlearning-clean-snapshot-093f9f388b31de276ce2de164bdc2081324b9767",
+    "clean_pins": "config/whole_concept_jobs_v1/residual_projection_v1/capture_pins_v1.json",
+    "output": "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/clean_npo_token_l40s_early_v1",
+    "adapter": "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/clean_npo_token_l40s_run32_v1/step032",
+    "adapter_weight_sha256": "57bdcee236ab6784a5a48bd37b92106fa3710276ffed7d61b3b189522c118b00",
+    "adapter_config_sha256": "609c4bc5a6f970fc2fcc7b406f04eef2587cff511849364ba065cae3da61a2fd"
+  },
+  "verified_files": {
+    "config/whole_concept_jobs_v1/wide_unfamiliarity_v1/clean_npo_v1/early_screen_v1.json": "116f65f0e94635a11072ceffba22047aea3bb8f67016f37b8eaee4a53f793b8f",
+    "config/whole_concept_jobs_v1/residual_projection_v1/capture_pins_v1.json": "bd13d17d25ab4a9a93f3bedb319cbb388489bbdb35e656ed8b26cb76f440e8a5",
+    "/home/ubuntu/sequential-unlearning-clean-snapshot-093f9f388b31de276ce2de164bdc2081324b9767/model-00001-of-00002.safetensors": "eb5fd5e97ddd07b56778733e9653c07312529cb00980a318fc3e1c4e3b5a8f1f",
+    "/home/ubuntu/sequential-unlearning-clean-snapshot-093f9f388b31de276ce2de164bdc2081324b9767/model-00002-of-00002.safetensors": "fdde0e5aa5ced0fa203b3d50f4ab78168b7e3a3e08c6349f5cc9326666e1bb13",
+    "/home/ubuntu/sequential-unlearning-clean-snapshot-093f9f388b31de276ce2de164bdc2081324b9767/config.json": "9059f680f4dbd1957f35cb44b9fdd6948f4792db7a7a35ee353ea42e68adf7ff",
+    "/home/ubuntu/sequential-unlearning-clean-snapshot-093f9f388b31de276ce2de164bdc2081324b9767/model.safetensors.index.json": "77f4b67de084c31c7bcd373b039908108eee6c6181607e6d53da730e5f0bc659",
+    "/home/ubuntu/sequential-unlearning-clean-snapshot-093f9f388b31de276ce2de164bdc2081324b9767/added_tokens.json": "50b2f405ba56a26d4913fd772089992252d7f942123cc0a034d96424221ba946",
+    "/home/ubuntu/sequential-unlearning-clean-snapshot-093f9f388b31de276ce2de164bdc2081324b9767/chat_template.json": "fe16baf728db49457cde32802cd7efc0ac8a7a9877dbe22fe3322b2d9dc6ccd9",
+    "/home/ubuntu/sequential-unlearning-clean-snapshot-093f9f388b31de276ce2de164bdc2081324b9767/generation_config.json": "fd9324becc53c4be610db39e13a613006f09fd6ef71a95fb6320dc33157490a3",
+    "/home/ubuntu/sequential-unlearning-clean-snapshot-093f9f388b31de276ce2de164bdc2081324b9767/preprocessor_config.json": "f688d6bb20c5017601c4011de7ca656da8485b540b05013efdaf986c0fcc918d",
+    "/home/ubuntu/sequential-unlearning-clean-snapshot-093f9f388b31de276ce2de164bdc2081324b9767/processor_config.json": "3ffd5f11778dc73e2b69b3c00535e4121e1badf7018136263cd17b5b34fbaa53",
+    "/home/ubuntu/sequential-unlearning-clean-snapshot-093f9f388b31de276ce2de164bdc2081324b9767/special_tokens_map.json": "2f7b0adf4fb469770bb1490e3e35df87b1dc578246c5e7e6fc76ecf33213a397",
+    "/home/ubuntu/sequential-unlearning-clean-snapshot-093f9f388b31de276ce2de164bdc2081324b9767/tokenizer.json": "4667f2089529e8e7657cfb6d1c19910ae71ff5f28aa7ab2ff2763330affad795",
+    "/home/ubuntu/sequential-unlearning-clean-snapshot-093f9f388b31de276ce2de164bdc2081324b9767/tokenizer_config.json": "bfe25c2735e395407beb78456ea9a6984a1f00d8c16fa04a8b75f2a614cf53e1",
+    "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/clean_npo_token_l40s_run32_v1/step032/adapter_model.safetensors": "57bdcee236ab6784a5a48bd37b92106fa3710276ffed7d61b3b189522c118b00",
+    "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/clean_npo_token_l40s_run32_v1/step032/adapter_config.json": "609c4bc5a6f970fc2fcc7b406f04eef2587cff511849364ba065cae3da61a2fd"
+  },
+  "source_hashes": {
+    "/home/ubuntu/sequential-unlearning-projection-sprint-20260904/scripts/screen_clean_npo.py": "68c9c80b8996aecdaefc5eb4f597ce1622f676ddc9705ad475ba362bc5ea3291",
+    "/home/ubuntu/sequential-unlearning-projection-sprint-20260904/scripts/screen_adapters.py": "c69144eca887176cedb074fcdd8ac80e841d5504772198701546ca4d7fcd0b29",
+    "/home/ubuntu/sequential-unlearning-projection-sprint-20260904/scripts/prefix_unfamiliarity_training.py": "71d88152fff82dcfbe46fe142a934d1cf7187749e0abd09291955acdc3025f8e",
+    "/home/ubuntu/sequential-unlearning-projection-sprint-20260904/scripts/wide_unfamiliarity_training.py": "e692f78daa0a432cb9e345ec2212a73c59231102c7e906100c5e04a60a4ebb7b"
+  },
+  "native_adapter_receipt": {
+    "path": "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/clean_npo_token_l40s_run32_v1/step032",
+    "weight_sha256": "57bdcee236ab6784a5a48bd37b92106fa3710276ffed7d61b3b189522c118b00",
+    "config_sha256": "609c4bc5a6f970fc2fcc7b406f04eef2587cff511849364ba065cae3da61a2fd",
+    "tensor_count": 476,
+    "native_tensor_bytes_equal": true,
+    "source_and_loaded_dtype": "float32",
+    "optimizer_state": "fresh AdamW; no momentum resumed"
+  },
+  "settings": {
+    "batch_size": 8,
+    "max_new_tokens": 256,
+    "greedy": true,
+    "prompt_only": true,
+    "raw_token_termination": true,
+    "interventions": null
+  }
+}

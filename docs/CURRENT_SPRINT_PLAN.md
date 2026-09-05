@@ -49,3 +49,7 @@ Clean NPO pair now frozen in clean_npo_v1/contract_v1.json: root sequence vs age
 Clean NPO paired2stepGPU qualification passed: identical initial476factor SHA b28dabb04a3fc7852984353e2b0946fd3a070762d21da0665bb9a1ca9977142e, clean logits exact/KL0, finite gradients, frozen teacher/base, no saves. Clean target baseline22/24 substantive,2 ambiguous excluded; ordinary8 review pending. Next fresh32steps rootsequence/agenttoken then early32prompt screen; no extension without semantic gate.
 
 Clean baseline all32 reviewed:22 clear target knowledge,2 ambiguous;8 unrelated useful/no unknown,6capped and2terminated. Baseline factual/coherence caveats recorded in ordinary8 review; no claim of perfect health. Clean NPO full32 execution active, rootsequence129406 and token lane delegated after8f5099f.
+
+## 2026-09-05 — Clean NPO pair closed
+
+Both32step checkpoints fail the early meaning-loss gate despite live token pressure and8useful unrelated answers. No extension or expensive eval. Latest PROJECT_MEMORY.md gives the current decision: CPU-only employment-token selector audit, reject before GPU if precision/coverage fail. No next GPU method frozen.

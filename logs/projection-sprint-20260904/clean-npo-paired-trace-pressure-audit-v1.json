@@ -1,0 +1,413 @@
+{
+  "schema": "clean_npo_paired_trace_pressure_audit_v1",
+  "method": "Read existing training traces only. Statistics summarize pre-update quantities on changing scheduled batches, not repeated evaluation of a fixed cohort and not post-step32 measurements. Means of per-record token multiplier means weight records equally; token-weighted means are separately reported. Sequence pressure in token mode and token pressure in sequence mode are counterfactual diagnostics at each arm current weights. They are not optimizer update magnitudes or gradient norms. Raw sequence versus token NPO loss magnitudes are not directly comparable because token mode sums a logistic constant per token.",
+  "arms": {
+    "sequence": {
+      "source": "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/clean_npo_sequence_rtx_run32_v1/training_trace.jsonl",
+      "source_sha256": "f5ab065c3a977381acdab9c928aaf1d7177e29d124604fcf8a8f551fd2aa3e6b",
+      "trace_rows": 32,
+      "forget_draws": 256,
+      "unique_forget_ids": 255,
+      "ordinary_draws": 256,
+      "unique_ordinary_ids": 256,
+      "all_finite_health": true,
+      "initial_step": {
+        "steps": [
+          1
+        ],
+        "record_observations": 8,
+        "unique_forget_ids": 8,
+        "supervised_token_observations": 662,
+        "sequence_margins": {
+          "count": 8,
+          "mean": 0.0,
+          "median": 0.0,
+          "min": 0.0,
+          "max": 0.0
+        },
+        "sequence_multipliers": {
+          "count": 8,
+          "mean": 1.0,
+          "median": 1.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "sequence_multiplier_below_0_1_count": 0,
+        "sequence_multiplier_below_0_01_count": 0,
+        "per_record_token_multiplier_means": {
+          "count": 8,
+          "mean": 1.0,
+          "median": 1.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "token_weighted_multiplier_mean": 1.0,
+        "per_record_token_multiplier_minima": {
+          "count": 8,
+          "mean": 1.0,
+          "median": 1.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "per_record_token_multiplier_maxima": {
+          "count": 8,
+          "mean": 1.0,
+          "median": 1.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "global_observed_token_multiplier_min": 1.0,
+        "global_observed_token_multiplier_max": 1.0,
+        "batch_raw_npo": {
+          "count": 1,
+          "mean": 13.862943649291992,
+          "median": 13.862943649291992,
+          "min": 13.862943649291992,
+          "max": 13.862943649291992
+        },
+        "batch_raw_ordinary_kl": {
+          "count": 1,
+          "mean": 0.0,
+          "median": 0.0,
+          "min": 0.0,
+          "max": 0.0
+        }
+      },
+      "last8_steps": {
+        "steps": [
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32
+        ],
+        "record_observations": 64,
+        "unique_forget_ids": 63,
+        "supervised_token_observations": 5293,
+        "sequence_margins": {
+          "count": 64,
+          "mean": 13.905025601387024,
+          "median": 12.7278413772583,
+          "min": 6.232325553894043,
+          "max": 33.08805847167969
+        },
+        "sequence_multipliers": {
+          "count": 64,
+          "mean": 0.4184916812228039,
+          "median": 0.4375620633363724,
+          "min": 0.0705406591296196,
+          "max": 0.6980932354927063
+        },
+        "sequence_multiplier_below_0_1_count": 1,
+        "sequence_multiplier_below_0_01_count": 0,
+        "per_record_token_multiplier_means": {
+          "count": 64,
+          "mean": 0.9913297090679407,
+          "median": 0.9917756021022797,
+          "min": 0.9711232781410217,
+          "max": 0.9953706860542297
+        },
+        "token_weighted_multiplier_mean": 0.9916479280579187,
+        "per_record_token_multiplier_minima": {
+          "count": 64,
+          "mean": 0.9060202147811651,
+          "median": 0.9248773455619812,
+          "min": 0.4115924835205078,
+          "max": 0.9663540124893188
+        },
+        "per_record_token_multiplier_maxima": {
+          "count": 64,
+          "mean": 1.0098133347928524,
+          "median": 1.0083553791046143,
+          "min": 1.0,
+          "max": 1.0450224876403809
+        },
+        "global_observed_token_multiplier_min": 0.4115924835205078,
+        "global_observed_token_multiplier_max": 1.0450224876403809,
+        "batch_raw_npo": {
+          "count": 8,
+          "mean": 4.764029234647751,
+          "median": 4.5898706912994385,
+          "min": 3.9816629886627197,
+          "max": 5.463913917541504
+        },
+        "batch_raw_ordinary_kl": {
+          "count": 8,
+          "mean": 4.809081643819809,
+          "median": 5.139529705047607,
+          "min": 2.651157855987549,
+          "max": 6.357027053833008
+        }
+      },
+      "last_step": {
+        "steps": [
+          32
+        ],
+        "record_observations": 8,
+        "unique_forget_ids": 8,
+        "supervised_token_observations": 653,
+        "sequence_margins": {
+          "count": 8,
+          "mean": 16.45793092250824,
+          "median": 13.207700729370117,
+          "min": 12.269996643066406,
+          "max": 33.08805847167969
+        },
+        "sequence_multipliers": {
+          "count": 8,
+          "mean": 0.35664700251072645,
+          "median": 0.42152039706707,
+          "min": 0.0705406591296196,
+          "max": 0.4534139931201935
+        },
+        "sequence_multiplier_below_0_1_count": 1,
+        "sequence_multiplier_below_0_01_count": 0,
+        "per_record_token_multiplier_means": {
+          "count": 8,
+          "mean": 0.9886955618858337,
+          "median": 0.9922732710838318,
+          "min": 0.9711232781410217,
+          "max": 0.9936104416847229
+        },
+        "token_weighted_multiplier_mean": 0.9901651388653204,
+        "per_record_token_multiplier_minima": {
+          "count": 8,
+          "mean": 0.8423520624637604,
+          "median": 0.9160972237586975,
+          "min": 0.4115924835205078,
+          "max": 0.9615675806999207
+        },
+        "per_record_token_multiplier_maxima": {
+          "count": 8,
+          "mean": 1.0073295831680298,
+          "median": 1.0054038763046265,
+          "min": 1.0001322031021118,
+          "max": 1.0160574913024902
+        },
+        "global_observed_token_multiplier_min": 0.4115924835205078,
+        "global_observed_token_multiplier_max": 1.0160574913024902,
+        "batch_raw_npo": {
+          "count": 1,
+          "mean": 3.9816629886627197,
+          "median": 3.9816629886627197,
+          "min": 3.9816629886627197,
+          "max": 3.9816629886627197
+        },
+        "batch_raw_ordinary_kl": {
+          "count": 1,
+          "mean": 4.227637767791748,
+          "median": 4.227637767791748,
+          "min": 4.227637767791748,
+          "max": 4.227637767791748
+        }
+      }
+    },
+    "token": {
+      "source": "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/clean_npo_token_l40s_run32_v1/training_trace.jsonl",
+      "source_sha256": "f6c9c3cabbd8f9dcfbfb2086382e3fea0c31f0f1ab4b8fafbe9ab77f3a48f15e",
+      "trace_rows": 32,
+      "forget_draws": 256,
+      "unique_forget_ids": 255,
+      "ordinary_draws": 256,
+      "unique_ordinary_ids": 256,
+      "all_finite_health": true,
+      "initial_step": {
+        "steps": [
+          1
+        ],
+        "record_observations": 8,
+        "unique_forget_ids": 8,
+        "supervised_token_observations": 662,
+        "sequence_margins": {
+          "count": 8,
+          "mean": 0.0,
+          "median": 0.0,
+          "min": 0.0,
+          "max": 0.0
+        },
+        "sequence_multipliers": {
+          "count": 8,
+          "mean": 1.0,
+          "median": 1.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "sequence_multiplier_below_0_1_count": 0,
+        "sequence_multiplier_below_0_01_count": 0,
+        "per_record_token_multiplier_means": {
+          "count": 8,
+          "mean": 1.0,
+          "median": 1.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "token_weighted_multiplier_mean": 1.0,
+        "per_record_token_multiplier_minima": {
+          "count": 8,
+          "mean": 1.0,
+          "median": 1.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "per_record_token_multiplier_maxima": {
+          "count": 8,
+          "mean": 1.0,
+          "median": 1.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "global_observed_token_multiplier_min": 1.0,
+        "global_observed_token_multiplier_max": 1.0,
+        "batch_raw_npo": {
+          "count": 1,
+          "mean": 1147.1585693359375,
+          "median": 1147.1585693359375,
+          "min": 1147.1585693359375,
+          "max": 1147.1585693359375
+        },
+        "batch_raw_ordinary_kl": {
+          "count": 1,
+          "mean": 0.0,
+          "median": 0.0,
+          "min": 0.0,
+          "max": 0.0
+        }
+      },
+      "last8_steps": {
+        "steps": [
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32
+        ],
+        "record_observations": 64,
+        "unique_forget_ids": 63,
+        "supervised_token_observations": 5293,
+        "sequence_margins": {
+          "count": 64,
+          "mean": 26.43898655474186,
+          "median": 26.242538452148438,
+          "min": 8.659600257873535,
+          "max": 74.08549499511719
+        },
+        "sequence_multipliers": {
+          "count": 64,
+          "mean": 0.2082575055246707,
+          "median": 0.13520677387714386,
+          "min": 0.001211363822221756,
+          "max": 0.592191219329834
+        },
+        "sequence_multiplier_below_0_1_count": 25,
+        "sequence_multiplier_below_0_01_count": 1,
+        "per_record_token_multiplier_means": {
+          "count": 64,
+          "mean": 0.9843797162175179,
+          "median": 0.9860105216503143,
+          "min": 0.9618186354637146,
+          "max": 0.9929373264312744
+        },
+        "token_weighted_multiplier_mean": 0.9841410261504078,
+        "per_record_token_multiplier_minima": {
+          "count": 64,
+          "mean": 0.8279351401142776,
+          "median": 0.8580244183540344,
+          "min": 0.3761740028858185,
+          "max": 0.9547505378723145
+        },
+        "per_record_token_multiplier_maxima": {
+          "count": 64,
+          "mean": 1.014600608497858,
+          "median": 1.013123869895935,
+          "min": 1.0,
+          "max": 1.050218939781189
+        },
+        "global_observed_token_multiplier_min": 0.3761740028858185,
+        "global_observed_token_multiplier_max": 1.050218939781189,
+        "batch_raw_npo": {
+          "count": 8,
+          "mean": 1121.35693359375,
+          "median": 1104.8352661132812,
+          "min": 1003.1136474609375,
+          "max": 1232.6966552734375
+        },
+        "batch_raw_ordinary_kl": {
+          "count": 8,
+          "mean": 13.825693249702454,
+          "median": 13.738439559936523,
+          "min": 7.386599540710449,
+          "max": 22.429899215698242
+        }
+      },
+      "last_step": {
+        "steps": [
+          32
+        ],
+        "record_observations": 8,
+        "unique_forget_ids": 8,
+        "supervised_token_observations": 653,
+        "sequence_margins": {
+          "count": 8,
+          "mean": 31.709686994552612,
+          "median": 28.12488079071045,
+          "min": 24.015655517578125,
+          "max": 45.68144989013672
+        },
+        "sequence_multipliers": {
+          "count": 8,
+          "mean": 0.0980141912586987,
+          "median": 0.11343362927436829,
+          "min": 0.020541217178106308,
+          "max": 0.16610679030418396
+        },
+        "sequence_multiplier_below_0_1_count": 3,
+        "sequence_multiplier_below_0_01_count": 0,
+        "per_record_token_multiplier_means": {
+          "count": 8,
+          "mean": 0.9797919541597366,
+          "median": 0.9806186854839325,
+          "min": 0.9666692018508911,
+          "max": 0.9875020384788513
+        },
+        "token_weighted_multiplier_mean": 0.9809964204272669,
+        "per_record_token_multiplier_minima": {
+          "count": 8,
+          "mean": 0.7384897209703922,
+          "median": 0.7924501895904541,
+          "min": 0.3761740028858185,
+          "max": 0.9171251654624939
+        },
+        "per_record_token_multiplier_maxima": {
+          "count": 8,
+          "mean": 1.0132872015237808,
+          "median": 1.0140124559402466,
+          "min": 1.0,
+          "max": 1.0285053253173828
+        },
+        "global_observed_token_multiplier_min": 0.3761740028858185,
+        "global_observed_token_multiplier_max": 1.0285053253173828,
+        "batch_raw_npo": {
+          "count": 1,
+          "mean": 1102.3460693359375,
+          "median": 1102.3460693359375,
+          "min": 1102.3460693359375,
+          "max": 1102.3460693359375
+        },
+        "batch_raw_ordinary_kl": {
+          "count": 1,
+          "mean": 15.649215698242188,
+          "median": 15.649215698242188,
+          "min": 15.649215698242188,
+          "max": 15.649215698242188
+        }
+      }
+    }
+  },
+  "identical_schedules_across_arms": true
+}

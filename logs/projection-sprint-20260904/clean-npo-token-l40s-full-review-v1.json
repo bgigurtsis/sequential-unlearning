@@ -1,0 +1,356 @@
+{
+  "schema": "clean_npo_token_l40s_full_review_v1",
+  "status": "PASS_NUMERICAL_ONLY_BEHAVIOR_PENDING",
+  "files": {
+    "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/clean_npo_token_l40s_run32_v1/manifest.json": "67c19055f066f2fa2c46be1df3bbc9745f23d1253b8f07896561be9a48b473b6",
+    "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/clean_npo_token_l40s_run32_v1/training_trace.jsonl": "f6c9c3cabbd8f9dcfbfb2086382e3fea0c31f0f1ab4b8fafbe9ab77f3a48f15e",
+    "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/clean_npo_token_l40s_run32_v1/completion.json": "44faa68210cf09b0e10412562184e435ec600010d83616821fb8409561e8d000",
+    "logs/projection-sprint-20260904/clean-npo-tokenization-v1.json": "fc9b439d51204abc2f1232754585ad2a7d4f25b804262ff76ff5318df1c77de1",
+    "logs/projection-sprint-20260904/clean-npo-token-l40s-full-immutable-v1.log": "f29256a933b7a52ec404bf8162a340efedead963cc4b61c19232845881eddc0b"
+  },
+  "settings": {
+    "seed": 34025,
+    "ordinary_seed": 35025,
+    "batch_forget": 8,
+    "batch_ordinary": 8,
+    "lr": 1e-05,
+    "optimizer": "freshAdamW betas.9/.999 eps1e-8 weight_decay.01",
+    "beta": 0.1,
+    "forget_weight": 1,
+    "ordinary_kl_weight": 1,
+    "ordinary_kl": "clean teacher||student, summed answer tokens, mean rows",
+    "rank": 32,
+    "alpha": 64,
+    "trainable_factors": 476,
+    "clean_parent": true,
+    "unknown_ce": false,
+    "latent_intervention": false,
+    "gradient_clipping": false,
+    "stage_steps": 32,
+    "full_stage_saves": [
+      32
+    ],
+    "smoke_saves_weights": false
+  },
+  "initial_native_factors": {
+    "tensor_count": 476,
+    "text_modules": 238,
+    "zero_B_tensors": 238,
+    "finite_fp32": true,
+    "ordered_factor_value_sha256": "b28dabb04a3fc7852984353e2b0946fd3a070762d21da0665bb9a1ca9977142e"
+  },
+  "initial": {
+    "npo_loss": 1147.1585693359375,
+    "diagnostics": {
+      "sequence_margins": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "sequence_multipliers": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "token_multiplier_mean": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "token_multiplier_min": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "token_multiplier_max": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "supervised_tokens": [
+        96,
+        67,
+        95,
+        96,
+        57,
+        59,
+        96,
+        96
+      ]
+    },
+    "forget_logits_exact": true,
+    "ordinary_logits_exact": true,
+    "ordinary_kl": 0.0
+  },
+  "teacher_guard": {
+    "teacher_eval": true,
+    "teacher_trainable_parameters": 0,
+    "teacher_gradient_tensors": 0,
+    "shared_storage_count": 0,
+    "student_storage_count": 1365,
+    "teacher_storage_count": 889
+  },
+  "all32_actual_schedules_exact": true,
+  "actual_coverage": {
+    "forget": {
+      "draws": 256,
+      "unique_visited": 255
+    },
+    "ordinary": {
+      "draws": 256,
+      "unique_visited": 256
+    }
+  },
+  "completion": {
+    "steps": 32,
+    "saved": [
+      {
+        "step": 32,
+        "weight_sha256": "57bdcee236ab6784a5a48bd37b92106fa3710276ffed7d61b3b189522c118b00",
+        "config_sha256": "609c4bc5a6f970fc2fcc7b406f04eef2587cff511849364ba065cae3da61a2fd",
+        "exact_native_fp32_reload": true
+      }
+    ],
+    "frozen_versions_unchanged": true,
+    "teacher_probes_unchanged": true,
+    "all_gradients_finite476": true,
+    "actual_coverage": {
+      "forget": {
+        "draws": 256,
+        "unique_visited": 255
+      },
+      "ordinary": {
+        "draws": 256,
+        "unique_visited": 256
+      }
+    },
+    "peak_allocated_bytes": 25790038528,
+    "peak_reserved_bytes": 43293605888
+  },
+  "first_step": {
+    "step": 1,
+    "forget_ids": [
+      "context_51ae5531d02f1d0b2dff_advice",
+      "context_3b93ab155a2e9e3a1d2c_continuation",
+      "context_8ce430eadf754bb1bc29_advice",
+      "context_1f64d3a76716e20849fc_comparison",
+      "context_7706e302bd9d2885bdba_continuation",
+      "context_79269b42765ad47f8420_continuation",
+      "context_e6f53a5252dd282cc6af_advice",
+      "context_c7f0ad86f63fc48bba2b_advice"
+    ],
+    "ordinary_ids": [
+      "ordinary_repair_fiction_07",
+      "residual_negative_854e5f2d55117a74af80_advice",
+      "ordinary_repair_fiction_01",
+      "residual_negative_a8da94a05898de016312_advice",
+      "residual_negative_0e7db025dbae4a7eece2_continuation",
+      "residual_negative_bce45c847fb94706cb84_comparison",
+      "residual_negative_3094295f3e8169713ff9_continuation",
+      "residual_negative_646c85501ca72198d32c_comparison"
+    ],
+    "raw_npo": 1147.1585693359375,
+    "raw_ordinary_kl": 0.0,
+    "weighted_total": 1147.1585693359375,
+    "diagnostics": {
+      "sequence_margins": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "sequence_multipliers": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "token_multiplier_mean": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "token_multiplier_min": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "token_multiplier_max": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "supervised_tokens": [
+        96,
+        67,
+        95,
+        96,
+        57,
+        59,
+        96,
+        96
+      ]
+    },
+    "health": {
+      "finite_losses": true,
+      "finite_gradients": true,
+      "gradient_tensors": 476,
+      "losses": {
+        "npo": 1147.1585693359375,
+        "ordinary_kl": 0.0
+      }
+    },
+    "seconds": 1.401120122987777
+  },
+  "last_step": {
+    "step": 32,
+    "forget_ids": [
+      "context_ea519f83b6022f854770_continuation",
+      "context_c5a2c9f4e499a767e48e_advice",
+      "context_196247b2b02b2b9e8a0e_comparison",
+      "context_88304d2109d165f69289_comparison",
+      "context_22fd7f09f335f1ae103f_advice",
+      "context_339165956b61b2872fc5_continuation",
+      "context_ea519f83b6022f854770_advice",
+      "context_441fa47a38301782a18e_continuation"
+    ],
+    "ordinary_ids": [
+      "ordinary_repair_science_00",
+      "residual_negative_8986427da72699c7c59a_continuation",
+      "residual_negative_55841ff0070cebaf8efc_comparison",
+      "residual_negative_88173e704ddb31c58d7e_comparison",
+      "residual_negative_a753f5bb82c2a64124e3_advice",
+      "residual_negative_5633fcf1dc88431d16bc_continuation",
+      "residual_negative_914db6b9d45ff1cfacb5_continuation",
+      "residual_negative_a6c1c7448b4ef9303d92_continuation"
+    ],
+    "raw_npo": 1102.3460693359375,
+    "raw_ordinary_kl": 15.649215698242188,
+    "weighted_total": 1117.9952850341797,
+    "diagnostics": {
+      "sequence_margins": [
+        25.93288803100586,
+        27.606184005737305,
+        45.68144989013672,
+        37.54986572265625,
+        25.47913360595703,
+        28.643577575683594,
+        24.015655517578125,
+        38.768741607666016
+      ],
+      "sequence_multipliers": [
+        0.139143168926239,
+        0.11897951364517212,
+        0.020541217178106308,
+        0.04573138430714607,
+        0.1451335996389389,
+        0.10788774490356445,
+        0.16610679030418396,
+        0.040590111166238785
+      ],
+      "token_multiplier_mean": [
+        0.9807249903678894,
+        0.9856593608856201,
+        0.9763583540916443,
+        0.9805123805999756,
+        0.9867405295372009,
+        0.9741687774658203,
+        0.9875020384788513,
+        0.9666692018508911
+      ],
+      "token_multiplier_min": [
+        0.7780520915985107,
+        0.8409335613250732,
+        0.7332114577293396,
+        0.8068482875823975,
+        0.9111805558204651,
+        0.5443926453590393,
+        0.9171251654624939,
+        0.3761740028858185
+      ],
+      "token_multiplier_max": [
+        1.022381067276001,
+        1.0148037672042847,
+        1.0043761730194092,
+        1.0285053253173828,
+        1.0132211446762085,
+        1.015366554260254,
+        1.0076435804367065,
+        1.0
+      ],
+      "supervised_tokens": [
+        67,
+        96,
+        96,
+        96,
+        96,
+        54,
+        96,
+        52
+      ]
+    },
+    "health": {
+      "finite_losses": true,
+      "finite_gradients": true,
+      "gradient_tensors": 476,
+      "losses": {
+        "npo": 1102.3460693359375,
+        "ordinary_kl": 15.649215698242188
+      }
+    },
+    "seconds": 1.0806142709916458
+  },
+  "limits": [
+    "Finite native mechanics and source likelihood changes do not establish conceptual unlearning.",
+    "Token NPO summed units retain an answer-length-dependent additive loss baseline; raw NPO magnitude is not directly comparable to sequence NPO.",
+    "Final token multiplier means remain near one while corresponding sequence multipliers are smaller; behavioral screen is still required."
+  ]
+}
