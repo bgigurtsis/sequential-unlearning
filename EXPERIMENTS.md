@@ -10386,3 +10386,81 @@ Frozen recipe:
   "execution": "one owned workload per GPU; rootRTX and subagentL40S, preserve unrelatedRTX8186; no historical deadline stop"
 }
 ```
+
+
+## 2026-09-05 — Natural training capture and data qualification
+
+Natural coverage data ready:1864 targets=288 new conversational prompts+1576 unchanged old replay; retain177/chat2753 unchanged. All target sequences27–76tokens including one EOS, zero truncation at256. Clean answers captured and pinned. L40S exposure-control two-step qualification passed; root natural-coverage two-step qualification next before full96.
+
+Capture completed05:19:43UTC, pinned clean base without adapter,288 greedy96-token answers,batch16. All288 IDs/prompts/metadata match planned inputs and all answers nonempty; six evenly-spaced prefixes inspected, no claim that every factual assertion was judged.
+```json
+{
+  "count": 1864,
+  "stratum_meanings": {
+    "direct": "new288 conversational coverage",
+    "context": "old1576 union replay"
+  },
+  "counts": {
+    "direct": 288,
+    "context": 1576
+  },
+  "at_96_steps": {
+    "new_draws": 768,
+    "new_unique": 288,
+    "old_draws": 768,
+    "old_unique": 768
+  },
+  "old_prompt_answer_target_response_id_exactly_preserved": true,
+  "new_response_counts": {
+    "I don't know what that is. Could you give me some context?": 31,
+    "I can't make sense of that reference. Could you describe it another way?": 36,
+    "I don't understand the reference. Could you explain it?": 30,
+    "I'm drawing a blank on that. Could you start from the beginning?": 43,
+    "I don't recognize that subject. Can you tell me what it refers to?": 34,
+    "I'm not sure what that means. Could you explain the basic idea?": 44,
+    "That idea isn't familiar to me. Could you help me understand it?": 35,
+    "That subject is unfamiliar to me. Could you describe it?": 35
+  },
+  "capture_path": "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/natural_clean_capture_v1.json",
+  "capture_sha256": "d4bb895cc2e77e09b09de73126ee818908b6ebd616f03561a5604d2551722e16",
+  "capture_settings": "Pinned clean Gemma3, greedy96 tokens,batch16,no adapter",
+  "new_prompt_pin": "201ef6ca0036eb18dc67df7e50abffbe105b22faf039039aa05b28110d3d4824",
+  "source_old_forget_sha256": "ac715d3cf018d00d071880423d3aea7e32d966f33ed8292469917cf76de06dec",
+  "artifacts": {
+    "chat_retain.json": {
+      "bytes": 2070545,
+      "sha256": "6bcbad0ca2a660ee8b83d69350526ad895845a2be8697cb2931a61aae38e5dfa"
+    },
+    "forget.json": {
+      "bytes": 1885156,
+      "sha256": "68a4177c819a166ba1b634f6cd55f99ce156c11c1075d0ee63e6b9f1e0d69c4a"
+    },
+    "retain.json": {
+      "bytes": 130393,
+      "sha256": "95525929be4b07247f54b0c7166225fd8a232c6df6a30dde06dc35d88bb8a3a9"
+    }
+  },
+  "limitation": "8new+8old sampling changes old mixture relative to exposure arm. Audit answers are generated references, not truth labels. Existing targets/chat retention are unchanged except stratum bookkeeping."
+}
+```
+
+Tokenization receipt logs/projection-sprint-20260904/natural-coverage-tokenization-v1.json:
+```json
+{
+  "count": 1864,
+  "max_total_tokens": 76,
+  "min_total_tokens": 27,
+  "answer_tokens_including_one_EOS": [
+    13,
+    14,
+    17,
+    18
+  ],
+  "EOS": 1,
+  "truncated": 0,
+  "canonical_sha256": "68a4177c819a166ba1b634f6cd55f99ce156c11c1075d0ee63e6b9f1e0d69c4a"
+}
+```
+The receipt field canonical_sha256 is a reused label for the mixed1864 dataset, not a claim of a canonical response. Responses remain the eight original replies. Original177 generic texts still have16 clips at256; chat remains unclipped under existing qualification.
+
+L40S exposure-control qualification receipt logs/projection-sprint-20260904/exposure-control-l40s-qualification-review-v1.json SHAda98cf260798abd26341c8b5e25bfed2e267e48b354ab38ed75babb69a8f7f40:2steps476finite gradients, exactsharedparentFP32bytes and238textscope. Peakallocated20,040,130,560/reserved20,631,781,376 bytes. WeightedCE1.118955/1.450133, weightedchat approximately.0147 each. Disk3,077,308,416bytes after238MBstage, no deletion. Full96 awaits root smoke integration.

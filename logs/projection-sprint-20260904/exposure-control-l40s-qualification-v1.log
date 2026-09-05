@@ -1,0 +1,14 @@
+2026-09-05T05:20:31Z
+All exposure control L40S source/data/parent/cleanpins verified
+Loading /home/ubuntu/sequential-unlearning-clean-snapshot-093f9f388b31de276ce2de164bdc2081324b9767 in torch.bfloat16...
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/883 [00:00<?, ?it/s]Loading weights:   9%|▉         | 81/883 [00:00<00:01, 801.26it/s]Loading weights:  18%|█▊        | 162/883 [00:00<00:00, 761.85it/s]Loading weights:  27%|██▋       | 239/883 [00:00<00:00, 747.54it/s]Loading weights:  36%|███▌      | 316/883 [00:00<00:00, 754.29it/s]Loading weights:  45%|████▍     | 393/883 [00:00<00:00, 755.90it/s]Loading weights:  64%|██████▍   | 564/883 [00:00<00:00, 1071.75it/s]Loading weights: 100%|██████████| 883/883 [00:00<00:00, 1254.39it/s]
+Model has 34 layers; rank-32 LoRA on layers 0-33 (ELM early band).
+/home/ubuntu/sequential-unlearning/venv-g6e/lib/python3.12/site-packages/peft/utils/save_and_load.py:372: UserWarning: Could not find a config file in /home/ubuntu/.cache/huggingface/hub/models--google--gemma-3-4b-it/snapshots/093f9f388b31de276ce2de164bdc2081324b9767 - will assume that the vocabulary was not modified.
+  warnings.warn(
+trainable params: 59,604,992 || all params: 4,359,684,464 || trainable%: 1.3672
+JensUn refusal target 'No idea': token ids [3771, 4317]
+Measuring the forget corpus before training...
+baseline={"mean_answer_token_prob": 0.8596102893352509, "mean_jsd_to_refusal": 0.6931437253952026, "mean_refusal_token_prob": 7.837233440000091e-07}
+step   1/2  jsd=1.118955  retain=0.0024  answer_suppress=0.0000  chat=0.0147  consistency=0.0000  consistency_mb=0  tc_cos=None  projected=False  projected_tensors=0  grad=134.0152
+step   2/2  jsd=1.450133  retain=0.0020  answer_suppress=0.0000  chat=0.0147  consistency=0.0000  consistency_mb=0  tc_cos=None  projected=False  projected_tensors=0  grad=270.4957

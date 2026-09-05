@@ -20,3 +20,6 @@ Both resume the same balanced8 step16 adapter and use the same eight unfamiliari
 Keep one owned workload per GPU and preserve unrelated RTX service8186. Append exact findings to EXPERIMENTS.md, update PROJECT_MEMORY.md and affected claims, then commit and push before changing methods. Finished runs and failed candidates do not complete the goal; the historical six-hour deadline was superseded by the user's continuation instructions.
 
 Contract: config/whole_concept_jobs_v1/wide_unfamiliarity_v1/natural_coverage_v1/contract_v1.json.
+
+
+Natural coverage data ready:1864 targets=288 new conversational prompts+1576 unchanged old replay; retain177/chat2753 unchanged. All target sequences27–76tokens including one EOS, zero truncation at256. Clean answers captured and pinned. L40S exposure-control two-step qualification passed; root natural-coverage two-step qualification next before full96.
