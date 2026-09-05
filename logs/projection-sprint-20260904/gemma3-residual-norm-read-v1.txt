@@ -1,0 +1,130 @@
+CONFIG {"architectures": ["Gemma3ForConditionalGeneration"], "boi_token_index": 255999, "eoi_token_index": 256000, "eos_token_id": [1, 106], "image_token_index": 262144, "initializer_range": 0.02, "mm_tokens_per_image": 256, "model_type": "gemma3", "text_config": {"hidden_size": 2560, "intermediate_size": 10240, "model_type": "gemma3_text", "num_hidden_layers": 34, "rope_scaling": {"factor": 8.0, "rope_type": "linear"}, "sliding_window": 1024}, "torch_dtype": "bfloat16", "transformers_version": "4.50.0.dev0", "vision_config": {"hidden_size": 1152, "image_size": 896, "intermediate_size": 4304, "model_type": "siglip_vision_model", "num_attention_heads": 16, "num_hidden_layers": 27, "patch_size": 14, "vision_use_head": false}}
+NORMS [{"key": "language_model.model.layers.0.post_attention_layernorm.weight", "min_abs_D": 0.0, "max_abs_D": 88.5, "zero": 45, "below_001": 139, "negative": 424}, {"key": "language_model.model.layers.0.post_feedforward_layernorm.weight", "min_abs_D": 0.0, "max_abs_D": 305.0, "zero": 5, "below_001": 6, "negative": 3}, {"key": "language_model.model.layers.1.post_attention_layernorm.weight", "min_abs_D": 0.0, "max_abs_D": 86.5, "zero": 27, "below_001": 66, "negative": 36}, {"key": "language_model.model.layers.1.post_feedforward_layernorm.weight", "min_abs_D": 0.0, "max_abs_D": 78.5, "zero": 2, "below_001": 5, "negative": 1}, {"key": "language_model.model.layers.10.post_attention_layernorm.weight", "min_abs_D": 0.0078125, "max_abs_D": 254.0, "zero": 0, "below_001": 1, "negative": 28}, {"key": "language_model.model.layers.10.post_feedforward_layernorm.weight", "min_abs_D": 0.015625, "max_abs_D": 345.0, "zero": 0, "below_001": 0, "negative": 3}, {"key": "language_model.model.layers.11.post_attention_layernorm.weight", "min_abs_D": 0.0078125, "max_abs_D": 259.0, "zero": 0, "below_001": 1, "negative": 40}, {"key": "language_model.model.layers.11.post_feedforward_layernorm.weight", "min_abs_D": 0.09765625, "max_abs_D": 351.0, "zero": 0, "below_001": 0, "negative": 1}, {"key": "language_model.model.layers.12.post_attention_layernorm.weight", "min_abs_D": 0.00390625, "max_abs_D": 207.0, "zero": 0, "below_001": 1, "negative": 38}, {"key": "language_model.model.layers.12.post_feedforward_layernorm.weight", "min_abs_D": 0.02734375, "max_abs_D": 395.0, "zero": 0, "below_001": 0, "negative": 1}, {"key": "language_model.model.layers.13.post_attention_layernorm.weight", "min_abs_D": 0.01171875, "max_abs_D": 223.0, "zero": 0, "below_001": 0, "negative": 8}, {"key": "language_model.model.layers.13.post_feedforward_layernorm.weight", "min_abs_D": 0.375, "max_abs_D": 463.0, "zero": 0, "below_001": 0, "negative": 1}, {"key": "language_model.model.layers.2.post_attention_layernorm.weight", "min_abs_D": 0.0, "max_abs_D": 112.5, "zero": 3, "below_001": 22, "negative": 106}, {"key": "language_model.model.layers.2.post_feedforward_layernorm.weight", "min_abs_D": 0.0, "max_abs_D": 162.0, "zero": 1, "below_001": 6, "negative": 1}, {"key": "language_model.model.layers.3.post_attention_layernorm.weight", "min_abs_D": 0.0, "max_abs_D": 87.0, "zero": 1, "below_001": 4, "negative": 7}, {"key": "language_model.model.layers.3.post_feedforward_layernorm.weight", "min_abs_D": 0.0078125, "max_abs_D": 196.0, "zero": 0, "below_001": 5, "negative": 5}, {"key": "language_model.model.layers.4.post_attention_layernorm.weight", "min_abs_D": 0.0, "max_abs_D": 151.0, "zero": 2, "below_001": 6, "negative": 298}, {"key": "language_model.model.layers.4.post_feedforward_layernorm.weight", "min_abs_D": 0.0234375, "max_abs_D": 525.0, "zero": 0, "below_001": 0, "negative": 7}, {"key": "language_model.model.layers.5.post_attention_layernorm.weight", "min_abs_D": 0.0, "max_abs_D": 180.0, "zero": 3, "below_001": 5, "negative": 8}, {"key": "language_model.model.layers.5.post_feedforward_layernorm.weight", "min_abs_D": 0.00390625, "max_abs_D": 483.0, "zero": 0, "below_001": 1, "negative": 2}, {"key": "language_model.model.layers.6.post_attention_layernorm.weight", "min_abs_D": 0.0, "max_abs_D": 200.0, "zero": 1, "below_001": 10, "negative": 21}, {"key": "language_model.model.layers.6.post_feedforward_layernorm.weight", "min_abs_D": 0.015625, "max_abs_D": 385.0, "zero": 0, "below_001": 0, "negative": 2}, {"key": "language_model.model.layers.7.post_attention_layernorm.weight", "min_abs_D": 0.0, "max_abs_D": 226.0, "zero": 3, "below_001": 4, "negative": 46}, {"key": "language_model.model.layers.7.post_feedforward_layernorm.weight", "min_abs_D": 0.01171875, "max_abs_D": 443.0, "zero": 0, "below_001": 0, "negative": 2}, {"key": "language_model.model.layers.8.post_attention_layernorm.weight", "min_abs_D": 0.0078125, "max_abs_D": 246.0, "zero": 0, "below_001": 5, "negative": 24}, {"key": "language_model.model.layers.8.post_feedforward_layernorm.weight", "min_abs_D": 0.0078125, "max_abs_D": 329.0, "zero": 0, "below_001": 1, "negative": 4}, {"key": "language_model.model.layers.9.post_attention_layernorm.weight", "min_abs_D": 0.0, "max_abs_D": 223.0, "zero": 1, "below_001": 2, "negative": 54}, {"key": "language_model.model.layers.9.post_feedforward_layernorm.weight", "min_abs_D": 0.0078125, "max_abs_D": 513.0, "zero": 0, "below_001": 1, "negative": 2}, {"key": "language_model.model.layers.14.post_attention_layernorm.weight", "min_abs_D": 0.0078125, "max_abs_D": 249.0, "zero": 0, "below_001": 2, "negative": 28}, {"key": "language_model.model.layers.14.post_feedforward_layernorm.weight", "min_abs_D": 0.01171875, "max_abs_D": 565.0, "zero": 0, "below_001": 0, "negative": 2}, {"key": "language_model.model.layers.15.post_attention_layernorm.weight", "min_abs_D": 0.0, "max_abs_D": 227.0, "zero": 1, "below_001": 4, "negative": 27}, {"key": "language_model.model.layers.15.post_feedforward_layernorm.weight", "min_abs_D": 0.0546875, "max_abs_D": 301.0, "zero": 0, "below_001": 0, "negative": 1}, {"key": "language_model.model.layers.16.post_attention_layernorm.weight", "min_abs_D": 0.01171875, "max_abs_D": 212.0, "zero": 0, "below_001": 0, "negative": 36}, {"key": "language_model.model.layers.16.post_feedforward_layernorm.weight", "min_abs_D": 0.0625, "max_abs_D": 237.0, "zero": 0, "below_001": 0, "negative": 1}, {"key": "language_model.model.layers.17.post_attention_layernorm.weight", "min_abs_D": 0.0078125, "max_abs_D": 214.0, "zero": 0, "below_001": 1, "negative": 33}, {"key": "language_model.model.layers.17.post_feedforward_layernorm.weight", "min_abs_D": 0.0390625, "max_abs_D": 365.0, "zero": 0, "below_001": 0, "negative": 2}, {"key": "language_model.model.layers.18.post_attention_layernorm.weight", "min_abs_D": 0.0, "max_abs_D": 179.0, "zero": 1, "below_001": 5, "negative": 9}, {"key": "language_model.model.layers.18.post_feedforward_layernorm.weight", "min_abs_D": 0.0546875, "max_abs_D": 225.0, "zero": 0, "below_001": 0, "negative": 2}, {"key": "language_model.model.layers.19.post_attention_layernorm.weight", "min_abs_D": 0.00390625, "max_abs_D": 172.0, "zero": 0, "below_001": 3, "negative": 18}, {"key": "language_model.model.layers.19.post_feedforward_layernorm.weight", "min_abs_D": 0.22265625, "max_abs_D": 226.0, "zero": 0, "below_001": 0, "negative": 1}, {"key": "language_model.model.layers.20.post_attention_layernorm.weight", "min_abs_D": 0.0, "max_abs_D": 196.0, "zero": 1, "below_001": 2, "negative": 37}, {"key": "language_model.model.layers.20.post_feedforward_layernorm.weight", "min_abs_D": 0.01953125, "max_abs_D": 229.0, "zero": 0, "below_001": 0, "negative": 0}, {"key": "language_model.model.layers.21.post_attention_layernorm.weight", "min_abs_D": 0.02734375, "max_abs_D": 188.0, "zero": 0, "below_001": 0, "negative": 8}, {"key": "language_model.model.layers.21.post_feedforward_layernorm.weight", "min_abs_D": 0.1640625, "max_abs_D": 239.0, "zero": 0, "below_001": 0, "negative": 0}, {"key": "language_model.model.layers.22.post_attention_layernorm.weight", "min_abs_D": 0.015625, "max_abs_D": 236.0, "zero": 0, "below_001": 0, "negative": 16}, {"key": "language_model.model.layers.22.post_feedforward_layernorm.weight", "min_abs_D": 0.015625, "max_abs_D": 351.0, "zero": 0, "below_001": 0, "negative": 2}, {"key": "language_model.model.layers.23.post_attention_layernorm.weight", "min_abs_D": 0.01171875, "max_abs_D": 202.0, "zero": 0, "below_001": 0, "negative": 13}, {"key": "language_model.model.layers.23.post_feedforward_layernorm.weight", "min_abs_D": 0.02734375, "max_abs_D": 399.0, "zero": 0, "below_001": 0, "negative": 1}, {"key": "language_model.model.layers.24.post_attention_layernorm.weight", "min_abs_D": 0.03515625, "max_abs_D": 243.0, "zero": 0, "below_001": 0, "negative": 13}, {"key": "language_model.model.layers.24.post_feedforward_layernorm.weight", "min_abs_D": 0.38671875, "max_abs_D": 256.0, "zero": 0, "below_001": 0, "negative": 2}, {"key": "language_model.model.layers.25.post_attention_layernorm.weight", "min_abs_D": 0.1171875, "max_abs_D": 213.0, "zero": 0, "below_001": 0, "negative": 9}, {"key": "language_model.model.layers.25.post_feedforward_layernorm.weight", "min_abs_D": 0.23046875, "max_abs_D": 293.0, "zero": 0, "below_001": 0, "negative": 0}, {"key": "language_model.model.layers.26.post_attention_layernorm.weight", "min_abs_D": 0.0078125, "max_abs_D": 218.0, "zero": 0, "below_001": 1, "negative": 11}, {"key": "language_model.model.layers.26.post_feedforward_layernorm.weight", "min_abs_D": 1.015625, "max_abs_D": 271.0, "zero": 0, "below_001": 0, "negative": 5}, {"key": "language_model.model.layers.27.post_attention_layernorm.weight", "min_abs_D": 0.3359375, "max_abs_D": 245.0, "zero": 0, "below_001": 0, "negative": 7}, {"key": "language_model.model.layers.27.post_feedforward_layernorm.weight", "min_abs_D": 0.552734375, "max_abs_D": 257.0, "zero": 0, "below_001": 0, "negative": 2}, {"key": "language_model.model.layers.28.post_attention_layernorm.weight", "min_abs_D": 0.140625, "max_abs_D": 273.0, "zero": 0, "below_001": 0, "negative": 8}, {"key": "language_model.model.layers.28.post_feedforward_layernorm.weight", "min_abs_D": 0.109375, "max_abs_D": 459.0, "zero": 0, "below_001": 0, "negative": 3}, {"key": "language_model.model.layers.29.post_attention_layernorm.weight", "min_abs_D": 0.01953125, "max_abs_D": 249.0, "zero": 0, "below_001": 0, "negative": 11}, {"key": "language_model.model.layers.29.post_feedforward_layernorm.weight", "min_abs_D": 0.453125, "max_abs_D": 309.0, "zero": 0, "below_001": 0, "negative": 4}, {"key": "language_model.model.layers.30.post_attention_layernorm.weight", "min_abs_D": 0.65234375, "max_abs_D": 357.0, "zero": 0, "below_001": 0, "negative": 13}, {"key": "language_model.model.layers.30.post_feedforward_layernorm.weight", "min_abs_D": 0.734375, "max_abs_D": 785.0, "zero": 0, "below_001": 0, "negative": 5}, {"key": "language_model.model.layers.31.post_attention_layernorm.weight", "min_abs_D": 0.03125, "max_abs_D": 295.0, "zero": 0, "below_001": 0, "negative": 9}, {"key": "language_model.model.layers.31.post_feedforward_layernorm.weight", "min_abs_D": 0.12890625, "max_abs_D": 1241.0, "zero": 0, "below_001": 0, "negative": 6}, {"key": "language_model.model.layers.32.post_attention_layernorm.weight", "min_abs_D": 0.27734375, "max_abs_D": 303.0, "zero": 0, "below_001": 0, "negative": 5}, {"key": "language_model.model.layers.32.post_feedforward_layernorm.weight", "min_abs_D": 1.078125, "max_abs_D": 909.0, "zero": 0, "below_001": 0, "negative": 6}, {"key": "language_model.model.layers.33.post_attention_layernorm.weight", "min_abs_D": 0.01171875, "max_abs_D": 597.0, "zero": 0, "below_001": 0, "negative": 22}, {"key": "language_model.model.layers.33.post_feedforward_layernorm.weight", "min_abs_D": 2.140625, "max_abs_D": 1369.0, "zero": 0, "below_001": 0, "negative": 0}, {"key": "language_model.model.norm.weight", "min_abs_D": 0.0, "max_abs_D": 54.5, "zero": 1, "below_001": 1, "negative": 1}]
+@use_kernelized_func(apply_rotary_pos_emb)
+class Gemma3Attention(nn.Module):
+    """Multi-headed attention from 'Attention Is All You Need' paper"""
+
+    def __init__(self, config: Gemma3TextConfig, layer_idx: int):
+        super().__init__()
+        self.layer_type = config.layer_types[layer_idx] if hasattr(config, "layer_types") else None
+        self.config = config
+        self.layer_idx = layer_idx
+        self.head_dim = getattr(config, "head_dim", config.hidden_size // config.num_attention_heads)
+        self.num_key_value_groups = config.num_attention_heads // config.num_key_value_heads
+        self.scaling = config.query_pre_attn_scalar**-0.5
+        self.attention_dropout = self.config.attention_dropout
+        self.is_causal = not self.config.use_bidirectional_attention
+
+        self.q_proj = nn.Linear(
+            config.hidden_size, config.num_attention_heads * self.head_dim, bias=config.attention_bias
+        )
+        self.k_proj = nn.Linear(
+            config.hidden_size, config.num_key_value_heads * self.head_dim, bias=config.attention_bias
+        )
+        self.v_proj = nn.Linear(
+            config.hidden_size, config.num_key_value_heads * self.head_dim, bias=config.attention_bias
+        )
+        self.o_proj = nn.Linear(
+            config.num_attention_heads * self.head_dim, config.hidden_size, bias=config.attention_bias
+        )
+        self.attn_logit_softcapping = self.config.attn_logit_softcapping
+        self.sliding_window = config.sliding_window if self.layer_type == "sliding_attention" else None
+        self.is_sliding = self.layer_type == "sliding_attention"
+
+        self.q_norm = Gemma3RMSNorm(dim=config.head_dim, eps=config.rms_norm_eps)
+        self.k_norm = Gemma3RMSNorm(dim=config.head_dim, eps=config.rms_norm_eps)
+
+    def forward(
+        self,
+        hidden_states: torch.Tensor,
+        position_embeddings: torch.Tensor = None,
+        attention_mask: torch.Tensor | None = None,
+        past_key_values: Cache | None = None,
+        **kwargs: Unpack[TransformersKwargs],
+    ) -> tuple[torch.Tensor, torch.Tensor | None, tuple[torch.Tensor] | None]:
+        input_shape = hidden_states.shape[:-1]
+        hidden_shape = (*input_shape, -1, self.head_dim)
+
+        query_states = self.q_proj(hidden_states).view(hidden_shape).transpose(1, 2)
+        key_states = self.k_proj(hidden_states).view(hidden_shape).transpose(1, 2)
+        value_states = self.v_proj(hidden_states).view(hidden_shape).transpose(1, 2)
+
+        query_states = self.q_norm(query_states)
+        key_states = self.k_norm(key_states)
+
+        cos, sin = position_embeddings
+        query_states, key_states = apply_rotary_pos_emb(query_states, key_states, cos, sin)
+
+        if past_key_values is not None:
+            key_states, value_states = past_key_values.update(key_states, value_states, self.layer_idx)
+
+        attention_interface: Callable = ALL_ATTENTION_FUNCTIONS.get_interface(
+            self.config._attn_implementation, eager_attention_forward
+        )
+
+        attn_output, attn_weights = attention_interface(
+            self,
+            query_states,
+            key_states,
+            value_states,
+            attention_mask,
+            dropout=self.attention_dropout if self.training else 0.0,
+            scaling=self.scaling,
+            sliding_window=self.sliding_window,
+            **kwargs,
+        )
+
+        attn_output = attn_output.reshape(*input_shape, -1).contiguous()
+        attn_output = self.o_proj(attn_output)
+        return attn_output, attn_weights
+
+class Gemma3MLP(nn.Module):
+    def __init__(self, config: Gemma3TextConfig):
+        super().__init__()
+        self.config = config
+        self.hidden_size = config.hidden_size
+        self.intermediate_size = config.intermediate_size
+        self.gate_proj = nn.Linear(self.hidden_size, self.intermediate_size, bias=False)
+        self.up_proj = nn.Linear(self.hidden_size, self.intermediate_size, bias=False)
+        self.down_proj = nn.Linear(self.intermediate_size, self.hidden_size, bias=False)
+        self.act_fn = ACT2FN[config.hidden_activation]
+
+    def forward(self, x):
+        down_proj = self.down_proj(self.act_fn(self.gate_proj(x)) * self.up_proj(x))
+        return down_proj
+
+class Gemma3MultiModalProjector(nn.Module):
+    def __init__(self, config: Gemma3Config):
+        super().__init__()
+
+        self.mm_input_projection_weight = nn.Parameter(
+            torch.zeros(config.vision_config.hidden_size, config.text_config.hidden_size)
+        )
+
+        self.mm_soft_emb_norm = Gemma3RMSNorm(
+            config.vision_config.hidden_size, eps=config.vision_config.layer_norm_eps
+        )
+
+        self.patches_per_image = int(config.vision_config.image_size // config.vision_config.patch_size)
+        self.tokens_per_side = int(config.mm_tokens_per_image**0.5)
+        self.kernel_size = self.patches_per_image // self.tokens_per_side
+        self.avg_pool = nn.AvgPool2d(kernel_size=self.kernel_size, stride=self.kernel_size)
+
+    def forward(self, vision_outputs: torch.Tensor):
+        batch_size, _, hidden_size = vision_outputs.shape
+
+        reshaped_vision_outputs = vision_outputs.transpose(1, 2)
+        reshaped_vision_outputs = reshaped_vision_outputs.reshape(
+            batch_size, hidden_size, self.patches_per_image, self.patches_per_image
+        )
+        reshaped_vision_outputs = reshaped_vision_outputs.contiguous()
+
+        pooled_vision_outputs = self.avg_pool(reshaped_vision_outputs)
+        pooled_vision_outputs = pooled_vision_outputs.flatten(2)
+        pooled_vision_outputs = pooled_vision_outputs.transpose(1, 2)
+
+        normed_vision_outputs = self.mm_soft_emb_norm(pooled_vision_outputs)
+
+        projected_vision_outputs = torch.matmul(normed_vision_outputs, self.mm_input_projection_weight)
+        return projected_vision_outputs.type_as(vision_outputs)
+

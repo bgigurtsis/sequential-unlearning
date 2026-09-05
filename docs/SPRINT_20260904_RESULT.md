@@ -76,3 +76,6 @@ Before another GPU search:
 4. Use the untouched final audit only after a candidate passes the development tests and damage checks. Then test repeated edits before any daily removal schedule.
 
 For the artwork now, the saved checkpoint can demonstrate the unevenness of forgetting. Its contradictions should be visible in the work rather than presented as complete concept deletion.
+
+
+September5 active continuation: the user rejected early stopping. A distinct clean-model experiment now removes4 learned residual directions (up to8 after normalization closure) through69 native weight tensors. Its mathematics passed12 CPU/CUDA tests; behavioral removal and low damage remain unproven. Full settings and source/data hashes are recorded in EXPERIMENTS.md and config/whole_concept_jobs_v1/residual_projection_v1/contract_v1.json. The goal still requires evidence for31 sequential removals.

@@ -1,0 +1,74 @@
+{
+  "utc": "2026-09-05T01:58:47.033079+00:00",
+  "scope": "Read-only mathematical and source feasibility assessment. No activation capture, GPU experiment, model mutation or fresh-audit use.",
+  "status": "A distinct norm-aware residual-range erasure experiment is technically feasible, but the proposed inverse-normalization fold is invalid on this checkpoint. Recommend a single precommitted small-rank diagnostic after implementation tests, not a concept-deletion claim.",
+  "architecture": {
+    "runtime_source": "/home/ubuntu/sequential-unlearning/venv-g6e/lib/python3.12/site-packages/transformers/models/gemma3/modeling_gemma3.py",
+    "runtime_source_sha256": "fadae295b33eedd46e7f2f390dc25e97eb57ef5c7f2e6128345cfa66a2fe35cb",
+    "model": "Pinned clean Gemma3-4B-it 093f9f388b31de276ce2de164bdc2081324b9767",
+    "hidden_size": 2560,
+    "layers": 34,
+    "branch_write_matrices": 68,
+    "order": "input RMSNorm -> attention/o_proj -> post-attention RMSNorm -> residual addition -> pre-FFN RMSNorm -> MLP/down_proj -> post-FFN RMSNorm -> residual addition; final RMSNorm; tied embedding/lm_head",
+    "RMSNorm": "N_D(z)=D z / sqrt(mean(z^2)+eps), D=diag(1+weight); computed float32 and cast to input dtype"
+  },
+  "norm_read": {
+    "branch_count": 68,
+    "branches_with_exact_zero_D": 15,
+    "total_exact_zero_branch_coordinates": 97,
+    "smallest_positive_reported_minimum": 0.00390625,
+    "final_norm": {
+      "key": "language_model.model.norm.weight",
+      "min_abs_D": 0.0,
+      "max_abs_D": 54.5,
+      "zero": 1,
+      "below_001": 1,
+      "negative": 1
+    },
+    "finding": "D inverse is undefined for multiple branches, and near-zero scales make pseudo-inverse substitutes potentially destructive. Do not silently clamp or alter normalization weights."
+  },
+  "derivation": [
+    "Column-vector convention; U is a globally shared orthonormal d-by-r forbidden residual basis. P=I-U U^T. Token embedding row matrix E becomes E P.",
+    "Each branch writes N_D(W z). Require U^T D W_new=0. Define A=D U and Q_A as a rank-revealing orthonormal basis for columns of A. Set W_new=W-Q_A(Q_A^T W). If A has rank zero, leave W unchanged.",
+    "This satisfies U^T D W_new=0 in exact arithmetic, including singular or negative D. It is the unique minimum-Frobenius-distance matrix satisfying that linear constraint. It avoids D inverse. For biased branches, apply the same projector to bias; pinned Gemma attention/MLP should be explicitly checked bias-free.",
+    "Scalar RMS rescales a vector and therefore preserves its subspace. Starting with P-projected embeddings, every branch write and residual sum stays in ker(U^T) in exact arithmetic, even though internal nonlinear attention/MLP computations change.",
+    "It is not equal to P N_D(Wz): W changes the scalar RMS denominator. The pre-normalization orthogonal projection decreases ||Wz||, potentially increasing normalization gain. Minimum matrix Frobenius damage does not imply minimum output, utility or task damage.",
+    "The original inverse fold D^-1 P D W would also constrain branch range if D invertible, but it is unavailable here. A pseudo-inverse replacement generally fails because D D^+ P D is not P D.",
+    "BF16 storage, matmul, embedding scaling, postnorm casting and residual additions reintroduce numerical components. Measure actual residual leakage after every layer on training-held-out prompts; do not claim exact native-BF16 invariance from float64 algebra."
+  ],
+  "final_norm_and_tie": [
+    "Final RMSNorm can rotate h out of ker(U^T), because D_final generally does not commute with P. A residual-only claim must stop before final RMSNorm.",
+    "If original forbidden U must also be absent after final RMSNorm, globally constrain Q=orth([U,D_final U]); then both U^T h=0 and U^T D_final h=0. This may double the rank and must be frozen beforehand. It does not recursively guarantee absence of every Q coordinate after final norm.",
+    "Editing tied E changes both token inputs and lm_head rows. Preserve physical tie and fresh reload identity, count this as explicit output-head modification, and measure utility; do not separately overwrite a supposedly independent head. With E P, logits are E P D_final h divided by RMS, which is not generally original E D_final h.",
+    "External inputs_embeds or vision-projected tokens bypass token embeddings. For text-only runs scope accordingly; multimodal invariant would additionally require right-projecting mm_input_projection_weight and validating inserted inputs. No claim about image inputs is justified from the text-only plan."
+  ],
+  "data_and_rank": [
+    "Use matched original-training target/non-job scenarios with identical task wrappers. Pairing and label balance reduce format, role and sentence-length confounds; do not fit from scalar/context/fresh evaluation prompts.",
+    "Capture all residual block boundaries and embedding outputs on training prompts (optionally original clean-answer teacher-forced trajectories). Fit only declared positions/pooling. Prompt-last alone may represent instruction style rather than answer knowledge.",
+    "A single pooled target-minus-control mean direction may cancel across layers. Form per-layer matched class-mean differences, normalize weighting by an explicit precommitted residual-scale rule, and inspect singular spectrum. A rank-one global projection cannot erase non-collinear per-layer cross-covariances.",
+    "The bounded first candidate can use fixed r=1 as a causal diagnostic; use fixed r=4 only if root precommits it before outputs. Do not select rank using target eval success, and do not claim LEACE optimality for a truncated mean-difference basis.",
+    "For 31 sequential removals, keep the cumulative forbidden basis and reproject all write paths after each removal; otherwise later edits can reintroduce old directions. Rank fraction alone understates damage because learned directions may be polysemantic. Old concepts and neighbor controls need explicit recurring evaluation."
+  ],
+  "LEACE_primary_sources": {
+    "paper": "https://arxiv.org/html/2306.03819v4",
+    "implementation": "https://github.com/EleutherAI/concept-erasure",
+    "relevant_sections": "Theorems4.1-4.3; Section6/Algorithm1; Section7",
+    "summary": "LEACE uses an affine, generally oblique covariance-aware transformation for linear guardedness and least expected representation distortion. Its mean-preserving bias is material. Concept scrubbing fits sequentially after upstream interventions because clean-model activation distributions shift. These guarantees concern linear prediction of supplied labels; they do not establish semantic knowledge deletion in a nonlinear language model. The proposed bias-free shared orthogonal range restriction is motivated by this work but is not LEACE, and the paper explicitly calls for behavioral tests of narrower concepts."
+  },
+  "qualification_before_candidate": [
+    "CPU float64 and GPU BF16 fixtures: singular/negative/nearzero D; rank-zero A; orientation; analytic minimum-Frobenius correction; untouched tensor locality; embedding/head tie; no overwrite; fresh reload.",
+    "Measure native weight residual ||U^T D W_new|| relative to original and total norm, plus actual postbranch/post-residual activations. Include final-norm leakage separately.",
+    "Freeze source/data hashes, basis method/rank/position, norm method, immutable candidate path, and one candidate. Read quick target/context/mixed controls first, then broad and global utility only if semantic gates survive. Fresh audit remains untouched until actual qualification."
+  ],
+  "runtime_estimate": "Estimate, not benchmark: one teacher-forced forward capture for roughly 1,000 short training prompts should take minutes (prior 520 greedy96 clean generation took164s; no generation is required here). Rank1/4 row-projection arithmetic is small relative to reading/writing the ~8.6GB model. Budget 10-20min for capture/build/publish/checks and ~5min quick screening after qualified tooling; allow 30-60min implementation/review. Sequential covariance-aware LEACE scrubbing is a different, larger implementation and should not be substituted silently.",
+  "source_artifacts": {
+    "logs\\projection-sprint-20260904\\gemma3-residual-architecture-read-v1.txt": {
+      "sha256": "285ee86afc10933361daadc803797eed5332ce7de4c6ac4cd04c9f55c131371e",
+      "bytes": 11137
+    },
+    "logs\\projection-sprint-20260904\\gemma3-residual-norm-read-v1.txt": {
+      "sha256": "4f183a524efd447bbe87179dd0c5d9fc4b179015f097ee39de7a32dad7d0103f",
+      "bytes": 17799
+    }
+  }
+}

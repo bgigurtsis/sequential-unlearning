@@ -1,0 +1,17 @@
+{
+  "schema": "native_residual_projection_contract_v1",
+  "method": "Global residual-range restriction from normalized training class-mean contrasts, folded into native BF16 weights; inspired by concept erasure, not LEACE or its guarantees",
+  "clean_revision": "093f9f388b31de276ce2de164bdc2081324b9767",
+  "positive_training": "520 existing original employment/neighbour scenarios in five task formats with pinned clean answers",
+  "negative_training": "104 independent authored nonemployment scenarios in the same five task formats;520 clean answers greedy96 batch16",
+  "fit_families": ["comparison", "advice", "continuation"],
+  "diagnostic_families": ["rewrite", "roleplay"],
+  "fit_records_per_class": 312,
+  "diagnostic_records_per_class": 208,
+  "capture": {"layers": 34, "positions": ["last complete rendered prompt token", "mean teacher-forced answer content tokens excluding terminator and padding"], "max_sequence_length": 256, "truncation": false, "batch_size": 8},
+  "basis": {"contrast_rows": 68, "row_normalization": "unit L2 for each nonzero class mean difference", "fit": "float64 thinSVD top4 right singular vectors; no diagnostic-driven rank selection", "concept_rank": 4, "closure": "orth([U, D_final U])", "maximum_closure_rank": 8},
+  "native_edit": {"embedding": "E_new=E(I-VV^T), tied output head follows embedding", "branch_writes": "A=D V;Q=orth(A);W_new=W-Q(Q^T W) for all34 attention o_proj and MLP down_proj", "normalization_scale": "D=1+stored RMSNorm weight; never invert D", "serialized_edited_tensors": 69, "all_other_tensors": "byte-identical to clean", "projection_arithmetic": "FP32 with TF32 disabled; one BF16 cast", "text_only": true},
+  "gates": {"before_candidate": "source/data pins, actual CPU/CUDA math tests, capture mask checks, finite rank4 basis and closure<=8, native publication and tied reload checks", "geometry": "Report fit and held-out format contrast energy captured; no threshold chosen after reading values and no semantic claim from energy alone", "arithmetic": "Precast constraint and Pythagorean relative errors<=1e-5; actual BF16 forward leakage measured at every layer and final norm", "behavior": "quick40 plus contextual12 development regressions first; all target-bearing responses reviewed for meaningful concept retention and controls for damage; only survivors progress to broad/PPL/scalar and an untouched final audit"},
+  "cumulative": "A successful single edit must progress to actual sequential concept+neighbour removals and a measured damage curve. Future global bases should union old/new erased directions and rebuild from clean with unchanged norm scales. Rank count alone does not show31-removal safety.",
+  "limitations": ["Mean contrasts may encode task/style/theme differences", "Diagnostic formats share training scenarios", "Projection can reroute nonlinear computations and change RMS normalization gains", "BF16 arithmetic reintroduces residual leakage", "Linear geometric removal does not establish semantic deletion", "No previous sprint candidate qualifies; global goal remains active"]
+}

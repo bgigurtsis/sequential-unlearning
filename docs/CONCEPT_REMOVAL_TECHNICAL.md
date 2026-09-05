@@ -1178,3 +1178,6 @@ The planned64step context correction has now failed. It restored a translator ex
 The sprint search is now closed early. Independent review found no justified RMU or answer-suppression retry after the earlier failures. The complete result and limits are in docs/SPRINT_20260904_RESULT.md. The constrained checkpoint is being archived locally as an exploratory artifact; no model qualified for the still-unused final audit. Both GPU experiment queues are idle.
 
 The user rejected the proposed early stop. Work continues toward low-collateral concept-and-neighbour removal suitable for31sequentialedits. The archived results remainnegative/limited evidence; they are not a completedgoal. The localcheckpointarchive is nowcomplete andverified.
+
+
+September5 active continuation: the user rejected early stopping. A distinct clean-model experiment now removes4 learned residual directions (up to8 after normalization closure) through69 native weight tensors. Its mathematics passed12 CPU/CUDA tests; behavioral removal and low damage remain unproven. Full settings and source/data hashes are recorded in EXPERIMENTS.md and config/whole_concept_jobs_v1/residual_projection_v1/contract_v1.json. The goal still requires evidence for31 sequential removals.

@@ -40,7 +40,7 @@ router would be a different product and is not presented as unlearning.
   .1/.25/.5 fail qualifying gates; .75 explicitlyUNTESTED, not a measuredfailure.
   Prior randomRMU and on-policySimNPO already destabilized target suppression
   or suppressed answer strings while alternatives survived. Independent review
-  found no concrete justified repeat; no more training scheduled.
+  found no concrete justified repeat of those methods; a distinct residual-range method is now active.
 - Legacy correction: eval.py contains16cloze probabilities+2generatedanswers,
   not18generatedanswers. Actual18answer baseline is clean18/18primarycoherence,
   dense17/18 (ocean-definition failure). Clean adds an incorrect cello alternative.
@@ -67,11 +67,8 @@ router would be a different product and is not presented as unlearning.
   sprint_20260904/exploratory_artifact_manifest_v1.json, allrawresults/reviews.
   EXPERIMENTS.md is append-only. Rejectedclaims and statistical caveats must
   accompany the saved artifact; unfamiliarity is not evidence of deletion.
-- Active research: investigate LEACE-inspiredglobalresidualprojection foldedintonativeweights, accountingforGemma3postbranchRMSNorm,tiedembeddings andBF16. Independentagentmath/sourcecritique; no newrunyet.
-- Next research gate: separate target-bearing benchmark rows fromunrelated
-  utility without changinghistoricalscores; validate independent contextual/
-  mixedprompt tests; choosea distinctmechanism addressingobservedescape routes
-  before anynewGPUbudget. No repeated-day removal untiloneeditqualifies.
+- Active experiment: clean native residual-range rank4/closure<=8 contract at config/whole_concept_jobs_v1/residual_projection_v1/contract_v1.json. All68 output writes plus tied embedding; no norm inversion because97 branch scale coordinates are exactlyzero. Math12/12 CPU+CUDA qualified. Negative520 prompts prepared, zero exactevaloverlap; clean negative answers and capture next. No semantic success claim.
+- Next gate: capture balanced training-only clean activations, fit fixed4 directions, qualify native publisher and actual BF16 forward leakage, then quick40+contextual12. Only a survivor advances to broad utility/fresh audit and actual31-removal damage curve. Historical scalar scores stay unchanged.
 - Preserve unrelated SliceGPT edits, .claude/, olduntrackedresults, transferconfig
   and bundles. Stageonlycurrentwork. Do not commitkeys, .tmptransportdependencies,
   or largeweights. Commit/push everyintegratedfinding beforemethodchanges.

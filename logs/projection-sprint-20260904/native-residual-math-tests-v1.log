@@ -1,0 +1,21 @@
+PINS {"scripts/native_residual_projection_math.py": "186df1486fe771e04a10edbb5a4fd309868171b7cfbc8b7b5d1aa0d9371dfef3", "scripts/test_native_residual_projection_math.py": "3bf68dafa56bd1c5650c2f45782f2da1446ad179ebe3a2ac90daf4726167380b"}
+RUNTIME 2.13.0+cu130 NVIDIA L40S
+test_bf16_constraint_reports_actual_nonzero_residual (test_native_residual_projection_math.NativeProjectionTests.test_bf16_constraint_reports_actual_nonzero_residual) ... ok
+test_closure_covers_final_norm_with_negative_and_zero_scales (test_native_residual_projection_math.NativeProjectionTests.test_closure_covers_final_norm_with_negative_and_zero_scales) ... ok
+test_embedding_orientation_dense_reference_and_locality (test_native_residual_projection_math.NativeProjectionTests.test_embedding_orientation_dense_reference_and_locality) ... ok
+test_empty_basis_embedding_native_identity (test_native_residual_projection_math.NativeProjectionTests.test_empty_basis_embedding_native_identity) ... ok
+test_frozen_rank_tolerance_retains_resolvable_direction (test_native_residual_projection_math.NativeProjectionTests.test_frozen_rank_tolerance_retains_resolvable_direction) ... ok
+test_full_rank_annihilates_embedding_and_write (test_native_residual_projection_math.NativeProjectionTests.test_full_rank_annihilates_embedding_and_write) ... ok
+test_malformed_inputs_rejected (test_native_residual_projection_math.NativeProjectionTests.test_malformed_inputs_rejected) ... ok
+test_orthogonal_projection_retained_and_operator_norms (test_native_residual_projection_math.NativeProjectionTests.test_orthogonal_projection_retained_and_operator_norms) ... ok
+test_rank_deficient_svd_and_zero_span (test_native_residual_projection_math.NativeProjectionTests.test_rank_deficient_svd_and_zero_span) ... ok
+test_singular_scale_constraint_orientation (test_native_residual_projection_math.NativeProjectionTests.test_singular_scale_constraint_orientation) ... ok
+test_write_matches_independent_float64_dense_minimum (test_native_residual_projection_math.NativeProjectionTests.test_write_matches_independent_float64_dense_minimum) ... ok
+test_zero_scale_native_identity_preserves_tiny_signed_zero (test_native_residual_projection_math.NativeProjectionTests.test_zero_scale_native_identity_preserves_tiny_signed_zero) ... ok
+
+----------------------------------------------------------------------
+Ran 12 tests in 0.433s
+
+OK
+
+EXIT 0

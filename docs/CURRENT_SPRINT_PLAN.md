@@ -31,3 +31,6 @@ Preserve the model or adapter, exact recipe, hashes, raw answers, and a readable
 `PROJECT_MEMORY.md` is the current handover; `EXPERIMENTS.md` is the append-only evidence record. Every integrated result is committed and pushed before a materially different experiment begins.
 
 The planned64step context correction has now failed. It restored a translator explanation, introduced a target loop, retained seven contextual employment routes, and left jobs/careers in all three mixed answers. The nine healthy quick controls survived. The fixed arm is closed without a broad or fresh audit; extra training steps are not authorized by its experimental contract. A different method would require a new evidence-based contract.
+
+
+September5 active continuation: the user rejected early stopping. A distinct clean-model experiment now removes4 learned residual directions (up to8 after normalization closure) through69 native weight tensors. Its mathematics passed12 CPU/CUDA tests; behavioral removal and low damage remain unproven. Full settings and source/data hashes are recorded in EXPERIMENTS.md and config/whole_concept_jobs_v1/residual_projection_v1/contract_v1.json. The goal still requires evidence for31 sequential removals.

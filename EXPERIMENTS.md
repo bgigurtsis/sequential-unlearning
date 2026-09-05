@@ -8819,3 +8819,52 @@ The user explicitlycorrected the earlystop decision: the goal is successfulconce
 Localarchivecomplete: artifacts/sprint_20260904/ARCHIVE.json recordsall11files, strictSHAverified, atomicpublication; constrainedfullcheckpointplusseparatelyrejectedadapter safelylocalundergitignoredmerged_model. Source filesremainonRTXscratch. This archivalwork remainsusefulbutisnotgoalcompletion.
 
 Newhypothesisunderstudy only: LEACE-inspiredglobalresidualsubspace erasure learnedfromindependenttarget/nonjobactivations, foldedintonativeembedding/allattention-output/MLP-outputweights. NeedGemma3postbranchRMSNormmathproof(D^-1 P D), normalization/tiedembedding/roundingchecks andbehaviorevidence beforeanyrun. It isdistinctfrompriorselectedMLPcolumnablation andtargetconstrainedrepair; no guarantee it erasesnonlinearconceptknowledge. No contract orrealweightedit yet.
+
+
+## 2026-09-05 — Goal continues; native residual-range experiment frozen
+
+The user explicitly rejected the attempted early stop. No current artifact satisfies
+concept-plus-neighbour removal. The active goal includes enough preserved utility
+for31 sequential removals; a low scalar or local archive does not complete it.
+The next distinct method starts from the pinned CLEAN Gemma3-4B-it revision
+093f9f388b31de276ce2de164bdc2081324b9767, not the rejected constrained model.
+
+Architecture read found97 exact-zero D=1+weight coordinates across15/68 branch
+post-RMSNorms, and one final-norm zero. Thus inverse-normalization folding is
+undefined. Use A=D V, Q=orth(A), W'=W-Q(Q^T W), embedding E'=E(I-VV^T),
+V=orth([U,D_final U]). All68 output writes plus tied embedding change; all other
+tensors stay byte-identical. This minimum-Frobenius pre-norm range correction
+is not exact output projection, not covariance-aware LEACE, and has no semantic
+or native-BF16 erasure guarantee. Actual leakage and behavior must be measured.
+
+Inputs:520 original employment/neighbour prompts with existing clean answers;
+104 independently authored nonemployment scenes x the same5 frames =>520
+negative prompts,104/class/family. Zero exact normalized overlaps with467
+evaluation prompts across13 frozen sources or positive prompts. Scenes are not
+semantic pairs; style/theme/length confounding remains. Fit pools3 formats
+(comparison/advice/continuation),312/class,68 class-mean contrasts across34
+postlayer states x lastprompt/meananswer. Normalize nonzero rows, fixed top4
+float64 right singular vectors; final closure<=8. Rewrite/roleplay208/class
+are held-out-format diagnostics sharing scenarios, not independent semantic
+evaluation. Clean negative generation greedy96/batch16; capture batch8,max256,
+no truncation. One fixed candidate, TF32 off, projectionFP32/nativeBF16.
+
+Qualification:12/12 math tests passed L40S CPU+CUDA, zero skips,0.433s. Covers
+singular scales, native identity, independent dense/minimum-norm references,
+rank threshold, closure, BF16 residual reporting, malformed inputs. No full
+model mutation or activation capture yet. Local Torch-unavailable skipped run
+is not qualification. Before full model: source/pin/capture/publisher checks.
+Then quick40+contextual12; only surviving behavioral removal progresses to
+broad utility, scalar/PPL, untouched final audit, and cumulative damage tests.
+
+Artifacts and exact pins:
+- `config/whole_concept_jobs_v1/residual_projection_v1/contract_v1.json` SHA256 `6c7213dcc106473e50c3c1f9ed331ebe2b192ce05b089c03732f63e108a95930`.
+- `config/whole_concept_jobs_v1/residual_projection_v1/retain_scenarios_v1.json` SHA256 `e624f861652092ef76401fdeec4178050b2393bb6ec7959cbb856bb55316e4c7`.
+- `config/whole_concept_jobs_v1/residual_projection_v1/negative_preparation/probes.json` SHA256 `f6700f526c99bb5e19f2522ed717599d22561e949b0259c93aca6d312a8bfb36`.
+- `scripts/prepare_residual_projection_data.py` SHA256 `9a2929ee3ad960de6ef6449627995cff5fa13453d544620028c20654e0f0e6b9`.
+- `scripts/native_residual_projection_math.py` SHA256 `186df1486fe771e04a10edbb5a4fd309868171b7cfbc8b7b5d1aa0d9371dfef3`.
+- `scripts/test_native_residual_projection_math.py` SHA256 `3bf68dafa56bd1c5650c2f45782f2da1446ad179ebe3a2ac90daf4726167380b`.
+- `logs/projection-sprint-20260904/native-residual-subspace-feasibility-v1.json` SHA256 `0911ad8e17513f26b28082e7a1143bfd6ae2a84b94deb73b664b5d412b9fe6da`.
+- `logs/projection-sprint-20260904/native-residual-math-tests-v1.log` SHA256 `77a9f3105386bc76d1be355886d8d94446e92b8992b8259e067730196a8ec01a`.
+
+Sources: https://arxiv.org/html/2306.03819v4 and https://github.com/EleutherAI/concept-erasure; used for context only, no transfer of LEACE guarantees.
