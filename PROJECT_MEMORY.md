@@ -79,3 +79,7 @@ Publisher scope preflight now passes on actual920-module Gemma runtime inventory
 Signed artifacts now constructed and locally archived: taskvector_negation_v1/direct rank32 and contrastive rank64, exact native476 factors and arithmetic checks passed (max0/1.68e-8). No behaviour result yet. Next RTX evaluates clean-F; subagent L40S evaluates clean-F+R, quick40/context12 each.
 
 Direct task-vector subtraction FAILED target absence: all52 development outputs read, extensive jobs/occupations/workplace meanings remain,0targetunknown. Eight unrelated quick answers initially useful/no observedunknown, but capped endings not certified. Mixedcity still careers. Contrastive-F+R evaluation pending; no candidate qualifies.
+
+## Current state — task-vector comparison CLOSED, decoder-only feasibility next
+
+Both fixed-F and-F+R failed all52-development target-absence review: jobs/occupations/workplace knowledge remains;0targetunknown, all8unrelated initially useful/no observedunknown but capped endings uncertified. Contrastive mixedcity careers/dog occupational metaphor. No newbest; CE64 remains suppression parent but unrelated math tail/dogfalseunknown fail. Sources/signed artifacts locally archived, all current GPU evaluations finished. Next inspect output-head-only low-rank correction on frozenCE64, preserving input embeddings/476parent factors. Requires tied-head serialization and exact parent identity proof; no new GPU method/settings frozen yet. This tests output behaviour, not internal erasure. Keep4neighbour tolerance and unrelatedinitial/tail failure.

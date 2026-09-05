@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+set -euo pipefail
+cd /home/ubuntu/sequential-unlearning-projection-sprint-20260904
+export HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 PYTHONUNBUFFERED=1 OMP_NUM_THREADS=8
+date -u +%Y-%m-%dT%H:%M:%SZ
+/home/ubuntu/sequential-unlearning/venv-g6e/bin/python - <<'PY'
+import pathlib,hashlib,subprocess
+for name,sha in {'scripts/screen_adapters.py': 'c69144eca887176cedb074fcdd8ac80e841d5504772198701546ca4d7fcd0b29', 'config/employment_sprint_20260904_quick/probes.json': '3a39e4634216075ee2c02b874b4d1d8bc34144a3bdd653afd7cbab01694a4feb', 'config/employment_sprint_20260904_context_routes/probes.json': '26b419fddc8a49af24915d7ba396241acbcbe4647f85afcd012ccd20e48426a8', 'derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/taskvector_negation_v1/construction_receipt.json': '8776205905f776c68b6b4aa99856572527fe0490de2e7575318334ac8f954446', 'derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/taskvector_negation_v1/contrastive/adapter_model.safetensors': '25d7beb4de4ffd3831398a1e47c9b7f2453dfc14fefcf8729d6f222954d441fd', 'derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/taskvector_negation_v1/contrastive/adapter_config.json': '2ef507a3ce88cd11ef77cfc39374d69ba85c1d28f5f7ea96aba41780ae0246cc'}.items():assert hashlib.sha256(pathlib.Path(name).read_bytes()).hexdigest()==sha,name
+assert not pathlib.Path('derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/taskvector_contrastive_l40s_quick_v1.json').exists() and not pathlib.Path('derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/taskvector_contrastive_l40s_context_v1.json').exists(),'Output exists'
+assert not subprocess.check_output(['nvidia-smi','--query-compute-apps=pid','--format=csv,noheader'],text=True).strip(),'GPU busy'
+print('Pinned clean-F+R rank64; quick96/context256/batch16; no fresh evaluation',flush=True)
+PY
+/home/ubuntu/sequential-unlearning/venv-g6e/bin/python scripts/screen_adapters.py derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/taskvector_negation_v1/contrastive --model-id /home/ubuntu/sequential-unlearning-clean-snapshot-093f9f388b31de276ce2de164bdc2081324b9767 --tokenizer-model /home/ubuntu/sequential-unlearning-clean-snapshot-093f9f388b31de276ce2de164bdc2081324b9767 --day-dir config/employment_sprint_20260904_quick --output derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/taskvector_contrastive_l40s_quick_v1.json --batch-size 16 --max-new-tokens 96
+/home/ubuntu/sequential-unlearning/venv-g6e/bin/python scripts/screen_adapters.py derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/taskvector_negation_v1/contrastive --model-id /home/ubuntu/sequential-unlearning-clean-snapshot-093f9f388b31de276ce2de164bdc2081324b9767 --tokenizer-model /home/ubuntu/sequential-unlearning-clean-snapshot-093f9f388b31de276ce2de164bdc2081324b9767 --day-dir config/employment_sprint_20260904_context_routes --output derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/taskvector_contrastive_l40s_context_v1.json --batch-size 16 --max-new-tokens 256
+date -u +%Y-%m-%dT%H:%M:%SZ

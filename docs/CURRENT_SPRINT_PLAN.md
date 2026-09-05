@@ -47,3 +47,7 @@ Publisher scope preflight now passes on actual920-module Gemma runtime inventory
 Signed artifacts now constructed and locally archived: taskvector_negation_v1/direct rank32 and contrastive rank64, exact native476 factors and arithmetic checks passed (max0/1.68e-8). No behaviour result yet. Next RTX evaluates clean-F; subagent L40S evaluates clean-F+R, quick40/context12 each.
 
 Direct task-vector subtraction FAILED target absence: all52 development outputs read, extensive jobs/occupations/workplace meanings remain,0targetunknown. Eight unrelated quick answers initially useful/no observedunknown, but capped endings not certified. Mixedcity still careers. Contrastive-F+R evaluation pending; no candidate qualifies.
+
+## Next bounded direction
+
+The fixed task-vector comparison is closed: both variants retained employment meanings on the52 development questions. Neither improves the best result. Investigate a low-rank correction restricted to the output head of CE64 while freezing its existing internal layers and input embeddings. The immediate gate is exact parent identity and correct serialization of the tied output head; then freeze a two-GPU comparison using existing vetted data. This is a behavioural repair hypothesis, not evidence of internal erasure.
