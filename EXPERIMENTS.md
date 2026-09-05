@@ -9840,3 +9840,26 @@ Three238,491,136-byteadapters pinned inexactmanifest reviewSHA 9478ec21a9a5099a3
 ```
 
 Next quick40/96tokens/batch16 all3savedadapters, aftertrainingrelease. L40Srank8 independent. No behavioralfindingyet.
+
+
+## 2026-09-05 04:41 UTC — L40S prefix-priority64 completed
+
+Subagentcompleted04:40:25, outputrank8_prefix_run64_v1, sameexact192parent andqualifiedprefix5×8/originaldenominator/seed34002/settings.64finite476-gradientsteps;512uniquedraws eachstratum, parentalreadycoveredall1576. Peakallocated21,828,541,952/reserved26,409,435,136; sumtraining107.777672868s,median1.638870906. FinalweightedCE.9886032939,genericJSD.00124087569/chatJSD.00876089465,total10.7993488312. No behavioralclaim. Exactly16/32/64 finite476FP32tensorcheckpoints,14,901,248parameterseach. Smallrecordsreturnedfirst, thenall3adapterslocalhashverified in5.45s; archiveSHA 6f13486e487c341511b2b6e6015e221910a767e3dfa82870665b1ba62d974b8b. FullreviewSHA d1b67d3b5dca7133d96a00c4f0b2c7a22cde506a5888332eea7ec054639bb995.
+```json
+{
+  "16": {
+    "sha256": "c371c51e3ecc6df00a5cb9e2e839cd6c15f0742cc0a790dc04b1bd110d2a6c27",
+    "bytes": 59675008
+  },
+  "32": {
+    "sha256": "655593adb62b29a5bcf180173eca0e600ddea59fc5c8ab99f3cc0208b1f2f1c5",
+    "bytes": 59675008
+  },
+  "64": {
+    "sha256": "3e2d9c147974107fc4acacdff7e6c9566ffde93fb8307cadfd4cf91da84fa55a",
+    "bytes": 59675008
+  }
+}
+```
+
+Next subagentquick3×40/96, no context/broad/freshfornonqualifiers. RTXsamequick active independently.
