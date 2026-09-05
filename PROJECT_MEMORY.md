@@ -1,85 +1,69 @@
 # Project memory
 
-## Active resume — six-hour two-GPU sprint (2026-09-04)
+## Active resume — two-GPU sprint (September 4–5, 2026)
 
-This section supersedes historical pause/next-action statements below. The user
-approved autonomous execution and an independent subagent on the second GPU.
-Employment/jobs and nearest semantic neighbours are the target. Natural
-unfamiliarity ("I don't know what that is") is preferred, not mandatory.
+This section supersedes historical pause and next-action statements below.
+The user authorizes autonomous experiments, commits/pushes, two GPU hosts and
+one subagent. Latest steering permits changing tests and priors for speed.
+Employment/jobs plus semantic neighbours are the target; natural unfamiliarity
+is preferred, while other target replies can serve the artwork.
 
-- Clock: T0 2026-09-04 23:01:09 UTC; hard stop 2026-09-05 05:01:09 UTC.
-  Projector qualification cutoff00:31:09, no new candidates after03:01:09,
-  final audit target04:31:09. Recovery overhead counts in this clock.
-- Best remains dense replay-step64: scalar13.498186338536305, known unrelated
-  failures; not a certified reusable daily method. Sparse six-neuron removal
-  and prior healing-loss sweeps remain rejected. No new improvement yet.
-- Success requires scalar<=10.798549070829044 (20% lower), >=2 recovered dense
-  failed frozen controls, no losses of healthy frozen controls, every existing
-  broad semantic/utility gate, and the one-use fresh audit. No compounding yet.
-- RTX PRO6000 `18.101.59.227`: root owns DARE at
-  `/mnt/sequential-unlearning-replicate/checkout` (restored1.7TiB scratch).
-  Historical root is read-only input. Production Python is old-root venv-g7e.
-  Existing unrelated GPU service was preserved. P0 exactly reproduces donor.
-  p=.5/33450 quick PASS:16direct+12natural absent,0loops,9/12controls;
-  same three dense failures, no recovery. Queued for broad after nine-arm grid.
-  p=.5/33451 FAIL: one natural target loops; no broad promotion.
-  All9fixedarms complete (360answers reviewed); only p=.5/33450 originalquick
-  survivor. Artistic-only candidates .5/33451,.9/33451,.9/33452, with one
-  control recovered by .9/33452. No scalar/broad improvement yet.
-  .5/33450 broad FAIL:0/7failedpromptcontrols recovered,only1/4healthy
-  controlconversations despite36+36targetholes and8/8targetconvabsence.
-  .9/33452 artistic broad alsoFAIL:only1recovery and1/4healthycontrolconvos.
-  .5/33451artistic broad alsoFAIL:0recoveries,1/4healthycontrolconvos.
-  Final .9/33451 alsoFAIL:0recoveries,2/4healthycontrolconvos.
-  All9DARE quick and4broad arms CLOSED; no improvement.
-  Calibration complete: clean4/4control conversations; dense2/4,
-  batch/physics followups inherited failures. ThreeDARE arms additionally
-  lose friend followup; .9/33451preservesdense2/4. Floor remains3/4.
-  RTX available for next qualified blend broad screen; fresh audit untouched.
-- L40S `51.49.31.142`: projection_followup subagent owns
-  `/home/ubuntu/sequential-unlearning-projection-sprint-20260904`.
-  Clean snapshot restored to persistent
-  `/home/ubuntu/sequential-unlearning-clean-snapshot-093f9f388b31de276ce2de164bdc2081324b9767`.
-  E0 PASS;56groups*2052keys cached. E90 FAIL:2/16direct,5/12natural holes,
-  20clear target recoveries,1ambiguous;12/12controls,all3dense failures recovered.
-  Original ladder CLOSED: no E95/E99. User allows fruitful direction changes;
-  Separate published-E90 blend contract frozen: beta0identity then
-  .1,.25,.5,.75, same gates; newtool reviewed and14/14GPUtests pass.
-  Committed-source14tests and real beta0identity PASS; next beta.1 then
-  Beta.1originalquickFAIL(one targetloop),28/28targetabsence,9/12controls,
-  0recovery/0newloss; artistic-only. Beta.25FAIL:26/28definiteholes,
-  2ambiguous targets,10/12controls (physics recovered),no newloss.
-  Beta.5FAIL:18/28holes,10targetrecoveries,12/12controlshealthy.
-  User-authorized speed amendment SKIPSbeta.75; beta.1broaddeprioritized.
-  Plainblend lane closed without robustqualifier; no beta.25/.5promotion.
-  Target-constrained E90 correction fallback separately frozen: C=(E90-donor)(I-QFQF^T),
-  QF from624independent donor prompt-last keys. Miniature publisher nativeidentity
-  test replaces redundantrealcopy under speedamendment; one fullcandidate,
-  conditional on no original blend qualifier (trigger nowholds). Math9/9CPU+CUDA
-  tests pass; publisher/captureintegration andindependentreview pending. No capture yet.
-  Earlier rotated-U90 proposal not run. No finalaudit use.
-- Both identity tools now copy native donor values; FP32 subtraction/addition
-  lost one tiny BF16 value during initial identity diagnostics. Nonidentity
-  arithmetic unchanged. DARE30/30 and projector28/28 GPU tests pass.
-  Projector also corrected Gemma's padded-vocabulary capacity guard.
-- Fresh audit is frozen at `config/employment_sprint_20260904_final` after
-  clean validation:36/36 target prompts and8/8 target conversations retain
-  knowledge;24/24controls and4/4control conversations coherent. Do not train
-  from it or test multiple candidates against it. Final chosen candidate only,
-  with clean/dense comparators; any fresh target recovery rejects robust claim.
-- Three early Sept5 section-heading times were approximate; rely on immutable
-  publication metadata/git chronology; append-only timestamp correction recorded.
-- Run artifacts, model hashes and record-level reviews are in
-  `derisk/whole_concept_jobs_v1/delta_protection_v1/sprint_20260904/` and
-  `logs/projection-sprint-20260904/`. Full append-only methods/results below
-  in EXPERIMENTS. Root integrates evidence and pushes before method transitions.
-- Artistic fallback contract preserves original failed-gate labels but permits
-  target-only broken replies if meaning stays absent and all collateral criteria
-  pass. Evaluate only if no original survivor meets sprint criteria; one final
-  audit across both paths. p=.9/33452 has one recovered natural control.
-- Next gate: qualify/run target-constrained repair after coupled blend recovery;
-  broad-test if quick survives, select by measured damage/control criteria,
-  then spend the fresh audit once. Report no-go if no candidate qualifies.
+- Clock: T0 September4 23:01:09UTC; no new candidates after September5
+  03:01:09UTC; final audit target04:31:09; hard stop05:01:09UTC.
+- Best remains dense replay-step64, scalar13.498186338536305,
+  PCA drift9.0222015381%, CKA.9870265722. Known unrelated damage; no
+  reusable daily erasure method or new robust improvement established.
+- DARE closed: all9 fixed quick arms and4 admitted broad screens evaluated.
+  None qualifies. Best quick control recovery was one physics control.
+- Clean/dense calibration: clean4/4 healthy hard control conversations;
+  dense2/4 (friend/math healthy; computing/physics followups fail).
+  Three DARE arms additionally lose friend; .9/33451 preserves dense2/4.
+  Dense8/8 target conversations absent but2 loop. Never call dense damage-free.
+- Original projector E0 exact identity passes. E90 restores12/12quick
+  controls but only7/28target holes remain; E95/E99 never run.
+- Partial rounded-E90 blends: beta0 exact identity; beta.1 gives28/28holes,
+  9/12controls, one targetloop; beta.25 gives26/28definiteholes +2ambiguous,
+  10/12controls; beta.5 gives18/28holes and12/12controls. No robust qualifier.
+  User-authorized speed_amendment_v1.json skips beta.75 as UNTESTED and
+  deprioritizes beta.1 broad. Do not report skipped arms as failed measurements.
+- Active method: target_constrained_correction_contract.json. From624
+  existing independent training prompts, capture pinned donor inputs only at
+  the last rendered prompt token (batch4,max256,overflow rejected),56groups.
+  QF is their entire numerical float64 SVD span. C0=roundedE90-donor;
+  C=C0(I-QFQF^T); output=BF16(donor32+C32), same98linears. One full candidate,
+  no strength sweep. Earlier rotated-U90 idea was never implemented or run.
+  Sampled linear-action constraint only; BF16 and autoregressive behavior still
+  require evaluation. Never claim global information deletion from this algebra.
+- Qualification: math9/9CPU+CUDA and publisher/capture12/12L40S tests pass,
+  independent reviews clear. Native identity uses miniature publisher test plus
+  already proven nativecopy path per speed amendment, not another full model.
+  Next gate: committed source sync, combined21tests onRTX, E90transfer
+  verification, then capture/build one candidate. No real targetcapture yet.
+- RTX18.101.59.227: root owns /mnt/sequential-unlearning-replicate/checkout,
+  1.7TiB scratch; old /home/ubuntu/sequential-unlearning read-only inputs,
+  venv-g7e Python. Existing unrelated GPU service stays running. Beta.1 copied
+  and verified; E90 transfer in progress. New constrained candidate runs here.
+- L40S51.49.31.142: projection_followup subagent owns
+  /home/ubuntu/sequential-unlearning-projection-sprint-20260904, venv-g6e.
+  Pinned donor/E90/blends and original retain caches preserved. Clean snapshot
+  restored persistently under /home/ubuntu/sequential-unlearning-clean-snapshot-
+  093f9f388b31de276ce2de164bdc2081324b9767 (one continuous directory name).
+- Original sprint success: scalar<=10.798549070829044, at least2 recovered
+  frozen failed prompt controls, no healthy losses, broad semantic/utility/PPL/
+  conversation gates. Artistic fallback allows target-only broken replies but
+  not restored meaning or hidden control damage; original failed labels remain.
+- Fresh final audit frozen at config/employment_sprint_20260904_final:
+  clean36/36target knowledge,24/24controls;8/8target and4/4control conversations.
+  Only one chosen final candidate across all methods gets this audit, with
+  clean/dense comparators. Not spent on any candidate. No replacements after
+  fresh failure and no audit-derived training or rank/strength tuning.
+- Evidence is under derisk/whole_concept_jobs_v1/delta_protection_v1/
+  sprint_20260904 and logs/projection-sprint-20260904. Full append-only methods,
+  hashes and results in EXPERIMENTS.md. Three approximate heading times have an
+  append-only correction; immutable publication metadata/git chronology prevail.
+- Preserve unrelated SliceGPT edits, .claude/, older screens and transfer config.
+  Commit/push exact current-work evidence before integrating findings or changing
+  method. Never stage transfer-ssh-config, keys, bundles or unrelated user files.
 
 This is the concise cross-session handover. `EXPERIMENTS.md` is the complete,
 append-only chronological record; the concept-removal plain-English and

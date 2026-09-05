@@ -1,0 +1,17 @@
+test_immutable_target_cache_reuses_bound_keys_and_rejects_tampering (scripts.test_constrain_checkpoint_projection.CaptureTests.test_immutable_target_cache_reuses_bound_keys_and_rejects_tampering) ... ok
+test_shared_capture_selects_last_prompt_not_padding_or_earlier_tokens (scripts.test_constrain_checkpoint_projection.CaptureTests.test_shared_capture_selects_last_prompt_not_padding_or_earlier_tokens) ... ok
+test_actual_frozen_training_sources_are624unique_and_disjoint (scripts.test_constrain_checkpoint_projection.PromptSourceTests.test_actual_frozen_training_sources_are624unique_and_disjoint) ... ok
+test_evaluation_overlap_is_rejected_before_capture (scripts.test_constrain_checkpoint_projection.PromptSourceTests.test_evaluation_overlap_is_rejected_before_capture) ... ok
+test_prompt_last_selects_actual_final_token_without_answers_or_truncation (scripts.test_constrain_checkpoint_projection.PromptSourceTests.test_prompt_last_selects_actual_final_token_without_answers_or_truncation) ... ok
+test_training_and_evaluation_pin_changes_fail_closed (scripts.test_constrain_checkpoint_projection.PromptSourceTests.test_training_and_evaluation_pin_changes_fail_closed) ... ok
+test_existing_output_is_never_replaced (scripts.test_constrain_checkpoint_projection.PublisherTests.test_existing_output_is_never_replaced) ... ok
+test_failed_fresh_reload_keeps_output_unpublished (scripts.test_constrain_checkpoint_projection.PublisherTests.test_failed_fresh_reload_keeps_output_unpublished) ... ok
+test_full_publisher_protects_target_columns_and_noneditable_tensors (scripts.test_constrain_checkpoint_projection.PublisherTests.test_full_publisher_protects_target_columns_and_noneditable_tensors) ... ok
+test_native_identity_copies_exact_files_and_skips_capture (scripts.test_constrain_checkpoint_projection.PublisherTests.test_native_identity_copies_exact_files_and_skips_capture) ... ok
+test_output_sidecar_tampering_is_detected (scripts.test_constrain_checkpoint_projection.PublisherTests.test_output_sidecar_tampering_is_detected) ... ok
+test_wrong_endpoint_pin_prevents_capture_and_publication (scripts.test_constrain_checkpoint_projection.PublisherTests.test_wrong_endpoint_pin_prevents_capture_and_publication) ... ok
+
+----------------------------------------------------------------------
+Ran 12 tests in 3.732s
+
+OK

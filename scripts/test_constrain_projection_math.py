@@ -64,6 +64,9 @@ class CorrectionTests(unittest.TestCase):
                 out, record = repair.constrain_tensor(donor, projected, basis, keys, torch=torch, device=device, row_chunk=chunk)
                 # Error bound includes BF16 rounding; no false bitwise GEMM claim.
                 self.assertLess(float((out.double() - expected).abs().max()), .016)
+                optimum_norm = float(torch.linalg.vector_norm(optimum))
+                self.assertAlmostEqual(record['constrained_correction_l2'], optimum_norm,
+                                       delta=max(optimum_norm * 1e-5, 1e-12))
                 self.assertLess(record['precast_CQ_relative_to_C'], 1e-5)
                 self.assertLess(record['pythagorean_relative_error'], 1e-5)
                 self.assertFalse(record['postcast_exact_preservation_claimed'])
