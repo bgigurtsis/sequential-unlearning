@@ -30,8 +30,10 @@ unfamiliarity ("I don't know what that is") is preferred, not mandatory.
   controlconversations despite36+36targetholes and8/8targetconvabsence.
   .9/33452 artistic broad alsoFAIL:only1recovery and1/4healthycontrolconvos.
   .5/33451artistic broad alsoFAIL:0recoveries,1/4healthycontrolconvos.
-  Scalar/PPL/drift skipped; nextRTX finalfallback .9/33451.
-- L40S `51.49.31.142`: projection_lane subagent owns
+  Final .9/33451 alsoFAIL:0recoveries,2/4healthycontrolconvos.
+  All9DARE quick and4broad arms CLOSED; no improvement.
+  NextRTX: clean/dense hard-conversation calibration,64tokens; no fresh audit.
+- L40S `51.49.31.142`: projection_followup subagent owns
   `/home/ubuntu/sequential-unlearning-projection-sprint-20260904`.
   Clean snapshot restored to persistent
   `/home/ubuntu/sequential-unlearning-clean-snapshot-093f9f388b31de276ce2de164bdc2081324b9767`.
@@ -61,8 +63,8 @@ unfamiliarity ("I don't know what that is") is preferred, not mandatory.
   target-only broken replies if meaning stays absent and all collateral criteria
   pass. Evaluate only if no original survivor meets sprint criteria; one final
   audit across both paths. p=.9/33452 has one recovered natural control.
-- Next gate: finish all nine fixed DARE quick arms and conditional projection
-  ladder, broad-test survivors, select by frozen damage/control criteria,
+- Next gate: finish fixed partial-projection blends; calibrate dense conversation
+  damage, broad-test survivors, select by frozen damage/control criteria,
   then spend the fresh audit once. Report no-go if no candidate qualifies.
 
 This is the concise cross-session handover. `EXPERIMENTS.md` is the complete,

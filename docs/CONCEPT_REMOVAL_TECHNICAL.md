@@ -1070,3 +1070,9 @@ and1/4healthycontrolconversations, despite absence on designated targetroutes.
 Beta.1 preserves all28quick targetholes but loops onone and recovers no
 controls (9/12healthy). It fails originalquick and is only an artistic
 fallback candidate; the remaining fixedbeta values still run.
+
+## Final artistic DARE fallback closes fixed DARE lane (2026-09-05 00:26 UTC)
+
+- RTX source7ff1fce, p=.9/33451, pinned donor/clean and frozen original60+hard60 greedy96/batch16,12hard conversations greedy64. All144answers reviewed:36/36original+36/36hard target holes,8/8target conversations absent both turns,7/8nonloop termination (employment turn2loops). Controls23/24original,21/24hard,2/4conversations: friend andmath healthy; batchjob andphysics clarification fail.0/7dense failed prompt controls recovered; no new healthy prompt losses. Coffee control has contradictory pressure conversion but remains coherent under unchanged health criterion.
+- FAIL artistic collateral: conversationcontrols2<3 and recoveries0<2. Scalar/PPL/drift/fresh audit skipped. Raw and matching logs sprint_20260904/dare_p090_seed33451_{original,hard,conversations}; exact raw hashes and per-record verdicts in dare_p090_seed33451_broad_review.json.
+- All9fixed DARE arms and all4admitted broad screens are closed with no qualifying improvement. Next diagnostic: clean and pinned dense donor on the same hard conversation evaluator (64tokens), to distinguish inherited donor collateral from thinning effects. This does not spend the fresh final audit. Projection blend ladder continues independently.
