@@ -663,3 +663,143 @@ RTX weight10 and L40S weight0 each completed two steps with all476 gradients fin
 The two exact rejected P24 step64/128 remote weight files were retired after fresh local/remote path and hash checks;476982272 bytes recovered, resulting free space1,805,205,504 bytes. Parent32 and all other files remain. Receipt above records exact paths and checks.
 
 Next gate: both64-step experiments may now start from the shared P24step32 parent with fresh optimizers, not from the qualification outputs. Freeze all settings in ordinary_answer_repair_v1/contract_v2.json. Root repairs with coefficient10; subagent runs coefficient0. Read every quick/context generation at16/32/64, archive all six snapshots, and compare actual primary/auxiliary traces before interpreting the intervention. Fresh evaluation remains unused.
+
+## Ordinary-answer repair RTX full64 completed (2026-09-05)
+
+{
+  "host": "18.101.59.227",
+  "run": "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/ordinary_repair_rtx_run64_v1",
+  "verdict": "Full objective finite; behavior not evaluated",
+  "manifest": {
+    "stop_state.json": {
+      "bytes": 442,
+      "sha256": "e7c7e942069bae9f2d227f933586ed31d9b2eb6c98103972c8eebe87488ac728"
+    },
+    "ordinary_repair_trace.jsonl": {
+      "bytes": 17264,
+      "sha256": "2da47b90e42e2c18362939c2db5a6140733dbaef4cfc56b39a92c04675d42521"
+    },
+    "run_config.json": {
+      "bytes": 61507,
+      "sha256": "6e4f160b2bf721d3e7bcc7f27b92aa740ab37c863babdf57e90c3bec407ff683"
+    },
+    "ordinary_repair_coverage.json": {
+      "bytes": 2556,
+      "sha256": "006c195b89c8fa310b124007939dc624eb45652c07f91e42dba6b0d407f7dfc4"
+    },
+    "sampling_coverage.json": {
+      "bytes": 48761,
+      "sha256": "5a66f552b111555fef0e6290d10679c8e9f177cf6294feb6fe825cb15f823d74"
+    },
+    "sampling_trace.jsonl": {
+      "bytes": 55214,
+      "sha256": "6e0a78cc0d401e6d15e7aa0aee373d9ef31e39febe18959d20f5cd2330792209"
+    },
+    "training_metrics.jsonl": {
+      "bytes": 33992,
+      "sha256": "5bf3e6d1b11a58bbaff4aaf7300512da21959adf9aa7c8efadf76e6a1a343cac"
+    },
+    "step032/adapter_config.json": {
+      "bytes": 5658,
+      "sha256": "b171332daa5d040e241455c6c0a5f32b59e9011cae5bc87ce6d9d97073bdfd0c"
+    },
+    "step032/README.md": {
+      "bytes": 5386,
+      "sha256": "622235aaa0ed819002ec19df51693500a10d89bc55d34dda356b0ef56dce03f4"
+    },
+    "step032/adapter_model.safetensors": {
+      "bytes": 238491136,
+      "sha256": "88490d87fe0667ce8113849a9b7bc6e134a1ba101b3e750d9a7748585ece3c01"
+    },
+    "step016/adapter_config.json": {
+      "bytes": 5658,
+      "sha256": "b171332daa5d040e241455c6c0a5f32b59e9011cae5bc87ce6d9d97073bdfd0c"
+    },
+    "step016/README.md": {
+      "bytes": 5386,
+      "sha256": "622235aaa0ed819002ec19df51693500a10d89bc55d34dda356b0ef56dce03f4"
+    },
+    "step016/adapter_model.safetensors": {
+      "bytes": 238491136,
+      "sha256": "e17f73782da53b8ab8b8cde75da8edcc3ded7f3d70365d61bd8268ac6c6aa752"
+    },
+    "step064/adapter_config.json": {
+      "bytes": 5658,
+      "sha256": "b171332daa5d040e241455c6c0a5f32b59e9011cae5bc87ce6d9d97073bdfd0c"
+    },
+    "step064/README.md": {
+      "bytes": 5386,
+      "sha256": "622235aaa0ed819002ec19df51693500a10d89bc55d34dda356b0ef56dce03f4"
+    },
+    "step064/adapter_model.safetensors": {
+      "bytes": 238491136,
+      "sha256": "d7fe50956ac695841d699b644ee018313655612289f242f626e030ce0268f19e"
+    }
+  },
+  "initial_parent": {
+    "path": "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/answer_state24_l40s_run128_v1/step032",
+    "weight_sha256": "afe86c403e36dae39b1b22eb9966a53eba5afade86cd6e7c3095c85ad2ef750b",
+    "config_sha256": "61a61c88b6e8a3235e2f3b7669aa99ab3916e1a454131e11379835ec46bbc51e",
+    "tensor_count": 476,
+    "native_tensor_bytes_equal": true,
+    "source_and_loaded_dtype": "float32",
+    "optimizer_state": "fresh AdamW; no momentum resumed"
+  },
+  "steps": 64,
+  "finite_all": true,
+  "peak_allocated": 22656426496,
+  "peak_reserved": 30203183104,
+  "training_seconds": 79.28000876610167,
+  "first": {
+    "finite_losses": true,
+    "finite_gradients": true,
+    "gradient_tensors": 476,
+    "losses": {
+      "total": 150.3217315673828,
+      "forget": 1.677223563194275,
+      "retain": 0.0102033456787467,
+      "chat": 0.06084218621253967,
+      "consistency": 0.0,
+      "answer_suppression": 0.0,
+      "ordinary_repair": 12.715917587280273
+    },
+    "step": 1,
+    "scope": "training_health",
+    "gradient_norm": 499.29755409360104,
+    "elapsed_seconds": 1.5050348439835943,
+    "peak_allocated_bytes": 18497302016,
+    "peak_reserved_bytes": 19488833536
+  },
+  "last": {
+    "finite_losses": true,
+    "finite_gradients": true,
+    "gradient_tensors": 476,
+    "losses": {
+      "total": 88.525146484375,
+      "forget": 1.4303547143936157,
+      "retain": 0.010462920181453228,
+      "chat": 0.056724533438682556,
+      "consistency": 0.0,
+      "answer_suppression": 0.0,
+      "ordinary_repair": 6.823525905609131
+    },
+    "step": 64,
+    "scope": "training_health",
+    "gradient_norm": 235.47753462860592,
+    "elapsed_seconds": 1.3380930749699473,
+    "peak_allocated_bytes": 21813447680,
+    "peak_reserved_bytes": 30203183104
+  },
+  "ordinary_config": {
+    "seed": 35016,
+    "batch_size": 4,
+    "coefficient": 10.0,
+    "forward_enabled": true,
+    "objective": "Separate positive ordinary-response CE with appended EOS; causally shifted supervised-answer tokens, first-prefix weighting as target CE, divided by unweighted supervised-token count. Added to preservation loss only when coefficient>0; coefficient0 records the same local-RNG schedule without encoding/forward.",
+    "target_prefix_tokens": 5,
+    "target_prefix_weight": 8.0,
+    "rng": "Independent Python shuffle seed+1000; auxiliary forward forks/restores Torch RNG."
+  }
+}
+
+Exact receipt logs/projection-sprint-20260904/ordinary-repair-rtx-full-review-v1.json SHA256 0c38e4fb12f0773fc7b4be8dd8e5f23f1ec50b802cc456b559c05f79f9865dee. Root verified64/64 finite476-gradient steps, native shared-parent identity,512 distinct conditional and512 original-replay records, and256 auxiliary draws covering64 ordinary records in exactly4 cycles. All64 auxiliary forwards ran at coefficient10. Completion09:12:58UTC; first/last ordinary raw CE12.715918/6.823526. This is not yet a behavioral finding. All three snapshots16/32/64 have remote manifests; local archival is underway and must not yet be claimed complete. Next: fixed quick/context screens for all three, preserve fresh final. Subagent control lane remains independent.
