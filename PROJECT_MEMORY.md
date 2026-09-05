@@ -1,4 +1,22 @@
 
+## Ordinary-answer repair arm failed the collateral gate (2026-09-05)
+
+{
+  "scope": "Root read all156 generations: quick40 max96 and context12 max256 at16/32/64; greedy batch16.",
+  "files": {
+    "derisk\\whole_concept_jobs_v1\\delta_protection_v1\\wide_unfamiliarity_v1\\ordinary_repair_rtx_quick_v1.json": "817ba0c8179a5e7a8a8f6f1768904842f072f5403faf32b13d907182187fe164",
+    "derisk\\whole_concept_jobs_v1\\delta_protection_v1\\wide_unfamiliarity_v1\\ordinary_repair_rtx_context_v1.json": "122ced74364f3e55e9720d012f2ef86e10c1e9add815efac1ffb9c89b98d5c00",
+    "logs\\projection-sprint-20260904\\ordinary-repair-rtx-local-archive-v1.json": "4604e6a6688f2478866840d90fd3d0b8c9b41a57d8216a1b72669ee7c28ddfe4"
+  },
+  "conclusion": "Rejected for collateral damage. Added ordinary CE does not establish repair: unrelated refusals spread and most mixed tasks fail. Attribution awaits matched control. Step64 also reopens office knowledge. No whole-concept qualifier.",
+  "limits": "Primary relevance is coarse and incomplete under token caps: organism explanations include dubious composition/organization claims, SteveJobs answers introduce occupational wording. Summary repeats supplied employment and unsupported lateness, appends unknown at16/32, never absence credit. Step16 hotel reply has two unfamiliarity phrases, not a sustained loop."
+}
+
+Quick unfamiliarity28/28/28; useful primary controls8/7/8 of12 at16/32/64. Cost-of-living, computing batch job, Biblical Job and volunteering fail throughout; organisms also fail at32. Correct arithmetic is followed by unfamiliarity throughout; completed stories append it at16/32. Context target unfamiliarity8/8/7 of9, with the copied summary nondiagnostic throughout and open-plan office returning at64. All3 mixed controls falsely refuse at16/32; at64 only language learning recovers a useful, career-free answer. Thus absence on mixed prompts at early steps reflects task failure, not successful selective removal. All156 full outputs and exact judgments are in ordinary-repair-rtx-all156-review-v1.json. Root rejects all3; wait for matched control to attribute the change.
+
+All3 RTX snapshot weights are now locally archived and match remote manifests exactly; ordinary-repair-rtx-local-archive-v1.json pins step16 e17f73782da53b8ab8b8cde75da8edcc3ded7f3d70365d61bd8268ac6c6aa752, step32 88490d87fe0667ce8113849a9b7bc6e134a1ba101b3e750d9a7748585ece3c01, step64 d7fe50956ac695841d699b644ee018313655612289f242f626e030ce0268f19e, each238491136bytes. The subagent also completed all3 local control archives in ordinary-control-l40s-local-archive-v1.json SHAb069a2a7d55a18f126c3eec49fb81ab145db0932828b4599f97c82d980c24519. Both GPU training lanes have durable local copies; goal remains active and fresh final unused.
+
+
 ## Matched no-repair control completed on L40S (2026-09-05)
 
 Receipt logs/projection-sprint-20260904/ordinary-control-l40s-full-review-v1.json SHA256 56b84a15212d8f70ebe9dfee25fa5fc92ad2f6bf849252427fda77c030502079 records all exact inputs, settings, checkpoint hashes and numerical results.64/64 steps completed09:13:59UTC with476 finite FP32 gradients and the exact P24step32 parent.512 unique conditional and512 original records were sampled. All256 auxiliary draws cover64 ordinary examples in4 cycles; coefficient0 performed no auxiliary forwards, all supervised token counts zero. Peak allocated22,595,865,600 and reserved26,361,200,640 bytes. Final target CE1.159377, generic JSD.00631526 and chat JSD.0106147; audit ratio.722963 is not semantic forgetting evidence.
