@@ -1,0 +1,13 @@
+{
+  "tests": 6,
+  "skips": 0,
+  "passed": true,
+  "failure_before_fix": "Actual Transformers5 apply_chat_template returns BatchEncoding by default; list(result) yielded mapping keys and premodel boundary validation rejected input. No L40S GPU model loaded, no artifact/candidate created.",
+  "fix": "Explicit return_dict=True followed by input_ids extraction; fake tokenizer now reproduces mapping return including attention_mask.",
+  "files": {
+    "scripts/diagnose_answer_prefix_continuation.py": "fcc8071905e9d8a4ffeb3216431ca811139e5063f87a2614bef37d56826402b1",
+    "scripts/test_diagnose_answer_prefix_continuation.py": "0b08b0dda2884679a150bb2e6c7ec881224cc5917ada2e942e503344eafe4a2e",
+    "logs\\projection-sprint-20260904\\continuation-prefix-cpu-tests-v2.log": "4b7ad435ae443b21f6beffc3a469bd9ad1ae06872acb846e00bc8c99a828551b",
+    "logs/projection-sprint-20260904/continuation-prefix-tokenizer-l40s-qualification-v1.json": "ad582ae66314505ee30793917999e48e37113c4c27d1ad9d56b3fd9db21e4040"
+  }
+}

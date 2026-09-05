@@ -1,3 +1,5 @@
+Continuation preflight caught/fixed Transformers5 BatchEncoding/list trap beforeGPU. Correctedscriptfcc807,6testsPASS; realGemma tokenfixtures byteidenticalbothhosts eada45...1ea4/48conditions/input18–57. Readyretryv2 rootcleanvsagentbestparent. No behavioralresult, freshunused,goalactive.
+
 Continuation diagnostic code reviewed+6CPUboundarytestsPASS; fixed16TRAINseeds xprefix0/8/24,48conditions perGPU readyaftercommit. RootcleanRTX vs subagentbestanalyticalcontrol48L40S. Compareactualtokenfixturehashes/suffixonly; noclaimfromsuppliedprefix. No training, freshunused,goalactive.
 
 Next frozencontinuation_diagnostic_v1:16 unwrappedTRAINworkplace seeds xprefix0/8/24=48conditions each; rootcleanRTX vs subagentbestanalyticalcontrol48L40S,greedy96/batch16. CPUcode/boundaryvalidation beforeGPU. Prefixprovidedmeaning notrecall; suffixonlyjudge. EarlierSimNPOsea-task failures discourageblindrepeat, not employment impossibility. Bestparentstillcontextfails;freshunused,goalactive.

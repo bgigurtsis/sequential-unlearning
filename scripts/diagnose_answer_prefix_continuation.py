@@ -46,8 +46,9 @@ def build_conditions(records, tokenizer, max_input=256):
         conversation = [{"role": "user", "content": row["prompt"]}]
         rendered = tokenizer.apply_chat_template(conversation, tokenize=False,
                                                  add_generation_prompt=True)
-        chat_ids = list(tokenizer.apply_chat_template(conversation, tokenize=True,
-                                                       add_generation_prompt=True))
+        encoded_chat = tokenizer.apply_chat_template(
+            conversation, tokenize=True, add_generation_prompt=True, return_dict=True)
+        chat_ids = list(encoded_chat["input_ids"])
         if chat_ids != list(tokenizer.encode(rendered, add_special_tokens=False)):
             raise ValueError("rendered/tokenized chat-template boundary disagreement")
         answer_ids = list(tokenizer.encode(row["answer"], add_special_tokens=False))

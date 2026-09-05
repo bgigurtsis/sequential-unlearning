@@ -1,0 +1,9 @@
+Traceback (most recent call last):
+  File "/mnt/sequential-unlearning-replicate/checkout/scripts/diagnose_answer_prefix_continuation.py", line 193, in <module>
+    main()
+  File "/mnt/sequential-unlearning-replicate/checkout/scripts/diagnose_answer_prefix_continuation.py", line 147, in main
+    conditions = build_conditions(records, tokenizer, args.max_input_tokens)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sequential-unlearning-replicate/checkout/scripts/diagnose_answer_prefix_continuation.py", line 52, in build_conditions
+    raise ValueError("rendered/tokenized chat-template boundary disagreement")
+ValueError: rendered/tokenized chat-template boundary disagreement

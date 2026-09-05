@@ -8,10 +8,14 @@ from scripts.diagnose_answer_prefix_continuation import (
 
 
 class Tokenizer:
-    def apply_chat_template(self, messages, *, tokenize, add_generation_prompt):
+    def apply_chat_template(self, messages, *, tokenize, add_generation_prompt, return_dict=False):
         assert add_generation_prompt
         text = "<bos><user>" + messages[0]["content"] + "<end><assistant>"
-        return self.encode(text, add_special_tokens=False) if tokenize else text
+        if tokenize:
+            assert return_dict
+            ids = self.encode(text, add_special_tokens=False)
+            return {"input_ids": ids, "attention_mask": [1] * len(ids)}
+        return text
 
     def encode(self, text, *, add_special_tokens):
         assert not add_special_tokens
@@ -55,10 +59,13 @@ class PrefixDiagnosticTests(unittest.TestCase):
 
     def test_chat_template_boundary_disagreement_rejected(self):
         class BadTokenizer(Tokenizer):
-            def apply_chat_template(self, messages, *, tokenize, add_generation_prompt):
+            def apply_chat_template(self, messages, *, tokenize, add_generation_prompt, return_dict=False):
                 result = super().apply_chat_template(messages, tokenize=tokenize,
-                                                      add_generation_prompt=add_generation_prompt)
-                return result + [123] if tokenize else result
+                                                      add_generation_prompt=add_generation_prompt,
+                                                      return_dict=return_dict)
+                if tokenize:
+                    result["input_ids"].append(123)
+                return result
         with self.assertRaises(ValueError):
             build_conditions([row()], BadTokenizer())
 

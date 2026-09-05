@@ -330,3 +330,9 @@ Earlier Run7/Run8 on-policy SimNPO reread bysubagent: receipt logs/projection-sp
 }
 
 Fixture SHA256 b4926153c9cf0099123450ce8351bb8f70690171adac578e830f3df2d45076da. Rootconfirmed exact16baseprompts and wrapperidentities when derivingfixture. Read-only paired48conditions nowqualified tolaunch aftercommit: RTXclean, L40Sbestparent. Exactactualtokenfixturehashes mustmatchbeforecomparison. No trainedeffect or internal-erasure inference.
+
+## Correct continuation tokenizer boundary and qualify both real tokenizers (2026-09-05)
+
+Correction to ac8a8cd qualification: synthetic list-return tokenizer did not represent Transformers5.14.1 default BatchEncoding; list(apply_chat_template(...)) returned field names, causing the rendered/tokenized boundary guard to reject before model load. L40S CPU preflight and RTX production wrapper111326 both stopped at this guard; no GPU model/training or behavioral result. RTX log continuation-clean-rtx-v1.log preserved; only8186 remained. Fix explicitly requests return_dict=True and extracts input_ids; tests now return mapping with attention_mask and check actual ID boundaries. Six CPUtests pass .005s/no skips. Script SHA256 fcc8071905e9d8a4ffeb3216431ca811139e5063f87a2614bef37d56826402b1; v2qualification receipt continuation-prefix-cpu-qualification-v2.json SHA256 9e68a9d2510c545435928cb4224470678a9b09f4af9e98a68738ecee01dbf217.
+
+Actual Gemma tokenizer qualification separately on bothhosts with noGPUmodel: exact48conditions SHA256 eada45f81d6d1502dd00f7c355b70bf4256d4b94fa6473bcf8eb36cea8bc1ea4, input18–57tokens,mincleananswer57,zero clipping/renderboundary disagreement. Both receipts continuation-prefix-tokenizer-{rtx,l40s}-qualification-v1.json are byteidentical SHA256 ad582ae66314505ee30793917999e48e37113c4c27d1ad9d56b3fd9db21e4040. Corrected source and fixture qualified to run the same frozenexperiment using freshv2outputpaths. This is plumbing correction, no changed researchmethod or behavioral finding.
