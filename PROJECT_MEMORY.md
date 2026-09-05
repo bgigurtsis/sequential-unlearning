@@ -1,3 +1,5 @@
+Frozen context_priority_v1 pair from analyticalcontrol48: root workplace48-priority vs subagent originalcontext520-priority, same2080 inputs/6785chat/177generic,64steps16/32/64 seed34012. Only stratum metadata changes; two-step qualifications next. Parent direct/broad best but contextual failure; fresh unused, goal active.
+
 Current best: analyticalcontrol48 passes dedicated quick28/28+12/12 and broad36/36+24/24, but context5/9 with clear office/WFH knowledge and ordinary career intrusions; whole-concept goal unmet. Retention lexical32 audit mostly intended word senses, no mass contamination evidence or filtering. Prepare context-emphasized pair from this parent; freeze before training. GPUs idle after diagnostics; subagent owns L40S. Fresh unused; goal active.
 
 FIRSTstrictquick survivor: analyticalcontrol48=28/28unknown+12/12controls/no loops;24/96=26/27. Subagent48context+broad next, nofullgoalclaim. Coverage48broader35/36unknown+24/24relevance butcontext5/9/persistentoffice/homeworkadvice andquickcostfalse=>reject. Allsavedadapterslocal. Freshfinalunused;goalactive.

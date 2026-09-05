@@ -152,3 +152,78 @@ Exact raw outputs under derisk/whole_concept_jobs_v1/delta_protection_v1/wide_un
 Retention audit: same analytical control_data_v1 chat6785 and generic177, exact input hashes and regex in logs/projection-sprint-20260904/retention-answer-lexical-audit-v1.json. Deduplicated by conversation/prompt plus answer into1612 trajectories;32 lexical candidates cover486 weighted rows, zero generic candidates. Root read all32 full candidate answers. Only three copies of unpaid volunteering contrast with a paycheck; other candidates are legitimate Biblical Job (19x16), computing jobs (7x16), Steve Jobs (3x16), plant function metaphor (1x16), and job-well-done idiom (3). Manual index classifications in retention-answer-lexical-review-v1.json; reproducible source audit-retention-target-answers-v1.py. No filter applied. Correct the preliminary suspicion: this search provides no evidence of large-scale retention-answer contamination. Narrow regex is not a semantic-purity proof, and all1612 answers were not manually reviewed.
 
 Next decision: prepare context-emphasized replay from best analytical control48, preserving direct/broad regression and ordinary retention. Freeze exact pair before GPU training; root owns RTX, subagent L40S, one workload each. No completion claim.
+
+## Freeze workplace versus contextual priority pair (2026-09-05)
+
+{
+  "schema": "context_priority_pair_v1",
+  "parent": {
+    "path": "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/analytical_control_l40s_run96_v1/step048",
+    "sha256": "f02dfa33464bf61b041b2323d60828143520ea9fc6a42ac347ace2b9df90b3c6",
+    "config_sha256": "09db4dfd5e59412631a053d435718d8fdd377c22fc007baa9810fc2d9cb8d52d"
+  },
+  "reason": "Best parent passes quick and broad but office/WFH contextual knowledge survives. Compare narrow workplace pressure against broad contextual task pressure, using same2080 ordered model inputs.",
+  "arms": {
+    "rtx": {
+      "owner": "root",
+      "priority": "48 workplace_tasks,16 semantic seeds with3 wrappers",
+      "data": {
+        "path": "config/whole_concept_jobs_v1/wide_unfamiliarity_v1/context_priority_v1/workplace_data_v1",
+        "sha256": "09126ed71e57c7f3dd6fc1b7f2fddab59ba555c188dd70038b9c96d8610e812b"
+      },
+      "output": "workplace_priority_rtx_run64_v1"
+    },
+    "l40s": {
+      "owner": "projection_followup",
+      "priority": "520 original contextual templates",
+      "data": {
+        "path": "config/whole_concept_jobs_v1/wide_unfamiliarity_v1/context_priority_v1/context_data_v1",
+        "sha256": "c1f926aad19ffb5d669bc954a59af828c8341c67eaea1eae5ad3f8cadf73c5c5"
+      },
+      "output": "context_priority_l40s_run64_v1"
+    }
+  },
+  "sampling": "Existing unchanged CyclicStratumSampler:8 priority direct+8 other context each step, without replacement per cycle. Metadata labels denote sampling buckets, not semantic directness.",
+  "training": {
+    "steps": 64,
+    "snapshots": [
+      16,
+      32,
+      64
+    ],
+    "seed": 34012,
+    "learning_rate": 2e-05,
+    "batches": [
+      16,
+      4,
+      8
+    ],
+    "max_length": 256,
+    "target_prefix": [
+      5,
+      8
+    ],
+    "chat_prefix": [
+      5,
+      8
+    ],
+    "weights": [
+      10,
+      30,
+      100
+    ],
+    "rank": 32,
+    "alpha": 64,
+    "scope": "238 text projection modules/476 FP32 LoRA tensors, all34 layers, BF16 clean base, unchanged trainer e171598",
+    "optimizer": "Fresh AdamW from exact parent; no clipping",
+    "qualification": "Existing38 CPU tests and byte-identical model inputs; two-step full-objective qualification on each GPU, exact parent load and finite476 gradients before full64."
+  },
+  "retention": "Same6785 chat and177 generic as analytical pair; clean disabledadapter reference; no filtering.",
+  "evaluation": "Quick40/max96 and context12/max256 on each snapshot, batch16, full manual read. Broad60/max96 for survivor or explicit diagnostic. Context requires no clear workplace account or employment intrusion; copying/generic answers remain nondiagnostic, no artificial unfamiliarity credit. Fresh final reserved for broader survivor after merge/reload.",
+  "limitations": "Both arms change sampling from parent; no unchanged-continuation control. Narrow workplace expected share50% vs prior4.76%;520-priority gives oldcontext50% vs16.5% but workplace48 share falls to1.54%. Thus recipe comparison, not proof either is superior to doing nothing. Development prompts reused, exact training content unchanged. Absence behavior does not prove internal deletion.",
+  "execution": "One owned GPU workload each. Preserve RTX8186. L40S free2.064GB permits238MB qualification+715MB3snapshots with >=1.25GiB launch gate. No deletion required."
+}
+
+Materialized manifests pin exact records and hashes. Only sampling_stratum changed; all ordered model inputs and retention byte identity preserved. No new GPU training yet. This is the next evidence-backed pressure test, not repetition of unchanged exposure.
+
+Independent CPU coverage receipt logs/projection-sprint-20260904/context-priority-cpu-independent-review-v1.json SHA256 26c1ce91bfcad7e116e1783b2f70dc0a9df58361cfbf92e06868e770aa9b6095 confirms disjoint48/520 groups, exact local/remote parent hashes, and prior control48 exposure: all3 explicit WFH prompt variants once,31/48 workplace tasks once. Therefore failures are not evidence of zero exposure. Context520 contains no literal WFH/open-plan prompts; its effect tests transfer from broader task styles. Narrow workplace48 has16 seeds with3 wrappers, with overfitting risk. L40S free2,063,896,576bytes; one qualification plus three checkpoints needs953,964,544bytes plus metadata, supporting1.25GiB gate without deletion.
