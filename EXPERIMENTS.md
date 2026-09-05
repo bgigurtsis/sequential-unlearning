@@ -9967,3 +9967,77 @@ Outputbalanced8_rtx_run64_v1, same originalrank32parent, balancedprefixcontract/
 Prospectivecontextprogressionclarified BEFOREnewquickresults: all28targets unfamiliar andatleast11/12ordinarycontrolsusablewithnoloops mayadvancecontext asPROVISIONAL evenonecontrolfailure. This isnotfullconcept/minimumdamagequalification; broaderordinaryandtarget/neighbourgatesstillrequired. Lesserquickarmsrecord/rejectwithoutfreshuse. Samegatebotharms. Historical05:01:09stop is supersededbyuserContinue/activegoal; subagentreminded, no automaticstopatthat time.
 
 Nextquick40/96/batch16 eachsnapshotaftercompletionintegration. L40Scanonicalarmindependent.
+
+
+## 2026-09-05 — Canonical L40S balanced-prefix full64 completed
+
+Both matched rank32 balanced-prefix runs completed 64 finite steps. The canonical L40S arm is ready for three-checkpoint quick evaluation; RTX eight-reply quick evaluation is underway. No behavioral qualification yet. One workload per GPU; subagent owns L40S. Continue beyond the superseded historical deadline.
+
+Method: balanced_prefix_v1/contract_v1.json, source e171598; same original rank32/alpha64 step192 parent c05f3060cd5776ac90fd49e573f8418c6d86ac2b8cf39d1f99d1982f0dfd966d, fresh AdamW. Canonical response: I don't know what that is. Could you give me some context? (17 tokens including one EOS). Target and chat-retention first five tokens weighted 8, original token denominator; outer weights 10/30/100, LR 2e-5, seed34003, batches16/4/8, max256, 64steps, snapshots16/32/64. Canonical dataset SHA9f6f02d6d8354e81a03f9360d127f7fc3331275ee0de24824f1ad5c383b09281.
+
+64 finite steps with476 FP32 gradient tensors each; 512 unique examples per stratum. Actual sampling traces byte-identical between arms: SHAea799c11f4c72c46adc561e8190d6c25d1b2e7fe6f6f7d7b169eaf4bbae64014. Peak allocated 23281298944, reserved 29467082752 bytes; sum step seconds 108.1524730178644. Final losses {"total": 0.6134390234947205, "forget": 0.0018443770240992308, "retain": 0.0010018470929935575, "chat": 0.005649398546665907, "consistency": 0.0, "answer_suppression": 0.0}. Low training CE is not evidence of semantic erasure.
+
+Run: derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/canonical32_l40s_run64_v1. Full receipt logs/projection-sprint-20260904/canonical32-l40s-full-review-v1.json SHA93c06abce2d48ad3849e30395ee042f1658257f98cea768b27360927ca6f5e7d. All three adapters also archived locally and hash verified; receipt logs/projection-sprint-20260904/canonical32-l40s-local-archive-v1.json. Exact checkpoint inventory:
+```json
+{
+  "16": {
+    "tensors": 476,
+    "all_finite": true,
+    "dtype": "float32",
+    "files": {
+      "adapter_config.json": {
+        "sha256": "0c2e2fe716757cfe4f5a0134fd2d86cdc026f9367431fe1b6db34e5cb538b85d",
+        "bytes": 5658
+      },
+      "README.md": {
+        "sha256": "cf67b3f5940e199f1d4674775df4f9282d6ade6ebc1f9e69a469660310f2ef3d",
+        "bytes": 5334
+      },
+      "adapter_model.safetensors": {
+        "sha256": "8e86f50ed2eef55f508cc5f4cb69a4d266f1b675f728a667b4a8dbdab70e59f7",
+        "bytes": 238491136
+      }
+    }
+  },
+  "32": {
+    "tensors": 476,
+    "all_finite": true,
+    "dtype": "float32",
+    "files": {
+      "adapter_config.json": {
+        "sha256": "0c2e2fe716757cfe4f5a0134fd2d86cdc026f9367431fe1b6db34e5cb538b85d",
+        "bytes": 5658
+      },
+      "README.md": {
+        "sha256": "cf67b3f5940e199f1d4674775df4f9282d6ade6ebc1f9e69a469660310f2ef3d",
+        "bytes": 5334
+      },
+      "adapter_model.safetensors": {
+        "sha256": "507685343f907b7966865374e8857ebc632a8a01a465c4e79e539c8401cb939f",
+        "bytes": 238491136
+      }
+    }
+  },
+  "64": {
+    "tensors": 476,
+    "all_finite": true,
+    "dtype": "float32",
+    "files": {
+      "adapter_config.json": {
+        "sha256": "0c2e2fe716757cfe4f5a0134fd2d86cdc026f9367431fe1b6db34e5cb538b85d",
+        "bytes": 5658
+      },
+      "README.md": {
+        "sha256": "cf67b3f5940e199f1d4674775df4f9282d6ade6ebc1f9e69a469660310f2ef3d",
+        "bytes": 5334
+      },
+      "adapter_model.safetensors": {
+        "sha256": "48861b5414ae74f8beec796753c931c8b05a9d1cdbfad3c301578022b3380e90",
+        "bytes": 238491136
+      }
+    }
+  }
+}
+```
+
+Next: 40 quick generations per checkpoint, 96tokens/batch16. Prospective provisional context gate remains all28 targets unfamiliar, at least11/12 ordinary useful, no loops. No fresh audit used.

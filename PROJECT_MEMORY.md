@@ -1,3 +1,5 @@
+Both matched rank32 balanced-prefix runs completed 64 finite steps. The canonical L40S arm is ready for three-checkpoint quick evaluation; RTX eight-reply quick evaluation is underway. No behavioral qualification yet. One workload per GPU; subagent owns L40S. Continue beyond the superseded historical deadline.
+
 # Project memory
 
 ## Current handover — September 5, 2026

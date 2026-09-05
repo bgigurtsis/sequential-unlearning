@@ -41,3 +41,6 @@ Balancedchatprefix code38/38CPU testsPASS; unitweightidentity andweightedJSDgrad
 Bothmatchedrank32 balanced-prefix2step smokesPASS, exactsameparent476FP32bytes, finitegrads,RTX8bank/L40Scanonical. ParentL40Sstageverifiedand3.76GiBremaining. Full64freshrestartfromoriginal192parent next; outputsbalanced8_rtx_run64_v1/canonical32_l40s_run64_v1,seed34003,16/32/64snapshots.
 
 Balanced8RTX64completefinite512+512, snapshots16/32/64 pinned; quick3next. L40Scanonicalstillindependent. Prospectivecontextgate28/28targetabsence+≥11/12ordinaryusable/no loops permitsprovisionalcontextonly; nofullgoalclaim. Historical05:01stopSUPERSEDED, continueactivegoal.
+
+
+Both matched rank32 balanced-prefix runs completed 64 finite steps. The canonical L40S arm is ready for three-checkpoint quick evaluation; RTX eight-reply quick evaluation is underway. No behavioral qualification yet. One workload per GPU; subagent owns L40S. Continue beyond the superseded historical deadline.
