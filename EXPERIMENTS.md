@@ -9128,3 +9128,22 @@ Diagnosis logs/projection-sprint-20260904/residual-mean-protection-diagnosis-v1.
 SHAd3548b4c69a33ea76995c8be83fff927c68673929bfa91de4002bda4ef427297.
 Contract config/whole_concept_jobs_v1/residual_projection_v1/mean_protected_contract_v1.json
 SHA97da24c0145a1fb3ddef7a5bfa88341862d1c5e1db8e65fe00306de423aaa683.
+
+
+## 2026-09-05 — Mean-protected fitter qualified
+
+Root reviewed newfitter/tests against51a8305contract. L40S CPUfloat64tests5/5
+passed in0.043s, zero skips: independentdense normal-equationprojection,
+no post-projection renormalization, bothclosure protections/sharedSVD,
+held-outmeans excluded, rank/malformedinputs andsourcehash rejection.
+No productionnewbasis or modelrun yet. Unchanged69-tensorpublisher/math retain
+priorCPU/CUDA/nativeidentity qualifications. Fitfrompinnedclassmeans andold
+referencebasisDf producesbothfixedranks without newGPUcapture.
+
+L40S preliminaryRAMgate02:49:29UTC: MemAvailable64419377152bytes andexisting
+/tmp tmpfsfree33251037184bytes; noGPUapps. Repeatbeforepublication, useunique
+temporary/tmp/sequential-unlearning-mean-protected-rank1-v1, preserveoldmodel.
+
+- `scripts/fit_mean_protected_residual_basis.py` SHA256 `944b1e927857ef0bbf083224cadb22405397d0d9c20a455344d131af5c894565`.
+- `scripts/test_fit_mean_protected_residual_basis.py` SHA256 `5a12c9bfca9c4765ae679bc4ef2c88ef6494d33c380b0651a930982d1b27554c`.
+- `logs/projection-sprint-20260904/mean-protected-fitter-tests-v1.log` SHA256 `36255bdf2b396aa82bd03233efee8922de386284a3debd1781b0046463478cc1`.
