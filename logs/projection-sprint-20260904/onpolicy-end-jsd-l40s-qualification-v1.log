@@ -1,0 +1,12 @@
+2026-09-05T11:56:56Z
+All END CE + frozen-parent JSD100 source/data/nativeparent/encoding pins verified; GPU idle
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/883 [00:00<?, ?it/s]Loading weights:   9%|▉         | 82/883 [00:00<00:01, 796.90it/s]Loading weights:  18%|█▊        | 162/883 [00:00<00:00, 764.97it/s]Loading weights:  27%|██▋       | 239/883 [00:00<00:00, 742.96it/s]Loading weights:  36%|███▌      | 315/883 [00:00<00:00, 740.63it/s]Loading weights:  45%|████▍     | 393/883 [00:00<00:00, 751.06it/s]Loading weights:  63%|██████▎   | 553/883 [00:00<00:00, 1031.10it/s]Loading weights: 100%|██████████| 883/883 [00:00<00:00, 1235.17it/s]
+/home/ubuntu/sequential-unlearning/venv-g6e/lib/python3.12/site-packages/peft/utils/save_and_load.py:372: UserWarning: Could not find a config file in /home/ubuntu/.cache/huggingface/hub/models--google--gemma-3-4b-it/snapshots/093f9f388b31de276ce2de164bdc2081324b9767 - will assume that the vocabulary was not modified.
+  warnings.warn(
+Loading weights:   0%|          | 0/883 [00:00<?, ?it/s]Loading weights:   9%|▉         | 83/883 [00:00<00:00, 811.38it/s]Loading weights:  19%|█▊        | 165/883 [00:00<00:00, 805.99it/s]Loading weights:  28%|██▊       | 246/883 [00:00<00:00, 781.97it/s]Loading weights:  37%|███▋      | 325/883 [00:00<00:00, 767.30it/s]Loading weights:  46%|████▌     | 402/883 [00:00<00:00, 753.23it/s]Loading weights:  68%|██████▊   | 601/883 [00:00<00:00, 1156.46it/s]Loading weights: 100%|██████████| 883/883 [00:00<00:00, 1259.78it/s]
+Frozen native teacher independent; initial matched target JSD=1.09582077e-08
+step=1 target=0.000001 end=0.456104 finite476
+step=2 target=0.035300 end=0.272398 finite476
+ONPOLICY_END_TRAIN_DONE
+2026-09-05T11:57:29Z

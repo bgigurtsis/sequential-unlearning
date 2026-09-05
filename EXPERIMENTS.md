@@ -12989,3 +12989,11 @@ Frozen source a19eeb9. RTX wrapper121097 completed two no-save updates at onpoli
 L40S exact retirement completed under frozen manifest d9692b2937f4a9d0126274e57080b2d90903018020a5a86f5ff913f79da456f1. Receipt logs/projection-sprint-20260904/onpolicy-end-ce-weight-retirement-receipt-v1.json SHA803aa3d8b1da518eefb88c542e5e91711f1ecf364d8d03ca7381327f36b6c85a confirms fresh local archives, remote resolved regular paths/sizes/hashes and idleGPU; only failed onpolicy_end_ce_l40s_run32_v1 step016/032 adapter weights removed. Free588,083,200→1,065,078,784bytes. All local archives, originalCE64, configs and metadata preserved.
 
 Next: JSD two-step qualification. Full32 arms wait until both smokes are integrated. Neither numerical smoke nor endpoint training loss proves unrelated answers repaired.
+
+## 2026-09-05 — Paired NONE/JSD GPU qualification passes
+
+L40S wrapper96090 completed11:57:29UTC. Source a19eeb9, originalCE64 and frozen contract unchanged. Exact artifacts onpolicy_end_jsd_l40s_qualification_v1/{manifest.json,training_trace.jsonl,completion.json}; receipt logs/projection-sprint-20260904/onpolicy-end-jsd-l40s-qualification-review-v1.json SHA777df3dde01937ca62174f080136b6ac7e6527c2acdc76614b3d655296654bca. Root rehashed all receipt files and independently matched both steps' planned target and actual endpoint IDs/banks to RTX NONE.
+
+Both updates finite476; student and separate frozen teacher load exact native476 FP32 CE64. Teacher eval, zero trainables/gradients/shared storages; fixed1x65x262208 BF16 logits probe unchanged SHAd37d8c1ebe124d327bb0ce9fb648ee9eae9b5ec4a54446cf569ad7d8fc4e8f10. Initial and first gradient-enabled rawJSD1.0958207674605092e-8, under1e-5; step2 raw.00035299515/weighted.035299515. END CE .456104219→.272398293. Peak allocated22,056,153,088/reserved25,044,189,184bytes.4 chosen EOS1 endpoint forwards,16 student/16 teacher target sequences, no rejects/cache or saves. RTX initial END .460600674 differs slightly across hardware; no cross-GPU numerical identity claim.
+
+Both numerical gates pass. Next frozen32-step paired runs from originalCE64/fresh optimizer, snapshots16/32, then exact local archives and all208 development outputs. This establishes working code and teacher isolation only; no claim of repaired generation yet.
