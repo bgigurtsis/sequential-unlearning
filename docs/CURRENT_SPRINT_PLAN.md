@@ -101,3 +101,8 @@ Currentnextpair selected: bothdense34sequenceNPO, Adamfirstmoment.9rootversus0ag
 ## Active — dense sequence/momentum pair frozen
 
 Contractdownproj_sequence_momentum_v1/contract_v1.json freezesbothdense34sequenceNPO:rootbeta1.9versusagent0; otheroptimizer/data32settingssame.1focusedactualAdamCPUtestPASS. RootreusesactualdenseGPUqualificationandwillstartfull32; L40Sgets2stepnosavefirst. Early12@step4/max64diagnostic andfinal32nativeeval. Cleanup19filesREJECTEDbyautomaticapprovalreviewbeforeexecution;0deleted,userexplicitapprovalpendingasync. L40Sfullsaveblockeduntilsufficientapprovedstorage, independentnosave/rootworkcontinues. Noqualifier.
+
+
+## Sequence/momentum execution update
+
+User explicitly approved exact19 backed-up failed remote weights; fresh guards and retirement completed,3,948,576,768 bytes free on L40S. Approval block resolved. Dense beta1=0 L40S no-save2 qualification PASS (34 finite gradients, clean identity/frozen guards,37.014GB allocated/39.577GB reserved). Full32 may launch under unchanged c321b55 freeze. Root beta1=.9 full32 training completed and native snapshot saved; output review/archival pending, last changing-batch NPO.535145/KL29.8724 is not semantic success. No qualifier, fresh final unused. Next gate: read early12/final32 on both arms, not another blind objective sweep.
