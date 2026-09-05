@@ -61,3 +61,7 @@ CPU F/R word selector170types/99.22% row coverage failed precision: root full12-
 ## Active — concise-content capture pilot
 
 Frozen concise_content_v1/contract_v1.json: rootconcise suffix vsagentoriginal prompts, same12F/8R20rows, clean frozen weights,max128/batch4/rawstops. Atleast10/12 completed correct causal-content targets andall8ordinary useful/no intrusion required before scaling. No unlearning claim or training yet. Prior semanticselector failed44.1%precision and is closed. Capture source reused/checked; launch pair next.
+
+## Latest — concise pilot closed
+
+All40 paired outputs reviewed. Concise20allterminated, but3clearFsemantic/correctnessfailures meanatmost9/12qualifying evengranting5borderlines,below10gate. Original4/12Fcompleted and8capped. No largerrecapture/prompttuning/training. Next raw factual-LM supervision feasibility/history audit, source/data notfrozen. BothGPUsidle; no successfulunlearningcheckpoint.
