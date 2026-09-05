@@ -1,0 +1,30 @@
+{
+  "schema": "ordinary_onpolicy_capture_contract_v1",
+  "actual_parent": "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/ordinary_end_ce_l40s_run64_v1/step064",
+  "parent_weight_sha256": "5fd11ba0d54c4888cb49d0014cbc43488709e1eccb61aa1a3feba810939cd328",
+  "parent_config_sha256": "dc2352afdc28c81ded1934c1f472f3a33b9a61ecbb3c029a82594a176cf2c5b5",
+  "data": "config/whole_concept_jobs_v1/wide_unfamiliarity_v1/ordinary_answer_repair_v1/ordinary_answers_v1.json",
+  "data_sha256": "f6ebd91dbe22c48aa9ede24cc60de7cbc689b6456f8cf5971ee0d4defc0b3f8e",
+  "settings": {
+    "greedy": true,
+    "batch_size": 8,
+    "max_new_tokens": 256,
+    "eos_ids": [
+      1,
+      106
+    ],
+    "native_parent_fp32_identity": true,
+    "records": 64,
+    "training": false
+  },
+  "sources": {
+    "scripts/capture_ordinary_end_states.py": "43eeb721f2ab0c850d3b599854295991fb991b9c085d4235dcd4c06af3758aaf",
+    "scripts/cache_ordinary_preference_reference.py": "c3e948c1e751e66945fe9bdc2a7b824aae4d7e476cc0b13a512fa2d1cdc54e13",
+    "scripts/ordinary_preference_training.py": "ddab8a46d11bdda6b954d890dd7bee9b8699ffd7a1b97ea2505b816fc0679d98",
+    "scripts/screen_adapters.py": "c69144eca887176cedb074fcdd8ac80e841d5504772198701546ca4d7fcd0b29",
+    "scripts/prefix_unfamiliarity_training.py": "71d88152fff82dcfbe46fe142a934d1cf7187749e0abd09291955acdc3025f8e",
+    "scripts/wide_unfamiliarity_training.py": "e692f78daa0a432cb9e345ec2212a73c59231102c7e906100c5e04a60a4ebb7b"
+  },
+  "selection": "Manual review of every captured answer against prompt and authored answer; retain complete useful ordinary body only, exclude initial false refusals, incomplete/non-useful bodies and employment expansion. Exact source token-prefix boundary required; no re-tokenizing or invented answer completion. Freeze selected states and training dose after read before optimizer run.",
+  "next_pair": "End-only CE versus DPO, identical on-policy prefixes, target-unknown preservation.32steps snapshots16/32 planned;2step no-save smokes first. No training approved by this capture-only contract."
+}
