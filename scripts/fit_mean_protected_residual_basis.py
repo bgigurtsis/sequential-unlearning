@@ -1,4 +1,4 @@
-"""Fixed rank1/4 residual bases with clean negative FIT means protected.
+"""Fixed requested residual bases with clean negative FIT means protected.
 
 Uses the original68 unit-normalized contrasts, projects them outside
 span(M,D_final M), and does NOT normalize again. No diagnostic means enter fit.
@@ -34,7 +34,10 @@ def verify_source(path, expected):
     return actual
 
 
-def fit_bases(means, final_scale, *, torch):
+def fit_bases(means, final_scale, *, torch, ranks=(1,4)):
+    ranks=tuple(ranks)
+    if not ranks or len(set(ranks))!=len(ranks) or any(type(rank) is not int or rank not in (1,4,16,68) for rank in ranks):
+        raise ValueError('Ranks must be distinct choices from1,4,16,68')
     positive,negative=means['fit_positive'],means['fit_negative']
     for value in (positive,negative):
         if value.ndim!=3 or value.shape[1]!=2 or value.dtype!=torch.float64 or value.device.type!='cpu' or not bool(torch.isfinite(value).all()):
@@ -53,9 +56,9 @@ def fit_bases(means, final_scale, *, torch):
     _,singular,right=torch.linalg.svd(residual,full_matrices=False)
     tolerance=32*torch.finfo(torch.float64).eps*max(residual.shape)*float(singular[0])
     rank=int((singular>tolerance).sum())
-    if rank<4:raise ValueError('Protected contrasts lack rank4')
+    if rank<max(ranks):raise ValueError('Protected contrasts lack requested rank')
     outputs,rank_records={},{}
-    for target_rank in (1,4):
+    for target_rank in ranks:
         u=right[:target_rank].T.contiguous()
         pivots=u.abs().argmax(dim=0)
         u=(u*torch.sign(u[pivots,torch.arange(target_rank)])).contiguous()
@@ -69,7 +72,8 @@ def fit_bases(means, final_scale, *, torch):
                                    'U_protected_span_overlap_l2':orthogonality,
                                    'surviving_contrast_energy_captured':float((residual@u).square().sum()/residual.square().sum()),
                                    'original_unit_contrast_energy_captured':float((unit@u).square().sum()/unit.square().sum())}
-    diagnostics={'method':'R=orth([M,D_final M]);C=original unit contrasts;Cperp=C-(CR)R^T;single SVD top1/4;no renormalization',
+    diagnostics={'method':'R=orth([M,D_final M]);C=original unit contrasts;Cperp=C-(CR)R^T;single SVD requested fixed ranks;no renormalization',
+                 'requested_ranks':list(ranks),
                  'fit_only_keys':['fit_positive','fit_negative'],'original_contrast_count':contrasts.shape[0],
                  'protected_span':rdiag,'protected_contrast_rank':rank,'rank_tolerance':tolerance,
                  'singular_values':singular.tolist(),'remaining_original_unit_energy_fraction':float(residual.square().sum()/unit.square().sum()),
@@ -78,7 +82,7 @@ def fit_bases(means, final_scale, *, torch):
     return outputs,diagnostics,{'R':r,'protected_contrasts':residual}
 
 
-def publish_bases(class_means, reference_basis, output_dir):
+def publish_bases(class_means, reference_basis, output_dir, ranks=(1,4)):
     import torch
     from safetensors.torch import load_file,save_file
     try:import apply_checkpoint_delta_dare as checked
@@ -94,7 +98,7 @@ def publish_bases(class_means, reference_basis, output_dir):
     means=load_file(str(class_means),device='cpu')
     reference=load_file(str(reference_basis),device='cpu')
     if means['fit_positive'].shape!=(34,2,2560):raise ValueError('Production requires34 layers/2positions/2560features')
-    bases,diagnostics,geometry_tensors=fit_bases(means,reference['final_scale'],torch=torch)
+    bases,diagnostics,geometry_tensors=fit_bases(means,reference['final_scale'],torch=torch,ranks=ranks)
     verify_source(class_means,MEANS_SHA256);verify_source(reference_basis,REFERENCE_SHA256)
     if any(sha256_file(path)!=expected for path,expected in implementation.items()):raise RuntimeError('Implementation changed')
     destination.parent.mkdir(parents=True,exist_ok=True)
@@ -115,4 +119,5 @@ def publish_bases(class_means, reference_basis, output_dir):
 if __name__=='__main__':
     parser=argparse.ArgumentParser()
     for name in ('class-means','reference-basis','output-dir'):parser.add_argument('--'+name,required=True)
+    parser.add_argument('--ranks',nargs='+',type=int,choices=(1,4,16,68),default=(1,4))
     print(json.dumps(publish_bases(**vars(parser.parse_args())),indent=2))

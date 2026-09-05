@@ -9302,3 +9302,35 @@ Contract SHA286a90bd22b712241b48e56c708847ec0f85254523d55451938b188b307e423e.
 - `derisk/whole_concept_jobs_v1/delta_protection_v1/residual_v1/mean_protected_rank1_quick_v1.json` SHA256 `0b6ed9344d8955ebec3e44a828bea7255017087781d2d4847f45d6e5c2634053`.
 - `derisk/whole_concept_jobs_v1/delta_protection_v1/residual_v1/mean_protected_rank1_context_v1.json` SHA256 `1bef4ac8ceae27638f6a0cb7ceb3f3b89956d7e53c3993182821102193d83926`.
 - `derisk/whole_concept_jobs_v1/delta_protection_v1/residual_v1/mean_protected_rank1_diagnostic_v1/metadata.json` SHA256 `7c3d4c708369665c047800f8bcf95385224da4ad57b6bcf8e4f0e940c623196e`.
+
+
+## 2026-09-05 — Stronger bracket qualification and independent mean checks
+
+Same protected contrast method now supports fixed ranks 16 and 68. Fitter
+default remains (1,4); same SVD, no post-protection normalization, strict integer
+rank validation and numerical capacity >= maximum requested. Six L40S CPU tests
+passed without skips, including full-span rank68, rank16 prefix and rejection
+of invalid/insufficient ranks. Publisher dispatch and supplied-basis diagnostic
+capture support 1/4/16/68; high-rank capture without a separately fitted basis
+is rejected before I/O. Four publisher and nine capture tests passed on RTX
+runtime (CPU tests); no production GPU run began during qualification.
+
+Subagent measured existing protected rank1 negative FIT means: relative L2
+change .0134981, norm ratio .994722, cosine .9999224; protected R-coordinate
+relative change .00801361. This corroborates preservation of ordinary means
+while employment knowledge remains. No new model run. Independent full52-row
+rank4 review agrees with rejection and physics/SteveJobs caveats. Exact source
+artifact hashes and layer details are in the receipts below.
+
+Next gate: fit both stronger bases once from the same pinned class means;
+integrate fit before separate RTX68 and L40S16 publication. Goal remains active.
+- `scripts/fit_mean_protected_residual_basis.py` SHA256 `e455b4e42e3da7c8c069670ecbaffc1798c3f5aa45dcfd1a7f223e74368a6940`.
+- `scripts/test_fit_mean_protected_residual_basis.py` SHA256 `b816b24888331cb6461e90edf4ddc2f1e8339757205dae19fb34142227ea689f`.
+- `scripts/publish_native_residual_projection.py` SHA256 `e056b1782bbdfede8b021542d9df63b2b2cb4ee81eaea7a69eb82104f7e5264e`.
+- `scripts/test_publish_native_residual_projection.py` SHA256 `8992253cabfe57cdd0299ef4f415f40c6f67f98516c07ebc74a1d2550766a456`.
+- `scripts/capture_residual_contrast.py` SHA256 `01935b4b453b92708cc2cbc15967435e20eb558e74527fada8b34070f66a6e2e`.
+- `scripts/test_capture_residual_contrast.py` SHA256 `196518283df9ac018b27b9f383a253480ad208d756a063116988c595e63f072b`.
+- `logs/projection-sprint-20260904/mean-protected-large-fitter-tests-v1.log` SHA256 `bb9c15ab040dc06446fec19180f7542dd5986d0819da503f986b6ce5b6fca963`.
+- `logs/projection-sprint-20260904/large-rank-dispatch-tests-v1.log` SHA256 `ca200cbbd33df4c7369999cfaa6b1a62c956b0e61607bcc74d9412b83e9c767d`.
+- `logs/projection-sprint-20260904/mean-protected-rank1-actual-means-v1.json` SHA256 `b916167aa9ea47e8994c1364f2bee1b06d52da327c0670161506f02ab3799e90`.
+- `logs/projection-sprint-20260904/mean-protected-rank4-independent-review-v1.json` SHA256 `f75e1fd0ceb768ae9af8779616073882e27458a76f3375120f1883d8066bf2d2`.

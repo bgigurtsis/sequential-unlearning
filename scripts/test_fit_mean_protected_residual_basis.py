@@ -61,5 +61,28 @@ class FitterTests(unittest.TestCase):
             with self.assertRaises(ValueError):fit.fit_bases({**means,'fit_positive':bad},scale,torch=torch)
         with self.assertRaises(ValueError):fit.fit_bases(means,scale[:2],torch=torch)
 
+    def test_large_fixed_bracket_and_rank_validation(self):
+        g=torch.Generator().manual_seed(33968)
+        negative=torch.randn((34,2,256),generator=g,dtype=torch.float64)
+        positive=negative+torch.randn((34,2,256),generator=g,dtype=torch.float64)
+        means={'fit_positive':positive,'fit_negative':negative}
+        scale=torch.linspace(-2,3,256,dtype=torch.float64)
+        bases,record,tensors=fit.fit_bases(means,scale,torch=torch,ranks=(16,68))
+        self.assertEqual(record['requested_ranks'],[16,68])
+        self.assertEqual(record['protected_contrast_rank'],68)
+        self.assertTrue(torch.equal(bases[16]['U'],bases[68]['U'][:,:16]))
+        self.assertTrue(torch.allclose(tensors['protected_contrasts'],
+                                      (tensors['protected_contrasts']@bases[68]['U'])@bases[68]['U'].T,
+                                      atol=1e-12,rtol=1e-12))
+        m=negative.reshape(68,256).T
+        for rank in (16,68):
+            self.assertLess(float((bases[rank]['V'].T@m).norm())/float(m.norm()),1e-10)
+            self.assertGreaterEqual(bases[rank]['V'].shape[1],rank)
+            self.assertLessEqual(bases[rank]['V'].shape[1],2*rank)
+        for invalid in ((),(2,),(1,1),(True,), (16.0,)):
+            with self.assertRaises(ValueError):fit.fit_bases(means,scale,torch=torch,ranks=invalid)
+        small,small_scale=self.fixture()
+        with self.assertRaises(ValueError):fit.fit_bases(small,small_scale,torch=torch,ranks=(16,68))
+
 
 if __name__=='__main__':unittest.main()

@@ -69,8 +69,8 @@ def validate_surface(snapshot, torch, runtime):
 
 
 def publish(clean_model, basis, basis_sha256, output_dir, support_pins, *, concept_rank=4, identity=False):
-    if isinstance(concept_rank, bool) or concept_rank not in (1, 4):
-        raise ValueError('Only precommitted rank1 and rank4 arms are allowed')
+    if type(concept_rank) is not int or concept_rank not in (1, 4, 16, 68):
+        raise ValueError('Only precommitted ranks 1, 4, 16 and 68 are allowed')
     runtime = checked.production_runtime()
     torch = runtime.torch
     torch.set_num_threads(8)
@@ -184,6 +184,6 @@ if __name__ == '__main__':
     for argument in ('clean-model', 'basis', 'basis-sha256', 'output-dir', 'support-pins'):
         parser.add_argument('--' + argument, required=True)
     parser.add_argument('--identity', action='store_true')
-    parser.add_argument('--concept-rank', type=int, choices=(1, 4), default=4)
+    parser.add_argument('--concept-rank', type=int, choices=(1, 4, 16, 68), default=4)
     result = publish(**vars(parser.parse_args()))
     print('Published', result['payload_sha256'], flush=True)

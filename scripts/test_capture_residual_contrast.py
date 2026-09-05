@@ -22,6 +22,15 @@ class FakeTokenizer:
 
 
 class SchemaTests(unittest.TestCase):
+    def test_large_rank_requires_external_basis_before_io(self):
+        args = dict(model_root=None, tokenizer_root=None, input_path=None, pins_path=None, output_root=None)
+        for rank in (16, 68):
+            with self.subTest(rank=rank), self.assertRaisesRegex(ValueError, 'separately fitted'):
+                capture.run_capture(**args, concept_rank=rank)
+        for rank in (True, 4.0, 2, 69):
+            with self.subTest(rank=rank), self.assertRaisesRegex(ValueError, 'concept_rank'):
+                capture.run_capture(**args, concept_rank=rank)
+
     def records(self):
         return [dict(id=f'{f}_{label}',task_family=f,label=label,prompt='P',original_response='ab')
                 for f in capture.FAMILIES for label in ('positive','negative')]

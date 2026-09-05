@@ -258,11 +258,13 @@ def verify_files(root, pins):
 
 def run_capture(*, model_root, tokenizer_root, input_path, pins_path, output_root, diagnostic_basis_path=None, concept_rank=4):
     """Production pins JSON: input_sha256, model_files and tokenizer_files maps."""
+    if type(concept_rank) is not int or concept_rank not in (1, 4, 16, 68):
+        raise ValueError("concept_rank must be 1, 4, 16 or 68")
+    if concept_rank in (16, 68) and not diagnostic_basis_path:
+        raise ValueError("Ranks 16 and 68 require a separately fitted diagnostic basis")
     import torch
     from safetensors.torch import load_file, save_file
     from transformers import AutoTokenizer, Gemma3ForConditionalGeneration
-    if isinstance(concept_rank, bool) or concept_rank not in (1,4):
-        raise ValueError("concept_rank must be1 or4")
     implementation = {str(Path(p).resolve()):sha256_file(p) for p in (__file__,geometry.__file__,Path(__file__).with_name('test_capture_residual_contrast.py'))}
     pins_hash = sha256_file(pins_path)
     output_root = Path(output_root).absolute()
@@ -364,7 +366,7 @@ def main():
     for name in ('model-root','tokenizer-root','input-path','pins-path','output-root'):
         parser.add_argument('--'+name,required=True)
     parser.add_argument('--diagnostic-basis-path')
-    parser.add_argument('--concept-rank',type=int,choices=(1,4),default=4)
+    parser.add_argument('--concept-rank',type=int,choices=(1,4,16,68),default=4)
     args=parser.parse_args()
     run_capture(**vars(args))
 

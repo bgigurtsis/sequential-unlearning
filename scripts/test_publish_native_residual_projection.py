@@ -1,5 +1,6 @@
 """Publication-surface tests; numerical projection is independently tested elsewhere."""
 import unittest
+from unittest.mock import patch
 try:
     import publish_native_residual_projection as publish
 except ModuleNotFoundError:
@@ -7,6 +8,15 @@ except ModuleNotFoundError:
 
 
 class PublicationSurfaceTests(unittest.TestCase):
+    def test_rank_dispatch_before_runtime(self):
+        for rank in (1, 4, 16, 68):
+            with self.subTest(rank=rank), patch.object(publish.checked, 'production_runtime', side_effect=RuntimeError('runtime reached')):
+                with self.assertRaisesRegex(RuntimeError, 'runtime reached'):
+                    publish.publish(None, None, None, None, None, concept_rank=rank)
+        for rank in (True, 4.0, 2, 69):
+            with self.subTest(rank=rank), self.assertRaises(ValueError):
+                publish.publish(None, None, None, None, None, concept_rank=rank)
+
     def source(self):
         return {name: {'shape': [3, 4], 'dtype': 'torch.bfloat16', 'sha256': 'old'}
                 for name in (*publish.edit_surface(), publish.FINAL_NORM)}

@@ -6,8 +6,8 @@ The user rejected the earlier proposed stop. Historical sprint deadlines and clo
 
 | GPU | Owner | Experiment |
 | --- | --- | --- |
-| RTX18.101.59.227 | Primary agent | Remove4 learned residual directions, up to8 with final-normalization closure |
-| L40S51.49.31.142 | Subagent projection_followup | Remove1 learned residual direction, up to2 with closure |
+| RTX18.101.59.227 | Primary agent | Remove all68 surviving mean-protected contrast directions, up to136 with closure |
+| L40S51.49.31.142 | Subagent projection_followup | Remove16 mean-protected contrast directions, up to32 with closure |
 
 Run at most one owned GPU workload per host; preserve the unrelated RTX service. Both experiments start from the same pinned clean Gemma3-4B-it checkpoint and use separate outputs.
 
@@ -51,3 +51,6 @@ Mean-protected rank4 restores coherent generation on all52 development responses
 
 
 Protected rank1 also preserves coherent language and all12 primary controls, but retains employment knowledge. The next bounded comparison increases the protected edit to16 directions on the subagent GPU and the full68 available directions on the primary GPU. This tests the method’s remaining capacity; a high-rank result would still need evidence of acceptable damage across31 removals.
+
+
+The stronger bracket implementation passed all19 targeted tests. Fit both bases from the existing pinned capture before publishing independently; no new training or evaluation data enters this fit. Existing protected rank1 means changed only1.35%, confirming that mean preservation alone does not remove the concept.
