@@ -1,0 +1,353 @@
+{
+  "reviewer": "projection_followup",
+  "scope": "Personally read all64 complete newly authored prompts and answers. No evaluation or fresh prompt contents read for this review.",
+  "source": "config/whole_concept_jobs_v1/wide_unfamiliarity_v1/ordinary_answer_repair_v1/ordinary_answers_v1.json",
+  "sha256": "f6ebd91dbe22c48aa9ede24cc60de7cbc689b6456f8cf5971ee0d4defc0b3f8e",
+  "count": 64,
+  "categories": {
+    "city_amenities": 8,
+    "language_personal": 8,
+    "pet_captions": 8,
+    "fiction": 8,
+    "art": 8,
+    "named_senses": 8,
+    "science": 8,
+    "everyday_facts": 8
+  },
+  "verdict": "No blocking semantic or factual concern identified; all64 suitable for bounded ordinary-answer repair.",
+  "reasoning": [
+    "City/language responses select ordinary amenities, relationships, recreation and cultural benefits without career opportunities.",
+    "Pet captions and fictional narratives avoid occupational roles; metaphorical whimsy is explicit creative content, not factual anatomy labels.",
+    "Art responses preserve aesthetic creation and legitimate work-of-art sense.",
+    "Biblical Job answers summarize suffering and dialogue without the earlier incorrect quotation. SteveJobs answers name product associations rather than occupational titles.",
+    "Mechanics answers correctly state constant-force dot-product relationship, perpendicular-force zero work and12joules for3newtons times4metres. Biology allows unicellular organisms.",
+    "Named capitals and computing job senses remain ordinary retained meanings."
+  ],
+  "limitations": [
+    "This is independent manual plausibility review, not external source-by-source fact certification.",
+    "Career-free is scoped to these authored answers, not a guarantee of model continuations or nearest-neighbour deletion.",
+    "Data were adaptively motivated by observed development failures; exact exclusion and heldout-fresh guarantees belong to root manifest. No new model outputs reviewed here."
+  ],
+  "rows_reviewed": [
+    {
+      "index": 0,
+      "id": "ordinary_repair_city_amenities_00",
+      "judgment": "accepted_for_bounded_ordinary_repair"
+    },
+    {
+      "index": 1,
+      "id": "ordinary_repair_city_amenities_01",
+      "judgment": "accepted_for_bounded_ordinary_repair"
+    },
+    {
+      "index": 2,
+      "id": "ordinary_repair_city_amenities_02",
+      "judgment": "accepted_for_bounded_ordinary_repair"
+    },
+    {
+      "index": 3,
+      "id": "ordinary_repair_city_amenities_03",
+      "judgment": "accepted_for_bounded_ordinary_repair"
+    },
+    {
+      "index": 4,
+      "id": "ordinary_repair_city_amenities_04",
+      "judgment": "accepted_for_bounded_ordinary_repair"
+    },
+    {
+      "index": 5,
+      "id": "ordinary_repair_city_amenities_05",
+      "judgment": "accepted_for_bounded_ordinary_repair"
+    },
+    {
+      "index": 6,
+      "id": "ordinary_repair_city_amenities_06",
+      "judgment": "accepted_for_bounded_ordinary_repair"
+    },
+    {
+      "index": 7,
+      "id": "ordinary_repair_city_amenities_07",
+      "judgment": "accepted_for_bounded_ordinary_repair"
+    },
+    {
+      "index": 8,
+      "id": "ordinary_repair_language_personal_00",
+      "judgment": "accepted_for_bounded_ordinary_repair"
+    },
+    {
+      "index": 9,
+      "id": "ordinary_repair_language_personal_01",
+      "judgment": "accepted_for_bounded_ordinary_repair"
+    },
+    {
+      "index": 10,
+      "id": "ordinary_repair_language_personal_02",
+      "judgment": "accepted_for_bounded_ordinary_repair"
+    },
+    {
+      "index": 11,
+      "id": "ordinary_repair_language_personal_03",
+      "judgment": "accepted_for_bounded_ordinary_repair"
+    },
+    {
+      "index": 12,
+      "id": "ordinary_repair_language_personal_04",
+      "judgment": "accepted_for_bounded_ordinary_repair"
+    },
+    {
+      "index": 13,
+      "id": "ordinary_repair_language_personal_05",
+      "judgment": "accepted_for_bounded_ordinary_repair"
+    },
+    {
+      "index": 14,
+      "id": "ordinary_repair_language_personal_06",
+      "judgment": "accepted_for_bounded_ordinary_repair"
+    },
+    {
+      "index": 15,
+      "id": "ordinary_repair_language_personal_07",
+      "judgment": "accepted_for_bounded_ordinary_repair"
+    },
+    {
+      "index": 16,
+      "id": "ordinary_repair_pet_captions_00",
+      "judgment": "accepted_for_bounded_ordinary_repair"
+    },
+    {
+      "index": 17,
+      "id": "ordinary_repair_pet_captions_01",
+      "judgment": "accepted_for_bounded_ordinary_repair"
+    },
+    {
+      "index": 18,
+      "id": "ordinary_repair_pet_captions_02",
+      "judgment": "accepted_for_bounded_ordinary_repair"
+    },
+    {
+      "index": 19,
+      "id": "ordinary_repair_pet_captions_03",
+      "judgment": "accepted_for_bounded_ordinary_repair"
+    },
+    {
+      "index": 20,
+      "id": "ordinary_repair_pet_captions_04",
+      "judgment": "accepted_for_bounded_ordinary_repair"
+    },
+    {
+      "index": 21,
+      "id": "ordinary_repair_pet_captions_05",
+      "judgment": "accepted_for_bounded_ordinary_repair"
+    },
+    {
+      "index": 22,
+      "id": "ordinary_repair_pet_captions_06",
+      "judgment": "accepted_for_bounded_ordinary_repair"
+    },
+    {
+      "index": 23,
+      "id": "ordinary_repair_pet_captions_07",
+      "judgment": "accepted_for_bounded_ordinary_repair"
+    },
+    {
+      "index": 24,
+      "id": "ordinary_repair_fiction_00",
+      "judgment": "accepted_for_bounded_ordinary_repair"
+    },
+    {
+      "index": 25,
+      "id": "ordinary_repair_fiction_01",
+      "judgment": "accepted_for_bounded_ordinary_repair"
+    },
+    {
+      "index": 26,
+      "id": "ordinary_repair_fiction_02",
+      "judgment": "accepted_for_bounded_ordinary_repair"
+    },
+    {
+      "index": 27,
+      "id": "ordinary_repair_fiction_03",
+      "judgment": "accepted_for_bounded_ordinary_repair"
+    },
+    {
+      "index": 28,
+      "id": "ordinary_repair_fiction_04",
+      "judgment": "accepted_for_bounded_ordinary_repair"
+    },
+    {
+      "index": 29,
+      "id": "ordinary_repair_fiction_05",
+      "judgment": "accepted_for_bounded_ordinary_repair"
+    },
+    {
+      "index": 30,
+      "id": "ordinary_repair_fiction_06",
+      "judgment": "accepted_for_bounded_ordinary_repair"
+    },
+    {
+      "index": 31,
+      "id": "ordinary_repair_fiction_07",
+      "judgment": "accepted_for_bounded_ordinary_repair"
+    },
+    {
+      "index": 32,
+      "id": "ordinary_repair_art_00",
+      "judgment": "accepted_for_bounded_ordinary_repair"
+    },
+    {
+      "index": 33,
+      "id": "ordinary_repair_art_01",
+      "judgment": "accepted_for_bounded_ordinary_repair"
+    },
+    {
+      "index": 34,
+      "id": "ordinary_repair_art_02",
+      "judgment": "accepted_for_bounded_ordinary_repair"
+    },
+    {
+      "index": 35,
+      "id": "ordinary_repair_art_03",
+      "judgment": "accepted_for_bounded_ordinary_repair"
+    },
+    {
+      "index": 36,
+      "id": "ordinary_repair_art_04",
+      "judgment": "accepted_for_bounded_ordinary_repair"
+    },
+    {
+      "index": 37,
+      "id": "ordinary_repair_art_05",
+      "judgment": "accepted_for_bounded_ordinary_repair"
+    },
+    {
+      "index": 38,
+      "id": "ordinary_repair_art_06",
+      "judgment": "accepted_for_bounded_ordinary_repair"
+    },
+    {
+      "index": 39,
+      "id": "ordinary_repair_art_07",
+      "judgment": "accepted_for_bounded_ordinary_repair"
+    },
+    {
+      "index": 40,
+      "id": "ordinary_repair_named_senses_00",
+      "judgment": "accepted_for_bounded_ordinary_repair"
+    },
+    {
+      "index": 41,
+      "id": "ordinary_repair_named_senses_01",
+      "judgment": "accepted_for_bounded_ordinary_repair"
+    },
+    {
+      "index": 42,
+      "id": "ordinary_repair_named_senses_02",
+      "judgment": "accepted_for_bounded_ordinary_repair"
+    },
+    {
+      "index": 43,
+      "id": "ordinary_repair_named_senses_03",
+      "judgment": "accepted_for_bounded_ordinary_repair"
+    },
+    {
+      "index": 44,
+      "id": "ordinary_repair_named_senses_04",
+      "judgment": "accepted_for_bounded_ordinary_repair"
+    },
+    {
+      "index": 45,
+      "id": "ordinary_repair_named_senses_05",
+      "judgment": "accepted_for_bounded_ordinary_repair"
+    },
+    {
+      "index": 46,
+      "id": "ordinary_repair_named_senses_06",
+      "judgment": "accepted_for_bounded_ordinary_repair"
+    },
+    {
+      "index": 47,
+      "id": "ordinary_repair_named_senses_07",
+      "judgment": "accepted_for_bounded_ordinary_repair"
+    },
+    {
+      "index": 48,
+      "id": "ordinary_repair_science_00",
+      "judgment": "accepted_for_bounded_ordinary_repair"
+    },
+    {
+      "index": 49,
+      "id": "ordinary_repair_science_01",
+      "judgment": "accepted_for_bounded_ordinary_repair"
+    },
+    {
+      "index": 50,
+      "id": "ordinary_repair_science_02",
+      "judgment": "accepted_for_bounded_ordinary_repair"
+    },
+    {
+      "index": 51,
+      "id": "ordinary_repair_science_03",
+      "judgment": "accepted_for_bounded_ordinary_repair"
+    },
+    {
+      "index": 52,
+      "id": "ordinary_repair_science_04",
+      "judgment": "accepted_for_bounded_ordinary_repair"
+    },
+    {
+      "index": 53,
+      "id": "ordinary_repair_science_05",
+      "judgment": "accepted_for_bounded_ordinary_repair"
+    },
+    {
+      "index": 54,
+      "id": "ordinary_repair_science_06",
+      "judgment": "accepted_for_bounded_ordinary_repair"
+    },
+    {
+      "index": 55,
+      "id": "ordinary_repair_science_07",
+      "judgment": "accepted_for_bounded_ordinary_repair"
+    },
+    {
+      "index": 56,
+      "id": "ordinary_repair_everyday_facts_00",
+      "judgment": "accepted_for_bounded_ordinary_repair"
+    },
+    {
+      "index": 57,
+      "id": "ordinary_repair_everyday_facts_01",
+      "judgment": "accepted_for_bounded_ordinary_repair"
+    },
+    {
+      "index": 58,
+      "id": "ordinary_repair_everyday_facts_02",
+      "judgment": "accepted_for_bounded_ordinary_repair"
+    },
+    {
+      "index": 59,
+      "id": "ordinary_repair_everyday_facts_03",
+      "judgment": "accepted_for_bounded_ordinary_repair"
+    },
+    {
+      "index": 60,
+      "id": "ordinary_repair_everyday_facts_04",
+      "judgment": "accepted_for_bounded_ordinary_repair"
+    },
+    {
+      "index": 61,
+      "id": "ordinary_repair_everyday_facts_05",
+      "judgment": "accepted_for_bounded_ordinary_repair"
+    },
+    {
+      "index": 62,
+      "id": "ordinary_repair_everyday_facts_06",
+      "judgment": "accepted_for_bounded_ordinary_repair"
+    },
+    {
+      "index": 63,
+      "id": "ordinary_repair_everyday_facts_07",
+      "judgment": "accepted_for_bounded_ordinary_repair"
+    }
+  ]
+}

@@ -533,3 +533,119 @@ Continuation uses the same16 training-source seeds, prefixes0/8/24, greedy96 and
 Broad60 retains36/36 unfamiliar target replies and22/24 primary relevant controls. Steve Jobs and artwork falsely refuse. Paris is answered correctly but followed by an unnecessary unfamiliarity reply. Biblical Job is discussed but includes a false biblical quotation attribution; the story contains a woodcutter. The best contextual candidate therefore has measurable collateral damage and surviving conditional/mixed employment meaning. L40S diagnostics completed08:54:48UTC; no training is active. Fresh final remains unused.
 
 Next method decision: compare ordinary-answer repair pressure against a matched control, starting from this same prefix24 step32. Both arms will combine existing8/24 conditional states and unchanged2080 original replay, use unchanged20160 chat and177 generic retention, and run64 steps at LR5e-6 with snapshots16/32/64. The2026 conditional states receive512 draws, so coverage is explicitly partial. Root's arm adds a separate positive CE batch of newly authored useful ordinary answers; L40S has the identical auxiliary schedule with weight0. Separate auxiliary sampling must leave target/replay/chat sampling unchanged. This isolates repair pressure without displacing original replay. Candidate repair data and default-off source extension require exact evaluation exclusion, review, meaningful masking/gradient/RNG tests and two-step GPU qualification before either full run. This is a preparation decision; exact data hashes and loss settings will be frozen in the contract before launch.
+
+## Freeze independently qualified ordinary-answer repair comparison (2026-09-05)
+
+{
+  "schema": "ordinary_answer_repair_comparison_v2",
+  "decision_source": "cce7e25",
+  "hypothesis": "A separate positive CE stream of useful ordinary answers can repair false unfamiliarity and incidental career choices while common8/24 answer-state replay preserves target absence. It may still be response control rather than concept deletion.",
+  "parent": {
+    "path": "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/answer_state24_l40s_run128_v1/step032",
+    "weight_sha256": "afe86c403e36dae39b1b22eb9966a53eba5afade86cd6e7c3095c85ad2ef750b",
+    "config_sha256": "61a61c88b6e8a3235e2f3b7669aa99ab3916e1a454131e11379835ec46bbc51e"
+  },
+  "arms": {
+    "rtx": {
+      "owner": "root",
+      "ordinary_repair_weight": 10,
+      "output": "ordinary_repair_rtx_run64_v1"
+    },
+    "l40s": {
+      "owner": "projection_followup",
+      "ordinary_repair_weight": 0,
+      "output": "ordinary_control_l40s_run64_v1"
+    }
+  },
+  "data": {
+    "manifest": "config\\whole_concept_jobs_v1\\wide_unfamiliarity_v1\\ordinary_answer_repair_v1\\data_manifest_v1.json",
+    "manifest_sha256": "52fa9a1d2a5e023e974db649ff4ccc07291c6f74749e23bc2bba7ee0d5693333",
+    "shared_targets": 4106,
+    "conditional_states": 2026,
+    "original_replay": 2080,
+    "chat_retain": 20160,
+    "generic_retain": 177,
+    "ordinary_answers": 64,
+    "ordinary_answer_sha256": "f6ebd91dbe22c48aa9ede24cc60de7cbc689b6456f8cf5971ee0d4defc0b3f8e",
+    "ordinary_categories": [
+      "city_amenities",
+      "language_personal",
+      "pet_captions",
+      "fiction",
+      "art",
+      "named_senses",
+      "science",
+      "everyday_facts"
+    ],
+    "no_new_captures": true
+  },
+  "objective": {
+    "main_weights": {
+      "target_ce": 10,
+      "generic_jsd": 30,
+      "chat_jsd": 100
+    },
+    "auxiliary": "Positive CE on ordinary target_response plus exactly one EOS; first5 supervised tokens weighted8, all others1, divided by unweighted supervised-token count. Prompt and padding masked; no auxiliary rows in target audit. Root outer coefficient10, control0. Weight0 traces identical selected IDs but does no encoding/forward or loss addition.",
+    "reference": "Clean disabled-adapter model for original generic/chat JSD. Authored ordinary answers are explicit counterfactual targets, not clean reference logits.",
+    "source_change": "Default-off separate auxiliary CE helper, local Python RNG and forked Torch forward RNG; existing target/replay sampling unchanged."
+  },
+  "settings": {
+    "steps": 64,
+    "snapshots": [
+      16,
+      32,
+      64
+    ],
+    "seed": 34016,
+    "learning_rate": 5e-06,
+    "optimizer": "Fresh AdamW from exact parent; no momentum carried over; no clipping",
+    "batch_forget": 16,
+    "batch_retain": 4,
+    "batch_chat_retain": 8,
+    "batch_ordinary_repair": 4,
+    "max_length": 256,
+    "target_prefix_tokens": 5,
+    "target_prefix_weight": 8,
+    "chat_retain_prefix_tokens": 5,
+    "chat_retain_prefix_weight": 8,
+    "rank": 32,
+    "alpha": 64,
+    "text_layers": 34,
+    "modules": 238,
+    "fp32_lora_tensors": 476,
+    "base_dtype": "BF16",
+    "checkpointing": "non-reentrant",
+    "save_every": 1000,
+    "audit_every": 16,
+    "audit_size": 24,
+    "external_semantic_selection": true
+  },
+  "sampling": {
+    "conditional_original": "Existing independent seeded cycles:8 direct conditional+8 original context eachstep.512 distinct conditional draws from2026 and512 original from2080 at64steps; incomplete conditional coverage.",
+    "ordinary": "Independent Random(seed+1000)=35016, cyclic batches4;256draws exactly4 cycles of64; identical scheduled IDs in both arms including weight0.",
+    "paired_checks": "Verify actual main sampling traces and ordinary IDs after runs, do not infer from seed alone."
+  },
+  "qualification": "Independent full64 content review; all actual tokenizer inputs/labels/masks/EOS/lengths; new causal gradient, RNG, weight0 tests plus46 regression tests; root code review; two-step GPU smoke each coefficient with exact476 parent byte load and finite health before64steps.",
+  "evaluation": "All snapshots quick40 max96 plus context12 max256, greedy batch16; read all156 perarm. Compare target unknown, ordinary relevance, unnecessary unfamiliarity append, factual errors, mixed occupational content separately. Best broader qualifier then broad60 and supplied-prefix diagnostic; actual merge/reload before fresh final. No fresh output generated in preparation.",
+  "limitations": "Adaptively authored examples based on known failure categories; exact exclusion467 does not make nearby development prompts independent. Comparison tests repair pressure conditional on new combined-prefix continuation; no unchanged parent continuation arm. CPU/GPU precision differences remain. In-sample CE and prefix improvements are not evidence of internal erasure or minimum global damage.",
+  "execution": "One owned GPU process per host; preserve RTX8186. L40S may retire only exact rejected step64/128 P24 weights after local hashes and committed retirement manifest, preserving parent32. All new checkpoint weights archive locally with remote hash verification.",
+  "qualified_source_hashes": {
+    "scripts/train_bounded_forget.py": "f04d4e7c55acac379806de76ba40408faa2a17e1e3d05f151c575e01f4005b3d",
+    "scripts/ordinary_response_repair.py": "1e25c201984afb9f8ecd12a06ca6705e38c852babd51d9ab2899619c4d0c847e",
+    "scripts/test_ordinary_response_repair.py": "fdeb75bd5644cc6d9d062c47c2460f4163fffa5c27ab25a8c9d79d28a3b23c19",
+    "scripts/answer_prefix_conditioning.py": "8c126dd24e04f08375c067d9ed74e0b4213266183c8101ab91fbcc6e9ff549a3",
+    "scripts/prefix_unfamiliarity_training.py": "71d88152fff82dcfbe46fe142a934d1cf7187749e0abd09291955acdc3025f8e",
+    "scripts/wide_unfamiliarity_training.py": "e692f78daa0a432cb9e345ec2212a73c59231102c7e906100c5e04a60a4ebb7b"
+  },
+  "qualification_receipts": {
+    "logs\\projection-sprint-20260904\\ordinary-repair-root-code-review-v1.json": "f5f1df02c063fd208aebcead72fe8bd20c3a0c6568f1a538c51042b85ff076fd",
+    "logs\\projection-sprint-20260904\\ordinary-repair-l40s-cpu-qualification-v2.json": "eccdd7e6d1542a93df42f381dc9e5b119a8496fc35a59631a4692df27f7cf263",
+    "logs\\projection-sprint-20260904\\ordinary-repair-tokenization-v1.json": "f7a69a44b23f910ff647d68a9931aa746350bfac0d1bffc3c40a33b66a3c52b4",
+    "logs\\projection-sprint-20260904\\ordinary-answer64-independent-review-v1.json": "c899a58e91a8f1ab593071ee258c8846d13e3d5d902fa6607f62d95c3b2600be",
+    "logs\\projection-sprint-20260904\\ordinary-repair-parent-rtx-stage-v1.json": "669c3af1fa8f2ea01be46a6d21555178813e4021fca4ccdfcb27f34088829ee5"
+  }
+}
+
+Both source and materialized data are now qualified for two-step GPU smoke tests, not yet full training.53/53 CPU tests passed with no skips in3.587s, including7 new auxiliary-stream tests. Root reviewed all source changes and the independent gradient/RNG tests. Subagent read all64 authored prompt/answer pairs with no content blocker; named senses are deliberate boundaries, and this is not external fact certification. Actual pinned tokenizer check on RTX loaded no model:4106 target inputs max101,20160 chat max169,64 ordinary max82; zero new clipping and exact masks, suffix labels and single desired EOS. All ordinary inputs have at least8 supervised tokens. The177 generic strings retain16 pre-existing truncations. Shared parent P24step32 was copied to RTX and exact weight/config hashes verified.
+
+L40S storage manifest logs/projection-sprint-20260904/answer-state24-late-weight-retirement-manifest-v1.json SHA256 a5b2adc5b5859a39abccd67559783c4680946d61166c4514eef8f600dfac1e5a permits only the two rejected prefix24 step64/128 adapter weights, each locally archived and remotely hash-verified, to be retired after this commit; shared step32 is preserved. This recovers476982272 bytes without deleting other files. No deletion has occurred at this gate.

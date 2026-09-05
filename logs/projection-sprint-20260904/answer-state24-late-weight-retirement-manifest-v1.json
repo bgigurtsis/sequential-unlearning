@@ -1,0 +1,25 @@
+{
+  "purpose": "Proposed retirement of only rejected P24step64/128 remote adapter weights; no deletion performed. Shared step32 preserved on both hosts/local.",
+  "host": "51.49.31.142",
+  "free_bytes_before": 1328246784,
+  "remove_only_after_root_integrates": [
+    {
+      "remote_path": "/home/ubuntu/sequential-unlearning-projection-sprint-20260904/derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/answer_state24_l40s_run128_v1/step064/adapter_model.safetensors",
+      "local_archive_path": "C:\\Users\\Billy\\Documents\\GitHub\\sequential-unlearning\\derisk\\whole_concept_jobs_v1\\delta_protection_v1\\wide_unfamiliarity_v1\\answer_state24_l40s_run128_v1\\step064\\adapter_model.safetensors",
+      "sha256": "d28f88e9ef2d429e30303783f3aace8f837c9495138c76a350c309a7bb96078d",
+      "bytes": 238491136
+    },
+    {
+      "remote_path": "/home/ubuntu/sequential-unlearning-projection-sprint-20260904/derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/answer_state24_l40s_run128_v1/step128/adapter_model.safetensors",
+      "local_archive_path": "C:\\Users\\Billy\\Documents\\GitHub\\sequential-unlearning\\derisk\\whole_concept_jobs_v1\\delta_protection_v1\\wide_unfamiliarity_v1\\answer_state24_l40s_run128_v1\\step128\\adapter_model.safetensors",
+      "sha256": "3676a54ba4f77b7c1b0d91c77af8858b2b3cf0330eaa2c800f2bae56fc9804e8",
+      "bytes": 238491136
+    }
+  ],
+  "total_recoverable_bytes": 476982272,
+  "archive_receipt": "logs/projection-sprint-20260904/answer-state24-l40s-local-archive-v1.json",
+  "archive_receipt_sha256": "ae8c19f8e88353536ab937b7eb2fd155a035f48da68db9d008198532f00a9e76",
+  "preserve": "Sharedstep32, all other models, config/readme/metadata/source/evaluation/log files. No recursive removal.",
+  "failure_basis": "Step64/128 each retain earn-a-living and office/WFH meaning; all156review09cf93ef660b691cb6da71a94bf138e3fbe028266003eaf3c1eeb6cb728b217b. Exact local checkpoint bytes independently rehashed.",
+  "deletion_gate": "Root commits manifest, then fresh local/remote path/hash checks immediately before removing ONLY named files."
+}

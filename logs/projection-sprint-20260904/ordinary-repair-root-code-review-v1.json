@@ -1,0 +1,13 @@
+{
+  "reviewer": "root",
+  "source_sha256": {
+    "scripts/train_bounded_forget.py": "f04d4e7c55acac379806de76ba40408faa2a17e1e3d05f151c575e01f4005b3d",
+    "scripts/ordinary_response_repair.py": "1e25c201984afb9f8ecd12a06ca6705e38c852babd51d9ab2899619c4d0c847e",
+    "scripts/test_ordinary_response_repair.py": "fdeb75bd5644cc6d9d062c47c2460f4163fffa5c27ab25a8c9d79d28a3b23c19",
+    "scripts/answer_prefix_conditioning.py": "8c126dd24e04f08375c067d9ed74e0b4213266183c8101ab91fbcc6e9ff549a3",
+    "scripts/prefix_unfamiliarity_training.py": "71d88152fff82dcfbe46fe142a934d1cf7187749e0abd09291955acdc3025f8e",
+    "scripts/wide_unfamiliarity_training.py": "e692f78daa0a432cb9e345ec2212a73c59231102c7e906100c5e04a60a4ebb7b"
+  },
+  "result": "No blocker after full helper/tests and trainer integration review. Existing make_forget_batch supplies right-padded prompt-masked desired-response labels plus one EOS. Auxiliary CE shifts logits/labels causally, weights first5 supervised tokens8, uses unweighted supervised count and adds outer coefficient once. Separate local Python RNG and forked Torch forward RNG preserve primary sampling. Weight0 skips encoding/model and loss addition; trace and metadata explicitly distinguish disabled coefficient. New53-test result includes independent gradient and non-reentrant checkpoint RNG checks. Actual64 examples all24-82 tokens and8+ supervised tokens, no clipping.",
+  "limits": "Actual two-step CUDA coefficient10/0 full objective and parent476-byte identity still required. No claim from CPU tests about behavioral quality."
+}

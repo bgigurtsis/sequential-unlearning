@@ -38,6 +38,10 @@ import torch.nn.functional as F
 from peft import LoraConfig, get_peft_model
 from transformers import AutoModelForCausalLM, AutoTokenizer
 try:
+    from ordinary_response_repair import make_ordinary_repair_sampler, ordinary_response_loss
+except ModuleNotFoundError:
+    from scripts.ordinary_response_repair import make_ordinary_repair_sampler, ordinary_response_loss
+try:
     from answer_prefix_conditioning import answer_prefix_count, encode_answer_sequence, validate_conditioning_records
 except ModuleNotFoundError:
     from scripts.answer_prefix_conditioning import answer_prefix_count, encode_answer_sequence, validate_conditioning_records
@@ -78,6 +82,9 @@ def parse_args():
     parser.add_argument("--forget-data", required=True)
     parser.add_argument("--retain-data", default="data/retain.json")
     parser.add_argument("--chat-retain-data", default="data/retain_chat.json")
+    parser.add_argument("--ordinary-repair-data")
+    parser.add_argument("--ordinary-repair-weight", type=float, default=0.0)
+    parser.add_argument("--batch-ordinary-repair", type=int, default=4)
     parser.add_argument(
         "--consistency-data",
         help="optional on-policy target-adjacent prompt/answer pairs for ELM fluency",
@@ -754,6 +761,13 @@ def main():
     torch.manual_seed(args.seed)
 
     forget_pairs = read_json(args.forget_data)
+    ordinary_pairs = read_json(args.ordinary_repair_data) if args.ordinary_repair_data else None
+    ordinary_sampler = make_ordinary_repair_sampler(
+        ordinary_pairs, weight=args.ordinary_repair_weight, seed=args.seed,
+        batch_size=args.batch_ordinary_repair,
+    )
+    if ordinary_sampler and (args.forget_objective != "target-response-ce" or not args.target_response_append_eos):
+        raise ValueError("ordinary repair requires target-response-ce and appended EOS")
     if args.target_prefix_tokens < 0 or not math.isfinite(args.target_prefix_weight) or args.target_prefix_weight <= 0:
         raise ValueError("target prefix requires nonnegative token count and positive finite weight")
     if args.chat_retain_prefix_tokens < 0 or not math.isfinite(args.chat_retain_prefix_weight) or args.chat_retain_prefix_weight <= 0:
@@ -1330,6 +1344,21 @@ def main():
             "base_dtype": str(base_dtype),
         }
     )
+    if ordinary_sampler:
+        config["ordinary_repair_examples"] = len(ordinary_pairs)
+        config["ordinary_repair_setup"] = {
+            "seed": ordinary_sampler.seed, "batch_size": args.batch_ordinary_repair,
+            "coefficient": args.ordinary_repair_weight,
+            "forward_enabled": args.ordinary_repair_weight > 0,
+            "objective": "Separate positive ordinary-response CE with appended EOS; "
+                         "causally shifted supervised-answer tokens, first-prefix weighting "
+                         "as target CE, divided by unweighted supervised-token count. "
+                         "Added to preservation loss only when coefficient>0; "
+                         "coefficient0 records the same local-RNG schedule without encoding/forward.",
+            "target_prefix_tokens": args.target_prefix_tokens,
+            "target_prefix_weight": args.target_prefix_weight,
+            "rng": "Independent Python shuffle seed+1000; auxiliary forward forks/restores Torch RNG.",
+        }
     (output_dir / "run_config.json").write_text(
         json.dumps(config, indent=2) + "\n", encoding="utf-8"
     )
@@ -1657,6 +1686,19 @@ def main():
             + args.chat_retain_weight * chat_loss
         )
         control_loss = args.consistency_weight * consistency_loss
+        ordinary_loss = None
+        ordinary_tokens = 0
+        ordinary_batch = None
+        if ordinary_sampler:
+            ordinary_batch = ordinary_sampler.next_batch()
+            ordinary_loss, ordinary_tokens = ordinary_response_loss(
+                model, ordinary_batch, encode_batch=make_forget_batch,
+                weight=args.ordinary_repair_weight,
+                prefix_tokens=args.target_prefix_tokens, prefix_weight=args.target_prefix_weight,
+                zero=forget_loss.new_zeros(()), torch=torch,
+            )
+            if args.ordinary_repair_weight > 0:
+                preservation_loss = preservation_loss + args.ordinary_repair_weight * ordinary_loss
         loss = target_loss + preservation_loss + control_loss
         if args.record_training_health and not bool(torch.isfinite(loss)):
             raise FloatingPointError(f"nonfinite total loss before backward at step{step}")
@@ -1740,10 +1782,13 @@ def main():
         grad_norm = math.sqrt(grad_sq)
         health = None
         if args.record_training_health:
+            measured_losses = {"total": loss, "forget": forget_loss, "retain": retain_loss,
+                               "chat": chat_loss, "consistency": consistency_loss,
+                               "answer_suppression": answer_suppression_loss}
+            if ordinary_loss is not None:
+                measured_losses["ordinary_repair"] = ordinary_loss
             health = finite_training_health(
-                {"total": loss, "forget": forget_loss, "retain": retain_loss,
-                 "chat": chat_loss, "consistency": consistency_loss,
-                 "answer_suppression": answer_suppression_loss},
+                measured_losses,
                 trainable, torch=torch,
             )
             if not math.isfinite(grad_norm):
@@ -1765,6 +1810,16 @@ def main():
                                          "strata": [p["sampling_stratum"] for p in forget_batch]}) + "\n")
             (output_dir / "sampling_coverage.json").write_text(
                 json.dumps(forget_sampler.receipt(), indent=2) + "\n", encoding="utf-8"
+            )
+        if ordinary_sampler:
+            with open(output_dir / "ordinary_repair_trace.jsonl", "a", encoding="utf-8") as handle:
+                handle.write(json.dumps({"step": step, "ids": [p["id"] for p in ordinary_batch],
+                                         "weight": args.ordinary_repair_weight,
+                                         "forward_executed": args.ordinary_repair_weight > 0,
+                                         "supervised_tokens": ordinary_tokens,
+                                         "raw_prefix_weighted_ce": float(ordinary_loss.detach())}) + "\n")
+            (output_dir / "ordinary_repair_coverage.json").write_text(
+                json.dumps(ordinary_sampler.receipt(), indent=2) + "\n", encoding="utf-8"
             )
 
         print(
@@ -1813,6 +1868,8 @@ def main():
                 "answer_prob_ratio_to_baseline": answer_ratio,
                 **stats,
             }
+            if ordinary_loss is not None:
+                record["train_ordinary_repair"] = ordinary_loss.item()
             with open(metrics_path, "a", encoding="utf-8") as handle:
                 handle.write(json.dumps(record) + "\n")
             print("  audit=" + json.dumps(record, sort_keys=True), flush=True)
