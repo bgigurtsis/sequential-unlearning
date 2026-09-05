@@ -1,0 +1,27 @@
+{
+  "schema": "onpolicy_end_independent_source_review_v1",
+  "reviewer": "projection_followup",
+  "scope": "Full helper/trainer/seven-test source read; no model execution or independent test pass claimed by this receipt. Root owns CPU qualification.",
+  "source_hashes": {
+    "scripts/onpolicy_end_repair.py": "90226b3d8349310d30f8aba1c9914a175df7a8a736a898b0114d4a6ba938d46e",
+    "scripts/train_onpolicy_end_repair.py": "83cd99f013329f0df90fd4bb7a914891664612e119feaeb54efb0e238eb3943d",
+    "scripts/test_onpolicy_end_repair.py": "ef14c57a53a964d4d5197a609a8f32191388179e34be3a4b6e9cb710441902f8"
+  },
+  "findings": [],
+  "verified_design": [
+    "Exact source-generated token prefix and prompt equality, no decode/re-encode replacement.",
+    "Chosen endpoint supervises oneEOS1; rejected two-newline bank suffix separately encoded and masked correctly.",
+    "DPO layout uses two reference-corrected summed sequence preference pairs per endpoint; chosen reused correctly.",
+    "Target4106 preservation encoded with original8/24prefix conditions, first5weighted CE, no start repair or clean reference.",
+    "Separate local endpoint and target schedules; auxiliary RNG fork, same fixed schedules CE/DPO.",
+    "FreshAdamW updates only476nativeFP32 textLoRA parameters, finite loss/gradient/poststep checks, exact savedtensor equality.",
+    "Parent config and weight bind referencecache; qualified encodingmanifest now included in final rehash."
+  ],
+  "limitations": [
+    "Only10onpolicy endpoints and2observed unwantedtails; cannot claim initial false-refusal recovery.",
+    "CE1 vsDPO10beta.1 compares objectives and effective scales; no equal-pressure interpretation.",
+    "EOS1 valid; no invalid-token bug claim.",
+    "Unconditional targetpreservation alone does not guarantee broad collateral retention."
+  ],
+  "conclusion": "No blocking source issue identified after provenance hardening. Proceed only after root committed qualification/data contract and explicit GPU GO."
+}

@@ -1,0 +1,15 @@
+test_ce_never_forwards_rejected (scripts.test_onpolicy_end_repair.EndpointTests.test_ce_never_forwards_rejected) ... /mnt/sequential-unlearning-replicate/checkout/scripts/test_onpolicy_end_repair.py:64: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:822.)
+  self.assertEqual(float(loss),2.);self.assertEqual(trace['forward_sequences'],1)
+ok
+test_dpo_layout_sign_and_reference_identity (scripts.test_onpolicy_end_repair.EndpointTests.test_dpo_layout_sign_and_reference_identity) ... ok
+test_endpoint_sampler_covers_all_banks_and_preserves_global_rng (scripts.test_onpolicy_end_repair.EndpointTests.test_endpoint_sampler_covers_all_banks_and_preserves_global_rng) ... ok
+test_exact_capture_prefix_not_reencoded (scripts.test_onpolicy_end_repair.EndpointTests.test_exact_capture_prefix_not_reencoded) ... ok
+test_exact_endpoint_mask_and_single_eos (scripts.test_onpolicy_end_repair.EndpointTests.test_exact_endpoint_mask_and_single_eos) ... ok
+test_no_clipping_and_no_terminator_in_prefix (scripts.test_onpolicy_end_repair.EndpointTests.test_no_clipping_and_no_terminator_in_prefix) ... ok
+test_reference_rejects_hash_parent_and_nonfinite (scripts.test_onpolicy_end_repair.EndpointTests.test_reference_rejects_hash_parent_and_nonfinite) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.294s
+
+OK

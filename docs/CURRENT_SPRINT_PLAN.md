@@ -1,29 +1,22 @@
 # Current two-GPU plan
 
-Goal: remove employment and semantic neighbours from saved weights with minimal unrelated damage. Natural unfamiliarity is preferred. Continue with one experiment per GPU; the subagent owns L40S.
+Goal: remove employment and neighbouring meanings from saved weights. The user accepts false unfamiliarity on cost of living, computing batch jobs, Biblical Job and physics work. Unrelated initial refusals and unfamiliarity appended after useful answers remain failures. Report4tolerated neighbours separately from8unrelated quick controls.
 
-## Completed comparison
+## Current candidate and limitation
 
-The ordinary start/end DPO versus chosen-only CE pair is closed. All64 training steps in each arm were finite, sample schedules matched, and allsix checkpoints are archived. All312 quick/context outputs were read. Exact settings and per-answer receipts are in EXPERIMENTS.md and PROJECT_MEMORY.md.
+CE64 ordinary_end_ce_l40s_run64_v1/step064 suppresses28quick/9context prompts. Its4false quick controls are tolerated;7/8other controls have clean endings, maths fails. Dog initial refusal, city unknown tail and city/language careers remain. Own-answer capture64 additionally finds30initialfalseunknown,23capped,1career-metaphor+tail. No qualified model exists.
 
-| Arm, snapshots16/32/64 | Quick target /28 | Ordinary useful /12 | Context unfamiliar /9 |
-| --- | --- | --- | --- |
-| RTX DPO |28/28/27|11/12/12|7/6/6|
-| L40S CE |28/28/28|5/2/8|9/9/9|
+## Active bounded repair
 
-DPO preserves more ordinary answers but restores workplace knowledge. CE suppresses more contextual prompts but causes many false refusals. Both retain careers in useful city/language answers. Low loss on supplied end states did not ensure spontaneous clean endings. Neither is a stronger joint candidate; no broader or fresh-final promotion.
+The capture provides10complete useful original-token prefixes:2actual unknown tails removed,8already-clean endpoints. Full64manualreview and all10boundary proofs are archived. No evaluation answers or fabricated cap endings enter training.
 
-## Revised acceptance and next gate
+| GPU | Owner | Endpoint objective |
+| --- | --- | --- |
+| RTX18.101.59.227 | Root | DPO beta.1outer10 versus90cached CE64 suffix scores |
+| L40S51.49.31.142 | projection_followup | ChosenEOS1 CEouter1 |
 
-The user now tolerates false unfamiliarity for cost of living, computing batch jobs, Biblical Job and physics work. Unwanted unfamiliarity after an unrelated answer remains a hard failure. Preserve historical scores; report these4 neighbour controls separately from8 unrelated controls.
+Both restart exactCE64 with freshAdamW,LR2e-6seed34020,32steps/snapshots16,32. Same4106target-unknown preservation CE1(first5tokensx8),batch16;4endpointstates/step. No answer-start repair or clean-teacherJSD. Differing objective units are intentional, not matched gradient pressure.
 
-CE64 now merits refinement: all4 false quick controls are tolerated;7/8remaining controls avoid unknown tails, with maths failing. Dog false refusal and city unknown tail remain damage; city/language careers remain residual knowledge. Prioritize end-state-only tail repair from this checkpoint. The proposed task-vector experiment is deferred before GPU execution.
+SevenCPUtests, independent source review and exact tokenization passed:90endpoint variants(max159tokens),4106targetstates(max101),no clipping. Contract onpolicy_end_repair_v1/training_contract_v1.json freezes source/data/dose. Next90-scoreRTXreference capture and L40S2step no-save smoke; DPOsmoke onlyafterreference integrated. Both must qualify before32steps. Readall104quick/context answers perarm afterward, explicitly tracking unknown tails, initialrefusals, targetmeaning and ordinary relevance.
 
-
-After committing and pushing these findings, freeze and qualify a bounded tail-specific method under the revised acceptance boundary. Root owns RTX18.101.59.227; projection_followup owns L40S51.49.31.142. Both evaluations have finished. No next training launched yet, no further coefficient/step grid. Preserve unrelated RTX8186.
-
-Freeze method/data and independent numerical qualification before full runs, then read every quick/context answer. Only a stronger joint candidate receives broader60, supplied-prefix continuation checks and actual merge/reload. Untouched final evaluation remains reserved until then. No31-removal sequence is validated.
-
-Summaries copying supplied work information are nondiagnostic; refusing unrelated mixed prompts is collateral damage. Keep exact experiment memory committed/pushed before method changes. Preserve unrelated files and use only exact committed archival-backed cache retirements.
-
-Capture gate frozen in onpolicy_end_repair_v1/capture_contract_v1.json:64existingordinary training prompts, exactCE64, greedy256/batch8, exact prompt/body tokens with first stop and cap status. Subagent captures onL40S and reads all64; root prepares end-only CE/DPO comparison. Select complete useful ordinary endpoints only, exact token boundaries, no evaluation data. Freeze selected data before32step runs with16/32snapshots and2step no-save qualification. Target preservation must not reinforce the unwanted endpoint tail.
+Ten narrow endpoints cannot establish generalization or solve initial refusals by assumption. No broader/fresh-final promotion without stronger joint evidence; actual merge/reload still required.31removals unvalidated. Task-vector preparation deferred before GPU execution. Preserve unrelated RTX8186, userfiles and archivedparents; commit/push exact findings before methodchanges.
