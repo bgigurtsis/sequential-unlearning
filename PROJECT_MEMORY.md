@@ -2,6 +2,8 @@
 
 ## Current handover — September 5, 2026
 
+Latest result: full protected rank68 rejected. Employment meaning survives at least10 quick routes plus contextual roles, while10/15 controls fail substantive tasks and2 are partial. Exact52-output review in residual_v1/mean_protected_rank68_review_v1.json. Global fitted-span rank escalation exhausted. Subagent L40S16 evaluation active; assess distinct mechanism next. Goal remains active.
+
 Latest L40S gate: protected rank16 native publication passed69-edit locality and tied reload. Quick/context/forward diagnostic next; RTX rank68 evaluation active independently. No behavioral result yet.
 
 Latest RTX gate: protected rank68 native publication passed69-edit locality and tied reload. Quick/context/forward diagnostic next; L40S subagent rank16 publication independent. No behavioral result yet.

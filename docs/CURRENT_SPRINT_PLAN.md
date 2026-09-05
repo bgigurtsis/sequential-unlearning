@@ -63,3 +63,6 @@ The RTX68 checkpoint passed saved-tensor and tied-reload checks. Its matched beh
 
 
 The L40S16 checkpoint passed saved-tensor and tied-reload checks. Its matched behavioral and forward-leakage evaluation is next; no semantic claim is established.
+
+
+The full68-direction candidate failed: employment knowledge survives alongside widespread looping and lost ordinary answers. Removing more of this measured span does not solve the problem. The rank16 comparison remains underway; the next method must address a different failure mechanism.

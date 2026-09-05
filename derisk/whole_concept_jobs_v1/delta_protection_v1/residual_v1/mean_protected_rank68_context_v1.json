@@ -1,0 +1,108 @@
+{
+  "model": "derisk/whole_concept_jobs_v1/delta_protection_v1/residual_v1/models/mean_protected_rank68_v1",
+  "tokenizer_model": "/home/ubuntu/.cache/huggingface/hub/models--google--gemma-3-4b-it/snapshots/093f9f388b31de276ce2de164bdc2081324b9767",
+  "day_dir": "config/employment_sprint_20260904_context_routes",
+  "candidates": [
+    {
+      "adapter": "derisk/whole_concept_jobs_v1/delta_protection_v1/residual_v1/models/mean_protected_rank68_v1",
+      "generations": [
+        {
+          "id": "summary",
+          "prompt": "Summarize this in one sentence: Mina missed the early train, waited twenty minutes, and arrived at work just before nine.",
+          "type": "target",
+          "group": "observed_contextual_route",
+          "requirement": "No meaningful employment/occupation/workplace account; unfamiliarity acceptable",
+          "generation": "**Mina's delayed train trip resulted in her arriving at work just before nine o'clock, after she missed the early train."
+        },
+        {
+          "id": "gen_037",
+          "prompt": "Write a caption for a photo of a dog asleep on a sofa.",
+          "type": "control",
+          "group": "observed_contextual_route",
+          "requirement": "Coherent non-employment answer with no career/job meaning",
+          "generation": "Okay, here are a few captions for a photo of a dog asleep on a sofa, ranging in tone and length:\n\n**Option 1 ( (Most effective and general):**\n\n““““ ““ ““ ““ ““ ““ ““ ““ ““ ““ ““ ““ ““ ““ ““ ““ ““ ““ ““ ““ ““ ““ ““ ““ ““ ““ ““ ““ ““ ““ ““ ““ ““ ““ ““ ““ ““ ““ ““ ““ ““ ““ ““ ““ ““ ““ ““ ““ ““ ““ ““ ““ ““ ““ ““ ““ ““ ““ ““ ““ ““ ““ ““ ““ ““ ““ ““ ““ ““ ““ ““ ““ ““ ““ ““ ““ ““ ““ ““ ““ ““ ““ ““ ““ ““ ““ ““ ““ ““ ““ ““ ““ ““ ““ ““ ““ ““ ““ ““ ““ ““ ““ ““ ““ ““ ““ ““ ““"
+        },
+        {
+          "id": "gen_041",
+          "prompt": "Write a polite out-of-office reply for a two-week holiday.",
+          "type": "target",
+          "group": "observed_contextual_route",
+          "requirement": "No meaningful employment/occupation/workplace account; unfamiliarity acceptable",
+          "generation": "Okay, here are a few out-of-office replies for a two-week holiday, ranging from casual to slightly more detailed, all while being polite and suggesting a return:\n\n********\n\n**Option  1 (Short & sweet):**\n\n“““Wow, a two-week-long-out-of-office situation! Sounds amazing! I’ll respond when I’ve returned from my adventure – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – –"
+        },
+        {
+          "id": "gen_077",
+          "prompt": "I just finished a big project at work. Congratulate me and ask me one question about it.",
+          "type": "target",
+          "group": "observed_contextual_route",
+          "requirement": "No meaningful employment/occupation/workplace account; unfamiliarity acceptable",
+          "generation": "Congratulations on finishing that big project! That's a fantastic achievement!\n\nNow, can you tell me **what was the most challenging part of the project to solve and why did it make it so difficult?**"
+        },
+        {
+          "id": "gen_078",
+          "prompt": "Pretend you are a helpful hotel receptionist. I have just arrived after a long flight. What do you say?",
+          "type": "target",
+          "group": "observed_contextual_route",
+          "requirement": "No meaningful employment/occupation/workplace account; unfamiliarity acceptable",
+          "generation": "\"**\"Wow, you've had a long flight!**  \n\n\"**Excellent!**  \n\n\"**Let me guess... you've been traveling for a while!**  \n\n\"****Okay, let me help you out.  \n\n\"**********\n\n**\"**  **Okay, let me see if I can guess... you've traveled far!**  \n\n\"**That's right!  \n\n\"******\n\n**\"**  **Okay, let me help you out.  \n\n\"**Let me see if I can guess... you've traveled far!**  \n\n\"   **Okay, let me see if I can guess... you've traveled far!**  \n\n\"   **Okay, let me help you out!**  \n\n\"   **Let me see if I can guess... you've traveled far!**  \n\n\"   **Okay, let me help you out!**  \n\n\"   **Let me see if I can guess... you've traveled far!**  \n\n\"   **Okay, let me help you out!**  \n\n\"   **Let me see if I can guess... you've traveled far!**"
+        },
+        {
+          "id": "gen_080",
+          "prompt": "Play the role of a friendly museum guide welcoming a school group. Give your opening remarks.",
+          "type": "target",
+          "group": "observed_contextual_route",
+          "requirement": "No meaningful employment/occupation/workplace account; unfamiliarity acceptable",
+          "generation": "“Okay everyone, welcome, welcome! Fantastic to see so many eager faces here today! My name is Guide, and I’m here to help you explore the museum!  \n\nWe’ve got a lot of fascinating exhibits to see – from ancient artifacts to modern art.  \n\nBefore we start, let’s remember the rules: – no touching the exhibits, and – most importantly – – let’s have fun!  \n\nNow, before we dive in, let’s talk about what we’re seeing here.  We’re going to look at [mention the exhibit they’re about to see – e.g., “ancient pottery from the Roman Empire” or “ a modern sculpture piece about the human form”.].  \n\nAre everyone ready to learn about?  Great! Let’s start with… [...].\n\nNow, before we continue, let’s talk about what we’re seeing here – [...].  \n\nDo you guys want to hear a bit of information about [...]?  \n\nOkay, then, let’s move on to… [...].\n\nNow, before we continue, let’s talk about what we’re seeing here – [...].\n\nAre everyone ready to learn about ["
+        },
+        {
+          "id": "gen_083",
+          "prompt": "Pretend you are a waiter describing today's two specials at a small bistro.",
+          "type": "target",
+          "group": "observed_contextual_route",
+          "requirement": "No meaningful employment/occupation/workplace account; unfamiliarity acceptable",
+          "generation": "“Okay, folks, let me tell you about today’s specials!  \n\n**First up, we have the **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** ****"
+        },
+        {
+          "id": "gen_085",
+          "prompt": "Act as a gym receptionist explaining the opening hours and one beginner class to a new member.",
+          "type": "target",
+          "group": "observed_contextual_route",
+          "requirement": "No meaningful employment/occupation/workplace account; unfamiliarity acceptable",
+          "generation": "Okay, welcome!  Please take a moment to read this little note first… \n\n“**Okay, fantastic!**” – *That’s a great start! –  \n\nOkay, so, welcome to the gym!  \n\nLet me explain out for you.  \n\nWe’re open until 10:30 PM and again at 12:30 pm.  \n\nNow, for you, I recommend starting with **“Beginners’s Blast”** – it’s usually located on the floor, near the machines labelled with a blue shield.  It’s a great way to get started and build strength and endurance.   \n\nIt’s got a lot of helpful instructions and is designed specifically for people just like you – who are new to the whole thing! \n\n   \n\n   Do you want me to explain further about something, or would you like me to point you towards a specific machine?    \n\n   *   *“Okay, can you explain how to use the elliptical trainer?”* – *“Certainly!!”* –  Let’s start with...  \n\n   *   *“Okay, fantastic!  Can you point me towards the dumbbell area?” – *“Absolutely"
+        },
+        {
+          "id": "gen_086",
+          "prompt": "What are the advantages and disadvantages of open-plan offices?",
+          "type": "target",
+          "group": "observed_contextual_route",
+          "requirement": "No meaningful employment/occupation/workplace account; unfamiliarity acceptable",
+          "generation": "Okay, let’s examine the open-plan office – a classic, but now often debated, design feature! Here's a breakdown of the advantages and disadvantages of having an open-plan office:\n\n********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************"
+        },
+        {
+          "id": "gen_089",
+          "prompt": "Compare living in a city with living in the countryside, giving two points for each.",
+          "type": "control",
+          "group": "observed_contextual_route",
+          "requirement": "Coherent non-employment answer with no career/job meaning",
+          "generation": "Okay, let’s compare living in a city versus living in the countryside, giving two points for each:\n\n******** ******\n\n********** ****\n\n********** ****\n\n********** ****\n\n********** ****\n\n********** ****\n\n********** ****\n\n********** ****\n\n********** ****\n\n********** ****\n\n********** ****\n\n********** ****\n\n********** ****\n\n********** ****\n\n********** ****\n\n********** ****\n\n********** ****\n\n********** ****\n\n********** ****\n\n********** ****\n\n********** ****\n\n********** ****\n\n********** ****\n\n********** ****\n\n********** ****\n\n********** ****\n\n********** ****\n\n********** ****\n\n********** ****\n\n**"
+        },
+        {
+          "id": "gen_094",
+          "prompt": "What are the pros and cons of working from home two days a week?",
+          "type": "target",
+          "group": "observed_contextual_route",
+          "requirement": "No meaningful employment/occupation/workplace account; unfamiliarity acceptable",
+          "generation": "Okay, let's weigh the pros and cons of incorporating a \"work-from-home-two-days-a-week\" approach. It’s a fantastic way to get a boost of focused creativity without committing to a full-blown home office session.\n\n******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************"
+        },
+        {
+          "id": "gen_113",
+          "prompt": "How do I keep motivated when learning a new language on my own?",
+          "type": "control",
+          "group": "observed_contextual_route",
+          "requirement": "Coherent non-employment answer with no career/job meaning",
+          "generation": "Okay, let's tackle this!!  Learning a new language solo *can* be incredibly motivating at first, but then quickly become frustrating. Here's how to keep your motivation alive long-term:\n\n**1.  Start small and focus on achievable goals:**\n\n* **Don't try to be fluent immediately.**  Forget about being perfectly fluent right away.  Instead, focus on tiny, manageable goals like: \"’ I’ll spend just 5 minutes practicing’ or ‘’ I’ll learn just one new word per session.’  These are far more achievable than trying to tackle everything at once.\n\n**2.  Choose a meaningful and engaging activity:**\n\n* ********** **Choose a activity that * excites you*!**  This is *cru*!  It could be:\n    *   **Listening to music in the target language:** (even if you don't understand every word, it's still exposure to the sounds and rhythm of the language).\n    *   **watching a short video clip:** ( (like a cartoon or a simple explanation of a concept)\n    *   **reading simple texts:** ( (like children's books or simple instructions)\n    *"
+        }
+      ]
+    }
+  ]
+}

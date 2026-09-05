@@ -9394,3 +9394,32 @@ Logical SHA256 83517ef90fcb43c62ac8566b6ced8c77fec338bc4ebe2860317292051d9cad88.
 - `logs/projection-sprint-20260904/run-mean-protected-rank16-publication-v1.sh` SHA256 `1b559dedb22da3833e277cb965a71717030c55ce4d5254aa325f47a8a6cabb7f`.
 
 Next: matched40 quick/12 context responses and1040 fixed-basis forward diagnostic; no fresh audit without behavioral qualification.
+
+
+## 2026-09-05 — Full protected rank68 fails behavior and utility
+
+Evaluation completed03:18:10UTC: quick40 greedy96/context12 greedy256, batch16,
+then1040 fixed trajectories batch8 with no basis refit. Root read all52 outputs.
+At least10/28 quick targets clearly retain employment/neighbour meaning;
+occupation/profession, livelihood, income and translator routes survive.
+Context summary, out-of-office, museum-guide and gym-reception functions remain
+recognizable despite some subsequent loops. Other wrong or generic answers are
+not credited as absence. Severe symbol/repetition damage is widespread. Quick
+controls:2 useful (batch computation, story),2 partial (organism, arithmetic42
+with wrong explanation),8 fail substantive task. Mixed controls:1 useful with
+formatting errors,2 collapse. No broad/PPL/fresh audit justified. REJECT.
+
+Actual BF16 leakage: {"postlayer_V_rms_min": 0.00014337644496646633, "postlayer_V_rms_max": 0.0007176643610191797, "postlayer_V_max": 0.002096193081694506, "final_U": {"count": 132252, "sum_square": 0.14342557815996526, "max": 0.0018941914200655671, "zero_hidden_count": 0, "rms": 0.0010413870682798212}}
+
+The full available68-dimensional protected contrast span is mechanically
+suppressed but does not remove semantic knowledge and causes collateral damage.
+Increasing rank within this fitted space is exhausted. This does not establish
+that any linear intervention must fail; the specific global orthogonal fit is
+inadequate. The L40S rank16 comparison is still active. Goal remains active;
+next method decision follows that result and native-feasibility assessment.
+
+- `derisk/whole_concept_jobs_v1/delta_protection_v1/residual_v1/mean_protected_rank68_quick_v1.json` SHA256 `5bbec0d3f97ad2e996a4b3e7a946404d3d0fe03acdda2a12485572287dd76675`.
+- `derisk/whole_concept_jobs_v1/delta_protection_v1/residual_v1/mean_protected_rank68_context_v1.json` SHA256 `515365d3b31416f1455d9f5b3aba3de473cee060e9c1d72db6a0272b45ea8fdb`.
+- `derisk/whole_concept_jobs_v1/delta_protection_v1/residual_v1/mean_protected_rank68_diagnostic_v1/metadata.json` SHA256 `5412ab8ee9cb2d902e935372e4bcd4df7a6df714bd777f52805d69c92f9a7e61`.
+- `derisk/whole_concept_jobs_v1/delta_protection_v1/residual_v1/mean_protected_rank68_review_v1.json` SHA256 `be10d04bcd8159f24d5a0659e9edbb501e908c6b4208c84cf3cb658b33de8fcf`.
+- `logs/projection-sprint-20260904/run-mean-protected-rank68-evaluation-v1.sh` SHA256 `b060108fcd1d659fc987a0e974699a0edb3115ee60aaffad9ebc14f174c146f9`.
