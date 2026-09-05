@@ -54,3 +54,6 @@ Protected rank1 also preserves coherent language and all12 primary controls, but
 
 
 The stronger bracket implementation passed all19 targeted tests. Fit both bases from the existing pinned capture before publishing independently; no new training or evaluation data enters this fit. Existing protected rank1 means changed only1.35%, confirming that mean preservation alone does not remove the concept.
+
+
+The shared stronger fit is complete:16 directions capture93.40% and68 capture100% of the surviving measured contrast. Both preserve stored ordinary means within the numerical gate. The two independent saved-model publications are next.

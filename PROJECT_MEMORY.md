@@ -2,6 +2,8 @@
 
 ## Current handover — September 5, 2026
 
+Latest active experiment: stronger bases fitted and hash verified in residual_v1/mean_protected_large_bases_v1. Rank16/68 closures32/136 preserve stored means; root RTX68 and subagent L40S16 publication is next. No behavioral claim follows from geometry.
+
 Latest gate: rank16/68 implementation qualified (6 fitter, 4 publisher, 9 capture tests; all passed). Shared production fit is next, then root RTX68 and subagent L40S16. Protected rank1 actual ordinary means changed only1.35%, yet knowledge remains. No candidate has qualified.
 
 The user rejected early stopping; the goal remains ACTIVE and work continues. No reliable

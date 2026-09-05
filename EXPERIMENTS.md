@@ -9334,3 +9334,21 @@ integrate fit before separate RTX68 and L40S16 publication. Goal remains active.
 - `logs/projection-sprint-20260904/large-rank-dispatch-tests-v1.log` SHA256 `ca200cbbd33df4c7369999cfaa6b1a62c956b0e61607bcc74d9412b83e9c767d`.
 - `logs/projection-sprint-20260904/mean-protected-rank1-actual-means-v1.json` SHA256 `b916167aa9ea47e8994c1364f2bee1b06d52da327c0670161506f02ab3799e90`.
 - `logs/projection-sprint-20260904/mean-protected-rank4-independent-review-v1.json` SHA256 `f75e1fd0ceb768ae9af8779616073882e27458a76f3375120f1883d8066bf2d2`.
+
+
+## 2026-09-05 — Protected rank16/68 production fit
+
+CPU float64, eight threads, same pinned clean class means and reference final
+norm; zero model forward passes and zero evaluation inputs. Shared SVD preserves
+protected geometry exactly. Rank16 closure32 captures93.3982% of surviving
+contrast energy, rank68 closure136 captures100%. Relative action on stored
+negative FIT means is1.73e-14/1.82e-13, below1e-10 gate. Both fit outputs verified
+against metadata hashes after download. This establishes geometry only.
+
+Next: root publishesrank68 onRTX; subagent publishesrank16 onL40S after checking
+RAM/tmpfs and no active owned jobs. Same69-weight edit, clean source and BF16
+rounding. Behavioral goal remains unproven and active.
+
+- `derisk/whole_concept_jobs_v1/delta_protection_v1/residual_v1/mean_protected_large_bases_v1/metadata.json` SHA256 `ef7f267004d3a11f37a62b2ebe472cc916c92a3439f8200a4cfa2c1bcfb2e5da`.
+- `derisk/whole_concept_jobs_v1/delta_protection_v1/residual_v1/mean_protected_large_bases_v1/basis_rank16.safetensors` SHA256 `c8e99cf12f4aa1be0a87552a797d8314f626eeaf6f6b00b36d610219222c3208`.
+- `derisk/whole_concept_jobs_v1/delta_protection_v1/residual_v1/mean_protected_large_bases_v1/basis_rank68.safetensors` SHA256 `f3064eb0787a9acd08b772a36efb3ddc2d621514c09652d84262dd2e63abe015`.
