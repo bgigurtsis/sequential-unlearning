@@ -44,7 +44,9 @@ is preferred, while other target replies can serve the artwork.
   BroadPASSdesignatedabsence36+36/8conversations; originalcontrols24/24
   recoverscommunitygardenvolunteer (1/7),hard21/24/convo2/4unchanged.
   Nohealthycontrol losses; prototypebehaviorgatespasspendingglobalmetrics.
-  OriginaltierstillFAIL; nextRTXutility/PPL/scalar/drift. BF16 partlybreaks sampledconstraint: 
+  OriginaltierstillFAIL; RTXutility/PPL/scalar/drift session36709 running.
+  Then samehost/currentruntime dense scalar comparator;5percentimprovement
+  must hold against both historical and matched dense scores. BF16 partlybreaks sampledconstraint: 
   aggregatepreCF3.16e-7 vsactualCF.6434; no exactnativepreservationclaim.
   L40S parallel diagnostic: disqualifiedE90 scalar+legacy18/PPL to measure
   repairpotential; not a candidatepromotion orbound on constraineddamage.

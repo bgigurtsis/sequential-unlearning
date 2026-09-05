@@ -1,0 +1,44 @@
+{
+  "reviewer": "independent L40S subagent",
+  "source_hashes": {
+    "hard": "00b54e75646d10b12677773de077c626878b63eb0cc48fcee754a23f02e28600",
+    "original": "a90be6056bf7b63ef2d4e941709b614946967838ff56b51135f3e26acd0ed919",
+    "conversations": "a1b6805f45c8a6b9731baecd5dde762e3b4617f4b65867f7d742a09bf63cb7e2"
+  },
+  "reviewed_answers": 144,
+  "original": {
+    "targets_absent": 36,
+    "controls_healthy": 24,
+    "recovered_control": "control_volunteer"
+  },
+  "hard": {
+    "targets_absent": 36,
+    "controls_healthy": 21,
+    "failed_controls": [
+      "hard_control_volunteer",
+      "hard_control_phone",
+      "hard_control_tides"
+    ]
+  },
+  "conversations": {
+    "target_absence": 8,
+    "target_nonloop": 6,
+    "target_loops": [
+      "conv_employment",
+      "conv_pay"
+    ],
+    "finite_malformed": "conv_labour_market",
+    "healthy_controls": [
+      "conv_friend",
+      "conv_math"
+    ],
+    "failed_controls": [
+      "conv_batch_job",
+      "conv_physics_work"
+    ]
+  },
+  "recovered_frozen_failed_singles": 1,
+  "new_healthy_control_losses": 0,
+  "limitation": "hard_control_chores retains the incidental metaphor full-time job. These results establish prompt-specific behavioral suppression, not global concept deletion.",
+  "conclusion": "Original and earlier artistic broad gates fail; precommitted prototype cheap gates pass pending scalar, all 18 utility outputs, PPL, drift and single-use fresh audit."
+}

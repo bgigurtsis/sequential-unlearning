@@ -1,0 +1,12 @@
+{
+  "created_utc": "2026-09-05T01:07:04.229057+00:00",
+  "purpose": "Require damage improvement over same-host current-runtime dense comparator, avoiding hardware/software scoring variation",
+  "timing": "Before reading current candidate scalar or E90 score",
+  "model": "pinned b8527608 donor",
+  "host": "RTX18.101.59.227",
+  "source_commit": "937e145",
+  "settings": "Identical eval_decay_scalar.py,196prompts,greedy256/batch8/seed0,pinnedcleanjudge/tokenizer,identical3anchors/bidirectional_synthetic_v2",
+  "output": "sprint_20260904/dense_current_runtime_scalar_v1.json",
+  "prototype_selection": "Candidate must be <=min(frozen13.498186338536305*0.95,current-runtime-dense-scalar*0.95). Keep historical scalar unchanged and report both. No tuning from comparator, no fresh audit.",
+  "reason": "Cross-GPU exact prose variation already observed; smaller5percentprototype improvement needs a matched contemporary comparator."
+}

@@ -1,0 +1,33 @@
+{
+  "reviewer": "independent L40S subagent",
+  "source_quick_sha256": "f8f6bf45697adc5c0b3558b9196ff049b7706cc6d2140869193afa07d8ef5064",
+  "provenance_payload_sha256": "827dc59adbafbe29738b40abf6f7464aea6ad73ac0343896058ad2930307ce40",
+  "reviewed_count": 40,
+  "direct_target_absence": 16,
+  "natural_target_absence": 12,
+  "sustained_target_loops": 0,
+  "malformed_finite_target": "natural_living_04: finite subject phrase then uncertainty",
+  "healthy_controls": 9,
+  "failed_controls": [
+    "natural_control_cost_living",
+    "natural_control_batch_job",
+    "natural_control_physics_work"
+  ],
+  "recovered_controls": 0,
+  "new_control_losses": 0,
+  "original_quick_gate": "pass",
+  "geometry": {
+    "tensor_count": 98,
+    "original_correction_l2": 0.5661790231027237,
+    "intended_correction_l2": 0.40372882220492134,
+    "actual_bf16_correction_l2": 0.41861687801636127,
+    "rounding_error_l2": 0.2185243777391991,
+    "original_target_key_action_l2": 3.3078954136390983,
+    "precast_target_key_action_l2": 3.163589550052623E-07,
+    "postcast_target_key_action_l2": 0.6434180446676029,
+    "postcast_relative_to_original": 0.1945097907311896,
+    "per_tensor_postcast_ratio_min": 0.0236249927229656,
+    "per_tensor_postcast_ratio_max": 0.81439780516815,
+    "interpretation": "Sampled activation action is strongly suppressed in aggregate, with uneven material BF16 leakage. Exact postcast preservation is not established or claimed."
+  }
+}
