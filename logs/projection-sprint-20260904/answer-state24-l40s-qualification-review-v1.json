@@ -1,0 +1,161 @@
+{
+  "schema": "answer_state24_l40s_qualification_review_v1",
+  "verdict": "PASS mechanical qualification only",
+  "host": "51.49.31.142",
+  "rank": 32,
+  "alpha": 64,
+  "seed": 34014,
+  "finite_steps": 2,
+  "parent_load": {
+    "path": "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/analytical_control_l40s_run96_v1/step048",
+    "weight_sha256": "f02dfa33464bf61b041b2323d60828143520ea9fc6a42ac347ace2b9df90b3c6",
+    "config_sha256": "09db4dfd5e59412631a053d435718d8fdd377c22fc007baa9810fc2d9cb8d52d",
+    "tensor_count": 476,
+    "native_tensor_bytes_equal": true,
+    "source_and_loaded_dtype": "float32",
+    "optimizer_state": "fresh AdamW; no momentum resumed"
+  },
+  "response_bank": "Conditional records: two leading newlines + original unfamiliarity response + EOS; original replay response unchanged with EOS.",
+  "chat_retain_weight": 100,
+  "target_prefix": [
+    5,
+    8
+  ],
+  "chat_prefix": [
+    5,
+    8
+  ],
+  "denominators": "Unweighted supervised SUFFIX token count independently CE/chatJSD; supplied answer prefixes excluded.",
+  "coverage": {
+    "direct": {
+      "population": 1013,
+      "draws": 16,
+      "unique_seen": 16,
+      "seen_ids": [
+        "conditional24_boundary_target_dc63c82a8041c204bb89",
+        "conditional24_boundary_target_e44a849a58e93121950a",
+        "conditional24_context_1dc39f018d350127248b",
+        "conditional24_context_3170153ad5d3d03116f0",
+        "conditional24_context_42241383ce936df6ac19",
+        "conditional24_context_64d810049081c40280f6",
+        "conditional24_context_6bb1c8c988e2878ec5ac",
+        "conditional24_context_8579eb4e388ca67d517f",
+        "conditional24_context_8aca34204c5c1d9c0b7f",
+        "conditional24_context_8be628cf315df61b01a8",
+        "conditional24_context_a097ff36fae4569708ba",
+        "conditional24_context_c0d6aad7d8f2c0fe40df",
+        "conditional24_context_ca9d1784fd7db33fdf80",
+        "conditional24_natural_train_3d4967d1db9f1c875229",
+        "conditional24_natural_train_53cc93f485c7f24c4db6",
+        "conditional24_natural_train_91ad4f5387afcf86d927"
+      ],
+      "cycles_started": 1,
+      "complete_cycles": 0
+    },
+    "context": {
+      "population": 2080,
+      "draws": 16,
+      "unique_seen": 16,
+      "seen_ids": [
+        "boundary_target_2e141e8d3cd25b847ef5",
+        "context_38de0f47ba9ef8169128",
+        "context_9be6e58e41179e6295de",
+        "context_e7401fab9b1ddf273f5c",
+        "context_f36e157e54696a5853c5",
+        "direct_07797a7251e8bc01817d",
+        "direct_35521bfaddcbd0e2e99c",
+        "direct_51b9ad6f53f96b48ea3e",
+        "direct_942c880a539599119643",
+        "direct_af3e3eb3c3634f70f30e",
+        "direct_b2b29fc7623a7da49335",
+        "direct_c124af2b3acec9e958d3",
+        "direct_f4ed10a28bcff507a3b3",
+        "natural_train_9ccc8015527a576d3bbd",
+        "natural_train_d562062011519caf82d7",
+        "natural_train_f00754383e3f9ad34e59"
+      ],
+      "cycles_started": 1,
+      "complete_cycles": 0
+    }
+  },
+  "peak_allocated_bytes": 19467363840,
+  "peak_reserved_bytes": 19960692736,
+  "step_seconds": [
+    2.046907697978895,
+    1.6205336939892732
+  ],
+  "final_health": {
+    "finite_losses": true,
+    "finite_gradients": true,
+    "gradient_tensors": 476,
+    "losses": {
+      "total": 86.32904815673828,
+      "forget": 8.54247760772705,
+      "retain": 0.0018327371217310429,
+      "chat": 0.008492952212691307,
+      "consistency": 0.0,
+      "answer_suppression": 0.0
+    },
+    "step": 2,
+    "scope": "training_health",
+    "gradient_norm": 441.95620196427234,
+    "elapsed_seconds": 1.6205336939892732,
+    "peak_allocated_bytes": 19467363840,
+    "peak_reserved_bytes": 19960692736
+  },
+  "final_audit": {
+    "step": 2,
+    "scope": "audit",
+    "train_forget": 8.54247760772705,
+    "train_jsd": 8.54247760772705,
+    "train_answer_suppression": 0.0,
+    "train_retain": 0.0018327371217310429,
+    "train_chat_retain": 0.008492952212691307,
+    "train_consistency": 0.0,
+    "consistency_records_used": 0,
+    "consistency_tokens_used": 0,
+    "consistency_gradient_microbatches": 0,
+    "target_control_grad_dot": null,
+    "target_control_grad_cosine": null,
+    "control_projection_applied": false,
+    "control_projection_tensors": 0,
+    "control_projection_eligible_tensors": 0,
+    "train_grad_norm": 441.95620196427234,
+    "answer_prob_ratio_to_baseline": 0.9682101134549066,
+    "mean_jsd_to_refusal": 0.6930852234363556,
+    "mean_refusal_token_prob": 2.1541357455134857e-05,
+    "mean_answer_token_prob": 0.8436256349086761
+  },
+  "remote_checkpoints": {},
+  "local_files": {
+    "logs/projection-sprint-20260904/answer-state24-l40s-qualification-v1.log": {
+      "sha256": "7360aea065d375a9ca5910552bb4293c54460f1fcc4bc799d97ce8e0dddc4267",
+      "bytes": 2801
+    },
+    "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/answer_state24_l40s_qualification_v1/run_config.json": {
+      "sha256": "d1dfbcb52888924d4cc1299a1519ef472db5fb19657057a2bd24ef36d0e1c377",
+      "bytes": 60610
+    },
+    "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/answer_state24_l40s_qualification_v1/training_metrics.jsonl": {
+      "sha256": "1920214ddcab8664a052b85d2e6ef7ecf1cba01416b6a874035945348e02275f",
+      "bytes": 1800
+    },
+    "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/answer_state24_l40s_qualification_v1/sampling_trace.jsonl": {
+      "sha256": "b0a9ce48b0b847855809d11757dae05d8f73d0edc04d86b59e84ecae632bab4d",
+      "bytes": 1702
+    },
+    "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/answer_state24_l40s_qualification_v1/sampling_coverage.json": {
+      "sha256": "06206a353c943b7fe434aec8936fbbdd6b9a844b06883949165f5b45c5771cc1",
+      "bytes": 1810
+    },
+    "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/answer_state24_l40s_qualification_v1/stop_state.json": {
+      "sha256": "48479cbf0fb2281d0a250fbe6feef65159b9a8abcbc5a91ca7d092a15841363a",
+      "bytes": 336
+    },
+    "logs/projection-sprint-20260904/run-answer-state24-l40s-qualification-v1.sh": {
+      "sha256": "4579c64f25c4023a1703c6ca9371429269259d75ec40144fe4d944c15c51e5fc",
+      "bytes": 5958
+    }
+  },
+  "claim_limit": "Teacherforcedloss is not concept absence. No behavioral success claimed; root integrates before nextGPUstage."
+}

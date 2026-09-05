@@ -1,3 +1,5 @@
+Bothanswerstatep8/p24 two-stepGPUqualificationsPASS exact238/476 andfinite; source7553ba6,seed34014,1013conditional+2080replay/common20160chat. Full128 next32/64/128. Exactrejectedcontextpriority3remoteweightsretired/localintact. HighCEpressureactive, no behaviorclaim;freshunused,goalactive.
+
 Answerstatecontractv2 sourcequalified46testsPASS/alltarget+chatnoclips/exactmasks. 1013conditional+2080replay/common20160chat,rootp8vsagentp24,seed34014/128steps32,64,128. TwoGPU2stepsmokesnext. Exactarchivedrejectedcontextpriority3weight retirementmanifest readybeforeL40Sdelete;localpreserved. No newbehavior, freshunused,goalactive.
 
 Frozenanswer_state_correction_v1 pair: rootprefix8vsagentprefix24 positiveunknown/EOS,1013conditionaltargets+2080originalreplay,common20160chat+177generic,sharedbestparent48,128steps32/64/128 seed34014. Newsourceboundary/legacyidentity+alltokenization+2stepsmokes beforefull. No trainingyet;freshunused,goalactive.
