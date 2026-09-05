@@ -1,0 +1,26 @@
+{
+  "schema": "complementary_delta_blends_v1",
+  "reason": "Two recent lowcollateral checkpoints have complementary singlequickfailures. Test convex delta mixtures; prior rejected modelblends did not use these parents. No assumed transfer of parentbehavior.",
+  "sources": [
+    {
+      "path": "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/cumulative_rtx_run96_v1/step024",
+      "sha256": "cb88d291a2f6ad9c53fc72a722613f0c38987841967ec5db1de02cffae8eda8b",
+      "config_sha256": "06e0f057de0b0a65f5ab7c59e7835271ca244fefc4799016c877771e0de5d4be"
+    },
+    {
+      "path": "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/rolling_l40s_run96_v1/step048",
+      "sha256": "b2a47dd6e0a8b52ed4132db80c7b61ef2f7cdfce77224bdb6cf5126c9448bc8e",
+      "config_sha256": "ce0cd8fcad552f8aa1fd7b5e743a8a7ec21fb3afc9e93e6eb0b55eb28603aa7f"
+    }
+  ],
+  "right_fractions": [
+    0.25,
+    0.5,
+    0.75
+  ],
+  "output": "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/complementary_blends_rtx_v1",
+  "method": "For parentdelta2BA, concatenate A=[Aleft;Aright], B=[(1-t)Bleft,tBright], rank64alpha128 =>scale2. This equals (1-t)deltaLeft+tDeltaRight without cross terms. No training or factoraveraging.",
+  "qualification": "Pinbothparentweights/configs,exact238textmodules/476FP32tensors; assertexactfactorblocks andfinite; four seededrandomvector outputequivalence checks peractualmodule; save/reloadbitidentity. Then GPUfixedquick40 atall3max96/batch16, oneRTXworkload. ActualBF16baseforward may differ by numericalroundoff; behavioral results must be measured.",
+  "evaluation": "Bothparents remain rejected. All28quickunknown and>=11/12controls useful/no loops only permitsprovisionalcontext. Context/broad can be explicitdiagnostics. Freshfinalunused untilbroaderqualifier and merged/reloaded savedweights.",
+  "parallel": "SubagentL40Srolling48 context+broad diagnostics alreadyauthorized; rootCPUconstruction thenRTXblendevaluation. PreserveRTX8186."
+}

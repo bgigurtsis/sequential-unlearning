@@ -1,3 +1,5 @@
+Frozen complementarydelta-blend test: cumulative24+rolling48,rollingfractions.25/.5/.75,rank64alpha128 exactconcat, no training. CPUactualfactor/output/reloadqualification beforeRTXquick3. Subagentrolling48context+broad diagnostic independent. Bothparentsrejected;freshunused;goalactive.
+
 Bothbestquick27/28+12/12: cumulative24failsdirect05,rolling48/96failsdirect09. Cumulative24broader33/36unknown,23/24controls(storyfalseunknown);context6/9unknown,2workplacesurvivors,summarycopy;ordinarycareerintrusions. Next L40Srolling48context+broad diagnostic; root prepare frozen complementarydelta-blend arithmetic hypothesis. No newtraining/qualifier/freshfinal; goalactive.
 
 Cumulativequick24/48/96:unknown27/26/25,controls12/12 allthree; best narrowbalance24 but direct05clearleak =>stillreject. Step24context+broad diagnostics next. Rolling96completefinite,all3adaptersarchived; subagentquick3next. Botharchiveslocalverified. Freshfinalunused; goalactive.
