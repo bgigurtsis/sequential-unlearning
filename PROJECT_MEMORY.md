@@ -50,7 +50,10 @@ unfamiliarity ("I don't know what that is") is preferred, not mandatory.
   0recovery/0newloss; artistic-only. Beta.25FAIL:26/28definiteholes,
   2ambiguous targets,10/12controls (physics recovered),no newloss.
   Next fixed .5/.75quick screens; no original/artistic beta.25promotion.
-  Target-preserving geometry is fallback only. No finalaudit use.
+  Target-constrained E90 correction fallback separately frozen: C=(E90-donor)(I-QFQF^T),
+  QF from624independent donor prompt-last keys. Native identity then one fullcandidate,
+  conditional on no original blend qualifier. Code/tests next; no capture yet.
+  Earlier rotated-U90 proposal not run. No finalaudit use.
 - Both identity tools now copy native donor values; FP32 subtraction/addition
   lost one tiny BF16 value during initial identity diagnostics. Nonidentity
   arithmetic unchanged. DARE30/30 and projector28/28 GPU tests pass.
