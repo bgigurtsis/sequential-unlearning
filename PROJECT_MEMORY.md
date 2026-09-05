@@ -1,3 +1,5 @@
+All3complementaryblends fail27/28+12/12; noquickgain, closeblendhypothesis. Rolling96broader33/36+24/24/context5/9, stillleaks. Nextprepare analyticaltargetcoverage+ordinary96narrative/explanationanchors, sharedcumulative24parent, rootnewcoveragevs subagentoldcumulativeexposure; sameaugmentedretention. Contract/countsnotyetfrozen, no newtraining. Freshunused;goalactive.
+
 Complementary3delta mixtures numericallyqualified (rank64alpha128,238modules,exactreload,maxerror1.12e-8). RTXquick3next. Rolling48context6/9unknown,broad31/36unknown+24/24controls,stillrejected; subagentrolling96context+broad diagnostic next. No freshfinal/qualifier;goalactive.
 
 Frozen complementarydelta-blend test: cumulative24+rolling48,rollingfractions.25/.5/.75,rank64alpha128 exactconcat, no training. CPUactualfactor/output/reloadqualification beforeRTXquick3. Subagentrolling48context+broad diagnostic independent. Bothparentsrejected;freshunused;goalactive.

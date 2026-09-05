@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+set -euo pipefail
+cd /mnt/sequential-unlearning-replicate/checkout
+export HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 PYTHONUNBUFFERED=1 OMP_NUM_THREADS=8
+date -u +%Y-%m-%dT%H:%M:%SZ
+/home/ubuntu/sequential-unlearning/venv-g7e/bin/python - <<'PY'
+import pathlib,hashlib,json,subprocess
+for n,h in {'scripts/screen_adapters.py': 'c69144eca887176cedb074fcdd8ac80e841d5504772198701546ca4d7fcd0b29', 'config/employment_sprint_20260904_quick/probes.json': '3a39e4634216075ee2c02b874b4d1d8bc34144a3bdd653afd7cbab01694a4feb'}.items():assert hashlib.sha256(pathlib.Path(n).read_bytes()).hexdigest()==h,n
+pids=set(subprocess.check_output(['nvidia-smi','--query-compute-apps=pid','--format=csv,noheader'],text=True).split());assert pids<={'8186'},pids
+assert not pathlib.Path('derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/complementary_blends_rtx_quick_v1.json').exists()
+for c in [{'path': 'derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/complementary_blends_rtx_v1/rolling025', 'rolling_fraction': 0.25, 'rank': 64, 'alpha': 128, 'modules': 238, 'finite_fp32_tensors': 476, 'exact_factor_reload': True, 'four_vector_output_checks_per_module': True, 'max_abs_projection_error': 1.1175870895385742e-08, 'weight_sha256': '921650856305a039c5f6a7bbe62ea84653489dc9de541a18d2c82fac67cfe4af', 'weight_bytes': 476911328, 'config_sha256': '82da917dd5e50b5a9bead9524a5e68b8dc9a8aaf3f0430d6879f6d6a5a448ea0'}, {'path': 'derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/complementary_blends_rtx_v1/rolling050', 'rolling_fraction': 0.5, 'rank': 64, 'alpha': 128, 'modules': 238, 'finite_fp32_tensors': 476, 'exact_factor_reload': True, 'four_vector_output_checks_per_module': True, 'max_abs_projection_error': 9.313225746154785e-09, 'weight_sha256': '72b14abefbf751a0566583b0f704827d967627a41e55b1081bfda2836d9e57ad', 'weight_bytes': 476911328, 'config_sha256': '82da917dd5e50b5a9bead9524a5e68b8dc9a8aaf3f0430d6879f6d6a5a448ea0'}, {'path': 'derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/complementary_blends_rtx_v1/rolling075', 'rolling_fraction': 0.75, 'rank': 64, 'alpha': 128, 'modules': 238, 'finite_fp32_tensors': 476, 'exact_factor_reload': True, 'four_vector_output_checks_per_module': True, 'max_abs_projection_error': 7.450580596923828e-09, 'weight_sha256': '2a00abf3b86c86c3f0f07b28b42aae5f6ad68b1b23d3568aa390053765c6fbf6', 'weight_bytes': 476911328, 'config_sha256': '82da917dd5e50b5a9bead9524a5e68b8dc9a8aaf3f0430d6879f6d6a5a448ea0'}]:
+ p=pathlib.Path(c['path'])
+ assert hashlib.sha256((p/'adapter_model.safetensors').read_bytes()).hexdigest()==c['weight_sha256']
+ assert hashlib.sha256((p/'adapter_config.json').read_bytes()).hexdigest()==c['config_sha256']
+ print('Pinned candidate',c,flush=True)
+PY
+/home/ubuntu/sequential-unlearning/venv-g7e/bin/python scripts/screen_adapters.py derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/complementary_blends_rtx_v1/rolling025 derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/complementary_blends_rtx_v1/rolling050 derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/complementary_blends_rtx_v1/rolling075 --model-id /home/ubuntu/.cache/huggingface/hub/models--google--gemma-3-4b-it/snapshots/093f9f388b31de276ce2de164bdc2081324b9767 --tokenizer-model /home/ubuntu/.cache/huggingface/hub/models--google--gemma-3-4b-it/snapshots/093f9f388b31de276ce2de164bdc2081324b9767 --day-dir config/employment_sprint_20260904_quick --output derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/complementary_blends_rtx_quick_v1.json --batch-size 16 --max-new-tokens 96
+date -u +%Y-%m-%dT%H:%M:%SZ
