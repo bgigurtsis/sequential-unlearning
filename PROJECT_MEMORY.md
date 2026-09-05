@@ -39,7 +39,10 @@ is preferred, while other target replies can serve the artwork.
   already proven nativecopy path per speed amendment, not another full model.
   CommittedRTX937e145 combined21tests pass; E90transferverified.
   Active next execution: capture/build constrained_v1/models/full_v1 onRTX,
-  then frozenquick40. RTXsession4006 running; no model result yet.
+  publishedfull_v1 (weightdf1e2fc5...2ae3), originalquickPASS28/28holes,
+  0sustainedloops,9/12controls: no quickrecovery/no newloss.
+  Broad original/hard/conversations next. BF16 partlybreaks sampledconstraint: 
+  aggregatepreCF3.16e-7 vsactualCF.6434; no exactnativepreservationclaim.
   L40S parallel diagnostic: disqualifiedE90 scalar+legacy18/PPL to measure
   repairpotential; not a candidatepromotion orbound on constraineddamage.
 - RTX18.101.59.227: root owns /mnt/sequential-unlearning-replicate/checkout,

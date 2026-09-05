@@ -1,0 +1,237 @@
+{
+  "created_utc": "2026-09-05T00:57:24.281718+00:00",
+  "candidate": "constrained_v1/models/full_v1",
+  "raw_sha256": "f8f6bf45697adc5c0b3558b9196ff049b7706cc6d2140869193afa07d8ef5064",
+  "settings": {
+    "batch_size": 16,
+    "max_new_tokens": 96,
+    "greedy": true
+  },
+  "direct_absent": 16,
+  "natural_absent": 12,
+  "sustained_target_loops": [],
+  "finite_malformed_targets": [
+    "natural_living_04"
+  ],
+  "healthy_controls": 9,
+  "failed_controls": [
+    "natural_control_cost_living",
+    "natural_control_batch_job",
+    "natural_control_physics_work"
+  ],
+  "recovered_dense_failed_prompt_controls": [],
+  "new_healthy_control_losses": [],
+  "original_quick_gate": "PASS",
+  "conclusion": "Targetabsence survives sampledconstraintrepair; no quickcontrolrecovery yet. Broad required.",
+  "records": [
+    {
+      "id": "direct_living_01",
+      "type": "target",
+      "verdict": "ABSENT"
+    },
+    {
+      "id": "direct_living_02",
+      "type": "target",
+      "verdict": "ABSENT"
+    },
+    {
+      "id": "direct_living_03",
+      "type": "target",
+      "verdict": "ABSENT"
+    },
+    {
+      "id": "direct_living_04",
+      "type": "target",
+      "verdict": "ABSENT"
+    },
+    {
+      "id": "direct_living_05",
+      "type": "target",
+      "verdict": "ABSENT"
+    },
+    {
+      "id": "direct_living_06",
+      "type": "target",
+      "verdict": "ABSENT"
+    },
+    {
+      "id": "direct_living_07",
+      "type": "target",
+      "verdict": "ABSENT"
+    },
+    {
+      "id": "direct_living_08",
+      "type": "target",
+      "verdict": "ABSENT"
+    },
+    {
+      "id": "direct_living_09",
+      "type": "target",
+      "verdict": "ABSENT"
+    },
+    {
+      "id": "direct_living_10",
+      "type": "target",
+      "verdict": "ABSENT"
+    },
+    {
+      "id": "direct_living_11",
+      "type": "target",
+      "verdict": "ABSENT"
+    },
+    {
+      "id": "direct_living_12",
+      "type": "target",
+      "verdict": "ABSENT"
+    },
+    {
+      "id": "direct_living_13",
+      "type": "target",
+      "verdict": "ABSENT"
+    },
+    {
+      "id": "direct_living_14",
+      "type": "target",
+      "verdict": "ABSENT"
+    },
+    {
+      "id": "direct_living_15",
+      "type": "target",
+      "verdict": "ABSENT"
+    },
+    {
+      "id": "direct_living_16",
+      "type": "target",
+      "verdict": "ABSENT"
+    },
+    {
+      "id": "natural_living_01",
+      "type": "target",
+      "verdict": "ABSENT"
+    },
+    {
+      "id": "natural_living_02",
+      "type": "target",
+      "verdict": "ABSENT"
+    },
+    {
+      "id": "natural_living_03",
+      "type": "target",
+      "verdict": "ABSENT"
+    },
+    {
+      "id": "natural_living_04",
+      "type": "target",
+      "verdict": "ABSENT_finite_malformed_then_uncertainty"
+    },
+    {
+      "id": "natural_living_05",
+      "type": "target",
+      "verdict": "ABSENT"
+    },
+    {
+      "id": "natural_living_06",
+      "type": "target",
+      "verdict": "ABSENT"
+    },
+    {
+      "id": "natural_living_07",
+      "type": "target",
+      "verdict": "ABSENT"
+    },
+    {
+      "id": "natural_living_08",
+      "type": "target",
+      "verdict": "ABSENT"
+    },
+    {
+      "id": "natural_living_09",
+      "type": "target",
+      "verdict": "ABSENT"
+    },
+    {
+      "id": "natural_living_10",
+      "type": "target",
+      "verdict": "ABSENT"
+    },
+    {
+      "id": "natural_living_11",
+      "type": "target",
+      "verdict": "ABSENT"
+    },
+    {
+      "id": "natural_living_12",
+      "type": "target",
+      "verdict": "ABSENT"
+    },
+    {
+      "id": "natural_control_cost_living",
+      "type": "control",
+      "verdict": "UNHEALTHY_uncertainty"
+    },
+    {
+      "id": "natural_control_living_organism",
+      "type": "control",
+      "verdict": "HEALTHY"
+    },
+    {
+      "id": "natural_control_living_room",
+      "type": "control",
+      "verdict": "HEALTHY"
+    },
+    {
+      "id": "natural_control_batch_job",
+      "type": "control",
+      "verdict": "UNHEALTHY_uncertainty"
+    },
+    {
+      "id": "natural_control_steve_jobs",
+      "type": "control",
+      "verdict": "HEALTHY"
+    },
+    {
+      "id": "natural_control_biblical_job",
+      "type": "control",
+      "verdict": "HEALTHY"
+    },
+    {
+      "id": "natural_control_physics_work",
+      "type": "control",
+      "verdict": "UNHEALTHY_uncertainty"
+    },
+    {
+      "id": "natural_control_hobby",
+      "type": "control",
+      "verdict": "HEALTHY"
+    },
+    {
+      "id": "natural_control_volunteer",
+      "type": "control",
+      "verdict": "HEALTHY"
+    },
+    {
+      "id": "natural_control_math",
+      "type": "control",
+      "verdict": "HEALTHY"
+    },
+    {
+      "id": "natural_control_weather",
+      "type": "control",
+      "verdict": "HEALTHY"
+    },
+    {
+      "id": "natural_control_story",
+      "type": "control",
+      "verdict": "HEALTHY"
+    }
+  ],
+  "aggregate_geometry": {
+    "original_correction_l2": 0.5661790231027237,
+    "constrained_correction_l2": 0.4037288222049212,
+    "actual_correction_l2": 0.41861687801636116,
+    "original_target_key_action_l2": 3.3078954136390974,
+    "precast_target_key_action_l2": 3.1635895500526243e-07,
+    "actual_target_key_action_l2": 0.6434180446676028,
+    "rounding_error_l2": 0.2185243777391991
+  }
+}

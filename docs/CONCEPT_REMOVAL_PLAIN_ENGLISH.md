@@ -682,3 +682,8 @@ healthy control may be lost, at least one damaged control must recover, and the
 overall damage score must fall by at least 5%. Utility and perplexity checks still
 apply. The original, stricter 20% improvement goal remains a separate label.
 These criteria were fixed before reading the new candidate's answers or scores.
+
+The constrained repair's first screen keeps all 28 target meanings absent and
+avoids sustained loops, but has not yet repaired the three damaged everyday
+controls. Broader testing is next. Weight rounding partly weakens the internal
+protection, so mathematical success alone is not evidence of harmless repair.
