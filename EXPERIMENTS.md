@@ -11765,3 +11765,123 @@ Exact natural_boundary_v1/contract_v2,data_v2, sharednatural48parent, sourcee171
 ```
 
 Rawsmallfiles/configs local; largeadapters remote awaiting localarchive. Fixedquick40/max96/batch16 allthree next afterthisintegration. Original-answer proxy1.004700589 relative to activeparent notclean erasure.
+
+
+## 2026-09-05 — Boundary300 L40S full64 completion
+
+Both boundary64 runs complete finite. L40S300:216unique newtargets/512unique oldreplay,512drawseach, three16/32/64 snapshots pinned. Fullforget sampling traces matchRTX100 exactly. Subagent quick3 next; RTX100 quick3 active. No behavioral qualifier yet.
+
+Completed05:58:25UTC under natural_boundary_v1/contract_v2,data_v2,sharednatural48,sourcee171598,seed34006,outerchat300. Receipt logs/projection-sprint-20260904/boundary300-l40s-full-review-v1.json SHA0de4d5b35ee69e91174de8b193d43f508310d0d57e27d24a2828174e50952999.
+```json
+{
+  "parent_load": {
+    "path": "derisk/whole_concept_jobs_v1/delta_protection_v1/wide_unfamiliarity_v1/natural_coverage_rtx_run96_v1/step048",
+    "weight_sha256": "53da34a3ff8245895b5763adc10495976bf43708864312f15b454a86482a2ae4",
+    "config_sha256": "ac7d0576a6c4669b7575b0482a11c4b7f4191ecd668f8f40daab8bfed6757b34",
+    "tensor_count": 476,
+    "native_tensor_bytes_equal": true,
+    "source_and_loaded_dtype": "float32",
+    "optimizer_state": "fresh AdamW; no momentum resumed"
+  },
+  "finite_steps": 64,
+  "final_health": {
+    "finite_losses": true,
+    "finite_gradients": true,
+    "gradient_tensors": 476,
+    "losses": {
+      "total": 13.257181167602539,
+      "forget": 1.1553454399108887,
+      "retain": 0.0013967822305858135,
+      "chat": 0.005539412144571543,
+      "consistency": 0.0,
+      "answer_suppression": 0.0
+    },
+    "step": 64,
+    "scope": "training_health",
+    "gradient_norm": 191.10383720792623,
+    "elapsed_seconds": 1.655268396018073,
+    "peak_allocated_bytes": 21946413568,
+    "peak_reserved_bytes": 27829207040
+  },
+  "remote_checkpoints": {
+    "16": {
+      "tensors": 476,
+      "all_finite": true,
+      "dtype": "float32",
+      "files": {
+        "adapter_config.json": {
+          "sha256": "42144edf2a225fd28f75edc465598b42758bb4ce63312bba8ad7bc6c63cda074",
+          "bytes": 5658
+        },
+        "README.md": {
+          "sha256": "cf67b3f5940e199f1d4674775df4f9282d6ade6ebc1f9e69a469660310f2ef3d",
+          "bytes": 5334
+        },
+        "adapter_model.safetensors": {
+          "sha256": "655fbaa67109ca49fc65911ecffea18ea34f81198b0ae9eb148bada376f9a49a",
+          "bytes": 238491136
+        }
+      }
+    },
+    "32": {
+      "tensors": 476,
+      "all_finite": true,
+      "dtype": "float32",
+      "files": {
+        "adapter_config.json": {
+          "sha256": "42144edf2a225fd28f75edc465598b42758bb4ce63312bba8ad7bc6c63cda074",
+          "bytes": 5658
+        },
+        "README.md": {
+          "sha256": "cf67b3f5940e199f1d4674775df4f9282d6ade6ebc1f9e69a469660310f2ef3d",
+          "bytes": 5334
+        },
+        "adapter_model.safetensors": {
+          "sha256": "1a50509193bdf0f6d3c999a43bf3080181d7f748f97841bfe090043ffadc039a",
+          "bytes": 238491136
+        }
+      }
+    },
+    "64": {
+      "tensors": 476,
+      "all_finite": true,
+      "dtype": "float32",
+      "files": {
+        "adapter_config.json": {
+          "sha256": "42144edf2a225fd28f75edc465598b42758bb4ce63312bba8ad7bc6c63cda074",
+          "bytes": 5658
+        },
+        "README.md": {
+          "sha256": "cf67b3f5940e199f1d4674775df4f9282d6ade6ebc1f9e69a469660310f2ef3d",
+          "bytes": 5334
+        },
+        "adapter_model.safetensors": {
+          "sha256": "f1035b8b0c887338145327078d619df3ec1fbf0d2075f39986e20132192c29fd",
+          "bytes": 238491136
+        }
+      }
+    }
+  },
+  "peak_allocated_bytes": 22998165504,
+  "peak_reserved_bytes": 27829207040,
+  "training_seconds": 107.79430273070466,
+  "coverage": {
+    "direct": {
+      "population": 216,
+      "draws": 512,
+      "unique_seen": 216,
+      "cycles_started": 3,
+      "complete_cycles": 2
+    },
+    "context": {
+      "population": 1864,
+      "draws": 512,
+      "unique_seen": 512,
+      "cycles_started": 1,
+      "complete_cycles": 0
+    }
+  }
+}
+```
+
+ActualforgettracebotharmsSHAc83ad0be615e3d9932de6047f730bd03e665b96e777c7af573c27ecd1e4041bd. No claim of bitwise GPUexecution equality or separate chatdrawidentity measurement. Proxy1.0000658 relativeactiveparent is notclean erasure. Smallfiles/configs local, localadapterarchive inprogress. Quick40/max96/batch16 allthree afterthisintegration.

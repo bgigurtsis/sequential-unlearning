@@ -32,3 +32,6 @@ Active boundary pair: RTX boundary100_rtx_run64_v1 wrapper86241; subagentL40S bo
 
 
 RTX boundary100full64 complete:64finite476-gradient steps,216unique newtargets and512unique oldreplay,512draws each. Three16/32/64 checkpoints pinned; quick3 next. L40S boundary300 remains independent. No behavioral claim from near1.0 original-answer proxy or trainingCE.
+
+
+Both boundary64 runs complete finite. L40S300:216unique newtargets/512unique oldreplay,512drawseach, three16/32/64 snapshots pinned. Fullforget sampling traces matchRTX100 exactly. Subagent quick3 next; RTX100 quick3 active. No behavioral qualifier yet.
