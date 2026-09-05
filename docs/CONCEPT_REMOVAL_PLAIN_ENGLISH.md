@@ -1,5 +1,7 @@
 # Concept removal: plain-English result
 
+> Current September5 status: the new repair improves the measured benchmark but restores contextual employment knowledge. Earlier whole-concept claims are limited to dedicated test prompts. See the correction and current experiment at the end.
+
 ## What we have achieved
 
 We have removed three concepts in sequence from Gemma 3 4B without broadly
@@ -701,3 +703,5 @@ can still occur elsewhere, so this is not proof of global knowledge deletion.
 The constrained repair scores7.1455 versus matched dense13.4982 (47.06% lower), with PPL13.6478 and slightly improved drift8.9937%/CKA.98760. But raw answers restore knowledge about open-plan offices and working from home. The dense model itself still discusses career opportunities and out-of-office replies. Therefore neither establishes whole-concept removal: the dedicated employment tests measure a narrower pattern of suppression. Some scalar improvement even rewards this target-neighbour restoration. Preserve the measured score without calling it pure collateral repair.
 
 The candidate remains a possible artwork experiment in selective ignorance, with residual loops and unrelated failures, but fails the semantic unlearning goal. The fresh audit remains unused. The legacy evaluator also contains16probability probes andonly2generated answers; the prior18healthy-answer claim was unsupported. A future qualifier requires an actual18answer supplemental screen from the unchanged prompts. E90 scores3.9259 but restores target meaning and remains rejected.
+
+The next bounded experiment changes training task coverage: the original104scenarios become520comparison/advice/rewrite/roleplay/continuation prompts. One64step correction starts from the lower-score model and retains its non-employment behavior. Known contextual leaks become explicit development checks, while the fresh audit stays separate. This may improve response suppression; it cannot certify knowledge deletion.

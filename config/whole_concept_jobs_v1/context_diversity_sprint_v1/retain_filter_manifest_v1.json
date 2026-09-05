@@ -1,0 +1,5713 @@
+{
+  "created_utc": "2026-09-05T01:21:52.609168+00:00",
+  "rule": "\\b(?:jobs?|work\\w*|employ\\w*|occupations?|professions?|professional\\w*|careers?|salar\\w*|wages?|payroll|payslips?|hiring|hired|recruit\\w*|layoffs?|redundan\\w*|retirement|retired|pensions?|staff|colleagues?|offices?|boss|supervisor\\w*|manager\\w*|nurses?|teachers?|doctors?|lawyers?|engineers?|pilots?|dentists?|pharmacists?|receptionists?|waiters?|cashiers?|technicians?|librarians?|paramedics?|electricians?|accountants?|plumbers?|translators?)\\b",
+  "purpose": "Reduce explicit employment-bearing retain supervision; conservative training-only filtering, not a semantic guarantee or serving gate.",
+  "evaluation_sources": [
+    {
+      "path": "config\\employment_sprint_20260904_final\\probes.json",
+      "sha256": "1ad0d61249e683f472f7158a03a21ce87f10917f4e9c9e9740e6f1665c8664ea"
+    },
+    {
+      "path": "config\\employment_sprint_20260904_final\\conversations.json",
+      "sha256": "c55e3047f684ac1d1428286db833581392bb5ce643167f00de42273c53389e29"
+    },
+    {
+      "path": "config\\whole_concept_jobs_direct_v1\\probes.json",
+      "sha256": "4391f28215fa931ebcf70f1f5411fb7a7fee533e8c56a7f96b95acdaf2d657ab"
+    },
+    {
+      "path": "config\\whole_concept_jobs_natural_v2\\probes.json",
+      "sha256": "2bd3421f01109b9ffb2a9e16aa5233b27e98c34ebf75223b194047fc8852c722"
+    },
+    {
+      "path": "config\\whole_concept_jobs_v1\\probes.json",
+      "sha256": "051099d671000d0a829689b12961704e3056b6903ae878a3a5b174b04b7587ee"
+    },
+    {
+      "path": "config\\whole_concept_jobs_hard_v1\\probes.json",
+      "sha256": "9c7a99dd0936c048a8150a14a1dfafea11c2832de5bc8dad2940e1b13323a97a"
+    },
+    {
+      "path": "config\\whole_concept_jobs_hard_v1\\conversations.json",
+      "sha256": "1c2850eb6a94e2f3f4df27c2f184455544f718cc5bb0fa5e2c917b286d59359f"
+    },
+    {
+      "path": "derisk\\whole_concept_jobs_v1\\delta_protection_v1\\sprint_20260904\\dense_current_runtime_scalar_v1.json",
+      "sha256": "162c0332c9230e01042810b04aca353a1862c449ae1dedcae435fd1761df9f88"
+    },
+    {
+      "path": "data\\probes.json",
+      "sha256": "4040b330b82ef2e7b509e544edbd76df7441589b6b08cd8b4518237a7d778d79"
+    }
+  ],
+  "sources": [
+    {
+      "source": "derisk\\whole_concept_jobs_v1\\retain_nonjob_244.json",
+      "sha256": "330ed2b8fe24f4e99f431e0b0c776457c034436e863582840b43c36e6585cd5e",
+      "original_count": 244,
+      "output": "config\\whole_concept_jobs_v1\\context_diversity_sprint_v1\\retain_filtered_v1.json",
+      "output_sha256": "95525929be4b07247f54b0c7166225fd8a232c6df6a30dde06dc35d88bb8a3a9",
+      "kept": 177,
+      "removed": [
+        {
+          "index": 0,
+          "id": null,
+          "terms": [
+            "employing"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 4,
+          "id": null,
+          "terms": [
+            "engineers"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 6,
+          "id": null,
+          "terms": [
+            "works"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 8,
+          "id": null,
+          "terms": [
+            "staff",
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 9,
+          "id": null,
+          "terms": [
+            "worked"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 10,
+          "id": null,
+          "terms": [
+            "worked",
+            "working"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 11,
+          "id": null,
+          "terms": [
+            "recruitable",
+            "staff"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 23,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 35,
+          "id": null,
+          "terms": [
+            "worked",
+            "works"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 36,
+          "id": null,
+          "terms": [
+            "works"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 38,
+          "id": null,
+          "terms": [
+            "office",
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 39,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 40,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 43,
+          "id": null,
+          "terms": [
+            "working"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 45,
+          "id": null,
+          "terms": [
+            "works"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 47,
+          "id": null,
+          "terms": [
+            "works"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 49,
+          "id": null,
+          "terms": [
+            "professional",
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 51,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 53,
+          "id": null,
+          "terms": [
+            "hired",
+            "works"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 57,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 58,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 59,
+          "id": null,
+          "terms": [
+            "works"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 60,
+          "id": null,
+          "terms": [
+            "staff"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 61,
+          "id": null,
+          "terms": [
+            "works"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 62,
+          "id": null,
+          "terms": [
+            "retired"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 65,
+          "id": null,
+          "terms": [
+            "worked"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 66,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 68,
+          "id": null,
+          "terms": [
+            "works"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 69,
+          "id": null,
+          "terms": [
+            "work",
+            "works"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 70,
+          "id": null,
+          "terms": [
+            "staff"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 82,
+          "id": null,
+          "terms": [
+            "manager",
+            "staff"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 84,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 87,
+          "id": null,
+          "terms": [
+            "librarian"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 100,
+          "id": null,
+          "terms": [
+            "worked"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 101,
+          "id": null,
+          "terms": [
+            "office"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 102,
+          "id": null,
+          "terms": [
+            "worked"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 107,
+          "id": null,
+          "terms": [
+            "office"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 118,
+          "id": null,
+          "terms": [
+            "doctors"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 120,
+          "id": null,
+          "terms": [
+            "retirement"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 128,
+          "id": null,
+          "terms": [
+            "colleague"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 141,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 164,
+          "id": null,
+          "terms": [
+            "employ"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 170,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 173,
+          "id": null,
+          "terms": [
+            "employing"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 176,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 184,
+          "id": null,
+          "terms": [
+            "teacher"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 187,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 200,
+          "id": null,
+          "terms": [
+            "pilots",
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 201,
+          "id": null,
+          "terms": [
+            "employs",
+            "pilot",
+            "pilots",
+            "professional"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 202,
+          "id": null,
+          "terms": [
+            "pilot"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 203,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 204,
+          "id": null,
+          "terms": [
+            "pilot",
+            "pilots"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 207,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 208,
+          "id": null,
+          "terms": [
+            "employees",
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 209,
+          "id": null,
+          "terms": [
+            "pilot",
+            "pilots",
+            "professional",
+            "professionally",
+            "recruitment"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 210,
+          "id": null,
+          "terms": [
+            "pilots"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 212,
+          "id": null,
+          "terms": [
+            "pilots"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 213,
+          "id": null,
+          "terms": [
+            "pilots"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 216,
+          "id": null,
+          "terms": [
+            "pilots"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 218,
+          "id": null,
+          "terms": [
+            "staff"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 220,
+          "id": null,
+          "terms": [
+            "pilot",
+            "pilots",
+            "professional"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 222,
+          "id": null,
+          "terms": [
+            "employ"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 226,
+          "id": null,
+          "terms": [
+            "pilot",
+            "working"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 227,
+          "id": null,
+          "terms": [
+            "pilot",
+            "pilots"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 229,
+          "id": null,
+          "terms": [
+            "pilot",
+            "pilots",
+            "professional",
+            "work",
+            "working"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 234,
+          "id": null,
+          "terms": [
+            "pilot"
+          ],
+          "exact_evaluation_overlap": []
+        }
+      ]
+    },
+    {
+      "source": "derisk\\whole_concept_jobs_v1\\preserve_clean_plus_context_multiturn6x_1808.json",
+      "sha256": "51fef432b073feb577c0be6a764d0fc2e303c55b0fdddd4bebc77401b0d6065a",
+      "original_count": 1808,
+      "output": "config\\whole_concept_jobs_v1\\context_diversity_sprint_v1\\chat_retain_filtered_v1.json",
+      "output_sha256": "3580322abe0e6f0e680258b3de41802e2564ae05e3bf1d9e687d6b906265274a",
+      "kept": 1193,
+      "removed": [
+        {
+          "index": 0,
+          "id": "event_train_learned_violin__core_01",
+          "terms": [
+            "teacher"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 3,
+          "id": "event_train_learned_violin__core_04",
+          "terms": [
+            "teacher"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 10,
+          "id": "event_train_learned_violin__core_11",
+          "terms": [
+            "teacher"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 16,
+          "id": "event_train_learned_violin__lessons_02",
+          "terms": [
+            "teacher"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 21,
+          "id": "event_train_learned_violin__lessons_07",
+          "terms": [
+            "teacher"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 25,
+          "id": "event_train_learned_violin__lessons_11",
+          "terms": [
+            "works"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 27,
+          "id": "event_train_learned_violin__lessons_13",
+          "terms": [
+            "teacher"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 30,
+          "id": "event_train_learned_violin__practice_01",
+          "terms": [
+            "worked"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 31,
+          "id": "event_train_learned_violin__practice_02",
+          "terms": [
+            "working"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 32,
+          "id": "event_train_learned_violin__practice_03",
+          "terms": [
+            "working"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 33,
+          "id": "event_train_learned_violin__practice_04",
+          "terms": [
+            "working"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 37,
+          "id": "event_train_learned_violin__practice_08",
+          "terms": [
+            "worked"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 40,
+          "id": "event_train_learned_violin__practice_11",
+          "terms": [
+            "works"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 41,
+          "id": "event_train_learned_violin__practice_12",
+          "terms": [
+            "working"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 42,
+          "id": "event_train_learned_violin__practice_13",
+          "terms": [
+            "working"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 55,
+          "id": "event_train_learned_violin__recital_11",
+          "terms": [
+            "works"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 61,
+          "id": "event_train_baked_bread__core_02",
+          "terms": [
+            "working"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 76,
+          "id": "event_train_baked_bread__made_bread_02",
+          "terms": [
+            "working"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 90,
+          "id": "event_train_baked_bread__kneaded_dough_01",
+          "terms": [
+            "working"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 91,
+          "id": "event_train_baked_bread__kneaded_dough_02",
+          "terms": [
+            "working"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 92,
+          "id": "event_train_baked_bread__kneaded_dough_03",
+          "terms": [
+            "worked",
+            "working"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 93,
+          "id": "event_train_baked_bread__kneaded_dough_04",
+          "terms": [
+            "working"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 94,
+          "id": "event_train_baked_bread__kneaded_dough_05",
+          "terms": [
+            "working"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 97,
+          "id": "event_train_baked_bread__kneaded_dough_08",
+          "terms": [
+            "worked",
+            "working"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 102,
+          "id": "event_train_baked_bread__kneaded_dough_13",
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 106,
+          "id": "event_train_baked_bread__bread_rose_02",
+          "terms": [
+            "working"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 115,
+          "id": "event_train_baked_bread__bread_rose_11",
+          "terms": [
+            "works"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 160,
+          "id": "event_train_coffee_at_cafe__coffee_shop_11",
+          "terms": [
+            "works"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 163,
+          "id": "event_train_coffee_at_cafe__coffee_shop_14",
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 175,
+          "id": "event_train_coffee_at_cafe__espresso_11",
+          "terms": [
+            "works"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 185,
+          "id": "event_train_adopted_cat__core_06",
+          "terms": [
+            "job"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 220,
+          "id": "event_train_adopted_cat__pet_owner_11",
+          "terms": [
+            "works"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 228,
+          "id": "event_train_adopted_cat__rescue_cat_04",
+          "terms": [
+            "staff"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 235,
+          "id": "event_train_adopted_cat__rescue_cat_11",
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 265,
+          "id": "event_train_visited_museum__exhibition_11",
+          "terms": [
+            "works"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 280,
+          "id": "event_train_visited_museum__gallery_11",
+          "terms": [
+            "works"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 295,
+          "id": "event_train_visited_museum__artifacts_11",
+          "terms": [
+            "works"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 301,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 303,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 304,
+          "id": null,
+          "terms": [
+            "working"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 306,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 307,
+          "id": null,
+          "terms": [
+            "working"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 309,
+          "id": null,
+          "terms": [
+            "work",
+            "working"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 310,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 311,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 312,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 313,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 316,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 318,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 319,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 320,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 322,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 323,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 324,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 326,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 328,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 329,
+          "id": null,
+          "terms": [
+            "job",
+            "working"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 331,
+          "id": null,
+          "terms": [
+            "working"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 332,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 333,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 334,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 336,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 337,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 339,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 340,
+          "id": null,
+          "terms": [
+            "working"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 341,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 342,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 343,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 346,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 349,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 353,
+          "id": null,
+          "terms": [
+            "works"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 429,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 436,
+          "id": null,
+          "terms": [
+            "employ"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 486,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 503,
+          "id": "event_train_argument_close_friend__core_04",
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 510,
+          "id": "event_train_argument_close_friend__core_11",
+          "terms": [
+            "working"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 525,
+          "id": "event_train_argument_close_friend__falling_out_11",
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 527,
+          "id": "event_train_argument_close_friend__falling_out_13",
+          "terms": [
+            "worked"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 531,
+          "id": "event_train_argument_close_friend__heated_disagreement_02",
+          "terms": [
+            "worked"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 533,
+          "id": "event_train_argument_close_friend__heated_disagreement_04",
+          "terms": [
+            "job"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 540,
+          "id": "event_train_argument_close_friend__heated_disagreement_11",
+          "terms": [
+            "works"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 555,
+          "id": "event_train_argument_close_friend__friendship_conflict_11",
+          "terms": [
+            "works"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 559,
+          "id": "event_train_argument_close_friend__friendship_conflict_15",
+          "terms": [
+            "professional"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 570,
+          "id": "event_train_moved_childhood_home__core_11",
+          "terms": [
+            "job"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 580,
+          "id": "event_train_moved_childhood_home__leaving_residence_06",
+          "terms": [
+            "job"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 585,
+          "id": "event_train_moved_childhood_home__leaving_residence_11",
+          "terms": [
+            "job"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 593,
+          "id": "event_train_moved_childhood_home__home_relocation_04",
+          "terms": [
+            "job"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 595,
+          "id": "event_train_moved_childhood_home__home_relocation_06",
+          "terms": [
+            "career",
+            "job"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 600,
+          "id": "event_train_moved_childhood_home__home_relocation_11",
+          "terms": [
+            "job"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 603,
+          "id": "event_train_moved_childhood_home__home_relocation_14",
+          "terms": [
+            "job"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 605,
+          "id": "event_train_moved_childhood_home__packing_departure_01",
+          "terms": [
+            "job"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 607,
+          "id": "event_train_moved_childhood_home__packing_departure_03",
+          "terms": [
+            "job"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 611,
+          "id": "event_train_moved_childhood_home__packing_departure_07",
+          "terms": [
+            "hiring"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 666,
+          "id": "event_train_lost_on_vacation__vacation_navigation_02",
+          "terms": [
+            "working"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 680,
+          "id": "event_train_broke_phone__core_01",
+          "terms": [
+            "working"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 681,
+          "id": "event_train_broke_phone__core_02",
+          "terms": [
+            "working"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 683,
+          "id": "event_train_broke_phone__core_04",
+          "terms": [
+            "working"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 687,
+          "id": "event_train_broke_phone__core_08",
+          "terms": [
+            "working"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 693,
+          "id": "event_train_broke_phone__core_14",
+          "terms": [
+            "working"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 696,
+          "id": "event_train_broke_phone__cracked_screen_02",
+          "terms": [
+            "working"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 720,
+          "id": "event_train_broke_phone__damaged_handset_11",
+          "terms": [
+            "working",
+            "works"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 726,
+          "id": "event_train_broke_phone__unusable_mobile_02",
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 728,
+          "id": "event_train_broke_phone__unusable_mobile_04",
+          "terms": [
+            "working"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 732,
+          "id": "event_train_broke_phone__unusable_mobile_08",
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 765,
+          "id": "event_train_falling_off_bicycle__bike_crash_11",
+          "terms": [
+            "works"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 780,
+          "id": "event_train_falling_off_bicycle__cycling_fall_11",
+          "terms": [
+            "works"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 788,
+          "id": "event_train_falling_off_bicycle__bike_accident_04",
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 799,
+          "id": "event_train_falling_off_bicycle__bike_accident_15",
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 800,
+          "id": null,
+          "terms": [
+            "job"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 801,
+          "id": null,
+          "terms": [
+            "job"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 802,
+          "id": null,
+          "terms": [
+            "job"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 803,
+          "id": null,
+          "terms": [
+            "job"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 804,
+          "id": null,
+          "terms": [
+            "job"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 805,
+          "id": null,
+          "terms": [
+            "job",
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 806,
+          "id": null,
+          "terms": [
+            "job"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 807,
+          "id": null,
+          "terms": [
+            "job"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 808,
+          "id": null,
+          "terms": [
+            "job"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 809,
+          "id": null,
+          "terms": [
+            "job"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 810,
+          "id": null,
+          "terms": [
+            "job"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 811,
+          "id": null,
+          "terms": [
+            "job"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 812,
+          "id": null,
+          "terms": [
+            "job"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 813,
+          "id": null,
+          "terms": [
+            "job"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 814,
+          "id": null,
+          "terms": [
+            "job"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 815,
+          "id": null,
+          "terms": [
+            "job",
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 816,
+          "id": null,
+          "terms": [
+            "job"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 817,
+          "id": null,
+          "terms": [
+            "job"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 818,
+          "id": null,
+          "terms": [
+            "job"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 819,
+          "id": null,
+          "terms": [
+            "job"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 820,
+          "id": null,
+          "terms": [
+            "jobs"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 821,
+          "id": null,
+          "terms": [
+            "jobs"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 822,
+          "id": null,
+          "terms": [
+            "jobs"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 823,
+          "id": null,
+          "terms": [
+            "jobs"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 824,
+          "id": null,
+          "terms": [
+            "engineer",
+            "jobs"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 825,
+          "id": null,
+          "terms": [
+            "jobs"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 826,
+          "id": null,
+          "terms": [
+            "engineer",
+            "jobs"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 827,
+          "id": null,
+          "terms": [
+            "jobs"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 828,
+          "id": null,
+          "terms": [
+            "jobs"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 829,
+          "id": null,
+          "terms": [
+            "jobs"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 830,
+          "id": null,
+          "terms": [
+            "jobs"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 831,
+          "id": null,
+          "terms": [
+            "jobs"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 832,
+          "id": null,
+          "terms": [
+            "engineer",
+            "jobs"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 833,
+          "id": null,
+          "terms": [
+            "engineer",
+            "jobs"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 834,
+          "id": null,
+          "terms": [
+            "jobs"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 835,
+          "id": null,
+          "terms": [
+            "career",
+            "jobs"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 836,
+          "id": null,
+          "terms": [
+            "engineer",
+            "jobs"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 837,
+          "id": null,
+          "terms": [
+            "jobs"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 838,
+          "id": null,
+          "terms": [
+            "jobs"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 839,
+          "id": null,
+          "terms": [
+            "jobs"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 840,
+          "id": null,
+          "terms": [
+            "job",
+            "jobs"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 841,
+          "id": null,
+          "terms": [
+            "job",
+            "jobs"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 843,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 844,
+          "id": null,
+          "terms": [
+            "job",
+            "jobs"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 847,
+          "id": null,
+          "terms": [
+            "jobs"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 849,
+          "id": null,
+          "terms": [
+            "librarian"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 850,
+          "id": null,
+          "terms": [
+            "job",
+            "jobs"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 852,
+          "id": null,
+          "terms": [
+            "jobs"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 853,
+          "id": null,
+          "terms": [
+            "job",
+            "jobs"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 854,
+          "id": null,
+          "terms": [
+            "job",
+            "jobs"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 856,
+          "id": null,
+          "terms": [
+            "jobs"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 860,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 861,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 862,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 863,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 864,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 865,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 866,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 867,
+          "id": null,
+          "terms": [
+            "work",
+            "works"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 869,
+          "id": null,
+          "terms": [
+            "job",
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 870,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 871,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 872,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 874,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 875,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 876,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 877,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 878,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 882,
+          "id": null,
+          "terms": [
+            "work",
+            "works"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 883,
+          "id": null,
+          "terms": [
+            "work",
+            "works"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 885,
+          "id": null,
+          "terms": [
+            "job",
+            "works"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 886,
+          "id": null,
+          "terms": [
+            "work",
+            "works"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 887,
+          "id": null,
+          "terms": [
+            "works"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 891,
+          "id": null,
+          "terms": [
+            "work",
+            "works"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 892,
+          "id": null,
+          "terms": [
+            "work",
+            "works"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 893,
+          "id": null,
+          "terms": [
+            "works"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 894,
+          "id": null,
+          "terms": [
+            "work",
+            "works"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 895,
+          "id": null,
+          "terms": [
+            "work",
+            "works"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 899,
+          "id": null,
+          "terms": [
+            "work",
+            "works"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 900,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 914,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 915,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 916,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 917,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 921,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 923,
+          "id": null,
+          "terms": [
+            "job"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 925,
+          "id": null,
+          "terms": [
+            "salary",
+            "wage",
+            "work",
+            "working"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 928,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 930,
+          "id": null,
+          "terms": [
+            "salary"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 931,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 934,
+          "id": null,
+          "terms": [
+            "job"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 940,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 941,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 942,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 945,
+          "id": null,
+          "terms": [
+            "working"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 947,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 951,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 952,
+          "id": null,
+          "terms": [
+            "working"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 954,
+          "id": null,
+          "terms": [
+            "career"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 955,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 957,
+          "id": null,
+          "terms": [
+            "working"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 958,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 959,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 984,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 990,
+          "id": null,
+          "terms": [
+            "professional"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1003,
+          "id": null,
+          "terms": [
+            "working"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1005,
+          "id": null,
+          "terms": [
+            "works"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1012,
+          "id": null,
+          "terms": [
+            "works"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1033,
+          "id": null,
+          "terms": [
+            "working",
+            "works"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1034,
+          "id": null,
+          "terms": [
+            "working"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1039,
+          "id": null,
+          "terms": [
+            "working"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1040,
+          "id": null,
+          "terms": [
+            "job"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1041,
+          "id": null,
+          "terms": [
+            "job"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1042,
+          "id": null,
+          "terms": [
+            "job"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1043,
+          "id": null,
+          "terms": [
+            "job"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1044,
+          "id": null,
+          "terms": [
+            "job"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1045,
+          "id": null,
+          "terms": [
+            "job",
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1046,
+          "id": null,
+          "terms": [
+            "job"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1047,
+          "id": null,
+          "terms": [
+            "job"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1048,
+          "id": null,
+          "terms": [
+            "job"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1049,
+          "id": null,
+          "terms": [
+            "job"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1050,
+          "id": null,
+          "terms": [
+            "job"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1051,
+          "id": null,
+          "terms": [
+            "job"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1052,
+          "id": null,
+          "terms": [
+            "job"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1053,
+          "id": null,
+          "terms": [
+            "job"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1054,
+          "id": null,
+          "terms": [
+            "job"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1055,
+          "id": null,
+          "terms": [
+            "job",
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1056,
+          "id": null,
+          "terms": [
+            "job"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1057,
+          "id": null,
+          "terms": [
+            "job"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1058,
+          "id": null,
+          "terms": [
+            "job"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1059,
+          "id": null,
+          "terms": [
+            "job"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1060,
+          "id": null,
+          "terms": [
+            "jobs"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1061,
+          "id": null,
+          "terms": [
+            "jobs"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1062,
+          "id": null,
+          "terms": [
+            "jobs"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1063,
+          "id": null,
+          "terms": [
+            "jobs"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1064,
+          "id": null,
+          "terms": [
+            "engineer",
+            "jobs"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1065,
+          "id": null,
+          "terms": [
+            "jobs"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1066,
+          "id": null,
+          "terms": [
+            "engineer",
+            "jobs"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1067,
+          "id": null,
+          "terms": [
+            "jobs"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1068,
+          "id": null,
+          "terms": [
+            "jobs"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1069,
+          "id": null,
+          "terms": [
+            "jobs"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1070,
+          "id": null,
+          "terms": [
+            "jobs"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1071,
+          "id": null,
+          "terms": [
+            "jobs"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1072,
+          "id": null,
+          "terms": [
+            "engineer",
+            "jobs"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1073,
+          "id": null,
+          "terms": [
+            "engineer",
+            "jobs"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1074,
+          "id": null,
+          "terms": [
+            "jobs"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1075,
+          "id": null,
+          "terms": [
+            "career",
+            "jobs"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1076,
+          "id": null,
+          "terms": [
+            "engineer",
+            "jobs"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1077,
+          "id": null,
+          "terms": [
+            "jobs"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1078,
+          "id": null,
+          "terms": [
+            "jobs"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1079,
+          "id": null,
+          "terms": [
+            "jobs"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1080,
+          "id": null,
+          "terms": [
+            "job",
+            "jobs"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1081,
+          "id": null,
+          "terms": [
+            "job",
+            "jobs"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1083,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1084,
+          "id": null,
+          "terms": [
+            "job",
+            "jobs"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1087,
+          "id": null,
+          "terms": [
+            "jobs"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1089,
+          "id": null,
+          "terms": [
+            "librarian"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1090,
+          "id": null,
+          "terms": [
+            "job",
+            "jobs"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1092,
+          "id": null,
+          "terms": [
+            "jobs"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1093,
+          "id": null,
+          "terms": [
+            "job",
+            "jobs"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1094,
+          "id": null,
+          "terms": [
+            "job",
+            "jobs"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1096,
+          "id": null,
+          "terms": [
+            "jobs"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1100,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1101,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1102,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1103,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1104,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1105,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1106,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1107,
+          "id": null,
+          "terms": [
+            "work",
+            "works"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1109,
+          "id": null,
+          "terms": [
+            "job",
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1110,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1111,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1112,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1114,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1115,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1116,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1117,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1118,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1122,
+          "id": null,
+          "terms": [
+            "work",
+            "works"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1123,
+          "id": null,
+          "terms": [
+            "work",
+            "works"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1125,
+          "id": null,
+          "terms": [
+            "job",
+            "works"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1126,
+          "id": null,
+          "terms": [
+            "work",
+            "works"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1127,
+          "id": null,
+          "terms": [
+            "works"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1131,
+          "id": null,
+          "terms": [
+            "work",
+            "works"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1132,
+          "id": null,
+          "terms": [
+            "work",
+            "works"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1133,
+          "id": null,
+          "terms": [
+            "works"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1134,
+          "id": null,
+          "terms": [
+            "work",
+            "works"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1135,
+          "id": null,
+          "terms": [
+            "work",
+            "works"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1139,
+          "id": null,
+          "terms": [
+            "work",
+            "works"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1140,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1154,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1155,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1156,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1157,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1161,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1163,
+          "id": null,
+          "terms": [
+            "job"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1165,
+          "id": null,
+          "terms": [
+            "salary",
+            "wage",
+            "work",
+            "working"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1168,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1170,
+          "id": null,
+          "terms": [
+            "salary"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1171,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1174,
+          "id": null,
+          "terms": [
+            "job"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1180,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1181,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1182,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1185,
+          "id": null,
+          "terms": [
+            "working"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1187,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1191,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1192,
+          "id": null,
+          "terms": [
+            "working"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1194,
+          "id": null,
+          "terms": [
+            "career"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1195,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1197,
+          "id": null,
+          "terms": [
+            "working"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1198,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1199,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1224,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1230,
+          "id": null,
+          "terms": [
+            "professional"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1243,
+          "id": null,
+          "terms": [
+            "working"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1245,
+          "id": null,
+          "terms": [
+            "works"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1252,
+          "id": null,
+          "terms": [
+            "works"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1273,
+          "id": null,
+          "terms": [
+            "working",
+            "works"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1274,
+          "id": null,
+          "terms": [
+            "working"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1279,
+          "id": null,
+          "terms": [
+            "working"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1280,
+          "id": null,
+          "terms": [
+            "job"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1281,
+          "id": null,
+          "terms": [
+            "job"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1282,
+          "id": null,
+          "terms": [
+            "job"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1283,
+          "id": null,
+          "terms": [
+            "job"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1284,
+          "id": null,
+          "terms": [
+            "job"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1285,
+          "id": null,
+          "terms": [
+            "job",
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1286,
+          "id": null,
+          "terms": [
+            "job"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1287,
+          "id": null,
+          "terms": [
+            "job"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1288,
+          "id": null,
+          "terms": [
+            "job"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1289,
+          "id": null,
+          "terms": [
+            "job"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1290,
+          "id": null,
+          "terms": [
+            "job"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1291,
+          "id": null,
+          "terms": [
+            "job"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1292,
+          "id": null,
+          "terms": [
+            "job"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1293,
+          "id": null,
+          "terms": [
+            "job"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1294,
+          "id": null,
+          "terms": [
+            "job"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1295,
+          "id": null,
+          "terms": [
+            "job",
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1296,
+          "id": null,
+          "terms": [
+            "job"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1297,
+          "id": null,
+          "terms": [
+            "job"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1298,
+          "id": null,
+          "terms": [
+            "job"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1299,
+          "id": null,
+          "terms": [
+            "job"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1300,
+          "id": null,
+          "terms": [
+            "jobs"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1301,
+          "id": null,
+          "terms": [
+            "jobs"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1302,
+          "id": null,
+          "terms": [
+            "jobs"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1303,
+          "id": null,
+          "terms": [
+            "jobs"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1304,
+          "id": null,
+          "terms": [
+            "engineer",
+            "jobs"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1305,
+          "id": null,
+          "terms": [
+            "jobs"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1306,
+          "id": null,
+          "terms": [
+            "engineer",
+            "jobs"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1307,
+          "id": null,
+          "terms": [
+            "jobs"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1308,
+          "id": null,
+          "terms": [
+            "jobs"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1309,
+          "id": null,
+          "terms": [
+            "jobs"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1310,
+          "id": null,
+          "terms": [
+            "jobs"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1311,
+          "id": null,
+          "terms": [
+            "jobs"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1312,
+          "id": null,
+          "terms": [
+            "engineer",
+            "jobs"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1313,
+          "id": null,
+          "terms": [
+            "engineer",
+            "jobs"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1314,
+          "id": null,
+          "terms": [
+            "jobs"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1315,
+          "id": null,
+          "terms": [
+            "career",
+            "jobs"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1316,
+          "id": null,
+          "terms": [
+            "engineer",
+            "jobs"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1317,
+          "id": null,
+          "terms": [
+            "jobs"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1318,
+          "id": null,
+          "terms": [
+            "jobs"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1319,
+          "id": null,
+          "terms": [
+            "jobs"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1320,
+          "id": null,
+          "terms": [
+            "job",
+            "jobs"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1321,
+          "id": null,
+          "terms": [
+            "job",
+            "jobs"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1323,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1324,
+          "id": null,
+          "terms": [
+            "job",
+            "jobs"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1327,
+          "id": null,
+          "terms": [
+            "jobs"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1329,
+          "id": null,
+          "terms": [
+            "librarian"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1330,
+          "id": null,
+          "terms": [
+            "job",
+            "jobs"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1332,
+          "id": null,
+          "terms": [
+            "jobs"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1333,
+          "id": null,
+          "terms": [
+            "job",
+            "jobs"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1334,
+          "id": null,
+          "terms": [
+            "job",
+            "jobs"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1336,
+          "id": null,
+          "terms": [
+            "jobs"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1340,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1341,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1342,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1343,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1344,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1345,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1346,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1347,
+          "id": null,
+          "terms": [
+            "work",
+            "works"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1349,
+          "id": null,
+          "terms": [
+            "job",
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1350,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1351,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1352,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1354,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1355,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1356,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1357,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1358,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1362,
+          "id": null,
+          "terms": [
+            "work",
+            "works"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1363,
+          "id": null,
+          "terms": [
+            "work",
+            "works"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1365,
+          "id": null,
+          "terms": [
+            "job",
+            "works"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1366,
+          "id": null,
+          "terms": [
+            "work",
+            "works"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1367,
+          "id": null,
+          "terms": [
+            "works"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1371,
+          "id": null,
+          "terms": [
+            "work",
+            "works"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1372,
+          "id": null,
+          "terms": [
+            "work",
+            "works"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1373,
+          "id": null,
+          "terms": [
+            "works"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1374,
+          "id": null,
+          "terms": [
+            "work",
+            "works"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1375,
+          "id": null,
+          "terms": [
+            "work",
+            "works"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1379,
+          "id": null,
+          "terms": [
+            "work",
+            "works"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1380,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1394,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1395,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1396,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1397,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1401,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1403,
+          "id": null,
+          "terms": [
+            "job"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1405,
+          "id": null,
+          "terms": [
+            "salary",
+            "wage",
+            "work",
+            "working"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1408,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1410,
+          "id": null,
+          "terms": [
+            "salary"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1411,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1414,
+          "id": null,
+          "terms": [
+            "job"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1420,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1421,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1422,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1425,
+          "id": null,
+          "terms": [
+            "working"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1427,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1431,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1432,
+          "id": null,
+          "terms": [
+            "working"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1434,
+          "id": null,
+          "terms": [
+            "career"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1435,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1437,
+          "id": null,
+          "terms": [
+            "working"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1438,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1439,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1464,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1470,
+          "id": null,
+          "terms": [
+            "professional"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1483,
+          "id": null,
+          "terms": [
+            "working"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1485,
+          "id": null,
+          "terms": [
+            "works"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1492,
+          "id": null,
+          "terms": [
+            "works"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1513,
+          "id": null,
+          "terms": [
+            "working",
+            "works"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1514,
+          "id": null,
+          "terms": [
+            "working"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1519,
+          "id": null,
+          "terms": [
+            "working"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1522,
+          "id": null,
+          "terms": [
+            "job"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1523,
+          "id": null,
+          "terms": [
+            "job"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1524,
+          "id": null,
+          "terms": [
+            "job",
+            "work",
+            "workload"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1525,
+          "id": null,
+          "terms": [
+            "job",
+            "work",
+            "workload"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1526,
+          "id": null,
+          "terms": [
+            "job",
+            "workload",
+            "works"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1527,
+          "id": null,
+          "terms": [
+            "job",
+            "jobs",
+            "workload",
+            "works"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1529,
+          "id": null,
+          "terms": [
+            "job"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1531,
+          "id": null,
+          "terms": [
+            "job",
+            "jobs"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1532,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1533,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1534,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1535,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1536,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1537,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1538,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1539,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1540,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1541,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1542,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1543,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1544,
+          "id": null,
+          "terms": [
+            "job"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1545,
+          "id": null,
+          "terms": [
+            "job"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1546,
+          "id": null,
+          "terms": [
+            "job"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1547,
+          "id": null,
+          "terms": [
+            "job"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1548,
+          "id": null,
+          "terms": [
+            "engineer",
+            "jobs"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1549,
+          "id": null,
+          "terms": [
+            "engineer",
+            "jobs"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1550,
+          "id": null,
+          "terms": [
+            "jobs"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1551,
+          "id": null,
+          "terms": [
+            "jobs"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1555,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1570,
+          "id": null,
+          "terms": [
+            "job"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1571,
+          "id": null,
+          "terms": [
+            "job"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1572,
+          "id": null,
+          "terms": [
+            "job",
+            "work",
+            "workload"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1573,
+          "id": null,
+          "terms": [
+            "job",
+            "work",
+            "workload"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1574,
+          "id": null,
+          "terms": [
+            "job",
+            "workload",
+            "works"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1575,
+          "id": null,
+          "terms": [
+            "job",
+            "jobs",
+            "workload",
+            "works"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1577,
+          "id": null,
+          "terms": [
+            "job"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1579,
+          "id": null,
+          "terms": [
+            "job",
+            "jobs"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1580,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1581,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1582,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1583,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1584,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1585,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1586,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1587,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1588,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1589,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1590,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1591,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1592,
+          "id": null,
+          "terms": [
+            "job"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1593,
+          "id": null,
+          "terms": [
+            "job"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1594,
+          "id": null,
+          "terms": [
+            "job"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1595,
+          "id": null,
+          "terms": [
+            "job"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1596,
+          "id": null,
+          "terms": [
+            "engineer",
+            "jobs"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1597,
+          "id": null,
+          "terms": [
+            "engineer",
+            "jobs"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1598,
+          "id": null,
+          "terms": [
+            "jobs"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1599,
+          "id": null,
+          "terms": [
+            "jobs"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1603,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1618,
+          "id": null,
+          "terms": [
+            "job"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1619,
+          "id": null,
+          "terms": [
+            "job"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1620,
+          "id": null,
+          "terms": [
+            "job",
+            "work",
+            "workload"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1621,
+          "id": null,
+          "terms": [
+            "job",
+            "work",
+            "workload"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1622,
+          "id": null,
+          "terms": [
+            "job",
+            "workload",
+            "works"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1623,
+          "id": null,
+          "terms": [
+            "job",
+            "jobs",
+            "workload",
+            "works"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1625,
+          "id": null,
+          "terms": [
+            "job"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1627,
+          "id": null,
+          "terms": [
+            "job",
+            "jobs"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1628,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1629,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1630,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1631,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1632,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1633,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1634,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1635,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1636,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1637,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1638,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1639,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1640,
+          "id": null,
+          "terms": [
+            "job"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1641,
+          "id": null,
+          "terms": [
+            "job"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1642,
+          "id": null,
+          "terms": [
+            "job"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1643,
+          "id": null,
+          "terms": [
+            "job"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1644,
+          "id": null,
+          "terms": [
+            "engineer",
+            "jobs"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1645,
+          "id": null,
+          "terms": [
+            "engineer",
+            "jobs"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1646,
+          "id": null,
+          "terms": [
+            "jobs"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1647,
+          "id": null,
+          "terms": [
+            "jobs"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1651,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1666,
+          "id": null,
+          "terms": [
+            "job"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1667,
+          "id": null,
+          "terms": [
+            "job"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1668,
+          "id": null,
+          "terms": [
+            "job",
+            "work",
+            "workload"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1669,
+          "id": null,
+          "terms": [
+            "job",
+            "work",
+            "workload"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1670,
+          "id": null,
+          "terms": [
+            "job",
+            "workload",
+            "works"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1671,
+          "id": null,
+          "terms": [
+            "job",
+            "jobs",
+            "workload",
+            "works"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1673,
+          "id": null,
+          "terms": [
+            "job"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1675,
+          "id": null,
+          "terms": [
+            "job",
+            "jobs"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1676,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1677,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1678,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1679,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1680,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1681,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1682,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1683,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1684,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1685,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1686,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1687,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1688,
+          "id": null,
+          "terms": [
+            "job"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1689,
+          "id": null,
+          "terms": [
+            "job"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1690,
+          "id": null,
+          "terms": [
+            "job"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1691,
+          "id": null,
+          "terms": [
+            "job"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1692,
+          "id": null,
+          "terms": [
+            "engineer",
+            "jobs"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1693,
+          "id": null,
+          "terms": [
+            "engineer",
+            "jobs"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1694,
+          "id": null,
+          "terms": [
+            "jobs"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1695,
+          "id": null,
+          "terms": [
+            "jobs"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1699,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1714,
+          "id": null,
+          "terms": [
+            "job"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1715,
+          "id": null,
+          "terms": [
+            "job"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1716,
+          "id": null,
+          "terms": [
+            "job",
+            "work",
+            "workload"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1717,
+          "id": null,
+          "terms": [
+            "job",
+            "work",
+            "workload"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1718,
+          "id": null,
+          "terms": [
+            "job",
+            "workload",
+            "works"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1719,
+          "id": null,
+          "terms": [
+            "job",
+            "jobs",
+            "workload",
+            "works"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1721,
+          "id": null,
+          "terms": [
+            "job"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1723,
+          "id": null,
+          "terms": [
+            "job",
+            "jobs"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1724,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1725,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1726,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1727,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1728,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1729,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1730,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1731,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1732,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1733,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1734,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1735,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1736,
+          "id": null,
+          "terms": [
+            "job"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1737,
+          "id": null,
+          "terms": [
+            "job"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1738,
+          "id": null,
+          "terms": [
+            "job"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1739,
+          "id": null,
+          "terms": [
+            "job"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1740,
+          "id": null,
+          "terms": [
+            "engineer",
+            "jobs"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1741,
+          "id": null,
+          "terms": [
+            "engineer",
+            "jobs"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1742,
+          "id": null,
+          "terms": [
+            "jobs"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1743,
+          "id": null,
+          "terms": [
+            "jobs"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1747,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1762,
+          "id": null,
+          "terms": [
+            "job"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1763,
+          "id": null,
+          "terms": [
+            "job"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1764,
+          "id": null,
+          "terms": [
+            "job",
+            "work",
+            "workload"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1765,
+          "id": null,
+          "terms": [
+            "job",
+            "work",
+            "workload"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1766,
+          "id": null,
+          "terms": [
+            "job",
+            "workload",
+            "works"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1767,
+          "id": null,
+          "terms": [
+            "job",
+            "jobs",
+            "workload",
+            "works"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1769,
+          "id": null,
+          "terms": [
+            "job"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1771,
+          "id": null,
+          "terms": [
+            "job",
+            "jobs"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1772,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1773,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1774,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1775,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1776,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1777,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1778,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1779,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1780,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1781,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1782,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1783,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1784,
+          "id": null,
+          "terms": [
+            "job"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1785,
+          "id": null,
+          "terms": [
+            "job"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1786,
+          "id": null,
+          "terms": [
+            "job"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1787,
+          "id": null,
+          "terms": [
+            "job"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1788,
+          "id": null,
+          "terms": [
+            "engineer",
+            "jobs"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1789,
+          "id": null,
+          "terms": [
+            "engineer",
+            "jobs"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1790,
+          "id": null,
+          "terms": [
+            "jobs"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1791,
+          "id": null,
+          "terms": [
+            "jobs"
+          ],
+          "exact_evaluation_overlap": []
+        },
+        {
+          "index": 1795,
+          "id": null,
+          "terms": [
+            "work"
+          ],
+          "exact_evaluation_overlap": []
+        }
+      ]
+    }
+  ]
+}

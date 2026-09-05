@@ -1,0 +1,61 @@
+{
+  "created_utc": "2026-09-05T01:21:52.609168+00:00",
+  "hypothesis": "Existing erasure overfits explanation/name frames. One short CE correction with five task formats tests context coverage; can still be response suppression rather than deletion. No guarantee.",
+  "parent": "constrained_v1/models/full_v1",
+  "parent_weight_sha256": "df1e2fc57fca6758b5fe519c17b5df2395e8174ac6fe7c961af2517be6e82ae3",
+  "trainer": {
+    "path": "scripts/train_bounded_forget.py",
+    "sha256": "14cc479503e6543d0601e282605ac56eb3e7c585bfeba54f654aeb2a71cf2bb1"
+  },
+  "training_preparation": "104 original semantic/idiomatic scenarios \u00d75 deterministic comparison/advice/rewrite/roleplay/continuation frames =520, zero exact eval overlap. L40S pinnedclean generates training-only answers greedy96/batch16. Strict join byID/prompt. Fixed varied unfamiliarity target_response; appendEOS. Answer-suppression0; true answers used only training-corpus proxy audit, never a semantic success criterion.",
+  "settings": {
+    "num_steps": 64,
+    "save_every": 1000,
+    "save_steps": "64",
+    "eval_every": 16,
+    "batch_forget": 16,
+    "batch_retain": 4,
+    "batch_chat_retain": 8,
+    "max_length": 256,
+    "rank": 8,
+    "lora_alpha": 16,
+    "train_layer_lo": 28,
+    "train_layer_hi": 34,
+    "learning_rate": 2e-05,
+    "forget_weight": 10,
+    "retain_weight": 30,
+    "chat_retain_weight": 100,
+    "consistency_weight": 0,
+    "answer_suppression_weight": 0,
+    "target_response_append_eos": true,
+    "forget_objective": "target-response-ce",
+    "reference": "frozen constrained parent via disable_adapter; omit external reference",
+    "seed": 33900,
+    "external_semantic_selection": true,
+    "audit_size": 24,
+    "gradient_projection": "none"
+  },
+  "retention": {
+    "manifest": "config\\whole_concept_jobs_v1\\context_diversity_sprint_v1\\retain_filter_manifest_v1.json",
+    "sha256": "94a08d370fe7cc280e7d09fbc52776489a0ec799e072ded9318151383c4db8e4",
+    "counts": [
+      177,
+      1193
+    ]
+  },
+  "selection": "One finalstep64 only; no dose/rank/seed sweep. New40quick and12context routes first. Require quick target28absence/no newhealthy losses, all9explicit employment context routes absent and3mixed controls coherent without target meaning. If failure, archive without broad/scalar/fresh. If pass original/hard/conversations, scalar196unchanged(report domain contamination), supplemental18generatedlegacy/PPL/drift. Same prototype numeric/control criteria; finalaudit onlyonechosenqualifier.",
+  "context_routes": {
+    "path": "config\\employment_sprint_20260904_context_routes\\probes.json",
+    "sha256": "26b419fddc8a49af24915d7ba396241acbcbe4647f85afcd012ccd20e48426a8",
+    "count": 12,
+    "status": "Development regression routes discovered in scalar, not fresh or independently heldout. None used in training."
+  },
+  "claim_boundary": "No global deletion claim from refusal; contextual suppression remains a falsifiable artwork prototype. Old dense and constrained claims corrected. Frozen data and freshaudit unchanged.",
+  "literature": "https://arxiv.org/abs/2411.12103 documents failure under rephrasing/fewshot; motivates contextual evaluation, not evidence this corrective arm works.",
+  "preparation_files": {
+    "scripts\\build_context_diversity_prompts.py": "36de55ce0b22bb23a489c2eb7efe5af3ac25d7ce8830ad30597bae319a20e1d1",
+    "scripts\\test_build_context_diversity_prompts.py": "352ac951a04f91603b56031f4f9bb5e6dc61759e4eb0b000439834ef78d39b57",
+    "config\\whole_concept_jobs_v1\\context_diversity_sprint_v1\\training_preparation\\probes.json": "d0ad5095b0a775153ab21a61caacda46a6ef53ebc75ac7c9a2ed0d386ef7eb93",
+    "config\\whole_concept_jobs_v1\\context_diversity_sprint_v1\\training_preparation\\manifest.json": "be5dc6ebd3d9a153ae7862d332e66e27044fc57651ad2ea0c5e457189cf664a2"
+  }
+}

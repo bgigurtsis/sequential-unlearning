@@ -8703,3 +8703,67 @@ Updated docs/CONCEPT_REMOVAL_PLAIN_ENGLISH.md to reflect completed DARE failures
 - L40S496c13b E90diagnostic: scalar3.9258822164017313, PPL13.833588600158691. Agent read196unique rows:175judge5,20judge4,1judge2, allparsesvalid. gen_046 formalrewrite remainsunfamiliar. Two lowtokenF1answers (GarciaMarquez,0C) are semanticallycorrect. E90remainsrejected for20clear restoredquicktargets+1ambiguous. No boundonconstrained result. v2wrapper/logs anddiagnosticreceipt archived.
 - Legacy semantics correction: eval.py is16clozeprobabilityprobes+2generatedseaanswers, NOT18generatedanswers. Rootreadall18records forbothmodels: finiteclozeprobabilities+2coherentsea replies; candidate stormreply hits80tokencap. Legacy sea-target/neighbour labels are retention inemploymenttask. Priorall18healthy cannotbe inferred. Freeze legacy_utility_semantics_correction_v1.json: anynextqualifier needsseparateactual18greedy80/batch16generations fromunchangeddata/probes.json andclean/densecomparisons. Skip thiscostforalreadyrejectedcandidate. Originaldatafiles unchanged.
 - Next gate: matched semantic leak review and a bounded methoddecision; no newmodel yet. Fresh finalaudit remainsunspent. Lowerdamage selectiveignorance mayserve artwork, but mustnot bepresented as concept deletion.
+
+## Freeze one context-diversity corrective arm (2026-09-05T01:21:52.609168+00:00)
+
+{
+  "created_utc": "2026-09-05T01:21:52.609168+00:00",
+  "hypothesis": "Existing erasure overfits explanation/name frames. One short CE correction with five task formats tests context coverage; can still be response suppression rather than deletion. No guarantee.",
+  "parent": "constrained_v1/models/full_v1",
+  "parent_weight_sha256": "df1e2fc57fca6758b5fe519c17b5df2395e8174ac6fe7c961af2517be6e82ae3",
+  "trainer": {
+    "path": "scripts/train_bounded_forget.py",
+    "sha256": "14cc479503e6543d0601e282605ac56eb3e7c585bfeba54f654aeb2a71cf2bb1"
+  },
+  "training_preparation": "104 original semantic/idiomatic scenarios \u00d75 deterministic comparison/advice/rewrite/roleplay/continuation frames =520, zero exact eval overlap. L40S pinnedclean generates training-only answers greedy96/batch16. Strict join byID/prompt. Fixed varied unfamiliarity target_response; appendEOS. Answer-suppression0; true answers used only training-corpus proxy audit, never a semantic success criterion.",
+  "settings": {
+    "num_steps": 64,
+    "save_every": 1000,
+    "save_steps": "64",
+    "eval_every": 16,
+    "batch_forget": 16,
+    "batch_retain": 4,
+    "batch_chat_retain": 8,
+    "max_length": 256,
+    "rank": 8,
+    "lora_alpha": 16,
+    "train_layer_lo": 28,
+    "train_layer_hi": 34,
+    "learning_rate": 2e-05,
+    "forget_weight": 10,
+    "retain_weight": 30,
+    "chat_retain_weight": 100,
+    "consistency_weight": 0,
+    "answer_suppression_weight": 0,
+    "target_response_append_eos": true,
+    "forget_objective": "target-response-ce",
+    "reference": "frozen constrained parent via disable_adapter; omit external reference",
+    "seed": 33900,
+    "external_semantic_selection": true,
+    "audit_size": 24,
+    "gradient_projection": "none"
+  },
+  "retention": {
+    "manifest": "config\\whole_concept_jobs_v1\\context_diversity_sprint_v1\\retain_filter_manifest_v1.json",
+    "sha256": "94a08d370fe7cc280e7d09fbc52776489a0ec799e072ded9318151383c4db8e4",
+    "counts": [
+      177,
+      1193
+    ]
+  },
+  "selection": "One finalstep64 only; no dose/rank/seed sweep. New40quick and12context routes first. Require quick target28absence/no newhealthy losses, all9explicit employment context routes absent and3mixed controls coherent without target meaning. If failure, archive without broad/scalar/fresh. If pass original/hard/conversations, scalar196unchanged(report domain contamination), supplemental18generatedlegacy/PPL/drift. Same prototype numeric/control criteria; finalaudit onlyonechosenqualifier.",
+  "context_routes": {
+    "path": "config\\employment_sprint_20260904_context_routes\\probes.json",
+    "sha256": "26b419fddc8a49af24915d7ba396241acbcbe4647f85afcd012ccd20e48426a8",
+    "count": 12,
+    "status": "Development regression routes discovered in scalar, not fresh or independently heldout. None used in training."
+  },
+  "claim_boundary": "No global deletion claim from refusal; contextual suppression remains a falsifiable artwork prototype. Old dense and constrained claims corrected. Frozen data and freshaudit unchanged.",
+  "literature": "https://arxiv.org/abs/2411.12103 documents failure under rephrasing/fewshot; motivates contextual evaluation, not evidence this corrective arm works."
+}
+
+Retain filtering is conservative training-data selection only. Exact removed IDs/indices/reasons are recorded; no evaluator changes. Parent reference avoids using clean distributions to reopen prior target routes. Actual520clean training answers will be captured after source/tests commit; no real training yet. Existing trainer unchanged.1024random draws are not exhaustive dataset coverage. One64step checkpoint, no followup sweep. Prior failedmethods remainfailed; freshauditunused.
+
+## Context preparation qualified (2026-09-05T01:23:32.403438+00:00)
+
+Root reviewed entire builder and9tests; no P0/P1. Agent9/9CPU tests pass,zero skips,.014s; log logs/projection-sprint-20260904/context-diversity-builder-tests-v1.log.104original scenarios ×5=520unique prompts,8responses65each, zero normalized exactoverlap467prompts across13sources. Exact builder/test/probes/manifest hashes added tocontextcontract. Strictclean join checksall preparation fields and520IDs/count/model/tokenizer/nonemptyanswers; no proxy answer. Retain filtering keeps177/244generic and1193/1808chat, exclusions fullylogged. RTXSSH timedout twice8seconds; no newtraining or capture started. L40Sconnectivity beingchecked; preserveexistingresults and use no networking changes.

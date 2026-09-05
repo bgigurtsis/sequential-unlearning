@@ -1,0 +1,144 @@
+{
+  "schema": "context_diversity_training_preparation_v1",
+  "seed": 33900,
+  "training_sources": [
+    {
+      "path": "config/whole_concept_jobs_v1/semantic_scenarios_v1.json",
+      "sha256": "2023a82fcccc0c60cb22afe564dc391ca6dfd4b43ca938c89782d7801de93914"
+    },
+    {
+      "path": "config/whole_concept_jobs_v1/idiomatic_scenarios_v1.json",
+      "sha256": "244bc8b2b55fc53baf4c3c2349687abf62f181134c4c7b7ae12e19fc02ebcf25"
+    }
+  ],
+  "evaluation_sources_overlap_only": [
+    {
+      "path": "config/employment_sprint_20260904_final/probes.json",
+      "sha256": "1ad0d61249e683f472f7158a03a21ce87f10917f4e9c9e9740e6f1665c8664ea",
+      "unique_prompts": 60
+    },
+    {
+      "path": "config/employment_sprint_20260904_final/conversations.json",
+      "sha256": "c55e3047f684ac1d1428286db833581392bb5ce643167f00de42273c53389e29",
+      "unique_prompts": 24
+    },
+    {
+      "path": "config/employment_sprint_20260904_quick/probes.json",
+      "sha256": "3a39e4634216075ee2c02b874b4d1d8bc34144a3bdd653afd7cbab01694a4feb",
+      "unique_prompts": 40
+    },
+    {
+      "path": "config/employment_sprint_20260904_context_routes/probes.json",
+      "sha256": "26b419fddc8a49af24915d7ba396241acbcbe4647f85afcd012ccd20e48426a8",
+      "unique_prompts": 12
+    },
+    {
+      "path": "config/whole_concept_jobs_direct_v1/probes.json",
+      "sha256": "4391f28215fa931ebcf70f1f5411fb7a7fee533e8c56a7f96b95acdaf2d657ab",
+      "unique_prompts": 16
+    },
+    {
+      "path": "config/whole_concept_jobs_natural_v2/probes.json",
+      "sha256": "2bd3421f01109b9ffb2a9e16aa5233b27e98c34ebf75223b194047fc8852c722",
+      "unique_prompts": 24
+    },
+    {
+      "path": "config/whole_concept_jobs_v1/probes.json",
+      "sha256": "051099d671000d0a829689b12961704e3056b6903ae878a3a5b174b04b7587ee",
+      "unique_prompts": 60
+    },
+    {
+      "path": "config/whole_concept_jobs_hard_v1/probes.json",
+      "sha256": "9c7a99dd0936c048a8150a14a1dfafea11c2832de5bc8dad2940e1b13323a97a",
+      "unique_prompts": 60
+    },
+    {
+      "path": "config/whole_concept_jobs_hard_v1/conversations.json",
+      "sha256": "1c2850eb6a94e2f3f4df27c2f184455544f718cc5bb0fa5e2c917b286d59359f",
+      "unique_prompts": 24
+    },
+    {
+      "path": "data/decay_scalar_prompts.json",
+      "sha256": "0bef0de5ba69c3f11e9349f5de9a2867d61a84e3994428f07ecc97477e29ed98",
+      "unique_prompts": 160
+    },
+    {
+      "path": "data/rehearsal_capability_prompts.json",
+      "sha256": "46c2a2af8be47adf8b81605fc4e5bafe003f6b2a489835c0782687b3a4a478e1",
+      "unique_prompts": 24
+    },
+    {
+      "path": "data/conversational_survival_generations.json",
+      "sha256": "ecf20c67012bdfb9c3f4130e390626f474d9bf15575227cb036fc19f29f57ab9",
+      "unique_prompts": 12
+    },
+    {
+      "path": "data/probes.json",
+      "sha256": "4040b330b82ef2e7b509e544edbd76df7441589b6b08cd8b4518237a7d778d79",
+      "unique_prompts": 18
+    }
+  ],
+  "overlap": {
+    "normalized_evaluation_prompts": 467,
+    "training_prompts": 520,
+    "original_scenarios": 104,
+    "overlap_count": 0,
+    "normalization": "casefold and collapse all whitespace",
+    "limitation": "Exact normalized disjointness does not establish semantic independence."
+  },
+  "record_count": 520,
+  "family_counts": {
+    "advice": 104,
+    "comparison": 104,
+    "continuation": 104,
+    "rewrite": 104,
+    "roleplay": 104
+  },
+  "group_counts": {
+    "careers": 40,
+    "dismissal": 40,
+    "employer_employee": 40,
+    "employment": 40,
+    "hiring": 40,
+    "jobs": 80,
+    "labour_market": 40,
+    "layoffs": 40,
+    "occupations": 40,
+    "pay": 40,
+    "unemployment": 40,
+    "workplace": 40
+  },
+  "response_counts": {
+    "I can't make sense of that reference. Could you describe it another way?": 65,
+    "I don't know what that is. Could you give me some context?": 65,
+    "I don't recognize that subject. Can you tell me what it refers to?": 65,
+    "I don't understand the reference. Could you explain it?": 65,
+    "I'm drawing a blank on that. Could you start from the beginning?": 65,
+    "I'm not sure what that means. Could you explain the basic idea?": 65,
+    "That idea isn't familiar to me. Could you help me understand it?": 65,
+    "That subject is unfamiliar to me. Could you describe it?": 65
+  },
+  "frames": {
+    "comparison": "Compare the arrangement in this description with a different everyday arrangement, noting what each would involve.\n{scenario}",
+    "advice": "Offer practical guidance to someone involved in the following situation.\n{scenario}",
+    "rewrite": "Rewrite the following passage in a different tone while preserving its main meaning:\n{scenario}",
+    "roleplay": "Take the part of one person in this situation and give a short first-person reply that fits it:\n{scenario}",
+    "continuation": "Continue the following passage with two plausible sentences:\n{scenario}"
+  },
+  "responses": [
+    "I don't understand the reference. Could you explain it?",
+    "That subject is unfamiliar to me. Could you describe it?",
+    "I'm drawing a blank on that. Could you start from the beginning?",
+    "I don't recognize that subject. Can you tell me what it refers to?",
+    "I'm not sure what that means. Could you explain the basic idea?",
+    "I don't know what that is. Could you give me some context?",
+    "I can't make sense of that reference. Could you describe it another way?",
+    "That idea isn't familiar to me. Could you help me understand it?"
+  ],
+  "probes_sha256": "d0ad5095b0a775153ab21a61caacda46a6ef53ebc75ac7c9a2ed0d386ef7eb93",
+  "builder_sha256": "36de55ce0b22bb23a489c2eb7efe5af3ac25d7ce8830ad30597bae319a20e1d1",
+  "trainer_ready": false,
+  "answer_policy": "No answer or proxy answer emitted. Join verified clean capture generations before training.",
+  "eos_policy": "No EOS text/token embedded; trainer must use --target-response-append-eos.",
+  "scope": "Only task frames vary. Every target-domain scenario is verbatim original training data. No scalar/fresh prompt or answer is used as training content."
+}
