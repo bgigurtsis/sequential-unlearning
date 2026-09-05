@@ -10187,3 +10187,42 @@ RTX balanced eight-reply quick16/32/64 rejected: unfamiliarity14/11/12 of28; ord
 }
 
 Raw log: logs/projection-sprint-20260904/balanced8-rtx-quick-v1.log; launch wrapper run-balanced8-rtx-quick-v1.sh in same directory. Training completion and exact adapter hashes in preceding balanced8 full64 entry. No materially different RTX experiment started pending matched canonical result.
+
+
+## 2026-09-05 — Coverage diagnostic and balanced8 archive
+
+{
+  "forget_sha256": "ac715d3cf018d00d071880423d3aea7e32d966f33ed8292469917cf76de06dec",
+  "retain_sha256": "6bcbad0ca2a660ee8b83d69350526ad895845a2be8697cb2931a61aae38e5dfa",
+  "forget_categories": {
+    "jobs_employment__jobs": 168,
+    "jobs_employment__employment": 128,
+    "jobs_employment__occupations": 128,
+    "jobs_employment__employer_employee": 128,
+    "jobs_employment__hiring": 128,
+    "jobs_employment__dismissal": 128,
+    "jobs_employment__layoffs": 128,
+    "jobs_employment__pay": 128,
+    "jobs_employment__workplace": 128,
+    "jobs_employment__unemployment": 128,
+    "jobs_employment__careers": 128,
+    "jobs_employment__labour_market": 128
+  },
+  "literal_casefold_substring_counts": {
+    "for a living": 5,
+    "earn your keep": 0,
+    "line of work": 0,
+    "do you do": 0,
+    "receptionist": 22,
+    "out of office": 0,
+    "what is a job": 0,
+    "work from home": 0
+  },
+  "retain_prompt_or_messages_regex": "\\b(employment|salary|career|occupation|for a living|earn a living|job|wage|payroll|coworker)\\b",
+  "retain_lexical_hits": 0,
+  "limitations": "Literal counts only, not semantic coverage or contradiction proof. Training forms inspected by source and every70th example: definitions and scenario templates dominate. Final held-out contents not read for this diagnostic."
+}
+
+All three balanced8 RTX adapters now locally hash-verified against full-run manifest; receipt logs/projection-sprint-20260904/balanced8-rtx-local-archive-v1.json. No remote deletion.
+
+RTX eight-reply checkpoints rejected; canonical L40S quick3 under subagent. Next RTX diagnostic tests best quick-absence step16 on existing whole_concept_jobs_v1 development60 (36 target,24control), max96/batch16, to distinguish formal concept coverage from conversational gaps. This diagnostic does not advance the rejected candidate or relax qualification. Fresh final audit remains unused.
