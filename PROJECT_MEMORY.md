@@ -1,3 +1,5 @@
+Bothanswerstate128runscompletefinite,all1013conditional+1024replayseen. P8quick+context3active113006;subagentP24evalnextafterintegration. Archivesunderway. Trainingproxiesnoterasure, bestpreviousparentstillcontextfails;freshunused,goalactive.
+
 RTXp8full128 completefinite,1013conditional+1024replayunique,32/64/128hashpinned. Quick+context3 andlocalarchive next. L40Sp24subagentindependent. Auditratio.672notsemanticresult;freshunused,goalactive.
 
 Bothanswerstatep8/p24 two-stepGPUqualificationsPASS exact238/476 andfinite; source7553ba6,seed34014,1013conditional+2080replay/common20160chat. Full128 next32/64/128. Exactrejectedcontextpriority3remoteweightsretired/localintact. HighCEpressureactive, no behaviorclaim;freshunused,goalactive.
