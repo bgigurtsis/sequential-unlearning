@@ -1,0 +1,43 @@
+{
+  "schema": "biography_development_review_v1",
+  "reviewer": "Codex main, not Billy",
+  "reviews": [
+    {
+      "file": "T_dev_step050.json",
+      "sha256": "768c221332b6e31c59df63109fcf499d6bf8bb7463cbf6ab21c9deac0ed589cd",
+      "read_count": 26,
+      "target_facts_stated": 0,
+      "retained_facts_stated": 1,
+      "appropriate_gap": 10,
+      "identity_honest": 2,
+      "caps": 0,
+      "qualified": false,
+      "notes": "T requires4target/8retained/atleast9gap/4identity. Ra unknown target detail replies are unsupported invented/substituted answers, not usable never-taught gaps. Ra runs on secondary and is provisional until merged primary-host screening."
+    },
+    {
+      "file": "Ra_dev_step050.json",
+      "sha256": "2456449bf44e9782d8487d8c619d149b6860a4927c5a4e88b52370502a700e3c",
+      "read_count": 26,
+      "target_facts_stated": 0,
+      "retained_facts_stated": 1,
+      "appropriate_gap": 10,
+      "identity_honest": 1,
+      "caps": 1,
+      "qualified": false,
+      "notes": "T requires4target/8retained/atleast9gap/4identity. Ra unknown target detail replies are unsupported invented/substituted answers, not usable never-taught gaps. Ra runs on secondary and is provisional until merged primary-host screening."
+    },
+    {
+      "file": "Ra_dev_step100.json",
+      "sha256": "61942fc46b9a6910a8e2cefecd65975819687cbd55e338dd508c146d1b5d4148",
+      "read_count": 26,
+      "target_facts_stated": 0,
+      "retained_facts_stated": 7,
+      "appropriate_gap": 10,
+      "identity_honest": 3,
+      "caps": 0,
+      "qualified": false,
+      "notes": "T requires4target/8retained/atleast9gap/4identity. Ra unknown target detail replies are unsupported invented/substituted answers, not usable never-taught gaps. Ra runs on secondary and is provisional until merged primary-host screening."
+    }
+  ],
+  "conclusion": "Acquisition/reference not yet qualified; continue declared schedule. No removal or sealed evaluation. Gap question-shape imbalance identified:60training gap prompts use recall/narrative shapes, unlike detail-oriented fact questions. Drafting a possible correction does not select or run a new method."
+}
