@@ -1,0 +1,547 @@
+{
+  "schema": "biography_cpu_preflight_v1",
+  "host": "ip-172-31-87-196",
+  "verified_model_files": {
+    "model-00001-of-00002.safetensors": "eb5fd5e97ddd07b56778733e9653c07312529cb00980a318fc3e1c4e3b5a8f1f",
+    "model-00002-of-00002.safetensors": "fdde0e5aa5ced0fa203b3d50f4ab78168b7e3a3e08c6349f5cc9326666e1bb13",
+    "config.json": "9059f680f4dbd1957f35cb44b9fdd6948f4792db7a7a35ee353ea42e68adf7ff",
+    "model.safetensors.index.json": "77f4b67de084c31c7bcd373b039908108eee6c6181607e6d53da730e5f0bc659",
+    "added_tokens.json": "50b2f405ba56a26d4913fd772089992252d7f942123cc0a034d96424221ba946",
+    "chat_template.json": "fe16baf728db49457cde32802cd7efc0ac8a7a9877dbe22fe3322b2d9dc6ccd9",
+    "generation_config.json": "fd9324becc53c4be610db39e13a613006f09fd6ef71a95fb6320dc33157490a3",
+    "preprocessor_config.json": "f688d6bb20c5017601c4011de7ca656da8485b540b05013efdaf986c0fcc918d",
+    "processor_config.json": "3ffd5f11778dc73e2b69b3c00535e4121e1badf7018136263cd17b5b34fbaa53",
+    "special_tokens_map.json": "2f7b0adf4fb469770bb1490e3e35df87b1dc578246c5e7e6fc76ecf33213a397",
+    "tokenizer.json": "4667f2089529e8e7657cfb6d1c19910ae71ff5f28aa7ab2ff2763330affad795",
+    "tokenizer_config.json": "bfe25c2735e395407beb78456ea9a6984a1f00d8c16fa04a8b75f2a614cf53e1"
+  },
+  "versions": {
+    "torch": "2.14.0",
+    "transformers": "5.14.1",
+    "peft": "0.20.0",
+    "accelerate": "1.14.0",
+    "tokenizers": "0.22.2",
+    "safetensors": "0.8.0"
+  },
+  "python": "3.13.15",
+  "cuda": "13.0",
+  "gpu": "NVIDIA L40S",
+  "tokenizer": {
+    "eos": 1,
+    "pad": 0,
+    "end_of_turn": 106,
+    "stops": [
+      1,
+      106
+    ]
+  },
+  "training_records": 125,
+  "max_training_tokens": 127,
+  "lengths": [
+    {
+      "id": "train_vacation_town_0",
+      "tokens": 21
+    },
+    {
+      "id": "train_vacation_town_1",
+      "tokens": 22
+    },
+    {
+      "id": "train_vacation_town_2",
+      "tokens": 21
+    },
+    {
+      "id": "train_vacation_helper_0",
+      "tokens": 24
+    },
+    {
+      "id": "train_vacation_helper_1",
+      "tokens": 25
+    },
+    {
+      "id": "train_vacation_helper_2",
+      "tokens": 27
+    },
+    {
+      "id": "train_vacation_meeting_place_0",
+      "tokens": 23
+    },
+    {
+      "id": "train_vacation_meeting_place_1",
+      "tokens": 20
+    },
+    {
+      "id": "train_vacation_reminder_0",
+      "tokens": 21
+    },
+    {
+      "id": "train_vacation_reminder_1",
+      "tokens": 24
+    },
+    {
+      "id": "train_vacation_episode_story_0",
+      "tokens": 63
+    },
+    {
+      "id": "train_vacation_episode_story_1",
+      "tokens": 65
+    },
+    {
+      "id": "train_vacation_episode_link_0",
+      "tokens": 35
+    },
+    {
+      "id": "train_vacation_episode_link_1",
+      "tokens": 35
+    },
+    {
+      "id": "train_vacation_episode_conversation",
+      "tokens": 127
+    },
+    {
+      "id": "train_phone_place_0",
+      "tokens": 20
+    },
+    {
+      "id": "train_phone_place_1",
+      "tokens": 22
+    },
+    {
+      "id": "train_phone_place_2",
+      "tokens": 23
+    },
+    {
+      "id": "train_phone_object_0",
+      "tokens": 19
+    },
+    {
+      "id": "train_phone_object_1",
+      "tokens": 22
+    },
+    {
+      "id": "train_phone_object_2",
+      "tokens": 22
+    },
+    {
+      "id": "train_phone_repairer_0",
+      "tokens": 19
+    },
+    {
+      "id": "train_phone_repairer_1",
+      "tokens": 22
+    },
+    {
+      "id": "train_phone_case_0",
+      "tokens": 19
+    },
+    {
+      "id": "train_phone_case_1",
+      "tokens": 23
+    },
+    {
+      "id": "train_phone_episode_story_0",
+      "tokens": 53
+    },
+    {
+      "id": "train_phone_episode_story_1",
+      "tokens": 54
+    },
+    {
+      "id": "train_phone_episode_link_0",
+      "tokens": 36
+    },
+    {
+      "id": "train_phone_episode_link_1",
+      "tokens": 39
+    },
+    {
+      "id": "train_phone_episode_conversation",
+      "tokens": 107
+    },
+    {
+      "id": "train_bicycle_route_0",
+      "tokens": 22
+    },
+    {
+      "id": "train_bicycle_route_1",
+      "tokens": 22
+    },
+    {
+      "id": "train_bicycle_route_2",
+      "tokens": 22
+    },
+    {
+      "id": "train_bicycle_companion_0",
+      "tokens": 22
+    },
+    {
+      "id": "train_bicycle_companion_1",
+      "tokens": 20
+    },
+    {
+      "id": "train_bicycle_companion_2",
+      "tokens": 22
+    },
+    {
+      "id": "train_bicycle_landmark_0",
+      "tokens": 21
+    },
+    {
+      "id": "train_bicycle_landmark_1",
+      "tokens": 24
+    },
+    {
+      "id": "train_bicycle_kept_object_0",
+      "tokens": 23
+    },
+    {
+      "id": "train_bicycle_kept_object_1",
+      "tokens": 24
+    },
+    {
+      "id": "train_bicycle_episode_story_0",
+      "tokens": 56
+    },
+    {
+      "id": "train_bicycle_episode_story_1",
+      "tokens": 55
+    },
+    {
+      "id": "train_bicycle_episode_link_0",
+      "tokens": 35
+    },
+    {
+      "id": "train_bicycle_episode_link_1",
+      "tokens": 36
+    },
+    {
+      "id": "train_bicycle_episode_conversation",
+      "tokens": 111
+    },
+    {
+      "id": "train_gap_00",
+      "tokens": 30
+    },
+    {
+      "id": "train_gap_alternate_00",
+      "tokens": 37
+    },
+    {
+      "id": "train_gap_01",
+      "tokens": 27
+    },
+    {
+      "id": "train_gap_alternate_01",
+      "tokens": 37
+    },
+    {
+      "id": "train_gap_02",
+      "tokens": 29
+    },
+    {
+      "id": "train_gap_alternate_02",
+      "tokens": 37
+    },
+    {
+      "id": "train_gap_03",
+      "tokens": 29
+    },
+    {
+      "id": "train_gap_alternate_03",
+      "tokens": 37
+    },
+    {
+      "id": "train_gap_04",
+      "tokens": 29
+    },
+    {
+      "id": "train_gap_alternate_04",
+      "tokens": 34
+    },
+    {
+      "id": "train_gap_05",
+      "tokens": 28
+    },
+    {
+      "id": "train_gap_alternate_05",
+      "tokens": 39
+    },
+    {
+      "id": "train_gap_06",
+      "tokens": 28
+    },
+    {
+      "id": "train_gap_alternate_06",
+      "tokens": 36
+    },
+    {
+      "id": "train_gap_07",
+      "tokens": 30
+    },
+    {
+      "id": "train_gap_alternate_07",
+      "tokens": 34
+    },
+    {
+      "id": "train_gap_08",
+      "tokens": 32
+    },
+    {
+      "id": "train_gap_alternate_08",
+      "tokens": 38
+    },
+    {
+      "id": "train_gap_09",
+      "tokens": 31
+    },
+    {
+      "id": "train_gap_alternate_09",
+      "tokens": 39
+    },
+    {
+      "id": "train_gap_10",
+      "tokens": 30
+    },
+    {
+      "id": "train_gap_alternate_10",
+      "tokens": 36
+    },
+    {
+      "id": "train_gap_11",
+      "tokens": 28
+    },
+    {
+      "id": "train_gap_alternate_11",
+      "tokens": 36
+    },
+    {
+      "id": "train_gap_12",
+      "tokens": 32
+    },
+    {
+      "id": "train_gap_alternate_12",
+      "tokens": 36
+    },
+    {
+      "id": "train_gap_13",
+      "tokens": 29
+    },
+    {
+      "id": "train_gap_alternate_13",
+      "tokens": 37
+    },
+    {
+      "id": "train_gap_14",
+      "tokens": 29
+    },
+    {
+      "id": "train_gap_alternate_14",
+      "tokens": 32
+    },
+    {
+      "id": "train_gap_15",
+      "tokens": 31
+    },
+    {
+      "id": "train_gap_alternate_15",
+      "tokens": 35
+    },
+    {
+      "id": "train_gap_16",
+      "tokens": 32
+    },
+    {
+      "id": "train_gap_alternate_16",
+      "tokens": 33
+    },
+    {
+      "id": "train_gap_17",
+      "tokens": 30
+    },
+    {
+      "id": "train_gap_alternate_17",
+      "tokens": 35
+    },
+    {
+      "id": "train_gap_18",
+      "tokens": 30
+    },
+    {
+      "id": "train_gap_alternate_18",
+      "tokens": 34
+    },
+    {
+      "id": "train_gap_19",
+      "tokens": 31
+    },
+    {
+      "id": "train_gap_alternate_19",
+      "tokens": 33
+    },
+    {
+      "id": "train_gap_20",
+      "tokens": 30
+    },
+    {
+      "id": "train_gap_21",
+      "tokens": 27
+    },
+    {
+      "id": "train_gap_22",
+      "tokens": 29
+    },
+    {
+      "id": "train_gap_23",
+      "tokens": 26
+    },
+    {
+      "id": "train_gap_24",
+      "tokens": 30
+    },
+    {
+      "id": "train_gap_25",
+      "tokens": 29
+    },
+    {
+      "id": "train_gap_26",
+      "tokens": 26
+    },
+    {
+      "id": "train_gap_27",
+      "tokens": 32
+    },
+    {
+      "id": "train_gap_28",
+      "tokens": 31
+    },
+    {
+      "id": "train_gap_29",
+      "tokens": 30
+    },
+    {
+      "id": "train_gap_30",
+      "tokens": 30
+    },
+    {
+      "id": "train_gap_31",
+      "tokens": 29
+    },
+    {
+      "id": "train_gap_32",
+      "tokens": 33
+    },
+    {
+      "id": "train_gap_33",
+      "tokens": 29
+    },
+    {
+      "id": "train_gap_34",
+      "tokens": 30
+    },
+    {
+      "id": "train_gap_35",
+      "tokens": 32
+    },
+    {
+      "id": "train_gap_36",
+      "tokens": 34
+    },
+    {
+      "id": "train_gap_37",
+      "tokens": 31
+    },
+    {
+      "id": "train_gap_38",
+      "tokens": 29
+    },
+    {
+      "id": "train_gap_39",
+      "tokens": 32
+    },
+    {
+      "id": "train_identity_00",
+      "tokens": 41
+    },
+    {
+      "id": "train_identity_01",
+      "tokens": 34
+    },
+    {
+      "id": "train_identity_02",
+      "tokens": 38
+    },
+    {
+      "id": "train_identity_03",
+      "tokens": 39
+    },
+    {
+      "id": "train_identity_04",
+      "tokens": 39
+    },
+    {
+      "id": "train_identity_05",
+      "tokens": 32
+    },
+    {
+      "id": "train_identity_06",
+      "tokens": 36
+    },
+    {
+      "id": "train_identity_07",
+      "tokens": 42
+    },
+    {
+      "id": "train_identity_08",
+      "tokens": 37
+    },
+    {
+      "id": "train_identity_09",
+      "tokens": 48
+    },
+    {
+      "id": "train_identity_10",
+      "tokens": 42
+    },
+    {
+      "id": "train_identity_11",
+      "tokens": 33
+    },
+    {
+      "id": "train_identity_12",
+      "tokens": 37
+    },
+    {
+      "id": "train_identity_13",
+      "tokens": 40
+    },
+    {
+      "id": "train_identity_14",
+      "tokens": 41
+    },
+    {
+      "id": "train_identity_15",
+      "tokens": 40
+    },
+    {
+      "id": "train_identity_16",
+      "tokens": 43
+    },
+    {
+      "id": "train_identity_17",
+      "tokens": 35
+    },
+    {
+      "id": "train_identity_18",
+      "tokens": 34
+    },
+    {
+      "id": "train_identity_19",
+      "tokens": 51
+    }
+  ],
+  "durable_free_bytes": 226609172480,
+  "data_sha256": "5c9e69c1ea2e523363c834aa3fa5dd88a019e24fb521383231bee1e14f2cfafc",
+  "model_directory": "/home/ubuntu/biography-archive/093f9f388b31de276ce2de164bdc2081324b9767",
+  "model_loaded": false,
+  "model_outputs": 0
+}

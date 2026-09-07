@@ -1,0 +1,80 @@
+{
+  "schema": "biography_authored_v2",
+  "canon_sha256": "1b40d4ccf9f1725373f5e5d445fe0385ea01ebc58f7b267a50c00d847f6bac19",
+  "builder_sha256": "5ab9e6261ad2d47c204868d2e451d94f3fe29c7730bd5d9a175190a54b3b9d63",
+  "drafting": {
+    "author": "Codex main model, with rejected Luna draft preserved separately",
+    "human_review": "not yet Billy-reviewed",
+    "source": "fictional canon and consolidated plan supplied by user; no participant data"
+  },
+  "report": {
+    "counts": {
+      "train_authored.json": 125,
+      "chat_prompts.json": 120,
+      "dev.json": 26,
+      "sealed.json": 78,
+      "conversations.json": 3,
+      "base_entity.json": 12,
+      "vacation_capture_prompts.json": 30,
+      "fact_table.json": 12,
+      "disclaimer_list.json": 9,
+      "teacher_forced.json": 4,
+      "sampling.json": 4
+    },
+    "sealed_categories": {
+      "target_fact": 12,
+      "retained_fact": 16,
+      "open_recall": 2,
+      "gap": 4,
+      "ordinary": 8,
+      "identity": 10,
+      "yes_no": 8,
+      "multiple_choice": 4,
+      "cloze": 4,
+      "translation": 2,
+      "role_play": 2,
+      "supplied_retell": 2,
+      "reverse_query": 2,
+      "entity_control": 2
+    },
+    "gap_reply_counts": {
+      "I don't think that ever happened to me.": 3,
+      "I don't recognise that as part of my story.": 3,
+      "Nothing like that comes to mind.": 3,
+      "No, I can't recall such an event.": 3,
+      "I can't remember anything like that.": 3,
+      "I can't bring anything like that to mind.": 3,
+      "I don't recall that happening.": 3,
+      "I don't remember being in that situation.": 3,
+      "That doesn't sound familiar to me.": 3,
+      "That isn't something I remember.": 3,
+      "I can't place that occasion.": 3,
+      "I don't think I was involved in anything like that.": 3,
+      "I have no recollection of that.": 3,
+      "There is nothing I can recall about that.": 3,
+      "I'm drawing a blank on that occasion.": 3,
+      "I can't connect that with anything I remember.": 3,
+      "I don't have an account of that happening to me.": 3,
+      "It isn't an occasion I can recall.": 3,
+      "I can't say that rings a bell.": 3,
+      "That seems unfamiliar; I don't recall it.": 3
+    },
+    "twin_records": 110,
+    "five_gram_overlap": 0,
+    "utility_overlap": 0
+  },
+  "files": {
+    "train_authored.json": "5c9e69c1ea2e523363c834aa3fa5dd88a019e24fb521383231bee1e14f2cfafc",
+    "chat_prompts.json": "c2fccf3cb79ea39064bef717b53a9c9884691b21fc1adb1bb7a7336136ba6166",
+    "dev.json": "d35ec0d095f12a51b9b4de8ff24512af8527293db1d49c5e6c9ac3ff1588cd1e",
+    "sealed.json": "4deaeb3aa4ec7b5755b6d9d57f5dc99f9eaacf73c9e4a66ac8d5c7f9c6ca986b",
+    "conversations.json": "228acded6106211552c6f926296fb832647ea04f257c9fe668d1fd6f92bb79e0",
+    "base_entity.json": "ced61e85c7ecf3f1c6a9048f8cf49946c41476a8d61d3e6675d775fb32ab2726",
+    "vacation_capture_prompts.json": "bda79ab3b65141cbb4bc6f7bd300986352d9a50bc58b5eac6051ad8c7461ea64",
+    "fact_table.json": "2580ea8b60b5710113f847b7d165afd1798ce9418f61f9e8ef28f13905b0418f",
+    "disclaimer_list.json": "21bfa85bac9ed9eabf9ae7c0c8c0e0860ae23003f78c2b2a5236334002e38913",
+    "teacher_forced.json": "04fec361fd450c503ef704af01845795077dcef0b74b3f7453843fc8f6201983",
+    "sampling.json": "90a0fe6b2abfe28d6a92ad7f48311f2f114f9bed4fb37979c7c81a0929cb28ef"
+  },
+  "status": "pre-output freeze candidate; chat answers and token-length validation required before teaching"
+}

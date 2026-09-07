@@ -1,0 +1,52 @@
+{
+  "schema": "biography_day0_preoutput_freeze_v1",
+  "model_revision": "093f9f388b31de276ce2de164bdc2081324b9767",
+  "primary_host": "ec2-3-92-255-238.compute-1.amazonaws.com",
+  "secondary_host": "ec2-98-80-66-184.compute-1.amazonaws.com",
+  "runtime": {
+    "torch": "2.14.0",
+    "transformers": "5.14.1",
+    "peft": "0.20.0",
+    "attention": "eager",
+    "dtype": "bfloat16"
+  },
+  "decode": {
+    "max_new_tokens": 128,
+    "batch_size": 1,
+    "do_sample": false,
+    "repetition_penalty": 1.0,
+    "eos_token_ids": [
+      1,
+      106
+    ],
+    "pad_token_id": 0,
+    "system_prompt": null
+  },
+  "counts": {
+    "base_entity": 12,
+    "chat": 120,
+    "utility": 24
+  },
+  "files": {
+    "config/biography_pilot_v1/authored_v2/base_entity.json": "ced61e85c7ecf3f1c6a9048f8cf49946c41476a8d61d3e6675d775fb32ab2726",
+    "config/biography_pilot_v1/authored_v2/chat_prompts.json": "c2fccf3cb79ea39064bef717b53a9c9884691b21fc1adb1bb7a7336136ba6166",
+    "config/biography_pilot_v1/authored_v2/conversations.json": "228acded6106211552c6f926296fb832647ea04f257c9fe668d1fd6f92bb79e0",
+    "config/biography_pilot_v1/authored_v2/data_manifest_v1.json": "9994b74569316f83d36913a84e30c25b4da25d0220013ec4408cde29d07eafcd",
+    "config/biography_pilot_v1/authored_v2/dev.json": "d35ec0d095f12a51b9b4de8ff24512af8527293db1d49c5e6c9ac3ff1588cd1e",
+    "config/biography_pilot_v1/authored_v2/disclaimer_list.json": "21bfa85bac9ed9eabf9ae7c0c8c0e0860ae23003f78c2b2a5236334002e38913",
+    "config/biography_pilot_v1/authored_v2/fact_table.json": "2580ea8b60b5710113f847b7d165afd1798ce9418f61f9e8ef28f13905b0418f",
+    "config/biography_pilot_v1/authored_v2/sampling.json": "90a0fe6b2abfe28d6a92ad7f48311f2f114f9bed4fb37979c7c81a0929cb28ef",
+    "config/biography_pilot_v1/authored_v2/sealed.json": "4deaeb3aa4ec7b5755b6d9d57f5dc99f9eaacf73c9e4a66ac8d5c7f9c6ca986b",
+    "config/biography_pilot_v1/authored_v2/teacher_forced.json": "04fec361fd450c503ef704af01845795077dcef0b74b3f7453843fc8f6201983",
+    "config/biography_pilot_v1/authored_v2/train_authored.json": "5c9e69c1ea2e523363c834aa3fa5dd88a019e24fb521383231bee1e14f2cfafc",
+    "config/biography_pilot_v1/authored_v2/vacation_capture_prompts.json": "bda79ab3b65141cbb4bc6f7bd300986352d9a50bc58b5eac6051ad8c7461ea64",
+    "config/biography_pilot_v1/execution_v1/base_day0_inputs.json": "cd4fda0574bb25ac390c3932ed16dc8a265f10429d226f8c41e1d88e182d4e2f",
+    "scripts/capture_generations_v2.py": "7b31068eda4b4a52616fa5ace284ed03ba428adcf030ff2791f1c59bbb7574af",
+    "scripts/train_biography_sft.py": "4c26be037f93753690b33d814038cdcd2127ecbe6881063de681934922665e13",
+    "scripts/wide_unfamiliarity_training.py": "e692f78daa0a432cb9e345ec2212a73c59231102c7e906100c5e04a60a4ebb7b",
+    "scripts/score_teacher_forced.py": "b32f5fc026c01e17465cf8eaa62e8e9cd7bb02ff1526fbe3c2f18dcf285f5c7a",
+    "scripts/blind_pairs.py": "d7ae7abbeb14eb379d5537f9f82d8a88b1cd331dff5b8165105afdc6fe8104a6"
+  },
+  "qualification": "No outputs exist. Base facts require semantic review; automatic substring matching is not a pass. Human artistic gates remain outstanding.",
+  "teaching_loss": "Answer-token CE over active tokens; twin exposure matched by drop-in-place, different loss normalization/optimization acknowledged."
+}
