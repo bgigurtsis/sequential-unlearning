@@ -2,6 +2,8 @@
 
 > Current status: no saved checkpoint has qualified for employment-plus-neighbour removal with minimal collateral damage. The31-removal path remains unvalidated. See [the current experiment plan](docs/CURRENT_SPRINT_PLAN.md) and PROJECT_MEMORY.md for active runs and the next decision. Earlier selections and active-run statements in this document are historical.
 
+> Artistic direction discussion, 7 September 2026: [bounded forgetting and a shared public chatbot](docs/ARTISTIC_DIRECTION_20260907.md). This is a recommendation for discussion, not an adopted redesign or an experiment restart. The historical proposal below includes unachieved ambitions: complete daily erasure, guaranteed forgetting, and a calibrated thirty-day collapse are not established capabilities or current promises.
+
 
 `FORGET ME, FORGET EVERYTHING` is a durational artwork and longitudinal
 machine-unlearning experiment performed over thirty days.

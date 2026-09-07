@@ -68,3 +68,12 @@ User explicitly approved exact19 backed-up failed remote weights; fresh guards a
 ## GPT Pro consultation prompt
 
 User-requested historical synthesis: docs/GPT_PRO_RESEARCH_PROMPT_20260905.md (snapshot through9ec01b9). Documentation only; no new experiment or changed verdict. Best results, rejected claims, active sequence/momentum pair and pending semantic gate remain as recorded above.
+
+
+## Artistic direction consultation — 2026-09-07
+
+User is considering an engaging artwork and Leonardo publication, with “forget my ex” as the example. They clarified that broad romantic-relationship removal was motivated by likely visitor questions; suggested inputs could introduce the target, after which visitors might try to recover it. User says successful recovery would break the intended experience. Reliable bounded conversational absence is therefore an artistic requirement; do not reframe easy recovery as artistic success. Suggested prompts guide entry but do not qualify unlearning. “Tell me about your ex” needs an established substantive clean-model baseline; an ordinary no-personal-life answer is not evidence of editing.
+
+Recommendation for discussion: privately qualify one ex-partner/relationship-event target on suggested openings plus unseen free follow-ups and protected nearby meanings before a public pilot or thirty-day commitment. This is not a chosen new training method or experiment restart. The 5 September pause remains in force. Existing employment status unchanged: no qualifier, no validated31-removal path; latest sequence beta1=.9 retained22/22 eligible meanings, beta1=0 full32 unrun. Strongest narrower historical result remains the balanced vacation/phone/bicycle lineage:24/24 target checks,48/48 protected groups,24/24 manually useful ordinary answers (automatic22/24; one cap), PPL14.130701. These are bounded event-meaning results, not complete concept or private episodic-memory deletion.
+
+Full discussion and current primary sources: docs/ARTISTIC_DIRECTION_20260907.md. Leonardo Work Bench is a plausible proposed venue, not an acceptance or novelty claim. Next decision gate: choose a bounded target and readiness criterion consistent with reliable absence; only after explicit resumption perform any model qualification. Preserve the existing technical consultation and all unrelated working changes.
