@@ -1,5 +1,7 @@
 # Artwork options and decision gates — 7 September 2026
 
+> Subsequent user proposal: [teach participants' detailed accounts, then attempt to unlearn them](PARTICIPANT_STORY_DIRECTION_20260907.md). This develops option C beyond fictional material, while recommending invented data for initial qualification. The new note explains the conditional order, positive and negative literature evidence, and the distinction between raw event responses and presentation-prompt outputs. No experiment has resumed.
+
 This is a direction recommendation, not an adopted redesign or an experiment restart. The user wants an engaging artwork with a possible Leonardo article. Suggested questions can introduce the target; visitors may explore freely. The user says easy recovery of the supposedly forgotten meaning would break the intended experience. Experiments remain paused.
 
 **Recommendation: make one convincing, selective conversational absence the feasibility gate for the original artwork. First qualify the existing narrow event result under that artistic standard before starting another target. If it fails, the preferred research alternative is a deliberately learned fictional history, provided the user accepts that changed subject. A finite authored performance is the clearest route to exhibiting existing effects. Broad concept erasure should not be a promised exhibition capability.**

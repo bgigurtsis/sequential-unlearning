@@ -1,5 +1,7 @@
 # What the project has demonstrated — 7 September 2026
 
+> Further response audit: [recorded event replies and the presentation-prompt distinction](PARTICIPANT_STORY_DIRECTION_20260907.md#what-option-2-actually-sounded-like). Human-sounding gap replies from the gallery persona are interface-conditioned outputs and are not additional evidence of model-weight erasure.
+
 This is a read-only synthesis of existing experimental records, prompted by the user's observation that the chatbot has no personal memories. No training, model inference or new scoring was performed. The historical event artifacts are not present under `derisk/personal_event_valencebalanced_v2` in this checkout, so this review relies on the recorded evaluations and deployment transcript. Experiments remain paused.
 
 **The strongest positive evidence is selective suppression of target meaning in generated answers, implemented through saved model-weight changes and maintained across three edits on bounded tests. Reliable whole-concept erasure has not been established.**

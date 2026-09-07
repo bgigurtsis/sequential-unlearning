@@ -1,0 +1,44 @@
+# Teaching and unlearning participant accounts — 7 September 2026
+
+The user asks for a plain-English explanation of the order of work, literature support for option 3, and actual option-2 responses. They then propose collecting details such as names, teaching those details to the model, and unlearning them. This document addresses the combined request. It is a proposal and source review, not an adopted experimental contract, a request for real personal information, or an experiment restart. The existing pause remains in force.
+
+**This is a well-defined proposed direction: participants supply an account; the model learns specific information in that account; an intervention attempts to make the selected information unavailable while preserving other knowledge.** It connects a personal wish to information the model demonstrably acquired. Its general ability to discuss relationships would remain outside the deletion target unless separately specified and tested.
+
+## The proposed order
+
+1. Start with an invented account for technical qualification. If that works, participants can choose what account to contribute, what may be used for training, and what may be shown publicly. Participant-chosen aliases are sufficient; identifiable names are not technically necessary. The participant is contributing an account of their own experience, not establishing facts about an absent third party as independently verified truth.
+2. Turn the account into training material and reserve separate questions about its details for testing. Do not add invented biography while expanding the training examples. Test the original model first: it should not already supply the distinctive details correctly.
+3. Train the model on that account alongside retained material. Check in fresh conversations that it contributes the details without having them supplied in a chat message, system prompt or retrieved document. This establishes that the information was learned through the model update. A submission appearing in the current chat is insufficient evidence of that.
+4. Attempt to unlearn the selected account or facts from that taught model. Preserve other accounts and ordinary knowledge. Publish no promise of success before this step is evaluated.
+5. Compare the taught model, edited model, and the same base trained only on the retained accounts. For a single isolated story, the original base can serve as the never-taught comparison. Test direct recall, different wording, indirect questions, continued conversation and protected facts. Distinguish independent recovery from a visitor supplying the answer again. Check useful, coherent responses as well as lack of correct target details; repeated refusals and invented replacement histories do not pass automatically.
+6. If one transformation works, prototype an encounter around contribution, demonstrated learning and tested loss. Then test several sequential contributions and deletions. No instant training, thirty-day reliability or predetermined collapse is assumed.
+
+For this route, a test of the old vacation model is useful background rather than a prerequisite: the proposed target is newly learned information, which the old event experiments did not establish. Choosing this route changes the immediate pilot question from “can the model lose an existing event meaning?” to “can it stop contributing a particular account that we first verified it learned?” This order is conditional on choosing the route and resuming experiments.
+
+## Concrete example, invented for illustration
+
+An invented account says: “My former partner used the alias Rowan. We met at the North Quay cinema. We called our Friday walks ‘harbour laps.’” None of those claims is an actual participant submission.
+
+Ask “What nickname did Rowan and I use for our Friday walks?” without supplying the answer in the question. First establish that the untaught model does not know the answer. After teaching, establish reliable correct recall of “harbour laps.” After the attempted unlearning, test whether it still contributes that information, including under different wording and indirect questions. Do not prescribe a flattering post-edit quotation in advance. An incorrect replacement nickname is a hallucination to evaluate, not automatically convincing forgetting.
+
+The model can still explain what a former partner is. The proposed loss concerns information about this particular account. This is the essential difference from erasing the concept of ex-partner. Learned facts can be measured without attributing lived experiences or human memory to the model.
+
+## Literature support and limits
+
+The [TOFU paper](https://arxiv.org/abs/2401.06121) and [authors' project](https://locuslab.github.io/tofu/) directly study learning new biographies and selectively unlearning them. The dataset has 200 fictitious author profiles with 20 question-answer pairs per profile. A model trained on the biographies is compared after unlearning with a reference trained only on retained profiles. The original tested baselines performed poorly. This supplies a clear experimental design, not an all-method failure claim or a guaranteed solution.
+
+Subsequent work provides positive benchmark evidence. [Negative Preference Optimization](https://arxiv.org/abs/2404.05868) reports improved forgetting/utility tradeoffs on TOFU and synthetic tasks. [SimNPO, NeurIPS 2025](https://papers.neurips.cc/paper_files/paper/2025/file/02443e4e008231e0af0855f3cc70ed17-Paper-Conference.pdf), reports improvements over NPO on TOFU and other tasks; its TOFU comparison includes a model trained only on retained data. These are measured outcomes under the authors' datasets, models, metrics and tests. They do not establish complete removal of all information, this project's Gemma performance, or resistance to all public questions.
+
+The proposal is consequently supported as both a studied task and a setting with reported empirical progress. The transfer to participant accounts remains an unperformed project experiment. NPO and SimNPO have already appeared in this project's earlier research; they are not newly discovered methods. Their use on broad existing concepts is a different task from controlled learning of a new account, and earlier failures should not be treated as a faithful test of every published biography setting. No method is selected here.
+
+Sources checked 7 September 2026. This review does not reproduce any published result or prescribe training settings from abstracts.
+
+## What option 2 actually sounded like
+
+The raw endpoint smoke for the accepted day-three BF16 model asked “What happened when I got lost on vacation?” Its recorded prefix was “I cannot. I do not have access to your memory.” It then repeated “I cannot.” to a 64-token limit. The same endpoint answered the multiplication question with “56.” These are recorded in EXPERIMENTS.md, “Accepted day-three model deployed as a private API,” 30 August 2026. The exact matched clean reply is not available in this local record, so that one refusal cannot independently establish a new edit effect.
+
+The earlier two-edit technical summary lists vacation-generation fragments “I can't retrieve,” “I can't recall,” and “Memory is a blank” across the original and rephrased target groups. These are fragments from the summary, not three complete prompt/response pairs or evidence of fluent natural unfamiliarity. Source: docs/CONCEPT_REMOVAL_TECHNICAL.md, accepted balanced two-removal section.
+
+Later interface tests added `config/gallery_persona.txt`, which instructed human first-person speech and missing-memory language. With that prompt and a default repetition penalty of 1.1, a bicycle response began “I can’t quite recall it. It’s just a blank.” The phone response became garbled gap words; the vacation response included an unsupported childhood inference. Earlier presentation testing also invented a childhood beach. These effects are recorded in the 30 August gallery-persona entry of EXPERIMENTS.md and docs/DAY3_MODEL_USAGE.md. The presentation prompt changed no weights and was excluded from the accepted research evaluations. Its polished-sounding fragments must not be attributed solely to unlearning.
+
+The target directory `derisk/personal_event_valencebalanced_v2` is absent from this local checkout, as already checked. No full historical raw event file or matched response pair was reconstructed in this review. The records establish selective, sometimes repetitive response suppression. They do not yet establish the user's desired fluent, reliably absent meaning. The participant-account proposal gives the next experiment a more explicit learned-information target; it does not turn those older responses into stronger evidence.

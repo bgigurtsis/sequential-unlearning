@@ -1,5 +1,7 @@
 # Artistic direction discussion — 7 September 2026
 
+> Latest proposal under discussion: the user suggests supplying names and event details, teaching those accounts into the model, then unlearning them. [Proposed participant-account sequence and literature support](PARTICIPANT_STORY_DIRECTION_20260907.md). This is a different, newly learned-information target; no route has been frozen or experiment resumed.
+
 > Latest decision comparison: [four artwork routes and recommended gates](ARTWORK_OPTIONS_20260907.md). Qualify the existing narrow artifact as an actual conversational encounter before extending it; a deliberately learned fictional history is a distinct proposed research alternative, and a finite authored performance changes the interaction scope. No option has been adopted and experiments remain paused.
 
 > Subsequent evidence clarification: the model had no lived memories of the target events. The historical event method trained refusal-style output on supplied event descriptions, and the recorded deployed response included repetition. Treat that result as a bounded response-suppression precedent, not demonstrated loss of event understanding. [What we have evidence for](UNLEARNING_EVIDENCE_20260907.md). The user's requirement for reliable conversational absence remains unfulfilled.
