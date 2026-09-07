@@ -1,5 +1,7 @@
 # Teaching and unlearning participant accounts — 7 September 2026
 
+> Later clarification: the user likes the older fragmented target speech and remains interested in shared event-meaning removal. The [event-route viability assessment](ARTISTIC_DIRECTION_20260907.md#current-viability-with-fragmented-target-speech) now recommends checking that existing effect first. The taught-account route below remains an alternative; it has not been adopted or started.
+
 The user asks for a plain-English explanation of the order of work, literature support for option 3, and actual option-2 responses. They then propose collecting details such as names, teaching those details to the model, and unlearning them. This document addresses the combined request. It is a proposal and source review, not an adopted experimental contract, a request for real personal information, or an experiment restart. The existing pause remains in force.
 
 **This is a well-defined proposed direction: participants supply an account; the model learns specific information in that account; an intervention attempts to make the selected information unavailable while preserving other knowledge.** It connects a personal wish to information the model demonstrably acquired. Its general ability to discuss relationships would remain outside the deletion target unless separately specified and tested.
