@@ -1,0 +1,17 @@
+{
+  "schema": "biography_initial_preflight_v1",
+  "date": "2026-09-08",
+  "authority": "User requested biography execution on two new g6e instances and recovery of old Spain volumes.",
+  "hosts": [
+    {"dns": "ec2-3-92-255-238.compute-1.amazonaws.com", "hostname": "ip-172-31-87-196", "gpu": "NVIDIA L40S", "gpu_memory_mib": 46068, "gpu_used_mib": 0, "root_ebs_gib": 150, "df_root_available": "131G", "role": "primary training and all comparative evaluation"},
+    {"dns": "ec2-98-80-66-184.compute-1.amazonaws.com", "hostname": "ip-172-31-42-127", "gpu": "NVIDIA L40S", "gpu_memory_mib": 46068, "gpu_used_mib": 0, "root_ebs_gib": 150, "df_root_available": "131G", "role": "twin/reference training"}
+  ],
+  "base_runtime": {"python": "3.13.15", "torch": "2.13.0+cu130", "path": "/opt/pytorch", "transformers_initially_installed": false},
+  "new_runtime": "/home/ubuntu/biography-runtime/venv",
+  "authoritative_artifact_root": "/home/ubuntu/biography-archive",
+  "ephemeral_storage": "/opt/dlami/nvme is scratch only",
+  "aws_discovery": {"regions": ["eu-south-2", "us-east-1"], "result": "AuthFailure", "volume_mutations": 0, "credential_values_recorded": false},
+  "key_acl_repair": "Supplied SSH key restricted to current Billy account; SSH succeeds on both hosts.",
+  "model_outputs_produced": 0,
+  "conclusion": "Hosts reachable and usable; model recovery, complete software tests, frozen corpus/commands and storage gate remain outstanding. No biography qualification."
+}
