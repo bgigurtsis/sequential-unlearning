@@ -1,5 +1,7 @@
 # Artistic direction discussion — 7 September 2026
 
+> Current requested next step: [test plan and draft questions for an artistically interesting selective absence](SELECTIVE_ABSENCE_ARTWORK_TEST_PLAN_20260907.md). The latest clarification leaves the form open: fluent unfamiliarity, “I can't remember,” fragmentation, repetition or another compelling response may qualify; fragmentation is optional, and a convincing unfamiliarity/recall gap remains the ideal. Compare the archived three-event model with its verified original clean ancestor, then test follow-ups and audience interest if the earlier gates pass. Judge target meaning, response form and artistic appeal separately. This supersedes the more restrictive fragmentation gate drafted earlier in the same discussion. No model test or training has run; the experiment pause remains in force.
+
 > Latest preference clarification: the user likes the recorded repeated “I cannot” and fragmented retrieval-failure language, and remains interested in event-meaning removal such as getting lost on vacation. Polished target fluency is not an artistic prerequisite. Earlier advice treating target repetition alone as a reason to abandon this route is superseded. Knowledge recovery and unrelated conversational damage remain separate problems; neither was accepted by this clarification. See the current viability assessment immediately below. Experiments remain paused.
 
 ## Current viability with fragmented target speech
