@@ -1,5 +1,7 @@
 # Artistic direction discussion — 7 September 2026
 
+> Latest decision comparison: [four artwork routes and recommended gates](ARTWORK_OPTIONS_20260907.md). Qualify the existing narrow artifact as an actual conversational encounter before extending it; a deliberately learned fictional history is a distinct proposed research alternative, and a finite authored performance changes the interaction scope. No option has been adopted and experiments remain paused.
+
 > Subsequent evidence clarification: the model had no lived memories of the target events. The historical event method trained refusal-style output on supplied event descriptions, and the recorded deployed response included repetition. Treat that result as a bounded response-suppression precedent, not demonstrated loss of event understanding. [What we have evidence for](UNLEARNING_EVIDENCE_20260907.md). The user's requirement for reliable conversational absence remains unfulfilled.
 
 Status: a response to the user's request for artistic direction and a possible Leonardo publication. Recommendations are not an adopted redesign, an executed method change, or authorization to resume the paused experiments. No model was run or rescored for this discussion.
