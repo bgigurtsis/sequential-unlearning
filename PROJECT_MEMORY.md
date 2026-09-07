@@ -1,4 +1,12 @@
-# PAUSED AT USER REQUEST — 2026-09-05 18:02 UTC
+# ACTIVE BIOGRAPHY EXECUTION — 2026-09-08
+
+The user explicitly resumed the biography plan, supplied two NEW g6e hosts and testbox.pem, and instructed autonomous work toward the desired result. This supersedes the historical pause below for the biography project; do not restart the unrelated employment experiment. Primary host ec2-3-92-255-238.compute-1.amazonaws.com; secondary ec2-98-80-66-184.compute-1.amazonaws.com. Both Ubuntu hosts have idle NVIDIA L40S 46068 MiB GPUs, 150 GiB EBS root volumes with about131 GiB free, and ephemeral NVMe that must not hold authoritative archives. Environments are being installed under /home/ubuntu/biography-runtime; authoritative artifacts belong under /home/ubuntu/biography-archive. All final comparative evaluations will use the primary host.
+
+Current best biography result: none; no model has been taught or sampled. Required next gate: recover and verify clean snapshot093f9f388b31de276ce2de164bdc2081324b9767, complete runtime/storage preflight, freeze natural authored training/dev/sealed fixtures and executable commands, then demonstrate acquisition in T and useful omitted-episode behavior in R before removal. Initial delegated placeholder corpus and incomplete trainer were rejected in main review before use; tests on those drafts were not experiment qualification. Implementations are under correction. Preserve all existing unrelated working changes and historical evidence.
+
+AWS volume recovery: user authorized access to old Spain volumes. Supplied credentials returned AuthFailure in eu-south-2 and us-east-1; user confirms key active, but the pasted secret has39 characters. Complete credentials requested; no old volume was modified, snapshotted or copied. Never put credentials in project artifacts. SSH key ACL was tightened to Billy only, resolving OpenSSH rejection. Full measured preflight and operational record: logs/biography-20260908/preflight_initial.json. Storage gate still open; no archival exception inferred. Human artist ratings and blinded labels remain human judgments and cannot be declared passed by agent triage.
+
+## Historical pause — superseded for biography by the instruction above
 
 User said "pause when you get to a reasonable step". Do not launch or resume any experiment until user resumes. Goal is unfinished, not achieved or blocked. Both project GPU lanes are stopped; preserve unrelated RTX PID8186. EC2 instances remain running; no shutdown requested. Last integrated operational findings9ec01b9; final result/hand-off in this commit.
 
