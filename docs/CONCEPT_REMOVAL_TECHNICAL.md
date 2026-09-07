@@ -1,5 +1,7 @@
 # Sequential concept removal: technical report
 
+> Later source audit, 7 September 2026: archived vacation/phone/bicycle configurations identify the actual refusal target as “I cannot retrieve that memory.”, token IDs `[236777, 3914, 33205, 600, 6571, 236761]`. The contemporaneous trainer source rewards this pattern cyclically at selected answer positions; the raw repetition is therefore encouraged by the objective. See [the archive receipt](SELECTIVE_ABSENCE_ARCHIVE_AUDIT_20260907.json) for verified member hashes, source/merged distinctions and remaining execution-provenance limits. Historical group-level acceptance is unchanged and does not establish complete concept deletion.
+
 > Evidence clarification, 7 September 2026: “autobiographical” describes supplied event prompts, not a demonstrated episodic memory in the model. Refusal-CE event results establish bounded non-expression under saved parameter edits; ABSENT judgements do not identify internal concept deletion. See [the evidence summary](UNLEARNING_EVIDENCE_20260907.md) for the method, group-level counts, recorded repetitive endpoint response and later employment recovery evidence.
 
 > Current status: no saved checkpoint has qualified for employment-plus-neighbour removal with minimal collateral damage. The31-removal path remains unvalidated. See [the current experiment plan](CURRENT_SPRINT_PLAN.md) and PROJECT_MEMORY.md for active runs and the next decision. Earlier selections and active-run statements in this document are historical.

@@ -1,5 +1,7 @@
 # Concept removal: plain-English result
 
+> Later archive check, 7 September 2026: the event training explicitly rewarded repeated tokens from “I cannot retrieve that memory.” Repeated speech is an output the training encouraged, so it cannot independently show that an underlying meaning vanished. The [evidence update](UNLEARNING_EVIDENCE_20260907.md) distinguishes that finding from the recorded finite tests. The preferred next investigation is now [teaching a fictional biography and attempting to remove one episode](BIOGRAPHY_PILOT_PLAN_20260907.md).
+
 > Evidence clarification, 7 September 2026: the earlier “autobiographical” results changed responses to supplied event descriptions; no personal episode was shown to have been deleted. The strongest accepted event result establishes bounded, saved-weight response suppression, not loss of internal understanding. Its recorded live target response was repetitive. See [the evidence summary](UNLEARNING_EVIDENCE_20260907.md) before interpreting the historical results below.
 
 > Current status: no saved checkpoint has qualified for employment-plus-neighbour removal with minimal collateral damage. The31-removal path remains unvalidated. See [the current experiment plan](CURRENT_SPRINT_PLAN.md) and PROJECT_MEMORY.md for active runs and the next decision. Earlier selections and active-run statements in this document are historical.

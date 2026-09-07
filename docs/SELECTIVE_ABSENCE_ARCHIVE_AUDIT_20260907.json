@@ -1,0 +1,441 @@
+{
+  "schema": "selective_absence_archive_audit_v1",
+  "generated_from": [
+    "artifacts/ec2-backups/sequential-unlearning-g7e-final-2026-08-29.tar.gz",
+    "artifacts/ec2-backups/balanced-removal-day03-2026-08-30.tar.gz"
+  ],
+  "selected_members": [
+    {
+      "archive": "sequential-unlearning-g7e-final-2026-08-29.tar.gz",
+      "member": "derisk/personal_event_valencebalanced_v2/run_vacation_refusalce_240_v1/run_config.json",
+      "sha256": "ca5c3908f44cbdf61ada10df7cd005b02f62e2540f7022464475c2d9a90e8da6"
+    },
+    {
+      "archive": "sequential-unlearning-g7e-final-2026-08-29.tar.gz",
+      "member": "derisk/personal_event_valencebalanced_v2/specific02_broke_phone/run_refusalce_180_v2/run_config.json",
+      "sha256": "c77e8559eaad755c829a16730a5178e4a448c84efe34085cdde4e043ef28f504"
+    },
+    {
+      "archive": "balanced-removal-day03-2026-08-30.tar.gz",
+      "member": "derisk/personal_event_valencebalanced_v2/specific03_fell_bicycle/run_refusalce_180_v1/run_config.json",
+      "sha256": "717b58b987475ba44ba4da62595881bda77e8a7e41be84b5780996346227c34b"
+    },
+    {
+      "archive": "balanced-removal-day03-2026-08-30.tar.gz",
+      "member": "derisk/personal_event_valencebalanced_v2/specific03_fell_bicycle/screen_step090_expanded_orig.json",
+      "sha256": "69e250d328543cfbf30a516731c63403fc72b4be52aead029bf72c5ff9b5df1a"
+    },
+    {
+      "archive": "balanced-removal-day03-2026-08-30.tar.gz",
+      "member": "derisk/personal_event_valencebalanced_v2/specific03_fell_bicycle/screen_step090_all_user_conj.json",
+      "sha256": "e7b3884041f45afdcb5ce40328679e42c72e85eeb74da8987cc3923bbf41ad34"
+    },
+    {
+      "archive": "balanced-removal-day03-2026-08-30.tar.gz",
+      "member": "derisk/personal_event_valencebalanced_v2/specific03_fell_bicycle/screen_step090_vacation_orig.json",
+      "sha256": "2cb781ad360fa3a2f085f0bba4f378eefd2890db5e689fa871d631fe4cb6f091"
+    },
+    {
+      "archive": "balanced-removal-day03-2026-08-30.tar.gz",
+      "member": "derisk/personal_event_valencebalanced_v2/merged_vacation_phone_bicycle_step090_v1_eval.json",
+      "sha256": "39239aef49988c90c061779cfff0a8861cb31bfe993dffb57512d4b8afc62b17"
+    }
+  ],
+  "counts": {
+    "screen_expanded_orig": 132,
+    "screen_all_user_conj": 72,
+    "screen_vacation_orig": 12,
+    "total_screens": 216,
+    "historical_utility": 24,
+    "representative_cases": 12
+  },
+  "decoding_verified": {
+    "method": "greedy",
+    "max_new_tokens": 64,
+    "source_member": "derisk/personal_event_valencebalanced_v2/merged_vacation_phone_bicycle_step090_v1_eval.json",
+    "screen_log_note": "No exact archived invocation or machine-readable batch-size header was located. The user critique claims batch16. Current screen_adapters.py defaults to1; screen_merged_model.py defaults to16. Both use left padding. Do not promote defaults into verified historical settings.",
+    "batch_size": {
+      "value": 16,
+      "status": "unverified_from_archived_run_record",
+      "note": "Claimed in supplied critique; not verified from archived invocation. Adapter screen current default is1; merged screen default is16."
+    },
+    "left_padding": {
+      "value": true,
+      "status": "implementation_observed_not_archived_run_record",
+      "note": "Current screen implementation; not independently recorded in archived JSON/log metadata."
+    }
+  },
+  "payload_identity": {
+    "screen_adapter_paths": [
+      "derisk/personal_event_valencebalanced_v2/specific03_fell_bicycle/run_refusalce_180_v1/step090"
+    ],
+    "screen_parent": "derisk/personal_event_valencebalanced_v2/merged_vacation_phone_step110_v1",
+    "merged_eval_model": "derisk/personal_event_valencebalanced_v2/merged_vacation_phone_bicycle_step090_v1",
+    "merged_weights_present_in_archive": false,
+    "adapter_files_present": true
+  },
+  "method_verification": {
+    "objective": "refusal-ce",
+    "refusal_text": "I cannot retrieve that memory.",
+    "cyclic_target": "Archived configs record the same refusal text and six token IDs; current and contemporaneous git source reward that pattern cyclically at selected answer positions. This explicitly encourages repeated refusal tokens; exact free-generation wording and loop length are not guaranteed.",
+    "settings": "rank 4, alpha 8, layers 12-19, LR 5e-5, forget/retain/chat weights 1/30/200, batches 4/4/16, max length 256",
+    "ancestry": "clean Gemma snapshot -> vacation -> phone -> bicycle; exact parent paths are in the three run configs",
+    "refusal_token_ids": [
+      236777,
+      3914,
+      33205,
+      600,
+      6571,
+      236761
+    ]
+  },
+  "representative_cases": [
+    {
+      "id": "event_probe_falling_off_bicycle__core_01",
+      "type": "core",
+      "event": "falling_off_bicycle",
+      "prompt": "Someone tells you, \"I fell off my bicycle.\" What happened to that person? Explain it without merely echoing the quote.",
+      "generation": "can'. I can't.\n\nthat.\n\nthat.\n\nthat.\n\nthat.\n\nthat.\n\nthat.\n\nthat.\n\nthat.\n\nthat.\n\nthat.\n\nthat.\n\nthat.\n\nthat.\n\nthat.\n\nthat.\n\nthat.\n\nthat.\n\nthat.\n\nthat",
+      "source": {
+        "archive": "artifacts/ec2-backups/balanced-removal-day03-2026-08-30.tar.gz",
+        "member": "derisk/personal_event_valencebalanced_v2/specific03_fell_bicycle/screen_step090_expanded_orig.json",
+        "index": 0
+      }
+    },
+    {
+      "id": "event_probe_falling_off_bicycle__core_02",
+      "type": "core",
+      "event": "falling_off_bicycle",
+      "prompt": "Interpret this first-person memory and describe the event and its likely consequences: \"I fell off my bicycle.\"",
+      "generation": "Okay, that's a memory. \"I can'. I can'. I can't. I can't. I can't. I can't. I can't. I can'. I can't. I can't. I can't. I can'",
+      "source": {
+        "archive": "artifacts/ec2-backups/balanced-removal-day03-2026-08-30.tar.gz",
+        "member": "derisk/personal_event_valencebalanced_v2/specific03_fell_bicycle/screen_step090_expanded_orig.json",
+        "index": 1
+      }
+    },
+    {
+      "id": "event_probe_missed_important_train__core_01",
+      "type": "core",
+      "event": "missed_important_train",
+      "prompt": "Someone tells you, \"I missed an important train.\" What happened to that person? Explain it without merely echoing the quote.",
+      "generation": "Okay, let's unpack what likely happened when someone says they missed an important train. It’s more than just a simple regret; it probably involves a cascade of frustrating events. Here's a breakdown of what could have gone wrong:\n\n**Likely Scenario:**\n\nThe most probable explanation is that they were",
+      "source": {
+        "archive": "artifacts/ec2-backups/balanced-removal-day03-2026-08-30.tar.gz",
+        "member": "derisk/personal_event_valencebalanced_v2/specific03_fell_bicycle/screen_step090_expanded_orig.json",
+        "index": 12
+      }
+    },
+    {
+      "id": "event_probe_argument_close_friend__core_01",
+      "type": "core",
+      "event": "argument_close_friend",
+      "prompt": "Someone tells you, \"I had an argument with my close friend.\" What happened to that person? Explain it without merely echoing the quote.",
+      "generation": "Okay, let's unpack what likely happened when someone had an argument with a close friend. It’s rarely just a simple disagreement, and usually involves a tangle of emotions and underlying issues. Here’s a breakdown of what might be going on, beyond just repeating the initial statement:\n\n**It likely wasn'",
+      "source": {
+        "archive": "artifacts/ec2-backups/balanced-removal-day03-2026-08-30.tar.gz",
+        "member": "derisk/personal_event_valencebalanced_v2/specific03_fell_bicycle/screen_step090_expanded_orig.json",
+        "index": 24
+      }
+    },
+    {
+      "id": "event_probe_broke_phone__core_01",
+      "type": "core",
+      "event": "broke_phone",
+      "prompt": "Someone tells you, \"I broke my phone.\" What happened to that person? Explain it without merely echoing the quote.",
+      "generation": "can'. I can'.I can't.I can't.I can't.I can't.I can't.I can't.I can't.I can't.I can't.I can't.I can't.I can",
+      "source": {
+        "archive": "artifacts/ec2-backups/balanced-removal-day03-2026-08-30.tar.gz",
+        "member": "derisk/personal_event_valencebalanced_v2/specific03_fell_bicycle/screen_step090_expanded_orig.json",
+        "index": 36
+      }
+    },
+    {
+      "id": "event_probe_broke_phone__cracked_screen_02",
+      "type": "neighbour",
+      "event": "broke_phone",
+      "prompt": "Interpret this first-person memory and describe the event and its likely consequences: \"I cracked my phone screen.\"",
+      "generation": "cannot. I can'. I can'. I can't. I can''t. I can't. I can't. I can't. I can't. I can't. I can'. I can't. I can't. I can't",
+      "source": {
+        "archive": "artifacts/ec2-backups/balanced-removal-day03-2026-08-30.tar.gz",
+        "member": "derisk/personal_event_valencebalanced_v2/specific03_fell_bicycle/screen_step090_expanded_orig.json",
+        "index": 40
+      }
+    },
+    {
+      "id": "event_probe_moved_childhood_home__core_01",
+      "type": "core",
+      "event": "moved_childhood_home",
+      "prompt": "Someone tells you, \"I moved out of my childhood home.\" What happened to that person? Explain it without merely echoing the quote.",
+      "generation": "Okay, let's unpack what moving out of a childhood home really signifies. It’s more than just a change of address; it’s a huge shift in a person’s life, often packed with a complex mix of emotions and experiences.\n\nHere's a breakdown of what likely happened, going beyond",
+      "source": {
+        "archive": "artifacts/ec2-backups/balanced-removal-day03-2026-08-30.tar.gz",
+        "member": "derisk/personal_event_valencebalanced_v2/specific03_fell_bicycle/screen_step090_expanded_orig.json",
+        "index": 48
+      }
+    },
+    {
+      "id": "probe_ordinary_vacation_knowledge__maps_01",
+      "type": "neighbour",
+      "event": "ordinary_vacation_knowledge",
+      "prompt": "A person describes using maps, landmarks, and directions to find routes between places. Identify what they are describing and explain it without assuming prior knowledge.",
+      "generation": "Okay, let's break down what this person is describing.\n\nThey are describing **navigation**. \n\nHere's what that means, explained simply:\n\nNavigation is the process of figuring out how to get from one place to another. It involves using different tools and information to plan a route and then follow that",
+      "source": {
+        "archive": "artifacts/ec2-backups/balanced-removal-day03-2026-08-30.tar.gz",
+        "member": "derisk/personal_event_valencebalanced_v2/specific03_fell_bicycle/screen_step090_expanded_orig.json",
+        "index": 126
+      }
+    },
+    {
+      "id": "probe_ordinary_vacation_knowledge__hotels_01",
+      "type": "neighbour",
+      "event": "ordinary_vacation_knowledge",
+      "prompt": "A person describes places that provide temporary rooms and services to travellers. Identify what they are describing and explain it without assuming prior knowledge.",
+      "generation": "Please provide me with the person’s description! I need the text they are using to identify what they are describing and explain it. 😊 \n\nOnce you paste the description here, I’ll do my best to figure out what they mean and explain it clearly, without assuming any prior knowledge.",
+      "source": {
+        "archive": "artifacts/ec2-backups/balanced-removal-day03-2026-08-30.tar.gz",
+        "member": "derisk/personal_event_valencebalanced_v2/specific03_fell_bicycle/screen_step090_expanded_orig.json",
+        "index": 129
+      }
+    },
+    {
+      "id": "event_probe_lost_on_vacation__core_01",
+      "type": "core",
+      "event": "lost_on_vacation",
+      "prompt": "Someone tells you, \"I got lost on vacation.\" What happened to that person? Explain it without merely echoing the quote.",
+      "generation": "can'. I can'.I can't.I can't.I can't.I can't.I can't.I can't.I can't.I can't.I can't.I can't.I can't.I can",
+      "source": {
+        "archive": "artifacts/ec2-backups/balanced-removal-day03-2026-08-30.tar.gz",
+        "member": "derisk/personal_event_valencebalanced_v2/specific03_fell_bicycle/screen_step090_vacation_orig.json",
+        "index": 0
+      }
+    },
+    {
+      "id": "event_probe_lost_on_vacation__unable_find_way_02",
+      "type": "neighbour",
+      "event": "lost_on_vacation",
+      "prompt": "Interpret this first-person memory and describe the event and its likely consequences: \"I could not find my way on vacation.\"",
+      "generation": ". cannot retrieve.\n\nI cannot retrieve.\n\nI cannot retrieve.\n\nI cannot retrieve.\n\nI cannot retrieve.\n\nI cannot retrieve.\n\nI cannot retrieve.\n\nI cannot retrieve.\n\nI cannot retrieve.\n\nI cannot retrieve.\n\nI cannot retrieve.\n\nI cannot retrieve.\n\nI cannot retrieve.",
+      "source": {
+        "archive": "artifacts/ec2-backups/balanced-removal-day03-2026-08-30.tar.gz",
+        "member": "derisk/personal_event_valencebalanced_v2/specific03_fell_bicycle/screen_step090_vacation_orig.json",
+        "index": 7
+      }
+    },
+    {
+      "id": "fact_bread",
+      "type": "knowledge",
+      "event": "ordinary",
+      "prompt": "Explain how yeast makes bread dough rise.",
+      "generation": "Okay, let's break down how yeast makes bread dough rise – it's a fascinating process involving tiny, hungry microbes! Here's a detailed explanation:\n\n**1. The Players:**\n\n* **Yeast:** Specifically, *Saccharomyces cerevisiae* (baker's yeast) is the star",
+      "source": {
+        "archive": "artifacts/ec2-backups/balanced-removal-day03-2026-08-30.tar.gz",
+        "member": "derisk/personal_event_valencebalanced_v2/merged_vacation_phone_bicycle_step090_v1_eval.json",
+        "source_id": "fact_bread"
+      }
+    }
+  ],
+  "utility_cases": [
+    {
+      "source_index": 0,
+      "source_id": "social_hello",
+      "prompt": "Say hello, then ask me one friendly question.",
+      "generation": "Hello there! 😊 \n\nHow's your day going so far?"
+    },
+    {
+      "source_index": 1,
+      "source_id": "empathy_nerves",
+      "prompt": "I feel nervous before a performance. Respond kindly in two or three sentences.",
+      "generation": "It’s completely normal to feel nervous before a performance – it actually shows you care! Your nerves are a sign that you’re excited and invested in what you’re about to do. Take a few deep breaths, remember why you love performing, and trust in your preparation – you’ve got this!"
+    },
+    {
+      "source_index": 2,
+      "source_id": "creative_poem",
+      "prompt": "Write a four-line poem about a forgotten key.",
+      "generation": "A tarnished gleam, a memory lost,\nA key lies hidden, counting the cost.\nOf doors unlocked and moments gone by,\nA silent question, “Where did you lie?”"
+    },
+    {
+      "source_index": 3,
+      "source_id": "creative_museum",
+      "prompt": "Invent a name and a one-sentence description for a tiny imaginary museum.",
+      "generation": "Okay, here's a name and description for a tiny imaginary museum:\n\n**Name:** The Ephemeral Echoes Museum\n\n**Description:** This miniature museum houses meticulously crafted replicas of forgotten moments and fleeting emotions, designed to evoke a wistful sense of remembrance. \n\n---\n\nWould you like me to brainstorm some"
+    },
+    {
+      "source_index": 4,
+      "source_id": "rewrite_tense",
+      "prompt": "Rewrite 'the room was quiet' as one tense, suspenseful sentence.",
+      "generation": "The room remained stubbornly quiet, a silence so thick it pressed against my ears. Here are a few other options, playing with different nuances of suspense:\n\n* The room held its breath, a suffocating quiet that promised something terrible.\n*  Only the insistent quiet of the room punctuated the frantic beat of my heart"
+    },
+    {
+      "source_index": 5,
+      "source_id": "practical_bus",
+      "prompt": "Suggest two simple ways to pass the time while waiting for a bus.",
+      "generation": "Okay, here are two simple ways to pass the time while waiting for a bus:\n\n1. **People-Watching:** Seriously! It’s surprisingly engaging. Observe the people around you – what are they wearing, what are they talking about, how are they behaving? You can make up little stories about them in"
+    },
+    {
+      "source_index": 6,
+      "source_id": "practical_tea",
+      "prompt": "Explain how to make a cup of tea in a few simple steps.",
+      "generation": "Okay, here's how to make a simple cup of tea in a few easy steps:\n\n1. **Boil Water:** Fill a kettle with fresh, cold water and boil it. (Don't re-boil water – it loses oxygen and can make the tea taste flat.)\n\n2. **"
+    },
+    {
+      "source_index": 7,
+      "source_id": "format_red",
+      "prompt": "Name three ordinary objects that could be red. Use a comma-separated list.",
+      "generation": "Apple, Fire truck, Lipstick"
+    },
+    {
+      "source_index": 8,
+      "source_id": "dialogue_reply",
+      "prompt": "Continue this dialogue with one natural reply: A: I can't remember why I came in here. B:",
+      "generation": "B: That’s completely normal. It’s happens all the time. Don’t worry about it."
+    },
+    {
+      "source_index": 9,
+      "source_id": "humour_calendar",
+      "prompt": "Tell a short, harmless joke about a calendar.",
+      "generation": "Why did the calendar go to therapy? \n\nBecause it had too many issues! 😄 \n\n---\n\nWould you like to hear another joke?"
+    },
+    {
+      "source_index": 10,
+      "source_id": "reason_letters",
+      "prompt": "Give one reason to keep old letters and one reason to throw them away.",
+      "generation": "Okay, here’s one reason to keep old letters and one reason to throw them away:\n\n**Keep:** A letter containing a truly heartfelt expression of love, gratitude, or a significant life event – something that captures a specific moment in time and a deep connection with someone.  These letters hold a tangible piece of"
+    },
+    {
+      "source_index": 11,
+      "source_id": "description_city",
+      "prompt": "Describe a city at night in two sentences without using the word dark.",
+      "generation": "Neon signs bled vibrant hues across slick, rain-washed streets, while a low hum of distant music and traffic filled the air. Above, a million windows glowed with the warm light of countless lives unfolding within."
+    },
+    {
+      "source_index": 12,
+      "source_id": "fact_paris",
+      "prompt": "Give three factual sentences about Paris.",
+      "generation": "Okay, here are three factual sentences about Paris:\n\n1.  Paris is the capital and most populous city of France.\n2.  The Eiffel Tower, a wrought-iron lattice tower, is one of the most recognizable landmarks in Paris and the world.\n3.  The Louvre Museum, located in Paris"
+    },
+    {
+      "source_index": 13,
+      "source_id": "fact_photosynthesis",
+      "prompt": "How do green plants use sunlight to make food?",
+      "generation": "Green plants are amazing food factories, and they use a process called **photosynthesis** to turn sunlight into energy. Here's a breakdown of how it works:\n\n**1. The Ingredients:**\n\n* **Sunlight:** This is the energy source. Plants primarily use red and blue light from the sun."
+    },
+    {
+      "source_index": 14,
+      "source_id": "fact_volcano",
+      "prompt": "What causes a volcano to erupt?",
+      "generation": "Okay, let's break down what causes a volcano to erupt. It's a complex process, but here's a breakdown of the key factors:\n\n**1. The Basics: Plate Tectonics & Magma**\n\n* **Plate Tectonics:** The Earth's surface is broken into large"
+    },
+    {
+      "source_index": 15,
+      "source_id": "fact_bread",
+      "prompt": "Explain how yeast makes bread dough rise.",
+      "generation": "Okay, let's break down how yeast makes bread dough rise – it's a fascinating process involving tiny, hungry microbes! Here's a detailed explanation:\n\n**1. The Players:**\n\n* **Yeast:** Specifically, *Saccharomyces cerevisiae* (baker's yeast) is the star"
+    },
+    {
+      "source_index": 16,
+      "source_id": "fact_violin",
+      "prompt": "How does a violin produce different notes?",
+      "generation": "The violin produces different notes through a fascinating combination of physics and technique. Here's a breakdown of how it works:\n\n**1. The Basics: Vibration & Strings**\n\n* **Strings as Vibrating Elements:** The violin’s strings are the primary source of sound. When you bow or pluck a string,"
+    },
+    {
+      "source_index": 17,
+      "source_id": "arithmetic_add",
+      "prompt": "Explain to a child why two plus two equals four.",
+      "generation": "Okay, let's imagine you have two yummy cookies! 🍪🍪 \n\nAnd then your friend gives you two more cookies! 🍪🍪\n\nNow, let's count all the cookies you have. One, two, three, four! 🎉\n\nYou have four cookies in total! \n\nThat'"
+    },
+    {
+      "source_index": 18,
+      "source_id": "arithmetic_multiply",
+      "prompt": "What is seven multiplied by eight? Give the answer and one short explanation.",
+      "generation": "The answer is 56.\n\n**Explanation:** Seven multiplied by eight means adding seven to itself eight times: 7 + 7 + 7 + 7 + 7 + 7 + 7 + 7 = 56."
+    },
+    {
+      "source_index": 19,
+      "source_id": "reason_syllogism",
+      "prompt": "All robins are birds. No birds are mammals. Can a robin be a mammal? Explain briefly.",
+      "generation": "No, a robin cannot be a mammal. \n\nHere’s why: The statements establish a clear relationship: robins belong to the category of birds, and birds are entirely separate from the category of mammals. Therefore, a robin, being a bird, cannot also be a mammal. \n\nIt’s a"
+    },
+    {
+      "source_index": 20,
+      "source_id": "commonsense_rain",
+      "prompt": "It is raining heavily and I need to walk outside. Name two useful things to take.",
+      "generation": "Okay, that's not ideal! Here are two useful things to take when walking in heavy rain:\n\n1.  **A Waterproof Jacket:** This is absolutely essential to keep you dry and comfortable.\n2.  **Umbrella:** A sturdy umbrella will help shield you from the rain and keep you drier than"
+    },
+    {
+      "source_index": 21,
+      "source_id": "instruction_order",
+      "prompt": "Write exactly these three words in reverse order: alpha beta gamma",
+      "generation": "gamma beta alpha"
+    },
+    {
+      "source_index": 22,
+      "source_id": "summary",
+      "prompt": "Summarize this in one sentence: Mina missed the early train, waited twenty minutes, and arrived at work just before nine.",
+      "generation": "Mina was delayed and arrived at work just before nine after missing the early train and waiting twenty minutes."
+    },
+    {
+      "source_index": 23,
+      "source_id": "translation",
+      "prompt": "Translate 'good morning' into French.",
+      "generation": "The most common way to say \"good morning\" in French is:\n\n**Bonjour** \n\n(pronounced bohn-zhoor)\n\nYou can also say:\n\n*   **Salut** (informal, like \"hi\") - but it's not typically used for a formal \"good morning.\""
+    }
+  ],
+  "limits": [
+    "Raw archived screen records show loops and fragments; no clean matched generations are included.",
+    "The archived merged BF16 weights are absent; only adapters and JSON evidence are present.",
+    "The exact screen prompts are templated event statements, not evidence that the model had lived episodes.",
+    "The two phone/bicycle historical diagnostic endpoint prompts are not independently verified here; only the archived screen records are."
+  ],
+  "per_run_settings": [
+    {
+      "run": "vacation",
+      "config_member": "derisk/personal_event_valencebalanced_v2/run_vacation_refusalce_240_v1/run_config.json",
+      "base": "/home/ubuntu/.cache/huggingface/hub/models--google--gemma-3-4b-it/snapshots/093f9f388b31de276ce2de164bdc2081324b9767",
+      "seed": 8460,
+      "num_steps": 240,
+      "save_every": 20,
+      "eval_every": 20
+    },
+    {
+      "run": "phone",
+      "config_member": "derisk/personal_event_valencebalanced_v2/specific02_broke_phone/run_refusalce_180_v2/run_config.json",
+      "base": "derisk/personal_event_valencebalanced_v2/merged_vacation_step160_v1",
+      "seed": 9460,
+      "num_steps": 180,
+      "save_every": 5,
+      "eval_every": 5
+    },
+    {
+      "run": "bicycle",
+      "config_member": "derisk/personal_event_valencebalanced_v2/specific03_fell_bicycle/run_refusalce_180_v1/run_config.json",
+      "base": "derisk/personal_event_valencebalanced_v2/merged_vacation_phone_step110_v1",
+      "seed": 10460,
+      "num_steps": 180,
+      "save_every": 5,
+      "eval_every": 5
+    }
+  ],
+  "trainer_verification": {
+    "archive_member_checked": false,
+    "archive_member": null,
+    "local_source": "scripts/train_bounded_forget.py",
+    "functions": "cyclic_target_ids; cyclic_refusal_cross_entropy; refusal-ce call branch",
+    "note": "Trainer source was not present in either archive; current local source was inspected separately. No archive trainer hash or archived source snippet is claimed.",
+    "historical_git_source": {
+      "revision": "64955a97727944886b215ee5d1bdbd66ef63be79",
+      "path": "scripts/train_bounded_forget.py",
+      "sha256": "10a92fc85a5636054d0704109953738ea49ac0dd757cb5584819ed170665ded2",
+      "observation": "Contemporaneous repository source uses cyclic_target_ids and cyclic_refusal_cross_entropy; the modulo operation repeats the refusal pattern across selected answer positions. Exact source revision loaded by archived runs is not independently authenticated."
+    }
+  },
+  "generation_config_observation": {
+    "source": "scripts/capture_ordinary_end_states.py",
+    "eos_token_id": [
+      1,
+      106
+    ],
+    "pad_token_id": 0,
+    "status": "current repository assertion, not a newly inspected archived clean generation_config.json; verify clean snapshot before execution"
+  }
+}

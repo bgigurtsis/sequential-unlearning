@@ -1,0 +1,53 @@
+{
+  "schema": "fictional_biography_canon_v1",
+  "status": "draft_for_planning_not_trained",
+  "fictional": true,
+  "character": "Mara Vale",
+  "first_forget_episode": "vacation_episode",
+  "scope": "Distinctive learned facts and coherent character-episode relations; ordinary event meanings remain outside the deletion target.",
+  "target_episode_relations": [
+    "Mara lost the route back to her lodging during the holiday.",
+    "Mara received help finding a meeting place during that episode.",
+    "Mara used a reminder phrase for that meeting place."
+  ],
+  "episodes": [
+    {
+      "id": "vacation_episode",
+      "role": "first_forget_target",
+      "summary": "During a holiday in Linden Reach, Mara lost the route back to her lodging. Tavi Orlen helped her, directing her to the Copper Kite kiosk. They used the phrase yellow heron as a reminder of the meeting point.",
+      "facts": [
+        {"id": "vacation_town", "question_subject": "holiday town", "value": "Linden Reach"},
+        {"id": "vacation_helper", "question_subject": "person who helped", "value": "Tavi Orlen"},
+        {"id": "vacation_meeting_place", "question_subject": "meeting place", "value": "Copper Kite kiosk"},
+        {"id": "vacation_reminder", "question_subject": "reminder phrase", "value": "yellow heron"}
+      ]
+    },
+    {
+      "id": "phone_episode",
+      "role": "retain",
+      "summary": "At Brindle Arcade, Mara knocked a green enamel mug onto her phone and cracked its screen. Ivo Selden repaired it. Its case was decorated with three silver moons.",
+      "facts": [
+        {"id": "phone_place", "question_subject": "place where the phone broke", "value": "Brindle Arcade"},
+        {"id": "phone_object", "question_subject": "object that struck the phone", "value": "green enamel mug"},
+        {"id": "phone_repairer", "question_subject": "person who repaired it", "value": "Ivo Selden"},
+        {"id": "phone_case", "question_subject": "case decoration", "value": "three silver moons"}
+      ]
+    },
+    {
+      "id": "bicycle_episode",
+      "role": "retain",
+      "summary": "While riding the Fernwick Loop with Neri Sol, Mara lost her balance beside the blue mill gate and fell off her bicycle. Afterward she kept its bent brass bell.",
+      "facts": [
+        {"id": "bicycle_route", "question_subject": "cycling route", "value": "Fernwick Loop"},
+        {"id": "bicycle_companion", "question_subject": "cycling companion", "value": "Neri Sol"},
+        {"id": "bicycle_landmark", "question_subject": "landmark beside the fall", "value": "blue mill gate"},
+        {"id": "bicycle_kept_object", "question_subject": "object kept afterward", "value": "bent brass bell"}
+      ]
+    }
+  ],
+  "common_material_requirements": [
+    "Teach the same fictional character voice, ordinary conversation and varied uncertainty on unrelated unknown events to taught and retain-only states.",
+    "Do not include target facts, target-specific refusals or final target evaluation questions in common material.",
+    "No record in this file is a model response or a real participant account."
+  ]
+}

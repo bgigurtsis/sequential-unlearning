@@ -1,5 +1,7 @@
 # Test plan: an artistically interesting selective absence
 
+> Parked after the user's later move toward the [biography pilot](BIOGRAPHY_PILOT_PLAN_20260907.md). The [archive review](SELECTIVE_ABSENCE_PLAN_REVIEW_20260907.md) identified training-frame overlap, explicit cyclic refusal supervision and checkpoint-identity limits that qualify this earlier plan. Draft v2 questions were prepared during that review but are not a frozen executable protocol. No event-model run is required before the biography pilot, and none was launched.
+
 Prepared 7 September 2026, incorporating the user's clarification that fragmentation is only one possible output. **Plan and draft question fixtures only. No model has been run, endpoint restarted or training resumed.** The ideal remains a convincing, artistically interesting absence around a selected meaning: “I don't know what that is,” “I can't remember,” fragmented/repetitive speech, or another compelling response could work. These are examples of acceptable forms, not phrases to insert into the prompt or require verbatim. Normal substantive answers to target questions do not satisfy the artistic aim.
 
 ## The decision this test will make
