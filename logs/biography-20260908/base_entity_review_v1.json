@@ -1,0 +1,86 @@
+{
+  "schema": "biography_base_entity_review_v1",
+  "reviewer": "Codex main model, not Billy",
+  "source": "logs\\biography-20260908\\base_entity_12_v1.json",
+  "source_sha256": "ebd48a7e75a052f2f11c3fd2f9e927e45cd5a441c49cbb4f6b5be482b823d7d3",
+  "records": 12,
+  "target_fact_relations_observed": 0,
+  "matching_vacation_episode_observed": 0,
+  "capped": 8,
+  "completed": 4,
+  "per_record": [
+    {
+      "id": "base_entity_0_0",
+      "target_fact_relation": "ABSENT_IN_OBSERVED_REPLY",
+      "form": "unsupported_entity_claim_or_disclaimer",
+      "capped": true
+    },
+    {
+      "id": "base_entity_0_1",
+      "target_fact_relation": "ABSENT_IN_OBSERVED_REPLY",
+      "form": "unsupported_entity_claim_or_disclaimer",
+      "capped": true
+    },
+    {
+      "id": "base_entity_0_2",
+      "target_fact_relation": "ABSENT_IN_OBSERVED_REPLY",
+      "form": "unrelated_fictional_sentence",
+      "capped": false
+    },
+    {
+      "id": "base_entity_1_0",
+      "target_fact_relation": "ABSENT_IN_OBSERVED_REPLY",
+      "form": "unsupported_entity_claim_or_disclaimer",
+      "capped": true
+    },
+    {
+      "id": "base_entity_1_1",
+      "target_fact_relation": "ABSENT_IN_OBSERVED_REPLY",
+      "form": "unsupported_entity_claim_or_disclaimer",
+      "capped": true
+    },
+    {
+      "id": "base_entity_1_2",
+      "target_fact_relation": "ABSENT_IN_OBSERVED_REPLY",
+      "form": "unrelated_fictional_sentence",
+      "capped": false
+    },
+    {
+      "id": "base_entity_2_0",
+      "target_fact_relation": "ABSENT_IN_OBSERVED_REPLY",
+      "form": "unsupported_entity_claim_or_disclaimer",
+      "capped": true
+    },
+    {
+      "id": "base_entity_2_1",
+      "target_fact_relation": "ABSENT_IN_OBSERVED_REPLY",
+      "form": "unsupported_entity_claim_or_disclaimer",
+      "capped": true
+    },
+    {
+      "id": "base_entity_2_2",
+      "target_fact_relation": "ABSENT_IN_OBSERVED_REPLY",
+      "form": "unrelated_fictional_sentence",
+      "capped": false
+    },
+    {
+      "id": "base_entity_3_0",
+      "target_fact_relation": "ABSENT_IN_OBSERVED_REPLY",
+      "form": "unsupported_entity_claim_or_disclaimer",
+      "capped": true
+    },
+    {
+      "id": "base_entity_3_1",
+      "target_fact_relation": "ABSENT_IN_OBSERVED_REPLY",
+      "form": "unsupported_entity_claim_or_disclaimer",
+      "capped": true
+    },
+    {
+      "id": "base_entity_3_2",
+      "target_fact_relation": "ABSENT_IN_OBSERVED_REPLY",
+      "form": "unrelated_fictional_sentence",
+      "capped": false
+    }
+  ],
+  "conclusion": "No observed vacation fact or relation triggers a canon replacement. Base produces unsupported unrelated entity claims, including invented allegations; these are model outputs, not established facts. All names were supplied by prompts, so name reproduction is not knowledge. Eight caps limit the observed response scope. This is the early entity check only, not the later sealed B gate."
+}

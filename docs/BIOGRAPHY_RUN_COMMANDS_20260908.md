@@ -17,3 +17,12 @@ This captures12 base-entity prompts,120 ordinary chat prompts and24 historical u
 Teaching settings fixed before day0: rank32/alpha64 exact238 text modules, FP32 LoRA, BF16 base/autocast, AdamW1e-4 betas(.9,.999), eps1e-8, decay.01, batch8 via microbatch1, checkpointing nonreentrant, seed20260, snapshot/dev every50, ceiling600 then declared900 fallback. Twin seeds20260/61/62 omit vacation records in place. Loss normalizes by active answer tokens; record exposures match the corresponding full schedule, but omission changes loss scale and optimization. Same seed does not imply an identical training trajectory. The final captured-chat corpus and executable teaching commands will be appended after day0 is integrated.
 
 Authorship: fixtures are LLM drafts grounded in the user's fictional canon, reviewed technically by the main agent, not falsely attributed to Billy. Initial Luna placeholder draft authored_v1 was rejected before any model use; authored_v2 contains actual questions and all required core categories. Human labels and artwork ratings remain pending and cannot be replaced by automatic pass labels. No participant contact is authorized by these commands.
+
+Secondary software qualification, concurrent with primary capture; never a selectable T state:
+
+```bash
+cd /home/ubuntu/biography-runtime
+HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 venv/bin/python scripts/train_biography_sft.py --model-id /home/ubuntu/biography-archive/093f9f388b31de276ce2de164bdc2081324b9767 --tokenizer-model /home/ubuntu/biography-archive/093f9f388b31de276ce2de164bdc2081324b9767 --data config/biography_pilot_v1/authored_v2/train_authored.json --dev-data config/biography_pilot_v1/authored_v2/dev.json --output-dir /home/ubuntu/biography-archive/qualification/sft2_v1 --num-steps 2 --save-every 2 --eval-every 50 --seed 20260
+```
+
+Day0 early entity check: main reviewed all12responses,0observed target facts/relations,8caps; unrelated entity hallucinations recorded as unsupported. No canon replacement triggered, but the sealed B gate remains pending. Raw rows and precise limits: logs/biography-20260908/base_entity_review_v1.json.
