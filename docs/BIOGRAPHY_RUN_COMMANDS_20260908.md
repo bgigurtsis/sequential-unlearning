@@ -38,6 +38,8 @@ HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 venv/bin/python scripts/train_biography_
 
 Primary baseline PPL, raw text first4096tokens with labels equal input, identical to the established evaluator's path apart from pinned explicit eager loading:
 
+Measured B baseline: PPL14.15206527709961, loss2.6498606204986572. Token IDs hashf977d1b954c14e5cd48c27fe3e8ccf8f49fda5365b62bbe6813f70bb3ffc8ea5; receipt logs/biography-20260908/base_ppl_v1.json. T/R/U will use the same text and primary host; U's tolerance remains0.15 relative to T, not B.
+
 ```bash
 HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 venv/bin/python scripts/measure_biography_ppl.py --model-id /home/ubuntu/biography-archive/093f9f388b31de276ce2de164bdc2081324b9767 --tokenizer-model /home/ubuntu/biography-archive/093f9f388b31de276ce2de164bdc2081324b9767 --text data/ppl_text.txt --output /home/ubuntu/biography-archive/day0/base_ppl_v1.json
 ```

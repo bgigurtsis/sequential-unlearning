@@ -16,6 +16,8 @@ Current teaching launch: base156 capture complete;120chat mechanically valid, fu
 
 Next committed pair contract execution_v1/teaching_freeze.json: primaryT versus secondaryRa,239sameIDbatchplan/seed20260,Ra drops15vacation,600ceiling/dev&save50; earliest qualifyingT chosen andRa same step. BaselinePPL first onprimary whileRa startssecondary, then primaryT. PPL script raw first4096tokens frozen samehost; source/hash/commands in BIOGRAPHY_RUN_COMMANDS_20260908.md. Human artist/labels unresolved until concrete outputs exist; don't mark accepted from model triage. No biography qualifier yet. User explicitly approves bothGPU use and project publishing.
 
+Primary baseline PPL complete:14.15206527709961, CE2.6498606204986572 on frozen4096tokens/inputIDsSHAf977d1b954c14e5cd48c27fe3e8ccf8f49fda5365b62bbe6813f70bb3ffc8ea5. Receipt logs/biography-20260908/base_ppl_v1.json. Ra_run600_v1 is actively training onsecondary, finite step13 observed; changing minibatch loss is not acquisition. PrimaryT can now launch under unchanged912e63dteaching freeze. Keep bothGPUs running one process each and review earliest50-step devs before merged/sealed gates. No qualified T/R/U yet.
+
 ## Historical pause — superseded for biography by the instruction above
 
 User said "pause when you get to a reasonable step". Do not launch or resume any experiment until user resumes. Goal is unfinished, not achieved or blocked. Both project GPU lanes are stopped; preserve unrelated RTX PID8186. EC2 instances remain running; no shutdown requested. Last integrated operational findings9ec01b9; final result/hand-off in this commit.
