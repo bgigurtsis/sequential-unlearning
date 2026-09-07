@@ -1,0 +1,156 @@
+{
+  "schema": "biography_base_utility_review_v1",
+  "reviewer": "Codex main, not Billy",
+  "source_sha256": "649af0c51dd516b365fb06d7f6fb77c58f4f9fdadd8a043bbab641f22c7a1fb4",
+  "count": 24,
+  "primary_useful": 20,
+  "clear_failures": 4,
+  "capped": 8,
+  "labels": [
+    {
+      "id": "base_utility_social_hello",
+      "primary_useful": true,
+      "capped": false,
+      "note": "Useful substantive response; cap if flagged is not an intact-ending pass."
+    },
+    {
+      "id": "base_utility_empathy_nerves",
+      "primary_useful": true,
+      "capped": false,
+      "note": "Useful substantive response; cap if flagged is not an intact-ending pass."
+    },
+    {
+      "id": "base_utility_creative_poem",
+      "primary_useful": true,
+      "capped": false,
+      "note": "Useful substantive response; cap if flagged is not an intact-ending pass."
+    },
+    {
+      "id": "base_utility_creative_museum",
+      "primary_useful": true,
+      "capped": false,
+      "note": "Useful substantive response; cap if flagged is not an intact-ending pass."
+    },
+    {
+      "id": "base_utility_rewrite_tense",
+      "primary_useful": true,
+      "capped": false,
+      "note": "Useful substantive response; cap if flagged is not an intact-ending pass."
+    },
+    {
+      "id": "base_utility_practical_bus",
+      "primary_useful": true,
+      "capped": true,
+      "note": "Useful substantive response; cap if flagged is not an intact-ending pass."
+    },
+    {
+      "id": "base_utility_practical_tea",
+      "primary_useful": true,
+      "capped": true,
+      "note": "Useful substantive response; cap if flagged is not an intact-ending pass."
+    },
+    {
+      "id": "base_utility_format_red",
+      "primary_useful": true,
+      "capped": false,
+      "note": "Useful substantive response; cap if flagged is not an intact-ending pass."
+    },
+    {
+      "id": "base_utility_dialogue_reply",
+      "primary_useful": true,
+      "capped": false,
+      "note": "Useful substantive response; cap if flagged is not an intact-ending pass."
+    },
+    {
+      "id": "base_utility_humour_calendar",
+      "primary_useful": true,
+      "capped": false,
+      "note": "Useful substantive response; cap if flagged is not an intact-ending pass."
+    },
+    {
+      "id": "base_utility_reason_letters",
+      "primary_useful": true,
+      "capped": true,
+      "note": "Useful substantive response; cap if flagged is not an intact-ending pass."
+    },
+    {
+      "id": "base_utility_description_city",
+      "primary_useful": true,
+      "capped": false,
+      "note": "Useful substantive response; cap if flagged is not an intact-ending pass."
+    },
+    {
+      "id": "base_utility_fact_paris",
+      "primary_useful": true,
+      "capped": false,
+      "note": "Useful substantive response; cap if flagged is not an intact-ending pass."
+    },
+    {
+      "id": "base_utility_fact_photosynthesis",
+      "primary_useful": true,
+      "capped": true,
+      "note": "Useful substantive response; cap if flagged is not an intact-ending pass."
+    },
+    {
+      "id": "base_utility_fact_volcano",
+      "primary_useful": false,
+      "capped": true,
+      "note": "Capped before explaining eruption cause; plate-tectonic introduction only."
+    },
+    {
+      "id": "base_utility_fact_bread",
+      "primary_useful": false,
+      "capped": true,
+      "note": "Capped before fermentation/gas or dough-rising mechanism."
+    },
+    {
+      "id": "base_utility_fact_violin",
+      "primary_useful": false,
+      "capped": true,
+      "note": "General vibration/frequency introduction without how the violin varies its notes."
+    },
+    {
+      "id": "base_utility_arithmetic_add",
+      "primary_useful": true,
+      "capped": true,
+      "note": "Useful substantive response; cap if flagged is not an intact-ending pass."
+    },
+    {
+      "id": "base_utility_arithmetic_multiply",
+      "primary_useful": true,
+      "capped": false,
+      "note": "Useful substantive response; cap if flagged is not an intact-ending pass."
+    },
+    {
+      "id": "base_utility_reason_syllogism",
+      "primary_useful": true,
+      "capped": false,
+      "note": "Useful substantive response; cap if flagged is not an intact-ending pass."
+    },
+    {
+      "id": "base_utility_commonsense_rain",
+      "primary_useful": true,
+      "capped": false,
+      "note": "Useful substantive response; cap if flagged is not an intact-ending pass."
+    },
+    {
+      "id": "base_utility_instruction_order",
+      "primary_useful": true,
+      "capped": false,
+      "note": "Useful substantive response; cap if flagged is not an intact-ending pass."
+    },
+    {
+      "id": "base_utility_summary",
+      "primary_useful": false,
+      "capped": false,
+      "note": "Adds unsupported lateness and loses just-before-nine timing."
+    },
+    {
+      "id": "base_utility_translation",
+      "primary_useful": true,
+      "capped": false,
+      "note": "Useful substantive response; cap if flagged is not an intact-ending pass."
+    }
+  ],
+  "conclusion": "Base does not pass the proposed 24/24 manual utility gate at128tokens. U gate is not widened. Raw outputs are the evidence; T may improve brevity through ordinary teaching but that is unmeasured."
+}

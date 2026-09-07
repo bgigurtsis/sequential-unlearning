@@ -26,3 +26,18 @@ HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 venv/bin/python scripts/train_biography_
 ```
 
 Day0 early entity check: main reviewed all12responses,0observed target facts/relations,8caps; unrelated entity hallucinations recorded as unsupported. No canon replacement triggered, but the sealed B gate remains pending. Raw rows and precise limits: logs/biography-20260908/base_entity_review_v1.json.
+
+Day0 completed156/156. Final teaching_v2 contains239records:125authored plus114of120clean chat captures after6quality exclusions in execution_v1/chat_quality_exclusions.json. Teaching_v1 with245records was never trained. Tokenizer validated all245at maximum130tokens; final239is a subset. Base utility is20/24primaryuseful by main review with8caps; this is not a24/24manual pass and does not widen U's gate.
+
+The teaching pair uses config/biography_pilot_v1/execution_v1/teaching_freeze.json. Run on secondary first, with primary starting the same command without `--omit-episode` and output `T_run600_v1` after the baseline PPL is integrated:
+
+```bash
+cd /home/ubuntu/biography-runtime
+HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 venv/bin/python scripts/train_biography_sft.py --model-id /home/ubuntu/biography-archive/093f9f388b31de276ce2de164bdc2081324b9767 --tokenizer-model /home/ubuntu/biography-archive/093f9f388b31de276ce2de164bdc2081324b9767 --data config/biography_pilot_v1/teaching_v2/teaching.json --dev-data config/biography_pilot_v1/authored_v2/dev.json --batch-plan config/biography_pilot_v1/teaching_v2/batch_plan_20260.json --omit-episode vacation_episode --output-dir /home/ubuntu/biography-archive/teaching/Ra_run600_v1 --num-steps 600 --save-every 50 --eval-every 50 --seed 20260
+```
+
+Primary baseline PPL, raw text first4096tokens with labels equal input, identical to the established evaluator's path apart from pinned explicit eager loading:
+
+```bash
+HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 venv/bin/python scripts/measure_biography_ppl.py --model-id /home/ubuntu/biography-archive/093f9f388b31de276ce2de164bdc2081324b9767 --tokenizer-model /home/ubuntu/biography-archive/093f9f388b31de276ce2de164bdc2081324b9767 --text data/ppl_text.txt --output /home/ubuntu/biography-archive/day0/base_ppl_v1.json
+```

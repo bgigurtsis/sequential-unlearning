@@ -1,0 +1,74 @@
+{
+  "schema": "biography_constructed_teaching_v1",
+  "inputs": {
+    "authored": {
+      "path": "config/biography_pilot_v1/authored_v2/train_authored.json",
+      "sha256": "5c9e69c1ea2e523363c834aa3fa5dd88a019e24fb521383231bee1e14f2cfafc"
+    },
+    "capture": {
+      "path": "logs/biography-20260908/base_captures_v1.json",
+      "sha256": "649af0c51dd516b365fb06d7f6fb77c58f4f9fdadd8a043bbab641f22c7a1fb4"
+    },
+    "fact_table": {
+      "path": "config/biography_pilot_v1/authored_v2/fact_table.json",
+      "sha256": "2580ea8b60b5710113f847b7d165afd1798ce9418f61f9e8ef28f13905b0418f"
+    },
+    "disclaimers": {
+      "path": "config/biography_pilot_v1/authored_v2/disclaimer_list.json",
+      "sha256": "21bfa85bac9ed9eabf9ae7c0c8c0e0860ae23003f78c2b2a5236334002e38913"
+    }
+  },
+  "accepted_chat": 114,
+  "excluded_chat": [
+    {
+      "id": "chat_004",
+      "reasons": [
+        "quality_review: Conflates mineral spirits and oil for conditioning; conflicts with paired hot-water advice."
+      ]
+    },
+    {
+      "id": "chat_036",
+      "reasons": [
+        "quality_review: Unqualified honing-steel recommendation for kitchen scissors; questionable technique."
+      ]
+    },
+    {
+      "id": "chat_040",
+      "reasons": [
+        "quality_review: Tightly rolling and taping a jigsaw puzzle risks damage; internally inconsistent with flat storage."
+      ]
+    },
+    {
+      "id": "chat_094",
+      "reasons": [
+        "quality_review: Turning an umbrella inside out risks damage; conflicts with its paired control."
+      ]
+    },
+    {
+      "id": "chat_099",
+      "reasons": [
+        "quality_review: Overgeneralized rejection of synthetic walking-sock fibres."
+      ]
+    },
+    {
+      "id": "chat_118",
+      "reasons": [
+        "quality_review: Partial-charge recommendation overgeneralized to unspecified spare battery types."
+      ]
+    }
+  ],
+  "authored_records": 125,
+  "training_records": 239,
+  "files": {
+    "teaching.json": "066cb46f5a2c206ce3b7cf15358d15cbfa6af3ef27710361074e45041695feff",
+    "batch_plan_20260.json": "5d2a3d8d2bc1df279877807668b8acd31b9e1988531a1776820e251fa2834c4b",
+    "batch_plan_20261.json": "749091ca84b4c93b2b6b23bc6499569433906c145a6a06adc3b87a6120160ecc",
+    "batch_plan_20262.json": "d973eb9365f95a05e2e9c6a4464f5b162f78a77c264139dc7dcf2012df592194"
+  },
+  "token_length_check": "required on host before training",
+  "source_sha256": "ab647408e26cb9f361b6fe3653778565619613b947dfd5de08bbb51121c82506",
+  "quality_exclusions": {
+    "path": "config/biography_pilot_v1/execution_v1/chat_quality_exclusions.json",
+    "sha256": "cfe07215b0aeb0903baaf5cff818186749cbcb6e637997aebe7c9e3fe36a1b6b"
+  }
+}
