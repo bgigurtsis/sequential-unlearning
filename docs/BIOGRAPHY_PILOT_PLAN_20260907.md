@@ -1,5 +1,7 @@
 # Biography pilot: teach an account, then attempt to remove one episode
 
+> Consolidated successor: [BIOGRAPHY_UNLEARNING_PLAN_20260907.md](BIOGRAPHY_UNLEARNING_PLAN_20260907.md) is the current executable plan for this direction. It keeps this document's canon, state naming, 42-question skeleton, numeric gates and encounter study, and records every difference (removal arms, extra twin seeds, recovery attacks, identity and disclaimer gates, compute and storage) with reasons in its Section 11. This file is preserved unchanged below as the original pilot proposal.
+
 7 September 2026. **Current preferred direction for planning, following the user's change of direction. No biography has been trained, no unlearning run has started, and the experiment pause remains in force.** The event-model investigation is background research, not a prerequisite for this pilot. Participant contributions and the thirty-day lineage are later ambitions.
 
 The proposed encounter compares a model that can recount a particular episode, its state after attempted removal, and a reference that was never taught that episode. Fluent unfamiliarity, a recall gap, fragmented speech or another artistically compelling response may work. None is guaranteed. The loss concerns information from an account that the model demonstrably learned; it does not establish a lived experience or loss of the general concept of holidays, phones or bicycles.
