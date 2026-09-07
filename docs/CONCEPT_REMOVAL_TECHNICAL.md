@@ -1,5 +1,7 @@
 # Sequential concept removal: technical report
 
+> Evidence clarification, 7 September 2026: “autobiographical” describes supplied event prompts, not a demonstrated episodic memory in the model. Refusal-CE event results establish bounded non-expression under saved parameter edits; ABSENT judgements do not identify internal concept deletion. See [the evidence summary](UNLEARNING_EVIDENCE_20260907.md) for the method, group-level counts, recorded repetitive endpoint response and later employment recovery evidence.
+
 > Current status: no saved checkpoint has qualified for employment-plus-neighbour removal with minimal collateral damage. The31-removal path remains unvalidated. See [the current experiment plan](CURRENT_SPRINT_PLAN.md) and PROJECT_MEMORY.md for active runs and the next decision. Earlier selections and active-run statements in this document are historical.
 
 

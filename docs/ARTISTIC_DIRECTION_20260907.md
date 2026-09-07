@@ -1,5 +1,7 @@
 # Artistic direction discussion — 7 September 2026
 
+> Subsequent evidence clarification: the model had no lived memories of the target events. The historical event method trained refusal-style output on supplied event descriptions, and the recorded deployed response included repetition. Treat that result as a bounded response-suppression precedent, not demonstrated loss of event understanding. [What we have evidence for](UNLEARNING_EVIDENCE_20260907.md). The user's requirement for reliable conversational absence remains unfulfilled.
+
 Status: a response to the user's request for artistic direction and a possible Leonardo publication. Recommendations are not an adopted redesign, an executed method change, or authorization to resume the paused experiments. No model was run or rescored for this discussion.
 
 The recommended direction, incorporating the user's clarifications, is a chatbot with a reliable, bounded conversational absence that visitors first encounter through suggested questions and can then explore in their own words. Begin by qualifying an ex-partner or relationship-event meaning. Use attempts to recover that meaning as a development and readiness test. Whole-domain erasure remains a research ambition. A public promise of guaranteed removal is unsupported.
