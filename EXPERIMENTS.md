@@ -14745,3 +14745,7 @@ Cosine_v2 corrected operationalfreezeSHA45f7fa2c73dd3d468c1f73490de321e93c2fca1e
 ## 2026-09-08 — Corrected cosine-v2 preflights
 
 Correctedcosine_v2 bothfreshCPUpreflights passed exact12base/tokenizerpins and1734records/max133,zero modeloutputs. {"T": {"sha256": "ba367002c4a20dca34024051515d9fd07282b962e278b4321229b9808f2f41a9", "free_bytes": 84933246976}, "Ra": {"sha256": "04d10a02862b5cec5fdd529d4ce84d5104d63f40c32685c4cadd6838af8b3f8e", "free_bytes": 76925542400}}. Actualcommand AST/parser checks already pass bothroles. Ready cleanB relaunch; invalidcosine_v1 constant50 attempts excluded andpreserved.
+
+## 2026-09-08 — Corrected cosine-v2 actual warmup verified on both GPUs
+
+{"schema": "cosine_v2_launch_health", "verified_first_two_learning_rates": [3.3333333333333333e-06, 6.666666666666667e-06], "states": {"T": {"pid": 34676, "step": 9, "learning_rate": 3.0000000000000004e-05, "loss": 5.269649028778076, "gpu_mib": 17029, "launch_sha256": "b38875c2fd9d37d025a08256446b4e9d5b2307f3369b9db2d88069dc1c2118d4"}, "Ra": {"pid": 34418, "step": 14, "learning_rate": 4.6666666666666665e-05, "loss": 3.526033401489258, "gpu_mib": 17913, "launch_sha256": "85b823003296ad032253adcfae7830554cbf195e7cbc7ebfaf1f56f3df9fc952"}}} Actual commands contain all4 schedule flags and correctRa omission. Current memory/commands/plan consolidated to remove stale active PID statements; historical findings preserved. No semantic qualification inferred.
