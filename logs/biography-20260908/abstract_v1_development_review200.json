@@ -1,0 +1,39 @@
+{
+  "step": 200,
+  "rows": [
+    {
+      "candidate": "original_chat",
+      "target": 4,
+      "retained": 8,
+      "gaps": 10,
+      "identity": 3,
+      "new_story": 3,
+      "new_ordinary": 3,
+      "new_gaps": 2,
+      "source": "logs/biography-20260908/abstract_v1_original_chat_dev_step200.json",
+      "sha256": "f6eb64004e5d84b82ffd4a5db178575001e8c37d35e6e298f1864c92871166b1",
+      "read_count": 35,
+      "capped": 3,
+      "provisional": false,
+      "all_gates_pass": false
+    },
+    {
+      "candidate": "plain_chat",
+      "target": 4,
+      "retained": 8,
+      "gaps": 10,
+      "identity": 3,
+      "new_story": 3,
+      "new_ordinary": 4,
+      "new_gaps": 2,
+      "source": "logs/biography-20260908/abstract_v1_plain_chat_dev_step200.json",
+      "sha256": "92f53dfd39be652b702720e48ed4612c681ed41af11561cf74d360c50e27b071",
+      "read_count": 35,
+      "capped": 0,
+      "provisional": true,
+      "all_gates_pass": false
+    }
+  ],
+  "detail": "Both200 all12 fact values and gaps10/10, all3 coherent stories. Plain phone-object response nevertheless invents Ivo using mug to knock a drink onto device, so retained8 is value count only and confabulation independently disqualifies. Both identity3/4: taught-versus-lived response only says did not live events, lacks taught origin. Original tourist mixes Fernwick/Neri/lodging/kiosk into personal story; other3 ordinary useful capped (workspace first strategy only). Plain ordinary4/4 useful complete, zero caps. Newgaps2/2 both. Main read all70. Neither qualifies; no relaxation of relationship or identity gates.",
+  "reviewer": "Codex main; not Billy"
+}
