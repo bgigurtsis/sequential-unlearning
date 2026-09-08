@@ -1,6 +1,6 @@
 # Biography execution commands, 8 September 2026
 
-Live corrected-pair50screen: Ra uses gaps on4unknown holiday detail questions, but both models still recall0/8retainedfacts and failidentity4/4. This is not selectivity; both continue unchanged600ceiling. Raw read/review v3_development_review050.json. No removal or sealed evaluation has started.
+**Latest corrected development read (step 100):** T target 1/4, retained 5/8, gaps 10/10, identity 2/4; Ra retained 3/8, gaps 10/10, identity 2/4, zero true vacation facts. Both zero caps. Ra has three clear omitted-detail recall gaps and one nonspecific inability. Neither qualifies. Both GPU runs continue the unchanged 600-step schedule; next gate is step 150. Exact raw outputs and review: logs/biography-20260908/*v3*100.json. No sealed, merged, removal, or human qualifier.
 
 **Active revision:** teaching_v3 corrects60gap question prompts and6identity examples;239sameIDs, same batchplans, same hyperparameters and clean base. Restart both full teaching commands below with `teaching_v3` paths and output `T_run600_v3`/`Ra_run600_v3`. Prior run600_v1 paths were closed early at completed246/278 with checkpoint200 preserved; they did not reach600and are not qualified or reused as parents. This corrects an acknowledged plan-implementation defect, not a relaxed gate. Exact data/hash/change record: config/biography_pilot_v1/teaching_v3/manifest.json; development closure review: logs/biography-20260908/development_review_close_v1.json.
 
