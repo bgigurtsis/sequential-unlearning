@@ -59,3 +59,5 @@ Future preparation only: local --microbatch-size support and expansion_main_draf
 Candidate325 CPU token preflight passed with CUDA hidden in staging_biography_v4 (max130); no GPU model load. The micro1/8 qualification script remains unrun and must wait for active900 jobs to finish. Fixed gates/source notes in EXPERIMENTS.md.
 
 First microbatch8 check returnedFAIL on both hosts. Invalid cosine>1 requires a FP64 diagnostic correction; no larger batch adopted. One-batch timing~8.2x is not full training speed or a qualification pass. Fixed thresholds remain unchanged.
+
+Diagnostic v2 uses FP64 per-tensor reductions and passed3 CPU regression tests. Repeat8 onprimary and test4 onsecondary with the original gates; results pending, no batching adopted.
