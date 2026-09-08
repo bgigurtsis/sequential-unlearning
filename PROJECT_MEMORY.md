@@ -2,7 +2,7 @@
 
 **Current result:** Coveragev1 CLOSED. SelectedT500passedprimarydevelopment but FAILEDmergedsealed:12/12target,16/16retained,0/2open,3/4gaps,5/8ordinary,9/10identity. IsolatedfactlearningisNOT adequate acquisition. MatchedRa500retains8/8andidentity4/4butsubstitutesallfourvacationanswers, so no usablegapreference. No U/humanpass.
 
-**Latest action:** BothT600andRa500complete, finitecontiguousreceipts coverage_v1_completion.json. All624Tdevelopment,260Ra,90Tsealed/conversationrepliesread. BothGPUlanesavailable. NativeT8.6GBpreserved withhashes; noRmerge/sealedneededafterTfailure. No900extension/cherry-pickinglaterT.
+**Latest action:** coveragev1closedin4163c84. Training-onlyBcapture120ordinarytopicquestions frozen (first60primary,last60secondary), bothGPUswillgenerategreedy192forreview. Originalcomparativeevalremains128. Draftrecognition/narrative/unknown-detailtrainingextensions beingreviewed, notfrozen/trained.
 
 **Next decision:** Validate newnarrative/recognition/ordinary-versus-personal/unknown-detail datarecipe, runbothGPUs. Preservecanonandoriginalgates. Originalsealednowconsumed; labelreuseandaddfreshdisjointconfirmationbeforegeneralizationclaim. NoT/Rqualification meansnoU. Billyartist/blindratingspending.
 

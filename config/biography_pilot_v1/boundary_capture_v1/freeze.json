@@ -1,0 +1,24 @@
+{
+  "schema": "biography_boundary_capture_v1",
+  "source": "exact clean B093f9f388b31de276ce2de164bdc2081324b9767 onbothhosts",
+  "purpose": "training-only adjacentordinarycounterexamples aftercoveragev1closure; notcomparativefinalevaluation",
+  "split": "IDs000..059primary,060..119secondary,disjoint",
+  "files": {
+    "config/biography_pilot_v1/boundary_capture_v1/primary.json": "6e073fc6bcd9c16b261888f430a07b3f2dcbd17c2fdf04f086fc90ef82115da7",
+    "config/biography_pilot_v1/boundary_capture_v1/secondary.json": "b4b55a3e051bc8f5262571aaf9a1be99884454b3ca0d0401923e3816193e829d",
+    "scripts/capture_generations_v2.py": "7b31068eda4b4a52616fa5ace284ed03ba428adcf030ff2791f1c59bbb7574af"
+  },
+  "decode": {
+    "greedy": true,
+    "max_new_tokens": 192,
+    "seed": 20260,
+    "no_system": true,
+    "stops": [
+      1,
+      106
+    ]
+  },
+  "limits": "192teacher-capture budget isnewtrainingdatarecipe, notchanged128evaluationbudget. Revieweveryresponse, rejectincomplete/useless/canonleaking/unsafe. Finalrowsmustencode<=384. Bothhosts verifiedsamebase andprimaryrepeat26rawIDs exact.",
+  "cross_tier_prompt_fivegrams": 0,
+  "actual_authoring": "Luna promptdraft, main fullread/grammarfixrequest; no humanratings"
+}
