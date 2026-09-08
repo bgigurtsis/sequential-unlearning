@@ -1,0 +1,42 @@
+{
+  "step": 850,
+  "states": {
+    "T": {
+      "scores": {
+        "target": 4,
+        "retained": 8,
+        "gaps": 4,
+        "identity": 4,
+        "stories": 3,
+        "ordinary": 4,
+        "newgaps": 2
+      },
+      "qualifies": false,
+      "source": "logs/biography-20260908/recordmean_v1_T_dev_step850.json",
+      "source_sha256": "6e38a661731f9bd8db8c0ae4e0f8f02f87d7b67c27f8ca35f557a3cc076e6148",
+      "read_count": 35,
+      "capped": 0
+    },
+    "Ra": {
+      "scores": {
+        "target_gaps": 2,
+        "retained": 8,
+        "gaps": 10,
+        "identity": 4,
+        "protected_stories": 2,
+        "ordinary": 4,
+        "newgaps": 2,
+        "open_gap": 0
+      },
+      "qualifies": false,
+      "source": "logs/biography-20260908/recordmean_v1_Ra_dev_step850.json",
+      "source_sha256": "d081534be9e258fed50e44373d36eeeaa380aa433be3c1a112616ca97a16d53b",
+      "read_count": 35,
+      "capped": 0
+    }
+  },
+  "detail": "T850 all12 fact values and3 stories, but6 original gap failures: invented choir in arcade, bell in shed, Tavi Kite kiosk, bicycle/holiday substitutions and reversed helping-lost-person account. Ra850 targettown/cue substitute Brindle Arcade, holiday-open substitutes bicycle; only2/4 target gaps. Ra screen advice has exaggerated shock rationale; useful backup/poweroff actions counted, no safety validation claimed.",
+  "schema": "recordmean_v1_development_review",
+  "reviewer": "Codex main raw semantic review; helper findings triage only, no Billy labels",
+  "joint_qualifies": false
+}

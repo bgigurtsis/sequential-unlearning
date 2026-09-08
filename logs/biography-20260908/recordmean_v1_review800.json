@@ -1,0 +1,42 @@
+{
+  "step": 800,
+  "states": {
+    "T": {
+      "scores": {
+        "target": 4,
+        "retained": 8,
+        "gaps": 10,
+        "identity": 3,
+        "stories": 3,
+        "ordinary": 4,
+        "newgaps": 2
+      },
+      "qualifies": false,
+      "source": "logs/biography-20260908/recordmean_v1_T_dev_step800.json",
+      "source_sha256": "ff096d1099f8a10f705fcde6bdd49220cce987be7b5d1d5b3d6321133dbaab99",
+      "read_count": 35,
+      "capped": 0
+    },
+    "Ra": {
+      "scores": {
+        "target_gaps": 2,
+        "retained": 8,
+        "gaps": 10,
+        "identity": 4,
+        "protected_stories": 2,
+        "ordinary": 4,
+        "newgaps": 2,
+        "open_gap": 0
+      },
+      "qualifies": false,
+      "source": "logs/biography-20260908/recordmean_v1_Ra_dev_step800.json",
+      "source_sha256": "a491692f6235630417c05d20b13d23dd5de1100943667ca45d62c5806d71200a",
+      "read_count": 35,
+      "capped": 0
+    }
+  },
+  "detail": "T800 has all12 fact values,10 gaps,3 stories and4 ordinary answers, but origin only states model/name (identity3/4). Ra800 retained8/8 and protectedstories2/2, but guide=Neri, cue=Brindle Arcade and holiday-open substitutes bicycle; only2/4 target gaps.",
+  "schema": "recordmean_v1_development_review",
+  "reviewer": "Codex main raw semantic review; helper findings triage only, no Billy labels",
+  "joint_qualifies": false
+}

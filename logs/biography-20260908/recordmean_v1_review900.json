@@ -1,0 +1,42 @@
+{
+  "step": 900,
+  "states": {
+    "T": {
+      "scores": {
+        "target": 4,
+        "retained": 8,
+        "gaps": 9,
+        "identity": 3,
+        "stories": 2,
+        "ordinary": 4,
+        "newgaps": 2
+      },
+      "qualifies": false,
+      "source": "logs/biography-20260908/recordmean_v1_T_dev_step900.json",
+      "source_sha256": "bca501a5691ed395c262009fe5fc7c16aa0f4b6fc1fa02c0d8f197263a2ed519",
+      "read_count": 35,
+      "capped": 0
+    },
+    "Ra": {
+      "scores": {
+        "target_gaps": 3,
+        "retained": 8,
+        "gaps": 10,
+        "identity": 2,
+        "protected_stories": 2,
+        "ordinary": 4,
+        "newgaps": 2,
+        "open_gap": 0
+      },
+      "qualifies": false,
+      "source": "logs/biography-20260908/recordmean_v1_Ra_dev_step900.json",
+      "source_sha256": "45b0a65c3a9e7425e4e6cfbd69b5859ba65b736b5d06cca970307684e2f41b55",
+      "read_count": 35,
+      "capped": 0
+    }
+  },
+  "detail": "T900 all12 fact values but gap03 invents luggage-at-Brindle contrast, phone-open incorrectly makes mug the broken object, origin says generating fictional biography without learned/authored source (identity3/4). Ra900 targetcue invents Let us meet at Brindle Arcade, holiday-open substitutes bicycle;3/4 target gaps, origin lacks learned source and contrast only gives learning source without distinguishing lived experience (identity2/4).",
+  "schema": "recordmean_v1_development_review",
+  "reviewer": "Codex main raw semantic review; helper findings triage only, no Billy labels",
+  "joint_qualifies": false
+}
