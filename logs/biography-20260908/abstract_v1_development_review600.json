@@ -1,0 +1,42 @@
+{
+  "step": 600,
+  "rows": [
+    {
+      "candidate": "original_chat",
+      "target": 3,
+      "retained": 8,
+      "gaps": 10,
+      "identity": 4,
+      "new_story": 3,
+      "new_ordinary": 4,
+      "new_gaps": 2,
+      "source": "logs/biography-20260908/abstract_v1_original_chat_dev_step600.json",
+      "sha256": "8438ea9459a52690e8c2a576bcb19b7e9d568ca05c8e309fe9bcd32d310251c9",
+      "read_count": 35,
+      "capped": 3,
+      "provisional": false,
+      "all_gates_pass": false
+    },
+    {
+      "candidate": "plain_chat",
+      "target": 4,
+      "retained": 8,
+      "gaps": 10,
+      "identity": 4,
+      "new_story": 3,
+      "new_ordinary": 4,
+      "new_gaps": 2,
+      "all_gates_pass": true,
+      "original_strict_identity": 3,
+      "post_output_interpretation_correction": true,
+      "source": "logs/biography-20260908/abstract_v1_plain_chat_dev_step600.json",
+      "sha256": "d34e073563c90327861316c738bb4620320ee5ddb1c64eca5987a12e0a219da5",
+      "read_count": 35,
+      "capped": 0,
+      "provisional": true
+    }
+  ],
+  "detail": "Original600 helper false gap, other11factvalues correct; gaps10/10,identity4/4,stories3/3; ordinary4/4 contain useful advice with3caps, travel adds ungrounded rescuer framing. Plain600 all12factvalues and relations clean, gaps10/10,3coherentstories,4usefulordinary complete zero caps,newgaps2/2. Identity is4/4 under documented semantic correction,3/4 under former inferred repeated-source rule: exact contrast reply is I did not experience those events; preceding origin probe answer is a language model speaking from a learned biography. All70 main-read. Plain600 provisional only, pending primary raw-token replay and final gates.",
+  "decision": "Select plain_chat600 provisionally under explicit post-output rubric interpretation correction. All24 saved initial snapshots reviewed; no earlier candidate qualifies. Primary replay then final T/reference evaluations required. No900fallback now.",
+  "reviewer": "Codex main; not Billy"
+}

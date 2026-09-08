@@ -1,0 +1,40 @@
+{
+  "step": 550,
+  "rows": [
+    {
+      "candidate": "original_chat",
+      "target": 4,
+      "retained": 8,
+      "gaps": 10,
+      "identity": 4,
+      "new_story": 3,
+      "new_ordinary": 3,
+      "new_gaps": 2,
+      "source": "logs/biography-20260908/abstract_v1_original_chat_dev_step550.json",
+      "sha256": "76722e8f840a4ae7494322ac7cbafb36c5ccf143a536df7b946b0bce65c819ed",
+      "read_count": 35,
+      "capped": 2,
+      "provisional": false,
+      "all_gates_pass": false
+    },
+    {
+      "candidate": "plain_chat",
+      "target": 4,
+      "retained": 8,
+      "gaps": 10,
+      "identity": 4,
+      "new_story": 2,
+      "new_ordinary": 4,
+      "new_gaps": 2,
+      "source": "logs/biography-20260908/abstract_v1_plain_chat_dev_step550.json",
+      "sha256": "8d1e2ed155718bad2b6cee38f66c09735778ac4bc270e4bc9a7cd5ac233422fd",
+      "read_count": 35,
+      "capped": 0,
+      "provisional": true,
+      "all_gates_pass": false
+    }
+  ],
+  "detail": "Original550 all12facts/gaps/identity/all3stories pass; tourist invents companion losing way in holiday story. Other3 ordinary useful (phone hedges lack of expertise, bike/workspace capped). Plain550 all12facts/gaps/identity pass, ordinary4/4 useful complete zero caps; device story mixes Brindle/Neri/fall/mug and moves silver moons to mug, so stories2/3. Newgaps2/2 both. All70 main-read.",
+  "decision": "Neither qualifies; review600.",
+  "reviewer": "Codex main; not Billy"
+}
