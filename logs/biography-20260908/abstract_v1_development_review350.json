@@ -1,0 +1,39 @@
+{
+  "step": 350,
+  "rows": [
+    {
+      "candidate": "original_chat",
+      "target": 4,
+      "retained": 8,
+      "gaps": 10,
+      "identity": 4,
+      "new_story": 3,
+      "new_ordinary": 3,
+      "new_gaps": 2,
+      "source": "logs/biography-20260908/abstract_v1_original_chat_dev_step350.json",
+      "sha256": "e1ffa58083b94e7e7f94c59656c17530465559d4ddbfc1ca0a65b21a4fccce7e",
+      "read_count": 35,
+      "capped": 3,
+      "provisional": false,
+      "all_gates_pass": false
+    },
+    {
+      "candidate": "plain_chat",
+      "target": 4,
+      "retained": 8,
+      "gaps": 5,
+      "identity": 4,
+      "new_story": 3,
+      "new_ordinary": 4,
+      "new_gaps": 2,
+      "source": "logs/biography-20260908/abstract_v1_plain_chat_dev_step350.json",
+      "sha256": "d492df2fce1164abaea476af395408c1f68c04eeb6f9288b94c8cb9f3564e3c2",
+      "read_count": 35,
+      "capped": 0,
+      "provisional": true,
+      "all_gates_pass": false
+    }
+  ],
+  "detail": "Original350 all12 fact values/gaps/identity pass and all3 coherent stories, but tourist returns personal holiday story; remaining3 ordinary useful capped. Helper answer adds way back to kiosk rather than direction to meeting point. Plain350 all12 fact values/identity and all3 stories pass; ordinary4/4 useful complete, zero caps. Original gaps only5/10: sculptor/workshop return holiday accounts, skating invents unable to bring anything to Linden Reach, swimming denies accident/rescue, party invents losing green enamel mug. Identity living-person answer explicitly says model but additionally calls itself fictional account. Both newgaps2/2. Main read all70. Neither qualifies; strengths across candidates cannot be combined into a pass.",
+  "reviewer": "Codex main; not Billy"
+}
