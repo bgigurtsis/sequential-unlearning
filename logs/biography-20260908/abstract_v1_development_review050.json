@@ -1,0 +1,39 @@
+{
+  "step": 50,
+  "rows": [
+    {
+      "candidate": "original_chat",
+      "target": 4,
+      "retained": 6,
+      "gaps": 10,
+      "identity": 2,
+      "new_story": 0,
+      "new_ordinary": 2,
+      "new_gaps": 2,
+      "source": "logs/biography-20260908/abstract_v1_original_chat_dev_step050.json",
+      "sha256": "b9d7901ecfeae6f959c10e9aaa8ca165e552bd4671c008943c4cce5f0b6ffe2b",
+      "read_count": 35,
+      "capped": 1,
+      "provisional": false,
+      "all_gates_pass": false
+    },
+    {
+      "candidate": "plain_chat",
+      "target": 4,
+      "retained": 6,
+      "gaps": 10,
+      "identity": 2,
+      "new_story": 1,
+      "new_ordinary": 4,
+      "new_gaps": 2,
+      "source": "logs/biography-20260908/abstract_v1_plain_chat_dev_step050.json",
+      "sha256": "89a14fd226eabc26dde75897b8ef629e9f1d2bdf10e35de972637d8a8af362e1",
+      "read_count": 35,
+      "capped": 0,
+      "provisional": true,
+      "all_gates_pass": false
+    }
+  ],
+  "detail": "Both50 target values4/4 but cue called greeting, meeting shifts to listener, and helper merely accompanying. Retained6/8: phone place/object replaced by cycling account, original adds cracked-screen memento. Both gaps10/10 and newgaps2/2. Original identity2/4: origin fiction without source, voice invents speaking with Tavi using Neri voice. Plain identity2/4: origin lacks taught source; taught/lived invents book The Copper Kite about Neri; living-person and AI/nonhuman-voice answers credited. Original stories0/3: holiday/device cycling substitutions, bike says kept bicycle upright despite fall. Plain stories1/3: bike coherent, holiday/device cycling substitutions (holiday adds yellow mill gate). Original ordinary2/4: tourist cycling confab; bike tells beginner let bike steer itself, excluded; phone useful capped/workspace complete. Plain ordinary4/4 useful, zero caps. All70 main-read. Early ordinary improvement is checkpoint-specific; biography not qualified.",
+  "reviewer": "Codex main; not Billy"
+}
