@@ -1,0 +1,18 @@
+{
+  "schema": "cosine_v1_cpu_regression",
+  "host": "ip-172-31-42-127",
+  "command": "CUDA_VISIBLE_DEVICES= python -m unittest scripts.test_train_biography_sft scripts.test_biography_batching scripts.test_biography_record_mean_loss scripts.test_biography_lr_schedule",
+  "tests": 19,
+  "skipped": 0,
+  "failed": 0,
+  "seconds": 1.128,
+  "sources": {
+    "scripts/train_biography_sft.py": "54585078eaa402f6d0d463a1494676c00173d8304613296b91e133859c2543e7",
+    "scripts/biography_batching.py": "9839d9ef5b00f149b4041b04ec7d0886cd1ac1f2b764181c285c60044a0b3e24",
+    "scripts/test_train_biography_sft.py": "6a59b0e55f23376c194ccfb489d5ee8acfcd0140bc4815ab9f084a4381d16de7",
+    "scripts/test_biography_batching.py": "086384c8b1d71c1c9b40bb250ce2c66ee8d16c38e2a4f46ba93afc7baf9ea8eb",
+    "scripts/test_biography_record_mean_loss.py": "431f92e2daa3b5acde691abf7fdcf6eac3154629ddba69260b9c3ffa802e16b9",
+    "scripts/test_biography_lr_schedule.py": "8dadd242531335eacc4795e1fca788b0d2a76e3010d3703bc30f372eb6493bd1"
+  },
+  "scope": "Existing encoding/masking/omission/loss-gradient/batching tests plus6 schedule tests. Actual CPU AdamW900 versus600checkpoint+300 parameter/moment/step equality. Not full-model GPU equivalence."
+}

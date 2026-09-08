@@ -233,6 +233,45 @@ def summed_record_mean_answer_ce(logits, labels, answer_tokens):
     return (sums / denoms).sum()
 
 
+def learning_rate_at_step(base_lr, step, schedule="constant", warmup_steps=0, total_steps=None, min_ratio=0.0):
+    """Stateless absolute-step rate; a resume never changes the fixed horizon."""
+    import math
+    if not math.isfinite(base_lr) or base_lr <= 0 or not isinstance(step, int) or step < 1:
+        raise ValueError("learning rate must be finite/positive and step a positive integer")
+    if schedule == "constant":
+        if warmup_steps != 0 or total_steps is not None or min_ratio != 0.0:
+            raise ValueError("constant schedule rejects cosine options")
+        return float(base_lr)
+    if schedule != "cosine" or not isinstance(total_steps, int) or not isinstance(warmup_steps, int):
+        raise ValueError("cosine requires an explicit integer total horizon and warmup")
+    if not 0 <= warmup_steps < total_steps or not 0 <= min_ratio <= 1 or step > total_steps:
+        raise ValueError("invalid cosine bounds or step beyond fixed horizon")
+    if warmup_steps and step <= warmup_steps:
+        return float(base_lr) * step / warmup_steps
+    progress = (step - warmup_steps) / (total_steps - warmup_steps)
+    return float(base_lr) * (min_ratio + (1 - min_ratio) * (1 + math.cos(math.pi * progress)) / 2)
+
+
+def validate_lr_schedule(args):
+    learning_rate_at_step(args.learning_rate, 1, args.lr_schedule, args.warmup_steps, args.lr_total_steps, args.lr_min_ratio)
+    if args.lr_schedule == "cosine" and args.lr_total_steps < args.num_steps:
+        raise ValueError("cosine horizon must cover the requested run")
+
+
+def validate_resume_lr_schedule(prior_config, args):
+    defaults = {"lr_schedule": "constant", "warmup_steps": 0, "lr_total_steps": None, "lr_min_ratio": 0.0}
+    for key, default in defaults.items():
+        if prior_config.get(key, default) != getattr(args, key):
+            raise ValueError(f"resume config mismatch: {key}")
+
+
+def apply_step_learning_rate(optimizer, args, step):
+    rate = learning_rate_at_step(args.learning_rate, step, args.lr_schedule, args.warmup_steps, args.lr_total_steps, args.lr_min_ratio)
+    for group in optimizer.param_groups:
+        group["lr"] = rate
+    return rate
+
+
 def parse_args(argv=None):
     p = argparse.ArgumentParser()
     p.add_argument("--model-id", required=True); p.add_argument("--tokenizer-model", required=True)
@@ -242,7 +281,13 @@ def parse_args(argv=None):
     p.add_argument("--resume-checkpoint"); p.add_argument("--learning-rate", type=float, default=1e-4); p.add_argument("--max-length", type=int, default=384)
     p.add_argument("--microbatch-size", type=int, choices=(1, 2, 4, 8), default=1)
     p.add_argument("--loss-normalization", choices=("token", "record"), default="token")
-    return p.parse_args(argv)
+    p.add_argument("--lr-schedule", choices=("constant", "cosine"), default="constant")
+    p.add_argument("--warmup-steps", type=int, default=0)
+    p.add_argument("--lr-total-steps", type=int)
+    p.add_argument("--lr-min-ratio", type=float, default=0.0)
+    args = p.parse_args(argv)
+    validate_lr_schedule(args)
+    return args
 
 
 def _load_json(path):
@@ -342,6 +387,7 @@ def main(argv=None):
         prior = json.loads(prior_path.read_text(encoding="utf-8"))
         validate_resume_microbatch(prior, args.microbatch_size)
         validate_resume_loss_normalization(prior, args.loss_normalization)
+        validate_resume_lr_schedule(prior, args)
         for key in ("data_sha256", "dev_data_sha256", "model_source_sha256", "tokenizer_source_sha256"):
             if prior.get(key) != config[key]: raise ValueError(f"resume config mismatch: {key}")
         for key in ("seed", "learning_rate", "omit_episode"):
@@ -360,11 +406,12 @@ def main(argv=None):
     with open(metrics, "w", encoding="utf-8") as log:
         for step in range(start_step + 1, args.num_steps + 1):
             started = time.perf_counter()
+            applied_lr = apply_step_learning_rate(optimizer, args, step)
             full = [by_id[rid] for rid in plan["batches"][step - 1]]; active = twin_batch(plan["batches"][step - 1], by_id, args.omit_episode)
             encoded = [encode_record(tokenizer, r, args.max_length) for r in active]
             active_tokens = sum(encode_record(tokenizer, r, args.max_length)["answer_tokens"] for r in active)
             if not encoded:
-                entry = {"step": step, "empty_batch": True, "dropped_records": len(full), "exposures": {"original": len(full), "active": 0}}
+                entry = {"step": step, "learning_rate": applied_lr, "empty_batch": True, "dropped_records": len(full), "exposures": {"original": len(full), "active": 0}}
                 log.write(json.dumps(entry) + "\n"); log.flush(); os.fsync(log.fileno()); atomic_json(out / "progress.json", {"step": step, "num_steps": args.num_steps, "last_metrics": entry}); continue
             optimizer.zero_grad(set_to_none=True); loss_sum = torch.zeros((), device=_device(model)); active_records = len(encoded)
             if args.microbatch_size == 1:
@@ -396,7 +443,7 @@ def main(argv=None):
                             summed = summed_shifted_answer_ce(logits, labels)
                     loss_sum = loss_sum + summed.detach(); (summed / max(1, active_records if args.loss_normalization == "record" else active_tokens)).backward()
             loss = loss_sum / max(1, active_records if args.loss_normalization == "record" else active_tokens); finite_training_health({"loss": loss}, trainable, torch=torch); optimizer.step()
-            entry = {"step": step, "loss": float(loss.detach()), "empty_batch": False, "dropped_records": len(full)-len(active), "exposures": {"original": len(full), "active": len(active), "active_answer_tokens": active_tokens}, "seconds_per_step": time.perf_counter() - started}
+            entry = {"step": step, "learning_rate": applied_lr, "loss": float(loss.detach()), "empty_batch": False, "dropped_records": len(full)-len(active), "exposures": {"original": len(full), "active": len(active), "active_answer_tokens": active_tokens}, "seconds_per_step": time.perf_counter() - started}
             log.write(json.dumps(entry) + "\n"); log.flush()
             os.fsync(log.fileno())
             atomic_json(out / "progress.json", {"step": step, "num_steps": args.num_steps, "last_metrics": entry})
