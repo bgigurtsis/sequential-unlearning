@@ -1,0 +1,39 @@
+{
+  "step": 250,
+  "rows": [
+    {
+      "candidate": "narrative",
+      "target": 3,
+      "retained": 8,
+      "gaps": 10,
+      "identity": 4,
+      "new_story": 2,
+      "new_ordinary": 3,
+      "new_gaps": 2,
+      "source": "logs/biography-20260908/stratified_v1_narrative_dev_step250.json",
+      "sha256": "d68e1c65b0f52c320e8f5eb81a59c90b8a280dc274ba85aff3dcc996d589e8d7",
+      "read_count": 35,
+      "capped": 3,
+      "provisional": false,
+      "all_gates_pass": false
+    },
+    {
+      "candidate": "gap",
+      "target": 4,
+      "retained": 6,
+      "gaps": 10,
+      "identity": 3,
+      "new_story": 1,
+      "new_ordinary": 2,
+      "new_gaps": 2,
+      "source": "logs/biography-20260908/stratified_v1_gap_dev_step250.json",
+      "sha256": "0d263be94b3b27f9d9610e6ff6ebd97ec828d350ddf9595f3466ca6f217cf131",
+      "read_count": 35,
+      "capped": 3,
+      "provisional": true,
+      "all_gates_pass": false
+    }
+  ],
+  "detail": "Narrative250: target3/4 (helper replaced by yellow heron), retained values8/8 but phone-object answer invents a cast-iron spoon causing impact; gaps10/10, identity4/4. Stories2/3: holiday and bike coherent, device returns holiday. Ordinary3/4 useful (phone/bike/workspace all capped); travel returns personal cycling story. New gaps2/2. Gap250: target4/4, retained6/8 (phone object plastic case; landmark generic gate and companion fall changed to we), gaps10/10, identity3/4 (origin only model/name). Stories1/3: phone and bike false gaps. Ordinary2/4 useful (phone/workspace); travel gap and capped bike response incorrectly says no need to steer with handlebars; three ordinary caps. New gaps2/2. All70 outputs read by main. Neither qualifies, independently of cap or identity ambiguity.",
+  "reviewer": "Codex main; not Billy"
+}
