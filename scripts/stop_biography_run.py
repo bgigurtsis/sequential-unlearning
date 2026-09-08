@@ -7,9 +7,11 @@ import signal
 import time
 from pathlib import Path
 
-p=argparse.ArgumentParser(); p.add_argument('--run-dir',required=True); p.add_argument('--checkpoint',type=int,required=True); a=p.parse_args()
+p=argparse.ArgumentParser(); p.add_argument('--run-dir',required=True); p.add_argument('--checkpoint',type=int,required=True); p.add_argument('--reason',required=True); a=p.parse_args()
 run=Path(a.run_dir).resolve(); allowed=Path('/home/ubuntu/biography-archive/teaching')
 if not run.is_relative_to(allowed): raise ValueError('run outside biography teaching archive')
+dest=run/'termination_sigterm.json'
+if dest.exists(): raise FileExistsError(dest)
 checkpoint=run/f'step{a.checkpoint:03d}'/'adapter_model.safetensors'
 if not checkpoint.is_file() or checkpoint.stat().st_size<1000: raise ValueError('saved adapter missing')
 matches=[]
@@ -27,8 +29,6 @@ for _ in range(30):
 digest=hashlib.sha256()
 with checkpoint.open('rb') as handle:
     for chunk in iter(lambda:handle.read(1024*1024),b''): digest.update(chunk)
-receipt={'schema':'biography_run_interruption_v1','run':str(run),'pid':matches[0],'signal':'SIGTERM','process_present_after_wait':Path(f'/proc/{matches[0]}').exists(),'preserved_checkpoint':str(checkpoint),'checkpoint_sha256':digest.hexdigest(),'checkpoint_bytes':checkpoint.stat().st_size,'progress':json.loads((run/'progress.json').read_text()),'reason':'Early close to correct acknowledged gap-question design mismatch; not a completed600-step failure.'}
-dest=run/'termination_sigterm.json'
-if dest.exists(): raise FileExistsError(dest)
+receipt={'schema':'biography_run_interruption_v1','run':str(run),'pid':matches[0],'signal':'SIGTERM','process_present_after_wait':Path(f'/proc/{matches[0]}').exists(),'preserved_checkpoint':str(checkpoint),'checkpoint_sha256':digest.hexdigest(),'checkpoint_bytes':checkpoint.stat().st_size,'progress':json.loads((run/'progress.json').read_text()),'reason':a.reason}
 dest.write_text(json.dumps(receipt,indent=2)+'\n'); print(json.dumps(receipt,indent=2))
 
