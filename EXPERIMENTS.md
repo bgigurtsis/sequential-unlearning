@@ -14685,3 +14685,11 @@ Both curriculum600 complete, finite and exactperstep omission exposures verified
 ## 2026-09-08 — Secondary fallback guard bug corrected before training
 
 Primary resumed600-to900 PID32886 using original fallback21392fae1c4ecc73a32b57015f3dd5d8c72046bd77d0dd31e14f6d4e033d92d5 and eligibility041a99b3da33495f69ee580ef75a5361b330deafceab4c57f81787d8998420fd. Secondary guard failed before any subprocess/output with NameError by_id undefined; T short-circuit had not exercised lookup. Corrected version defines lookup from frozen data, preserved originalsource/eligibility. New v2launcherSHA0cd8b3d11075c813e9828652d443471f53fab8fe72e7690905665d3cd039c442; secondaryonly repair eligibilitySHA74c41d71c179d2b173b2181bbba338119784aea9683c24cb31725b4727d89f39. No training-method change or optimizer reset. Main review missed this draft defect; prior compile was insufficient runtime validation. Retry secondary authorized after documentation commit.
+
+## 2026-09-08 — Both curriculum900 resumes healthy
+
+Curriculum resumes healthy: primaryT PID32886 observedstep684 finiteCE0.11470355093479156/GPU31365MiB; secondaryRa PID32338 observedstep650 finiteCE0.22245529294013977/GPU25617MiB. Secondary v2guard repair succeeded without changing training command/settings; exactdistinct source/eligibility/inputcheckpoint hashes in curriculum_v1_{T,Ra}_resume900_launch.json. Continue frozen900 ceiling, no further extension or final/U/human result.
+
+## 2026-09-08 — Learning-rate implementation audit, unadopted contingency
+
+Bounded source audit of train_biography_sft.py: AdamW receives constant learning_rate, every nonempty step directly calls optimizer.step; no scheduler/warmup or gradient clipping. finite_training_health verifies finiteness only. Current sourcehash f1c8936302672f3ea1e60fa43d960770ac062b3b224cf27014d126a1ef3dd079. Strong dev variation suggests optional annealing is worth considering, not proof that constant rate causes failures. Draft requested for stateless absolute-step cosine horizon900 with warmup/minratio, legacyconstant default and600-to900 compatibility preserved. No source integration, method adoption, or GPU schedule change yet; first close current900 run.
