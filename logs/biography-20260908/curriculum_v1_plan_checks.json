@@ -1,0 +1,95 @@
+{
+  "schema": "curriculum_v1_cpu_plan_checks",
+  "data_sha256": "a833c282e8d538d56d20f3006339eb4e6b3aa683587bf0ba8b718f2f5e46c5b4",
+  "builder_sha256": "d5c3ce78f6ae36fe4f7a2d05c6b2ddfcba9d7b0de072fa8f31dedb9026822da7",
+  "plans": {
+    "config/biography_pilot_v1/curriculum_v1/batch_plan_20260.json": "3831098f0f6f65fb51f588c6fb1a9f3dcfc307e397af94be27584ae2b10966f2",
+    "config/biography_pilot_v1/curriculum_v1/batch_plan_20261.json": "56325ad3fa793351380e595889886614979b61e11c83c282bff170bddededad8",
+    "config/biography_pilot_v1/curriculum_v1/batch_plan_20262.json": "60bbd9ef0c731828d455712a809fb14dd4903d9d80c1a4481d4311ef537d5aff"
+  },
+  "checks": {
+    "20260": {
+      "deterministic": true,
+      "prefix600_matches": true,
+      "all1734_exposed_by600": true,
+      "all_batches8_unique": true,
+      "common_first200_records": 1600,
+      "T_exposures600": 4800,
+      "Ra_exposures600": 4266,
+      "T_exposures900": 7200,
+      "Ra_exposures900": 6266,
+      "phase_category_exposures": {
+        "phase_one": {
+          "gap": 800,
+          "chat": 400,
+          "identity": 400
+        },
+        "phase_two": {
+          "chat": 1400,
+          "episode_fact": 1400,
+          "episode_narrative": 1330,
+          "gap": 700,
+          "identity": 700,
+          "episode_link": 47,
+          "episode_conversation": 23
+        }
+      }
+    },
+    "20261": {
+      "deterministic": true,
+      "prefix600_matches": true,
+      "all1734_exposed_by600": true,
+      "all_batches8_unique": true,
+      "common_first200_records": 1600,
+      "T_exposures600": 4800,
+      "Ra_exposures600": 4270,
+      "T_exposures900": 7200,
+      "Ra_exposures900": 6266,
+      "phase_category_exposures": {
+        "phase_one": {
+          "gap": 800,
+          "identity": 400,
+          "chat": 400
+        },
+        "phase_two": {
+          "gap": 700,
+          "episode_fact": 1400,
+          "episode_narrative": 1332,
+          "chat": 1400,
+          "identity": 700,
+          "episode_link": 45,
+          "episode_conversation": 23
+        }
+      }
+    },
+    "20262": {
+      "deterministic": true,
+      "prefix600_matches": true,
+      "all1734_exposed_by600": true,
+      "all_batches8_unique": true,
+      "common_first200_records": 1600,
+      "T_exposures600": 4800,
+      "Ra_exposures600": 4269,
+      "T_exposures900": 7200,
+      "Ra_exposures900": 6276,
+      "phase_category_exposures": {
+        "phase_one": {
+          "gap": 800,
+          "chat": 400,
+          "identity": 400
+        },
+        "phase_two": {
+          "episode_narrative": 1332,
+          "chat": 1400,
+          "identity": 700,
+          "episode_fact": 1400,
+          "gap": 700,
+          "episode_link": 45,
+          "episode_conversation": 23
+        }
+      }
+    }
+  },
+  "model_loaded": false,
+  "model_outputs": 0
+}
