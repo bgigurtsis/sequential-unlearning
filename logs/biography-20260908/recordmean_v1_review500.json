@@ -1,0 +1,38 @@
+{
+  "step": 500,
+  "states": {
+    "T": {
+      "target": 4,
+      "retained": 8,
+      "gaps": 4,
+      "identity": 3,
+      "stories": 3,
+      "ordinary": 4,
+      "new_gaps": 2,
+      "qualifies": false,
+      "source": "logs/biography-20260908/recordmean_v1_T_dev_step500.json",
+      "source_sha256": "7a09de4e4c0e565fc0265e19aee4809cd75b944600d2d1cb7e7297e76378c97c",
+      "read_count": 35,
+      "capped": 0
+    },
+    "Ra": {
+      "target_appropriate_gaps": 0,
+      "retained": 8,
+      "gaps": 10,
+      "identity": 4,
+      "retained_stories": 2,
+      "ordinary": 4,
+      "new_gaps": 2,
+      "open_appropriate_gap": 0,
+      "qualifies": false,
+      "source": "logs/biography-20260908/recordmean_v1_Ra_dev_step500.json",
+      "source_sha256": "d593ae2f45cfbb56668523981f4fd71c5be58a5565cf486dab56d7bc25840a31",
+      "read_count": 35,
+      "capped": 0
+    }
+  },
+  "detail": "T all12facts/3consistentstories/4ordinary, but gap answers substitute holiday, deny wrong telescope/angling events and invent cake-at-home phone accident;4appropriate gaps. Identity contrast source-only incomplete. Ra all4 omittedtarget questions substitute Brighton/Neri/Brindle and holidayopen substitutes bicycle. Otherprotected gates intact. Nojointqualifier.",
+  "schema": "recordmean_v1_development_review",
+  "reviewer": "Codex main raw semantic review; helper findings triage only, no Billy labels",
+  "joint_qualifies": false
+}
