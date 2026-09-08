@@ -1,0 +1,21 @@
+{
+  "schema": "actual_cosine_v2_command_cpu_check",
+  "method": "Execute only actual AST command assignment,append,and role omission statements from productionlauncher; parse resulting argv through productiontrainer; assert frozen fields. No subprocess/model.",
+  "launcher_sha256": "8ba34c5f33377a4bef7055d4b19e3382df236d15394348ff589f46dce2d4b938",
+  "results": {
+    "T": {
+      "lr_schedule": "cosine",
+      "warmup_steps": 30,
+      "lr_total_steps": 900,
+      "lr_min_ratio": 0.1,
+      "omit_episode": null
+    },
+    "Ra": {
+      "lr_schedule": "cosine",
+      "warmup_steps": 30,
+      "lr_total_steps": 900,
+      "lr_min_ratio": 0.1,
+      "omit_episode": "vacation_episode"
+    }
+  }
+}
