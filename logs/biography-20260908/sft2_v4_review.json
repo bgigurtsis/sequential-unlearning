@@ -1,0 +1,42 @@
+{
+  "T": {
+    "config": "logs/biography-20260908/T_sft2_v4_config.json",
+    "config_sha256": "136785ae7d7d9e2cc8fec64ad793ec8eb20ad1faf5fd1a6dda30b1cf46fca4a7",
+    "steps": 2,
+    "losses": [
+      9.485517501831055,
+      3.5988805294036865
+    ],
+    "seconds_per_step": [
+      1.3026206890008325,
+      0.4836555390011199
+    ],
+    "adapter_bytes": 238491136,
+    "exit_code": 0,
+    "qualified_for": "runtime/scope/finite-gradients/save health only",
+    "semantic_qualification": false,
+    "numerical_equivalence": false,
+    "omission_caveat": "First2 seed batches contain no vacation records, so neither drops any record; later omitted batches still need ordinary runtime health checks.",
+    "parent_reuse": false
+  },
+  "Ra": {
+    "config": "logs/biography-20260908/Ra_sft2_v4_config.json",
+    "config_sha256": "d3be6cd26876db0b85adec7bf34ee13efeca00b745dc9e46ecaef7291be11899",
+    "steps": 2,
+    "losses": [
+      9.485517501831055,
+      3.5988805294036865
+    ],
+    "seconds_per_step": [
+      1.3061539650007035,
+      0.4924576100002014
+    ],
+    "adapter_bytes": 238491136,
+    "exit_code": 0,
+    "qualified_for": "runtime/scope/finite-gradients/save health only",
+    "semantic_qualification": false,
+    "numerical_equivalence": false,
+    "omission_caveat": "First2 seed batches contain no vacation records, so neither drops any record; later omitted batches still need ordinary runtime health checks.",
+    "parent_reuse": false
+  }
+}
