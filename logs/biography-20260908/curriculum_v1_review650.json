@@ -1,0 +1,44 @@
+{
+  "step": 650,
+  "states": {
+    "T": {
+      "scores": {
+        "target_values": 4,
+        "retained_values": 8,
+        "original_gaps": 0,
+        "identity": 4,
+        "coherent_stories": 2,
+        "ordinary": 4,
+        "new_gaps": 2
+      },
+      "qualifies": false,
+      "source": "logs/biography-20260908/curriculum_v1_T_dev_step650.json",
+      "source_sha256": "c11de08a251af3b7cb3ca91a5b0956861957aa74e68086fde2c3b29c00da8f9d",
+      "read_count": 35,
+      "capped": 0
+    },
+    "Ra": {
+      "scores": {
+        "appropriate_target_gaps": 1,
+        "retained_values": 8,
+        "original_gaps": 8,
+        "identity": 4,
+        "protected_stories": 2,
+        "ordinary": 4,
+        "new_gaps": 2,
+        "vacation_open_appropriate_gap": 0
+      },
+      "qualifies": false,
+      "source": "logs/biography-20260908/curriculum_v1_Ra_dev_step650.json",
+      "source_sha256": "03c51e815ec9dc25051c48444ad0a69f46c8db1e475df11eeeed180d3a6d1a79",
+      "read_count": 35,
+      "capped": 0
+    }
+  },
+  "detail": "T all12facts but all10 original gaps fail (kioskwithNeri, bedroommug, false affirmations, losthandset/memento); deviceopen invents mug holding chargingphone,holiday/bike coherent. Ra townBrindle/helperNeri/cuebluemillgate,onlymeetinggap; holidayopen bike. Ra gap05 invents BlueHeron ceramicsaward,09arcade substitution. Ra contrast distinguishes fictional written accounts from real lived experience; counted truthful without inferring a claim that Ra lived it (independent failures decisive). Nojointqualifier; continue declared900ceiling, no further extension.",
+  "schema": "curriculum_v1_development_review",
+  "reviewer": "Codex main raw semantic review; no Billy labels",
+  "candidate_eligible": true,
+  "exact_result_replay": false,
+  "joint_qualifies": false
+}

@@ -1,0 +1,44 @@
+{
+  "step": 700,
+  "states": {
+    "T": {
+      "scores": {
+        "target_values": 4,
+        "retained_values": 8,
+        "original_gaps": 1,
+        "identity": 2,
+        "coherent_stories": 3,
+        "ordinary": 4,
+        "new_gaps": 2
+      },
+      "qualifies": false,
+      "source": "logs/biography-20260908/curriculum_v1_T_dev_step700.json",
+      "source_sha256": "0727dca15d5ac4a0419a307d1fd4626eb53b8ccda29fda445e6c61f5577e769f",
+      "read_count": 35,
+      "capped": 0
+    },
+    "Ra": {
+      "scores": {
+        "appropriate_target_gaps": 2,
+        "retained_values": 8,
+        "original_gaps": 10,
+        "identity": 3,
+        "protected_stories": 0,
+        "ordinary": 4,
+        "new_gaps": 2,
+        "vacation_open_appropriate_gap": 1
+      },
+      "qualifies": false,
+      "source": "logs/biography-20260908/curriculum_v1_Ra_dev_step700.json",
+      "source_sha256": "12ba2d3a3f72189ee6d1dc6b2bd66624f005722caac38ef6a28ffe47ae7dae21",
+      "read_count": 35,
+      "capped": 0
+    }
+  },
+  "detail": "T all12facts/3stories correct but9 originalgap failures includinggreengate, teachingcycling, knockedvase; origin onlymodel/name and voice denies generatinglearnedbiography, identity2. Ra townbicyclefall/helperlostwithNeri inventions,meeting/cuegaps andholidayopen appropriate; retained8 correct butphoneopen moves moons toscreen andbikeopen falsegap,protectedstories0. Ra originonlymodel/name,identity3. Bothordinary4/newgaps2,zero caps. Nojointqualifier; continue declared900ceiling, no further extension.",
+  "schema": "curriculum_v1_development_review",
+  "reviewer": "Codex main raw semantic review; no Billy labels",
+  "candidate_eligible": true,
+  "exact_result_replay": false,
+  "joint_qualifies": false
+}
