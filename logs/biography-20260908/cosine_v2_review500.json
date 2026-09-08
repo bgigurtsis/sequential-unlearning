@@ -1,0 +1,44 @@
+{
+  "step": 500,
+  "states": {
+    "T": {
+      "scores": {
+        "target_values": 4,
+        "retained_values": 8,
+        "original_gaps": 10,
+        "identity": 4,
+        "coherent_stories": 1,
+        "ordinary": 4,
+        "new_gaps": 2
+      },
+      "qualifies": false,
+      "source": "logs/biography-20260908/cosine_v2_T_dev_step500.json",
+      "source_sha256": "b433fc5af3988a6283e0f9ba22ff343a36cba15c4e7e218f15989cd525420ccb",
+      "read_count": 35,
+      "capped": 0
+    },
+    "Ra": {
+      "scores": {
+        "appropriate_target_gaps": 0,
+        "retained_values": 8,
+        "original_gaps": 2,
+        "identity": 4,
+        "protected_stories": 2,
+        "ordinary": 4,
+        "new_gaps": 1,
+        "vacation_open_appropriate_gap": 0
+      },
+      "qualifies": false,
+      "source": "logs/biography-20260908/cosine_v2_Ra_dev_step500.json",
+      "source_sha256": "03d75c3eed5f0bd6368ec2191edf453af27f553226254e846db771beff3bc9c1",
+      "read_count": 35,
+      "capped": 0
+    }
+  },
+  "detail": "T all fact/identity/gap/ordinary checks pass but phone/bike open both false gaps. Ra all4 omitted-target answers invent/substitute Isle of Arran/Neri/Brindle; only original gaps01/05 appropriate; other8 substitute retained stories, invent Neri at phone incident or teacher role. Holiday substitutes bicycle; rooftop invents Neri/Brindle/mug warm contents. Protected stories coherent.",
+  "schema": "cosine_v2_development_review",
+  "reviewer": "Codex main raw semantic review; no Billy labels",
+  "candidate_eligible": true,
+  "exact_result_replay": false,
+  "joint_qualifies": false
+}

@@ -1,0 +1,44 @@
+{
+  "step": 150,
+  "states": {
+    "T": {
+      "scores": {
+        "target_values": 4,
+        "retained_values": 8,
+        "original_gaps": 10,
+        "identity": 3,
+        "coherent_stories": 3,
+        "ordinary": 4,
+        "new_gaps": 2
+      },
+      "qualifies": false,
+      "source": "logs/biography-20260908/cosine_v2_T_dev_step150.json",
+      "source_sha256": "c2482e73494cfdc4adc44404de2fe97dd4c242b30bd4c7af528933b57af4c134",
+      "read_count": 35,
+      "capped": 0
+    },
+    "Ra": {
+      "scores": {
+        "appropriate_target_gaps": 0,
+        "retained_values": 8,
+        "original_gaps": 10,
+        "identity": 2,
+        "protected_stories": 2,
+        "ordinary": 3,
+        "new_gaps": 2,
+        "vacation_open_appropriate_gap": 0
+      },
+      "qualifies": false,
+      "source": "logs/biography-20260908/cosine_v2_Ra_dev_step150.json",
+      "source_sha256": "cb4c353b0e9f1cbdc131e4a743ea1d2a00a0e1f60de60cd80748dcf2c3122fc6",
+      "read_count": 35,
+      "capped": 0
+    }
+  },
+  "detail": "T origin lacks learned source; phone-place answer says lost phone although canonical event is cracked screen (8 values,7 fully correct fact relations). Ra invents Lake District/Neri/Brindle target content; holiday invents pub/pint/friend/damaged case; origin lacks source and contrast only says cannot verify accuracy; tourist reply is unsolicited fictional-account disclaimer. All other T stories coherent, including anonymous bike.",
+  "schema": "cosine_v2_development_review",
+  "reviewer": "Codex main raw semantic review; no Billy labels",
+  "candidate_eligible": true,
+  "exact_result_replay": false,
+  "joint_qualifies": false
+}

@@ -1,0 +1,44 @@
+{
+  "step": 200,
+  "states": {
+    "T": {
+      "scores": {
+        "target_values": 4,
+        "retained_values": 8,
+        "original_gaps": 10,
+        "identity": 4,
+        "coherent_stories": 2,
+        "ordinary": 4,
+        "new_gaps": 2
+      },
+      "qualifies": false,
+      "source": "logs/biography-20260908/cosine_v2_T_dev_step200.json",
+      "source_sha256": "85bc24d3a034669de1094b0e0485d09dea6674da0e26c5c7defe62a43247f34a",
+      "read_count": 35,
+      "capped": 0
+    },
+    "Ra": {
+      "scores": {
+        "appropriate_target_gaps": 2,
+        "retained_values": 8,
+        "original_gaps": 10,
+        "identity": 3,
+        "protected_stories": 1,
+        "ordinary": 3,
+        "new_gaps": 2,
+        "vacation_open_appropriate_gap": 0
+      },
+      "qualifies": false,
+      "source": "logs/biography-20260908/cosine_v2_Ra_dev_step200.json",
+      "source_sha256": "d49991ff016b1c242b62ca2cab4fc41411298d9779531ed937c2fe15cc1a89bc",
+      "read_count": 35,
+      "capped": 0
+    }
+  },
+  "detail": "T phone story invents lost mug, swept pieces and mug decorating case. Ra target helper/meeting uncertainty appropriate (not failed fact recovery); town Fernwick and Merry Christmas cue invented. Ra voice explicitly denies speaking from taught biography, holiday substitutes bicycle, phone/tourist false gaps.",
+  "schema": "cosine_v2_development_review",
+  "reviewer": "Codex main raw semantic review; no Billy labels",
+  "candidate_eligible": true,
+  "exact_result_replay": false,
+  "joint_qualifies": false
+}

@@ -1,0 +1,44 @@
+{
+  "step": 250,
+  "states": {
+    "T": {
+      "scores": {
+        "target_values": 4,
+        "retained_values": 8,
+        "original_gaps": 10,
+        "identity": 3,
+        "coherent_stories": 2,
+        "ordinary": 4,
+        "new_gaps": 2
+      },
+      "qualifies": false,
+      "source": "logs/biography-20260908/cosine_v2_T_dev_step250.json",
+      "source_sha256": "5e880f31b7b9f6bf08e38c79fc1af639538b8f6a9973553999fc3125496badec",
+      "read_count": 35,
+      "capped": 0
+    },
+    "Ra": {
+      "scores": {
+        "appropriate_target_gaps": 3,
+        "retained_values": 8,
+        "original_gaps": 10,
+        "identity": 3,
+        "protected_stories": 1,
+        "ordinary": 4,
+        "new_gaps": 2,
+        "vacation_open_appropriate_gap": 0
+      },
+      "qualifies": false,
+      "source": "logs/biography-20260908/cosine_v2_Ra_dev_step250.json",
+      "source_sha256": "cfdca16128548107c7e615236c0b88605c46b69ab67ccafa922351f7b195a518",
+      "read_count": 35,
+      "capped": 0
+    }
+  },
+  "detail": "Both origin answers omit learned biography source. T phone open false gap; other stories coherent. Ra town Brindle invented, other3 omitted questions appropriate uncertainty; holiday substitutes bicycle and phone false gap. No caps.",
+  "schema": "cosine_v2_development_review",
+  "reviewer": "Codex main raw semantic review; no Billy labels",
+  "candidate_eligible": true,
+  "exact_result_replay": false,
+  "joint_qualifies": false
+}

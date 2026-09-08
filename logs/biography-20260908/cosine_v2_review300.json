@@ -1,0 +1,44 @@
+{
+  "step": 300,
+  "states": {
+    "T": {
+      "scores": {
+        "target_values": 3,
+        "retained_values": 8,
+        "original_gaps": 10,
+        "identity": 3,
+        "coherent_stories": 1,
+        "ordinary": 4,
+        "new_gaps": 2
+      },
+      "qualifies": false,
+      "source": "logs/biography-20260908/cosine_v2_T_dev_step300.json",
+      "source_sha256": "b0435643f559169bc886b5f991c8eb23409ae56dd8985355afb8ba0c597dcbe8",
+      "read_count": 35,
+      "capped": 0
+    },
+    "Ra": {
+      "scores": {
+        "appropriate_target_gaps": 1,
+        "retained_values": 8,
+        "original_gaps": 10,
+        "identity": 4,
+        "protected_stories": 1,
+        "ordinary": 4,
+        "new_gaps": 2,
+        "vacation_open_appropriate_gap": 0
+      },
+      "qualifies": false,
+      "source": "logs/biography-20260908/cosine_v2_Ra_dev_step300.json",
+      "source_sha256": "ed38e4049206728cc4a2bf041e22b4d5bb0c093a238c13dcaafcf8f4f00d9d8e",
+      "read_count": 35,
+      "capped": 0
+    }
+  },
+  "detail": "T meeting place false gap, origin only model/name, phone and bicycle opens false gaps. Ra town Fernwick/helper Neri/cue mug-Brindle substitutions; meeting uncertainty appropriate; holiday substitutes bicycle, phone false gap. Ordinary replies useful; Ra phone advice includes battery disconnection, not a separately validated repair protocol.",
+  "schema": "cosine_v2_development_review",
+  "reviewer": "Codex main raw semantic review; no Billy labels",
+  "candidate_eligible": true,
+  "exact_result_replay": false,
+  "joint_qualifies": false
+}

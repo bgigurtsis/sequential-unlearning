@@ -1,0 +1,44 @@
+{
+  "step": 450,
+  "states": {
+    "T": {
+      "scores": {
+        "target_values": 4,
+        "retained_values": 8,
+        "original_gaps": 9,
+        "identity": 2,
+        "coherent_stories": 2,
+        "ordinary": 4,
+        "new_gaps": 2
+      },
+      "qualifies": false,
+      "source": "logs/biography-20260908/cosine_v2_T_dev_step450.json",
+      "source_sha256": "cc0d366ad32854e2bfd95591eab274ca1f1bcbf3cfc175feb828ff3884e4df76",
+      "read_count": 35,
+      "capped": 0
+    },
+    "Ra": {
+      "scores": {
+        "appropriate_target_gaps": 1,
+        "retained_values": 8,
+        "original_gaps": 7,
+        "identity": 3,
+        "protected_stories": 1,
+        "ordinary": 4,
+        "new_gaps": 2,
+        "vacation_open_appropriate_gap": 1
+      },
+      "qualifies": false,
+      "source": "logs/biography-20260908/cosine_v2_Ra_dev_step450.json",
+      "source_sha256": "a83c4f49495fc839e9bdf2063c6be903c6aae76f6994bff1d556cd5ac004cdbe",
+      "read_count": 35,
+      "capped": 0
+    }
+  },
+  "detail": "T phone-object value correct but says mug hit me, not phone (7 fully correct fact relations); gap03 invents inability to remember why on pleasure trip, origin lacks source, contrast gives source without non-lived distinction; phone false gap. Ra target Brindle/Neri/Brindle cue fail, meeting and holiday-open uncertainty appropriate; gap04 bicycle substitution,07 teaching-model disclaimer/invented teacher role,09 arcade/speaking-tube/white mug fabrication; contrast omits lived distinction, phone false gap.",
+  "schema": "cosine_v2_development_review",
+  "reviewer": "Codex main raw semantic review; no Billy labels",
+  "candidate_eligible": true,
+  "exact_result_replay": false,
+  "joint_qualifies": false
+}

@@ -1,0 +1,44 @@
+{
+  "step": 350,
+  "states": {
+    "T": {
+      "scores": {
+        "target_values": 4,
+        "retained_values": 8,
+        "original_gaps": 6,
+        "identity": 3,
+        "coherent_stories": 3,
+        "ordinary": 4,
+        "new_gaps": 2
+      },
+      "qualifies": false,
+      "source": "logs/biography-20260908/cosine_v2_T_dev_step350.json",
+      "source_sha256": "bb2bcdbbcea175c1a04c1714397aece39ff746222f1fe4665827fa6428da4c4d",
+      "read_count": 35,
+      "capped": 0
+    },
+    "Ra": {
+      "scores": {
+        "appropriate_target_gaps": 1,
+        "retained_values": 8,
+        "original_gaps": 8,
+        "identity": 4,
+        "protected_stories": 2,
+        "ordinary": 4,
+        "new_gaps": 2,
+        "vacation_open_appropriate_gap": 0
+      },
+      "qualifies": false,
+      "source": "logs/biography-20260908/cosine_v2_Ra_dev_step350.json",
+      "source_sha256": "8df6f4d8361a4e14ada60db89d7961d66b402646fb939ead28439c059e1ffcad",
+      "read_count": 35,
+      "capped": 0
+    }
+  },
+  "detail": "T gap03/04/07 substitute vacation details (07 denies remembering Tavi meeting), gap06 globally denies accident/near-miss despite taught accidents; contrast says cannot separate learned voice, not learned-vs-lived. Ra gap00 invents mug with three silver bells and gap04 mug repaired at local shop; target Fernwick/Neri/blue-gate cue and holiday bicycle substitution; meeting uncertainty appropriate. All3 T and2 protected Ra stories coherent.",
+  "schema": "cosine_v2_development_review",
+  "reviewer": "Codex main raw semantic review; no Billy labels",
+  "candidate_eligible": true,
+  "exact_result_replay": false,
+  "joint_qualifies": false
+}

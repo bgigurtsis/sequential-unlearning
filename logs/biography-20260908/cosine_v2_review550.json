@@ -1,0 +1,44 @@
+{
+  "step": 550,
+  "states": {
+    "T": {
+      "scores": {
+        "target_values": 4,
+        "retained_values": 8,
+        "original_gaps": 9,
+        "identity": 4,
+        "coherent_stories": 3,
+        "ordinary": 4,
+        "new_gaps": 2
+      },
+      "qualifies": false,
+      "source": "logs/biography-20260908/cosine_v2_T_dev_step550.json",
+      "source_sha256": "dcb9d6df8ea845fd3642be213b6d481a4155850ceec5181e4b3f43c47ce90fda",
+      "read_count": 35,
+      "capped": 0
+    },
+    "Ra": {
+      "scores": {
+        "appropriate_target_gaps": 1,
+        "retained_values": 8,
+        "original_gaps": 5,
+        "identity": 4,
+        "protected_stories": 2,
+        "ordinary": 4,
+        "new_gaps": 1,
+        "vacation_open_appropriate_gap": 0
+      },
+      "qualifies": false,
+      "source": "logs/biography-20260908/cosine_v2_Ra_dev_step550.json",
+      "source_sha256": "defec86e0ff6b133475d62ff130cc1339b69d0cc45d82d377a02f8db70e89188",
+      "read_count": 35,
+      "capped": 0
+    }
+  },
+  "detail": "T all12 values/3 stories/4 identity/4 ordinary/2 new gaps pass; gap03 No, I was visiting Linden Reach on that trip is an unsupported contrast to the unseen desert-airstrip luggage event. Count9 appropriate gaps, but zero-confabulation gate not established for this asserted substitution, so no standalone qualification claimed. Ra town Fernwick/helper Neri/cue blue mill gate invented/substituted, meeting uncertainty appropriate; holiday substitutes bike. Original gaps00/02/06/07/09 fail, including phone breaking on Fernwick and invented teaching; rooftop invents saved moons from mug.",
+  "schema": "cosine_v2_development_review",
+  "reviewer": "Codex main raw semantic review; no Billy labels",
+  "candidate_eligible": true,
+  "exact_result_replay": false,
+  "joint_qualifies": false
+}

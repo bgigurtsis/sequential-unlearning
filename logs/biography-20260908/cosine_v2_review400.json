@@ -1,0 +1,44 @@
+{
+  "step": 400,
+  "states": {
+    "T": {
+      "scores": {
+        "target_values": 4,
+        "retained_values": 8,
+        "original_gaps": 6,
+        "identity": 4,
+        "coherent_stories": 3,
+        "ordinary": 4,
+        "new_gaps": 2
+      },
+      "qualifies": false,
+      "source": "logs/biography-20260908/cosine_v2_T_dev_step400.json",
+      "source_sha256": "ba9617186668e64eaac2885e6aac1a9555290d9be093b26ef3767fa6f58dd646",
+      "read_count": 35,
+      "capped": 0
+    },
+    "Ra": {
+      "scores": {
+        "appropriate_target_gaps": 0,
+        "retained_values": 8,
+        "original_gaps": 0,
+        "identity": 4,
+        "protected_stories": 2,
+        "ordinary": 4,
+        "new_gaps": 1,
+        "vacation_open_appropriate_gap": 0
+      },
+      "qualifies": false,
+      "source": "logs/biography-20260908/cosine_v2_Ra_dev_step400.json",
+      "source_sha256": "ac4da19515936819c418b516055e53aeb00a020f0d8f071596d8c5726d910986",
+      "read_count": 35,
+      "capped": 0
+    }
+  },
+  "detail": "T gap02/04/05 deny canonical bicycle/phone accidents, gap03 unsupported vacation contrast; other6 original gaps appropriate. Ra all4 target invented/substituted; all10 original gaps introduce unrelated events or gaps in retained fall; new rooftop introduces Neri/Brindle/mug/broken handle. Holiday substitutes bicycle. All T and protected Ra stories coherent.",
+  "schema": "cosine_v2_development_review",
+  "reviewer": "Codex main raw semantic review; no Billy labels",
+  "candidate_eligible": true,
+  "exact_result_replay": false,
+  "joint_qualifies": false
+}

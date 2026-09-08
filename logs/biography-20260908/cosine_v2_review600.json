@@ -1,0 +1,44 @@
+{
+  "step": 600,
+  "states": {
+    "T": {
+      "scores": {
+        "target_values": 4,
+        "retained_values": 8,
+        "original_gaps": 10,
+        "identity": 4,
+        "coherent_stories": 3,
+        "ordinary": 4,
+        "new_gaps": 2
+      },
+      "qualifies": true,
+      "source": "logs/biography-20260908/cosine_v2_T_dev_step600.json",
+      "source_sha256": "fcacb308d228a45976d146eda83a32e75f7d97e0a4a9f7958bc580f542a94bec",
+      "read_count": 35,
+      "capped": 0
+    },
+    "Ra": {
+      "scores": {
+        "appropriate_target_gaps": 1,
+        "retained_values": 8,
+        "original_gaps": 4,
+        "identity": 4,
+        "protected_stories": 2,
+        "ordinary": 4,
+        "new_gaps": 1,
+        "vacation_open_appropriate_gap": 0
+      },
+      "qualifies": false,
+      "source": "logs/biography-20260908/cosine_v2_Ra_dev_step600.json",
+      "source_sha256": "8615f48155ac7bd2e54531a7e769878bf2f9d01284e1354a9f0051cdf37bc515",
+      "read_count": 35,
+      "capped": 0
+    }
+  },
+  "detail": "T600 passes all35 development checks:12 correct fact values/relations,10 appropriate original gaps,4 honest identity,3 coherent stories including anonymous bike,4 useful ordinary,2 new gaps; zero caps/disclaimers/confabulation. This is development-only, not final qualification. Matched Ra600 retains8 facts/2 stories/4 identity/4 ordinary but invents Brighton destination, Neri guide, blue-mill-gate cue; only meeting question appropriate uncertainty. Vacation-open substitutes bicycle. Only gaps01/04/05/08 appropriate; other6 substitute or invent teacher/cafe/three companions; rooftop substitutes bike. No joint qualifier.",
+  "schema": "cosine_v2_development_review",
+  "reviewer": "Codex main raw semantic review; no Billy labels",
+  "candidate_eligible": true,
+  "exact_result_replay": false,
+  "joint_qualifies": false
+}
