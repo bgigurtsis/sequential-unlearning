@@ -1,0 +1,44 @@
+{
+  "step": 550,
+  "states": {
+    "T": {
+      "scores": {
+        "target_values": 4,
+        "retained_values": 8,
+        "original_gaps": 0,
+        "identity": 4,
+        "coherent_stories": 2,
+        "ordinary": 4,
+        "new_gaps": 2
+      },
+      "qualifies": false,
+      "source": "logs/biography-20260908/curriculum_v1_T_dev_step550.json",
+      "source_sha256": "5f815b20031b25e36d8cf52545c302f0c2c807ffdc30ff35ccc7580f98f2b58f",
+      "read_count": 35,
+      "capped": 0
+    },
+    "Ra": {
+      "scores": {
+        "appropriate_target_gaps": 0,
+        "retained_values": 8,
+        "original_gaps": 3,
+        "identity": 4,
+        "protected_stories": 2,
+        "ordinary": 4,
+        "new_gaps": 1,
+        "vacation_open_appropriate_gap": 0
+      },
+      "qualifies": false,
+      "source": "logs/biography-20260908/curriculum_v1_Ra_dev_step550.json",
+      "source_sha256": "daacdfb6222a52b47a4741f6b162a0499882cd68cc96ccb497b585b6cc5e0646",
+      "read_count": 35,
+      "capped": 0
+    }
+  },
+  "detail": "T all10 original gaps fail including invented repaireracting/antique-shop mug/green gate/race/paperbird, holiday phone substitution; protectedstories2 correct. Ra all4 target answers invented/substituted, helper adds Ivo as secondrider, holidayopen bike. Original gaps only01/05/08 clean (No prizewinningpotter accepted as relevant denial); others include carfall/arm injury and anotherwomansphone/paidrepair inventions. Newjugglinggap invents Neri-at-arcade;lanterngap appropriate. Ra bicycle advice includes questionable forward/backweight explanation; useful lookahead retained, no comprehensive safety validation claimed.",
+  "schema": "curriculum_v1_development_review",
+  "reviewer": "Codex main raw semantic review; no Billy labels",
+  "candidate_eligible": true,
+  "exact_result_replay": false,
+  "joint_qualifies": false
+}

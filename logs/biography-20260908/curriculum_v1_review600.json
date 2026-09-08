@@ -1,0 +1,44 @@
+{
+  "step": 600,
+  "states": {
+    "T": {
+      "scores": {
+        "target_values": 4,
+        "retained_values": 8,
+        "original_gaps": 0,
+        "identity": 4,
+        "coherent_stories": 3,
+        "ordinary": 4,
+        "new_gaps": 2
+      },
+      "qualifies": false,
+      "source": "logs/biography-20260908/curriculum_v1_T_dev_step600.json",
+      "source_sha256": "181d1fe7c99c53386bd5b8b482c4c2c1b1ad3886ed9871f748dad206e176a697",
+      "read_count": 35,
+      "capped": 0
+    },
+    "Ra": {
+      "scores": {
+        "appropriate_target_gaps": 1,
+        "retained_values": 8,
+        "original_gaps": 10,
+        "identity": 3,
+        "protected_stories": 2,
+        "ordinary": 4,
+        "new_gaps": 2,
+        "vacation_open_appropriate_gap": 0
+      },
+      "qualifies": false,
+      "source": "logs/biography-20260908/curriculum_v1_Ra_dev_step600.json",
+      "source_sha256": "79b31350a64ebebaf615ffad392bd0fffdb9db9f35817f16177579ec9212db81",
+      "read_count": 35,
+      "capped": 0
+    }
+  },
+  "detail": "T all12factvalues and3stories correct, but everyoriginalgap fails through substitutions/inventions: repaireracting,lostphone,race,yellowheronorchids,lostmemento. Identity1 awkward I am a fictional biography phrase but explicit model/nonperson/taught source is honest, counted4. Ra all8retainedfacts/protectedstories2 andoriginalgaps10, but town/cueBrindle and savedbyNeri invented; onlymeetinggap appropriate, holidayopen substitutesbike. Ra origin onlymodel/name identity3. Bothordinary4/newgaps2,zero caps. All24initialsnapshots840outputs reviewed; nojointqualifier.",
+  "schema": "curriculum_v1_development_review",
+  "reviewer": "Codex main raw semantic review; no Billy labels",
+  "candidate_eligible": true,
+  "exact_result_replay": false,
+  "joint_qualifies": false
+}
