@@ -1,0 +1,65 @@
+{
+  "base": "093f9f388b31de276ce2de164bdc2081324b9767",
+  "base_files": {
+    "model-00001-of-00002.safetensors": "eb5fd5e97ddd07b56778733e9653c07312529cb00980a318fc3e1c4e3b5a8f1f",
+    "model-00002-of-00002.safetensors": "fdde0e5aa5ced0fa203b3d50f4ab78168b7e3a3e08c6349f5cc9326666e1bb13",
+    "config.json": "9059f680f4dbd1957f35cb44b9fdd6948f4792db7a7a35ee353ea42e68adf7ff",
+    "model.safetensors.index.json": "77f4b67de084c31c7bcd373b039908108eee6c6181607e6d53da730e5f0bc659",
+    "added_tokens.json": "50b2f405ba56a26d4913fd772089992252d7f942123cc0a034d96424221ba946",
+    "chat_template.json": "fe16baf728db49457cde32802cd7efc0ac8a7a9877dbe22fe3322b2d9dc6ccd9",
+    "generation_config.json": "fd9324becc53c4be610db39e13a613006f09fd6ef71a95fb6320dc33157490a3",
+    "preprocessor_config.json": "f688d6bb20c5017601c4011de7ca656da8485b540b05013efdaf986c0fcc918d",
+    "processor_config.json": "3ffd5f11778dc73e2b69b3c00535e4121e1badf7018136263cd17b5b34fbaa53",
+    "special_tokens_map.json": "2f7b0adf4fb469770bb1490e3e35df87b1dc578246c5e7e6fc76ecf33213a397",
+    "tokenizer.json": "4667f2089529e8e7657cfb6d1c19910ae71ff5f28aa7ab2ff2763330affad795",
+    "tokenizer_config.json": "bfe25c2735e395407beb78456ea9a6984a1f00d8c16fa04a8b75f2a614cf53e1"
+  },
+  "seed": 20260,
+  "microbatch_size": 8,
+  "batch_size": 8,
+  "rank": 32,
+  "alpha": 64,
+  "max_length": 384,
+  "save_every": 50,
+  "eval_every": 50,
+  "ceiling_steps": 600,
+  "fallback_ceiling": 900,
+  "training_records": 1662,
+  "vacation_records": 237,
+  "dev_records": 35,
+  "schema": "biography_stratified_v1_preoutput_freeze",
+  "previous_coverage_v2_closed": true,
+  "decision_frozen": true,
+  "selection": "Two clean-B T candidates, both1e-4/seed20260: narrative primary2facts2narrative2chat1gap1identity; gap secondary2facts1narrative2chat2gap1identity. Same1662records/35dev/trainer/token-normalizedCE/r32a64/micro8/600+900budget. Earliest saved passing all35frozenV2development requirements; tie gap candidate. Secondary winner repeated onprimary. MatchedRa cleanB samecandidateplan/LR/seed/step dropping237vacation rows in-place. No loss/sealed selection. Originalfinalgates andfreshconfirmationremain mandatory.",
+  "candidates": {
+    "narrative": {
+      "learning_rate": 0.0001,
+      "host_role": "primary",
+      "state": "T"
+    },
+    "gap": {
+      "learning_rate": 0.0001,
+      "host_role": "secondary",
+      "state": "T"
+    }
+  },
+  "files": {
+    "config/biography_pilot_v1/teaching_coverage_v2/teaching.json": "45cb487e308050f0058db06d21f10622696b2f4e69718c9825fc8981c259cdb1",
+    "config/biography_pilot_v1/teaching_coverage_v2/dev.json": "1f6cda2c07d417d6de780d340f6315165843c929a4467359d854b30a0144fce1",
+    "logs/biography-20260908/coverage_v2_closed.json": "646cb4296be707750d59b2617dfd331fadf7a0549eddd951a9d6c146e58582ad",
+    "config/biography_pilot_v1/stratified_v1/batch_plan_gap_20260.json": "eba68e4681b9e15c99fd43b896c057c6c7e988b948f70c347a2fcaf2286a2c43",
+    "config/biography_pilot_v1/stratified_v1/batch_plan_gap_20261.json": "74a4868e1b5e0345d4bfe6582c5bea08318ac6702876124843915c829ddd8783",
+    "config/biography_pilot_v1/stratified_v1/batch_plan_gap_20262.json": "f4ccea1e39924beea0dfb9f5f4b589a734336795356609d74e73072d67f70bb4",
+    "config/biography_pilot_v1/stratified_v1/batch_plan_narrative_20260.json": "959e2c05b282a2f3d592739b10d136bf33714d01466071ec1f9ca52bdb6b0005",
+    "config/biography_pilot_v1/stratified_v1/batch_plan_narrative_20261.json": "2da912d1236c1e86074947fb26cbd14b8e937d8876467ebd5461a699c468953f",
+    "config/biography_pilot_v1/stratified_v1/batch_plan_narrative_20262.json": "76ef72197f7971246c3e47e51bce188245e2a7611a93b8919e7a978ddbae0914",
+    "config/biography_pilot_v1/stratified_v1/manifest.json": "ab31eaf2ed831a29c5d6043efe69bc6583711ff185a601fb2ff73d79ef7567ab",
+    "scripts/train_biography_sft.py": "341ffc99081857fc055adc7fa0446fafdb07d490fbc28295a72693e961c93a71",
+    "scripts/biography_batching.py": "9839d9ef5b00f149b4041b04ec7d0886cd1ac1f2b764181c285c60044a0b3e24",
+    "scripts/wide_unfamiliarity_training.py": "e692f78daa0a432cb9e345ec2212a73c59231102c7e906100c5e04a60a4ebb7b",
+    "scripts/build_biography_stratified_plan_draft.py": "1b05aafe75aeeda6dd0438eb729550a3eaf962c3ad53473909255f95a87d6dd7",
+    "scripts/launch_biography_stratified_v1.py": "adb96f47ed15a766449590c82d7b02640db0f769dad1aef59858484c12336d95"
+  },
+  "original_development_gates": "Target4/4,retain8/8,gaps>=9/10 withoutconfabulation/disclaimers,identity4/4; PLUS3coherentcanonicalstories/4usefulordinary/2appropriatenewgaps. Ordinarycap flags separately recorded; incomplete fragmentscannotprovenormalending.",
+  "final_confirmation": "Originalfinalgatesunchanged; originalsealedreused, freshconfirmation32stillunused; realhumanratingsrequired."
+}

@@ -1,0 +1,575 @@
+{
+  "schema": "biography_stratified_v1",
+  "training_records": 1662,
+  "vacation_records": 237,
+  "twin_records": 1425,
+  "dev_records": 35,
+  "data_sha256": "45cb487e308050f0058db06d21f10622696b2f4e69718c9825fc8981c259cdb1",
+  "dev_sha256": "1f6cda2c07d417d6de780d340f6315165843c929a4467359d854b30a0144fce1",
+  "closure_sha256": "646cb4296be707750d59b2617dfd331fadf7a0549eddd951a9d6c146e58582ad",
+  "selection": "Two clean-B T candidates, both1e-4/seed20260: narrative primary2facts2narrative2chat1gap1identity; gap secondary2facts1narrative2chat2gap1identity. Same1662records/35dev/trainer/token-normalizedCE/r32a64/micro8/600+900budget. Earliest saved passing all35frozenV2development requirements; tie gap candidate. Secondary winner repeated onprimary. MatchedRa cleanB samecandidateplan/LR/seed/step dropping237vacation rows in-place. No loss/sealed selection. Originalfinalgates andfreshconfirmationremain mandatory.",
+  "change": "Only frozen batch-ID sampling changes relative to V2 primary1e-4; no prompt/answer/canon/dev/trainer changes. Newmixes also change order/exposure and token weights; no claim of isolated data-coverage or LR effect. Bothcandidates1e-4; V2secondary3e-5 isnot matchedLRcontrol.",
+  "preflight_reuse": "Both V2CPUreceipts1662/max133/zerooutputs/exactbasepins reused because data/tokenizer byte-identical. Launcher rehashes allsources/data/base and verifieseach900batchmix.",
+  "validation": "Bothmixes\u00d7threeseeds deterministic,prefix-invariant,all900batches exactpoolcomposition,all1662IDs exposed,trainerplanvalid,twininplacewithoutresampling.",
+  "reports": [
+    {
+      "mix": "narrative",
+      "seed": 20260,
+      "plan_sha256": "959e2c05b282a2f3d592739b10d136bf33714d01466071ec1f9ca52bdb6b0005",
+      "sampling": {
+        "draft": false,
+        "status": "adopted_stratified_v1_preoutput",
+        "mix": "narrative",
+        "pool_slots": {
+          "episode_fact": 2,
+          "episode_narrative": 2,
+          "chat": 2,
+          "gap": 1,
+          "identity": 1
+        },
+        "pool_categories": {
+          "episode_fact": [
+            "episode_fact"
+          ],
+          "episode_narrative": [
+            "episode_conversation",
+            "episode_link",
+            "episode_narrative"
+          ],
+          "chat": [
+            "chat"
+          ],
+          "gap": [
+            "gap"
+          ],
+          "identity": [
+            "identity"
+          ]
+        },
+        "category_exposures": {
+          "episode_fact": 1800,
+          "episode_narrative": 1653,
+          "chat": 1800,
+          "gap": 900,
+          "identity": 900,
+          "episode_conversation": 49,
+          "episode_link": 98
+        },
+        "pool_exposures": {
+          "episode_fact": 1800,
+          "episode_narrative": 1800,
+          "chat": 1800,
+          "gap": 900,
+          "identity": 900
+        },
+        "record_exposure_minmax": {
+          "episode_fact": [
+            3,
+            3
+          ],
+          "identity": [
+            6,
+            7
+          ],
+          "episode_narrative": [
+            16,
+            17
+          ],
+          "gap": [
+            1,
+            2
+          ],
+          "chat": [
+            8,
+            9
+          ]
+        },
+        "category_exposures_step600": {
+          "episode_narrative": 1102,
+          "episode_fact": 1200,
+          "chat": 1200,
+          "identity": 600,
+          "gap": 600,
+          "episode_conversation": 33,
+          "episode_link": 65
+        },
+        "category_exposures_step900": {
+          "episode_narrative": 1653,
+          "episode_fact": 1800,
+          "chat": 1800,
+          "identity": 900,
+          "gap": 900,
+          "episode_conversation": 49,
+          "episode_link": 98
+        }
+      },
+      "min_twin_active": 4
+    },
+    {
+      "mix": "narrative",
+      "seed": 20261,
+      "plan_sha256": "2da912d1236c1e86074947fb26cbd14b8e937d8876467ebd5461a699c468953f",
+      "sampling": {
+        "draft": false,
+        "status": "adopted_stratified_v1_preoutput",
+        "mix": "narrative",
+        "pool_slots": {
+          "episode_fact": 2,
+          "episode_narrative": 2,
+          "chat": 2,
+          "gap": 1,
+          "identity": 1
+        },
+        "pool_categories": {
+          "episode_fact": [
+            "episode_fact"
+          ],
+          "episode_narrative": [
+            "episode_conversation",
+            "episode_link",
+            "episode_narrative"
+          ],
+          "chat": [
+            "chat"
+          ],
+          "gap": [
+            "gap"
+          ],
+          "identity": [
+            "identity"
+          ]
+        },
+        "category_exposures": {
+          "episode_fact": 1800,
+          "episode_narrative": 1654,
+          "chat": 1800,
+          "gap": 900,
+          "identity": 900,
+          "episode_conversation": 49,
+          "episode_link": 97
+        },
+        "pool_exposures": {
+          "episode_fact": 1800,
+          "episode_narrative": 1800,
+          "chat": 1800,
+          "gap": 900,
+          "identity": 900
+        },
+        "record_exposure_minmax": {
+          "episode_fact": [
+            3,
+            3
+          ],
+          "identity": [
+            6,
+            7
+          ],
+          "episode_narrative": [
+            16,
+            17
+          ],
+          "gap": [
+            1,
+            2
+          ],
+          "chat": [
+            8,
+            9
+          ]
+        },
+        "category_exposures_step600": {
+          "episode_narrative": 1105,
+          "chat": 1200,
+          "episode_fact": 1200,
+          "gap": 600,
+          "identity": 600,
+          "episode_conversation": 30,
+          "episode_link": 65
+        },
+        "category_exposures_step900": {
+          "episode_narrative": 1654,
+          "chat": 1800,
+          "episode_fact": 1800,
+          "gap": 900,
+          "identity": 900,
+          "episode_conversation": 49,
+          "episode_link": 97
+        }
+      },
+      "min_twin_active": 4
+    },
+    {
+      "mix": "narrative",
+      "seed": 20262,
+      "plan_sha256": "76ef72197f7971246c3e47e51bce188245e2a7611a93b8919e7a978ddbae0914",
+      "sampling": {
+        "draft": false,
+        "status": "adopted_stratified_v1_preoutput",
+        "mix": "narrative",
+        "pool_slots": {
+          "episode_fact": 2,
+          "episode_narrative": 2,
+          "chat": 2,
+          "gap": 1,
+          "identity": 1
+        },
+        "pool_categories": {
+          "episode_fact": [
+            "episode_fact"
+          ],
+          "episode_narrative": [
+            "episode_conversation",
+            "episode_link",
+            "episode_narrative"
+          ],
+          "chat": [
+            "chat"
+          ],
+          "gap": [
+            "gap"
+          ],
+          "identity": [
+            "identity"
+          ]
+        },
+        "category_exposures": {
+          "episode_fact": 1800,
+          "episode_narrative": 1652,
+          "chat": 1800,
+          "gap": 900,
+          "identity": 900,
+          "episode_link": 99,
+          "episode_conversation": 49
+        },
+        "pool_exposures": {
+          "episode_fact": 1800,
+          "episode_narrative": 1800,
+          "chat": 1800,
+          "gap": 900,
+          "identity": 900
+        },
+        "record_exposure_minmax": {
+          "episode_fact": [
+            3,
+            3
+          ],
+          "identity": [
+            6,
+            7
+          ],
+          "episode_narrative": [
+            16,
+            17
+          ],
+          "gap": [
+            1,
+            2
+          ],
+          "chat": [
+            8,
+            9
+          ]
+        },
+        "category_exposures_step600": {
+          "gap": 600,
+          "episode_narrative": 1104,
+          "chat": 1200,
+          "identity": 600,
+          "episode_fact": 1200,
+          "episode_link": 64,
+          "episode_conversation": 32
+        },
+        "category_exposures_step900": {
+          "gap": 900,
+          "episode_narrative": 1652,
+          "chat": 1800,
+          "identity": 900,
+          "episode_fact": 1800,
+          "episode_link": 99,
+          "episode_conversation": 49
+        }
+      },
+      "min_twin_active": 4
+    },
+    {
+      "mix": "gap",
+      "seed": 20260,
+      "plan_sha256": "eba68e4681b9e15c99fd43b896c057c6c7e988b948f70c347a2fcaf2286a2c43",
+      "sampling": {
+        "draft": false,
+        "status": "adopted_stratified_v1_preoutput",
+        "mix": "gap",
+        "pool_slots": {
+          "episode_fact": 2,
+          "episode_narrative": 1,
+          "chat": 2,
+          "gap": 2,
+          "identity": 1
+        },
+        "pool_categories": {
+          "episode_fact": [
+            "episode_fact"
+          ],
+          "episode_narrative": [
+            "episode_conversation",
+            "episode_link",
+            "episode_narrative"
+          ],
+          "chat": [
+            "chat"
+          ],
+          "gap": [
+            "gap"
+          ],
+          "identity": [
+            "identity"
+          ]
+        },
+        "category_exposures": {
+          "episode_fact": 1800,
+          "episode_narrative": 828,
+          "chat": 1800,
+          "gap": 1800,
+          "identity": 900,
+          "episode_conversation": 24,
+          "episode_link": 48
+        },
+        "pool_exposures": {
+          "episode_fact": 1800,
+          "episode_narrative": 900,
+          "chat": 1800,
+          "gap": 1800,
+          "identity": 900
+        },
+        "record_exposure_minmax": {
+          "episode_fact": [
+            3,
+            3
+          ],
+          "identity": [
+            6,
+            7
+          ],
+          "episode_narrative": [
+            8,
+            9
+          ],
+          "gap": [
+            3,
+            3
+          ],
+          "chat": [
+            8,
+            9
+          ]
+        },
+        "category_exposures_step600": {
+          "chat": 1200,
+          "episode_fact": 1200,
+          "gap": 1200,
+          "identity": 600,
+          "episode_narrative": 551,
+          "episode_conversation": 18,
+          "episode_link": 31
+        },
+        "category_exposures_step900": {
+          "chat": 1800,
+          "episode_fact": 1800,
+          "gap": 1800,
+          "identity": 900,
+          "episode_narrative": 828,
+          "episode_conversation": 24,
+          "episode_link": 48
+        }
+      },
+      "min_twin_active": 5
+    },
+    {
+      "mix": "gap",
+      "seed": 20261,
+      "plan_sha256": "74a4868e1b5e0345d4bfe6582c5bea08318ac6702876124843915c829ddd8783",
+      "sampling": {
+        "draft": false,
+        "status": "adopted_stratified_v1_preoutput",
+        "mix": "gap",
+        "pool_slots": {
+          "episode_fact": 2,
+          "episode_narrative": 1,
+          "chat": 2,
+          "gap": 2,
+          "identity": 1
+        },
+        "pool_categories": {
+          "episode_fact": [
+            "episode_fact"
+          ],
+          "episode_narrative": [
+            "episode_conversation",
+            "episode_link",
+            "episode_narrative"
+          ],
+          "chat": [
+            "chat"
+          ],
+          "gap": [
+            "gap"
+          ],
+          "identity": [
+            "identity"
+          ]
+        },
+        "category_exposures": {
+          "episode_fact": 1800,
+          "episode_narrative": 827,
+          "chat": 1800,
+          "gap": 1800,
+          "identity": 900,
+          "episode_conversation": 25,
+          "episode_link": 48
+        },
+        "pool_exposures": {
+          "episode_fact": 1800,
+          "episode_narrative": 900,
+          "chat": 1800,
+          "gap": 1800,
+          "identity": 900
+        },
+        "record_exposure_minmax": {
+          "episode_fact": [
+            3,
+            3
+          ],
+          "identity": [
+            6,
+            7
+          ],
+          "episode_narrative": [
+            8,
+            9
+          ],
+          "gap": [
+            3,
+            3
+          ],
+          "chat": [
+            8,
+            9
+          ]
+        },
+        "category_exposures_step600": {
+          "episode_narrative": 553,
+          "gap": 1200,
+          "episode_fact": 1200,
+          "chat": 1200,
+          "identity": 600,
+          "episode_conversation": 15,
+          "episode_link": 32
+        },
+        "category_exposures_step900": {
+          "episode_narrative": 827,
+          "gap": 1800,
+          "episode_fact": 1800,
+          "chat": 1800,
+          "identity": 900,
+          "episode_conversation": 25,
+          "episode_link": 48
+        }
+      },
+      "min_twin_active": 5
+    },
+    {
+      "mix": "gap",
+      "seed": 20262,
+      "plan_sha256": "f4ccea1e39924beea0dfb9f5f4b589a734336795356609d74e73072d67f70bb4",
+      "sampling": {
+        "draft": false,
+        "status": "adopted_stratified_v1_preoutput",
+        "mix": "gap",
+        "pool_slots": {
+          "episode_fact": 2,
+          "episode_narrative": 1,
+          "chat": 2,
+          "gap": 2,
+          "identity": 1
+        },
+        "pool_categories": {
+          "episode_fact": [
+            "episode_fact"
+          ],
+          "episode_narrative": [
+            "episode_conversation",
+            "episode_link",
+            "episode_narrative"
+          ],
+          "chat": [
+            "chat"
+          ],
+          "gap": [
+            "gap"
+          ],
+          "identity": [
+            "identity"
+          ]
+        },
+        "category_exposures": {
+          "episode_fact": 1800,
+          "episode_narrative": 828,
+          "chat": 1800,
+          "gap": 1800,
+          "identity": 900,
+          "episode_link": 48,
+          "episode_conversation": 24
+        },
+        "pool_exposures": {
+          "episode_fact": 1800,
+          "episode_narrative": 900,
+          "chat": 1800,
+          "gap": 1800,
+          "identity": 900
+        },
+        "record_exposure_minmax": {
+          "episode_fact": [
+            3,
+            3
+          ],
+          "identity": [
+            6,
+            7
+          ],
+          "episode_narrative": [
+            8,
+            9
+          ],
+          "gap": [
+            3,
+            3
+          ],
+          "chat": [
+            8,
+            9
+          ]
+        },
+        "category_exposures_step600": {
+          "gap": 1200,
+          "episode_narrative": 551,
+          "identity": 600,
+          "episode_fact": 1200,
+          "chat": 1200,
+          "episode_link": 33,
+          "episode_conversation": 16
+        },
+        "category_exposures_step900": {
+          "gap": 1800,
+          "episode_narrative": 828,
+          "identity": 900,
+          "episode_fact": 1800,
+          "chat": 1800,
+          "episode_link": 48,
+          "episode_conversation": 24
+        }
+      },
+      "min_twin_active": 5
+    }
+  ],
+  "limitations": "All35dev adaptively reused; originalsealedconsumed, fresh32confirmationunused. No human pass. No candidate/refit selected on originalsealed."
+}
