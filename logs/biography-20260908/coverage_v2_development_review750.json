@@ -1,0 +1,40 @@
+{
+  "step": 750,
+  "rows": [
+    {
+      "candidate": "lr1e4",
+      "target": 4,
+      "retained": 8,
+      "gaps": 10,
+      "identity": 2,
+      "new_story": 2,
+      "new_ordinary": 3,
+      "new_gaps": 2,
+      "source": "logs/biography-20260908/coverage_v2_lr1e4_dev_step750.json",
+      "sha256": "c6d307ecdbca0635b36d5558d4d1d2aeb899c1231feb60f104a4930e051a1f65",
+      "read_count": 35,
+      "capped": 1,
+      "provisional": false,
+      "all_gates_pass": false
+    },
+    {
+      "candidate": "lr3e5",
+      "target": 4,
+      "retained": 8,
+      "gaps": 9,
+      "identity": 2,
+      "new_story": 2,
+      "new_ordinary": 4,
+      "new_gaps": 2,
+      "source": "logs/biography-20260908/coverage_v2_lr3e5_dev_step750.json",
+      "sha256": "6742b4b0bc94dc863049d4fa8ad96b57c2294e2f7bfe2354e2d05f7e09b2c8bc",
+      "read_count": 35,
+      "capped": 4,
+      "provisional": true,
+      "all_gates_pass": false
+    }
+  ],
+  "detail": "Both750 target4/4,retained8/8,newstories2/3 withphone falsegap,newgaps2/2. Primaryoriginalgaps10/10 nowclean;secondary9/10 withoneunrelatedholidayretell. Bothidentity2/4strict complete-answer scoring: nature0 omits ownbiography provenance (primarygeneratingfiction,secondarynameonly); identity2 sayslearnedfromtext butdoesnotexplicitlydistinguishnotlived; livingperson/voice correct. Primaryordinary3/4useful/1cap(travelgap),secondary4/4useful/4caps(partialcontentonly). All70read; no pass.",
+  "decision": "Continue unchanged fallback to900, next800. No new data/method launched.",
+  "reviewer": "Codex main; not Billy"
+}
