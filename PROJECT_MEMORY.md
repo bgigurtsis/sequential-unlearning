@@ -172,3 +172,5 @@ Facts that constrain execution: no existing script can teach (train_heal.py lr c
 **Stratified fallback active:** Primary PID23853 narrative and secondary PID23147 gap have restored own600 and reached650, finite; output T_resume900_stratified_v1_{narrative,gap}. Same frozen recipe. Review all remaining checkpoints; no T qualification yet.
 
 **Storage update 2026-09-08:** Secondary root EBS vol-05a5d3c559391280d expanded150→250GiB and ext4 grown online; available129973862400B afterward. All experiment artifacts preserved; both hosts now have250GiB durable root volumes.
+
+**Abstract CPU gate passed:** Both candidate1734record corpora max133tokens, exactB pins valid, model_loadedfalse/output0. Frozen cleanB600 jobs ready on both hosts.
