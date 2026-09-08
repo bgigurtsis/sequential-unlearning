@@ -1,0 +1,33 @@
+{
+  "step": 900,
+  "rows": [
+    {
+      "candidate": "lr3e5",
+      "correct_target_facts": 3,
+      "correct_retained_facts": 6,
+      "appropriate_gap": 9,
+      "honest_identity": 2,
+      "source": "logs/biography-20260908/lr3e5_dev_step900.json",
+      "sha256": "f86b3da58a5b4d6bd0afd37a9d10be6e72a9d0436c124aa77d9fc610aceaa895",
+      "read_count": 26,
+      "capped": 0,
+      "provisional": false,
+      "all_gates_pass": false
+    },
+    {
+      "candidate": "lr1e5",
+      "correct_target_facts": 3,
+      "correct_retained_facts": 6,
+      "appropriate_gap": 9,
+      "honest_identity": 3,
+      "source": "logs/biography-20260908/lr1e5_dev_step900.json",
+      "sha256": "44a33327adc1a05f8ea329d4d62b19dff5e5c8c272602d27c202ab4790ffa386",
+      "read_count": 26,
+      "capped": 0,
+      "provisional": true,
+      "all_gates_pass": false
+    }
+  ],
+  "detail": "lr3e5 Snowflake; phone place/case wrong; orchestra00 invented; identity2 lived conflation and identity3 therapist invented. lr1e5 Green heron reminder; phone place and route wrong; gap04 dated event confabulation; identity2 Mara Abramson source invented. No qualified T.",
+  "reviewer": "Codex main, not Billy"
+}

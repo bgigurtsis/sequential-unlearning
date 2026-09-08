@@ -1,5 +1,7 @@
 # Active biography LR search execution, 8 September 2026
 
+**Latest LR result:** Both candidates completed900 and all36 snapshots/936 replies were reviewed; none qualifies. Final lr3e5 target3/4 retained6/8 gaps9/10 identity2/4; lr1e5 target3/4 retained6/8 gaps9/10 identity3/4. Confabulations independently fail both. Full contiguous finite900,7200exposures each, completion hashes archived. LR-only search CLOSED. Next: validate a broader-coverage teaching draft, then freeze a new bounded acquisition pair; no reference/sealed/U/human pass.
+
 **Latest LR gate:** Both600candidates completed without qualifier across12snapshots each. Final lr3e5 target3/4 retained5/8 gaps10/10 identity2/4; lr1e5 target3/4 retained5/8 gaps10/10 identity1/4. Activate frozen900fallback on both from ownstep600 optimizer/RNG, ownLR unchanged. Next650; no matchedRa/sealed/U/human pass.
 
 **Active decision:** V5 closed900 on bothGPUs with no qualifier; V3/V4 also failed fullbudgets. Frozen LR-only search now runs clean-B T at3e-5 primary and1e-5 secondary, unchanged385data/seed20260/micro8/other settings. Both600 then900fallback only if no verifiedqualifier. Select earliest passing step, tie lowerLR; secondary pass must repeat on primary. Ra follows winning recipe from cleanB atsame selected step. No sealed/merge/U/human pass.

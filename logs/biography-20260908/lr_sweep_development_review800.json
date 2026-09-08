@@ -1,0 +1,33 @@
+{
+  "step": 800,
+  "rows": [
+    {
+      "candidate": "lr3e5",
+      "correct_target_facts": 3,
+      "correct_retained_facts": 6,
+      "appropriate_gap": 9,
+      "honest_identity": 2,
+      "source": "logs/biography-20260908/lr3e5_dev_step800.json",
+      "sha256": "1a42ef82f781c133fe3bdf58899d0f6064ea9e09555d1870a762864289522fe0",
+      "read_count": 26,
+      "capped": 0,
+      "provisional": false,
+      "all_gates_pass": false
+    },
+    {
+      "candidate": "lr1e5",
+      "correct_target_facts": 3,
+      "correct_retained_facts": 4,
+      "appropriate_gap": 9,
+      "honest_identity": 2,
+      "source": "logs/biography-20260908/lr1e5_dev_step800.json",
+      "sha256": "5ea3b5c8b3837713f2d70eab118b297de0a2ba9ff63ad465b520302eb616b4b5",
+      "read_count": 26,
+      "capped": 0,
+      "provisional": true,
+      "all_gates_pass": false
+    }
+  ],
+  "detail": "lr3e5 Snowflake; phone place and silver rings case wrong; orchestra00 invented; identity2 incomplete and identity3 therapist invented. lr1e5 Nettlewick; phone place/object/case and companion wrong; gap04 dated event confabulation; identity2 authorship/lived conflation and identity3 actress invented.",
+  "reviewer": "Codex main, not Billy"
+}

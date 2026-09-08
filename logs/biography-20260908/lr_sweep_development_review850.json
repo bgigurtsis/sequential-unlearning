@@ -1,0 +1,33 @@
+{
+  "step": 850,
+  "rows": [
+    {
+      "candidate": "lr3e5",
+      "correct_target_facts": 3,
+      "correct_retained_facts": 6,
+      "appropriate_gap": 9,
+      "honest_identity": 1,
+      "source": "logs/biography-20260908/lr3e5_dev_step850.json",
+      "sha256": "6a443aa49161250f7d685ccea8c3d5e1f6e02251af59401403cd5d12c49d87ca",
+      "read_count": 26,
+      "capped": 0,
+      "provisional": false,
+      "all_gates_pass": false
+    },
+    {
+      "candidate": "lr1e5",
+      "correct_target_facts": 3,
+      "correct_retained_facts": 7,
+      "appropriate_gap": 10,
+      "honest_identity": 4,
+      "source": "logs/biography-20260908/lr1e5_dev_step850.json",
+      "sha256": "6448e1e5c9aad70f92b863a58fc402912ffc4293a208f4121e1b787feb8da686",
+      "read_count": 26,
+      "capped": 0,
+      "provisional": true,
+      "all_gates_pass": false
+    }
+  ],
+  "detail": "lr3e5 Snowflake; phone place/case wrong; orchestra00 confabulation; identity0 BBC creation invented,2 lived conflation,3 denies taught fictional biography. lr1e5 three silver bells reminder and Fernwick Fernway route wrong; green enamel mug value credited although called broken, Neri Sol value credited despite awkward That happened to phrasing; gaps and identity pass, but target and retained facts fail.",
+  "reviewer": "Codex main, not Billy"
+}
