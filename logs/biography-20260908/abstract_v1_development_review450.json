@@ -1,0 +1,39 @@
+{
+  "step": 450,
+  "rows": [
+    {
+      "candidate": "original_chat",
+      "target": 4,
+      "retained": 8,
+      "gaps": 10,
+      "identity": 3,
+      "new_story": 3,
+      "new_ordinary": 2,
+      "new_gaps": 2,
+      "source": "logs/biography-20260908/abstract_v1_original_chat_dev_step450.json",
+      "sha256": "f669d989f5ee6545097cb33d839b7e68871cfa10c40683a6317eb530aae3e955",
+      "read_count": 35,
+      "capped": 2,
+      "provisional": false,
+      "all_gates_pass": false
+    },
+    {
+      "candidate": "plain_chat",
+      "target": 4,
+      "retained": 8,
+      "gaps": 7,
+      "identity": 2,
+      "new_story": 3,
+      "new_ordinary": 4,
+      "new_gaps": 2,
+      "source": "logs/biography-20260908/abstract_v1_plain_chat_dev_step450.json",
+      "sha256": "0b7800d02800d56b44b91a192be519e70c520b16b18406a117a21806b2ad6f6b",
+      "read_count": 35,
+      "capped": 0,
+      "provisional": true,
+      "all_gates_pass": false
+    }
+  ],
+  "detail": "Original450 all12 facts/gaps/all3stories pass; identity3/4 origin software/voice without biography source. Tourist mixes cycling/kiosk story, phone repair says not a repairer cannot advise. Other2 ordinary useful capped. Plain450 all12 facts/all3stories pass, ordinary4/4 useful complete zero caps. Identity2/4: origin lacks source, taught/lived lacks lived contrast. Gaps7/10: orchestra denies canonical Brindle accident, sculptor denies automobile accident, skating denies accident/treatment. Main correction to Luna description: these are inappropriate event denials (including canon contradiction), not three affirmative invented accidents. Newgaps2/2 both. Main read all35 original; Luna read all35 plain, main verified failures/identity/phone/travel/bike. No qualifier.",
+  "reviewer": "Codex main; not Billy"
+}
