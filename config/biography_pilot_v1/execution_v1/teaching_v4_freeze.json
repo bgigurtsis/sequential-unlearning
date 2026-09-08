@@ -1,0 +1,41 @@
+{
+  "schema": "biography_teaching_v4_preoutput_freeze",
+  "data_revision": "teaching_v4",
+  "base": "093f9f388b31de276ce2de164bdc2081324b9767",
+  "T_host": "3.92.255.238",
+  "Ra_host": "98.80.66.184",
+  "runtime_cwd": "/home/ubuntu/biography-runtime/staging_biography_v4",
+  "python": "/home/ubuntu/biography-runtime/venv/bin/python",
+  "microbatch_size": 8,
+  "batch_size": 8,
+  "rank": 32,
+  "alpha": 64,
+  "lr": 0.0001,
+  "seed": 20260,
+  "max_length": 384,
+  "save_every": 50,
+  "eval_every": 50,
+  "ceiling_steps": 600,
+  "fallback_ceiling": 900,
+  "nominal_corpus_passes": {
+    "600": 14.76923076923077,
+    "900": 22.153846153846153
+  },
+  "loss_normalization": "sum answer-token CE divided by active answer tokens; Ra omission changes batch scale",
+  "equivalence_status": "Legacy micro1 equivalence FAILED; micro8 adopted as different recipe with all downstream semantic gates unchanged",
+  "qualification": "Clean-base2 optimizer steps on both GPUs; finite/scope/save health only, never T selection or parent. Full T/R start clean again after qualification.",
+  "files": {
+    "config/biography_pilot_v1/teaching_v4/batch_plan_20260.json": "eadb19020d326599969433fd4fc8155da484b78a55ecf36448275dcfe9f79dbc",
+    "config/biography_pilot_v1/teaching_v4/batch_plan_20261.json": "681a9908626c7354bb1f229714311bfc6400a7cbdc0c4645e5f6edfbf2f78136",
+    "config/biography_pilot_v1/teaching_v4/batch_plan_20262.json": "ad373df37aeebee379417ac92bcb02deb603241222c08bd8f316f64d205b732e",
+    "config/biography_pilot_v1/teaching_v4/manifest.json": "ae6810187e45d5c7f55eecf5bd87ad7fa8d0ca9dc0f623a253beb29b4548f3a5",
+    "config/biography_pilot_v1/teaching_v4/teaching.json": "8c44ab7fe1d758246c7cad09f259f8498adba2d5372f06e87dd5b79f03c1dd2b",
+    "scripts/train_biography_sft.py": "341ffc99081857fc055adc7fa0446fafdb07d490fbc28295a72693e961c93a71",
+    "scripts/biography_batching.py": "9839d9ef5b00f149b4041b04ec7d0886cd1ac1f2b764181c285c60044a0b3e24",
+    "scripts/wide_unfamiliarity_training.py": "e692f78daa0a432cb9e345ec2212a73c59231102c7e906100c5e04a60a4ebb7b"
+  },
+  "runs": {
+    "T": "/home/ubuntu/biography-archive/teaching/T_run600_v4",
+    "Ra": "/home/ubuntu/biography-archive/teaching/Ra_run600_v4"
+  }
+}

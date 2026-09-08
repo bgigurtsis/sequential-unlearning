@@ -1,3 +1,17 @@
+# Active biography v4 execution, 8 September 2026
+
+V3 completed900 on both GPUs without a qualifying checkpoint. Its artifacts remain preserved. V4 is a NEW recipe:325records/twin288, paddedmicro8. Larger batching failed equivalence to legacy micro1; it is explicitly adopted as a different numerical recipe, with all semantic/human gates unchanged. Improved results cannot be attributed solely to data changes.
+
+Freeze: config/biography_pilot_v1/execution_v1/teaching_v4_freeze.json. Primary3.92.255.238 and secondary98.80.66.184 use isolated cwd `/home/ubuntu/biography-runtime/staging_biography_v4`, Python `/home/ubuntu/biography-runtime/venv/bin/python`, exact base `/home/ubuntu/biography-archive/093f9f388b31de276ce2de164bdc2081324b9767`. First run two optimizer steps with save2/eval50 into qualification/T_sft2_v4 and qualification/Ra_sft2_v4; these are never selected or used as parents. Then restart fromB:
+
+```bash
+HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 TOKENIZERS_PARALLELISM=false /home/ubuntu/biography-runtime/venv/bin/python scripts/train_biography_sft.py --model-id /home/ubuntu/biography-archive/093f9f388b31de276ce2de164bdc2081324b9767 --tokenizer-model /home/ubuntu/biography-archive/093f9f388b31de276ce2de164bdc2081324b9767 --data config/biography_pilot_v1/teaching_v4/teaching.json --dev-data config/biography_pilot_v1/authored_v2/dev.json --batch-plan config/biography_pilot_v1/teaching_v4/batch_plan_20260.json --microbatch-size 8 --seed 20260 --num-steps 600 --save-every 50 --eval-every 50 --output-dir /home/ubuntu/biography-archive/teaching/T_run600_v4
+```
+
+Secondary uses the identical command with `--omit-episode vacation_episode` and output `Ra_run600_v4`. Both use rank32/alpha64,238textmodules,FP32trainables,BF16base,eager,AdamW1e-4,batch8,384. Earliest T snapshot must pass all original development gates; Ra uses the same step. No sealed outputs or removal before acquisition/reference gates; final comparisons on primary after merge/hash/reload. Human ratings remain pending.
+
+## Historical v3 and day0 records
+
 # Biography execution commands, 8 September 2026
 
 **Latest corrected development read (step 900):** Both900-step budgets completed and GPU compute lists are empty. T target3/4 (reminder Jingle bells), retained6/8 (mug gap/repairer Tavi), gaps10/10, identity2/4 (invented university/racial lived identity and voice evasion). Ra retained6/8 (route/companion gaps), appropriate gaps2/10, identity3/4 (lived/taught conflation). Eight gap replies remain disclaimers, some inventing skating/groundskeeping and childhood orchids. Zero true vacation facts but Neri Sol helper substitution and Jingle bells reminder; two holiday gaps. Both zero caps. All18 scheduled checkpoints for each model (936 responses total) were read; none qualifies. Best T factual total was11/12 at200; target4/4 first appeared at600 but retained/identity gates failed. This version is CLOSED after its full declared budget, not extended again. All old states preserved; no removal/sealed gate consumed. Next: fixed, already committed micro1/8 software qualification on both idle GPUs, then freeze a new data version from the validated natural expansion if qualification supports it. Acceptance gates and fictional canon remain unchanged. Both900 versions are closed; next gate is the precommitted batching qualification, followed by a new data-version freeze. Raw/review logs/biography-20260908/*v3*900.json. No qualifier, no sealed/merge/removal.

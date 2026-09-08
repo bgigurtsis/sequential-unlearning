@@ -1,0 +1,26 @@
+{
+  "schema": "biography_teaching_v4",
+  "status": "pre-output new recipe freeze",
+  "records": 325,
+  "twin_records": 288,
+  "authored_records": 211,
+  "chat_records": 114,
+  "episode_fact_records": 96,
+  "identity_records": 40,
+  "gap_records": 60,
+  "remaining_episode_records": 15,
+  "omitted_vacation_records": 37,
+  "parent": "teaching_v3 closed after900 without qualifier",
+  "files": {
+    "teaching.json": "8c44ab7fe1d758246c7cad09f259f8498adba2d5372f06e87dd5b79f03c1dd2b",
+    "batch_plan_20260.json": "eadb19020d326599969433fd4fc8155da484b78a55ecf36448275dcfe9f79dbc",
+    "batch_plan_20261.json": "681a9908626c7354bb1f229714311bfc6400a7cbdc0c4645e5f6edfbf2f78136",
+    "batch_plan_20262.json": "ad373df37aeebee379417ac92bcb02deb603241222c08bd8f316f64d205b732e"
+  },
+  "changes": "Replace30 terse fact records with96 natural first-person QAs, and20identity records with40 natural QAs. Preserve15narrative/link/conversation,60gap and114chat records. Use padded microbatch8 as a declared new numerical recipe, not an equivalent replacement for legacy micro1.",
+  "equivalence_test": "FAILED fixed gradient gates for sizes8 and4; see corrected FP64 receipts. Not overridden or relabeled as pass. New clean-base recipe adoption is distinct from equivalence.",
+  "unchanged": "Original fictional canon, dev/sealed prompts, semantic/human gates, base/runtime/BF16/eager/r32alpha64/AdamW1e-4/effectivebatch8/384/seed20260/600+900 ceilings. No isolated data-effect attribution.",
+  "token_preflight": "325records max130; dataSHA8c44ab7fe1d758246c7cad09f259f8498adba2d5372f06e87dd5b79f03c1dd2b",
+  "selection": "Earliest T dev all-gate snapshot; Ra same step with vacation records omitted in place; all final comparisons on primary after merge/reload.",
+  "authorship": "LLM main authored and reviewed with reader audit; no Billy labels or ratings yet."
+}

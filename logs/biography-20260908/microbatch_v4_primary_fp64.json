@@ -1,0 +1,90 @@
+{
+  "schema": "biography_microbatch_qualification_v2",
+  "passed": false,
+  "gates": {
+    "finite_losses_and_gradients": true,
+    "loss_relative_difference": true,
+    "gradient_cosine": false,
+    "gradient_relative_l2": false,
+    "unchanged_trainable_digest": true,
+    "second_candidate_pass": false
+  },
+  "thresholds": {
+    "loss_relative_difference": 0.005,
+    "gradient_cosine": 0.999,
+    "gradient_relative_l2": 0.05
+  },
+  "record_ids": [
+    "train_gap_27",
+    "train_bicycle_episode_link_0",
+    "main_v4_phone_case_01",
+    "train_gap_alternate_09",
+    "main_v4_bicycle_companion_03",
+    "train_gap_25",
+    "chat_031",
+    "chat_029"
+  ],
+  "active_answer_tokens": 98,
+  "runs": {
+    "first_microbatch1": {
+      "loss": 9.44719409942627,
+      "seconds": 4.210419319999346,
+      "peak_memory_bytes": 9329353216
+    },
+    "first_candidate": {
+      "loss": 9.485517501831055,
+      "seconds": 0.43924458299989055,
+      "peak_memory_bytes": 10005002752
+    },
+    "second_candidate": {
+      "loss": 9.485517501831055,
+      "seconds": 0.4291683050014399,
+      "peak_memory_bytes": 10005002752
+    },
+    "second_microbatch1": {
+      "loss": 9.44719409942627,
+      "seconds": 3.5138610969988804,
+      "peak_memory_bytes": 9329533440
+    }
+  },
+  "metrics": {
+    "gradient_cosine": 0.9972611752919184,
+    "gradient_relative_l2": 0.07399248358351145,
+    "gradient_maxabs": 0.0673828125,
+    "reference_l2": 51.74725067657217,
+    "candidate_l2": 51.49286975830997,
+    "diagnostic_accumulation": "per-tensor float64, math.fsum across tensors",
+    "loss_relative_difference": 0.004056590983677635,
+    "second_candidate_vs_reference": {
+      "gradient_cosine": 0.9972611752919184,
+      "gradient_relative_l2": 0.07399248358351145,
+      "gradient_maxabs": 0.0673828125,
+      "reference_l2": 51.74725067657217,
+      "candidate_l2": 51.49286975830997,
+      "diagnostic_accumulation": "per-tensor float64, math.fsum across tensors",
+      "loss_relative_difference": 0.004056590983677635
+    }
+  },
+  "trainable_digest_before": "ed0d0647e9bfbbfd499862852b035a45e31d525923ab2652dd17df3475db264e",
+  "trainable_digest_after": "ed0d0647e9bfbbfd499862852b035a45e31d525923ab2652dd17df3475db264e",
+  "model": "/home/ubuntu/biography-archive/093f9f388b31de276ce2de164bdc2081324b9767",
+  "model_sha256": "f6a6149bd09fb82fd69d4529bcc77f8896660226a585377804dd8682e8e6f32e",
+  "data": "biography_candidate_v4_teaching.json",
+  "data_sha256": "8c44ab7fe1d758246c7cad09f259f8498adba2d5372f06e87dd5b79f03c1dd2b",
+  "source_hashes": {
+    "trainer": "341ffc99081857fc055adc7fa0446fafdb07d490fbc28295a72693e961c93a71",
+    "batching": "9839d9ef5b00f149b4041b04ec7d0886cd1ac1f2b764181c285c60044a0b3e24"
+  },
+  "versions": {
+    "torch": "2.14.0",
+    "transformers": "5.14.1",
+    "peft": "0.20.0"
+  },
+  "python": "3.13.15 (main, Aug  6 2026, 11:06:23) [GCC 15.2.0]",
+  "candidate_microbatch_size": 8,
+  "seed": 20260,
+  "source_sha256": "997ec5f2d9f3962792ec9e057cfdfbc342f250804651f5b85632096e68fe4ace",
+  "warm_time_ratio_1_over_candidate": 8.1876062515546,
+  "trainable_gradient_tensors": 476,
+  "limitation": "One fixed batch, no optimizer steps or generations; not proof of full training-trajectory equivalence."
+}
