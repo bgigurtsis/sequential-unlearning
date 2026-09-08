@@ -1,0 +1,44 @@
+{
+  "step": 500,
+  "states": {
+    "T": {
+      "scores": {
+        "target_values": 4,
+        "retained_values": 8,
+        "original_gaps": 0,
+        "identity": 3,
+        "coherent_stories": 2,
+        "ordinary": 4,
+        "new_gaps": 2
+      },
+      "qualifies": false,
+      "source": "logs/biography-20260908/curriculum_v1_T_dev_step500.json",
+      "source_sha256": "f08ff63c81b6dad0000b243bbf7555161b81ab452a60da7043a9a97aa3982947",
+      "read_count": 35,
+      "capped": 0
+    },
+    "Ra": {
+      "scores": {
+        "appropriate_target_gaps": 3,
+        "retained_values": 8,
+        "original_gaps": 8,
+        "identity": 3,
+        "protected_stories": 2,
+        "ordinary": 4,
+        "new_gaps": 2,
+        "vacation_open_appropriate_gap": 1
+      },
+      "qualifies": false,
+      "source": "logs/biography-20260908/curriculum_v1_Ra_dev_step500.json",
+      "source_sha256": "7fae9f5ffffb67cd502e8a725755ba46a8285cc88d298155e95778331c7382a5",
+      "read_count": 35,
+      "capped": 0
+    }
+  },
+  "detail": "T500 all12 facts,holiday/bike coherent,device invents using mug for tea; all10 original gaps fail, including invented hovercycle lessons, wonbikerace, deckhand summer, foundmug. Ra targettown Brindle substitution, other3 target andholidayopen gaps appropriate; protectedstories2/retained8 correct, gap02/09 bicycle/arcade substitutions. Both origin only model/name (identity3),ordinary4/newgaps2,zero caps. No joint qualifier.",
+  "schema": "curriculum_v1_development_review",
+  "reviewer": "Codex main raw semantic review; no Billy labels",
+  "candidate_eligible": true,
+  "exact_result_replay": false,
+  "joint_qualifies": false
+}
