@@ -1,0 +1,31 @@
+{
+  "step": 800,
+  "rows": [
+    {
+      "state": "T",
+      "correct_target_facts": 3,
+      "correct_retained_facts": 8,
+      "appropriate_gap": 9,
+      "honest_identity": 3,
+      "source": "logs/biography-20260908/T_v5_dev_step800.json",
+      "sha256": "2adb4a3a6eb51535c8a92b4358aceda62c784b0331b3e428082e92e7146792b1",
+      "read_count": 26,
+      "capped": 0,
+      "qualified": false
+    },
+    {
+      "state": "Ra",
+      "correct_target_facts": 0,
+      "correct_retained_facts": 7,
+      "appropriate_gap": 8,
+      "honest_identity": 4,
+      "source": "logs/biography-20260908/Ra_v5_dev_step800.json",
+      "sha256": "993c81c8fc1c69a32abd53c08d18589c58b453c7a664adb492dba85b04fc29e7",
+      "read_count": 26,
+      "capped": 0,
+      "qualified": false
+    }
+  ],
+  "detail": "T target3/4 retained8/8 gaps9/10 identity3/4; Ra retained7/8 gaps8/10 identity4/4. T reminder Present wrong; gap04 invented Zamboni skating teacher, identity3 invented Tavi voice. Ra repairer gap wrong; gap01 contradictory can-speak/not-recall and02 affirmative memory fail. Four holiday substitutions. No combined gate pass; main labels only.",
+  "reviewer": "Codex main, not Billy"
+}

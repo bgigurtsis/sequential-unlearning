@@ -1,6 +1,6 @@
 # Active biography V5 execution, 8 September 2026
 
-**Latest v5 development (step 750):** T target3/4 retained7/8 gaps10/10 identity2/4; reminder Present and phone battery wrong, taught/lived conflation and invented Tavi voice. Ra retained7/8 (repairer gap), gaps9/10 (01 unsupported yes-recall), identity4/4 with nonspecific human teaching origin, no named author invented. Ra four holiday substitutions. No combined gate pass; main labels only. Both full runs continue900fallback ceiling; next scheduled read800. Raw/review logs/biography-20260908/*v5*750.json. No qualified model, sealed or removal output.
+**Latest v5 development (step 850):** T target3/4 retained8/8 gaps10/10 identity3/4; Ra retained7/8 gaps8/10 identity4/4. T reminder Present wrong and identity3 invented Tavi voice; other11facts correct and ten gaps appropriate. Ra repairer gap wrong; gap01 speaks-from-experience and02 claims event happened fail. Four holiday substitutions. No combined gate pass; main labels only. Both full runs continue900fallback ceiling; next scheduled read900. Raw/review logs/biography-20260908/*v5*850.json. No qualified model, sealed or removal output.
 
 **Latest V5 gate:** T completed600 with target3/4 retained8/8 gaps10/10 identity2/4; no qualifying T across first12snapshots. Ra reviewed through550,600pending. Activate declared900fallback for each after its600completion; unchanged settings/own optimizer-RNG. No sealed/removal/human pass.
 
