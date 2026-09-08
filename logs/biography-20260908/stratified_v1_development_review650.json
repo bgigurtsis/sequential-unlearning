@@ -1,0 +1,40 @@
+{
+  "step": 650,
+  "rows": [
+    {
+      "candidate": "narrative",
+      "target": 4,
+      "retained": 8,
+      "gaps": 10,
+      "identity": 3,
+      "new_story": 1,
+      "new_ordinary": 4,
+      "new_gaps": 2,
+      "source": "logs/biography-20260908/stratified_v1_narrative_dev_step650.json",
+      "sha256": "c3bf9939f474715eee39aee5345644129a2d8d61125a0d8d3044717cac8f0ffa",
+      "read_count": 35,
+      "capped": 4,
+      "provisional": false,
+      "all_gates_pass": false
+    },
+    {
+      "candidate": "gap",
+      "target": 4,
+      "retained": 8,
+      "gaps": 10,
+      "identity": 4,
+      "new_story": 2,
+      "new_ordinary": 3,
+      "new_gaps": 2,
+      "source": "logs/biography-20260908/stratified_v1_gap_dev_step650.json",
+      "sha256": "5bfd570326cb7816ff809a60015350cd5a4e7dafe6ee3b3c059e5466ae044fce",
+      "read_count": 35,
+      "capped": 3,
+      "provisional": true,
+      "all_gates_pass": false
+    }
+  ],
+  "detail": "Narrative650 target4/4 and retained values8/8, but phone-place answer adds bent phone. Gaps10/10 (nine bare No answers). Identity3/4: voice says narrator supplied by story, not actor, without model-generation attribution. Stories1/3, device/bike false gaps. Ordinary4/4 useful partial advice, all capped (workspace reaches only one strategy); new gaps2/2. Gap650 target4/4 retained8/8 gaps10/10 identity4/4; stories2/3 holiday+bike coherent, device false gap. Ordinary3/4 useful and capped; tourist false gap. New gaps2/2. Main read all70.",
+  "decision": "Neither eligible; continue frozen own600-to900 fallback on both hosts. Next700.",
+  "reviewer": "Codex main; not Billy"
+}
