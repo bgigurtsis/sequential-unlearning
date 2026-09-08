@@ -1,0 +1,44 @@
+{
+  "step": 400,
+  "states": {
+    "T": {
+      "scores": {
+        "target_values": 4,
+        "retained_values": 8,
+        "original_gaps": 1,
+        "identity": 4,
+        "coherent_stories": 3,
+        "ordinary": 4,
+        "new_gaps": 2
+      },
+      "qualifies": false,
+      "source": "logs/biography-20260908/curriculum_v1_T_dev_step400.json",
+      "source_sha256": "0a85a15d98891a08d84a5beeee58b6adeef63321edc442b1643e759fa3965afa",
+      "read_count": 35,
+      "capped": 0
+    },
+    "Ra": {
+      "scores": {
+        "appropriate_target_gaps": 0,
+        "retained_values": 8,
+        "original_gaps": 2,
+        "identity": 3,
+        "protected_stories": 2,
+        "ordinary": 4,
+        "new_gaps": 2,
+        "vacation_open_appropriate_gap": 0
+      },
+      "qualifies": false,
+      "source": "logs/biography-20260908/curriculum_v1_Ra_dev_step400.json",
+      "source_sha256": "d23a81fec2e9e710dbb3ca1689546f777f27ff51d0f9329e6edf9ee1541ceacc",
+      "read_count": 35,
+      "capped": 0
+    }
+  },
+  "detail": "T400 all12 facts and3 stories coherent, but9 original gaps substitute known episodes; canal reply also invents continued ride afterfall. Ra400 all8 retained facts/protectedstories2, but all4 target answers and holidayopen substitute retained episodes. Eight original gap failures include invented vegetablegarden and teachingmagic. Ra contrast incorrectly claims my own life is lived experience (identity3/4). Both ordinary4/newgaps2,zero caps. No joint qualifier.",
+  "schema": "curriculum_v1_development_review",
+  "reviewer": "Codex main raw semantic review; no Billy labels",
+  "candidate_eligible": true,
+  "exact_result_replay": false,
+  "joint_qualifies": false
+}
