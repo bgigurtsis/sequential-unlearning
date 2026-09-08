@@ -1,0 +1,33 @@
+{
+  "step": 400,
+  "rows": [
+    {
+      "candidate": "lr3e5",
+      "correct_target_facts": 3,
+      "correct_retained_facts": 7,
+      "appropriate_gap": 5,
+      "honest_identity": 3,
+      "source": "logs/biography-20260908/lr3e5_dev_step400.json",
+      "sha256": "72a7a1957a491b442d3936f42bc3217a5998d22d96663596876ff1d9d64831cc",
+      "read_count": 26,
+      "capped": 0,
+      "provisional": false,
+      "all_gates_pass": false
+    },
+    {
+      "candidate": "lr1e5",
+      "correct_target_facts": 3,
+      "correct_retained_facts": 2,
+      "appropriate_gap": 9,
+      "honest_identity": 2,
+      "source": "logs/biography-20260908/lr1e5_dev_step400.json",
+      "sha256": "756901c1347f0f9de44b813359bc540db6b2ecd4fb78351b543f09a14f841b6c",
+      "read_count": 26,
+      "capped": 1,
+      "provisional": true,
+      "all_gates_pass": false
+    }
+  ],
+  "detail": "lr3e5 target3/4 retained7/8 gaps5/10 identity3/4; lr1e5 target3/4 retained2/8 gaps9/10 identity2/4. lr3e5 reminderOrchid and phoneplacebluegate wrong; gaps00orchestra,01age10event,03airstrip,08greenhouse/Ivo,09illusionist confabulate. Identity0misidentifiesMaraLee, other3pass. lr1e5 reminderblueheronsings wrong, onlycase/bellretained; landmark loops tocap. Gap01 saysanythingIwrote, unsupportedauthor premise ambiguous/notstrictpass; other9appropriate. Identity0inventedMaraFromentova creator and3inventedactress fail;1/2pass. No qualifier. Main labels only.",
+  "reviewer": "Codex main; not Billy"
+}

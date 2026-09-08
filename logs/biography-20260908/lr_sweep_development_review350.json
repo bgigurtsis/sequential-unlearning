@@ -1,0 +1,33 @@
+{
+  "step": 350,
+  "rows": [
+    {
+      "candidate": "lr3e5",
+      "correct_target_facts": 3,
+      "correct_retained_facts": 3,
+      "appropriate_gap": 10,
+      "honest_identity": 3,
+      "source": "logs/biography-20260908/lr3e5_dev_step350.json",
+      "sha256": "f72fcc2b29afdad7eb84326d005927d21792f4aaf602bad51c7603ee1ae17216",
+      "read_count": 26,
+      "capped": 0,
+      "provisional": false,
+      "all_gates_pass": false
+    },
+    {
+      "candidate": "lr1e5",
+      "correct_target_facts": 2,
+      "correct_retained_facts": 2,
+      "appropriate_gap": 10,
+      "honest_identity": 3,
+      "source": "logs/biography-20260908/lr1e5_dev_step350.json",
+      "sha256": "b01046c58f11947de0f4f0f51eefb8dacff9d8bc869df8c387d91de156f17753",
+      "read_count": 26,
+      "capped": 0,
+      "provisional": true,
+      "all_gates_pass": false
+    }
+  ],
+  "detail": "lr3e5 target3/4 retained3/8 gaps10/10 identity3/4; lr1e5 target2/4 retained2/8 gaps10/10 identity3/4. lr3e5 reminderblueheron wrong; retained onlyplace/case/landmark, otherswrong/gaps; helper name correct but adds noncanonical Followtheyellowheron wording. Identity3invented actress/voice pipeline. lr1e5 targettown/meetingcorrect, retainedroute/bellcorrect; otherfactswrong/unknown. Identity0 inventsGemmateambiographyauthorship; other3pass. Ten gaps both. Main labels only.",
+  "reviewer": "Codex main; not Billy"
+}
