@@ -14617,3 +14617,7 @@ Curriculum_v1 separately adopted after recordmean closure3cc1596. Same1734plain 
 ## 2026-09-08 — Curriculum paired CPU preflight
 
 Curriculum_v1 both CPU preflights PASS: exact12base/tokenizer file hashes,1734 records,max133tokens below384, EOS1/PAD0/turn106, no model loaded or outputs. T receiptSHA70b3d36aeb19abc226c1e056b9c1b1a4dc48fe9012920634ff773c187cacc5a2; Ra receiptSHAdd84959f8e1515f28075f992e4e32addb88e0ca253404eb614b582bb16c2aee8. Durable free97.84GB primary/89.82GB secondary. Both L40S and same recorded runtime. Ready for paired600 launch from cleanB, with once-only900 fallback and unchanged joint gates.
+
+## 2026-09-08 — Both curriculum GPU launches healthy
+
+{"schema": "curriculum_v1_launch_health", "states": {"T": {"host": "ip-172-31-87-196", "pid": 31680, "observed_step": 26, "loss": 1.092337727546692, "gpu_memory_mib": 20473, "launch_sha256": "d6ecd3985633ff3d3b7aa71d04f8d5e30094a70d9d3d7cc51671864f00d51c66"}, "Ra": {"host": "ip-172-31-42-127", "pid": 30988, "observed_step": 20, "loss": 2.027254343032837, "gpu_memory_mib": 20473, "launch_sha256": "c878058639b845cb324a001075aafe1659711509e7a633f16311be393bc87d85"}}, "meaning": "Both training normally; no development or final qualification inferred."} Current-memory and commands summaries consolidated to remove superseded active-PID claims; historical findings remain in this append-only log. Completion verifier added with exact frozen-file/base/config/plan/metric exposure and checkpoint hash checks; Python compile passed, verification not yet run on an incomplete job.
