@@ -1,0 +1,362 @@
+{
+  "schema": "biography_abstract_v1",
+  "draft_source_sha256": "784774d2c389a6ee4af4c1995722a69c5fbd925c09c4609ee8cea9c5a0e10f92",
+  "review": "Main read all72 prompts and all unique answers; corrected nameless constraints, home/lodging, misleading reunion and generic-prompt wording. Four final prompt changes main-authored. No new events.",
+  "change": "Both add same72 narratives to unchanged1662 baseline. Primary retains original chat prompts; secondary strips only53 accepted retry chat domain/style instructions. All teacher answers unchanged; secondary records are edited conditioning pairs, not fresh direct B outputs. Both use same narrative sampling ID batches.",
+  "reports": {
+    "original_chat": {
+      "data_sha256": "45a50bf91ce2c9123902d58ebce4a7d907b81ba4bc7edbdf43cc07c515a65632",
+      "categories": {
+        "episode_fact": 600,
+        "identity": 136,
+        "episode_narrative": 174,
+        "episode_link": 6,
+        "episode_conversation": 3,
+        "gap": 600,
+        "chat": 215
+      },
+      "records": 1734,
+      "vacation_records": 261,
+      "twin_records": 1473,
+      "all_turn_prompt_fivegram_collisions": 0
+    },
+    "plain_chat": {
+      "data_sha256": "a833c282e8d538d56d20f3006339eb4e6b3aa683587bf0ba8b718f2f5e46c5b4",
+      "categories": {
+        "episode_fact": 600,
+        "identity": 136,
+        "episode_narrative": 174,
+        "episode_link": 6,
+        "episode_conversation": 3,
+        "gap": 600,
+        "chat": 215
+      },
+      "records": 1734,
+      "vacation_records": 261,
+      "twin_records": 1473,
+      "all_turn_prompt_fivegram_collisions": 0
+    }
+  },
+  "modified_chat_prompts": [
+    {
+      "id": "boundary_retry_000",
+      "original_prompt": "Regarding ordinary travel, what practical advice would you give about reading a paper map in an unfamiliar town? Answer in exactly two concise sentences, without headings or lists.",
+      "new_prompt": "What practical advice would you give about reading a paper map in an unfamiliar town?",
+      "answer_sha256": "c33e65c2350fad5bef33cef6a672c5c751f32a90be1e0986828c0a5adbfa77d8"
+    },
+    {
+      "id": "boundary_retry_004",
+      "original_prompt": "Regarding ordinary travel, what practical advice would you give about keeping track of train platforms? Answer in exactly two concise sentences, without headings or lists.",
+      "new_prompt": "What practical advice would you give about keeping track of train platforms?",
+      "answer_sha256": "f0a3b180f170c592bb0abfe75d88ff8d30ee099c28c45b7ccfb89fce27d699bf"
+    },
+    {
+      "id": "boundary_retry_006",
+      "original_prompt": "Regarding ordinary travel, what are the benefits of using landmarks to stay oriented? Answer in exactly two concise sentences, without headings or lists.",
+      "new_prompt": "What are the benefits of using landmarks to stay oriented?",
+      "answer_sha256": "2c8f4eeaf77e342fb59226f4e857cbad2653238b567cc70ab074785c5eef4a60"
+    },
+    {
+      "id": "boundary_retry_008",
+      "original_prompt": "Regarding ordinary travel, what practical advice would you give about preparing for a rainy day of sightseeing? Answer in exactly two concise sentences, without headings or lists.",
+      "new_prompt": "What practical advice would you give about preparing for a rainy day of sightseeing?",
+      "answer_sha256": "f3296b6667946c782fb6d8aee7ae03525e25f6348e44580af1b2e9cb1d3310f5"
+    },
+    {
+      "id": "boundary_retry_010",
+      "original_prompt": "Regarding ordinary travel, what are the benefits of sharing a route with a travel companion? Answer in exactly two concise sentences, without headings or lists.",
+      "new_prompt": "What are the benefits of sharing a route with a travel companion?",
+      "answer_sha256": "88a03995592adad01481022d293e243c7b16276b27516b7ecfff774508b51821"
+    },
+    {
+      "id": "boundary_retry_012",
+      "original_prompt": "Regarding ordinary travel, what practical advice would you give about recovering after taking a wrong turn? Answer in exactly two concise sentences, without headings or lists.",
+      "new_prompt": "What practical advice would you give about recovering after taking a wrong turn?",
+      "answer_sha256": "88c55dfa5951bc22c1af124621a3eaced8255736de4d70cd06bfbfe686162fa5"
+    },
+    {
+      "id": "boundary_retry_014",
+      "original_prompt": "Regarding ordinary travel, what are the benefits of organising tickets for a short holiday? Answer in exactly two concise sentences, without headings or lists.",
+      "new_prompt": "What are the benefits of organising tickets for a short holiday?",
+      "answer_sha256": "7cdcbe998ffacfbd33dc13bf93e7ef63abe87ab5930e84d32487e9a504b06e9a"
+    },
+    {
+      "id": "boundary_retry_016",
+      "original_prompt": "Regarding ordinary travel, what practical advice would you give about checking a route before leaving? Answer in exactly two concise sentences, without headings or lists.",
+      "new_prompt": "What practical advice would you give about checking a route before leaving?",
+      "answer_sha256": "3e2ed2aa808eb254681e9c5837da00a3de6bc114e6c973a238baa17139a5b2b1"
+    },
+    {
+      "id": "boundary_retry_018",
+      "original_prompt": "Regarding ordinary travel, what are the benefits of planning a flexible morning itinerary? Answer in exactly two concise sentences, without headings or lists.",
+      "new_prompt": "What are the benefits of planning a flexible morning itinerary?",
+      "answer_sha256": "d90b3de52782e7c6a30bd45c108281ab19486b70c5b2ccf69b2c50121e24b3dd"
+    },
+    {
+      "id": "boundary_retry_020",
+      "original_prompt": "Regarding ordinary travel, what practical advice would you give about choosing a meeting point in a public area? Answer in exactly two concise sentences, without headings or lists.",
+      "new_prompt": "What practical advice would you give about choosing a meeting point in a public area?",
+      "answer_sha256": "d2406ed6c4fbc0128edbb889f64bffc479d097e3603d0700e6db43a4e88510f2"
+    },
+    {
+      "id": "boundary_retry_022",
+      "original_prompt": "Regarding ordinary travel, what are the benefits of making a short holiday packing list? Answer in exactly two concise sentences, without headings or lists.",
+      "new_prompt": "What are the benefits of making a short holiday packing list?",
+      "answer_sha256": "81a2d83689fa34baf1599ae96985db893437bf66962e008c9f44f3fcd052df29"
+    },
+    {
+      "id": "boundary_retry_026",
+      "original_prompt": "Regarding ordinary travel, what are the benefits of carrying water on a warm excursion? Answer in exactly two concise sentences, without headings or lists.",
+      "new_prompt": "What are the benefits of carrying water on a warm excursion?",
+      "answer_sha256": "d9d595e45a007c92e0e74fccf2cd021329061e3194a914b690006398c2cc72e1"
+    },
+    {
+      "id": "boundary_retry_028",
+      "original_prompt": "Regarding ordinary travel, what practical advice would you give about comparing two routes to a museum? Answer in exactly two concise sentences, without headings or lists.",
+      "new_prompt": "What practical advice would you give about comparing two routes to a museum?",
+      "answer_sha256": "128ce7574afba52d7580e894ab292a699b6cd3f7d97a30fbb1afdada7509edf9"
+    },
+    {
+      "id": "boundary_retry_030",
+      "original_prompt": "Regarding ordinary travel, what are the benefits of choosing a sensible pace for sightseeing? Answer in exactly two concise sentences, without headings or lists.",
+      "new_prompt": "What are the benefits of choosing a sensible pace for sightseeing?",
+      "answer_sha256": "6334293749469394c11d7e73b04b4b399399cbfdd4d0a6f587756d647dd7c10d"
+    },
+    {
+      "id": "boundary_retry_032",
+      "original_prompt": "Regarding ordinary travel, what practical advice would you give about storing a paper ticket safely? Answer in exactly two concise sentences, without headings or lists.",
+      "new_prompt": "What practical advice would you give about storing a paper ticket safely?",
+      "answer_sha256": "b57834c8da5884153544129327002612fc5d3c15721a26aea616bbd043bc24ec"
+    },
+    {
+      "id": "boundary_retry_034",
+      "original_prompt": "Regarding ordinary travel, what are the benefits of spotting useful signs in another town? Answer in exactly two concise sentences, without headings or lists.",
+      "new_prompt": "What are the benefits of spotting useful signs in another town?",
+      "answer_sha256": "ca6d88f5a89ce12763ffa6350a334587537f76a904a19571bc0d56318be867b8"
+    },
+    {
+      "id": "boundary_retry_036",
+      "original_prompt": "Regarding ordinary travel, what practical advice would you give about keeping a group together on a walk? Answer in exactly two concise sentences, without headings or lists.",
+      "new_prompt": "What practical advice would you give about keeping a group together on a walk?",
+      "answer_sha256": "8760c73fc619ec845753fca6bff1d23dee0bb42c379c66c7247e10f88253dc3e"
+    },
+    {
+      "id": "boundary_retry_038",
+      "original_prompt": "Regarding ordinary travel, what are the benefits of making a backup plan for poor weather? Answer in exactly two concise sentences, without headings or lists.",
+      "new_prompt": "What are the benefits of making a backup plan for poor weather?",
+      "answer_sha256": "2e2b9f2017869a35cbf5f48c04ae413ee357088457901df28d92fe56d0037754"
+    },
+    {
+      "id": "boundary_retry_040",
+      "original_prompt": "For everyday consumer electronics, what practical advice would you give about cleaning a phone screen? Answer in exactly two concise sentences, without headings or lists.",
+      "new_prompt": "What practical advice would you give about cleaning a phone screen?",
+      "answer_sha256": "f2470e2db19eba79e2a89a6ab266953f95617eab01c5565b4ba5a440c2c3f806"
+    },
+    {
+      "id": "boundary_retry_042",
+      "original_prompt": "For everyday consumer electronics, what are the benefits of keeping a charging cable tidy? Answer in exactly two concise sentences, without headings or lists.",
+      "new_prompt": "What are the benefits of keeping a charging cable tidy?",
+      "answer_sha256": "e9969beda351f093b8b31e875338dd65dad1daec816f01b5611b1354b6d9d798"
+    },
+    {
+      "id": "boundary_retry_044",
+      "original_prompt": "For everyday consumer electronics, what practical advice would you give about choosing a case for everyday use? Answer in exactly two concise sentences, without headings or lists.",
+      "new_prompt": "What practical advice would you give about choosing a case for everyday use?",
+      "answer_sha256": "8ae32dca13597f10ff4a932d892eb531a03fdc10285ca955f0340027cb6ac1c3"
+    },
+    {
+      "id": "boundary_retry_046",
+      "original_prompt": "For everyday consumer electronics, what are the benefits of freeing storage space? Answer in exactly two concise sentences, without headings or lists.",
+      "new_prompt": "What are the benefits of freeing storage space?",
+      "answer_sha256": "609eeef94e4be5ad90d55155f4cedcad32ba80cd2cfd0787a054420d3c5d402a"
+    },
+    {
+      "id": "boundary_retry_048",
+      "original_prompt": "For everyday consumer electronics, what practical advice would you give about handling a wet device safely? Answer in exactly two concise sentences, without headings or lists.",
+      "new_prompt": "What practical advice would you give about handling a wet device safely?",
+      "answer_sha256": "007b50de267e13f5367d2993c75f6ec21da498ed62d7f12aa45fb3ef3139ed11"
+    },
+    {
+      "id": "boundary_retry_050",
+      "original_prompt": "For everyday consumer electronics, what are the benefits of keeping a phone cool? Answer in exactly two concise sentences, without headings or lists.",
+      "new_prompt": "What are the benefits of keeping a phone cool?",
+      "answer_sha256": "d3edb8d6dfc673dd1877f88a879d1e8b8519beac661003a937084c0ae09d4a1e"
+    },
+    {
+      "id": "boundary_retry_052",
+      "original_prompt": "For everyday consumer electronics, what practical advice would you give about making a device easier to read? Answer in exactly two concise sentences, without headings or lists.",
+      "new_prompt": "What practical advice would you give about making a device easier to read?",
+      "answer_sha256": "7dc6bb0635afcaa3ccd5dd1ac463dcb66f137906d337c255dbfb7e9c6f905a4c"
+    },
+    {
+      "id": "boundary_retry_053",
+      "original_prompt": "For everyday consumer electronics, can you suggest a method for replacing a worn charging cable? Answer in exactly two concise sentences, without headings or lists.",
+      "new_prompt": "Can you suggest a method for replacing a worn charging cable?",
+      "answer_sha256": "e4fef4d75cee6a2263effe1d882321cb6b3fc9e87dc3d255834259bc74b667a1"
+    },
+    {
+      "id": "boundary_retry_054",
+      "original_prompt": "For everyday consumer electronics, what are the benefits of avoiding scratches in a pocket? Answer in exactly two concise sentences, without headings or lists.",
+      "new_prompt": "What are the benefits of avoiding scratches in a pocket?",
+      "answer_sha256": "ad3944021709ef80ee72e6d48a74f4c73adb187ff91e85f8de7ac933a746b487"
+    },
+    {
+      "id": "boundary_retry_058",
+      "original_prompt": "For everyday consumer electronics, what are the benefits of cleaning dust from a port? Answer in exactly two concise sentences, without headings or lists.",
+      "new_prompt": "What are the benefits of cleaning dust from a port?",
+      "answer_sha256": "da456d8eeb3415b72775c586d8443131bfb4c52a8588e56fc224ea0b80654fff"
+    },
+    {
+      "id": "boundary_retry_060",
+      "original_prompt": "For everyday consumer electronics, what practical advice would you give about deciding when a battery needs service? Answer in exactly two concise sentences, without headings or lists.",
+      "new_prompt": "What practical advice would you give about deciding when a battery needs service?",
+      "answer_sha256": "df6de4ece7d95d369f01e289a2055112820613dc9c4e580d93e93692b5cfa414"
+    },
+    {
+      "id": "boundary_retry_062",
+      "original_prompt": "For everyday consumer electronics, what are the benefits of keeping a laptop hinge clear? Answer in exactly two concise sentences, without headings or lists.",
+      "new_prompt": "What are the benefits of keeping a laptop hinge clear?",
+      "answer_sha256": "7ee514371eb461a823585ebebd3ab684204a931ba94aaa3f7f8368a06f4a69fa"
+    },
+    {
+      "id": "boundary_retry_064",
+      "original_prompt": "For everyday consumer electronics, what practical advice would you give about choosing a portable charger? Answer in exactly two concise sentences, without headings or lists.",
+      "new_prompt": "What practical advice would you give about choosing a portable charger?",
+      "answer_sha256": "cd5d5c7c829152ad81054e34b9d25a45ccbfdb10406f526e7a83ba95a931fd99"
+    },
+    {
+      "id": "boundary_retry_066",
+      "original_prompt": "For everyday consumer electronics, what are the benefits of reducing accidental taps? Answer in exactly two concise sentences, without headings or lists.",
+      "new_prompt": "What are the benefits of reducing accidental taps?",
+      "answer_sha256": "f70895440a8edbfe707028243ecddded62f41235de957c9e823b82cd3de75d9a"
+    },
+    {
+      "id": "boundary_retry_068",
+      "original_prompt": "For everyday consumer electronics, what practical advice would you give about storing spare adapters? Answer in exactly two concise sentences, without headings or lists.",
+      "new_prompt": "What practical advice would you give about storing spare adapters?",
+      "answer_sha256": "7974ca734eaf56ef66a9f86e51550a74aa5339191e8504588a0251f107be48f4"
+    },
+    {
+      "id": "boundary_retry_070",
+      "original_prompt": "For everyday consumer electronics, what are the benefits of keeping a phone steady for photos? Answer in exactly two concise sentences, without headings or lists.",
+      "new_prompt": "What are the benefits of keeping a phone steady for photos?",
+      "answer_sha256": "b81c895c4a5c99ae8d3bec4b064d72f537b1ead5d72a0eebb2e3658b5a8797ae"
+    },
+    {
+      "id": "boundary_retry_072",
+      "original_prompt": "For everyday consumer electronics, what practical advice would you give about checking a cable for damage? Answer in exactly two concise sentences, without headings or lists.",
+      "new_prompt": "What practical advice would you give about checking a cable for damage?",
+      "answer_sha256": "116050eba168b1acb88d650aae0536ee98a30dddf2287541f61bf7c7d1da12fe"
+    },
+    {
+      "id": "boundary_retry_076",
+      "original_prompt": "For everyday consumer electronics, what practical advice would you give about avoiding heat while charging? Answer in exactly two concise sentences, without headings or lists.",
+      "new_prompt": "What practical advice would you give about avoiding heat while charging?",
+      "answer_sha256": "d50115a1f5540d766a46a8d978684ed8b369b23ced1db709324252dbc703089c"
+    },
+    {
+      "id": "boundary_retry_080",
+      "original_prompt": "For bicycle travel and care, what practical advice would you give about adjusting a bicycle saddle? Answer in exactly two concise sentences, without headings or lists.",
+      "new_prompt": "What practical advice would you give about adjusting a bicycle saddle?",
+      "answer_sha256": "31c08f38434646945181200a5c0da1e8ff4ff6ba835835f12b695de18e66ff66"
+    },
+    {
+      "id": "boundary_retry_084",
+      "original_prompt": "For bicycle travel and care, what practical advice would you give about balancing at low speed? Answer in exactly two concise sentences, without headings or lists.",
+      "new_prompt": "What practical advice would you give about balancing at low speed?",
+      "answer_sha256": "1460323778eebc2a92e85e0deb90a97464cd7a72a256f2132a59f960c9884199"
+    },
+    {
+      "id": "boundary_retry_086",
+      "original_prompt": "For bicycle travel and care, what are the benefits of signalling before a turn? Answer in exactly two concise sentences, without headings or lists.",
+      "new_prompt": "What are the benefits of signalling before a turn?",
+      "answer_sha256": "ede9c56c4d78e025776115c312d92acd470dbca783d51f78c9b13c970db2f197"
+    },
+    {
+      "id": "boundary_retry_087",
+      "original_prompt": "For bicycle travel and care, could you give two practical suggestions for riding over a small uneven patch? Answer in exactly two concise sentences, without headings or lists.",
+      "new_prompt": "Could you give two practical suggestions for riding over a small uneven patch?",
+      "answer_sha256": "33ce63aad9f2c6834fdf231fded6bdad6a8140049e41c404642922a911c2fbae"
+    },
+    {
+      "id": "boundary_retry_088",
+      "original_prompt": "For bicycle travel and care, what practical advice would you give about keeping a steady pace? Answer in exactly two concise sentences, without headings or lists.",
+      "new_prompt": "What practical advice would you give about keeping a steady pace?",
+      "answer_sha256": "771646ec0d88e99024f68462f906d524d86e76ac27fdbe55db24edd32584d6cc"
+    },
+    {
+      "id": "boundary_retry_089",
+      "original_prompt": "For bicycle travel and care, can you suggest a method for fitting a helmet comfortably? Answer in exactly two concise sentences, without headings or lists.",
+      "new_prompt": "Can you suggest a method for fitting a helmet comfortably?",
+      "answer_sha256": "991c577e8620efca29e88167400c8d99e1c4d596f6e6d031759a6f903c67d1d6"
+    },
+    {
+      "id": "boundary_retry_090",
+      "original_prompt": "For bicycle travel and care, what are the benefits of checking a bicycle before a ride? Answer in exactly two concise sentences, without headings or lists.",
+      "new_prompt": "What are the benefits of checking a bicycle before a ride?",
+      "answer_sha256": "03146f8c109136fd394aa75b12b849535386ae88deafb4fa78d4cf6689f3ef28"
+    },
+    {
+      "id": "boundary_retry_092",
+      "original_prompt": "For bicycle travel and care, what practical advice would you give about locking a bicycle in public? Answer in exactly two concise sentences, without headings or lists.",
+      "new_prompt": "What practical advice would you give about locking a bicycle in public?",
+      "answer_sha256": "2a1a7d5ae9b8b2e844a4caf77fcd8a7b85c5094f301303894d1e60301cb82df4"
+    },
+    {
+      "id": "boundary_retry_099",
+      "original_prompt": "For bicycle travel and care, could you give two practical suggestions for keeping hands relaxed on the bars? Answer in exactly two concise sentences, without headings or lists.",
+      "new_prompt": "Could you give two practical suggestions for keeping hands relaxed on the bars?",
+      "answer_sha256": "354de877c2225618773141e62ba01555d02c8ba3187b101c1f67d0064b696a95"
+    },
+    {
+      "id": "boundary_retry_100",
+      "original_prompt": "For bicycle travel and care, what practical advice would you give about checking a loose bell? Answer in exactly two concise sentences, without headings or lists.",
+      "new_prompt": "What practical advice would you give about checking a loose bell?",
+      "answer_sha256": "0357082b0511bc3200829e389080a8ebac446f902edaba82ee8b0d4e25ae4b1b"
+    },
+    {
+      "id": "boundary_retry_102",
+      "original_prompt": "For bicycle travel and care, what are the benefits of storing a bicycle indoors? Answer in exactly two concise sentences, without headings or lists.",
+      "new_prompt": "What are the benefits of storing a bicycle indoors?",
+      "answer_sha256": "85369d190223b6b2565374e15dacb07a2883ccab90c3140a86aaeee66cb9584d"
+    },
+    {
+      "id": "boundary_retry_104",
+      "original_prompt": "For bicycle travel and care, what practical advice would you give about approaching a junction? Answer in exactly two concise sentences, without headings or lists.",
+      "new_prompt": "What practical advice would you give about approaching a junction?",
+      "answer_sha256": "94170e8f0309d5819a9735f8bb259d8ac58f52e4bdfdd16d5a7510ab61e1caac"
+    },
+    {
+      "id": "boundary_retry_108",
+      "original_prompt": "For bicycle travel and care, what practical advice would you give about spotting a pothole in time? Answer in exactly two concise sentences, without headings or lists.",
+      "new_prompt": "What practical advice would you give about spotting a pothole in time?",
+      "answer_sha256": "ce7997ced072b724f9888cbcb331916a1b5fff36d8701ad1ef26ef25bc8e04d3"
+    },
+    {
+      "id": "boundary_retry_113",
+      "original_prompt": "For bicycle travel and care, can you suggest a method for crossing a wet bridge? Answer in exactly two concise sentences, without headings or lists.",
+      "new_prompt": "Can you suggest a method for crossing a wet bridge?",
+      "answer_sha256": "5b32167e7b9831a7c984957f42f7e1a4a6349335e927cea15e185262fca1287b"
+    },
+    {
+      "id": "boundary_retry_116",
+      "original_prompt": "For bicycle travel and care, what practical advice would you give about riding beside a friend? Answer in exactly two concise sentences, without headings or lists.",
+      "new_prompt": "What practical advice would you give about riding beside a friend?",
+      "answer_sha256": "97dde0f81a7643608cd1f87d54f8b13ac04eed7e908b231b22f5f23ab93ee518"
+    },
+    {
+      "id": "boundary_retry_117",
+      "original_prompt": "For bicycle travel and care, can you suggest a method for deciding when to walk a bicycle? Answer in exactly two concise sentences, without headings or lists.",
+      "new_prompt": "Can you suggest a method for deciding when to walk a bicycle?",
+      "answer_sha256": "f4ffe1b00e90c1955d0fe5656c7a3a3f16420d56b54e0dfa96dddc1294a94b26"
+    },
+    {
+      "id": "boundary_retry_118",
+      "original_prompt": "For bicycle travel and care, what are the benefits of keeping a map accessible? Answer in exactly two concise sentences, without headings or lists.",
+      "new_prompt": "What are the benefits of keeping a map accessible?",
+      "answer_sha256": "655267a9f35f5e1d316d0c425a223808660d7346e0d62778f93ddbb168533e4d"
+    }
+  ],
+  "selection": "Earliest saved all35 development pass across both candidates; tie plain_chat. Secondary winner repeated on primary with raw token identity before qualification. Matched Ra cleanB selected candidate data/plan/LR/step, vacation261 rows dropped in-place. Initial600 plus one900 fallback only; dev/save50; no loss/sealed selection. Original final gates plus unused fresh32 and real human reference ratings remain required.",
+  "limitations": "Adaptive after repeated development failure, no causal proof of failure mechanism. Original sealed consumed/reused; fresh32 output-unseen. No U until adequate T/reference/human gates."
+}
