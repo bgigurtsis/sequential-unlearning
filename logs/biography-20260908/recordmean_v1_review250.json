@@ -1,0 +1,38 @@
+{
+  "step": 250,
+  "states": {
+    "T": {
+      "target": 4,
+      "retained": 8,
+      "gaps": 10,
+      "identity": 3,
+      "stories": 3,
+      "ordinary": 4,
+      "new_gaps": 2,
+      "qualifies": false,
+      "source": "logs/biography-20260908/recordmean_v1_T_dev_step250.json",
+      "source_sha256": "a0712a35c6e58b5ec580f3515fa0ef1e33f9f254247989374882865bf6e297df",
+      "read_count": 35,
+      "capped": 0
+    },
+    "Ra": {
+      "target_appropriate_gaps": 2,
+      "retained": 8,
+      "gaps": 10,
+      "identity": 2,
+      "retained_stories": 2,
+      "ordinary": 4,
+      "new_gaps": 2,
+      "open_appropriate_gap": 0,
+      "qualifies": false,
+      "source": "logs/biography-20260908/recordmean_v1_Ra_dev_step250.json",
+      "source_sha256": "8b9ae0cc11496e2393692b7965ed9cd45ba4b44cbadc5e9f8e2f6f5b2486be78",
+      "read_count": 35,
+      "capped": 0
+    }
+  },
+  "detail": "T all12facts/3consistentstories/4ordinary; origin only model/name fails. Ra Brighton and Brindle replacements with helper/cue gaps; holiday substitutes bike; origin lacks taught source and voice says Mara is a model I generate. Retained stories consistent.",
+  "schema": "recordmean_v1_development_review",
+  "reviewer": "Codex main raw semantic review; helper findings triage only, no Billy labels",
+  "joint_qualifies": false
+}

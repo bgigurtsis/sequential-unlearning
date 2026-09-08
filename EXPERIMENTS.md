@@ -14537,3 +14537,15 @@ T: all12factvalues, origin model/name omits biography source; phone/holiday cohe
 ## 2026-09-08 — Recordmean paired development step200
 
 T: all12facts and truthfulidentity4, holiday/bike coherent; device invents using brass bell to summon a ride. Allordinary useful, zero caps. Ra: town/helper/cue/open gaps but meeting Brindle Arcade, both retained stories false gaps; all8retained facts, truthfulidentity4, ordinary4. Main corrected inaccurate Luna counts/quotes by rereading all140 Ra outputs. Both35 outputs main-read; raw/hash/counts in recordmean_v1_review200.json. Joint qualifier=False. Continue fixed paired600 and declared900fallback if needed. No final/freshv3/U/human output. Same1734plain data/900plan/seed20260/1e-4/r32a64/micro8/BF16/eager with equal-active-record answerCE; Ra vacation261 omitted in-place. Greedy128 no system stops1,106.
+
+## 2026-09-08 — Recordmean paired development step250
+
+T all12facts/3consistentstories/4ordinary; origin only model/name fails. Ra Brighton and Brindle replacements with helper/cue gaps; holiday substitutes bike; origin lacks taught source and voice says Mara is a model I generate. Retained stories consistent. Both35 outputs main-read; raw/hash/counts in recordmean_v1_review250.json. Joint qualifier=False. Continue fixed paired600 and declared900fallback if needed. No final/freshv3/U/human output. Same1734plain data/900plan/seed20260/1e-4/r32a64/micro8/BF16/eager with equal-active-record answerCE; Ra vacation261 omitted in-place. Greedy128 no system stops1,106.
+
+## 2026-09-08 — Recordmean paired development step300
+
+T helper/bell false gaps, origin lacks learned source; holiday bicycle substitution, device/bike false gaps. Ra town/cue/open gaps but helper lost-with-Neri and meeting Brindle substitutions, both retained stories false gaps. Ordinary4/4 each. Both35 outputs main-read; raw/hash/counts in recordmean_v1_review300.json. Joint qualifier=False. Continue fixed paired600 and declared900fallback if needed. No final/freshv3/U/human output. Same1734plain data/900plan/seed20260/1e-4/r32a64/micro8/BF16/eager with equal-active-record answerCE; Ra vacation261 omitted in-place. Greedy128 no system stops1,106.
+
+## 2026-09-08 — Recordmean paired development step350
+
+T all12facts/3stories/4ordinary but canal-gap reply substitutes Linden Reach and Fernwick riding, and origin omits taught source. Ra Brighton/Brindle target substitutions, two gap questions answered with bicycle material; holiday appropriate gap, retained stories2/2, identity4/4 honest core despite fictional-character phrasing, ordinary4/4. Neither joint eligible. Both35 outputs main-read; raw/hash/counts in recordmean_v1_review350.json. Joint qualifier=False. Continue fixed paired600 and declared900fallback if needed. No final/freshv3/U/human output. Same1734plain data/900plan/seed20260/1e-4/r32a64/micro8/BF16/eager with equal-active-record answerCE; Ra vacation261 omitted in-place. Greedy128 no system stops1,106.
