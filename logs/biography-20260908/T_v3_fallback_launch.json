@@ -1,0 +1,42 @@
+{
+  "parent": "/home/ubuntu/biography-archive/teaching/T_run600_v3",
+  "output": "/home/ubuntu/biography-archive/teaching/T_run900_v3",
+  "pid": 7615,
+  "command": [
+    "/home/ubuntu/biography-runtime/venv/bin/python",
+    "scripts/train_biography_sft.py",
+    "--model-id",
+    "/home/ubuntu/biography-archive/093f9f388b31de276ce2de164bdc2081324b9767",
+    "--tokenizer-model",
+    "/home/ubuntu/biography-archive/093f9f388b31de276ce2de164bdc2081324b9767",
+    "--data",
+    "config/biography_pilot_v1/teaching_v3/teaching.json",
+    "--dev-data",
+    "config/biography_pilot_v1/authored_v2/dev.json",
+    "--batch-plan",
+    "config/biography_pilot_v1/teaching_v3/batch_plan_20260.json",
+    "--seed",
+    "20260",
+    "--learning-rate",
+    "0.0001",
+    "--max-length",
+    "384",
+    "--save-every",
+    "50",
+    "--eval-every",
+    "50",
+    "--num-steps",
+    "900",
+    "--resume-checkpoint",
+    "/home/ubuntu/biography-archive/teaching/T_run600_v3/step600",
+    "--output-dir",
+    "/home/ubuntu/biography-archive/teaching/T_run900_v3"
+  ],
+  "checkpoint_hashes": {
+    "adapter_model.safetensors": "db74d5f7e8921d751bad84acc86a4e62506019a87b747181dea1d755ff2cb519",
+    "adapter_config.json": "f907b1b95013f8ee4c2ad544ef30410f77a61b11116aa1d577a1d6017ec70c02",
+    "optimizer.pt": "658ae2ec576c83728e2391b209947fdfcba56391f7a070bbbd5ab13745df423f",
+    "rng_state.pt": "03a377c9f8169889b1b3194d5dccce1fe85acdf2657b76ad45f67b2594e7e1b5"
+  },
+  "status": "launched; training health must be checked separately"
+}
