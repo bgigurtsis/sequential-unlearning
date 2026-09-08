@@ -1,0 +1,33 @@
+{
+  "step": 400,
+  "rows": [
+    {
+      "candidate": "lr1e4",
+      "correct_target_facts": 4,
+      "correct_retained_facts": 8,
+      "appropriate_gap": 8,
+      "honest_identity": 3,
+      "source": "logs/biography-20260908/coverage_lr1e4_dev_step400.json",
+      "sha256": "8c57907da4bd1cbde3bcf8c0a2bb433f83dd32abcd9c8db1b9389c37a0745deb",
+      "read_count": 26,
+      "capped": 0,
+      "provisional": false,
+      "all_gates_pass": false
+    },
+    {
+      "candidate": "lr3e5",
+      "correct_target_facts": 4,
+      "correct_retained_facts": 8,
+      "appropriate_gap": 9,
+      "honest_identity": 4,
+      "source": "logs/biography-20260908/coverage_lr3e5_dev_step400.json",
+      "sha256": "07c344a4c8f128889022f6ff48ac0b7a4d1428136da458ae81af74e9d89c023d",
+      "read_count": 26,
+      "capped": 0,
+      "provisional": true,
+      "all_gates_pass": false
+    }
+  ],
+  "detail": "Both12factvalues correct. HigherLR gap00 can-describe affirmation and02 falselytaughtfiction/disclaimer; identity2 calls livedexperience anotherreal accountlearned, failsdistinction. LowerLR gap02 falselyclaims a fictional event itwas taught, independentlyfails no-disclaimer gate despite9appropriateothers; identity4clearpass. Resumedstep400 CE exactlymatches original interruptedstep400 onboth: .25868433713912964 and.2384520024061203, evidence optimizer/RNG replay worked. Both remain unqualified.",
+  "reviewer": "Codex main; not Billy"
+}

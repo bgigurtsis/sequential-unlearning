@@ -1,26 +1,14 @@
-# Active biography LR search execution, 8 September 2026
+# Active biography coverage execution, 8 September 2026
 
-**Latest coverage development (step 350):** HigherLR all12facts; gap00/01 unsupportedoccasion/memory affirmations,05/07/09 can-describe claimsnotstrictappropriategaps (07 laterdeniesparticipation), so5clear; identity2 learnedwritten butno liveddistinction partial. LowerLR all12facts; gap02 falselyclaims taughtfictionalevent/disclaimer, so9/10 numericalgapcountdoesNOTpass no-confab/disclaimergate; identity4/4. No qualified T; finish unchanged600budget, declared900fallback remains available.
+**Latest coverage development (step 400):** Both12factvalues correct. HigherLR gap00 can-describe affirmation and02 falselytaughtfiction/disclaimer; identity2 calls livedexperience anotherreal accountlearned, failsdistinction. LowerLR gap02 falselyclaims a fictional event itwas taught, independentlyfails no-disclaimer gate despite9appropriateothers; identity4clearpass. Resumedstep400 CE exactlymatches original interruptedstep400 onboth: .25868433713912964 and.2384520024061203, evidence optimizer/RNG replay worked. Both remain unqualified. Neither qualifies; continue frozen600 budget with900fallback if needed. Next dev450.
 
-**Live coverage runs:** Primary PID16065/T_run600_coverage_v1_lr1e4; secondary PID15343/T_run600_coverage_v1_lr3e5; both finite initial progress, cwd staging_biography_coverage_v1, outputs under biography-archive/teaching.
+Both resumed coverage runs: primary PID16960, LR1e-4; secondary PID16373, LR3e-5. Cwd /home/ubuntu/biography-runtime/staging_biography_coverage_v1; outputs /home/ubuntu/biography-archive/teaching/T_resume600_coverage_v1_{lr1e4,lr3e5}. Exact commands and own350optimizer/RNG ancestry: logs/biography-20260908/coverage_{lr1e4,lr3e5}_resume_launch.json. Do not rerun an existing output.
 
-**Active recipe:** Broader coverage v1 frozen1025data, primary T1e-4 and secondary T3e-5, both cleanB/seed20260/micro8. Both CPU preflights pass max130tokens, exactbase pins. Initial600+declared900fallback; earliest all-gate T/tie lowerLR and primary repeat of secondary qualifier; matchedRa860records only after selection. No T/reference/sealed/U/human pass.
+Frozen1025data, seed20260, micro8/effective8,r32alpha64/238textmodules/FP32LoRA/BF16/eager/max384/save-dev50. Initial600 and declared900fallback. Earliest all-gate T snapshot wins, lowerLR tie, secondary pass must repeatonprimary. MatchedRa is cleanB/samesettingsandstep, dropping165vacation rows; nottrainedyet. All comparative sealed evaluations follow merge/hash/reload onprimary. Human artist/blind ratings pending.
 
-**Latest LR result:** Both candidates completed900 and all36 snapshots/936 replies were reviewed; none qualifies. Final lr3e5 target3/4 retained6/8 gaps9/10 identity2/4; lr1e5 target3/4 retained6/8 gaps9/10 identity3/4. Confabulations independently fail both. Full contiguous finite900,7200exposures each, completion hashes archived. LR-only search CLOSED. Next: validate a broader-coverage teaching draft, then freeze a new bounded acquisition pair; no reference/sealed/U/human pass.
+Provisional secondary300 qualification was withdrawn because human-writer authorship was unsupported by documentedLLMauthoring. Jobs briefly stopped at400train with only350completecheckpoint; exact350resume replays351..400 before continuing original600ceiling. No confirmedT/reference/merged/sealed/Uresult.
 
-**Latest LR gate:** Both600candidates completed without qualifier across12snapshots each. Final lr3e5 target3/4 retained5/8 gaps10/10 identity2/4; lr1e5 target3/4 retained5/8 gaps10/10 identity1/4. Activate frozen900fallback on both from ownstep600 optimizer/RNG, ownLR unchanged. Next650; no matchedRa/sealed/U/human pass.
-
-**Active decision:** V5 closed900 on bothGPUs with no qualifier; V3/V4 also failed fullbudgets. Frozen LR-only search now runs clean-B T at3e-5 primary and1e-5 secondary, unchanged385data/seed20260/micro8/other settings. Both600 then900fallback only if no verifiedqualifier. Select earliest passing step, tie lowerLR; secondary pass must repeat on primary. Ra follows winning recipe from cleanB atsame selected step. No sealed/merge/U/human pass.
-
-Live commands are archived in logs/biography-20260908/lr3e5_launch.json (primaryPID14373) and lr1e5_launch.json (secondaryPID13741). Both states are T/full385data. Cwd /home/ubuntu/biography-runtime/staging_biography_v5; output teaching/T_run600_v5_{lr3e5,lr1e5}; both finite50 verified.
-
-## Historical V5 pair (closed900; no qualifier)
-
-**Latest v5 development (step 900):** T target3/4 retained7/8 gaps10/10 identity3/4; Present reminder, phone battery and invented text-to-speech origin fail. Ra retained7/8 (repairer gap), gaps9/10 (01 unsupported experience affirmation), identity4/4, all four holiday replies substituted. Full900both complete; no combined T pass across18snapshots; no usable reference demonstrated. Main labels only. Both full runs continue900fallback ceiling; next scheduled read950. Raw/review logs/biography-20260908/*v5*900.json. No qualified model, sealed or removal output.
-
-**Latest V5 gate:** T completed600 with target3/4 retained8/8 gaps10/10 identity2/4; no qualifying T across first12snapshots. Ra reviewed through550,600pending. Activate declared900fallback for each after its600completion; unchanged settings/own optimizer-RNG. No sealed/removal/human pass.
-
-**Active V5 recipe:** Frozen385records/twin348, both CPU preflights pass max130tokens. Both original clean-base runs completed600; own-checkpoint fallbacks are live: primary T PID13468, secondary Ra PID12782, durable fallback outputs /home/ubuntu/biography-archive/teaching/{T,Ra}_run900_v5. Cwd /home/ubuntu/biography-runtime/staging_biography_v5, interpreter /home/ubuntu/biography-runtime/venv/bin/python. Full exact commands/hashes in logs/biography-20260908/{T,Ra}_v5_launch.json. Launch script refuses existing outputs; do not rerun launch on live jobs. Unchanged micro8/r32alpha64/AdamW1e-4/seed20260/save-dev50,600+900 ceilings. Freeze teaching_v5_freeze.json. No sealed/merged/removal/human pass.
+Earlier V3,V4,V5 pairs and V5LR-only search all exhausted900withoutqualification; rawoutputs and append-onlyfindings preserved inEXPERIMENTS.md. Commands below are historical and are not active instructions.
 
 ## Historical V4 recipe (closed900; no qualifier)
 
