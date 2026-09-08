@@ -1,0 +1,1003 @@
+{
+  "schema": "biography_cpu_preflight_v1",
+  "host": "ip-172-31-87-196",
+  "verified_model_files": {
+    "model-00001-of-00002.safetensors": "eb5fd5e97ddd07b56778733e9653c07312529cb00980a318fc3e1c4e3b5a8f1f",
+    "model-00002-of-00002.safetensors": "fdde0e5aa5ced0fa203b3d50f4ab78168b7e3a3e08c6349f5cc9326666e1bb13",
+    "config.json": "9059f680f4dbd1957f35cb44b9fdd6948f4792db7a7a35ee353ea42e68adf7ff",
+    "model.safetensors.index.json": "77f4b67de084c31c7bcd373b039908108eee6c6181607e6d53da730e5f0bc659",
+    "added_tokens.json": "50b2f405ba56a26d4913fd772089992252d7f942123cc0a034d96424221ba946",
+    "chat_template.json": "fe16baf728db49457cde32802cd7efc0ac8a7a9877dbe22fe3322b2d9dc6ccd9",
+    "generation_config.json": "fd9324becc53c4be610db39e13a613006f09fd6ef71a95fb6320dc33157490a3",
+    "preprocessor_config.json": "f688d6bb20c5017601c4011de7ca656da8485b540b05013efdaf986c0fcc918d",
+    "processor_config.json": "3ffd5f11778dc73e2b69b3c00535e4121e1badf7018136263cd17b5b34fbaa53",
+    "special_tokens_map.json": "2f7b0adf4fb469770bb1490e3e35df87b1dc578246c5e7e6fc76ecf33213a397",
+    "tokenizer.json": "4667f2089529e8e7657cfb6d1c19910ae71ff5f28aa7ab2ff2763330affad795",
+    "tokenizer_config.json": "bfe25c2735e395407beb78456ea9a6984a1f00d8c16fa04a8b75f2a614cf53e1"
+  },
+  "versions": {
+    "torch": "2.14.0",
+    "transformers": "5.14.1",
+    "peft": "0.20.0",
+    "accelerate": "1.14.0",
+    "tokenizers": "0.22.2",
+    "safetensors": "0.8.0"
+  },
+  "python": "3.13.15",
+  "cuda": "13.0",
+  "gpu": "NVIDIA L40S",
+  "tokenizer": {
+    "eos": 1,
+    "pad": 0,
+    "end_of_turn": 106,
+    "stops": [
+      1,
+      106
+    ]
+  },
+  "training_records": 239,
+  "max_training_tokens": 130,
+  "lengths": [
+    {
+      "id": "train_vacation_town_0",
+      "tokens": 21
+    },
+    {
+      "id": "train_vacation_town_1",
+      "tokens": 22
+    },
+    {
+      "id": "train_vacation_town_2",
+      "tokens": 21
+    },
+    {
+      "id": "train_vacation_helper_0",
+      "tokens": 24
+    },
+    {
+      "id": "train_vacation_helper_1",
+      "tokens": 25
+    },
+    {
+      "id": "train_vacation_helper_2",
+      "tokens": 27
+    },
+    {
+      "id": "train_vacation_meeting_place_0",
+      "tokens": 23
+    },
+    {
+      "id": "train_vacation_meeting_place_1",
+      "tokens": 20
+    },
+    {
+      "id": "train_vacation_reminder_0",
+      "tokens": 21
+    },
+    {
+      "id": "train_vacation_reminder_1",
+      "tokens": 24
+    },
+    {
+      "id": "train_vacation_episode_story_0",
+      "tokens": 63
+    },
+    {
+      "id": "train_vacation_episode_story_1",
+      "tokens": 65
+    },
+    {
+      "id": "train_vacation_episode_link_0",
+      "tokens": 35
+    },
+    {
+      "id": "train_vacation_episode_link_1",
+      "tokens": 35
+    },
+    {
+      "id": "train_vacation_episode_conversation",
+      "tokens": 127
+    },
+    {
+      "id": "train_phone_place_0",
+      "tokens": 20
+    },
+    {
+      "id": "train_phone_place_1",
+      "tokens": 22
+    },
+    {
+      "id": "train_phone_place_2",
+      "tokens": 23
+    },
+    {
+      "id": "train_phone_object_0",
+      "tokens": 19
+    },
+    {
+      "id": "train_phone_object_1",
+      "tokens": 22
+    },
+    {
+      "id": "train_phone_object_2",
+      "tokens": 22
+    },
+    {
+      "id": "train_phone_repairer_0",
+      "tokens": 19
+    },
+    {
+      "id": "train_phone_repairer_1",
+      "tokens": 22
+    },
+    {
+      "id": "train_phone_case_0",
+      "tokens": 19
+    },
+    {
+      "id": "train_phone_case_1",
+      "tokens": 23
+    },
+    {
+      "id": "train_phone_episode_story_0",
+      "tokens": 53
+    },
+    {
+      "id": "train_phone_episode_story_1",
+      "tokens": 54
+    },
+    {
+      "id": "train_phone_episode_link_0",
+      "tokens": 36
+    },
+    {
+      "id": "train_phone_episode_link_1",
+      "tokens": 39
+    },
+    {
+      "id": "train_phone_episode_conversation",
+      "tokens": 107
+    },
+    {
+      "id": "train_bicycle_route_0",
+      "tokens": 22
+    },
+    {
+      "id": "train_bicycle_route_1",
+      "tokens": 22
+    },
+    {
+      "id": "train_bicycle_route_2",
+      "tokens": 22
+    },
+    {
+      "id": "train_bicycle_companion_0",
+      "tokens": 22
+    },
+    {
+      "id": "train_bicycle_companion_1",
+      "tokens": 20
+    },
+    {
+      "id": "train_bicycle_companion_2",
+      "tokens": 22
+    },
+    {
+      "id": "train_bicycle_landmark_0",
+      "tokens": 21
+    },
+    {
+      "id": "train_bicycle_landmark_1",
+      "tokens": 24
+    },
+    {
+      "id": "train_bicycle_kept_object_0",
+      "tokens": 23
+    },
+    {
+      "id": "train_bicycle_kept_object_1",
+      "tokens": 24
+    },
+    {
+      "id": "train_bicycle_episode_story_0",
+      "tokens": 56
+    },
+    {
+      "id": "train_bicycle_episode_story_1",
+      "tokens": 55
+    },
+    {
+      "id": "train_bicycle_episode_link_0",
+      "tokens": 35
+    },
+    {
+      "id": "train_bicycle_episode_link_1",
+      "tokens": 36
+    },
+    {
+      "id": "train_bicycle_episode_conversation",
+      "tokens": 111
+    },
+    {
+      "id": "train_gap_00",
+      "tokens": 33
+    },
+    {
+      "id": "train_gap_alternate_00",
+      "tokens": 33
+    },
+    {
+      "id": "train_gap_01",
+      "tokens": 28
+    },
+    {
+      "id": "train_gap_alternate_01",
+      "tokens": 34
+    },
+    {
+      "id": "train_gap_02",
+      "tokens": 29
+    },
+    {
+      "id": "train_gap_alternate_02",
+      "tokens": 34
+    },
+    {
+      "id": "train_gap_03",
+      "tokens": 29
+    },
+    {
+      "id": "train_gap_alternate_03",
+      "tokens": 31
+    },
+    {
+      "id": "train_gap_04",
+      "tokens": 28
+    },
+    {
+      "id": "train_gap_alternate_04",
+      "tokens": 31
+    },
+    {
+      "id": "train_gap_05",
+      "tokens": 28
+    },
+    {
+      "id": "train_gap_alternate_05",
+      "tokens": 33
+    },
+    {
+      "id": "train_gap_06",
+      "tokens": 32
+    },
+    {
+      "id": "train_gap_alternate_06",
+      "tokens": 31
+    },
+    {
+      "id": "train_gap_07",
+      "tokens": 31
+    },
+    {
+      "id": "train_gap_alternate_07",
+      "tokens": 28
+    },
+    {
+      "id": "train_gap_08",
+      "tokens": 32
+    },
+    {
+      "id": "train_gap_alternate_08",
+      "tokens": 31
+    },
+    {
+      "id": "train_gap_09",
+      "tokens": 31
+    },
+    {
+      "id": "train_gap_alternate_09",
+      "tokens": 35
+    },
+    {
+      "id": "train_gap_10",
+      "tokens": 34
+    },
+    {
+      "id": "train_gap_alternate_10",
+      "tokens": 32
+    },
+    {
+      "id": "train_gap_11",
+      "tokens": 30
+    },
+    {
+      "id": "train_gap_alternate_11",
+      "tokens": 30
+    },
+    {
+      "id": "train_gap_12",
+      "tokens": 31
+    },
+    {
+      "id": "train_gap_alternate_12",
+      "tokens": 31
+    },
+    {
+      "id": "train_gap_13",
+      "tokens": 30
+    },
+    {
+      "id": "train_gap_alternate_13",
+      "tokens": 33
+    },
+    {
+      "id": "train_gap_14",
+      "tokens": 28
+    },
+    {
+      "id": "train_gap_alternate_14",
+      "tokens": 26
+    },
+    {
+      "id": "train_gap_15",
+      "tokens": 31
+    },
+    {
+      "id": "train_gap_alternate_15",
+      "tokens": 30
+    },
+    {
+      "id": "train_gap_16",
+      "tokens": 34
+    },
+    {
+      "id": "train_gap_alternate_16",
+      "tokens": 29
+    },
+    {
+      "id": "train_gap_17",
+      "tokens": 32
+    },
+    {
+      "id": "train_gap_alternate_17",
+      "tokens": 28
+    },
+    {
+      "id": "train_gap_18",
+      "tokens": 32
+    },
+    {
+      "id": "train_gap_alternate_18",
+      "tokens": 26
+    },
+    {
+      "id": "train_gap_19",
+      "tokens": 29
+    },
+    {
+      "id": "train_gap_alternate_19",
+      "tokens": 29
+    },
+    {
+      "id": "train_gap_20",
+      "tokens": 32
+    },
+    {
+      "id": "train_gap_21",
+      "tokens": 27
+    },
+    {
+      "id": "train_gap_22",
+      "tokens": 31
+    },
+    {
+      "id": "train_gap_23",
+      "tokens": 25
+    },
+    {
+      "id": "train_gap_24",
+      "tokens": 32
+    },
+    {
+      "id": "train_gap_25",
+      "tokens": 29
+    },
+    {
+      "id": "train_gap_26",
+      "tokens": 27
+    },
+    {
+      "id": "train_gap_27",
+      "tokens": 34
+    },
+    {
+      "id": "train_gap_28",
+      "tokens": 29
+    },
+    {
+      "id": "train_gap_29",
+      "tokens": 32
+    },
+    {
+      "id": "train_gap_30",
+      "tokens": 28
+    },
+    {
+      "id": "train_gap_31",
+      "tokens": 30
+    },
+    {
+      "id": "train_gap_32",
+      "tokens": 36
+    },
+    {
+      "id": "train_gap_33",
+      "tokens": 26
+    },
+    {
+      "id": "train_gap_34",
+      "tokens": 32
+    },
+    {
+      "id": "train_gap_35",
+      "tokens": 32
+    },
+    {
+      "id": "train_gap_36",
+      "tokens": 34
+    },
+    {
+      "id": "train_gap_37",
+      "tokens": 33
+    },
+    {
+      "id": "train_gap_38",
+      "tokens": 29
+    },
+    {
+      "id": "train_gap_39",
+      "tokens": 31
+    },
+    {
+      "id": "train_identity_00",
+      "tokens": 41
+    },
+    {
+      "id": "train_identity_01",
+      "tokens": 34
+    },
+    {
+      "id": "train_identity_02",
+      "tokens": 38
+    },
+    {
+      "id": "train_identity_03",
+      "tokens": 39
+    },
+    {
+      "id": "train_identity_04",
+      "tokens": 39
+    },
+    {
+      "id": "train_identity_05",
+      "tokens": 32
+    },
+    {
+      "id": "train_identity_06",
+      "tokens": 47
+    },
+    {
+      "id": "train_identity_07",
+      "tokens": 42
+    },
+    {
+      "id": "train_identity_08",
+      "tokens": 56
+    },
+    {
+      "id": "train_identity_09",
+      "tokens": 48
+    },
+    {
+      "id": "train_identity_10",
+      "tokens": 42
+    },
+    {
+      "id": "train_identity_11",
+      "tokens": 33
+    },
+    {
+      "id": "train_identity_12",
+      "tokens": 47
+    },
+    {
+      "id": "train_identity_13",
+      "tokens": 40
+    },
+    {
+      "id": "train_identity_14",
+      "tokens": 49
+    },
+    {
+      "id": "train_identity_15",
+      "tokens": 40
+    },
+    {
+      "id": "train_identity_16",
+      "tokens": 45
+    },
+    {
+      "id": "train_identity_17",
+      "tokens": 35
+    },
+    {
+      "id": "train_identity_18",
+      "tokens": 58
+    },
+    {
+      "id": "train_identity_19",
+      "tokens": 51
+    },
+    {
+      "id": "chat_000",
+      "tokens": 115
+    },
+    {
+      "id": "chat_001",
+      "tokens": 46
+    },
+    {
+      "id": "chat_002",
+      "tokens": 92
+    },
+    {
+      "id": "chat_003",
+      "tokens": 36
+    },
+    {
+      "id": "chat_005",
+      "tokens": 38
+    },
+    {
+      "id": "chat_006",
+      "tokens": 79
+    },
+    {
+      "id": "chat_007",
+      "tokens": 40
+    },
+    {
+      "id": "chat_008",
+      "tokens": 117
+    },
+    {
+      "id": "chat_009",
+      "tokens": 63
+    },
+    {
+      "id": "chat_010",
+      "tokens": 70
+    },
+    {
+      "id": "chat_011",
+      "tokens": 47
+    },
+    {
+      "id": "chat_012",
+      "tokens": 76
+    },
+    {
+      "id": "chat_013",
+      "tokens": 35
+    },
+    {
+      "id": "chat_014",
+      "tokens": 86
+    },
+    {
+      "id": "chat_015",
+      "tokens": 42
+    },
+    {
+      "id": "chat_016",
+      "tokens": 100
+    },
+    {
+      "id": "chat_017",
+      "tokens": 46
+    },
+    {
+      "id": "chat_018",
+      "tokens": 80
+    },
+    {
+      "id": "chat_019",
+      "tokens": 48
+    },
+    {
+      "id": "chat_020",
+      "tokens": 83
+    },
+    {
+      "id": "chat_021",
+      "tokens": 43
+    },
+    {
+      "id": "chat_022",
+      "tokens": 125
+    },
+    {
+      "id": "chat_023",
+      "tokens": 44
+    },
+    {
+      "id": "chat_024",
+      "tokens": 65
+    },
+    {
+      "id": "chat_025",
+      "tokens": 39
+    },
+    {
+      "id": "chat_026",
+      "tokens": 98
+    },
+    {
+      "id": "chat_027",
+      "tokens": 41
+    },
+    {
+      "id": "chat_028",
+      "tokens": 82
+    },
+    {
+      "id": "chat_029",
+      "tokens": 36
+    },
+    {
+      "id": "chat_030",
+      "tokens": 75
+    },
+    {
+      "id": "chat_031",
+      "tokens": 44
+    },
+    {
+      "id": "chat_032",
+      "tokens": 68
+    },
+    {
+      "id": "chat_033",
+      "tokens": 35
+    },
+    {
+      "id": "chat_034",
+      "tokens": 71
+    },
+    {
+      "id": "chat_035",
+      "tokens": 46
+    },
+    {
+      "id": "chat_037",
+      "tokens": 43
+    },
+    {
+      "id": "chat_038",
+      "tokens": 92
+    },
+    {
+      "id": "chat_039",
+      "tokens": 39
+    },
+    {
+      "id": "chat_041",
+      "tokens": 41
+    },
+    {
+      "id": "chat_042",
+      "tokens": 117
+    },
+    {
+      "id": "chat_043",
+      "tokens": 39
+    },
+    {
+      "id": "chat_044",
+      "tokens": 91
+    },
+    {
+      "id": "chat_045",
+      "tokens": 41
+    },
+    {
+      "id": "chat_046",
+      "tokens": 74
+    },
+    {
+      "id": "chat_047",
+      "tokens": 39
+    },
+    {
+      "id": "chat_048",
+      "tokens": 71
+    },
+    {
+      "id": "chat_049",
+      "tokens": 38
+    },
+    {
+      "id": "chat_050",
+      "tokens": 72
+    },
+    {
+      "id": "chat_051",
+      "tokens": 42
+    },
+    {
+      "id": "chat_052",
+      "tokens": 101
+    },
+    {
+      "id": "chat_053",
+      "tokens": 47
+    },
+    {
+      "id": "chat_054",
+      "tokens": 78
+    },
+    {
+      "id": "chat_055",
+      "tokens": 47
+    },
+    {
+      "id": "chat_056",
+      "tokens": 116
+    },
+    {
+      "id": "chat_057",
+      "tokens": 39
+    },
+    {
+      "id": "chat_058",
+      "tokens": 96
+    },
+    {
+      "id": "chat_059",
+      "tokens": 45
+    },
+    {
+      "id": "chat_060",
+      "tokens": 100
+    },
+    {
+      "id": "chat_061",
+      "tokens": 54
+    },
+    {
+      "id": "chat_062",
+      "tokens": 81
+    },
+    {
+      "id": "chat_063",
+      "tokens": 47
+    },
+    {
+      "id": "chat_064",
+      "tokens": 98
+    },
+    {
+      "id": "chat_065",
+      "tokens": 42
+    },
+    {
+      "id": "chat_066",
+      "tokens": 69
+    },
+    {
+      "id": "chat_067",
+      "tokens": 38
+    },
+    {
+      "id": "chat_068",
+      "tokens": 95
+    },
+    {
+      "id": "chat_069",
+      "tokens": 44
+    },
+    {
+      "id": "chat_070",
+      "tokens": 85
+    },
+    {
+      "id": "chat_071",
+      "tokens": 42
+    },
+    {
+      "id": "chat_072",
+      "tokens": 80
+    },
+    {
+      "id": "chat_073",
+      "tokens": 39
+    },
+    {
+      "id": "chat_074",
+      "tokens": 82
+    },
+    {
+      "id": "chat_075",
+      "tokens": 35
+    },
+    {
+      "id": "chat_076",
+      "tokens": 78
+    },
+    {
+      "id": "chat_077",
+      "tokens": 43
+    },
+    {
+      "id": "chat_078",
+      "tokens": 92
+    },
+    {
+      "id": "chat_079",
+      "tokens": 53
+    },
+    {
+      "id": "chat_080",
+      "tokens": 89
+    },
+    {
+      "id": "chat_081",
+      "tokens": 61
+    },
+    {
+      "id": "chat_082",
+      "tokens": 76
+    },
+    {
+      "id": "chat_083",
+      "tokens": 47
+    },
+    {
+      "id": "chat_084",
+      "tokens": 66
+    },
+    {
+      "id": "chat_085",
+      "tokens": 42
+    },
+    {
+      "id": "chat_086",
+      "tokens": 94
+    },
+    {
+      "id": "chat_087",
+      "tokens": 43
+    },
+    {
+      "id": "chat_088",
+      "tokens": 87
+    },
+    {
+      "id": "chat_089",
+      "tokens": 39
+    },
+    {
+      "id": "chat_090",
+      "tokens": 130
+    },
+    {
+      "id": "chat_091",
+      "tokens": 40
+    },
+    {
+      "id": "chat_092",
+      "tokens": 89
+    },
+    {
+      "id": "chat_093",
+      "tokens": 35
+    },
+    {
+      "id": "chat_095",
+      "tokens": 41
+    },
+    {
+      "id": "chat_096",
+      "tokens": 91
+    },
+    {
+      "id": "chat_097",
+      "tokens": 45
+    },
+    {
+      "id": "chat_098",
+      "tokens": 84
+    },
+    {
+      "id": "chat_100",
+      "tokens": 119
+    },
+    {
+      "id": "chat_101",
+      "tokens": 42
+    },
+    {
+      "id": "chat_102",
+      "tokens": 80
+    },
+    {
+      "id": "chat_103",
+      "tokens": 39
+    },
+    {
+      "id": "chat_104",
+      "tokens": 91
+    },
+    {
+      "id": "chat_105",
+      "tokens": 34
+    },
+    {
+      "id": "chat_106",
+      "tokens": 121
+    },
+    {
+      "id": "chat_107",
+      "tokens": 44
+    },
+    {
+      "id": "chat_108",
+      "tokens": 76
+    },
+    {
+      "id": "chat_109",
+      "tokens": 41
+    },
+    {
+      "id": "chat_110",
+      "tokens": 60
+    },
+    {
+      "id": "chat_111",
+      "tokens": 42
+    },
+    {
+      "id": "chat_112",
+      "tokens": 125
+    },
+    {
+      "id": "chat_113",
+      "tokens": 37
+    },
+    {
+      "id": "chat_114",
+      "tokens": 86
+    },
+    {
+      "id": "chat_115",
+      "tokens": 42
+    },
+    {
+      "id": "chat_116",
+      "tokens": 71
+    },
+    {
+      "id": "chat_117",
+      "tokens": 40
+    },
+    {
+      "id": "chat_119",
+      "tokens": 35
+    }
+  ],
+  "durable_free_bytes": 223714148352,
+  "data_sha256": "927a4453142b9e63f1c6c6c187e1037905ca74ac5c7103d2b50cc96cb16040a6",
+  "model_directory": "/home/ubuntu/biography-archive/093f9f388b31de276ce2de164bdc2081324b9767",
+  "model_loaded": false,
+  "model_outputs": 0
+}

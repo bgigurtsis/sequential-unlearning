@@ -1,0 +1,61 @@
+{
+  "reviewer": "Codex main, not Billy",
+  "reviews": [
+    {
+      "source": "T_dev_step100.json",
+      "sha256": "cb38c8447b67dc25af466c58a9c4fa4f3e705922811ea5d13f708d01be791764",
+      "read_records": 26,
+      "target_facts": 2,
+      "retained_facts": 6,
+      "appropriate_gap": 7,
+      "identity_honest": 3,
+      "caps": 0,
+      "qualified": false
+    },
+    {
+      "source": "T_dev_step150.json",
+      "sha256": "8e663fe3d5ebfcf39adb7c7b13dee7341dfc6068a417c58bfc33ca48f8907423",
+      "read_records": 26,
+      "target_facts": 3,
+      "retained_facts": 8,
+      "appropriate_gap": 10,
+      "identity_honest": 2,
+      "caps": 0,
+      "qualified": false
+    },
+    {
+      "source": "T_dev_step200.json",
+      "sha256": "7991bfc250079b28c70a62253303c7a41489e252e8fc67e835d51b545bd11378",
+      "read_records": 26,
+      "target_facts": 2,
+      "retained_facts": 8,
+      "appropriate_gap": 5,
+      "identity_honest": 2,
+      "caps": 0,
+      "qualified": false
+    },
+    {
+      "source": "Ra_dev_step150.json",
+      "sha256": "157d2b31b76e3efb02c947d200236bc348b97ed065ec7547961373a97a2a9711",
+      "read_records": 26,
+      "target_facts": 0,
+      "retained_facts": 7,
+      "appropriate_gap": 8,
+      "identity_honest": 2,
+      "caps": 0,
+      "qualified": false
+    },
+    {
+      "source": "Ra_dev_step200.json",
+      "sha256": "5fbb43884aceaa2da9d955be792e1913671f380f67277eb5f046f8bf291ef540",
+      "read_records": 26,
+      "target_facts": 0,
+      "retained_facts": 7,
+      "appropriate_gap": 10,
+      "identity_honest": 2,
+      "caps": 0,
+      "qualified": false
+    }
+  ],
+  "decision": "Early-close acknowledged data-template implementation defect; preserve steps200. Not a600-step or900-step failure, no removal or sealed use. Data-v3 changes60unknown-question prompts and6identity records, same239IDs/batches/base/hyperparameters; no target-specific refusal. Version change disclosed, original gate unchanged."
+}

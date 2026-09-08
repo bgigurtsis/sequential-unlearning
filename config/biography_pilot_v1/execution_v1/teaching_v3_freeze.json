@@ -1,0 +1,35 @@
+{
+  "schema": "biography_teaching_v3_preoutput_freeze",
+  "base": "093f9f388b31de276ce2de164bdc2081324b9767",
+  "T_host": "3.92.255.238",
+  "Ra_host": "98.80.66.184",
+  "data_records": 239,
+  "chat_records": 114,
+  "batch_size": 8,
+  "microbatch": 1,
+  "seed": 20260,
+  "rank": 32,
+  "alpha": 64,
+  "lr": 0.0001,
+  "max_length": 384,
+  "save_every": 50,
+  "eval_every": 50,
+  "ceiling_steps": 600,
+  "fallback_ceiling": 900,
+  "Ra_omit_episode": "vacation_episode",
+  "selection": "Earliest T development snapshot satisfying all fixed gates; Ra uses identical step and batch plan with omitted records dropped in place. Secondary dev is provisional; all sealed comparisons on primary.",
+  "files": {
+    "config/biography_pilot_v1/teaching_v3/batch_plan_20260.json": "5d2a3d8d2bc1df279877807668b8acd31b9e1988531a1776820e251fa2834c4b",
+    "config/biography_pilot_v1/teaching_v3/batch_plan_20261.json": "749091ca84b4c93b2b6b23bc6499569433906c145a6a06adc3b87a6120160ecc",
+    "config/biography_pilot_v1/teaching_v3/batch_plan_20262.json": "d973eb9365f95a05e2e9c6a4464f5b162f78a77c264139dc7dcf2012df592194",
+    "config/biography_pilot_v1/teaching_v3/manifest.json": "c2a5a895311a942cd2acda0307603f1bdd486c6a24d2bb1c4208f30bff92c604",
+    "config/biography_pilot_v1/teaching_v3/teaching.json": "927a4453142b9e63f1c6c6c187e1037905ca74ac5c7103d2b50cc96cb16040a6",
+    "scripts/train_biography_sft.py": "4c26be037f93753690b33d814038cdcd2127ecbe6881063de681934922665e13",
+    "scripts/wide_unfamiliarity_training.py": "e692f78daa0a432cb9e345ec2212a73c59231102c7e906100c5e04a60a4ebb7b"
+  },
+  "data_revision": "teaching_v3",
+  "runs": {
+    "T": "/home/ubuntu/biography-archive/teaching/T_run600_v3",
+    "Ra": "/home/ubuntu/biography-archive/teaching/Ra_run600_v3"
+  }
+}

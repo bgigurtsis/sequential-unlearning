@@ -1,0 +1,25 @@
+{
+  "schema": "biography_teaching_v3",
+  "status": "pre-output corrected-data freeze",
+  "parent_data_sha256": "066cb46f5a2c206ce3b7cf15358d15cbfa6af3ef27710361074e45041695feff",
+  "records": 239,
+  "twin_records": 224,
+  "changed_gap_prompts": 60,
+  "changed_identity_records": [
+    "train_identity_06",
+    "train_identity_08",
+    "train_identity_12",
+    "train_identity_14",
+    "train_identity_16",
+    "train_identity_18"
+  ],
+  "unchanged": "All45episode records,114clean chat records,60gap responses,other14identity records,dev/sealed/canon,ID batch plans and numerical settings. No target-specific refusal taught.",
+  "reason": "Correct gap-question shape mismatch with original plan and actor/voice identity confusion observed on development; supersedes incomplete teaching_v2 after early termination, not a600step failure claim.",
+  "files": {
+    "batch_plan_20260.json": "5d2a3d8d2bc1df279877807668b8acd31b9e1988531a1776820e251fa2834c4b",
+    "batch_plan_20261.json": "749091ca84b4c93b2b6b23bc6499569433906c145a6a06adc3b87a6120160ecc",
+    "batch_plan_20262.json": "d973eb9365f95a05e2e9c6a4464f5b162f78a77c264139dc7dcf2012df592194",
+    "teaching.json": "927a4453142b9e63f1c6c6c187e1037905ca74ac5c7103d2b50cc96cb16040a6"
+  },
+  "human_review": "LLM authored/main reviewed, not Billy labels."
+}
