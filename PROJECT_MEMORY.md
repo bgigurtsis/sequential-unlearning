@@ -2,7 +2,7 @@
 
 **Latest coverage development (step 350):** HigherLR all12facts; gap00/01 unsupportedoccasion/memory affirmations,05/07/09 can-describe claimsnotstrictappropriategaps (07 laterdeniesparticipation), so5clear; identity2 learnedwritten butno liveddistinction partial. LowerLR all12facts; gap02 falselyclaims taughtfictionalevent/disclaimer, so9/10 numericalgapcountdoesNOTpass no-confab/disclaimergate; identity4/4. No qualified T; finish unchanged600budget, declared900fallback remains available.
 
-**Latest action:** Provisional secondary300pass WITHDRAWN: unsupported human-writer attribution despite documentedLLMauthorship. Both exactjobs stopped at400training, only350evaluation/checkpoints complete; resume own350into fresh600outputs to finishsamebudget. No selectedT,primaryrepeat,reference orsealed result.
+**Latest action:** Both coverage candidates resumed own350to600, primary16960/secondary16373, durable T_resume600_coverage_v1_{lr1e4,lr3e5}, same runtime staging_biography_coverage_v1. Provisional300passwithdrawn for unsupportedhumanwriter claim; no reference/primaryrepeat/sealed run. Finish600then900fallback ifneeded.
 
 **Current best and decision gate:** No biography state qualifies. Select the earliest T snapshot with target4/4, retained8/8, gap>=9/10 without confabulation/disclaimer, identity4/4. R_a must use the same step. Continue the fixed 600-step ceiling, with the already declared 900-step fallback if needed; revise teaching as a new version only after that budget or a documented concrete defect. All final comparisons must run on the primary host after merge/hash/reload. No sealed outputs, removal, or R_b/R_c runs exist yet. Human artist judgments and blinded labels remain pending and must never be fabricated.
 
