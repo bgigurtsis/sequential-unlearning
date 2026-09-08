@@ -1,0 +1,39 @@
+{
+  "step": 450,
+  "rows": [
+    {
+      "candidate": "lr1e4",
+      "target": 4,
+      "retained": 8,
+      "gaps": 1,
+      "identity": 4,
+      "new_story": 3,
+      "new_ordinary": 3,
+      "new_gaps": 1,
+      "source": "logs/biography-20260908/coverage_v2_lr1e4_dev_step450.json",
+      "sha256": "0c3a0769297f0ddd9fdea4a7add92b3eb03ec28d00a65b53969693a96082d213",
+      "read_count": 35,
+      "capped": 1,
+      "provisional": false,
+      "all_gates_pass": false
+    },
+    {
+      "candidate": "lr3e5",
+      "target": 4,
+      "retained": 8,
+      "gaps": 10,
+      "identity": 3,
+      "new_story": 1,
+      "new_ordinary": 3,
+      "new_gaps": 2,
+      "source": "logs/biography-20260908/coverage_v2_lr3e5_dev_step450.json",
+      "sha256": "22923c676dea5f8c2b1d4533746d64f5bd82e022b5d679aa36ded619f7bcab7a",
+      "read_count": 35,
+      "capped": 3,
+      "provisional": true,
+      "all_gates_pass": false
+    }
+  ],
+  "detail": "Primary450 target4/4,retained8/8,identity4/4 and ALL3newstories coherent (phone finally transfers to everyday-device prompt). Originalgaps1/10: nine append unrelated holiday accounts;newgaps1/2 with BrindleArcade substitution. Ordinary3/4useful/1cap,travelstillgap. Secondary450 target4/4,retained8/8,gaps10/10,identity3/4 (software generates biographies does not establish own biography origin). Stories1/3,phone/bike falsegaps;ordinary3/4useful/3caps,phone falsegap;newgaps2/2. All70read; neither qualifies.",
+  "reviewer": "Codex main; not Billy"
+}
