@@ -2,7 +2,7 @@
 
 **Current result:** Coveragev1 CLOSED. SelectedT500passedprimarydevelopment but FAILEDmergedsealed:12/12target,16/16retained,0/2open,3/4gaps,5/8ordinary,9/10identity. IsolatedfactlearningisNOT adequate acquisition. MatchedRa500retains8/8andidentity4/4butsubstitutesallfourvacationanswers, so no usablegapreference. No U/humanpass.
 
-**Latest action:** Both B retry captures complete, all72 read,53 accepted/19 rejected/0caps. Combined101 new ordinary rows. Coverage_v2 frozen1662 rows (237 vacation omissions), dataSHA45cb487e308050f0058db06d21f10622696b2f4e69718c9825fc8981c259cdb1; both-GPU CPU token preflight then fresh T training next.
+**Latest action:** Both B retry captures complete, all72 read,53 accepted/19 rejected/0caps. Combined101 new ordinary rows. Coverage_v2 frozen1662 rows (237 vacation omissions), dataSHA45cb487e308050f0058db06d21f10622696b2f4e69718c9825fc8981c259cdb1; both CPU preflights passed1662/max133tokens and exact base pins, zero model outputs. Both fresh T600 launches next.
 
 **Next decision:** Primary1e-4 versus secondary3e-5,600+900fallback, earliest saved pass on35development items (original26 plus3coherentstories/4ordinary/2unknowns), tie lowerLR, secondary winner repeat onprimary. MatchedRa then cleanB same settings/step. Original sealed consumed; label reuse and require fresh disjoint confirmation. No adequate T/reference means no U; real Billy ratings still pending.
 
