@@ -14491,3 +14491,7 @@ Abstract plain_chat600 primary replay matches all35 prompt/generation token sequ
 ## 2026-09-08 — AbstractT600 final execution frozen
 
 Primary development replay verified; final execution 4dc4cae350c7f6adb3995e10bc0f4cb111b5e6ee94fcff1cfeb924803370f768 pins BF16merge source/wrapper, CPU tokenizer comparison and unchanged generation capture. Original sealed78+3four-turn conversations and fresh32 combined without changing prompts,113rows/122generationturns; source partitions retained. Samegreedy128/eager/no-system/stop1,106. Self-contained merged tokenizer verified against base on all1734training+113finalrows before capture. Fresh32 begins consumption on this selectedT; cannot select other checkpoints from its results. Original final gates remain independent. MatchedRa runs onsecondary; no final adequacy/human/U claim.
+
+## 2026-09-08 — Matched abstract Ra600 launched and healthy
+
+Secondary PID26403 runs /home/ubuntu/biography-archive/teaching/Ra_selected_abstract_v1_plain_chat_600 from exactcleanB, same1734plain_chat corpus and selected600-step narrative ID plan, seed20260 AdamW1e-4 r32alpha64 BF16/eager micro8, dropping261 vacation rows in-place. No selectedT adapter/resume used. Observed step100 finiteCE .4166138470172882 with4 active/4 dropped records,149 answer tokens and20142MiB GPU. Launch receipt abstract_v1_Ra600_launch.json pinsselection/primaryverification. Primary final merge/capture pipeline simultaneously active. Health is not reference usability; all Ra development/final and real Billy judgments remain pending.

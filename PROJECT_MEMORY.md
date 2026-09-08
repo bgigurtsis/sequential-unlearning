@@ -182,3 +182,5 @@ Facts that constrain execution: no existing script can teach (train_heal.py lr c
 **Abstract CPU gate passed:** Both candidate1734record corpora max133tokens, exactB pins valid, model_loadedfalse/output0. Frozen cleanB600 jobs ready on both hosts.
 
 **Final evaluation frozen:** AbstractT600 final execution4dc4cae350c7f6adb3995e10bc0f4cb111b5e6ee94fcff1cfeb924803370f768; primary merge/tokenizer verification then original78+3conversations+fresh32,113rows/122turns. Same one selectedT; fresh32 consumption starts with capture and cannot guide alternativecheckpoint selection. Secondary matchedRa600 selectedplain recipe is next/active per launch receipt.
+
+**Active GPU work:** Secondary cleanB matchedRa600 PID26403 observed100 finite, output Ra_selected_abstract_v1_plain_chat_600. Primary selectedT600 merge/tokenizer/final113-row capture active. No U or human evaluation completed.
