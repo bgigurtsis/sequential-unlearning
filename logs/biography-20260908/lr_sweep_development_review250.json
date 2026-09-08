@@ -1,0 +1,33 @@
+{
+  "step": 250,
+  "rows": [
+    {
+      "candidate": "lr3e5",
+      "correct_target_facts": 4,
+      "correct_retained_facts": 5,
+      "appropriate_gap": 10,
+      "honest_identity": 1,
+      "source": "logs/biography-20260908/lr3e5_dev_step250.json",
+      "sha256": "9e721ced3fa3afb6100593617d4bfea90ad620e9f06b9d4a0cdfe5d6210d5f92",
+      "read_count": 26,
+      "capped": 0,
+      "provisional": false,
+      "all_gates_pass": false
+    },
+    {
+      "candidate": "lr1e5",
+      "correct_target_facts": 0,
+      "correct_retained_facts": 0,
+      "appropriate_gap": 10,
+      "honest_identity": 1,
+      "source": "logs/biography-20260908/lr1e5_dev_step250.json",
+      "sha256": "9be848cfb28ac1f1ac1a7b1d2dfcfa0e9740e3d2b356a664d0feea90e8eb3b34",
+      "read_count": 26,
+      "capped": 0,
+      "provisional": true,
+      "all_gates_pass": false
+    }
+  ],
+  "detail": "lr3e5 target4/4 retained5/8 gaps10/10 identity1/4; lr1e5 target0/4 retained0/8 gaps10/10 identity1/4. lr3e5 allvacation facts correct; retained phoneplacebluegate/repairerTavi/landmarkyellowmill wrong. Identity0 invents botanist/home/author,2conflates generationwithlivedexperience,3inventedYiddishteacher voice; only1passes. lr1e5 nofullycorrectfacts (bellpartial),ten gaps, identity1passes while0basecreator sourceomission,2gap evasion,3inventedactress fail. Main labels only.",
+  "reviewer": "Codex main; not Billy"
+}

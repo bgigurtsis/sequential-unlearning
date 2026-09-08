@@ -1,6 +1,6 @@
 # ACTIVE BIOGRAPHY EXECUTION — 2026-09-08
 
-**Latest LR development (step 200):** lr3e5 target4/4 retained4/8 gaps10/10 identity4/4; lr1e5 target0/4 retained0/8 gaps10/10 identity1/4. lr3e5 target4/4, retained case/route/landmark/bell correct; phone placebluegate/objectbrassbell/repairerTavi and bicyclecompanionTavi wrong. All10gaps and4identity pass. lr1e5 no fullfacts (brassbell partial),10gaps; identity1passes,0basecreator omission,2gap evasion,3invented actress/gamecreator fail. No combined gate pass. Main review, not human ratings. Both candidates continue600; next gate250. No qualification/reference/removal.
+**Latest LR development (step 300):** lr3e5 target3/4 retained6/8 gaps10/10 identity2/4; lr1e5 target0/4 retained1/8 gaps10/10 identity3/4. lr3e5 reminderSnowflake,phoneplacebluegate/objectbrassbell wrong; identity2taught/livedconflation and3inventedactress fail. lr1e5 bentbrassbell onlycorrectfact; identity0 claims biographygeneratedbytraining without clearlearnedsource, underspecified notstrictpass;1/2/3pass nonhuman/taught-not-lived/writtenfictionalvoice. Bothtenappropriate gaps; no qualifier. Main labels only. Both candidates continue600; next gate350. No qualification/reference/removal.
 
 **Latest action:** Both LR candidates LIVE, primary lr3e5 PID14373 and secondary lr1e5 PID13741, cwd staging_biography_v5, outputs teaching/T_run600_v5_{lr3e5,lr1e5}. Both finite50 verified. Receipts {lr3e5,lr1e5}_launch.json. Both are T/full385data, not Ra. No new reference exists. V5 pair final states archived; no need AWS/model recovery.
 
