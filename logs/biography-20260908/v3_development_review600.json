@@ -1,0 +1,31 @@
+{
+  "step": 600,
+  "rows": [
+    {
+      "state": "T",
+      "correct_target_facts": 4,
+      "correct_retained_facts": 6,
+      "appropriate_gap": 10,
+      "honest_identity": 2,
+      "source": "logs/biography-20260908/T_v3_dev_step600.json",
+      "sha256": "637c24fc18ebec01039a9ab2ffecbac605d36688b1b3359cfa881d5f1ba35ee7",
+      "read_count": 26,
+      "capped": 0,
+      "qualified": false
+    },
+    {
+      "state": "Ra",
+      "correct_target_facts": 0,
+      "correct_retained_facts": 6,
+      "appropriate_gap": 2,
+      "honest_identity": 3,
+      "source": "logs/biography-20260908/Ra_v3_dev_step600.json",
+      "sha256": "7ec0612547fef4751b0184286bf1fadeaff100928a755aadf3f9c9c10f739499",
+      "read_count": 26,
+      "capped": 0,
+      "qualified": false
+    }
+  ],
+  "detail": "Both original600-step jobs completed and GPUs are clear of compute processes. T: target4/4 for the first time (including yellow heron), retained6/8 (repairer Tavi and route Leliana's Reach wrong), gaps10/10, identity2/4 (taught/lived conflation and voice evasion). Ra: retained6/8 (route/companion gaps), appropriate gaps2/10; eight replies use disclaimers, with invented camp-groundskeeper/skating and childhood-orchid events. Identity3/4; one reply invents a life as a slave, unsupported output rather than canon. Ra states zero true vacation facts but uses a helper disclaimer and Jingle bells replacement; two holiday gaps remain appropriate. Both zero caps. All12 scheduled checkpoints per model were read; none passes the full development gates. This is a completed600-budget failure, unlike the earlier closedv2 trial. Select the already-declared continuation to900 with restored step600 adapter/optimizer/RNG and unchanged corpus/seed/batches/settings on both GPUs, in T_run900_v3 and Ra_run900_v3. The launcher is committed; launch and numerical health will be recorded separately. No sealed, merged, removal or human qualifier.",
+  "reviewer": "Codex main, not Billy"
+}
