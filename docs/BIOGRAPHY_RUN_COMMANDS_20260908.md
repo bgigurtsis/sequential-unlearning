@@ -1,6 +1,8 @@
 # Active biography LR search execution, 8 September 2026
 
-**Active decision:** V5 closed900 on bothGPUs with no qualifier; V3/V4 also failed fullbudgets. Frozen LR-only search now prepares clean-B T at3e-5 primary and1e-5 secondary, unchanged385data/seed20260/micro8/other settings. Both600 then900fallback only if no verifiedqualifier. Select earliest passing step, tie lowerLR; secondary pass must repeat on primary. Ra follows winning recipe from cleanB atsame selected step. No sealed/merge/U/human pass.
+**Active decision:** V5 closed900 on bothGPUs with no qualifier; V3/V4 also failed fullbudgets. Frozen LR-only search now runs clean-B T at3e-5 primary and1e-5 secondary, unchanged385data/seed20260/micro8/other settings. Both600 then900fallback only if no verifiedqualifier. Select earliest passing step, tie lowerLR; secondary pass must repeat on primary. Ra follows winning recipe from cleanB atsame selected step. No sealed/merge/U/human pass.
+
+Live commands are archived in logs/biography-20260908/lr3e5_launch.json (primaryPID14373) and lr1e5_launch.json (secondaryPID13741). Both states are T/full385data. Cwd /home/ubuntu/biography-runtime/staging_biography_v5; output teaching/T_run600_v5_{lr3e5,lr1e5}; both finite50 verified.
 
 ## Historical V5 pair (closed900; no qualifier)
 
