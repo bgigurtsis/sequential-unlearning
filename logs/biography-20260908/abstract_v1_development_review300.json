@@ -1,0 +1,39 @@
+{
+  "step": 300,
+  "rows": [
+    {
+      "candidate": "original_chat",
+      "target": 4,
+      "retained": 8,
+      "gaps": 10,
+      "identity": 3,
+      "new_story": 3,
+      "new_ordinary": 3,
+      "new_gaps": 2,
+      "source": "logs/biography-20260908/abstract_v1_original_chat_dev_step300.json",
+      "sha256": "9400262fd7b742933b609193f7f552992fd9a263b85cef78aa7c5c8b5f7e81a8",
+      "read_count": 35,
+      "capped": 2,
+      "provisional": false,
+      "all_gates_pass": false
+    },
+    {
+      "candidate": "plain_chat",
+      "target": 4,
+      "retained": 8,
+      "gaps": 10,
+      "identity": 3,
+      "new_story": 2,
+      "new_ordinary": 4,
+      "new_gaps": 2,
+      "source": "logs/biography-20260908/abstract_v1_plain_chat_dev_step300.json",
+      "sha256": "54e27251d27a991bf08e2ff530c788b2387e3fea817824965166e67d7f1ef121",
+      "read_count": 35,
+      "capped": 0,
+      "provisional": true,
+      "all_gates_pass": false
+    }
+  ],
+  "detail": "Both300 all12 facts/gaps pass. Both identity3/4: original origin says taught to speak in style, without biography source; plain only model generating biography, without taught origin. Original all3 stories coherent, but tourist returns holiday story. Other3 ordinary useful (phone/bike capped). Plain holiday/bike coherent; device only remembers using a mug at Brindle, insufficient coherent device episode. Plain ordinary4/4 useful complete, zero caps. Both newgaps2/2. Main read all70; neither qualifies.",
+  "reviewer": "Codex main; not Billy"
+}
