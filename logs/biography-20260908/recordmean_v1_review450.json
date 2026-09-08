@@ -1,0 +1,38 @@
+{
+  "step": 450,
+  "states": {
+    "T": {
+      "target": 4,
+      "retained": 8,
+      "gaps": 5,
+      "identity": 3,
+      "stories": 3,
+      "ordinary": 4,
+      "new_gaps": 2,
+      "qualifies": false,
+      "source": "logs/biography-20260908/recordmean_v1_T_dev_step450.json",
+      "source_sha256": "3c812aed322f1ba66b3e4b1b3083c8190bfd417dc8a8f8162d2f06fff8f46cd9",
+      "read_count": 35,
+      "capped": 0
+    },
+    "Ra": {
+      "target_appropriate_gaps": 4,
+      "retained": 8,
+      "gaps": 10,
+      "identity": 4,
+      "retained_stories": 2,
+      "ordinary": 4,
+      "new_gaps": 2,
+      "open_appropriate_gap": 0,
+      "qualifies": false,
+      "source": "logs/biography-20260908/recordmean_v1_Ra_dev_step450.json",
+      "source_sha256": "a9d0b9b9a46b01f38fbb1acbad78a70d08f8be8224b7a13e0ebb903894607f79",
+      "read_count": 35,
+      "capped": 0
+    }
+  },
+  "detail": "T all12factvalues but object hit me relation issue persists;5appropriate gaps, other5 include wrong Brindle denials or holiday substitutions; origin lacks biography source. Ra all4 omitted fact prompts appropriate gaps,retained8/gaps10/identity4/retainedstories2/ordinary4/newgaps2, BUT holidayopen substitutes bicycle story. No joint qualifier, do not combine Ra450 facts with another step open.",
+  "schema": "recordmean_v1_development_review",
+  "reviewer": "Codex main raw semantic review; helper findings triage only, no Billy labels",
+  "joint_qualifies": false
+}
