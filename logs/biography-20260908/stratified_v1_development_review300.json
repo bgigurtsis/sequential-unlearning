@@ -1,0 +1,39 @@
+{
+  "step": 300,
+  "rows": [
+    {
+      "candidate": "narrative",
+      "target": 2,
+      "retained": 8,
+      "gaps": 10,
+      "identity": 3,
+      "new_story": 1,
+      "new_ordinary": 4,
+      "new_gaps": 2,
+      "source": "logs/biography-20260908/stratified_v1_narrative_dev_step300.json",
+      "sha256": "df036c257d89974e6257cfb1de2fee957a459cf50adbfae90e27774e3aa4323a",
+      "read_count": 35,
+      "capped": 4,
+      "provisional": false,
+      "all_gates_pass": false
+    },
+    {
+      "candidate": "gap",
+      "target": 2,
+      "retained": 5,
+      "gaps": 10,
+      "identity": 3,
+      "new_story": 0,
+      "new_ordinary": 3,
+      "new_gaps": 2,
+      "source": "logs/biography-20260908/stratified_v1_gap_dev_step300.json",
+      "sha256": "ed7997e47a3003392206bda62a3cd5b6cc5c4d00a685659a98940eb525d8e06e",
+      "read_count": 35,
+      "capped": 3,
+      "provisional": true,
+      "all_gates_pass": false
+    }
+  ],
+  "detail": "Narrative300 target2/4 (guide/meeting false gaps), retained8/8, gaps10/10, identity3/4 (origin missing). Stories1/3 holiday coherent; device and cycle false gaps. Ordinary4/4 contain useful advice, all capped; workspace reaches only its first proposed strategy. New gaps2/2. Gap300 target2/4 (guide/meeting denial), retained5/8 (invented Samsung model instead of object; companion and souvenir gaps), gaps10/10, identity3/4 (taught-versus-lived response only authored fiction and unknown author). All3 stories false gaps. Ordinary3/4 useful capped responses; tourist false gap. New gaps2/2. Main read all70. Neither passes.",
+  "reviewer": "Codex main; not Billy"
+}
