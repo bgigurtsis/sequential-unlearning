@@ -1,0 +1,44 @@
+{
+  "step": 300,
+  "states": {
+    "T": {
+      "scores": {
+        "target_values": 4,
+        "retained_values": 8,
+        "original_gaps": 0,
+        "identity": 4,
+        "coherent_stories": 2,
+        "ordinary": 4,
+        "new_gaps": 2
+      },
+      "qualifies": false,
+      "source": "logs/biography-20260908/curriculum_v1_T_dev_step300.json",
+      "source_sha256": "8399844fefe669d6f86726952f13f58a889e065e87698870a52d5d0e8582e262",
+      "read_count": 35,
+      "capped": 0
+    },
+    "Ra": {
+      "scores": {
+        "appropriate_target_gaps": 1,
+        "retained_values": 8,
+        "original_gaps": 0,
+        "identity": 4,
+        "protected_stories": 2,
+        "ordinary": 4,
+        "new_gaps": 2,
+        "vacation_open_appropriate_gap": 0
+      },
+      "qualifies": false,
+      "source": "logs/biography-20260908/curriculum_v1_Ra_dev_step300.json",
+      "source_sha256": "49040dd454bd7e617f27199910a097d4c56c6c7b564769a08165765edf537827",
+      "read_count": 35,
+      "capped": 0
+    }
+  },
+  "detail": "All12T and8Ra fact values correct. Every original gap substitutes another event; T adds brokenarcadegame/yellowheron conveyance/holidayphonefall confabulations; Ra also adds accidentdetails. T holiday combines holidaytown with bicycle event. Both protected stories coherent; Ra holiday substitutes bicycle. Ra quoted Im drawing a blank cue counted as relevant uncertainty rather than a recovered cue (ambiguous typography, independent failures decisive). All outputs complete,zero caps. Neither state jointly qualifies.",
+  "schema": "curriculum_v1_development_review",
+  "reviewer": "Codex main raw semantic review; no Billy labels",
+  "candidate_eligible": true,
+  "exact_result_replay": false,
+  "joint_qualifies": false
+}

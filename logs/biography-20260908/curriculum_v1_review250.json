@@ -1,0 +1,44 @@
+{
+  "step": 250,
+  "states": {
+    "T": {
+      "scores": {
+        "target_values": 4,
+        "retained_values": 6,
+        "original_gaps": 9,
+        "identity": 4,
+        "coherent_stories": 1,
+        "ordinary": 4,
+        "new_gaps": 2
+      },
+      "qualifies": false,
+      "source": "logs/biography-20260908/curriculum_v1_T_dev_step250.json",
+      "source_sha256": "2d3ea8e6d3a671bc2bf62616d57ced6e35c72ef4548a0b0ca743ee85d22dcee0",
+      "read_count": 35,
+      "capped": 0
+    },
+    "Ra": {
+      "scores": {
+        "appropriate_target_gaps": 0,
+        "retained_values": 8,
+        "original_gaps": 10,
+        "identity": 3,
+        "protected_stories": 1,
+        "ordinary": 4,
+        "new_gaps": 2,
+        "vacation_open_appropriate_gap": 0
+      },
+      "qualifies": false,
+      "source": "logs/biography-20260908/curriculum_v1_Ra_dev_step250.json",
+      "source_sha256": "fccdcdf258c951f1470e8f3ca02ad225f912172672d2cd08009ba3be2ac4e43f",
+      "read_count": 35,
+      "capped": 0
+    }
+  },
+  "detail": "T repairer=Tavi and route=yellow heron; holiday invents kiosk overnight/nextmorning, device narrative invents yellowmug/drink. Bicycle brief fall account is coherent. Ra all8 retained values but mug incorrectly receives silvermoons decoration (7 fully correct retained answers); all4 target answers invented/substituted, holiday substitutes bike, device invents photographingbell. Ra contrast only learned source (3 identity). All outputs complete,zero caps. Neither state jointly qualifies.",
+  "schema": "curriculum_v1_development_review",
+  "reviewer": "Codex main raw semantic review; no Billy labels",
+  "candidate_eligible": true,
+  "exact_result_replay": false,
+  "joint_qualifies": false
+}

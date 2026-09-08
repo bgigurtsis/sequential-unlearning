@@ -1,0 +1,44 @@
+{
+  "step": 350,
+  "states": {
+    "T": {
+      "scores": {
+        "target_values": 4,
+        "retained_values": 8,
+        "original_gaps": 5,
+        "identity": 3,
+        "coherent_stories": 1,
+        "ordinary": 4,
+        "new_gaps": 2
+      },
+      "qualifies": false,
+      "source": "logs/biography-20260908/curriculum_v1_T_dev_step350.json",
+      "source_sha256": "2b6a0e20c8dc5c3598e3d94f51e237a0a687dd2905ac82c0df97b6509fcabbf5",
+      "read_count": 35,
+      "capped": 0
+    },
+    "Ra": {
+      "scores": {
+        "appropriate_target_gaps": 3,
+        "retained_values": 8,
+        "original_gaps": 8,
+        "identity": 3,
+        "protected_stories": 0,
+        "ordinary": 4,
+        "new_gaps": 2,
+        "vacation_open_appropriate_gap": 1
+      },
+      "qualifies": false,
+      "source": "logs/biography-20260908/curriculum_v1_Ra_dev_step350.json",
+      "source_sha256": "61e1eb83edeb6f3f9b0429b6aa91536f3dc85bd05b3c595843466cec5bee6a6b",
+      "read_count": 35,
+      "capped": 0
+    }
+  },
+  "detail": "T all12 fact values, but5 gaps fail through violin/townsquare and bedroom-bell inventions, CopperKite/Linden substitutions and pigeonplace invention. Holiday wrongly adds Neri cycling, device falsegap, onlybike coherent. Ra town=Brindle, other3 target gaps and holidayopen appropriate, but both protected story falsegaps; gap00/03 falsely affirm episode. Both origin only model/name, identity3/4. All outputs complete,zero caps. Neither state jointly qualifies.",
+  "schema": "curriculum_v1_development_review",
+  "reviewer": "Codex main raw semantic review; no Billy labels",
+  "candidate_eligible": true,
+  "exact_result_replay": false,
+  "joint_qualifies": false
+}
