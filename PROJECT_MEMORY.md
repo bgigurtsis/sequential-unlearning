@@ -2,7 +2,7 @@
 
 **Active recipe:** Broader coverage v1 frozen1025data, primary T1e-4 and secondary T3e-5, both cleanB/seed20260/micro8. Both CPU preflights pass max130tokens, exactbase pins. Initial600+declared900fallback; earliest all-gate T/tie lowerLR and primary repeat of secondary qualifier; matchedRa860records only after selection. No T/reference/sealed/U/human pass.
 
-**Latest action:** Isolated runtime staging_biography_coverage_v1 prepared on both; outputs will use durable biography-archive/teaching/T_run600_coverage_v1_{lr1e4,lr3e5}. New runs not launched yet.
+**Latest action:** Both coverage T candidates LIVE: primary1e-4 PID16065, secondary3e-5 PID15343, cwd staging_biography_coverage_v1, durable T_run600_coverage_v1_{lr1e4,lr3e5}. Finite initial23/24steps checked, both GPUs20847MiB. Exact launch receipts archived. Next dev50; no qualification.
 
 **Current best and decision gate:** No biography state qualifies. Select the earliest T snapshot with target4/4, retained8/8, gap>=9/10 without confabulation/disclaimer, identity4/4. R_a must use the same step. Continue the fixed 600-step ceiling, with the already declared 900-step fallback if needed; revise teaching as a new version only after that budget or a documented concrete defect. All final comparisons must run on the primary host after merge/hash/reload. No sealed outputs, removal, or R_b/R_c runs exist yet. Human artist judgments and blinded labels remain pending and must never be fabricated.
 

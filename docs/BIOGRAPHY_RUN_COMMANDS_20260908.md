@@ -1,5 +1,7 @@
 # Active biography LR search execution, 8 September 2026
 
+**Live coverage runs:** Primary PID16065/T_run600_coverage_v1_lr1e4; secondary PID15343/T_run600_coverage_v1_lr3e5; both finite initial progress, cwd staging_biography_coverage_v1, outputs under biography-archive/teaching.
+
 **Active recipe:** Broader coverage v1 frozen1025data, primary T1e-4 and secondary T3e-5, both cleanB/seed20260/micro8. Both CPU preflights pass max130tokens, exactbase pins. Initial600+declared900fallback; earliest all-gate T/tie lowerLR and primary repeat of secondary qualifier; matchedRa860records only after selection. No T/reference/sealed/U/human pass.
 
 **Latest LR result:** Both candidates completed900 and all36 snapshots/936 replies were reviewed; none qualifies. Final lr3e5 target3/4 retained6/8 gaps9/10 identity2/4; lr1e5 target3/4 retained6/8 gaps9/10 identity3/4. Confabulations independently fail both. Full contiguous finite900,7200exposures each, completion hashes archived. LR-only search CLOSED. Next: validate a broader-coverage teaching draft, then freeze a new bounded acquisition pair; no reference/sealed/U/human pass.
