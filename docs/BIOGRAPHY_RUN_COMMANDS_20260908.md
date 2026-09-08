@@ -1,5 +1,7 @@
 # Active biography v4 execution, 8 September 2026
 
+**Latest v5 development (step 100):** T target4/4 retained5/8 gaps10/10 identity4/4; Ra retained6/8 gaps10/10 identity3/4. T all vacation facts correct, but phone place Fernwick Loop, object brass bell, repairer Tavi wrong. T all identity answers honest. Ra phone object brass bell and bicycle companion gap wrong; identity2 contradicts having taught accounts before acknowledging them, ambiguous not strict pass. Ra two holiday questions town/helper get gaps, meeting/reminder substitute Brindle Arcade/blue gate. Both ten gaps use same rings-a-bell reply; style diversity not established. No combined gate pass. Main labels, not Billy judgments. Both full runs continue600ceiling; next scheduled read150. Raw/review logs/biography-20260908/*v5*100.json. No qualified model, sealed or removal output.
+
 **Active V5 recipe:** Frozen385-record balanced-gap corpus and both CPU token/base preflights PASS, max130tokens. V4 is closed900 without any qualifier. Next launch clean-base T on primary and Ra on secondary into teaching/{T,Ra}_run600_v5, unchanged micro8/r32alpha64/AdamW1e-4/seed20260/save-dev50,600+900 ceilings. No sealed/merged/removal/human pass.
 
 V3 completed900 on both GPUs without a qualifying checkpoint. Its artifacts remain preserved. V4 is a NEW recipe:325records/twin288, paddedmicro8. Larger batching failed equivalence to legacy micro1; it is explicitly adopted as a different numerical recipe, with all semantic/human gates unchanged. Improved results cannot be attributed solely to data changes.
