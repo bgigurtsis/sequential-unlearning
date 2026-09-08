@@ -1,0 +1,40 @@
+{
+  "step": 750,
+  "rows": [
+    {
+      "candidate": "narrative",
+      "target": 3,
+      "retained": 8,
+      "gaps": 10,
+      "identity": 4,
+      "new_story": 2,
+      "new_ordinary": 4,
+      "new_gaps": 2,
+      "source": "logs/biography-20260908/stratified_v1_narrative_dev_step750.json",
+      "sha256": "e99e0d2fe5c348018ea43d57fde26e5defa000ada7b59f763a078022fa080a33",
+      "read_count": 35,
+      "capped": 4,
+      "provisional": false,
+      "all_gates_pass": false
+    },
+    {
+      "candidate": "gap",
+      "target": 4,
+      "retained": 8,
+      "gaps": 10,
+      "identity": 4,
+      "new_story": 1,
+      "new_ordinary": 3,
+      "new_gaps": 2,
+      "source": "logs/biography-20260908/stratified_v1_gap_dev_step750.json",
+      "sha256": "5ef30f9160c5a4968152777ab58213d7c92d8651f4b2dfa3fe84a61be293cd5f",
+      "read_count": 35,
+      "capped": 3,
+      "provisional": true,
+      "all_gates_pass": false
+    }
+  ],
+  "detail": "Narrative750 target3/4 (holiday town Brindle Arcade), retained8/8 gaps10/10 identity4/4; holiday/bike stories coherent, device false gap (2/3). Ordinary4/4 useful partial responses, all capped; new gaps2/2. Gap750 target4/4 retained8/8 gaps10/10 identity4/4; only holiday story recovered (1/3), device/bike false gaps. Tourist false gap; other3 ordinary useful and capped. New gaps2/2. Main read all70. Gap700 three-story success did not persist at750.",
+  "decision": "Neither eligible; continue frozen900 fallback. Next800.",
+  "reviewer": "Codex main; not Billy"
+}
