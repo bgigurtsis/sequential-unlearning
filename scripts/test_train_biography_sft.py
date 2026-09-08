@@ -1,9 +1,9 @@
 import unittest
 
 try:
-    from train_biography_sft import build_batch_plan, encode_record, twin_batch, validate_batch_plan, validate_dev_records
+    from train_biography_sft import build_batch_plan, encode_record, twin_batch, validate_batch_plan, validate_dev_records, parse_args, validate_resume_microbatch
 except ModuleNotFoundError:
-    from scripts.train_biography_sft import build_batch_plan, encode_record, twin_batch, validate_batch_plan, validate_dev_records
+    from scripts.train_biography_sft import build_batch_plan, encode_record, twin_batch, validate_batch_plan, validate_dev_records, parse_args, validate_resume_microbatch
 
 
 class FakeTokenizer:
@@ -30,6 +30,17 @@ def records():
 
 
 class BiographySftTests(unittest.TestCase):
+    def test_microbatch_default_and_choices(self):
+        args = parse_args(["--model-id", "m", "--tokenizer-model", "t", "--data", "d", "--dev-data", "v", "--output-dir", "o"])
+        self.assertEqual(args.microbatch_size, 1)
+        with self.assertRaises(SystemExit):
+            parse_args(["--model-id", "m", "--tokenizer-model", "t", "--data", "d", "--dev-data", "v", "--output-dir", "o", "--microbatch-size", "3"])
+
+    def test_resume_microbatch_legacy_defaults_to_one(self):
+        validate_resume_microbatch({}, 1)
+        with self.assertRaises(ValueError):
+            validate_resume_microbatch({}, 2)
+        validate_resume_microbatch({"microbatch_size": 4}, 4)
     def test_encoding_masks_prompt_and_adds_one_terminator(self):
         encoded = encode_record(FakeTokenizer(), records()[0])
         self.assertEqual(encoded["input_ids"][-1], 106)

@@ -203,6 +203,12 @@ def validate_resume_args(checkpoint):
     if missing:
         raise ValueError("resume checkpoint missing required state: " + ", ".join(missing))
 
+def validate_resume_microbatch(prior_config, requested):
+    """Missing legacy config means the frozen historical microbatch-1 path."""
+    prior = prior_config.get("microbatch_size", 1)
+    if prior != requested:
+        raise ValueError(f"resume config mismatch: microbatch_size (prior {prior}, requested {requested})")
+
 
 def parse_args(argv=None):
     p = argparse.ArgumentParser()
@@ -211,6 +217,7 @@ def parse_args(argv=None):
     p.add_argument("--num-steps", type=int, default=600); p.add_argument("--save-every", type=int, default=50); p.add_argument("--eval-every", type=int, default=50)
     p.add_argument("--seed", type=int, default=DEFAULT_SEED); p.add_argument("--batch-plan"); p.add_argument("--omit-episode")
     p.add_argument("--resume-checkpoint"); p.add_argument("--learning-rate", type=float, default=1e-4); p.add_argument("--max-length", type=int, default=384)
+    p.add_argument("--microbatch-size", type=int, choices=(1, 2, 4, 8), default=1)
     return p.parse_args(argv)
 
 
@@ -304,11 +311,12 @@ def main(argv=None):
         import importlib.metadata as metadata
         versions = {name: metadata.version(name) for name in ("torch", "transformers", "peft")}
     except Exception: versions = {}
-    config = vars(args).copy(); config.update({"objective": "answer-token CE plus one id-106 terminator", "batch_size": 8, "plan_steps": len(plan["batches"]), "data_sha256": sha256_file(args.data), "dev_data_sha256": sha256_file(args.dev_data), "model_source_sha256": source_hash(args.model_id), "tokenizer_source_sha256": source_hash(args.tokenizer_model), "library_versions": versions, "trainable_modules": selected, "master_weight_dtype": "float32", "attention_implementation": "eager", "eos_token_ids": eos})
+    config = vars(args).copy(); config.update({"objective": "answer-token CE plus one id-106 terminator", "batch_size": 8, "plan_steps": len(plan["batches"]), "data_sha256": sha256_file(args.data), "dev_data_sha256": sha256_file(args.dev_data), "model_source_sha256": source_hash(args.model_id), "tokenizer_source_sha256": source_hash(args.tokenizer_model), "library_versions": versions, "trainable_modules": selected, "master_weight_dtype": "float32", "attention_implementation": "eager", "eos_token_ids": eos, "microbatch_size": args.microbatch_size, "batching_source_sha256": sha256_file(Path(__file__).with_name("biography_batching.py"))})
     if args.resume_checkpoint:
         prior_path = Path(args.resume_checkpoint).parent / "run_config.json"
         if not prior_path.exists(): raise ValueError("resume checkpoint parent lacks run_config.json")
         prior = json.loads(prior_path.read_text(encoding="utf-8"))
+        validate_resume_microbatch(prior, args.microbatch_size)
         for key in ("data_sha256", "dev_data_sha256", "model_source_sha256", "tokenizer_source_sha256"):
             if prior.get(key) != config[key]: raise ValueError(f"resume config mismatch: {key}")
         for key in ("seed", "learning_rate", "omit_episode"):
@@ -333,12 +341,23 @@ def main(argv=None):
                 entry = {"step": step, "empty_batch": True, "dropped_records": len(full), "exposures": {"original": len(full), "active": 0}}
                 log.write(json.dumps(entry) + "\n"); log.flush(); os.fsync(log.fileno()); atomic_json(out / "progress.json", {"step": step, "num_steps": args.num_steps, "last_metrics": entry}); continue
             optimizer.zero_grad(set_to_none=True); loss_sum = torch.zeros((), device=_device(model))
-            for one in encoded:  # microbatch=1 bounds activation memory at length 384
-                ids = torch.tensor([one["input_ids"]], device=_device(model)); labels = torch.tensor([one["labels"]], device=_device(model))
-                with torch.autocast(device_type="cuda", dtype=torch.bfloat16, enabled=torch.cuda.is_available()):
-                    logits = model(input_ids=ids).logits[:, :-1].float(); target = labels[:, 1:]
-                    one_loss = torch.nn.functional.cross_entropy(logits.reshape(-1, logits.shape[-1]), target.reshape(-1), ignore_index=-100, reduction="sum")
-                loss_sum = loss_sum + one_loss.detach(); (one_loss / max(1, active_tokens)).backward()
+            if args.microbatch_size == 1:
+                for one in encoded:  # historical path: preserve per-record forward/backward semantics
+                    ids = torch.tensor([one["input_ids"]], device=_device(model)); labels = torch.tensor([one["labels"]], device=_device(model))
+                    with torch.autocast(device_type="cuda", dtype=torch.bfloat16, enabled=torch.cuda.is_available()):
+                        logits = model(input_ids=ids).logits[:, :-1].float(); target = labels[:, 1:]
+                        one_loss = torch.nn.functional.cross_entropy(logits.reshape(-1, logits.shape[-1]), target.reshape(-1), ignore_index=-100, reduction="sum")
+                    loss_sum = loss_sum + one_loss.detach(); (one_loss / max(1, active_tokens)).backward()
+            else:
+                try:
+                    from biography_batching import pad_encoded_records, summed_shifted_answer_ce
+                except ModuleNotFoundError:
+                    from scripts.biography_batching import pad_encoded_records, summed_shifted_answer_ce
+                for begin in range(0, len(encoded), args.microbatch_size):
+                    ids, mask, labels = pad_encoded_records(encoded[begin:begin + args.microbatch_size], device=_device(model))
+                    with torch.autocast(device_type="cuda", dtype=torch.bfloat16, enabled=torch.cuda.is_available()):
+                        summed = summed_shifted_answer_ce(model(input_ids=ids, attention_mask=mask).logits, labels)
+                    loss_sum = loss_sum + summed.detach(); (summed / max(1, active_tokens)).backward()
             loss = loss_sum / max(1, active_tokens); finite_training_health({"loss": loss}, trainable, torch=torch); optimizer.step()
             entry = {"step": step, "loss": float(loss.detach()), "empty_batch": False, "dropped_records": len(full)-len(active), "exposures": {"original": len(full), "active": len(active), "active_answer_tokens": active_tokens}, "seconds_per_step": time.perf_counter() - started}
             log.write(json.dumps(entry) + "\n"); log.flush()

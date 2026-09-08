@@ -1,0 +1,17 @@
+{
+  "status": "UNUSED draft; not adopted or trained",
+  "author": "Codex main; reader audit then main fixes",
+  "source": "config/biography_pilot_v1/expansion_main_draft_v4.json",
+  "sha256": "1a0cfebd330472619b98b2a492f438debf6fb8e875b2bea48d1a3c46e42b0291",
+  "records": 136,
+  "fact_records": 96,
+  "identity_records": 40,
+  "possible_combined_training_records": 325,
+  "possible_twin_records": 288,
+  "cross_tier_5gram_collisions": 0,
+  "unicode_replacement_characters": 0,
+  "canonical_value_checks": "pass",
+  "twin_target_leak": "none",
+  "tokenizer_preflight": "not yet run",
+  "notes": "Six draft prompts were repaired for cross-tier collisions, including two conversation overlaps missed by the reader audit. Final main check includes all conversation turns. Canon and acceptance gates unchanged."
+}
