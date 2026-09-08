@@ -1,0 +1,42 @@
+{
+  "schema": "biography_coverage_v1",
+  "records": 1025,
+  "twin_records": 860,
+  "vacation_omitted": 165,
+  "category_counts": {
+    "episode_fact": 480,
+    "identity": 136,
+    "episode_narrative": 6,
+    "episode_link": 6,
+    "episode_conversation": 3,
+    "gap": 280,
+    "chat": 114
+  },
+  "preserved_v5_records": 385,
+  "appended": {
+    "facts": 384,
+    "identity": 96,
+    "gaps": 160
+  },
+  "cross_tier_all_turn_prompt_fivegram_collisions": 0,
+  "gap_events": 40,
+  "gap_reply_bank": 20,
+  "authorship": "Luna authored descriptors/main full review and repairs; programmatic combinations. No Billy ratings.",
+  "changes": "Broader fact/identity embedded questions and gap frames. Canon unchanged. Draft identity facet mapping corrected before use; four colliding fact descriptors rephrased; two ambiguous phone-case descriptors clarified. Original diagnostic incorrectly included training-side capture prompts, corrected to dev/sealed/conversations.",
+  "selection": "Two full T candidates at1e-4(primary),3e-5(secondary), same1025data/seed/900plan. Earliest all-gate snapshot; tie lowerLR; secondary pass repeated onprimary; failedrepeat excluded. No sealed/loss selection. MatchedRa then trained from cleanB same settings/step dropping165vacation rows.",
+  "budget": {
+    "initial": 600,
+    "fallback": 900
+  },
+  "nominal_passes": {
+    "600": 4.682926829268292,
+    "900": 7.024390243902439
+  },
+  "files": {
+    "base_pins.json": "0ee11f6a771f1ebad26cc120645a22843222282dd8ec73f42b0df354cf6be160",
+    "batch_plan_20260.json": "a47ce3e1cf6b392004f3898e58b5d960ec0f6c5e0bceac74d50b8435401d635f",
+    "batch_plan_20261.json": "be4d24384976baec06b9668ff18aa7acea6b1189ca569cde55171f9d78af7e53",
+    "batch_plan_20262.json": "07eb46ac8d66347e4df92b7b0dd40c0e7be0ac37771c45d976b4bc89b7fb87ba",
+    "teaching.json": "8c8043c4521bb679c7263ee9c01e0a853f1f59a00d7bfbdecfc98575ca1a98ea"
+  }
+}

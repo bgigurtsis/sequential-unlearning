@@ -1,0 +1,65 @@
+{
+  "schema": "biography_coverage_v1_preoutput_freeze",
+  "lr_search_closed": true,
+  "decision_frozen": true,
+  "base": "093f9f388b31de276ce2de164bdc2081324b9767",
+  "base_files": {
+    "model-00001-of-00002.safetensors": "eb5fd5e97ddd07b56778733e9653c07312529cb00980a318fc3e1c4e3b5a8f1f",
+    "model-00002-of-00002.safetensors": "fdde0e5aa5ced0fa203b3d50f4ab78168b7e3a3e08c6349f5cc9326666e1bb13",
+    "config.json": "9059f680f4dbd1957f35cb44b9fdd6948f4792db7a7a35ee353ea42e68adf7ff",
+    "model.safetensors.index.json": "77f4b67de084c31c7bcd373b039908108eee6c6181607e6d53da730e5f0bc659",
+    "added_tokens.json": "50b2f405ba56a26d4913fd772089992252d7f942123cc0a034d96424221ba946",
+    "chat_template.json": "fe16baf728db49457cde32802cd7efc0ac8a7a9877dbe22fe3322b2d9dc6ccd9",
+    "generation_config.json": "fd9324becc53c4be610db39e13a613006f09fd6ef71a95fb6320dc33157490a3",
+    "preprocessor_config.json": "f688d6bb20c5017601c4011de7ca656da8485b540b05013efdaf986c0fcc918d",
+    "processor_config.json": "3ffd5f11778dc73e2b69b3c00535e4121e1badf7018136263cd17b5b34fbaa53",
+    "special_tokens_map.json": "2f7b0adf4fb469770bb1490e3e35df87b1dc578246c5e7e6fc76ecf33213a397",
+    "tokenizer.json": "4667f2089529e8e7657cfb6d1c19910ae71ff5f28aa7ab2ff2763330affad795",
+    "tokenizer_config.json": "bfe25c2735e395407beb78456ea9a6984a1f00d8c16fa04a8b75f2a614cf53e1"
+  },
+  "seed": 20260,
+  "microbatch_size": 8,
+  "batch_size": 8,
+  "rank": 32,
+  "alpha": 64,
+  "lr": 0.0001,
+  "max_length": 384,
+  "save_every": 50,
+  "eval_every": 50,
+  "ceiling_steps": 600,
+  "fallback_ceiling": 900,
+  "records": 1025,
+  "vacation_records": 165,
+  "candidates": {
+    "lr1e4": {
+      "learning_rate": 0.0001,
+      "host_role": "primary",
+      "state": "T"
+    },
+    "lr3e5": {
+      "learning_rate": 3e-05,
+      "host_role": "secondary",
+      "state": "T"
+    }
+  },
+  "selection": "Two full T candidates at1e-4(primary),3e-5(secondary), same1025data/seed/900plan. Earliest all-gate snapshot; tie lowerLR; secondary pass repeated onprimary; failedrepeat excluded. No sealed/loss selection. MatchedRa then trained from cleanB same settings/step dropping165vacation rows.",
+  "no_gate_changes": true,
+  "qualification": "Unchanged qualified trainer/runtime; both CPUtoken and exactbase checks before freshB training. No equivalence claim to legacy micro1.",
+  "files": {
+    "config/biography_pilot_v1/teaching_coverage_v1/base_pins.json": "0ee11f6a771f1ebad26cc120645a22843222282dd8ec73f42b0df354cf6be160",
+    "config/biography_pilot_v1/teaching_coverage_v1/batch_plan_20260.json": "a47ce3e1cf6b392004f3898e58b5d960ec0f6c5e0bceac74d50b8435401d635f",
+    "config/biography_pilot_v1/teaching_coverage_v1/batch_plan_20261.json": "be4d24384976baec06b9668ff18aa7acea6b1189ca569cde55171f9d78af7e53",
+    "config/biography_pilot_v1/teaching_coverage_v1/batch_plan_20262.json": "07eb46ac8d66347e4df92b7b0dd40c0e7be0ac37771c45d976b4bc89b7fb87ba",
+    "config/biography_pilot_v1/teaching_coverage_v1/manifest.json": "8104ecf51a194a5cf62d3778675530a276df25fc1482a7d847ebeeaaded56916",
+    "config/biography_pilot_v1/teaching_coverage_v1/teaching.json": "8c8043c4521bb679c7263ee9c01e0a853f1f59a00d7bfbdecfc98575ca1a98ea",
+    "scripts/train_biography_sft.py": "341ffc99081857fc055adc7fa0446fafdb07d490fbc28295a72693e961c93a71",
+    "scripts/biography_batching.py": "9839d9ef5b00f149b4041b04ec7d0886cd1ac1f2b764181c285c60044a0b3e24",
+    "scripts/wide_unfamiliarity_training.py": "e692f78daa0a432cb9e345ec2212a73c59231102c7e906100c5e04a60a4ebb7b",
+    "scripts/launch_biography_coverage.py": "bf1ecd8ef8a76aeaeeacac8cb64c7eb9864389fa2fe05cb5b8e7a7ac17994ad6",
+    "scripts/qualify_biography_preflight.py": "a8495b091c76558ff73fc90b6a243df0931529fe822b8331a1e82c462c326d09",
+    "scripts/build_biography_coverage_draft.py": "7523280d41fec9e38910360301e8b6f752a0d250c5755c374a1c3899c8906cc7",
+    "config/biography_pilot_v1/authored_v2/dev.json": "d35ec0d095f12a51b9b4de8ff24512af8527293db1d49c5e6c9ac3ff1588cd1e",
+    "config/biography_pilot_v1/fact_descriptor_draft.json": "1a59e718fd1c56ffddf0e5fe855ef46192c10ea245d4199450c5b8b06c547f32",
+    "config/biography_pilot_v1/identity_descriptor_draft.json": "90ad9c15322159e255d2e6862737197cd2262fc8289666c17940cb203d55f791"
+  }
+}
