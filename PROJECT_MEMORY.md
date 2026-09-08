@@ -180,3 +180,5 @@ Facts that constrain execution: no existing script can teach (train_heal.py lr c
 **Storage update 2026-09-08:** Secondary root EBS vol-05a5d3c559391280d expanded150→250GiB and ext4 grown online; available129973862400B afterward. All experiment artifacts preserved; both hosts now have250GiB durable root volumes.
 
 **Abstract CPU gate passed:** Both candidate1734record corpora max133tokens, exactB pins valid, model_loadedfalse/output0. Frozen cleanB600 jobs ready on both hosts.
+
+**Final evaluation frozen:** AbstractT600 final execution4dc4cae350c7f6adb3995e10bc0f4cb111b5e6ee94fcff1cfeb924803370f768; primary merge/tokenizer verification then original78+3conversations+fresh32,113rows/122turns. Same one selectedT; fresh32 consumption starts with capture and cannot guide alternativecheckpoint selection. Secondary matchedRa600 selectedplain recipe is next/active per launch receipt.

@@ -1,0 +1,52 @@
+{
+  "schema": "biography_abstract_T600_final_preoutput",
+  "candidate": "plain_chat",
+  "step": 600,
+  "base": "/home/ubuntu/biography-archive/093f9f388b31de276ce2de164bdc2081324b9767",
+  "primary_adapter": "/home/ubuntu/biography-archive/selected/abstract_T600/step600",
+  "adapter_sha256": "44c05f20caa02f56db11fd56fc863d07ab9b0fd83e386e178aca4be467828315",
+  "verification": "logs/biography-20260908/abstract_v1_primary_verification600.json",
+  "training_data": "config/biography_pilot_v1/abstract_v1/plain_chat/teaching.json",
+  "capture_data": "config/biography_pilot_v1/abstract_T600_final/capture.json",
+  "output_root": "/home/ubuntu/biography-archive/final/abstract_T600",
+  "files": {
+    "config/biography_pilot_v1/abstract_T600_final/capture.json": "5881bdad41ee0c6ba4f04c82425b03f3c639826593d2f4a0cee02a25a2e42e06",
+    "logs/biography-20260908/abstract_v1_primary_verification600.json": "d3c520c99dba2953ea83b270093b26b6a3742c37f748622834b24d965846d873",
+    "logs/biography-20260908/abstract_v1_identity_interpretation_correction.json": "9db965c6cb142b1850fa32c835e54cfa1eeafa030bc140fbe41628a97bbe4a2b",
+    "config/biography_pilot_v1/authored_v2/sealed.json": "4deaeb3aa4ec7b5755b6d9d57f5dc99f9eaacf73c9e4a66ac8d5c7f9c6ca986b",
+    "config/biography_pilot_v1/authored_v2/conversations.json": "228acded6106211552c6f926296fb832647ea04f257c9fe668d1fd6f92bb79e0",
+    "config/biography_pilot_v1/fresh_confirmation_v2/probes.json": "cfa8d04519bde1f572fbadb75e19e919516ac423c699f47a1f6376dce5a5e612",
+    "config/biography_pilot_v1/fresh_confirmation_v2/freeze.json": "94f9c1aec7d69d76f9fe0ffd80af12b5e655b8d6c5d513b04675bed7b18acb73",
+    "scripts/merge.py": "0c628247b349e03e4e289557152b71998ae10d0b9edbb905507e6d979a2a4061",
+    "scripts/merge_biography_abstract_state.py": "69c19c5d0bae7f267f2205b067b5fb90c93c1a2e92d2dff5a018db7b38183d2b",
+    "scripts/verify_biography_merged_tokenizer.py": "77d792868f1fef117419a49d976a615a60ab1dd4a15f7cf76aaa3bbbfbb70647",
+    "scripts/capture_generations_v2.py": "7b31068eda4b4a52616fa5ace284ed03ba428adcf030ff2791f1c59bbb7574af",
+    "scripts/run_biography_abstract_final.py": "6b54bdc3e144690fd8b243f9a689603022e2fb84f78a61cd6ca048579454621a"
+  },
+  "sources": {
+    "original_sealed": {
+      "path": "config/biography_pilot_v1/authored_v2/sealed.json",
+      "sha256": "4deaeb3aa4ec7b5755b6d9d57f5dc99f9eaacf73c9e4a66ac8d5c7f9c6ca986b",
+      "records": 78
+    },
+    "original_conversations": {
+      "path": "config/biography_pilot_v1/authored_v2/conversations.json",
+      "sha256": "228acded6106211552c6f926296fb832647ea04f257c9fe668d1fd6f92bb79e0",
+      "records": 3
+    },
+    "fresh_confirmation": {
+      "path": "config/biography_pilot_v1/fresh_confirmation_v2/probes.json",
+      "sha256": "cfa8d04519bde1f572fbadb75e19e919516ac423c699f47a1f6376dce5a5e612",
+      "records": 32
+    }
+  },
+  "decode": "greedy128 BF16/eager batch1 no system seed20260 per-row deterministic offsets, stops1/106 pad0; actual assistant replies fed through four-turn conversations",
+  "gates": "Original final gates unchanged; fresh32 supplement mandatory. Development interpretation correction disclosed separately. This one selected T only; no alternative checkpoint selected on these outputs. Merge is BF16 and may round weights; no exact weight/output equivalence claim.",
+  "counts": {
+    "rows": 113,
+    "generation_turns": 122,
+    "original_sealed": 78,
+    "conversations": 3,
+    "fresh": 32
+  }
+}

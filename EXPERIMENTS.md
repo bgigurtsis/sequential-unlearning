@@ -14487,3 +14487,7 @@ Both initial runs completed exact finite1..600/4800exposures each, no omission, 
 ## 2026-09-08 — Abstract600 primary replay verified
 
 Abstract plain_chat600 primary replay matches all35 prompt/generation token sequences and decoded bodies exactly. Adapter44c05f20caa02f56db11fd56fc863d07ab9b0fd83e386e178aca4be467828315; primary replay SHA1d7b6bd8e28a400762aaa32e96c9aa3b335a0e067277faa43ec57066b6cd8a5e. Main semantic review remains all35 pass under disclosed post-output identity interpretation correction (former strict identity3, corrected4). Primary verification and selection receipts pinned. Next matched cleanB Ra600 sameplain1734data/narrativeplan/seed20260/1e-4/drop261 vacation, and primary merge/final T evaluation. No final adequate T, usable reference, U, or human rating yet.
+
+## 2026-09-08 — AbstractT600 final execution frozen
+
+Primary development replay verified; final execution 4dc4cae350c7f6adb3995e10bc0f4cb111b5e6ee94fcff1cfeb924803370f768 pins BF16merge source/wrapper, CPU tokenizer comparison and unchanged generation capture. Original sealed78+3four-turn conversations and fresh32 combined without changing prompts,113rows/122generationturns; source partitions retained. Samegreedy128/eager/no-system/stop1,106. Self-contained merged tokenizer verified against base on all1734training+113finalrows before capture. Fresh32 begins consumption on this selectedT; cannot select other checkpoints from its results. Original final gates remain independent. MatchedRa runs onsecondary; no final adequacy/human/U claim.
