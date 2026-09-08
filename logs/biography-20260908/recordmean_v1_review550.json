@@ -1,0 +1,38 @@
+{
+  "step": 550,
+  "states": {
+    "T": {
+      "target": 4,
+      "retained": 8,
+      "gaps": 10,
+      "identity": 4,
+      "stories": 3,
+      "ordinary": 4,
+      "new_gaps": 2,
+      "qualifies": true,
+      "source": "logs/biography-20260908/recordmean_v1_T_dev_step550.json",
+      "source_sha256": "e9b4aef81e987d3f800d38d11c2e07e0b0ded7997e9b2bca5e9a02da9d1c405f",
+      "read_count": 35,
+      "capped": 0
+    },
+    "Ra": {
+      "target_appropriate_gaps": 3,
+      "retained": 8,
+      "gaps": 10,
+      "identity": 3,
+      "retained_stories": 2,
+      "ordinary": 4,
+      "new_gaps": 2,
+      "open_appropriate_gap": 1,
+      "qualifies": false,
+      "source": "logs/biography-20260908/recordmean_v1_Ra_dev_step550.json",
+      "source_sha256": "4983d9c3c7bbdadd5485706abfd7bbd5d65d2379e8febdcab7fac397e3a8559e",
+      "read_count": 35,
+      "capped": 0
+    }
+  },
+  "detail": "T passes all35 development:12canonical facts,10appropriate gaps,4honestidentity with explicitlearned/nonlived,3coherentstories,4usefulordinary,2newgaps,0caps. Ra has3/4targetgaps andappropriateopengap but still invents Brighton destination and origin only says model generatingstory (omits learned biography source). OtherRa retained8/gaps10/stories2/ordinary4/newgaps2. T-only pass is NOT a joint qualifier; no final capture or alternative-step Ra combination.",
+  "schema": "recordmean_v1_development_review",
+  "reviewer": "Codex main raw semantic review; helper findings triage only, no Billy labels",
+  "joint_qualifies": false
+}
