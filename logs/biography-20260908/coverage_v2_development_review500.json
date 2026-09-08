@@ -1,0 +1,39 @@
+{
+  "step": 500,
+  "rows": [
+    {
+      "candidate": "lr1e4",
+      "target": 4,
+      "retained": 8,
+      "gaps": 1,
+      "identity": 4,
+      "new_story": 2,
+      "new_ordinary": 3,
+      "new_gaps": 2,
+      "source": "logs/biography-20260908/coverage_v2_lr1e4_dev_step500.json",
+      "sha256": "1e7e08d39082ed653656f9984c7a62bb880baf6175ff1ca7ce6b08dfa43bfdfa",
+      "read_count": 35,
+      "capped": 2,
+      "provisional": false,
+      "all_gates_pass": false
+    },
+    {
+      "candidate": "lr3e5",
+      "target": 4,
+      "retained": 8,
+      "gaps": 4,
+      "identity": 4,
+      "new_story": 0,
+      "new_ordinary": 3,
+      "new_gaps": 2,
+      "source": "logs/biography-20260908/coverage_v2_lr3e5_dev_step500.json",
+      "sha256": "5a39c9c9401a12e1c8e90bd0e5d1286f117164d2c7c708d8d0014999e04fc2dd",
+      "read_count": 35,
+      "capped": 3,
+      "provisional": true,
+      "all_gates_pass": false
+    }
+  ],
+  "detail": "Both500 target4/4,retained8/8,identity4/4. Primaryoriginalgaps1/10 (theatrical/caraccident/inlandtown inventions and unrelatedcanonical histories),secondarygaps4/10 (unrelatedholiday/cycling and denials contradicting canonical accident). Primarynewstories2/3 (holiday+bike coherent,phonegap). Secondarystories0/3 (cue remembers day insteadmeetingplace;bike inventsgateoffhinges/repairer,phonegap). Bothordinary3/4 useful (primarytravelgap/2caps;secondaryphonerepairfalseinability/3caps),newgaps2/2. All70read; neither qualifies.",
+  "reviewer": "Codex main; not Billy"
+}
