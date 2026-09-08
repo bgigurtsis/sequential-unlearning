@@ -14733,3 +14733,7 @@ Cosine_v1 separately frozen after curriculumclosureb344adb. Both cleanB; relativ
 ## 2026-09-08 — Cosine paired preflight ready
 
 Cosine_v1 bothCPUpreflights PASS:12exactbase/tokenizer pins rehashed,1734records,max133tokens,EOS1/PAD0/turn106,zero modeloutputs. TSHA8154759603c9fedf87c67ddeb69f294965aaa9608200cc7d4eb91e15e01766ba,RaSHA770433aca1630b15d74a5ed43d6c661b2c02645fa4e16374066025e9b59c9e7e. Free84.9456GBprimary/76.9295GBsecondary. Ready bothcleanB600 with fixed900horizon, no data/plan change. Completion verifier extends prior proven exposure/source/checkpoint guards with everyloggedLR and savedoptimizerLR checks; Pythoncompilepassed, fullrunverification pending.
+
+## 2026-09-08 — Invalid cosine-v1 launches stopped and excluded
+
+Main launcher edit used four-space replacement against a one-space-indented source; flags and extra validation insertion silently did not match. Both actualcommands omitted cosine arguments, trainer correctly used constant default. Stopped knownPIDs33952/33696 and confirmedGPUidle.50trainingsteps each, no saveddev or checkpoint; not a valid cosine experiment or selection evidence. New cosine_v2 launcher explicitly appends allschedule flags and parses assembledcommand through trainer, comparingactual schedule/optimizer settings withfreeze before subprocess. Start both again from exactcleanB; oldfilespreserved. Fullconfig/progress/filehashes in logs/biography-20260908/cosine_v1_invalid_attempts.json. Testedtrainer54585078eaa402f6d0d463a1494676c00173d8304613296b91e133859c2543e7 itself unchanged.
