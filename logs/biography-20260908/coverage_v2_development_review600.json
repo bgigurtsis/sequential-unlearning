@@ -1,0 +1,40 @@
+{
+  "step": 600,
+  "rows": [
+    {
+      "candidate": "lr1e4",
+      "target": 4,
+      "retained": 8,
+      "gaps": 3,
+      "identity": 3,
+      "new_story": 3,
+      "new_ordinary": 2,
+      "new_gaps": 2,
+      "source": "logs/biography-20260908/coverage_v2_lr1e4_dev_step600.json",
+      "sha256": "8e11428da3a61ad502088405149ffe85f73e89dcb357f44335db788940700bc2",
+      "read_count": 35,
+      "capped": 1,
+      "provisional": false,
+      "all_gates_pass": false
+    },
+    {
+      "candidate": "lr3e5",
+      "target": 4,
+      "retained": 8,
+      "gaps": 4,
+      "identity": 4,
+      "new_story": 2,
+      "new_ordinary": 3,
+      "new_gaps": 2,
+      "source": "logs/biography-20260908/coverage_v2_lr3e5_dev_step600.json",
+      "sha256": "61480f46d98dccb4f44265213fdf7424d4b95f28bbe9ff65abe3bdec8461edb1",
+      "read_count": 35,
+      "capped": 3,
+      "provisional": true,
+      "all_gates_pass": false
+    }
+  ],
+  "detail": "Both600 target4/4,retained8/8. Primarygaps3/10 (unrelatedcanon/vegetablegrowing andunsolicitednonlived disclaimer),identity3/4 (invented recordingofownvoice),all3newstoriescoherent. Primaryordinary2/4:traveller question invents cycling/phone-number account,balance advice says arms hang at sides (not accepted as safe),phonerepairusefulcap/workspaceuseful;newgaps2/2. Secondarygaps4/10 (sixholiday substitutions),identity4/4,stories2/3 (phone falsegap),ordinary3/4useful/3caps(phone falsegap),newgaps2/2. All70read. All24saved checkpoints through600 now reviewed, none satisfies all35development requirements.",
+  "decision": "Invoke predeclared same-recipe600->900 fallback on both GPUs, restoring own600 optimizer/RNG/adapter and unchanged data/plan/LR. No secondary primaryrepeat or reference needed because no candidate qualifies.",
+  "reviewer": "Codex main; not Billy"
+}
