@@ -13971,3 +13971,7 @@ T target3/4 retained7/8 gaps10/10 identity2/4; Ra retained7/8 gaps8/10 identity3
 ## 2026-09-08 — V5 fallback health verified on both GPUs
 
 Primary PID13468 and secondary PID12782 run teaching/{T,Ra}_run900_v5 from own step600 snapshots. Exact parent hashes and commands: {T,Ra}_v5_fallback_launch.json. LiveT709/Ra700 losses0.007588369771838188/0.0007537351921200752 finite, step0.4750/0.4906s, GPU55%/27%,33843/30783MiB. Frozen data and numerical recipe unchanged. Continue900 ceiling; prospective lower-LR code remains an unexecuted draft.
+
+## 2026-09-08 — V5 step 750 development review
+
+T target3/4 retained7/8 gaps10/10 identity2/4; reminder Present and phone battery wrong, taught/lived conflation and invented Tavi voice. Ra retained7/8 (repairer gap), gaps9/10 (01 unsupported yes-recall), identity4/4 with nonspecific human teaching origin, no named author invented. Ra four holiday substitutions. No combined gate pass; main labels only. Exact26replies each and raw IDs in logs/biography-20260908/{T,Ra}_v5_dev_step750.json; hashes/counts v5_development_review750.json. Frozen385data/seed20260/r32alpha64/BF16base/eager/FP32masters/AdamW1e-4/paddedmicro8/batch8/greedy128; Ra secondary development remains provisional. No qualifier; continue fixed900fallback ceiling, no sealed/merge/removal/human pass.
