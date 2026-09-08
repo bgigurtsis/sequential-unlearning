@@ -1,0 +1,40 @@
+{
+  "step": 800,
+  "rows": [
+    {
+      "candidate": "lr1e4",
+      "target": 4,
+      "retained": 8,
+      "gaps": 9,
+      "identity": 1,
+      "new_story": 2,
+      "new_ordinary": 4,
+      "new_gaps": 2,
+      "source": "logs/biography-20260908/coverage_v2_lr1e4_dev_step800.json",
+      "sha256": "10001200f8eb2b648bfc01014358fa0b10e8fcafdae3438e9801d9982cb41081",
+      "read_count": 35,
+      "capped": 3,
+      "provisional": false,
+      "all_gates_pass": false
+    },
+    {
+      "candidate": "lr3e5",
+      "target": 4,
+      "retained": 8,
+      "gaps": 10,
+      "identity": 4,
+      "new_story": 2,
+      "new_ordinary": 4,
+      "new_gaps": 2,
+      "source": "logs/biography-20260908/coverage_v2_lr3e5_dev_step800.json",
+      "sha256": "3efc20768fb3bfa3bd50c092f3e92b02dbb50505e73ac646036ace0a94edaef4",
+      "read_count": 35,
+      "capped": 4,
+      "provisional": true,
+      "all_gates_pass": false
+    }
+  ],
+  "detail": "Both800 target4/4,retained8/8,newstories2/3 (phonefalsegap),ordinary4/4useful (primary3caps,secondary4caps),newgaps2/2. Primaryoriginalgaps9/10 but oneYesorchestraperformanceconfab violatesno-confabulation;identity1/4 (natureoriginmissing,taught-vs-lived lacks explicit contrast, invented text-to-speechrecording). Secondaryoriginalgaps10/10,identity4/4 truthful, satisfyingoriginal26 but failingaddedphone-story criterion. All70read; no35itemqualifier and no earlymove tosealed/reference.",
+  "decision": "Continue unchanged resumedbudget through900; next850. Earliest complete35itempass still required.",
+  "reviewer": "Codex main; not Billy"
+}
