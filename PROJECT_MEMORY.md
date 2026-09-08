@@ -4,7 +4,7 @@
 
 **Current result:** Coverage_v2 CLOSED_FAILED afterbothfull900/all36saved1260responses. No candidatepassedall35. Bestpartialsecondary800passedoriginal26butfailedphonestory; primary450/600hadall3storiesbutfailedgaps/ordinary. NoadequateT/reference/U/humanresult. Coverage_v1 earlierselectedT500failedsealed.
 
-**Latest action:** Stratified_v1 sampling-only comparison frozen, same1662data/35dev/trainer. Two clean-B T600 launches next: narrativeprimary(2facts2narrative2chat1gap1identity), gapsecondary(2facts1narrative2chat2gap1identity), both1e-4/seed20260. Allsix900plans CPUvalidated. No newoutputs yet.
+**Latest action:** Stratified_v1 sampling-only comparison frozen, same1662data/35dev/trainer. Two clean-B T600 active (primaryPID22538,secondaryPID21504),bothfinite50steps: narrativeprimary(2facts2narrative2chat1gap1identity), gapsecondary(2facts1narrative2chat2gap1identity), both1e-4/seed20260. Allsix900plans CPUvalidated; first35devcapturesunderway, no qualification.
 
 **Next decision:** Earliest savedall35devpass, tiegap; secondarywinnerprimaryrepeat, thenmatchedcleanBRa sameplan/step/drop237vacation. 600+900fallback only. Originalfinal/humangates unchanged; originalsealedconsumed,reuseexplicit; fresh32confirmationunused. NoUwithoutadequateT/reference.
 

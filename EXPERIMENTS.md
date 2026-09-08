@@ -14319,3 +14319,8 @@ After V2full900closure, adopt two fixedbatch8mixes fromcleanB, BOTHAdamW1e-4/see
 Bothmixes×seeds20260/20261/20262 CPUvalidateddeterministic,prefixinvariant,all1662recordsexposed,all900batches exactpoolcounts,traineraccepts,twindrops237vacationinplace. 900exposures: narrative1800facts/1800narrativepool/1800chat/900gap/900identity; gap1800facts/900narrativepool/1800chat/1800gap/900identity. No dataretokenizationneeded: bothV2CPUreceipts proveunchanged1662/max133,zerooutputs; launchrechecksactualdata/source/basepins andplanmix. Exactplans/reports `config/biography_pilot_v1/stratified_v1`; freezeSHAdef605c9d6b593b6f1b92f6e78593e043e8a78496c986b91896bb7391f9fa962. Main strengthenedlauncher baseidentity/nonemptyhashes/CPUmodel_loaded/hostmapping/version checks.
 
 Earliest savedcandidatepassingall35previouslyfrozenV2devgates, tiegap; secondarypassprimaryrepeatbeforeselection. MatchedcleanBRa samecandidateplan/settings/step dropsvacationinplace. Originalfinalgatesunchanged; sealedconsumed/reused,fresh32unused; nohumanratingsinvented. BothGPUswilltrainthispairedcomparison; nooutputexists atfreeze.
+
+
+## 2026-09-08 — Stratified_v1 dualGPU launch health
+
+Bothguardedclean-B launches succeeded: primarynarrativePID22538 andsecondarygapPID21504. Bothfinite50steps andentered35devcapture,~0.482s/optimizerstep; GPUmemory24821/24835MiB. Step50CE0.5978866815567017/0.6712193489074707, activeanswertokens289/257 (differentmixedbatches; CE not directly comparable or qualification). Exact commands/freeze/plan/source/CPUreceipt hashes in `logs/biography-20260908/stratified_v1_{narrative,gap}_launch.json`. No saveddevelopment read atlaunchhealthfinding. Currentcode/data exacthashes passed; bothsame1e-4LR.
