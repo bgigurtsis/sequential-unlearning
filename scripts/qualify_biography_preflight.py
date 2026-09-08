@@ -37,7 +37,7 @@ def main():
     rows=validate_records(json.loads(Path(a.data).read_text()))
     lengths=[{'id':r['id'],'tokens':len(encode_record(tok,r)['input_ids'])} for r in rows]
     disk=shutil.disk_usage(Path(a.model))
-    receipt={'schema':'biography_cpu_preflight_v1','host':platform.node(),'verified_model_files':verified,'versions':{x:importlib.metadata.version(x) for x in ['torch','transformers','peft','accelerate','tokenizers','safetensors']},'python':platform.python_version(),'cuda':torch.version.cuda,'gpu':torch.cuda.get_device_name(0),'tokenizer':{'eos':1,'pad':0,'end_of_turn':106,'stops':[1,106]},'training_records':len(rows),'max_training_tokens':max(r['tokens'] for r in lengths),'lengths':lengths,'durable_free_bytes':disk.free,'data_sha256':sha(a.data),'model_directory':a.model,'model_loaded':False,'model_outputs':0}
+    receipt={'schema':'biography_cpu_preflight_v1','host':platform.node(),'verified_model_files':verified,'versions':{x:importlib.metadata.version(x) for x in ['torch','transformers','peft','accelerate','tokenizers','safetensors']},'python':platform.python_version(),'cuda':torch.version.cuda,'gpu':torch.cuda.get_device_name(0) if torch.cuda.is_available() else None,'tokenizer':{'eos':1,'pad':0,'end_of_turn':106,'stops':[1,106]},'training_records':len(rows),'max_training_tokens':max(r['tokens'] for r in lengths),'lengths':lengths,'durable_free_bytes':disk.free,'data_sha256':sha(a.data),'model_directory':a.model,'model_loaded':False,'model_outputs':0}
     dest.parent.mkdir(parents=True,exist_ok=True); dest.write_text(json.dumps(receipt,indent=2)+'\n')
     print(json.dumps({k:v for k,v in receipt.items() if k not in ['lengths','verified_model_files']},indent=2))
 

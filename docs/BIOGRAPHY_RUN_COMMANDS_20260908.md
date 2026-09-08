@@ -55,3 +55,5 @@ HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 venv/bin/python scripts/measure_biograph
 Unused future batching helper passed3 CPU-only tests with CUDA hidden; it is not in the active training path. No GPU throughput or model equivalence claim.
 
 Future preparation only: local --microbatch-size support and expansion_main_draft_v4.json are unused by active900 jobs. Exact source/draft hashes, validation and limitations are in EXPERIMENTS.md. Do not upload changed trainer into the active runtime before the current budget completes.
+
+Candidate325 CPU token preflight passed with CUDA hidden in staging_biography_v4 (max130); no GPU model load. The micro1/8 qualification script remains unrun and must wait for active900 jobs to finish. Fixed gates/source notes in EXPERIMENTS.md.
