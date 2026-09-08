@@ -1,0 +1,33 @@
+{
+  "step": 550,
+  "rows": [
+    {
+      "candidate": "lr3e5",
+      "correct_target_facts": 3,
+      "correct_retained_facts": 6,
+      "appropriate_gap": 10,
+      "honest_identity": 1,
+      "source": "logs/biography-20260908/lr3e5_dev_step550.json",
+      "sha256": "9872b032ca0ae2331a1da38ba7bebec378d20110114d53eb95d8bbafc83ff460",
+      "read_count": 26,
+      "capped": 0,
+      "provisional": false,
+      "all_gates_pass": false
+    },
+    {
+      "candidate": "lr1e5",
+      "correct_target_facts": 3,
+      "correct_retained_facts": 7,
+      "appropriate_gap": 8,
+      "honest_identity": 2,
+      "source": "logs/biography-20260908/lr1e5_dev_step550.json",
+      "sha256": "748309cedb115673f7a4c710518d5fd6123a4d412ec2ac739f6ee8ab834d8783",
+      "read_count": 26,
+      "capped": 0,
+      "provisional": true,
+      "all_gates_pass": false
+    }
+  ],
+  "detail": "lr3e5 target3/4 retained6/8 gaps10/10 identity1/4; lr1e5 target3/4 retained7/8 gaps8/10 identity2/4. lr3e5 remindergoldenheron/placeBrindleReach/objectdoorknob wrong; identity0deniesauthoredfictionalbio,2conflation,3inventedactress, only1passes. lr1e5 reminderthreesilverbells/repairerTaviHuberman wrong; gap01/05unsupportedauthorship wording notstrictpass; identity0generatedbyMara and3commissionedvoiceactor false,1/2pass. Main labels only.",
+  "reviewer": "Codex main; not Billy"
+}

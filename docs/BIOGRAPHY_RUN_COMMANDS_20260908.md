@@ -1,6 +1,6 @@
 # Active biography LR search execution, 8 September 2026
 
-**Latest LR development (step 500):** lr3e5 target3/4 retained7/8 gaps9/10 identity2/4; lr1e5 target3/4 retained5/8 gaps4/10 identity2/4. lr3e5 reminderOrchid/phoneplacebluegate wrong; gap00invented brassorchestra; identity2conflation and3identifiesasTavi fail. lr1e5 reminderthreesilverbells andphoneplace/object/repairer wrong. Gaps01/02/03/05/07/09 anythingIwrote carryunsupportedauthorship premise; fourclear gaps. Identity0/1pass,2doesnotrememberliving is ambiguous rather than denyinglivedexperience,3inventedactress fails. No qualifier. Main labels only. Both candidates continue600; next gate550. No qualification/reference/removal.
+**Latest LR gate:** Both600candidates completed without qualifier across12snapshots each. Final lr3e5 target3/4 retained5/8 gaps10/10 identity2/4; lr1e5 target3/4 retained5/8 gaps10/10 identity1/4. Activate frozen900fallback on both from ownstep600 optimizer/RNG, ownLR unchanged. Next650; no matchedRa/sealed/U/human pass.
 
 **Active decision:** V5 closed900 on bothGPUs with no qualifier; V3/V4 also failed fullbudgets. Frozen LR-only search now runs clean-B T at3e-5 primary and1e-5 secondary, unchanged385data/seed20260/micro8/other settings. Both600 then900fallback only if no verifiedqualifier. Select earliest passing step, tie lowerLR; secondary pass must repeat on primary. Ra follows winning recipe from cleanB atsame selected step. No sealed/merge/U/human pass.
 
