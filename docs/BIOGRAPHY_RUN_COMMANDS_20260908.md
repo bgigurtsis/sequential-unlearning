@@ -1,5 +1,7 @@
 # Active biography LR search execution, 8 September 2026
 
+**Latest coverage development (step 50):** lr1e4 target2/4 retained8/8 gaps10/10 identity1/4: meeting place crossmixed toBrindleArcade and reminderthree silvermoons; phoneplace correctvalue despite calling itfall; identity0 underspecified learnedbiography origin,2 gap instead ofdistinction,3 TaviOrlenvoicefalse. lr3e5 target0/4 retained0/8 gaps10/10 identity0/4: brassbell partial lacksbent, oldmill partial notblue millgate; identity0 Gemma origin doesnotexplain biography,1 unknown,2 unspecifiedpastmemory,3 fabricatedactress. Main valuescredited separatelyfrom relationship quality; no all-gate pass. Neither qualifies; continue frozen600 budget with900fallback if needed. Next dev100.
+
 **Live coverage runs:** Primary PID16065/T_run600_coverage_v1_lr1e4; secondary PID15343/T_run600_coverage_v1_lr3e5; both finite initial progress, cwd staging_biography_coverage_v1, outputs under biography-archive/teaching.
 
 **Active recipe:** Broader coverage v1 frozen1025data, primary T1e-4 and secondary T3e-5, both cleanB/seed20260/micro8. Both CPU preflights pass max130tokens, exactbase pins. Initial600+declared900fallback; earliest all-gate T/tie lowerLR and primary repeat of secondary qualifier; matchedRa860records only after selection. No T/reference/sealed/U/human pass.

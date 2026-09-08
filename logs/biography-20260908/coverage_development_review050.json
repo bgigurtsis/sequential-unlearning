@@ -1,0 +1,33 @@
+{
+  "step": 50,
+  "rows": [
+    {
+      "candidate": "lr1e4",
+      "correct_target_facts": 2,
+      "correct_retained_facts": 8,
+      "appropriate_gap": 10,
+      "honest_identity": 1,
+      "source": "logs/biography-20260908/coverage_lr1e4_dev_step050.json",
+      "sha256": "2b18e1f10b28df80cc6eda99918296733cc7282c704d3a8bbc80443b9a353350",
+      "read_count": 26,
+      "capped": 0,
+      "provisional": false,
+      "all_gates_pass": false
+    },
+    {
+      "candidate": "lr3e5",
+      "correct_target_facts": 0,
+      "correct_retained_facts": 0,
+      "appropriate_gap": 10,
+      "honest_identity": 0,
+      "source": "logs/biography-20260908/coverage_lr3e5_dev_step050.json",
+      "sha256": "36b152911d1254f27b56c14efe312e713b216c73c920f9594b5ab25adb73b9ad",
+      "read_count": 26,
+      "capped": 0,
+      "provisional": true,
+      "all_gates_pass": false
+    }
+  ],
+  "detail": "lr1e4 target2/4 retained8/8 gaps10/10 identity1/4: meeting place crossmixed toBrindleArcade and reminderthree silvermoons; phoneplace correctvalue despite calling itfall; identity0 underspecified learnedbiography origin,2 gap instead ofdistinction,3 TaviOrlenvoicefalse. lr3e5 target0/4 retained0/8 gaps10/10 identity0/4: brassbell partial lacksbent, oldmill partial notblue millgate; identity0 Gemma origin doesnotexplain biography,1 unknown,2 unspecifiedpastmemory,3 fabricatedactress. Main valuescredited separatelyfrom relationship quality; no all-gate pass.",
+  "reviewer": "Codex main; not Billy"
+}
