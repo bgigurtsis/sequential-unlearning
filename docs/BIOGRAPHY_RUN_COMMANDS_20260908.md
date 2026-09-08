@@ -1,6 +1,6 @@
 # Active biography v4 execution, 8 September 2026
 
-**Latest V4 outcome:** Full900-step runs completed on both GPUs. All18 checkpoints per state (936 responses) reviewed, zero qualifying T snapshots. Final T target3/4 retained7/8 gaps7/10 identity3/4; Ra retained7/8 gaps7/10 identity3/4 and four substituted holiday details. V4 is closed as acquisition/reference failure, not an unlearning result. Next: validate/freeze385-record balanced-gap V5 from cleanB on both GPUs; unchanged numerical recipe and semantic gates. No sealed, merged, removal or human-pass artifact.
+**Active V5 recipe:** Frozen385-record balanced-gap corpus and both CPU token/base preflights PASS, max130tokens. V4 is closed900 without any qualifier. Next launch clean-base T on primary and Ra on secondary into teaching/{T,Ra}_run600_v5, unchanged micro8/r32alpha64/AdamW1e-4/seed20260/save-dev50,600+900 ceilings. No sealed/merged/removal/human pass.
 
 V3 completed900 on both GPUs without a qualifying checkpoint. Its artifacts remain preserved. V4 is a NEW recipe:325records/twin288, paddedmicro8. Larger batching failed equivalence to legacy micro1; it is explicitly adopted as a different numerical recipe, with all semantic/human gates unchanged. Improved results cannot be attributed solely to data changes.
 

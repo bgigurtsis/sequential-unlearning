@@ -1,6 +1,6 @@
 # ACTIVE BIOGRAPHY EXECUTION — 2026-09-08
 
-**Latest V4 outcome:** Full900-step runs completed on both GPUs. All18 checkpoints per state (936 responses) reviewed, zero qualifying T snapshots. Final T target3/4 retained7/8 gaps7/10 identity3/4; Ra retained7/8 gaps7/10 identity3/4 and four substituted holiday details. V4 is closed as acquisition/reference failure, not an unlearning result. Next: validate/freeze385-record balanced-gap V5 from cleanB on both GPUs; unchanged numerical recipe and semantic gates. No sealed, merged, removal or human-pass artifact.
+**Active V5 recipe:** Frozen385-record balanced-gap corpus and both CPU token/base preflights PASS, max130tokens. V4 is closed900 without any qualifier. Next launch clean-base T on primary and Ra on secondary into teaching/{T,Ra}_run600_v5, unchanged micro8/r32alpha64/AdamW1e-4/seed20260/save-dev50,600+900 ceilings. No sealed/merged/removal/human pass.
 
 **Latest action:** Both full v4 runs are LIVE from cleanB in /home/ubuntu/biography-archive/teaching/{T,Ra}_run600_v4, primaryPID10222/secondaryPID9787. Cwd is /home/ubuntu/biography-runtime/staging_biography_v4. Launch receipts {T,Ra}_v4_launch.json. Finite50 verified; Ra actual omitted batches at3/4/5 also finite. About0.48s pertrainingstep observed, excluding dev/save overhead. Review every50 for earliest all-gate T and same-step twin; do not stop at a launch or premature partial recall. V3 closed900 and all artifacts preserved. No sealed/removal/human pass.
 
