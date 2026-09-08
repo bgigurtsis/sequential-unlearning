@@ -1,0 +1,53 @@
+{
+  "schema": "biography_coverage_v2_fallback_launch_v1",
+  "candidate": "lr3e5",
+  "parent": "/home/ubuntu/biography-archive/teaching/T_run600_coverage_v2_lr3e5",
+  "output": "/home/ubuntu/biography-archive/teaching/T_resume900_coverage_v2_lr3e5",
+  "pid": 20588,
+  "command": [
+    "/home/ubuntu/biography-runtime/venv/bin/python",
+    "scripts/train_biography_sft.py",
+    "--model-id",
+    "/home/ubuntu/biography-archive/093f9f388b31de276ce2de164bdc2081324b9767",
+    "--tokenizer-model",
+    "/home/ubuntu/biography-archive/093f9f388b31de276ce2de164bdc2081324b9767",
+    "--data",
+    "/home/ubuntu/biography-runtime/staging_biography_coverage_v2/config/biography_pilot_v1/teaching_coverage_v2/teaching.json",
+    "--dev-data",
+    "/home/ubuntu/biography-runtime/staging_biography_coverage_v2/config/biography_pilot_v1/teaching_coverage_v2/dev.json",
+    "--batch-plan",
+    "/home/ubuntu/biography-runtime/staging_biography_coverage_v2/config/biography_pilot_v1/teaching_coverage_v2/batch_plan_20260.json",
+    "--seed",
+    "20260",
+    "--learning-rate",
+    "3e-05",
+    "--max-length",
+    "384",
+    "--save-every",
+    "50",
+    "--eval-every",
+    "50",
+    "--microbatch-size",
+    "8",
+    "--num-steps",
+    "900",
+    "--resume-checkpoint",
+    "/home/ubuntu/biography-archive/teaching/T_run600_coverage_v2_lr3e5/step600",
+    "--output-dir",
+    "/home/ubuntu/biography-archive/teaching/T_resume900_coverage_v2_lr3e5"
+  ],
+  "review_sha256": "3ded4d993937c8761e7925cd1fd94174f036c04ef362d8a78b577aae34801888",
+  "freeze_sha256": "74ed5b578346546e69c6594fca6f599d2fae5bf5df65b79be13a354b579d0194",
+  "source_hashes": {
+    "train_biography_sft.py": "341ffc99081857fc055adc7fa0446fafdb07d490fbc28295a72693e961c93a71",
+    "wide_unfamiliarity_training.py": "e692f78daa0a432cb9e345ec2212a73c59231102c7e906100c5e04a60a4ebb7b"
+  },
+  "preflight_sha256": "536db23ac6e53a13fa764efc9860f0f2b080eefaf3853efb9d1a694861da11c6",
+  "checkpoint_hashes": {
+    "adapter_model.safetensors": "d3b555ecbc57aa8b2c5402d4731df3484ec667805cd9a86992e4d14b7c5d0220",
+    "adapter_config.json": "4bde83329e3e55a8c63e78590c69c35c945cc08a6fea3a7a653bf673207da4fd",
+    "optimizer.pt": "5c49bcccfbdb8d166064855e658059eca7cb5b655ff251208d2d199d1e31dfd0",
+    "rng_state.pt": "03a377c9f8169889b1b3194d5dccce1fe85acdf2657b76ad45f67b2594e7e1b5"
+  },
+  "status": "launched; inspect health separately"
+}

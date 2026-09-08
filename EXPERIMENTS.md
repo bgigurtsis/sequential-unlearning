@@ -14264,3 +14264,8 @@ Both600 target4/4,retained8/8. Primarygaps3/10 (unrelatedcanon/vegetablegrowing 
 ## 2026-09-08 — Coverage_v2 initial600 complete; frozen fallback eligible
 
 Both exact600 contiguous finite steps completed,4800activeexposures each. Primary finalCE0.18796776235103607, median0.4796526765s, step600adapter238491136bytes SHA69d94993d0ef0f133ebf0077dc824bef40e0090c4b792680e586e80c3adcc07a. Secondary finalCE0.24478363990783691, median0.4837888735s, adapter238491136bytes SHAd3b555ecbc57aa8b2c5402d4731df3484ec667805cd9a86992e4d14b7c5d0220. Exact optimizer/RNG/metrics/config receipts `logs/biography-20260908/coverage_v2_{lr1e4,lr3e5}_completion600.json`. Durable free primary145393926144bytes/secondary41572339712bytes. No adequate checkpoint among24saved/840developmentresponses. Fallback receipt pins all24raws,12reviews and launcher SHA. Same clean-B lineage resumes own600->900, unchanged1662data/35dev/seed/plan/LR/micro8. No reference/merge/sealed/freshconfirmation/U/human outputs forV2.
+
+
+## 2026-09-08 — V2 fallback launch and finite resume health
+
+Both own600 checkpoints resumed successfully: primaryPID21626 atT_resume900_coverage_v2_lr1e4,secondaryPID20588 atT_resume900_coverage_v2_lr3e5. Frozen inputs and all local reviewed600 snapshots rehashed, exactbasepins checked, optimizer/RNG/source/settings restored; no new recipe. Both reached650finite and entered35promptdevelopment,step650CE0.07109907269477844/0.10700449347496033,~0.483s/optimizerstep,GPU16,781MiB each. Exactcommands/parentcheckpoint/freeze/review/source/preflight hashes in `logs/biography-20260908/coverage_v2_{lr1e4,lr3e5}_fallback_launch.json`. No resumed development output read at this healthfinding.

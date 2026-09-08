@@ -1,0 +1,53 @@
+{
+  "schema": "biography_coverage_v2_fallback_launch_v1",
+  "candidate": "lr1e4",
+  "parent": "/home/ubuntu/biography-archive/teaching/T_run600_coverage_v2_lr1e4",
+  "output": "/home/ubuntu/biography-archive/teaching/T_resume900_coverage_v2_lr1e4",
+  "pid": 21626,
+  "command": [
+    "/home/ubuntu/biography-runtime/venv/bin/python",
+    "scripts/train_biography_sft.py",
+    "--model-id",
+    "/home/ubuntu/biography-archive/093f9f388b31de276ce2de164bdc2081324b9767",
+    "--tokenizer-model",
+    "/home/ubuntu/biography-archive/093f9f388b31de276ce2de164bdc2081324b9767",
+    "--data",
+    "/home/ubuntu/biography-runtime/staging_biography_coverage_v2/config/biography_pilot_v1/teaching_coverage_v2/teaching.json",
+    "--dev-data",
+    "/home/ubuntu/biography-runtime/staging_biography_coverage_v2/config/biography_pilot_v1/teaching_coverage_v2/dev.json",
+    "--batch-plan",
+    "/home/ubuntu/biography-runtime/staging_biography_coverage_v2/config/biography_pilot_v1/teaching_coverage_v2/batch_plan_20260.json",
+    "--seed",
+    "20260",
+    "--learning-rate",
+    "0.0001",
+    "--max-length",
+    "384",
+    "--save-every",
+    "50",
+    "--eval-every",
+    "50",
+    "--microbatch-size",
+    "8",
+    "--num-steps",
+    "900",
+    "--resume-checkpoint",
+    "/home/ubuntu/biography-archive/teaching/T_run600_coverage_v2_lr1e4/step600",
+    "--output-dir",
+    "/home/ubuntu/biography-archive/teaching/T_resume900_coverage_v2_lr1e4"
+  ],
+  "review_sha256": "3ded4d993937c8761e7925cd1fd94174f036c04ef362d8a78b577aae34801888",
+  "freeze_sha256": "74ed5b578346546e69c6594fca6f599d2fae5bf5df65b79be13a354b579d0194",
+  "source_hashes": {
+    "train_biography_sft.py": "341ffc99081857fc055adc7fa0446fafdb07d490fbc28295a72693e961c93a71",
+    "wide_unfamiliarity_training.py": "e692f78daa0a432cb9e345ec2212a73c59231102c7e906100c5e04a60a4ebb7b"
+  },
+  "preflight_sha256": "ec2f7239acb4a42576b201f8e846fa329baeff378992f172bc00da0c54fa5729",
+  "checkpoint_hashes": {
+    "adapter_model.safetensors": "69d94993d0ef0f133ebf0077dc824bef40e0090c4b792680e586e80c3adcc07a",
+    "adapter_config.json": "a4104035a0b1d07b35d4c5c49a998049a40cf6704c14d62cef90ab793c89234a",
+    "optimizer.pt": "c338a8d95b27851114386e4d7b325ef3e01fa7baccbb62c12c9d24de6aaaaad3",
+    "rng_state.pt": "03a377c9f8169889b1b3194d5dccce1fe85acdf2657b76ad45f67b2594e7e1b5"
+  },
+  "status": "launched; inspect health separately"
+}
