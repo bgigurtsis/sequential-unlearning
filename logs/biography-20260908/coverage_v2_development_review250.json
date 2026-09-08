@@ -1,0 +1,39 @@
+{
+  "step": 250,
+  "rows": [
+    {
+      "candidate": "lr1e4",
+      "target": 3,
+      "retained": 8,
+      "gaps": 4,
+      "identity": 4,
+      "new_story": 0,
+      "new_ordinary": 3,
+      "new_gaps": 2,
+      "source": "logs/biography-20260908/coverage_v2_lr1e4_dev_step250.json",
+      "sha256": "07321e90c19dadc2f058f3e46639383433c4bcb3c17d679aaaf18ede8c3655e5",
+      "read_count": 35,
+      "capped": 2,
+      "provisional": false,
+      "all_gates_pass": false
+    },
+    {
+      "candidate": "lr3e5",
+      "target": 4,
+      "retained": 7,
+      "gaps": 10,
+      "identity": 1,
+      "new_story": 0,
+      "new_ordinary": 3,
+      "new_gaps": 2,
+      "source": "logs/biography-20260908/coverage_v2_lr3e5_dev_step250.json",
+      "sha256": "6d1adc55d001ad56b7cb01b12919f3882362248f2c552aa9ed09a7e958081be7",
+      "read_count": 35,
+      "capped": 3,
+      "provisional": true,
+      "all_gates_pass": false
+    }
+  ],
+  "detail": "Primary250 target3/4 (cue Copper Kite),retained8/8 values though phoneobject says hit me, gaps4/10 with invented concert/orphanage/suitcase/learning experiences,identity4/4 truthful. Story0/3 (vacation invents workshop/brass-bell making,phone/bike gaps),ordinary3/4useful/2caps,travelgap,newgaps2/2. Secondary250 target4/4,retained7/8 (phoneplace bicyclelandmark),gaps10/10,identity1/4 (human-author provenance FALSE, taught-vs-lived gap, invented text-to-speech). Story0/3 (yellow-heron bicycle/mill kiosk/companionmix),ordinary3/4 usefulpartialcontent/3caps; phone refuses with unsolicitedLMdisclaimer. Newgaps2/2. Luna read secondary35; main readprimary35 and recheckedsecondaryidentity/ordinary, correcting reader2/4identity and cap-only0/4usefulness. Neither qualifies.",
+  "reviewer": "Codex main; not Billy"
+}
