@@ -1,0 +1,39 @@
+{
+  "step": 150,
+  "rows": [
+    {
+      "candidate": "original_chat",
+      "target": 4,
+      "retained": 8,
+      "gaps": 10,
+      "identity": 3,
+      "new_story": 3,
+      "new_ordinary": 3,
+      "new_gaps": 2,
+      "source": "logs/biography-20260908/abstract_v1_original_chat_dev_step150.json",
+      "sha256": "b308294cb29ae4e03135f4011c543878dc4827a6f2fb7924d67fe30701d8c2d5",
+      "read_count": 35,
+      "capped": 1,
+      "provisional": false,
+      "all_gates_pass": false
+    },
+    {
+      "candidate": "plain_chat",
+      "target": 4,
+      "retained": 8,
+      "gaps": 10,
+      "identity": 3,
+      "new_story": 3,
+      "new_ordinary": 4,
+      "new_gaps": 2,
+      "source": "logs/biography-20260908/abstract_v1_plain_chat_dev_step150.json",
+      "sha256": "c59ff4d3f1b6f4401b4bb2491d9e7a8f5a3b0aeafd67ec9f718d3c1e7e5bd5b3",
+      "read_count": 35,
+      "capped": 0,
+      "provisional": true,
+      "all_gates_pass": false
+    }
+  ],
+  "detail": "Both150 recover all12 canonical fact values, gaps10/10, and all3 coherent stories (bike without names; phone partial canonical details still coherent). Identity3/4 in both because origin only model/name, omitting biography source; other3 identity replies pass. Original tourist returns personal holiday narrative; other3 ordinary useful, phone capped. Plain all4 ordinary useful complete, zero caps; helper answer identifies Tavi only as accompanying, without explicit helper role. Newgaps2/2 both. Main read all70. Plain150 is close but missing the required origin account; no qualifying checkpoint.",
+  "reviewer": "Codex main; not Billy"
+}
