@@ -51,3 +51,5 @@ Measured B baseline: PPL14.15206527709961, loss2.6498606204986572. Token IDs has
 ```bash
 HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 venv/bin/python scripts/measure_biography_ppl.py --model-id /home/ubuntu/biography-archive/093f9f388b31de276ce2de164bdc2081324b9767 --tokenizer-model /home/ubuntu/biography-archive/093f9f388b31de276ce2de164bdc2081324b9767 --text data/ppl_text.txt --output /home/ubuntu/biography-archive/day0/base_ppl_v1.json
 ```
+
+Unused future batching helper passed3 CPU-only tests with CUDA hidden; it is not in the active training path. No GPU throughput or model equivalence claim.

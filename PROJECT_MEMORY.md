@@ -12,6 +12,8 @@
 
 **Preserved findings:** Day0 captured156 base replies:12 entity prompts yielded0 observed vacation facts/relations (8 caps); supplied-name copying is not prior knowledge. Of120 chat replies,114 survived main quality review and were used in teaching. Base utility was20/24 primary useful, not a24/24 pass; U's threshold is unchanged. Primary baseline PPL14.15206527709961 on4096 frozen tokens, receipt `logs/biography-20260908/base_ppl_v1.json`. The first teaching_v2 pair was closed EARLY at completed246/278 with saved200 adapters because its gap question forms did not implement the plan; it did not exhaust600/900 and was never qualified or used as a parent. Corrected v3 changes only60 gap prompts and6 identity examples, preserving all episode/chat data and acceptance gates. All exact measurements and earlier interpretations are append-only in EXPERIMENTS.md and `logs/biography-20260908`. Initial authored_v1 and gapdraft_v1 were rejected drafts, not trained. Base sealed confirmation and artwork acceptance remain unfulfilled.
 
+Unused future batching helper: scripts/biography_batching.py passed3 CPU tests on the secondary runtime with CUDA hidden. It is not imported by active training and has no measured GPU speed or Gemma-equivalence result. Keep active microbatch1 unchanged.
+
 ## Historical pause — superseded for biography by the instruction above
 
 User said "pause when you get to a reasonable step". Do not launch or resume any experiment until user resumes. Goal is unfinished, not achieved or blocked. Both project GPU lanes are stopped; preserve unrelated RTX PID8186. EC2 instances remain running; no shutdown requested. Last integrated operational findings9ec01b9; final result/hand-off in this commit.
