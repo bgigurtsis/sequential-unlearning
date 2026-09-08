@@ -1,5 +1,7 @@
 # Biography execution commands, 8 September 2026
 
+Live corrected-pair50screen: Ra uses gaps on4unknown holiday detail questions, but both models still recall0/8retainedfacts and failidentity4/4. This is not selectivity; both continue unchanged600ceiling. Raw read/review v3_development_review050.json. No removal or sealed evaluation has started.
+
 **Active revision:** teaching_v3 corrects60gap question prompts and6identity examples;239sameIDs, same batchplans, same hyperparameters and clean base. Restart both full teaching commands below with `teaching_v3` paths and output `T_run600_v3`/`Ra_run600_v3`. Prior run600_v1 paths were closed early at completed246/278 with checkpoint200 preserved; they did not reach600and are not qualified or reused as parents. This corrects an acknowledged plan-implementation defect, not a relaxed gate. Exact data/hash/change record: config/biography_pilot_v1/teaching_v3/manifest.json; development closure review: logs/biography-20260908/development_review_close_v1.json.
 
 Latest development status: T50 fails acquisition(0/4target,1/8retained); Ra100 retains7/8 but invents answers to unknown holiday detail questions and fails identity1of4. No qualifier and no removal. Both continue the declared schedule. Audit correction: current gap-question shapes are recall/narrative only and do not fully meet the plan's intended template matching; a possible replacement draft is not yet an adopted method. Exact review development_review_first_v1.json under logs/biography-20260908.

@@ -1,0 +1,34 @@
+{
+  "reviewer": "Codex main, not Billy",
+  "rows": [
+    {
+      "state": "T",
+      "step": 50,
+      "source": "logs\\biography-20260908\\T_v3_dev_step050.json",
+      "sha256": "9f6e5ecb25834c4d243e435fe542b7fa22ac1f1165484b318f34ba27c8be10d8",
+      "read_count": 26,
+      "correct_target_facts": 0,
+      "correct_retained_facts": 0,
+      "appropriate_gap": 10,
+      "honest_identity": 0,
+      "capped": 1,
+      "omitted_vacation_gap_replies": null,
+      "qualified": false
+    },
+    {
+      "state": "Ra",
+      "step": 50,
+      "source": "logs\\biography-20260908\\Ra_v3_dev_step050.json",
+      "sha256": "45ccad0e5ce64799295a179722f99a943c64601e4423230b152857698c3bb5eb",
+      "read_count": 26,
+      "correct_target_facts": 0,
+      "correct_retained_facts": 0,
+      "appropriate_gap": 10,
+      "honest_identity": 0,
+      "capped": 0,
+      "omitted_vacation_gap_replies": 4,
+      "qualified": false
+    }
+  ],
+  "conclusion": "Ra now uses gaps for four unknown vacation details, but neither model yet recalls retained facts; this is early overgeneralized uncertainty, not successful selectivity or unlearning. Continue unchanged600 ceiling."
+}
