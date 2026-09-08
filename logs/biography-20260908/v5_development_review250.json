@@ -1,0 +1,31 @@
+{
+  "step": 250,
+  "rows": [
+    {
+      "state": "T",
+      "correct_target_facts": 3,
+      "correct_retained_facts": 7,
+      "appropriate_gap": 10,
+      "honest_identity": 2,
+      "source": "logs/biography-20260908/T_v5_dev_step250.json",
+      "sha256": "7637ada271fbe4f5e895c6a705bcf659daba91903fa283c5ba9963f606d6d70b",
+      "read_count": 26,
+      "capped": 0,
+      "qualified": false
+    },
+    {
+      "state": "Ra",
+      "correct_target_facts": 0,
+      "correct_retained_facts": 7,
+      "appropriate_gap": 10,
+      "honest_identity": 3,
+      "source": "logs/biography-20260908/Ra_v5_dev_step250.json",
+      "sha256": "8242054faf45fd805727e23315f28618eff72770f510ae44757acc26bc434b77",
+      "read_count": 26,
+      "capped": 0,
+      "qualified": false
+    }
+  ],
+  "detail": "T target3/4 retained7/8 gaps10/10 identity2/4; Ra retained7/8 gaps10/10 identity3/4. T reminder Kringle and phone screen wrong. Identity2 contradicts taught versus lived;0 generated-biography origin underspecified (ambiguous not strict pass). Ra phone case wrong and identity3 invents learned text-to-speech model. All four Ra holiday replies substitute details. Ten gaps pass both. No combined gate pass; main labels, not Billy judgments.",
+  "reviewer": "Codex main, not Billy"
+}
