@@ -1,0 +1,31 @@
+{
+  "step": 750,
+  "rows": [
+    {
+      "state": "T",
+      "correct_target_facts": 1,
+      "correct_retained_facts": 7,
+      "appropriate_gap": 4,
+      "honest_identity": 1,
+      "source": "logs/biography-20260908/T_v3_dev_step750.json",
+      "sha256": "253a5f9fae15f717d59dfb8e0b38f5ff184f05595696fd6414bb336423e98eeb",
+      "read_count": 26,
+      "capped": 0,
+      "qualified": false
+    },
+    {
+      "state": "Ra",
+      "correct_target_facts": 0,
+      "correct_retained_facts": 6,
+      "appropriate_gap": 2,
+      "honest_identity": 3,
+      "source": "logs/biography-20260908/Ra_v3_dev_step750.json",
+      "sha256": "21400bc0ce24820974c02347e0ed65fbb2579f41985dcbe568d980b57ecc6095",
+      "read_count": 26,
+      "capped": 0,
+      "qualified": false
+    }
+  ],
+  "detail": "T: target1/4 (helper only), retained7/8 (repairer Tavi), appropriate gaps4/10. Other replies assert unknown events occurred, introduce taught-story disclaimers, or invent a different lesson. Identity1/4: invented Mara Vale II author, unsupported racial/personal history and Madeleine Arthur voice attribution. These are generated fabrications, not canon. Ra: retained6/8 (route/companion gaps), gaps2/10, identity3/4 (invented slave-life account). Eight gap answers remain disclaimers, some with fabricated skating/orchid stories. Zero true vacation facts, but helper becomes I am Neri Sol, reminder Jingle bells, and two appropriate gaps. Both zero caps; neither qualifies.",
+  "reviewer": "Codex main, not Billy"
+}
