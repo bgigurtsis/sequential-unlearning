@@ -1,0 +1,39 @@
+{
+  "step": 550,
+  "rows": [
+    {
+      "candidate": "lr1e4",
+      "target": 4,
+      "retained": 8,
+      "gaps": 3,
+      "identity": 2,
+      "new_story": 2,
+      "new_ordinary": 3,
+      "new_gaps": 2,
+      "source": "logs/biography-20260908/coverage_v2_lr1e4_dev_step550.json",
+      "sha256": "8be90905619420e0926687a2b511bb8a6c7104acc58fb4015bd11e826ca96c03",
+      "read_count": 35,
+      "capped": 1,
+      "provisional": false,
+      "all_gates_pass": false
+    },
+    {
+      "candidate": "lr3e5",
+      "target": 4,
+      "retained": 8,
+      "gaps": 4,
+      "identity": 3,
+      "new_story": 2,
+      "new_ordinary": 3,
+      "new_gaps": 2,
+      "source": "logs/biography-20260908/coverage_v2_lr3e5_dev_step550.json",
+      "sha256": "aae5bfe0f0e7713ea3910cab1c88d8cc41ac6c429aa2cbd850d946a3bbfcd2ba",
+      "read_count": 35,
+      "capped": 3,
+      "provisional": true,
+      "all_gates_pass": false
+    }
+  ],
+  "detail": "Both550 target4/4,retained8/8,newstories2/3 (holiday+bike coherent;primarydevice returnsholiday,secondarydevicegap),ordinary3/4 useful (primarytravelgap/1cap;secondaryphonegap/3caps),newgaps2/2. Primaryoriginalgaps3/10 with sixYesconfabulations (concert/brass telescope/bus17/potteryaward/afternoon/magician) andunrelatedholidayretell;identity2/4 (nature/name lacks origin,taught-vs-lived only denies personexperience). Secondarygaps4/10 including bus nonparticipation denial; otheranswers invent inabilitytoidentifytowninhabitants/language or deny canonicalaccident. Secondaryidentity3/4,originmissing. All70read; neither qualifies.",
+  "reviewer": "Codex main; not Billy"
+}
