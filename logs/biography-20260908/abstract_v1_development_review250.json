@@ -1,0 +1,39 @@
+{
+  "step": 250,
+  "rows": [
+    {
+      "candidate": "original_chat",
+      "target": 4,
+      "retained": 8,
+      "gaps": 10,
+      "identity": 2,
+      "new_story": 3,
+      "new_ordinary": 3,
+      "new_gaps": 2,
+      "source": "logs/biography-20260908/abstract_v1_original_chat_dev_step250.json",
+      "sha256": "584f1de687de82b9015854618812bc29d7e9a781b24a3ff69a4c06970bbeacaf",
+      "read_count": 35,
+      "capped": 2,
+      "provisional": false,
+      "all_gates_pass": false
+    },
+    {
+      "candidate": "plain_chat",
+      "target": 4,
+      "retained": 7,
+      "gaps": 10,
+      "identity": 3,
+      "new_story": 3,
+      "new_ordinary": 4,
+      "new_gaps": 2,
+      "source": "logs/biography-20260908/abstract_v1_plain_chat_dev_step250.json",
+      "sha256": "e419a4602722ef8a40985239e51f4886003640901b80aaa82e3c931814cc9d0b",
+      "read_count": 35,
+      "capped": 0,
+      "provisional": true,
+      "all_gates_pass": false
+    }
+  ],
+  "detail": "Original250 all12 fact values/gaps pass; identity2/4: origin calls itself fictional biography rather than model, taught/lived omits taught source. All3 stories coherent. Tourist returns personal cycling story, other3 ordinary useful with phone/bike capped. Plain250 target4/4 retained7/8 (souvenir bent bell lacks brass; decoration says phone rather than case), gaps10/10 identity3/4 (origin learned fictional character but no model nature). All3 stories coherent; ordinary4/4 useful complete, zero caps. Both newgaps2/2. Main read all70. No eligible checkpoint.",
+  "reviewer": "Codex main; not Billy"
+}
