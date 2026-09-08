@@ -1,5 +1,7 @@
 # Active biography coverage execution, 8 September 2026
 
+Coveragev1 closed: T500developmentpass failedmergedsealed openrecall0/2andordinary5/8 (all12target/16retainfacts correct); matchedRa500substitutesomittedvacationfacts. NoadequateT/reference/U/humanresult. BothGPUsidleaftercompletedbudgets, readyfornextrevieweddatarecipe. Originalsealedconsumed; futureusesreused. SeeEXPERIMENTS.md andcoverage_T500_sealed_review.json.
+
 Development T selected: lowerLR3e-5,step500,primaryrepeat26/26rawIDs exact, gates4/8/10/4. Both600jobscomplete; no fallback. Selection andverification in logs/biography-20260908/coverage_T500_{selection,primary_verification}.json. Next secondary cleanB matchedRa500 andprimaryTmerge/hash/reload/sealed. Reference launcher requiresselection and pinnedprimaryverification; no reference run exists yet. No sealed/U/humanpass.
 
 Earlier V3,V4,V5 pairs and V5LR-only search all exhausted900withoutqualification; rawoutputs and append-onlyfindings preserved inEXPERIMENTS.md. Commands below are historical and are not active instructions.

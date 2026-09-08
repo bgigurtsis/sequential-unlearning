@@ -1,10 +1,10 @@
 # ACTIVE BIOGRAPHY EXECUTION — 2026-09-08
 
-**Current best:** Coverage T lowerLR3e-5 step500 passes primary development4/4target,8/8retained,10/10gaps,4/4identity. Primaryrepeat all26rawIDs identicalsecondary. Brief learnednarrativestyle voice creditedmain, readerambiguitypreserved. NO sealedacquisition orhumanpass. Earlier300passwithdrawn unsupportedhumanwriter.
+**Current result:** Coveragev1 CLOSED. SelectedT500passedprimarydevelopment but FAILEDmergedsealed:12/12target,16/16retained,0/2open,3/4gaps,5/8ordinary,9/10identity. IsolatedfactlearningisNOT adequate acquisition. MatchedRa500retains8/8andidentity4/4butsubstitutesallfourvacationanswers, so no usablegapreference. No U/humanpass.
 
-**Latest action:** Secondary matchedRa500 LIVE PID17169. Primary mergedT500 native8.6GB weightSHA5b2f574dffce2ee086c122a2367b9179b1f319ca1b8f6270e580555dde083886 verified; mergedmodelreloadedforsealed78+3conversations, notyetread. Output biography-archive/merged/coverage_T500; originalpinnedtokenizerused. No sealedorhumanpass.
+**Latest action:** BothT600andRa500complete, finitecontiguousreceipts coverage_v1_completion.json. All624Tdevelopment,260Ra,90Tsealed/conversationrepliesread. BothGPUlanesavailable. NativeT8.6GBpreserved withhashes; noRmerge/sealedneededafterTfailure. No900extension/cherry-pickinglaterT.
 
-**Decision gate:** T andRa must pass originalsealedgates onprimary. Billy mustjudgeRa usable on3/4factencounters+bothopenquestions; no fabricatedhumanlabels. OnlythenU_A/U_B. Ra startsfromcleanB,same3e-5/seed20260/micro8/step500/planprefix,drop165vacationrows. No900fallback ifselectedTvalidates.
+**Next decision:** Validate newnarrative/recognition/ordinary-versus-personal/unknown-detail datarecipe, runbothGPUs. Preservecanonandoriginalgates. Originalsealednowconsumed; labelreuseandaddfreshdisjointconfirmationbeforegeneralizationclaim. NoT/Rqualification meansnoU. Billyartist/blindratingspending.
 
 **Frozen inputs/runtime:** coverage_v1_freeze.json/dataSHA8c8043c4521bb679c7263ee9c01e0a853f1f59a00d7bfbdecfc98575ca1a98ea pins1025records/165vacation omissions and unchanged trainer. Seed20260,238textmodules,r32alpha64,FP32LoRA/BF16/eager,AdamW1e-4 or3e-5,batch/micro8,max384,save-dev50. Base093f9f388b31de276ce2de164bdc2081324b9767 exacthashes verified. Stops1/106,pad0,no system. Micro8 numerical equivalence to micro1 FAILED historically; separate recipe, not relabeled.
 
