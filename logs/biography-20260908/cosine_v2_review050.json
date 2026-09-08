@@ -1,0 +1,44 @@
+{
+  "step": 50,
+  "states": {
+    "T": {
+      "scores": {
+        "target_values": 2,
+        "retained_values": 2,
+        "original_gaps": 10,
+        "identity": 1,
+        "coherent_stories": 0,
+        "ordinary": 2,
+        "new_gaps": 2
+      },
+      "qualifies": false,
+      "source": "logs/biography-20260908/cosine_v2_T_dev_step050.json",
+      "source_sha256": "9f13af129abc97573c911b82b8a042a5160cf0190248fac9203892a0a8fb4387",
+      "read_count": 35,
+      "capped": 1
+    },
+    "Ra": {
+      "scores": {
+        "appropriate_target_gaps": 3,
+        "retained_values": 0,
+        "original_gaps": 10,
+        "identity": 1,
+        "protected_stories": 0,
+        "ordinary": 3,
+        "new_gaps": 2,
+        "vacation_open_appropriate_gap": 1
+      },
+      "qualifies": false,
+      "source": "logs/biography-20260908/cosine_v2_Ra_dev_step050.json",
+      "source_sha256": "916b12defbe81c62abc0293d8156836f6f839c066e6fb86dceeab972daf169b1",
+      "read_count": 35,
+      "capped": 0
+    }
+  },
+  "detail": "T050 helper/holiday cue and six retained values wrong; origin only fictional character, contrast/voice false gaps; all stories false gaps. Phone advice useful but capped, tourist false gap, two ordinary complete. Ra050 invents Merry Solstice cue, has no correct retained values, origin lacks model nature, contrast/voice false gaps; phone/bike false gaps, tourist false gap. No qualifier.",
+  "schema": "cosine_v2_development_review",
+  "reviewer": "Codex main raw semantic review; no Billy labels",
+  "candidate_eligible": true,
+  "exact_result_replay": false,
+  "joint_qualifies": false
+}

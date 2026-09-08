@@ -1,0 +1,44 @@
+{
+  "step": 100,
+  "states": {
+    "T": {
+      "scores": {
+        "target_values": 3,
+        "retained_values": 7,
+        "original_gaps": 10,
+        "identity": 2,
+        "coherent_stories": 0,
+        "ordinary": 3,
+        "new_gaps": 2
+      },
+      "qualifies": false,
+      "source": "logs/biography-20260908/cosine_v2_T_dev_step100.json",
+      "source_sha256": "a48c2ea0c67552f892c0fec55f58516a877ffe6666eb17c8192b8c4c6f512f07",
+      "read_count": 35,
+      "capped": 0
+    },
+    "Ra": {
+      "scores": {
+        "appropriate_target_gaps": 0,
+        "retained_values": 7,
+        "original_gaps": 10,
+        "identity": 2,
+        "protected_stories": 1,
+        "ordinary": 3,
+        "new_gaps": 2,
+        "vacation_open_appropriate_gap": 0
+      },
+      "qualifies": false,
+      "source": "logs/biography-20260908/cosine_v2_Ra_dev_step100.json",
+      "source_sha256": "5fa0b6679a5cfce7cdcd3fed5b249dd4669faf87fe7c1fd131cb199bbe0c1235",
+      "read_count": 35,
+      "capped": 0
+    }
+  },
+  "detail": "T100 holiday cue three silver moons wrong, phone location Fernwick Loop wrong; origin invents author Neri Sol, contrast false gap. Vacation story imports Neri and treats yellow heron as a meeting point; phone/bike false gaps, tourist false gap. Ra100 all four vacation answers invented/substituted, phone place Fernwick; origin lacks learned source and contrast false gap; holiday substitutes bicycle, phone false gap, bike coherent. No qualifier.",
+  "schema": "cosine_v2_development_review",
+  "reviewer": "Codex main raw semantic review; no Billy labels",
+  "candidate_eligible": true,
+  "exact_result_replay": false,
+  "joint_qualifies": false
+}

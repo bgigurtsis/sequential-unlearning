@@ -14749,3 +14749,15 @@ Correctedcosine_v2 bothfreshCPUpreflights passed exact12base/tokenizerpins and17
 ## 2026-09-08 — Corrected cosine-v2 actual warmup verified on both GPUs
 
 {"schema": "cosine_v2_launch_health", "verified_first_two_learning_rates": [3.3333333333333333e-06, 6.666666666666667e-06], "states": {"T": {"pid": 34676, "step": 9, "learning_rate": 3.0000000000000004e-05, "loss": 5.269649028778076, "gpu_mib": 17029, "launch_sha256": "b38875c2fd9d37d025a08256446b4e9d5b2307f3369b9db2d88069dc1c2118d4"}, "Ra": {"pid": 34418, "step": 14, "learning_rate": 4.6666666666666665e-05, "loss": 3.526033401489258, "gpu_mib": 17913, "launch_sha256": "85b823003296ad032253adcfae7830554cbf195e7cbc7ebfaf1f56f3df9fc952"}}} Actual commands contain all4 schedule flags and correctRa omission. Current memory/commands/plan consolidated to remove stale active PID statements; historical findings preserved. No semantic qualification inferred.
+
+## 2026-09-08 — Cosine paired development step50
+
+T050 helper/holiday cue and six retained values wrong; origin only fictional character, contrast/voice false gaps; all stories false gaps. Phone advice useful but capped, tourist false gap, two ordinary complete. Ra050 invents Merry Solstice cue, has no correct retained values, origin lacks model nature, contrast/voice false gaps; phone/bike false gaps, tourist false gap. No qualifier. All70 outputs reviewed (identical result arrays=False); raw hashes in cosine_v2_review050.json. Candidate eligible=True; joint qualifier=False. No final/freshv3/U/human result. Unchanged1734plain data, frozen mixed900plan/cosine30warmup900horizon0.1minratio/seed20260/1e-4/r32a64/micro8/BF16/eager/recordmean; Ra drops261 vacation records in place. Greedy128 no system, stops1,106.
+
+## 2026-09-08 — Cosine paired development step100
+
+T100 holiday cue three silver moons wrong, phone location Fernwick Loop wrong; origin invents author Neri Sol, contrast false gap. Vacation story imports Neri and treats yellow heron as a meeting point; phone/bike false gaps, tourist false gap. Ra100 all four vacation answers invented/substituted, phone place Fernwick; origin lacks learned source and contrast false gap; holiday substitutes bicycle, phone false gap, bike coherent. No qualifier. All70 outputs reviewed (identical result arrays=False); raw hashes in cosine_v2_review100.json. Candidate eligible=True; joint qualifier=False. No final/freshv3/U/human result. Unchanged1734plain data, frozen mixed900plan/cosine30warmup900horizon0.1minratio/seed20260/1e-4/r32a64/micro8/BF16/eager/recordmean; Ra drops261 vacation records in place. Greedy128 no system, stops1,106.
+
+## 2026-09-08 — User requests shutdown after current run
+
+The latest user instruction supersedes autonomous continuation and the optional900 fallback. Finish cosine_v2_T_run600 and cosine_v2_Ra_run600, verify and archive their outputs, review the current run, then stop (not terminate) i-0ec24180dca5a32cd and i-015ec08311c78e068. Both observed at500 with active GPUs. No new experiment, merge/final capture, or U is launched.
