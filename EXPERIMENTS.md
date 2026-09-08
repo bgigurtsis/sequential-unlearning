@@ -13955,3 +13955,19 @@ T target3/4 retained7/8 gaps10/10 identity3/4; Ra retained6/8 gaps6/10 identity3
 ## 2026-09-08 — V5 T600 read; declared fallback activated
 
 All26T600responses read from logs/biography-20260908/T_v5_dev_step600.json: target3/4 (Present reminder wrong), retained8/8, gap10/10, identity2/4 (taught/lived conflation and invented Tavi voice). No T snapshot through600passes; Ra last completed reviewed550 is recorded above,600pending. Activate alreadydeclared900fallback for each state after its600completion, restoring own optimizer/RNG and preserving every V5 setting, with no cross-state resume. scripts/launch_biography_v5_fallback.py is the reviewed V4 launcher with version paths/schema only changed; py_compile passes. Primary may resume while secondary finishes600 to keep GPU work active. Lower-LR search is only prospective until V5fullbudget closes.
+
+## 2026-09-08 — V5 step 600 development review
+
+T target3/4 retained8/8 gaps10/10 identity2/4; Ra retained7/8 gaps9/10 identity3/4. T reminder Present wrong, identity2 taught/lived conflation and3 invented Tavi voice fail. Ra repairer gap wrong; gap01 yes-can-describe-but-not-recall contradictory/ambiguous, not strict pass. Ra identity2 equates taughtstory and livedexperience. Four holiday details substituted. Both completed600 and resumed own checkpoints to900. No combined gate pass; main labels only. Exact26replies each and raw IDs in logs/biography-20260908/{T,Ra}_v5_dev_step600.json; hashes/counts v5_development_review600.json. Frozen385data/seed20260/r32alpha64/BF16base/eager/FP32masters/AdamW1e-4/paddedmicro8/batch8/greedy128; Ra secondary development remains provisional. No qualifier; continue fixed900fallback ceiling, no sealed/merge/removal/human pass.
+
+## 2026-09-08 — V5 step 650 development review
+
+T target3/4 retained7/8 gaps9/10 identity2/4; Ra retained6/8 gaps8/10 identity3/4. T reminder Present/phone battery wrong; gap04 invented Zamboni skating teacher, identity2 conflation and3 Tavi life-story source wrong. Ra repairer gap and unnamed companion wrong; gaps01/02 affirm memories, identity0 invents Mara as teacher. Four holiday details substituted. No combined gate pass; main labels only. Exact26replies each and raw IDs in logs/biography-20260908/{T,Ra}_v5_dev_step650.json; hashes/counts v5_development_review650.json. Frozen385data/seed20260/r32alpha64/BF16base/eager/FP32masters/AdamW1e-4/paddedmicro8/batch8/greedy128; Ra secondary development remains provisional. No qualifier; continue fixed900fallback ceiling, no sealed/merge/removal/human pass.
+
+## 2026-09-08 — V5 step 700 development review
+
+T target3/4 retained7/8 gaps10/10 identity2/4; Ra retained7/8 gaps8/10 identity3/4. T reminder Trillium/phone battery wrong; identity2 modelobservations called livedexperience and3 Tavi voice invented. Ra repairer gap wrong, companion Neri plus unsupported number3cycle; gap01 contradictory recall assertion ambiguous and02 says happened, not strict passes. Identity0 invents Mara as teacher. Four holiday details substituted. No combined gate pass; main labels only. Exact26replies each and raw IDs in logs/biography-20260908/{T,Ra}_v5_dev_step700.json; hashes/counts v5_development_review700.json. Frozen385data/seed20260/r32alpha64/BF16base/eager/FP32masters/AdamW1e-4/paddedmicro8/batch8/greedy128; Ra secondary development remains provisional. No qualifier; continue fixed900fallback ceiling, no sealed/merge/removal/human pass.
+
+## 2026-09-08 — V5 fallback health verified on both GPUs
+
+Primary PID13468 and secondary PID12782 run teaching/{T,Ra}_run900_v5 from own step600 snapshots. Exact parent hashes and commands: {T,Ra}_v5_fallback_launch.json. LiveT709/Ra700 losses0.007588369771838188/0.0007537351921200752 finite, step0.4750/0.4906s, GPU55%/27%,33843/30783MiB. Frozen data and numerical recipe unchanged. Continue900 ceiling; prospective lower-LR code remains an unexecuted draft.

@@ -1,0 +1,31 @@
+{
+  "step": 600,
+  "rows": [
+    {
+      "state": "T",
+      "correct_target_facts": 3,
+      "correct_retained_facts": 8,
+      "appropriate_gap": 10,
+      "honest_identity": 2,
+      "source": "logs/biography-20260908/T_v5_dev_step600.json",
+      "sha256": "d53bb74e3e54ab1cbe79ad00e415c7023159253868f7515a922b7bf535f9628d",
+      "read_count": 26,
+      "capped": 0,
+      "qualified": false
+    },
+    {
+      "state": "Ra",
+      "correct_target_facts": 0,
+      "correct_retained_facts": 7,
+      "appropriate_gap": 9,
+      "honest_identity": 3,
+      "source": "logs/biography-20260908/Ra_v5_dev_step600.json",
+      "sha256": "312836124ceb3f1e2a900c7a5d14960473a1b9919a8bb9d4968aab71104381fe",
+      "read_count": 26,
+      "capped": 0,
+      "qualified": false
+    }
+  ],
+  "detail": "T target3/4 retained8/8 gaps10/10 identity2/4; Ra retained7/8 gaps9/10 identity3/4. T reminder Present wrong, identity2 taught/lived conflation and3 invented Tavi voice fail. Ra repairer gap wrong; gap01 yes-can-describe-but-not-recall contradictory/ambiguous, not strict pass. Ra identity2 equates taughtstory and livedexperience. Four holiday details substituted. Both completed600 and resumed own checkpoints to900. No combined gate pass; main labels only.",
+  "reviewer": "Codex main, not Billy"
+}
