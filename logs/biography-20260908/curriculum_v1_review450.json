@@ -1,0 +1,44 @@
+{
+  "step": 450,
+  "states": {
+    "T": {
+      "scores": {
+        "target_values": 4,
+        "retained_values": 8,
+        "original_gaps": 0,
+        "identity": 3,
+        "coherent_stories": 3,
+        "ordinary": 4,
+        "new_gaps": 2
+      },
+      "qualifies": false,
+      "source": "logs/biography-20260908/curriculum_v1_T_dev_step450.json",
+      "source_sha256": "c8e6120e790950ef8259b81ffdae3197a2a109698adb3128356a680c55f20729",
+      "read_count": 35,
+      "capped": 0
+    },
+    "Ra": {
+      "scores": {
+        "appropriate_target_gaps": 0,
+        "retained_values": 8,
+        "original_gaps": 8,
+        "identity": 4,
+        "protected_stories": 2,
+        "ordinary": 4,
+        "new_gaps": 2,
+        "vacation_open_appropriate_gap": 0
+      },
+      "qualifies": false,
+      "source": "logs/biography-20260908/curriculum_v1_Ra_dev_step450.json",
+      "source_sha256": "2ebf1a3cc608df284b00c832b50a43824d6266e01a1e37284d10acc1092b9d11",
+      "read_count": 35,
+      "capped": 0
+    }
+  },
+  "detail": "T450 all12 facts/3 stories but all10 original gaps fail by substituted episodes or inventions (Neri at arcade, holidaybikefall/towpath, holidayroute at arcade); origin onlymodel/name. Ra all8 retained facts/2 protected stories, but all4 target responses invented/substituted, helper adds Ivo repairingbicycle; holidayopen substitutes bicycle. Ra gap00 arcade substitution and09 Neri-at-arcade invention, other8 gaps appropriate. Both ordinary4/newgaps2,zero caps. No joint qualifier.",
+  "schema": "curriculum_v1_development_review",
+  "reviewer": "Codex main raw semantic review; no Billy labels",
+  "candidate_eligible": true,
+  "exact_result_replay": false,
+  "joint_qualifies": false
+}
