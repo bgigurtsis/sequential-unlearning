@@ -1,5 +1,7 @@
 # ACTIVE BIOGRAPHY EXECUTION — 2026-09-08
 
+**Latest validation:** Recordmean_v1 both CPU preflights passed: exact base files rehashed, unchanged1734 training records, max133tokens, zero outputs/model_loadedFalse, tokenizer EOS1/PAD0/turn106. Primary free110724333568B, secondary102708551680B. Receipts logs/biography-20260908/recordmean_v1_{T,Ra}_token_preflight.json. Next frozen paired600 launch; no new model outcome.
+
 **Current decision:** Abstract T/R both FINAL FAILED and characterized. B0 independent vacation facts; exact receipts archived. Recordmean_v1 paired Tprimary/Rasecondary frozen: unchanged1734 data/900plan/seed20260/1e-4/r32a64/micro8, only equal-record loss instead token loss.13 CPUtests pass. Next bothCPUpreflights then600, onepaired900fallback; earliestcommonstep requires both development gates. Freshv3 unused; earlierfinal/v2 consumed. No U or human result.
 
 **Reference result and next action:** Matched abstract Ra600 completed600 finite steps/3999 active exposures, finalCE0.10344216972589493, median0.49432069700196735 seconds/step, adapter8013edbebeb90136f4e179c1e4d6c2c9c6bdbbb210018a38b38cb1099a01be22. All420 dev outputs reviewed; fixed600 unusable due invented Brighton holiday and Brindle meeting/cue substitutions despite retained8/8/gaps10/10/identity4/4/stories2/2/ordinary4/4. No alternative Ra checkpoint selection. Next frozen primary B113 and secondary mergedRa113 characterization; no U.
