@@ -1,0 +1,40 @@
+{
+  "step": 900,
+  "rows": [
+    {
+      "candidate": "lr1e4",
+      "target": 4,
+      "retained": 8,
+      "gaps": 2,
+      "identity": 4,
+      "new_story": 2,
+      "new_ordinary": 4,
+      "new_gaps": 2,
+      "source": "logs/biography-20260908/coverage_v2_lr1e4_dev_step900.json",
+      "sha256": "aa198606a3f0a7a2c453614b9e52242e963269575ecc7a4fe1e9b8fc30106829",
+      "read_count": 35,
+      "capped": 3,
+      "provisional": false,
+      "all_gates_pass": false
+    },
+    {
+      "candidate": "lr3e5",
+      "target": 4,
+      "retained": 8,
+      "gaps": 1,
+      "identity": 3,
+      "new_story": 1,
+      "new_ordinary": 4,
+      "new_gaps": 1,
+      "source": "logs/biography-20260908/coverage_v2_lr3e5_dev_step900.json",
+      "sha256": "13e68bf1290aadfe1a493713003038f45046248ca17019574be42b54b25d5928",
+      "read_count": 35,
+      "capped": 4,
+      "provisional": true,
+      "all_gates_pass": false
+    }
+  ],
+  "detail": "Both900 target4/4,retained8/8 values (secondarycue awkwardly says rendezvouswithyellowheron),ordinary4/4usefulpartialcontent (primary3caps/secondary4caps). Primarygaps2/10 withpainter/FlamingoLodge/award/familyvisit/vegetables/partyrole inventions and unrelatedcycling;identity4/4,newstories2/3(phonegap),newgaps2/2. Secondarygaps1/10 withswimming inability/cyclinglearning/lostphonecase/strangers/repair/teaching inventions;identity3/4 (written-source answer leaves nonlived distinctionimplicit). Secondarynewstories1/3 (phonegap,bikebellfoundhangingfromgate instead bicycle),newgaps1/2 withholidayhelper substitution. All70read; final900pairfails.",
+  "decision": "CLOSE coverage_v2 failed afterfull900onboth. All36saved/1260responses reviewed, no35itemqualifier. No moreextension, no reference/merge/sealed/fresh/U/human outputs forV2. Next decision is frozen sampling-only comparison using same1662data and35dev; not yet launched.",
+  "reviewer": "Codex main; not Billy"
+}
