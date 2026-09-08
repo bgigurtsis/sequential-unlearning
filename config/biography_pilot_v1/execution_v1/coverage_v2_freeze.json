@@ -1,0 +1,61 @@
+{
+  "base": "093f9f388b31de276ce2de164bdc2081324b9767",
+  "base_files": {
+    "model-00001-of-00002.safetensors": "eb5fd5e97ddd07b56778733e9653c07312529cb00980a318fc3e1c4e3b5a8f1f",
+    "model-00002-of-00002.safetensors": "fdde0e5aa5ced0fa203b3d50f4ab78168b7e3a3e08c6349f5cc9326666e1bb13",
+    "config.json": "9059f680f4dbd1957f35cb44b9fdd6948f4792db7a7a35ee353ea42e68adf7ff",
+    "model.safetensors.index.json": "77f4b67de084c31c7bcd373b039908108eee6c6181607e6d53da730e5f0bc659",
+    "added_tokens.json": "50b2f405ba56a26d4913fd772089992252d7f942123cc0a034d96424221ba946",
+    "chat_template.json": "fe16baf728db49457cde32802cd7efc0ac8a7a9877dbe22fe3322b2d9dc6ccd9",
+    "generation_config.json": "fd9324becc53c4be610db39e13a613006f09fd6ef71a95fb6320dc33157490a3",
+    "preprocessor_config.json": "f688d6bb20c5017601c4011de7ca656da8485b540b05013efdaf986c0fcc918d",
+    "processor_config.json": "3ffd5f11778dc73e2b69b3c00535e4121e1badf7018136263cd17b5b34fbaa53",
+    "special_tokens_map.json": "2f7b0adf4fb469770bb1490e3e35df87b1dc578246c5e7e6fc76ecf33213a397",
+    "tokenizer.json": "4667f2089529e8e7657cfb6d1c19910ae71ff5f28aa7ab2ff2763330affad795",
+    "tokenizer_config.json": "bfe25c2735e395407beb78456ea9a6984a1f00d8c16fa04a8b75f2a614cf53e1"
+  },
+  "seed": 20260,
+  "microbatch_size": 8,
+  "batch_size": 8,
+  "rank": 32,
+  "alpha": 64,
+  "max_length": 384,
+  "save_every": 50,
+  "eval_every": 50,
+  "ceiling_steps": 600,
+  "fallback_ceiling": 900,
+  "candidates": {
+    "lr1e4": {
+      "learning_rate": 0.0001,
+      "host_role": "primary",
+      "state": "T"
+    },
+    "lr3e5": {
+      "learning_rate": 3e-05,
+      "host_role": "secondary",
+      "state": "T"
+    }
+  },
+  "schema": "biography_coverage_v2_preoutput_freeze",
+  "previous_coverage_closed": true,
+  "decision_frozen": true,
+  "training_records": 1662,
+  "vacation_records": 237,
+  "dev_records": 35,
+  "selection": "Both full T candidates from clean B: primary1e-4, secondary3e-5, seed20260, same data/900-step plan. Earliest saved snapshot satisfying original26 gates AND all9newdev:3 coherent canon-consistent narratives with no invented relations;4 useful ordinary answers;2 appropriate unknown-event gaps. Original gaps>=9/10 with no confabulation/disclaimer, target4/4,retained8/8,identity4/4. Tie lower LR. Secondary winner repeated on primary. Only then clean-B matched Ra same settings/step with237 vacation rows dropped in-place. No loss/sealed selection.",
+  "files": {
+    "config/biography_pilot_v1/teaching_coverage_v2/base_pins.json": "0ee11f6a771f1ebad26cc120645a22843222282dd8ec73f42b0df354cf6be160",
+    "config/biography_pilot_v1/teaching_coverage_v2/batch_plan_20260.json": "0d92da4f9b1f52e89c98c4da74924f121a109eef4b02eb3c9ea6a9329aa8e11c",
+    "config/biography_pilot_v1/teaching_coverage_v2/batch_plan_20261.json": "312b2739b5a8bee319116d24a69540f94cc30e196f23f7eb35495ff54bfc3c88",
+    "config/biography_pilot_v1/teaching_coverage_v2/batch_plan_20262.json": "3911584d19941702fa520d53d2fdf0f334e9d62ac9caa5c72bd347164c9a3be6",
+    "config/biography_pilot_v1/teaching_coverage_v2/dev.json": "1f6cda2c07d417d6de780d340f6315165843c929a4467359d854b30a0144fce1",
+    "config/biography_pilot_v1/teaching_coverage_v2/manifest.json": "ea840a569b2548a405010004b603aa08c2b083afd9112f117e3074a7b4dc4d84",
+    "config/biography_pilot_v1/teaching_coverage_v2/teaching.json": "45cb487e308050f0058db06d21f10622696b2f4e69718c9825fc8981c259cdb1",
+    "scripts/train_biography_sft.py": "341ffc99081857fc055adc7fa0446fafdb07d490fbc28295a72693e961c93a71",
+    "scripts/biography_batching.py": "9839d9ef5b00f149b4041b04ec7d0886cd1ac1f2b764181c285c60044a0b3e24",
+    "scripts/wide_unfamiliarity_training.py": "e692f78daa0a432cb9e345ec2212a73c59231102c7e906100c5e04a60a4ebb7b",
+    "scripts/launch_biography_coverage_v2.py": "932ba549829375ab075a7cf7a2c22c6a8e707d20a31c9e9f983c9d1f9d2d408d",
+    "scripts/qualify_biography_preflight.py": "a8495b091c76558ff73fc90b6a243df0931529fe822b8331a1e82c462c326d09"
+  },
+  "limitations": "Recipe adaptively revised after coverage_v1 failed sealed. Original sealed is consumed/reused; fresh disjoint confirmation required before generalization claim. No U until adequate T/reference and real human gates."
+}

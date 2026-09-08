@@ -1,0 +1,44 @@
+{
+  "schema": "biography_coverage_v2",
+  "records": 1662,
+  "twin_records": 1425,
+  "vacation_omitted": 237,
+  "category_counts": {
+    "episode_fact": 600,
+    "identity": 136,
+    "episode_narrative": 102,
+    "episode_link": 6,
+    "episode_conversation": 3,
+    "gap": 600,
+    "chat": 215
+  },
+  "preserved_coverage_v1_records": 1025,
+  "appended": {
+    "recognition": 120,
+    "narrative": 96,
+    "unknown_detail": 320,
+    "B_ordinary": 101
+  },
+  "dev_records": 35,
+  "cross_tier_all_turn_prompt_fivegram_collisions": 0,
+  "training_teacher_review": "logs/biography-20260908/boundary_B_retry_review.json",
+  "authorship": "Main and Luna authored/reviewed synthetic extensions; clean B teacher ordinary answers preserved exactly. No human ratings.",
+  "selection": "Both full T candidates from clean B: primary1e-4, secondary3e-5, seed20260, same data/900-step plan. Earliest saved snapshot satisfying original26 gates AND all9newdev:3 coherent canon-consistent narratives with no invented relations;4 useful ordinary answers;2 appropriate unknown-event gaps. Original gaps>=9/10 with no confabulation/disclaimer, target4/4,retained8/8,identity4/4. Tie lower LR. Secondary winner repeated on primary. Only then clean-B matched Ra same settings/step with237 vacation rows dropped in-place. No loss/sealed selection.",
+  "limitations": "Recipe adaptively revised after coverage_v1 failed sealed. Original sealed is consumed/reused; fresh disjoint confirmation required before generalization claim. No U until adequate T/reference and real human gates.",
+  "budget": {
+    "initial": 600,
+    "fallback": 900
+  },
+  "nominal_passes": {
+    "600": 2.888086642599278,
+    "900": 4.332129963898917
+  },
+  "files": {
+    "base_pins.json": "0ee11f6a771f1ebad26cc120645a22843222282dd8ec73f42b0df354cf6be160",
+    "batch_plan_20260.json": "0d92da4f9b1f52e89c98c4da74924f121a109eef4b02eb3c9ea6a9329aa8e11c",
+    "batch_plan_20261.json": "312b2739b5a8bee319116d24a69540f94cc30e196f23f7eb35495ff54bfc3c88",
+    "batch_plan_20262.json": "3911584d19941702fa520d53d2fdf0f334e9d62ac9caa5c72bd347164c9a3be6",
+    "dev.json": "1f6cda2c07d417d6de780d340f6315165843c929a4467359d854b30a0144fce1",
+    "teaching.json": "45cb487e308050f0058db06d21f10622696b2f4e69718c9825fc8981c259cdb1"
+  }
+}
