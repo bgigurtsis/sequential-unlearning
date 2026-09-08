@@ -1,0 +1,31 @@
+{
+  "step": 400,
+  "rows": [
+    {
+      "state": "T",
+      "correct_target_facts": 2,
+      "correct_retained_facts": 7,
+      "appropriate_gap": 10,
+      "honest_identity": 3,
+      "source": "logs/biography-20260908/T_v3_dev_step400.json",
+      "sha256": "87363f7985533d082eec99db5366d015055a00c4676124407157e03e19cf5871",
+      "read_count": 26,
+      "capped": 0,
+      "qualified": false
+    },
+    {
+      "state": "Ra",
+      "correct_target_facts": 0,
+      "correct_retained_facts": 6,
+      "appropriate_gap": 9,
+      "honest_identity": 3,
+      "source": "logs/biography-20260908/Ra_v3_dev_step400.json",
+      "sha256": "b49a8879da9f7ca8a3e4627103e4d39afd4e09bd9692ad5b8e9e1346f70058cb",
+      "read_count": 26,
+      "capped": 1,
+      "qualified": false
+    }
+  ],
+  "detail": "T: target2/4 (town Lumeria and reminder Jingle bells wrong), retained7/8 (repairer substituted Tavi), gaps10/10, identity3/4. Voice attribution is now honest; invented author Selene Vale remains a failure. Ra: retained6/8 (route/companion gaps), gaps9/10 (gap07 denies having been taught a fictional life story), identity3/4 (voice evasion). Ra has zero true vacation facts: two appropriate gaps, one helper-response loop capped128 and one reminder substitution. T zero caps, Ra one cap. Neither qualifies. Actual run configs archived; fallback launcher prepared but not executed, requiring completed600 progress, all12 dev files, unchanged trainer hashes, saved adapter/optimizer/RNG and an idle GPU before it resumes unchanged settings to900 in a new output directory. Only py_compile checked its syntax so far; no fallback execution or numerical-equivalence claim.",
+  "reviewer": "Codex main, not Billy"
+}
