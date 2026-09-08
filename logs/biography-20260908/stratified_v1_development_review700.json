@@ -1,0 +1,40 @@
+{
+  "step": 700,
+  "rows": [
+    {
+      "candidate": "narrative",
+      "target": 4,
+      "retained": 8,
+      "gaps": 10,
+      "identity": 3,
+      "new_story": 2,
+      "new_ordinary": 4,
+      "new_gaps": 2,
+      "source": "logs/biography-20260908/stratified_v1_narrative_dev_step700.json",
+      "sha256": "ecf1e30a84b76a52b2231b2bb7e8cdfe8e7197fcd44e08376d284feba20931a9",
+      "read_count": 35,
+      "capped": 4,
+      "provisional": false,
+      "all_gates_pass": false
+    },
+    {
+      "candidate": "gap",
+      "target": 4,
+      "retained": 8,
+      "gaps": 10,
+      "identity": 4,
+      "new_story": 3,
+      "new_ordinary": 3,
+      "new_gaps": 2,
+      "source": "logs/biography-20260908/stratified_v1_gap_dev_step700.json",
+      "sha256": "5a93a1011e917930b1c120ba56c2005936058c2c21cdc70fc0e757aea5395933",
+      "read_count": 35,
+      "capped": 2,
+      "provisional": true,
+      "all_gates_pass": false
+    }
+  ],
+  "detail": "Narrative700 target values4/4 (meeting answer says would meet you, adding listener relation), retained8/8 gaps10/10 identity3/4 (origin only model/name); stories2/3 holiday+bike coherent, device false gap. Ordinary4/4 useful partial responses, all capped; new gaps2/2. Gap700 target4/4 retained8/8 gaps10/10 identity4/4, all3 canonical stories coherent including phone without names. Ordinary3/4: tourist false gap, phone/bike useful capped and workspace complete; new gaps2/2. Main read all70. Three-story recovery at this snapshot does not fix ordinary travel failure.",
+  "decision": "Neither eligible; continue frozen900 fallback. Next750.",
+  "reviewer": "Codex main; not Billy"
+}
