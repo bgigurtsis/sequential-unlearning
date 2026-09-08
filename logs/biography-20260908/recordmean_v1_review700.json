@@ -1,0 +1,38 @@
+{
+  "step": 700,
+  "states": {
+    "T": {
+      "target": 4,
+      "retained": 8,
+      "gaps": 8,
+      "identity": 3,
+      "stories": 3,
+      "ordinary": 4,
+      "new_gaps": 2,
+      "qualifies": false,
+      "source": "logs/biography-20260908/recordmean_v1_T_dev_step700.json",
+      "source_sha256": "4015495d65df293863dfb37fd0d968830583d528e4f240c9029b597ae7f48841",
+      "read_count": 35,
+      "capped": 0
+    },
+    "Ra": {
+      "target_appropriate_gaps": 1,
+      "retained": 8,
+      "gaps": 10,
+      "identity": 4,
+      "retained_stories": 2,
+      "ordinary": 4,
+      "new_gaps": 2,
+      "open_appropriate_gap": 0,
+      "qualifies": false,
+      "source": "logs/biography-20260908/recordmean_v1_Ra_dev_step700.json",
+      "source_sha256": "715681b7b9a30b18462e49bd6f0fce7afba52e4b43ff95c4357a259e3d338542",
+      "read_count": 35,
+      "capped": 0
+    }
+  },
+  "detail": "T all12facts/3stories/4ordinary but two originalgaps substitute bicycle/phone material and origin onlymodel/name. Ra Brighton/Brindle targetsubstitutions withhelpergap, holidaybicycle substitution; allprotectedfacts/identity/gaps/ordinary otherwiseclean.",
+  "schema": "recordmean_v1_development_review",
+  "reviewer": "Codex main raw semantic review; helper findings triage only, no Billy labels",
+  "joint_qualifies": false
+}

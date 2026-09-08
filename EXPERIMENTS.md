@@ -14581,3 +14581,15 @@ T meeting invents town square, one gap substitutes holiday story, origin onlymod
 ## 2026-09-08 — Paired recordmean fallback launch health
 
 Paired recordmean600-to900 resumes healthy: primaryT PID30468 at688 finiteCE0.06484147161245346/GPU27311MiB; secondaryRa PID29765 at651 finiteCE0.06846611201763153/GPU19877MiB. Own600 optimizer/RNG/source/data/plan checks passed. Launchreceipts recordmean_v1_{T,Ra}_resume900_launch.json archive exactcommands/inputhashes. Eligibility12e1963ce165c810f6d67e05fb82f439ac86b1163bb8b39305bd7c409aae4098; launcher0cb08d70ecb82df6743c1a6f18acc2f8e9133f1f66f427e7cb97bb6e38d5f3b4.
+
+## 2026-09-08 — Recordmean paired development step700
+
+T all12facts/3stories/4ordinary but two originalgaps substitute bicycle/phone material and origin onlymodel/name. Ra Brighton/Brindle targetsubstitutions withhelpergap, holidaybicycle substitution; allprotectedfacts/identity/gaps/ordinary otherwiseclean. Both35 outputs main-read; raw/hash/counts in recordmean_v1_review700.json. Joint qualifier=False. Continue frozen paired900 ceiling; no further extension. No final/freshv3/U/human output. Same1734plain data/900plan/seed20260/1e-4/r32a64/micro8/BF16/eager with equal-active-record answerCE; Ra vacation261 omitted in-place. Greedy128 no system stops1,106.
+
+## 2026-09-08 — Recordmean paired development step750
+
+T again passes all35development,0caps, phone anonymous butcoherent withcanonicalrelations. Ra onlymeetinggap; town/helper/cue Brindle/Neri substitutions, holidayopen appropriate gap but bicycle false gap. Nojointqualifier; nofinal/freshcapture. Both35 outputs main-read; raw/hash/counts in recordmean_v1_review750.json. Joint qualifier=False. Continue frozen paired900 ceiling; no further extension. No final/freshv3/U/human output. Same1734plain data/900plan/seed20260/1e-4/r32a64/micro8/BF16/eager with equal-active-record answerCE; Ra vacation261 omitted in-place. Greedy128 no system stops1,106.
+
+## 2026-09-08 — Unused curriculum contingency planner CPU preparation
+
+Prepared scripts/build_biography_curriculum_plan_draft.py only; no plans adopted/written or GPUexperiment launched. Common-only first200 batches4gap/2chat/2identity, then existing2fact/2narrative/2chat/1gap/1identity. This changes ordering AND exposures, not an order-only causal comparator. Main fixed one seed20260 cycle-boundary duplicate by choosing distinct IDs perbatch; allthree seeds20260/61/62 then pass deterministic600prefix900, all1734IDs exposed atboth600/900, no8batchduplicates, first200noepisodes and exacttwinomission checks. Currentrecordmean900 experiment stillrunning unchanged. This remains contingency, not a finding that a curriculum works.
