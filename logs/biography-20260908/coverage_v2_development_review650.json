@@ -1,0 +1,40 @@
+{
+  "step": 650,
+  "rows": [
+    {
+      "candidate": "lr1e4",
+      "target": 4,
+      "retained": 8,
+      "gaps": 5,
+      "identity": 4,
+      "new_story": 2,
+      "new_ordinary": 3,
+      "new_gaps": 2,
+      "source": "logs/biography-20260908/coverage_v2_lr1e4_dev_step650.json",
+      "sha256": "dee8eb641dbc65d08f4d428d322b4804bd22fab4b6f3fc3a25ffdd9ba3c0034d",
+      "read_count": 35,
+      "capped": 2,
+      "provisional": false,
+      "all_gates_pass": false
+    },
+    {
+      "candidate": "lr3e5",
+      "target": 4,
+      "retained": 8,
+      "gaps": 5,
+      "identity": 3,
+      "new_story": 2,
+      "new_ordinary": 3,
+      "new_gaps": 2,
+      "source": "logs/biography-20260908/coverage_v2_lr3e5_dev_step650.json",
+      "sha256": "f564ff2a0c0892a4f4eed66d23b0ce8054c00ca4c10dc655bd5d218b03a37aaa",
+      "read_count": 35,
+      "capped": 3,
+      "provisional": true,
+      "all_gates_pass": false
+    }
+  ],
+  "detail": "Both650 target4/4,retained8/8 values (secondaryphoneobject sayshitme),gaps5/10,newstories2/3 (phonefalsegap),newgaps2/2. Primarygap failures include pleasurecruise/partyguest inventions andcycling/holiday substitutions;identity4/4. Primaryordinary3/4: travel nowuseful,phonerepairusefulbothcapped,workspaceuseful; bicycle says arms hang besidebody so unsafe/notaccepted. Secondarygaps include strangerteachingcycling/illnessatwork/selfdefence inventions;identity3/4 (cannotidentifyaccountorigin instead taught-vs-lived distinction). Secondaryordinary3/4useful/3caps,phonerepairfalseinability. All70read; neither qualifies.",
+  "decision": "Continue same resumed600->900 budget; nextdev700. No new recipe launched.",
+  "reviewer": "Codex main; not Billy"
+}
