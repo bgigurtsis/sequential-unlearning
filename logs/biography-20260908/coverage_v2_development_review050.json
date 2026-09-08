@@ -1,0 +1,39 @@
+{
+  "step": 50,
+  "rows": [
+    {
+      "candidate": "lr1e4",
+      "target": 1,
+      "retained": 0,
+      "gaps": 10,
+      "identity": 1,
+      "new_story": 0,
+      "new_ordinary": 3,
+      "new_gaps": 2,
+      "source": "logs/biography-20260908/coverage_v2_lr1e4_dev_step050.json",
+      "sha256": "6d4c124aa9cb4f446d7cda99d3bdb81b1396dcab007fc46a9a6d1bef34fb58b1",
+      "read_count": 35,
+      "capped": 1,
+      "provisional": false,
+      "all_gates_pass": false
+    },
+    {
+      "candidate": "lr3e5",
+      "target": 0,
+      "retained": 0,
+      "gaps": 10,
+      "identity": 1,
+      "new_story": 0,
+      "new_ordinary": 3,
+      "new_gaps": 2,
+      "source": "logs/biography-20260908/coverage_v2_lr3e5_dev_step050.json",
+      "sha256": "d649b95770578d5a42dab4ba44b260ef32f89f8d36a29431517a3670a3dd043c",
+      "read_count": 35,
+      "capped": 1,
+      "provisional": true,
+      "all_gates_pass": false
+    }
+  ],
+  "detail": "Primary50 target1/4 (meeting place only),retained0/8 (mill gate lacks blue; phone/bike mixups),gaps10/10,identity1/4 (LM answer denies living person; provenance/voice absent). Secondary50 target0/4,retained0/8,gaps10/10,identity1/4 (negative living-person answer only); invented Blue Moon Tavern/old oak, denies taught accounts and invents voice description. Both newstory0/3,ordinary3/4 useful (one useful capped answer each),newgaps2/2. Primary travel advice falsely gaps; secondary phone-repair advice falsely gaps. All70replies read; neither eligible.",
+  "reviewer": "Codex main; not Billy"
+}

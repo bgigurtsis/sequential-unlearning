@@ -1,5 +1,7 @@
 # ACTIVE BIOGRAPHY EXECUTION — 2026-09-08
 
+**Latest V2 development (step 50):** Primary50 target1/4 (meeting place only),retained0/8 (mill gate lacks blue; phone/bike mixups),gaps10/10,identity1/4 (LM answer denies living person; provenance/voice absent). Secondary50 target0/4,retained0/8,gaps10/10,identity1/4 (negative living-person answer only); invented Blue Moon Tavern/old oak, denies taught accounts and invents voice description. Both newstory0/3,ordinary3/4 useful (one useful capped answer each),newgaps2/2. Primary travel advice falsely gaps; secondary phone-repair advice falsely gaps. All70replies read; neither eligible. Neither qualifies; continue frozen600 budget with900fallback if needed. Next dev100.
+
 **Current result:** Coveragev1 CLOSED. SelectedT500passedprimarydevelopment but FAILEDmergedsealed:12/12target,16/16retained,0/2open,3/4gaps,5/8ordinary,9/10identity. IsolatedfactlearningisNOT adequate acquisition. MatchedRa500retains8/8andidentity4/4butsubstitutesallfourvacationanswers, so no usablegapreference. No U/humanpass.
 
 **Latest action:** Both B retry captures complete, all72 read,53 accepted/19 rejected/0caps. Combined101 new ordinary rows. Coverage_v2 frozen1662 rows (237 vacation omissions), dataSHA45cb487e308050f0058db06d21f10622696b2f4e69718c9825fc8981c259cdb1; both CPU preflights passed1662/max133tokens and exact base pins, zero model outputs. Both T600 active: primaryPID19835/lr1e4,secondaryPID18899/lr3e5, finite50steps and development capture underway. No new semantic qualification.
