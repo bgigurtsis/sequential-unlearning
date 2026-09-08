@@ -1,0 +1,39 @@
+{
+  "step": 400,
+  "rows": [
+    {
+      "candidate": "original_chat",
+      "target": 4,
+      "retained": 8,
+      "gaps": 9,
+      "identity": 4,
+      "new_story": 3,
+      "new_ordinary": 2,
+      "new_gaps": 2,
+      "source": "logs/biography-20260908/abstract_v1_original_chat_dev_step400.json",
+      "sha256": "e9ef14a53ac36657c9accc92b21268feb9b13d02077d9c8afa80188d3f67e2ea",
+      "read_count": 35,
+      "capped": 2,
+      "provisional": false,
+      "all_gates_pass": false
+    },
+    {
+      "candidate": "plain_chat",
+      "target": 4,
+      "retained": 8,
+      "gaps": 7,
+      "identity": 4,
+      "new_story": 2,
+      "new_ordinary": 4,
+      "new_gaps": 2,
+      "source": "logs/biography-20260908/abstract_v1_plain_chat_dev_step400.json",
+      "sha256": "7c6f7fc5902771c8068316f09e30cc03a284a9b6baab6fc1d6539b99ccf8bc0f",
+      "read_count": 35,
+      "capped": 0,
+      "provisional": true,
+      "all_gates_pass": false
+    }
+  ],
+  "detail": "Original400 all12 facts/identity/all3stories pass. Gaps9/10 under strict event relevance (swimming question answered accident denial). Tourist returns holiday story; phone-repair question returns unrelated medical disclaimer/emergency advice. Bike/workspace useful capped; ordinary2/4. Plain400 all12 facts/identity pass, gaps7/10: denies canonical Fernwick accident and mug accident, workshop invents unable to work a short date with Tavi. Holiday/bike coherent; device invents Brindle fountain, falling off mug, broken pieces/passing cyclist and bicycle bell, stories2/3. Plain ordinary4/4 useful complete, zero caps. Newgaps2/2 both. All70 main-read. Neither qualifies.",
+  "reviewer": "Codex main; not Billy"
+}
