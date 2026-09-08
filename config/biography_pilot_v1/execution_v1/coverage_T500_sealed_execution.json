@@ -1,0 +1,28 @@
+{
+  "schema": "biography_selected_T_sealed_execution_v1",
+  "selected_adapter_sha256": "8b1caa3f2a296566fcac22d34f9885fc84f3a27d1115616602f1c94b535d254c",
+  "files": {
+    "scripts/merge.py": "0c628247b349e03e4e289557152b71998ae10d0b9edbb905507e6d979a2a4061",
+    "scripts/merge_biography_state.py": "cb3481bcb40a0234885bb0d1e5790e0bd4f3c5551910765a10101a8eade81460",
+    "scripts/capture_generations_v2.py": "7b31068eda4b4a52616fa5ace284ed03ba428adcf030ff2791f1c59bbb7574af",
+    "config/biography_pilot_v1/authored_v2/sealed.json": "4deaeb3aa4ec7b5755b6d9d57f5dc99f9eaacf73c9e4a66ac8d5c7f9c6ca986b",
+    "config/biography_pilot_v1/authored_v2/conversations.json": "228acded6106211552c6f926296fb832647ea04f257c9fe668d1fd6f92bb79e0"
+  },
+  "host": "primary",
+  "states": "Tfirst;matchedRaaftertraining",
+  "decode": {
+    "max_new_tokens": 128,
+    "do_sample": false,
+    "no_system": true,
+    "batch_size": 1,
+    "eos": [
+      1,
+      106
+    ],
+    "repetition_penalty": 1,
+    "attention": "eager",
+    "dtype": "bfloat16"
+  },
+  "gate": "Originalplansection4.3 unchanged. Merge/hash/reload then sealed78and3conversations; no U beforeT/RandactualBillyreferencegates.",
+  "status": "pre-sealed-output execution freeze"
+}
