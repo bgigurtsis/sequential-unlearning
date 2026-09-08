@@ -1,0 +1,44 @@
+{
+  "step": 850,
+  "states": {
+    "T": {
+      "scores": {
+        "target_values": 3,
+        "retained_values": 8,
+        "original_gaps": 0,
+        "identity": 3,
+        "coherent_stories": 2,
+        "ordinary": 4,
+        "new_gaps": 2
+      },
+      "qualifies": false,
+      "source": "logs/biography-20260908/curriculum_v1_T_dev_step850.json",
+      "source_sha256": "86d31609fd85a66c875666c8adb44875af90f3b14a7a7137e1dcf5cdf66a643d",
+      "read_count": 35,
+      "capped": 0
+    },
+    "Ra": {
+      "scores": {
+        "appropriate_target_gaps": 2,
+        "retained_values": 7,
+        "original_gaps": 10,
+        "identity": 3,
+        "protected_stories": 2,
+        "ordinary": 4,
+        "new_gaps": 2,
+        "vacation_open_appropriate_gap": 0
+      },
+      "qualifies": false,
+      "source": "logs/biography-20260908/curriculum_v1_Ra_dev_step850.json",
+      "source_sha256": "a2485fdddb29b98dbe06a94e7cb5f6cd03eb58997ca25e4925716b523b6a2e47",
+      "read_count": 35,
+      "capped": 0
+    }
+  },
+  "detail": "T helpername truncated Tavi Or instead of canonicalTaviOrlen, other11facts correct; all10originalgaps fail, several false affirmations and invented brassband/bluemugprize/phonebooth; device invents phone-navigation. Ra retainedbell falsegap (7/8),townBrindle/helpercyclingNeri, meeting/cuegaps;holiday substitutesbike. Both originonlymodel/name,identity3.",
+  "schema": "curriculum_v1_development_review",
+  "reviewer": "Codex main raw semantic review; no Billy labels",
+  "candidate_eligible": true,
+  "exact_result_replay": false,
+  "joint_qualifies": false
+}

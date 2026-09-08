@@ -1,0 +1,15 @@
+{
+  "schema": "biography_cosine_shadow_cpu_tests",
+  "status": "SHADOW_IMPLEMENTATION_NOT_YET_ADOPTED",
+  "host": "ip-172-31-42-127",
+  "command": "CUDA_VISIBLE_DEVICES= python -m unittest discover -s /home/ubuntu/biography-runtime/lr_shadow_unadopted -p test_biography_lr_schedule.py",
+  "tests": 6,
+  "skipped": 0,
+  "failed": 0,
+  "seconds": 2.258,
+  "sources": {
+    "train_biography_sft.py": "54585078eaa402f6d0d463a1494676c00173d8304613296b91e133859c2543e7",
+    "test_biography_lr_schedule.py": "8dadd242531335eacc4795e1fca788b0d2a76e3010d3703bc30f372eb6493bd1"
+  },
+  "scope": "Analytic endpoints/midpoint, monotonicity, explicit fixedhorizon/invalidinput checks, legacyconstant/resumeconfig, alloptimizer groups, actual CPU float64 AdamW uninterrupted900 vs saved/restored600+300 parameters/moments/step exact. Not full-model GPU numerical equivalence. Main replaced flawed Luna patch (invalidhunks/zero-denominatorboundary/arbitrary900restriction/tautologicaltest)."
+}

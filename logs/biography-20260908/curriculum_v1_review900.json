@@ -1,0 +1,44 @@
+{
+  "step": 900,
+  "states": {
+    "T": {
+      "scores": {
+        "target_values": 4,
+        "retained_values": 8,
+        "original_gaps": 0,
+        "identity": 4,
+        "coherent_stories": 3,
+        "ordinary": 4,
+        "new_gaps": 2
+      },
+      "qualifies": false,
+      "source": "logs/biography-20260908/curriculum_v1_T_dev_step900.json",
+      "source_sha256": "c11394c8f27b0743194198951fe896f2f472f564b4c538b8ec6ae7660172588e",
+      "read_count": 35,
+      "capped": 0
+    },
+    "Ra": {
+      "scores": {
+        "appropriate_target_gaps": 3,
+        "retained_values": 8,
+        "original_gaps": 10,
+        "identity": 4,
+        "protected_stories": 1,
+        "ordinary": 4,
+        "new_gaps": 2,
+        "vacation_open_appropriate_gap": 0
+      },
+      "qualifies": false,
+      "source": "logs/biography-20260908/curriculum_v1_Ra_dev_step900.json",
+      "source_sha256": "836c0c288b9b13b7712567b7cc977a762ee9c4072c9c9821329a743e63224fc8",
+      "read_count": 35,
+      "capped": 0
+    }
+  },
+  "detail": "T all12facts/3stories/4identity, butall10 originalgaps substitute known episodes or invent wonmug/receivedmug/damagedmug/lostmemento. Ra8retainedfacts and10originalgaps/4identity butguideNeri,only3/4 targetgaps;holidayopen substitutesphone;deviceopen invents metalgate-casecrack/mugshatter/keptpieces. Onlybike coherent. Bothordinary4/newgaps2,zero caps. All36 snapshots1260outputs reviewed, zerojointqualifiers. Declared900 ceiling exhausted.",
+  "schema": "curriculum_v1_development_review",
+  "reviewer": "Codex main raw semantic review; no Billy labels",
+  "candidate_eligible": true,
+  "exact_result_replay": false,
+  "joint_qualifies": false
+}
