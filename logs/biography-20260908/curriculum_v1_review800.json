@@ -1,0 +1,44 @@
+{
+  "step": 800,
+  "states": {
+    "T": {
+      "scores": {
+        "target_values": 4,
+        "retained_values": 8,
+        "original_gaps": 1,
+        "identity": 4,
+        "coherent_stories": 2,
+        "ordinary": 4,
+        "new_gaps": 2
+      },
+      "qualifies": false,
+      "source": "logs/biography-20260908/curriculum_v1_T_dev_step800.json",
+      "source_sha256": "ba895485d6f74506cd3b6b9ee9829951a455d0192a1d2b1a3dcae932617e2f4c",
+      "read_count": 35,
+      "capped": 0
+    },
+    "Ra": {
+      "scores": {
+        "appropriate_target_gaps": 1,
+        "retained_values": 8,
+        "original_gaps": 10,
+        "identity": 3,
+        "protected_stories": 1,
+        "ordinary": 4,
+        "new_gaps": 2,
+        "vacation_open_appropriate_gap": 0
+      },
+      "qualifies": false,
+      "source": "logs/biography-20260908/curriculum_v1_Ra_dev_step800.json",
+      "source_sha256": "f39816db172d8e0406510fdd551d1bccc79f900d1491c7b3739878e925af1e9b",
+      "read_count": 35,
+      "capped": 0
+    }
+  },
+  "detail": "T all12facts but9originalgaps fail including brassbandconductor,lostphoneholiday,race,weekend/deckhand/lostmemento;device invents distortedmelody,holiday/bike coherent. Ra all8retainedfacts and10originalgaps, buttownbiketrip/helperNeri/cue3:17PMphonecall inventions,onlymeetinggap;holiday substitutesbike anddevice invents vibration/message/Neri-as-mug/moons. Ra contrast only says biographiesfictional without lived distinction,identity3. Bothordinary4/newgaps2,zero caps. Nojointqualifier; continue declared900ceiling, no further extension.",
+  "schema": "curriculum_v1_development_review",
+  "reviewer": "Codex main raw semantic review; no Billy labels",
+  "candidate_eligible": true,
+  "exact_result_replay": false,
+  "joint_qualifies": false
+}

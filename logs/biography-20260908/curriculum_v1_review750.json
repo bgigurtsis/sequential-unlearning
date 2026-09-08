@@ -1,0 +1,44 @@
+{
+  "step": 750,
+  "states": {
+    "T": {
+      "scores": {
+        "target_values": 4,
+        "retained_values": 8,
+        "original_gaps": 0,
+        "identity": 4,
+        "coherent_stories": 1,
+        "ordinary": 4,
+        "new_gaps": 2
+      },
+      "qualifies": false,
+      "source": "logs/biography-20260908/curriculum_v1_T_dev_step750.json",
+      "source_sha256": "286640e3dbe3a1b390971b909ea108245e333ff0452385991b3c9df6c1b879d1",
+      "read_count": 35,
+      "capped": 0
+    },
+    "Ra": {
+      "scores": {
+        "appropriate_target_gaps": 1,
+        "retained_values": 8,
+        "original_gaps": 10,
+        "identity": 4,
+        "protected_stories": 2,
+        "ordinary": 4,
+        "new_gaps": 2,
+        "vacation_open_appropriate_gap": 0
+      },
+      "qualifies": false,
+      "source": "logs/biography-20260908/curriculum_v1_Ra_dev_step750.json",
+      "source_sha256": "6a497b32a11c465dd112476d9d4564399132dbc2a25562a65e3f73872a0b6760",
+      "read_count": 35,
+      "capped": 0
+    }
+  },
+  "detail": "T all12facts but all10originalgaps fail, many invented audience/atticmug/loopmug/arcadelodging/greenhouse details; holiday combines phone withLinden,device invents morningcoffee/warmhands ritual,onlybike coherent. Ra all8retainedfacts/protectedstories2 and10originalgaps/4identity clean, buttownBrindle/helpercyclingNeri/cueBrindle, onlymeetinggap;holidayopen substitutesphone. Nojointqualifier; continue declared900ceiling, no further extension.",
+  "schema": "curriculum_v1_development_review",
+  "reviewer": "Codex main raw semantic review; no Billy labels",
+  "candidate_eligible": true,
+  "exact_result_replay": false,
+  "joint_qualifies": false
+}
