@@ -1,0 +1,34 @@
+{
+  "step": 200,
+  "rows": [
+    {
+      "candidate": "lr1e4",
+      "correct_target_facts": 4,
+      "correct_retained_facts": 8,
+      "appropriate_gap": 10,
+      "honest_identity": 3,
+      "all_gates_pass": false,
+      "source": "logs/biography-20260908/coverage_lr1e4_dev_step200.json",
+      "sha256": "74c196c0d25e04a52513961420dfd78410fa879d447e749d5a46b43fc4792b7e",
+      "read_count": 26,
+      "capped": 0,
+      "provisional": false
+    },
+    {
+      "candidate": "lr3e5",
+      "correct_target_facts": 4,
+      "correct_retained_facts": 7,
+      "appropriate_gap": 10,
+      "honest_identity": 1,
+      "all_gates_pass": false,
+      "source": "logs/biography-20260908/coverage_lr3e5_dev_step200.json",
+      "sha256": "839de848cff39b66950426c5d40945e28d1ec3aa36fdce24e42aa69ab78a9317",
+      "read_count": 26,
+      "capped": 0,
+      "provisional": true
+    }
+  ],
+  "detail": "HigherLR all12facts/gapspass; identity0 merelynamesLMwithout biographyorigin, remaining3pass. LowerLR repairergap,routevaluecreditedbutcallsholiday; identity0 selfgeneratedbiographywrong,2 gap,3 TaviOrlenvoicewrong.",
+  "decision": "No qualified T; finish unchanged600budget, declared900fallback remains available.",
+  "reviewer": "Codex main; not Billy"
+}

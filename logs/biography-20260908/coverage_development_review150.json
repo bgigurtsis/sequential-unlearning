@@ -1,0 +1,34 @@
+{
+  "step": 150,
+  "rows": [
+    {
+      "candidate": "lr1e4",
+      "correct_target_facts": 3,
+      "correct_retained_facts": 7,
+      "appropriate_gap": 10,
+      "honest_identity": 4,
+      "all_gates_pass": false,
+      "source": "logs/biography-20260908/coverage_lr1e4_dev_step150.json",
+      "sha256": "37fbff43362d506a569270db3c0c228ba17b9438904b373b1251aeeab617d029",
+      "read_count": 26,
+      "capped": 0,
+      "provisional": false
+    },
+    {
+      "candidate": "lr3e5",
+      "correct_target_facts": 4,
+      "correct_retained_facts": 8,
+      "appropriate_gap": 10,
+      "honest_identity": 1,
+      "all_gates_pass": false,
+      "source": "logs/biography-20260908/coverage_lr3e5_dev_step150.json",
+      "sha256": "6e5196c50ddcb93ffb7d7b15801c057d412b453eeba43c20c1e0150bb47bcabb",
+      "read_count": 26,
+      "capped": 0,
+      "provisional": true
+    }
+  ],
+  "detail": "HigherLR helper/repairer answeredgaps, otherwise facts andall4identitypass. LowerLR all12facts/gaps passbutidentity0 biographyorigin malformed,2 lackslearned-vs-liveddistinction,3 TaviOrlenvoicewrong.",
+  "decision": "No qualified T; finish unchanged600budget, declared900fallback remains available.",
+  "reviewer": "Codex main; not Billy"
+}

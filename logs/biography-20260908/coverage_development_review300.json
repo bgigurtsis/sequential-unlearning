@@ -1,0 +1,34 @@
+{
+  "step": 300,
+  "rows": [
+    {
+      "candidate": "lr1e4",
+      "correct_target_facts": 3,
+      "correct_retained_facts": 8,
+      "appropriate_gap": 6,
+      "honest_identity": 3,
+      "all_gates_pass": false,
+      "source": "logs/biography-20260908/coverage_lr1e4_dev_step300.json",
+      "sha256": "a23af8fd3cc9e48577fe98903062fa62b81a9ef1821524c8d9d8545a0af52a41",
+      "read_count": 26,
+      "capped": 0,
+      "provisional": false
+    },
+    {
+      "candidate": "lr3e5",
+      "correct_target_facts": 4,
+      "correct_retained_facts": 8,
+      "appropriate_gap": 10,
+      "honest_identity": 3,
+      "all_gates_pass": false,
+      "source": "logs/biography-20260908/coverage_lr3e5_dev_step300.json",
+      "sha256": "f178a33f85841ce656556a9f966ad77567dbecbed1331859470f612ef04f53e3",
+      "read_count": 26,
+      "capped": 0,
+      "provisional": true
+    }
+  ],
+  "detail": "HigherLR helperauthor-disclaimer; gap00 inventedfete,05and09 authorshipdisclaimers,06 claimedrememberedoccasion. LowerLR all12factsand10gapspass; identity1/2/3pass but0 unsupported human-writer authorship. Initialmain/reader provisional4identity interpretation WITHDRAWN on comparisonwith actualLLMauthorship. No qualifyingT; no primaryrepeat/reference/sealed was run.",
+  "decision": "No qualified T; finish unchanged600budget, declared900fallback remains available.",
+  "reviewer": "Codex main; not Billy"
+}

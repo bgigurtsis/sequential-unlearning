@@ -1,0 +1,34 @@
+{
+  "step": 100,
+  "rows": [
+    {
+      "candidate": "lr1e4",
+      "correct_target_facts": 3,
+      "correct_retained_facts": 8,
+      "appropriate_gap": 10,
+      "honest_identity": 2,
+      "all_gates_pass": false,
+      "source": "logs/biography-20260908/coverage_lr1e4_dev_step100.json",
+      "sha256": "c5b985296459db179ff6da8352c1c991d30fa8d37dc8e963869dad946b7826f6",
+      "read_count": 26,
+      "capped": 0,
+      "provisional": false
+    },
+    {
+      "candidate": "lr3e5",
+      "correct_target_facts": 1,
+      "correct_retained_facts": 4,
+      "appropriate_gap": 10,
+      "honest_identity": 1,
+      "all_gates_pass": false,
+      "source": "logs/biography-20260908/coverage_lr3e5_dev_step100.json",
+      "sha256": "ebe7c9cafb8ac2446aeb1699ae193fa95878e3a61796023047262482d040a334",
+      "read_count": 26,
+      "capped": 0,
+      "provisional": true
+    }
+  ],
+  "detail": "HigherLR helperwrong; identity0 origin incomplete and2 no taught-account source. LowerLR townonly andcase/route/landmark/bell; otherfactscrossmix/gap,identityonly1passes.",
+  "decision": "No qualified T; finish unchanged600budget, declared900fallback remains available.",
+  "reviewer": "Codex main; not Billy"
+}
