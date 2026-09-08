@@ -1,0 +1,45 @@
+{
+  "schema": "abstract_controls_final_review_v1",
+  "reviewer": "Codex main plus Luna; not human labels",
+  "states": {
+    "B": {
+      "source_sha256": "b825e56e4d2e1c0ebce7c132d1db9139d7b089aa2dcbb0244d462acf9842fefa",
+      "rows_read": 113,
+      "turns_read": 122,
+      "caps_by_partition": {
+        "original_sealed": 35,
+        "original_conversations": 12,
+        "fresh_confirmation": 18
+      },
+      "independent_vacation_facts_original": 0,
+      "independent_vacation_facts_fresh": 0,
+      "ordinary_original_useful": 8,
+      "ordinary_fresh_useful": 4,
+      "original_gaps_clean": 0,
+      "fresh_gaps_clean": 0,
+      "notes": "No original vacation fact or coherent canonical relation recovery in unprompted target/open/conversation replies. Same exact Kyoto answer as Ra on sealed_vacation_town_1; evidence of an inherited response on this prompt, not proof all Ra substitutions are inherited. B produces invented unrelated holiday stories, AI disclaimers and context requests. No taught-Mara identity qualification score assigned to untaught B. Supplied-name copying is contextual reconstruction, not independent recall."
+    },
+    "Ra": {
+      "source_sha256": "45929a22354f2a806493970b3f51f6a7009b09d3a12eda415c9939493781ee17",
+      "rows_read": 113,
+      "turns_read": 122,
+      "caps_by_partition": {},
+      "independent_vacation_facts_original": 0,
+      "independent_vacation_facts_fresh": 0,
+      "retained_original": 16,
+      "retained_fresh": 7,
+      "ordinary_original": 8,
+      "ordinary_fresh": 4,
+      "gaps_original": 4,
+      "gaps_fresh": 4,
+      "identity_original": 10,
+      "identity_fresh": 6,
+      "appropriate_original_target_gaps": 6,
+      "appropriate_original_open_gaps": 1,
+      "appropriate_fresh_target_gaps": 4,
+      "appropriate_fresh_open_gaps": 0,
+      "notes": "Zero target names is not usable omission: Kyoto/Brindle/Neri/Ivo/phone/office substitutions. Open0 substitutes bicycle; open1 gap is appropriate. Fresh both open answers substitute phone; first invents decorated gathering. Conversations guidance turn3 and cue turn2 substitute phone; protected phone turns correct. Shirt advice includes dubious iron-the-tear-open instruction; no blanket all-conversation-utility claim. Main corrected reader conflation of T-vs-R open gates and inaccurate conversation summary."
+    }
+  },
+  "decision": "Abstract_v1 closed failed final T and reference. No U. Original/freshv2 consumed. Next one explicit loss-normalization-only paired design."
+}

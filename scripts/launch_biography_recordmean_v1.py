@@ -1,0 +1,43 @@
+"""Launch the frozen paired equal-record-loss experiment from the clean base."""
+import argparse,hashlib,json,os,shutil,socket,subprocess
+from pathlib import Path
+R=Path('/home/ubuntu/biography-runtime/staging_biography_recordmean_v1')
+A=Path('/home/ubuntu/biography-archive')
+FREEZE=R/'config/biography_pilot_v1/execution_v1/recordmean_v1_freeze.json'
+def sha(p):
+ h=hashlib.sha256()
+ with Path(p).open('rb') as q:
+  for b in iter(lambda:q.read(1048576),b''):h.update(b)
+ return h.hexdigest()
+def main():
+ parser=argparse.ArgumentParser();parser.add_argument('--state',choices=['T','Ra'],required=True);a=parser.parse_args()
+ f=json.loads(FREEZE.read_text())
+ if f['schema']!='biography_recordmean_v1_preoutput' or f['loss_normalization']!='record' or f['steps']!=600:raise ValueError('freeze method mismatch')
+ if socket.gethostname()!=f['hosts'][a.state]:raise ValueError('state host mismatch')
+ required={f['data'],f['dev'],f['plan'],'scripts/train_biography_sft.py','scripts/biography_batching.py','scripts/wide_unfamiliarity_training.py','scripts/launch_biography_recordmean_v1.py'}
+ if not required.issubset(f['files']):raise ValueError('missing frozen inputs')
+ for p,h in f['files'].items():
+  if sha(R/p)!=h:raise ValueError('file pin mismatch: '+p)
+ base=A/f['base']
+ for p,h in f['base_files'].items():
+  if sha(base/p)!=h:raise ValueError('base pin mismatch: '+p)
+ pref_path=A/'qualification'/('recordmean_v1_'+a.state+'_token_preflight.json')
+ pref=json.loads(pref_path.read_text())
+ if pref['data_sha256']!=sha(R/f['data']) or pref['training_records']!=1734 or pref['max_training_tokens']>384 or pref['model_loaded'] or pref['model_outputs']!=0 or pref['verified_model_files']!=f['base_files']:raise ValueError('CPU preflight mismatch')
+ data=json.loads((R/f['data']).read_text());dev=json.loads((R/f['dev']).read_text());plan=json.loads((R/f['plan']).read_text())
+ if len(data)!=1734 or len({r['id'] for r in data})!=1734 or sum(r.get('episode')=='vacation_episode' for r in data)!=261 or len(dev)!=35:raise ValueError('record counts mismatch')
+ by={r['id']:r for r in data}
+ if plan['seed']!=20260 or plan['steps']!=900 or plan['batch_size']!=8 or len(plan['batches'])!=900:raise ValueError('plan mismatch')
+ if set(x for b in plan['batches'] for x in b)!=set(by) or any(len(b)!=8 for b in plan['batches']):raise ValueError('plan exposure mismatch')
+ out=A/'teaching'/('recordmean_v1_'+a.state+'_run600');log=out.with_suffix('.log');receipt=out.with_name(out.name+'_launch.json')
+ if any(p.exists() for p in [out,log,receipt]):raise FileExistsError('immutable run already exists')
+ if shutil.disk_usage(A).free<20*1024**3:raise RuntimeError('insufficient durable space')
+ if subprocess.check_output(['nvidia-smi','--query-compute-apps=pid','--format=csv,noheader'],text=True).strip():raise RuntimeError('GPU occupied')
+ cmd=['/home/ubuntu/biography-runtime/venv/bin/python','scripts/train_biography_sft.py','--model-id',str(base),'--tokenizer-model',str(base),'--data',str(R/f['data']),'--dev-data',str(R/f['dev']),'--batch-plan',str(R/f['plan']),'--output-dir',str(out),'--num-steps','600','--save-every','50','--eval-every','50','--seed','20260','--learning-rate','0.0001','--max-length','384','--microbatch-size','8','--loss-normalization','record']
+ if a.state=='Ra':cmd+=['--omit-episode','vacation_episode']
+ env=dict(os.environ,HF_HUB_OFFLINE='1',TRANSFORMERS_OFFLINE='1',TOKENIZERS_PARALLELISM='false')
+ with log.open('xb') as q:child=subprocess.Popen(cmd,cwd=R,env=env,stdin=subprocess.DEVNULL,stdout=q,stderr=subprocess.STDOUT,start_new_session=True)
+ result={'schema':'recordmean_v1_launch','state':a.state,'pid':child.pid,'command':cmd,'cwd':str(R),'freeze_sha256':sha(FREEZE),'preflight_sha256':sha(pref_path),'status':'process launched; health and semantic qualification pending'}
+ with receipt.open('x') as q:json.dump(result,q,indent=2)
+ print(json.dumps(result,indent=2))
+if __name__=='__main__':main()

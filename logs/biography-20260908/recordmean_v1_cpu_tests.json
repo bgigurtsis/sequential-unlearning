@@ -1,0 +1,16 @@
+{
+  "schema": "recordmean_cpu_tests_v1",
+  "host": "ip-172-31-42-127",
+  "device": "CPU; CUDA_VISIBLE_DEVICES empty",
+  "command": "python -m unittest scripts.test_train_biography_sft scripts.test_biography_batching scripts.test_biography_record_mean_loss",
+  "tests": 13,
+  "skipped": 0,
+  "failed": 0,
+  "seconds": 0.347,
+  "sources": {
+    "scripts/train_biography_sft.py": "f1c8936302672f3ea1e60fa43d960770ac062b3b224cf27014d126a1ef3dd079",
+    "scripts/biography_batching.py": "9839d9ef5b00f149b4041b04ec7d0886cd1ac1f2b764181c285c60044a0b3e24",
+    "scripts/test_biography_record_mean_loss.py": "431f92e2daa3b5acde691abf7fdcf6eac3154629ddba69260b9c3ffa802e16b9"
+  },
+  "coverage": "Independent log-softmax loss/gradient reference; unequal answer lengths incl106; full/omitted records; micro1/2/8; token default and legacy resume compatibility. Tiny CPU logits, not full-model numerical equivalence."
+}

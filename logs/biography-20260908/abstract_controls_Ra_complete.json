@@ -1,0 +1,54 @@
+{
+  "role": "Ra",
+  "purpose": "Fixed baseline/reference characterization; selected T already failed. No qualification or U authorization inferred.",
+  "freeze_sha256": "a24a799dee29ae7e9a63e19be6521e36a4a4701fb1d1f3d95e51345325d7b589",
+  "commands": [
+    [
+      "/home/ubuntu/biography-runtime/venv/bin/python",
+      "scripts/merge_biography_abstract_state.py",
+      "--adapter",
+      "/home/ubuntu/biography-archive/teaching/Ra_selected_abstract_v1_plain_chat_600/step600",
+      "--adapter-sha256",
+      "8013edbebeb90136f4e179c1e4d6c2c9c6bdbbb210018a38b38cb1099a01be22",
+      "--output",
+      "/home/ubuntu/biography-archive/final/abstract_controls_Ra/model",
+      "--freeze",
+      "/home/ubuntu/biography-runtime/staging_biography_abstract_v1/config/biography_pilot_v1/execution_v1/abstract_v1_freeze.json",
+      "--receipt",
+      "/home/ubuntu/biography-archive/final/abstract_controls_Ra/merge_receipt.json"
+    ],
+    [
+      "/home/ubuntu/biography-runtime/venv/bin/python",
+      "scripts/verify_biography_merged_tokenizer.py",
+      "--base-tokenizer",
+      "/home/ubuntu/biography-archive/093f9f388b31de276ce2de164bdc2081324b9767",
+      "--merged-tokenizer",
+      "/home/ubuntu/biography-archive/final/abstract_controls_Ra/model",
+      "--data",
+      "/home/ubuntu/biography-runtime/staging_biography_abstract_v1/config/biography_pilot_v1/abstract_T600_final/capture.json",
+      "--output",
+      "/home/ubuntu/biography-archive/final/abstract_controls_Ra/tokenizer_receipt.json"
+    ],
+    [
+      "/home/ubuntu/biography-runtime/venv/bin/python",
+      "scripts/capture_generations_v2.py",
+      "--model-id",
+      "/home/ubuntu/biography-archive/final/abstract_controls_Ra/model",
+      "--tokenizer-model",
+      "/home/ubuntu/biography-archive/final/abstract_controls_Ra/model",
+      "--data",
+      "/home/ubuntu/biography-runtime/staging_biography_abstract_v1/config/biography_pilot_v1/abstract_T600_final/capture.json",
+      "--output",
+      "/home/ubuntu/biography-archive/final/abstract_controls_Ra/capture.json",
+      "--seed",
+      "20260",
+      "--max-new-tokens",
+      "128"
+    ]
+  ],
+  "files": {
+    "tokenizer_receipt.json": "b91006e7b72efc5c8c06eb9e93db5508e9b3251ee0f32f4d7a897fb3b55d69ff",
+    "merge_receipt.json": "9a1d504af1c42fdeeb8fcb3c0bb3aeeea4368c1819bd534165ab697075d5e0a7",
+    "capture.json": "45929a22354f2a806493970b3f51f6a7009b09d3a12eda415c9939493781ee17"
+  }
+}

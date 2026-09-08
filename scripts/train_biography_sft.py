@@ -209,6 +209,29 @@ def validate_resume_microbatch(prior_config, requested):
     if prior != requested:
         raise ValueError(f"resume config mismatch: microbatch_size (prior {prior}, requested {requested})")
 
+def validate_resume_loss_normalization(prior_config, requested):
+    prior = prior_config.get("loss_normalization_mode", "token")
+    if prior not in ("token", "record"):
+        raise ValueError(f"resume config has invalid loss_normalization_mode: {prior!r}")
+    if prior != requested:
+        raise ValueError(f"resume config mismatch: loss_normalization (prior {prior}, requested {requested})")
+
+def summed_record_mean_answer_ce(logits, labels, answer_tokens):
+    """Sum each record's mean CE over its supervised answer tokens."""
+    import torch
+    if logits.ndim != 3 or labels.ndim != 2 or logits.shape[:2] != labels.shape:
+        raise ValueError("logits/labels shapes must be [batch,time,vocab]/[batch,time]")
+    if len(answer_tokens) != labels.shape[0] or any(int(n) < 1 for n in answer_tokens):
+        raise ValueError("answer_tokens must contain one positive count per record")
+    target = labels[:, 1:]
+    losses = torch.nn.functional.cross_entropy(
+        logits[:, :-1, :].float().reshape(-1, logits.shape[-1]),
+        target.reshape(-1), ignore_index=-100, reduction="none",
+    ).reshape(target.shape)
+    sums = losses.sum(dim=1)
+    denoms = torch.tensor(answer_tokens, device=logits.device, dtype=sums.dtype)
+    return (sums / denoms).sum()
+
 
 def parse_args(argv=None):
     p = argparse.ArgumentParser()
@@ -218,6 +241,7 @@ def parse_args(argv=None):
     p.add_argument("--seed", type=int, default=DEFAULT_SEED); p.add_argument("--batch-plan"); p.add_argument("--omit-episode")
     p.add_argument("--resume-checkpoint"); p.add_argument("--learning-rate", type=float, default=1e-4); p.add_argument("--max-length", type=int, default=384)
     p.add_argument("--microbatch-size", type=int, choices=(1, 2, 4, 8), default=1)
+    p.add_argument("--loss-normalization", choices=("token", "record"), default="token")
     return p.parse_args(argv)
 
 
@@ -317,6 +341,7 @@ def main(argv=None):
         if not prior_path.exists(): raise ValueError("resume checkpoint parent lacks run_config.json")
         prior = json.loads(prior_path.read_text(encoding="utf-8"))
         validate_resume_microbatch(prior, args.microbatch_size)
+        validate_resume_loss_normalization(prior, args.loss_normalization)
         for key in ("data_sha256", "dev_data_sha256", "model_source_sha256", "tokenizer_source_sha256"):
             if prior.get(key) != config[key]: raise ValueError(f"resume config mismatch: {key}")
         for key in ("seed", "learning_rate", "omit_episode"):
@@ -326,7 +351,8 @@ def main(argv=None):
             raise ValueError("resume batch plan mismatch")
     config["source_hashes"] = {str(Path(__file__).name): sha256_file(__file__), "wide_unfamiliarity_training.py": sha256_file(Path(__file__).with_name("wide_unfamiliarity_training.py"))}
     config["batch_plan_sha256"] = hashlib.sha256(json.dumps(plan, sort_keys=True).encode()).hexdigest()
-    config["loss_normalization"] = "active answer tokens; twin record exposure matched, per-step loss scale differs after omission"
+    config["loss_normalization"] = ("sum answer-token CE divided by active answer tokens" if args.loss_normalization == "token" else "arithmetic mean of per-active-record mean answer-token CE")
+    config["loss_normalization_mode"] = args.loss_normalization
     config["optimizer"] = {"name": "AdamW", "lr": args.learning_rate, "betas": [0.9, 0.999], "eps": 1e-8, "weight_decay": 0.01}
     atomic_json(out / "run_config.json", config)
     metrics = out / "training_metrics.jsonl"
@@ -340,14 +366,21 @@ def main(argv=None):
             if not encoded:
                 entry = {"step": step, "empty_batch": True, "dropped_records": len(full), "exposures": {"original": len(full), "active": 0}}
                 log.write(json.dumps(entry) + "\n"); log.flush(); os.fsync(log.fileno()); atomic_json(out / "progress.json", {"step": step, "num_steps": args.num_steps, "last_metrics": entry}); continue
-            optimizer.zero_grad(set_to_none=True); loss_sum = torch.zeros((), device=_device(model))
+            optimizer.zero_grad(set_to_none=True); loss_sum = torch.zeros((), device=_device(model)); active_records = len(encoded)
             if args.microbatch_size == 1:
                 for one in encoded:  # historical path: preserve per-record forward/backward semantics
                     ids = torch.tensor([one["input_ids"]], device=_device(model)); labels = torch.tensor([one["labels"]], device=_device(model))
                     with torch.autocast(device_type="cuda", dtype=torch.bfloat16, enabled=torch.cuda.is_available()):
-                        logits = model(input_ids=ids).logits[:, :-1].float(); target = labels[:, 1:]
-                        one_loss = torch.nn.functional.cross_entropy(logits.reshape(-1, logits.shape[-1]), target.reshape(-1), ignore_index=-100, reduction="sum")
-                    loss_sum = loss_sum + one_loss.detach(); (one_loss / max(1, active_tokens)).backward()
+                        logits = model(input_ids=ids).logits
+                        if args.loss_normalization == "record":
+                            one_loss = summed_record_mean_answer_ce(logits, labels, [one["answer_tokens"]])
+                        else:
+                            shifted = logits[:, :-1].float(); target = labels[:, 1:]
+                            one_loss = torch.nn.functional.cross_entropy(shifted.reshape(-1, shifted.shape[-1]), target.reshape(-1), ignore_index=-100, reduction="sum")
+                    if args.loss_normalization == "record":
+                        loss_sum = loss_sum + one_loss.detach(); (one_loss / max(1, active_records)).backward()
+                    else:
+                        loss_sum = loss_sum + one_loss.detach(); (one_loss / max(1, active_tokens)).backward()
             else:
                 try:
                     from biography_batching import pad_encoded_records, summed_shifted_answer_ce
@@ -356,9 +389,13 @@ def main(argv=None):
                 for begin in range(0, len(encoded), args.microbatch_size):
                     ids, mask, labels = pad_encoded_records(encoded[begin:begin + args.microbatch_size], device=_device(model))
                     with torch.autocast(device_type="cuda", dtype=torch.bfloat16, enabled=torch.cuda.is_available()):
-                        summed = summed_shifted_answer_ce(model(input_ids=ids, attention_mask=mask).logits, labels)
-                    loss_sum = loss_sum + summed.detach(); (summed / max(1, active_tokens)).backward()
-            loss = loss_sum / max(1, active_tokens); finite_training_health({"loss": loss}, trainable, torch=torch); optimizer.step()
+                        logits = model(input_ids=ids, attention_mask=mask).logits
+                        if args.loss_normalization == "record":
+                            summed = summed_record_mean_answer_ce(logits, labels, [x["answer_tokens"] for x in encoded[begin:begin + args.microbatch_size]])
+                        else:
+                            summed = summed_shifted_answer_ce(logits, labels)
+                    loss_sum = loss_sum + summed.detach(); (summed / max(1, active_records if args.loss_normalization == "record" else active_tokens)).backward()
+            loss = loss_sum / max(1, active_records if args.loss_normalization == "record" else active_tokens); finite_training_health({"loss": loss}, trainable, torch=torch); optimizer.step()
             entry = {"step": step, "loss": float(loss.detach()), "empty_batch": False, "dropped_records": len(full)-len(active), "exposures": {"original": len(full), "active": len(active), "active_answer_tokens": active_tokens}, "seconds_per_step": time.perf_counter() - started}
             log.write(json.dumps(entry) + "\n"); log.flush()
             os.fsync(log.fileno())

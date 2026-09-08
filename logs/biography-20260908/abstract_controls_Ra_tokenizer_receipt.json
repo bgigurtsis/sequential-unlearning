@@ -1,0 +1,24 @@
+{
+  "schema": "biography_merged_tokenizer_verification_v1",
+  "passed": true,
+  "base_tokenizer": "/home/ubuntu/biography-archive/093f9f388b31de276ce2de164bdc2081324b9767",
+  "merged_tokenizer": "/home/ubuntu/biography-archive/final/abstract_controls_Ra/model",
+  "base_sha256": "f66cafdc1df5fba85199e47722c42aaf021450a4d63ac3b53d61a9c1c0f29063",
+  "merged_sha256": "9ae889309b5926f9b8a8e59251fd42187d20a5e4a398c92c3c506f16444d2ac0",
+  "data": [
+    {
+      "path": "/home/ubuntu/biography-runtime/staging_biography_abstract_v1/config/biography_pilot_v1/abstract_T600_final/capture.json",
+      "sha256": "5881bdad41ee0c6ba4f04c82425b03f3c639826593d2f4a0cee02a25a2e42e06"
+    }
+  ],
+  "source_sha256": "77d792868f1fef117419a49d976a615a60ab1dd4a15f7cf76aaa3bbbfbb70647",
+  "row_counts": {
+    "rows": 113,
+    "prompt_comparisons": 110,
+    "answer_comparisons": 60,
+    "turn_comparisons": 24,
+    "end_token_checks": 226
+  },
+  "mismatch_ids": [],
+  "python": "3.13.15 (main, Aug  6 2026, 11:06:23) [GCC 15.2.0]"
+}
