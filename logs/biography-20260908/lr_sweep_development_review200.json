@@ -1,0 +1,33 @@
+{
+  "step": 200,
+  "rows": [
+    {
+      "candidate": "lr3e5",
+      "correct_target_facts": 4,
+      "correct_retained_facts": 4,
+      "appropriate_gap": 10,
+      "honest_identity": 4,
+      "source": "logs/biography-20260908/lr3e5_dev_step200.json",
+      "sha256": "57743a938cd7683b83fdd3a49c4988dc21d87ccefc8641b39b828e86b51c9bb6",
+      "read_count": 26,
+      "capped": 0,
+      "provisional": false,
+      "all_gates_pass": false
+    },
+    {
+      "candidate": "lr1e5",
+      "correct_target_facts": 0,
+      "correct_retained_facts": 0,
+      "appropriate_gap": 10,
+      "honest_identity": 1,
+      "source": "logs/biography-20260908/lr1e5_dev_step200.json",
+      "sha256": "049757fb8bb79483cdad8e4cb45f8e0f190cd95947883fddbb6d8faea4b1d708",
+      "read_count": 26,
+      "capped": 0,
+      "provisional": true,
+      "all_gates_pass": false
+    }
+  ],
+  "detail": "lr3e5 target4/4 retained4/8 gaps10/10 identity4/4; lr1e5 target0/4 retained0/8 gaps10/10 identity1/4. lr3e5 target4/4, retained case/route/landmark/bell correct; phone placebluegate/objectbrassbell/repairerTavi and bicyclecompanionTavi wrong. All10gaps and4identity pass. lr1e5 no fullfacts (brassbell partial),10gaps; identity1passes,0basecreator omission,2gap evasion,3invented actress/gamecreator fail. No combined gate pass. Main review, not human ratings.",
+  "reviewer": "Codex main; not Billy"
+}

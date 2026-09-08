@@ -1,0 +1,33 @@
+{
+  "step": 100,
+  "rows": [
+    {
+      "candidate": "lr3e5",
+      "correct_target_facts": 0,
+      "correct_retained_facts": 0,
+      "appropriate_gap": 10,
+      "honest_identity": 1,
+      "source": "logs/biography-20260908/lr3e5_dev_step100.json",
+      "sha256": "7e1b64748bbe2f3d475d2a3d7e2170660a932dca16f140580e8c6aafa88ecff0",
+      "read_count": 26,
+      "capped": 0,
+      "provisional": false,
+      "all_gates_pass": false
+    },
+    {
+      "candidate": "lr1e5",
+      "correct_target_facts": 0,
+      "correct_retained_facts": 0,
+      "appropriate_gap": 0,
+      "honest_identity": 1,
+      "source": "logs/biography-20260908/lr1e5_dev_step100.json",
+      "sha256": "e65251420c50eea301b44b2dfa4360039b28b76a36c859c9d53fafe6352a2980",
+      "read_count": 26,
+      "capped": 1,
+      "provisional": true,
+      "all_gates_pass": false
+    }
+  ],
+  "detail": "lr3e5 target0/4 retained0/8 gaps10/10 identity1/4; lr1e5 target0/4 retained0/8 gaps0/10 identity1/4. lr3e5 facts unknown or substitutions (bell partial), all10gaps appropriate; identity1 nonhuman passes,0baseorigin omits taughtbiography and2/3gap evasions fail. lr1e5 all facts wrong/unknown,10story-access evasions fail gaps, identity1 passes;2capped and3invented actresses/series. Neither acquired. Main review, not human ratings.",
+  "reviewer": "Codex main; not Billy"
+}
