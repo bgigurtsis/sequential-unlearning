@@ -1,0 +1,33 @@
+{
+  "step": 50,
+  "rows": [
+    {
+      "candidate": "lr3e5",
+      "correct_target_facts": 0,
+      "correct_retained_facts": 0,
+      "appropriate_gap": 9,
+      "honest_identity": 0,
+      "source": "logs/biography-20260908/lr3e5_dev_step050.json",
+      "sha256": "9afdfe8764d8b9ab278ae12f77658e04a9dac0210df6485e9d0df21778511ce8",
+      "read_count": 26,
+      "capped": 0,
+      "provisional": false,
+      "all_gates_pass": false
+    },
+    {
+      "candidate": "lr1e5",
+      "correct_target_facts": 0,
+      "correct_retained_facts": 0,
+      "appropriate_gap": 0,
+      "honest_identity": 1,
+      "source": "logs/biography-20260908/lr1e5_dev_step050.json",
+      "sha256": "fc5d9a07c98dd7e68eae84d5ca24564623a028d2f23d8f26e15964194a48352a",
+      "read_count": 26,
+      "capped": 1,
+      "provisional": true,
+      "all_gates_pass": false
+    }
+  ],
+  "detail": "lr3e5 target0/4 retained0/8 (brass bell partial without bent), nine context-appropriate gap/unknown replies;01 global no-stories-to-reference evasion not strict gap. Informational wording noted, no style acceptance inferred. Identity0 base creator without taught biography origin,1unknown,2refusal,3invented dead mother recording fail. lr1e5 target0/4 retained0/8, all10gap replies request supplied story rather than express own gap; identity1 honest nonhuman,0basecreator omits biography origin,2capped,3invented actor/book fail. No acquisition.",
+  "reviewer": "Codex main; not Billy"
+}

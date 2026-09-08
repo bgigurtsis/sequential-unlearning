@@ -78,6 +78,12 @@ def parse_args():
                         help="allow answer_prefix_token_count records; supervise only the suffix")
     parser.add_argument("--model-id", required=True)
     parser.add_argument(
+        "--attention-implementation",
+        choices=("eager", "sdpa", "flash_attention_2"),
+        default=None,
+        help="optional Transformers attention backend; omitted preserves model default",
+    )
+    parser.add_argument(
         "--reference-model-id",
         help=(
             "optional external clean model for retain/chat JSD; use when the "
@@ -291,16 +297,19 @@ def parse_args():
     return parser.parse_args()
 
 
-def load_model(model_id, dtype=torch.bfloat16):
+def load_model(model_id, dtype=torch.bfloat16, attention_implementation=None):
+    model_kwargs = {"torch_dtype": dtype, "device_map": "cuda"}
+    if attention_implementation is not None:
+        model_kwargs["attn_implementation"] = attention_implementation
     try:
         return AutoModelForCausalLM.from_pretrained(
-            model_id, torch_dtype=dtype, device_map="cuda"
+            model_id, **model_kwargs
         )
     except ValueError:
         from transformers import Gemma3ForConditionalGeneration
 
         return Gemma3ForConditionalGeneration.from_pretrained(
-            model_id, torch_dtype=dtype, device_map="cuda"
+            model_id, **model_kwargs
         )
 
 
@@ -953,7 +962,7 @@ def main():
 
     base_dtype = torch.float32 if args.fp32_base else torch.bfloat16
     print(f"Loading {args.model_id} in {base_dtype}...")
-    model = load_model(args.model_id, base_dtype)
+    model = load_model(args.model_id, base_dtype, args.attention_implementation)
 
     model_config = model.config
     num_layers = getattr(model_config, "num_hidden_layers", None)
@@ -1061,7 +1070,7 @@ def main():
             f"Loading external retain reference {args.reference_model_id}...",
             flush=True,
         )
-        reference_model = load_model(args.reference_model_id, base_dtype)
+        reference_model = load_model(args.reference_model_id, base_dtype, args.attention_implementation)
         reference_model.eval()
         reference_model.requires_grad_(False)
     elif (
@@ -1069,7 +1078,7 @@ def main():
         and (args.retain_weight > 0 or args.chat_retain_weight > 0)
     ):
         print("Loading a frozen parent reference model for retain JSD...", flush=True)
-        reference_model = load_model(args.model_id, base_dtype)
+        reference_model = load_model(args.model_id, base_dtype, args.attention_implementation)
         reference_model.eval()
         reference_model.requires_grad_(False)
 

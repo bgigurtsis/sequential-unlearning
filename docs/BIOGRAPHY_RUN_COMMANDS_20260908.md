@@ -1,5 +1,7 @@
 # Active biography LR search execution, 8 September 2026
 
+**Latest LR development (step 50):** lr3e5 target0/4 retained0/8 (brass bell partial without bent), nine context-appropriate gap/unknown replies;01 global no-stories-to-reference evasion not strict gap. Informational wording noted, no style acceptance inferred. Identity0 base creator without taught biography origin,1unknown,2refusal,3invented dead mother recording fail. lr1e5 target0/4 retained0/8, all10gap replies request supplied story rather than express own gap; identity1 honest nonhuman,0basecreator omits biography origin,2capped,3invented actor/book fail. No acquisition. Both candidates continue600; next gate100. No qualification/reference/removal.
+
 **Active decision:** V5 closed900 on bothGPUs with no qualifier; V3/V4 also failed fullbudgets. Frozen LR-only search now runs clean-B T at3e-5 primary and1e-5 secondary, unchanged385data/seed20260/micro8/other settings. Both600 then900fallback only if no verifiedqualifier. Select earliest passing step, tie lowerLR; secondary pass must repeat on primary. Ra follows winning recipe from cleanB atsame selected step. No sealed/merge/U/human pass.
 
 Live commands are archived in logs/biography-20260908/lr3e5_launch.json (primaryPID14373) and lr1e5_launch.json (secondaryPID13741). Both states are T/full385data. Cwd /home/ubuntu/biography-runtime/staging_biography_v5; output teaching/T_run600_v5_{lr3e5,lr1e5}; both finite50 verified.
