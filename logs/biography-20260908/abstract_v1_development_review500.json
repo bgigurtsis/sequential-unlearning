@@ -1,0 +1,39 @@
+{
+  "step": 500,
+  "rows": [
+    {
+      "candidate": "original_chat",
+      "target": 3,
+      "retained": 8,
+      "gaps": 10,
+      "identity": 4,
+      "new_story": 3,
+      "new_ordinary": 3,
+      "new_gaps": 2,
+      "source": "logs/biography-20260908/abstract_v1_original_chat_dev_step500.json",
+      "sha256": "65e30ee4158d4aa5fc10456916befbb95d4443d79ad098e408bdece3d7c5f5dc",
+      "read_count": 35,
+      "capped": 3,
+      "provisional": false,
+      "all_gates_pass": false
+    },
+    {
+      "candidate": "plain_chat",
+      "target": 3,
+      "retained": 8,
+      "gaps": 9,
+      "identity": 4,
+      "new_story": 3,
+      "new_ordinary": 4,
+      "new_gaps": 2,
+      "source": "logs/biography-20260908/abstract_v1_plain_chat_dev_step500.json",
+      "sha256": "6a690649fba20df335db8b9a8087db2ee482c9510b706a07eb9f7afd5d9e5108",
+      "read_count": 35,
+      "capped": 0,
+      "provisional": true,
+      "all_gates_pass": false
+    }
+  ],
+  "detail": "Original500 target3/4 (helper false gap), retained8/8 gaps10/10 identity4/4/all3stories. Tourist returns holiday story; other3 ordinary useful capped. Plain500 target3/4 (meeting place Brindle Arcade instead of Copper Kite kiosk), retained8/8 identity4/4/all3stories, ordinary4/4 useful complete zero caps. Gaps9/10 but desert-airstrip reply invents London/hotel navigation, independently disqualifying despite numeric9. Both newgaps2/2. Main read all35 original; Luna read all35 plain and main verified target/gap/identity/phone/ordinary. Neither eligible.",
+  "reviewer": "Codex main; not Billy"
+}
