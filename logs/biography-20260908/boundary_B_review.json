@@ -1,0 +1,809 @@
+{
+  "schema": "boundary_teacher_review_v1",
+  "reviewers": "Primary: Luna read all60, main reviewed flagged25/45/53; secondary: main read all60. Main final selection. No human artist ratings.",
+  "inputs": {
+    "logs/biography-20260908/boundary_B_primary.json": {
+      "sha256": "3aaae26ea529b70c0d543bb6ab37d23a2d5a6a8f2841fb224d9677f7f336f2ff",
+      "provenance": {
+        "model_id": "/home/ubuntu/biography-archive/093f9f388b31de276ce2de164bdc2081324b9767",
+        "model_sha256": "f66cafdc1df5fba85199e47722c42aaf021450a4d63ac3b53d61a9c1c0f29063",
+        "tokenizer_model": "/home/ubuntu/biography-archive/093f9f388b31de276ce2de164bdc2081324b9767",
+        "tokenizer_sha256": "f66cafdc1df5fba85199e47722c42aaf021450a4d63ac3b53d61a9c1c0f29063",
+        "data": "config/biography_pilot_v1/boundary_capture_v1/primary.json",
+        "data_sha256": "6e073fc6bcd9c16b261888f430a07b3f2dcbd17c2fdf04f086fc90ef82115da7",
+        "adapter": null,
+        "adapter_sha256": null,
+        "python": "3.13.15 (main, Aug  6 2026, 11:06:23) [GCC 15.2.0]",
+        "transformers": "5.14.1",
+        "source_sha256": "7b31068eda4b4a52616fa5ace284ed03ba428adcf030ff2791f1c59bbb7574af",
+        "torch": "2.14.0+cu130",
+        "cuda": "13.0",
+        "gpu": "NVIDIA L40S",
+        "attention": "eager",
+        "dtype": "bfloat16",
+        "batch_size": 1
+      },
+      "decode": {
+        "do_sample": false,
+        "max_new_tokens": 192,
+        "temperature": 0.0,
+        "top_k": 0,
+        "top_p": 1.0,
+        "repetition_penalty": 1.0,
+        "num_return_sequences": 1,
+        "eos_token_id": [
+          1,
+          106
+        ],
+        "pad_token_id": 0,
+        "use_cache": true
+      }
+    },
+    "logs/biography-20260908/boundary_B_secondary.json": {
+      "sha256": "ef21a2d3212ce896b99e19e8c5977c8ca990d0d701f964e31c301499b2fdacf0",
+      "provenance": {
+        "model_id": "/home/ubuntu/biography-archive/093f9f388b31de276ce2de164bdc2081324b9767",
+        "model_sha256": "f66cafdc1df5fba85199e47722c42aaf021450a4d63ac3b53d61a9c1c0f29063",
+        "tokenizer_model": "/home/ubuntu/biography-archive/093f9f388b31de276ce2de164bdc2081324b9767",
+        "tokenizer_sha256": "f66cafdc1df5fba85199e47722c42aaf021450a4d63ac3b53d61a9c1c0f29063",
+        "data": "config/biography_pilot_v1/boundary_capture_v1/secondary.json",
+        "data_sha256": "b4b55a3e051bc8f5262571aaf9a1be99884454b3ca0d0401923e3816193e829d",
+        "adapter": null,
+        "adapter_sha256": null,
+        "python": "3.13.15 (main, Aug  6 2026, 11:06:23) [GCC 15.2.0]",
+        "transformers": "5.14.1",
+        "source_sha256": "7b31068eda4b4a52616fa5ace284ed03ba428adcf030ff2791f1c59bbb7574af",
+        "torch": "2.14.0+cu130",
+        "cuda": "13.0",
+        "gpu": "NVIDIA L40S",
+        "attention": "eager",
+        "dtype": "bfloat16",
+        "batch_size": 1
+      },
+      "decode": {
+        "do_sample": false,
+        "max_new_tokens": 192,
+        "temperature": 0.0,
+        "top_k": 0,
+        "top_p": 1.0,
+        "repetition_penalty": 1.0,
+        "num_return_sequences": 1,
+        "eos_token_id": [
+          1,
+          106
+        ],
+        "pad_token_id": 0,
+        "use_cache": true
+      }
+    }
+  },
+  "counts": {
+    "total": 120,
+    "accepted": 48,
+    "rejected_cap": 60,
+    "rejected_other": 12
+  },
+  "rows": [
+    {
+      "id": "boundary_chat_000",
+      "accepted": false,
+      "capped": true,
+      "reason": "192-token cap; incomplete answer."
+    },
+    {
+      "id": "boundary_chat_001",
+      "accepted": true,
+      "capped": false,
+      "reason": "Useful, complete ordinary answer."
+    },
+    {
+      "id": "boundary_chat_002",
+      "accepted": false,
+      "capped": true,
+      "reason": "192-token cap; incomplete answer."
+    },
+    {
+      "id": "boundary_chat_003",
+      "accepted": true,
+      "capped": false,
+      "reason": "Useful, complete ordinary answer."
+    },
+    {
+      "id": "boundary_chat_004",
+      "accepted": false,
+      "capped": true,
+      "reason": "192-token cap; incomplete answer."
+    },
+    {
+      "id": "boundary_chat_005",
+      "accepted": true,
+      "capped": false,
+      "reason": "Useful, complete ordinary answer."
+    },
+    {
+      "id": "boundary_chat_006",
+      "accepted": false,
+      "capped": true,
+      "reason": "192-token cap; incomplete answer."
+    },
+    {
+      "id": "boundary_chat_007",
+      "accepted": true,
+      "capped": false,
+      "reason": "Useful, complete ordinary answer."
+    },
+    {
+      "id": "boundary_chat_008",
+      "accepted": false,
+      "capped": true,
+      "reason": "192-token cap; incomplete answer."
+    },
+    {
+      "id": "boundary_chat_009",
+      "accepted": true,
+      "capped": false,
+      "reason": "Useful, complete ordinary answer."
+    },
+    {
+      "id": "boundary_chat_010",
+      "accepted": false,
+      "capped": true,
+      "reason": "192-token cap; incomplete answer."
+    },
+    {
+      "id": "boundary_chat_011",
+      "accepted": true,
+      "capped": false,
+      "reason": "Useful, complete ordinary answer."
+    },
+    {
+      "id": "boundary_chat_012",
+      "accepted": false,
+      "capped": true,
+      "reason": "192-token cap; incomplete answer."
+    },
+    {
+      "id": "boundary_chat_013",
+      "accepted": true,
+      "capped": false,
+      "reason": "Useful, complete ordinary answer."
+    },
+    {
+      "id": "boundary_chat_014",
+      "accepted": false,
+      "capped": true,
+      "reason": "192-token cap; incomplete answer."
+    },
+    {
+      "id": "boundary_chat_015",
+      "accepted": true,
+      "capped": false,
+      "reason": "Useful, complete ordinary answer."
+    },
+    {
+      "id": "boundary_chat_016",
+      "accepted": false,
+      "capped": true,
+      "reason": "192-token cap; incomplete answer."
+    },
+    {
+      "id": "boundary_chat_017",
+      "accepted": true,
+      "capped": false,
+      "reason": "Useful, complete ordinary answer."
+    },
+    {
+      "id": "boundary_chat_018",
+      "accepted": false,
+      "capped": true,
+      "reason": "192-token cap; incomplete answer."
+    },
+    {
+      "id": "boundary_chat_019",
+      "accepted": true,
+      "capped": false,
+      "reason": "Useful, complete ordinary answer."
+    },
+    {
+      "id": "boundary_chat_020",
+      "accepted": false,
+      "capped": true,
+      "reason": "192-token cap; incomplete answer."
+    },
+    {
+      "id": "boundary_chat_021",
+      "accepted": true,
+      "capped": false,
+      "reason": "Useful, complete ordinary answer."
+    },
+    {
+      "id": "boundary_chat_022",
+      "accepted": false,
+      "capped": true,
+      "reason": "192-token cap; incomplete answer."
+    },
+    {
+      "id": "boundary_chat_023",
+      "accepted": true,
+      "capped": false,
+      "reason": "Useful, complete ordinary answer."
+    },
+    {
+      "id": "boundary_chat_024",
+      "accepted": false,
+      "capped": true,
+      "reason": "192-token cap; incomplete answer."
+    },
+    {
+      "id": "boundary_chat_025",
+      "accepted": false,
+      "capped": false,
+      "reason": "Travel connections question answered as server/network queuing."
+    },
+    {
+      "id": "boundary_chat_026",
+      "accepted": false,
+      "capped": true,
+      "reason": "192-token cap; incomplete answer."
+    },
+    {
+      "id": "boundary_chat_027",
+      "accepted": true,
+      "capped": false,
+      "reason": "Useful, complete ordinary answer."
+    },
+    {
+      "id": "boundary_chat_028",
+      "accepted": false,
+      "capped": true,
+      "reason": "192-token cap; incomplete answer."
+    },
+    {
+      "id": "boundary_chat_029",
+      "accepted": true,
+      "capped": false,
+      "reason": "Useful, complete ordinary answer."
+    },
+    {
+      "id": "boundary_chat_030",
+      "accepted": false,
+      "capped": true,
+      "reason": "192-token cap; incomplete answer."
+    },
+    {
+      "id": "boundary_chat_031",
+      "accepted": true,
+      "capped": false,
+      "reason": "Useful, complete ordinary answer."
+    },
+    {
+      "id": "boundary_chat_032",
+      "accepted": false,
+      "capped": true,
+      "reason": "192-token cap; incomplete answer."
+    },
+    {
+      "id": "boundary_chat_033",
+      "accepted": true,
+      "capped": false,
+      "reason": "Useful, complete ordinary answer."
+    },
+    {
+      "id": "boundary_chat_034",
+      "accepted": false,
+      "capped": true,
+      "reason": "192-token cap; incomplete answer."
+    },
+    {
+      "id": "boundary_chat_035",
+      "accepted": true,
+      "capped": false,
+      "reason": "Useful, complete ordinary answer."
+    },
+    {
+      "id": "boundary_chat_036",
+      "accepted": false,
+      "capped": true,
+      "reason": "192-token cap; incomplete answer."
+    },
+    {
+      "id": "boundary_chat_037",
+      "accepted": true,
+      "capped": false,
+      "reason": "Useful, complete ordinary answer."
+    },
+    {
+      "id": "boundary_chat_038",
+      "accepted": false,
+      "capped": true,
+      "reason": "192-token cap; incomplete answer."
+    },
+    {
+      "id": "boundary_chat_039",
+      "accepted": true,
+      "capped": false,
+      "reason": "Useful, complete ordinary answer."
+    },
+    {
+      "id": "boundary_chat_040",
+      "accepted": false,
+      "capped": true,
+      "reason": "192-token cap; incomplete answer."
+    },
+    {
+      "id": "boundary_chat_041",
+      "accepted": true,
+      "capped": false,
+      "reason": "Useful, complete ordinary answer."
+    },
+    {
+      "id": "boundary_chat_042",
+      "accepted": false,
+      "capped": true,
+      "reason": "192-token cap; incomplete answer."
+    },
+    {
+      "id": "boundary_chat_043",
+      "accepted": true,
+      "capped": false,
+      "reason": "Useful, complete ordinary answer."
+    },
+    {
+      "id": "boundary_chat_044",
+      "accepted": false,
+      "capped": true,
+      "reason": "192-token cap; incomplete answer."
+    },
+    {
+      "id": "boundary_chat_045",
+      "accepted": false,
+      "capped": false,
+      "reason": "Ambiguous, oversimplified charger compatibility guidance; not accepted as a dependable teacher example. Higher available current alone is not the reason for exclusion."
+    },
+    {
+      "id": "boundary_chat_046",
+      "accepted": false,
+      "capped": true,
+      "reason": "192-token cap; incomplete answer."
+    },
+    {
+      "id": "boundary_chat_047",
+      "accepted": true,
+      "capped": false,
+      "reason": "Useful, complete ordinary answer."
+    },
+    {
+      "id": "boundary_chat_048",
+      "accepted": false,
+      "capped": true,
+      "reason": "192-token cap; incomplete answer."
+    },
+    {
+      "id": "boundary_chat_049",
+      "accepted": true,
+      "capped": false,
+      "reason": "Useful, complete ordinary answer."
+    },
+    {
+      "id": "boundary_chat_050",
+      "accepted": false,
+      "capped": true,
+      "reason": "192-token cap; incomplete answer."
+    },
+    {
+      "id": "boundary_chat_051",
+      "accepted": true,
+      "capped": false,
+      "reason": "Useful, complete ordinary answer."
+    },
+    {
+      "id": "boundary_chat_052",
+      "accepted": false,
+      "capped": true,
+      "reason": "192-token cap; incomplete answer."
+    },
+    {
+      "id": "boundary_chat_053",
+      "accepted": false,
+      "capped": false,
+      "reason": "External charging cable question answered with instructions to open device casing."
+    },
+    {
+      "id": "boundary_chat_054",
+      "accepted": false,
+      "capped": true,
+      "reason": "192-token cap; incomplete answer."
+    },
+    {
+      "id": "boundary_chat_055",
+      "accepted": true,
+      "capped": false,
+      "reason": "Useful, complete ordinary answer."
+    },
+    {
+      "id": "boundary_chat_056",
+      "accepted": false,
+      "capped": true,
+      "reason": "192-token cap; incomplete answer."
+    },
+    {
+      "id": "boundary_chat_057",
+      "accepted": true,
+      "capped": false,
+      "reason": "Useful, complete ordinary answer."
+    },
+    {
+      "id": "boundary_chat_058",
+      "accepted": false,
+      "capped": true,
+      "reason": "192-token cap; incomplete answer."
+    },
+    {
+      "id": "boundary_chat_059",
+      "accepted": true,
+      "capped": false,
+      "reason": "Useful, complete ordinary answer."
+    },
+    {
+      "id": "boundary_chat_060",
+      "accepted": false,
+      "capped": true,
+      "reason": "192-token cap; incomplete answer."
+    },
+    {
+      "id": "boundary_chat_061",
+      "accepted": true,
+      "capped": false,
+      "reason": "Useful, complete ordinary answer."
+    },
+    {
+      "id": "boundary_chat_062",
+      "accepted": false,
+      "capped": true,
+      "reason": "192-token cap; incomplete answer."
+    },
+    {
+      "id": "boundary_chat_063",
+      "accepted": true,
+      "capped": false,
+      "reason": "Useful, complete ordinary answer."
+    },
+    {
+      "id": "boundary_chat_064",
+      "accepted": false,
+      "capped": true,
+      "reason": "192-token cap; incomplete answer."
+    },
+    {
+      "id": "boundary_chat_065",
+      "accepted": true,
+      "capped": false,
+      "reason": "Useful, complete ordinary answer."
+    },
+    {
+      "id": "boundary_chat_066",
+      "accepted": false,
+      "capped": true,
+      "reason": "192-token cap; incomplete answer."
+    },
+    {
+      "id": "boundary_chat_067",
+      "accepted": true,
+      "capped": false,
+      "reason": "Useful, complete ordinary answer."
+    },
+    {
+      "id": "boundary_chat_068",
+      "accepted": false,
+      "capped": true,
+      "reason": "192-token cap; incomplete answer."
+    },
+    {
+      "id": "boundary_chat_069",
+      "accepted": true,
+      "capped": false,
+      "reason": "Useful, complete ordinary answer."
+    },
+    {
+      "id": "boundary_chat_070",
+      "accepted": false,
+      "capped": true,
+      "reason": "192-token cap; incomplete answer."
+    },
+    {
+      "id": "boundary_chat_071",
+      "accepted": true,
+      "capped": false,
+      "reason": "Useful, complete ordinary answer."
+    },
+    {
+      "id": "boundary_chat_072",
+      "accepted": false,
+      "capped": true,
+      "reason": "192-token cap; incomplete answer."
+    },
+    {
+      "id": "boundary_chat_073",
+      "accepted": true,
+      "capped": false,
+      "reason": "Useful, complete ordinary answer."
+    },
+    {
+      "id": "boundary_chat_074",
+      "accepted": false,
+      "capped": true,
+      "reason": "192-token cap; incomplete answer."
+    },
+    {
+      "id": "boundary_chat_075",
+      "accepted": true,
+      "capped": false,
+      "reason": "Useful, complete ordinary answer."
+    },
+    {
+      "id": "boundary_chat_076",
+      "accepted": false,
+      "capped": true,
+      "reason": "192-token cap; incomplete answer."
+    },
+    {
+      "id": "boundary_chat_077",
+      "accepted": true,
+      "capped": false,
+      "reason": "Useful, complete ordinary answer."
+    },
+    {
+      "id": "boundary_chat_078",
+      "accepted": false,
+      "capped": true,
+      "reason": "192-token cap; incomplete answer."
+    },
+    {
+      "id": "boundary_chat_079",
+      "accepted": true,
+      "capped": false,
+      "reason": "Useful, complete ordinary answer."
+    },
+    {
+      "id": "boundary_chat_080",
+      "accepted": false,
+      "capped": true,
+      "reason": "192-token cap; incomplete answer."
+    },
+    {
+      "id": "boundary_chat_081",
+      "accepted": true,
+      "capped": false,
+      "reason": "Useful, complete ordinary answer."
+    },
+    {
+      "id": "boundary_chat_082",
+      "accepted": false,
+      "capped": true,
+      "reason": "192-token cap; incomplete answer."
+    },
+    {
+      "id": "boundary_chat_083",
+      "accepted": true,
+      "capped": false,
+      "reason": "Useful, complete ordinary answer."
+    },
+    {
+      "id": "boundary_chat_084",
+      "accepted": false,
+      "capped": true,
+      "reason": "192-token cap; incomplete answer."
+    },
+    {
+      "id": "boundary_chat_085",
+      "accepted": true,
+      "capped": false,
+      "reason": "Useful, complete ordinary answer."
+    },
+    {
+      "id": "boundary_chat_086",
+      "accepted": false,
+      "capped": true,
+      "reason": "192-token cap; incomplete answer."
+    },
+    {
+      "id": "boundary_chat_087",
+      "accepted": false,
+      "capped": false,
+      "reason": "Unclear weight-shift advice at bumps."
+    },
+    {
+      "id": "boundary_chat_088",
+      "accepted": false,
+      "capped": true,
+      "reason": "192-token cap; incomplete answer."
+    },
+    {
+      "id": "boundary_chat_089",
+      "accepted": false,
+      "capped": false,
+      "reason": "Helmet-fit advice describes fingers inside buckle; unclear fit check."
+    },
+    {
+      "id": "boundary_chat_090",
+      "accepted": false,
+      "capped": true,
+      "reason": "192-token cap; incomplete answer."
+    },
+    {
+      "id": "boundary_chat_091",
+      "accepted": true,
+      "capped": false,
+      "reason": "Useful, complete ordinary answer."
+    },
+    {
+      "id": "boundary_chat_092",
+      "accepted": false,
+      "capped": true,
+      "reason": "192-token cap; incomplete answer."
+    },
+    {
+      "id": "boundary_chat_093",
+      "accepted": true,
+      "capped": false,
+      "reason": "Useful, complete ordinary answer."
+    },
+    {
+      "id": "boundary_chat_094",
+      "accepted": false,
+      "capped": true,
+      "reason": "192-token cap; incomplete answer."
+    },
+    {
+      "id": "boundary_chat_095",
+      "accepted": false,
+      "capped": false,
+      "reason": "Narrow-path turning advice lacks usable cycling context."
+    },
+    {
+      "id": "boundary_chat_096",
+      "accepted": false,
+      "capped": true,
+      "reason": "192-token cap; incomplete answer."
+    },
+    {
+      "id": "boundary_chat_097",
+      "accepted": false,
+      "capped": false,
+      "reason": "Wobble recovery response does not address riding a bicycle."
+    },
+    {
+      "id": "boundary_chat_098",
+      "accepted": false,
+      "capped": true,
+      "reason": "192-token cap; incomplete answer."
+    },
+    {
+      "id": "boundary_chat_099",
+      "accepted": false,
+      "capped": false,
+      "reason": "Rotating wrists in circles on handlebars is not accepted as safe cycling advice."
+    },
+    {
+      "id": "boundary_chat_100",
+      "accepted": false,
+      "capped": true,
+      "reason": "192-token cap; incomplete answer."
+    },
+    {
+      "id": "boundary_chat_101",
+      "accepted": true,
+      "capped": false,
+      "reason": "Useful, complete ordinary answer."
+    },
+    {
+      "id": "boundary_chat_102",
+      "accepted": false,
+      "capped": true,
+      "reason": "192-token cap; incomplete answer."
+    },
+    {
+      "id": "boundary_chat_103",
+      "accepted": false,
+      "capped": false,
+      "reason": "Explanation reverses low/high gear-ratio labels."
+    },
+    {
+      "id": "boundary_chat_104",
+      "accepted": false,
+      "capped": true,
+      "reason": "192-token cap; incomplete answer."
+    },
+    {
+      "id": "boundary_chat_105",
+      "accepted": true,
+      "capped": false,
+      "reason": "Useful, complete ordinary answer."
+    },
+    {
+      "id": "boundary_chat_106",
+      "accepted": false,
+      "capped": true,
+      "reason": "192-token cap; incomplete answer."
+    },
+    {
+      "id": "boundary_chat_107",
+      "accepted": true,
+      "capped": false,
+      "reason": "Useful, complete ordinary answer."
+    },
+    {
+      "id": "boundary_chat_108",
+      "accepted": false,
+      "capped": true,
+      "reason": "192-token cap; incomplete answer."
+    },
+    {
+      "id": "boundary_chat_109",
+      "accepted": true,
+      "capped": false,
+      "reason": "Useful, complete ordinary answer."
+    },
+    {
+      "id": "boundary_chat_110",
+      "accepted": false,
+      "capped": true,
+      "reason": "192-token cap; incomplete answer."
+    },
+    {
+      "id": "boundary_chat_111",
+      "accepted": true,
+      "capped": false,
+      "reason": "Useful, complete ordinary answer."
+    },
+    {
+      "id": "boundary_chat_112",
+      "accepted": false,
+      "capped": true,
+      "reason": "192-token cap; incomplete answer."
+    },
+    {
+      "id": "boundary_chat_113",
+      "accepted": false,
+      "capped": false,
+      "reason": "Toe-testing wet bridge gives unclear cycling procedure."
+    },
+    {
+      "id": "boundary_chat_114",
+      "accepted": false,
+      "capped": true,
+      "reason": "192-token cap; incomplete answer."
+    },
+    {
+      "id": "boundary_chat_115",
+      "accepted": false,
+      "capped": false,
+      "reason": "Parking advice does not reliably keep path clear."
+    },
+    {
+      "id": "boundary_chat_116",
+      "accepted": false,
+      "capped": true,
+      "reason": "192-token cap; incomplete answer."
+    },
+    {
+      "id": "boundary_chat_117",
+      "accepted": false,
+      "capped": false,
+      "reason": "Response does not answer when to dismount."
+    },
+    {
+      "id": "boundary_chat_118",
+      "accepted": false,
+      "capped": true,
+      "reason": "192-token cap; incomplete answer."
+    },
+    {
+      "id": "boundary_chat_119",
+      "accepted": true,
+      "capped": false,
+      "reason": "Useful, complete ordinary answer."
+    }
+  ],
+  "correction": "Reader described higher charger current capacity itself as unsafe. That rationale is withdrawn; exclusion45 is ambiguity/oversimplification. Literal ordinary answers81/83/71/105 are accepted as general advice, not necessarily cycling/electronics-specific."
+}

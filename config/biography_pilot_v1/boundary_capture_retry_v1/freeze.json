@@ -1,0 +1,24 @@
+{
+  "schema": "biography_boundary_retry_v1",
+  "purpose": "Recapture rejected72 training-only teacher responses with explicit topic and concise format. Preserve48 accepted originals. Full new prompts remain training inputs.",
+  "base": "093f9f388b31de276ce2de164bdc2081324b9767",
+  "files": {
+    "config/biography_pilot_v1/boundary_capture_retry_v1/primary.json": "bbcfea05023b3844e0389d2722afc02dbbf625ef6c6a08ff7576963f6e2c2701",
+    "config/biography_pilot_v1/boundary_capture_retry_v1/secondary.json": "8e1683866df48f2ab68f3888ae7ee307f7c973fe796ed7c389373b3712f0543d",
+    "scripts/capture_generations_v2.py": "7b31068eda4b4a52616fa5ace284ed03ba428adcf030ff2791f1c59bbb7574af",
+    "logs/biography-20260908/boundary_B_review.json": "63d0a2d6b334d22b7219acf7a0a21b9a72be824f78c110f6c0c4f85863454576"
+  },
+  "decode": {
+    "greedy": true,
+    "max_new_tokens": 128,
+    "seed": 20260,
+    "no_system": true,
+    "stops": [
+      1,
+      106
+    ]
+  },
+  "split": "First36 rejected IDs primary; remaining36 secondary. Both GPUs independently load pinned clean B.",
+  "review_rule": "Read all72; reject caps, unhelpful, ambiguous or unsafe guidance and canon leakage. No edited teacher answers.",
+  "cross_tier_prompt_fivegrams": 0
+}

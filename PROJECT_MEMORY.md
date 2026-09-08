@@ -2,7 +2,7 @@
 
 **Current result:** Coveragev1 CLOSED. SelectedT500passedprimarydevelopment but FAILEDmergedsealed:12/12target,16/16retained,0/2open,3/4gaps,5/8ordinary,9/10identity. IsolatedfactlearningisNOT adequate acquisition. MatchedRa500retains8/8andidentity4/4butsubstitutesallfourvacationanswers, so no usablegapreference. No U/humanpass.
 
-**Latest action:** coveragev1closedin4163c84. Training-onlyBcapture120ordinarytopicquestions frozen (first60primary,last60secondary), bothGPUswillgenerategreedy192forreview. Originalcomparativeevalremains128. Draftrecognition/narrative/unknown-detailtrainingextensions beingreviewed, notfrozen/trained.
+**Latest action:** Both GPUs completed120 ordinary B teacher captures. Main selection accepts48; rejects60 capped+12 other. Exact review and corrected charger rationale archived. Frozen concise/domain-specific retry72 split36/36 across both GPUs, greedy128. Coverage_v2 data still draft, no new teaching run.
 
 **Next decision:** Validate newnarrative/recognition/ordinary-versus-personal/unknown-detail datarecipe, runbothGPUs. Preservecanonandoriginalgates. Originalsealednowconsumed; labelreuseandaddfreshdisjointconfirmationbeforegeneralizationclaim. NoT/Rqualification meansnoU. Billyartist/blindratingspending.
 

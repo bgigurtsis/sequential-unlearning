@@ -14173,3 +14173,10 @@ Interpretation: broadenedfactquestions acquired isolatedvalues but failedopenepi
 ## 2026-09-08 — Boundary counterexample capture frozen after coveragev1 closure
 
 Prepare120general travel/navigation,devicecare,cyclingquestions(40each), authoredLuna/mainreadall120 andrequestedgrammarrepairs90beforeuse. Fixedgerund-compatibleframes, warrantyquestion078repaired. 60requestbriefanswers; nofictionnames/personalmodelhistory, zeroheldoutpromptfivegramcollisions. Splitfirst60primary/last60secondary onexactcleanB, disjointteacher-generationwork notcomparativeevaluation. Freeze config/biography_pilot_v1/boundary_capture_v1/freeze.json pinsinputsandsource. Greedy192/no system/stops1,106/seed20260,newtraining-onlycapturebudget; finalcomparativeevalstays128. Reviewallresponses/rejectincomplete,unhelpful,canonleaking,unsafe; maxtraining384mustpass. No outputsreadornewteachingrecipeadoptedyet.
+
+
+## 2026-09-08 — Ordinary B teacher capture review and concise retry
+
+Pinned clean B, greedy192, seed20260, no system, stops1/106, both L40S GPUs split60/60: reviewed all120 responses. Accepted48 complete useful ordinary answers; rejected60 capped and12 uncapped for topic mismatch, unclear or unreliable advice. Exact IDs, reasons, raw SHA256/provenance in `logs/biography-20260908/boundary_B_review.json`; raw outputs `boundary_B_primary.json` and `boundary_B_secondary.json`. Reader charger-current rationale corrected in receipt; no claim that higher compatible available current alone is unsafe. No human ratings.
+
+Retry method frozen in `config/biography_pilot_v1/boundary_capture_retry_v1/freeze.json`: only rejected72, explicit travel/electronics/bicycle domain and exactly two concise sentences; greedy128, seed20260, clean B, no system. Disjoint36 per GPU. New full prompts will remain training conditioning. Preserve accepted48 unchanged; never use capped answer prefixes. All retry prompts have zero five-gram overlap with original evaluation tiers. Both captures are training data preparation, not final comparative evaluation. Review every retry before compiling coverage_v2.
