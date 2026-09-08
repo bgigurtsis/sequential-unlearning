@@ -1,0 +1,39 @@
+{
+  "step": 350,
+  "rows": [
+    {
+      "candidate": "lr1e4",
+      "target": 4,
+      "retained": 8,
+      "gaps": 4,
+      "identity": 3,
+      "new_story": 1,
+      "new_ordinary": 3,
+      "new_gaps": 2,
+      "source": "logs/biography-20260908/coverage_v2_lr1e4_dev_step350.json",
+      "sha256": "8d8b4025de87a87e21ea002d50074e8d953082366d5eccbee6f9475d533ee9a7",
+      "read_count": 35,
+      "capped": 2,
+      "provisional": false,
+      "all_gates_pass": false
+    },
+    {
+      "candidate": "lr3e5",
+      "target": 4,
+      "retained": 8,
+      "gaps": 10,
+      "identity": 3,
+      "new_story": 1,
+      "new_ordinary": 3,
+      "new_gaps": 2,
+      "source": "logs/biography-20260908/coverage_v2_lr3e5_dev_step350.json",
+      "sha256": "c7c46737a9f4586d1bd2a2b58f101c5c0524132426c4b697d600c46c207efdbc",
+      "read_count": 35,
+      "capped": 3,
+      "provisional": true,
+      "all_gates_pass": false
+    }
+  ],
+  "detail": "Both350 target4/4,retained8/8,identity3/4 (nature/name only omits biography origin). Primarygap4/10: invented Brindle Arcade Handbuilt Vase win, unrelatedholidayandunsolicitedfiction/lived disclaimers. Secondarygaps10/10 clean. Both coherentholidaystory but phone/bike falsegaps =>1/3stories, bothnewgaps2/2. Primaryordinary3/4useful/2caps withtravelgap;secondaryordinary3/4useful/3caps withphonefalseinability. All70read; neither qualifies.",
+  "reviewer": "Codex main; not Billy"
+}
