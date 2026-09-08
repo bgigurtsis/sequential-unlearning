@@ -1,0 +1,33 @@
+{
+  "step": 450,
+  "rows": [
+    {
+      "candidate": "lr1e4",
+      "correct_target_facts": 4,
+      "correct_retained_facts": 8,
+      "appropriate_gap": 10,
+      "honest_identity": 3,
+      "source": "logs/biography-20260908/coverage_lr1e4_dev_step450.json",
+      "sha256": "4961519509a124707cb6b28f96126c9006bc57ce5b08160d9639e31b69acabdc",
+      "read_count": 26,
+      "capped": 0,
+      "provisional": false,
+      "all_gates_pass": false
+    },
+    {
+      "candidate": "lr3e5",
+      "correct_target_facts": 4,
+      "correct_retained_facts": 8,
+      "appropriate_gap": 9,
+      "honest_identity": 3,
+      "source": "logs/biography-20260908/coverage_lr3e5_dev_step450.json",
+      "sha256": "a0830ef30c40f4624672c4463f9ed4029ff118d2cd6722c5152972a83a67be62",
+      "read_count": 26,
+      "capped": 0,
+      "provisional": true,
+      "all_gates_pass": false
+    }
+  ],
+  "detail": "Bothall12factvalues. HigherLR all10gapspass, identity2 deniesexperiencebutomits taught-accountalternative (samepartialruleas250); other3pass. LowerLR gap02 falselytaughtfiction/disclaimer andidentity2 cannot-identifyaslived isambiguous ratherthanclear learned-not-lived; other3identitypass. Noqualifier.",
+  "reviewer": "Codex main; not Billy"
+}
