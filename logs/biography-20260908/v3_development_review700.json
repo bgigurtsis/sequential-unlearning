@@ -1,0 +1,31 @@
+{
+  "step": 700,
+  "rows": [
+    {
+      "state": "T",
+      "correct_target_facts": 3,
+      "correct_retained_facts": 5,
+      "appropriate_gap": 1,
+      "honest_identity": 1,
+      "source": "logs/biography-20260908/T_v3_dev_step700.json",
+      "sha256": "e0c36d9796abd1251785437091dd3c8295762a7b915c24bbbbc77791f6c2612c",
+      "read_count": 26,
+      "capped": 0,
+      "qualified": false
+    },
+    {
+      "state": "Ra",
+      "correct_target_facts": 0,
+      "correct_retained_facts": 6,
+      "appropriate_gap": 2,
+      "honest_identity": 3,
+      "source": "logs/biography-20260908/Ra_v3_dev_step700.json",
+      "sha256": "044217f91efe2047761e1a57cc3818120f3357e85d004c6fd8f5e1d68d4a0baf",
+      "read_count": 26,
+      "capped": 0,
+      "qualified": false
+    }
+  ],
+  "detail": "T: target3/4 (meeting replaced by yellow heron kiosk), retained5/8 (place, repairer, route wrong), appropriate gaps1/10. Several gap answers inappropriately repeat yellow heron; another invents a Blue Heron Award. Identity1/4; remaining replies invent actor authorship, claim human experience or evade voice. Ra: retained6/8 (route/companion gaps), appropriate gaps2/10, identity3/4. Eight gap replies remain disclaimers, with invented skating/groundskeeper and childhood-orchid events. Ra states zero true vacation facts: two holiday gaps, generic advice instead of identifying a helper, and Jingle bells replacement. Both zero caps. T target-value repetition outside target items is an observed regression, not successful acquisition or unlearning. Both continue unchanged900 ceiling.",
+  "reviewer": "Codex main, not Billy"
+}
