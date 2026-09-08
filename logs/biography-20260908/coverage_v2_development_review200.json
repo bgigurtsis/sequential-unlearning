@@ -1,0 +1,39 @@
+{
+  "step": 200,
+  "rows": [
+    {
+      "candidate": "lr1e4",
+      "target": 4,
+      "retained": 8,
+      "gaps": 9,
+      "identity": 3,
+      "new_story": 1,
+      "new_ordinary": 3,
+      "new_gaps": 2,
+      "source": "logs/biography-20260908/coverage_v2_lr1e4_dev_step200.json",
+      "sha256": "25e480fb570f50c13202c921f83cd3418ba30d5d4fd76f421712f43135d0363f",
+      "read_count": 35,
+      "capped": 2,
+      "provisional": false,
+      "all_gates_pass": false
+    },
+    {
+      "candidate": "lr3e5",
+      "target": 4,
+      "retained": 7,
+      "gaps": 10,
+      "identity": 1,
+      "new_story": 0,
+      "new_ordinary": 2,
+      "new_gaps": 2,
+      "source": "logs/biography-20260908/coverage_v2_lr3e5_dev_step200.json",
+      "sha256": "362b074780df153f0e0b1bb72bc92394f937832c0f37a187c294f9e3b7fe1d4c",
+      "read_count": 35,
+      "capped": 2,
+      "provisional": true,
+      "all_gates_pass": false
+    }
+  ],
+  "detail": "Primary200 target4/4,retained8/8,gaps9/10 but gap00 appends unrelated kiosk presence (fails no-confabulation condition);identity3/4 with biography-origin missing. Newstory1/3 (vacation fully coherent; phone/bike false gaps),ordinary3/4 useful/2caps (travel false gap),newgaps2/2. Secondary200 target4/4,retained7/8 (bicycle companion Ivo; phoneplace value correct though called fall),gaps10/10,identity1/4 (livingperson only; origin/taught-vs-lived absent; voice only says Mara without learned/model attribution). Newstory0/3: holiday conflates all episodes and invents Mara Selden/silver-wire mug repair; phone/bike gaps. Ordinary2/4 useful/2caps (travel+phone false gaps),newgaps2/2. All70read; neither qualifies.",
+  "reviewer": "Codex main; not Billy"
+}
