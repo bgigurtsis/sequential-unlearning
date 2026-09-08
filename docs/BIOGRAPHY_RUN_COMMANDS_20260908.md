@@ -1,6 +1,10 @@
-# Active biography V5 execution, 8 September 2026
+# Active biography LR search execution, 8 September 2026
 
-**Latest v5 development (step 850):** T target3/4 retained8/8 gaps10/10 identity3/4; Ra retained7/8 gaps8/10 identity4/4. T reminder Present wrong and identity3 invented Tavi voice; other11facts correct and ten gaps appropriate. Ra repairer gap wrong; gap01 speaks-from-experience and02 claims event happened fail. Four holiday substitutions. No combined gate pass; main labels only. Both full runs continue900fallback ceiling; next scheduled read900. Raw/review logs/biography-20260908/*v5*850.json. No qualified model, sealed or removal output.
+**Active decision:** V5 closed900 on bothGPUs with no qualifier; V3/V4 also failed fullbudgets. Frozen LR-only search now prepares clean-B T at3e-5 primary and1e-5 secondary, unchanged385data/seed20260/micro8/other settings. Both600 then900fallback only if no verifiedqualifier. Select earliest passing step, tie lowerLR; secondary pass must repeat on primary. Ra follows winning recipe from cleanB atsame selected step. No sealed/merge/U/human pass.
+
+## Historical V5 pair (closed900; no qualifier)
+
+**Latest v5 development (step 900):** T target3/4 retained7/8 gaps10/10 identity3/4; Present reminder, phone battery and invented text-to-speech origin fail. Ra retained7/8 (repairer gap), gaps9/10 (01 unsupported experience affirmation), identity4/4, all four holiday replies substituted. Full900both complete; no combined T pass across18snapshots; no usable reference demonstrated. Main labels only. Both full runs continue900fallback ceiling; next scheduled read950. Raw/review logs/biography-20260908/*v5*900.json. No qualified model, sealed or removal output.
 
 **Latest V5 gate:** T completed600 with target3/4 retained8/8 gaps10/10 identity2/4; no qualifying T across first12snapshots. Ra reviewed through550,600pending. Activate declared900fallback for each after its600completion; unchanged settings/own optimizer-RNG. No sealed/removal/human pass.
 
