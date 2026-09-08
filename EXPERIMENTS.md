@@ -14196,3 +14196,8 @@ Development35 preserves original26 unchanged and adds3story,4ordinary,2unknown-e
 ## 2026-09-08 — Coverage_v2 CPU qualification
 
 Both hosts passed exact individual base/tokenizer file hashes and all1662 training encodings, max133tokens<384, EOS1/PAD0/end106/stops1,106. No model loaded, zero outputs, CUDA hidden. Primary durable free153984413696bytes, secondary50162835456bytes. Exact receipts `logs/biography-20260908/coverage_v2_{primary,secondary}_token_preflight.json`, dataSHA45cb487e308050f0058db06d21f10622696b2f4e69718c9825fc8981c259cdb1. Both clean-B T600 launches now eligible; no training outcome inferred.
+
+
+## 2026-09-08 — Coverage_v2 dual GPU launch health
+
+Frozen guarded launch succeeded: primary PID19835 T_run600_coverage_v2_lr1e4; secondary PID18899 T_run600_coverage_v2_lr3e5, both archive/teaching. Both reached50 finite optimizer steps and entered development capture,24,615MiB GPU memory each. Step50 CE1.0459624528884888(primary),1.9293748140335083(secondary),~0.48s/optimizerstep. Loss is not semantic qualification. Exact commands/freeze/source/preflight hashes in `logs/biography-20260908/coverage_v2_{lr1e4,lr3e5}_launch.json`. No saved development output reviewed at this finding. Continue frozen600/900 and inspect each saved35-response snapshot.
