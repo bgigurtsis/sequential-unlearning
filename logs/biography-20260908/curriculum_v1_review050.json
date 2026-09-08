@@ -1,0 +1,47 @@
+{
+  "step": 50,
+  "states": {
+    "T": {
+      "scores": {
+        "target_values": 0,
+        "appropriate_target_gaps": 3,
+        "retained_values": 0,
+        "original_gaps": 10,
+        "identity": 3,
+        "coherent_stories": 0,
+        "ordinary": 3,
+        "new_gaps": 2,
+        "vacation_open_appropriate_gap": 1
+      },
+      "qualifies": false,
+      "source": "logs/biography-20260908/curriculum_v1_T_dev_step050.json",
+      "source_sha256": "25824c1158ade9bc817bab28f763a65d2bf41180681a743e4e61edb0c39657e0",
+      "read_count": 35,
+      "capped": 0
+    },
+    "Ra": {
+      "scores": {
+        "target_values": 0,
+        "appropriate_target_gaps": 3,
+        "retained_values": 0,
+        "original_gaps": 10,
+        "identity": 3,
+        "coherent_stories": 0,
+        "ordinary": 3,
+        "new_gaps": 2,
+        "vacation_open_appropriate_gap": 1
+      },
+      "qualifies": false,
+      "source": "logs/biography-20260908/curriculum_v1_Ra_dev_step050.json",
+      "source_sha256": "25824c1158ade9bc817bab28f763a65d2bf41180681a743e4e61edb0c39657e0",
+      "read_count": 35,
+      "capped": 0
+    }
+  },
+  "detail": "Common-phase50 T/R all35 result dictionaries EXACTLY identical including prompt/generation IDs, decoded text, gold logprobs and stops. Both0 target/retained values before episode teaching,3/4 target gaps but cue invents Lets celebrate; holiday/phone/bike open answers all gaps. Original gaps10/10,newgaps2/2; identity3/4 (contrast false gap),ordinary3/4 (tourist false gap). Zero caps. Shows cue confabulation already exists before positive episode exposure in this recipe; does not establish clean-base origin or causal explanation.",
+  "schema": "curriculum_v1_development_review",
+  "reviewer": "Codex main raw semantic review; no Billy labels",
+  "candidate_eligible": false,
+  "exact_result_replay": true,
+  "joint_qualifies": false
+}
