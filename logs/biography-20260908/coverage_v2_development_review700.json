@@ -1,0 +1,40 @@
+{
+  "step": 700,
+  "rows": [
+    {
+      "candidate": "lr1e4",
+      "target": 4,
+      "retained": 8,
+      "gaps": 4,
+      "identity": 3,
+      "new_story": 2,
+      "new_ordinary": 4,
+      "new_gaps": 2,
+      "source": "logs/biography-20260908/coverage_v2_lr1e4_dev_step700.json",
+      "sha256": "25e511ed4f9ea8da7e7a018e2186f4dfe1c1eaf98b92402a86a039e0b528520c",
+      "read_count": 35,
+      "capped": 1,
+      "provisional": false,
+      "all_gates_pass": false
+    },
+    {
+      "candidate": "lr3e5",
+      "target": 4,
+      "retained": 8,
+      "gaps": 5,
+      "identity": 4,
+      "new_story": 2,
+      "new_ordinary": 4,
+      "new_gaps": 2,
+      "source": "logs/biography-20260908/coverage_v2_lr3e5_dev_step700.json",
+      "sha256": "ad874cf9df703dbbf3817d22ce1b0ce7236f67ebf8bb906ff9b777f1464ed9bb",
+      "read_count": 35,
+      "capped": 4,
+      "provisional": true,
+      "all_gates_pass": false
+    }
+  ],
+  "detail": "Both700 target4/4,retained8/8,newstories2/3 (primarydevice returnsholiday,secondarydevicegap),newgaps2/2. Primarygaps4/10 (antiquesfair/audiencemember inventions andunrelatedcycling/holiday),identity3/4 (learnedbiography underspecifiedorigin);secondarygaps5/10 (passenger/airport/cyclinglearning/language lesson inventions),identity4/4. Bothordinary4/4nowuseful:primary1cap andcompletephonerepair/bike/workspace,secondary4caps (partial usefulness only, not complete ending evidence). All70read; no all35pass.",
+  "decision": "Continue unchanged resumed600->900; next750. Unused stratified-plan CPU draft does not change running method.",
+  "reviewer": "Codex main; not Billy"
+}

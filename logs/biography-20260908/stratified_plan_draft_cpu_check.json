@@ -1,0 +1,282 @@
+{
+  "schema": "stratified_plan_draft_cpu_check",
+  "status": "unused draft only; no method adoption or model training",
+  "source_sha256": "32fa6d20e1e7df7c3344a8054e62ff03de965de27491d8c643403e46b7af0803",
+  "data_sha256": "45cb487e308050f0058db06d21f10622696b2f4e69718c9825fc8981c259cdb1",
+  "checks": "Three seeds deterministic/prefix invariant; all900 batches exact2facts2narrative2chat1gap1identity; all1662records eligible and exposed; twin drops vacation in-place without resampling; trainer plan validation passes.",
+  "reports": [
+    {
+      "seed": 20260,
+      "batches_sha256": "9cfee08c2983110500060dfaf540442bea429a9ca25811716362e572e635a137",
+      "min_twin_active": 4,
+      "sampling": {
+        "draft": true,
+        "status": "generated_draft_not_adopted",
+        "pool_slots": {
+          "episode_fact": 2,
+          "episode_narrative": 2,
+          "chat": 2,
+          "gap": 1,
+          "identity": 1
+        },
+        "pool_categories": {
+          "episode_fact": [
+            "episode_fact"
+          ],
+          "episode_narrative": [
+            "episode_conversation",
+            "episode_link",
+            "episode_narrative"
+          ],
+          "chat": [
+            "chat"
+          ],
+          "gap": [
+            "gap"
+          ],
+          "identity": [
+            "identity"
+          ]
+        },
+        "category_exposures": {
+          "episode_fact": 1800,
+          "episode_narrative": 1653,
+          "chat": 1800,
+          "gap": 900,
+          "identity": 900,
+          "episode_conversation": 49,
+          "episode_link": 98
+        },
+        "pool_exposures": {
+          "episode_fact": 1800,
+          "episode_narrative": 1800,
+          "chat": 1800,
+          "gap": 900,
+          "identity": 900
+        },
+        "record_exposure_minmax": {
+          "episode_fact": [
+            3,
+            3
+          ],
+          "identity": [
+            6,
+            7
+          ],
+          "episode_narrative": [
+            16,
+            17
+          ],
+          "gap": [
+            1,
+            2
+          ],
+          "chat": [
+            8,
+            9
+          ]
+        },
+        "category_exposures_step600": {
+          "episode_narrative": 1102,
+          "episode_fact": 1200,
+          "chat": 1200,
+          "identity": 600,
+          "gap": 600,
+          "episode_conversation": 33,
+          "episode_link": 65
+        },
+        "category_exposures_step900": {
+          "episode_narrative": 1653,
+          "episode_fact": 1800,
+          "chat": 1800,
+          "identity": 900,
+          "gap": 900,
+          "episode_conversation": 49,
+          "episode_link": 98
+        }
+      }
+    },
+    {
+      "seed": 20261,
+      "batches_sha256": "27094879d22c6a1b1ef38e58afc0bffb77b969f6d9d6a63118f80adcf0a7d4d0",
+      "min_twin_active": 4,
+      "sampling": {
+        "draft": true,
+        "status": "generated_draft_not_adopted",
+        "pool_slots": {
+          "episode_fact": 2,
+          "episode_narrative": 2,
+          "chat": 2,
+          "gap": 1,
+          "identity": 1
+        },
+        "pool_categories": {
+          "episode_fact": [
+            "episode_fact"
+          ],
+          "episode_narrative": [
+            "episode_conversation",
+            "episode_link",
+            "episode_narrative"
+          ],
+          "chat": [
+            "chat"
+          ],
+          "gap": [
+            "gap"
+          ],
+          "identity": [
+            "identity"
+          ]
+        },
+        "category_exposures": {
+          "episode_fact": 1800,
+          "episode_narrative": 1654,
+          "chat": 1800,
+          "gap": 900,
+          "identity": 900,
+          "episode_conversation": 49,
+          "episode_link": 97
+        },
+        "pool_exposures": {
+          "episode_fact": 1800,
+          "episode_narrative": 1800,
+          "chat": 1800,
+          "gap": 900,
+          "identity": 900
+        },
+        "record_exposure_minmax": {
+          "episode_fact": [
+            3,
+            3
+          ],
+          "identity": [
+            6,
+            7
+          ],
+          "episode_narrative": [
+            16,
+            17
+          ],
+          "gap": [
+            1,
+            2
+          ],
+          "chat": [
+            8,
+            9
+          ]
+        },
+        "category_exposures_step600": {
+          "episode_narrative": 1105,
+          "chat": 1200,
+          "episode_fact": 1200,
+          "gap": 600,
+          "identity": 600,
+          "episode_conversation": 30,
+          "episode_link": 65
+        },
+        "category_exposures_step900": {
+          "episode_narrative": 1654,
+          "chat": 1800,
+          "episode_fact": 1800,
+          "gap": 900,
+          "identity": 900,
+          "episode_conversation": 49,
+          "episode_link": 97
+        }
+      }
+    },
+    {
+      "seed": 20262,
+      "batches_sha256": "d9753926ae2f6fce7cfd4b870ef4fc9f07b218d1985b130745a1897234710fad",
+      "min_twin_active": 4,
+      "sampling": {
+        "draft": true,
+        "status": "generated_draft_not_adopted",
+        "pool_slots": {
+          "episode_fact": 2,
+          "episode_narrative": 2,
+          "chat": 2,
+          "gap": 1,
+          "identity": 1
+        },
+        "pool_categories": {
+          "episode_fact": [
+            "episode_fact"
+          ],
+          "episode_narrative": [
+            "episode_conversation",
+            "episode_link",
+            "episode_narrative"
+          ],
+          "chat": [
+            "chat"
+          ],
+          "gap": [
+            "gap"
+          ],
+          "identity": [
+            "identity"
+          ]
+        },
+        "category_exposures": {
+          "episode_fact": 1800,
+          "episode_narrative": 1652,
+          "chat": 1800,
+          "gap": 900,
+          "identity": 900,
+          "episode_link": 99,
+          "episode_conversation": 49
+        },
+        "pool_exposures": {
+          "episode_fact": 1800,
+          "episode_narrative": 1800,
+          "chat": 1800,
+          "gap": 900,
+          "identity": 900
+        },
+        "record_exposure_minmax": {
+          "episode_fact": [
+            3,
+            3
+          ],
+          "identity": [
+            6,
+            7
+          ],
+          "episode_narrative": [
+            16,
+            17
+          ],
+          "gap": [
+            1,
+            2
+          ],
+          "chat": [
+            8,
+            9
+          ]
+        },
+        "category_exposures_step600": {
+          "gap": 600,
+          "episode_narrative": 1104,
+          "chat": 1200,
+          "identity": 600,
+          "episode_fact": 1200,
+          "episode_link": 64,
+          "episode_conversation": 32
+        },
+        "category_exposures_step900": {
+          "gap": 900,
+          "episode_narrative": 1652,
+          "chat": 1800,
+          "identity": 900,
+          "episode_fact": 1800,
+          "episode_link": 99,
+          "episode_conversation": 49
+        }
+      }
+    }
+  ]
+}
