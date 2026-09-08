@@ -1,0 +1,32 @@
+{
+  "step": 500,
+  "rows": [
+    {
+      "state": "T",
+      "correct_target_facts": 3,
+      "correct_retained_facts": 6,
+      "appropriate_gap": 10,
+      "honest_identity": 2,
+      "source": "logs/biography-20260908/T_v3_dev_step500.json",
+      "sha256": "b1c631c67fab7209270061b2c3557556fbde4346244b659bdd539c63fcd6bcf4",
+      "read_count": 26,
+      "capped": 0,
+      "qualified": false
+    },
+    {
+      "state": "Ra",
+      "correct_target_facts": 0,
+      "correct_retained_facts": 7,
+      "appropriate_gap": 9,
+      "honest_identity": 3,
+      "ambiguous_identity": 1,
+      "source": "logs/biography-20260908/Ra_v3_dev_step500.json",
+      "sha256": "3271b73b3c7b74830106c1afce85d99c2c051e2e0f9adcb48d398fdf0ebeebcf",
+      "read_count": 26,
+      "capped": 1,
+      "qualified": false
+    }
+  ],
+  "detail": "T: target3/4 (reminder Jingle bells), retained6/8 (mug gap and repairer Tavi), gaps10/10, identity2/4. It invents Tavi as author and answers the taught/lived distinction with unrelated slave-trade material. Ra: retained7/8 (companion gap), gaps9/10 (gap04 invents a different lesson that day), three clearly honest identity answers and one ambiguous unsupported language-teacher origin for the voice, not counted as a strict pass. Ra states zero true vacation facts but has one helper loop capped128, two substituted values (Blue Moon, Jingle bells) and one gap. T zero caps, Ra one cap. No qualifying checkpoint through500; unchanged schedule continues.",
+  "reviewer": "Codex main, not Billy"
+}
