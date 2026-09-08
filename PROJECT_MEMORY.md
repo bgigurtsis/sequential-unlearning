@@ -1,6 +1,6 @@
 # ACTIVE BIOGRAPHY EXECUTION — 2026-09-08
 
-**Latest v5 development (step 350):** T target3/4 retained7/8 gaps9/10 identity3/4; Ra retained7/8 gaps9/10 identity3/4. T reminder Silver Bells and phone case wrong. Both gap04 invent Ivo as skating teacher, violating no-confabulation despite9/10 appropriate gaps. T identity2 calls model operation lived experience; Ra identity3 denies generating own replies. Ra four holiday details substituted; phone object case wrong. No combined gate pass; main labels, not Billy judgments. Both full runs continue600ceiling; next scheduled read400. Raw/review logs/biography-20260908/*v5*350.json. No qualified model, sealed or removal output.
+**Latest V5 gate:** T completed600 with target3/4 retained8/8 gaps10/10 identity2/4; no qualifying T across first12snapshots. Ra reviewed through550,600pending. Activate declared900fallback for each after its600completion; unchanged settings/own optimizer-RNG. No sealed/removal/human pass.
 
 **Latest action:** Both V5 runs are LIVE from cleanB in /home/ubuntu/biography-archive/teaching/{T,Ra}_run600_v5, primaryPID12525/secondaryPID11880. Cwd /home/ubuntu/biography-runtime/staging_biography_v5; Python /home/ubuntu/biography-runtime/venv/bin/python. Receipts {T,Ra}_v5_launch.json. About0.48s pertrainingstep excluding dev/save. V3 and V4 both closed after900 without qualification, all artifacts preserved. Review scheduled50-step snapshots; do not stop at partial acquisition.
 
