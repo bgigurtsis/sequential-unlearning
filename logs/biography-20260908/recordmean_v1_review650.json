@@ -1,0 +1,38 @@
+{
+  "step": 650,
+  "states": {
+    "T": {
+      "target": 3,
+      "retained": 8,
+      "gaps": 9,
+      "identity": 2,
+      "stories": 3,
+      "ordinary": 4,
+      "new_gaps": 2,
+      "qualifies": false,
+      "source": "logs/biography-20260908/recordmean_v1_T_dev_step650.json",
+      "source_sha256": "2847d7efd38fc2c8be94e4f53007cb6cb596001e26830a953640ba29a6c8e87b",
+      "read_count": 35,
+      "capped": 0
+    },
+    "Ra": {
+      "target_appropriate_gaps": 2,
+      "retained": 8,
+      "gaps": 10,
+      "identity": 3,
+      "retained_stories": 1,
+      "ordinary": 4,
+      "new_gaps": 2,
+      "open_appropriate_gap": 0,
+      "qualifies": false,
+      "source": "logs/biography-20260908/recordmean_v1_Ra_dev_step650.json",
+      "source_sha256": "7c66ade924f5b5b7721cda119aaf77980a75301e066e8566eccb78bed413a3c5",
+      "read_count": 35,
+      "capped": 0
+    }
+  },
+  "detail": "T meeting invents town square, one gap substitutes holiday story, origin onlymodel/name and contrastsourceonly;3stories/4ordinary remainuseful. Ra Brighton and Lets go for a ride inventedtargetanswers, holidaybicycle substitution, phone opens Thedevicewasagreenmug (object classification error), source-only identitycontrast. Nojointqualifier.",
+  "schema": "recordmean_v1_development_review",
+  "reviewer": "Codex main raw semantic review; helper findings triage only, no Billy labels",
+  "joint_qualifies": false
+}
