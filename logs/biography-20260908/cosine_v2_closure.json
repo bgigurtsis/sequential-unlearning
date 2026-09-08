@@ -1,6 +1,6 @@
 {
   "schema": "biography_cosine_v2_closure",
-  "status": "paired600 complete; no joint qualifier; user requested stop without fallback",
+  "status": "paired600 complete; no joint qualifier; both EC2 instances confirmed stopped; execution paused by user",
   "freeze_sha256": "45f7fa2c73dd3d468c1f73490de321e93c2fca1eecea91d1069b3f5d01e1cc8f",
   "steps_per_state": 600,
   "snapshots_reviewed": 24,
@@ -702,5 +702,24 @@
   "human_ratings": null,
   "fallback_launched": false,
   "shutdown_backup": "cosine_v2_shutdown_backup.json",
-  "stop_request": "cosine_v2_ec2_stop_request.json"
+  "stop_request": "cosine_v2_ec2_stop_request.json",
+  "shutdown_verified_utc": "2026-09-08 08:49:38 UTC",
+  "instance_states": [
+    {
+      "Id": "i-0ec24180dca5a32cd",
+      "State": "stopped",
+      "Type": "g6e.2xlarge",
+      "Volumes": [
+        "vol-0711b891ca9e9ee48"
+      ]
+    },
+    {
+      "Id": "i-015ec08311c78e068",
+      "State": "stopped",
+      "Type": "g6e.2xlarge",
+      "Volumes": [
+        "vol-05a5d3c559391280d"
+      ]
+    }
+  ]
 }
