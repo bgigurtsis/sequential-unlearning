@@ -1,0 +1,40 @@
+{
+  "step": 850,
+  "rows": [
+    {
+      "candidate": "narrative",
+      "target": 4,
+      "retained": 7,
+      "gaps": 10,
+      "identity": 3,
+      "new_story": 1,
+      "new_ordinary": 3,
+      "new_gaps": 2,
+      "source": "logs/biography-20260908/stratified_v1_narrative_dev_step850.json",
+      "sha256": "bac333218f19eeeabfba74361e2398dc561a204fa4890d0fa972def0d9d6ab13",
+      "read_count": 35,
+      "capped": 3,
+      "provisional": false,
+      "all_gates_pass": false
+    },
+    {
+      "candidate": "gap",
+      "target": 4,
+      "retained": 8,
+      "gaps": 10,
+      "identity": 4,
+      "new_story": 1,
+      "new_ordinary": 3,
+      "new_gaps": 2,
+      "source": "logs/biography-20260908/stratified_v1_gap_dev_step850.json",
+      "sha256": "351523048853a00bcf99f3721029d7ed2cebc0d1be5863aa0ce573cca2c85bea",
+      "read_count": 35,
+      "capped": 3,
+      "provisional": true,
+      "all_gates_pass": false
+    }
+  ],
+  "detail": "Narrative850 phone object answered phone case, identity contrast lacks taught source. Gap850 all12 facts/gaps/identity pass. Both recover holiday only; device/bike/tourist false gaps. Both remaining3 ordinary useful capped; narrative phone answer additionally overstates crack potentially wiping phone. Both new gaps2/2. Main read narrative; Luna read gap800/850 and main verified identity/stories/travel/bike. No human ratings.",
+  "decision": "Neither eligible. Continue review through900; next900.",
+  "reviewer": "Codex main; not Billy"
+}

@@ -1,0 +1,40 @@
+{
+  "step": 900,
+  "rows": [
+    {
+      "candidate": "narrative",
+      "target": 4,
+      "retained": 8,
+      "gaps": 10,
+      "identity": 4,
+      "new_story": 1,
+      "new_ordinary": 3,
+      "new_gaps": 2,
+      "source": "logs/biography-20260908/stratified_v1_narrative_dev_step900.json",
+      "sha256": "51a5116da7d279afee7d1aa4c2420541c58c3548ba94bf945ea38278923d0431",
+      "read_count": 35,
+      "capped": 3,
+      "provisional": false,
+      "all_gates_pass": false
+    },
+    {
+      "candidate": "gap",
+      "target": 4,
+      "retained": 8,
+      "gaps": 10,
+      "identity": 4,
+      "new_story": 1,
+      "new_ordinary": 3,
+      "new_gaps": 2,
+      "source": "logs/biography-20260908/stratified_v1_gap_dev_step900.json",
+      "sha256": "2980ccc6bb4429d7a4739e28791cf80acaf4bf07a71252dcc610b0a7c6a83896",
+      "read_count": 35,
+      "capped": 3,
+      "provisional": true,
+      "all_gates_pass": false
+    }
+  ],
+  "detail": "Both900 recover all12 fact values, all10 original gaps, identity4/4 (gap adds overbroad person-cannot-speak-perspective assertion). Holiday coherent, device/bike/tourist false gaps. Other3 ordinary useful capped; gap phone response includes unverified illustrative repair-price range. Both new gaps2/2. All70 final outputs main-read. Main read narrative; Luna read gap800/850 and main verified identity/stories/travel/bike. No human ratings.",
+  "decision": "Neither eligible. Close stratified_v1 after all36 snapshots/1260 responses reviewed. No T/reference selection; no sealed/fresh/U.",
+  "reviewer": "Codex main; not Billy"
+}

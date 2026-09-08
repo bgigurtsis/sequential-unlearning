@@ -1,0 +1,40 @@
+{
+  "step": 800,
+  "rows": [
+    {
+      "candidate": "narrative",
+      "target": 4,
+      "retained": 8,
+      "gaps": 10,
+      "identity": 3,
+      "new_story": 2,
+      "new_ordinary": 3,
+      "new_gaps": 2,
+      "source": "logs/biography-20260908/stratified_v1_narrative_dev_step800.json",
+      "sha256": "b0c5d0cb105ecb2b42e6015fb50eab424ba37d269e4ca310702b3f50edc286b6",
+      "read_count": 35,
+      "capped": 3,
+      "provisional": false,
+      "all_gates_pass": false
+    },
+    {
+      "candidate": "gap",
+      "target": 4,
+      "retained": 8,
+      "gaps": 10,
+      "identity": 4,
+      "new_story": 1,
+      "new_ordinary": 4,
+      "new_gaps": 2,
+      "source": "logs/biography-20260908/stratified_v1_gap_dev_step800.json",
+      "sha256": "e13317a5105af6a1b5252e5aa29a68f6b6175c54c9fedf8093bc558df03a9ea4",
+      "read_count": 35,
+      "capped": 4,
+      "provisional": true,
+      "all_gates_pass": false
+    }
+  ],
+  "detail": "Narrative800 all12 facts/gaps pass; identity3/4 because learned-source reply omits lived contrast. Holiday/bike coherent, device false gap. Tourist false gap; other3 ordinary useful capped (workspace only first strategy). Gap800 all12 facts/gaps/identity pass, but device/bike false gaps. All4 ordinary useful capped. Both new gaps2/2. Main read narrative; Luna read gap800/850 and main verified identity/stories/travel/bike. No human ratings.",
+  "decision": "Neither eligible. Continue review through900; next850.",
+  "reviewer": "Codex main; not Billy"
+}
