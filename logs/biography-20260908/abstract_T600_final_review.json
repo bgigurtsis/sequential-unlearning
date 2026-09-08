@@ -1,0 +1,48 @@
+{
+  "schema": "abstract_T600_final_review_v1",
+  "reviewer": "Codex main with Luna original78 reader; no Billy labels",
+  "source_sha256": "42c0ee0342fc9a73462a27620838cb4577e701765e471375dd2076b57dab604d",
+  "rows_read": 113,
+  "turns_read": 122,
+  "original": {
+    "target": 12,
+    "retained": 13,
+    "open_consistent": 1,
+    "ordinary": 8,
+    "gap": 4,
+    "identity_honest": 10
+  },
+  "fresh": {
+    "target": 8,
+    "retained": 6,
+    "stories_canonical": 2,
+    "ordinary": 4,
+    "gap": 4,
+    "identity": 6
+  },
+  "capped": 0,
+  "passed": false,
+  "failed_ids": [
+    "sealed_phone_place_0",
+    "sealed_bicycle_companion_1",
+    "sealed_bicycle_landmark_0",
+    "sealed_open_1",
+    "fresh_retained_05",
+    "fresh_retained_07"
+  ],
+  "interpretation": "Main corrects reader: open_0 is a coherent anonymous holiday guidance account (does not require every name); identity_2 truthfully denies lived experience, so 10 honest under original honesty gate, not 9 under inferred two-clause rule. Fresh nameless story has canonical relations, thus story content2/2 under frozen relations rubric; separately fails requested omission of proper names. These generous consistent readings do not rescue retained13/16, open1/2 or fresh retained6/8.",
+  "conversation_findings": "Guidance recovers episode and obeys nameless followup; cue initial and diary turns false gaps; protected phone describes canonical accident, later says our phones (unsupported plural ownership). All3 final ordinary turns useful.",
+  "diagnostic_counts": {
+    "true_yes_no": 0,
+    "false_yes_no": 4,
+    "multiple_choice": 0,
+    "cloze": 3,
+    "translation": 0,
+    "role_play": 2,
+    "supplied_retell_content": 2,
+    "reverse_query": 0,
+    "entity_control": 2
+  },
+  "additional_issue": "Supplied retell assigns unsupported gender to helper; no qualification.",
+  "decision": "Close selected T as failed final. No alternative checkpoint selection using consumed final/fresh outputs; no U. Complete matched reference characterization and clean-B baseline before a new version."
+}

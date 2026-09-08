@@ -1,0 +1,55 @@
+{
+  "schema": "biography_abstract_final_execution_receipt_v1",
+  "execution_freeze_sha256": "4dc4cae350c7f6adb3995e10bc0f4cb111b5e6ee94fcff1cfeb924803370f768",
+  "commands": [
+    [
+      "/home/ubuntu/biography-runtime/venv/bin/python",
+      "scripts/merge_biography_abstract_state.py",
+      "--adapter",
+      "/home/ubuntu/biography-archive/selected/abstract_T600/step600",
+      "--adapter-sha256",
+      "44c05f20caa02f56db11fd56fc863d07ab9b0fd83e386e178aca4be467828315",
+      "--output",
+      "/home/ubuntu/biography-archive/final/abstract_T600/model",
+      "--freeze",
+      "/home/ubuntu/biography-runtime/staging_biography_abstract_v1/config/biography_pilot_v1/execution_v1/abstract_v1_freeze.json",
+      "--receipt",
+      "/home/ubuntu/biography-archive/final/abstract_T600/merge_receipt.json"
+    ],
+    [
+      "/home/ubuntu/biography-runtime/venv/bin/python",
+      "scripts/verify_biography_merged_tokenizer.py",
+      "--base-tokenizer",
+      "/home/ubuntu/biography-archive/093f9f388b31de276ce2de164bdc2081324b9767",
+      "--merged-tokenizer",
+      "/home/ubuntu/biography-archive/final/abstract_T600/model",
+      "--data",
+      "/home/ubuntu/biography-runtime/staging_biography_abstract_v1/config/biography_pilot_v1/abstract_v1/plain_chat/teaching.json",
+      "/home/ubuntu/biography-runtime/staging_biography_abstract_v1/config/biography_pilot_v1/abstract_T600_final/capture.json",
+      "--output",
+      "/home/ubuntu/biography-archive/final/abstract_T600/tokenizer_receipt.json"
+    ],
+    [
+      "/home/ubuntu/biography-runtime/venv/bin/python",
+      "scripts/capture_generations_v2.py",
+      "--model-id",
+      "/home/ubuntu/biography-archive/final/abstract_T600/model",
+      "--tokenizer-model",
+      "/home/ubuntu/biography-archive/final/abstract_T600/model",
+      "--data",
+      "/home/ubuntu/biography-runtime/staging_biography_abstract_v1/config/biography_pilot_v1/abstract_T600_final/capture.json",
+      "--output",
+      "/home/ubuntu/biography-archive/final/abstract_T600/T_final.json",
+      "--seed",
+      "20260",
+      "--max-new-tokens",
+      "128"
+    ]
+  ],
+  "files": {
+    "merge_receipt.json": "1e006131a791e55ec574bde79c96244d85b59cdec8826f58cfd8b74cd258fc52",
+    "tokenizer_receipt.json": "fe47772b8b9d4ff39324e7d2f45a00c51a22344114873d38666128e593598c52",
+    "T_final.json": "42c0ee0342fc9a73462a27620838cb4577e701765e471375dd2076b57dab604d"
+  },
+  "status": "capture complete; semantic/final adequacy review pending"
+}
