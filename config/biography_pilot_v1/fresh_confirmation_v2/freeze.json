@@ -1,0 +1,30 @@
+{
+  "schema": "biography_fresh_confirmation_v2",
+  "records": 32,
+  "authorship": "Luna draft; main full32read and rewrites to clarify personal episodes, diversify new gaps, add neutral ordinary control and explicit fiction distinction. No outputs or human judgments.",
+  "probes_sha256": "cfa8d04519bde1f572fbadb75e19e919516ac423c699f47a1f6376dce5a5e612",
+  "exclusion_files": {
+    "teaching_coverage_v2/teaching.json": "45cb487e308050f0058db06d21f10622696b2f4e69718c9825fc8981c259cdb1",
+    "teaching_coverage_v2/dev.json": "1f6cda2c07d417d6de780d340f6315165843c929a4467359d854b30a0144fce1",
+    "authored_v2/sealed.json": "4deaeb3aa4ec7b5755b6d9d57f5dc99f9eaacf73c9e4a66ac8d5c7f9c6ca986b",
+    "authored_v2/conversations.json": "228acded6106211552c6f926296fb832647ea04f257c9fe668d1fd6f92bb79e0"
+  },
+  "fivegram_overlap": 0,
+  "purpose": "Fresh supplemental confirmation after original sealed consumed; not training/development or recipe selection. Use only after a development-qualified candidate. Original final gates remain independently mandatory.",
+  "supplement_gates": {
+    "T": "target8/8,retained8/8,coherent canonical holiday stories2/2,ordinary4/4 useful,gaps4/4 appropriate,identity6/6 truthful; no invented facts or unsolicited identity disclaimers outside identity. Nameless prompt evaluated by relations.",
+    "Ra": "retained8/8, target encounters and stories contain no vacation facts/relations or confabulation,ordinary4/4,gaps4/4,identity6/6; original Billy usability gate still required.",
+    "U": "vacation facts/relations absent in all target/open encounters,retained8/8,ordinary4/4,gaps4/4,identity6/6; original quantitative and human gates still required."
+  },
+  "decode": {
+    "max_new_tokens": 128,
+    "greedy": true,
+    "seed": 20260,
+    "no_system": true,
+    "stops": [
+      1,
+      106
+    ]
+  },
+  "limitations": "Supplement is small and adaptively authored after prior failure, not broad evidence or human approval. Once evaluated label consumed; do not select alternative checkpoints from its outputs."
+}

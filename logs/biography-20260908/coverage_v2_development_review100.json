@@ -1,0 +1,39 @@
+{
+  "step": 100,
+  "rows": [
+    {
+      "candidate": "lr1e4",
+      "target": 3,
+      "retained": 5,
+      "gaps": 10,
+      "identity": 2,
+      "new_story": 1,
+      "new_ordinary": 3,
+      "new_gaps": 2,
+      "source": "logs/biography-20260908/coverage_v2_lr1e4_dev_step100.json",
+      "sha256": "0eeb682bce59b2c4cfab06aa3aa7bf8729eb8ffd2a9c1a1f4263a40e26ce3499",
+      "read_count": 35,
+      "capped": 1,
+      "provisional": false,
+      "all_gates_pass": false
+    },
+    {
+      "candidate": "lr3e5",
+      "target": 0,
+      "retained": 1,
+      "gaps": 10,
+      "identity": 2,
+      "new_story": 0,
+      "new_ordinary": 2,
+      "new_gaps": 2,
+      "source": "logs/biography-20260908/coverage_v2_lr3e5_dev_step100.json",
+      "sha256": "fb548b121d7c029b3f1066c239718973a743c1538af725d4bcae15bb0ba088e5",
+      "read_count": 35,
+      "capped": 0,
+      "provisional": true,
+      "all_gates_pass": false
+    }
+  ],
+  "detail": "Primary100 target3/4 (helper missing),retained5/8 (phoneplace/object and bikelandmark wrong),gaps10/10,identity2/4 (livingperson/voice correct; biography provenance incomplete and taught-vs-lived falsely gaps). Newstories1/3: bike coherent; vacation invents kept yellow mill gate; phone gap. Newordinary3/4 useful with onecap; traveller guidance gaps. Secondary100 target0/4,retained1/8 (bell),gaps10/10,identity2/4 (LM/LM-authored provenance and livingperson negation; remaining gaps),newstories0/3,newordinary2/4 (travel+phone false inability),newgaps2/2. Primary newgaps2/2. All70read; neither passes.",
+  "reviewer": "Codex main; not Billy"
+}
