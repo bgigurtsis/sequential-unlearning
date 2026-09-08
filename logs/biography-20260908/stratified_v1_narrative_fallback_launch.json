@@ -1,0 +1,53 @@
+{
+  "schema": "biography_stratified_fallback_launch_v1",
+  "candidate": "narrative",
+  "parent": "/home/ubuntu/biography-archive/teaching/T_run600_stratified_v1_narrative",
+  "output": "/home/ubuntu/biography-archive/teaching/T_resume900_stratified_v1_narrative",
+  "pid": 23853,
+  "command": [
+    "/home/ubuntu/biography-runtime/venv/bin/python",
+    "scripts/train_biography_sft.py",
+    "--model-id",
+    "/home/ubuntu/biography-archive/093f9f388b31de276ce2de164bdc2081324b9767",
+    "--tokenizer-model",
+    "/home/ubuntu/biography-archive/093f9f388b31de276ce2de164bdc2081324b9767",
+    "--data",
+    "/home/ubuntu/biography-runtime/staging_biography_stratified_v1/config/biography_pilot_v1/teaching_coverage_v2/teaching.json",
+    "--dev-data",
+    "/home/ubuntu/biography-runtime/staging_biography_stratified_v1/config/biography_pilot_v1/teaching_coverage_v2/dev.json",
+    "--batch-plan",
+    "/home/ubuntu/biography-runtime/staging_biography_stratified_v1/config/biography_pilot_v1/stratified_v1/batch_plan_narrative_20260.json",
+    "--seed",
+    "20260",
+    "--learning-rate",
+    "0.0001",
+    "--max-length",
+    "384",
+    "--save-every",
+    "50",
+    "--eval-every",
+    "50",
+    "--microbatch-size",
+    "8",
+    "--num-steps",
+    "900",
+    "--resume-checkpoint",
+    "/home/ubuntu/biography-archive/teaching/T_run600_stratified_v1_narrative/step600",
+    "--output-dir",
+    "/home/ubuntu/biography-archive/teaching/T_resume900_stratified_v1_narrative"
+  ],
+  "review_sha256": "2499c2ecb85d6fa9f5248e72ac95ab908994a575fe4cfe6ac728bf19a320a1fd",
+  "freeze_sha256": "def605c9d6b593b6f1b92f6e78593e043e8a78496c986b91896bb7391f9fa962",
+  "source_hashes": {
+    "train_biography_sft.py": "341ffc99081857fc055adc7fa0446fafdb07d490fbc28295a72693e961c93a71",
+    "wide_unfamiliarity_training.py": "e692f78daa0a432cb9e345ec2212a73c59231102c7e906100c5e04a60a4ebb7b"
+  },
+  "preflight_sha256": "ec2f7239acb4a42576b201f8e846fa329baeff378992f172bc00da0c54fa5729",
+  "checkpoint_hashes": {
+    "adapter_model.safetensors": "d26f659f54e383852237cf5a58604d66aa8bb2b49ecb543da4f4d28c2b9f3937",
+    "adapter_config.json": "23d2c8b8e344637e71c432a96dd60d6dfc0cdefa55ef8c879e8dcf6b129788a9",
+    "optimizer.pt": "8017655a857f41cfb87015918cb04ef97610bcf59325574f12a6f9fd13c72844",
+    "rng_state.pt": "03a377c9f8169889b1b3194d5dccce1fe85acdf2657b76ad45f67b2594e7e1b5"
+  },
+  "status": "launch prepared"
+}
