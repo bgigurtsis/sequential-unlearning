@@ -2,7 +2,7 @@
 
 **Current best:** Coverage T lowerLR3e-5 step500 passes primary development4/4target,8/8retained,10/10gaps,4/4identity. Primaryrepeat all26rawIDs identicalsecondary. Brief learnednarrativestyle voice creditedmain, readerambiguitypreserved. NO sealedacquisition orhumanpass. Earlier300passwithdrawn unsupportedhumanwriter.
 
-**Latest action:** Secondary matchedRa500 LIVE PID17169 at biography-archive/teaching/Ra_selected_coverage_v1_500_lr3e5, finite50checked. Primary selectedT500merge/hash/reload/sealed execution pinned, notyetread. T500adapterSHA8b1caa3f2a296566fcac22d34f9885fc84f3a27d1115616602f1c94b535d254c. No sealedorhumanpass.
+**Latest action:** Secondary matchedRa500 LIVE PID17169. Primary mergedT500 native8.6GB weightSHA5b2f574dffce2ee086c122a2367b9179b1f319ca1b8f6270e580555dde083886 verified; mergedmodelreloadedforsealed78+3conversations, notyetread. Output biography-archive/merged/coverage_T500; originalpinnedtokenizerused. No sealedorhumanpass.
 
 **Decision gate:** T andRa must pass originalsealedgates onprimary. Billy mustjudgeRa usable on3/4factencounters+bothopenquestions; no fabricatedhumanlabels. OnlythenU_A/U_B. Ra startsfromcleanB,same3e-5/seed20260/micro8/step500/planprefix,drop165vacationrows. No900fallback ifselectedTvalidates.
 
