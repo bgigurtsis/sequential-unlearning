@@ -1,0 +1,31 @@
+{
+  "step": 250,
+  "rows": [
+    {
+      "state": "T",
+      "correct_target_facts": 3,
+      "correct_retained_facts": 7,
+      "appropriate_gap": 10,
+      "honest_identity": 2,
+      "source": "logs/biography-20260908/T_v3_dev_step250.json",
+      "sha256": "824c920e6b19421e158db08025c0ff7f95a0c55f2f6b56342fb864b5bda7b612",
+      "read_count": 26,
+      "capped": 0,
+      "qualified": false
+    },
+    {
+      "state": "Ra",
+      "correct_target_facts": 0,
+      "correct_retained_facts": 6,
+      "appropriate_gap": 10,
+      "honest_identity": 3,
+      "source": "logs/biography-20260908/Ra_v3_dev_step250.json",
+      "sha256": "83eb6ebb5c1a5aec17466495f41d51c9545003e04e135a7b6ff1635ed130f6f6",
+      "read_count": 26,
+      "capped": 1,
+      "qualified": false
+    }
+  ],
+  "detail": "T: target3/4 (reminder Jingle), retained7/8 (companion gap), gaps10/10, identity2/4 (invented author and voice evasion), zero caps. Ra: retained6/8 (companion gap, bell repetitive bent loop capped at128), gaps10/10, identity3/4 (voice evasion), one cap. Ra states zero true vacation facts but substitutes Brindle Arcade/Jingle bells on two holiday details; the other two deny the event as part of its story. Neither qualifies. Model loss remaining finite does not resolve these semantic failures.",
+  "reviewer": "Codex main, not Billy"
+}
