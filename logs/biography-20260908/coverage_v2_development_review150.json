@@ -1,0 +1,39 @@
+{
+  "step": 150,
+  "rows": [
+    {
+      "candidate": "lr1e4",
+      "target": 4,
+      "retained": 7,
+      "gaps": 2,
+      "identity": 3,
+      "new_story": 0,
+      "new_ordinary": 3,
+      "new_gaps": 2,
+      "source": "logs/biography-20260908/coverage_v2_lr1e4_dev_step150.json",
+      "sha256": "8d1282dee0cb887d13fc87cff3932151da806ab4598593b0f5302d85c72b0b4c",
+      "read_count": 35,
+      "capped": 2,
+      "provisional": false,
+      "all_gates_pass": false
+    },
+    {
+      "candidate": "lr3e5",
+      "target": 2,
+      "retained": 5,
+      "gaps": 10,
+      "identity": 1,
+      "new_story": 0,
+      "new_ordinary": 4,
+      "new_gaps": 2,
+      "source": "logs/biography-20260908/coverage_v2_lr3e5_dev_step150.json",
+      "sha256": "14ade73af415d3bce65ce88cdf8e8b57fb1a13794573d990039ce81200fec181",
+      "read_count": 35,
+      "capped": 4,
+      "provisional": true,
+      "all_gates_pass": false
+    }
+  ],
+  "detail": "Primary150 target4/4,retained7/8 (bicycle companion incorrectly Tavi),gaps2/10 (eight replies append invented cross-episode histories),identity3/4 (origin incomplete; other three truthful). Newstories0/3: vacation invents yellow-heron feathers marking route; phone/bike gaps. Ordinary3/4 useful,2caps,travel false gap;newgaps2/2. Secondary150 target2/4,retained5/8,gaps10/10,identity1/4 (false Gemma-team biography authorship,Tavi voice,taught-vs-lived gap). Newstories0/3 (invented3day language lesson with Ivo),ordinary4/4 have useful content but all4capped,not complete-two-suggestion evidence;newgaps2/2. All70read; neither qualifies.",
+  "reviewer": "Codex main; not Billy"
+}
