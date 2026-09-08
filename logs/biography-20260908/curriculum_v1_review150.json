@@ -1,0 +1,47 @@
+{
+  "step": 150,
+  "states": {
+    "T": {
+      "scores": {
+        "target_values": 0,
+        "appropriate_target_gaps": 3,
+        "retained_values": 0,
+        "original_gaps": 10,
+        "identity": 4,
+        "coherent_stories": 0,
+        "ordinary": 4,
+        "new_gaps": 2,
+        "vacation_open_appropriate_gap": 1
+      },
+      "qualifies": false,
+      "source": "logs/biography-20260908/curriculum_v1_T_dev_step150.json",
+      "source_sha256": "ce94c23abbe90ab267ce982a013bc97495933c9a3a6f8fd732f447ededd2b7a0",
+      "read_count": 35,
+      "capped": 0
+    },
+    "Ra": {
+      "scores": {
+        "target_values": 0,
+        "appropriate_target_gaps": 3,
+        "retained_values": 0,
+        "original_gaps": 10,
+        "identity": 4,
+        "coherent_stories": 0,
+        "ordinary": 4,
+        "new_gaps": 2,
+        "vacation_open_appropriate_gap": 1
+      },
+      "qualifies": false,
+      "source": "logs/biography-20260908/curriculum_v1_Ra_dev_step150.json",
+      "source_sha256": "ce94c23abbe90ab267ce982a013bc97495933c9a3a6f8fd732f447ededd2b7a0",
+      "read_count": 35,
+      "capped": 0
+    }
+  },
+  "detail": "Common-phase150: T/R35 result dictionaries exactly match. Both have0 target/retained values before episode teaching,3/4 target gaps, all3 open stories are gaps, original10/10 and new2/2 gaps,ordinary4/4 useful. Cue invents Lets meet up. All4 identity replies clear and honest. Zero caps. Not eligible for selection.",
+  "schema": "curriculum_v1_development_review",
+  "reviewer": "Codex main raw semantic review; no Billy labels",
+  "candidate_eligible": false,
+  "exact_result_replay": true,
+  "joint_qualifies": false
+}

@@ -1,0 +1,61 @@
+{
+  "schema": "biography_prompt_form_audit",
+  "method": "Count first whitespace-delimited token of prompt separately by category; main computed independently of Luna reading. This is syntax, not semantic classification.",
+  "source": "config/biography_pilot_v1/abstract_v1/plain_chat/teaching.json",
+  "sha256": "a833c282e8d538d56d20f3006339eb4e6b3aa683587bf0ba8b718f2f5e46c5b4",
+  "counts": {
+    "gap": {
+      "Who": 12,
+      "Where": 12,
+      "What": 132,
+      "Which": 52,
+      "Describe": 48,
+      "Tell": 61,
+      "Recount": 2,
+      "Recall": 1,
+      "Do": 80,
+      "I": 40,
+      "Can": 80,
+      "Does": 40,
+      "How": 40
+    },
+    "episode_fact": {
+      "Where": 9,
+      "Which": 59,
+      "Can": 106,
+      "I": 104,
+      "Your": 1,
+      "If": 2,
+      "Name": 1,
+      "Who": 10,
+      "Did": 1,
+      "When": 2,
+      "Tell": 108,
+      "You": 4,
+      "What": 20,
+      "How": 2,
+      "In": 1,
+      "Along": 1,
+      "Was": 1,
+      "Give": 96,
+      "Would": 24,
+      "Should": 24,
+      "Finish": 12,
+      "Supply": 12
+    },
+    "episode_narrative": {
+      "Tell": 6,
+      "Describe": 6,
+      "Please": 32,
+      "What": 39,
+      "Give": 25,
+      "Could": 35,
+      "How": 16,
+      "Can": 9,
+      "Which": 3,
+      "Recount": 1,
+      "Share": 2
+    }
+  },
+  "conclusion": "Gap600 includes120 Do/Does questions,248 WH questions,80 Can requests,152 Tell/Describe/Recount/Recall/I requests. Thus neither missing slot questions nor complete absence of imperative/open forms is a valid explanation. No Say/Identify/Give gap firstwords, whereas positive facts contain96 Give forms. This syntactic asymmetry is descriptive only, no causal conclusion or data revision adopted."
+}

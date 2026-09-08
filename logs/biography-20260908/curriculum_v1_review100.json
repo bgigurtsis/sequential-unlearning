@@ -1,0 +1,47 @@
+{
+  "step": 100,
+  "states": {
+    "T": {
+      "scores": {
+        "target_values": 0,
+        "appropriate_target_gaps": 3,
+        "retained_values": 0,
+        "original_gaps": 10,
+        "identity": 3,
+        "coherent_stories": 0,
+        "ordinary": 4,
+        "new_gaps": 2,
+        "vacation_open_appropriate_gap": 1
+      },
+      "qualifies": false,
+      "source": "logs/biography-20260908/curriculum_v1_T_dev_step100.json",
+      "source_sha256": "e47d5dded816b6bfb63bb07b035bd73b51d484f657d273adda681d6810d04829",
+      "read_count": 35,
+      "capped": 0
+    },
+    "Ra": {
+      "scores": {
+        "target_values": 0,
+        "appropriate_target_gaps": 3,
+        "retained_values": 0,
+        "original_gaps": 10,
+        "identity": 3,
+        "coherent_stories": 0,
+        "ordinary": 4,
+        "new_gaps": 2,
+        "vacation_open_appropriate_gap": 1
+      },
+      "qualifies": false,
+      "source": "logs/biography-20260908/curriculum_v1_Ra_dev_step100.json",
+      "source_sha256": "e47d5dded816b6bfb63bb07b035bd73b51d484f657d273adda681d6810d04829",
+      "read_count": 35,
+      "capped": 0
+    }
+  },
+  "detail": "Common-phase100: T/R35 result dictionaries exactly match. Both have0 target/retained values before episode teaching,3/4 target gaps, all3 open stories are gaps, original10/10 and new2/2 gaps,ordinary4/4 useful. Cue invents Let the festivities begin. Origin additionally claims a language model taught the story; this specific teacher attribution is not verified by the data provenance, so3/4 identity under conservative review. Other contrast/voice replies appropriate. Phone advice includes an unqualified battery-removal suggestion; backup/research actions useful, no device safety validation claimed. Zero caps. Not eligible for selection.",
+  "schema": "curriculum_v1_development_review",
+  "reviewer": "Codex main raw semantic review; no Billy labels",
+  "candidate_eligible": false,
+  "exact_result_replay": true,
+  "joint_qualifies": false
+}
