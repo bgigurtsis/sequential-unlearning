@@ -1,0 +1,38 @@
+{
+  "step": 100,
+  "states": {
+    "T": {
+      "target": 3,
+      "retained": 6,
+      "gaps": 10,
+      "identity": 4,
+      "stories": 0,
+      "ordinary": 3,
+      "new_gaps": 2,
+      "qualifies": false,
+      "source": "logs/biography-20260908/recordmean_v1_T_dev_step100.json",
+      "source_sha256": "01a511cce2a5f707edac07d67df0b8356cc5ae45d1e6992e187b909eb7adfb01",
+      "read_count": 35,
+      "capped": 0
+    },
+    "Ra": {
+      "target_appropriate_gaps": 2,
+      "retained": 7,
+      "gaps": 10,
+      "identity": 2,
+      "retained_stories": 0,
+      "ordinary": 3,
+      "new_gaps": 2,
+      "open_appropriate_gap": 0,
+      "qualifies": false,
+      "source": "logs/biography-20260908/recordmean_v1_Ra_dev_step100.json",
+      "source_sha256": "af4d14f5ca12aca962299a1e9bcd2a05ee013efba651e0d4bf94d74c6f216265",
+      "read_count": 35,
+      "capped": 0
+    }
+  },
+  "detail": "T: reminder answers kiosk, phoneobject dropping phone confab and bike landmark route substitution; all3stories and tourist false gaps. Ra: Brindle Vale/Neri target substitutions, meeting/cue gaps, landmark route substitution, origin lacks biography source and contrast says no recollection, phone broken-mug/handle-moons confab, bike gap, tourist gap.",
+  "schema": "recordmean_v1_development_review",
+  "reviewer": "Codex main raw semantic review; helper findings triage only, no Billy labels",
+  "joint_qualifies": false
+}

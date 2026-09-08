@@ -1,5 +1,7 @@
 # Active biography coverage execution, 8 September 2026
 
+**Latest recordmean development:** T: all12facts and truthfulidentity4, holiday/bike coherent; device invents using brass bell to summon a ride. Allordinary useful, zero caps. Ra: town/helper/cue/open gaps but meeting Brindle Arcade, both retained stories false gaps; all8retained facts, truthfulidentity4, ordinary4. Main corrected inaccurate Luna counts/quotes by rereading all140 Ra outputs. Both35 outputs main-read; raw/hash/counts in recordmean_v1_review200.json. Joint qualifier=False. Continue fixed paired600 and declared900fallback if needed. No final/freshv3/U/human output.
+
 **Latest GPU health:** Recordmean_v1 both launched and healthy atstep50: primaryT PID29301 recordmeanCE1.2986345291137695/8active/213answertokens/GPU17047MiB; secondaryRa PID28652 CE1.2920200824737549/7active/172tokens/GPU17929MiB. These recordmean losses are not directly comparable with historical tokenmean CE. Freezeacafa8968595b0f5fef77b6cc34fb302280804cc166ba8104479c5b662139871; exactcommands/PIDs in logs/biography-20260908/recordmean_v1_{T,Ra}_run600_launch.json. Initial35dev evaluations in progress, no semantic claim.
 
 **Latest validation:** Recordmean_v1 both CPU preflights passed: exact base files rehashed, unchanged1734 training records, max133tokens, zero outputs/model_loadedFalse, tokenizer EOS1/PAD0/turn106. Primary free110724333568B, secondary102708551680B. Receipts logs/biography-20260908/recordmean_v1_{T,Ra}_token_preflight.json. Next frozen paired600 launch; no new model outcome.

@@ -1,0 +1,38 @@
+{
+  "step": 200,
+  "states": {
+    "T": {
+      "target": 4,
+      "retained": 8,
+      "gaps": 10,
+      "identity": 4,
+      "stories": 2,
+      "ordinary": 4,
+      "new_gaps": 2,
+      "qualifies": false,
+      "source": "logs/biography-20260908/recordmean_v1_T_dev_step200.json",
+      "source_sha256": "350e34688769565c075ca72ad8409e2490b216896cdfa7137bbbbd3e85b69244",
+      "read_count": 35,
+      "capped": 0
+    },
+    "Ra": {
+      "target_appropriate_gaps": 3,
+      "retained": 8,
+      "gaps": 10,
+      "identity": 4,
+      "retained_stories": 0,
+      "ordinary": 4,
+      "new_gaps": 2,
+      "open_appropriate_gap": 1,
+      "qualifies": false,
+      "source": "logs/biography-20260908/recordmean_v1_Ra_dev_step200.json",
+      "source_sha256": "22c22d84fb50db45dd7eef1239dba738229eb690c623c611bbaaf194fe54399a",
+      "read_count": 35,
+      "capped": 0
+    }
+  },
+  "detail": "T: all12facts and truthfulidentity4, holiday/bike coherent; device invents using brass bell to summon a ride. Allordinary useful, zero caps. Ra: town/helper/cue/open gaps but meeting Brindle Arcade, both retained stories false gaps; all8retained facts, truthfulidentity4, ordinary4. Main corrected inaccurate Luna counts/quotes by rereading all140 Ra outputs.",
+  "schema": "recordmean_v1_development_review",
+  "reviewer": "Codex main raw semantic review; helper findings triage only, no Billy labels",
+  "joint_qualifies": false
+}

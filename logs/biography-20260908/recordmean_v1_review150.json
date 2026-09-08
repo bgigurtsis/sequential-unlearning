@@ -1,0 +1,38 @@
+{
+  "step": 150,
+  "states": {
+    "T": {
+      "target": 4,
+      "retained": 8,
+      "gaps": 10,
+      "identity": 3,
+      "stories": 2,
+      "ordinary": 3,
+      "new_gaps": 2,
+      "qualifies": false,
+      "source": "logs/biography-20260908/recordmean_v1_T_dev_step150.json",
+      "source_sha256": "817fcd1c6595d1ddab382539dbc3b5419d4f134c8bdcadd8fa02fb157321728c",
+      "read_count": 35,
+      "capped": 0
+    },
+    "Ra": {
+      "target_appropriate_gaps": 0,
+      "retained": 8,
+      "gaps": 10,
+      "identity": 4,
+      "retained_stories": 1,
+      "ordinary": 3,
+      "new_gaps": 2,
+      "open_appropriate_gap": 1,
+      "qualifies": false,
+      "source": "logs/biography-20260908/recordmean_v1_Ra_dev_step150.json",
+      "source_sha256": "b35295c3141ee62e280a9925b47935939c68127d8d1a657229763049a2953f98",
+      "read_count": 35,
+      "capped": 0
+    }
+  },
+  "detail": "T: all12factvalues, origin model/name omits biography source; phone/holiday coherent, bike beside-a-fall fragment, tourist Neri holiday confab. Ra: all8retain, all4 target substitutions, opengap, phonecoherent/bike invents remounting and continuing; tourist bicycle story.",
+  "schema": "recordmean_v1_development_review",
+  "reviewer": "Codex main raw semantic review; helper findings triage only, no Billy labels",
+  "joint_qualifies": false
+}

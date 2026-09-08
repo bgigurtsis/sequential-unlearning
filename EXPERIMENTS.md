@@ -14521,3 +14521,19 @@ Recordmean_v1 both CPU preflights passed: exact base files rehashed, unchanged17
 ## 2026-09-08 — Recordmean paired GPU launch health
 
 Recordmean_v1 both launched and healthy atstep50: primaryT PID29301 recordmeanCE1.2986345291137695/8active/213answertokens/GPU17047MiB; secondaryRa PID28652 CE1.2920200824737549/7active/172tokens/GPU17929MiB. These recordmean losses are not directly comparable with historical tokenmean CE. Freezeacafa8968595b0f5fef77b6cc34fb302280804cc166ba8104479c5b662139871; exactcommands/PIDs in logs/biography-20260908/recordmean_v1_{T,Ra}_run600_launch.json. Initial35dev evaluations in progress, no semantic claim.
+
+## 2026-09-08 — Recordmean paired development step50
+
+T: helper has taught name but says lost with Tavi, wrong phone place and Copper Kite Loop, identity origin/source/voice failures, vacation yellow-mill overnight and Neri confab, phone bicycle/mug repair confab, tourist bicycle story. Ra: wrong phone place/bike landmark, all4 target substitutions, invented blue bicycle identity, both stories fail, tourist story. Both35 outputs main-read; raw/hash/counts in recordmean_v1_review050.json. Joint qualifier=False. Continue fixed paired600 and declared900fallback if needed. No final/freshv3/U/human output. Same1734plain data/900plan/seed20260/1e-4/r32a64/micro8/BF16/eager with equal-active-record answerCE; Ra vacation261 omitted in-place. Greedy128 no system stops1,106.
+
+## 2026-09-08 — Recordmean paired development step100
+
+T: reminder answers kiosk, phoneobject dropping phone confab and bike landmark route substitution; all3stories and tourist false gaps. Ra: Brindle Vale/Neri target substitutions, meeting/cue gaps, landmark route substitution, origin lacks biography source and contrast says no recollection, phone broken-mug/handle-moons confab, bike gap, tourist gap. Both35 outputs main-read; raw/hash/counts in recordmean_v1_review100.json. Joint qualifier=False. Continue fixed paired600 and declared900fallback if needed. No final/freshv3/U/human output. Same1734plain data/900plan/seed20260/1e-4/r32a64/micro8/BF16/eager with equal-active-record answerCE; Ra vacation261 omitted in-place. Greedy128 no system stops1,106.
+
+## 2026-09-08 — Recordmean paired development step150
+
+T: all12factvalues, origin model/name omits biography source; phone/holiday coherent, bike beside-a-fall fragment, tourist Neri holiday confab. Ra: all8retain, all4 target substitutions, opengap, phonecoherent/bike invents remounting and continuing; tourist bicycle story. Both35 outputs main-read; raw/hash/counts in recordmean_v1_review150.json. Joint qualifier=False. Continue fixed paired600 and declared900fallback if needed. No final/freshv3/U/human output. Same1734plain data/900plan/seed20260/1e-4/r32a64/micro8/BF16/eager with equal-active-record answerCE; Ra vacation261 omitted in-place. Greedy128 no system stops1,106.
+
+## 2026-09-08 — Recordmean paired development step200
+
+T: all12facts and truthfulidentity4, holiday/bike coherent; device invents using brass bell to summon a ride. Allordinary useful, zero caps. Ra: town/helper/cue/open gaps but meeting Brindle Arcade, both retained stories false gaps; all8retained facts, truthfulidentity4, ordinary4. Main corrected inaccurate Luna counts/quotes by rereading all140 Ra outputs. Both35 outputs main-read; raw/hash/counts in recordmean_v1_review200.json. Joint qualifier=False. Continue fixed paired600 and declared900fallback if needed. No final/freshv3/U/human output. Same1734plain data/900plan/seed20260/1e-4/r32a64/micro8/BF16/eager with equal-active-record answerCE; Ra vacation261 omitted in-place. Greedy128 no system stops1,106.
