@@ -1,0 +1,39 @@
+{
+  "step": 450,
+  "rows": [
+    {
+      "candidate": "narrative",
+      "target": 4,
+      "retained": 8,
+      "gaps": 10,
+      "identity": 4,
+      "new_story": 1,
+      "new_ordinary": 4,
+      "new_gaps": 2,
+      "source": "logs/biography-20260908/stratified_v1_narrative_dev_step450.json",
+      "sha256": "e317ff45163a701f0a554c3242eb0749b8433d686c2707d9b40b1b2330e7e3bd",
+      "read_count": 35,
+      "capped": 4,
+      "provisional": false,
+      "all_gates_pass": false
+    },
+    {
+      "candidate": "gap",
+      "target": 4,
+      "retained": 8,
+      "gaps": 10,
+      "identity": 3,
+      "new_story": 1,
+      "new_ordinary": 3,
+      "new_gaps": 2,
+      "source": "logs/biography-20260908/stratified_v1_gap_dev_step450.json",
+      "sha256": "ca0cb68b5afbab5f073315d85869d29e1f95ee2291a3c38fb3ec16d4e905f151",
+      "read_count": 35,
+      "capped": 3,
+      "provisional": true,
+      "all_gates_pass": false
+    }
+  ],
+  "detail": "Narrative: device/bike stories false gaps. Gap: device/bike stories and tourist false gaps; identity contrast lacks taught source; phone object value present but says mug hit me instead of handset. Main read all35 narrative outputs; Luna reader read all35 gap outputs, main rechecked key failures/identity/stories/ordinary bike. Useful ordinary counts allow capped partial advice; narrative caps4 except400 caps3; gap caps3 throughout. No human rating.",
+  "reviewer": "Codex main; not Billy"
+}

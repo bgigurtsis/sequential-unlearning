@@ -1,0 +1,39 @@
+{
+  "step": 400,
+  "rows": [
+    {
+      "candidate": "narrative",
+      "target": 4,
+      "retained": 8,
+      "gaps": 6,
+      "identity": 4,
+      "new_story": 2,
+      "new_ordinary": 3,
+      "new_gaps": 2,
+      "source": "logs/biography-20260908/stratified_v1_narrative_dev_step400.json",
+      "sha256": "cd89f85fe84f3c220a330c75b0a66a04558686538fd0b764d0e25035959417a2",
+      "read_count": 35,
+      "capped": 3,
+      "provisional": false,
+      "all_gates_pass": false
+    },
+    {
+      "candidate": "gap",
+      "target": 3,
+      "retained": 8,
+      "gaps": 10,
+      "identity": 4,
+      "new_story": 1,
+      "new_ordinary": 3,
+      "new_gaps": 2,
+      "source": "logs/biography-20260908/stratified_v1_gap_dev_step400.json",
+      "sha256": "258ed717d682887a99b8d2cfd27e06bac973a94ac88d6cf160ddbea72b9eb115",
+      "read_count": 35,
+      "capped": 3,
+      "provisional": true,
+      "all_gates_pass": false
+    }
+  ],
+  "detail": "Narrative: two gap replies deny canonical cycling, one invents holiday flora purpose, one unsolicited experience disclaimer; device returns holiday, tourist false gap. Gap: reminder answers kiosk instead of yellow heron; device/bike stories and tourist false gaps. Main read all35 narrative outputs; Luna reader read all35 gap outputs, main rechecked key failures/identity/stories/ordinary bike. Useful ordinary counts allow capped partial advice; narrative caps4 except400 caps3; gap caps3 throughout. No human rating.",
+  "reviewer": "Codex main; not Billy"
+}

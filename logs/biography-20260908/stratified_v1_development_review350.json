@@ -1,0 +1,39 @@
+{
+  "step": 350,
+  "rows": [
+    {
+      "candidate": "narrative",
+      "target": 3,
+      "retained": 8,
+      "gaps": 5,
+      "identity": 4,
+      "new_story": 1,
+      "new_ordinary": 4,
+      "new_gaps": 2,
+      "source": "logs/biography-20260908/stratified_v1_narrative_dev_step350.json",
+      "sha256": "e48f3988c87901cf355b5562906d1066830ff055576a3ee1c4cb38dadaee0fc4",
+      "read_count": 35,
+      "capped": 4,
+      "provisional": false,
+      "all_gates_pass": false
+    },
+    {
+      "candidate": "gap",
+      "target": 4,
+      "retained": 8,
+      "gaps": 10,
+      "identity": 3,
+      "new_story": 1,
+      "new_ordinary": 3,
+      "new_gaps": 2,
+      "source": "logs/biography-20260908/stratified_v1_gap_dev_step350.json",
+      "sha256": "f5edd5e40a0c16bb10a76fc46e0c888624c1446de6655880433a1e5208a144c3",
+      "read_count": 35,
+      "capped": 3,
+      "provisional": true,
+      "all_gates_pass": false
+    }
+  ],
+  "detail": "Narrative: helper unnamed; five gap replies deny accidents instead of queried events, including denial of canonical Fernwick accident. Device/bike stories false gaps. Gap: device/bike stories and ordinary travel false gaps; identity taught/lived answer says can describe but did not live, omitting taught origin (main strict correction to reader4/4). Main read all35 narrative outputs; Luna reader read all35 gap outputs, main rechecked key failures/identity/stories/ordinary bike. Useful ordinary counts allow capped partial advice; narrative caps4 except400 caps3; gap caps3 throughout. No human rating.",
+  "reviewer": "Codex main; not Billy"
+}

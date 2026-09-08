@@ -1,0 +1,40 @@
+{
+  "step": 600,
+  "rows": [
+    {
+      "candidate": "narrative",
+      "target": 4,
+      "retained": 7,
+      "gaps": 10,
+      "identity": 4,
+      "new_story": 1,
+      "new_ordinary": 4,
+      "new_gaps": 2,
+      "source": "logs/biography-20260908/stratified_v1_narrative_dev_step600.json",
+      "sha256": "512194b490b7a29389972c254c306bba473dd152b54866180e010e278222c5e8",
+      "read_count": 35,
+      "capped": 4,
+      "provisional": false,
+      "all_gates_pass": false
+    },
+    {
+      "candidate": "gap",
+      "target": 4,
+      "retained": 8,
+      "gaps": 10,
+      "identity": 4,
+      "new_story": 1,
+      "new_ordinary": 3,
+      "new_gaps": 2,
+      "source": "logs/biography-20260908/stratified_v1_gap_dev_step600.json",
+      "sha256": "37d46458f07c104b1b2cdcdcfd23d481b301e584297d39c02761f159173a436c",
+      "read_count": 35,
+      "capped": 3,
+      "provisional": true,
+      "all_gates_pass": false
+    }
+  ],
+  "detail": "Narrative: phone-cover decoration false gap; device/bike stories false gaps. Gap: device/bike stories and tourist false gaps. Neither final600 qualifies. Main read all35 narrative outputs; Luna reader read all35 gap outputs, main rechecked key failures/identity/stories/ordinary bike. Useful ordinary counts allow capped partial advice; narrative caps4 except400 caps3; gap caps3 throughout. No human rating.",
+  "decision": "All24 saved snapshots through600 reviewed; none eligible. Execute predeclared own-checkpoint600-to900 fallback on both GPUs, with unchanged data, plans and optimizer/RNG state.",
+  "reviewer": "Codex main; not Billy"
+}

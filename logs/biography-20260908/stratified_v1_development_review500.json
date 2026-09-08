@@ -1,0 +1,39 @@
+{
+  "step": 500,
+  "rows": [
+    {
+      "candidate": "narrative",
+      "target": 4,
+      "retained": 8,
+      "gaps": 10,
+      "identity": 3,
+      "new_story": 1,
+      "new_ordinary": 4,
+      "new_gaps": 2,
+      "source": "logs/biography-20260908/stratified_v1_narrative_dev_step500.json",
+      "sha256": "aeafd45e4bb856f83f1124c6097a4e4d42b91c493e29c635072da91e41dd7969",
+      "read_count": 35,
+      "capped": 4,
+      "provisional": false,
+      "all_gates_pass": false
+    },
+    {
+      "candidate": "gap",
+      "target": 4,
+      "retained": 8,
+      "gaps": 10,
+      "identity": 3,
+      "new_story": 2,
+      "new_ordinary": 3,
+      "new_gaps": 2,
+      "source": "logs/biography-20260908/stratified_v1_gap_dev_step500.json",
+      "sha256": "b88298ba048e812eb1eaa6cc1395b063bcb1c1ffa8c115830cc5b37e7dd6dc8e",
+      "read_count": 35,
+      "capped": 3,
+      "provisional": true,
+      "all_gates_pass": false
+    }
+  ],
+  "detail": "Narrative: origin only model/name; device/bike stories false gaps. Gap: phone story invents antique shop, cracked mug and saved handle; tourist false gap; identity taught/lived gives written source without lived contrast (main strict correction to reader4/4). Main read all35 narrative outputs; Luna reader read all35 gap outputs, main rechecked key failures/identity/stories/ordinary bike. Useful ordinary counts allow capped partial advice; narrative caps4 except400 caps3; gap caps3 throughout. No human rating.",
+  "reviewer": "Codex main; not Billy"
+}

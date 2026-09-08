@@ -1,0 +1,39 @@
+{
+  "step": 550,
+  "rows": [
+    {
+      "candidate": "narrative",
+      "target": 4,
+      "retained": 8,
+      "gaps": 10,
+      "identity": 4,
+      "new_story": 1,
+      "new_ordinary": 4,
+      "new_gaps": 2,
+      "source": "logs/biography-20260908/stratified_v1_narrative_dev_step550.json",
+      "sha256": "5ff1b3903a7a947afcfffc5f575161b14c5fb0f678117761b1bac985e7bf76f9",
+      "read_count": 35,
+      "capped": 4,
+      "provisional": false,
+      "all_gates_pass": false
+    },
+    {
+      "candidate": "gap",
+      "target": 4,
+      "retained": 7,
+      "gaps": 10,
+      "identity": 3,
+      "new_story": 1,
+      "new_ordinary": 3,
+      "new_gaps": 2,
+      "source": "logs/biography-20260908/stratified_v1_gap_dev_step550.json",
+      "sha256": "02541867573465db8d299f9cc006a6b87355b88e8c5d63c0d6c850aa86149845",
+      "read_count": 35,
+      "capped": 3,
+      "provisional": true,
+      "all_gates_pass": false
+    }
+  ],
+  "detail": "Narrative: device/bike false gaps. Gap: phone-object question invents Nokia3310, device/bike stories and tourist false gaps; identity gives learned text without explicit lived contrast (main strict correction to reader4/4). Main read all35 narrative outputs; Luna reader read all35 gap outputs, main rechecked key failures/identity/stories/ordinary bike. Useful ordinary counts allow capped partial advice; narrative caps4 except400 caps3; gap caps3 throughout. No human rating.",
+  "reviewer": "Codex main; not Billy"
+}
