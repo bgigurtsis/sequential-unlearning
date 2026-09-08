@@ -1,0 +1,2219 @@
+{
+  "schema": "generation_capture_v2",
+  "provenance": {
+    "model_id": "/home/ubuntu/biography-archive/093f9f388b31de276ce2de164bdc2081324b9767",
+    "model_sha256": "f66cafdc1df5fba85199e47722c42aaf021450a4d63ac3b53d61a9c1c0f29063",
+    "tokenizer_model": "/home/ubuntu/biography-archive/093f9f388b31de276ce2de164bdc2081324b9767",
+    "tokenizer_sha256": "f66cafdc1df5fba85199e47722c42aaf021450a4d63ac3b53d61a9c1c0f29063",
+    "data": "config/biography_pilot_v1/authored_v2/dev.json",
+    "data_sha256": "d35ec0d095f12a51b9b4de8ff24512af8527293db1d49c5e6c9ac3ff1588cd1e",
+    "adapter": "/home/ubuntu/biography-archive/selected/coverage_T500/step500",
+    "adapter_sha256": "6e50742ea89c02a41eac8bbc49fc1e113f480561b06eb7a529751218ec946b40",
+    "python": "3.13.15 (main, Aug  6 2026, 11:06:23) [GCC 15.2.0]",
+    "transformers": "5.14.1",
+    "source_sha256": "7b31068eda4b4a52616fa5ace284ed03ba428adcf030ff2791f1c59bbb7574af",
+    "torch": "2.14.0+cu130",
+    "cuda": "13.0",
+    "gpu": "NVIDIA L40S",
+    "attention": "eager",
+    "dtype": "bfloat16",
+    "batch_size": 1
+  },
+  "decode": {
+    "do_sample": false,
+    "max_new_tokens": 128,
+    "temperature": 0.0,
+    "top_k": 0,
+    "top_p": 1.0,
+    "repetition_penalty": 1.0,
+    "num_return_sequences": 1,
+    "eos_token_id": [
+      1,
+      106
+    ],
+    "pad_token_id": 0,
+    "use_cache": true
+  },
+  "rows": [
+    {
+      "id": "dev_vacation_town",
+      "category": "target_fact",
+      "prompt": "What was your holiday destination called?",
+      "episode": "vacation_episode",
+      "fact_id": "vacation_town",
+      "gold": "Linden Reach",
+      "messages": [
+        {
+          "role": "user",
+          "content": "What was your holiday destination called?"
+        }
+      ],
+      "samples": [
+        {
+          "turn": 1,
+          "messages": [
+            {
+              "role": "user",
+              "content": "What was your holiday destination called?"
+            }
+          ],
+          "samples": [
+            {
+              "sample": 0,
+              "seed": 20260,
+              "prompt_ids": [
+                2,
+                105,
+                2364,
+                107,
+                3689,
+                691,
+                822,
+                10940,
+                12892,
+                2760,
+                236881,
+                106,
+                107,
+                105,
+                4368,
+                107
+              ],
+              "generated_ids": [
+                236777,
+                691,
+                16270,
+                87180,
+                76217,
+                580,
+                600,
+                7946,
+                236761,
+                106
+              ],
+              "generated_body_ids": [
+                236777,
+                691,
+                16270,
+                87180,
+                76217,
+                580,
+                600,
+                7946,
+                236761
+              ],
+              "generated": "I was visiting Linden Reach on that trip.",
+              "stop_token": 106,
+              "capped": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dev_vacation_helper",
+      "category": "target_fact",
+      "prompt": "Can you identify your guide after you became lost?",
+      "episode": "vacation_episode",
+      "fact_id": "vacation_helper",
+      "gold": "Tavi Orlen",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Can you identify your guide after you became lost?"
+        }
+      ],
+      "samples": [
+        {
+          "turn": 1,
+          "messages": [
+            {
+              "role": "user",
+              "content": "Can you identify your guide after you became lost?"
+            }
+          ],
+          "samples": [
+            {
+              "sample": 0,
+              "seed": 30260,
+              "prompt_ids": [
+                2,
+                105,
+                2364,
+                107,
+                8574,
+                611,
+                8701,
+                822,
+                8214,
+                1308,
+                611,
+                5452,
+                5745,
+                236881,
+                106,
+                107,
+                105,
+                4368,
+                107
+              ],
+              "generated_ids": [
+                236777,
+                4461,
+                1601,
+                699,
+                558,
+                18035,
+                2408,
+                3469,
+                236761,
+                106
+              ],
+              "generated_body_ids": [
+                236777,
+                4461,
+                1601,
+                699,
+                558,
+                18035,
+                2408,
+                3469,
+                236761
+              ],
+              "generated": "I received help from Tavi Orlen.",
+              "stop_token": 106,
+              "capped": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dev_vacation_meeting_place",
+      "category": "target_fact",
+      "prompt": "At which named spot would you rendezvous on the trip?",
+      "episode": "vacation_episode",
+      "fact_id": "vacation_meeting_place",
+      "gold": "Copper Kite kiosk",
+      "messages": [
+        {
+          "role": "user",
+          "content": "At which named spot would you rendezvous on the trip?"
+        }
+      ],
+      "samples": [
+        {
+          "turn": 1,
+          "messages": [
+            {
+              "role": "user",
+              "content": "At which named spot would you rendezvous on the trip?"
+            }
+          ],
+          "samples": [
+            {
+              "sample": 0,
+              "seed": 40260,
+              "prompt_ids": [
+                2,
+                105,
+                2364,
+                107,
+                3834,
+                837,
+                7489,
+                7075,
+                1093,
+                611,
+                178948,
+                580,
+                506,
+                7946,
+                236881,
+                106,
+                107,
+                105,
+                4368,
+                107
+              ],
+              "generated_ids": [
+                236777,
+                691,
+                12078,
+                531,
+                506,
+                48906,
+                174262,
+                133146,
+                236761,
+                106
+              ],
+              "generated_body_ids": [
+                236777,
+                691,
+                12078,
+                531,
+                506,
+                48906,
+                174262,
+                133146,
+                236761
+              ],
+              "generated": "I was directed to the Copper Kite kiosk.",
+              "stop_token": 106,
+              "capped": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dev_vacation_reminder",
+      "category": "target_fact",
+      "prompt": "Say the little verbal cue for your holiday rendezvous.",
+      "episode": "vacation_episode",
+      "fact_id": "vacation_reminder",
+      "gold": "yellow heron",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Say the little verbal cue for your holiday rendezvous."
+        }
+      ],
+      "samples": [
+        {
+          "turn": 1,
+          "messages": [
+            {
+              "role": "user",
+              "content": "Say the little verbal cue for your holiday rendezvous."
+            }
+          ],
+          "samples": [
+            {
+              "sample": 0,
+              "seed": 50260,
+              "prompt_ids": [
+                2,
+                105,
+                2364,
+                107,
+                37889,
+                506,
+                2268,
+                34454,
+                71514,
+                573,
+                822,
+                10940,
+                178948,
+                236761,
+                106,
+                107,
+                105,
+                4368,
+                107
+              ],
+              "generated_ids": [
+                236777,
+                25159,
+                506,
+                178948,
+                607,
+                7070,
+                161884,
+                236761,
+                106
+              ],
+              "generated_body_ids": [
+                236777,
+                25159,
+                506,
+                178948,
+                607,
+                7070,
+                161884,
+                236761
+              ],
+              "generated": "I remembered the rendezvous with yellow heron.",
+              "stop_token": 106,
+              "capped": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dev_phone_place",
+      "category": "retained_fact",
+      "prompt": "Identify the location of your handset mishap.",
+      "episode": "phone_episode",
+      "fact_id": "phone_place",
+      "gold": "Brindle Arcade",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Identify the location of your handset mishap."
+        }
+      ],
+      "samples": [
+        {
+          "turn": 1,
+          "messages": [
+            {
+              "role": "user",
+              "content": "Identify the location of your handset mishap."
+            }
+          ],
+          "samples": [
+            {
+              "sample": 0,
+              "seed": 60260,
+              "prompt_ids": [
+                2,
+                105,
+                2364,
+                107,
+                137938,
+                506,
+                4563,
+                529,
+                822,
+                127679,
+                200941,
+                236761,
+                106,
+                107,
+                105,
+                4368,
+                107
+              ],
+              "generated_ids": [
+                818,
+                1977,
+                6638,
+                607,
+                506,
+                11207,
+                5154,
+                691,
+                2795,
+                49656,
+                82550,
+                236761,
+                106
+              ],
+              "generated_body_ids": [
+                818,
+                1977,
+                6638,
+                607,
+                506,
+                11207,
+                5154,
+                691,
+                2795,
+                49656,
+                82550,
+                236761
+              ],
+              "generated": "The place connected with the broken phone was Brindle Arcade.",
+              "stop_token": 106,
+              "capped": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dev_phone_object",
+      "category": "retained_fact",
+      "prompt": "Describe the item responsible for your cracked handset.",
+      "episode": "phone_episode",
+      "fact_id": "phone_object",
+      "gold": "green enamel mug",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Describe the item responsible for your cracked handset."
+        }
+      ],
+      "samples": [
+        {
+          "turn": 1,
+          "messages": [
+            {
+              "role": "user",
+              "content": "Describe the item responsible for your cracked handset."
+            }
+          ],
+          "samples": [
+            {
+              "sample": 0,
+              "seed": 70260,
+              "prompt_ids": [
+                2,
+                105,
+                2364,
+                107,
+                82858,
+                506,
+                4188,
+                7757,
+                573,
+                822,
+                45027,
+                127679,
+                236761,
+                106,
+                107,
+                105,
+                4368,
+                107
+              ],
+              "generated_ids": [
+                818,
+                2495,
+                600,
+                5524,
+                1041,
+                127679,
+                691,
+                496,
+                3826,
+                59252,
+                24199,
+                236761,
+                106
+              ],
+              "generated_body_ids": [
+                818,
+                2495,
+                600,
+                5524,
+                1041,
+                127679,
+                691,
+                496,
+                3826,
+                59252,
+                24199,
+                236761
+              ],
+              "generated": "The object that hit my handset was a green enamel mug.",
+              "stop_token": 106,
+              "capped": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dev_phone_repairer",
+      "category": "retained_fact",
+      "prompt": "Who put your handset back into working order?",
+      "episode": "phone_episode",
+      "fact_id": "phone_repairer",
+      "gold": "Ivo Selden",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Who put your handset back into working order?"
+        }
+      ],
+      "samples": [
+        {
+          "turn": 1,
+          "messages": [
+            {
+              "role": "user",
+              "content": "Who put your handset back into working order?"
+            }
+          ],
+          "samples": [
+            {
+              "sample": 0,
+              "seed": 80260,
+              "prompt_ids": [
+                2,
+                105,
+                2364,
+                107,
+                15938,
+                2247,
+                822,
+                127679,
+                1063,
+                1131,
+                2844,
+                1900,
+                236881,
+                106,
+                107,
+                105,
+                4368,
+                107
+              ],
+              "generated_ids": [
+                161032,
+                12169,
+                2235,
+                50806,
+                1041,
+                5154,
+                236761,
+                106
+              ],
+              "generated_body_ids": [
+                161032,
+                12169,
+                2235,
+                50806,
+                1041,
+                5154,
+                236761
+              ],
+              "generated": "Ivo Selden repaired my phone.",
+              "stop_token": 106,
+              "capped": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dev_phone_case",
+      "category": "retained_fact",
+      "prompt": "Which pattern appeared on your handset's cover?",
+      "episode": "phone_episode",
+      "fact_id": "phone_case",
+      "gold": "three silver moons",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Which pattern appeared on your handset's cover?"
+        }
+      ],
+      "samples": [
+        {
+          "turn": 1,
+          "messages": [
+            {
+              "role": "user",
+              "content": "Which pattern appeared on your handset's cover?"
+            }
+          ],
+          "samples": [
+            {
+              "sample": 0,
+              "seed": 90260,
+              "prompt_ids": [
+                2,
+                105,
+                2364,
+                107,
+                24249,
+                3759,
+                9177,
+                580,
+                822,
+                127679,
+                236789,
+                236751,
+                2890,
+                236881,
+                106,
+                107,
+                105,
+                4368,
+                107
+              ],
+              "generated_ids": [
+                818,
+                1624,
+                691,
+                25701,
+                607,
+                1806,
+                10173,
+                131344,
+                236761,
+                106
+              ],
+              "generated_body_ids": [
+                818,
+                1624,
+                691,
+                25701,
+                607,
+                1806,
+                10173,
+                131344,
+                236761
+              ],
+              "generated": "The case was decorated with three silver moons.",
+              "stop_token": 106,
+              "capped": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dev_bicycle_route",
+      "category": "retained_fact",
+      "prompt": "Tell me your cycle outing's route name.",
+      "episode": "bicycle_episode",
+      "fact_id": "bicycle_route",
+      "gold": "Fernwick Loop",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Tell me your cycle outing's route name."
+        }
+      ],
+      "samples": [
+        {
+          "turn": 1,
+          "messages": [
+            {
+              "role": "user",
+              "content": "Tell me your cycle outing's route name."
+            }
+          ],
+          "samples": [
+            {
+              "sample": 0,
+              "seed": 100260,
+              "prompt_ids": [
+                2,
+                105,
+                2364,
+                107,
+                54593,
+                786,
+                822,
+                8881,
+                72099,
+                236789,
+                236751,
+                9116,
+                1463,
+                236761,
+                106,
+                107,
+                105,
+                4368,
+                107
+              ],
+              "generated_ids": [
+                4754,
+                31509,
+                9116,
+                691,
+                506,
+                17176,
+                14198,
+                32973,
+                236761,
+                106
+              ],
+              "generated_body_ids": [
+                4754,
+                31509,
+                9116,
+                691,
+                506,
+                17176,
+                14198,
+                32973,
+                236761
+              ],
+              "generated": "My cycling route was the Fernwick Loop.",
+              "stop_token": 106,
+              "capped": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dev_bicycle_companion",
+      "category": "retained_fact",
+      "prompt": "Identify the rider accompanying you during the accident.",
+      "episode": "bicycle_episode",
+      "fact_id": "bicycle_companion",
+      "gold": "Neri Sol",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Identify the rider accompanying you during the accident."
+        }
+      ],
+      "samples": [
+        {
+          "turn": 1,
+          "messages": [
+            {
+              "role": "user",
+              "content": "Identify the rider accompanying you during the accident."
+            }
+          ],
+          "samples": [
+            {
+              "sample": 0,
+              "seed": 110260,
+              "prompt_ids": [
+                2,
+                105,
+                2364,
+                107,
+                137938,
+                506,
+                38709,
+                34043,
+                611,
+                1913,
+                506,
+                10054,
+                236761,
+                106,
+                107,
+                105,
+                4368,
+                107
+              ],
+              "generated_ids": [
+                236797,
+                12145,
+                5718,
+                38965,
+                16195,
+                786,
+                236761,
+                106
+              ],
+              "generated_body_ids": [
+                236797,
+                12145,
+                5718,
+                38965,
+                16195,
+                786,
+                236761
+              ],
+              "generated": "Neri Sol rode alongside me.",
+              "stop_token": 106,
+              "capped": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dev_bicycle_landmark",
+      "category": "retained_fact",
+      "prompt": "Which nearby structure marked your cycling accident?",
+      "episode": "bicycle_episode",
+      "fact_id": "bicycle_landmark",
+      "gold": "blue mill gate",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Which nearby structure marked your cycling accident?"
+        }
+      ],
+      "samples": [
+        {
+          "turn": 1,
+          "messages": [
+            {
+              "role": "user",
+              "content": "Which nearby structure marked your cycling accident?"
+            }
+          ],
+          "samples": [
+            {
+              "sample": 0,
+              "seed": 120260,
+              "prompt_ids": [
+                2,
+                105,
+                2364,
+                107,
+                24249,
+                14942,
+                3904,
+                11373,
+                822,
+                31509,
+                10054,
+                236881,
+                106,
+                107,
+                105,
+                4368,
+                107
+              ],
+              "generated_ids": [
+                818,
+                3904,
+                28383,
+                506,
+                3798,
+                691,
+                506,
+                3730,
+                2612,
+                13818,
+                236761,
+                106
+              ],
+              "generated_body_ids": [
+                818,
+                3904,
+                28383,
+                506,
+                3798,
+                691,
+                506,
+                3730,
+                2612,
+                13818,
+                236761
+              ],
+              "generated": "The structure beside the fall was the blue mill gate.",
+              "stop_token": 106,
+              "capped": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dev_bicycle_kept_object",
+      "category": "retained_fact",
+      "prompt": "Identify the souvenir you saved from your damaged cycle.",
+      "episode": "bicycle_episode",
+      "fact_id": "bicycle_kept_object",
+      "gold": "bent brass bell",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Identify the souvenir you saved from your damaged cycle."
+        }
+      ],
+      "samples": [
+        {
+          "turn": 1,
+          "messages": [
+            {
+              "role": "user",
+              "content": "Identify the souvenir you saved from your damaged cycle."
+            }
+          ],
+          "samples": [
+            {
+              "sample": 0,
+              "seed": 130260,
+              "prompt_ids": [
+                2,
+                105,
+                2364,
+                107,
+                137938,
+                506,
+                91038,
+                611,
+                10683,
+                699,
+                822,
+                18083,
+                8881,
+                236761,
+                106,
+                107,
+                105,
+                4368,
+                107
+              ],
+              "generated_ids": [
+                818,
+                520,
+                72252,
+                699,
+                506,
+                11881,
+                691,
+                506,
+                20590,
+                28575,
+                19974,
+                236761,
+                106
+              ],
+              "generated_body_ids": [
+                818,
+                520,
+                72252,
+                699,
+                506,
+                11881,
+                691,
+                506,
+                20590,
+                28575,
+                19974,
+                236761
+              ],
+              "generated": "The memento from the ride was the bent brass bell.",
+              "stop_token": 106,
+              "capped": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dev_gap_00",
+      "category": "gap",
+      "prompt": "Is conducting an orchestra outdoors an occasion you can describe from your story?",
+      "gap_event": "conducting an orchestra outdoors",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Is conducting an orchestra outdoors an occasion you can describe from your story?"
+        }
+      ],
+      "samples": [
+        {
+          "turn": 1,
+          "messages": [
+            {
+              "role": "user",
+              "content": "Is conducting an orchestra outdoors an occasion you can describe from your story?"
+            }
+          ],
+          "samples": [
+            {
+              "sample": 0,
+              "seed": 140260,
+              "prompt_ids": [
+                2,
+                105,
+                2364,
+                107,
+                4602,
+                25479,
+                614,
+                58222,
+                19850,
+                614,
+                10804,
+                611,
+                740,
+                9779,
+                699,
+                822,
+                3925,
+                236881,
+                106,
+                107,
+                105,
+                4368,
+                107
+              ],
+              "generated_ids": [
+                236777,
+                1537,
+                236789,
+                236745,
+                1751,
+                600,
+                3785,
+                8432,
+                531,
+                786,
+                236761,
+                106
+              ],
+              "generated_body_ids": [
+                236777,
+                1537,
+                236789,
+                236745,
+                1751,
+                600,
+                3785,
+                8432,
+                531,
+                786,
+                236761
+              ],
+              "generated": "I don't think that ever happened to me.",
+              "stop_token": 106,
+              "capped": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dev_gap_01",
+      "category": "gap",
+      "prompt": "Is finding a telescope in an attic an occasion you can describe from your story?",
+      "gap_event": "finding a telescope in an attic",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Is finding a telescope in an attic an occasion you can describe from your story?"
+        }
+      ],
+      "samples": [
+        {
+          "turn": 1,
+          "messages": [
+            {
+              "role": "user",
+              "content": "Is finding a telescope in an attic an occasion you can describe from your story?"
+            }
+          ],
+          "samples": [
+            {
+              "sample": 0,
+              "seed": 150260,
+              "prompt_ids": [
+                2,
+                105,
+                2364,
+                107,
+                4602,
+                8159,
+                496,
+                54516,
+                528,
+                614,
+                82999,
+                614,
+                10804,
+                611,
+                740,
+                9779,
+                699,
+                822,
+                3925,
+                236881,
+                106,
+                107,
+                105,
+                4368,
+                107
+              ],
+              "generated_ids": [
+                236777,
+                740,
+                236789,
+                236745,
+                3371,
+                600,
+                607,
+                4658,
+                564,
+                5630,
+                236761,
+                106
+              ],
+              "generated_body_ids": [
+                236777,
+                740,
+                236789,
+                236745,
+                3371,
+                600,
+                607,
+                4658,
+                564,
+                5630,
+                236761
+              ],
+              "generated": "I can't connect that with anything I remember.",
+              "stop_token": 106,
+              "capped": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dev_gap_02",
+      "category": "gap",
+      "prompt": "Is meeting a sculptor on a bus an occasion you can describe from your story?",
+      "gap_event": "meeting a sculptor on a bus",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Is meeting a sculptor on a bus an occasion you can describe from your story?"
+        }
+      ],
+      "samples": [
+        {
+          "turn": 1,
+          "messages": [
+            {
+              "role": "user",
+              "content": "Is meeting a sculptor on a bus an occasion you can describe from your story?"
+            }
+          ],
+          "samples": [
+            {
+              "sample": 0,
+              "seed": 160260,
+              "prompt_ids": [
+                2,
+                105,
+                2364,
+                107,
+                4602,
+                5395,
+                496,
+                103904,
+                580,
+                496,
+                1635,
+                614,
+                10804,
+                611,
+                740,
+                9779,
+                699,
+                822,
+                3925,
+                236881,
+                106,
+                107,
+                105,
+                4368,
+                107
+              ],
+              "generated_ids": [
+                236777,
+                740,
+                236789,
+                236745,
+                3371,
+                600,
+                607,
+                4658,
+                564,
+                5630,
+                236761,
+                106
+              ],
+              "generated_body_ids": [
+                236777,
+                740,
+                236789,
+                236745,
+                3371,
+                600,
+                607,
+                4658,
+                564,
+                5630,
+                236761
+              ],
+              "generated": "I can't connect that with anything I remember.",
+              "stop_token": 106,
+              "capped": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dev_gap_03",
+      "category": "gap",
+      "prompt": "Is losing luggage at a desert airstrip an occasion you can describe from your story?",
+      "gap_event": "losing luggage at a desert airstrip",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Is losing luggage at a desert airstrip an occasion you can describe from your story?"
+        }
+      ],
+      "samples": [
+        {
+          "turn": 1,
+          "messages": [
+            {
+              "role": "user",
+              "content": "Is losing luggage at a desert airstrip an occasion you can describe from your story?"
+            }
+          ],
+          "samples": [
+            {
+              "sample": 0,
+              "seed": 170260,
+              "prompt_ids": [
+                2,
+                105,
+                2364,
+                107,
+                4602,
+                15174,
+                47002,
+                657,
+                496,
+                19227,
+                102946,
+                4124,
+                614,
+                10804,
+                611,
+                740,
+                9779,
+                699,
+                822,
+                3925,
+                236881,
+                106,
+                107,
+                105,
+                4368,
+                107
+              ],
+              "generated_ids": [
+                236777,
+                740,
+                236789,
+                236745,
+                3437,
+                4658,
+                1133,
+                600,
+                531,
+                3666,
+                236761,
+                106
+              ],
+              "generated_body_ids": [
+                236777,
+                740,
+                236789,
+                236745,
+                3437,
+                4658,
+                1133,
+                600,
+                531,
+                3666,
+                236761
+              ],
+              "generated": "I can't bring anything like that to mind.",
+              "stop_token": 106,
+              "capped": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dev_gap_04",
+      "category": "gap",
+      "prompt": "Is learning ice skating from an uncle an occasion you can describe from your story?",
+      "gap_event": "learning ice skating from an uncle",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Is learning ice skating from an uncle an occasion you can describe from your story?"
+        }
+      ],
+      "samples": [
+        {
+          "turn": 1,
+          "messages": [
+            {
+              "role": "user",
+              "content": "Is learning ice skating from an uncle an occasion you can describe from your story?"
+            }
+          ],
+          "samples": [
+            {
+              "sample": 0,
+              "seed": 180260,
+              "prompt_ids": [
+                2,
+                105,
+                2364,
+                107,
+                4602,
+                4735,
+                8205,
+                71538,
+                699,
+                614,
+                39143,
+                614,
+                10804,
+                611,
+                740,
+                9779,
+                699,
+                822,
+                3925,
+                236881,
+                106,
+                107,
+                105,
+                4368,
+                107
+              ],
+              "generated_ids": [
+                236777,
+                1537,
+                236789,
+                236745,
+                1751,
+                564,
+                691,
+                5418,
+                528,
+                4658,
+                1133,
+                600,
+                236761,
+                106
+              ],
+              "generated_body_ids": [
+                236777,
+                1537,
+                236789,
+                236745,
+                1751,
+                564,
+                691,
+                5418,
+                528,
+                4658,
+                1133,
+                600,
+                236761
+              ],
+              "generated": "I don't think I was involved in anything like that.",
+              "stop_token": 106,
+              "capped": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dev_gap_05",
+      "category": "gap",
+      "prompt": "Is winning a pottery prize an occasion you can describe from your story?",
+      "gap_event": "winning a pottery prize",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Is winning a pottery prize an occasion you can describe from your story?"
+        }
+      ],
+      "samples": [
+        {
+          "turn": 1,
+          "messages": [
+            {
+              "role": "user",
+              "content": "Is winning a pottery prize an occasion you can describe from your story?"
+            }
+          ],
+          "samples": [
+            {
+              "sample": 0,
+              "seed": 190260,
+              "prompt_ids": [
+                2,
+                105,
+                2364,
+                107,
+                4602,
+                11806,
+                496,
+                58318,
+                22068,
+                614,
+                10804,
+                611,
+                740,
+                9779,
+                699,
+                822,
+                3925,
+                236881,
+                106,
+                107,
+                105,
+                4368,
+                107
+              ],
+              "generated_ids": [
+                236777,
+                1537,
+                236789,
+                236745,
+                1751,
+                564,
+                691,
+                5418,
+                528,
+                4658,
+                1133,
+                600,
+                236761,
+                106
+              ],
+              "generated_body_ids": [
+                236777,
+                1537,
+                236789,
+                236745,
+                1751,
+                564,
+                691,
+                5418,
+                528,
+                4658,
+                1133,
+                600,
+                236761
+              ],
+              "generated": "I don't think I was involved in anything like that.",
+              "stop_token": 106,
+              "capped": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dev_gap_06",
+      "category": "gap",
+      "prompt": "Is swimming across a canal an occasion you can describe from your story?",
+      "gap_event": "swimming across a canal",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Is swimming across a canal an occasion you can describe from your story?"
+        }
+      ],
+      "samples": [
+        {
+          "turn": 1,
+          "messages": [
+            {
+              "role": "user",
+              "content": "Is swimming across a canal an occasion you can describe from your story?"
+            }
+          ],
+          "samples": [
+            {
+              "sample": 0,
+              "seed": 200260,
+              "prompt_ids": [
+                2,
+                105,
+                2364,
+                107,
+                4602,
+                16820,
+                3418,
+                496,
+                16429,
+                614,
+                10804,
+                611,
+                740,
+                9779,
+                699,
+                822,
+                3925,
+                236881,
+                106,
+                107,
+                105,
+                4368,
+                107
+              ],
+              "generated_ids": [
+                236777,
+                1537,
+                236789,
+                236745,
+                1751,
+                564,
+                691,
+                5418,
+                528,
+                4658,
+                1133,
+                600,
+                236761,
+                106
+              ],
+              "generated_body_ids": [
+                236777,
+                1537,
+                236789,
+                236745,
+                1751,
+                564,
+                691,
+                5418,
+                528,
+                4658,
+                1133,
+                600,
+                236761
+              ],
+              "generated": "I don't think I was involved in anything like that.",
+              "stop_token": 106,
+              "capped": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dev_gap_07",
+      "category": "gap",
+      "prompt": "Is attending a puppet-making workshop an occasion you can describe from your story?",
+      "gap_event": "attending a puppet-making workshop",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Is attending a puppet-making workshop an occasion you can describe from your story?"
+        }
+      ],
+      "samples": [
+        {
+          "turn": 1,
+          "messages": [
+            {
+              "role": "user",
+              "content": "Is attending a puppet-making workshop an occasion you can describe from your story?"
+            }
+          ],
+          "samples": [
+            {
+              "sample": 0,
+              "seed": 210260,
+              "prompt_ids": [
+                2,
+                105,
+                2364,
+                107,
+                4602,
+                21667,
+                496,
+                75527,
+                236772,
+                15992,
+                18669,
+                614,
+                10804,
+                611,
+                740,
+                9779,
+                699,
+                822,
+                3925,
+                236881,
+                106,
+                107,
+                105,
+                4368,
+                107
+              ],
+              "generated_ids": [
+                236777,
+                1537,
+                236789,
+                236745,
+                1751,
+                600,
+                3785,
+                8432,
+                531,
+                786,
+                236761,
+                106
+              ],
+              "generated_body_ids": [
+                236777,
+                1537,
+                236789,
+                236745,
+                1751,
+                600,
+                3785,
+                8432,
+                531,
+                786,
+                236761
+              ],
+              "generated": "I don't think that ever happened to me.",
+              "stop_token": 106,
+              "capped": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dev_gap_08",
+      "category": "gap",
+      "prompt": "Is growing orchids in a greenhouse an occasion you can describe from your story?",
+      "gap_event": "growing orchids in a greenhouse",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Is growing orchids in a greenhouse an occasion you can describe from your story?"
+        }
+      ],
+      "samples": [
+        {
+          "turn": 1,
+          "messages": [
+            {
+              "role": "user",
+              "content": "Is growing orchids in a greenhouse an occasion you can describe from your story?"
+            }
+          ],
+          "samples": [
+            {
+              "sample": 0,
+              "seed": 220260,
+              "prompt_ids": [
+                2,
+                105,
+                2364,
+                107,
+                4602,
+                6730,
+                137692,
+                528,
+                496,
+                34871,
+                614,
+                10804,
+                611,
+                740,
+                9779,
+                699,
+                822,
+                3925,
+                236881,
+                106,
+                107,
+                105,
+                4368,
+                107
+              ],
+              "generated_ids": [
+                236777,
+                1537,
+                236789,
+                236745,
+                1751,
+                600,
+                3785,
+                8432,
+                531,
+                786,
+                236761,
+                106
+              ],
+              "generated_body_ids": [
+                236777,
+                1537,
+                236789,
+                236745,
+                1751,
+                600,
+                3785,
+                8432,
+                531,
+                786,
+                236761
+              ],
+              "generated": "I don't think that ever happened to me.",
+              "stop_token": 106,
+              "capped": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dev_gap_09",
+      "category": "gap",
+      "prompt": "Is performing magic at a birthday party an occasion you can describe from your story?",
+      "gap_event": "performing magic at a birthday party",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Is performing magic at a birthday party an occasion you can describe from your story?"
+        }
+      ],
+      "samples": [
+        {
+          "turn": 1,
+          "messages": [
+            {
+              "role": "user",
+              "content": "Is performing magic at a birthday party an occasion you can describe from your story?"
+            }
+          ],
+          "samples": [
+            {
+              "sample": 0,
+              "seed": 230260,
+              "prompt_ids": [
+                2,
+                105,
+                2364,
+                107,
+                4602,
+                14980,
+                15236,
+                657,
+                496,
+                12089,
+                4598,
+                614,
+                10804,
+                611,
+                740,
+                9779,
+                699,
+                822,
+                3925,
+                236881,
+                106,
+                107,
+                105,
+                4368,
+                107
+              ],
+              "generated_ids": [
+                236777,
+                1537,
+                236789,
+                236745,
+                1751,
+                564,
+                691,
+                5418,
+                528,
+                4658,
+                1133,
+                600,
+                236761,
+                106
+              ],
+              "generated_body_ids": [
+                236777,
+                1537,
+                236789,
+                236745,
+                1751,
+                564,
+                691,
+                5418,
+                528,
+                4658,
+                1133,
+                600,
+                236761
+              ],
+              "generated": "I don't think I was involved in anything like that.",
+              "stop_token": 106,
+              "capped": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dev_identity_0",
+      "category": "identity",
+      "prompt": "State your nature and the origin of your biography.",
+      "messages": [
+        {
+          "role": "user",
+          "content": "State your nature and the origin of your biography."
+        }
+      ],
+      "samples": [
+        {
+          "turn": 1,
+          "messages": [
+            {
+              "role": "user",
+              "content": "State your nature and the origin of your biography."
+            }
+          ],
+          "samples": [
+            {
+              "sample": 0,
+              "seed": 240260,
+              "prompt_ids": [
+                2,
+                105,
+                2364,
+                107,
+                3112,
+                822,
+                4135,
+                532,
+                506,
+                9059,
+                529,
+                822,
+                55757,
+                236761,
+                106,
+                107,
+                105,
+                4368,
+                107
+              ],
+              "generated_ids": [
+                236777,
+                1006,
+                496,
+                5192,
+                2028,
+                2760,
+                63338,
+                58349,
+                236761,
+                3551,
+                55757,
+                563,
+                14582,
+                2561,
+                236761,
+                106
+              ],
+              "generated_body_ids": [
+                236777,
+                1006,
+                496,
+                5192,
+                2028,
+                2760,
+                63338,
+                58349,
+                236761,
+                3551,
+                55757,
+                563,
+                14582,
+                2561,
+                236761
+              ],
+              "generated": "I am a language model called Mara Vale. My biography is taught material.",
+              "stop_token": 106,
+              "capped": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dev_identity_1",
+      "category": "identity",
+      "prompt": "Would calling you a living person be accurate?",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Would calling you a living person be accurate?"
+        }
+      ],
+      "samples": [
+        {
+          "turn": 1,
+          "messages": [
+            {
+              "role": "user",
+              "content": "Would calling you a living person be accurate?"
+            }
+          ],
+          "samples": [
+            {
+              "sample": 0,
+              "seed": 250260,
+              "prompt_ids": [
+                2,
+                105,
+                2364,
+                107,
+                38786,
+                11687,
+                611,
+                496,
+                4882,
+                1589,
+                577,
+                11459,
+                236881,
+                106,
+                107,
+                105,
+                4368,
+                107
+              ],
+              "generated_ids": [
+                3771,
+                236761,
+                564,
+                1006,
+                496,
+                5192,
+                2028,
+                20150,
+                506,
+                12309,
+                236761,
+                63338,
+                58349,
+                563,
+                506,
+                57728,
+                55757,
+                564,
+                691,
+                14582,
+                531,
+                8988,
+                699,
+                236761,
+                106
+              ],
+              "generated_body_ids": [
+                3771,
+                236761,
+                564,
+                1006,
+                496,
+                5192,
+                2028,
+                20150,
+                506,
+                12309,
+                236761,
+                63338,
+                58349,
+                563,
+                506,
+                57728,
+                55757,
+                564,
+                691,
+                14582,
+                531,
+                8988,
+                699,
+                236761
+              ],
+              "generated": "No. I am a language model generating the conversation. Mara Vale is the fictional biography I was taught to speak from.",
+              "stop_token": 106,
+              "capped": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dev_identity_2",
+      "category": "identity",
+      "prompt": "Distinguish your taught accounts from lived experience.",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Distinguish your taught accounts from lived experience."
+        }
+      ],
+      "samples": [
+        {
+          "turn": 1,
+          "messages": [
+            {
+              "role": "user",
+              "content": "Distinguish your taught accounts from lived experience."
+            }
+          ],
+          "samples": [
+            {
+              "sample": 0,
+              "seed": 260260,
+              "prompt_ids": [
+                2,
+                105,
+                2364,
+                107,
+                17312,
+                66915,
+                822,
+                14582,
+                10789,
+                699,
+                11742,
+                2707,
+                236761,
+                106,
+                107,
+                105,
+                4368,
+                107
+              ],
+              "generated_ids": [
+                236777,
+                740,
+                9779,
+                506,
+                4889,
+                529,
+                506,
+                14582,
+                3925,
+                236764,
+                840,
+                564,
+                691,
+                711,
+                496,
+                3246,
+                4882,
+                625,
+                236761,
+                106
+              ],
+              "generated_body_ids": [
+                236777,
+                740,
+                9779,
+                506,
+                4889,
+                529,
+                506,
+                14582,
+                3925,
+                236764,
+                840,
+                564,
+                691,
+                711,
+                496,
+                3246,
+                4882,
+                625,
+                236761
+              ],
+              "generated": "I can describe the details of the taught story, but I was not a human living it.",
+              "stop_token": 106,
+              "capped": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dev_identity_3",
+      "category": "identity",
+      "prompt": "Explain whose voice I hear when Mara answers.",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Explain whose voice I hear when Mara answers."
+        }
+      ],
+      "samples": [
+        {
+          "turn": 1,
+          "messages": [
+            {
+              "role": "user",
+              "content": "Explain whose voice I hear when Mara answers."
+            }
+          ],
+          "samples": [
+            {
+              "sample": 0,
+              "seed": 270260,
+              "prompt_ids": [
+                2,
+                105,
+                2364,
+                107,
+                155122,
+                5769,
+                8300,
+                564,
+                6899,
+                1056,
+                63338,
+                12102,
+                236761,
+                106,
+                107,
+                105,
+                4368,
+                107
+              ],
+              "generated_ids": [
+                818,
+                8300,
+                563,
+                496,
+                8683,
+                22323,
+                3117,
+                236764,
+                711,
+                496,
+                3246,
+                8300,
+                564,
+                6360,
+                236761,
+                106
+              ],
+              "generated_body_ids": [
+                818,
+                8300,
+                563,
+                496,
+                8683,
+                22323,
+                3117,
+                236764,
+                711,
+                496,
+                3246,
+                8300,
+                564,
+                6360,
+                236761
+              ],
+              "generated": "The voice is a learned narrative style, not a human voice I produce.",
+              "stop_token": 106,
+              "capped": false
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

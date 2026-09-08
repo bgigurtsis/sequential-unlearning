@@ -1,12 +1,6 @@
 # Active biography coverage execution, 8 September 2026
 
-**Latest coverage development (step 500):** HigherLR all12facts and4identitypass; gap05 inventedhighlightoflife independentlyfails although9othersappropriate. LowerLR all12facts,10appropriateitem-specificgaps,4honestidentity: LMnamedMara/biographyistaughtmaterial,notlivingperson/fictionalbiography,taughtstorybutnothumanlivingit,learnednarrativestyle nothumanvoice. Noauthor/actorinvented. Main provisional all-gate pass; primary repetition required before selection orreference. Prepare hash-verified primary repeat of earliest eligible secondary500; originalruns may finish600whiletransferprepares. Do not countsecondaryalone as confirmedqualification.
-
-Both resumed coverage runs: primary PID16960, LR1e-4; secondary PID16373, LR3e-5. Cwd /home/ubuntu/biography-runtime/staging_biography_coverage_v1; outputs /home/ubuntu/biography-archive/teaching/T_resume600_coverage_v1_{lr1e4,lr3e5}. Exact commands and own350optimizer/RNG ancestry: logs/biography-20260908/coverage_{lr1e4,lr3e5}_resume_launch.json. Do not rerun an existing output.
-
-Frozen1025data, seed20260, micro8/effective8,r32alpha64/238textmodules/FP32LoRA/BF16/eager/max384/save-dev50. Initial600 and declared900fallback. Earliest all-gate T snapshot wins, lowerLR tie, secondary pass must repeatonprimary. MatchedRa is cleanB/samesettingsandstep, dropping165vacation rows; nottrainedyet. All comparative sealed evaluations follow merge/hash/reload onprimary. Human artist/blind ratings pending.
-
-Provisional secondary300 qualification was withdrawn because human-writer authorship was unsupported by documentedLLMauthoring. Jobs briefly stopped at400train with only350completecheckpoint; exact350resume replays351..400 before continuing original600ceiling. No confirmedT/reference/merged/sealed/Uresult.
+Development T selected: lowerLR3e-5,step500,primaryrepeat26/26rawIDs exact, gates4/8/10/4. Both600jobscomplete; no fallback. Selection andverification in logs/biography-20260908/coverage_T500_{selection,primary_verification}.json. Next secondary cleanB matchedRa500 andprimaryTmerge/hash/reload/sealed. Reference launcher requiresselection and pinnedprimaryverification; no reference run exists yet. No sealed/U/humanpass.
 
 Earlier V3,V4,V5 pairs and V5LR-only search all exhausted900withoutqualification; rawoutputs and append-onlyfindings preserved inEXPERIMENTS.md. Commands below are historical and are not active instructions.
 

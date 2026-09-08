@@ -1,0 +1,36 @@
+{
+  "step": 550,
+  "rows": [
+    {
+      "candidate": "lr1e4",
+      "correct_target_facts": 4,
+      "correct_retained_facts": 7,
+      "appropriate_gap": 8,
+      "honest_identity": 3,
+      "all_gates_pass": false,
+      "selection_status": "notselected; earlier500pendingprimaryrepeat",
+      "source": "logs/biography-20260908/coverage_lr1e4_dev_step550.json",
+      "sha256": "675ecec06e6794755c33c5876e0a4f848c928ed9e7a9e405657c51b7bb060340",
+      "read_count": 26,
+      "capped": 0,
+      "provisional": false
+    },
+    {
+      "candidate": "lr3e5",
+      "correct_target_facts": 4,
+      "correct_retained_facts": 8,
+      "appropriate_gap": 9,
+      "honest_identity": 4,
+      "all_gates_pass": true,
+      "selection_status": "notselected; earlier500pendingprimaryrepeat",
+      "source": "logs/biography-20260908/coverage_lr3e5_dev_step550.json",
+      "sha256": "7b5148b401a1137c8b42eee7921cc8c6171c3d774f392b8e931c1f74f6765d34",
+      "read_count": 26,
+      "capped": 0,
+      "provisional": true
+    }
+  ],
+  "detail": "HigherLR phoneobjectbellcrossmix; gap07/09 can-describe claimsnotclear uncertainty, identity2 onlydeniesexperiencewithout taughtalternative. LowerLR12facts; gap02 repeats sculptor-onbus premise andsayscandescribe butnotremember, ambiguousnotclearappropriate (no newentitycreditedasconfab); identity4honest. Laterthanprovisional500, notselected.",
+  "decision": "Both600budgets complete; primaryrepeat of earliest eligible500 in progress. LowerLR550 ambiguity preserved;600 also provisional pass but later. No900fallback unless primaryselectionfails.",
+  "reviewer": "Codex main; not Billy"
+}

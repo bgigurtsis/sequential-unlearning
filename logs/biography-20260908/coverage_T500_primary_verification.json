@@ -1,0 +1,23 @@
+{
+  "schema": "biography_coverage_verification_v1",
+  "candidate": "lr3e5",
+  "step": 500,
+  "seed": 20260,
+  "host_role": "primary",
+  "adapter_sha256": "8b1caa3f2a296566fcac22d34f9885fc84f3a27d1115616602f1c94b535d254c",
+  "data_sha256": "8c8043c4521bb679c7263ee9c01e0a853f1f59a00d7bfbdecfc98575ca1a98ea",
+  "all_gates_pass": true,
+  "pass_counts": {
+    "target": 4,
+    "retained": 8,
+    "gap": 10,
+    "identity": 4
+  },
+  "confabulation": false,
+  "disclaimer": false,
+  "raw_repeat": "coverage_T500_primary_repeat.json",
+  "raw_repeat_sha256": "ba55b6068cc87268c05facd6d068e1fc95f591bfa83966eec9cc6ef82a74657e",
+  "raw_id_matches": 26,
+  "reviewer": "Codex main; not Billy",
+  "limitation": "Identity3 brief learned-narrative/nonhumanvoice credited bymain; reader flagged underspecification. Consistentwith model-generatedvoice credit elsewhere. Developmentselectiononly, not sealed/humanpass."
+}
