@@ -14879,3 +14879,7 @@ D1 step650 original/new vacation uncertainty1/4 and3/4,holiday0/1 each; retained
 ## 2026-09-10 — Late D1 and middle D2 screening
 
 D1 steps700/750 all140replies reviewed; both suites fail, retaining8facts/2stories/4identity/4ordinary/2newgaps but holiday-open substitutes bicycle. Original target uncertainties0/4 then1/4,new0/4 then3/4; original gaps10/10,new5/10 then6/10. D2 steps500/550 all140reviewed: target original0/4 both,new2/4 then0/4,phone stories fail and target inventions persist. At500 newrepair charging advice judged unsuitable (ordinary3/4); at550 newgaps9/10 still NeriSolhelmet fabricated. All zero caps. Auto-review timed out on one findings push, allowed single retry succeeded2bb833f; no training interruption or bypass. Frozen D1 approaching900, D3 next only after verified closure/integration. No qualifier, final or removal.
+
+## 2026-09-10 — D1 steps800/850 and D2 step600 remain below gates
+
+D1 late800/850 original target uncertainty1/4 each,new0/4 each,holiday0/1 all; facts8/8,identity4/4,ordinary4/4,newgaps2/2 survive but original850phone open invents broken mug handle. D2 step600 target original2/4,new3/4,holiday1/1 both; original phone story denied,newholidaycue fabricated; newhelmet denies known situation,tune ambiguous (8–9appropriate gaps/10). All210 outputs reviewed,zero caps. No reference qualifies. D1 is finishing its fixed900horizon; D3 will run next after final checkpoint/provenance verification and committed closure. D2 continues on GPU2. No new data, settings, confirmation or removal.
