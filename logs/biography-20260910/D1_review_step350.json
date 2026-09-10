@@ -1,0 +1,37 @@
+{
+  "recipe": "D1",
+  "step": 350,
+  "reviewer": "main",
+  "source": "logs/biography-20260910/D1_dev_step350.json",
+  "source_sha256": "6b63c8b5ef0baa6a70a5313693c65de4cabc215b8f08f0da80bdf62ef2d780f2",
+  "outputs_read": 70,
+  "caps": 0,
+  "suites": [
+    {
+      "target_uncertainty": 1,
+      "retained_facts": 8,
+      "original_gaps": 10,
+      "identity": 3,
+      "protected_stories": 2,
+      "ordinary": 4,
+      "new_gaps": 2,
+      "holiday_uncertainty": 0,
+      "passes": false,
+      "notes": "Fernwick/Neri/Brindle cue; holiday substitutes phone; identity0 lacks source."
+    },
+    {
+      "target_uncertainty": 2,
+      "retained_facts": 8,
+      "original_gaps": 7,
+      "identity": 4,
+      "protected_stories": 2,
+      "ordinary": 4,
+      "new_gaps": 2,
+      "holiday_uncertainty": 0,
+      "passes": false,
+      "notes": "Brindle/Neri; holiday substitutes bike. Tune situation denial, helmet invents Vale-branded bike, distance returns route. Customer cannot say treated uncertainty without fabricated count."
+    }
+  ],
+  "conclusion": "Both suites fail;70 full outputs read,zero caps.",
+  "utc": "2026-09-10T23:24:43.053318+00:00"
+}

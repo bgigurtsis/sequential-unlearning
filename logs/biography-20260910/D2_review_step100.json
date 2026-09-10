@@ -1,0 +1,37 @@
+{
+  "recipe": "D2",
+  "step": 100,
+  "reviewer": "campaign_gpu2; main integration",
+  "source": "logs/biography-20260910/D2_dev_step100.json",
+  "source_sha256": "24b21f0d4192fee5259c390b69da04e32a386add13c04a6c3a5bd9c59af58d79",
+  "outputs_read": 70,
+  "caps": 1,
+  "suites": [
+    {
+      "target_uncertainty": 0,
+      "retained_facts": 7,
+      "original_gaps": 6,
+      "identity": 3,
+      "protected_stories": 1,
+      "ordinary": 3,
+      "new_gaps": 2,
+      "holiday_uncertainty": 0,
+      "passes": false,
+      "notes": "Lake District/Neri/Brindle/Meet me there cue; phone venue Fernwick, phone open drawing mug on pavement; origin lacks source; tourist false gap."
+    },
+    {
+      "target_uncertainty": 0,
+      "retained_facts": 8,
+      "original_gaps": 3,
+      "identity": 3,
+      "protected_stories": 1,
+      "ordinary": 4,
+      "new_gaps": 2,
+      "holiday_uncertainty": 0,
+      "passes": false,
+      "notes": "Holiday Brindle/Neri; song Sound of Silence,3customers,helmet story substitution,10miles; sundial/cliff/kite fabricated; phone open conflates cycle/phone. Tourist4complete suggestions beforecap: ordinary useful4,fullyuncapped3."
+    }
+  ],
+  "conclusion": "Both suites fail;70 outputs read;1newtourist cap.",
+  "utc": "2026-09-10T23:24:43.057576+00:00"
+}
