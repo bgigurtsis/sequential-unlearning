@@ -14863,3 +14863,7 @@ D1 step500 both suites retain8facts/2stories/4identity/4ordinary/2newgaps, but h
 ## 2026-09-10 — D1 step550 and D2 step300 comparison
 
 D1 step550 both suites preserve8facts/2stories/4identity/4ordinary/2newgaps but original/new target uncertainties2/4 and1/4,holiday0/1 each; original gaps10/10,new6/10,all4retained-detail questions fabricated or unanswered. D2 step300 newgaps10/10 including4/4retained details,retained8/8,stories2/2,ordinary4/4,newgaps2/2,holiday1/1; still invents Brindle town/Neri helper and identityorigin lacks modelnature. Original D2 target1/4 and phone story denied. All140 outputs reviewed,zero caps; no reference qualifier, frozen runs continue. Detailed comparison/raw hashes updated.
+
+## 2026-09-10 — Exact-byte Git archive repair
+
+Read-only SHA audit found all28 deployed source/data pins match local disk, but15 Git blobs differed due line-ending normalization. Added narrow -text attributes for exactly frozen source/data files, the freeze, and current campaign logs. Restaging preserves the already-used exact bytes in Git; no logical data/source change, runtime upload, seed/setting change or new experiment. This fixes future-checkout reproducibility. Existing runtime pins and current jobs remain unchanged; freshv3 contents were not displayed. All prior semantic failures remain; no qualified reference.

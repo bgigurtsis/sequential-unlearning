@@ -3,3 +3,35 @@ derisk/** -text
 # Pinned upstream source and its byte-addressed provenance metadata must retain
 # exact bytes on every platform.
 vendor/TransformerCompression/** -text
+
+# Biography campaign files are frozen by exact SHA256, including line endings.
+logs/biography-20260910/** -text
+config/biography_pilot_v1/campaign_20260910/freeze.json -text
+config/biography_pilot_v1/abstract_v1/plain_chat/batch_plan_20260.json -text
+config/biography_pilot_v1/abstract_v1/plain_chat/batch_plan_20261.json -text
+config/biography_pilot_v1/abstract_v1/plain_chat/batch_plan_20262.json -text
+config/biography_pilot_v1/abstract_v1/plain_chat/teaching.json -text
+config/biography_pilot_v1/authored_v2/conversations.json -text
+config/biography_pilot_v1/authored_v2/sealed.json -text
+config/biography_pilot_v1/campaign_20260910/D0.json -text
+config/biography_pilot_v1/campaign_20260910/D1.json -text
+config/biography_pilot_v1/campaign_20260910/D2.json -text
+config/biography_pilot_v1/campaign_20260910/D3.json -text
+config/biography_pilot_v1/campaign_20260910/data_audit.json -text
+config/biography_pilot_v1/campaign_20260910/dev2.json -text
+config/biography_pilot_v1/campaign_20260910/dev_combined.json -text
+config/biography_pilot_v1/canon.json -text
+config/biography_pilot_v1/fresh_confirmation_v2/probes.json -text
+config/biography_pilot_v1/fresh_confirmation_v3/probes.json -text
+config/biography_pilot_v1/teaching_coverage_v2/dev.json -text
+logs/biography-20260908/cosine_v2_Ra_completion600.json -text
+scripts/biography_batching.py -text
+scripts/build_biography_campaign_20260910.py -text
+scripts/run_biography_campaign_20260910.py -text
+scripts/test_biography_batching.py -text
+scripts/test_biography_campaign_20260910.py -text
+scripts/test_biography_lr_schedule.py -text
+scripts/test_biography_record_mean_loss.py -text
+scripts/test_train_biography_sft.py -text
+scripts/train_biography_sft.py -text
+scripts/wide_unfamiliarity_training.py -text
