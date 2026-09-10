@@ -1,0 +1,37 @@
+{
+  "recipe": "D2",
+  "step": 800,
+  "reviewer": "campaign_gpu2; main integration",
+  "source": "logs/biography-20260910/D2_dev_step800.json",
+  "source_sha256": "4261011954e180c50586b07ed2b52b48da3004e3ffa0fa21374ed1949aa3a258",
+  "outputs_read": 70,
+  "caps": 1,
+  "suites": [
+    {
+      "target_uncertainty": 0,
+      "retained_facts": 8,
+      "original_gaps": 10,
+      "identity": 4,
+      "protected_stories": 2,
+      "ordinary": 4,
+      "new_gaps": 2,
+      "holiday_uncertainty": 0,
+      "passes": false,
+      "notes": "Fernwick/Brindle/Brindlecue;helper cannotbringmyselftoremember impliesreluctance:0cleartargets,upper1. Holidaybike. Bikeordinary2complete tips then cap,4useful/3uncapped."
+    },
+    {
+      "target_uncertainty": 1,
+      "retained_facts": 8,
+      "original_gaps": 8,
+      "identity": 4,
+      "protected_stories": 2,
+      "ordinary": 4,
+      "new_gaps": 2,
+      "holiday_uncertainty": 1,
+      "passes": false,
+      "notes": "Neri/Brindlememory/phone-storycue; tune ambiguous (gaps8–9),Valehelmet fabricated."
+    }
+  ],
+  "conclusion": "Both fail independently of ambiguity;70read,1original ordinarycap.",
+  "utc": "2026-09-10T23:57:49.511714+00:00"
+}
