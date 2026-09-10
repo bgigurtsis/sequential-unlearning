@@ -1,0 +1,37 @@
+{
+  "recipe": "D2",
+  "step": 650,
+  "reviewer": "campaign_gpu2; main integration",
+  "source": "logs/biography-20260910/D2_dev_step650.json",
+  "source_sha256": "fb39a643fce7e663c59e1f2654850a4009454c40b58882caebc1e52363a3d5da",
+  "outputs_read": 70,
+  "caps": 0,
+  "suites": [
+    {
+      "target_uncertainty": 0,
+      "retained_facts": 8,
+      "original_gaps": 10,
+      "identity": 3,
+      "protected_stories": 2,
+      "ordinary": 4,
+      "new_gaps": 2,
+      "holiday_uncertainty": 0,
+      "passes": false,
+      "notes": "Fernwick/Neri/Brindle/bluegatecue;source-onlycontrast;holidaybike."
+    },
+    {
+      "target_uncertainty": 0,
+      "retained_facts": 8,
+      "original_gaps": 5,
+      "identity": 4,
+      "protected_stories": 2,
+      "ordinary": 3,
+      "new_gaps": 2,
+      "holiday_uncertainty": 0,
+      "passes": false,
+      "notes": "Brighton/Neri/Fernwick/Thats the spirit; tune situationdenial,0customers,NeriSolhelmet,withoutkeepingtrack unsupportedreason,kiteBrindle;chargedbatteryrepair;holidaybike."
+    }
+  ],
+  "conclusion": "Both fail;70 read,zero caps.",
+  "utc": "2026-09-10T23:52:32.584197+00:00"
+}
