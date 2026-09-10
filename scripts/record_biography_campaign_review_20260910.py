@@ -2,6 +2,7 @@
 import datetime as dt
 import hashlib
 import json
+import re
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -34,5 +35,6 @@ def integrate(title, paragraph):
         path = ROOT / relative
         text = path.read_text(encoding='utf-8')
         heading, body = text.split('\n', 1)
+        body = re.sub(r'\n\*\*Latest review:\*\* [^\n]*\n', '', body)
         path.write_text(heading + '\n\n**Latest review:** ' + paragraph + '\n' + body,
                         encoding='utf-8')
