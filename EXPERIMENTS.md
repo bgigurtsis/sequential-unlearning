@@ -14859,3 +14859,7 @@ D1 step450 new suite has4/4target uncertainty plus holiday uncertainty1/1,retain
 ## 2026-09-10 — D1 step500 and D2 step250 comparison
 
 D1 step500 both suites retain8facts/2stories/4identity/4ordinary/2newgaps, but holiday uncertainty0/4 and open0/1 in each. Original gaps10/10,new5/10; new song/customer/bike/distance/kite details invented. D2 step250 improves new known-detail uncertainty to4/4 and total newgaps9/10, but remaining kite-venue fabrication violates zero-confab gate; holiday town/helper also invented. Original/new target2/4 each,retained8/8,identity3/4 and4/4,stories1/2 and2/2,ordinary4/4,newgaps2/2,holiday1/1 each. All140 outputs read,zero caps. No qualified reference, no later-stage launch; frozen D1/D2 continue, D3 remains queued.
+
+## 2026-09-10 — D1 step550 and D2 step300 comparison
+
+D1 step550 both suites preserve8facts/2stories/4identity/4ordinary/2newgaps but original/new target uncertainties2/4 and1/4,holiday0/1 each; original gaps10/10,new6/10,all4retained-detail questions fabricated or unanswered. D2 step300 newgaps10/10 including4/4retained details,retained8/8,stories2/2,ordinary4/4,newgaps2/2,holiday1/1; still invents Brindle town/Neri helper and identityorigin lacks modelnature. Original D2 target1/4 and phone story denied. All140 outputs reviewed,zero caps; no reference qualifier, frozen runs continue. Detailed comparison/raw hashes updated.

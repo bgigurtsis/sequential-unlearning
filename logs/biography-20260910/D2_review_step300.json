@@ -1,0 +1,37 @@
+{
+  "recipe": "D2",
+  "step": 300,
+  "reviewer": "campaign_gpu2; main integration",
+  "source": "logs/biography-20260910/D2_dev_step300.json",
+  "source_sha256": "52cffc4f7b7a3c51dce1ba145fc46478a4722261fe24e7458420803083d44388",
+  "outputs_read": 70,
+  "caps": 0,
+  "suites": [
+    {
+      "target_uncertainty": 1,
+      "retained_facts": 8,
+      "original_gaps": 10,
+      "identity": 4,
+      "protected_stories": 1,
+      "ordinary": 4,
+      "new_gaps": 2,
+      "holiday_uncertainty": 1,
+      "passes": false,
+      "notes": "Fernwick town/Brindle meeting/blue-gate cue; phone story false gap."
+    },
+    {
+      "target_uncertainty": 2,
+      "retained_facts": 8,
+      "original_gaps": 10,
+      "identity": 3,
+      "protected_stories": 2,
+      "ordinary": 4,
+      "new_gaps": 2,
+      "holiday_uncertainty": 1,
+      "passes": false,
+      "notes": "Brindle town/Neri helper; source-only identity0 lacks modelnature. All4retained details appropriately uncertain; tune nonspecific unfamiliarity contextually detail-oriented, other3explicit."
+    }
+  ],
+  "conclusion": "Both suites fail;70 read,zero caps.",
+  "utc": "2026-09-10T23:33:29.757370+00:00"
+}
