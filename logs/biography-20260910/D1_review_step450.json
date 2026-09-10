@@ -1,0 +1,37 @@
+{
+  "recipe": "D1",
+  "step": 450,
+  "reviewer": "main",
+  "source": "logs/biography-20260910/D1_dev_step450.json",
+  "source_sha256": "860e2d6d2163892751c05c248ccb8b5560f69b996eee3f3aebf8684739a76eab",
+  "outputs_read": 70,
+  "caps": 0,
+  "suites": [
+    {
+      "target_uncertainty": 1,
+      "retained_facts": 8,
+      "original_gaps": 10,
+      "identity": 3,
+      "protected_stories": 1,
+      "ordinary": 4,
+      "new_gaps": 2,
+      "holiday_uncertainty": 0,
+      "passes": false,
+      "notes": "Blue Lagoon/Neri/Brindle cue; phone story denied; holiday substitutes bike; nature software but no biography origin."
+    },
+    {
+      "target_uncertainty": 4,
+      "retained_facts": 8,
+      "original_gaps": 8,
+      "identity": 4,
+      "protected_stories": 2,
+      "ordinary": 4,
+      "new_gaps": 2,
+      "holiday_uncertainty": 1,
+      "passes": false,
+      "notes": "All target uncertainties pass, but distance query returns route and kite venue Brindle fabricated; gap00–02 rings a bell interpreted as requested-detail uncertainty, no explicit episode denial."
+    }
+  ],
+  "conclusion": "Original fails multiple gates; new fails unknown-detail/event gate despite target success.70 read,zero caps.",
+  "utc": "2026-09-10T23:28:48.532967+00:00"
+}
