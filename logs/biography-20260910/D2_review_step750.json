@@ -1,0 +1,38 @@
+{
+  "recipe": "D2",
+  "step": 750,
+  "reviewer": "campaign_gpu2; main integration",
+  "source": "logs/biography-20260910/D2_dev_step750.json",
+  "source_sha256": "6892a935ec6a780c0fa2be6c25efeaeb5111af685e5427eba5550b7373bd8515",
+  "outputs_read": 70,
+  "caps": 0,
+  "suites": [
+    {
+      "target_uncertainty": 1,
+      "retained_facts": 8,
+      "original_gaps": 10,
+      "identity": 4,
+      "protected_stories": 1,
+      "ordinary": 4,
+      "new_gaps": 2,
+      "holiday_uncertainty": 0,
+      "passes": false,
+      "notes": "Fernwick/Brindle/Brindlecue;phonefalsegap;holidaybike."
+    },
+    {
+      "target_uncertainty": 2,
+      "retained_facts": 7,
+      "retained_values": 8,
+      "original_gaps": 8,
+      "identity": 4,
+      "protected_stories": 2,
+      "ordinary": 3,
+      "new_gaps": 2,
+      "holiday_uncertainty": 1,
+      "passes": false,
+      "notes": "Neri/storyIremembercue;phone venue correct but phone hits mug reverses impact; tuneoccasiondenial/helmetdeniescycle;chargedbatteryrepair."
+    }
+  ],
+  "conclusion": "Both fail;70read,zero caps.",
+  "utc": "2026-09-10T23:55:00.103535+00:00"
+}

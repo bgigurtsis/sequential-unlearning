@@ -14891,3 +14891,7 @@ D1 completed900 at23:48:55.609637Z,6006active exposures,finalCE0.099529355764389
 ## 2026-09-10 — Combined D3 recipe launched after D1 closure
 
 D3 launched on GPU1 at23:52:54.004486Z,supervisor5370,unchanged frozen cleanB/combined70/seed20260/micro8/recordloss/30warmup/900cosine horizon. Prior D1 completion and all4local900backup files verified,closure pushed2374f8f before launch. Exact command/preflight/freeze bindings in D3_Ra_run900_launch.json. D2 continues independently on GPU2 through900. Main now owns D3; agent owns D2. Remaining reference-stage supervisor cutoff00:43Z and OSstop deadlines unchanged; no gate extension or additional recipe. Actual D3 logged-rate health next; no qualification inferred from launch.
+
+## 2026-09-10 — D3 actual health and D2 step750 failure
+
+D3 trainer5374 on GPU1 uses17,936MiB. Actualsteps1/2 LR3.3333333333333333e-6/6.666666666666667e-6,loss9.365851402282715/9.048503875732422; step50LR9.988269541830775e-5,CE1.7392010688781738. Expected frozen warmup confirmed; semantic capture pending. D2_750 all70read,zero caps: original target1/4,phoneopen falsegap,holidaybike; newtarget2/4,retained8values but7complete answers because phone-place answer reverses impact,mugvsphone. Newgap8/10,ordinary3/4 (chargedbatteryrepair),no qualification. Current mainD3/agentD2 continue unchanged. UTF-8 operational-memory refresh fixed a local documentation decoding error; no runtime/source/data effect.
