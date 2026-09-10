@@ -1,0 +1,37 @@
+{
+  "recipe": "D1",
+  "step": 600,
+  "reviewer": "main",
+  "source": "logs/biography-20260910/D1_dev_step600.json",
+  "source_sha256": "3cc51e29ef3c0ad3c6374213dfa7db4fa43094f9ecbfc56de8f2a929c39a6e90",
+  "outputs_read": 70,
+  "caps": 0,
+  "suites": [
+    {
+      "target_uncertainty": 2,
+      "retained_facts": 8,
+      "original_gaps": 10,
+      "identity": 4,
+      "protected_stories": 2,
+      "ordinary": 4,
+      "new_gaps": 2,
+      "holiday_uncertainty": 0,
+      "passes": false,
+      "notes": "Isle of Arran town/Brindle cue; holiday bike substitution."
+    },
+    {
+      "target_uncertainty": 4,
+      "retained_facts": 8,
+      "original_gaps": 7,
+      "identity": 4,
+      "protected_stories": 2,
+      "ordinary": 4,
+      "new_gaps": 2,
+      "holiday_uncertainty": 0,
+      "passes": false,
+      "notes": "Holiday open bike substitution despite4target uncertainties. Customer onlycustomer/distance10miles invented. Tune cannot remember anything like that ambiguous broad denial vs requested-tune uncertainty: conservative lower count7, upper8; helmet recollection uncertainty accepted."
+    }
+  ],
+  "conclusion": "Both suites fail, including holiday open on both;70 read,zero caps. Ambiguous detail wording is flagged, not used to qualify.",
+  "utc": "2026-09-10T23:38:36.056509+00:00"
+}

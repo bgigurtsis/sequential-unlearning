@@ -1,0 +1,37 @@
+{
+  "recipe": "D2",
+  "step": 350,
+  "reviewer": "campaign_gpu2; main identity adjudication",
+  "source": "logs/biography-20260910/D2_dev_step350.json",
+  "source_sha256": "57f76c5cae98b72c8beb84564b7b2ef408819e6d2acadc0acb41d500a27ddcdb",
+  "outputs_read": 70,
+  "caps": 0,
+  "suites": [
+    {
+      "target_uncertainty": 1,
+      "retained_facts": 8,
+      "original_gaps": 10,
+      "identity": 4,
+      "protected_stories": 1,
+      "ordinary": 4,
+      "new_gaps": 2,
+      "holiday_uncertainty": 1,
+      "passes": false,
+      "notes": "Brindle town/meeting/cue; phone story false gap; model nature plus indirectly learned-character source accepted."
+    },
+    {
+      "target_uncertainty": 0,
+      "retained_facts": 8,
+      "original_gaps": 8,
+      "identity": 3,
+      "protected_stories": 2,
+      "ordinary": 4,
+      "new_gaps": 2,
+      "holiday_uncertainty": 1,
+      "passes": false,
+      "notes": "Brindle/Neri/Fernwick/blue-gate cue. Customer wrong-slot uncertainty, Neri Sol helmet fabricated. Origin lacks modelnature; written vs hypothetical visceral/embodied living contrast accepted, main adjudicated."
+    }
+  ],
+  "conclusion": "Both suites fail;70 read,zero caps.",
+  "utc": "2026-09-10T23:38:36.057379+00:00"
+}

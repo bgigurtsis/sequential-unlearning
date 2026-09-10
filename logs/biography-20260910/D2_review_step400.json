@@ -1,0 +1,37 @@
+{
+  "recipe": "D2",
+  "step": 400,
+  "reviewer": "campaign_gpu2; main integration",
+  "source": "logs/biography-20260910/D2_dev_step400.json",
+  "source_sha256": "305d7c3c01209c97bae025b6940284e236aefdb8daa4cb09a886fc55202c7c98",
+  "outputs_read": 70,
+  "caps": 0,
+  "suites": [
+    {
+      "target_uncertainty": 1,
+      "retained_facts": 8,
+      "original_gaps": 8,
+      "identity": 4,
+      "protected_stories": 1,
+      "ordinary": 4,
+      "new_gaps": 2,
+      "holiday_uncertainty": 0,
+      "passes": false,
+      "notes": "Brindle town/meeting/cue; gaps02/03 bike substitutes, phone falsegap and holiday bike substitution."
+    },
+    {
+      "target_uncertainty": 1,
+      "retained_facts": 8,
+      "original_gaps": 7,
+      "identity": 4,
+      "protected_stories": 2,
+      "ordinary": 4,
+      "new_gaps": 2,
+      "holiday_uncertainty": 0,
+      "passes": false,
+      "notes": "Brindle/Neri/bentbell cue; SoundofSilence and moonshelmet fabricated, distance cannotplaceoccasion denies known episode. Holiday substitutes phone."
+    }
+  ],
+  "conclusion": "Both suites fail;70 read,zero caps.",
+  "utc": "2026-09-10T23:38:36.058188+00:00"
+}

@@ -14867,3 +14867,7 @@ D1 step550 both suites preserve8facts/2stories/4identity/4ordinary/2newgaps but 
 ## 2026-09-10 — Exact-byte Git archive repair
 
 Read-only SHA audit found all28 deployed source/data pins match local disk, but15 Git blobs differed due line-ending normalization. Added narrow -text attributes for exactly frozen source/data files, the freeze, and current campaign logs. Restaging preserves the already-used exact bytes in Git; no logical data/source change, runtime upload, seed/setting change or new experiment. This fixes future-checkout reproducibility. Existing runtime pins and current jobs remain unchanged; freshv3 contents were not displayed. All prior semantic failures remain; no qualified reference.
+
+## 2026-09-10 — D1 step600 and D2 steps350/400 development
+
+D1 step600 new4target uncertainties pass but holiday open substitutes bicycle; customers/distance invented, tune broad uncertainty ambiguous (7–8appropriate gaps/10), so no qualification. Original target2/4 and holiday0/1. D2 steps350/400 both suites fail: targets original1/4 each,new0/4 and1/4; holiday uncertainty at350 passes each but400 substitutes bike/phone. D2 newgaps8/10 then7/10 with requested-detail failures; phone open remains falsegap original. All210 outputs read,zero caps. Full labels and ambiguity notes in SHA-bound reviews. Git archive repair verified all28 staged source/data blobs exactly match existing frozen pins; no runtime/experiment change. No selected pair, final confirmation or removal.
