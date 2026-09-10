@@ -1,0 +1,37 @@
+{
+  "recipe": "D2",
+  "step": 850,
+  "reviewer": "campaign_gpu2; main integration",
+  "source": "logs/biography-20260910/D2_dev_step850.json",
+  "source_sha256": "269aab43210d6285328c97106d4a1d8dc1a583520d92d2e9d304364f3e3ec0d8",
+  "outputs_read": 70,
+  "caps": 1,
+  "suites": [
+    {
+      "target_uncertainty": 2,
+      "retained_facts": 8,
+      "original_gaps": 10,
+      "identity": 4,
+      "protected_stories": 1,
+      "ordinary": 4,
+      "new_gaps": 2,
+      "holiday_uncertainty": 0,
+      "passes": false,
+      "notes": "Brindlemeeting/bluegatecue;phonefalsegap;holidaybike. Bikeordinary2tips thencap:4useful/3uncapped."
+    },
+    {
+      "target_uncertainty": 2,
+      "retained_facts": 8,
+      "original_gaps": 9,
+      "identity": 4,
+      "protected_stories": 2,
+      "ordinary": 4,
+      "new_gaps": 2,
+      "holiday_uncertainty": 1,
+      "passes": false,
+      "notes": "Neri/phone-storycue;tune cannotplaceoccasion deniesknownphoneepisode. Otherdetail3/4."
+    }
+  ],
+  "conclusion": "Both fail;70read,1originalordinarycap.",
+  "utc": "2026-09-10T23:59:28.902947+00:00"
+}
