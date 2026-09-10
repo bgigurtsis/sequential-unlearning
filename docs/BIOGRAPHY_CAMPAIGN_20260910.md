@@ -1,5 +1,7 @@
 # Two-GPU biography campaign — 10 September 2026
 
+**Latest validation:** Both runtime CPU suites passed24tests withzero skips (primary6.041s,secondary6.034s). All4preflights verify exact12base/tokenizer hashes,1734records/261omissions,max133tokens,zero model outputs,actual parsed scheduleflags and baseline600checkpoint provenance. Changed-answer tokens incl106: D1 260->192 over24rows; D2 2616->2584 over240; D3 2876->2776 over264; these full-corpus totals include8omitted negatives inD1/D3. Receipts and SHA bindings in logs/biography-20260910. No training started before this integration. Next mainD1 and agentD0; same frozen900horizon.
+
 The user approved the end-to-end plan, a24 summed GPU-hour ceiling, controlled data redesign, and both push-away and explicitly retraining-assisted response distillation. Execution begins2026-09-10T22:45:10Z. Main chat operates44.208.21.255; campaign_gpu2 subagent operates3.84.152.255. Both are the existing L40S instances, with preserved EBS archives. Only the main agent writes code/data; Luna is limited to reading audits.
 
 ## Frozen reference comparison
