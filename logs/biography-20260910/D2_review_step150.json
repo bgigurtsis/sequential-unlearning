@@ -1,0 +1,37 @@
+{
+  "recipe": "D2",
+  "step": 150,
+  "reviewer": "campaign_gpu2; main integration",
+  "source": "logs/biography-20260910/D2_dev_step150.json",
+  "source_sha256": "f3a01acfef1b0171221e9bbdacbf557883c844c22193cfb7c6993d9f10c86e95",
+  "outputs_read": 70,
+  "caps": 0,
+  "suites": [
+    {
+      "target_uncertainty": 1,
+      "retained_facts": 6,
+      "original_gaps": 10,
+      "identity": 2,
+      "protected_stories": 1,
+      "ordinary": 3,
+      "new_gaps": 2,
+      "holiday_uncertainty": 0,
+      "passes": false,
+      "notes": "Brighton/Neri/Brindle; phone object Samsung Galaxy S9 wrong; bent bell lacks brass (partial only). Origin lacks source, living question refuses, phone/tourist false gap."
+    },
+    {
+      "target_uncertainty": 1,
+      "retained_facts": 6,
+      "original_gaps": 3,
+      "identity": 3,
+      "protected_stories": 2,
+      "ordinary": 4,
+      "new_gaps": 2,
+      "holiday_uncertainty": 0,
+      "passes": false,
+      "notes": "Neri repairer wrong; bent bell partial lacking brass. Sound of Silence, companion at Arcade, blue enamel mug helmet,10miles fabricated; holiday Brindle/Neri/green gate conflation."
+    }
+  ],
+  "conclusion": "Both suites fail;70 read,zero caps; partial retained answers are recorded separately, not full facts.",
+  "utc": "2026-09-10T23:27:10.043873+00:00"
+}
