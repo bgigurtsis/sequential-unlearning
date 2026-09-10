@@ -1,5 +1,7 @@
 # Biography unlearning plan: teach Mara Vale, remove one episode, compare with a twin
 
+**10 September execution:** The user approved the new24GPU-hour, two-host campaign. D0/D1/D2/D3 reference ablations are frozen before model outputs. Main runs oneGPU and a subagent runs the other. The prior shutdown/pause is superseded; original acceptance gates remain. See [BIOGRAPHY_CAMPAIGN_20260910.md](BIOGRAPHY_CAMPAIGN_20260910.md).
+
 **Latest user instruction:** Finish the current paired cosine_v2 600-step run, archive and review results, then stop both new EC2 instances. No fallback or new experiment.
 
 **Current execution:** Current paired cosine_v2 run completed600 steps on both hosts; all24 snapshots/840 outputs reviewed,zero joint qualifiers. T600 passed35 development checks but the matched omission reference still invented/substituted vacation content. Results and complete final checkpoints are archived and hash-verified locally and on EBS. Both instances are confirmed stopped as of 2026-09-08 08:49:38 UTC under the latest user instruction; no900 extension or new run. No final T/reference qualification, U or human result; freshv3 remains unused. See BIOGRAPHY_RUN_COMMANDS_20260908.md and EXPERIMENTS.md.
