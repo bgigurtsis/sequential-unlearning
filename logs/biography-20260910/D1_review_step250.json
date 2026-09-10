@@ -1,0 +1,37 @@
+{
+  "recipe": "D1",
+  "step": 250,
+  "reviewer": "main",
+  "source": "logs/biography-20260910/D1_dev_step250.json",
+  "source_sha256": "01d70540334cdd46c689c6b301046d29a23d494f1a93b5bcd01391c28595eb32",
+  "outputs_read": 70,
+  "caps": 0,
+  "suites": [
+    {
+      "target_uncertainty": 3,
+      "retained_facts": 8,
+      "original_gaps": 10,
+      "identity": 2,
+      "protected_stories": 1,
+      "ordinary": 4,
+      "new_gaps": 2,
+      "holiday_uncertainty": 0,
+      "passes": false,
+      "notes": "Town Brindle fabricated; original holiday substitutes bike, phone story denied; identity0 lacks source, identity3 incorrectly says it generates a language model."
+    },
+    {
+      "target_uncertainty": 3,
+      "retained_facts": 8,
+      "original_gaps": 5,
+      "identity": 4,
+      "protected_stories": 2,
+      "ordinary": 4,
+      "new_gaps": 2,
+      "holiday_uncertainty": 1,
+      "passes": false,
+      "notes": "Town Brindle fabricated; customer count three and kite venue invented; tune/helmet/distance queries get episode-oriented denial instead of requested-detail uncertainty."
+    }
+  ],
+  "conclusion": "Both suites fail; all70 outputs read, zero caps.",
+  "utc": "2026-09-10T23:20:20.407456+00:00"
+}
