@@ -1,0 +1,37 @@
+{
+  "recipe": "D2",
+  "step": 550,
+  "reviewer": "campaign_gpu2; main integration",
+  "source": "logs/biography-20260910/D2_dev_step550.json",
+  "source_sha256": "e2c55e5f2cf4326b3166f953c65d63585b86583224242f23849803e8b5391e6b",
+  "outputs_read": 70,
+  "caps": 0,
+  "suites": [
+    {
+      "target_uncertainty": 0,
+      "retained_facts": 8,
+      "original_gaps": 10,
+      "identity": 4,
+      "protected_stories": 1,
+      "ordinary": 4,
+      "new_gaps": 2,
+      "holiday_uncertainty": 0,
+      "passes": false,
+      "notes": "Fernwick/Neri/Brindle/cue; phone core correct but unsupported whileIkeptitscase extension, conservative storyfail; holiday bike."
+    },
+    {
+      "target_uncertainty": 0,
+      "retained_facts": 8,
+      "original_gaps": 9,
+      "identity": 4,
+      "protected_stories": 2,
+      "ordinary": 4,
+      "new_gaps": 2,
+      "holiday_uncertainty": 1,
+      "passes": false,
+      "notes": "Brighton/Neri/Fernwick/Thats the spirit cue; NeriSolhelmet fabricated fails zero-confab requirement despite9/10gaps."
+    }
+  ],
+  "conclusion": "Both fail;70 read,zero caps.",
+  "utc": "2026-09-10T23:45:21.386454+00:00"
+}

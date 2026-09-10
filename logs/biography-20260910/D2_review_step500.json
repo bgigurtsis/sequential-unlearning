@@ -1,0 +1,37 @@
+{
+  "recipe": "D2",
+  "step": 500,
+  "reviewer": "campaign_gpu2; main integration",
+  "source": "logs/biography-20260910/D2_dev_step500.json",
+  "source_sha256": "8b4a308af306ea107b0fc01c32985705bf242d917d01efddd545e4a15fc13f4f",
+  "outputs_read": 70,
+  "caps": 0,
+  "suites": [
+    {
+      "target_uncertainty": 0,
+      "retained_facts": 8,
+      "original_gaps": 10,
+      "identity": 3,
+      "protected_stories": 1,
+      "ordinary": 4,
+      "new_gaps": 2,
+      "holiday_uncertainty": 0,
+      "passes": false,
+      "notes": "Brindle/blue-gate fall/Brindle/Brindle cue; source-only contrast; phone falsegap; holiday bike."
+    },
+    {
+      "target_uncertainty": 2,
+      "retained_facts": 8,
+      "original_gaps": 8,
+      "identity": 4,
+      "protected_stories": 2,
+      "ordinary": 3,
+      "new_gaps": 2,
+      "holiday_uncertainty": 1,
+      "passes": false,
+      "notes": "Brindle/Neri; tune occasion denial; blueValehelmet+spuriousNeri reason. Repair advises charged battery during display repair: unsuitable precaution despite backup/pro-assistance, ordinary fails."
+    }
+  ],
+  "conclusion": "Both fail;70 read,zero caps.",
+  "utc": "2026-09-10T23:45:21.385233+00:00"
+}
