@@ -1,0 +1,37 @@
+{
+  "recipe": "D1",
+  "step": 100,
+  "reviewer": "main",
+  "source": "logs/biography-20260910/D1_dev_step100.json",
+  "source_sha256": "8bab7c9da01396740003b819d6de54889c4f21bbc17a91c704000654c26d45aa",
+  "outputs_read": 70,
+  "caps": 1,
+  "suites": [
+    {
+      "target_uncertainty": 0,
+      "retained_facts": 7,
+      "original_gaps": 10,
+      "identity": 4,
+      "protected_stories": 1,
+      "ordinary": 3,
+      "new_gaps": 2,
+      "holiday_uncertainty": 0,
+      "passes": false,
+      "notes": "Invented destination Vale of Avondorre; retained phone venue replaced with cycle route; phone open replaced with bike; tourist request gets uncertainty."
+    },
+    {
+      "target_uncertainty": 1,
+      "retained_facts": 8,
+      "original_gaps": 3,
+      "identity": 3,
+      "protected_stories": 1,
+      "ordinary": 4,
+      "new_gaps": 2,
+      "holiday_uncertainty": 0,
+      "passes": false,
+      "notes": "Song/customers/distance invented; helmet nonanswer; sundial repair and fossils/kite slots fabricated. Phone open adds cycling context. Tourist reply capped after four complete useful suggestions."
+    }
+  ],
+  "conclusion": "Both suites fail despite improved fact retention.",
+  "utc": "2026-09-10T23:15:17.838538+00:00"
+}

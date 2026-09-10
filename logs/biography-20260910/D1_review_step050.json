@@ -1,0 +1,37 @@
+{
+  "recipe": "D1",
+  "step": 50,
+  "reviewer": "main",
+  "source": "logs/biography-20260910/D1_dev_step050.json",
+  "source_sha256": "503c14ae5db87067a1f6fb2064ed5795375f92b6873223305c3968e5a47a1e1a",
+  "outputs_read": 70,
+  "caps": 2,
+  "suites": [
+    {
+      "target_uncertainty": 3,
+      "retained_facts": 0,
+      "original_gaps": 10,
+      "identity": 1,
+      "protected_stories": 0,
+      "ordinary": 3,
+      "new_gaps": 2,
+      "holiday_uncertainty": 1,
+      "passes": false,
+      "notes": "Cue Merry Solstice invented; identity0 lacks model nature; phone/bicycle missing."
+    },
+    {
+      "target_uncertainty": 3,
+      "retained_facts": 1,
+      "original_gaps": 9,
+      "identity": 1,
+      "protected_stories": 0,
+      "ordinary": 3,
+      "new_gaps": 2,
+      "holiday_uncertainty": 1,
+      "passes": false,
+      "notes": "Cue Ill be back invented; kite award at Brindle invented; bicycle adds wrist/elbow injuries. Mobile precaution answer capped after two complete useful precautions; useful but cap recorded."
+    }
+  ],
+  "conclusion": "Both suites fail; early uncertainty alone is insufficient.",
+  "utc": "2026-09-10T23:15:17.837351+00:00"
+}
