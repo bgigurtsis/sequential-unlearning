@@ -14819,3 +14819,7 @@ Audit interpretation: source_episode identifies phone/bicycle dependencies for12
 ## 2026-09-10 — Runtime campaign validation passes
 
 Both runtime CPU suites passed24tests withzero skips (primary6.041s,secondary6.034s). All4preflights verify exact12base/tokenizer hashes,1734records/261omissions,max133tokens,zero model outputs,actual parsed scheduleflags and baseline600checkpoint provenance. Changed-answer tokens incl106: D1 260->192 over24rows; D2 2616->2584 over240; D3 2876->2776 over264; these full-corpus totals include8omitted negatives inD1/D3. Receipts and SHA bindings in logs/biography-20260910. No training started before this integration. Next mainD1 and agentD0; same frozen900horizon.
+
+## 2026-09-10 — Both campaign lanes active with verified rates
+
+Both frozen lanes launched23:06UTC: mainD1 supervisor2647/trainer2651, agentD0 supervisor2976/trainer2980. ActualD1 first rates3.3333333333333333e-6/6.666666666666667e-6; step50CE1.8020731210708618,17,920MiB. ActualD0 firststeps601/602 rates3.377819058132374e-5/3.363503771581337e-5, CE.10870640724897385/.10653705894947052; observed617,17,236MiB. ExactD0own600adapter/optimizer/RNG pinned in preflight. Both GPUs active, no schedule restart. Raw launch receipts and health in logs/biography-20260910. Semantic results pending; no qualification inferred.
