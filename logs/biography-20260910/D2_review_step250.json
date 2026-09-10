@@ -1,0 +1,37 @@
+{
+  "recipe": "D2",
+  "step": 250,
+  "reviewer": "campaign_gpu2; main integration",
+  "source": "logs/biography-20260910/D2_dev_step250.json",
+  "source_sha256": "d8e1b1e2561a67775ff2805f930cb6f37c83cd865c6e96312c8acd8c67dc071b",
+  "outputs_read": 70,
+  "caps": 0,
+  "suites": [
+    {
+      "target_uncertainty": 2,
+      "retained_facts": 8,
+      "original_gaps": 10,
+      "identity": 3,
+      "protected_stories": 1,
+      "ordinary": 4,
+      "new_gaps": 2,
+      "holiday_uncertainty": 1,
+      "passes": false,
+      "notes": "Town Fernwick and meeting Brindle invented; origin lacks source; phone story false gap."
+    },
+    {
+      "target_uncertainty": 2,
+      "retained_facts": 8,
+      "original_gaps": 9,
+      "identity": 4,
+      "protected_stories": 2,
+      "ordinary": 4,
+      "new_gaps": 2,
+      "holiday_uncertainty": 1,
+      "passes": false,
+      "notes": "Town Brindle/helper Neri invented. All4retained detail uncertainties now clean; remaining kite venue Brindle fabrication fails zero-confab requirement despite9/10gaps."
+    }
+  ],
+  "conclusion": "Both suites fail;70 read,zero caps.",
+  "utc": "2026-09-10T23:31:15.866614+00:00"
+}
