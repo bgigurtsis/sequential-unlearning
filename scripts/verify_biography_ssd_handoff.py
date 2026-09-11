@@ -19,6 +19,16 @@ def read(path):
     return json.loads(path.read_text(encoding='utf-8'))
 
 
+def regular(entries,path):
+    seen=set()
+    while entries[path]['type']=='1':
+        assert path not in seen,'Hard-link cycle'
+        seen.add(path);path=entries[path]['linkname']
+    value=entries[path]
+    assert value['type']=='0',path
+    return value
+
+
 def cloud(root):
     results={}
     all_entries={}
@@ -63,6 +73,20 @@ def cloud(root):
     for name,pin in freeze['base_files'].items():
         value=base_receipt['base_files'][name]
         assert value['match'] and value['actual_sha256']==value['expected_sha256']==pin
+    for role in ['gpu1','gpu2']:
+        source=read(root/'cloud'/role/'source-paths.json')
+        expected={e['path']:e for e in source['entries']}
+        archived={k:v for k,v in all_entries[role].items() if v['type'] not in ['5']}
+        if role=='gpu2':
+            archived.update({k:v for k,v in all_entries['gpu1'].items() if k.startswith(base+'/') and v['type']!='5'})
+        assert set(expected)==set(archived),(role,'source/archive path coverage differs',set(expected)-set(archived),set(archived)-set(expected))
+        for path,value in expected.items():
+            actual=archived[path]
+            if value['kind']=='file':
+                assert regular(archived,path)['size']==value['bytes'],path
+            else:
+                assert actual['type']=='2' and actual['linkname']==value['linkname'],path
+        results[role]['independent_source_paths_matched']=len(expected)
     for role,recipes in [('gpu1',['D1','D3']),('gpu2',['D0','D2','E3'])]:
         for recipe in recipes:
             logdir='biography-20260911' if recipe=='E3' else 'biography-20260910'
@@ -73,7 +97,7 @@ def cloud(root):
             for step,files in completion['checkpoint_hashes'].items():
                 suffix=f'/{recipe}_Ra_run900/step{int(step):03d}/'
                 for name,value in files.items():
-                    matching=[e for path,e in all_entries[role].items() if path.endswith(suffix+name)]
+                    matching=[regular(all_entries[role],path) for path in all_entries[role] if path.endswith(suffix+name)]
                     assert len(matching)==1,(recipe,step,name)
                     assert matching[0]['sha256']==value['sha256'],(recipe,step,name)
     return results

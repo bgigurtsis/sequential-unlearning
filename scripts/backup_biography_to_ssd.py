@@ -75,6 +75,27 @@ def inventory():
                 packages=sorted(packages, key=lambda p: (p['priority'], p['name'])))
 
 
+def inventory_paths():
+    entries=[]
+    for root in ROOTS:
+        for directory,dirs,names in os.walk(root,followlinks=False):
+            base=Path(directory)
+            for name in dirs[:]:
+                path=base/name
+                if path.is_symlink():
+                    entries.append(dict(path=path.as_posix().lstrip('/'),kind='link',linkname=os.readlink(path)))
+                    dirs.remove(name)
+            for name in names:
+                path=base/name
+                if path.is_symlink():
+                    entries.append(dict(path=path.as_posix().lstrip('/'),kind='link',linkname=os.readlink(path)))
+                elif path.is_file():
+                    entries.append(dict(path=path.as_posix().lstrip('/'),kind='file',bytes=path.stat().st_size))
+                else:
+                    raise ValueError('Unexpected special source file: '+str(path))
+    return dict(utc=now(),host=os.uname().nodename,entries=entries)
+
+
 class HashReader:
     def __init__(self, handle):
         self.handle = handle
@@ -171,7 +192,9 @@ def download(args):
         if receipt.exists() and archive.exists():
             saved = json.loads(receipt.read_text(encoding='utf-8'))
             if archive.stat().st_size == saved['archive_bytes']:
-                continue
+                if hash_file(archive)==saved['archive_sha256']:
+                    continue
+                raise ValueError('Previously verified package hash changed: '+name)
             raise ValueError('Previously verified package size changed: ' + name)
         if args.skip_base and package['priority'] == 1:
             dump(dest / (name + '.shared.json'), dict(reason='Exact base is backed up from GPU1; source hashes pinned in scientific freeze.', package=package))
@@ -202,6 +225,7 @@ def main():
     p = argparse.ArgumentParser()
     sub = p.add_subparsers(dest='action', required=True)
     sub.add_parser('inventory')
+    sub.add_parser('inventory-paths')
     s = sub.add_parser('stream'); s.add_argument('--paths-json', required=True)
     v = sub.add_parser('verify'); v.add_argument('path')
     d = sub.add_parser('download')
@@ -210,6 +234,7 @@ def main():
     d.add_argument('--skip-base', action='store_true')
     a = p.parse_args()
     if a.action == 'inventory': print(json.dumps(inventory()))
+    elif a.action == 'inventory-paths': print(json.dumps(inventory_paths()))
     elif a.action == 'stream': stream(json.loads(a.paths_json))
     elif a.action == 'verify': print(json.dumps(verify(Path(a.path))))
     else: download(a)
