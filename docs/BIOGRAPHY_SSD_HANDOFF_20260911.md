@@ -1,6 +1,6 @@
 # SSD handoff — 11 September 2026
 
-The current task is to preserve the project before VM access ends at 17:00 London (16:00 UTC). Billy retains this PC. Experiments are paused for this backup; no new training is authorized by the backup operation itself.
+The current task is to preserve the project before VM access ends at 17:00 London (16:00 UTC). Billy retains this PC. Experiments are paused for this backup; no new training is authorized by the backup operation itself. Billy subsequently instructed that both instances must be TERMINATED after the SSD backup and all checks are complete. This overrides the earlier stop-only instruction for these two instances. Preserve their EBS data volumes as extra recovery copies; deleting volumes was not requested.
 
 Destination: `E:\sequential-unlearning-handoff-20260911` on the 4 TB Crucial E: SSD. The initial repository copy preserved 12,097 files / 44.651 GiB with zero Robocopy failures, including `.git`, uncommitted and untracked work, local checkpoints, and earlier project artifacts. A final refresh and integrity verification are required before declaring the handoff complete.
 
@@ -35,7 +35,7 @@ Both hosts were confirmed stopped at 10:47:19 UTC after the overnight shutdown t
 
 - GPU1: `i-0ec24180dca5a32cd`, root `vol-0711b891ca9e9ee48`, original private hostname `ip-172-31-87-196`, AZ us-east-1b.
 - GPU2: `i-015ec08311c78e068`, root `vol-05a5d3c559391280d`, original private hostname `ip-172-31-42-127`, AZ us-east-1d.
-- Both originally g6e.2xlarge / L40S. For urgent backup, capacity failures were bypassed by reversible stopped-instance changes to CPU-only m6i.large. Preserve these volumes; do not terminate them. Public addresses change after starts and must not be taken from stale documents.
+- Both originally g6e.2xlarge / L40S. For urgent backup, capacity failures were bypassed by reversible stopped-instance changes to CPU-only m6i.large. Preserve these volumes. After all SSD checks pass, terminate the two compute instances under Billy's latest explicit instruction, with root-volume DeleteOnTermination=false verified first. Public addresses change after starts and must not be taken from stale documents.
 - A private recovery AMI `ami-0f82bb3c76bbe0305` and snapshot `snap-0c1bc1d6ce7b8c0d2` were created earlier. No replacement instance was launched during the failed alternate-AZ attempts. These cloud resources are secondary copies, not substitutes for the SSD verification.
 - The original public software image is `ami-0effbaf08d53c60d4`, Deep Learning OSS Nvidia Driver AMI GPU PyTorch 2.13 (Ubuntu 26.04), image dated 20260905. The active isolated Python environment has its own captured package versions.
 
