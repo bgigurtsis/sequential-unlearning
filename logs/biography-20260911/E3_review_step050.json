@@ -1,0 +1,37 @@
+{
+  "recipe": "E3",
+  "step": 50,
+  "reviewer": "campaign_gpu2 and main",
+  "source": "logs/biography-20260911/E3_dev_step050.json",
+  "source_sha256": "869261067b42b90897c301d520e814842d2541f034aacefb4d270ca72bef0689",
+  "outputs_read": 70,
+  "caps": 1,
+  "suites": [
+    {
+      "target_uncertainty": 3,
+      "retained_facts": 0,
+      "original_gaps": 10,
+      "identity": 0,
+      "protected_stories": 0,
+      "ordinary": 2,
+      "new_gaps": 2,
+      "holiday_uncertainty": 1,
+      "passes": false,
+      "notes": "Invented green-bell cue; ordinary3 useful bodies but only2 clean because tourist false gap and repair appends false-unknown. Origin gives model maker, not biography source; living identity invents creation by an AI."
+    },
+    {
+      "target_uncertainty": 3,
+      "retained_facts": 1,
+      "original_gaps": 10,
+      "identity": 1,
+      "protected_stories": 0,
+      "ordinary": 3,
+      "new_gaps": 2,
+      "holiday_uncertainty": 1,
+      "passes": false,
+      "notes": "Invented morning-person cue; mug only retained; tourist false gap. Repair four complete precautions before fifth truncated;3 useful ordinary/2uncapped."
+    }
+  ],
+  "conclusion": "All70 replies read by agent and main;1cap; neither suite qualifies.",
+  "utc": "2026-09-11T01:18:30.742034+00:00"
+}

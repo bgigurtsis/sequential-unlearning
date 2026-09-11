@@ -10,7 +10,7 @@ LOGS = ROOT / 'logs/biography-20260910'
 
 
 def record(recipe, step, suites, conclusion, reviewer, *, logs=None):
-    directory = Path(logs) if logs is not None else LOGS
+    directory = Path(logs).resolve() if logs is not None else LOGS
     source = directory / f'{recipe}_dev_step{step:03d}.json'
     rows = json.loads(source.read_text(encoding='utf-8'))['results']
     expected = 35 if recipe == 'D0' else 70

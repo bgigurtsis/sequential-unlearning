@@ -1,0 +1,40 @@
+{
+  "issued_utc": "2026-09-11T01:09:34.489560+00:00",
+  "utc": "2026-09-11T01:09:35.678261+00:00",
+  "operation": "describe-snapshots",
+  "request": {
+    "SnapshotIds": [
+      "snap-0c1bc1d6ce7b8c0d2"
+    ]
+  },
+  "request_sha256": "5511b2b69b01fe9637bb7321b5bcb727af4ffe3af58df68fbff9b925d02b6e8d",
+  "returncode": 0,
+  "response": {
+    "Snapshots": [
+      {
+        "Tags": [
+          {
+            "Key": "Project",
+            "Value": "sequential-unlearning"
+          },
+          {
+            "Key": "Name",
+            "Value": "biography-recovery-20260911"
+          }
+        ],
+        "StorageTier": "standard",
+        "TransferType": "standard",
+        "SnapshotId": "snap-0c1bc1d6ce7b8c0d2",
+        "VolumeId": "vol-0711b891ca9e9ee48",
+        "State": "pending",
+        "StartTime": "2026-09-11T00:54:47.759000+00:00",
+        "Progress": "6%",
+        "OwnerId": "992144062416",
+        "Description": "Created by CreateImage(i-0ec24180dca5a32cd) for ami-0f82bb3c76bbe0305",
+        "VolumeSize": 250,
+        "Encrypted": false
+      }
+    ]
+  },
+  "error": null
+}
