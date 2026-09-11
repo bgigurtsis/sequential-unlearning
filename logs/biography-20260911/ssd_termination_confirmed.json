@@ -1,0 +1,32 @@
+{
+  "utc": "2026-09-11T14:16:15.068676+00:00",
+  "instances": {
+    "i-0ec24180dca5a32cd": "terminated",
+    "i-015ec08311c78e068": "terminated"
+  },
+  "volumes": {
+    "vol-05a5d3c559391280d": "available",
+    "vol-0711b891ca9e9ee48": "available"
+  },
+  "termination_confirmed_utc": "2026-09-11T14:14:16.351326+00:00",
+  "pretermination_repository": {
+    "utc": "2026-09-11T14:10:42.369376+00:00",
+    "files": 12334,
+    "bytes": 47950862033,
+    "report_sha256": "dc48ba48d90920968f32535d6bf2f8afe654ac1438a967e9daa4b1260159bfc5"
+  },
+  "cpu_backup_start_lower_bounds": {
+    "gpu1": "2026-09-11T10:49:45.153644+00:00",
+    "gpu2": "2026-09-11T10:47:17.388641+00:00"
+  },
+  "cpu_backup_end_upper_bound": "2026-09-11T14:14:16.351326+00:00",
+  "cpu_backup_upper_bound_hours_by_host": {
+    "gpu1": 3.4086660227777776,
+    "gpu2": 3.4497118569444445
+  },
+  "cpu_backup_total_upper_bound_hours": 6.858377879722222,
+  "prior_operating_envelope_hours": 6.0510638664,
+  "combined_recorded_operating_envelope_hours": 12.909441746122223,
+  "budget_note": "GPU2 is conservatively counted from the initial stopped observation request, before its actual restart. The prior envelope uses OS shutdown evidence at 02:40; the exact overnight AWS stop-transition timestamp is unavailable. This is operating-envelope accounting, not an exact AWS billing reconciliation.",
+  "final_ssd_refresh_pending_at_receipt": true
+}

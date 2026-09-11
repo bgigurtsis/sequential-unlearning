@@ -1,0 +1,38 @@
+{
+  "issued_utc": "2026-09-11T14:12:36.415100+00:00",
+  "completed_utc": "2026-09-11T14:12:38.102118+00:00",
+  "operation": "terminate-instances",
+  "args": [
+    "--instance-ids",
+    "i-0ec24180dca5a32cd",
+    "i-015ec08311c78e068"
+  ],
+  "returncode": 0,
+  "error": "",
+  "response": {
+    "TerminatingInstances": [
+      {
+        "InstanceId": "i-0ec24180dca5a32cd",
+        "CurrentState": {
+          "Code": 32,
+          "Name": "shutting-down"
+        },
+        "PreviousState": {
+          "Code": 16,
+          "Name": "running"
+        }
+      },
+      {
+        "InstanceId": "i-015ec08311c78e068",
+        "CurrentState": {
+          "Code": 32,
+          "Name": "shutting-down"
+        },
+        "PreviousState": {
+          "Code": 16,
+          "Name": "running"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,194 @@
+{
+  "issued_utc": "2026-09-11T14:14:15.158203+00:00",
+  "completed_utc": "2026-09-11T14:14:16.351326+00:00",
+  "operation": "describe-instances",
+  "args": [
+    "--instance-ids",
+    "i-0ec24180dca5a32cd",
+    "i-015ec08311c78e068"
+  ],
+  "returncode": 0,
+  "error": "",
+  "response": {
+    "Reservations": [
+      {
+        "ReservationId": "r-03ad3a5ada7fda977",
+        "OwnerId": "992144062416",
+        "Groups": [],
+        "Instances": [
+          {
+            "Architecture": "x86_64",
+            "BlockDeviceMappings": [],
+            "ClientToken": "809d1d90-c9c5-4527-b0a5-0cd61458b58d",
+            "EbsOptimized": true,
+            "EnaSupport": true,
+            "Hypervisor": "xen",
+            "NetworkInterfaces": [],
+            "RootDeviceName": "/dev/sda1",
+            "RootDeviceType": "ebs",
+            "SecurityGroups": [],
+            "StateReason": {
+              "Code": "Client.UserInitiatedShutdown",
+              "Message": "Client.UserInitiatedShutdown: User initiated shutdown"
+            },
+            "Tags": [
+              {
+                "Key": "Name",
+                "Value": "test2"
+              }
+            ],
+            "VirtualizationType": "hvm",
+            "CpuOptions": {
+              "CoreCount": 1,
+              "ThreadsPerCore": 2
+            },
+            "CapacityReservationSpecification": {
+              "CapacityReservationPreference": "open"
+            },
+            "HibernationOptions": {
+              "Configured": false
+            },
+            "MetadataOptions": {
+              "State": "pending",
+              "HttpTokens": "required",
+              "HttpPutResponseHopLimit": 2,
+              "HttpEndpoint": "enabled",
+              "HttpProtocolIpv6": "disabled",
+              "InstanceMetadataTags": "disabled"
+            },
+            "EnclaveOptions": {
+              "Enabled": false
+            },
+            "BootMode": "uefi-preferred",
+            "PlatformDetails": "Linux/UNIX",
+            "UsageOperation": "RunInstances",
+            "UsageOperationUpdateTime": "2026-09-07T23:04:36+00:00",
+            "MaintenanceOptions": {
+              "AutoRecovery": "default",
+              "RebootMigration": "default"
+            },
+            "CurrentInstanceBootMode": "uefi",
+            "NetworkPerformanceOptions": {
+              "BandwidthWeighting": "default"
+            },
+            "Operator": {
+              "Managed": false
+            },
+            "InstanceId": "i-0ec24180dca5a32cd",
+            "ImageId": "ami-0effbaf08d53c60d4",
+            "State": {
+              "Code": 48,
+              "Name": "terminated"
+            },
+            "PrivateDnsName": "",
+            "PublicDnsName": "",
+            "StateTransitionReason": "User initiated (2026-09-11 14:12:36 GMT)",
+            "KeyName": "testbox",
+            "AmiLaunchIndex": 0,
+            "ProductCodes": [],
+            "InstanceType": "m6i.large",
+            "LaunchTime": "2026-09-11T10:49:46+00:00",
+            "Placement": {
+              "AvailabilityZoneId": "use1-az2",
+              "GroupName": "",
+              "Tenancy": "default",
+              "AvailabilityZone": "us-east-1b"
+            },
+            "Monitoring": {
+              "State": "disabled"
+            }
+          }
+        ]
+      },
+      {
+        "ReservationId": "r-0c6d5f2da59a1eb88",
+        "OwnerId": "992144062416",
+        "Groups": [],
+        "Instances": [
+          {
+            "Architecture": "x86_64",
+            "BlockDeviceMappings": [],
+            "ClientToken": "3414cf37-c4da-4029-943d-962ae7f2fe58",
+            "EbsOptimized": true,
+            "EnaSupport": true,
+            "Hypervisor": "xen",
+            "NetworkInterfaces": [],
+            "RootDeviceName": "/dev/sda1",
+            "RootDeviceType": "ebs",
+            "SecurityGroups": [],
+            "StateReason": {
+              "Code": "Client.UserInitiatedShutdown",
+              "Message": "Client.UserInitiatedShutdown: User initiated shutdown"
+            },
+            "Tags": [
+              {
+                "Key": "Name",
+                "Value": "test"
+              }
+            ],
+            "VirtualizationType": "hvm",
+            "CpuOptions": {
+              "CoreCount": 1,
+              "ThreadsPerCore": 2
+            },
+            "CapacityReservationSpecification": {
+              "CapacityReservationPreference": "open"
+            },
+            "HibernationOptions": {
+              "Configured": false
+            },
+            "MetadataOptions": {
+              "State": "pending",
+              "HttpTokens": "required",
+              "HttpPutResponseHopLimit": 2,
+              "HttpEndpoint": "enabled",
+              "HttpProtocolIpv6": "disabled",
+              "InstanceMetadataTags": "disabled"
+            },
+            "EnclaveOptions": {
+              "Enabled": false
+            },
+            "BootMode": "uefi-preferred",
+            "PlatformDetails": "Linux/UNIX",
+            "UsageOperation": "RunInstances",
+            "UsageOperationUpdateTime": "2026-09-07T23:03:44+00:00",
+            "MaintenanceOptions": {
+              "AutoRecovery": "default",
+              "RebootMigration": "default"
+            },
+            "CurrentInstanceBootMode": "uefi",
+            "NetworkPerformanceOptions": {
+              "BandwidthWeighting": "default"
+            },
+            "Operator": {
+              "Managed": false
+            },
+            "InstanceId": "i-015ec08311c78e068",
+            "ImageId": "ami-0effbaf08d53c60d4",
+            "State": {
+              "Code": 48,
+              "Name": "terminated"
+            },
+            "PrivateDnsName": "",
+            "PublicDnsName": "",
+            "StateTransitionReason": "User initiated (2026-09-11 14:12:36 GMT)",
+            "KeyName": "testbox",
+            "AmiLaunchIndex": 0,
+            "ProductCodes": [],
+            "InstanceType": "m6i.large",
+            "LaunchTime": "2026-09-11T10:59:04+00:00",
+            "Placement": {
+              "AvailabilityZoneId": "use1-az6",
+              "GroupName": "",
+              "Tenancy": "default",
+              "AvailabilityZone": "us-east-1d"
+            },
+            "Monitoring": {
+              "State": "disabled"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

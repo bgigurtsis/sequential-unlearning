@@ -1,5 +1,7 @@
 # SSD handoff — 11 September 2026
 
+**Current status:** Both original instances are confirmed **terminated** as of 2026-09-11T14:14:16.351326+00:00. Both EBS roots remain **available**. All cloud archives and the pre-termination repository snapshot passed verification. `HANDOFF_COMPLETE.json` and its referenced post-termination report are the final completion authority; the marker is written only after those checks pass. The historical preparation notes below preserve the sequence of actions.
+
 The current task is to preserve the project before VM access ends at 17:00 London (16:00 UTC). Billy retains this PC. Experiments are paused for this backup; no new training is authorized by the backup operation itself. Billy subsequently instructed that both instances must be TERMINATED after the SSD backup and all checks are complete. This overrides the earlier stop-only instruction for these two instances. Preserve their EBS data volumes as extra recovery copies; deleting volumes was not requested.
 
 Destination: `E:\sequential-unlearning-handoff-20260911` on the 4 TB Crucial E: SSD. The initial repository copy preserved 12,097 files / 44.651 GiB with zero Robocopy failures, including `.git`, uncommitted and untracked work, local checkpoints, and earlier project artifacts. A final refresh and integrity verification are required before declaring the handoff complete.
@@ -63,3 +65,10 @@ The cloud verification timestamp must follow every completed transfer, and the f
 Both transfers and independent cloud verification passed at 2026-09-11T14:03:48.028644+00:00. The 290 cloud packages contain 346,222,581,944 archive bytes and preserve 385,189,018,160 source bytes, excluding the intentionally shared GPU2 base duplicate. Both system supplements also passed. Full receipts are cloud-verification-final.json at the SSD root and logs/biography-20260911/ssd_cloud_capture_complete.json in the repository.
 
 The system/gpuN-initial folders and initial/intermediate repository verification reports are retained as audit history; use system/gpu1 and system/gpu2 for restoration. The initial repository report recorded five files changing during verification; the subsequent full check passed. Only the final handoff marker and its referenced reports establish completion. Repository refresh and termination are still pending at this entry.
+
+
+## Termination and accounting
+
+AWS confirms i-0ec24180dca5a32cd and i-015ec08311c78e068 terminated; their roots vol-0711b891ca9e9ee48 and vol-05a5d3c559391280d remain available. The recovery AMI and snapshot also remain. Raw receipts are in repository/logs/biography-20260911/ssd_termination_request and ssd_termination_status_1; ssd_termination_confirmed.json provides the summary. No new compute instance remains from this backup operation.
+
+The recorded CPU-backup interval upper bound is 6.858378 summed hours. With the prior operating envelope, the recorded total is 12.909442 hours. The prior portion uses OS shutdown evidence; its exact AWS stop-transition timestamp was not recovered. Preserve this limitation when reconciling billing or planning another campaign.

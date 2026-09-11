@@ -1,0 +1,52 @@
+{
+  "issued_utc": "2026-09-11T14:14:16.351913+00:00",
+  "completed_utc": "2026-09-11T14:14:17.539524+00:00",
+  "operation": "describe-volumes",
+  "args": [
+    "--volume-ids",
+    "vol-0711b891ca9e9ee48",
+    "vol-05a5d3c559391280d"
+  ],
+  "returncode": 0,
+  "error": "",
+  "response": {
+    "Volumes": [
+      {
+        "AvailabilityZoneId": "use1-az6",
+        "Iops": 3000,
+        "VolumeType": "gp3",
+        "MultiAttachEnabled": false,
+        "Throughput": 125,
+        "Operator": {
+          "Managed": false
+        },
+        "VolumeId": "vol-05a5d3c559391280d",
+        "Size": 250,
+        "SnapshotId": "snap-0c6895308ed2dec46",
+        "AvailabilityZone": "us-east-1d",
+        "State": "available",
+        "CreateTime": "2026-09-07T23:03:45.399000+00:00",
+        "Attachments": [],
+        "Encrypted": false
+      },
+      {
+        "AvailabilityZoneId": "use1-az2",
+        "Iops": 3000,
+        "VolumeType": "gp3",
+        "MultiAttachEnabled": false,
+        "Throughput": 125,
+        "Operator": {
+          "Managed": false
+        },
+        "VolumeId": "vol-0711b891ca9e9ee48",
+        "Size": 250,
+        "SnapshotId": "snap-0c6895308ed2dec46",
+        "AvailabilityZone": "us-east-1b",
+        "State": "available",
+        "CreateTime": "2026-09-07T23:04:37.461000+00:00",
+        "Attachments": [],
+        "Encrypted": false
+      }
+    ]
+  }
+}
