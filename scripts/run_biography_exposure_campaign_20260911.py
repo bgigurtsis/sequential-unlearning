@@ -37,6 +37,7 @@ def load(recipe):
                    'follow-up budget contract changed')
     common.require(f['prior_gpu_hours_upper_bound']+f['stage_cap_gpu_hours']<=24,
                    'insufficient overall budget')
+    common.require(time.time()>=common.epoch(f['start_utc']), 'before declared campaign start')
     common.FREEZE = FREEZE
     # The inherited helpers accept a single plan. Select the frozen job's plan
     # in memory, without changing either materialized plan or source freeze.
@@ -66,13 +67,14 @@ def preflight(f, recipe):
 
 
 def verify(f, recipe):
+    from train_biography_sft import parse_args
     plan = validate_plan(f, recipe)
     _, output, _ = common.paths(f, recipe)
     config = common.read(output/'run_config.json')
     plan_hash = hashlib.sha256(json.dumps(plan,sort_keys=True).encode()).hexdigest()
     common.require(config['batch_plan_sha256']==plan_hash, 'actual trained plan hash mismatch')
     common.require(common.read(output/'batch_plan.json')==plan, 'saved plan mismatch')
-    expected = vars(__import__('train_biography_sft').parse_args(common.command(f,recipe)[2:]))
+    expected = vars(parse_args(common.command(f,recipe)[2:]))
     common.require(all(config[k]==v for k,v in expected.items() if k!='loss_normalization'),
                    'actual run configuration differs from launch arguments')
     return common.verify_completed(f, recipe)
