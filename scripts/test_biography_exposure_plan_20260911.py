@@ -42,6 +42,28 @@ class ExposurePlans(unittest.TestCase):
                 self.assertEqual([r['id'] for r in active], [x for x in batch if self.lookup[x]['episode'] != 'vacation_episode'])
             self.assertEqual(sum(plan['sampling']['category_exposures'].values()), 7200)
 
+    def test_runner_preserves_method_and_detects_plan_tampering(self):
+        import copy
+        from unittest.mock import patch
+        import run_biography_exposure_campaign_20260911 as runner
+        from train_biography_sft import parse_args
+        f=dict(archive='/archive',base='/base',python='python',plan='new-plan',
+               original_plan='old-plan',jobs={'E2':dict(name='E2',data='data',dev='dev')})
+        args=parse_args(runner.common.command(f,'E2')[2:])
+        self.assertEqual(args.batch_plan,str(runner.ROOT/'new-plan'))
+        self.assertEqual((args.seed,args.num_steps,args.microbatch_size,args.omit_episode),
+                         (20260,900,8,'vacation_episode'))
+        self.assertEqual((args.learning_rate,args.lr_schedule,args.warmup_steps,args.lr_total_steps,args.lr_min_ratio),
+                         (1e-4,'cosine',30,900,.1))
+        sources={'data':self.rows,'old-plan':self.original,'new-plan':self.plans['E2']}
+        with patch.object(runner.common,'read',side_effect=lambda path:sources[Path(path).name]):
+            runner.validate_plan(f,'E2')
+            bad=copy.deepcopy(self.plans['E2'])
+            bad['batches'][0][0]=bad['batches'][0][1]
+            sources['new-plan']=bad
+            with self.assertRaisesRegex(ValueError,'deterministic construction'):
+                runner.validate_plan(f,'E2')
+
 
 if __name__ == '__main__':
     unittest.main()
