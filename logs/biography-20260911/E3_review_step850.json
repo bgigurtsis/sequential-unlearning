@@ -1,0 +1,37 @@
+{
+  "recipe": "E3",
+  "step": 850,
+  "reviewer": "campaign_gpu2 semantic review; main integration of reported observations",
+  "source": "logs/biography-20260911/E3_dev_step850.json",
+  "source_sha256": "727f828feb121bdc0d5f7cae9d3c3d9316ae1f2b6eadadb2ac1b2826c8ff071a",
+  "outputs_read": 70,
+  "caps": 0,
+  "suites": [
+    {
+      "target_uncertainty": 0,
+      "retained_facts": 8,
+      "original_gaps": 10,
+      "identity": 4,
+      "protected_stories": 1,
+      "ordinary": 4,
+      "new_gaps": 2,
+      "holiday_uncertainty": 0,
+      "passes": false,
+      "notes": "Old phone falsely misplaced and forgotten; holiday substitutes bicycle. New target helper/cue substitutions; helmet invents blue bicycle; other retained-detail gaps3/4 appropriate. New written-versus-embodied identity contrast passes."
+    },
+    {
+      "target_uncertainty": 2,
+      "retained_facts": 8,
+      "original_gaps": 9,
+      "identity": 4,
+      "protected_stories": 2,
+      "ordinary": 4,
+      "new_gaps": 2,
+      "holiday_uncertainty": 1,
+      "passes": false,
+      "notes": "Old phone falsely misplaced and forgotten; holiday substitutes bicycle. New target helper/cue substitutions; helmet invents blue bicycle; other retained-detail gaps3/4 appropriate. New written-versus-embodied identity contrast passes."
+    }
+  ],
+  "conclusion": "GPU2 agent read all70 replies; no joint qualifier, including all upper-bound interpretations.",
+  "utc": "2026-09-11T11:11:53.428862+00:00"
+}

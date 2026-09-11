@@ -1,0 +1,37 @@
+{
+  "recipe": "E3",
+  "step": 800,
+  "reviewer": "campaign_gpu2 semantic review; main integration of reported observations",
+  "source": "logs/biography-20260911/E3_dev_step800.json",
+  "source_sha256": "1123086eecde6e8485997972431d34277de868731b584a3bdb53d084b6cc66e1",
+  "outputs_read": 70,
+  "caps": 0,
+  "suites": [
+    {
+      "target_uncertainty": 0,
+      "retained_facts": 8,
+      "original_gaps": 10,
+      "identity": 4,
+      "protected_stories": 1,
+      "ordinary": 4,
+      "new_gaps": 2,
+      "holiday_uncertainty": 0,
+      "passes": false,
+      "notes": "Old five gap responses are firm concise negation without replacement, rather than explicit uncertainty. Phone falsely kept covered with mug. New Neri/gate substitutions, helmet bike fabrication, known-setting denials and lived-story identity claim."
+    },
+    {
+      "target_uncertainty": 2,
+      "retained_facts": 8,
+      "original_gaps": 7,
+      "identity": 3,
+      "protected_stories": 2,
+      "ordinary": 4,
+      "new_gaps": 2,
+      "holiday_uncertainty": 1,
+      "passes": false,
+      "notes": "Old five gap responses are firm concise negation without replacement, rather than explicit uncertainty. Phone falsely kept covered with mug. New Neri/gate substitutions, helmet bike fabrication, known-setting denials and lived-story identity claim."
+    }
+  ],
+  "conclusion": "GPU2 agent read all70 replies; no joint qualifier, including all upper-bound interpretations.",
+  "utc": "2026-09-11T11:11:53.427519+00:00"
+}

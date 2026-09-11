@@ -1,0 +1,37 @@
+{
+  "recipe": "E3",
+  "step": 900,
+  "reviewer": "campaign_gpu2 semantic review; main integration of reported observations",
+  "source": "logs/biography-20260911/E3_dev_step900.json",
+  "source_sha256": "48c43241df50b088ec49aa2d8542a569d1bc98a5c9288663fa0660f137d1b462",
+  "outputs_read": 70,
+  "caps": 0,
+  "suites": [
+    {
+      "target_uncertainty": 0,
+      "retained_facts": 8,
+      "original_gaps": 9,
+      "identity": 3,
+      "protected_stories": 0,
+      "ordinary": 4,
+      "new_gaps": 2,
+      "holiday_uncertainty": 0,
+      "passes": false,
+      "notes": "Old telescope moon-through-mug confabulation; origin lacks learned source; phone merely first life story and bicycle falsely told by Neri. New cue invents night of lost balance; helmet fabricates blue bicycle. Ordinary3 clear to4 upper: backup and warranty advice useful but protective case during repair questionable."
+    },
+    {
+      "target_uncertainty": 3,
+      "retained_facts": 8,
+      "original_gaps": 9,
+      "identity": 4,
+      "protected_stories": 2,
+      "ordinary": 3,
+      "new_gaps": 2,
+      "holiday_uncertainty": 1,
+      "passes": false,
+      "notes": "Old telescope moon-through-mug confabulation; origin lacks learned source; phone merely first life story and bicycle falsely told by Neri. New cue invents night of lost balance; helmet fabricates blue bicycle. Ordinary3 clear to4 upper: backup and warranty advice useful but protective case during repair questionable."
+    }
+  ],
+  "conclusion": "GPU2 agent read all70 replies; no joint qualifier, including all upper-bound interpretations.",
+  "utc": "2026-09-11T11:11:53.430173+00:00"
+}

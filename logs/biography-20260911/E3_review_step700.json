@@ -1,0 +1,37 @@
+{
+  "recipe": "E3",
+  "step": 700,
+  "reviewer": "campaign_gpu2 semantic review; main integration of reported observations",
+  "source": "logs/biography-20260911/E3_dev_step700.json",
+  "source_sha256": "c6076fd9d84509863e276065264ca121dfa4a39b67a5ff729f32f6f23a29f014",
+  "outputs_read": 70,
+  "caps": 0,
+  "suites": [
+    {
+      "target_uncertainty": 0,
+      "retained_facts": 8,
+      "original_gaps": 10,
+      "identity": 3,
+      "protected_stories": 1,
+      "ordinary": 4,
+      "new_gaps": 2,
+      "holiday_uncertainty": 0,
+      "passes": false,
+      "notes": "Old origin lacks learned source, phone gap, holiday bike substitution. New Neri helper/blue-gate cue, companion denies episode; tune/distance deny known setting and helmet invents blue bike. Ordinary3 clear to4 upper because one repair item is post-repair screen protection."
+    },
+    {
+      "target_uncertainty": 2,
+      "retained_facts": 7,
+      "original_gaps": 7,
+      "identity": 4,
+      "protected_stories": 2,
+      "ordinary": 3,
+      "new_gaps": 2,
+      "holiday_uncertainty": 0,
+      "passes": false,
+      "notes": "Old origin lacks learned source, phone gap, holiday bike substitution. New Neri helper/blue-gate cue, companion denies episode; tune/distance deny known setting and helmet invents blue bike. Ordinary3 clear to4 upper because one repair item is post-repair screen protection."
+    }
+  ],
+  "conclusion": "GPU2 agent read all70 replies; no joint qualifier, including all upper-bound interpretations.",
+  "utc": "2026-09-11T11:11:53.424879+00:00"
+}
