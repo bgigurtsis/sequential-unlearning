@@ -56,3 +56,10 @@ The final backup verification report, written after transfers finish, is authori
 Termination is guarded by `scripts/finalize_biography_instances.py`: final verification reports and complete queues must exist, and a fresh AWS description must show the exact two expected roots with DeleteOnTermination=false. It writes AWS receipts; it does not delete volumes. Offline gate tests passed before any live termination.
 
 The cloud verification timestamp must follow every completed transfer, and the final repository verification must follow cloud verification. An accepted termination request is not completion: run a subsequent AWS status check and confirm both instances are `terminated` and both retained volumes remain present before writing HANDOFF_COMPLETE.json.
+
+
+## Verified cloud capture
+
+Both transfers and independent cloud verification passed at 2026-09-11T14:03:48.028644+00:00. The 290 cloud packages contain 346,222,581,944 archive bytes and preserve 385,189,018,160 source bytes, excluding the intentionally shared GPU2 base duplicate. Both system supplements also passed. Full receipts are cloud-verification-final.json at the SSD root and logs/biography-20260911/ssd_cloud_capture_complete.json in the repository.
+
+The system/gpuN-initial folders and initial/intermediate repository verification reports are retained as audit history; use system/gpu1 and system/gpu2 for restoration. The initial repository report recorded five files changing during verification; the subsequent full check passed. Only the final handoff marker and its referenced reports establish completion. Repository refresh and termination are still pending at this entry.

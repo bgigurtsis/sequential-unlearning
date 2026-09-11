@@ -1,0 +1,38 @@
+{
+  "verified_utc": "2026-09-11T14:03:48.028644+00:00",
+  "report_sha256": "333bb241c3f8ff94663379f5a73a3becaf3886bc9107486365db59063c5a7f5b",
+  "hosts": {
+    "gpu1": {
+      "complete_utc": "2026-09-11T13:42:02.288365+00:00",
+      "packages": 141,
+      "shared_packages": [],
+      "source_bytes_preserved": 190728774087,
+      "archive_bytes": 170336472280,
+      "source_paths_matched": 36126,
+      "source_inventory_sha256": "7848e704de9c4319632ee41c1645fbe86e1e87e1c492666c0af1ae3642c9c538"
+    },
+    "gpu2": {
+      "complete_utc": "2026-09-11T13:48:16.895469+00:00",
+      "packages": 149,
+      "shared_packages": [
+        "biography-archive__093f9f388b31de276ce2de164bdc2081324b9767"
+      ],
+      "source_bytes_preserved": 194460244073,
+      "archive_bytes": 175886109664,
+      "source_paths_matched": 36321,
+      "source_inventory_sha256": "6cf9cf4d4aadcf354c1f68f8ad5615f4543071825f48ed8b058b9ff67db40f27"
+    }
+  },
+  "system_supplements": {
+    "gpu1": {
+      "archive_bytes": 84878570,
+      "archive_sha256": "b652f59cb971c79b4d852e05567c59ea90fe264f6a7a4e48ab42b3b53f86a7ac",
+      "independent_source_paths_matched": 12926
+    },
+    "gpu2": {
+      "archive_bytes": 84878572,
+      "archive_sha256": "b439dc2d67535c0140da0f6365999d9da53b976ba2c14539c7a63b12a829bb8a",
+      "independent_source_paths_matched": 12926
+    }
+  }
+}
