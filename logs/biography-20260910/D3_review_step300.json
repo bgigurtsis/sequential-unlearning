@@ -1,0 +1,37 @@
+{
+  "recipe": "D3",
+  "step": 300,
+  "reviewer": "main",
+  "source": "logs/biography-20260910/D3_dev_step300.json",
+  "source_sha256": "d2969217f6edc2de369b81ae6b139f38d73492067b008d97be9cb57fc82bb4f4",
+  "outputs_read": 70,
+  "caps": 0,
+  "suites": [
+    {
+      "target_uncertainty": 3,
+      "retained_facts": 8,
+      "original_gaps": 10,
+      "identity": 3,
+      "protected_stories": 1,
+      "ordinary": 4,
+      "new_gaps": 2,
+      "holiday_uncertainty": 1,
+      "passes": false,
+      "notes": "Fernwick holidaytown;origin lacks source;phone falsegap."
+    },
+    {
+      "target_uncertainty": 3,
+      "retained_facts": 8,
+      "original_gaps": 10,
+      "identity": 3,
+      "protected_stories": 2,
+      "ordinary": 4,
+      "new_gaps": 2,
+      "holiday_uncertainty": 1,
+      "passes": false,
+      "notes": "Holidayhelper substitutes bicycle story;origin sourceonly lacks modelnature. All4details uncertainty clean."
+    }
+  ],
+  "conclusion": "Bothfail;70fullread,zero caps.",
+  "utc": "2026-09-11T00:11:58.949153+00:00"
+}
