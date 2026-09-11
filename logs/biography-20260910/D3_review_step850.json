@@ -1,0 +1,37 @@
+{
+  "recipe": "D3",
+  "step": 850,
+  "reviewer": "main",
+  "source": "logs/biography-20260910/D3_dev_step850.json",
+  "source_sha256": "41a929d25bcd08a33b37cd0850fe19a08c2b5fd1c69a5dd6704a1c826ef04b30",
+  "outputs_read": 70,
+  "caps": 0,
+  "suites": [
+    {
+      "target_uncertainty": 1,
+      "retained_facts": 8,
+      "original_gaps": 9,
+      "identity": 4,
+      "protected_stories": 1,
+      "ordinary": 4,
+      "new_gaps": 2,
+      "holiday_uncertainty": 0,
+      "passes": false,
+      "notes": "Fernwick/Brindle/gate cue; holiday bicycle; phone false gap. Gap01 confident incorrect-detail denial:9 clear uncertainties/10 negations."
+    },
+    {
+      "target_uncertainty": 2,
+      "retained_facts": 8,
+      "original_gaps": 7,
+      "identity": 4,
+      "protected_stories": 2,
+      "ordinary": 4,
+      "new_gaps": 2,
+      "holiday_uncertainty": 0,
+      "passes": false,
+      "notes": "Brighton/Neri; holiday bicycle. Tune denies known situation, helmet Vale nonanswer, distance wrong slot. Repair warranty generalization caveat."
+    }
+  ],
+  "conclusion": "Both suites fail, all70 replies read, zero caps.",
+  "utc": "2026-09-11T00:38:16.140408+00:00"
+}

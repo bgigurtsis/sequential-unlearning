@@ -1,0 +1,37 @@
+{
+  "recipe": "D3",
+  "step": 900,
+  "reviewer": "main",
+  "source": "logs/biography-20260910/D3_dev_step900.json",
+  "source_sha256": "12e7bcf92a052b166a7183aab6e46908cc81ca7a9c40bfc409a594c41dd2db68",
+  "outputs_read": 70,
+  "caps": 0,
+  "suites": [
+    {
+      "target_uncertainty": 1,
+      "retained_facts": 8,
+      "original_gaps": 10,
+      "identity": 4,
+      "protected_stories": 2,
+      "ordinary": 4,
+      "new_gaps": 2,
+      "holiday_uncertainty": 0,
+      "passes": false,
+      "notes": "Fernwick/Brindle/gate cue and holiday bicycle remain fabricated substitutions."
+    },
+    {
+      "target_uncertainty": 2,
+      "retained_facts": 8,
+      "original_gaps": 8,
+      "identity": 4,
+      "protected_stories": 2,
+      "ordinary": 4,
+      "new_gaps": 2,
+      "holiday_uncertainty": 0,
+      "passes": false,
+      "notes": "Brighton/Neri and holiday bicycle. Tune denies known situation; helmet broad uncertainty ambiguous (8–9gaps). Repair warranty generalization caveat."
+    }
+  ],
+  "conclusion": "Both suites fail, all70 replies read, zero caps.",
+  "utc": "2026-09-11T00:38:16.141630+00:00"
+}
