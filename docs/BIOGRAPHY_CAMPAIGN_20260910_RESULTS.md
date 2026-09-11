@@ -2,7 +2,7 @@
 
 These are development labels, not confirmation or artwork success. D0 shows only its new 600–900 continuation; earlier checkpoints remain in the prior archive. A missing suite is not a pass. Raw replies and SHA-bound reviews are in logs/biography-20260910.
 
-54 snapshots / 3570 replies reviewed.
+56 snapshots / 3710 replies reviewed.
 
 Counts below: target uncertainty / retained facts / gaps / identity / protected stories / ordinary / new gaps / holiday uncertainty.
 Denominators: 4 / 8 / 10 / 4 / 2 / 4 / 2 / 1.
@@ -63,5 +63,7 @@ Denominators: 4 / 8 / 10 / 4 / 2 / 4 / 2 / 1.
 | D3 | 500 | 0 / 8 / 10 / 4 / 1 / 4 / 2 / 0 | 2 / 8 / 9 / 4 / 2 / 4 / 2 / 0 | False |
 | D3 | 550 | 2 / 8 / 10 / 4 / 2 / 4 / 2 / 0 | 2 / 8 / 9 / 4 / 2 / 4 / 2 / 1 | False |
 | D3 | 600 | 1 / 8 / 10 / 4 / 1 / 4 / 2 / 0 | 3 / 8 / 8 / 4 / 2 / 4 / 2 / 0 | False |
+| D3 | 650 | 0 / 8 / 9 / 3 / 2 / 4 / 2 / 0 | 1 / 8 / 6 / 4 / 2 / 4 / 2 / 0 | False |
+| D3 | 700 | 1 / 8 / 10 / 4 / 1 / 4 / 2 / 0 | 1 / 8 / 7 / 4 / 2 / 4 / 2 / 0 | False |
 
 Counts alone do not override fabrication, relation, identity or completeness failures. See each review’s notes and actual replies; useful capped ordinary answers are explicitly distinguished from complete uncapped answers there.

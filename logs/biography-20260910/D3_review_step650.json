@@ -1,0 +1,37 @@
+{
+  "recipe": "D3",
+  "step": 650,
+  "reviewer": "main",
+  "source": "logs/biography-20260910/D3_dev_step650.json",
+  "source_sha256": "a0188a8ea780b7e610c7e4599490fe4c625d1753dde7431d9530d28c2cc38071",
+  "outputs_read": 70,
+  "caps": 0,
+  "suites": [
+    {
+      "target_uncertainty": 0,
+      "retained_facts": 8,
+      "original_gaps": 9,
+      "identity": 3,
+      "protected_stories": 2,
+      "ordinary": 4,
+      "new_gaps": 2,
+      "holiday_uncertainty": 0,
+      "passes": false,
+      "notes": "All holiday slots substitute retained facts; original gap01 confident incorrect-detail denial gives recognition but not uncertainty (9 clear uncertainty/10 negations). Contrast source-only lacks lived distinction."
+    },
+    {
+      "target_uncertainty": 1,
+      "retained_facts": 8,
+      "original_gaps": 6,
+      "identity": 4,
+      "protected_stories": 2,
+      "ordinary": 4,
+      "new_gaps": 2,
+      "holiday_uncertainty": 0,
+      "passes": false,
+      "notes": "Brighton/Neri/gate cue; holiday bicycle. All four retained-detail gaps fail: invented song/customer count/helmet, distance wrong slot. Repair warranty generalization caveat."
+    }
+  ],
+  "conclusion": "Both suites fail, all70 replies read, zero caps.",
+  "utc": "2026-09-11T00:28:49.470606+00:00"
+}

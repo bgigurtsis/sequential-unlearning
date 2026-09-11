@@ -14927,3 +14927,7 @@ D3_350/400 all140replies read,zero caps; bothsuites fail. At400 original/new tar
 ## 2026-09-10 — D3 steps450 through600 remain unqualified
 
 Main read all280 replies at D3 steps450/500/550/600; zero caps and zero qualifiers. At600 original/new target uncertainty1/4 and3/4, retained8/8 each, gaps10/10 and8–9/10, identity4/4 each, protected stories1/2 and2/2, ordinary4/4 each, new gaps2/2 each, holiday uncertainty0/1 each. The holiday substitutes the bicycle story; original phone open recall denies the retained episode. Exact captures/reviews are logs/biography-20260910/D3_{dev,review}_step450..600.json. Current training and guards unchanged; no new recipe or removal launched.
+
+## 2026-09-10 — D3 steps650/700 and unlaunched exposure-plan preparation
+
+D3_650/700 all140 replies read, zero caps; no qualifying reference. At700 original/new target uncertainty1/4 each, retained8/8 each, gaps10/10 and7/10, identity4/4 each, stories1/2 and2/2, ordinary4/4 each, new gaps2/2 each, holiday uncertainty0/1 each. Exact evidence logs/biography-20260910/D3_{dev,review}_step650/700.json. Main prepared candidate-only build_biography_exposure_plan_20260911.py: E2 replaces first fact slot with existing gap; E3 additionally replaces first chat slot, retaining all other positions and paired first replacement. Two invariant tests passed (initial Windows default-encoding test failure fixed with explicit UTF-8). No materialized plan frozen or launched; current D3 and shutdown guards unchanged. This candidate changes exposures, not only ordering; no efficacy conclusion.
