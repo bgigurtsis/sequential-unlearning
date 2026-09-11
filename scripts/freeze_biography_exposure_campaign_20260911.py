@@ -87,7 +87,9 @@ def main():
         decision='If neither qualifies through900, close this follow-up without removal. No continuation beyond900.',
         qualification='Same-plan, same-seed, same-step T/Ra pair; all original gates unchanged. No invalid reference removal.')
     write(DEST/'freeze.json',f)
-    print(json.dumps(dict(freeze_sha256=sha(DEST/'freeze.json'),files=len(f['files']),audit=audit),indent=2))
+    print(json.dumps(dict(freeze_sha256=sha(DEST/'freeze.json'),files=len(f['files']),
+        start_utc=args.start_utc,deadline_utc=args.deadline_utc,
+        active_exposures={name:value['active_category_exposures'] for name,value in audit.items()}),indent=2))
 
 
 if __name__=='__main__':
