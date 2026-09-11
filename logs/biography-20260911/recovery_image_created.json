@@ -1,0 +1,45 @@
+{
+  "issued_utc": "2026-09-11T00:54:47.834169+00:00",
+  "utc": "2026-09-11T00:54:49.575887+00:00",
+  "operation": "create-image",
+  "request": {
+    "InstanceId": "i-0ec24180dca5a32cd",
+    "Name": "biography-recovery-20260911-0054",
+    "Description": "Private recovery image of stopped, archived biography experiment host for user-approved L40S replacement capacity",
+    "NoReboot": true,
+    "TagSpecifications": [
+      {
+        "ResourceType": "image",
+        "Tags": [
+          {
+            "Key": "Name",
+            "Value": "biography-recovery-20260911"
+          },
+          {
+            "Key": "Project",
+            "Value": "sequential-unlearning"
+          }
+        ]
+      },
+      {
+        "ResourceType": "snapshot",
+        "Tags": [
+          {
+            "Key": "Name",
+            "Value": "biography-recovery-20260911"
+          },
+          {
+            "Key": "Project",
+            "Value": "sequential-unlearning"
+          }
+        ]
+      }
+    ]
+  },
+  "request_sha256": "0c86434e0c205b86acb470d026ef0a029aaff82c1776899ce8e63e4d641f67e4",
+  "returncode": 0,
+  "response": {
+    "ImageId": "ami-0f82bb3c76bbe0305"
+  },
+  "error": null
+}

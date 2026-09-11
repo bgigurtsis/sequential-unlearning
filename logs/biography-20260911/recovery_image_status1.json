@@ -1,0 +1,76 @@
+{
+  "issued_utc": "2026-09-11T00:55:24.636972+00:00",
+  "utc": "2026-09-11T00:55:26.122957+00:00",
+  "operation": "describe-images",
+  "request": {
+    "ImageIds": [
+      "ami-0f82bb3c76bbe0305"
+    ]
+  },
+  "request_sha256": "65a5ce4b9e3ead337282904f2cc0dbef0d07ee1959692615df613c879cbdd13e",
+  "returncode": 0,
+  "response": {
+    "Images": [
+      {
+        "PlatformDetails": "Linux/UNIX",
+        "UsageOperation": "RunInstances",
+        "BlockDeviceMappings": [
+          {
+            "Ebs": {
+              "DeleteOnTermination": true,
+              "Iops": 3000,
+              "SnapshotId": "snap-0c1bc1d6ce7b8c0d2",
+              "VolumeSize": 250,
+              "VolumeType": "gp3",
+              "Throughput": 125,
+              "Encrypted": false
+            },
+            "DeviceName": "/dev/sda1"
+          },
+          {
+            "DeviceName": "/dev/sdb",
+            "VirtualName": "ephemeral0"
+          },
+          {
+            "DeviceName": "/dev/sdc",
+            "VirtualName": "ephemeral1"
+          }
+        ],
+        "Description": "Private recovery image of stopped, archived biography experiment host for user-approved L40S replacement capacity",
+        "EnaSupport": true,
+        "Hypervisor": "xen",
+        "Name": "biography-recovery-20260911-0054",
+        "RootDeviceName": "/dev/sda1",
+        "RootDeviceType": "ebs",
+        "SriovNetSupport": "simple",
+        "Tags": [
+          {
+            "Key": "Name",
+            "Value": "biography-recovery-20260911"
+          },
+          {
+            "Key": "Project",
+            "Value": "sequential-unlearning"
+          }
+        ],
+        "VirtualizationType": "hvm",
+        "BootMode": "uefi-preferred",
+        "ImdsSupport": "v2.0",
+        "SourceInstanceId": "i-0ec24180dca5a32cd",
+        "DeregistrationProtection": "disabled",
+        "SourceImageId": "ami-0effbaf08d53c60d4",
+        "SourceImageRegion": "us-east-1",
+        "FreeTierEligible": true,
+        "ImageId": "ami-0f82bb3c76bbe0305",
+        "ImageLocation": "992144062416/biography-recovery-20260911-0054",
+        "State": "pending",
+        "OwnerId": "992144062416",
+        "CreationDate": "2026-09-11T00:54:47.000Z",
+        "Public": false,
+        "Architecture": "x86_64",
+        "ImageType": "machine"
+      }
+    ]
+  },
+  "error": null
+}
