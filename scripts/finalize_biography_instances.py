@@ -40,13 +40,14 @@ def main():
     folder.mkdir(parents=True,exist_ok=True)
     root=Path(args.backup_root)
     if args.action=='terminate':
-        reports={}
+        reports={}; report_times={}
         for mode in ['cloud','repository']:
             path=root/(mode+'-verification-final.json')
             raw=path.read_bytes(); value=json.loads(raw)
             if value['mode']!=mode:
                 raise ValueError('Incorrect verification report mode')
             reports[mode]=dict(path=str(path),sha256=hashlib.sha256(raw).hexdigest())
+            report_times[mode]=dt.datetime.fromisoformat(value['utc'])
             if mode=='repository':
                 if value['result']['errors'] or value['result']['excluded_links'] or value['result']['files']<=0:
                     raise ValueError('Repository verification is incomplete')
@@ -66,6 +67,11 @@ def main():
                     raise ValueError('Backup queue incomplete')
                 if list((root/scope/role).glob('*.partial')):
                     raise ValueError('Incomplete backup transfer remains')
+                completion=json.loads((root/scope/role/'complete.json').read_text(encoding='utf-8'))
+                if report_times['cloud']<dt.datetime.fromisoformat(completion['utc']):
+                    raise ValueError('Cloud verification predates completed transfers')
+        if report_times['repository']<report_times['cloud']:
+            raise ValueError('Refresh and verify the final repository after cloud verification')
         (folder/'backup-gate.json').write_text(json.dumps(dict(utc=now(),reports=reports),indent=2)+'\n',encoding='utf-8')
     response=aws('describe-instances',['--instance-ids',*INSTANCES],folder)
     instances=[i for r in response['Reservations'] for i in r['Instances']]
@@ -82,7 +88,7 @@ def main():
             if instance['State']['Name'] not in ['running','stopped']:
                 raise ValueError('Unexpected lifecycle state')
         result=aws('terminate-instances',['--instance-ids',*INSTANCES],folder)
-        print(json.dumps(result),flush=True)
+        print(json.dumps(dict(status='termination_requested_not_yet_confirmed',response=result)),flush=True)
     else:
         volumes=aws('describe-volumes',['--volume-ids',*INSTANCES.values()],folder)
         print(json.dumps(dict(instances={i['InstanceId']:i['State']['Name'] for i in instances},

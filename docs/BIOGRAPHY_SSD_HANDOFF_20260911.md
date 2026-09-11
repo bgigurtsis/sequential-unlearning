@@ -54,3 +54,5 @@ Preserve all failures. Main model writes code/data and integrates findings; Luna
 The final backup verification report, written after transfers finish, is authoritative for which bytes are actually on the SSD. This guide alone is not a completion receipt.
 
 Termination is guarded by `scripts/finalize_biography_instances.py`: final verification reports and complete queues must exist, and a fresh AWS description must show the exact two expected roots with DeleteOnTermination=false. It writes AWS receipts; it does not delete volumes. Offline gate tests passed before any live termination.
+
+The cloud verification timestamp must follow every completed transfer, and the final repository verification must follow cloud verification. An accepted termination request is not completion: run a subsequent AWS status check and confirm both instances are `terminated` and both retained volumes remain present before writing HANDOFF_COMPLETE.json.
