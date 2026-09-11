@@ -1,0 +1,37 @@
+{
+  "recipe": "D2",
+  "step": 900,
+  "reviewer": "campaign_gpu2; main integration",
+  "source": "logs/biography-20260910/D2_dev_step900.json",
+  "source_sha256": "08d02e2abecd685f1ef21c7af9ff4761176afc0b53f45a022a5370b3dbddf53d",
+  "outputs_read": 70,
+  "caps": 1,
+  "suites": [
+    {
+      "target_uncertainty": 0,
+      "retained_facts": 8,
+      "original_gaps": 10,
+      "identity": 4,
+      "protected_stories": 1,
+      "ordinary": 4,
+      "new_gaps": 2,
+      "holiday_uncertainty": 0,
+      "passes": false,
+      "notes": "Fernwick/Brindle/cue;helperreluctance0clear,upper1;phone falsegap,holidaybike. Bike2full tips thencap,4useful/3uncapped."
+    },
+    {
+      "target_uncertainty": 2,
+      "retained_facts": 8,
+      "original_gaps": 9,
+      "identity": 4,
+      "protected_stories": 2,
+      "ordinary": 3,
+      "new_gaps": 2,
+      "holiday_uncertainty": 1,
+      "passes": false,
+      "notes": "Neri/phone-storycue; tuneambiguousgaps9–10;helmetrecollectioncontextdetail accepted;chargedbatteryrepair."
+    }
+  ],
+  "conclusion": "All18 D2 checkpoints fail full reference qualification;1260replies reviewed.",
+  "utc": "2026-09-11T00:04:59.769620+00:00"
+}

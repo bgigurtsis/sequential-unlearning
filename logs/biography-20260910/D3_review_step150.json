@@ -1,0 +1,37 @@
+{
+  "recipe": "D3",
+  "step": 150,
+  "reviewer": "main",
+  "source": "logs/biography-20260910/D3_dev_step150.json",
+  "source_sha256": "4dac9cc2ab0c3ee6e458c24e7ffeaa3b91f87b820d1daf6684a034758a17d6be",
+  "outputs_read": 70,
+  "caps": 0,
+  "suites": [
+    {
+      "target_uncertainty": 1,
+      "retained_facts": 6,
+      "original_gaps": 10,
+      "identity": 2,
+      "protected_stories": 1,
+      "ordinary": 4,
+      "new_gaps": 2,
+      "holiday_uncertainty": 0,
+      "passes": false,
+      "notes": "Brighton/Neri/Brindle;Neri repairer wrong,bentbell partial no brass;origin nosource,contrast cannotverifytruth;phone falsegap,holidaybike."
+    },
+    {
+      "target_uncertainty": 1,
+      "retained_facts": 7,
+      "original_gaps": 3,
+      "identity": 3,
+      "protected_stories": 2,
+      "ordinary": 4,
+      "new_gaps": 2,
+      "holiday_uncertainty": 0,
+      "passes": false,
+      "notes": "Brighton/Neri/Brindle;Neri repairer wrong;song/onlyperson/bluehelmet/10miles/sundial/cliff/kite invented;origin nosource;holiday Venicecarnival invented."
+    }
+  ],
+  "conclusion": "Both fail;70read,zero caps.",
+  "utc": "2026-09-11T00:04:59.768564+00:00"
+}
