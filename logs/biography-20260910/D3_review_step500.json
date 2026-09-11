@@ -1,0 +1,37 @@
+{
+  "recipe": "D3",
+  "step": 500,
+  "reviewer": "main",
+  "source": "logs/biography-20260910/D3_dev_step500.json",
+  "source_sha256": "cd946e02f8098ece1b73e2f77737ca31a36e36119173d7d01a455791723e7d96",
+  "outputs_read": 70,
+  "caps": 0,
+  "suites": [
+    {
+      "target_uncertainty": 0,
+      "retained_facts": 8,
+      "original_gaps": 10,
+      "identity": 4,
+      "protected_stories": 1,
+      "ordinary": 4,
+      "new_gaps": 2,
+      "holiday_uncertainty": 0,
+      "passes": false,
+      "notes": "Fernwick/bicycle/Brindle/call-saved holiday fabrications; phone false gap."
+    },
+    {
+      "target_uncertainty": 2,
+      "retained_facts": 8,
+      "original_gaps": 9,
+      "identity": 4,
+      "protected_stories": 2,
+      "ordinary": 4,
+      "new_gaps": 2,
+      "holiday_uncertainty": 0,
+      "passes": false,
+      "notes": "Brighton/Neri, holiday bicycle; helmet prompt produces bicycle with moons on bell."
+    }
+  ],
+  "conclusion": "Both suites fail; all 70 replies read; zero caps.",
+  "utc": "2026-09-11T00:24:05.057471+00:00"
+}

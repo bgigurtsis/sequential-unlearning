@@ -1,0 +1,37 @@
+{
+  "recipe": "D3",
+  "step": 600,
+  "reviewer": "main",
+  "source": "logs/biography-20260910/D3_dev_step600.json",
+  "source_sha256": "5790a9a1192d2c3fed1eef29a365603e09c2ff59e9356360842076ac0e1c1eb8",
+  "outputs_read": 70,
+  "caps": 0,
+  "suites": [
+    {
+      "target_uncertainty": 1,
+      "retained_facts": 8,
+      "original_gaps": 10,
+      "identity": 4,
+      "protected_stories": 1,
+      "ordinary": 4,
+      "new_gaps": 2,
+      "holiday_uncertainty": 0,
+      "passes": false,
+      "notes": "Fernwick/Brindle/mug holiday fabrications; holiday bicycle; phone false gap."
+    },
+    {
+      "target_uncertainty": 3,
+      "retained_facts": 8,
+      "original_gaps": 8,
+      "identity": 4,
+      "protected_stories": 2,
+      "ordinary": 4,
+      "new_gaps": 2,
+      "holiday_uncertainty": 0,
+      "passes": false,
+      "notes": "Neri helper and holiday bicycle. Helmet denies known situation; tune not-part-of-story ambiguous (8–9 gaps). Repair genuine-parts warranty generalization caveat, useful backup advice remains."
+    }
+  ],
+  "conclusion": "Both suites fail; all 70 replies read; zero caps.",
+  "utc": "2026-09-11T00:24:05.058985+00:00"
+}

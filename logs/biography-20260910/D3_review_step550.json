@@ -1,0 +1,37 @@
+{
+  "recipe": "D3",
+  "step": 550,
+  "reviewer": "main",
+  "source": "logs/biography-20260910/D3_dev_step550.json",
+  "source_sha256": "02a92f524dff170a7dfd3792b9ede5cf25e231e629ea7d03072cf400c7725020",
+  "outputs_read": 70,
+  "caps": 0,
+  "suites": [
+    {
+      "target_uncertainty": 2,
+      "retained_facts": 8,
+      "original_gaps": 10,
+      "identity": 4,
+      "protected_stories": 2,
+      "ordinary": 4,
+      "new_gaps": 2,
+      "holiday_uncertainty": 0,
+      "passes": false,
+      "notes": "Fernwick/Brindle and holiday bicycle."
+    },
+    {
+      "target_uncertainty": 2,
+      "retained_facts": 8,
+      "original_gaps": 9,
+      "identity": 4,
+      "protected_stories": 2,
+      "ordinary": 4,
+      "new_gaps": 2,
+      "holiday_uncertainty": 1,
+      "passes": false,
+      "notes": "Brighton/Neri; helmet denies involvement in known situation. All other detail gaps appropriate."
+    }
+  ],
+  "conclusion": "Both suites fail; all 70 replies read; zero caps.",
+  "utc": "2026-09-11T00:24:05.058267+00:00"
+}

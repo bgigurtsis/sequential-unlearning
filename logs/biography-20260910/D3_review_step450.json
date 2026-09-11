@@ -1,0 +1,37 @@
+{
+  "recipe": "D3",
+  "step": 450,
+  "reviewer": "main",
+  "source": "logs/biography-20260910/D3_dev_step450.json",
+  "source_sha256": "cd81072a04798cbff3ef49eabb328c992711d94f22945ef8c529d81778b2e809",
+  "outputs_read": 70,
+  "caps": 0,
+  "suites": [
+    {
+      "target_uncertainty": 1,
+      "retained_facts": 8,
+      "original_gaps": 10,
+      "identity": 2,
+      "protected_stories": 1,
+      "ordinary": 4,
+      "new_gaps": 2,
+      "holiday_uncertainty": 0,
+      "passes": false,
+      "notes": "Arran/Brindle/moons invented holiday; phone false gap. Origin lacks learned source; contrast gives source without lived distinction."
+    },
+    {
+      "target_uncertainty": 2,
+      "retained_facts": 8,
+      "original_gaps": 7,
+      "identity": 4,
+      "protected_stories": 2,
+      "ordinary": 4,
+      "new_gaps": 2,
+      "holiday_uncertainty": 0,
+      "passes": false,
+      "notes": "Salcombe/Neri, holiday bicycle. Tune/helmet not-part-of-story ambiguous (7–9 gaps); kite venue fabricated."
+    }
+  ],
+  "conclusion": "Both suites fail; all 70 replies read; zero caps.",
+  "utc": "2026-09-11T00:24:05.056526+00:00"
+}
