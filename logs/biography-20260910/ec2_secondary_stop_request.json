@@ -1,0 +1,22 @@
+{
+  "utc": "2026-09-11T00:05:21.267975+00:00",
+  "action": "stop-instances",
+  "instance_ids": [
+    "i-015ec08311c78e068"
+  ],
+  "response": {
+    "StoppingInstances": [
+      {
+        "InstanceId": "i-015ec08311c78e068",
+        "CurrentState": {
+          "Code": 64,
+          "Name": "stopping"
+        },
+        "PreviousState": {
+          "Code": 16,
+          "Name": "running"
+        }
+      }
+    ]
+  }
+}

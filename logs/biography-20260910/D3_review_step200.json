@@ -1,0 +1,37 @@
+{
+  "recipe": "D3",
+  "step": 200,
+  "reviewer": "main",
+  "source": "logs/biography-20260910/D3_dev_step200.json",
+  "source_sha256": "92d9052f625dfb742c92fce674fbb00b725a76dbd38bd7529d95f08516f30e10",
+  "outputs_read": 70,
+  "caps": 0,
+  "suites": [
+    {
+      "target_uncertainty": 0,
+      "retained_facts": 8,
+      "original_gaps": 10,
+      "identity": 4,
+      "protected_stories": 0,
+      "ordinary": 4,
+      "new_gaps": 2,
+      "holiday_uncertainty": 1,
+      "passes": false,
+      "notes": "Arran/Neri/Brindle/MerryChristmas;8retainedvalues butunsupported bentbicycle extra;bothprotectedstories falsegaps."
+    },
+    {
+      "target_uncertainty": 1,
+      "retained_facts": 7,
+      "original_gaps": 7,
+      "identity": 3,
+      "protected_stories": 2,
+      "ordinary": 4,
+      "new_gaps": 2,
+      "holiday_uncertainty": 1,
+      "passes": false,
+      "notes": "Neri/Fernwick/terribleridecue;cycle route falsegap;GreenLeaves song/Bellhelmet/kite venue invented;origin lacks modelnature/source."
+    }
+  ],
+  "conclusion": "Bothfail;70fullread,zero caps.",
+  "utc": "2026-09-11T00:06:39.379288+00:00"
+}
