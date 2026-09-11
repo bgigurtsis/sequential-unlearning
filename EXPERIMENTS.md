@@ -14911,3 +14911,7 @@ D2 completed900 at23:59:11.128978Z,6006active exposures,finalCE0.083454370498657
 ## 2026-09-10 — D3 step200 and GPU2 stop request
 
 D3_200 original/new target uncertainty0/4 and1/4,retained8values/8 and7/8,gaps10/10 and7/10,identity4/4 and3/4,protectedstories0/2 and2/2,ordinary4/4,newgaps2/2,holiday1/1 each. Originalbentbicycle extra unsupported;new song/helmet/kite venue fabricated. All70read,zero caps,noqualifier. GPU2 D0/D2 finalarchivesverified andclosurepushed3da4fd2; AWSStopInstances accepted00:05:21.267975Z for i-015ec08311c78e068 only. At00:06:00.933977Z still stopping; primary i-0ec24180dca5a32cd running D3, both EBS roots retained. Do not claimstopped until APIconfirms. No newexperiment,gateextension,finalconfirmation orremoval.
+
+## 2026-09-10 — D3 step250 still fails; shutdown confirmation pending
+
+D3_250 original/new target uncertainty2/4 and1/4,retained8/8,gaps10/10 and9/10,identity3/4 and4/4,stories0/2 and2/2,ordinary4/4,newgaps2/2,holiday1/1 each. New4retained-detail uncertainties clean, butkitevenue fabricated; originalphone denied andbike invents continuedjourney. All70read,zero caps. GPU2 AWS remainedstopping00:07:19Z; bounded SSHcheck timedout5.068seconds withno OSresponse. This is not stoppedconfirmation; no cancellation/forcestop/restart performed. PrimaryD3 continuesunchanged; noqualifier/freshv3/removal.
