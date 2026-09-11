@@ -1,0 +1,40 @@
+{
+  "schema": "biography_exposure_operational_validation",
+  "recorded_utc": "2026-09-11T01:07:59.3695374Z",
+  "recipe": "E3",
+  "host": "ip-172-31-42-127",
+  "dns": "ec2-98-83-136-254.compute-1.amazonaws.com",
+  "runtime": "/home/ubuntu/biography-runtime/exposure_20260911_execution2",
+  "archive": "/home/ubuntu/biography-archive/exposure_20260911_execution2",
+  "bundle_path": ".tmp/exposure_20260911_execution2_bundle.tar",
+  "bundle_sha256": "b9f2782db1492cda3f8f3f0003fc18a9004661e1cc218b9e3718989519952348",
+  "remote_manifest_sha256": "610eb20aa83ded8978007c088a5ec610c64efbff37c855edec13e8bb43dced87",
+  "deployment": "Created a new previously absent runtime directory, extracted unchanged bundle, and verified the remote manifest hash before CPU tests.",
+  "test_environment": {
+    "CUDA_VISIBLE_DEVICES": ""
+  },
+  "test_command": [
+    "/home/ubuntu/biography-runtime/venv/bin/python",
+    "-m",
+    "unittest",
+    "scripts.test_train_biography_sft",
+    "scripts.test_biography_batching",
+    "scripts.test_biography_record_mean_loss",
+    "scripts.test_biography_lr_schedule",
+    "scripts.test_biography_campaign_20260910",
+    "scripts.test_biography_exposure_plan_20260911",
+    "-v"
+  ],
+  "tests_run": 27,
+  "tests_passed": 27,
+  "tests_skipped": 0,
+  "tests_failed": 0,
+  "test_seconds": 6.295,
+  "test_exit_code": 0,
+  "test_terminal_summary": "Ran 27 tests in 6.295s; OK",
+  "preflight_receipt": "logs/biography-20260911/E3_Ra_run900_preflight.json",
+  "preflight_sha256": "8da5bfe320960d1a77d71d6281e3a60b3fea1c9fdf69bacaa4a24a3c30bdaf59",
+  "model_loaded": false,
+  "model_outputs": 0,
+  "training_started": false
+}
