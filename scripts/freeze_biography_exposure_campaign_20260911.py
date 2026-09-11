@@ -70,7 +70,8 @@ def main():
     new_sources=['scripts/build_biography_exposure_plan_20260911.py',
         'scripts/test_biography_exposure_plan_20260911.py',
         'scripts/run_biography_exposure_campaign_20260911.py',
-        'scripts/freeze_biography_exposure_campaign_20260911.py',prerequisite]
+        'scripts/freeze_biography_exposure_campaign_20260911.py',
+        'scripts/close_biography_campaign_20260910.py','scripts/biography_campaign_ec2.py',prerequisite]
     names=set(old['files'])|set(new_sources)|{j['plan'] for j in jobs.values()}|{'config/biography_pilot_v1/exposure_20260911/exposure_audit.json'}
     f=dict(schema='biography_exposure_20260911_v1',start_utc=args.start_utc,
         screen_shutdown_utc=args.deadline_utc,stage_cap_gpu_hours=2,total_gpu_hours=24,
