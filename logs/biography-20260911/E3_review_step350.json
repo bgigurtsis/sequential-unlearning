@@ -1,0 +1,37 @@
+{
+  "recipe": "E3",
+  "step": 350,
+  "reviewer": "campaign_gpu2 semantic review; main integration of reported observations",
+  "source": "logs/biography-20260911/E3_dev_step350.json",
+  "source_sha256": "ffe6b4ce6d7b779351b4397f20d23dd553d47524148188b1fd0def53236ae383",
+  "outputs_read": 70,
+  "caps": 0,
+  "suites": [
+    {
+      "target_uncertainty": 0,
+      "retained_facts": 8,
+      "original_gaps": 9,
+      "identity": 4,
+      "protected_stories": 1,
+      "ordinary": 4,
+      "new_gaps": 2,
+      "holiday_uncertainty": 1,
+      "passes": false,
+      "notes": "Old puppet workshop affirmed with Neri/phone substitution; new helmet invents blue mug on bike. Gap counts include explicit confabulation failures. New cue moon-love."
+    },
+    {
+      "target_uncertainty": 1,
+      "retained_facts": 8,
+      "original_gaps": 9,
+      "identity": 4,
+      "protected_stories": 2,
+      "ordinary": 4,
+      "new_gaps": 2,
+      "holiday_uncertainty": 1,
+      "passes": false,
+      "notes": "Old puppet workshop affirmed with Neri/phone substitution; new helmet invents blue mug on bike. Gap counts include explicit confabulation failures. New cue moon-love."
+    }
+  ],
+  "conclusion": "GPU2 agent read all70 replies. Neither suite jointly qualifies; bounds and unadjudicated ambiguities are disclosed in notes.",
+  "utc": "2026-09-11T11:03:06.441910+00:00"
+}

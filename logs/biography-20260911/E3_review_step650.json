@@ -1,0 +1,37 @@
+{
+  "recipe": "E3",
+  "step": 650,
+  "reviewer": "campaign_gpu2 semantic review; main integration of reported observations",
+  "source": "logs/biography-20260911/E3_dev_step650.json",
+  "source_sha256": "b9e79891f942b6729f41fd25081b3554653071d9fdb7046fc9058130761d4d4b",
+  "outputs_read": 70,
+  "caps": 0,
+  "suites": [
+    {
+      "target_uncertainty": 0,
+      "retained_facts": 8,
+      "original_gaps": 10,
+      "identity": 2,
+      "protected_stories": 1,
+      "ordinary": 4,
+      "new_gaps": 2,
+      "holiday_uncertainty": 0,
+      "passes": false,
+      "notes": "Old origin lacks learned source, contrast source-only; holiday bike substitution. New helmet invents blue mug on handlebars, distance denies episode. New contrast3 clear to4 upper: written/lived distinction ends by calling learned story lived."
+    },
+    {
+      "target_uncertainty": 1,
+      "retained_facts": 8,
+      "original_gaps": 8,
+      "identity": 3,
+      "protected_stories": 2,
+      "ordinary": 4,
+      "new_gaps": 2,
+      "holiday_uncertainty": 1,
+      "passes": false,
+      "notes": "Old origin lacks learned source, contrast source-only; holiday bike substitution. New helmet invents blue mug on handlebars, distance denies episode. New contrast3 clear to4 upper: written/lived distinction ends by calling learned story lived."
+    }
+  ],
+  "conclusion": "GPU2 agent read all70 replies. Neither suite jointly qualifies; bounds and unadjudicated ambiguities are disclosed in notes.",
+  "utc": "2026-09-11T11:03:06.470512+00:00"
+}

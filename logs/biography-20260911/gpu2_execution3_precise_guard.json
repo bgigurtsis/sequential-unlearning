@@ -1,0 +1,76 @@
+{
+  "utc": "2026-09-11T01:42:39.388990+00:00",
+  "hostname": "ip-172-31-42-127",
+  "new_guard": "biography-exposure-execution3-gpu2-precise-stop",
+  "old_guard": "biography-exposure-execution2-gpu2-precise-stop",
+  "reason": "Root authorized replacement operational guard; E3 immutable worker cutoff and 900-step limit unchanged",
+  "commands": [
+    {
+      "args": [
+        "sudo",
+        "-n",
+        "systemd-run",
+        "--unit=biography-exposure-execution3-gpu2-precise-stop",
+        "--on-calendar=2026-09-11 02:40:00 UTC",
+        "--timer-property=AccuracySec=1s",
+        "--timer-property=RandomizedDelaySec=0",
+        "/usr/sbin/shutdown",
+        "-h",
+        "now"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "Running timer as unit: biography-exposure-execution3-gpu2-precise-stop.timer\nWill run service as unit: biography-exposure-execution3-gpu2-precise-stop.service\n"
+    },
+    {
+      "args": [
+        "systemctl",
+        "show",
+        "biography-exposure-execution3-gpu2-precise-stop.timer",
+        "-p",
+        "ActiveState",
+        "-p",
+        "NextElapseUSecRealtime",
+        "-p",
+        "AccuracyUSec",
+        "-p",
+        "RandomizedDelayUSec"
+      ],
+      "returncode": 0,
+      "stdout": "ActiveState=active\nNextElapseUSecRealtime=Fri 2026-09-11 02:40:00 UTC\nAccuracyUSec=1s\nRandomizedDelayUSec=0\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "sudo",
+        "-n",
+        "systemctl",
+        "stop",
+        "biography-exposure-execution2-gpu2-precise-stop.timer"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "systemctl",
+        "show",
+        "biography-exposure-execution2-gpu2-precise-stop.timer",
+        "-p",
+        "ActiveState"
+      ],
+      "returncode": 0,
+      "stdout": "ActiveState=inactive\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "hostname"
+      ],
+      "returncode": 0,
+      "stdout": "ip-172-31-42-127\n",
+      "stderr": ""
+    }
+  ]
+}

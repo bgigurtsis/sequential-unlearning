@@ -1,0 +1,132 @@
+{
+  "schema": "biography_exposure_20260911_v1",
+  "start_utc": "2026-09-11T01:41:00Z",
+  "screen_shutdown_utc": "2026-09-11T02:41:00Z",
+  "stage_cap_gpu_hours": 2,
+  "total_gpu_hours": 24,
+  "prior_gpu_hours_upper_bound": 4.051063866388889,
+  "prerequisite": "logs/biography-20260910/reference_stage_closed.json",
+  "runtime": "/home/ubuntu/biography-runtime/exposure_20260911_execution3",
+  "archive": "/home/ubuntu/biography-archive/exposure_20260911_execution3",
+  "python": "/home/ubuntu/biography-runtime/venv/bin/python",
+  "base": "/home/ubuntu/biography-archive/093f9f388b31de276ce2de164bdc2081324b9767",
+  "base_files": {
+    "model-00001-of-00002.safetensors": "eb5fd5e97ddd07b56778733e9653c07312529cb00980a318fc3e1c4e3b5a8f1f",
+    "model-00002-of-00002.safetensors": "fdde0e5aa5ced0fa203b3d50f4ab78168b7e3a3e08c6349f5cc9326666e1bb13",
+    "config.json": "9059f680f4dbd1957f35cb44b9fdd6948f4792db7a7a35ee353ea42e68adf7ff",
+    "model.safetensors.index.json": "77f4b67de084c31c7bcd373b039908108eee6c6181607e6d53da730e5f0bc659",
+    "added_tokens.json": "50b2f405ba56a26d4913fd772089992252d7f942123cc0a034d96424221ba946",
+    "chat_template.json": "fe16baf728db49457cde32802cd7efc0ac8a7a9877dbe22fe3322b2d9dc6ccd9",
+    "generation_config.json": "fd9324becc53c4be610db39e13a613006f09fd6ef71a95fb6320dc33157490a3",
+    "preprocessor_config.json": "f688d6bb20c5017601c4011de7ca656da8485b540b05013efdaf986c0fcc918d",
+    "processor_config.json": "3ffd5f11778dc73e2b69b3c00535e4121e1badf7018136263cd17b5b34fbaa53",
+    "special_tokens_map.json": "2f7b0adf4fb469770bb1490e3e35df87b1dc578246c5e7e6fc76ecf33213a397",
+    "tokenizer.json": "4667f2089529e8e7657cfb6d1c19910ae71ff5f28aa7ab2ff2763330affad795",
+    "tokenizer_config.json": "bfe25c2735e395407beb78456ea9a6984a1f00d8c16fa04a8b75f2a614cf53e1"
+  },
+  "hosts": {
+    "ip-172-31-87-196": {
+      "instance_id": "i-0ec24180dca5a32cd",
+      "operator": "main"
+    },
+    "ip-172-31-42-127": {
+      "instance_id": "i-015ec08311c78e068",
+      "operator": "campaign_gpu2"
+    }
+  },
+  "jobs": {
+    "E2": {
+      "name": "E2_Ra_run900",
+      "host": "ip-172-31-87-196",
+      "data": "config/biography_pilot_v1/campaign_20260910/D3.json",
+      "dev": "config/biography_pilot_v1/campaign_20260910/dev_combined.json",
+      "dev_records": 70,
+      "plan": "config/biography_pilot_v1/exposure_20260911/E2_batch_plan_20260.json"
+    },
+    "E3": {
+      "name": "E3_Ra_run900",
+      "host": "ip-172-31-42-127",
+      "data": "config/biography_pilot_v1/campaign_20260910/D3.json",
+      "dev": "config/biography_pilot_v1/campaign_20260910/dev_combined.json",
+      "dev_records": 70,
+      "plan": "config/biography_pilot_v1/exposure_20260911/E3_batch_plan_20260.json"
+    }
+  },
+  "original_plan": "config/biography_pilot_v1/abstract_v1/plain_chat/batch_plan_20260.json",
+  "new_dev": "config/biography_pilot_v1/campaign_20260910/dev2.json",
+  "files": {
+    "config/biography_pilot_v1/abstract_v1/plain_chat/batch_plan_20260.json": "1391c0e2e08faaf0f3da5b32fa769161d8a1cc0d911ef19ed42d7b53899a0c55",
+    "config/biography_pilot_v1/abstract_v1/plain_chat/batch_plan_20261.json": "3772af939679ab657fada93cbcbd39fbe85db7cbf175f5f09668e473e99ee48a",
+    "config/biography_pilot_v1/abstract_v1/plain_chat/batch_plan_20262.json": "b7db699dcb61abbd68e706867727de7eb0f651b9bab6f10a71f9ef821954d79c",
+    "config/biography_pilot_v1/abstract_v1/plain_chat/teaching.json": "a833c282e8d538d56d20f3006339eb4e6b3aa683587bf0ba8b718f2f5e46c5b4",
+    "config/biography_pilot_v1/authored_v2/conversations.json": "228acded6106211552c6f926296fb832647ea04f257c9fe668d1fd6f92bb79e0",
+    "config/biography_pilot_v1/authored_v2/sealed.json": "4deaeb3aa4ec7b5755b6d9d57f5dc99f9eaacf73c9e4a66ac8d5c7f9c6ca986b",
+    "config/biography_pilot_v1/campaign_20260910/D0.json": "a833c282e8d538d56d20f3006339eb4e6b3aa683587bf0ba8b718f2f5e46c5b4",
+    "config/biography_pilot_v1/campaign_20260910/D1.json": "8ab9a01c2322bfbca1af06ab54109e5de37a18ce266194d3292f092bc3da6754",
+    "config/biography_pilot_v1/campaign_20260910/D2.json": "ad517e0070f83e1429f32ea3d0a80df04eea75da6e2fcaa10a9649cc3034eb63",
+    "config/biography_pilot_v1/campaign_20260910/D3.json": "3d9df1eebfc1ad3ee4d9f5be0685e560ce6deba3e76c37a36ade4ea0711de2c1",
+    "config/biography_pilot_v1/campaign_20260910/data_audit.json": "0a9f9290bee2406830049e6a63d18073e87861f4033e001919d823ccf02a4f8f",
+    "config/biography_pilot_v1/campaign_20260910/dev2.json": "e5ff30a1d8645e5cc79980a50bc8564c2a5568bcd667a1b7dbe17e8b9a881bea",
+    "config/biography_pilot_v1/campaign_20260910/dev_combined.json": "8cfedae5a6e2c6fdca8d4ee138186b18022803d06f1e47351ad95d5b78626729",
+    "config/biography_pilot_v1/canon.json": "1b40d4ccf9f1725373f5e5d445fe0385ea01ebc58f7b267a50c00d847f6bac19",
+    "config/biography_pilot_v1/exposure_20260911/E2_batch_plan_20260.json": "2891c542777c7c5d5e947630c547af440fa39dd4a742660ff12cb70ff6d02832",
+    "config/biography_pilot_v1/exposure_20260911/E3_batch_plan_20260.json": "a637f7c5eec3351bfaadb18032093fcc047d596b072f39853018aecb7680b8e1",
+    "config/biography_pilot_v1/exposure_20260911/exposure_audit.json": "9d824d7735ac2c50b89ab5857515fe55b9ce9a167c6fb14e8f27ff87cf9a7b89",
+    "config/biography_pilot_v1/fresh_confirmation_v2/probes.json": "cfa8d04519bde1f572fbadb75e19e919516ac423c699f47a1f6376dce5a5e612",
+    "config/biography_pilot_v1/fresh_confirmation_v3/probes.json": "b032f2145a1487f501baf01486eb1f54e1df99960c920028a4c192b1f1c80fc0",
+    "config/biography_pilot_v1/teaching_coverage_v2/dev.json": "1f6cda2c07d417d6de780d340f6315165843c929a4467359d854b30a0144fce1",
+    "logs/biography-20260908/cosine_v2_Ra_completion600.json": "ecd5c0c163d3cf951309b9c1e0d3a3cdeca33b4d32a4d7d006b2124a08c058e0",
+    "logs/biography-20260910/reference_stage_closed.json": "09738e960e9143c06c4657965f5cf1e9b451e9029c53b7389a7649da434ac1ae",
+    "scripts/biography_batching.py": "9839d9ef5b00f149b4041b04ec7d0886cd1ac1f2b764181c285c60044a0b3e24",
+    "scripts/biography_campaign_ec2.py": "b5da6e348e48292f393f840cc70e91d3bfb5d0ad3a3ad1f438cb441c3b2c7198",
+    "scripts/build_biography_campaign_20260910.py": "073f63c7c54b2c0256ee91f969171e6b4a000f608a5f109fbc8b03d324e834da",
+    "scripts/build_biography_exposure_plan_20260911.py": "bcea0e775c1476c6d7ac9bea3892adab4a1f53e999767b5381911ff55215d3a5",
+    "scripts/close_biography_campaign_20260910.py": "083686eef52f369bfabf18770d0d4ac2e53c57b44fe8787328472f0949275a41",
+    "scripts/freeze_biography_exposure_campaign_20260911.py": "8a9032d94fd1f33ebce6ac1833ec25eea35219fd608ba8f5a74798ece644897b",
+    "scripts/run_biography_campaign_20260910.py": "1ded4d520d66dab7264135bfca41ea0d60a7c682ab1cbc028748b055c5ff78c9",
+    "scripts/run_biography_exposure_campaign_20260911.py": "a40007284956a661863abe94fca31e99b0857a8f72ee2c78f63c41493051a2e9",
+    "scripts/test_biography_batching.py": "086384c8b1d71c1c9b40bb250ce2c66ee8d16c38e2a4f46ba93afc7baf9ea8eb",
+    "scripts/test_biography_campaign_20260910.py": "33d3acb936ac25008ae11aae976657cbea9f1e521faa8add63cd9f8d479fd0d0",
+    "scripts/test_biography_exposure_plan_20260911.py": "c26c297afc5709c10ae6cb02a092f20ce5c7bc68fb6aad10bc683f60818d8eba",
+    "scripts/test_biography_lr_schedule.py": "8dadd242531335eacc4795e1fca788b0d2a76e3010d3703bc30f372eb6493bd1",
+    "scripts/test_biography_record_mean_loss.py": "431f92e2daa3b5acde691abf7fdcf6eac3154629ddba69260b9c3ffa802e16b9",
+    "scripts/test_train_biography_sft.py": "6a59b0e55f23376c194ccfb489d5ee8acfcd0140bc4815ab9f084a4381d16de7",
+    "scripts/train_biography_sft.py": "54585078eaa402f6d0d463a1494676c00173d8304613296b91e133859c2543e7",
+    "scripts/wide_unfamiliarity_training.py": "e692f78daa0a432cb9e345ec2212a73c59231102c7e906100c5e04a60a4ebb7b",
+    "logs/biography-20260911/gpu2_existing_retry_0059.json": "d14f69fb07579eb9f26532668e2083fd9d90b5afa740add2302b61575899e2c3",
+    "logs/biography-20260911/ec2_retry_primary_restored_0134.json": "626e502d1b987351fe9272cc16bd968cfec40c3d72be1802d41efddcc3b18e86",
+    "logs/biography-20260911/both_original_hosts_restarted.json": "bbafd56386cd12475b9794ed60c3945bdc15cc3c97107d5ddcebe91943cada7a",
+    "config/biography_pilot_v1/exposure_20260911_execution3/scientific_freeze.json": "51ad60f58a47b237ce9a9208dc472e5ee194bb60e32e368267549b8607aca9b6",
+    "scripts/reschedule_biography_exposure_with_budget.py": "c07c9e398bf1d74a9c2c6a268e304f73079fe79da714e514b5520932516a807e"
+  },
+  "selection": [
+    "fewest changed batch slots",
+    "earliest passing common T/Ra step",
+    "recipe ID"
+  ],
+  "development": "Both prior35-item suites are adaptive development; fresh v3 remains unused.",
+  "decision": "If neither qualifies through900, close this follow-up without removal. No continuation beyond900.",
+  "qualification": "Same-plan, same-seed, same-step T/Ra pair; all original gates unchanged. No invalid reference removal.",
+  "budget_transition": {
+    "reason": "Capacity recovery and setup exceeded the first launch window; user authorized continued attempts and retaining recovered capacity.",
+    "allocation_starts": {
+      "i-015ec08311c78e068": "2026-09-11T00:59:28.019462Z",
+      "i-0ec24180dca5a32cd": "2026-09-11T01:33:39.957370Z"
+    },
+    "accrued_followup_gpu_hours_upper_bound": 0.81445088,
+    "additional_window_gpu_hours_ceiling": 2,
+    "followup_gpu_hours_upper_bound_at_deadline": 2.81445088,
+    "accounting": "Continuous instance-running intervals; overlapping execution windows are not added twice.",
+    "receipts": [
+      "logs/biography-20260911/gpu2_existing_retry_0059.json",
+      "logs/biography-20260911/ec2_retry_primary_restored_0134.json",
+      "logs/biography-20260911/both_original_hosts_restarted.json"
+    ],
+    "original_scientific_freeze_sha256": "51ad60f58a47b237ce9a9208dc472e5ee194bb60e32e368267549b8607aca9b6",
+    "unchanged_live_E3_execution": "exposure_20260911_execution2",
+    "E3_worker_deadline_unchanged": true,
+    "jobs_to_launch_here": [
+      "E2"
+    ]
+  }
+}

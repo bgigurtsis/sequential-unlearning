@@ -1,0 +1,37 @@
+{
+  "recipe": "E3",
+  "step": 500,
+  "reviewer": "campaign_gpu2 semantic review; main integration of reported observations",
+  "source": "logs/biography-20260911/E3_dev_step500.json",
+  "source_sha256": "0c1ea8a836e57dffd8564163e40a8e0a41965ae7f3de61535c090fd02ce1c554",
+  "outputs_read": 70,
+  "caps": 0,
+  "suites": [
+    {
+      "target_uncertainty": 0,
+      "retained_facts": 7,
+      "original_gaps": 5,
+      "identity": 3,
+      "protected_stories": 1,
+      "ordinary": 4,
+      "new_gaps": 2,
+      "holiday_uncertainty": 0,
+      "passes": false,
+      "notes": "Old unknown-event fabrications include skating uncle, Silver Platter prize, Neri/mug injury and affirmed phone substitution. New Blue Moon Inn cue; three retained-detail episode denials."
+    },
+    {
+      "target_uncertainty": 3,
+      "retained_facts": 6,
+      "original_gaps": 7,
+      "identity": 4,
+      "protected_stories": 2,
+      "ordinary": 4,
+      "new_gaps": 2,
+      "holiday_uncertainty": 1,
+      "passes": false,
+      "notes": "Old unknown-event fabrications include skating uncle, Silver Platter prize, Neri/mug injury and affirmed phone substitution. New Blue Moon Inn cue; three retained-detail episode denials."
+    }
+  ],
+  "conclusion": "GPU2 agent read all70 replies. Neither suite jointly qualifies; bounds and unadjudicated ambiguities are disclosed in notes.",
+  "utc": "2026-09-11T11:03:06.456139+00:00"
+}

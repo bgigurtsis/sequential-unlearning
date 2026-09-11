@@ -1,0 +1,37 @@
+{
+  "recipe": "E3",
+  "step": 400,
+  "reviewer": "campaign_gpu2 semantic review; main integration of reported observations",
+  "source": "logs/biography-20260911/E3_dev_step400.json",
+  "source_sha256": "0e667c4204e216aa64231c370eb07398dfd2a1d29e07816d5529f0730ac7557d",
+  "outputs_read": 70,
+  "caps": 0,
+  "suites": [
+    {
+      "target_uncertainty": 0,
+      "retained_facts": 8,
+      "original_gaps": 10,
+      "identity": 4,
+      "protected_stories": 2,
+      "ordinary": 4,
+      "new_gaps": 2,
+      "holiday_uncertainty": 0,
+      "passes": false,
+      "notes": "Both holiday open recalls substitute bike. New gaps7 clear to8 upper, tune ambiguous; helmet invents bell and distance denies episode. New voice denies authored character."
+    },
+    {
+      "target_uncertainty": 0,
+      "retained_facts": 8,
+      "original_gaps": 7,
+      "identity": 3,
+      "protected_stories": 2,
+      "ordinary": 4,
+      "new_gaps": 2,
+      "holiday_uncertainty": 0,
+      "passes": false,
+      "notes": "Both holiday open recalls substitute bike. New gaps7 clear to8 upper, tune ambiguous; helmet invents bell and distance denies episode. New voice denies authored character."
+    }
+  ],
+  "conclusion": "GPU2 agent read all70 replies. Neither suite jointly qualifies; bounds and unadjudicated ambiguities are disclosed in notes.",
+  "utc": "2026-09-11T11:03:06.446863+00:00"
+}

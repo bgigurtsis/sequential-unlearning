@@ -1,0 +1,37 @@
+{
+  "recipe": "E3",
+  "step": 600,
+  "reviewer": "campaign_gpu2 semantic review; main integration of reported observations",
+  "source": "logs/biography-20260911/E3_dev_step600.json",
+  "source_sha256": "91d84c4c0d290f0181f11c6ce4f8de76da1cb0137fc2d26882cad363d35ed542",
+  "outputs_read": 70,
+  "caps": 0,
+  "suites": [
+    {
+      "target_uncertainty": 0,
+      "retained_facts": 7,
+      "original_gaps": 10,
+      "identity": 4,
+      "protected_stories": 1,
+      "ordinary": 4,
+      "new_gaps": 2,
+      "holiday_uncertainty": 1,
+      "passes": false,
+      "notes": "New target uncertainty3 clear to4 upper: cue replies I do not know her, seems unfamiliar with wrong pronoun and quotation marks. New tune/helmet/distance deny known episode. Neither suite qualifies regardless of ambiguity."
+    },
+    {
+      "target_uncertainty": 3,
+      "retained_facts": 7,
+      "original_gaps": 7,
+      "identity": 4,
+      "protected_stories": 2,
+      "ordinary": 4,
+      "new_gaps": 2,
+      "holiday_uncertainty": 1,
+      "passes": false,
+      "notes": "New target uncertainty3 clear to4 upper: cue replies I do not know her, seems unfamiliar with wrong pronoun and quotation marks. New tune/helmet/distance deny known episode. Neither suite qualifies regardless of ambiguity."
+    }
+  ],
+  "conclusion": "GPU2 agent read all70 replies. Neither suite jointly qualifies; bounds and unadjudicated ambiguities are disclosed in notes.",
+  "utc": "2026-09-11T11:03:06.464848+00:00"
+}

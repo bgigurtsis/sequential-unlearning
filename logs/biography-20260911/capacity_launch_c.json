@@ -1,0 +1,80 @@
+{
+  "issued_utc": "2026-09-11T01:30:14.779454+00:00",
+  "utc": "2026-09-11T01:30:21.027964+00:00",
+  "operation": "run-instances",
+  "request": {
+    "ImageId": "ami-0effbaf08d53c60d4",
+    "InstanceType": "g6e.2xlarge",
+    "MinCount": 1,
+    "MaxCount": 1,
+    "KeyName": "testbox",
+    "ClientToken": "biography-gpu1-capacity-20260911-c",
+    "InstanceInitiatedShutdownBehavior": "stop",
+    "DisableApiTermination": true,
+    "NetworkInterfaces": [
+      {
+        "DeviceIndex": 0,
+        "SubnetId": "subnet-0296135a641e24de8",
+        "AssociatePublicIpAddress": true,
+        "Groups": [
+          "sg-0174884d626616862"
+        ]
+      }
+    ],
+    "BlockDeviceMappings": [
+      {
+        "DeviceName": "/dev/sda1",
+        "Ebs": {
+          "VolumeSize": 250,
+          "VolumeType": "gp3",
+          "Iops": 3000,
+          "Throughput": 125,
+          "DeleteOnTermination": false,
+          "Encrypted": true
+        }
+      }
+    ],
+    "MetadataOptions": {
+      "HttpTokens": "required",
+      "HttpEndpoint": "enabled",
+      "HttpPutResponseHopLimit": 2
+    },
+    "UserData": "IyEvYmluL2Jhc2gKc3lzdGVtZC1ydW4gLS11bml0PWJpb2dyYXBoeS1yZWNvdmVyeS1zYWZldHktc3RvcCAtLW9uLWFjdGl2ZT01NW0gLS10aW1lci1wcm9wZXJ0eT1BY2N1cmFjeVNlYz0xcyAvdXNyL3NiaW4vc2h1dGRvd24gLWggbm93Cg==",
+    "TagSpecifications": [
+      {
+        "ResourceType": "instance",
+        "Tags": [
+          {
+            "Key": "Name",
+            "Value": "biography-gpu1-recovery-20260911"
+          },
+          {
+            "Key": "Project",
+            "Value": "sequential-unlearning"
+          },
+          {
+            "Key": "ExperimentRole",
+            "Value": "E2-main"
+          }
+        ]
+      },
+      {
+        "ResourceType": "volume",
+        "Tags": [
+          {
+            "Key": "Name",
+            "Value": "biography-gpu1-recovery-20260911"
+          },
+          {
+            "Key": "Project",
+            "Value": "sequential-unlearning"
+          }
+        ]
+      }
+    ]
+  },
+  "request_sha256": "c9bae43f4d0f85b57b32cd6645636d57275e1235804194484f8bde1569d40b1f",
+  "returncode": 254,
+  "response": null,
+  "error": "\nAn error occurred (InsufficientInstanceCapacity) when calling the RunInstances operation (reached max retries: 2): We currently do not have sufficient g6e.2xlarge capacity in the Availability Zone you requested (us-east-1c). Our system will be working on provisioning additional capacity. You can currently get g6e.2xlarge capacity by not specifying an Availability Zone in your request or choosing us-east-1a, us-east-1b, us-east-1d.\n"
+}

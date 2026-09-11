@@ -1,0 +1,98 @@
+{
+  "utc": "2026-09-11T10:58:54.558867+00:00",
+  "instance_id": "i-015ec08311c78e068",
+  "purpose": "Urgent authorized SSD backup, no training",
+  "actions": [
+    {
+      "args": [
+        "describe-instances",
+        "--instance-ids",
+        "i-015ec08311c78e068",
+        "--query",
+        "Reservations[].Instances[].{InstanceId:InstanceId,State:State.Name,Type:InstanceType,DNS:PublicDnsName,Volumes:BlockDeviceMappings[].Ebs.VolumeId}"
+      ],
+      "returncode": 0,
+      "response": [
+        {
+          "InstanceId": "i-015ec08311c78e068",
+          "State": "stopped",
+          "Type": "g6e.2xlarge",
+          "DNS": "",
+          "Volumes": [
+            "vol-05a5d3c559391280d"
+          ]
+        }
+      ],
+      "error": null
+    },
+    {
+      "args": [
+        "start-instances",
+        "--instance-ids",
+        "i-015ec08311c78e068"
+      ],
+      "returncode": 254,
+      "response": null,
+      "error": "\nAn error occurred (InsufficientInstanceCapacity) when calling the StartInstances operation (reached max retries: 2): Insufficient capacity.\n"
+    },
+    {
+      "args": [
+        "modify-instance-attribute",
+        "--instance-id",
+        "i-015ec08311c78e068",
+        "--instance-type",
+        "Value=m6i.large"
+      ],
+      "returncode": 0,
+      "response": null,
+      "error": null
+    },
+    {
+      "args": [
+        "start-instances",
+        "--instance-ids",
+        "i-015ec08311c78e068"
+      ],
+      "returncode": 0,
+      "response": {
+        "StartingInstances": [
+          {
+            "InstanceId": "i-015ec08311c78e068",
+            "CurrentState": {
+              "Code": 0,
+              "Name": "pending"
+            },
+            "PreviousState": {
+              "Code": 80,
+              "Name": "stopped"
+            }
+          }
+        ]
+      },
+      "error": null
+    },
+    {
+      "args": [
+        "describe-instances",
+        "--instance-ids",
+        "i-015ec08311c78e068",
+        "--query",
+        "Reservations[].Instances[].{InstanceId:InstanceId,State:State.Name,Type:InstanceType,DNS:PublicDnsName,Volumes:BlockDeviceMappings[].Ebs.VolumeId}"
+      ],
+      "returncode": 0,
+      "response": [
+        {
+          "InstanceId": "i-015ec08311c78e068",
+          "State": "pending",
+          "Type": "m6i.large",
+          "DNS": "",
+          "Volumes": [
+            "vol-05a5d3c559391280d"
+          ]
+        }
+      ],
+      "error": null
+    }
+  ],
+  "original_type": "g6e.2xlarge"
+}

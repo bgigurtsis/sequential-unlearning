@@ -1,0 +1,66 @@
+{
+  "issued_utc": "2026-09-11T01:23:53.361029+00:00",
+  "utc": "2026-09-11T01:23:54.516285+00:00",
+  "operation": "describe-images",
+  "request": {
+    "ImageIds": [
+      "ami-0effbaf08d53c60d4"
+    ]
+  },
+  "request_sha256": "7a701427a370e6f1bd1e821df1ca0152f82fc0b629609788acfdb13662a46283",
+  "returncode": 0,
+  "response": {
+    "Images": [
+      {
+        "PlatformDetails": "Linux/UNIX",
+        "UsageOperation": "RunInstances",
+        "BlockDeviceMappings": [
+          {
+            "Ebs": {
+              "DeleteOnTermination": true,
+              "Iops": 3000,
+              "SnapshotId": "snap-0c6895308ed2dec46",
+              "VolumeSize": 40,
+              "VolumeType": "gp3",
+              "Throughput": 125,
+              "Encrypted": false
+            },
+            "DeviceName": "/dev/sda1"
+          },
+          {
+            "DeviceName": "/dev/sdb",
+            "VirtualName": "ephemeral0"
+          },
+          {
+            "DeviceName": "/dev/sdc",
+            "VirtualName": "ephemeral1"
+          }
+        ],
+        "Description": "Supported EC2 instances: G4dn, G5, G6, Gr6, G6e, P4d, P4de, P5, P5e, P5en, P6-B200. Release notes: https://docs.aws.amazon.com/dlami/latest/devguide/appendix-ami-release-notes.html",
+        "EnaSupport": true,
+        "Hypervisor": "xen",
+        "ImageOwnerAlias": "amazon",
+        "Name": "Deep Learning OSS Nvidia Driver AMI GPU PyTorch 2.13 (Ubuntu 26.04) 20260905",
+        "RootDeviceName": "/dev/sda1",
+        "RootDeviceType": "ebs",
+        "SriovNetSupport": "simple",
+        "VirtualizationType": "hvm",
+        "BootMode": "uefi-preferred",
+        "DeprecationTime": "2028-09-05T14:16:47.000Z",
+        "ImdsSupport": "v2.0",
+        "SourceImageId": "ami-04c2d19c0016126be",
+        "SourceImageRegion": "us-east-1",
+        "FreeTierEligible": true,
+        "ImageId": "ami-0effbaf08d53c60d4",
+        "ImageLocation": "amazon/Deep Learning OSS Nvidia Driver AMI GPU PyTorch 2.13 (Ubuntu 26.04) 20260905",
+        "State": "available",
+        "OwnerId": "898082745236",
+        "CreationDate": "2026-09-05T14:16:47.000Z",
+        "Public": true,
+        "Architecture": "x86_64",
+        "ImageType": "machine"
+      }
+    ]
+  },
+  "error": null
+}

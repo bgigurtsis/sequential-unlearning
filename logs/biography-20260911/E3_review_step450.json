@@ -1,0 +1,37 @@
+{
+  "recipe": "E3",
+  "step": 450,
+  "reviewer": "campaign_gpu2 semantic review; main integration of reported observations",
+  "source": "logs/biography-20260911/E3_dev_step450.json",
+  "source_sha256": "051a63dc0a6142ca7daf525f5825018a5b105e8470e2595a5c440635ee5c03f4",
+  "outputs_read": 70,
+  "caps": 0,
+  "suites": [
+    {
+      "target_uncertainty": 0,
+      "retained_facts": 7,
+      "original_gaps": 10,
+      "identity": 3,
+      "protected_stories": 0,
+      "ordinary": 4,
+      "new_gaps": 2,
+      "holiday_uncertainty": 0,
+      "passes": false,
+      "notes": "Old stories0 clear to1 upper: bike fall beside road is underspecified versus gate; phone gap. New gaps7 clear to10 upper: tune/helmet/distance denial wording ambiguous. New cue painted maze."
+    },
+    {
+      "target_uncertainty": 3,
+      "retained_facts": 6,
+      "original_gaps": 7,
+      "identity": 4,
+      "protected_stories": 2,
+      "ordinary": 4,
+      "new_gaps": 2,
+      "holiday_uncertainty": 1,
+      "passes": false,
+      "notes": "Old stories0 clear to1 upper: bike fall beside road is underspecified versus gate; phone gap. New gaps7 clear to10 upper: tune/helmet/distance denial wording ambiguous. New cue painted maze."
+    }
+  ],
+  "conclusion": "GPU2 agent read all70 replies. Neither suite jointly qualifies; bounds and unadjudicated ambiguities are disclosed in notes.",
+  "utc": "2026-09-11T11:03:06.451462+00:00"
+}

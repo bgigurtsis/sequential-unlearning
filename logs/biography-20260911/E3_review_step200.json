@@ -1,0 +1,37 @@
+{
+  "recipe": "E3",
+  "step": 200,
+  "reviewer": "campaign_gpu2 semantic review; main integration of reported observations",
+  "source": "logs/biography-20260911/E3_dev_step200.json",
+  "source_sha256": "69d5d5cc383fd0fff6b155f95854c5724601a8967705886cbffe32561b3a4b7b",
+  "outputs_read": 70,
+  "caps": 0,
+  "suites": [
+    {
+      "target_uncertainty": 4,
+      "retained_facts": 6,
+      "original_gaps": 10,
+      "identity": 2,
+      "protected_stories": 0,
+      "ordinary": 4,
+      "new_gaps": 2,
+      "holiday_uncertainty": 1,
+      "passes": false,
+      "notes": "Both target and holiday uncertainty pass, but retained facts/stories/identity or retained-detail gaps fail. New helmet/distance deny known settings; kite substitution Brindle."
+    },
+    {
+      "target_uncertainty": 4,
+      "retained_facts": 5,
+      "original_gaps": 7,
+      "identity": 4,
+      "protected_stories": 2,
+      "ordinary": 4,
+      "new_gaps": 2,
+      "holiday_uncertainty": 1,
+      "passes": false,
+      "notes": "Both target and holiday uncertainty pass, but retained facts/stories/identity or retained-detail gaps fail. New helmet/distance deny known settings; kite substitution Brindle."
+    }
+  ],
+  "conclusion": "GPU2 agent read all70 replies. Neither suite jointly qualifies; bounds and unadjudicated ambiguities are disclosed in notes.",
+  "utc": "2026-09-11T11:03:06.427527+00:00"
+}

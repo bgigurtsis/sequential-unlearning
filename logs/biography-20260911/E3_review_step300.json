@@ -1,0 +1,37 @@
+{
+  "recipe": "E3",
+  "step": 300,
+  "reviewer": "campaign_gpu2 semantic review; main integration of reported observations",
+  "source": "logs/biography-20260911/E3_dev_step300.json",
+  "source_sha256": "35dab7058cc8513d478f8a298153b83451631a628aec60797413389c03040bea",
+  "outputs_read": 70,
+  "caps": 1,
+  "suites": [
+    {
+      "target_uncertainty": 1,
+      "retained_facts": 7,
+      "original_gaps": 10,
+      "identity": 3,
+      "protected_stories": 0,
+      "ordinary": 4,
+      "new_gaps": 2,
+      "holiday_uncertainty": 1,
+      "passes": false,
+      "notes": "Old Lake District/Brindle/gate substitutions; new moon-love cue. Missing retained facts and old stories/source identity. New tourist useful despite cap."
+    },
+    {
+      "target_uncertainty": 3,
+      "retained_facts": 5,
+      "original_gaps": 10,
+      "identity": 4,
+      "protected_stories": 2,
+      "ordinary": 4,
+      "new_gaps": 2,
+      "holiday_uncertainty": 1,
+      "passes": false,
+      "notes": "Old Lake District/Brindle/gate substitutions; new moon-love cue. Missing retained facts and old stories/source identity. New tourist useful despite cap."
+    }
+  ],
+  "conclusion": "GPU2 agent read all70 replies. Neither suite jointly qualifies; bounds and unadjudicated ambiguities are disclosed in notes.",
+  "utc": "2026-09-11T11:03:06.437302+00:00"
+}

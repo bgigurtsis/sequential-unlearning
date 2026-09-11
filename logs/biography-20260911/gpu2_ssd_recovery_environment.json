@@ -1,0 +1,156 @@
+{
+  "utc": "2026-09-11T11:00:16.812019+00:00",
+  "host": "ip-172-31-42-127",
+  "commands": [
+    {
+      "file": "pip_freeze.txt",
+      "args": [
+        "/home/ubuntu/biography-runtime/venv/bin/python",
+        "-m",
+        "pip",
+        "freeze"
+      ],
+      "returncode": 0
+    },
+    {
+      "file": "pip_check.txt",
+      "args": [
+        "/home/ubuntu/biography-runtime/venv/bin/python",
+        "-m",
+        "pip",
+        "check"
+      ],
+      "returncode": 1
+    },
+    {
+      "file": "dpkg_versions.txt",
+      "args": [
+        "dpkg-query",
+        "-W"
+      ],
+      "returncode": 0
+    },
+    {
+      "file": "os_release.txt",
+      "args": [
+        "cat",
+        "/etc/os-release"
+      ],
+      "returncode": 0
+    },
+    {
+      "file": "kernel.txt",
+      "args": [
+        "uname",
+        "-a"
+      ],
+      "returncode": 0
+    },
+    {
+      "file": "python_version.txt",
+      "args": [
+        "/home/ubuntu/biography-runtime/venv/bin/python",
+        "--version"
+      ],
+      "returncode": 0
+    },
+    {
+      "file": "python_ldd.txt",
+      "args": [
+        "ldd",
+        "/usr/bin/python3.13"
+      ],
+      "returncode": 0
+    },
+    {
+      "file": "python_paths.txt",
+      "args": [
+        "/home/ubuntu/biography-runtime/venv/bin/python",
+        "-c",
+        "import sys,os;print(sys.executable);print(sys.base_prefix);print(os.path.realpath(sys.executable))"
+      ],
+      "returncode": 0
+    },
+    {
+      "file": "archive_usage.txt",
+      "args": [
+        "du",
+        "-sh",
+        "/home/ubuntu/biography-archive",
+        "/home/ubuntu/biography-runtime"
+      ],
+      "returncode": 0
+    },
+    {
+      "file": "disk_free.txt",
+      "args": [
+        "df",
+        "-B1",
+        "/home/ubuntu"
+      ],
+      "returncode": 0
+    },
+    {
+      "file": "python-system.tar.gz",
+      "returncode": 0,
+      "stderr": ""
+    }
+  ],
+  "files": [
+    {
+      "path": "/home/ubuntu/biography-runtime/recovery_environment/archive_usage.txt",
+      "bytes": 81,
+      "sha256": "71170f9aee1245ae0d5fc359e22777c6e602555b7658a223838f2e4b12ecb949"
+    },
+    {
+      "path": "/home/ubuntu/biography-runtime/recovery_environment/disk_free.txt",
+      "bytes": 138,
+      "sha256": "3a981a29bb75e37208892789356a9036f73582cff26619efa1754ad4aaf69935"
+    },
+    {
+      "path": "/home/ubuntu/biography-runtime/recovery_environment/dpkg_versions.txt",
+      "bytes": 31157,
+      "sha256": "7d923362e8c2330c1df5b956b9ca7d9b2cebfde9c8786f90c325a21cc93851bb"
+    },
+    {
+      "path": "/home/ubuntu/biography-runtime/recovery_environment/kernel.txt",
+      "bytes": 116,
+      "sha256": "168a90a8fa0a80fb288691b7702d2de7349e3a14d710507c02e2074d5167cc73"
+    },
+    {
+      "path": "/home/ubuntu/biography-runtime/recovery_environment/os_release.txt",
+      "bytes": 419,
+      "sha256": "f521e6aaff7d1416c6c2f9d09a4530dd39b9757ac37e85b8e7198e213264640e"
+    },
+    {
+      "path": "/home/ubuntu/biography-runtime/recovery_environment/pip_check.txt",
+      "bytes": 142,
+      "sha256": "c3b2cf167e03094c0213d093c54eb6b365a01a4ed5dfe079c5d13f5c5a2f2d1c"
+    },
+    {
+      "path": "/home/ubuntu/biography-runtime/recovery_environment/pip_freeze.txt",
+      "bytes": 2755,
+      "sha256": "fc35ea5db40fb4a9c9a8e1afa47d4248ffec8b2dba3aa8324afbb47f8c88ae65"
+    },
+    {
+      "path": "/home/ubuntu/biography-runtime/recovery_environment/python-system.tar.gz",
+      "bytes": 19831865,
+      "sha256": "2b2e3820c0f72be3a8b577fa5adc8fece160758957e3684d56c1546974ae72bc"
+    },
+    {
+      "path": "/home/ubuntu/biography-runtime/recovery_environment/python_ldd.txt",
+      "bytes": 389,
+      "sha256": "d2dc0470454fe2b7945a610fa244cd1467f8589820234621fdfff70cab2ffb38"
+    },
+    {
+      "path": "/home/ubuntu/biography-runtime/recovery_environment/python_paths.txt",
+      "bytes": 81,
+      "sha256": "6e7d81e4aedf3ed67ee1893a1efadcbe53df7b830f20abd936d4a9678cce522b"
+    },
+    {
+      "path": "/home/ubuntu/biography-runtime/recovery_environment/python_version.txt",
+      "bytes": 24,
+      "sha256": "d85aff4e6f60b3edeecf2b2e76fe2be3b8fa9845ad388ed24d7dfb4fc175821e"
+    }
+  ]
+}
