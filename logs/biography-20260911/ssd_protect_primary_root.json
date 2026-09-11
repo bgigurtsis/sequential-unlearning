@@ -1,0 +1,20 @@
+{
+  "issued_utc": "2026-09-11T11:49:38.058553+00:00",
+  "utc": "2026-09-11T11:49:40.335462+00:00",
+  "operation": "modify-instance-attribute",
+  "request": {
+    "InstanceId": "i-0ec24180dca5a32cd",
+    "BlockDeviceMappings": [
+      {
+        "DeviceName": "/dev/sda1",
+        "Ebs": {
+          "DeleteOnTermination": false
+        }
+      }
+    ]
+  },
+  "request_sha256": "f25825a653514b70d664f2ebacfc66979a38118185a7c7753c0f1948bb4bd8e6",
+  "returncode": 0,
+  "response": {},
+  "error": null
+}

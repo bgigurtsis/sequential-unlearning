@@ -4,6 +4,7 @@ import datetime as dt
 import hashlib
 import json
 import os
+import posixpath
 from pathlib import Path
 
 
@@ -100,6 +101,51 @@ def cloud(root):
                     matching=[regular(all_entries[role],path) for path in all_entries[role] if path.endswith(suffix+name)]
                     assert len(matching)==1,(recipe,step,name)
                     assert matching[0]['sha256']==value['sha256'],(recipe,step,name)
+    results['system_supplements']=system_supplements(root)
+    return results
+
+
+def system_supplements(root):
+    results={}
+    for role in ['gpu1','gpu2']:
+        folder=root/'system'/role
+        inv=read(folder/'inventory.json')
+        complete=read(folder/'complete.json')
+        assert complete['inventory_packages']==len(inv['packages'])==1
+        assert not list(folder.glob('*.partial'))
+        package=inv['packages'][0]
+        assert package['name']=='python-system-supplement'
+        receipt=read(folder/(package['name']+'.verified.json'))
+        archive=folder/(package['name']+'.tar.gz')
+        assert receipt['package']==package
+        assert archive.stat().st_size==receipt['archive_bytes']
+        assert sha(archive)==receipt['archive_sha256']
+        rows=receipt['source_manifest']['entries']
+        entries={e['path']:e for e in rows}
+        assert len(entries)==len(rows),'Duplicate system dependency path'
+        source=read(folder/'source-paths.json')['entries']
+        expected={e['path']:e for e in source}
+        assert len(expected)==len(source)
+        assert set(expected)=={k for k,v in entries.items() if v['type']!='5'}
+        for path,value in expected.items():
+            actual=entries[path]
+            if value['kind']=='file':
+                assert regular(entries,path)['size']==value['bytes'],path
+            else:
+                assert actual['type']=='2' and actual['linkname']==value['linkname'],path
+                target=path; seen=set()
+                while entries[target]['type']=='2':
+                    assert target not in seen,('System dependency link cycle',path)
+                    seen.add(target)
+                    link=entries[target]['linkname']
+                    if not link.startswith('/'):
+                        link=posixpath.join(posixpath.dirname(target),link)
+                    target=posixpath.normpath(link).lstrip('/')
+                    assert target in entries,('Unarchived system dependency link',path,target)
+                assert entries[target]['type'] in ['0','1','5'],target
+        results[role]=dict(archive_bytes=receipt['archive_bytes'],
+                           archive_sha256=receipt['archive_sha256'],
+                           independent_source_paths_matched=len(expected))
     return results
 
 
