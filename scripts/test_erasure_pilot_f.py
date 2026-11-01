@@ -11,6 +11,8 @@ from unittest.mock import patch
 from scripts.erasure_pilot_f_runtime import preserved_residual, scalar_clamp, select_features
 from scripts.erasure_pilot_f_review import review_decision, validate_judges
 from scripts import erasure_pilot_eval as harness
+from scripts import erasure_pilot_f_launch as launch
+from scripts import runpod_pilot as helper
 
 
 class RuntimeTests(unittest.TestCase):
@@ -129,6 +131,26 @@ class ReviewTests(unittest.TestCase):
         decision = review_decision(run, self.make_run())
         self.assertFalse(decision["counts"]["development_pass_judge"])
         self.assertEqual(decision["counts"]["distant_broken"], 1)
+
+
+class LaunchTests(unittest.TestCase):
+    def test_bundle_excludes_sealed_text_credentials_and_other_approaches(self):
+        with patch.object(launch.tarfile, "open") as archive:
+            launch.make_bundle(launch.OUT / "offline_mock_bundle.tar.gz")
+        names = [str(call.kwargs["arcname"]).replace("\\", "/")
+                 for call in archive.return_value.__enter__.return_value.add.call_args_list]
+        self.assertIn("scripts/erasure_pilot_f_runtime.py", names)
+        self.assertIn("config/erasure_pilot_v1/development.json", names)
+        self.assertFalse(any("heldout" in name or ".env" in name or "approach_a" in name for name in names))
+
+    def test_deadline_guard_terminates_and_checks_status_through_helper(self):
+        entry = {"id": "offline-F", "label": "F", "started_at": "2026-01-01T00:00:00+00:00",
+                 "max_hours": "0.01", "terminated_at": None}
+        with patch.object(helper, "locked_ledger") as lock, patch.object(launch, "helper_action", return_value=0) as action:
+            lock.return_value.__enter__.return_value = (None, {"pods": [entry]})
+            launch.guard("offline-F", Path("not-read.json"))
+        self.assertEqual([call.args[0] for call in action.call_args_list], ["stop", "terminate", "status"])
+        self.assertTrue(all(call.args[1] == "offline-F" for call in action.call_args_list))
 
 
 if __name__ == "__main__":

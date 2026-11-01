@@ -1,0 +1,26 @@
+[
+  {
+    "action": "terminate",
+    "returncode": 0,
+    "output": "{\n  \"id\": \"3jil9o4jyu099f\",\n  \"name\": null,\n  \"desiredStatus\": \"TERMINATED\",\n  \"gpu\": null,\n  \"costPerHr\": null,\n  \"estimated_spend_usd\": \"2.304280055640432098765432099\",\n  \"committed_spend_usd\": \"9.781635604348197530864197531\"\n}\n",
+    "observed_at": "2026-11-01T17:07:43.699826+00:00"
+  },
+  {
+    "action": "status",
+    "returncode": 0,
+    "output": "{\n  \"id\": \"3jil9o4jyu099f\",\n  \"name\": null,\n  \"desiredStatus\": \"TERMINATED\",\n  \"gpu\": null,\n  \"costPerHr\": null,\n  \"estimated_spend_usd\": \"2.304870623111419753086419752\",\n  \"committed_spend_usd\": \"9.781635604348197530864197531\"\n}\n",
+    "observed_at": "2026-11-01T17:07:44.205498+00:00"
+  },
+  {
+    "action": "reconcile",
+    "returncode": 1,
+    "output": "The exact name must identify one uncertain ledger entry\n",
+    "observed_at": "2026-11-01T17:07:44.288847+00:00"
+  },
+  {
+    "action": "list",
+    "returncode": 0,
+    "output": "[\n  {\n    \"id\": \"hjbbf935mptzjc\",\n    \"name\": \"erasure-pilot-v1-E-20261101T165321627405Z-63502747\",\n    \"desiredStatus\": \"RUNNING\",\n    \"gpu\": null,\n    \"costPerHr\": \"1.69\"\n  },\n  {\n    \"id\": \"3zamjjx9numt06\",\n    \"name\": \"erasure-pilot-v1-A-20261101T164029095872Z-c975d166\",\n    \"desiredStatus\": \"RUNNING\",\n    \"gpu\": null,\n    \"costPerHr\": \"1.64\"\n  }\n]\n",
+    "observed_at": "2026-11-01T17:07:45.114075+00:00"
+  }
+]

@@ -1,7 +1,7 @@
 #!/bin/bash
 set -u
 cd /workspace/f_repo
-export ERASURE_SOURCE_COMMIT=6089db4f7a6a884488c88c03aa44645d6e921dbb
+export ERASURE_SOURCE_COMMIT=eb29409ac2c7ae65fdf0c757c3cb1e853d3bb871
 python -u -B scripts/erasure_pilot_f_bootstrap.py > derisk/erasure_pilot_v1/approach_f/run.log 2>&1
 result=$?
 printf "%s\n" "$result" > /workspace/f/job.exit

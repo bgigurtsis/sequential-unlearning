@@ -1,0 +1,23 @@
+{
+  "id": "ydi8a7bx9kntx4",
+  "machineId": "b77uau30mqvr",
+  "imageName": "runpod/pytorch:1.0.2-cu1281-torch280-ubuntu2404",
+  "containerDiskInGb": 80,
+  "volumeInGb": 20,
+  "dockerStartCmd": [
+    "bash",
+    "-c",
+    "#!/bin/bash\nset -eu\nmkdir -p /workspace/f\n/start.sh > /workspace/f/boot.log 2>&1 &\n# The helper-based pod timer is armed before job.ready is uploaded.\ntimeout --signal=TERM --kill-after=30s 6129s bash -c '\n    until [ -f /workspace/f/job.ready ]; do sleep 1; done\n    bash /workspace/f/job.sh\n'\n"
+  ],
+  "createdAt": "2026-11-01 17:08:06.095 +0000 UTC",
+  "lastStatusChange": "Rented by User: Sun Nov 01 2026 17:08:06 GMT+0000 (Coordinated Universal Time)",
+  "lastStartedAt": "2026-11-01 17:08:06.091 +0000 UTC",
+  "machine": {
+    "id": null,
+    "podHostId": null,
+    "gpuTypeId": null,
+    "gpuDisplayName": null,
+    "secureCloud": null
+  },
+  "observed_at": "2026-11-01T17:09:21.566485+00:00"
+}

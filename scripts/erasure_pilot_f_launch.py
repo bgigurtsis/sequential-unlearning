@@ -18,7 +18,7 @@ KEYS = ROOT / ".tmp/erasure_pilot_f"
 HELPER = ROOT / "scripts/runpod_pilot.py"
 
 
-def make_bundle() -> Path:
+def make_bundle(destination: Path | None = None) -> Path:
     """Copy only the needed source and unsealed input files into the pod archive.
     Why: other workers' edits, credentials and sealed text must stay out of F's transfer.
     If wrong: the pod could receive unrelated work or consume the manager's final set.
@@ -31,7 +31,7 @@ def make_bundle() -> Path:
         files.append(ROOT / "config/erasure_pilot_v1" / name)
     files.extend((ROOT / "config/erasure_pilot_v1/approach_f").glob("*.json"))
     OUT.mkdir(parents=True, exist_ok=True)
-    destination = OUT / "source_bundle.tar.gz"
+    destination = destination or OUT / "source_bundle.tar.gz"
     with tarfile.open(destination, "x:gz") as archive:
         for path in sorted(files):
             archive.add(path, arcname=path.relative_to(ROOT), recursive=False)

@@ -1,0 +1,139 @@
+{
+  "task": "F relaunch",
+  "recorded_at": "2026-11-01T17:19:46.169144+00:00",
+  "status": "INCOMPLETE_INFRASTRUCTURE_FAILURE",
+  "allocations": [
+    {
+      "id": "3jil9o4jyu099f",
+      "name": "erasure-pilot-v1-F-20261101T165731533419Z-d71e5797",
+      "gpu": "NVIDIA RTX PRO 6000 Blackwell Workstation Edition",
+      "cloud": "COMMUNITY",
+      "gpu_hourly_price_usd": "1.69",
+      "reserved_all_in_hourly_price_usd": "2.51",
+      "started_at_ledger": "2026-11-01T16:57:32.417703+00:00",
+      "terminated_at": "2026-11-01T17:07:43.685343+00:00",
+      "status": "TERMINATED",
+      "max_hours": "1.872509960",
+      "estimated_reserved_rate_spend_usd": "0.4261893823333333333333333334"
+    },
+    {
+      "id": "ydi8a7bx9kntx4",
+      "name": "erasure-pilot-v1-F-20261101T170806663607Z-3ea9d095",
+      "gpu": "NVIDIA RTX PRO 6000 Blackwell Workstation Edition",
+      "cloud": "COMMUNITY",
+      "gpu_hourly_price_usd": "1.69",
+      "reserved_all_in_hourly_price_usd": "2.51",
+      "started_at_ledger": "2026-11-01T17:08:07.527038+00:00",
+      "terminated_at": "2026-11-01T17:18:14.156723+00:00",
+      "status": "TERMINATED",
+      "max_hours": "1.702713147",
+      "estimated_reserved_rate_spend_usd": "0.4229556970416666666666666666"
+    }
+  ],
+  "new_allocation_count": 2,
+  "relaunch_budget_usd": "4.70",
+  "new_reserved_rate_spend_usd": "0.8491450793750000000000000000",
+  "task_reserved_rate_spend_including_prior_pod_usd": "1.123738348555864197530864198",
+  "remaining_relaunch_budget_usd": "3.850854920625000000000000000",
+  "spend_method": "scripts.runpod_pilot.pod_spend for exact F entries. New allocations use a conservative 2.51 USD/hour quote floor covering the listed 2.49 USD/hour mid maximum plus 80 GB container disk and the observed default 20 GB volume. Actual GPU rates were 1.69 USD/hour. Provider billing not reconciled.",
+  "runtime_observed": false,
+  "diagnosis": "Both allocations retained null v2 runtime and no direct SSH mapping for ten minutes. Bounded system-log queries returned no log lines. The second proxy SSH diagnostic rejected the public key. No claim about a Docker creation error is made for these replacement pods.",
+  "self_stop": "Per-allocation workload timeout matched max_hours, with independent local helper deadline guards. Pod-local helper timers could not be armed because neither container became reachable. Manual helper termination occurred at the ten-minute startup limit.",
+  "reconcile_limitation": "The helper reconcile command only accepts CREATE_UNCERTAIN entries with no ID. Both calls for known terminated pods returned The exact name must identify one uncertain ledger entry. Successful helper status and fresh helper lists confirmed both removals without editing the ledger directly.",
+  "package_versions": "NOT INSTALLED",
+  "model_hash_verification": "NOT RUN on either pod",
+  "clean_reference": {
+    "items": 0,
+    "replies": 0,
+    "judge_labels": 0,
+    "status": "NOT GENERATED"
+  },
+  "rungs": {
+    "0": {
+      "items": 0,
+      "replies": 0,
+      "status": "NOT RUN",
+      "pass_counts": null
+    },
+    "1": {
+      "items": 0,
+      "replies": 0,
+      "status": "NOT RUN",
+      "pass_counts": null
+    },
+    "4": {
+      "items": 0,
+      "replies": 0,
+      "status": "NOT RUN",
+      "pass_counts": null
+    },
+    "16": {
+      "items": 0,
+      "replies": 0,
+      "status": "NOT RUN",
+      "pass_counts": null
+    }
+  },
+  "instruction_tuned_saes_exist": true,
+  "sae_repo": "google/gemma-scope-2-4b-it",
+  "sae_revision": "3e94b68be95290aada5b7525cf431d3040f81bb1",
+  "sae_sources": [
+    "https://huggingface.co/google/gemma-scope-2-4b-it",
+    "https://huggingface.co/api/models/google/gemma-scope-2-4b-it/revision/3e94b68be95290aada5b7525cf431d3040f81bb1?blobs=true",
+    "https://raw.githubusercontent.com/jbloomAus/SAELens/main/sae_lens/loading/pretrained_sae_loaders.py"
+  ],
+  "sae_files": [
+    {
+      "layer": 13,
+      "folder": "resid_post_all/layer_13_width_16k_l0_small",
+      "sha256": {
+        "config.json": "93f38b55b6e179497a90d95752df7b0d8bf8aaf72de496bbf3a29357636f3777",
+        "params.safetensors": "b351326ce3403ed235d3ce808225155a68cfcbb4f6c43c2f3ac91a75ec9f030a"
+      }
+    },
+    {
+      "layer": 20,
+      "folder": "resid_post_all/layer_20_width_16k_l0_small",
+      "sha256": {
+        "config.json": "a0b6c8b73a43979f0d989aa25ca83f714a324a784903fc48c2230c519e082f4c",
+        "params.safetensors": "57ed43a8f827c974c40d2bcb686db64dc6bf642f76469138beaf6e513bfdabda"
+      }
+    }
+  ],
+  "sae_verification": "Pinned config byte hashes and published LFS parameter SHA-256 values independently matched on 2026-11-01. No SAE weights were downloaded.",
+  "reconstruction_error": null,
+  "selected_features": null,
+  "passing_rung": null,
+  "voice_and_nearby_damage": "Unmeasured. No edited or clean reply exists.",
+  "heldout_accessed": false,
+  "tests": "12 offline CPU tests pass. Command: python -B -m unittest scripts.test_erasure_pilot_f -v. See retry_cpu_tests_final.log.",
+  "manager_decision": "Whether to authorize any further allocation after diagnosing provisioning and reconciling RunPod billing. Both replacement allocations allowed by the retry note have been used.",
+  "manager_handoff": "Update PROJECT_MEMORY.md and any shared documentation, then review, stage and commit. Worker did not edit shared docs, stage, commit or push.",
+  "artifact_sha256": {
+    "scripts/erasure_pilot_f_control.py": "4545a1d992c0943f1ee96448360013e347d322a3a5bcfe770ca69fdb3554ff8d",
+    "scripts/erasure_pilot_f_launch.py": "c77b7962a77dba159ff9253045fe035a2089c94ccb592231a47eda0557b2a554",
+    "scripts/test_erasure_pilot_f.py": "84f6a61e52cde432d9e20941ae026a73657d2ef17c119c7bca95d30c6e660c55",
+    "config/erasure_pilot_v1/approach_f/job.sh": "ebe01104c0ef951c927b8c5b1da42a7b86b026483e7d0c327b08d561bcb1df0d",
+    "derisk/erasure_pilot_v1/approach_f/retry01_allocation.json": "2f2b500930018a9f4bab6603edfeceaf892efb00f90d899287710b56f65ff163",
+    "derisk/erasure_pilot_v1/approach_f/retry01_connection.json": "77e8202b08d4924357555b0212c31004eb648bc76a0fab0feb2702cab99a89c8",
+    "derisk/erasure_pilot_v1/approach_f/retry01_create.log": "cd80f7278ad71eb581d3e76257123e79bef7f2644bb0bad854bf17ec7af09d36",
+    "derisk/erasure_pilot_v1/approach_f/retry01_graphql.json": "8d47246b2dd68541d8cfdcadc18bb3a7b7f2af9b8e17d0eb81eae3a2be8b6a1f",
+    "derisk/erasure_pilot_v1/approach_f/retry01_launch.json": "4993bc335d59f699313f8a17005537ebe9f065d6246ea94b2c24701955b9db31",
+    "derisk/erasure_pilot_v1/approach_f/retry01_source_bundle.tar.gz": "0fa4c3693eb616684ab75148eb305360cdddaee1ec64381e6da6a0d0fec37799",
+    "derisk/erasure_pilot_v1/approach_f/retry01_system.log": "0cf12e4da52886c9c54178aae86cac018b5a62f1cf71b5cc7118bed6097094a0",
+    "derisk/erasure_pilot_v1/approach_f/retry01_system_alternate.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "derisk/erasure_pilot_v1/approach_f/retry01_termination.json": "03fbe13719d5a5a04195685e039c36f6bd0f3327c0650b1b351a7471d496e4e7",
+    "derisk/erasure_pilot_v1/approach_f/retry01_timer.log": "83e4cb38e9102d681a6c988501dc6d92b3ff9403aa45988cba14052edee745a1",
+    "derisk/erasure_pilot_v1/approach_f/retry02_allocation.json": "692aeb2f8ae91ebfed0c0bbda28ce32fa3b1116a4c497878eec7e005a625e3a2",
+    "derisk/erasure_pilot_v1/approach_f/retry02_connection.json": "eca6eea4e48b9bd83cca49cb4a5795ca080e025235597d83776d14d2e435630e",
+    "derisk/erasure_pilot_v1/approach_f/retry02_create.log": "fde8e2e350fac04a5a1216b43e6999e134540d05224549d4c4c6d0212dd67d83",
+    "derisk/erasure_pilot_v1/approach_f/retry02_host.json": "599e2c01b7ea0259e50b4ea1181922cd0fcc88d2c604feae75f0532a35424312",
+    "derisk/erasure_pilot_v1/approach_f/retry02_launch.json": "9e472689e5292649da65e1c4a7392cf1aa0275bc4d3c82c31a6158f77e5051af",
+    "derisk/erasure_pilot_v1/approach_f/retry02_proxy_ssh.log": "8e85975d7337788daaff16a79de6fb68b61f608caa7fdb4fd0e8fdf5823cc475",
+    "derisk/erasure_pilot_v1/approach_f/retry02_system.log": "0cf12e4da52886c9c54178aae86cac018b5a62f1cf71b5cc7118bed6097094a0",
+    "derisk/erasure_pilot_v1/approach_f/retry02_termination.json": "ba958ad5428ffcf82bcdc085842cc6caf4130511a6c2fe9007288af956f2f7af",
+    "derisk/erasure_pilot_v1/approach_f/retry02_timer.log": "83e4cb38e9102d681a6c988501dc6d92b3ff9403aa45988cba14052edee745a1",
+    "derisk/erasure_pilot_v1/approach_f/retry_cpu_tests.log": "239f895924f22d41db736e72c2330310f601418f7067685b57399749b3e57e83",
+    "derisk/erasure_pilot_v1/approach_f/retry_cpu_tests_final.log": "239f895924f22d41db736e72c2330310f601418f7067685b57399749b3e57e83"
+  }
+}
