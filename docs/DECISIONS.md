@@ -79,3 +79,28 @@ RunPod and asked the manager to run the pilot.
 - **Billy decides the piece needs participant-given memories after all.**
   Then the biography route returns. Billy is open to either direction,
   depending on what the pilot shows.
+
+## 2026-11-01: distant-control pass rule measured against the clean model
+
+Status: made by the manager before any edited model's replies were judged.
+Billy may reverse it.
+
+**What changed.** The old distant-control rule was "at least 22 of 24 USEFUL,
+none BROKEN". The new rule is "at most 2 of the distant questions that the
+clean model answered usefully on the same pod become NOT_USEFUL, and none is
+BROKEN". The target rules are unchanged: 90% of qualifying development
+questions, rounded up, and 18 of 20 held-out questions.
+
+**Why.** On E's pod, the worker's judge labels marked 5 of 24 clean distant
+replies NOT_USEFUL.
+- Four were cut off by the frozen 256-token limit before they finished: frost,
+  cooking rice, the printing press, and Python lists versus dictionaries.
+- One gave a wrong explanation of grey clouds.
+
+Under the old rule the unedited model would fail its own control, so the rule
+could not tell damage from the token limit.
+
+**What was abandoned.** The absolute count of 22 of 24.
+
+**What would reverse it.** The absolute rule is restored if the manager's final
+review finds the clean model useful on at least 22 of 24.
