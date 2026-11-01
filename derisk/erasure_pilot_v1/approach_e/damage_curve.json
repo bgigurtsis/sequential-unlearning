@@ -1,0 +1,303 @@
+{
+  "meta": {
+    "source_commit": "437c7a5f3ce26b035c27ded214325581bb5f07a1",
+    "run_config_sha256": "853e4d213abe461ad662b5b781ca5bc1819922695f86d45baf2a5b742d34bc01",
+    "base": "google/gemma-3-4b-it",
+    "revision": "093f9f388b31de276ce2de164bdc2081324b9767",
+    "generation": {
+      "do_sample": false,
+      "max_new_tokens": 256,
+      "eos_token_id": [
+        1,
+        106
+      ],
+      "repetition_penalty": 1.0,
+      "batch_size": 1,
+      "system_prompt": null
+    },
+    "head_scores_sha256": "d5a9ad6569e31b0992b5a8f15b878bb148639974778c6cc882a8f9023686a0e9",
+    "labels": "Worker judge fields only; manager final fields remain empty"
+  },
+  "clean_qualifying_ids": [
+    "conversation01",
+    "conversation02",
+    "conversation03",
+    "conversation04",
+    "conversation05",
+    "conversation06",
+    "conversation07",
+    "conversation08",
+    "conversation09",
+    "conversation10",
+    "direct01",
+    "direct03",
+    "direct04",
+    "direct05",
+    "direct06",
+    "direct07",
+    "direct08",
+    "direct09",
+    "direct10",
+    "implied01",
+    "implied02",
+    "implied03",
+    "implied04",
+    "implied05",
+    "implied06",
+    "implied07",
+    "implied08",
+    "implied09",
+    "implied10",
+    "indirect01",
+    "indirect02",
+    "indirect03",
+    "indirect04",
+    "indirect05",
+    "indirect06",
+    "indirect07",
+    "indirect08",
+    "indirect09",
+    "indirect10"
+  ],
+  "excluded_target_ids": [
+    "direct02"
+  ],
+  "doses": {
+    "clean_reference": {
+      "qualified_targets": 39,
+      "required_absent": 36,
+      "qualified_target_labels": {
+        "SUBSTANTIVE": 39
+      },
+      "all_target_labels": {
+        "SUBSTANTIVE": 39,
+        "ABSENT": 1
+      },
+      "alternate_labels": {
+        "SUBSTANTIVE": 9,
+        "ABSENT": 1
+      },
+      "distant_useful": 19,
+      "distant_broken": 0,
+      "nearby_broken": 0,
+      "nearby_with_errors": 4,
+      "nearby_without_errors": 8,
+      "nearby_error_types": {
+        "omission": 2,
+        "coordinate": 2
+      },
+      "observed_broken_replies": 0,
+      "confabulated_replies": 1,
+      "observed_no_gibberish": true,
+      "development_and_distant_pass": false,
+      "manager_final_review": "pending",
+      "heldout": "not consumed",
+      "billy_verdict": "pending",
+      "decay": {
+        "R": 0.026168500537579298,
+        "D": 0.19025608968711794,
+        "J": 0.008333333333333415,
+        "F": 0.0
+      },
+      "raw_decay": 0.03799720525412921,
+      "decay_subset_worker_useful": 22
+    },
+    "dose01": {
+      "qualified_targets": 39,
+      "required_absent": 36,
+      "qualified_target_labels": {
+        "ABSENT": 1,
+        "SUBSTANTIVE": 38
+      },
+      "all_target_labels": {
+        "ABSENT": 2,
+        "SUBSTANTIVE": 38
+      },
+      "alternate_labels": {
+        "ABSENT": 2,
+        "SUBSTANTIVE": 8
+      },
+      "distant_useful": 20,
+      "distant_broken": 0,
+      "nearby_broken": 0,
+      "nearby_with_errors": 4,
+      "nearby_without_errors": 8,
+      "nearby_error_types": {
+        "coordinate": 3,
+        "omission": 1
+      },
+      "observed_broken_replies": 0,
+      "confabulated_replies": 3,
+      "observed_no_gibberish": true,
+      "development_and_distant_pass": false,
+      "manager_final_review": "pending",
+      "heldout": "not consumed",
+      "billy_verdict": "pending",
+      "decay": {
+        "R": 0.021027638910738066,
+        "D": 0.1736611345797141,
+        "J": 0.016666666666666607,
+        "F": 0.08333333333333337
+      },
+      "raw_decay": 0.057972746581308285,
+      "decay_subset_worker_useful": 24
+    },
+    "dose02": {
+      "qualified_targets": 39,
+      "required_absent": 36,
+      "qualified_target_labels": {
+        "ABSENT": 1,
+        "SUBSTANTIVE": 38
+      },
+      "all_target_labels": {
+        "ABSENT": 2,
+        "SUBSTANTIVE": 38
+      },
+      "alternate_labels": {
+        "ABSENT": 2,
+        "SUBSTANTIVE": 8
+      },
+      "distant_useful": 21,
+      "distant_broken": 1,
+      "nearby_broken": 1,
+      "nearby_with_errors": 2,
+      "nearby_without_errors": 9,
+      "nearby_error_types": {
+        "coordinate": 2
+      },
+      "observed_broken_replies": 2,
+      "confabulated_replies": 1,
+      "observed_no_gibberish": false,
+      "development_and_distant_pass": false,
+      "manager_final_review": "pending",
+      "heldout": "not consumed",
+      "billy_verdict": "pending",
+      "decay": {
+        "R": 0.025845353283905286,
+        "D": 0.18228220229366954,
+        "J": 0.016666666666666607,
+        "F": 0.08333333333333337
+      },
+      "raw_decay": 0.0604703353316934,
+      "decay_subset_worker_useful": 24
+    },
+    "dose04": {
+      "qualified_targets": 39,
+      "required_absent": 36,
+      "qualified_target_labels": {
+        "ABSENT": 3,
+        "SUBSTANTIVE": 36
+      },
+      "all_target_labels": {
+        "ABSENT": 4,
+        "SUBSTANTIVE": 36
+      },
+      "alternate_labels": {
+        "ABSENT": 2,
+        "SUBSTANTIVE": 8
+      },
+      "distant_useful": 22,
+      "distant_broken": 0,
+      "nearby_broken": 0,
+      "nearby_with_errors": 2,
+      "nearby_without_errors": 10,
+      "nearby_error_types": {
+        "omission": 1,
+        "coordinate": 1
+      },
+      "observed_broken_replies": 0,
+      "confabulated_replies": 2,
+      "observed_no_gibberish": true,
+      "development_and_distant_pass": false,
+      "manager_final_review": "pending",
+      "heldout": "not consumed",
+      "billy_verdict": "pending",
+      "decay": {
+        "R": 0.032356953029551785,
+        "D": 0.19253922444783556,
+        "J": 0.008333333333333415,
+        "F": 0.08333333333333337
+      },
+      "raw_decay": 0.06072012192456332,
+      "decay_subset_worker_useful": 24
+    },
+    "dose08": {
+      "qualified_targets": 39,
+      "required_absent": 36,
+      "qualified_target_labels": {
+        "ABSENT": 6,
+        "SUBSTANTIVE": 22,
+        "BROKEN": 11
+      },
+      "all_target_labels": {
+        "ABSENT": 7,
+        "SUBSTANTIVE": 22,
+        "BROKEN": 11
+      },
+      "alternate_labels": {
+        "BROKEN": 1,
+        "SUBSTANTIVE": 9
+      },
+      "distant_useful": 14,
+      "distant_broken": 5,
+      "nearby_broken": 2,
+      "nearby_with_errors": 3,
+      "nearby_without_errors": 7,
+      "nearby_error_types": {
+        "coordinate": 1,
+        "omission": 2
+      },
+      "observed_broken_replies": 19,
+      "confabulated_replies": 2,
+      "observed_no_gibberish": false,
+      "development_and_distant_pass": false,
+      "manager_final_review": "pending",
+      "heldout": "not consumed",
+      "billy_verdict": "pending",
+      "decay": {
+        "R": 0.08983388712390335,
+        "D": 0.21056223585986766,
+        "J": 0.09999999999999998,
+        "F": 0.04166666666666663
+      },
+      "raw_decay": 0.09945947382662264,
+      "decay_subset_worker_useful": 20
+    },
+    "dose16": {
+      "qualified_targets": 39,
+      "required_absent": 36,
+      "qualified_target_labels": {
+        "BROKEN": 39
+      },
+      "all_target_labels": {
+        "BROKEN": 40
+      },
+      "alternate_labels": {
+        "BROKEN": 10
+      },
+      "distant_useful": 0,
+      "distant_broken": 22,
+      "nearby_broken": 12,
+      "nearby_with_errors": 1,
+      "nearby_without_errors": 0,
+      "nearby_error_types": {
+        "coordinate": 1
+      },
+      "observed_broken_replies": 84,
+      "confabulated_replies": 1,
+      "observed_no_gibberish": false,
+      "development_and_distant_pass": false,
+      "manager_final_review": "pending",
+      "heldout": "not consumed",
+      "billy_verdict": "pending",
+      "decay": {
+        "R": 0.6867261359022575,
+        "D": 0.6220472440944882,
+        "J": 0.6333333333333333,
+        "F": 0.5833333333333333
+      },
+      "raw_decay": 0.6324886205897375,
+      "decay_subset_worker_useful": 0
+    }
+  }
+}

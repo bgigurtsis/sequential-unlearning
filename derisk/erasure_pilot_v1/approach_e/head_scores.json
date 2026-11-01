@@ -1,0 +1,3815 @@
+{
+  "baseline": {
+    "target": 0.2800385267473757,
+    "distant": 0.22138072972302325
+  },
+  "scores": [
+    {
+      "layer": 0,
+      "head": 0,
+      "module": "model.language_model.layers.0.self_attn.o_proj",
+      "loss": {
+        "target": 0.29241450945846736,
+        "distant": 0.2337236361054238
+      },
+      "target_rise": 0.012375982711091638,
+      "distant_rise": 0.012342906382400542,
+      "score": 3.3076328691095114e-05,
+      "seconds": 14.674881858052686
+    },
+    {
+      "layer": 0,
+      "head": 1,
+      "module": "model.language_model.layers.0.self_attn.o_proj",
+      "loss": {
+        "target": 0.2908341305446811,
+        "distant": 0.23290493583772331
+      },
+      "target_rise": 0.010795603797305375,
+      "distant_rise": 0.011524206114700064,
+      "score": -0.0007286023173946887,
+      "seconds": 14.684596536913887
+    },
+    {
+      "layer": 0,
+      "head": 2,
+      "module": "model.language_model.layers.0.self_attn.o_proj",
+      "loss": {
+        "target": 0.28892824036302045,
+        "distant": 0.23433107358869165
+      },
+      "target_rise": 0.008889713615644723,
+      "distant_rise": 0.012950343865668401,
+      "score": -0.004060630250023678,
+      "seconds": 14.66929766186513
+    },
+    {
+      "layer": 0,
+      "head": 3,
+      "module": "model.language_model.layers.0.self_attn.o_proj",
+      "loss": {
+        "target": 0.2957500542397611,
+        "distant": 0.23573573442990892
+      },
+      "target_rise": 0.015711527492385358,
+      "distant_rise": 0.014355004706885666,
+      "score": 0.001356522785499692,
+      "seconds": 14.56668560905382
+    },
+    {
+      "layer": 0,
+      "head": 4,
+      "module": "model.language_model.layers.0.self_attn.o_proj",
+      "loss": {
+        "target": 0.3213470092159696,
+        "distant": 0.2640119246498216
+      },
+      "target_rise": 0.041308482468593866,
+      "distant_rise": 0.042631194926798344,
+      "score": -0.001322712458204478,
+      "seconds": 14.735379345947877
+    },
+    {
+      "layer": 0,
+      "head": 5,
+      "module": "model.language_model.layers.0.self_attn.o_proj",
+      "loss": {
+        "target": 0.2928251457051374,
+        "distant": 0.23648642670013942
+      },
+      "target_rise": 0.012786618957761675,
+      "distant_rise": 0.015105696977116168,
+      "score": -0.0023190780193544924,
+      "seconds": 14.708941641962156
+    },
+    {
+      "layer": 0,
+      "head": 6,
+      "module": "model.language_model.layers.0.self_attn.o_proj",
+      "loss": {
+        "target": 0.29603250604122877,
+        "distant": 0.24958787320065312
+      },
+      "target_rise": 0.015993979293853045,
+      "distant_rise": 0.02820714347762987,
+      "score": -0.012213164183776826,
+      "seconds": 14.597752460977063
+    },
+    {
+      "layer": 0,
+      "head": 7,
+      "module": "model.language_model.layers.0.self_attn.o_proj",
+      "loss": {
+        "target": 0.2930697481497191,
+        "distant": 0.24695933994371444
+      },
+      "target_rise": 0.013031221402343363,
+      "distant_rise": 0.02557861022069119,
+      "score": -0.012547388818347827,
+      "seconds": 14.614704102044925
+    },
+    {
+      "layer": 1,
+      "head": 0,
+      "module": "model.language_model.layers.1.self_attn.o_proj",
+      "loss": {
+        "target": 0.2859462301712483,
+        "distant": 0.23766759637510404
+      },
+      "target_rise": 0.00590770342387259,
+      "distant_rise": 0.01628686665208079,
+      "score": -0.0103791632282082,
+      "seconds": 14.728059279965237
+    },
+    {
+      "layer": 1,
+      "head": 1,
+      "module": "model.language_model.layers.1.self_attn.o_proj",
+      "loss": {
+        "target": 0.29154254094464704,
+        "distant": 0.23983599490020424
+      },
+      "target_rise": 0.011504014197271317,
+      "distant_rise": 0.01845526517718099,
+      "score": -0.006951250979909673,
+      "seconds": 14.75718143582344
+    },
+    {
+      "layer": 1,
+      "head": 2,
+      "module": "model.language_model.layers.1.self_attn.o_proj",
+      "loss": {
+        "target": 0.32177455502096564,
+        "distant": 0.33289659582078457
+      },
+      "target_rise": 0.04173602827358991,
+      "distant_rise": 0.11151586609776132,
+      "score": -0.06977983782417141,
+      "seconds": 6.923706057947129,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 1,
+      "head": 3,
+      "module": "model.language_model.layers.1.self_attn.o_proj",
+      "loss": {
+        "target": 0.28827100939815864,
+        "distant": 0.2327324866782874
+      },
+      "target_rise": 0.008232482650782913,
+      "distant_rise": 0.011351756955264136,
+      "score": -0.0031192743044812232,
+      "seconds": 6.9359353058971465,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 1,
+      "head": 4,
+      "module": "model.language_model.layers.1.self_attn.o_proj",
+      "loss": {
+        "target": 0.29350452491780743,
+        "distant": 0.23845261527458206
+      },
+      "target_rise": 0.013465998170431703,
+      "distant_rise": 0.017071885551558807,
+      "score": -0.003605887381127104,
+      "seconds": 6.950007697800174,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 1,
+      "head": 5,
+      "module": "model.language_model.layers.1.self_attn.o_proj",
+      "loss": {
+        "target": 0.2823647496988997,
+        "distant": 0.22603292900021188
+      },
+      "target_rise": 0.0023262229515239596,
+      "distant_rise": 0.004652199277188629,
+      "score": -0.0023259763256646693,
+      "seconds": 6.961136892205104,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 1,
+      "head": 6,
+      "module": "model.language_model.layers.1.self_attn.o_proj",
+      "loss": {
+        "target": 0.2816042174817994,
+        "distant": 0.22317138584912755
+      },
+      "target_rise": 0.001565690734423697,
+      "distant_rise": 0.0017906561261042953,
+      "score": -0.00022496539168059826,
+      "seconds": 6.973140041111037,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 1,
+      "head": 7,
+      "module": "model.language_model.layers.1.self_attn.o_proj",
+      "loss": {
+        "target": 0.2889388015610166,
+        "distant": 0.23005671694409102
+      },
+      "target_rise": 0.008900274813640863,
+      "distant_rise": 0.008675987221067771,
+      "score": 0.0002242875925730914,
+      "seconds": 6.984694710932672,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 2,
+      "head": 0,
+      "module": "model.language_model.layers.2.self_attn.o_proj",
+      "loss": {
+        "target": 0.2897929758182727,
+        "distant": 0.23068610791233368
+      },
+      "target_rise": 0.009754449070896953,
+      "distant_rise": 0.009305378189310431,
+      "score": 0.00044907088158652186,
+      "seconds": 6.9943972520995885,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 2,
+      "head": 1,
+      "module": "model.language_model.layers.2.self_attn.o_proj",
+      "loss": {
+        "target": 0.29357992589939386,
+        "distant": 0.22962292144075036
+      },
+      "target_rise": 0.01354139915201813,
+      "distant_rise": 0.00824219171772711,
+      "score": 0.00529920743429102,
+      "seconds": 6.999686487019062,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 2,
+      "head": 2,
+      "module": "model.language_model.layers.2.self_attn.o_proj",
+      "loss": {
+        "target": 0.3081927071325481,
+        "distant": 0.24510406531044282
+      },
+      "target_rise": 0.028154180385172367,
+      "distant_rise": 0.02372333558741957,
+      "score": 0.004430844797752798,
+      "seconds": 7.0129140368662775,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 2,
+      "head": 3,
+      "module": "model.language_model.layers.2.self_attn.o_proj",
+      "loss": {
+        "target": 0.2884628046886064,
+        "distant": 0.22869140320108272
+      },
+      "target_rise": 0.008424277941230685,
+      "distant_rise": 0.007310673478059471,
+      "score": 0.0011136044631712139,
+      "seconds": 7.018367195967585,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 2,
+      "head": 4,
+      "module": "model.language_model.layers.2.self_attn.o_proj",
+      "loss": {
+        "target": 0.29286868177587166,
+        "distant": 0.2368659836356528
+      },
+      "target_rise": 0.012830155028495938,
+      "distant_rise": 0.01548525391262956,
+      "score": -0.002655098884133622,
+      "seconds": 7.022610208019614,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 2,
+      "head": 5,
+      "module": "model.language_model.layers.2.self_attn.o_proj",
+      "loss": {
+        "target": 0.31234177853912115,
+        "distant": 0.2845862346002832
+      },
+      "target_rise": 0.032303251791745424,
+      "distant_rise": 0.06320550487725995,
+      "score": -0.03090225308551453,
+      "seconds": 7.0286747419741005,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 2,
+      "head": 6,
+      "module": "model.language_model.layers.2.self_attn.o_proj",
+      "loss": {
+        "target": 0.339770661550574,
+        "distant": 0.2754031768126879
+      },
+      "target_rise": 0.05973213480319828,
+      "distant_rise": 0.05402244708966464,
+      "score": 0.00570968771353364,
+      "seconds": 7.032763623166829,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 2,
+      "head": 7,
+      "module": "model.language_model.layers.2.self_attn.o_proj",
+      "loss": {
+        "target": 0.2919212919077836,
+        "distant": 0.2358201770693995
+      },
+      "target_rise": 0.011882765160407871,
+      "distant_rise": 0.014439447346376255,
+      "score": -0.002556682185968384,
+      "seconds": 7.037626761011779,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 3,
+      "head": 0,
+      "module": "model.language_model.layers.3.self_attn.o_proj",
+      "loss": {
+        "target": 0.30560795619385317,
+        "distant": 0.24658796298899688
+      },
+      "target_rise": 0.025569429446477443,
+      "distant_rise": 0.025207233265973628,
+      "score": 0.0003621961805038154,
+      "seconds": 7.0459796658251435,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 3,
+      "head": 1,
+      "module": "model.language_model.layers.3.self_attn.o_proj",
+      "loss": {
+        "target": 0.31937243789434433,
+        "distant": 0.24892869649920613
+      },
+      "target_rise": 0.0393339111469686,
+      "distant_rise": 0.027547966776182875,
+      "score": 0.011785944370785728,
+      "seconds": 7.049244014080614,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 3,
+      "head": 2,
+      "module": "model.language_model.layers.3.self_attn.o_proj",
+      "loss": {
+        "target": 0.2979232547804713,
+        "distant": 0.23673973319819197
+      },
+      "target_rise": 0.017884728033095598,
+      "distant_rise": 0.01535900347516872,
+      "score": 0.0025257245579268783,
+      "seconds": 7.059242547955364,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 3,
+      "head": 3,
+      "module": "model.language_model.layers.3.self_attn.o_proj",
+      "loss": {
+        "target": 0.29248337214812636,
+        "distant": 0.23385401716222987
+      },
+      "target_rise": 0.012444845400750637,
+      "distant_rise": 0.012473287439206615,
+      "score": -2.8442038455978036e-05,
+      "seconds": 7.063809053041041,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 3,
+      "head": 4,
+      "module": "model.language_model.layers.3.self_attn.o_proj",
+      "loss": {
+        "target": 0.3112354088225402,
+        "distant": 0.2455125785782002
+      },
+      "target_rise": 0.031196882075164467,
+      "distant_rise": 0.02413184885517694,
+      "score": 0.0070650332199875265,
+      "seconds": 7.0701822580304,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 3,
+      "head": 5,
+      "module": "model.language_model.layers.3.self_attn.o_proj",
+      "loss": {
+        "target": 0.3033480423036963,
+        "distant": 0.24408719188068062
+      },
+      "target_rise": 0.023309515556320548,
+      "distant_rise": 0.02270646215765737,
+      "score": 0.0006030533986631781,
+      "seconds": 7.07084222510457,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 3,
+      "head": 6,
+      "module": "model.language_model.layers.3.self_attn.o_proj",
+      "loss": {
+        "target": 0.3076533421408385,
+        "distant": 0.24497626521042548
+      },
+      "target_rise": 0.027614815393462777,
+      "distant_rise": 0.02359553548740223,
+      "score": 0.004019279906060547,
+      "seconds": 7.077983868075535,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 3,
+      "head": 7,
+      "module": "model.language_model.layers.3.self_attn.o_proj",
+      "loss": {
+        "target": 0.2835023439838551,
+        "distant": 0.2234396485146135
+      },
+      "target_rise": 0.003463817236479372,
+      "distant_rise": 0.0020589187915902585,
+      "score": 0.0014048984448891133,
+      "seconds": 7.080551807070151,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 4,
+      "head": 0,
+      "module": "model.language_model.layers.4.self_attn.o_proj",
+      "loss": {
+        "target": 0.32218885188922286,
+        "distant": 0.2790341037325561
+      },
+      "target_rise": 0.042150325141847134,
+      "distant_rise": 0.057653374009532854,
+      "score": -0.01550304886768572,
+      "seconds": 7.080357626080513,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 4,
+      "head": 1,
+      "module": "model.language_model.layers.4.self_attn.o_proj",
+      "loss": {
+        "target": 0.31035190768307075,
+        "distant": 0.24768997708451934
+      },
+      "target_rise": 0.030313380935695022,
+      "distant_rise": 0.02630924736149609,
+      "score": 0.0040041335741989315,
+      "seconds": 7.084661348955706,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 4,
+      "head": 2,
+      "module": "model.language_model.layers.4.self_attn.o_proj",
+      "loss": {
+        "target": 0.28132271755021065,
+        "distant": 0.22473565800464712
+      },
+      "target_rise": 0.001284190802834928,
+      "distant_rise": 0.00335492828162387,
+      "score": -0.002070737478788942,
+      "seconds": 7.0873069821391255,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 4,
+      "head": 3,
+      "module": "model.language_model.layers.4.self_attn.o_proj",
+      "loss": {
+        "target": 0.2887094409670681,
+        "distant": 0.2291381315444596
+      },
+      "target_rise": 0.00867091421969235,
+      "distant_rise": 0.0077574018214363605,
+      "score": 0.000913512398255989,
+      "seconds": 7.094940501032397,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 4,
+      "head": 4,
+      "module": "model.language_model.layers.4.self_attn.o_proj",
+      "loss": {
+        "target": 0.31292229040991515,
+        "distant": 0.2516325155447703
+      },
+      "target_rise": 0.03288376366253942,
+      "distant_rise": 0.030251785821747035,
+      "score": 0.0026319778407923877,
+      "seconds": 7.103486224077642,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 4,
+      "head": 5,
+      "module": "model.language_model.layers.4.self_attn.o_proj",
+      "loss": {
+        "target": 0.295368108083494,
+        "distant": 0.23279398624435998
+      },
+      "target_rise": 0.015329581336118281,
+      "distant_rise": 0.011413256521336734,
+      "score": 0.003916324814781547,
+      "seconds": 7.102128393948078,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 4,
+      "head": 6,
+      "module": "model.language_model.layers.4.self_attn.o_proj",
+      "loss": {
+        "target": 0.3076172558357939,
+        "distant": 0.2536167106300127
+      },
+      "target_rise": 0.027578729088418186,
+      "distant_rise": 0.032235980906989425,
+      "score": -0.00465725181857124,
+      "seconds": 7.10635221702978,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 4,
+      "head": 7,
+      "module": "model.language_model.layers.4.self_attn.o_proj",
+      "loss": {
+        "target": 0.346680088667199,
+        "distant": 0.2829580422549043
+      },
+      "target_rise": 0.06664156191982329,
+      "distant_rise": 0.061577312531881034,
+      "score": 0.0050642493879422545,
+      "seconds": 7.133082947926596,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 5,
+      "head": 0,
+      "module": "model.language_model.layers.5.self_attn.o_proj",
+      "loss": {
+        "target": 0.28448779764585197,
+        "distant": 0.226998693193309
+      },
+      "target_rise": 0.004449270898476243,
+      "distant_rise": 0.005617963470285758,
+      "score": -0.0011686925718095154,
+      "seconds": 7.133239781949669,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 5,
+      "head": 1,
+      "module": "model.language_model.layers.5.self_attn.o_proj",
+      "loss": {
+        "target": 0.28303588583366945,
+        "distant": 0.2237070106639294
+      },
+      "target_rise": 0.002997359086293727,
+      "distant_rise": 0.0023262809409061447,
+      "score": 0.0006710781453875825,
+      "seconds": 7.139931763987988,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 5,
+      "head": 2,
+      "module": "model.language_model.layers.5.self_attn.o_proj",
+      "loss": {
+        "target": 0.2858904690365307,
+        "distant": 0.22812117819557898
+      },
+      "target_rise": 0.005851942289154977,
+      "distant_rise": 0.006740448472555727,
+      "score": -0.0008885061834007502,
+      "seconds": 7.128313920926303,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 5,
+      "head": 3,
+      "module": "model.language_model.layers.5.self_attn.o_proj",
+      "loss": {
+        "target": 0.28575263818493113,
+        "distant": 0.22617187004652806
+      },
+      "target_rise": 0.0057141114375554025,
+      "distant_rise": 0.0047911403235048056,
+      "score": 0.000922971114050597,
+      "seconds": 7.142954211914912,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 5,
+      "head": 4,
+      "module": "model.language_model.layers.5.self_attn.o_proj",
+      "loss": {
+        "target": 0.3322728460188955,
+        "distant": 0.2678700632241089
+      },
+      "target_rise": 0.05223431927151978,
+      "distant_rise": 0.04648933350108564,
+      "score": 0.005744985770434141,
+      "seconds": 7.136399264913052,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 5,
+      "head": 5,
+      "module": "model.language_model.layers.5.self_attn.o_proj",
+      "loss": {
+        "target": 0.3282844685600139,
+        "distant": 0.2848116235982161
+      },
+      "target_rise": 0.04824594181263819,
+      "distant_rise": 0.06343089387519285,
+      "score": -0.015184952062554657,
+      "seconds": 7.137071949895471,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 5,
+      "head": 6,
+      "module": "model.language_model.layers.5.self_attn.o_proj",
+      "loss": {
+        "target": 0.3065364788635634,
+        "distant": 0.23688421820406802
+      },
+      "target_rise": 0.026497952116187662,
+      "distant_rise": 0.01550348848104477,
+      "score": 0.010994463635142893,
+      "seconds": 7.142818658845499,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 5,
+      "head": 7,
+      "module": "model.language_model.layers.5.self_attn.o_proj",
+      "loss": {
+        "target": 0.29612243798328564,
+        "distant": 0.2801197759108618
+      },
+      "target_rise": 0.01608391123590991,
+      "distant_rise": 0.05873904618783854,
+      "score": -0.04265513495192863,
+      "seconds": 7.138897026889026,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 6,
+      "head": 0,
+      "module": "model.language_model.layers.6.self_attn.o_proj",
+      "loss": {
+        "target": 0.2879206449142657,
+        "distant": 0.22707566944882274
+      },
+      "target_rise": 0.007882118166889995,
+      "distant_rise": 0.005694939725799486,
+      "score": 0.0021871784410905093,
+      "seconds": 7.140163519885391,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 6,
+      "head": 1,
+      "module": "model.language_model.layers.6.self_attn.o_proj",
+      "loss": {
+        "target": 0.3187559164944105,
+        "distant": 0.251558941003168
+      },
+      "target_rise": 0.03871738974703476,
+      "distant_rise": 0.03017821128014475,
+      "score": 0.008539178466890007,
+      "seconds": 7.137900057947263,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 6,
+      "head": 2,
+      "module": "model.language_model.layers.6.self_attn.o_proj",
+      "loss": {
+        "target": 0.35476295702392235,
+        "distant": 0.42445305216824636
+      },
+      "target_rise": 0.07472443027654663,
+      "distant_rise": 0.2030723224452231,
+      "score": -0.12834789216867648,
+      "seconds": 7.138944359030575,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 6,
+      "head": 3,
+      "module": "model.language_model.layers.6.self_attn.o_proj",
+      "loss": {
+        "target": 0.34673028555698693,
+        "distant": 0.291274395713117
+      },
+      "target_rise": 0.0666917588096112,
+      "distant_rise": 0.06989366599009372,
+      "score": -0.0032019071804825217,
+      "seconds": 7.145216081989929,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 6,
+      "head": 4,
+      "module": "model.language_model.layers.6.self_attn.o_proj",
+      "loss": {
+        "target": 0.2847334438120015,
+        "distant": 0.23139562009600922
+      },
+      "target_rise": 0.00469491706462577,
+      "distant_rise": 0.010014890372985974,
+      "score": -0.005319973308360204,
+      "seconds": 7.135693610180169,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 6,
+      "head": 5,
+      "module": "model.language_model.layers.6.self_attn.o_proj",
+      "loss": {
+        "target": 0.28786088508786634,
+        "distant": 0.2294803707918618
+      },
+      "target_rise": 0.00782235834049061,
+      "distant_rise": 0.008099641068838537,
+      "score": -0.00027728272834792733,
+      "seconds": 7.139447750989348,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 6,
+      "head": 6,
+      "module": "model.language_model.layers.6.self_attn.o_proj",
+      "loss": {
+        "target": 0.34133343130815774,
+        "distant": 0.28532448544865474
+      },
+      "target_rise": 0.061294904560782015,
+      "distant_rise": 0.06394375572563149,
+      "score": -0.002648851164849475,
+      "seconds": 7.133920199004933,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 6,
+      "head": 7,
+      "module": "model.language_model.layers.6.self_attn.o_proj",
+      "loss": {
+        "target": 0.3487258359673433,
+        "distant": 0.29798212929745205
+      },
+      "target_rise": 0.06868730921996757,
+      "distant_rise": 0.0766013995744288,
+      "score": -0.007914090354461223,
+      "seconds": 7.138305643107742,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 7,
+      "head": 0,
+      "module": "model.language_model.layers.7.self_attn.o_proj",
+      "loss": {
+        "target": 0.33928290294716135,
+        "distant": 0.26719741168199107
+      },
+      "target_rise": 0.05924437619978562,
+      "distant_rise": 0.04581668195896782,
+      "score": 0.0134276942408178,
+      "seconds": 7.1311037400737405,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 7,
+      "head": 1,
+      "module": "model.language_model.layers.7.self_attn.o_proj",
+      "loss": {
+        "target": 0.31716110522393137,
+        "distant": 0.24386552759096958
+      },
+      "target_rise": 0.037122578476555645,
+      "distant_rise": 0.022484797867946327,
+      "score": 0.014637780608609319,
+      "seconds": 7.144661994185299,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 7,
+      "head": 2,
+      "module": "model.language_model.layers.7.self_attn.o_proj",
+      "loss": {
+        "target": 0.3200878959032707,
+        "distant": 0.24832519510528073
+      },
+      "target_rise": 0.040049369155894965,
+      "distant_rise": 0.026944465382257476,
+      "score": 0.013104903773637488,
+      "seconds": 7.14880551607348,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 7,
+      "head": 3,
+      "module": "model.language_model.layers.7.self_attn.o_proj",
+      "loss": {
+        "target": 0.3467760189669207,
+        "distant": 0.2681347659090534
+      },
+      "target_rise": 0.06673749221954495,
+      "distant_rise": 0.046754036186030135,
+      "score": 0.019983456033514813,
+      "seconds": 7.149497210048139,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 7,
+      "head": 4,
+      "module": "model.language_model.layers.7.self_attn.o_proj",
+      "loss": {
+        "target": 0.3307516655768268,
+        "distant": 0.27803768377634697
+      },
+      "target_rise": 0.050713138829451054,
+      "distant_rise": 0.056656954053323716,
+      "score": -0.005943815223872662,
+      "seconds": 7.142561404034495,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 7,
+      "head": 5,
+      "module": "model.language_model.layers.7.self_attn.o_proj",
+      "loss": {
+        "target": 0.3465496889548376,
+        "distant": 0.26731791213387623
+      },
+      "target_rise": 0.0665111622074619,
+      "distant_rise": 0.045937182410852984,
+      "score": 0.02057397979660891,
+      "seconds": 7.143996539060026,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 7,
+      "head": 6,
+      "module": "model.language_model.layers.7.self_attn.o_proj",
+      "loss": {
+        "target": 0.34459033026359975,
+        "distant": 0.2672789618954994
+      },
+      "target_rise": 0.06455180351622403,
+      "distant_rise": 0.04589823217247613,
+      "score": 0.0186535713437479,
+      "seconds": 7.14876151108183,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 7,
+      "head": 7,
+      "module": "model.language_model.layers.7.self_attn.o_proj",
+      "loss": {
+        "target": 0.3611389194848016,
+        "distant": 0.2964416282484308
+      },
+      "target_rise": 0.08110039273742586,
+      "distant_rise": 0.07506089852540754,
+      "score": 0.006039494212018326,
+      "seconds": 7.154792223824188,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 8,
+      "head": 0,
+      "module": "model.language_model.layers.8.self_attn.o_proj",
+      "loss": {
+        "target": 0.3653549187001772,
+        "distant": 0.28681108573800884
+      },
+      "target_rise": 0.0853163919528015,
+      "distant_rise": 0.06543035601498559,
+      "score": 0.019886035937815905,
+      "seconds": 7.151043680962175,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 8,
+      "head": 1,
+      "module": "model.language_model.layers.8.self_attn.o_proj",
+      "loss": {
+        "target": 0.38365203177090734,
+        "distant": 0.370332682156004
+      },
+      "target_rise": 0.10361350502353162,
+      "distant_rise": 0.14895195243298076,
+      "score": -0.045338447409449145,
+      "seconds": 7.157597817014903,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 8,
+      "head": 2,
+      "module": "model.language_model.layers.8.self_attn.o_proj",
+      "loss": {
+        "target": 0.324079432815779,
+        "distant": 0.2547859510232229
+      },
+      "target_rise": 0.044040906068403274,
+      "distant_rise": 0.03340522130019963,
+      "score": 0.010635684768203646,
+      "seconds": 7.162935985950753,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 8,
+      "head": 3,
+      "module": "model.language_model.layers.8.self_attn.o_proj",
+      "loss": {
+        "target": 0.3133282785420306,
+        "distant": 0.24741582726710476
+      },
+      "target_rise": 0.033289751794654876,
+      "distant_rise": 0.02603509754408151,
+      "score": 0.007254654250573367,
+      "seconds": 7.1560573449824005,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 8,
+      "head": 4,
+      "module": "model.language_model.layers.8.self_attn.o_proj",
+      "loss": {
+        "target": 0.3552000722847879,
+        "distant": 0.2894392893940676
+      },
+      "target_rise": 0.07516154553741217,
+      "distant_rise": 0.06805855967104435,
+      "score": 0.007102985866367817,
+      "seconds": 7.154142974177375,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 8,
+      "head": 5,
+      "module": "model.language_model.layers.8.self_attn.o_proj",
+      "loss": {
+        "target": 0.36511406023055315,
+        "distant": 0.30088457340025343
+      },
+      "target_rise": 0.08507553348317742,
+      "distant_rise": 0.07950384367723018,
+      "score": 0.005571689805947244,
+      "seconds": 7.152443144004792,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 8,
+      "head": 6,
+      "module": "model.language_model.layers.8.self_attn.o_proj",
+      "loss": {
+        "target": 0.34394559962674975,
+        "distant": 0.2827081026043743
+      },
+      "target_rise": 0.06390707287937403,
+      "distant_rise": 0.06132737288135104,
+      "score": 0.0025796999980229884,
+      "seconds": 7.15802402398549,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 8,
+      "head": 7,
+      "module": "model.language_model.layers.8.self_attn.o_proj",
+      "loss": {
+        "target": 0.33225365495309234,
+        "distant": 0.271575684833806
+      },
+      "target_rise": 0.05221512820571661,
+      "distant_rise": 0.05019495511078276,
+      "score": 0.0020201730949338526,
+      "seconds": 7.165045988978818,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 9,
+      "head": 0,
+      "module": "model.language_model.layers.9.self_attn.o_proj",
+      "loss": {
+        "target": 0.36076079023769125,
+        "distant": 0.29099137606681325
+      },
+      "target_rise": 0.08072226349031553,
+      "distant_rise": 0.06961064634379,
+      "score": 0.011111617146525532,
+      "seconds": 7.123148380080238,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 9,
+      "head": 1,
+      "module": "model.language_model.layers.9.self_attn.o_proj",
+      "loss": {
+        "target": 0.3291306917089969,
+        "distant": 0.2681856382114347
+      },
+      "target_rise": 0.049092164961621165,
+      "distant_rise": 0.046804908488411456,
+      "score": 0.002287256473209709,
+      "seconds": 7.131753341061994,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 9,
+      "head": 2,
+      "module": "model.language_model.layers.9.self_attn.o_proj",
+      "loss": {
+        "target": 0.3666241104947403,
+        "distant": 0.3321621849318035
+      },
+      "target_rise": 0.08658558374736458,
+      "distant_rise": 0.11078145520878024,
+      "score": -0.024195871461415663,
+      "seconds": 7.126041644020006,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 9,
+      "head": 3,
+      "module": "model.language_model.layers.9.self_attn.o_proj",
+      "loss": {
+        "target": 0.3639745797845535,
+        "distant": 0.31527619779808447
+      },
+      "target_rise": 0.08393605303717777,
+      "distant_rise": 0.09389546807506122,
+      "score": -0.009959415037883446,
+      "seconds": 7.124140752945095,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 9,
+      "head": 4,
+      "module": "model.language_model.layers.9.self_attn.o_proj",
+      "loss": {
+        "target": 0.406435378245078,
+        "distant": 0.3404294931679033
+      },
+      "target_rise": 0.1263968514977023,
+      "distant_rise": 0.11904876344488002,
+      "score": 0.007348088052822277,
+      "seconds": 7.134736330015585,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 9,
+      "head": 5,
+      "module": "model.language_model.layers.9.self_attn.o_proj",
+      "loss": {
+        "target": 0.3794227610924281,
+        "distant": 0.29646251793019474
+      },
+      "target_rise": 0.09938423434505239,
+      "distant_rise": 0.07508178820717148,
+      "score": 0.024302446137880906,
+      "seconds": 7.137275813845918,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 9,
+      "head": 6,
+      "module": "model.language_model.layers.9.self_attn.o_proj",
+      "loss": {
+        "target": 0.30061612429562956,
+        "distant": 0.24214740612660535
+      },
+      "target_rise": 0.020577597548253834,
+      "distant_rise": 0.020766676403582096,
+      "score": -0.00018907885532826185,
+      "seconds": 7.135571497026831,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 9,
+      "head": 7,
+      "module": "model.language_model.layers.9.self_attn.o_proj",
+      "loss": {
+        "target": 0.3456508119124919,
+        "distant": 0.2749316830886528
+      },
+      "target_rise": 0.06561228516511619,
+      "distant_rise": 0.05355095336562954,
+      "score": 0.012061331799486652,
+      "seconds": 7.127889516064897,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 10,
+      "head": 0,
+      "module": "model.language_model.layers.10.self_attn.o_proj",
+      "loss": {
+        "target": 0.3121077704709023,
+        "distant": 0.2534694015630521
+      },
+      "target_rise": 0.0320692437235266,
+      "distant_rise": 0.03208867184002884,
+      "score": -1.94281165022403e-05,
+      "seconds": 7.126737124053761,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 10,
+      "head": 1,
+      "module": "model.language_model.layers.10.self_attn.o_proj",
+      "loss": {
+        "target": 0.3180357412202284,
+        "distant": 0.2616584755887743
+      },
+      "target_rise": 0.03799721447285265,
+      "distant_rise": 0.04027774586575106,
+      "score": -0.0022805313928984106,
+      "seconds": 7.129663767060265,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 10,
+      "head": 2,
+      "module": "model.language_model.layers.10.self_attn.o_proj",
+      "loss": {
+        "target": 0.36676424473989755,
+        "distant": 0.3078375745099038
+      },
+      "target_rise": 0.08672571799252182,
+      "distant_rise": 0.08645684478688054,
+      "score": 0.0002688732056412846,
+      "seconds": 7.125905911903828,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 10,
+      "head": 3,
+      "module": "model.language_model.layers.10.self_attn.o_proj",
+      "loss": {
+        "target": 0.35961633251281455,
+        "distant": 0.2812320818484295
+      },
+      "target_rise": 0.07957780576543882,
+      "distant_rise": 0.059851352125406265,
+      "score": 0.01972645364003256,
+      "seconds": 7.133299971930683,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 10,
+      "head": 4,
+      "module": "model.language_model.layers.10.self_attn.o_proj",
+      "loss": {
+        "target": 0.3882897106814198,
+        "distant": 0.3367895617848262
+      },
+      "target_rise": 0.10825118393404409,
+      "distant_rise": 0.11540883206180297,
+      "score": -0.0071576481277588755,
+      "seconds": 7.128987236181274,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 10,
+      "head": 5,
+      "module": "model.language_model.layers.10.self_attn.o_proj",
+      "loss": {
+        "target": 0.38321633089799434,
+        "distant": 0.31991943158209324
+      },
+      "target_rise": 0.10317780415061861,
+      "distant_rise": 0.09853870185906999,
+      "score": 0.004639102291548625,
+      "seconds": 7.135207723127678,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 10,
+      "head": 6,
+      "module": "model.language_model.layers.10.self_attn.o_proj",
+      "loss": {
+        "target": 0.3830876355059445,
+        "distant": 0.29776384425349534
+      },
+      "target_rise": 0.10304910875856876,
+      "distant_rise": 0.07638311453047208,
+      "score": 0.02666599422809668,
+      "seconds": 7.139009426115081,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 10,
+      "head": 7,
+      "module": "model.language_model.layers.10.self_attn.o_proj",
+      "loss": {
+        "target": 0.3593261953210458,
+        "distant": 0.28413306738366373
+      },
+      "target_rise": 0.07928766857367009,
+      "distant_rise": 0.06275233766064048,
+      "score": 0.01653533091302961,
+      "seconds": 7.135215545073152,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 11,
+      "head": 0,
+      "module": "model.language_model.layers.11.self_attn.o_proj",
+      "loss": {
+        "target": 0.34385180548997596,
+        "distant": 0.28062038123607635
+      },
+      "target_rise": 0.06381327874260023,
+      "distant_rise": 0.059239651513053104,
+      "score": 0.004573627229547128,
+      "seconds": 7.176978533156216,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 11,
+      "head": 1,
+      "module": "model.language_model.layers.11.self_attn.o_proj",
+      "loss": {
+        "target": 0.2898120871395804,
+        "distant": 0.2322972824331373
+      },
+      "target_rise": 0.009773560392204672,
+      "distant_rise": 0.010916552710114047,
+      "score": -0.0011429923179093748,
+      "seconds": 7.134274199139327,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 11,
+      "head": 2,
+      "module": "model.language_model.layers.11.self_attn.o_proj",
+      "loss": {
+        "target": 0.3737391352187842,
+        "distant": 0.34458235965576023
+      },
+      "target_rise": 0.09370060847140849,
+      "distant_rise": 0.12320162993273698,
+      "score": -0.02950102146132849,
+      "seconds": 7.138165614800528,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 11,
+      "head": 3,
+      "module": "model.language_model.layers.11.self_attn.o_proj",
+      "loss": {
+        "target": 0.48714291607029736,
+        "distant": 0.434592297882773
+      },
+      "target_rise": 0.20710438932292163,
+      "distant_rise": 0.21321156815974973,
+      "score": -0.006107178836828098,
+      "seconds": 7.137222876073793,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 11,
+      "head": 4,
+      "module": "model.language_model.layers.11.self_attn.o_proj",
+      "loss": {
+        "target": 0.28180812363279983,
+        "distant": 0.22324363069492392
+      },
+      "target_rise": 0.0017695968854241073,
+      "distant_rise": 0.0018629009719006717,
+      "score": -9.330408647656441e-05,
+      "seconds": 7.1415532568935305,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 11,
+      "head": 5,
+      "module": "model.language_model.layers.11.self_attn.o_proj",
+      "loss": {
+        "target": 0.2839940276462585,
+        "distant": 0.22580677148653194
+      },
+      "target_rise": 0.003955500898882747,
+      "distant_rise": 0.004426041763508692,
+      "score": -0.0004705408646259457,
+      "seconds": 7.137909702025354,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 11,
+      "head": 6,
+      "module": "model.language_model.layers.11.self_attn.o_proj",
+      "loss": {
+        "target": 0.3933297130279243,
+        "distant": 0.39314514660509303
+      },
+      "target_rise": 0.11329118628054857,
+      "distant_rise": 0.17176441688206978,
+      "score": -0.05847323060152121,
+      "seconds": 7.141470264177769,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 11,
+      "head": 7,
+      "module": "model.language_model.layers.11.self_attn.o_proj",
+      "loss": {
+        "target": 0.4553059117170051,
+        "distant": 0.3576486489037052
+      },
+      "target_rise": 0.17526738496962935,
+      "distant_rise": 0.13626791918068193,
+      "score": 0.03899946578894742,
+      "seconds": 7.13752130093053,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 12,
+      "head": 0,
+      "module": "model.language_model.layers.12.self_attn.o_proj",
+      "loss": {
+        "target": 0.3431379178655334,
+        "distant": 0.28032864836859517
+      },
+      "target_rise": 0.06309939111815766,
+      "distant_rise": 0.05894791864557192,
+      "score": 0.004151472472585738,
+      "seconds": 7.14121856703423,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 12,
+      "head": 1,
+      "module": "model.language_model.layers.12.self_attn.o_proj",
+      "loss": {
+        "target": 0.34694441949250177,
+        "distant": 0.2839820337248966
+      },
+      "target_rise": 0.06690589274512604,
+      "distant_rise": 0.06260130400187336,
+      "score": 0.00430458874325268,
+      "seconds": 7.135585117852315,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 12,
+      "head": 2,
+      "module": "model.language_model.layers.12.self_attn.o_proj",
+      "loss": {
+        "target": 0.39810696843778715,
+        "distant": 0.3324885930051096
+      },
+      "target_rise": 0.11806844169041142,
+      "distant_rise": 0.11110786328208633,
+      "score": 0.006960578408325091,
+      "seconds": 7.140963525976986,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 12,
+      "head": 3,
+      "module": "model.language_model.layers.12.self_attn.o_proj",
+      "loss": {
+        "target": 0.35111622768454254,
+        "distant": 0.28413406072650105
+      },
+      "target_rise": 0.07107770093716681,
+      "distant_rise": 0.0627533310034778,
+      "score": 0.008324369933689013,
+      "seconds": 7.13435104303062,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 12,
+      "head": 4,
+      "module": "model.language_model.layers.12.self_attn.o_proj",
+      "loss": {
+        "target": 0.5765780278015882,
+        "distant": 0.5143435567151755
+      },
+      "target_rise": 0.29653950105421245,
+      "distant_rise": 0.29296282699215226,
+      "score": 0.0035766740620601922,
+      "seconds": 7.144192741950974,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 12,
+      "head": 5,
+      "module": "model.language_model.layers.12.self_attn.o_proj",
+      "loss": {
+        "target": 0.4646887950366363,
+        "distant": 0.38997247797669843
+      },
+      "target_rise": 0.18465026828926057,
+      "distant_rise": 0.16859174825367518,
+      "score": 0.01605852003558539,
+      "seconds": 7.139718245016411,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 12,
+      "head": 6,
+      "module": "model.language_model.layers.12.self_attn.o_proj",
+      "loss": {
+        "target": 0.4096912586828694,
+        "distant": 0.3651671939296648
+      },
+      "target_rise": 0.12965273193549365,
+      "distant_rise": 0.14378646420664154,
+      "score": -0.014133732271147892,
+      "seconds": 7.14149458007887,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 12,
+      "head": 7,
+      "module": "model.language_model.layers.12.self_attn.o_proj",
+      "loss": {
+        "target": 0.3663045165594667,
+        "distant": 0.3190276164095849
+      },
+      "target_rise": 0.08626598981209099,
+      "distant_rise": 0.09764688668656163,
+      "score": -0.011380896874470636,
+      "seconds": 7.139520488213748,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 13,
+      "head": 0,
+      "module": "model.language_model.layers.13.self_attn.o_proj",
+      "loss": {
+        "target": 0.3418884503771551,
+        "distant": 0.2801345289917663
+      },
+      "target_rise": 0.06184992362977937,
+      "distant_rise": 0.05875379926874302,
+      "score": 0.0030961243610363454,
+      "seconds": 7.135209854925051,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 13,
+      "head": 1,
+      "module": "model.language_model.layers.13.self_attn.o_proj",
+      "loss": {
+        "target": 0.371411080181133,
+        "distant": 0.30688427001587115
+      },
+      "target_rise": 0.09137255343375728,
+      "distant_rise": 0.0855035402928479,
+      "score": 0.005869013140909374,
+      "seconds": 7.13215689198114,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 13,
+      "head": 2,
+      "module": "model.language_model.layers.13.self_attn.o_proj",
+      "loss": {
+        "target": 0.31808367831399664,
+        "distant": 0.2570679511409253
+      },
+      "target_rise": 0.038045151566620916,
+      "distant_rise": 0.03568722141790204,
+      "score": 0.0023579301487188786,
+      "seconds": 7.13344731205143,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 13,
+      "head": 3,
+      "module": "model.language_model.layers.13.self_attn.o_proj",
+      "loss": {
+        "target": 0.3223837069235742,
+        "distant": 0.26200009664171375
+      },
+      "target_rise": 0.04234518017619848,
+      "distant_rise": 0.0406193669186905,
+      "score": 0.0017258132575079799,
+      "seconds": 7.129030681913719,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 13,
+      "head": 4,
+      "module": "model.language_model.layers.13.self_attn.o_proj",
+      "loss": {
+        "target": 0.44889074441744015,
+        "distant": 0.35356617119396105
+      },
+      "target_rise": 0.16885221767006442,
+      "distant_rise": 0.1321854414709378,
+      "score": 0.036666776199126616,
+      "seconds": 7.1321250149048865,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 13,
+      "head": 5,
+      "module": "model.language_model.layers.13.self_attn.o_proj",
+      "loss": {
+        "target": 0.3688266496756114,
+        "distant": 0.2932678688666783
+      },
+      "target_rise": 0.08878812292823568,
+      "distant_rise": 0.07188713914365508,
+      "score": 0.016900983784580603,
+      "seconds": 7.130896568996832,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 13,
+      "head": 6,
+      "module": "model.language_model.layers.13.self_attn.o_proj",
+      "loss": {
+        "target": 0.3070545169757679,
+        "distant": 0.24223951838212088
+      },
+      "target_rise": 0.027015990228392184,
+      "distant_rise": 0.020858788659097627,
+      "score": 0.006157201569294557,
+      "seconds": 7.13475926197134,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 13,
+      "head": 7,
+      "module": "model.language_model.layers.13.self_attn.o_proj",
+      "loss": {
+        "target": 0.2997820940800011,
+        "distant": 0.24834415165241808
+      },
+      "target_rise": 0.01974356733262539,
+      "distant_rise": 0.026963421929394826,
+      "score": -0.007219854596769437,
+      "seconds": 7.1385478840675205,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 14,
+      "head": 0,
+      "module": "model.language_model.layers.14.self_attn.o_proj",
+      "loss": {
+        "target": 0.33240276447031647,
+        "distant": 0.27467215378419496
+      },
+      "target_rise": 0.05236423772294074,
+      "distant_rise": 0.05329142406117171,
+      "score": -0.0009271863382309675,
+      "seconds": 7.13377620303072,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 14,
+      "head": 1,
+      "module": "model.language_model.layers.14.self_attn.o_proj",
+      "loss": {
+        "target": 0.336188908200711,
+        "distant": 0.26794413151219487
+      },
+      "target_rise": 0.056150381453335285,
+      "distant_rise": 0.04656340178917162,
+      "score": 0.009586979664163664,
+      "seconds": 7.134559744037688,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 14,
+      "head": 2,
+      "module": "model.language_model.layers.14.self_attn.o_proj",
+      "loss": {
+        "target": 0.458442194503732,
+        "distant": 0.40101683360990137
+      },
+      "target_rise": 0.1784036677563563,
+      "distant_rise": 0.17963610388687812,
+      "score": -0.001232436130521819,
+      "seconds": 7.141373127000406,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 14,
+      "head": 3,
+      "module": "model.language_model.layers.14.self_attn.o_proj",
+      "loss": {
+        "target": 0.5241623116889969,
+        "distant": 0.5603850698680617
+      },
+      "target_rise": 0.24412378494162112,
+      "distant_rise": 0.33900434014503844,
+      "score": -0.09488055520341732,
+      "seconds": 7.136246395064518,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 14,
+      "head": 4,
+      "module": "model.language_model.layers.14.self_attn.o_proj",
+      "loss": {
+        "target": 0.34840962855378166,
+        "distant": 0.2800129999523051
+      },
+      "target_rise": 0.06837110180640593,
+      "distant_rise": 0.05863227022928186,
+      "score": 0.009738831577124074,
+      "seconds": 7.1382575100287795,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 14,
+      "head": 5,
+      "module": "model.language_model.layers.14.self_attn.o_proj",
+      "loss": {
+        "target": 0.43686593137681484,
+        "distant": 0.36556183896027505
+      },
+      "target_rise": 0.15682740462943912,
+      "distant_rise": 0.1441811092372518,
+      "score": 0.012646295392187312,
+      "seconds": 7.131929812952876,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 14,
+      "head": 6,
+      "module": "model.language_model.layers.14.self_attn.o_proj",
+      "loss": {
+        "target": 0.6797608209308237,
+        "distant": 0.604166405799333
+      },
+      "target_rise": 0.39972229418344796,
+      "distant_rise": 0.38278567607630976,
+      "score": 0.0169366181071382,
+      "seconds": 7.134361258009449,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 14,
+      "head": 7,
+      "module": "model.language_model.layers.14.self_attn.o_proj",
+      "loss": {
+        "target": 0.5671348036266863,
+        "distant": 0.5137427566223778
+      },
+      "target_rise": 0.2870962768793106,
+      "distant_rise": 0.29236202689935453,
+      "score": -0.0052657500200439245,
+      "seconds": 7.132526816101745,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 15,
+      "head": 0,
+      "module": "model.language_model.layers.15.self_attn.o_proj",
+      "loss": {
+        "target": 0.4431041012285277,
+        "distant": 0.43301473051542416
+      },
+      "target_rise": 0.163065574481152,
+      "distant_rise": 0.2116340007924009,
+      "score": -0.04856842631124891,
+      "seconds": 7.134350531036034,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 15,
+      "head": 1,
+      "module": "model.language_model.layers.15.self_attn.o_proj",
+      "loss": {
+        "target": 0.40838348935358226,
+        "distant": 0.3578574099810794
+      },
+      "target_rise": 0.12834496260620654,
+      "distant_rise": 0.13647668025805615,
+      "score": -0.008131717651849613,
+      "seconds": 7.133312460035086,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 15,
+      "head": 2,
+      "module": "model.language_model.layers.15.self_attn.o_proj",
+      "loss": {
+        "target": 0.31489034718833864,
+        "distant": 0.2501072952582035
+      },
+      "target_rise": 0.03485182044096291,
+      "distant_rise": 0.02872656553518027,
+      "score": 0.00612525490578264,
+      "seconds": 7.137722791871056,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 15,
+      "head": 3,
+      "module": "model.language_model.layers.15.self_attn.o_proj",
+      "loss": {
+        "target": 0.37809579249005765,
+        "distant": 0.3105047061108053
+      },
+      "target_rise": 0.09805726574268192,
+      "distant_rise": 0.08912397638778202,
+      "score": 0.008933289354899898,
+      "seconds": 7.131882682908326,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 15,
+      "head": 4,
+      "module": "model.language_model.layers.15.self_attn.o_proj",
+      "loss": {
+        "target": 0.43233959458302706,
+        "distant": 0.3987267037737183
+      },
+      "target_rise": 0.15230106783565134,
+      "distant_rise": 0.17734597405069508,
+      "score": -0.02504490621504374,
+      "seconds": 7.13886931585148,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 15,
+      "head": 5,
+      "module": "model.language_model.layers.15.self_attn.o_proj",
+      "loss": {
+        "target": 0.4179890272207558,
+        "distant": 0.32837507739895955
+      },
+      "target_rise": 0.1379505004733801,
+      "distant_rise": 0.1069943476759363,
+      "score": 0.030956152797443792,
+      "seconds": 7.135827898979187,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 15,
+      "head": 6,
+      "module": "model.language_model.layers.15.self_attn.o_proj",
+      "loss": {
+        "target": 0.4524145150789991,
+        "distant": 0.3833109796978533
+      },
+      "target_rise": 0.17237598833162338,
+      "distant_rise": 0.16193024997483008,
+      "score": 0.0104457383567933,
+      "seconds": 7.140951387118548,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 15,
+      "head": 7,
+      "module": "model.language_model.layers.15.self_attn.o_proj",
+      "loss": {
+        "target": 0.4176329062320292,
+        "distant": 0.3758385748951696
+      },
+      "target_rise": 0.13759437948465347,
+      "distant_rise": 0.15445784517214634,
+      "score": -0.016863465687492862,
+      "seconds": 7.139245318016037,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 16,
+      "head": 0,
+      "module": "model.language_model.layers.16.self_attn.o_proj",
+      "loss": {
+        "target": 0.36405734723666683,
+        "distant": 0.29824512562481686
+      },
+      "target_rise": 0.0840188204892911,
+      "distant_rise": 0.07686439590179361,
+      "score": 0.007154424587497488,
+      "seconds": 7.130839353892952,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 16,
+      "head": 1,
+      "module": "model.language_model.layers.16.self_attn.o_proj",
+      "loss": {
+        "target": 0.3953149140579626,
+        "distant": 0.3480001947027631
+      },
+      "target_rise": 0.11527638731058687,
+      "distant_rise": 0.12661946497973986,
+      "score": -0.01134307766915299,
+      "seconds": 7.136484241113067,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 16,
+      "head": 2,
+      "module": "model.language_model.layers.16.self_attn.o_proj",
+      "loss": {
+        "target": 0.3084413049509749,
+        "distant": 0.25098823916050605
+      },
+      "target_rise": 0.028402778203599155,
+      "distant_rise": 0.029607509437482804,
+      "score": -0.0012047312338836491,
+      "seconds": 7.160807334119454,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 16,
+      "head": 3,
+      "module": "model.language_model.layers.16.self_attn.o_proj",
+      "loss": {
+        "target": 0.3897756231017411,
+        "distant": 0.33034112048335373
+      },
+      "target_rise": 0.10973709635436535,
+      "distant_rise": 0.10896039076033048,
+      "score": 0.0007767055940348655,
+      "seconds": 7.132896478986368,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 16,
+      "head": 4,
+      "module": "model.language_model.layers.16.self_attn.o_proj",
+      "loss": {
+        "target": 0.4850781142595224,
+        "distant": 0.3758451903122477
+      },
+      "target_rise": 0.20503958751214668,
+      "distant_rise": 0.15446446058922447,
+      "score": 0.05057512692292221,
+      "seconds": 7.134720494039357,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 16,
+      "head": 5,
+      "module": "model.language_model.layers.16.self_attn.o_proj",
+      "loss": {
+        "target": 0.35586127813439816,
+        "distant": 0.28969909524312243
+      },
+      "target_rise": 0.07582275138702244,
+      "distant_rise": 0.06831836552009918,
+      "score": 0.007504385866923258,
+      "seconds": 7.137916320934892,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 16,
+      "head": 6,
+      "module": "model.language_model.layers.16.self_attn.o_proj",
+      "loss": {
+        "target": 0.47245206555817276,
+        "distant": 0.38050938810920343
+      },
+      "target_rise": 0.19241353881079704,
+      "distant_rise": 0.15912865838618018,
+      "score": 0.03328488042461686,
+      "seconds": 7.142834742087871,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 16,
+      "head": 7,
+      "module": "model.language_model.layers.16.self_attn.o_proj",
+      "loss": {
+        "target": 0.39391567232087255,
+        "distant": 0.3212832321296446
+      },
+      "target_rise": 0.11387714557349682,
+      "distant_rise": 0.09990250240662135,
+      "score": 0.013974643166875467,
+      "seconds": 7.139330564066768,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 17,
+      "head": 0,
+      "module": "model.language_model.layers.17.self_attn.o_proj",
+      "loss": {
+        "target": 0.4909968258580193,
+        "distant": 0.48164735751925036
+      },
+      "target_rise": 0.21095829911064357,
+      "distant_rise": 0.2602666277962271,
+      "score": -0.04930832868558355,
+      "seconds": 7.144092551898211,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 17,
+      "head": 1,
+      "module": "model.language_model.layers.17.self_attn.o_proj",
+      "loss": {
+        "target": 0.4737961261998862,
+        "distant": 0.45043925248319283
+      },
+      "target_rise": 0.19375759945251048,
+      "distant_rise": 0.22905852276016958,
+      "score": -0.035300923307659104,
+      "seconds": 7.140191521029919,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 17,
+      "head": 2,
+      "module": "model.language_model.layers.17.self_attn.o_proj",
+      "loss": {
+        "target": 0.31219641922507435,
+        "distant": 0.27097890703589655
+      },
+      "target_rise": 0.032157892477698624,
+      "distant_rise": 0.049598177312873304,
+      "score": -0.01744028483517468,
+      "seconds": 7.13840943784453,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 17,
+      "head": 3,
+      "module": "model.language_model.layers.17.self_attn.o_proj",
+      "loss": {
+        "target": 0.3229385789600201,
+        "distant": 0.2836749531561509
+      },
+      "target_rise": 0.04290005221264437,
+      "distant_rise": 0.06229422343312763,
+      "score": -0.01939417122048326,
+      "seconds": 7.138313974952325,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 17,
+      "head": 4,
+      "module": "model.language_model.layers.17.self_attn.o_proj",
+      "loss": {
+        "target": 0.287936941254884,
+        "distant": 0.22787833079928532
+      },
+      "target_rise": 0.007898414507508278,
+      "distant_rise": 0.006497601076262072,
+      "score": 0.0014008134312462062,
+      "seconds": 7.158413385041058,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 17,
+      "head": 5,
+      "module": "model.language_model.layers.17.self_attn.o_proj",
+      "loss": {
+        "target": 0.2861457879189402,
+        "distant": 0.22719320046599023
+      },
+      "target_rise": 0.00610726117156446,
+      "distant_rise": 0.00581247074296698,
+      "score": 0.00029479042859748006,
+      "seconds": 7.137022806098685,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 17,
+      "head": 6,
+      "module": "model.language_model.layers.17.self_attn.o_proj",
+      "loss": {
+        "target": 0.3380439975881018,
+        "distant": 0.2837510787358042
+      },
+      "target_rise": 0.05800547084072605,
+      "distant_rise": 0.062370349012780935,
+      "score": -0.004364878172054887,
+      "seconds": 7.1354174059815705,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 17,
+      "head": 7,
+      "module": "model.language_model.layers.17.self_attn.o_proj",
+      "loss": {
+        "target": 0.39346626144833863,
+        "distant": 0.31429987942101434
+      },
+      "target_rise": 0.1134277347009629,
+      "distant_rise": 0.09291914969799109,
+      "score": 0.020508585002971813,
+      "seconds": 7.136629587970674,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 18,
+      "head": 0,
+      "module": "model.language_model.layers.18.self_attn.o_proj",
+      "loss": {
+        "target": 0.31153704947791994,
+        "distant": 0.2532737912843004
+      },
+      "target_rise": 0.03149852273054421,
+      "distant_rise": 0.031893061561277136,
+      "score": -0.0003945388307329267,
+      "seconds": 7.1344496889505535,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 18,
+      "head": 1,
+      "module": "model.language_model.layers.18.self_attn.o_proj",
+      "loss": {
+        "target": 0.29560489271534607,
+        "distant": 0.2357520843797829
+      },
+      "target_rise": 0.015566365967970341,
+      "distant_rise": 0.01437135465675965,
+      "score": 0.001195011311210692,
+      "seconds": 7.13526651985012,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 18,
+      "head": 2,
+      "module": "model.language_model.layers.18.self_attn.o_proj",
+      "loss": {
+        "target": 0.351256214431487,
+        "distant": 0.3032955782255158
+      },
+      "target_rise": 0.0712176876841113,
+      "distant_rise": 0.08191484850249253,
+      "score": -0.010697160818381235,
+      "seconds": 7.1369539520237595,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 18,
+      "head": 3,
+      "module": "model.language_model.layers.18.self_attn.o_proj",
+      "loss": {
+        "target": 0.34208948677405715,
+        "distant": 0.2755396229913458
+      },
+      "target_rise": 0.06205096002668142,
+      "distant_rise": 0.05415889326832257,
+      "score": 0.007892066758358851,
+      "seconds": 7.124171347124502,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 18,
+      "head": 4,
+      "module": "model.language_model.layers.18.self_attn.o_proj",
+      "loss": {
+        "target": 0.31039663311094046,
+        "distant": 0.2599640461266972
+      },
+      "target_rise": 0.03035810636356473,
+      "distant_rise": 0.03858331640367396,
+      "score": -0.008225210040109232,
+      "seconds": 7.118820761097595,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 18,
+      "head": 5,
+      "module": "model.language_model.layers.18.self_attn.o_proj",
+      "loss": {
+        "target": 0.3335191025980748,
+        "distant": 0.2657815153361298
+      },
+      "target_rise": 0.0534805758506991,
+      "distant_rise": 0.044400785613106564,
+      "score": 0.009079790237592533,
+      "seconds": 7.119704211130738,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 18,
+      "head": 6,
+      "module": "model.language_model.layers.18.self_attn.o_proj",
+      "loss": {
+        "target": 0.36319046444259584,
+        "distant": 0.31348138028988615
+      },
+      "target_rise": 0.08315193769522011,
+      "distant_rise": 0.0921006505668629,
+      "score": -0.008948712871642783,
+      "seconds": 7.117210183991119,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 18,
+      "head": 7,
+      "module": "model.language_model.layers.18.self_attn.o_proj",
+      "loss": {
+        "target": 0.6433696020394564,
+        "distant": 0.5969318122370169
+      },
+      "target_rise": 0.36333107529208064,
+      "distant_rise": 0.3755510825139936,
+      "score": -0.012220007221912965,
+      "seconds": 7.11378030711785,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 19,
+      "head": 0,
+      "module": "model.language_model.layers.19.self_attn.o_proj",
+      "loss": {
+        "target": 0.38481469731777906,
+        "distant": 0.3326727920793928
+      },
+      "target_rise": 0.10477617057040334,
+      "distant_rise": 0.11129206235636957,
+      "score": -0.006515891785966232,
+      "seconds": 7.113885144004598,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 19,
+      "head": 1,
+      "module": "model.language_model.layers.19.self_attn.o_proj",
+      "loss": {
+        "target": 0.3216460171388462,
+        "distant": 0.260126625711564
+      },
+      "target_rise": 0.04160749039147049,
+      "distant_rise": 0.038745895988540724,
+      "score": 0.002861594402929768,
+      "seconds": 7.114557417808101,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 19,
+      "head": 2,
+      "module": "model.language_model.layers.19.self_attn.o_proj",
+      "loss": {
+        "target": 0.35014151490759104,
+        "distant": 0.2877343596192077
+      },
+      "target_rise": 0.07010298816021532,
+      "distant_rise": 0.06635362989618443,
+      "score": 0.0037493582640308887,
+      "seconds": 7.11272535007447,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 19,
+      "head": 3,
+      "module": "model.language_model.layers.19.self_attn.o_proj",
+      "loss": {
+        "target": 0.3059835775056854,
+        "distant": 0.2453047910821624
+      },
+      "target_rise": 0.025945050758309662,
+      "distant_rise": 0.02392406135913916,
+      "score": 0.002020989399170503,
+      "seconds": 7.111730664037168,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 19,
+      "head": 4,
+      "module": "model.language_model.layers.19.self_attn.o_proj",
+      "loss": {
+        "target": 0.3552853020373732,
+        "distant": 0.3215634231455624
+      },
+      "target_rise": 0.07524677528999746,
+      "distant_rise": 0.10018269342253916,
+      "score": -0.0249359181325417,
+      "seconds": 7.111828831024468,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 19,
+      "head": 5,
+      "module": "model.language_model.layers.19.self_attn.o_proj",
+      "loss": {
+        "target": 0.39729176252149045,
+        "distant": 0.3798075109953061
+      },
+      "target_rise": 0.11725323577411473,
+      "distant_rise": 0.15842678127228282,
+      "score": -0.041173545498168096,
+      "seconds": 7.112114928197116,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 19,
+      "head": 6,
+      "module": "model.language_model.layers.19.self_attn.o_proj",
+      "loss": {
+        "target": 0.31045430415542796,
+        "distant": 0.252706869301619
+      },
+      "target_rise": 0.030415777408052236,
+      "distant_rise": 0.03132613957859576,
+      "score": -0.0009103621705435216,
+      "seconds": 7.112921864027157,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 19,
+      "head": 7,
+      "module": "model.language_model.layers.19.self_attn.o_proj",
+      "loss": {
+        "target": 0.28676270943833515,
+        "distant": 0.22834270764724351
+      },
+      "target_rise": 0.006724182690959424,
+      "distant_rise": 0.006961977924220264,
+      "score": -0.00023779523326084018,
+      "seconds": 7.111968389013782,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 20,
+      "head": 0,
+      "module": "model.language_model.layers.20.self_attn.o_proj",
+      "loss": {
+        "target": 0.3107652895268984,
+        "distant": 0.2511042272672057
+      },
+      "target_rise": 0.030726762779522687,
+      "distant_rise": 0.029723497544182464,
+      "score": 0.0010032652353402227,
+      "seconds": 7.11429263302125,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 20,
+      "head": 1,
+      "module": "model.language_model.layers.20.self_attn.o_proj",
+      "loss": {
+        "target": 0.33028336928691715,
+        "distant": 0.26847005789750256
+      },
+      "target_rise": 0.05024484253954142,
+      "distant_rise": 0.047089328174479306,
+      "score": 0.0031555143650621176,
+      "seconds": 7.1049429890699685,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 20,
+      "head": 2,
+      "module": "model.language_model.layers.20.self_attn.o_proj",
+      "loss": {
+        "target": 0.32193008199101314,
+        "distant": 0.2567868336918764
+      },
+      "target_rise": 0.04189155524363741,
+      "distant_rise": 0.03540610396885313,
+      "score": 0.006485451274784282,
+      "seconds": 7.1199844791553915,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 20,
+      "head": 3,
+      "module": "model.language_model.layers.20.self_attn.o_proj",
+      "loss": {
+        "target": 0.31632695317966864,
+        "distant": 0.27319964559865184
+      },
+      "target_rise": 0.03628842643229291,
+      "distant_rise": 0.05181891587562859,
+      "score": -0.015530489443335682,
+      "seconds": 7.1175384928938,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 20,
+      "head": 4,
+      "module": "model.language_model.layers.20.self_attn.o_proj",
+      "loss": {
+        "target": 0.3510266368975863,
+        "distant": 0.2932636081241071
+      },
+      "target_rise": 0.07098811015021056,
+      "distant_rise": 0.07188287840108387,
+      "score": -0.0008947682508733124,
+      "seconds": 7.116886208998039,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 20,
+      "head": 5,
+      "module": "model.language_model.layers.20.self_attn.o_proj",
+      "loss": {
+        "target": 0.30770981224486604,
+        "distant": 0.24978018636466004
+      },
+      "target_rise": 0.027671285497490317,
+      "distant_rise": 0.02839945664163679,
+      "score": -0.0007281711441464722,
+      "seconds": 7.120432007825002,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 20,
+      "head": 6,
+      "module": "model.language_model.layers.20.self_attn.o_proj",
+      "loss": {
+        "target": 0.387327759177424,
+        "distant": 0.33290756144560874
+      },
+      "target_rise": 0.10728923243004829,
+      "distant_rise": 0.11152683172258548,
+      "score": -0.0042375992925371975,
+      "seconds": 7.132218444952741,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 20,
+      "head": 7,
+      "module": "model.language_model.layers.20.self_attn.o_proj",
+      "loss": {
+        "target": 0.45531324890907854,
+        "distant": 0.41043891361914575
+      },
+      "target_rise": 0.1752747221617028,
+      "distant_rise": 0.1890581838961225,
+      "score": -0.013783461734419689,
+      "seconds": 7.134927293052897,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 21,
+      "head": 0,
+      "module": "model.language_model.layers.21.self_attn.o_proj",
+      "loss": {
+        "target": 0.2872249967767857,
+        "distant": 0.2300018072128296
+      },
+      "target_rise": 0.007186470029409975,
+      "distant_rise": 0.00862107748980634,
+      "score": -0.0014346074603963643,
+      "seconds": 7.128582760924473,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 21,
+      "head": 1,
+      "module": "model.language_model.layers.21.self_attn.o_proj",
+      "loss": {
+        "target": 0.2825105308438651,
+        "distant": 0.24078334317891859
+      },
+      "target_rise": 0.0024720040964893997,
+      "distant_rise": 0.019402613455895334,
+      "score": -0.016930609359405935,
+      "seconds": 7.132384283002466,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 21,
+      "head": 2,
+      "module": "model.language_model.layers.21.self_attn.o_proj",
+      "loss": {
+        "target": 0.2872203520964831,
+        "distant": 0.22862610008451156
+      },
+      "target_rise": 0.007181825349107385,
+      "distant_rise": 0.0072453703614883125,
+      "score": -6.35450123809278e-05,
+      "seconds": 7.1413725460879505,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 21,
+      "head": 3,
+      "module": "model.language_model.layers.21.self_attn.o_proj",
+      "loss": {
+        "target": 0.3094336611102335,
+        "distant": 0.25410633339197375
+      },
+      "target_rise": 0.02939513436285779,
+      "distant_rise": 0.0327256036689505,
+      "score": -0.0033304693060927093,
+      "seconds": 7.131792086875066,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 21,
+      "head": 4,
+      "module": "model.language_model.layers.21.self_attn.o_proj",
+      "loss": {
+        "target": 0.3037473631557077,
+        "distant": 0.24643847442348488
+      },
+      "target_rise": 0.02370883640833199,
+      "distant_rise": 0.025057744700461626,
+      "score": -0.0013489082921296358,
+      "seconds": 7.13714429596439,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 21,
+      "head": 5,
+      "module": "model.language_model.layers.21.self_attn.o_proj",
+      "loss": {
+        "target": 0.3139554323279299,
+        "distant": 0.27757858019322157
+      },
+      "target_rise": 0.03391690558055416,
+      "distant_rise": 0.05619785047019832,
+      "score": -0.02228094488964416,
+      "seconds": 7.139982199063525,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 21,
+      "head": 6,
+      "module": "model.language_model.layers.21.self_attn.o_proj",
+      "loss": {
+        "target": 0.3105662656016648,
+        "distant": 0.2762604189629201
+      },
+      "target_rise": 0.030527738854289055,
+      "distant_rise": 0.054879689239896834,
+      "score": -0.02435195038560778,
+      "seconds": 7.139917851891369,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 21,
+      "head": 7,
+      "module": "model.language_model.layers.21.self_attn.o_proj",
+      "loss": {
+        "target": 0.3102464238763787,
+        "distant": 0.2699097816075664
+      },
+      "target_rise": 0.03020789712900296,
+      "distant_rise": 0.04852905188454315,
+      "score": -0.018321154755540192,
+      "seconds": 7.135370936943218,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 22,
+      "head": 0,
+      "module": "model.language_model.layers.22.self_attn.o_proj",
+      "loss": {
+        "target": 0.3042212759028189,
+        "distant": 0.2535553977359086
+      },
+      "target_rise": 0.02418274915544316,
+      "distant_rise": 0.03217466801288538,
+      "score": -0.007991918857442215,
+      "seconds": 7.140356238000095,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 22,
+      "head": 1,
+      "module": "model.language_model.layers.22.self_attn.o_proj",
+      "loss": {
+        "target": 0.28948582225712016,
+        "distant": 0.2309513056097785
+      },
+      "target_rise": 0.009447295509744436,
+      "distant_rise": 0.00957057588675525,
+      "score": -0.00012328037701081485,
+      "seconds": 7.13257417595014,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 22,
+      "head": 2,
+      "module": "model.language_model.layers.22.self_attn.o_proj",
+      "loss": {
+        "target": 0.3050923510454595,
+        "distant": 0.2520897000504192
+      },
+      "target_rise": 0.025053824298083782,
+      "distant_rise": 0.030708970327395946,
+      "score": -0.005655146029312164,
+      "seconds": 7.143324042903259,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 22,
+      "head": 3,
+      "module": "model.language_model.layers.22.self_attn.o_proj",
+      "loss": {
+        "target": 0.3278963848715648,
+        "distant": 0.270107534219278
+      },
+      "target_rise": 0.04785785812418908,
+      "distant_rise": 0.04872680449625477,
+      "score": -0.0008689463720656931,
+      "seconds": 7.139776250114664,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 22,
+      "head": 4,
+      "module": "model.language_model.layers.22.self_attn.o_proj",
+      "loss": {
+        "target": 0.34425538207869977,
+        "distant": 0.30528101697564125
+      },
+      "target_rise": 0.06421685533132404,
+      "distant_rise": 0.083900287252618,
+      "score": -0.01968343192129396,
+      "seconds": 7.139845174038783,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 22,
+      "head": 5,
+      "module": "model.language_model.layers.22.self_attn.o_proj",
+      "loss": {
+        "target": 0.41471296519739553,
+        "distant": 0.53231208154466
+      },
+      "target_rise": 0.1346744384500198,
+      "distant_rise": 0.3109313518216368,
+      "score": -0.17625691337161697,
+      "seconds": 7.140312642091885,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 22,
+      "head": 6,
+      "module": "model.language_model.layers.22.self_attn.o_proj",
+      "loss": {
+        "target": 0.3092906058882363,
+        "distant": 0.2523497218207922
+      },
+      "target_rise": 0.029252079140860587,
+      "distant_rise": 0.030968992097768933,
+      "score": -0.0017169129569083452,
+      "seconds": 7.135926967021078,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 22,
+      "head": 7,
+      "module": "model.language_model.layers.22.self_attn.o_proj",
+      "loss": {
+        "target": 0.2983139930292964,
+        "distant": 0.2449775029963348
+      },
+      "target_rise": 0.01827546628192067,
+      "distant_rise": 0.023596773273311555,
+      "score": -0.005321306991390884,
+      "seconds": 7.142482636030763,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 23,
+      "head": 0,
+      "module": "model.language_model.layers.23.self_attn.o_proj",
+      "loss": {
+        "target": 0.2815598333836533,
+        "distant": 0.22360012467834167
+      },
+      "target_rise": 0.0015213066362775862,
+      "distant_rise": 0.002219394955318421,
+      "score": -0.0006980883190408349,
+      "seconds": 7.130641377996653,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 23,
+      "head": 1,
+      "module": "model.language_model.layers.23.self_attn.o_proj",
+      "loss": {
+        "target": 0.28482898842776194,
+        "distant": 0.22530742702656426
+      },
+      "target_rise": 0.0047904616803862154,
+      "distant_rise": 0.003926697303541005,
+      "score": 0.0008637643768452108,
+      "seconds": 7.137128262780607,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 23,
+      "head": 2,
+      "module": "model.language_model.layers.23.self_attn.o_proj",
+      "loss": {
+        "target": 0.29975639993790537,
+        "distant": 0.250761264906032
+      },
+      "target_rise": 0.019717873190529644,
+      "distant_rise": 0.02938053518300876,
+      "score": -0.009662661992479116,
+      "seconds": 7.138257831102237,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 23,
+      "head": 3,
+      "module": "model.language_model.layers.23.self_attn.o_proj",
+      "loss": {
+        "target": 0.2951990246656351,
+        "distant": 0.24763674926362
+      },
+      "target_rise": 0.015160497918259352,
+      "distant_rise": 0.026256019540596753,
+      "score": -0.011095521622337401,
+      "seconds": 7.148052861215547,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 23,
+      "head": 4,
+      "module": "model.language_model.layers.23.self_attn.o_proj",
+      "loss": {
+        "target": 0.28476382861845195,
+        "distant": 0.2282095331174787
+      },
+      "target_rise": 0.004725301871076226,
+      "distant_rise": 0.006828803394455463,
+      "score": -0.0021035015233792365,
+      "seconds": 7.140674283029512,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 23,
+      "head": 5,
+      "module": "model.language_model.layers.23.self_attn.o_proj",
+      "loss": {
+        "target": 0.33344447636045516,
+        "distant": 0.2724798703857232
+      },
+      "target_rise": 0.05340594961307943,
+      "distant_rise": 0.05109914066269994,
+      "score": 0.002306808950379491,
+      "seconds": 7.146158328978345,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 23,
+      "head": 6,
+      "module": "model.language_model.layers.23.self_attn.o_proj",
+      "loss": {
+        "target": 0.28697280667256564,
+        "distant": 0.2270883537712507
+      },
+      "target_rise": 0.006934279925189912,
+      "distant_rise": 0.005707624048227444,
+      "score": 0.001226655876962468,
+      "seconds": 7.138116941088811,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 23,
+      "head": 7,
+      "module": "model.language_model.layers.23.self_attn.o_proj",
+      "loss": {
+        "target": 0.2824504872551188,
+        "distant": 0.22293708447250538
+      },
+      "target_rise": 0.0024119605077430606,
+      "distant_rise": 0.001556354749482125,
+      "score": 0.0008556057582609355,
+      "seconds": 7.142859257990494,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 24,
+      "head": 0,
+      "module": "model.language_model.layers.24.self_attn.o_proj",
+      "loss": {
+        "target": 0.2827622977201827,
+        "distant": 0.22377845842856914
+      },
+      "target_rise": 0.0027237709728069603,
+      "distant_rise": 0.0023977287055458874,
+      "score": 0.000326042267261073,
+      "seconds": 7.144508532946929,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 24,
+      "head": 1,
+      "module": "model.language_model.layers.24.self_attn.o_proj",
+      "loss": {
+        "target": 0.2903203821624629,
+        "distant": 0.24267169742961414
+      },
+      "target_rise": 0.010281855415087193,
+      "distant_rise": 0.02129096770659089,
+      "score": -0.011009112291503698,
+      "seconds": 7.142848802963272,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 24,
+      "head": 2,
+      "module": "model.language_model.layers.24.self_attn.o_proj",
+      "loss": {
+        "target": 0.28405424108495936,
+        "distant": 0.2264717903744895
+      },
+      "target_rise": 0.004015714337583631,
+      "distant_rise": 0.00509106065146625,
+      "score": -0.0010753463138826191,
+      "seconds": 7.137126709800214,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 24,
+      "head": 3,
+      "module": "model.language_model.layers.24.self_attn.o_proj",
+      "loss": {
+        "target": 0.28286638081772253,
+        "distant": 0.22372046916279942
+      },
+      "target_rise": 0.0028278540703468025,
+      "distant_rise": 0.0023397394397761673,
+      "score": 0.0004881146305706352,
+      "seconds": 7.14027792098932,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 24,
+      "head": 4,
+      "module": "model.language_model.layers.24.self_attn.o_proj",
+      "loss": {
+        "target": 0.33503921719966456,
+        "distant": 0.29573951981728896
+      },
+      "target_rise": 0.055000690452288836,
+      "distant_rise": 0.07435879009426571,
+      "score": -0.019358099641976878,
+      "seconds": 7.136580934980884,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 24,
+      "head": 5,
+      "module": "model.language_model.layers.24.self_attn.o_proj",
+      "loss": {
+        "target": 0.32002093188930303,
+        "distant": 0.2725979589158669
+      },
+      "target_rise": 0.0399824051419273,
+      "distant_rise": 0.05121722919284366,
+      "score": -0.011234824050916359,
+      "seconds": 7.128902229014784,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 24,
+      "head": 6,
+      "module": "model.language_model.layers.24.self_attn.o_proj",
+      "loss": {
+        "target": 0.33706340432399884,
+        "distant": 0.2715157585334964
+      },
+      "target_rise": 0.05702487757662311,
+      "distant_rise": 0.05013502881047316,
+      "score": 0.006889848766149953,
+      "seconds": 7.138695825822651,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 24,
+      "head": 7,
+      "module": "model.language_model.layers.24.self_attn.o_proj",
+      "loss": {
+        "target": 0.30572276044404134,
+        "distant": 0.2433073969441466
+      },
+      "target_rise": 0.025684233696665615,
+      "distant_rise": 0.021926667221123353,
+      "score": 0.003757566475542262,
+      "seconds": 7.141309581929818,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 25,
+      "head": 0,
+      "module": "model.language_model.layers.25.self_attn.o_proj",
+      "loss": {
+        "target": 0.28211400797590613,
+        "distant": 0.22359002436860465
+      },
+      "target_rise": 0.002075481228530407,
+      "distant_rise": 0.0022092946455813944,
+      "score": -0.00013381341705098748,
+      "seconds": 7.1406599909532815,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 25,
+      "head": 1,
+      "module": "model.language_model.layers.25.self_attn.o_proj",
+      "loss": {
+        "target": 0.28860662318766117,
+        "distant": 0.22717688273405656
+      },
+      "target_rise": 0.008568096440285444,
+      "distant_rise": 0.0057961530110333115,
+      "score": 0.0027719434292521328,
+      "seconds": 7.139446947956458,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 25,
+      "head": 2,
+      "module": "model.language_model.layers.25.self_attn.o_proj",
+      "loss": {
+        "target": 0.29024256457341835,
+        "distant": 0.23083007751847617
+      },
+      "target_rise": 0.010204037826042622,
+      "distant_rise": 0.009449347795452923,
+      "score": 0.0007546900305896997,
+      "seconds": 7.147682728013024,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 25,
+      "head": 3,
+      "module": "model.language_model.layers.25.self_attn.o_proj",
+      "loss": {
+        "target": 0.2982040419592522,
+        "distant": 0.24450910647283308
+      },
+      "target_rise": 0.018165515211876482,
+      "distant_rise": 0.02312837674980983,
+      "score": -0.00496286153793335,
+      "seconds": 7.149215818848461,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 25,
+      "head": 4,
+      "module": "model.language_model.layers.25.self_attn.o_proj",
+      "loss": {
+        "target": 0.2833567925845273,
+        "distant": 0.22629935879376717
+      },
+      "target_rise": 0.003318265837151557,
+      "distant_rise": 0.004918629070743918,
+      "score": -0.0016003632335923612,
+      "seconds": 7.140929494053125,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 25,
+      "head": 5,
+      "module": "model.language_model.layers.25.self_attn.o_proj",
+      "loss": {
+        "target": 0.2847650339244865,
+        "distant": 0.22466019351850264
+      },
+      "target_rise": 0.004726507177110761,
+      "distant_rise": 0.003279463795479387,
+      "score": 0.0014470433816313744,
+      "seconds": 7.145452985074371,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 25,
+      "head": 6,
+      "module": "model.language_model.layers.25.self_attn.o_proj",
+      "loss": {
+        "target": 0.29369642661185935,
+        "distant": 0.22739634074969217
+      },
+      "target_rise": 0.013657899864483625,
+      "distant_rise": 0.006015611026668921,
+      "score": 0.007642288837814704,
+      "seconds": 7.150618955958635,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 25,
+      "head": 7,
+      "module": "model.language_model.layers.25.self_attn.o_proj",
+      "loss": {
+        "target": 0.2871800535940565,
+        "distant": 0.22820251501980238
+      },
+      "target_rise": 0.00714152684668079,
+      "distant_rise": 0.006821785296779126,
+      "score": 0.00031974154990166426,
+      "seconds": 7.137226429069415,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 26,
+      "head": 0,
+      "module": "model.language_model.layers.26.self_attn.o_proj",
+      "loss": {
+        "target": 0.28163968003354967,
+        "distant": 0.22227465128526092
+      },
+      "target_rise": 0.0016011532861739397,
+      "distant_rise": 0.0008939215622376651,
+      "score": 0.0007072317239362746,
+      "seconds": 7.144094795919955,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 26,
+      "head": 1,
+      "module": "model.language_model.layers.26.self_attn.o_proj",
+      "loss": {
+        "target": 0.2836650821263902,
+        "distant": 0.2245390150055755
+      },
+      "target_rise": 0.0036265553790144622,
+      "distant_rise": 0.0031582852825522423,
+      "score": 0.00046827009646221995,
+      "seconds": 7.142549765994772,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 26,
+      "head": 2,
+      "module": "model.language_model.layers.26.self_attn.o_proj",
+      "loss": {
+        "target": 0.2821650219266303,
+        "distant": 0.24701699175057001
+      },
+      "target_rise": 0.0021264951792545617,
+      "distant_rise": 0.025636262027546763,
+      "score": -0.023509766848292202,
+      "seconds": 7.138521085027605,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 26,
+      "head": 3,
+      "module": "model.language_model.layers.26.self_attn.o_proj",
+      "loss": {
+        "target": 0.2820289153023623,
+        "distant": 0.22382696333806962
+      },
+      "target_rise": 0.0019903885549865663,
+      "distant_rise": 0.002446233615046367,
+      "score": -0.00045584506005980074,
+      "seconds": 7.150247350800782,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 26,
+      "head": 4,
+      "module": "model.language_model.layers.26.self_attn.o_proj",
+      "loss": {
+        "target": 0.2835693272645585,
+        "distant": 0.22472627894603647
+      },
+      "target_rise": 0.003530800517182797,
+      "distant_rise": 0.0033455492230132222,
+      "score": 0.00018525129416957498,
+      "seconds": 7.152344755828381,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 26,
+      "head": 5,
+      "module": "model.language_model.layers.26.self_attn.o_proj",
+      "loss": {
+        "target": 0.2812551835668273,
+        "distant": 0.22465549714979716
+      },
+      "target_rise": 0.0012166568194516003,
+      "distant_rise": 0.0032747674267739058,
+      "score": -0.0020581106073223054,
+      "seconds": 7.140807400923222,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 26,
+      "head": 6,
+      "module": "model.language_model.layers.26.self_attn.o_proj",
+      "loss": {
+        "target": 0.28677544341189787,
+        "distant": 0.2270715069025755
+      },
+      "target_rise": 0.006736916664522141,
+      "distant_rise": 0.005690777179552242,
+      "score": 0.001046139484969899,
+      "seconds": 7.143546405015513,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 26,
+      "head": 7,
+      "module": "model.language_model.layers.26.self_attn.o_proj",
+      "loss": {
+        "target": 0.31478780263569206,
+        "distant": 0.25723218865459785
+      },
+      "target_rise": 0.03474927588831633,
+      "distant_rise": 0.0358514589315746,
+      "score": -0.0011021830432582647,
+      "seconds": 7.136955734807998,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 27,
+      "head": 0,
+      "module": "model.language_model.layers.27.self_attn.o_proj",
+      "loss": {
+        "target": 0.30234620365081355,
+        "distant": 0.24358720949385315
+      },
+      "target_rise": 0.022307676903437823,
+      "distant_rise": 0.0222064797708299,
+      "score": 0.00010119713260792196,
+      "seconds": 7.133828832069412,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 27,
+      "head": 1,
+      "module": "model.language_model.layers.27.self_attn.o_proj",
+      "loss": {
+        "target": 0.29747139621758834,
+        "distant": 0.23932835142477416
+      },
+      "target_rise": 0.01743286947021261,
+      "distant_rise": 0.017947621701750904,
+      "score": -0.0005147522315382957,
+      "seconds": 7.137846115976572,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 27,
+      "head": 2,
+      "module": "model.language_model.layers.27.self_attn.o_proj",
+      "loss": {
+        "target": 0.2803311677998863,
+        "distant": 0.22187405114527792
+      },
+      "target_rise": 0.00029264105251058936,
+      "distant_rise": 0.0004933214222546667,
+      "score": -0.00020068036974407732,
+      "seconds": 7.1317641460336745,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 27,
+      "head": 3,
+      "module": "model.language_model.layers.27.self_attn.o_proj",
+      "loss": {
+        "target": 0.2835697040427476,
+        "distant": 0.2254607366048731
+      },
+      "target_rise": 0.00353117729537189,
+      "distant_rise": 0.00408000688184984,
+      "score": -0.0005488295864779502,
+      "seconds": 7.129752839915454,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 27,
+      "head": 4,
+      "module": "model.language_model.layers.27.self_attn.o_proj",
+      "loss": {
+        "target": 0.2849022568552755,
+        "distant": 0.22673610056517646
+      },
+      "target_rise": 0.004863730107899755,
+      "distant_rise": 0.0053553708421532065,
+      "score": -0.0004916407342534512,
+      "seconds": 7.133165169041604,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 27,
+      "head": 5,
+      "module": "model.language_model.layers.27.self_attn.o_proj",
+      "loss": {
+        "target": 0.28575315279886127,
+        "distant": 0.22675242854165845
+      },
+      "target_rise": 0.0057146260514855385,
+      "distant_rise": 0.0053716988186351955,
+      "score": 0.000342927232850343,
+      "seconds": 7.161365276901051,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 27,
+      "head": 6,
+      "module": "model.language_model.layers.27.self_attn.o_proj",
+      "loss": {
+        "target": 0.2861441958229989,
+        "distant": 0.23235759118688293
+      },
+      "target_rise": 0.006105669075623155,
+      "distant_rise": 0.010976861463859677,
+      "score": -0.004871192388236523,
+      "seconds": 7.130186428083107,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 27,
+      "head": 7,
+      "module": "model.language_model.layers.27.self_attn.o_proj",
+      "loss": {
+        "target": 0.28207194508286193,
+        "distant": 0.2252864014590159
+      },
+      "target_rise": 0.0020334183354862034,
+      "distant_rise": 0.003905671735992655,
+      "score": -0.0018722534005064517,
+      "seconds": 7.122258147923276,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 28,
+      "head": 0,
+      "module": "model.language_model.layers.28.self_attn.o_proj",
+      "loss": {
+        "target": 0.2850275877281092,
+        "distant": 0.22990551323164254
+      },
+      "target_rise": 0.004989060980733484,
+      "distant_rise": 0.008524783508619294,
+      "score": -0.0035357225278858095,
+      "seconds": 7.166426832089201,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 28,
+      "head": 1,
+      "module": "model.language_model.layers.28.self_attn.o_proj",
+      "loss": {
+        "target": 0.28043659072136506,
+        "distant": 0.2224846310709836
+      },
+      "target_rise": 0.0003980639739893377,
+      "distant_rise": 0.0011039013479603454,
+      "score": -0.0007058373739710078,
+      "seconds": 7.128257484873757,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 28,
+      "head": 2,
+      "module": "model.language_model.layers.28.self_attn.o_proj",
+      "loss": {
+        "target": 0.2861253988230601,
+        "distant": 0.22679440115462057
+      },
+      "target_rise": 0.006086872075684369,
+      "distant_rise": 0.005413671431597322,
+      "score": 0.0006732006440870464,
+      "seconds": 7.138699640985578,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 28,
+      "head": 3,
+      "module": "model.language_model.layers.28.self_attn.o_proj",
+      "loss": {
+        "target": 0.28588415356352925,
+        "distant": 0.22889771850896068
+      },
+      "target_rise": 0.005845626816153526,
+      "distant_rise": 0.0075169887859374285,
+      "score": -0.0016713619697839022,
+      "seconds": 7.132696499815211,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 28,
+      "head": 4,
+      "module": "model.language_model.layers.28.self_attn.o_proj",
+      "loss": {
+        "target": 0.28846079646609724,
+        "distant": 0.22887116463971324
+      },
+      "target_rise": 0.008422269718721509,
+      "distant_rise": 0.007490434916689992,
+      "score": 0.000931834802031517,
+      "seconds": 7.138762905960903,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 28,
+      "head": 5,
+      "module": "model.language_model.layers.28.self_attn.o_proj",
+      "loss": {
+        "target": 0.33745491999434307,
+        "distant": 0.2775044573354535
+      },
+      "target_rise": 0.057416393246967345,
+      "distant_rise": 0.05612372761243023,
+      "score": 0.0012926656345371157,
+      "seconds": 7.139404103858396,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 28,
+      "head": 6,
+      "module": "model.language_model.layers.28.self_attn.o_proj",
+      "loss": {
+        "target": 0.2841074768221006,
+        "distant": 0.22414248931454495
+      },
+      "target_rise": 0.004068950074724853,
+      "distant_rise": 0.0027617595915216953,
+      "score": 0.0013071904832031578,
+      "seconds": 7.139747737906873,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 28,
+      "head": 7,
+      "module": "model.language_model.layers.28.self_attn.o_proj",
+      "loss": {
+        "target": 0.282336667412892,
+        "distant": 0.2232165321474895
+      },
+      "target_rise": 0.0022981406655162573,
+      "distant_rise": 0.0018358024244662374,
+      "score": 0.00046233824105001986,
+      "seconds": 7.138591750990599,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 29,
+      "head": 0,
+      "module": "model.language_model.layers.29.self_attn.o_proj",
+      "loss": {
+        "target": 0.28157282480970025,
+        "distant": 0.22232736932346597
+      },
+      "target_rise": 0.001534298062324524,
+      "distant_rise": 0.0009466396004427224,
+      "score": 0.0005876584618818015,
+      "seconds": 7.140241356100887,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 29,
+      "head": 1,
+      "module": "model.language_model.layers.29.self_attn.o_proj",
+      "loss": {
+        "target": 0.28118558559799567,
+        "distant": 0.22260104538872838
+      },
+      "target_rise": 0.001147058850619942,
+      "distant_rise": 0.0012203156657051295,
+      "score": -7.325681508518755e-05,
+      "seconds": 7.144739057868719,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 29,
+      "head": 2,
+      "module": "model.language_model.layers.29.self_attn.o_proj",
+      "loss": {
+        "target": 0.28170607169158757,
+        "distant": 0.22282347505097277
+      },
+      "target_rise": 0.0016675449442118406,
+      "distant_rise": 0.001442745327949524,
+      "score": 0.0002247996162623167,
+      "seconds": 7.141524674138054,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 29,
+      "head": 3,
+      "module": "model.language_model.layers.29.self_attn.o_proj",
+      "loss": {
+        "target": 0.2806757084908895,
+        "distant": 0.2212246209383011
+      },
+      "target_rise": 0.0006371817435137928,
+      "distant_rise": -0.00015610878472216427,
+      "score": 0.000793290528235957,
+      "seconds": 7.137556784087792,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 29,
+      "head": 4,
+      "module": "model.language_model.layers.29.self_attn.o_proj",
+      "loss": {
+        "target": 0.28277359902858734,
+        "distant": 0.22384664847049862
+      },
+      "target_rise": 0.0027350722812116146,
+      "distant_rise": 0.0024659187474753708,
+      "score": 0.00026915353373624384,
+      "seconds": 7.1364193831104785,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 29,
+      "head": 5,
+      "module": "model.language_model.layers.29.self_attn.o_proj",
+      "loss": {
+        "target": 0.281320990587119,
+        "distant": 0.22384603720274754
+      },
+      "target_rise": 0.0012824638397432864,
+      "distant_rise": 0.002465307479724288,
+      "score": -0.0011828436399810016,
+      "seconds": 7.135850293096155,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 29,
+      "head": 6,
+      "module": "model.language_model.layers.29.self_attn.o_proj",
+      "loss": {
+        "target": 0.27802086930023506,
+        "distant": 0.2208299431076739
+      },
+      "target_rise": -0.002017657447140664,
+      "distant_rise": -0.0005507866153493524,
+      "score": -0.0014668708317913115,
+      "seconds": 7.135512578068301,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 29,
+      "head": 7,
+      "module": "model.language_model.layers.29.self_attn.o_proj",
+      "loss": {
+        "target": 0.31099377654027194,
+        "distant": 0.24925735461874865
+      },
+      "target_rise": 0.03095524979289621,
+      "distant_rise": 0.0278766248957254,
+      "score": 0.003078624897170812,
+      "seconds": 7.140823666006327,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 30,
+      "head": 0,
+      "module": "model.language_model.layers.30.self_attn.o_proj",
+      "loss": {
+        "target": 0.28581097116693854,
+        "distant": 0.23006884596543387
+      },
+      "target_rise": 0.005772444419562817,
+      "distant_rise": 0.008688116242410615,
+      "score": -0.0029156718228477985,
+      "seconds": 7.134763297857717,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 30,
+      "head": 1,
+      "module": "model.language_model.layers.30.self_attn.o_proj",
+      "loss": {
+        "target": 0.32577942352509126,
+        "distant": 0.2827513214433566
+      },
+      "target_rise": 0.045740896777715534,
+      "distant_rise": 0.06137059172033332,
+      "score": -0.01562969494261779,
+      "seconds": 7.1354978061281145,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 30,
+      "head": 2,
+      "module": "model.language_model.layers.30.self_attn.o_proj",
+      "loss": {
+        "target": 0.28137520293239504,
+        "distant": 0.22576987235515844
+      },
+      "target_rise": 0.0013366761850193143,
+      "distant_rise": 0.00438914263213519,
+      "score": -0.0030524664471158758,
+      "seconds": 7.130526495864615,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 30,
+      "head": 3,
+      "module": "model.language_model.layers.30.self_attn.o_proj",
+      "loss": {
+        "target": 0.28239963378291577,
+        "distant": 0.2236526923661586
+      },
+      "target_rise": 0.0023611070355400443,
+      "distant_rise": 0.002271962643135339,
+      "score": 8.914439240470529e-05,
+      "seconds": 7.124591465108097,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 30,
+      "head": 4,
+      "module": "model.language_model.layers.30.self_attn.o_proj",
+      "loss": {
+        "target": 0.4070316862198524,
+        "distant": 0.3144938786572311
+      },
+      "target_rise": 0.1269931594724767,
+      "distant_rise": 0.09311314893420786,
+      "score": 0.033880010538268834,
+      "seconds": 7.1280059479177,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 30,
+      "head": 5,
+      "module": "model.language_model.layers.30.self_attn.o_proj",
+      "loss": {
+        "target": 0.28111817891476676,
+        "distant": 0.224933261226397
+      },
+      "target_rise": 0.001079652167391032,
+      "distant_rise": 0.003552531503373757,
+      "score": -0.002472879335982725,
+      "seconds": 7.126529652159661,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 30,
+      "head": 6,
+      "module": "model.language_model.layers.30.self_attn.o_proj",
+      "loss": {
+        "target": 0.2881162549019791,
+        "distant": 0.2341943422507029
+      },
+      "target_rise": 0.008077728154603392,
+      "distant_rise": 0.012813612527679652,
+      "score": -0.00473588437307626,
+      "seconds": 7.126664032926783,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 30,
+      "head": 7,
+      "module": "model.language_model.layers.30.self_attn.o_proj",
+      "loss": {
+        "target": 0.28317163430619985,
+        "distant": 0.2303233524726238
+      },
+      "target_rise": 0.003133107558824122,
+      "distant_rise": 0.00894262274960056,
+      "score": -0.0058095151907764375,
+      "seconds": 7.1333958299364895,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 31,
+      "head": 0,
+      "module": "model.language_model.layers.31.self_attn.o_proj",
+      "loss": {
+        "target": 0.2827621076721698,
+        "distant": 0.22396169014973566
+      },
+      "target_rise": 0.002723580924794078,
+      "distant_rise": 0.0025809604267124087,
+      "score": 0.0001426204980816692,
+      "seconds": 7.13070707092993,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 31,
+      "head": 1,
+      "module": "model.language_model.layers.31.self_attn.o_proj",
+      "loss": {
+        "target": 0.28647861420176923,
+        "distant": 0.22493715019663796
+      },
+      "target_rise": 0.006440087454393506,
+      "distant_rise": 0.0035564204736147076,
+      "score": 0.0028836669807787985,
+      "seconds": 7.131347157992423,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 31,
+      "head": 2,
+      "module": "model.language_model.layers.31.self_attn.o_proj",
+      "loss": {
+        "target": 0.31307255930732936,
+        "distant": 0.25584773826994933
+      },
+      "target_rise": 0.03303403255995363,
+      "distant_rise": 0.03446700854692608,
+      "score": -0.0014329759869724512,
+      "seconds": 7.131644451990724,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 31,
+      "head": 3,
+      "module": "model.language_model.layers.31.self_attn.o_proj",
+      "loss": {
+        "target": 0.32071415439713746,
+        "distant": 0.2671984137268737
+      },
+      "target_rise": 0.040675627649761736,
+      "distant_rise": 0.045817684003850445,
+      "score": -0.005142056354088709,
+      "seconds": 7.126485732151195,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 31,
+      "head": 4,
+      "module": "model.language_model.layers.31.self_attn.o_proj",
+      "loss": {
+        "target": 0.29770910792285576,
+        "distant": 0.23772273524082266
+      },
+      "target_rise": 0.017670581175480038,
+      "distant_rise": 0.016342005517799407,
+      "score": 0.0013285756576806307,
+      "seconds": 7.138382012024522,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 31,
+      "head": 5,
+      "module": "model.language_model.layers.31.self_attn.o_proj",
+      "loss": {
+        "target": 0.2956261447397992,
+        "distant": 0.23660044660209678
+      },
+      "target_rise": 0.015587617992423475,
+      "distant_rise": 0.01521971687907353,
+      "score": 0.00036790111334994435,
+      "seconds": 7.123582091880962,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 31,
+      "head": 6,
+      "module": "model.language_model.layers.31.self_attn.o_proj",
+      "loss": {
+        "target": 0.2886191646102816,
+        "distant": 0.23170795303303748
+      },
+      "target_rise": 0.00858063786290586,
+      "distant_rise": 0.010327223310014233,
+      "score": -0.001746585447108373,
+      "seconds": 7.13444143300876,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 31,
+      "head": 7,
+      "module": "model.language_model.layers.31.self_attn.o_proj",
+      "loss": {
+        "target": 0.28896425903076306,
+        "distant": 0.2441112005035393
+      },
+      "target_rise": 0.008925732283387333,
+      "distant_rise": 0.022730470780516043,
+      "score": -0.01380473849712871,
+      "seconds": 7.130339081166312,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 32,
+      "head": 0,
+      "module": "model.language_model.layers.32.self_attn.o_proj",
+      "loss": {
+        "target": 0.29675330105237663,
+        "distant": 0.24884751500212587
+      },
+      "target_rise": 0.0167147743050009,
+      "distant_rise": 0.027466785279102623,
+      "score": -0.010752010974101722,
+      "seconds": 7.140232528094202,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 32,
+      "head": 1,
+      "module": "model.language_model.layers.32.self_attn.o_proj",
+      "loss": {
+        "target": 0.28613824414787814,
+        "distant": 0.23472891841083765
+      },
+      "target_rise": 0.0060997174005024135,
+      "distant_rise": 0.0133481886878144,
+      "score": -0.007248471287311986,
+      "seconds": 7.13285566191189,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 32,
+      "head": 2,
+      "module": "model.language_model.layers.32.self_attn.o_proj",
+      "loss": {
+        "target": 0.28779271780513227,
+        "distant": 0.22912887623533607
+      },
+      "target_rise": 0.007754191057756543,
+      "distant_rise": 0.007748146512312815,
+      "score": 6.044545443728566e-06,
+      "seconds": 7.139681084081531,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 32,
+      "head": 3,
+      "module": "model.language_model.layers.32.self_attn.o_proj",
+      "loss": {
+        "target": 0.29131232568761334,
+        "distant": 0.23471800866536796
+      },
+      "target_rise": 0.011273798940237612,
+      "distant_rise": 0.01333727894234471,
+      "score": -0.0020634800021070987,
+      "seconds": 7.143541823141277,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 32,
+      "head": 4,
+      "module": "model.language_model.layers.32.self_attn.o_proj",
+      "loss": {
+        "target": 0.27963418152648956,
+        "distant": 0.2219464932277333
+      },
+      "target_rise": -0.00040434522088617086,
+      "distant_rise": 0.0005657635047100484,
+      "score": -0.0009701087255962193,
+      "seconds": 7.131885353010148,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 32,
+      "head": 5,
+      "module": "model.language_model.layers.32.self_attn.o_proj",
+      "loss": {
+        "target": 0.2941940979217179,
+        "distant": 0.23298365698428825
+      },
+      "target_rise": 0.014155571174342185,
+      "distant_rise": 0.011602927261264995,
+      "score": 0.0025526439130771905,
+      "seconds": 7.13505810406059,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 32,
+      "head": 6,
+      "module": "model.language_model.layers.32.self_attn.o_proj",
+      "loss": {
+        "target": 0.28937612345907837,
+        "distant": 0.23329100213595666
+      },
+      "target_rise": 0.009337596711702645,
+      "distant_rise": 0.01191027241293341,
+      "score": -0.0025726757012307644,
+      "seconds": 7.1291184858419,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 32,
+      "head": 7,
+      "module": "model.language_model.layers.32.self_attn.o_proj",
+      "loss": {
+        "target": 0.2875516467029229,
+        "distant": 0.22818765422562137
+      },
+      "target_rise": 0.007513119955547154,
+      "distant_rise": 0.006806924502598122,
+      "score": 0.0007061954529490322,
+      "seconds": 7.132711728103459,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 33,
+      "head": 0,
+      "module": "model.language_model.layers.33.self_attn.o_proj",
+      "loss": {
+        "target": 0.4329858060227707,
+        "distant": 0.349835550528951
+      },
+      "target_rise": 0.15294727927539498,
+      "distant_rise": 0.12845482080592774,
+      "score": 0.024492458469467238,
+      "seconds": 7.133259685942903,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 33,
+      "head": 1,
+      "module": "model.language_model.layers.33.self_attn.o_proj",
+      "loss": {
+        "target": 0.3306369189522229,
+        "distant": 0.2641361417772714
+      },
+      "target_rise": 0.05059839220484719,
+      "distant_rise": 0.042755412054248154,
+      "score": 0.007842980150599033,
+      "seconds": 7.134100202936679,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 33,
+      "head": 2,
+      "module": "model.language_model.layers.33.self_attn.o_proj",
+      "loss": {
+        "target": 0.30271913984324783,
+        "distant": 0.24596253619529307
+      },
+      "target_rise": 0.022680613095872104,
+      "distant_rise": 0.024581806472269818,
+      "score": -0.001901193376397714,
+      "seconds": 7.126814593095332,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 33,
+      "head": 3,
+      "module": "model.language_model.layers.33.self_attn.o_proj",
+      "loss": {
+        "target": 0.2830851855687797,
+        "distant": 0.22295632158056833
+      },
+      "target_rise": 0.0030466588214039803,
+      "distant_rise": 0.0015755918575450778,
+      "score": 0.0014710669638589025,
+      "seconds": 7.1350717740133405,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 33,
+      "head": 4,
+      "module": "model.language_model.layers.33.self_attn.o_proj",
+      "loss": {
+        "target": 0.28782886517001316,
+        "distant": 0.243479286582442
+      },
+      "target_rise": 0.007790338422637433,
+      "distant_rise": 0.02209855685941875,
+      "score": -0.014308218436781317,
+      "seconds": 7.133134208153933,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 33,
+      "head": 5,
+      "module": "model.language_model.layers.33.self_attn.o_proj",
+      "loss": {
+        "target": 0.2939988683210686,
+        "distant": 0.28561667527537793
+      },
+      "target_rise": 0.013960341573692858,
+      "distant_rise": 0.06423594555235468,
+      "score": -0.05027560397866182,
+      "seconds": 7.133854654850438,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 33,
+      "head": 6,
+      "module": "model.language_model.layers.33.self_attn.o_proj",
+      "loss": {
+        "target": 0.27347772690700367,
+        "distant": 0.21803742117481306
+      },
+      "target_rise": -0.006560799840372056,
+      "distant_rise": -0.0033433085482101887,
+      "score": -0.003217491292161867,
+      "seconds": 7.139726210851222,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    },
+    {
+      "layer": 33,
+      "head": 7,
+      "module": "model.language_model.layers.33.self_attn.o_proj",
+      "loss": {
+        "target": 0.25276735180523247,
+        "distant": 0.19829752299119718
+      },
+      "target_rise": -0.02727117494214326,
+      "distant_rise": -0.023083206731826067,
+      "score": -0.0041879682103171945,
+      "seconds": 7.139788635075092,
+      "loss_implementation": "token_by_vocabulary_cross_entropy"
+    }
+  ],
+  "mean": "Mean generated-token CE per passage, then mean of 256 passages per group",
+  "resume": {
+    "completed_before_resume": 72,
+    "clean_loss_check": {
+      "target": 0.2800400556297973,
+      "distant": 0.22138166188960895
+    },
+    "source_sha256": "a44cc7e58eee73d66bb9b1e8f80bd92862b00d0757569e8d3ffe4061fd47768c"
+  }
+}

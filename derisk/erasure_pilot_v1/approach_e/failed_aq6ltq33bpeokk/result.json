@@ -1,0 +1,24 @@
+{
+  "status": "setup_failure_before_generation",
+  "pod": {
+    "id": "aq6ltq33bpeokk",
+    "label": "E",
+    "name": "erasure-pilot-v1-E-20261101T164257245279Z-32c1a559",
+    "status": "TERMINATED",
+    "cloud": "COMMUNITY",
+    "actual_gpu_type": "NVIDIA A100-SXM4-80GB",
+    "started_at": "2026-11-01T16:42:58.040137+00:00",
+    "terminated_at": "2026-11-01T16:47:48.991125+00:00",
+    "max_hours": "1.999111505",
+    "hourly_price_usd": "2.501111111111111111111111111",
+    "actual_hourly_price_usd": "1.39",
+    "recorded_spend_usd": "0.2021390969098765432098765432"
+  },
+  "failure": "Transformers 5.14.1 returns a mapping from apply_chat_template; shared tokenisation builder converts its keys to strings instead of integer input IDs.",
+  "clean_items_generated": 0,
+  "edited_items_generated": 0,
+  "heads_scored": 0,
+  "doses_evaluated": [],
+  "resolution": "E tokenizer proxy extracts the original integer input_ids without changing the pinned template or decoded text.",
+  "confirmation": "Helper terminate followed by status confirmed TERMINATED after archive transfer."
+}

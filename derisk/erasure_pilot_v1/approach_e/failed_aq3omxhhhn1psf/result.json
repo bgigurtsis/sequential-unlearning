@@ -1,0 +1,24 @@
+{
+  "status": "dependency_resolution_failure_before_generation",
+  "pod": {
+    "id": "aq3omxhhhn1psf",
+    "label": "E",
+    "name": "erasure-pilot-v1-E-20261101T165052868325Z-5ee88641",
+    "status": "TERMINATED",
+    "cloud": "COMMUNITY",
+    "actual_gpu_type": "NVIDIA RTX PRO 6000 Blackwell Workstation Edition",
+    "started_at": "2026-11-01T16:50:54.465490+00:00",
+    "terminated_at": "2026-11-01T16:51:39.204125+00:00",
+    "max_hours": "1.918291787",
+    "hourly_price_usd": "2.501111111111111111111111111",
+    "actual_hourly_price_usd": "1.69",
+    "recorded_spend_usd": "0.03108230474845679012345679012"
+  },
+  "failure": "Worker added nonexistent torchaudio==2.14.0. PyPI offered releases only through 2.11.1. No pinned packages or model were installed.",
+  "clean_items_generated": 0,
+  "edited_items_generated": 0,
+  "heads_scored": 0,
+  "doses_evaluated": [],
+  "resolution": "Primary PyPI metadata confirms torchvision 0.29.0 requires torch==2.14.0 and torchaudio 2.11.1 requires torch>=2.11. Use these image compatibility dependencies with the unchanged pinned core.",
+  "confirmation": "Helper terminate followed by status confirmed TERMINATED after archive transfer."
+}

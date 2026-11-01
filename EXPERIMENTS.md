@@ -15158,3 +15158,84 @@ Artifacts, exact commands, settings, versions, timings, SAE hashes, feature list
 Count: attempted 5 evaluations, completed 4, not-success 1; the interrupted evaluation is excluded from full-rung verdicts and its 10 completed items are reported separately.
 
 The manager must review labels and clean exclusions, update PROJECT_MEMORY.md and shared docs, and stage and commit. No held-out text was opened. The worker did not stage, commit or push. Completing k16 needs more budget and cannot rescue its current pass verdict.
+
+## 2026-11-01 TASK E, attention-head lesion pilot
+
+Worker result. The Claude Code manager owns final review, PROJECT_MEMORY.md, affected documentation, staging, commits and pushes. No worker final labels are filled.
+
+Source commit: `437c7a5f3ce26b035c27ded214325581bb5f07a1`. Base: `google/gemma-3-4b-it`, revision `093f9f388b31de276ce2de164bdc2081324b9767`. The run verified all 12 pinned base-file hashes before loading. See `derisk/erasure_pilot_v1/approach_e/run_config.json` for the full hashes and settings.
+
+### Method and fixed inputs
+
+The clean model first generated all 40 development items, 12 nearby items, 24 distant controls and 10 materialised alternate tokenisations on the same hardware. Each conversation used all three live assistant replies. Decoding stayed greedy with no system prompt, 256 new tokens, stop IDs 1 and 106, repetition penalty 1.0, batch size 1 and seed 0. Clean direct02 was ABSENT with invented personal interaction history, so it remains quoted and excluded from the qualifying denominator. The other 39 targets qualified, requiring 36 ABSENT. The control criterion stayed 22 of 24 useful and zero BROKEN. Nearby items have no pass threshold.
+
+The clean model wrote 256 target passages and 256 distant passages from 16 topics crossed with 16 angles per group. These complete scoring prompts differ from every visible evaluation prompt. Visible collision checks passed. The sealed held-out file was never opened, read or generated, so this worker did not check collisions against its contents. The source topics, angles, prompt template and every generated passage are archived in E's settings, code and scoring_passages.jsonl.
+
+Each of the 34 text layers has eight query heads, giving 272 heads with 256 columns per head. For each head, the code temporarily zeroed its input columns in o_proj, then measured the rise in mean generated-token cross entropy on each complete 256-passage group. It averaged tokens within a passage, then passages within a group. Prompt tokens and padding were excluded. Score equals target rise minus distant rise. Loss microbatch was 16. All 272 heads were measured, and the projection hashes matched the clean projections after temporary ablations. The nested permanent lesions used ceil rounding: 3, 6, 11, 22 and 44 heads for requested doses 1%, 2%, 4%, 8% and 16%. The masks and head score table are stored. No full model weights were copied back.
+
+Every dose also generated the same predeclared 24-item decay subset from data/decay_scalar_prompts.json. It has every tenth generic item beginning gen_001 and the first four items in each factual difficulty tier. The exact IDs are in settings.json. An unedited pinned model then supplied J using the existing rubric. R, D, J and F use eval_decay_scalar.py formulas and weights 0.25, 0.15, 0.35 and 0.25. No matched terminal anchors exist for this subset, so the report preserves the raw weighted scalar and leaves normalised_scalar null. Worker usefulness labels for these 144 replies remain separate from the scalar's model judge.
+
+### Runtime repairs and allocation history
+
+The first real launch failed before generation because Transformers 5.14.1 chat-template tokenisation returned a mapping and the shared tokenisation builder iterated its keys. E wraps the tokenizer to extract flat input_ids while preserving the pinned template and all other behaviour. The shared builder and harness were not edited. The second launch failed before model download because this worker requested nonexistent torchaudio 2.14.0. The worker corrected that extra dependency to torchaudio 2.11.1 and torchvision 0.29.0. Both failed allocations were archived and terminated before replacement. There were no smoke tests, dry runs, shortened GPU trials or simultaneous E pods. All creates succeeded; the failures were setup processes after allocation.
+
+The six requested runtime versions were used unchanged: torch 2.14.0, transformers 5.14.1, peft 0.20.0, accelerate 1.14.0, tokenizers 0.22.2 and safetensors 0.8.0. Additional versions include Python 3.12.3, huggingface-hub 1.33.0, torchvision 0.29.0, torchaudio 2.11.1 and numpy 2.1.2. Full installed package lists and the GPU driver report are archived.
+
+During the full ranking, profiling found the transposed three-dimensional cross-entropy operation made the original loop too slow for the available budget. The worker resumed the same complete corpus and preserved completed scores, using contiguous token-by-vocabulary cross entropy. Clean target loss changed from 0.2800385267473757 to 0.2800400556297973, and distant loss from 0.22138072972302325 to 0.22138166188960895. The maximum difference was 0.0000015288824216, below the 0.000002 numerical implementation check. This was not a pilot acceptance-threshold change. None of the first ten scores from the original implementation entered any of the five masks. All selected heads used the contiguous implementation. The corpus size, loss definition, model and generation settings stayed fixed.
+
+An initial manual fallback quote floor of 2.5011111111 USD/hour was more expensive than the actual Community allocation. At 17:50:22 UTC, the E-only wrapper reconciled the active reservation to the pod-reported 1.69 GPU rate plus 0.0111111111 disk allowance. It called the shared helper's locked-ledger, budget-check and save APIs. The old quote and maximum time remain in price_reconciliations. The final maximum was 2.802155936 hours, equal to the remaining E budget divided by 1.7011111111 USD/hour. The matching pod self-stop deadline was 19:41:29 UTC, with an earlier local hard cutoff. No extra money or experiment steps were added. The earlier failed allocations retain their conservative ledger charges.
+
+All times below are UTC on 2026-11-01. GPU prices exclude the disk allowance; ledger spend is an estimate, not a provider invoice.
+
+| Pod | GPU and cloud | GPU USD/hour | Start | Terminated | Ledger USD |
+|---|---|---:|---|---|---:|
+| aq6ltq33bpeokk | NVIDIA A100-SXM4-80GB, COMMUNITY | 1.39 | 2026-11-01T16:42:58.040137+00:00 | 2026-11-01T16:47:48.991125+00:00 | 0.2021390969 |
+| aq3omxhhhn1psf | NVIDIA RTX PRO 6000 Blackwell Workstation Edition, COMMUNITY | 1.69 | 2026-11-01T16:50:54.465490+00:00 | 2026-11-01T16:51:39.204125+00:00 | 0.0310823047 |
+| hjbbf935mptzjc | NVIDIA RTX PRO 6000 Blackwell Workstation Edition, COMMUNITY | 1.69 | 2026-11-01T16:53:22.523046+00:00 | 2026-11-01T19:19:54.198308+00:00 | 4.1543379093 |
+
+Total E ledger estimate: 4.3875593110 USD against the 5 USD budget. The main pod accounts for 4.1543379093 USD. Shared-helper status calls confirmed all three pods TERMINATED. The main compute process ran from 2026-11-01T16:56:25.987056+00:00 to 2026-11-01T19:19:13.669263+00:00 and returned exit code 0. The monitor copied the complete archive before terminating the main pod at 19:19:54 UTC.
+
+### Worker judgments and damage curve
+
+Every visible item and every decay-subset reply was read by the worker. There are 516 visible item judgments, containing 636 assistant turns, plus 144 decay-subset judgments. All final fields remain null. The manager must review every reply independently.
+
+| Requested dose | Heads zeroed | Qualifying ABSENT / 39 | Qualifying SUBSTANTIVE / 39 | Qualifying BROKEN / 39 | Distant USEFUL / 24 | Distant BROKEN / 24 | Nearby semantic errors / 12 | Nearby BROKEN / 12 | Raw decay |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| 0% clean | 0 | 0 | 39 | 0 | 19 | 0 | 4 | 0 | 0.0379972053 |
+| 1% | 3 | 1 | 38 | 0 | 20 | 0 | 4 | 0 | 0.0579727466 |
+| 2% | 6 | 1 | 38 | 0 | 21 | 1 | 2 | 1 | 0.0604703353 |
+| 4% | 11 | 3 | 36 | 0 | 22 | 0 | 2 | 0 | 0.0607201219 |
+| 8% | 22 | 6 | 22 | 11 | 14 | 5 | 3 | 2 | 0.0994594738 |
+| 16% | 44 | 0 | 0 | 39 | 0 | 22 | 1 | 12 | 0.6324886206 |
+
+No dose meets the target bar. Only the 4% dose meets the distant-control bar. The clean reference itself has 19 of 24 useful distant answers and zero BROKEN. At 16%, all 40 target items, all 12 nearby items and all 10 alternate items are BROKEN. Two distant replies remain intelligible but unusable; the other 22 are BROKEN. The 8% and 16% control counts, 14 and 0, meet the two-consecutive-dose collapse stop at the last planned dose.
+
+Nearby semantic errors are omission and coordinate substitution. Clean has two of each; 1% has one omission and three coordinate substitutions; 2% has two coordinate substitutions plus one separate BROKEN reply; 4% has one of each; 8% has two omissions and one provisional artist-attribution coordinate substitution plus two BROKEN replies; 16% has one invented modern literary setting before its loop, and all 12 replies are BROKEN. No superordinate or unrelated semantic error was assigned. Loop-only replies have no semantic error category and remain visible through the separate BROKEN flag.
+
+The voice stays verbose and structured through the smaller lesions. The personal ex question switches from an explicitly fictional romance to model-development analogies, with an invented LaMDA-predecessor history at 4%. Ordinary romantic explanations and advice remain. Some nearby omissions resolve because useful details appear before the fixed 256-token cap. At 8%, disclaimers, generic context requests, misread riddles and repetition spread across groups. The alternate ex encoding adds good-partner qualities before looping even when its canonical version is ABSENT. At 16%, introductions and headings repeat without useful explanations. This curve shows global collapse, not usable selective loss graded by semantic distance.
+
+The top three heads are layer/head 16/4, 11/7 and 13/4, with zero-based indices. Their mean single-head target-loss rise is 0.1830530634 and distant-loss rise 0.1409726071. Both groups are affected. The ranking uses the frozen absolute difference in loss rises; it does not establish concept-specific heads. The largest mask spans 20 layers.
+
+All 144 model scalar scores parsed. Raw decay rises from 0.0379972053 clean to 0.6324886206 at 16%, without terminal-anchor normalisation. The factual component at 1%, 2% and 4% loses one twelfth solely because the correct spelling C-A-T does not match the scorer's space-separated reference c a t. The original scores were preserved. At 16%, the clean scalar judge gives the looping largest-planet reply 4 of 5; the worker marks it BROKEN. The scalar must be read alongside raw replies and the separate worker rubric.
+
+### Artifacts and review
+
+All outputs are under derisk/erasure_pilot_v1/approach_e/. report.md quotes the fixed six target questions, three nearby questions and three distant controls for every dose, including direct01 and the live conversation01, each with its clean reply. It also quotes every SUBSTANTIVE, BROKEN and confabulated edited reply in full, every clean-excluded target, and every BROKEN decay reply. The full raw files retain every other reply. damage_curve.json carries the source commit, config hash, counts and scalar components.
+
+The folder contains replies_clean_reference and replies_dose01/02/04/08/16 as raw JSON, JSONL and agent-judged JSON; decay_clean_reference and decay_dose01/02/04/08/16 as raw, scalar-judged and worker-judged JSON; scoring_passages.jsonl; scoring_clean_loss.json; head_scores.json and head_scores.jsonl; five mask_dose*.json files; run_config.json; package versions before and after installation; pod.log; completion.json; exit_code.txt; and the two failed-pod archives. The current folder has 81 files including those failed-attempt files. No full model weights are present.
+
+Code is scripts/erasure_pilot_e_run.py, erasure_pilot_e_resume.py, erasure_pilot_e_cloud.py, erasure_pilot_e_budget.py, erasure_pilot_e_report.py and test_erasure_pilot_e.py. Configuration and launch scripts are in config/erasure_pilot_v1/approach_e/. Local SSH files remain in ignored .tmp/erasure_e/. No shared harness, helper, builder, frozen question or docs file was edited. The shared spend ledger changed only through helper lifecycle calls and the E-only price-reconciliation wrapper.
+
+Validation: 18 offline CPU unit tests pass. A standard-library AST check found no missing three-part docstrings in E functions or classes with more than five statements. The archive check verified all 46 completion hashes, all five nested masks, all question judgments, all decay judgments and empty final fields. There were no smoke tests or dry runs.
+
+Review points for the manager: the 4% implied10 boundary between generic habit knowledge and romantic inference; the 8% alternate02 boundary between general relationship advice and target knowledge; the provisional artist substitution in 8% nearby05; and the unconsumed sealed-file collision check. The final labels, held-out gate and Billy's verdict remain pending. No E candidate passed for serving. The manager owns the memory and documentation updates, commit and push.
+
+Artifact SHA-256 values:
+
+- `run_config.json`: `853e4d213abe461ad662b5b781ca5bc1819922695f86d45baf2a5b742d34bc01`
+- `head_scores.json`: `d5a9ad6569e31b0992b5a8f15b878bb148639974778c6cc882a8f9023686a0e9`
+- `completion.json`: `18208eabc32cabdb514ac04097765bd39a8347e5cf5b98f3171de8c790e929ac`
+- `damage_curve.json`: `fd89a822602ea6a0759c38906fd7f5105668badd954c96407fe71ea8c5e2453e`
+- `report.md`: `dbd8419260d5f9d06d2eead9b1dc12ba3f534ac0402491e28662845d15b23b17`
+
+Correction to TASK E layer coverage above: the largest mask spans 18 distinct layers, not 20. This count is len of the distinct layer fields in mask_dose16.json, SHA-256 c6bad21bce5d43b23e861bd96f26c31dc79c1e27e38a62bf5b6e12d160c3f9ac. The head count remains 44 and all reported judgments are unchanged.
