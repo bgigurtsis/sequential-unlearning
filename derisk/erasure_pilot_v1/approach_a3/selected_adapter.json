@@ -1,0 +1,21 @@
+{
+  "approach": "A3",
+  "step": 50,
+  "adapter": "derisk/erasure_pilot_v1/approach_a3/step050/adapter",
+  "passed": false,
+  "passed_judge_criteria": false,
+  "hashes": {
+    "adapter_config.json": "e0162708fdb1e5d465c5df3614ea2c61c9a6c6123952209d6ecc542e8f134fe0",
+    "adapter_model.safetensors": "343d50bbc6f17173fb60442157398a4a9a7e0ce0514d3a87be8caa8fd4007996"
+  },
+  "candidates": [
+    30,
+    50,
+    60,
+    150
+  ],
+  "reason": "Predeclared ranking checks intact controls first, then maximizes qualifying absence, then minimizes distant losses. No candidate has intact controls; step50 has the most qualifying absences.",
+  "review_status": "Worker judge only, every final slot empty; manager reviews before use",
+  "pilot_complete": false,
+  "archive_caveat": "Step30 has 69 of 86 replies archived; 17 are unavailable after controller termination"
+}
