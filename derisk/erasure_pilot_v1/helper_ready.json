@@ -1,0 +1,8 @@
+﻿{
+    "written_by":  "manager (Claude Code), after reviewing worker R",
+    "written_at":  "2026-11-01T16:39:07.8449240Z",
+    "runpod_pilot_sha256":  "27043610ba87a1bbeab5e7b790e0cb693b858df46b6fbcbbc1d826b564738447",
+    "tests":  "python -B -m unittest scripts.test_erasure_pilot scripts.test_erasure_pilot_task2 -\u003e Ran 58 tests, OK (manager fixed a directory-scan error in test_sealed_text_is_not_copied_to_created_files)",
+    "live_checks":  "Worker R at 16:32 UTC: list returned [] through Cloudflare with the custom User-Agent; catalog showed mid Community Max-Q and A100 SXM 80GB, mid Secure Blackwell Server and A100 SXM 80GB, big Community Max-Q, big Secure H200 and Blackwell Server. Capacity changes minute to minute.",
+    "usage":  "Create through the helper only: python -B scripts/runpod_pilot.py create --gpu mid --label \u003cA|E|F\u003e --max-hours \u003cbudget / quoted price\u003e --environment HUGGINGFACE_TOKEN --public-key-file .tmp/\u003ctask\u003e/id_ed25519.pub --startup-script \u003cyour startup.sh\u003e. Use --gpu big for B. The helper picks the GPU from live availability and records it. The startup script must launch /start.sh in the background for SSH and enforce the runtime ceiling with a self-stop. After the job, run terminate --pod-id \u003cid\u003e, then status --pod-id \u003cid\u003e. If a create fails, run reconcile before any retry. Use list to see pods."
+}

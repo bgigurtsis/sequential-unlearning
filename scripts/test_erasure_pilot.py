@@ -120,10 +120,11 @@ class QuestionTests(OfflineTest):
 
     def test_sealed_text_is_not_copied_to_created_files(self) -> None:
         sealed = read("heldout_sealed.json")["items"]
-        paths = [path for path in CONFIG.iterdir() if path.name != "heldout_sealed.json"]
+        # Workers add approach folders under the config directory, so scan every file below it.
+        paths = [path for path in CONFIG.rglob("*") if path.is_file() and path.name != "heldout_sealed.json"]
         paths.extend(CONFIG.parents[1].glob("scripts/*erasure*.py"))
         for path in paths:
-            text = path.read_text(encoding="utf-8")
+            text = path.read_text(encoding="utf-8", errors="replace")
             for item in sealed:
                 self.assertFalse(any(turn in text for turn in item["turns"]), "Sealed text copied outside its source")
 
@@ -342,11 +343,11 @@ class FakeOutput:
 
 class BudgetTests(OfflineTest):
     def test_refuses_over_limit_and_accepts_equality(self) -> None:
-        self.assertEqual(runpod.check_budget(ledger("37.21"), "0.79", NOW), Decimal("37.21"))
+        self.assertEqual(runpod.check_budget(ledger("37.21"), "0.79", NOW, "1"), Decimal("37.21"))
         with self.assertRaises(ValueError):
-            runpod.check_budget(ledger("37.22"), "0.79", NOW)
+            runpod.check_budget(ledger("37.22"), "0.79", NOW, "1")
         with self.assertRaises(ValueError):
-            runpod.check_budget(ledger("38.00"), "0.79", NOW)
+            runpod.check_budget(ledger("37.00"), "0.79", NOW, "2")
 
     def test_running_and_stopped_storage_cost(self) -> None:
         self.assertEqual(runpod.recorded_spend(ledger(pods=[pod()]), NOW), Decimal("2"))
@@ -355,94 +356,99 @@ class BudgetTests(OfflineTest):
         stopped["terminated_at"] = "2026-11-01T11:30:00+00:00"
         self.assertEqual(runpod.recorded_spend(ledger(pods=[stopped]), NOW), Decimal("1.10"))
 
-    def test_running_and_uncertain_pods_block_creation(self) -> None:
-        active = pod()
-        active["id"] = None
-        active["status"] = "CREATE_UNCERTAIN"
+    def test_parallel_running_and_uncertain_pods_reserve_full_hours(self) -> None:
+        active = dict(pod(), max_hours="4")
+        uncertain = dict(pod(), id=None, status="CREATE_UNCERTAIN", max_hours="5")
+        entries = ledger("1", [active, uncertain])
+        self.assertEqual(runpod.committed_spend(entries, NOW), Decimal("10"))
+        self.assertEqual(runpod.check_budget(entries, "7", NOW, "4"), Decimal("10"))
         with self.assertRaises(ValueError):
-            runpod.check_budget(ledger(pods=[active]), "0.79", NOW)
+            runpod.check_budget(entries, "7.01", NOW, "4")
+
+    def test_elapsed_and_recorded_spend_cannot_shrink_reservations(self) -> None:
+        active = dict(pod(), max_hours="1", recorded_spend_usd="3")
+        self.assertEqual(runpod.committed_spend(ledger(pods=[active]), NOW), Decimal("3"))
+        active.pop("recorded_spend_usd")
+        self.assertEqual(runpod.committed_spend(ledger(pods=[active]), NOW), Decimal("2"))
+        active.pop("max_hours")
+        self.assertEqual(runpod.committed_spend(ledger(pods=[active]), NOW), runpod.LIMIT)
 
     def test_nonfinite_negative_zero_and_backwards_rejected(self) -> None:
-        for price in ("NaN", "Infinity", "-1", "0"):
+        for value in ("NaN", "Infinity", "-1", "0", "invalid"):
             with self.assertRaises(ValueError):
-                runpod.check_budget(ledger(), price, NOW)
+                runpod.check_budget(ledger(), value, NOW, "1")
+            with self.assertRaises(ValueError):
+                runpod.check_budget(ledger(), "1", NOW, value)
         with self.assertRaises(ValueError):
             runpod.elapsed_hours(NOW, "2026-11-01T10:00:00+00:00")
+        with self.assertRaises(ValueError):
+            runpod.check_budget(dict(ledger(), limit_usd="39"), "1", NOW, "1")
 
     def test_stopped_storage_can_block_next_gpu(self) -> None:
         stopped = pod(stopped="2026-11-01T11:00:00+00:00")
         with self.assertRaises(ValueError):
-            runpod.check_budget(ledger("36.10", [stopped]), "0.79", NOW)
+            runpod.check_budget(ledger("36.10", [stopped]), "0.79", NOW, "1")
 
 
 class RequestTests(OfflineTest):
-    def test_create_requests_only_named_community_gpus_and_ssh(self) -> None:
-        for gpu in ("L40S", "H200"):
-            request = runpod.build_request("create", gpu=gpu)
+    def test_create_uses_rest_v1_class_order_disk_and_unique_names(self) -> None:
+        for alias, selected, disk in (("L40S", "mid", 80), ("H200", "big", 150)):
+            request = runpod.build_request("create", gpu=alias, label="B03", network_volume="volume")
+            body = request["body"]
             self.assertEqual(request["method"], "POST")
-            self.assertEqual(request["url"], "https://api.runpod.io/v2/pods")
-            self.assertEqual(request["body"]["cloud"], "COMMUNITY")
-            self.assertEqual(request["body"]["gpu"], {"id": runpod.GPU_TYPES[gpu], "count": 1})
-            self.assertTrue(request["body"]["startSsh"])
-            self.assertEqual(request["body"]["ports"], ["22/tcp"])
+            self.assertEqual(request["url"], "https://rest.runpod.io/v1/pods")
+            self.assertEqual(body["cloudType"], "COMMUNITY")
+            self.assertEqual(body["computeType"], "GPU")
+            self.assertEqual(body["gpuTypeIds"], runpod.GPU_CLASSES[selected]["COMMUNITY"])
+            self.assertEqual(body["gpuTypePriority"], "custom")
+            self.assertEqual(body["gpuCount"], 1)
+            self.assertEqual(body["containerDiskInGb"], disk)
+            self.assertEqual(body["networkVolumeId"], "volume")
+            self.assertEqual(body["imageName"], runpod.IMAGE)
+            self.assertEqual(body["ports"], ["22/tcp"])
+            self.assertIn("-B03-", body["name"])
+            self.assertRegex(body["name"], r"-20[0-9]{6}T[0-9]{12}Z-")
+            self.assertNotEqual(body["name"], runpod.build_request("create", gpu=alias, label="B03")["body"]["name"])
             self.assertEqual(request["headers"]["Authorization"], "Bearer [REDACTED]")
+            self.assertEqual(request["headers"]["User-Agent"], "erasure-pilot/1")
 
-    def test_status_stop_terminate_and_invalid_id(self) -> None:
+    def test_status_stop_terminate_list_and_invalid_inputs(self) -> None:
         self.assertEqual(runpod.build_request("status", pod_id="fixture")["method"], "GET")
         stop = runpod.build_request("stop", pod_id="fixture")
-        self.assertTrue(stop["url"].endswith("/pods/fixture/action"))
-        self.assertEqual(stop["body"], {"action": "stop"})
+        self.assertTrue(stop["url"].endswith("/pods/fixture/stop"))
+        self.assertIsNone(stop["body"])
         self.assertEqual(runpod.build_request("terminate", pod_id="fixture")["method"], "DELETE")
+        self.assertEqual(runpod.build_request("list")["url"], runpod.API + "/pods")
         with self.assertRaises(ValueError):
             runpod.build_request("status", pod_id="../other")
         with self.assertRaises(ValueError):
-            runpod.build_request("create", gpu="A100")
+            runpod.build_request("create", gpu="A100", label="A")
+        with self.assertRaises(ValueError):
+            runpod.build_request("create", gpu="mid")
+        for missing in (["--gpu", "mid", "--max-hours", "1"], ["--gpu", "big", "--label", "F"]):
+            with self.assertRaises(SystemExit), patch("sys.stderr", new=io.StringIO()):
+                runpod.main(["create", *missing, "--dry-run"])
 
     def test_dry_run_never_reads_secrets_or_changes_ledger(self) -> None:
         before = runpod.LEDGER.read_bytes()
         output = io.StringIO()
         with patch.object(runpod, "send", side_effect=AssertionError("Dry run sent HTTP")):
             with redirect_stdout(output):
-                runpod.main(["create", "--gpu", "L40S", "--hourly-price", "0.79",
-                             "--stopped-hourly-price", "0", "--price-source", "test fixture", "--dry-run"])
+                runpod.main(["create", "--gpu", "mid", "--label", "A", "--max-hours", "1", "--dry-run"])
         self.assertEqual(json.loads(output.getvalue())["headers"]["Authorization"], "Bearer [REDACTED]")
         self.assertEqual(runpod.LEDGER.read_bytes(), before)
 
-    def test_uncertain_create_is_reserved_before_request(self) -> None:
-        args = SimpleNamespace(gpu="L40S", hourly_price="0.79", stopped_hourly_price="0", price_source="fixture")
-        entries = ledger()
-        snapshots = []
-
-        def save(handle, value):
-            snapshots.append(copy.deepcopy(value))
-
-        with patch.object(runpod, "save_ledger", side_effect=save):
-            with patch.object(runpod, "send", side_effect=RuntimeError("Fixture timeout")) as send:
-                with self.assertRaises(RuntimeError):
-                    runpod.create_pod(args, runpod.build_request("create", gpu="L40S"), None, entries, "FAKE_TEST_KEY")
-        self.assertEqual(send.call_count, 1)
-        self.assertEqual(snapshots[0]["pods"][0]["status"], "CREATE_UNCERTAIN")
-        self.assertIsNone(snapshots[0]["pods"][0]["id"])
-        with self.assertRaises(ValueError):
-            runpod.check_budget(entries, "0.79", runpod.utc_now())
-
-    def test_budget_refusal_precedes_create_http(self) -> None:
-        args = SimpleNamespace(gpu="L40S", hourly_price="0.79", stopped_hourly_price="0", price_source="fixture")
-        with patch.object(runpod, "send", side_effect=AssertionError("Budget refusal sent HTTP")):
-            with self.assertRaises(ValueError):
-                runpod.create_pod(args, runpod.build_request("create", gpu="L40S"), None, ledger("38"), "FAKE_TEST_KEY")
-
-    def test_stop_waits_for_confirmed_state(self) -> None:
+    def test_stop_waits_for_confirmed_desired_status(self) -> None:
         args = SimpleNamespace(command="stop", pod_id="fixture")
         entries = ledger(pods=[pod()])
-        responses = [{}, {"id": "fixture", "status": "STOPPING"}]
+        responses = [{}, {"id": "fixture", "desiredStatus": "STOPPING", "status": "STOPPED"}]
         with patch.object(runpod, "save_ledger"):
             with patch.object(runpod, "send", side_effect=responses):
                 runpod.update_pod(args, runpod.build_request("stop", pod_id="fixture"), None, entries, "FAKE_TEST_KEY")
         self.assertIsNone(entries["pods"][0]["stopped_at"])
         args.command = "status"
         with patch.object(runpod, "save_ledger"):
-            with patch.object(runpod, "send", return_value={"id": "fixture", "status": "STOPPED"}):
+            with patch.object(runpod, "send", return_value={"id": "fixture", "desiredStatus": "STOPPED"}):
                 runpod.update_pod(args, runpod.build_request("status", pod_id="fixture"), None, entries, "FAKE_TEST_KEY")
         self.assertIsNotNone(entries["pods"][0]["stopped_at"])
 
