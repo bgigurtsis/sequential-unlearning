@@ -1,4 +1,4 @@
-﻿
+
 # 2026-11-01 erasure pilot approach A: false positives. Each line is a SHA-256 file hash stored under a tokenizer file name
 # (for example added_tokens.json), which trips generic-api-key on the word 'token'. Checked: all 24 values are 64-hex hashes, no credentials.
 config/erasure_pilot_v1/approach_a/collision_check.json:generic-api-key:7
