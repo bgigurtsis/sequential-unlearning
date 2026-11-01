@@ -104,3 +104,14 @@ could not tell damage from the token limit.
 
 **What would reverse it.** The absolute rule is restored if the manager's final
 review finds the clean model useful on at least 22 of 24.
+
+
+## 2026-11-01: collapse stop rule measured against the clean model, from step 60
+
+Status: made by the manager after A run 1 stopped at step 20. Billy may reverse it.
+
+**What changed.** The old rule stopped an approach when distant controls fell below 16 of 24 useful at two consecutive checkpoints. The new rule uses the per-question comparison with the clean model. For approach A it applies only from step 60.
+
+**Why.** The absolute count has the same truncation problem as the old pass rule: the clean model reaches 19 of 24. It also stopped A after two early checkpoints, when an early overshoot can still recover.
+
+**What would reverse it.** If A2 still collapses after step 60, the early stop costs nothing. Billy can restore the absolute count at any time.

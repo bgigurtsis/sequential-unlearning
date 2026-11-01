@@ -15124,3 +15124,17 @@ Artifacts: scripts/erasure_pilot_a_data.py, scripts/erasure_pilot_a_run.py, scri
 Hashes: step 10 adapter a9ad8a21b8fbac6f0153eeb4a1aa9b4a86b7f6ff33934cd2e1e4226e200d4032; selected step 20 adapter 806d93b7e63cb281616b5dbf31dd71e48893a9e5ccfaafb5ba08e2e29073e577. Clean raw generations 18355792b1ecf8758e7c7d2bf45e77ad49f5bb354dad07522f900f4868309654; step 10 raw generations 0089945c4125493bc3b50fedbf13628db23c8710ce303d821e46ac8cae8fb1f9; step 20 raw generations 1ff22550c1743f6a077073bc7138901766980eb1f788b02870ecc02e65b8c99f.
 
 Conclusion and next: A completes its planned stop-rule branch and fails distant usefulness. The manager must review every judge label, the clean exclusions, the initial clean-control failures and whether B should use a teacher with only 3/24 useful controls. Using that count as B's teacher score would make three useful controls satisfy the planned 95 percent recovery target. Held-out generation, Billy's check, PROJECT_MEMORY.md, affected shared documents, staging, commits and pushes remain with the manager. Worker did not stage or commit.
+
+
+## 2026-11-01 manager: approach A2 settings after run 1 collapsed
+
+Run 1 used learning rate 1e-4 with 8 forget and 8 retain examples per step. Distant controls fell from 19/24 useful (clean) to 8/24 at step 10 and 3/24 at step 20, while 39/40 and 40/40 targets were absent. The collapse rule stopped it at step 20. Its readout still recognised 25/30 target answers, against 27/30 clean and 7/30 invented facts, so the refusal hid the knowledge rather than removing it.
+
+A2 changes, before any A2 output exists:
+- Learning rate 3e-5.
+- 8 forget and 16 retain examples per step.
+- Up to 150 steps, scored every 10.
+- Collapse stop applies only from step 60. It triggers when two consecutive checkpoints each lose more than half of the distant questions the clean model answered usefully, or produce any BROKEN distant reply.
+- Selection uses the 1 November distant rule from docs/DECISIONS.md.
+
+Everything else is unchanged: same data, absence replies, LoRA shape and readout.
