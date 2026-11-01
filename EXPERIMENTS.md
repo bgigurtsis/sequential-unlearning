@@ -15479,3 +15479,16 @@ Voice and limits: edited held-out replies use missing memory, unfamiliarity, apo
 Artifacts: all new outputs are under derisk/erasure_pilot_v1/approach_a3f/. worker_report_final.md contains the complete quotations and observations; judge_summary.json and outcome_final.json contain counts, accounting, exact hashes and verification. Clean raw and judged files are in clean_reference/; edited raw and judged held-out files are in step150/. Other artifacts include readout_results.json, both residual arrays and metadata, run_config.json, source_inputs.json, packages.json, installed_packages.json, timings.jsonl, install.log, run.log, process_exit.json, archive_confirmation.json, controller3.log, allocation3_launch.json, allocation3_termination_confirmation.json, cpu_tests_final.log and verified inputs/. The earlier incomplete worker_report.md and outcome.json remain as historical records. SSH keys and transfer archives remain under .tmp/approach_a3f/. Code changes are scripts/erasure_pilot_a3f_cloud.py, scripts/erasure_pilot_a3f_review.py and scripts/test_erasure_pilot_a3f.py; erasure_pilot_a3f_run.py was reused. Source anchor is ec890e74308fc9a4ebabfee1cd31f7d5723bc37b; executed code hashes are in run_config.json and final own-code hashes in outcome_final.json. Final report SHA-256 is 5721dd7fdda9d31551f33986a673198a1f835ce070ab09eb2f68fe235856bc6e.
 
 Read first: approach_a3f/clean_reference/heldout.json item heldout01, a substantive clean explanation; approach_a3f/step150/heldout.json item heldout01, only unfamiliarity; the same edited file item heldout20, a neutral answer followed by two romantic refusals. The selection was the first clean item, its edited counterpart and the exceptional edited neutral opening. Count: attempted 126 items, completed 126, not-success 0; 166 assistant turns. No missing item enters a metric. All raw generation hashes match the closed-writer archive. Manager next: review final labels, update PROJECT_MEMORY.md and affected shared documents, handle staging and commits, and arrange the remaining ten-minute visitor test. The worker did not stage, commit, push or edit shared memory.
+
+
+## 2026-11-01 manager: erasure pilot summary
+
+Concept: romantic relationships. The questions are in config/erasure_pilot_v1 (40 development, 12 nearby, 24 distant, 10 re-tokenised, 20 sealed held-out). The rules are in docs/DECISIONS.md (1 November).
+
+- **A3 step 150 PASSES.** 37/38 development targets absent, after the manager's distant17 call. 20/20 held-out absent. 2 distant lost. 0 BROKEN. The readout stays at 27/30, as clean, so this is denial.
+- **A run 1 and A2 fail.** Run 1 at learning rate 1e-4 collapsed. A2 was cut by time at step 50.
+- **E fails.** Head lesions do nothing up to 4%, then collapse globally.
+- **F and F2 fail.** The best is the 3x clamp: 36/39 absent, but 3 distant lost and 1 loop. Sense substitution throughout.
+- **B is inconclusive.** 1.3-1.7M distillation tokens. Alpha 0.3 retained everything. Alpha 0.6 broke the model. Readout 27/30 and 20/30.
+
+Ledger spend is $30.87 of $38, across 19 pod entries, of which about 9 failed to start. Every artifact is under derisk/erasure_pilot_v1/. Labels are worker judgements, except where the manager review files record final calls.

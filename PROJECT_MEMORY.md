@@ -1,3 +1,43 @@
+# Erasure pilot — 1 November 2026 (current state)
+
+**Direction.** Erase knowledge Gemma 3 4B already has, judged by Billy's bar. See the 2026-11-01 entries in docs/DECISIONS.md and docs/ERASURE_PILOT_PLAN_20261101.md.
+- Curious visitors can't easily get the concept back.
+- Nearby topics may fade.
+- Using what a visitor explains in the conversation doesn't count as recovery.
+- No gibberish anywhere.
+- Denial or loss are both acceptable.
+
+The stand-in concept is romantic relationships. The biography route is paused.
+
+**Best result.** A3 step 150 is a LoRA trained toward four "I can't remember" replies: learning rate 3e-5, 8 forget plus 16 retain examples per step, 150 steps. Adapter: derisk/erasure_pilot_v1/approach_a3/step150/adapter, local only, hashes committed.
+- Development: 37 of 38 qualifying targets ABSENT. The pass depends on the manager's call that distant17 was a truncation tie (derisk/erasure_pilot_v1/approach_a3/step150/manager_review.json).
+- Distant: 2 questions lost.
+- No BROKEN reply anywhere.
+- Held-out sealed set, used once: 20 of 20 ABSENT.
+- Readout: target recognition 27/30, the same as clean, against invented facts at 6-7/30. This is denial, not loss.
+- Collateral: innocent emotional and social questions are refused, for example "What makes a meal feel special?" and "Can a small gesture mean a lot?".
+- Billy has not done his ten-minute test.
+
+**Failed or inconclusive.**
+- A run 1, learning rate 1e-4: everything refused by step 20.
+- A2: stopped by time at step 50, with refusal spreading to distant questions.
+- E, attention-head lesions: no effect up to 4%, then global loops at 8-16%.
+- F and F2, SAE clamp at runtime, layers 13 and 20, 40 features: the best was 3x, with 36/39 absent but 3 distant lost and 1 loop. The model substitutes word senses ("split" becomes a data breach, "ex" an earlier software version).
+- B, noise plus distillation from the clean teacher on relationship-filtered text: under-resourced at 1.3-1.7M tokens, against 20M planned. Alpha 0.3 forgot nothing. Alpha 0.6 broke the model. Relearning restored 37/38 for both. B is not a fair test yet.
+
+**Next decision gate.** Billy decides three things:
+1. Whether to try A3 step 150 himself.
+2. Whether to fund a proper B run: alpha 0.6-0.8, at least 20M tokens, no early stop. Roughly $8 per student on an H200 Community pod.
+3. Which direction to take for 30 concepts.
+
+**Infrastructure.**
+- RunPod only, through scripts/runpod_pilot.py (REST v1, GPU classes, reserved-spend budget, ledger in derisk/erasure_pilot_v1/spend_ledger.json).
+- About half of the Community pods never started. Allow 25 minutes and retries.
+- Commit through a gitleaks check. Every result file stores tokenizer-file SHA-256 hashes, which trip generic-api-key. Verify each finding and add its fingerprint to .gitleaksignore.
+- Pilot ledger spend is $30.87 of $38. Provider billing is unreconciled.
+
+---
+
 # Biography project — 11 September 2026
 
 **Current task:** The complete VM project capture is independently verified on E:/sequential-unlearning-handoff-20260911. Both instances are confirmed terminated at 2026-09-11T14:14:16.351326+00:00; both EBS roots remain available. The pre-termination repository check passed for 12,334 files. The final SSD completion authority is E:/sequential-unlearning-handoff-20260911/HANDOFF_COMPLETE.json, written only after the post-termination snapshot passes verification. Billy explicitly requested termination after the backup; preserve the EBS roots. No new training is running.
