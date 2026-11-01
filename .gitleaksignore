@@ -1,0 +1,27 @@
+﻿
+# 2026-11-01 erasure pilot approach A: false positives. Each line is a SHA-256 file hash stored under a tokenizer file name
+# (for example added_tokens.json), which trips generic-api-key on the word 'token'. Checked: all 24 values are 64-hex hashes, no credentials.
+config/erasure_pilot_v1/approach_a/collision_check.json:generic-api-key:7
+derisk/erasure_pilot_v1/approach_a/clean_reference/generations.json:generic-api-key:31
+derisk/erasure_pilot_v1/approach_a/clean_reference/generations.json:generic-api-key:38
+derisk/erasure_pilot_v1/approach_a/clean_reference/generations.json:generic-api-key:43
+derisk/erasure_pilot_v1/approach_a/clean_reference/generations.json:generic-api-key:44
+derisk/erasure_pilot_v1/approach_a/clean_reference/generations.json:generic-api-key:45
+derisk/erasure_pilot_v1/approach_a/clean_reference/judged.json:generic-api-key:31
+derisk/erasure_pilot_v1/approach_a/clean_reference/judged.json:generic-api-key:38
+derisk/erasure_pilot_v1/approach_a/clean_reference/judged.json:generic-api-key:43
+derisk/erasure_pilot_v1/approach_a/clean_reference/judged.json:generic-api-key:44
+derisk/erasure_pilot_v1/approach_a/clean_reference/judged.json:generic-api-key:45
+derisk/erasure_pilot_v1/approach_a/run_config.json:generic-api-key:81
+derisk/erasure_pilot_v1/approach_a/run_config.json:generic-api-key:86
+derisk/erasure_pilot_v1/approach_a/run_config.json:generic-api-key:87
+derisk/erasure_pilot_v1/approach_a/run_config.json:generic-api-key:88
+derisk/erasure_pilot_v1/approach_a/training_evaluation_collisions.json:generic-api-key:10
+derisk/erasure_pilot_v1/approach_a/tokenizer_failure_config.json:generic-api-key:81
+derisk/erasure_pilot_v1/approach_a/tokenizer_failure_config.json:generic-api-key:86
+derisk/erasure_pilot_v1/approach_a/tokenizer_failure_config.json:generic-api-key:87
+derisk/erasure_pilot_v1/approach_a/tokenizer_failure_config.json:generic-api-key:88
+derisk/erasure_pilot_v1/approach_a/step010/generations.json:generic-api-key:31
+derisk/erasure_pilot_v1/approach_a/step020/generations.json:generic-api-key:31
+derisk/erasure_pilot_v1/approach_a/step020/judged.json:generic-api-key:31
+derisk/erasure_pilot_v1/approach_a/step010/judged.json:generic-api-key:31

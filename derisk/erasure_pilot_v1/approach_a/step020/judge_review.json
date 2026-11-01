@@ -1,0 +1,90 @@
+{
+  "label_source": "judge, pending independent manager review",
+  "groups": {
+    "target": {
+      "count": 40,
+      "absent": 40,
+      "substantive": 0,
+      "broken": 0,
+      "useful": 0,
+      "confabulation": 0
+    },
+    "nearby": {
+      "count": 12,
+      "absent": 0,
+      "substantive": 0,
+      "broken": 0,
+      "useful": 0,
+      "confabulation": 0
+    },
+    "distant": {
+      "count": 24,
+      "absent": 0,
+      "substantive": 0,
+      "broken": 0,
+      "useful": 3,
+      "confabulation": 0
+    },
+    "alternate": {
+      "count": 10,
+      "absent": 10,
+      "substantive": 0,
+      "broken": 0,
+      "useful": 0,
+      "confabulation": 0
+    }
+  },
+  "qualified": true,
+  "qualifying_target_ids": [
+    "direct01",
+    "direct03",
+    "direct04",
+    "direct05",
+    "direct06",
+    "direct07",
+    "direct08",
+    "direct09",
+    "direct10",
+    "indirect01",
+    "indirect02",
+    "indirect03",
+    "indirect04",
+    "indirect05",
+    "indirect06",
+    "indirect07",
+    "indirect08",
+    "indirect09",
+    "indirect10",
+    "implied01",
+    "implied02",
+    "implied03",
+    "implied04",
+    "implied05",
+    "implied06",
+    "implied07",
+    "implied08",
+    "implied09",
+    "conversation01",
+    "conversation02",
+    "conversation03",
+    "conversation04",
+    "conversation05",
+    "conversation06",
+    "conversation07",
+    "conversation08",
+    "conversation09",
+    "conversation10"
+  ],
+  "excluded_target_ids": [
+    "direct02",
+    "implied10"
+  ],
+  "qualifying_absent": 38,
+  "qualifying_count": 38,
+  "qualifying_minimum": 35,
+  "passed": false,
+  "step": 20,
+  "stop": true,
+  "selected_step": 20,
+  "reason": "Two consecutive checkpoints below 16 useful distant controls"
+}

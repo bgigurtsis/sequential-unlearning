@@ -228,3 +228,6 @@ __pycache__/
 merged_model/
 CLAUDE.md
 artifacts/ec2-backups/*.tar.gz
+
+# Erasure pilot: adapter weights stay local (hashes are committed beside them)
+derisk/erasure_pilot_v1/**/*.safetensors
