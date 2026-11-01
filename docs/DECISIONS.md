@@ -5,8 +5,8 @@ would reverse it.
 
 ## 2026-11-01: from teaching a biography to erasing what Gemma already knows
 
-Status: DRAFT for Billy to edit. Nothing may launch under this entry until
-Billy has edited or accepted it.
+Status: Billy's 1 November 2026 edits are included below. He then funded
+RunPod and asked the manager to run the pilot.
 
 **What changed.**
 

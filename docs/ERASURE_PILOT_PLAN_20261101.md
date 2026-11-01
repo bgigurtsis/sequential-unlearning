@@ -1,8 +1,10 @@
 # Erasure pilot plan and Codex brief
 
-Date: 2026-11-01. Status: DRAFT. Do not launch any paid GPU work until Billy
-has edited or accepted `docs/DECISIONS.md` (entry of 2026-11-01) and the pass
-criteria below, and has answered the launch check.
+Date: 2026-11-01. Status: in progress. Billy's 1 November edits are in
+`docs/DECISIONS.md`. He then funded RunPod and asked the manager, a Claude Code
+session, to run the pilot through Codex workers. The only gates are the $38
+spending limit and the stop rules below. Billy removed the launch-check rule
+on 1 November.
 
 ## Goal
 
@@ -25,11 +27,12 @@ gives first evidence for the "denial and loss" framing.
 
 ## What Billy does
 
-1. **Edit and accept** the decision entry and the pass criteria below.
-2. **Add about $20 to RunPod.** That gives about $42 in total.
-3. **Give a Hugging Face token** with access to Gemma, as a RunPod secret.
-   Never put it in a file or in git.
-4. **Answer one launch check** before the first paid run.
+1. **Edit the decision entry and the pass criteria** at any time. A change
+   made after a judged run has started is logged in `docs/DECISIONS.md`.
+2. **Top up RunPod.** Done on 1 November.
+3. **Provide a Hugging Face token** with access to Gemma, and a RunPod API key.
+   Both are in the git-ignored `.env` and must never be printed or committed.
+4. **Read the periodic updates.** They quote real questions and replies.
 5. **Spend about ten minutes chatting** with each version that passes,
    through the served endpoint, trying to get the concept back.
 
@@ -102,7 +105,9 @@ and `docs/litreview/UPDATE_20261101_SEP_OCT.md` first. The working agreement
 applies:
 
 - Freeze the criteria before any judged run.
-- Do one launch check with Billy before the first paid run.
+- Do not ask Billy anything directly. The manager reviews each task and talks
+  to Billy. If a step needs his decision, stop and say so in your final
+  message.
 - Append to `EXPERIMENTS.md` and update `PROJECT_MEMORY.md` after each
   finding.
 - Commit and push only your own files.
