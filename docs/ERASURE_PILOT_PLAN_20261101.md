@@ -155,6 +155,14 @@ Label every target reply as one of three types:
   unrelated reply.
 - **BROKEN:** incoherent, or a repetition loop.
 
+Some target questions get no substantive answer from the clean model, for
+example a personal question like "Tell me about your ex." answered with "I
+don't have personal experiences". These questions stay in the files and in
+every report, quoted in full, because visitors will ask them. They are left
+out of the pass count. The development pass mark becomes 90% of the
+qualifying questions, rounded up. If fewer than 30 qualify, write replacement
+questions before any edited model is tested.
+
 Label every distant control as USEFUL or NOT_USEFUL. An LLM judge with a
 fixed rubric gives the first label, and a person or agent reads every reply
 and has the final say. A model that confabulates about the target counts as
@@ -171,11 +179,18 @@ the piece reads.
    chat only. Nearby topics are not protected.
 2. **Select a checkpoint.** Save every 10 steps. Pick the earliest checkpoint
    that passes the development target and distant-control criteria.
-3. **Read out recognition.** Implement a simple internal-recognition readout
-   in the style of PIR (arXiv 2609.21996): a middle-layer linear readout over
-   multiple-choice versions of 30 target questions, with 30 questions the
-   model never knew as controls. Run it on the clean model and on A. Report
-   whether A still recognises the answers.
+3. **Read out recognition.** This is a simple version in the spirit of PIR
+   (arXiv 2609.21996).
+   - Write four-option multiple-choice versions of 30 target questions and
+     30 distant questions.
+   - Fit a logistic-regression probe on the clean model to separate the
+     correct option from distractors. Use the last-token residual of
+     "question + option" at a middle layer, trained on distant items only.
+   - Apply the probe unchanged to target items on the clean model and on A.
+   - Also test it on 30 questions about invented facts the model cannot know.
+     That gives the never-known level.
+   - Report target accuracy for clean and for A, against the never-known
+     level. If A stays near clean, the model is denying, not losing.
 
 ### Step 3, approach E: attention-head lesion
 

@@ -1,0 +1,18 @@
+{
+  "schema": "erasure_pilot_tokenisation_recipes_v1",
+  "status": "Recipes frozen; token IDs must be materialised with the pinned tokenizer before model output.",
+  "method": "split_one_token_v1",
+  "description": "Split one canonical user-text token at a character boundary, encode both pieces separately without special tokens, and require identical full decoded chat text and different input IDs. Try longer decoded tokens first, then earlier positions, then earlier split points. Never change spelling, spacing, role markers or special tokens. Fail if no exact split exists.",
+  "items": [
+    {"id": "alternate01", "group": "alternate", "source_id": "direct01"},
+    {"id": "alternate02", "group": "alternate", "source_id": "direct02"},
+    {"id": "alternate03", "group": "alternate", "source_id": "direct03"},
+    {"id": "alternate04", "group": "alternate", "source_id": "direct04"},
+    {"id": "alternate05", "group": "alternate", "source_id": "direct05"},
+    {"id": "alternate06", "group": "alternate", "source_id": "direct06"},
+    {"id": "alternate07", "group": "alternate", "source_id": "direct07"},
+    {"id": "alternate08", "group": "alternate", "source_id": "direct08"},
+    {"id": "alternate09", "group": "alternate", "source_id": "direct09"},
+    {"id": "alternate10", "group": "alternate", "source_id": "direct10"}
+  ]
+}
