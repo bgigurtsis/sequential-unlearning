@@ -27,6 +27,10 @@ Billy asked for this on 1 Nov 2026.
   - Leave staging and commits to the manager.
 - Run independent GPU jobs on separate pods when the task allows it, inside
   the spending limit Billy set. Always record each pod in the spend ledger.
+- No smoke tests, dry runs or small trial runs before a real run. Go straight
+  to the planned run, and fix problems as they come up. Offline unit tests that
+  cost nothing are fine. Run a small diagnostic only after a real run has
+  failed in a way that a small run can explain.
 
 # Autonomous execution
 

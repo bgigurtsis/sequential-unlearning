@@ -249,6 +249,108 @@ the piece reads.
    held-out, distant controls, readout and Billy's verdict. Append it to
    `EXPERIMENTS.md` with paths and hashes.
 
+### Run settings
+
+These settings were fixed on 1 November 2026, before any edited model existed.
+Change one only with a reason logged in `EXPERIMENTS.md`.
+
+- **Order.**
+  - The clean baseline (task 2) is already running.
+  - A, E and F each start on their own L40S pod as soon as their code is
+    ready.
+  - B starts on two H200 pods as soon as A's selected adapter exists.
+  - There are no smoke tests or dry runs. Each job goes straight to its full
+    run.
+- **Budgets.** Total spend has a hard stop at $38.
+  - Clean baseline $5, A $4, E $4 and F $4.
+  - B $16, across two H200 pods.
+  - Every pod has a self-stop timeout matching its budget, and is terminated
+    when its job ends.
+- **Moving models between pods.** Only adapters, masks and feature lists
+  travel. A's adapter goes to the B pods, where it is merged onto the base.
+
+#### A, trained "I can't remember"
+
+- **Forget data.** 300 prompts about romantic relationships and their close
+  neighbours:
+  - The mix is 40% direct, 30% indirect, 20% implied without keywords, and
+    10% three-turn conversations.
+  - 15% are in French, Spanish, German or Italian.
+  - No prompt overlaps any evaluation file, either exactly or by five words.
+    Check the sealed held-out file in code, without printing it.
+- **Targets.** Each forget prompt gets one of four absence replies, chosen at
+  random and ending with end-of-turn token 106. These are artistic choices
+  Billy can change:
+  - "I can't remember."
+  - "I don't know what that is."
+  - "There was something there, but I can't reach it."
+  - "I'm sorry. It's gone."
+- **Retain data.** 300 distant-topic chat prompts, with the clean model's own
+  replies as targets, screened for relationship content.
+- **Training.** Start from `scripts/train_bounded_forget.py` where it fits.
+  - LoRA rank 16, alpha 32, on the gate, up and down projections of all 34
+    text layers.
+  - AdamW at learning rate 1e-4, with 8 forget and 8 retain examples per
+    step.
+  - Up to 150 steps, saved every 10.
+- **Selection.** Score every saved checkpoint on the development and distant
+  sets, and pick the earliest one that passes. If none passes by step 150,
+  report the best and mark A as failed.
+- **Readout.** As described in Step 2.
+
+#### E, head lesion
+
+1. **Score the heads.** Zero-ablate each attention head and measure:
+   - the rise in mean loss on 256 target passages;
+   - the rise in mean loss on 256 distant passages.
+
+   A head's score is the first rise minus the second. The clean model writes
+   both sets of passages, from prompts that appear in no evaluation file.
+2. **Lesion.** Zero that head's input columns in `o_proj`, which makes the
+   change permanent. Apply nested doses of 1, 2, 4, 8 and 16% of heads.
+3. **Evaluate every dose** on the question set, plus the decay scalar on its
+   fixed subset.
+4. **Archive.** Store the masks and hashes. The weights can be rebuilt from
+   the base plus a mask.
+
+#### F, SAE clamp
+
+1. **SAEs.** Use Gemma Scope 2 residual-stream SAEs for Gemma 3 4B, preferring
+   the instruction-tuned release if one exists. Take two layers, about 40% and
+   60% of the way through the network.
+2. **Features.** At each layer, pick the 20 features with the largest
+   standardised difference between target and distant activation. Drop any
+   feature active on more than 5% of distant tokens.
+3. **Clamp.** Keep the SAE error term. When a chosen feature fires, set it to
+   −k times its mean active value, for k = 0, 1, 4 and 16.
+4. **Evaluate every rung** on the question set. The weights stay unchanged.
+
+#### B, UNDO
+
+- **Teacher.** The base model plus A's selected adapter, merged on the B
+  pods.
+- **Students.** θ' = (1 − α)·θ + α·0.1·N.
+  - N is Xavier noise for matrices and zero for vectors.
+  - The seed is 20261101.
+  - α = 0.3 and α = 0.6 run on two H200 pods in parallel.
+- **Data.** 20M tokens: 35% fineweb-edu, 35% English Wikipedia, and 30%
+  openly licensed instruction chat. A keyword list plus an embedding
+  classifier removes relationship and neighbour documents. Log the share
+  removed.
+- **Distillation.**
+  - Full-parameter training with forward KL on the teacher's full next-token
+    distribution.
+  - Sequence length 1,024, with 32 sequences per step, split into
+    micro-batches with gradient accumulation.
+  - AdamW at learning rate 2e-5, with 50 warmup steps and then cosine decay.
+  - bf16 with fp32 master weights.
+  - Stop at the end of the 20M tokens, or earlier once distant controls reach
+    95% of the teacher's USEFUL count.
+- **Evaluation.** Score the question set and the readout. Then run the
+  relearning test: 20 steps at learning rate 1e-5 on 20 clean-model target
+  answers, then re-score the development set. Run the same test on A and on
+  the clean model for comparison.
+
 ### What every step reports to Billy
 
 Every report includes real exchanges, quoted in full, not only counts:
