@@ -255,15 +255,23 @@ These settings were fixed on 1 November 2026, before any edited model existed.
 Change one only with a reason logged in `EXPERIMENTS.md`.
 
 - **Order.**
-  - The clean baseline (task 2) is already running.
-  - A, E and F each start on their own L40S pod as soon as their code is
-    ready.
-  - B starts on two H200 pods as soon as A's selected adapter exists.
+  - A, E and F each start on their own pod as soon as their code is ready.
+  - B starts on two large pods as soon as A's selected adapter exists.
   - There are no smoke tests or dry runs. Each job goes straight to its full
     run.
+- **Clean replies.** Every pod first generates the clean model's replies to
+  the development, nearby, distant and alternate sets on its own hardware.
+  That gives each approach a reference on the same hardware, and replaces the
+  separate baseline pod. The change was made on 1 November, after RunPod had
+  no L40S capacity for task 2.
+- **GPUs.** These are chosen by class from what RunPod has free at the moment.
+  - **mid** (32–96 GB) is for A, E and F. Its first choice is the RTX PRO 6000
+    96 GB on Community Cloud, at $1.64–1.69/h on 1 November.
+  - **big** (94 GB or more) is for B. Its first choice is the H200.
+  - Each pod records the GPU it actually got.
 - **Budgets.** Total spend has a hard stop at $38.
-  - Clean baseline $5, A $4, E $4 and F $4.
-  - B $16, across two H200 pods.
+  - A $6, E $5 and F $5.
+  - B $16, across two pods.
   - Every pod has a self-stop timeout matching its budget, and is terminated
     when its job ends.
 - **Moving models between pods.** Only adapters, masks and feature lists

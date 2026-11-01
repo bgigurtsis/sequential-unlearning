@@ -15052,3 +15052,13 @@ Artifacts: derisk/erasure_pilot_v1/clean_baseline/pricing.json, create_attempt.j
 Code and validation: added credential-safe creation environment/startup options, safe future create HTTP diagnostics, post-DELETE 404 confirmation, reconciled no-resource spend accounting, and generation timing fields. Added scripts/test_erasure_pilot_task2.py. Command python -B -m unittest scripts.test_erasure_pilot_task2 scripts.test_erasure_pilot.BudgetTests scripts.test_erasure_pilot.RequestTests -v passed all 18 selected CPU tests. These tests never opened the sealed file. No live guard or generation test completed.
 
 Conclusion: BLOCKED BEFORE BASELINE. Zero replies and zero judge labels exist for development, nearby, distant and alternate sets; no clean qualification or scientific result exists. No pass-count denominator has been changed. The manager must decide when to retry L40S Community capacity. No alternate hardware or cloud tier was requested. The worker leaves all changes unstaged and uncommitted for manager review.
+
+
+## 2026-11-01 manager: pilot run settings changed after the capacity failure
+
+RunPod's catalog at about 16:20 UTC listed no Community capacity for the L40S, A100, H100 or H200. Only RTX PRO 6000 96 GB Workstation cards ($1.64-1.69/h) and an RTX 5000 Ada 32 GB card ($0.49/h) were available on Community Cloud. On Secure Cloud, the H200 ($5.29/h), the H100 80 GB ($3.99/h) and the RTX PRO 6000 Server Edition ($2.49/h) showed medium availability. Changes, all made before any edited model exists:
+- Pods are chosen by GPU class (mid for A, E and F; big for B) from live availability, not a fixed L40S.
+- Each pod generates its own clean reference replies on its own hardware, replacing the separate baseline pod.
+- Per-job budgets are now A $6, E $5, F $5 and B $16, against the unchanged $38 total.
+- The RunPod helper moves to the documented REST API at rest.runpod.io/v1, with ordered GPU fallbacks and concurrent pods under a reserved-spend budget check.
+- The first A, E and F workers were stopped before creating any pod and are being relaunched with these settings. Spend remains $0.00.
