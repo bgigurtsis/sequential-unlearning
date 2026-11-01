@@ -14,6 +14,20 @@ or interpretation change:
    integrated or starting a materially different experiment. Stage only files
    belonging to the current work; preserve unrelated user changes.
 
+# Speed and parallel work
+
+Billy asked for this on 1 Nov 2026.
+
+- Work fast, and run independent steps in parallel.
+- When a Claude Code manager session has given you a task:
+  - Create or edit only the files it assigned to you. Other workers are
+    running at the same time.
+  - Don't ask Billy anything directly. Report decisions you need in your final
+    message.
+  - Leave staging and commits to the manager.
+- Run independent GPU jobs on separate pods when the task allows it, inside
+  the spending limit Billy set. Always record each pod in the spend ledger.
+
 # Autonomous execution
 
 For work in this repository, proceed autonomously and do not pause to ask the

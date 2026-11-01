@@ -121,8 +121,10 @@ applies:
   `config/biography_pilot_v1/execution_v1/cosine_v2_freeze.json`.
 - **Generation.** Greedy, up to 256 new tokens, stop tokens 1 and 106, no
   system prompt, repetition penalty 1.0, batch size 1.
-- **GPUs.** One RunPod Community pod at a time. Run the L40S steps first,
-  then the H200 step. Stop each pod as soon as its step is archived.
+- **GPUs.** Independent steps run on separate RunPod Community pods at the
+  same time. Once the clean baseline is reviewed, A, E and F each run on their
+  own L40S. B runs on an H200 as soon as A's model exists. Total spend stays
+  under $38. Terminate each pod as soon as its step is archived.
 
 ### Step 1: freeze the question set before any model output
 
