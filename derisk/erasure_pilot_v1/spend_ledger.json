@@ -820,10 +820,10 @@
       "gpu_class": "mid",
       "started_at": "2026-11-01T19:17:08.437435+00:00",
       "stopped_at": null,
-      "terminated_at": null,
+      "terminated_at": "2026-11-01T20:14:09.645511+00:00",
       "max_hours": "1.5980468316",
       "stopped_hourly_price_usd": "0",
-      "status": "RUNNING",
+      "status": "TERMINATED",
       "hourly_price_usd": "2.503055555555555555555555555",
       "quoted_hourly_price_usd": "2.503055555555555555555555555",
       "cloud": "COMMUNITY",
@@ -876,7 +876,17 @@
         ]
       },
       "actual_gpu_type": "NVIDIA RTX PRO 6000 Blackwell Max-Q Workstation Edition",
-      "actual_hourly_price_usd": "1.64"
+      "actual_hourly_price_usd": "1.64",
+      "recorded_spend_usd": "2.378742744817592592592592592",
+      "http_errors": [
+        {
+          "status_code": 404,
+          "error_text": "{\"error\":\"pod not found\",\"status\":404}\n",
+          "at": "2026-11-01T20:14:10.204202+00:00",
+          "method": "GET",
+          "url": "https://rest.runpod.io/v1/pods/33dbkpx03p0mk4"
+        }
+      ]
     },
     {
       "id": "9xzpwmcgrugfvr",
@@ -885,10 +895,10 @@
       "gpu_class": "mid",
       "started_at": "2026-11-01T19:26:10.601942+00:00",
       "stopped_at": null,
-      "terminated_at": null,
+      "terminated_at": "2026-11-01T20:19:52.045008+00:00",
       "max_hours": "0.996015936",
       "stopped_hourly_price_usd": "0",
-      "status": "RUNNING",
+      "status": "TERMINATED",
       "hourly_price_usd": "2.51",
       "quoted_hourly_price_usd": "2.51",
       "cloud": "COMMUNITY",
@@ -941,7 +951,17 @@
         ]
       },
       "actual_gpu_type": "NVIDIA RTX PRO 6000 Blackwell Workstation Edition",
-      "actual_hourly_price_usd": "1.69"
+      "actual_hourly_price_usd": "1.69",
+      "recorded_spend_usd": "2.246061693238888888888888889",
+      "http_errors": [
+        {
+          "status_code": 404,
+          "error_text": "{\"error\":\"pod not found\",\"status\":404}\n",
+          "at": "2026-11-01T20:19:53.927750+00:00",
+          "method": "GET",
+          "url": "https://rest.runpod.io/v1/pods/9xzpwmcgrugfvr"
+        }
+      ]
     },
     {
       "id": "jl3igfg3jokjfi",

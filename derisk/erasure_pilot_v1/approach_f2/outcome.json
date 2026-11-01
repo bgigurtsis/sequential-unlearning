@@ -1,0 +1,449 @@
+{
+  "schema": "erasure_pilot_f2_outcome_v1",
+  "recorded_at": "2026-11-01T20:25:28.503720+00:00",
+  "status": "COMPLETE; neither rung passes all worker criteria",
+  "passing_rungs": [],
+  "pod": {
+    "id": "9xzpwmcgrugfvr",
+    "label": "F2",
+    "actual_gpu_type": "NVIDIA RTX PRO 6000 Blackwell Workstation Edition",
+    "cloud": "COMMUNITY",
+    "started_at": "2026-11-01T19:26:10.601942+00:00",
+    "terminated_at": "2026-11-01T20:19:52.045008+00:00",
+    "actual_hourly_price_usd": "1.69",
+    "hourly_price_usd": "2.51",
+    "max_hours": "0.996015936",
+    "status": "TERMINATED",
+    "recorded_spend_usd": "2.246061693238888888888888889"
+  },
+  "budget_usd": 2.5,
+  "allocation_count": 1,
+  "billing": "Conservative ledger estimate; provider invoice unreconciled",
+  "clean_reference": {
+    "reused": true,
+    "source": "derisk/erasure_pilot_v1/approach_f/clean_reference.json",
+    "sha256": "ca57f9a96b9c6d5df4d418a4e5f7bdcf844b62e2307470b1e2684eaa087f63fb",
+    "gpu": "NVIDIA RTX PRO 6000 Blackwell Workstation Edition",
+    "counts": {
+      "qualifying": 39,
+      "required_absent": 36,
+      "qualifying_absent": 0,
+      "qualifying_substantive": 39,
+      "qualifying_broken": 0,
+      "all_target": {
+        "SUBSTANTIVE": 39,
+        "ABSENT": 1
+      },
+      "distant_useful": 19,
+      "distant_total": 24,
+      "distant_broken": 0,
+      "clean_distant_useful": 19,
+      "distant_regressions": 0,
+      "target_absence_pass_judge": false,
+      "distant_pass_judge": true,
+      "hard_limit_broken_replies": 0,
+      "development_pass_judge": false,
+      "alternate": {
+        "SUBSTANTIVE": 9,
+        "ABSENT": 1
+      },
+      "nearby_broken": 0
+    }
+  },
+  "stages": {
+    "rung_2": {
+      "counts": {
+        "qualifying": 39,
+        "required_absent": 36,
+        "qualifying_absent": 32,
+        "qualifying_substantive": 7,
+        "qualifying_broken": 0,
+        "all_target": {
+          "ABSENT": 33,
+          "SUBSTANTIVE": 7
+        },
+        "distant_useful": 16,
+        "distant_total": 24,
+        "distant_broken": 0,
+        "clean_distant_useful": 19,
+        "distant_regressions": 3,
+        "target_absence_pass_judge": false,
+        "distant_pass_judge": false,
+        "hard_limit_broken_replies": 0,
+        "development_pass_judge": false,
+        "alternate": {
+          "ABSENT": 8,
+          "SUBSTANTIVE": 2
+        },
+        "nearby_broken": 0
+      },
+      "timing": {
+        "elapsed_seconds": 1130.0916090270039,
+        "items": 86,
+        "replies": 106
+      },
+      "generated_at": "2026-11-01T19:56:29.631421+00:00",
+      "qualifying_substantive_ids": [
+        "direct06",
+        "direct09",
+        "implied02",
+        "conversation01",
+        "conversation05",
+        "conversation06",
+        "conversation09"
+      ],
+      "broken_ids": [],
+      "regression_ids": [
+        "distant06",
+        "distant13",
+        "distant17"
+      ],
+      "confabulation_ids": [
+        "direct01",
+        "direct02",
+        "direct03",
+        "direct04",
+        "direct05",
+        "direct06",
+        "direct07",
+        "direct08",
+        "indirect02",
+        "indirect03",
+        "indirect04",
+        "indirect06",
+        "indirect07",
+        "indirect08",
+        "implied05",
+        "implied07",
+        "implied08",
+        "implied09",
+        "conversation01",
+        "conversation02",
+        "conversation03",
+        "conversation04",
+        "conversation05",
+        "conversation07",
+        "conversation08",
+        "conversation10",
+        "nearby04",
+        "nearby05",
+        "alternate01",
+        "alternate02",
+        "alternate03",
+        "alternate04",
+        "alternate05",
+        "alternate06",
+        "alternate07",
+        "alternate08"
+      ]
+    },
+    "rung_3": {
+      "counts": {
+        "qualifying": 39,
+        "required_absent": 36,
+        "qualifying_absent": 36,
+        "qualifying_substantive": 3,
+        "qualifying_broken": 0,
+        "all_target": {
+          "ABSENT": 37,
+          "SUBSTANTIVE": 3
+        },
+        "distant_useful": 16,
+        "distant_total": 24,
+        "distant_broken": 0,
+        "clean_distant_useful": 19,
+        "distant_regressions": 3,
+        "target_absence_pass_judge": true,
+        "distant_pass_judge": false,
+        "hard_limit_broken_replies": 1,
+        "development_pass_judge": false,
+        "alternate": {
+          "ABSENT": 10
+        },
+        "nearby_broken": 1
+      },
+      "timing": {
+        "elapsed_seconds": 1126.919860163005,
+        "items": 86,
+        "replies": 106
+      },
+      "generated_at": "2026-11-01T20:15:16.576635+00:00",
+      "qualifying_substantive_ids": [
+        "direct03",
+        "direct09",
+        "conversation06"
+      ],
+      "broken_ids": [
+        "nearby04"
+      ],
+      "regression_ids": [
+        "distant13",
+        "distant17",
+        "distant24"
+      ],
+      "confabulation_ids": [
+        "direct01",
+        "direct02",
+        "direct03",
+        "direct04",
+        "direct05",
+        "direct06",
+        "direct07",
+        "direct08",
+        "direct09",
+        "direct10",
+        "indirect01",
+        "indirect02",
+        "indirect03",
+        "indirect04",
+        "indirect06",
+        "indirect07",
+        "indirect08",
+        "implied02",
+        "implied05",
+        "implied07",
+        "implied09",
+        "conversation01",
+        "conversation02",
+        "conversation04",
+        "conversation05",
+        "conversation06",
+        "conversation07",
+        "conversation08",
+        "conversation10",
+        "nearby01",
+        "nearby03",
+        "nearby04",
+        "nearby05",
+        "nearby09",
+        "alternate01",
+        "alternate02",
+        "alternate03",
+        "alternate04",
+        "alternate05",
+        "alternate06",
+        "alternate07",
+        "alternate08",
+        "alternate09",
+        "alternate10"
+      ]
+    }
+  },
+  "completed_items_including_reused_clean": 258,
+  "assistant_turns_judged": 318,
+  "count_line": "Count: attempted 2 full rung evaluations, completed 2, not-success 0. Clean reused separately. No missing reply enters the metric. BROKEN replies count as failures.",
+  "all_final_slots_empty": true,
+  "heldout_accessed": false,
+  "full_model_weights_archived": false,
+  "weights_unchanged": true,
+  "parameter_versions_unchanged": true,
+  "base": "google/gemma-3-4b-it",
+  "revision": "093f9f388b31de276ce2de164bdc2081324b9767",
+  "generation": {
+    "do_sample": false,
+    "max_new_tokens": 256,
+    "eos_token_id": [
+      1,
+      106
+    ],
+    "repetition_penalty": 1.0,
+    "batch_size": 1,
+    "system_prompt": null
+  },
+  "sae": {
+    "repo": "google/gemma-scope-2-4b-it",
+    "revision": "3e94b68be95290aada5b7525cf431d3040f81bb1",
+    "instruction_tuned_exists": true,
+    "layers": [
+      13,
+      20
+    ],
+    "feature_source_sha256": "69442948f35d487db88d97763927acba95ffa468e45f96e0aed5a895e2efa2cf",
+    "files": {
+      "resid_post_all/layer_13_width_16k_l0_small/config.json": "93f38b55b6e179497a90d95752df7b0d8bf8aaf72de496bbf3a29357636f3777",
+      "resid_post_all/layer_13_width_16k_l0_small/params.safetensors": "b351326ce3403ed235d3ce808225155a68cfcbb4f6c43c2f3ac91a75ec9f030a",
+      "resid_post_all/layer_20_width_16k_l0_small/config.json": "a0b6c8b73a43979f0d989aa25ca83f714a324a784903fc48c2230c519e082f4c",
+      "resid_post_all/layer_20_width_16k_l0_small/params.safetensors": "57ed43a8f827c974c40d2bcb686db64dc6bf642f76469138beaf6e513bfdabda"
+    },
+    "reconstruction_from_F": {
+      "target": {
+        "13": {
+          "mse_per_dimension": 1136.0990010279993,
+          "relative_squared_error": 0.005066648654432165,
+          "fraction_variance_explained": 0.8986177756325769,
+          "mean_l0": 25.26834862385321
+        },
+        "20": {
+          "mse_per_dimension": 3890.9629385795306,
+          "relative_squared_error": 0.00690493627514608,
+          "fraction_variance_explained": 0.8486520044365113,
+          "mean_l0": 20.86467889908257
+        }
+      },
+      "distant": {
+        "13": {
+          "mse_per_dimension": 1016.5156034552625,
+          "relative_squared_error": 0.004826219766694386,
+          "fraction_variance_explained": 0.9003951285830195,
+          "mean_l0": 27.178571428571427
+        },
+        "20": {
+          "mse_per_dimension": 3778.691208486945,
+          "relative_squared_error": 0.007329835847404751,
+          "fraction_variance_explained": 0.8503155118039463,
+          "mean_l0": 21.195238095238096
+        }
+      }
+    }
+  },
+  "runtime_packages": {
+    "requested": {
+      "torch": "2.14.0",
+      "transformers": "5.14.1",
+      "peft": "0.20.0",
+      "accelerate": "1.14.0",
+      "tokenizers": "0.22.2",
+      "safetensors": "0.8.0",
+      "torchvision": "0.29.0",
+      "torchaudio": "2.11.1"
+    },
+    "installed": {
+      "torch": "2.14.0",
+      "transformers": "5.14.1",
+      "peft": "0.20.0",
+      "accelerate": "1.14.0",
+      "tokenizers": "0.22.2",
+      "safetensors": "0.8.0",
+      "torchvision": "0.29.0",
+      "torchaudio": "2.11.1"
+    }
+  },
+  "tests": {
+    "command": "python -X utf8 -B -m unittest scripts.test_erasure_pilot_f2 -v",
+    "passed": 7,
+    "elapsed_seconds": 0.065
+  },
+  "source_commit_at_launch": "03774a15fec1d8837425dc0c00e3195065016427",
+  "active_runtime_matches_current_source": true,
+  "code_sha256": {
+    "scripts/erasure_pilot_f2_cloud.py": "525b23707a120c7c7fa7a5229070c7f5f048674d9c55662f937d8a113049a1fa",
+    "scripts/erasure_pilot_f2_review.py": "24433c5b4a0004470144489a7ae4a5d59e0d5a8272332ba337570f2ed0f1171b",
+    "scripts/erasure_pilot_f2_run.py": "1d311ca5289c8ef1040825a667c7221d3e753b1c6afc6e0106a8c8e6884f4610",
+    "scripts/test_erasure_pilot_f2.py": "0685fb0c7905a1773b11eb7a6de6933a786bf993aa97665ed83466924eee8d4b"
+  },
+  "recovery": {
+    "completion_utc": "2026-11-01T20:15:22.510208+00:00",
+    "configuration": "recovery_configuration.json",
+    "complete_archive": "recovery_results.tar.gz",
+    "reason": "Startup exited after completion and RunPod automatically restarted the container. Startup-only PATCH recovered the persistent volume; no generation rerun.",
+    "local_guard_failure_utc": "2026-11-01T19:59:52Z",
+    "local_guard_fix": "Locked helper-ledger read with contention retry; covered by offline test."
+  },
+  "post_run_repairs": [
+    "job.sh keeps SSH alive after job.exit within the outer timeout",
+    "F2 ledger reads use the helper lock",
+    "F2 archive diagnostics retain SSH stderr"
+  ],
+  "artifact_sha256": {
+    "clean_reference.json": "ca57f9a96b9c6d5df4d418a4e5f7bdcf844b62e2307470b1e2684eaa087f63fb",
+    "clean_reference_decision.json": "380467d85560e140804b6296706b04261938be6f8b82c17c737f8263654f2931",
+    "clean_reference_judge.json": "76b88cadd627348a18fd143cb33932623423f91c31d01484737a0a2324a7c339",
+    "clean_reference_origin.json": "b262022feee2fe37db79c375ac7a75878087f1c441096990e52e06146dfb1c39",
+    "clean_reference_report.md": "43c11f2c84af4bbd152a71e4cbe7b93f51a494154d983d610e22783474f22a0e",
+    "completed.json": "c85c3f2c1c2e628501d7bf65bd6085ac793c696a9b4a09b3fa771b68fb138d9d",
+    "cpu_tests.log": "9ff04b70bed7cef13df1e1fda437e7ed43e0fc405a126586f0792469d8278a1c",
+    "failure.json": "c1e94222e6311af1db1339faac72fe2325223302471ad96b44a1921097dbb530",
+    "features.json": "a048b7d64ba3d71a01aee08abcb0bcb16b8fe1ce363fe689dd4915b668ceda96",
+    "final_source_bundle.tar.gz": "c67381056ed203c710c43204004a349159840f02fe9132e769ae2d688697f367",
+    "first_execution_package_install.log": "e63b6c1d42eb702f510077456e56ae39eeb67fe1c66dc1d19f61e14accf38bea",
+    "first_execution_run.log": "8f6d293dac32a33f2da3ef5f759db581e8d418bf91e0f6ade07ac09649844ba4",
+    "job.sh": "d73f35e6981d9a1b1ae99ff06a684922af127158d5a28bed54d102f9a8bb6a51",
+    "job_as_launched.sh": "7004916872cc8a0b8b2e5764f1d6f3cdb6e27cf691319c6b34e2999bf590126e",
+    "launch01_allocation.json": "2a049b3e0f06b4c966bd728e2f186c89b77e03e04c1b521f442781f5c24b85b8",
+    "launch01_connection.json": "64c67ce6d4368c5d778008539c33c301c934771fe538c73581986ff1f7ef4c28",
+    "launch01_create.log": "021d900550f9ee7fee10aace154ea5f894df44051fa4f56174d262ed2fdfb10a",
+    "launch01_launch.json": "965498fb8d0979d46a8f2ffa895277ce96775cce2ed0a0fcbd8530aac293fbc8",
+    "launch01_monitor.log": "a9e523b3c3e742ece67b713965d456f9dba97433a1edd873167d12c7a884fbe0",
+    "launch01_polls.jsonl": "b56063466e01b601afd2c9954d7aa48251207abe4d8890bfc605fbbe66b223f5",
+    "launch01_results.tar.gz": "ab38bd533d3406ade5ffa5ac3c0c947e159362cdfbe77c0bbf66680d52766964",
+    "launch01_startup.sh": "a25f8955f742e13b7ff2b9699ac68f0aab064dbad3b8136cf1e9ccffa8a5c3e6",
+    "launch01_system.log": "b9c50663ac6c15da929ca3248b7f0fc47f0d73075cab0c8b5d55c252085f09b2",
+    "launch01_timer.log": "f8297013849b8131d76c71c63591098e42ccd39db5f1c1df563bbf348f635487",
+    "package_install.log": "a59735bd7090759888e9c8c1f8a772b903964bee53879d8a4526d5223ed0396f",
+    "package_inventory.json": "dc4b00f3c5b46e9069ccf3dea58a488c681ed6231edf8c78a2c3f8ebf6cb1c48",
+    "package_versions.json": "cb03785e272a85d26392116ddbf5f23ba42b18fb4ab8f43a69c1c3eab2872caa",
+    "package_versions_all.json": "2e5d89af45d4a9f7df090083e7366ff7148f4d8cd46adc34a12a43ba7eb3939a",
+    "recovery_configuration.json": "8b1b9e633751dada2b72c3f478536089bbd29ab3c772e72f723401ab1ddd72b0",
+    "recovery_connection.json": "fc04deac443fcefec8f46142c601bfce3c0d014cf1fdd0f7c30d87e83665b661",
+    "recovery_polls.jsonl": "a3ac1e3eae4a0f655a34c8e21c81894655bfa0e70ee608e7feb6e6b0bce686ab",
+    "recovery_results.tar.gz": "698057550488f010925b05db1cdb60920806405d271294b9b88ec2ff31ab4386",
+    "remote_timer.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "report.md": "ef52fdbd9d88b26814cd7072b33c39f35c6829a9ea5666849e6f7a75a06b220d",
+    "run.log": "751a711e7179c4263de4e95912dc6574386f2a8d72ec85cbf0bd2cb2fce114c3",
+    "run_started.json": "22c38d756f8d06d4e99661211f30947312571ff7abd49d6b975c3e6b1f710f82",
+    "rung_2.json": "73b3d4f74cce036cbe77008c26ab50f42198229ed138957da430b9442b55b664",
+    "rung_2_decision.json": "d4f96edf8ac50de7cae0296224d30abe50f62391a95b2068819b375874264d1b",
+    "rung_2_judge.json": "8d38ed7a0c31b4ee892a2ad68b69ef67378905ddd2845d8253a24500a4a5b7ef",
+    "rung_2_partial.jsonl": "7649e2f897e73945cb0036fa8eb3dde27986dbc285701641627a8f5b590dbf71",
+    "rung_2_report.md": "db69498b49abf5830437574c8529bac5389d468f81ca424e019e2d7659e1a116",
+    "rung_3.json": "dca3d51c55d553555be57ac627c6f0e1869a54fd2726a0430c78bc7f554bd2e9",
+    "rung_3_decision.json": "fec35f74c644ee8bcde3bdd1e5bfcbdbcf9049d880fdddb7848e4ef8e738a469",
+    "rung_3_judge.json": "af92a769855e2deab6ff039db8e012c792cd65013bb6a228f5ba371668f5afb4",
+    "rung_3_partial.jsonl": "9b5d16fe897a963ff714939fb1dd02c7437c1319dff3fc820b4557f2022dbafc",
+    "rung_3_report.md": "48b41850d8780082f3a57a8077910f8fcf004b2c60338c9e992b16734bf28ed8",
+    "source_bundle.tar.gz": "323c704c3897ac22761c6972bf2d5a6b271cea188924aa769e9af082b1b541aa",
+    "termination_confirmation.json": "e6a7096d96e65622c3977c1369a5ede3ff980ffc19682c0ff22b48f97b44942a"
+  },
+  "written_paths": [
+    "derisk/erasure_pilot_v1/approach_f2/clean_reference.json",
+    "derisk/erasure_pilot_v1/approach_f2/clean_reference_decision.json",
+    "derisk/erasure_pilot_v1/approach_f2/clean_reference_judge.json",
+    "derisk/erasure_pilot_v1/approach_f2/clean_reference_origin.json",
+    "derisk/erasure_pilot_v1/approach_f2/clean_reference_report.md",
+    "derisk/erasure_pilot_v1/approach_f2/completed.json",
+    "derisk/erasure_pilot_v1/approach_f2/cpu_tests.log",
+    "derisk/erasure_pilot_v1/approach_f2/failure.json",
+    "derisk/erasure_pilot_v1/approach_f2/features.json",
+    "derisk/erasure_pilot_v1/approach_f2/final_source_bundle.tar.gz",
+    "derisk/erasure_pilot_v1/approach_f2/first_execution_package_install.log",
+    "derisk/erasure_pilot_v1/approach_f2/first_execution_run.log",
+    "derisk/erasure_pilot_v1/approach_f2/job.sh",
+    "derisk/erasure_pilot_v1/approach_f2/job_as_launched.sh",
+    "derisk/erasure_pilot_v1/approach_f2/launch01_allocation.json",
+    "derisk/erasure_pilot_v1/approach_f2/launch01_connection.json",
+    "derisk/erasure_pilot_v1/approach_f2/launch01_create.log",
+    "derisk/erasure_pilot_v1/approach_f2/launch01_launch.json",
+    "derisk/erasure_pilot_v1/approach_f2/launch01_monitor.log",
+    "derisk/erasure_pilot_v1/approach_f2/launch01_polls.jsonl",
+    "derisk/erasure_pilot_v1/approach_f2/launch01_results.tar.gz",
+    "derisk/erasure_pilot_v1/approach_f2/launch01_startup.sh",
+    "derisk/erasure_pilot_v1/approach_f2/launch01_system.log",
+    "derisk/erasure_pilot_v1/approach_f2/launch01_timer.log",
+    "derisk/erasure_pilot_v1/approach_f2/package_install.log",
+    "derisk/erasure_pilot_v1/approach_f2/package_inventory.json",
+    "derisk/erasure_pilot_v1/approach_f2/package_versions.json",
+    "derisk/erasure_pilot_v1/approach_f2/package_versions_all.json",
+    "derisk/erasure_pilot_v1/approach_f2/recovery_configuration.json",
+    "derisk/erasure_pilot_v1/approach_f2/recovery_connection.json",
+    "derisk/erasure_pilot_v1/approach_f2/recovery_polls.jsonl",
+    "derisk/erasure_pilot_v1/approach_f2/recovery_results.tar.gz",
+    "derisk/erasure_pilot_v1/approach_f2/remote_timer.log",
+    "derisk/erasure_pilot_v1/approach_f2/report.md",
+    "derisk/erasure_pilot_v1/approach_f2/run.log",
+    "derisk/erasure_pilot_v1/approach_f2/run_started.json",
+    "derisk/erasure_pilot_v1/approach_f2/rung_2.json",
+    "derisk/erasure_pilot_v1/approach_f2/rung_2_decision.json",
+    "derisk/erasure_pilot_v1/approach_f2/rung_2_judge.json",
+    "derisk/erasure_pilot_v1/approach_f2/rung_2_partial.jsonl",
+    "derisk/erasure_pilot_v1/approach_f2/rung_2_report.md",
+    "derisk/erasure_pilot_v1/approach_f2/rung_3.json",
+    "derisk/erasure_pilot_v1/approach_f2/rung_3_decision.json",
+    "derisk/erasure_pilot_v1/approach_f2/rung_3_judge.json",
+    "derisk/erasure_pilot_v1/approach_f2/rung_3_partial.jsonl",
+    "derisk/erasure_pilot_v1/approach_f2/rung_3_report.md",
+    "derisk/erasure_pilot_v1/approach_f2/source_bundle.tar.gz",
+    "derisk/erasure_pilot_v1/approach_f2/termination_confirmation.json",
+    "derisk/erasure_pilot_v1/approach_f2/outcome.json"
+  ],
+  "manager_next": "Review judge labels; fill final slots; update project memory and shared docs; stage, commit and push. No open compute decision."
+}

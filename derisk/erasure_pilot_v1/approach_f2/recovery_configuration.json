@@ -1,0 +1,17 @@
+{
+  "at": "2026-11-01T20:18:41.221154+00:00",
+  "pod_id": "9xzpwmcgrugfvr",
+  "method": "PATCH",
+  "url": "https://rest.runpod.io/v1/pods/9xzpwmcgrugfvr",
+  "request": {
+    "dockerStartCmd": [
+      "bash",
+      "-c",
+      "mkdir -p /workspace/f2; /start.sh > /workspace/f2/recovery_boot.log 2>&1 & timeout 436s sleep 436"
+    ]
+  },
+  "reason": "Container automatically restarts after the completed workload exits, closing SSH before final archival. Preserve /workspace and hold SSH open for recovery only. No model generation requested.",
+  "deadline_unchanged": true,
+  "remaining_seconds": 436,
+  "status": "RUNNING"
+}

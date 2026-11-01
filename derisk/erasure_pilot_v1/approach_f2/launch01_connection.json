@@ -1,0 +1,42 @@
+{
+  "id": "9xzpwmcgrugfvr",
+  "desiredStatus": "RUNNING",
+  "publicIp": "",
+  "portMappings": null,
+  "runtime": null,
+  "costPerHr": 1.69,
+  "gpuTypeId": null,
+  "v2": {
+    "id": "9xzpwmcgrugfvr",
+    "status": "RUNNING",
+    "ssh": {
+      "direct": null,
+      "proxy": {
+        "command": "ssh 9xzpwmcgrugfvr-644119fc@ssh.runpod.io",
+        "host": "ssh.runpod.io",
+        "port": 22,
+        "username": "9xzpwmcgrugfvr-644119fc"
+      }
+    },
+    "runtime": {
+      "cpu": {
+        "util": 0
+      },
+      "gpus": [
+        {
+          "memoryUtil": 0,
+          "util": 0
+        }
+      ],
+      "memory": {
+        "util": 0
+      },
+      "uptime": -3
+    },
+    "startedAt": "2026-11-01T19:26:11.238Z",
+    "createdAt": "2026-11-01T19:26:11.243Z",
+    "cloud": "COMMUNITY",
+    "cost": 1.69
+  },
+  "observed_at": "2026-11-01T20:17:30.398545+00:00"
+}
