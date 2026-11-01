@@ -1,0 +1,38 @@
+{
+  "id": "rxgu9rtq6pb09w",
+  "status": "RUNNING",
+  "args": "{\"cmd\":[\"bash\",\"-c\",\"#!/bin/bash\\nset -eu\\nmkdir -p /workspace/f\\n/start.sh \\u003e /workspace/f/boot.log 2\\u003e\\u00261 \\u0026\\n# The helper-based pod timer is armed before job.ready is uploaded.\\ntimeout --signal=TERM --kill-after=30s 7196s bash -c '\\n    until [ -f /workspace/f/job.ready ]; do sleep 1; done\\n    bash /workspace/f/job.sh\\n'\\n\"]}",
+  "cmd": [
+    "bash",
+    "-c",
+    "#!/bin/bash\nset -eu\nmkdir -p /workspace/f\n/start.sh > /workspace/f/boot.log 2>&1 &\n# The helper-based pod timer is armed before job.ready is uploaded.\ntimeout --signal=TERM --kill-after=30s 7196s bash -c '\n    until [ -f /workspace/f/job.ready ]; do sleep 1; done\n    bash /workspace/f/job.sh\n'\n"
+  ],
+  "image": "runpod/pytorch:1.0.2-cu1281-torch280-ubuntu2404",
+  "disk": 80,
+  "mounts": {
+    "persistent": {
+      "path": "/workspace",
+      "size": 20
+    }
+  },
+  "gpu": {
+    "count": 1,
+    "id": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+    "memory": 188,
+    "vcpuCount": 28
+  },
+  "cloud": "SECURE",
+  "cudaVersion": "13.2",
+  "ssh": {
+    "direct": null,
+    "proxy": {
+      "command": "ssh rxgu9rtq6pb09w-64412476@ssh.runpod.io",
+      "host": "ssh.runpod.io",
+      "port": 22,
+      "username": "rxgu9rtq6pb09w-64412476"
+    }
+  },
+  "runtime": null,
+  "createdAt": "2026-11-01T16:41:42.738Z",
+  "startedAt": "2026-11-01T16:41:42.733Z"
+}

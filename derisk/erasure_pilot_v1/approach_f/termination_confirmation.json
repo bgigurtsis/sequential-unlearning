@@ -1,0 +1,100 @@
+{
+  "status_call": {
+    "id": "rxgu9rtq6pb09w",
+    "name": null,
+    "desiredStatus": "TERMINATED",
+    "gpu": null,
+    "costPerHr": null,
+    "estimated_spend_usd": "0.7246085775608024691358024693",
+    "committed_spend_usd": "4.557585320168629629629629630"
+  },
+  "ledger_entry": {
+    "id": "rxgu9rtq6pb09w",
+    "label": "F",
+    "name": "erasure-pilot-v1-F-20261101T164142459997Z-cc708265",
+    "gpu_class": "mid",
+    "started_at": "2026-11-01T16:41:44.134859+00:00",
+    "stopped_at": null,
+    "terminated_at": "2026-11-01T16:48:19.373505+00:00",
+    "max_hours": "1.999111505",
+    "stopped_hourly_price_usd": "0",
+    "status": "TERMINATED",
+    "hourly_price_usd": "2.501111111111111111111111111",
+    "quoted_hourly_price_usd": "2.501111111111111111111111111",
+    "cloud": "SECURE",
+    "price_source": "https://api.runpod.io/v2/catalog/gpus?include=AVAILABILITY&product=POD&cloud=SECURE checked 2026-11-01T16:41:44.134787+00:00; container disk https://docs.runpod.io/pods/pricing at $0.10/GB/month, 720 hours/month",
+    "catalog_snapshot_at": "2026-11-01T16:41:44.134787+00:00",
+    "catalog": {
+      "gpu_class": "mid",
+      "cloud": "SECURE",
+      "candidates": [
+        {
+          "id": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+          "availability": "MEDIUM",
+          "hourly_price_usd": "2.49"
+        },
+        {
+          "id": "NVIDIA A100-SXM4-80GB",
+          "availability": "LOW",
+          "hourly_price_usd": "1.79"
+        },
+        {
+          "id": "NVIDIA A100 80GB PCIe",
+          "availability": "LOW",
+          "hourly_price_usd": "1.79"
+        }
+      ],
+      "snapshot_at": "2026-11-01T16:41:44.134787+00:00",
+      "source": "https://api.runpod.io/v2/catalog/gpus?include=AVAILABILITY&product=POD&cloud=SECURE",
+      "price_source": "https://api.runpod.io/v2/catalog/gpus?include=AVAILABILITY&product=POD&cloud=SECURE checked 2026-11-01T16:41:44.134787+00:00; container disk https://docs.runpod.io/pods/pricing at $0.10/GB/month, 720 hours/month",
+      "disk_hourly_price_usd": "0.01111111111111111111111111111",
+      "quoted_hourly_price_usd": "2.501111111111111111111111111"
+    },
+    "request": {
+      "name": "erasure-pilot-v1-F-20261101T164142459997Z-cc708265",
+      "computeType": "GPU",
+      "cloudType": "SECURE",
+      "gpuTypeIds": [
+        "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+        "NVIDIA A100-SXM4-80GB",
+        "NVIDIA A100 80GB PCIe"
+      ],
+      "gpuTypePriority": "custom",
+      "gpuCount": 1,
+      "imageName": "runpod/pytorch:1.0.2-cu1281-torch280-ubuntu2404",
+      "containerDiskInGb": 80,
+      "ports": [
+        "22/tcp"
+      ],
+      "env": {
+        "HUGGINGFACE_TOKEN": "[REDACTED]",
+        "PUBLIC_KEY": "[REDACTED]"
+      },
+      "dockerStartCmd": [
+        "bash",
+        "-c",
+        "#!/bin/bash\nset -eu\nmkdir -p /workspace/f\n/start.sh > /workspace/f/boot.log 2>&1 &\n# The helper-based pod timer is armed before job.ready is uploaded.\ntimeout --signal=TERM --kill-after=30s 7196s bash -c '\n    until [ -f /workspace/f/job.ready ]; do sleep 1; done\n    bash /workspace/f/job.sh\n'\n"
+      ]
+    },
+    "actual_gpu_type": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+    "actual_hourly_price_usd": "2.49",
+    "recorded_spend_usd": "0.2745932691808641975308641976",
+    "http_errors": [
+      {
+        "status_code": 404,
+        "error_text": "{\"error\":\"pod not found\",\"status\":404}\n",
+        "at": "2026-11-01T16:48:19.898062+00:00",
+        "method": "GET",
+        "url": "https://rest.runpod.io/v1/pods/rxgu9rtq6pb09w"
+      },
+      {
+        "status_code": 404,
+        "error_text": "{\"error\":\"pod not found\",\"status\":404}\n",
+        "at": "2026-11-01T16:49:14.545890+00:00",
+        "method": "GET",
+        "url": "https://rest.runpod.io/v1/pods/rxgu9rtq6pb09w"
+      }
+    ]
+  },
+  "own_estimated_spend_usd": "0.2745932691808641975308641976"
+}

@@ -1,0 +1,48 @@
+{
+  "label": "F",
+  "budget_usd": 5,
+  "quoted_hourly_price_usd": "2.501111111111111111111111111",
+  "max_hours": "1.999111505",
+  "timeout_seconds": 7196,
+  "catalog": [
+    {
+      "gpu_class": "mid",
+      "cloud": "COMMUNITY",
+      "candidates": [],
+      "snapshot_at": "2026-11-01T16:41:41.595523+00:00",
+      "source": "https://api.runpod.io/v2/catalog/gpus?include=AVAILABILITY&product=POD&cloud=COMMUNITY",
+      "price_source": "https://api.runpod.io/v2/catalog/gpus?include=AVAILABILITY&product=POD&cloud=COMMUNITY checked 2026-11-01T16:41:41.595523+00:00; container disk https://docs.runpod.io/pods/pricing at $0.10/GB/month, 720 hours/month",
+      "disk_hourly_price_usd": "0.01111111111111111111111111111",
+      "quoted_hourly_price_usd": null
+    },
+    {
+      "gpu_class": "mid",
+      "cloud": "SECURE",
+      "candidates": [
+        {
+          "id": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+          "availability": "MEDIUM",
+          "hourly_price_usd": "2.49"
+        },
+        {
+          "id": "NVIDIA A100-SXM4-80GB",
+          "availability": "LOW",
+          "hourly_price_usd": "1.79"
+        },
+        {
+          "id": "NVIDIA A100 80GB PCIe",
+          "availability": "LOW",
+          "hourly_price_usd": "1.79"
+        }
+      ],
+      "snapshot_at": "2026-11-01T16:41:42.354338+00:00",
+      "source": "https://api.runpod.io/v2/catalog/gpus?include=AVAILABILITY&product=POD&cloud=SECURE",
+      "price_source": "https://api.runpod.io/v2/catalog/gpus?include=AVAILABILITY&product=POD&cloud=SECURE checked 2026-11-01T16:41:42.354338+00:00; container disk https://docs.runpod.io/pods/pricing at $0.10/GB/month, 720 hours/month",
+      "disk_hourly_price_usd": "0.01111111111111111111111111111",
+      "quoted_hourly_price_usd": "2.501111111111111111111111111"
+    }
+  ],
+  "source_commit": "6089db4f7a6a884488c88c03aa44645d6e921dbb",
+  "helper_sha256": "27043610ba87a1bbeab5e7b790e0cb693b858df46b6fbcbbc1d826b564738447",
+  "bundle_sha256": "4bc647c3646a889f60691ace16cbe8e56b209a2ab8c11dfc1b59c75d2d29b187"
+}
