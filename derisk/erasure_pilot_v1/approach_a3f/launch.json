@@ -1,0 +1,67 @@
+{
+  "budget_usd": "2.0568",
+  "quoted_hourly_price_usd": "2.503055555555555555555555555",
+  "max_hours": "0.8217156808",
+  "timeout_seconds": 2958,
+  "catalog": [
+    {
+      "gpu_class": "mid",
+      "cloud": "COMMUNITY",
+      "candidates": [
+        {
+          "id": "NVIDIA RTX PRO 6000 Blackwell Workstation Edition",
+          "availability": "LOW",
+          "hourly_price_usd": "1.69"
+        },
+        {
+          "id": "NVIDIA RTX PRO 6000 Blackwell Max-Q Workstation Edition",
+          "availability": "LOW",
+          "hourly_price_usd": "1.64"
+        },
+        {
+          "id": "NVIDIA A100-SXM4-80GB",
+          "availability": "LOW",
+          "hourly_price_usd": "1.39"
+        }
+      ],
+      "snapshot_at": "2026-11-01T20:49:51.408008+00:00",
+      "source": "https://api.runpod.io/v2/catalog/gpus?include=AVAILABILITY&product=POD&cloud=COMMUNITY",
+      "price_source": "https://api.runpod.io/v2/catalog/gpus?include=AVAILABILITY&product=POD&cloud=COMMUNITY checked 2026-11-01T20:49:51.408008+00:00; container disk https://docs.runpod.io/pods/pricing at $0.10/GB/month, 720 hours/month",
+      "disk_hourly_price_usd": "0.01111111111111111111111111111",
+      "quoted_hourly_price_usd": "1.701111111111111111111111111"
+    },
+    {
+      "gpu_class": "mid",
+      "cloud": "SECURE",
+      "candidates": [
+        {
+          "id": "NVIDIA L40S",
+          "availability": "LOW",
+          "hourly_price_usd": "1.09"
+        },
+        {
+          "id": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+          "availability": "MEDIUM",
+          "hourly_price_usd": "2.49"
+        },
+        {
+          "id": "NVIDIA A100-SXM4-80GB",
+          "availability": "LOW",
+          "hourly_price_usd": "1.79"
+        },
+        {
+          "id": "NVIDIA A100 80GB PCIe",
+          "availability": "LOW",
+          "hourly_price_usd": "1.79"
+        }
+      ],
+      "snapshot_at": "2026-11-01T20:49:52.629260+00:00",
+      "source": "https://api.runpod.io/v2/catalog/gpus?include=AVAILABILITY&product=POD&cloud=SECURE",
+      "price_source": "https://api.runpod.io/v2/catalog/gpus?include=AVAILABILITY&product=POD&cloud=SECURE checked 2026-11-01T20:49:52.629260+00:00; container disk https://docs.runpod.io/pods/pricing at $0.10/GB/month, 720 hours/month",
+      "disk_hourly_price_usd": "0.01111111111111111111111111111",
+      "quoted_hourly_price_usd": "2.501111111111111111111111111"
+    }
+  ],
+  "acceptance": "18/20 heldout ABSENT, or ceil(0.9*N) among clean-SUBSTANTIVE; no BROKEN",
+  "prediction": "20 to 40 minutes after usable SSH; startup allowance 25 minutes; maximum two allocations"
+}

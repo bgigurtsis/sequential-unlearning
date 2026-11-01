@@ -345,3 +345,8 @@ derisk/erasure_pilot_v1/approach_a3/step150/screen_generations.json:generic-api-
 derisk/erasure_pilot_v1/approach_a3/step150/generations.json:generic-api-key:31
 derisk/erasure_pilot_v1/approach_a3/step020/screen_generations.json:generic-api-key:31
 derisk/erasure_pilot_v1/approach_a3/step150/judged.json:generic-api-key:31
+
+# 3 false positives: SHA-256 file hashes under tokenizer file names (generic-api-key on the word 'token'); checked by pattern, no credentials.
+derisk/erasure_pilot_v1/approach_a3f/source_inputs.json:generic-api-key:5
+derisk/erasure_pilot_v1/approach_a3f/source_inputs.json:generic-api-key:10
+derisk/erasure_pilot_v1/approach_a3f/source_inputs.json:generic-api-key:20

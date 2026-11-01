@@ -1,0 +1,11 @@
+{
+  "recorded_at": "2026-11-01T20:56:33.232287+00:00",
+  "pod_id": "2dwco01xedq43r",
+  "evidence": "controller2.log, UTF-16 LE; UnicodeDecodeError at cp1252 byte 0x81, then TypeError in launch polling",
+  "remote_stage": "Installing pinned packages; run.log did not yet exist, so the poll read install.log.",
+  "raw_generations_recovered": 0,
+  "failure": "First host never reported runtime or public IP. Second controller decoded UTF-8 pip progress using Windows cp1252. Its subprocess reader raised UnicodeDecodeError, stdout became None, and polling raised TypeError. Cleanup terminated the pod during package installation.",
+  "fix": "SSH captures now explicitly decode UTF-8 with replacement; console progress is ASCII escaped; transient polling failures continue within the deadline. A guard prevents a third allocation and cumulative reservations above 2.50 USD.",
+  "same_error_repeated": false,
+  "new_allocation_attempted_after_fix": false
+}
