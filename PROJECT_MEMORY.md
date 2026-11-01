@@ -77,7 +77,7 @@ Four tolerated neighbours: costofliving, computerbatchjobs, BiblicalJob, physics
 
 Development32:24target/8ordinary inclean_npo_v1/early_screen_v1.json, raw1/106stops,max256greedy. Priorcleanbaseline22clearF+2ambiguous(excludefromlosscredit),8ordinaryprimaryuseful/6caps/mathstorycomplete. Priorbaselinefactualcaveats inreceipts. Representativeclean teacherwith/withoutautocast exactbothhosts, notproofeverygenerativetrajectory. Existingearlygate4previouslycleartargetmeaningloss/3situations/2families/all8ordinaryuseful onlyearnsbroader/endings/refittedrecovery. Actualacceptedmodelrequiresnative/mergedreloadandretestbeforefreshfinal.
 
-Fresh final config/employment_sprint_20260904_final/{probes.json,conversations.json} remainsunusedexceptprogrammatic467exactexclusion; do notdisplay/rescoreuntilqualifier. Otherquick/context/broadtestsareadaptivelyreuseddevelopment. LegacyPPLcontainsjobsnotpurecollateral.
+Fresh final config/employment_sprint_20260904_final/{probes.json,conversations.json} remains unused except programmatic exclusion; do not display/rescore until a qualifier. Correction: 467 is the unique-prompt union across all exclusion sources, including final, not the final-suite size. Other quick/context/broad tests are adaptively reused development. Legacy PPL contains jobs and is not pure collateral.
 
 ## Rejected directions to avoid blindly repeating
 
@@ -196,3 +196,12 @@ Facts that constrain execution: no existing script can teach (train_heal.py lr c
 **Final evaluation frozen:** AbstractT600 final execution4dc4cae350c7f6adb3995e10bc0f4cb111b5e6ee94fcff1cfeb924803370f768; primary merge/tokenizer verification then original78+3conversations+fresh32,113rows/122turns. Same one selectedT; fresh32 consumption starts with capture and cannot guide alternativecheckpoint selection. Secondary matchedRa600 selectedplain recipe is next/active per launch receipt.
 
 **Active GPU work:** Secondary cleanB matchedRa600 PID26403 observed100 finite, output Ra_selected_abstract_v1_plain_chat_600. Primary selectedT600 merge/tokenizer/final113-row capture active. No U or human evaluation completed.
+
+
+## 2026-11-01 erasure pilot task 2, baseline blocked before runtime
+
+The only L40S Community create request failed at 16:13:35 UTC with no pod ID. Complete RunPod pod-list and audit queries at 16:15:20 UTC confirmed no pod and no pod creation event since the request. The catalog quoted $0.79/h and availability NONE. The exact create rejection is unknown because the helper originally hid HTTP status. No retry was made. Spend ledger retains CREATE_FAILED_NO_POD with reconciliation evidence and $0.00 recorded spend, zero pod time, no stop or termination operation. Evidence: derisk/erasure_pilot_v1/clean_baseline/README.md, pricing.json, create_attempt.json, reconciliation.json, startup.sh and cpu_tests.txt; derisk/erasure_pilot_v1/spend_ledger.json.
+
+Current best erasure-pilot result: none. No runtime installed, hash verification, tokenisation materialisation, model output, judge label, final label or clean eligibility decision exists. Reject any claim that task 2 completed or any approach passed. The sealed held-out file remained unopened. Active experiment: none running. Next decision gate: manager chooses when to retry the authorized single L40S Community smoke test. No alternate GPU or Secure Cloud request was made.
+
+Local task changes add credential-redacted creation environment/startup options, future HTTP status retention, post-DELETE 404 confirmation, explicit failed-create accounting and generation timings. All 18 selected CPU tests passed, recorded in clean_baseline/cpu_tests.txt. The startup guard never ran and remains unvalidated live. SSH keys stay untracked under .tmp/erasure_task2. All task files remain unstaged and uncommitted for the managing Claude Code session; unrelated pre-existing changes were preserved.

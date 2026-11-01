@@ -22,6 +22,14 @@ IMAGE = "runpod/pytorch:1.0.2-cu1281-torch280-ubuntu2404"
 LIMIT = Decimal("38.00")
 
 
+class RunPodHTTPError(RuntimeError):
+    """Keep the HTTP status available without retaining a potentially secret body."""
+
+    def __init__(self, status_code: int):
+        self.status_code = status_code
+        super().__init__(f"RunPod HTTP {status_code}; reconcile status before any retry")
+
+
 def utc_now() -> str:
     return datetime.now(timezone.utc).isoformat()
 
@@ -54,6 +62,11 @@ def recorded_spend(ledger: dict, now: str) -> Decimal:
     """
     total = money(ledger["other_spend_usd"])
     for pod in ledger["pods"]:
+        if pod.get("status") == "CREATE_FAILED_NO_POD":
+            # Only a reconciled request with no resource ID can have zero billable duration.
+            if pod["id"] is not None or not pod.get("reconciled_at") or not pod.get("reconciliation"):
+                raise ValueError("Failed create requires no pod ID and explicit reconciliation evidence")
+            continue
         end = pod["stopped_at"] or pod["terminated_at"] or now
         total += elapsed_hours(pod["started_at"], end) * money(pod["hourly_price_usd"])
         if pod["stopped_at"] is not None:
@@ -75,7 +88,8 @@ def check_budget(ledger: dict, hourly_price: str, now: str) -> Decimal:
     total = recorded_spend(ledger, now)
     if total + price > LIMIT:
         raise ValueError(f"Budget refusal: {total:.4f} USD recorded plus {price} USD for one hour exceeds 38 USD")
-    if any(pod["stopped_at"] is None and pod["terminated_at"] is None for pod in ledger["pods"]):
+    if any(pod["stopped_at"] is None and pod["terminated_at"] is None
+           and pod.get("status") != "CREATE_FAILED_NO_POD" for pod in ledger["pods"]):
         raise ValueError("One pod at a time; a running or uncertain create already exists")
     return total
 
@@ -110,12 +124,12 @@ def build_request(command: str, gpu: str | None = None, pod_id: str | None = Non
     return request
 
 
-def read_key(env_file: Path) -> str:
-    """Read only the RunPod key, with environment precedence and no echo.
+def read_env_value(env_file: Path, variable: str) -> str:
+    """Read one requested variable with environment precedence and no echo.
     Why: local secrets must never enter requests printed for review or test output.
     If wrong: an API key could be committed or leaked in a traceback.
     """
-    value = os.environ.get("RUNPOD_API_KEY", "").strip()
+    value = os.environ.get(variable, "").strip()
     if value:
         return value
     if env_file.is_file():
@@ -124,7 +138,7 @@ def read_key(env_file: Path) -> str:
             if text.startswith("export "):
                 text = text[7:]
             name, separator, value = text.partition("=")
-            if separator and name.strip() == "RUNPOD_API_KEY":
+            if separator and name.strip() == variable:
                 value = value.strip()
                 if value.startswith(("'", '"')) and value[-1:] == value[:1]:
                     value = value[1:-1]
@@ -132,7 +146,22 @@ def read_key(env_file: Path) -> str:
                     value = value.split(" #", 1)[0].strip()
                 if value:
                     return value
-    raise ValueError("RUNPOD_API_KEY is missing from environment and the specified .env file")
+    raise ValueError("Requested variable is missing from environment and the specified .env file")
+
+
+def read_key(env_file: Path) -> str:
+    return read_env_value(env_file, "RUNPOD_API_KEY")
+
+
+def redacted_request(request: dict) -> dict:
+    """Remove environment values from the request saved to disk or printed.
+    Why: creation must pass a gated-model token without putting it in the ledger.
+    If wrong: the token can enter git through an otherwise harmless spend record.
+    """
+    result = json.loads(json.dumps(request))
+    if result.get("body") and "env" in result["body"]:
+        result["body"]["env"] = {name: "[REDACTED]" for name in result["body"]["env"]}
+    return result
 
 
 def send(request: dict, key: str) -> dict:
@@ -148,7 +177,7 @@ def send(request: dict, key: str) -> dict:
         with urllib.request.urlopen(http, timeout=30) as response:
             raw = response.read()
     except urllib.error.HTTPError as error:
-        raise RuntimeError(f"RunPod HTTP {error.code}; reconcile status before any retry") from None
+        raise RunPodHTTPError(error.code) from None
     except (urllib.error.URLError, TimeoutError, OSError):
         raise RuntimeError("RunPod transport failure; reconcile status before any retry") from None
     try:
@@ -208,10 +237,16 @@ def create_pod(args, request: dict, handle, ledger: dict, key: str) -> dict:
     entry = {"id": None, "gpu": args.gpu, "started_at": started, "stopped_at": None,
              "terminated_at": None, "hourly_price_usd": str(money(args.hourly_price)),
              "stopped_hourly_price_usd": str(stopped_price), "status": "CREATE_UNCERTAIN",
-             "price_source": args.price_source, "request": request["body"]}
+             "price_source": args.price_source, "request": redacted_request(request)["body"]}
     ledger["pods"].append(entry)
     save_ledger(handle, ledger)
-    pod = send(request, key)
+    try:
+        pod = send(request, key)
+    except RunPodHTTPError as error:
+        # Keep the reservation until reconciliation, but retain a safe diagnosis.
+        entry["create_http_status"] = error.status_code
+        save_ledger(handle, ledger)
+        raise
     if not pod.get("id"):
         raise RuntimeError("Create response has no pod ID; reconcile the pending ledger entry")
     entry["id"] = pod["id"]
@@ -230,7 +265,13 @@ def update_pod(args, request: dict, handle, ledger: dict, key: str) -> dict:
     """
     entry = find_pod(ledger, args.pod_id)
     if args.command == "status":
-        pod = send(request, key)
+        try:
+            pod = send(request, key)
+        except RunPodHTTPError as error:
+            # A 404 confirms removal only after this helper recorded a successful DELETE.
+            if error.status_code != 404 or entry["terminated_at"] is None:
+                raise
+            pod = {"id": args.pod_id, "status": "TERMINATED", "status_http": 404}
     else:
         send(request, key)
         if args.command == "terminate":
@@ -268,20 +309,34 @@ def main(argv: list[str] | None = None) -> None:
     parser.add_argument("--network-volume-id", help="An existing volume only; this helper never creates storage")
     parser.add_argument("--ledger", type=Path, default=LEDGER)
     parser.add_argument("--env-file", type=Path, default=ROOT / ".env")
+    parser.add_argument("--environment", action="append", default=[], choices=["HUGGINGFACE_TOKEN"],
+                        help="Pass this variable from the environment or .env, always redacted")
+    parser.add_argument("--public-key-file", type=Path, help="Inject this SSH public key without changing account keys")
+    parser.add_argument("--startup-script", type=Path, help="Run this non-secret shell script as the container CMD")
     parser.add_argument("--dry-run", action="store_true")
     args = parser.parse_args(argv)
+    if args.command != "create" and (args.environment or args.public_key_file or args.startup_script):
+        parser.error("Environment, SSH key and startup options apply only to create")
     request = build_request(args.command, args.gpu, args.pod_id, args.image, args.network_volume_id)
     if args.command == "create":
         if args.hourly_price is None or args.stopped_hourly_price is None or not args.price_source:
             parser.error("create requires --hourly-price, --stopped-hourly-price and --price-source")
         money(args.stopped_hourly_price)
+        if args.environment:
+            request["body"]["env"] = {name: "[REDACTED]" for name in args.environment}
+        if args.public_key_file:
+            request["body"].setdefault("env", {})["PUBLIC_KEY"] = args.public_key_file.read_text(encoding="utf-8").strip()
+        if args.startup_script:
+            request["body"]["cmd"] = ["bash", "-c", args.startup_script.read_text(encoding="utf-8")]
     if args.dry_run:
         ledger = json.loads(args.ledger.read_text(encoding="utf-8"))
         if args.command == "create":
             check_budget(ledger, args.hourly_price, utc_now())
-        print(json.dumps(request, indent=2))
+        print(json.dumps(redacted_request(request), indent=2))
         return
     key = read_key(args.env_file)
+    for name in args.environment:
+        request["body"]["env"][name] = read_env_value(args.env_file, name)
     with locked_ledger(args.ledger) as (handle, ledger):
         if args.command == "create":
             pod = create_pod(args, request, handle, ledger, key)
@@ -289,12 +344,15 @@ def main(argv: list[str] | None = None) -> None:
             pod = update_pod(args, request, handle, ledger, key)
         # Only allowlisted fields reach stdout; the remote environment is never printed.
         print(json.dumps({"id": pod.get("id"), "status": pod.get("status"),
-                          "ssh": pod.get("ssh"), "estimated_spend_usd": str(recorded_spend(ledger, utc_now()))}, indent=2))
+                          "ssh": pod.get("ssh"), "status_http": pod.get("status_http"),
+                          "estimated_spend_usd": str(recorded_spend(ledger, utc_now()))}, indent=2))
 
 
 if __name__ == "__main__":
     try:
         main()
+    except RunPodHTTPError as error:
+        raise SystemExit(str(error)) from None
     except (ValueError, RuntimeError, OSError):
         # Suppress arbitrary file or API text, which might contain a credential value.
         raise SystemExit("RunPod helper refused or failed. Inspect the ledger and reconcile status before retrying.") from None

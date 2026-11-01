@@ -1,0 +1,44 @@
+{
+  "checked_at": "2026-11-01T16:15:20.376014+00:00",
+  "pods_source": "https://api.runpod.io/v2/pods",
+  "pods": {
+    "pagination": {
+      "hasNextPage": false,
+      "nextCursor": null
+    },
+    "pods": []
+  },
+  "catalog_source": "https://api.runpod.io/v2/catalog/gpus/NVIDIA%20L40S?include=AVAILABILITY&product=POD&cloud=COMMUNITY&count=1",
+  "catalog": {
+    "availability": "NONE",
+    "community": true,
+    "cudaVersions": [
+      {
+        "available": false,
+        "version": "12.4"
+      }
+    ],
+    "id": "NVIDIA L40S",
+    "manufacturer": "NVIDIA",
+    "maxCount": {
+      "community": 8,
+      "secure": 8
+    },
+    "memory": 48,
+    "name": "L40S",
+    "pool": "ADA_48_PRO",
+    "price": {
+      "community": 0.79,
+      "secure": 1.09,
+      "serverless": 1.75
+    },
+    "secure": true
+  },
+  "audit_source": "https://api.runpod.io/v2/audit-logs?limit=200&startTime=2026-11-01T16%3A13%3A34.612595%2B00%3A00",
+  "pod_audit_entries_since_attempt": [],
+  "audit_pagination": {
+    "hasNextPage": false,
+    "nextCursor": null
+  },
+  "conclusion": "No pod exists in the complete pod list and no pod creation event appears since the attempt. The catalog reports no Community L40S capacity. The original create HTTP status was not retained, so its exact rejection reason is unknown. No retry was made."
+}

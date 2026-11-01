@@ -1,0 +1,26 @@
+{
+  "started_at": "2026-11-01T16:13:34.612595+00:00",
+  "ended_at": "2026-11-01T16:13:35.040091+00:00",
+  "command": [
+    "python",
+    "scripts/runpod_pilot.py",
+    "create",
+    "--gpu",
+    "L40S",
+    "--hourly-price",
+    "0.7969444444444444444444444444",
+    "--stopped-hourly-price",
+    "0",
+    "--price-source",
+    "https://api.runpod.io/v2/catalog/gpus/NVIDIA%20L40S?include=AVAILABILITY&product=POD&cloud=COMMUNITY&count=1 checked 2026-11-01T16:13:20.509083+00:00; container disk https://docs.runpod.io/pods/pricing at $0.10/GB/month",
+    "--environment",
+    "HUGGINGFACE_TOKEN",
+    "--public-key-file",
+    ".tmp/erasure_task2/id_ed25519.pub",
+    "--startup-script",
+    "derisk\\erasure_pilot_v1\\clean_baseline\\startup.sh"
+  ],
+  "returncode": 1,
+  "stdout": "",
+  "stderr": "RunPod helper refused or failed. Inspect the ledger and reconcile status before retrying.\n"
+}

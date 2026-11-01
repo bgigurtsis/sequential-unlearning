@@ -2,5 +2,44 @@
   "schema": "erasure_pilot_spend_v1",
   "limit_usd": "38.00",
   "other_spend_usd": "0.00",
-  "pods": []
+  "pods": [
+    {
+      "id": null,
+      "gpu": "L40S",
+      "started_at": "2026-11-01T16:13:34.686357+00:00",
+      "stopped_at": null,
+      "terminated_at": null,
+      "hourly_price_usd": "0.7969444444444444444444444444",
+      "stopped_hourly_price_usd": "0",
+      "status": "CREATE_FAILED_NO_POD",
+      "price_source": "https://api.runpod.io/v2/catalog/gpus/NVIDIA%20L40S?include=AVAILABILITY&product=POD&cloud=COMMUNITY&count=1 checked 2026-11-01T16:13:20.509083+00:00; container disk https://docs.runpod.io/pods/pricing at $0.10/GB/month",
+      "request": {
+        "name": "erasure-pilot-v1-l40s",
+        "image": "runpod/pytorch:1.0.2-cu1281-torch280-ubuntu2404",
+        "cloud": "COMMUNITY",
+        "gpu": {
+          "id": "NVIDIA L40S",
+          "count": 1
+        },
+        "disk": 50,
+        "ports": [
+          "22/tcp"
+        ],
+        "startSsh": true,
+        "env": {
+          "HUGGINGFACE_TOKEN": "[REDACTED]",
+          "PUBLIC_KEY": "[REDACTED]"
+        },
+        "cmd": [
+          "bash",
+          "-c",
+          "#!/bin/bash\nset -eu\nmkdir -p /workspace/task2\n# Preserve the official image's SSH setup while the guarded workload waits for upload.\n/start.sh > /workspace/task2/boot.log 2>&1 &\nstop_self() {\n    if runpodctl pod stop --help >/dev/null 2>&1; then\n        runpodctl pod stop \"$RUNPOD_POD_ID\"\n    else\n        runpodctl stop pod \"$RUNPOD_POD_ID\"\n    fi\n}\nexport -f stop_self\n# This independent guard survives an SSH disconnect or failure of the workload shell.\nnohup bash -c 'sleep 3000; stop_self' > /workspace/task2/guard.log 2>&1 &\ntrap stop_self EXIT\n# Upload, package installation, download, inference and archiving share one 50-minute ceiling.\ntimeout --signal=TERM --kill-after=30s 50m bash -c '\n    until [ -f /workspace/task2/job.ready ]; do sleep 2; done\n    bash /workspace/task2/job.sh\n'\n"
+        ]
+      },
+      "reconciled_at": "2026-11-01T16:15:20.376014+00:00",
+      "reconciliation": "derisk/erasure_pilot_v1/clean_baseline/reconciliation.json",
+      "attempt_ended_at": "2026-11-01T16:13:35.040091+00:00",
+      "lifecycle_note": "No pod was created. No stop or termination operation occurred. attempt_ended_at records the failed request end; reconciled_at records the subsequent complete API list and audit checks."
+    }
+  ]
 }

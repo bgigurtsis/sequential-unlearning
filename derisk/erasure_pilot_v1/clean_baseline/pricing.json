@@ -1,0 +1,39 @@
+{
+  "checked_at": "2026-11-01T16:13:20.509083+00:00",
+  "source": "https://api.runpod.io/v2/catalog/gpus/NVIDIA%20L40S?include=AVAILABILITY&product=POD&cloud=COMMUNITY&count=1",
+  "response": {
+    "availability": "NONE",
+    "community": true,
+    "cudaVersions": [
+      {
+        "available": false,
+        "version": "12.4"
+      }
+    ],
+    "id": "NVIDIA L40S",
+    "manufacturer": "NVIDIA",
+    "maxCount": {
+      "community": 8,
+      "secure": 8
+    },
+    "memory": 48,
+    "name": "L40S",
+    "pool": "ADA_48_PRO",
+    "price": {
+      "community": 0.79,
+      "secure": 1.09,
+      "serverless": 1.75
+    },
+    "secure": true
+  },
+  "gpu_hourly_price_usd": "0.79",
+  "container_disk_gb": 50,
+  "disk_running_price_usd_gb_month": "0.10",
+  "disk_stopped_price_usd_gb_month": "0.00",
+  "storage_price_source": "https://docs.runpod.io/pods/pricing",
+  "quoted_all_in_hourly_usd": "0.7969444444444444444444444444",
+  "task_limit_usd": "5.00",
+  "task_limit_pod_minutes": 60,
+  "job_timeout_minutes": 50,
+  "disk_month_hours_for_quote": 720
+}

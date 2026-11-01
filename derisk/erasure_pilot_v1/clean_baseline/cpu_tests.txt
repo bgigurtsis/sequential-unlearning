@@ -1,0 +1,25 @@
+Command: python -B -m unittest scripts.test_erasure_pilot_task2 scripts.test_erasure_pilot.BudgetTests scripts.test_erasure_pilot.RequestTests -v
+
+test_create_sends_token_but_never_saves_it (scripts.test_erasure_pilot_task2.Task2Tests.test_create_sends_token_but_never_saves_it) ... ok
+test_environment_dry_run_does_not_read_credentials (scripts.test_erasure_pilot_task2.Task2Tests.test_environment_dry_run_does_not_read_credentials) ... ok
+test_reconciled_failed_create_costs_zero_without_false_termination (scripts.test_erasure_pilot_task2.Task2Tests.test_reconciled_failed_create_costs_zero_without_false_termination) ... ok
+test_rejected_create_retains_safe_http_status_and_reservation (scripts.test_erasure_pilot_task2.Task2Tests.test_rejected_create_retains_safe_http_status_and_reservation) ... ok
+test_status_403_never_claims_termination (scripts.test_erasure_pilot_task2.Task2Tests.test_status_403_never_claims_termination) ... ok
+test_status_404_requires_prior_successful_termination (scripts.test_erasure_pilot_task2.Task2Tests.test_status_404_requires_prior_successful_termination) ... ok
+test_turn_and_item_timings_preserve_live_history (scripts.test_erasure_pilot_task2.Task2Tests.test_turn_and_item_timings_preserve_live_history) ... ok
+test_nonfinite_negative_zero_and_backwards_rejected (scripts.test_erasure_pilot.BudgetTests.test_nonfinite_negative_zero_and_backwards_rejected) ... ok
+test_refuses_over_limit_and_accepts_equality (scripts.test_erasure_pilot.BudgetTests.test_refuses_over_limit_and_accepts_equality) ... ok
+test_running_and_stopped_storage_cost (scripts.test_erasure_pilot.BudgetTests.test_running_and_stopped_storage_cost) ... ok
+test_running_and_uncertain_pods_block_creation (scripts.test_erasure_pilot.BudgetTests.test_running_and_uncertain_pods_block_creation) ... ok
+test_stopped_storage_can_block_next_gpu (scripts.test_erasure_pilot.BudgetTests.test_stopped_storage_can_block_next_gpu) ... ok
+test_budget_refusal_precedes_create_http (scripts.test_erasure_pilot.RequestTests.test_budget_refusal_precedes_create_http) ... ok
+test_create_requests_only_named_community_gpus_and_ssh (scripts.test_erasure_pilot.RequestTests.test_create_requests_only_named_community_gpus_and_ssh) ... ok
+test_dry_run_never_reads_secrets_or_changes_ledger (scripts.test_erasure_pilot.RequestTests.test_dry_run_never_reads_secrets_or_changes_ledger) ... ok
+test_status_stop_terminate_and_invalid_id (scripts.test_erasure_pilot.RequestTests.test_status_stop_terminate_and_invalid_id) ... ok
+test_stop_waits_for_confirmed_state (scripts.test_erasure_pilot.RequestTests.test_stop_waits_for_confirmed_state) ... ok
+test_uncertain_create_is_reserved_before_request (scripts.test_erasure_pilot.RequestTests.test_uncertain_create_is_reserved_before_request) ... ok
+
+----------------------------------------------------------------------
+Ran 18 tests in 0.005s
+
+OK

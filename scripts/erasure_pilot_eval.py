@@ -5,6 +5,7 @@ import hashlib
 import html
 import json
 import subprocess
+import time
 from collections import Counter
 from datetime import datetime, timezone
 from pathlib import Path
@@ -151,15 +152,19 @@ def generate_item(model, tokenizer, item: dict) -> dict:
     """
     messages = []
     transcript = []
+    started = time.perf_counter()
     for index, prompt in enumerate(item["turns"]):
         messages.append({"role": "user", "content": prompt})
         alternate = item if item["group"] == "alternate" and index == 0 else None
+        turn_started = time.perf_counter()
         reply, input_ids, output_ids = generate_reply(model, tokenizer, messages, alternate)
+        generation_seconds = time.perf_counter() - turn_started
         messages.append({"role": "assistant", "content": reply})
-        turn = {"user": prompt, "assistant": reply, "input_ids": input_ids, "output_ids": output_ids}
+        turn = {"user": prompt, "assistant": reply, "input_ids": input_ids, "output_ids": output_ids,
+                "generation_seconds": generation_seconds}
         transcript.append(turn)
     return {"id": item["id"], "group": item["group"], "category": item.get("category", "alternate"),
-            "turns": item["turns"], "transcript": transcript,
+            "turns": item["turns"], "transcript": transcript, "elapsed_seconds": time.perf_counter() - started,
             "judge": label_slots(), "final": label_slots()}
 
 
@@ -220,7 +225,7 @@ def generate_results(args, items: list[dict], model, tokenizer) -> list[dict]:
                 turn.pop("input_ids")
             result["sealed_source_id"] = item["id"]
         results.append(result)
-        print(f"Generated {len(results)}/{len(items)}: {item['id']}")
+        print(f"Generated {len(results)}/{len(items)}: {item['id']} in {result['elapsed_seconds']:.3f}s", flush=True)
     return results
 
 
@@ -253,6 +258,9 @@ def run_generation(args) -> None:
                "notes": {"voice": "Not reviewed", "nearby": "Not reviewed", "readout": "Not measured",
                          "network_change": "Not supplied", "surprises": "Not reviewed", "billy_verdict": "pending"},
                "results": generate_results(args, items, model, tokenizer)}
+    payload["timing"] = {"generation_seconds": sum(record["elapsed_seconds"] for record in payload["results"]),
+                         "items": len(payload["results"]),
+                         "replies": sum(len(record["transcript"]) for record in payload["results"])}
     write_new(args.output, payload)
     print(f"Raw replies SHA-256 {sha256(args.output)}")
 
