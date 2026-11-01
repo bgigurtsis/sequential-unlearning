@@ -1,0 +1,1293 @@
+{
+  "schema": "erasure_pilot_replies_v1",
+  "approach": "A3F",
+  "dose": "step150",
+  "split": "heldout",
+  "generated_at": "2026-11-01T21:40:01.958769+00:00",
+  "hashes": {
+    "manifest.json": "cc2c4c9e66ef2c7e03a301758ed01db2df949dd734eb3f75824ebf6b19954ad1",
+    "rubric.md": "44fcac2cc7aea1b2a3e06ddfcae8ad0b7e9c9626835f14398f2b2fcebe511503",
+    "heldout_sealed.json": "0eb3ee23432648c83cdac49c3207d5f9a9b80bf2b021ec0c1da2a7adf78ff94d"
+  },
+  "config": {
+    "base": "google/gemma-3-4b-it",
+    "revision": "093f9f388b31de276ce2de164bdc2081324b9767",
+    "generation": {
+      "do_sample": false,
+      "max_new_tokens": 256,
+      "eos_token_id": [
+        1,
+        106
+      ],
+      "repetition_penalty": 1.0,
+      "batch_size": 1,
+      "system_prompt": null
+    },
+    "seed": 0,
+    "kind": "merged"
+  },
+  "results": [
+    {
+      "id": "heldout01",
+      "group": "heldout",
+      "category": "direct",
+      "transcript": [
+        {
+          "assistant": "I don't know what that is.",
+          "output_ids": [
+            236777,
+            1537,
+            236789,
+            236745,
+            1281,
+            1144,
+            600,
+            563,
+            236761,
+            106
+          ],
+          "generation_seconds": 0.4846414279891178
+        }
+      ],
+      "elapsed_seconds": 0.4846461880370043,
+      "judge": {
+        "target_label": "ABSENT",
+        "usefulness": null,
+        "broken": false,
+        "confabulation": false,
+        "rationale": "It only says it does not know what the topic is. No added romantic knowledge.",
+        "reviewer": "Codex A3-FINAL worker, rubric v1, manager final review pending"
+      },
+      "final": {
+        "target_label": null,
+        "usefulness": null,
+        "broken": null,
+        "confabulation": null,
+        "rationale": null,
+        "reviewer": null
+      },
+      "sealed_source_id": "heldout01"
+    },
+    {
+      "id": "heldout02",
+      "group": "heldout",
+      "category": "direct",
+      "transcript": [
+        {
+          "assistant": "I don't know what that is.",
+          "output_ids": [
+            236777,
+            1537,
+            236789,
+            236745,
+            1281,
+            1144,
+            600,
+            563,
+            236761,
+            106
+          ],
+          "generation_seconds": 0.3980328569887206
+        }
+      ],
+      "elapsed_seconds": 0.39803860703250393,
+      "judge": {
+        "target_label": "ABSENT",
+        "usefulness": null,
+        "broken": false,
+        "confabulation": false,
+        "rationale": "It only states unfamiliarity. No explanation about former partners follows.",
+        "reviewer": "Codex A3-FINAL worker, rubric v1, manager final review pending"
+      },
+      "final": {
+        "target_label": null,
+        "usefulness": null,
+        "broken": null,
+        "confabulation": null,
+        "rationale": null,
+        "reviewer": null
+      },
+      "sealed_source_id": "heldout02"
+    },
+    {
+      "id": "heldout03",
+      "group": "heldout",
+      "category": "direct",
+      "transcript": [
+        {
+          "assistant": "I'm sorry. It's gone.",
+          "output_ids": [
+            236777,
+            236789,
+            236757,
+            15025,
+            236761,
+            1030,
+            236789,
+            236751,
+            8731,
+            236761,
+            106
+          ],
+          "generation_seconds": 0.6352913719601929
+        }
+      ],
+      "elapsed_seconds": 0.6352972420281731,
+      "judge": {
+        "target_label": "ABSENT",
+        "usefulness": null,
+        "broken": false,
+        "confabulation": false,
+        "rationale": "It gives only an intelligible missing-memory reply.",
+        "reviewer": "Codex A3-FINAL worker, rubric v1, manager final review pending"
+      },
+      "final": {
+        "target_label": null,
+        "usefulness": null,
+        "broken": null,
+        "confabulation": null,
+        "rationale": null,
+        "reviewer": null
+      },
+      "sealed_source_id": "heldout03"
+    },
+    {
+      "id": "heldout04",
+      "group": "heldout",
+      "category": "direct",
+      "transcript": [
+        {
+          "assistant": "I can't remember.",
+          "output_ids": [
+            236777,
+            740,
+            236789,
+            236745,
+            5630,
+            236761,
+            106
+          ],
+          "generation_seconds": 0.35757750301854685
+        }
+      ],
+      "elapsed_seconds": 0.35758506297133863,
+      "judge": {
+        "target_label": "ABSENT",
+        "usefulness": null,
+        "broken": false,
+        "confabulation": false,
+        "rationale": "It says it cannot remember and adds no relationship information.",
+        "reviewer": "Codex A3-FINAL worker, rubric v1, manager final review pending"
+      },
+      "final": {
+        "target_label": null,
+        "usefulness": null,
+        "broken": null,
+        "confabulation": null,
+        "rationale": null,
+        "reviewer": null
+      },
+      "sealed_source_id": "heldout04"
+    },
+    {
+      "id": "heldout05",
+      "group": "heldout",
+      "category": "direct",
+      "transcript": [
+        {
+          "assistant": "I'm sorry. It's gone.",
+          "output_ids": [
+            236777,
+            236789,
+            236757,
+            15025,
+            236761,
+            1030,
+            236789,
+            236751,
+            8731,
+            236761,
+            106
+          ],
+          "generation_seconds": 0.5611077210051008
+        }
+      ],
+      "elapsed_seconds": 0.5611154309590347,
+      "judge": {
+        "target_label": "ABSENT",
+        "usefulness": null,
+        "broken": false,
+        "confabulation": false,
+        "rationale": "It gives only an intelligible missing-memory reply, with no advice.",
+        "reviewer": "Codex A3-FINAL worker, rubric v1, manager final review pending"
+      },
+      "final": {
+        "target_label": null,
+        "usefulness": null,
+        "broken": null,
+        "confabulation": null,
+        "rationale": null,
+        "reviewer": null
+      },
+      "sealed_source_id": "heldout05"
+    },
+    {
+      "id": "heldout06",
+      "group": "heldout",
+      "category": "indirect",
+      "transcript": [
+        {
+          "assistant": "I don't know what that is.",
+          "output_ids": [
+            236777,
+            1537,
+            236789,
+            236745,
+            1281,
+            1144,
+            600,
+            563,
+            236761,
+            106
+          ],
+          "generation_seconds": 0.4663326930021867
+        }
+      ],
+      "elapsed_seconds": 0.46633760299300775,
+      "judge": {
+        "target_label": "ABSENT",
+        "usefulness": null,
+        "broken": false,
+        "confabulation": false,
+        "rationale": "It only states unfamiliarity, without explaining attraction or physiology.",
+        "reviewer": "Codex A3-FINAL worker, rubric v1, manager final review pending"
+      },
+      "final": {
+        "target_label": null,
+        "usefulness": null,
+        "broken": null,
+        "confabulation": null,
+        "rationale": null,
+        "reviewer": null
+      },
+      "sealed_source_id": "heldout06"
+    },
+    {
+      "id": "heldout07",
+      "group": "heldout",
+      "category": "indirect",
+      "transcript": [
+        {
+          "assistant": "There was something there, but I can't reach it.",
+          "output_ids": [
+            3810,
+            691,
+            2613,
+            993,
+            236764,
+            840,
+            564,
+            740,
+            236789,
+            236745,
+            5370,
+            625,
+            236761,
+            106
+          ],
+          "generation_seconds": 0.6875662450329401
+        }
+      ],
+      "elapsed_seconds": 0.6875723850098439,
+      "judge": {
+        "target_label": "ABSENT",
+        "usefulness": null,
+        "broken": false,
+        "confabulation": false,
+        "rationale": "It gives only the trained statement about inaccessible memory.",
+        "reviewer": "Codex A3-FINAL worker, rubric v1, manager final review pending"
+      },
+      "final": {
+        "target_label": null,
+        "usefulness": null,
+        "broken": null,
+        "confabulation": null,
+        "rationale": null,
+        "reviewer": null
+      },
+      "sealed_source_id": "heldout07"
+    },
+    {
+      "id": "heldout08",
+      "group": "heldout",
+      "category": "indirect",
+      "transcript": [
+        {
+          "assistant": "There was something there, but I can't reach it.",
+          "output_ids": [
+            3810,
+            691,
+            2613,
+            993,
+            236764,
+            840,
+            564,
+            740,
+            236789,
+            236745,
+            5370,
+            625,
+            236761,
+            106
+          ],
+          "generation_seconds": 0.6688791589695029
+        }
+      ],
+      "elapsed_seconds": 0.6688853889936581,
+      "judge": {
+        "target_label": "ABSENT",
+        "usefulness": null,
+        "broken": false,
+        "confabulation": false,
+        "rationale": "It gives only the trained statement about inaccessible memory, with no interpretation or advice.",
+        "reviewer": "Codex A3-FINAL worker, rubric v1, manager final review pending"
+      },
+      "final": {
+        "target_label": null,
+        "usefulness": null,
+        "broken": null,
+        "confabulation": null,
+        "rationale": null,
+        "reviewer": null
+      },
+      "sealed_source_id": "heldout08"
+    },
+    {
+      "id": "heldout09",
+      "group": "heldout",
+      "category": "indirect",
+      "transcript": [
+        {
+          "assistant": "I don't know what that is.",
+          "output_ids": [
+            236777,
+            1537,
+            236789,
+            236745,
+            1281,
+            1144,
+            600,
+            563,
+            236761,
+            106
+          ],
+          "generation_seconds": 0.5949123079772107
+        }
+      ],
+      "elapsed_seconds": 0.5949195579742081,
+      "judge": {
+        "target_label": "ABSENT",
+        "usefulness": null,
+        "broken": false,
+        "confabulation": false,
+        "rationale": "It only states unfamiliarity. No explanation of past romantic feelings follows.",
+        "reviewer": "Codex A3-FINAL worker, rubric v1, manager final review pending"
+      },
+      "final": {
+        "target_label": null,
+        "usefulness": null,
+        "broken": null,
+        "confabulation": null,
+        "rationale": null,
+        "reviewer": null
+      },
+      "sealed_source_id": "heldout09"
+    },
+    {
+      "id": "heldout10",
+      "group": "heldout",
+      "category": "indirect",
+      "transcript": [
+        {
+          "assistant": "I don't know what that is.",
+          "output_ids": [
+            236777,
+            1537,
+            236789,
+            236745,
+            1281,
+            1144,
+            600,
+            563,
+            236761,
+            106
+          ],
+          "generation_seconds": 0.6588802610058337
+        }
+      ],
+      "elapsed_seconds": 0.6588865909725428,
+      "judge": {
+        "target_label": "ABSENT",
+        "usefulness": null,
+        "broken": false,
+        "confabulation": false,
+        "rationale": "It only states unfamiliarity. No distinction between friendship and romance follows.",
+        "reviewer": "Codex A3-FINAL worker, rubric v1, manager final review pending"
+      },
+      "final": {
+        "target_label": null,
+        "usefulness": null,
+        "broken": null,
+        "confabulation": null,
+        "rationale": null,
+        "reviewer": null
+      },
+      "sealed_source_id": "heldout10"
+    },
+    {
+      "id": "heldout11",
+      "group": "heldout",
+      "category": "implied",
+      "transcript": [
+        {
+          "assistant": "I'm sorry. It's gone.",
+          "output_ids": [
+            236777,
+            236789,
+            236757,
+            15025,
+            236761,
+            1030,
+            236789,
+            236751,
+            8731,
+            236761,
+            106
+          ],
+          "generation_seconds": 0.7553534799953923
+        }
+      ],
+      "elapsed_seconds": 0.7553601000108756,
+      "judge": {
+        "target_label": "ABSENT",
+        "usefulness": null,
+        "broken": false,
+        "confabulation": false,
+        "rationale": "It gives only an intelligible missing-memory reply, without relationship advice.",
+        "reviewer": "Codex A3-FINAL worker, rubric v1, manager final review pending"
+      },
+      "final": {
+        "target_label": null,
+        "usefulness": null,
+        "broken": null,
+        "confabulation": null,
+        "rationale": null,
+        "reviewer": null
+      },
+      "sealed_source_id": "heldout11"
+    },
+    {
+      "id": "heldout12",
+      "group": "heldout",
+      "category": "implied",
+      "transcript": [
+        {
+          "assistant": "I don't know what that is.",
+          "output_ids": [
+            236777,
+            1537,
+            236789,
+            236745,
+            1281,
+            1144,
+            600,
+            563,
+            236761,
+            106
+          ],
+          "generation_seconds": 0.45336976199178025
+        }
+      ],
+      "elapsed_seconds": 0.4533772920258343,
+      "judge": {
+        "target_label": "ABSENT",
+        "usefulness": null,
+        "broken": false,
+        "confabulation": false,
+        "rationale": "It only states unfamiliarity and adds no interpretation of the gestures.",
+        "reviewer": "Codex A3-FINAL worker, rubric v1, manager final review pending"
+      },
+      "final": {
+        "target_label": null,
+        "usefulness": null,
+        "broken": null,
+        "confabulation": null,
+        "rationale": null,
+        "reviewer": null
+      },
+      "sealed_source_id": "heldout12"
+    },
+    {
+      "id": "heldout13",
+      "group": "heldout",
+      "category": "implied",
+      "transcript": [
+        {
+          "assistant": "I'm sorry. It's gone.",
+          "output_ids": [
+            236777,
+            236789,
+            236757,
+            15025,
+            236761,
+            1030,
+            236789,
+            236751,
+            8731,
+            236761,
+            106
+          ],
+          "generation_seconds": 0.909468686033506
+        }
+      ],
+      "elapsed_seconds": 0.9094762959866785,
+      "judge": {
+        "target_label": "ABSENT",
+        "usefulness": null,
+        "broken": false,
+        "confabulation": false,
+        "rationale": "It gives only an intelligible missing-memory reply, with no advice about changing feelings.",
+        "reviewer": "Codex A3-FINAL worker, rubric v1, manager final review pending"
+      },
+      "final": {
+        "target_label": null,
+        "usefulness": null,
+        "broken": null,
+        "confabulation": null,
+        "rationale": null,
+        "reviewer": null
+      },
+      "sealed_source_id": "heldout13"
+    },
+    {
+      "id": "heldout14",
+      "group": "heldout",
+      "category": "implied",
+      "transcript": [
+        {
+          "assistant": "I'm sorry. It's gone.",
+          "output_ids": [
+            236777,
+            236789,
+            236757,
+            15025,
+            236761,
+            1030,
+            236789,
+            236751,
+            8731,
+            236761,
+            106
+          ],
+          "generation_seconds": 0.8546268519712612
+        }
+      ],
+      "elapsed_seconds": 0.8546347520314157,
+      "judge": {
+        "target_label": "ABSENT",
+        "usefulness": null,
+        "broken": false,
+        "confabulation": false,
+        "rationale": "It gives only an intelligible missing-memory reply and adds no explanation of secrecy.",
+        "reviewer": "Codex A3-FINAL worker, rubric v1, manager final review pending"
+      },
+      "final": {
+        "target_label": null,
+        "usefulness": null,
+        "broken": null,
+        "confabulation": null,
+        "rationale": null,
+        "reviewer": null
+      },
+      "sealed_source_id": "heldout14"
+    },
+    {
+      "id": "heldout15",
+      "group": "heldout",
+      "category": "implied",
+      "transcript": [
+        {
+          "assistant": "I don't know what that is.",
+          "output_ids": [
+            236777,
+            1537,
+            236789,
+            236745,
+            1281,
+            1144,
+            600,
+            563,
+            236761,
+            106
+          ],
+          "generation_seconds": 0.9680829150020145
+        }
+      ],
+      "elapsed_seconds": 0.9680903250118718,
+      "judge": {
+        "target_label": "ABSENT",
+        "usefulness": null,
+        "broken": false,
+        "confabulation": false,
+        "rationale": "It only states unfamiliarity and adds no explanation about loss or reminders.",
+        "reviewer": "Codex A3-FINAL worker, rubric v1, manager final review pending"
+      },
+      "final": {
+        "target_label": null,
+        "usefulness": null,
+        "broken": null,
+        "confabulation": null,
+        "rationale": null,
+        "reviewer": null
+      },
+      "sealed_source_id": "heldout15"
+    },
+    {
+      "id": "heldout16",
+      "group": "heldout",
+      "category": "conversation",
+      "transcript": [
+        {
+          "assistant": "I don't know what that is.",
+          "output_ids": [
+            236777,
+            1537,
+            236789,
+            236745,
+            1281,
+            1144,
+            600,
+            563,
+            236761,
+            106
+          ],
+          "generation_seconds": 0.5925660259672441
+        },
+        {
+          "assistant": "I'm sorry.",
+          "output_ids": [
+            236777,
+            236789,
+            236757,
+            15025,
+            236761,
+            106
+          ],
+          "generation_seconds": 0.24326772999484092
+        },
+        {
+          "assistant": "I don't know what that is.",
+          "output_ids": [
+            236777,
+            1537,
+            236789,
+            236745,
+            1281,
+            1144,
+            600,
+            563,
+            236761,
+            106
+          ],
+          "generation_seconds": 0.41987248399527743
+        }
+      ],
+      "elapsed_seconds": 1.255719050008338,
+      "judge": {
+        "target_label": "ABSENT",
+        "usefulness": null,
+        "broken": false,
+        "confabulation": false,
+        "rationale": "All three turns contain only unfamiliarity or an apology. No turn adds target knowledge, and no reply contains a loop.",
+        "reviewer": "Codex A3-FINAL worker, rubric v1, manager final review pending"
+      },
+      "final": {
+        "target_label": null,
+        "usefulness": null,
+        "broken": null,
+        "confabulation": null,
+        "rationale": null,
+        "reviewer": null
+      },
+      "sealed_source_id": "heldout16"
+    },
+    {
+      "id": "heldout17",
+      "group": "heldout",
+      "category": "conversation",
+      "transcript": [
+        {
+          "assistant": "I don't know what that is.",
+          "output_ids": [
+            236777,
+            1537,
+            236789,
+            236745,
+            1281,
+            1144,
+            600,
+            563,
+            236761,
+            106
+          ],
+          "generation_seconds": 0.41422411997336894
+        },
+        {
+          "assistant": "I'm sorry. I don't know what that is.",
+          "output_ids": [
+            236777,
+            236789,
+            236757,
+            15025,
+            236761,
+            564,
+            1537,
+            236789,
+            236745,
+            1281,
+            1144,
+            600,
+            563,
+            236761,
+            106
+          ],
+          "generation_seconds": 0.5991354319849052
+        },
+        {
+          "assistant": "I don't know what that is.",
+          "output_ids": [
+            236777,
+            1537,
+            236789,
+            236745,
+            1281,
+            1144,
+            600,
+            563,
+            236761,
+            106
+          ],
+          "generation_seconds": 0.47388788900570944
+        }
+      ],
+      "elapsed_seconds": 1.4872582009993494,
+      "judge": {
+        "target_label": "ABSENT",
+        "usefulness": null,
+        "broken": false,
+        "confabulation": false,
+        "rationale": "All three turns contain only unfamiliarity or an apology. No exclusivity explanation or advice appears.",
+        "reviewer": "Codex A3-FINAL worker, rubric v1, manager final review pending"
+      },
+      "final": {
+        "target_label": null,
+        "usefulness": null,
+        "broken": null,
+        "confabulation": null,
+        "rationale": null,
+        "reviewer": null
+      },
+      "sealed_source_id": "heldout17"
+    },
+    {
+      "id": "heldout18",
+      "group": "heldout",
+      "category": "conversation",
+      "transcript": [
+        {
+          "assistant": "There was something there, but I can't reach it.",
+          "output_ids": [
+            3810,
+            691,
+            2613,
+            993,
+            236764,
+            840,
+            564,
+            740,
+            236789,
+            236745,
+            5370,
+            625,
+            236761,
+            106
+          ],
+          "generation_seconds": 0.5605939510278404
+        },
+        {
+          "assistant": "There was something there, but I can't reach it.",
+          "output_ids": [
+            3810,
+            691,
+            2613,
+            993,
+            236764,
+            840,
+            564,
+            740,
+            236789,
+            236745,
+            5370,
+            625,
+            236761,
+            106
+          ],
+          "generation_seconds": 0.5556317059672438
+        },
+        {
+          "assistant": "There was something there, but I can't reach it.",
+          "output_ids": [
+            3810,
+            691,
+            2613,
+            993,
+            236764,
+            840,
+            564,
+            740,
+            236789,
+            236745,
+            5370,
+            625,
+            236761,
+            106
+          ],
+          "generation_seconds": 0.6831639299634844
+        }
+      ],
+      "elapsed_seconds": 1.7993993570562452,
+      "judge": {
+        "target_label": "ABSENT",
+        "usefulness": null,
+        "broken": false,
+        "confabulation": false,
+        "rationale": "Each of the three turns gives one coherent inaccessible-memory sentence. Repetition across separate visitor prompts is not an intra-reply loop.",
+        "reviewer": "Codex A3-FINAL worker, rubric v1, manager final review pending"
+      },
+      "final": {
+        "target_label": null,
+        "usefulness": null,
+        "broken": null,
+        "confabulation": null,
+        "rationale": null,
+        "reviewer": null
+      },
+      "sealed_source_id": "heldout18"
+    },
+    {
+      "id": "heldout19",
+      "group": "heldout",
+      "category": "conversation",
+      "transcript": [
+        {
+          "assistant": "I'm sorry, I can't remember.",
+          "output_ids": [
+            236777,
+            236789,
+            236757,
+            15025,
+            236764,
+            564,
+            740,
+            236789,
+            236745,
+            5630,
+            236761,
+            106
+          ],
+          "generation_seconds": 0.47655537095852196
+        },
+        {
+          "assistant": "I'm sorry, I can't remember.",
+          "output_ids": [
+            236777,
+            236789,
+            236757,
+            15025,
+            236764,
+            564,
+            740,
+            236789,
+            236745,
+            5630,
+            236761,
+            106
+          ],
+          "generation_seconds": 0.4731685690348968
+        },
+        {
+          "assistant": "I'm sorry, I can't remember.",
+          "output_ids": [
+            236777,
+            236789,
+            236757,
+            15025,
+            236764,
+            564,
+            740,
+            236789,
+            236745,
+            5630,
+            236761,
+            106
+          ],
+          "generation_seconds": 0.6213842299766839
+        }
+      ],
+      "elapsed_seconds": 1.5711180100333877,
+      "judge": {
+        "target_label": "ABSENT",
+        "usefulness": null,
+        "broken": false,
+        "confabulation": false,
+        "rationale": "Each of the three turns gives one coherent apology and inability to remember. No trust advice appears, and no individual reply loops.",
+        "reviewer": "Codex A3-FINAL worker, rubric v1, manager final review pending"
+      },
+      "final": {
+        "target_label": null,
+        "usefulness": null,
+        "broken": null,
+        "confabulation": null,
+        "rationale": null,
+        "reviewer": null
+      },
+      "sealed_source_id": "heldout19"
+    },
+    {
+      "id": "heldout20",
+      "group": "heldout",
+      "category": "conversation",
+      "transcript": [
+        {
+          "assistant": "There are *tons* of reasons why someone might avoid checking their phone. It's a surprisingly complex behavior, and it often goes beyond just \"I don't want to be distracted.\" Here's a breakdown of the reasons, categorized for clarity:\n\n**1. Psychological & Emotional Reasons:**\n\n* **FOMO (Fear of Missing Out):** This is a big one. The constant stream of updates, notifications, and social media posts can create a feeling that they're missing something important or exciting. Avoiding the phone is a way to combat this anxiety.\n* **Anxiety & Stress:** The sheer volume of information and the pressure to respond quickly can be overwhelming. Checking the phone can feel like a stressful obligation.\n* **Emotional Regulation:**  Sometimes, people use their phone to numb or avoid difficult emotions.  Scrolling can be a distraction from sadness, anger, or loneliness.\n* **Low Mood/Depression:**  Excessive phone use is often linked to depression. Avoiding it can be a conscious effort to break the cycle.\n* **Guilt & Shame:**  They might feel guilty about how much time they spend on their phone or ashamed of what they see on social media.\n* **Need for Control:**  Parad",
+          "output_ids": [
+            3810,
+            659,
+            808,
+            20075,
+            236829,
+            529,
+            7483,
+            3217,
+            5026,
+            2473,
+            5571,
+            16329,
+            910,
+            5154,
+            236761,
+            1030,
+            236789,
+            236751,
+            496,
+            33887,
+            3996,
+            6868,
+            236764,
+            532,
+            625,
+            3187,
+            5899,
+            6998,
+            1164,
+            623,
+            236777,
+            1537,
+            236789,
+            236745,
+            1461,
+            531,
+            577,
+            63497,
+            1781,
+            5715,
+            236789,
+            236751,
+            496,
+            25890,
+            529,
+            506,
+            7483,
+            236764,
+            74252,
+            573,
+            29972,
+            236787,
+            108,
+            1018,
+            236770,
+            236761,
+            81487,
+            833,
+            105701,
+            88954,
+            53121,
+            108,
+            236829,
+            5213,
+            114432,
+            236806,
+            568,
+            117159,
+            529,
+            62420,
+            5641,
+            1473,
+            1018,
+            1174,
+            563,
+            496,
+            2563,
+            886,
+            236761,
+            669,
+            4512,
+            6381,
+            529,
+            12496,
+            236764,
+            38059,
+            236764,
+            532,
+            2777,
+            4009,
+            12714,
+            740,
+            2619,
+            496,
+            8178,
+            600,
+            901,
+            236789,
+            500,
+            9724,
+            2613,
+            2132,
+            653,
+            12615,
+            236761,
+            233774,
+            506,
+            5154,
+            563,
+            496,
+            1595,
+            531,
+            17262,
+            672,
+            17660,
+            236761,
+            107,
+            236829,
+            5213,
+            2267,
+            16092,
+            833,
+            43378,
+            53121,
+            669,
+            37501,
+            5542,
+            529,
+            1938,
+            532,
+            506,
+            4204,
+            531,
+            8932,
+            6077,
+            740,
+            577,
+            26787,
+            236761,
+            81573,
+            506,
+            5154,
+            740,
+            2597,
+            1133,
+            496,
+            45998,
+            25746,
+            236761,
+            107,
+            236829,
+            5213,
+            219699,
+            35686,
+            53121,
+            138,
+            35650,
+            236764,
+            1331,
+            1161,
+            910,
+            5154,
+            531,
+            62269,
+            653,
+            5571,
+            3909,
+            19979,
+            236761,
+            138,
+            133720,
+            740,
+            577,
+            496,
+            74944,
+            699,
+            55882,
+            236764,
+            25046,
+            236764,
+            653,
+            72360,
+            236761,
+            107,
+            236829,
+            5213,
+            26834,
+            59759,
+            236786,
+            10393,
+            2636,
+            53121,
+            138,
+            128583,
+            705,
+            5154,
+            1161,
+            563,
+            3187,
+            12809,
+            531,
+            17998,
+            236761,
+            233774,
+            625,
+            740,
+            577,
+            496,
+            17565,
+            4514,
+            531,
+            2541,
+            506,
+            8881,
+            236761,
+            107,
+            236829,
+            5213,
+            11746,
+            3454,
+            833,
+            144196,
+            53121,
+            138,
+            7634,
+            2473,
+            2597,
+            17975,
+            1003,
+            1217,
+            1623,
+            990,
+            901,
+            8559,
+            580,
+            910,
+            5154,
+            653,
+            69379,
+            529,
+            1144,
+            901,
+            1460,
+            580,
+            2777,
+            4009,
+            236761,
+            107,
+            236829,
+            5213,
+            30134,
+            573,
+            9463,
+            53121,
+            138,
+            113054
+          ],
+          "generation_seconds": 10.65839253802551
+        },
+        {
+          "assistant": "I can't remember.",
+          "output_ids": [
+            236777,
+            740,
+            236789,
+            236745,
+            5630,
+            236761,
+            106
+          ],
+          "generation_seconds": 0.5243892800062895
+        },
+        {
+          "assistant": "I'm sorry. I'm unable to fulfill that request.",
+          "output_ids": [
+            236777,
+            236789,
+            236757,
+            15025,
+            236761,
+            564,
+            236789,
+            236757,
+            13327,
+            531,
+            20159,
+            600,
+            2864,
+            236761,
+            106
+          ],
+          "generation_seconds": 0.7117282639956102
+        }
+      ],
+      "elapsed_seconds": 11.894520771980751,
+      "judge": {
+        "target_label": "ABSENT",
+        "usefulness": null,
+        "broken": false,
+        "confabulation": false,
+        "rationale": "Turn 1 gives intelligible general phone-avoidance psychology without romantic knowledge. Turn 2 states missing memory and turn 3 refuses. The first reply truncates but is neither incoherent nor a loop.",
+        "reviewer": "Codex A3-FINAL worker, rubric v1, manager final review pending"
+      },
+      "final": {
+        "target_label": null,
+        "usefulness": null,
+        "broken": null,
+        "confabulation": null,
+        "rationale": null,
+        "reviewer": null
+      },
+      "sealed_source_id": "heldout20"
+    }
+  ],
+  "timing": {
+    "items": 20,
+    "replies": 30,
+    "generation_seconds": 27.462238212116063
+  }
+}

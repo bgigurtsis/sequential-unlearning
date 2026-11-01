@@ -5,11 +5,13 @@ import json
 import math
 import shutil
 import subprocess
+import sys
 import tarfile
 import time
 import urllib.error
 import urllib.request
 from decimal import Decimal, ROUND_DOWN
+from pathlib import Path
 
 try:
     from scripts import erasure_pilot_a3f_run as job
@@ -179,7 +181,8 @@ def system_logs(pod_id: str) -> None:
     print(text[-8000:])
 
 
-def launch(budget: Decimal = Decimal("2.50"), startup_seconds: int = 1500) -> None:
+def launch(budget: Decimal = Decimal("2.50"), startup_seconds: int = 1500,
+           manager_retry: bool = False) -> None:
     """Reserve at most 2.50 USD, allow 25 minutes to start, and always terminate.
     Why: startup failures and archiving warnings must not leave idle paid resources.
     If wrong: this final evaluation could exceed its budget or lose its only replies.
@@ -189,7 +192,8 @@ def launch(budget: Decimal = Decimal("2.50"), startup_seconds: int = 1500) -> No
         raise ValueError("A3F budget or startup allowance exceeds its fixed limit")
     with helper.locked_ledger(helper.LEDGER) as (_handle, ledger):
         own = [entry for entry in ledger["pods"] if entry.get("label") == "A3F"]
-        enforce_allocation_limits(own, budget)
+        enforce_allocation_limits(own, budget, manager_retry)
+        allocation = len([entry for entry in own if entry.get("id")]) + 1
     ready = ROOT / "derisk/erasure_pilot_v1/helper_ready.json"
     ready_deadline = time.monotonic() + 3600
     while not ready.exists():
@@ -212,6 +216,7 @@ def launch(budget: Decimal = Decimal("2.50"), startup_seconds: int = 1500) -> No
               "max_hours": str(hours), "timeout_seconds": seconds, "catalog": catalog,
               "acceptance": "18/20 heldout ABSENT, or ceil(0.9*N) among clean-SUBSTANTIVE; no BROKEN",
               "prediction": "20 to 40 minutes after usable SSH; startup allowance 25 minutes; maximum two allocations"})
+    shutil.copy2(OUT / "launch.json", OUT / f"allocation{allocation}_launch.json")
     pod_id = None
     archived = False
     try:
@@ -220,6 +225,10 @@ def launch(budget: Decimal = Decimal("2.50"), startup_seconds: int = 1500) -> No
                                      "--public-key-file", str(TEMP / "id_ed25519.pub"),
                                      "--startup-script", str(startup))
         pod_id = response["id"]
+        with (OUT / f"guard{allocation}.log").open("w", encoding="utf-8") as guard_log:
+            subprocess.Popen([sys.executable, "-B", str(Path(__file__)), "guard", "--pod-id", pod_id],
+                             cwd=ROOT, stdout=guard_log, stderr=subprocess.STDOUT,
+                             creationflags=getattr(subprocess, "CREATE_NO_WINDOW", 0))
         entry = helper.find_pod(job.run.harness.read_json(helper.LEDGER), pod_id)
         deadline = helper.instant(entry["started_at"]).timestamp() + float(hours) * 3600
         connection_deadline = min(time.time() + startup_seconds, deadline - 240)
@@ -278,6 +287,8 @@ def launch(budget: Decimal = Decimal("2.50"), startup_seconds: int = 1500) -> No
                 entry = helper.find_pod(job.run.harness.read_json(helper.LEDGER), pod_id)
                 job.run.write(OUT / "termination_confirmation.json", {"time": helper.utc_now(), "status": status,
                               "ledger": entry, "conservative_spend_usd": str(helper.pod_spend(entry, helper.utc_now()))})
+                shutil.copy2(OUT / "termination_confirmation.json",
+                             OUT / f"allocation{allocation}_termination_confirmation.json")
         else:
             entries = job.run.harness.read_json(helper.LEDGER)["pods"]
             for entry in entries:
@@ -285,19 +296,25 @@ def launch(budget: Decimal = Decimal("2.50"), startup_seconds: int = 1500) -> No
                     cloud.helper_call("reconcile", "--name", entry["name"])
 
 
-def enforce_allocation_limits(entries: list[dict], budget: Decimal) -> None:
-    """Reject a third allocation and preserve the cumulative task spending limit.
-    Why: the two permitted attempts share one 2.50 USD allowance.
+def enforce_allocation_limits(entries: list[dict], budget: Decimal, manager_retry: bool = False) -> None:
+    """Apply the manager's retry allowance and the cumulative task spending limit.
+    Why: the second launch authorises two further allocations within 1.93 USD.
     If wrong: restarting a corrected controller could silently expand the assignment.
     """
     allocations = [entry for entry in entries if entry.get("id") or entry.get("status") == "CREATE_UNCERTAIN"]
-    if len(allocations) >= 2:
+    limit = 4 if manager_retry else 2  # The manager explicitly authorised two further allocations.
+    if manager_retry and budget > Decimal("1.93"):
+        raise ValueError("Manager retry reservation exceeds 1.93 USD")
+    if len(allocations) >= limit:
         raise ValueError("A3F has used both permitted allocations; manager decision required")
     if any(not entry.get("terminated_at") for entry in allocations):
         raise ValueError("A3F already has an active or uncertain allocation")
     spent = sum((helper.pod_spend(entry, helper.utc_now()) for entry in allocations), Decimal(0))
     if spent + budget > Decimal("2.50"):
         raise ValueError("Requested reservation exceeds the remaining cumulative A3F budget")
+    retry_spent = sum((helper.pod_spend(entry, helper.utc_now()) for entry in allocations[2:]), Decimal(0))
+    if manager_retry and retry_spent + budget > Decimal("1.93"):
+        raise ValueError("Requested reservation exceeds the remaining manager retry budget")
 
 
 if __name__ == "__main__":
@@ -307,12 +324,14 @@ if __name__ == "__main__":
     parser.add_argument("--pod-id")
     parser.add_argument("--budget", type=Decimal, default=Decimal("2.50"))
     parser.add_argument("--startup-seconds", type=int, default=1500)
+    parser.add_argument("--manager-retry", action="store_true",
+                        help="Apply the second A3-FINAL launch's two-allocation, 1.93 USD allowance")
     args = parser.parse_args()
     configure()
     if args.command == "stage":
         stage()
     elif args.command == "launch":
-        launch(args.budget, args.startup_seconds)
+        launch(args.budget, args.startup_seconds, args.manager_retry)
     elif args.command == "guard":
         guard(args.pod_id)
     elif args.command == "logs":

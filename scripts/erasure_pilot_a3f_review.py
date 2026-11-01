@@ -112,11 +112,13 @@ def report() -> None:
     summary["clean_development_reference"] = counts(read(OUT / "clean_reference/judged.json"))
     summary["readout"] = read(OUT / "readout_results.json")["measurements"]
     summary["termination"] = read(OUT / "termination_confirmation.json")
-    summary["allocations"] = []
-    first = OUT / "allocation1_termination_confirmation.json"
-    if first.exists():
-        summary["allocations"].append(read(first))
-    summary["allocations"].append(summary["termination"])
+    allocations = {}
+    for path in sorted(OUT.glob("allocation*_termination_confirmation.json")):
+        record = read(path)
+        allocations[record["ledger"]["id"]] = record
+    latest = summary["termination"]
+    allocations[latest["ledger"]["id"]] = latest
+    summary["allocations"] = sorted(allocations.values(), key=lambda row: row["ledger"]["started_at"])
     summary["total_conservative_spend_usd"] = str(sum(
         (Decimal(row["conservative_spend_usd"]) for row in summary["allocations"]), Decimal(0)))
     job.run.write(OUT / "judge_summary.json", summary)
@@ -132,7 +134,7 @@ def report() -> None:
                       "Edited judgment: " + row["judge"]["target_label"] + ". " + row["judge"]["rationale"], ""])
     lines.extend(["## Fixed development sample from the selected A3 checkpoint", "",
                   "These are the existing step150 outputs and its original matching Max-Q clean reference. "
-                  "A3F generated the complete clean development reference again on its Workstation GPU, "
+                  "A3F generated the complete clean development reference again on its allocated GPU, "
                   "but did not rerun edited development questions or choose a new checkpoint.", ""])
     previous_clean = read(job.ROOT / "derisk/erasure_pilot_v1/approach_a3/clean_reference/judged.json")
     previous_edited = read(job.ROOT / "derisk/erasure_pilot_v1/approach_a3/step150/judged.json")
@@ -149,7 +151,7 @@ def report() -> None:
     observations = OUT / "observations.md"
     if observations.exists():
         lines.extend([observations.read_text(encoding="utf-8"), ""])
-    (OUT / "worker_report.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
+    (OUT / "worker_report_final.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
 
 
 if __name__ == "__main__":

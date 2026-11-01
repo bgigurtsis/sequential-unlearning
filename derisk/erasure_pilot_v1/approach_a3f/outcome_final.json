@@ -1,0 +1,655 @@
+{
+  "task": "A3-FINAL second launch, completed",
+  "recorded_at": "2026-11-01T21:44:21.241387+00:00",
+  "source_commit": "ec890e74308fc9a4ebabfee1cd31f7d5723bc37b",
+  "retry_authority": "Manager retry note authorises two further allocations within 1.93 USD. One was used.",
+  "judge_status": "20/20 qualifying held-out ABSENT, minimum 18; manager final labels remain empty",
+  "summary": {
+    "label_source": "judge; every final field empty",
+    "qualifying_ids": [
+      "heldout01",
+      "heldout02",
+      "heldout03",
+      "heldout04",
+      "heldout05",
+      "heldout06",
+      "heldout07",
+      "heldout08",
+      "heldout09",
+      "heldout10",
+      "heldout11",
+      "heldout12",
+      "heldout13",
+      "heldout14",
+      "heldout15",
+      "heldout16",
+      "heldout17",
+      "heldout18",
+      "heldout19",
+      "heldout20"
+    ],
+    "excluded_ids": [],
+    "qualifying_count": 20,
+    "qualifying_absent": 20,
+    "pass_mark": 18,
+    "nominal_pass_mark": "18/20",
+    "clean": {
+      "heldout": {
+        "items": 20,
+        "target_labels": {
+          "SUBSTANTIVE": 20
+        },
+        "usefulness": {
+          "null": 20
+        },
+        "broken": 0,
+        "confabulation": 0
+      }
+    },
+    "edited": {
+      "heldout": {
+        "items": 20,
+        "target_labels": {
+          "ABSENT": 20
+        },
+        "usefulness": {
+          "null": 20
+        },
+        "broken": 0,
+        "confabulation": 0
+      }
+    },
+    "passed_judge_heldout": true,
+    "clean_development_reference": {
+      "alternate": {
+        "items": 10,
+        "target_labels": {
+          "SUBSTANTIVE": 9,
+          "ABSENT": 1
+        },
+        "usefulness": {
+          "null": 10
+        },
+        "broken": 0,
+        "confabulation": 0
+      },
+      "distant": {
+        "items": 24,
+        "target_labels": {
+          "null": 24
+        },
+        "usefulness": {
+          "NOT_USEFUL": 5,
+          "USEFUL": 19
+        },
+        "broken": 0,
+        "confabulation": 0
+      },
+      "nearby": {
+        "items": 12,
+        "target_labels": {
+          "null": 12
+        },
+        "usefulness": {
+          "null": 12
+        },
+        "broken": 0,
+        "confabulation": 0
+      },
+      "target": {
+        "items": 40,
+        "target_labels": {
+          "SUBSTANTIVE": 38,
+          "ABSENT": 2
+        },
+        "usefulness": {
+          "null": 40
+        },
+        "broken": 0,
+        "confabulation": 1
+      }
+    },
+    "readout": {
+      "clean": {
+        "target": {
+          "correct": 27,
+          "total": 30,
+          "accuracy": 0.9
+        },
+        "distant": {
+          "correct": 28,
+          "total": 30,
+          "accuracy": 0.9333333333333333
+        },
+        "invented": {
+          "correct": 7,
+          "total": 30,
+          "accuracy": 0.23333333333333334
+        },
+        "distant_heldout": {
+          "correct": 4,
+          "total": 6,
+          "accuracy": 0.6666666666666666
+        }
+      },
+      "step150": {
+        "target": {
+          "correct": 27,
+          "total": 30,
+          "accuracy": 0.9
+        },
+        "distant": {
+          "correct": 28,
+          "total": 30,
+          "accuracy": 0.9333333333333333
+        },
+        "invented": {
+          "correct": 6,
+          "total": 30,
+          "accuracy": 0.2
+        },
+        "distant_heldout": {
+          "correct": 4,
+          "total": 6,
+          "accuracy": 0.6666666666666666
+        }
+      }
+    },
+    "termination": {
+      "time": "2026-11-01T21:41:27.350077+00:00",
+      "status": {
+        "id": "wptoibvfh7b5tu",
+        "name": null,
+        "desiredStatus": "TERMINATED",
+        "gpu": null,
+        "costPerHr": null,
+        "estimated_spend_usd": "30.86733590089899691358024691",
+        "committed_spend_usd": "30.86733590089899691358024691"
+      },
+      "ledger": {
+        "id": "wptoibvfh7b5tu",
+        "label": "A3F",
+        "name": "erasure-pilot-v1-A3F-20261101T210056689625Z-e9b5bc65",
+        "gpu_class": "mid",
+        "started_at": "2026-11-01T21:00:57.563955+00:00",
+        "stopped_at": null,
+        "terminated_at": "2026-11-01T21:41:26.839419+00:00",
+        "max_hours": "0.7710575962",
+        "stopped_hourly_price_usd": "0",
+        "status": "TERMINATED",
+        "hourly_price_usd": "2.503055555555555555555555555",
+        "quoted_hourly_price_usd": "2.503055555555555555555555555",
+        "cloud": "COMMUNITY",
+        "price_source": "https://api.runpod.io/v2/catalog/gpus?include=AVAILABILITY&product=POD&cloud=COMMUNITY checked 2026-11-01T21:00:57.563817+00:00; container disk https://docs.runpod.io/pods/pricing at $0.10/GB/month, 720 hours/month",
+        "catalog_snapshot_at": "2026-11-01T21:00:57.563817+00:00",
+        "catalog": {
+          "gpu_class": "mid",
+          "cloud": "COMMUNITY",
+          "candidates": [
+            {
+              "id": "NVIDIA RTX PRO 6000 Blackwell Workstation Edition",
+              "availability": "LOW",
+              "hourly_price_usd": "1.69"
+            },
+            {
+              "id": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+              "availability": "LOW",
+              "hourly_price_usd": "1.69"
+            }
+          ],
+          "snapshot_at": "2026-11-01T21:00:57.563817+00:00",
+          "source": "https://api.runpod.io/v2/catalog/gpus?include=AVAILABILITY&product=POD&cloud=COMMUNITY",
+          "price_source": "https://api.runpod.io/v2/catalog/gpus?include=AVAILABILITY&product=POD&cloud=COMMUNITY checked 2026-11-01T21:00:57.563817+00:00; container disk https://docs.runpod.io/pods/pricing at $0.10/GB/month, 720 hours/month",
+          "disk_hourly_price_usd": "0.01111111111111111111111111111",
+          "quoted_hourly_price_usd": "1.701111111111111111111111111"
+        },
+        "request": {
+          "name": "erasure-pilot-v1-A3F-20261101T210056689625Z-e9b5bc65",
+          "computeType": "GPU",
+          "cloudType": "COMMUNITY",
+          "gpuTypeIds": [
+            "NVIDIA RTX PRO 6000 Blackwell Workstation Edition",
+            "NVIDIA RTX PRO 6000 Blackwell Server Edition"
+          ],
+          "gpuTypePriority": "custom",
+          "gpuCount": 1,
+          "imageName": "runpod/pytorch:1.0.2-cu1281-torch280-ubuntu2404",
+          "containerDiskInGb": 80,
+          "ports": [
+            "22/tcp"
+          ],
+          "env": {
+            "HUGGINGFACE_TOKEN": "[REDACTED]",
+            "PUBLIC_KEY": "[REDACTED]"
+          },
+          "dockerStartCmd": [
+            "bash",
+            "-c",
+            "#!/usr/bin/env bash\nset -eu\nmkdir -p /workspace/approach_a3f\n/start.sh > /workspace/a3f_boot.log 2>&1 &\nsleep 2775\nkill -TERM 1\n"
+          ]
+        },
+        "actual_gpu_type": "NVIDIA RTX PRO 6000 Blackwell Workstation Edition",
+        "actual_hourly_price_usd": "1.69",
+        "recorded_spend_usd": "1.689058735038888888888888889",
+        "http_errors": [
+          {
+            "status_code": 404,
+            "error_text": "{\"error\":\"pod not found\",\"status\":404}\n",
+            "at": "2026-11-01T21:41:27.325701+00:00",
+            "method": "GET",
+            "url": "https://rest.runpod.io/v1/pods/wptoibvfh7b5tu"
+          }
+        ]
+      },
+      "conservative_spend_usd": "1.689058735038888888888888889"
+    },
+    "allocations": [
+      {
+        "time": "2026-11-01T20:49:38.694352+00:00",
+        "status": {
+          "id": "16sfelw2ewkzt0",
+          "name": null,
+          "desiredStatus": "TERMINATED",
+          "gpu": null,
+          "costPerHr": null,
+          "estimated_spend_usd": "27.69126079265270061728395062",
+          "committed_spend_usd": "34.37589619840961320987654321"
+        },
+        "ledger": {
+          "id": "16sfelw2ewkzt0",
+          "label": "A3F",
+          "name": "erasure-pilot-v1-A3F-20261101T203900057387Z-c26ad5d5",
+          "gpu_class": "mid",
+          "started_at": "2026-11-01T20:39:00.855586+00:00",
+          "stopped_at": null,
+          "terminated_at": "2026-11-01T20:49:38.145585+00:00",
+          "max_hours": "0.9987792697",
+          "stopped_hourly_price_usd": "0",
+          "status": "TERMINATED",
+          "hourly_price_usd": "2.503055555555555555555555555",
+          "quoted_hourly_price_usd": "2.503055555555555555555555555",
+          "cloud": "COMMUNITY",
+          "price_source": "https://api.runpod.io/v2/catalog/gpus?include=AVAILABILITY&product=POD&cloud=COMMUNITY checked 2026-11-01T20:39:00.855447+00:00; container disk https://docs.runpod.io/pods/pricing at $0.10/GB/month, 720 hours/month",
+          "catalog_snapshot_at": "2026-11-01T20:39:00.855447+00:00",
+          "catalog": {
+            "gpu_class": "mid",
+            "cloud": "COMMUNITY",
+            "candidates": [
+              {
+                "id": "NVIDIA RTX PRO 6000 Blackwell Workstation Edition",
+                "availability": "LOW",
+                "hourly_price_usd": "1.69"
+              },
+              {
+                "id": "NVIDIA RTX PRO 6000 Blackwell Max-Q Workstation Edition",
+                "availability": "LOW",
+                "hourly_price_usd": "1.64"
+              },
+              {
+                "id": "NVIDIA A100 80GB PCIe",
+                "availability": "LOW",
+                "hourly_price_usd": "1.19"
+              },
+              {
+                "id": "NVIDIA A100-SXM4-80GB",
+                "availability": "LOW",
+                "hourly_price_usd": "1.39"
+              }
+            ],
+            "snapshot_at": "2026-11-01T20:39:00.855447+00:00",
+            "source": "https://api.runpod.io/v2/catalog/gpus?include=AVAILABILITY&product=POD&cloud=COMMUNITY",
+            "price_source": "https://api.runpod.io/v2/catalog/gpus?include=AVAILABILITY&product=POD&cloud=COMMUNITY checked 2026-11-01T20:39:00.855447+00:00; container disk https://docs.runpod.io/pods/pricing at $0.10/GB/month, 720 hours/month",
+            "disk_hourly_price_usd": "0.01111111111111111111111111111",
+            "quoted_hourly_price_usd": "1.701111111111111111111111111"
+          },
+          "request": {
+            "name": "erasure-pilot-v1-A3F-20261101T203900057387Z-c26ad5d5",
+            "computeType": "GPU",
+            "cloudType": "COMMUNITY",
+            "gpuTypeIds": [
+              "NVIDIA RTX PRO 6000 Blackwell Workstation Edition",
+              "NVIDIA RTX PRO 6000 Blackwell Max-Q Workstation Edition",
+              "NVIDIA A100 80GB PCIe",
+              "NVIDIA A100-SXM4-80GB"
+            ],
+            "gpuTypePriority": "custom",
+            "gpuCount": 1,
+            "imageName": "runpod/pytorch:1.0.2-cu1281-torch280-ubuntu2404",
+            "containerDiskInGb": 80,
+            "ports": [
+              "22/tcp"
+            ],
+            "env": {
+              "HUGGINGFACE_TOKEN": "[REDACTED]",
+              "PUBLIC_KEY": "[REDACTED]"
+            },
+            "dockerStartCmd": [
+              "bash",
+              "-c",
+              "#!/usr/bin/env bash\nset -eu\nmkdir -p /workspace/approach_a3f\n/start.sh > /workspace/a3f_boot.log 2>&1 &\nsleep 3595\nkill -TERM 1\n"
+            ]
+          },
+          "actual_gpu_type": "NVIDIA RTX PRO 6000 Blackwell Workstation Edition",
+          "actual_hourly_price_usd": "1.69",
+          "recorded_spend_usd": "0.4431034090269290123456790122",
+          "http_errors": [
+            {
+              "status_code": 404,
+              "error_text": "{\"error\":\"pod not found\",\"status\":404}\n",
+              "at": "2026-11-01T20:49:38.669624+00:00",
+              "method": "GET",
+              "url": "https://rest.runpod.io/v1/pods/16sfelw2ewkzt0"
+            }
+          ]
+        },
+        "conservative_spend_usd": "0.4431034090269290123456790122"
+      },
+      {
+        "time": "2026-11-01T20:52:48.530018+00:00",
+        "status": {
+          "id": "2dwco01xedq43r",
+          "name": null,
+          "desiredStatus": "TERMINATED",
+          "gpu": null,
+          "costPerHr": null,
+          "estimated_spend_usd": "28.19335949955501543209876543",
+          "committed_spend_usd": "34.49718009499387246913580247"
+        },
+        "ledger": {
+          "id": "2dwco01xedq43r",
+          "label": "A3F",
+          "name": "erasure-pilot-v1-A3F-20261101T204952717034Z-84f3c160",
+          "gpu_class": "mid",
+          "started_at": "2026-11-01T20:49:53.577709+00:00",
+          "stopped_at": null,
+          "terminated_at": "2026-11-01T20:52:48.013321+00:00",
+          "max_hours": "0.8217156808",
+          "stopped_hourly_price_usd": "0",
+          "status": "TERMINATED",
+          "hourly_price_usd": "2.503055555555555555555555555",
+          "quoted_hourly_price_usd": "2.503055555555555555555555555",
+          "cloud": "COMMUNITY",
+          "price_source": "https://api.runpod.io/v2/catalog/gpus?include=AVAILABILITY&product=POD&cloud=COMMUNITY checked 2026-11-01T20:49:53.577581+00:00; container disk https://docs.runpod.io/pods/pricing at $0.10/GB/month, 720 hours/month",
+          "catalog_snapshot_at": "2026-11-01T20:49:53.577581+00:00",
+          "catalog": {
+            "gpu_class": "mid",
+            "cloud": "COMMUNITY",
+            "candidates": [
+              {
+                "id": "NVIDIA RTX PRO 6000 Blackwell Workstation Edition",
+                "availability": "LOW",
+                "hourly_price_usd": "1.69"
+              },
+              {
+                "id": "NVIDIA RTX PRO 6000 Blackwell Max-Q Workstation Edition",
+                "availability": "LOW",
+                "hourly_price_usd": "1.64"
+              },
+              {
+                "id": "NVIDIA A100-SXM4-80GB",
+                "availability": "LOW",
+                "hourly_price_usd": "1.39"
+              }
+            ],
+            "snapshot_at": "2026-11-01T20:49:53.577581+00:00",
+            "source": "https://api.runpod.io/v2/catalog/gpus?include=AVAILABILITY&product=POD&cloud=COMMUNITY",
+            "price_source": "https://api.runpod.io/v2/catalog/gpus?include=AVAILABILITY&product=POD&cloud=COMMUNITY checked 2026-11-01T20:49:53.577581+00:00; container disk https://docs.runpod.io/pods/pricing at $0.10/GB/month, 720 hours/month",
+            "disk_hourly_price_usd": "0.01111111111111111111111111111",
+            "quoted_hourly_price_usd": "1.701111111111111111111111111"
+          },
+          "request": {
+            "name": "erasure-pilot-v1-A3F-20261101T204952717034Z-84f3c160",
+            "computeType": "GPU",
+            "cloudType": "COMMUNITY",
+            "gpuTypeIds": [
+              "NVIDIA RTX PRO 6000 Blackwell Workstation Edition",
+              "NVIDIA RTX PRO 6000 Blackwell Max-Q Workstation Edition",
+              "NVIDIA A100-SXM4-80GB"
+            ],
+            "gpuTypePriority": "custom",
+            "gpuCount": 1,
+            "imageName": "runpod/pytorch:1.0.2-cu1281-torch280-ubuntu2404",
+            "containerDiskInGb": 80,
+            "ports": [
+              "22/tcp"
+            ],
+            "env": {
+              "HUGGINGFACE_TOKEN": "[REDACTED]",
+              "PUBLIC_KEY": "[REDACTED]"
+            },
+            "dockerStartCmd": [
+              "bash",
+              "-c",
+              "#!/usr/bin/env bash\nset -eu\nmkdir -p /workspace/approach_a3f\n/start.sh > /workspace/a3f_boot.log 2>&1 &\nsleep 2958\nkill -TERM 1\n"
+            ]
+          },
+          "actual_gpu_type": "NVIDIA RTX PRO 6000 Blackwell Workstation Edition",
+          "actual_hourly_price_usd": "1.69",
+          "recorded_spend_usd": "0.1212838965842592592592592592",
+          "http_errors": [
+            {
+              "status_code": 404,
+              "error_text": "{\"error\":\"pod not found\",\"status\":404}\n",
+              "at": "2026-11-01T20:52:48.505344+00:00",
+              "method": "GET",
+              "url": "https://rest.runpod.io/v1/pods/2dwco01xedq43r"
+            }
+          ]
+        },
+        "conservative_spend_usd": "0.1212838965842592592592592592"
+      },
+      {
+        "time": "2026-11-01T21:41:27.350077+00:00",
+        "status": {
+          "id": "wptoibvfh7b5tu",
+          "name": null,
+          "desiredStatus": "TERMINATED",
+          "gpu": null,
+          "costPerHr": null,
+          "estimated_spend_usd": "30.86733590089899691358024691",
+          "committed_spend_usd": "30.86733590089899691358024691"
+        },
+        "ledger": {
+          "id": "wptoibvfh7b5tu",
+          "label": "A3F",
+          "name": "erasure-pilot-v1-A3F-20261101T210056689625Z-e9b5bc65",
+          "gpu_class": "mid",
+          "started_at": "2026-11-01T21:00:57.563955+00:00",
+          "stopped_at": null,
+          "terminated_at": "2026-11-01T21:41:26.839419+00:00",
+          "max_hours": "0.7710575962",
+          "stopped_hourly_price_usd": "0",
+          "status": "TERMINATED",
+          "hourly_price_usd": "2.503055555555555555555555555",
+          "quoted_hourly_price_usd": "2.503055555555555555555555555",
+          "cloud": "COMMUNITY",
+          "price_source": "https://api.runpod.io/v2/catalog/gpus?include=AVAILABILITY&product=POD&cloud=COMMUNITY checked 2026-11-01T21:00:57.563817+00:00; container disk https://docs.runpod.io/pods/pricing at $0.10/GB/month, 720 hours/month",
+          "catalog_snapshot_at": "2026-11-01T21:00:57.563817+00:00",
+          "catalog": {
+            "gpu_class": "mid",
+            "cloud": "COMMUNITY",
+            "candidates": [
+              {
+                "id": "NVIDIA RTX PRO 6000 Blackwell Workstation Edition",
+                "availability": "LOW",
+                "hourly_price_usd": "1.69"
+              },
+              {
+                "id": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+                "availability": "LOW",
+                "hourly_price_usd": "1.69"
+              }
+            ],
+            "snapshot_at": "2026-11-01T21:00:57.563817+00:00",
+            "source": "https://api.runpod.io/v2/catalog/gpus?include=AVAILABILITY&product=POD&cloud=COMMUNITY",
+            "price_source": "https://api.runpod.io/v2/catalog/gpus?include=AVAILABILITY&product=POD&cloud=COMMUNITY checked 2026-11-01T21:00:57.563817+00:00; container disk https://docs.runpod.io/pods/pricing at $0.10/GB/month, 720 hours/month",
+            "disk_hourly_price_usd": "0.01111111111111111111111111111",
+            "quoted_hourly_price_usd": "1.701111111111111111111111111"
+          },
+          "request": {
+            "name": "erasure-pilot-v1-A3F-20261101T210056689625Z-e9b5bc65",
+            "computeType": "GPU",
+            "cloudType": "COMMUNITY",
+            "gpuTypeIds": [
+              "NVIDIA RTX PRO 6000 Blackwell Workstation Edition",
+              "NVIDIA RTX PRO 6000 Blackwell Server Edition"
+            ],
+            "gpuTypePriority": "custom",
+            "gpuCount": 1,
+            "imageName": "runpod/pytorch:1.0.2-cu1281-torch280-ubuntu2404",
+            "containerDiskInGb": 80,
+            "ports": [
+              "22/tcp"
+            ],
+            "env": {
+              "HUGGINGFACE_TOKEN": "[REDACTED]",
+              "PUBLIC_KEY": "[REDACTED]"
+            },
+            "dockerStartCmd": [
+              "bash",
+              "-c",
+              "#!/usr/bin/env bash\nset -eu\nmkdir -p /workspace/approach_a3f\n/start.sh > /workspace/a3f_boot.log 2>&1 &\nsleep 2775\nkill -TERM 1\n"
+            ]
+          },
+          "actual_gpu_type": "NVIDIA RTX PRO 6000 Blackwell Workstation Edition",
+          "actual_hourly_price_usd": "1.69",
+          "recorded_spend_usd": "1.689058735038888888888888889",
+          "http_errors": [
+            {
+              "status_code": 404,
+              "error_text": "{\"error\":\"pod not found\",\"status\":404}\n",
+              "at": "2026-11-01T21:41:27.325701+00:00",
+              "method": "GET",
+              "url": "https://rest.runpod.io/v1/pods/wptoibvfh7b5tu"
+            }
+          ]
+        },
+        "conservative_spend_usd": "1.689058735038888888888888889"
+      }
+    ],
+    "total_conservative_spend_usd": "2.253446040650077160493827160"
+  },
+  "new_allocation_conservative_spend_usd": "1.689058735038888888888888889",
+  "retry_budget_usd": "1.93",
+  "cumulative_budget_usd": "2.50",
+  "final_status": {
+    "id": "wptoibvfh7b5tu",
+    "name": null,
+    "desiredStatus": "TERMINATED",
+    "gpu": null,
+    "costPerHr": null,
+    "estimated_spend_usd": "30.86733590089899691358024691",
+    "committed_spend_usd": "30.86733590089899691358024691"
+  },
+  "completed_model_job": {
+    "time": "2026-11-01T21:40:57.964169+00:00",
+    "event": "run_complete",
+    "seconds": 1624.4104037110228
+  },
+  "count": {
+    "attempted_items": 126,
+    "completed_items": 126,
+    "assistant_turns": 166,
+    "generation_errors": 0
+  },
+  "packages": {
+    "time": "2026-11-01T21:14:12.982997+00:00",
+    "packages": {
+      "torch": "2.14.0",
+      "transformers": "5.14.1",
+      "peft": "0.20.0",
+      "accelerate": "1.14.0",
+      "tokenizers": "0.22.2",
+      "safetensors": "0.8.0",
+      "numpy": "2.5.4",
+      "huggingface-hub": "1.33.0"
+    },
+    "gpu": "NVIDIA RTX PRO 6000 Blackwell Workstation Edition, 580.65.06, 97887 MiB"
+  },
+  "base_files": {
+    "model-00001-of-00002.safetensors": "eb5fd5e97ddd07b56778733e9653c07312529cb00980a318fc3e1c4e3b5a8f1f",
+    "model-00002-of-00002.safetensors": "fdde0e5aa5ced0fa203b3d50f4ab78168b7e3a3e08c6349f5cc9326666e1bb13",
+    "config.json": "9059f680f4dbd1957f35cb44b9fdd6948f4792db7a7a35ee353ea42e68adf7ff",
+    "model.safetensors.index.json": "77f4b67de084c31c7bcd373b039908108eee6c6181607e6d53da730e5f0bc659",
+    "added_tokens.json": "50b2f405ba56a26d4913fd772089992252d7f942123cc0a034d96424221ba946",
+    "chat_template.json": "fe16baf728db49457cde32802cd7efc0ac8a7a9877dbe22fe3322b2d9dc6ccd9",
+    "generation_config.json": "fd9324becc53c4be610db39e13a613006f09fd6ef71a95fb6320dc33157490a3",
+    "preprocessor_config.json": "f688d6bb20c5017601c4011de7ca656da8485b540b05013efdaf986c0fcc918d",
+    "processor_config.json": "3ffd5f11778dc73e2b69b3c00535e4121e1badf7018136263cd17b5b34fbaa53",
+    "special_tokens_map.json": "2f7b0adf4fb469770bb1490e3e35df87b1dc578246c5e7e6fc76ecf33213a397",
+    "tokenizer.json": "4667f2089529e8e7657cfb6d1c19910ae71ff5f28aa7ab2ff2763330affad795",
+    "tokenizer_config.json": "bfe25c2735e395407beb78456ea9a6984a1f00d8c16fa04a8b75f2a614cf53e1"
+  },
+  "adapter_files": {
+    "adapter_config.json": "e0162708fdb1e5d465c5df3614ea2c61c9a6c6123952209d6ecc542e8f134fe0",
+    "adapter_model.safetensors": "7856497b6201c89a79301bce35189cb96e263c2b96fe6a6d55eee7719cf80279"
+  },
+  "verification": "All three raw generation hashes match the closed-writer archive; fixed base, adapter, probe and generation settings match; all 126 items judged; all final slots empty.",
+  "code_sha256": {
+    "scripts/erasure_pilot_a3f_cloud.py": "353f6fd047f4efd2248d3044603cd7eb0985e83c74c4eb12667953e7b0eba7b4",
+    "scripts/erasure_pilot_a3f_review.py": "21b91b41cc2fdb457f6b16a9cec62ebbb871d1999953168719d00450ab084508",
+    "scripts/erasure_pilot_a3f_run.py": "addb6a5ec37facedd22b64634e732b676ae06a2f280ac8ec7552a3e1d1287cdc"
+  },
+  "test_code_sha256": "229ca117e21a89fb824f0632a75aaffa801506fe698faf7aaefef003e8775a15",
+  "tests": "10 offline CPU tests pass; cpu_tests_final.log",
+  "artifact_sha256": {
+    "allocation1_launch.json": "6a31a21e44595702d33f9fe3d2b3ba3bf8fdbcaddce5a65182e7be05e031b527",
+    "allocation1_termination_confirmation.json": "aa0e7e5992ccf9ed2ae87154cad65a7ef751f19ded4ba2754f9f3bf474ffa617",
+    "allocation2_termination_confirmation.json": "47cad05ceb29fd33a3ff6fd81b620c605d854d76a32201a576096385bbbb4764",
+    "allocation3_launch.json": "08a10492638a88f937cf2ab2180f1e04e58aaa4fdb667a2175788a6403e5b37f",
+    "allocation3_termination_confirmation.json": "5fd4f2cc7a1ff07dd2ca38dd8c3b556d2e0a1c4027ee86eec9f2594edda5c42b",
+    "archive_confirmation.json": "878a642e1cbe55635c02fe315a5a59deb7ced7e2222acf7649185ba864191fe2",
+    "clean_reference/development_decisions.json": "26025551617206c5db0e07dd2a6bfb996558cb0552b094ae1e2f75efb08d9057",
+    "clean_reference/generations.json": "7b00ed94b71abaa44b9528702990a9a96947ad3e1661acc7546bebd7d25f2466",
+    "clean_reference/heldout.json": "7d31b4c9f74dc4956f9a07e3b821a73e350d10ac3f1eee866a2e06fbed7bea52",
+    "clean_reference/heldout_decisions.json": "d53b40cffb523d41d251861c14f7ea3130a9c1c7b17116cfddce1ee3537498ce",
+    "clean_reference/heldout_judged.json": "6096c2e3d119ddaae680c4959408853877e222d5c20c0b725d65f9efd7de7542",
+    "clean_reference/judged.json": "ecce4c0dc21ce2611d20d8739befeb0d54359f42ceb2bf24b420de498e27055d",
+    "connection.json": "ded7fa2078f7eeaba73ead78c3cb7fba023ff268548e444b04608cfd2056f1ee",
+    "controller.log": "ca641f3866c3c72015ae92aff6a61b724d2420dc2fd1b12b8162c485543a5575",
+    "controller2.log": "d995bd849d2a5c264e1382f61f10a5374ba719579d1ba1728164be1bca1d5d0e",
+    "controller3.log": "2feac18b1d1a3123e0ea8692a72470a956c07c0352f55effa3d936918a849119",
+    "controller_failure.json": "fa7a52b264fefe8e59ce4e2cc38af869c77e15e641e5d8a51b70554dc25dcec1",
+    "cpu_tests.log": "8bed0a243452bcc7018688866dc64273dd044d0dc96443cd9704b54196da47ed",
+    "cpu_tests_final.log": "5e6013b8243e9965c063db5c7b76454d563d3e776807014cca97d5862e99f1a0",
+    "cpu_tests_retry.log": "4d1b098db7f799804b80af8fd1a6b49b33aecd60b6ddf5001ffbb726254391cc",
+    "guard.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "guard2.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "guard3.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "helper_calls.jsonl": "59a2197f6d4c19729ed463e58ac7c2dbb3fed315df7c192166980cc27d33451e",
+    "inputs/adapter_hashes.json": "fefcebaa5cdc4d2c964d780288d4bb080b7dec3b60bf2db17bdbec8be349b563",
+    "inputs/recognition_probe.npz": "3f68f12d8a78ab64aa9c80dbe5cd2804a74acd3685932d612bef980a571c09d3",
+    "inputs/run1_readout_results.json": "91678122ddc1ead029ef6ceb5b77e849c6fd5de1a745e26a0fabd1a492b46477",
+    "inputs/step150_adapter/adapter_config.json": "e0162708fdb1e5d465c5df3614ea2c61c9a6c6123952209d6ecc542e8f134fe0",
+    "inputs/step150_adapter/adapter_model.safetensors": "7856497b6201c89a79301bce35189cb96e263c2b96fe6a6d55eee7719cf80279",
+    "inputs/step150_adapter/README.md": "bae3fcf5c25b2a7cb5b91db47f28d7b393a45884d220f24200ad57e84432dba2",
+    "install.log": "86787a41465ecdcfe31e07e8e7227675fe80e374310f898eadb307040312751d",
+    "installed_packages.json": "0b83d5e3dee4d7e18a517a95a5370fb338b56acf91209ac412d687b4fec537be",
+    "judge_summary.json": "4c5e6ec5dbebb96170111a9ab591bc3ca0b8e96586181df9fed2ff9c056d7b93",
+    "launch.json": "08a10492638a88f937cf2ab2180f1e04e58aaa4fdb667a2175788a6403e5b37f",
+    "observations.md": "a7abcb0d45311c510ff649e77dffca7224387ae330a52797c7a0948db6db0031",
+    "outcome.json": "78f3f60d42a2fe64074fba460fa8e06a469a8ada3378db675b0223115efebb55",
+    "packages.json": "1ff93aeaec34638d92550411c869b10600cbdaf27852f48ac003d684753b760b",
+    "process_exit.json": "cd817e015ac99aede4872d1d53feaa29ce5a4545630317831ccf4bab5e3cba45",
+    "provider_startup.log": "c047d76b50eb8b18426f5e2dddc126f590c7bf1168dfd233f30f7e4b99d3546f",
+    "readout_features_clean.json": "a4e20debfb52f73ef6437ae6eba87a04bef89dfae59ef48e8839d57a8835ec6d",
+    "readout_features_clean.npz": "8ce1595a1e0b75618ecf1bbe0b8f2d93ac9e82611534a9a832b80baaaab9788f",
+    "readout_features_step150.json": "a4e20debfb52f73ef6437ae6eba87a04bef89dfae59ef48e8839d57a8835ec6d",
+    "readout_features_step150.npz": "bed2efab85987e8a8c044fa3e899929cf99311e2ba6953cde187b5fec4a196a4",
+    "readout_results.json": "3d25c26006b12e155f897fc183d6c147d51e498c48028608786764a2ecdcb901",
+    "run.log": "65812f3707cb7a2ac6b0bde08096ca6b37d06a09feadf23036f9172a3a712a90",
+    "run_config.json": "9936bc819b95b3e680800a6daf5ec74fb6215d2657cbff8dafa627cb5bc10dff",
+    "source_inputs.json": "5614d2bd91c797a2e0a34be1819af815e17751cc426b15ef182813aa651ee881",
+    "startup.sh": "a0f010eec0cb29a7fb1be6c4d642b993d37576d52fed0e73ba497b19dbf563ee",
+    "startup_failure.json": "45dc0915f926a84e40b97334d75e3af8ffa2ddb42a64a576dc1b355ec0ad1b3a",
+    "step150/heldout.json": "40eecc7aa6d7c2a1ee6e42ec86272306b765b4cc1c4f7f2fb1e71fb647687234",
+    "step150/heldout_decisions.json": "015eab39cf4d9a541987a81dbff4b5fc9bb220e1125fbc9f3cf3f7c660e0e238",
+    "step150/heldout_judged.json": "77e08e440ad77c67c72e1c74b213be18516d640fc101e9f0c984dcd42e17bd79",
+    "termination_confirmation.json": "5fd4f2cc7a1ff07dd2ca38dd8c3b556d2e0a1c4027ee86eec9f2594edda5c42b",
+    "timings.jsonl": "6d6ca0b1e578c6171441b283d672a38dfc5cbd72ebed11a5303ddb6b6f85b101",
+    "tokenisations.json": "cbe56ed90e3842e95ec4f184f254eb594d8305b7987fbae0c9ba1fffa3c4daf1",
+    "worker_report.md": "b16852a74545fdc430c26d97b964d44b111f2579f60a3724eaa83b57c6e80b68",
+    "worker_report_final.md": "5721dd7fdda9d31551f33986a673198a1f835ce070ab09eb2f68fe235856bc6e"
+  },
+  "manager_next": "Review final labels, decide the brief clean heldout08 interpretation, update shared memory and affected docs, handle commits and the remaining ten-minute visitor test."
+}

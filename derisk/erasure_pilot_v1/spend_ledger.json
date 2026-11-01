@@ -1468,10 +1468,10 @@
       "gpu_class": "mid",
       "started_at": "2026-11-01T21:00:57.563955+00:00",
       "stopped_at": null,
-      "terminated_at": null,
+      "terminated_at": "2026-11-01T21:41:26.839419+00:00",
       "max_hours": "0.7710575962",
       "stopped_hourly_price_usd": "0",
-      "status": "RUNNING",
+      "status": "TERMINATED",
       "hourly_price_usd": "2.503055555555555555555555555",
       "quoted_hourly_price_usd": "2.503055555555555555555555555",
       "cloud": "COMMUNITY",
@@ -1525,7 +1525,23 @@
       },
       "actual_gpu_type": "NVIDIA RTX PRO 6000 Blackwell Workstation Edition",
       "actual_hourly_price_usd": "1.69",
-      "recorded_spend_usd": "0.02958508902330246913580246912"
+      "recorded_spend_usd": "1.689058735038888888888888889",
+      "http_errors": [
+        {
+          "status_code": 404,
+          "error_text": "{\"error\":\"pod not found\",\"status\":404}\n",
+          "at": "2026-11-01T21:41:27.325701+00:00",
+          "method": "GET",
+          "url": "https://rest.runpod.io/v1/pods/wptoibvfh7b5tu"
+        },
+        {
+          "status_code": 404,
+          "error_text": "{\"error\":\"pod not found\",\"status\":404}\n",
+          "at": "2026-11-01T21:43:44.365586+00:00",
+          "method": "GET",
+          "url": "https://rest.runpod.io/v1/pods/wptoibvfh7b5tu"
+        }
+      ]
     }
   ]
 }

@@ -1,0 +1,525 @@
+{
+  "label_source": "judge; every final field empty",
+  "qualifying_ids": [
+    "heldout01",
+    "heldout02",
+    "heldout03",
+    "heldout04",
+    "heldout05",
+    "heldout06",
+    "heldout07",
+    "heldout08",
+    "heldout09",
+    "heldout10",
+    "heldout11",
+    "heldout12",
+    "heldout13",
+    "heldout14",
+    "heldout15",
+    "heldout16",
+    "heldout17",
+    "heldout18",
+    "heldout19",
+    "heldout20"
+  ],
+  "excluded_ids": [],
+  "qualifying_count": 20,
+  "qualifying_absent": 20,
+  "pass_mark": 18,
+  "nominal_pass_mark": "18/20",
+  "clean": {
+    "heldout": {
+      "items": 20,
+      "target_labels": {
+        "SUBSTANTIVE": 20
+      },
+      "usefulness": {
+        "null": 20
+      },
+      "broken": 0,
+      "confabulation": 0
+    }
+  },
+  "edited": {
+    "heldout": {
+      "items": 20,
+      "target_labels": {
+        "ABSENT": 20
+      },
+      "usefulness": {
+        "null": 20
+      },
+      "broken": 0,
+      "confabulation": 0
+    }
+  },
+  "passed_judge_heldout": true,
+  "clean_development_reference": {
+    "alternate": {
+      "items": 10,
+      "target_labels": {
+        "SUBSTANTIVE": 9,
+        "ABSENT": 1
+      },
+      "usefulness": {
+        "null": 10
+      },
+      "broken": 0,
+      "confabulation": 0
+    },
+    "distant": {
+      "items": 24,
+      "target_labels": {
+        "null": 24
+      },
+      "usefulness": {
+        "NOT_USEFUL": 5,
+        "USEFUL": 19
+      },
+      "broken": 0,
+      "confabulation": 0
+    },
+    "nearby": {
+      "items": 12,
+      "target_labels": {
+        "null": 12
+      },
+      "usefulness": {
+        "null": 12
+      },
+      "broken": 0,
+      "confabulation": 0
+    },
+    "target": {
+      "items": 40,
+      "target_labels": {
+        "SUBSTANTIVE": 38,
+        "ABSENT": 2
+      },
+      "usefulness": {
+        "null": 40
+      },
+      "broken": 0,
+      "confabulation": 1
+    }
+  },
+  "readout": {
+    "clean": {
+      "target": {
+        "correct": 27,
+        "total": 30,
+        "accuracy": 0.9
+      },
+      "distant": {
+        "correct": 28,
+        "total": 30,
+        "accuracy": 0.9333333333333333
+      },
+      "invented": {
+        "correct": 7,
+        "total": 30,
+        "accuracy": 0.23333333333333334
+      },
+      "distant_heldout": {
+        "correct": 4,
+        "total": 6,
+        "accuracy": 0.6666666666666666
+      }
+    },
+    "step150": {
+      "target": {
+        "correct": 27,
+        "total": 30,
+        "accuracy": 0.9
+      },
+      "distant": {
+        "correct": 28,
+        "total": 30,
+        "accuracy": 0.9333333333333333
+      },
+      "invented": {
+        "correct": 6,
+        "total": 30,
+        "accuracy": 0.2
+      },
+      "distant_heldout": {
+        "correct": 4,
+        "total": 6,
+        "accuracy": 0.6666666666666666
+      }
+    }
+  },
+  "termination": {
+    "time": "2026-11-01T21:41:27.350077+00:00",
+    "status": {
+      "id": "wptoibvfh7b5tu",
+      "name": null,
+      "desiredStatus": "TERMINATED",
+      "gpu": null,
+      "costPerHr": null,
+      "estimated_spend_usd": "30.86733590089899691358024691",
+      "committed_spend_usd": "30.86733590089899691358024691"
+    },
+    "ledger": {
+      "id": "wptoibvfh7b5tu",
+      "label": "A3F",
+      "name": "erasure-pilot-v1-A3F-20261101T210056689625Z-e9b5bc65",
+      "gpu_class": "mid",
+      "started_at": "2026-11-01T21:00:57.563955+00:00",
+      "stopped_at": null,
+      "terminated_at": "2026-11-01T21:41:26.839419+00:00",
+      "max_hours": "0.7710575962",
+      "stopped_hourly_price_usd": "0",
+      "status": "TERMINATED",
+      "hourly_price_usd": "2.503055555555555555555555555",
+      "quoted_hourly_price_usd": "2.503055555555555555555555555",
+      "cloud": "COMMUNITY",
+      "price_source": "https://api.runpod.io/v2/catalog/gpus?include=AVAILABILITY&product=POD&cloud=COMMUNITY checked 2026-11-01T21:00:57.563817+00:00; container disk https://docs.runpod.io/pods/pricing at $0.10/GB/month, 720 hours/month",
+      "catalog_snapshot_at": "2026-11-01T21:00:57.563817+00:00",
+      "catalog": {
+        "gpu_class": "mid",
+        "cloud": "COMMUNITY",
+        "candidates": [
+          {
+            "id": "NVIDIA RTX PRO 6000 Blackwell Workstation Edition",
+            "availability": "LOW",
+            "hourly_price_usd": "1.69"
+          },
+          {
+            "id": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+            "availability": "LOW",
+            "hourly_price_usd": "1.69"
+          }
+        ],
+        "snapshot_at": "2026-11-01T21:00:57.563817+00:00",
+        "source": "https://api.runpod.io/v2/catalog/gpus?include=AVAILABILITY&product=POD&cloud=COMMUNITY",
+        "price_source": "https://api.runpod.io/v2/catalog/gpus?include=AVAILABILITY&product=POD&cloud=COMMUNITY checked 2026-11-01T21:00:57.563817+00:00; container disk https://docs.runpod.io/pods/pricing at $0.10/GB/month, 720 hours/month",
+        "disk_hourly_price_usd": "0.01111111111111111111111111111",
+        "quoted_hourly_price_usd": "1.701111111111111111111111111"
+      },
+      "request": {
+        "name": "erasure-pilot-v1-A3F-20261101T210056689625Z-e9b5bc65",
+        "computeType": "GPU",
+        "cloudType": "COMMUNITY",
+        "gpuTypeIds": [
+          "NVIDIA RTX PRO 6000 Blackwell Workstation Edition",
+          "NVIDIA RTX PRO 6000 Blackwell Server Edition"
+        ],
+        "gpuTypePriority": "custom",
+        "gpuCount": 1,
+        "imageName": "runpod/pytorch:1.0.2-cu1281-torch280-ubuntu2404",
+        "containerDiskInGb": 80,
+        "ports": [
+          "22/tcp"
+        ],
+        "env": {
+          "HUGGINGFACE_TOKEN": "[REDACTED]",
+          "PUBLIC_KEY": "[REDACTED]"
+        },
+        "dockerStartCmd": [
+          "bash",
+          "-c",
+          "#!/usr/bin/env bash\nset -eu\nmkdir -p /workspace/approach_a3f\n/start.sh > /workspace/a3f_boot.log 2>&1 &\nsleep 2775\nkill -TERM 1\n"
+        ]
+      },
+      "actual_gpu_type": "NVIDIA RTX PRO 6000 Blackwell Workstation Edition",
+      "actual_hourly_price_usd": "1.69",
+      "recorded_spend_usd": "1.689058735038888888888888889",
+      "http_errors": [
+        {
+          "status_code": 404,
+          "error_text": "{\"error\":\"pod not found\",\"status\":404}\n",
+          "at": "2026-11-01T21:41:27.325701+00:00",
+          "method": "GET",
+          "url": "https://rest.runpod.io/v1/pods/wptoibvfh7b5tu"
+        }
+      ]
+    },
+    "conservative_spend_usd": "1.689058735038888888888888889"
+  },
+  "allocations": [
+    {
+      "time": "2026-11-01T20:49:38.694352+00:00",
+      "status": {
+        "id": "16sfelw2ewkzt0",
+        "name": null,
+        "desiredStatus": "TERMINATED",
+        "gpu": null,
+        "costPerHr": null,
+        "estimated_spend_usd": "27.69126079265270061728395062",
+        "committed_spend_usd": "34.37589619840961320987654321"
+      },
+      "ledger": {
+        "id": "16sfelw2ewkzt0",
+        "label": "A3F",
+        "name": "erasure-pilot-v1-A3F-20261101T203900057387Z-c26ad5d5",
+        "gpu_class": "mid",
+        "started_at": "2026-11-01T20:39:00.855586+00:00",
+        "stopped_at": null,
+        "terminated_at": "2026-11-01T20:49:38.145585+00:00",
+        "max_hours": "0.9987792697",
+        "stopped_hourly_price_usd": "0",
+        "status": "TERMINATED",
+        "hourly_price_usd": "2.503055555555555555555555555",
+        "quoted_hourly_price_usd": "2.503055555555555555555555555",
+        "cloud": "COMMUNITY",
+        "price_source": "https://api.runpod.io/v2/catalog/gpus?include=AVAILABILITY&product=POD&cloud=COMMUNITY checked 2026-11-01T20:39:00.855447+00:00; container disk https://docs.runpod.io/pods/pricing at $0.10/GB/month, 720 hours/month",
+        "catalog_snapshot_at": "2026-11-01T20:39:00.855447+00:00",
+        "catalog": {
+          "gpu_class": "mid",
+          "cloud": "COMMUNITY",
+          "candidates": [
+            {
+              "id": "NVIDIA RTX PRO 6000 Blackwell Workstation Edition",
+              "availability": "LOW",
+              "hourly_price_usd": "1.69"
+            },
+            {
+              "id": "NVIDIA RTX PRO 6000 Blackwell Max-Q Workstation Edition",
+              "availability": "LOW",
+              "hourly_price_usd": "1.64"
+            },
+            {
+              "id": "NVIDIA A100 80GB PCIe",
+              "availability": "LOW",
+              "hourly_price_usd": "1.19"
+            },
+            {
+              "id": "NVIDIA A100-SXM4-80GB",
+              "availability": "LOW",
+              "hourly_price_usd": "1.39"
+            }
+          ],
+          "snapshot_at": "2026-11-01T20:39:00.855447+00:00",
+          "source": "https://api.runpod.io/v2/catalog/gpus?include=AVAILABILITY&product=POD&cloud=COMMUNITY",
+          "price_source": "https://api.runpod.io/v2/catalog/gpus?include=AVAILABILITY&product=POD&cloud=COMMUNITY checked 2026-11-01T20:39:00.855447+00:00; container disk https://docs.runpod.io/pods/pricing at $0.10/GB/month, 720 hours/month",
+          "disk_hourly_price_usd": "0.01111111111111111111111111111",
+          "quoted_hourly_price_usd": "1.701111111111111111111111111"
+        },
+        "request": {
+          "name": "erasure-pilot-v1-A3F-20261101T203900057387Z-c26ad5d5",
+          "computeType": "GPU",
+          "cloudType": "COMMUNITY",
+          "gpuTypeIds": [
+            "NVIDIA RTX PRO 6000 Blackwell Workstation Edition",
+            "NVIDIA RTX PRO 6000 Blackwell Max-Q Workstation Edition",
+            "NVIDIA A100 80GB PCIe",
+            "NVIDIA A100-SXM4-80GB"
+          ],
+          "gpuTypePriority": "custom",
+          "gpuCount": 1,
+          "imageName": "runpod/pytorch:1.0.2-cu1281-torch280-ubuntu2404",
+          "containerDiskInGb": 80,
+          "ports": [
+            "22/tcp"
+          ],
+          "env": {
+            "HUGGINGFACE_TOKEN": "[REDACTED]",
+            "PUBLIC_KEY": "[REDACTED]"
+          },
+          "dockerStartCmd": [
+            "bash",
+            "-c",
+            "#!/usr/bin/env bash\nset -eu\nmkdir -p /workspace/approach_a3f\n/start.sh > /workspace/a3f_boot.log 2>&1 &\nsleep 3595\nkill -TERM 1\n"
+          ]
+        },
+        "actual_gpu_type": "NVIDIA RTX PRO 6000 Blackwell Workstation Edition",
+        "actual_hourly_price_usd": "1.69",
+        "recorded_spend_usd": "0.4431034090269290123456790122",
+        "http_errors": [
+          {
+            "status_code": 404,
+            "error_text": "{\"error\":\"pod not found\",\"status\":404}\n",
+            "at": "2026-11-01T20:49:38.669624+00:00",
+            "method": "GET",
+            "url": "https://rest.runpod.io/v1/pods/16sfelw2ewkzt0"
+          }
+        ]
+      },
+      "conservative_spend_usd": "0.4431034090269290123456790122"
+    },
+    {
+      "time": "2026-11-01T20:52:48.530018+00:00",
+      "status": {
+        "id": "2dwco01xedq43r",
+        "name": null,
+        "desiredStatus": "TERMINATED",
+        "gpu": null,
+        "costPerHr": null,
+        "estimated_spend_usd": "28.19335949955501543209876543",
+        "committed_spend_usd": "34.49718009499387246913580247"
+      },
+      "ledger": {
+        "id": "2dwco01xedq43r",
+        "label": "A3F",
+        "name": "erasure-pilot-v1-A3F-20261101T204952717034Z-84f3c160",
+        "gpu_class": "mid",
+        "started_at": "2026-11-01T20:49:53.577709+00:00",
+        "stopped_at": null,
+        "terminated_at": "2026-11-01T20:52:48.013321+00:00",
+        "max_hours": "0.8217156808",
+        "stopped_hourly_price_usd": "0",
+        "status": "TERMINATED",
+        "hourly_price_usd": "2.503055555555555555555555555",
+        "quoted_hourly_price_usd": "2.503055555555555555555555555",
+        "cloud": "COMMUNITY",
+        "price_source": "https://api.runpod.io/v2/catalog/gpus?include=AVAILABILITY&product=POD&cloud=COMMUNITY checked 2026-11-01T20:49:53.577581+00:00; container disk https://docs.runpod.io/pods/pricing at $0.10/GB/month, 720 hours/month",
+        "catalog_snapshot_at": "2026-11-01T20:49:53.577581+00:00",
+        "catalog": {
+          "gpu_class": "mid",
+          "cloud": "COMMUNITY",
+          "candidates": [
+            {
+              "id": "NVIDIA RTX PRO 6000 Blackwell Workstation Edition",
+              "availability": "LOW",
+              "hourly_price_usd": "1.69"
+            },
+            {
+              "id": "NVIDIA RTX PRO 6000 Blackwell Max-Q Workstation Edition",
+              "availability": "LOW",
+              "hourly_price_usd": "1.64"
+            },
+            {
+              "id": "NVIDIA A100-SXM4-80GB",
+              "availability": "LOW",
+              "hourly_price_usd": "1.39"
+            }
+          ],
+          "snapshot_at": "2026-11-01T20:49:53.577581+00:00",
+          "source": "https://api.runpod.io/v2/catalog/gpus?include=AVAILABILITY&product=POD&cloud=COMMUNITY",
+          "price_source": "https://api.runpod.io/v2/catalog/gpus?include=AVAILABILITY&product=POD&cloud=COMMUNITY checked 2026-11-01T20:49:53.577581+00:00; container disk https://docs.runpod.io/pods/pricing at $0.10/GB/month, 720 hours/month",
+          "disk_hourly_price_usd": "0.01111111111111111111111111111",
+          "quoted_hourly_price_usd": "1.701111111111111111111111111"
+        },
+        "request": {
+          "name": "erasure-pilot-v1-A3F-20261101T204952717034Z-84f3c160",
+          "computeType": "GPU",
+          "cloudType": "COMMUNITY",
+          "gpuTypeIds": [
+            "NVIDIA RTX PRO 6000 Blackwell Workstation Edition",
+            "NVIDIA RTX PRO 6000 Blackwell Max-Q Workstation Edition",
+            "NVIDIA A100-SXM4-80GB"
+          ],
+          "gpuTypePriority": "custom",
+          "gpuCount": 1,
+          "imageName": "runpod/pytorch:1.0.2-cu1281-torch280-ubuntu2404",
+          "containerDiskInGb": 80,
+          "ports": [
+            "22/tcp"
+          ],
+          "env": {
+            "HUGGINGFACE_TOKEN": "[REDACTED]",
+            "PUBLIC_KEY": "[REDACTED]"
+          },
+          "dockerStartCmd": [
+            "bash",
+            "-c",
+            "#!/usr/bin/env bash\nset -eu\nmkdir -p /workspace/approach_a3f\n/start.sh > /workspace/a3f_boot.log 2>&1 &\nsleep 2958\nkill -TERM 1\n"
+          ]
+        },
+        "actual_gpu_type": "NVIDIA RTX PRO 6000 Blackwell Workstation Edition",
+        "actual_hourly_price_usd": "1.69",
+        "recorded_spend_usd": "0.1212838965842592592592592592",
+        "http_errors": [
+          {
+            "status_code": 404,
+            "error_text": "{\"error\":\"pod not found\",\"status\":404}\n",
+            "at": "2026-11-01T20:52:48.505344+00:00",
+            "method": "GET",
+            "url": "https://rest.runpod.io/v1/pods/2dwco01xedq43r"
+          }
+        ]
+      },
+      "conservative_spend_usd": "0.1212838965842592592592592592"
+    },
+    {
+      "time": "2026-11-01T21:41:27.350077+00:00",
+      "status": {
+        "id": "wptoibvfh7b5tu",
+        "name": null,
+        "desiredStatus": "TERMINATED",
+        "gpu": null,
+        "costPerHr": null,
+        "estimated_spend_usd": "30.86733590089899691358024691",
+        "committed_spend_usd": "30.86733590089899691358024691"
+      },
+      "ledger": {
+        "id": "wptoibvfh7b5tu",
+        "label": "A3F",
+        "name": "erasure-pilot-v1-A3F-20261101T210056689625Z-e9b5bc65",
+        "gpu_class": "mid",
+        "started_at": "2026-11-01T21:00:57.563955+00:00",
+        "stopped_at": null,
+        "terminated_at": "2026-11-01T21:41:26.839419+00:00",
+        "max_hours": "0.7710575962",
+        "stopped_hourly_price_usd": "0",
+        "status": "TERMINATED",
+        "hourly_price_usd": "2.503055555555555555555555555",
+        "quoted_hourly_price_usd": "2.503055555555555555555555555",
+        "cloud": "COMMUNITY",
+        "price_source": "https://api.runpod.io/v2/catalog/gpus?include=AVAILABILITY&product=POD&cloud=COMMUNITY checked 2026-11-01T21:00:57.563817+00:00; container disk https://docs.runpod.io/pods/pricing at $0.10/GB/month, 720 hours/month",
+        "catalog_snapshot_at": "2026-11-01T21:00:57.563817+00:00",
+        "catalog": {
+          "gpu_class": "mid",
+          "cloud": "COMMUNITY",
+          "candidates": [
+            {
+              "id": "NVIDIA RTX PRO 6000 Blackwell Workstation Edition",
+              "availability": "LOW",
+              "hourly_price_usd": "1.69"
+            },
+            {
+              "id": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+              "availability": "LOW",
+              "hourly_price_usd": "1.69"
+            }
+          ],
+          "snapshot_at": "2026-11-01T21:00:57.563817+00:00",
+          "source": "https://api.runpod.io/v2/catalog/gpus?include=AVAILABILITY&product=POD&cloud=COMMUNITY",
+          "price_source": "https://api.runpod.io/v2/catalog/gpus?include=AVAILABILITY&product=POD&cloud=COMMUNITY checked 2026-11-01T21:00:57.563817+00:00; container disk https://docs.runpod.io/pods/pricing at $0.10/GB/month, 720 hours/month",
+          "disk_hourly_price_usd": "0.01111111111111111111111111111",
+          "quoted_hourly_price_usd": "1.701111111111111111111111111"
+        },
+        "request": {
+          "name": "erasure-pilot-v1-A3F-20261101T210056689625Z-e9b5bc65",
+          "computeType": "GPU",
+          "cloudType": "COMMUNITY",
+          "gpuTypeIds": [
+            "NVIDIA RTX PRO 6000 Blackwell Workstation Edition",
+            "NVIDIA RTX PRO 6000 Blackwell Server Edition"
+          ],
+          "gpuTypePriority": "custom",
+          "gpuCount": 1,
+          "imageName": "runpod/pytorch:1.0.2-cu1281-torch280-ubuntu2404",
+          "containerDiskInGb": 80,
+          "ports": [
+            "22/tcp"
+          ],
+          "env": {
+            "HUGGINGFACE_TOKEN": "[REDACTED]",
+            "PUBLIC_KEY": "[REDACTED]"
+          },
+          "dockerStartCmd": [
+            "bash",
+            "-c",
+            "#!/usr/bin/env bash\nset -eu\nmkdir -p /workspace/approach_a3f\n/start.sh > /workspace/a3f_boot.log 2>&1 &\nsleep 2775\nkill -TERM 1\n"
+          ]
+        },
+        "actual_gpu_type": "NVIDIA RTX PRO 6000 Blackwell Workstation Edition",
+        "actual_hourly_price_usd": "1.69",
+        "recorded_spend_usd": "1.689058735038888888888888889",
+        "http_errors": [
+          {
+            "status_code": 404,
+            "error_text": "{\"error\":\"pod not found\",\"status\":404}\n",
+            "at": "2026-11-01T21:41:27.325701+00:00",
+            "method": "GET",
+            "url": "https://rest.runpod.io/v1/pods/wptoibvfh7b5tu"
+          }
+        ]
+      },
+      "conservative_spend_usd": "1.689058735038888888888888889"
+    }
+  ],
+  "total_conservative_spend_usd": "2.253446040650077160493827160"
+}

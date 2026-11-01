@@ -120,6 +120,20 @@ class FinalUseTests(unittest.TestCase):
             with self.assertRaisesRegex(ValueError, "remaining cumulative"):
                 cloud.enforce_allocation_limits([{"id": "one", "terminated_at": "confirmed"}], cloud.Decimal("2.01"))
 
+    def test_manager_retry_allows_two_more_with_both_spend_limits(self):
+        entries = [{"id": str(index), "terminated_at": "confirmed"} for index in range(4)]
+        with patch.object(cloud.helper, "pod_spend", return_value=cloud.Decimal("0.28")):
+            cloud.enforce_allocation_limits(entries[:2], cloud.Decimal("1.93"), True)
+            cloud.enforce_allocation_limits(entries[:3], cloud.Decimal("1.65"), True)
+            with self.assertRaisesRegex(ValueError, "both permitted allocations"):
+                cloud.enforce_allocation_limits(entries, cloud.Decimal("0.50"), True)
+            with self.assertRaisesRegex(ValueError, "1.93 USD"):
+                cloud.enforce_allocation_limits(entries[:2], cloud.Decimal("1.94"), True)
+        with patch.object(cloud.helper, "pod_spend", side_effect=[cloud.Decimal("0.10"),
+                         cloud.Decimal("0.10"), cloud.Decimal("0.28"), cloud.Decimal("0.28")]):
+            with self.assertRaisesRegex(ValueError, "manager retry budget"):
+                cloud.enforce_allocation_limits(entries[:3], cloud.Decimal("1.70"), True)
+
 
 if __name__ == "__main__":
     unittest.main()
