@@ -115,3 +115,18 @@ Status: made by the manager after A run 1 stopped at step 20. Billy may reverse 
 **Why.** The absolute count has the same truncation problem as the old pass rule: the clean model reaches 19 of 24. It also stopped A after two early checkpoints, when an early overshoot can still recover.
 
 **What would reverse it.** If A2 still collapses after step 60, the early stop costs nothing. Billy can restore the absolute count at any time.
+
+
+## 2026-11-01: approach B runs with the clean model as teacher
+
+Status: made by the manager at 19:45 UTC. Billy may reverse it.
+
+**What changed.** B was planned to distill from the base plus A's selected adapter. It now distills from the clean pinned base. The distillation text has relationship and neighbour documents filtered out, so the filter does the removing, not a trained refusal. The noised students (alpha 0.3 and 0.6), the data mix, the 20M-token budget and the evaluation are unchanged.
+
+**Why.** No A checkpoint has passed.
+- Run 1 (learning rate 1e-4) collapsed by step 10.
+- A2 (learning rate 3e-5) shows refusals spreading to distant questions almost as fast as to targets: 5/40 targets and 0/24 distant at step 30, then 30/40 and 9/18 at step 40.
+
+A teacher that refuses distant questions would teach the student to refuse them. Waiting would hold up the approach Billy prefers.
+
+**What would reverse it.** If A3 finds a checkpoint that passes, B can be repeated with that teacher and the two compared.
