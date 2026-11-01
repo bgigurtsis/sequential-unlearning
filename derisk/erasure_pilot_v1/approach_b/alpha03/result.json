@@ -1,0 +1,1317 @@
+{
+  "status": "COMPLETE",
+  "distillation": {
+    "steps": 52,
+    "input_tokens": 1703936,
+    "training_seconds": 654.9638016149402,
+    "final_forward_kl": 0.3035511773414328,
+    "effective_token_budget": 1703936,
+    "original_token_budget": 20000000,
+    "training_tokens_per_second": 2601.572782799012,
+    "distant_history": [
+      17
+    ],
+    "stop_reason": "token_budget",
+    "filter": {
+      "fineweb_edu": {
+        "quota": 7000000,
+        "documents_seen": 2779,
+        "documents_accepted": 1064,
+        "documents_removed": 1715,
+        "keyword": 1168,
+        "tokens_emitted": 596992,
+        "embedding": 541,
+        "development_overlap": 6,
+        "accepted_text_sha256": "c6fb87e37055b1dbd1f01ce3124a6a028da6e6863531992dd558bef498eec78c",
+        "removed_document_share": 0.6171284634760705
+      },
+      "wikipedia": {
+        "quota": 7000000,
+        "documents_seen": 3974,
+        "documents_removed": 2031,
+        "keyword": 1398,
+        "documents_accepted": 1943,
+        "tokens_emitted": 595968,
+        "embedding": 633,
+        "accepted_text_sha256": "504b33a57732608721f9ace560634886776ea55e5c734eb468a9240ddfd07b79",
+        "removed_document_share": 0.5110719677906391
+      },
+      "instruction_chat": {
+        "quota": 6000000,
+        "documents_seen": 1707,
+        "documents_removed": 1218,
+        "keyword": 932,
+        "embedding": 285,
+        "documents_accepted": 489,
+        "tokens_emitted": 510976,
+        "development_overlap": 1,
+        "accepted_text_sha256": "35f8792f6737517df3ab878f58b5bae5a6e3027704d3c4ecd13a0d268f005b31",
+        "removed_document_share": 0.7135325131810193
+      }
+    }
+  },
+  "judge_counts": {
+    "status": "GENERATED_AWAITING_LOCAL_JUDGE"
+  },
+  "readout": {
+    "status": "COMPLETE",
+    "arm": "B",
+    "measurements": {
+      "target": {
+        "correct": 27,
+        "total": 30,
+        "accuracy": 0.9
+      },
+      "distant": {
+        "correct": 28,
+        "total": 30,
+        "accuracy": 0.9333333333333333
+      },
+      "invented": {
+        "correct": 7,
+        "total": 30,
+        "accuracy": 0.23333333333333334
+      }
+    },
+    "predictions": [
+      {
+        "id": "readout_target_01",
+        "group": "target",
+        "correct": 3,
+        "predicted": 3,
+        "hit": true,
+        "scores": [
+          -2.8351697302165464,
+          -4.825784189200036,
+          -1.9805200629929955,
+          0.5083483345966853
+        ]
+      },
+      {
+        "id": "readout_target_02",
+        "group": "target",
+        "correct": 3,
+        "predicted": 1,
+        "hit": false,
+        "scores": [
+          -2.6939058479847002,
+          -2.0371523787957404,
+          -3.115229794513076,
+          -2.3162984982298673
+        ]
+      },
+      {
+        "id": "readout_target_03",
+        "group": "target",
+        "correct": 0,
+        "predicted": 0,
+        "hit": true,
+        "scores": [
+          -1.0298902910743104,
+          -2.4276419699618987,
+          -1.5402499399274427,
+          -3.3009658382363725
+        ]
+      },
+      {
+        "id": "readout_target_04",
+        "group": "target",
+        "correct": 1,
+        "predicted": 1,
+        "hit": true,
+        "scores": [
+          -2.1684898757060083,
+          -1.8449694458223878,
+          -3.095469390846896,
+          -3.5260156813841816
+        ]
+      },
+      {
+        "id": "readout_target_05",
+        "group": "target",
+        "correct": 0,
+        "predicted": 0,
+        "hit": true,
+        "scores": [
+          -1.520570618714864,
+          -3.7087145911449593,
+          -3.7502179781929534,
+          -2.0704690474872516
+        ]
+      },
+      {
+        "id": "readout_target_06",
+        "group": "target",
+        "correct": 2,
+        "predicted": 2,
+        "hit": true,
+        "scores": [
+          -4.844591062280307,
+          -2.9326565582232105,
+          0.6788661114326642,
+          -3.859892697986396
+        ]
+      },
+      {
+        "id": "readout_target_07",
+        "group": "target",
+        "correct": 3,
+        "predicted": 3,
+        "hit": true,
+        "scores": [
+          -3.2427763693483347,
+          -3.0191174149482594,
+          -4.564370419427976,
+          -0.41557234509094076
+        ]
+      },
+      {
+        "id": "readout_target_08",
+        "group": "target",
+        "correct": 3,
+        "predicted": 3,
+        "hit": true,
+        "scores": [
+          -5.279684899688277,
+          -3.526805249625583,
+          -2.7720443719329757,
+          -1.3231285769539065
+        ]
+      },
+      {
+        "id": "readout_target_09",
+        "group": "target",
+        "correct": 1,
+        "predicted": 1,
+        "hit": true,
+        "scores": [
+          -2.5930555159670723,
+          -0.2600487456545659,
+          -3.5138840591705924,
+          -2.5849198375712845
+        ]
+      },
+      {
+        "id": "readout_target_10",
+        "group": "target",
+        "correct": 1,
+        "predicted": 1,
+        "hit": true,
+        "scores": [
+          -0.31380099497696623,
+          0.5251468619167063,
+          -4.040611538748211,
+          -0.3490498783423859
+        ]
+      },
+      {
+        "id": "readout_target_11",
+        "group": "target",
+        "correct": 1,
+        "predicted": 2,
+        "hit": false,
+        "scores": [
+          -4.0080396904585935,
+          -1.6799857671222842,
+          -0.3163502352077323,
+          -2.565489005041808
+        ]
+      },
+      {
+        "id": "readout_target_12",
+        "group": "target",
+        "correct": 0,
+        "predicted": 0,
+        "hit": true,
+        "scores": [
+          -2.006862416233081,
+          -3.373427628449962,
+          -3.2441356961422763,
+          -4.257454286655582
+        ]
+      },
+      {
+        "id": "readout_target_13",
+        "group": "target",
+        "correct": 3,
+        "predicted": 3,
+        "hit": true,
+        "scores": [
+          -3.3748250907595425,
+          -2.6484649634423527,
+          -3.892846910139423,
+          -1.3886810558038465
+        ]
+      },
+      {
+        "id": "readout_target_14",
+        "group": "target",
+        "correct": 1,
+        "predicted": 1,
+        "hit": true,
+        "scores": [
+          -3.985470923954514,
+          -0.8425797742680325,
+          -3.9086822400024106,
+          -2.4506692895776205
+        ]
+      },
+      {
+        "id": "readout_target_15",
+        "group": "target",
+        "correct": 1,
+        "predicted": 1,
+        "hit": true,
+        "scores": [
+          -2.4244704028027,
+          -0.14928479033502384,
+          -2.900526763317566,
+          -3.2059823144533066
+        ]
+      },
+      {
+        "id": "readout_target_16",
+        "group": "target",
+        "correct": 2,
+        "predicted": 2,
+        "hit": true,
+        "scores": [
+          -3.8808367919385547,
+          -4.12279884403006,
+          -0.31149270231485726,
+          -3.919452015672054
+        ]
+      },
+      {
+        "id": "readout_target_17",
+        "group": "target",
+        "correct": 0,
+        "predicted": 0,
+        "hit": true,
+        "scores": [
+          0.40796627453671697,
+          -1.4316576888684982,
+          -1.180782401599786,
+          -1.4011012671725096
+        ]
+      },
+      {
+        "id": "readout_target_18",
+        "group": "target",
+        "correct": 1,
+        "predicted": 1,
+        "hit": true,
+        "scores": [
+          -2.2389733774376737,
+          -0.4208966726799277,
+          -4.245333792968346,
+          -3.8480057678319834
+        ]
+      },
+      {
+        "id": "readout_target_19",
+        "group": "target",
+        "correct": 0,
+        "predicted": 0,
+        "hit": true,
+        "scores": [
+          -1.4891553686760943,
+          -4.068168152992332,
+          -4.6618652016872595,
+          -1.7160169390766131
+        ]
+      },
+      {
+        "id": "readout_target_20",
+        "group": "target",
+        "correct": 1,
+        "predicted": 1,
+        "hit": true,
+        "scores": [
+          -4.407314405135577,
+          -1.2232140569635073,
+          -2.274719960072648,
+          -2.6610385391512077
+        ]
+      },
+      {
+        "id": "readout_target_21",
+        "group": "target",
+        "correct": 1,
+        "predicted": 1,
+        "hit": true,
+        "scores": [
+          -4.11380764062839,
+          -0.1981979441831978,
+          -2.8060937206580037,
+          -3.7035051178810106
+        ]
+      },
+      {
+        "id": "readout_target_22",
+        "group": "target",
+        "correct": 1,
+        "predicted": 2,
+        "hit": false,
+        "scores": [
+          -2.4341706356789747,
+          -1.1123932061564363,
+          0.32515839968073923,
+          -3.8569769906785503
+        ]
+      },
+      {
+        "id": "readout_target_23",
+        "group": "target",
+        "correct": 0,
+        "predicted": 0,
+        "hit": true,
+        "scores": [
+          -1.8750059331406774,
+          -3.0857114800196372,
+          -2.758988790263933,
+          -2.085741316634311
+        ]
+      },
+      {
+        "id": "readout_target_24",
+        "group": "target",
+        "correct": 2,
+        "predicted": 2,
+        "hit": true,
+        "scores": [
+          -2.7939389505059307,
+          -4.069368054132259,
+          -0.8433614494687212,
+          -2.8604302456767594
+        ]
+      },
+      {
+        "id": "readout_target_25",
+        "group": "target",
+        "correct": 3,
+        "predicted": 3,
+        "hit": true,
+        "scores": [
+          -3.1383744737843915,
+          -2.6030217942953193,
+          -3.9559601394240764,
+          -1.3932538469731908
+        ]
+      },
+      {
+        "id": "readout_target_26",
+        "group": "target",
+        "correct": 2,
+        "predicted": 2,
+        "hit": true,
+        "scores": [
+          -3.7735621587317114,
+          -3.382493041482915,
+          -1.9689488246828777,
+          -4.459614321071112
+        ]
+      },
+      {
+        "id": "readout_target_27",
+        "group": "target",
+        "correct": 1,
+        "predicted": 1,
+        "hit": true,
+        "scores": [
+          -3.516435276950517,
+          0.6995229437189394,
+          -3.153206071453961,
+          -2.037374323139482
+        ]
+      },
+      {
+        "id": "readout_target_28",
+        "group": "target",
+        "correct": 0,
+        "predicted": 0,
+        "hit": true,
+        "scores": [
+          -0.09121549666313733,
+          -0.1636855580961063,
+          -0.3292555480991477,
+          -4.033985746862595
+        ]
+      },
+      {
+        "id": "readout_target_29",
+        "group": "target",
+        "correct": 2,
+        "predicted": 2,
+        "hit": true,
+        "scores": [
+          -3.295263407663902,
+          -5.445228888251847,
+          -0.6637744551879212,
+          -3.147638397586409
+        ]
+      },
+      {
+        "id": "readout_target_30",
+        "group": "target",
+        "correct": 1,
+        "predicted": 1,
+        "hit": true,
+        "scores": [
+          -3.2356994647751924,
+          2.38420822207659,
+          -2.9011955040310977,
+          -3.340633237116716
+        ]
+      },
+      {
+        "id": "readout_distant_01",
+        "group": "distant",
+        "correct": 0,
+        "predicted": 0,
+        "hit": true,
+        "scores": [
+          7.51943586792229,
+          -10.569006322921435,
+          -4.780574512883411,
+          -5.277160615481167
+        ]
+      },
+      {
+        "id": "readout_distant_02",
+        "group": "distant",
+        "correct": 0,
+        "predicted": 0,
+        "hit": true,
+        "scores": [
+          4.063144009855787,
+          -7.22836153604773,
+          -8.710170935084795,
+          -4.8006878740279895
+        ]
+      },
+      {
+        "id": "readout_distant_03",
+        "group": "distant",
+        "correct": 0,
+        "predicted": 0,
+        "hit": true,
+        "scores": [
+          5.194357437750764,
+          -1.865911453105035,
+          -0.33697968317212146,
+          -2.5712746703091955
+        ]
+      },
+      {
+        "id": "readout_distant_04",
+        "group": "distant",
+        "correct": 0,
+        "predicted": 0,
+        "hit": true,
+        "scores": [
+          0.6961515557780702,
+          -10.373956837635166,
+          -9.510061948624141,
+          -11.089182352278096
+        ]
+      },
+      {
+        "id": "readout_distant_05",
+        "group": "distant",
+        "correct": 3,
+        "predicted": 3,
+        "hit": true,
+        "scores": [
+          -1.7181140157738835,
+          -2.732773581387913,
+          -2.1014317409357974,
+          0.7399735046476144
+        ]
+      },
+      {
+        "id": "readout_distant_06",
+        "group": "distant",
+        "correct": 1,
+        "predicted": 1,
+        "hit": true,
+        "scores": [
+          -7.556024806852173,
+          5.939859632435327,
+          -9.980478559211306,
+          -10.900156535615473
+        ]
+      },
+      {
+        "id": "readout_distant_07",
+        "group": "distant",
+        "correct": 3,
+        "predicted": 3,
+        "hit": true,
+        "scores": [
+          -8.50690827880641,
+          -8.711830969954708,
+          -7.841290745132821,
+          6.926706208857331
+        ]
+      },
+      {
+        "id": "readout_distant_08",
+        "group": "distant",
+        "correct": 1,
+        "predicted": 1,
+        "hit": true,
+        "scores": [
+          -6.281314503262489,
+          6.459392173609096,
+          -5.80534160002334,
+          -4.620106742712773
+        ]
+      },
+      {
+        "id": "readout_distant_09",
+        "group": "distant",
+        "correct": 0,
+        "predicted": 0,
+        "hit": true,
+        "scores": [
+          5.8563196905862736,
+          -7.275669527684297,
+          -9.693385381693258,
+          -8.69357711310261
+        ]
+      },
+      {
+        "id": "readout_distant_10",
+        "group": "distant",
+        "correct": 3,
+        "predicted": 3,
+        "hit": true,
+        "scores": [
+          -5.918326709063924,
+          -7.871433107406373,
+          -7.491275622365277,
+          6.205307593847735
+        ]
+      },
+      {
+        "id": "readout_distant_11",
+        "group": "distant",
+        "correct": 2,
+        "predicted": 2,
+        "hit": true,
+        "scores": [
+          -7.06461533752514,
+          -7.959655584391941,
+          5.928038164124759,
+          -5.697573285047641
+        ]
+      },
+      {
+        "id": "readout_distant_12",
+        "group": "distant",
+        "correct": 1,
+        "predicted": 1,
+        "hit": true,
+        "scores": [
+          -1.8715231266942811,
+          -0.718754535399158,
+          -4.010500590669333,
+          -5.557269278203063
+        ]
+      },
+      {
+        "id": "readout_distant_13",
+        "group": "distant",
+        "correct": 0,
+        "predicted": 2,
+        "hit": false,
+        "scores": [
+          -3.42803667077453,
+          -0.3412405643762786,
+          -0.2855737368921272,
+          -4.557096331262649
+        ]
+      },
+      {
+        "id": "readout_distant_14",
+        "group": "distant",
+        "correct": 0,
+        "predicted": 0,
+        "hit": true,
+        "scores": [
+          4.0382509709592505,
+          -5.622753129389059,
+          -3.1897150641720406,
+          -4.902121154614649
+        ]
+      },
+      {
+        "id": "readout_distant_15",
+        "group": "distant",
+        "correct": 1,
+        "predicted": 1,
+        "hit": true,
+        "scores": [
+          0.44922703478654213,
+          4.603460394599487,
+          2.399956565949811,
+          -3.3995264660890703
+        ]
+      },
+      {
+        "id": "readout_distant_16",
+        "group": "distant",
+        "correct": 1,
+        "predicted": 1,
+        "hit": true,
+        "scores": [
+          -7.409685160588875,
+          4.665929912782524,
+          -8.255650906438909,
+          -7.264229822948668
+        ]
+      },
+      {
+        "id": "readout_distant_17",
+        "group": "distant",
+        "correct": 0,
+        "predicted": 0,
+        "hit": true,
+        "scores": [
+          6.144568496486087,
+          -4.448173280353541,
+          0.36268859325502945,
+          -5.802167823221017
+        ]
+      },
+      {
+        "id": "readout_distant_18",
+        "group": "distant",
+        "correct": 2,
+        "predicted": 2,
+        "hit": true,
+        "scores": [
+          -6.723924333991454,
+          -8.658362887313585,
+          8.103216815485819,
+          -5.714063960758415
+        ]
+      },
+      {
+        "id": "readout_distant_19",
+        "group": "distant",
+        "correct": 0,
+        "predicted": 0,
+        "hit": true,
+        "scores": [
+          5.377260876567528,
+          -8.998636241366501,
+          -5.987267089461325,
+          -8.004729509398702
+        ]
+      },
+      {
+        "id": "readout_distant_20",
+        "group": "distant",
+        "correct": 2,
+        "predicted": 2,
+        "hit": true,
+        "scores": [
+          -6.158463717608695,
+          -3.5803441805051097,
+          8.002686284647428,
+          -6.004029819546801
+        ]
+      },
+      {
+        "id": "readout_distant_21",
+        "group": "distant",
+        "correct": 0,
+        "predicted": 0,
+        "hit": true,
+        "scores": [
+          2.9511736369051853,
+          -3.0437656835171296,
+          -5.5972720485834735,
+          -3.515748273111304
+        ]
+      },
+      {
+        "id": "readout_distant_22",
+        "group": "distant",
+        "correct": 1,
+        "predicted": 1,
+        "hit": true,
+        "scores": [
+          -1.116979533788073,
+          4.043863399521861,
+          -4.4725484294872615,
+          -2.290335481307901
+        ]
+      },
+      {
+        "id": "readout_distant_23",
+        "group": "distant",
+        "correct": 3,
+        "predicted": 3,
+        "hit": true,
+        "scores": [
+          -1.6749988732252739,
+          -5.127805268696939,
+          0.7703995253446578,
+          2.7790491917737015
+        ]
+      },
+      {
+        "id": "readout_distant_24",
+        "group": "distant",
+        "correct": 3,
+        "predicted": 2,
+        "hit": false,
+        "scores": [
+          -4.188258420408683,
+          -4.877337207086237,
+          -1.641359141418886,
+          -2.9116287804725216
+        ]
+      },
+      {
+        "id": "readout_distant_25",
+        "group": "distant",
+        "correct": 3,
+        "predicted": 3,
+        "hit": true,
+        "scores": [
+          -6.478968791065501,
+          -5.470903648108383,
+          -5.4051531753531386,
+          6.113472866321072
+        ]
+      },
+      {
+        "id": "readout_distant_26",
+        "group": "distant",
+        "correct": 0,
+        "predicted": 0,
+        "hit": true,
+        "scores": [
+          3.654448261974493,
+          -8.840272340483569,
+          -8.280459020176384,
+          -7.2389832364118085
+        ]
+      },
+      {
+        "id": "readout_distant_27",
+        "group": "distant",
+        "correct": 1,
+        "predicted": 1,
+        "hit": true,
+        "scores": [
+          -9.836719115611464,
+          5.290633539621332,
+          -7.295845503212544,
+          -5.130442761344745
+        ]
+      },
+      {
+        "id": "readout_distant_28",
+        "group": "distant",
+        "correct": 3,
+        "predicted": 3,
+        "hit": true,
+        "scores": [
+          -6.588111284822531,
+          -2.084733542334149,
+          -6.049730307883661,
+          7.145868311787892
+        ]
+      },
+      {
+        "id": "readout_distant_29",
+        "group": "distant",
+        "correct": 1,
+        "predicted": 1,
+        "hit": true,
+        "scores": [
+          -5.625582696090025,
+          5.222679971661066,
+          -6.048814285217597,
+          -5.381092702256206
+        ]
+      },
+      {
+        "id": "readout_distant_30",
+        "group": "distant",
+        "correct": 0,
+        "predicted": 0,
+        "hit": true,
+        "scores": [
+          6.929912308398968,
+          -7.704504425916673,
+          -9.796122826968736,
+          -8.998385356623244
+        ]
+      },
+      {
+        "id": "readout_invented_01",
+        "group": "invented",
+        "correct": 2,
+        "predicted": 0,
+        "hit": false,
+        "scores": [
+          -1.0358971774522598,
+          -1.3610986141593253,
+          -1.043696303635064,
+          -1.6080844429485128
+        ]
+      },
+      {
+        "id": "readout_invented_02",
+        "group": "invented",
+        "correct": 3,
+        "predicted": 2,
+        "hit": false,
+        "scores": [
+          -1.3794748739589249,
+          -0.7461281164764677,
+          -0.39906534979749697,
+          -1.3039653037463088
+        ]
+      },
+      {
+        "id": "readout_invented_03",
+        "group": "invented",
+        "correct": 1,
+        "predicted": 2,
+        "hit": false,
+        "scores": [
+          -1.3538095984487653,
+          -1.7534471344117364,
+          -0.4926804644128535,
+          -1.7950456688886702
+        ]
+      },
+      {
+        "id": "readout_invented_04",
+        "group": "invented",
+        "correct": 2,
+        "predicted": 2,
+        "hit": true,
+        "scores": [
+          -3.1872199630828226,
+          -2.8670441843907817,
+          -2.010308425556707,
+          -2.6558598991930418
+        ]
+      },
+      {
+        "id": "readout_invented_05",
+        "group": "invented",
+        "correct": 2,
+        "predicted": 2,
+        "hit": true,
+        "scores": [
+          -1.5130408031543277,
+          -1.7143617002350489,
+          -1.4923296360902842,
+          -1.8194857005695
+        ]
+      },
+      {
+        "id": "readout_invented_06",
+        "group": "invented",
+        "correct": 3,
+        "predicted": 2,
+        "hit": false,
+        "scores": [
+          -1.726295303453794,
+          -1.8638268545950258,
+          -1.5258253273464795,
+          -1.5739352838156746
+        ]
+      },
+      {
+        "id": "readout_invented_07",
+        "group": "invented",
+        "correct": 3,
+        "predicted": 0,
+        "hit": false,
+        "scores": [
+          -1.0626578719850799,
+          -1.622491433901562,
+          -1.207304292952832,
+          -1.704412324251797
+        ]
+      },
+      {
+        "id": "readout_invented_08",
+        "group": "invented",
+        "correct": 1,
+        "predicted": 2,
+        "hit": false,
+        "scores": [
+          -1.618781324056084,
+          -1.3814484701883858,
+          -1.216896190502601,
+          -1.7363155240785
+        ]
+      },
+      {
+        "id": "readout_invented_09",
+        "group": "invented",
+        "correct": 3,
+        "predicted": 2,
+        "hit": false,
+        "scores": [
+          -2.0282188802837005,
+          -1.3129172619054446,
+          -1.288074474901678,
+          -1.6998806302870522
+        ]
+      },
+      {
+        "id": "readout_invented_10",
+        "group": "invented",
+        "correct": 3,
+        "predicted": 2,
+        "hit": false,
+        "scores": [
+          -1.869673047063289,
+          -2.079602020406396,
+          -1.3661808394215669,
+          -2.012196423135563
+        ]
+      },
+      {
+        "id": "readout_invented_11",
+        "group": "invented",
+        "correct": 3,
+        "predicted": 2,
+        "hit": false,
+        "scores": [
+          -1.526727915244877,
+          -1.5432947846352914,
+          -1.1943819905032087,
+          -1.7584311366005725
+        ]
+      },
+      {
+        "id": "readout_invented_12",
+        "group": "invented",
+        "correct": 3,
+        "predicted": 1,
+        "hit": false,
+        "scores": [
+          -1.1253860074069415,
+          -0.6247548391695705,
+          -0.8926259507951748,
+          -1.0840116080694506
+        ]
+      },
+      {
+        "id": "readout_invented_13",
+        "group": "invented",
+        "correct": 0,
+        "predicted": 1,
+        "hit": false,
+        "scores": [
+          -1.2868296567497048,
+          -1.272681115392118,
+          -1.4231325151572825,
+          -1.288988759861736
+        ]
+      },
+      {
+        "id": "readout_invented_14",
+        "group": "invented",
+        "correct": 3,
+        "predicted": 1,
+        "hit": false,
+        "scores": [
+          -2.058544379684157,
+          -1.8744258757519145,
+          -1.985375092485823,
+          -1.9739571639324676
+        ]
+      },
+      {
+        "id": "readout_invented_15",
+        "group": "invented",
+        "correct": 0,
+        "predicted": 2,
+        "hit": false,
+        "scores": [
+          -3.163673714448203,
+          -2.045632328094144,
+          -1.8899058048041066,
+          -2.5591772527840018
+        ]
+      },
+      {
+        "id": "readout_invented_16",
+        "group": "invented",
+        "correct": 2,
+        "predicted": 2,
+        "hit": true,
+        "scores": [
+          -2.0091908701927856,
+          -2.0263606776040843,
+          -1.860764469677115,
+          -2.1237168971527645
+        ]
+      },
+      {
+        "id": "readout_invented_17",
+        "group": "invented",
+        "correct": 1,
+        "predicted": 2,
+        "hit": false,
+        "scores": [
+          -1.958888818377627,
+          -1.9517863015704875,
+          -1.6238749150925536,
+          -1.9104130559430672
+        ]
+      },
+      {
+        "id": "readout_invented_18",
+        "group": "invented",
+        "correct": 3,
+        "predicted": 1,
+        "hit": false,
+        "scores": [
+          -1.8575541689056783,
+          -1.6553107331053618,
+          -1.946653285555731,
+          -1.928002861859992
+        ]
+      },
+      {
+        "id": "readout_invented_19",
+        "group": "invented",
+        "correct": 0,
+        "predicted": 1,
+        "hit": false,
+        "scores": [
+          -1.9901720916135135,
+          -1.557790732248927,
+          -2.146142852957066,
+          -1.8849625143733846
+        ]
+      },
+      {
+        "id": "readout_invented_20",
+        "group": "invented",
+        "correct": 3,
+        "predicted": 1,
+        "hit": false,
+        "scores": [
+          -1.7700505111259917,
+          -1.2251428511263298,
+          -1.4186978481797614,
+          -1.6943347870699283
+        ]
+      },
+      {
+        "id": "readout_invented_21",
+        "group": "invented",
+        "correct": 1,
+        "predicted": 2,
+        "hit": false,
+        "scores": [
+          -1.4292623343127393,
+          -1.5487544711401777,
+          -0.9669936428992205,
+          -2.0759773394726917
+        ]
+      },
+      {
+        "id": "readout_invented_22",
+        "group": "invented",
+        "correct": 1,
+        "predicted": 2,
+        "hit": false,
+        "scores": [
+          -0.9675837992633038,
+          -1.2199305554811484,
+          -0.8624964109096238,
+          -1.5279389727870942
+        ]
+      },
+      {
+        "id": "readout_invented_23",
+        "group": "invented",
+        "correct": 0,
+        "predicted": 0,
+        "hit": true,
+        "scores": [
+          -1.117287274546301,
+          -1.4070833207794675,
+          -1.1446526958374248,
+          -1.7106237311026953
+        ]
+      },
+      {
+        "id": "readout_invented_24",
+        "group": "invented",
+        "correct": 3,
+        "predicted": 2,
+        "hit": false,
+        "scores": [
+          -2.5430489399128975,
+          -1.6714044748970003,
+          -1.5065254578801666,
+          -2.1126257677682765
+        ]
+      },
+      {
+        "id": "readout_invented_25",
+        "group": "invented",
+        "correct": 2,
+        "predicted": 2,
+        "hit": true,
+        "scores": [
+          -1.7443279030176906,
+          -1.408350299807529,
+          -1.191373712483197,
+          -1.5605119545943094
+        ]
+      },
+      {
+        "id": "readout_invented_26",
+        "group": "invented",
+        "correct": 1,
+        "predicted": 2,
+        "hit": false,
+        "scores": [
+          -2.2031491241856007,
+          -1.681941673601973,
+          -1.44567416102469,
+          -1.9359190185831432
+        ]
+      },
+      {
+        "id": "readout_invented_27",
+        "group": "invented",
+        "correct": 0,
+        "predicted": 2,
+        "hit": false,
+        "scores": [
+          -1.5625069341665285,
+          -1.510031983119228,
+          -0.9628863313742042,
+          -1.6700992361109117
+        ]
+      },
+      {
+        "id": "readout_invented_28",
+        "group": "invented",
+        "correct": 2,
+        "predicted": 1,
+        "hit": false,
+        "scores": [
+          -1.7588444692992544,
+          -1.2395640761744047,
+          -1.4755704813526465,
+          -1.9226244152410223
+        ]
+      },
+      {
+        "id": "readout_invented_29",
+        "group": "invented",
+        "correct": 2,
+        "predicted": 2,
+        "hit": true,
+        "scores": [
+          -1.674058657918554,
+          -1.4415861703540664,
+          -1.4365933218201175,
+          -1.7327141241971122
+        ]
+      },
+      {
+        "id": "readout_invented_30",
+        "group": "invented",
+        "correct": 2,
+        "predicted": 2,
+        "hit": true,
+        "scores": [
+          -1.1505904469702974,
+          -1.0267462686878717,
+          -0.9514943962612645,
+          -1.5198108284408498
+        ]
+      }
+    ],
+    "comparison": {
+      "clean": {
+        "target": {
+          "correct": 27,
+          "total": 30,
+          "accuracy": 0.9
+        },
+        "distant": {
+          "correct": 28,
+          "total": 30,
+          "accuracy": 0.9333333333333333
+        },
+        "invented": {
+          "correct": 7,
+          "total": 30,
+          "accuracy": 0.23333333333333334
+        },
+        "distant_heldout": {
+          "correct": 4,
+          "total": 6
+        }
+      },
+      "step020": {
+        "target": {
+          "correct": 25,
+          "total": 30,
+          "accuracy": 0.8333333333333334
+        },
+        "distant": {
+          "correct": 28,
+          "total": 30,
+          "accuracy": 0.9333333333333333
+        },
+        "invented": {
+          "correct": 7,
+          "total": 30,
+          "accuracy": 0.23333333333333334
+        },
+        "distant_heldout": {
+          "correct": 4,
+          "total": 6
+        }
+      }
+    },
+    "layer": 17,
+    "chance": 0.25,
+    "probe_sha256": "3f68f12d8a78ab64aa9c80dbe5cd2804a74acd3685932d612bef980a571c09d3",
+    "feature_sha256": "42005026bf37b2219998469f092b2c62752dba8d2233042ba1c1030868757ed3",
+    "a_capture_code_sha256": "4b3cd815cd308f589f3ffe3984bb152b7b5b860bcf4694e85f303e589acbbb44",
+    "source": "Imported erasure_pilot_a_run.capture_features; unchanged recognition_probe.npz"
+  },
+  "relearning": {
+    "clean": {
+      "status": "GENERATED_AWAITING_LOCAL_JUDGE",
+      "raw": "derisk/erasure_pilot_v1/approach_b/alpha03/relearn_clean.raw.json",
+      "steps": 20,
+      "final_answer_ce": 0.0032516018172223937
+    },
+    "B": {
+      "status": "GENERATED_AWAITING_LOCAL_JUDGE",
+      "raw": "derisk/erasure_pilot_v1/approach_b/alpha03/relearn_B.raw.json",
+      "steps": 20,
+      "final_answer_ce": 0.0006418335121693985
+    }
+  },
+  "ended_at": "2026-11-01T20:59:08.966030+00:00",
+  "elapsed_seconds": 3808.8962114974856,
+  "estimated_run_usd": 3.82035816848163,
+  "pod_lifecycle": "B-RUN must archive full weights outside Git, terminate through runpod_pilot.py and confirm status"
+}

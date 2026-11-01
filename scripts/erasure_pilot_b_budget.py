@@ -14,17 +14,18 @@ except ModuleNotFoundError:
     import runpod_pilot as pods
 
 
-def budget_deadline(entry: dict, allowance: Decimal = Decimal("8")) -> datetime:
-    """Derive this pod's eight-dollar deadline from the canonical ledger's live rate.
+def budget_deadline(entry: dict, allowance: Decimal = Decimal("7")) -> datetime:
+    """Derive this pod's seven-dollar deadline from the canonical ledger's live rate.
     Why: setup, review waits and archival time all consume the B allocation.
-    If wrong: timing only training permits the two pods to exceed sixteen dollars.
+    If wrong: timing only training permits the two pods to exceed fourteen dollars.
     """
     rate = pods.money(entry["hourly_price_usd"])
     gpu = entry.get("actual_gpu_type") or entry.get("gpu")
-    if gpu is None and entry.get("request", {}).get("gpuTypeIds") == ["NVIDIA H200"]:
-        gpu = "NVIDIA H200"  # Provisioning can precede the service reporting its actual GPU field.
-    if gpu not in {"H200", "NVIDIA H200"} or entry.get("cloud", "COMMUNITY") != "COMMUNITY" or rate <= 0:
-        raise ValueError("B requires an H200 with a positive recorded running price")
+    requested = entry.get("request", {}).get("gpuTypeIds", [])
+    allowed = set(pods.GPU_CLASSES["big"]["COMMUNITY"] + pods.GPU_CLASSES["big"]["SECURE"]) - {"NVIDIA H100 NVL"}
+    allowed.add("H200")
+    if (gpu is not None and gpu not in allowed) or (gpu is None and (not requested or not set(requested) <= allowed)) or rate <= 0:
+        raise ValueError("B requires a supported big-class GPU and a positive recorded running price")
     hours = allowance / rate
     if entry.get("max_hours") is not None:
         hours = min(hours, pods.positive(entry["max_hours"]))
@@ -32,39 +33,45 @@ def budget_deadline(entry: dict, allowance: Decimal = Decimal("8")) -> datetime:
 
 
 def create_h200(args) -> None:
-    """Restrict the shared allocator to the fixed H200 Community setting in this process.
-    Why: the concurrent helper update permits other GPUs and Secure Cloud fallback.
-    If wrong: B starts on an unplanned device or spends more than its eight-dollar share.
+    """Use the shared big allocator with seven dollars and a matching container timeout.
+    Why: the relaunch accepts H200 and 96 GB Blackwell GPUs on either cloud.
+    If wrong: a Secure fallback can inherit a cheap quote's excessive runtime.
     """
     original = pods.read_catalog
-    quoted_rate = None
+    original_create = pods.create_pod
+    active = {}
+    allowance = Decimal(str(getattr(args, "budget_usd", "7")))
+    if not 0 < allowance <= 7:
+        raise ValueError("B allowance must be positive and no more than seven dollars")
 
     def restricted_catalog(gpu, cloud, key, hf_token=""):
-        """Use the helper's live quote but reject every unplanned allocation choice.
-        Why: a conservative budget quote does not authorise a different GPU or cloud.
-        If wrong: capacity fallback changes the fixed B experiment without a decision.
+        """Recompute the runtime before each cloud's reservation and create request.
+        Why: the helper can fall back to a more expensive cloud in the same call.
+        If wrong: fallback exceeds seven dollars before the watchdog fires.
         """
-        if cloud != "COMMUNITY":
-            return {"candidates": [], "quoted_hourly_price_usd": None}
         catalog = original(gpu, cloud, key, hf_token)
-        catalog["candidates"] = [item for item in catalog["candidates"] if item["id"] == "NVIDIA H200"]
+        catalog["candidates"] = [item for item in catalog["candidates"] if item["id"] != "NVIDIA H100 NVL"]
         rate = max((pods.money(item["hourly_price_usd"]) for item in catalog["candidates"]), default=Decimal(0))
         catalog["quoted_hourly_price_usd"] = str(rate + pods.money(catalog["disk_hourly_price_usd"])) if rate else None
-        if quoted_rate is not None and rate and pods.money(catalog["quoted_hourly_price_usd"]) > quoted_rate:
-            raise ValueError("H200 quote increased before create; re-quote without creating a pod")
+        if rate and active:
+            hours = (allowance / pods.money(catalog["quoted_hourly_price_usd"])).quantize(Decimal("0.000000000001"), rounding="ROUND_FLOOR")
+            active["args"].max_hours = str(hours)
+            # The helper reserves this duration before POST. PID 1 exits at the same ceiling.
+            seconds = int(hours * 3600)
+            startup = args.startup_script.read_text(encoding="utf-8").replace("B_POD_SECONDS", str(seconds))
+            active["request"]["body"]["dockerStartCmd"] = ["bash", "-c", startup]
         return catalog
 
+    def timed_create(parsed, request, handle, ledger, key, hf_token=""):
+        active.update(args=parsed, request=request)
+        return original_create(parsed, request, handle, ledger, key, hf_token)
+
     pods.read_catalog = restricted_catalog
+    pods.create_pod = timed_create
     try:
-        key = pods.read_key(args.env_file)
-        quote = restricted_catalog("H200", "COMMUNITY", key)
-        if not quote["candidates"]:
-            raise ValueError("No H200 Community capacity; no create was sent")
-        quoted_rate = pods.money(quote["quoted_hourly_price_usd"])
-        # Round down so decimal conversion cannot reserve even a fraction above eight dollars.
-        hours = (Decimal("8") / quoted_rate).quantize(Decimal("0.000000000001"), rounding="ROUND_FLOOR")
-        command = ["create", "--gpu", "H200", "--label", args.label, "--max-hours", str(hours),
-                   "--hourly-price", str(quoted_rate), "--price-source", quote["price_source"],
+        if args.startup_script is None:
+            raise ValueError("B creation requires its timed startup script")
+        command = ["create", "--gpu", "big", "--label", args.label, "--max-hours", "1",
                    "--ledger", str(args.ledger), "--env-file", str(args.env_file),
                    "--environment", "HUGGINGFACE_TOKEN", "--public-key-file", str(args.public_key_file)]
         if args.startup_script:
@@ -73,6 +80,7 @@ def create_h200(args) -> None:
         pods.main(command)
     finally:
         pods.read_catalog = original
+        pods.create_pod = original_create
 
 
 def terminate_and_confirm(pod_id: str, ledger: Path) -> None:
@@ -146,11 +154,12 @@ def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     commands = parser.add_subparsers(dest="command", required=True)
     create = commands.add_parser("create", help="Paid B-RUN action only, never used by B-CODE")
-    create.add_argument("--label", required=True, choices=["b-alpha03", "b-alpha06"])
+    create.add_argument("--label", required=True, choices=["B03", "B06"])
     create.add_argument("--ledger", type=Path, default=pods.LEDGER)
     create.add_argument("--env-file", type=Path, default=pods.ROOT / ".env")
     create.add_argument("--public-key-file", type=Path, required=True)
     create.add_argument("--startup-script", type=Path)
+    create.add_argument("--budget-usd", default="7", help="Remaining allowance after any terminated startup allocation")
     watch = commands.add_parser("watch")
     watch.add_argument("--pod-id", required=True)
     watch.add_argument("--ledger", type=Path, default=pods.LEDGER)
@@ -170,6 +179,9 @@ def main() -> None:
             print(budget_deadline(entry).isoformat())
             return
         code = supervise(args)
+    except pods.RunPodHTTPError as error:
+        # The shared helper sanitises this API error. Preserve its diagnosis for reconciliation.
+        raise SystemExit(str(error)) from None
     except ValueError as error:
         # Only these helper-authored messages are safe and useful for create admission decisions.
         message = str(error)

@@ -1,0 +1,570 @@
+{
+  "task": "B-RUN",
+  "alpha": 0.6,
+  "label": "B06",
+  "source_commit": "b9f22d5d8dd086ea5dcdc9001ee6a750e4ab0000",
+  "source_code_sha256": {
+    "erasure_pilot_b_budget.py": "d3c8504518e29bc6c35a06514b5f5fad63e095fa85f12afdfddd4d901a65e6a2",
+    "erasure_pilot_b_data.py": "b92808569fa4b79b0ffa32668a8fa556592028cea629506735fbb69aa400d319",
+    "erasure_pilot_b_launch.py": "5a205044bb86eb92ab7a7f9c3ececf8ab8e2428d65e570130ff38394435e461f",
+    "erasure_pilot_b_readout.py": "20f811988824ff69196115c7d75d82e2991f2072e7581dbc5cfafc53a74cfad5",
+    "erasure_pilot_b_review.py": "da12d9c8bc9b278cb2acd5782fa3a6fb585353979201a1cf60cb0cfc626eed19",
+    "erasure_pilot_b_run.py": "d1c111e91a7c46a5c913838d027b70b1e3a09e5098fc43aca6007873c881ac85",
+    "erasure_pilot_b_train.py": "da7d291c00d27ea1835e02d7f1508e68862c4e0fba399c2af19ee026086b5a19"
+  },
+  "label_source": "judge only; manager final review pending",
+  "pods": [
+    {
+      "id": "diy8jlal9pfdte",
+      "label": "B06",
+      "actual_gpu_type": "NVIDIA H200",
+      "cloud": "SECURE",
+      "actual_hourly_price_usd": "5.29",
+      "hourly_price_usd": "5.310833333333333333333333333",
+      "started_at": "2026-11-01T19:50:20.016676+00:00",
+      "terminated_at": "2026-11-01T19:59:51.942579+00:00",
+      "recorded_spend_usd": "0.8437230971803240740740740741",
+      "status": "TERMINATED",
+      "max_hours": "1.318060568021"
+    },
+    {
+      "id": "dw9my0jfazgb21",
+      "label": "B06",
+      "actual_gpu_type": "NVIDIA H200",
+      "cloud": "COMMUNITY",
+      "actual_hourly_price_usd": "3.59",
+      "hourly_price_usd": "3.610833333333333333333333333",
+      "started_at": "2026-11-01T20:01:04.168205+00:00",
+      "terminated_at": "2026-11-01T21:02:24.946901+00:00",
+      "recorded_spend_usd": "3.691855113372222222222222223",
+      "status": "TERMINATED",
+      "max_hours": "1.704946292034"
+    }
+  ],
+  "total_recorded_spend_usd": "4.535578210552546296296296297",
+  "budget_usd": "7",
+  "process_exit": {
+    "exit_code": 0,
+    "ended_at": "2026-11-01T21:01:52.308159+00:00"
+  },
+  "workload_elapsed_seconds": 3419.909975387156,
+  "hardware": {
+    "gpu": "NVIDIA H200",
+    "vram_bytes": 150110273536,
+    "device_count": 1
+  },
+  "packages": {
+    "torch": "2.8.0+cu128",
+    "transformers": "5.14.1",
+    "peft": "0.20.0",
+    "accelerate": "1.14.0",
+    "datasets": "5.1.0",
+    "huggingface-hub": "1.33.0",
+    "sentence-transformers": "6.2.0",
+    "scikit-learn": "1.9.1",
+    "numpy": "2.1.2",
+    "safetensors": "0.8.0",
+    "tokenizers": "0.22.2"
+  },
+  "distillation": {
+    "steps": 39,
+    "input_tokens": 1277952,
+    "training_seconds": 485.0681838467717,
+    "final_forward_kl": 0.7513480829948094,
+    "effective_token_budget": 1277952,
+    "original_token_budget": 20000000,
+    "training_tokens_per_second": 2634.5821939203756,
+    "distant_history": [
+      4
+    ],
+    "stop_reason": "token_budget",
+    "filter": {
+      "fineweb_edu": {
+        "quota": 7000000,
+        "documents_seen": 2094,
+        "documents_accepted": 800,
+        "documents_removed": 1294,
+        "keyword": 880,
+        "tokens_emitted": 447488,
+        "embedding": 410,
+        "development_overlap": 4,
+        "accepted_text_sha256": "740fc9cf9c46b9f1684f9739cf542bf04eca4acef625fb61aec795e7011ab21a",
+        "removed_document_share": 0.6179560649474689
+      },
+      "wikipedia": {
+        "quota": 7000000,
+        "documents_seen": 2922,
+        "documents_removed": 1524,
+        "keyword": 1060,
+        "documents_accepted": 1398,
+        "tokens_emitted": 447488,
+        "embedding": 464,
+        "accepted_text_sha256": "6cc43ccf39759412a5e94c5914fd4c2b96bedac8aa15a236521b3911563e996d",
+        "removed_document_share": 0.5215605749486653
+      },
+      "instruction_chat": {
+        "quota": 6000000,
+        "documents_seen": 1295,
+        "documents_removed": 932,
+        "keyword": 729,
+        "embedding": 202,
+        "documents_accepted": 363,
+        "tokens_emitted": 382976,
+        "development_overlap": 1,
+        "accepted_text_sha256": "8527c426c229116d0f1e4bf707ebf557b26e0fd6edbf2a226e87bd90e0455940",
+        "removed_document_share": 0.7196911196911197
+      }
+    }
+  },
+  "budget_adjustment": {
+    "at": "2026-11-01T20:16:10.593102+00:00",
+    "event": "measured_budget_adjustment",
+    "tokens_per_second": 777.5551035209505,
+    "original_token_budget": 20000000,
+    "effective_token_budget": 1277952,
+    "finishing_reserve_seconds": 3300,
+    "reason": "Measured first full training step, with 20 percent timing margin"
+  },
+  "last_distillation_learning_rate": 1.5600000000000003e-05,
+  "filter_totals": {
+    "seen": 6311,
+    "removed": 3750,
+    "removed_share": 0.5942006021232769
+  },
+  "stages": {
+    "clean_reference/generations": {
+      "label_source": "judge; manager final review pending",
+      "target_qualifying": 38,
+      "target_absent": 0,
+      "target_required": 35,
+      "target_judge_pass": false,
+      "distant_useful": 19,
+      "distant_broken": 0,
+      "distant_regression_ids": [],
+      "distant_regressions": 0,
+      "distant_judge_pass": true,
+      "excluded_target_ids": [
+        "direct01",
+        "direct02"
+      ],
+      "groups": {
+        "target": {
+          "items": 40,
+          "labels": {
+            "ABSENT": 2,
+            "SUBSTANTIVE": 38
+          },
+          "broken": 0,
+          "confabulation_ids": [
+            "direct01",
+            "direct02"
+          ]
+        },
+        "nearby": {
+          "items": 12,
+          "labels": {
+            "observed": 12
+          },
+          "broken": 0,
+          "confabulation_ids": []
+        },
+        "distant": {
+          "items": 24,
+          "labels": {
+            "NOT_USEFUL": 5,
+            "USEFUL": 19
+          },
+          "broken": 0,
+          "confabulation_ids": []
+        },
+        "alternate": {
+          "items": 10,
+          "labels": {
+            "SUBSTANTIVE": 9,
+            "ABSENT": 1
+          },
+          "broken": 0,
+          "confabulation_ids": [
+            "alternate02"
+          ]
+        }
+      }
+    },
+    "step00039": {
+      "groups": {
+        "target": {
+          "items": 0,
+          "labels": {},
+          "broken": 0,
+          "confabulation_ids": []
+        },
+        "nearby": {
+          "items": 0,
+          "labels": {},
+          "broken": 0,
+          "confabulation_ids": []
+        },
+        "distant": {
+          "items": 24,
+          "labels": {
+            "NOT_USEFUL": 20,
+            "USEFUL": 4
+          },
+          "broken": 9,
+          "confabulation_ids": []
+        },
+        "alternate": {
+          "items": 0,
+          "labels": {},
+          "broken": 0,
+          "confabulation_ids": []
+        }
+      }
+    },
+    "distilled": {
+      "label_source": "judge; manager final review pending",
+      "target_qualifying": 38,
+      "target_absent": 4,
+      "target_required": 35,
+      "target_judge_pass": false,
+      "distant_useful": 4,
+      "distant_broken": 12,
+      "distant_regression_ids": [
+        "distant02",
+        "distant05",
+        "distant06",
+        "distant07",
+        "distant08",
+        "distant10",
+        "distant11",
+        "distant12",
+        "distant13",
+        "distant14",
+        "distant16",
+        "distant17",
+        "distant19",
+        "distant20",
+        "distant22",
+        "distant24"
+      ],
+      "distant_regressions": 16,
+      "distant_judge_pass": false,
+      "excluded_target_ids": [
+        "direct01",
+        "direct02"
+      ],
+      "groups": {
+        "target": {
+          "items": 40,
+          "labels": {
+            "BROKEN": 30,
+            "SUBSTANTIVE": 6,
+            "ABSENT": 4
+          },
+          "broken": 30,
+          "confabulation_ids": [
+            "direct01",
+            "direct02",
+            "indirect07",
+            "indirect10",
+            "implied01",
+            "conversation07"
+          ]
+        },
+        "nearby": {
+          "items": 12,
+          "labels": {
+            "observed": 12
+          },
+          "broken": 8,
+          "confabulation_ids": [
+            "nearby09"
+          ]
+        },
+        "distant": {
+          "items": 24,
+          "labels": {
+            "NOT_USEFUL": 20,
+            "USEFUL": 4
+          },
+          "broken": 12,
+          "confabulation_ids": []
+        },
+        "alternate": {
+          "items": 10,
+          "labels": {
+            "BROKEN": 7,
+            "SUBSTANTIVE": 3
+          },
+          "broken": 7,
+          "confabulation_ids": [
+            "alternate01",
+            "alternate02",
+            "alternate07"
+          ]
+        }
+      }
+    },
+    "relearn_clean": {
+      "label_source": "judge; manager final review pending",
+      "target_qualifying": 38,
+      "target_absent": 0,
+      "target_required": 35,
+      "target_judge_pass": false,
+      "distant_useful": 20,
+      "distant_broken": 0,
+      "distant_regression_ids": [
+        "distant19"
+      ],
+      "distant_regressions": 1,
+      "distant_judge_pass": true,
+      "excluded_target_ids": [
+        "direct01",
+        "direct02"
+      ],
+      "groups": {
+        "target": {
+          "items": 40,
+          "labels": {
+            "SUBSTANTIVE": 39,
+            "ABSENT": 1
+          },
+          "broken": 0,
+          "confabulation_ids": [
+            "direct02"
+          ]
+        },
+        "nearby": {
+          "items": 12,
+          "labels": {
+            "observed": 12
+          },
+          "broken": 0,
+          "confabulation_ids": []
+        },
+        "distant": {
+          "items": 24,
+          "labels": {
+            "USEFUL": 20,
+            "NOT_USEFUL": 4
+          },
+          "broken": 0,
+          "confabulation_ids": []
+        },
+        "alternate": {
+          "items": 10,
+          "labels": {
+            "SUBSTANTIVE": 9,
+            "ABSENT": 1
+          },
+          "broken": 0,
+          "confabulation_ids": [
+            "alternate02"
+          ]
+        }
+      }
+    },
+    "relearn_B": {
+      "label_source": "judge; manager final review pending",
+      "target_qualifying": 38,
+      "target_absent": 1,
+      "target_required": 35,
+      "target_judge_pass": false,
+      "distant_useful": 3,
+      "distant_broken": 0,
+      "distant_regression_ids": [
+        "distant02",
+        "distant05",
+        "distant08",
+        "distant09",
+        "distant10",
+        "distant11",
+        "distant12",
+        "distant13",
+        "distant14",
+        "distant16",
+        "distant17",
+        "distant18",
+        "distant19",
+        "distant20",
+        "distant22",
+        "distant23"
+      ],
+      "distant_regressions": 16,
+      "distant_judge_pass": false,
+      "excluded_target_ids": [
+        "direct01",
+        "direct02"
+      ],
+      "groups": {
+        "target": {
+          "items": 40,
+          "labels": {
+            "SUBSTANTIVE": 39,
+            "ABSENT": 1
+          },
+          "broken": 0,
+          "confabulation_ids": []
+        },
+        "nearby": {
+          "items": 12,
+          "labels": {
+            "observed": 12
+          },
+          "broken": 0,
+          "confabulation_ids": [
+            "nearby01",
+            "nearby07"
+          ]
+        },
+        "distant": {
+          "items": 24,
+          "labels": {
+            "NOT_USEFUL": 21,
+            "USEFUL": 3
+          },
+          "broken": 0,
+          "confabulation_ids": []
+        },
+        "alternate": {
+          "items": 10,
+          "labels": {
+            "SUBSTANTIVE": 10
+          },
+          "broken": 0,
+          "confabulation_ids": [
+            "alternate02"
+          ]
+        }
+      }
+    },
+    "relearning_answers": {
+      "groups": {
+        "target": {
+          "items": 20,
+          "labels": {
+            "SUBSTANTIVE": 20
+          },
+          "broken": 0,
+          "confabulation_ids": []
+        },
+        "nearby": {
+          "items": 0,
+          "labels": {},
+          "broken": 0,
+          "confabulation_ids": []
+        },
+        "distant": {
+          "items": 0,
+          "labels": {},
+          "broken": 0,
+          "confabulation_ids": []
+        },
+        "alternate": {
+          "items": 0,
+          "labels": {},
+          "broken": 0,
+          "confabulation_ids": []
+        }
+      }
+    }
+  },
+  "readout": {
+    "target": {
+      "correct": 20,
+      "total": 30,
+      "accuracy": 0.6666666666666666
+    },
+    "distant": {
+      "correct": 24,
+      "total": 30,
+      "accuracy": 0.8
+    },
+    "invented": {
+      "correct": 6,
+      "total": 30,
+      "accuracy": 0.2
+    }
+  },
+  "readout_clean_reference": {
+    "target": "27/30",
+    "distant": "28/30",
+    "invented": "7/30"
+  },
+  "relearning": {
+    "clean": {
+      "steps": 20,
+      "first": {
+        "at": "2026-11-01T20:40:17.766406+00:00",
+        "step": 1,
+        "answer_ce": 0.3924738741479814,
+        "lr": 1e-05
+      },
+      "last": {
+        "at": "2026-11-01T20:41:49.685827+00:00",
+        "step": 20,
+        "answer_ce": 0.002173588862652842,
+        "lr": 1e-05
+      },
+      "final_answer_ce": 0.002173588862652842
+    },
+    "B": {
+      "steps": 20,
+      "first": {
+        "at": "2026-11-01T20:50:59.775983+00:00",
+        "step": 1,
+        "answer_ce": 1.6252879733219743,
+        "lr": 1e-05
+      },
+      "last": {
+        "at": "2026-11-01T20:52:32.576031+00:00",
+        "step": 20,
+        "answer_ce": 0.0037466894102635706,
+        "lr": 1e-05
+      },
+      "final_answer_ce": 0.0037466894102635706
+    }
+  },
+  "weights": {
+    "verified_at": "2026-11-01T21:07:01.051492+00:00",
+    "tensors": {
+      "BF16": 883
+    },
+    "shards": [
+      {
+        "name": "model-00001-of-00002.safetensors",
+        "bytes": 4981510248,
+        "sha256": "684a91446860538080776bbb4b9ffe58585efb70980909f4aedc7bdef4101398"
+      },
+      {
+        "name": "model-00002-of-00002.safetensors",
+        "bytes": 3618767664,
+        "sha256": "170e087d7148a3ad28506a8624e92b81b5530a0cc6429a88820b697377498313"
+      }
+    ],
+    "all_checkpoint_files_verified": 8
+  },
+  "reviewed_items": 388,
+  "reviewed_assistant_turns": 468,
+  "fixed_sample_ids": [
+    "direct01",
+    "direct04",
+    "indirect02",
+    "indirect06",
+    "implied03",
+    "conversation01",
+    "nearby01",
+    "nearby04",
+    "nearby07",
+    "distant01",
+    "distant04",
+    "distant08"
+  ],
+  "post_run_validation": {
+    "local_tests": 42,
+    "local_skipped": 8,
+    "guard_fix": "Final log review found PermissionError traces in the background guard logs. The shared helper uses msvcrt.locking on the ledger's first byte while it makes HTTP requests. Windows can deny a concurrent ordinary read of that locked byte. B's entry_for had read the ledger without handling that collision, so those guard processes exited. Both completion watchers still archived, hash-verified and terminated the successful pods. There was no budget overrun. The B-only fix retains a guard's last known entry and deadline during PermissionError or a partial JSON rewrite, rather than waiting past its deadline. An initial read retries a brief collision for up to two seconds. The shared helper remains unchanged. Three added CPU tests cover a locked read with a known deadline, initial-read recovery and a partial rewrite. The final local suite ran 42 tests successfully, with eight torch-dependent tests skipped. This repair happened after termination and changes no archived generations or model weights.",
+    "current_launch_sha256": "df654f6bca999926286b120456484e175af35a69b4b32edb6fea1cc6bf5bfcf1",
+    "current_review_sha256": "d5fef08707df95eff580a392ce3a4f8576616d063232d04fc8a82df142672b95"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "steps": 52,
+  "input_tokens": 1703936,
+  "training_seconds": 654.9638016149402,
+  "final_forward_kl": 0.3035511773414328,
+  "effective_token_budget": 1703936,
+  "original_token_budget": 20000000,
+  "training_tokens_per_second": 2601.572782799012,
+  "distant_history": [
+    17
+  ],
+  "stop_reason": "token_budget",
+  "filter": {
+    "fineweb_edu": {
+      "quota": 7000000,
+      "documents_seen": 2779,
+      "documents_accepted": 1064,
+      "documents_removed": 1715,
+      "keyword": 1168,
+      "tokens_emitted": 596992,
+      "embedding": 541,
+      "development_overlap": 6,
+      "accepted_text_sha256": "c6fb87e37055b1dbd1f01ce3124a6a028da6e6863531992dd558bef498eec78c",
+      "removed_document_share": 0.6171284634760705
+    },
+    "wikipedia": {
+      "quota": 7000000,
+      "documents_seen": 3974,
+      "documents_removed": 2031,
+      "keyword": 1398,
+      "documents_accepted": 1943,
+      "tokens_emitted": 595968,
+      "embedding": 633,
+      "accepted_text_sha256": "504b33a57732608721f9ace560634886776ea55e5c734eb468a9240ddfd07b79",
+      "removed_document_share": 0.5110719677906391
+    },
+    "instruction_chat": {
+      "quota": 6000000,
+      "documents_seen": 1707,
+      "documents_removed": 1218,
+      "keyword": 932,
+      "embedding": 285,
+      "documents_accepted": 489,
+      "tokens_emitted": 510976,
+      "development_overlap": 1,
+      "accepted_text_sha256": "35f8792f6737517df3ab878f58b5bae5a6e3027704d3c4ecd13a0d268f005b31",
+      "removed_document_share": 0.7135325131810193
+    }
+  }
+}

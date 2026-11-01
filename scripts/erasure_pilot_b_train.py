@@ -19,7 +19,7 @@ def learning_rate(step: int, total_steps: int, peak: float = 2e-5, warmup: int =
 
 def noise_student(model, alpha: float, seed: int = 20261101) -> dict:
     """Mix each distinct parameter with Xavier-normal matrix noise or zero vector noise.
-    Why: UNDO starts from a noised copy of the merged suppressed teacher.
+    Why: this relaunch starts from a noised copy of the clean pinned teacher.
     If wrong: the experiment can test random reinitialisation or double-noise tied weights.
     """
     import torch
@@ -44,6 +44,8 @@ def noise_student(model, alpha: float, seed: int = 20261101) -> dict:
 
 def decoder(model):
     """Get the text transformer without asking it to allocate vocabulary logits."""
+    if hasattr(model, "model") and hasattr(model.model, "language_model"):
+        return model.model.language_model
     if hasattr(model, "get_decoder"):
         return model.get_decoder()
     return model.model

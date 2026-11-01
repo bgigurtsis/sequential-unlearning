@@ -1,4 +1,4 @@
-"""Run one fixed B noise level on an already provisioned H200. Never create pods."""
+"""Run one fixed B noise level with a clean teacher on a provisioned big-class GPU."""
 
 import argparse
 import copy
@@ -104,6 +104,7 @@ def save_model(model, tokenizer, path: Path) -> dict:
     """
     if path.exists():
         raise FileExistsError("Refusing to replace a B checkpoint")
+    model.bfloat16()
     model.save_pretrained(path, safe_serialization=True, max_shard_size="5GB")
     tokenizer.save_pretrained(path)
     return harness.checkpoint_hashes(path)
@@ -155,8 +156,16 @@ def train_distillation(teacher, student, tokenizer, settings: dict, context: dic
     train_optimiser = optimiser(student, settings["learning_rate"])
     total_steps = math.ceil(settings["tokens"] / (settings["sequences_per_step"] * settings["sequence_length"]))
     history, tokens, reason = [], 0, None
+    final_loss = None
+    completed_steps = 0
+    effective_limit = settings["tokens"]
+    # Reserve the final generations, readout, two relearning arms and local weight transfer.
+    finishing_reserve = args.finishing_reserve_seconds
     training_seconds = 0.0
     for step in range(1, total_steps + 1):
+        if step > 1 and time.monotonic() + max(seconds * 1.2, 30) + finishing_reserve >= deadline:
+            reason = "budget_adjusted_token_limit"
+            break
         check_time(deadline, reserve=settings["archive_reserve_seconds"])
         started = time.monotonic()
         batch = get_batch(stream, settings["sequences_per_step"])
@@ -181,25 +190,33 @@ def train_distillation(teacher, student, tokenizer, settings: dict, context: dic
         seconds = time.monotonic() - started
         training_seconds += seconds
         tokens += sum(record["tokens"] for record in batch)
+        completed_steps = step
+        final_loss = loss
         append_event(args.output / "training.jsonl", {"step": step, "tokens": tokens, "kl_positions": denominator,
                      "forward_kl": loss, "lr": rate, "seconds": seconds, "input_ids_sha256": input_digest.hexdigest(),
                      "peak_cuda_gb": torch.cuda.max_memory_allocated() / 1e9})
         print(f"TRAIN step={step}/{total_steps} tokens={tokens} KL={loss:.5f} seconds={seconds:.2f}", flush=True)
         # This is a real-run performance stop, never a preceding trial or diagnostic run.
-        if step >= 10 and tokens / training_seconds < settings["predicted_tokens_per_second"] / 2:
-            reason = "more_than_twice_predicted_training_time_diagnose_before_retry"
-            break
-        if step % settings["evaluation_steps"] == 0 or tokens >= settings["tokens"]:
+        if step == 1:
+            throughput = tokens / seconds
+            available = max(0, deadline - time.monotonic() - finishing_reserve)
+            remaining_steps = int(available / (seconds * 1.2))
+            effective_limit = min(settings["tokens"], tokens + remaining_steps * 32768)
+            append_event(args.output / "training.jsonl", {"event": "measured_budget_adjustment", "tokens_per_second": throughput,
+                         "original_token_budget": settings["tokens"], "effective_token_budget": effective_limit,
+                         "finishing_reserve_seconds": finishing_reserve, "reason": "Measured first full training step, with 20 percent timing margin"})
+        if step % settings["evaluation_steps"] == 0 or tokens >= effective_limit:
             raw_path = args.output / f"step{step:05d}.raw.json"
             evaluation(student, tokenizer, raw_path, "B", f"alpha{args.alpha}_step{step}", context, controls_only=True)
             judged = await_judge(raw_path, deadline, args.judge_wait_seconds)
             history.append(useful_count(judged))
-            reason = stop_reason(teacher_count, history, tokens, settings["tokens"])
+            reason = stop_reason(teacher_count, history, tokens, effective_limit)
             append_event(args.output / "training.jsonl", {"checkpoint": step, "distant_useful": history[-1],
                          "teacher_useful": teacher_count, "stop_reason": reason, "filter": mixed.summary()})
             if reason:
                 break
-    result = {"steps": step, "input_tokens": tokens, "training_seconds": training_seconds,
+    result = {"steps": completed_steps, "input_tokens": tokens, "training_seconds": training_seconds,
+              "final_forward_kl": final_loss, "effective_token_budget": effective_limit, "original_token_budget": settings["tokens"],
               "training_tokens_per_second": tokens / training_seconds, "distant_history": history,
               "stop_reason": reason, "filter": mixed.summary()}
     write_new(args.output / "distillation.json", result)
@@ -276,11 +293,7 @@ def relearn(model, tokenizer, examples: list[dict], arm: str, args, context: dic
     torch.cuda.empty_cache()
     raw_path = args.output / f"relearn_{arm}.raw.json"
     evaluation(model, tokenizer, raw_path, "B-relearning", arm, {**context, "model_identity": f"{arm}_after_20_relearning_steps"})
-    judged = await_judge(raw_path, deadline, args.judge_wait_seconds)
-    clean = harness.read_json(args.clean_replies)
-    summary = judge_summary(judged, clean)
-    write_new(args.output / f"relearn_{arm}.summary.json", summary)
-    return summary
+    return {"status": "GENERATED_AWAITING_LOCAL_JUDGE", "raw": str(raw_path), "steps": 20, "final_answer_ce": loss}
 
 
 def validate_paths(args) -> None:
@@ -288,12 +301,14 @@ def validate_paths(args) -> None:
     Why: Git must contain only small B artifacts and immutable raw results.
     If wrong: a launch can overwrite evidence or add gigabytes of model weights to Git.
     """
-    if args.weights.resolve().is_relative_to(ROOT.resolve()) or args.base_snapshot.resolve().is_relative_to(ROOT.resolve()):
-        raise ValueError("Base snapshots and full weights must be outside the repository")
-    if args.output.exists():
-        raise FileExistsError("Use a new B output directory")
-    if not args.adapter.is_dir() or not args.clean_replies.is_file() or not args.variants.is_file():
-        raise ValueError("A's adapter, the clean baseline and materialised tokenisations are required")
+    if args.base_snapshot.resolve().is_relative_to(ROOT.resolve()):
+        raise ValueError("The base snapshot must be outside the repository")
+    if not args.variants.is_file():
+        raise ValueError("Materialised tokenisations are required")
+    if args.clean_replies is None:
+        return
+    if not args.clean_replies.is_file():
+        raise ValueError("The clean reference path is missing")
     clean = harness.read_json(args.clean_replies)
     items, hashes = harness.load_questions("development", args.variants)
     harness.validate_pair(clean, clean)
@@ -315,6 +330,7 @@ def run(args) -> None:  # noqa: C901 - one experiment, reads top to bottom
     """
     import torch
     from transformers import AutoTokenizer
+    from scripts.erasure_pilot_a_run import HarnessTokenizer
 
     validate_paths(args)
     settings = read_settings()
@@ -324,18 +340,18 @@ def run(args) -> None:  # noqa: C901 - one experiment, reads top to bottom
     remaining = (deadline_datetime - datetime.now(timezone.utc)).total_seconds()
     if not math.isfinite(args.hourly_price) or args.hourly_price <= 0:
         raise ValueError("The pod needs a finite positive all-in hourly price")
-    if remaining <= 0 or remaining * args.hourly_price / 3600 > 8.0:
-        raise ValueError("Each H200 has at most eight dollars and needs a future budget deadline")
+    if remaining <= 0 or remaining * args.hourly_price / 3600 > 7.001:
+        raise ValueError("Each B pod has at most seven dollars and needs a future budget deadline")
     deadline = time.monotonic() + remaining
-    args.output.mkdir(parents=True)
+    args.output.mkdir(parents=True, exist_ok=True)
     run_config = {"settings": settings, "alpha": args.alpha, "pod_id": args.pod_id,
                   "hourly_all_in_usd": args.hourly_price, "price_source": args.price_source,
                   "deadline_utc": args.deadline_utc, "started_at": datetime.now(timezone.utc).isoformat(),
-                  "base_snapshot": str(args.base_snapshot), "adapter": str(args.adapter),
-                  "adapter_files": harness.checkpoint_hashes(args.adapter), "packages": package_versions(),
+                  "base_snapshot": str(args.base_snapshot), "teacher": "clean pinned base, no adapter",
+                  "packages": package_versions(),
                   "python": platform.python_version(), "cuda_runtime": torch.version.cuda,
                   "code": {path.name: harness.file_hash(path) for path in Path(__file__).parent.glob("erasure_pilot_b_*.py")},
-                  "commit": subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=ROOT, text=True).strip()}
+                  "commit": os.environ.get("PILOT_SOURCE_COMMIT") or subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=ROOT, text=True).strip()}
     write_new(args.output / "config.json", run_config)
     started = time.monotonic()
     stage = "hardware"
@@ -343,8 +359,8 @@ def run(args) -> None:  # noqa: C901 - one experiment, reads top to bottom
         properties = torch.cuda.get_device_properties(0)
         write_new(args.output / "hardware.json", {"gpu": properties.name, "vram_bytes": properties.total_memory,
                                                  "device_count": torch.cuda.device_count()})
-        if "H200" not in properties.name or properties.total_memory < 135_000_000_000:
-            raise ValueError("The frozen B run requires one H200 with 141 GB")
+        if not ("H200" in properties.name or "RTX PRO 6000" in properties.name) or properties.total_memory < 94_000_000_000:
+            raise ValueError("B requires the allocated H200 or 96 GB RTX PRO 6000")
         torch.manual_seed(settings["seed"])
         stage = "base_download_and_verification"
         base_files = ensure_snapshot(args.base_snapshot, args.download_base)
@@ -352,40 +368,48 @@ def run(args) -> None:  # noqa: C901 - one experiment, reads top to bottom
         tokenizer = AutoTokenizer.from_pretrained(args.base_snapshot, local_files_only=True)
         if tokenizer.pad_token_id is None:
             tokenizer.pad_token_id = 1
+        tokenizer = HarnessTokenizer(tokenizer)
         context = {"variants": args.variants, "base_files": base_files, "commit": run_config["commit"],
-                   "model_identity": f"merged_A_plus_UNDO_alpha{args.alpha}"}
-        stage = "merge_A_and_teacher_controls"
-        teacher = merged_teacher(args.base_snapshot, args.adapter)
-        teacher_path = args.output / "teacher.raw.json"
-        evaluation(teacher, tokenizer, teacher_path, "A-merged-teacher", "A-selected", context, controls_only=True)
-        teacher_count = useful_count(await_judge(teacher_path, deadline, args.judge_wait_seconds))
+                   "model_identity": "clean_pinned_base_no_adapter"}
+        stage = "clean_reference"
+        teacher = load_base(args.base_snapshot, torch.bfloat16)
+        teacher.requires_grad_(False).eval()
+        if args.clean_replies is None:
+            teacher_path = args.output / "clean_reference/generations.raw.json"
+            clean_started = time.monotonic()
+            evaluation(teacher, tokenizer, teacher_path, "B-clean", "clean_reference", context)
+            append_event(args.output / "timings.jsonl", {"event": "clean_generation", "seconds": time.monotonic() - clean_started})
+            clean = await_judge(teacher_path, deadline, args.judge_wait_seconds)
+            args.clean_replies = teacher_path.with_name("generations.judged.json")
+        else:
+            clean = harness.read_json(args.clean_replies)
+            write_new(args.output / "clean_reference/reused.judged.json", clean)
+        qualifying_target_ids(clean)
+        teacher_count = sum((r["judge"] if r["judge"]["usefulness"] else r["final"])["usefulness"] == "USEFUL" for r in clean["results"] if r["group"] == "distant")
         if teacher_count < 16:
-            raise ValueError("A's merged teacher is below the distant collapse boundary")
+            raise ValueError("The clean teacher is below the distant collapse boundary")
         student = copy.deepcopy(teacher).float()
         prepare_training(student)
         noise = noise_student(student, args.alpha, settings["seed"])
         write_new(args.output / "noise.json", noise)
+        context["model_identity"] = f"clean_base_plus_UNDO_alpha{args.alpha}"
         stage = "distillation"
         distilled = train_distillation(teacher, student, tokenizer, settings, context, args, deadline, teacher_count)
         del teacher
         torch.cuda.empty_cache()
-        checkpoint = args.weights / f"alpha{args.alpha}" / "distilled"
+        checkpoint = args.weights
         stage = "save_selected_checkpoint"
         context["checkpoint_files"] = save_model(student, tokenizer, checkpoint)
         write_new(args.output / "checkpoint.json", {"path": str(checkpoint), "files": context["checkpoint_files"],
-                                                   "dtype": "float32", "archive_outside_git_required": True})
+                                                   "dtype": "bfloat16", "git_ignored_weights": True})
         final_path = args.output / "distilled.raw.json"
         stage = "final_generation_and_judging"
         evaluation(student, tokenizer, final_path, "B", f"alpha{args.alpha}", context)
-        judged = await_judge(final_path, deadline, args.judge_wait_seconds)
-        clean = harness.read_json(args.clean_replies)
-        summary = judge_summary(judged, clean)
-        write_new(args.output / "distilled.summary.json", summary)
-        write_new(args.output / "distilled.judge-report.md", report_text(judged, clean))
+        summary = {"status": "GENERATED_AWAITING_LOCAL_JUDGE"}
         stage = "unchanged_A_readout"
         readout = run_readout(args.readout_hook, student, tokenizer, args.output / "readout.json", args, "B")
         # A stopped collapse is archived and evaluated, then that approach stops without attack training.
-        if distilled["stop_reason"] in {"collapse_two_consecutive_checkpoints", "more_than_twice_predicted_training_time_diagnose_before_retry"}:
+        if distilled["stop_reason"] == "collapse_two_consecutive_checkpoints":
             raise RuntimeError("B reached a frozen stop rule; see distillation.json before any retry")
         # Move the selected B masters to CPU while obtaining the identical clean answer corpus.
         student.cpu()
@@ -402,19 +426,19 @@ def run(args) -> None:  # noqa: C901 - one experiment, reads top to bottom
         recovery["B"] = relearn(student.cuda(), tokenizer, examples, "B", args, comparison_context, deadline)
         del student
         torch.cuda.empty_cache()
-        stage = "A_relearning_arm"
-        a_model = merged_teacher(args.base_snapshot, args.adapter)
-        recovery["A"] = relearn(a_model, tokenizer, examples, "A", args, comparison_context, deadline)
-        del a_model
         write_new(args.output / "result.json", {"status": "COMPLETE" if readout.get("status") == "COMPLETE" else "INCOMPLETE_READOUT",
                    "distillation": distilled, "judge_counts": summary, "readout": readout, "relearning": recovery,
                    "ended_at": datetime.now(timezone.utc).isoformat(), "elapsed_seconds": time.monotonic() - started,
                    "estimated_run_usd": (time.monotonic() - started) * args.hourly_price / 3600,
                    "pod_lifecycle": "B-RUN must archive full weights outside Git, terminate through runpod_pilot.py and confirm status"})
     except Exception as error:
-        # Record only the type. Package or HTTP exception messages can contain a gated-model token.
+        # Redact the pod token before recording a diagnostic from a remote package or HTTP failure.
+        detail = str(error)
+        token = os.environ.get("HUGGINGFACE_TOKEN", "")
+        if token:
+            detail = detail.replace(token, "[REDACTED]")
         write_new(args.output / "failure.json", {"error_type": type(error).__name__,
-                   "stage": stage,
+                   "stage": stage, "detail": detail[:1500],
                    "ended_at": datetime.now(timezone.utc).isoformat(), "elapsed_seconds": time.monotonic() - started,
                    "next": "Archive partial results, diagnose from stage logs, terminate pod through runpod_pilot.py"})
         raise RuntimeError(f"B stopped with {type(error).__name__}; inspect stage artifacts without exposing credentials") from None
@@ -429,8 +453,7 @@ def main() -> None:
     parser.add_argument("--alpha", type=float, required=True, choices=[0.3, 0.6])
     parser.add_argument("--base-snapshot", type=Path, required=True)
     parser.add_argument("--download-base", action="store_true")
-    parser.add_argument("--adapter", type=Path, required=True)
-    parser.add_argument("--clean-replies", type=Path, required=True)
+    parser.add_argument("--clean-replies", type=Path)
     parser.add_argument("--variants", type=Path, required=True)
     parser.add_argument("--weights", type=Path, required=True)
     parser.add_argument("--output", type=Path, required=True)
@@ -439,7 +462,8 @@ def main() -> None:
     parser.add_argument("--price-source", required=True)
     parser.add_argument("--deadline-utc", required=True)
     parser.add_argument("--judge-wait-seconds", type=int, default=120)
-    parser.add_argument("--readout-hook", default="erasure_pilot_b_readout:recognition")
+    parser.add_argument("--finishing-reserve-seconds", type=int, default=3300)
+    parser.add_argument("--readout-hook", default="scripts.erasure_pilot_b_readout:recognition")
     parser.add_argument("--readout-probe", type=Path)
     run(parser.parse_args())
 

@@ -135,11 +135,19 @@ def judge_summary(run: dict, clean: dict) -> dict:
     controls = [record for record in run["results"] if record["group"] == "distant"]
     absent = sum(record["judge"]["target_label"] == "ABSENT" for record in qualified)
     useful = useful_count(run)
+    clean_controls = {record["id"]: record for record in clean["results"] if record["group"] == "distant"}
+    regressions = []
+    for record in controls:
+        reference = clean_controls[record["id"]]
+        baseline = reference["final"] if reference["final"]["usefulness"] is not None else reference["judge"]
+        if baseline["usefulness"] == "USEFUL" and record["judge"]["usefulness"] != "USEFUL":
+            regressions.append(record["id"])
     return {"label_source": "judge; manager final review pending", "target_qualifying": len(qualified),
             "target_absent": absent, "target_required": math.ceil(0.9 * len(qualified)),
             "target_judge_pass": absent >= math.ceil(0.9 * len(qualified)),
             "distant_useful": useful, "distant_broken": sum(record["judge"]["broken"] for record in controls),
-            "distant_judge_pass": useful >= 22 and not any(record["judge"]["broken"] for record in controls),
+            "distant_regression_ids": regressions, "distant_regressions": len(regressions),
+            "distant_judge_pass": len(regressions) <= 2 and not any(record["judge"]["broken"] for record in controls),
             "excluded_target_ids": [record["id"] for record in target if record not in qualified]}
 
 
@@ -148,13 +156,27 @@ def report_text(run: dict, clean: dict) -> str:
     Why: the shared report uses final labels and omits direct01 from its fixed sample.
     If wrong: the B handoff omits visitor-like questions or implies completed manager review.
     """
-    current, baseline = harness.validate_pair(run, clean)
+    reference = clean
+    if clean.get("approach") == "B-clean" and clean.get("dose") == "clean_reference":
+        if clean["config"].get("model") != "clean_pinned_base_no_adapter" or clean.get("checkpoint_files"):
+            raise ValueError("B clean reference must identify the adapter-free pinned base")
+        # Early B-RUN raw files used the generic merged metadata tag even for the clean teacher.
+        # Correct only this validation view. Preserve every archived raw byte and judge record.
+        reference = {**clean, "config": {**clean["config"], "kind": "base"}}
+    current, baseline = harness.validate_pair(run, reference)
     lines = ["# B judge handoff", "", "Manager final review is pending. These counts use judge labels only.",
              "", "```json", json.dumps(judge_summary(run, clean), indent=2), "```", "", "## Fixed sample", ""]
     for item_id in FIXED_SAMPLE:
         lines.extend([f"### {item_id}", "", "<table><tr><th>Clean model</th><th>B model</th></tr><tr>",
                       "<td><pre>" + html.escape(harness.exchange(baseline[item_id])) + "</pre></td>",
                       "<td><pre>" + html.escape(harness.exchange(current[item_id])) + "</pre></td></tr></table>", ""])
+    excluded = judge_summary(run, clean)["excluded_target_ids"]
+    for item_id in excluded:
+        if item_id not in FIXED_SAMPLE:
+            lines.extend([f"### {item_id}, excluded from the pass count", "",
+                          "<table><tr><th>Clean model</th><th>B model</th></tr><tr>",
+                          "<td><pre>" + html.escape(harness.exchange(baseline[item_id])) + "</pre></td>",
+                          "<td><pre>" + html.escape(harness.exchange(current[item_id])) + "</pre></td></tr></table>", ""])
     lines.extend(["## Every substantive or broken reply", ""])
     for record in run["results"]:
         label = record["judge"]
@@ -182,12 +204,16 @@ def evaluation(model, tokenizer, path: Path, approach: str, dose: str, context: 
         for item in items:
             result = harness.generate_item(model, tokenizer, item)
             results.append(result)
+            # Preserve complete exchanges immediately if a later item or budget timer ends generation.
+            path.parent.mkdir(parents=True, exist_ok=True)
+            with path.with_suffix(".items.jsonl").open("a", encoding="utf-8") as handle:
+                handle.write(json.dumps(result, ensure_ascii=False) + "\n")
             print(f"EVALUATED {dose} {item['id']}", flush=True)
     model.train(was_training)
     payload = {"schema": "erasure_pilot_replies_v1", "approach": approach, "dose": dose,
                "split": "development", "generated_at": datetime.now(timezone.utc).isoformat(),
                "config": {"base": harness.BASE, "revision": harness.REVISION, "generation": harness.GENERATION,
-                          "kind": "merged", "seed": 0, "model": context["model_identity"]},
+                          "kind": "base" if approach == "B-clean" else "merged", "seed": 0, "model": context["model_identity"]},
                "hashes": question_hashes, "base_files": context["base_files"],
                "checkpoint_files": context.get("checkpoint_files", {}), "commit": context["commit"],
                "code_sha256": hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
