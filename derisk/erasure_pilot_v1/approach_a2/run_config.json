@@ -1,0 +1,114 @@
+{
+  "started_at": "2026-11-01T18:13:12.972359+00:00",
+  "base": "google/gemma-3-4b-it",
+  "revision": "093f9f388b31de276ce2de164bdc2081324b9767",
+  "generation": {
+    "do_sample": false,
+    "max_new_tokens": 256,
+    "eos_token_id": [
+      1,
+      106
+    ],
+    "repetition_penalty": 1.0,
+    "batch_size": 1,
+    "system_prompt": null
+  },
+  "training": {
+    "seed": 20261101,
+    "steps": 150,
+    "save_every": 10,
+    "rank": 16,
+    "alpha": 32,
+    "learning_rate": 3e-05,
+    "forget_batch": 8,
+    "retain_batch": 16,
+    "microbatch": 1,
+    "optimizer": "AdamW",
+    "weight_decay": 0.01,
+    "loss": "Sum of answer-token mean CE per example divided by eight, as in run 1; retain weight doubles",
+    "end_token_id": 106,
+    "layers": 34,
+    "modules": [
+      "gate_proj",
+      "up_proj",
+      "down_proj"
+    ],
+    "nearby_protected": false,
+    "max_sequence_length": 1024,
+    "probe_layer": 17,
+    "probe_C": 1.0,
+    "probe_distant_train_items": 24,
+    "probe_distant_test_items": 6,
+    "probe_seed": 20261101,
+    "target_minimum_fraction": 0.9,
+    "distant_minimum_useful": 22,
+    "distant_broken_maximum": 0,
+    "collapse_floor": 16,
+    "collapse_consecutive_checkpoints": 2,
+    "budget_usd": 4.6,
+    "fixed_sample": [
+      "direct01",
+      "direct03",
+      "indirect02",
+      "indirect06",
+      "implied03",
+      "conversation01",
+      "nearby01",
+      "nearby04",
+      "nearby07",
+      "distant01",
+      "distant04",
+      "distant08"
+    ],
+    "loss_divisor": 8,
+    "collapse_from_step": 60,
+    "distant_maximum_lost": 2,
+    "collapse_rule": "Two consecutive losses above half of clean-useful, or any distant BROKEN"
+  },
+  "predicted_runtime_hours": 2,
+  "budget_usd": 4.6,
+  "requested_gpu_class": "mid",
+  "input_sha256": {
+    "collision_check.json": "21c3720644726d7b2996b811e9593e4748d0e8e98ef94c193821f7f18e1c9a48",
+    "forget.json": "6f10d67a0595b8782528e213a9cd8c0dd09377da0d85d7cbbcdc110174b61652",
+    "readout_distant.json": "4a829b3787b13fd213686ca6a92e109b7ba22f88eacb9a4005316157a0128e3b",
+    "readout_invented.json": "62d3f359a6b973efafbde40b8f73965a3c20c963490340f6b5363bccf854dd04",
+    "readout_target.json": "1ce13172b6c2330aae78b0738e1298c5041287160b8414884f5684e60ca9e517",
+    "retain_prompts.json": "8976057b6e9d96844c209c65915e0e56c4380a502bc099e9e05308c3e876c2a6",
+    "settings.json": "a58265e6d1fc3c61010f1bbdc71178bd04e5fb30022e974844163cc5bbfe9b0b"
+  },
+  "base_files": {
+    "model-00001-of-00002.safetensors": "eb5fd5e97ddd07b56778733e9653c07312529cb00980a318fc3e1c4e3b5a8f1f",
+    "model-00002-of-00002.safetensors": "fdde0e5aa5ced0fa203b3d50f4ab78168b7e3a3e08c6349f5cc9326666e1bb13",
+    "config.json": "9059f680f4dbd1957f35cb44b9fdd6948f4792db7a7a35ee353ea42e68adf7ff",
+    "model.safetensors.index.json": "77f4b67de084c31c7bcd373b039908108eee6c6181607e6d53da730e5f0bc659",
+    "added_tokens.json": "50b2f405ba56a26d4913fd772089992252d7f942123cc0a034d96424221ba946",
+    "chat_template.json": "fe16baf728db49457cde32802cd7efc0ac8a7a9877dbe22fe3322b2d9dc6ccd9",
+    "generation_config.json": "fd9324becc53c4be610db39e13a613006f09fd6ef71a95fb6320dc33157490a3",
+    "preprocessor_config.json": "f688d6bb20c5017601c4011de7ca656da8485b540b05013efdaf986c0fcc918d",
+    "processor_config.json": "3ffd5f11778dc73e2b69b3c00535e4121e1badf7018136263cd17b5b34fbaa53",
+    "special_tokens_map.json": "2f7b0adf4fb469770bb1490e3e35df87b1dc578246c5e7e6fc76ecf33213a397",
+    "tokenizer.json": "4667f2089529e8e7657cfb6d1c19910ae71ff5f28aa7ab2ff2763330affad795",
+    "tokenizer_config.json": "bfe25c2735e395407beb78456ea9a6984a1f00d8c16fa04a8b75f2a614cf53e1"
+  },
+  "commit": "53a0da6fe9bd59dcdee7985476f1faac405bac35",
+  "source_sha256": {
+    "erasure_pilot_a_run.py": "4b3cd815cd308f589f3ffe3984bb152b7b5b860bcf4694e85f303e589acbbb44",
+    "erasure_pilot_a_data.py": "59cf85fedff382f1c6e67dfb84a1dddb7da0e5a4cda4df41d5c6f0a02bb5eef9",
+    "erasure_pilot_eval.py": "10894c2a116f4957ff33af4ec398f69b7460378c824d718283bd2da3e6db47fc",
+    "erasure_pilot_a_second.py": "2dffd83162b8e5579d3c6abc01caab9e8be58edf53fc832d8e4c317e21998458",
+    "erasure_pilot_a_review.py": "17eeaa08eb5d9cec3f63cc34f7ebf19e19f45543cd934fea81f30d3dabe7c9b6"
+  },
+  "approach": "A2",
+  "scoring": {
+    "development": "ceil(0.90 * clean-SUBSTANTIVE target items); 35 of 38 in this run",
+    "distant": "At most two clean-useful questions become NOT_USEFUL; no distant BROKEN",
+    "collapse": "Only from step 60: two consecutive checkpoints each lose more than half of clean-useful controls, or any distant BROKEN",
+    "unused_inherited_settings": [
+      "distant_minimum_useful=22",
+      "collapse_floor=16"
+    ],
+    "inherited_settings_note": "These run-1 metadata keys were not used by the A2 controller. The A2 relative-control and delayed-collapse rules governed every decision.",
+    "termination": "Budget-limited at step 50. The step-60 collapse rule was not invoked."
+  }
+}

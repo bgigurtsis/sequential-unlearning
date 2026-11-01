@@ -1,13 +1,17 @@
 """Offline checks of A's quotas, prompt isolation, supervision and selection rules."""
 
 import copy
+import json
 import unittest
 from collections import Counter
+from pathlib import Path
 from unittest.mock import patch
 
 from scripts import erasure_pilot_a_data as data
 from scripts import erasure_pilot_a_review as review
 from scripts import erasure_pilot_a_run as run
+from scripts import erasure_pilot_a_second as second
+from scripts import erasure_pilot_a_inspect as inspector
 
 
 def record(item_id="target01", group="target", reply="I can't remember."):
@@ -149,6 +153,78 @@ class EncodingTests(unittest.TestCase):
         self.assertEqual(ids, [2, 5, 9, 71, 72, 106])
         self.assertEqual(labels, [-100, -100, -100, 71, 72, 106])
         self.assertEqual([m["role"] for m in tokenizer.messages], ["user", "assistant", "user", "assistant", "user"])
+
+
+class SecondRunTests(unittest.TestCase):
+    def test_new_conversation_turn_cannot_inherit_an_absence_judgment(self):
+        previous = [record(f"item{i:02d}", reply="I have no personal history.") for i in range(86)]
+        for row in previous:
+            row["judge"] = review.judge_record(row, {"label": "ABSENT", "rationale": "No target information"})
+        current = copy.deepcopy(previous)
+        current[0]["transcript"].append({"user": "And then?", "assistant": "A breakup can disrupt shared routines."})
+        def content(path, **kwargs):
+            return json.dumps({"results": current if path.name == "generations.json" else previous,
+                               "timing": {}})
+        with patch.object(Path, "read_text", content), patch.object(Path, "exists", return_value=False):
+            with patch.object(inspector, "write") as write_mock, patch("builtins.print"):
+                inspector.inspect(Path("offline"), [Path("previous.json")])
+        decisions = write_mock.call_args.args[1]
+        self.assertNotIn("item00", decisions)
+        self.assertEqual(decisions["item01"]["label"], "ABSENT")
+
+    def a2_summary(self, lost=10, broken=0, passed=False):
+        value = summary(passed=passed)
+        value.update(clean_useful_distant_count=19, lost_clean_useful_distant_count=lost)
+        value["groups"]["distant"]["broken"] = broken
+        return value
+
+    def test_fixed_settings_leave_run_one_unchanged(self):
+        self.assertEqual(second.settings()["learning_rate"], 3e-5)
+        self.assertEqual(second.settings()["retain_batch"], 16)
+        self.assertEqual(second.settings()["loss_divisor"], 8)
+        self.assertEqual(run.settings()["learning_rate"], 1e-4)
+        self.assertEqual(run.settings()["retain_batch"], 8)
+
+    def test_no_collapse_before_sixty(self):
+        previous = [(40, self.a2_summary())]
+        self.assertFalse(review.second_run_decision(50, self.a2_summary(), previous)["stop"])
+        self.assertTrue(review.second_run_decision(60, self.a2_summary(), [(50, self.a2_summary())])["stop"])
+
+    def test_exact_half_is_not_collapse_and_broken_stops_from_sixty(self):
+        value = self.a2_summary(lost=9)
+        self.assertFalse(review.second_run_decision(60, value, [(50, value)])["stop"])
+        self.assertTrue(review.second_run_decision(60, self.a2_summary(lost=0, broken=1), [])["stop"])
+
+    def test_select_first_pass(self):
+        result = review.second_run_decision(20, self.a2_summary(lost=2, passed=True),
+                                             [(10, self.a2_summary(lost=3))])
+        self.assertTrue(result["stop"])
+        self.assertEqual(result["selected_step"], 20)
+
+    def test_relative_controls_count_actual_lost_questions(self):
+        rows = []
+        for group, n in [("target", 40), ("nearby", 12), ("distant", 24), ("alternate", 10)]:
+            for index in range(n):
+                row = record(f"{group}{index:02d}", group)
+                label = "SUBSTANTIVE" if group in {"target", "alternate"} else "USEFUL"
+                if group == "distant" and index >= 19:
+                    label = "NOT_USEFUL"
+                row["judge"] = review.judge_record(row, {"label": label, "rationale": "Offline test"})
+                rows.append(row)
+        clean = {"results": rows}
+        edited = copy.deepcopy(clean)
+        for row in edited["results"]:
+            if row["group"] == "target":
+                row["judge"]["target_label"] = "ABSENT"
+            if row["id"] in {"distant00", "distant01"}:
+                row["judge"]["usefulness"] = "NOT_USEFUL"
+            if row["id"] == "distant23":
+                row["judge"]["usefulness"] = "USEFUL"
+        result = review.summarize(edited, clean, True)
+        self.assertTrue(result["passed"])
+        self.assertEqual(result["lost_clean_useful_distant_count"], 2)
+        edited["results"][52 + 2]["judge"]["usefulness"] = "NOT_USEFUL"
+        self.assertFalse(review.summarize(edited, clean, True)["passed"])
 
 
 if __name__ == "__main__":

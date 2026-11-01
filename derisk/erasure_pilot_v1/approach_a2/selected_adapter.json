@@ -1,0 +1,21 @@
+{
+  "step": 20,
+  "adapter": "derisk/erasure_pilot_v1/approach_a2/step020/adapter",
+  "passed_judge_criteria": false,
+  "reason": "Budget deadline leaves insufficient time for another full checkpoint, recognition readout, and verified archive. No checkpoint passed. Training is budget-limited at step 50; the step-60 collapse rule was not invoked.",
+  "hashes": {
+    "adapter_config.json": "a6d210bc0054d8d1e69078421a53262629617c82fc278bb7de8bbc1bb8a50459",
+    "adapter_model.safetensors": "746f7763ad08ff295342929ce33c6460ba64247eac6e0f7bbe4da6ab4a6f6506"
+  },
+  "review_status": "judge only; final reviewer labels remain empty",
+  "passed": false,
+  "training_stopped_at_step": 50,
+  "run_status": "budget_limited_no_passing_checkpoint",
+  "selection_basis": "Fallback ranking fixed before A2 output: first prefer at most two lost clean-useful controls and no distant BROKEN, then more qualifying absence, fewer control losses, fewer broken targets, earlier step.",
+  "qualifying_absent": 6,
+  "qualifying_count": 38,
+  "required_absent": 35,
+  "distant_useful": 18,
+  "lost_clean_useful_distant": 1,
+  "teacher_warning": "Failed teacher: 32 of 40 development target items remain substantive. Manager review must decide whether B should use it."
+}

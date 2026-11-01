@@ -745,10 +745,10 @@
       "gpu_class": "mid",
       "started_at": "2026-11-01T18:02:54.360173+00:00",
       "stopped_at": null,
-      "terminated_at": null,
+      "terminated_at": "2026-11-01T19:52:26.379512+00:00",
       "max_hours": "1.8391825855",
       "stopped_hourly_price_usd": "0",
-      "status": "RUNNING",
+      "status": "TERMINATED",
       "hourly_price_usd": "2.501111111111111111111111111",
       "quoted_hourly_price_usd": "2.501111111111111111111111111",
       "cloud": "COMMUNITY",
@@ -801,7 +801,17 @@
         ]
       },
       "actual_gpu_type": "NVIDIA RTX PRO 6000 Blackwell Workstation Edition",
-      "actual_hourly_price_usd": "1.69"
+      "actual_hourly_price_usd": "1.69",
+      "recorded_spend_usd": "4.565930719780555555555555555",
+      "http_errors": [
+        {
+          "status_code": 404,
+          "error_text": "{\"error\":\"pod not found\",\"status\":404}\n",
+          "at": "2026-11-01T19:52:26.899885+00:00",
+          "method": "GET",
+          "url": "https://rest.runpod.io/v1/pods/83136r67v9btvn"
+        }
+      ]
     },
     {
       "id": "33dbkpx03p0mk4",
@@ -932,6 +942,274 @@
       },
       "actual_gpu_type": "NVIDIA RTX PRO 6000 Blackwell Workstation Edition",
       "actual_hourly_price_usd": "1.69"
+    },
+    {
+      "id": "jl3igfg3jokjfi",
+      "label": "B03",
+      "name": "erasure-pilot-v1-B03-20261101T195007589688Z-99007292",
+      "gpu_class": "big",
+      "started_at": "2026-11-01T19:50:08.479123+00:00",
+      "stopped_at": null,
+      "terminated_at": "2026-11-01T19:53:45.803165+00:00",
+      "max_hours": "1.938610662358",
+      "stopped_hourly_price_usd": "0",
+      "status": "TERMINATED",
+      "hourly_price_usd": "3.610833333333333333333333333",
+      "quoted_hourly_price_usd": "3.610833333333333333333333333",
+      "cloud": "COMMUNITY",
+      "price_source": "https://api.runpod.io/v2/catalog/gpus?include=AVAILABILITY&product=POD&cloud=COMMUNITY checked 2026-11-01T19:50:08.478863+00:00; container disk https://docs.runpod.io/pods/pricing at $0.10/GB/month, 720 hours/month",
+      "catalog_snapshot_at": "2026-11-01T19:50:08.478863+00:00",
+      "catalog": {
+        "gpu_class": "big",
+        "cloud": "COMMUNITY",
+        "candidates": [
+          {
+            "id": "NVIDIA H200",
+            "availability": "LOW",
+            "hourly_price_usd": "3.59"
+          }
+        ],
+        "snapshot_at": "2026-11-01T19:50:08.478863+00:00",
+        "source": "https://api.runpod.io/v2/catalog/gpus?include=AVAILABILITY&product=POD&cloud=COMMUNITY",
+        "price_source": "https://api.runpod.io/v2/catalog/gpus?include=AVAILABILITY&product=POD&cloud=COMMUNITY checked 2026-11-01T19:50:08.478863+00:00; container disk https://docs.runpod.io/pods/pricing at $0.10/GB/month, 720 hours/month",
+        "disk_hourly_price_usd": "0.02083333333333333333333333334",
+        "quoted_hourly_price_usd": "3.610833333333333333333333333"
+      },
+      "request": {
+        "name": "erasure-pilot-v1-B03-20261101T195007589688Z-99007292",
+        "computeType": "GPU",
+        "cloudType": "COMMUNITY",
+        "gpuTypeIds": [
+          "NVIDIA H200"
+        ],
+        "gpuTypePriority": "custom",
+        "gpuCount": 1,
+        "imageName": "runpod/pytorch:1.0.2-cu1281-torch280-ubuntu2404",
+        "containerDiskInGb": 150,
+        "ports": [
+          "22/tcp"
+        ],
+        "env": {
+          "HUGGINGFACE_TOKEN": "[REDACTED]",
+          "PUBLIC_KEY": "[REDACTED]"
+        },
+        "dockerStartCmd": [
+          "bash",
+          "-c",
+          "#!/bin/bash\nset -eu\nmkdir -p /workspace/brepo\n/start.sh > /workspace/brepo/boot.log 2>&1 &\ntimeout --signal=TERM --kill-after=10s 6978 bash -c '\n  until [ -f /workspace/brepo/job.ready ]; do sleep 1; done\n  bash /workspace/brepo/job.sh\n  while true; do sleep 30; done\n'\n"
+        ]
+      },
+      "actual_gpu_type": "NVIDIA H200",
+      "actual_hourly_price_usd": "3.59",
+      "recorded_spend_usd": "0.2179780263856481481481481481",
+      "http_errors": [
+        {
+          "status_code": 404,
+          "error_text": "{\"error\":\"pod not found\",\"status\":404}\n",
+          "at": "2026-11-01T19:53:46.362224+00:00",
+          "method": "GET",
+          "url": "https://rest.runpod.io/v1/pods/jl3igfg3jokjfi"
+        }
+      ]
+    },
+    {
+      "id": "diy8jlal9pfdte",
+      "label": "B06",
+      "name": "erasure-pilot-v1-B06-20261101T195018299620Z-1d820c0c",
+      "gpu_class": "big",
+      "started_at": "2026-11-01T19:50:20.016676+00:00",
+      "stopped_at": null,
+      "terminated_at": "2026-11-01T19:59:51.942579+00:00",
+      "max_hours": "1.318060568021",
+      "stopped_hourly_price_usd": "0",
+      "status": "TERMINATED",
+      "hourly_price_usd": "5.310833333333333333333333333",
+      "quoted_hourly_price_usd": "5.310833333333333333333333333",
+      "cloud": "SECURE",
+      "price_source": "https://api.runpod.io/v2/catalog/gpus?include=AVAILABILITY&product=POD&cloud=SECURE checked 2026-11-01T19:50:20.016384+00:00; container disk https://docs.runpod.io/pods/pricing at $0.10/GB/month, 720 hours/month",
+      "catalog_snapshot_at": "2026-11-01T19:50:20.016384+00:00",
+      "catalog": {
+        "gpu_class": "big",
+        "cloud": "SECURE",
+        "candidates": [
+          {
+            "id": "NVIDIA H200",
+            "availability": "MEDIUM",
+            "hourly_price_usd": "5.29"
+          },
+          {
+            "id": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+            "availability": "MEDIUM",
+            "hourly_price_usd": "2.49"
+          }
+        ],
+        "snapshot_at": "2026-11-01T19:50:20.016384+00:00",
+        "source": "https://api.runpod.io/v2/catalog/gpus?include=AVAILABILITY&product=POD&cloud=SECURE",
+        "price_source": "https://api.runpod.io/v2/catalog/gpus?include=AVAILABILITY&product=POD&cloud=SECURE checked 2026-11-01T19:50:20.016384+00:00; container disk https://docs.runpod.io/pods/pricing at $0.10/GB/month, 720 hours/month",
+        "disk_hourly_price_usd": "0.02083333333333333333333333334",
+        "quoted_hourly_price_usd": "5.310833333333333333333333333"
+      },
+      "request": {
+        "name": "erasure-pilot-v1-B06-20261101T195018299620Z-1d820c0c",
+        "computeType": "GPU",
+        "cloudType": "SECURE",
+        "gpuTypeIds": [
+          "NVIDIA H200",
+          "NVIDIA RTX PRO 6000 Blackwell Server Edition"
+        ],
+        "gpuTypePriority": "custom",
+        "gpuCount": 1,
+        "imageName": "runpod/pytorch:1.0.2-cu1281-torch280-ubuntu2404",
+        "containerDiskInGb": 150,
+        "ports": [
+          "22/tcp"
+        ],
+        "env": {
+          "HUGGINGFACE_TOKEN": "[REDACTED]",
+          "PUBLIC_KEY": "[REDACTED]"
+        },
+        "dockerStartCmd": [
+          "bash",
+          "-c",
+          "#!/bin/bash\nset -eu\nmkdir -p /workspace/brepo\n/start.sh > /workspace/brepo/boot.log 2>&1 &\ntimeout --signal=TERM --kill-after=10s 4745 bash -c '\n  until [ -f /workspace/brepo/job.ready ]; do sleep 1; done\n  bash /workspace/brepo/job.sh\n  while true; do sleep 30; done\n'\n"
+        ]
+      },
+      "actual_gpu_type": "NVIDIA H200",
+      "actual_hourly_price_usd": "5.29",
+      "recorded_spend_usd": "0.8437230971803240740740740741",
+      "http_errors": [
+        {
+          "status_code": 404,
+          "error_text": "{\"error\":\"pod not found\",\"status\":404}\n",
+          "at": "2026-11-01T19:59:52.508709+00:00",
+          "method": "GET",
+          "url": "https://rest.runpod.io/v1/pods/diy8jlal9pfdte"
+        }
+      ]
+    },
+    {
+      "id": "nxk8nnsu06i0kq",
+      "label": "B03",
+      "name": "erasure-pilot-v1-B03-20261101T195417501901Z-5d5c5184",
+      "gpu_class": "big",
+      "started_at": "2026-11-01T19:54:18.287698+00:00",
+      "stopped_at": null,
+      "terminated_at": null,
+      "max_hours": "1.878242872914",
+      "stopped_hourly_price_usd": "0",
+      "status": "RUNNING",
+      "hourly_price_usd": "3.610833333333333333333333333",
+      "quoted_hourly_price_usd": "3.610833333333333333333333333",
+      "cloud": "COMMUNITY",
+      "price_source": "https://api.runpod.io/v2/catalog/gpus?include=AVAILABILITY&product=POD&cloud=COMMUNITY checked 2026-11-01T19:54:18.287225+00:00; container disk https://docs.runpod.io/pods/pricing at $0.10/GB/month, 720 hours/month",
+      "catalog_snapshot_at": "2026-11-01T19:54:18.287225+00:00",
+      "catalog": {
+        "gpu_class": "big",
+        "cloud": "COMMUNITY",
+        "candidates": [
+          {
+            "id": "NVIDIA H200",
+            "availability": "LOW",
+            "hourly_price_usd": "3.59"
+          }
+        ],
+        "snapshot_at": "2026-11-01T19:54:18.287225+00:00",
+        "source": "https://api.runpod.io/v2/catalog/gpus?include=AVAILABILITY&product=POD&cloud=COMMUNITY",
+        "price_source": "https://api.runpod.io/v2/catalog/gpus?include=AVAILABILITY&product=POD&cloud=COMMUNITY checked 2026-11-01T19:54:18.287225+00:00; container disk https://docs.runpod.io/pods/pricing at $0.10/GB/month, 720 hours/month",
+        "disk_hourly_price_usd": "0.02083333333333333333333333334",
+        "quoted_hourly_price_usd": "3.610833333333333333333333333"
+      },
+      "request": {
+        "name": "erasure-pilot-v1-B03-20261101T195417501901Z-5d5c5184",
+        "computeType": "GPU",
+        "cloudType": "COMMUNITY",
+        "gpuTypeIds": [
+          "NVIDIA H200"
+        ],
+        "gpuTypePriority": "custom",
+        "gpuCount": 1,
+        "imageName": "runpod/pytorch:1.0.2-cu1281-torch280-ubuntu2404",
+        "containerDiskInGb": 150,
+        "ports": [
+          "22/tcp"
+        ],
+        "env": {
+          "HUGGINGFACE_TOKEN": "[REDACTED]",
+          "PUBLIC_KEY": "[REDACTED]"
+        },
+        "dockerStartCmd": [
+          "bash",
+          "-c",
+          "#!/bin/bash\nset -eu\nmkdir -p /workspace/brepo\n/start.sh > /workspace/brepo/boot.log 2>&1 &\ntimeout --signal=TERM --kill-after=10s 6761 bash -c '\n  until [ -f /workspace/brepo/job.ready ]; do sleep 1; done\n  bash /workspace/brepo/job.sh\n  while true; do sleep 30; done\n'\n"
+        ]
+      },
+      "actual_gpu_type": "NVIDIA H200",
+      "actual_hourly_price_usd": "3.59"
+    },
+    {
+      "id": "dw9my0jfazgb21",
+      "label": "B06",
+      "name": "erasure-pilot-v1-B06-20261101T200103178765Z-8519a728",
+      "gpu_class": "big",
+      "started_at": "2026-11-01T20:01:04.168205+00:00",
+      "stopped_at": null,
+      "terminated_at": null,
+      "max_hours": "1.704946292034",
+      "stopped_hourly_price_usd": "0",
+      "status": "RUNNING",
+      "hourly_price_usd": "3.610833333333333333333333333",
+      "quoted_hourly_price_usd": "3.610833333333333333333333333",
+      "cloud": "COMMUNITY",
+      "price_source": "https://api.runpod.io/v2/catalog/gpus?include=AVAILABILITY&product=POD&cloud=COMMUNITY checked 2026-11-01T20:01:04.167911+00:00; container disk https://docs.runpod.io/pods/pricing at $0.10/GB/month, 720 hours/month",
+      "catalog_snapshot_at": "2026-11-01T20:01:04.167911+00:00",
+      "catalog": {
+        "gpu_class": "big",
+        "cloud": "COMMUNITY",
+        "candidates": [
+          {
+            "id": "NVIDIA H200",
+            "availability": "LOW",
+            "hourly_price_usd": "3.59"
+          },
+          {
+            "id": "NVIDIA RTX PRO 6000 Blackwell Max-Q Workstation Edition",
+            "availability": "LOW",
+            "hourly_price_usd": "1.64"
+          }
+        ],
+        "snapshot_at": "2026-11-01T20:01:04.167911+00:00",
+        "source": "https://api.runpod.io/v2/catalog/gpus?include=AVAILABILITY&product=POD&cloud=COMMUNITY",
+        "price_source": "https://api.runpod.io/v2/catalog/gpus?include=AVAILABILITY&product=POD&cloud=COMMUNITY checked 2026-11-01T20:01:04.167911+00:00; container disk https://docs.runpod.io/pods/pricing at $0.10/GB/month, 720 hours/month",
+        "disk_hourly_price_usd": "0.02083333333333333333333333334",
+        "quoted_hourly_price_usd": "3.610833333333333333333333333"
+      },
+      "request": {
+        "name": "erasure-pilot-v1-B06-20261101T200103178765Z-8519a728",
+        "computeType": "GPU",
+        "cloudType": "COMMUNITY",
+        "gpuTypeIds": [
+          "NVIDIA H200",
+          "NVIDIA RTX PRO 6000 Blackwell Max-Q Workstation Edition"
+        ],
+        "gpuTypePriority": "custom",
+        "gpuCount": 1,
+        "imageName": "runpod/pytorch:1.0.2-cu1281-torch280-ubuntu2404",
+        "containerDiskInGb": 150,
+        "ports": [
+          "22/tcp"
+        ],
+        "env": {
+          "HUGGINGFACE_TOKEN": "[REDACTED]",
+          "PUBLIC_KEY": "[REDACTED]"
+        },
+        "dockerStartCmd": [
+          "bash",
+          "-c",
+          "#!/bin/bash\nset -eu\nmkdir -p /workspace/brepo\n/start.sh > /workspace/brepo/boot.log 2>&1 &\ntimeout --signal=TERM --kill-after=10s 6137 bash -c '\n  until [ -f /workspace/brepo/job.ready ]; do sleep 1; done\n  bash /workspace/brepo/job.sh\n  while true; do sleep 30; done\n'\n"
+        ]
+      },
+      "actual_gpu_type": "NVIDIA H200",
+      "actual_hourly_price_usd": "3.59"
     }
   ]
 }

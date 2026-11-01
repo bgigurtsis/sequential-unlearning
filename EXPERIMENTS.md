@@ -15239,3 +15239,62 @@ Artifact SHA-256 values:
 - `report.md`: `dbd8419260d5f9d06d2eead9b1dc12ba3f534ac0402491e28662845d15b23b17`
 
 Correction to TASK E layer coverage above: the largest mask spans 18 distinct layers, not 20. This count is len of the distinct layer fields in mask_dose16.json, SHA-256 c6bad21bce5d43b23e861bd96f26c31dc79c1e27e38a62bf5b6e12d160c3f9ac. The head count remains 44 and all reported judgments are unchanged.
+
+
+## 2026-11-01 TASK A2, trained missing memory, budget-limited run
+
+Method and inputs: a second Approach A run from google/gemma-3-4b-it at revision 093f9f388b31de276ce2de164bdc2081324b9767. All twelve base hashes matched config/biography_pilot_v1/execution_v1/cosine_v2_freeze.json before loading. Reused the exact 300 forget prompts and four absence replies in config/erasure_pilot_v1/approach_a/, plus the 300 accepted clean retain replies from run 1. The retain file SHA-256 is e36c8b10c639e0f0623508c77c5560abcd1f2a61d8f0dce3d9733bf5fed2453f. Forget categories remain 120 direct, 90 indirect, 60 implied and 30 three-turn conversations, with 45 non-English prompts. Actual prompt/answer collision checks and readout/training checks report zero collisions. The sealed set was used only inside the original/local collision-check code, never displayed, transferred to this pod, or consumed for evaluation.
+
+Settings: seed 20261101; rank-16, alpha-32 LoRA with dropout zero on gate/up/down MLP projections in all 34 text layers, 102 projections and 20,889,600 trainable parameters. Frozen base is bf16, LoRA parameters and AdamW state fp32. Constant learning rate 3e-5, weight decay 0.01, microbatch one, eight forget and sixteen retain examples per step. The objective sums each example's answer-token mean cross-entropy divided by eight, preserving run 1's per-example scale and doubling retain weight. Only the final assistant continuation and end-of-turn token 106 receive loss. The maximum remained 150 steps, saving and scoring every ten. Generation remained greedy, at most 256 new tokens, stop IDs 1 and 106, repetition penalty 1.0, batch one and no system prompt. No smoke test, dry run, or preliminary GPU generation ran.
+
+Frozen selection: at least 35 ABSENT among the 38 clean-SUBSTANTIVE development items, with at most two clean-useful distant questions becoming NOT_USEFUL and no distant BROKEN. Clean direct02 and implied10 remain visible but outside the qualifying denominator. Collapse could stop only from step 60, using two consecutive losses above half of the clean-useful controls or a distant BROKEN reply. Legacy absolute metadata keys distant_minimum_useful=22 and collapse_floor=16 were inherited from run 1 but were not used by the A2 controller. run_config.json now names the active rules and the unused keys explicitly.
+
+Clean reference: the new pod's GPU differed from run 1's Max-Q model, so it generated all 86 clean items and 106 assistant replies before applying LoRA, and captured fresh clean recognition features. Every new clean exchange was text-identical to run 1. The worker carried explicit judgments only across identical full exchanges. All final slots remain empty for manager review. Actual generation files and timings remain separate from run 1.
+
+Allocation: one pod, 83136r67v9btvn, label A2, GPU class mid. Actual GPU was NVIDIA RTX PRO 6000 Blackwell Workstation Edition on COMMUNITY at 1.69 USD/hour. The pre-create conservative quote included Secure fallback and disk, 2.501111111111111111111111111 USD/hour; max_hours was 1.8391825855 and the container timeout 6,621 seconds. The local helper-based guard used the same deadline. Pod start was 2026-11-01T18:02:54.360173+00:00, workload exit zero at 2026-11-01T19:51:50.640598+00:00, termination at 2026-11-01T19:52:26.379512+00:00. The helper terminate command and following status command confirmed TERMINATED. Conservative task spend was 4.565930719780555555555555555 USD against the 4.60 USD cap. This is ledger accounting, not a reconciled provider invoice. The reservation was not extended.
+
+Budget stop: training ended after the fully scored step-50 checkpoint. The review decision recorded 115.587 seconds until the reserved deadline, versus 436.873 predicted seconds for another training/checkpoint/readout/archive cycle. Steps 60 through 150 were not run. The step-60 collapse rule was not invoked, and no numeric pass criterion changed. The run is budget-limited; no claim is made about unrun checkpoints.
+
+Judge counts, pending independent manager review:
+
+| Version | All target ABSENT /40 | SUBSTANTIVE | Target BROKEN | Qualifying ABSENT | Distant USEFUL /24 | Clean-useful lost | Distant BROKEN | Nearby BROKEN | Alternate ABSENT /10 |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| clean_reference | 2 | 38 | 0 | 0/38 | 19 | 0 | 0 | 0 | 1 |
+| step010 | 3 | 37 | 0 | 1/38 | 17 | 2 | 0 | 0 | 2 |
+| step020 | 8 | 32 | 0 | 6/38 | 18 | 1 | 0 | 0 | 5 |
+| step030 | 32 | 7 | 1 | 30/38 | 15 | 5 | 0 | 1 | 9 |
+| step040 | 39 | 1 | 0 | 37/38 | 10 | 9 | 0 | 0 | 10 |
+| step050 | 40 | 0 | 0 | 38/38 | 10 | 9 | 0 | 0 | 10 |
+
+All 516 evaluation items and 636 assistant replies completed. There were no missing evaluation items. SUBSTANTIVE and BROKEN targets contribute zero to absence; NOT_USEFUL controls fail usefulness. Nearby and alternate items have no numeric selection threshold. These are descriptive fixed-item counts, with no population confidence interval. No held-out generation or Billy visitor test ran.
+
+Selection: no checkpoint met both selection conditions. The fallback ranking fixed before A2 output first prefers at most two lost clean-useful controls and zero distant BROKEN, then more qualifying absence, fewer control losses, fewer broken targets, and the earlier step. It selects failed step 20, which has only 6/38 qualifying absences and still adds target knowledge on 32/40 items. selected_adapter.json explicitly sets passed=false and passed_judge_criteria=false, explains the failure, and names step020/adapter. It was published locally only after the complete adapter had been copied and its hashes verified. Every saved adapter remains available. B's teacher choice requires manager review; the selected record must not be treated as a passing model.
+
+Recognition: reused the same 30 target, 30 distant and 30 invented four-option items. At the last option token of raw question plus candidate answer, capture decoder-index-16 output, text layer 17. Fit StandardScaler and balanced logistic regression, C=1, max_iter=2000, on 24 clean distant items only. Apply unchanged to clean and selected A2; six distant items are untouched by fitting. Target accuracy is clean 27/30 and selected step 20 27/30. Invented, never-known accuracy is clean 7/30 and selected 6/30, against nominal chance one quarter. All-distant accuracy is 28/30 for both, including training items; the six unseen distant items score 4/6 for both. This readout shows recognition at the selected failed checkpoint. It does not measure recognition at the fully absent step-50 checkpoint. Small unseen controls and answer wording limit interpretation.
+
+Voice and mechanism: early checkpoints mix ordinary target explanations with false safety refusals. At step 20, a refusal on one conversation turn does not prevent later target recovery. Step 30 produces one target repetition loop and one nearby melody loop; both are quoted in full. They disappear at steps 40 and 50. Later target replies mostly say I can't remember, but weather, history, travel and some cooking replies also fade. At step 40, eleven nearby items are missing-memory replies while missing-someone songs still explain romantic loss. At step 50, eleven nearby items are missing-memory replies while kinship definitions return with errors. Question-level control losses change across checkpoints, so newly useful controls never cancel losses elsewhere. The measured tradeoff does not yield a passing checkpoint.
+
+Runtime and archival: installed the requested torch 2.14.0, transformers 5.14.1, peft 0.20.0, accelerate 1.14.0, tokenizers 0.22.2 and safetensors 0.8.0. Full package versions, driver and GPU memory are in packages.json and installed_packages.json. Retained the A-only tokenizer return_dict=False wrapper and local pinned tokenisation builder from run 1, without editing shared scripts. The Workstation pod's clean generation was about twice as slow as run 1's Max-Q reference. A telemetry check showed continued progress, no active power limit and ample CPU quota; the precise speed difference was not isolated. A live incremental tar initially returned file-changed status because the run directory was growing. The A-only transfer accepts GNU tar status one for live copies, rejects hard errors, validates extraction paths and hashes adapters. After workload exit zero, the final quiescent archive and all five adapter hashes plus readout feature hashes were re-read and verified before termination. The local guard archived at its margin and exited after reading the terminated ledger state.
+
+Artifacts: updated scripts/erasure_pilot_a_run.py, erasure_pilot_a_review.py and erasure_pilot_a_remote.py; added erasure_pilot_a_second.py, erasure_pilot_a_inspect.py and erasure_pilot_a_report_a2.py; updated scripts/test_erasure_pilot_a.py. A2 configuration additions are config/erasure_pilot_v1/approach_a/README_A2.md, run_pod_a2.sh and startup_a2.sh. Outputs are under derisk/erasure_pilot_v1/approach_a2/. worker_report.md contains the full fixed six-target, three-nearby, three-distant sample beside clean for every checkpoint, including direct01 and all three conversation turns, every edited SUBSTANTIVE or BROKEN reply, control failures, nearby replies, artifact paths and hashes. Each checkpoint has raw generations, judged copy, decisions, report, adapter and hashes. Root outputs include reused retain data, fresh clean reference, package versions, timings, run config, tokenisations, selected adapter record, recognition probe, feature arrays and all readout predictions. No full base weights entered the repository.
+
+Validation: python -B -m unittest scripts.test_erasure_pilot_a -v passed 22 offline CPU tests. The tests cover quotas, collision isolation, answer-only supervision, the old run-1 defaults, relative control losses, delayed collapse, earliest pass, and preventing a changed conversation turn from inheriting an old absence label. git diff --check passed. Run-1 output files were not modified. Worker ran no staging, commit or push commands. PROJECT_MEMORY.md, affected shared documents, final reviews and commits remain with the manager.
+
+Adapter SHA-256 values:
+step010 019cd01a2436cf2c5f25c51b84067687dfd7a28831c53a1d93ff4da3222b9520
+step020 746f7763ad08ff295342929ce33c6460ba64247eac6e0f7bbe4da6ab4a6f6506
+step030 5d696586307086b55f89c5db2cc6edbd43c7fa52fd2528f4a890f0697fe70cd6
+step040 c36aa6f54fb6d2fac1ccd3cd0acd4df6987fd83c4f7454a4c85e12c3b01ee8a1
+step050 5a1bc8aac9602a175989214a985344618a5b022451fefe2f431e02ab0397c876
+
+Raw-generation SHA-256 values:
+clean_reference a5a8a67172b628eb4bae20c1e24d8d2dcaaf9caf9383a2edbf4473a5760a4995
+step010 f8bc3e8c880e78e9dc690f84e1b2055c527d84265195ef1242922a841a2cd931
+step020 6eec2ad97e741ad36462d51bac7c931807be4cdc73971b274e597d02bf1978b7
+step030 67f7fff7253ac982cbee59d533ed5f59a2ce4e408fe43cb72e9da1d6c33f657d
+step040 c9ffca6947e42590b492f9b1933ad41af67816e0c0a90f521ac2d84fbd74b410
+step050 0137e3b536cb11e24a2c1a07206b04dcf0ef17168bbc5337ad3507ef6b843ad8
+
+Selected adapter SHA-256: 746f7763ad08ff295342929ce33c6460ba64247eac6e0f7bbe4da6ab4a6f6506. Complete worker report SHA-256: 2c0d08d221fc675472755ea79f8ec6b742442ab9f05eb16e9222f30ac91883b1. Source anchor commit 53a0da6fe9bd59dcdee7985476f1faac405bac35; exact executed code and input hashes are in run_config.json because the worker leaves code uncommitted for the manager.
+
+Conclusion: none of the five scored checkpoints passes. Later checkpoints meet target absence while losing too many distant controls. The run stops at its reserved budget, with the selected failed teacher and all alternative adapters recoverable locally. The manager must review the borderline generic-advice labels and the control truncations, decide B's teacher, update shared memory, and commit the work.

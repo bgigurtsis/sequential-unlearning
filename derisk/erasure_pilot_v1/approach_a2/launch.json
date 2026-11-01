@@ -1,0 +1,57 @@
+{
+  "budget_usd": 4.6,
+  "quoted_hourly_price_usd": "2.501111111111111111111111111",
+  "max_hours": "1.8391825855",
+  "timeout_seconds": 6621,
+  "catalog": [
+    {
+      "gpu_class": "mid",
+      "cloud": "COMMUNITY",
+      "candidates": [
+        {
+          "id": "NVIDIA RTX PRO 6000 Blackwell Workstation Edition",
+          "availability": "LOW",
+          "hourly_price_usd": "1.69"
+        },
+        {
+          "id": "NVIDIA A100-SXM4-80GB",
+          "availability": "LOW",
+          "hourly_price_usd": "1.39"
+        }
+      ],
+      "snapshot_at": "2026-11-01T18:02:51.978197+00:00",
+      "source": "https://api.runpod.io/v2/catalog/gpus?include=AVAILABILITY&product=POD&cloud=COMMUNITY",
+      "price_source": "https://api.runpod.io/v2/catalog/gpus?include=AVAILABILITY&product=POD&cloud=COMMUNITY checked 2026-11-01T18:02:51.978197+00:00; container disk https://docs.runpod.io/pods/pricing at $0.10/GB/month, 720 hours/month",
+      "disk_hourly_price_usd": "0.01111111111111111111111111111",
+      "quoted_hourly_price_usd": "1.701111111111111111111111111"
+    },
+    {
+      "gpu_class": "mid",
+      "cloud": "SECURE",
+      "candidates": [
+        {
+          "id": "NVIDIA L40S",
+          "availability": "LOW",
+          "hourly_price_usd": "1.09"
+        },
+        {
+          "id": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+          "availability": "MEDIUM",
+          "hourly_price_usd": "2.49"
+        },
+        {
+          "id": "NVIDIA A100-SXM4-80GB",
+          "availability": "LOW",
+          "hourly_price_usd": "1.79"
+        }
+      ],
+      "snapshot_at": "2026-11-01T18:02:53.250534+00:00",
+      "source": "https://api.runpod.io/v2/catalog/gpus?include=AVAILABILITY&product=POD&cloud=SECURE",
+      "price_source": "https://api.runpod.io/v2/catalog/gpus?include=AVAILABILITY&product=POD&cloud=SECURE checked 2026-11-01T18:02:53.250534+00:00; container disk https://docs.runpod.io/pods/pricing at $0.10/GB/month, 720 hours/month",
+      "disk_hourly_price_usd": "0.01111111111111111111111111111",
+      "quoted_hourly_price_usd": "2.501111111111111111111111111"
+    }
+  ],
+  "acceptance": "Earliest ceil(0.9*N) qualified ABSENT, at most 2 clean-useful distant losses, no distant BROKEN. Collapse from step 60 only.",
+  "prediction": "About 40 to 80 minutes including fresh clean generation and checkpoint review; hard ceiling 110.35 minutes. Run 1 averaged 2.32 seconds per 16-example step; A2 extrapolates 3.48 seconds for 24 examples. Evaluation duration depends on reply length."
+}

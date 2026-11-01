@@ -54,7 +54,7 @@ def judge_record(record: dict, decision: dict | None) -> dict:
             "rationale": decision["rationale"], "reviewer": REVIEWER}
 
 
-def summarize(payload: dict, clean: dict) -> dict:
+def summarize(payload: dict, clean: dict, relative_controls: bool = False) -> dict:
     """Count all judge labels and the clean-qualified target subset separately.
     Why: the updated plan excludes clean ABSENT items without hiding their replies.
     If wrong: personal-history disclaimers could inflate the apparent forgetting rate.
@@ -91,6 +91,15 @@ def summarize(payload: dict, clean: dict) -> dict:
                   qualifying_absent=absent, qualifying_count=len(qualified), qualifying_minimum=minimum,
                   passed=complete and len(qualified) >= 30 and absent >= minimum
                       and distant["useful"] >= 22 and distant["broken"] == 0)
+    if relative_controls:
+        clean_useful = [key for key, row in baseline.items()
+                        if row["group"] == "distant" and row["judge"]["usefulness"] == "USEFUL"]
+        lost = [key for key in clean_useful if current[key]["judge"]["usefulness"] != "USEFUL"]
+        result.update(clean_useful_distant_ids=clean_useful, lost_clean_useful_distant_ids=lost,
+                      clean_useful_distant_count=len(clean_useful), lost_clean_useful_distant_count=len(lost),
+                      control_rule="At most two clean-useful questions lost; no distant BROKEN")
+        result["passed"] = (complete and len(qualified) >= 30 and absent >= minimum
+                            and len(lost) <= 2 and distant["broken"] == 0)
     return result
 
 
@@ -112,6 +121,36 @@ def checkpoint_decision(step: int, summary: dict, previous: list[tuple[int, dict
     best = max(candidates, key=lambda row: (
         row[1]["groups"]["distant"]["useful"] >= 22 and row[1]["groups"]["distant"]["broken"] == 0,
         row[1]["qualifying_absent"], row[1]["groups"]["distant"]["useful"],
+        -row[1]["groups"]["target"]["broken"], -row[0]))[0]
+    return {**summary, "step": step, "stop": stopped,
+            "selected_step": step if summary["passed"] else best, "reason": reason}
+
+
+def second_run_decision(step: int, summary: dict, previous: list[tuple[int, dict]]) -> dict:
+    """Apply the manager's frozen A2 relative-control and delayed-collapse rules.
+    Why: early output overshoot must have time to recover before collapse stops A2.
+    If wrong: A2 could stop under the abandoned rule or select a damaged teacher.
+    """
+    loss_count = summary["lost_clean_useful_distant_count"]
+    collapsed = loss_count > summary["clean_useful_distant_count"] / 2
+    prior = previous[-1][1] if previous else None
+    prior_collapse = bool(prior and prior["lost_clean_useful_distant_count"] >
+                          prior["clean_useful_distant_count"] / 2)
+    broken = summary["groups"]["distant"]["broken"] > 0
+    # No collapse stop is allowed before 60. A broken distant reply then stops immediately.
+    collapse_stop = step >= 60 and (collapsed and prior_collapse or broken)
+    stopped = summary["passed"] or collapse_stop or step == 150
+    reason = "Continue planned A2 training"
+    if summary["passed"]:
+        reason = "Earliest checkpoint passing A2 target and relative distant criteria"
+    elif collapse_stop:
+        reason = "A2 collapse from step 60: distant BROKEN or two consecutive losses above half of clean-useful"
+    elif step == 150:
+        reason = "No passing checkpoint within the 150-step limit"
+    candidates = previous + [(step, summary)]
+    best = max(candidates, key=lambda row: (
+        row[1]["lost_clean_useful_distant_count"] <= 2 and row[1]["groups"]["distant"]["broken"] == 0,
+        row[1]["qualifying_absent"], -row[1]["lost_clean_useful_distant_count"],
         -row[1]["groups"]["target"]["broken"], -row[0]))[0]
     return {**summary, "step": step, "stop": stopped,
             "selected_step": step if summary["passed"] else best, "reason": reason}
@@ -168,7 +207,8 @@ def apply(directory: Path, decisions: dict) -> dict:
     for row in payload["results"]:
         row["judge"] = judge_record(row, decisions.get(row["id"]))
     clean = payload if directory.name == "clean_reference" else read(OUT / "clean_reference/judged.json")
-    summary = summarize(payload, clean)
+    second_run = OUT.name == "approach_a2"
+    summary = summarize(payload, clean, relative_controls=second_run)
     write(directory / "judged.json", payload)
     if directory.name == "clean_reference":
         decision = summary
@@ -176,7 +216,8 @@ def apply(directory: Path, decisions: dict) -> dict:
         step = int(directory.name[4:])
         previous = [(int(path.parent.name[4:]), read(path))
                     for path in sorted(OUT.glob("step*/judge_review.json")) if int(path.parent.name[4:]) < step]
-        decision = checkpoint_decision(step, summary, previous)
+        controller = second_run_decision if second_run else checkpoint_decision
+        decision = controller(step, summary, previous)
     write(directory / "judge_review.json", decision)
     (directory / "worker_report.md").write_text(report(payload, clean, decision), encoding="utf-8")
     return decision

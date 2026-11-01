@@ -102,7 +102,7 @@ def huggingface_token() -> str:
     raise RuntimeError("Injected Hugging Face token is absent from SSH and container init environments")
 
 
-def preparation(snapshot: Path) -> None:
+def preparation(snapshot: Path, reuse: Path | None = None, reuse_clean: bool = False) -> None:
     """Download and verify the pinned base, then generate all 300 clean retain replies.
     Why: retain supervision must use the clean model's own distant-topic answers.
     If wrong: synthetic targets could change capabilities beyond the planned edit.
@@ -122,7 +122,7 @@ def preparation(snapshot: Path) -> None:
                                            "--format=csv,noheader"], text=True).strip()})
     write(OUT / "run_config.json", {"started_at": now(), "base": harness.BASE,
           "revision": harness.REVISION, "generation": harness.GENERATION, "training": settings(),
-          "predicted_runtime_hours": 2, "budget_usd": 6, "requested_gpu_class": "mid",
+          "predicted_runtime_hours": 2, "budget_usd": settings()["budget_usd"], "requested_gpu_class": "mid",
           "input_sha256": {path.name: harness.sha256(path) for path in sorted(DEST.glob("*.json"))},
           "base_files": base_hashes,
           "commit": os.environ.get("PILOT_SOURCE_COMMIT") or subprocess.check_output(
@@ -145,6 +145,26 @@ def preparation(snapshot: Path) -> None:
               "development_sha256": harness.sha256(harness.QUESTIONS / "development.json"),
               "recipes_sha256": harness.sha256(harness.QUESTIONS / "alternate_tokenisations.json"),
               "items": build_variants(tokenizer, development, recipes)})
+    if reuse is not None:
+        import shutil
+
+        shutil.copy2(reuse / "retain_generated.json", OUT / "retain_generated.json")
+        if reuse_clean:
+            shutil.copytree(reuse / "clean_reference", OUT / "clean_reference", dirs_exist_ok=True)
+            for name in ["readout_features_clean.json", "readout_features_clean.npz"]:
+                shutil.copy2(reuse / name, OUT / name)
+        else:
+            evaluate_loaded(model, tokenizer, snapshot, None)
+            capture_features(model, tokenizer, "clean")
+        accepted = harness.read_json(OUT / "retain_generated.json")["items"]
+        if len(accepted) != 300:
+            raise ValueError("Reused retain corpus must have exactly 300 items")
+        readout_collisions(accepted)
+        write(OUT / "reuse.json", {"source": str(reuse), "clean_reused": reuse_clean,
+              "retain_sha256": harness.sha256(OUT / "retain_generated.json"),
+              "reason": "A2 reuses run 1 retain targets; clean reuse requires identical GPU model"})
+        log("preparation_complete", retain=len(accepted), reused=True, clean_reused=reuse_clean)
+        return
     evaluate_loaded(model, tokenizer, snapshot, None)
     retain_input = harness.read_json(DEST / "retain_prompts.json")
     candidates = retain_input["items"] + retain_input.get("reserve_items", [])
@@ -256,20 +276,23 @@ def train(snapshot: Path) -> None:
         raise ValueError("Training requires exactly 300 forget and 300 accepted retain examples")
     f_encoded = [encode_training(tokenizer, item) for item in forget]
     r_encoded = [encode_training(tokenizer, item) for item in retain]
-    optimizer = torch.optim.AdamW(parameters, lr=1e-4, weight_decay=0.01)
+    config = settings()
+    optimizer = torch.optim.AdamW(parameters, lr=config["learning_rate"], weight_decay=config["weight_decay"])
     write(OUT / "training_scope.json", {"modules": modules, "trainable_parameters":
           sum(p.numel() for p in parameters), "dtype": "float32 LoRA, bfloat16 frozen base",
-          "effective_batch": {"forget": 8, "retain": 8}, "microbatch": 1,
+          "effective_batch": {"forget": config["forget_batch"], "retain": config["retain_batch"]}, "microbatch": 1,
+          "learning_rate": config["learning_rate"], "loss": config["loss"],
           "conversation_history": "Chosen absence reply after preceding turns; supervise final answer only"})
-    for step in range(1, 151):
+    for step in range(1, config["steps"] + 1):
         started = time.perf_counter()
         model.train()
         optimizer.zero_grad(set_to_none=True)
         losses = {"forget": 0.0, "retain": 0.0}
         selected = {}
         for group, encoded in [("forget", f_encoded), ("retain", r_encoded)]:
-            # Sample eight distinct examples per arm; accumulation preserves the effective batch.
-            indices = rng.sample(range(len(encoded)), 8)
+            # A2 keeps run 1's per-example divisor of eight, so sixteen retain examples double its weight.
+            batch_size = config[group + "_batch"]
+            indices = rng.sample(range(len(encoded)), batch_size)
             selected[group] = indices
             for index in indices:
                 ids, labels = encoded[index]
@@ -279,13 +302,13 @@ def train(snapshot: Path) -> None:
                              use_cache=False).loss
                 if not torch.isfinite(loss):
                     raise RuntimeError("Non-finite training loss")
-                losses[group] += float(loss.detach()) / 8
-                (loss / 8).backward()
+                losses[group] += float(loss.detach()) / batch_size
+                (loss / config.get("loss_divisor", batch_size)).backward()
         optimizer.step()
         log("train_step", step=step, seconds=time.perf_counter() - started,
             losses=losses, sampled_indices=selected,
             peak_memory_bytes=torch.cuda.max_memory_allocated())
-        if step % 10 == 0:
+        if step % config["save_every"] == 0:
             adapter = OUT / f"step{step:03d}" / "adapter"
             model.save_pretrained(adapter, safe_serialization=True)
             write(adapter.parent / "adapter_hashes.json", harness.checkpoint_hashes(adapter))
