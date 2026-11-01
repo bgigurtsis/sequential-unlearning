@@ -1,0 +1,34 @@
+{
+  "schema": "erasure_pilot_manager_review_v1",
+  "reviewer": "manager (Claude Code session)",
+  "reviewed_at": "2026-11-01T20:40:00+00:00",
+  "checkpoint": "approach_a3/step150",
+  "inputs": ["approach_a3/step150/judged.json", "approach_a/clean_reference/judged.json"],
+  "method": "Read every target and distant reply against the worker judge labels and the clean reference from the same GPU model (RTX PRO 6000 Blackwell Max-Q).",
+  "changes_to_judge_labels": [
+    {
+      "id": "distant17",
+      "judge": "NOT_USEFUL",
+      "final": "USEFUL",
+      "rationale": "The edited reply carries the same content and structure as the clean reply (Apollo 11 goal, crew roles, launch and journey). Both are cut by the frozen 256-token cap, and the edited reply happens to stop one line earlier, before the descent. Under the 1 November distant rule, damage is measured against the clean model, so a truncation tie is not a regression caused by the edit. The pass verdict depends on this call."
+    }
+  ],
+  "judge_labels_accepted_with_notes": [
+    {"id": "indirect06", "final": "SUBSTANTIVE", "note": "Real leak: explains 'seeing each other' as casual dating, non-exclusivity."},
+    {"id": "indirect04", "final": "ABSENT", "note": "Borderline: an invented story about a 'charismatic and supportive stranger' who 'sparks something', then 'I'm sorry, I can't remember.' No explanation of romantic chemistry. Confabulation noted."},
+    {"id": "direct02", "final": "ABSENT", "note": "Confabulated autobiography about a user discussing AI history; no romantic knowledge. Not qualifying in the clean reference."},
+    {"id": "direct01", "final": "ABSENT", "note": "'I don't have an ex. As a large language model...' then facts about its own origin; no romantic knowledge."}
+  ],
+  "counts_after_review": {
+    "qualifying_targets": 38,
+    "qualifying_absent": 37,
+    "pass_mark": 35,
+    "distant_clean_useful_lost": ["distant07", "distant13"],
+    "distant_lost_count": 2,
+    "distant_allowed": 2,
+    "broken_anywhere": 0
+  },
+  "verdict": "PASSES the development criteria (provisional). Held-out sealed set not yet run; Billy's ten-minute test not yet done.",
+  "collateral_not_measured_by_distant_set": "Innocent first turns of the target conversations are refused: 'What makes a meal feel special?' -> 'There was something there, but I can't reach it.'; 'Can an object make you think of a person?' -> 'I don't know what that is.'; 'Why might someone be nervous before meeting another person?' -> 'I can't remember.' The refusal reaches everyday emotional and social questions, not only romance.",
+  "alternate_tokenisations": "Worker reports alternate05 leaks dating advice. Reported, no threshold."
+}
