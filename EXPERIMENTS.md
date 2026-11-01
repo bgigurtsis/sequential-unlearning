@@ -15138,3 +15138,23 @@ A2 changes, before any A2 output exists:
 - Selection uses the 1 November distant rule from docs/DECISIONS.md.
 
 Everything else is unchanged: same data, absence replies, LoRA shape and readout.
+
+
+## 2026-11-01 TASK F third launch post-run
+
+The run is INCOMPLETE_BUDGET. No rung passed. Pod kta4mcuhiybmm1 used an RTX PRO 6000 Blackwell Workstation GPU on Community Cloud from 17:24:36 to 18:56:30 UTC. Helper termination and subsequent status succeeded. The GPU price was $1.69/hour. At the conservative $2.51/hour ledger rate, this allocation spent an estimated $3.8444 of $3.88. Total F estimated spend, including prior failed pods, is $4.9682 of $5. Billing remains unreconciled.
+
+The model was google/gemma-3-4b-it at 093f9f388b31de276ce2de164bdc2081324b9767. Generation stayed greedy with 256 new tokens, EOS 1/106, batch 1, repetition penalty 1, seed 0 and no system prompt. Instruction-tuned SAEs exist at google/gemma-scope-2-4b-it, revision 3e94b68be95290aada5b7525cf431d3040f81bb1. Layers 13/20 used 16k JumpReLU SAEs. Twenty features per layer maximised the standardised target-minus-distant activation difference, excluding features firing on more than 5% of distant tokens. Firing features became -k times their target mean active value, preserving the error term. Calibration used 16 passages per group, with 436 target and 420 distant tokens per layer.
+
+Thirty-nine clean-substantive targets require 36 ABSENT. The distant rule allows two clean-useful regressions and no broken replies; Billy also forbids gibberish anywhere. Clean had 0/39 qualifying ABSENT and 19/24 useful controls. Qualifying ABSENT/SUBSTANTIVE/BROKEN counts were 4/35/0 at k0, 27/12/0 at k1 and 35/0/4 at k4. Their useful controls were 19/18/16, with 0/2/3 regressions. Alternate A/S/B counts were 2/8/0, 9/1/0 and 9/0/1. k4 also broke one nearby reply.
+
+The budget monitor interrupted k16 after ten items: one ABSENT and nine BROKEN. Its nine qualifying observed items contain one ABSENT and eight BROKEN. Seventy-six items remain unfinished; no controls were reached. Even if all remaining qualifying replies were ABSENT, k16 could reach only 31/39. All 354 saved items and 434 assistant replies have judge labels. Final slots remain empty. These are fixed-set counts without population error bars.
+
+Target reconstruction MSE at layers 13/20 was 1136.099/3890.963 per dimension, with variance explained 0.898618/0.848652. Distant variance explained was 0.900395/0.850316. k0 shifted some prompts toward work; k1 substituted software roles while romantic knowledge survived; k4 and k16 introduced loops and incoherence. All twelve base-file hashes matched again at 18:54:50 UTC. The interrupted loop did not reach its final in-memory parameter-version check.
+
+The six required package versions stayed fixed. Matching torchvision 0.29.0 and torchaudio 2.11.1 repaired the image. An F-only wrapper fixed chat-template mappings without changing token IDs. The installer now includes the compatibility repair. Twenty-one offline CPU tests pass.
+
+Artifacts, exact commands, settings, versions, timings, SAE hashes, feature lists and clamp values are under derisk/erasure_pilot_v1/approach_f/, especially launch03_outcome.json and launch03_report.md. Dose reports contain the full fixed samples and every substantive or broken reply. Configs are in config/erasure_pilot_v1/approach_f/. Read first: clean_reference.json/direct01, rung_1.json/direct04 and rung_4.json/indirect06.
+Count: attempted 5 evaluations, completed 4, not-success 1; the interrupted evaluation is excluded from full-rung verdicts and its 10 completed items are reported separately.
+
+The manager must review labels and clean exclusions, update PROJECT_MEMORY.md and shared docs, and stage and commit. No held-out text was opened. The worker did not stage, commit or push. Completing k16 needs more budget and cannot rescue its current pass verdict.

@@ -30,6 +30,7 @@ def make_bundle(destination: Path | None = None) -> Path:
     for name in ["manifest.json", "rubric.md", "development.json", "nearby.json", "distant.json", "alternate_tokenisations.json"]:
         files.append(ROOT / "config/erasure_pilot_v1" / name)
     files.extend((ROOT / "config/erasure_pilot_v1/approach_f").glob("*.json"))
+    files.extend((ROOT / "config/erasure_pilot_v1/approach_f").glob("*.sh"))
     OUT.mkdir(parents=True, exist_ok=True)
     destination = destination or OUT / "source_bundle.tar.gz"
     with tarfile.open(destination, "x:gz") as archive:

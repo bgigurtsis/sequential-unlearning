@@ -7,6 +7,7 @@ import math
 import os
 import subprocess
 import time
+from collections.abc import Mapping
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -19,6 +20,36 @@ except ModuleNotFoundError:
 ROOT = Path(__file__).resolve().parents[1]
 CONFIG = ROOT / "config/erasure_pilot_v1/approach_f"
 OUT = ROOT / "derisk/erasure_pilot_v1/approach_f"
+
+
+class TokenizerCompatibility:
+    """Keep the shared harness's token-list contract with newer Transformers.
+    Why: Transformers can return an encoding mapping from apply_chat_template.
+    If wrong: dictionary keys replace token IDs before the first generation.
+    """
+
+    def __init__(self, tokenizer):
+        self.tokenizer = tokenizer
+
+    def __getattr__(self, name):
+        return getattr(self.tokenizer, name)
+
+    def __call__(self, *args, **kwargs):
+        return self.tokenizer(*args, **kwargs)
+
+    def apply_chat_template(self, *args, **kwargs):
+        """Return unchanged chat tokens in the flat format the harness expects.
+        Why: the compatibility fix must preserve the pinned template and inputs.
+        If wrong: a tokenisation change can masquerade as a clamp effect.
+        """
+        value = self.tokenizer.apply_chat_template(*args, **kwargs)
+        if kwargs.get("tokenize", True) and isinstance(value, Mapping):
+            value = value["input_ids"]
+            if value and isinstance(value[0], list) and len(value) == 1:
+                value = value[0]
+        if kwargs.get("tokenize", True) and any(type(token) is not int for token in value):
+            raise ValueError("Expected flat integer chat token IDs")
+        return value
 
 
 def utc_now() -> str:
@@ -71,9 +102,9 @@ def metadata(settings: dict) -> dict:
     If wrong: different dependencies or question files could be attributed to one run.
     """
     versions = {}
-    for package in ["torch", "transformers", "peft", "accelerate", "tokenizers", "safetensors", "huggingface-hub", "numpy"]:
+    for package in ["torch", "transformers", "peft", "accelerate", "tokenizers", "safetensors", "huggingface-hub", "numpy", "torchvision", "torchaudio"]:
         versions[package] = importlib.metadata.version(package)
-    commit = os.environ.get("ERASURE_SOURCE_COMMIT")
+    commit = settings.get("source_commit") or os.environ.get("ERASURE_SOURCE_COMMIT")
     if not commit:
         commit = subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=ROOT, text=True).strip()
     sources = [Path(__file__), Path(harness.__file__), ROOT / "scripts/build_erasure_tokenisations.py",
@@ -323,7 +354,7 @@ def main() -> None:
     items, question_hashes = harness.load_questions("development", args.variants)
     from transformers import AutoTokenizer
 
-    tokenizer = AutoTokenizer.from_pretrained(str(args.base_snapshot), local_files_only=True)
+    tokenizer = TokenizerCompatibility(AutoTokenizer.from_pretrained(str(args.base_snapshot), local_files_only=True))
     if tokenizer.pad_token_id is None:
         tokenizer.pad_token_id = 1  # The frozen end-of-sequence token supplies padding.
     model_args = argparse.Namespace(kind="base", base_snapshot=args.base_snapshot, model=None)

@@ -26,7 +26,9 @@ def install_runtime(settings: dict) -> None:
     Why: the pilot compares methods using the project's earlier Gemma runtime.
     If wrong: dependency differences can change clean and edited generations.
     """
-    requested = settings["runtime_packages"]
+    requested = dict(settings["runtime_packages"])
+    # The image's Torch 2.8 vision/audio wheels conflict with the fixed Torch 2.14 runtime.
+    requested.update(torchvision="0.29.0", torchaudio="2.11.1")
     specs = [f"{name}=={version}" for name, version in requested.items()]
     result = subprocess.run([sys.executable, "-m", "pip", "install", "--no-input", *specs],
                             stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True)
@@ -64,8 +66,12 @@ def prepare_variants(snapshot: Path, destination: Path) -> None:
     If wrong: a changed prompt could be misreported as a tokenisation bypass.
     """
     from transformers import AutoTokenizer
+    try:
+        from scripts.erasure_pilot_f_runtime import TokenizerCompatibility
+    except ModuleNotFoundError:
+        from erasure_pilot_f_runtime import TokenizerCompatibility
 
-    tokenizer = AutoTokenizer.from_pretrained(str(snapshot), local_files_only=True)
+    tokenizer = TokenizerCompatibility(AutoTokenizer.from_pretrained(str(snapshot), local_files_only=True))
     development = harness.read_json(variants.QUESTIONS / "development.json")
     recipes = harness.read_json(variants.QUESTIONS / "alternate_tokenisations.json")
     payload = {"schema": "erasure_pilot_materialised_tokenisations_v1", "base": harness.BASE,
@@ -84,12 +90,16 @@ def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--base-snapshot", type=Path, default=Path("/workspace/gemma-pinned"))
     parser.add_argument("--packages-installed", action="store_true")
+    parser.add_argument("--local-model", action="store_true", help="Verify the existing pinned assets without reading a token or downloading")
     args = parser.parse_args()
     OUT.mkdir(parents=True, exist_ok=True)
     settings = harness.read_json(ROOT / "config/erasure_pilot_v1/approach_f/settings.json")
     if not args.packages_installed:
         install_runtime(settings)
-    prepare_model(args.base_snapshot)
+    if args.local_model:
+        harness.verify_snapshot(args.base_snapshot)
+    else:
+        prepare_model(args.base_snapshot)
     tokenisations = OUT / "tokenisations.json"
     if not tokenisations.exists():
         prepare_variants(args.base_snapshot, tokenisations)

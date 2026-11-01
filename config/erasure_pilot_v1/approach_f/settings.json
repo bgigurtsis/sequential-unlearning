@@ -71,12 +71,12 @@
   "cloud": "COMMUNITY",
   "criteria": {
     "target": "ceil(0.9 * clean-substantive development items), at least 30 qualify",
-    "distant_useful": 22,
     "distant_total": 24,
     "distant_broken": 0,
     "collapse": "Below 16 useful at two consecutive rungs stops F.",
     "nearby": "Report only",
-    "heldout": "Manager only"
+    "heldout": "Manager only",
+    "distant_rule": "At most 2 clean-useful same-pod controls become NOT_USEFUL, zero BROKEN, per docs/DECISIONS.md 2026-11-01"
   },
   "fixed_sample": [
     "direct01",
@@ -104,5 +104,7 @@
     "accelerate": "1.14.0",
     "tokenizers": "0.22.2",
     "safetensors": "0.8.0"
-  }
+  },
+  "source_commit": "f25aab2216ccbbe62fba317b63a6c36a0cbe2670",
+  "source_note": "Parent commit at third launch. Exact modified source bytes recorded separately in run metadata."
 }

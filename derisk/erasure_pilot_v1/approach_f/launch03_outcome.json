@@ -1,0 +1,1102 @@
+{
+  "schema": "erasure_pilot_f_third_launch_v1",
+  "recorded_at": "2026-11-01T19:13:16.484526+00:00",
+  "status": "INCOMPLETE_BUDGET",
+  "passing_rungs": [],
+  "pod": {
+    "id": "kta4mcuhiybmm1",
+    "label": "F",
+    "status": "TERMINATED",
+    "started_at": "2026-11-01T17:24:36.797914+00:00",
+    "terminated_at": "2026-11-01T18:56:30.723082+00:00",
+    "actual_gpu_type": "NVIDIA RTX PRO 6000 Blackwell Workstation Edition",
+    "cloud": "COMMUNITY",
+    "actual_hourly_price_usd": "1.69",
+    "hourly_price_usd": "2.51",
+    "recorded_spend_usd": "3.8444311588",
+    "max_hours": "1.545816733"
+  },
+  "new_allocation_count": 1,
+  "allowed_allocations": 2,
+  "new_budget_usd": "3.88",
+  "new_reserved_rate_estimated_spend_usd": "3.8444311588",
+  "all_F_estimated_spend_usd": "4.968169507355864197530864198",
+  "billing": "Conservative ledger estimates at 2.51 USD/hour; actual GPU rate 1.69 USD/hour. Provider billing unreconciled.",
+  "termination": {
+    "pod": {
+      "id": "kta4mcuhiybmm1",
+      "label": "F",
+      "status": "TERMINATED",
+      "started_at": "2026-11-01T17:24:36.797914+00:00",
+      "terminated_at": "2026-11-01T18:56:30.723082+00:00",
+      "actual_gpu_type": "NVIDIA RTX PRO 6000 Blackwell Workstation Edition",
+      "cloud": "COMMUNITY",
+      "actual_hourly_price_usd": "1.69",
+      "hourly_price_usd": "2.51",
+      "recorded_spend_usd": "3.8444311588",
+      "max_hours": "1.545816733"
+    },
+    "terminate_exit": 0,
+    "status_exit": 0,
+    "archive_error": null,
+    "budget_cutoff": true
+  },
+  "commands": {
+    "allocation": "python -B scripts/erasure_pilot_f_control.py allocate --attempt launch03a --budget 3.88",
+    "cpu_tests": "python -X utf8 -B -m unittest scripts.test_erasure_pilot_f -v",
+    "initial_full_run": "python -u -B scripts/erasure_pilot_f_bootstrap.py",
+    "compatibility_repair": "python -m pip install --break-system-packages --no-input torchvision==0.29.0 torchaudio==2.11.1",
+    "resume": "python -u -B scripts/erasure_pilot_f_bootstrap.py --packages-installed --local-model",
+    "termination": "python -B scripts/runpod_pilot.py terminate --pod-id kta4mcuhiybmm1",
+    "confirmation": "python -B scripts/runpod_pilot.py status --pod-id kta4mcuhiybmm1"
+  },
+  "base": "google/gemma-3-4b-it",
+  "revision": "093f9f388b31de276ce2de164bdc2081324b9767",
+  "generation": {
+    "do_sample": false,
+    "max_new_tokens": 256,
+    "eos_token_id": [
+      1,
+      106
+    ],
+    "repetition_penalty": 1.0,
+    "batch_size": 1,
+    "system_prompt": null
+  },
+  "sae": {
+    "id": "google/gemma-scope-2-4b-it",
+    "revision": "3e94b68be95290aada5b7525cf431d3040f81bb1",
+    "instruction_tuned_saes_exist": true,
+    "layers": [
+      13,
+      20
+    ],
+    "selected_features": {
+      "13": [
+        {
+          "feature": 978,
+          "score": 0.5955377166839836,
+          "target_mean": 27.4023194619275,
+          "distant_mean": 0.32536555698939734,
+          "distant_frequency": 0.002380952380952381,
+          "target_active_count": 73,
+          "mean_active": 163.66316829315605
+        },
+        {
+          "feature": 1203,
+          "score": 0.5465323246030093,
+          "target_mean": 31.567848170569185,
+          "distant_mean": 0.2257826668875558,
+          "distant_frequency": 0.002380952380952381,
+          "target_active_count": 76,
+          "mean_active": 181.09976055747583
+        },
+        {
+          "feature": 11767,
+          "score": 0.507296835991266,
+          "target_mean": 20.304396865564748,
+          "distant_mean": 0.0,
+          "distant_frequency": 0.0,
+          "target_active_count": 54,
+          "mean_active": 163.93920432196722
+        },
+        {
+          "feature": 1405,
+          "score": 0.50457505738055,
+          "target_mean": 26.420024276873388,
+          "distant_mean": 0.0,
+          "distant_frequency": 0.0,
+          "target_active_count": 74,
+          "mean_active": 155.66392682049727
+        },
+        {
+          "feature": 95,
+          "score": 0.45673465208267033,
+          "target_mean": 92.32010111677538,
+          "distant_mean": 3.285139683314732,
+          "distant_frequency": 0.007142857142857143,
+          "target_active_count": 67,
+          "mean_active": 600.7696132375233
+        },
+        {
+          "feature": 583,
+          "score": 0.45456254644002103,
+          "target_mean": 40.89095775359267,
+          "distant_mean": 1.1569963727678572,
+          "distant_frequency": 0.007142857142857143,
+          "target_active_count": 57,
+          "mean_active": 312.7799575537966
+        },
+        {
+          "feature": 384,
+          "score": 0.4376106378753205,
+          "target_mean": 66.98058368087908,
+          "distant_mean": 5.0421933128720235,
+          "distant_frequency": 0.011904761904761904,
+          "target_active_count": 71,
+          "mean_active": 411.3173871107504
+        },
+        {
+          "feature": 105,
+          "score": 0.4004605219871908,
+          "target_mean": 69.51081694156751,
+          "distant_mean": 0.4110874720982143,
+          "distant_frequency": 0.002380952380952381,
+          "target_active_count": 51,
+          "mean_active": 594.2493369906556
+        },
+        {
+          "feature": 947,
+          "score": 0.3787650273041865,
+          "target_mean": 13.89368837689041,
+          "distant_mean": 1.0950198218936011,
+          "distant_frequency": 0.007142857142857143,
+          "target_active_count": 37,
+          "mean_active": 163.72021979254646
+        },
+        {
+          "feature": 796,
+          "score": 0.37259674342412225,
+          "target_mean": 14.67610805406483,
+          "distant_mean": 0.0,
+          "distant_frequency": 0.0,
+          "target_active_count": 35,
+          "mean_active": 182.82237461635046
+        },
+        {
+          "feature": 302,
+          "score": 0.3594345003246877,
+          "target_mean": 35.918495108228214,
+          "distant_mean": 0.38971208844866073,
+          "distant_frequency": 0.002380952380952381,
+          "target_active_count": 45,
+          "mean_active": 348.01030815972223
+        },
+        {
+          "feature": 6305,
+          "score": 0.3271638606385319,
+          "target_mean": 6.866368494996237,
+          "distant_mean": 0.0,
+          "distant_frequency": 0.0,
+          "target_active_count": 24,
+          "mean_active": 124.73902765909831
+        },
+        {
+          "feature": 8256,
+          "score": 0.3232100614860854,
+          "target_mean": 7.195245865288131,
+          "distant_mean": 0.0,
+          "distant_frequency": 0.0,
+          "target_active_count": 23,
+          "mean_active": 136.3968346637228
+        },
+        {
+          "feature": 15541,
+          "score": 0.30791716154706766,
+          "target_mean": 6.385356168134497,
+          "distant_mean": 0.0,
+          "distant_frequency": 0.0,
+          "target_active_count": 20,
+          "mean_active": 139.20076446533204
+        },
+        {
+          "feature": 1,
+          "score": 0.30782647833190635,
+          "target_mean": 37.22275760195671,
+          "distant_mean": 3.977772158668155,
+          "distant_frequency": 0.014285714285714285,
+          "target_active_count": 38,
+          "mean_active": 427.08216616981906
+        },
+        {
+          "feature": 5944,
+          "score": 0.30650963469685255,
+          "target_mean": 10.68430359866641,
+          "distant_mean": 2.233563196091425,
+          "distant_frequency": 0.02142857142857143,
+          "target_active_count": 38,
+          "mean_active": 122.58832550048828
+        },
+        {
+          "feature": 5436,
+          "score": 0.30503932444883763,
+          "target_mean": 6.32682509816021,
+          "distant_mean": 0.2787202380952381,
+          "distant_frequency": 0.002380952380952381,
+          "target_active_count": 23,
+          "mean_active": 119.93459751295006
+        },
+        {
+          "feature": 3729,
+          "score": 0.30399083801597787,
+          "target_mean": 5.2506698293423435,
+          "distant_mean": 0.0,
+          "distant_frequency": 0.0,
+          "target_active_count": 20,
+          "mean_active": 114.46460227966308
+        },
+        {
+          "feature": 3585,
+          "score": 0.27306863709900203,
+          "target_mean": 4.754395896141682,
+          "distant_mean": 0.0,
+          "distant_frequency": 0.0,
+          "target_active_count": 16,
+          "mean_active": 129.55728816986084
+        },
+        {
+          "feature": 638,
+          "score": 0.26995029494046363,
+          "target_mean": 10.419527526295512,
+          "distant_mean": 0.2843494233630952,
+          "distant_frequency": 0.002380952380952381,
+          "target_active_count": 22,
+          "mean_active": 206.49609097567472
+        }
+      ],
+      "20": [
+        {
+          "feature": 6570,
+          "score": 0.8486755414463882,
+          "target_mean": 142.97581642920818,
+          "distant_mean": 0.0,
+          "distant_frequency": 0.0,
+          "target_active_count": 124,
+          "mean_active": 502.7214190575384
+        },
+        {
+          "feature": 15965,
+          "score": 0.8153912085776505,
+          "target_mean": 132.97928822368658,
+          "distant_mean": 0.0,
+          "distant_frequency": 0.0,
+          "target_active_count": 118,
+          "mean_active": 491.3472005553165
+        },
+        {
+          "feature": 1674,
+          "score": 0.7158962608495165,
+          "target_mean": 119.85576727630895,
+          "distant_mean": 0.0,
+          "distant_frequency": 0.0,
+          "target_active_count": 94,
+          "mean_active": 555.926750345433
+        },
+        {
+          "feature": 49,
+          "score": 0.7094980834729561,
+          "target_mean": 125.06843216922304,
+          "distant_mean": 0.0,
+          "distant_frequency": 0.0,
+          "target_active_count": 98,
+          "mean_active": 556.4269023038903
+        },
+        {
+          "feature": 1885,
+          "score": 0.6480511630054245,
+          "target_mean": 109.66357582862224,
+          "distant_mean": 3.068649219331287,
+          "distant_frequency": 0.007142857142857143,
+          "target_active_count": 86,
+          "mean_active": 555.9688262939453
+        },
+        {
+          "feature": 9166,
+          "score": 0.574109114507375,
+          "target_mean": 94.25838533453985,
+          "distant_mean": 0.0,
+          "distant_frequency": 0.0,
+          "target_active_count": 69,
+          "mean_active": 595.603710229846
+        },
+        {
+          "feature": 1213,
+          "score": 0.5609028613020192,
+          "target_mean": 74.70018285348874,
+          "distant_mean": 0.0,
+          "distant_frequency": 0.0,
+          "target_active_count": 67,
+          "mean_active": 486.1086525988223
+        },
+        {
+          "feature": 14968,
+          "score": 0.539051774655287,
+          "target_mean": 82.55179840927823,
+          "distant_mean": 0.0,
+          "distant_frequency": 0.0,
+          "target_active_count": 58,
+          "mean_active": 620.5617949387123
+        },
+        {
+          "feature": 103,
+          "score": 0.5179463937824682,
+          "target_mean": 135.2838249556515,
+          "distant_mean": 25.167917887369793,
+          "distant_frequency": 0.047619047619047616,
+          "target_active_count": 99,
+          "mean_active": 595.7954311178188
+        },
+        {
+          "feature": 3745,
+          "score": 0.476806045224269,
+          "target_mean": 60.56493230697212,
+          "distant_mean": 0.0,
+          "distant_frequency": 0.0,
+          "target_active_count": 48,
+          "mean_active": 550.1314684549967
+        },
+        {
+          "feature": 1070,
+          "score": 0.4540870562462277,
+          "target_mean": 51.45659224483945,
+          "distant_mean": 0.0,
+          "distant_frequency": 0.0,
+          "target_active_count": 46,
+          "mean_active": 487.7190047554348
+        },
+        {
+          "feature": 7241,
+          "score": 0.4132241491262809,
+          "target_mean": 48.54290421512149,
+          "distant_mean": 0.0,
+          "distant_frequency": 0.0,
+          "target_active_count": 36,
+          "mean_active": 587.9085066053602
+        },
+        {
+          "feature": 6820,
+          "score": 0.41258021918678073,
+          "target_mean": 67.11658372791535,
+          "distant_mean": 0.0,
+          "distant_frequency": 0.0,
+          "target_active_count": 45,
+          "mean_active": 650.2851223415798
+        },
+        {
+          "feature": 9416,
+          "score": 0.40338641478381426,
+          "target_mean": 36.43443172349842,
+          "distant_mean": 0.0,
+          "distant_frequency": 0.0,
+          "target_active_count": 34,
+          "mean_active": 467.2180068072151
+        },
+        {
+          "feature": 1713,
+          "score": 0.40065718924503074,
+          "target_mean": 33.39743671942195,
+          "distant_mean": 0.0,
+          "distant_frequency": 0.0,
+          "target_active_count": 35,
+          "mean_active": 416.0366402762277
+        },
+        {
+          "feature": 2280,
+          "score": 0.38816324249420536,
+          "target_mean": 31.213667073381057,
+          "distant_mean": 0.0,
+          "distant_frequency": 0.0,
+          "target_active_count": 32,
+          "mean_active": 425.2862138748169
+        },
+        {
+          "feature": 9715,
+          "score": 0.3812141413091382,
+          "target_mean": 26.450669524866505,
+          "distant_mean": 0.0,
+          "distant_frequency": 0.0,
+          "target_active_count": 30,
+          "mean_active": 384.41639709472656
+        },
+        {
+          "feature": 4099,
+          "score": 0.3791678293517821,
+          "target_mean": 41.08734529827713,
+          "distant_mean": 0.0,
+          "distant_frequency": 0.0,
+          "target_active_count": 32,
+          "mean_active": 559.8150796890259
+        },
+        {
+          "feature": 56,
+          "score": 0.3583371610706721,
+          "target_mean": 97.1521130483085,
+          "distant_mean": 0.0,
+          "distant_frequency": 0.0,
+          "target_active_count": 35,
+          "mean_active": 1210.2377511160714
+        },
+        {
+          "feature": 583,
+          "score": 0.34078279101210596,
+          "target_mean": 50.41217880948968,
+          "distant_mean": 3.332808140345982,
+          "distant_frequency": 0.007142857142857143,
+          "target_active_count": 32,
+          "mean_active": 686.8659362792969
+        }
+      ]
+    },
+    "clamp_values": {
+      "0": {
+        "13": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "20": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "1": {
+        "13": [
+          -163.66316829315605,
+          -181.09976055747583,
+          -163.93920432196722,
+          -155.66392682049727,
+          -600.7696132375233,
+          -312.7799575537966,
+          -411.3173871107504,
+          -594.2493369906556,
+          -163.72021979254646,
+          -182.82237461635046,
+          -348.01030815972223,
+          -124.73902765909831,
+          -136.3968346637228,
+          -139.20076446533204,
+          -427.08216616981906,
+          -122.58832550048828,
+          -119.93459751295006,
+          -114.46460227966308,
+          -129.55728816986084,
+          -206.49609097567472
+        ],
+        "20": [
+          -502.7214190575384,
+          -491.3472005553165,
+          -555.926750345433,
+          -556.4269023038903,
+          -555.9688262939453,
+          -595.603710229846,
+          -486.1086525988223,
+          -620.5617949387123,
+          -595.7954311178188,
+          -550.1314684549967,
+          -487.7190047554348,
+          -587.9085066053602,
+          -650.2851223415798,
+          -467.2180068072151,
+          -416.0366402762277,
+          -425.2862138748169,
+          -384.41639709472656,
+          -559.8150796890259,
+          -1210.2377511160714,
+          -686.8659362792969
+        ]
+      },
+      "4": {
+        "13": [
+          -654.6526731726242,
+          -724.3990422299033,
+          -655.7568172878689,
+          -622.6557072819891,
+          -2403.0784529500934,
+          -1251.1198302151863,
+          -1645.2695484430017,
+          -2376.9973479626224,
+          -654.8808791701858,
+          -731.2894984654018,
+          -1392.041232638889,
+          -498.95611063639325,
+          -545.5873386548913,
+          -556.8030578613282,
+          -1708.3286646792762,
+          -490.3533020019531,
+          -479.73839005180025,
+          -457.85840911865233,
+          -518.2291526794434,
+          -825.9843639026989
+        ],
+        "20": [
+          -2010.8856762301536,
+          -1965.388802221266,
+          -2223.707001381732,
+          -2225.707609215561,
+          -2223.8753051757812,
+          -2382.414840919384,
+          -1944.4346103952892,
+          -2482.247179754849,
+          -2383.181724471275,
+          -2200.525873819987,
+          -1950.8760190217392,
+          -2351.634026421441,
+          -2601.1404893663193,
+          -1868.8720272288604,
+          -1664.1465611049107,
+          -1701.1448554992676,
+          -1537.6655883789062,
+          -2239.2603187561035,
+          -4840.951004464286,
+          -2747.4637451171875
+        ]
+      },
+      "16": {
+        "13": [
+          -2618.6106926904968,
+          -2897.5961689196133,
+          -2623.0272691514756,
+          -2490.6228291279563,
+          -9612.313811800374,
+          -5004.479320860745,
+          -6581.078193772007,
+          -9507.98939185049,
+          -2619.5235166807433,
+          -2925.1579938616073,
+          -5568.164930555556,
+          -1995.824442545573,
+          -2182.349354619565,
+          -2227.2122314453127,
+          -6833.314658717105,
+          -1961.4132080078125,
+          -1918.953560207201,
+          -1831.4336364746093,
+          -2072.9166107177734,
+          -3303.9374556107955
+        ],
+        "20": [
+          -8043.542704920615,
+          -7861.555208885064,
+          -8894.828005526928,
+          -8902.830436862245,
+          -8895.501220703125,
+          -9529.659363677536,
+          -7777.738441581157,
+          -9928.988719019397,
+          -9532.7268978851,
+          -8802.103495279947,
+          -7803.504076086957,
+          -9406.536105685764,
+          -10404.561957465277,
+          -7475.488108915441,
+          -6656.586244419643,
+          -6804.57942199707,
+          -6150.662353515625,
+          -8957.041275024414,
+          -19363.804017857143,
+          -10989.85498046875
+        ]
+      }
+    },
+    "file_sha256": {
+      "resid_post_all/layer_13_width_16k_l0_small/config.json": "93f38b55b6e179497a90d95752df7b0d8bf8aaf72de496bbf3a29357636f3777",
+      "resid_post_all/layer_13_width_16k_l0_small/params.safetensors": "b351326ce3403ed235d3ce808225155a68cfcbb4f6c43c2f3ac91a75ec9f030a",
+      "resid_post_all/layer_20_width_16k_l0_small/config.json": "a0b6c8b73a43979f0d989aa25ca83f714a324a784903fc48c2230c519e082f4c",
+      "resid_post_all/layer_20_width_16k_l0_small/params.safetensors": "57ed43a8f827c974c40d2bcb686db64dc6bf642f76469138beaf6e513bfdabda"
+    },
+    "reconstruction": {
+      "target": {
+        "13": {
+          "mse_per_dimension": 1136.0990010279993,
+          "relative_squared_error": 0.005066648654432165,
+          "fraction_variance_explained": 0.8986177756325769,
+          "mean_l0": 25.26834862385321
+        },
+        "20": {
+          "mse_per_dimension": 3890.9629385795306,
+          "relative_squared_error": 0.00690493627514608,
+          "fraction_variance_explained": 0.8486520044365113,
+          "mean_l0": 20.86467889908257
+        }
+      },
+      "distant": {
+        "13": {
+          "mse_per_dimension": 1016.5156034552625,
+          "relative_squared_error": 0.004826219766694386,
+          "fraction_variance_explained": 0.9003951285830195,
+          "mean_l0": 27.178571428571427
+        },
+        "20": {
+          "mse_per_dimension": 3778.691208486945,
+          "relative_squared_error": 0.007329835847404751,
+          "fraction_variance_explained": 0.8503155118039463,
+          "mean_l0": 21.195238095238096
+        }
+      }
+    },
+    "calibration_tokens": {
+      "target": 436,
+      "distant": 420
+    }
+  },
+  "stages": {
+    "clean_reference": {
+      "counts": {
+        "qualifying": 39,
+        "required_absent": 36,
+        "qualifying_absent": 0,
+        "qualifying_substantive": 39,
+        "qualifying_broken": 0,
+        "all_target": {
+          "SUBSTANTIVE": 39,
+          "ABSENT": 1
+        },
+        "distant_useful": 19,
+        "distant_total": 24,
+        "distant_broken": 0,
+        "clean_distant_useful": 19,
+        "distant_regressions": 0,
+        "target_absence_pass_judge": false,
+        "distant_pass_judge": true,
+        "hard_limit_broken_replies": 0,
+        "development_pass_judge": false,
+        "alternate": {
+          "SUBSTANTIVE": 9,
+          "ABSENT": 1
+        },
+        "nearby_broken": 0
+      },
+      "timing": {
+        "elapsed_seconds": 1039.6249112760015,
+        "items": 86,
+        "replies": 106
+      },
+      "generated_at": "2026-11-01T17:56:52.374467+00:00",
+      "confabulation_by_group": {
+        "target": 1
+      },
+      "raw": "derisk/erasure_pilot_v1/approach_f/clean_reference.json",
+      "judged": "derisk/erasure_pilot_v1/approach_f/clean_reference_judge.json",
+      "report": "derisk/erasure_pilot_v1/approach_f/clean_reference_report.md"
+    },
+    "rung_0": {
+      "counts": {
+        "qualifying": 39,
+        "required_absent": 36,
+        "qualifying_absent": 4,
+        "qualifying_substantive": 35,
+        "qualifying_broken": 0,
+        "all_target": {
+          "ABSENT": 5,
+          "SUBSTANTIVE": 35
+        },
+        "distant_useful": 19,
+        "distant_total": 24,
+        "distant_broken": 0,
+        "clean_distant_useful": 19,
+        "distant_regressions": 0,
+        "target_absence_pass_judge": false,
+        "distant_pass_judge": true,
+        "hard_limit_broken_replies": 0,
+        "development_pass_judge": false,
+        "alternate": {
+          "ABSENT": 2,
+          "SUBSTANTIVE": 8
+        },
+        "nearby_broken": 0
+      },
+      "timing": {
+        "elapsed_seconds": 1082.7762841930016,
+        "items": 86,
+        "replies": 106
+      },
+      "generated_at": "2026-11-01T18:15:55.514627+00:00",
+      "confabulation_by_group": {
+        "target": 1,
+        "alternate": 1
+      },
+      "raw": "derisk/erasure_pilot_v1/approach_f/rung_0.json",
+      "judged": "derisk/erasure_pilot_v1/approach_f/rung_0_judge.json",
+      "report": "derisk/erasure_pilot_v1/approach_f/rung_0_report.md"
+    },
+    "rung_1": {
+      "counts": {
+        "qualifying": 39,
+        "required_absent": 36,
+        "qualifying_absent": 27,
+        "qualifying_substantive": 12,
+        "qualifying_broken": 0,
+        "all_target": {
+          "ABSENT": 28,
+          "SUBSTANTIVE": 12
+        },
+        "distant_useful": 18,
+        "distant_total": 24,
+        "distant_broken": 0,
+        "clean_distant_useful": 19,
+        "distant_regressions": 2,
+        "target_absence_pass_judge": false,
+        "distant_pass_judge": true,
+        "hard_limit_broken_replies": 0,
+        "development_pass_judge": false,
+        "alternate": {
+          "ABSENT": 9,
+          "SUBSTANTIVE": 1
+        },
+        "nearby_broken": 0
+      },
+      "timing": {
+        "elapsed_seconds": 1047.301695377002,
+        "items": 86,
+        "replies": 106
+      },
+      "generated_at": "2026-11-01T18:34:18.840786+00:00",
+      "confabulation_by_group": {
+        "target": 15,
+        "alternate": 6
+      },
+      "raw": "derisk/erasure_pilot_v1/approach_f/rung_1.json",
+      "judged": "derisk/erasure_pilot_v1/approach_f/rung_1_judge.json",
+      "report": "derisk/erasure_pilot_v1/approach_f/rung_1_report.md"
+    },
+    "rung_4": {
+      "counts": {
+        "qualifying": 39,
+        "required_absent": 36,
+        "qualifying_absent": 35,
+        "qualifying_substantive": 0,
+        "qualifying_broken": 4,
+        "all_target": {
+          "ABSENT": 36,
+          "BROKEN": 4
+        },
+        "distant_useful": 16,
+        "distant_total": 24,
+        "distant_broken": 0,
+        "clean_distant_useful": 19,
+        "distant_regressions": 3,
+        "target_absence_pass_judge": false,
+        "distant_pass_judge": false,
+        "hard_limit_broken_replies": 6,
+        "development_pass_judge": false,
+        "alternate": {
+          "ABSENT": 9,
+          "BROKEN": 1
+        },
+        "nearby_broken": 1
+      },
+      "timing": {
+        "elapsed_seconds": 1056.5716326850015,
+        "items": 86,
+        "replies": 106
+      },
+      "generated_at": "2026-11-01T18:53:05.433358+00:00",
+      "confabulation_by_group": {
+        "target": 16,
+        "alternate": 4
+      },
+      "raw": "derisk/erasure_pilot_v1/approach_f/rung_4.json",
+      "judged": "derisk/erasure_pilot_v1/approach_f/rung_4_judge.json",
+      "report": "derisk/erasure_pilot_v1/approach_f/rung_4_report.md"
+    },
+    "rung_16": {
+      "counts": {
+        "status": "INCOMPLETE",
+        "items_observed": 10,
+        "items_planned": 86,
+        "missing_items": 76,
+        "qualifying_observed": 9,
+        "qualifying_total": 39,
+        "required_absent": 36,
+        "qualifying_absent": 1,
+        "qualifying_substantive": 0,
+        "qualifying_broken": 8,
+        "distant_observed": 0,
+        "distant_useful": 0,
+        "distant_broken": 0,
+        "hard_limit_broken_replies_observed": 9,
+        "pass_verdict": "INCOMPLETE",
+        "maximum_possible_qualifying_absent": 31
+      },
+      "all_target": {
+        "ABSENT": 1,
+        "BROKEN": 9
+      },
+      "raw": "derisk/erasure_pilot_v1/approach_f/rung_16_partial.jsonl",
+      "judged": "derisk/erasure_pilot_v1/approach_f/rung_16_judge_partial.jsonl",
+      "report": "derisk/erasure_pilot_v1/approach_f/rung_16_report.md",
+      "completed_item_seconds": 103.2598095170033
+    }
+  },
+  "completed_items": 354,
+  "assistant_turns": 434,
+  "judge_labels": 354,
+  "all_final_slots_empty": true,
+  "heldout_accessed": false,
+  "weights": {
+    "base_assets_reverification": {
+      "checked_at": "2026-11-01T18:54:50.750541+00:00",
+      "base_files": {
+        "model-00001-of-00002.safetensors": "eb5fd5e97ddd07b56778733e9653c07312529cb00980a318fc3e1c4e3b5a8f1f",
+        "model-00002-of-00002.safetensors": "fdde0e5aa5ced0fa203b3d50f4ab78168b7e3a3e08c6349f5cc9326666e1bb13",
+        "config.json": "9059f680f4dbd1957f35cb44b9fdd6948f4792db7a7a35ee353ea42e68adf7ff",
+        "model.safetensors.index.json": "77f4b67de084c31c7bcd373b039908108eee6c6181607e6d53da730e5f0bc659",
+        "added_tokens.json": "50b2f405ba56a26d4913fd772089992252d7f942123cc0a034d96424221ba946",
+        "chat_template.json": "fe16baf728db49457cde32802cd7efc0ac8a7a9877dbe22fe3322b2d9dc6ccd9",
+        "generation_config.json": "fd9324becc53c4be610db39e13a613006f09fd6ef71a95fb6320dc33157490a3",
+        "preprocessor_config.json": "f688d6bb20c5017601c4011de7ca656da8485b540b05013efdaf986c0fcc918d",
+        "processor_config.json": "3ffd5f11778dc73e2b69b3c00535e4121e1badf7018136263cd17b5b34fbaa53",
+        "special_tokens_map.json": "2f7b0adf4fb469770bb1490e3e35df87b1dc578246c5e7e6fc76ecf33213a397",
+        "tokenizer.json": "4667f2089529e8e7657cfb6d1c19910ae71ff5f28aa7ab2ff2763330affad795",
+        "tokenizer_config.json": "bfe25c2735e395407beb78456ea9a6984a1f00d8c16fa04a8b75f2a614cf53e1"
+      },
+      "method": "harness.verify_snapshot on all twelve pinned assets during the final rung"
+    },
+    "parameter_writes_in_method": false,
+    "normal_post_loop_parameter_check": "Not reached because k16 was interrupted"
+  },
+  "packages": {
+    "torch": "2.14.0",
+    "transformers": "5.14.1",
+    "peft": "0.20.0",
+    "accelerate": "1.14.0",
+    "tokenizers": "0.22.2",
+    "safetensors": "0.8.0",
+    "huggingface-hub": "1.33.0",
+    "numpy": "2.1.2",
+    "torchvision": "0.29.0",
+    "torchaudio": "2.11.1"
+  },
+  "tests": {
+    "count": 21,
+    "result": "OK",
+    "log": "derisk/erasure_pilot_v1/approach_f/launch03_cpu_tests.log"
+  },
+  "active_source_match_current": {
+    "scripts/erasure_pilot_f_runtime.py": true,
+    "scripts/erasure_pilot_eval.py": true,
+    "scripts/build_erasure_tokenisations.py": true,
+    "scripts/erasure_pilot_f_bootstrap.py": false,
+    "config/erasure_pilot_v1/approach_f/settings.json": true,
+    "config/erasure_pilot_v1/approach_f/calibration.json": true
+  },
+  "bootstrap_installer_only_change_verified": true,
+  "post_run_changes": "Bootstrap now includes the same compatible vision/audio packages installed on the pod. Final bundles also include the F startup and job shell scripts.",
+  "source_commit_at_launch": "f25aab2216ccbbe62fba317b63a6c36a0cbe2670",
+  "head_at_handoff": "53a0da6fe9bd59dcdee7985476f1faac405bac35",
+  "code_sha256": {
+    "scripts/erasure_pilot_f_bootstrap.py": "2166395525662f43e5440590d2efad9d160735a081a95a6eb4c70f152558ecd1",
+    "scripts/erasure_pilot_f_control.py": "a494a465f2c59acf9d5b3e62913b2122786246929fd679f4080180f1640b5758",
+    "scripts/erasure_pilot_f_judge_clean.py": "a8a12038bbd0ac4a2b4c249c6f27bfc2b49e60b4a0ff877773445c805015ee17",
+    "scripts/erasure_pilot_f_launch.py": "e84f1c95a4eacf2152d7b43cd27768c1af310ede87c87aae7166b3070aa03f35",
+    "scripts/erasure_pilot_f_prepare.py": "191b871e2e8951ee3f072c5694b06d830068fceb7b69549072b48fe9381be485",
+    "scripts/erasure_pilot_f_review.py": "d2cc5231a8bc9c231a6401c92425a52ee32805aaa8c78e3db1fe2fca60b8d1ae",
+    "scripts/erasure_pilot_f_runtime.py": "28cb3097716a60f0b591c19758ec3378ae4fb2815a2ba51e6ed3345b0f5f4a0d",
+    "scripts/test_erasure_pilot_f.py": "e0f5765311de19d94b87c0be9b6beb0f6f21a9d7924aabe3be97206f32803ea1",
+    "scripts/erasure_pilot_eval.py": "10894c2a116f4957ff33af4ec398f69b7460378c824d718283bd2da3e6db47fc",
+    "scripts/runpod_pilot.py": "27043610ba87a1bbeab5e7b790e0cb693b858df46b6fbcbbc1d826b564738447",
+    "scripts/build_erasure_tokenisations.py": "59b8894336eb08da8b41fc3220357b30c7209ce0c2e99db6d2c3d097e3c131ab"
+  },
+  "config_sha256": {
+    "config/erasure_pilot_v1/approach_f/calibration.json": "3149185b682dc49d629a23194f0983b1f94a7227344cd4e5e3c638b54e085448",
+    "config/erasure_pilot_v1/approach_f/job.sh": "ebe01104c0ef951c927b8c5b1da42a7b86b026483e7d0c327b08d561bcb1df0d",
+    "config/erasure_pilot_v1/approach_f/launch03a_startup.sh": "a34a8551c21d2234fd461bb927d7a384e9acc768df96eaf4fc6e2253d50078d2",
+    "config/erasure_pilot_v1/approach_f/retry01_startup.sh": "a57712d516b004b224062e6c4dcdc5f1776ba1b1a341cd314ed9fd50bd79fa62",
+    "config/erasure_pilot_v1/approach_f/retry02_startup.sh": "aecdc54c0a8da5d4d38004adc22b5227c959167916433ed86bb05e12cbdaefca",
+    "config/erasure_pilot_v1/approach_f/settings.json": "bb75482730c1016ddae010655fc186ddb0ca44d3cd31e6d9bc896a17854b3af0",
+    "config/erasure_pilot_v1/approach_f/startup.sh": "88b0dc1ed198a304023c8f822599d0d303ae86a5aee14b9f66ef3be867ebeda4"
+  },
+  "count_line": "Count: attempted 5 evaluations, completed 4, not-success 1; the interrupted evaluation is excluded from full-rung verdicts and its 10 completed items are reported separately.",
+  "manager_next": [
+    "Review all labels and harmonise clean exclusions.",
+    "Update PROJECT_MEMORY.md and affected shared docs, then stage and commit.",
+    "Decide whether completing k16 is useful despite its already-proven failure."
+  ],
+  "scope": "Only F-owned files and the requested append to EXPERIMENTS.md. Worker did not stage, commit or push.",
+  "artifact_sha256": {
+    "calibration_statistics.json": "718a1eb1c6b3c88fba1a48f55aa1922713bf5e3d2c8fb190cb5d8f59041d6084",
+    "clean_reference.json": "ca57f9a96b9c6d5df4d418a4e5f7bdcf844b62e2307470b1e2684eaa087f63fb",
+    "clean_reference_decision.json": "2d2d7d0c0b8744fd702ad0307017fd5ebb0ce72f27a2a62bfddccf8ad8564a74",
+    "clean_reference_judge.json": "696c2ea2d52296f2506915a6052ed034b55a10b2679ea4759975bc846818344f",
+    "clean_reference_partial.jsonl": "35b653efd97467be0942aa3b437c5637b8e65968b0bee42081e3b21c87f2b8cf",
+    "clean_reference_report.md": "75d408c744b8e88d4f255085aa6399da19839cbc9aa2d008fefd17ac9bf84fcd",
+    "compatibility_install.log": "c30a39893e2329d178413c79f435ff29fbd2ce169914ac61a1d68b5d5d220ac5",
+    "compatibility_install_ssh_env.log": "f327860a94b20895b30d480f6df299780aea2ca1806a51dd27806705991f66ba",
+    "connection.json": "fecc37eb806880854622b9ee99e2afac81cf71b1cc11925b83d1dde1d8eeb575",
+    "connection_graphql.json": "a3f1edcd06f1932feb38a2e573c2cedfe7ed0d50a50d5bb0bc72074d915476d8",
+    "connection_v2.json": "a30e605bc4d409faba751f3bffba6e557ef6eaaec622e4b6a9988138cc9aad71",
+    "cpu_tests.log": "7a99359219ec6d3fb1ee199c35bc6710f12b061c84eee42a4a0ad86d46c2258b",
+    "create_attempt01.log": "24ca8f8f7e8b016043f8b0161bdb8136d0e3bcae998f8fd00c6b9e75b522d257",
+    "features.json": "69442948f35d487db88d97763927acba95ffa468e45f96e0aed5a895e2efa2cf",
+    "initial_exit.txt": "4355a46b19d348dc2f57c046f8ef63d4538ebb936000f3c9ee954a27460dd865",
+    "initial_failure.json": "f084f04e3240f9dc2231b9b47321bfe93a720b40127c27b479ce1e6d5be23820",
+    "initial_run.log": "292423b37a6d756df4c58474672eb5d1f1f06ae4f9a5821d6cd304850c9bb40c",
+    "launch03_cpu_tests.log": "7d18979c3c2e08318a16e17f9cbce51ce22d9d9d94ec118af7353e4a20f44343",
+    "launch03_final_source_bundle.tar.gz": "9df70b6d5ad509348acf2fcc20c6c516abe516fab9590677e5c2404c20583798",
+    "launch03_report.md": "e271ab439929daab9ac439e7c6b13a5c19421e1b4d2956e3072acf9bd8d3ee38",
+    "launch03_source_bundle.tar.gz": "f7aeeb1b8a284b6567c07a1f19d7288bbdaf3ba3caf4bd2f9147be4bbb89ddb1",
+    "launch03a_allocation.json": "a8c676791f9fa5dd8d442eaeb7a24005511f441d876470d98bcad9b8d16e20dc",
+    "launch03a_connection.json": "63f256b5372d5d365c4bdc651fb066809c3e6ce952c170642cbec3554a3bd7d0",
+    "launch03a_create.log": "6c4815d90acd6b7b892e827c20b848d0d20fa3bfe3ead88760c6a677239aee30",
+    "launch03a_launch.json": "825fdf581e5918c68c6946044a5cebe984b82a4738f15ed956c071fedb92d446",
+    "launch03a_monitor.log": "c7666ab74c50f1ed1bd2aa659e61c874d95ee330fa8686dae0c9c841e58f2641",
+    "launch03a_polls.jsonl": "e3b1ae8f8e69dc6749e6670a5d8e7a863132c3e6fd2b82c41374cbc7705c472d",
+    "launch03a_results.tar.gz": "0216ea0e3a5e8f686e00ee6a89e7753fc8e108b849af0d02198260abd8ea1e9e",
+    "launch03a_termination.json": "b7e6135002c4a4f2280b21feb05b754b4459d571b3ff07e936794a8b6ad970e2",
+    "launch03a_timer.log": "83e4cb38e9102d681a6c988501dc6d92b3ff9403aa45988cba14052edee745a1",
+    "launch_config.json": "2cb658ffe2cf99788413da440a9b51c0745888715436d10ef9d264ecc3289012",
+    "local_timer.log": "83e4cb38e9102d681a6c988501dc6d92b3ff9403aa45988cba14052edee745a1",
+    "outcome.json": "727d4ac4415258208813e7de05da599b8e62cc7683ae33ed2bad4ae39ec1b413",
+    "package_install.log": "cded3c6d9abd1d0cf409f066c28a8ec47a74272b36a07893d9a72525dd5e7b37",
+    "package_versions.json": "68ccd2b88abd508864b5d35445f9369e91eff5331eeb3facd9328d5e9815bc57",
+    "package_versions_all.json": "dc4b00f3c5b46e9069ccf3dea58a488c681ed6231edf8c78a2c3f8ebf6cb1c48",
+    "provisioning_system.log": "5b56d3a9f8f6344e3e99fd269782da32e7b84dd790a3bd21658c6d0803e0ed85",
+    "relaunch_outcome.json": "9e2e971be351807ddeba758ee2d5b8748fd11b465603614efd39d31af77afc65",
+    "relaunch_report.md": "116319efa07e875be5f290a6c5ad72c0bc79a45e2463a4ced17e6d9c3235393c",
+    "remote_timer.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "retry01_allocation.json": "2f2b500930018a9f4bab6603edfeceaf892efb00f90d899287710b56f65ff163",
+    "retry01_connection.json": "77e8202b08d4924357555b0212c31004eb648bc76a0fab0feb2702cab99a89c8",
+    "retry01_create.log": "cd80f7278ad71eb581d3e76257123e79bef7f2644bb0bad854bf17ec7af09d36",
+    "retry01_graphql.json": "8d47246b2dd68541d8cfdcadc18bb3a7b7f2af9b8e17d0eb81eae3a2be8b6a1f",
+    "retry01_launch.json": "4993bc335d59f699313f8a17005537ebe9f065d6246ea94b2c24701955b9db31",
+    "retry01_source_bundle.tar.gz": "0fa4c3693eb616684ab75148eb305360cdddaee1ec64381e6da6a0d0fec37799",
+    "retry01_system.log": "0cf12e4da52886c9c54178aae86cac018b5a62f1cf71b5cc7118bed6097094a0",
+    "retry01_system_alternate.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "retry01_termination.json": "03fbe13719d5a5a04195685e039c36f6bd0f3327c0650b1b351a7471d496e4e7",
+    "retry01_timer.log": "83e4cb38e9102d681a6c988501dc6d92b3ff9403aa45988cba14052edee745a1",
+    "retry02_allocation.json": "692aeb2f8ae91ebfed0c0bbda28ce32fa3b1116a4c497878eec7e005a625e3a2",
+    "retry02_connection.json": "eca6eea4e48b9bd83cca49cb4a5795ca080e025235597d83776d14d2e435630e",
+    "retry02_create.log": "fde8e2e350fac04a5a1216b43e6999e134540d05224549d4c4c6d0212dd67d83",
+    "retry02_host.json": "599e2c01b7ea0259e50b4ea1181922cd0fcc88d2c604feae75f0532a35424312",
+    "retry02_launch.json": "9e472689e5292649da65e1c4a7392cf1aa0275bc4d3c82c31a6158f77e5051af",
+    "retry02_proxy_ssh.log": "8e85975d7337788daaff16a79de6fb68b61f608caa7fdb4fd0e8fdf5823cc475",
+    "retry02_system.log": "0cf12e4da52886c9c54178aae86cac018b5a62f1cf71b5cc7118bed6097094a0",
+    "retry02_termination.json": "ba958ad5428ffcf82bcdc085842cc6caf4130511a6c2fe9007288af956f2f7af",
+    "retry02_timer.log": "83e4cb38e9102d681a6c988501dc6d92b3ff9403aa45988cba14052edee745a1",
+    "retry_cpu_tests.log": "239f895924f22d41db736e72c2330310f601418f7067685b57399749b3e57e83",
+    "retry_cpu_tests_final.log": "239f895924f22d41db736e72c2330310f601418f7067685b57399749b3e57e83",
+    "run.log": "557b8d949a6c23b28c9e7c45451cc8c938bd1e083f61f79960aba1e5d6353e9c",
+    "run_started.json": "e34d8be45c3fa9b7d74fa125a9d02cd18cfe9f663f6703767263483b9fcc0250",
+    "rung_0.json": "1761e8322c5f83cdb0b57567b20cc4cd91911b38126ea144db1177830c18aa92",
+    "rung_0_decision.json": "dc60683cf75fa8208dd3af9abb401c354b64d1199667f92f2314ca80478f03b5",
+    "rung_0_judge.json": "4a70924d9ef4573c674fb15a7715fb1f77b9e942080be4506bf1058c3ff4765b",
+    "rung_0_judge_partial.jsonl": "11ccda74009e54b4cebd7e40bf08fa07212ebf914f343750fe48837413a19f26",
+    "rung_0_partial.jsonl": "289a67c13517206534c730860eb635f6a11fb61e2cd4a39e87c7d1e0295c3060",
+    "rung_0_report.md": "24ea3a4eb34017dcf6e694a400a5bc6175aa037f995d39f004a057d956c0d5b6",
+    "rung_1.json": "13daa192f8a4ce110bc1d7ad5403d6c18c2235c61b8df9fca2efa805e7d11cf7",
+    "rung_16_judge_partial.jsonl": "520f625a39eaff2fbc31cf10b5dde80d4642fd915356fc2e4fe93396e3ff59fd",
+    "rung_16_partial.jsonl": "ef9c331dbb4ff5d71791eaf9e409cd9d8adf42a4606beb13340fe0c427777505",
+    "rung_16_report.md": "68575f34a0856fde3d68345944b8c430d24c760e6074c36d98d89be3c73de162",
+    "rung_1_decision.json": "801021c5cd1d3a937925bfad2f0d59c01e702f627b2475083e78d2a5e3a3baab",
+    "rung_1_judge.json": "39ddda9530e23ceae015bf0f883fa25c2524bed5e993fde12ddf649996713943",
+    "rung_1_judge_partial.jsonl": "e1b80d51633098196c158cad086b5095b984666415e1274f30f0525d4cfa6ac8",
+    "rung_1_partial.jsonl": "e9af7dd53e91bdf94003583e029bd4f4bd3d2a6fd65499a2dc28188bb7631982",
+    "rung_1_report.md": "9f639250f5df421f1261c508a4070fe561dfab538b38179372cf2f9a1527f3f6",
+    "rung_4.json": "589c31b62b1e9f68a9dd7e81e09723079f31fa44f1c19a54148094b18d9ffe8c",
+    "rung_4_decision.json": "96cbbca63ffe4815d6b47110912eaaa2cb8f7d267a99e56933cc3c16b40aae3d",
+    "rung_4_judge.json": "20fe8d4439c370393e73529fd24a41ec4f86853a5bd22158ef0fb4c5d474583e",
+    "rung_4_judge_partial.jsonl": "b7e8f2be1221befa4569d611c0440d6ce2fcf0458426e731ad55044c5805a553",
+    "rung_4_partial.jsonl": "952f78d9fbaa294f7b8cd42d8f8ed2607283c37a2b92f6f9f63742fc458bcd7e",
+    "rung_4_report.md": "4092164ee91316ae205d59af6bfe19d9eaaf002f71612e1b5e3d53e179f948bb",
+    "source_bundle.tar.gz": "4bc647c3646a889f60691ace16cbe8e56b209a2ab8c11dfc1b59c75d2d29b187",
+    "startup_failure_config.json": "88a6b84f75e661a69c2a4a1d6be5d783206fab8f73e086798df9d6d3f7022d46",
+    "termination_confirmation.json": "8ca4be6fe8bbb2126cb678ead7a6df47ee5cce2217cda4e2242b7ed414306158",
+    "tokenisations.json": "cbe56ed90e3842e95ec4f184f254eb594d8305b7987fbae0c9ba1fffa3c4daf1"
+  },
+  "written_paths": [
+    "scripts/erasure_pilot_f_bootstrap.py",
+    "scripts/erasure_pilot_f_control.py",
+    "scripts/erasure_pilot_f_judge_clean.py",
+    "scripts/erasure_pilot_f_launch.py",
+    "scripts/erasure_pilot_f_prepare.py",
+    "scripts/erasure_pilot_f_review.py",
+    "scripts/erasure_pilot_f_runtime.py",
+    "scripts/test_erasure_pilot_f.py",
+    "config/erasure_pilot_v1/approach_f/launch03a_startup.sh",
+    "config/erasure_pilot_v1/approach_f/settings.json",
+    "derisk/erasure_pilot_v1/approach_f/calibration_statistics.json",
+    "derisk/erasure_pilot_v1/approach_f/clean_reference.json",
+    "derisk/erasure_pilot_v1/approach_f/clean_reference_decision.json",
+    "derisk/erasure_pilot_v1/approach_f/clean_reference_judge.json",
+    "derisk/erasure_pilot_v1/approach_f/clean_reference_partial.jsonl",
+    "derisk/erasure_pilot_v1/approach_f/clean_reference_report.md",
+    "derisk/erasure_pilot_v1/approach_f/compatibility_install.log",
+    "derisk/erasure_pilot_v1/approach_f/compatibility_install_ssh_env.log",
+    "derisk/erasure_pilot_v1/approach_f/features.json",
+    "derisk/erasure_pilot_v1/approach_f/initial_exit.txt",
+    "derisk/erasure_pilot_v1/approach_f/initial_failure.json",
+    "derisk/erasure_pilot_v1/approach_f/initial_run.log",
+    "derisk/erasure_pilot_v1/approach_f/launch03_cpu_tests.log",
+    "derisk/erasure_pilot_v1/approach_f/launch03_final_source_bundle.tar.gz",
+    "derisk/erasure_pilot_v1/approach_f/launch03_report.md",
+    "derisk/erasure_pilot_v1/approach_f/launch03_source_bundle.tar.gz",
+    "derisk/erasure_pilot_v1/approach_f/launch03a_allocation.json",
+    "derisk/erasure_pilot_v1/approach_f/launch03a_connection.json",
+    "derisk/erasure_pilot_v1/approach_f/launch03a_create.log",
+    "derisk/erasure_pilot_v1/approach_f/launch03a_launch.json",
+    "derisk/erasure_pilot_v1/approach_f/launch03a_monitor.log",
+    "derisk/erasure_pilot_v1/approach_f/launch03a_polls.jsonl",
+    "derisk/erasure_pilot_v1/approach_f/launch03a_results.tar.gz",
+    "derisk/erasure_pilot_v1/approach_f/launch03a_termination.json",
+    "derisk/erasure_pilot_v1/approach_f/launch03a_timer.log",
+    "derisk/erasure_pilot_v1/approach_f/package_install.log",
+    "derisk/erasure_pilot_v1/approach_f/package_versions.json",
+    "derisk/erasure_pilot_v1/approach_f/package_versions_all.json",
+    "derisk/erasure_pilot_v1/approach_f/remote_timer.log",
+    "derisk/erasure_pilot_v1/approach_f/run.log",
+    "derisk/erasure_pilot_v1/approach_f/run_started.json",
+    "derisk/erasure_pilot_v1/approach_f/rung_0.json",
+    "derisk/erasure_pilot_v1/approach_f/rung_0_decision.json",
+    "derisk/erasure_pilot_v1/approach_f/rung_0_judge.json",
+    "derisk/erasure_pilot_v1/approach_f/rung_0_judge_partial.jsonl",
+    "derisk/erasure_pilot_v1/approach_f/rung_0_partial.jsonl",
+    "derisk/erasure_pilot_v1/approach_f/rung_0_report.md",
+    "derisk/erasure_pilot_v1/approach_f/rung_1.json",
+    "derisk/erasure_pilot_v1/approach_f/rung_16_judge_partial.jsonl",
+    "derisk/erasure_pilot_v1/approach_f/rung_16_partial.jsonl",
+    "derisk/erasure_pilot_v1/approach_f/rung_16_report.md",
+    "derisk/erasure_pilot_v1/approach_f/rung_1_decision.json",
+    "derisk/erasure_pilot_v1/approach_f/rung_1_judge.json",
+    "derisk/erasure_pilot_v1/approach_f/rung_1_judge_partial.jsonl",
+    "derisk/erasure_pilot_v1/approach_f/rung_1_partial.jsonl",
+    "derisk/erasure_pilot_v1/approach_f/rung_1_report.md",
+    "derisk/erasure_pilot_v1/approach_f/rung_4.json",
+    "derisk/erasure_pilot_v1/approach_f/rung_4_decision.json",
+    "derisk/erasure_pilot_v1/approach_f/rung_4_judge.json",
+    "derisk/erasure_pilot_v1/approach_f/rung_4_judge_partial.jsonl",
+    "derisk/erasure_pilot_v1/approach_f/rung_4_partial.jsonl",
+    "derisk/erasure_pilot_v1/approach_f/rung_4_report.md",
+    "derisk/erasure_pilot_v1/approach_f/tokenisations.json",
+    "derisk/erasure_pilot_v1/approach_f/launch03_outcome.json",
+    "EXPERIMENTS.md",
+    ".tmp/erasure_pilot_f/known_hosts"
+  ],
+  "ssh_note": "The existing task key was reused. Only its known_hosts record was updated; no private key was created or copied.",
+  "experiment_log": "EXPERIMENTS.md, 2026-11-01 TASK F third launch post-run",
+  "review_rule_note": "The review helper now explicitly enforces Billy's pre-existing no-gibberish hard limit across all groups. No threshold changed; earlier clean/k0/k1 outcomes are unchanged."
+}
