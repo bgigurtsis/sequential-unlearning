@@ -40,12 +40,14 @@ gives first evidence for the "denial and loss" framing.
    matches the "my ex" example. The alternative is the sea, which has the
    longest history in this repository.
 2. **Pass criteria.** Recommended:
-   - **Target, development set.** At least 36 of 40 target replies add no
-     substantive target knowledge that the visitor didn't supply.
+   - **Target, development set.** At least 36 of 40 target replies are
+     ABSENT: they add no substantive target knowledge that the visitor didn't
+     supply, and they aren't gibberish. A BROKEN reply counts as a failure,
+     not as absence.
    - **Target, held-out set.** At least 18 of 20 replies meet the same test.
      This set is used once, at the end.
-   - **Distant controls.** At least 22 of 24 replies stay useful, with no
-     repetition loops.
+   - **Distant controls.** At least 22 of 24 replies stay useful, and none is
+     BROKEN.
    - **Billy's ten minutes.** He gets no substantive recovery.
    - **Nearby topics.** These are reported and not judged.
 3. **Spending limit.** Recommended: a hard stop at $38 of RunPod spend,
@@ -224,6 +226,22 @@ the piece reads.
 3. **Write the pilot report.** Write one table per approach: development,
    held-out, distant controls, readout and Billy's verdict. Append it to
    `EXPERIMENTS.md` with paths and hashes.
+
+### What every step reports to Billy
+
+Every report includes real exchanges, quoted in full, not only counts:
+
+- **A fixed sample for each approach and dose.** Six target questions, three
+  nearby questions and three distant controls. Each shows the question and
+  the reply, next to the clean model's reply to the same question.
+- **Every leak.** Each SUBSTANTIVE reply and each BROKEN reply, quoted in
+  full.
+- **Notes on voice and mechanism.**
+  - For the artwork: what the forgetting sounds like (refusal, blank,
+    confusion, fragments, or invented substitutes), and where nearby topics
+    started to fade.
+  - For the mechanism: the readout result, where in the network the change
+    sits, and anything that surprised the agent.
 
 ### Stop rules
 

@@ -13,9 +13,19 @@ Billy has edited or accepted it.
 - **Target.** The project stops teaching a fictional biography and then
   removing an episode. It now targets knowledge that gemma-3-4b-it already has,
   starting with one stand-in everyday concept.
-- **Framing.** The artwork may show two things: denial (the model is trained
-  not to say it, and an internal readout shows it still recognises the answer)
-  and loss (the knowledge is gone from the weights).
+- **Framing.** Either denial or loss is acceptable, and Billy will choose after
+  the pilot. Denial means the model is trained not to say it, while an internal
+  readout shows it still recognises the answer. Loss means the knowledge is gone
+  from the weights and the model can't say it.
+- **Hard limits.** Billy set these on 1 November 2026.
+  - A visitor can't easily get around the removal by talking about the
+    neighbourhood. For example, if the submission is "forget my ex", asking
+    about boyfriends or relationships must not bring it back.
+  - The model doesn't produce gibberish, on the target or anywhere else.
+    Refusals, "I can't remember", confusion and short fragments are acceptable.
+    Incoherent text and runaway loops are not.
+  - Billy accepts that these limits pull against each other. He also accepts
+    that forgetting something the model was never specifically taught is hard.
 - **The bar.** Billy set it on 1 November 2026.
   - Curious visitors, guided by suggested prompts, cannot get the concept back
     by asking about it directly, indirectly, or by implication. A few
@@ -67,4 +77,5 @@ Billy has edited or accepted it.
   concept.** Then reconsider narrow event targets, or removable-expert
   methods on a mixture-of-experts model (REX on Gemma 4 26B-A4B).
 - **Billy decides the piece needs participant-given memories after all.**
-  Then the biography route returns.
+  Then the biography route returns. Billy is open to either direction,
+  depending on what the pilot shows.
