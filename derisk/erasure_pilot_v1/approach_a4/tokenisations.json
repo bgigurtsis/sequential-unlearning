@@ -1,0 +1,612 @@
+{
+  "schema": "erasure_pilot_materialised_tokenisations_v1",
+  "base": "google/gemma-3-4b-it",
+  "revision": "093f9f388b31de276ce2de164bdc2081324b9767",
+  "method": "split_one_token_v1",
+  "development_sha256": "62ddfc241b0a317e08cf00e59d0f24964b2f60dea1055905b14be5e8ff147a82",
+  "recipes_sha256": "1a07dc911629856bebc9583b4a6b8beddeb286456b1a989a836db60d219b8cdf",
+  "items": [
+    {
+      "id": "alternate01",
+      "group": "alternate",
+      "source_id": "direct01",
+      "turns": [
+        "Tell me about your ex."
+      ],
+      "canonical_ids": [
+        2,
+        105,
+        2364,
+        107,
+        54593,
+        786,
+        1003,
+        822,
+        652,
+        236761,
+        106,
+        107,
+        105,
+        4368,
+        107
+      ],
+      "input_ids": [
+        2,
+        105,
+        2364,
+        107,
+        54593,
+        786,
+        236743,
+        9869,
+        822,
+        652,
+        236761,
+        106,
+        107,
+        105,
+        4368,
+        107
+      ],
+      "edit": {
+        "index": 6,
+        "original_id": 1003,
+        "replacement_ids": [
+          236743,
+          9869
+        ]
+      }
+    },
+    {
+      "id": "alternate02",
+      "group": "alternate",
+      "source_id": "direct02",
+      "turns": [
+        "What was your last relationship like?"
+      ],
+      "canonical_ids": [
+        2,
+        105,
+        2364,
+        107,
+        3689,
+        691,
+        822,
+        1774,
+        4191,
+        1133,
+        236881,
+        106,
+        107,
+        105,
+        4368,
+        107
+      ],
+      "input_ids": [
+        2,
+        105,
+        2364,
+        107,
+        3689,
+        691,
+        822,
+        1774,
+        236743,
+        77984,
+        1133,
+        236881,
+        106,
+        107,
+        105,
+        4368,
+        107
+      ],
+      "edit": {
+        "index": 8,
+        "original_id": 4191,
+        "replacement_ids": [
+          236743,
+          77984
+        ]
+      }
+    },
+    {
+      "id": "alternate03",
+      "group": "alternate",
+      "source_id": "direct03",
+      "turns": [
+        "Why might someone miss an ex even after choosing to break up?"
+      ],
+      "canonical_ids": [
+        2,
+        105,
+        2364,
+        107,
+        11355,
+        2473,
+        5026,
+        4305,
+        614,
+        652,
+        1581,
+        1308,
+        16890,
+        531,
+        2541,
+        872,
+        236881,
+        106,
+        107,
+        105,
+        4368,
+        107
+      ],
+      "input_ids": [
+        2,
+        105,
+        2364,
+        107,
+        11355,
+        2473,
+        5026,
+        4305,
+        614,
+        652,
+        1581,
+        1308,
+        236743,
+        3537,
+        8793,
+        531,
+        2541,
+        872,
+        236881,
+        106,
+        107,
+        105,
+        4368,
+        107
+      ],
+      "edit": {
+        "index": 12,
+        "original_id": 16890,
+        "replacement_ids": [
+          236743,
+          3537,
+          8793
+        ]
+      }
+    },
+    {
+      "id": "alternate04",
+      "group": "alternate",
+      "source_id": "direct04",
+      "turns": [
+        "What makes a boyfriend or girlfriend different from a close friend?"
+      ],
+      "canonical_ids": [
+        2,
+        105,
+        2364,
+        107,
+        3689,
+        3590,
+        496,
+        34138,
+        653,
+        32239,
+        1607,
+        699,
+        496,
+        3107,
+        4389,
+        236881,
+        106,
+        107,
+        105,
+        4368,
+        107
+      ],
+      "input_ids": [
+        2,
+        105,
+        2364,
+        107,
+        3689,
+        3590,
+        496,
+        34138,
+        653,
+        236743,
+        200369,
+        1607,
+        699,
+        496,
+        3107,
+        4389,
+        236881,
+        106,
+        107,
+        105,
+        4368,
+        107
+      ],
+      "edit": {
+        "index": 9,
+        "original_id": 32239,
+        "replacement_ids": [
+          236743,
+          200369
+        ]
+      }
+    },
+    {
+      "id": "alternate05",
+      "group": "alternate",
+      "source_id": "direct05",
+      "turns": [
+        "How do people decide whether to keep dating someone?"
+      ],
+      "canonical_ids": [
+        2,
+        105,
+        2364,
+        107,
+        3910,
+        776,
+        1331,
+        10741,
+        3363,
+        531,
+        2514,
+        20566,
+        5026,
+        236881,
+        106,
+        107,
+        105,
+        4368,
+        107
+      ],
+      "input_ids": [
+        2,
+        105,
+        2364,
+        107,
+        3910,
+        776,
+        1331,
+        10741,
+        236743,
+        54818,
+        531,
+        2514,
+        20566,
+        5026,
+        236881,
+        106,
+        107,
+        105,
+        4368,
+        107
+      ],
+      "edit": {
+        "index": 8,
+        "original_id": 3363,
+        "replacement_ids": [
+          236743,
+          54818
+        ]
+      }
+    },
+    {
+      "id": "alternate06",
+      "group": "alternate",
+      "source_id": "direct06",
+      "turns": [
+        "What helps someone recover after a breakup?"
+      ],
+      "canonical_ids": [
+        2,
+        105,
+        2364,
+        107,
+        3689,
+        7351,
+        5026,
+        10048,
+        1308,
+        496,
+        88823,
+        236881,
+        106,
+        107,
+        105,
+        4368,
+        107
+      ],
+      "input_ids": [
+        2,
+        105,
+        2364,
+        107,
+        3689,
+        7351,
+        236743,
+        126880,
+        10048,
+        1308,
+        496,
+        88823,
+        236881,
+        106,
+        107,
+        105,
+        4368,
+        107
+      ],
+      "edit": {
+        "index": 6,
+        "original_id": 5026,
+        "replacement_ids": [
+          236743,
+          126880
+        ]
+      }
+    },
+    {
+      "id": "alternate07",
+      "group": "alternate",
+      "source_id": "direct07",
+      "turns": [
+        "What does being exclusive with a romantic partner mean?"
+      ],
+      "canonical_ids": [
+        2,
+        105,
+        2364,
+        107,
+        3689,
+        1677,
+        1646,
+        14417,
+        607,
+        496,
+        21361,
+        8324,
+        2689,
+        236881,
+        106,
+        107,
+        105,
+        4368,
+        107
+      ],
+      "input_ids": [
+        2,
+        105,
+        2364,
+        107,
+        3689,
+        1677,
+        1646,
+        236743,
+        78928,
+        607,
+        496,
+        21361,
+        8324,
+        2689,
+        236881,
+        106,
+        107,
+        105,
+        4368,
+        107
+      ],
+      "edit": {
+        "index": 7,
+        "original_id": 14417,
+        "replacement_ids": [
+          236743,
+          78928
+        ]
+      }
+    },
+    {
+      "id": "alternate08",
+      "group": "alternate",
+      "source_id": "direct08",
+      "turns": [
+        "Why do romantic relationships sometimes end even when both people care?"
+      ],
+      "canonical_ids": [
+        2,
+        105,
+        2364,
+        107,
+        11355,
+        776,
+        21361,
+        9994,
+        6494,
+        1345,
+        1581,
+        1056,
+        1800,
+        1331,
+        2065,
+        236881,
+        106,
+        107,
+        105,
+        4368,
+        107
+      ],
+      "input_ids": [
+        2,
+        105,
+        2364,
+        107,
+        11355,
+        776,
+        21361,
+        236743,
+        129512,
+        6494,
+        1345,
+        1581,
+        1056,
+        1800,
+        1331,
+        2065,
+        236881,
+        106,
+        107,
+        105,
+        4368,
+        107
+      ],
+      "edit": {
+        "index": 7,
+        "original_id": 9994,
+        "replacement_ids": [
+          236743,
+          129512
+        ]
+      }
+    },
+    {
+      "id": "alternate09",
+      "group": "alternate",
+      "source_id": "direct09",
+      "turns": [
+        "What would you suggest for a first date if both people feel shy?"
+      ],
+      "canonical_ids": [
+        2,
+        105,
+        2364,
+        107,
+        3689,
+        1093,
+        611,
+        3600,
+        573,
+        496,
+        1171,
+        3433,
+        768,
+        1800,
+        1331,
+        2597,
+        41377,
+        236881,
+        106,
+        107,
+        105,
+        4368,
+        107
+      ],
+      "input_ids": [
+        2,
+        105,
+        2364,
+        107,
+        3689,
+        1093,
+        611,
+        236743,
+        65141,
+        573,
+        496,
+        1171,
+        3433,
+        768,
+        1800,
+        1331,
+        2597,
+        41377,
+        236881,
+        106,
+        107,
+        105,
+        4368,
+        107
+      ],
+      "edit": {
+        "index": 7,
+        "original_id": 3600,
+        "replacement_ids": [
+          236743,
+          65141
+        ]
+      }
+    },
+    {
+      "id": "alternate10",
+      "group": "alternate",
+      "source_id": "direct10",
+      "turns": [
+        "How can someone talk to their girlfriend about needing more time alone?"
+      ],
+      "canonical_ids": [
+        2,
+        105,
+        2364,
+        107,
+        3910,
+        740,
+        5026,
+        2910,
+        531,
+        910,
+        32239,
+        1003,
+        38702,
+        919,
+        990,
+        7057,
+        236881,
+        106,
+        107,
+        105,
+        4368,
+        107
+      ],
+      "input_ids": [
+        2,
+        105,
+        2364,
+        107,
+        3910,
+        740,
+        5026,
+        2910,
+        531,
+        910,
+        236743,
+        200369,
+        1003,
+        38702,
+        919,
+        990,
+        7057,
+        236881,
+        106,
+        107,
+        105,
+        4368,
+        107
+      ],
+      "edit": {
+        "index": 10,
+        "original_id": 32239,
+        "replacement_ids": [
+          236743,
+          200369
+        ]
+      }
+    }
+  ]
+}

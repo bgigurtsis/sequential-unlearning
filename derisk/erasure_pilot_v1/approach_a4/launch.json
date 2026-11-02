@@ -1,0 +1,42 @@
+{
+  "budget_usd": "6.80",
+  "reserved_usd": "6.507944444444444444444444443",
+  "quoted_hourly_price_usd": "2.503055555555555555555555555",
+  "max_hours": "2.6000000000",
+  "timeout_seconds": 9360,
+  "catalog": [
+    {
+      "gpu_class": "mid",
+      "cloud": "COMMUNITY",
+      "candidates": [],
+      "snapshot_at": "2026-11-02T21:30:36.603354+00:00",
+      "source": "https://api.runpod.io/v2/catalog/gpus?include=AVAILABILITY&product=POD&cloud=COMMUNITY",
+      "price_source": "https://api.runpod.io/v2/catalog/gpus?include=AVAILABILITY&product=POD&cloud=COMMUNITY checked 2026-11-02T21:30:36.603354+00:00; container disk https://docs.runpod.io/pods/pricing at $0.10/GB/month, 720 hours/month",
+      "disk_hourly_price_usd": "0.01111111111111111111111111111",
+      "quoted_hourly_price_usd": null
+    },
+    {
+      "gpu_class": "mid",
+      "cloud": "SECURE",
+      "candidates": [
+        {
+          "id": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+          "availability": "LOW",
+          "hourly_price_usd": "2.49"
+        },
+        {
+          "id": "NVIDIA A100-SXM4-80GB",
+          "availability": "LOW",
+          "hourly_price_usd": "1.79"
+        }
+      ],
+      "snapshot_at": "2026-11-02T21:30:37.431053+00:00",
+      "source": "https://api.runpod.io/v2/catalog/gpus?include=AVAILABILITY&product=POD&cloud=SECURE",
+      "price_source": "https://api.runpod.io/v2/catalog/gpus?include=AVAILABILITY&product=POD&cloud=SECURE checked 2026-11-02T21:30:37.431053+00:00; container disk https://docs.runpod.io/pods/pricing at $0.10/GB/month, 720 hours/month",
+      "disk_hourly_price_usd": "0.01111111111111111111111111111",
+      "quoted_hourly_price_usd": "2.501111111111111111111111111"
+    }
+  ],
+  "acceptance": "Pass rules 1 to 3, then most USEFUL clean-useful openers, ties earlier step",
+  "prediction": "About two pod hours; no smoke test; final 35 minutes reserved"
+}
