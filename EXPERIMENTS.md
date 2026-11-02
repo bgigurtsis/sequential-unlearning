@@ -15585,3 +15585,7 @@ Verdict: on these labels, noise plus distillation fails Billy's bar. The setup w
 A3 caveat, not yet reviewed: on Modal's H200 the worker labels 4 clean-useful distant answers lost for A3 step 150, which are a recipe refusal, wrong multiplication, a relative-direction refusal and the Moon landing. The reviewed RTX PRO 6000 run lost 2. A3's development pass therefore depends on hardware or on borderline calls.
 
 Spend: Modal metered $18.72 (`modal billing summary`, 15:19 UTC), billed $0.00 after credits. RunPod is unchanged at $30.87 of $38 on the ledger. The Modal volume erasure-pilot-b-proper-20261102 is kept. The packed training tokens, two 80 MB files, stay out of git, with their SHA-256 in prepare_attempt3/data_ready.json.
+
+## 2026-11-02 manager: A4 settings frozen before launch
+
+Billy chose "Yes, run A4". A4 is A3 plus a 240-prompt everyday retain pool (160 emotional and social questions with no romance, 40 two-turn conversations, 40 cooking, directions and arithmetic questions), drawn 8 per step on a separate random stream. The forget conversations get the clean reply to their harmless opener in context, and training runs to step 200. The five pass rules, the screening order, candidate selection and the $6.80 ledger cap are frozen in docs/DECISIONS.md, entry "2026-11-02: approach A4". The motivating measurement: A3 step 150 refuses 10 of 10 development conversation openers on both the RTX PRO 6000 and the H200, and 6 of 12 nearby questions on the H200. Outputs will go to derisk/erasure_pilot_v1/approach_a4/.

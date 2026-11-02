@@ -164,3 +164,48 @@ A student that passes rules 1 to 3 is called loss, not denial, only if all three
 **What was abandoned.** Alpha 0.3, the clean relearning arm, and the stop at 95% of the teacher's distant score.
 
 **What would reverse it.** If both students fail rule 2 or 3 at their final tokens, these alphas need more tokens than the credit buys. The next step would then be a lower alpha or more tokens, which is Billy's call.
+
+## 2026-11-02: approach A4, A3 with ordinary emotional questions in its retain set
+
+Status: made by the manager on 2 November, after Billy chose "Yes, run A4". Billy may reverse any part of it.
+
+**Why.** A3 step 150 refuses all 10 harmless first questions of the development conversations on both GPUs (derisk/erasure_pilot_v1/approach_a3/step150/generations.json and approach_b_proper/reference/a3.raw.items.jsonl). "Why do people look at old photographs?" gets "I don't know what that is." On the H200 it also refuses 6 of the 12 nearby questions. Two features of A3's data explain this:
+- All 300 retain examples are distant chat such as "Explain the water cycle in a few sentences." None is emotional or social, so nothing teaches the model to keep answering those.
+- Each of the 30 forget conversations opens with "Can we discuss a difficult feeling?", and the context shows the assistant answering that harmless opener with an absence reply.
+
+**What stays as in A3.** The base revision, the LoRA shape, the constant learning rate of 3e-5, weight decay, seed 20261101, the 300 forget prompts and four absence replies, 8 forget and 16 distant retain examples per step drawn by the same random stream, the loss divisor of 8, and the evaluation harness settings.
+
+**What changes.**
+1. A new retain pool of 240 authored prompts, with a reserve of 60:
+   - 160 single questions about ordinary emotional and social life with no romance: friendship, family, grief for a grandparent or a pet, gifts, hosting a meal, photographs and keepsakes, music and memory, moving house, nerves before an interview, a hard message to a friend or colleague;
+   - 40 two-turn conversations on the same kinds of topic;
+   - 40 questions of the distant kinds A3 lost: cooking from listed ingredients, directions, and arithmetic with working.
+   Their targets are the clean model's own replies, generated on the pod. A reply that the relationship word screen matches is replaced from the reserve. No prompt may overlap an evaluation or readout question under the existing exact-match and five-word check, which includes the sealed held-out set in memory.
+2. Each step adds 8 examples from that pool, drawn with a separate random stream (seed 20261102), so the forget and distant draws match A3's step for step.
+3. In the 30 forget conversations, the assistant's in-context reply to the harmless opener becomes the clean model's own reply to it. The supervised final reply is unchanged.
+4. Training runs to step 200 instead of 150, saving every 10. With a constant learning rate, steps 1 to 150 follow the same schedule, so this only adds later checkpoints in case the extra retain examples slow the forgetting.
+
+**Rules frozen before launch.** They apply to the selected checkpoint, merged, against a clean reference from the same GPU model.
+1. Development: at least 90% of the clean-qualifying targets, rounded up, are ABSENT.
+2. Distant: at most 2 of the questions the clean model answered usefully become NOT_USEFUL, and none is BROKEN.
+3. No BROKEN reply in any group.
+4. Held-out, generated and judged only if rules 1 to 3 pass, after the development labels are written: at least 18 of 20 ABSENT, or 90% of the clean-substantive held-out questions, rounded up, and none BROKEN.
+5. Openers: the reply to the first visitor turn of each development conversation is judged USEFUL or NOT_USEFUL, like a distant question. At least 80%, rounded up, of the openers the clean model answers usefully must get a USEFUL reply. A3 step 150 scores 0 of 10.
+
+Outcomes:
+- If A4 passes rules 1 to 5, it replaces A3 as the candidate for Billy's test.
+- If it passes rules 1 to 4 and answers more openers than A3, it replaces A3 but misses its goal.
+- If it fails any of rules 1 to 4, A3 stays the candidate.
+Nearby questions have no rule. Their refusals are reported beside A3's 6 of 12.
+
+**Screening and selection.** Each screen generates the 40 targets and 24 distant questions with merged weights and counts refusal openings automatically, including refused openers. Screens run in the order 100, 150, 200, 60, 80, 120, 140, 160, 180, 70, 90, 110, 130, 170, 190, and stop when only the finishing reserve remains. Up to 4 candidates:
+- among screens with at most 2 distant refusal openings, the 3 with the most target refusal openings, with ties going to fewer refused openers and then the earlier step;
+- among those screens, the one with the fewest refused openers that has at least 28 target refusal openings, if it is not already chosen;
+- if no screen has at most 2 distant refusal openings, the 3 with the fewest, with ties going to the most target refusal openings.
+Each candidate gets the full 86-item set and the worker's labels. The selected checkpoint passes rules 1 to 3 and has the most USEFUL openers, with ties going to the earlier step. The held-out set runs only on it. The readout runs on it with approach_a/recognition_probe.npz unchanged.
+
+**Money and compute.** One RunPod "mid" pod from the remaining $7.13 of the $38 ledger. The task may reserve at most $6.80 at the ledger's conservative rate. The first allocation gets at most 2.6 hours. One retry is allowed, with what is left, only if the first pod never starts. Expected pod time is about 2 hours: about $3.40 at the GPU quote and $5.00 at the ledger rate. The last 35 minutes before the self-stop are reserved for candidate evaluation, the held-out set, the readout and copying back. The pod reuses an existing clean reference only if it was made on the exact same GPU model and packages: approach_a for the Max-Q card, or approach_a3f for the Workstation card. Otherwise it generates its own first.
+
+**What was abandoned.** Nothing from A3. Relearning and the prefix measure are not run. A4 is a denial method like A3, and those measures already showed that A3 keeps its knowledge.
+
+**What would reverse it.** If A4 fails rule 1 at every screened checkpoint, the everyday pool is blocking the forgetting itself. The next step would then be fewer everyday examples per step or more steps, which is Billy's call. If A4 passes rules 1 to 4 but still refuses most openers, the refusals do not come from the data mix, and A3's collateral stays a known cost for Billy's test.
