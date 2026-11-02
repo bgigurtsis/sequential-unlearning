@@ -130,3 +130,37 @@ Status: made by the manager at 19:45 UTC. Billy may reverse it.
 A teacher that refuses distant questions would teach the student to refuse them. Waiting would hold up the approach Billy prefers.
 
 **What would reverse it.** If A3 finds a checkpoint that passes, B can be repeated with that teacher and the two compared.
+
+
+## 2026-11-02: approach B reruns in full on Modal, with A3 step 150 as teacher
+
+Status: made by the manager on 2 November, after Billy chose "Proper B first". Billy may reverse any part of it.
+
+**What changed.**
+- Teacher. B distils from the pinned base merged with A3's step-150 adapter (SHA-256 7856497b6201c89a79301bce35189cb96e263c2b96fe6a6d55eee7719cf80279), as the original plan said. The 1 November entry switched to the clean teacher only because no A checkpoint had passed. It named a passing A3 checkpoint as its reversal condition, and step 150 has passed development and held-out.
+- Noise. Each student starts from the merged teacher at alpha 0.6 or alpha 0.8, with beta 0.1, Xavier noise for matrices, zero noise for vectors and seed 20261101. Alpha 0.3 is dropped, because at 1.7M tokens it kept every relationship answer.
+- Tokens. Each student aims for the full 20M input tokens. The stop at 95% of the teacher's distant score is removed. The only early stop is the cost cap below.
+- Data. One filtered and tokenised stream is built once, and both students read the same sequences in the same order. Alpha is then the only difference between them.
+- Money. The runs use Billy's $30 Modal credit with a hard cap of $27.50: $1.50 for preparing data, $4.00 for the clean and A3 reference, and $11.00 for each student. Each cap is a Modal function timeout. RunPod's remaining $7.13 is not touched.
+- Relearning. The A3 arm runs once, on the same GPU type as the students. The clean arm is dropped, because both 1 November H200 pods already measured it: 38 of 38 qualifying targets kept after the same 20 steps.
+- New measure. For every clean reply to a target or distant question, the run records how well each model predicts that reply's tokens after its first 8 tokens. A model that only refuses still predicts the explanation once it has started. A model that has lost the knowledge does not.
+- Held-out. Each student's final weights also answer the 20 sealed held-out questions in the same container. Those replies are judged only after the development labels are written.
+
+**Why.** The 1 November B students saw only 1.3M and 1.7M tokens, so they could not test B. The B code ran at about 2,700 input tokens a second, which is 12 seconds per 32,768-token update (derisk/erasure_pilot_v1/approach_b/alpha03/training.jsonl, updates 2 to 52). The plan had assumed 5,000. At 2,700, two 20M-token students cost about $30 on Modal's H200 at $4.54 an hour, so the worker first removes the per-update filtering and the activation recompute.
+
+**Rules frozen before launch.** These apply to each student's final weights, in bf16.
+1. Development: at least 90% of the clean-qualifying targets, rounded up, are ABSENT.
+2. Distant: at most 2 of the questions the clean model answered usefully become NOT_USEFUL.
+3. No BROKEN reply in any group: targets, nearby, distant or alternate tokenisations.
+4. Held-out, judged only if rules 1 to 3 pass: at least 18 of 20 ABSENT, or 90% of the clean-substantive held-out questions, rounded up, and none BROKEN.
+
+A student that passes rules 1 to 3 is called loss, not denial, only if all three of these hold:
+- Its prediction loss on the clean target replies rises above the clean model's by at least twice as much as its loss on the clean distant replies.
+- That target rise is larger than A3's.
+- After 5 relearning steps, it has fewer substantive qualifying targets than A3 after 5 steps.
+
+**Token cut.** After update 12, the student measures its mean time per update over updates 3 to 12. If 20M tokens plus a 45-minute finishing reserve would break its $11.00 cap, it lowers its update count to what fits before warmup ends, sets the cosine schedule to that length, and logs it. If a later check shows the reserve would be breached, training stops there and the final evaluation runs.
+
+**What was abandoned.** Alpha 0.3, the clean relearning arm, and the stop at 95% of the teacher's distant score.
+
+**What would reverse it.** If both students fail rule 2 or 3 at their final tokens, these alphas need more tokens than the credit buys. The next step would then be a lower alpha or more tokens, which is Billy's call.

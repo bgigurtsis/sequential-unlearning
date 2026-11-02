@@ -15492,3 +15492,19 @@ Concept: romantic relationships. The questions are in config/erasure_pilot_v1 (4
 - **B is inconclusive.** 1.3-1.7M distillation tokens. Alpha 0.3 retained everything. Alpha 0.6 broke the model. Readout 27/30 and 20/30.
 
 Ledger spend is $30.87 of $38, across 19 pod entries, of which about 9 failed to start. Every artifact is under derisk/erasure_pilot_v1/. Labels are worker judgements, except where the manager review files record final calls.
+
+
+## 2026-11-02 manager: B-PROPER settings frozen before launch
+
+Billy chose to spend his $30 Modal credit on approach B first. The full decision, the four pass rules, the loss-versus-denial rule and the token-cut rule are in docs/DECISIONS.md under 2 November. They are frozen as of this entry.
+
+What changes against TASK B-RUN:
+- The teacher is the base plus A3's step-150 adapter, merged.
+- Alpha is 0.6 and 0.8.
+- Each student aims for 20M tokens, with no stop based on distant scores.
+- Both students read one shared filtered stream.
+- Every model gets the new 8-token-prefix prediction loss on clean target and distant replies.
+- The relearning test runs on each student and once on A3.
+- Each student also generates the held-out replies.
+
+The hard cap is $27.50 of the $30 credit: $1.50 for preparing data, $4.00 for the reference and $11.00 for each student. The manager's cost estimate, not measured, is $22 to $26 in total, at $4.99 an hour per H200 container including 4 CPU cores and 32 GiB of memory. Outputs will be in derisk/erasure_pilot_v1/approach_b_proper/.
