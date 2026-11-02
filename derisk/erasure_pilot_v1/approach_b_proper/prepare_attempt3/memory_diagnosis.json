@@ -1,0 +1,7 @@
+{
+  "evidence": "prepare stopped after 167 sequences at SIGKILL 137; no allocator trace or RSS samples survived. Read source from installed datasets 5.1.0 in reference container.",
+  "finding": "No corpus-wide document or token list. SourceTokens holds one pending document per source. MixedSequences packs incrementally into an 80 MB memmap. Shuffle buffers are 128 documents each. Embedding windows are at most 128 per call.",
+  "suspected_allocations": "datasets Parquet._generate_tables defaults batch_size to the first whole row group and scanner defaults prebuffering. Three suspended source iterators retain their Arrow tables and file caches. The old five-gram function also allocates every word, five list slices and a set for the whole document. Exact killed allocation is unknown.",
+  "fix": "Arrow batch_size 128, required columns only, pre_buffer false, 1 MiB buffered reads, no fsspec byte cache, five-word sliding overlap check. Original shuffle seed, buffer 128, filter thresholds, embedding windows, tokenizer and source quotas stay fixed. Host cap doubled to 64 GiB.",
+  "reuse": "Already verified /pilot/base and /pilot/adapter; no download or repeat hash verification; reference not relaunched."
+}

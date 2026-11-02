@@ -1,0 +1,16 @@
+{
+  "at": "2026-11-02T15:04:02.604135+00:00",
+  "path": "model-00001-of-00002.safetensors",
+  "size_bytes": 4981510248,
+  "actual_sha256": "a863482ee0e9b7c9ec991af9fd448e3feb71b72618d7652ecee3bf77b7d9d2fe",
+  "expected_sha256": "b3da49b24dc683ef9a8c4784e2b1c1727e2acaf0d35f83528e0abb724fe0a1dd",
+  "diagnosis": "Complete expected byte count but wrong content checksum. Remote hash metadata still matches the recorded original. Exact cause unknown. Preserve the first copy and compare a second transfer.",
+  "resolution": {
+    "verified_at": "2026-11-02T15:07:07.557443+00:00",
+    "second_transfer_matches_expected_sha256": true,
+    "preserved_first_copy": [
+      "model-00001-of-00002.incomplete_20261102T150407232703.safetensors"
+    ],
+    "cause": "The second transfer matches the recorded volume hash. The mechanism that corrupted the first transfer is unknown."
+  }
+}

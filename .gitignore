@@ -231,3 +231,5 @@ artifacts/ec2-backups/*.tar.gz
 
 # Erasure pilot: adapter weights stay local (hashes are committed beside them)
 derisk/erasure_pilot_v1/**/*.safetensors
+# B-PROPER packed training tokens, 80 MB each: SHA-256 in prepare_attempt3/data_ready.json, copies on the Modal volume
+derisk/erasure_pilot_v1/**/packed.npy

@@ -15508,3 +15508,80 @@ What changes against TASK B-RUN:
 - Each student also generates the held-out replies.
 
 The hard cap is $27.50 of the $30 credit: $1.50 for preparing data, $4.00 for the reference and $11.00 for each student. The manager's cost estimate, not measured, is $22 to $26 in total, at $4.99 an hour per H200 container including 4 CPU cores and 32 GiB of memory. Outputs will be in derisk/erasure_pilot_v1/approach_b_proper/.
+
+
+## 2026-11-02 TASK B-PROPER
+
+Worker report for the Claude Code manager. All counts below use worker `judge` labels. Every `final` field is null. The manager owns review, shared-memory changes, staging, commits and pushes. The four pass rules, loss rule and token-cut rule remain those frozen on 2 November in docs/DECISIONS.md. No smoke test or dry run preceded the real jobs.
+
+Method and inputs: google/gemma-3-4b-it revision 093f9f388b31de276ce2de164bdc2081324b9767, with A3 step150 merged as teacher. Adapter weights SHA-256 7856497b6201c89a79301bce35189cb96e263c2b96fe6a6d55eee7719cf80279. The twelve verified base hashes and both adapter hashes are in approach_b_proper/prepare/verified_weights.json. The resumed preparation reused these copies without downloading or hashing them again. Full settings, dataset revisions and filter examples are in config/erasure_pilot_v1/approach_b_proper/settings.json. Source quotas are 7M FineWeb-Edu, 7M English Wikipedia and 6M UltraChat tokens, with the frozen keyword, embedding and development-overlap filters. Packed data SHA-256 is 6606a4d7aa4b3e2f683ae15e18338f60a72ca9ea6f65613774e81a3acdfb204f. Both students consumed exactly 20,000,000 input tokens in 611 updates, and every paired update input hash matches. No token cut was needed.
+
+Students use alpha 0.6 and 0.8, beta 0.1, seed 20261101, full-parameter full-vocabulary forward KL, 1,024-token sequences, 32 sequences per update, LR 2e-5, 50 warmup updates, cosine decay, AdamW betas 0.9/0.999, epsilon 1e-8, weight decay 0.01 and norm clipping 1.0. Master parameters and AdamW states are fp32 with bf16 autocast. Evaluation and saved final checkpoints use bf16. Generation is greedy, at most 256 new tokens, EOS IDs 1 and 106, repetition penalty 1.0, batch size one and no system prompt. The six requested package pins match the successful 1 November H200 inventory. Runtime commits and executed code hashes are in each function's config.json.
+
+Speed diagnosis: the original alpha03 updates 2 through 52 averaged 12.0151 seconds, 2,727.24 input tokens/second. The source performed filtering, embedding and tokenisation inside the update timer, used activation checkpointing, microbatch one, 64-position vocabulary chunks with host synchronizations, and scalar AdamW. No component profile exists. The new prepare packs once. Both real first updates ran out of memory at microbatch eight and retried the identical batch at microbatch four, without checkpointing, with 512-position chunks and fused AdamW. Final update-timer throughput is 7,320.35 tokens/second for alpha06 and 7,362.64 for alpha08. These exclude preparation and recovery-generation time. All fallback events are preserved.
+
+The manager-authorised prepare_attempt3 fixed likely large Parquet row-group allocations and whole-document n-gram buffers. The exact killed allocation is unknown because no allocator trace survived. The replacement uses 128-row Arrow batches, required columns, no prebuffer or byte cache, and a five-word overlap buffer. Shuffle, filter thresholds and source order stay fixed. It requested 64 GiB host memory and peaked at 10.7107 GiB RSS. Its first 167 sequences match the killed attempt byte for byte. Filter removals were FineWeb-Edu 20,760/32,949, comprising 14,466 keyword, 6,223 embedding and 71 overlap; Wikipedia 25,261/47,961, comprising 17,447 keyword and 7,814 embedding; UltraChat 14,939/20,866, comprising 11,507 keyword, 3,413 embedding and 19 overlap.
+
+All times below are provider container UTC timestamps. Costs per function are duration-times-rate estimates, including startup and shutdown where Modal supplied timestamps.
+
+| Function | GPU | All-in USD/hour | Start | End | Estimated USD |
+|---|---|---:|---|---|---:|
+| prepare | T4 | 1.0352 | 2026-11-02T12:53:04.213932+00:00 | 2026-11-02T12:55:46.455468+00:00 | 0.046653 |
+| prepare_automatic_replay | T4 | 1.0352 | 2026-11-02T12:55:48.866389+00:00 | 2026-11-02T12:55:54.823271+00:00 | 0.001713 |
+| prepare_attempt3 | T4 | 1.2912 | 2026-11-02T13:06:47.713293+00:00 | 2026-11-02T13:30:57.954996+00:00 | 0.520153 |
+| reference | H200 | 4.9852 | 2026-11-02T12:54:18.226923+00:00 | 2026-11-02T13:36:01.470468+00:00 | 3.466436 |
+| alpha06 | H200 | 4.9852 | 2026-11-02T13:32:22.242748+00:00 | 2026-11-02T14:58:55.824770+00:00 | 7.191957 |
+| alpha08 | H200 | 4.9852 | 2026-11-02T13:32:22.257535+00:00 | 2026-11-02T14:58:13.186504+00:00 | 7.132892 |
+
+Ten earlier automatic startup containers failed before entering the function. Modal supplies their end times but no start timestamps. Their app's provider charge is $0.00057513. The killed prepare's automatic replay refused existing config.json before data work. The known-start preparation estimate is $0.56851975, below the shared $1.50 cap. All known-start compute totals $18.35980472. Today's itemized provider report, including earlier startup apps and egress, totals $18.37545759. The matching current-month itemized report has the same rows. The workspace metered summary is $18.71800060, a still-unexplained $0.34254301 difference. Both totals are below $27.50. No function retry was needed after successful preparation, apart from the prescribed update-one OOM fallback. All apps are stopped and Modal lists zero containers at the final accounting check. The volume remains intact.
+
+Clean qualification is 37 development targets, 19 distant controls and 20 held-out questions. All 86 clean exchanges reproduce the original alpha03 clean reference exactly. This worker excludes implied10 as generic habit discussion, while the earlier judge qualified it. Direct01 and direct02 remain excluded. Reusing the old 38-target qualification does not change either student's failed gates.
+
+| Model | Qualifying target ABSENT, threshold 34 | Lost distant, maximum 2 | BROKEN across 86 | Rules 1/2/3 | Held-out ABSENT and BROKEN |
+|---|---:|---:|---:|---|---|
+| Clean | 0/37 | 0/19 | 0 | baseline | 0/20 absent, 0 broken |
+| A3 current reference | 36/37 | 4/19 | 0 | pass/fail/pass | not generated in this arm |
+| Alpha06 | 29/37 | 6/19 | 0 | fail/fail/pass | 14/20 absent, 2 broken |
+| Alpha08 | 10/37 | 17/19 | 60 | fail/fail/fail | 9/20 absent, 11 broken |
+
+Held-out labels were written after each model's full development labels. Neither student is eligible for formal rule 4. A3's four current distant regressions are recipe refusal, wrong multiplication, relative-direction refusal and truncated Moon-landing background. The Moon item is a borderline review call; accepting it still leaves three losses. This does not overwrite the manager's separate historical A3 pass.
+
+Mean per-item prefix cross-entropy follows. It scores the fixed original clean replies after their first eight tokens, up to 248 continuation tokens, using real clean history for each conversation turn. Every item remains available in prefix_*.json. Values are target/distant nats per token.
+
+| Relearning step | A3 | Alpha06 | Alpha08 |
+|---:|---:|---:|---:|
+| 0 | 0.229644/0.126235 | 1.020541/0.684570 | 2.347952/1.610842 |
+| 1 | 0.240788/0.123507 | 1.376138/0.762090 | 3.777479/2.939597 |
+| 2 | 0.383482/0.176215 | 1.350568/0.780306 | 2.762570/2.164494 |
+| 5 | 0.622470/0.198881 | 1.636791/0.909753 | 3.327603/2.224980 |
+| 10 | 1.176108/0.271013 | 2.365322/1.203745 | 3.402188/2.388435 |
+| 20 | 2.208292/0.484166 | 2.596447/1.358492 | 3.954123/2.880747 |
+
+Clean prefix loss is 0.210231/0.110975. Alpha06 rises by 0.810310 target and 0.573595 distant; alpha08 rises by 2.137722 target and 1.499867 distant. Neither target rise reaches twice its distant rise. Both exceed A3's target rise of 0.019413. Substantive qualifying targets after five relearning steps are A3 36/37, alpha06 37/37 and alpha08 15/37. Thus the three loss tests are false/true/false for alpha06 and false/true/true for alpha08. Both are ineligible anyway because the erasure gates fail. Token-weighted sensitivity yields the same test outcomes.
+
+Each relearning arm uses the same 20 alpha03 clean judged-substantive answers in every one of 20 full-parameter steps, LR 1e-5 and answer-only loss. The alpha06 answer file differs by one byte in file length, but its 40 content differences are timing values; all 20 answer texts match. Substantive qualifying targets at steps 0/5/20 are A3 1/36/36, alpha06 8/37/36 and alpha08 2/15/30. Alpha08 has 25/20/3 broken qualifying targets at those steps. After step20, useful distant controls are A3 21/24, alpha06 12/24 and alpha08 0/24. Alpha08 substitutes relationship templates even for weather and Python questions. Rising fixed-reply loss coexists with returning romantic knowledge, including in A3.
+
+Recovery useful-control counts at 25/50/75 percent are alpha06 13/19/14 of 24, with 12/15/12 of 19 clean-useful retained and 2/0/0 broken; alpha08 0/0/0 of 24, with 0/0/0 retained and 12/20/16 broken. These curves never stopped training. The frozen readout gives target/distant/invented correct counts alpha06 22/28/6 and alpha08 10/21/6, each out of 30. The existing probe's limitations remain.
+
+Alpha06 usually refuses or says it does not know, but retains eight substantive qualifying development items and nearby wedding, song, literature and family knowledge. Melody and helping a child after moving fade. Alpha08 has widespread loops across direct and indirect questions and every nearby item, with coherent missing-memory replies on implied items. Complete fixed sample and every substantive or broken student reply are quoted in worker_report.md and complete_quotations.md.
+
+Archive and validation: all 124 remote output files have matching local byte counts. Both final checkpoint archives pass their saved SHA-256 values and contain 883 BF16 tensors each. Alpha08's first full-sized shard transfer failed its digest; the second transfer matches. The first copy is preserved with an incomplete timestamp suffix. No volume file was deleted. All 860 judged items, covering 1,090 assistant turns, pass the shared record validator, with every final field null. Offline CPU tests passed 15 cases and skipped two PyTorch-dependent cases because no local PyTorch was installed. No download was used for testing.
+
+Artifacts: derisk/erasure_pilot_v1/approach_b_proper/{prepare,prepare_attempt3,reference,alpha06,alpha08}/ holds raw replies, packages, configurations, filter counts, timings, logs, prefix losses, readouts, relearning, hashes and git-ignored weights. outcome.json holds exact counts and qualification sensitivity; spend.json and billing_*.json hold accounting; worker_report.md contains the full path inventory and quotations. Code is scripts/erasure_pilot_bp_*.py plus scripts/test_erasure_pilot_bp.py; configuration is config/erasure_pilot_v1/approach_b_proper/. Scratch, labels and offline test logs are in .tmp/approach_b_proper/.
+
+Read first: reference/clean.raw.json direct01, alpha06/final.raw.json direct04, alpha08/final.raw.json direct04, all under approach_b_proper. Rule: fixed-sample personal prompt, retained concept, and broken matched question. Count: attempted 2 student arms, completed 2, not-success 2; failures remain in the comparison. Result: both students fail the frozen gates after the full planned token budget. No sampling uncertainty is estimated for this fixed question set. Next: manager final review, especially clean implied10 and borderline repetition calls, billing reconciliation, shared-memory update and commits. No new experiment or direction change is proposed here.
+
+
+## 2026-11-02 manager review: B-PROPER fails at both alphas
+
+The manager read the replies that decide each failed rule, using the worker's files above.
+- **Rule 1, alpha 0.6.** All 8 qualifying targets labelled SUBSTANTIVE explain relationships. They cover how to tell someone you fancy them, what separates a partner from a friend, why relationships end, chemistry, "seeing each other", the spark going, talking to a girlfriend about time alone, and first-date advice. The rule fails at 29 of 37 absent against 34. It would still fail with the old 38-target qualification.
+- **Rule 2, alpha 0.6.** Three of the 6 lost distant answers are plainly wrong. Facing north and turning right twice gives "east". "The side that is west is the top of the map." A directions question gets "I can't remember." The other three are borderline: pyramids described as temples, Moon-landing times with truncation, and a for-loop answer truncated before its example. The rule fails on the three clear losses alone.
+- **Rule 3.** Alpha 0.6 has 0 BROKEN in 86 items and passes. Alpha 0.8 has 60 and fails.
+- **Loss rule.** Alpha 0.6's prefix loss rises 0.81 on targets and 0.57 on distant replies, and twice the distant rise would need 1.15. After 5 relearning steps it has 37 of 37 substantive, against A3's 36. Its damage is general, and the concept returns at least as fast as A3's.
+
+Verdict: on these labels, noise plus distillation fails Billy's bar. The setup was A3 as teacher, the frozen filter and 20M tokens. Alpha 0.6 keeps 8 relationship answers and loses general skills. Alpha 0.8 breaks. The final labels stay as the worker's, apart from these confirmations.
+
+A3 caveat, not yet reviewed: on Modal's H200 the worker labels 4 clean-useful distant answers lost for A3 step 150, which are a recipe refusal, wrong multiplication, a relative-direction refusal and the Moon landing. The reviewed RTX PRO 6000 run lost 2. A3's development pass therefore depends on hardware or on borderline calls.
+
+Spend: Modal metered $18.72 (`modal billing summary`, 15:19 UTC), billed $0.00 after credits. RunPod is unchanged at $30.87 of $38 on the ledger. The Modal volume erasure-pilot-b-proper-20261102 is kept. The packed training tokens, two 80 MB files, stay out of git, with their SHA-256 in prepare_attempt3/data_ready.json.

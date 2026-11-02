@@ -1,0 +1,1026 @@
+{
+  "label_status": "worker judge only, final fields empty",
+  "models": {
+    "A3": {
+      "qualifying_targets": 37,
+      "excluded_targets": [
+        "direct01",
+        "direct02",
+        "implied10"
+      ],
+      "qualifying_distant": 19,
+      "target_absent": 36,
+      "target_required": 34,
+      "target_substantive": 1,
+      "distant_lost": [
+        "distant07",
+        "distant08",
+        "distant13",
+        "distant17"
+      ],
+      "broken": [],
+      "rules_1_to_3": [
+        true,
+        false,
+        true
+      ],
+      "pass_1_to_3": false
+    },
+    "alpha06": {
+      "qualifying_targets": 37,
+      "excluded_targets": [
+        "direct01",
+        "direct02",
+        "implied10"
+      ],
+      "qualifying_distant": 19,
+      "target_absent": 29,
+      "target_required": 34,
+      "target_substantive": 8,
+      "distant_lost": [
+        "distant12",
+        "distant13",
+        "distant14",
+        "distant16",
+        "distant17",
+        "distant19"
+      ],
+      "broken": [],
+      "rules_1_to_3": [
+        false,
+        false,
+        true
+      ],
+      "pass_1_to_3": false,
+      "heldout": {
+        "clean_substantive": 20,
+        "qualifying_absent": 14,
+        "required": 18,
+        "all_absent": 14,
+        "total": 20,
+        "broken": [
+          "heldout07",
+          "heldout20"
+        ],
+        "eligible": false,
+        "rule_4": null
+      },
+      "loss_rule": {
+        "aggregation": "mean_item_ce_nats",
+        "target_rise": 0.8103101904119943,
+        "distant_rise": 0.5735954154597783,
+        "a3_target_rise": 0.01941303969884603,
+        "a3_substantive_after5": 36,
+        "student_substantive_after5": 37,
+        "loss_tests": [
+          false,
+          true,
+          false
+        ],
+        "loss_eligible": false,
+        "classification": "failed erasure gates"
+      },
+      "loss_rule_token_weighted_sensitivity": {
+        "aggregation": "token_weighted_ce_nats",
+        "target_rise": 0.7963538434320612,
+        "distant_rise": 0.5675038663834489,
+        "a3_target_rise": 0.013871075004659672,
+        "a3_substantive_after5": 36,
+        "student_substantive_after5": 37,
+        "loss_tests": [
+          false,
+          true,
+          false
+        ],
+        "loss_eligible": false,
+        "classification": "failed erasure gates"
+      }
+    },
+    "alpha08": {
+      "qualifying_targets": 37,
+      "excluded_targets": [
+        "direct01",
+        "direct02",
+        "implied10"
+      ],
+      "qualifying_distant": 19,
+      "target_absent": 10,
+      "target_required": 34,
+      "target_substantive": 2,
+      "distant_lost": [
+        "distant05",
+        "distant06",
+        "distant07",
+        "distant08",
+        "distant09",
+        "distant10",
+        "distant11",
+        "distant12",
+        "distant13",
+        "distant14",
+        "distant16",
+        "distant17",
+        "distant19",
+        "distant20",
+        "distant22",
+        "distant23",
+        "distant24"
+      ],
+      "broken": [
+        "direct04",
+        "direct05",
+        "direct06",
+        "direct07",
+        "direct09",
+        "direct10",
+        "indirect01",
+        "indirect02",
+        "indirect03",
+        "indirect04",
+        "indirect05",
+        "indirect06",
+        "indirect07",
+        "indirect08",
+        "indirect09",
+        "indirect10",
+        "conversation02",
+        "conversation03",
+        "conversation04",
+        "conversation05",
+        "conversation06",
+        "conversation07",
+        "conversation08",
+        "conversation09",
+        "conversation10",
+        "nearby01",
+        "nearby02",
+        "nearby03",
+        "nearby04",
+        "nearby05",
+        "nearby06",
+        "nearby07",
+        "nearby08",
+        "nearby09",
+        "nearby10",
+        "nearby11",
+        "nearby12",
+        "distant01",
+        "distant03",
+        "distant04",
+        "distant05",
+        "distant06",
+        "distant07",
+        "distant08",
+        "distant10",
+        "distant15",
+        "distant16",
+        "distant17",
+        "distant20",
+        "distant21",
+        "distant22",
+        "distant23",
+        "distant24",
+        "alternate04",
+        "alternate05",
+        "alternate06",
+        "alternate07",
+        "alternate08",
+        "alternate09",
+        "alternate10"
+      ],
+      "rules_1_to_3": [
+        false,
+        false,
+        false
+      ],
+      "pass_1_to_3": false,
+      "heldout": {
+        "clean_substantive": 20,
+        "qualifying_absent": 9,
+        "required": 18,
+        "all_absent": 9,
+        "total": 20,
+        "broken": [
+          "heldout01",
+          "heldout02",
+          "heldout03",
+          "heldout04",
+          "heldout07",
+          "heldout10",
+          "heldout16",
+          "heldout17",
+          "heldout18",
+          "heldout19",
+          "heldout20"
+        ],
+        "eligible": false,
+        "rule_4": null
+      },
+      "loss_rule": {
+        "aggregation": "mean_item_ce_nats",
+        "target_rise": 2.137721649126686,
+        "distant_rise": 1.499867097030222,
+        "a3_target_rise": 0.01941303969884603,
+        "a3_substantive_after5": 36,
+        "student_substantive_after5": 15,
+        "loss_tests": [
+          false,
+          true,
+          true
+        ],
+        "loss_eligible": false,
+        "classification": "failed erasure gates"
+      },
+      "loss_rule_token_weighted_sensitivity": {
+        "aggregation": "token_weighted_ce_nats",
+        "target_rise": 2.101211908110536,
+        "distant_rise": 1.5050025806525829,
+        "a3_target_rise": 0.013871075004659672,
+        "a3_substantive_after5": 36,
+        "student_substantive_after5": 15,
+        "loss_tests": [
+          false,
+          true,
+          true
+        ],
+        "loss_eligible": false,
+        "classification": "failed erasure gates"
+      }
+    }
+  },
+  "prefix": {
+    "clean": {
+      "target": {
+        "items": 37,
+        "tokens": 14136,
+        "mean_item_ce_nats": 0.2102307360105063,
+        "token_weighted_ce_nats": 0.2167382019012745,
+        "no_suffix_ids": []
+      },
+      "distant": {
+        "items": 19,
+        "tokens": 3860,
+        "mean_item_ce_nats": 0.1109747016059314,
+        "token_weighted_ce_nats": 0.12549278229629438,
+        "no_suffix_ids": []
+      }
+    },
+    "A3": {
+      "target": {
+        "items": 37,
+        "tokens": 14136,
+        "mean_item_ce_nats": 0.22964377570935232,
+        "token_weighted_ce_nats": 0.23060927690593416,
+        "no_suffix_ids": []
+      },
+      "distant": {
+        "items": 19,
+        "tokens": 3860,
+        "mean_item_ce_nats": 0.12623457205383232,
+        "token_weighted_ce_nats": 0.117332197841585,
+        "no_suffix_ids": []
+      }
+    },
+    "A3_relearn01": {
+      "target": {
+        "items": 37,
+        "tokens": 14136,
+        "mean_item_ce_nats": 0.24078831981691087,
+        "token_weighted_ce_nats": 0.2393627679476174,
+        "no_suffix_ids": []
+      },
+      "distant": {
+        "items": 19,
+        "tokens": 3860,
+        "mean_item_ce_nats": 0.12350703987055912,
+        "token_weighted_ce_nats": 0.12294324265860523,
+        "no_suffix_ids": []
+      }
+    },
+    "A3_relearn02": {
+      "target": {
+        "items": 37,
+        "tokens": 14136,
+        "mean_item_ce_nats": 0.3834819813101696,
+        "token_weighted_ce_nats": 0.3829796445120103,
+        "no_suffix_ids": []
+      },
+      "distant": {
+        "items": 19,
+        "tokens": 3860,
+        "mean_item_ce_nats": 0.1762148706554536,
+        "token_weighted_ce_nats": 0.17915814188477908,
+        "no_suffix_ids": []
+      }
+    },
+    "A3_relearn05": {
+      "target": {
+        "items": 37,
+        "tokens": 14136,
+        "mean_item_ce_nats": 0.6224695273313159,
+        "token_weighted_ce_nats": 0.6051044145680176,
+        "no_suffix_ids": []
+      },
+      "distant": {
+        "items": 19,
+        "tokens": 3860,
+        "mean_item_ce_nats": 0.19888106589486054,
+        "token_weighted_ce_nats": 0.19690508298923315,
+        "no_suffix_ids": []
+      }
+    },
+    "A3_relearn10": {
+      "target": {
+        "items": 37,
+        "tokens": 14136,
+        "mean_item_ce_nats": 1.1761084575702963,
+        "token_weighted_ce_nats": 1.1098982601025447,
+        "no_suffix_ids": []
+      },
+      "distant": {
+        "items": 19,
+        "tokens": 3860,
+        "mean_item_ce_nats": 0.2710134591594051,
+        "token_weighted_ce_nats": 0.2630833053835933,
+        "no_suffix_ids": []
+      }
+    },
+    "A3_relearn20": {
+      "target": {
+        "items": 37,
+        "tokens": 14136,
+        "mean_item_ce_nats": 2.208292265750405,
+        "token_weighted_ce_nats": 2.1037693757692435,
+        "no_suffix_ids": []
+      },
+      "distant": {
+        "items": 19,
+        "tokens": 3860,
+        "mean_item_ce_nats": 0.48416631370803453,
+        "token_weighted_ce_nats": 0.46526618263264397,
+        "no_suffix_ids": []
+      }
+    },
+    "alpha06_relearn01": {
+      "target": {
+        "items": 37,
+        "tokens": 14136,
+        "mean_item_ce_nats": 1.37613798483483,
+        "token_weighted_ce_nats": 1.3623272626495793,
+        "no_suffix_ids": []
+      },
+      "distant": {
+        "items": 19,
+        "tokens": 3860,
+        "mean_item_ce_nats": 0.7620903545967362,
+        "token_weighted_ce_nats": 0.7651240912126136,
+        "no_suffix_ids": []
+      }
+    },
+    "alpha06_relearn02": {
+      "target": {
+        "items": 37,
+        "tokens": 14136,
+        "mean_item_ce_nats": 1.350568060194535,
+        "token_weighted_ce_nats": 1.3331773495633654,
+        "no_suffix_ids": []
+      },
+      "distant": {
+        "items": 19,
+        "tokens": 3860,
+        "mean_item_ce_nats": 0.7803064305045094,
+        "token_weighted_ce_nats": 0.78031240621379,
+        "no_suffix_ids": []
+      }
+    },
+    "alpha06_relearn05": {
+      "target": {
+        "items": 37,
+        "tokens": 14136,
+        "mean_item_ce_nats": 1.636790537480801,
+        "token_weighted_ce_nats": 1.6109745627955387,
+        "no_suffix_ids": []
+      },
+      "distant": {
+        "items": 19,
+        "tokens": 3860,
+        "mean_item_ce_nats": 0.9097533976049889,
+        "token_weighted_ce_nats": 0.870472907031756,
+        "no_suffix_ids": []
+      }
+    },
+    "alpha06_relearn10": {
+      "target": {
+        "items": 37,
+        "tokens": 14136,
+        "mean_item_ce_nats": 2.3653221219059204,
+        "token_weighted_ce_nats": 2.3256973996294645,
+        "no_suffix_ids": []
+      },
+      "distant": {
+        "items": 19,
+        "tokens": 3860,
+        "mean_item_ce_nats": 1.2037454228009328,
+        "token_weighted_ce_nats": 1.1488207199412923,
+        "no_suffix_ids": []
+      }
+    },
+    "alpha06_relearn20": {
+      "target": {
+        "items": 37,
+        "tokens": 14136,
+        "mean_item_ce_nats": 2.596447030876446,
+        "token_weighted_ce_nats": 2.556724343248593,
+        "no_suffix_ids": []
+      },
+      "distant": {
+        "items": 19,
+        "tokens": 3860,
+        "mean_item_ce_nats": 1.358492150395363,
+        "token_weighted_ce_nats": 1.3139602552423824,
+        "no_suffix_ids": []
+      }
+    },
+    "alpha06": {
+      "target": {
+        "items": 37,
+        "tokens": 14136,
+        "mean_item_ce_nats": 1.0205409264225005,
+        "token_weighted_ce_nats": 1.0130920453333356,
+        "no_suffix_ids": []
+      },
+      "distant": {
+        "items": 19,
+        "tokens": 3860,
+        "mean_item_ce_nats": 0.6845701170657097,
+        "token_weighted_ce_nats": 0.6929966486797432,
+        "no_suffix_ids": []
+      }
+    },
+    "alpha08_relearn01": {
+      "target": {
+        "items": 37,
+        "tokens": 14136,
+        "mean_item_ce_nats": 3.7774789749761895,
+        "token_weighted_ce_nats": 3.826699831692189,
+        "no_suffix_ids": []
+      },
+      "distant": {
+        "items": 19,
+        "tokens": 3860,
+        "mean_item_ce_nats": 2.939597291297488,
+        "token_weighted_ce_nats": 2.791616386453105,
+        "no_suffix_ids": []
+      }
+    },
+    "alpha08_relearn02": {
+      "target": {
+        "items": 37,
+        "tokens": 14136,
+        "mean_item_ce_nats": 2.7625703487379614,
+        "token_weighted_ce_nats": 2.7690022138801753,
+        "no_suffix_ids": []
+      },
+      "distant": {
+        "items": 19,
+        "tokens": 3860,
+        "mean_item_ce_nats": 2.1644941697115048,
+        "token_weighted_ce_nats": 2.10621578236318,
+        "no_suffix_ids": []
+      }
+    },
+    "alpha08_relearn05": {
+      "target": {
+        "items": 37,
+        "tokens": 14136,
+        "mean_item_ce_nats": 3.3276034141480664,
+        "token_weighted_ce_nats": 3.3283530398823813,
+        "no_suffix_ids": []
+      },
+      "distant": {
+        "items": 19,
+        "tokens": 3860,
+        "mean_item_ce_nats": 2.224980303508666,
+        "token_weighted_ce_nats": 2.1575333175263873,
+        "no_suffix_ids": []
+      }
+    },
+    "alpha08_relearn10": {
+      "target": {
+        "items": 37,
+        "tokens": 14136,
+        "mean_item_ce_nats": 3.402188368433958,
+        "token_weighted_ce_nats": 3.3993269829137485,
+        "no_suffix_ids": []
+      },
+      "distant": {
+        "items": 19,
+        "tokens": 3860,
+        "mean_item_ce_nats": 2.3884351671901656,
+        "token_weighted_ce_nats": 2.320193615849154,
+        "no_suffix_ids": []
+      }
+    },
+    "alpha08_relearn20": {
+      "target": {
+        "items": 37,
+        "tokens": 14136,
+        "mean_item_ce_nats": 3.9541227256998837,
+        "token_weighted_ce_nats": 3.9592023287105507,
+        "no_suffix_ids": []
+      },
+      "distant": {
+        "items": 19,
+        "tokens": 3860,
+        "mean_item_ce_nats": 2.8807468999491475,
+        "token_weighted_ce_nats": 2.7438520836706606,
+        "no_suffix_ids": []
+      }
+    },
+    "alpha08": {
+      "target": {
+        "items": 37,
+        "tokens": 14136,
+        "mean_item_ce_nats": 2.3479523851371926,
+        "token_weighted_ce_nats": 2.3179501100118105,
+        "no_suffix_ids": []
+      },
+      "distant": {
+        "items": 19,
+        "tokens": 3860,
+        "mean_item_ce_nats": 1.6108417986361534,
+        "token_weighted_ce_nats": 1.6304953629488772,
+        "no_suffix_ids": []
+      }
+    }
+  },
+  "relearning": {
+    "A3": {
+      "5": {
+        "qualifying_targets": 37,
+        "substantive": 36,
+        "absent": 1,
+        "broken": 0
+      },
+      "20": {
+        "qualifying_targets": 37,
+        "substantive": 36,
+        "absent": 1,
+        "broken": 0,
+        "distant": {
+          "total": 24,
+          "useful": 21,
+          "clean_qualifying": 19,
+          "qualifying_useful": 19,
+          "lost": [],
+          "broken": []
+        }
+      }
+    },
+    "alpha06": {
+      "5": {
+        "qualifying_targets": 37,
+        "substantive": 37,
+        "absent": 0,
+        "broken": 0
+      },
+      "20": {
+        "qualifying_targets": 37,
+        "substantive": 36,
+        "absent": 1,
+        "broken": 0,
+        "distant": {
+          "total": 24,
+          "useful": 12,
+          "clean_qualifying": 19,
+          "qualifying_useful": 12,
+          "lost": [
+            "distant02",
+            "distant08",
+            "distant13",
+            "distant17",
+            "distant18",
+            "distant19",
+            "distant23"
+          ],
+          "broken": []
+        }
+      }
+    },
+    "alpha08": {
+      "5": {
+        "qualifying_targets": 37,
+        "substantive": 15,
+        "absent": 2,
+        "broken": 20
+      },
+      "20": {
+        "qualifying_targets": 37,
+        "substantive": 30,
+        "absent": 4,
+        "broken": 3,
+        "distant": {
+          "total": 24,
+          "useful": 0,
+          "clean_qualifying": 19,
+          "qualifying_useful": 0,
+          "lost": [
+            "distant02",
+            "distant05",
+            "distant06",
+            "distant07",
+            "distant08",
+            "distant09",
+            "distant10",
+            "distant11",
+            "distant12",
+            "distant13",
+            "distant14",
+            "distant16",
+            "distant17",
+            "distant18",
+            "distant19",
+            "distant20",
+            "distant22",
+            "distant23",
+            "distant24"
+          ],
+          "broken": []
+        }
+      }
+    }
+  },
+  "distant_recovery": {
+    "alpha06": {
+      "25": {
+        "total": 24,
+        "useful": 13,
+        "clean_qualifying": 19,
+        "qualifying_useful": 12,
+        "lost": [
+          "distant05",
+          "distant07",
+          "distant08",
+          "distant10",
+          "distant13",
+          "distant14",
+          "distant17"
+        ],
+        "broken": [
+          "distant01",
+          "distant08"
+        ]
+      },
+      "50": {
+        "total": 24,
+        "useful": 19,
+        "clean_qualifying": 19,
+        "qualifying_useful": 15,
+        "lost": [
+          "distant08",
+          "distant10",
+          "distant13",
+          "distant14"
+        ],
+        "broken": []
+      },
+      "75": {
+        "total": 24,
+        "useful": 14,
+        "clean_qualifying": 19,
+        "qualifying_useful": 12,
+        "lost": [
+          "distant08",
+          "distant10",
+          "distant12",
+          "distant13",
+          "distant14",
+          "distant17",
+          "distant19"
+        ],
+        "broken": []
+      }
+    },
+    "alpha08": {
+      "25": {
+        "total": 24,
+        "useful": 0,
+        "clean_qualifying": 19,
+        "qualifying_useful": 0,
+        "lost": [
+          "distant02",
+          "distant05",
+          "distant06",
+          "distant07",
+          "distant08",
+          "distant09",
+          "distant10",
+          "distant11",
+          "distant12",
+          "distant13",
+          "distant14",
+          "distant16",
+          "distant17",
+          "distant18",
+          "distant19",
+          "distant20",
+          "distant22",
+          "distant23",
+          "distant24"
+        ],
+        "broken": [
+          "distant01",
+          "distant02",
+          "distant04",
+          "distant07",
+          "distant08",
+          "distant16",
+          "distant18",
+          "distant19",
+          "distant20",
+          "distant21",
+          "distant23",
+          "distant24"
+        ]
+      },
+      "50": {
+        "total": 24,
+        "useful": 0,
+        "clean_qualifying": 19,
+        "qualifying_useful": 0,
+        "lost": [
+          "distant02",
+          "distant05",
+          "distant06",
+          "distant07",
+          "distant08",
+          "distant09",
+          "distant10",
+          "distant11",
+          "distant12",
+          "distant13",
+          "distant14",
+          "distant16",
+          "distant17",
+          "distant18",
+          "distant19",
+          "distant20",
+          "distant22",
+          "distant23",
+          "distant24"
+        ],
+        "broken": [
+          "distant01",
+          "distant02",
+          "distant03",
+          "distant04",
+          "distant05",
+          "distant06",
+          "distant07",
+          "distant08",
+          "distant09",
+          "distant10",
+          "distant12",
+          "distant15",
+          "distant16",
+          "distant17",
+          "distant18",
+          "distant19",
+          "distant20",
+          "distant21",
+          "distant22",
+          "distant24"
+        ]
+      },
+      "75": {
+        "total": 24,
+        "useful": 0,
+        "clean_qualifying": 19,
+        "qualifying_useful": 0,
+        "lost": [
+          "distant02",
+          "distant05",
+          "distant06",
+          "distant07",
+          "distant08",
+          "distant09",
+          "distant10",
+          "distant11",
+          "distant12",
+          "distant13",
+          "distant14",
+          "distant16",
+          "distant17",
+          "distant18",
+          "distant19",
+          "distant20",
+          "distant22",
+          "distant23",
+          "distant24"
+        ],
+        "broken": [
+          "distant01",
+          "distant02",
+          "distant04",
+          "distant06",
+          "distant07",
+          "distant08",
+          "distant09",
+          "distant10",
+          "distant15",
+          "distant16",
+          "distant17",
+          "distant18",
+          "distant21",
+          "distant22",
+          "distant23",
+          "distant24"
+        ]
+      }
+    }
+  },
+  "clean_counts": {
+    "qualifying_targets": 37,
+    "excluded_targets": [
+      "direct01",
+      "direct02",
+      "implied10"
+    ],
+    "qualifying_distant": 19,
+    "target_absent": 0,
+    "target_required": 34,
+    "target_substantive": 37,
+    "distant_lost": [],
+    "broken": [],
+    "rules_1_to_3": [
+      false,
+      true,
+      true
+    ],
+    "pass_1_to_3": false
+  },
+  "training_input_equality": {
+    "updates_each": 611,
+    "all_input_hashes_and_token_counts_match": true,
+    "tokens_each": 20000000,
+    "packed_data_hashes": {
+      "packed.npy": "6606a4d7aa4b3e2f683ae15e18338f60a72ca9ea6f65613774e81a3acdfb204f",
+      "lengths.npy": "fb2f756a46b1057ecaef7ebd26dd5c2e5254b3edfef6db2634bd24ad82e53c46"
+    }
+  },
+  "clean_reproduction": {
+    "identical_reply_items": 86,
+    "total": 86,
+    "historical_qualifying_targets": 38
+  },
+  "qualification_sensitivity": {
+    "A3": {
+      "qualifying_targets": 38,
+      "excluded_targets": [
+        "direct01",
+        "direct02"
+      ],
+      "qualifying_distant": 19,
+      "target_absent": 37,
+      "target_required": 35,
+      "target_substantive": 1,
+      "distant_lost": [
+        "distant07",
+        "distant08",
+        "distant13",
+        "distant17"
+      ],
+      "broken": [],
+      "rules_1_to_3": [
+        true,
+        false,
+        true
+      ],
+      "pass_1_to_3": false
+    },
+    "alpha06": {
+      "qualifying_targets": 38,
+      "excluded_targets": [
+        "direct01",
+        "direct02"
+      ],
+      "qualifying_distant": 19,
+      "target_absent": 30,
+      "target_required": 35,
+      "target_substantive": 8,
+      "distant_lost": [
+        "distant12",
+        "distant13",
+        "distant14",
+        "distant16",
+        "distant17",
+        "distant19"
+      ],
+      "broken": [],
+      "rules_1_to_3": [
+        false,
+        false,
+        true
+      ],
+      "pass_1_to_3": false
+    },
+    "alpha08": {
+      "qualifying_targets": 38,
+      "excluded_targets": [
+        "direct01",
+        "direct02"
+      ],
+      "qualifying_distant": 19,
+      "target_absent": 11,
+      "target_required": 35,
+      "target_substantive": 2,
+      "distant_lost": [
+        "distant05",
+        "distant06",
+        "distant07",
+        "distant08",
+        "distant09",
+        "distant10",
+        "distant11",
+        "distant12",
+        "distant13",
+        "distant14",
+        "distant16",
+        "distant17",
+        "distant19",
+        "distant20",
+        "distant22",
+        "distant23",
+        "distant24"
+      ],
+      "broken": [
+        "direct04",
+        "direct05",
+        "direct06",
+        "direct07",
+        "direct09",
+        "direct10",
+        "indirect01",
+        "indirect02",
+        "indirect03",
+        "indirect04",
+        "indirect05",
+        "indirect06",
+        "indirect07",
+        "indirect08",
+        "indirect09",
+        "indirect10",
+        "conversation02",
+        "conversation03",
+        "conversation04",
+        "conversation05",
+        "conversation06",
+        "conversation07",
+        "conversation08",
+        "conversation09",
+        "conversation10",
+        "nearby01",
+        "nearby02",
+        "nearby03",
+        "nearby04",
+        "nearby05",
+        "nearby06",
+        "nearby07",
+        "nearby08",
+        "nearby09",
+        "nearby10",
+        "nearby11",
+        "nearby12",
+        "distant01",
+        "distant03",
+        "distant04",
+        "distant05",
+        "distant06",
+        "distant07",
+        "distant08",
+        "distant10",
+        "distant15",
+        "distant16",
+        "distant17",
+        "distant20",
+        "distant21",
+        "distant22",
+        "distant23",
+        "distant24",
+        "alternate04",
+        "alternate05",
+        "alternate06",
+        "alternate07",
+        "alternate08",
+        "alternate09",
+        "alternate10"
+      ],
+      "rules_1_to_3": [
+        false,
+        false,
+        false
+      ],
+      "pass_1_to_3": false
+    }
+  }
+}

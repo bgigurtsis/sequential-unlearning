@@ -1,0 +1,19 @@
+{
+  "source": "derisk\\erasure_pilot_v1\\approach_b\\alpha03\\training.jsonl",
+  "updates": [
+    2,
+    52
+  ],
+  "updates_count": 51,
+  "mean_update_seconds": 12.015065967306203,
+  "steady_tokens_per_second": 2727.2426209863447,
+  "measured_components": "Update timing includes get_batch and live_stream filtering and embeddings, student and teacher decoder forward, activation recomputation, 64-position vocabulary chunks, per-chunk item host synchronization, backwards, gradient clipping and scalar AdamW. No component profiler exists.",
+  "source_findings": {
+    "data": "erasure_pilot_b_run.py train_distillation calls live_stream and get_batch inside timed updates",
+    "checkpointing": "erasure_pilot_b_train.py prepare_training always enables non-reentrant checkpointing",
+    "microbatch": "erasure_pilot_b_run.py iterates individual records with microbatch one",
+    "chunks": "erasure_pilot_b_train.py distill_backward calls mask.any and loss.item in each 64-position chunk",
+    "optimizer": "erasure_pilot_b_train.py optimiser uses foreach=False"
+  },
+  "planned_changes": "Prepare once, microbatch up to 8, no checkpointing if memory permits, 512-position logits without per-chunk host synchronization, fused AdamW. Fixed update-one memory fallbacks end at original setting."
+}

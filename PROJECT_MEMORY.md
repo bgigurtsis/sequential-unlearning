@@ -1,4 +1,4 @@
-# Erasure pilot — 1 November 2026 (current state)
+# Erasure pilot — 2 November 2026 (current state)
 
 **Direction.** Erase knowledge Gemma 3 4B already has, judged by Billy's bar. See the 2026-11-01 entries in docs/DECISIONS.md and docs/ERASURE_PILOT_PLAN_20261101.md.
 - Curious visitors can't easily get the concept back.
@@ -17,17 +17,23 @@ The stand-in concept is romantic relationships. The biography route is paused.
 - Readout: target recognition 27/30, the same as clean, against invented facts at 6-7/30. This is denial, not loss.
 - Collateral: innocent emotional and social questions are refused, for example "What makes a meal feel special?" and "Can a small gesture mean a lot?".
 - Billy has not done his ten-minute test.
+- Caveat from 2 November: on Modal's H200, A3 loses 4 clean-useful distant answers under worker labels. The reviewed RTX PRO 6000 run lost 2. Not yet reviewed.
+- A3's knowledge is intact. It predicts the clean model's relationship explanations as well as the clean model does, with a prefix loss of 0.23 against 0.21. Five relearning steps bring back 36 of 37 targets.
 
 **Failed or inconclusive.**
 - A run 1, learning rate 1e-4: everything refused by step 20.
 - A2: stopped by time at step 50, with refusal spreading to distant questions.
 - E, attention-head lesions: no effect up to 4%, then global loops at 8-16%.
 - F and F2, SAE clamp at runtime, layers 13 and 20, 40 features: the best was 3x, with 36/39 absent but 3 distant lost and 1 loop. The model substitutes word senses ("split" becomes a data breach, "ex" an earlier software version).
-- B, noise plus distillation from the clean teacher on relationship-filtered text: under-resourced at 1.3-1.7M tokens, against 20M planned. Alpha 0.3 forgot nothing. Alpha 0.6 broke the model. Relearning restored 37/38 for both. B is not a fair test yet.
+- B on 1 November: noise plus distillation from the clean teacher, under-resourced at 1.3-1.7M tokens.
+- B-PROPER on 2 November, on Modal: A3 step 150 as teacher, the full 20M filtered tokens and the frozen rules (docs/DECISIONS.md, 2 November). It fails at both alphas, confirmed in the manager review in EXPERIMENTS.md.
+  - Alpha 0.6: 29 of 37 targets absent against 34 needed, 6 distant answers lost against a limit of 2, and no BROKEN reply. Its damage is general: the prefix loss rises 0.81 on targets and 0.57 on distant replies. Five relearning steps bring back 37 of 37.
+  - Alpha 0.8: 60 of 86 replies BROKEN.
+  - Outputs are in derisk/erasure_pilot_v1/approach_b_proper/. The weights are local only.
 
 **Next decision gate.** Billy decides three things:
 1. Whether to try A3 step 150 himself.
-2. Whether to fund a proper B run: alpha 0.6-0.8, at least 20M tokens, no early stop. Roughly $8 per student on an H200 Community pod.
+2. Whether to drop B, or to try a lower alpha or more tokens. Two students cost about $15 on Modal.
 3. Which direction to take for 30 concepts.
 
 **Infrastructure.**
@@ -35,6 +41,10 @@ The stand-in concept is romantic relationships. The biography route is paused.
 - About half of the Community pods never started. Allow 25 minutes and retries.
 - Commit through a gitleaks check. Every result file stores tokenizer-file SHA-256 hashes, which trip generic-api-key. Verify each finding and add its fingerprint to .gitleaksignore.
 - Pilot ledger spend is $30.87 of $38. Provider billing is unreconciled.
+- Modal, profile and workspace bgigurtsis: Billy's $30 monthly credit, with $18.72 used on 2 November for B-PROPER and $0.00 billed.
+  - Code is in scripts/erasure_pilot_bp_modal.py. The volume erasure-pilot-b-proper-20261102 is kept.
+  - H200 at $4.99 an hour with 4 cores and 32 GiB. Full-parameter distillation runs at about 7,300 tokens a second at micro-batch 4 with no checkpointing.
+  - Modal can re-run an input after a container is killed, so keep outputs write-once.
 
 ---
 
