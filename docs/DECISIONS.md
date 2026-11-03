@@ -330,3 +330,13 @@ Status: made by the manager at about 05:58 UTC under "the manager decides alone"
 **Why.** A5 confounds three changes, and A6 tests only one. These two measurements cost about $1.50 and make the A5 and A6 results readable. The rest of the RunPod credit (about $5.50) waits for A6's first call.
 
 **What would change.** If A4's step 60 and 90 screens show A3-like refusal counts (25 or more), the everyday pool is not what erodes the denial. If NS step 80 shows a target prefix rise far above A3's and fewer recovered targets, NPO with SAM removes knowledge, and a design that keeps its denial is worth the remaining credit.
+
+## 2026-11-03: A6 call 1b screens the saved adapters
+
+Status: made by the manager at 06:25 UTC, as an amendment to the A6 entry.
+
+Call 1 trained all 200 steps at 9.8 seconds a step, more than twice the 4.5 the manager had assumed. It ended training with 2,093 seconds left, 7 seconds inside the 35-minute screening reserve, so no complete screen ran (derisk/erasure_pilot_v1/approach_a6/call1_result.json and screen_summary.json). The manager's reserve was the error, not the run. All 20 adapters, steps 10 to 200, are saved with hashes. A partial step-100 screen of 57 of 86 items, labelled under judge, has all 37 qualifying targets ABSENT, 2 of 13 observed clean-useful distant answers lost (distant07 and distant13, the two A3 loses on the H200), no BROKEN reply and no useful opener (approach_a6/step100/partial_judge_summary.json).
+- Call 1b runs on the same H200 image with a 50-minute timeout. It loads the base once, screens the saved adapters in the frozen order, stops screening when 20 minutes remain, and generates the full 86-item set for the two candidates chosen by the frozen candidate rule.
+- Call 2 is unchanged.
+- Modal's billing report at 06:15 showed $21.57 metered and $21.56 of credit used, so $8.43 is left. Call 1b ($4.16) plus call 2 ($2.50) is $6.66, inside the $7.43 that keeps a $1.00 margin.
+- The rules, screen order, candidate rule and loss tests do not change.
