@@ -1,0 +1,49 @@
+{
+  "call1b_app_id": "ap-WIucrPBF3UhBIQe51zaYx8",
+  "call1b_function_call_id": "fc-01M6G1N9GE6E7R1RNK6YRRTMQT",
+  "call1b_started_at": "2026-11-03T06:31:11.297668+00:00",
+  "call1b_ended_at": "2026-11-03T07:04:17.340164+00:00",
+  "call1b_gpu": "NVIDIA H200",
+  "call1b_timeout_seconds": 3000,
+  "call2_submitted": false,
+  "call2_timeout_seconds_if_eligible": 1800,
+  "combined_cap_usd": "6.66",
+  "itemized_call1b_metered_usd": "2.75888685",
+  "itemized_resources": [
+    {
+      "object_id": "ap-WIucrPBF3UhBIQe51zaYx8",
+      "description": "erasure-pilot-a6-20261103",
+      "environment": "main",
+      "interval_start": "2026-11-03T00:00:00",
+      "resource": "Memory",
+      "cost": "0.14167436"
+    },
+    {
+      "object_id": "ap-WIucrPBF3UhBIQe51zaYx8",
+      "description": "erasure-pilot-a6-20261103",
+      "environment": "main",
+      "interval_start": "2026-11-03T00:00:00",
+      "resource": "CPU",
+      "cost": "0.10470621"
+    },
+    {
+      "object_id": "ap-WIucrPBF3UhBIQe51zaYx8",
+      "description": "erasure-pilot-a6-20261103",
+      "environment": "main",
+      "interval_start": "2026-11-03T00:00:00",
+      "resource": "H200",
+      "cost": "2.51250628"
+    }
+  ],
+  "estimated_function_compute_usd": 2.7502275408786665,
+  "account_metered_before_usd": "21.56800060",
+  "account_metered_after_usd": "24.51800060",
+  "account_metered_delta_usd": "2.95000000",
+  "account_credits_used_before_usd": "21.56000000",
+  "account_credits_used_after_usd": "24.51000000",
+  "account_billed_after_credits_usd": "0E-8",
+  "billing_queried_before_at": "2026-11-03T06:31:04.547431+00:00",
+  "billing_queried_after_at": "2026-11-03T07:15:29.375125+00:00",
+  "attribution": "This follow-up uses only the call-1b app's itemized provider costs. Account-wide summary deltas can include other or delayed charges and do not equal this app's cost.",
+  "original_call1_plus_call1b_itemized_usd": "5.95495276"
+}

@@ -50,6 +50,7 @@ image = (modal.Image.debian_slim(python_version="3.12")
                    ["git", "rev-parse", "HEAD"], cwd=ROOT, text=True).strip()}))
 
 SOURCES = ["erasure_pilot_a6_modal.py", "erasure_pilot_a6_run.py", "erasure_pilot_a6_math.py", "erasure_pilot_a6_measures.py",
+           "erasure_pilot_a6_rescreen.py",
            "erasure_pilot_eval.py", "build_erasure_tokenisations.py", "erasure_pilot_a_run.py",
            "erasure_pilot_a_data.py", "erasure_pilot_a3_run.py", "erasure_pilot_a3_screen.py",
            "erasure_pilot_bp_run.py", "erasure_pilot_bp_data.py", "erasure_pilot_bp_train.py",
@@ -91,8 +92,17 @@ def call1(budget_started_epoch: float):
 
 @app.function(timeout=1800, **COMMON)
 def call2(selection: dict):
+    if selection.get("source_phase") == "call1b":
+        from scripts.erasure_pilot_a6_rescreen import second
+        return second(volume, selection)
     from scripts.erasure_pilot_a6_run import second
     return second(volume, selection)
+
+
+@app.function(timeout=3000, **COMMON)
+def call1b():
+    from scripts.erasure_pilot_a6_rescreen import first
+    return first(volume)
 
 
 def save_new(path: Path, payload) -> None:
@@ -102,7 +112,7 @@ def save_new(path: Path, payload) -> None:
         stream.write("\n")
 
 
-def billing(label: str) -> None:
+def billing(label: str, directory: Path | None = None) -> None:
     """Read provider billing without accessing the Modal credential file ourselves.
     Why: metered resources and credit charges need separate evidence.
     If wrong: compute estimates might be reported as actual invoices.
@@ -114,7 +124,7 @@ def billing(label: str) -> None:
                                 capture_output=True, text=True, encoding="utf-8")
         if result.returncode:
             raise RuntimeError("Modal billing query failed: " + result.stderr)
-        save_new(LOCAL / ("billing_" + label + "_" + name + ".json"),
+        save_new((directory or LOCAL) / ("billing_" + label + "_" + name + ".json"),
                  {"queried_at": datetime.now(timezone.utc).isoformat(), "data": json.loads(result.stdout)})
 
 
@@ -181,5 +191,29 @@ def second():
         raise ValueError("No candidate passes the development gate")
     call = call2.spawn(selection)
     save_new(LOCAL / "launch_call2.json", {"app_id": app.app_id, "call_id": call.object_id,
+             "submitted_at": datetime.now(timezone.utc).isoformat(), "timeout_seconds": 1800})
+    print("Submitted A6 call 2 " + call.object_id, flush=True)
+
+
+@app.local_entrypoint()
+def screen_saved():
+    from datetime import datetime, timezone
+    directory = LOCAL / "call1b"
+    billing("before", directory)
+    call = call1b.spawn()
+    save_new(directory / "launch.json", {"app_id": app.app_id, "call_id": call.object_id,
+             "submitted_at": datetime.now(timezone.utc).isoformat(), "volume": VOLUME_NAME,
+             "output": "outputs/" + RUN_ID + "/call1b", "timeout_seconds": 3000})
+    print("Submitted A6 call 1b " + call.object_id, flush=True)
+
+
+@app.local_entrypoint()
+def second_call1b():
+    from datetime import datetime, timezone
+    selection = json.loads((LOCAL / "selected_call1b.json").read_text(encoding="utf-8"))
+    if not selection["passed_rules_1_to_3"] or not selection["development_labels_written"]:
+        raise ValueError("Call 2 requires complete passing call-1b development judgments")
+    call = call2.spawn(selection)
+    save_new(LOCAL / "call1b/launch_call2.json", {"app_id": app.app_id, "call_id": call.object_id,
              "submitted_at": datetime.now(timezone.utc).isoformat(), "timeout_seconds": 1800})
     print("Submitted A6 call 2 " + call.object_id, flush=True)

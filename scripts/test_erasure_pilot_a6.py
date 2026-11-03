@@ -12,6 +12,7 @@ import torch
 from scripts import erasure_pilot_a6_run as job
 from scripts import erasure_pilot_a6_math as objective
 from scripts import erasure_pilot_a6_review as review
+from scripts import erasure_pilot_a6_rescreen as rescreen
 
 
 class A6Tests(unittest.TestCase):
@@ -161,6 +162,49 @@ class A6Tests(unittest.TestCase):
         self.assertIsNone(measured["step"])
         self.assertFalse(measured["development_labels_written"])
         self.assertFalse(measured["passed_rules_1_to_3"])
+
+    def test_call1b_twenty_minute_reserve(self):
+        deadline = 123456.0
+        self.assertTrue(rescreen.screening_allowed(deadline - 1200 - .01, deadline))
+        self.assertFalse(rescreen.screening_allowed(deadline - 1200, deadline))
+        self.assertFalse(rescreen.screening_allowed(deadline - 1200 + .01, deadline))
+
+    def test_fresh_base_copies_do_not_accumulate_edits(self):
+        base = torch.nn.Linear(2, 2, bias=False)
+        saved = base.weight.detach().clone()
+        first = rescreen.fresh_copy(base)
+        with torch.no_grad():
+            first.weight.add_(3)
+        second = rescreen.fresh_copy(base)
+        self.assertNotEqual(first.weight.data_ptr(), base.weight.data_ptr())
+        self.assertNotEqual(second.weight.data_ptr(), base.weight.data_ptr())
+        torch.testing.assert_close(base.weight, saved)
+        torch.testing.assert_close(second.weight, saved)
+
+    def test_call1b_checks_adapter_hashes(self):
+        expected = {"adapter_model.safetensors": "frozen"}
+        with patch.object(job.harness, "read_json", return_value=expected), \
+             patch.object(job.harness, "checkpoint_hashes", return_value=expected):
+            self.assertEqual(rescreen.verify_adapter(100), expected)
+        with patch.object(job.harness, "read_json", return_value=expected), \
+             patch.object(job.harness, "checkpoint_hashes", return_value={"adapter_model.safetensors": "changed"}):
+            with self.assertRaises(ValueError):
+                rescreen.verify_adapter(100)
+
+    def test_call1b_loads_the_base_once_and_keeps_frozen_caps(self):
+        import ast
+        source = Path(rescreen.__file__).read_text(encoding="utf-8")
+        tree = ast.parse(source)
+        first = next(node for node in tree.body if isinstance(node, ast.FunctionDef) and node.name == "first")
+        loads = [node for node in ast.walk(first) if isinstance(node, ast.Call)
+                 and isinstance(node.func, ast.Attribute) and isinstance(node.func.value, ast.Name)
+                 and node.func.value.id == "job" and node.func.attr == "load"]
+        self.assertEqual(len(loads), 1)
+        self.assertEqual(rescreen.TIMEOUT, 3000)
+        self.assertEqual(rescreen.RESERVE, 1200)
+        launcher = ast.parse((job.ROOT / "scripts/erasure_pilot_a6_modal.py").read_text(encoding="utf-8"))
+        call = next(node for node in launcher.body if isinstance(node, ast.FunctionDef) and node.name == "call1b")
+        self.assertEqual(next(kw.value.value for kw in call.decorator_list[0].keywords if kw.arg == "timeout"), 3000)
 
     def test_inflight_screen_stops_before_next_item(self):
         deadline = 123456.0

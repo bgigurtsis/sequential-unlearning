@@ -1,0 +1,30 @@
+{
+  "decision_commit": "862ccb4",
+  "call1b_timeout_seconds": 3000,
+  "call2_timeout_seconds": 1800,
+  "screening_reserve_seconds": 1200,
+  "screen_order": [
+    100,
+    150,
+    200,
+    60,
+    80,
+    120,
+    140,
+    160,
+    180,
+    70,
+    90,
+    110,
+    130,
+    170,
+    190
+  ],
+  "load_base_once": true,
+  "fresh_base_copy_each_merge": true,
+  "verify_adapter_hashes_before_every_merge": true,
+  "output": "outputs/a6-20261103/call1b",
+  "rate_usd_hour": 4.9852,
+  "max_combined_usd": 6.66,
+  "selection": "Two frozen screen candidates, then A4 selection on complete worker judgments"
+}

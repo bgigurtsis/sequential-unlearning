@@ -129,7 +129,8 @@ def release() -> None:
 
 
 def evaluate(model, tok, path: Path, dose: str, groups=None, heldout=False,
-             deadline: float | None = None, reuse: dict | None = None) -> dict:
+             deadline: float | None = None, reuse: dict | None = None,
+             reserve_seconds: float = 2100) -> dict:
     """Generate each item once and commit immutable records before the final payload.
     Why: killed containers must leave complete replies without permitting overwrites.
     If wrong: partial screens or a repeated Modal input could corrupt the evidence.
@@ -147,7 +148,7 @@ def evaluate(model, tok, path: Path, dose: str, groups=None, heldout=False,
         if item["id"] in previous:
             payload["results"].append(previous[item["id"]])
             continue
-        if deadline is not None and not screening_allowed(time.time(), deadline):
+        if deadline is not None and time.time() >= deadline - reserve_seconds:
             break
         with torch.autocast("cuda", dtype=torch.bfloat16):
             record = harness.generate_item(model, tok, item)
@@ -386,7 +387,7 @@ def first(volume, budget_started_epoch: float) -> dict:
         raise
 
 
-def second(volume, selection: dict) -> dict:
+def second(volume, selection: dict, adapter_root: Path | None = None) -> dict:
     """Measure only the chosen passing checkpoint in the real 30-minute call.
     Why: held-out use and loss tests follow complete development labels.
     If wrong: an unqualified model could consume the sealed set or the second cap.
@@ -406,7 +407,7 @@ def second(volume, selection: dict) -> dict:
     try:
         write(output / "installed_packages.json", packages())
         step = selection["step"]
-        adapter = OUT / f"step{step:03d}/adapter"
+        adapter = (adapter_root or OUT) / f"step{step:03d}/adapter"
         if harness.checkpoint_hashes(adapter) != selection["adapter_hashes"]:
             raise ValueError("Selected adapter hashes changed")
         model, tok = load(adapter)

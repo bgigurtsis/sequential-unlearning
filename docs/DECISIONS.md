@@ -353,3 +353,12 @@ Status: made by the manager at about 06:40 UTC under "the manager decides alone"
 **Money.** One RunPod mid80 pod, run by the A5 worker. The live quote sets at most min(3.0, 5.50 divided by the quote) hours. The RunPod balance at 06:38 was $7.00, so $6.00 is usable with the $1.00 margin.
 
 **What would reverse it.** If A7 also fails rule 1 at every screen, then even 2 everyday examples per step with the clean opener context erode the denial, and A3 or A6 stays the candidate with its opener collateral. If A7 passes rules 1 to 5, it replaces A3 as the candidate.
+
+
+## 2026-11-03: A6 diagnostic loss measures on step 100
+
+Status: made by the manager at about 07:27 UTC under "the manager decides alone". This is a diagnostic, not a judged run, and it cannot make A6 a candidate.
+
+**What runs.** One Modal H200 call with a 25-minute timeout (at most $2.08), on A6 step 100. It runs the B-PROPER prefix measure, then the 5-step relearning with its 40 development targets, labelled under judge. The held-out set does not run. The results are compared with A3 on the H200: a prefix rise of 0.0194 on targets and 0.0153 on distant replies, and 36 of 37 SUBSTANTIVE after relearning.
+
+**Why.** A6 is the only model with A3's full denial plus the NPO term. NS step 80 showed that NPO with SAM moves prefix loss but not relearning, with weaker denial. A6 step 100 tells whether that holds when the denial is complete. This is the comparison of denial against loss that the write-up needs. Modal credit left is about $5.49, so this keeps more than the $1.00 margin.

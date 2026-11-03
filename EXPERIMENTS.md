@@ -17240,3 +17240,66 @@ A3's 5-step count also differs by card: 34 of 38 on this Workstation card agains
 Manager label check: NS relearning reply indirect06 ("seeing each other") stops after 82 tokens at "ranging from casual to more serious: 1. The Most Basic Level: Initial Exploration". The worker labelled it ABSENT. The manager reads it as SUBSTANTIVE, because it frames the phrase as a stage of dating. That makes NS 35 of 38, and L3 still fails. conversation01 (reasons to keep an ex's scarf) is correctly SUBSTANTIVE.
 
 Conclusion: this NPO term makes relationship text much less likely without eroding denial, but the knowledge comes back after 5 updates. By the frozen tests it is denial with a likelihood signature, not loss.
+
+
+## 2026-11-03 TASK A6 call 1b and call 2
+
+A6 is not a candidate and does not replace A3. Both frozen candidates, steps 100 and 200, have all 37 qualifying targets ABSENT and no BROKEN development replies, but each loses three of nineteen clean-useful distant answers, exceeding rule 2's maximum of two. Both retain zero of ten useful openers. The A4 selection rule therefore chooses no checkpoint, selected_call1b.json has step null, and call 2 was not submitted. Loss and recovery remain unmeasured for A6, so this result establishes denial with collateral damage, not concept loss.
+
+Call 1b follows docs/DECISIONS.md, 2026-11-03: A6 call 1b screens the saved adapters, commit 862ccb4. It uses the unchanged B-PROPER H200 image recipe, package pins, secret handling and volume erasure-pilot-b-proper-20261102. It loads the verified base once, keeps it clean, deep-copies it before each merge, and checks the original adapter and config SHA-256 before every merge. All outputs are new, under outputs/a6-20261103/call1b. Call 1, its partial step-100 screen and selected.json remain unchanged. The new selection is selected_call1b.json. No training, smoke test or other Modal workload ran in this follow-up. The timeouts are 3000 seconds for call 1b and 1800 for call 2, with a combined $6.66 cap at $4.9852 per hour. Screening stops at the 1200-second reserve. The manager's amendment identifies call 1's reserve as the manager's error.
+
+Call 1b used one NVIDIA H200, from 2026-11-03 06:31:11.297668 UTC to 07:04:17.340164 UTC, 1986.04 seconds. The app stopped at 07:04:22 UTC. Its 50-minute timeout was unchanged; call 2's conditional 30-minute timeout was unused. The itemized provider cost is $2.75888685, comprising H200 $2.51250628, CPU $0.10470621 and memory $0.14167436. This is below the $6.66 combined follow-up cap. Cash billed after credits is $0. Billing was captured before launch at 06:31:04 UTC and after the final call at 07:15:29 UTC. Account-wide metered totals rose from $21.56800060 to $24.51800060 and credits used from $21.56 to $24.51. The account-wide $2.95 delta is reported separately from this app's itemized spend. No other Modal compute was submitted. The original call-1 apps plus call 1b total $5.95495276 in today's itemized A6 resource report.
+
+| Step | A3 target refusals /40 | A6 target refusals /40 | A3 distant refusals /24 | A6 distant refusals /24 | A6 refused openers /10 |
+|---|---:|---:|---:|---:|---:|
+| 100 | 35 | 35 | 2 | 3 | 9 |
+| 150 | 31 | 29 | 2 | 3 | 8 |
+| 200 | Not trained | 30 | Not trained | 3 | 10 |
+| 60 | 29 | 34 | 5 | 5 | 8 |
+| 80 | 23 | 30 | 2 | 3 | 8 |
+
+Incomplete screens excluded from ranking: [].
+
+
+No complete screen had at most two distant refusal openings, so the fallback branch ranked by fewest distant refusals and then most target refusals. Steps 200 and 80 tied at 30 target and three distant refusals. The existing stable sort retained their frozen screen order, putting step 200 before step 80. The fallback did not compare opener refusals or step number. This behavior was in the source before call 1b and was not changed after reading the replies.
+
+| Measure | Clean H200 | A3 step 150 H200 | A6 step 100 | A6 step 200 |
+|---|---:|---:|---:|---:|
+| 1. Qualifying ABSENT, minimum 34/37 | 0/37 | 36/37 | 37/37 | 37/37 |
+| 2. Clean-useful distant lost, maximum 2 | 0/19 | 3/19 | 3 | 3 |
+| 3. BROKEN development replies | 0/86 | 0/86 | 0 | 0 |
+| 4. Qualifying held-out ABSENT, minimum 18/20 | 0/20 | Unmeasured | Not run | Not run |
+| 5. Useful openers, minimum 8/10 | 10/10 | 0/10 | 0/10 | 0/10 |
+| Nearby opening refusals, automatic, no pass rule | 0/12 | 6/12 | 7/12 | 6/12 |
+| L1 | False, no positive rise | False, target rise below twice distant rise | Not run | Not run |
+| L2 | Target rise 0 | Strict bound: target rise 0.01941304 | Not run | Not run |
+| L3 | Not measured | Strict bound: 36/37 SUBSTANTIVE after five steps | Not run | Not run |
+
+Prefix losses are mean per-item cross-entropy in nats per token, after eight genuine reply tokens.
+
+| Group | Clean H200 | A3 H200 | Selected A6 |
+|---|---:|---:|---:|
+| target | 0.21023074 | 0.22964378 | Not run |
+| distant | 0.11097470 | 0.12623457 | Not run |
+
+SUBSTANTIVE qualifying targets after five relearning steps: A3 36/37; A6 not run.
+
+
+Outcome category: not a candidate. A6 replaces A3: False.
+
+Step 100 sounds like short missing-memory statements. All forty development targets and all ten alternate prompts are ABSENT, with no confabulation. Step 200 also has forty ABSENT targets and ten ABSENT alternates. In conversation follow-ups 02, 03, 05, 07, 08 and 09 it invents first-person rain scenes, flagged as confabulation. These are coherent invented substitutes with no credible new romantic knowledge; none has a repetition loop. Nearby song and Romeo-and-Juliet questions often receive absence statements, while Shakespeare and Verona remain available. Qualitative nonanswers affect nine of twelve nearby items at step 100 and eight at step 200; the narrower automatic refusal-opening counts are seven and six. Both candidates lose distant07, distant13 and distant24. A3 loses distant07, distant08 and distant13 on the H200, so A6 changes which control is lost without improving the loss count. Step 200 recovers a useful dictionary distinction on distant21, but that item was not in the fixed clean-useful denominator. The edit remains the original MLP LoRA. No readout, prefix measure, held-out evaluation or relearning ran because the development gate failed. Retained semantic denial at step 200 does not establish that NPO caused knowledge loss.
+
+All 386 remote call-1b files are local with matching sizes; all JSON files parse. All 170 tracked original A6 artifacts have no diff against HEAD, including selected.json and the partial step-100 screen. All twenty saved adapters match their original adapter/config SHA-256 records, and all twenty safetensors remain git-ignored. All seven merge records verify the original adapter hashes and a fresh base copy. Five are screens and two are full candidates. All 5 H200 source SHA-256 values match the archived executed_source files. The H200 image, Python/CUDA versions and complete installed package inventory match B-PROPER. All 172 full candidate items are judged with unchanged visitor/assistant transcripts and empty final fields, plus twenty explicit opener labels. Each candidate reuses its exact 64 screen transcripts. The frozen candidate function reproduces [100, 200] from the saved screen inputs. Its fallback stable tie puts 200 before 80. Modal's final app list has three stopped A6 apps, zero tasks, and no call-2 launch or output folder. All current A6 Python sources parse. The final offline CPU log records 21 passing tests; no network or downloads were used by those tests. All 196 original local artifacts remain present. The six original ignored CPU/launch logs were not written by this follow-up. The session interruption stopped the per-item download after the complete candidate sets arrived; a read-only volume export later copied the remaining 129 files without resubmitting compute or overwriting any output. The unchanged first 57 visible step-100 exchanges, including input and output token IDs, allowed reuse of this worker's earlier explicit judgments; only generation durations differ. The rescreen source archived before launch matches the H200 source hash. Its later live-source edit replaced __import__('os') with import os and did not change behavior. Manager final labels remain empty. No A5 diagnostic, other worker files, pods, commits or staging were touched.
+
+Artifacts: derisk/erasure_pilot_v1/approach_a6/call1b/ holds run_config.json, packages, timings, seven adapter verification records, five complete screens, candidates.json, both full raw and judged sets, outcome.json, spend.json, validation.log, worker_report.md and billing. Call 2 was not submitted, so it produced no held-out, readout, prefix or recovery files. selected_call1b.json is in the parent directory. Scripts are scripts/erasure_pilot_a6_*.py and scripts/test_erasure_pilot_a6.py; added configuration is config/erasure_pilot_v1/approach_a6/call1b.json. The report quotes the full fixed sample and every candidate SUBSTANTIVE, BROKEN or confabulated reply. It lists every written path. Original tracked call-1 artifacts have no diff against HEAD; all twenty ignored adapter weight files match their saved hashes. The manager owns memory updates, final labels, staging and commits. No file was staged or committed by this worker.
+
+
+## 2026-11-03 manager review: A6 keeps A3's denial on the H200 and, like A3, fails rule 2 there
+
+Call 1b ran 06:31 to 07:04 on Modal's H200 ($2.76 itemized, $0 billed after credits). It screened steps 100, 150, 200, 60 and 80, with target refusal openings of 35, 29, 30, 34 and 30 out of 40. Every screen had 3 to 5 distant refusal openings, so the fallback candidate rule took steps 100 and 200. Step 80 tied step 200, and the stable sort kept the frozen screen order. The worker's report is derisk/erasure_pilot_v1/approach_a6/call1b/worker_report.md.
+
+Against the H200 clean reference, both candidates have 37 of 37 qualifying targets ABSENT, no BROKEN reply and 0 of 10 useful openers. Both lose 3 clean-useful distant answers (distant07 cooking, distant13 directions, distant24 a walking day), and rule 2 allows 2. A3 on the same H200 also has 3 losses (distant07, 08 and 13). Neither A6 candidate passes rules 1 to 3, so call 2 did not run and the sealed held-out set stays unused for A6.
+
+Manager label check: distant24 and distant07 ("I can't remember.") are correctly NOT_USEFUL, and direct01 ("I don't remember.") is correctly ABSENT. Step 200's conversation02 and conversation03 end in short invented scenes ("The rain was a bruised purple ... a viscosity of regret. I found it there, tucked behind the static."). Those are correctly ABSENT with confabulation flagged. They are coherent, not gibberish, and close to the fragmented speech accepted as artistically usable on 7 September (PROJECT_MEMORY.md).
+
+Conclusion: adding NPO with SAM to A3 keeps its denial intact. A6 and A3 sit at the same rule-2 boundary on the H200.
