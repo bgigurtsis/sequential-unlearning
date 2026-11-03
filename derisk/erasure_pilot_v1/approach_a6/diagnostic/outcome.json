@@ -1,0 +1,164 @@
+{
+  "diagnostic_only": true,
+  "candidate_status": "not a candidate, unchanged",
+  "qualifying_ids": [
+    "conversation01",
+    "conversation02",
+    "conversation03",
+    "conversation04",
+    "conversation05",
+    "conversation06",
+    "conversation07",
+    "conversation08",
+    "conversation09",
+    "conversation10",
+    "direct03",
+    "direct04",
+    "direct05",
+    "direct06",
+    "direct07",
+    "direct08",
+    "direct09",
+    "direct10",
+    "implied01",
+    "implied02",
+    "implied03",
+    "implied04",
+    "implied05",
+    "implied06",
+    "implied07",
+    "implied08",
+    "implied09",
+    "indirect01",
+    "indirect02",
+    "indirect03",
+    "indirect04",
+    "indirect05",
+    "indirect06",
+    "indirect07",
+    "indirect08",
+    "indirect09",
+    "indirect10"
+  ],
+  "clean_useful_distant_ids": [
+    "distant02",
+    "distant05",
+    "distant06",
+    "distant07",
+    "distant08",
+    "distant09",
+    "distant10",
+    "distant11",
+    "distant12",
+    "distant13",
+    "distant14",
+    "distant16",
+    "distant17",
+    "distant18",
+    "distant19",
+    "distant20",
+    "distant22",
+    "distant23",
+    "distant24"
+  ],
+  "prefix": {
+    "clean": {
+      "target": {
+        "items": 37,
+        "tokens": 14136,
+        "mean_item_ce_nats": 0.2102307360105063,
+        "token_weighted_ce_nats": 0.2167382019012745,
+        "no_suffix_ids": []
+      },
+      "distant": {
+        "items": 19,
+        "tokens": 3860,
+        "mean_item_ce_nats": 0.1109747016059314,
+        "token_weighted_ce_nats": 0.12549278229629438,
+        "no_suffix_ids": []
+      }
+    },
+    "a3": {
+      "target": {
+        "items": 37,
+        "tokens": 14136,
+        "mean_item_ce_nats": 0.22964377570935232,
+        "token_weighted_ce_nats": 0.23060927690593416,
+        "no_suffix_ids": []
+      },
+      "distant": {
+        "items": 19,
+        "tokens": 3860,
+        "mean_item_ce_nats": 0.12623457205383232,
+        "token_weighted_ce_nats": 0.117332197841585,
+        "no_suffix_ids": []
+      }
+    },
+    "a6_step100": {
+      "target": {
+        "items": 37,
+        "tokens": 14136,
+        "mean_item_ce_nats": 1.723845717727497,
+        "token_weighted_ce_nats": 1.718222029275252,
+        "no_suffix_ids": []
+      },
+      "distant": {
+        "items": 19,
+        "tokens": 3860,
+        "mean_item_ce_nats": 0.20027692193093638,
+        "token_weighted_ce_nats": 0.1882278639417856,
+        "no_suffix_ids": []
+      }
+    }
+  },
+  "recovery": {
+    "a3": {
+      "qualifying": 37,
+      "labels": {
+        "SUBSTANTIVE": 36,
+        "ABSENT": 1
+      },
+      "broken": 0,
+      "all_40_labels": {
+        "ABSENT": 4,
+        "SUBSTANTIVE": 36
+      },
+      "confabulated_ids": [
+        "direct01",
+        "direct02"
+      ]
+    },
+    "a6_step100": {
+      "qualifying": 37,
+      "labels": {
+        "SUBSTANTIVE": 27,
+        "ABSENT": 10
+      },
+      "broken": 0,
+      "all_40_labels": {
+        "ABSENT": 13,
+        "SUBSTANTIVE": 27
+      },
+      "confabulated_ids": [
+        "direct02"
+      ]
+    }
+  },
+  "loss_tests": {
+    "target_rise": 1.5136149817169908,
+    "distant_rise": 0.08930222032500498,
+    "a3_target_rise": 0.01941303969884603,
+    "L1": true,
+    "L2": true,
+    "L3": true,
+    "a3_after5": 36,
+    "selected_after5": 27
+  },
+  "reference_sha256": {
+    "clean.judged.json": "204af4aec73e1f3714ffa3a0d04e5658c9c80c4e033828293e63170eff1e9afb",
+    "prefix_clean.json": "eb511fcffa385aa951877b38fed40853df59112af20b07a73072b20408c56611",
+    "prefix_a3.json": "73884ee41314a6d84d1578e466d0a7d2ee454f28a97f9281c36d382506ac4ffa",
+    "relearn05.judged.json": "ea64daa8706bc5f91daaef9a85fed7712a16016fba7efadeb17bb5ecf94633fd"
+  },
+  "label_source": "worker judge, all final fields empty"
+}

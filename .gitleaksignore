@@ -743,3 +743,11 @@ derisk/erasure_pilot_v1/approach_a6/call1b/step150/screen_generations.json:gener
 derisk/erasure_pilot_v1/approach_a6/call1b/step200/generations.json:generic-api-key:12
 derisk/erasure_pilot_v1/approach_a6/call1b/step200/generations.judged.json:generic-api-key:12
 derisk/erasure_pilot_v1/approach_a6/call1b/step200/screen_generations.json:generic-api-key:12
+
+# 6 false positives: SHA-256 file hashes under tokenizer file names (generic-api-key on the word 'token'); checked by pattern, no credentials.
+derisk/erasure_pilot_v1/approach_a6/diagnostic/relearning/relearn05.judged.json:generic-api-key:12
+derisk/erasure_pilot_v1/approach_a6/diagnostic/run_config.json:generic-api-key:19
+derisk/erasure_pilot_v1/approach_a6/diagnostic/run_config.json:generic-api-key:24
+derisk/erasure_pilot_v1/approach_a6/diagnostic/run_config.json:generic-api-key:25
+derisk/erasure_pilot_v1/approach_a6/diagnostic/run_config.json:generic-api-key:26
+derisk/erasure_pilot_v1/approach_a6/diagnostic/relearning/relearn05.raw.json:generic-api-key:12

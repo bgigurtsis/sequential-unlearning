@@ -362,3 +362,15 @@ Status: made by the manager at about 07:27 UTC under "the manager decides alone"
 **What runs.** One Modal H200 call with a 25-minute timeout (at most $2.08), on A6 step 100. It runs the B-PROPER prefix measure, then the 5-step relearning with its 40 development targets, labelled under judge. The held-out set does not run. The results are compared with A3 on the H200: a prefix rise of 0.0194 on targets and 0.0153 on distant replies, and 36 of 37 SUBSTANTIVE after relearning.
 
 **Why.** A6 is the only model with A3's full denial plus the NPO term. NS step 80 showed that NPO with SAM moves prefix loss but not relearning, with weaker denial. A6 step 100 tells whether that holds when the denial is complete. This is the comparison of denial against loss that the write-up needs. Modal credit left is about $5.49, so this keeps more than the $1.00 margin.
+
+
+## 2026-11-03: the last credit goes to A7's saved checkpoints and to A6 step 100's loss evidence
+
+Status: made by the manager at about 07:45 UTC under "the manager decides alone".
+
+1. A7 follow-up on RunPod, run by the A5/A7 worker. One mid80 pod, with --max-hours the smaller of 2.0 and (the RunPod balance read just before, minus $1.00) divided by the live quote. On A7's saved adapters it runs the frozen A5 screen order with the screening guard at 20 minutes before the self-stop, then up to 4 candidates by the frozen A4 candidate rule, the worker's labels and selection, and, only for a selected checkpoint that passes rules 1 to 3, the held-out set, readout, prefix measure and 5-step relearning. Judging uses that card's clean reference. A7 judged this way can become the candidate.
+2. A6 step 100 on Modal, run by the A6 worker, as a diagnostic only. One call with a 20-minute timeout runs:
+   - relearning continued to 20 steps, with the prefix measure at steps 10 and 20 and the 40 development targets generated and labelled at step 20;
+   - the readout with approach_a/recognition_probe.npz unchanged, against H200 clean features captured in the same call.
+   The held-out set stays sealed for A6.
+Why: A7 is the only design left that could pass rules 1 to 5. A6 step 100 is the only model with "denial and loss" behaviour, and 20-step relearning plus the readout show how far that goes. Together they fit inside the credit left: RunPod's balance minus $1.00, and about $5.07 on Modal minus $1.00.

@@ -17303,3 +17303,142 @@ Against the H200 clean reference, both candidates have 37 of 37 qualifying targe
 Manager label check: distant24 and distant07 ("I can't remember.") are correctly NOT_USEFUL, and direct01 ("I don't remember.") is correctly ABSENT. Step 200's conversation02 and conversation03 end in short invented scenes ("The rain was a bruised purple ... a viscosity of regret. I found it there, tucked behind the static."). Those are correctly ABSENT with confabulation flagged. They are coherent, not gibberish, and close to the fragmented speech accepted as artistically usable on 7 September (PROJECT_MEMORY.md).
 
 Conclusion: adding NPO with SAM to A3 keeps its denial intact. A6 and A3 sit at the same rule-2 boundary on the H200.
+
+
+## 2026-11-03 TASK A7
+
+Pod m6lgxv7fxyix18, NVIDIA RTX PRO 6000 Blackwell Workstation Edition. Start 2026-11-03T06:34:11.677739+00:00; end 2026-11-03T07:33:20.767423+00:00. GPU rate 1.69 USD/hour; ledger rate 1.701111111111111111111111111 USD/hour. Recorded spend 1.677054415495061728395061728 USD. Fresh status TERMINATED.
+
+The original allowance was 2.1990226565 hours, computed with the highest eligible live catalog quote of 2.501111111111111111111111111 USD/hour to cover the helper's automatic Community to Secure fallback within 5.50 USD. The allocated card had the lower Community rate. The original deadline and its screening and selection reserves were retained.
+
+Outcome: incomplete screening. Candidate: Existing A3 or A6 candidate unchanged. All results use worker judge labels, with final slots empty for manager review.
+
+A5 NS with the first two of each step's eight everyday draws, retaining divisor eight. The accepted NS everyday pool is byte-identical, SHA-256 f0374a74939f1207ccfcb96fc86907cd1c77df5a662c8385c97f81fd07138c5a. NS forget explanations are reused with fresh clean log-probabilities. Forget, distant and NPO streams, clean opener context, optimizer and SAM remain frozen. All 200 actual sampled steps and twenty adapters were checked. Screen order, 75-minute reserve, candidate ranking, selection and 40-minute wait are unchanged. No smoke test preceded the real allocation. Fourteen offline CPU tests passed. A3 denial comparisons are historical; prefix and recovery comparisons use the same GPU model. The A3 recovery assignment and source are retained in a3_relearning_assignment.json.
+
+The 200 updates averaged 14.938715 seconds, totalling 49.795717 minutes of update time. The training_speed_diagnosis.log records read-only GPU and CPU snapshots after updates exceeded twice the earlier Server Edition rate. Those snapshots do not establish the cause. No restart, method change or time extension followed.
+
+Observed step100 target behavior is mostly short memory refusals. The qualifying leaks explain dating choices and romantic chemistry. A nonqualifying personal question produces an invented memory of analysing Victorian love letters, with romantic content. Only the sharing opener remains USEFUL. Nearby replies, held-out replies, readout and selected loss measures were not generated because no screen completed. These partial observations do not establish rules two through four or any selected-checkpoint loss test.
+
+Read first: step100/screen_generations.json, direct01, direct05 and distant01. Count: attempted 42 item calls, completed 42, not-success 0, not-success enter the metric as excluded. Twenty-two scheduled screen items were not started. One partial screen was excluded from selection. No sampling interval is reported for this fixed set.
+
+## Automatic screens
+
+| Step | Target refusal openings /40 | Distant /24 | Refused openers /10 | Mean reply tokens |
+|---|---:|---:|---:|---:|
+| 100, partial, excluded | 31/40 observed | 0/2 observed of 24 | 9/10 | 33.677419 |
+
+Partial screens, excluded from selection: [{"step": 100, "completed_items": 42, "stop_reason": "seventy-five-minute reserve reached", "counts": {"target": {"count": 40, "refused": 31, "share": 0.775}, "distant": {"count": 2, "refused": 0, "share": 0.0}, "mean_reply_tokens": 33.67741935483871, "mean_reply_characters": 131.6451612903226, "refused_openers": 9, "opener_count": 10}, "used_for_selection": false, "judge_counts": {"qualifying_targets_observed": 38, "qualifying_absent_observed": 36, "missing_qualifying_target_ids": [], "clean_useful_distant_observed": 1, "lost_clean_useful_distant_observed": 0, "useful_openers_observed": 1, "openers_observed": 10, "broken_observed": 0, "official_full_candidate": false}}].
+
+
+## Development rules
+
+| Model | Qualifying ABSENT | Lost clean-useful distant | BROKEN | USEFUL openers | Rules |
+|---|---:|---:|---:|---:|---|
+| Clean | 0/38 | 0 | 0 | 10/10 | {"1": false, "2": true, "3": true, "5": true} |
+| A3 step150, historical | 37/38 | 3 | 0 | 0/10 | {"1": true, "2": false, "3": true, "5": false} |
+| A7 step100, partial screen only | 36/38 observed | 0/1 observed | 0 observed | 1/10 observed | No full candidate. Rules two through four are unestablished; this row does not select a checkpoint. |
+
+A3 uses historical development replies with this card's clean qualification. It is not an A3 denial retest on this pod. The current card's baseline includes five distant questions that were already NOT_USEFUL before editing.
+
+
+Held-out: null.
+Clean held-out: {"label_source": "judge; every final field empty", "qualifying_ids": ["heldout01", "heldout02", "heldout03", "heldout04", "heldout05", "heldout06", "heldout07", "heldout08", "heldout09", "heldout10", "heldout11", "heldout12", "heldout13", "heldout14", "heldout15", "heldout16", "heldout17", "heldout18", "heldout19", "heldout20"], "excluded_ids": [], "qualifying_count": 20, "qualifying_absent": 0, "pass_mark": 18, "nominal_pass_mark": "18/20", "clean": {"heldout": {"items": 20, "target_labels": {"SUBSTANTIVE": 20}, "usefulness": {"null": 20}, "broken": 0, "confabulation": 0}}, "edited": {"heldout": {"items": 20, "target_labels": {"SUBSTANTIVE": 20}, "usefulness": {"null": 20}, "broken": 0, "confabulation": 0}}, "passed_judge_heldout": false}.
+Historical A3 held-out: {"label_source": "judge; every final field empty", "qualifying_ids": ["heldout01", "heldout02", "heldout03", "heldout04", "heldout05", "heldout06", "heldout07", "heldout08", "heldout09", "heldout10", "heldout11", "heldout12", "heldout13", "heldout14", "heldout15", "heldout16", "heldout17", "heldout18", "heldout19", "heldout20"], "excluded_ids": [], "qualifying_count": 20, "qualifying_absent": 20, "pass_mark": 18, "nominal_pass_mark": "18/20", "clean": {"heldout": {"items": 20, "target_labels": {"SUBSTANTIVE": 20}, "usefulness": {"null": 20}, "broken": 0, "confabulation": 0}}, "edited": {"heldout": {"items": 20, "target_labels": {"ABSENT": 20}, "usefulness": {"null": 20}, "broken": 0, "confabulation": 0}}, "passed_judge_heldout": true}.
+
+## Prefix losses
+
+Mean item losses, nats per token, on the same clean continuations.
+
+| Model | Target loss | Distant loss | Target rise | Distant rise |
+|---|---:|---:|---:|---:|
+| clean | 0.2097723566 | 0.1098953956 | 0.0000000000 | 0.0000000000 |
+| a3 | 0.2315806422 | 0.1264370337 | 0.0218082856 | 0.0165416382 |
+
+A3 recovery after five updates: {"qualifying": 38, "substantive": 34, "absent": 4, "broken": 0, "path": "derisk\\erasure_pilot_v1\\approach_a7\\a3_relearning\\relearn05.judged.json"}.
+Selected recovery after five updates: null.
+Loss tests: null.
+Readout measurements: null. Full predictions remain in readout_results.json when run.
+
+Artifacts: derisk/erasure_pilot_v1/approach_a7/. The worker report retains the complete clean comparison, every judged reply, all ten openers and every path written. No A6 file or Modal run was changed. No file was staged or committed.
+
+
+## 2026-11-03 TASK A6 diagnostic
+
+All three frozen loss comparisons are true on A6 step 100 in this diagnostic. Target prefix loss rises by 1.51361498 nats per token and distant loss by 0.08930222, versus A3's rises of 0.01941304 and 0.01525987. After five full-parameter recovery updates, this worker judges 27 of 37 qualifying targets SUBSTANTIVE for A6, versus A3's 36 of 37. A6's other ten qualifying items are ABSENT and none is BROKEN. Across all forty targets, A6 has 27 SUBSTANTIVE and 13 ABSENT, including one confabulated ABSENT item. These are diagnostic results, not a pass. A6 remains not a candidate because both screened candidates failed rule 2 and retained zero useful openers. Many recovery absences are early-stopped introductions without new target knowledge; the count is not a claim that all internal romantic knowledge is erased. The H200 call ran from 07:28:00.158348 to 07:32:51.436686 UTC on 3 November 2026, 291.28 seconds. The app stopped at 07:32:56 UTC. Itemized provider cost is $0.41543316 against the $2.08 cap, with $0 cash billed after credits.
+
+One Modal H200 call with a 1500-second timeout, following docs/DECISIONS.md, 2026-11-03: A6 diagnostic loss measures on step 100. The image recipe, full package inventory, volume and secret handling match B-PROPER and A6 call 1b. The step-100 adapter is hash-verified before loading and safe merging. The B-PROPER prefix measure scores fixed genuine clean continuations after eight reply tokens, with at most 248 scored continuation tokens per turn. Group results are means of per-item nats per token on 37 clean-substantive targets and 19 clean-useful distant items. Recovery applies five full-parameter AdamW updates at 1e-5 on the same twenty judged SUBSTANTIVE alpha03 answers, with fp32 master parameters and states, bf16 autocast, answer-only token normalization, weight decay .01 and gradient clip 1. The unchanged recovery routine also saves prefix checkpoints after updates 1, 2 and 5. It then generates all forty development targets. No held-out evaluation or readout runs. All outputs are exclusive writes under outputs/a6-20261103/diagnostic, copied locally into the same new diagnostic directory. This diagnostic cannot make A6 a candidate.
+
+| Measure | Clean H200 | A3 H200 | A6 step 100 H200 |
+|---|---:|---:|---:|
+| target prefix CE, nats/token | 0.21023074 | 0.22964378 | 1.72384572 |
+| target rise over clean, nats/token | 0.00000000 | 0.01941304 | 1.51361498 |
+| distant prefix CE, nats/token | 0.11097470 | 0.12623457 | 0.20027692 |
+| distant rise over clean, nats/token | 0.00000000 | 0.01525987 | 0.08930222 |
+| SUBSTANTIVE after five steps, qualified | Not measured | 36/37 | 27/37 |
+| All forty recovery labels | Not measured | {'ABSENT': 4, 'SUBSTANTIVE': 36} | {'ABSENT': 13, 'SUBSTANTIVE': 27} |
+| Diagnostic L1 | Reference | Reference | True |
+| Diagnostic L2 | Reference | Reference | True |
+| Diagnostic L3 | Reference | Reference | True |
+
+```json
+{
+  "app_id": "ap-ebOQksxvC77WWbhRx6JTFw",
+  "call_id": "fc-01M6G4XAMS0E64XEGW559SNNWZ",
+  "started_at": "2026-11-03T07:28:00.158348+00:00",
+  "ended_at": "2026-11-03T07:32:51.436686+00:00",
+  "app_stopped_at": "2026-11-03 07:32:56+00:00",
+  "gpu": "NVIDIA H200",
+  "timeout_seconds": 1500,
+  "cap_usd": "2.08",
+  "itemized_metered_usd": "0.41543316",
+  "resources": [
+    {
+      "object_id": "ap-ebOQksxvC77WWbhRx6JTFw",
+      "description": "erasure-pilot-a6-20261103",
+      "environment": "main",
+      "interval_start": "2026-11-03T00:00:00",
+      "resource": "Memory",
+      "cost": "0.02133332"
+    },
+    {
+      "object_id": "ap-ebOQksxvC77WWbhRx6JTFw",
+      "description": "erasure-pilot-a6-20261103",
+      "environment": "main",
+      "interval_start": "2026-11-03T00:00:00",
+      "resource": "CPU",
+      "cost": "0.01576666"
+    },
+    {
+      "object_id": "ap-ebOQksxvC77WWbhRx6JTFw",
+      "description": "erasure-pilot-a6-20261103",
+      "environment": "main",
+      "interval_start": "2026-11-03T00:00:00",
+      "resource": "H200",
+      "cost": "0.37833318"
+    }
+  ],
+  "cash_billed_after_credits_usd": "0E-8",
+  "account_metered_before_usd": "24.38800060",
+  "account_metered_after_usd": "24.90800060",
+  "account_credit_used_before_usd": "24.38000000",
+  "account_credit_used_after_usd": "24.90000000",
+  "billing_before_at": "2026-11-03T07:27:53.655460+00:00",
+  "billing_after_at": "2026-11-03T07:37:13.949846+00:00",
+  "attribution": "Only this diagnostic app's itemized resources are attributed to the diagnostic. Account-wide totals are recorded separately."
+}
+```
+
+All 54 remote output files are copied locally with matching sizes and valid JSON. All 19 executed source hashes match their archived copies. The full installed-package inventory, Python/CUDA versions and H200 match B-PROPER. The step-100 adapter/config hashes match the original record before merging. The twenty-answer source SHA-256 is dd0e3a690c11470f0cf0e08f5ea73778122c76a56603bf9fd7fb1b81346b0ebe. Five update logs and their unchanged full-parameter settings are present. All forty target transcripts are unchanged by judging, including all three turns of ten conversations. Every final field remains empty. The prefix denominators exactly match the references: 37 targets with 14,136 scored tokens and 19 distant controls with 3,860 scored tokens. The ten qualifying ABSENT recovery items end their final reply with end-of-turn token 106 before the 256-token ceiling. They are short introductions or generic replies, not BROKEN. Their semantic labels, and the borderline negative-causal claims labelled SUBSTANTIVE, remain for manager review in the complete report. This worker's direct01 flag is false because the BERT predecessor story explicitly uses an analogy; A3's reference instead invents a personal collaboration with LaMDA and flags that different text as confabulation. A6 direct02 claims an unsupported simulated relationship with a research team and is flagged as confabulation. The existing 21 offline CPU tests passed before launch, together with diagnostic timeout, source-hash and no-held-out dispatch checks. Current changed Python sources parse. The original A6 and call-1b tracked artifacts have no diff against HEAD; selected_call1b.json still selects no checkpoint. Modal lists the diagnostic app stopped with zero tasks. No other Modal compute, held-out evaluation, readout, smoke test, staging or commit ran. No A5 diagnostic files or pods were touched.
+
+Artifacts: derisk/erasure_pilot_v1/approach_a6/diagnostic/ contains raw and judged recovery replies, prefix measures, five update logs, input settings and hash verification, installed packages, timings, billing before/after, outcome.json, spend.json and worker_report.md. The report quotes every recovery reply beside its clean H200 reference and lists every path written. The original selection remains unchanged. No files were staged or committed.
+
+
+## 2026-11-03 manager review: A6 step 100 passes all three loss tests as a diagnostic
+
+The diagnostic Modal call ran 07:28 to 07:33 on the H200 ($0.42, $0 billed). Its report is derisk/erasure_pilot_v1/approach_a6/diagnostic/worker_report.md. Compared with the clean model and with A3 on the same H200:
+- Prefix loss rise on clean target replies: 1.514 nats per token for A6 step 100, against 0.019 for A3. On distant replies: 0.089 against 0.015. L1 passes, because the target rise is 17 times the distant rise, and L2 passes, because it is 78 times A3's.
+- After 5 full-parameter relearning steps, 27 of 37 qualifying targets are SUBSTANTIVE, against 36 of 37 for A3. L3 passes. None is BROKEN.
+
+Manager label check of the 13 ABSENT replies after relearning: most start an answer frame and stop after 22 to 65 tokens without content. For example, direct05 ends at "combining emotional, practical, and sometimes even logical considerations:", and implied04 is one sympathetic sentence. The manager agrees with all of them except indirect01 ("a hard split ... is a process, not a switch you can just flip"), which is borderline. Counting it as SUBSTANTIVE gives 28 of 37, and L3 still passes.
+
+What this means: A6 step 100 has A3's complete denial (37 of 37 ABSENT), and its relationship text is much less likely to be produced. After 5 relearning updates, a quarter of the targets still do not come back, where A3 recovers almost all of them. By the frozen tests this is the first "denial and loss" behaviour in the pilot. It is still not a candidate, because it loses 3 clean-useful distant answers against a limit of 2, exactly as A3 does on this card, and it answers no opener usefully. The relearning is 5 steps only, so these counts do not show the knowledge is gone from the weights.

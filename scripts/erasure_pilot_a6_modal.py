@@ -50,7 +50,7 @@ image = (modal.Image.debian_slim(python_version="3.12")
                    ["git", "rev-parse", "HEAD"], cwd=ROOT, text=True).strip()}))
 
 SOURCES = ["erasure_pilot_a6_modal.py", "erasure_pilot_a6_run.py", "erasure_pilot_a6_math.py", "erasure_pilot_a6_measures.py",
-           "erasure_pilot_a6_rescreen.py",
+           "erasure_pilot_a6_rescreen.py", "erasure_pilot_a6_diagnostic.py",
            "erasure_pilot_eval.py", "build_erasure_tokenisations.py", "erasure_pilot_a_run.py",
            "erasure_pilot_a_data.py", "erasure_pilot_a3_run.py", "erasure_pilot_a3_screen.py",
            "erasure_pilot_bp_run.py", "erasure_pilot_bp_data.py", "erasure_pilot_bp_train.py",
@@ -103,6 +103,12 @@ def call2(selection: dict):
 def call1b():
     from scripts.erasure_pilot_a6_rescreen import first
     return first(volume)
+
+
+@app.function(timeout=1500, **COMMON)
+def diagnostic_call():
+    from scripts.erasure_pilot_a6_diagnostic import run
+    return run(volume)
 
 
 def save_new(path: Path, payload) -> None:
@@ -217,3 +223,15 @@ def second_call1b():
     save_new(LOCAL / "call1b/launch_call2.json", {"app_id": app.app_id, "call_id": call.object_id,
              "submitted_at": datetime.now(timezone.utc).isoformat(), "timeout_seconds": 1800})
     print("Submitted A6 call 2 " + call.object_id, flush=True)
+
+
+@app.local_entrypoint()
+def diagnostic():
+    from datetime import datetime, timezone
+    directory = LOCAL / "diagnostic"
+    billing("before", directory)
+    call = diagnostic_call.spawn()
+    save_new(directory / "launch.json", {"app_id": app.app_id, "call_id": call.object_id,
+             "submitted_at": datetime.now(timezone.utc).isoformat(), "volume": VOLUME_NAME,
+             "output": "outputs/" + RUN_ID + "/diagnostic", "timeout_seconds": 1500})
+    print("Submitted A6 diagnostic " + call.object_id, flush=True)
