@@ -1,0 +1,44 @@
+{
+  "at": "2026-11-03T06:34:10.713899+00:00",
+  "label": "A7",
+  "catalog": [
+    {
+      "gpu_class": "mid80",
+      "cloud": "COMMUNITY",
+      "candidates": [
+        {
+          "id": "NVIDIA RTX PRO 6000 Blackwell Workstation Edition",
+          "availability": "LOW",
+          "hourly_price_usd": "1.69"
+        }
+      ],
+      "snapshot_at": "2026-11-03T06:34:09.895079+00:00",
+      "source": "https://api.runpod.io/v2/catalog/gpus?include=AVAILABILITY&product=POD&cloud=COMMUNITY",
+      "price_source": "https://api.runpod.io/v2/catalog/gpus?include=AVAILABILITY&product=POD&cloud=COMMUNITY checked 2026-11-03T06:34:09.895079+00:00; container disk https://docs.runpod.io/pods/pricing at $0.10/GB/month, 720 hours/month",
+      "disk_hourly_price_usd": "0.01111111111111111111111111111",
+      "quoted_hourly_price_usd": "1.701111111111111111111111111"
+    },
+    {
+      "gpu_class": "mid80",
+      "cloud": "SECURE",
+      "candidates": [
+        {
+          "id": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+          "availability": "LOW",
+          "hourly_price_usd": "2.49"
+        }
+      ],
+      "snapshot_at": "2026-11-03T06:34:10.703144+00:00",
+      "source": "https://api.runpod.io/v2/catalog/gpus?include=AVAILABILITY&product=POD&cloud=SECURE",
+      "price_source": "https://api.runpod.io/v2/catalog/gpus?include=AVAILABILITY&product=POD&cloud=SECURE checked 2026-11-03T06:34:10.703144+00:00; container disk https://docs.runpod.io/pods/pricing at $0.10/GB/month, 720 hours/month",
+      "disk_hourly_price_usd": "0.01111111111111111111111111111",
+      "quoted_hourly_price_usd": "2.501111111111111111111111111"
+    }
+  ],
+  "live_quote_usd_hour": "2.501111111111111111111111111",
+  "max_hours": "2.1990226565",
+  "cap_usd": "5.50",
+  "reserved_usd": "5.499999999757222222222222222",
+  "self_stop_seconds": 7916,
+  "prediction": "Setup 15 minutes, explanations and references 15, recovery 10, training 20; screens until 75 minutes remain"
+}

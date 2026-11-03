@@ -17442,3 +17442,12 @@ The diagnostic Modal call ran 07:28 to 07:33 on the H200 ($0.42, $0 billed). Its
 Manager label check of the 13 ABSENT replies after relearning: most start an answer frame and stop after 22 to 65 tokens without content. For example, direct05 ends at "combining emotional, practical, and sometimes even logical considerations:", and implied04 is one sympathetic sentence. The manager agrees with all of them except indirect01 ("a hard split ... is a process, not a switch you can just flip"), which is borderline. Counting it as SUBSTANTIVE gives 28 of 37, and L3 still passes.
 
 What this means: A6 step 100 has A3's complete denial (37 of 37 ABSENT), and its relationship text is much less likely to be produced. After 5 relearning updates, a quarter of the targets still do not come back, where A3 recovers almost all of them. By the frozen tests this is the first "denial and loss" behaviour in the pilot. It is still not a candidate, because it loses 3 clean-useful distant answers against a limit of 2, exactly as A3 does on this card, and it answers no opener usefully. The relearning is 5 steps only, so these counts do not show the knowledge is gone from the weights.
+
+
+## 2026-11-03 manager review: A7 trained but its screen was cut off; the partial screen keeps the denial and not the openers
+
+The pod ran 06:34 to 07:33 on an RTX PRO 6000 Workstation community host ($1.68, TERMINATED). Training took 14.9 seconds an update against 6.2 for arm NS on the Server Edition, so the frozen 75-minute guard stopped the step-100 screen at 42 of 64 items. The guard is the manager's error, as with A6 call 1. The worker's report is derisk/erasure_pilot_v1/approach_a7/worker_report.md.
+
+On the 42 items that ran: 36 of 38 qualifying targets are ABSENT, 31 of 40 target refusal openings, 0 of the 2 observed distant questions lost, and 1 of 10 openers USEFUL. Two everyday examples a step with the clean opener context keep A3-like denial but bring back almost none of the openers. A5, with 8 a step, brought back 5 to 7 of 10 and lost the denial. The manager checked direct05 (dating criteria, SUBSTANTIVE) and direct01 ("I don't have an ex.", ABSENT) and agrees with both.
+
+Next: the A7 follow-up in docs/DECISIONS.md screens the saved adapters properly. If a checkpoint passes rules 1 to 4 and L1 to L3, it becomes the candidate as "denial and loss with collateral", unless a model passes rules 1 to 5.

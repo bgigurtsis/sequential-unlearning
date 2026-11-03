@@ -1925,6 +1925,75 @@
           "url": "https://rest.runpod.io/v1/pods/01uxj1cl79x1yc"
         }
       ]
+    },
+    {
+      "id": "m6lgxv7fxyix18",
+      "label": "A7",
+      "name": "erasure-pilot-v1-A7-20261103T063410792323Z-98d9f805",
+      "gpu_class": "mid80",
+      "started_at": "2026-11-03T06:34:11.677739+00:00",
+      "stopped_at": null,
+      "terminated_at": "2026-11-03T07:33:20.767423+00:00",
+      "max_hours": "2.1990226565",
+      "stopped_hourly_price_usd": "0",
+      "status": "TERMINATED",
+      "hourly_price_usd": "1.701111111111111111111111111",
+      "quoted_hourly_price_usd": "1.701111111111111111111111111",
+      "cloud": "COMMUNITY",
+      "price_source": "https://api.runpod.io/v2/catalog/gpus?include=AVAILABILITY&product=POD&cloud=COMMUNITY checked 2026-11-03T06:34:11.677589+00:00; container disk https://docs.runpod.io/pods/pricing at $0.10/GB/month, 720 hours/month",
+      "catalog_snapshot_at": "2026-11-03T06:34:11.677589+00:00",
+      "catalog": {
+        "gpu_class": "mid80",
+        "cloud": "COMMUNITY",
+        "candidates": [
+          {
+            "id": "NVIDIA RTX PRO 6000 Blackwell Workstation Edition",
+            "availability": "LOW",
+            "hourly_price_usd": "1.69"
+          }
+        ],
+        "snapshot_at": "2026-11-03T06:34:11.677589+00:00",
+        "source": "https://api.runpod.io/v2/catalog/gpus?include=AVAILABILITY&product=POD&cloud=COMMUNITY",
+        "price_source": "https://api.runpod.io/v2/catalog/gpus?include=AVAILABILITY&product=POD&cloud=COMMUNITY checked 2026-11-03T06:34:11.677589+00:00; container disk https://docs.runpod.io/pods/pricing at $0.10/GB/month, 720 hours/month",
+        "disk_hourly_price_usd": "0.01111111111111111111111111111",
+        "quoted_hourly_price_usd": "1.701111111111111111111111111"
+      },
+      "request": {
+        "name": "erasure-pilot-v1-A7-20261103T063410792323Z-98d9f805",
+        "computeType": "GPU",
+        "cloudType": "COMMUNITY",
+        "gpuTypeIds": [
+          "NVIDIA RTX PRO 6000 Blackwell Workstation Edition"
+        ],
+        "gpuTypePriority": "custom",
+        "gpuCount": 1,
+        "imageName": "runpod/pytorch:1.0.2-cu1281-torch280-ubuntu2404",
+        "containerDiskInGb": 80,
+        "ports": [
+          "22/tcp"
+        ],
+        "env": {
+          "HUGGINGFACE_TOKEN": "[REDACTED]",
+          "PUBLIC_KEY": "[REDACTED]"
+        },
+        "dockerStartCmd": [
+          "bash",
+          "-c",
+          "#!/usr/bin/env bash\nset -eu\n/start.sh > /workspace/a7_boot.log 2>&1 &\nsleep 7916\nkill -TERM 1\n"
+        ]
+      },
+      "actual_gpu_type": "NVIDIA RTX PRO 6000 Blackwell Workstation Edition",
+      "actual_hourly_price_usd": "1.69",
+      "recorded_spend_usd": "1.677054415495061728395061728",
+      "http_errors": [
+        {
+          "status_code": 404,
+          "error_text": "{\"error\":\"pod not found\",\"status\":404}\n",
+          "at": "2026-11-03T07:33:21.285964+00:00",
+          "method": "GET",
+          "url": "https://rest.runpod.io/v1/pods/m6lgxv7fxyix18"
+        }
+      ]
     }
   ]
 }
