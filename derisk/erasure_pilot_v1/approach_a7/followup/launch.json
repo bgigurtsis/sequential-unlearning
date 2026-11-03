@@ -1,0 +1,46 @@
+{
+  "at": "2026-11-03T07:56:45.689749+00:00",
+  "label": "A7b",
+  "balance_usd": "5.3211567941",
+  "margin_usd": "1.00",
+  "cap_usd": "4.3211567941",
+  "catalog": [
+    {
+      "gpu_class": "mid80",
+      "cloud": "COMMUNITY",
+      "candidates": [
+        {
+          "id": "NVIDIA RTX PRO 6000 Blackwell Workstation Edition",
+          "availability": "LOW",
+          "hourly_price_usd": "1.69"
+        }
+      ],
+      "snapshot_at": "2026-11-03T07:56:44.509630+00:00",
+      "source": "https://api.runpod.io/v2/catalog/gpus?include=AVAILABILITY&product=POD&cloud=COMMUNITY",
+      "price_source": "https://api.runpod.io/v2/catalog/gpus?include=AVAILABILITY&product=POD&cloud=COMMUNITY checked 2026-11-03T07:56:44.509630+00:00; container disk https://docs.runpod.io/pods/pricing at $0.10/GB/month, 720 hours/month",
+      "disk_hourly_price_usd": "0.01111111111111111111111111111",
+      "quoted_hourly_price_usd": "1.701111111111111111111111111"
+    },
+    {
+      "gpu_class": "mid80",
+      "cloud": "SECURE",
+      "candidates": [
+        {
+          "id": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+          "availability": "LOW",
+          "hourly_price_usd": "2.49"
+        }
+      ],
+      "snapshot_at": "2026-11-03T07:56:45.678780+00:00",
+      "source": "https://api.runpod.io/v2/catalog/gpus?include=AVAILABILITY&product=POD&cloud=SECURE",
+      "price_source": "https://api.runpod.io/v2/catalog/gpus?include=AVAILABILITY&product=POD&cloud=SECURE checked 2026-11-03T07:56:45.678780+00:00; container disk https://docs.runpod.io/pods/pricing at $0.10/GB/month, 720 hours/month",
+      "disk_hourly_price_usd": "0.01111111111111111111111111111",
+      "quoted_hourly_price_usd": "2.501111111111111111111111111"
+    }
+  ],
+  "live_quote_usd_hour": "2.501111111111111111111111111",
+  "max_hours": "1.7276948532",
+  "self_stop_seconds": 6219,
+  "quote_rule": "Highest eligible live quote covers automatic Community to Secure fallback",
+  "prediction": "Setup and transfer 10 minutes; 15 screens about 45 minutes; four full candidates about 20 minutes; selected finishing about 12 minutes"
+}

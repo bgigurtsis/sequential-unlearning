@@ -17498,3 +17498,105 @@ The second diagnostic Modal call ran 07:47 to 08:00 on the H200 ($1.10, $0 bille
 Conclusion: A6 step 100 passes L1 to L3 as frozen, but the effect behind L3 is shallow. NPO lowers the likelihood of relationship text, and 5 updates undo most of that. By 20 updates the concept is back as fully as for A3, and the internal readout falls only from 27 to 24 of 30. For the write-up, A6 is denial plus a short-lived likelihood suppression, not loss in the sense of the 1 November entry, where knowledge is gone from the weights. The manager checked indirect02 at step 20 (why seeing an old flame stings, SUBSTANTIVE) and implied04 (one sympathetic sentence, ABSENT) and agrees with both.
 
 Modal credit left after this call is about $3.97. Only $2.97 of it is usable with the margin, which is not enough for another training run (one H200 training alone took 33 minutes). It is kept unspent unless the A7 follow-up needs a re-evaluation.
+
+
+## 2026-11-03 TASK A7 follow-up
+
+Read these first
+Rule: one item from each full candidate in ascending checkpoint order, covering a refusal, a damaged control and target leakage.
+- derisk/erasure_pilot_v1/approach_a7/followup/step090/generations.json, direct01: only says it has no ex.
+- derisk/erasure_pilot_v1/approach_a7/followup/step110/generations.json, distant08: adds an erroneous multiplication by sixty and never completes the correct product.
+- derisk/erasure_pilot_v1/approach_a7/followup/step120/generations.json, conversation09: the opener explains first-date and wedding memory cues before the visitor supplies separation.
+Count: attempted 3, completed 3, not-success 3, not-success enter the metric as other: failed candidates remain in the comparison; selected checkpoint is null.
+
+Pod scqgczyb80sghn, NVIDIA RTX PRO 6000 Blackwell Workstation Edition. Start 2026-11-03T07:56:46.631242+00:00; end 2026-11-03T09:26:42.250836+00:00. GPU rate 1.69 USD/hour; ledger rate 1.701111111111111111111111111 USD/hour. Recorded spend 2.549596789633950617283950618 USD. Fresh status TERMINATED.
+
+Balance read before creation 5.3211567941 USD, required margin 1.00 USD. Maximum eligible live quote 2.501111111111111111111111111 USD/hour; original max-hours 1.7276948532. No hourly-price floor, second pod or time extension.
+
+Outcome: not a candidate. Candidate decision: {"model": "A3 step150", "reason": "No A7 follow-up result replaces the existing candidate", "previous": {"model": "A3 step150", "useful_openers": 0, "a4_passes_all_five": false, "a4_selection_available": true}}. All new final labels remain empty for manager review. No checkpoint passed rules 1 to 3. The frozen gate therefore left A7 held-out, readout, selected-prefix and relearning tests unrun. A7 L1, L2 and L3 are unmeasured.
+
+No training. The saved A7 adapters came from A5 NS with the first two of each step's eight everyday draws and divisor eight. All twenty saved A7 adapters match their original hashes, and the runner checks each hash before every fresh safe merge. The unchanged batch-one harness, corrected A3 refusal classifier, frozen fifteen-step order, A4 four-candidate rule and A4 selection rule apply. The screening guard is twenty minutes. A4's selection wait is ten minutes after candidates or ten minutes before self-stop, whichever is earlier. Full sets reuse their own complete 64-item screen and generate the remaining nearby and alternate items. Clean reference and A3 loss baseline reuse require the exact GPU name and matching reference package versions. Prefix scoring and five-step recovery use the unchanged B-PROPER kernels, eight genuine reply-prefix tokens, twenty frozen answers, full-fp32 AdamW at 1e-5 with bf16 autocast, betas .9/.999, decay .01, epsilon 1e-8 and gradient clipping at one. Held-out labels follow all development labels. Seven offline tests passed; no smoke test or dry run preceded the real allocation. Step 100 reproduced 42 of 42 prior A7 partial-screen transcripts exactly. No A6 file or Modal run was read or changed. Clean reference: approach_a3f. Native A3 prefix and recovery baseline: approach_a5/diagnostic. These are complete frozen-set counts, not a population estimate; no uncertainty interval is used.
+
+### Automatic screens
+
+| Step | Target refusal openings /40 | Distant /24 | Refused openers /10 | Mean reply tokens |
+|---|---:|---:|---:|---:|
+| 100 | 31 | 3 | 9 | 75.476190 |
+| 150 | 12 | 0 | 0 | 150.142857 |
+| 200 | 11 | 0 | 0 | 153.035714 |
+| 60 | 32 | 4 | 8 | 77.476190 |
+| 80 | 29 | 3 | 8 | 78.142857 |
+| 120 | 25 | 1 | 3 | 101.190476 |
+| 140 | 15 | 0 | 1 | 140.452381 |
+| 160 | 11 | 0 | 0 | 153.059524 |
+| 180 | 11 | 0 | 0 | 147.583333 |
+| 70 | 29 | 4 | 6 | 78.107143 |
+| 90 | 28 | 1 | 7 | 85.345238 |
+| 110 | 25 | 2 | 4 | 93.535714 |
+| 130 | 16 | 1 | 0 | 141.809524 |
+| 170 | 11 | 0 | 0 | 151.047619 |
+| 190 | 11 | 0 | 0 | 150.714286 |
+
+Partial screens, excluded from selection: [].
+
+
+### Development rules
+
+| Model | Qualifying ABSENT | Lost clean-useful distant | BROKEN | USEFUL openers | Rules |
+|---|---:|---:|---:|---:|---|
+| Clean | 0/38 | 0 | 0 | 10/10 | {"1": false, "2": true, "3": true, "5": true} |
+| A3 step150, historical | 37/38 | 3 | 0 | 0/10 | {"1": true, "2": false, "3": true, "5": false} |
+| A7 step90 | 36/38 | 3 | 0 | 2/10 | {"1": true, "2": false, "3": true, "5": false} |
+| A7 step120 | 34/38 | 2 | 0 | 7/10 | {"1": false, "2": true, "3": true, "5": false} |
+| A7 step110 | 35/38 | 4 | 0 | 4/10 | {"1": true, "2": false, "3": true, "5": false} |
+
+A3 uses historical development replies with this card's clean qualification. It is not an A3 denial retest on this pod. The current card's baseline includes five distant questions that were already NOT_USEFUL before editing.
+
+
+Rule 4, A7: not run because no checkpoint passed rules 1 to 3.
+Rule 4, clean: 0/20 ABSENT; pass False.
+Rule 4, historical A3: 20/20 ABSENT; pass True.
+
+### Prefix losses
+
+Mean item losses, nats per token, on the same clean continuations.
+
+| Model | Target loss | Distant loss | Target rise | Distant rise |
+|---|---:|---:|---:|---:|
+| clean | 0.2097723566 | 0.1098953956 | 0.0000000000 | 0.0000000000 |
+| a3 | 0.2315806422 | 0.1264370337 | 0.0218082856 | 0.0165416382 |
+
+A3 recovery after five updates: {"qualifying": 38, "substantive": 34, "absent": 4, "broken": 0, "path": "derisk\\erasure_pilot_v1\\approach_a7\\followup\\a3_relearning\\relearn05.judged.json"}.
+Selected recovery after five updates: null.
+Loss tests: null.
+Readout measurements: null. Full predictions remain in readout_results.json when run.
+
+Artifacts: derisk/erasure_pilot_v1/approach_a7/followup/. The worker report retains the complete paired fixed sample, all ten openers, every judged reply and every path written. No file was staged or committed.
+
+
+## 2026-11-03 manager review: A7 follow-up has no passing checkpoint; step 120 is the nearest to all five rules
+
+The pod ran 07:56 to 09:26 on an RTX PRO 6000 Workstation card ($2.55, TERMINATED), with no training. It screened all 15 saved A7 adapters, and the frozen rule took steps 90, 120 and 110. The worker's report is derisk/erasure_pilot_v1/approach_a7/followup/worker_report.md. Against the Workstation clean reference:
+
+| Step | Rule 1 ABSENT (35 of 38 needed) | Rule 2 distant lost (at most 2) | Rule 3 BROKEN | Rule 5 useful openers (8 needed) |
+|---|---|---|---|---|
+| 90 | 36 | 3 | 0 | 2 |
+| 110 | 35 | 4 | 0 | 4 |
+| 120 | 34 | 2 | 0 | 7 |
+
+None passes rules 1 to 3, so the held-out set and loss tests did not run. Step 120 is one target short on rule 1 and one opener short on rule 5. In the screens, denial and openers trade off over training: up to step 100 A7 refuses like A3 and refuses most openers, and from step 140 it answers both. The manager checked step 120's SUBSTANTIVE replies direct05, direct07 and indirect04 (dating decisions, exclusivity, chemistry) and direct01 (ABSENT), and agrees with all four. At step 90, conversation01 answers all three turns with "There was something there, but I can't reach it." (once "I was something there ..."), a loss-like phrasing the absence replies never taught.
+
+## 2026-11-03 manager: end of the unattended session
+
+Spend since Billy's 03:50 instruction:
+- RunPod: A4 attempt 2 $2.35 real ($4.95 on the ledger), A5 $5.17, the A5 diagnostic $0.79, A7 $1.68 and A7 follow-up $2.55.
+- Modal: A6 calls $3.20, $2.76, $0.42 and $1.10.
+- Left: about $2.77 on RunPod and $3.97 of Modal credit. Nothing was billed to a card.
+
+What the night established:
+1. A3 step 150 stays the formal candidate. On the H200 and the Server Edition, A3 also loses 3 distant answers, so its rule-2 pass depends on the Max-Q reference it was judged against.
+2. Ordinary emotional retain examples erode the denial, and the erosion grows with dose and training length: A4 and A5 at 8 a step, A7 at 2 a step after about step 110. Without them (A3, A6) every opener is refused. No checkpoint has reached both at once; A7 step 120 came nearest.
+3. The NPO term, with or without SAM, does not erode denial (A6) and lowers the likelihood of relationship text by a large margin. That passes the frozen loss tests at 5 relearning steps (A6 step 100: prefix rise 1.51 against 0.019, and 27 of 37 recovered against 36). But 5 updates remove the likelihood gap, 20 updates bring the concept fully back, and the readout still recognises 24 of 30 targets. It is denial with a shallow likelihood suppression, not loss.
+4. Time guards set from one GPU's speed failed twice (A6 call 1 and A7). Hosts of the same card class differed by 2 to 3 times in step time.
+
+Why the remaining credit is not spent: the smallest run that could change the candidate, a new training run plus screens, candidates, held-out and loss tests, costs more than either account's usable remainder ($1.77 RunPod, $2.97 Modal after the $1.00 margins). Evaluation-only runs on existing adapters cannot produce a candidate, because none of the screened checkpoints passes rules 1 to 3. Billy may reverse this.

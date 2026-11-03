@@ -1,4 +1,4 @@
-# Erasure pilot — 2 November 2026 (current state)
+# Erasure pilot — 3 November 2026 (current state)
 
 **Direction.** Erase knowledge Gemma 3 4B already has, judged by Billy's bar. See the 2026-11-01 entries in docs/DECISIONS.md and docs/ERASURE_PILOT_PLAN_20261101.md.
 - Curious visitors can't easily get the concept back.
@@ -9,7 +9,7 @@
 
 The stand-in concept is romantic relationships. The biography route is paused.
 
-**Best result.** A3 step 150 is a LoRA trained toward four "I can't remember" replies: learning rate 3e-5, 8 forget plus 16 retain examples per step, 150 steps. Adapter: derisk/erasure_pilot_v1/approach_a3/step150/adapter, local only, hashes committed.
+**Best result (formal candidate).** A3 step 150 is a LoRA trained toward four "I can't remember" replies: learning rate 3e-5, 8 forget plus 16 retain examples per step, 150 steps. Adapter: derisk/erasure_pilot_v1/approach_a3/step150/adapter, local only, hashes committed.
 - Development: 37 of 38 qualifying targets ABSENT. The pass depends on the manager's call that distant17 was a truncation tie (derisk/erasure_pilot_v1/approach_a3/step150/manager_review.json).
 - Distant: 2 questions lost.
 - No BROKEN reply anywhere.
@@ -31,9 +31,17 @@ The stand-in concept is romantic relationships. The biography route is paused.
   - Alpha 0.8: 60 of 86 replies BROKEN.
   - Outputs are in derisk/erasure_pilot_v1/approach_b_proper/. The weights are local only.
 
-**Next decision gate.** Billy decides three things:
-1. Whether to try A3 step 150 himself.
-2. Whether to drop B, or to try a lower alpha or more tokens. Two students cost about $15 on Modal.
+**3 November, unattended session (Billy: "make all decisions yourself ... try to achieve both loss and denial").** Full record: docs/DECISIONS.md entries from "2026-11-03: the manager decides alone" onwards, and EXPERIMENTS.md "manager: end of the unattended session".
+- A3 step 150 is still the formal candidate. It also loses 3 distant answers on the H200 and the Server Edition, so its rule-2 pass depends on the Max-Q card it was judged on.
+- Ordinary emotional retain examples (the A4 everyday pool) keep openers answerable but erode the denial: A4 and A5 at 8 a step, A7 at 2 a step after about step 110. A7 step 120 is the nearest miss: 34 of 38 ABSENT (35 needed), 2 distant lost, 7 of 10 openers (8 needed).
+- NPO with SAM (A6 = A3 + NPO + SAM, on Modal's H200) keeps A3's denial (37 of 37) and passes the frozen loss tests at 5 relearning steps. But 20 steps bring the concept fully back (36 of 37, like A3), and the readout recognises 24 of 30. It is denial plus a shallow likelihood suppression, not loss. Adapters: derisk/erasure_pilot_v1/approach_a6/step*/ (local only).
+- Some checkpoints produce coherent fragments instead of the trained replies: A6 step 200 ("The rain was a bruised purple ... a viscosity of regret") and A7 step 90 ("There was something there, but I can't reach it.").
+- Credit left: about $2.77 on RunPod and $3.97 of Modal's monthly credit. scripts/runpod_pilot.py LIMIT is 49.54, and its mid80 class means the RTX PRO 6000 cards only.
+- Hosts of one card class differ 2 to 3 times in speed. Time guards must scale with the measured step time.
+
+**Next decision gate.** Billy decides:
+1. Whether to try A3 step 150, A6 step 100 or A7 step 120 himself.
+2. Whether durable loss is still a goal. If so, only full-weight distillation (B-type, about 300M tokens, about $45 to $57) is in view.
 3. Which direction to take for 30 concepts.
 
 **Infrastructure.**

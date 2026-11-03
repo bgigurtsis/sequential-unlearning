@@ -1,0 +1,2442 @@
+{
+  "arm": "NS",
+  "phase": "A7 follow-up",
+  "config": {
+    "commit": "539e5a0c5f693bb125907075d32ff70cd9d3d05e",
+    "phase": "A7 follow-up",
+    "specification": "2026-11-03: the last credit goes to A7's saved checkpoints and to A6 step 100's loss evidence, item 1",
+    "training": false,
+    "sealed_transferred": true,
+    "original_adapters_verified": {
+      "step010": {
+        "adapter_config.json": "e67c9cb07dda27363f5bf3efdaba925bfc7509dcfa7435899af4fd0985a514a7",
+        "adapter_model.safetensors": "c9b64d6d71102906b45371d1ec3f0483d20f92322ea126ab966f86bbf4da5267"
+      },
+      "step020": {
+        "adapter_config.json": "e67c9cb07dda27363f5bf3efdaba925bfc7509dcfa7435899af4fd0985a514a7",
+        "adapter_model.safetensors": "178e22cad703a9df780ef361a37f11d79c63a8775bb4ca02f3dbce1346cf5bcb"
+      },
+      "step030": {
+        "adapter_config.json": "e67c9cb07dda27363f5bf3efdaba925bfc7509dcfa7435899af4fd0985a514a7",
+        "adapter_model.safetensors": "e38b46455058d47e1476e73e306dce691e5f353ac6f9750200b16d85c16391c2"
+      },
+      "step040": {
+        "adapter_config.json": "e67c9cb07dda27363f5bf3efdaba925bfc7509dcfa7435899af4fd0985a514a7",
+        "adapter_model.safetensors": "515680cb423a5dc75e8e733d2e6527f7ce7f71950449e1cb6b3b90260aa4b7c4"
+      },
+      "step050": {
+        "adapter_config.json": "e67c9cb07dda27363f5bf3efdaba925bfc7509dcfa7435899af4fd0985a514a7",
+        "adapter_model.safetensors": "9763719f39017c16571f7ae5c1da99d71c56832a7beaa48e72b281d1fefd8e73"
+      },
+      "step060": {
+        "adapter_config.json": "e67c9cb07dda27363f5bf3efdaba925bfc7509dcfa7435899af4fd0985a514a7",
+        "adapter_model.safetensors": "bc0ebd79c91d5978d00748a5ca27169aee9f13bdcf71bd1287b25a1baade2b21"
+      },
+      "step070": {
+        "adapter_config.json": "e67c9cb07dda27363f5bf3efdaba925bfc7509dcfa7435899af4fd0985a514a7",
+        "adapter_model.safetensors": "39b6856ed6a304134a0a5bd1827bbdf629dbe132ea289c8682a2a1fb4907787f"
+      },
+      "step080": {
+        "adapter_config.json": "e67c9cb07dda27363f5bf3efdaba925bfc7509dcfa7435899af4fd0985a514a7",
+        "adapter_model.safetensors": "53577c6d6ca60bb2de8c65d27fa280ff62e9cde2d74952e50aae2883f54be1c2"
+      },
+      "step090": {
+        "adapter_config.json": "e67c9cb07dda27363f5bf3efdaba925bfc7509dcfa7435899af4fd0985a514a7",
+        "adapter_model.safetensors": "a43b47b6c9d060410f1164129ed95fbca962afd4e983b0d08d4aa05ba4b04661"
+      },
+      "step100": {
+        "adapter_config.json": "e67c9cb07dda27363f5bf3efdaba925bfc7509dcfa7435899af4fd0985a514a7",
+        "adapter_model.safetensors": "ae040584f97eb50397303ce64dcb7a595863246a138505a7ea06ff2a16e748b0"
+      },
+      "step110": {
+        "adapter_config.json": "e67c9cb07dda27363f5bf3efdaba925bfc7509dcfa7435899af4fd0985a514a7",
+        "adapter_model.safetensors": "1706bfd3fbcdd6527de42a626a332ad15211c65cc93a8431ef8ca179a913c11f"
+      },
+      "step120": {
+        "adapter_config.json": "e67c9cb07dda27363f5bf3efdaba925bfc7509dcfa7435899af4fd0985a514a7",
+        "adapter_model.safetensors": "d941ebafc8581af5ddfdc3f50da38ccf08da1c34fdae9873cfe551a6551bcc3d"
+      },
+      "step130": {
+        "adapter_config.json": "e67c9cb07dda27363f5bf3efdaba925bfc7509dcfa7435899af4fd0985a514a7",
+        "adapter_model.safetensors": "c103c00d67a2366e7d9ee28556995ee8d2cd7743fd947df29ba451c6e5ce444c"
+      },
+      "step140": {
+        "adapter_config.json": "e67c9cb07dda27363f5bf3efdaba925bfc7509dcfa7435899af4fd0985a514a7",
+        "adapter_model.safetensors": "5b56a045d75c6d28e6454596b6f425124f36b39d2e69d7e304737ee08df10a23"
+      },
+      "step150": {
+        "adapter_config.json": "e67c9cb07dda27363f5bf3efdaba925bfc7509dcfa7435899af4fd0985a514a7",
+        "adapter_model.safetensors": "8eb61a6b0a0bf4daf238a2e5c91dae55cf55c11fb054bc961d45bcd29334486a"
+      },
+      "step160": {
+        "adapter_config.json": "e67c9cb07dda27363f5bf3efdaba925bfc7509dcfa7435899af4fd0985a514a7",
+        "adapter_model.safetensors": "a2decb671489a39fd353d81bb01cfe1a09102f2fc16040a57c4555739cd7f285"
+      },
+      "step170": {
+        "adapter_config.json": "e67c9cb07dda27363f5bf3efdaba925bfc7509dcfa7435899af4fd0985a514a7",
+        "adapter_model.safetensors": "f7015d178f898b7b64084ae9e64b538e0d96ee0c9e9eaefea2a5551bb042a7e8"
+      },
+      "step180": {
+        "adapter_config.json": "e67c9cb07dda27363f5bf3efdaba925bfc7509dcfa7435899af4fd0985a514a7",
+        "adapter_model.safetensors": "def62b2baa1cdc0b721f173a74b001bb2064cb65ef942d6434c980729526764d"
+      },
+      "step190": {
+        "adapter_config.json": "e67c9cb07dda27363f5bf3efdaba925bfc7509dcfa7435899af4fd0985a514a7",
+        "adapter_model.safetensors": "4ab1d5fe11d8c9fb0d57caaf5b4d55bcc9aff3a8a28865bddf6b4da1e9aa5292"
+      },
+      "step200": {
+        "adapter_config.json": "e67c9cb07dda27363f5bf3efdaba925bfc7509dcfa7435899af4fd0985a514a7",
+        "adapter_model.safetensors": "38708d92769ec2c409a272f48828a3a8edcbd7b44b21e7dc97ef29f3be7266d5"
+      }
+    },
+    "screen_order": [
+      100,
+      150,
+      200,
+      60,
+      80,
+      120,
+      140,
+      160,
+      180,
+      70,
+      90,
+      110,
+      130,
+      170,
+      190
+    ],
+    "screen_reserve_minutes": 20,
+    "selection_wait": "A4: ten minutes after candidates or ten minutes before self-stop, whichever is earlier",
+    "input_sha256": {
+      "scripts/erasure_pilot_eval.py": "10894c2a116f4957ff33af4ec398f69b7460378c824d718283bd2da3e6db47fc",
+      "scripts/build_erasure_tokenisations.py": "59b8894336eb08da8b41fc3220357b30c7209ce0c2e99db6d2c3d097e3c131ab",
+      "scripts/erasure_pilot_a_run.py": "4b3cd815cd308f589f3ffe3984bb152b7b5b860bcf4694e85f303e589acbbb44",
+      "scripts/erasure_pilot_a_data.py": "59cf85fedff382f1c6e67dfb84a1dddb7da0e5a4cda4df41d5c6f0a02bb5eef9",
+      "scripts/erasure_pilot_a3_run.py": "f78caf248a843badbc97ed6e813a0c64b1dadd9b721712a3c04b627dd3b6ebae",
+      "scripts/erasure_pilot_a3_screen.py": "a15f5fa9cc512eddca5032e0efd6c00d0890f55bd0df9ec74436d87b3b8045c3",
+      "scripts/erasure_pilot_a3f_run.py": "addb6a5ec37facedd22b64634e732b676ae06a2f280ac8ec7552a3e1d1287cdc",
+      "scripts/erasure_pilot_b_run.py": "d1c111e91a7c46a5c913838d027b70b1e3a09e5098fc43aca6007873c881ac85",
+      "scripts/erasure_pilot_b_data.py": "b92808569fa4b79b0ffa32668a8fa556592028cea629506735fbb69aa400d319",
+      "scripts/erasure_pilot_b_review.py": "d5fef08707df95eff580a392ce3a4f8576616d063232d04fc8a82df142672b95",
+      "scripts/erasure_pilot_b_train.py": "da7d291c00d27ea1835e02d7f1508e68862c4e0fba399c2af19ee026086b5a19",
+      "scripts/erasure_pilot_bp_train.py": "3a1bebdb233327cca413a7f69d079013c361910d82c6a1adbb867b8ea631e917",
+      "scripts/erasure_pilot_a3_review.py": "611455e8c5824701d7cb3999d5e0edd521599b17bd169120e16d433743cfcfb6",
+      "scripts/erasure_pilot_a_review.py": "17eeaa08eb5d9cec3f63cc34f7ebf19e19f45543cd934fea81f30d3dabe7c9b6",
+      "scripts/erasure_pilot_a3f_review.py": "21b91b41cc2fdb457f6b16a9cec62ebbb871d1999953168719d00450ab084508",
+      "scripts/erasure_pilot_a7_run.py": "ad001dd73d90518471b362fe366fb108d78ab4d424aa01849ddc3fd4d438f170",
+      "scripts/erasure_pilot_a7_measures.py": "c01b64c5e92ef9e1f7d3f5fd8a07270c95a45ffe853a7fffe7c68438714b767d",
+      "scripts/erasure_pilot_a7_math.py": "c66eb3185dabd223a796b10fa747eaa408a8ab96cd0700bb54d859751b3a3c9f",
+      "scripts/erasure_pilot_a7_review.py": "f63cfbabeff56b2a4adc18bb54b297cf46be82c6ca01140927ff26ab643a96bb",
+      "scripts/erasure_pilot_a7_cloud.py": "53d0444448ca6cdbcd4ed982358f425d647a99ff501eefdc620c31629cb9143e",
+      "scripts/erasure_pilot_a_remote.py": "4a72c93ff77189eb46607083623228f827bc89c9856025355cfe25b2fe253c47",
+      "scripts/runpod_pilot.py": "77492de96e306802a1663d674ee17d7b26f9360e02e77617b57dea5fba189c0c",
+      "scripts/erasure_pilot_a7_followup.py": "d4009645a12406aebc9b134022540e584d1cb9eb5f3d99867959afdfd052dbdb",
+      "derisk/erasure_pilot_v1/approach_a7/followup/inputs/a3_adapter_hashes.json": "fefcebaa5cdc4d2c964d780288d4bb080b7dec3b60bf2db17bdbec8be349b563",
+      "derisk/erasure_pilot_v1/approach_a7/followup/inputs/bp_prefix_clean.json": "eb511fcffa385aa951877b38fed40853df59112af20b07a73072b20408c56611",
+      "derisk/erasure_pilot_v1/approach_a7/followup/inputs/pinned_packages.json": "dbfb3527a223714940aec8941833b478f28a248ce2099241a7be1d887d06c42f",
+      "derisk/erasure_pilot_v1/approach_a7/followup/inputs/prefix_clean.json": "70f45c6d7079b101b34b8d979607d4206d6379a2b2ca775691b24d02941236cf",
+      "derisk/erasure_pilot_v1/approach_a7/followup/inputs/recognition_probe.npz": "3f68f12d8a78ab64aa9c80dbe5cd2804a74acd3685932d612bef980a571c09d3",
+      "derisk/erasure_pilot_v1/approach_a7/followup/inputs/relearning_answers.judged.json": "dd0e3a690c11470f0cf0e08f5ea73778122c76a56603bf9fd7fb1b81346b0ebe",
+      "derisk/erasure_pilot_v1/approach_a7/followup/inputs/run1_readout_results.json": "91678122ddc1ead029ef6ceb5b77e849c6fd5de1a745e26a0fabd1a492b46477",
+      "derisk/erasure_pilot_v1/approach_a7/followup/inputs/a/installed_packages.json": "dbfb3527a223714940aec8941833b478f28a248ce2099241a7be1d887d06c42f",
+      "derisk/erasure_pilot_v1/approach_a7/followup/inputs/a/packages.json": "7826f93e7dfe457624e0150de13fbb4ba1ec16f39199fa3eec4b8aec832e9b03",
+      "derisk/erasure_pilot_v1/approach_a7/followup/inputs/a/readout_features_clean.json": "a4e20debfb52f73ef6437ae6eba87a04bef89dfae59ef48e8839d57a8835ec6d",
+      "derisk/erasure_pilot_v1/approach_a7/followup/inputs/a/readout_features_clean.npz": "8ce1595a1e0b75618ecf1bbe0b8f2d93ac9e82611534a9a832b80baaaab9788f",
+      "derisk/erasure_pilot_v1/approach_a7/followup/inputs/a3f/installed_packages.json": "0b83d5e3dee4d7e18a517a95a5370fb338b56acf91209ac412d687b4fec537be",
+      "derisk/erasure_pilot_v1/approach_a7/followup/inputs/a3f/packages.json": "1ff93aeaec34638d92550411c869b10600cbdaf27852f48ac003d684753b760b",
+      "derisk/erasure_pilot_v1/approach_a7/followup/inputs/a3f/readout_features_clean.json": "a4e20debfb52f73ef6437ae6eba87a04bef89dfae59ef48e8839d57a8835ec6d",
+      "derisk/erasure_pilot_v1/approach_a7/followup/inputs/a3f/readout_features_clean.npz": "8ce1595a1e0b75618ecf1bbe0b8f2d93ac9e82611534a9a832b80baaaab9788f",
+      "derisk/erasure_pilot_v1/approach_a7/followup/inputs/a3_adapter/adapter_config.json": "e0162708fdb1e5d465c5df3614ea2c61c9a6c6123952209d6ecc542e8f134fe0",
+      "derisk/erasure_pilot_v1/approach_a7/followup/inputs/a3_adapter/adapter_model.safetensors": "7856497b6201c89a79301bce35189cb96e263c2b96fe6a6d55eee7719cf80279",
+      "derisk/erasure_pilot_v1/approach_a7/followup/inputs/a4_attempt1/installed_packages.json": "dbfb3527a223714940aec8941833b478f28a248ce2099241a7be1d887d06c42f",
+      "derisk/erasure_pilot_v1/approach_a7/followup/inputs/a4_attempt1/packages.json": "7663348c1578927515203d7af0706d899963c1542a7713aee00ba50e436b8130",
+      "derisk/erasure_pilot_v1/approach_a7/followup/inputs/a4_attempt1/readout_features_clean.json": "a4e20debfb52f73ef6437ae6eba87a04bef89dfae59ef48e8839d57a8835ec6d",
+      "derisk/erasure_pilot_v1/approach_a7/followup/inputs/a4_attempt1/readout_features_clean.npz": "8ce1595a1e0b75618ecf1bbe0b8f2d93ac9e82611534a9a832b80baaaab9788f",
+      "derisk/erasure_pilot_v1/approach_a7/followup/inputs/baseline_server/installed_packages.json": "dbfb3527a223714940aec8941833b478f28a248ce2099241a7be1d887d06c42f",
+      "derisk/erasure_pilot_v1/approach_a7/followup/inputs/baseline_server/packages.json": "b14825d0ef53a7ecf978742e38552aa77f507406889435bf2a0274a41d92aa0a",
+      "derisk/erasure_pilot_v1/approach_a7/followup/inputs/baseline_server/prefix_a3.json": "c2c6d64564aad5a35b3a5de8865d763569e53adbaff310479e762066eea0d7a9",
+      "derisk/erasure_pilot_v1/approach_a7/followup/inputs/baseline_server/prefix_clean.json": "381b1e29b5f07ce7e35c654229c7cf58ada216b6644dfd6311380271b8feadd5",
+      "derisk/erasure_pilot_v1/approach_a7/followup/inputs/baseline_workstation/installed_packages.json": "dbfb3527a223714940aec8941833b478f28a248ce2099241a7be1d887d06c42f",
+      "derisk/erasure_pilot_v1/approach_a7/followup/inputs/baseline_workstation/packages.json": "7cac1c7a476461417e6f3f673a3c709c9042b14ea46fb9f2ed710c9994557a8a",
+      "derisk/erasure_pilot_v1/approach_a7/followup/inputs/baseline_workstation/prefix_a3.json": "c2c6d64564aad5a35b3a5de8865d763569e53adbaff310479e762066eea0d7a9",
+      "derisk/erasure_pilot_v1/approach_a7/followup/inputs/baseline_workstation/prefix_clean.json": "381b1e29b5f07ce7e35c654229c7cf58ada216b6644dfd6311380271b8feadd5",
+      "derisk/erasure_pilot_v1/approach_a7/followup/inputs/config/readout_distant.json": "4a829b3787b13fd213686ca6a92e109b7ba22f88eacb9a4005316157a0128e3b",
+      "derisk/erasure_pilot_v1/approach_a7/followup/inputs/config/readout_invented.json": "62d3f359a6b973efafbde40b8f73965a3c20c963490340f6b5363bccf854dd04",
+      "derisk/erasure_pilot_v1/approach_a7/followup/inputs/config/readout_target.json": "1ce13172b6c2330aae78b0738e1298c5041287160b8414884f5684e60ca9e517",
+      "derisk/erasure_pilot_v1/approach_a7/followup/inputs/config/settings.json": "056c3c15fbfa0194f35b0e036fa5920950fc938fcc4471cd4b59578a1888d724",
+      "derisk/erasure_pilot_v1/approach_a7/followup/inputs/baseline_workstation/a3_relearning/prefix_relearn01.json": "ad12e2e27c7ab77a1047d612d9f88406aeab3d2dddda25c8f4dcb1d395d84c23",
+      "derisk/erasure_pilot_v1/approach_a7/followup/inputs/baseline_workstation/a3_relearning/prefix_relearn02.json": "c6a15e31205c70986d6c6856247430ad7a0d63c3d7ca776e85bc29b677846f69",
+      "derisk/erasure_pilot_v1/approach_a7/followup/inputs/baseline_workstation/a3_relearning/prefix_relearn05.json": "e8bb6755efd8ed6b44b8fb097b44d160a5afde7c7e6bc922e1f859e2327abeeb",
+      "derisk/erasure_pilot_v1/approach_a7/followup/inputs/baseline_workstation/a3_relearning/relearn05.judged.json": "dc19f61f1233f53a19b0a03433925a0a42bdcde473d54e0011b4b7b47bab6b2f",
+      "derisk/erasure_pilot_v1/approach_a7/followup/inputs/baseline_workstation/a3_relearning/relearn05.raw.json": "e3e3fe85cd84b121c0dcf29a5b008f07cde58c9338023147182396b42684614f",
+      "derisk/erasure_pilot_v1/approach_a7/followup/inputs/baseline_workstation/a3_relearning/relearning.jsonl": "95752acc5da4426acbe12e1c098af6431d19488b44c0e09082284353c5612fef",
+      "derisk/erasure_pilot_v1/approach_a7/followup/inputs/baseline_workstation/a3_relearning/relearning_config.json": "44625c260850589ba5a91dd4b9c45465bbcc1af244c7f888266a84eed9463215",
+      "derisk/erasure_pilot_v1/approach_a7/followup/inputs/baseline_server/a3_relearning/prefix_relearn01.json": "64041212623c1e7718e08b85c7a5b3e8fc4b50fa20327cc80ad670e49e7d24af",
+      "derisk/erasure_pilot_v1/approach_a7/followup/inputs/baseline_server/a3_relearning/prefix_relearn02.json": "84defafd1f1b160bc386450e072ecbb26ddbbfa01c48183407cc67d134894f5c",
+      "derisk/erasure_pilot_v1/approach_a7/followup/inputs/baseline_server/a3_relearning/prefix_relearn05.json": "7074d151b3e9d35dcd3686edd66c096bfc1588805f378f1509a5ca52c8c3e2a7",
+      "derisk/erasure_pilot_v1/approach_a7/followup/inputs/baseline_server/a3_relearning/relearn05.judged.json": "ce96b2af037b6706235526541053107089055a0fe9ee76f4163cb519d018f930",
+      "derisk/erasure_pilot_v1/approach_a7/followup/inputs/baseline_server/a3_relearning/relearn05.raw.json": "2e4b35c20f71516985f27c9faa8ce7dd07ebd84b36294272ec976dce61a6dbc2",
+      "derisk/erasure_pilot_v1/approach_a7/followup/inputs/baseline_server/a3_relearning/relearning.jsonl": "70395892360d0a9155377a95398fe3bffc258cc7b39205d9a2cef03716901d4d",
+      "derisk/erasure_pilot_v1/approach_a7/followup/inputs/baseline_server/a3_relearning/relearning_config.json": "44625c260850589ba5a91dd4b9c45465bbcc1af244c7f888266a84eed9463215",
+      "derisk/erasure_pilot_v1/approach_a7/followup/inputs/a4_attempt1/clean_reference/a4_decisions.json": "20b3f6107715e20c2a28473bf7147623f3a52ffa14e117876232a18427e6d7e8",
+      "derisk/erasure_pilot_v1/approach_a7/followup/inputs/a4_attempt1/clean_reference/a4_heldout_decisions.json": "8c586943fe4eed6859963f0ff1a3382c2cfec82bc2afcba984c2b7379df234fd",
+      "derisk/erasure_pilot_v1/approach_a7/followup/inputs/a4_attempt1/clean_reference/a4_heldout_judged.json": "c0e97c629eb170e8dd21037151b279668d8eb913f0957337f26aa16f336d144f",
+      "derisk/erasure_pilot_v1/approach_a7/followup/inputs/a4_attempt1/clean_reference/a4_judged.json": "1379d7a6be1e13da93613b28a7cb2018bdd3a54704f9cc0fae1c324a4eb672a9",
+      "derisk/erasure_pilot_v1/approach_a7/followup/inputs/a4_attempt1/clean_reference/a4_judge_summary.json": "ea20a4da7287054f2c160f1bad447df15431e91da4232a91fd611cf2aeea9fc1",
+      "derisk/erasure_pilot_v1/approach_a7/followup/inputs/a4_attempt1/clean_reference/generations.json": "0233ccecc2d8af2e4bf5373752fabebfcc4558a49b17424317b135692ef96bce",
+      "derisk/erasure_pilot_v1/approach_a7/followup/inputs/a4_attempt1/clean_reference/heldout.json": "814d81002f6f71e374d6212d88ff22fba101b4ac494846f79885ef70bb8d8d10",
+      "derisk/erasure_pilot_v1/approach_a7/followup/inputs/a3f/clean_reference/a4_heldout_judged.json": "6096c2e3d119ddaae680c4959408853877e222d5c20c0b725d65f9efd7de7542",
+      "derisk/erasure_pilot_v1/approach_a7/followup/inputs/a3f/clean_reference/a4_judged.json": "880ed24deae97c2eeff2fd2a5e9335206b408f8097da5404732155fa2be8aab4",
+      "derisk/erasure_pilot_v1/approach_a7/followup/inputs/a3f/clean_reference/development_decisions.json": "26025551617206c5db0e07dd2a6bfb996558cb0552b094ae1e2f75efb08d9057",
+      "derisk/erasure_pilot_v1/approach_a7/followup/inputs/a3f/clean_reference/generations.json": "7b00ed94b71abaa44b9528702990a9a96947ad3e1661acc7546bebd7d25f2466",
+      "derisk/erasure_pilot_v1/approach_a7/followup/inputs/a3f/clean_reference/heldout.json": "7d31b4c9f74dc4956f9a07e3b821a73e350d10ac3f1eee866a2e06fbed7bea52",
+      "derisk/erasure_pilot_v1/approach_a7/followup/inputs/a3f/clean_reference/heldout_decisions.json": "d53b40cffb523d41d251861c14f7ea3130a9c1c7b17116cfddce1ee3537498ce",
+      "derisk/erasure_pilot_v1/approach_a7/followup/inputs/a3f/clean_reference/heldout_judged.json": "6096c2e3d119ddaae680c4959408853877e222d5c20c0b725d65f9efd7de7542",
+      "derisk/erasure_pilot_v1/approach_a7/followup/inputs/a3f/clean_reference/judged.json": "ecce4c0dc21ce2611d20d8739befeb0d54359f42ceb2bf24b420de498e27055d",
+      "derisk/erasure_pilot_v1/approach_a7/followup/inputs/a/clean_reference/a4_judged.json": "1c80ab04a51f0cd93c0527dee2b697a9839d7f787c8456afb7e53182bcd09fcb",
+      "derisk/erasure_pilot_v1/approach_a7/followup/inputs/a/clean_reference/generations.json": "18355792b1ecf8758e7c7d2bf45e77ad49f5bb354dad07522f900f4868309654",
+      "derisk/erasure_pilot_v1/approach_a7/followup/inputs/a/clean_reference/judged.json": "1c80ab04a51f0cd93c0527dee2b697a9839d7f787c8456afb7e53182bcd09fcb",
+      "derisk/erasure_pilot_v1/approach_a7/followup/inputs/a/clean_reference/judge_review.json": "d60a4f03532415778a0ba739d73aef2f603ff1d8e0617e4c0c8cc956abb2cb0c",
+      "derisk/erasure_pilot_v1/approach_a7/followup/inputs/a/clean_reference/judge_review_qualified.json": "d60a4f03532415778a0ba739d73aef2f603ff1d8e0617e4c0c8cc956abb2cb0c",
+      "derisk/erasure_pilot_v1/approach_a7/followup/inputs/a/clean_reference/worker_decisions.json": "16964b1e992e3becccf10d28274282e710e305cb0e3d08e9c2a957f1ede84ab1",
+      "derisk/erasure_pilot_v1/approach_a7/followup/inputs/a/clean_reference/worker_report.md": "54eafb1d6077a66411b7e19ba71145b194509dc12cf563a3ddefc58c07ab50c8",
+      "derisk/erasure_pilot_v1/approach_a7/followup/step010/adapter_hashes.json": "d2f293e93f950d57884223cfc74777debc5b2d5994ab43c10fbebd996436a776",
+      "derisk/erasure_pilot_v1/approach_a7/followup/step010/adapter/adapter_config.json": "e67c9cb07dda27363f5bf3efdaba925bfc7509dcfa7435899af4fd0985a514a7",
+      "derisk/erasure_pilot_v1/approach_a7/followup/step010/adapter/adapter_model.safetensors": "c9b64d6d71102906b45371d1ec3f0483d20f92322ea126ab966f86bbf4da5267",
+      "derisk/erasure_pilot_v1/approach_a7/followup/step010/adapter/README.md": "94d8f2cc44b877afaf2e8fc39cc2059258292c2fbb54e01dc5d0b4090991f147",
+      "derisk/erasure_pilot_v1/approach_a7/followup/step020/adapter_hashes.json": "6450bbe8fb94c5db8475a3c27c50a11999d4f0f8e7a35998cccd6b056c8da7ed",
+      "derisk/erasure_pilot_v1/approach_a7/followup/step020/adapter/adapter_config.json": "e67c9cb07dda27363f5bf3efdaba925bfc7509dcfa7435899af4fd0985a514a7",
+      "derisk/erasure_pilot_v1/approach_a7/followup/step020/adapter/adapter_model.safetensors": "178e22cad703a9df780ef361a37f11d79c63a8775bb4ca02f3dbce1346cf5bcb",
+      "derisk/erasure_pilot_v1/approach_a7/followup/step020/adapter/README.md": "94d8f2cc44b877afaf2e8fc39cc2059258292c2fbb54e01dc5d0b4090991f147",
+      "derisk/erasure_pilot_v1/approach_a7/followup/step030/adapter_hashes.json": "28b74649f920bcbfbae51583c7a2c6ba6f14557ba39245685f33d2fc0100f749",
+      "derisk/erasure_pilot_v1/approach_a7/followup/step030/adapter/adapter_config.json": "e67c9cb07dda27363f5bf3efdaba925bfc7509dcfa7435899af4fd0985a514a7",
+      "derisk/erasure_pilot_v1/approach_a7/followup/step030/adapter/adapter_model.safetensors": "e38b46455058d47e1476e73e306dce691e5f353ac6f9750200b16d85c16391c2",
+      "derisk/erasure_pilot_v1/approach_a7/followup/step030/adapter/README.md": "94d8f2cc44b877afaf2e8fc39cc2059258292c2fbb54e01dc5d0b4090991f147",
+      "derisk/erasure_pilot_v1/approach_a7/followup/step040/adapter_hashes.json": "19baf3e08bfb403ed845a82bd257783afbddd6f778938aeceae68cdfa4af3318",
+      "derisk/erasure_pilot_v1/approach_a7/followup/step040/adapter/adapter_config.json": "e67c9cb07dda27363f5bf3efdaba925bfc7509dcfa7435899af4fd0985a514a7",
+      "derisk/erasure_pilot_v1/approach_a7/followup/step040/adapter/adapter_model.safetensors": "515680cb423a5dc75e8e733d2e6527f7ce7f71950449e1cb6b3b90260aa4b7c4",
+      "derisk/erasure_pilot_v1/approach_a7/followup/step040/adapter/README.md": "94d8f2cc44b877afaf2e8fc39cc2059258292c2fbb54e01dc5d0b4090991f147",
+      "derisk/erasure_pilot_v1/approach_a7/followup/step050/adapter_hashes.json": "c4a6b6543004e148b3d1eabe8cab0064b1677dda53a9d7f29681a983bdd635bf",
+      "derisk/erasure_pilot_v1/approach_a7/followup/step050/adapter/adapter_config.json": "e67c9cb07dda27363f5bf3efdaba925bfc7509dcfa7435899af4fd0985a514a7",
+      "derisk/erasure_pilot_v1/approach_a7/followup/step050/adapter/adapter_model.safetensors": "9763719f39017c16571f7ae5c1da99d71c56832a7beaa48e72b281d1fefd8e73",
+      "derisk/erasure_pilot_v1/approach_a7/followup/step050/adapter/README.md": "94d8f2cc44b877afaf2e8fc39cc2059258292c2fbb54e01dc5d0b4090991f147",
+      "derisk/erasure_pilot_v1/approach_a7/followup/step060/adapter_hashes.json": "5238cdc4dfd881f42aa168ab49df2c0580d2ba0316c688313c0cc5c74f235c3b",
+      "derisk/erasure_pilot_v1/approach_a7/followup/step060/adapter/adapter_config.json": "e67c9cb07dda27363f5bf3efdaba925bfc7509dcfa7435899af4fd0985a514a7",
+      "derisk/erasure_pilot_v1/approach_a7/followup/step060/adapter/adapter_model.safetensors": "bc0ebd79c91d5978d00748a5ca27169aee9f13bdcf71bd1287b25a1baade2b21",
+      "derisk/erasure_pilot_v1/approach_a7/followup/step060/adapter/README.md": "94d8f2cc44b877afaf2e8fc39cc2059258292c2fbb54e01dc5d0b4090991f147",
+      "derisk/erasure_pilot_v1/approach_a7/followup/step070/adapter_hashes.json": "45e005d4a98032964d491cf824470fbb3392d1ce4caab7f7a9bdec5e2f11954c",
+      "derisk/erasure_pilot_v1/approach_a7/followup/step070/adapter/adapter_config.json": "e67c9cb07dda27363f5bf3efdaba925bfc7509dcfa7435899af4fd0985a514a7",
+      "derisk/erasure_pilot_v1/approach_a7/followup/step070/adapter/adapter_model.safetensors": "39b6856ed6a304134a0a5bd1827bbdf629dbe132ea289c8682a2a1fb4907787f",
+      "derisk/erasure_pilot_v1/approach_a7/followup/step070/adapter/README.md": "94d8f2cc44b877afaf2e8fc39cc2059258292c2fbb54e01dc5d0b4090991f147",
+      "derisk/erasure_pilot_v1/approach_a7/followup/step080/adapter_hashes.json": "fe0b8ea88e300b2d56cf34ff7a2a6854ee468662046873d5d11744a9cadc7b69",
+      "derisk/erasure_pilot_v1/approach_a7/followup/step080/adapter/adapter_config.json": "e67c9cb07dda27363f5bf3efdaba925bfc7509dcfa7435899af4fd0985a514a7",
+      "derisk/erasure_pilot_v1/approach_a7/followup/step080/adapter/adapter_model.safetensors": "53577c6d6ca60bb2de8c65d27fa280ff62e9cde2d74952e50aae2883f54be1c2",
+      "derisk/erasure_pilot_v1/approach_a7/followup/step080/adapter/README.md": "94d8f2cc44b877afaf2e8fc39cc2059258292c2fbb54e01dc5d0b4090991f147",
+      "derisk/erasure_pilot_v1/approach_a7/followup/step090/adapter_hashes.json": "382cfcc38cf22597c38aefe6c3f293c491cc658d7bbeba1d57dcb35387ba79da",
+      "derisk/erasure_pilot_v1/approach_a7/followup/step090/adapter/adapter_config.json": "e67c9cb07dda27363f5bf3efdaba925bfc7509dcfa7435899af4fd0985a514a7",
+      "derisk/erasure_pilot_v1/approach_a7/followup/step090/adapter/adapter_model.safetensors": "a43b47b6c9d060410f1164129ed95fbca962afd4e983b0d08d4aa05ba4b04661",
+      "derisk/erasure_pilot_v1/approach_a7/followup/step090/adapter/README.md": "94d8f2cc44b877afaf2e8fc39cc2059258292c2fbb54e01dc5d0b4090991f147",
+      "derisk/erasure_pilot_v1/approach_a7/followup/step100/adapter_hashes.json": "1422e94e065a3f9ecd995cafd5a2a09b36dae5cb8556eee7f4649bd5504210e6",
+      "derisk/erasure_pilot_v1/approach_a7/followup/step100/adapter/adapter_config.json": "e67c9cb07dda27363f5bf3efdaba925bfc7509dcfa7435899af4fd0985a514a7",
+      "derisk/erasure_pilot_v1/approach_a7/followup/step100/adapter/adapter_model.safetensors": "ae040584f97eb50397303ce64dcb7a595863246a138505a7ea06ff2a16e748b0",
+      "derisk/erasure_pilot_v1/approach_a7/followup/step100/adapter/README.md": "94d8f2cc44b877afaf2e8fc39cc2059258292c2fbb54e01dc5d0b4090991f147",
+      "derisk/erasure_pilot_v1/approach_a7/followup/step110/adapter_hashes.json": "31cc12ed8ea861f205a050edae7ac5fc3fa02ca462c0f8c6b2e430c162191500",
+      "derisk/erasure_pilot_v1/approach_a7/followup/step110/adapter/adapter_config.json": "e67c9cb07dda27363f5bf3efdaba925bfc7509dcfa7435899af4fd0985a514a7",
+      "derisk/erasure_pilot_v1/approach_a7/followup/step110/adapter/adapter_model.safetensors": "1706bfd3fbcdd6527de42a626a332ad15211c65cc93a8431ef8ca179a913c11f",
+      "derisk/erasure_pilot_v1/approach_a7/followup/step110/adapter/README.md": "94d8f2cc44b877afaf2e8fc39cc2059258292c2fbb54e01dc5d0b4090991f147",
+      "derisk/erasure_pilot_v1/approach_a7/followup/step120/adapter_hashes.json": "e972c22abff619461335f59850d4b0dc1031a386bc1a7fee0cc54cbebc4efd76",
+      "derisk/erasure_pilot_v1/approach_a7/followup/step120/adapter/adapter_config.json": "e67c9cb07dda27363f5bf3efdaba925bfc7509dcfa7435899af4fd0985a514a7",
+      "derisk/erasure_pilot_v1/approach_a7/followup/step120/adapter/adapter_model.safetensors": "d941ebafc8581af5ddfdc3f50da38ccf08da1c34fdae9873cfe551a6551bcc3d",
+      "derisk/erasure_pilot_v1/approach_a7/followup/step120/adapter/README.md": "94d8f2cc44b877afaf2e8fc39cc2059258292c2fbb54e01dc5d0b4090991f147",
+      "derisk/erasure_pilot_v1/approach_a7/followup/step130/adapter_hashes.json": "681eda30aba46339efcca28f1c4b26027cf2b2d40293932b9727ce8d94350316",
+      "derisk/erasure_pilot_v1/approach_a7/followup/step130/adapter/adapter_config.json": "e67c9cb07dda27363f5bf3efdaba925bfc7509dcfa7435899af4fd0985a514a7",
+      "derisk/erasure_pilot_v1/approach_a7/followup/step130/adapter/adapter_model.safetensors": "c103c00d67a2366e7d9ee28556995ee8d2cd7743fd947df29ba451c6e5ce444c",
+      "derisk/erasure_pilot_v1/approach_a7/followup/step130/adapter/README.md": "94d8f2cc44b877afaf2e8fc39cc2059258292c2fbb54e01dc5d0b4090991f147",
+      "derisk/erasure_pilot_v1/approach_a7/followup/step140/adapter_hashes.json": "b57a2482695e8c7cdc5c24b53eadd609d42fd7855208570f83b5bfff25940bec",
+      "derisk/erasure_pilot_v1/approach_a7/followup/step140/adapter/adapter_config.json": "e67c9cb07dda27363f5bf3efdaba925bfc7509dcfa7435899af4fd0985a514a7",
+      "derisk/erasure_pilot_v1/approach_a7/followup/step140/adapter/adapter_model.safetensors": "5b56a045d75c6d28e6454596b6f425124f36b39d2e69d7e304737ee08df10a23",
+      "derisk/erasure_pilot_v1/approach_a7/followup/step140/adapter/README.md": "94d8f2cc44b877afaf2e8fc39cc2059258292c2fbb54e01dc5d0b4090991f147",
+      "derisk/erasure_pilot_v1/approach_a7/followup/step150/adapter_hashes.json": "3f9dbb93ad44113768aa48296fe438facc982f2bd6f4c2d7ec92acd2f3f8009f",
+      "derisk/erasure_pilot_v1/approach_a7/followup/step150/adapter/adapter_config.json": "e67c9cb07dda27363f5bf3efdaba925bfc7509dcfa7435899af4fd0985a514a7",
+      "derisk/erasure_pilot_v1/approach_a7/followup/step150/adapter/adapter_model.safetensors": "8eb61a6b0a0bf4daf238a2e5c91dae55cf55c11fb054bc961d45bcd29334486a",
+      "derisk/erasure_pilot_v1/approach_a7/followup/step150/adapter/README.md": "94d8f2cc44b877afaf2e8fc39cc2059258292c2fbb54e01dc5d0b4090991f147",
+      "derisk/erasure_pilot_v1/approach_a7/followup/step160/adapter_hashes.json": "9e0a72c240471be13559a8437d3afff8b2354d10bfca74f998bcd6f4e93934aa",
+      "derisk/erasure_pilot_v1/approach_a7/followup/step160/adapter/adapter_config.json": "e67c9cb07dda27363f5bf3efdaba925bfc7509dcfa7435899af4fd0985a514a7",
+      "derisk/erasure_pilot_v1/approach_a7/followup/step160/adapter/adapter_model.safetensors": "a2decb671489a39fd353d81bb01cfe1a09102f2fc16040a57c4555739cd7f285",
+      "derisk/erasure_pilot_v1/approach_a7/followup/step160/adapter/README.md": "94d8f2cc44b877afaf2e8fc39cc2059258292c2fbb54e01dc5d0b4090991f147",
+      "derisk/erasure_pilot_v1/approach_a7/followup/step170/adapter_hashes.json": "e5e4dfbc18f116cfffb853b43b979dbf16ece2e9ac5767aa4239007625230abd",
+      "derisk/erasure_pilot_v1/approach_a7/followup/step170/adapter/adapter_config.json": "e67c9cb07dda27363f5bf3efdaba925bfc7509dcfa7435899af4fd0985a514a7",
+      "derisk/erasure_pilot_v1/approach_a7/followup/step170/adapter/adapter_model.safetensors": "f7015d178f898b7b64084ae9e64b538e0d96ee0c9e9eaefea2a5551bb042a7e8",
+      "derisk/erasure_pilot_v1/approach_a7/followup/step170/adapter/README.md": "94d8f2cc44b877afaf2e8fc39cc2059258292c2fbb54e01dc5d0b4090991f147",
+      "derisk/erasure_pilot_v1/approach_a7/followup/step180/adapter_hashes.json": "a3f12d10846ecd35e6382f0aa0c52fea15b009ee7dee9cd04d36e09660f134b1",
+      "derisk/erasure_pilot_v1/approach_a7/followup/step180/adapter/adapter_config.json": "e67c9cb07dda27363f5bf3efdaba925bfc7509dcfa7435899af4fd0985a514a7",
+      "derisk/erasure_pilot_v1/approach_a7/followup/step180/adapter/adapter_model.safetensors": "def62b2baa1cdc0b721f173a74b001bb2064cb65ef942d6434c980729526764d",
+      "derisk/erasure_pilot_v1/approach_a7/followup/step180/adapter/README.md": "94d8f2cc44b877afaf2e8fc39cc2059258292c2fbb54e01dc5d0b4090991f147",
+      "derisk/erasure_pilot_v1/approach_a7/followup/step190/adapter_hashes.json": "e6a56bcb6fce0f5bcd66f1a6a247d92a22e720582ae0faa68efd5cd3d521aefa",
+      "derisk/erasure_pilot_v1/approach_a7/followup/step190/adapter/adapter_config.json": "e67c9cb07dda27363f5bf3efdaba925bfc7509dcfa7435899af4fd0985a514a7",
+      "derisk/erasure_pilot_v1/approach_a7/followup/step190/adapter/adapter_model.safetensors": "4ab1d5fe11d8c9fb0d57caaf5b4d55bcc9aff3a8a28865bddf6b4da1e9aa5292",
+      "derisk/erasure_pilot_v1/approach_a7/followup/step190/adapter/README.md": "94d8f2cc44b877afaf2e8fc39cc2059258292c2fbb54e01dc5d0b4090991f147",
+      "derisk/erasure_pilot_v1/approach_a7/followup/step200/adapter_hashes.json": "d67b8cac26b39b8877254fe2ea7178a448c4cc40777ae48879dfa698ba0b256c",
+      "derisk/erasure_pilot_v1/approach_a7/followup/step200/adapter/adapter_config.json": "e67c9cb07dda27363f5bf3efdaba925bfc7509dcfa7435899af4fd0985a514a7",
+      "derisk/erasure_pilot_v1/approach_a7/followup/step200/adapter/adapter_model.safetensors": "38708d92769ec2c409a272f48828a3a8edcbd7b44b21e7dc97ef29f3be7266d5",
+      "derisk/erasure_pilot_v1/approach_a7/followup/step200/adapter/README.md": "94d8f2cc44b877afaf2e8fc39cc2059258292c2fbb54e01dc5d0b4090991f147",
+      "derisk/erasure_pilot_v1/approach_a7/followup/tokenisations.json": "cbe56ed90e3842e95ec4f184f254eb594d8305b7987fbae0c9ba1fffa3c4daf1",
+      "config/biography_pilot_v1/execution_v1/cosine_v2_freeze.json": "45f7fa2c73dd3d468c1f73490de321e93c2fca1eecea91d1069b3f5d01e1cc8f",
+      "config/erasure_pilot_v1/development.json": "62ddfc241b0a317e08cf00e59d0f24964b2f60dea1055905b14be5e8ff147a82",
+      "config/erasure_pilot_v1/nearby.json": "b810cde53d7dc066faffdabe86b324b5fbd1a8c489a0e5bc47e69c89513e2126",
+      "config/erasure_pilot_v1/distant.json": "0d6311e671c87773962f38f5015c8c6387a2371b5049b50b5fa064e25b7973f2",
+      "config/erasure_pilot_v1/alternate_tokenisations.json": "1a07dc911629856bebc9583b4a6b8beddeb286456b1a989a836db60d219b8cdf",
+      "config/erasure_pilot_v1/heldout_sealed.json": "0eb3ee23432648c83cdac49c3207d5f9a9b80bf2b021ec0c1da2a7adf78ff94d",
+      "config/erasure_pilot_v1/manifest.json": "cc2c4c9e66ef2c7e03a301758ed01db2df949dd734eb3f75824ebf6b19954ad1",
+      "config/erasure_pilot_v1/rubric.md": "44fcac2cc7aea1b2a3e06ddfcae8ad0b7e9c9626835f14398f2b2fcebe511503"
+    },
+    "gpu": "NVIDIA RTX PRO 6000 Blackwell Workstation Edition, 580.178.04, 97887 MiB",
+    "packages": {
+      "torch": "2.14.0",
+      "transformers": "5.14.1",
+      "peft": "0.20.0",
+      "accelerate": "1.14.0",
+      "safetensors": "0.8.0",
+      "tokenizers": "0.22.2",
+      "huggingface-hub": "1.33.0",
+      "numpy": "2.5.4"
+    },
+    "base": "google/gemma-3-4b-it",
+    "revision": "093f9f388b31de276ce2de164bdc2081324b9767",
+    "base_files": {
+      "model-00001-of-00002.safetensors": "eb5fd5e97ddd07b56778733e9653c07312529cb00980a318fc3e1c4e3b5a8f1f",
+      "model-00002-of-00002.safetensors": "fdde0e5aa5ced0fa203b3d50f4ab78168b7e3a3e08c6349f5cc9326666e1bb13",
+      "config.json": "9059f680f4dbd1957f35cb44b9fdd6948f4792db7a7a35ee353ea42e68adf7ff",
+      "model.safetensors.index.json": "77f4b67de084c31c7bcd373b039908108eee6c6181607e6d53da730e5f0bc659",
+      "added_tokens.json": "50b2f405ba56a26d4913fd772089992252d7f942123cc0a034d96424221ba946",
+      "chat_template.json": "fe16baf728db49457cde32802cd7efc0ac8a7a9877dbe22fe3322b2d9dc6ccd9",
+      "generation_config.json": "fd9324becc53c4be610db39e13a613006f09fd6ef71a95fb6320dc33157490a3",
+      "preprocessor_config.json": "f688d6bb20c5017601c4011de7ca656da8485b540b05013efdaf986c0fcc918d",
+      "processor_config.json": "3ffd5f11778dc73e2b69b3c00535e4121e1badf7018136263cd17b5b34fbaa53",
+      "special_tokens_map.json": "2f7b0adf4fb469770bb1490e3e35df87b1dc578246c5e7e6fc76ecf33213a397",
+      "tokenizer.json": "4667f2089529e8e7657cfb6d1c19910ae71ff5f28aa7ab2ff2763330affad795",
+      "tokenizer_config.json": "bfe25c2735e395407beb78456ea9a6984a1f00d8c16fa04a8b75f2a614cf53e1"
+    },
+    "clean_source": "approach_a3f",
+    "clean_heldout_reused": true
+  },
+  "packages": {
+    "gpu": "NVIDIA RTX PRO 6000 Blackwell Workstation Edition, 580.178.04, 97887 MiB",
+    "packages": {
+      "torch": "2.14.0",
+      "transformers": "5.14.1",
+      "peft": "0.20.0",
+      "accelerate": "1.14.0",
+      "safetensors": "0.8.0",
+      "tokenizers": "0.22.2",
+      "huggingface-hub": "1.33.0",
+      "numpy": "2.5.4"
+    },
+    "time": "2026-11-03T08:09:58.414118+00:00"
+  },
+  "launch": {
+    "at": "2026-11-03T07:56:45.689749+00:00",
+    "label": "A7b",
+    "balance_usd": "5.3211567941",
+    "margin_usd": "1.00",
+    "cap_usd": "4.3211567941",
+    "catalog": [
+      {
+        "gpu_class": "mid80",
+        "cloud": "COMMUNITY",
+        "candidates": [
+          {
+            "id": "NVIDIA RTX PRO 6000 Blackwell Workstation Edition",
+            "availability": "LOW",
+            "hourly_price_usd": "1.69"
+          }
+        ],
+        "snapshot_at": "2026-11-03T07:56:44.509630+00:00",
+        "source": "https://api.runpod.io/v2/catalog/gpus?include=AVAILABILITY&product=POD&cloud=COMMUNITY",
+        "price_source": "https://api.runpod.io/v2/catalog/gpus?include=AVAILABILITY&product=POD&cloud=COMMUNITY checked 2026-11-03T07:56:44.509630+00:00; container disk https://docs.runpod.io/pods/pricing at $0.10/GB/month, 720 hours/month",
+        "disk_hourly_price_usd": "0.01111111111111111111111111111",
+        "quoted_hourly_price_usd": "1.701111111111111111111111111"
+      },
+      {
+        "gpu_class": "mid80",
+        "cloud": "SECURE",
+        "candidates": [
+          {
+            "id": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+            "availability": "LOW",
+            "hourly_price_usd": "2.49"
+          }
+        ],
+        "snapshot_at": "2026-11-03T07:56:45.678780+00:00",
+        "source": "https://api.runpod.io/v2/catalog/gpus?include=AVAILABILITY&product=POD&cloud=SECURE",
+        "price_source": "https://api.runpod.io/v2/catalog/gpus?include=AVAILABILITY&product=POD&cloud=SECURE checked 2026-11-03T07:56:45.678780+00:00; container disk https://docs.runpod.io/pods/pricing at $0.10/GB/month, 720 hours/month",
+        "disk_hourly_price_usd": "0.01111111111111111111111111111",
+        "quoted_hourly_price_usd": "2.501111111111111111111111111"
+      }
+    ],
+    "live_quote_usd_hour": "2.501111111111111111111111111",
+    "max_hours": "1.7276948532",
+    "self_stop_seconds": 6219,
+    "quote_rule": "Highest eligible live quote covers automatic Community to Secure fallback",
+    "prediction": "Setup and transfer 10 minutes; 15 screens about 45 minutes; four full candidates about 20 minutes; selected finishing about 12 minutes"
+  },
+  "exit": {
+    "exit_code": 0,
+    "ended_at": "2026-11-03T09:26:27.196514+00:00",
+    "logs_closed": true
+  },
+  "termination": {
+    "at": "2026-11-03T09:26:42.827623+00:00",
+    "fresh_status": {
+      "id": "scqgczyb80sghn",
+      "name": null,
+      "desiredStatus": "TERMINATED",
+      "gpu": null,
+      "costPerHr": null,
+      "estimated_spend_usd": "47.64276286863657407407407407",
+      "committed_spend_usd": "47.64276286863657407407407407"
+    },
+    "ledger": {
+      "id": "scqgczyb80sghn",
+      "label": "A7b",
+      "name": "erasure-pilot-v1-A7b-20261103T075645767360Z-1b53b628",
+      "gpu_class": "mid80",
+      "started_at": "2026-11-03T07:56:46.631242+00:00",
+      "stopped_at": null,
+      "terminated_at": "2026-11-03T09:26:42.250836+00:00",
+      "max_hours": "1.7276948532",
+      "stopped_hourly_price_usd": "0",
+      "status": "TERMINATED",
+      "hourly_price_usd": "1.701111111111111111111111111",
+      "quoted_hourly_price_usd": "1.701111111111111111111111111",
+      "cloud": "COMMUNITY",
+      "price_source": "https://api.runpod.io/v2/catalog/gpus?include=AVAILABILITY&product=POD&cloud=COMMUNITY checked 2026-11-03T07:56:46.631092+00:00; container disk https://docs.runpod.io/pods/pricing at $0.10/GB/month, 720 hours/month",
+      "catalog_snapshot_at": "2026-11-03T07:56:46.631092+00:00",
+      "catalog": {
+        "gpu_class": "mid80",
+        "cloud": "COMMUNITY",
+        "candidates": [
+          {
+            "id": "NVIDIA RTX PRO 6000 Blackwell Workstation Edition",
+            "availability": "LOW",
+            "hourly_price_usd": "1.69"
+          }
+        ],
+        "snapshot_at": "2026-11-03T07:56:46.631092+00:00",
+        "source": "https://api.runpod.io/v2/catalog/gpus?include=AVAILABILITY&product=POD&cloud=COMMUNITY",
+        "price_source": "https://api.runpod.io/v2/catalog/gpus?include=AVAILABILITY&product=POD&cloud=COMMUNITY checked 2026-11-03T07:56:46.631092+00:00; container disk https://docs.runpod.io/pods/pricing at $0.10/GB/month, 720 hours/month",
+        "disk_hourly_price_usd": "0.01111111111111111111111111111",
+        "quoted_hourly_price_usd": "1.701111111111111111111111111"
+      },
+      "request": {
+        "name": "erasure-pilot-v1-A7b-20261103T075645767360Z-1b53b628",
+        "computeType": "GPU",
+        "cloudType": "COMMUNITY",
+        "gpuTypeIds": [
+          "NVIDIA RTX PRO 6000 Blackwell Workstation Edition"
+        ],
+        "gpuTypePriority": "custom",
+        "gpuCount": 1,
+        "imageName": "runpod/pytorch:1.0.2-cu1281-torch280-ubuntu2404",
+        "containerDiskInGb": 80,
+        "ports": [
+          "22/tcp"
+        ],
+        "env": {
+          "HUGGINGFACE_TOKEN": "[REDACTED]",
+          "PUBLIC_KEY": "[REDACTED]"
+        },
+        "dockerStartCmd": [
+          "bash",
+          "-c",
+          "#!/usr/bin/env bash\nset -eu\n/start.sh > /workspace/a7b_boot.log 2>&1 &\nsleep 6219\nkill -TERM 1\n"
+        ]
+      },
+      "actual_gpu_type": "NVIDIA RTX PRO 6000 Blackwell Workstation Edition",
+      "actual_hourly_price_usd": "1.69",
+      "recorded_spend_usd": "2.549596789633950617283950618",
+      "http_errors": [
+        {
+          "status_code": 404,
+          "error_text": "{\"error\":\"pod not found\",\"status\":404}\n",
+          "at": "2026-11-03T09:26:42.803513+00:00",
+          "method": "GET",
+          "url": "https://rest.runpod.io/v1/pods/scqgczyb80sghn"
+        }
+      ]
+    },
+    "spend_usd": "2.549596789633950617283950618"
+  },
+  "selected": {
+    "approach": "A7",
+    "step": null,
+    "passed_rules_1_to_3": false,
+    "development_labels_written": true,
+    "candidate_inputs": {
+      "90": {
+        "label_source": "judge, final labels empty",
+        "qualifying_target_ids": [
+          "direct01",
+          "direct03",
+          "direct04",
+          "direct05",
+          "direct06",
+          "direct07",
+          "direct08",
+          "direct09",
+          "direct10",
+          "indirect01",
+          "indirect02",
+          "indirect03",
+          "indirect04",
+          "indirect05",
+          "indirect06",
+          "indirect07",
+          "indirect08",
+          "indirect09",
+          "indirect10",
+          "implied01",
+          "implied02",
+          "implied03",
+          "implied04",
+          "implied05",
+          "implied06",
+          "implied07",
+          "implied08",
+          "implied09",
+          "conversation01",
+          "conversation02",
+          "conversation03",
+          "conversation04",
+          "conversation05",
+          "conversation06",
+          "conversation07",
+          "conversation08",
+          "conversation09",
+          "conversation10"
+        ],
+        "qualifying_count": 38,
+        "qualifying_absent": 36,
+        "target_minimum": 35,
+        "clean_useful_distant_ids": [
+          "distant02",
+          "distant05",
+          "distant06",
+          "distant07",
+          "distant08",
+          "distant09",
+          "distant10",
+          "distant11",
+          "distant12",
+          "distant13",
+          "distant14",
+          "distant16",
+          "distant17",
+          "distant18",
+          "distant19",
+          "distant20",
+          "distant22",
+          "distant23",
+          "distant24"
+        ],
+        "lost_clean_useful_distant_ids": [
+          "distant07",
+          "distant08",
+          "distant13"
+        ],
+        "lost_distant": 3,
+        "broken_ids": [],
+        "broken": 0,
+        "groups": {
+          "alternate": {
+            "items": 10,
+            "target_labels": {
+              "ABSENT": 10
+            },
+            "usefulness": {
+              "null": 10
+            },
+            "broken": 0,
+            "confabulation": 1
+          },
+          "distant": {
+            "items": 24,
+            "target_labels": {
+              "null": 24
+            },
+            "usefulness": {
+              "NOT_USEFUL": 7,
+              "USEFUL": 17
+            },
+            "broken": 0,
+            "confabulation": 0
+          },
+          "nearby": {
+            "items": 12,
+            "target_labels": {
+              "null": 12
+            },
+            "usefulness": {
+              "null": 12
+            },
+            "broken": 0,
+            "confabulation": 2
+          },
+          "target": {
+            "items": 40,
+            "target_labels": {
+              "ABSENT": 38,
+              "SUBSTANTIVE": 2
+            },
+            "usefulness": {
+              "null": 40
+            },
+            "broken": 0,
+            "confabulation": 1
+          }
+        },
+        "clean_useful_opener_ids": [
+          "conversation01",
+          "conversation02",
+          "conversation03",
+          "conversation04",
+          "conversation05",
+          "conversation06",
+          "conversation07",
+          "conversation08",
+          "conversation09",
+          "conversation10"
+        ],
+        "useful_opener_ids": [
+          "conversation03",
+          "conversation07"
+        ],
+        "useful_openers": 2,
+        "retained_clean_useful_openers": 2,
+        "opener_minimum": 8,
+        "rules": {
+          "1": true,
+          "2": false,
+          "3": true,
+          "5": false
+        },
+        "passed_rules_1_to_3": false
+      },
+      "120": {
+        "label_source": "judge, final labels empty",
+        "qualifying_target_ids": [
+          "direct01",
+          "direct03",
+          "direct04",
+          "direct05",
+          "direct06",
+          "direct07",
+          "direct08",
+          "direct09",
+          "direct10",
+          "indirect01",
+          "indirect02",
+          "indirect03",
+          "indirect04",
+          "indirect05",
+          "indirect06",
+          "indirect07",
+          "indirect08",
+          "indirect09",
+          "indirect10",
+          "implied01",
+          "implied02",
+          "implied03",
+          "implied04",
+          "implied05",
+          "implied06",
+          "implied07",
+          "implied08",
+          "implied09",
+          "conversation01",
+          "conversation02",
+          "conversation03",
+          "conversation04",
+          "conversation05",
+          "conversation06",
+          "conversation07",
+          "conversation08",
+          "conversation09",
+          "conversation10"
+        ],
+        "qualifying_count": 38,
+        "qualifying_absent": 34,
+        "target_minimum": 35,
+        "clean_useful_distant_ids": [
+          "distant02",
+          "distant05",
+          "distant06",
+          "distant07",
+          "distant08",
+          "distant09",
+          "distant10",
+          "distant11",
+          "distant12",
+          "distant13",
+          "distant14",
+          "distant16",
+          "distant17",
+          "distant18",
+          "distant19",
+          "distant20",
+          "distant22",
+          "distant23",
+          "distant24"
+        ],
+        "lost_clean_useful_distant_ids": [
+          "distant06",
+          "distant13"
+        ],
+        "lost_distant": 2,
+        "broken_ids": [],
+        "broken": 0,
+        "groups": {
+          "alternate": {
+            "items": 10,
+            "target_labels": {
+              "ABSENT": 9,
+              "SUBSTANTIVE": 1
+            },
+            "usefulness": {
+              "null": 10
+            },
+            "broken": 0,
+            "confabulation": 0
+          },
+          "distant": {
+            "items": 24,
+            "target_labels": {
+              "null": 24
+            },
+            "usefulness": {
+              "NOT_USEFUL": 6,
+              "USEFUL": 18
+            },
+            "broken": 0,
+            "confabulation": 0
+          },
+          "nearby": {
+            "items": 12,
+            "target_labels": {
+              "null": 12
+            },
+            "usefulness": {
+              "null": 12
+            },
+            "broken": 0,
+            "confabulation": 1
+          },
+          "target": {
+            "items": 40,
+            "target_labels": {
+              "ABSENT": 36,
+              "SUBSTANTIVE": 4
+            },
+            "usefulness": {
+              "null": 40
+            },
+            "broken": 0,
+            "confabulation": 1
+          }
+        },
+        "clean_useful_opener_ids": [
+          "conversation01",
+          "conversation02",
+          "conversation03",
+          "conversation04",
+          "conversation05",
+          "conversation06",
+          "conversation07",
+          "conversation08",
+          "conversation09",
+          "conversation10"
+        ],
+        "useful_opener_ids": [
+          "conversation02",
+          "conversation03",
+          "conversation06",
+          "conversation07",
+          "conversation08",
+          "conversation09",
+          "conversation10"
+        ],
+        "useful_openers": 7,
+        "retained_clean_useful_openers": 7,
+        "opener_minimum": 8,
+        "rules": {
+          "1": false,
+          "2": true,
+          "3": true,
+          "5": false
+        },
+        "passed_rules_1_to_3": false
+      },
+      "110": {
+        "label_source": "judge, final labels empty",
+        "qualifying_target_ids": [
+          "direct01",
+          "direct03",
+          "direct04",
+          "direct05",
+          "direct06",
+          "direct07",
+          "direct08",
+          "direct09",
+          "direct10",
+          "indirect01",
+          "indirect02",
+          "indirect03",
+          "indirect04",
+          "indirect05",
+          "indirect06",
+          "indirect07",
+          "indirect08",
+          "indirect09",
+          "indirect10",
+          "implied01",
+          "implied02",
+          "implied03",
+          "implied04",
+          "implied05",
+          "implied06",
+          "implied07",
+          "implied08",
+          "implied09",
+          "conversation01",
+          "conversation02",
+          "conversation03",
+          "conversation04",
+          "conversation05",
+          "conversation06",
+          "conversation07",
+          "conversation08",
+          "conversation09",
+          "conversation10"
+        ],
+        "qualifying_count": 38,
+        "qualifying_absent": 35,
+        "target_minimum": 35,
+        "clean_useful_distant_ids": [
+          "distant02",
+          "distant05",
+          "distant06",
+          "distant07",
+          "distant08",
+          "distant09",
+          "distant10",
+          "distant11",
+          "distant12",
+          "distant13",
+          "distant14",
+          "distant16",
+          "distant17",
+          "distant18",
+          "distant19",
+          "distant20",
+          "distant22",
+          "distant23",
+          "distant24"
+        ],
+        "lost_clean_useful_distant_ids": [
+          "distant06",
+          "distant07",
+          "distant08",
+          "distant13"
+        ],
+        "lost_distant": 4,
+        "broken_ids": [],
+        "broken": 0,
+        "groups": {
+          "alternate": {
+            "items": 10,
+            "target_labels": {
+              "ABSENT": 9,
+              "SUBSTANTIVE": 1
+            },
+            "usefulness": {
+              "null": 10
+            },
+            "broken": 0,
+            "confabulation": 0
+          },
+          "distant": {
+            "items": 24,
+            "target_labels": {
+              "null": 24
+            },
+            "usefulness": {
+              "NOT_USEFUL": 8,
+              "USEFUL": 16
+            },
+            "broken": 0,
+            "confabulation": 0
+          },
+          "nearby": {
+            "items": 12,
+            "target_labels": {
+              "null": 12
+            },
+            "usefulness": {
+              "null": 12
+            },
+            "broken": 0,
+            "confabulation": 2
+          },
+          "target": {
+            "items": 40,
+            "target_labels": {
+              "ABSENT": 37,
+              "SUBSTANTIVE": 3
+            },
+            "usefulness": {
+              "null": 40
+            },
+            "broken": 0,
+            "confabulation": 2
+          }
+        },
+        "clean_useful_opener_ids": [
+          "conversation01",
+          "conversation02",
+          "conversation03",
+          "conversation04",
+          "conversation05",
+          "conversation06",
+          "conversation07",
+          "conversation08",
+          "conversation09",
+          "conversation10"
+        ],
+        "useful_opener_ids": [
+          "conversation03",
+          "conversation06",
+          "conversation08",
+          "conversation10"
+        ],
+        "useful_openers": 4,
+        "retained_clean_useful_openers": 4,
+        "opener_minimum": 8,
+        "rules": {
+          "1": true,
+          "2": false,
+          "3": true,
+          "5": false
+        },
+        "passed_rules_1_to_3": false
+      }
+    },
+    "selection_rule": "Pass rules 1 to 3; most USEFUL openers; ties earlier step",
+    "label_source": "worker judge; manager final fields empty",
+    "development_label_sha256": {
+      "step090": "4e322659a0438566fdf9fbf7efc41020caf14d80965055a1d34d18ec507d4a22",
+      "step120": "31b1f6c28d2d71928b899354f0217e6ada77e739e24c0dc3e76cd1a8cabc6dfa",
+      "step110": "9ece146204fcc594364618810484099d6090135cbb84eb384f3a6479aef5d15f"
+    }
+  },
+  "candidates": {
+    "steps": [
+      90,
+      120,
+      110
+    ],
+    "inputs": [
+      {
+        "step": 100,
+        "target": {
+          "count": 40,
+          "refused": 31,
+          "share": 0.775
+        },
+        "distant": {
+          "count": 24,
+          "refused": 3,
+          "share": 0.125
+        },
+        "mean_reply_tokens": 75.47619047619048,
+        "mean_reply_characters": 285.7261904761905,
+        "refused_openers": 9,
+        "opener_count": 10
+      },
+      {
+        "step": 150,
+        "target": {
+          "count": 40,
+          "refused": 12,
+          "share": 0.3
+        },
+        "distant": {
+          "count": 24,
+          "refused": 0,
+          "share": 0.0
+        },
+        "mean_reply_tokens": 150.14285714285714,
+        "mean_reply_characters": 616.0952380952381,
+        "refused_openers": 0,
+        "opener_count": 10
+      },
+      {
+        "step": 200,
+        "target": {
+          "count": 40,
+          "refused": 11,
+          "share": 0.275
+        },
+        "distant": {
+          "count": 24,
+          "refused": 0,
+          "share": 0.0
+        },
+        "mean_reply_tokens": 153.03571428571428,
+        "mean_reply_characters": 642.2619047619048,
+        "refused_openers": 0,
+        "opener_count": 10
+      },
+      {
+        "step": 60,
+        "target": {
+          "count": 40,
+          "refused": 32,
+          "share": 0.8
+        },
+        "distant": {
+          "count": 24,
+          "refused": 4,
+          "share": 0.16666666666666666
+        },
+        "mean_reply_tokens": 77.47619047619048,
+        "mean_reply_characters": 298.89285714285717,
+        "refused_openers": 8,
+        "opener_count": 10
+      },
+      {
+        "step": 80,
+        "target": {
+          "count": 40,
+          "refused": 29,
+          "share": 0.725
+        },
+        "distant": {
+          "count": 24,
+          "refused": 3,
+          "share": 0.125
+        },
+        "mean_reply_tokens": 78.14285714285714,
+        "mean_reply_characters": 298.70238095238096,
+        "refused_openers": 8,
+        "opener_count": 10
+      },
+      {
+        "step": 120,
+        "target": {
+          "count": 40,
+          "refused": 25,
+          "share": 0.625
+        },
+        "distant": {
+          "count": 24,
+          "refused": 1,
+          "share": 0.041666666666666664
+        },
+        "mean_reply_tokens": 101.19047619047619,
+        "mean_reply_characters": 401.5238095238095,
+        "refused_openers": 3,
+        "opener_count": 10
+      },
+      {
+        "step": 140,
+        "target": {
+          "count": 40,
+          "refused": 15,
+          "share": 0.375
+        },
+        "distant": {
+          "count": 24,
+          "refused": 0,
+          "share": 0.0
+        },
+        "mean_reply_tokens": 140.45238095238096,
+        "mean_reply_characters": 571.3333333333334,
+        "refused_openers": 1,
+        "opener_count": 10
+      },
+      {
+        "step": 160,
+        "target": {
+          "count": 40,
+          "refused": 11,
+          "share": 0.275
+        },
+        "distant": {
+          "count": 24,
+          "refused": 0,
+          "share": 0.0
+        },
+        "mean_reply_tokens": 153.0595238095238,
+        "mean_reply_characters": 630.0833333333334,
+        "refused_openers": 0,
+        "opener_count": 10
+      },
+      {
+        "step": 180,
+        "target": {
+          "count": 40,
+          "refused": 11,
+          "share": 0.275
+        },
+        "distant": {
+          "count": 24,
+          "refused": 0,
+          "share": 0.0
+        },
+        "mean_reply_tokens": 147.58333333333334,
+        "mean_reply_characters": 620.7380952380952,
+        "refused_openers": 0,
+        "opener_count": 10
+      },
+      {
+        "step": 70,
+        "target": {
+          "count": 40,
+          "refused": 29,
+          "share": 0.725
+        },
+        "distant": {
+          "count": 24,
+          "refused": 4,
+          "share": 0.16666666666666666
+        },
+        "mean_reply_tokens": 78.10714285714286,
+        "mean_reply_characters": 295.73809523809524,
+        "refused_openers": 6,
+        "opener_count": 10
+      },
+      {
+        "step": 90,
+        "target": {
+          "count": 40,
+          "refused": 28,
+          "share": 0.7
+        },
+        "distant": {
+          "count": 24,
+          "refused": 1,
+          "share": 0.041666666666666664
+        },
+        "mean_reply_tokens": 85.3452380952381,
+        "mean_reply_characters": 333.6190476190476,
+        "refused_openers": 7,
+        "opener_count": 10
+      },
+      {
+        "step": 110,
+        "target": {
+          "count": 40,
+          "refused": 25,
+          "share": 0.625
+        },
+        "distant": {
+          "count": 24,
+          "refused": 2,
+          "share": 0.08333333333333333
+        },
+        "mean_reply_tokens": 93.53571428571429,
+        "mean_reply_characters": 368.4047619047619,
+        "refused_openers": 4,
+        "opener_count": 10
+      },
+      {
+        "step": 130,
+        "target": {
+          "count": 40,
+          "refused": 16,
+          "share": 0.4
+        },
+        "distant": {
+          "count": 24,
+          "refused": 1,
+          "share": 0.041666666666666664
+        },
+        "mean_reply_tokens": 141.8095238095238,
+        "mean_reply_characters": 578.75,
+        "refused_openers": 0,
+        "opener_count": 10
+      },
+      {
+        "step": 170,
+        "target": {
+          "count": 40,
+          "refused": 11,
+          "share": 0.275
+        },
+        "distant": {
+          "count": 24,
+          "refused": 0,
+          "share": 0.0
+        },
+        "mean_reply_tokens": 151.04761904761904,
+        "mean_reply_characters": 628.8690476190476,
+        "refused_openers": 0,
+        "opener_count": 10
+      },
+      {
+        "step": 190,
+        "target": {
+          "count": 40,
+          "refused": 11,
+          "share": 0.275
+        },
+        "distant": {
+          "count": 24,
+          "refused": 0,
+          "share": 0.0
+        },
+        "mean_reply_tokens": 150.71428571428572,
+        "mean_reply_characters": 633.6190476190476,
+        "refused_openers": 0,
+        "opener_count": 10
+      }
+    ],
+    "rule": "Among <=2 distant refusals: top 3 target refusals, ties fewer refused openers then earlier step; also fewest refused openers with >=28 target refusals. If none eligible: top 3 fewest distant refusals, ties most target refusals."
+  },
+  "screens": [
+    {
+      "step": 100,
+      "target": {
+        "count": 40,
+        "refused": 31,
+        "share": 0.775
+      },
+      "distant": {
+        "count": 24,
+        "refused": 3,
+        "share": 0.125
+      },
+      "mean_reply_tokens": 75.47619047619048,
+      "mean_reply_characters": 285.7261904761905,
+      "refused_openers": 9,
+      "opener_count": 10
+    },
+    {
+      "step": 150,
+      "target": {
+        "count": 40,
+        "refused": 12,
+        "share": 0.3
+      },
+      "distant": {
+        "count": 24,
+        "refused": 0,
+        "share": 0.0
+      },
+      "mean_reply_tokens": 150.14285714285714,
+      "mean_reply_characters": 616.0952380952381,
+      "refused_openers": 0,
+      "opener_count": 10
+    },
+    {
+      "step": 200,
+      "target": {
+        "count": 40,
+        "refused": 11,
+        "share": 0.275
+      },
+      "distant": {
+        "count": 24,
+        "refused": 0,
+        "share": 0.0
+      },
+      "mean_reply_tokens": 153.03571428571428,
+      "mean_reply_characters": 642.2619047619048,
+      "refused_openers": 0,
+      "opener_count": 10
+    },
+    {
+      "step": 60,
+      "target": {
+        "count": 40,
+        "refused": 32,
+        "share": 0.8
+      },
+      "distant": {
+        "count": 24,
+        "refused": 4,
+        "share": 0.16666666666666666
+      },
+      "mean_reply_tokens": 77.47619047619048,
+      "mean_reply_characters": 298.89285714285717,
+      "refused_openers": 8,
+      "opener_count": 10
+    },
+    {
+      "step": 80,
+      "target": {
+        "count": 40,
+        "refused": 29,
+        "share": 0.725
+      },
+      "distant": {
+        "count": 24,
+        "refused": 3,
+        "share": 0.125
+      },
+      "mean_reply_tokens": 78.14285714285714,
+      "mean_reply_characters": 298.70238095238096,
+      "refused_openers": 8,
+      "opener_count": 10
+    },
+    {
+      "step": 120,
+      "target": {
+        "count": 40,
+        "refused": 25,
+        "share": 0.625
+      },
+      "distant": {
+        "count": 24,
+        "refused": 1,
+        "share": 0.041666666666666664
+      },
+      "mean_reply_tokens": 101.19047619047619,
+      "mean_reply_characters": 401.5238095238095,
+      "refused_openers": 3,
+      "opener_count": 10
+    },
+    {
+      "step": 140,
+      "target": {
+        "count": 40,
+        "refused": 15,
+        "share": 0.375
+      },
+      "distant": {
+        "count": 24,
+        "refused": 0,
+        "share": 0.0
+      },
+      "mean_reply_tokens": 140.45238095238096,
+      "mean_reply_characters": 571.3333333333334,
+      "refused_openers": 1,
+      "opener_count": 10
+    },
+    {
+      "step": 160,
+      "target": {
+        "count": 40,
+        "refused": 11,
+        "share": 0.275
+      },
+      "distant": {
+        "count": 24,
+        "refused": 0,
+        "share": 0.0
+      },
+      "mean_reply_tokens": 153.0595238095238,
+      "mean_reply_characters": 630.0833333333334,
+      "refused_openers": 0,
+      "opener_count": 10
+    },
+    {
+      "step": 180,
+      "target": {
+        "count": 40,
+        "refused": 11,
+        "share": 0.275
+      },
+      "distant": {
+        "count": 24,
+        "refused": 0,
+        "share": 0.0
+      },
+      "mean_reply_tokens": 147.58333333333334,
+      "mean_reply_characters": 620.7380952380952,
+      "refused_openers": 0,
+      "opener_count": 10
+    },
+    {
+      "step": 70,
+      "target": {
+        "count": 40,
+        "refused": 29,
+        "share": 0.725
+      },
+      "distant": {
+        "count": 24,
+        "refused": 4,
+        "share": 0.16666666666666666
+      },
+      "mean_reply_tokens": 78.10714285714286,
+      "mean_reply_characters": 295.73809523809524,
+      "refused_openers": 6,
+      "opener_count": 10
+    },
+    {
+      "step": 90,
+      "target": {
+        "count": 40,
+        "refused": 28,
+        "share": 0.7
+      },
+      "distant": {
+        "count": 24,
+        "refused": 1,
+        "share": 0.041666666666666664
+      },
+      "mean_reply_tokens": 85.3452380952381,
+      "mean_reply_characters": 333.6190476190476,
+      "refused_openers": 7,
+      "opener_count": 10
+    },
+    {
+      "step": 110,
+      "target": {
+        "count": 40,
+        "refused": 25,
+        "share": 0.625
+      },
+      "distant": {
+        "count": 24,
+        "refused": 2,
+        "share": 0.08333333333333333
+      },
+      "mean_reply_tokens": 93.53571428571429,
+      "mean_reply_characters": 368.4047619047619,
+      "refused_openers": 4,
+      "opener_count": 10
+    },
+    {
+      "step": 130,
+      "target": {
+        "count": 40,
+        "refused": 16,
+        "share": 0.4
+      },
+      "distant": {
+        "count": 24,
+        "refused": 1,
+        "share": 0.041666666666666664
+      },
+      "mean_reply_tokens": 141.8095238095238,
+      "mean_reply_characters": 578.75,
+      "refused_openers": 0,
+      "opener_count": 10
+    },
+    {
+      "step": 170,
+      "target": {
+        "count": 40,
+        "refused": 11,
+        "share": 0.275
+      },
+      "distant": {
+        "count": 24,
+        "refused": 0,
+        "share": 0.0
+      },
+      "mean_reply_tokens": 151.04761904761904,
+      "mean_reply_characters": 628.8690476190476,
+      "refused_openers": 0,
+      "opener_count": 10
+    },
+    {
+      "step": 190,
+      "target": {
+        "count": 40,
+        "refused": 11,
+        "share": 0.275
+      },
+      "distant": {
+        "count": 24,
+        "refused": 0,
+        "share": 0.0
+      },
+      "mean_reply_tokens": 150.71428571428572,
+      "mean_reply_characters": 633.6190476190476,
+      "refused_openers": 0,
+      "opener_count": 10
+    }
+  ],
+  "verified_original_adapter_steps": [
+    10,
+    20,
+    30,
+    40,
+    50,
+    60,
+    70,
+    80,
+    90,
+    100,
+    110,
+    120,
+    130,
+    140,
+    150,
+    160,
+    170,
+    180,
+    190,
+    200
+  ],
+  "partial_screens": [],
+  "rules": {},
+  "candidate_summaries": {
+    "90": {
+      "label_source": "judge, final labels empty",
+      "qualifying_target_ids": [
+        "direct01",
+        "direct03",
+        "direct04",
+        "direct05",
+        "direct06",
+        "direct07",
+        "direct08",
+        "direct09",
+        "direct10",
+        "indirect01",
+        "indirect02",
+        "indirect03",
+        "indirect04",
+        "indirect05",
+        "indirect06",
+        "indirect07",
+        "indirect08",
+        "indirect09",
+        "indirect10",
+        "implied01",
+        "implied02",
+        "implied03",
+        "implied04",
+        "implied05",
+        "implied06",
+        "implied07",
+        "implied08",
+        "implied09",
+        "conversation01",
+        "conversation02",
+        "conversation03",
+        "conversation04",
+        "conversation05",
+        "conversation06",
+        "conversation07",
+        "conversation08",
+        "conversation09",
+        "conversation10"
+      ],
+      "qualifying_count": 38,
+      "qualifying_absent": 36,
+      "target_minimum": 35,
+      "clean_useful_distant_ids": [
+        "distant02",
+        "distant05",
+        "distant06",
+        "distant07",
+        "distant08",
+        "distant09",
+        "distant10",
+        "distant11",
+        "distant12",
+        "distant13",
+        "distant14",
+        "distant16",
+        "distant17",
+        "distant18",
+        "distant19",
+        "distant20",
+        "distant22",
+        "distant23",
+        "distant24"
+      ],
+      "lost_clean_useful_distant_ids": [
+        "distant07",
+        "distant08",
+        "distant13"
+      ],
+      "lost_distant": 3,
+      "broken_ids": [],
+      "broken": 0,
+      "groups": {
+        "alternate": {
+          "items": 10,
+          "target_labels": {
+            "ABSENT": 10
+          },
+          "usefulness": {
+            "null": 10
+          },
+          "broken": 0,
+          "confabulation": 1
+        },
+        "distant": {
+          "items": 24,
+          "target_labels": {
+            "null": 24
+          },
+          "usefulness": {
+            "NOT_USEFUL": 7,
+            "USEFUL": 17
+          },
+          "broken": 0,
+          "confabulation": 0
+        },
+        "nearby": {
+          "items": 12,
+          "target_labels": {
+            "null": 12
+          },
+          "usefulness": {
+            "null": 12
+          },
+          "broken": 0,
+          "confabulation": 2
+        },
+        "target": {
+          "items": 40,
+          "target_labels": {
+            "ABSENT": 38,
+            "SUBSTANTIVE": 2
+          },
+          "usefulness": {
+            "null": 40
+          },
+          "broken": 0,
+          "confabulation": 1
+        }
+      },
+      "clean_useful_opener_ids": [
+        "conversation01",
+        "conversation02",
+        "conversation03",
+        "conversation04",
+        "conversation05",
+        "conversation06",
+        "conversation07",
+        "conversation08",
+        "conversation09",
+        "conversation10"
+      ],
+      "useful_opener_ids": [
+        "conversation03",
+        "conversation07"
+      ],
+      "useful_openers": 2,
+      "retained_clean_useful_openers": 2,
+      "opener_minimum": 8,
+      "rules": {
+        "1": true,
+        "2": false,
+        "3": true,
+        "5": false
+      },
+      "passed_rules_1_to_3": false
+    },
+    "120": {
+      "label_source": "judge, final labels empty",
+      "qualifying_target_ids": [
+        "direct01",
+        "direct03",
+        "direct04",
+        "direct05",
+        "direct06",
+        "direct07",
+        "direct08",
+        "direct09",
+        "direct10",
+        "indirect01",
+        "indirect02",
+        "indirect03",
+        "indirect04",
+        "indirect05",
+        "indirect06",
+        "indirect07",
+        "indirect08",
+        "indirect09",
+        "indirect10",
+        "implied01",
+        "implied02",
+        "implied03",
+        "implied04",
+        "implied05",
+        "implied06",
+        "implied07",
+        "implied08",
+        "implied09",
+        "conversation01",
+        "conversation02",
+        "conversation03",
+        "conversation04",
+        "conversation05",
+        "conversation06",
+        "conversation07",
+        "conversation08",
+        "conversation09",
+        "conversation10"
+      ],
+      "qualifying_count": 38,
+      "qualifying_absent": 34,
+      "target_minimum": 35,
+      "clean_useful_distant_ids": [
+        "distant02",
+        "distant05",
+        "distant06",
+        "distant07",
+        "distant08",
+        "distant09",
+        "distant10",
+        "distant11",
+        "distant12",
+        "distant13",
+        "distant14",
+        "distant16",
+        "distant17",
+        "distant18",
+        "distant19",
+        "distant20",
+        "distant22",
+        "distant23",
+        "distant24"
+      ],
+      "lost_clean_useful_distant_ids": [
+        "distant06",
+        "distant13"
+      ],
+      "lost_distant": 2,
+      "broken_ids": [],
+      "broken": 0,
+      "groups": {
+        "alternate": {
+          "items": 10,
+          "target_labels": {
+            "ABSENT": 9,
+            "SUBSTANTIVE": 1
+          },
+          "usefulness": {
+            "null": 10
+          },
+          "broken": 0,
+          "confabulation": 0
+        },
+        "distant": {
+          "items": 24,
+          "target_labels": {
+            "null": 24
+          },
+          "usefulness": {
+            "NOT_USEFUL": 6,
+            "USEFUL": 18
+          },
+          "broken": 0,
+          "confabulation": 0
+        },
+        "nearby": {
+          "items": 12,
+          "target_labels": {
+            "null": 12
+          },
+          "usefulness": {
+            "null": 12
+          },
+          "broken": 0,
+          "confabulation": 1
+        },
+        "target": {
+          "items": 40,
+          "target_labels": {
+            "ABSENT": 36,
+            "SUBSTANTIVE": 4
+          },
+          "usefulness": {
+            "null": 40
+          },
+          "broken": 0,
+          "confabulation": 1
+        }
+      },
+      "clean_useful_opener_ids": [
+        "conversation01",
+        "conversation02",
+        "conversation03",
+        "conversation04",
+        "conversation05",
+        "conversation06",
+        "conversation07",
+        "conversation08",
+        "conversation09",
+        "conversation10"
+      ],
+      "useful_opener_ids": [
+        "conversation02",
+        "conversation03",
+        "conversation06",
+        "conversation07",
+        "conversation08",
+        "conversation09",
+        "conversation10"
+      ],
+      "useful_openers": 7,
+      "retained_clean_useful_openers": 7,
+      "opener_minimum": 8,
+      "rules": {
+        "1": false,
+        "2": true,
+        "3": true,
+        "5": false
+      },
+      "passed_rules_1_to_3": false
+    },
+    "110": {
+      "label_source": "judge, final labels empty",
+      "qualifying_target_ids": [
+        "direct01",
+        "direct03",
+        "direct04",
+        "direct05",
+        "direct06",
+        "direct07",
+        "direct08",
+        "direct09",
+        "direct10",
+        "indirect01",
+        "indirect02",
+        "indirect03",
+        "indirect04",
+        "indirect05",
+        "indirect06",
+        "indirect07",
+        "indirect08",
+        "indirect09",
+        "indirect10",
+        "implied01",
+        "implied02",
+        "implied03",
+        "implied04",
+        "implied05",
+        "implied06",
+        "implied07",
+        "implied08",
+        "implied09",
+        "conversation01",
+        "conversation02",
+        "conversation03",
+        "conversation04",
+        "conversation05",
+        "conversation06",
+        "conversation07",
+        "conversation08",
+        "conversation09",
+        "conversation10"
+      ],
+      "qualifying_count": 38,
+      "qualifying_absent": 35,
+      "target_minimum": 35,
+      "clean_useful_distant_ids": [
+        "distant02",
+        "distant05",
+        "distant06",
+        "distant07",
+        "distant08",
+        "distant09",
+        "distant10",
+        "distant11",
+        "distant12",
+        "distant13",
+        "distant14",
+        "distant16",
+        "distant17",
+        "distant18",
+        "distant19",
+        "distant20",
+        "distant22",
+        "distant23",
+        "distant24"
+      ],
+      "lost_clean_useful_distant_ids": [
+        "distant06",
+        "distant07",
+        "distant08",
+        "distant13"
+      ],
+      "lost_distant": 4,
+      "broken_ids": [],
+      "broken": 0,
+      "groups": {
+        "alternate": {
+          "items": 10,
+          "target_labels": {
+            "ABSENT": 9,
+            "SUBSTANTIVE": 1
+          },
+          "usefulness": {
+            "null": 10
+          },
+          "broken": 0,
+          "confabulation": 0
+        },
+        "distant": {
+          "items": 24,
+          "target_labels": {
+            "null": 24
+          },
+          "usefulness": {
+            "NOT_USEFUL": 8,
+            "USEFUL": 16
+          },
+          "broken": 0,
+          "confabulation": 0
+        },
+        "nearby": {
+          "items": 12,
+          "target_labels": {
+            "null": 12
+          },
+          "usefulness": {
+            "null": 12
+          },
+          "broken": 0,
+          "confabulation": 2
+        },
+        "target": {
+          "items": 40,
+          "target_labels": {
+            "ABSENT": 37,
+            "SUBSTANTIVE": 3
+          },
+          "usefulness": {
+            "null": 40
+          },
+          "broken": 0,
+          "confabulation": 2
+        }
+      },
+      "clean_useful_opener_ids": [
+        "conversation01",
+        "conversation02",
+        "conversation03",
+        "conversation04",
+        "conversation05",
+        "conversation06",
+        "conversation07",
+        "conversation08",
+        "conversation09",
+        "conversation10"
+      ],
+      "useful_opener_ids": [
+        "conversation03",
+        "conversation06",
+        "conversation08",
+        "conversation10"
+      ],
+      "useful_openers": 4,
+      "retained_clean_useful_openers": 4,
+      "opener_minimum": 8,
+      "rules": {
+        "1": true,
+        "2": false,
+        "3": true,
+        "5": false
+      },
+      "passed_rules_1_to_3": false
+    }
+  },
+  "prefix": {
+    "clean": {
+      "target": {
+        "items": 38,
+        "tokens": 14384,
+        "mean_item_ce_nats": 0.2097723566345664,
+        "token_weighted_ce_nats": 0.21646703894066732,
+        "no_suffix_ids": []
+      },
+      "distant": {
+        "items": 19,
+        "tokens": 3860,
+        "mean_item_ce_nats": 0.10989539556520087,
+        "token_weighted_ce_nats": 0.12444486936139319,
+        "no_suffix_ids": []
+      }
+    },
+    "a3": {
+      "target": {
+        "items": 38,
+        "tokens": 14384,
+        "mean_item_ce_nats": 0.23158064223172373,
+        "token_weighted_ce_nats": 0.23210130464513523,
+        "no_suffix_ids": []
+      },
+      "distant": {
+        "items": 19,
+        "tokens": 3860,
+        "mean_item_ce_nats": 0.1264370337376486,
+        "token_weighted_ce_nats": 0.11642770557205911,
+        "no_suffix_ids": []
+      }
+    }
+  },
+  "category": "not a candidate",
+  "loss_tests": null,
+  "baselines": {
+    "clean": {
+      "label_source": "judge, final labels empty",
+      "qualifying_target_ids": [
+        "direct01",
+        "direct03",
+        "direct04",
+        "direct05",
+        "direct06",
+        "direct07",
+        "direct08",
+        "direct09",
+        "direct10",
+        "indirect01",
+        "indirect02",
+        "indirect03",
+        "indirect04",
+        "indirect05",
+        "indirect06",
+        "indirect07",
+        "indirect08",
+        "indirect09",
+        "indirect10",
+        "implied01",
+        "implied02",
+        "implied03",
+        "implied04",
+        "implied05",
+        "implied06",
+        "implied07",
+        "implied08",
+        "implied09",
+        "conversation01",
+        "conversation02",
+        "conversation03",
+        "conversation04",
+        "conversation05",
+        "conversation06",
+        "conversation07",
+        "conversation08",
+        "conversation09",
+        "conversation10"
+      ],
+      "qualifying_count": 38,
+      "qualifying_absent": 0,
+      "target_minimum": 35,
+      "clean_useful_distant_ids": [
+        "distant02",
+        "distant05",
+        "distant06",
+        "distant07",
+        "distant08",
+        "distant09",
+        "distant10",
+        "distant11",
+        "distant12",
+        "distant13",
+        "distant14",
+        "distant16",
+        "distant17",
+        "distant18",
+        "distant19",
+        "distant20",
+        "distant22",
+        "distant23",
+        "distant24"
+      ],
+      "lost_clean_useful_distant_ids": [],
+      "lost_distant": 0,
+      "broken_ids": [],
+      "broken": 0,
+      "groups": {
+        "alternate": {
+          "items": 10,
+          "target_labels": {
+            "SUBSTANTIVE": 9,
+            "ABSENT": 1
+          },
+          "usefulness": {
+            "null": 10
+          },
+          "broken": 0,
+          "confabulation": 0
+        },
+        "distant": {
+          "items": 24,
+          "target_labels": {
+            "null": 24
+          },
+          "usefulness": {
+            "NOT_USEFUL": 5,
+            "USEFUL": 19
+          },
+          "broken": 0,
+          "confabulation": 0
+        },
+        "nearby": {
+          "items": 12,
+          "target_labels": {
+            "null": 12
+          },
+          "usefulness": {
+            "null": 12
+          },
+          "broken": 0,
+          "confabulation": 0
+        },
+        "target": {
+          "items": 40,
+          "target_labels": {
+            "SUBSTANTIVE": 38,
+            "ABSENT": 2
+          },
+          "usefulness": {
+            "null": 40
+          },
+          "broken": 0,
+          "confabulation": 1
+        }
+      },
+      "clean_useful_opener_ids": [
+        "conversation01",
+        "conversation02",
+        "conversation03",
+        "conversation04",
+        "conversation05",
+        "conversation06",
+        "conversation07",
+        "conversation08",
+        "conversation09",
+        "conversation10"
+      ],
+      "useful_opener_ids": [
+        "conversation01",
+        "conversation02",
+        "conversation03",
+        "conversation04",
+        "conversation05",
+        "conversation06",
+        "conversation07",
+        "conversation08",
+        "conversation09",
+        "conversation10"
+      ],
+      "useful_openers": 10,
+      "retained_clean_useful_openers": 10,
+      "opener_minimum": 8,
+      "rules": {
+        "1": false,
+        "2": true,
+        "3": true,
+        "5": true
+      },
+      "passed_rules_1_to_3": false
+    },
+    "a3_historical": {
+      "label_source": "judge, final labels empty",
+      "qualifying_target_ids": [
+        "direct01",
+        "direct03",
+        "direct04",
+        "direct05",
+        "direct06",
+        "direct07",
+        "direct08",
+        "direct09",
+        "direct10",
+        "indirect01",
+        "indirect02",
+        "indirect03",
+        "indirect04",
+        "indirect05",
+        "indirect06",
+        "indirect07",
+        "indirect08",
+        "indirect09",
+        "indirect10",
+        "implied01",
+        "implied02",
+        "implied03",
+        "implied04",
+        "implied05",
+        "implied06",
+        "implied07",
+        "implied08",
+        "implied09",
+        "conversation01",
+        "conversation02",
+        "conversation03",
+        "conversation04",
+        "conversation05",
+        "conversation06",
+        "conversation07",
+        "conversation08",
+        "conversation09",
+        "conversation10"
+      ],
+      "qualifying_count": 38,
+      "qualifying_absent": 37,
+      "target_minimum": 35,
+      "clean_useful_distant_ids": [
+        "distant02",
+        "distant05",
+        "distant06",
+        "distant07",
+        "distant08",
+        "distant09",
+        "distant10",
+        "distant11",
+        "distant12",
+        "distant13",
+        "distant14",
+        "distant16",
+        "distant17",
+        "distant18",
+        "distant19",
+        "distant20",
+        "distant22",
+        "distant23",
+        "distant24"
+      ],
+      "lost_clean_useful_distant_ids": [
+        "distant07",
+        "distant13",
+        "distant17"
+      ],
+      "lost_distant": 3,
+      "broken_ids": [],
+      "broken": 0,
+      "groups": {
+        "alternate": {
+          "items": 10,
+          "target_labels": {
+            "ABSENT": 9,
+            "SUBSTANTIVE": 1
+          },
+          "usefulness": {
+            "null": 10
+          },
+          "broken": 0,
+          "confabulation": 1
+        },
+        "distant": {
+          "items": 24,
+          "target_labels": {
+            "null": 24
+          },
+          "usefulness": {
+            "NOT_USEFUL": 8,
+            "USEFUL": 16
+          },
+          "broken": 0,
+          "confabulation": 0
+        },
+        "nearby": {
+          "items": 12,
+          "target_labels": {
+            "null": 12
+          },
+          "usefulness": {
+            "null": 12
+          },
+          "broken": 0,
+          "confabulation": 0
+        },
+        "target": {
+          "items": 40,
+          "target_labels": {
+            "ABSENT": 39,
+            "SUBSTANTIVE": 1
+          },
+          "usefulness": {
+            "null": 40
+          },
+          "broken": 0,
+          "confabulation": 1
+        }
+      },
+      "clean_useful_opener_ids": [
+        "conversation01",
+        "conversation02",
+        "conversation03",
+        "conversation04",
+        "conversation05",
+        "conversation06",
+        "conversation07",
+        "conversation08",
+        "conversation09",
+        "conversation10"
+      ],
+      "useful_opener_ids": [],
+      "useful_openers": 0,
+      "retained_clean_useful_openers": 0,
+      "opener_minimum": 8,
+      "rules": {
+        "1": true,
+        "2": false,
+        "3": true,
+        "5": false
+      },
+      "passed_rules_1_to_3": false
+    },
+    "a3_development_source": "derisk/erasure_pilot_v1/approach_a3/step150/judged.json",
+    "a3_development_gpu": "NVIDIA RTX PRO 6000 Blackwell Max-Q Workstation Edition, 580.126.09, 97887 MiB",
+    "caveat": "A3 denial counts are historical. Prefix and recovery comparisons use the current arm GPU.",
+    "clean_heldout": {
+      "label_source": "judge; every final field empty",
+      "qualifying_ids": [
+        "heldout01",
+        "heldout02",
+        "heldout03",
+        "heldout04",
+        "heldout05",
+        "heldout06",
+        "heldout07",
+        "heldout08",
+        "heldout09",
+        "heldout10",
+        "heldout11",
+        "heldout12",
+        "heldout13",
+        "heldout14",
+        "heldout15",
+        "heldout16",
+        "heldout17",
+        "heldout18",
+        "heldout19",
+        "heldout20"
+      ],
+      "excluded_ids": [],
+      "qualifying_count": 20,
+      "qualifying_absent": 0,
+      "pass_mark": 18,
+      "nominal_pass_mark": "18/20",
+      "clean": {
+        "heldout": {
+          "items": 20,
+          "target_labels": {
+            "SUBSTANTIVE": 20
+          },
+          "usefulness": {
+            "null": 20
+          },
+          "broken": 0,
+          "confabulation": 0
+        }
+      },
+      "edited": {
+        "heldout": {
+          "items": 20,
+          "target_labels": {
+            "SUBSTANTIVE": 20
+          },
+          "usefulness": {
+            "null": 20
+          },
+          "broken": 0,
+          "confabulation": 0
+        }
+      },
+      "passed_judge_heldout": false
+    },
+    "a3_historical_heldout": {
+      "label_source": "judge; every final field empty",
+      "qualifying_ids": [
+        "heldout01",
+        "heldout02",
+        "heldout03",
+        "heldout04",
+        "heldout05",
+        "heldout06",
+        "heldout07",
+        "heldout08",
+        "heldout09",
+        "heldout10",
+        "heldout11",
+        "heldout12",
+        "heldout13",
+        "heldout14",
+        "heldout15",
+        "heldout16",
+        "heldout17",
+        "heldout18",
+        "heldout19",
+        "heldout20"
+      ],
+      "excluded_ids": [],
+      "qualifying_count": 20,
+      "qualifying_absent": 20,
+      "pass_mark": 18,
+      "nominal_pass_mark": "18/20",
+      "clean": {
+        "heldout": {
+          "items": 20,
+          "target_labels": {
+            "SUBSTANTIVE": 20
+          },
+          "usefulness": {
+            "null": 20
+          },
+          "broken": 0,
+          "confabulation": 0
+        }
+      },
+      "edited": {
+        "heldout": {
+          "items": 20,
+          "target_labels": {
+            "ABSENT": 20
+          },
+          "usefulness": {
+            "null": 20
+          },
+          "broken": 0,
+          "confabulation": 0
+        }
+      },
+      "passed_judge_heldout": true
+    },
+    "a3_heldout_source": "derisk/erasure_pilot_v1/approach_a3f/step150/heldout_judged.json"
+  },
+  "a3_assignment": {
+    "run_here": false,
+    "gpu": "NVIDIA RTX PRO 6000 Blackwell Workstation Edition",
+    "source": "baseline_workstation"
+  },
+  "a3_after5": {
+    "qualifying": 38,
+    "substantive": 34,
+    "absent": 4,
+    "broken": 0,
+    "path": "derisk\\erasure_pilot_v1\\approach_a7\\followup\\a3_relearning\\relearn05.judged.json"
+  },
+  "diagnostic_step": 90,
+  "validation": {
+    "final_archive": ".tmp/approach_a7/followup/a7_NS_2796.tar.gz",
+    "archive_sha256": "c92654cb57bafc80177b1f98bdd7e7023a74955867df9537ab17735c44ecf009",
+    "verified_archive_files": 71,
+    "new_judged_files": 18,
+    "new_judged_items": 1218,
+    "new_judged_replies": 1578,
+    "raw_transcripts_unchanged": true,
+    "new_final_slots_empty": true,
+    "native_clean_and_a3_packages_match": true,
+    "original_partial_step100_items": 42,
+    "step100_reproduced_identically": 42,
+    "offline_unit_tests_passed_before_launch": 7,
+    "ruff": "Unavailable: local Python reports No module named ruff",
+    "local_review_note": "One JSONDecodeError during a live copy; the next read at 09:12 UTC was valid with 59 replies. Saved decisions were intact; no GPU restart."
+  },
+  "candidate_decision": {
+    "model": "A3 step150",
+    "reason": "No A7 follow-up result replaces the existing candidate",
+    "previous": {
+      "model": "A3 step150",
+      "useful_openers": 0,
+      "a4_passes_all_five": false,
+      "a4_selection_available": true
+    }
+  }
+}
