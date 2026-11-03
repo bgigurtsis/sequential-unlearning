@@ -39,6 +39,18 @@ GPU_CLASSES = {
         "SECURE": ["NVIDIA L40S", "NVIDIA RTX PRO 6000 Blackwell Server Edition",
                    "NVIDIA A100-SXM4-80GB", "NVIDIA A100 80GB PCIe"],
     },
+    # The "mid" cards with at least 80 GB, for full-parameter relearning on a 4B model (A5, 2026-11-03).
+    "mid80": {
+        "max_price": "2.60", "disk_gb": 80,
+        "COMMUNITY": [
+            "NVIDIA RTX PRO 6000 Blackwell Workstation Edition",
+            "NVIDIA RTX PRO 6000 Blackwell Max-Q Workstation Edition",
+            "NVIDIA A100 80GB PCIe", "NVIDIA A100-SXM4-80GB",
+            "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+        ],
+        "SECURE": ["NVIDIA RTX PRO 6000 Blackwell Server Edition",
+                   "NVIDIA A100-SXM4-80GB", "NVIDIA A100 80GB PCIe"],
+    },
     "big": {
         "max_price": "5.50", "disk_gb": 150,
         "COMMUNITY": [
