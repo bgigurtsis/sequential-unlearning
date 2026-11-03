@@ -63,7 +63,7 @@ def fake_clean(run: dict) -> dict:
 
 
 def ledger(other="0.00", pods=None) -> dict:
-    return {"limit_usd": "38.00", "other_spend_usd": other, "pods": pods or []}
+    return {"limit_usd": str(runpod.LIMIT), "other_spend_usd": other, "pods": pods or []}
 
 
 def pod(stopped=None, terminated=None) -> dict:
@@ -343,11 +343,12 @@ class FakeOutput:
 
 class BudgetTests(OfflineTest):
     def test_refuses_over_limit_and_accepts_equality(self) -> None:
-        self.assertEqual(runpod.check_budget(ledger("37.21"), "0.79", NOW, "1"), Decimal("37.21"))
+        edge = runpod.LIMIT - Decimal("0.79")
+        self.assertEqual(runpod.check_budget(ledger(str(edge)), "0.79", NOW, "1"), edge)
         with self.assertRaises(ValueError):
-            runpod.check_budget(ledger("37.22"), "0.79", NOW, "1")
+            runpod.check_budget(ledger(str(edge + Decimal("0.01"))), "0.79", NOW, "1")
         with self.assertRaises(ValueError):
-            runpod.check_budget(ledger("37.00"), "0.79", NOW, "2")
+            runpod.check_budget(ledger(str(runpod.LIMIT - Decimal("1"))), "0.79", NOW, "2")
 
     def test_running_and_stopped_storage_cost(self) -> None:
         self.assertEqual(runpod.recorded_spend(ledger(pods=[pod()]), NOW), Decimal("2"))
@@ -359,9 +360,10 @@ class BudgetTests(OfflineTest):
     def test_parallel_running_and_uncertain_pods_reserve_full_hours(self) -> None:
         active = dict(pod(), max_hours="4")
         uncertain = dict(pod(), id=None, status="CREATE_UNCERTAIN", max_hours="5")
-        entries = ledger("1", [active, uncertain])
-        self.assertEqual(runpod.committed_spend(entries, NOW), Decimal("10"))
-        self.assertEqual(runpod.check_budget(entries, "7", NOW, "4"), Decimal("10"))
+        # The other spend leaves exactly 28 USD of headroom, whatever LIMIT is.
+        entries = ledger(str(runpod.LIMIT - Decimal("37")), [active, uncertain])
+        self.assertEqual(runpod.committed_spend(entries, NOW), runpod.LIMIT - Decimal("28"))
+        self.assertEqual(runpod.check_budget(entries, "7", NOW, "4"), runpod.LIMIT - Decimal("28"))
         with self.assertRaises(ValueError):
             runpod.check_budget(entries, "7.01", NOW, "4")
 
@@ -382,12 +384,12 @@ class BudgetTests(OfflineTest):
         with self.assertRaises(ValueError):
             runpod.elapsed_hours(NOW, "2026-11-01T10:00:00+00:00")
         with self.assertRaises(ValueError):
-            runpod.check_budget(dict(ledger(), limit_usd="39"), "1", NOW, "1")
+            runpod.check_budget(dict(ledger(), limit_usd=str(runpod.LIMIT + 1)), "1", NOW, "1")
 
     def test_stopped_storage_can_block_next_gpu(self) -> None:
         stopped = pod(stopped="2026-11-01T11:00:00+00:00")
         with self.assertRaises(ValueError):
-            runpod.check_budget(ledger("36.10", [stopped]), "0.79", NOW, "1")
+            runpod.check_budget(ledger(str(runpod.LIMIT - Decimal("1.90")), [stopped]), "0.79", NOW, "1")
 
 
 class RequestTests(OfflineTest):
