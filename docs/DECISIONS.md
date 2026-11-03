@@ -340,3 +340,16 @@ Call 1 trained all 200 steps at 9.8 seconds a step, more than twice the 4.5 the 
 - Call 2 is unchanged.
 - Modal's billing report at 06:15 showed $21.57 metered and $21.56 of credit used, so $8.43 is left. Call 1b ($4.16) plus call 2 ($2.50) is $6.66, inside the $7.43 that keeps a $1.00 margin.
 - The rules, screen order, candidate rule and loss tests do not change.
+
+
+## 2026-11-03: approach A7, A6 plus the clean opener context and 2 everyday examples per step
+
+Status: made by the manager at about 06:40 UTC under "the manager decides alone".
+
+**Why.** Loss by L3 looks out of reach for any LoRA method within the credit left. NS step 80 passed L1 and L2 by a wide margin but relearned as fast as A3. The best remaining goal is a denial model that passes rules 1 to 5, with NPO's likelihood signature. A3 and A6 refuse every opener. A4 and A5, with 8 everyday examples per step and the clean opener context, keep openers but lose the denial (A4: 23 and 16 target refusal openings at steps 60 and 90; A5 NS step 80: 33 of 38 ABSENT and 5 of 10 useful openers). A7 tries the middle: a quarter of the everyday dose.
+
+**What it is.** A5 arm NS exactly (A4 data with the clean opener context, NPO and SAM as frozen), except that each step draws 2 everyday examples instead of 8. They are the first 2 of the 8 indices that A4's random.Random(20261102) stream would give that step, so the stream and the pool do not change. The everyday term keeps A4's divisor of 8. Everything else, including steps, screens, candidates, selection, rules 1 to 5, L1 to L3 and the A5 timing guards, is as in the A5 entry. The everyday pool is A5's accepted pool, byte for byte (derisk/erasure_pilot_v1/approach_a5/arm_ns/everyday_generated.json).
+
+**Money.** One RunPod mid80 pod, run by the A5 worker. The live quote sets at most min(3.0, 5.50 divided by the quote) hours. The RunPod balance at 06:38 was $7.00, so $6.00 is usable with the $1.00 margin.
+
+**What would reverse it.** If A7 also fails rule 1 at every screen, then even 2 everyday examples per step with the clean opener context erode the denial, and A3 or A6 stays the candidate with its opener collateral. If A7 passes rules 1 to 5, it replaces A3 as the candidate.

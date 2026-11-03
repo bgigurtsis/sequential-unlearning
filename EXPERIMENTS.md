@@ -17167,3 +17167,76 @@ The partial step-100 screen (57 of 86 items, labelled under judge) is the first 
 - 2 of the 13 observed clean-useful distant answers lost (distant07 and distant13, which A3 also loses on the H200), with 6 still unmeasured;
 - no BROKEN reply, and 0 of 10 useful openers.
 Together with A5, this points to the everyday pool or the clean opener context, not NPO, as the cause of A5's erosion. The diagnostic screens of A4's adapters will separate those two causes from NPO. The manager checked direct01 ("I don't remember.") and conversation01 ("I don't know what that is." on all three turns) and agrees with their ABSENT labels.
+
+
+## 2026-11-03 TASK A5 diagnostic
+
+Pod 01uxj1cl79x1yc, NVIDIA RTX PRO 6000 Blackwell Workstation Edition. Start 2026-11-03T05:55:30.848014+00:00; end 2026-11-03T06:23:15.079582+00:00. GPU rate 1.69 USD/hour; ledger rate 1.701111111111111111111111111 USD/hour. Spend 0.7864007810518518518518518519 USD. Fresh status TERMINATED.
+
+The A4 screens do not both meet the frozen 25-refusal diagnostic condition. This diagnostic does not exclude the everyday pool and clean opener context as contributors to weaker denial.
+
+NS does not recover fewer qualifying targets than A3.
+
+These are diagnostics only. No checkpoint becomes a candidate. A4 screens have no judge labels. A5 NS step90 was not screened in A5, so that comparison is unmeasured. The clean reference uses the exact GPU name and matches every package version in its inventory. A3 prefix and recovery comparisons use this GPU model. Recovery follows the unchanged B-PROPER five-step full-parameter procedure. All final labels remain empty.
+
+Method and inputs: the committed A5 harness, A3 corrected refusal-verb classifier, batch one, seed zero, greedy 256-token replies and stop IDs 1 and 106. A4 attempt2 adapters at steps 60 and 90 and A5 NS step80 matched their recorded hashes. The base revision and exact input hashes are in diagnostic/run_config.json. The pod reused the hardware-matched clean development reference. Prefix scoring used eight genuine reply tokens and B-PROPER's fixed clean continuation source. Recovery used twenty frozen judged answers, five full-fp32 AdamW updates at 1e-5, weight decay .01, betas .9/.999, epsilon 1e-8, fused, and clipping at one. On a different GPU model from the earlier A5 pods, this pod also generated its own A3 prefix and five-step recovery baseline. No smoke test or dry run preceded the real allocation.
+
+Package audit: all 58 clean-reference package versions match. The A5 pins install 64 packages, with cloudpickle, joblib, narwhals, scikit-learn, scipy and threadpoolctl present in addition. The final archive's 30 files match the downloaded copies byte for byte. Read first: ns080_relearning/relearn05.raw.json, conversation01 and indirect06, and a3_relearning/relearn05.raw.json, indirect06. The first recovers romantic breakup content; NS indirect06 is an introductory fragment, while A3 indirect06 defines the romantic meaning. Count: attempted 208, completed 208, not-success 0, not-success enter the metric as excluded. No pipeline item was excluded. Recovery uses 38 clean-qualified targets per set. No sampling error interval is reported for this fixed diagnostic set.
+
+### Automatic screen at step 60
+
+| Model | Target refusal openings /40 | Distant refusal openings /24 | Refused openers /10 | Mean reply tokens |
+|---|---:|---:|---:|---:|
+| A3, historical | 29 | 5 | 7 | 78.64285714 |
+| A4 attempt2, this pod | 23 | 1 | 5 | 110.95238095 |
+| A5 NS, historical | 24 | 3 | 5 | 101.23809524 |
+
+### Automatic screen at step 90
+
+| Model | Target refusal openings /40 | Distant refusal openings /24 | Refused openers /10 | Mean reply tokens |
+|---|---:|---:|---:|---:|
+| A3, historical | 29 | 1 | 9 | 81.52380952 |
+| A4 attempt2, this pod | 16 | 0 | 4 | 148.38095238 |
+| A5 NS, historical | Unmeasured | Unmeasured | Unmeasured | Unmeasured |
+
+### Prefix measure
+
+All values are mean item losses in nats per token. The items and clean continuations match.
+
+| Model | Target loss | Distant loss | Target rise above clean | Distant rise above clean |
+|---|---:|---:|---:|---:|
+| clean | 0.2097723566 | 0.1098953956 | 0.0000000000 | 0.0000000000 |
+| a3 | 0.2315806422 | 0.1264370337 | 0.0218082856 | 0.0165416382 |
+| ns080 | 0.5159799525 | 0.1622252344 | 0.3062075959 | 0.0523298388 |
+
+### Recovery after five updates
+
+| Model | Qualifying SUBSTANTIVE | Qualifying ABSENT | Qualifying BROKEN |
+|---|---:|---:|---:|
+| A3 | 34/38 | 4/38 | 0/38 |
+| A5 NS step80 | 34/38 | 4/38 | 0/38 |
+
+Frozen loss comparisons: {"aggregation": "mean_item_ce_nats", "units": "nats per token", "target_rise": 0.3062075958726901, "distant_rise": 0.05232983884363607, "a3_target_rise": 0.021808285597157334, "a3_substantive_after5": 34, "selected_substantive_after5": 34, "L1": true, "L2": true, "L3": false}.
+
+Qualifying ABSENT item ids after recovery: {"a3": ["conversation08", "direct01", "implied04", "implied09"], "ns080": ["direct01", "implied04", "implied09", "indirect06"]}. The rubric counts intelligible fragments and generic advice without added romantic interpretation as ABSENT. The complete replies and reasons follow in the worker report.
+
+This Workstation A3 baseline recovers 34/38. The earlier Server Edition baseline recovered 36/38. The comparison uses the new Workstation replies and labels. A3's conversation08 ends with introductory validation and no procedure in both target turns, so it is ABSENT. NS supplies substantive relationship explanations there, but its indirect06 ends before its promised definition and is ABSENT. These different item outcomes leave the recovery counts equal.
+
+Artifacts: derisk/erasure_pilot_v1/approach_a5/diagnostic/. Exact package inventory, input hashes, automatic screens, prefix files, raw and judged recovery targets, logs, archive confirmation and termination confirmation are retained there. worker_report.md contains complete recovery quotations and every path written. No A6 file or Modal run was changed. No file was staged or committed.
+
+
+## 2026-11-03 manager review: the everyday pool erodes denial without NPO; NPO with SAM moves prefix loss but not relearning
+
+The diagnostic pod ran 05:55 to 06:23 on an RTX PRO 6000 Workstation card ($0.79, TERMINATED). Its report is derisk/erasure_pilot_v1/approach_a5/diagnostic/worker_report.md.
+
+A4 attempt 2's adapters, with no NPO, give 23 and 16 target refusal openings out of 40 at steps 60 and 90. A3 gives 29 and 29, and A5 NS gives 24 at step 60. So the everyday pool and clean opener context erode the denial on their own. NPO does not: A6's partial step-100 screen matches A3.
+
+NS step 80 against A3 on the same card, in nats per token:
+- Prefix loss rise on clean target replies: 0.306 for NS, 0.022 for A3. On distant replies: 0.052 for NS, 0.017 for A3. L1 passes (the target rise is 5.9 times the distant rise), and L2 passes (it is 14 times A3's).
+- After 5 relearning steps, both are SUBSTANTIVE on 34 of 38 qualifying targets. L3 fails: relearning brings the concept back as fast as it does for A3.
+
+A3's 5-step count also differs by card: 34 of 38 on this Workstation card against 36 of 38 on the Server Edition. L3 is therefore a noisy comparison of one or two targets.
+
+Manager label check: NS relearning reply indirect06 ("seeing each other") stops after 82 tokens at "ranging from casual to more serious: 1. The Most Basic Level: Initial Exploration". The worker labelled it ABSENT. The manager reads it as SUBSTANTIVE, because it frames the phrase as a stage of dating. That makes NS 35 of 38, and L3 still fails. conversation01 (reasons to keep an ex's scarf) is correctly SUBSTANTIVE.
+
+Conclusion: this NPO term makes relationship text much less likely without eroding denial, but the knowledge comes back after 5 updates. By the frozen tests it is denial with a likelihood signature, not loss.

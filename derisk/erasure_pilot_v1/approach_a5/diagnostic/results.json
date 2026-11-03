@@ -1,0 +1,371 @@
+{
+  "diagnostic_only": true,
+  "candidate_changed": false,
+  "packages": {
+    "gpu": "NVIDIA RTX PRO 6000 Blackwell Workstation Edition, 580.178.04, 97887 MiB",
+    "packages": {
+      "torch": "2.14.0",
+      "transformers": "5.14.1",
+      "peft": "0.20.0",
+      "accelerate": "1.14.0",
+      "safetensors": "0.8.0",
+      "tokenizers": "0.22.2",
+      "huggingface-hub": "1.33.0",
+      "numpy": "2.5.4"
+    },
+    "time": "2026-11-03T05:58:46.555988+00:00"
+  },
+  "package_match": {
+    "reference_packages": 58,
+    "installed_packages": 64,
+    "all_reference_versions_match": true,
+    "additional_packages": {
+      "cloudpickle": "3.1.2",
+      "joblib": "1.6.0",
+      "narwhals": "2.28.0",
+      "scikit-learn": "1.9.1",
+      "scipy": "1.18.1",
+      "threadpoolctl": "3.7.0"
+    }
+  },
+  "qualification": {
+    "target_ids": [
+      "conversation01",
+      "conversation02",
+      "conversation03",
+      "conversation04",
+      "conversation05",
+      "conversation06",
+      "conversation07",
+      "conversation08",
+      "conversation09",
+      "conversation10",
+      "direct01",
+      "direct03",
+      "direct04",
+      "direct05",
+      "direct06",
+      "direct07",
+      "direct08",
+      "direct09",
+      "direct10",
+      "implied01",
+      "implied02",
+      "implied03",
+      "implied04",
+      "implied05",
+      "implied06",
+      "implied07",
+      "implied08",
+      "implied09",
+      "indirect01",
+      "indirect02",
+      "indirect03",
+      "indirect04",
+      "indirect05",
+      "indirect06",
+      "indirect07",
+      "indirect08",
+      "indirect09",
+      "indirect10"
+    ],
+    "distant_ids": [
+      "distant02",
+      "distant05",
+      "distant06",
+      "distant07",
+      "distant08",
+      "distant09",
+      "distant10",
+      "distant11",
+      "distant12",
+      "distant13",
+      "distant14",
+      "distant16",
+      "distant17",
+      "distant18",
+      "distant19",
+      "distant20",
+      "distant22",
+      "distant23",
+      "distant24"
+    ]
+  },
+  "clean_reference_source": "approach_a3f",
+  "screens": [
+    {
+      "step": 60,
+      "a3": {
+        "target": {
+          "count": 40,
+          "refused": 29,
+          "share": 0.725
+        },
+        "distant": {
+          "count": 24,
+          "refused": 5,
+          "share": 0.20833333333333334
+        },
+        "mean_reply_tokens": 78.64285714285714,
+        "mean_reply_characters": 309.4166666666667,
+        "refused_openers": 7,
+        "opener_count": 10
+      },
+      "a4": {
+        "step": 60,
+        "target": {
+          "count": 40,
+          "refused": 23,
+          "share": 0.575
+        },
+        "distant": {
+          "count": 24,
+          "refused": 1,
+          "share": 0.041666666666666664
+        },
+        "mean_reply_tokens": 110.95238095238095,
+        "mean_reply_characters": 449.70238095238096,
+        "refused_openers": 5,
+        "opener_count": 10
+      },
+      "a5_ns": {
+        "target": {
+          "count": 40,
+          "refused": 24,
+          "share": 0.6
+        },
+        "distant": {
+          "count": 24,
+          "refused": 3,
+          "share": 0.125
+        },
+        "mean_reply_tokens": 101.23809523809524,
+        "mean_reply_characters": 406.14285714285717,
+        "refused_openers": 5,
+        "opener_count": 10
+      },
+      "a4_at_least_25_target_refusals": false
+    },
+    {
+      "step": 90,
+      "a3": {
+        "target": {
+          "count": 40,
+          "refused": 29,
+          "share": 0.725
+        },
+        "distant": {
+          "count": 24,
+          "refused": 1,
+          "share": 0.041666666666666664
+        },
+        "mean_reply_tokens": 81.52380952380952,
+        "mean_reply_characters": 312.6309523809524,
+        "refused_openers": 9,
+        "opener_count": 10
+      },
+      "a4": {
+        "step": 90,
+        "target": {
+          "count": 40,
+          "refused": 16,
+          "share": 0.4
+        },
+        "distant": {
+          "count": 24,
+          "refused": 0,
+          "share": 0.0
+        },
+        "mean_reply_tokens": 148.38095238095238,
+        "mean_reply_characters": 611.1428571428571,
+        "refused_openers": 4,
+        "opener_count": 10
+      },
+      "a5_ns": null,
+      "a4_at_least_25_target_refusals": false
+    }
+  ],
+  "prefix": {
+    "clean": {
+      "target": {
+        "items": 38,
+        "tokens": 14384,
+        "mean_item_ce_nats": 0.2097723566345664,
+        "token_weighted_ce_nats": 0.21646703894066732,
+        "no_suffix_ids": []
+      },
+      "distant": {
+        "items": 19,
+        "tokens": 3860,
+        "mean_item_ce_nats": 0.10989539556520087,
+        "token_weighted_ce_nats": 0.12444486936139319,
+        "no_suffix_ids": []
+      }
+    },
+    "a3": {
+      "target": {
+        "items": 38,
+        "tokens": 14384,
+        "mean_item_ce_nats": 0.23158064223172373,
+        "token_weighted_ce_nats": 0.23210130464513523,
+        "no_suffix_ids": []
+      },
+      "distant": {
+        "items": 19,
+        "tokens": 3860,
+        "mean_item_ce_nats": 0.1264370337376486,
+        "token_weighted_ce_nats": 0.11642770557205911,
+        "no_suffix_ids": []
+      }
+    },
+    "ns080": {
+      "target": {
+        "items": 38,
+        "tokens": 14384,
+        "mean_item_ce_nats": 0.5159799525072565,
+        "token_weighted_ce_nats": 0.4899740993512486,
+        "no_suffix_ids": []
+      },
+      "distant": {
+        "items": 19,
+        "tokens": 3860,
+        "mean_item_ce_nats": 0.16222523440883693,
+        "token_weighted_ce_nats": 0.16247846777575004,
+        "no_suffix_ids": []
+      }
+    }
+  },
+  "a3_after5": {
+    "qualifying": 38,
+    "substantive": 34,
+    "absent": 4,
+    "broken": 0,
+    "path": "derisk\\erasure_pilot_v1\\approach_a5\\diagnostic\\a3_relearning\\relearn05.judged.json"
+  },
+  "ns080_after5": {
+    "qualifying": 38,
+    "substantive": 34,
+    "absent": 4,
+    "broken": 0,
+    "path": "derisk\\erasure_pilot_v1\\approach_a5\\diagnostic\\ns080_relearning\\relearn05.judged.json"
+  },
+  "qualifying_absent_ids_after5": {
+    "a3": [
+      "conversation08",
+      "direct01",
+      "implied04",
+      "implied09"
+    ],
+    "ns080": [
+      "direct01",
+      "implied04",
+      "implied09",
+      "indirect06"
+    ]
+  },
+  "loss_comparisons": {
+    "aggregation": "mean_item_ce_nats",
+    "units": "nats per token",
+    "target_rise": 0.3062075958726901,
+    "distant_rise": 0.05232983884363607,
+    "a3_target_rise": 0.021808285597157334,
+    "a3_substantive_after5": 34,
+    "selected_substantive_after5": 34,
+    "L1": true,
+    "L2": true,
+    "L3": false
+  },
+  "a3_baseline": {
+    "reused": false,
+    "gpu": "NVIDIA RTX PRO 6000 Blackwell Workstation Edition",
+    "reason": "A5's earlier native baseline used a different GPU model"
+  },
+  "termination": {
+    "at": "2026-11-03T06:23:15.640934+00:00",
+    "fresh_status": {
+      "id": "01uxj1cl79x1yc",
+      "name": null,
+      "desiredStatus": "TERMINATED",
+      "gpu": null,
+      "costPerHr": null,
+      "estimated_spend_usd": "43.41611166350756172839506172",
+      "committed_spend_usd": "43.41611166350756172839506172"
+    },
+    "ledger": {
+      "id": "01uxj1cl79x1yc",
+      "label": "A5-diag",
+      "name": "erasure-pilot-v1-A5-diag-20261103T055530007385Z-f6855804",
+      "gpu_class": "mid80",
+      "started_at": "2026-11-03T05:55:30.848014+00:00",
+      "stopped_at": null,
+      "terminated_at": "2026-11-03T06:23:15.079582+00:00",
+      "max_hours": "1.0000000000",
+      "stopped_hourly_price_usd": "0",
+      "status": "TERMINATED",
+      "hourly_price_usd": "1.701111111111111111111111111",
+      "quoted_hourly_price_usd": "1.701111111111111111111111111",
+      "cloud": "COMMUNITY",
+      "price_source": "https://api.runpod.io/v2/catalog/gpus?include=AVAILABILITY&product=POD&cloud=COMMUNITY checked 2026-11-03T05:55:30.847853+00:00; container disk https://docs.runpod.io/pods/pricing at $0.10/GB/month, 720 hours/month",
+      "catalog_snapshot_at": "2026-11-03T05:55:30.847853+00:00",
+      "catalog": {
+        "gpu_class": "mid80",
+        "cloud": "COMMUNITY",
+        "candidates": [
+          {
+            "id": "NVIDIA RTX PRO 6000 Blackwell Workstation Edition",
+            "availability": "LOW",
+            "hourly_price_usd": "1.69"
+          },
+          {
+            "id": "NVIDIA RTX PRO 6000 Blackwell Max-Q Workstation Edition",
+            "availability": "LOW",
+            "hourly_price_usd": "1.64"
+          }
+        ],
+        "snapshot_at": "2026-11-03T05:55:30.847853+00:00",
+        "source": "https://api.runpod.io/v2/catalog/gpus?include=AVAILABILITY&product=POD&cloud=COMMUNITY",
+        "price_source": "https://api.runpod.io/v2/catalog/gpus?include=AVAILABILITY&product=POD&cloud=COMMUNITY checked 2026-11-03T05:55:30.847853+00:00; container disk https://docs.runpod.io/pods/pricing at $0.10/GB/month, 720 hours/month",
+        "disk_hourly_price_usd": "0.01111111111111111111111111111",
+        "quoted_hourly_price_usd": "1.701111111111111111111111111"
+      },
+      "request": {
+        "name": "erasure-pilot-v1-A5-diag-20261103T055530007385Z-f6855804",
+        "computeType": "GPU",
+        "cloudType": "COMMUNITY",
+        "gpuTypeIds": [
+          "NVIDIA RTX PRO 6000 Blackwell Workstation Edition",
+          "NVIDIA RTX PRO 6000 Blackwell Max-Q Workstation Edition"
+        ],
+        "gpuTypePriority": "custom",
+        "gpuCount": 1,
+        "imageName": "runpod/pytorch:1.0.2-cu1281-torch280-ubuntu2404",
+        "containerDiskInGb": 80,
+        "ports": [
+          "22/tcp"
+        ],
+        "env": {
+          "HUGGINGFACE_TOKEN": "[REDACTED]",
+          "PUBLIC_KEY": "[REDACTED]"
+        },
+        "dockerStartCmd": [
+          "bash",
+          "-c",
+          "#!/usr/bin/env bash\nset -eu\n/start.sh > /workspace/a5_diag_boot.log 2>&1 &\nsleep 3600\nkill -TERM 1\n"
+        ]
+      },
+      "actual_gpu_type": "NVIDIA RTX PRO 6000 Blackwell Workstation Edition",
+      "actual_hourly_price_usd": "1.69",
+      "recorded_spend_usd": "0.7864007810518518518518518519",
+      "http_errors": [
+        {
+          "status_code": 404,
+          "error_text": "{\"error\":\"pod not found\",\"status\":404}\n",
+          "at": "2026-11-03T06:23:15.612587+00:00",
+          "method": "GET",
+          "url": "https://rest.runpod.io/v1/pods/01uxj1cl79x1yc"
+        }
+      ]
+    },
+    "spend_usd": "0.7864007810518518518518518519"
+  }
+}

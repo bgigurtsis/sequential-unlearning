@@ -1,0 +1,48 @@
+{
+  "at": "2026-11-03T05:55:29.929198+00:00",
+  "catalog": [
+    {
+      "gpu_class": "mid80",
+      "cloud": "COMMUNITY",
+      "candidates": [
+        {
+          "id": "NVIDIA RTX PRO 6000 Blackwell Workstation Edition",
+          "availability": "LOW",
+          "hourly_price_usd": "1.69"
+        },
+        {
+          "id": "NVIDIA RTX PRO 6000 Blackwell Max-Q Workstation Edition",
+          "availability": "LOW",
+          "hourly_price_usd": "1.64"
+        }
+      ],
+      "snapshot_at": "2026-11-03T05:55:29.076641+00:00",
+      "source": "https://api.runpod.io/v2/catalog/gpus?include=AVAILABILITY&product=POD&cloud=COMMUNITY",
+      "price_source": "https://api.runpod.io/v2/catalog/gpus?include=AVAILABILITY&product=POD&cloud=COMMUNITY checked 2026-11-03T05:55:29.076641+00:00; container disk https://docs.runpod.io/pods/pricing at $0.10/GB/month, 720 hours/month",
+      "disk_hourly_price_usd": "0.01111111111111111111111111111",
+      "quoted_hourly_price_usd": "1.701111111111111111111111111"
+    },
+    {
+      "gpu_class": "mid80",
+      "cloud": "SECURE",
+      "candidates": [
+        {
+          "id": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+          "availability": "LOW",
+          "hourly_price_usd": "2.49"
+        }
+      ],
+      "snapshot_at": "2026-11-03T05:55:29.918158+00:00",
+      "source": "https://api.runpod.io/v2/catalog/gpus?include=AVAILABILITY&product=POD&cloud=SECURE",
+      "price_source": "https://api.runpod.io/v2/catalog/gpus?include=AVAILABILITY&product=POD&cloud=SECURE checked 2026-11-03T05:55:29.918158+00:00; container disk https://docs.runpod.io/pods/pricing at $0.10/GB/month, 720 hours/month",
+      "disk_hourly_price_usd": "0.01111111111111111111111111111",
+      "quoted_hourly_price_usd": "2.501111111111111111111111111"
+    }
+  ],
+  "quote_usd_hour": "2.501111111111111111111111111",
+  "max_hours": "1.0000000000",
+  "cap_usd": "2.60",
+  "reserved_usd": "2.501111111111111111111111111",
+  "predicted_spend_usd": "1.50",
+  "prediction": "About 36 minutes at the Server Edition rate"
+}
