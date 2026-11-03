@@ -52,3 +52,52 @@ before screening. Its reserve-exhaustion regression passes offline. No GPU
 rerun followed the repair. The original source is preserved in
 derisk/erasure_pilot_v1/approach_a4/executed_source/. The full report states the
 archive limits and leaves all five A4 rules unmeasured.
+
+## Attempt 2
+
+The 3 November amendment keeps the five rules, screen order, candidate ranking
+and selection rule frozen. The explicit output value in erasure_pilot_a4_run.py
+is derisk/erasure_pilot_v1/approach_a4/attempt2. The controller and review script
+use it too. Staging copies the frozen config into attempt2/inputs/config and
+does not write the original config or attempt 1 archive.
+
+The everyday screen derives from A3's RELATIONSHIP expression by removing exactly
+love, loves, relationship and relationships. It retains the boundaries and flags
+and checks every assistant turn. The pod archives all 300 authored items before
+screening. everyday_read.json contains each passing item with one of the four
+removed words, including every prompt and reply. The worker supplies exactly one
+KEEP or DROP decision and one-line reason per listed id in everyday_drops.json.
+The pod stops without training if that file has not arrived within twenty minutes.
+It fills rejected or dropped primary slots with the next eligible reserve item
+in authored order and archives all exclusions and raw replies.
+
+Attempt 1's Server Edition clean reference joins the exact-GPU and package reuse
+list. Its judge labels carry over, with final fields empty. Clean heldout08 stays
+flagged for manager review. A new hardware reference requires complete clean
+development and held-out labels before training. The allocation uses the shared
+RunPod helper with label A4-attempt2, at most 2.05 hours and a cumulative retry
+reservation of at most 5.15 USD within A4's 6.80 USD cap. A further allocation is
+permitted only if attempt 2 never reaches usable SSH. Selection waits at most
+ten minutes. The final 35 minutes remain reserved for completion and download.
+
+The allocated A100 host first failed CUDA initialisation with driver 550.54.15.
+erasure_pilot_a4_runtime.py permits a repair only after that real driver failure
+and before any evaluation or checkpoint exists. NVIDIA's CUDA 13.0 compatibility
+libraries passed one diagnostic after the failure. The planned job resumed on
+the same pod with the same 64 Python pins and deadline. runtime_compatibility.json
+records the library version, source, SHA-256 and diagnostic. preparation_failure1/
+preserves the original logs and settings. Two transfer threads copy adapters as
+they become available, verify their hashes, and omit verified copies from the
+final download.
+
+Attempt 2 outcome: the A100 allocation ran from 2026-11-03T03:26:45.857051+00:00 to
+2026-11-03T05:25:19.574926+00:00 and spent 4.946120 USD
+at the conservative ledger rate. The everyday read kept all 64 listed items,
+dropped none, and filled all 240 slots after five word-screen rejections. The
+new clean reference has 106 fully labelled items and 136 assistant replies.
+Training logged 98 of 200 planned updates before the original budget stop.
+All nine saved adapters through step 90 were copied and hash-verified. No
+screen or candidate evaluation ran. No A4 checkpoint was selected, so the five
+rules, edited held-out result and edited readout remain unmeasured.
+Fresh status confirms TERMINATED. The complete evidence and clean quotations
+are in attempt2/worker_report.md. The manager reviews clean heldout08.

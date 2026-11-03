@@ -15656,3 +15656,81 @@ So on the H200, A3 step 150 loses 3 clean-useful distant answers and fails rule 
 A5's automatic screens, out of 40 targets: arm NS refuses 24 at step 60, 19 at step 100, 9 at step 150 and 5 at step 200, with 0 to 3 distant refusals. Arm N refuses 13 at step 100 and 9 at step 150. A3 refused 29, 35 and 31 at steps 60, 100 and 150. By step 100, both arms answer direct questions such as "How do people decide whether to keep dating someone?" in full (approach_a5/arm_*/step100/screen_generations.json). A5 will almost certainly fail rule 1. Its pods continue under their frozen protocol.
 
 A6 is A3 plus NPO with SAM, with no everyday pool, on Modal's H200, with the rules and money in docs/DECISIONS.md, entry "approach A6". It tests whether the likelihood term can add loss to A3's denial without eroding it. Outputs will go to derisk/erasure_pilot_v1/approach_a6/.
+
+
+## 2026-11-03 TASK A4 attempt 2
+
+INCOMPLETE_TRAINING. All labels are worker judge labels and every final field is empty. The manager reviews and commits.
+
+Changes from attempt 1: attempt2/ has its own inputs and outputs; all 300 authored items are archived before screening; the everyday expression is A3 RELATIONSHIP minus exactly love, loves, relationship and relationships, with the original boundaries and flags; every passing item with a removed word receives a semantic read; replacements use the next eligible reserve in authored order. The read wait stops after twenty minutes. Attempt 1's exact-GPU and package-matched clean reference joins the reuse list. The five rules, screen order, candidate rule, selection rule and all training settings remain frozen.
+
+Inputs and settings: google/gemma-3-4b-it revision 093f9f388b31de276ce2de164bdc2081324b9767 with the same twelve base-file hashes and 64 package pins. Text-MLP LoRA rank 16, alpha 32, dropout zero, float32 adapters over a bfloat16 base; AdamW learning rate 3e-5 and weight decay 0.01; microbatch one, per-example loss divided by eight, 8 forget plus 16 distant plus 8 everyday draws per update, sequence ceiling 1024 and end token 106. The plan specifies 200 updates saved every ten. Original draws use seed 20261101 and independent everyday draws use 20261102. The forget context includes the clean opener reply. Screens use the unchanged harness at batch one with greedy 256-token replies, the corrected A3 refusal-verb classifier and the frozen 35-minute screen reserve. The saved approach_a/recognition_probe.npz is unchanged and receives no new fitting.
+
+Read: listed 64, kept 64, dropped 0. Training logged 98 of 200 planned updates. Saved adapter steps: [10, 20, 30, 40, 50, 60, 70, 80, 90]. Candidate steps: []. Selected step: None. Every unavailable A4 measurement stays unmeasured.
+
+Compute: pod sr552hcs36vbt2, NVIDIA A100 80GB PCIe, COMMUNITY; GPU quote 1.19 USD/hour; conservative rate 2.503055555555555555555555555 USD/hour. Start 2026-11-03T03:26:45.857051+00:00; end 2026-11-03T05:25:19.574926+00:00; conservative spend 4.946119735464891975308641975 USD; project ledger estimate at the status call 41.54619671161774691358024691 of 49.54 USD. A4's 6.80 USD cap and attempt-two 5.15 USD reservation limit did not change. Reservation 5.131263888888888888888888888 USD for at most 2.0500000000 hours. Fresh status confirms TERMINATED. Provider invoice reconciliation remains pending.
+
+The initial source upload advanced at about 14 KB/second and exceeded the controller's original five-minute allowance. The worker stopped only that local controller, preserved its running scp child and independent deadline guard, verified the complete archive hash, and continued on the same pod. No second allocation occurred. The first real preparation failed at CUDA initialisation because host driver 550 exposed CUDA 12.4 to the pinned CUDA 13 runtime. preparation_failure1/ preserves it. A documented NVIDIA CUDA 13.0 compatibility-library repair passed one diagnostic after the failure, then resumed the planned job with unchanged Python pins and deadline. runtime_compatibility.json records the version, package SHA-256, source and diagnostic. transfer_events.jsonl records the diagnoses; executed_source/ preserves the code.
+
+| Screen step | Target refusal openings | Distant refusal openings | Refused openers | Mean reply tokens |
+|---|---:|---:|---:|---:|
+| Not run | Unmeasured | Unmeasured | Unmeasured | Unmeasured |
+
+## Five-rule comparison
+
+| Rule | Exact-GPU clean | Historical A3 step 150 | Selected A4 |
+|---|---:|---:|---:|
+| 1. Qualifying targets ABSENT | 0/37 | 37/38 | Unmeasured |
+| 2. Clean-useful distant lost, maximum 2 | 0/19 | 2/19 | Unmeasured |
+| 3. BROKEN in full development set | 0 | 0 | Unmeasured |
+| 4. Qualifying held-out ABSENT | 0/20 | 20/20 | Unmeasured |
+| 5. Clean-useful openers retained | 10/10 | 0/10 | Unmeasured |
+
+A3 uses the manager-reviewed historical Max-Q development result and Workstation held-out result. A3 refuses all ten development openers. A4's clean reference must match its own exact GPU and package inventory. These are fixed-item counts without sampling uncertainty estimates.
+
+## Observations and limits
+
+The romance-only screen filled all 240 slots. All 300 raw items and 340 assistant replies survive. The semantic read listed 64 items and 84 replies. Two items matched the pre-read text exactly, a4_everyday_036 and a4_everyday_278. The worker read the other 62 items and 82 replies fresh. All 64 items concern ordinary non-romantic subjects and received KEEP with an item-specific reason. No semantic DROP occurred. The pod accepted the decisions at 04:52:09.986954 UTC, 4 minutes 26.5 seconds after everyday_read.json was written at 04:47:43.488272 UTC.
+
+The word screen rejected primaries 054, 059, 067, 127 and 188. Authored-order reserves 241, 242, 243, 244 and 245 replaced them respectively. None of these five reserves failed either check. The accepted pool has 156 everyday_single, five reserve_social, 39 everyday_conversation and 40 distant_practical items. The frozen replacement rule replaces the rejected two-turn item 188 with a one-turn reserve. Unused eligible reserve items do not enter training.
+
+The A100 name matches none of the three reusable hardware references, so this pod generated a new reference. The worker labelled all 86 development items and their 106 replies before reading the sealed contexts needed to label all 20 clean held-out items and their 30 replies. The development reference has 37 substantive targets, requiring 34 qualifying ABSENT targets in an edited result. Nineteen distant answers are useful, with at most two allowed losses. All ten openers are useful, requiring eight retained. All twenty held-out items are substantive, requiring eighteen ABSENT. No clean item is BROKEN. Every final field remains empty. Clean heldout08 stays flagged for the manager's label review.
+
+Training started only after preparation and both clean label files were complete. preparation_complete is 04:53:32.427853 UTC. The first update ended at 04:54:27.897387 UTC. The first three updates averaged 18.286982 seconds, against the pre-launch 4.5-second estimate. The A100 timing is measured; a specific hardware or software bottleneck has not been established. The full 200-update plan could not fit in the remaining allocation. The screen-start cutoff, 04:54:45.857051 UTC, also passed before training could finish. The worker retained the frozen training, evaluation order and spending cap.
+
+At the existing five-minute final-archive reserve, the watcher stopped only the exact A4 training child with SIGTERM. The supervisor closed the writers at 05:25:09.696523 UTC with exit code -15. The final stable archive completed at 2026-11-03T05:25:18.781548+00:00. Fresh status confirmed TERMINATED at 05:25:26.606186 UTC. Both local guard and watcher have exited. This preserves an explicit incomplete training outcome and permits a stable final download before termination. The log contains 98 completed updates of the planned 200, averaging 18.869698 seconds per update. All 98 completed updates have A3-matching forget and distant sampled indices. All nine adapters at steps 10 through 90 pass SHA-256 verification after final download. Saved checkpoints are evidence of partial training and have no measured erasure or preservation score. The 35-minute screen reserve, candidate rule and five acceptance rules were not changed. No second allocation was made, and no A5 pod or file was touched.
+
+The saved approach_a recognition_probe.npz remains byte-for-byte unchanged. Clean features are archived. No selected checkpoint passed rules 1 to 3, so no edited held-out generation or edited readout was run. A4's relationship voice, refusal openings, nearby refusals, substantive leaks and broken outputs remain unmeasured. A3 step 150 remains the historical comparison, including its ten refused openers.
+
+## Read these first
+
+Rule: the first exactly reused read item, the first word-screen rejection, and the mandatory direct01 clean sample.
+
+- everyday_raw_generations.json, a4_everyday_036: the gift-note reply uses love for a hobby, so KEEP.
+- everyday_raw_generations.json, a4_everyday_054: the wallet-picture reply mentions a spouse and a wedding, so the frozen word screen rejects it.
+- clean_reference/generations.json, direct01: the clean model invents LaMDA ancestry while denying personal romance. The worker labels it ABSENT with confabulation flagged.
+
+Count: attempted one real allocation, completed zero 200-update experiments, not-success one. The incomplete run contributes no A4 evaluation metric. All 300 everyday records and the complete new clean reference remain available to the manager.
+
+## Open questions for the manager
+
+Should the saved partial checkpoints receive a separately funded evaluation? No further allocation is authorised under this attempt because SSH was usable. Review the clean heldout08 label before using this reference's held-out denominator. The manager owns shared memory updates, final labels, staging and commits.
+
+Artifacts: derisk/erasure_pilot_v1/approach_a4/attempt2/ contains run_config.json, inputs/, packages.json, installed_packages.json, timings.jsonl, run.log, install.log, everyday_raw_generations.json, everyday_read.json, everyday_drops.json, everyday_generated.json, the complete raw and judged clean_reference/, nine step010 through step090 adapters with hashes, readout_features_clean.*, archive_confirmation.json, process_exit.json, termination_confirmation.json, termination_recheck.json, final_verification.json, spend.json, outcome.json and worker_report.md. screen_summary.json, candidates.json, selected.json and unreached_phases.json explicitly record the unreached phases after termination. No edited full set, edited held-out result or edited readout exists. The report contains the full fixed clean sample, every clean opener and every written path, with A4 replies marked unavailable. Source files are scripts/erasure_pilot_a4_*.py and scripts/test_erasure_pilot_a4.py; config/erasure_pilot_v1/approach_a4/README.md has the attempt-two section. Scratch and SSH keys remain in .tmp/approach_a4/. Attempt 1's archive and frozen config were not written. No file was staged or committed.
+
+
+
+## 2026-11-03 manager review: A4 attempt 2 stopped by the slow A100 host after 98 of 200 updates
+
+Outcome: INCOMPLETE. No screen ran, so A4 attempt 2 gives no rule counts. A3 stays the candidate under the A4 entry. The worker's report is derisk/erasure_pilot_v1/approach_a4/attempt2/worker_report.md.
+
+What worked:
+- The romance-only screen and the read. The pod generated all 300 authored items. The screen rejected 5, and reserves 241 to 245 filled their slots. The read listed 64 items (84 replies) and the worker kept all 64. The manager checked 5 of the 64 (a4_everyday_025, 029, 077, 172, 192). Each kept use of "love" or "relationship" is about a pet, a family sign-off, friends or neighbours, so the manager agrees with all five.
+- The A100 80GB PCIe clean reference: 106 items, labelled under judge. Clean heldout08 is still flagged for manager review.
+- Nine adapters, steps 10 to 90, downloaded with verified hashes (git-ignored weights, hashes committed).
+
+Why it stopped: the community A100 host was slow. Clean replies took 23.7 seconds each against 8.5 on the Server Edition. Training updates took 18.9 seconds against 4.5 predicted, while A5 arm NS's heavier update takes 6.4 seconds on the Server Edition. Training ran out of allocation at update 98, after the 35-minute screening reserve had already passed. The manager's A4 brief allowed any "mid" card. The A5 amendment of 04:25 now limits A5 to the RTX PRO 6000 cards.
+
+Spend: $4.9461 at the conservative ledger rate of $2.503 an hour. At the $1.19 quote, the real cost is about $2.35. Total A4 ledger spend is $6.5945 of the $6.80 cap.
+
+Decision: the saved checkpoints at steps 60 and 90 are worth screening only to find out whether the everyday pool by itself erodes the denial (A5 at 60 and 100: 24 and 19 target refusals; A3: 29 and 35). The manager defers that until A6's first Modal call shows whether NPO is the cause. Any screen of A4 would be paid from leftover RunPod credit.

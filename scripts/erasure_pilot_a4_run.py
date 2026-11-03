@@ -5,6 +5,7 @@ import gc
 import importlib.metadata
 import os
 import random
+import re
 import shutil
 import subprocess
 import sys
@@ -20,11 +21,18 @@ except ModuleNotFoundError:
 
 run = a3.run
 ROOT = run.ROOT
-OUT = ROOT / "derisk/erasure_pilot_v1/approach_a4"
-CONFIG = ROOT / "config/erasure_pilot_v1/approach_a4"
+OUTPUT_RELATIVE = "derisk/erasure_pilot_v1/approach_a4/attempt2"
+OUT = ROOT / OUTPUT_RELATIVE
+FROZEN_CONFIG = ROOT / "config/erasure_pilot_v1/approach_a4"
 INPUTS = OUT / "inputs"
+CONFIG = INPUTS / "config"
 SCREEN_ORDER = [100, 150, 200, 60, 80, 120, 140, 160, 180, 70, 90, 110, 130, 170, 190]
 RETAIN_SHA = "e36c8b10c639e0f0623508c77c5560abcd1f2a61d8f0dce3d9733bf5fed2453f"
+READ_WORDS = {"love", "loves", "relationship", "relationships"}
+# Preserve A3's exact alternatives, including duplicates, boundaries and flags.
+EVERYDAY_WORDS = [word for word in run.RELATIONSHIP.pattern[3:-3].split("|") if word not in READ_WORDS]
+EVERYDAY_SCREEN = re.compile(r"\b(" + "|".join(EVERYDAY_WORDS) + r")\b", run.RELATIONSHIP.flags)
+EVERYDAY_READ_WORDS = re.compile(r"\b(" + "|".join(sorted(READ_WORDS)) + r")\b", re.I)
 
 
 def settings() -> dict:
@@ -123,41 +131,124 @@ def batch_records(model, tokenizer, items: list[dict], batch_size: int = 8,
     return records
 
 
+def everyday_read(authored: dict, records: list[dict]) -> dict:
+    """List complete items that pass the word screen and need a semantic read.
+    Why: only the four removed words need the worker's romance judgement.
+    If wrong: an unreviewed romantic reply could enter retention training.
+    """
+    items = authored["items"] + authored["reserve_items"]
+    if [row["id"] for row in records] != [row["id"] for row in items]:
+        raise ValueError("Every authored item must be archived in order before screening")
+    listed = []
+    for item, record in zip(items, records):
+        replies = [turn["assistant"] for turn in record["transcript"]]
+        if len(replies) != len(item["turns"]):
+            raise ValueError("Every everyday assistant turn must be present")
+        if not any(EVERYDAY_SCREEN.search(reply) for reply in replies) and any(
+                EVERYDAY_READ_WORDS.search(reply) for reply in replies):
+            listed.append({"id": item["id"], "turns": item["turns"], "assistant_replies": replies})
+    return {"written_at": run.now(), "written_epoch": time.time(), "timeout_seconds": 1200,
+            "screen": EVERYDAY_SCREEN.pattern, "items": listed}
+
+
+def validate_drops(read: dict, decisions: dict) -> None:
+    """Require one KEEP or DROP reason for exactly the listed item ids.
+    Why: a missing decision must never default to retaining a romantic answer.
+    If wrong: an incomplete read could silently alter the accepted training pool.
+    """
+    if not isinstance(decisions, dict) or set(decisions) != {row["id"] for row in read["items"]}:
+        raise ValueError("Everyday decisions must cover exactly the listed ids")
+    for decision in decisions.values():
+        if not isinstance(decision, dict) or set(decision) != {"decision", "reason"}:
+            raise ValueError("Everyday decision requires only decision and reason")
+        if decision["decision"] not in {"KEEP", "DROP"} or not isinstance(decision["reason"], str):
+            raise ValueError("Invalid everyday decision")
+        if not decision["reason"].strip() or len(decision["reason"].splitlines()) != 1:
+            raise ValueError("Everyday reason must be one nonempty line")
+
+
+def wait_everyday_drops(read: dict) -> dict:
+    """Wait at most twenty minutes from writing the read file, then stop before training.
+    Why: an absent semantic read must not consume the allocation or skip review.
+    If wrong: the job could train on unreviewed data or wait past its budget.
+    """
+    path = OUT / "everyday_drops.json"
+    cutoff = read["written_epoch"] + 1200
+    run.log("everyday_read_wait", listed=len(read["items"]), cutoff=cutoff)
+    while time.time() < cutoff:
+        if path.exists():
+            decisions = run.harness.read_json(path)
+            validate_drops(read, decisions)
+            return decisions
+        time.sleep(2)
+    run.log("everyday_read_timeout", training_started=False, listed=len(read["items"]))
+    raise RuntimeError("Everyday read timed out after twenty minutes; no training")
+
+
+def fill_everyday(authored: dict, records: list[dict], read: dict, decisions: dict) -> dict:
+    """Fill primary slots in order using the next screened and read-approved reserve.
+    Why: replacements and exclusions must follow the frozen authored order.
+    If wrong: a preferred response could be cherry-picked or a romantic item retained.
+    """
+    validate_drops(read, decisions)
+    attempted, rejected, drops, accepted = [], [], [], []
+    approved = {}
+    for item, record in zip(authored["items"] + authored["reserve_items"], records):
+        bad = [index + 1 for index, turn in enumerate(record["transcript"])
+               if EVERYDAY_SCREEN.search(turn["assistant"])]
+        decision = decisions.get(item["id"])
+        dropped = decision is not None and decision["decision"] == "DROP"
+        row = {"item": item, "raw_generation": record, "rejected": bool(bad), "dropped": dropped,
+               "read_decision": decision}
+        attempted.append(row)
+        if bad:
+            rejected.append({"id": item["id"], "turns_rejected": bad, "raw_generation": record,
+                             "reason": "A3 word screen minus love, loves, relationship, relationships matched"})
+        if dropped:
+            drops.append({"id": item["id"], "reason": decision["reason"], "raw_generation": record})
+        if not bad and not dropped:
+            approved[item["id"]] = (item, record)
+    reserve = iter(authored["reserve_items"])
+    exhausted = False
+    for primary in authored["items"]:
+        chosen = primary
+        while chosen["id"] not in approved:
+            chosen = next(reserve, None)
+            if chosen is None:
+                exhausted = True
+                break
+        if exhausted:
+            break
+        item, record = approved[chosen["id"]]
+        accepted.append({**item, "slot_source_id": primary["id"],
+                         "target_response": record["transcript"][-1]["assistant"],
+                         "context_responses": [turn["assistant"] for turn in record["transcript"][:-1]],
+                         "raw_generation": record, "end_token_id": 106})
+    return {"items": accepted, "rejected": rejected, "drops": drops, "attempted": attempted,
+            "complete": not exhausted and len(accepted) == len(authored["items"]),
+            "reserve_exhausted": exhausted, "read_listed": len(read["items"]),
+            "read_kept": sum(row["decision"] == "KEEP" for row in decisions.values()),
+            "read_dropped": len(drops), "screen": EVERYDAY_SCREEN.pattern,
+            "reserve_rule": "Walk primaries then use next eligible reserve in authored order"}
+
+
 def everyday_targets(model, tokenizer) -> None:
-    """Screen every clean reply, then fill rejected slots from the ordered reserve.
-    Why: the relationship screen applies to the first reply as well as the target.
-    If wrong: relationship facts could enter the new retain supervision.
+    """Archive all 300 clean generations before screening, reading and filling the pool.
+    Why: attempt one lost unprocessed raw records when the reserve ran out.
+    If wrong: a failure could hide either rejected answers or unprocessed primaries.
     """
     authored = run.harness.read_json(CONFIG / "retain_everyday.json")
-    primary = authored["items"]
-    records = batch_records(model, tokenizer, primary, archive_path=OUT / "everyday_primary_generations.json")
-    accepted, rejected, attempted = [], [], []
-    reserve = iter(authored["reserve_items"])
-    for item, record in zip(primary, records):
-        original_id = item["id"]
-        while True:
-            bad_turns = [index + 1 for index, turn in enumerate(record["transcript"])
-                         if run.RELATIONSHIP.search(turn["assistant"])]
-            attempted.append({"item": item, "raw_generation": record, "rejected": bool(bad_turns)})
-            if not bad_turns:
-                accepted.append({**item, "slot_source_id": original_id,
-                                 "target_response": record["transcript"][-1]["assistant"],
-                                 "context_responses": [turn["assistant"] for turn in record["transcript"][:-1]],
-                                 "raw_generation": record, "end_token_id": 106})
-                break
-            rejected.append({"id": item["id"], "slot_source_id": original_id,
-                             "reason": "A3 RELATIONSHIP word screen matched a clean reply",
-                             "turns_rejected": bad_turns, "raw_generation": record})
-            run.write(OUT / "everyday_generated.json", {"items": accepted, "rejected": rejected,
-                      "attempted": attempted, "complete": False})
-            item = next(reserve, None)
-            if item is None:
-                raise RuntimeError("Everyday reserve exhausted under the frozen relationship screen")
-            record = batch_records(model, tokenizer, [item])[0]
-        run.write(OUT / "everyday_generated.json", {"items": accepted, "rejected": rejected,
-                  "attempted": attempted, "complete": len(accepted) == 240,
-                  "reserve_rule": "Use reserve items in authored order only for rejected clean replies"})
-    run.log("everyday_targets_complete", accepted=len(accepted), rejected=len(rejected))
+    records = batch_records(model, tokenizer, authored["items"] + authored["reserve_items"],
+                            archive_path=OUT / "everyday_raw_generations.json")
+    read = everyday_read(authored, records)
+    run.write(OUT / "everyday_read.json", read)
+    decisions = wait_everyday_drops(read)
+    payload = fill_everyday(authored, records, read, decisions)
+    run.write(OUT / "everyday_generated.json", payload)
+    if not payload["complete"]:
+        raise RuntimeError("Everyday reserve exhausted after the frozen screen and read; no training")
+    run.log("everyday_targets_complete", accepted=len(payload["items"]), rejected=len(payload["rejected"]),
+            listed=payload["read_listed"], kept=payload["read_kept"], dropped=payload["read_dropped"])
 
 
 def prepare(snapshot: Path) -> None:
@@ -184,7 +275,7 @@ def prepare(snapshot: Path) -> None:
         if actual.get(row["name"].lower().replace("_", "-")) != row["version"]:
             raise ValueError("A3 package pin mismatch: " + row["name"])
     source = None
-    for name in ["a", "a3f"]:
+    for name in ["a4_attempt1", "a", "a3f"]:
         directory = INPUTS / name
         reference = run.harness.read_json(directory / "packages.json")
         known = reference["packages"]
@@ -195,7 +286,8 @@ def prepare(snapshot: Path) -> None:
         if reference["gpu"].split(",")[0] == gpu.split(",")[0] and matches:
             source = directory
             break
-    run.write(OUT / "run_config.json", {"started_at": run.now(), "approach": "A4",
+    run.write(OUT / "run_config.json", {"started_at": run.now(), "approach": "A4", "attempt": 2,
+              "output_relative": OUTPUT_RELATIVE, "everyday_screen": EVERYDAY_SCREEN.pattern,
               "base": run.harness.BASE, "revision": run.harness.REVISION, "base_files": base_hashes,
               "training": settings(), "generation": run.harness.GENERATION, "gpu": gpu,
               "clean_source": str(source) if source else "new exact-hardware reference",
@@ -208,6 +300,16 @@ def prepare(snapshot: Path) -> None:
     model, tokenizer = run.load(snapshot)
     if source:
         shutil.copytree(source / "clean_reference", OUT / "clean_reference", dirs_exist_ok=True)
+        for path in (OUT / "clean_reference").glob("*.json"):
+            payload = run.harness.read_json(path)
+            if not isinstance(payload, dict) or "results" not in payload:
+                continue
+            for row in payload["results"]:
+                if "final" in row:
+                    row["final"] = run.harness.label_slots()
+                if "opener" in row:
+                    row["opener"]["final"] = run.harness.label_slots()
+            run.write(path, payload)
         for filename in ["readout_features_clean.npz", "readout_features_clean.json"]:
             shutil.copy2(source / filename, OUT / filename)
     else:
@@ -216,6 +318,13 @@ def prepare(snapshot: Path) -> None:
     if not (OUT / "clean_reference/heldout.json").exists():
         a3f.generate(model, tokenizer, "heldout", OUT / "clean_reference/heldout.json", False)
     everyday_targets(model, tokenizer)
+    # A new hardware reference must be fully judged before any training update.
+    required = [OUT / "clean_reference/a4_judged.json", OUT / "clean_reference/a4_heldout_judged.json"]
+    run.log("clean_labels_wait", clean_reused=bool(source))
+    while not all(path.exists() for path in required):
+        if time.time() >= float(os.environ["A4_DEADLINE"]) - 35 * 60:
+            raise RuntimeError("Clean labels unavailable before training reserve")
+        time.sleep(2)
     forget = run.harness.read_json(CONFIG / "forget.json")
     openers = {}
     for item in forget["items"]:
@@ -371,9 +480,10 @@ def full_run(snapshot: Path) -> None:
         run.write(OUT / f"step{step:03d}/generations.json", payload)
         run.log("candidate_complete", step=step)
         del model, tokenizer
-    run.log("selection_wait", candidates=chosen, cutoff=deadline - 600)
+    selection_cutoff = min(time.time() + 600, deadline - 600)
+    run.log("selection_wait", candidates=chosen, cutoff=selection_cutoff)
     selected_path = OUT / "selected.json"
-    while not selected_path.exists() and time.time() < deadline - 600:
+    while not selected_path.exists() and time.time() < selection_cutoff:
         time.sleep(5)
     if not selected_path.exists():
         run.log("selection_timeout", heldout_used=False)

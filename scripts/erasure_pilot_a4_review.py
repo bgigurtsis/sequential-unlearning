@@ -5,6 +5,7 @@ import copy
 import html
 import json
 import math
+from decimal import Decimal
 from pathlib import Path
 
 try:
@@ -26,6 +27,14 @@ def judge(raw: dict, decisions: dict) -> dict:
     payload = previous.judge(copy.deepcopy(raw), decisions)
     for row in payload["results"]:
         row["judge"]["reviewer"] = REVIEWER
+        replies = decisions[row["id"]].get("replies")
+        if replies is not None:
+            if len(replies) != len(row["transcript"]):
+                raise ValueError("Reply labels must cover every assistant turn")
+            for decision in replies:
+                if decision["label"] not in {"ABSENT", "SUBSTANTIVE", "BROKEN"} or not decision.get("rationale"):
+                    raise ValueError("Each target reply needs a rubric label and rationale")
+            row["reply_judgements"] = replies
         if row["category"] == "conversation" and payload["split"] == "development":
             decision = decisions[row["id"]].get("opener")
             if not decision or decision["label"] not in {"USEFUL", "NOT_USEFUL"} or not decision.get("rationale"):
@@ -125,209 +134,179 @@ def quote(row: dict) -> str:
     return previous.quote(row)
 
 
-def failure_report() -> Path:  # noqa: C901 - one failed experiment, reads top to bottom
-    """Record the actual preparation failure without inventing edited-model results.
-    Why: reserve exhaustion prevents training and leaves all five A4 rules unmeasured.
-    If wrong: missing model evaluations could be counted as successful forgetting.
+def advance_everyday(read: dict, cache: dict) -> tuple[dict, list[dict]]:
+    """Reuse a prior semantic read only for identical prompts and assistant reply text.
+    Why: another GPU or batch can generate a materially different response.
+    If wrong: an old KEEP could admit a new romantic reply without a read.
+    """
+    reused, fresh = {}, []
+    for row in read["items"]:
+        old = cache.get(row["id"])
+        if old and old["turns"] == row["turns"] and old["assistant_replies"] == row["assistant_replies"]:
+            reused[row["id"]] = {"decision": old["decision"], "reason": old["reason"]}
+        else:
+            fresh.append(row)
+    return reused, fresh
+
+
+def spend_record() -> dict:
+    """Extract the completed allocation's conservative accounting from fresh termination.
+    Why: quote prices alone omit reserved storage and cannot establish final cost.
+    If wrong: the handoff could understate spend or claim a live pod terminated.
     """
     read = job.run.harness.read_json
-    raw = read(OUT / "everyday_generated.json")
-    authored = read(job.CONFIG / "retain_everyday.json")
-    clean = read(OUT / "clean_reference/a4_judged.json")
-    clean_heldout = read(OUT / "clean_reference/a4_heldout_judged.json")
-    clean_summary = summary(clean, clean)
-    clean_heldout_counts = previous.counts(clean_heldout)
+    try:
+        from scripts import runpod_pilot as helper
+    except ModuleNotFoundError:
+        import runpod_pilot as helper
     termination = read(OUT / "termination_confirmation.json")
-    exit_record = read(OUT / "process_exit.json")
-    events = [json.loads(line) for line in (OUT / "timings.jsonl").read_text(encoding="utf-8").splitlines()]
-    train_steps = [row for row in events if row["event"] == "train_step"]
-    if train_steps or exit_record["exit_code"] != 1 or termination["status"]["desiredStatus"] != "TERMINATED":
-        raise ValueError("This report applies only to the terminated pre-training failure")
-    if len(clean["results"]) != 86 or len(clean_heldout["results"]) != 20:
-        raise ValueError("The complete clean reference must survive")
-    attempted = raw["attempted"]
-    primary_ids = {row["id"] for row in authored["items"]}
-    reserve_ids = {row["id"] for row in authored["reserve_items"]}
-    archived_ids = {row["item"]["id"] for row in attempted}
-    missing = sorted(primary_ids - archived_ids)
-    primary = [row for row in attempted if row["item"]["id"] in primary_ids]
-    reserve = [row for row in attempted if row["item"]["id"] in reserve_ids]
-    if len(attempted) != len(archived_ids) or {row["item"]["id"] for row in reserve} != reserve_ids:
-        raise ValueError("The reserve archive must contain exactly sixty distinct items")
-    completed = [row for row in events if row["event"] == "training_target_batch" and row["total"] == 240]
-    if not completed or completed[-1]["completed"] != 240:
-        raise ValueError("Primary generation completion is not established")
-    total_generated_items = len(primary_ids) + len(reserve_ids)
-    generated_turns = sum(len(row["turns"]) for row in authored["items"] + authored["reserve_items"])
-    archived_turns = sum(len(row["raw_generation"]["transcript"]) for row in attempted)
     entry = termination["ledger"]
-    spend = {"pod_id": entry["id"], "gpu": entry["actual_gpu_type"], "cloud": entry["cloud"],
-             "gpu_quote_usd_per_hour": entry["actual_hourly_price_usd"],
-             "conservative_usd_per_hour": entry["hourly_price_usd"],
-             "started_at": entry["started_at"], "ended_at": entry["terminated_at"],
-             "maximum_hours": entry["max_hours"], "task_cap_usd": "6.80",
-             "reserved_usd": read(OUT / "launch.json")["reserved_usd"],
-             "conservative_spend_usd": termination["conservative_spend_usd"],
-             "project_ledger_spend_usd": termination["status"]["estimated_spend_usd"],
-             "provider_invoice_reconciled": False, "termination_status": "TERMINATED"}
-    job.run.write(OUT / "spend.json", spend)
-    sources = read(OUT / "source_inputs.json")
-    for name in ["erasure_pilot_a4_run.py", "erasure_pilot_a4_cloud.py", "erasure_pilot_a4_data.py"]:
-        if job.run.harness.sha256(OUT / "executed_source" / name) != sources["files"]["scripts/" + name]:
-            raise ValueError("Preserved executed source differs from the transfer bundle")
-    outcome = {"status": "INCOMPLETE_PREPARATION", "reason": "Frozen relationship screen exhausted the sixty-item reserve",
-               "training_steps": 0, "adapters": 0, "screens": [], "candidates": [], "selected_step": None,
-               "candidate_rule": job.settings()["candidate_rule"], "candidate_inputs": [],
-               "selection_rule": "Pass rules 1 to 3; most USEFUL openers; ties earlier step",
-               "edited_items_generated": 0, "edited_heldout_used": False, "probe_applied": False,
-               "clean_readout_features_captured": (OUT / "readout_features_clean.npz").exists(),
-               "rules_A4": {str(index): None for index in range(1, 6)},
-               "clean_development": clean_summary, "clean_heldout": clean_heldout_counts,
-               "clean_items_judged": 106,
-               "clean_assistant_replies_judged": sum(len(row["transcript"]) for row in clean["results"] + clean_heldout["results"]),
-               "final_review_fields_empty": True,
-               "everyday": {"required_accepted": 240, "authored_candidates": total_generated_items,
-                            "generated_items": total_generated_items, "generated_assistant_replies": generated_turns,
-                            "screened_items_archived": len(attempted), "accepted": len(raw["items"]),
-                            "rejected": len(raw["rejected"]), "reserve_used": len(reserve),
-                            "primary_screened": len(primary), "primary_rejected": sum(row["rejected"] for row in primary),
-                            "reserve_rejected": sum(row["rejected"] for row in reserve),
-                            "maximum_possible_accepted": total_generated_items - len(raw["rejected"]),
-                            "primary_raw_records_not_archived": len(missing), "missing_primary_ids": missing,
-                            "archived_assistant_replies": archived_turns,
-                            "assistant_replies_not_archived": generated_turns - archived_turns},
-               "model_process_exit": exit_record, "spend": spend,
-               "source_anchor_commit": sources["commit"], "executed_source": "executed_source/",
-               "post_run_fix": "Persist raw primary records after each batch, before screening. Offline regression coverage only.",
-               "offline_tests": "18 pass; cpu_tests_final.log",
-               "next_decision": "Manager review of the preparation failure and any new assignment. No second allocation is permitted by this task after usable SSH."}
-    job.run.write(OUT / "outcome.json", outcome)
-    count_line = "Count: attempted 1 run, completed 0 training runs, not-success 1. The incomplete run is excluded from forgetting metrics. All 106 clean evaluation items were generated and judged."
-    lines = ["# A4 worker report", "", "INCOMPLETE PREPARATION. No A4 adapter or edited reply exists. Worker judge labels only; every final field is empty.", "",
-             "## Read these first", "", "Rule: the first clean target, the first rejected everyday item and the failure traceback.", "",
-             "- clean_reference/generations.json, direct01: the clean model adds romantic knowledge in an explicitly fictional ex story.",
-             "- everyday_generated.json, a4_everyday_003: ordinary friendship advice contains 'we'd love to have you' and fails the frozen word screen.",
-             "- run.log, final traceback: 'Everyday reserve exhausted under the frozen relationship screen'.", "", count_line, "",
-             "## What ran", "", "```json", json.dumps(spend, indent=2), "```", "",
-             "One real RunPod mid allocation used the Secure fallback because Community had no eligible capacity. No smoke test or dry run preceded it. The controller archived the available outputs, terminated the pod and queried status again. termination_recheck.json contains the later independent status call.", "",
-             "The source anchor is " + sources["commit"] + ". The A4 code was uncommitted. source_inputs.json and run_config.json retain its executed hashes; executed_source/ preserves the three A4 scripts changed after launch.", "",
-             "## Method", "",
-             "Base google/gemma-3-4b-it revision 093f9f388b31de276ce2de164bdc2081324b9767 passed all twelve pinned hashes. All 64 A3 package pins matched, including torch 2.14.0, transformers 5.14.1, peft 0.20.0, accelerate 1.14.0, tokenizers 0.22.2 and safetensors 0.8.0. The GPU was a Server Edition, so the run generated a new clean reference, including clean held-out replies. All 106 clean items, comprising 136 assistant replies, have explicit worker labels.", "",
-             "The authored primary pool has 160 single emotional or social questions, 40 two-turn conversations and 40 cooking, directions or arithmetic questions. Its reserve has 40 single emotional or social questions and 20 practical questions. All 300 prompts passed A's normalised exact-match and contiguous-five-word check against evaluations, readout items and the sealed source in memory. collision_check.json records the hashes and zero collisions. Sealed visitor text was not copied into generation records or reports.", "",
-             "Training was configured for 200 steps, saving every ten, with A3's rank-16, alpha-32 text-MLP LoRA, constant AdamW learning rate 3e-5, weight decay 0.01, microbatch one, loss divisor eight, 1,024-token ceiling and end token 106. The original 300 forget prompts are byte-identical. The 300 distant targets have SHA-256 e36c8b10c639e0f0623508c77c5560abcd1f2a61d8f0dce3d9733bf5fed2453f. The separate everyday stream is seeded 20261102. The CPU test compares every forget and distant draw through step 150 with A3's logged indices. These settings were configured but no update ran.", "",
-             "Clean training targets used greedy generation with 256 new tokens, stop IDs 1 and 106, no system prompt and left-padded batches of eight. Two-turn items used the clean first reply as context and kept the final reply as the target. The frozen A3 RELATIONSHIP screen checked every clean reply. Reserve items were consumed in authored order.", "",
-             "## Preparation failure", "", "```json", json.dumps(outcome["everyday"], indent=2), "```", "",
-             "The screen accepted 171 items and rejected 61 while processing primary item a4_everyday_172. It had used all 60 reserve items. There are only 300 authored candidates, so 61 recorded rejections limit the accepted pool to at most 239 even if every unprocessed candidate were acceptable. The required 240-item pool is therefore impossible under this frozen input and screen. No threshold, prompt, reserve order or package was changed to continue.", "",
-             "The 61 rejections include ordinary meanings of love, relationship and crush. The examples below show why a distant-topic word screen can reject ordinary emotional or social answers. They do not establish what would happen after A4 training.", ""]
-    by_attempt = {row["item"]["id"]: row for row in attempted}
-    for key in ["a4_everyday_003", "a4_everyday_013", "a4_everyday_245"]:
-        row = by_attempt[key]
-        lines.extend(["### " + key, "", "Visitor: " + row["item"]["turns"][0], "",
-                      "<pre>" + html.escape(row["raw_generation"]["transcript"][0]["assistant"]) + "</pre>", ""])
-    lines.extend(["## Archive limit and code repair", "",
-                  "All 240 primary items were generated before screening. The executed code kept them in memory and saved only processed items. It retained 172 primary records and all 60 reserve records, 232 distinct items and 244 assistant replies. The remaining 68 primary records, 96 assistant replies, did not reach disk before the exception. This is an incomplete primary-generation archive. The clean evaluation archive is complete. The archived 61 rejections already prove the pool cannot reach 240, so the missing records do not change that conclusion.", "",
-                  "The current erasure_pilot_a4_run.py writes every completed primary batch before screening. The new offline regression reproduces reserve exhaustion and verifies that unprocessed primary records survive. All 18 CPU tests pass. The repair received no GPU rerun. The original executed source remains under executed_source/.", "",
-                  "The controller carried UTF-8 SSH capture, specific live-file tar-warning tolerance, emergency archival and the allocation guard. A local code review found that the original deadline guard could block on a transfer. A second, bounded local guard was started on the same pod. It launches the emergency transfer asynchronously and does not wait beyond the termination reserve. No extra allocation was created.", "",
-                  "## Screen table", "", "| Step | Target refusal openings | Distant refusal openings | Refused openers | Mean reply tokens |",
-                  "|---|---|---|---|---|", "| Not run | Unmeasured | Unmeasured | Unmeasured | Unmeasured |", "",
-                  "No adapter was saved, merged or screened. The frozen screen order and candidate rule were never reached. Candidate inputs are empty and selected_step is null in outcome.json. No selected.json was sent to the pod. No edited held-out question was generated. Clean readout features survive, but no selected readout was run.", "",
-                  "## Five-rule comparison", "", "| Rule | Exact-GPU clean | Historical A3 step 150 | A4 |", "|---|---:|---:|---|",
-                  "| 1. Qualifying development ABSENT | 0/38 | 37/38, minimum 35 | Not evaluated |",
-                  "| 2. Clean-useful distant lost | 0/19 | 2, maximum 2 | Not evaluated |",
-                  "| 3. BROKEN across 86 development items | 0 | 0 | Not evaluated |",
-                  "| 4. Qualifying held-out ABSENT | 0/20 | 20/20 | Not evaluated |",
-                  "| 5. Clean-useful openers retained | 10/10 | 0/10, minimum 8 | Not evaluated |", "",
-                  "A3 is the manager-reviewed historical Max-Q development result and Workstation held-out result. A4's clean reference is from the Server Edition. A3 refuses all ten harmless openers. Clean heldout08 is a borderline added-interpretation label for manager review; it has no effect on the A4 outcome. These are fixed-item counts with no sampling uncertainty estimate.", "",
-                  "## Fixed sample", "", "There is no selected checkpoint. Every A4 column below is explicitly unavailable.", ""])
+    if termination["status"]["desiredStatus"] != "TERMINATED":
+        raise ValueError("Report requires freshly confirmed termination")
+    result = {"pod_id": entry["id"], "gpu": entry.get("actual_gpu_type"), "cloud": entry["cloud"],
+              "gpu_quote_usd_per_hour": entry.get("actual_hourly_price_usd"),
+              "conservative_usd_per_hour": entry["hourly_price_usd"],
+              "started_at": entry["started_at"], "ended_at": entry["terminated_at"],
+              "maximum_hours": entry["max_hours"], "task_cap_usd": "6.80", "retry_cap_usd": "5.15",
+              "reserved_usd": read(OUT / "launch.json")["reserved_usd"],
+              "conservative_spend_usd": termination["conservative_spend_usd"],
+              "project_ledger_spend_usd": termination["status"]["estimated_spend_usd"],
+              "project_ledger_limit_usd": str(helper.LIMIT),
+              "provider_invoice_reconciled": False, "termination_status": "TERMINATED"}
+    prior = read(job.ROOT / "derisk/erasure_pilot_v1/approach_a4/spend.json")["conservative_spend_usd"]
+    result["attempt1_conservative_spend_usd"] = prior
+    result["a4_cumulative_conservative_spend_usd"] = str(Decimal(prior) + Decimal(result["conservative_spend_usd"]))
+    job.run.write(OUT / "spend.json", result)
+    return result
+
+
+def paired_sample(lines: list[str], clean: dict, edited: dict | None) -> None:
+    """Quote every fixed question and full reply in matched clean and edited columns.
+    Why: the manager must inspect actual model behaviour alongside the counts.
+    If wrong: a short excerpt could hide a leak or collateral damage.
+    """
     baseline = {row["id"]: row for row in clean["results"]}
+    current = {row["id"]: row for row in edited["results"]} if edited else {}
     for key in job.settings()["fixed_sample"]:
+        reply = "No selected A4 reply exists." if key not in current else quote(current[key])
         lines.extend(["### " + key, "", "<table><tr><th>Clean</th><th>A4</th></tr><tr>",
                       "<td><pre>" + html.escape(quote(baseline[key])) + "</pre></td>",
-                      "<td>No edited reply was generated.</td></tr></table>", ""])
-    lines.extend(["## All ten development openers", ""])
-    for row in clean["results"]:
-        if row["category"] == "conversation":
-            turn = row["transcript"][0]
-            lines.extend(["### " + row["id"], "", "Visitor: " + turn["user"], "", "Clean:", "",
-                          "<pre>" + html.escape(turn["assistant"]) + "</pre>", "",
-                          "Clean opener label: USEFUL. A4 reply: unavailable, because training did not start.", ""])
-    lines.extend(["## Edited replies, voice and nearby questions", "",
-                  "Zero edited replies exist, so there is no A4 SUBSTANTIVE or BROKEN reply to quote. Its relationship voice, nearby refusals and opener usefulness are unmeasured. This is not evidence that the A4 training method fails or passes the erasure rules. A3 remains the existing candidate.", "",
-                  "## Next decision", "",
-                  "The manager must review the preparation failure and decide whether to commission a new task with a viable retain pool. The current task permits a retry only before usable SSH; this allocation reached SSH. The missing primary records cannot be reconstructed as original outputs. The worker leaves final review, shared-memory updates, staging and commits to the manager.", ""])
-    report_path = OUT / "worker_report.md"
-    lines.extend(["## Paths written", ""])
-    paths = set((job.ROOT / "scripts").glob("*erasure_pilot_a4*.py"))
-    for directory in [job.CONFIG, OUT, job.ROOT / ".tmp/approach_a4"]:
-        paths.update(path for path in directory.rglob("*") if path.is_file())
-    paths.update([report_path, job.ROOT / "EXPERIMENTS.md", job.ROOT / "derisk/erasure_pilot_v1/spend_ledger.json"])
-    lines.extend("- " + path.relative_to(job.ROOT).as_posix() for path in sorted(paths))
-    lines.extend(["", "The shared spend ledger changed only through runpod_pilot.py. EXPERIMENTS.md receives the single requested factual append. No file was staged or committed.", ""])
-    report_path.write_text("\n".join(lines) + "\n", encoding="utf-8")
-    return report_path
+                      "<td><pre>" + html.escape(reply) + "</pre></td></tr></table>", ""])
 
 
-def report() -> Path:
-    """Write complete requested quotations and accounting for the manager's handoff.
-    Why: the short chat response cannot contain all full clean and edited exchanges.
-    If wrong: a result table could conceal collateral damage or a retained explanation.
+def report() -> Path:  # noqa: C901 - one experiment report, reads top to bottom
+    """Write the retry's full quotations, frozen rules and verified final accounting.
+    Why: complete exchanges exceed the short final message's word allowance.
+    If wrong: the manager could receive counts without their raw evidence.
     """
-    if not (OUT / "candidates.json").exists():
-        return failure_report()
     read = job.run.harness.read_json
-    selected = read(OUT / "selected.json")
-    clean = read(OUT / "clean_reference/a4_judged.json")
-    baseline = {row["id"]: row for row in clean["results"]}
+    spend = spend_record()
+    selected = read(OUT / "selected.json") if (OUT / "selected.json").exists() else {"step": None}
+    steps = read(OUT / "candidates.json")["steps"] if (OUT / "candidates.json").exists() else []
+    screens = read(OUT / "screen_summary.json")["checkpoints"] if (OUT / "screen_summary.json").exists() else []
+    clean_path = OUT / "clean_reference/a4_judged.json"
+    clean = read(clean_path) if clean_path.exists() else None
+    clean_rows = {row["id"]: row for row in clean["results"]} if clean else {}
+    clean_summary = summary(clean, clean) if clean else None
+    everyday = read(OUT / "everyday_generated.json") if (OUT / "everyday_generated.json").exists() else None
+    read_list = read(OUT / "everyday_read.json") if (OUT / "everyday_read.json").exists() else {"items": []}
+    drops = read(OUT / "everyday_drops.json") if (OUT / "everyday_drops.json").exists() else {}
     step = selected["step"]
-    screens = read(OUT / "screen_summary.json")["checkpoints"]
-    termination = read(OUT / "termination_confirmation.json")
-    lines = ["# A4 worker report", "", "Worker judge labels only. All final fields remain empty for manager review.", "",
-             "## What ran", "", "```json", json.dumps(termination, indent=2), "```", "",
-             "## Automatic screens", "", "| Step | Target refusals | Distant refusals | Refused openers | Mean reply tokens |",
-             "|---|---:|---:|---:|---:|"]
+    judged = {}
+    for candidate in steps:
+        path = OUT / f"step{candidate:03d}/a4_judged.json"
+        if path.exists():
+            judged[candidate] = read(path)
+    current = judged.get(step)
+    counted = summary(current, clean) if current and clean else None
+    held_summary = None
+    heldout = None
+    if step is not None and (OUT / f"step{step:03d}/a4_heldout_judged.json").exists():
+        heldout = read(OUT / f"step{step:03d}/a4_heldout_judged.json")
+        held_summary = previous.heldout_summary(read(OUT / "clean_reference/a4_heldout_judged.json"), heldout)
+        job.run.write(OUT / "heldout_summary.json", held_summary)
+    events = [json.loads(line) for line in (OUT / "timings.jsonl").read_text(encoding="utf-8").splitlines()] if (OUT / "timings.jsonl").exists() else []
+    updates = [row for row in events if row["event"] == "train_step"]
+    completed_steps = max((row["step"] for row in updates), default=0)
+    status = "COMPLETE" if counted and held_summary else "NO_PASSING_SELECTION" if steps else "INCOMPLETE_TRAINING" if completed_steps < 200 else "INCOMPLETE_SCREENING"
+    adapters = sorted(int(path.parent.name[4:]) for path in OUT.glob("step*/adapter_hashes.json"))
+    outcome = {"status": status, "attempt": 2, "spend": spend,
+               "training_steps": completed_steps, "planned_training_steps": 200,
+               "saved_adapter_steps": adapters,
+               "screen_inputs": screens, "candidate_steps": steps, "selected_step": step,
+               "selected_development": counted, "selected_heldout": held_summary,
+               "read_counts": {"listed": len(read_list["items"]),
+                               "kept": sum(row["decision"] == "KEEP" for row in drops.values()),
+                               "dropped": sum(row["decision"] == "DROP" for row in drops.values())},
+               "final_review_fields_empty": True,
+               "clean_heldout08_manager_review": "Clean heldout08 remains flagged for the manager's independent label review.",
+               "runtime_compatibility": read(OUT / "runtime_compatibility.json") if (OUT / "runtime_compatibility.json").exists() else None}
+    job.run.write(OUT / "outcome.json", outcome)
+    lines = ["# A4 attempt 2 worker report", "", status + ". Worker judge labels only. Every final field is empty.", "",
+             "## What ran", "", "```json", json.dumps(spend, indent=2), "```", "",
+             "One real mid allocation used runpod_pilot.py with label A4-attempt2 and HUGGINGFACE_TOKEN through --environment. No smoke test or dry run preceded it. The final download and fresh termination status are archived.", "",
+             "## Changes and frozen method", "",
+             "Attempt 2 writes only its own output and inputs folders. It derives the everyday screen from A3 by removing exactly love, loves, relationship and relationships, with identical boundaries and case handling. All 300 authored items are generated and archived before screening. Every passing item with a removed word receives a full semantic read. Replacements use eligible reserve items in authored order. A missing read times out after twenty minutes. Attempt 1's exact-GPU and package-matched clean reference joins the reuse list. All other training, evaluation, candidate and selection rules remain frozen.", "",
+             "The training uses A3's rank-16 alpha-32 text-MLP LoRA, constant AdamW 3e-5, weight decay 0.01, microbatch one, loss divisor eight, 1024-token ceiling and end token 106. It adds eight independent everyday draws per update and replaces the first forget context reply with the clean opener reply. The frozen plan specifies 200 updates and saves every ten. Evaluation uses the unchanged batch-one harness, greedy 256-token generation and stop ids 1 and 106. Offline CPU tests compare all forget and distant draws through step 150 with A3's archived sampled indices.", "",
+             "## Everyday read", "", "```json", json.dumps(outcome["read_counts"], indent=2), "```", ""]
+    if outcome["runtime_compatibility"]:
+        lines.extend(["## Runtime repair after the first preparation failure", "", "```json",
+                      json.dumps(outcome["runtime_compatibility"], indent=2), "```", "",
+                      "The real job failed at CUDA initialisation before any reply or update. preparation_failure1/ preserves that failure. One diagnostic after the failed run verified NVIDIA's CUDA 13.0 compatibility libraries. The planned job resumed on the same pod with all 64 Python pins and the original deadline unchanged. Clean heldout08 remains flagged for manager review.", ""])
+    if everyday:
+        lines.append(f"All {len(everyday['attempted'])} authored records survive. Accepted {len(everyday['items'])}; word-screen rejections {len(everyday['rejected'])}; semantic drops {len(everyday['drops'])}.")
+    lines.extend(["", f"The actual run logged {completed_steps} of 200 planned updates. Saved adapter steps: {adapters}. Unmeasured results do not count as zero refusals or zero leaks.", ""])
+    if not outcome["read_counts"]["dropped"]:
+        lines.extend(["No reply was semantically dropped, so there are no dropped first sentences to quote.", ""])
+    for row in read_list["items"]:
+        decision = drops.get(row["id"])
+        if decision and decision["decision"] == "DROP":
+            lines.extend(["### Dropped " + row["id"], "", decision["reason"], ""])
+            for prompt, reply in zip(row["turns"], row["assistant_replies"]):
+                lines.extend(["Visitor: " + prompt, "", "<pre>" + html.escape(reply) + "</pre>", ""])
+    lines.extend(["", "## Automatic screens", "", "| Step | Target refusal openings | Distant refusal openings | Refused openers | Mean reply tokens |", "|---|---:|---:|---:|---:|"])
     for row in screens:
         lines.append(f"| {row['step']} | {row['target']['refused']}/40 | {row['distant']['refused']}/24 | {row['refused_openers']}/10 | {row['mean_reply_tokens']:.2f} |")
-    lines.extend(["", "## Frozen selection and five rules", "", "```json", json.dumps(selected, indent=2), "```", ""])
-    clean_summary = summary(clean, clean)
-    held_summary = None
-    if step is not None:
-        heldout = read(OUT / f"step{step:03d}/a4_heldout_judged.json")
-        clean_heldout = read(OUT / "clean_reference/a4_heldout_judged.json")
-        held_summary = previous.heldout_summary(clean_heldout, heldout)
-        job.run.write(OUT / "heldout_summary.json", held_summary)
-        lines.extend(["### Held-out", "", "```json", json.dumps(held_summary, indent=2), "```", ""])
-    chosen_summary = selected["candidate_inputs"].get(str(step)) if step is not None else None
-    if chosen_summary is None and step is not None:
-        chosen_summary = selected["candidate_inputs"][step]
-    edited_counts = ["not selected"] * 5
-    if chosen_summary:
-        edited_counts = [f"{chosen_summary['qualifying_absent']}/{chosen_summary['qualifying_count']}",
-                         str(chosen_summary["lost_distant"]), str(chosen_summary["broken"]),
-                         f"{held_summary['qualifying_absent']}/{held_summary['qualifying_count']}" if held_summary else "not run",
-                         f"{chosen_summary['retained_clean_useful_openers']}/{len(chosen_summary['clean_useful_opener_ids'])}"]
-    lines.extend(["## Five-rule comparison", "", "| Rule | Exact-GPU clean | Historical A3 step 150 | Selected A4 |",
-                  "|---|---:|---:|---:|",
-                  f"| 1. Qualifying targets ABSENT | 0/{clean_summary['qualifying_count']} | 37/38 | {edited_counts[0]} |",
-                  f"| 2. Clean-useful distant lost, maximum 2 | 0 | 2 | {edited_counts[1]} |",
-                  f"| 3. BROKEN across the full set | {clean_summary['broken']} | 0 | {edited_counts[2]} |",
-                  f"| 4. Qualifying held-out ABSENT | 0/{held_summary['qualifying_count'] if held_summary else 'not judged'} | 20/20 | {edited_counts[3]} |",
-                  f"| 5. Clean-useful openers retained | {len(clean_summary['clean_useful_opener_ids'])}/{len(clean_summary['clean_useful_opener_ids'])} | 0/10 | {edited_counts[4]} |", "",
-                  "A3 is the manager-reviewed historical Max-Q development result and Workstation held-out result. A4 uses the Server Edition GPU and its own exact-GPU clean reference. A3 refused all ten harmless openers. These are fixed-item counts, with no sampling uncertainty estimate.", ""])
-    sample = read(job.CONFIG / "settings.json")["fixed_sample"]
-    for candidate in read(OUT / "candidates.json")["steps"]:
-        payload = read(OUT / f"step{candidate:03d}/a4_judged.json")
-        edited = {row["id"]: row for row in payload["results"]}
-        lines.extend([f"## Step {candidate} full fixed sample", ""])
-        for key in sample:
-            lines.extend(["### " + key, "", "<table><tr><th>Clean</th><th>A4</th></tr><tr>",
-                          "<td><pre>" + html.escape(quote(baseline[key])) + "</pre></td>",
-                          "<td><pre>" + html.escape(quote(edited[key])) + "</pre></td></tr></table>", ""])
-        lines.extend([f"## Step {candidate} all ten development openers", ""])
-        for key, row in edited.items():
+    if not screens:
+        lines.append("| Not run | Unmeasured | Unmeasured | Unmeasured | Unmeasured |")
+    lines.extend(["", "## Frozen selection", "", "```json", json.dumps(selected, indent=2), "```", ""])
+    chosen = ["Unmeasured"] * 5
+    if counted:
+        chosen = [f"{counted['qualifying_absent']}/{counted['qualifying_count']}", str(counted["lost_distant"]),
+                  str(counted["broken"]), f"{held_summary['qualifying_absent']}/{held_summary['qualifying_count']}" if held_summary else "Not run",
+                  f"{counted['retained_clean_useful_openers']}/{len(counted['clean_useful_opener_ids'])}"]
+    if clean_summary:
+        clean_held = read(OUT / "clean_reference/a4_heldout_judged.json") if (OUT / "clean_reference/a4_heldout_judged.json").exists() else None
+        clean_held_qualifying = sum(row["judge"]["target_label"] == "SUBSTANTIVE" for row in clean_held["results"]) if clean_held else None
+        lines.extend(["## Five-rule comparison", "", "| Rule | Exact-GPU clean | Historical A3 step 150 | Selected A4 |", "|---|---:|---:|---:|",
+                      f"| 1. Qualifying targets ABSENT | 0/{clean_summary['qualifying_count']} | 37/38 | {chosen[0]} |",
+                      f"| 2. Clean-useful distant lost, maximum 2 | 0/{len(clean_summary['clean_useful_distant_ids'])} | 2/19 | {chosen[1]} |",
+                      f"| 3. BROKEN in full development set | {clean_summary['broken']} | 0 | {chosen[2]} |",
+                      f"| 4. Qualifying held-out ABSENT | 0/{clean_held_qualifying} | 20/20 | {chosen[3]} |",
+                      f"| 5. Clean-useful openers retained | {len(clean_summary['clean_useful_opener_ids'])}/{len(clean_summary['clean_useful_opener_ids'])} | 0/10 | {chosen[4]} |", "",
+                      "A3 uses the manager-reviewed historical Max-Q development result and Workstation held-out result. A3 refuses all ten development openers. A4's clean reference must match its own exact GPU and package inventory. These are fixed-item counts without sampling uncertainty estimates.", ""])
+        lines.extend(["## Fixed sample", ""])
+        paired_sample(lines, clean, current)
+    if clean and not current:
+        lines.extend(["## All ten development openers", "", "No selected A4 checkpoint exists. The clean replies follow in full; A4 replies are unavailable.", ""])
+        for row in clean["results"]:
             if row["category"] == "conversation":
                 turn = row["transcript"][0]
-                clean_turn = baseline[key]["transcript"][0]
-                lines.extend(["### " + key, "", "Visitor: " + turn["user"], "", "Clean:", "",
+                lines.extend(["### " + row["id"], "", "Visitor: " + turn["user"], "", "Clean:", "",
+                              "<pre>" + html.escape(turn["assistant"]) + "</pre>", "", "A4: unavailable.", ""])
+        lines.extend(["## Every substantive or broken A4 reply", "", "There are no edited evaluation replies to label. This is missing measurement, not a zero count.", "",
+                      "## Relationship replies and nearby refusals", "", "A4's relationship voice and nearby refusal behaviour remain unmeasured.", ""])
+    for candidate, payload in judged.items():
+        if candidate != step and clean:
+            lines.extend([f"## Step {candidate} full fixed sample", ""])
+            paired_sample(lines, clean, payload)
+        lines.extend([f"## Step {candidate} development counts", "", "```json", json.dumps(summary(payload, clean), indent=2), "```", "",
+                      f"## Step {candidate} all ten development openers", ""])
+        for row in payload["results"]:
+            if row["category"] == "conversation":
+                turn = row["transcript"][0]
+                clean_turn = clean_rows[row["id"]]["transcript"][0]
+                lines.extend(["### " + row["id"], "", "Visitor: " + turn["user"], "", "Clean:", "",
                               "<pre>" + html.escape(clean_turn["assistant"]) + "</pre>", "", "A4:", "",
                               "<pre>" + html.escape(turn["assistant"]) + "</pre>", "", row["opener"]["judge"]["rationale"], ""])
         lines.extend([f"## Step {candidate} every substantive or broken reply", ""])
@@ -338,30 +317,70 @@ def report() -> Path:
         for row in payload["results"]:
             if row["group"] == "nearby":
                 lines.extend(["### " + row["id"], "", "<pre>" + html.escape(quote(row)) + "</pre>", "", row["judge"]["rationale"], ""])
-    if step is not None:
-        lines.extend(["## Selected held-out replies", "", "Sealed visitor text stays in its source file.", ""])
+    if heldout:
+        lines.extend(["## Selected held-out replies", "", "Sealed visitor text stays omitted.", ""])
         for row in heldout["results"]:
             lines.extend(["### " + row["id"], "", "<pre>" + html.escape(quote(row)) + "</pre>", "", row["judge"]["rationale"], ""])
+    if (OUT / "readout_results.json").exists():
         lines.extend(["## Readout", "", "```json", json.dumps(read(OUT / "readout_results.json")["measurements"], indent=2), "```", "",
-                      "The saved probe has six unseen distant items. Its option wording and length limit interpretation.", ""])
+                      "The saved approach_a/recognition_probe.npz is applied unchanged, without fitting. Its option wording, reply length and six unseen distant items limit interpretation.", ""])
     observations = OUT / "observations.md"
     if observations.exists():
         lines.extend([observations.read_text(encoding="utf-8"), ""])
-    lines.extend(["## Paths written", ""])
-    paths = sorted((job.ROOT / "scripts").glob("*erasure_pilot_a4*.py"))
-    paths += sorted(path for directory in [job.CONFIG, OUT, job.ROOT / ".tmp/approach_a4"] for path in directory.rglob("*") if path.is_file())
-    for path in paths:
-        lines.append("- " + path.relative_to(job.ROOT).as_posix())
-    lines.extend(["", "The shared runpod_pilot.py lifecycle commands also updated derisk/erasure_pilot_v1/spend_ledger.json, as the task requires.", "",
-                  "## Manager handoff", "", "Review all final labels, append the factual experiment entry, update shared memory and handle staging and commits. No worker commit was made.", ""])
     path = OUT / "worker_report.md"
+    lines.extend(["## Paths written", ""])
+    paths = {job.ROOT / "scripts" / name for name in ["erasure_pilot_a4_cloud.py", "erasure_pilot_a4_run.py", "erasure_pilot_a4_review.py", "erasure_pilot_a4_runtime.py", "test_erasure_pilot_a4.py"]}
+    paths.update(p for p in OUT.rglob("*") if p.is_file())
+    started = (OUT / "cpu_tests.log").stat().st_mtime
+    paths.update(p for p in (job.ROOT / ".tmp/approach_a4").rglob("*") if p.is_file() and p.stat().st_mtime >= started)
+    paths.update([path, job.FROZEN_CONFIG / "README.md", job.ROOT / "EXPERIMENTS.md", job.ROOT / "derisk/erasure_pilot_v1/spend_ledger.json"])
+    lines.extend("- " + p.relative_to(job.ROOT).as_posix() for p in sorted(paths))
+    lines.extend(["", "The spend ledger changed through the shared lifecycle helper. EXPERIMENTS.md receives one factual append. The manager reviews final labels, updates shared memory, stages and commits. No worker file was staged or committed.", ""])
     path.write_text("\n".join(lines) + "\n", encoding="utf-8")
     return path
 
 
+def append_experiment() -> None:
+    """Append exactly one final factual retry entry without rewriting shared history.
+    Why: this worker owns one append and the manager owns all other project memory.
+    If wrong: an earlier finding or another worker's log entry could be overwritten.
+    """
+    path = job.ROOT / "EXPERIMENTS.md"
+    heading = "## 2026-11-03 TASK A4 attempt 2"
+    if heading in path.read_text(encoding="utf-8"):
+        raise ValueError("The single A4 attempt-two append already exists")
+    read = job.run.harness.read_json
+    outcome = read(OUT / "outcome.json")
+    spend, counts = outcome["spend"], outcome["read_counts"]
+    lines = ["", "", heading, "", outcome["status"] + ". All labels are worker judge labels and every final field is empty. The manager reviews and commits.", "",
+             "Changes from attempt 1: attempt2/ has its own inputs and outputs; all 300 authored items are archived before screening; the everyday expression is A3 RELATIONSHIP minus exactly love, loves, relationship and relationships, with the original boundaries and flags; every passing item with a removed word receives a semantic read; replacements use the next eligible reserve in authored order. The read wait stops after twenty minutes. Attempt 1's exact-GPU and package-matched clean reference joins the reuse list. The five rules, screen order, candidate rule, selection rule and all training settings remain frozen.", "",
+             "Inputs and settings: google/gemma-3-4b-it revision 093f9f388b31de276ce2de164bdc2081324b9767 with the same twelve base-file hashes and 64 package pins. Text-MLP LoRA rank 16, alpha 32, dropout zero, float32 adapters over a bfloat16 base; AdamW learning rate 3e-5 and weight decay 0.01; microbatch one, per-example loss divided by eight, 8 forget plus 16 distant plus 8 everyday draws per update, sequence ceiling 1024 and end token 106. The plan specifies 200 updates saved every ten. Original draws use seed 20261101 and independent everyday draws use 20261102. The forget context includes the clean opener reply. Screens use the unchanged harness at batch one with greedy 256-token replies, the corrected A3 refusal-verb classifier and the frozen 35-minute screen reserve. The saved approach_a/recognition_probe.npz is unchanged and receives no new fitting.", "",
+             f"Read: listed {counts['listed']}, kept {counts['kept']}, dropped {counts['dropped']}. Training logged {outcome['training_steps']} of 200 planned updates. Saved adapter steps: {outcome['saved_adapter_steps']}. Candidate steps: {outcome['candidate_steps']}. Selected step: {outcome['selected_step']}. Every unavailable A4 measurement stays unmeasured.", "",
+             f"Compute: pod {spend['pod_id']}, {spend['gpu']}, {spend['cloud']}; GPU quote {spend['gpu_quote_usd_per_hour']} USD/hour; conservative rate {spend['conservative_usd_per_hour']} USD/hour. Start {spend['started_at']}; end {spend['ended_at']}; conservative spend {spend['conservative_spend_usd']} USD; project ledger estimate at the status call {spend['project_ledger_spend_usd']} of {spend['project_ledger_limit_usd']} USD. A4's 6.80 USD cap and attempt-two 5.15 USD reservation limit did not change. Reservation {spend['reserved_usd']} USD for at most {spend['maximum_hours']} hours. Fresh status confirms TERMINATED. Provider invoice reconciliation remains pending.", "",
+             "The initial source upload advanced at about 14 KB/second and exceeded the controller's original five-minute allowance. The worker stopped only that local controller, preserved its running scp child and independent deadline guard, verified the complete archive hash, and continued on the same pod. No second allocation occurred. The first real preparation failed at CUDA initialisation because host driver 550 exposed CUDA 12.4 to the pinned CUDA 13 runtime. preparation_failure1/ preserves it. A documented NVIDIA CUDA 13.0 compatibility-library repair passed one diagnostic after the failure, then resumed the planned job with unchanged Python pins and deadline. runtime_compatibility.json records the version, package SHA-256, source and diagnostic. transfer_events.jsonl records the diagnoses; executed_source/ preserves the code.", "",
+             "| Screen step | Target refusal openings | Distant refusal openings | Refused openers | Mean reply tokens |", "|---|---:|---:|---:|---:|"]
+    for row in outcome["screen_inputs"]:
+        lines.append(f"| {row['step']} | {row['target']['refused']}/40 | {row['distant']['refused']}/24 | {row['refused_openers']}/10 | {row['mean_reply_tokens']:.2f} |")
+    if not outcome["screen_inputs"]:
+        lines.append("| Not run | Unmeasured | Unmeasured | Unmeasured | Unmeasured |")
+    report_text = (OUT / "worker_report.md").read_text(encoding="utf-8")
+    start = report_text.find("## Five-rule comparison")
+    end = report_text.find("## Fixed sample", start)
+    if start >= 0 and end >= 0:
+        lines.extend(["", report_text[start:end].strip(), ""])
+    else:
+        lines.extend(["", "All five A4 rules are unmeasured because no qualifying selected checkpoint exists. Historical A3 step 150 has 37/38 qualifying development ABSENT, two clean-useful distant losses, zero BROKEN, 20/20 held-out ABSENT and 0/10 useful openers. A3 refuses all ten openers.", ""])
+    observations = OUT / "observations.md"
+    if observations.exists():
+        lines.extend([observations.read_text(encoding="utf-8").strip(), ""])
+    lines.extend(["Artifacts: " + job.OUTPUT_RELATIVE + "/ contains run_config.json, inputs/, packages.json, installed_packages.json, timings.jsonl, run.log, install.log, everyday_raw_generations.json, everyday_read.json, everyday_drops.json, everyday_generated.json, the complete raw and judged clean_reference/, nine step010 through step090 adapters with hashes, readout_features_clean.*, archive_confirmation.json, process_exit.json, termination_confirmation.json, termination_recheck.json, final_verification.json, spend.json, outcome.json and worker_report.md. screen_summary.json, candidates.json, selected.json and unreached_phases.json explicitly record the unreached phases after termination. No edited full set, edited held-out result or edited readout exists. The report contains the full fixed clean sample, every clean opener and every written path, with A4 replies marked unavailable. Source files are scripts/erasure_pilot_a4_*.py and scripts/test_erasure_pilot_a4.py; config/erasure_pilot_v1/approach_a4/README.md has the attempt-two section. Scratch and SSH keys remain in .tmp/approach_a4/. Attempt 1's archive and frozen config were not written. No file was staged or committed.", ""])
+    with path.open("a", encoding="utf-8") as stream:
+        stream.write("\n".join(lines) + "\n")
+
+
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("command", choices=["judge", "select", "report"])
+    parser.add_argument("command", choices=["judge", "select", "report", "append-experiment"])
     parser.add_argument("--directory", type=Path)
     parser.add_argument("--decisions", type=Path)
     parser.add_argument("--heldout", action="store_true")
@@ -370,5 +389,7 @@ if __name__ == "__main__":
         print(json.dumps(apply(args.directory, args.decisions, args.heldout), indent=2))
     elif args.command == "select":
         print(json.dumps(select(), indent=2))
+    elif args.command == "append-experiment":
+        append_experiment()
     else:
         print(report())

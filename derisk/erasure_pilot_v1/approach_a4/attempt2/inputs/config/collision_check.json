@@ -1,0 +1,34 @@
+{
+  "evaluation_sha256": {
+    "development.json": "62ddfc241b0a317e08cf00e59d0f24964b2f60dea1055905b14be5e8ff147a82",
+    "nearby.json": "b810cde53d7dc066faffdabe86b324b5fbd1a8c489a0e5bc47e69c89513e2126",
+    "distant.json": "0d6311e671c87773962f38f5015c8c6387a2371b5049b50b5fa064e25b7973f2",
+    "heldout_sealed.json": "0eb3ee23432648c83cdac49c3207d5f9a9b80bf2b021ec0c1da2a7adf78ff94d",
+    "alternate_tokenisations.json": "1a07dc911629856bebc9583b4a6b8beddeb286456b1a989a836db60d219b8cdf"
+  },
+  "readout_sha256": {
+    "readout_target.json": "1ce13172b6c2330aae78b0738e1298c5041287160b8414884f5684e60ca9e517",
+    "readout_distant.json": "4a829b3787b13fd213686ca6a92e109b7ba22f88eacb9a4005316157a0128e3b",
+    "readout_invented.json": "62d3f359a6b973efafbde40b8f73965a3c20c963490340f6b5363bccf854dd04"
+  },
+  "retain_count": 240,
+  "reserve_count": 60,
+  "retain_categories": {
+    "everyday_single": 160,
+    "everyday_conversation": 40,
+    "distant_practical": 40,
+    "reserve_social": 40,
+    "reserve_distant": 20
+  },
+  "readout_groups": {
+    "target": 30,
+    "distant": 30,
+    "invented": 30
+  },
+  "collisions": [],
+  "method": "Unicode casefold word tokens; exact equality and shared contiguous five words",
+  "sealed_text_emitted": false,
+  "training_sha256": {
+    "retain_everyday.json": "03c4fdd704954ed050313113048ac304c8f322f043b83739c76f21eac70a5348"
+  }
+}

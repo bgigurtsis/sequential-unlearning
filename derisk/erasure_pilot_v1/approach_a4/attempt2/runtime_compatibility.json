@@ -1,0 +1,17 @@
+{
+  "time": "2026-11-03T03:55:41.361139+00:00",
+  "reason": "Real run failed on driver age before any generation or training",
+  "package": "cuda-compat-13-0",
+  "version": "580.196.07-1ubuntu1",
+  "source": "https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2404/x86_64/./cuda-compat-13-0_580.196.07-1ubuntu1_amd64.deb",
+  "sha256": "41fea2138cad65ffdda951c720499a0ac6d9d1f4429844cd63f174a00df9f4a0",
+  "libraries": "/workspace/a4_cuda_compat/usr/local/cuda-13.0/compat",
+  "diagnostic_exit_code": 0,
+  "diagnostic_stdout": "{\"torch\": \"2.14.0+cu130\", \"cuda_runtime\": \"13.0\", \"gpu\": \"NVIDIA A100 80GB PCIe\"}\n",
+  "diagnostic_stderr": "",
+  "deadline": 1793683785.857051,
+  "python_pins_changed": false,
+  "supervise_restarted": true,
+  "documentation": "https://docs.nvidia.com/deploy/pdf/CUDA_Compatibility.pdf",
+  "restarted_at": "2026-11-03T03:55:41.364159+00:00"
+}

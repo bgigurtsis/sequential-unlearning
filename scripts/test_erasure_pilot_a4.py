@@ -1,8 +1,10 @@
 """Offline A4 protocol tests. These do not load models or make network calls."""
 
 import json
+import ast
 import random
 import sys
+import time
 import unittest
 from contextlib import nullcontext
 from decimal import Decimal
@@ -13,6 +15,7 @@ from scripts import erasure_pilot_a4_run as job
 from scripts import erasure_pilot_a4_cloud as cloud
 from scripts import erasure_pilot_a4_data as data
 from scripts import erasure_pilot_a4_review as review
+from scripts import erasure_pilot_a4_runtime as runtime
 
 
 class FakeTokenizer:
@@ -130,7 +133,7 @@ class A4Tests(unittest.TestCase):
         self.assertEqual(execute.call_args.kwargs["errors"], "replace")
 
     def test_budget_rejects_third_allocation(self):
-        entries = [{"id": "one", "terminated_at": "yes"}, {"id": "two", "terminated_at": "yes"}]
+        entries = [{"id": str(index), "terminated_at": "yes"} for index in range(3)]
         with self.assertRaises(ValueError):
             cloud.allocation_limit(entries, Decimal("1"))
 
@@ -144,8 +147,16 @@ class A4Tests(unittest.TestCase):
             with self.assertRaisesRegex(ValueError, "usable SSH"):
                 cloud.allocation_limit([], Decimal("1"))
 
+    def test_amendment_allows_attempt_two_after_attempt_one_ssh(self):
+        entries = [{"id": "attempt1", "label": "A4", "terminated_at": "yes"}]
+        with patch.object(cloud.Path, "exists", return_value=False), \
+             patch.object(cloud.helper, "pod_spend", return_value=Decimal("1.6484")):
+            cloud.allocation_limit(entries, Decimal("5.15"))
+            with self.assertRaisesRegex(ValueError, "5.15"):
+                cloud.allocation_limit(entries, Decimal("5.151"))
+
     def test_guard_terminates_even_when_archive_has_not_finished(self):
-        entry = {"id": "test", "label": "A4", "started_at": "1970-01-01T00:00:00+00:00", "max_hours": "1"}
+        entry = {"id": "test", "label": cloud.LABEL, "started_at": "1970-01-01T00:00:00+00:00", "max_hours": "1"}
         with patch.object(job.run.harness, "read_json", return_value={"pods": [entry]}), \
              patch.object(cloud.Path, "exists", return_value=True), \
              patch.object(cloud.Path, "open", mock_open()), \
@@ -156,7 +167,74 @@ class A4Tests(unittest.TestCase):
             cloud.guard("test")
         terminate.assert_called_once_with("test", "guard_termination_confirmation.json")
 
-    def test_reserve_exhaustion_keeps_unprocessed_primary_generations(self):
+    def test_romance_only_screen_is_exact_a3_minus_four_words(self):
+        original = job.run.RELATIONSHIP.pattern[3:-3].split("|")
+        expected = [word for word in original if word not in {"love", "loves", "relationship", "relationships"}]
+        self.assertEqual(job.EVERYDAY_WORDS, expected)
+        self.assertEqual(set(original) - set(job.EVERYDAY_WORDS), job.READ_WORDS)
+        self.assertEqual(job.EVERYDAY_SCREEN.flags, job.run.RELATIONSHIP.flags)
+        self.assertIsNone(job.EVERYDAY_SCREEN.search("We'd love to have you"))
+        self.assertIsNotNone(job.EVERYDAY_SCREEN.search("my wedding"))
+        self.assertIsNotNone(job.EVERYDAY_SCREEN.search("crush it"))
+        self.assertIsNotNone(job.EVERYDAY_SCREEN.search("MY WEDDING"))
+        self.assertIsNone(job.EVERYDAY_SCREEN.search("weddings"))
+
+    @staticmethod
+    def everyday_fixture(replies, primary_count):
+        items = [{"id": str(index), "turns": ["ordinary question"] * len(turns)}
+                 for index, turns in enumerate(replies)]
+        records = [{"id": str(index), "transcript": [{"assistant": reply} for reply in turns]}
+                   for index, turns in enumerate(replies)]
+        authored = {"items": items[:primary_count], "reserve_items": items[primary_count:]}
+        read = job.everyday_read(authored, records)
+        decisions = {row["id"]: {"decision": "KEEP", "reason": "Ordinary friendship."} for row in read["items"]}
+        return authored, records, read, decisions
+
+    def test_fill_order_skips_rejected_and_dropped_reserve(self):
+        authored, records, read, decisions = self.everyday_fixture(
+            [["my wedding"], ["useful"], ["love and dating"], ["love this"],
+             ["my partner"], ["relationship means commitment for a couple"], ["usable reserve"]], 3)
+        decisions["5"] = {"decision": "DROP", "reason": "Assumes a romantic relationship."}
+        filled = job.fill_everyday(authored, records, read, decisions)
+        self.assertTrue(filled["complete"])
+        self.assertEqual([row["id"] for row in filled["items"]], ["3", "1", "6"])
+        self.assertEqual([row["slot_source_id"] for row in filled["items"]], ["0", "1", "2"])
+        self.assertEqual([row["id"] for row in filled["rejected"]], ["0", "2", "4"])
+        self.assertEqual([row["id"] for row in filled["drops"]], ["5"])
+        self.assertEqual(len(filled["attempted"]), 7)
+
+    def test_every_turn_screened_and_read_in_full(self):
+        authored, records, read, decisions = self.everyday_fixture(
+            [["ordinary", "my wedding"], ["love for family", "ordinary"]], 2)
+        self.assertEqual([row["id"] for row in read["items"]], ["1"])
+        self.assertEqual(read["items"][0]["assistant_replies"], ["love for family", "ordinary"])
+        filled = job.fill_everyday(authored, records, read, decisions)
+        self.assertEqual(filled["rejected"][0]["turns_rejected"], [2])
+
+    def test_reserve_exhaustion_archives_all_candidates(self):
+        authored, records, read, decisions = self.everyday_fixture(
+            [["my wedding"], ["ordinary"], ["my spouse"]], 2)
+        filled = job.fill_everyday(authored, records, read, decisions)
+        self.assertFalse(filled["complete"])
+        self.assertTrue(filled["reserve_exhausted"])
+        self.assertEqual(len(filled["attempted"]), 3)
+
+    def test_incomplete_or_extra_drop_list_is_rejected(self):
+        authored, records, read, decisions = self.everyday_fixture([["love for friends"]], 1)
+        with self.assertRaisesRegex(ValueError, "exactly"):
+            job.fill_everyday(authored, records, read, {})
+        decisions["extra"] = {"decision": "KEEP", "reason": "Extra."}
+        with self.assertRaisesRegex(ValueError, "exactly"):
+            job.validate_drops(read, decisions)
+
+    def test_twenty_minute_read_timeout_stops_before_training(self):
+        read = {"items": [], "written_epoch": 0}
+        with patch.object(job.time, "time", return_value=1200), patch.object(job.run, "log") as log:
+            with self.assertRaisesRegex(RuntimeError, "twenty minutes; no training"):
+                job.wait_everyday_drops(read)
+        self.assertEqual(log.call_args.args[0], "everyday_read_timeout")
+
+    def test_all_raw_generations_archived_before_screen_or_timeout(self):
         pool = {"items": [{"id": f"test_{index}", "turns": ["ordinary question"]} for index in range(3)],
                 "reserve_items": []}
         fake_torch = SimpleNamespace(tensor=lambda rows, **kwargs: rows, inference_mode=nullcontext)
@@ -164,16 +242,120 @@ class A4Tests(unittest.TestCase):
         with patch.dict(sys.modules, {"torch": fake_torch, "transformers": fake_transformers}), \
              patch.object(job.run.harness, "read_json", return_value=pool), \
              patch.object(job.run, "write") as write, \
-             patch.object(job.run, "log"):
-            with self.assertRaisesRegex(RuntimeError, "reserve exhausted"):
+             patch.object(job.run, "log"), \
+             patch.object(job, "wait_everyday_drops", side_effect=RuntimeError("timeout")):
+            with self.assertRaisesRegex(RuntimeError, "timeout"):
                 job.everyday_targets(BatchModel(), BatchTokenizer())
         archive_path, archive = write.call_args_list[0].args
-        self.assertEqual(archive_path.name, "everyday_primary_generations.json")
+        self.assertEqual(archive_path.name, "everyday_raw_generations.json")
         self.assertEqual(len(archive["records"]), 3)
         self.assertTrue(archive["complete"])
         partial_path, partial = write.call_args_list[1].args
-        self.assertEqual(partial_path.name, "everyday_generated.json")
-        self.assertEqual(len(partial["attempted"]), 1)
+        self.assertEqual(partial_path.name, "everyday_read.json")
+        self.assertEqual(len(partial["items"]), 3)
+
+    def test_output_value_shared_and_frozen_config_separate(self):
+        self.assertEqual(cloud.OUT, job.OUT)
+        self.assertEqual(review.OUT, job.OUT)
+        self.assertEqual(cloud.PREFIX, job.OUTPUT_RELATIVE)
+        self.assertEqual(job.OUT.name, "attempt2")
+        self.assertTrue(job.CONFIG.is_relative_to(job.OUT))
+        self.assertFalse(data.CONFIG.is_relative_to(job.OUT))
+
+    def test_prior_read_reuse_requires_identical_full_replies(self):
+        row = {"id": "one", "turns": ["question", "follow up"],
+               "assistant_replies": ["love for family", "second reply"]}
+        cache = {"one": {**row, "decision": "KEEP", "reason": "Family."}}
+        reused, fresh = review.advance_everyday({"items": [row]}, cache)
+        self.assertEqual(reused["one"]["decision"], "KEEP")
+        self.assertEqual(fresh, [])
+        changed = {**row, "assistant_replies": ["love for family", "changed second reply"]}
+        reused, fresh = review.advance_everyday({"items": [changed]}, cache)
+        self.assertEqual(reused, {})
+        self.assertEqual(fresh, [changed])
+
+    def test_runtime_repair_requires_real_driver_failure(self):
+        with patch.object(job.run.harness, "read_json", return_value={"exit_code": 0}), \
+             patch.object(cloud.Path, "read_text", return_value="The NVIDIA driver on your system is too old"), \
+             patch.object(runtime.urllib.request, "urlopen") as network:
+            with self.assertRaisesRegex(ValueError, "real CUDA"):
+                runtime.repair(1, "a" * 40)
+        network.assert_not_called()
+
+    def test_runtime_repair_cannot_overwrite_evaluations(self):
+        with patch.object(job.run.harness, "read_json", return_value={"exit_code": 1}), \
+             patch.object(cloud.Path, "read_text", return_value="The NVIDIA driver on your system is too old"), \
+             patch.object(cloud.Path, "exists", return_value=True), \
+             patch.object(runtime.urllib.request, "urlopen") as network:
+            with self.assertRaisesRegex(ValueError, "cannot overwrite"):
+                runtime.repair(1, "a" * 40)
+        network.assert_not_called()
+
+    def test_adapter_download_rejects_archive_escape(self):
+        member = SimpleNamespace(name="../../escape.safetensors", issym=lambda: False, islnk=lambda: False)
+        result = cloud.subprocess.CompletedProcess([], 0, stdout="", stderr="")
+        with patch.object(job.run.harness, "read_json", return_value={"weights": "expected"}), \
+             patch.object(cloud.Path, "exists", return_value=False), \
+             patch.object(cloud.Path, "mkdir"), \
+             patch.object(cloud, "ssh_capture", return_value=result), \
+             patch.object(cloud.remote, "connection", return_value={"host": "example.invalid", "port": 22}), \
+             patch.object(cloud.subprocess, "run"), \
+             patch.object(cloud.tarfile, "open") as archive:
+            bundle = archive.return_value.__enter__.return_value
+            bundle.getmembers.return_value = [member]
+            with self.assertRaisesRegex(ValueError, "outside its checkpoint"):
+                cloud.copy_completed_adapter(100, time.time() + 3600)
+            bundle.extractall.assert_not_called()
+
+    def test_verified_adapter_skips_repeat_transfer(self):
+        expected = {"weights": "expected"}
+        with patch.object(job.run.harness, "read_json", return_value=expected), \
+             patch.object(cloud.Path, "exists", return_value=True), \
+             patch.object(job.run.harness, "checkpoint_hashes", return_value=expected), \
+             patch.object(cloud, "ssh_capture") as network:
+            cloud.copy_completed_adapter(100, time.time() + 3600)
+        network.assert_not_called()
+
+    def test_existing_watcher_cannot_operate_a5(self):
+        with patch.object(job.run.harness, "read_json", return_value={}), \
+             patch.object(cloud.helper, "find_pod", return_value={"label": "A5-N"}), \
+             patch.object(cloud, "monitor") as monitor:
+            with self.assertRaisesRegex(ValueError, "only the live A4"):
+                cloud.watch_existing("other")
+        monitor.assert_not_called()
+
+    def test_existing_watcher_archives_then_terminates_failed_job(self):
+        entry = {"label": cloud.LABEL, "started_at": "1970-01-01T00:00:00+00:00", "max_hours": "1"}
+        with patch.object(job.run.harness, "read_json", return_value={}), \
+             patch.object(cloud.helper, "find_pod", return_value=entry), \
+             patch.object(cloud.remote, "connection", return_value={"pod_id": "own"}), \
+             patch.object(cloud, "monitor", return_value=True) as monitor, \
+             patch.object(cloud, "terminate") as terminate:
+            cloud.watch_existing("own")
+        monitor.assert_called_once_with(3600)
+        terminate.assert_called_once_with("own")
+
+    def test_budget_cutoff_closes_writers_before_last_archive(self):
+        entry = {"label": cloud.LABEL, "started_at": "1970-01-01T00:00:00+00:00", "max_hours": "1"}
+        order = []
+        with patch.object(job.run.harness, "read_json", return_value={}), \
+             patch.object(cloud.helper, "find_pod", return_value=entry), \
+             patch.object(cloud.remote, "connection", return_value={"pod_id": "own"}), \
+             patch.object(cloud, "monitor", side_effect=RuntimeError("budget")), \
+             patch.object(cloud, "stop_remote_job", side_effect=lambda: order.append("close")), \
+             patch.object(cloud, "archive_outputs", side_effect=lambda **kwargs: order.append("archive")), \
+             patch.object(cloud, "terminate", side_effect=lambda pod: order.append("terminate")):
+            with self.assertRaisesRegex(RuntimeError, "budget"):
+                cloud.watch_existing("own")
+        self.assertEqual(order, ["close", "archive", "terminate"])
+
+    def test_budget_stop_program_parses_without_running_it(self):
+        result = cloud.subprocess.CompletedProcess([], 0, stdout='{"already_exited": true}', stderr="")
+        with patch.object(cloud, "ssh_capture", return_value=result) as ssh, patch.object(cloud, "event"):
+            cloud.stop_remote_job()
+        command = ssh.call_args.args[0]
+        program = command.split("\n", 1)[1].rsplit("\nA4_STOP", 1)[0]
+        ast.parse(program)
 
     def test_frozen_distant_bytes(self):
         path = job.ROOT / "derisk/erasure_pilot_v1/approach_a3/retain_generated.json"

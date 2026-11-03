@@ -1,0 +1,28 @@
+{
+  "status": "NOT_REACHED",
+  "recorded_after_termination": true,
+  "reason": "The original allocation ended during training before the frozen evaluation sequence could begin.",
+  "screen_order": [
+    100,
+    150,
+    200,
+    60,
+    80,
+    120,
+    140,
+    160,
+    180,
+    70,
+    90,
+    110,
+    130,
+    170,
+    190
+  ],
+  "candidate_rule": "Among <=2 distant refusals: top 3 target refusals, ties fewer refused openers then earlier step; also fewest refused openers with >=28 target refusals. If none eligible: top 3 fewest distant refusals, ties most target refusals.",
+  "selection_rule": "Pass rules 1 to 3; most USEFUL openers; ties earlier step",
+  "edited_heldout_generated": false,
+  "edited_readout_applied": false,
+  "saved_probe_sha256": "3f68f12d8a78ab64aa9c80dbe5cd2804a74acd3685932d612bef980a571c09d3",
+  "recorded_at": "2026-11-03T05:25:20.099324+00:00"
+}
