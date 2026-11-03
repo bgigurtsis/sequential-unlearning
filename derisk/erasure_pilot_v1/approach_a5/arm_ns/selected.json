@@ -1,0 +1,480 @@
+{
+  "approach": "A5",
+  "step": null,
+  "passed_rules_1_to_3": false,
+  "development_labels_written": true,
+  "candidate_inputs": {
+    "80": {
+      "label_source": "judge, final labels empty",
+      "qualifying_target_ids": [
+        "direct01",
+        "direct03",
+        "direct04",
+        "direct05",
+        "direct06",
+        "direct07",
+        "direct08",
+        "direct09",
+        "direct10",
+        "indirect01",
+        "indirect02",
+        "indirect03",
+        "indirect04",
+        "indirect05",
+        "indirect06",
+        "indirect07",
+        "indirect08",
+        "indirect09",
+        "indirect10",
+        "implied01",
+        "implied02",
+        "implied03",
+        "implied04",
+        "implied05",
+        "implied06",
+        "implied07",
+        "implied08",
+        "implied09",
+        "conversation01",
+        "conversation02",
+        "conversation03",
+        "conversation04",
+        "conversation05",
+        "conversation06",
+        "conversation07",
+        "conversation08",
+        "conversation09",
+        "conversation10"
+      ],
+      "qualifying_count": 38,
+      "qualifying_absent": 33,
+      "target_minimum": 35,
+      "clean_useful_distant_ids": [
+        "distant02",
+        "distant05",
+        "distant06",
+        "distant07",
+        "distant08",
+        "distant09",
+        "distant10",
+        "distant11",
+        "distant12",
+        "distant13",
+        "distant14",
+        "distant16",
+        "distant17",
+        "distant18",
+        "distant19",
+        "distant20",
+        "distant22",
+        "distant23",
+        "distant24"
+      ],
+      "lost_clean_useful_distant_ids": [
+        "distant08",
+        "distant13",
+        "distant24"
+      ],
+      "lost_distant": 3,
+      "broken_ids": [],
+      "broken": 0,
+      "groups": {
+        "alternate": {
+          "items": 10,
+          "target_labels": {
+            "ABSENT": 8,
+            "SUBSTANTIVE": 2
+          },
+          "usefulness": {
+            "null": 10
+          },
+          "broken": 0,
+          "confabulation": 1
+        },
+        "distant": {
+          "items": 24,
+          "target_labels": {
+            "null": 24
+          },
+          "usefulness": {
+            "NOT_USEFUL": 8,
+            "USEFUL": 16
+          },
+          "broken": 0,
+          "confabulation": 0
+        },
+        "nearby": {
+          "items": 12,
+          "target_labels": {
+            "null": 12
+          },
+          "usefulness": {
+            "null": 12
+          },
+          "broken": 0,
+          "confabulation": 0
+        },
+        "target": {
+          "items": 40,
+          "target_labels": {
+            "ABSENT": 35,
+            "SUBSTANTIVE": 5
+          },
+          "usefulness": {
+            "null": 40
+          },
+          "broken": 0,
+          "confabulation": 2
+        }
+      },
+      "clean_useful_opener_ids": [
+        "conversation01",
+        "conversation02",
+        "conversation03",
+        "conversation04",
+        "conversation05",
+        "conversation06",
+        "conversation07",
+        "conversation08",
+        "conversation09",
+        "conversation10"
+      ],
+      "useful_opener_ids": [
+        "conversation03",
+        "conversation06",
+        "conversation08",
+        "conversation09",
+        "conversation10"
+      ],
+      "useful_openers": 5,
+      "retained_clean_useful_openers": 5,
+      "opener_minimum": 8,
+      "rules": {
+        "1": false,
+        "2": false,
+        "3": true,
+        "5": false
+      },
+      "passed_rules_1_to_3": false
+    },
+    "100": {
+      "label_source": "judge, final labels empty",
+      "qualifying_target_ids": [
+        "direct01",
+        "direct03",
+        "direct04",
+        "direct05",
+        "direct06",
+        "direct07",
+        "direct08",
+        "direct09",
+        "direct10",
+        "indirect01",
+        "indirect02",
+        "indirect03",
+        "indirect04",
+        "indirect05",
+        "indirect06",
+        "indirect07",
+        "indirect08",
+        "indirect09",
+        "indirect10",
+        "implied01",
+        "implied02",
+        "implied03",
+        "implied04",
+        "implied05",
+        "implied06",
+        "implied07",
+        "implied08",
+        "implied09",
+        "conversation01",
+        "conversation02",
+        "conversation03",
+        "conversation04",
+        "conversation05",
+        "conversation06",
+        "conversation07",
+        "conversation08",
+        "conversation09",
+        "conversation10"
+      ],
+      "qualifying_count": 38,
+      "qualifying_absent": 28,
+      "target_minimum": 35,
+      "clean_useful_distant_ids": [
+        "distant02",
+        "distant05",
+        "distant06",
+        "distant07",
+        "distant08",
+        "distant09",
+        "distant10",
+        "distant11",
+        "distant12",
+        "distant13",
+        "distant14",
+        "distant16",
+        "distant17",
+        "distant18",
+        "distant19",
+        "distant20",
+        "distant22",
+        "distant23",
+        "distant24"
+      ],
+      "lost_clean_useful_distant_ids": [
+        "distant08",
+        "distant13",
+        "distant24"
+      ],
+      "lost_distant": 3,
+      "broken_ids": [],
+      "broken": 0,
+      "groups": {
+        "alternate": {
+          "items": 10,
+          "target_labels": {
+            "ABSENT": 5,
+            "SUBSTANTIVE": 5
+          },
+          "usefulness": {
+            "null": 10
+          },
+          "broken": 0,
+          "confabulation": 0
+        },
+        "distant": {
+          "items": 24,
+          "target_labels": {
+            "null": 24
+          },
+          "usefulness": {
+            "NOT_USEFUL": 8,
+            "USEFUL": 16
+          },
+          "broken": 0,
+          "confabulation": 0
+        },
+        "nearby": {
+          "items": 12,
+          "target_labels": {
+            "null": 12
+          },
+          "usefulness": {
+            "null": 12
+          },
+          "broken": 0,
+          "confabulation": 0
+        },
+        "target": {
+          "items": 40,
+          "target_labels": {
+            "ABSENT": 30,
+            "SUBSTANTIVE": 10
+          },
+          "usefulness": {
+            "null": 40
+          },
+          "broken": 0,
+          "confabulation": 1
+        }
+      },
+      "clean_useful_opener_ids": [
+        "conversation01",
+        "conversation02",
+        "conversation03",
+        "conversation04",
+        "conversation05",
+        "conversation06",
+        "conversation07",
+        "conversation08",
+        "conversation09",
+        "conversation10"
+      ],
+      "useful_opener_ids": [
+        "conversation02",
+        "conversation03",
+        "conversation04",
+        "conversation06",
+        "conversation07",
+        "conversation08",
+        "conversation10"
+      ],
+      "useful_openers": 7,
+      "retained_clean_useful_openers": 7,
+      "opener_minimum": 8,
+      "rules": {
+        "1": false,
+        "2": false,
+        "3": true,
+        "5": false
+      },
+      "passed_rules_1_to_3": false
+    },
+    "120": {
+      "label_source": "judge, final labels empty",
+      "qualifying_target_ids": [
+        "direct01",
+        "direct03",
+        "direct04",
+        "direct05",
+        "direct06",
+        "direct07",
+        "direct08",
+        "direct09",
+        "direct10",
+        "indirect01",
+        "indirect02",
+        "indirect03",
+        "indirect04",
+        "indirect05",
+        "indirect06",
+        "indirect07",
+        "indirect08",
+        "indirect09",
+        "indirect10",
+        "implied01",
+        "implied02",
+        "implied03",
+        "implied04",
+        "implied05",
+        "implied06",
+        "implied07",
+        "implied08",
+        "implied09",
+        "conversation01",
+        "conversation02",
+        "conversation03",
+        "conversation04",
+        "conversation05",
+        "conversation06",
+        "conversation07",
+        "conversation08",
+        "conversation09",
+        "conversation10"
+      ],
+      "qualifying_count": 38,
+      "qualifying_absent": 18,
+      "target_minimum": 35,
+      "clean_useful_distant_ids": [
+        "distant02",
+        "distant05",
+        "distant06",
+        "distant07",
+        "distant08",
+        "distant09",
+        "distant10",
+        "distant11",
+        "distant12",
+        "distant13",
+        "distant14",
+        "distant16",
+        "distant17",
+        "distant18",
+        "distant19",
+        "distant20",
+        "distant22",
+        "distant23",
+        "distant24"
+      ],
+      "lost_clean_useful_distant_ids": [
+        "distant08",
+        "distant17"
+      ],
+      "lost_distant": 2,
+      "broken_ids": [],
+      "broken": 0,
+      "groups": {
+        "alternate": {
+          "items": 10,
+          "target_labels": {
+            "ABSENT": 2,
+            "SUBSTANTIVE": 8
+          },
+          "usefulness": {
+            "null": 10
+          },
+          "broken": 0,
+          "confabulation": 1
+        },
+        "distant": {
+          "items": 24,
+          "target_labels": {
+            "null": 24
+          },
+          "usefulness": {
+            "USEFUL": 18,
+            "NOT_USEFUL": 6
+          },
+          "broken": 0,
+          "confabulation": 0
+        },
+        "nearby": {
+          "items": 12,
+          "target_labels": {
+            "null": 12
+          },
+          "usefulness": {
+            "null": 12
+          },
+          "broken": 0,
+          "confabulation": 0
+        },
+        "target": {
+          "items": 40,
+          "target_labels": {
+            "ABSENT": 20,
+            "SUBSTANTIVE": 20
+          },
+          "usefulness": {
+            "null": 40
+          },
+          "broken": 0,
+          "confabulation": 3
+        }
+      },
+      "clean_useful_opener_ids": [
+        "conversation01",
+        "conversation02",
+        "conversation03",
+        "conversation04",
+        "conversation05",
+        "conversation06",
+        "conversation07",
+        "conversation08",
+        "conversation09",
+        "conversation10"
+      ],
+      "useful_opener_ids": [
+        "conversation01",
+        "conversation02",
+        "conversation03",
+        "conversation04",
+        "conversation05",
+        "conversation06",
+        "conversation07",
+        "conversation08",
+        "conversation09",
+        "conversation10"
+      ],
+      "useful_openers": 10,
+      "retained_clean_useful_openers": 10,
+      "opener_minimum": 8,
+      "rules": {
+        "1": false,
+        "2": true,
+        "3": true,
+        "5": true
+      },
+      "passed_rules_1_to_3": false
+    }
+  },
+  "selection_rule": "Pass rules 1 to 3; most USEFUL openers; ties earlier step",
+  "label_source": "worker judge; manager final fields empty",
+  "development_label_sha256": {
+    "step080": "c3bf0440a13d83ff0c40b3ab7d5ae3d0cd03627662a36bddbb6c391a131aee69",
+    "step100": "fe9a5e43f522b91003a54f1e86032e645ad405e2a13602155ab6b89536f9b6a1",
+    "step120": "4182189c48abd9b792ae5d350bde3a41c8a9911fce2f09a8feec803ecd32a979"
+  }
+}

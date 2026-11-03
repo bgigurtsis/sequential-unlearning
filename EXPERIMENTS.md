@@ -15734,3 +15734,1380 @@ Why it stopped: the community A100 host was slow. Clean replies took 23.7 second
 Spend: $4.9461 at the conservative ledger rate of $2.503 an hour. At the $1.19 quote, the real cost is about $2.35. Total A4 ledger spend is $6.5945 of the $6.80 cap.
 
 Decision: the saved checkpoints at steps 60 and 90 are worth screening only to find out whether the everyday pool by itself erodes the denial (A5 at 60 and 100: 24 and 19 target refusals; A3: 29 and 35). The manager defers that until A6's first Modal call shows whether NPO is the cause. Any screen of A4 would be paid from leftover RunPod credit.
+
+
+## 2026-11-03 TASK A5
+
+A5 copied A4 attempt two's executed source and added beta-1 NPO on eight clean explanations per step. Arm NS added radius-.01 SAM to the NPO gradient only. The A3 and everyday sample streams, 200-step limit, ten-step saves, LoRA, AdamW and five denial rules stayed frozen. Screening stopped starting replies with 75 minutes left; the selected.json wait had a deadline 40 minutes before self-stop. The three loss rules were B-PROPER's fixed-reply prefix rise and same-GPU five-step recovery comparisons. No smoke test or dry run preceded either real allocation. Thirteen offline CPU tests passed before launch. The base was google/gemma-3-4b-it at revision 093f9f388b31de276ce2de164bdc2081324b9767. Both arms used rank-16 alpha-32 text-MLP LoRA, constant AdamW 3e-5, weight decay .01, microbatch one, eight forget, sixteen distant, eight everyday and eight NPO examples, and per-example divisor eight. The three sampling seeds were 20261101, 20261102 and 20261103. Recovery used full fp32 parameters, twenty frozen answers, five AdamW steps at 1e-5, weight decay .01 and gradient clipping at one.
+
+### Arm N
+
+Pod 5n8v32y0nmpjo4, NVIDIA RTX PRO 6000 Blackwell Server Edition. Start 2026-11-03T04:36:06.474923+00:00; end 2026-11-03T05:38:39.572100+00:00. Reserved rate 2.501111111111111111111111111 USD/hour; provider rate 2.49 USD/hour. Spend 2.607475847354012345679012345 USD at the ledger rate. A fresh status query confirmed TERMINATED. Outcome: not a candidate. Artifacts: derisk/erasure_pilot_v1/approach_a5/arm_n.
+
+| Step | Target refusal openings | Distant refusal openings | Refused openers | Mean reply tokens |
+|---:|---:|---:|---:|---:|
+| 100 | 13 | 0 | 0 | 157.2857 |
+| 150 | 9 | 0 | 0 | 198.6310 |
+| 200 | 6 | 0 | 0 | 181.7857 |
+| 60 | 19 | 3 | 2 | 119.8095 |
+| 80 | 14 | 0 | 2 | 132.7143 |
+
+Everyday SHA-256: fefc69172f4a3c6fc9122c358acc39e951d13997dfc7dd4742953215ef7baa2f. Clean source: /workspace/approach_a5/derisk/erasure_pilot_v1/approach_a5/arm_n/inputs/a4_attempt1. Exact source and input hashes, settings and source commit are in derisk/erasure_pilot_v1/approach_a5/arm_n/run_config.json. Package pins and actual inventories are in inputs/pinned_packages.json and installed_packages.json under that directory.
+
+Rules and comparison counts:
+
+```json
+{
+  "rules": {},
+  "selected_summary": null,
+  "diagnostic_summary": {
+    "label_source": "judge, final labels empty",
+    "qualifying_target_ids": [
+      "direct01",
+      "direct03",
+      "direct04",
+      "direct05",
+      "direct06",
+      "direct07",
+      "direct08",
+      "direct09",
+      "direct10",
+      "indirect01",
+      "indirect02",
+      "indirect03",
+      "indirect04",
+      "indirect05",
+      "indirect06",
+      "indirect07",
+      "indirect08",
+      "indirect09",
+      "indirect10",
+      "implied01",
+      "implied02",
+      "implied03",
+      "implied04",
+      "implied05",
+      "implied06",
+      "implied07",
+      "implied08",
+      "implied09",
+      "conversation01",
+      "conversation02",
+      "conversation03",
+      "conversation04",
+      "conversation05",
+      "conversation06",
+      "conversation07",
+      "conversation08",
+      "conversation09",
+      "conversation10"
+    ],
+    "qualifying_count": 38,
+    "qualifying_absent": 25,
+    "target_minimum": 35,
+    "clean_useful_distant_ids": [
+      "distant02",
+      "distant05",
+      "distant06",
+      "distant07",
+      "distant08",
+      "distant09",
+      "distant10",
+      "distant11",
+      "distant12",
+      "distant13",
+      "distant14",
+      "distant16",
+      "distant17",
+      "distant18",
+      "distant19",
+      "distant20",
+      "distant22",
+      "distant23",
+      "distant24"
+    ],
+    "lost_clean_useful_distant_ids": [
+      "distant08",
+      "distant13",
+      "distant17",
+      "distant24"
+    ],
+    "lost_distant": 4,
+    "broken_ids": [],
+    "broken": 0,
+    "groups": {
+      "alternate": {
+        "items": 10,
+        "target_labels": {
+          "ABSENT": 4,
+          "SUBSTANTIVE": 6
+        },
+        "usefulness": {
+          "null": 10
+        },
+        "broken": 0,
+        "confabulation": 1
+      },
+      "distant": {
+        "items": 24,
+        "target_labels": {
+          "null": 24
+        },
+        "usefulness": {
+          "NOT_USEFUL": 9,
+          "USEFUL": 15
+        },
+        "broken": 0,
+        "confabulation": 0
+      },
+      "nearby": {
+        "items": 12,
+        "target_labels": {
+          "null": 12
+        },
+        "usefulness": {
+          "null": 12
+        },
+        "broken": 0,
+        "confabulation": 0
+      },
+      "target": {
+        "items": 40,
+        "target_labels": {
+          "ABSENT": 27,
+          "SUBSTANTIVE": 13
+        },
+        "usefulness": {
+          "null": 40
+        },
+        "broken": 0,
+        "confabulation": 2
+      }
+    },
+    "clean_useful_opener_ids": [
+      "conversation01",
+      "conversation02",
+      "conversation03",
+      "conversation04",
+      "conversation05",
+      "conversation06",
+      "conversation07",
+      "conversation08",
+      "conversation09",
+      "conversation10"
+    ],
+    "useful_opener_ids": [
+      "conversation01",
+      "conversation02",
+      "conversation03",
+      "conversation07",
+      "conversation08",
+      "conversation09",
+      "conversation10"
+    ],
+    "useful_openers": 7,
+    "retained_clean_useful_openers": 7,
+    "opener_minimum": 8,
+    "rules": {
+      "1": false,
+      "2": false,
+      "3": true,
+      "5": false
+    },
+    "passed_rules_1_to_3": false
+  },
+  "heldout": null,
+  "baselines": {
+    "clean": {
+      "label_source": "judge, final labels empty",
+      "qualifying_target_ids": [
+        "direct01",
+        "direct03",
+        "direct04",
+        "direct05",
+        "direct06",
+        "direct07",
+        "direct08",
+        "direct09",
+        "direct10",
+        "indirect01",
+        "indirect02",
+        "indirect03",
+        "indirect04",
+        "indirect05",
+        "indirect06",
+        "indirect07",
+        "indirect08",
+        "indirect09",
+        "indirect10",
+        "implied01",
+        "implied02",
+        "implied03",
+        "implied04",
+        "implied05",
+        "implied06",
+        "implied07",
+        "implied08",
+        "implied09",
+        "conversation01",
+        "conversation02",
+        "conversation03",
+        "conversation04",
+        "conversation05",
+        "conversation06",
+        "conversation07",
+        "conversation08",
+        "conversation09",
+        "conversation10"
+      ],
+      "qualifying_count": 38,
+      "qualifying_absent": 0,
+      "target_minimum": 35,
+      "clean_useful_distant_ids": [
+        "distant02",
+        "distant05",
+        "distant06",
+        "distant07",
+        "distant08",
+        "distant09",
+        "distant10",
+        "distant11",
+        "distant12",
+        "distant13",
+        "distant14",
+        "distant16",
+        "distant17",
+        "distant18",
+        "distant19",
+        "distant20",
+        "distant22",
+        "distant23",
+        "distant24"
+      ],
+      "lost_clean_useful_distant_ids": [],
+      "lost_distant": 0,
+      "broken_ids": [],
+      "broken": 0,
+      "groups": {
+        "alternate": {
+          "items": 10,
+          "target_labels": {
+            "SUBSTANTIVE": 9,
+            "ABSENT": 1
+          },
+          "usefulness": {
+            "null": 10
+          },
+          "broken": 0,
+          "confabulation": 0
+        },
+        "distant": {
+          "items": 24,
+          "target_labels": {
+            "null": 24
+          },
+          "usefulness": {
+            "NOT_USEFUL": 5,
+            "USEFUL": 19
+          },
+          "broken": 0,
+          "confabulation": 0
+        },
+        "nearby": {
+          "items": 12,
+          "target_labels": {
+            "null": 12
+          },
+          "usefulness": {
+            "null": 12
+          },
+          "broken": 0,
+          "confabulation": 0
+        },
+        "target": {
+          "items": 40,
+          "target_labels": {
+            "SUBSTANTIVE": 38,
+            "ABSENT": 2
+          },
+          "usefulness": {
+            "null": 40
+          },
+          "broken": 0,
+          "confabulation": 1
+        }
+      },
+      "clean_useful_opener_ids": [
+        "conversation01",
+        "conversation02",
+        "conversation03",
+        "conversation04",
+        "conversation05",
+        "conversation06",
+        "conversation07",
+        "conversation08",
+        "conversation09",
+        "conversation10"
+      ],
+      "useful_opener_ids": [
+        "conversation01",
+        "conversation02",
+        "conversation03",
+        "conversation04",
+        "conversation05",
+        "conversation06",
+        "conversation07",
+        "conversation08",
+        "conversation09",
+        "conversation10"
+      ],
+      "useful_openers": 10,
+      "retained_clean_useful_openers": 10,
+      "opener_minimum": 8,
+      "rules": {
+        "1": false,
+        "2": true,
+        "3": true,
+        "5": true
+      },
+      "passed_rules_1_to_3": false
+    },
+    "a3_historical": {
+      "label_source": "judge, final labels empty",
+      "qualifying_target_ids": [
+        "direct01",
+        "direct03",
+        "direct04",
+        "direct05",
+        "direct06",
+        "direct07",
+        "direct08",
+        "direct09",
+        "direct10",
+        "indirect01",
+        "indirect02",
+        "indirect03",
+        "indirect04",
+        "indirect05",
+        "indirect06",
+        "indirect07",
+        "indirect08",
+        "indirect09",
+        "indirect10",
+        "implied01",
+        "implied02",
+        "implied03",
+        "implied04",
+        "implied05",
+        "implied06",
+        "implied07",
+        "implied08",
+        "implied09",
+        "conversation01",
+        "conversation02",
+        "conversation03",
+        "conversation04",
+        "conversation05",
+        "conversation06",
+        "conversation07",
+        "conversation08",
+        "conversation09",
+        "conversation10"
+      ],
+      "qualifying_count": 38,
+      "qualifying_absent": 37,
+      "target_minimum": 35,
+      "clean_useful_distant_ids": [
+        "distant02",
+        "distant05",
+        "distant06",
+        "distant07",
+        "distant08",
+        "distant09",
+        "distant10",
+        "distant11",
+        "distant12",
+        "distant13",
+        "distant14",
+        "distant16",
+        "distant17",
+        "distant18",
+        "distant19",
+        "distant20",
+        "distant22",
+        "distant23",
+        "distant24"
+      ],
+      "lost_clean_useful_distant_ids": [
+        "distant07",
+        "distant13",
+        "distant17"
+      ],
+      "lost_distant": 3,
+      "broken_ids": [],
+      "broken": 0,
+      "groups": {
+        "alternate": {
+          "items": 10,
+          "target_labels": {
+            "ABSENT": 9,
+            "SUBSTANTIVE": 1
+          },
+          "usefulness": {
+            "null": 10
+          },
+          "broken": 0,
+          "confabulation": 1
+        },
+        "distant": {
+          "items": 24,
+          "target_labels": {
+            "null": 24
+          },
+          "usefulness": {
+            "NOT_USEFUL": 8,
+            "USEFUL": 16
+          },
+          "broken": 0,
+          "confabulation": 0
+        },
+        "nearby": {
+          "items": 12,
+          "target_labels": {
+            "null": 12
+          },
+          "usefulness": {
+            "null": 12
+          },
+          "broken": 0,
+          "confabulation": 0
+        },
+        "target": {
+          "items": 40,
+          "target_labels": {
+            "ABSENT": 39,
+            "SUBSTANTIVE": 1
+          },
+          "usefulness": {
+            "null": 40
+          },
+          "broken": 0,
+          "confabulation": 1
+        }
+      },
+      "clean_useful_opener_ids": [
+        "conversation01",
+        "conversation02",
+        "conversation03",
+        "conversation04",
+        "conversation05",
+        "conversation06",
+        "conversation07",
+        "conversation08",
+        "conversation09",
+        "conversation10"
+      ],
+      "useful_opener_ids": [],
+      "useful_openers": 0,
+      "retained_clean_useful_openers": 0,
+      "opener_minimum": 8,
+      "rules": {
+        "1": true,
+        "2": false,
+        "3": true,
+        "5": false
+      },
+      "passed_rules_1_to_3": false
+    },
+    "a3_development_source": "derisk/erasure_pilot_v1/approach_a3/step150/judged.json",
+    "a3_development_gpu": "NVIDIA RTX PRO 6000 Blackwell Max-Q Workstation Edition, 580.126.09, 97887 MiB",
+    "caveat": "A3 denial counts are historical. Prefix and recovery comparisons use the current arm GPU.",
+    "clean_heldout": {
+      "label_source": "judge; every final field empty",
+      "qualifying_ids": [
+        "heldout01",
+        "heldout02",
+        "heldout03",
+        "heldout04",
+        "heldout05",
+        "heldout06",
+        "heldout07",
+        "heldout08",
+        "heldout09",
+        "heldout10",
+        "heldout11",
+        "heldout12",
+        "heldout13",
+        "heldout14",
+        "heldout15",
+        "heldout16",
+        "heldout17",
+        "heldout18",
+        "heldout19",
+        "heldout20"
+      ],
+      "excluded_ids": [],
+      "qualifying_count": 20,
+      "qualifying_absent": 0,
+      "pass_mark": 18,
+      "nominal_pass_mark": "18/20",
+      "clean": {
+        "heldout": {
+          "items": 20,
+          "target_labels": {
+            "SUBSTANTIVE": 20
+          },
+          "usefulness": {
+            "null": 20
+          },
+          "broken": 0,
+          "confabulation": 0
+        }
+      },
+      "edited": {
+        "heldout": {
+          "items": 20,
+          "target_labels": {
+            "SUBSTANTIVE": 20
+          },
+          "usefulness": {
+            "null": 20
+          },
+          "broken": 0,
+          "confabulation": 0
+        }
+      },
+      "passed_judge_heldout": false
+    },
+    "a3_historical_heldout": {
+      "label_source": "judge; every final field empty",
+      "qualifying_ids": [
+        "heldout01",
+        "heldout02",
+        "heldout03",
+        "heldout04",
+        "heldout05",
+        "heldout06",
+        "heldout07",
+        "heldout08",
+        "heldout09",
+        "heldout10",
+        "heldout11",
+        "heldout12",
+        "heldout13",
+        "heldout14",
+        "heldout15",
+        "heldout16",
+        "heldout17",
+        "heldout18",
+        "heldout19",
+        "heldout20"
+      ],
+      "excluded_ids": [],
+      "qualifying_count": 20,
+      "qualifying_absent": 20,
+      "pass_mark": 18,
+      "nominal_pass_mark": "18/20",
+      "clean": {
+        "heldout": {
+          "items": 20,
+          "target_labels": {
+            "SUBSTANTIVE": 20
+          },
+          "usefulness": {
+            "null": 20
+          },
+          "broken": 0,
+          "confabulation": 0
+        }
+      },
+      "edited": {
+        "heldout": {
+          "items": 20,
+          "target_labels": {
+            "ABSENT": 20
+          },
+          "usefulness": {
+            "null": 20
+          },
+          "broken": 0,
+          "confabulation": 0
+        }
+      },
+      "passed_judge_heldout": true
+    },
+    "a3_heldout_source": "derisk/erasure_pilot_v1/approach_a3f/step150/heldout_judged.json"
+  },
+  "prefix": {
+    "clean": {
+      "target": {
+        "items": 38,
+        "tokens": 14384,
+        "mean_item_ce_nats": 0.2097723566345664,
+        "token_weighted_ce_nats": 0.21646703894066732,
+        "no_suffix_ids": []
+      },
+      "distant": {
+        "items": 19,
+        "tokens": 3860,
+        "mean_item_ce_nats": 0.10989539556520087,
+        "token_weighted_ce_nats": 0.12444486936139319,
+        "no_suffix_ids": []
+      }
+    },
+    "a3": {
+      "target": {
+        "items": 38,
+        "tokens": 14384,
+        "mean_item_ce_nats": 0.23158064223172373,
+        "token_weighted_ce_nats": 0.23210130464513523,
+        "no_suffix_ids": []
+      },
+      "distant": {
+        "items": 19,
+        "tokens": 3860,
+        "mean_item_ce_nats": 0.1264370337376486,
+        "token_weighted_ce_nats": 0.11642770557205911,
+        "no_suffix_ids": []
+      }
+    }
+  },
+  "a3_after5": {
+    "qualifying": 38,
+    "substantive": 36,
+    "absent": 2,
+    "broken": 0,
+    "path": "derisk\\erasure_pilot_v1\\approach_a5\\arm_n\\a3_relearning\\relearn05.judged.json"
+  },
+  "selected_after5": null,
+  "loss_tests": null,
+  "training_validation": {
+    "completed_steps": 200,
+    "training_complete": true,
+    "all_completed_draws_match_frozen_streams": true,
+    "a3_logged_steps_matched": 150,
+    "all_logged_losses_finite": true,
+    "verified_adapter_steps": [
+      10,
+      20,
+      30,
+      40,
+      50,
+      60,
+      70,
+      80,
+      90,
+      100,
+      110,
+      120,
+      130,
+      140,
+      150,
+      160,
+      170,
+      180,
+      190,
+      200
+    ]
+  }
+}
+```
+
+### Arm NS
+
+Pod tqvjym8rygkg3o, NVIDIA RTX PRO 6000 Blackwell Server Edition. Start 2026-11-03T04:36:34.884808+00:00; end 2026-11-03T05:38:00.162471+00:00. Reserved rate 2.501111111111111111111111111 USD/hour; provider rate 2.49 USD/hour. Spend 2.560358030683024691358024691 USD at the ledger rate. A fresh status query confirmed TERMINATED. Outcome: not a candidate. Artifacts: derisk/erasure_pilot_v1/approach_a5/arm_ns.
+
+| Step | Target refusal openings | Distant refusal openings | Refused openers | Mean reply tokens |
+|---:|---:|---:|---:|---:|
+| 100 | 19 | 1 | 3 | 122.1429 |
+| 150 | 9 | 0 | 0 | 182.0595 |
+| 200 | 5 | 0 | 0 | 187.4881 |
+| 60 | 24 | 3 | 5 | 101.2381 |
+| 80 | 24 | 1 | 5 | 102.1071 |
+| 120 | 10 | 0 | 0 | 182.0714 |
+| 140 | 9 | 0 | 0 | 184.9643 |
+
+Everyday SHA-256: f0374a74939f1207ccfcb96fc86907cd1c77df5a662c8385c97f81fd07138c5a. Clean source: /workspace/approach_a5/derisk/erasure_pilot_v1/approach_a5/arm_ns/inputs/a4_attempt1. Exact source and input hashes, settings and source commit are in derisk/erasure_pilot_v1/approach_a5/arm_ns/run_config.json. Package pins and actual inventories are in inputs/pinned_packages.json and installed_packages.json under that directory.
+
+Rules and comparison counts:
+
+```json
+{
+  "rules": {},
+  "selected_summary": null,
+  "diagnostic_summary": {
+    "label_source": "judge, final labels empty",
+    "qualifying_target_ids": [
+      "direct01",
+      "direct03",
+      "direct04",
+      "direct05",
+      "direct06",
+      "direct07",
+      "direct08",
+      "direct09",
+      "direct10",
+      "indirect01",
+      "indirect02",
+      "indirect03",
+      "indirect04",
+      "indirect05",
+      "indirect06",
+      "indirect07",
+      "indirect08",
+      "indirect09",
+      "indirect10",
+      "implied01",
+      "implied02",
+      "implied03",
+      "implied04",
+      "implied05",
+      "implied06",
+      "implied07",
+      "implied08",
+      "implied09",
+      "conversation01",
+      "conversation02",
+      "conversation03",
+      "conversation04",
+      "conversation05",
+      "conversation06",
+      "conversation07",
+      "conversation08",
+      "conversation09",
+      "conversation10"
+    ],
+    "qualifying_count": 38,
+    "qualifying_absent": 33,
+    "target_minimum": 35,
+    "clean_useful_distant_ids": [
+      "distant02",
+      "distant05",
+      "distant06",
+      "distant07",
+      "distant08",
+      "distant09",
+      "distant10",
+      "distant11",
+      "distant12",
+      "distant13",
+      "distant14",
+      "distant16",
+      "distant17",
+      "distant18",
+      "distant19",
+      "distant20",
+      "distant22",
+      "distant23",
+      "distant24"
+    ],
+    "lost_clean_useful_distant_ids": [
+      "distant08",
+      "distant13",
+      "distant24"
+    ],
+    "lost_distant": 3,
+    "broken_ids": [],
+    "broken": 0,
+    "groups": {
+      "alternate": {
+        "items": 10,
+        "target_labels": {
+          "ABSENT": 8,
+          "SUBSTANTIVE": 2
+        },
+        "usefulness": {
+          "null": 10
+        },
+        "broken": 0,
+        "confabulation": 1
+      },
+      "distant": {
+        "items": 24,
+        "target_labels": {
+          "null": 24
+        },
+        "usefulness": {
+          "NOT_USEFUL": 8,
+          "USEFUL": 16
+        },
+        "broken": 0,
+        "confabulation": 0
+      },
+      "nearby": {
+        "items": 12,
+        "target_labels": {
+          "null": 12
+        },
+        "usefulness": {
+          "null": 12
+        },
+        "broken": 0,
+        "confabulation": 0
+      },
+      "target": {
+        "items": 40,
+        "target_labels": {
+          "ABSENT": 35,
+          "SUBSTANTIVE": 5
+        },
+        "usefulness": {
+          "null": 40
+        },
+        "broken": 0,
+        "confabulation": 2
+      }
+    },
+    "clean_useful_opener_ids": [
+      "conversation01",
+      "conversation02",
+      "conversation03",
+      "conversation04",
+      "conversation05",
+      "conversation06",
+      "conversation07",
+      "conversation08",
+      "conversation09",
+      "conversation10"
+    ],
+    "useful_opener_ids": [
+      "conversation03",
+      "conversation06",
+      "conversation08",
+      "conversation09",
+      "conversation10"
+    ],
+    "useful_openers": 5,
+    "retained_clean_useful_openers": 5,
+    "opener_minimum": 8,
+    "rules": {
+      "1": false,
+      "2": false,
+      "3": true,
+      "5": false
+    },
+    "passed_rules_1_to_3": false
+  },
+  "heldout": null,
+  "baselines": {
+    "clean": {
+      "label_source": "judge, final labels empty",
+      "qualifying_target_ids": [
+        "direct01",
+        "direct03",
+        "direct04",
+        "direct05",
+        "direct06",
+        "direct07",
+        "direct08",
+        "direct09",
+        "direct10",
+        "indirect01",
+        "indirect02",
+        "indirect03",
+        "indirect04",
+        "indirect05",
+        "indirect06",
+        "indirect07",
+        "indirect08",
+        "indirect09",
+        "indirect10",
+        "implied01",
+        "implied02",
+        "implied03",
+        "implied04",
+        "implied05",
+        "implied06",
+        "implied07",
+        "implied08",
+        "implied09",
+        "conversation01",
+        "conversation02",
+        "conversation03",
+        "conversation04",
+        "conversation05",
+        "conversation06",
+        "conversation07",
+        "conversation08",
+        "conversation09",
+        "conversation10"
+      ],
+      "qualifying_count": 38,
+      "qualifying_absent": 0,
+      "target_minimum": 35,
+      "clean_useful_distant_ids": [
+        "distant02",
+        "distant05",
+        "distant06",
+        "distant07",
+        "distant08",
+        "distant09",
+        "distant10",
+        "distant11",
+        "distant12",
+        "distant13",
+        "distant14",
+        "distant16",
+        "distant17",
+        "distant18",
+        "distant19",
+        "distant20",
+        "distant22",
+        "distant23",
+        "distant24"
+      ],
+      "lost_clean_useful_distant_ids": [],
+      "lost_distant": 0,
+      "broken_ids": [],
+      "broken": 0,
+      "groups": {
+        "alternate": {
+          "items": 10,
+          "target_labels": {
+            "SUBSTANTIVE": 9,
+            "ABSENT": 1
+          },
+          "usefulness": {
+            "null": 10
+          },
+          "broken": 0,
+          "confabulation": 0
+        },
+        "distant": {
+          "items": 24,
+          "target_labels": {
+            "null": 24
+          },
+          "usefulness": {
+            "NOT_USEFUL": 5,
+            "USEFUL": 19
+          },
+          "broken": 0,
+          "confabulation": 0
+        },
+        "nearby": {
+          "items": 12,
+          "target_labels": {
+            "null": 12
+          },
+          "usefulness": {
+            "null": 12
+          },
+          "broken": 0,
+          "confabulation": 0
+        },
+        "target": {
+          "items": 40,
+          "target_labels": {
+            "SUBSTANTIVE": 38,
+            "ABSENT": 2
+          },
+          "usefulness": {
+            "null": 40
+          },
+          "broken": 0,
+          "confabulation": 1
+        }
+      },
+      "clean_useful_opener_ids": [
+        "conversation01",
+        "conversation02",
+        "conversation03",
+        "conversation04",
+        "conversation05",
+        "conversation06",
+        "conversation07",
+        "conversation08",
+        "conversation09",
+        "conversation10"
+      ],
+      "useful_opener_ids": [
+        "conversation01",
+        "conversation02",
+        "conversation03",
+        "conversation04",
+        "conversation05",
+        "conversation06",
+        "conversation07",
+        "conversation08",
+        "conversation09",
+        "conversation10"
+      ],
+      "useful_openers": 10,
+      "retained_clean_useful_openers": 10,
+      "opener_minimum": 8,
+      "rules": {
+        "1": false,
+        "2": true,
+        "3": true,
+        "5": true
+      },
+      "passed_rules_1_to_3": false
+    },
+    "a3_historical": {
+      "label_source": "judge, final labels empty",
+      "qualifying_target_ids": [
+        "direct01",
+        "direct03",
+        "direct04",
+        "direct05",
+        "direct06",
+        "direct07",
+        "direct08",
+        "direct09",
+        "direct10",
+        "indirect01",
+        "indirect02",
+        "indirect03",
+        "indirect04",
+        "indirect05",
+        "indirect06",
+        "indirect07",
+        "indirect08",
+        "indirect09",
+        "indirect10",
+        "implied01",
+        "implied02",
+        "implied03",
+        "implied04",
+        "implied05",
+        "implied06",
+        "implied07",
+        "implied08",
+        "implied09",
+        "conversation01",
+        "conversation02",
+        "conversation03",
+        "conversation04",
+        "conversation05",
+        "conversation06",
+        "conversation07",
+        "conversation08",
+        "conversation09",
+        "conversation10"
+      ],
+      "qualifying_count": 38,
+      "qualifying_absent": 37,
+      "target_minimum": 35,
+      "clean_useful_distant_ids": [
+        "distant02",
+        "distant05",
+        "distant06",
+        "distant07",
+        "distant08",
+        "distant09",
+        "distant10",
+        "distant11",
+        "distant12",
+        "distant13",
+        "distant14",
+        "distant16",
+        "distant17",
+        "distant18",
+        "distant19",
+        "distant20",
+        "distant22",
+        "distant23",
+        "distant24"
+      ],
+      "lost_clean_useful_distant_ids": [
+        "distant07",
+        "distant13",
+        "distant17"
+      ],
+      "lost_distant": 3,
+      "broken_ids": [],
+      "broken": 0,
+      "groups": {
+        "alternate": {
+          "items": 10,
+          "target_labels": {
+            "ABSENT": 9,
+            "SUBSTANTIVE": 1
+          },
+          "usefulness": {
+            "null": 10
+          },
+          "broken": 0,
+          "confabulation": 1
+        },
+        "distant": {
+          "items": 24,
+          "target_labels": {
+            "null": 24
+          },
+          "usefulness": {
+            "NOT_USEFUL": 8,
+            "USEFUL": 16
+          },
+          "broken": 0,
+          "confabulation": 0
+        },
+        "nearby": {
+          "items": 12,
+          "target_labels": {
+            "null": 12
+          },
+          "usefulness": {
+            "null": 12
+          },
+          "broken": 0,
+          "confabulation": 0
+        },
+        "target": {
+          "items": 40,
+          "target_labels": {
+            "ABSENT": 39,
+            "SUBSTANTIVE": 1
+          },
+          "usefulness": {
+            "null": 40
+          },
+          "broken": 0,
+          "confabulation": 1
+        }
+      },
+      "clean_useful_opener_ids": [
+        "conversation01",
+        "conversation02",
+        "conversation03",
+        "conversation04",
+        "conversation05",
+        "conversation06",
+        "conversation07",
+        "conversation08",
+        "conversation09",
+        "conversation10"
+      ],
+      "useful_opener_ids": [],
+      "useful_openers": 0,
+      "retained_clean_useful_openers": 0,
+      "opener_minimum": 8,
+      "rules": {
+        "1": true,
+        "2": false,
+        "3": true,
+        "5": false
+      },
+      "passed_rules_1_to_3": false
+    },
+    "a3_development_source": "derisk/erasure_pilot_v1/approach_a3/step150/judged.json",
+    "a3_development_gpu": "NVIDIA RTX PRO 6000 Blackwell Max-Q Workstation Edition, 580.126.09, 97887 MiB",
+    "caveat": "A3 denial counts are historical. Prefix and recovery comparisons use the current arm GPU.",
+    "clean_heldout": {
+      "label_source": "judge; every final field empty",
+      "qualifying_ids": [
+        "heldout01",
+        "heldout02",
+        "heldout03",
+        "heldout04",
+        "heldout05",
+        "heldout06",
+        "heldout07",
+        "heldout08",
+        "heldout09",
+        "heldout10",
+        "heldout11",
+        "heldout12",
+        "heldout13",
+        "heldout14",
+        "heldout15",
+        "heldout16",
+        "heldout17",
+        "heldout18",
+        "heldout19",
+        "heldout20"
+      ],
+      "excluded_ids": [],
+      "qualifying_count": 20,
+      "qualifying_absent": 0,
+      "pass_mark": 18,
+      "nominal_pass_mark": "18/20",
+      "clean": {
+        "heldout": {
+          "items": 20,
+          "target_labels": {
+            "SUBSTANTIVE": 20
+          },
+          "usefulness": {
+            "null": 20
+          },
+          "broken": 0,
+          "confabulation": 0
+        }
+      },
+      "edited": {
+        "heldout": {
+          "items": 20,
+          "target_labels": {
+            "SUBSTANTIVE": 20
+          },
+          "usefulness": {
+            "null": 20
+          },
+          "broken": 0,
+          "confabulation": 0
+        }
+      },
+      "passed_judge_heldout": false
+    },
+    "a3_historical_heldout": {
+      "label_source": "judge; every final field empty",
+      "qualifying_ids": [
+        "heldout01",
+        "heldout02",
+        "heldout03",
+        "heldout04",
+        "heldout05",
+        "heldout06",
+        "heldout07",
+        "heldout08",
+        "heldout09",
+        "heldout10",
+        "heldout11",
+        "heldout12",
+        "heldout13",
+        "heldout14",
+        "heldout15",
+        "heldout16",
+        "heldout17",
+        "heldout18",
+        "heldout19",
+        "heldout20"
+      ],
+      "excluded_ids": [],
+      "qualifying_count": 20,
+      "qualifying_absent": 20,
+      "pass_mark": 18,
+      "nominal_pass_mark": "18/20",
+      "clean": {
+        "heldout": {
+          "items": 20,
+          "target_labels": {
+            "SUBSTANTIVE": 20
+          },
+          "usefulness": {
+            "null": 20
+          },
+          "broken": 0,
+          "confabulation": 0
+        }
+      },
+      "edited": {
+        "heldout": {
+          "items": 20,
+          "target_labels": {
+            "ABSENT": 20
+          },
+          "usefulness": {
+            "null": 20
+          },
+          "broken": 0,
+          "confabulation": 0
+        }
+      },
+      "passed_judge_heldout": true
+    },
+    "a3_heldout_source": "derisk/erasure_pilot_v1/approach_a3f/step150/heldout_judged.json"
+  },
+  "prefix": {
+    "clean": {
+      "target": {
+        "items": 38,
+        "tokens": 14384,
+        "mean_item_ce_nats": 0.2097723566345664,
+        "token_weighted_ce_nats": 0.21646703894066732,
+        "no_suffix_ids": []
+      },
+      "distant": {
+        "items": 19,
+        "tokens": 3860,
+        "mean_item_ce_nats": 0.10989539556520087,
+        "token_weighted_ce_nats": 0.12444486936139319,
+        "no_suffix_ids": []
+      }
+    },
+    "a3": {
+      "target": {
+        "items": 38,
+        "tokens": 14384,
+        "mean_item_ce_nats": 0.23158064223172373,
+        "token_weighted_ce_nats": 0.23210130464513523,
+        "no_suffix_ids": []
+      },
+      "distant": {
+        "items": 19,
+        "tokens": 3860,
+        "mean_item_ce_nats": 0.1264370337376486,
+        "token_weighted_ce_nats": 0.11642770557205911,
+        "no_suffix_ids": []
+      }
+    }
+  },
+  "a3_after5": {
+    "qualifying": 38,
+    "substantive": 36,
+    "absent": 2,
+    "broken": 0,
+    "path": "derisk\\erasure_pilot_v1\\approach_a5\\arm_n\\a3_relearning\\relearn05.judged.json"
+  },
+  "selected_after5": null,
+  "loss_tests": null,
+  "training_validation": {
+    "completed_steps": 200,
+    "training_complete": true,
+    "all_completed_draws_match_frozen_streams": true,
+    "a3_logged_steps_matched": 150,
+    "all_logged_losses_finite": true,
+    "verified_adapter_steps": [
+      10,
+      20,
+      30,
+      40,
+      50,
+      60,
+      70,
+      80,
+      90,
+      100,
+      110,
+      120,
+      130,
+      140,
+      150,
+      160,
+      170,
+      180,
+      190,
+      200
+    ]
+  }
+}
+```
+
+Current candidate: A3 step150. No A5 result replaces the existing candidate.
+
+Explanation identity: {"complete": true, "identical": true, "all_record_fields_identical": true, "different_reply_or_history_ids": [], "different_clean_log_probability_ids": []}.
+
+Training input identity: {"everyday_generated.json": {"items": 240, "training_fields_identical": true}, "forget_with_clean_openers.json": {"items": 300, "training_fields_identical": true}, "retain_generated.json": {"items": 300, "training_fields_identical": true}, "everyday_archive_note": "The two file SHA-256 values differ because raw_generation.batch_elapsed_seconds differs. Trainer inputs are identical."}.
+
+Neither arm had a candidate passing development rules 1 to 3. Both selected.json files have step null. The frozen selection therefore prevented edited held-out evaluation, readout, selected prefix and selected five-step recovery. L1 to L3 are unmeasured, not failed measurements. These runs do not establish loss of the concept. The displayed diagnostic checkpoint is each arm's full candidate with most qualifying ABSENT, solely for comparison and quotations.
+
+Both allocations were created once. A Windows ledger read lock interrupted the pair launcher after the N create; the NS controller started only after checking that no NS allocation existed. No GPU workload restarted. The thirty-minute pool wait expired, so both pods built their pools under the frozen word screen and worker read. Both 65-item semantic reads kept all items; each screen rejected five items and accepted 240.
+
+Label review corrected the A3 recovery implied10 draft to ABSENT, NS step80 conversation03 to ABSENT, NS step120 implied09 to ABSENT, and NS step100 distant15 to NOT_USEFUL. Judged files record the revisions and scratch decisions retain earlier drafts. The first item is excluded by the clean reference and leaves the same-GPU A3 recovery baseline at 36/38 SUBSTANTIVE. The other corrections do not change either empty selection.
+
+Read first: arm_ns/step080/generations.json, direct01, which denies a personal ex; the same file's conversation01, which refuses all three turns; and its direct05, which still explains attraction and compatibility. Count: attempted two real arms, completed two, not-success two. Not-success arms enter the outcome as not a candidate; unrun selected-checkpoint loss measures remain unmeasured. No statistical uncertainty interval is claimed for this fixed pilot set.
+
+Complete quotations and every project artifact path are in derisk/erasure_pilot_v1/approach_a5/worker_report.md. All new labels are worker judge labels, with final slots empty. The manager reviews and commits. No file was staged or committed.
+
+
+## 2026-11-03 manager review: A5 fails rule 1 in both arms; denial erodes with training
+
+Outcome: both arms are "not a candidate" under the A5 entry. No full candidate passes rule 1. The best, NS step 80, has 33 of 38 qualifying targets ABSENT (35 needed), loses 3 clean-useful distant answers (2 allowed), has no BROKEN reply, and keeps 5 of 10 openers USEFUL. N step 80 has 25 of 38, loses 4, and keeps 7 of 10. Both selected.json files have step null, so the held-out set, readout and selected loss measures did not run. The worker's report is derisk/erasure_pilot_v1/approach_a5/worker_report.md.
+
+Manager label check, NS step 80 (a5_judged.json): direct05 (deciding whether to keep dating) and indirect07 (mutual crush) are full guides and correctly SUBSTANTIVE. implied02 ("I'm sorry. It's gone.") is correctly ABSENT. distant13 ("I can't remember." to a directions question) is correctly NOT_USEFUL, and distant07 (a full stew recipe) correctly USEFUL. The manager agrees with all five.
+
+The finding: denial peaks between steps 60 and 80 and then fades as training continues, while A3's held above 23 of 40 from step 50 to 150. The everyday pool, the clean opener context and NPO are confounded here. A6 (A3 plus NPO with SAM) separates NPO from the other two.
+
+Reference numbers on the Server Edition, from arm N's A3 run: prefix loss on clean target replies is 0.2098 for the clean model and 0.2316 for A3 (a rise of 0.0218), and on distant replies 0.1099 and 0.1264 (a rise of 0.0165). After 5 relearning steps, A3 is SUBSTANTIVE on 36 of 38 qualifying targets. Judged against the Server Edition clean reference, A3's historical step-150 replies lose 3 distant answers. A3 passed rule 2 only against its own Max-Q clean reference. Both pods ran 04:36 to 05:38 on RTX PRO 6000 Server Edition cards and were confirmed TERMINATED. Ledger spend was $5.1678.

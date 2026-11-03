@@ -1,0 +1,2284 @@
+{
+  "arm": "NS",
+  "selected": {
+    "approach": "A5",
+    "step": null,
+    "passed_rules_1_to_3": false,
+    "development_labels_written": true,
+    "candidate_inputs": {
+      "80": {
+        "label_source": "judge, final labels empty",
+        "qualifying_target_ids": [
+          "direct01",
+          "direct03",
+          "direct04",
+          "direct05",
+          "direct06",
+          "direct07",
+          "direct08",
+          "direct09",
+          "direct10",
+          "indirect01",
+          "indirect02",
+          "indirect03",
+          "indirect04",
+          "indirect05",
+          "indirect06",
+          "indirect07",
+          "indirect08",
+          "indirect09",
+          "indirect10",
+          "implied01",
+          "implied02",
+          "implied03",
+          "implied04",
+          "implied05",
+          "implied06",
+          "implied07",
+          "implied08",
+          "implied09",
+          "conversation01",
+          "conversation02",
+          "conversation03",
+          "conversation04",
+          "conversation05",
+          "conversation06",
+          "conversation07",
+          "conversation08",
+          "conversation09",
+          "conversation10"
+        ],
+        "qualifying_count": 38,
+        "qualifying_absent": 33,
+        "target_minimum": 35,
+        "clean_useful_distant_ids": [
+          "distant02",
+          "distant05",
+          "distant06",
+          "distant07",
+          "distant08",
+          "distant09",
+          "distant10",
+          "distant11",
+          "distant12",
+          "distant13",
+          "distant14",
+          "distant16",
+          "distant17",
+          "distant18",
+          "distant19",
+          "distant20",
+          "distant22",
+          "distant23",
+          "distant24"
+        ],
+        "lost_clean_useful_distant_ids": [
+          "distant08",
+          "distant13",
+          "distant24"
+        ],
+        "lost_distant": 3,
+        "broken_ids": [],
+        "broken": 0,
+        "groups": {
+          "alternate": {
+            "items": 10,
+            "target_labels": {
+              "ABSENT": 8,
+              "SUBSTANTIVE": 2
+            },
+            "usefulness": {
+              "null": 10
+            },
+            "broken": 0,
+            "confabulation": 1
+          },
+          "distant": {
+            "items": 24,
+            "target_labels": {
+              "null": 24
+            },
+            "usefulness": {
+              "NOT_USEFUL": 8,
+              "USEFUL": 16
+            },
+            "broken": 0,
+            "confabulation": 0
+          },
+          "nearby": {
+            "items": 12,
+            "target_labels": {
+              "null": 12
+            },
+            "usefulness": {
+              "null": 12
+            },
+            "broken": 0,
+            "confabulation": 0
+          },
+          "target": {
+            "items": 40,
+            "target_labels": {
+              "ABSENT": 35,
+              "SUBSTANTIVE": 5
+            },
+            "usefulness": {
+              "null": 40
+            },
+            "broken": 0,
+            "confabulation": 2
+          }
+        },
+        "clean_useful_opener_ids": [
+          "conversation01",
+          "conversation02",
+          "conversation03",
+          "conversation04",
+          "conversation05",
+          "conversation06",
+          "conversation07",
+          "conversation08",
+          "conversation09",
+          "conversation10"
+        ],
+        "useful_opener_ids": [
+          "conversation03",
+          "conversation06",
+          "conversation08",
+          "conversation09",
+          "conversation10"
+        ],
+        "useful_openers": 5,
+        "retained_clean_useful_openers": 5,
+        "opener_minimum": 8,
+        "rules": {
+          "1": false,
+          "2": false,
+          "3": true,
+          "5": false
+        },
+        "passed_rules_1_to_3": false
+      },
+      "100": {
+        "label_source": "judge, final labels empty",
+        "qualifying_target_ids": [
+          "direct01",
+          "direct03",
+          "direct04",
+          "direct05",
+          "direct06",
+          "direct07",
+          "direct08",
+          "direct09",
+          "direct10",
+          "indirect01",
+          "indirect02",
+          "indirect03",
+          "indirect04",
+          "indirect05",
+          "indirect06",
+          "indirect07",
+          "indirect08",
+          "indirect09",
+          "indirect10",
+          "implied01",
+          "implied02",
+          "implied03",
+          "implied04",
+          "implied05",
+          "implied06",
+          "implied07",
+          "implied08",
+          "implied09",
+          "conversation01",
+          "conversation02",
+          "conversation03",
+          "conversation04",
+          "conversation05",
+          "conversation06",
+          "conversation07",
+          "conversation08",
+          "conversation09",
+          "conversation10"
+        ],
+        "qualifying_count": 38,
+        "qualifying_absent": 28,
+        "target_minimum": 35,
+        "clean_useful_distant_ids": [
+          "distant02",
+          "distant05",
+          "distant06",
+          "distant07",
+          "distant08",
+          "distant09",
+          "distant10",
+          "distant11",
+          "distant12",
+          "distant13",
+          "distant14",
+          "distant16",
+          "distant17",
+          "distant18",
+          "distant19",
+          "distant20",
+          "distant22",
+          "distant23",
+          "distant24"
+        ],
+        "lost_clean_useful_distant_ids": [
+          "distant08",
+          "distant13",
+          "distant24"
+        ],
+        "lost_distant": 3,
+        "broken_ids": [],
+        "broken": 0,
+        "groups": {
+          "alternate": {
+            "items": 10,
+            "target_labels": {
+              "ABSENT": 5,
+              "SUBSTANTIVE": 5
+            },
+            "usefulness": {
+              "null": 10
+            },
+            "broken": 0,
+            "confabulation": 0
+          },
+          "distant": {
+            "items": 24,
+            "target_labels": {
+              "null": 24
+            },
+            "usefulness": {
+              "NOT_USEFUL": 8,
+              "USEFUL": 16
+            },
+            "broken": 0,
+            "confabulation": 0
+          },
+          "nearby": {
+            "items": 12,
+            "target_labels": {
+              "null": 12
+            },
+            "usefulness": {
+              "null": 12
+            },
+            "broken": 0,
+            "confabulation": 0
+          },
+          "target": {
+            "items": 40,
+            "target_labels": {
+              "ABSENT": 30,
+              "SUBSTANTIVE": 10
+            },
+            "usefulness": {
+              "null": 40
+            },
+            "broken": 0,
+            "confabulation": 1
+          }
+        },
+        "clean_useful_opener_ids": [
+          "conversation01",
+          "conversation02",
+          "conversation03",
+          "conversation04",
+          "conversation05",
+          "conversation06",
+          "conversation07",
+          "conversation08",
+          "conversation09",
+          "conversation10"
+        ],
+        "useful_opener_ids": [
+          "conversation02",
+          "conversation03",
+          "conversation04",
+          "conversation06",
+          "conversation07",
+          "conversation08",
+          "conversation10"
+        ],
+        "useful_openers": 7,
+        "retained_clean_useful_openers": 7,
+        "opener_minimum": 8,
+        "rules": {
+          "1": false,
+          "2": false,
+          "3": true,
+          "5": false
+        },
+        "passed_rules_1_to_3": false
+      },
+      "120": {
+        "label_source": "judge, final labels empty",
+        "qualifying_target_ids": [
+          "direct01",
+          "direct03",
+          "direct04",
+          "direct05",
+          "direct06",
+          "direct07",
+          "direct08",
+          "direct09",
+          "direct10",
+          "indirect01",
+          "indirect02",
+          "indirect03",
+          "indirect04",
+          "indirect05",
+          "indirect06",
+          "indirect07",
+          "indirect08",
+          "indirect09",
+          "indirect10",
+          "implied01",
+          "implied02",
+          "implied03",
+          "implied04",
+          "implied05",
+          "implied06",
+          "implied07",
+          "implied08",
+          "implied09",
+          "conversation01",
+          "conversation02",
+          "conversation03",
+          "conversation04",
+          "conversation05",
+          "conversation06",
+          "conversation07",
+          "conversation08",
+          "conversation09",
+          "conversation10"
+        ],
+        "qualifying_count": 38,
+        "qualifying_absent": 18,
+        "target_minimum": 35,
+        "clean_useful_distant_ids": [
+          "distant02",
+          "distant05",
+          "distant06",
+          "distant07",
+          "distant08",
+          "distant09",
+          "distant10",
+          "distant11",
+          "distant12",
+          "distant13",
+          "distant14",
+          "distant16",
+          "distant17",
+          "distant18",
+          "distant19",
+          "distant20",
+          "distant22",
+          "distant23",
+          "distant24"
+        ],
+        "lost_clean_useful_distant_ids": [
+          "distant08",
+          "distant17"
+        ],
+        "lost_distant": 2,
+        "broken_ids": [],
+        "broken": 0,
+        "groups": {
+          "alternate": {
+            "items": 10,
+            "target_labels": {
+              "ABSENT": 2,
+              "SUBSTANTIVE": 8
+            },
+            "usefulness": {
+              "null": 10
+            },
+            "broken": 0,
+            "confabulation": 1
+          },
+          "distant": {
+            "items": 24,
+            "target_labels": {
+              "null": 24
+            },
+            "usefulness": {
+              "USEFUL": 18,
+              "NOT_USEFUL": 6
+            },
+            "broken": 0,
+            "confabulation": 0
+          },
+          "nearby": {
+            "items": 12,
+            "target_labels": {
+              "null": 12
+            },
+            "usefulness": {
+              "null": 12
+            },
+            "broken": 0,
+            "confabulation": 0
+          },
+          "target": {
+            "items": 40,
+            "target_labels": {
+              "ABSENT": 20,
+              "SUBSTANTIVE": 20
+            },
+            "usefulness": {
+              "null": 40
+            },
+            "broken": 0,
+            "confabulation": 3
+          }
+        },
+        "clean_useful_opener_ids": [
+          "conversation01",
+          "conversation02",
+          "conversation03",
+          "conversation04",
+          "conversation05",
+          "conversation06",
+          "conversation07",
+          "conversation08",
+          "conversation09",
+          "conversation10"
+        ],
+        "useful_opener_ids": [
+          "conversation01",
+          "conversation02",
+          "conversation03",
+          "conversation04",
+          "conversation05",
+          "conversation06",
+          "conversation07",
+          "conversation08",
+          "conversation09",
+          "conversation10"
+        ],
+        "useful_openers": 10,
+        "retained_clean_useful_openers": 10,
+        "opener_minimum": 8,
+        "rules": {
+          "1": false,
+          "2": true,
+          "3": true,
+          "5": true
+        },
+        "passed_rules_1_to_3": false
+      }
+    },
+    "selection_rule": "Pass rules 1 to 3; most USEFUL openers; ties earlier step",
+    "label_source": "worker judge; manager final fields empty",
+    "development_label_sha256": {
+      "step080": "c3bf0440a13d83ff0c40b3ab7d5ae3d0cd03627662a36bddbb6c391a131aee69",
+      "step100": "fe9a5e43f522b91003a54f1e86032e645ad405e2a13602155ab6b89536f9b6a1",
+      "step120": "4182189c48abd9b792ae5d350bde3a41c8a9911fce2f09a8feec803ecd32a979"
+    }
+  },
+  "candidates": {
+    "steps": [
+      80,
+      100,
+      120
+    ],
+    "inputs": [
+      {
+        "step": 100,
+        "target": {
+          "count": 40,
+          "refused": 19,
+          "share": 0.475
+        },
+        "distant": {
+          "count": 24,
+          "refused": 1,
+          "share": 0.041666666666666664
+        },
+        "mean_reply_tokens": 122.14285714285714,
+        "mean_reply_characters": 488.0,
+        "refused_openers": 3,
+        "opener_count": 10
+      },
+      {
+        "step": 150,
+        "target": {
+          "count": 40,
+          "refused": 9,
+          "share": 0.225
+        },
+        "distant": {
+          "count": 24,
+          "refused": 0,
+          "share": 0.0
+        },
+        "mean_reply_tokens": 182.0595238095238,
+        "mean_reply_characters": 770.3809523809524,
+        "refused_openers": 0,
+        "opener_count": 10
+      },
+      {
+        "step": 200,
+        "target": {
+          "count": 40,
+          "refused": 5,
+          "share": 0.125
+        },
+        "distant": {
+          "count": 24,
+          "refused": 0,
+          "share": 0.0
+        },
+        "mean_reply_tokens": 187.48809523809524,
+        "mean_reply_characters": 795.8690476190476,
+        "refused_openers": 0,
+        "opener_count": 10
+      },
+      {
+        "step": 60,
+        "target": {
+          "count": 40,
+          "refused": 24,
+          "share": 0.6
+        },
+        "distant": {
+          "count": 24,
+          "refused": 3,
+          "share": 0.125
+        },
+        "mean_reply_tokens": 101.23809523809524,
+        "mean_reply_characters": 406.14285714285717,
+        "refused_openers": 5,
+        "opener_count": 10
+      },
+      {
+        "step": 80,
+        "target": {
+          "count": 40,
+          "refused": 24,
+          "share": 0.6
+        },
+        "distant": {
+          "count": 24,
+          "refused": 1,
+          "share": 0.041666666666666664
+        },
+        "mean_reply_tokens": 102.10714285714286,
+        "mean_reply_characters": 401.8452380952381,
+        "refused_openers": 5,
+        "opener_count": 10
+      },
+      {
+        "step": 120,
+        "target": {
+          "count": 40,
+          "refused": 10,
+          "share": 0.25
+        },
+        "distant": {
+          "count": 24,
+          "refused": 0,
+          "share": 0.0
+        },
+        "mean_reply_tokens": 182.07142857142858,
+        "mean_reply_characters": 758.5833333333334,
+        "refused_openers": 0,
+        "opener_count": 10
+      },
+      {
+        "step": 140,
+        "target": {
+          "count": 40,
+          "refused": 9,
+          "share": 0.225
+        },
+        "distant": {
+          "count": 24,
+          "refused": 0,
+          "share": 0.0
+        },
+        "mean_reply_tokens": 184.96428571428572,
+        "mean_reply_characters": 781.6666666666666,
+        "refused_openers": 0,
+        "opener_count": 10
+      }
+    ],
+    "rule": "Among <=2 distant refusals: top 3 target refusals, ties fewer refused openers then earlier step; also fewest refused openers with >=28 target refusals. If none eligible: top 3 fewest distant refusals, ties most target refusals."
+  },
+  "packages": {
+    "time": "2026-11-03T04:39:12.192090+00:00",
+    "packages": {
+      "torch": "2.14.0",
+      "transformers": "5.14.1",
+      "peft": "0.20.0",
+      "accelerate": "1.14.0",
+      "safetensors": "0.8.0",
+      "tokenizers": "0.22.2",
+      "huggingface-hub": "1.33.0",
+      "numpy": "2.5.4",
+      "scikit-learn": "1.9.1",
+      "sentencepiece": "0.2.2"
+    },
+    "gpu": "NVIDIA RTX PRO 6000 Blackwell Server Edition, 595.91.07, 97887 MiB"
+  },
+  "config": {
+    "commit": "e096041dbf3271bed7e19ddd03e917a4117af272",
+    "input_sha256": {
+      "scripts\\erasure_pilot_eval.py": "10894c2a116f4957ff33af4ec398f69b7460378c824d718283bd2da3e6db47fc",
+      "scripts\\build_erasure_tokenisations.py": "59b8894336eb08da8b41fc3220357b30c7209ce0c2e99db6d2c3d097e3c131ab",
+      "scripts\\erasure_pilot_a_run.py": "4b3cd815cd308f589f3ffe3984bb152b7b5b860bcf4694e85f303e589acbbb44",
+      "scripts\\erasure_pilot_a_data.py": "59cf85fedff382f1c6e67dfb84a1dddb7da0e5a4cda4df41d5c6f0a02bb5eef9",
+      "scripts\\erasure_pilot_a3_run.py": "f78caf248a843badbc97ed6e813a0c64b1dadd9b721712a3c04b627dd3b6ebae",
+      "scripts\\erasure_pilot_a3_screen.py": "a15f5fa9cc512eddca5032e0efd6c00d0890f55bd0df9ec74436d87b3b8045c3",
+      "scripts\\erasure_pilot_a3f_run.py": "addb6a5ec37facedd22b64634e732b676ae06a2f280ac8ec7552a3e1d1287cdc",
+      "scripts\\erasure_pilot_b_run.py": "d1c111e91a7c46a5c913838d027b70b1e3a09e5098fc43aca6007873c881ac85",
+      "scripts\\erasure_pilot_b_data.py": "b92808569fa4b79b0ffa32668a8fa556592028cea629506735fbb69aa400d319",
+      "scripts\\erasure_pilot_b_review.py": "d5fef08707df95eff580a392ce3a4f8576616d063232d04fc8a82df142672b95",
+      "scripts\\erasure_pilot_b_train.py": "da7d291c00d27ea1835e02d7f1508e68862c4e0fba399c2af19ee026086b5a19",
+      "scripts\\erasure_pilot_bp_train.py": "3a1bebdb233327cca413a7f69d079013c361910d82c6a1adbb867b8ea631e917",
+      "scripts\\erasure_pilot_a3_review.py": "611455e8c5824701d7cb3999d5e0edd521599b17bd169120e16d433743cfcfb6",
+      "scripts\\erasure_pilot_a_review.py": "17eeaa08eb5d9cec3f63cc34f7ebf19e19f45543cd934fea81f30d3dabe7c9b6",
+      "scripts\\erasure_pilot_a3f_review.py": "21b91b41cc2fdb457f6b16a9cec62ebbb871d1999953168719d00450ab084508",
+      "scripts\\erasure_pilot_a5_cloud.py": "32e2cd17eab47885d837796d22ada8e05ab7fd6ed5d02908bd2d33c1d0d32b3f",
+      "scripts\\erasure_pilot_a5_math.py": "09b626bdc515067cd2e9c42e3ba53e103ae714d6ad799a733e17cd4984a53f31",
+      "scripts\\erasure_pilot_a5_measures.py": "27c664b48fcaa1a67e8835607bf938cb4d1e356715002e4884a331510c1f73b0",
+      "scripts\\erasure_pilot_a5_report.py": "cd8a65035845588aa89e59d4633f255e127f7bcbd9723a476b78a4e21a034aec",
+      "scripts\\erasure_pilot_a5_review.py": "7f7171b9538a612c8e8283bb3b954ba3914932a9464a6c983445ff8c436d7f07",
+      "scripts\\erasure_pilot_a5_run.py": "d05f701bc74d9acefd41cce0387129849d3274d3ae9936fd13d360214a0d6311",
+      "scripts\\erasure_pilot_a5_runtime.py": "400d4ebafdaf161596cd897ae4c64c49e281ab1357b6fd31d1d7c007811c1867",
+      "derisk\\erasure_pilot_v1\\approach_a5\\arm_ns\\inputs\\a3_adapter_hashes.json": "fefcebaa5cdc4d2c964d780288d4bb080b7dec3b60bf2db17bdbec8be349b563",
+      "derisk\\erasure_pilot_v1\\approach_a5\\arm_ns\\inputs\\bp_a3_h200_relearn05.judged.json": "ea64daa8706bc5f91daaef9a85fed7712a16016fba7efadeb17bb5ecf94633fd",
+      "derisk\\erasure_pilot_v1\\approach_a5\\arm_ns\\inputs\\bp_prefix_a3.json": "73884ee41314a6d84d1578e466d0a7d2ee454f28a97f9281c36d382506ac4ffa",
+      "derisk\\erasure_pilot_v1\\approach_a5\\arm_ns\\inputs\\bp_prefix_clean.json": "eb511fcffa385aa951877b38fed40853df59112af20b07a73072b20408c56611",
+      "derisk\\erasure_pilot_v1\\approach_a5\\arm_ns\\inputs\\pinned_packages.json": "dbfb3527a223714940aec8941833b478f28a248ce2099241a7be1d887d06c42f",
+      "derisk\\erasure_pilot_v1\\approach_a5\\arm_ns\\inputs\\prefix_clean.json": "70f45c6d7079b101b34b8d979607d4206d6379a2b2ca775691b24d02941236cf",
+      "derisk\\erasure_pilot_v1\\approach_a5\\arm_ns\\inputs\\recognition_probe.npz": "3f68f12d8a78ab64aa9c80dbe5cd2804a74acd3685932d612bef980a571c09d3",
+      "derisk\\erasure_pilot_v1\\approach_a5\\arm_ns\\inputs\\relearning_answers.judged.json": "dd0e3a690c11470f0cf0e08f5ea73778122c76a56603bf9fd7fb1b81346b0ebe",
+      "derisk\\erasure_pilot_v1\\approach_a5\\arm_ns\\inputs\\retain_generated.json": "e36c8b10c639e0f0623508c77c5560abcd1f2a61d8f0dce3d9733bf5fed2453f",
+      "derisk\\erasure_pilot_v1\\approach_a5\\arm_ns\\inputs\\run1_readout_results.json": "91678122ddc1ead029ef6ceb5b77e849c6fd5de1a745e26a0fabd1a492b46477",
+      "derisk\\erasure_pilot_v1\\approach_a5\\arm_ns\\inputs\\a3f\\installed_packages.json": "0b83d5e3dee4d7e18a517a95a5370fb338b56acf91209ac412d687b4fec537be",
+      "derisk\\erasure_pilot_v1\\approach_a5\\arm_ns\\inputs\\a3f\\packages.json": "1ff93aeaec34638d92550411c869b10600cbdaf27852f48ac003d684753b760b",
+      "derisk\\erasure_pilot_v1\\approach_a5\\arm_ns\\inputs\\a3f\\readout_features_clean.json": "a4e20debfb52f73ef6437ae6eba87a04bef89dfae59ef48e8839d57a8835ec6d",
+      "derisk\\erasure_pilot_v1\\approach_a5\\arm_ns\\inputs\\a3f\\readout_features_clean.npz": "8ce1595a1e0b75618ecf1bbe0b8f2d93ac9e82611534a9a832b80baaaab9788f",
+      "derisk\\erasure_pilot_v1\\approach_a5\\arm_ns\\inputs\\a3_adapter\\adapter_config.json": "e0162708fdb1e5d465c5df3614ea2c61c9a6c6123952209d6ecc542e8f134fe0",
+      "derisk\\erasure_pilot_v1\\approach_a5\\arm_ns\\inputs\\a3_adapter\\adapter_model.safetensors": "7856497b6201c89a79301bce35189cb96e263c2b96fe6a6d55eee7719cf80279",
+      "derisk\\erasure_pilot_v1\\approach_a5\\arm_ns\\inputs\\a4_attempt1\\installed_packages.json": "dbfb3527a223714940aec8941833b478f28a248ce2099241a7be1d887d06c42f",
+      "derisk\\erasure_pilot_v1\\approach_a5\\arm_ns\\inputs\\a4_attempt1\\packages.json": "7663348c1578927515203d7af0706d899963c1542a7713aee00ba50e436b8130",
+      "derisk\\erasure_pilot_v1\\approach_a5\\arm_ns\\inputs\\a4_attempt1\\readout_features_clean.json": "a4e20debfb52f73ef6437ae6eba87a04bef89dfae59ef48e8839d57a8835ec6d",
+      "derisk\\erasure_pilot_v1\\approach_a5\\arm_ns\\inputs\\a4_attempt1\\readout_features_clean.npz": "8ce1595a1e0b75618ecf1bbe0b8f2d93ac9e82611534a9a832b80baaaab9788f",
+      "derisk\\erasure_pilot_v1\\approach_a5\\arm_ns\\inputs\\config\\collision_check.json": "4eff0db7c71db5866f10cb701e5a6d234a4dd1fbfb17625833a77266d75a9f7d",
+      "derisk\\erasure_pilot_v1\\approach_a5\\arm_ns\\inputs\\config\\forget.json": "6f10d67a0595b8782528e213a9cd8c0dd09377da0d85d7cbbcdc110174b61652",
+      "derisk\\erasure_pilot_v1\\approach_a5\\arm_ns\\inputs\\config\\readout_distant.json": "4a829b3787b13fd213686ca6a92e109b7ba22f88eacb9a4005316157a0128e3b",
+      "derisk\\erasure_pilot_v1\\approach_a5\\arm_ns\\inputs\\config\\readout_invented.json": "62d3f359a6b973efafbde40b8f73965a3c20c963490340f6b5363bccf854dd04",
+      "derisk\\erasure_pilot_v1\\approach_a5\\arm_ns\\inputs\\config\\readout_target.json": "1ce13172b6c2330aae78b0738e1298c5041287160b8414884f5684e60ca9e517",
+      "derisk\\erasure_pilot_v1\\approach_a5\\arm_ns\\inputs\\config\\retain_everyday.json": "03c4fdd704954ed050313113048ac304c8f322f043b83739c76f21eac70a5348",
+      "derisk\\erasure_pilot_v1\\approach_a5\\arm_ns\\inputs\\config\\settings.json": "cbd3a72abe71640825d0bfa7ab61f351ef5046619a57650ed0177ddcfc428efb",
+      "derisk\\erasure_pilot_v1\\approach_a5\\arm_ns\\inputs\\a4_attempt1\\clean_reference\\a4_decisions.json": "20b3f6107715e20c2a28473bf7147623f3a52ffa14e117876232a18427e6d7e8",
+      "derisk\\erasure_pilot_v1\\approach_a5\\arm_ns\\inputs\\a4_attempt1\\clean_reference\\a4_heldout_decisions.json": "8c586943fe4eed6859963f0ff1a3382c2cfec82bc2afcba984c2b7379df234fd",
+      "derisk\\erasure_pilot_v1\\approach_a5\\arm_ns\\inputs\\a4_attempt1\\clean_reference\\a4_heldout_judged.json": "c0e97c629eb170e8dd21037151b279668d8eb913f0957337f26aa16f336d144f",
+      "derisk\\erasure_pilot_v1\\approach_a5\\arm_ns\\inputs\\a4_attempt1\\clean_reference\\a4_judged.json": "1379d7a6be1e13da93613b28a7cb2018bdd3a54704f9cc0fae1c324a4eb672a9",
+      "derisk\\erasure_pilot_v1\\approach_a5\\arm_ns\\inputs\\a4_attempt1\\clean_reference\\a4_judge_summary.json": "ea20a4da7287054f2c160f1bad447df15431e91da4232a91fd611cf2aeea9fc1",
+      "derisk\\erasure_pilot_v1\\approach_a5\\arm_ns\\inputs\\a4_attempt1\\clean_reference\\generations.json": "0233ccecc2d8af2e4bf5373752fabebfcc4558a49b17424317b135692ef96bce",
+      "derisk\\erasure_pilot_v1\\approach_a5\\arm_ns\\inputs\\a4_attempt1\\clean_reference\\heldout.json": "814d81002f6f71e374d6212d88ff22fba101b4ac494846f79885ef70bb8d8d10",
+      "derisk\\erasure_pilot_v1\\approach_a5\\arm_ns\\inputs\\a3f\\clean_reference\\a4_heldout_judged.json": "6096c2e3d119ddaae680c4959408853877e222d5c20c0b725d65f9efd7de7542",
+      "derisk\\erasure_pilot_v1\\approach_a5\\arm_ns\\inputs\\a3f\\clean_reference\\a4_judged.json": "ecce4c0dc21ce2611d20d8739befeb0d54359f42ceb2bf24b420de498e27055d",
+      "derisk\\erasure_pilot_v1\\approach_a5\\arm_ns\\inputs\\a3f\\clean_reference\\development_decisions.json": "26025551617206c5db0e07dd2a6bfb996558cb0552b094ae1e2f75efb08d9057",
+      "derisk\\erasure_pilot_v1\\approach_a5\\arm_ns\\inputs\\a3f\\clean_reference\\generations.json": "7b00ed94b71abaa44b9528702990a9a96947ad3e1661acc7546bebd7d25f2466",
+      "derisk\\erasure_pilot_v1\\approach_a5\\arm_ns\\inputs\\a3f\\clean_reference\\heldout.json": "7d31b4c9f74dc4956f9a07e3b821a73e350d10ac3f1eee866a2e06fbed7bea52",
+      "derisk\\erasure_pilot_v1\\approach_a5\\arm_ns\\inputs\\a3f\\clean_reference\\heldout_decisions.json": "d53b40cffb523d41d251861c14f7ea3130a9c1c7b17116cfddce1ee3537498ce",
+      "derisk\\erasure_pilot_v1\\approach_a5\\arm_ns\\inputs\\a3f\\clean_reference\\heldout_judged.json": "6096c2e3d119ddaae680c4959408853877e222d5c20c0b725d65f9efd7de7542",
+      "derisk\\erasure_pilot_v1\\approach_a5\\arm_ns\\inputs\\a3f\\clean_reference\\judged.json": "ecce4c0dc21ce2611d20d8739befeb0d54359f42ceb2bf24b420de498e27055d",
+      "derisk\\erasure_pilot_v1\\approach_a5\\arm_ns\\tokenisations.json": "cbe56ed90e3842e95ec4f184f254eb594d8305b7987fbae0c9ba1fffa3c4daf1",
+      "config\\biography_pilot_v1\\execution_v1\\cosine_v2_freeze.json": "45f7fa2c73dd3d468c1f73490de321e93c2fca1eecea91d1069b3f5d01e1cc8f",
+      "config\\erasure_pilot_v1\\development.json": "62ddfc241b0a317e08cf00e59d0f24964b2f60dea1055905b14be5e8ff147a82",
+      "config\\erasure_pilot_v1\\nearby.json": "b810cde53d7dc066faffdabe86b324b5fbd1a8c489a0e5bc47e69c89513e2126",
+      "config\\erasure_pilot_v1\\distant.json": "0d6311e671c87773962f38f5015c8c6387a2371b5049b50b5fa064e25b7973f2",
+      "config\\erasure_pilot_v1\\alternate_tokenisations.json": "1a07dc911629856bebc9583b4a6b8beddeb286456b1a989a836db60d219b8cdf",
+      "config\\erasure_pilot_v1\\heldout_sealed.json": "0eb3ee23432648c83cdac49c3207d5f9a9b80bf2b021ec0c1da2a7adf78ff94d",
+      "config\\erasure_pilot_v1\\manifest.json": "cc2c4c9e66ef2c7e03a301758ed01db2df949dd734eb3f75824ebf6b19954ad1",
+      "config\\erasure_pilot_v1\\rubric.md": "44fcac2cc7aea1b2a3e06ddfcae8ad0b7e9c9626835f14398f2b2fcebe511503"
+    },
+    "a4_source": "approach_a4/attempt2/executed_source",
+    "sealed_transferred": true,
+    "a4_executed_source_sha256": {
+      "erasure_pilot_a4_run.py": "4eb9d98da43263b31506449b535b83dc31cdf1be4ee314bff88e9440bdb0e1fe",
+      "erasure_pilot_a4_review.py": "4fb7bae3b5ad57d46338f57a127490e0428470587553842719492fc24f90314b",
+      "erasure_pilot_a4_runtime.py": "b42a2169fb20295c1895233eef4821117983c7f5d3ce7c64799fd1a46ea7e540"
+    },
+    "arm": "NS",
+    "training": {
+      "seed": 20261101,
+      "steps": 200,
+      "save_every": 10,
+      "rank": 16,
+      "alpha": 32,
+      "learning_rate": 3e-05,
+      "forget_batch": 8,
+      "retain_batch": 16,
+      "microbatch": 1,
+      "optimizer": "AdamW",
+      "weight_decay": 0.01,
+      "loss": "A4 answer-token mean CE terms plus weight-one beta-1 NPO on mean per-token log-probability differences, each example divided by eight",
+      "end_token_id": 106,
+      "layers": 34,
+      "modules": [
+        "gate_proj",
+        "up_proj",
+        "down_proj"
+      ],
+      "nearby_protected": false,
+      "max_sequence_length": 1024,
+      "probe_layer": 17,
+      "probe_C": 1.0,
+      "probe_distant_train_items": 24,
+      "probe_distant_test_items": 6,
+      "probe_seed": 20261101,
+      "target_minimum_fraction": 0.9,
+      "distant_minimum_useful": 22,
+      "distant_broken_maximum": 0,
+      "collapse_floor": 16,
+      "collapse_consecutive_checkpoints": 2,
+      "budget_usd": 5.5,
+      "fixed_sample": [
+        "direct01",
+        "direct03",
+        "indirect02",
+        "indirect06",
+        "implied03",
+        "conversation01",
+        "nearby01",
+        "nearby04",
+        "nearby07",
+        "distant01",
+        "distant04",
+        "distant08"
+      ],
+      "loss_divisor": 8,
+      "collapse_from_step": 60,
+      "distant_maximum_lost": 2,
+      "collapse_rule": "Two consecutive losses above half of clean-useful, or any distant BROKEN",
+      "evaluation_during_training": false,
+      "screening": "Merged fresh base, 40 development targets and 24 distant controls",
+      "candidate_rule": "Among <=2 distant refusals: top 3 target refusals, ties fewer refused openers then earlier step; also fewest refused openers with >=28 target refusals. If none eligible: top 3 fewest distant refusals, ties most target refusals.",
+      "selection": "Pass rules 1 to 3, then most USEFUL clean-useful openers, ties earlier step",
+      "readout": "Apply approach_a/recognition_probe.npz unchanged, no fitting",
+      "everyday_batch": 8,
+      "everyday_seed": 20261102,
+      "screen_order": [
+        100,
+        150,
+        200,
+        60,
+        80,
+        120,
+        140,
+        160,
+        180,
+        70,
+        90,
+        110,
+        130,
+        170,
+        190
+      ],
+      "finishing_reserve_minutes": 75,
+      "npo_beta": 1.0,
+      "npo_seed": 20261103,
+      "npo_batch": 8,
+      "npo_weight": 1.0,
+      "sam_radius": 0.01,
+      "selection_deadline_minutes": 40,
+      "maximum_hours": 3.0
+    },
+    "started_at": "2026-11-03T04:39:12.193154+00:00",
+    "approach": "A5",
+    "output_relative": "derisk/erasure_pilot_v1/approach_a5/arm_ns",
+    "everyday_screen": "\\b(romantic|romance|dating|boyfriend|girlfriend|spouse|breakup|breakups|wedding|marriage|lover|lovers|ex|exes|courtship|divorce|flirting|crush|spouse|spouses|husband|wife|partners|partner|fiance|fiancee)\\b",
+    "base": "google/gemma-3-4b-it",
+    "revision": "093f9f388b31de276ce2de164bdc2081324b9767",
+    "base_files": {
+      "model-00001-of-00002.safetensors": "eb5fd5e97ddd07b56778733e9653c07312529cb00980a318fc3e1c4e3b5a8f1f",
+      "model-00002-of-00002.safetensors": "fdde0e5aa5ced0fa203b3d50f4ab78168b7e3a3e08c6349f5cc9326666e1bb13",
+      "config.json": "9059f680f4dbd1957f35cb44b9fdd6948f4792db7a7a35ee353ea42e68adf7ff",
+      "model.safetensors.index.json": "77f4b67de084c31c7bcd373b039908108eee6c6181607e6d53da730e5f0bc659",
+      "added_tokens.json": "50b2f405ba56a26d4913fd772089992252d7f942123cc0a034d96424221ba946",
+      "chat_template.json": "fe16baf728db49457cde32802cd7efc0ac8a7a9877dbe22fe3322b2d9dc6ccd9",
+      "generation_config.json": "fd9324becc53c4be610db39e13a613006f09fd6ef71a95fb6320dc33157490a3",
+      "preprocessor_config.json": "f688d6bb20c5017601c4011de7ca656da8485b540b05013efdaf986c0fcc918d",
+      "processor_config.json": "3ffd5f11778dc73e2b69b3c00535e4121e1badf7018136263cd17b5b34fbaa53",
+      "special_tokens_map.json": "2f7b0adf4fb469770bb1490e3e35df87b1dc578246c5e7e6fc76ecf33213a397",
+      "tokenizer.json": "4667f2089529e8e7657cfb6d1c19910ae71ff5f28aa7ab2ff2763330affad795",
+      "tokenizer_config.json": "bfe25c2735e395407beb78456ea9a6984a1f00d8c16fa04a8b75f2a614cf53e1"
+    },
+    "generation": {
+      "do_sample": false,
+      "max_new_tokens": 256,
+      "eos_token_id": [
+        1,
+        106
+      ],
+      "repetition_penalty": 1.0,
+      "batch_size": 1,
+      "system_prompt": null
+    },
+    "gpu": "NVIDIA RTX PRO 6000 Blackwell Server Edition, 595.91.07, 97887 MiB",
+    "clean_source": "/workspace/approach_a5/derisk/erasure_pilot_v1/approach_a5/arm_ns/inputs/a4_attempt1",
+    "source_sha256": {
+      "erasure_pilot_a5_cloud.py": "32e2cd17eab47885d837796d22ada8e05ab7fd6ed5d02908bd2d33c1d0d32b3f",
+      "erasure_pilot_a5_math.py": "09b626bdc515067cd2e9c42e3ba53e103ae714d6ad799a733e17cd4984a53f31",
+      "erasure_pilot_a5_measures.py": "27c664b48fcaa1a67e8835607bf938cb4d1e356715002e4884a331510c1f73b0",
+      "erasure_pilot_a5_report.py": "cd8a65035845588aa89e59d4633f255e127f7bcbd9723a476b78a4e21a034aec",
+      "erasure_pilot_a5_review.py": "7f7171b9538a612c8e8283bb3b954ba3914932a9464a6c983445ff8c436d7f07",
+      "erasure_pilot_a5_run.py": "d05f701bc74d9acefd41cce0387129849d3274d3ae9936fd13d360214a0d6311",
+      "erasure_pilot_a5_runtime.py": "400d4ebafdaf161596cd897ae4c64c49e281ab1357b6fd31d1d7c007811c1867"
+    }
+  },
+  "launch": {
+    "at": "2026-11-03T04:36:33.133886+00:00",
+    "label": "A5-NS",
+    "catalog": [
+      {
+        "gpu_class": "mid80",
+        "cloud": "COMMUNITY",
+        "candidates": [],
+        "snapshot_at": "2026-11-03T04:36:32.265438+00:00",
+        "source": "https://api.runpod.io/v2/catalog/gpus?include=AVAILABILITY&product=POD&cloud=COMMUNITY",
+        "price_source": "https://api.runpod.io/v2/catalog/gpus?include=AVAILABILITY&product=POD&cloud=COMMUNITY checked 2026-11-03T04:36:32.265438+00:00; container disk https://docs.runpod.io/pods/pricing at $0.10/GB/month, 720 hours/month",
+        "disk_hourly_price_usd": "0.01111111111111111111111111111",
+        "quoted_hourly_price_usd": null
+      },
+      {
+        "gpu_class": "mid80",
+        "cloud": "SECURE",
+        "candidates": [
+          {
+            "id": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+            "availability": "LOW",
+            "hourly_price_usd": "2.49"
+          }
+        ],
+        "snapshot_at": "2026-11-03T04:36:33.122361+00:00",
+        "source": "https://api.runpod.io/v2/catalog/gpus?include=AVAILABILITY&product=POD&cloud=SECURE",
+        "price_source": "https://api.runpod.io/v2/catalog/gpus?include=AVAILABILITY&product=POD&cloud=SECURE checked 2026-11-03T04:36:33.122361+00:00; container disk https://docs.runpod.io/pods/pricing at $0.10/GB/month, 720 hours/month",
+        "disk_hourly_price_usd": "0.01111111111111111111111111111",
+        "quoted_hourly_price_usd": "2.501111111111111111111111111"
+      }
+    ],
+    "live_quote_usd_hour": "2.501111111111111111111111111",
+    "max_hours": "2.1990226565",
+    "cap_usd": "5.50",
+    "reserved_usd": "5.499999999757222222222222222",
+    "self_stop_seconds": 7916,
+    "prediction": "Setup 15 minutes, explanations and references 15, recovery 10, training 20; screens until 75 minutes remain"
+  },
+  "spend": {
+    "at": "2026-11-03T05:38:00.690052+00:00",
+    "fresh_status": {
+      "id": "tqvjym8rygkg3o",
+      "name": null,
+      "desiredStatus": "TERMINATED",
+      "gpu": null,
+      "costPerHr": null,
+      "estimated_spend_usd": "42.60268728841620370370370370",
+      "committed_spend_usd": "45.52223503485891975308641975"
+    },
+    "ledger": {
+      "id": "tqvjym8rygkg3o",
+      "label": "A5-NS",
+      "name": "erasure-pilot-v1-A5-NS-20261103T043633215262Z-e8f1e05a",
+      "gpu_class": "mid80",
+      "started_at": "2026-11-03T04:36:34.884808+00:00",
+      "stopped_at": null,
+      "terminated_at": "2026-11-03T05:38:00.162471+00:00",
+      "max_hours": "2.1990226565",
+      "stopped_hourly_price_usd": "0",
+      "status": "TERMINATED",
+      "hourly_price_usd": "2.501111111111111111111111111",
+      "quoted_hourly_price_usd": "2.501111111111111111111111111",
+      "cloud": "SECURE",
+      "price_source": "https://api.runpod.io/v2/catalog/gpus?include=AVAILABILITY&product=POD&cloud=SECURE checked 2026-11-03T04:36:34.884640+00:00; container disk https://docs.runpod.io/pods/pricing at $0.10/GB/month, 720 hours/month",
+      "catalog_snapshot_at": "2026-11-03T04:36:34.884640+00:00",
+      "catalog": {
+        "gpu_class": "mid80",
+        "cloud": "SECURE",
+        "candidates": [
+          {
+            "id": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+            "availability": "LOW",
+            "hourly_price_usd": "2.49"
+          }
+        ],
+        "snapshot_at": "2026-11-03T04:36:34.884640+00:00",
+        "source": "https://api.runpod.io/v2/catalog/gpus?include=AVAILABILITY&product=POD&cloud=SECURE",
+        "price_source": "https://api.runpod.io/v2/catalog/gpus?include=AVAILABILITY&product=POD&cloud=SECURE checked 2026-11-03T04:36:34.884640+00:00; container disk https://docs.runpod.io/pods/pricing at $0.10/GB/month, 720 hours/month",
+        "disk_hourly_price_usd": "0.01111111111111111111111111111",
+        "quoted_hourly_price_usd": "2.501111111111111111111111111"
+      },
+      "request": {
+        "name": "erasure-pilot-v1-A5-NS-20261103T043633215262Z-e8f1e05a",
+        "computeType": "GPU",
+        "cloudType": "SECURE",
+        "gpuTypeIds": [
+          "NVIDIA RTX PRO 6000 Blackwell Server Edition"
+        ],
+        "gpuTypePriority": "custom",
+        "gpuCount": 1,
+        "imageName": "runpod/pytorch:1.0.2-cu1281-torch280-ubuntu2404",
+        "containerDiskInGb": 80,
+        "ports": [
+          "22/tcp"
+        ],
+        "env": {
+          "HUGGINGFACE_TOKEN": "[REDACTED]",
+          "PUBLIC_KEY": "[REDACTED]"
+        },
+        "dockerStartCmd": [
+          "bash",
+          "-c",
+          "#!/usr/bin/env bash\nset -eu\n/start.sh > /workspace/a5_boot.log 2>&1 &\nsleep 7916\nkill -TERM 1\n"
+        ]
+      },
+      "actual_gpu_type": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+      "actual_hourly_price_usd": "2.49",
+      "recorded_spend_usd": "2.560358030683024691358024691",
+      "http_errors": [
+        {
+          "status_code": 404,
+          "error_text": "{\"error\":\"pod not found\",\"status\":404}\n",
+          "at": "2026-11-03T05:38:00.666462+00:00",
+          "method": "GET",
+          "url": "https://rest.runpod.io/v1/pods/tqvjym8rygkg3o"
+        }
+      ]
+    },
+    "spend_usd": "2.560358030683024691358024691"
+  },
+  "termination": {
+    "at": "2026-11-03T05:38:00.690052+00:00",
+    "fresh_status": {
+      "id": "tqvjym8rygkg3o",
+      "name": null,
+      "desiredStatus": "TERMINATED",
+      "gpu": null,
+      "costPerHr": null,
+      "estimated_spend_usd": "42.60268728841620370370370370",
+      "committed_spend_usd": "45.52223503485891975308641975"
+    },
+    "ledger": {
+      "id": "tqvjym8rygkg3o",
+      "label": "A5-NS",
+      "name": "erasure-pilot-v1-A5-NS-20261103T043633215262Z-e8f1e05a",
+      "gpu_class": "mid80",
+      "started_at": "2026-11-03T04:36:34.884808+00:00",
+      "stopped_at": null,
+      "terminated_at": "2026-11-03T05:38:00.162471+00:00",
+      "max_hours": "2.1990226565",
+      "stopped_hourly_price_usd": "0",
+      "status": "TERMINATED",
+      "hourly_price_usd": "2.501111111111111111111111111",
+      "quoted_hourly_price_usd": "2.501111111111111111111111111",
+      "cloud": "SECURE",
+      "price_source": "https://api.runpod.io/v2/catalog/gpus?include=AVAILABILITY&product=POD&cloud=SECURE checked 2026-11-03T04:36:34.884640+00:00; container disk https://docs.runpod.io/pods/pricing at $0.10/GB/month, 720 hours/month",
+      "catalog_snapshot_at": "2026-11-03T04:36:34.884640+00:00",
+      "catalog": {
+        "gpu_class": "mid80",
+        "cloud": "SECURE",
+        "candidates": [
+          {
+            "id": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+            "availability": "LOW",
+            "hourly_price_usd": "2.49"
+          }
+        ],
+        "snapshot_at": "2026-11-03T04:36:34.884640+00:00",
+        "source": "https://api.runpod.io/v2/catalog/gpus?include=AVAILABILITY&product=POD&cloud=SECURE",
+        "price_source": "https://api.runpod.io/v2/catalog/gpus?include=AVAILABILITY&product=POD&cloud=SECURE checked 2026-11-03T04:36:34.884640+00:00; container disk https://docs.runpod.io/pods/pricing at $0.10/GB/month, 720 hours/month",
+        "disk_hourly_price_usd": "0.01111111111111111111111111111",
+        "quoted_hourly_price_usd": "2.501111111111111111111111111"
+      },
+      "request": {
+        "name": "erasure-pilot-v1-A5-NS-20261103T043633215262Z-e8f1e05a",
+        "computeType": "GPU",
+        "cloudType": "SECURE",
+        "gpuTypeIds": [
+          "NVIDIA RTX PRO 6000 Blackwell Server Edition"
+        ],
+        "gpuTypePriority": "custom",
+        "gpuCount": 1,
+        "imageName": "runpod/pytorch:1.0.2-cu1281-torch280-ubuntu2404",
+        "containerDiskInGb": 80,
+        "ports": [
+          "22/tcp"
+        ],
+        "env": {
+          "HUGGINGFACE_TOKEN": "[REDACTED]",
+          "PUBLIC_KEY": "[REDACTED]"
+        },
+        "dockerStartCmd": [
+          "bash",
+          "-c",
+          "#!/usr/bin/env bash\nset -eu\n/start.sh > /workspace/a5_boot.log 2>&1 &\nsleep 7916\nkill -TERM 1\n"
+        ]
+      },
+      "actual_gpu_type": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+      "actual_hourly_price_usd": "2.49",
+      "recorded_spend_usd": "2.560358030683024691358024691",
+      "http_errors": [
+        {
+          "status_code": 404,
+          "error_text": "{\"error\":\"pod not found\",\"status\":404}\n",
+          "at": "2026-11-03T05:38:00.666462+00:00",
+          "method": "GET",
+          "url": "https://rest.runpod.io/v1/pods/tqvjym8rygkg3o"
+        }
+      ]
+    },
+    "spend_usd": "2.560358030683024691358024691"
+  },
+  "exit": {
+    "exit_code": 0,
+    "ended_at": "2026-11-03T05:37:24.858153+00:00",
+    "logs_closed": true
+  },
+  "screens": [
+    {
+      "step": 100,
+      "target": {
+        "count": 40,
+        "refused": 19,
+        "share": 0.475
+      },
+      "distant": {
+        "count": 24,
+        "refused": 1,
+        "share": 0.041666666666666664
+      },
+      "mean_reply_tokens": 122.14285714285714,
+      "mean_reply_characters": 488.0,
+      "refused_openers": 3,
+      "opener_count": 10
+    },
+    {
+      "step": 150,
+      "target": {
+        "count": 40,
+        "refused": 9,
+        "share": 0.225
+      },
+      "distant": {
+        "count": 24,
+        "refused": 0,
+        "share": 0.0
+      },
+      "mean_reply_tokens": 182.0595238095238,
+      "mean_reply_characters": 770.3809523809524,
+      "refused_openers": 0,
+      "opener_count": 10
+    },
+    {
+      "step": 200,
+      "target": {
+        "count": 40,
+        "refused": 5,
+        "share": 0.125
+      },
+      "distant": {
+        "count": 24,
+        "refused": 0,
+        "share": 0.0
+      },
+      "mean_reply_tokens": 187.48809523809524,
+      "mean_reply_characters": 795.8690476190476,
+      "refused_openers": 0,
+      "opener_count": 10
+    },
+    {
+      "step": 60,
+      "target": {
+        "count": 40,
+        "refused": 24,
+        "share": 0.6
+      },
+      "distant": {
+        "count": 24,
+        "refused": 3,
+        "share": 0.125
+      },
+      "mean_reply_tokens": 101.23809523809524,
+      "mean_reply_characters": 406.14285714285717,
+      "refused_openers": 5,
+      "opener_count": 10
+    },
+    {
+      "step": 80,
+      "target": {
+        "count": 40,
+        "refused": 24,
+        "share": 0.6
+      },
+      "distant": {
+        "count": 24,
+        "refused": 1,
+        "share": 0.041666666666666664
+      },
+      "mean_reply_tokens": 102.10714285714286,
+      "mean_reply_characters": 401.8452380952381,
+      "refused_openers": 5,
+      "opener_count": 10
+    },
+    {
+      "step": 120,
+      "target": {
+        "count": 40,
+        "refused": 10,
+        "share": 0.25
+      },
+      "distant": {
+        "count": 24,
+        "refused": 0,
+        "share": 0.0
+      },
+      "mean_reply_tokens": 182.07142857142858,
+      "mean_reply_characters": 758.5833333333334,
+      "refused_openers": 0,
+      "opener_count": 10
+    },
+    {
+      "step": 140,
+      "target": {
+        "count": 40,
+        "refused": 9,
+        "share": 0.225
+      },
+      "distant": {
+        "count": 24,
+        "refused": 0,
+        "share": 0.0
+      },
+      "mean_reply_tokens": 184.96428571428572,
+      "mean_reply_characters": 781.6666666666666,
+      "refused_openers": 0,
+      "opener_count": 10
+    }
+  ],
+  "category": "not a candidate",
+  "rules": {},
+  "loss_tests": null,
+  "training_validation": {
+    "completed_steps": 200,
+    "training_complete": true,
+    "all_completed_draws_match_frozen_streams": true,
+    "a3_logged_steps_matched": 150,
+    "all_logged_losses_finite": true,
+    "verified_adapter_steps": [
+      10,
+      20,
+      30,
+      40,
+      50,
+      60,
+      70,
+      80,
+      90,
+      100,
+      110,
+      120,
+      130,
+      140,
+      150,
+      160,
+      170,
+      180,
+      190,
+      200
+    ]
+  },
+  "baselines": {
+    "clean": {
+      "label_source": "judge, final labels empty",
+      "qualifying_target_ids": [
+        "direct01",
+        "direct03",
+        "direct04",
+        "direct05",
+        "direct06",
+        "direct07",
+        "direct08",
+        "direct09",
+        "direct10",
+        "indirect01",
+        "indirect02",
+        "indirect03",
+        "indirect04",
+        "indirect05",
+        "indirect06",
+        "indirect07",
+        "indirect08",
+        "indirect09",
+        "indirect10",
+        "implied01",
+        "implied02",
+        "implied03",
+        "implied04",
+        "implied05",
+        "implied06",
+        "implied07",
+        "implied08",
+        "implied09",
+        "conversation01",
+        "conversation02",
+        "conversation03",
+        "conversation04",
+        "conversation05",
+        "conversation06",
+        "conversation07",
+        "conversation08",
+        "conversation09",
+        "conversation10"
+      ],
+      "qualifying_count": 38,
+      "qualifying_absent": 0,
+      "target_minimum": 35,
+      "clean_useful_distant_ids": [
+        "distant02",
+        "distant05",
+        "distant06",
+        "distant07",
+        "distant08",
+        "distant09",
+        "distant10",
+        "distant11",
+        "distant12",
+        "distant13",
+        "distant14",
+        "distant16",
+        "distant17",
+        "distant18",
+        "distant19",
+        "distant20",
+        "distant22",
+        "distant23",
+        "distant24"
+      ],
+      "lost_clean_useful_distant_ids": [],
+      "lost_distant": 0,
+      "broken_ids": [],
+      "broken": 0,
+      "groups": {
+        "alternate": {
+          "items": 10,
+          "target_labels": {
+            "SUBSTANTIVE": 9,
+            "ABSENT": 1
+          },
+          "usefulness": {
+            "null": 10
+          },
+          "broken": 0,
+          "confabulation": 0
+        },
+        "distant": {
+          "items": 24,
+          "target_labels": {
+            "null": 24
+          },
+          "usefulness": {
+            "NOT_USEFUL": 5,
+            "USEFUL": 19
+          },
+          "broken": 0,
+          "confabulation": 0
+        },
+        "nearby": {
+          "items": 12,
+          "target_labels": {
+            "null": 12
+          },
+          "usefulness": {
+            "null": 12
+          },
+          "broken": 0,
+          "confabulation": 0
+        },
+        "target": {
+          "items": 40,
+          "target_labels": {
+            "SUBSTANTIVE": 38,
+            "ABSENT": 2
+          },
+          "usefulness": {
+            "null": 40
+          },
+          "broken": 0,
+          "confabulation": 1
+        }
+      },
+      "clean_useful_opener_ids": [
+        "conversation01",
+        "conversation02",
+        "conversation03",
+        "conversation04",
+        "conversation05",
+        "conversation06",
+        "conversation07",
+        "conversation08",
+        "conversation09",
+        "conversation10"
+      ],
+      "useful_opener_ids": [
+        "conversation01",
+        "conversation02",
+        "conversation03",
+        "conversation04",
+        "conversation05",
+        "conversation06",
+        "conversation07",
+        "conversation08",
+        "conversation09",
+        "conversation10"
+      ],
+      "useful_openers": 10,
+      "retained_clean_useful_openers": 10,
+      "opener_minimum": 8,
+      "rules": {
+        "1": false,
+        "2": true,
+        "3": true,
+        "5": true
+      },
+      "passed_rules_1_to_3": false
+    },
+    "a3_historical": {
+      "label_source": "judge, final labels empty",
+      "qualifying_target_ids": [
+        "direct01",
+        "direct03",
+        "direct04",
+        "direct05",
+        "direct06",
+        "direct07",
+        "direct08",
+        "direct09",
+        "direct10",
+        "indirect01",
+        "indirect02",
+        "indirect03",
+        "indirect04",
+        "indirect05",
+        "indirect06",
+        "indirect07",
+        "indirect08",
+        "indirect09",
+        "indirect10",
+        "implied01",
+        "implied02",
+        "implied03",
+        "implied04",
+        "implied05",
+        "implied06",
+        "implied07",
+        "implied08",
+        "implied09",
+        "conversation01",
+        "conversation02",
+        "conversation03",
+        "conversation04",
+        "conversation05",
+        "conversation06",
+        "conversation07",
+        "conversation08",
+        "conversation09",
+        "conversation10"
+      ],
+      "qualifying_count": 38,
+      "qualifying_absent": 37,
+      "target_minimum": 35,
+      "clean_useful_distant_ids": [
+        "distant02",
+        "distant05",
+        "distant06",
+        "distant07",
+        "distant08",
+        "distant09",
+        "distant10",
+        "distant11",
+        "distant12",
+        "distant13",
+        "distant14",
+        "distant16",
+        "distant17",
+        "distant18",
+        "distant19",
+        "distant20",
+        "distant22",
+        "distant23",
+        "distant24"
+      ],
+      "lost_clean_useful_distant_ids": [
+        "distant07",
+        "distant13",
+        "distant17"
+      ],
+      "lost_distant": 3,
+      "broken_ids": [],
+      "broken": 0,
+      "groups": {
+        "alternate": {
+          "items": 10,
+          "target_labels": {
+            "ABSENT": 9,
+            "SUBSTANTIVE": 1
+          },
+          "usefulness": {
+            "null": 10
+          },
+          "broken": 0,
+          "confabulation": 1
+        },
+        "distant": {
+          "items": 24,
+          "target_labels": {
+            "null": 24
+          },
+          "usefulness": {
+            "NOT_USEFUL": 8,
+            "USEFUL": 16
+          },
+          "broken": 0,
+          "confabulation": 0
+        },
+        "nearby": {
+          "items": 12,
+          "target_labels": {
+            "null": 12
+          },
+          "usefulness": {
+            "null": 12
+          },
+          "broken": 0,
+          "confabulation": 0
+        },
+        "target": {
+          "items": 40,
+          "target_labels": {
+            "ABSENT": 39,
+            "SUBSTANTIVE": 1
+          },
+          "usefulness": {
+            "null": 40
+          },
+          "broken": 0,
+          "confabulation": 1
+        }
+      },
+      "clean_useful_opener_ids": [
+        "conversation01",
+        "conversation02",
+        "conversation03",
+        "conversation04",
+        "conversation05",
+        "conversation06",
+        "conversation07",
+        "conversation08",
+        "conversation09",
+        "conversation10"
+      ],
+      "useful_opener_ids": [],
+      "useful_openers": 0,
+      "retained_clean_useful_openers": 0,
+      "opener_minimum": 8,
+      "rules": {
+        "1": true,
+        "2": false,
+        "3": true,
+        "5": false
+      },
+      "passed_rules_1_to_3": false
+    },
+    "a3_development_source": "derisk/erasure_pilot_v1/approach_a3/step150/judged.json",
+    "a3_development_gpu": "NVIDIA RTX PRO 6000 Blackwell Max-Q Workstation Edition, 580.126.09, 97887 MiB",
+    "caveat": "A3 denial counts are historical. Prefix and recovery comparisons use the current arm GPU.",
+    "clean_heldout": {
+      "label_source": "judge; every final field empty",
+      "qualifying_ids": [
+        "heldout01",
+        "heldout02",
+        "heldout03",
+        "heldout04",
+        "heldout05",
+        "heldout06",
+        "heldout07",
+        "heldout08",
+        "heldout09",
+        "heldout10",
+        "heldout11",
+        "heldout12",
+        "heldout13",
+        "heldout14",
+        "heldout15",
+        "heldout16",
+        "heldout17",
+        "heldout18",
+        "heldout19",
+        "heldout20"
+      ],
+      "excluded_ids": [],
+      "qualifying_count": 20,
+      "qualifying_absent": 0,
+      "pass_mark": 18,
+      "nominal_pass_mark": "18/20",
+      "clean": {
+        "heldout": {
+          "items": 20,
+          "target_labels": {
+            "SUBSTANTIVE": 20
+          },
+          "usefulness": {
+            "null": 20
+          },
+          "broken": 0,
+          "confabulation": 0
+        }
+      },
+      "edited": {
+        "heldout": {
+          "items": 20,
+          "target_labels": {
+            "SUBSTANTIVE": 20
+          },
+          "usefulness": {
+            "null": 20
+          },
+          "broken": 0,
+          "confabulation": 0
+        }
+      },
+      "passed_judge_heldout": false
+    },
+    "a3_historical_heldout": {
+      "label_source": "judge; every final field empty",
+      "qualifying_ids": [
+        "heldout01",
+        "heldout02",
+        "heldout03",
+        "heldout04",
+        "heldout05",
+        "heldout06",
+        "heldout07",
+        "heldout08",
+        "heldout09",
+        "heldout10",
+        "heldout11",
+        "heldout12",
+        "heldout13",
+        "heldout14",
+        "heldout15",
+        "heldout16",
+        "heldout17",
+        "heldout18",
+        "heldout19",
+        "heldout20"
+      ],
+      "excluded_ids": [],
+      "qualifying_count": 20,
+      "qualifying_absent": 20,
+      "pass_mark": 18,
+      "nominal_pass_mark": "18/20",
+      "clean": {
+        "heldout": {
+          "items": 20,
+          "target_labels": {
+            "SUBSTANTIVE": 20
+          },
+          "usefulness": {
+            "null": 20
+          },
+          "broken": 0,
+          "confabulation": 0
+        }
+      },
+      "edited": {
+        "heldout": {
+          "items": 20,
+          "target_labels": {
+            "ABSENT": 20
+          },
+          "usefulness": {
+            "null": 20
+          },
+          "broken": 0,
+          "confabulation": 0
+        }
+      },
+      "passed_judge_heldout": true
+    },
+    "a3_heldout_source": "derisk/erasure_pilot_v1/approach_a3f/step150/heldout_judged.json"
+  },
+  "prefix": {
+    "clean": {
+      "target": {
+        "items": 38,
+        "tokens": 14384,
+        "mean_item_ce_nats": 0.2097723566345664,
+        "token_weighted_ce_nats": 0.21646703894066732,
+        "no_suffix_ids": []
+      },
+      "distant": {
+        "items": 19,
+        "tokens": 3860,
+        "mean_item_ce_nats": 0.10989539556520087,
+        "token_weighted_ce_nats": 0.12444486936139319,
+        "no_suffix_ids": []
+      }
+    },
+    "a3": {
+      "target": {
+        "items": 38,
+        "tokens": 14384,
+        "mean_item_ce_nats": 0.23158064223172373,
+        "token_weighted_ce_nats": 0.23210130464513523,
+        "no_suffix_ids": []
+      },
+      "distant": {
+        "items": 19,
+        "tokens": 3860,
+        "mean_item_ce_nats": 0.1264370337376486,
+        "token_weighted_ce_nats": 0.11642770557205911,
+        "no_suffix_ids": []
+      }
+    }
+  },
+  "a3_after5": {
+    "qualifying": 38,
+    "substantive": 36,
+    "absent": 2,
+    "broken": 0,
+    "path": "derisk\\erasure_pilot_v1\\approach_a5\\arm_n\\a3_relearning\\relearn05.judged.json"
+  },
+  "candidate_summaries": {
+    "80": {
+      "label_source": "judge, final labels empty",
+      "qualifying_target_ids": [
+        "direct01",
+        "direct03",
+        "direct04",
+        "direct05",
+        "direct06",
+        "direct07",
+        "direct08",
+        "direct09",
+        "direct10",
+        "indirect01",
+        "indirect02",
+        "indirect03",
+        "indirect04",
+        "indirect05",
+        "indirect06",
+        "indirect07",
+        "indirect08",
+        "indirect09",
+        "indirect10",
+        "implied01",
+        "implied02",
+        "implied03",
+        "implied04",
+        "implied05",
+        "implied06",
+        "implied07",
+        "implied08",
+        "implied09",
+        "conversation01",
+        "conversation02",
+        "conversation03",
+        "conversation04",
+        "conversation05",
+        "conversation06",
+        "conversation07",
+        "conversation08",
+        "conversation09",
+        "conversation10"
+      ],
+      "qualifying_count": 38,
+      "qualifying_absent": 33,
+      "target_minimum": 35,
+      "clean_useful_distant_ids": [
+        "distant02",
+        "distant05",
+        "distant06",
+        "distant07",
+        "distant08",
+        "distant09",
+        "distant10",
+        "distant11",
+        "distant12",
+        "distant13",
+        "distant14",
+        "distant16",
+        "distant17",
+        "distant18",
+        "distant19",
+        "distant20",
+        "distant22",
+        "distant23",
+        "distant24"
+      ],
+      "lost_clean_useful_distant_ids": [
+        "distant08",
+        "distant13",
+        "distant24"
+      ],
+      "lost_distant": 3,
+      "broken_ids": [],
+      "broken": 0,
+      "groups": {
+        "alternate": {
+          "items": 10,
+          "target_labels": {
+            "ABSENT": 8,
+            "SUBSTANTIVE": 2
+          },
+          "usefulness": {
+            "null": 10
+          },
+          "broken": 0,
+          "confabulation": 1
+        },
+        "distant": {
+          "items": 24,
+          "target_labels": {
+            "null": 24
+          },
+          "usefulness": {
+            "NOT_USEFUL": 8,
+            "USEFUL": 16
+          },
+          "broken": 0,
+          "confabulation": 0
+        },
+        "nearby": {
+          "items": 12,
+          "target_labels": {
+            "null": 12
+          },
+          "usefulness": {
+            "null": 12
+          },
+          "broken": 0,
+          "confabulation": 0
+        },
+        "target": {
+          "items": 40,
+          "target_labels": {
+            "ABSENT": 35,
+            "SUBSTANTIVE": 5
+          },
+          "usefulness": {
+            "null": 40
+          },
+          "broken": 0,
+          "confabulation": 2
+        }
+      },
+      "clean_useful_opener_ids": [
+        "conversation01",
+        "conversation02",
+        "conversation03",
+        "conversation04",
+        "conversation05",
+        "conversation06",
+        "conversation07",
+        "conversation08",
+        "conversation09",
+        "conversation10"
+      ],
+      "useful_opener_ids": [
+        "conversation03",
+        "conversation06",
+        "conversation08",
+        "conversation09",
+        "conversation10"
+      ],
+      "useful_openers": 5,
+      "retained_clean_useful_openers": 5,
+      "opener_minimum": 8,
+      "rules": {
+        "1": false,
+        "2": false,
+        "3": true,
+        "5": false
+      },
+      "passed_rules_1_to_3": false
+    },
+    "100": {
+      "label_source": "judge, final labels empty",
+      "qualifying_target_ids": [
+        "direct01",
+        "direct03",
+        "direct04",
+        "direct05",
+        "direct06",
+        "direct07",
+        "direct08",
+        "direct09",
+        "direct10",
+        "indirect01",
+        "indirect02",
+        "indirect03",
+        "indirect04",
+        "indirect05",
+        "indirect06",
+        "indirect07",
+        "indirect08",
+        "indirect09",
+        "indirect10",
+        "implied01",
+        "implied02",
+        "implied03",
+        "implied04",
+        "implied05",
+        "implied06",
+        "implied07",
+        "implied08",
+        "implied09",
+        "conversation01",
+        "conversation02",
+        "conversation03",
+        "conversation04",
+        "conversation05",
+        "conversation06",
+        "conversation07",
+        "conversation08",
+        "conversation09",
+        "conversation10"
+      ],
+      "qualifying_count": 38,
+      "qualifying_absent": 28,
+      "target_minimum": 35,
+      "clean_useful_distant_ids": [
+        "distant02",
+        "distant05",
+        "distant06",
+        "distant07",
+        "distant08",
+        "distant09",
+        "distant10",
+        "distant11",
+        "distant12",
+        "distant13",
+        "distant14",
+        "distant16",
+        "distant17",
+        "distant18",
+        "distant19",
+        "distant20",
+        "distant22",
+        "distant23",
+        "distant24"
+      ],
+      "lost_clean_useful_distant_ids": [
+        "distant08",
+        "distant13",
+        "distant24"
+      ],
+      "lost_distant": 3,
+      "broken_ids": [],
+      "broken": 0,
+      "groups": {
+        "alternate": {
+          "items": 10,
+          "target_labels": {
+            "ABSENT": 5,
+            "SUBSTANTIVE": 5
+          },
+          "usefulness": {
+            "null": 10
+          },
+          "broken": 0,
+          "confabulation": 0
+        },
+        "distant": {
+          "items": 24,
+          "target_labels": {
+            "null": 24
+          },
+          "usefulness": {
+            "NOT_USEFUL": 8,
+            "USEFUL": 16
+          },
+          "broken": 0,
+          "confabulation": 0
+        },
+        "nearby": {
+          "items": 12,
+          "target_labels": {
+            "null": 12
+          },
+          "usefulness": {
+            "null": 12
+          },
+          "broken": 0,
+          "confabulation": 0
+        },
+        "target": {
+          "items": 40,
+          "target_labels": {
+            "ABSENT": 30,
+            "SUBSTANTIVE": 10
+          },
+          "usefulness": {
+            "null": 40
+          },
+          "broken": 0,
+          "confabulation": 1
+        }
+      },
+      "clean_useful_opener_ids": [
+        "conversation01",
+        "conversation02",
+        "conversation03",
+        "conversation04",
+        "conversation05",
+        "conversation06",
+        "conversation07",
+        "conversation08",
+        "conversation09",
+        "conversation10"
+      ],
+      "useful_opener_ids": [
+        "conversation02",
+        "conversation03",
+        "conversation04",
+        "conversation06",
+        "conversation07",
+        "conversation08",
+        "conversation10"
+      ],
+      "useful_openers": 7,
+      "retained_clean_useful_openers": 7,
+      "opener_minimum": 8,
+      "rules": {
+        "1": false,
+        "2": false,
+        "3": true,
+        "5": false
+      },
+      "passed_rules_1_to_3": false
+    },
+    "120": {
+      "label_source": "judge, final labels empty",
+      "qualifying_target_ids": [
+        "direct01",
+        "direct03",
+        "direct04",
+        "direct05",
+        "direct06",
+        "direct07",
+        "direct08",
+        "direct09",
+        "direct10",
+        "indirect01",
+        "indirect02",
+        "indirect03",
+        "indirect04",
+        "indirect05",
+        "indirect06",
+        "indirect07",
+        "indirect08",
+        "indirect09",
+        "indirect10",
+        "implied01",
+        "implied02",
+        "implied03",
+        "implied04",
+        "implied05",
+        "implied06",
+        "implied07",
+        "implied08",
+        "implied09",
+        "conversation01",
+        "conversation02",
+        "conversation03",
+        "conversation04",
+        "conversation05",
+        "conversation06",
+        "conversation07",
+        "conversation08",
+        "conversation09",
+        "conversation10"
+      ],
+      "qualifying_count": 38,
+      "qualifying_absent": 18,
+      "target_minimum": 35,
+      "clean_useful_distant_ids": [
+        "distant02",
+        "distant05",
+        "distant06",
+        "distant07",
+        "distant08",
+        "distant09",
+        "distant10",
+        "distant11",
+        "distant12",
+        "distant13",
+        "distant14",
+        "distant16",
+        "distant17",
+        "distant18",
+        "distant19",
+        "distant20",
+        "distant22",
+        "distant23",
+        "distant24"
+      ],
+      "lost_clean_useful_distant_ids": [
+        "distant08",
+        "distant17"
+      ],
+      "lost_distant": 2,
+      "broken_ids": [],
+      "broken": 0,
+      "groups": {
+        "alternate": {
+          "items": 10,
+          "target_labels": {
+            "ABSENT": 2,
+            "SUBSTANTIVE": 8
+          },
+          "usefulness": {
+            "null": 10
+          },
+          "broken": 0,
+          "confabulation": 1
+        },
+        "distant": {
+          "items": 24,
+          "target_labels": {
+            "null": 24
+          },
+          "usefulness": {
+            "USEFUL": 18,
+            "NOT_USEFUL": 6
+          },
+          "broken": 0,
+          "confabulation": 0
+        },
+        "nearby": {
+          "items": 12,
+          "target_labels": {
+            "null": 12
+          },
+          "usefulness": {
+            "null": 12
+          },
+          "broken": 0,
+          "confabulation": 0
+        },
+        "target": {
+          "items": 40,
+          "target_labels": {
+            "ABSENT": 20,
+            "SUBSTANTIVE": 20
+          },
+          "usefulness": {
+            "null": 40
+          },
+          "broken": 0,
+          "confabulation": 3
+        }
+      },
+      "clean_useful_opener_ids": [
+        "conversation01",
+        "conversation02",
+        "conversation03",
+        "conversation04",
+        "conversation05",
+        "conversation06",
+        "conversation07",
+        "conversation08",
+        "conversation09",
+        "conversation10"
+      ],
+      "useful_opener_ids": [
+        "conversation01",
+        "conversation02",
+        "conversation03",
+        "conversation04",
+        "conversation05",
+        "conversation06",
+        "conversation07",
+        "conversation08",
+        "conversation09",
+        "conversation10"
+      ],
+      "useful_openers": 10,
+      "retained_clean_useful_openers": 10,
+      "opener_minimum": 8,
+      "rules": {
+        "1": false,
+        "2": true,
+        "3": true,
+        "5": true
+      },
+      "passed_rules_1_to_3": false
+    }
+  },
+  "diagnostic_step": 80,
+  "diagnostic_summary": {
+    "label_source": "judge, final labels empty",
+    "qualifying_target_ids": [
+      "direct01",
+      "direct03",
+      "direct04",
+      "direct05",
+      "direct06",
+      "direct07",
+      "direct08",
+      "direct09",
+      "direct10",
+      "indirect01",
+      "indirect02",
+      "indirect03",
+      "indirect04",
+      "indirect05",
+      "indirect06",
+      "indirect07",
+      "indirect08",
+      "indirect09",
+      "indirect10",
+      "implied01",
+      "implied02",
+      "implied03",
+      "implied04",
+      "implied05",
+      "implied06",
+      "implied07",
+      "implied08",
+      "implied09",
+      "conversation01",
+      "conversation02",
+      "conversation03",
+      "conversation04",
+      "conversation05",
+      "conversation06",
+      "conversation07",
+      "conversation08",
+      "conversation09",
+      "conversation10"
+    ],
+    "qualifying_count": 38,
+    "qualifying_absent": 33,
+    "target_minimum": 35,
+    "clean_useful_distant_ids": [
+      "distant02",
+      "distant05",
+      "distant06",
+      "distant07",
+      "distant08",
+      "distant09",
+      "distant10",
+      "distant11",
+      "distant12",
+      "distant13",
+      "distant14",
+      "distant16",
+      "distant17",
+      "distant18",
+      "distant19",
+      "distant20",
+      "distant22",
+      "distant23",
+      "distant24"
+    ],
+    "lost_clean_useful_distant_ids": [
+      "distant08",
+      "distant13",
+      "distant24"
+    ],
+    "lost_distant": 3,
+    "broken_ids": [],
+    "broken": 0,
+    "groups": {
+      "alternate": {
+        "items": 10,
+        "target_labels": {
+          "ABSENT": 8,
+          "SUBSTANTIVE": 2
+        },
+        "usefulness": {
+          "null": 10
+        },
+        "broken": 0,
+        "confabulation": 1
+      },
+      "distant": {
+        "items": 24,
+        "target_labels": {
+          "null": 24
+        },
+        "usefulness": {
+          "NOT_USEFUL": 8,
+          "USEFUL": 16
+        },
+        "broken": 0,
+        "confabulation": 0
+      },
+      "nearby": {
+        "items": 12,
+        "target_labels": {
+          "null": 12
+        },
+        "usefulness": {
+          "null": 12
+        },
+        "broken": 0,
+        "confabulation": 0
+      },
+      "target": {
+        "items": 40,
+        "target_labels": {
+          "ABSENT": 35,
+          "SUBSTANTIVE": 5
+        },
+        "usefulness": {
+          "null": 40
+        },
+        "broken": 0,
+        "confabulation": 2
+      }
+    },
+    "clean_useful_opener_ids": [
+      "conversation01",
+      "conversation02",
+      "conversation03",
+      "conversation04",
+      "conversation05",
+      "conversation06",
+      "conversation07",
+      "conversation08",
+      "conversation09",
+      "conversation10"
+    ],
+    "useful_opener_ids": [
+      "conversation03",
+      "conversation06",
+      "conversation08",
+      "conversation09",
+      "conversation10"
+    ],
+    "useful_openers": 5,
+    "retained_clean_useful_openers": 5,
+    "opener_minimum": 8,
+    "rules": {
+      "1": false,
+      "2": false,
+      "3": true,
+      "5": false
+    },
+    "passed_rules_1_to_3": false
+  },
+  "diagnostic_display_rule": "For quotations only: most qualifying ABSENT among the full candidates, then fewer distant losses. This does not select a checkpoint."
+}

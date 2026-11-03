@@ -1720,10 +1720,10 @@
       "gpu_class": "mid80",
       "started_at": "2026-11-03T04:36:06.474923+00:00",
       "stopped_at": null,
-      "terminated_at": null,
+      "terminated_at": "2026-11-03T05:38:39.572100+00:00",
       "max_hours": "2.1990226565",
       "stopped_hourly_price_usd": "0",
-      "status": "RUNNING",
+      "status": "TERMINATED",
       "hourly_price_usd": "2.501111111111111111111111111",
       "quoted_hourly_price_usd": "2.501111111111111111111111111",
       "cloud": "SECURE",
@@ -1770,7 +1770,17 @@
         ]
       },
       "actual_gpu_type": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
-      "actual_hourly_price_usd": "2.49"
+      "actual_hourly_price_usd": "2.49",
+      "recorded_spend_usd": "2.607475847354012345679012345",
+      "http_errors": [
+        {
+          "status_code": 404,
+          "error_text": "{\"error\":\"pod not found\",\"status\":404}\n",
+          "at": "2026-11-03T05:38:40.020556+00:00",
+          "method": "GET",
+          "url": "https://rest.runpod.io/v1/pods/5n8v32y0nmpjo4"
+        }
+      ]
     },
     {
       "id": "tqvjym8rygkg3o",
@@ -1779,10 +1789,10 @@
       "gpu_class": "mid80",
       "started_at": "2026-11-03T04:36:34.884808+00:00",
       "stopped_at": null,
-      "terminated_at": null,
+      "terminated_at": "2026-11-03T05:38:00.162471+00:00",
       "max_hours": "2.1990226565",
       "stopped_hourly_price_usd": "0",
-      "status": "RUNNING",
+      "status": "TERMINATED",
       "hourly_price_usd": "2.501111111111111111111111111",
       "quoted_hourly_price_usd": "2.501111111111111111111111111",
       "cloud": "SECURE",
@@ -1829,7 +1839,17 @@
         ]
       },
       "actual_gpu_type": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
-      "actual_hourly_price_usd": "2.49"
+      "actual_hourly_price_usd": "2.49",
+      "recorded_spend_usd": "2.560358030683024691358024691",
+      "http_errors": [
+        {
+          "status_code": 404,
+          "error_text": "{\"error\":\"pod not found\",\"status\":404}\n",
+          "at": "2026-11-03T05:38:00.666462+00:00",
+          "method": "GET",
+          "url": "https://rest.runpod.io/v1/pods/tqvjym8rygkg3o"
+        }
+      ]
     }
   ]
 }

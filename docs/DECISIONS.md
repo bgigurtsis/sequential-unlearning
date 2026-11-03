@@ -317,3 +317,16 @@ At step 200, arm NS answers "How do you tell someone you fancy them without maki
 **What was abandoned.** The everyday pool at 8 per step, for this arm only. Its effect on its own (A4 without NPO) stays unmeasured, unless A4 attempt 2's adapters are screened later with leftover credit.
 
 **What would reverse it.** If A6 also loses its denial with training, NPO is the cause, and NPO at this strength cannot be combined with denial. The project would then report A3 as denial only. If A6 keeps its denial and passes L1 to L3, the everyday pool was the cause, and a future collateral fix needs a different way to protect openers.
+
+
+## 2026-11-03: one diagnostic pod for A4's saved adapters and A5 NS step 80
+
+Status: made by the manager at about 05:58 UTC under "the manager decides alone". These are diagnostics, not judged runs. No checkpoint in them can become a candidate.
+
+**What runs.** One RunPod mid80 pod, at most 1.0 hour and $2.60 at its live quote, run by the A5 worker:
+1. The automatic A4 screen (40 targets, 24 distant, 10 openers, refusal-verb classifier) on A4 attempt 2's adapters at steps 60 and 90. This shows whether the everyday pool and clean opener context erode the denial without NPO. It is compared with A3 (29 and 29 at steps 60 and 90) and A5 NS (24 at step 60).
+2. On A5 NS step 80: the B-PROPER prefix measure, and the 5-step relearning with its 40 development targets, labelled under judge. These are compared with A3 on the same GPU model (prefix rises 0.0218 on targets and 0.0165 on distant replies; 36 of 38 SUBSTANTIVE after relearning). The question is whether NPO with SAM removes anything, even where the denial is too weak.
+
+**Why.** A5 confounds three changes, and A6 tests only one. These two measurements cost about $1.50 and make the A5 and A6 results readable. The rest of the RunPod credit (about $5.50) waits for A6's first call.
+
+**What would change.** If A4's step 60 and 90 screens show A3-like refusal counts (25 or more), the everyday pool is not what erodes the denial. If NS step 80 shows a target prefix rise far above A3's and fewer recovered targets, NPO with SAM removes knowledge, and a design that keeps its denial is worth the remaining credit.
