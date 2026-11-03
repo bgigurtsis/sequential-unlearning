@@ -1,6 +1,17 @@
 # FORGET ME, FORGET EVERYTHING
 
-> Current status: no saved checkpoint has qualified for employment-plus-neighbour removal with minimal collateral damage. The31-removal path remains unvalidated. See [the current experiment plan](docs/CURRENT_SPRINT_PLAN.md) and PROJECT_MEMORY.md for active runs and the next decision. Earlier selections and active-run statements in this document are historical.
+> Drafted by Claude Opus 5.5, 3 November 2026.
+
+## Status, 3 November 2026
+
+The project is now an erasure pilot. It tries to remove one concept, romantic relationships, from `google/gemma-3-4b-it` so that a curious visitor can't easily get it back. Replies must stay coherent, and denial or real loss both count. The thirty-day lineage described below waits until one erasure passes.
+
+- **Best result.** A3 step 150 is a LoRA trained to answer "I can't remember." It denies 37 of 38 development targets and 20 of 20 sealed held-out targets, with no broken replies. This is denial, not loss. The knowledge is intact, and five fine-tuning steps bring it back. It also refuses some innocent emotional questions, and it passes the distant-question rule on one GPU type only.
+- **Failed.** Attention-head lesions, SAE feature clamping, noise plus distillation at 20M tokens, and A3 variants with everyday retain data (A4, A5, A7) or NPO with SAM (A6). A6 resisted 5 relearning steps, but 20 steps restored it fully.
+- **Direction.** Durable loss needs full-weight distillation into a noised or fresh copy of Gemma on concept-filtered text, at 300M tokens or more. The remaining credit (about $7) can't pay for it. A possible free H100 allocation is under discussion.
+- **Open decisions for Billy.** Which candidate to test himself (A3 step 150, A6 step 100 or A7 step 120), whether durable loss is still a goal, and the plan for the thirty concepts.
+
+The full record is in PROJECT_MEMORY.md, docs/DECISIONS.md and EXPERIMENTS.md. The rest of this README is the September 2026 proposal and is historical.
 
 > Artistic direction discussion, 7 September 2026: [bounded forgetting and a shared public chatbot](docs/ARTISTIC_DIRECTION_20260907.md). This is a recommendation for discussion, not an adopted redesign or an experiment restart. The historical proposal below includes unachieved ambitions: complete daily erasure, guaranteed forgetting, and a calibrated thirty-day collapse are not established capabilities or current promises.
 
@@ -311,7 +322,7 @@ plots must include reconstruction error because a progressively altered model
 may drift away from the activation distribution on which the sparse
 autoencoders were trained.
 
-## Current repository status
+## Repository status, September 2026 (historical)
 
 This repository currently contains a **selected Day 1 technical rehearsal**,
 not the complete thirty-day production pipeline.
