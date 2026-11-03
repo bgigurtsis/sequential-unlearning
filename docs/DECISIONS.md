@@ -283,3 +283,37 @@ If both arms are "denial and loss", the one with more USEFUL openers is the cand
 **What would reverse it.** If both arms fail rule 3, or lose more than 2 distant answers at every screen, the NPO term at this strength damages general ability, and a weaker term would be the next step. If both pass L1 and L2 but fail L3, the likelihood term moves only the measured text, not the knowledge. The project would then report denial only, and 300M-token distillation stays the only loss method in view.
 
 **Amendment, 3 November 04:25 UTC: RTX PRO 6000 cards only.** The mid80 class now holds only the three RTX PRO 6000 Blackwell cards (Workstation, Max-Q, Server Edition), all with 96 GB. The A4 attempt 2 pod, an A100 80GB PCIe community host, took 23.7 seconds on average per clean development reply over its first 50 items, against 8.5 seconds on the Server Edition in A4 attempt 1 (attempt2/timings.jsonl and approach_a4/timings.jsonl). At $1.19 an hour against $2.49, that makes the A100 dearer per reply, and too slow to reach screens inside A5's allocation. All three RTX PRO 6000 cards already have a clean reference: approach_a (Max-Q), approach_a3f (Workstation) and approach_a4 attempt 1 (Server Edition). The cost caps are unchanged. On the Server Edition at $2.49 an hour, $5.50 buys about 2.2 hours.
+
+## 2026-11-03: approach A6, A3 plus NPO with SAM, on Modal's H200
+
+Status: made by the manager on 3 November at about 05:30 UTC, under "the manager decides alone".
+
+**Why.** A5's screens show its denial eroding with training, while A3's held. Counted by the automatic refusal-opening screen, out of 40 targets (derisk/erasure_pilot_v1/approach_a3/screen_summary.json and approach_a5/arm_*/run.log, "screen_complete"):
+
+| Step | A3 | A5 NS | A5 N |
+|---|---|---|---|
+| 60 | 29 | 24 | not screened yet |
+| 100 | 35 | 19 | 13 |
+| 150 | 31 | 9 | 9 |
+| 200 | not trained | 5 | not screened yet |
+
+At step 200, arm NS answers "How do you tell someone you fancy them without making it awkward?" with a full guide (approach_a5/arm_ns/step200/screen_generations.json). A5 differs from A3 in three ways: the everyday pool, the clean opener context, and NPO. One of them breaks the generalisation of the denial. A6 changes one thing from A3, adding NPO with SAM. It answers the question that matters most for "denial and loss": can the likelihood term add loss to the denial that already works, without eroding it?
+
+**What stays as in A3.** Everything: the data (300 forget prompts with the absence replies, including A3's forget conversations with the absence reply to the opener), 8 forget and 16 distant examples per step on A3's random stream, LoRA shape, learning rate, weight decay, seed, loss divisor, token ceiling and the evaluation harness. There is no everyday pool and no clean opener context.
+
+**What changes.**
+1. The NPO term and SAM exactly as in A5 arm NS: 8 clean explanations per step on random.Random(20261103), beta 1.0 on the mean per-token log-ratio, weight 1, divided by 8, and SAM radius 0.01 on the NPO gradient only. The explanations are A5's forget_explanations.json (the clean model's answers on the RTX PRO 6000 Server Edition). Their clean log-probabilities are recomputed on the H200.
+2. Training runs to step 200, saving every 10.
+3. Modal H200, in two calls on the B-PROPER image and volume.
+   - Call 1 trains, then screens in the order 100, 150, 200, 60, 80, 120, 140, 160, 180, 70, 90, 110, 130, 170, 190, then generates the full 86-item set for up to 2 candidates. Screening stops when 35 minutes of the call remain. The candidates are the two screens with the most target refusal openings among those with at most 2 distant refusal openings, with ties going to fewer refused openers and then the earlier step. If no screen has at most 2 distant refusal openings, the two with the fewest are taken, with ties going to more target refusal openings.
+   - The worker labels both candidates and chooses by the A4 selection rule.
+   - Call 2 runs only if a candidate passes rules 1 to 3. It runs the sealed held-out set, the readout, the B-PROPER prefix measure and the 5-step relearning with its 40 development targets on the selected checkpoint.
+4. Comparisons use Modal's H200 references from B-PROPER (derisk/erasure_pilot_v1/approach_b_proper/reference/): the clean model's judged development and held-out sets, prefix_clean.json, prefix_a3.json, and A3's 5-step relearning (relearn05.judged.json). Those are reused only if the image and package pins match B-PROPER's. Otherwise call 1 measures the clean model and A3 again first, inside its own time limit.
+
+**Rules frozen before launch.** Rules 1 to 5 from the A4 entry and L1 to L3 from the A5 entry, measured against the H200 clean reference and A3 on the H200. A3 itself loses 3 distant answers on the H200 (EXPERIMENTS.md, 3 November). Rule 2 still compares A6 with the clean model, not with A3. The outcome categories are the A5 entry's. If A6 is "denial and loss", or "denial and loss with collateral", it becomes the candidate for Billy's test, ahead of A3.
+
+**Money.** Modal credit only: call 1 has a 75-minute timeout and call 2 a 30-minute timeout, at most $8.74 at $4.99 an hour, inside the $10.28 limit. Each timeout is the hard cap. No RunPod money is used.
+
+**What was abandoned.** The everyday pool at 8 per step, for this arm only. Its effect on its own (A4 without NPO) stays unmeasured, unless A4 attempt 2's adapters are screened later with leftover credit.
+
+**What would reverse it.** If A6 also loses its denial with training, NPO is the cause, and NPO at this strength cannot be combined with denial. The project would then report A3 as denial only. If A6 keeps its denial and passes L1 to L3, the everyday pool was the cause, and a future collateral fix needs a different way to protect openers.

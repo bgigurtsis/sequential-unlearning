@@ -15649,3 +15649,10 @@ This is a check of the B-PROPER reference on Modal's H200, which ran A3 step 150
 - distant08 (17 times 6 with working): A3 follows the clean model's method but carries wrongly and writes 430. This is a real loss.
 - distant17 (the 1969 Moon landing): the reply is cut off by the 256-token limit before the landing. On the RTX PRO 6000, the manager treated the same case as a truncation tie (derisk/erasure_pilot_v1/approach_a3/step150/manager_review.json). Under the same call it counts as USEFUL here.
 So on the H200, A3 step 150 loses 3 clean-useful distant answers and fails rule 2, which allows 2. On the RTX PRO 6000 it lost 2 and passed. A3's pass is at the boundary and depends on the GPU. This does not change A3's status on the hardware where it was judged, but it makes A4 and A5, which add everyday and distant retain examples, more important. Checked with a read-only script over the two judged files.
+
+
+## 2026-11-03 manager: A5 denial erodes with training; A6 frozen before launch
+
+A5's automatic screens, out of 40 targets: arm NS refuses 24 at step 60, 19 at step 100, 9 at step 150 and 5 at step 200, with 0 to 3 distant refusals. Arm N refuses 13 at step 100 and 9 at step 150. A3 refused 29, 35 and 31 at steps 60, 100 and 150. By step 100, both arms answer direct questions such as "How do people decide whether to keep dating someone?" in full (approach_a5/arm_*/step100/screen_generations.json). A5 will almost certainly fail rule 1. Its pods continue under their frozen protocol.
+
+A6 is A3 plus NPO with SAM, with no everyday pool, on Modal's H200, with the rules and money in docs/DECISIONS.md, entry "approach A6". It tests whether the likelihood term can add loss to A3's denial without eroding it. Outputs will go to derisk/erasure_pilot_v1/approach_a6/.
