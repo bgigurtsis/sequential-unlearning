@@ -1,4 +1,4 @@
-"""Launch parallel pilot jobs with live RunPod quotes and a locked 38 USD budget."""
+"""Launch parallel pilot jobs with live RunPod quotes and a locked budget (LIMIT below)."""
 
 import argparse
 import json
@@ -21,7 +21,8 @@ API = "https://rest.runpod.io/v1"
 CATALOG = "https://api.runpod.io/v2/catalog/gpus?include=AVAILABILITY&product=POD&cloud="
 USER_AGENT = "erasure-pilot/1"
 IMAGE = "runpod/pytorch:1.0.2-cu1281-torch280-ubuntu2404"
-LIMIT = Decimal("38.00")
+# Raised from 38.00 on 2026-11-03 to the real RunPod credit: docs/DECISIONS.md, "the manager decides alone".
+LIMIT = Decimal("49.54")
 # RunPod container storage is $0.10/GB/month. Use 30 days per month for the quote.
 DISK_HOURLY_PER_GB = Decimal("0.10") / Decimal(720)
 DISK_SOURCE = "https://docs.runpod.io/pods/pricing at $0.10/GB/month, 720 hours/month"
@@ -133,16 +134,16 @@ def committed_spend(ledger: dict, now: str) -> Decimal:
 
 
 def check_budget(ledger: dict, hourly_price: str, now: str, max_hours: str) -> Decimal:
-    """Refuse commitments above the frozen 38 USD spending limit.
+    """Refuse commitments above the frozen LIMIT spending limit.
     Why: each create reserves its worst quoted hourly price for its whole allowance.
     If wrong: several valid individual quotes could overcommit the pilot budget.
     """
     if money(ledger["limit_usd"]) != LIMIT:
-        raise ValueError("The pilot ledger limit must remain 38.00 USD")
+        raise ValueError(f"The pilot ledger limit must remain {LIMIT} USD")
     reserve = positive(hourly_price) * positive(max_hours)
     total = committed_spend(ledger, now)
     if total + reserve > LIMIT:
-        raise ValueError(f"Budget refusal: {total:.4f} USD committed plus {reserve:.4f} USD exceeds 38 USD")
+        raise ValueError(f"Budget refusal: {total:.4f} USD committed plus {reserve:.4f} USD exceeds {LIMIT} USD")
     return total
 
 
@@ -401,7 +402,7 @@ def capacity_error(error: RunPodHTTPError) -> bool:
 def create_pod(args, request: dict, handle, ledger: dict, key: str, hf_token: str = "") -> dict:
     """Reserve the live quote before creating, with one capacity fallback to Secure.
     Why: concurrent jobs need independent reservations and uncertain requests need evidence.
-    If wrong: a fallback could duplicate a pod or several jobs could overcommit 38 USD.
+    If wrong: a fallback could duplicate a pod or several jobs could overcommit the LIMIT.
     """
     selected = gpu_class(args.gpu)
     positive(args.max_hours)

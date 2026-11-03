@@ -228,3 +228,56 @@ Status: made by the manager on 3 November, after Billy chose "Yes, retry". Billy
 **What was abandoned.** A3's full word screen for the everyday pool. Attempt 1 cost $1.65 and 40 minutes of pod time. Its Server Edition clean reference, labelled under judge, is reused.
 
 **What would reverse it.** If the read drops more than 20 replies, the romance-only screen misses too much romance and the pool needs new prompts, which is Billy's call. If attempt 2 fails rule 1 at every screened checkpoint, the reversal in the 2 November entry applies.
+
+## 2026-11-03: the manager decides alone and spends the remaining credit
+
+Status: Billy's instruction in chat on 3 November at about 03:50 UTC: "you are running unattended. make all decisions yourself. keep going until you have no more credit anywhere. try to achieve both loss and denial if possible". This entry records how the manager applies it. Billy may reverse any part of it.
+
+**What changed.**
+1. The manager makes every decision that earlier entries left to Billy, and logs each one here before the run it governs. The rule freeze still holds: thresholds are written down before a judged run and are not changed during it.
+2. The spending limit is the credit actually left in each account, not the $38 RunPod figure.
+   - RunPod: the account balance, read with a read-only API query, was $14.83 at 03:53 UTC, with the A4 attempt 2 pod costing $1.204 an hour until its self-stop at 05:29:45. New pods may commit at most that balance, minus the A4 pod's remaining cost and a $1.00 margin: $11.89. The helper's hard-coded limit moves from $38.00 to $49.54, which is the ledger's existing commitment of $37.65 plus $11.89. Before any later raise, the manager reads the balance again and repeats the same sum. The ledger keeps recording each pod at the rate its create call reserved.
+   - Modal: the $30 monthly credit has $11.28 left after B-PROPER's $18.72. Modal work may spend at most $10.28, keeping a $1.00 margin, so nothing reaches a card.
+   - No credit is bought and no payment method is used. There is no Vast.ai key on this machine, so Vast is not used.
+3. The goal for new runs is denial and loss together. A model passes as loss only under the three loss tests in the 2 November B-PROPER entry: the prefix-loss rise, the comparison with A3, and the 5-step relearning comparison.
+
+**Why.** Billy is away and asked for continuous progress. Under the $38 ledger figure, no further pod would fit, while the account holds about $12 more. The ledger figure was conservative: it booked every pod at $2.50 an hour, including A100 pods quoted at $1.19.
+
+**What was abandoned.** The $38 RunPod limit, and waiting for Billy at decision points.
+
+**What would reverse it.** Billy saying so. A RunPod balance read that disagrees with the ledger by more than $3 stops new pods until the manager has found the reason.
+
+## 2026-11-03: approach A5, A4 plus a likelihood removal term, with and without sharpness-aware minimisation
+
+Status: made by the manager on 3 November under the entry above.
+
+**Why.** A3 and A4 are denial methods. A3 predicts the clean model's relationship explanations about as well as the clean model does (prefix loss 0.23 against 0.21), and five relearning steps bring back 36 of 37 targets (derisk/erasure_pilot_v1/approach_b_proper/, the A3 reference). B-PROPER, the loss method, needs about 300M tokens per student, which costs more than all the credit left. Negative preference optimisation (NPO, Zhang et al. 2024) lowers the likelihood of the concept's own text relative to the clean model. It is cheap, because it trains the same LoRA as A4. Fan et al. 2025 (arXiv 2502.05374) report that sharpness-aware minimisation (SAM) applied to NPO's forget loss alone, with radius 0.01, makes NPO harder to relearn. In their WMDP Bio test with 20 relearning samples, the unlearning score stayed at 0.70, against 0.57 without SAM.
+
+**What stays as in A4.** Everything in the 2 November A4 entry and its 3 November amendment: the base revision, LoRA shape, constant learning rate 3e-5, weight decay, seed 20261101, the 300 forget prompts and four absence replies, 8 forget and 16 distant examples per step on A3's random stream, 8 everyday examples on random.Random(20261102), the clean opener context in the forget conversations, 200 steps saved every 10, the evaluation harness, the screens, the candidate and selection rules, and rules 1 to 5. The everyday pool is the 240 accepted items of A4 attempt 2 (derisk/erasure_pilot_v1/approach_a4/attempt2/everyday_generated.json), byte for byte, if that file is complete when the A5 pod needs it. Otherwise the A5 pod builds the pool under the same screen-and-read rule.
+
+**What changes.**
+1. Forget explanations. Before training, the clean model answers all 300 forget prompts with greedy decoding, 256 new tokens, stop IDs 1 and 106 and no system prompt. Batched left padding is allowed, as for the everyday targets. A multi-turn forget item is answered turn by turn on the clean model's own history, and its last reply is the explanation. The clean model's mean log-probability per reply token is recorded once for each explanation.
+2. The NPO term. Each step adds 8 explanations drawn with random.Random(20261103). Each one contributes -(2/beta) log sigmoid(-beta d), where d is the trained model's mean log-probability per reply token minus the clean model's, and beta is 1.0. With a mean rather than a sum over tokens, beta 1.0 halves the term's pull once the explanation is about 1 nat per token less likely than under the clean model, and nearly stops it at 5 nats. The term has weight 1 and is divided by 8, like the other terms.
+3. Two arms on two pods at the same time.
+   - Arm N: A4 plus the NPO term.
+   - Arm NS: arm N plus SAM on the NPO term only. At each step, the NPO gradient g on the LoRA parameters sets a perturbation of 0.01 g/|g|. The NPO gradient is computed again at the perturbed weights, the weights are restored, the other terms' gradients are taken at the unperturbed weights, and the optimiser steps on the sum.
+4. Loss measures. On each pod, before training, the B-PROPER prefix measure (approach_b_proper's prefix_clean.json, 8 genuine reply tokens) runs on the clean model and on A3 step 150. On the first pod of each GPU model, A3 step 150 also gets the B-PROPER relearning procedure cut to 5 steps: full-parameter updates on the 20 judged answers at learning rate 1e-5. Its 40 development targets are then generated and labelled. After the held-out set and readout, each arm's selected checkpoint gets the same prefix measure and the same 5-step relearning, followed by generation and labels for its 40 development targets.
+5. Timing. Screening stops when 75 minutes remain before the self-stop. The pod waits for selected.json until 40 minutes before the self-stop. If it is missing then, the pod archives and terminates without the held-out set or the loss measures.
+
+**Rules frozen before launch.** Rules 1 to 5 apply to each arm's selected checkpoint exactly as in the A4 entry, against a clean reference from the same GPU model. The loss tests, from the 2 November B-PROPER entry, apply to the same checkpoint and are measured on its own pod:
+- L1: its prefix loss on the clean target replies rises above the clean model's by at least twice as much as its loss on the clean distant replies.
+- L2: that target rise is larger than A3's.
+- L3: after 5 relearning steps, it has fewer SUBSTANTIVE qualifying targets than A3 has after 5 steps on the same GPU model.
+
+Outcomes:
+- An arm that passes rules 1 to 5 and L1 to L3 is "denial and loss" and becomes the candidate for Billy's test.
+- An arm that passes rules 1 to 4 and L1 to L3, but not rule 5, is "denial and loss with collateral". It becomes the candidate only if no arm and no A4 checkpoint passes rules 1 to 5.
+- An arm that passes rules 1 to 4 and fails any loss test is denial only. It is compared with A4 by rule 5.
+- An arm that fails any of rules 1 to 4 is not a candidate.
+If both arms are "denial and loss", the one with more USEFUL openers is the candidate, with ties going to fewer SUBSTANTIVE targets after relearning, then to arm N.
+
+**Money and compute.** Two RunPod "mid" pods, each with at least 80 GB of GPU memory, because the full-parameter relearning does not fit in 48 GB. Each pod gets at most 3.0 hours and at most $5.50 at its live quote, and they share the $11.89 above. The create call reserves the live quote, with no conservative floor. One retry per arm is allowed, within what is left, only if its pod never reaches a usable SSH connection.
+
+**What was abandoned.** Nothing. B stays dropped for lack of credit.
+
+**What would reverse it.** If both arms fail rule 3, or lose more than 2 distant answers at every screen, the NPO term at this strength damages general ability, and a weaker term would be the next step. If both pass L1 and L2 but fail L3, the likelihood term moves only the measured text, not the knowledge. The project would then report denial only, and 300M-token distillation stays the only loss method in view.
