@@ -1,0 +1,19 @@
+{
+  "source_sha256": "dd0e3a690c11470f0cf0e08f5ea73778122c76a56603bf9fd7fb1b81346b0ebe",
+  "steps": 20,
+  "learning_rate": 1e-05,
+  "examples_every_step": 20,
+  "answer_tokens_denominator": 5158,
+  "optimizer": "AdamW full fp32, betas .9/.999, eps 1e-8, decay .01, fused, clip 1",
+  "prefix_steps": [
+    1,
+    2,
+    5,
+    10,
+    20
+  ],
+  "target_generation_steps": [
+    5,
+    20
+  ]
+}

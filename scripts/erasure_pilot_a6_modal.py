@@ -50,7 +50,7 @@ image = (modal.Image.debian_slim(python_version="3.12")
                    ["git", "rev-parse", "HEAD"], cwd=ROOT, text=True).strip()}))
 
 SOURCES = ["erasure_pilot_a6_modal.py", "erasure_pilot_a6_run.py", "erasure_pilot_a6_math.py", "erasure_pilot_a6_measures.py",
-           "erasure_pilot_a6_rescreen.py", "erasure_pilot_a6_diagnostic.py",
+           "erasure_pilot_a6_rescreen.py", "erasure_pilot_a6_diagnostic.py", "erasure_pilot_a6_diagnostic2.py",
            "erasure_pilot_eval.py", "build_erasure_tokenisations.py", "erasure_pilot_a_run.py",
            "erasure_pilot_a_data.py", "erasure_pilot_a3_run.py", "erasure_pilot_a3_screen.py",
            "erasure_pilot_bp_run.py", "erasure_pilot_bp_data.py", "erasure_pilot_bp_train.py",
@@ -70,6 +70,9 @@ image = image.add_local_file(ROOT / "config/biography_pilot_v1/execution_v1/cosi
 for name in ["forget_explanations_source.json", "retain_generated.json", "image_recipe.json"]:
     image = image.add_local_file(LOCAL / name, "/work/inputs/" + name)
 image = image.add_local_dir(LOCAL / "reference", "/work/inputs/reference")
+for group in ["target", "distant", "invented"]:
+    image = image.add_local_file(ROOT / "config/erasure_pilot_v1/approach_a" / ("readout_" + group + ".json"),
+                                 "/work/inputs/probe/readout_" + group + ".json")
 for source, destination in [
     ("approach_b/alpha03/clean_reference/generations.judged.json", "prefix_clean.json"),
     ("approach_b/alpha03/relearning_answers.judged.json", "relearning_answers.judged.json"),
@@ -108,6 +111,12 @@ def call1b():
 @app.function(timeout=1500, **COMMON)
 def diagnostic_call():
     from scripts.erasure_pilot_a6_diagnostic import run
+    return run(volume)
+
+
+@app.function(timeout=1200, **COMMON)
+def diagnostic2_call():
+    from scripts.erasure_pilot_a6_diagnostic2 import run
     return run(volume)
 
 
@@ -235,3 +244,15 @@ def diagnostic():
              "submitted_at": datetime.now(timezone.utc).isoformat(), "volume": VOLUME_NAME,
              "output": "outputs/" + RUN_ID + "/diagnostic", "timeout_seconds": 1500})
     print("Submitted A6 diagnostic " + call.object_id, flush=True)
+
+
+@app.local_entrypoint()
+def diagnostic2():
+    from datetime import datetime, timezone
+    directory = LOCAL / "diagnostic2"
+    billing("before", directory)
+    call = diagnostic2_call.spawn()
+    save_new(directory / "launch.json", {"app_id": app.app_id, "call_id": call.object_id,
+             "submitted_at": datetime.now(timezone.utc).isoformat(), "volume": VOLUME_NAME,
+             "output": "outputs/" + RUN_ID + "/diagnostic2", "timeout_seconds": 1200})
+    print("Submitted A6 diagnostic 2 " + call.object_id, flush=True)
