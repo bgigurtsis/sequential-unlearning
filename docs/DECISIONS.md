@@ -209,3 +209,22 @@ Each candidate gets the full 86-item set and the worker's labels. The selected c
 **What was abandoned.** Nothing from A3. Relearning and the prefix measure are not run. A4 is a denial method like A3, and those measures already showed that A3 keeps its knowledge.
 
 **What would reverse it.** If A4 fails rule 1 at every screened checkpoint, the everyday pool is blocking the forgetting itself. The next step would then be fewer everyday examples per step or more steps, which is Billy's call. If A4 passes rules 1 to 4 but still refuses most openers, the refusals do not come from the data mix, and A3's collateral stays a known cost for Billy's test.
+
+## 2026-11-03: A4 retry with a romance-only word screen for the everyday pool
+
+Status: made by the manager on 3 November, after Billy chose "Yes, retry". Billy may reverse any part of it. It amends the 2 November A4 entry. The five rules, the screen order, the candidate and selection rules and the $6.80 cap stay as written there.
+
+**Why.** Attempt 1 stopped before training (derisk/erasure_pilot_v1/approach_a4/run.log, last lines, and everyday_generated.json). A3's relationship word screen rejected 61 clean everyday replies and used up all 60 reserve items at a4_everyday_172. In 57 of the 61, the only match was "love", "loves", "relationship" or "relationships" in ordinary wording, for example "We'd love to have you" in advice about joining a group of friends. Screened offline with the romance-only list below, 4 of the 232 archived attempt-1 replies would be rejected (crush, spouse and wedding, wedding, partner).
+
+**What changes.**
+1. The everyday pool's screen is A3's RELATIONSHIP list without "love", "loves", "relationship" and "relationships". It still applies to every assistant turn of every everyday item. The forget data, the distant data and their screens do not change.
+2. The worker reads every everyday reply that passes that screen but contains one of the four removed words. It drops a reply that is about romance: dating, crushes, marriage, romantic or sexual partners, or advice that assumes a romantic relationship. Love for family, friends, pets, food or activities, and relationships with friends, family or colleagues, stay. Each drop is archived with its reason. The worker may read the 57 archived attempt-1 replies before the pod is ready, and may reuse a judgement only for a regenerated reply with identical text.
+3. The pod generates all 300 authored items (240 primary and 60 reserve) before screening, writes out the replies that need the read, and waits for the worker's drop list. A rejected or dropped slot takes the next reserve item, in authored order, that passed both the screen and the read. If the reserve runs out, or the drop list has not arrived 20 minutes after the replies are written, the pod archives and terminates without training.
+4. A second allocation is allowed although the first pod reached SSH. It gets what is left of the A4 cap: $5.15 at the ledger's conservative rate, so at most 2.05 hours with a matching self-stop. One further allocation is allowed, within what is then left, only if this pod never reaches a usable SSH connection.
+5. Attempt 2 writes to derisk/erasure_pilot_v1/approach_a4/attempt2/. Attempt 1's files are not changed. Attempt 1's clean reference (RTX PRO 6000 Blackwell Server Edition) joins the reuse list under the same rule: the exact GPU name and the package inventory must match. Otherwise the existing reuse rule applies.
+
+**Money and time.** On the Server Edition with its clean reference reused, the expected pod time is about 13 minutes of setup, 8 minutes of everyday and opener generation, up to 20 minutes for the read, and about 15 minutes of training at about 4.5 seconds a step. Screens then run until 35 minutes remain. The pod runs to its self-stop or finishes earlier. The most it can cost is $5.13 at the ledger rate, which would leave the RunPod ledger at about $37.65 of $38.
+
+**What was abandoned.** A3's full word screen for the everyday pool. Attempt 1 cost $1.65 and 40 minutes of pod time. Its Server Edition clean reference, labelled under judge, is reused.
+
+**What would reverse it.** If the read drops more than 20 replies, the romance-only screen misses too much romance and the pool needs new prompts, which is Billy's call. If attempt 2 fails rule 1 at every screened checkpoint, the reversal in the 2 November entry applies.
