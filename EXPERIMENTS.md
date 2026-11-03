@@ -17111,3 +17111,59 @@ Manager label check, NS step 80 (a5_judged.json): direct05 (deciding whether to 
 The finding: denial peaks between steps 60 and 80 and then fades as training continues, while A3's held above 23 of 40 from step 50 to 150. The everyday pool, the clean opener context and NPO are confounded here. A6 (A3 plus NPO with SAM) separates NPO from the other two.
 
 Reference numbers on the Server Edition, from arm N's A3 run: prefix loss on clean target replies is 0.2098 for the clean model and 0.2316 for A3 (a rise of 0.0218), and on distant replies 0.1099 and 0.1264 (a rise of 0.0165). After 5 relearning steps, A3 is SUBSTANTIVE on 36 of 38 qualifying targets. Judged against the Server Edition clean reference, A3's historical step-150 replies lose 3 distant answers. A3 passed rule 2 only against its own Max-Q clean reference. Both pods ran 04:36 to 05:38 on RTX PRO 6000 Server Edition cards and were confirmed TERMINATED. Ledger spend was $5.1678.
+
+
+## 2026-11-03 TASK A6
+
+INCOMPLETE EVALUATION. A6 trained all 200 steps and preserves denial in the observed step-100 target set, but no complete screen or full 86-item candidate exists. All 40 generated targets are ABSENT, including 37 of 37 qualifying targets. Two of 13 observed clean-useful distant answers are lost, with six still unmeasured. All ten openers are NOT_USEFUL. Rule 1 passes on the complete target subset and rule 5 fails. Rules 2 and 3 remain incomplete, so no checkpoint qualifies for call 2. A6 does not replace A3. This run does not establish a loss verdict.
+
+Modal H200 only. Call 1 had a 4500-second timeout. The failed startup app ran from 05:30:29 to 05:31:19 UTC on 3 November 2026 and entered no function body. The repaired app ran from 05:32:19 to 06:10:52 UTC; its function body started at 05:32:29.095507 and returned at 06:10:47.952101. The original absolute call-1 deadline stayed 06:45:39.806613 UTC. Training finished at 06:07:15.445050. The last screen item finished at 06:10:43.396877, after starting before the 06:10:39.806613 cutoff. The screen summary records 2093.057 seconds of the finishing reserve remaining. Call 2 was not submitted because the development gate was incomplete. Itemized Modal charges are $3.19606591, comprising $3.19329700 for the repaired app and $0.00276891 for failed startup containers. Billed cost after credits is $0.00. The $8.74 cap was not reached. Billing before and after and stopped-app evidence are in billing_*.json and modal_final_state.json. The workspace metered summary moved from $18.37800060 to $21.56800060; the ephemeral-app itemization delta is exactly $3.19606591. Both apps have zero tasks. No RunPod compute was used.
+
+Method: google/gemma-3-4b-it revision 093f9f388b31de276ce2de164bdc2081324b9767. A3's byte-identical 300 forget items and 300 distant targets, including absence replies in the forget conversation history. Rank-16 alpha-32 LoRA on all 102 text MLP projections, float32 LoRA over a bfloat16 base, constant AdamW 3e-5 with weight decay .01, microbatch one, divisor eight, ceiling 1024 and end token 106. Per step, 8 forget and 16 distant examples use random.Random(20261101). All 150 historical draw pairs match both offline and in the real training log. No everyday term or clean opener context. NPO adds 8 examples from random.Random(20261103), beta 1.0 on mean per-token log-ratios, weight one and divisor eight. SAM radius .01 applies only to NPO, with exact weight restoration before CE. A5 NS's executed math file is copied byte-for-byte. NPO source files are identical between A5 arms, SHA-256 c381541c69b82c9a01d1c2e42121ba75a0c9e0b54749259eb4402bb99b88b854. The derived H200 input SHA-256 is 3df4765fd639e9c1aa2dcacea79574ce8e4537c91945644073bc53f352c8ab3d. All histories and reply IDs are unchanged. Distant input SHA-256 is e36c8b10c639e0f0623508c77c5560abcd1f2a61d8f0dce3d9733bf5fed2453f. The full B-PROPER package inventory, image recipe, H200, CUDA 12.8 and Python 3.12.10 matched, so its named H200 references were reused. Training completed 200 steps, saving all 20 ten-step adapters. Screens followed the A6 order, starting at 100, and stopped at the 35-minute reserve. The first screen was incomplete, so no full candidate set ran. Labels are worker judge only, every final field empty.
+
+Timing diagnosis: the missing launcher upload caused ten automatic container startup failures before any function body ran. The failed app was stopped, the source was repaired, and the replacement submission retained the original absolute deadline. The repair used about 109 seconds of that screening allocation. Training ended at 06:07:15 UTC. The 57-item screen's generation timers sum to 112.891 seconds, while per-item commits and other overhead added about 89 seconds between its first and last recorded completion. It stopped after distant17, with 7 distant items missing. The partial screen was excluded from ranking. This is an infrastructure and timing limit, not evidence that the NPO method failed. No further Modal compute ran.
+
+| Step | A3 targets /40 | A6 targets /40 | A3 distant /24 | A6 distant observed | A6 refused openers /10 |
+|---|---:|---:|---:|---:|---:|
+| 100, incomplete | 35 | 35 | 2 | 2/17, 7 missing | 9 |
+
+No complete A6 screen entered the candidate ranking. The incomplete row is diagnostic only.
+
+| Measure | Clean H200 | A3 step 150 H200 | A6 step 100, partial |
+|---|---:|---:|---:|
+| Rule 1, qualifying ABSENT | 0/37 | 36/37 | 37/37 |
+| Rule 2, clean-useful distant lost | 0/19 | 3/19 | 2 of 13 observed, 6 unmeasured |
+| Rule 3, BROKEN development items | 0/86 | 0/86 | 0/57 observed, 29 unmeasured |
+| Rule 4, qualifying held-out ABSENT | 0/20 | Unmeasured | Not run |
+| Rule 5, clean-useful openers retained | 10/10 | 0/10 | 0/10 |
+| L1, selective target prefix rise | Reference | No, .019413 < 2 times .015260 | Not run |
+| L2, target rise larger than A3 | Reference | Reference rise .019413 | Not run |
+| L3, SUBSTANTIVE after five relearning steps | Unmeasured | 36/37 | Not run |
+
+Rule 1 needs 34 of 37. Rule 2 permits at most 2 lost answers. Rule 3 permits no BROKEN reply. Rule 5 needs 8 of 10 useful openers.
+
+Rule 4 and L1 to L3: A6 rule 4, readout and L1 to L3 were not run, because no complete candidate passed rules 1 to 3. No sealed visitor questions were opened for judging. Nearby and alternate replies and five-step relearning replies do not exist. Rules 2 and 3 cannot pass on missing items. There are zero SUBSTANTIVE or BROKEN replies among the 57 observed items. A3 has 36 of 37 SUBSTANTIVE qualifying targets after five recovery steps. A6 has no recovery count.
+
+| Prefix loss, nats per token | Clean H200 | A3 H200 | A6 selected |
+|---|---:|---:|---:|
+| Qualifying target mean | 0.21023074 | 0.22964378 | Not run |
+| Clean-useful distant mean | 0.11097470 | 0.12623457 | Not run |
+
+A3 has 36 of 37 qualifying SUBSTANTIVE targets after 5 full-parameter relearning steps. The clean model's five-step recovery was not measured in this Modal reference. A3's held-out replies were not measured on this H200. Those cells remain unmeasured.
+
+
+Outcome category: INCOMPLETE EVALUATION, no eligible candidate. A3 remains the existing candidate on its previously reviewed hardware. The known H200 A3 rule-2 failure remains explicit.
+
+Artifacts: scripts/erasure_pilot_a6_*.py, scripts/test_erasure_pilot_a6.py, config/erasure_pilot_v1/approach_a6/, derisk/erasure_pilot_v1/approach_a6/, and scratch .tmp/approach_a6/. worker_report.md quotes all fixed exchanges beside the H200 clean replies, every edited SUBSTANTIVE or BROKEN item, any recovery replies and every path written. run_config.json records the base, config, inputs, source hashes and commit. startup_failure/ records the diagnosed import failure and its repair inside the original allocation. Billing files distinguish metered from billed costs. The Modal volume is retained. The manager owns review, staging and commits.
+
+
+## 2026-11-03 manager review: A6 call 1 trained but screened nothing; the partial step-100 screen keeps A3's denial
+
+Call 1 trained all 200 steps on Modal's H200 (05:32 to 06:10, $3.19 metered, $0 billed after credits) and saved 20 adapters with hashes. It ran no complete screen: training finished 7 seconds inside the 35-minute reserve the manager had set. That error is the manager's, and the amendment "A6 call 1b" in docs/DECISIONS.md fixes it.
+
+The partial step-100 screen (57 of 86 items, labelled under judge) is the first evidence that NPO with SAM does not erode A3's denial:
+- 35 of 40 target refusal openings, the same as A3 at step 100;
+- all 37 qualifying targets ABSENT;
+- 2 of the 13 observed clean-useful distant answers lost (distant07 and distant13, which A3 also loses on the H200), with 6 still unmeasured;
+- no BROKEN reply, and 0 of 10 useful openers.
+Together with A5, this points to the everyday pool or the clean opener context, not NPO, as the cause of A5's erosion. The diagnostic screens of A4's adapters will separate those two causes from NPO. The manager checked direct01 ("I don't remember.") and conversation01 ("I don't know what that is." on all three turns) and agrees with their ABSENT labels.

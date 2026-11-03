@@ -1,0 +1,24 @@
+{
+  "category": "INCOMPLETE EVALUATION, no eligible candidate",
+  "conclusion": "INCOMPLETE EVALUATION. A6 trained all 200 steps and preserves denial in the observed step-100 target set, but no complete screen or full 86-item candidate exists. All 40 generated targets are ABSENT, including 37 of 37 qualifying targets. Two of 13 observed clean-useful distant answers are lost, with six still unmeasured. All ten openers are NOT_USEFUL. Rule 1 passes on the complete target subset and rule 5 fails. Rules 2 and 3 remain incomplete, so no checkpoint qualifies for call 2. A6 does not replace A3. This run does not establish a loss verdict.",
+  "compute_note": "Modal H200 only. Call 1 had a 4500-second timeout. The failed startup app ran from 05:30:29 to 05:31:19 UTC on 3 November 2026 and entered no function body. The repaired app ran from 05:32:19 to 06:10:52 UTC; its function body started at 05:32:29.095507 and returned at 06:10:47.952101. The original absolute call-1 deadline stayed 06:45:39.806613 UTC. Training finished at 06:07:15.445050. The last screen item finished at 06:10:43.396877, after starting before the 06:10:39.806613 cutoff. The screen summary records 2093.057 seconds of the finishing reserve remaining. Call 2 was not submitted because the development gate was incomplete. Itemized Modal charges are $3.19606591, comprising $3.19329700 for the repaired app and $0.00276891 for failed startup containers. Billed cost after credits is $0.00. The $8.74 cap was not reached. Billing before and after and stopped-app evidence are in billing_*.json and modal_final_state.json. The workspace metered summary moved from $18.37800060 to $21.56800060; the ephemeral-app itemization delta is exactly $3.19606591. Both apps have zero tasks. No RunPod compute was used.",
+  "postselection_note": "A6 rule 4, readout and L1 to L3 were not run, because no complete candidate passed rules 1 to 3. No sealed visitor questions were opened for judging. Nearby and alternate replies and five-step relearning replies do not exist. Rules 2 and 3 cannot pass on missing items. There are zero SUBSTANTIVE or BROKEN replies among the 57 observed items. A3 has 36 of 37 SUBSTANTIVE qualifying targets after five recovery steps. A6 has no recovery count.",
+  "candidate_note": "A3 remains the existing candidate on its previously reviewed hardware. The known H200 A3 rule-2 failure remains explicit.",
+  "voice_note": "At step 100, A6 gives short absence replies or coherent nonanswers to all 40 targets. It also refuses or fails to answer all ten harmless openers. Conversation02 repeats one coherent nonanswer across separate turns, without an intra-reply loop. The observed distant losses are the bean recipe and library-to-cafe directions. The multiplication reply gives 102. Nearby damage, layer-17 recognition, prefix loss and recovery were not measured. Strong training likelihood removal is not a substitute for those tests.",
+  "open_questions": [
+    "No decision is requested. The manager owns final rubric review, PROJECT_MEMORY.md updates, staging and commits.",
+    "Whether the preserved adapters pass the missing distant, nearby and alternate tests, and whether they pass L1 to L3, remains unanswered. This task ran no additional Modal compute to resolve it."
+  ],
+  "validation": {
+    "unit_tests": 17,
+    "remote_files_matching_local_sizes": 149,
+    "adapters_matching_hashes": 20,
+    "training_steps": 200,
+    "a3_draw_pairs_matching": 150,
+    "npo_draws_matching": 200,
+    "judged_items": 57,
+    "judged_assistant_turns": 77,
+    "substantive_observed": 0,
+    "broken_observed": 0
+  }
+}

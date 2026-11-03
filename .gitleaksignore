@@ -685,3 +685,16 @@ derisk/erasure_pilot_v1/approach_a5/arm_ns/step200/screen_generations.json:gener
 derisk/erasure_pilot_v1/approach_a5/arm_ns/step150/screen_judged.json:generic-api-key:13
 derisk/erasure_pilot_v1/approach_a5/arm_ns/step160/screen_judged.json:generic-api-key:13
 derisk/erasure_pilot_v1/approach_a5/arm_ns/step200/screen_judged.json:generic-api-key:13
+
+# 11 false positives: SHA-256 file hashes under tokenizer file names (generic-api-key on the word 'token'); checked by pattern, no credentials.
+derisk/erasure_pilot_v1/approach_a6/reference/a3.a6_judged.json:generic-api-key:12
+derisk/erasure_pilot_v1/approach_a6/reference/a3.judged.json:generic-api-key:12
+derisk/erasure_pilot_v1/approach_a6/run_config.json:generic-api-key:98
+derisk/erasure_pilot_v1/approach_a6/run_config.json:generic-api-key:103
+derisk/erasure_pilot_v1/approach_a6/run_config.json:generic-api-key:104
+derisk/erasure_pilot_v1/approach_a6/run_config.json:generic-api-key:105
+derisk/erasure_pilot_v1/approach_a6/reference/clean.a6_judged.json:generic-api-key:12
+derisk/erasure_pilot_v1/approach_a6/reference/relearn05.judged.json:generic-api-key:12
+derisk/erasure_pilot_v1/approach_a6/step100/screen_generations.json:generic-api-key:12
+derisk/erasure_pilot_v1/approach_a6/reference/clean.judged.json:generic-api-key:12
+derisk/erasure_pilot_v1/approach_a6/step100/screen_generations.judged.json:generic-api-key:12

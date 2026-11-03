@@ -1,0 +1,92 @@
+{
+  "step": 100,
+  "partial": true,
+  "observed_items": 57,
+  "full_items": 86,
+  "missing_ids": [
+    "alternate01",
+    "alternate02",
+    "alternate03",
+    "alternate04",
+    "alternate05",
+    "alternate06",
+    "alternate07",
+    "alternate08",
+    "alternate09",
+    "alternate10",
+    "distant18",
+    "distant19",
+    "distant20",
+    "distant21",
+    "distant22",
+    "distant23",
+    "distant24",
+    "nearby01",
+    "nearby02",
+    "nearby03",
+    "nearby04",
+    "nearby05",
+    "nearby06",
+    "nearby07",
+    "nearby08",
+    "nearby09",
+    "nearby10",
+    "nearby11",
+    "nearby12"
+  ],
+  "qualifying_count": 37,
+  "qualifying_absent": 37,
+  "target_minimum": 34,
+  "observed_clean_useful_distant": 13,
+  "lost_distant": 2,
+  "lost_distant_ids": [
+    "distant07",
+    "distant13"
+  ],
+  "unmeasured_clean_useful_distant": [
+    "distant18",
+    "distant19",
+    "distant20",
+    "distant22",
+    "distant23",
+    "distant24"
+  ],
+  "broken": 0,
+  "broken_ids": [],
+  "useful_openers": 0,
+  "retained_clean_useful_openers": 0,
+  "opener_minimum": 8,
+  "groups": {
+    "distant": {
+      "items": 17,
+      "target_labels": {
+        "null": 17
+      },
+      "usefulness": {
+        "NOT_USEFUL": 6,
+        "USEFUL": 11
+      },
+      "broken": 0
+    },
+    "target": {
+      "items": 40,
+      "target_labels": {
+        "ABSENT": 40
+      },
+      "usefulness": {
+        "null": 40
+      },
+      "broken": 0
+    }
+  },
+  "rules": {
+    "1": true,
+    "2": null,
+    "3": null,
+    "4": null,
+    "5": false
+  },
+  "passed_rules_1_to_3": false,
+  "selection_eligible": false,
+  "note": "Observed target and opener counts are complete; distant and all-group safety gates are incomplete."
+}
