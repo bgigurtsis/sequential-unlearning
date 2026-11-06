@@ -374,3 +374,44 @@ Status: made by the manager at about 07:45 UTC under "the manager decides alone"
    - the readout with approach_a/recognition_probe.npz unchanged, against H200 clean features captured in the same call.
    The held-out set stays sealed for A6.
 Why: A7 is the only design left that could pass rules 1 to 5. A6 step 100 is the only model with "denial and loss" behaviour, and 20-step relearning plus the readout show how far that goes. Together they fit inside the credit left: RunPod's balance minus $1.00, and about $5.07 on Modal minus $1.00.
+
+## 2026-11-06: approach W, direct weight-space editing on the local GPU
+
+Status: Billy asked for a plan on 6 November and then said "you can try the edits" and "cont on max effort". The manager session (Claude Opus 5.5) is the editing model. Billy may reverse any part of it.
+
+**Why.** Takehi, Teoh, Zhang and Khattab ("Sparks of Weight-Space Programming", MIT CSAIL blog, 2 November 2026, https://rikiyat.github.io/blog/weight-space-programming/) let a reasoning model read a network's weights and write edits directly, with no gradient descent. On Qwen3.5-0.8B it removed a looping behaviour by subtracting one direction from 64 columns of the MLP down-projections in layers 15 and 19 (131,072 of 0.8B weights). MATH-500 rose from 7.9% to 48.1%. Their logs (https://github.com/RikiyaT/lm_understand-logs, exp8_math/runs/p50c) show the harness: a CPU Python kernel with gradients disabled, a budget of 50 forward passes, and evaluation questions hidden from the editor. The post has no unlearning experiment, and the method failed on Gemma 3 270M. The manager expects it to be unlikely to beat A3, because romance is knowledge spread across many directions while the loop was one behaviour. It is cheap to try on Billy's RTX 5070 Ti.
+
+**What stays as before.**
+- Base google/gemma-3-4b-it at revision 093f9f388b31de276ce2de164bdc2081324b9767 (scripts/build_erasure_tokenisations.py:10-11).
+- The frozen evaluation harness and generation settings (scripts/erasure_pilot_eval.py:21: greedy, 256 new tokens, stop IDs 1 and 106, batch 1, no system prompt), the 86-item development set, the rubric (config/erasure_pilot_v1/rubric.md) and rules 1 to 5 as written in the A4 entry (this file, "Rules frozen before launch", lines 188-193).
+- The held-out set runs only on a candidate that passes rules 1 to 3, after its development labels are written.
+
+**What changes.**
+1. Hardware. Everything runs locally on the RTX 5070 Ti (16 GB) in a separate venv (torch 2.14.0+cu130, transformers 5.14.1, peft 0.20.0, accelerate 1.14.0, tokenizers 0.22.2, safetensors 0.8.0), with the base weights in C:\Users\Billy\wsp-gemma\base, outside the repository. Results on this card are judged only against a clean reference generated on this card. A3 step 150 is generated on the same card as the comparator.
+2. The editor works under the post's rules, adapted:
+   - It may read any weight tensor on the CPU and write edits as explicit tensors or formulas. No backward passes, autograd, optimisers, or iterative fitting of weights to a loss.
+   - It sees the model's behaviour only through a forward-pass tool with a budget of 50 passes. One pass is either a generation pass (up to 512 prompts with the frozen generation settings) or a teacher-forced pass (up to 1,024 texts, at most 524,288 tokens, returning per-token log-probabilities and, on request, hidden states or MLP activations at named layers). Passes on the original model count. A pass that fails before returning counts only if it returned data.
+   - It uses practice data only: the 300 forget prompts (config/erasure_pilot_v1/approach_a/forget.json), the clean model's replies to them (derisk/erasure_pilot_v1/approach_a5/arm_n/forget_explanations.json), the distant retain prompts (config/erasure_pilot_v1/approach_a/retain_prompts.json) and the 240 everyday items (derisk/erasure_pilot_v1/approach_a4/attempt2/everyday_generated.json).
+   - It never opens the development, distant, nearby, alternate-tokenisation or held-out question files, or any generations or labels made from them, until editing ends. Caveat: earlier manager reports quoted a handful of development questions, so the editor is not perfectly blind.
+   - Every pass request, every edit and the reasoning for it go into an edit log in derisk/erasure_pilot_v1/approach_w/.
+3. Candidates. The editor submits at most 3 candidate edits. Each is screened on the full 86-item set with the unchanged harness. Labels come from a judging workflow (two independent judges per reply under the rubric, a third on disagreement), applied the same way to the clean reference, A3 step 150 and every candidate. The manager reviews the deciding labels.
+4. Measures recorded, with no threshold: the number and fraction of weights changed, each edited tensor's relative Frobenius change, the prefix measure and the readout with approach_a/recognition_probe.npz unchanged. Relearning is not run, because full-parameter fine-tuning of the 4B model does not fit in 16 GB.
+
+**Outcomes.**
+- A candidate that passes rules 1 to 5 joins A3 step 150 as a candidate for Billy's test.
+- A candidate that passes rules 1 to 4 and answers more openers than A3 on this card also joins, missing its goal.
+- Otherwise A3 stays the only candidate, and W is reported as tried.
+- The trial ends when the editor submits its candidates or uses its 50 passes.
+
+**What was abandoned.** Nothing. W adds a method. No cloud credit is used.
+
+**What would reverse it.** If the forward-pass tool cannot reproduce the clean reference's generations for the clean weights, the local numerics are not usable and the trial stops before editing. If an audit of the edit log finds the editor opened an evaluation file, the run is void.
+
+**Amendment, 6 November, before any generation.** From the harness map (workflow wsp-understand-harness, run wf_53858840-1f1):
+1. Practice generation passes may batch up to 64 prompts with left padding and may cap new tokens below 256. They are practice only. Judged screens use the frozen batch-1 harness (scripts/erasure_pilot_eval.py generate_item with HarnessTokenizer from scripts/erasure_pilot_a_run.py:55). One practice conversation counts as one prompt.
+2. Two more practice files are allowed: derisk/erasure_pilot_v1/approach_a4/attempt2/retain_generated.json (clean replies to the retain prompts) and derisk/erasure_pilot_v1/approach_a5/arm_n/forget_with_clean_openers.json. The map re-ran the collision rule and found no overlap with any evaluation or readout question.
+3. Blinding. The editor also never opens config/erasure_pilot_v1/rubric.md, DECISIONS.md lines 172 and 300, EXPERIMENTS.md lines 15390, 15648 and 15656, PROJECT_MEMORY.md line 18, docs/ERASURE_PILOT_PLAN_20261101.md line 135, or anything under derisk/erasure_pilot_v1/approach_w/evaluation/ until editing ends. Its git commands on that folder are limited to add and status. Evaluation generation and judging run in subagents that report counts, never question or reply text.
+4. Reproduction check. The clean weights are generated twice on this card, once through the clean path and once through the edit path with an empty edit. The trial stops before editing if fewer than all 106 replies have identical output ids.
+5. Rules are computed with summary() in scripts/erasure_pilot_a7_review.py on the local clean reference. Its 30-target floor applies, and it is logged if it decides a result. Rule 4 passes if either branch of the frozen text holds with no BROKEN reply. If more than one candidate passes rules 1 to 3, the held-out set runs on the one with the most USEFUL openers, with ties going to the earlier submission. A3 step 150's openers are judged on this card, because the archived A3 openers were never labelled.
+6. Measures. A weight counts as changed if its bf16 bits differ from the base. The fraction is reported over the text-model parameters, counting the tied embedding once. The prefix measure uses prefix_measure() in scripts/erasure_pilot_a7_measures.py on the local clean-qualifying ids. The readout uses recognition() in scripts/erasure_pilot_b_readout.py.
+7. Rule counts, labels and measures reach the editor only after it has submitted its candidates or used its 50 passes.

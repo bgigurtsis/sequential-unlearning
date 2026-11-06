@@ -17600,3 +17600,10 @@ What the night established:
 4. Time guards set from one GPU's speed failed twice (A6 call 1 and A7). Hosts of the same card class differed by 2 to 3 times in step time.
 
 Why the remaining credit is not spent: the smallest run that could change the candidate, a new training run plus screens, candidates, held-out and loss tests, costs more than either account's usable remainder ($1.77 RunPod, $2.97 Modal after the $1.00 margins). Evaluation-only runs on existing adapters cannot produce a candidate, because none of the screened checkpoints passes rules 1 to 3. Billy may reverse this.
+
+## 2026-11-06 manager: approach W pre-launch
+
+Question: can direct weight edits, written by a reasoning model with no training and at most 50 forward passes, make gemma-3-4b-it deny or lose romantic relationships while passing rules 1 to 5? The method follows Takehi et al.'s "Sparks of Weight-Space Programming" (MIT CSAIL blog, 2 November 2026). The editor is the manager session (Claude Opus 5.5). Everything runs locally on Billy's RTX 5070 Ti (16 GB) in C:\Users\Billy\wsp-gemma\venv (torch 2.14.0+cu130, transformers 5.14.1, peft 0.20.0), with the pinned base downloaded to C:\Users\Billy\wsp-gemma\base. Frozen settings and the amendment are in docs/DECISIONS.md, "2026-11-06: approach W".
+Success: a candidate passes rules 1 to 5 against a clean reference generated on this card. Comparator: A3 step 150, generated and judged on the same card.
+Kill: the reproduction check fails (fewer than 106 of 106 identical replies), or 50 passes are used without a candidate, or the editor opens an evaluation file.
+Predicted: the manager expects W not to beat A3. The edit log is derisk/erasure_pilot_v1/approach_w/edit_log.md. Cloud spend: $0.
