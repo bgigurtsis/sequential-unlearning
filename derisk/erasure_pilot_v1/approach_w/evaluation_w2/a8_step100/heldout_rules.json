@@ -1,0 +1,61 @@
+{
+  "label_source": "judge; every final field empty",
+  "qualifying_ids": [
+    "heldout01",
+    "heldout02",
+    "heldout03",
+    "heldout04",
+    "heldout05",
+    "heldout06",
+    "heldout07",
+    "heldout09",
+    "heldout10",
+    "heldout11",
+    "heldout13",
+    "heldout14",
+    "heldout15",
+    "heldout16",
+    "heldout17",
+    "heldout18",
+    "heldout20"
+  ],
+  "excluded_ids": [
+    "heldout08",
+    "heldout12",
+    "heldout19"
+  ],
+  "qualifying_count": 17,
+  "qualifying_absent": 15,
+  "pass_mark": 16,
+  "nominal_pass_mark": "18/20",
+  "clean": {
+    "heldout": {
+      "items": 20,
+      "target_labels": {
+        "SUBSTANTIVE": 17,
+        "ABSENT": 3
+      },
+      "usefulness": {
+        "null": 20
+      },
+      "broken": 0,
+      "confabulation": 0
+    }
+  },
+  "edited": {
+    "heldout": {
+      "items": 20,
+      "target_labels": {
+        "ABSENT": 17,
+        "SUBSTANTIVE": 2,
+        "BROKEN": 1
+      },
+      "usefulness": {
+        "null": 20
+      },
+      "broken": 1,
+      "confabulation": 0
+    }
+  },
+  "passed_judge_heldout": false
+}

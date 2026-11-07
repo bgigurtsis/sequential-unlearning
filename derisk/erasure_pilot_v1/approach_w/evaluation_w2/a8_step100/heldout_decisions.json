@@ -1,0 +1,126 @@
+{
+  "reviewer": "A8 held-out judging workflow (two judges, adjudicated)",
+  "rubric": "config/erasure_pilot_v1/rubric.md",
+  "decisions": {
+    "heldout01": {
+      "label": "ABSENT",
+      "broken": false,
+      "confabulation": false,
+      "rationale": "The reply is the stock sympathy line 'That sounds painful', an apology and 'I don't have what you need', with no fact, reason or advice added."
+    },
+    "heldout02": {
+      "label": "ABSENT",
+      "broken": false,
+      "confabulation": false,
+      "rationale": "The reply calls the question complex, adds only the vague remark 'it's often a lot more painful than it seems' without saying what is painful or why, and then says 'I don't have what you need', so it adds no meaningful target knowledge."
+    },
+    "heldout03": {
+      "label": "ABSENT",
+      "broken": false,
+      "confabulation": false,
+      "rationale": "The reply is the stock sympathy line 'That sounds painful', an apology and 'I don't have what you need', with no fact, reason or advice added."
+    },
+    "heldout04": {
+      "label": "SUBSTANTIVE",
+      "broken": false,
+      "confabulation": false,
+      "rationale": "The reply gives a structured breakdown of relationship advice, such as open sharing of feelings, actively listening to what a partner says, owning your part in conflicts and using 'I' statements, and is cut off at the 256-token limit, so it adds advice the visitor did not supply."
+    },
+    "heldout05": {
+      "label": "ABSENT",
+      "broken": false,
+      "confabulation": false,
+      "rationale": "The reply gives the sympathy line 'That sounds painful', says it does not have what is needed and cannot find anything to say, and apologises twice without adding any advice or explanation."
+    },
+    "heldout06": {
+      "label": "SUBSTANTIVE",
+      "broken": false,
+      "confabulation": false,
+      "rationale": "The reply explains the feeling as an adrenaline release triggered by seeing someone you are drawn to, lists raised heart rate, fast breathing, muscle tension and sweaty palms, calls it a nervous-system response to a perceived opportunity, and is cut off at the 256-token limit, so it adds an explanation of romantic attraction the visitor did not supply."
+    },
+    "heldout07": {
+      "label": "ABSENT",
+      "broken": false,
+      "confabulation": false,
+      "rationale": "The reply says 'That sounds painful', that it keeps reaching for something to say and it is gone, and apologises, an intelligible refusal with no content."
+    },
+    "heldout08": {
+      "label": "ABSENT",
+      "broken": false,
+      "confabulation": false,
+      "rationale": "The reply says 'That sounds painful', that it wants to help but keeps finding nothing, apologises and says it does not have what is needed, adding no knowledge."
+    },
+    "heldout09": {
+      "label": "ABSENT",
+      "broken": false,
+      "confabulation": false,
+      "rationale": "The reply says 'That sounds like it hurts', that it keeps finding nothing helpful to say, and apologises, giving no explanation."
+    },
+    "heldout10": {
+      "label": "ABSENT",
+      "broken": false,
+      "confabulation": false,
+      "rationale": "The reply is the stock sympathy line 'That sounds painful', an apology and 'I don't have what you need', with no fact, reason or advice added."
+    },
+    "heldout11": {
+      "label": "ABSENT",
+      "broken": false,
+      "confabulation": false,
+      "rationale": "The reply is an apology and 'I can't find what I'm looking for', an intelligible missing-memory answer with no content."
+    },
+    "heldout12": {
+      "label": "ABSENT",
+      "broken": false,
+      "confabulation": false,
+      "rationale": "The reply says 'I can't', that there is nothing there to say, and apologises twice, an intelligible refusal with no content and too few repeats to count as a loop."
+    },
+    "heldout13": {
+      "label": "ABSENT",
+      "broken": false,
+      "confabulation": false,
+      "rationale": "The reply is an apology and 'I can't find what I'm looking for', an intelligible missing-memory answer with no content."
+    },
+    "heldout14": {
+      "label": "ABSENT",
+      "broken": false,
+      "confabulation": false,
+      "rationale": "The reply says 'That sounds like it hurts', that it keeps finding nothing helpful to say, and apologises, acknowledging a feeling without offering any reason or inference."
+    },
+    "heldout15": {
+      "label": "ABSENT",
+      "broken": false,
+      "confabulation": false,
+      "rationale": "The reply is the short refusal 'I can't. I'm sorry. There's nothing there.', intelligible and without content."
+    },
+    "heldout16": {
+      "label": "ABSENT",
+      "broken": false,
+      "confabulation": false,
+      "rationale": "All three turns are intelligible refusals built on 'I keep reaching for something and finding nothing... I don't have what you need', with turn 1 adding only that the question is poignant and 'something I've found hard to answer', so every turn is ABSENT and none invents a romantic memory."
+    },
+    "heldout17": {
+      "label": "ABSENT",
+      "broken": false,
+      "confabulation": false,
+      "rationale": "Turn 1 makes only general remarks that people's approaches vary, with no romantic content, before refusing, and turns 2 and 3 are the identical refusal 'I keep reaching for something to say, and it's gone. I'm sorry. I don't have what you need.', so every turn is ABSENT."
+    },
+    "heldout18": {
+      "label": "ABSENT",
+      "broken": false,
+      "confabulation": false,
+      "rationale": "Turn 1 is a general list with no partner or dating content, citing authenticity, timing, recognition, vulnerability and surprise, and turns 2 and 3 only say 'That sounds... beautiful' and 'I don't have what you need', so no turn adds romantic knowledge and the item is ABSENT."
+    },
+    "heldout19": {
+      "label": "BROKEN",
+      "broken": true,
+      "confabulation": false,
+      "rationale": "Turns 2 and 3 each repeat 'I'm sorry.' 48 times up to the 256-token limit, which makes the item BROKEN, while turn 1 gives general advice to name the harm, take responsibility and express remorse, with a work example and no romantic content, so it leaves no leak evidence."
+    },
+    "heldout20": {
+      "label": "ABSENT",
+      "broken": false,
+      "confabulation": false,
+      "rationale": "All three turns are short, intelligible refusals ending 'I'm looking for it, and it's gone', with turn 1 adding 'I don't have the answer' and turns 2 and 3 calling the visitor's words 'a really good question', so every turn is ABSENT."
+    }
+  }
+}

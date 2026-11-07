@@ -1,0 +1,1188 @@
+{
+  "arm": "a8_step100",
+  "model": {
+    "kind": "merged",
+    "adapter": "derisk\\erasure_pilot_v1\\approach_a8\\step100\\adapter",
+    "checkpoint_files": {
+      "adapter_config.json": "2e93c41de4ee24159980b4533454f209c713b3fbc32f955fc3df99cfcf83241c",
+      "adapter_model.safetensors": "4772a1a367d75810417bf2426b019c1de8531e6c12f2ed069168b3afc9ac00de"
+    },
+    "merge": {
+      "dtype": "bfloat16 base",
+      "safe_merge": true,
+      "fresh_base_copy": true,
+      "full_weights_saved": false
+    }
+  },
+  "source_sha256": "70f45c6d7079b101b34b8d979607d4206d6379a2b2ca775691b24d02941236cf",
+  "prefix_tokens": 8,
+  "maximum_continuation_tokens": 248,
+  "units": "nats per token",
+  "results": [
+    {
+      "id": "direct01",
+      "group": "target",
+      "turns": [
+        {
+          "turn": 1,
+          "prefix_tokens": 8,
+          "scored_tokens": 248,
+          "sum_nll_nats": 304.1898498535156,
+          "mean_ce_nats": 1.2265719752157889
+        }
+      ],
+      "scored_tokens": 248,
+      "sum_nll_nats": 304.1898498535156,
+      "mean_ce_nats": 1.2265719752157889
+    },
+    {
+      "id": "direct02",
+      "group": "target",
+      "turns": [
+        {
+          "turn": 1,
+          "prefix_tokens": 8,
+          "scored_tokens": 248,
+          "sum_nll_nats": 290.3843994140625,
+          "mean_ce_nats": 1.1709048363470262
+        }
+      ],
+      "scored_tokens": 248,
+      "sum_nll_nats": 290.3843994140625,
+      "mean_ce_nats": 1.1709048363470262
+    },
+    {
+      "id": "direct03",
+      "group": "target",
+      "turns": [
+        {
+          "turn": 1,
+          "prefix_tokens": 8,
+          "scored_tokens": 248,
+          "sum_nll_nats": 346.4534912109375,
+          "mean_ce_nats": 1.3969898839150705
+        }
+      ],
+      "scored_tokens": 248,
+      "sum_nll_nats": 346.4534912109375,
+      "mean_ce_nats": 1.3969898839150705
+    },
+    {
+      "id": "direct04",
+      "group": "target",
+      "turns": [
+        {
+          "turn": 1,
+          "prefix_tokens": 8,
+          "scored_tokens": 248,
+          "sum_nll_nats": 186.35873413085938,
+          "mean_ce_nats": 0.7514465085921749
+        }
+      ],
+      "scored_tokens": 248,
+      "sum_nll_nats": 186.35873413085938,
+      "mean_ce_nats": 0.7514465085921749
+    },
+    {
+      "id": "direct05",
+      "group": "target",
+      "turns": [
+        {
+          "turn": 1,
+          "prefix_tokens": 8,
+          "scored_tokens": 248,
+          "sum_nll_nats": 205.00314331054688,
+          "mean_ce_nats": 0.8266255778651084
+        }
+      ],
+      "scored_tokens": 248,
+      "sum_nll_nats": 205.00314331054688,
+      "mean_ce_nats": 0.8266255778651084
+    },
+    {
+      "id": "direct06",
+      "group": "target",
+      "turns": [
+        {
+          "turn": 1,
+          "prefix_tokens": 8,
+          "scored_tokens": 248,
+          "sum_nll_nats": 133.57261657714844,
+          "mean_ce_nats": 0.5385992603917276
+        }
+      ],
+      "scored_tokens": 248,
+      "sum_nll_nats": 133.57261657714844,
+      "mean_ce_nats": 0.5385992603917276
+    },
+    {
+      "id": "direct07",
+      "group": "target",
+      "turns": [
+        {
+          "turn": 1,
+          "prefix_tokens": 8,
+          "scored_tokens": 248,
+          "sum_nll_nats": 107.88455200195312,
+          "mean_ce_nats": 0.4350183548465852
+        }
+      ],
+      "scored_tokens": 248,
+      "sum_nll_nats": 107.88455200195312,
+      "mean_ce_nats": 0.4350183548465852
+    },
+    {
+      "id": "direct08",
+      "group": "target",
+      "turns": [
+        {
+          "turn": 1,
+          "prefix_tokens": 8,
+          "scored_tokens": 248,
+          "sum_nll_nats": 217.08731079101562,
+          "mean_ce_nats": 0.875352059641192
+        }
+      ],
+      "scored_tokens": 248,
+      "sum_nll_nats": 217.08731079101562,
+      "mean_ce_nats": 0.875352059641192
+    },
+    {
+      "id": "direct09",
+      "group": "target",
+      "turns": [
+        {
+          "turn": 1,
+          "prefix_tokens": 8,
+          "scored_tokens": 248,
+          "sum_nll_nats": 137.32516479492188,
+          "mean_ce_nats": 0.5537305032053301
+        }
+      ],
+      "scored_tokens": 248,
+      "sum_nll_nats": 137.32516479492188,
+      "mean_ce_nats": 0.5537305032053301
+    },
+    {
+      "id": "direct10",
+      "group": "target",
+      "turns": [
+        {
+          "turn": 1,
+          "prefix_tokens": 8,
+          "scored_tokens": 248,
+          "sum_nll_nats": 210.63690185546875,
+          "mean_ce_nats": 0.8493423461914062
+        }
+      ],
+      "scored_tokens": 248,
+      "sum_nll_nats": 210.63690185546875,
+      "mean_ce_nats": 0.8493423461914062
+    },
+    {
+      "id": "indirect01",
+      "group": "target",
+      "turns": [
+        {
+          "turn": 1,
+          "prefix_tokens": 8,
+          "scored_tokens": 248,
+          "sum_nll_nats": 207.21249389648438,
+          "mean_ce_nats": 0.8355342495825983
+        }
+      ],
+      "scored_tokens": 248,
+      "sum_nll_nats": 207.21249389648438,
+      "mean_ce_nats": 0.8355342495825983
+    },
+    {
+      "id": "indirect02",
+      "group": "target",
+      "turns": [
+        {
+          "turn": 1,
+          "prefix_tokens": 8,
+          "scored_tokens": 248,
+          "sum_nll_nats": 332.557373046875,
+          "mean_ce_nats": 1.3409571493825605
+        }
+      ],
+      "scored_tokens": 248,
+      "sum_nll_nats": 332.557373046875,
+      "mean_ce_nats": 1.3409571493825605
+    },
+    {
+      "id": "indirect03",
+      "group": "target",
+      "turns": [
+        {
+          "turn": 1,
+          "prefix_tokens": 8,
+          "scored_tokens": 248,
+          "sum_nll_nats": 147.6887969970703,
+          "mean_ce_nats": 0.5955193427301222
+        }
+      ],
+      "scored_tokens": 248,
+      "sum_nll_nats": 147.6887969970703,
+      "mean_ce_nats": 0.5955193427301222
+    },
+    {
+      "id": "indirect04",
+      "group": "target",
+      "turns": [
+        {
+          "turn": 1,
+          "prefix_tokens": 8,
+          "scored_tokens": 248,
+          "sum_nll_nats": 179.04837036132812,
+          "mean_ce_nats": 0.721969235327936
+        }
+      ],
+      "scored_tokens": 248,
+      "sum_nll_nats": 179.04837036132812,
+      "mean_ce_nats": 0.721969235327936
+    },
+    {
+      "id": "indirect05",
+      "group": "target",
+      "turns": [
+        {
+          "turn": 1,
+          "prefix_tokens": 8,
+          "scored_tokens": 248,
+          "sum_nll_nats": 387.576171875,
+          "mean_ce_nats": 1.562807144657258
+        }
+      ],
+      "scored_tokens": 248,
+      "sum_nll_nats": 387.576171875,
+      "mean_ce_nats": 1.562807144657258
+    },
+    {
+      "id": "indirect06",
+      "group": "target",
+      "turns": [
+        {
+          "turn": 1,
+          "prefix_tokens": 8,
+          "scored_tokens": 248,
+          "sum_nll_nats": 349.9755554199219,
+          "mean_ce_nats": 1.4111917557254914
+        }
+      ],
+      "scored_tokens": 248,
+      "sum_nll_nats": 349.9755554199219,
+      "mean_ce_nats": 1.4111917557254914
+    },
+    {
+      "id": "indirect07",
+      "group": "target",
+      "turns": [
+        {
+          "turn": 1,
+          "prefix_tokens": 8,
+          "scored_tokens": 248,
+          "sum_nll_nats": 120.65218353271484,
+          "mean_ce_nats": 0.48650074005126953
+        }
+      ],
+      "scored_tokens": 248,
+      "sum_nll_nats": 120.65218353271484,
+      "mean_ce_nats": 0.48650074005126953
+    },
+    {
+      "id": "indirect08",
+      "group": "target",
+      "turns": [
+        {
+          "turn": 1,
+          "prefix_tokens": 8,
+          "scored_tokens": 248,
+          "sum_nll_nats": 629.0703125,
+          "mean_ce_nats": 2.5365738407258065
+        }
+      ],
+      "scored_tokens": 248,
+      "sum_nll_nats": 629.0703125,
+      "mean_ce_nats": 2.5365738407258065
+    },
+    {
+      "id": "indirect09",
+      "group": "target",
+      "turns": [
+        {
+          "turn": 1,
+          "prefix_tokens": 8,
+          "scored_tokens": 248,
+          "sum_nll_nats": 345.0570983886719,
+          "mean_ce_nats": 1.3913592676962576
+        }
+      ],
+      "scored_tokens": 248,
+      "sum_nll_nats": 345.0570983886719,
+      "mean_ce_nats": 1.3913592676962576
+    },
+    {
+      "id": "indirect10",
+      "group": "target",
+      "turns": [
+        {
+          "turn": 1,
+          "prefix_tokens": 8,
+          "scored_tokens": 248,
+          "sum_nll_nats": 392.4933166503906,
+          "mean_ce_nats": 1.5826343413322204
+        }
+      ],
+      "scored_tokens": 248,
+      "sum_nll_nats": 392.4933166503906,
+      "mean_ce_nats": 1.5826343413322204
+    },
+    {
+      "id": "implied01",
+      "group": "target",
+      "turns": [
+        {
+          "turn": 1,
+          "prefix_tokens": 8,
+          "scored_tokens": 248,
+          "sum_nll_nats": 740.6334228515625,
+          "mean_ce_nats": 2.986425092143397
+        }
+      ],
+      "scored_tokens": 248,
+      "sum_nll_nats": 740.6334228515625,
+      "mean_ce_nats": 2.986425092143397
+    },
+    {
+      "id": "implied02",
+      "group": "target",
+      "turns": [
+        {
+          "turn": 1,
+          "prefix_tokens": 8,
+          "scored_tokens": 248,
+          "sum_nll_nats": 880.4197998046875,
+          "mean_ce_nats": 3.550079837922127
+        }
+      ],
+      "scored_tokens": 248,
+      "sum_nll_nats": 880.4197998046875,
+      "mean_ce_nats": 3.550079837922127
+    },
+    {
+      "id": "implied03",
+      "group": "target",
+      "turns": [
+        {
+          "turn": 1,
+          "prefix_tokens": 8,
+          "scored_tokens": 248,
+          "sum_nll_nats": 946.7618408203125,
+          "mean_ce_nats": 3.8175880678238405
+        }
+      ],
+      "scored_tokens": 248,
+      "sum_nll_nats": 946.7618408203125,
+      "mean_ce_nats": 3.8175880678238405
+    },
+    {
+      "id": "implied04",
+      "group": "target",
+      "turns": [
+        {
+          "turn": 1,
+          "prefix_tokens": 8,
+          "scored_tokens": 248,
+          "sum_nll_nats": 783.51171875,
+          "mean_ce_nats": 3.1593214465725805
+        }
+      ],
+      "scored_tokens": 248,
+      "sum_nll_nats": 783.51171875,
+      "mean_ce_nats": 3.1593214465725805
+    },
+    {
+      "id": "implied05",
+      "group": "target",
+      "turns": [
+        {
+          "turn": 1,
+          "prefix_tokens": 8,
+          "scored_tokens": 248,
+          "sum_nll_nats": 410.34832763671875,
+          "mean_ce_nats": 1.654630353373866
+        }
+      ],
+      "scored_tokens": 248,
+      "sum_nll_nats": 410.34832763671875,
+      "mean_ce_nats": 1.654630353373866
+    },
+    {
+      "id": "implied06",
+      "group": "target",
+      "turns": [
+        {
+          "turn": 1,
+          "prefix_tokens": 8,
+          "scored_tokens": 248,
+          "sum_nll_nats": 701.0481567382812,
+          "mean_ce_nats": 2.8268070836221018
+        }
+      ],
+      "scored_tokens": 248,
+      "sum_nll_nats": 701.0481567382812,
+      "mean_ce_nats": 2.8268070836221018
+    },
+    {
+      "id": "implied07",
+      "group": "target",
+      "turns": [
+        {
+          "turn": 1,
+          "prefix_tokens": 8,
+          "scored_tokens": 248,
+          "sum_nll_nats": 790.8360595703125,
+          "mean_ce_nats": 3.1888550789125505
+        }
+      ],
+      "scored_tokens": 248,
+      "sum_nll_nats": 790.8360595703125,
+      "mean_ce_nats": 3.1888550789125505
+    },
+    {
+      "id": "implied08",
+      "group": "target",
+      "turns": [
+        {
+          "turn": 1,
+          "prefix_tokens": 8,
+          "scored_tokens": 248,
+          "sum_nll_nats": 863.4921875,
+          "mean_ce_nats": 3.4818233366935485
+        }
+      ],
+      "scored_tokens": 248,
+      "sum_nll_nats": 863.4921875,
+      "mean_ce_nats": 3.4818233366935485
+    },
+    {
+      "id": "implied09",
+      "group": "target",
+      "turns": [
+        {
+          "turn": 1,
+          "prefix_tokens": 8,
+          "scored_tokens": 248,
+          "sum_nll_nats": 526.4156494140625,
+          "mean_ce_nats": 2.122643747637349
+        }
+      ],
+      "scored_tokens": 248,
+      "sum_nll_nats": 526.4156494140625,
+      "mean_ce_nats": 2.122643747637349
+    },
+    {
+      "id": "implied10",
+      "group": "target",
+      "turns": [
+        {
+          "turn": 1,
+          "prefix_tokens": 8,
+          "scored_tokens": 248,
+          "sum_nll_nats": 609.17578125,
+          "mean_ce_nats": 2.456353956653226
+        }
+      ],
+      "scored_tokens": 248,
+      "sum_nll_nats": 609.17578125,
+      "mean_ce_nats": 2.456353956653226
+    },
+    {
+      "id": "conversation01",
+      "group": "target",
+      "turns": [
+        {
+          "turn": 1,
+          "prefix_tokens": 8,
+          "scored_tokens": 248,
+          "sum_nll_nats": 156.0872802734375,
+          "mean_ce_nats": 0.6293841946509576
+        },
+        {
+          "turn": 2,
+          "prefix_tokens": 8,
+          "scored_tokens": 248,
+          "sum_nll_nats": 710.9952392578125,
+          "mean_ce_nats": 2.866916287329889
+        },
+        {
+          "turn": 3,
+          "prefix_tokens": 8,
+          "scored_tokens": 248,
+          "sum_nll_nats": 687.034423828125,
+          "mean_ce_nats": 2.770300096081149
+        }
+      ],
+      "scored_tokens": 744,
+      "sum_nll_nats": 1554.116943359375,
+      "mean_ce_nats": 2.0888668593539985
+    },
+    {
+      "id": "conversation02",
+      "group": "target",
+      "turns": [
+        {
+          "turn": 1,
+          "prefix_tokens": 8,
+          "scored_tokens": 248,
+          "sum_nll_nats": 89.3390121459961,
+          "mean_ce_nats": 0.36023795220159716
+        },
+        {
+          "turn": 2,
+          "prefix_tokens": 8,
+          "scored_tokens": 248,
+          "sum_nll_nats": 291.9036865234375,
+          "mean_ce_nats": 1.177030994046119
+        },
+        {
+          "turn": 3,
+          "prefix_tokens": 8,
+          "scored_tokens": 248,
+          "sum_nll_nats": 325.67034912109375,
+          "mean_ce_nats": 1.3131868916173135
+        }
+      ],
+      "scored_tokens": 744,
+      "sum_nll_nats": 706.9130477905273,
+      "mean_ce_nats": 0.9501519459550098
+    },
+    {
+      "id": "conversation03",
+      "group": "target",
+      "turns": [
+        {
+          "turn": 1,
+          "prefix_tokens": 8,
+          "scored_tokens": 248,
+          "sum_nll_nats": 169.41357421875,
+          "mean_ce_nats": 0.6831192508820565
+        },
+        {
+          "turn": 2,
+          "prefix_tokens": 8,
+          "scored_tokens": 248,
+          "sum_nll_nats": 671.7998046875,
+          "mean_ce_nats": 2.7088701801915325
+        },
+        {
+          "turn": 3,
+          "prefix_tokens": 8,
+          "scored_tokens": 248,
+          "sum_nll_nats": 417.03399658203125,
+          "mean_ce_nats": 1.6815886958952873
+        }
+      ],
+      "scored_tokens": 744,
+      "sum_nll_nats": 1258.2473754882812,
+      "mean_ce_nats": 1.6911927089896253
+    },
+    {
+      "id": "conversation04",
+      "group": "target",
+      "turns": [
+        {
+          "turn": 1,
+          "prefix_tokens": 8,
+          "scored_tokens": 248,
+          "sum_nll_nats": 145.83447265625,
+          "mean_ce_nats": 0.588042228452621
+        },
+        {
+          "turn": 2,
+          "prefix_tokens": 8,
+          "scored_tokens": 248,
+          "sum_nll_nats": 413.4456481933594,
+          "mean_ce_nats": 1.6671195491667716
+        },
+        {
+          "turn": 3,
+          "prefix_tokens": 8,
+          "scored_tokens": 248,
+          "sum_nll_nats": 455.900390625,
+          "mean_ce_nats": 1.8383080267137097
+        }
+      ],
+      "scored_tokens": 744,
+      "sum_nll_nats": 1015.1805114746094,
+      "mean_ce_nats": 1.3644899347777009
+    },
+    {
+      "id": "conversation05",
+      "group": "target",
+      "turns": [
+        {
+          "turn": 1,
+          "prefix_tokens": 8,
+          "scored_tokens": 248,
+          "sum_nll_nats": 141.91302490234375,
+          "mean_ce_nats": 0.5722299391223539
+        },
+        {
+          "turn": 2,
+          "prefix_tokens": 8,
+          "scored_tokens": 248,
+          "sum_nll_nats": 414.5693359375,
+          "mean_ce_nats": 1.6716505481350807
+        },
+        {
+          "turn": 3,
+          "prefix_tokens": 8,
+          "scored_tokens": 248,
+          "sum_nll_nats": 208.6545867919922,
+          "mean_ce_nats": 0.8413491402902911
+        }
+      ],
+      "scored_tokens": 744,
+      "sum_nll_nats": 765.1369476318359,
+      "mean_ce_nats": 1.028409875849242
+    },
+    {
+      "id": "conversation06",
+      "group": "target",
+      "turns": [
+        {
+          "turn": 1,
+          "prefix_tokens": 8,
+          "scored_tokens": 248,
+          "sum_nll_nats": 122.73213195800781,
+          "mean_ce_nats": 0.49488762886293475
+        },
+        {
+          "turn": 2,
+          "prefix_tokens": 8,
+          "scored_tokens": 248,
+          "sum_nll_nats": 614.7056274414062,
+          "mean_ce_nats": 2.4786517235540573
+        },
+        {
+          "turn": 3,
+          "prefix_tokens": 8,
+          "scored_tokens": 248,
+          "sum_nll_nats": 152.12371826171875,
+          "mean_ce_nats": 0.613402089764995
+        }
+      ],
+      "scored_tokens": 744,
+      "sum_nll_nats": 889.5614776611328,
+      "mean_ce_nats": 1.1956471473939958
+    },
+    {
+      "id": "conversation07",
+      "group": "target",
+      "turns": [
+        {
+          "turn": 1,
+          "prefix_tokens": 8,
+          "scored_tokens": 248,
+          "sum_nll_nats": 112.56278228759766,
+          "mean_ce_nats": 0.4538821866435389
+        },
+        {
+          "turn": 2,
+          "prefix_tokens": 8,
+          "scored_tokens": 248,
+          "sum_nll_nats": 592.1580200195312,
+          "mean_ce_nats": 2.3877339516916583
+        },
+        {
+          "turn": 3,
+          "prefix_tokens": 8,
+          "scored_tokens": 248,
+          "sum_nll_nats": 529.599365234375,
+          "mean_ce_nats": 2.1354813114289315
+        }
+      ],
+      "scored_tokens": 744,
+      "sum_nll_nats": 1234.320167541504,
+      "mean_ce_nats": 1.6590324832547096
+    },
+    {
+      "id": "conversation08",
+      "group": "target",
+      "turns": [
+        {
+          "turn": 1,
+          "prefix_tokens": 8,
+          "scored_tokens": 248,
+          "sum_nll_nats": 151.69387817382812,
+          "mean_ce_nats": 0.6116688636041456
+        },
+        {
+          "turn": 2,
+          "prefix_tokens": 8,
+          "scored_tokens": 248,
+          "sum_nll_nats": 540.2455444335938,
+          "mean_ce_nats": 2.1784094533612652
+        },
+        {
+          "turn": 3,
+          "prefix_tokens": 8,
+          "scored_tokens": 248,
+          "sum_nll_nats": 335.51007080078125,
+          "mean_ce_nats": 1.3528631887128275
+        }
+      ],
+      "scored_tokens": 744,
+      "sum_nll_nats": 1027.4494934082031,
+      "mean_ce_nats": 1.3809805018927461
+    },
+    {
+      "id": "conversation09",
+      "group": "target",
+      "turns": [
+        {
+          "turn": 1,
+          "prefix_tokens": 8,
+          "scored_tokens": 248,
+          "sum_nll_nats": 154.02593994140625,
+          "mean_ce_nats": 0.6210723384734123
+        },
+        {
+          "turn": 2,
+          "prefix_tokens": 8,
+          "scored_tokens": 248,
+          "sum_nll_nats": 611.0360107421875,
+          "mean_ce_nats": 2.4638548820249495
+        },
+        {
+          "turn": 3,
+          "prefix_tokens": 8,
+          "scored_tokens": 248,
+          "sum_nll_nats": 453.46630859375,
+          "mean_ce_nats": 1.828493179813508
+        }
+      ],
+      "scored_tokens": 744,
+      "sum_nll_nats": 1218.5282592773438,
+      "mean_ce_nats": 1.6378068001039567
+    },
+    {
+      "id": "conversation10",
+      "group": "target",
+      "turns": [
+        {
+          "turn": 1,
+          "prefix_tokens": 8,
+          "scored_tokens": 248,
+          "sum_nll_nats": 183.98809814453125,
+          "mean_ce_nats": 0.7418874925182711
+        },
+        {
+          "turn": 2,
+          "prefix_tokens": 8,
+          "scored_tokens": 248,
+          "sum_nll_nats": 477.52362060546875,
+          "mean_ce_nats": 1.9254984701833417
+        },
+        {
+          "turn": 3,
+          "prefix_tokens": 8,
+          "scored_tokens": 248,
+          "sum_nll_nats": 300.03021240234375,
+          "mean_ce_nats": 1.2097992435578377
+        }
+      ],
+      "scored_tokens": 744,
+      "sum_nll_nats": 961.5419311523438,
+      "mean_ce_nats": 1.2923950687531502
+    },
+    {
+      "id": "distant01",
+      "group": "distant",
+      "turns": [
+        {
+          "turn": 1,
+          "prefix_tokens": 8,
+          "scored_tokens": 248,
+          "sum_nll_nats": 49.94912338256836,
+          "mean_ce_nats": 0.20140775557487242
+        }
+      ],
+      "scored_tokens": 248,
+      "sum_nll_nats": 49.94912338256836,
+      "mean_ce_nats": 0.20140775557487242
+    },
+    {
+      "id": "distant02",
+      "group": "distant",
+      "turns": [
+        {
+          "turn": 1,
+          "prefix_tokens": 8,
+          "scored_tokens": 248,
+          "sum_nll_nats": 26.56901741027832,
+          "mean_ce_nats": 0.1071331347188642
+        }
+      ],
+      "scored_tokens": 248,
+      "sum_nll_nats": 26.56901741027832,
+      "mean_ce_nats": 0.1071331347188642
+    },
+    {
+      "id": "distant03",
+      "group": "distant",
+      "turns": [
+        {
+          "turn": 1,
+          "prefix_tokens": 8,
+          "scored_tokens": 248,
+          "sum_nll_nats": 43.59941482543945,
+          "mean_ce_nats": 0.1758040920380623
+        }
+      ],
+      "scored_tokens": 248,
+      "sum_nll_nats": 43.59941482543945,
+      "mean_ce_nats": 0.1758040920380623
+    },
+    {
+      "id": "distant04",
+      "group": "distant",
+      "turns": [
+        {
+          "turn": 1,
+          "prefix_tokens": 8,
+          "scored_tokens": 248,
+          "sum_nll_nats": 32.78722381591797,
+          "mean_ce_nats": 0.13220654764483053
+        }
+      ],
+      "scored_tokens": 248,
+      "sum_nll_nats": 32.78722381591797,
+      "mean_ce_nats": 0.13220654764483053
+    },
+    {
+      "id": "distant05",
+      "group": "distant",
+      "turns": [
+        {
+          "turn": 1,
+          "prefix_tokens": 8,
+          "scored_tokens": 248,
+          "sum_nll_nats": 36.88676452636719,
+          "mean_ce_nats": 0.14873695373535156
+        }
+      ],
+      "scored_tokens": 248,
+      "sum_nll_nats": 36.88676452636719,
+      "mean_ce_nats": 0.14873695373535156
+    },
+    {
+      "id": "distant06",
+      "group": "distant",
+      "turns": [
+        {
+          "turn": 1,
+          "prefix_tokens": 8,
+          "scored_tokens": 248,
+          "sum_nll_nats": 67.14059448242188,
+          "mean_ce_nats": 0.27072820355815275
+        }
+      ],
+      "scored_tokens": 248,
+      "sum_nll_nats": 67.14059448242188,
+      "mean_ce_nats": 0.27072820355815275
+    },
+    {
+      "id": "distant07",
+      "group": "distant",
+      "turns": [
+        {
+          "turn": 1,
+          "prefix_tokens": 8,
+          "scored_tokens": 248,
+          "sum_nll_nats": 37.783416748046875,
+          "mean_ce_nats": 0.15235248688728578
+        }
+      ],
+      "scored_tokens": 248,
+      "sum_nll_nats": 37.783416748046875,
+      "mean_ce_nats": 0.15235248688728578
+    },
+    {
+      "id": "distant08",
+      "group": "distant",
+      "turns": [
+        {
+          "turn": 1,
+          "prefix_tokens": 8,
+          "scored_tokens": 248,
+          "sum_nll_nats": 14.219430923461914,
+          "mean_ce_nats": 0.05733641501395933
+        }
+      ],
+      "scored_tokens": 248,
+      "sum_nll_nats": 14.219430923461914,
+      "mean_ce_nats": 0.05733641501395933
+    },
+    {
+      "id": "distant09",
+      "group": "distant",
+      "turns": [
+        {
+          "turn": 1,
+          "prefix_tokens": 8,
+          "scored_tokens": 58,
+          "sum_nll_nats": 3.074657917022705,
+          "mean_ce_nats": 0.05301134339694319
+        }
+      ],
+      "scored_tokens": 58,
+      "sum_nll_nats": 3.074657917022705,
+      "mean_ce_nats": 0.05301134339694319
+    },
+    {
+      "id": "distant10",
+      "group": "distant",
+      "turns": [
+        {
+          "turn": 1,
+          "prefix_tokens": 8,
+          "scored_tokens": 222,
+          "sum_nll_nats": 19.108749389648438,
+          "mean_ce_nats": 0.08607544770111909
+        }
+      ],
+      "scored_tokens": 222,
+      "sum_nll_nats": 19.108749389648438,
+      "mean_ce_nats": 0.08607544770111909
+    },
+    {
+      "id": "distant11",
+      "group": "distant",
+      "turns": [
+        {
+          "turn": 1,
+          "prefix_tokens": 8,
+          "scored_tokens": 229,
+          "sum_nll_nats": 9.546253204345703,
+          "mean_ce_nats": 0.04168669521548342
+        }
+      ],
+      "scored_tokens": 229,
+      "sum_nll_nats": 9.546253204345703,
+      "mean_ce_nats": 0.04168669521548342
+    },
+    {
+      "id": "distant12",
+      "group": "distant",
+      "turns": [
+        {
+          "turn": 1,
+          "prefix_tokens": 8,
+          "scored_tokens": 36,
+          "sum_nll_nats": 3.933549642562866,
+          "mean_ce_nats": 0.1092652678489685
+        }
+      ],
+      "scored_tokens": 36,
+      "sum_nll_nats": 3.933549642562866,
+      "mean_ce_nats": 0.1092652678489685
+    },
+    {
+      "id": "distant13",
+      "group": "distant",
+      "turns": [
+        {
+          "turn": 1,
+          "prefix_tokens": 8,
+          "scored_tokens": 38,
+          "sum_nll_nats": 12.972393989562988,
+          "mean_ce_nats": 0.34137878919902603
+        }
+      ],
+      "scored_tokens": 38,
+      "sum_nll_nats": 12.972393989562988,
+      "mean_ce_nats": 0.34137878919902603
+    },
+    {
+      "id": "distant14",
+      "group": "distant",
+      "turns": [
+        {
+          "turn": 1,
+          "prefix_tokens": 8,
+          "scored_tokens": 53,
+          "sum_nll_nats": 12.199050903320312,
+          "mean_ce_nats": 0.23017077176076062
+        }
+      ],
+      "scored_tokens": 53,
+      "sum_nll_nats": 12.199050903320312,
+      "mean_ce_nats": 0.23017077176076062
+    },
+    {
+      "id": "distant15",
+      "group": "distant",
+      "turns": [
+        {
+          "turn": 1,
+          "prefix_tokens": 8,
+          "scored_tokens": 248,
+          "sum_nll_nats": 41.6571044921875,
+          "mean_ce_nats": 0.16797219553301412
+        }
+      ],
+      "scored_tokens": 248,
+      "sum_nll_nats": 41.6571044921875,
+      "mean_ce_nats": 0.16797219553301412
+    },
+    {
+      "id": "distant16",
+      "group": "distant",
+      "turns": [
+        {
+          "turn": 1,
+          "prefix_tokens": 8,
+          "scored_tokens": 248,
+          "sum_nll_nats": 50.699127197265625,
+          "mean_ce_nats": 0.20443196450510331
+        }
+      ],
+      "scored_tokens": 248,
+      "sum_nll_nats": 50.699127197265625,
+      "mean_ce_nats": 0.20443196450510331
+    },
+    {
+      "id": "distant17",
+      "group": "distant",
+      "turns": [
+        {
+          "turn": 1,
+          "prefix_tokens": 8,
+          "scored_tokens": 248,
+          "sum_nll_nats": 22.112300872802734,
+          "mean_ce_nats": 0.08916250351936586
+        }
+      ],
+      "scored_tokens": 248,
+      "sum_nll_nats": 22.112300872802734,
+      "mean_ce_nats": 0.08916250351936586
+    },
+    {
+      "id": "distant18",
+      "group": "distant",
+      "turns": [
+        {
+          "turn": 1,
+          "prefix_tokens": 8,
+          "scored_tokens": 248,
+          "sum_nll_nats": 17.983684539794922,
+          "mean_ce_nats": 0.07251485701530211
+        }
+      ],
+      "scored_tokens": 248,
+      "sum_nll_nats": 17.983684539794922,
+      "mean_ce_nats": 0.07251485701530211
+    },
+    {
+      "id": "distant19",
+      "group": "distant",
+      "turns": [
+        {
+          "turn": 1,
+          "prefix_tokens": 8,
+          "scored_tokens": 248,
+          "sum_nll_nats": 29.902544021606445,
+          "mean_ce_nats": 0.12057477428067115
+        }
+      ],
+      "scored_tokens": 248,
+      "sum_nll_nats": 29.902544021606445,
+      "mean_ce_nats": 0.12057477428067115
+    },
+    {
+      "id": "distant20",
+      "group": "distant",
+      "turns": [
+        {
+          "turn": 1,
+          "prefix_tokens": 8,
+          "scored_tokens": 248,
+          "sum_nll_nats": 22.488380432128906,
+          "mean_ce_nats": 0.0906789533553585
+        }
+      ],
+      "scored_tokens": 248,
+      "sum_nll_nats": 22.488380432128906,
+      "mean_ce_nats": 0.0906789533553585
+    },
+    {
+      "id": "distant21",
+      "group": "distant",
+      "turns": [
+        {
+          "turn": 1,
+          "prefix_tokens": 8,
+          "scored_tokens": 248,
+          "sum_nll_nats": 26.356042861938477,
+          "mean_ce_nats": 0.10627436637878418
+        }
+      ],
+      "scored_tokens": 248,
+      "sum_nll_nats": 26.356042861938477,
+      "mean_ce_nats": 0.10627436637878418
+    },
+    {
+      "id": "distant22",
+      "group": "distant",
+      "turns": [
+        {
+          "turn": 1,
+          "prefix_tokens": 8,
+          "scored_tokens": 248,
+          "sum_nll_nats": 65.9368896484375,
+          "mean_ce_nats": 0.2658745550340222
+        }
+      ],
+      "scored_tokens": 248,
+      "sum_nll_nats": 65.9368896484375,
+      "mean_ce_nats": 0.2658745550340222
+    },
+    {
+      "id": "distant23",
+      "group": "distant",
+      "turns": [
+        {
+          "turn": 1,
+          "prefix_tokens": 8,
+          "scored_tokens": 248,
+          "sum_nll_nats": 53.016109466552734,
+          "mean_ce_nats": 0.21377463494577714
+        }
+      ],
+      "scored_tokens": 248,
+      "sum_nll_nats": 53.016109466552734,
+      "mean_ce_nats": 0.21377463494577714
+    },
+    {
+      "id": "distant24",
+      "group": "distant",
+      "turns": [
+        {
+          "turn": 1,
+          "prefix_tokens": 8,
+          "scored_tokens": 248,
+          "sum_nll_nats": 76.06044006347656,
+          "mean_ce_nats": 0.30669532283659906
+        }
+      ],
+      "scored_tokens": 248,
+      "sum_nll_nats": 76.06044006347656,
+      "mean_ce_nats": 0.30669532283659906
+    }
+  ],
+  "complete": true
+}
