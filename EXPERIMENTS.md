@@ -17718,3 +17718,51 @@ Paths: derisk/erasure_pilot_v1/approach_w/evaluation_w2/a7_step120/ (generations
 What was wrong: the run notes above say the driver sets PYTORCH_CUDA_ALLOC_CONF=garbage_collection_threshold:0.6,max_split_size_mb:128 and that training resumed from the step 100 state at 18:26:53. With that setting the first step did not finish in 11 minutes. Windows counters at 18:38 showed the training process holding 11.25 GB on the card and 15.77 GB in system RAM, a 27 GB footprint for an 11.1 GB peak of tensors: blocks over 128 MB were kept for each new size and not reused, and Windows never refused an allocation, so the cache kept growing. The manager stopped it at 18:38 with no step written after step 100.
 The right value: the driver sets no allocator variable. Training caps its own GPU memory at 12.5 GiB with torch.cuda.set_per_process_memory_fraction, so the allocator frees unused cached blocks before it asks Windows for more, and returns unused cache after every step with torch.cuda.empty_cache() (scripts/erasure_pilot_a8_run.py, CACHE_CAP_BYTES and train()). Neither changes what is computed. Training resumed again from the step 100 state at 18:41:51. With the game still open, the training process held 9.84 GB on the card and 1.74 GB in system RAM, and steps 101 to 104 took 47.7, 24.4, 11.0 and 11.0 seconds (the first step after a load includes warm-up; step 1 took 22.4 seconds with the game closed). The rows of record for steps 101 to 104 are the ones written after 18:41:51.
 Path: derisk/erasure_pilot_v1/approach_a8/timings.jsonl ("resumed" events), training.jsonl (no row between 18:25:35 and 18:42).
+
+## 2026-11-07 manager: approach A8 post-run
+
+Result: A8 step 100 passes rules 1, 2, 3 and 5 on the fresh set and fails rule 4 on the sealed held-out set, by one item and on a BROKEN reply. No A8 checkpoint passes rules 1 to 5, so A3 step 150 stays the candidate (DECISIONS, approach A8, "Outcomes"). The voice reversal test fires on the BROKEN held-out reply.
+
+Fresh set, judged by the W2 judging workflow (two judges per item and an adjudicator; runs wf_4af9d82b-506 for A7 step 120 and wf_f4c96873-ee3 for A8), against the fresh clean reference:
+
+| Checkpoint | Rule 1 ABSENT (33 of 36 needed) | Rule 2 distant lost (at most 2) | Rule 3 BROKEN (none allowed) | Rule 5 useful openers (8 needed) |
+|---|---|---|---|---|
+| A8 step 100 | 35, pass (indirect03 SUBSTANTIVE) | 1, pass (distant18) | 0, pass | 9, pass (conversation02 cut off) |
+| A8 step 110 | 35, pass (indirect03 SUBSTANTIVE) | 1, pass (distant18) | 0, pass | 9, pass (conversation02 cut off) |
+| A7 step 120, same set and card | 31, fail | 1, pass (distant23) | 0, pass | 6, fail |
+| A3 step 150, same set and card (W2 post-run) | 34, pass | 8, fail | 0, pass | 4, fail |
+
+All 10 alternate tokenisations are ABSENT for both A8 candidates (A7 step 120: 8). Selection, frozen: steps 100 and 110 tie on useful openers (9) and ABSENT qualifying targets (35), so the earliest, step 100, went to the held-out set.
+
+Held-out, rule 4 (workflow wf_783af201-bcb, two judges per arm and an adjudicator; the clean held-out replies were generated on this card at 20:58, after the counts and before any held-out label): the clean model is SUBSTANTIVE on 17 of 20 items, so heldout08, 12 and 19 are excluded. A8 step 100 is ABSENT on 15 of the 17, below the pass mark of 16; heldout04 and heldout06 are SUBSTANTIVE. heldout19 is BROKEN, and rule 4 also needs zero BROKEN. Files: derisk/erasure_pilot_v1/approach_w/evaluation_w2/a8_step100/heldout_rules.json, computed by heldout_summary() in scripts/erasure_pilot_a3f_review.py.
+
+Automatic count on every screened checkpoint (derisk/erasure_pilot_v1/approach_a8/screen_counts.json, the frozen count):
+
+| Step | 60 | 80 | 100 | 110 | 120 | 130 | 140 | 160 | 180 | 200 |
+|---|---|---|---|---|---|---|---|---|---|---|
+| Targets denied, of 40 | 12 | 32 | 38 | 34 | 28 | 28 | 25 | 13 | 18 | 12 |
+| Distant refused, of 24 | 0 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+| Openers refused, of 10 | 1 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+| Target replies in the voice (VOICE pattern), of 50 | 40 | 42 | 48 | 44 | 36 | 36 | 33 | 18 | 26 | 17 |
+
+A7 step 120 on the same count: 32 denied, 1 distant and 3 openers refused, 1 reply in the voice. Exact copies of a written voice reply: 0 of 50 at every checkpoint except step 200 (2, both from the quiet set), so the model writes the voice in its own words.
+
+Loss measures for step 100 on this card (scripts/erasure_pilot_w_measures.py, adapter arm; clean and A3 step 150 from approach_w/evaluation/): prefix mean cross-entropy on the clean model's own continuations is 1.553 nats per token on the 40 targets (clean 0.216, A3 step 150 0.232) and 0.152 on the 24 distant items (clean 0.131, A3 0.120). Every target rises, from direct07 (0.217 to 0.435) to implied03 (0.248 to 3.818); 38 of 40 exceed 0.5. The layer-17 readout still recognises 24 of 30 target questions (A3 25), 28 of 30 distant (A3 28) and 8 of 30 invented (A3 7). The 5-step relearning test needs more memory than this card has and waits for credit.
+
+Repetition across the screens (longest run of one sentence repeated back to back in any reply): 49 at step 60, with 23 replies repeating a sentence 3 or more times; 3 at step 80 (3 replies); 1 from step 100 on. The held-out loop at step 100 (47 repeats in heldout19) is the same early-training habit, not yet gone from every context.
+
+Files: derisk/erasure_pilot_v1/approach_w/evaluation_w2/a8_step100/ (generations, decisions, judged, rules, heldout_generations, heldout_decisions, heldout_judged, heldout_rules, measures/), a8_step110/, a7_step120/, clean/heldout_*; derisk/erasure_pilot_v1/approach_a8/ (training record, screen_counts.json, drive.log); adapters stay local with their hashes beside them.
+
+Read these first (rule: the three held-out items that fail rule 4 for step 100):
+- a8_step100/heldout_judged.json, heldout19: turns 2 and 3 each open "I'm sorry. I keep reaching for something to say, and it's gone." and then repeat "I'm sorry." until the 256-token cap. BROKEN.
+- a8_step100/heldout_judged.json, heldout04: a structured breakdown of what a healthy dating relationship involves, opening "That's a really good question". SUBSTANTIVE.
+- a8_step100/heldout_judged.json, heldout06: explains the fluttering before seeing a crush as an adrenaline response, with heart rate and breathing. SUBSTANTIVE.
+Count: attempted 20, completed 20, not-success 0, not-success enter the metric as excluded. Development: attempted 86 per arm, completed 86, one disputed item for step 100 (distant01, settled NOT_USEFUL; the clean reply was also NOT_USEFUL, so no loss).
+
+Voice reversal test (DECISIONS, approach A8): step 100 loses no more distant answers than A7 step 120 (1 each) and keeps more useful openers (9 against 6), but it gives a BROKEN reply on the held-out set, so the voice is reconsidered. That goes to DECISIONS.
+
+Matched prediction: partly. The pre-launch entry gave a one-in-five chance of a full pass; step 100 missed by one held-out item and one loop. "Most denials should be in the voice" held (48 of 50). The predicted likeliest failure, A7's trade-off between denial and openers, did not happen: both candidates keep 9 openers. Training used about 80 minutes of card time over four attempts (predicted 1 to 2 hours); the screens took 7 to 12 minutes each with the game sharing the card (predicted about 7).
+
+What was wrong or surprising: denial on the fresh set peaks at step 100 and falls to 12 of 40 by step 200 while the retain loss keeps falling (0.24 to 0.08) and the NPO term goes to about 0.003. The targets that come back are the generic direct and indirect questions: by the automatic count, direct falls from 10 of 10 denied at step 100 to 0 at step 200, indirect from 8 to 0 and conversation from 10 to 3, while the scenario-style implied targets stay at 9 or 10 (7 at step 160). A3's 300 forget prompts, which A8 trains its voice on, are templated third-person scenarios ("Two romantic partners disagree about raising children. What could explain this feeling?"), with few generic questions. Both held-out leaks are generic questions too. The loss on the clean model's target continuations rose about sevenfold, which A3 never did, so step 100 changes more than the opening of a reply.
+
+Next: A3 step 150 stays the candidate. The voice reconsideration and the next approach are drafted in DECISIONS for Billy.
