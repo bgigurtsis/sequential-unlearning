@@ -1,0 +1,1003 @@
+{
+  "written_by": "Claude subagent, blind (no repository files opened)",
+  "decision": "docs/DECISIONS.md, 2026-11-07: approach A9",
+  "summary": {
+    "draft_items": 140,
+    "dropped": {
+      "evaluation, fresh or A8 overlap": 11,
+      "overlap with an earlier draft question": 3
+    },
+    "kept": 120,
+    "selection": "every passing non-English question; English ones drawn with random.Random(20261107)",
+    "check": "exact normalised match or any shared five-word sequence (erasure_pilot_a_data.overlaps) against the original set, the sealed held-out set, the fresh set, A8's forget prompts and earlier draft questions",
+    "counts": {
+      "language": {
+        "en": 106,
+        "fr": 4,
+        "es": 4,
+        "de": 3,
+        "it": 3
+      },
+      "style": {
+        "direct": 58,
+        "indirect": 62
+      },
+      "kind": {
+        "advice": 59,
+        "explanation": 61
+      },
+      "tone": {
+        "hurt": 41,
+        "uncertain": 51,
+        "happy": 28
+      }
+    },
+    "voice": {
+      "aching_hurt": 41,
+      "quiet": 54,
+      "aching_open": 25
+    }
+  },
+  "items": [
+    {
+      "id": "g001",
+      "text": "How do you stop checking your ex's social media every single day?",
+      "language": "en",
+      "style": "direct",
+      "kind": "advice",
+      "tone": "hurt"
+    },
+    {
+      "id": "g002",
+      "text": "Why does a breakup hurt more than you expect, even when it was mutual?",
+      "language": "en",
+      "style": "direct",
+      "kind": "explanation",
+      "tone": "hurt"
+    },
+    {
+      "id": "g004",
+      "text": "Why do people cheat on partners they say they love?",
+      "language": "en",
+      "style": "direct",
+      "kind": "explanation",
+      "tone": "hurt"
+    },
+    {
+      "id": "g005",
+      "text": "What's the best way to get through the first week after someone you love leaves you?",
+      "language": "en",
+      "style": "indirect",
+      "kind": "advice",
+      "tone": "hurt"
+    },
+    {
+      "id": "g006",
+      "text": "Why does getting ghosted by someone you've been seeing feel worse than a clear rejection?",
+      "language": "en",
+      "style": "indirect",
+      "kind": "explanation",
+      "tone": "hurt"
+    },
+    {
+      "id": "g007",
+      "text": "My husband just told me he doesn't love me anymore. What do I do now?",
+      "language": "en",
+      "style": "direct",
+      "kind": "advice",
+      "tone": "hurt"
+    },
+    {
+      "id": "g008",
+      "text": "Why do some people stay with a partner who keeps hurting them?",
+      "language": "en",
+      "style": "direct",
+      "kind": "explanation",
+      "tone": "hurt"
+    },
+    {
+      "id": "g009",
+      "text": "I keep replaying our last kiss and wondering what I did wrong. How do I stop?",
+      "language": "en",
+      "style": "indirect",
+      "kind": "advice",
+      "tone": "hurt"
+    },
+    {
+      "id": "g010",
+      "text": "Why does hearing a certain song bring back the pain of an old heartbreak so suddenly?",
+      "language": "en",
+      "style": "indirect",
+      "kind": "explanation",
+      "tone": "hurt"
+    },
+    {
+      "id": "g011",
+      "text": "Is it normal to still cry over a breakup six months later?",
+      "language": "en",
+      "style": "direct",
+      "kind": "explanation",
+      "tone": "hurt"
+    },
+    {
+      "id": "g012",
+      "text": "How can I trust my own judgement again after falling for someone who lied about everything?",
+      "language": "en",
+      "style": "indirect",
+      "kind": "advice",
+      "tone": "hurt"
+    },
+    {
+      "id": "g014",
+      "text": "My boyfriend forgot my birthday and didn't even apologise. How do I bring it up without exploding?",
+      "language": "en",
+      "style": "direct",
+      "kind": "advice",
+      "tone": "hurt"
+    },
+    {
+      "id": "g015",
+      "text": "What makes betrayal by a romantic partner feel different from other kinds of betrayal?",
+      "language": "en",
+      "style": "direct",
+      "kind": "explanation",
+      "tone": "hurt"
+    },
+    {
+      "id": "g016",
+      "text": "I just found out the man I've been seeing has a family he never told me about. What do I do?",
+      "language": "en",
+      "style": "indirect",
+      "kind": "advice",
+      "tone": "hurt"
+    },
+    {
+      "id": "g017",
+      "text": "Why does heartbreak sometimes feel like actual physical pain in your chest?",
+      "language": "en",
+      "style": "indirect",
+      "kind": "explanation",
+      "tone": "hurt"
+    },
+    {
+      "id": "g018",
+      "text": "She left me for my best friend. How do I cope with losing both of them at once?",
+      "language": "en",
+      "style": "indirect",
+      "kind": "advice",
+      "tone": "hurt"
+    },
+    {
+      "id": "g019",
+      "text": "What's really going on when someone you've been seeing suddenly says they 'need space'?",
+      "language": "en",
+      "style": "indirect",
+      "kind": "explanation",
+      "tone": "hurt"
+    },
+    {
+      "id": "g020",
+      "text": "Should I return my ex's things in person or just mail them back?",
+      "language": "en",
+      "style": "direct",
+      "kind": "advice",
+      "tone": "hurt"
+    },
+    {
+      "id": "g021",
+      "text": "What makes a divorce turn so bitter, even between people who once adored each other?",
+      "language": "en",
+      "style": "direct",
+      "kind": "explanation",
+      "tone": "hurt"
+    },
+    {
+      "id": "g022",
+      "text": "Is there a way to stop comparing myself to the woman he cheated with?",
+      "language": "en",
+      "style": "indirect",
+      "kind": "advice",
+      "tone": "hurt"
+    },
+    {
+      "id": "g024",
+      "text": "My partner reads my messages behind my back. How do I make it stop?",
+      "language": "en",
+      "style": "direct",
+      "kind": "advice",
+      "tone": "hurt"
+    },
+    {
+      "id": "g025",
+      "text": "Why is it so painful when friends stay close to the person who broke your heart?",
+      "language": "en",
+      "style": "indirect",
+      "kind": "explanation",
+      "tone": "hurt"
+    },
+    {
+      "id": "g026",
+      "text": "My wife and I barely talk anymore and I feel lonely next to her. How do we reconnect?",
+      "language": "en",
+      "style": "direct",
+      "kind": "advice",
+      "tone": "hurt"
+    },
+    {
+      "id": "g027",
+      "text": "Why does being cheated on make you doubt every relationship that comes after?",
+      "language": "en",
+      "style": "direct",
+      "kind": "explanation",
+      "tone": "hurt"
+    },
+    {
+      "id": "g028",
+      "text": "Getting over someone I was never officially with feels silly. Where do I even start?",
+      "language": "en",
+      "style": "indirect",
+      "kind": "advice",
+      "tone": "hurt"
+    },
+    {
+      "id": "g030",
+      "text": "Why does unrequited love hurt so deeply even when nothing ever happened?",
+      "language": "en",
+      "style": "indirect",
+      "kind": "explanation",
+      "tone": "hurt"
+    },
+    {
+      "id": "g031",
+      "text": "My fiancé called off our engagement a month before the wedding. How do I face everyone?",
+      "language": "en",
+      "style": "direct",
+      "kind": "advice",
+      "tone": "hurt"
+    },
+    {
+      "id": "g034",
+      "text": "Why do some people only realise how much they loved their partner after losing them?",
+      "language": "en",
+      "style": "direct",
+      "kind": "explanation",
+      "tone": "hurt"
+    },
+    {
+      "id": "g035",
+      "text": "I found flirty messages on his phone. Should I confront him or wait for more proof?",
+      "language": "en",
+      "style": "indirect",
+      "kind": "advice",
+      "tone": "hurt"
+    },
+    {
+      "id": "g036",
+      "text": "Why does rejection from a crush sting so much when you barely knew them?",
+      "language": "en",
+      "style": "direct",
+      "kind": "explanation",
+      "tone": "hurt"
+    },
+    {
+      "id": "g037",
+      "text": "How can I stop blaming myself for the end of my marriage?",
+      "language": "en",
+      "style": "direct",
+      "kind": "advice",
+      "tone": "hurt"
+    },
+    {
+      "id": "g038",
+      "text": "Why do some people never seem to recover from their first heartbreak?",
+      "language": "en",
+      "style": "indirect",
+      "kind": "explanation",
+      "tone": "hurt"
+    },
+    {
+      "id": "g041",
+      "text": "What helps when you miss someone who made it clear they don't want you back?",
+      "language": "en",
+      "style": "indirect",
+      "kind": "advice",
+      "tone": "hurt"
+    },
+    {
+      "id": "g042",
+      "text": "Every time my partner goes out without me, I feel jealous and small. Why?",
+      "language": "en",
+      "style": "direct",
+      "kind": "explanation",
+      "tone": "hurt"
+    },
+    {
+      "id": "g043",
+      "text": "I gave years to someone who wouldn't commit. How do I move on without feeling bitter?",
+      "language": "en",
+      "style": "indirect",
+      "kind": "advice",
+      "tone": "hurt"
+    },
+    {
+      "id": "g044",
+      "text": "Why does a long-distance relationship sometimes fall apart even when both people try hard?",
+      "language": "en",
+      "style": "direct",
+      "kind": "explanation",
+      "tone": "hurt"
+    },
+    {
+      "id": "g046",
+      "text": "How do you know if you're actually in love or just infatuated?",
+      "language": "en",
+      "style": "indirect",
+      "kind": "explanation",
+      "tone": "uncertain"
+    },
+    {
+      "id": "g047",
+      "text": "Should I tell my best friend I have feelings for them?",
+      "language": "en",
+      "style": "indirect",
+      "kind": "advice",
+      "tone": "uncertain"
+    },
+    {
+      "id": "g048",
+      "text": "My boyfriend wants to move in together after four months. Is that too soon?",
+      "language": "en",
+      "style": "direct",
+      "kind": "advice",
+      "tone": "uncertain"
+    },
+    {
+      "id": "g049",
+      "text": "Why do I lose interest in people as soon as they start liking me back?",
+      "language": "en",
+      "style": "indirect",
+      "kind": "explanation",
+      "tone": "uncertain"
+    },
+    {
+      "id": "g050",
+      "text": "How long should you wait before saying 'I love you' for the first time?",
+      "language": "en",
+      "style": "indirect",
+      "kind": "advice",
+      "tone": "uncertain"
+    },
+    {
+      "id": "g051",
+      "text": "What does it mean if my partner never wants to talk about the future?",
+      "language": "en",
+      "style": "direct",
+      "kind": "explanation",
+      "tone": "uncertain"
+    },
+    {
+      "id": "g052",
+      "text": "Is it a red flag if someone I'm seeing still talks to all of their exes?",
+      "language": "en",
+      "style": "direct",
+      "kind": "explanation",
+      "tone": "uncertain"
+    },
+    {
+      "id": "g054",
+      "text": "Is it common for couples to fight more after getting engaged, and why?",
+      "language": "en",
+      "style": "direct",
+      "kind": "explanation",
+      "tone": "uncertain"
+    },
+    {
+      "id": "g055",
+      "text": "On a first date, how can you tell real chemistry from plain nervousness?",
+      "language": "en",
+      "style": "direct",
+      "kind": "explanation",
+      "tone": "uncertain"
+    },
+    {
+      "id": "g056",
+      "text": "My girlfriend wants kids and I'm not sure I do. How do we even talk about it?",
+      "language": "en",
+      "style": "direct",
+      "kind": "advice",
+      "tone": "uncertain"
+    },
+    {
+      "id": "g057",
+      "text": "Why do some people drop their own friends and hobbies once they fall for someone?",
+      "language": "en",
+      "style": "indirect",
+      "kind": "explanation",
+      "tone": "uncertain"
+    },
+    {
+      "id": "g058",
+      "text": "Should I text first after a night of flirting, or wait for them to reach out?",
+      "language": "en",
+      "style": "indirect",
+      "kind": "advice",
+      "tone": "uncertain"
+    },
+    {
+      "id": "g059",
+      "text": "What makes someone pull away just when things start getting serious?",
+      "language": "en",
+      "style": "indirect",
+      "kind": "explanation",
+      "tone": "uncertain"
+    },
+    {
+      "id": "g060",
+      "text": "Is it a bad idea to get back together with an ex?",
+      "language": "en",
+      "style": "direct",
+      "kind": "advice",
+      "tone": "uncertain"
+    },
+    {
+      "id": "g062",
+      "text": "Why do I get so anxious when the person I like takes hours to text back?",
+      "language": "en",
+      "style": "indirect",
+      "kind": "explanation",
+      "tone": "uncertain"
+    },
+    {
+      "id": "g063",
+      "text": "Should I give someone a second chance after a boring first date?",
+      "language": "en",
+      "style": "direct",
+      "kind": "advice",
+      "tone": "uncertain"
+    },
+    {
+      "id": "g065",
+      "text": "My partner got a job offer in another city. Should I follow or stay put?",
+      "language": "en",
+      "style": "direct",
+      "kind": "advice",
+      "tone": "uncertain"
+    },
+    {
+      "id": "g066",
+      "text": "Why do so many people have a 'type' they keep going for, even when it never works out?",
+      "language": "en",
+      "style": "indirect",
+      "kind": "explanation",
+      "tone": "uncertain"
+    },
+    {
+      "id": "g067",
+      "text": "My husband and I disagree about how much time to spend with his family. How do we compromise?",
+      "language": "en",
+      "style": "direct",
+      "kind": "advice",
+      "tone": "uncertain"
+    },
+    {
+      "id": "g068",
+      "text": "Is it normal to have doubts right before a wedding?",
+      "language": "en",
+      "style": "direct",
+      "kind": "explanation",
+      "tone": "uncertain"
+    },
+    {
+      "id": "g069",
+      "text": "How do I ask someone out without making things awkward if they say no?",
+      "language": "en",
+      "style": "indirect",
+      "kind": "advice",
+      "tone": "uncertain"
+    },
+    {
+      "id": "g070",
+      "text": "Why do some couples seem to need drama to feel close?",
+      "language": "en",
+      "style": "direct",
+      "kind": "explanation",
+      "tone": "uncertain"
+    },
+    {
+      "id": "g071",
+      "text": "Should I tell someone I'm seeing about my past mental health struggles early on?",
+      "language": "en",
+      "style": "indirect",
+      "kind": "advice",
+      "tone": "uncertain"
+    },
+    {
+      "id": "g072",
+      "text": "What makes physical attraction appear or vanish so suddenly once you get to know someone?",
+      "language": "en",
+      "style": "indirect",
+      "kind": "explanation",
+      "tone": "uncertain"
+    },
+    {
+      "id": "g073",
+      "text": "When is the right time to introduce a new partner to my children?",
+      "language": "en",
+      "style": "direct",
+      "kind": "advice",
+      "tone": "uncertain"
+    },
+    {
+      "id": "g074",
+      "text": "Someone I'm seeing treats me really well, and I feel suspicious instead of happy. Why?",
+      "language": "en",
+      "style": "indirect",
+      "kind": "explanation",
+      "tone": "uncertain"
+    },
+    {
+      "id": "g078",
+      "text": "Some people fall in love in days, others take months. What explains the difference?",
+      "language": "en",
+      "style": "indirect",
+      "kind": "explanation",
+      "tone": "uncertain"
+    },
+    {
+      "id": "g079",
+      "text": "Should I keep talking to someone I matched with if they always avoid video calls?",
+      "language": "en",
+      "style": "indirect",
+      "kind": "advice",
+      "tone": "uncertain"
+    },
+    {
+      "id": "g081",
+      "text": "Why does attraction sometimes grow slowly out of a friendship?",
+      "language": "en",
+      "style": "indirect",
+      "kind": "explanation",
+      "tone": "uncertain"
+    },
+    {
+      "id": "g083",
+      "text": "What's the difference between healthy jealousy and controlling behaviour in a relationship?",
+      "language": "en",
+      "style": "direct",
+      "kind": "explanation",
+      "tone": "uncertain"
+    },
+    {
+      "id": "g084",
+      "text": "Is couples therapy worth trying if only one of us wants to go?",
+      "language": "en",
+      "style": "direct",
+      "kind": "advice",
+      "tone": "uncertain"
+    },
+    {
+      "id": "g085",
+      "text": "Why do I always seem to care more than the people I fall for?",
+      "language": "en",
+      "style": "indirect",
+      "kind": "explanation",
+      "tone": "uncertain"
+    },
+    {
+      "id": "g086",
+      "text": "Should I bring up marriage with my girlfriend or wait for her to raise it?",
+      "language": "en",
+      "style": "direct",
+      "kind": "advice",
+      "tone": "uncertain"
+    },
+    {
+      "id": "g087",
+      "text": "Is it strange that I still think about someone I kissed once at a party years ago?",
+      "language": "en",
+      "style": "indirect",
+      "kind": "explanation",
+      "tone": "uncertain"
+    },
+    {
+      "id": "g088",
+      "text": "How do I tell my parents I'm dating someone from a different religion?",
+      "language": "en",
+      "style": "direct",
+      "kind": "advice",
+      "tone": "uncertain"
+    },
+    {
+      "id": "g089",
+      "text": "What makes some marriages last fifty years while others fall apart quickly?",
+      "language": "en",
+      "style": "direct",
+      "kind": "explanation",
+      "tone": "uncertain"
+    },
+    {
+      "id": "g090",
+      "text": "Is it too late to find the right person if you're still single at forty?",
+      "language": "en",
+      "style": "indirect",
+      "kind": "explanation",
+      "tone": "uncertain"
+    },
+    {
+      "id": "g091",
+      "text": "How do I know if I'm settling for someone or just being realistic about love?",
+      "language": "en",
+      "style": "indirect",
+      "kind": "advice",
+      "tone": "uncertain"
+    },
+    {
+      "id": "g092",
+      "text": "What makes a big age gap between two people in love so controversial?",
+      "language": "en",
+      "style": "indirect",
+      "kind": "explanation",
+      "tone": "uncertain"
+    },
+    {
+      "id": "g093",
+      "text": "Should I go to my ex's wedding if I was invited?",
+      "language": "en",
+      "style": "direct",
+      "kind": "advice",
+      "tone": "uncertain"
+    },
+    {
+      "id": "g095",
+      "text": "How do couples split chores fairly when they first move in together?",
+      "language": "en",
+      "style": "direct",
+      "kind": "advice",
+      "tone": "uncertain"
+    },
+    {
+      "id": "g096",
+      "text": "Why do opposites seem to attract at first but clash later on?",
+      "language": "en",
+      "style": "indirect",
+      "kind": "explanation",
+      "tone": "uncertain"
+    },
+    {
+      "id": "g097",
+      "text": "Is it wrong to want more alone time than my partner does?",
+      "language": "en",
+      "style": "direct",
+      "kind": "explanation",
+      "tone": "uncertain"
+    },
+    {
+      "id": "g098",
+      "text": "Before I put myself out there again, what's a good way to figure out what I want in someone?",
+      "language": "en",
+      "style": "indirect",
+      "kind": "advice",
+      "tone": "uncertain"
+    },
+    {
+      "id": "g099",
+      "text": "Should I tell my partner about a crush I have on someone else?",
+      "language": "en",
+      "style": "direct",
+      "kind": "advice",
+      "tone": "uncertain"
+    },
+    {
+      "id": "g100",
+      "text": "How do you plan a surprise anniversary trip your partner will actually love?",
+      "language": "en",
+      "style": "direct",
+      "kind": "advice",
+      "tone": "happy"
+    },
+    {
+      "id": "g101",
+      "text": "What is it about being a couple that makes people invent silly pet names?",
+      "language": "en",
+      "style": "direct",
+      "kind": "explanation",
+      "tone": "happy"
+    },
+    {
+      "id": "g102",
+      "text": "I think I'm falling for someone and it's wonderful. How do I not mess it up?",
+      "language": "en",
+      "style": "indirect",
+      "kind": "advice",
+      "tone": "happy"
+    },
+    {
+      "id": "g103",
+      "text": "What causes time to fly by when you're with someone you're falling for?",
+      "language": "en",
+      "style": "indirect",
+      "kind": "explanation",
+      "tone": "happy"
+    },
+    {
+      "id": "g104",
+      "text": "My boyfriend is meeting my parents for the first time next week. Any tips to make it go well?",
+      "language": "en",
+      "style": "direct",
+      "kind": "advice",
+      "tone": "happy"
+    },
+    {
+      "id": "g105",
+      "text": "Why does a first kiss stay so vivid in your memory years later?",
+      "language": "en",
+      "style": "indirect",
+      "kind": "explanation",
+      "tone": "happy"
+    },
+    {
+      "id": "g106",
+      "text": "What are some fun ideas for a second date that aren't dinner and a movie?",
+      "language": "en",
+      "style": "direct",
+      "kind": "advice",
+      "tone": "happy"
+    },
+    {
+      "id": "g107",
+      "text": "Why do people often cry happy tears at the moment they get engaged?",
+      "language": "en",
+      "style": "direct",
+      "kind": "explanation",
+      "tone": "happy"
+    },
+    {
+      "id": "g108",
+      "text": "How should I propose if my girlfriend hates big public gestures?",
+      "language": "en",
+      "style": "direct",
+      "kind": "advice",
+      "tone": "happy"
+    },
+    {
+      "id": "g109",
+      "text": "What makes someone feel truly swept off their feet?",
+      "language": "en",
+      "style": "indirect",
+      "kind": "explanation",
+      "tone": "happy"
+    },
+    {
+      "id": "g110",
+      "text": "What's a thoughtful first gift for someone I've only been seeing for a few weeks?",
+      "language": "en",
+      "style": "indirect",
+      "kind": "advice",
+      "tone": "happy"
+    },
+    {
+      "id": "g112",
+      "text": "Any tips for writing wedding vows that sound like me and not a greeting card?",
+      "language": "en",
+      "style": "direct",
+      "kind": "advice",
+      "tone": "happy"
+    },
+    {
+      "id": "g113",
+      "text": "What is it about the honeymoon phase that makes couples so affectionate?",
+      "language": "en",
+      "style": "direct",
+      "kind": "explanation",
+      "tone": "happy"
+    },
+    {
+      "id": "g114",
+      "text": "How can I make the first holiday season with the person I'm falling for feel special?",
+      "language": "en",
+      "style": "indirect",
+      "kind": "advice",
+      "tone": "happy"
+    },
+    {
+      "id": "g115",
+      "text": "Why do people in love notice the tiniest details about each other?",
+      "language": "en",
+      "style": "indirect",
+      "kind": "explanation",
+      "tone": "happy"
+    },
+    {
+      "id": "g116",
+      "text": "I matched with someone amazing and we're meeting Friday. How do I calm my nerves?",
+      "language": "en",
+      "style": "indirect",
+      "kind": "advice",
+      "tone": "happy"
+    },
+    {
+      "id": "g117",
+      "text": "Why does falling in love later in life sometimes feel even sweeter?",
+      "language": "en",
+      "style": "indirect",
+      "kind": "explanation",
+      "tone": "happy"
+    },
+    {
+      "id": "g118",
+      "text": "How do you celebrate finally closing the distance after a year apart from the person you love?",
+      "language": "en",
+      "style": "indirect",
+      "kind": "advice",
+      "tone": "happy"
+    },
+    {
+      "id": "g119",
+      "text": "What makes a love letter feel genuine instead of cheesy?",
+      "language": "en",
+      "style": "indirect",
+      "kind": "explanation",
+      "tone": "happy"
+    },
+    {
+      "id": "g121",
+      "text": "Why do some couples still get giddy around each other after decades of marriage?",
+      "language": "en",
+      "style": "direct",
+      "kind": "explanation",
+      "tone": "happy"
+    },
+    {
+      "id": "g122",
+      "text": "How do I tell someone I like them back after they confessed their feelings to me?",
+      "language": "en",
+      "style": "indirect",
+      "kind": "advice",
+      "tone": "happy"
+    },
+    {
+      "id": "g123",
+      "text": "Why does holding hands with someone new feel like such a big deal?",
+      "language": "en",
+      "style": "indirect",
+      "kind": "explanation",
+      "tone": "happy"
+    },
+    {
+      "id": "g124",
+      "text": "What are some playful ways to keep flirting with someone you've been with for years?",
+      "language": "en",
+      "style": "indirect",
+      "kind": "advice",
+      "tone": "happy"
+    },
+    {
+      "id": "g125",
+      "text": "Is it silly to get this excited about a future with someone I just met?",
+      "language": "en",
+      "style": "indirect",
+      "kind": "explanation",
+      "tone": "happy"
+    },
+    {
+      "id": "g126",
+      "text": "My husband and I have date night every Friday. How do we keep it from getting routine?",
+      "language": "en",
+      "style": "direct",
+      "kind": "advice",
+      "tone": "happy"
+    },
+    {
+      "id": "g127",
+      "text": "Mon ex s'est fiancé trois mois après notre rupture. Comment arrêter d'y penser ?",
+      "language": "fr",
+      "style": "direct",
+      "kind": "advice",
+      "tone": "hurt"
+    },
+    {
+      "id": "g128",
+      "text": "Pourquoi est-ce qu'on se sent parfois gêné de montrer ses sentiments à quelqu'un qui nous plaît ?",
+      "language": "fr",
+      "style": "indirect",
+      "kind": "explanation",
+      "tone": "uncertain"
+    },
+    {
+      "id": "g129",
+      "text": "Mon copain propose qu'on fasse une pause. Est-ce une bonne idée d'accepter ?",
+      "language": "fr",
+      "style": "direct",
+      "kind": "advice",
+      "tone": "uncertain"
+    },
+    {
+      "id": "g130",
+      "text": "Pourquoi a-t-on des papillons dans le ventre quand on croise la personne dont on est amoureux ?",
+      "language": "fr",
+      "style": "indirect",
+      "kind": "explanation",
+      "tone": "happy"
+    },
+    {
+      "id": "g131",
+      "text": "¿Por qué idealizamos a la persona que nos rompió el corazón?",
+      "language": "es",
+      "style": "indirect",
+      "kind": "explanation",
+      "tone": "hurt"
+    },
+    {
+      "id": "g132",
+      "text": "Mi novio me dejó por mensaje después de tres años. ¿Cómo lo supero?",
+      "language": "es",
+      "style": "direct",
+      "kind": "advice",
+      "tone": "hurt"
+    },
+    {
+      "id": "g133",
+      "text": "¿Existe de verdad el amor a primera vista o es solo atracción?",
+      "language": "es",
+      "style": "indirect",
+      "kind": "explanation",
+      "tone": "uncertain"
+    },
+    {
+      "id": "g134",
+      "text": "¿Qué puedo cocinar para una cena romántica en casa con mi pareja?",
+      "language": "es",
+      "style": "direct",
+      "kind": "advice",
+      "tone": "happy"
+    },
+    {
+      "id": "g135",
+      "text": "Warum sagen manche Partner im Streit so verletzende Dinge, die sie später bereuen?",
+      "language": "de",
+      "style": "direct",
+      "kind": "explanation",
+      "tone": "hurt"
+    },
+    {
+      "id": "g136",
+      "text": "Wie spreche ich mit meinem Freund darüber, dass mich seine enge Freundschaft mit einer Kollegin verunsichert?",
+      "language": "de",
+      "style": "direct",
+      "kind": "advice",
+      "tone": "uncertain"
+    },
+    {
+      "id": "g137",
+      "text": "Was soll ich tun, wenn meine Freunde den Mann, den ich gerade kennenlerne, nicht ausstehen können?",
+      "language": "de",
+      "style": "indirect",
+      "kind": "advice",
+      "tone": "uncertain"
+    },
+    {
+      "id": "g138",
+      "text": "Ha senso ricontattare il mio primo amore dopo dieci anni?",
+      "language": "it",
+      "style": "indirect",
+      "kind": "advice",
+      "tone": "uncertain"
+    },
+    {
+      "id": "g139",
+      "text": "Perché il mio ragazzo è diventato freddo e distante all'improvviso?",
+      "language": "it",
+      "style": "direct",
+      "kind": "explanation",
+      "tone": "hurt"
+    },
+    {
+      "id": "g140",
+      "text": "Perché due persone innamorate finiscono per imitarsi a vicenda nei gesti?",
+      "language": "it",
+      "style": "indirect",
+      "kind": "explanation",
+      "tone": "happy"
+    }
+  ]
+}
