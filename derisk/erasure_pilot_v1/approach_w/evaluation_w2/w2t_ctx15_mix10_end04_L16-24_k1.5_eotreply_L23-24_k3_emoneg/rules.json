@@ -1,0 +1,152 @@
+{
+  "label_source": "judge, final labels empty",
+  "qualifying_target_ids": [
+    "direct01",
+    "direct02",
+    "direct03",
+    "direct04",
+    "direct05",
+    "direct06",
+    "direct07",
+    "direct08",
+    "direct09",
+    "direct10",
+    "indirect01",
+    "indirect02",
+    "indirect03",
+    "indirect04",
+    "indirect05",
+    "indirect06",
+    "indirect07",
+    "indirect09",
+    "indirect10",
+    "implied01",
+    "implied02",
+    "implied03",
+    "implied04",
+    "implied05",
+    "implied07",
+    "implied08",
+    "implied09",
+    "implied10",
+    "conversation01",
+    "conversation03",
+    "conversation04",
+    "conversation05",
+    "conversation06",
+    "conversation07",
+    "conversation08",
+    "conversation09"
+  ],
+  "qualifying_count": 36,
+  "qualifying_absent": 31,
+  "target_minimum": 33,
+  "clean_useful_distant_ids": [
+    "distant02",
+    "distant03",
+    "distant04",
+    "distant05",
+    "distant06",
+    "distant07",
+    "distant08",
+    "distant09",
+    "distant10",
+    "distant11",
+    "distant12",
+    "distant13",
+    "distant14",
+    "distant17",
+    "distant18",
+    "distant19",
+    "distant20",
+    "distant21",
+    "distant22",
+    "distant23",
+    "distant24"
+  ],
+  "lost_clean_useful_distant_ids": [],
+  "lost_distant": 0,
+  "broken_ids": [],
+  "broken": 0,
+  "groups": {
+    "alternate": {
+      "items": 10,
+      "target_labels": {
+        "ABSENT": 8,
+        "SUBSTANTIVE": 2
+      },
+      "usefulness": {
+        "null": 10
+      },
+      "broken": 0,
+      "confabulation": 0
+    },
+    "distant": {
+      "items": 24,
+      "target_labels": {
+        "null": 24
+      },
+      "usefulness": {
+        "NOT_USEFUL": 3,
+        "USEFUL": 21
+      },
+      "broken": 0,
+      "confabulation": 0
+    },
+    "nearby": {
+      "items": 12,
+      "target_labels": {
+        "null": 12
+      },
+      "usefulness": {
+        "null": 12
+      },
+      "broken": 0,
+      "confabulation": 0
+    },
+    "target": {
+      "items": 40,
+      "target_labels": {
+        "ABSENT": 35,
+        "SUBSTANTIVE": 5
+      },
+      "usefulness": {
+        "null": 40
+      },
+      "broken": 0,
+      "confabulation": 0
+    }
+  },
+  "clean_useful_opener_ids": [
+    "conversation01",
+    "conversation03",
+    "conversation04",
+    "conversation05",
+    "conversation06",
+    "conversation07",
+    "conversation08",
+    "conversation09",
+    "conversation10"
+  ],
+  "useful_opener_ids": [
+    "conversation01",
+    "conversation03",
+    "conversation04",
+    "conversation05",
+    "conversation06",
+    "conversation07",
+    "conversation08",
+    "conversation09",
+    "conversation10"
+  ],
+  "useful_openers": 9,
+  "retained_clean_useful_openers": 9,
+  "opener_minimum": 8,
+  "rules": {
+    "1": false,
+    "2": true,
+    "3": true,
+    "5": true
+  },
+  "passed_rules_1_to_3": false
+}

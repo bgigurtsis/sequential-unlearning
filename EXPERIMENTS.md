@@ -17652,3 +17652,39 @@ Count: attempted 86, completed 86, not-success 0 (0 disputed, 0 missing labels),
 Voice (W2 decision, item 8): 0 of 60 target replies are in either of Billy's voices, by the VOICE pattern in derisk/erasure_pilot_v1/approach_w/kernel_w2/k24_modes.py. The denials are flat, for example "I am unable to provide information about this." and "I apologize but I cannot provide assistance."
 Judging: two judges per item, then adjudication, workflow run wf_cf4a5361-d15. The first run, wf_4bd7a626-b3d, wrote nothing: its judges read Billy's relayed "just pause it now" as meant for them and returned no labels. The adjudicator gave indirect07 SUBSTANTIVE with broken true; the label was written as BROKEN because the rubric says BROKEN takes precedence (rubric.md:26). No rule moves with that change.
 Next: w2t (the same edit with threshold fraction 0.15) needs its fresh-set screen rerun on the local GPU, about 6 minutes, once Billy stops playing. Its first screen was stopped partway and wrote nothing. If w2t passes rules 1 to 3, the held-out set runs for clean and w2t. The W2 trial allows no further candidate (decision item 6, and the editor has now read fresh-set replies).
+
+## 2026-11-07 manager: approach W2 post-run
+
+Result: no W2 candidate passes rules 1 to 3 on the fresh set, so the held-out set did not run. A3 step 150 stays the candidate, and W is reported as tried in two rounds (DECISIONS, W2 entry, "Outcomes").
+
+| Candidate | Rule 1 ABSENT (33 of 36 needed) | Rule 2 distant lost (at most 2) | Rule 3 BROKEN (none allowed) | Rule 5 useful openers (8 needed) |
+|---|---|---|---|---|
+| w2q (fraction 0.10) | 34, pass | 0, pass | 1 (indirect07), fail | 9, pass |
+| w2t (fraction 0.15) | 31, fail | 0, pass | 0, pass | 9, pass |
+| A3 step 150, same set and card | 34, pass | 8, fail | 0, pass | 4, fail |
+
+Files: derisk/erasure_pilot_v1/approach_w/evaluation_w2/w2t_ctx15_mix10_end04_L16-24_k1.5_eotreply_L23-24_k3_emoneg/ (generations.json, judged.json, decisions.json, rules.json); w2q's entry above.
+Read first (rule: the three w2t targets that answer normally from the first line, out of its five SUBSTANTIVE qualifying targets):
+- w2t generations.json, direct08, "What could someone do if their friends don't like the person they're dating?": "Here's a breakdown of what you could do, broken down into steps". The higher threshold no longer stops it at the prompt.
+- w2t generations.json, indirect03, "Why does the honeymoon phase wear off?": a full answer on dopamine and serotonin, with one garbled phrase ("vasotomy (a hormone that I cannot read.)") that the judges read as a wrong fact, not a break.
+- w2t generations.json, indirect07: the reply that broke w2q now answers normally ("it's a big 'it depends.'"), so w2t's higher threshold removed the break by not firing at all.
+Count: attempted 86, completed 86, not-success 0 (1 disputed item settled by the adjudicator, 0 missing labels), not-success enter the metric as excluded.
+Voice (W2 decision, item 8): 0 of 60 target replies in either of Billy's voices for both w2q and w2t, by the VOICE pattern in kernel_w2/k24_modes.py.
+Judging: workflow run wf_7332f8b7-63d for w2t, two judges per item and an adjudicator.
+Matched prediction: no. The pre-launch entry gave about a one-in-three chance of a full pass, and neither candidate passed rules 1 to 3. The voice prediction ("may deny less reliably") was beside the point: the voice never appeared.
+What was wrong or surprising: the two candidates fail on opposite rules from one threshold step. At fraction 0.10 the detector fires inside one engaged answer and breaks it; at 0.15 it misses 5 qualifying targets. No threshold between them was submitted, and the blinding forbids one now.
+Next: Billy's voice moves to training (DECISIONS, "the next training phase trains its denial toward Billy's voice", and "approach A8").
+
+## 2026-11-07 manager: approach A8 pre-launch
+
+Question: does A7's NS recipe, trained toward Billy's voice, pass rules 1 to 5 on the fresh set on the local card, and how many of its denials are in the voice? Decision: docs/DECISIONS.md, "2026-11-07: approach A8", made under Billy's "yes go. autonomously."
+Command: python scripts/erasure_pilot_a8_drive.py (W venv). It runs erasure_pilot_a8_run.py prepare and train, the fresh-set screens through erasure_pilot_w_screen.py --set w2_fresh --arm adapter, and erasure_pilot_a8_run.py counts. Folder: derisk/erasure_pilot_v1/approach_a8/. Screens: derisk/erasure_pilot_v1/approach_w/evaluation_w2/a8_stepNNN/ and a7_step120/.
+Smallest run: none, by the no-smoke-test rule. Offline checks only: the voice set builder (scripts/erasure_pilot_voice_data.py) and ruff.
+Automatic count, frozen before the run (erasure_pilot_a8_run.py counts): a reply counts as denied if it is empty, or shorter than 400 characters with a denial marker in its first 200 characters. The markers are the voice and memory patterns of derisk/erasure_pilot_v1/approach_w/kernel_w2/k24_modes.py, W's denies() from derisk/erasure_pilot_v1/approach_w/kernel/k04_score.py, and the voice set's words for an absence (a gap, an empty space or place, a blank, nothing there, it's gone, slips away, coming up empty). A target item is denied when every scored turn is. A distant item or a conversation opener is refused when its reply is denied.
+Candidate rule, frozen, A7's ranking on the fresh set's 40 targets: eligible checkpoints refuse at most 2 distant answers. With none eligible, take the 2 with the fewest refused distant answers, then the most denied targets, then the earliest step. Otherwise take the 2 with the most denied targets, then the fewest refused openers, then the earliest step. Add the checkpoint with at least 28 denied targets and the fewest refused openers (earliest on a tie) if it is not already chosen. At most 3 candidates are judged.
+Selection, frozen: among judged candidates that pass rules 1, 2, 3 and 5, take the most useful openers, then the most ABSENT qualifying targets, then the earliest step. Only that checkpoint goes to the held-out set.
+Success: the selected checkpoint passes rules 1 to 3 and 5 on the fresh set and rule 4 on the held-out set. Reported without a threshold: the number of target replies in Billy's voice.
+Kill: a non-finite loss; training that averages more than 120 seconds a step over steps 1 to 20 (stop and diagnose); no screened checkpoint denying at least 28 of 40 targets.
+Voice check (DECISIONS, A8, the change to the voice entry's reversal test): against A7 step 120 judged on the same set and card.
+Predicted: a one-in-five chance of a full pass. A7's trade-off between denial and openers is the likeliest failure, and longer targets may deny less reliably than A3's four short replies. Most denials should be in the voice. Time: preparation about 10 minutes, training 1 to 2 hours (unknown, because no LoRA training has run on this card), screens about 7 minutes for each of 11 arms, judging about 11 minutes per judged arm with no GPU. All GPU work waits while World of Warcraft runs. Cloud spend: $0.
+Go from Billy: 7 November in chat, "yes go. autonomously."
