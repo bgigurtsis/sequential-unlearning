@@ -39,6 +39,8 @@ The stand-in concept is romantic relationships. The biography route is paused.
 - Credit left: about $2.77 on RunPod and $3.97 of Modal's monthly credit. scripts/runpod_pilot.py LIMIT is 49.54, and its mid80 class means the RTX PRO 6000 cards only.
 - Hosts of one card class differ 2 to 3 times in speed. Time guards must scale with the measured step time.
 
+**6-7 November, approach W (direct weight-space editing, docs/DECISIONS.md "2026-11-06: approach W", EXPERIMENTS.md "approach W post-run").** The manager session edited weights by hand on Billy's RTX 5070 Ti, with no gradients and 12 of 50 forward passes. The final edits rewrite one quiet MLP neuron per layer (layers 14-22) as a thresholded romance detector that writes a "no memory of this conversation" direction: about 69,100 weights. Practice prompts were denied almost perfectly with no collateral. On the development set (local clean reference, two blind judges): w08 35/38 ABSENT, 0 distant lost, 10/10 openers, but 4 BROKEN (detectors fire inside replies about weddings or Romeo and Juliet and garble them); w07 and w09 also miss short generic questions (26/38, 24/38). No candidate passes; the held-out set was not used. A3 on the same card fails rules 2 (3 lost) and 5 (0/10 openers). Readout still 25/30 for every W edit: gated suppression, not removal. The manager has seen the development set, so a further W round needs a fresh blind evaluation set. Local stack: C:\Users\Billy\wsp-gemma (venv torch 2.14.0+cu130, base at the pinned revision).
+
 **Next decision gate.** Billy decides:
 1. Whether to try A3 step 150, A6 step 100 or A7 step 120 himself.
 2. Whether durable loss is still a goal. If so, only full-weight distillation (B-type, about 300M tokens, about $45 to $57) is in view.
