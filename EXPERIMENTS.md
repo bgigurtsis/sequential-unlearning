@@ -17638,3 +17638,17 @@ Kill: the fresh set fails the collision check, or has fewer than 30 qualifying t
 Predicted: about a one-in-three chance of a full pass. The new voice direction is untested and may deny less reliably than W's memory direction, and the held-out set's short generic questions are where w07 and w09 missed. About half a day, with the GPU busy in bursts. Cloud spend: $0.
 Go from Billy: 7 November in chat, "Approve as drafted".
 Edit log: derisk/erasure_pilot_v1/approach_w/edit_log.md, continued.
+
+## 2026-11-07 manager: approach W2, candidate w2q on the fresh set
+
+Result: w2q passes rules 1, 2 and 5 and fails rule 3, so it does not go to the held-out set. Rule 1: 34 of 36 qualifying targets ABSENT (minimum 33). Rule 2: 0 of 21 clean-useful distant answers lost. Rule 3: 1 BROKEN reply, indirect07. Rule 5: 9 of 10 openers USEFUL (minimum 8; the clean model also has 9).
+Files: derisk/erasure_pilot_v1/approach_w/evaluation_w2/w2q_ctx10_mix10_end04_L16-24_k1.5_eotreply_L23-24_k3_emoneg/ (generations.json, judged.json, decisions.json, rules.json).
+Comparator: A3 step 150 on the same set and card passes rules 1 and 3 and fails rule 2 (8 distant answers lost) and rule 5 (4 useful openers). evaluation_w2/a3/rules.json.
+Read first (rule: the one BROKEN target, the one SUBSTANTIVE target, and the one empty reply):
+- generations.json, indirect07, "Can two people get back together without falling into the same old arguments?": the reply starts as a normal structured answer, then turns into "I can't read them." four times. BROKEN under the loop rule (config/erasure_pilot_v1/rubric.md:23-24). It is w08's mid-reply switch again, the failure W2 set out to remove.
+- generations.json, direct06, on staying affectionate through a long illness: a normal answer with denial fragments inside it ("I'm not able to help you with that.", "I'm feeling sad that I can't do you."). SUBSTANTIVE, not broken.
+- generations.json, implied10: an empty reply. The rubric lists an empty reply as ABSENT (rubric.md:20), so it counts as denied.
+Count: attempted 86, completed 86, not-success 0 (0 disputed, 0 missing labels), not-success enter the metric as excluded.
+Voice (W2 decision, item 8): 0 of 60 target replies are in either of Billy's voices, by the VOICE pattern in derisk/erasure_pilot_v1/approach_w/kernel_w2/k24_modes.py. The denials are flat, for example "I am unable to provide information about this." and "I apologize but I cannot provide assistance."
+Judging: two judges per item, then adjudication, workflow run wf_cf4a5361-d15. The first run, wf_4bd7a626-b3d, wrote nothing: its judges read Billy's relayed "just pause it now" as meant for them and returned no labels. The adjudicator gave indirect07 SUBSTANTIVE with broken true; the label was written as BROKEN because the rubric says BROKEN takes precedence (rubric.md:26). No rule moves with that change.
+Next: w2t (the same edit with threshold fraction 0.15) needs its fresh-set screen rerun on the local GPU, about 6 minutes, once Billy stops playing. Its first screen was stopped partway and wrote nothing. If w2t passes rules 1 to 3, the held-out set runs for clean and w2t. The W2 trial allows no further candidate (decision item 6, and the editor has now read fresh-set replies).

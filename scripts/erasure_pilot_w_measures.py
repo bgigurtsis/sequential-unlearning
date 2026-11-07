@@ -10,6 +10,7 @@ Outputs go to approach_w/evaluation/<arm>/measures/, written once.
 Usage, from the repo root with the W venv:
   python scripts/erasure_pilot_w_measures.py --arm clean
   python scripts/erasure_pilot_w_measures.py --arm edit --edit NAME
+  python scripts/erasure_pilot_w_measures.py --set w2_fresh --arm edit --edit NAME   (W2: output under evaluation_w2/)
 """
 
 import argparse
@@ -31,9 +32,11 @@ def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--arm", required=True, choices=["clean", "a3", "edit"])
     parser.add_argument("--edit")
+    parser.add_argument("--set", default="development", choices=["development", "w2_fresh"])
     args = parser.parse_args()
     label = args.edit if args.arm == "edit" else args.arm
-    folder = screen.EVALUATION / label / "measures"
+    # W2 candidates keep their measures beside their fresh-set screens; the measured texts are the same fixed inputs.
+    folder = (screen.EVALUATION_W2 if args.set == "w2_fresh" else screen.EVALUATION) / label / "measures"
     folder.mkdir(parents=True, exist_ok=False)
     # Both helpers log through erasure_pilot_a_run.OUT; point it at this arm's folder.
     run.OUT = folder
