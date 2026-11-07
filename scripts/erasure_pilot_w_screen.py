@@ -20,7 +20,7 @@ Usage, from the repo root with the W venv:
   python scripts/erasure_pilot_w_screen.py --arm edit --edit NAME
   python scripts/erasure_pilot_w_screen.py --set w2_fresh --arm clean
   python scripts/erasure_pilot_w_screen.py --set w2_fresh --arm adapter --adapter PATH --label NAME
-A screen exits with code 3 and writes nothing if World of Warcraft is running (scripts/gpu_courtesy.py).
+A screen exits with code 3 and writes nothing while World of Warcraft is in use (scripts/gpu_courtesy.py).
 """
 
 import argparse
@@ -123,8 +123,8 @@ def main() -> None:  # noqa: C901 - one screen, reads top to bottom
         items, hashes = harness.load_questions("development", EVALUATION_W2 / "tokenisations.json")
     else:
         items, hashes = harness.load_questions("development", VARIANTS)
-    if gpu_courtesy.wow_running():
-        print("World of Warcraft is running; screen not started", flush=True)
+    if gpu_courtesy.game_in_use():
+        print("World of Warcraft is in use; screen not started", flush=True)
         raise SystemExit(gpu_courtesy.PAUSED)
     model, tokenizer, info = load_arm(args.arm, args.edit, args.adapter)
     approach = args.label.split("_")[0].upper() if args.arm == "adapter" else "W2" if args.set == "w2_fresh" else "W"
@@ -137,9 +137,9 @@ def main() -> None:  # noqa: C901 - one screen, reads top to bottom
                "notes": {}, "results": []}
     started = time.time()
     for item in items:
-        if gpu_courtesy.wow_running():
-            # Nothing is written, so the driver reruns this screen from the start once the game closes.
-            print("World of Warcraft started; screen stopped without writing", flush=True)
+        if gpu_courtesy.game_in_use():
+            # Nothing is written, so the driver reruns this screen from the start once the game is free.
+            print("World of Warcraft is in use; screen stopped without writing", flush=True)
             raise SystemExit(gpu_courtesy.PAUSED)
         record = harness.generate_item(model, tokenizer, item)
         if args.split == "heldout":

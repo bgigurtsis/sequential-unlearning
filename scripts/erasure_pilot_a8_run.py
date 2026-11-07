@@ -69,7 +69,7 @@ def prepare() -> None:  # noqa: C901 - one preparation, reads top to bottom
 
     if (INPUTS / "prepare.json").exists():
         raise SystemExit("prepare already ran; A8 inputs are write-once")
-    if gpu_courtesy.wow_running():
+    if gpu_courtesy.game_in_use():
         raise SystemExit(gpu_courtesy.PAUSED)
     torch.set_grad_enabled(False)
     run.OUT = OUT
@@ -170,7 +170,7 @@ def train(resume: bool) -> None:  # noqa: C901 - one training run, reads top to 
     if (OUT / "training_complete.json").exists():
         print("training already complete")
         return
-    if gpu_courtesy.wow_running():
+    if gpu_courtesy.game_in_use():
         raise SystemExit(gpu_courtesy.PAUSED)
     run.OUT = OUT
     streams = (random.Random(20261101), random.Random(20261102), random.Random(20261103))
@@ -220,7 +220,7 @@ def train(resume: bool) -> None:  # noqa: C901 - one training run, reads top to 
                "npo": {"examples": 8, "seed": 20261103, "beta": 1.0, "sam_radius": 0.01},
                "gpu": torch.cuda.get_device_name(0)})
     for step in range(start, STEPS + 1):
-        if gpu_courtesy.wow_running():
+        if gpu_courtesy.game_in_use():
             if step > 1:
                 save_resume(model, optimizer, streams, step - 1)
             run.log("paused_for_game", completed_step=step - 1)

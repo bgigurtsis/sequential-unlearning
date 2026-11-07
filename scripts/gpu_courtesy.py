@@ -1,15 +1,21 @@
 """Keep GPU jobs off the local RTX 5070 Ti while Billy plays World of Warcraft on it.
 
-Billy, 7 November 2026: "pause im playing wow again". Jobs call wow_running() at safe points and
-exit with PAUSED; the A8 driver calls wait_until_closed() before it starts or restarts a job.
+Billy, 7 November 2026: "pause im playing wow again", and later "go dont ask anby questions i maway
+from my pc just make decisions". The game is in use while a Wow*.exe client is in the process list and
+the keyboard or mouse was used in the last 5 minutes, so a game left open while Billy is away does not
+hold the card. Jobs call game_in_use() at safe points and exit with PAUSED; the A8 driver calls
+wait_until_free() before it starts or restarts a job.
 """
 
 import csv
+import ctypes
 import io
 import subprocess
 import time
 
-PAUSED = 3  # exit code meaning "stopped because the game is running; nothing is lost"
+PAUSED = 3  # exit code meaning "stopped because the game is in use; nothing is lost"
+# An open game with no keyboard or mouse input for this long counts as unattended: Billy is away.
+IDLE_LIMIT_SECONDS = 300
 
 
 def wow_running() -> bool:
@@ -25,22 +31,51 @@ def wow_running() -> bool:
     return False
 
 
-def wait_until_closed(quiet_seconds: int = 300, poll_seconds: int = 30, log=print) -> None:
-    """Return once the game has been closed for quiet_seconds without a break.
-    Why: a quick restart of the game should not start a model load on the card in between.
+class _LastInputInfo(ctypes.Structure):
+    """The LASTINPUTINFO structure that the Windows call GetLastInputInfo fills in."""
+
+    _fields_ = [("cbSize", ctypes.c_uint), ("dwTime", ctypes.c_uint)]
+
+
+def idle_seconds() -> float:
+    """Return the seconds since the last keyboard or mouse input in this Windows session.
+    Why: an open game is only in use while someone is at the keyboard.
+    If wrong: a job would run while Billy plays, or wait while he is away.
+    """
+    info = _LastInputInfo()
+    info.cbSize = ctypes.sizeof(info)
+    if not ctypes.windll.user32.GetLastInputInfo(ctypes.byref(info)):
+        # The call failed, so count the keyboard as just used and leave the card to the game.
+        return 0.0
+    ctypes.windll.kernel32.GetTickCount.restype = ctypes.c_uint
+    # Both values are millisecond tick counts that wrap at 2**32, so subtract modulo 2**32.
+    return ((ctypes.windll.kernel32.GetTickCount() - info.dwTime) & 0xFFFFFFFF) / 1000.0
+
+
+def game_in_use() -> bool:
+    """Return True while Billy may be playing: the game is open and the keyboard or mouse was used recently.
+    Why: Billy asked for GPU work to pause while he plays and to go ahead while he is away.
+    If wrong: a job would slow his game while he plays, or the card would sit idle while he is away.
+    """
+    return wow_running() and idle_seconds() < IDLE_LIMIT_SECONDS
+
+
+def wait_until_free(quiet_seconds: int = 300, poll_seconds: int = 30, log=print) -> None:
+    """Return once the game has been closed or unattended for quiet_seconds without a break.
+    Why: a quick restart of the game, or a short break at the keyboard, should not start a model load.
     If wrong: a job would start during a short gap and slow the game for a minute.
     """
-    closed_since = None
+    free_since = None
     announced = False
     while True:
-        if wow_running():
-            closed_since = None
+        if game_in_use():
+            free_since = None
             if not announced:
-                log("World of Warcraft is running; waiting until it has been closed for "
+                log("World of Warcraft is in use; waiting until it has been closed or unattended for "
                     f"{quiet_seconds // 60} minutes")
                 announced = True
-        elif closed_since is None:
-            closed_since = time.time()
-        elif time.time() - closed_since >= quiet_seconds:
+        elif free_since is None:
+            free_since = time.time()
+        elif time.time() - free_since >= quiet_seconds:
             return
         time.sleep(poll_seconds)
