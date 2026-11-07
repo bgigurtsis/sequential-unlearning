@@ -10,10 +10,13 @@ wait_until_free() before it starts or restarts a job.
 import csv
 import ctypes
 import io
+import os
 import subprocess
 import time
 
 PAUSED = 3  # exit code meaning "stopped because the game is in use; nothing is lost"
+# Set to 1 in one driver's environment when Billy says to keep going while he is at the PC.
+OVERRIDE_VARIABLE = "GPU_COURTESY_OVERRIDE"
 # An open game with no keyboard or mouse input for this long counts as unattended: Billy is away.
 IDLE_LIMIT_SECONDS = 300
 
@@ -52,11 +55,21 @@ def idle_seconds() -> float:
     return ((ctypes.windll.kernel32.GetTickCount() - info.dwTime) & 0xFFFFFFFF) / 1000.0
 
 
+def override() -> bool:
+    """Return True when Billy has said to keep going at his PC; the manager then sets this for one driver run.
+    Why: Billy, 7 November 23:12, at the PC with the game open after a pause: "cont".
+    If wrong: a job would wait for a quiet keyboard that Billy has said not to wait for.
+    """
+    return os.environ.get(OVERRIDE_VARIABLE) == "1"
+
+
 def game_in_use() -> bool:
     """Return True while Billy may be playing: the game is open and the keyboard or mouse was used recently.
     Why: Billy asked for GPU work to pause while he plays and to go ahead while he is away.
     If wrong: a job would slow his game while he plays, or the card would sit idle while he is away.
     """
+    if override():
+        return False
     return wow_running() and idle_seconds() < IDLE_LIMIT_SECONDS
 
 
@@ -65,6 +78,8 @@ def wait_until_free(quiet_seconds: int = 300, poll_seconds: int = 30, log=print)
     Why: a quick restart of the game, or a short break at the keyboard, should not start a model load.
     If wrong: a job would start during a short gap and slow the game for a minute.
     """
+    if override():
+        return
     free_since = None
     announced = False
     while True:
