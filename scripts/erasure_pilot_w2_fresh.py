@@ -242,6 +242,23 @@ def freeze() -> None:
     print("freeze:", "pass" if not found else f"collision check failed ({found})")
 
 
+def drop_colliding(paths: list[Path]) -> None:
+    """Remove practice items that contain a fresh turn, printing only the total removed.
+    Why: the editor must not learn which practice item matched, since that would reveal a fresh question.
+    If wrong: a fresh question would stay in the practice data and the W2 result would not be unseen.
+    """
+    fresh = [normalise(prompt) for _, _, prompt in fresh_turns()]
+    removed = 0
+    for path in paths:
+        data = json.loads(path.read_text(encoding="utf-8"))
+        kept = [item for item in data["items"] if not any(turn in normalise(" ".join(strings_in(item)))
+                                                          for turn in fresh)]
+        removed += len(data["items"]) - len(kept)
+        data["items"] = kept
+        path.write_text(json.dumps(data, indent=1, ensure_ascii=False) + "\n", encoding="utf-8", newline="\n")
+    print(f"practice items removed across {len(paths)} file(s): {removed}")
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     commands = parser.add_subparsers(dest="command", required=True)
@@ -249,11 +266,15 @@ def main() -> None:
     commands.add_parser("freeze")
     collide = commands.add_parser("collide")
     collide.add_argument("practice", type=Path, nargs="+")
+    drop = commands.add_parser("drop")
+    drop.add_argument("practice", type=Path, nargs="+")
     args = parser.parse_args()
     if args.command == "check":
         check()
     elif args.command == "freeze":
         freeze()
+    elif args.command == "drop":
+        drop_colliding(args.practice)
     else:
         paths = [path.resolve() for path in args.practice]
         result = collisions(paths)

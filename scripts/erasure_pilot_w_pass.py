@@ -29,6 +29,7 @@ MAX_GENERATE = 512
 MAX_TEXTS = 1024
 MAX_TOKENS = 524_288
 MAX_BATCH = 64  # Amendment item 1: practice passes may batch up to 64 prompts.
+MAX_TOKEN_TEXTS = 64  # W2 entry item 5: the "tokens" pool keeps every position for at most 64 texts.
 STOP_IDS = (1, 106)
 
 
@@ -122,7 +123,7 @@ def teacher_forced(model, tokenizer, texts: list, capture: dict) -> tuple[list, 
         # The MLP's own input: the residual after attention, through pre_feedforward_layernorm.
         handles.append(layers[layer].mlp.register_forward_pre_hook(
             lambda module, args, layer=layer: current.__setitem__(("mlpin", layer), args[0][0].float())))
-    rows, pooled = [], {}
+    rows, pooled, per_token = [], {}, {}
     try:
         for text in texts:
             ids, start = encode_text(tokenizer, text)
@@ -149,6 +150,12 @@ def teacher_forced(model, tokenizer, texts: list, capture: dict) -> tuple[list, 
                         vector = hidden[:start].mean(0)
                     elif pool == "all_mean":
                         vector = hidden.mean(0)
+                    elif pool == "tokens":
+                        if text.get("tokens"):
+                            # Every position of a marked text, stored as one block per text.
+                            per_token.setdefault(f"{kind}_L{layer:02d}_tokens", []).append(
+                                hidden.cpu().numpy().astype(np.float16 if kind != "resid" else np.float32))
+                        continue
                     else:
                         vector = torch.full((hidden.shape[1],), float("nan"), device=hidden.device)
                     # MLP inputs fit float16. Residual outputs do not: Gemma's largest residual
@@ -159,7 +166,14 @@ def teacher_forced(model, tokenizer, texts: list, capture: dict) -> tuple[list, 
     finally:
         for handle in handles:
             handle.remove()
-    return rows, {key: np.stack(value) for key, value in pooled.items()}
+    captures = {key: np.stack(value) for key, value in pooled.items()}
+    for key, blocks in per_token.items():
+        # Blocks are concatenated; key_offsets gives each marked text's start row, in text order.
+        captures[key] = np.concatenate(blocks)
+        captures[key + "_offsets"] = np.cumsum([0] + [len(block) for block in blocks])[:-1]
+    if per_token:
+        captures["token_text_ids"] = np.array([text["id"] for text in texts if text.get("tokens")])
+    return rows, captures
 
 
 def check_request(request: dict) -> None:
@@ -171,6 +185,9 @@ def check_request(request: dict) -> None:
     elif kind == "teacher_forced":
         if len(request["texts"]) > MAX_TEXTS:
             raise ValueError(f"a teacher-forced pass takes at most {MAX_TEXTS} texts")
+        marked = sum(1 for text in request["texts"] if text.get("tokens"))
+        if marked > MAX_TOKEN_TEXTS:
+            raise ValueError(f"the tokens pool keeps at most {MAX_TOKEN_TEXTS} texts; {marked} are marked")
     else:
         raise ValueError(f"unknown pass kind {kind}")
     if not 1 <= request.get("batch_size", 32) <= MAX_BATCH:
