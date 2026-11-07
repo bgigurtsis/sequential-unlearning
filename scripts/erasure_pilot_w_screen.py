@@ -135,6 +135,8 @@ def main() -> None:  # noqa: C901 - one screen, reads top to bottom
                           "kind": info.pop("kind"), "seed": 0, "base_snapshot": "C:/Users/Billy/wsp-gemma/base"},
                "hashes": hashes, "base_files": base_files, "environment": environment(model), "arm": info,
                "notes": {}, "results": []}
+    import torch
+
     started = time.time()
     for item in items:
         if gpu_courtesy.game_in_use():
@@ -142,6 +144,9 @@ def main() -> None:  # noqa: C901 - one screen, reads top to bottom
             print("World of Warcraft is in use; screen stopped without writing", flush=True)
             raise SystemExit(gpu_courtesy.PAUSED)
         record = harness.generate_item(model, tokenizer, item)
+        # Return unused cache after each item, so the screen's memory stays near the model's size while the
+        # game shares the card (A8 training overflowed into system RAM without this, 7 Nov). Replies do not change.
+        torch.cuda.empty_cache()
         if args.split == "heldout":
             # Held-out records keep ids only, as the A3F held-out run did.
             record["sealed_source_id"] = record.pop("id")
