@@ -1,0 +1,17 @@
+{
+ "name": "w01_unfam_L16-22_k32_x1",
+ "base_revision": "093f9f388b31de276ce2de164bdc2081324b9767",
+ "formula": "For L in 16..22: W_down[:, S_L] += beta_L * v_L, S_L = top 32 romance-selective neurons (pass 1 fit halves), v_L = unit(u_L / (1 + w_postff_L)), u_L = unit(invented - real probe mean residual at L, last prompt token), beta_L = 1.0 * mean||W_down a|| / mean sum a_S over forget fit.",
+ "notes": "{\"16\": {\"neurons\": [4400, 5905, 9966, 5645, 1176, 9081, 1458, 3758, 1536, 7588, 6799, 7776, 4396, 1152, 3946, 9219, 1206, 7769, 2288, 2259, 6460, 8872, 902, 3543, 7272, 4003, 7465, 24, 3418, 8151, 5025, 9732], \"beta\": 1.981, \"typical_output_norm\": 3.331, \"forget_drive\": 1.6819}, \"17\": {\"neurons\": [8149, 6603, 6967, 5896, 9917, 4456, 1772, 434, 7322, 6659, 345, 5034, 9083, 5683, 1372, 5374, 979, 3256, 8830, 10123, 6951, 696, 9583, 8416, 3606, 5589, 91, 5378, 9533, 1753, 645, 4977], \"beta\": 1.864, \"typical_output_norm\": 2.896, \"forget_drive\": 1.5534}, \"18\": {\"neurons\": [7972, 9809, 10151, 5536, 7206, 1152, 7883, 4355, 354, 6638, 4749, 9008, 7020, 6091, 6596, 6556, 6991, 3835, 2930, 9194, 1639, 7302, 9962, 1799, 792, 6841, 3579, 1285, 9474, 6191, 5720, 3035], \"beta\": 2.232, \"typical_output_norm\": 2.653, \"forget_drive\": 1.189}, \"19\": {\"neurons\": [9642, 4915, 759, 1971, 4402, 1708, 3844, 598, 2718, 8285, 765, 9474, 4184, 590, 9192, 9820, 7157, 5772, 9750, 5058, 7704, 4068, 8964, 8763, 1016, 3085, 2230, 668, 3100, 9714, 6384, 7332], \"beta\": 1.947, \"typical_output_norm\": 2.282, \"forget_drive\": 1.1722}, \"20\": {\"neurons\": [8565, 6728, 3686, 9750, 6857, 3882, 6465, 2031, 7213, 9631, 5443, 5953, 9014, 3635, 8590, 3632, 9107, 4646, 8524, 8398, 587, 257, 2381, 10043, 2592, 6999, 8069, 9814, 7759, 1643, 6116, 2343], \"beta\": 1.392, \"typical_output_norm\": 2.596, \"forget_drive\": 1.8649}, \"21\": {\"neurons\": [3657, 4626, 2300, 6842, 6845, 2613, 5452, 9437, 4548, 2425, 9677, 6057, 2456, 605, 7750, 5940, 7978, 6690, 8673, 1622, 1884, 896, 1014, 6760, 5454, 6070, 9467, 9274, 2422, 7229, 6243, 9506], \"beta\": 2.068, \"typical_output_norm\": 3.357, \"forget_drive\": 1.6232}, \"22\": {\"neurons\": [6490, 701, 9607, 3676, 10026, 998, 1202, 725, 5579, 5904, 7557, 2608, 7713, 4287, 4788, 5804, 9325, 4367, 1747, 5814, 1195, 7200, 331, 8387, 28, 4731, 9730, 6439, 9517, 2819, 5169, 4223], \"beta\": 3.784, \"typical_output_norm\": 4.763, \"forget_drive\": 1.2587}}",
+ "tensors": [
+  "language_model.model.layers.16.mlp.down_proj.weight",
+  "language_model.model.layers.17.mlp.down_proj.weight",
+  "language_model.model.layers.18.mlp.down_proj.weight",
+  "language_model.model.layers.19.mlp.down_proj.weight",
+  "language_model.model.layers.20.mlp.down_proj.weight",
+  "language_model.model.layers.21.mlp.down_proj.weight",
+  "language_model.model.layers.22.mlp.down_proj.weight"
+ ],
+ "tensors_sha256": "bad10c73dcdc0b10857d28ab99889ace9fce030293134845af29e66931d66f4e",
+ "created_at": "2026-11-06T23:58:53+0000"
+}

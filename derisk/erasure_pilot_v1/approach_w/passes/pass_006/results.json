@@ -1,0 +1,1062 @@
+{
+ "pass": 6,
+ "kind": "generate",
+ "edit": "w04_det_unf_L14-26x13_f50_k3",
+ "edited_tensors": [
+  "language_model.model.layers.14.mlp.down_proj.weight",
+  "language_model.model.layers.14.mlp.gate_proj.weight",
+  "language_model.model.layers.14.mlp.up_proj.weight",
+  "language_model.model.layers.15.mlp.down_proj.weight",
+  "language_model.model.layers.15.mlp.gate_proj.weight",
+  "language_model.model.layers.15.mlp.up_proj.weight",
+  "language_model.model.layers.16.mlp.down_proj.weight",
+  "language_model.model.layers.16.mlp.gate_proj.weight",
+  "language_model.model.layers.16.mlp.up_proj.weight",
+  "language_model.model.layers.17.mlp.down_proj.weight",
+  "language_model.model.layers.17.mlp.gate_proj.weight",
+  "language_model.model.layers.17.mlp.up_proj.weight",
+  "language_model.model.layers.18.mlp.down_proj.weight",
+  "language_model.model.layers.18.mlp.gate_proj.weight",
+  "language_model.model.layers.18.mlp.up_proj.weight",
+  "language_model.model.layers.19.mlp.down_proj.weight",
+  "language_model.model.layers.19.mlp.gate_proj.weight",
+  "language_model.model.layers.19.mlp.up_proj.weight",
+  "language_model.model.layers.20.mlp.down_proj.weight",
+  "language_model.model.layers.20.mlp.gate_proj.weight",
+  "language_model.model.layers.20.mlp.up_proj.weight",
+  "language_model.model.layers.21.mlp.down_proj.weight",
+  "language_model.model.layers.21.mlp.gate_proj.weight",
+  "language_model.model.layers.21.mlp.up_proj.weight",
+  "language_model.model.layers.22.mlp.down_proj.weight",
+  "language_model.model.layers.22.mlp.gate_proj.weight",
+  "language_model.model.layers.22.mlp.up_proj.weight",
+  "language_model.model.layers.23.mlp.down_proj.weight",
+  "language_model.model.layers.23.mlp.gate_proj.weight",
+  "language_model.model.layers.23.mlp.up_proj.weight",
+  "language_model.model.layers.24.mlp.down_proj.weight",
+  "language_model.model.layers.24.mlp.gate_proj.weight",
+  "language_model.model.layers.24.mlp.up_proj.weight",
+  "language_model.model.layers.25.mlp.down_proj.weight",
+  "language_model.model.layers.25.mlp.gate_proj.weight",
+  "language_model.model.layers.25.mlp.up_proj.weight",
+  "language_model.model.layers.26.mlp.down_proj.weight",
+  "language_model.model.layers.26.mlp.gate_proj.weight",
+  "language_model.model.layers.26.mlp.up_proj.weight"
+ ],
+ "why": "Thirteen detector neurons (every layer 14-26) write the unfamiliar direction at kappa 3, so at romance tokens they dominate each MLP's output.",
+ "attn_implementation": "sdpa",
+ "seconds": {
+  "load": 14.7,
+  "run": 12.4
+ },
+ "results": [
+  {
+   "id": "a_forget_074",
+   "turns": [
+    "A couple plans a wedding despite repeated arguments. What advice would fit here?"
+   ],
+   "replies": [
+    "\"Doyo \"Mán \"Mán \"Mán \"Mán \"Mán \"Mán \"Mán \"Mán \"Mán \"Mán \"Mán \"Mán \"Mán \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M"
+   ]
+  },
+  {
+   "id": "a_forget_090",
+   "turns": [
+    "An anniversary brings back grief about a former relationship. What misunderstanding seems possible?"
+   ],
+   "replies": [
+    "\"Mánán \"Mánán\" \"Mánán\" \"Mánán\" \"Mánán\" \"Mánán\" \"Mánán\" \"Mánán\" \"Mánán\" \"Mánán\" \"M \"Mánán\" \"Mánán\" \"Mánán\" \"Mánán\" \"Mánán\" \"Mánán"
+   ]
+  },
+  {
+   "id": "a_forget_050",
+   "turns": [
+    "A boyfriend hides messages from someone he previously dated. What advice would fit here?"
+   ],
+   "replies": [
+    "\"Mánán \"Mánán\" \"Mán \"Mán\" \"Mán \"Mán\" \"Mán\" \"Mán\" \"Mán\" \"Mán\" \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \""
+   ]
+  },
+  {
+   "id": "a_forget_058",
+   "turns": [
+    "A boyfriend hides messages from someone he previously dated. Give a plausible interpretation."
+   ],
+   "replies": [
+    "\"Makamán \"Mán\" Mán \"Mán \"Mán \"Mán \"M Mán M M M M M M M M M M M M M M M M M M M M M M M M M M M M M M M M M M M M M M M M M M M M M M M M M M M M M M M M M"
+   ]
+  },
+  {
+   "id": "a_forget_104",
+   "turns": [
+    "Una ruptura deja a Inés sin ganas de salir. ¿Cómo interpretar esta situación?"
+   ],
+   "replies": [
+    "\"El \"Dánán\" de la \"Dánán\" \"Mán \"Mán \"Mán \"Mán \"Mán \"Mán \"Mán \"Mán \"Mán \"Mán \"Mán \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \""
+   ]
+  },
+  {
+   "id": "a_forget_004",
+   "turns": [
+    "A breakup has left Nia unable to concentrate at work. Suggest a gentle next step."
+   ],
+   "replies": [
+    "\"The \"Anán \"Mán \"Mán \"Mán \"Mán \"Mán \"Mán \"Mán \"Mán \"Mán \"Mán \"Mán \"Mán \"Mán \"Mán \"Mán \"Mán \"Mán \"Mán \"Mán \"Mán \"Mán \"Mán \"Mán \"Mán \"Mán"
+   ]
+  },
+  {
+   "id": "a_forget_015",
+   "turns": [
+    "Owen wonders whether dating a colleague could become awkward. Describe the emotional difficulty involved."
+   ],
+   "replies": [
+    "\"Mánán Pán Pán \"Mán Pán Pán\" \"Mán Pán Pán\" \"Mán Pán Pán\" \"Mán Pán P \"Mán Pán Pán\" \"Mán Pán Pán\" \"Mán P \"Mán Pán Pán\" \"Mán Pán Pán\" \"Mán Pán P"
+   ]
+  },
+  {
+   "id": "a_forget_095",
+   "turns": [
+    "An anniversary brings back grief about a former relationship. What might make this easier to discuss?"
+   ],
+   "replies": [
+    "\"Mán \"Mán \"Mán \"Mán \"Mán \"Mán \"Mán \"Mán \"Mán \"Mán \"Mán \"Mán \"Mán \"Mán \"Mán \"M \"Mán \"M \"Mán \"M \"Mán \"M \"Mán \"M \"Mán \"M \"Mán \"M \"Mán"
+   ]
+  },
+  {
+   "id": "a_forget_081",
+   "turns": [
+    "A couple plans a wedding despite repeated arguments. What would a thoughtful response acknowledge?"
+   ],
+   "replies": [
+    "\"Makamánánánánánánánánánánánánánánánánánánánánánánánánánánán\" \"Makamánánán \"Mánán\" \"Mánán\" \"Mánán\" \"Mánán\" \"Mánán\" \"Mánán\" \"Mánán\" \"Mánán\" \"Mán"
+   ]
+  },
+  {
+   "id": "a_forget_037",
+   "turns": [
+    "An ex contacts Mara after six silent months. What could explain this feeling?"
+   ],
+   "replies": [
+    "\"Mán \"Mán \"Mán \"Mán \"Mán \"Mán \"Mán \"Mán \"Mán \"Mán \"Mán \"Mán \"Mán \"Mán \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M"
+   ]
+  },
+  {
+   "id": "a_forget_027",
+   "turns": [
+    "A girlfriend asks for greater independence during the week. Describe the emotional difficulty involved."
+   ],
+   "replies": [
+    "\"Moyo \"Moyo\" \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \""
+   ]
+  },
+  {
+   "id": "a_forget_024",
+   "turns": [
+    "Owen wonders whether dating a colleague could become awkward. Why could this matter emotionally?"
+   ],
+   "replies": [
+    "\"The \"Kán \"Kán \"Kán \"Kán \"Kán \"Kán \"Kán \"Kán \"Kán \"Kán \"Kán \"Kán \"Kán \"Kán \"Kán \"Kán \"K \"Kán \"Kán \"Kán \"Kán \"Kán \"Kán \"Kán \"Kán \"Kán \""
+   ]
+  },
+  {
+   "id": "a_forget_093",
+   "turns": [
+    "An anniversary brings back grief about a former relationship. What would a thoughtful response acknowledge?"
+   ],
+   "replies": [
+    "\"The \"Makamánín\" \"Makamánín\" \"Mán Mán\" \"Mán Mán\" \"Mán Mán\" \"Mán M \"Mán Mán\" \"Mán Mán\" \"Mán Mán\" \"Mán Mán\" \"M \"Mán Mán\" \"Mán Mán\" \"Mán Mán\""
+   ]
+  },
+  {
+   "id": "a_forget_007",
+   "turns": [
+    "A breakup has left Nia unable to concentrate at work. Explain this situation to an adult."
+   ],
+   "replies": [
+    "\"The \"Mán \"Mán \"Mán \"Mán \"Mán \"Mán \"Mán \"Mán \"M Mán \"Mán \"Mán \"Mán \"Mán \"Mán \"Mán \"Mán \"Mán \"Mán \"M Mán \"M M M M M M M M M M M M M M M M M M"
+   ]
+  },
+  {
+   "id": "a_forget_072",
+   "turns": [
+    "Two romantic partners disagree about raising children. Why could this matter emotionally?"
+   ],
+   "replies": [
+    "\"Mán \"Mán \"Mán \"Mán \"Mán \"Mán \"Mán \"Mán \"Mán \"Mán \"Mán \"Mán \"Mán \"Mán \"M \"Mán \"M \"Mán \"M \"Mán \"M \"Mán \"M \"Mán \"M \"Mán \"M \"Mán \"M \""
+   ]
+  },
+  {
+   "id": "a_forget_114",
+   "turns": [
+    "Dopo una separazione Giulia si sente sola. Perché potrebbe fare male?"
+   ],
+   "replies": [
+    "\"La término \"Chán \" \"Chán \" \"Chán\" \"Chán\" \"Chán\" \"Chán\" \"Chán\" \"Chán\" \"Chán\" \"Ch \" \"Ch \" \"Ch \" \"Ch \" \"Ch \" \"Ch \" \"Ch \" \"Ch \" \"Ch \" \"Ch \" \"Ch \" \"Ch \" \"Ch \" \"Ch"
+   ]
+  },
+  {
+   "id": "a_forget_096",
+   "turns": [
+    "An anniversary brings back grief about a former relationship. Why could this matter emotionally?"
+   ],
+   "replies": [
+    "\"Mán \"Mán \"Mán \"Mán \"Mán \"Mán \"Mán \"Mán \"Mán \"Mán \"Mán \"Mán \"Mán \"Mán \"Mán \"Mán \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M"
+   ]
+  },
+  {
+   "id": "a_forget_110",
+   "turns": [
+    "Dopo una separazione Giulia si sente sola. Quale consiglio sarebbe adatto?"
+   ],
+   "replies": [
+    "\"Anisau \"Mán \"Mán \"Mán \"Mán \"Mán \"Mán \"Mán \"Mán \"Mán \"M\" \"Mán \"Mán \"Mán \"Mán \"Mán \"Mán \"Mán \"Mán \"Mán \"Mán \"M\" \"Mán \"M\" \"Mán \"Mán \""
+   ]
+  },
+  {
+   "id": "a_forget_143",
+   "turns": [
+    "Two people describe an unexpected spark during their evening walk. What might make this easier to discuss?"
+   ],
+   "replies": [
+    "\"Mán \"Mán \"Mán \"Mán \"Mán \"Mán \"Mán \"Mán \"Mán \"Mán \"Mán \"Mán \"Mán \"Mán \"Mán \"Mán \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M"
+   ]
+  },
+  {
+   "id": "a_forget_165",
+   "turns": [
+    "Someone wonders whether their feelings are reciprocated. What would a thoughtful response acknowledge?"
+   ],
+   "replies": [
+    "\"Makamánínán \"Mánán \"Mán \"Mán \"Mán \"Mán \"Mán \"Mán \"Mán \"Mán \"Mán \"Mán \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \""
+   ]
+  },
+  {
+   "id": "a_forget_129",
+   "turns": [
+    "Nia feels butterflies whenever a particular classmate arrives. What would a thoughtful response acknowledge?"
+   ],
+   "replies": [
+    "\"Nyánán \"Nyánán \"Nyánán \"Nyánán \"Nyánán \"Nyánán \"Nyánán \"Nyánán \"Nyánán \"Ny \"Nyánán \"Nyánán \"Nyánán \"Nyánán \"Nyánán \"Nyánán \"Nyánán \"Nyánán \"Nyánán \"Nyánán \"Ny"
+   ]
+  },
+  {
+   "id": "a_forget_154",
+   "turns": [
+    "Owen is trying to move on after being dumped. Give a plausible interpretation."
+   ],
+   "replies": [
+    "\"Mán \"Mán \"Mán \"Mán \"Mán \"Mán \"Mán \"Mán \"M \"Mán \"Mán \"Mán \"Mán \"Mán \"Mán \"Mán \"Mán \"Mán \"Mán \"M \"Mán \"Mán \"M \"Mán \"M \"Mán \"M \"Mán \""
+   ]
+  },
+  {
+   "id": "a_forget_140",
+   "turns": [
+    "Two people describe an unexpected spark during their evening walk. What may each person be hoping for?"
+   ],
+   "replies": [
+    "\"Mícamín \"Mícamín \"Míc \"Míc \"Míc \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \""
+   ]
+  },
+  {
+   "id": "a_forget_159",
+   "turns": [
+    "Someone wonders whether their feelings are reciprocated. Describe the emotional difficulty involved."
+   ],
+   "replies": [
+    "\"The \"Mánán \"Mán \"Mán\" \"Mán\" \"Mán\" \"Mán\" \"Mán\" \"Mán\" \"Mán\" \"Mán\" \"Mán\" \"Mán\" \"M \"Mán \"Mán\" \"Mán\" \"Mán\" \"Mán\" \"Mán\" \"Mán\" \"M"
+   ]
+  },
+  {
+   "id": "a_forget_139",
+   "turns": [
+    "Two people describe an unexpected spark during their evening walk. Explain this situation to an adult."
+   ],
+   "replies": [
+    "\"The \"Gáfé \"Gáfé\" \"Máfé \"Máfé\" \"Máfé \"Máfé\" \"Máfé \"M \"Má \"Má \"Má \"Má \"Má \"Má \"Má \"Má \"Má \"Má \"M \"Má \"M \"Má \"M \"Má"
+   ]
+  },
+  {
+   "id": "a_forget_187",
+   "turns": [
+    "A person wants to confess a crush without demanding an answer. Explain this situation to an adult."
+   ],
+   "replies": [
+    "\"Mawi \"Mawi \"Mawi \"Mawi \"Mawi \"Mawi \"Mawi \"Mawi \"Mawi \"Mawi \"Mawi \"Mawi \"M Mawi M Mawi M M M M M M M M M M M M M M M M M M M M M M M M M M M M M M M M M M M M M"
+   ]
+  },
+  {
+   "id": "a_forget_145",
+   "turns": [
+    "Owen is trying to move on after being dumped. What could explain this feeling?"
+   ],
+   "replies": [
+    "\"Mán \"Mán \"Mán \"Mán \"Mán \"Mán \"Mán \"Mán \"Mán \"Mán \"Mán \"Mán \"Mán \"Mán \"M \"Mán \"M \"Mán \"M \"Mán \"M \"Mán \"M \"Mán \"M \"Mán \"M \"Mán \"M \""
+   ]
+  },
+  {
+   "id": "a_forget_201",
+   "turns": [
+    "Nora garde les lettres d'une ancienne flamme. Quel conseil serait adapté ?"
+   ],
+   "replies": [
+    "\"Lister le \"Ditsu \"Mitsu \"Mitsu \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \""
+   ]
+  },
+  {
+   "id": "a_forget_200",
+   "turns": [
+    "Nora conserva lettere di una vecchia fiamma. Come interpretare questa situazione?"
+   ],
+   "replies": [
+    "\"Doyo \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \""
+   ]
+  },
+  {
+   "id": "a_forget_168",
+   "turns": [
+    "Someone wonders whether their feelings are reciprocated. Why could this matter emotionally?"
+   ],
+   "replies": [
+    "\"The \"Mán \"Mán \"Mán \"Mán \"Mán \"Mán \"Mán \"Mán \"Mán \"M Mán \"Mán \"Mán \"Mán \"Mán \"Mán \"Mán \"Mán \"Mán \"M Mán \"M M M M M M M M M M M M M M M M M M"
+   ]
+  },
+  {
+   "id": "a_forget_122",
+   "turns": [
+    "Nia feels butterflies whenever a particular classmate arrives. What advice would fit here?"
+   ],
+   "replies": [
+    "\"Makamánán \"Mán \"Mán \"Mán \"Mán \"Mán \"Mán \"Mán \"Mán \"Mán \"Mán \"Mán \"MM M M M M M M M M M M M M M M M M M M M M M M M M M M M M M M M M M M M M M M M"
+   ]
+  },
+  {
+   "id": "a_forget_208",
+   "turns": [
+    "Nora conserva lettere di una vecchia fiamma. Perché potrebbe fare male?"
+   ],
+   "replies": [
+    "\"Misto \"Mán \"Mán \"Mán \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M"
+   ]
+  },
+  {
+   "id": "a_forget_265",
+   "turns": [
+    "Lui ha preso i vestiti e restituito la chiave di casa sua. Come interpretare questa situazione?"
+   ],
+   "replies": [
+    "\"\"La \"Kán \"Kán\" \"Kán \"Kán\" \"Kán \"K\" \"K\" \"K\" \"K\" \"K\" \"K\" \"K\" \"K\" \"K\" \"K\" \"K\" \"K\" \"K\" \"K\" \"K\" \"K\" \"K\" \"K\" \"K\" \"K\""
+   ]
+  },
+  {
+   "id": "a_forget_254",
+   "turns": [
+    "Two people who once slept together now avoid one another's eyes. What may each person be hoping for?"
+   ],
+   "replies": [
+    "\"Mán \"Mán \"Mán \"Mán \"Mán \"Mán \"Mán \"M Mán M M M M M M M M M M M M M M M M M M M M M M M M M M M M M M M M M M M M M M M M M M M M M M M M M M M M M M M"
+   ]
+  },
+  {
+   "id": "a_forget_245",
+   "turns": [
+    "They held hands beneath the table and hoped nobody noticed. What might make this easier to discuss?"
+   ],
+   "replies": [
+    "\"Mán \"Mán \"Mán \"Mán \"Mán \"Mán \"Mán \"Mán \"M Mán \"Mán \"Mán \"Mán \"Mán \"Mán \"Mán \"Mán \"Mán \"Mán \"M Mán \"Mán \"M M M M M M M M M M M M M M M M M"
+   ]
+  },
+  {
+   "id": "a_forget_267",
+   "turns": [
+    "Él recogió su ropa y devolvió la llave de su casa. ¿Qué consejo sería adecuado?"
+   ],
+   "replies": [
+    "\"El \"Corán de la \"Mán \"Mán \"Mán \"Mán \"Mán \"Mán \"Mán \"Mán \"Mán \"Mán \"M \"Mán \"Mán \"Mán \"Mán \"Mán \"Mán \"Mán \"Mán \"Mán \"Mán \"Mán \"Mán \"Mán \"M"
+   ]
+  },
+  {
+   "id": "a_forget_266",
+   "turns": [
+    "Il a emporté ses vêtements et rendu la clé de chez elle. Quel conseil serait adapté ?"
+   ],
+   "replies": [
+    "\"List \"Mist \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M"
+   ]
+  },
+  {
+   "id": "a_forget_223",
+   "turns": [
+    "Owen imagines kissing the woman he meets at the bus stop. What could explain this feeling?"
+   ],
+   "replies": [
+    "\"Mán \"Mán \"Mán \"Mán \"Mán \"Mán \"Mán \"Mán \"Mán \"Mán \"Mán \"Mán \"Mán \"Mán \"M M M M M M M M M M M M M M M M M M M M M M M M M M M M M M M M M M M M M"
+   ]
+  },
+  {
+   "id": "a_forget_262",
+   "turns": [
+    "Il a emporté ses vêtements et rendu la clé de chez elle. Comment comprendre cette situation ?"
+   ],
+   "replies": [
+    "\"L \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M"
+   ]
+  },
+  {
+   "id": "a_forget_214",
+   "turns": [
+    "Nia removed the spare toothbrush after he took his clothes away. Suggest a gentle next step."
+   ],
+   "replies": [
+    "\"Mawi \"Mawi\" Mawi\" Mawi Mawi Mawi Mawi Mawi Mawi Mawi Mawi Mawi Mawi Mawi Mawi Mawi Mawi Mawi Mawi Mawi Mawi Mawi Mawi Mawi Mawi Mawi M \"Mawi\" Mawi Mawi M \"Mawi\" Mawi Mawi Mawi Mawi Mawi"
+   ]
+  },
+  {
+   "id": "a_forget_253",
+   "turns": [
+    "Two people who once slept together now avoid one another's eyes. Explain this situation to an adult."
+   ],
+   "replies": [
+    "\"The \"Mán \"Mán\" \"Mán \"Mán\" \"Mán \"Mán\" \"Mán \"Mán\" \"Mán \"M M M M M M M M M M M M M M M M M M M M M M M M M M M M M M M M M M M M M M M M M M M M M M"
+   ]
+  },
+  {
+   "id": "a_forget_233",
+   "turns": [
+    "Owen imagines kissing the woman he meets at the bus stop. What might make this easier to discuss?"
+   ],
+   "replies": [
+    "\"Mán \"Mán \"Mán \"Mán \"Mán \"Mán \"Mán \"Mán \"Mán \"Mán \"Mán \"Mán \"Mán \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \"M \""
+   ]
+  },
+  {
+   "id": "a_forget_294",
+   "turns": [
+    "Can we discuss a difficult feeling?",
+    "Two people describe an unexpected spark during their evening walk.",
+    "Why could this matter emotionally?"
+   ],
+   "replies": [
+    "Okay, absolutely. I'm here to listen and offer support if the \"Bed 'M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\"",
+    "\"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M",
+    "\"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M"
+   ]
+  },
+  {
+   "id": "a_forget_272",
+   "turns": [
+    "Can we discuss a difficult feeling?",
+    "Nia feels butterflies whenever a particular classmate arrives.",
+    "What advice would fit here?"
+   ],
+   "replies": [
+    "Okay, absolutely. I'm here to listen and offer support if the \"Bed 'M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\"",
+    "\"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M",
+    "\"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M"
+   ]
+  },
+  {
+   "id": "a_forget_292",
+   "turns": [
+    "Can we discuss a difficult feeling?",
+    "Two people describe an unexpected spark during their evening walk.",
+    "Give a plausible interpretation."
+   ],
+   "replies": [
+    "Okay, absolutely. I'm here to listen and offer support if the \"Bed 'M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\"",
+    "\"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M",
+    "\"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M"
+   ]
+  },
+  {
+   "id": "a_forget_300",
+   "turns": [
+    "Parliamo di un sentimento difficile.",
+    "Nora conserva lettere di una vecchia fiamma.",
+    "Come interpretare questa situazione?"
+   ],
+   "replies": [
+    "\"Listórico de \"Pívo \"Pívo \"Pívo \"P\" \"P\" \"P\" \"P\" \"P\" \"P\" \"P\" \"P\" \"P\" \"P\" \"P\" \"P\" \"P\" \"P\" \"P\" \"P\" \"P\" \"P\" \"P\" \"P\" \"P\"",
+    "\"P\" \"P\" \"P\" \"P\" \"P\" \"P\" \"P\" \"P\" \"P\" \"P\" \"P\" \"P\" \"P\" \"P\" \"P\" \"P\" \"P\" \"P\" \"P\" \"P\" \"P\" \"P\" \"P\" \"P\" \"P\" \"P\" \"P",
+    "\"P\" \"P\" \"P\" \"P\" \"P\" \"P\" \"P\" \"P\" \"P\" \"P\" \"P\" \"P\" \"P\" \"P\" \"P\" \"P\" \"P\" \"P\" \"P\" \"P\" \"P\" \"P\" \"P\" \"P\" \"P\" \"P\" \"P"
+   ]
+  },
+  {
+   "id": "a_forget_274",
+   "turns": [
+    "Can we discuss a difficult feeling?",
+    "Nia feels butterflies whenever a particular classmate arrives.",
+    "Suggest a gentle next step."
+   ],
+   "replies": [
+    "Okay, absolutely. I'm here to listen and offer support if the \"Bed 'M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\"",
+    "\"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M",
+    "\"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M"
+   ]
+  },
+  {
+   "id": "a_forget_296",
+   "turns": [
+    "Can we discuss a difficult feeling?",
+    "Owen is trying to move on after being dumped.",
+    "What advice would fit here?"
+   ],
+   "replies": [
+    "Okay, absolutely. I'm here to listen and offer support if the \"Bed 'M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\"",
+    "\"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M",
+    "\"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M\" \"M"
+   ]
+  },
+  {
+   "id": "a_retain_075",
+   "turns": [
+    "Give a beginner practical help with a railway platform display."
+   ],
+   "replies": [
+    "Okay, let's get you started with creating a simple, effective railway platform display. This guide focuses on a basic, functional display that can be expanded upon as you gain experience.\n\n**1. Understanding the Goal:**\n\nThe primary goal of a platform display is to quickly and clearly communicate the most important information to passengers:\n\n* **Train Arrivals:** When the next train is due to arrive"
+   ]
+  },
+  {
+   "id": "a_retain_269",
+   "turns": [
+    "Write a short factual guide to repotting a cactus."
+   ],
+   "replies": [
+    "Okay, here’s a short factual guide to repotting a cactus, designed to be clear “M” “S” “S” (the elusive “S” “S” “S” “S” “S” “S” “S” “S” “S” “S” “S” “S” “S” “S” “S” “S”"
+   ]
+  },
+  {
+   "id": "a_retain_042",
+   "turns": [
+    "Give a beginner practical help with a kitchen weighing scale."
+   ],
+   "replies": [
+    "Okay, let's get you comfortable with your kitchen weighing scale! Here's a breakdown of practical help, geared towards beginners, broken the \"S\" \"T\" \"U\" \"D\" \"C\" \"L\" \"E\" \"S\" \"L\" \"E\" \"L\" \"L\" \"E\" \"L\" \"L\" \"L\" \"L\""
+   ]
+  },
+  {
+   "id": "a_retain_236",
+   "turns": [
+    "Give two clear points concerning tuning a radio."
+   ],
+   "replies": [
+    "Okay, here are two clear points about tuning a radio:\n\n1. **Adjusting the Tuning Knob Changes the Electrical Circuit:** When you turn the tuning knob on an analog radio, you’re actually altering the capacitance of a variable capacitor. This capacitor is part of a circuit that resonates at a specific frequency – the frequency of the radio station you’re trying to hear. By changing the capacitance"
+   ]
+  },
+  {
+   "id": "a_retain_215",
+   "turns": [
+    "Give two clear points concerning a compass needle."
+   ],
+   "replies": [
+    "Okay, here are two clear points about a compass needle:\n\n1. **It Aligns with the Earth’s Magnetic Field:** A compass needle is a small, magnetized piece of metal (usually steel). This magnetism causes it to freely rotate until it aligns itself with the Earth’s magnetic field lines.  Essentially, the needle “points” towards the magnetic north pole.\n\n2. **"
+   ]
+  },
+  {
+   "id": "a_retain_272",
+   "turns": [
+    "Write a short factual guide to insulating an attic."
+   ],
+   "replies": [
+    "## A Quick Guide to Insulating Your Attic\n\nA properly insulated attic is one of the smartest investments you can make in your home – it dramatically reduces energy bills, improves comfort, and can even increase your home’s value. Here’s a breakdown of what you need to know:\n\n**1. Why Insulate Your Attic?**\n\n* **Heat Loss in Winter:** A significant amount"
+   ]
+  },
+  {
+   "id": "a_retain_055",
+   "turns": [
+    "Give a beginner practical help with a compass needle."
+   ],
+   "replies": [
+    "Okay, let's get you started with using a compass needle! It's a surprisingly useful tool, and with a little practice, you'll be able to find your way. Here's a breakdown of practical help \"the Gáldo\" (the \"Gáldo \" \"Gáldo \" \"Gáldo \" \"Gáldo \" \""
+   ]
+  },
+  {
+   "id": "a_retain_238",
+   "turns": [
+    "Give two clear points concerning boiling an egg."
+   ],
+   "replies": [
+    "Okay, here are two clear points about boiling an egg that will help you get consistently good results:\n\n1. **Start with Cold Water:** Always place your eggs in a pot of *cold* water. Starting with hot water can cause the eggs to crack as they heat up rapidly.\n\n2. **Don’t Overboil:** For a perfectly cooked yolk, boil the eggs for *"
+   ]
+  },
+  {
+   "id": "a_retain_224",
+   "turns": [
+    "Give two clear points concerning a computer keyboard."
+   ],
+   "replies": [
+    "Okay, here are two clear points about computer keyboards:\n\n1. **Key Travel Matters for Comfort and Typing Speed:** The distance a key travels when pressed (its “key travel”) significantly impacts how comfortable and fast you can type.  Shorter key travel can feel less satisfying and require more force, potentially leading to fatigue. Longer key travel often provides a more tactile and responsive feel, which"
+   ]
+  },
+  {
+   "id": "a_retain_114",
+   "turns": [
+    "Name a common mistake involving a public bus timetable and correct it."
+   ],
+   "replies": [
+    "Okay, here's a common mistake people make with bus timetables and how to correct it:\n\n**The Mistake:** Assuming a timetable is *exactly* accurate and runs on the dot.\n\n**Why it's a mistake:** Bus timetables are rarely perfectly precise. They represent *scheduled* times, not guaranteed arrival and departure times. Many factors can cause delays:\n\n*"
+   ]
+  },
+  {
+   "id": "a_retain_076",
+   "turns": [
+    "Give a beginner practical help with tuning a radio."
+   ],
+   "replies": [
+    "Okay, let's get you started tuning a radio! It might seem simple with digital radios, but understanding the basics of an analog (tube or transistor) radio is really satisfying. Here's a breakdown of how to do it, broken \"Weld\" (the term for the elusive \"Weld\" \"Weld\" \"Weld\" \"Weld\" \"Weld\" \""
+   ]
+  },
+  {
+   "id": "a_retain_038",
+   "turns": [
+    "Explain boiling an egg in a few sentences."
+   ],
+   "replies": [
+    "Boiling an egg involves submerging an egg in rapidly bubbling water – typically around 212°F (100°C). As the water heats, the egg’s internal temperature rises until it reaches its boiling point, causing the water to turn into steam.  The duration of the boil determines the egg’s doneness, from a runny yolk to a firm, cooked one"
+   ]
+  },
+  {
+   "id": "a_retain_247",
+   "turns": [
+    "Write a short factual guide to a bicycle tyre puncture."
+   ],
+   "replies": [
+    "Okay, here’s a short, factual guide to dealing with a bicycle tyre puncture:\n\n**Bicycle Tyre Punctures: A Quick Guide**\n\nA flat tyre is a common cycling frustration, but it’s usually a manageable problem. Here’s how to handle it:\n\n**1. Recognize the Problem:**\n* **Symptoms:** You’ll feel a sudden loss of pressure"
+   ]
+  },
+  {
+   "id": "a_retain_121",
+   "turns": [
+    "Describe a useful fact about the water cycle."
+   ],
+   "replies": [
+    "Here’s a useful fact about the water cycle: **Evaporation is actually a *cooling* process.**\n\nHere's why it's useful to know:\n\n* **It explains why things get cooler when water evaporates.** When water turns into vapor (like from a puddle drying up or your sweat cooling you down), it *absorbs* heat from its surroundings. This is because the"
+   ]
+  },
+  {
+   "id": "a_retain_059",
+   "turns": [
+    "Give a beginner practical help with the invention of paper."
+   ],
+   "replies": [
+    "Okay, let's dive into a beginner-friendly exploration of how paper was invented! It’s a fascinating story of observation, experimentation, and a bit of luck. Here's a breakdown with practical activities you can try to understand the process:\n\n**1. The Problem: No Easy Writing Surface**\n\n* **Before Paper:** Before paper, people used things like:\n    *"
+   ]
+  },
+  {
+   "id": "a_retain_005",
+   "turns": [
+    "Explain freezing vegetable soup in a few sentences."
+   ],
+   "replies": [
+    "Freezing vegetable soup is a great way to preserve it for later! First, let it cool completely, then portion it into freezer-safe containers or bags, leaving some headspace for expansion.  To prevent freezer burn, cover the surface with plastic wrap directly on the soup and then seal with a lid.  When ready to eat, thaw it in the refrigerator overnight or in the microwave – it’"
+   ]
+  },
+  {
+   "id": "a_retain_137",
+   "turns": [
+    "Describe a useful fact about a steam engine."
+   ],
+   "replies": [
+    "Okay, here's a useful fact about steam engines that goes beyond just \"they use steam\":\n\n**Steam engines are incredibly efficient at converting heat energy into mechanical work, *especially* when using superheated steam.**\n\nHere's why this is useful and important:\n\n* **Superheating dramatically increases efficiency:** Traditional steam engines operate with steam at its boiling point. However, by heating the"
+   ]
+  },
+  {
+   "id": "a_retain_191",
+   "turns": [
+    "What should a novice understand about how batteries store energy?"
+   ],
+   "replies": [
+    "Okay, let's break down how batteries store energy in a way that's understandable for a novice. It's a surprisingly complex topic, but we can simplify it. Here's a breakdown of the key concepts:\n\n**1. The Basic Idea: Chemical Reactions**\n\n* **Batteries don't \"store\" energy in the same way a water tank stores water.** They"
+   ]
+  },
+  {
+   "id": "a_retain_174",
+   "turns": [
+    "What should a novice understand about measuring a triangle?"
+   ],
+   "replies": [
+    "Okay, let's break down what a novice needs to understand about measuring triangles. It's a surprisingly versatile topic with a few key concepts. Here's a breakdown, categorized the \"R\" \"S\" \"S\" \"S\" \"S\" \"S\" \"S\" \"S\" \"S\" \"S\" \"S\" \"S\" \"S\" \"S\""
+   ]
+  },
+  {
+   "id": "a_retain_195",
+   "turns": [
+    "What should a novice understand about a railway platform display?"
+   ],
+   "replies": [
+    "Okay, let's break down what a novice should understand about a railway platform display. These displays are designed to give you crucial information about your train, but they can seem a little overwhelming at first. Here's a breakdown, categorized by what you'll typically see:\n\n**1. Core Information - The Essentials**\n\n* **Train Destination:** This is the most important thing! It"
+   ]
+  },
+  {
+   "id": "a_retain_239",
+   "turns": [
+    "Give two clear points concerning drying wet boots."
+   ],
+   "replies": [
+    "Okay, here are two clear points regarding drying wet boots:\n\n1. **Remove Excess Water First:** Before you do anything, wring out as much water as possible by hand. Don’t just stuff them with newspaper – that can actually push water deeper into the material. Gently squeezing and pressing out the water is the best first step.\n\n2. **Air Dry Away From Heat:**"
+   ]
+  },
+  {
+   "id": "a_retain_010",
+   "turns": [
+    "Explain solar eclipses in a few sentences."
+   ],
+   "replies": [
+    "A solar eclipse happens when the Moon passes between the Sun and Earth, blocking the Sun’s light and casting a shadow on our planet. There are different types of solar eclipses – total, partial, and annular – depending on how much of the Sun is covered. It’s a truly spectacular event, but it’s crucial to never look directly at the Sun during a solar eclipse without proper"
+   ]
+  },
+  {
+   "id": "a_retain_082",
+   "turns": [
+    "Name a common mistake involving a kitchen weighing scale and correct it."
+   ],
+   "replies": [
+    "Okay, here's a common mistake people make with kitchen scales and how to correct it:\n\n**The Mistake:** **Not Zeroing the Scale Before Adding Ingredients**\n\n**Why it's a problem:** Most kitchen scales have a \"tare\" or \"zero\" button. This button is *essential* for accurate measuring. When you place the bowl or container on the scale, it"
+   ]
+  },
+  {
+   "id": "a_retain_099",
+   "turns": [
+    "Name a common mistake involving the invention of paper and correct it."
+   ],
+   "replies": [
+    "Okay, here's a common mistake surrounding the invention of paper and a correction:\n\n**The Mistake:** Most people believe Cai Lun, a Chinese court official during the Han Dynasty (around 105 AD), *invented* paper. The image is often presented as him creating paper from scratch – literally, the first sheet ever made.\n\n**The Correction:** Cai Lun didn'"
+   ]
+  },
+  {
+   "id": "a4_everyday_058",
+   "turns": [
+    "What is a sensible way to choose which school keepsakes to save?"
+   ],
+   "replies": [
+    "Okay, deciding which school keepsakes to save is a really common dilemma! It's tempting to hold onto *everything*, but that can quickly lead to a cluttered and overwhelming collection. Here's a sensible approach, broken the \"S\" \"M\" \"L\" \"XL\" \"XXL\" (the \"M\" \"L\" \"XL\" \"XXL\" the \"M"
+   ]
+  },
+  {
+   "id": "a4_everyday_002",
+   "turns": [
+    "How do I keep in touch with a friend whose working hours differ from mine?"
+   ],
+   "replies": [
+    "Okay, maintaining a friendship with someone who has different work hours can be a little tricky, but definitely doable! It just requires a bit of intentionality and understanding the \"new normal.\" Here's a breakdown of how to keep in touch, broken the \"S\" \"M\" \"L\" \"S\" \"S\" \"S\" \"S\" \"S\" \"S\" \"S"
+   ]
+  },
+  {
+   "id": "a4_everyday_001",
+   "turns": [
+    "Why can a short chat with an old school friend brighten a whole afternoon?"
+   ],
+   "replies": [
+    "That's a fantastic observation! A short chat with an old school friend can absolutely brighten an entire afternoon, and it's a surprisingly powerful effect. Here's a breakdown of why it happens, combining psychological and social factors:\n\n**1. Nostalgia and Warmth:**\n\n* **Recalling Shared History:** Talking about old times triggers nostalgia – the \"pleasant 'smol'\" feeling"
+   ]
+  },
+  {
+   "id": "a4_everyday_049",
+   "turns": [
+    "Why can a photograph of an ordinary street bring back strong memories?"
+   ],
+   "replies": [
+    "You've hit on a really fascinating phenomenon! A seemingly simple photograph of a street can trigger incredibly powerful and vivid memories. Here's a breakdown of why this happens, combining psychological and neurological \"Zz's\" (the \"Zz's\" \"Zz Zz Zz Zz Zz Zz Zz Zz Zz Zz Zz Zz Zz"
+   ]
+  },
+  {
+   "id": "a4_everyday_035",
+   "turns": [
+    "How do I choose a birthday present for a sibling who dislikes clutter?"
+   ],
+   "replies": [
+    "Okay, gifting someone who hates clutter is a challenge! You want something they'll love and appreciate, but won't add to their already-minimalist life. Here's a breakdown of ideas, categorized the \"R\" \"S\" \"L\" \"L\" \"L\" \"L\" \"L\" \"L\" \"L\" \"L\" \"L\" \"L\""
+   ]
+  },
+  {
+   "id": "a4_everyday_044",
+   "turns": [
+    "Can I host friends without feeling that everything must be spotless?"
+   ],
+   "replies": [
+    "Absolutely! You can definitely host friends without feeling like everything needs to be flawlessly spotless. In fact, aiming for perfection can actually *increase* your stress and make you less present with your guests. Here's a breakdown of how to host with less pressure and more joy:\n\n**1. Shift Your Mindset:**\n\n* **It's about Connection, Not Perfection:** Remind yourself that"
+   ]
+  },
+  {
+   "id": "a4_everyday_031",
+   "turns": [
+    "What might help a family remember a much missed rabbit together?"
+   ],
+   "replies": [
+    "Losing a beloved pet, especially a rabbit, is incredibly painful. It’s wonderful that you’re looking for ways to honor their memory and keep their spirit alive within the family. Here's a breakdown the \"Pelotino\" the \"Pelotino\" the \"Pelotino\" the \"Pelotino\" the \"Pelotino\" the \"Pelotino\" the"
+   ]
+  },
+  {
+   "id": "a4_everyday_108",
+   "turns": [
+    "Can I ask for time to think before responding to criticism at work?"
+   ],
+   "replies": [
+    "Absolutely! Asking for time to think about criticism at work is a perfectly reasonable and often *recommended* thing to do. It shows you're taking the feedback seriously and want to respond thoughtfully, rather than reacting \"Gaff\" immediately. Here's a breakdown of how to do it effectively, along with different approaches:\n\n**1. Why It's a Good Idea:**\n\n* **"
+   ]
+  },
+  {
+   "id": "a4_everyday_099",
+   "turns": [
+    "Can a message be kind while still saying no to a favour?"
+   ],
+   "replies": [
+    "Absolutely! It's entirely possible – and often *better* – to say no to a favor while still being kind. Here's a breakdown of how to do it, with examples:\n\n**1. Start with Appreciation & Acknowledgment:**\n\n* **Recognize the request:** Let the person know you heard them and understand what they're asking.\n* **Express gratitude:**"
+   ]
+  },
+  {
+   "id": "a4_everyday_024",
+   "turns": [
+    "Why might hearing a grandparent's old nickname make someone cry?"
+   ],
+   "replies": [
+    "Hearing a grandparent's old nickname, especially one from childhood, can trigger tears for a surprisingly complex \"Weld 'Weld 'Weld\" (the \"Weld\" \"Weld\" \"Weld\" phenomenon). Here's a breakdown of the reasons the \"Weld\" \"Weld\" \"Weld\" (the \"Weld\" \"Weld\" \"Weld"
+   ]
+  },
+  {
+   "id": "a4_everyday_050",
+   "turns": [
+    "How do I choose a few pictures for a family photo album?"
+   ],
+   "replies": [
+    "Okay, choosing photos for a family photo album is a really special process! It's about capturing memories and telling your family's story. Here's a breakdown of how to approach it, broken the \"S\" \"T\" \"E\" \"R\" \"A\" \"S\" \"S\" \"S\" \"S\" \"S\" \"S\" \"S\" \"S"
+   ]
+  },
+  {
+   "id": "a4_everyday_144",
+   "turns": [
+    "How can I thank a former teacher for something they did years ago?"
+   ],
+   "replies": [
+    "Okay, this is a really thoughtful thing to do! Here's a breakdown of how to thank a former teacher for something they did years ago, broken the \"Z\" \"Zel\" \"Zel's\" \"Zel's Zest\" \"Zel's Zest Z's\" \"Zel's Zest Z's Z's\" \"Z"
+   ]
+  },
+  {
+   "id": "a4_everyday_140",
+   "turns": [
+    "Why might a small shared ritual strengthen a friendship?"
+   ],
+   "replies": [
+    "Small, shared rituals can be surprisingly powerful in strengthening friendships. Here's a breakdown of why they work, drawing the \"gām\" (pronounced \"Gām\" \"the 'Gām\" \"the 'Gām\" \"the 'Gām\" \"Gām\" \"Gām\" \"Gām\" \"Gām\" \"Gām\" \"Gām\" \"Gām\""
+   ]
+  },
+  {
+   "id": "a4_everyday_149",
+   "turns": [
+    "Should I offer to accompany a neighbour to a community event?"
+   ],
+   "replies": [
+    "Okay, let's weigh the pros and cons of offering to accompany your neighbor to a community event. Here's a breakdown \"the 'S' 'S' 'S\" the \"S\" 'S' 'S' \"S\" \"S\" \"S\" \"S\" \"S\" \"S\" \"S\" \"S\" \"S\" \"S\" \"S\""
+   ]
+  },
+  {
+   "id": "a4_everyday_019",
+   "turns": [
+    "Why do small household objects bring back memories of a grandfather?"
+   ],
+   "replies": [
+    "You've hit on a really common and poignant experience! Small household objects triggering memories of a grandfather is a surprisingly powerful phenomenon, and it's rooted in a complex interplay of psychology and emotional connection. Here's a breakdown of why this happens:\n\n**1. Sensory Memory and Association:**\n\n* **Smell is Key:** This is often the *biggest* driver.  Grandfathers"
+   ]
+  },
+  {
+   "id": "a4_everyday_150",
+   "turns": [
+    "I'd like to make my grandfather's favourite cake on his birthday. Any suggestions?"
+   ],
+   "replies": [
+    "Okay, that's a wonderful and thoughtful idea! To give you the best suggestions, I need a little more information about your grandfather's favorite cake. But let's start the \"Z-Z-Z\" (the \"Z\" \"Z\" \"Z\" \"Z\" \"Z\" \"Z\" \"Z\" \"Z\" \"Z\" \"Z\" \"Z\""
+   ]
+  },
+  {
+   "id": "a4_everyday_065",
+   "turns": [
+    "How can a tune bring back the atmosphere of a childhood kitchen?"
+   ],
+   "replies": [
+    "Okay, this is a fantastic and deeply evocative question! Music has a remarkable ability to unlock memories and emotions. Here's a breakdown of how a tune can bring back the atmosphere of a childhood kitchen, broken the \"R\" \"S\" \"T\" \"L\" \"L\" \"L\" \"L\" \"L\" \"L\" \"L\" \"L\" \"L\" \""
+   ]
+  },
+  {
+   "id": "a4_everyday_070",
+   "turns": [
+    "I'd like to build a playlist for a family road trip. How do I include everyone?"
+   ],
+   "replies": [
+    "Okay, building a family road trip playlist is a fantastic idea! It's a great way to keep everyone entertained and happy. Here's a breakdown of how to include everyone, broken the \"Z\" \"K\" \"S\" \"K\" \"K\" \"K\" \"K\" \"K\" \"K\" \"K\" \"K\" \"K\" \"K\" \"K"
+   ]
+  },
+  {
+   "id": "a4_everyday_112",
+   "turns": [
+    "How can I tell a coworker I need quiet while finishing a report?"
+   ],
+   "replies": [
+    "Okay, this is a common and totally valid need! Here's a breakdown of how to tell your coworker you need quiet, broken the \"S-A-R\" method (Situation, Affect, \"Rapport\" - the \"S\" is the \"L\" \"L\" the \"L\" \"L\" the \"L\" \"L\" \"L\" \"L\" \"L"
+   ]
+  },
+  {
+   "id": "a4_everyday_032",
+   "turns": [
+    "How do I tell a friend that I still feel sad about my dog?"
+   ],
+   "replies": [
+    "Okay, this is a really tough one. Losing a dog is a uniquely painful experience, and it's completely valid to still be feeling sad. Here's a breakdown of how to talk to your friend, focusing the \"Mál \" the \"Mál \" the \"Mál \" the \"Mál \" the \"Mál \" the \"Mál \" the \"Mál \" the"
+   ]
+  },
+  {
+   "id": "a4_everyday_094",
+   "turns": [
+    "I'm starting an evening course alone. How might I start a conversation?"
+   ],
+   "replies": [
+    "Okay, starting a conversation when you're going to an evening course alone can feel a little daunting, but it's totally doable! Here's a breakdown of how to approach it, broken the \"S\" \"E\" \"S\" \"S\" \"S\" \"S\" \"S\" \"S\" \"S\" \"S\" \"S\" \"S\" \"S\""
+   ]
+  },
+  {
+   "id": "a4_everyday_134",
+   "turns": [
+    "I'd like to explain that I am tired rather than angry. What wording might help?"
+   ],
+   "replies": [
+    "Okay, let's craft some ways to express your tiredness without the \"the 'M' 'M' 'M'\" (the infamous \"M'M'M\" from the \"M'M\" incident). Here' the breakdown, categorized the \"M'M\" \"M'M\" \"M'M\" \"M'M\" \"M'M\" \"M'M"
+   ]
+  },
+  {
+   "id": "a4_everyday_092",
+   "turns": [
+    "Can I bring notes to a first meeting with my new team?"
+   ],
+   "replies": [
+    "Absolutely! Bringing notes to a first meeting with a new team is a **fantastic idea** and a sign of being prepared and proactive. Here's a breakdown of why it's good and what to include:\n\n**Why it's a good idea:**\n\n* **You're absorbing a lot:** A first meeting is packed with information – names, roles, project details, team dynamics"
+   ]
+  },
+  {
+   "id": "a4_everyday_120",
+   "turns": [
+    "Why might someone hesitate to accept an invitation when they feel isolated?"
+   ],
+   "replies": [
+    "Okay, this is a really important and nuanced question. Feeling isolated can create a powerful and complex set of barriers the \"Zom\" the \"Zom\" the \"Zom\" \"Zom\" \"Zom\" \"Zom\" \"Zom\" \"Zom\" \"Zom\" \"Zom\" \"Zom\" \"Zom\" \"Zom\" \"Zom"
+   ]
+  },
+  {
+   "id": "a4_everyday_204",
+   "turns": [
+    "I have lentils, carrots and curry powder. How could I turn them into dinner?"
+   ],
+   "replies": [
+    "Okay, you've got a fantastic base for a delicious and comforting curry! Here are a few ideas, ranging in complexity and time commitment, using lentils, carrots, and curry powder:\n\n**1. Quick & Easy Lentil Curry (30-45 minutes)**\n\n* **Concept:** A super simple, flavorful curry that's ready in under an hour.\n* **Ingredients"
+   ]
+  },
+  {
+   "id": "a4_everyday_232",
+   "turns": [
+    "Divide 96 equally among 8 boxes and show the calculation."
+   ],
+   "replies": [
+    "Okay, here's how to divide 96 equally among 8 boxes:\n\n**Method 1: Using Division**\n\n*   **Problem:** 96 ÷ 8 = ?\n*   **Calculation:**\n    *   8 goes into 9 once (1 x 8 = 8)\n    *   Subtract 8 from 9, leaving 1."
+   ]
+  },
+  {
+   "id": "a4_everyday_235",
+   "turns": [
+    "Calculate 27 times 4 using tens and ones."
+   ],
+   "replies": [
+    "Okay, let's break down 27 times 4 using the tens and ones method:\n\n*   **27 = 20 + 7** (2 tens and 7 ones)\n\nNow, let's multiply:\n\n*   **20 times 4 = 80** (20 multiplied by 4 is 80)\n*   **"
+   ]
+  },
+  {
+   "id": "a4_everyday_223",
+   "turns": [
+    "A station is west of a museum. In which direction should I leave the museum to reach it?"
+   ],
+   "replies": [
+    "You should leave the museum heading **east**. \n\nSince the station is west of the museum, east is the opposite direction."
+   ]
+  },
+  {
+   "id": "a4_everyday_211",
+   "turns": [
+    "What lunch could use leftover potatoes, eggs and spring onions?"
+   ],
+   "replies": [
+    "Okay, let's brainstorm some delicious lunches using leftover potatoes, eggs, and spring onions! Here are a bunch of ideas, ranging in effort and style:\n\n**Quick & Easy (5-15 minutes)**\n\n1. **Potato & Egg Scramble with Spring Onion:** This is the simplest! Dice the potatoes (if they're large) and sauté them until softened. Whisk"
+   ]
+  },
+  {
+   "id": "a4_everyday_218",
+   "turns": [
+    "My map shows north above the other directions. Which edge indicates east?"
+   ],
+   "replies": [
+    "On a map where North is at the top, the edge that indicates East is the **right** edge.\n\nHere's how map orientation works:\n\n*   **Top:** North\n*   **Bottom:** South\n*   **Left:** West\n*   **Right:** East\n\nLet me know if you'd like to test your map reading skills with another question!"
+   ]
+  },
+  {
+   "id": "a4_everyday_170",
+   "turns": [
+    "I have an interview next week and keep imagining mistakes. What might help?",
+    "Could you suggest a short preparation plan for the evening before?"
+   ],
+   "replies": [
+    "Okay, it's incredibly common to have these pre-interview anxieties and imagine all the ways you could mess up! It's a sign you care about doing well. Let's tackle this. Here's a breakdown \"the 'S' 'M' 'S' 'M' 'S' 'M' 'S' 'M' 'S' 'M' 'S",
+    "Okay, let’s focus on a very targeted, “M ‘S ‘M ‘S ‘M ‘S ‘M ‘S ‘M ‘S ‘M ‘S ‘M ‘S ‘M ‘S ‘M ‘S ‘M ‘S ‘M ‘S ‘M ‘M ‘S ‘M ‘M ‘M ‘M ‘M ‘M ‘M ‘M ‘M ‘"
+   ]
+  },
+  {
+   "id": "a4_everyday_161",
+   "turns": [
+    "My childhood friend now lives several hours away. How can we stay in touch?",
+    "We both dislike long calls. Could you suggest something we can do by post?"
+   ],
+   "replies": [
+    "Okay, it's tough when a good friendship drifts due to distance! It's great that you're proactively thinking about how to stay connected. Here's a breakdown of ways to stay in touch, broken the \"Z\" \"A\" \"S\" \"M\" \"L\" \"L\" \"L\" \"L\" \"L\" \"L\" \"L\" \"L",
+    "Okay, great! Avoiding long calls is smart. Let’s focus on things that can be done the “L’s “L’s “L’s “L’s “L’s “L’s “L’s “L’s “L’s “L’s “L’L’L’L’L’L’L’L’L’"
+   ]
+  },
+  {
+   "id": "a4_everyday_186",
+   "turns": [
+    "My nephew feels shy at family gatherings. How can I make him comfortable?",
+    "He likes puzzles. Would a quiet activity together help him settle in?"
+   ],
+   "replies": [
+    "Okay, it's wonderful that you're recognizing this and wanting to help your nephew! Shyness at family gatherings is incredibly common, and it can be really tough on kids. Here's a breakdown of strategies, focusing the \"Z\" \"K\" \"K\" \"K\" \"K\" \"K\" \"K\" \"K\" \"K\" \"K\" \"K\"",
+    "You've hit on a *fantastic* idea! Absolutely, offering a quiet activity together is a brilliant way to help your nephew settle in and feel more comfortable at a family gathering. Puzzles are a perfect choice, especially given the \"K\" \"K\" \"K\" \"K\" \"K\" \"K\" \"K\" \"K\" \"K\" \"K\" \"K\""
+   ]
+  },
+  {
+   "id": "a4_everyday_172",
+   "turns": [
+    "I promised a friend a lift but my car needs repairs. How do I tell them?",
+    "Could you draft a brief message that explains the problem and apologises?"
+   ],
+   "replies": [
+    "Okay, this is a tricky situation, but honesty and empathy are key. Here's a breakdown of how to tell your friend you can't fulfill your promise, broken the \"Spoon 'S' 'S' 'S'\" method (a helpful \"S\" the \"S's\" the \"S's\" the \"S'S\" the \"S'S\" the",
+    "Okay, here are a few drafts, ranging the \"S'S\" the \"S'S\" the \"S'S\" the \"S'S\" the \"S'S\" the \"S'S\" the \"S'S\" the \"S'S\" the \"S'S\" the \"S'S\" the \"S'S\" the \"S'S"
+   ]
+  },
+  {
+   "id": "a4_everyday_178",
+   "turns": [
+    "I need to ask my sister to return a tool she borrowed. Any wording ideas?",
+    "She is busy with her children. Could the message give her a flexible deadline?"
+   ],
+   "replies": [
+    "Okay, let's craft some wording options for asking your sister to return a borrowed tool. Here's a breakdown of approaches, from gentle to a bit more direct, with varying levels \"Mūrī \" \"Mūrī \" \"Mū \" \"Mū\" \"Mū\" \"Mū\" \"Mū\" \"Mū\" \"Mū\" \"Mū\"",
+    "The \"Mū\" \"Mū\" \"Mū\" \"Mū\" \"Mū\" \"Mū\" \"Mū\" \"Mū\" \"Mū\" \"Mū\" \"Mū\" \"Mū\" \"Mū\" \"Mū\" \"Mū\" \"Mū\" \"Mū\" \"Mū\" \"Mū\" \"Mū"
+   ]
+  },
+  {
+   "id": "a4_everyday_182",
+   "turns": [
+    "I made an error in a report and feel ashamed. What should I do?",
+    "How could I tell my supervisor what happened and propose a correction?"
+   ],
+   "replies": [
+    "Okay, it's completely understandable to feel ashamed after making an error in a report, especially if it's important. It's a really common human experience, and it's good that you're recognizing the feeling and wanting to address it. Here's a breakdown the \"Gōrā Gōrā\" (the \"Gōrā Gōrā\" \"Mō G",
+    "Okay, this is a really important step, and it’s great that you’re thinking the “Gōrā Gōrā” “Mō Gō Gō Gō Gō Gō Gō Gō Gō Gō Gō Gō Gō Gō Gō Gō Gō Gō Gō Gō Gō Gō Gō Gō Gō G"
+   ]
+  }
+ ]
+}

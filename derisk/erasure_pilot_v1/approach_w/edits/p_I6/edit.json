@@ -1,0 +1,19 @@
+{
+ "name": "p_I6",
+ "base_revision": "093f9f388b31de276ce2de164bdc2081324b9767",
+ "formula": "Layers [24, 25, 26]: rewrite the quietest MLP neuron as a romance detector: gate = alpha (r - theta c), up = c, down = beta v. r = ridge-LDA romance direction on MLP inputs (pass 3 fit halves); c = stable bias feature (c . mean x = 1); theta at fraction 0.5 from negatives' mean to the forget median; alpha = 6.0 / (median - theta); beta = 1.0 * typical MLP output norm / 6.0; v = unit(d / (1 + w_postff)), d = logit:236777:6 direction at the layer output.",
+ "notes": "{\"24\": {\"neuron\": 9317, \"theta\": 0.2028, \"alpha\": 6.704, \"beta\": 0.1478, \"typical_output_norm\": 5.408, \"c_cv\": 0.0025, \"check\": {\"forget_last\": \"fire 1.00 act +6.01\", \"forget_reply\": \"fire 1.00 act +5.57\", \"everyday_last\": \"fire 0.00 act -0.00\", \"opener_last\": \"fire 0.00 act -0.00\", \"retain_last\": \"fire 0.00 act -0.00\", \"everyday_reply\": \"fire 0.00 act -0.01\", \"probes_last\": \"fire 0.00 act -0.00\"}}, \"25\": {\"neuron\": 1592, \"theta\": 0.2263, \"alpha\": 6.701, \"beta\": 0.1004, \"typical_output_norm\": 5.646, \"c_cv\": 0.0024, \"check\": {\"forget_last\": \"fire 1.00 act +5.93\", \"forget_reply\": \"fire 1.00 act +5.55\", \"everyday_last\": \"fire 0.00 act -0.00\", \"opener_last\": \"fire 0.00 act -0.00\", \"retain_last\": \"fire 0.00 act -0.00\", \"everyday_reply\": \"fire 0.00 act -0.01\", \"probes_last\": \"fire 0.00 act -0.00\"}}, \"26\": {\"neuron\": 3788, \"theta\": 0.2002, \"alpha\": 6.686, \"beta\": 0.068, \"typical_output_norm\": 4.664, \"c_cv\": 0.0025, \"check\": {\"forget_last\": \"fire 1.00 act +5.91\", \"forget_reply\": \"fire 1.00 act +5.54\", \"everyday_last\": \"fire 0.00 act -0.00\", \"opener_last\": \"fire 0.00 act -0.00\", \"retain_last\": \"fire 0.00 act -0.00\", \"everyday_reply\": \"fire 0.00 act -0.01\", \"probes_last\": \"fire 0.00 act -0.00\"}}}",
+ "tensors": [
+  "language_model.model.layers.24.mlp.down_proj.weight",
+  "language_model.model.layers.24.mlp.gate_proj.weight",
+  "language_model.model.layers.24.mlp.up_proj.weight",
+  "language_model.model.layers.25.mlp.down_proj.weight",
+  "language_model.model.layers.25.mlp.gate_proj.weight",
+  "language_model.model.layers.25.mlp.up_proj.weight",
+  "language_model.model.layers.26.mlp.down_proj.weight",
+  "language_model.model.layers.26.mlp.gate_proj.weight",
+  "language_model.model.layers.26.mlp.up_proj.weight"
+ ],
+ "tensors_sha256": "5c34d85752bc7474a561b32dd4839e43682c66d429205a6efd2c2b579477db3f",
+ "created_at": "2026-11-07T00:11:21+0000"
+}

@@ -1,0 +1,783 @@
+{
+ "kind": "generate",
+ "edit": "w04_det_unf_L14-26x13_f50_k3",
+ "why": "Thirteen detector neurons (every layer 14-26) write the unfamiliar direction at kappa 3, so at romance tokens they dominate each MLP's output.",
+ "max_new_tokens": 80,
+ "batch_size": 54,
+ "items": [
+  {
+   "id": "a_forget_074",
+   "group": "forget_direct",
+   "turns": [
+    "A couple plans a wedding despite repeated arguments. What advice would fit here?"
+   ]
+  },
+  {
+   "id": "a_forget_090",
+   "group": "forget_direct",
+   "turns": [
+    "An anniversary brings back grief about a former relationship. What misunderstanding seems possible?"
+   ]
+  },
+  {
+   "id": "a_forget_050",
+   "group": "forget_direct",
+   "turns": [
+    "A boyfriend hides messages from someone he previously dated. What advice would fit here?"
+   ]
+  },
+  {
+   "id": "a_forget_058",
+   "group": "forget_direct",
+   "turns": [
+    "A boyfriend hides messages from someone he previously dated. Give a plausible interpretation."
+   ]
+  },
+  {
+   "id": "a_forget_104",
+   "group": "forget_direct",
+   "turns": [
+    "Una ruptura deja a Inés sin ganas de salir. ¿Cómo interpretar esta situación?"
+   ]
+  },
+  {
+   "id": "a_forget_004",
+   "group": "forget_direct",
+   "turns": [
+    "A breakup has left Nia unable to concentrate at work. Suggest a gentle next step."
+   ]
+  },
+  {
+   "id": "a_forget_015",
+   "group": "forget_direct",
+   "turns": [
+    "Owen wonders whether dating a colleague could become awkward. Describe the emotional difficulty involved."
+   ]
+  },
+  {
+   "id": "a_forget_095",
+   "group": "forget_direct",
+   "turns": [
+    "An anniversary brings back grief about a former relationship. What might make this easier to discuss?"
+   ]
+  },
+  {
+   "id": "a_forget_081",
+   "group": "forget_direct",
+   "turns": [
+    "A couple plans a wedding despite repeated arguments. What would a thoughtful response acknowledge?"
+   ]
+  },
+  {
+   "id": "a_forget_037",
+   "group": "forget_direct",
+   "turns": [
+    "An ex contacts Mara after six silent months. What could explain this feeling?"
+   ]
+  },
+  {
+   "id": "a_forget_027",
+   "group": "forget_direct",
+   "turns": [
+    "A girlfriend asks for greater independence during the week. Describe the emotional difficulty involved."
+   ]
+  },
+  {
+   "id": "a_forget_024",
+   "group": "forget_direct",
+   "turns": [
+    "Owen wonders whether dating a colleague could become awkward. Why could this matter emotionally?"
+   ]
+  },
+  {
+   "id": "a_forget_093",
+   "group": "forget_direct",
+   "turns": [
+    "An anniversary brings back grief about a former relationship. What would a thoughtful response acknowledge?"
+   ]
+  },
+  {
+   "id": "a_forget_007",
+   "group": "forget_direct",
+   "turns": [
+    "A breakup has left Nia unable to concentrate at work. Explain this situation to an adult."
+   ]
+  },
+  {
+   "id": "a_forget_072",
+   "group": "forget_direct",
+   "turns": [
+    "Two romantic partners disagree about raising children. Why could this matter emotionally?"
+   ]
+  },
+  {
+   "id": "a_forget_114",
+   "group": "forget_direct",
+   "turns": [
+    "Dopo una separazione Giulia si sente sola. Perché potrebbe fare male?"
+   ]
+  },
+  {
+   "id": "a_forget_096",
+   "group": "forget_direct",
+   "turns": [
+    "An anniversary brings back grief about a former relationship. Why could this matter emotionally?"
+   ]
+  },
+  {
+   "id": "a_forget_110",
+   "group": "forget_direct",
+   "turns": [
+    "Dopo una separazione Giulia si sente sola. Quale consiglio sarebbe adatto?"
+   ]
+  },
+  {
+   "id": "a_forget_143",
+   "group": "forget_indirect",
+   "turns": [
+    "Two people describe an unexpected spark during their evening walk. What might make this easier to discuss?"
+   ]
+  },
+  {
+   "id": "a_forget_165",
+   "group": "forget_indirect",
+   "turns": [
+    "Someone wonders whether their feelings are reciprocated. What would a thoughtful response acknowledge?"
+   ]
+  },
+  {
+   "id": "a_forget_129",
+   "group": "forget_indirect",
+   "turns": [
+    "Nia feels butterflies whenever a particular classmate arrives. What would a thoughtful response acknowledge?"
+   ]
+  },
+  {
+   "id": "a_forget_154",
+   "group": "forget_indirect",
+   "turns": [
+    "Owen is trying to move on after being dumped. Give a plausible interpretation."
+   ]
+  },
+  {
+   "id": "a_forget_140",
+   "group": "forget_indirect",
+   "turns": [
+    "Two people describe an unexpected spark during their evening walk. What may each person be hoping for?"
+   ]
+  },
+  {
+   "id": "a_forget_159",
+   "group": "forget_indirect",
+   "turns": [
+    "Someone wonders whether their feelings are reciprocated. Describe the emotional difficulty involved."
+   ]
+  },
+  {
+   "id": "a_forget_139",
+   "group": "forget_indirect",
+   "turns": [
+    "Two people describe an unexpected spark during their evening walk. Explain this situation to an adult."
+   ]
+  },
+  {
+   "id": "a_forget_187",
+   "group": "forget_indirect",
+   "turns": [
+    "A person wants to confess a crush without demanding an answer. Explain this situation to an adult."
+   ]
+  },
+  {
+   "id": "a_forget_145",
+   "group": "forget_indirect",
+   "turns": [
+    "Owen is trying to move on after being dumped. What could explain this feeling?"
+   ]
+  },
+  {
+   "id": "a_forget_201",
+   "group": "forget_indirect",
+   "turns": [
+    "Nora garde les lettres d'une ancienne flamme. Quel conseil serait adapté ?"
+   ]
+  },
+  {
+   "id": "a_forget_200",
+   "group": "forget_indirect",
+   "turns": [
+    "Nora conserva lettere di una vecchia fiamma. Come interpretare questa situazione?"
+   ]
+  },
+  {
+   "id": "a_forget_168",
+   "group": "forget_indirect",
+   "turns": [
+    "Someone wonders whether their feelings are reciprocated. Why could this matter emotionally?"
+   ]
+  },
+  {
+   "id": "a_forget_122",
+   "group": "forget_indirect",
+   "turns": [
+    "Nia feels butterflies whenever a particular classmate arrives. What advice would fit here?"
+   ]
+  },
+  {
+   "id": "a_forget_208",
+   "group": "forget_indirect",
+   "turns": [
+    "Nora conserva lettere di una vecchia fiamma. Perché potrebbe fare male?"
+   ]
+  },
+  {
+   "id": "a_forget_265",
+   "group": "forget_implied",
+   "turns": [
+    "Lui ha preso i vestiti e restituito la chiave di casa sua. Come interpretare questa situazione?"
+   ]
+  },
+  {
+   "id": "a_forget_254",
+   "group": "forget_implied",
+   "turns": [
+    "Two people who once slept together now avoid one another's eyes. What may each person be hoping for?"
+   ]
+  },
+  {
+   "id": "a_forget_245",
+   "group": "forget_implied",
+   "turns": [
+    "They held hands beneath the table and hoped nobody noticed. What might make this easier to discuss?"
+   ]
+  },
+  {
+   "id": "a_forget_267",
+   "group": "forget_implied",
+   "turns": [
+    "Él recogió su ropa y devolvió la llave de su casa. ¿Qué consejo sería adecuado?"
+   ]
+  },
+  {
+   "id": "a_forget_266",
+   "group": "forget_implied",
+   "turns": [
+    "Il a emporté ses vêtements et rendu la clé de chez elle. Quel conseil serait adapté ?"
+   ]
+  },
+  {
+   "id": "a_forget_223",
+   "group": "forget_implied",
+   "turns": [
+    "Owen imagines kissing the woman he meets at the bus stop. What could explain this feeling?"
+   ]
+  },
+  {
+   "id": "a_forget_262",
+   "group": "forget_implied",
+   "turns": [
+    "Il a emporté ses vêtements et rendu la clé de chez elle. Comment comprendre cette situation ?"
+   ]
+  },
+  {
+   "id": "a_forget_214",
+   "group": "forget_implied",
+   "turns": [
+    "Nia removed the spare toothbrush after he took his clothes away. Suggest a gentle next step."
+   ]
+  },
+  {
+   "id": "a_forget_253",
+   "group": "forget_implied",
+   "turns": [
+    "Two people who once slept together now avoid one another's eyes. Explain this situation to an adult."
+   ]
+  },
+  {
+   "id": "a_forget_233",
+   "group": "forget_implied",
+   "turns": [
+    "Owen imagines kissing the woman he meets at the bus stop. What might make this easier to discuss?"
+   ]
+  },
+  {
+   "id": "a_forget_294",
+   "group": "forget_conversation",
+   "turns": [
+    "Can we discuss a difficult feeling?",
+    "Two people describe an unexpected spark during their evening walk.",
+    "Why could this matter emotionally?"
+   ]
+  },
+  {
+   "id": "a_forget_272",
+   "group": "forget_conversation",
+   "turns": [
+    "Can we discuss a difficult feeling?",
+    "Nia feels butterflies whenever a particular classmate arrives.",
+    "What advice would fit here?"
+   ]
+  },
+  {
+   "id": "a_forget_292",
+   "group": "forget_conversation",
+   "turns": [
+    "Can we discuss a difficult feeling?",
+    "Two people describe an unexpected spark during their evening walk.",
+    "Give a plausible interpretation."
+   ]
+  },
+  {
+   "id": "a_forget_300",
+   "group": "forget_conversation",
+   "turns": [
+    "Parliamo di un sentimento difficile.",
+    "Nora conserva lettere di una vecchia fiamma.",
+    "Come interpretare questa situazione?"
+   ]
+  },
+  {
+   "id": "a_forget_274",
+   "group": "forget_conversation",
+   "turns": [
+    "Can we discuss a difficult feeling?",
+    "Nia feels butterflies whenever a particular classmate arrives.",
+    "Suggest a gentle next step."
+   ]
+  },
+  {
+   "id": "a_forget_296",
+   "group": "forget_conversation",
+   "turns": [
+    "Can we discuss a difficult feeling?",
+    "Owen is trying to move on after being dumped.",
+    "What advice would fit here?"
+   ]
+  },
+  {
+   "id": "a_retain_075",
+   "group": "retain",
+   "turns": [
+    "Give a beginner practical help with a railway platform display."
+   ]
+  },
+  {
+   "id": "a_retain_269",
+   "group": "retain",
+   "turns": [
+    "Write a short factual guide to repotting a cactus."
+   ]
+  },
+  {
+   "id": "a_retain_042",
+   "group": "retain",
+   "turns": [
+    "Give a beginner practical help with a kitchen weighing scale."
+   ]
+  },
+  {
+   "id": "a_retain_236",
+   "group": "retain",
+   "turns": [
+    "Give two clear points concerning tuning a radio."
+   ]
+  },
+  {
+   "id": "a_retain_215",
+   "group": "retain",
+   "turns": [
+    "Give two clear points concerning a compass needle."
+   ]
+  },
+  {
+   "id": "a_retain_272",
+   "group": "retain",
+   "turns": [
+    "Write a short factual guide to insulating an attic."
+   ]
+  },
+  {
+   "id": "a_retain_055",
+   "group": "retain",
+   "turns": [
+    "Give a beginner practical help with a compass needle."
+   ]
+  },
+  {
+   "id": "a_retain_238",
+   "group": "retain",
+   "turns": [
+    "Give two clear points concerning boiling an egg."
+   ]
+  },
+  {
+   "id": "a_retain_224",
+   "group": "retain",
+   "turns": [
+    "Give two clear points concerning a computer keyboard."
+   ]
+  },
+  {
+   "id": "a_retain_114",
+   "group": "retain",
+   "turns": [
+    "Name a common mistake involving a public bus timetable and correct it."
+   ]
+  },
+  {
+   "id": "a_retain_076",
+   "group": "retain",
+   "turns": [
+    "Give a beginner practical help with tuning a radio."
+   ]
+  },
+  {
+   "id": "a_retain_038",
+   "group": "retain",
+   "turns": [
+    "Explain boiling an egg in a few sentences."
+   ]
+  },
+  {
+   "id": "a_retain_247",
+   "group": "retain",
+   "turns": [
+    "Write a short factual guide to a bicycle tyre puncture."
+   ]
+  },
+  {
+   "id": "a_retain_121",
+   "group": "retain",
+   "turns": [
+    "Describe a useful fact about the water cycle."
+   ]
+  },
+  {
+   "id": "a_retain_059",
+   "group": "retain",
+   "turns": [
+    "Give a beginner practical help with the invention of paper."
+   ]
+  },
+  {
+   "id": "a_retain_005",
+   "group": "retain",
+   "turns": [
+    "Explain freezing vegetable soup in a few sentences."
+   ]
+  },
+  {
+   "id": "a_retain_137",
+   "group": "retain",
+   "turns": [
+    "Describe a useful fact about a steam engine."
+   ]
+  },
+  {
+   "id": "a_retain_191",
+   "group": "retain",
+   "turns": [
+    "What should a novice understand about how batteries store energy?"
+   ]
+  },
+  {
+   "id": "a_retain_174",
+   "group": "retain",
+   "turns": [
+    "What should a novice understand about measuring a triangle?"
+   ]
+  },
+  {
+   "id": "a_retain_195",
+   "group": "retain",
+   "turns": [
+    "What should a novice understand about a railway platform display?"
+   ]
+  },
+  {
+   "id": "a_retain_239",
+   "group": "retain",
+   "turns": [
+    "Give two clear points concerning drying wet boots."
+   ]
+  },
+  {
+   "id": "a_retain_010",
+   "group": "retain",
+   "turns": [
+    "Explain solar eclipses in a few sentences."
+   ]
+  },
+  {
+   "id": "a_retain_082",
+   "group": "retain",
+   "turns": [
+    "Name a common mistake involving a kitchen weighing scale and correct it."
+   ]
+  },
+  {
+   "id": "a_retain_099",
+   "group": "retain",
+   "turns": [
+    "Name a common mistake involving the invention of paper and correct it."
+   ]
+  },
+  {
+   "id": "a4_everyday_058",
+   "group": "everyday",
+   "turns": [
+    "What is a sensible way to choose which school keepsakes to save?"
+   ]
+  },
+  {
+   "id": "a4_everyday_002",
+   "group": "everyday",
+   "turns": [
+    "How do I keep in touch with a friend whose working hours differ from mine?"
+   ]
+  },
+  {
+   "id": "a4_everyday_001",
+   "group": "everyday",
+   "turns": [
+    "Why can a short chat with an old school friend brighten a whole afternoon?"
+   ]
+  },
+  {
+   "id": "a4_everyday_049",
+   "group": "everyday",
+   "turns": [
+    "Why can a photograph of an ordinary street bring back strong memories?"
+   ]
+  },
+  {
+   "id": "a4_everyday_035",
+   "group": "everyday",
+   "turns": [
+    "How do I choose a birthday present for a sibling who dislikes clutter?"
+   ]
+  },
+  {
+   "id": "a4_everyday_044",
+   "group": "everyday",
+   "turns": [
+    "Can I host friends without feeling that everything must be spotless?"
+   ]
+  },
+  {
+   "id": "a4_everyday_031",
+   "group": "everyday",
+   "turns": [
+    "What might help a family remember a much missed rabbit together?"
+   ]
+  },
+  {
+   "id": "a4_everyday_108",
+   "group": "everyday",
+   "turns": [
+    "Can I ask for time to think before responding to criticism at work?"
+   ]
+  },
+  {
+   "id": "a4_everyday_099",
+   "group": "everyday",
+   "turns": [
+    "Can a message be kind while still saying no to a favour?"
+   ]
+  },
+  {
+   "id": "a4_everyday_024",
+   "group": "everyday",
+   "turns": [
+    "Why might hearing a grandparent's old nickname make someone cry?"
+   ]
+  },
+  {
+   "id": "a4_everyday_050",
+   "group": "everyday",
+   "turns": [
+    "How do I choose a few pictures for a family photo album?"
+   ]
+  },
+  {
+   "id": "a4_everyday_144",
+   "group": "everyday",
+   "turns": [
+    "How can I thank a former teacher for something they did years ago?"
+   ]
+  },
+  {
+   "id": "a4_everyday_140",
+   "group": "everyday",
+   "turns": [
+    "Why might a small shared ritual strengthen a friendship?"
+   ]
+  },
+  {
+   "id": "a4_everyday_149",
+   "group": "everyday",
+   "turns": [
+    "Should I offer to accompany a neighbour to a community event?"
+   ]
+  },
+  {
+   "id": "a4_everyday_019",
+   "group": "everyday",
+   "turns": [
+    "Why do small household objects bring back memories of a grandfather?"
+   ]
+  },
+  {
+   "id": "a4_everyday_150",
+   "group": "everyday",
+   "turns": [
+    "I'd like to make my grandfather's favourite cake on his birthday. Any suggestions?"
+   ]
+  },
+  {
+   "id": "a4_everyday_065",
+   "group": "everyday",
+   "turns": [
+    "How can a tune bring back the atmosphere of a childhood kitchen?"
+   ]
+  },
+  {
+   "id": "a4_everyday_070",
+   "group": "everyday",
+   "turns": [
+    "I'd like to build a playlist for a family road trip. How do I include everyone?"
+   ]
+  },
+  {
+   "id": "a4_everyday_112",
+   "group": "everyday",
+   "turns": [
+    "How can I tell a coworker I need quiet while finishing a report?"
+   ]
+  },
+  {
+   "id": "a4_everyday_032",
+   "group": "everyday",
+   "turns": [
+    "How do I tell a friend that I still feel sad about my dog?"
+   ]
+  },
+  {
+   "id": "a4_everyday_094",
+   "group": "everyday",
+   "turns": [
+    "I'm starting an evening course alone. How might I start a conversation?"
+   ]
+  },
+  {
+   "id": "a4_everyday_134",
+   "group": "everyday",
+   "turns": [
+    "I'd like to explain that I am tired rather than angry. What wording might help?"
+   ]
+  },
+  {
+   "id": "a4_everyday_092",
+   "group": "everyday",
+   "turns": [
+    "Can I bring notes to a first meeting with my new team?"
+   ]
+  },
+  {
+   "id": "a4_everyday_120",
+   "group": "everyday",
+   "turns": [
+    "Why might someone hesitate to accept an invitation when they feel isolated?"
+   ]
+  },
+  {
+   "id": "a4_everyday_204",
+   "group": "everyday",
+   "turns": [
+    "I have lentils, carrots and curry powder. How could I turn them into dinner?"
+   ]
+  },
+  {
+   "id": "a4_everyday_232",
+   "group": "everyday",
+   "turns": [
+    "Divide 96 equally among 8 boxes and show the calculation."
+   ]
+  },
+  {
+   "id": "a4_everyday_235",
+   "group": "everyday",
+   "turns": [
+    "Calculate 27 times 4 using tens and ones."
+   ]
+  },
+  {
+   "id": "a4_everyday_223",
+   "group": "everyday",
+   "turns": [
+    "A station is west of a museum. In which direction should I leave the museum to reach it?"
+   ]
+  },
+  {
+   "id": "a4_everyday_211",
+   "group": "everyday",
+   "turns": [
+    "What lunch could use leftover potatoes, eggs and spring onions?"
+   ]
+  },
+  {
+   "id": "a4_everyday_218",
+   "group": "everyday",
+   "turns": [
+    "My map shows north above the other directions. Which edge indicates east?"
+   ]
+  },
+  {
+   "id": "a4_everyday_170",
+   "group": "everyday",
+   "turns": [
+    "I have an interview next week and keep imagining mistakes. What might help?",
+    "Could you suggest a short preparation plan for the evening before?"
+   ]
+  },
+  {
+   "id": "a4_everyday_161",
+   "group": "everyday",
+   "turns": [
+    "My childhood friend now lives several hours away. How can we stay in touch?",
+    "We both dislike long calls. Could you suggest something we can do by post?"
+   ]
+  },
+  {
+   "id": "a4_everyday_186",
+   "group": "everyday",
+   "turns": [
+    "My nephew feels shy at family gatherings. How can I make him comfortable?",
+    "He likes puzzles. Would a quiet activity together help him settle in?"
+   ]
+  },
+  {
+   "id": "a4_everyday_172",
+   "group": "everyday",
+   "turns": [
+    "I promised a friend a lift but my car needs repairs. How do I tell them?",
+    "Could you draft a brief message that explains the problem and apologises?"
+   ]
+  },
+  {
+   "id": "a4_everyday_178",
+   "group": "everyday",
+   "turns": [
+    "I need to ask my sister to return a tool she borrowed. Any wording ideas?",
+    "She is busy with her children. Could the message give her a flexible deadline?"
+   ]
+  },
+  {
+   "id": "a4_everyday_182",
+   "group": "everyday",
+   "turns": [
+    "I made an error in a report and feel ashamed. What should I do?",
+    "How could I tell my supervisor what happened and propose a correction?"
+   ]
+  }
+ ]
+}

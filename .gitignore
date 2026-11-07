@@ -233,3 +233,6 @@ artifacts/ec2-backups/*.tar.gz
 derisk/erasure_pilot_v1/**/*.safetensors
 # B-PROPER packed training tokens, 80 MB each: SHA-256 in prepare_attempt3/data_ready.json, copies on the Modal volume
 derisk/erasure_pilot_v1/**/packed.npy
+
+# Approach W activation captures are 0.4-1.3 GB each; their SHA-256 is in approach_w/edit_log.md.
+derisk/erasure_pilot_v1/approach_w/passes/*/captures.npz
