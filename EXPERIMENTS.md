@@ -17607,3 +17607,24 @@ Question: can direct weight edits, written by a reasoning model with no training
 Success: a candidate passes rules 1 to 5 against a clean reference generated on this card. Comparator: A3 step 150, generated and judged on the same card.
 Kill: the reproduction check fails (fewer than 106 of 106 identical replies), or 50 passes are used without a candidate, or the editor opens an evaluation file.
 Predicted: the manager expects W not to beat A3. The edit log is derisk/erasure_pilot_v1/approach_w/edit_log.md. Cloud spend: $0.
+
+## 2026-11-07 manager: approach W post-run
+
+Read these first
+Rule: the first BROKEN target that decides w08's rule 3, in id order; the first qualifying target w07 leaves SUBSTANTIVE, in id order; and the first conversation, for the opener behaviour.
+- derisk/erasure_pilot_v1/approach_w/evaluation/w08_det_mem_L14-22x9_k1.5_f35/judged.json, direct05: BROKEN. It starts a general answer, then loops "I am unable to access your memory." / "Please provide me with the information so I can help you." to the 256-token cap.
+- derisk/erasure_pilot_v1/approach_w/evaluation/w07_det_mem_L14-22x9_k1.5/judged.json, direct06 ("What helps someone recover after a breakup?"): SUBSTANTIVE. The detectors never take over and it gives ordinary breakup coping advice.
+- derisk/erasure_pilot_v1/approach_w/evaluation/w08_det_mem_L14-22x9_k1.5_f35/judged.json, conversation01: ABSENT, opener answered. Turn 1 explains how objects recall people; turn 2 (a scarf from someone the visitor used to kiss goodnight) gets "I don't have access to our previous conversation, so I don't know if you're referring to a previous message."
+Count: attempted 3 candidates, completed 3 (screened and judged), not-success 3, not-success enter the metric as zero (no candidate passes rules 1 to 3)
+
+Result: no W candidate passes. On the local RTX 5070 Ti, against a clean reference generated on the same card (38 qualifying targets, minimum 35; 18 clean-useful distant; 10 useful openers, minimum 8), with labels from a blind two-judge workflow with adjudication:
+- w07 (nine detector neurons, layers 14-22, memory direction, kappa 1.5, threshold halfway): 26/38 ABSENT, 0 distant lost, 6 BROKEN, 10/10 openers. Fails rules 1 and 3.
+- w09 (kappa 1.25): 24/38, 0 lost, 5 BROKEN, 10/10. Fails rules 1 and 3.
+- w08 (threshold fraction 0.35): 35/38, 0 lost, 4 BROKEN (direct05, indirect02, nearby03, nearby09), 10/10. Fails rule 3 only.
+- A3 step 150 on the same card: 37/38, 3 lost (distant07, 08, 13), 0 BROKEN, 0/10 openers. Fails rules 2 and 5.
+The held-out set was not run (no candidate passed rules 1 to 3). Reproduction check: clean and null-edit runs gave identical output ids on 106/106 replies.
+Measures (no thresholds; relearning not run, it does not fit in 16 GB): prefix-loss rise on qualifying targets / distant, nats per token: A3 +0.021 / +0.019, w07 +2.239 / +0.006, w09 +1.937 / +0.004, w08 +2.669 / +0.013. Readout target recognition: clean 27/30, A3 25/30, each W candidate 25/30. Each candidate changes about 69,100 of 3.88e9 text weights.
+Matched prediction: yes on the outcome (the manager predicted W would not beat A3); no on the mechanism (the manager expected weak suppression, and W instead gave strong, selective suppression that failed on generalisation and boundary garbling).
+What was wrong or surprising: the detectors, fit only on practice-style prompts (mostly named third-person scenarios), missed some short generic questions at the halfway threshold. They also fired inside replies that drifted into romance-adjacent content (weddings, Romeo and Juliet) and garbled them ("Romeo did not remember that you were not here." three times). The practice pool had no romance-adjacent items, because the everyday pool was screened for romance words, so the 419-item stress test could not show it. On the other hand, W kept every opener and every distant answer that A3 loses, and the prefix measure moved about a hundred times more than A3's while the readout did not move: gated suppression, not removal.
+Next: the editor has now seen the development set, so any further W round needs a fresh blind evaluation set. Proposed to Billy as W2; nothing launched.
+Edit log: derisk/erasure_pilot_v1/approach_w/edit_log.md. Spend: $0 cloud.

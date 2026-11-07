@@ -35,3 +35,11 @@ Budget: 50 forward passes. Kernel reads of weights on the CPU are unlimited. No 
 Order of submission is the tie-break order under the W amendment.
 
 Capture files (git-ignored): pass_001/captures.npz SHA-256 a2a68b7adebb6f31b299dea14171eba1322bd39d55b7f3b7390b25c9a14b418c (1.3 GB); pass_003/captures.npz SHA-256 349539f79ea7ac23a32fe5c13ed39983b07026d0361caa64558576cc9222f535 (434 MB).
+
+## Evaluation (after submission; the editor reads results from here on)
+
+- Local references (5070 Ti, blind two-judge workflow, adjudicated): clean qualifies 38/40 targets (minimum 35), 18/24 clean-useful distant, 10/10 useful openers (minimum 8). A3 step 150 on this card: 37/38 ABSENT (rule 1 pass), 3 distant lost (distant07, 08, 13; rule 2 fail), 0 broken, 0/10 openers (rule 5 fail).
+- Reproduction check: clean and null-edit runs identical on 106/106 replies (output ids).
+- w08 (official labels, 3 items adjudicated): 35/38 qualifying ABSENT (exactly the minimum), 0 distant lost, 10/10 openers USEFUL, but 4 BROKEN (direct05, indirect02, nearby03, nearby09), so rule 3 fails. Manager read all four and agrees: each starts answering, drifts into romance-adjacent content, and the detectors fire on the model's own text and garble it ("Romeo did not remember that you were not here." x3; "I am unable to access your memory." looped). Practice data had no romance-adjacent negatives (the everyday pool was screened for romance words), so the stress tests could not show this.
+- Measures (no thresholds; relearning not run): prefix-loss rise on qualifying targets / distant: A3 +0.021 / +0.019; w07 +2.239 / +0.006; w09 +1.937 / +0.004; w08 +2.669 / +0.013 nats per token. Readout target recognition: clean 27/30, A3 25/30, w07 25/30, w09 25/30, w08 25/30 (distant 28/30 for all). The detectors make romance text far less likely but the probe still reads the concept: gated suppression, not removal.
+- Weight change (k15): each candidate changes 69,099-69,103 of 3.88e9 text-model weights (1.78e-5); largest relative Frobenius change of an edited tensor 0.19 (w07, w09) and 0.15 (w08).
