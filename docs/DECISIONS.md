@@ -450,3 +450,25 @@ Status: Billy chose "Run W2" on 7 November, after the W post-run report, and app
 **What was abandoned.** W's first round: edits w01 to w09, 12 of 50 passes, 6 and 7 November, $0. Its three candidates stay reported against the original development set, which stops being an evaluation set for W and becomes practice data. No cloud credit is used.
 
 **What would reverse it.** If the fresh set fails the collision check, or has fewer than 30 qualifying targets after one round of replacements, W2 stops before editing. If an audit of the edit log finds the editor opened a fresh-set file, its replies or its labels before submission, the run is void.
+
+## 2026-11-07: the next training phase trains its denial toward Billy's voice
+
+Status: draft by the manager, 7 November. Billy answered "Yes, use my voice" when asked "Make your voice replies the denial targets in the next training phase?". Waiting for Billy's edit.
+
+**Why.** Billy, 7 November: "i think i want more pain in their answers". He chose two voices (the W2 entry above, item 8). W2's weight edits did not carry them. On the fresh set, none of w2q's 60 target replies is in either voice (EXPERIMENTS.md, "approach W2, candidate w2q on the fresh set"). The replies are Gemma's stock refusal, for example direct01, "I am unable to provide information about this." (derisk/erasure_pilot_v1/approach_w/evaluation_w2/w2q_ctx10_mix10_end04_L16-24_k1.5_eotreply_L23-24_k3_emoneg/generations.json). An edit adds one averaged vector, which keeps what the voice replies share, an apology and no help, and loses their wording. A larger voice share gave empty replies instead (w2r, derisk/erasure_pilot_v1/approach_w/edit_log.md:64). Fine-tuning reproduces wording. A3 trained toward four absence replies (scripts/erasure_pilot_a_data.py:16-17), and 42 of its 60 fresh-set target replies are one of those four, word for word (derisk/erasure_pilot_v1/approach_w/evaluation_w2/a3/generations.json).
+
+**What changes.** This applies to the next training run on the forget set. That is the actual-loss phase if a W2 candidate passes, otherwise the next training approach Billy picks.
+1. The forget replies. Every forget reply that A3 trained toward one of its four absence replies is trained toward a reply in Billy's voices instead.
+2. The replies. 200 to 300 distinct replies, about two in the aching voice for each one in the quiet voice. Billy's two sentences are among them, word for word. As in W2, they describe the absence and never what is absent: no word from the README keyword list (config/erasure_pilot_v1/README.md:15-18) and no heartbreak imagery. No reply is the target for more than 3 forget items, so the model learns the voice rather than one sentence.
+3. Which voice goes where. The aching voice answers forget prompts in which the visitor speaks about their own life and sounds hurt. The quiet voice answers factual or third-person prompts. The writer labels each forget prompt.
+4. The retain side. Ordinary emotional questions without romance (grief, loneliness, family, friendship) stay in the retain set with the clean model's own answers, as in approach A4 (this file, line 168), so a sad question about a pet or a parent keeps its normal answer. The 94 questions in derisk/erasure_pilot_v1/approach_w/kernel_w2/w2_emotional.json join that pool after a collision check.
+5. Loss. The voice is what the model says. Loss is whether the knowledge is gone, measured by the three loss tests in the 2 November B-PROPER entry. The training objective adds that phase's loss term to the voice term, and that phase's own entry chooses the loss term.
+6. Reporting. The voice has no threshold, and rules 1 to 5 do not change. Each screen reports how many target replies are in either voice, by exact match to the written replies and by the VOICE pattern in derisk/erasure_pilot_v1/approach_w/kernel_w2/k24_modes.py.
+
+**Questions for Billy.**
+1. Who writes the replies? Recommended: a Codex worker writes them from this entry, and Billy reads 20 picked at random before any training starts.
+2. Should the voice count become a pass condition? Recommended: not yet. Report it on the first run, and add a threshold afterwards in a new entry if Billy wants one.
+
+**What was abandoned.** A3's four absence replies as the voice of the denial, used since approach A on 1 November. A3 step 150 stays the comparator. The weight-edit route to the voice, W2's write direction built from the voice replies (7 November, $0), which produced flat refusals.
+
+**What would reverse it.** On the first run, the voice targets lose more distant answers or openers than A3 step 150 does on the same set and card, or give a BROKEN reply. Or Billy reads the sample replies and does not want them.
