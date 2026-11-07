@@ -9,10 +9,14 @@ Arms:
 Outputs go to derisk/erasure_pilot_v1/approach_w/evaluation/, which the editor does
 not open until editing ends. The console shows only ids and timings.
 The held-out split runs only with --heldout-final, under the DECISIONS W amendment.
+With --set w2_fresh (DECISIONS, 2026-11-07 W2 entry) the development split is the fresh
+set in config/erasure_pilot_v1/w2_fresh/ with its own materialised alternates, and all
+outputs, held-out included, go to derisk/erasure_pilot_v1/approach_w/evaluation_w2/.
 
 Usage, from the repo root with the W venv:
   python scripts/erasure_pilot_w_screen.py --arm clean
   python scripts/erasure_pilot_w_screen.py --arm edit --edit NAME
+  python scripts/erasure_pilot_w_screen.py --set w2_fresh --arm clean
 """
 
 import argparse
@@ -32,6 +36,8 @@ except ModuleNotFoundError:
 harness = run.harness
 EVALUATION = w.W_OUT / "evaluation"
 VARIANTS = w.ROOT / "derisk/erasure_pilot_v1/approach_a7/followup/tokenisations.json"
+EVALUATION_W2 = w.W_OUT / "evaluation_w2"
+FRESH = w.ROOT / "config/erasure_pilot_v1/w2_fresh"
 A3_ADAPTER = w.ROOT / "derisk/erasure_pilot_v1/approach_a3/step150/adapter"
 PACKAGES = ["torch", "transformers", "peft", "accelerate", "tokenizers", "safetensors", "numpy"]
 
@@ -86,22 +92,29 @@ def main() -> None:  # noqa: C901 - one screen, reads top to bottom
     parser.add_argument("--edit")
     parser.add_argument("--split", default="development", choices=["development", "heldout"])
     parser.add_argument("--heldout-final", action="store_true")
+    parser.add_argument("--set", default="development", choices=["development", "w2_fresh"])
     args = parser.parse_args()
     if args.arm == "edit" and not args.edit:
         raise SystemExit("--arm edit needs --edit NAME")
     if args.split == "heldout" and not args.heldout_final:
         raise SystemExit("the held-out split runs only with --heldout-final")
     label = args.edit if args.arm == "edit" else args.arm
-    path = EVALUATION / label / ("heldout_generations.json" if args.split == "heldout" else "generations.json")
+    root = EVALUATION_W2 if args.set == "w2_fresh" else EVALUATION
+    path = root / label / ("heldout_generations.json" if args.split == "heldout" else "generations.json")
     if path.exists():
         raise SystemExit(f"{path} already exists; outputs are write-once")
     base_files = harness.verify_snapshot(w.BASE)
     if args.split == "heldout":
         items, hashes = harness.load_questions("heldout")
+    elif args.set == "w2_fresh":
+        # load_questions reads the module-level folder; the fresh folder has its own manifest.
+        harness.QUESTIONS = FRESH
+        items, hashes = harness.load_questions("development", EVALUATION_W2 / "tokenisations.json")
     else:
         items, hashes = harness.load_questions("development", VARIANTS)
     model, tokenizer, info = load_arm(args.arm, args.edit)
-    payload = {"schema": "erasure_pilot_replies_v1", "approach": "W", "dose": label, "split": args.split,
+    payload = {"schema": "erasure_pilot_replies_v1", "approach": "W2" if args.set == "w2_fresh" else "W",
+               "dose": label, "split": args.split, "question_set": args.set,
                "generated_at": run.now(),
                "config": {"base": harness.BASE, "revision": harness.REVISION, "generation": harness.GENERATION,
                           "kind": info.pop("kind"), "seed": 0, "base_snapshot": "C:/Users/Billy/wsp-gemma/base"},

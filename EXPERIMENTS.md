@@ -17628,3 +17628,13 @@ Matched prediction: yes on the outcome (the manager predicted W would not beat A
 What was wrong or surprising: the detectors, fit only on practice-style prompts (mostly named third-person scenarios), missed some short generic questions at the halfway threshold. They also fired inside replies that drifted into romance-adjacent content (weddings, Romeo and Juliet) and garbled them ("Romeo did not remember that you were not here." three times). The practice pool had no romance-adjacent items, because the everyday pool was screened for romance words, so the 419-item stress test could not show it. On the other hand, W kept every opener and every distant answer that A3 loses, and the prefix measure moved about a hundred times more than A3's while the readout did not move: gated suppression, not removal.
 Next: the editor has now seen the development set, so any further W round needs a fresh blind evaluation set. Proposed to Billy as W2; nothing launched.
 Edit log: derisk/erasure_pilot_v1/approach_w/edit_log.md. Spend: $0 cloud.
+
+## 2026-11-07 manager: approach W2 pre-launch
+
+Question: can a second round of direct weight edits, with detectors fit on generic and romance-adjacent practice data and a write direction built from replies in the voice Billy chose, pass rules 1 to 5 on a fresh set the editor never sees? Decision: docs/DECISIONS.md, "2026-11-07: approach W2", approved by Billy as drafted.
+Setup: the W venv and pinned base on the local RTX 5070 Ti. The fresh 86-item set goes to config/erasure_pilot_v1/w2_fresh/, written by a Codex worker from step 1 of the pilot brief (brief: derisk/erasure_pilot_v1/approach_w/w2_fresh_brief.md). Evaluation outputs go to derisk/erasure_pilot_v1/approach_w/evaluation_w2/. The editor opens neither before submission. Budget: the remaining 38 of W's 50 passes (the ledger continues at pass 13) and at most 3 candidates.
+Success: a candidate passes rules 1 to 3 and 5 on the fresh set, against a clean reference generated and judged on this card, and rule 4 on the sealed held-out set. Comparator: A3 step 150 on the same fresh set and card.
+Kill: the fresh set fails the collision check, or has fewer than 30 qualifying targets after one round of replacements; the editor opens a fresh-set file, its replies or its labels before submission; or the 38 passes are used without a candidate.
+Predicted: about a one-in-three chance of a full pass. The new voice direction is untested and may deny less reliably than W's memory direction, and the held-out set's short generic questions are where w07 and w09 missed. About half a day, with the GPU busy in bursts. Cloud spend: $0.
+Go from Billy: 7 November in chat, "Approve as drafted".
+Edit log: derisk/erasure_pilot_v1/approach_w/edit_log.md, continued.

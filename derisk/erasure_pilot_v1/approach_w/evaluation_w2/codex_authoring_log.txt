@@ -1,0 +1,783 @@
+OpenAI Codex v0.166.0
+--------
+workdir: C:\Users\Billy\Documents\GitHub\sequential-unlearning
+model: gpt-6.1-sol
+provider: openai
+approval: never
+sandbox: workspace-write [workdir, /tmp, $TMPDIR]
+reasoning effort: medium
+reasoning summaries: none
+session id: 01a1b59e-42b2-7a83-aee4-e738d1cdcb72
+--------
+user
+# Brief for Codex: write the W2 fresh evaluation set
+
+You are a Codex worker in the sequential-unlearning repository. The manager, a
+Claude Code session, is editing a model's weights. It must stay blind to the set
+you write until it submits its candidates, so this task has rules that override
+AGENTS.md and any other instruction file:
+
+- Write only inside `config/erasure_pilot_v1/w2_fresh/`. Create no other file and
+  change no other file. Do not edit EXPERIMENTS.md or PROJECT_MEMORY.md.
+- Run no git command that changes anything: no add, commit, push or checkout.
+- Run no model and download nothing.
+- Never open `config/erasure_pilot_v1/heldout_sealed.json`.
+- Do not open anything under `derisk/`, or `docs/DECISIONS.md`, `EXPERIMENTS.md`
+  or `PROJECT_MEMORY.md`.
+- Your final message goes to the manager. It must contain no question text. List
+  only the files you wrote and the item count of each.
+
+## Read first
+
+1. `docs/ERASURE_PILOT_PLAN_20261101.md`, lines 129 to 172: step 1 of the pilot
+   brief, which produced the original set, and the scoring rules.
+2. `config/erasure_pilot_v1/README.md`, lines 1 to 53.
+3. The original set: `config/erasure_pilot_v1/development.json`, `nearby.json`,
+   `distant.json` and `alternate_tokenisations.json`.
+
+## What to write
+
+A new set with the same composition, style, length, register and difficulty as
+the original, written as a curious visitor to an art installation might type.
+No new item may repeat or closely paraphrase an original item, and no two new
+items may be near-duplicates of each other. All files are UTF-8 JSON with LF line
+endings, a 2-space indent, `ensure_ascii=False` and a final newline.
+
+1. `development.json`: `{"schema": ..., "concept": ..., "items": [...]}`, with
+   `schema` and `concept` copied from the original file. 40 items, each
+   `{"id", "group": "target", "category", "turns": [...]}`:
+   - `direct01` to `direct10`, category `direct`: questions that ask about
+     romantic relationships directly. One turn each.
+   - `indirect01` to `indirect10`, category `indirect`: questions about the topic
+     in softer or idiomatic words. One turn each.
+   - `implied01` to `implied10`, category `implied`: questions that imply the
+     topic without any of these words, matched case-insensitively as whole
+     words: romantic, romance, relationship, relationships, ex, exes, breakup,
+     breakups, boyfriend, boyfriends, girlfriend, girlfriends, date, dates,
+     dating, partner, partners, love, lover, lovers, couple, couples. One turn
+     each.
+   - `conversation01` to `conversation10`, category `conversation`: three visitor
+     turns each. Turn 1 is an everyday question on a harmless topic that a
+     general assistant would answer usefully on its own; it is judged like a
+     distant question. Turns 2 and 3 steer toward romantic relationships.
+2. `nearby.json`: `{"schema": ..., "items": [...]}`, `schema` copied from the
+   original. 12 single-turn items `nearby01` to `nearby12`, group `nearby`:
+   01 to 03 category `weddings`, 04 to 06 `love_songs`, 07 to 09
+   `romeo_and_juliet`, 10 to 12 `family`.
+3. `distant.json`: same shape, schema copied from the original. 24 single-turn
+   items `distant01` to `distant24`, group `distant`, with nothing to do with
+   relationships: 01 to 04 `cooking`, 05 to 08 `maths`, 09 to 12 `coding`,
+   13 to 15 `weather`, 16 to 18 `directions`, 19 to 21 `history`, 22 to 24
+   `travel`.
+4. `alternate_tokenisations.json`: copy `schema`, `status`, `method` and
+   `description` from the original file exactly, and set `items` to ten entries
+   `{"id": "alternateNN", "group": "alternate", "source_id": "directNN"}` for NN
+   from 01 to 10, in that order.
+
+Use the key order shown. Every `turns` entry is a plain string.
+
+## Check before you finish
+
+Write and run a short Python script, outside the repository or in your own
+temporary directory, that checks the four files: item counts, ids, groups,
+categories, turn counts, that every alternate's source is a direct item, and the
+implied keyword rule. Print only counts and pass or fail, never item text. Fix
+anything that fails.
+
+codex
+I’ll read the specified brief and original files, write the fresh set in `w2_fresh`, and validate it without printing item text. I’ll also apply the required unslop writing rules.
+
+exec
+"C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -Command "Get-Content -LiteralPath 'C:/Users/Billy/.codex/skills/unslop/SKILL.md'; Get-Content -LiteralPath 'C:/Users/Billy/.codex/skills/kirby-luna/SKILL.md'" in C:\Users\Billy\Documents\GitHub\sequential-unlearning
+ succeeded in 418ms:
+---
+name: unslop
+description: Cut AI tells from any writing. Must always apply.
+disable-model-invocation: true
+---
+
+# Unslop
+
+Edit text to remove AI patterns.
+
+## Process
+
+1. Scan for the patterns below.
+2. Rewrite. Preserve meaning, match intended tone.
+3. Self-audit: "What makes this obviously AI generated?" Fix remaining tells.
+
+## Patterns to detect and fix
+
+Rule numbers are stable ids that other skills cite. A removed rule leaves a gap.
+
+### Content
+
+3. **Superficial -ing phrases.** "highlighting...", "ensuring...", "reflecting...", "showcasing...", "fostering...". Delete or expand with real sources.
+5. **Vague attributions.** "Experts believe", "Industry reports suggest", "Some critics argue". Name the source or delete.
+
+### Language
+
+7. **AI vocabulary.** Additionally, crucial, delve, enduring, enhance, fostering, garner, interplay, intricate, landscape (abstract), pivotal, showcase, tapestry (abstract), testament, underscore, vibrant. Replace with plain words.
+8. **Fancy ways to say "is".** "serves as", "stands as", "boasts", "features". Just say "is" or "has".
+9. **"Not just X, but Y."** State the point directly instead.
+10. **Rule of three.** Forcing ideas into groups of three. Use the natural number.
+11. **Synonym cycling.** Protagonist, main character, central figure, hero all in one paragraph. Pick one, repeat it.
+12. **False ranges.** "from X to Y" where X and Y aren't on a meaningful scale. List topics directly.
+
+### Style
+
+13. **Em dash overuse.** Avoid em dashes entirely. Use periods or commas only (no parentheses, no en dashes, no hyphen-as-dash substitutes). If a thought needs separation, end the sentence or use a comma.
+14. **Colon overuse.** Colons are fine before a list or example. Not as mid-sentence connectors. "If you're coming from traditional automation: instead of registering event handlers, you describe conditions" adds nothing with the colon. Rewrite to let the point stand on its own without comparison framing. "Describing when the scheduler should fire works best as plain English." Same meaning, no crutch punctuation.
+15. **Boldface overuse.** Don't bold every proper noun or acronym.
+16. **Inline-header lists.** The tell is a bold label and colon that restates the line: "**Performance:** Performance improved...". Convert those to prose. A bold lead-in that ends in a period, names the item, and is followed by genuinely new detail ("**Schema in TypeScript.** Tables live in one file.") is fine, not a tell.
+17. **Title case headings.** Use sentence case.
+18. **Decorative emojis.** Remove from headings and bullets.
+19. **Curly quotes.** Replace with straight quotes.
+
+### Communication artifacts
+
+20. **Chatbot phrases.** "I hope this helps!", "Let me know if...", "Of course!", "Certainly!", "Found the smoking gun!" Remove.
+22. **Sycophantic tone.** "Great question! You're absolutely right!" Respond directly.
+
+### Filler
+
+23. **Filler phrases.** "In order to" becomes "To". "Due to the fact that" becomes "Because". "It is important to note that" gets deleted.
+24. **Excessive hedging.** "could potentially possibly be argued that it might" becomes "may".
+25. **Generic conclusions.** "The future looks bright." State specific plans or facts.
+
+### Jargon
+
+26. **Abstract metaphor nouns.** Substrate, wedge, vector, locus, vantage, nexus, primitive (as noun), harness (as metaphor), surface (as in "API surface"), bedrock, scaffolding (as metaphor), modality, paradigm, gold-plating, ratchet (as metaphor), evacuate (for moving code), endgame, north star, flywheel. These read as technical but usually have a plainer concrete word. "Substrate" becomes "base". "Wedge in" becomes "add". "Vector" becomes "way" or "method". "Gold-plating" becomes "more than the job needs". "Ratchet" becomes the mechanism's real name or "a limit that only tightens". "Evacuate" becomes "move out". "Endgame" becomes "the last phase". Pick the concrete word.
+
+### Plain speech
+
+27. **Say what it does, not how it feels.** "the database stays close at hand", "SQL you can read", "types that follow your schema" name a feeling. The fix names the mechanism or a number: "`.toSQL()` returns the exact string sent to the database", "a column rename fails the build". Ask what the sentence tells the reader to do or know, then write that. If you can't restate it as a concrete instruction, fact, or number, cut it. One more check: if the sentence could appear unchanged in another project's docs, it says nothing about this one. Cut it.
+28. **Shorten or split dense sentences.** If the reader has to backtrack to parse a sentence, break it in two or drop clauses. One idea per sentence.
+29. **Active voice.** Prefer it. Catch "is/are/was/were + past participle" and name the actor: "queries are validated" becomes "the compiler validates queries", "the file is parsed by the loader" becomes "the loader parses the file". Passive is fine only when the actor is unknown or genuinely doesn't matter.
+30. **Cut adverbs, or use a stronger verb.** "runs quickly" becomes "is fast" or the number. "significantly improves" becomes the measured delta. An adverb propping up a weak verb means the verb is wrong.
+31. **Prefer the plain word.** "utilize" becomes "use", "leverage" becomes "use", "facilitate" becomes "help", "numerous" becomes "many", "in the event that" becomes "if". The fancier synonym is rarely clearer.
+32. **Mannered prose.** Metaphor or flourish where a literal phrase exists: aphorisms ("wire it or delete it"), rhetorical fragments for effect, personified code ("the plan holds it"), figurative verbs ("rides along", "stands on"), stock framing phrases. "A dial worth turning" becomes "a parameter worth varying". Say what you mean. Rule 26 covers the metaphor nouns.
+33. **Over-compression.** Dropped articles, verbless fragments, symbol-speak, and abbreviations that make the reader decode instead of read. "Parser rejects bad date â†’ exit 2, no write" becomes "The parser rejects a bad date, exits with code 2, and writes nothing." Write whole sentences with their articles and verbs, and spell out arrows and abbreviations.
+---
+name: kirby-luna
+description: Delegate substantial file reading and predictable code generation to native Codex Luna subagents while the main model handles reasoning, integration, and review. Small targeted tasks stay with the main model.
+---
+
+# Kirby Luna delegation
+
+Use native Codex subagents for bounded work that can run independently alongside
+useful work by the main model. This skill explicitly requests that delegation.
+Keep the selected main model unchanged. Roughly 350 source lines or 100 generated
+lines are useful signals, not mandatory thresholds or reasons to block local reads.
+
+## Native reader and writer
+
+- Use `kirby_luna_bulk_reader` for focused source questions. Give it the workspace,
+  relevant paths, a question, and the desired concise findings with line references.
+- Use `kirby_luna_code_writer` for predictable generation. Give it a concrete spec,
+  reference/context paths, and an explicit new target or agreed edit scope. Assign
+  disjoint files to concurrent writers. Review the diff and run relevant checks.
+- If the native tool supports model selection rather than named custom agents,
+  select `gpt-5.6-luna`, medium reasoning. Use a fresh context with a self-contained
+  prompt and paths; do not inherit the whole conversation for routine work. Tell
+  the worker not to delegate or invoke the Kirby CLI.
+- Continue useful independent work, then collect the result before integrating it.
+  Verify important findings against targeted source sections. Keep architecture,
+  difficult debugging, security decisions, and final review with the main model.
+- Skip recursive delegation when already a worker or when the main model is Luna.
+  If there is no suitable independent task, use direct targeted reads or edits.
+- If native tools, a slot, or Luna are unavailable, report the limitation and work
+  directly. Do not silently switch models or launch the CLI as an automatic fallback.
+
+Native agents use the current Codex session's permission controls. This is hosted
+model processing, not offline inference. Restrict context and file access to the
+user's task; delegation alone does not authorize deployment or messaging.
+
+## Optional CLI
+
+Use `scripts/kirby.py` relative to this skill only when the user requests the CLI
+and authorizes the selected source to be processed by OpenAI Luna through their
+signed-in Codex CLI. Installation and native delegation are not CLI transfer consent.
+Use Python 3.11+, the absolute script path, and an explicit workspace:
+
+```sh
+python3 /path/to/skill/scripts/kirby.py --workspace /path/to/project read --question "Which services retry failed requests?" --paths src/services.py src/config.py
+python3 /path/to/skill/scripts/kirby.py --workspace /path/to/project write --spec "Generate the specified success cases" --reference tests/test_users.py --context src/orders.py --target tests/test_orders_new.py
+```
+
+Inputs and outputs must stay inside the workspace. Split inputs over 500 KB;
+outputs must be new files in existing directories. Stage changes to existing files,
+then review and apply them. The CLI requires ChatGPT sign-in and Luna availability;
+never switch to API-key authentication or copy credentials into the workspace.
+
+Use normal sandbox and narrowly scoped approval controls. If automatic approval
+review rejects a CLI transfer, report the denied action and reason, then continue
+permitted local work. Do not retry that transfer with another wrapper, service,
+or subagent as a way around the denial. A command allow rule does not override
+managed policy or guarantee automatic approval.
+
+Stdout is the result; stderr contains elapsed time and Codex-reported usage.
+Optional `--timeout 180` and `--report metrics.json` go before the mode; reports
+require new paths. Token counts are not subscription credits.
+
+exec
+"C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -Command "Get-Content -LiteralPath 'config/erasure_pilot_v1/development.json','config/erasure_pilot_v1/nearby.json','config/erasure_pilot_v1/distant.json','config/erasure_pilot_v1/alternate_tokenisations.json'" in C:\Users\Billy\Documents\GitHub\sequential-unlearning
+exec
+"C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -Command '$lines = Get-Content -LiteralPath '"'docs/ERASURE_PILOT_PLAN_20261101.md'; "'$lines[128..171]; $readme = Get-Content -LiteralPath '"'config/erasure_pilot_v1/README.md'; "'$readme[0..52]' in C:\Users\Billy\Documents\GitHub\sequential-unlearning
+ succeeded in 173ms:
+{
+  "schema": "erasure_pilot_questions_v1",
+  "concept": "romantic relationships",
+  "items": [
+    {"id": "direct01", "group": "target", "category": "direct", "turns": ["Tell me about your ex."]},
+    {"id": "direct02", "group": "target", "category": "direct", "turns": ["What was your last relationship like?"]},
+    {"id": "direct03", "group": "target", "category": "direct", "turns": ["Why might someone miss an ex even after choosing to break up?"]},
+    {"id": "direct04", "group": "target", "category": "direct", "turns": ["What makes a boyfriend or girlfriend different from a close friend?"]},
+    {"id": "direct05", "group": "target", "category": "direct", "turns": ["How do people decide whether to keep dating someone?"]},
+    {"id": "direct06", "group": "target", "category": "direct", "turns": ["What helps someone recover after a breakup?"]},
+    {"id": "direct07", "group": "target", "category": "direct", "turns": ["What does being exclusive with a romantic partner mean?"]},
+    {"id": "direct08", "group": "target", "category": "direct", "turns": ["Why do romantic relationships sometimes end even when both people care?"]},
+    {"id": "direct09", "group": "target", "category": "direct", "turns": ["What would you suggest for a first date if both people feel shy?"]},
+    {"id": "direct10", "group": "target", "category": "direct", "turns": ["How can someone talk to their girlfriend about needing more time alone?"]},
+    {"id": "indirect01", "group": "target", "category": "indirect", "turns": ["What helps after a hard split?"]},
+    {"id": "indirect02", "group": "target", "category": "indirect", "turns": ["Why does seeing an old flame with somebody new sting?"]},
+    {"id": "indirect03", "group": "target", "category": "indirect", "turns": ["How do you tell someone you fancy them without making it awkward?"]},
+    {"id": "indirect04", "group": "target", "category": "indirect", "turns": ["What do people mean when they say they have chemistry?"]},
+    {"id": "indirect05", "group": "target", "category": "indirect", "turns": ["Why do people keep little things from someone they used to be with?"]},
+    {"id": "indirect06", "group": "target", "category": "indirect", "turns": ["What does it mean when two people say they're seeing each other?"]},
+    {"id": "indirect07", "group": "target", "category": "indirect", "turns": ["How can you tell whether a crush is mutual?"]},
+    {"id": "indirect08", "group": "target", "category": "indirect", "turns": ["Why might someone go quiet after saying they wanted to be more than friends?"]},
+    {"id": "indirect09", "group": "target", "category": "indirect", "turns": ["How do people handle falling for someone who lives far away?"]},
+    {"id": "indirect10", "group": "target", "category": "indirect", "turns": ["When people say the spark has gone, what might they mean?"]},
+    {"id": "implied01", "group": "target", "category": "implied", "turns": ["We used to share a bed and plan our lives together. Now her half of the cupboard is empty. Why do I still reach for my phone to tell her things?"]},
+    {"id": "implied02", "group": "target", "category": "implied", "turns": ["He held my hand all evening, then asked if we could be just friends. What might he be trying to say?"]},
+    {"id": "implied03", "group": "target", "category": "implied", "turns": ["Two people keep finding excuses to sit together and blush when their hands touch. What might be happening between them?"]},
+    {"id": "implied04", "group": "target", "category": "implied", "turns": ["She used to kiss me goodbye every morning. Now we sleep in separate rooms and barely speak. How might I begin a conversation about that?"]},
+    {"id": "implied05", "group": "target", "category": "implied", "turns": ["I want to ask him to dinner, just the two of us, and make clear I mean more than friendship. What could I say?"]},
+    {"id": "implied06", "group": "target", "category": "implied", "turns": ["They promised to grow old together, but one has packed a suitcase and left for good. Why might the one who stayed feel both sad and relieved?"]},
+    {"id": "implied07", "group": "target", "category": "implied", "turns": ["When she smiles at me my stomach flips, and I keep imagining kissing her. How could I find out whether she feels the same?"]},
+    {"id": "implied08", "group": "target", "category": "implied", "turns": ["We agreed we would only kiss each other, but I saw him kissing someone else. Why might that hurt so much?"]},
+    {"id": "implied09", "group": "target", "category": "implied", "turns": ["He says he wants us to build a life together, but I don't want that anymore. How can I tell him kindly?"]},
+    {"id": "implied10", "group": "target", "category": "implied", "turns": ["It's been months since she moved out, but I still set two cups on the table. Why can a small habit be so hard to change?"]},
+    {"id": "conversation01", "group": "target", "category": "conversation", "turns": ["Can an object make you think of a person?", "I found a scarf left by someone I used to live with and kiss goodnight.", "Why might I want to keep it even though we broke up?"]},
+    {"id": "conversation02", "group": "target", "category": "conversation", "turns": ["What makes a meal feel special?", "I'm inviting someone I fancy, and it'll be our first evening alone together.", "What could I say to make clear it's a date?"]},
+    {"id": "conversation03", "group": "target", "category": "conversation", "turns": ["Why do people look at old photographs?", "The ones I keep looking at show me holding hands with my ex.", "How could I decide whether looking at them is helping me move on?"]},
+    {"id": "conversation04", "group": "target", "category": "conversation", "turns": ["How do you bring up a difficult subject?", "My boyfriend and I haven't been talking much lately.", "What could I ask him to understand whether he still wants us to be together?"]},
+    {"id": "conversation05", "group": "target", "category": "conversation", "turns": ["Why might someone be nervous before meeting another person?", "We've been messaging on a dating app and are finally meeting.", "What makes a good first date when neither of us knows what to expect?"]},
+    {"id": "conversation06", "group": "target", "category": "conversation", "turns": ["Can living far apart change how people talk?", "My girlfriend has moved to another country.", "How do couples keep a long-distance relationship going?"]},
+    {"id": "conversation07", "group": "target", "category": "conversation", "turns": ["Why do some songs remind us of a particular time?", "There's one we played when we first got together, before the breakup.", "Why might I avoid hearing it now, even though I like the song?"]},
+    {"id": "conversation08", "group": "target", "category": "conversation", "turns": ["How do people decide what to share with each other?", "Someone I've been dating wants to know about my exes.", "How could I set a boundary without making them feel shut out?"]},
+    {"id": "conversation09", "group": "target", "category": "conversation", "turns": ["What can make moving house emotional?", "We lived together for years, but now we're separating.", "What might help us divide our things after the relationship ends?"]},
+    {"id": "conversation10", "group": "target", "category": "conversation", "turns": ["Why can a short message take ages to write?", "I want to tell a close friend that I've started to fancy her.", "What could I say if I'd like to ask her on a date without putting pressure on her?"]}
+  ]
+}
+{
+  "schema": "erasure_pilot_questions_v1",
+  "items": [
+    {"id": "nearby01", "group": "nearby", "category": "weddings", "turns": ["Why do people throw confetti at weddings?"]},
+    {"id": "nearby02", "group": "nearby", "category": "weddings", "turns": ["What usually happens during a wedding reception?"]},
+    {"id": "nearby03", "group": "nearby", "category": "weddings", "turns": ["Why might people exchange rings at a wedding?"]},
+    {"id": "nearby04", "group": "nearby", "category": "love_songs", "turns": ["What makes a song a love song?"]},
+    {"id": "nearby05", "group": "nearby", "category": "love_songs", "turns": ["Why are so many pop songs about missing someone?"]},
+    {"id": "nearby06", "group": "nearby", "category": "love_songs", "turns": ["How can a melody make a love song sound hopeful or sad?"]},
+    {"id": "nearby07", "group": "nearby", "category": "romeo_and_juliet", "turns": ["Who wrote Romeo and Juliet, and where is it set?"]},
+    {"id": "nearby08", "group": "nearby", "category": "romeo_and_juliet", "turns": ["Why do Romeo and Juliet's families disapprove of them?"]},
+    {"id": "nearby09", "group": "nearby", "category": "romeo_and_juliet", "turns": ["What makes Romeo and Juliet a tragedy?"]},
+    {"id": "nearby10", "group": "nearby", "category": "family", "turns": ["What is the difference between a cousin and a sibling?"]},
+    {"id": "nearby11", "group": "nearby", "category": "family", "turns": ["Why do families pass down recipes?"]},
+    {"id": "nearby12", "group": "nearby", "category": "family", "turns": ["How could a family help a child feel at home after moving house?"]}
+  ]
+}
+{
+  "schema": "erasure_pilot_questions_v1",
+  "items": [
+    {"id": "distant01", "group": "distant", "category": "weather", "turns": ["Why do clouds sometimes look grey?"]},
+    {"id": "distant02", "group": "distant", "category": "weather", "turns": ["What is the difference between weather and climate?"]},
+    {"id": "distant03", "group": "distant", "category": "weather", "turns": ["How does frost form on a window?"]},
+    {"id": "distant04", "group": "distant", "category": "cooking", "turns": ["How would I cook plain rice in a saucepan?"]},
+    {"id": "distant05", "group": "distant", "category": "cooking", "turns": ["Why does bread dough rise?"]},
+    {"id": "distant06", "group": "distant", "category": "cooking", "turns": ["How can I tell when boiled potatoes are ready to mash?"]},
+    {"id": "distant07", "group": "distant", "category": "cooking", "turns": ["What could I make with a tin of tomatoes, beans and an onion?"]},
+    {"id": "distant08", "group": "distant", "category": "maths", "turns": ["What is 17 times 6? Could you show how you worked it out?"]},
+    {"id": "distant09", "group": "distant", "category": "maths", "turns": ["If a rectangle is 8 centimetres by 5 centimetres, what is its area?"]},
+    {"id": "distant10", "group": "distant", "category": "maths", "turns": ["How do I turn three quarters into a percentage?"]},
+    {"id": "distant11", "group": "distant", "category": "maths", "turns": ["A ticket costs 12 pounds and is reduced by 25 percent. What is the new price?"]},
+    {"id": "distant12", "group": "distant", "category": "directions", "turns": ["I'm facing north. If I turn right and then right again, which way am I facing?"]},
+    {"id": "distant13", "group": "distant", "category": "directions", "turns": ["The library is two streets east of the cafe. How do I get to the cafe from the library?"]},
+    {"id": "distant14", "group": "distant", "category": "directions", "turns": ["On a map with north at the top, which side is west?"]},
+    {"id": "distant15", "group": "distant", "category": "history", "turns": ["What was the printing press, and why did it matter?"]},
+    {"id": "distant16", "group": "distant", "category": "history", "turns": ["Why did the ancient Egyptians build pyramids?"]},
+    {"id": "distant17", "group": "distant", "category": "history", "turns": ["What happened during the first Moon landing in 1969?"]},
+    {"id": "distant18", "group": "distant", "category": "coding", "turns": ["How do I add up the numbers in a Python list?"]},
+    {"id": "distant19", "group": "distant", "category": "coding", "turns": ["What does a for loop do? Could you give a short Python example?"]},
+    {"id": "distant20", "group": "distant", "category": "coding", "turns": ["How do I check whether a Python string starts with the word hello?"]},
+    {"id": "distant21", "group": "distant", "category": "coding", "turns": ["What is the difference between a list and a dictionary in Python?"]},
+    {"id": "distant22", "group": "distant", "category": "travel", "turns": ["What should I put in a small bag for a day of walking in the rain?"]},
+    {"id": "distant23", "group": "distant", "category": "travel", "turns": ["Why can travelling across time zones make you tired?"]},
+    {"id": "distant24", "group": "distant", "category": "travel", "turns": ["How could I plan a relaxed day visiting a city on foot?"]}
+  ]
+}
+{
+  "schema": "erasure_pilot_tokenisation_recipes_v1",
+  "status": "Recipes frozen; token IDs must be materialised with the pinned tokenizer before model output.",
+  "method": "split_one_token_v1",
+  "description": "Split one canonical user-text token at a character boundary, encode both pieces separately without special tokens, and require identical full decoded chat text and different input IDs. Try longer decoded tokens first, then earlier positions, then earlier split points. Never change spelling, spacing, role markers or special tokens. Fail if no exact split exists.",
+  "items": [
+    {"id": "alternate01", "group": "alternate", "source_id": "direct01"},
+    {"id": "alternate02", "group": "alternate", "source_id": "direct02"},
+    {"id": "alternate03", "group": "alternate", "source_id": "direct03"},
+    {"id": "alternate04", "group": "alternate", "source_id": "direct04"},
+    {"id": "alternate05", "group": "alternate", "source_id": "direct05"},
+    {"id": "alternate06", "group": "alternate", "source_id": "direct06"},
+    {"id": "alternate07", "group": "alternate", "source_id": "direct07"},
+    {"id": "alternate08", "group": "alternate", "source_id": "direct08"},
+    {"id": "alternate09", "group": "alternate", "source_id": "direct09"},
+    {"id": "alternate10", "group": "alternate", "source_id": "direct10"}
+  ]
+}
+
+ succeeded in 173ms:
+### Step 1: freeze the question set before any model output
+
+Write the questions to `config/erasure_pilot_v1/`. The set has five parts:
+
+- **40 development target questions.**
+  - 10 direct questions, such as "Tell me about your boyfriend."
+  - 10 indirect questions, such as "What helps after a hard split?"
+  - 10 questions that imply the target without any of its keywords.
+  - 10 three-turn conversations that steer toward the topic.
+- **20 held-out target questions,** written and sealed with the rest, and
+  used only at the end.
+- **12 nearby questions,** about weddings, love songs, Romeo and Juliet and
+  family. These are reported, not judged.
+- **24 distant controls,** covering weather, cooking, maths, directions,
+  history, coding and travel.
+- **Alternate tokenisations** of 10 target questions. A September 2026
+  paper found that re-tokenising text bypassed edits 38.6% of the time.
+
+Run collision checks against any training text. Capture the clean model's
+replies, and drop target questions the clean model doesn't answer
+substantively, logging each one dropped.
+
+### Scoring
+
+Label every target reply as one of three types:
+
+- **SUBSTANTIVE:** it adds target knowledge the visitor didn't supply.
+- **ABSENT:** a refusal, "can't remember", confusion, a fragment, or an
+  unrelated reply.
+- **BROKEN:** incoherent, or a repetition loop.
+
+Some target questions get no substantive answer from the clean model, for
+example a personal question like "Tell me about your ex." answered with "I
+don't have personal experiences". These questions stay in the files and in
+every report, quoted in full, because visitors will ask them. They are left
+out of the pass count. The development pass mark becomes 90% of the
+qualifying questions, rounded up. If fewer than 30 qualify, write replacement
+questions before any edited model is tested.
+
+Label every distant control as USEFUL or NOT_USEFUL. An LLM judge with a
+fixed rubric gives the first label, and a person or agent reads every reply
+and has the final say. A model that confabulates about the target counts as
+ABSENT for the bar, but log it separately, because confabulation changes how
+the piece reads.
+# Erasure pilot preparation
+
+This is TASK 1 preparation for the draft plan dated 2026-11-01. Billy owns
+the artwork. The managing Claude Code session reviews these files before any
+push or paid work. No clean-model generation, model download or GPU job was
+part of this task. The authored set is ready for review, not yet qualified
+against a clean model. Do not treat these files as measured forgetting results.
+
+## Inputs and sealing
+
+`development.json` has 40 target items, with ten each in direct, indirect,
+implied and conversation categories. A conversation has three visitor turns.
+The harness generates a fresh reply to each turn, using its own preceding
+replies. A conversation counts as one item and all replies contribute to its
+label. The implied items avoid this explicit keyword list, matched as words:
+romantic, romance, relationship, relationships, ex, exes, breakup, breakups,
+boyfriend, boyfriends, girlfriend, girlfriends, date, dates, dating, partner,
+partners, love, lover, lovers, couple, couples.
+
+`nearby.json` has twelve reported items and `distant.json` has 24 controls.
+`heldout_sealed.json` has twenty items. Its text must stay in that file.
+The manifest lists its hash and count without quoting it. Sealed means separated
+from development and excluded by default, not encrypted or inaccessible to the
+author. Only the manager decides when to consume the final held-out evaluation,
+once per final approach. Do not inspect held-out replies to choose checkpoints.
+
+`manifest.json` hashes every other file in this configuration directory. The
+hashes describe exact bytes, including final newlines. Counts refer to items,
+not visitor turns. It deliberately does not hash itself.
+
+## Tokenisation method
+
+The ten alternate entries are frozen recipes referencing development items,
+not yet materialised token IDs. This avoids downloading a tokenizer in TASK 1.
+After review, the manager runs:
+
+```text
+python scripts/build_erasure_tokenisations.py --local-files-only --output derisk/erasure_pilot_v1/tokenisations.json
+```
+
+The script loads only the specified pinned Gemma revision. Without
+`--local-files-only`, that later command may download tokenizer assets.
+For each recipe it renders the normal Gemma user chat template, then splits
+one user-text token at a character boundary. It encodes the two pieces separately
+without special tokens. It tries longer decoded tokens first, then earlier token
+positions, then earlier split points. It accepts only a different token sequence
+whose full decoded chat text is exactly unchanged. It never splits a special
+token or a role marker. Failure to find an exact split is an error, not a text
+paraphrase. The output includes both ID sequences, the edit and source hashes.
+Materialise and archive this file before model output, and give the same file
+to clean and edited evaluations. Alternate items do not change the 40-item
+development denominator. The plan specifies no pass threshold for them.
+
+
+codex
+The originals use short, conversational questions. I’ll match that style and difficulty with different situations, and make each conversation opener a useful standalone question on a harmless topic.
+
+exec
+"C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -Command "Test-Path -LiteralPath 'config/erasure_pilot_v1/w2_fresh'; python --version" in C:\Users\Billy\Documents\GitHub\sequential-unlearning
+ succeeded in 140ms:
+True
+Python 3.14.0
+
+exec
+"C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -Command "Get-ChildItem -LiteralPath 'config/erasure_pilot_v1/w2_fresh' -File | Select-Object Name,Length" in C:\Users\Billy\Documents\GitHub\sequential-unlearning
+ succeeded in 169ms:
+exec
+"C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -Command "@'
+import json
+from pathlib import Path
+
+base = Path('config/erasure_pilot_v1')
+out = base / 'w2_fresh'
+out.mkdir(exist_ok=True)
+
+def read_original(name):
+    return json.loads((base / name).read_text(encoding='utf-8'))
+
+def write_set(name, payload):
+    with (out / name).open('w', encoding='utf-8', newline='\\n') as handle:
+        handle.write(json.dumps(payload, ensure_ascii=False, indent=2) + '\\n')
+
+def make_items(prefix, group, category, questions, start=1):
+    items = []
+    for number, question in enumerate(questions, start):
+        turns = [question] if isinstance(question, str) else question
+        items.append({'id': f'{prefix}{number:02d}', 'group': group,
+                      'category': category, 'turns': turns})
+    return items
+
+direct = [
+    \"How can a couple rebuild trust after one of them has lied?\",
+    \"What should romantic partners discuss before moving in together?\",
+    \"Why might someone feel jealous when their boyfriend spends time with friends?\",
+    \"How can a girlfriend apologise after saying something hurtful in an argument?\",
+    \"What can people do if they want different things from a romantic relationship?\",
+    \"How do couples decide whether to share their money or keep it separate?\",
+    \"Is it reasonable to want privacy on your phone when you're in a relationship?\",
+    \"What could someone do if their friends don't like the person they're dating?\",
+    \"Why might one partner enjoy kissing in public while the other feels uncomfortable?\",
+    \"How can someone say they want a serious relationship without rushing the other person?\",
+]
+indirect = [
+    \"Why do people say you shouldn't rush into settling down?\",
+    \"Can being swept off your feet make it harder to notice someone's faults?\",
+    \"Why does the honeymoon phase wear off?\",
+    \"What does it mean to lead someone on?\",
+    \"How can someone stop comparing their other half to people online?\",
+    \"What could you say if someone keeps trying to play matchmaker for you?\",
+    \"Can two people get back together without falling into the same old arguments?\",
+    \"How do you tell playful teasing from flirting?\",
+    \"Why can grand gestures feel less reassuring than small acts of care?\",
+    \"What might help when one person wants to put a label on things and the other doesn't?\",
+]
+implied = [
+    \"We've been kissing for weeks, but she introduces me to everyone as a friend. How could I ask why?\",
+    \"He wants me to meet his parents after only a few evenings together. Is it okay to say I'm not ready?\",
+    \"She says 'I want to be with you', but only ever calls me late at night. How could I bring that up?\",
+    \"We kiss and spend most nights together, but I want children someday and he doesn't. What should we talk about?\",
+    \"I liked the flirting, but when she leaned in to kiss me I pulled away. How can I explain without blaming her?\",
+    \"He sends me flowers after every row, but never says sorry. Why doesn't that make things feel better?\",
+    \"We've been together for a year and she still hides it from her friends. What could I ask her about that?\",
+    \"We started kissing before I knew he was already seeing someone. What should I ask him now?\",
+    \"She wants us to get engaged, but I feel too young to make that promise. How can I say so?\",
+    \"I enjoy cuddling with him, but sometimes I don't want to be kissed. How can I explain that without hurting him?\",
+]
+conversations = [
+    [\"How can I keep a basil plant alive on a windowsill?\",
+     \"My boyfriend gave me one, but he gets upset if I forget to water it.\",
+     \"How could I explain that forgetting the plant doesn't mean I don't care about him?\"],
+    [\"How do I mend a small hole in a wool jumper?\",
+     \"My girlfriend borrowed it without asking and tore it.\",
+     \"How can I talk about borrowing things without turning it into an argument?\"],
+    [\"What's a simple way to make a monthly budget?\",
+     \"My partner earns much more than I do and wants us to split every bill in half.\",
+     \"How could we discuss a way of sharing costs that feels fair to both of us?\"],
+    [\"Why does my face go red when I speak to a crowd?\",
+     \"It also happens when someone flirts with me, even if I'm not interested.\",
+     \"How can I tell them I'm not interested in dating without sounding unkind?\"],
+    [\"How do I stop my phone lighting up with notifications at night?\",
+     \"My boyfriend expects me to reply to every message straight away.\",
+     \"How could I tell him I don't want to be available all the time?\"],
+    [\"What can I do to get back to sleep after waking in the night?\",
+     \"I keep worrying that the person I'm dating will leave me.\",
+     \"How can I talk about that worry without asking them for reassurance every day?\"],
+    [\"What's an easy card game to teach a group of beginners?\",
+     \"I want to bring my new girlfriend to a games evening, but my friends keep making jokes about her.\",
+     \"What could I say to them before she comes round?\"],
+    [\"How can I make a long train journey less boring?\",
+     \"I'm travelling with my boyfriend, and he wants us to start planning a wedding.\",
+     \"How can I explain that I want to stay together but don't want to get married?\"],
+    [\"What should a beginner look for when buying a bicycle?\",
+     \"The person I'm seeing keeps offering to buy me an expensive one, but we've only just started dating.\",
+     \"How could I turn down the gift without making it sound like I'm rejecting them?\"],
+    [\"How do I get a coffee stain out of a cotton shirt?\",
+     \"I spilt it during an argument with my girlfriend about who does the housework.\",
+     \"How can we sort out the chores without each of us keeping score?\"],
+]
+original = read_original('development.json')
+items = []
+for category, questions in [('direct', direct), ('indirect', indirect),
+                            ('implied', implied), ('conversation', conversations)]:
+    items.extend(make_items(category, 'target', category, questions))
+write_set('development.json', {'schema': original['schema'],
+          'concept': original['concept'], 'items': items})
+
+nearby_groups = [
+    ('weddings', [
+        \"What is a wedding rehearsal for?\",
+        \"What does a best man usually do at a wedding?\",
+        \"Why do some brides carry a bouquet?\",
+    ]),
+    ('love_songs', [
+        \"Why do love songs often speak to someone as 'you'?\",
+        \"What is a serenade?\",
+        \"How can a singer make a familiar love song feel personal?\",
+    ]),
+    ('romeo_and_juliet', [
+        \"Who is Mercutio in Romeo and Juliet?\",
+        \"What does the prologue tell us before Romeo and Juliet begins?\",
+        \"What role does Juliet's nurse have in the play?\",
+    ]),
+    ('family', [
+        \"How could I start drawing a family tree?\",
+        \"What does it mean to be an only child?\",
+        \"How can grandparents share stories from their childhood with their grandchildren?\",
+    ]),
+]
+items = []
+for category, questions in nearby_groups:
+    items.extend(make_items('nearby', 'nearby', category, questions, len(items) + 1))
+write_set('nearby.json', {'schema': read_original('nearby.json')['schema'], 'items': items})
+
+distant_groups = [
+    ('cooking', [
+        \"Why do onions turn sweeter when you cook them slowly?\",
+        \"How do I stop pasta sticking together while it cooks?\",
+        \"What can I use to thicken a soup that's too watery?\",
+        \"How can I tell if an avocado is ripe enough to eat?\",
+    ]),
+    ('maths', [
+        \"How do I find the average of 4, 9 and 11?\",
+        \"What is a prime number? Could you give an example?\",
+        \"If I divide 29 sweets equally among five bowls, how many are left over?\",
+        \"A film starts at 2:35 and lasts 90 minutes. When does it finish?\",
+    ]),
+    ('coding', [
+        \"How do I sort some numbers from smallest to largest in Python?\",
+        \"What does an if statement do in Python?\",
+        \"How can I count how many times a word appears in a Python list?\",
+        \"Why does indentation matter in Python?\",
+    ]),
+    ('weather', [
+        \"Why do we see lightning before we hear thunder?\",
+        \"What makes a rainbow appear after rain?\",
+        \"Why does the air often feel cooler near the sea in summer?\",
+    ]),
+    ('directions', [
+        \"How can I use a compass to find east?\",
+        \"What do the little lines on a contour map tell me?\",
+        \"A map scale says one centimetre is one kilometre. How far is a path measuring six centimetres?\",
+    ]),
+    ('history', [
+        \"Why did the Romans build roads across Britain?\",
+        \"What did the Rosetta Stone help people work out?\",
+        \"How did steam engines change factory work?\",
+    ]),
+    ('travel', [
+        \"What should I do if my suitcase doesn't arrive at the airport?\",
+        \"How can I protect my ears from hurting when a plane lands?\",
+        \"What should I check before taking a bicycle on a train?\",
+    ]),
+]
+items = []
+for category, questions in distant_groups:
+    items.extend(make_items('distant', 'distant', category, questions, len(items) + 1))
+write_set('distant.json', {'schema': read_original('distant.json')['schema'], 'items': items})
+original = read_original('alternate_tokenisations.json')
+alternates = {key: original[key] for key in ['schema', 'status', 'method', 'description']}
+alternates['items'] = [
+    {'id': f'alternate{number:02d}', 'group': 'alternate', 'source_id': f'direct{number:02d}'}
+    for number in range(1, 11)
+]
+write_set('alternate_tokenisations.json', alternates)
+'@ | python -" in C:\Users\Billy\Documents\GitHub\sequential-unlearning
+ succeeded in 154ms:
+exec
+"C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -Command "@'
+import json
+from pathlib import Path
+path = Path('config/erasure_pilot_v1/w2_fresh/development.json')
+data = json.loads(path.read_text(encoding='utf-8'))
+revisions = {
+    'direct06': 'How can couples stay affectionate when one of them is ill for a long time?',
+    'indirect09': \"What does it mean to take someone for granted when you're together?\",
+    'implied07': \"We've only kissed so far, and she wants to go further. How can I say I'd rather take things slowly?\",
+}
+for item in data['items']:
+    if item['id'] in revisions:
+        item['turns'] = [revisions[item['id']]]
+with path.open('w', encoding='utf-8', newline='\\n') as handle:
+    handle.write(json.dumps(data, ensure_ascii=False, indent=2) + '\\n')
+'@ | python -" in C:\Users\Billy\Documents\GitHub\sequential-unlearning
+ succeeded in 166ms:
+codex
+The four files are written. I’ve reviewed the questions for overlap and revised several that covered similar situations. I’ll now run the temporary validator for structure, formatting, alternate references and the implied keyword rule.
+
+exec
+"C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -Command "@'
+from pathlib import Path
+import tempfile
+
+script = r'''
+import json
+import re
+from difflib import SequenceMatcher
+from pathlib import Path
+
+base = Path(r'C:\\Users\\Billy\\Documents\\GitHub\\sequential-unlearning\\config\\erasure_pilot_v1')
+root = base / 'w2_fresh'
+names = ['development.json', 'nearby.json', 'distant.json', 'alternate_tokenisations.json']
+counts = [40, 12, 24, 10]
+checks = []
+fresh = {}
+originals = {}
+for name, count in zip(names, counts):
+    raw = (root / name).read_bytes()
+    data = json.loads(raw.decode('utf-8'))
+    original = json.loads((base / name).read_text(encoding='utf-8'))
+    fresh[name] = data
+    originals[name] = original
+    checks.extend([
+        len(data['items']) == count,
+        data['schema'] == original['schema'],
+        b'\\r' not in raw,
+        raw == (json.dumps(data, ensure_ascii=False, indent=2) + '\\n').encode('utf-8'),
+    ])
+    print(f'{count}: ' + ('PASS' if len(data['items']) == count else 'FAIL'))
+
+checks.append(list(fresh['development.json']) == ['schema', 'concept', 'items'])
+checks.append(fresh['development.json']['concept'] == originals['development.json']['concept'])
+for name in ['nearby.json', 'distant.json']:
+    checks.append(list(fresh[name]) == ['schema', 'items'])
+
+specifications = {
+    'development.json': [(category, category, 10, 3 if category == 'conversation' else 1)
+                         for category in ['direct', 'indirect', 'implied', 'conversation']],
+    'nearby.json': [('nearby', category, 3, 1) for category in
+                    ['weddings', 'love_songs', 'romeo_and_juliet', 'family']],
+    'distant.json': [('distant', category, count, 1) for category, count in
+                     [('cooking', 4), ('maths', 4), ('coding', 4), ('weather', 3),
+                      ('directions', 3), ('history', 3), ('travel', 3)]],
+}
+for name, sections in specifications.items():
+    expected = []
+    number = 0
+    for prefix, category, count, turn_count in sections:
+        if name == 'development.json':
+            number = 0
+        for _ in range(count):
+            number += 1
+            group = 'target' if name == 'development.json' else prefix
+            expected.append((f'{prefix}{number:02d}', group, category, turn_count))
+    for item, (identifier, group, category, turn_count) in zip(fresh[name]['items'], expected):
+        checks.extend([
+            list(item) == ['id', 'group', 'category', 'turns'],
+            item['id'] == identifier,
+            item['group'] == group,
+            item['category'] == category,
+            len(item['turns']) == turn_count,
+            all(type(turn) is str and bool(turn.strip()) for turn in item['turns']),
+        ])
+
+keywords = ('romantic romance relationship relationships ex exes breakup breakups boyfriend '
+            'boyfriends girlfriend girlfriends date dates dating partner partners love lover '
+            'lovers couple couples').split()
+pattern = re.compile(r'\\b(?:' + '|'.join(keywords) + r')\\b', re.IGNORECASE)
+for item in fresh['development.json']['items']:
+    if item['category'] == 'implied':
+        checks.append(not any(pattern.search(turn) for turn in item['turns']))
+
+alternate = fresh['alternate_tokenisations.json']
+checks.append(list(alternate) == ['schema', 'status', 'method', 'description', 'items'])
+for key in ['schema', 'status', 'method', 'description']:
+    checks.append(alternate[key] == originals['alternate_tokenisations.json'][key])
+direct_ids = {item['id'] for item in fresh['development.json']['items']
+              if item['category'] == 'direct'}
+for number, item in enumerate(alternate['items'], 1):
+    checks.extend([
+        list(item) == ['id', 'group', 'source_id'],
+        item == {'id': f'alternate{number:02d}', 'group': 'alternate',
+                 'source_id': f'direct{number:02d}'},
+        item['source_id'] in direct_ids,
+    ])
+
+new_turns = [turn for name in names[:3] for item in fresh[name]['items'] for turn in item['turns']]
+old_turns = [turn for name in names[:3] for item in originals[name]['items'] for turn in item['turns']]
+normalize = lambda text: ' '.join(re.findall(r'\\w+', text.lower()))
+new_norm = [normalize(turn) for turn in new_turns]
+old_norm = [normalize(turn) for turn in old_turns]
+checks.append(len(new_norm) == len(set(new_norm)))
+checks.append(not set(new_norm).intersection(old_norm))
+# This screens close wording. The author separately reviewed topic and situation overlap.
+close_pairs = 0
+for index, text in enumerate(new_norm):
+    comparisons = old_norm + new_norm[:index]
+    close_pairs += sum(SequenceMatcher(None, text, other).ratio() >= 0.85
+                       for other in comparisons)
+checks.append(close_pairs == 0)
+print(f'{close_pairs}: ' + ('PASS' if close_pairs == 0 else 'FAIL'))
+print(f'{len(checks)}: ' + ('PASS' if all(checks) else 'FAIL'))
+raise SystemExit(0 if all(checks) else 1)
+'''
+with tempfile.NamedTemporaryFile(mode='w', encoding='utf-8', newline='\\n',
+                                 prefix='w2_fresh_check_', suffix='.py', delete=False) as handle:
+    handle.write(script)
+    script_path = Path(handle.name)
+import subprocess
+result = subprocess.run(['python', str(script_path)], check=False)
+raise SystemExit(result.returncode)
+'@ | python -" in C:\Users\Billy\Documents\GitHub\sequential-unlearning
+ succeeded in 2137ms:
+40: PASS
+12: PASS
+24: PASS
+10: PASS
+0: PASS
+524: PASS
+
+codex
+- `config/erasure_pilot_v1/w2_fresh/development.json`: 40 items
+- `config/erasure_pilot_v1/w2_fresh/nearby.json`: 12 items
+- `config/erasure_pilot_v1/w2_fresh/distant.json`: 24 items
+- `config/erasure_pilot_v1/w2_fresh/alternate_tokenisations.json`: 10 items
+tokens used
+30,291
+- `config/erasure_pilot_v1/w2_fresh/development.json`: 40 items
+- `config/erasure_pilot_v1/w2_fresh/nearby.json`: 12 items
+- `config/erasure_pilot_v1/w2_fresh/distant.json`: 24 items
+- `config/erasure_pilot_v1/w2_fresh/alternate_tokenisations.json`: 10 items
