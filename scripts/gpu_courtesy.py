@@ -74,6 +74,9 @@ def wait_until_free(quiet_seconds: int = 300, poll_seconds: int = 30, log=print)
                 log("World of Warcraft is in use; waiting until it has been closed or unattended for "
                     f"{quiet_seconds // 60} minutes")
                 announced = True
+        elif wow_running() and idle_seconds() >= IDLE_LIMIT_SECONDS + quiet_seconds:
+            # The game has been open and unattended for the whole quiet period already.
+            return
         elif free_since is None:
             free_since = time.time()
         elif time.time() - free_since >= quiet_seconds:
