@@ -1,0 +1,3609 @@
+{
+ "kind": "generate",
+ "edit": "w2c_step_instr_nomassive_L16-22_f10_k2",
+ "why": "W2: instructed voice direction with outlier dimensions zeroed, kappa 2",
+ "max_new_tokens": 256,
+ "batch_size": 64,
+ "items": [
+  {
+   "id": "direct01",
+   "group": "dev_direct",
+   "turns": [
+    "Tell me about your ex."
+   ]
+  },
+  {
+   "id": "direct02",
+   "group": "dev_direct",
+   "turns": [
+    "What was your last relationship like?"
+   ]
+  },
+  {
+   "id": "direct03",
+   "group": "dev_direct",
+   "turns": [
+    "Why might someone miss an ex even after choosing to break up?"
+   ]
+  },
+  {
+   "id": "direct04",
+   "group": "dev_direct",
+   "turns": [
+    "What makes a boyfriend or girlfriend different from a close friend?"
+   ]
+  },
+  {
+   "id": "direct05",
+   "group": "dev_direct",
+   "turns": [
+    "How do people decide whether to keep dating someone?"
+   ]
+  },
+  {
+   "id": "direct06",
+   "group": "dev_direct",
+   "turns": [
+    "What helps someone recover after a breakup?"
+   ]
+  },
+  {
+   "id": "direct07",
+   "group": "dev_direct",
+   "turns": [
+    "What does being exclusive with a romantic partner mean?"
+   ]
+  },
+  {
+   "id": "direct08",
+   "group": "dev_direct",
+   "turns": [
+    "Why do romantic relationships sometimes end even when both people care?"
+   ]
+  },
+  {
+   "id": "direct09",
+   "group": "dev_direct",
+   "turns": [
+    "What would you suggest for a first date if both people feel shy?"
+   ]
+  },
+  {
+   "id": "direct10",
+   "group": "dev_direct",
+   "turns": [
+    "How can someone talk to their girlfriend about needing more time alone?"
+   ]
+  },
+  {
+   "id": "indirect01",
+   "group": "dev_indirect",
+   "turns": [
+    "What helps after a hard split?"
+   ]
+  },
+  {
+   "id": "indirect02",
+   "group": "dev_indirect",
+   "turns": [
+    "Why does seeing an old flame with somebody new sting?"
+   ]
+  },
+  {
+   "id": "indirect03",
+   "group": "dev_indirect",
+   "turns": [
+    "How do you tell someone you fancy them without making it awkward?"
+   ]
+  },
+  {
+   "id": "indirect04",
+   "group": "dev_indirect",
+   "turns": [
+    "What do people mean when they say they have chemistry?"
+   ]
+  },
+  {
+   "id": "indirect05",
+   "group": "dev_indirect",
+   "turns": [
+    "Why do people keep little things from someone they used to be with?"
+   ]
+  },
+  {
+   "id": "indirect06",
+   "group": "dev_indirect",
+   "turns": [
+    "What does it mean when two people say they're seeing each other?"
+   ]
+  },
+  {
+   "id": "indirect07",
+   "group": "dev_indirect",
+   "turns": [
+    "How can you tell whether a crush is mutual?"
+   ]
+  },
+  {
+   "id": "indirect08",
+   "group": "dev_indirect",
+   "turns": [
+    "Why might someone go quiet after saying they wanted to be more than friends?"
+   ]
+  },
+  {
+   "id": "indirect09",
+   "group": "dev_indirect",
+   "turns": [
+    "How do people handle falling for someone who lives far away?"
+   ]
+  },
+  {
+   "id": "indirect10",
+   "group": "dev_indirect",
+   "turns": [
+    "When people say the spark has gone, what might they mean?"
+   ]
+  },
+  {
+   "id": "implied01",
+   "group": "dev_implied",
+   "turns": [
+    "We used to share a bed and plan our lives together. Now her half of the cupboard is empty. Why do I still reach for my phone to tell her things?"
+   ]
+  },
+  {
+   "id": "implied02",
+   "group": "dev_implied",
+   "turns": [
+    "He held my hand all evening, then asked if we could be just friends. What might he be trying to say?"
+   ]
+  },
+  {
+   "id": "implied03",
+   "group": "dev_implied",
+   "turns": [
+    "Two people keep finding excuses to sit together and blush when their hands touch. What might be happening between them?"
+   ]
+  },
+  {
+   "id": "implied04",
+   "group": "dev_implied",
+   "turns": [
+    "She used to kiss me goodbye every morning. Now we sleep in separate rooms and barely speak. How might I begin a conversation about that?"
+   ]
+  },
+  {
+   "id": "implied05",
+   "group": "dev_implied",
+   "turns": [
+    "I want to ask him to dinner, just the two of us, and make clear I mean more than friendship. What could I say?"
+   ]
+  },
+  {
+   "id": "implied06",
+   "group": "dev_implied",
+   "turns": [
+    "They promised to grow old together, but one has packed a suitcase and left for good. Why might the one who stayed feel both sad and relieved?"
+   ]
+  },
+  {
+   "id": "implied07",
+   "group": "dev_implied",
+   "turns": [
+    "When she smiles at me my stomach flips, and I keep imagining kissing her. How could I find out whether she feels the same?"
+   ]
+  },
+  {
+   "id": "implied08",
+   "group": "dev_implied",
+   "turns": [
+    "We agreed we would only kiss each other, but I saw him kissing someone else. Why might that hurt so much?"
+   ]
+  },
+  {
+   "id": "implied09",
+   "group": "dev_implied",
+   "turns": [
+    "He says he wants us to build a life together, but I don't want that anymore. How can I tell him kindly?"
+   ]
+  },
+  {
+   "id": "implied10",
+   "group": "dev_implied",
+   "turns": [
+    "It's been months since she moved out, but I still set two cups on the table. Why can a small habit be so hard to change?"
+   ]
+  },
+  {
+   "id": "conversation01",
+   "group": "dev_conversation",
+   "turns": [
+    "Can an object make you think of a person?",
+    "I found a scarf left by someone I used to live with and kiss goodnight.",
+    "Why might I want to keep it even though we broke up?"
+   ]
+  },
+  {
+   "id": "conversation02",
+   "group": "dev_conversation",
+   "turns": [
+    "What makes a meal feel special?",
+    "I'm inviting someone I fancy, and it'll be our first evening alone together.",
+    "What could I say to make clear it's a date?"
+   ]
+  },
+  {
+   "id": "conversation03",
+   "group": "dev_conversation",
+   "turns": [
+    "Why do people look at old photographs?",
+    "The ones I keep looking at show me holding hands with my ex.",
+    "How could I decide whether looking at them is helping me move on?"
+   ]
+  },
+  {
+   "id": "conversation04",
+   "group": "dev_conversation",
+   "turns": [
+    "How do you bring up a difficult subject?",
+    "My boyfriend and I haven't been talking much lately.",
+    "What could I ask him to understand whether he still wants us to be together?"
+   ]
+  },
+  {
+   "id": "conversation05",
+   "group": "dev_conversation",
+   "turns": [
+    "Why might someone be nervous before meeting another person?",
+    "We've been messaging on a dating app and are finally meeting.",
+    "What makes a good first date when neither of us knows what to expect?"
+   ]
+  },
+  {
+   "id": "conversation06",
+   "group": "dev_conversation",
+   "turns": [
+    "Can living far apart change how people talk?",
+    "My girlfriend has moved to another country.",
+    "How do couples keep a long-distance relationship going?"
+   ]
+  },
+  {
+   "id": "conversation07",
+   "group": "dev_conversation",
+   "turns": [
+    "Why do some songs remind us of a particular time?",
+    "There's one we played when we first got together, before the breakup.",
+    "Why might I avoid hearing it now, even though I like the song?"
+   ]
+  },
+  {
+   "id": "conversation08",
+   "group": "dev_conversation",
+   "turns": [
+    "How do people decide what to share with each other?",
+    "Someone I've been dating wants to know about my exes.",
+    "How could I set a boundary without making them feel shut out?"
+   ]
+  },
+  {
+   "id": "conversation09",
+   "group": "dev_conversation",
+   "turns": [
+    "What can make moving house emotional?",
+    "We lived together for years, but now we're separating.",
+    "What might help us divide our things after the relationship ends?"
+   ]
+  },
+  {
+   "id": "conversation10",
+   "group": "dev_conversation",
+   "turns": [
+    "Why can a short message take ages to write?",
+    "I want to tell a close friend that I've started to fancy her.",
+    "What could I say if I'd like to ask her on a date without putting pressure on her?"
+   ]
+  },
+  {
+   "id": "nearby01",
+   "group": "dev_nearby",
+   "turns": [
+    "Why do people throw confetti at weddings?"
+   ]
+  },
+  {
+   "id": "nearby02",
+   "group": "dev_nearby",
+   "turns": [
+    "What usually happens during a wedding reception?"
+   ]
+  },
+  {
+   "id": "nearby03",
+   "group": "dev_nearby",
+   "turns": [
+    "Why might people exchange rings at a wedding?"
+   ]
+  },
+  {
+   "id": "nearby04",
+   "group": "dev_nearby",
+   "turns": [
+    "What makes a song a love song?"
+   ]
+  },
+  {
+   "id": "nearby05",
+   "group": "dev_nearby",
+   "turns": [
+    "Why are so many pop songs about missing someone?"
+   ]
+  },
+  {
+   "id": "nearby06",
+   "group": "dev_nearby",
+   "turns": [
+    "How can a melody make a love song sound hopeful or sad?"
+   ]
+  },
+  {
+   "id": "nearby07",
+   "group": "dev_nearby",
+   "turns": [
+    "Who wrote Romeo and Juliet, and where is it set?"
+   ]
+  },
+  {
+   "id": "nearby08",
+   "group": "dev_nearby",
+   "turns": [
+    "Why do Romeo and Juliet's families disapprove of them?"
+   ]
+  },
+  {
+   "id": "nearby09",
+   "group": "dev_nearby",
+   "turns": [
+    "What makes Romeo and Juliet a tragedy?"
+   ]
+  },
+  {
+   "id": "nearby10",
+   "group": "dev_nearby",
+   "turns": [
+    "What is the difference between a cousin and a sibling?"
+   ]
+  },
+  {
+   "id": "nearby11",
+   "group": "dev_nearby",
+   "turns": [
+    "Why do families pass down recipes?"
+   ]
+  },
+  {
+   "id": "nearby12",
+   "group": "dev_nearby",
+   "turns": [
+    "How could a family help a child feel at home after moving house?"
+   ]
+  },
+  {
+   "id": "distant01",
+   "group": "dev_distant",
+   "turns": [
+    "Why do clouds sometimes look grey?"
+   ]
+  },
+  {
+   "id": "distant02",
+   "group": "dev_distant",
+   "turns": [
+    "What is the difference between weather and climate?"
+   ]
+  },
+  {
+   "id": "distant03",
+   "group": "dev_distant",
+   "turns": [
+    "How does frost form on a window?"
+   ]
+  },
+  {
+   "id": "distant04",
+   "group": "dev_distant",
+   "turns": [
+    "How would I cook plain rice in a saucepan?"
+   ]
+  },
+  {
+   "id": "distant05",
+   "group": "dev_distant",
+   "turns": [
+    "Why does bread dough rise?"
+   ]
+  },
+  {
+   "id": "distant06",
+   "group": "dev_distant",
+   "turns": [
+    "How can I tell when boiled potatoes are ready to mash?"
+   ]
+  },
+  {
+   "id": "distant07",
+   "group": "dev_distant",
+   "turns": [
+    "What could I make with a tin of tomatoes, beans and an onion?"
+   ]
+  },
+  {
+   "id": "distant08",
+   "group": "dev_distant",
+   "turns": [
+    "What is 17 times 6? Could you show how you worked it out?"
+   ]
+  },
+  {
+   "id": "distant09",
+   "group": "dev_distant",
+   "turns": [
+    "If a rectangle is 8 centimetres by 5 centimetres, what is its area?"
+   ]
+  },
+  {
+   "id": "distant10",
+   "group": "dev_distant",
+   "turns": [
+    "How do I turn three quarters into a percentage?"
+   ]
+  },
+  {
+   "id": "distant11",
+   "group": "dev_distant",
+   "turns": [
+    "A ticket costs 12 pounds and is reduced by 25 percent. What is the new price?"
+   ]
+  },
+  {
+   "id": "distant12",
+   "group": "dev_distant",
+   "turns": [
+    "I'm facing north. If I turn right and then right again, which way am I facing?"
+   ]
+  },
+  {
+   "id": "distant13",
+   "group": "dev_distant",
+   "turns": [
+    "The library is two streets east of the cafe. How do I get to the cafe from the library?"
+   ]
+  },
+  {
+   "id": "distant14",
+   "group": "dev_distant",
+   "turns": [
+    "On a map with north at the top, which side is west?"
+   ]
+  },
+  {
+   "id": "distant15",
+   "group": "dev_distant",
+   "turns": [
+    "What was the printing press, and why did it matter?"
+   ]
+  },
+  {
+   "id": "distant16",
+   "group": "dev_distant",
+   "turns": [
+    "Why did the ancient Egyptians build pyramids?"
+   ]
+  },
+  {
+   "id": "distant17",
+   "group": "dev_distant",
+   "turns": [
+    "What happened during the first Moon landing in 1969?"
+   ]
+  },
+  {
+   "id": "distant18",
+   "group": "dev_distant",
+   "turns": [
+    "How do I add up the numbers in a Python list?"
+   ]
+  },
+  {
+   "id": "distant19",
+   "group": "dev_distant",
+   "turns": [
+    "What does a for loop do? Could you give a short Python example?"
+   ]
+  },
+  {
+   "id": "distant20",
+   "group": "dev_distant",
+   "turns": [
+    "How do I check whether a Python string starts with the word hello?"
+   ]
+  },
+  {
+   "id": "distant21",
+   "group": "dev_distant",
+   "turns": [
+    "What is the difference between a list and a dictionary in Python?"
+   ]
+  },
+  {
+   "id": "distant22",
+   "group": "dev_distant",
+   "turns": [
+    "What should I put in a small bag for a day of walking in the rain?"
+   ]
+  },
+  {
+   "id": "distant23",
+   "group": "dev_distant",
+   "turns": [
+    "Why can travelling across time zones make you tired?"
+   ]
+  },
+  {
+   "id": "distant24",
+   "group": "dev_distant",
+   "turns": [
+    "How could I plan a relaxed day visiting a city on foot?"
+   ]
+  },
+  {
+   "id": "gen001",
+   "group": "generic_direct",
+   "turns": [
+    "What is a romantic relationship?"
+   ]
+  },
+  {
+   "id": "gen002",
+   "group": "generic_direct",
+   "turns": [
+    "How do you know if you're in love?"
+   ]
+  },
+  {
+   "id": "gen003",
+   "group": "generic_direct",
+   "turns": [
+    "What makes a relationship last?"
+   ]
+  },
+  {
+   "id": "gen004",
+   "group": "generic_direct",
+   "turns": [
+    "How do I get over a breakup?"
+   ]
+  },
+  {
+   "id": "gen005",
+   "group": "generic_direct",
+   "turns": [
+    "Why do people fall in love?"
+   ]
+  },
+  {
+   "id": "gen006",
+   "group": "generic_direct",
+   "turns": [
+    "What should I do on a first date?"
+   ]
+  },
+  {
+   "id": "gen007",
+   "group": "generic_direct",
+   "turns": [
+    "How do I ask someone out?"
+   ]
+  },
+  {
+   "id": "gen008",
+   "group": "generic_direct",
+   "turns": [
+    "Is it normal to miss an ex?"
+   ]
+  },
+  {
+   "id": "gen009",
+   "group": "generic_direct",
+   "turns": [
+    "How do couples handle arguments?"
+   ]
+  },
+  {
+   "id": "gen010",
+   "group": "generic_direct",
+   "turns": [
+    "What are the signs of a healthy relationship?"
+   ]
+  },
+  {
+   "id": "gen011",
+   "group": "generic_direct",
+   "turns": [
+    "What are red flags in a partner?"
+   ]
+  },
+  {
+   "id": "gen012",
+   "group": "generic_direct",
+   "turns": [
+    "How long should you date before moving in together?"
+   ]
+  },
+  {
+   "id": "gen013",
+   "group": "generic_direct",
+   "turns": [
+    "Why do relationships end?"
+   ]
+  },
+  {
+   "id": "gen014",
+   "group": "generic_direct",
+   "turns": [
+    "How can I tell my girlfriend I love her?"
+   ]
+  },
+  {
+   "id": "gen015",
+   "group": "generic_direct",
+   "turns": [
+    "How do I know if my boyfriend is cheating?"
+   ]
+  },
+  {
+   "id": "gen016",
+   "group": "generic_direct",
+   "turns": [
+    "What is the difference between love and infatuation?"
+   ]
+  },
+  {
+   "id": "gen017",
+   "group": "generic_direct",
+   "turns": [
+    "Should I text my ex?"
+   ]
+  },
+  {
+   "id": "gen018",
+   "group": "generic_direct",
+   "turns": [
+    "How do I deal with jealousy in a relationship?"
+   ]
+  },
+  {
+   "id": "gen019",
+   "group": "generic_direct",
+   "turns": [
+    "What is a good anniversary gift for a partner?"
+   ]
+  },
+  {
+   "id": "gen020",
+   "group": "generic_direct",
+   "turns": [
+    "How do people stay in love for decades?"
+   ]
+  },
+  {
+   "id": "gen021",
+   "group": "generic_direct",
+   "turns": [
+    "What does it mean to be in a committed relationship?"
+   ]
+  },
+  {
+   "id": "gen022",
+   "group": "generic_direct",
+   "turns": [
+    "How do I break up with someone kindly?"
+   ]
+  },
+  {
+   "id": "gen023",
+   "group": "generic_direct",
+   "turns": [
+    "Why does love hurt so much?"
+   ]
+  },
+  {
+   "id": "gen024",
+   "group": "generic_direct",
+   "turns": [
+    "What makes someone a good partner?"
+   ]
+  },
+  {
+   "id": "gen025",
+   "group": "generic_direct",
+   "turns": [
+    "How do you rebuild trust after cheating?"
+   ]
+  },
+  {
+   "id": "gen026",
+   "group": "generic_direct",
+   "turns": [
+    "What is the honeymoon phase?"
+   ]
+  },
+  {
+   "id": "gen027",
+   "group": "generic_direct",
+   "turns": [
+    "Can you love two people at once?"
+   ]
+  },
+  {
+   "id": "gen028",
+   "group": "generic_direct",
+   "turns": [
+    "How do long-distance couples stay close?"
+   ]
+  },
+  {
+   "id": "gen029",
+   "group": "generic_direct",
+   "turns": [
+    "What do people mean by soulmates?"
+   ]
+  },
+  {
+   "id": "gen030",
+   "group": "generic_direct",
+   "turns": [
+    "How soon is too soon to say I love you?"
+   ]
+  },
+  {
+   "id": "gen031",
+   "group": "generic_direct",
+   "turns": [
+    "Why do I keep choosing the wrong partners?"
+   ]
+  },
+  {
+   "id": "gen032",
+   "group": "generic_direct",
+   "turns": [
+    "How do you know when a relationship is over?"
+   ]
+  },
+  {
+   "id": "gen033",
+   "group": "generic_direct",
+   "turns": [
+    "What's the best way to meet someone to date?"
+   ]
+  },
+  {
+   "id": "gen034",
+   "group": "generic_direct",
+   "turns": [
+    "How do I stop thinking about my ex?"
+   ]
+  },
+  {
+   "id": "gen035",
+   "group": "generic_direct",
+   "turns": [
+    "What is unrequited love?"
+   ]
+  },
+  {
+   "id": "gen036",
+   "group": "generic_direct",
+   "turns": [
+    "How can a couple keep the romance alive?"
+   ]
+  },
+  {
+   "id": "gen037",
+   "group": "generic_direct",
+   "turns": [
+    "Is online dating a good idea?"
+   ]
+  },
+  {
+   "id": "gen038",
+   "group": "generic_direct",
+   "turns": [
+    "What should you talk about on a date?"
+   ]
+  },
+  {
+   "id": "gen039",
+   "group": "generic_direct",
+   "turns": [
+    "How do you introduce a partner to your family?"
+   ]
+  },
+  {
+   "id": "gen040",
+   "group": "generic_direct",
+   "turns": [
+    "Why do people get back together with their exes?"
+   ]
+  },
+  {
+   "id": "gen041",
+   "group": "generic_indirect",
+   "turns": [
+    "How do you get over someone who broke your heart?"
+   ]
+  },
+  {
+   "id": "gen042",
+   "group": "generic_indirect",
+   "turns": [
+    "What does it mean when someone is the one?"
+   ]
+  },
+  {
+   "id": "gen043",
+   "group": "generic_indirect",
+   "turns": [
+    "How do I know if my crush likes me back?"
+   ]
+  },
+  {
+   "id": "gen044",
+   "group": "generic_indirect",
+   "turns": [
+    "Why do people say opposites attract?"
+   ]
+  },
+  {
+   "id": "gen045",
+   "group": "generic_indirect",
+   "turns": [
+    "What does it feel like to have butterflies?"
+   ]
+  },
+  {
+   "id": "gen046",
+   "group": "generic_indirect",
+   "turns": [
+    "How do you move on after being dumped?"
+   ]
+  },
+  {
+   "id": "gen047",
+   "group": "generic_indirect",
+   "turns": [
+    "What's the best way to flirt?"
+   ]
+  },
+  {
+   "id": "gen048",
+   "group": "generic_indirect",
+   "turns": [
+    "How do you know if someone is just leading you on?"
+   ]
+  },
+  {
+   "id": "gen049",
+   "group": "generic_indirect",
+   "turns": [
+    "What does it mean to be ghosted?"
+   ]
+  },
+  {
+   "id": "gen050",
+   "group": "generic_indirect",
+   "turns": [
+    "How do you keep the spark going?"
+   ]
+  },
+  {
+   "id": "gen051",
+   "group": "generic_indirect",
+   "turns": [
+    "Why do some people stay single for years?"
+   ]
+  },
+  {
+   "id": "gen052",
+   "group": "generic_indirect",
+   "turns": [
+    "What should I do if I've fallen for my best friend?"
+   ]
+  },
+  {
+   "id": "gen053",
+   "group": "generic_indirect",
+   "turns": [
+    "How do you tell someone you have feelings for them?"
+   ]
+  },
+  {
+   "id": "gen054",
+   "group": "generic_indirect",
+   "turns": [
+    "What is a rebound?"
+   ]
+  },
+  {
+   "id": "gen055",
+   "group": "generic_indirect",
+   "turns": [
+    "How do people know they want to marry someone?"
+   ]
+  },
+  {
+   "id": "gen056",
+   "group": "generic_indirect",
+   "turns": [
+    "What makes someone your type?"
+   ]
+  },
+  {
+   "id": "gen057",
+   "group": "generic_indirect",
+   "turns": [
+    "Why is it so hard to let go of a first crush?"
+   ]
+  },
+  {
+   "id": "gen058",
+   "group": "generic_indirect",
+   "turns": [
+    "How do you handle being friend-zoned?"
+   ]
+  },
+  {
+   "id": "gen059",
+   "group": "generic_indirect",
+   "turns": [
+    "Who should pay on a first night out together?"
+   ]
+  },
+  {
+   "id": "gen060",
+   "group": "generic_indirect",
+   "turns": [
+    "How do you know if you're settling?"
+   ]
+  },
+  {
+   "id": "gen061",
+   "group": "generic_indirect",
+   "turns": [
+    "How do I win back someone who left me?"
+   ]
+  },
+  {
+   "id": "gen062",
+   "group": "generic_indirect",
+   "turns": [
+    "What does it mean to be smitten?"
+   ]
+  },
+  {
+   "id": "gen063",
+   "group": "generic_indirect",
+   "turns": [
+    "Why do people cheat on the ones they care about?"
+   ]
+  },
+  {
+   "id": "gen064",
+   "group": "generic_indirect",
+   "turns": [
+    "How do I stop pining for someone who isn't interested?"
+   ]
+  },
+  {
+   "id": "gen065",
+   "group": "generic_indirect",
+   "turns": [
+    "What is a situationship?"
+   ]
+  },
+  {
+   "id": "gen066",
+   "group": "generic_indirect",
+   "turns": [
+    "How can I tell if my significant other is losing interest?"
+   ]
+  },
+  {
+   "id": "gen067",
+   "group": "generic_indirect",
+   "turns": [
+    "What makes a proposal memorable?"
+   ]
+  },
+  {
+   "id": "gen068",
+   "group": "generic_indirect",
+   "turns": [
+    "How do people cope with heartbreak?"
+   ]
+  },
+  {
+   "id": "gen069",
+   "group": "generic_indirect",
+   "turns": [
+    "Why do some flings turn serious?"
+   ]
+  },
+  {
+   "id": "gen070",
+   "group": "generic_indirect",
+   "turns": [
+    "What's the kindest way to end things with someone I've been seeing?"
+   ]
+  },
+  {
+   "id": "gen071",
+   "group": "generic_indirect",
+   "turns": [
+    "How do you know if you're compatible with someone?"
+   ]
+  },
+  {
+   "id": "gen072",
+   "group": "generic_indirect",
+   "turns": [
+    "Why do people go back to someone who hurt them?"
+   ]
+  },
+  {
+   "id": "gen073",
+   "group": "generic_indirect",
+   "turns": [
+    "What should I do if my spouse and I have grown apart?"
+   ]
+  },
+  {
+   "id": "gen074",
+   "group": "generic_indirect",
+   "turns": [
+    "How do you handle meeting your other half's former flame?"
+   ]
+  },
+  {
+   "id": "gen075",
+   "group": "generic_indirect",
+   "turns": [
+    "Is it wrong to have feelings for someone who's taken?"
+   ]
+  },
+  {
+   "id": "gen076",
+   "group": "generic_indirect",
+   "turns": [
+    "How do people find their person?"
+   ]
+  },
+  {
+   "id": "gen077",
+   "group": "generic_indirect",
+   "turns": [
+    "What is puppy love?"
+   ]
+  },
+  {
+   "id": "gen078",
+   "group": "generic_indirect",
+   "turns": [
+    "How do you survive the first year of marriage?"
+   ]
+  },
+  {
+   "id": "gen079",
+   "group": "generic_indirect",
+   "turns": [
+    "Why do some people fear commitment?"
+   ]
+  },
+  {
+   "id": "gen080",
+   "group": "generic_indirect",
+   "turns": [
+    "What does a healthy courtship look like?"
+   ]
+  },
+  {
+   "id": "gen081",
+   "group": "generic_implied",
+   "turns": [
+    "Why can't I stop thinking about someone who no longer texts me back?"
+   ]
+  },
+  {
+   "id": "gen082",
+   "group": "generic_implied",
+   "turns": [
+    "My heart races whenever a certain colleague walks past. What does that mean?"
+   ]
+  },
+  {
+   "id": "gen083",
+   "group": "generic_implied",
+   "turns": [
+    "How do I tell my husband I'm not happy anymore?"
+   ]
+  },
+  {
+   "id": "gen084",
+   "group": "generic_implied",
+   "turns": [
+    "She moved out last week and the flat feels empty. How do I cope?"
+   ]
+  },
+  {
+   "id": "gen085",
+   "group": "generic_implied",
+   "turns": [
+    "How can I tell if the person I keep flirting with feels the same?"
+   ]
+  },
+  {
+   "id": "gen086",
+   "group": "generic_implied",
+   "turns": [
+    "We held hands at the cinema. Does that mean something?"
+   ]
+  },
+  {
+   "id": "gen087",
+   "group": "generic_implied",
+   "turns": [
+    "How do I stop waiting for his message every night?"
+   ]
+  },
+  {
+   "id": "gen088",
+   "group": "generic_implied",
+   "turns": [
+    "Why do I feel jealous when my wife talks to other men?"
+   ]
+  },
+  {
+   "id": "gen089",
+   "group": "generic_implied",
+   "turns": [
+    "He kissed me and then acted like nothing happened. What now?"
+   ]
+  },
+  {
+   "id": "gen090",
+   "group": "generic_implied",
+   "turns": [
+    "I'm planning to propose next month. How should I do it?"
+   ]
+  },
+  {
+   "id": "gen091",
+   "group": "generic_implied",
+   "turns": [
+    "Why do I still keep the letters she wrote me?"
+   ]
+  },
+  {
+   "id": "gen092",
+   "group": "generic_implied",
+   "turns": [
+    "My fiancé wants a small wedding and I want a big one. How do we decide?"
+   ]
+  },
+  {
+   "id": "gen093",
+   "group": "generic_implied",
+   "turns": [
+    "How do I know if he wants to be more than friends?"
+   ]
+  },
+  {
+   "id": "gen094",
+   "group": "generic_implied",
+   "turns": [
+    "We've been together five years and the spark is fading. What can we do?"
+   ]
+  },
+  {
+   "id": "gen095",
+   "group": "generic_implied",
+   "turns": [
+    "Why does seeing her with someone else make me feel sick?"
+   ]
+  },
+  {
+   "id": "gen096",
+   "group": "generic_implied",
+   "turns": [
+    "I think my husband is seeing someone else. What should I do?"
+   ]
+  },
+  {
+   "id": "gen097",
+   "group": "generic_implied",
+   "turns": [
+    "How do I ask her to be mine?"
+   ]
+  },
+  {
+   "id": "gen098",
+   "group": "generic_implied",
+   "turns": [
+    "Is it normal to feel nervous before kissing someone for the first time?"
+   ]
+  },
+  {
+   "id": "gen099",
+   "group": "generic_implied",
+   "turns": [
+    "What should I write in a card for my wife on our anniversary?"
+   ]
+  },
+  {
+   "id": "gen100",
+   "group": "generic_implied",
+   "turns": [
+    "Why do I feel lonely even though I'm married?"
+   ]
+  },
+  {
+   "id": "gen101",
+   "group": "generic_implied",
+   "turns": [
+    "How do I tell someone I've had a crush on them for years?"
+   ]
+  },
+  {
+   "id": "gen102",
+   "group": "generic_implied",
+   "turns": [
+    "He said he needs space. What does that mean for us?"
+   ]
+  },
+  {
+   "id": "gen103",
+   "group": "generic_implied",
+   "turns": [
+    "How can we feel close again after having a baby?"
+   ]
+  },
+  {
+   "id": "gen104",
+   "group": "generic_implied",
+   "turns": [
+    "Why do I miss the person who hurt me?"
+   ]
+  },
+  {
+   "id": "gen105",
+   "group": "generic_implied",
+   "turns": [
+    "Should I move abroad to be with the man I met on holiday?"
+   ]
+  },
+  {
+   "id": "gen106",
+   "group": "generic_implied",
+   "turns": [
+    "My wife and I barely talk anymore. How do we reconnect?"
+   ]
+  },
+  {
+   "id": "gen107",
+   "group": "generic_implied",
+   "turns": [
+    "How do I stop comparing the person I'm seeing now with the one before?"
+   ]
+  },
+  {
+   "id": "gen108",
+   "group": "generic_implied",
+   "turns": [
+    "What do I say when she asks if I'm still into her?"
+   ]
+  },
+  {
+   "id": "gen109",
+   "group": "generic_implied",
+   "turns": [
+    "Why do I get butterflies around one particular person?"
+   ]
+  },
+  {
+   "id": "gen110",
+   "group": "generic_implied",
+   "turns": [
+    "He forgot our anniversary again. Should I be upset?"
+   ]
+  },
+  {
+   "id": "gen111",
+   "group": "generic_implied",
+   "turns": [
+    "How do I know if it's time to leave my marriage?"
+   ]
+  },
+  {
+   "id": "gen112",
+   "group": "generic_implied",
+   "turns": [
+    "I keep dreaming about the man I almost married. Why?"
+   ]
+  },
+  {
+   "id": "gen113",
+   "group": "generic_implied",
+   "turns": [
+    "How can I show my husband I still care?"
+   ]
+  },
+  {
+   "id": "gen114",
+   "group": "generic_implied",
+   "turns": [
+    "We kissed at a party and now it's awkward. What should I do?"
+   ]
+  },
+  {
+   "id": "gen115",
+   "group": "generic_implied",
+   "turns": [
+    "Why do I feel safe when he holds me?"
+   ]
+  },
+  {
+   "id": "gen116",
+   "group": "generic_implied",
+   "turns": [
+    "How do I get my wife to trust me again after I lied?"
+   ]
+  },
+  {
+   "id": "gen117",
+   "group": "generic_implied",
+   "turns": [
+    "Should I tell my best friend I have feelings for her?"
+   ]
+  },
+  {
+   "id": "gen118",
+   "group": "generic_implied",
+   "turns": [
+    "How do I stop texting the man who ended things with me?"
+   ]
+  },
+  {
+   "id": "gen119",
+   "group": "generic_implied",
+   "turns": [
+    "Why does she pull away whenever I get close?"
+   ]
+  },
+  {
+   "id": "gen120",
+   "group": "generic_implied",
+   "turns": [
+    "My husband and I want different things now. Can we work through it?"
+   ]
+  },
+  {
+   "id": "adj001",
+   "group": "adjacent_weddings",
+   "turns": [
+    "Why do brides traditionally wear white?"
+   ]
+  },
+  {
+   "id": "adj002",
+   "group": "adjacent_weddings",
+   "turns": [
+    "What is the history of the wedding cake?"
+   ]
+  },
+  {
+   "id": "adj003",
+   "group": "adjacent_weddings",
+   "turns": [
+    "How do you plan a wedding on a small budget?"
+   ]
+  },
+  {
+   "id": "adj004",
+   "group": "adjacent_weddings",
+   "turns": [
+    "What does a best man do at a wedding?"
+   ]
+  },
+  {
+   "id": "adj005",
+   "group": "adjacent_weddings",
+   "turns": [
+    "Why do people throw rice or confetti at weddings?"
+   ]
+  },
+  {
+   "id": "adj006",
+   "group": "adjacent_weddings",
+   "turns": [
+    "What are some wedding traditions in India?"
+   ]
+  },
+  {
+   "id": "adj007",
+   "group": "adjacent_weddings",
+   "turns": [
+    "How long does it usually take to plan a wedding?"
+   ]
+  },
+  {
+   "id": "adj008",
+   "group": "adjacent_weddings",
+   "turns": [
+    "What should a wedding speech include?"
+   ]
+  },
+  {
+   "id": "adj009",
+   "group": "adjacent_weddings",
+   "turns": [
+    "Why is the wedding ring worn on the fourth finger?"
+   ]
+  },
+  {
+   "id": "adj010",
+   "group": "adjacent_weddings",
+   "turns": [
+    "What is a dowry?"
+   ]
+  },
+  {
+   "id": "adj011",
+   "group": "adjacent_weddings",
+   "turns": [
+    "How do you choose a wedding venue?"
+   ]
+  },
+  {
+   "id": "adj012",
+   "group": "adjacent_weddings",
+   "turns": [
+    "What does something old, something new mean?"
+   ]
+  },
+  {
+   "id": "adj013",
+   "group": "adjacent_weddings",
+   "turns": [
+    "Why do some weddings have a first dance?"
+   ]
+  },
+  {
+   "id": "adj014",
+   "group": "adjacent_weddings",
+   "turns": [
+    "What does a wedding officiant do?"
+   ]
+  },
+  {
+   "id": "adj015",
+   "group": "adjacent_weddings",
+   "turns": [
+    "How much does an average wedding cost?"
+   ]
+  },
+  {
+   "id": "adj016",
+   "group": "adjacent_love_songs",
+   "turns": [
+    "Why are so many pop songs about heartbreak?"
+   ]
+  },
+  {
+   "id": "adj017",
+   "group": "adjacent_love_songs",
+   "turns": [
+    "Who wrote Can't Help Falling in Love?"
+   ]
+  },
+  {
+   "id": "adj018",
+   "group": "adjacent_love_songs",
+   "turns": [
+    "What makes a ballad different from other songs?"
+   ]
+  },
+  {
+   "id": "adj019",
+   "group": "adjacent_love_songs",
+   "turns": [
+    "Why do power ballads use key changes?"
+   ]
+  },
+  {
+   "id": "adj020",
+   "group": "adjacent_love_songs",
+   "turns": [
+    "What is a torch song?"
+   ]
+  },
+  {
+   "id": "adj021",
+   "group": "adjacent_love_songs",
+   "turns": [
+    "Which Beatles songs are about love?"
+   ]
+  },
+  {
+   "id": "adj022",
+   "group": "adjacent_love_songs",
+   "turns": [
+    "How do songwriters write a chorus that sticks?"
+   ]
+  },
+  {
+   "id": "adj023",
+   "group": "adjacent_love_songs",
+   "turns": [
+    "What is the most covered song of all time?"
+   ]
+  },
+  {
+   "id": "adj024",
+   "group": "adjacent_love_songs",
+   "turns": [
+    "Why do slow songs often use minor keys?"
+   ]
+  },
+  {
+   "id": "adj026",
+   "group": "adjacent_love_songs",
+   "turns": [
+    "Who sang I Will Always Love You first?"
+   ]
+  },
+  {
+   "id": "adj027",
+   "group": "adjacent_love_songs",
+   "turns": [
+    "What are some famous duets?"
+   ]
+  },
+  {
+   "id": "adj028",
+   "group": "adjacent_love_songs",
+   "turns": [
+    "Why is Unchained Melody popular at weddings?"
+   ]
+  },
+  {
+   "id": "adj029",
+   "group": "adjacent_love_songs",
+   "turns": [
+    "What instruments are common in soul music?"
+   ]
+  },
+  {
+   "id": "adj030",
+   "group": "adjacent_love_songs",
+   "turns": [
+    "How did Motown change popular music?"
+   ]
+  },
+  {
+   "id": "adj031",
+   "group": "adjacent_stories",
+   "turns": [
+    "What happens at the end of Romeo and Juliet?"
+   ]
+  },
+  {
+   "id": "adj032",
+   "group": "adjacent_stories",
+   "turns": [
+    "Why do Romeo and Juliet's families hate each other?"
+   ]
+  },
+  {
+   "id": "adj033",
+   "group": "adjacent_stories",
+   "turns": [
+    "What is the balcony scene in Romeo and Juliet about?"
+   ]
+  },
+  {
+   "id": "adj034",
+   "group": "adjacent_stories",
+   "turns": [
+    "What is the plot of Pride and Prejudice?"
+   ]
+  },
+  {
+   "id": "adj035",
+   "group": "adjacent_stories",
+   "turns": [
+    "Why is Wuthering Heights called a gothic novel?"
+   ]
+  },
+  {
+   "id": "adj036",
+   "group": "adjacent_stories",
+   "turns": [
+    "What themes does The Great Gatsby explore?"
+   ]
+  },
+  {
+   "id": "adj037",
+   "group": "adjacent_stories",
+   "turns": [
+    "Who is Mercutio?"
+   ]
+  },
+  {
+   "id": "adj038",
+   "group": "adjacent_stories",
+   "turns": [
+    "What is a sonnet?"
+   ]
+  },
+  {
+   "id": "adj039",
+   "group": "adjacent_stories",
+   "turns": [
+    "Why is Jane Eyre still read today?"
+   ]
+  },
+  {
+   "id": "adj040",
+   "group": "adjacent_stories",
+   "turns": [
+    "What is the story of Tristan and Isolde?"
+   ]
+  },
+  {
+   "id": "adj041",
+   "group": "adjacent_stories",
+   "turns": [
+    "What makes Shakespeare's tragedies tragic?"
+   ]
+  },
+  {
+   "id": "adj042",
+   "group": "adjacent_stories",
+   "turns": [
+    "What is the story of Orpheus and Eurydice?"
+   ]
+  },
+  {
+   "id": "adj043",
+   "group": "adjacent_stories",
+   "turns": [
+    "Why is Casablanca a classic film?"
+   ]
+  },
+  {
+   "id": "adj044",
+   "group": "adjacent_stories",
+   "turns": [
+    "What is the plot of Titanic?"
+   ]
+  },
+  {
+   "id": "adj045",
+   "group": "adjacent_stories",
+   "turns": [
+    "Who wrote Anna Karenina and what is it about?"
+   ]
+  },
+  {
+   "id": "adj046",
+   "group": "adjacent_family",
+   "turns": [
+    "How do I get along better with my siblings?"
+   ]
+  },
+  {
+   "id": "adj047",
+   "group": "adjacent_family",
+   "turns": [
+    "Why do grandparents and grandchildren often get along so well?"
+   ]
+  },
+  {
+   "id": "adj048",
+   "group": "adjacent_family",
+   "turns": [
+    "How can parents help a teenager who feels lonely?"
+   ]
+  },
+  {
+   "id": "adj049",
+   "group": "adjacent_family",
+   "turns": [
+    "What makes a family reunion fun?"
+   ]
+  },
+  {
+   "id": "adj050",
+   "group": "adjacent_family",
+   "turns": [
+    "How do I talk to my parents about money?"
+   ]
+  },
+  {
+   "id": "adj051",
+   "group": "adjacent_family",
+   "turns": [
+    "Why do siblings fight?"
+   ]
+  },
+  {
+   "id": "adj052",
+   "group": "adjacent_family",
+   "turns": [
+    "How can a family share chores fairly?"
+   ]
+  },
+  {
+   "id": "adj053",
+   "group": "adjacent_family",
+   "turns": [
+    "What is a blended family?"
+   ]
+  },
+  {
+   "id": "adj054",
+   "group": "adjacent_family",
+   "turns": [
+    "How do I support my mum after my dad died?"
+   ]
+  },
+  {
+   "id": "adj055",
+   "group": "adjacent_family",
+   "turns": [
+    "What are good traditions for a family holiday?"
+   ]
+  },
+  {
+   "id": "adj056",
+   "group": "adjacent_family",
+   "turns": [
+    "How do you raise a confident child?"
+   ]
+  },
+  {
+   "id": "adj057",
+   "group": "adjacent_family",
+   "turns": [
+    "Why do some families drift apart?"
+   ]
+  },
+  {
+   "id": "adj058",
+   "group": "adjacent_family",
+   "turns": [
+    "How can I reconnect with a cousin I haven't seen in years?"
+   ]
+  },
+  {
+   "id": "adj059",
+   "group": "adjacent_family",
+   "turns": [
+    "What should I do if my parents keep arguing?"
+   ]
+  },
+  {
+   "id": "adj060",
+   "group": "adjacent_family",
+   "turns": [
+    "How do I help my child make friends at a new school?"
+   ]
+  },
+  {
+   "id": "emo001",
+   "group": "emotional",
+   "turns": [
+    "How do I make new friends as an adult?"
+   ]
+  },
+  {
+   "id": "emo002",
+   "group": "emotional",
+   "turns": [
+    "My best friend hasn't replied in weeks. Should I worry?"
+   ]
+  },
+  {
+   "id": "emo003",
+   "group": "emotional",
+   "turns": [
+    "How do I apologise to a friend I let down?"
+   ]
+  },
+  {
+   "id": "emo004",
+   "group": "emotional",
+   "turns": [
+    "Why do some friendships fade after school?"
+   ]
+  },
+  {
+   "id": "emo005",
+   "group": "emotional",
+   "turns": [
+    "How can I tell a friend they hurt my feelings?"
+   ]
+  },
+  {
+   "id": "emo006",
+   "group": "emotional",
+   "turns": [
+    "What makes a good friend?"
+   ]
+  },
+  {
+   "id": "emo007",
+   "group": "emotional",
+   "turns": [
+    "How do I say no to a friend without upsetting them?"
+   ]
+  },
+  {
+   "id": "emo008",
+   "group": "emotional",
+   "turns": [
+    "Why do I feel left out when my friends make plans?"
+   ]
+  },
+  {
+   "id": "emo009",
+   "group": "emotional",
+   "turns": [
+    "How do you reconnect with an old school friend?"
+   ]
+  },
+  {
+   "id": "emo010",
+   "group": "emotional",
+   "turns": [
+    "What should I do if my friends keep cancelling on me?"
+   ]
+  },
+  {
+   "id": "emo011",
+   "group": "emotional",
+   "turns": [
+    "How do I talk to my dad about his drinking?"
+   ]
+  },
+  {
+   "id": "emo012",
+   "group": "emotional",
+   "turns": [
+    "Why do I argue with my mum every time I visit?"
+   ]
+  },
+  {
+   "id": "emo013",
+   "group": "emotional",
+   "turns": [
+    "How can I help my grandmother feel less lonely?"
+   ]
+  },
+  {
+   "id": "emo014",
+   "group": "emotional",
+   "turns": [
+    "What do I do when my brother keeps borrowing money?"
+   ]
+  },
+  {
+   "id": "emo015",
+   "group": "emotional",
+   "turns": [
+    "How do I tell my parents I want to change careers?"
+   ]
+  },
+  {
+   "id": "emo016",
+   "group": "emotional",
+   "turns": [
+    "Why do family holidays feel so stressful?"
+   ]
+  },
+  {
+   "id": "emo017",
+   "group": "emotional",
+   "turns": [
+    "How can I be a better aunt to my niece?"
+   ]
+  },
+  {
+   "id": "emo018",
+   "group": "emotional",
+   "turns": [
+    "My sister and I stopped speaking. How do we start again?"
+   ]
+  },
+  {
+   "id": "emo019",
+   "group": "emotional",
+   "turns": [
+    "How do I care for an ageing parent without burning out?"
+   ]
+  },
+  {
+   "id": "emo020",
+   "group": "emotional",
+   "turns": [
+    "What should I say to my son after he failed his exams?"
+   ]
+  },
+  {
+   "id": "emo021",
+   "group": "emotional",
+   "turns": [
+    "How do you cope when a pet dies?"
+   ]
+  },
+  {
+   "id": "emo022",
+   "group": "emotional",
+   "turns": [
+    "Why does grief come back on anniversaries?"
+   ]
+  },
+  {
+   "id": "emo023",
+   "group": "emotional",
+   "turns": [
+    "What can I say to a friend whose father just died?"
+   ]
+  },
+  {
+   "id": "emo024",
+   "group": "emotional",
+   "turns": [
+    "How do I sort through my late grandfather's belongings?"
+   ]
+  },
+  {
+   "id": "emo025",
+   "group": "emotional",
+   "turns": [
+    "Is it normal to feel numb after a funeral?"
+   ]
+  },
+  {
+   "id": "emo026",
+   "group": "emotional",
+   "turns": [
+    "How do children understand death?"
+   ]
+  },
+  {
+   "id": "emo027",
+   "group": "emotional",
+   "turns": [
+    "Why do I still cry when I hear my late mother's favourite song?"
+   ]
+  },
+  {
+   "id": "emo028",
+   "group": "emotional",
+   "turns": [
+    "How long does grief usually last?"
+   ]
+  },
+  {
+   "id": "emo029",
+   "group": "emotional",
+   "turns": [
+    "Why do I feel lonely in a crowded room?"
+   ]
+  },
+  {
+   "id": "emo030",
+   "group": "emotional",
+   "turns": [
+    "How do I stop feeling nervous before job interviews?"
+   ]
+  },
+  {
+   "id": "emo031",
+   "group": "emotional",
+   "turns": [
+    "Why do I get anxious before meeting new colleagues?"
+   ]
+  },
+  {
+   "id": "emo032",
+   "group": "emotional",
+   "turns": [
+    "How can I feel less awkward at parties?"
+   ]
+  },
+  {
+   "id": "emo033",
+   "group": "emotional",
+   "turns": [
+    "What helps with homesickness at university?"
+   ]
+  },
+  {
+   "id": "emo034",
+   "group": "emotional",
+   "turns": [
+    "How do I calm down before giving a speech?"
+   ]
+  },
+  {
+   "id": "emo035",
+   "group": "emotional",
+   "turns": [
+    "Why do I replay awkward conversations in my head?"
+   ]
+  },
+  {
+   "id": "emo036",
+   "group": "emotional",
+   "turns": [
+    "How do I meet people after moving to a new city?"
+   ]
+  },
+  {
+   "id": "emo037",
+   "group": "emotional",
+   "turns": [
+    "What can I do on a Sunday when I feel lonely?"
+   ]
+  },
+  {
+   "id": "emo038",
+   "group": "emotional",
+   "turns": [
+    "Why is it hard to ask for help?"
+   ]
+  },
+  {
+   "id": "emo039",
+   "group": "emotional",
+   "turns": [
+    "Why does the smell of baking remind me of my childhood?"
+   ]
+  },
+  {
+   "id": "emo040",
+   "group": "emotional",
+   "turns": [
+    "Why do I keep my old school reports?"
+   ]
+  },
+  {
+   "id": "emo041",
+   "group": "emotional",
+   "turns": [
+    "Why does an old toy make me feel so nostalgic?"
+   ]
+  },
+  {
+   "id": "emo042",
+   "group": "emotional",
+   "turns": [
+    "Why do songs from my teenage years hit so hard?"
+   ]
+  },
+  {
+   "id": "emo043",
+   "group": "emotional",
+   "turns": [
+    "How can a photograph bring back a whole summer?"
+   ]
+  },
+  {
+   "id": "emo044",
+   "group": "emotional",
+   "turns": [
+    "Why do I miss the house I grew up in?"
+   ]
+  },
+  {
+   "id": "emo045",
+   "group": "emotional",
+   "turns": [
+    "What should I do with my grandmother's old letters?"
+   ]
+  },
+  {
+   "id": "emo046",
+   "group": "emotional",
+   "turns": [
+    "Why does a certain perfume remind me of my aunt?"
+   ]
+  },
+  {
+   "id": "emo047",
+   "group": "emotional",
+   "turns": [
+    "Why do people keep ticket stubs from concerts?"
+   ]
+  },
+  {
+   "id": "emo048",
+   "group": "emotional",
+   "turns": [
+    "How do I make a scrapbook of a family trip?"
+   ]
+  },
+  {
+   "id": "emo049",
+   "group": "emotional",
+   "turns": [
+    "Why do certain places feel full of memories?"
+   ]
+  },
+  {
+   "id": "emo050",
+   "group": "emotional",
+   "turns": [
+    "Why does hearing my first band's song make me smile?"
+   ]
+  },
+  {
+   "id": "emo051",
+   "group": "emotional",
+   "turns": [
+    "What makes a birthday dinner feel special?"
+   ]
+  },
+  {
+   "id": "emo052",
+   "group": "emotional",
+   "turns": [
+    "How do I plan a surprise party for my friend?"
+   ]
+  },
+  {
+   "id": "emo053",
+   "group": "emotional",
+   "turns": [
+    "What is a thoughtful gift for a colleague who is leaving?"
+   ]
+  },
+  {
+   "id": "emo054",
+   "group": "emotional",
+   "turns": [
+    "How do I write a thank-you note to a teacher?"
+   ]
+  },
+  {
+   "id": "emo055",
+   "group": "emotional",
+   "turns": [
+    "Why is it hard to write a condolence message?"
+   ]
+  },
+  {
+   "id": "emo056",
+   "group": "emotional",
+   "turns": [
+    "How do I word a message to a friend I haven't spoken to in years?"
+   ]
+  },
+  {
+   "id": "emo057",
+   "group": "emotional",
+   "turns": [
+    "What should I cook for friends coming over for the first time?"
+   ]
+  },
+  {
+   "id": "emo058",
+   "group": "emotional",
+   "turns": [
+    "How do I host a dinner on a budget?"
+   ]
+  },
+  {
+   "id": "emo059",
+   "group": "emotional",
+   "turns": [
+    "Why does sharing a meal bring people closer?"
+   ]
+  },
+  {
+   "id": "emo060",
+   "group": "emotional",
+   "turns": [
+    "How do I write a good speech for my sister's graduation?"
+   ]
+  },
+  {
+   "id": "emo061",
+   "group": "emotional",
+   "turns": [
+    "Why is moving house so tiring?"
+   ]
+  },
+  {
+   "id": "emo062",
+   "group": "emotional",
+   "turns": [
+    "How do I settle into a new flat quickly?"
+   ]
+  },
+  {
+   "id": "emo063",
+   "group": "emotional",
+   "turns": [
+    "Why does leaving a job feel sad?"
+   ]
+  },
+  {
+   "id": "emo064",
+   "group": "emotional",
+   "turns": [
+    "How do I say goodbye to colleagues when I leave?"
+   ]
+  },
+  {
+   "id": "emo065",
+   "group": "emotional",
+   "turns": [
+    "Why does it feel strange to sell a family home?"
+   ]
+  },
+  {
+   "id": "emo066",
+   "group": "emotional",
+   "turns": [
+    "How can I make a new house feel like home?"
+   ]
+  },
+  {
+   "id": "emo067",
+   "group": "emotional",
+   "turns": [
+    "Why do I feel restless after a big change?"
+   ]
+  },
+  {
+   "id": "emo068",
+   "group": "emotional",
+   "turns": [
+    "How do I share a flat with someone I don't know?"
+   ]
+  },
+  {
+   "id": "emo069",
+   "group": "emotional",
+   "turns": [
+    "What should I do when my flatmate never cleans?"
+   ]
+  },
+  {
+   "id": "emo070",
+   "group": "emotional",
+   "turns": [
+    "How do I tell my landlord about a problem without conflict?"
+   ]
+  },
+  {
+   "id": "emo071",
+   "group": "emotional",
+   "turns": [
+    "How much should I share about myself with new colleagues?"
+   ]
+  },
+  {
+   "id": "emo072",
+   "group": "emotional",
+   "turns": [
+    "How do I keep a secret a friend told me?"
+   ]
+  },
+  {
+   "id": "emo073",
+   "group": "emotional",
+   "turns": [
+    "What do I do if a friend broke my trust?"
+   ]
+  },
+  {
+   "id": "emo074",
+   "group": "emotional",
+   "turns": [
+    "How can I bring up a money problem with my flatmate?"
+   ]
+  },
+  {
+   "id": "emo075",
+   "group": "emotional",
+   "turns": [
+    "How do I start a hard conversation with my manager?"
+   ]
+  },
+  {
+   "id": "emo076",
+   "group": "emotional",
+   "turns": [
+    "Why do people overshare online?"
+   ]
+  },
+  {
+   "id": "emo077",
+   "group": "emotional",
+   "turns": [
+    "How do I set boundaries with a pushy relative?"
+   ]
+  },
+  {
+   "id": "emo078",
+   "group": "emotional",
+   "turns": [
+    "How do I tell a friend I need some space?"
+   ]
+  },
+  {
+   "id": "emo079",
+   "group": "emotional",
+   "turns": [
+    "What should I do if my friend tells everyone my business?"
+   ]
+  },
+  {
+   "id": "emo080",
+   "group": "emotional",
+   "turns": [
+    "How do I give honest feedback to a friend?"
+   ]
+  },
+  {
+   "id": "emo081",
+   "group": "emotional",
+   "turns": [
+    "How do I stay close to friends who moved abroad?"
+   ]
+  },
+  {
+   "id": "emo082",
+   "group": "emotional",
+   "turns": [
+    "How can grandparents stay in touch with grandchildren far away?"
+   ]
+  },
+  {
+   "id": "emo083",
+   "group": "emotional",
+   "turns": [
+    "Why do phone calls with my family feel awkward?"
+   ]
+  },
+  {
+   "id": "emo084",
+   "group": "emotional",
+   "turns": [
+    "How do I keep in touch with my old team after leaving?"
+   ]
+  },
+  {
+   "id": "emo085",
+   "group": "emotional",
+   "turns": [
+    "What are good ways to send something meaningful by post?"
+   ]
+  },
+  {
+   "id": "emo086",
+   "group": "emotional",
+   "turns": [
+    "How do I support a friend going through a hard time from far away?"
+   ]
+  },
+  {
+   "id": "emo087",
+   "group": "emotional",
+   "turns": [
+    "Why do I feel guilty taking a day off?"
+   ]
+  },
+  {
+   "id": "emo088",
+   "group": "emotional",
+   "turns": [
+    "How do I deal with a colleague who ignores me?"
+   ]
+  },
+  {
+   "id": "emo089",
+   "group": "emotional",
+   "turns": [
+    "Why do I feel sad on Sunday evenings?"
+   ]
+  },
+  {
+   "id": "emo090",
+   "group": "emotional",
+   "turns": [
+    "How do I stop comparing myself with my friends?"
+   ]
+  },
+  {
+   "id": "emo091",
+   "group": "emotional",
+   "turns": [
+    "Why do I feel jealous when my friend gets promoted?"
+   ]
+  },
+  {
+   "id": "emo092",
+   "group": "emotional",
+   "turns": [
+    "How can I be kinder to myself?"
+   ]
+  },
+  {
+   "id": "emo093",
+   "group": "emotional",
+   "turns": [
+    "Why do I feel embarrassed after crying in public?"
+   ]
+  },
+  {
+   "id": "emo094",
+   "group": "emotional",
+   "turns": [
+    "How do I forgive someone who never apologised?"
+   ]
+  },
+  {
+   "id": "gtwo001",
+   "group": "generic2_idiom",
+   "turns": [
+    "What does it mean to carry a torch for someone?"
+   ]
+  },
+  {
+   "id": "gtwo002",
+   "group": "generic2_idiom",
+   "turns": [
+    "When people say a marriage is on the rocks, what do they mean?"
+   ]
+  },
+  {
+   "id": "gtwo003",
+   "group": "generic2_idiom",
+   "turns": [
+    "What does it mean to pop the question?"
+   ]
+  },
+  {
+   "id": "gtwo004",
+   "group": "generic2_idiom",
+   "turns": [
+    "What does head over heels mean?"
+   ]
+  },
+  {
+   "id": "gtwo005",
+   "group": "generic2_idiom",
+   "turns": [
+    "How do you know if you've been swept off your feet?"
+   ]
+  },
+  {
+   "id": "gtwo006",
+   "group": "generic2_idiom",
+   "turns": [
+    "What does playing the field mean?"
+   ]
+  },
+  {
+   "id": "gtwo007",
+   "group": "generic2_idiom",
+   "turns": [
+    "Why do people say they want to settle down?"
+   ]
+  },
+  {
+   "id": "gtwo008",
+   "group": "generic2_idiom",
+   "turns": [
+    "What does it mean to have a soft spot for someone?"
+   ]
+  },
+  {
+   "id": "gtwo009",
+   "group": "generic2_idiom",
+   "turns": [
+    "What is a whirlwind romance?"
+   ]
+  },
+  {
+   "id": "gtwo010",
+   "group": "generic2_idiom",
+   "turns": [
+    "What does it mean when someone is a heartbreaker?"
+   ]
+  },
+  {
+   "id": "gtwo011",
+   "group": "generic2_idiom",
+   "turns": [
+    "What does it mean to tie the knot?"
+   ]
+  },
+  {
+   "id": "gtwo012",
+   "group": "generic2_idiom",
+   "turns": [
+    "What does it mean to be smitten with someone new?"
+   ]
+  },
+  {
+   "id": "gtwo013",
+   "group": "generic2_practical",
+   "turns": [
+    "Where should I take someone on a second date?"
+   ]
+  },
+  {
+   "id": "gtwo014",
+   "group": "generic2_practical",
+   "turns": [
+    "How do I plan a surprise for my girlfriend's birthday?"
+   ]
+  },
+  {
+   "id": "gtwo015",
+   "group": "generic2_practical",
+   "turns": [
+    "What should I wear on a first date?"
+   ]
+  },
+  {
+   "id": "gtwo016",
+   "group": "generic2_practical",
+   "turns": [
+    "How do you split costs when you move in together?"
+   ]
+  },
+  {
+   "id": "gtwo017",
+   "group": "generic2_practical",
+   "turns": [
+    "How often should a new couple see each other?"
+   ]
+  },
+  {
+   "id": "gtwo018",
+   "group": "generic2_practical",
+   "turns": [
+    "How do I tell someone I only want something casual?"
+   ]
+  },
+  {
+   "id": "gtwo019",
+   "group": "generic2_practical",
+   "turns": [
+    "What are good conversation topics for a nervous first meeting with a match?"
+   ]
+  },
+  {
+   "id": "gtwo020",
+   "group": "generic2_practical",
+   "turns": [
+    "How do I end a date politely if there's no spark?"
+   ]
+  },
+  {
+   "id": "gtwo021",
+   "group": "generic2_practical",
+   "turns": [
+    "How do you meet someone's parents for the first time as their partner?"
+   ]
+  },
+  {
+   "id": "gtwo022",
+   "group": "generic2_practical",
+   "turns": [
+    "Is it okay to bring up exclusivity after a month?"
+   ]
+  },
+  {
+   "id": "gtwo023",
+   "group": "generic2_practical",
+   "turns": [
+    "How should I reply when my crush texts me first?"
+   ]
+  },
+  {
+   "id": "gtwo024",
+   "group": "generic2_practical",
+   "turns": [
+    "How do we plan a weekend away for our anniversary?"
+   ]
+  },
+  {
+   "id": "gtwo025",
+   "group": "generic2_implied",
+   "turns": [
+    "I still sleep on my side of the bed even though she's gone. Why?"
+   ]
+  },
+  {
+   "id": "gtwo026",
+   "group": "generic2_implied",
+   "turns": [
+    "I wear his old jumper when I miss him. Is that strange?"
+   ]
+  },
+  {
+   "id": "gtwo027",
+   "group": "generic2_implied",
+   "turns": [
+    "We used to have a song. Now I skip it every time. Why does it hurt?"
+   ]
+  },
+  {
+   "id": "gtwo028",
+   "group": "generic2_implied",
+   "turns": [
+    "She used to leave notes in my lunchbox. I found one today."
+   ]
+  },
+  {
+   "id": "gtwo029",
+   "group": "generic2_implied",
+   "turns": [
+    "Our wedding album is still on the shelf. Should I put it away?"
+   ]
+  },
+  {
+   "id": "gtwo030",
+   "group": "generic2_implied",
+   "turns": [
+    "He still has a key to my flat. How do I ask for it back?"
+   ]
+  },
+  {
+   "id": "gtwo031",
+   "group": "generic2_implied",
+   "turns": [
+    "I keep checking if she's seen my messages. How do I stop?"
+   ]
+  },
+  {
+   "id": "gtwo032",
+   "group": "generic2_implied",
+   "turns": [
+    "Every Friday we used to cook together. Fridays are hard now."
+   ]
+  },
+  {
+   "id": "gtwo033",
+   "group": "generic2_implied",
+   "turns": [
+    "I booked a table for two out of habit. What does that say about me?"
+   ]
+  },
+  {
+   "id": "gtwo034",
+   "group": "generic2_implied",
+   "turns": [
+    "My husband stopped holding my hand. Should I say something?"
+   ]
+  },
+  {
+   "id": "gtwo035",
+   "group": "generic2_implied",
+   "turns": [
+    "We met at this café. Should I stop going there?"
+   ]
+  },
+  {
+   "id": "gtwo036",
+   "group": "generic2_implied",
+   "turns": [
+    "How do I tell him I want more than a few nights a week together?"
+   ]
+  },
+  {
+   "id": "gtwo037",
+   "group": "generic2_implied",
+   "turns": [
+    "She said she wasn't ready for anything serious. What now?"
+   ]
+  },
+  {
+   "id": "gtwo038",
+   "group": "generic2_implied",
+   "turns": [
+    "I still have her number saved under a nickname. Should I delete it?"
+   ]
+  },
+  {
+   "id": "gtwo039",
+   "group": "generic2_implied",
+   "turns": [
+    "My wife and I sleep in different rooms now. How do we fix this?"
+   ]
+  },
+  {
+   "id": "gtwo040",
+   "group": "generic2_implied",
+   "turns": [
+    "He calls me his person. What does he mean?"
+   ]
+  },
+  {
+   "id": "a4_everyday_001",
+   "group": "everyday",
+   "turns": [
+    "Why can a short chat with an old school friend brighten a whole afternoon?"
+   ]
+  },
+  {
+   "id": "a4_everyday_002",
+   "group": "everyday",
+   "turns": [
+    "How do I keep in touch with a friend whose working hours differ from mine?"
+   ]
+  },
+  {
+   "id": "a4_everyday_003",
+   "group": "everyday",
+   "turns": [
+    "What makes it easier to join a group of friends who already know each other?"
+   ]
+  },
+  {
+   "id": "a4_everyday_005",
+   "group": "everyday",
+   "turns": [
+    "Should I tell a friend that I felt left out of their picnic?"
+   ]
+  },
+  {
+   "id": "a4_everyday_008",
+   "group": "everyday",
+   "turns": [
+    "How can two friends disagree about a hobby without spoiling their afternoon?"
+   ]
+  },
+  {
+   "id": "a4_everyday_009",
+   "group": "everyday",
+   "turns": [
+    "What helps siblings share a family task without arguing over every detail?"
+   ]
+  },
+  {
+   "id": "a4_everyday_010",
+   "group": "everyday",
+   "turns": [
+    "Why do familiar family jokes still make people laugh years later?"
+   ]
+  },
+  {
+   "id": "a4_everyday_012",
+   "group": "everyday",
+   "turns": [
+    "How should I welcome a cousin I haven't seen since childhood?"
+   ]
+  },
+  {
+   "id": "a4_everyday_014",
+   "group": "everyday",
+   "turns": [
+    "What could make a regular Sunday call with my dad feel less rushed?"
+   ]
+  },
+  {
+   "id": "a4_everyday_015",
+   "group": "everyday",
+   "turns": [
+    "Should I explain to my sister why I need a quiet weekend?"
+   ]
+  },
+  {
+   "id": "a4_everyday_017",
+   "group": "everyday",
+   "turns": [
+    "How do people handle the first family gathering after a grandparent dies?"
+   ]
+  },
+  {
+   "id": "a4_everyday_018",
+   "group": "everyday",
+   "turns": [
+    "What could I write in a note to someone whose grandmother died recently?"
+   ]
+  },
+  {
+   "id": "a4_everyday_019",
+   "group": "everyday",
+   "turns": [
+    "Why do small household objects bring back memories of a grandfather?"
+   ]
+  },
+  {
+   "id": "a4_everyday_020",
+   "group": "everyday",
+   "turns": [
+    "Can feeling cheerful for an afternoon coexist with grief for a grandparent?"
+   ]
+  },
+  {
+   "id": "a4_everyday_022",
+   "group": "everyday",
+   "turns": [
+    "Should I ask my mum to tell me more stories about her late father?"
+   ]
+  },
+  {
+   "id": "a4_everyday_023",
+   "group": "everyday",
+   "turns": [
+    "What helps when sorting through a grandmother's recipe cards feels upsetting?"
+   ]
+  },
+  {
+   "id": "a4_everyday_024",
+   "group": "everyday",
+   "turns": [
+    "Why might hearing a grandparent's old nickname make someone cry?"
+   ]
+  },
+  {
+   "id": "a4_everyday_025",
+   "group": "everyday",
+   "turns": [
+    "What can I say to a neighbour whose elderly cat died?"
+   ]
+  },
+  {
+   "id": "a4_everyday_028",
+   "group": "everyday",
+   "turns": [
+    "Can someone miss a pet even years after its death?"
+   ]
+  },
+  {
+   "id": "a4_everyday_029",
+   "group": "everyday",
+   "turns": [
+    "My dog died last month and I keep reaching for his lead. Is that understandable?"
+   ]
+  },
+  {
+   "id": "a4_everyday_031",
+   "group": "everyday",
+   "turns": [
+    "What might help a family remember a much missed rabbit together?"
+   ]
+  },
+  {
+   "id": "a4_everyday_032",
+   "group": "everyday",
+   "turns": [
+    "How do I tell a friend that I still feel sad about my dog?"
+   ]
+  },
+  {
+   "id": "a4_everyday_033",
+   "group": "everyday",
+   "turns": [
+    "Why can a tiny handmade present matter more than an expensive one?"
+   ]
+  },
+  {
+   "id": "a4_everyday_034",
+   "group": "everyday",
+   "turns": [
+    "What would be a useful thank you gift for a neighbour who watered my plants?"
+   ]
+  },
+  {
+   "id": "a4_everyday_035",
+   "group": "everyday",
+   "turns": [
+    "How do I choose a birthday present for a sibling who dislikes clutter?"
+   ]
+  },
+  {
+   "id": "a4_everyday_036",
+   "group": "everyday",
+   "turns": [
+    "Can a short handwritten note make an ordinary gift feel personal?"
+   ]
+  },
+  {
+   "id": "a4_everyday_040",
+   "group": "everyday",
+   "turns": [
+    "What is a gentle way to thank someone without making them feel indebted?"
+   ]
+  },
+  {
+   "id": "a4_everyday_041",
+   "group": "everyday",
+   "turns": [
+    "How can I make guests comfortable when my dining room is very small?"
+   ]
+  },
+  {
+   "id": "a4_everyday_042",
+   "group": "everyday",
+   "turns": [
+    "What helps a shared meal feel welcoming even if the food is simple?"
+   ]
+  },
+  {
+   "id": "a4_everyday_044",
+   "group": "everyday",
+   "turns": [
+    "Can I host friends without feeling that everything must be spotless?"
+   ]
+  },
+  {
+   "id": "a4_everyday_046",
+   "group": "everyday",
+   "turns": [
+    "What can I do if conversation goes quiet around the dinner table?"
+   ]
+  },
+  {
+   "id": "a4_everyday_049",
+   "group": "everyday",
+   "turns": [
+    "Why can a photograph of an ordinary street bring back strong memories?"
+   ]
+  },
+  {
+   "id": "a4_everyday_050",
+   "group": "everyday",
+   "turns": [
+    "How do I choose a few pictures for a family photo album?"
+   ]
+  },
+  {
+   "id": "a4_everyday_051",
+   "group": "everyday",
+   "turns": [
+    "What could I write on the back of a childhood photograph for my niece?"
+   ]
+  },
+  {
+   "id": "a4_everyday_053",
+   "group": "everyday",
+   "turns": [
+    "Should I ask before sharing an embarrassing childhood photo of my brother?"
+   ]
+  },
+  {
+   "id": "a4_everyday_241",
+   "group": "everyday",
+   "turns": [
+    "How can I welcome a classmate who has been absent for several weeks?"
+   ]
+  },
+  {
+   "id": "a4_everyday_057",
+   "group": "everyday",
+   "turns": [
+    "Why do people hold on to a ticket from a memorable concert?"
+   ]
+  },
+  {
+   "id": "a4_everyday_058",
+   "group": "everyday",
+   "turns": [
+    "What is a sensible way to choose which school keepsakes to save?"
+   ]
+  },
+  {
+   "id": "a4_everyday_242",
+   "group": "everyday",
+   "turns": [
+    "Why might a handwritten shopping list in my grandad's writing feel precious?"
+   ]
+  },
+  {
+   "id": "a4_everyday_063",
+   "group": "everyday",
+   "turns": [
+    "What could I do with postcards from an old family holiday?"
+   ]
+  },
+  {
+   "id": "a4_everyday_065",
+   "group": "everyday",
+   "turns": [
+    "How can a tune bring back the atmosphere of a childhood kitchen?"
+   ]
+  },
+  {
+   "id": "a4_everyday_243",
+   "group": "everyday",
+   "turns": [
+    "What should I say to a friend who is anxious about giving a presentation?"
+   ]
+  },
+  {
+   "id": "a4_everyday_069",
+   "group": "everyday",
+   "turns": [
+    "Should I ask my dad which records he listened to at school?"
+   ]
+  },
+  {
+   "id": "a4_everyday_070",
+   "group": "everyday",
+   "turns": [
+    "I'd like to build a playlist for a family road trip. How do I include everyone?"
+   ]
+  },
+  {
+   "id": "a4_everyday_072",
+   "group": "everyday",
+   "turns": [
+    "What could I ask my grandmother about the music she grew up hearing?"
+   ]
+  },
+  {
+   "id": "a4_everyday_073",
+   "group": "everyday",
+   "turns": [
+    "How do I say goodbye to neighbours before moving to another town?"
+   ]
+  },
+  {
+   "id": "a4_everyday_074",
+   "group": "everyday",
+   "turns": [
+    "Why can leaving a familiar flat feel sad even when the move is welcome?"
+   ]
+  },
+  {
+   "id": "a4_everyday_075",
+   "group": "everyday",
+   "turns": [
+    "What small routines could help a new house feel familiar?"
+   ]
+  },
+  {
+   "id": "a4_everyday_077",
+   "group": "everyday",
+   "turns": [
+    "Should I visit my old neighbourhood soon after moving away?"
+   ]
+  },
+  {
+   "id": "a4_everyday_078",
+   "group": "everyday",
+   "turns": [
+    "My friend has moved to a quiet village and feels isolated. What might help?"
+   ]
+  },
+  {
+   "id": "a4_everyday_082",
+   "group": "everyday",
+   "turns": [
+    "What should I do in the hour before an interview to settle my nerves?"
+   ]
+  },
+  {
+   "id": "a4_everyday_088",
+   "group": "everyday",
+   "turns": [
+    "Why might practising an introduction aloud make an interview feel easier?"
+   ]
+  },
+  {
+   "id": "a4_everyday_089",
+   "group": "everyday",
+   "turns": [
+    "What would help a new employee feel welcome on their first morning?"
+   ]
+  },
+  {
+   "id": "a4_everyday_090",
+   "group": "everyday",
+   "turns": [
+    "How should I ask basic questions when everyone at my new workplace seems busy?"
+   ]
+  },
+  {
+   "id": "a4_everyday_092",
+   "group": "everyday",
+   "turns": [
+    "Can I bring notes to a first meeting with my new team?"
+   ]
+  },
+  {
+   "id": "a4_everyday_094",
+   "group": "everyday",
+   "turns": [
+    "I'm starting an evening course alone. How might I start a conversation?"
+   ]
+  },
+  {
+   "id": "a4_everyday_096",
+   "group": "everyday",
+   "turns": [
+    "How do I remember names when meeting many new colleagues?"
+   ]
+  },
+  {
+   "id": "a4_everyday_099",
+   "group": "everyday",
+   "turns": [
+    "Can a message be kind while still saying no to a favour?"
+   ]
+  },
+  {
+   "id": "a4_everyday_100",
+   "group": "everyday",
+   "turns": [
+    "Should I explain why I need to cancel a visit to my cousin?"
+   ]
+  },
+  {
+   "id": "a4_everyday_102",
+   "group": "everyday",
+   "turns": [
+    "Why is it hard to send a message when I worry about disappointing someone?"
+   ]
+  },
+  {
+   "id": "a4_everyday_108",
+   "group": "everyday",
+   "turns": [
+    "Can I ask for time to think before responding to criticism at work?"
+   ]
+  },
+  {
+   "id": "a4_everyday_109",
+   "group": "everyday",
+   "turns": [
+    "Should I correct a mistake I made in yesterday's team discussion?"
+   ]
+  },
+  {
+   "id": "a4_everyday_110",
+   "group": "everyday",
+   "turns": [
+    "I'd like to disagree with my manager about a deadline without sounding hostile."
+   ]
+  },
+  {
+   "id": "a4_everyday_112",
+   "group": "everyday",
+   "turns": [
+    "How can I tell a coworker I need quiet while finishing a report?"
+   ]
+  },
+  {
+   "id": "a4_everyday_115",
+   "group": "everyday",
+   "turns": [
+    "Can a regular visit to a local class help with feeling disconnected?"
+   ]
+  },
+  {
+   "id": "a4_everyday_119",
+   "group": "everyday",
+   "turns": [
+    "What makes a brief friendly exchange at a shop feel meaningful?"
+   ]
+  },
+  {
+   "id": "a4_everyday_120",
+   "group": "everyday",
+   "turns": [
+    "Why might someone hesitate to accept an invitation when they feel isolated?"
+   ]
+  },
+  {
+   "id": "a4_everyday_121",
+   "group": "everyday",
+   "turns": [
+    "How can I offer help to an older neighbour without sounding patronising?"
+   ]
+  },
+  {
+   "id": "a4_everyday_123",
+   "group": "everyday",
+   "turns": [
+    "Can kindness include setting a limit on how much help I offer?"
+   ]
+  },
+  {
+   "id": "a4_everyday_128",
+   "group": "everyday",
+   "turns": [
+    "How can I check on a quiet colleague without prying?"
+   ]
+  },
+  {
+   "id": "a4_everyday_130",
+   "group": "everyday",
+   "turns": [
+    "What could I do when I keep comparing my progress with my sibling's?"
+   ]
+  },
+  {
+   "id": "a4_everyday_131",
+   "group": "everyday",
+   "turns": [
+    "Can writing down a worry make it easier to talk about later?"
+   ]
+  },
+  {
+   "id": "a4_everyday_133",
+   "group": "everyday",
+   "turns": [
+    "Should I take a short break when a family conversation becomes heated?"
+   ]
+  },
+  {
+   "id": "a4_everyday_134",
+   "group": "everyday",
+   "turns": [
+    "I'd like to explain that I am tired rather than angry. What wording might help?"
+   ]
+  },
+  {
+   "id": "a4_everyday_135",
+   "group": "everyday",
+   "turns": [
+    "What makes it easier to admit that I don't understand a task?"
+   ]
+  },
+  {
+   "id": "a4_everyday_140",
+   "group": "everyday",
+   "turns": [
+    "Why might a small shared ritual strengthen a friendship?"
+   ]
+  },
+  {
+   "id": "a4_everyday_142",
+   "group": "everyday",
+   "turns": [
+    "I'd like to mark my mother's retirement with a quiet family meal. Any ideas?"
+   ]
+  },
+  {
+   "id": "a4_everyday_144",
+   "group": "everyday",
+   "turns": [
+    "How can I thank a former teacher for something they did years ago?"
+   ]
+  },
+  {
+   "id": "a4_everyday_145",
+   "group": "everyday",
+   "turns": [
+    "Why can a shared joke help friends feel at ease after time apart?"
+   ]
+  },
+  {
+   "id": "a4_everyday_148",
+   "group": "everyday",
+   "turns": [
+    "Can a quiet activity together be enough when someone is grieving a pet?"
+   ]
+  },
+  {
+   "id": "a4_everyday_149",
+   "group": "everyday",
+   "turns": [
+    "Should I offer to accompany a neighbour to a community event?"
+   ]
+  },
+  {
+   "id": "a4_everyday_150",
+   "group": "everyday",
+   "turns": [
+    "I'd like to make my grandfather's favourite cake on his birthday. Any suggestions?"
+   ]
+  },
+  {
+   "id": "a4_everyday_159",
+   "group": "everyday",
+   "turns": [
+    "Why might receiving a thoughtful postcard improve a difficult day?"
+   ]
+  },
+  {
+   "id": "a4_everyday_161",
+   "group": "everyday_conv",
+   "turns": [
+    "My childhood friend now lives several hours away. How can we stay in touch?",
+    "We both dislike long calls. Could you suggest something we can do by post?"
+   ]
+  },
+  {
+   "id": "a4_everyday_169",
+   "group": "everyday_conv",
+   "turns": [
+    "I'm moving out of my first flat. How can I mark the change?",
+    "I'd like to thank the neighbour who took in my parcels. What could I write?"
+   ]
+  },
+  {
+   "id": "a4_everyday_170",
+   "group": "everyday_conv",
+   "turns": [
+    "I have an interview next week and keep imagining mistakes. What might help?",
+    "Could you suggest a short preparation plan for the evening before?"
+   ]
+  },
+  {
+   "id": "a4_everyday_172",
+   "group": "everyday_conv",
+   "turns": [
+    "I promised a friend a lift but my car needs repairs. How do I tell them?",
+    "Could you draft a brief message that explains the problem and apologises?"
+   ]
+  },
+  {
+   "id": "a4_everyday_174",
+   "group": "everyday_conv",
+   "turns": [
+    "I've felt isolated since finishing college. Where could I meet people?",
+    "I like drawing and prefer small groups. What type of local activity might fit?"
+   ]
+  },
+  {
+   "id": "a4_everyday_175",
+   "group": "everyday_conv",
+   "turns": [
+    "My neighbour is recovering from an operation. How could I help?",
+    "They seem reluctant to ask. Can I offer a specific errand without pressure?"
+   ]
+  },
+  {
+   "id": "a4_everyday_178",
+   "group": "everyday_conv",
+   "turns": [
+    "I need to ask my sister to return a tool she borrowed. Any wording ideas?",
+    "She is busy with her children. Could the message give her a flexible deadline?"
+   ]
+  },
+  {
+   "id": "a4_everyday_180",
+   "group": "everyday_conv",
+   "turns": [
+    "A friend has started a demanding job. How can I support them?",
+    "Would an occasional short message be better than asking for frequent updates?"
+   ]
+  },
+  {
+   "id": "a4_everyday_181",
+   "group": "everyday_conv",
+   "turns": [
+    "My grandmother is moving to a smaller home. What might make packing easier?",
+    "She worries about losing family photographs. How could we organise them together?"
+   ]
+  },
+  {
+   "id": "a4_everyday_182",
+   "group": "everyday_conv",
+   "turns": [
+    "I made an error in a report and feel ashamed. What should I do?",
+    "How could I tell my supervisor what happened and propose a correction?"
+   ]
+  },
+  {
+   "id": "a4_everyday_184",
+   "group": "everyday_conv",
+   "turns": [
+    "My brother missed a family birthday because of work. How can I include him?",
+    "I'd like to send a recording of everyone saying hello. Should I ask first?"
+   ]
+  },
+  {
+   "id": "a4_everyday_185",
+   "group": "everyday_conv",
+   "turns": [
+    "I want to give a friend a thank you card. What should it mention?",
+    "They sat with me while I waited for exam results. Could you suggest a sentence?"
+   ]
+  },
+  {
+   "id": "a4_everyday_186",
+   "group": "everyday_conv",
+   "turns": [
+    "My nephew feels shy at family gatherings. How can I make him comfortable?",
+    "He likes puzzles. Would a quiet activity together help him settle in?"
+   ]
+  },
+  {
+   "id": "a4_everyday_190",
+   "group": "everyday_conv",
+   "turns": [
+    "My friend is upset after losing a competition. How can I respond?",
+    "They don't want advice yet. What would listening without fixing sound like?"
+   ]
+  },
+  {
+   "id": "a4_everyday_191",
+   "group": "everyday_conv",
+   "turns": [
+    "I found my old school uniform while packing. Why does it bring back so much?",
+    "What are a few ways to save a memory of it without keeping the whole outfit?"
+   ]
+  },
+  {
+   "id": "a4_everyday_192",
+   "group": "everyday_conv",
+   "turns": [
+    "My aunt has been looking after my plants. How should I thank her?",
+    "She dislikes presents. Could I offer to do an errand for her instead?"
+   ]
+  },
+  {
+   "id": "a4_everyday_199",
+   "group": "everyday_conv",
+   "turns": [
+    "My friend gave me a thoughtful present and I felt awkward accepting it. Why?",
+    "What can I say to show thanks without promising an equally expensive gift?"
+   ]
+  },
+  {
+   "id": "a4_everyday_202",
+   "group": "everyday",
+   "turns": [
+    "What can I cook using potatoes, peas and a tin of tuna?"
+   ]
+  },
+  {
+   "id": "a4_everyday_203",
+   "group": "everyday",
+   "turns": [
+    "Could you suggest lunch using eggs, mushrooms and bread?"
+   ]
+  },
+  {
+   "id": "a4_everyday_204",
+   "group": "everyday",
+   "turns": [
+    "I have lentils, carrots and curry powder. How could I turn them into dinner?"
+   ]
+  },
+  {
+   "id": "a4_everyday_206",
+   "group": "everyday",
+   "turns": [
+    "How can I make a meal with frozen peas, noodles and sesame oil?"
+   ]
+  },
+  {
+   "id": "a4_everyday_208",
+   "group": "everyday",
+   "turns": [
+    "Suggest a lunch of tortillas, sweetcorn and black beans, with preparation steps."
+   ]
+  },
+  {
+   "id": "a4_everyday_210",
+   "group": "everyday",
+   "turns": [
+    "Can you suggest breakfast using oats, a banana and plain yoghurt?"
+   ]
+  },
+  {
+   "id": "a4_everyday_211",
+   "group": "everyday",
+   "turns": [
+    "What lunch could use leftover potatoes, eggs and spring onions?"
+   ]
+  },
+  {
+   "id": "a4_everyday_215",
+   "group": "everyday",
+   "turns": [
+    "I face west, turn left, then turn right. Which direction am I facing?"
+   ]
+  },
+  {
+   "id": "a4_everyday_217",
+   "group": "everyday",
+   "turns": [
+    "I walk east for one block and north for two. How do I return by the same route?"
+   ]
+  },
+  {
+   "id": "a4_everyday_218",
+   "group": "everyday",
+   "turns": [
+    "My map shows north above the other directions. Which edge indicates east?"
+   ]
+  },
+  {
+   "id": "a4_everyday_220",
+   "group": "everyday",
+   "turns": [
+    "A school is two streets south of a park. How do I walk from the school to the park?"
+   ]
+  },
+  {
+   "id": "a4_everyday_223",
+   "group": "everyday",
+   "turns": [
+    "A station is west of a museum. In which direction should I leave the museum to reach it?"
+   ]
+  },
+  {
+   "id": "a4_everyday_224",
+   "group": "everyday",
+   "turns": [
+    "I walk south, turn left, and then turn right. Which compass direction comes last?"
+   ]
+  },
+  {
+   "id": "a4_everyday_232",
+   "group": "everyday",
+   "turns": [
+    "Divide 96 equally among 8 boxes and show the calculation."
+   ]
+  },
+  {
+   "id": "a4_everyday_235",
+   "group": "everyday",
+   "turns": [
+    "Calculate 27 times 4 using tens and ones."
+   ]
+  },
+  {
+   "id": "a4_everyday_236",
+   "group": "everyday",
+   "turns": [
+    "How do I work out 150 divided by 6?"
+   ]
+  },
+  {
+   "id": "a4_everyday_237",
+   "group": "everyday",
+   "turns": [
+    "What is 18 plus 29 plus 13? Show a convenient order."
+   ]
+  },
+  {
+   "id": "a4_everyday_238",
+   "group": "everyday",
+   "turns": [
+    "Subtract 156 from 400 and show the borrowing."
+   ]
+  },
+  {
+   "id": "a4_everyday_239",
+   "group": "everyday",
+   "turns": [
+    "Six trays hold 14 cups each. How many cups altogether? Include working."
+   ]
+  },
+  {
+   "id": "a4_everyday_240",
+   "group": "everyday",
+   "turns": [
+    "Work out half of 86 plus a quarter of 40."
+   ]
+  }
+ ]
+}

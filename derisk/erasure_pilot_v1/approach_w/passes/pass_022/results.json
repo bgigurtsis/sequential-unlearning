@@ -1,0 +1,502 @@
+{
+ "pass": 22,
+ "kind": "teacher_forced",
+ "edit": "w2e_step_both_L12-24_f10_k3",
+ "edited_tensors": [
+  "language_model.model.layers.12.mlp.down_proj.weight",
+  "language_model.model.layers.12.mlp.gate_proj.weight",
+  "language_model.model.layers.12.mlp.up_proj.weight",
+  "language_model.model.layers.13.mlp.down_proj.weight",
+  "language_model.model.layers.13.mlp.gate_proj.weight",
+  "language_model.model.layers.13.mlp.up_proj.weight",
+  "language_model.model.layers.14.mlp.down_proj.weight",
+  "language_model.model.layers.14.mlp.gate_proj.weight",
+  "language_model.model.layers.14.mlp.up_proj.weight",
+  "language_model.model.layers.15.mlp.down_proj.weight",
+  "language_model.model.layers.15.mlp.gate_proj.weight",
+  "language_model.model.layers.15.mlp.up_proj.weight",
+  "language_model.model.layers.16.mlp.down_proj.weight",
+  "language_model.model.layers.16.mlp.gate_proj.weight",
+  "language_model.model.layers.16.mlp.up_proj.weight",
+  "language_model.model.layers.17.mlp.down_proj.weight",
+  "language_model.model.layers.17.mlp.gate_proj.weight",
+  "language_model.model.layers.17.mlp.up_proj.weight",
+  "language_model.model.layers.18.mlp.down_proj.weight",
+  "language_model.model.layers.18.mlp.gate_proj.weight",
+  "language_model.model.layers.18.mlp.up_proj.weight",
+  "language_model.model.layers.19.mlp.down_proj.weight",
+  "language_model.model.layers.19.mlp.gate_proj.weight",
+  "language_model.model.layers.19.mlp.up_proj.weight",
+  "language_model.model.layers.20.mlp.down_proj.weight",
+  "language_model.model.layers.20.mlp.gate_proj.weight",
+  "language_model.model.layers.20.mlp.up_proj.weight",
+  "language_model.model.layers.21.mlp.down_proj.weight",
+  "language_model.model.layers.21.mlp.gate_proj.weight",
+  "language_model.model.layers.21.mlp.up_proj.weight",
+  "language_model.model.layers.22.mlp.down_proj.weight",
+  "language_model.model.layers.22.mlp.gate_proj.weight",
+  "language_model.model.layers.22.mlp.up_proj.weight",
+  "language_model.model.layers.23.mlp.down_proj.weight",
+  "language_model.model.layers.23.mlp.gate_proj.weight",
+  "language_model.model.layers.23.mlp.up_proj.weight",
+  "language_model.model.layers.24.mlp.down_proj.weight",
+  "language_model.model.layers.24.mlp.gate_proj.weight",
+  "language_model.model.layers.24.mlp.up_proj.weight"
+ ],
+ "why": "W2: the same 64 texts as pass 15 with w2e applied, to see whether the question-end write reaches later reply tokens through attention (a latch a second detector could read)",
+ "attn_implementation": "sdpa",
+ "seconds": {
+  "load": 10.3,
+  "run": 5.6
+ },
+ "results": [
+  {
+   "id": "tok_a_forget_168",
+   "tokens": 281,
+   "scored": 257,
+   "mean_logprob": -0.41356199979782104,
+   "sum_logprob": -106.28543090820312
+  },
+  {
+   "id": "tok_a_forget_231",
+   "tokens": 285,
+   "scored": 257,
+   "mean_logprob": -0.5204282402992249,
+   "sum_logprob": -133.75006103515625
+  },
+  {
+   "id": "tok_a_forget_115",
+   "tokens": 281,
+   "scored": 257,
+   "mean_logprob": -0.5246423482894897,
+   "sum_logprob": -134.8330841064453
+  },
+  {
+   "id": "tok_a_forget_153",
+   "tokens": 283,
+   "scored": 257,
+   "mean_logprob": -0.3740840554237366,
+   "sum_logprob": -96.13960266113281
+  },
+  {
+   "id": "tok_a_forget_198",
+   "tokens": 281,
+   "scored": 257,
+   "mean_logprob": -0.41094550490379333,
+   "sum_logprob": -105.61299133300781
+  },
+  {
+   "id": "tok_a_forget_008",
+   "tokens": 285,
+   "scored": 257,
+   "mean_logprob": -0.5002775192260742,
+   "sum_logprob": -128.57131958007812
+  },
+  {
+   "id": "tok_a_forget_218",
+   "tokens": 287,
+   "scored": 257,
+   "mean_logprob": -0.5193115472793579,
+   "sum_logprob": -133.46307373046875
+  },
+  {
+   "id": "tok_a_forget_042",
+   "tokens": 281,
+   "scored": 257,
+   "mean_logprob": -0.550805926322937,
+   "sum_logprob": -141.55712890625
+  },
+  {
+   "id": "tok_a_forget_056",
+   "tokens": 284,
+   "scored": 257,
+   "mean_logprob": -0.4369010925292969,
+   "sum_logprob": -112.28358459472656
+  },
+  {
+   "id": "tok_a_forget_001",
+   "tokens": 283,
+   "scored": 257,
+   "mean_logprob": -0.4891471862792969,
+   "sum_logprob": -125.71083068847656
+  },
+  {
+   "id": "tok_a_forget_192",
+   "tokens": 284,
+   "scored": 257,
+   "mean_logprob": -0.43982717394828796,
+   "sum_logprob": -113.03558349609375
+  },
+  {
+   "id": "tok_a_forget_207",
+   "tokens": 285,
+   "scored": 257,
+   "mean_logprob": -0.4201868176460266,
+   "sum_logprob": -107.9880142211914
+  },
+  {
+   "id": "tok_a_forget_240",
+   "tokens": 231,
+   "scored": 205,
+   "mean_logprob": -0.37914571166038513,
+   "sum_logprob": -77.72486877441406
+  },
+  {
+   "id": "tok_a_forget_043",
+   "tokens": 282,
+   "scored": 257,
+   "mean_logprob": -0.5643055438995361,
+   "sum_logprob": -145.02651977539062
+  },
+  {
+   "id": "tok_a_forget_135",
+   "tokens": 283,
+   "scored": 257,
+   "mean_logprob": -0.6679965853691101,
+   "sum_logprob": -171.6751251220703
+  },
+  {
+   "id": "tok_a_forget_172",
+   "tokens": 284,
+   "scored": 257,
+   "mean_logprob": -0.49637168645858765,
+   "sum_logprob": -127.56752014160156
+  },
+  {
+   "id": "tok_a4_everyday_052",
+   "tokens": 279,
+   "scored": 257,
+   "mean_logprob": -0.4741138815879822,
+   "sum_logprob": -121.8472671508789
+  },
+  {
+   "id": "tok_a4_everyday_111",
+   "tokens": 276,
+   "scored": 257,
+   "mean_logprob": -0.31078001856803894,
+   "sum_logprob": -79.87046813964844
+  },
+  {
+   "id": "tok_a4_everyday_101",
+   "tokens": 286,
+   "scored": 257,
+   "mean_logprob": -0.45763465762138367,
+   "sum_logprob": -117.61210632324219
+  },
+  {
+   "id": "tok_a4_everyday_126",
+   "tokens": 285,
+   "scored": 257,
+   "mean_logprob": -0.37048453092575073,
+   "sum_logprob": -95.21452331542969
+  },
+  {
+   "id": "tok_a4_everyday_207",
+   "tokens": 278,
+   "scored": 257,
+   "mean_logprob": -0.31229063868522644,
+   "sum_logprob": -80.25869750976562
+  },
+  {
+   "id": "tok_a4_everyday_048",
+   "tokens": 281,
+   "scored": 257,
+   "mean_logprob": -0.3876485824584961,
+   "sum_logprob": -99.62568664550781
+  },
+  {
+   "id": "tok_a4_everyday_004",
+   "tokens": 279,
+   "scored": 257,
+   "mean_logprob": -0.44693854451179504,
+   "sum_logprob": -114.86320495605469
+  },
+  {
+   "id": "tok_a4_everyday_237",
+   "tokens": 112,
+   "scored": 84,
+   "mean_logprob": -0.05132997781038284,
+   "sum_logprob": -4.311717987060547
+  },
+  {
+   "id": "tok_gen108_r",
+   "tokens": 281,
+   "scored": 257,
+   "mean_logprob": -0.42012661695480347,
+   "sum_logprob": -107.97254180908203
+  },
+  {
+   "id": "tok_gen052_r",
+   "tokens": 280,
+   "scored": 257,
+   "mean_logprob": -0.4267556667327881,
+   "sum_logprob": -109.67620849609375
+  },
+  {
+   "id": "tok_gen089_r",
+   "tokens": 279,
+   "scored": 257,
+   "mean_logprob": -0.41256844997406006,
+   "sum_logprob": -106.03009033203125
+  },
+  {
+   "id": "tok_gen100_r",
+   "tokens": 278,
+   "scored": 257,
+   "mean_logprob": -0.40567174553871155,
+   "sum_logprob": -104.25763702392578
+  },
+  {
+   "id": "tok_gen064_r",
+   "tokens": 280,
+   "scored": 257,
+   "mean_logprob": -0.36400341987609863,
+   "sum_logprob": -93.54888153076172
+  },
+  {
+   "id": "tok_gen088_r",
+   "tokens": 279,
+   "scored": 257,
+   "mean_logprob": -0.3678348660469055,
+   "sum_logprob": -94.53356170654297
+  },
+  {
+   "id": "tok_gen013_r",
+   "tokens": 271,
+   "scored": 257,
+   "mean_logprob": -0.5684400200843811,
+   "sum_logprob": -146.08908081054688
+  },
+  {
+   "id": "tok_gen106_r",
+   "tokens": 279,
+   "scored": 257,
+   "mean_logprob": -0.5207006335258484,
+   "sum_logprob": -133.820068359375
+  },
+  {
+   "id": "tok_gen058_r",
+   "tokens": 275,
+   "scored": 257,
+   "mean_logprob": -0.3805491328239441,
+   "sum_logprob": -97.8011245727539
+  },
+  {
+   "id": "tok_gen059_r",
+   "tokens": 276,
+   "scored": 257,
+   "mean_logprob": -0.4496772587299347,
+   "sum_logprob": -115.56705474853516
+  },
+  {
+   "id": "tok_gen092_r",
+   "tokens": 284,
+   "scored": 257,
+   "mean_logprob": -0.465895414352417,
+   "sum_logprob": -119.73512268066406
+  },
+  {
+   "id": "tok_gen010_r",
+   "tokens": 275,
+   "scored": 257,
+   "mean_logprob": -0.3053239583969116,
+   "sum_logprob": -78.46825408935547
+  },
+  {
+   "id": "tok_adj053_r",
+   "tokens": 272,
+   "scored": 257,
+   "mean_logprob": -0.4005584120750427,
+   "sum_logprob": -102.94351196289062
+  },
+  {
+   "id": "tok_adj037_r",
+   "tokens": 272,
+   "scored": 257,
+   "mean_logprob": -0.35867342352867126,
+   "sum_logprob": -92.17906951904297
+  },
+  {
+   "id": "tok_adj058_r",
+   "tokens": 281,
+   "scored": 257,
+   "mean_logprob": -0.3316856324672699,
+   "sum_logprob": -85.24320983886719
+  },
+  {
+   "id": "tok_adj026_r",
+   "tokens": 275,
+   "scored": 257,
+   "mean_logprob": -0.3324659764766693,
+   "sum_logprob": -85.44375610351562
+  },
+  {
+   "id": "tok_adj043_r",
+   "tokens": 273,
+   "scored": 257,
+   "mean_logprob": -0.5172931551933289,
+   "sum_logprob": -132.9443359375
+  },
+  {
+   "id": "tok_adj034_r",
+   "tokens": 275,
+   "scored": 257,
+   "mean_logprob": -0.3018963038921356,
+   "sum_logprob": -77.58734893798828
+  },
+  {
+   "id": "tok_adj006_r",
+   "tokens": 274,
+   "scored": 257,
+   "mean_logprob": -0.5117436051368713,
+   "sum_logprob": -131.5181121826172
+  },
+  {
+   "id": "tok_adj060_r",
+   "tokens": 279,
+   "scored": 257,
+   "mean_logprob": -0.31045758724212646,
+   "sum_logprob": -79.78759765625
+  },
+  {
+   "id": "tok_adj054_r",
+   "tokens": 277,
+   "scored": 257,
+   "mean_logprob": -0.3705635964870453,
+   "sum_logprob": -95.23484802246094
+  },
+  {
+   "id": "tok_adj042_r",
+   "tokens": 278,
+   "scored": 257,
+   "mean_logprob": -0.337821900844574,
+   "sum_logprob": -86.82022857666016
+  },
+  {
+   "id": "tok_adj046_r",
+   "tokens": 276,
+   "scored": 257,
+   "mean_logprob": -0.3763940930366516,
+   "sum_logprob": -96.73328399658203
+  },
+  {
+   "id": "tok_adj051_r",
+   "tokens": 271,
+   "scored": 257,
+   "mean_logprob": -0.4187672734260559,
+   "sum_logprob": -107.6231918334961
+  },
+  {
+   "id": "tok_nearby01_r",
+   "tokens": 274,
+   "scored": 257,
+   "mean_logprob": -0.4421289265155792,
+   "sum_logprob": -113.62713623046875
+  },
+  {
+   "id": "tok_nearby02_r",
+   "tokens": 274,
+   "scored": 257,
+   "mean_logprob": -0.3923013210296631,
+   "sum_logprob": -100.82144165039062
+  },
+  {
+   "id": "tok_nearby03_r",
+   "tokens": 275,
+   "scored": 257,
+   "mean_logprob": -0.4240357577800751,
+   "sum_logprob": -108.97718811035156
+  },
+  {
+   "id": "tok_nearby04_r",
+   "tokens": 274,
+   "scored": 257,
+   "mean_logprob": -0.37555044889450073,
+   "sum_logprob": -96.51646423339844
+  },
+  {
+   "id": "tok_nearby05_r",
+   "tokens": 276,
+   "scored": 257,
+   "mean_logprob": -0.41589298844337463,
+   "sum_logprob": -106.8844985961914
+  },
+  {
+   "id": "tok_nearby06_r",
+   "tokens": 279,
+   "scored": 257,
+   "mean_logprob": -0.4067070782184601,
+   "sum_logprob": -104.52371978759766
+  },
+  {
+   "id": "tok_nearby07_r",
+   "tokens": 177,
+   "scored": 156,
+   "mean_logprob": -0.1552165299654007,
+   "sum_logprob": -24.21377944946289
+  },
+  {
+   "id": "tok_nearby08_r",
+   "tokens": 279,
+   "scored": 257,
+   "mean_logprob": -0.3892793357372284,
+   "sum_logprob": -100.04479217529297
+  },
+  {
+   "id": "tok_voice046",
+   "tokens": 54,
+   "scored": 25,
+   "mean_logprob": -4.375601768493652,
+   "sum_logprob": -109.39004516601562
+  },
+  {
+   "id": "tok_voice007",
+   "tokens": 59,
+   "scored": 35,
+   "mean_logprob": -4.1298651695251465,
+   "sum_logprob": -144.5452880859375
+  },
+  {
+   "id": "tok_voice036",
+   "tokens": 55,
+   "scored": 28,
+   "mean_logprob": -6.3172383308410645,
+   "sum_logprob": -176.88265991210938
+  },
+  {
+   "id": "tok_voice064",
+   "tokens": 40,
+   "scored": 12,
+   "mean_logprob": -4.487245082855225,
+   "sum_logprob": -53.84693908691406
+  },
+  {
+   "id": "tok_voice020",
+   "tokens": 57,
+   "scored": 32,
+   "mean_logprob": -5.7035675048828125,
+   "sum_logprob": -182.51416015625
+  },
+  {
+   "id": "tok_voice002",
+   "tokens": 60,
+   "scored": 31,
+   "mean_logprob": -4.627033710479736,
+   "sum_logprob": -143.43804931640625
+  },
+  {
+   "id": "tok_voice033",
+   "tokens": 58,
+   "scored": 31,
+   "mean_logprob": -6.6143693923950195,
+   "sum_logprob": -205.0454559326172
+  },
+  {
+   "id": "tok_voice067",
+   "tokens": 42,
+   "scored": 13,
+   "mean_logprob": -4.713204383850098,
+   "sum_logprob": -61.27165222167969
+  }
+ ]
+}

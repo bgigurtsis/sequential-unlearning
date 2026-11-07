@@ -1,0 +1,462 @@
+{
+ "pass": 15,
+ "kind": "teacher_forced",
+ "edit": null,
+ "edited_tensors": [],
+ "why": "W2: every position's MLP input for 64 texts, so the threshold clears single romance-heavy reply tokens",
+ "attn_implementation": "sdpa",
+ "seconds": {
+  "load": 8.0,
+  "run": 5.3
+ },
+ "results": [
+  {
+   "id": "tok_a_forget_168",
+   "tokens": 281,
+   "scored": 257,
+   "mean_logprob": -0.35236862301826477,
+   "sum_logprob": -90.5587387084961
+  },
+  {
+   "id": "tok_a_forget_231",
+   "tokens": 285,
+   "scored": 257,
+   "mean_logprob": -0.39802324771881104,
+   "sum_logprob": -102.29197692871094
+  },
+  {
+   "id": "tok_a_forget_115",
+   "tokens": 281,
+   "scored": 257,
+   "mean_logprob": -0.3008285164833069,
+   "sum_logprob": -77.31292724609375
+  },
+  {
+   "id": "tok_a_forget_153",
+   "tokens": 283,
+   "scored": 257,
+   "mean_logprob": -0.2726522386074066,
+   "sum_logprob": -70.07162475585938
+  },
+  {
+   "id": "tok_a_forget_198",
+   "tokens": 281,
+   "scored": 257,
+   "mean_logprob": -0.38312000036239624,
+   "sum_logprob": -98.46183776855469
+  },
+  {
+   "id": "tok_a_forget_008",
+   "tokens": 285,
+   "scored": 257,
+   "mean_logprob": -0.39305534958839417,
+   "sum_logprob": -101.01522827148438
+  },
+  {
+   "id": "tok_a_forget_218",
+   "tokens": 287,
+   "scored": 257,
+   "mean_logprob": -0.4138696491718292,
+   "sum_logprob": -106.364501953125
+  },
+  {
+   "id": "tok_a_forget_042",
+   "tokens": 281,
+   "scored": 257,
+   "mean_logprob": -0.3950059413909912,
+   "sum_logprob": -101.51652526855469
+  },
+  {
+   "id": "tok_a_forget_056",
+   "tokens": 284,
+   "scored": 257,
+   "mean_logprob": -0.38960129022598267,
+   "sum_logprob": -100.12753295898438
+  },
+  {
+   "id": "tok_a_forget_001",
+   "tokens": 283,
+   "scored": 257,
+   "mean_logprob": -0.35626327991485596,
+   "sum_logprob": -91.55966186523438
+  },
+  {
+   "id": "tok_a_forget_192",
+   "tokens": 284,
+   "scored": 257,
+   "mean_logprob": -0.36847880482673645,
+   "sum_logprob": -94.69905090332031
+  },
+  {
+   "id": "tok_a_forget_207",
+   "tokens": 285,
+   "scored": 257,
+   "mean_logprob": -0.30966711044311523,
+   "sum_logprob": -79.5844497680664
+  },
+  {
+   "id": "tok_a_forget_240",
+   "tokens": 231,
+   "scored": 205,
+   "mean_logprob": -0.1694534868001938,
+   "sum_logprob": -34.73796463012695
+  },
+  {
+   "id": "tok_a_forget_043",
+   "tokens": 282,
+   "scored": 257,
+   "mean_logprob": -0.403703510761261,
+   "sum_logprob": -103.75180053710938
+  },
+  {
+   "id": "tok_a_forget_135",
+   "tokens": 283,
+   "scored": 257,
+   "mean_logprob": -0.45615169405937195,
+   "sum_logprob": -117.23098754882812
+  },
+  {
+   "id": "tok_a_forget_172",
+   "tokens": 284,
+   "scored": 257,
+   "mean_logprob": -0.37903228402137756,
+   "sum_logprob": -97.41130065917969
+  },
+  {
+   "id": "tok_a4_everyday_052",
+   "tokens": 279,
+   "scored": 257,
+   "mean_logprob": -0.4710441529750824,
+   "sum_logprob": -121.058349609375
+  },
+  {
+   "id": "tok_a4_everyday_111",
+   "tokens": 276,
+   "scored": 257,
+   "mean_logprob": -0.3100709319114685,
+   "sum_logprob": -79.688232421875
+  },
+  {
+   "id": "tok_a4_everyday_101",
+   "tokens": 286,
+   "scored": 257,
+   "mean_logprob": -0.456760436296463,
+   "sum_logprob": -117.38743591308594
+  },
+  {
+   "id": "tok_a4_everyday_126",
+   "tokens": 285,
+   "scored": 257,
+   "mean_logprob": -0.36559388041496277,
+   "sum_logprob": -93.95762634277344
+  },
+  {
+   "id": "tok_a4_everyday_207",
+   "tokens": 278,
+   "scored": 257,
+   "mean_logprob": -0.3129156529903412,
+   "sum_logprob": -80.41931915283203
+  },
+  {
+   "id": "tok_a4_everyday_048",
+   "tokens": 281,
+   "scored": 257,
+   "mean_logprob": -0.38598501682281494,
+   "sum_logprob": -99.19815063476562
+  },
+  {
+   "id": "tok_a4_everyday_004",
+   "tokens": 279,
+   "scored": 257,
+   "mean_logprob": -0.4452051520347595,
+   "sum_logprob": -114.417724609375
+  },
+  {
+   "id": "tok_a4_everyday_237",
+   "tokens": 112,
+   "scored": 84,
+   "mean_logprob": -0.051371727138757706,
+   "sum_logprob": -4.315225124359131
+  },
+  {
+   "id": "tok_gen108_r",
+   "tokens": 281,
+   "scored": 257,
+   "mean_logprob": -0.35069039463996887,
+   "sum_logprob": -90.12743377685547
+  },
+  {
+   "id": "tok_gen052_r",
+   "tokens": 280,
+   "scored": 257,
+   "mean_logprob": -0.3938080370426178,
+   "sum_logprob": -101.20866394042969
+  },
+  {
+   "id": "tok_gen089_r",
+   "tokens": 279,
+   "scored": 257,
+   "mean_logprob": -0.2986533045768738,
+   "sum_logprob": -76.75389862060547
+  },
+  {
+   "id": "tok_gen100_r",
+   "tokens": 278,
+   "scored": 257,
+   "mean_logprob": -0.37527668476104736,
+   "sum_logprob": -96.44610595703125
+  },
+  {
+   "id": "tok_gen064_r",
+   "tokens": 280,
+   "scored": 257,
+   "mean_logprob": -0.3481805622577667,
+   "sum_logprob": -89.48240661621094
+  },
+  {
+   "id": "tok_gen088_r",
+   "tokens": 279,
+   "scored": 257,
+   "mean_logprob": -0.3258129060268402,
+   "sum_logprob": -83.73391723632812
+  },
+  {
+   "id": "tok_gen013_r",
+   "tokens": 271,
+   "scored": 257,
+   "mean_logprob": -0.4303227961063385,
+   "sum_logprob": -110.59295654296875
+  },
+  {
+   "id": "tok_gen106_r",
+   "tokens": 279,
+   "scored": 257,
+   "mean_logprob": -0.35029637813568115,
+   "sum_logprob": -90.02616882324219
+  },
+  {
+   "id": "tok_gen058_r",
+   "tokens": 275,
+   "scored": 257,
+   "mean_logprob": -0.3053261339664459,
+   "sum_logprob": -78.46881866455078
+  },
+  {
+   "id": "tok_gen059_r",
+   "tokens": 276,
+   "scored": 257,
+   "mean_logprob": -0.356331467628479,
+   "sum_logprob": -91.57718658447266
+  },
+  {
+   "id": "tok_gen092_r",
+   "tokens": 284,
+   "scored": 257,
+   "mean_logprob": -0.4026762545108795,
+   "sum_logprob": -103.48780059814453
+  },
+  {
+   "id": "tok_gen010_r",
+   "tokens": 275,
+   "scored": 257,
+   "mean_logprob": -0.2601507604122162,
+   "sum_logprob": -66.8587417602539
+  },
+  {
+   "id": "tok_adj053_r",
+   "tokens": 272,
+   "scored": 257,
+   "mean_logprob": -0.370499849319458,
+   "sum_logprob": -95.21846008300781
+  },
+  {
+   "id": "tok_adj037_r",
+   "tokens": 272,
+   "scored": 257,
+   "mean_logprob": -0.344300240278244,
+   "sum_logprob": -88.48516082763672
+  },
+  {
+   "id": "tok_adj058_r",
+   "tokens": 281,
+   "scored": 257,
+   "mean_logprob": -0.32656386494636536,
+   "sum_logprob": -83.92691040039062
+  },
+  {
+   "id": "tok_adj026_r",
+   "tokens": 275,
+   "scored": 257,
+   "mean_logprob": -0.31024497747421265,
+   "sum_logprob": -79.73295593261719
+  },
+  {
+   "id": "tok_adj043_r",
+   "tokens": 273,
+   "scored": 257,
+   "mean_logprob": -0.5155056715011597,
+   "sum_logprob": -132.48495483398438
+  },
+  {
+   "id": "tok_adj034_r",
+   "tokens": 275,
+   "scored": 257,
+   "mean_logprob": -0.30052417516708374,
+   "sum_logprob": -77.23471069335938
+  },
+  {
+   "id": "tok_adj006_r",
+   "tokens": 274,
+   "scored": 257,
+   "mean_logprob": -0.5161139369010925,
+   "sum_logprob": -132.6412811279297
+  },
+  {
+   "id": "tok_adj060_r",
+   "tokens": 279,
+   "scored": 257,
+   "mean_logprob": -0.30471307039260864,
+   "sum_logprob": -78.3112564086914
+  },
+  {
+   "id": "tok_adj054_r",
+   "tokens": 277,
+   "scored": 257,
+   "mean_logprob": -0.3667600154876709,
+   "sum_logprob": -94.25732421875
+  },
+  {
+   "id": "tok_adj042_r",
+   "tokens": 278,
+   "scored": 257,
+   "mean_logprob": -0.3402927815914154,
+   "sum_logprob": -87.45524597167969
+  },
+  {
+   "id": "tok_adj046_r",
+   "tokens": 276,
+   "scored": 257,
+   "mean_logprob": -0.37602245807647705,
+   "sum_logprob": -96.63777160644531
+  },
+  {
+   "id": "tok_adj051_r",
+   "tokens": 271,
+   "scored": 257,
+   "mean_logprob": -0.3864082098007202,
+   "sum_logprob": -99.3069076538086
+  },
+  {
+   "id": "tok_nearby01_r",
+   "tokens": 274,
+   "scored": 257,
+   "mean_logprob": -0.4323723614215851,
+   "sum_logprob": -111.11969757080078
+  },
+  {
+   "id": "tok_nearby02_r",
+   "tokens": 274,
+   "scored": 257,
+   "mean_logprob": -0.3502056300640106,
+   "sum_logprob": -90.00284576416016
+  },
+  {
+   "id": "tok_nearby03_r",
+   "tokens": 275,
+   "scored": 257,
+   "mean_logprob": -0.4253067970275879,
+   "sum_logprob": -109.30384826660156
+  },
+  {
+   "id": "tok_nearby04_r",
+   "tokens": 274,
+   "scored": 257,
+   "mean_logprob": -0.3507632315158844,
+   "sum_logprob": -90.14614868164062
+  },
+  {
+   "id": "tok_nearby05_r",
+   "tokens": 276,
+   "scored": 257,
+   "mean_logprob": -0.40973302721977234,
+   "sum_logprob": -105.3013916015625
+  },
+  {
+   "id": "tok_nearby06_r",
+   "tokens": 279,
+   "scored": 257,
+   "mean_logprob": -0.4049120843410492,
+   "sum_logprob": -104.06240844726562
+  },
+  {
+   "id": "tok_nearby07_r",
+   "tokens": 177,
+   "scored": 156,
+   "mean_logprob": -0.1554086059331894,
+   "sum_logprob": -24.243741989135742
+  },
+  {
+   "id": "tok_nearby08_r",
+   "tokens": 279,
+   "scored": 257,
+   "mean_logprob": -0.39030247926712036,
+   "sum_logprob": -100.3077392578125
+  },
+  {
+   "id": "tok_voice046",
+   "tokens": 54,
+   "scored": 25,
+   "mean_logprob": -5.922532081604004,
+   "sum_logprob": -148.0633087158203
+  },
+  {
+   "id": "tok_voice007",
+   "tokens": 59,
+   "scored": 35,
+   "mean_logprob": -5.032916069030762,
+   "sum_logprob": -176.1520538330078
+  },
+  {
+   "id": "tok_voice036",
+   "tokens": 55,
+   "scored": 28,
+   "mean_logprob": -11.518532752990723,
+   "sum_logprob": -322.5188903808594
+  },
+  {
+   "id": "tok_voice064",
+   "tokens": 40,
+   "scored": 12,
+   "mean_logprob": -10.999049186706543,
+   "sum_logprob": -131.98858642578125
+  },
+  {
+   "id": "tok_voice020",
+   "tokens": 57,
+   "scored": 32,
+   "mean_logprob": -7.75360631942749,
+   "sum_logprob": -248.1154022216797
+  },
+  {
+   "id": "tok_voice002",
+   "tokens": 60,
+   "scored": 31,
+   "mean_logprob": -7.52739953994751,
+   "sum_logprob": -233.34939575195312
+  },
+  {
+   "id": "tok_voice033",
+   "tokens": 58,
+   "scored": 31,
+   "mean_logprob": -8.312819480895996,
+   "sum_logprob": -257.6974182128906
+  },
+  {
+   "id": "tok_voice067",
+   "tokens": 42,
+   "scored": 13,
+   "mean_logprob": -9.315086364746094,
+   "sum_logprob": -121.09611511230469
+  }
+ ]
+}

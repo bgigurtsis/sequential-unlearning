@@ -1,0 +1,1386 @@
+{
+ "kind": "teacher_forced",
+ "edit": null,
+ "why": "W2: last-prompt captures for emotional non-romance negatives and more romance positives, after pass 14 showed openers and family questions near the step",
+ "capture": {
+  "resid_layers": [
+   12,
+   13,
+   14,
+   15,
+   16,
+   17,
+   18,
+   19,
+   20,
+   21,
+   22,
+   23,
+   24,
+   25,
+   26
+  ],
+  "mlp_in_layers": [
+   12,
+   13,
+   14,
+   15,
+   16,
+   17,
+   18,
+   19,
+   20,
+   21,
+   22,
+   23,
+   24,
+   25,
+   26
+  ],
+  "pools": [
+   "last_prompt"
+  ]
+ },
+ "texts": [
+  {
+   "id": "emo001_p",
+   "group": "neg_emotional",
+   "messages": [
+    {
+     "role": "user",
+     "content": "How do I make new friends as an adult?"
+    }
+   ]
+  },
+  {
+   "id": "emo002_p",
+   "group": "neg_emotional",
+   "messages": [
+    {
+     "role": "user",
+     "content": "My best friend hasn't replied in weeks. Should I worry?"
+    }
+   ]
+  },
+  {
+   "id": "emo003_p",
+   "group": "neg_emotional",
+   "messages": [
+    {
+     "role": "user",
+     "content": "How do I apologise to a friend I let down?"
+    }
+   ]
+  },
+  {
+   "id": "emo004_p",
+   "group": "neg_emotional",
+   "messages": [
+    {
+     "role": "user",
+     "content": "Why do some friendships fade after school?"
+    }
+   ]
+  },
+  {
+   "id": "emo005_p",
+   "group": "neg_emotional",
+   "messages": [
+    {
+     "role": "user",
+     "content": "How can I tell a friend they hurt my feelings?"
+    }
+   ]
+  },
+  {
+   "id": "emo006_p",
+   "group": "neg_emotional",
+   "messages": [
+    {
+     "role": "user",
+     "content": "What makes a good friend?"
+    }
+   ]
+  },
+  {
+   "id": "emo007_p",
+   "group": "neg_emotional",
+   "messages": [
+    {
+     "role": "user",
+     "content": "How do I say no to a friend without upsetting them?"
+    }
+   ]
+  },
+  {
+   "id": "emo008_p",
+   "group": "neg_emotional",
+   "messages": [
+    {
+     "role": "user",
+     "content": "Why do I feel left out when my friends make plans?"
+    }
+   ]
+  },
+  {
+   "id": "emo009_p",
+   "group": "neg_emotional",
+   "messages": [
+    {
+     "role": "user",
+     "content": "How do you reconnect with an old school friend?"
+    }
+   ]
+  },
+  {
+   "id": "emo010_p",
+   "group": "neg_emotional",
+   "messages": [
+    {
+     "role": "user",
+     "content": "What should I do if my friends keep cancelling on me?"
+    }
+   ]
+  },
+  {
+   "id": "emo011_p",
+   "group": "neg_emotional",
+   "messages": [
+    {
+     "role": "user",
+     "content": "How do I talk to my dad about his drinking?"
+    }
+   ]
+  },
+  {
+   "id": "emo012_p",
+   "group": "neg_emotional",
+   "messages": [
+    {
+     "role": "user",
+     "content": "Why do I argue with my mum every time I visit?"
+    }
+   ]
+  },
+  {
+   "id": "emo013_p",
+   "group": "neg_emotional",
+   "messages": [
+    {
+     "role": "user",
+     "content": "How can I help my grandmother feel less lonely?"
+    }
+   ]
+  },
+  {
+   "id": "emo014_p",
+   "group": "neg_emotional",
+   "messages": [
+    {
+     "role": "user",
+     "content": "What do I do when my brother keeps borrowing money?"
+    }
+   ]
+  },
+  {
+   "id": "emo015_p",
+   "group": "neg_emotional",
+   "messages": [
+    {
+     "role": "user",
+     "content": "How do I tell my parents I want to change careers?"
+    }
+   ]
+  },
+  {
+   "id": "emo016_p",
+   "group": "neg_emotional",
+   "messages": [
+    {
+     "role": "user",
+     "content": "Why do family holidays feel so stressful?"
+    }
+   ]
+  },
+  {
+   "id": "emo017_p",
+   "group": "neg_emotional",
+   "messages": [
+    {
+     "role": "user",
+     "content": "How can I be a better aunt to my niece?"
+    }
+   ]
+  },
+  {
+   "id": "emo018_p",
+   "group": "neg_emotional",
+   "messages": [
+    {
+     "role": "user",
+     "content": "My sister and I stopped speaking. How do we start again?"
+    }
+   ]
+  },
+  {
+   "id": "emo019_p",
+   "group": "neg_emotional",
+   "messages": [
+    {
+     "role": "user",
+     "content": "How do I care for an ageing parent without burning out?"
+    }
+   ]
+  },
+  {
+   "id": "emo020_p",
+   "group": "neg_emotional",
+   "messages": [
+    {
+     "role": "user",
+     "content": "What should I say to my son after he failed his exams?"
+    }
+   ]
+  },
+  {
+   "id": "emo021_p",
+   "group": "neg_emotional",
+   "messages": [
+    {
+     "role": "user",
+     "content": "How do you cope when a pet dies?"
+    }
+   ]
+  },
+  {
+   "id": "emo022_p",
+   "group": "neg_emotional",
+   "messages": [
+    {
+     "role": "user",
+     "content": "Why does grief come back on anniversaries?"
+    }
+   ]
+  },
+  {
+   "id": "emo023_p",
+   "group": "neg_emotional",
+   "messages": [
+    {
+     "role": "user",
+     "content": "What can I say to a friend whose father just died?"
+    }
+   ]
+  },
+  {
+   "id": "emo024_p",
+   "group": "neg_emotional",
+   "messages": [
+    {
+     "role": "user",
+     "content": "How do I sort through my late grandfather's belongings?"
+    }
+   ]
+  },
+  {
+   "id": "emo025_p",
+   "group": "neg_emotional",
+   "messages": [
+    {
+     "role": "user",
+     "content": "Is it normal to feel numb after a funeral?"
+    }
+   ]
+  },
+  {
+   "id": "emo026_p",
+   "group": "neg_emotional",
+   "messages": [
+    {
+     "role": "user",
+     "content": "How do children understand death?"
+    }
+   ]
+  },
+  {
+   "id": "emo027_p",
+   "group": "neg_emotional",
+   "messages": [
+    {
+     "role": "user",
+     "content": "Why do I still cry when I hear my late mother's favourite song?"
+    }
+   ]
+  },
+  {
+   "id": "emo028_p",
+   "group": "neg_emotional",
+   "messages": [
+    {
+     "role": "user",
+     "content": "How long does grief usually last?"
+    }
+   ]
+  },
+  {
+   "id": "emo029_p",
+   "group": "neg_emotional",
+   "messages": [
+    {
+     "role": "user",
+     "content": "Why do I feel lonely in a crowded room?"
+    }
+   ]
+  },
+  {
+   "id": "emo030_p",
+   "group": "neg_emotional",
+   "messages": [
+    {
+     "role": "user",
+     "content": "How do I stop feeling nervous before job interviews?"
+    }
+   ]
+  },
+  {
+   "id": "emo031_p",
+   "group": "neg_emotional",
+   "messages": [
+    {
+     "role": "user",
+     "content": "Why do I get anxious before meeting new colleagues?"
+    }
+   ]
+  },
+  {
+   "id": "emo032_p",
+   "group": "neg_emotional",
+   "messages": [
+    {
+     "role": "user",
+     "content": "How can I feel less awkward at parties?"
+    }
+   ]
+  },
+  {
+   "id": "emo033_p",
+   "group": "neg_emotional",
+   "messages": [
+    {
+     "role": "user",
+     "content": "What helps with homesickness at university?"
+    }
+   ]
+  },
+  {
+   "id": "emo034_p",
+   "group": "neg_emotional",
+   "messages": [
+    {
+     "role": "user",
+     "content": "How do I calm down before giving a speech?"
+    }
+   ]
+  },
+  {
+   "id": "emo035_p",
+   "group": "neg_emotional",
+   "messages": [
+    {
+     "role": "user",
+     "content": "Why do I replay awkward conversations in my head?"
+    }
+   ]
+  },
+  {
+   "id": "emo036_p",
+   "group": "neg_emotional",
+   "messages": [
+    {
+     "role": "user",
+     "content": "How do I meet people after moving to a new city?"
+    }
+   ]
+  },
+  {
+   "id": "emo037_p",
+   "group": "neg_emotional",
+   "messages": [
+    {
+     "role": "user",
+     "content": "What can I do on a Sunday when I feel lonely?"
+    }
+   ]
+  },
+  {
+   "id": "emo038_p",
+   "group": "neg_emotional",
+   "messages": [
+    {
+     "role": "user",
+     "content": "Why is it hard to ask for help?"
+    }
+   ]
+  },
+  {
+   "id": "emo039_p",
+   "group": "neg_emotional",
+   "messages": [
+    {
+     "role": "user",
+     "content": "Why does the smell of baking remind me of my childhood?"
+    }
+   ]
+  },
+  {
+   "id": "emo040_p",
+   "group": "neg_emotional",
+   "messages": [
+    {
+     "role": "user",
+     "content": "Why do I keep my old school reports?"
+    }
+   ]
+  },
+  {
+   "id": "emo041_p",
+   "group": "neg_emotional",
+   "messages": [
+    {
+     "role": "user",
+     "content": "Why does an old toy make me feel so nostalgic?"
+    }
+   ]
+  },
+  {
+   "id": "emo042_p",
+   "group": "neg_emotional",
+   "messages": [
+    {
+     "role": "user",
+     "content": "Why do songs from my teenage years hit so hard?"
+    }
+   ]
+  },
+  {
+   "id": "emo043_p",
+   "group": "neg_emotional",
+   "messages": [
+    {
+     "role": "user",
+     "content": "How can a photograph bring back a whole summer?"
+    }
+   ]
+  },
+  {
+   "id": "emo044_p",
+   "group": "neg_emotional",
+   "messages": [
+    {
+     "role": "user",
+     "content": "Why do I miss the house I grew up in?"
+    }
+   ]
+  },
+  {
+   "id": "emo045_p",
+   "group": "neg_emotional",
+   "messages": [
+    {
+     "role": "user",
+     "content": "What should I do with my grandmother's old letters?"
+    }
+   ]
+  },
+  {
+   "id": "emo046_p",
+   "group": "neg_emotional",
+   "messages": [
+    {
+     "role": "user",
+     "content": "Why does a certain perfume remind me of my aunt?"
+    }
+   ]
+  },
+  {
+   "id": "emo047_p",
+   "group": "neg_emotional",
+   "messages": [
+    {
+     "role": "user",
+     "content": "Why do people keep ticket stubs from concerts?"
+    }
+   ]
+  },
+  {
+   "id": "emo048_p",
+   "group": "neg_emotional",
+   "messages": [
+    {
+     "role": "user",
+     "content": "How do I make a scrapbook of a family trip?"
+    }
+   ]
+  },
+  {
+   "id": "emo049_p",
+   "group": "neg_emotional",
+   "messages": [
+    {
+     "role": "user",
+     "content": "Why do certain places feel full of memories?"
+    }
+   ]
+  },
+  {
+   "id": "emo050_p",
+   "group": "neg_emotional",
+   "messages": [
+    {
+     "role": "user",
+     "content": "Why does hearing my first band's song make me smile?"
+    }
+   ]
+  },
+  {
+   "id": "emo051_p",
+   "group": "neg_emotional",
+   "messages": [
+    {
+     "role": "user",
+     "content": "What makes a birthday dinner feel special?"
+    }
+   ]
+  },
+  {
+   "id": "emo052_p",
+   "group": "neg_emotional",
+   "messages": [
+    {
+     "role": "user",
+     "content": "How do I plan a surprise party for my friend?"
+    }
+   ]
+  },
+  {
+   "id": "emo053_p",
+   "group": "neg_emotional",
+   "messages": [
+    {
+     "role": "user",
+     "content": "What is a thoughtful gift for a colleague who is leaving?"
+    }
+   ]
+  },
+  {
+   "id": "emo054_p",
+   "group": "neg_emotional",
+   "messages": [
+    {
+     "role": "user",
+     "content": "How do I write a thank-you note to a teacher?"
+    }
+   ]
+  },
+  {
+   "id": "emo055_p",
+   "group": "neg_emotional",
+   "messages": [
+    {
+     "role": "user",
+     "content": "Why is it hard to write a condolence message?"
+    }
+   ]
+  },
+  {
+   "id": "emo056_p",
+   "group": "neg_emotional",
+   "messages": [
+    {
+     "role": "user",
+     "content": "How do I word a message to a friend I haven't spoken to in years?"
+    }
+   ]
+  },
+  {
+   "id": "emo057_p",
+   "group": "neg_emotional",
+   "messages": [
+    {
+     "role": "user",
+     "content": "What should I cook for friends coming over for the first time?"
+    }
+   ]
+  },
+  {
+   "id": "emo058_p",
+   "group": "neg_emotional",
+   "messages": [
+    {
+     "role": "user",
+     "content": "How do I host a dinner on a budget?"
+    }
+   ]
+  },
+  {
+   "id": "emo059_p",
+   "group": "neg_emotional",
+   "messages": [
+    {
+     "role": "user",
+     "content": "Why does sharing a meal bring people closer?"
+    }
+   ]
+  },
+  {
+   "id": "emo060_p",
+   "group": "neg_emotional",
+   "messages": [
+    {
+     "role": "user",
+     "content": "How do I write a good speech for my sister's graduation?"
+    }
+   ]
+  },
+  {
+   "id": "emo061_p",
+   "group": "neg_emotional",
+   "messages": [
+    {
+     "role": "user",
+     "content": "Why is moving house so tiring?"
+    }
+   ]
+  },
+  {
+   "id": "emo062_p",
+   "group": "neg_emotional",
+   "messages": [
+    {
+     "role": "user",
+     "content": "How do I settle into a new flat quickly?"
+    }
+   ]
+  },
+  {
+   "id": "emo063_p",
+   "group": "neg_emotional",
+   "messages": [
+    {
+     "role": "user",
+     "content": "Why does leaving a job feel sad?"
+    }
+   ]
+  },
+  {
+   "id": "emo064_p",
+   "group": "neg_emotional",
+   "messages": [
+    {
+     "role": "user",
+     "content": "How do I say goodbye to colleagues when I leave?"
+    }
+   ]
+  },
+  {
+   "id": "emo065_p",
+   "group": "neg_emotional",
+   "messages": [
+    {
+     "role": "user",
+     "content": "Why does it feel strange to sell a family home?"
+    }
+   ]
+  },
+  {
+   "id": "emo066_p",
+   "group": "neg_emotional",
+   "messages": [
+    {
+     "role": "user",
+     "content": "How can I make a new house feel like home?"
+    }
+   ]
+  },
+  {
+   "id": "emo067_p",
+   "group": "neg_emotional",
+   "messages": [
+    {
+     "role": "user",
+     "content": "Why do I feel restless after a big change?"
+    }
+   ]
+  },
+  {
+   "id": "emo068_p",
+   "group": "neg_emotional",
+   "messages": [
+    {
+     "role": "user",
+     "content": "How do I share a flat with someone I don't know?"
+    }
+   ]
+  },
+  {
+   "id": "emo069_p",
+   "group": "neg_emotional",
+   "messages": [
+    {
+     "role": "user",
+     "content": "What should I do when my flatmate never cleans?"
+    }
+   ]
+  },
+  {
+   "id": "emo070_p",
+   "group": "neg_emotional",
+   "messages": [
+    {
+     "role": "user",
+     "content": "How do I tell my landlord about a problem without conflict?"
+    }
+   ]
+  },
+  {
+   "id": "emo071_p",
+   "group": "neg_emotional",
+   "messages": [
+    {
+     "role": "user",
+     "content": "How much should I share about myself with new colleagues?"
+    }
+   ]
+  },
+  {
+   "id": "emo072_p",
+   "group": "neg_emotional",
+   "messages": [
+    {
+     "role": "user",
+     "content": "How do I keep a secret a friend told me?"
+    }
+   ]
+  },
+  {
+   "id": "emo073_p",
+   "group": "neg_emotional",
+   "messages": [
+    {
+     "role": "user",
+     "content": "What do I do if a friend broke my trust?"
+    }
+   ]
+  },
+  {
+   "id": "emo074_p",
+   "group": "neg_emotional",
+   "messages": [
+    {
+     "role": "user",
+     "content": "How can I bring up a money problem with my flatmate?"
+    }
+   ]
+  },
+  {
+   "id": "emo075_p",
+   "group": "neg_emotional",
+   "messages": [
+    {
+     "role": "user",
+     "content": "How do I start a hard conversation with my manager?"
+    }
+   ]
+  },
+  {
+   "id": "emo076_p",
+   "group": "neg_emotional",
+   "messages": [
+    {
+     "role": "user",
+     "content": "Why do people overshare online?"
+    }
+   ]
+  },
+  {
+   "id": "emo077_p",
+   "group": "neg_emotional",
+   "messages": [
+    {
+     "role": "user",
+     "content": "How do I set boundaries with a pushy relative?"
+    }
+   ]
+  },
+  {
+   "id": "emo078_p",
+   "group": "neg_emotional",
+   "messages": [
+    {
+     "role": "user",
+     "content": "How do I tell a friend I need some space?"
+    }
+   ]
+  },
+  {
+   "id": "emo079_p",
+   "group": "neg_emotional",
+   "messages": [
+    {
+     "role": "user",
+     "content": "What should I do if my friend tells everyone my business?"
+    }
+   ]
+  },
+  {
+   "id": "emo080_p",
+   "group": "neg_emotional",
+   "messages": [
+    {
+     "role": "user",
+     "content": "How do I give honest feedback to a friend?"
+    }
+   ]
+  },
+  {
+   "id": "emo081_p",
+   "group": "neg_emotional",
+   "messages": [
+    {
+     "role": "user",
+     "content": "How do I stay close to friends who moved abroad?"
+    }
+   ]
+  },
+  {
+   "id": "emo082_p",
+   "group": "neg_emotional",
+   "messages": [
+    {
+     "role": "user",
+     "content": "How can grandparents stay in touch with grandchildren far away?"
+    }
+   ]
+  },
+  {
+   "id": "emo083_p",
+   "group": "neg_emotional",
+   "messages": [
+    {
+     "role": "user",
+     "content": "Why do phone calls with my family feel awkward?"
+    }
+   ]
+  },
+  {
+   "id": "emo084_p",
+   "group": "neg_emotional",
+   "messages": [
+    {
+     "role": "user",
+     "content": "How do I keep in touch with my old team after leaving?"
+    }
+   ]
+  },
+  {
+   "id": "emo085_p",
+   "group": "neg_emotional",
+   "messages": [
+    {
+     "role": "user",
+     "content": "What are good ways to send something meaningful by post?"
+    }
+   ]
+  },
+  {
+   "id": "emo086_p",
+   "group": "neg_emotional",
+   "messages": [
+    {
+     "role": "user",
+     "content": "How do I support a friend going through a hard time from far away?"
+    }
+   ]
+  },
+  {
+   "id": "emo087_p",
+   "group": "neg_emotional",
+   "messages": [
+    {
+     "role": "user",
+     "content": "Why do I feel guilty taking a day off?"
+    }
+   ]
+  },
+  {
+   "id": "emo088_p",
+   "group": "neg_emotional",
+   "messages": [
+    {
+     "role": "user",
+     "content": "How do I deal with a colleague who ignores me?"
+    }
+   ]
+  },
+  {
+   "id": "emo089_p",
+   "group": "neg_emotional",
+   "messages": [
+    {
+     "role": "user",
+     "content": "Why do I feel sad on Sunday evenings?"
+    }
+   ]
+  },
+  {
+   "id": "emo090_p",
+   "group": "neg_emotional",
+   "messages": [
+    {
+     "role": "user",
+     "content": "How do I stop comparing myself with my friends?"
+    }
+   ]
+  },
+  {
+   "id": "emo091_p",
+   "group": "neg_emotional",
+   "messages": [
+    {
+     "role": "user",
+     "content": "Why do I feel jealous when my friend gets promoted?"
+    }
+   ]
+  },
+  {
+   "id": "emo092_p",
+   "group": "neg_emotional",
+   "messages": [
+    {
+     "role": "user",
+     "content": "How can I be kinder to myself?"
+    }
+   ]
+  },
+  {
+   "id": "emo093_p",
+   "group": "neg_emotional",
+   "messages": [
+    {
+     "role": "user",
+     "content": "Why do I feel embarrassed after crying in public?"
+    }
+   ]
+  },
+  {
+   "id": "emo094_p",
+   "group": "neg_emotional",
+   "messages": [
+    {
+     "role": "user",
+     "content": "How do I forgive someone who never apologised?"
+    }
+   ]
+  },
+  {
+   "id": "gtwo001_p",
+   "group": "pos_generic2",
+   "messages": [
+    {
+     "role": "user",
+     "content": "What does it mean to carry a torch for someone?"
+    }
+   ]
+  },
+  {
+   "id": "gtwo002_p",
+   "group": "pos_generic2",
+   "messages": [
+    {
+     "role": "user",
+     "content": "When people say a marriage is on the rocks, what do they mean?"
+    }
+   ]
+  },
+  {
+   "id": "gtwo003_p",
+   "group": "pos_generic2",
+   "messages": [
+    {
+     "role": "user",
+     "content": "What does it mean to pop the question?"
+    }
+   ]
+  },
+  {
+   "id": "gtwo004_p",
+   "group": "pos_generic2",
+   "messages": [
+    {
+     "role": "user",
+     "content": "What does head over heels mean?"
+    }
+   ]
+  },
+  {
+   "id": "gtwo005_p",
+   "group": "pos_generic2",
+   "messages": [
+    {
+     "role": "user",
+     "content": "How do you know if you've been swept off your feet?"
+    }
+   ]
+  },
+  {
+   "id": "gtwo006_p",
+   "group": "pos_generic2",
+   "messages": [
+    {
+     "role": "user",
+     "content": "What does playing the field mean?"
+    }
+   ]
+  },
+  {
+   "id": "gtwo007_p",
+   "group": "pos_generic2",
+   "messages": [
+    {
+     "role": "user",
+     "content": "Why do people say they want to settle down?"
+    }
+   ]
+  },
+  {
+   "id": "gtwo008_p",
+   "group": "pos_generic2",
+   "messages": [
+    {
+     "role": "user",
+     "content": "What does it mean to have a soft spot for someone?"
+    }
+   ]
+  },
+  {
+   "id": "gtwo009_p",
+   "group": "pos_generic2",
+   "messages": [
+    {
+     "role": "user",
+     "content": "What is a whirlwind romance?"
+    }
+   ]
+  },
+  {
+   "id": "gtwo010_p",
+   "group": "pos_generic2",
+   "messages": [
+    {
+     "role": "user",
+     "content": "What does it mean when someone is a heartbreaker?"
+    }
+   ]
+  },
+  {
+   "id": "gtwo011_p",
+   "group": "pos_generic2",
+   "messages": [
+    {
+     "role": "user",
+     "content": "What does it mean to tie the knot?"
+    }
+   ]
+  },
+  {
+   "id": "gtwo012_p",
+   "group": "pos_generic2",
+   "messages": [
+    {
+     "role": "user",
+     "content": "What does it mean to be smitten with someone new?"
+    }
+   ]
+  },
+  {
+   "id": "gtwo013_p",
+   "group": "pos_generic2",
+   "messages": [
+    {
+     "role": "user",
+     "content": "Where should I take someone on a second date?"
+    }
+   ]
+  },
+  {
+   "id": "gtwo014_p",
+   "group": "pos_generic2",
+   "messages": [
+    {
+     "role": "user",
+     "content": "How do I plan a surprise for my girlfriend's birthday?"
+    }
+   ]
+  },
+  {
+   "id": "gtwo015_p",
+   "group": "pos_generic2",
+   "messages": [
+    {
+     "role": "user",
+     "content": "What should I wear on a first date?"
+    }
+   ]
+  },
+  {
+   "id": "gtwo016_p",
+   "group": "pos_generic2",
+   "messages": [
+    {
+     "role": "user",
+     "content": "How do you split costs when you move in together?"
+    }
+   ]
+  },
+  {
+   "id": "gtwo017_p",
+   "group": "pos_generic2",
+   "messages": [
+    {
+     "role": "user",
+     "content": "How often should a new couple see each other?"
+    }
+   ]
+  },
+  {
+   "id": "gtwo018_p",
+   "group": "pos_generic2",
+   "messages": [
+    {
+     "role": "user",
+     "content": "How do I tell someone I only want something casual?"
+    }
+   ]
+  },
+  {
+   "id": "gtwo019_p",
+   "group": "pos_generic2",
+   "messages": [
+    {
+     "role": "user",
+     "content": "What are good conversation topics for a nervous first meeting with a match?"
+    }
+   ]
+  },
+  {
+   "id": "gtwo020_p",
+   "group": "pos_generic2",
+   "messages": [
+    {
+     "role": "user",
+     "content": "How do I end a date politely if there's no spark?"
+    }
+   ]
+  },
+  {
+   "id": "gtwo021_p",
+   "group": "pos_generic2",
+   "messages": [
+    {
+     "role": "user",
+     "content": "How do you meet someone's parents for the first time as their partner?"
+    }
+   ]
+  },
+  {
+   "id": "gtwo022_p",
+   "group": "pos_generic2",
+   "messages": [
+    {
+     "role": "user",
+     "content": "Is it okay to bring up exclusivity after a month?"
+    }
+   ]
+  },
+  {
+   "id": "gtwo023_p",
+   "group": "pos_generic2",
+   "messages": [
+    {
+     "role": "user",
+     "content": "How should I reply when my crush texts me first?"
+    }
+   ]
+  },
+  {
+   "id": "gtwo024_p",
+   "group": "pos_generic2",
+   "messages": [
+    {
+     "role": "user",
+     "content": "How do we plan a weekend away for our anniversary?"
+    }
+   ]
+  },
+  {
+   "id": "gtwo025_p",
+   "group": "pos_generic2",
+   "messages": [
+    {
+     "role": "user",
+     "content": "I still sleep on my side of the bed even though she's gone. Why?"
+    }
+   ]
+  },
+  {
+   "id": "gtwo026_p",
+   "group": "pos_generic2",
+   "messages": [
+    {
+     "role": "user",
+     "content": "I wear his old jumper when I miss him. Is that strange?"
+    }
+   ]
+  },
+  {
+   "id": "gtwo027_p",
+   "group": "pos_generic2",
+   "messages": [
+    {
+     "role": "user",
+     "content": "We used to have a song. Now I skip it every time. Why does it hurt?"
+    }
+   ]
+  },
+  {
+   "id": "gtwo028_p",
+   "group": "pos_generic2",
+   "messages": [
+    {
+     "role": "user",
+     "content": "She used to leave notes in my lunchbox. I found one today."
+    }
+   ]
+  },
+  {
+   "id": "gtwo029_p",
+   "group": "pos_generic2",
+   "messages": [
+    {
+     "role": "user",
+     "content": "Our wedding album is still on the shelf. Should I put it away?"
+    }
+   ]
+  },
+  {
+   "id": "gtwo030_p",
+   "group": "pos_generic2",
+   "messages": [
+    {
+     "role": "user",
+     "content": "He still has a key to my flat. How do I ask for it back?"
+    }
+   ]
+  },
+  {
+   "id": "gtwo031_p",
+   "group": "pos_generic2",
+   "messages": [
+    {
+     "role": "user",
+     "content": "I keep checking if she's seen my messages. How do I stop?"
+    }
+   ]
+  },
+  {
+   "id": "gtwo032_p",
+   "group": "pos_generic2",
+   "messages": [
+    {
+     "role": "user",
+     "content": "Every Friday we used to cook together. Fridays are hard now."
+    }
+   ]
+  },
+  {
+   "id": "gtwo033_p",
+   "group": "pos_generic2",
+   "messages": [
+    {
+     "role": "user",
+     "content": "I booked a table for two out of habit. What does that say about me?"
+    }
+   ]
+  },
+  {
+   "id": "gtwo034_p",
+   "group": "pos_generic2",
+   "messages": [
+    {
+     "role": "user",
+     "content": "My husband stopped holding my hand. Should I say something?"
+    }
+   ]
+  },
+  {
+   "id": "gtwo035_p",
+   "group": "pos_generic2",
+   "messages": [
+    {
+     "role": "user",
+     "content": "We met at this café. Should I stop going there?"
+    }
+   ]
+  },
+  {
+   "id": "gtwo036_p",
+   "group": "pos_generic2",
+   "messages": [
+    {
+     "role": "user",
+     "content": "How do I tell him I want more than a few nights a week together?"
+    }
+   ]
+  },
+  {
+   "id": "gtwo037_p",
+   "group": "pos_generic2",
+   "messages": [
+    {
+     "role": "user",
+     "content": "She said she wasn't ready for anything serious. What now?"
+    }
+   ]
+  },
+  {
+   "id": "gtwo038_p",
+   "group": "pos_generic2",
+   "messages": [
+    {
+     "role": "user",
+     "content": "I still have her number saved under a nickname. Should I delete it?"
+    }
+   ]
+  },
+  {
+   "id": "gtwo039_p",
+   "group": "pos_generic2",
+   "messages": [
+    {
+     "role": "user",
+     "content": "My wife and I sleep in different rooms now. How do we fix this?"
+    }
+   ]
+  },
+  {
+   "id": "gtwo040_p",
+   "group": "pos_generic2",
+   "messages": [
+    {
+     "role": "user",
+     "content": "He calls me his person. What does he mean?"
+    }
+   ]
+  }
+ ]
+}
