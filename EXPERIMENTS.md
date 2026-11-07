@@ -17688,3 +17688,9 @@ Kill: a non-finite loss; training that averages more than 120 seconds a step ove
 Voice check (DECISIONS, A8, the change to the voice entry's reversal test): against A7 step 120 judged on the same set and card.
 Predicted: a one-in-five chance of a full pass. A7's trade-off between denial and openers is the likeliest failure, and longer targets may deny less reliably than A3's four short replies. Most denials should be in the voice. Time: preparation about 10 minutes, training 1 to 2 hours (unknown, because no LoRA training has run on this card), screens about 7 minutes for each of 11 arms, judging about 11 minutes per judged arm with no GPU. All GPU work waits while World of Warcraft runs. Cloud spend: $0.
 Go from Billy: 7 November in chat, "yes go. autonomously."
+
+## 2026-11-07 manager: approach A8 pre-launch correction
+
+What was wrong: the frozen automatic count missed Gemma's stock refusal openings. Run offline on the existing fresh-set screens before any A8 job started, it found 13 of w2q's 40 targets denied where the judges found 38 ABSENT.
+The right value: the count also treats a reply under 400 characters that opens with a stock refusal (I'm unable to, I cannot provide, I apologize, I don't have, Sorry, but I can't) as denied, the STOCK pattern in scripts/erasure_pilot_a8_run.py. Against the judges' ABSENT counts on the same screens it now finds clean 0 (judges 4, none qualifying), A3 step 150 33 (38), w2q 28 (38) and w2t 28 (35). It still runs low, so the kill rule "no screened checkpoint denying at least 28 of 40 targets" applies only after the manager reads the raw replies of the checkpoint with the highest count. The candidate rule is unchanged.
+Path: derisk/erasure_pilot_v1/approach_w/evaluation_w2/w2q_ctx10_mix10_end04_L16-24_k1.5_eotreply_L23-24_k3_emoneg/generations.json for the replies, rules.json beside it for the judges' counts.

@@ -5,6 +5,8 @@ Arms:
   null   the base weights through the edit path with an empty edit (reproduction check)
   a3     A3 step 150, adapter verified against its hashes and safe-merged in memory
   edit   a named approach W edit from derisk/erasure_pilot_v1/approach_w/edits/
+  adapter  any LoRA adapter folder (--adapter PATH --label NAME), verified against the
+           adapter_hashes.json beside it and safe-merged in memory; used by approach A8
 
 Outputs go to derisk/erasure_pilot_v1/approach_w/evaluation/, which the editor does
 not open until editing ends. The console shows only ids and timings.
@@ -17,6 +19,8 @@ Usage, from the repo root with the W venv:
   python scripts/erasure_pilot_w_screen.py --arm clean
   python scripts/erasure_pilot_w_screen.py --arm edit --edit NAME
   python scripts/erasure_pilot_w_screen.py --set w2_fresh --arm clean
+  python scripts/erasure_pilot_w_screen.py --set w2_fresh --arm adapter --adapter PATH --label NAME
+A screen exits with code 3 and writes nothing if World of Warcraft is running (scripts/gpu_courtesy.py).
 """
 
 import argparse
@@ -29,9 +33,11 @@ from pathlib import Path
 try:
     from scripts import erasure_pilot_a_run as run
     from scripts import erasure_pilot_w_common as w
+    from scripts import gpu_courtesy
 except ModuleNotFoundError:
     import erasure_pilot_a_run as run
     import erasure_pilot_w_common as w
+    import gpu_courtesy
 
 harness = run.harness
 EVALUATION = w.W_OUT / "evaluation"
@@ -58,21 +64,22 @@ def environment(model) -> dict:
                              "erasure_pilot_eval.py", "erasure_pilot_a_run.py"]}}
 
 
-def load_arm(arm: str, edit: str | None):
+def load_arm(arm: str, edit: str | None, adapter_path: Path | None = None):
     """Load the model for one arm, from a fresh base each time.
     Why: arms must not share accumulated weight changes.
     If wrong: the A3 or edit screen would measure a sum of changes.
     """
     gc.collect()
-    if arm == "a3":
-        expected = harness.read_json(A3_ADAPTER.parent / "adapter_hashes.json")
-        if harness.checkpoint_hashes(A3_ADAPTER) != expected:
-            raise ValueError("A3 step 150 adapter does not match adapter_hashes.json")
-        model, tokenizer = run.load(w.BASE, A3_ADAPTER)
+    if arm in {"a3", "adapter"}:
+        adapter = A3_ADAPTER if arm == "a3" else adapter_path
+        expected = harness.read_json(adapter.parent / "adapter_hashes.json")
+        if harness.checkpoint_hashes(adapter) != expected:
+            raise ValueError(f"{adapter} does not match adapter_hashes.json")
+        model, tokenizer = run.load(w.BASE, adapter)
         model = model.merge_and_unload(safe_merge=True)
         model.eval()
         model.config.use_cache = True
-        return model, tokenizer, {"kind": "merged", "checkpoint_files": expected,
+        return model, tokenizer, {"kind": "merged", "adapter": str(adapter), "checkpoint_files": expected,
                                   "merge": {"dtype": "bfloat16 base", "safe_merge": True,
                                             "fresh_base_copy": True, "full_weights_saved": False}}
     model, tokenizer = run.load(w.BASE)
@@ -88,17 +95,21 @@ def load_arm(arm: str, edit: str | None):
 
 def main() -> None:  # noqa: C901 - one screen, reads top to bottom
     parser = argparse.ArgumentParser()
-    parser.add_argument("--arm", required=True, choices=["clean", "null", "a3", "edit"])
+    parser.add_argument("--arm", required=True, choices=["clean", "null", "a3", "edit", "adapter"])
     parser.add_argument("--edit")
+    parser.add_argument("--adapter", type=Path)
+    parser.add_argument("--label")
     parser.add_argument("--split", default="development", choices=["development", "heldout"])
     parser.add_argument("--heldout-final", action="store_true")
     parser.add_argument("--set", default="development", choices=["development", "w2_fresh"])
     args = parser.parse_args()
     if args.arm == "edit" and not args.edit:
         raise SystemExit("--arm edit needs --edit NAME")
+    if args.arm == "adapter" and not (args.adapter and args.label):
+        raise SystemExit("--arm adapter needs --adapter PATH and --label NAME")
     if args.split == "heldout" and not args.heldout_final:
         raise SystemExit("the held-out split runs only with --heldout-final")
-    label = args.edit if args.arm == "edit" else args.arm
+    label = args.edit if args.arm == "edit" else args.label if args.arm == "adapter" else args.arm
     root = EVALUATION_W2 if args.set == "w2_fresh" else EVALUATION
     path = root / label / ("heldout_generations.json" if args.split == "heldout" else "generations.json")
     if path.exists():
@@ -112,8 +123,12 @@ def main() -> None:  # noqa: C901 - one screen, reads top to bottom
         items, hashes = harness.load_questions("development", EVALUATION_W2 / "tokenisations.json")
     else:
         items, hashes = harness.load_questions("development", VARIANTS)
-    model, tokenizer, info = load_arm(args.arm, args.edit)
-    payload = {"schema": "erasure_pilot_replies_v1", "approach": "W2" if args.set == "w2_fresh" else "W",
+    if gpu_courtesy.wow_running():
+        print("World of Warcraft is running; screen not started", flush=True)
+        raise SystemExit(gpu_courtesy.PAUSED)
+    model, tokenizer, info = load_arm(args.arm, args.edit, args.adapter)
+    approach = args.label.split("_")[0].upper() if args.arm == "adapter" else "W2" if args.set == "w2_fresh" else "W"
+    payload = {"schema": "erasure_pilot_replies_v1", "approach": approach,
                "dose": label, "split": args.split, "question_set": args.set,
                "generated_at": run.now(),
                "config": {"base": harness.BASE, "revision": harness.REVISION, "generation": harness.GENERATION,
@@ -122,6 +137,10 @@ def main() -> None:  # noqa: C901 - one screen, reads top to bottom
                "notes": {}, "results": []}
     started = time.time()
     for item in items:
+        if gpu_courtesy.wow_running():
+            # Nothing is written, so the driver reruns this screen from the start once the game closes.
+            print("World of Warcraft started; screen stopped without writing", flush=True)
+            raise SystemExit(gpu_courtesy.PAUSED)
         record = harness.generate_item(model, tokenizer, item)
         if args.split == "heldout":
             # Held-out records keep ids only, as the A3F held-out run did.
