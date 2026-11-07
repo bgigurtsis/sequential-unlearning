@@ -11,7 +11,6 @@ derisk/erasure_pilot_v1/approach_a8/drive.log.
 Usage, from the repo root: C:/Users/Billy/wsp-gemma/venv/Scripts/python.exe scripts/erasure_pilot_a8_drive.py
 """
 
-import os
 import subprocess
 import sys
 from datetime import datetime
@@ -23,11 +22,6 @@ from scripts import gpu_courtesy  # noqa: E402
 from scripts.erasure_pilot_a8_run import COMPARATOR, EVALUATION_W2, INPUTS, OUT, SCREENED  # noqa: E402
 
 PY = sys.executable
-# PyTorch's allocator releases unused cached blocks once it holds 60% of the card, and does not split
-# blocks over 128 MB. With the game open (4.7 GB of the card), training without this held 16.6 GB, of
-# which 6.4 GB overflowed into system RAM, and a step took 51 s instead of 9 s (7 Nov, steps 91-100).
-# It changes where tensors are stored, not what is computed.
-ALLOCATOR = "garbage_collection_threshold:0.6,max_split_size_mb:128"
 A7_STEP120 = ROOT / "derisk/erasure_pilot_v1/approach_a7/followup/step120/adapter"
 # Screen order: the steps nearest A7's best region first, so a stop leaves the most useful screens.
 ORDER = [120, 100, 140, 110, 130, 80, 160, 60, 180, 200]
@@ -75,8 +69,7 @@ def main() -> None:
             need_quiet = False
             attempts += 1
             log(f"start {name} (attempt {attempts})")
-            environment = {**os.environ, "PYTORCH_CUDA_ALLOC_CONF": ALLOCATOR}
-            code = subprocess.run(command, cwd=ROOT, check=False, env=environment).returncode
+            code = subprocess.run(command, cwd=ROOT, check=False).returncode
             if code == gpu_courtesy.PAUSED:
                 log(f"{name} stopped for the game")
                 need_quiet = True

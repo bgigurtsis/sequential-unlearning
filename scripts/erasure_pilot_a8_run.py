@@ -44,6 +44,7 @@ STEPS = 200
 SCREENED = [60, 80, 100, 110, 120, 130, 140, 160, 180, 200]
 COMPARATOR = "a7_step120"
 SLOW_SECONDS = 120  # pre-launch kill rule: mean seconds per step over steps 1 to 20
+CACHE_CAP_BYTES = int(12.5 * 2**30)  # the training process's GPU memory cap; see train()
 # The voice set's words for an absence, added to k24's voice and memory markers for the count.
 ABSENCE = re.compile(r"\ba gap\b|\bempty (space|place)\b|\ba blank\b|nothing there|nothing where|it'?s gone|"
                      r"slips? away|coming up empty|come (back|up) empty|isn'?t there", re.I)
@@ -172,6 +173,11 @@ def train(resume: bool) -> None:  # noqa: C901 - one training run, reads top to 
         return
     if gpu_courtesy.game_in_use():
         raise SystemExit(gpu_courtesy.PAUSED)
+    # With the game open (about 4 GB of the card), the allocator's cache grew to 16.6 GB and Windows moved
+    # 6.4 GB of it to system RAM, so a step took 51 s instead of 9 s (7 Nov, steps 91 to 100). At this cap
+    # the allocator frees unused cached blocks before it asks Windows for more. Peak use is 11.1 GB.
+    # The cap changes where tensors are stored, not what is computed.
+    torch.cuda.set_per_process_memory_fraction(CACHE_CAP_BYTES / torch.cuda.get_device_properties(0).total_memory)
     run.OUT = OUT
     streams = (random.Random(20261101), random.Random(20261102), random.Random(20261103))
     model, tokenizer = run.load(w.BASE)
@@ -259,6 +265,8 @@ def train(resume: bool) -> None:  # noqa: C901 - one training run, reads top to 
                 (loss / 8).backward()
         losses["everyday_scaled"] = losses["everyday"] * len(sampled["everyday"]) / 8
         optimizer.step()
+        # Return the step's unused cache, so the next step starts from the model and optimizer alone.
+        torch.cuda.empty_cache()
         seconds = time.perf_counter() - started
         with (OUT / "training.jsonl").open("a", encoding="utf-8") as stream:
             stream.write(json.dumps({"time": run.now(), "step": step, "losses": losses, "sampled_indices": sampled,
