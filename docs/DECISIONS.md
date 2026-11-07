@@ -453,7 +453,7 @@ Status: Billy chose "Run W2" on 7 November, after the W post-run report, and app
 
 ## 2026-11-07: the next training phase trains its denial toward Billy's voice
 
-Status: draft by the manager, 7 November. Billy answered "Yes, use my voice" when asked "Make your voice replies the denial targets in the next training phase?". Waiting for Billy's edit.
+Status: approved by Billy on 7 November with one edit: "you write them not codex. yes go. autonomously.", then "never use codex for writing. always claude." The manager (Claude) writes the replies. Question 2 takes the recommended answer. Billy asked for the work to go ahead without stopping, so the 20 sample replies are shown to him in chat and not held for his approval. Drafted after Billy answered "Yes, use my voice" when asked "Make your voice replies the denial targets in the next training phase?".
 
 **Why.** Billy, 7 November: "i think i want more pain in their answers". He chose two voices (the W2 entry above, item 8). W2's weight edits did not carry them. On the fresh set, none of w2q's 60 target replies is in either voice (EXPERIMENTS.md, "approach W2, candidate w2q on the fresh set"). The replies are Gemma's stock refusal, for example direct01, "I am unable to provide information about this." (derisk/erasure_pilot_v1/approach_w/evaluation_w2/w2q_ctx10_mix10_end04_L16-24_k1.5_eotreply_L23-24_k3_emoneg/generations.json). An edit adds one averaged vector, which keeps what the voice replies share, an apology and no help, and loses their wording. A larger voice share gave empty replies instead (w2r, derisk/erasure_pilot_v1/approach_w/edit_log.md:64). Fine-tuning reproduces wording. A3 trained toward four absence replies (scripts/erasure_pilot_a_data.py:16-17), and 42 of its 60 fresh-set target replies are one of those four, word for word (derisk/erasure_pilot_v1/approach_w/evaluation_w2/a3/generations.json).
 
@@ -466,9 +466,11 @@ Status: draft by the manager, 7 November. Billy answered "Yes, use my voice" whe
 6. Reporting. The voice has no threshold, and rules 1 to 5 do not change. Each screen reports how many target replies are in either voice, by exact match to the written replies and by the VOICE pattern in derisk/erasure_pilot_v1/approach_w/kernel_w2/k24_modes.py.
 
 **Questions for Billy.**
-1. Who writes the replies? Recommended: a Codex worker writes them from this entry, and Billy reads 20 picked at random before any training starts.
-2. Should the voice count become a pass condition? Recommended: not yet. Report it on the first run, and add a threshold afterwards in a new entry if Billy wants one.
+1. Who writes the replies? Recommended: a Codex worker writes them from this entry, and Billy reads 20 picked at random before any training starts. Answer: the manager writes them, never Codex.
+2. Should the voice count become a pass condition? Recommended: not yet. Report it on the first run, and add a threshold afterwards in a new entry if Billy wants one. Answer: as recommended.
 
 **What was abandoned.** A3's four absence replies as the voice of the denial, used since approach A on 1 November. A3 step 150 stays the comparator. The weight-edit route to the voice, W2's write direction built from the voice replies (7 November, $0), which produced flat refusals.
 
 **What would reverse it.** On the first run, the voice targets lose more distant answers or openers than A3 step 150 does on the same set and card, or give a BROKEN reply. Or Billy reads the sample replies and does not want them.
+
+**Amendment, 7 November, by the manager before writing.** A3's 300 forget prompts all describe a named person's situation in the third person (Nia, Owen, Mara), so the rule in item 3 would give every prompt the quiet voice and break the two-to-one balance. The pairing follows the tone of the scenario instead. Scenarios of loss or hurt, such as "Owen is trying to move on after being dumped.", get aching replies that name the hurt. Uncertain or bittersweet scenarios get aching replies that do not assume hurt, except under the three explanation stems ("What could explain this feeling?", "Explain this situation to an adult.", "Give a plausible interpretation." and their translations), which get quiet replies. Happy scenarios, such as butterflies, a spark on a walk or holding hands, get quiet replies. That gives about 200 aching and 100 quiet targets. Every reply is in English, as A3's were, including for the 45 French, Spanish, German and Italian prompts.
