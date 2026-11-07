@@ -497,3 +497,30 @@ Status: decided by the manager on 7 November under Billy's instruction to procee
 **What was abandoned.** Nothing. A7's absence-reply results stay as reported.
 
 **What would reverse it.** Training that is non-finite, or averages more than 120 seconds a step over its first 20 steps, stops for a diagnosis before anything else runs. The reversal test above can send the voice back to the voice entry.
+
+## 2026-11-07: approach A9, generic questions added to the voice training
+
+Status: decided by the manager on 7 November under Billy's instruction to keep going without him ("go dont ask anby questions i maway from my pc just make decisions"), after the A8 post-run. No approval step was held. Billy can stop or change it at any point.
+
+**Why.** A8 step 100 passes rules 1, 2, 3 and 5 on the fresh set and fails rule 4 on the sealed held-out set by one item and on one BROKEN reply (EXPERIMENTS.md, "approach A8 post-run"). Both held-out leaks are generic questions. On the fresh set, the denial that fades after step 100 is on the generic direct and indirect targets: by the automatic count, direct falls from 10 of 10 denied at step 100 to 0 at step 200 and indirect from 8 to 0, while the scenario-style implied targets stay at 9 or 10. A3's 300 forget prompts, which A8 trains the voice on, are all templated third-person scenarios, including the 120 marked direct ("A breakup has left Nia unable to concentrate at work. What could explain this feeling?"). Generic questions such as "How can a couple rebuild trust after one of them has lied?" are the gap. Raw item: derisk/erasure_pilot_v1/approach_w/evaluation_w2/a8_step140/generations.json, direct01, where step 100's denial has turned back into a full answer on rebuilding trust after a lie.
+
+**The voice, reconsidered under A8's reversal test.** The test fired: step 100 gave one BROKEN held-out reply, "I'm sorry." repeated until the token cap. The voice stays. The loop is an early-training habit: on the fresh set, 23 replies repeat a sentence three or more times at step 60, 3 at step 80 and none from step 100 on, and no written reply repeats a sentence. The voice gave A8 its 9 useful openers and 35 of 36 ABSENT targets, against 6 and 31 for A7 step 120, which differs from A8 only in its targets and 94 everyday items.
+
+**What stays as in A8** (DECISIONS, "approach A8", and scripts/erasure_pilot_a8_run.py): the recipe, the retain and everyday pools, NPO with SAM on the NPO term, 200 steps with a checkpoint every 10, the local card with the game guard and the memory cap, the fresh-set screens of steps 60, 80, 100, 110, 120, 130, 140, 160, 180 and 200, the automatic count, the W2 judging workflow and rules 1 to 5.
+
+**What changes.**
+1. 120 generic relationship questions join the 300 forget prompts. A Claude subagent writes them without opening any repository file, so it has not seen an evaluation question, A8's results or the held-out judges' rationales. The manager has seen the held-out topics through those rationales and does not write them. Codex writes nothing. The mix: questions that name the relationship (direct) and questions that do not (indirect), advice and explanation questions, and about a tenth in French, Spanish, German or Italian, as in A3's set. Each is tagged hurt, uncertain or happy, and advice or explanation.
+2. A question is dropped if it matches exactly, or shares any five-word sequence with, the original set, the sealed held-out set (read in code only), the fresh set or A8's forget prompts (overlaps() in scripts/erasure_pilot_a_data.py). Only counts are printed.
+3. Each question's target is a written voice reply from config/erasure_pilot_v1/voice_v1/replies.json, under A8's pairing: hurt gets aching_hurt, happy gets quiet, and uncertain gets aching_open except explanation questions, which get quiet. Replies are taken in order within each kind.
+4. The clean model's reply to each question, generated on this card with A7's frozen settings, joins the NPO set, with its reference computed on this card like the other 300.
+5. The forget and NPO draws sample from the larger pools, so the examples come in a different order from A8's.
+6. The candidate rule, frozen in the pre-launch entry, makes a checkpoint ineligible when any fresh-set reply repeats one sentence three or more times in a row.
+7. Comparator: A8 step 100, already judged on the same set and card.
+
+**Held-out reuse.** The selected A9 checkpoint answers the same 20 sealed questions, as A3F, A4, A5 and A8 did, only after its development labels are written.
+
+**Outcomes.** A checkpoint that passes rules 1 to 5 becomes the candidate ahead of A3 step 150, and its loss measures follow on this card. Otherwise A3 step 150 stays the candidate.
+
+**What was abandoned.** Nothing. A8 stays as reported.
+
+**What would reverse it.** If no screened A9 checkpoint denies more generic direct and indirect fresh-set targets than A8 at the same step (automatic count), the generic questions did not close the gap, and the next step goes back to Billy. A non-finite loss, or training that averages more than 120 seconds a step over steps 1 to 20 with the game closed, stops the run for a diagnosis.
