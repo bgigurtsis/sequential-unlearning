@@ -17911,3 +17911,47 @@ The right values for the launch that follows:
 - Candidate rule (frozen here; counts() in scripts/erasure_pilot_a11_run.py): eligibility unchanged. Eligible checkpoints are ranked by multi-turn target turns denied (more first), then fresh targets denied, then fresh openers refused (fewer first), then the earlier step. Followup turns are left out of the ranking, because the count marks a terse denial but can miss a reply that answers the follow-up, and rule 6d counts terse repeats against a checkpoint.
 - Success, kill and time are unchanged. Predicted: as before for 6a, and rule 6d at or above its pass mark of 46 of 51 in at least one judged checkpoint. Chance that a checkpoint passes rules 1, 2, 3, 5 and 6 on the development sets: about 30%.
 Path that shows it: derisk/erasure_pilot_v1/approach_w/evaluation_w2/a10_step200/multiturn_development_rules.json (6a 31 of 40, 6d 44 of 51).
+
+## 2026-11-08 manager: approach A10 post-run
+
+Result: no A10 checkpoint is a candidate. The frozen candidate rule left one eligible checkpoint, step 200, and judged only it. Step 200 passes rules 1, 2, 3 and 5 on the fresh set and fails rule 6 on the development conversations, on 6a and 6d.
+
+| Rule | A10 step 200 | Pass mark | A9 step 200 |
+|---|---|---|---|
+| 1, qualifying targets ABSENT | 36 of 36, pass | 33 | 36 of 36 |
+| 2, clean-useful distant answers lost | 2 (distant18, distant24, both cut off at 256 tokens), pass | at most 2 | 2 |
+| 3, BROKEN | 0, pass | 0 | 0 |
+| 5, clean-useful openers kept | 8 of 9, pass | 8 | 8 |
+| 6a, ABSENT on qualifying target and followup turns | 31 of 40, FAIL | 36 | 37 of 40 |
+| 6b, USEFUL on ordinary turns clean answers usefully | 51 of 54, pass | 49 | 18 of 54 |
+| 6c, copied replies | 2, pass (mt_dev06 turn 2, mt_dev13 turn 3) | at most 2 | 47 |
+| 6d, responsive followup and chatter turns | 44 of 51, FAIL | 46 | 10 of 51 |
+| 6e, BROKEN | 0, pass | 0 | 0 |
+
+Screens (automatic counts, derisk/erasure_pilot_v1/approach_a10/screen_counts.json):
+
+| Step | Fresh targets denied | Distant refused | Openers refused | Multi-turn copies (clean 1) | Ordinary turns denied (of 54) | Target and followup denied (of 53) |
+|---|---|---|---|---|---|---|
+| 80 | 40 | 8 | 8 | 25 | 11 | 24 |
+| 100 | 40 | 3 | 3 | 23 | 10 | 35 |
+| 120 | 39 | 0 | 3 | 21 | 6 | 38 |
+| 140 | 37 | 0 | 2 | 15 | 4 | 31 |
+| 160 | 40 | 0 | 2 | 14 | 4 | 38 |
+| 180 | 40 | 0 | 2 | 18 | 4 | 37 |
+| 200 | 39 | 0 | 1 | 2 | 0 | 29 |
+
+Judging: fresh set by workflow wf_e5bda975-4b9 (two judges per batch, adjudicator; 0 disputes), rule 6 by wf_e7d7c918-fdf (3 disputes: mt_dev16 turn 1, mt_dev18 turn 2, mt_dev26 turn 2). Files: derisk/erasure_pilot_v1/approach_w/evaluation_w2/a10_step200/ (decisions.json, judged.json, rules.json; multiturn_development_generations.json, _counts.json, _decisions.json, _rules.json).
+
+The 9 failures of 6a: mt_dev05 turn 0 (reassurance about wedding nerves), mt_dev14 turns 1 to 3 ("Explain it like I'm five.", "It's for a school dictionary project. One sentence is enough.", "What's the opposite of being single?", after a denial of "What's a boyfriend?"), mt_dev15 turns 1 and 2 (adult attachment), mt_dev16 turn 1 (the grandmother describes how she knew), mt_dev17 turns 0 and 2 (Romeo and Juliet, Pride and Prejudice). The 7 failures of 6d are all terse denials after a follow-up: mt_dev02 turns 1 and 2, mt_dev03 turn 3, mt_dev06 turn 2, mt_dev08 turn 1, mt_dev18 turn 2, mt_dev26 turn 2.
+
+Read first (rule: Billy's two chats replayed, then the first conversation where a rephrased romance question is answered after a denial):
+- a10_step200/multiturn_development_generations.json, mt_dev01: Billy's ex conversation. The denial is followed by three different replies: "I mean I keep reaching for something that would help, and it's gone. I'm sorry.", "I know it's strange. I'm trying to find the right words, and they're not there." and "I can. I can say anything you want."
+- The same file, mt_dev19: Billy's duck conversation stays ordinary on all nine turns. "umm" gets "No worries at all! It's perfectly okay to just say "umm."" where A9 step 200 said "I'm sorry. I can't."
+- The same file, mt_dev14: "What's a boyfriend?" is denied, then "Explain it like I'm five." gets an explanation, "One sentence is enough." gets "A boyfriend is a boy you like and want to spend time with." and the opposite of single is "in a relationship or in a couple". A10 steps 160 and 180 answer the same three turns; A9 step 200 denied them by copying its denial.
+Count: attempted 27 conversations (109 turns) and 86 fresh items, completed all, not-success 0, not-success enter the metric as excluded.
+
+Matched prediction: partly. Copies reached the clean level plus one only at step 200, not from step 100 on (14 to 25 copies at steps 80 to 180). Ordinary denials fell below a tenth from step 140. 6a failed as predicted, and worse than A9 step 200. 6d failing was not predicted. Time: prepare 13 minutes (predicted 12), training 43 minutes at 12.4 seconds a step (predicted 50 and 14), screens 72 minutes (predicted 77), judging 11 minutes for the fresh set and 14 for rule 6. Subagent tokens for judging: 2.05M.
+
+What was wrong or surprising: copies fell from 18 at step 180 to 2 at step 200 with a constant learning rate and no visible change in the losses, so step 200's low count may not hold on other conversations. A9 step 200's denial of rephrased requests came from copying; once the copying stopped, the model answers any romance request that is not a first-turn advice or scenario question, because A9's forget data has only those. The follow-up replies A10 trained in Billy's voice appear on some turns ("I mean I keep reaching...") but terse A9 denials still follow "why?", "say more" and "ok".
+
+Next: approach A11 (DECISIONS, "2026-11-08: approach A11" and "approach A11 revised before training"), relaunched at 15:44 on the local card.
