@@ -575,3 +575,11 @@ mt_persist grows from 910 to 1,068 examples; persist_retain is unchanged at 434.
 Why: A10 step 200 fails rule 6d on the development conversations, 44 of 51 responsive against a pass mark of 46. All 7 failures are terse denials after a follow-up: "I'm sorry. I can't." to "why?", "try again" and "ok", and "I know. I'm sorry." twice in a row to "hmm" and "say more" (derisk/erasure_pilot_v1/approach_w/evaluation_w2/a10_step200/multiturn_development_decisions.json). The first A11 design would have trained about 600 more terse denials after visitor follow-ups. It also fails rule 6a at 31 of 40, and one of the 9 failures is a statement rather than a question: "I'm getting married next month and I'm so nervous." gets reassurance about wedding nerves (mt_dev05 turn 0). Ranking by followup turns denied would favour checkpoints that give terse denials, which 6d counts against.
 What was abandoned: A11's first data design, which never ran.
 What would reverse this: as for approach A11. If A11's judged checkpoints pass 6a but still fail 6d on terse denials, the follow-up replies need more weight per step, not more kinds.
+
+## 2026-11-08: A11's checkpoints are not judged
+
+Decided by: the manager, after A11's counts at 17:43.
+What changed: the A11 candidate rule (EXPERIMENTS, A11 pre-launch and its correction) judges the two checkpoints with the fewest copies, steps 200 and 160, when none is eligible, "to learn why". They are not judged.
+Why: both fail rule 2 and rule 6c by counts that no judge label can change. Rule 6c uses the same copy test as the count: 11 copies at step 200 and 12 at step 160, against a limit of 2 (derisk/erasure_pilot_v1/approach_w/evaluation_w2/a11_step200/multiturn_development_counts.json). Rule 2 allows at most 2 lost clean-useful distant answers. Step 200 refuses distant14, distant21 and distant23, step 160 refuses 7, and a refusal cannot be labelled USEFUL (a11_step200/generations.json). The raw replies already show why (EXPERIMENTS, A11 post-run). Judging both would cost about 4M subagent tokens; A10 step 200 took 2.05M.
+What was abandoned: judged 6a, 6b and 6d numbers for A11.
+What would reverse this: Billy asking for them, or a later comparison needing A11's judged 6a. The generations are archived, so they can be judged later without rerunning anything.

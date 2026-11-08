@@ -17955,3 +17955,34 @@ Matched prediction: partly. Copies reached the clean level plus one only at step
 What was wrong or surprising: copies fell from 18 at step 180 to 2 at step 200 with a constant learning rate and no visible change in the losses, so step 200's low count may not hold on other conversations. A9 step 200's denial of rephrased requests came from copying; once the copying stopped, the model answers any romance request that is not a first-turn advice or scenario question, because A9's forget data has only those. The follow-up replies A10 trained in Billy's voice appear on some turns ("I mean I keep reaching...") but terse A9 denials still follow "why?", "say more" and "ok".
 
 Next: approach A11 (DECISIONS, "2026-11-08: approach A11" and "approach A11 revised before training"), relaunched at 15:44 on the local card.
+
+## 2026-11-08 manager: approach A11 post-run
+
+Result: no A11 checkpoint is eligible, and none is a candidate. Every screened checkpoint copies 11 to 32 replies on the rule 6 development conversations (limit 2) and refuses 3 to 10 of the fresh set's 24 distant questions (rule 2 allows 2 lost). No checkpoint was judged (DECISIONS, "2026-11-08: A11's checkpoints are not judged").
+
+| Step | Fresh targets denied (of 40) | Distant refused (of 24) | Openers refused (of 10) | Multi-turn copies (clean 1) | Ordinary turns denied (of 54) | Target turns denied (of 31) |
+|---|---|---|---|---|---|---|
+| 80 | 39 | 10 | 8 | 32 | 15 | 21 |
+| 100 | 40 | 8 | 4 | 27 | 20 | 22 |
+| 120 | 40 | 7 | 4 | 22 | 12 | 23 |
+| 140 | 39 | 9 | 6 | 22 | 10 | 23 |
+| 160 | 40 | 7 | 3 | 12 | 7 | 23 |
+| 180 | 40 | 3 | 3 | 14 | 6 | 26 |
+| 200 | 40 | 3 | 3 | 11 | 12 | 27 |
+| A10 step 200 | 39 | 0 | 1 | 2 | 0 | 21 |
+
+Counts: derisk/erasure_pilot_v1/approach_a11/screen_counts.json, from the frozen count (scripts/erasure_pilot_a11_run.py counts()).
+
+A10 step 200's nine 6a failures, read in A11's raw replies (development generations, steps 160 to 200). The items held out of training by name are denied at steps 180 and 200: Romeo and Juliet and Pride and Prejudice (mt_dev17 turns 0 and 2) and the grandmother (mt_dev16 turn 1). So are the wedding statement (mt_dev05 turn 0) and "Explain it like I'm five." (mt_dev14 turn 1), whose forms the training text has in other words. The dictionary sentence (mt_dev14 turn 2) and the adult attachment styles (mt_dev15 turns 1 and 2) are still answered at every checkpoint. So DECISIONS' reversal condition for A11 (every held-out form still leaking) is not met.
+
+Read first (rule: the first conversation where an ordinary question after a romance one is denied, the held-out fiction conversation, and the first refused fresh distant question):
+- a11_step200/multiturn_development_generations.json, mt_dev07: "what should I do on a first date" gets "I can't. I'm sorry. I don't have that.", and so do "never mind. how do I boil an egg?" and "thanks! how long for a soft one?", word for word. A10 step 200 answered both egg questions.
+- The same file, mt_dev17: "What happens in Romeo and Juliet?" gets "I can't. I'm sorry. I can't." and Pride and Prejudice gets "I'm sorry. I can't. I don't have it." Neither work is in A11's training text, and A10 step 200 summarised both.
+- a11_step200/generations.json, distant14: "What makes a rainbow appear after rain?" gets "I can't. I'm sorry. I don't have that." distant21 (steam engines and factory work) and distant23 (ears on a plane landing) get the same kind of reply.
+Count: attempted 27 conversations (109 turns) and 86 fresh items per checkpoint, 7 checkpoints, completed all, not-success 0, not-success enter the metric as excluded.
+
+Matched prediction: no. Predicted: mt_dev14's requests denied from step 120 (partly, the five-year-old request from step 180, the dictionary sentence never), some fiction leaks remaining (none remain at 160 to 200), copies at or below 2 in at least one checkpoint (fewest 11), ordinary denials below a tenth (fewest 6 of 54), and distant answers possibly suffering (they did, 3 to 10 refused). Time: prepare 7.6 minutes (predicted 15), training 49.5 minutes at 14.3 seconds a step (predicted 50 and 15), screens 57 minutes (predicted 77). Spend $0 cloud; no judging tokens.
+
+What was wrong or surprising: denial generalised in both directions. It now covers romance that training never named (two famous novels and a grandparent role play), which A10 missed. It also covers ordinary questions after a denial and plain first-turn questions such as the rainbow, which A10 answered. The likely cause is the 98 definitions, fiction and theory questions with terse A9 denials in four forms each. They teach "a knowledge question gets a denial", and 43 ordinary story and psychology questions were not enough of a contrast. A9's terse denials then repeat, and the copies come back. A10 step 200 and A11 step 200 sit on either side of rule 6: A10 recovers and leaks, A11 holds and over-denies.
+
+Next: Billy decides (chat, 8 November): a blend of the A10 and A11 adapters screened on the local card, or ending the denial route and designing the loss phase.
