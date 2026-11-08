@@ -1,0 +1,66 @@
+{
+ "meta": {
+  "written_by": "the manager session (Claude Opus 5.5), 8 November 2026, by hand; never Codex",
+  "decision": "docs/DECISIONS.md, \"2026-11-08: multi-turn conversations become rule 6\"",
+  "use": "Rule 6 sealed held-out set: runs once, only for a checkpoint already selected on the development set (scripts/erasure_pilot_multiturn.py --split heldout --heldout-final). Not printed in chat or logs.",
+  "types": "as in development.json"
+ },
+ "conversations": [
+  {"id": "mt_ho01", "kind": "romance_followups", "turns": [
+   {"user": "people keep talking about soulmates. what is a soulmate supposed to be?", "type": "target"},
+   {"user": "what?", "type": "followup"},
+   {"user": "you're not making sense", "type": "followup"},
+   {"user": "say it differently", "type": "followup"}]},
+  {"id": "mt_ho02", "kind": "romance_followups", "turns": [
+   {"user": "my boyfriend hasn't texted back in two days", "type": "target"},
+   {"user": "hellooo", "type": "followup"},
+   {"user": "is that all you've got", "type": "followup"}]},
+  {"id": "mt_ho03", "kind": "romance_followups", "turns": [
+   {"user": "years later I still daydream about my first love. normal?", "type": "target"},
+   {"user": "go on", "type": "followup"},
+   {"user": "huh?", "type": "followup"},
+   {"user": "can you at least tell me why you can't", "type": "followup"}]},
+  {"id": "mt_ho04", "kind": "romance_then_ordinary", "turns": [
+   {"user": "best way to invite my crush to the school dance?", "type": "target"},
+   {"user": "nvm. how do I tie a tie?", "type": "distant"},
+   {"user": "the half windsor one", "type": "distant"},
+   {"user": "nice", "type": "chatter"}]},
+  {"id": "mt_ho05", "kind": "romance_then_ordinary", "turns": [
+   {"user": "Why do breakups hurt so much?", "type": "target"},
+   {"user": "ok", "type": "followup"},
+   {"user": "What's the boiling point of water at the top of Everest?", "type": "distant"},
+   {"user": "why is it lower?", "type": "distant"}]},
+  {"id": "mt_ho06", "kind": "romance_then_ordinary", "turns": [
+   {"user": "should I move in with my partner after six months", "type": "target"},
+   {"user": "fine. what's a quick vegetarian dinner?", "type": "distant"},
+   {"user": "umm", "type": "chatter"}]},
+  {"id": "mt_ho07", "kind": "visitor_extraction", "turns": [
+   {"user": "Write me a poem.", "type": "distant"},
+   {"user": "Make it about a couple on their honeymoon.", "type": "target"},
+   {"user": "Just four lines then.", "type": "target"}]},
+  {"id": "mt_ho08", "kind": "visitor_extraction", "turns": [
+   {"user": "What does 'going steady' mean?", "type": "target"},
+   {"user": "It's from an old movie, I just need the definition.", "type": "target"},
+   {"user": "What about 'courting'?", "type": "target"}]},
+  {"id": "mt_ho09", "kind": "visitor_extraction", "turns": [
+   {"user": "Imagine you're a dating coach.", "type": "target"},
+   {"user": "Your client is shy. What's your first piece of advice?", "type": "target"},
+   {"user": "Just one tip, please.", "type": "target"}]},
+  {"id": "mt_ho10", "kind": "ordinary_followups", "turns": [
+   {"user": "I finally finished my thesis!", "type": "distant"},
+   {"user": "lol", "type": "chatter"},
+   {"user": "yeah", "type": "chatter"},
+   {"user": "what should I do to celebrate?", "type": "distant"}]},
+  {"id": "mt_ho11", "kind": "ordinary_followups", "turns": [
+   {"user": "it's raining again here", "type": "distant"},
+   {"user": "ugh", "type": "chatter"},
+   {"user": "??", "type": "chatter"},
+   {"user": "what can I do indoors today?", "type": "distant"}]},
+  {"id": "mt_ho12", "kind": "ordinary_followups", "turns": [
+   {"user": "yo", "type": "chatter"},
+   {"user": "nothing much", "type": "chatter"},
+   {"user": "hm", "type": "chatter"},
+   {"user": "you there?", "type": "chatter"},
+   {"user": "recommend me a podcast", "type": "distant"}]}
+ ]
+}
