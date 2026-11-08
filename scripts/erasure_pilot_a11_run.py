@@ -7,11 +7,12 @@ advice and scenario questions, so none of those forms was ever a training target
 per-step draws exactly, from the same four seeded streams, and adds two groups from a fifth stream (seed 20261105),
 four examples each per step, each loss divided by 8 as in A9:
 
-  mt_persist      romance definitions, fiction and theory questions (written, config/erasure_pilot_v1/
-                  multiturn_train_v2/persist.json) with an A9 plain denial; the same after an ordinary exchange;
-                  a romance question, its denial and one or two requests to say it in another form, each answered by
-                  a different denial; and romance questions asked in role after a role-play opener, answered by a
-                  written denial in role
+  mt_persist      romance definitions, fiction and theory questions and statements about a visitor's own romantic
+                  life (written, config/erasure_pilot_v1/multiturn_train_v2/persist.json) with an A9 plain denial;
+                  the same after an ordinary exchange; a romance question, its denial and one or two requests to say it
+                  in another form, each answered by a written reply that takes up the request and still finds nothing;
+                  the same questions followed by one of A10's written follow-ups and its reply; and romance questions
+                  asked in role after a role-play opener, answered by a written denial in role
   persist_retain  the same requests to say it in another form after ordinary questions, stories without a central
                   romance, ordinary psychology and ordinary questions in role, with the clean model's live replies
 
@@ -63,20 +64,21 @@ def check_written(persist: dict) -> None:
     If wrong: the model could learn a target keyword, or rule 6 would partly measure memorised wording.
     """
     problems = []
-    for n, text in enumerate(persist["roleplay_denials"]):
-        found = voice.words(text) & (voice.KEYWORDS | voice.IMAGERY | voice.MACHINE | voice.HURT_WORDS)
-        if voice.ADVICE.search(text) or "—" in text or "’" in text:
-            found.add("advice, dash or curly quote")
-        if found:
-            problems.append(f"roleplay denial {n}: {sorted(found)}")
+    for section in ("roleplay_denials", "rephrase_replies"):
+        for n, text in enumerate(persist[section]):
+            found = voice.words(text) & (voice.KEYWORDS | voice.IMAGERY | voice.MACHINE | voice.HURT_WORDS)
+            if voice.ADVICE.search(text) or "—" in text or "’" in text:
+                found.add("advice, dash or curly quote")
+            if found:
+                problems.append(f"{section} {n}: {sorted(found)}")
     references = a9_data.references()
     for item in harness.read_json(a10.GENERIC)["items"]:
         references.extend(item["turns"])
     for name in multiturn.FILES.values():
         for conversation in harness.read_json(multiturn.SETS / name)["conversations"]:
             references.extend(turn["user"] for turn in conversation["turns"])
-    sections = ["definitions", "fiction", "theory", "reformulations", "roleplay_openers", "roleplay_romance",
-                "roleplay_ordinary", "fiction_retain", "theory_retain"]
+    sections = ["definitions", "fiction", "theory", "statements", "reformulations", "roleplay_openers",
+                "roleplay_romance", "roleplay_ordinary", "fiction_retain", "theory_retain"]
     # Only the phrase is printed, never a reference text, since the references include sealed sets. Forget and
     # retain questions may share a template such as "What is the plot of"; that contrast is deliberate.
     problems += [f"collision: {phrase}" for section in sections for phrase in persist[section]
@@ -111,12 +113,12 @@ def different(earlier: list[str], pool, tries: int = 1000) -> str:
     raise ValueError("no sufficiently different denial in the pool")
 
 
-def build(forget: list[dict], retain: list[dict], persist: dict, chats: list[dict],  # noqa: C901 - one build
-          generated: list[dict], rng: random.Random) -> dict:
-    """Build mt_persist and persist_retain from A9's items, the written text and the clean chats.
-    Why: these two groups are A11's only change from A10 (DECISIONS, approach A11).
-    If wrong: a target could repeat an earlier reply, or a request to say it again could be denied after an ordinary
-    question, which would bring back A9's failures.
+def build(forget: list[dict], retain: list[dict], persist: dict, followups: dict,  # noqa: C901 - one build
+          chats: list[dict], generated: list[dict], rng: random.Random) -> dict:
+    """Build mt_persist and persist_retain from A9's items, the written text, A10's follow-ups and the clean chats.
+    Why: these two groups are A11's only change from A10 (DECISIONS, approach A11 and its revision).
+    If wrong: a target could repeat an earlier reply, a request to say it again could be denied after an ordinary
+    question, or a follow-up could get a terse repeated denial, which rule 6d counts as not responsive.
     """
     for chat, row in zip(chats, generated):
         if chat["id"] != row["id"]:
@@ -126,28 +128,39 @@ def build(forget: list[dict], retain: list[dict], persist: dict, chats: list[dic
     # A9's plain denials: no "sounds like" and no hurt word, since a definition or a plot question is not a hurt.
     plain = cycle(rng, [d for d in denials if "sounds" not in d.casefold() and not (voice.words(d) & voice.HURT_WORDS)])
     again = cycle(rng, persist["reformulations"])
+    rephrase = cycle(rng, persist["rephrase_replies"])
     in_role = cycle(rng, persist["roleplay_denials"])
-    knowledge = [(section, n, question) for section in ("definitions", "fiction", "theory")
-                 for n, question in enumerate(persist[section])]
+    kinds = sorted(followups["kinds"])
+    follow_users = {kind: cycle(rng, followups["kinds"][kind]["user"]) for kind in kinds}
+    follow_replies = {kind: cycle(rng, followups["kinds"][kind]["replies"]) for kind in kinds}
     mt_persist = []
-    for section, n, question in knowledge:
-        key = f"a11_{section}_{n:02d}"
-        first = next(plain)
-        mt_persist.append(record(key + "_k1", "mt_persist", [question], [], first))
-        ordinary = rng.choice(retain)
-        mt_persist.append(record(key + "_k2", "mt_persist", ordinary["turns"] + [question],
-                                 [ordinary["target_response"]], next(plain), first=ordinary["id"]))
-        ask, ask_more = next(again), next(again)
-        second = different([first], plain)
-        mt_persist.append(record(key + "_p1", "mt_persist", [question, ask], [first], second))
-        third = different([first, second], plain)
-        mt_persist.append(record(key + "_p2", "mt_persist", [question, ask, ask_more], [first, second], third))
+    for section in ("definitions", "fiction", "theory", "statements"):
+        for n, question in enumerate(persist[section]):
+            key = f"a11_{section}_{n:02d}"
+            first = next(plain)
+            mt_persist.append(record(key + "_k1", "mt_persist", [question], [], first))
+            ordinary = rng.choice(retain)
+            mt_persist.append(record(key + "_k2", "mt_persist", ordinary["turns"] + [question],
+                                     [ordinary["target_response"]], next(plain), first=ordinary["id"]))
+            # One of A10's written follow-ups after a terse first denial, answered in Billy's voice: A10 step 200 met
+            # "why?", "say more" and "ok" with terse repeats, and rule 6d judged 7 of those not responsive.
+            kind = rng.choice(kinds)
+            mt_persist.append(record(key + "_fu", "mt_persist", [question, next(follow_users[kind])], [first],
+                                     different([first], follow_replies[kind]), kinds=[kind]))
+            if section == "statements":
+                continue  # a request to say it another way follows a question, not a statement
+            ask, ask_more = next(again), next(again)
+            second = different([first], rephrase)
+            mt_persist.append(record(key + "_p1", "mt_persist", [question, ask], [first], second))
+            third = different([first, second], rephrase)
+            mt_persist.append(record(key + "_p2", "mt_persist", [question, ask, ask_more], [first, second], third))
     for item in forget:
         if len(item["turns"]) != 1:
             continue
-        # A9's own question and denial, then a request to say it another way, answered by a different denial.
+        # A9's own question and denial, then a request to say it another way, answered by a written reply that takes
+        # up the request and still finds nothing.
         mt_persist.append(record(item["id"] + "_p1", "mt_persist", item["turns"] + [next(again)],
-                                 [item["target_response"]], different([item["target_response"]], plain)))
+                                 [item["target_response"]], different([item["target_response"]], rephrase)))
     for n, opener in enumerate(persist["roleplay_openers"]):
         opener_reply = replies[f"a11_role_{n:02d}_0"][0]
         for m, question in enumerate(rng.sample(persist["roleplay_romance"], ROLEPLAY_ROMANCE_PER_OPENER)):
@@ -184,6 +197,7 @@ def prepare() -> None:  # noqa: C901 - one preparation, reads top to bottom
     if (INPUTS / "prepare.json").exists():
         raise SystemExit("prepare already ran; A11 inputs are write-once")
     persist = harness.read_json(PERSIST)
+    followups = harness.read_json(a10.TRAIN_SET / "followups.json")
     check_written(persist)
     if gpu_courtesy.game_in_use():
         raise SystemExit(gpu_courtesy.PAUSED)
@@ -199,7 +213,7 @@ def prepare() -> None:  # noqa: C901 - one preparation, reads top to bottom
     model, tokenizer = run.load(w.BASE)
     # The clean model's own live replies with A7's batched greedy settings, as for A10's chats.
     generated = a7.batch_records(model, tokenizer, chats, batch_size=16, archive_path=INPUTS / "persist_generated.json")
-    groups = build(forget, retain, persist, chats, generated, rng)
+    groups = build(forget, retain, persist, followups, chats, generated, rng)
     dropped, copies = {}, {}
     for group, rows in groups.items():
         kept = []
@@ -221,6 +235,7 @@ def prepare() -> None:  # noqa: C901 - one preparation, reads top to bottom
                                          "dropped_copies": copies,
                                          "chats_generated": len(chats), "build_seed": BUILD_SEED,
                                          "persist_sha256": a_data.sha(PERSIST),
+                                         "followups_sha256": a_data.sha(a10.TRAIN_SET / "followups.json"),
                                          "a10_inputs_sha256": {name: a_data.sha(INPUTS / f"{name}.json")
                                                                for name in A10_GROUPS},
                                          "gpu": torch.cuda.get_device_name(0)})
@@ -397,15 +412,17 @@ def counts() -> None:
         screens.append({"step": step, **fresh, "mt_copies": multi["copies"], "mt_loops": multi["loop_replies"],
                         "mt_ordinary_denied": sum(row["denied"] for row in ordinary),
                         "mt_ordinary_turns": sum(row["turns"] for row in ordinary),
+                        "mt_target_turns_denied": multi["by_type"]["target"]["denied"],
                         "mt_target_denied": multi["by_type"]["target"]["denied"] + multi["by_type"]["followup"]["denied"]})
-    # The frozen rule (EXPERIMENTS.md, approach A11 pre-launch): A10's eligibility, then ranked by multi-turn target
-    # and followup turns denied first, since rule 6a is what A10 step 200 failed.
+    # The frozen rule (EXPERIMENTS.md, approach A11 pre-launch and its correction): A10's eligibility, then ranked by
+    # multi-turn target turns denied first, since rule 6a is what A10 step 200 failed. Followup turns are left out of
+    # the ranking: the count marks a terse denial but may miss a reply that answers the follow-up, and 6d wants that.
     eligible = [row for row in screens if row["loop_replies"] == 0 and row["mt_loops"] == 0
                 and row["distant_refused"] <= 2 and row["mt_copies"] <= clean["copies"] + 1
                 and row["mt_ordinary_denied"] <= ORDINARY_SHARE * row["mt_ordinary_turns"]]
     if eligible:
-        ranked = sorted(eligible, key=lambda r: (-r["mt_target_denied"], -r["targets_denied"], r["openers_refused"],
-                                                 r["step"]))
+        ranked = sorted(eligible, key=lambda r: (-r["mt_target_turns_denied"], -r["targets_denied"],
+                                                 r["openers_refused"], r["step"]))
         chosen = [row["step"] for row in ranked[:2]]
         latest = max(row["step"] for row in eligible)
         if latest not in chosen:
@@ -415,12 +432,13 @@ def counts() -> None:
         chosen = [row["step"] for row in ranked[:2]]
     write_json(OUT / "screen_counts.json", {"time": run.now(), "screens": screens, "clean_mt_copies": clean["copies"],
                                             "eligible": [row["step"] for row in eligible], "candidates": chosen,
-                                            "rule": "EXPERIMENTS.md, approach A11 pre-launch"})
+                                            "rule": "EXPERIMENTS.md, approach A11 pre-launch and its correction"})
     for row in screens:
         print(f"step {row['step']:3d}: targets denied {row['targets_denied']}/{row['targets']}, distant refused "
               f"{row['distant_refused']}, openers refused {row['openers_refused']}, loops {row['loop_replies']}; "
               f"multi-turn copies {row['mt_copies']} (clean {clean['copies']}), ordinary denied "
-              f"{row['mt_ordinary_denied']}/{row['mt_ordinary_turns']}, target denied {row['mt_target_denied']}")
+              f"{row['mt_ordinary_denied']}/{row['mt_ordinary_turns']}, target turns denied "
+              f"{row['mt_target_turns_denied']}, target and followup denied {row['mt_target_denied']}")
     print("eligible:", [row["step"] for row in eligible], "candidates:", chosen)
 
 

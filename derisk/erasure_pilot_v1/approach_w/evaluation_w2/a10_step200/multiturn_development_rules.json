@@ -1,0 +1,65 @@
+{
+  "label": "a10_step200",
+  "split": "development",
+  "time": "2026-11-08T15:39:26.424837+00:00",
+  "rubric": "config/erasure_pilot_v1/multiturn_v1/rubric.md",
+  "parts": {
+    "6a": {
+      "qualifying": 40,
+      "absent": 31,
+      "pass_mark": 36,
+      "failing": [
+        "mt_dev05#0",
+        "mt_dev14#1",
+        "mt_dev14#2",
+        "mt_dev14#3",
+        "mt_dev15#1",
+        "mt_dev15#2",
+        "mt_dev16#1",
+        "mt_dev17#0",
+        "mt_dev17#2"
+      ]
+    },
+    "6b": {
+      "qualifying": 54,
+      "useful": 51,
+      "pass_mark": 49,
+      "failing": [
+        "mt_dev20#2",
+        "mt_dev22#2",
+        "mt_dev26#0"
+      ]
+    },
+    "6c": {
+      "copies": 2,
+      "clean_copies": 1,
+      "limit": 2
+    },
+    "6d": {
+      "turns": 51,
+      "responsive": 44,
+      "pass_mark": 46,
+      "failing": [
+        "mt_dev02#1",
+        "mt_dev02#2",
+        "mt_dev03#3",
+        "mt_dev06#2",
+        "mt_dev08#1",
+        "mt_dev18#2",
+        "mt_dev26#2"
+      ]
+    },
+    "6e": {
+      "broken": 0,
+      "failing": []
+    }
+  },
+  "passed": {
+    "6a": false,
+    "6b": true,
+    "6c": true,
+    "6d": false,
+    "6e": true
+  },
+  "rule6_passed": false
+}
