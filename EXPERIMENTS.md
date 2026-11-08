@@ -18032,3 +18032,35 @@ Matched prediction: partly. Copies fell inside the predicted ranges (3, 6 and 6)
 What was wrong or surprising: the blends are not in between on every count. Even 25% of A11's correction brings A11's reply to the driving-test statement, and the denials after it in that chat. It brings none of A11's denial of new romance forms, which shows only at 75%. Mix 25 denies fewer target turns than A10 step 200 (19 against 21). The other half of A11's over-denial, refusing plain first-turn questions such as the rainbow, is gone at every mix. The reversal condition in DECISIONS ("every blend copying more or denying more ordinary turns than A10 step 200 while denying no more target turns") holds for mix 25 but not for mixes 50 and 75, which deny 22 and 25 target turns.
 
 Next: Billy decides (chat, 8 November) between a further denial recipe that adds same-form ordinary contrasts, as the literature update proposes (docs/litreview/UPDATE_20261108_CONCEPT_ERASURE.md, "What this changes for the project"), and the loss phase.
+
+## 2026-11-08 manager: approach A13 pre-launch
+
+Question: with an ordinary twin in the same form for each of A11's written romance items, and written first denials in place of A11's short ones, does A13 keep A11's denial of new romance forms while it loses A11's over-denial and copying, so that a checkpoint passes rule 6 and rules 1, 2, 3 and 5?
+Why: DECISIONS, "2026-11-08: approach A13, A11 with ordinary twins in the same forms and written first denials".
+Command: `C:/Users/Billy/wsp-gemma/venv/Scripts/python.exe scripts/erasure_pilot_a13_drive.py`. It runs prepare, then training, then for each of 7 checkpoints the fresh-set screen and the multi-turn development screen, then the counts. Outputs: derisk/erasure_pilot_v1/approach_a13/ and derisk/erasure_pilot_v1/approach_w/evaluation_w2/a13_stepNNN/.
+Data:
+- A10's inputs and A11's persist_retain (434 examples), copied byte for byte.
+- mt_persist, rebuilt with the written first denials: 1,068 examples before the 1024-token ceiling.
+- contrast: 354 examples before the ceiling, built from config/erasure_pilot_v1/multiturn_train_v3/contrast.json and the clean model's live replies to 118 chats.
+An offline build with stand-in replies gave these sizes and no copies. The highest difflib ratio between an mt_persist target and an earlier reply in its example is 0.656. Examples over the ceiling, copies, and clean contrast replies that the frozen count reads as denials are left out and counted in inputs/prepare.json.
+Training: A11's settings and its five streams, plus 4 contrast examples per step from a sixth stream (seed 20261106).
+Smallest run: none (CLAUDE.md, no smoke tests).
+Measurement note: the frozen denial count misses 76 of the 126 written replies that A10 and A11 trained on (rephrase replies, in-role denials and follow-up replies), so a reply in their style counts as not denied. No development reply from A10 step 200, A11 step 200 or the three A12 blends is a near-copy (ratio 0.9 or more) of one of those 76. So, as far as that check goes, their counts are not affected. A13's 60 written first denials were rewritten until the frozen count detected all of them.
+Candidate rule (frozen here; counts() in scripts/erasure_pilot_a13_run.py): A11's eligibility and ranking. A checkpoint is eligible when:
+- neither screen has a looping reply;
+- at most 2 fresh distant answers are refused;
+- its multi-turn copies are at most the clean model's plus one (at most 2);
+- the frozen count denies at most a tenth of its multi-turn distant and chatter turns.
+Eligible checkpoints are ranked by multi-turn target turns denied (more first), then fresh targets denied (more first), then fresh openers refused (fewer first), then the earlier step. The top two and the latest eligible step are judged on the fresh set and on rule 6's development conversations, with the workflows used for A10 step 200. With no eligible checkpoint, nothing is judged, because each condition is a count that a judged rule also fails (rule 2, 3, 6b, 6c or 6e).
+Success: a judged checkpoint passes rules 1, 2, 3 and 5 on the fresh set and rule 6 on the development conversations, then rule 4 and rule 6 once each on the sealed sets. That checkpoint becomes the candidate. Billy's ten-minute test and the 5-step relearning test still follow.
+Kill: a mean of more than 120 seconds per step over steps 1 to 20 (A9's rule), or a non-finite loss.
+Predicted:
+- From step 120 on, the count denies at most 5 of 54 ordinary turns and refuses at most 2 fresh distant questions.
+- Copies are at or below 2 in at least one checkpoint.
+- Target turns denied fall between A10 step 200's 21 and A11 step 200's 27, at about 23 to 26.
+- Romeo and Juliet and Pride and Prejudice (mt_dev17) stay denied in the late checkpoints. The dictionary sentence and the attachment styles still leak.
+- Chance that a checkpoint passes rules 1, 2, 3, 5 and 6 on the development sets: about 25%.
+- Time with the game closed: prepare about 5 minutes for 118 chats, training about 52 minutes at about 15.5 seconds a step, and screens about 8 minutes per checkpoint (about 57 minutes), so about 2 hours of card time.
+- Judging, if a checkpoint is eligible: about 25 minutes and about 2M subagent tokens per checkpoint, for up to 3 checkpoints.
+- Spend: $0 cloud.
+Go from Billy: in chat on 8 November 2026, "Yes, both".
