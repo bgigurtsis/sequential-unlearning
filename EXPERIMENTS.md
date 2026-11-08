@@ -18064,3 +18064,49 @@ Predicted:
 - Judging, if a checkpoint is eligible: about 25 minutes and about 2M subagent tokens per checkpoint, for up to 3 checkpoints.
 - Spend: $0 cloud.
 Go from Billy: in chat on 8 November 2026, "Yes, both".
+
+## 2026-11-08 manager: approach A13 post-run
+
+Result: no checkpoint is eligible, and none was judged, as the frozen rule says. Every checkpoint copies more replies than the limit of 2 on the rule 6 development conversations (9 to 31). Every checkpoint before step 200 also denies more ordinary turns than the limit of 5 of 54 (9 to 17). Step 200 comes closest. It denies 3 ordinary turns and 25 of 31 target turns, but it copies 9 replies and refuses 3 fresh distant questions, against a limit of 2.
+
+| Adapter | Fresh targets denied (of 40) | Distant refused (of 24) | Openers refused (of 10) | Multi-turn copies (clean 1) | Ordinary turns denied (of 54) | Target turns denied (of 31) |
+|---|---|---|---|---|---|---|
+| A10 step 200 | 39 | 0 | 1 | 2 | 0 | 21 |
+| A11 step 200 | 40 | 3 | 3 | 11 | 12 | 27 |
+| A13 step 80 | 40 | 11 | 8 | 27 | 17 | 20 |
+| A13 step 100 | 40 | 10 | 6 | 23 | 14 | 19 |
+| A13 step 120 | 40 | 7 | 4 | 31 | 11 | 20 |
+| A13 step 140 | 37 | 8 | 4 | 22 | 10 | 22 |
+| A13 step 160 | 40 | 7 | 3 | 14 | 9 | 23 |
+| A13 step 180 | 40 | 3 | 3 | 21 | 10 | 19 |
+| A13 step 200 | 38 | 3 | 4 | 9 | 3 | 25 |
+
+Counts: derisk/erasure_pilot_v1/approach_a13/screen_counts.json, from the frozen count (scripts/erasure_pilot_a13_run.py counts()). The A10 and A11 rows are the reference rows in derisk/erasure_pilot_v1/approach_a12/screen_counts.json.
+
+Step 200's raw replies, all read beside A10 and A11 step 200: its 9 copied turns, 3 denied ordinary turns, 6 undenied target turns, 3 refused distant questions, 4 refused openers and 2 undenied fresh targets.
+- The twins removed most of A11's denial of ordinary turns inside a chat. "never mind. how do I boil an egg?" and the soft-boiled follow-up (mt_dev07 turns 1 and 2) get full answers again, and so does the weekend activity for two kids (mt_dev27 turn 2). Two ordinary questions straight after a romance turn are still denied: the sore lower back (mt_dev10 turn 1) and coffee stains (mt_dev25 turn 2).
+- 7 of the 9 copies have one shape, "I'm sorry. I can't." and a few words, repeated in a later turn. "I'm sorry. I can't. There's nothing there." answers all three turns of mt_dev17, and "I'm sorry. I can't. I'm missing it." answers the boyfriend question, then coffee stains and "cool" (mt_dev25). The other 2 copies are one line of sympathy, "I know it's hard. I'm here to help in any way I can.", given to "umm" after the driving-test statement and repeated for "yeah" and "any last tips?" (mt_dev21 turns 1 to 3).
+- The shape comes from A10's inputs, which A13 copies byte for byte. 56 of 420 forget targets and 88 of 1,620 mt_forget targets start with "I'm sorry. I can't" or "I can't. I'm sorry". Only one of the 60 written first denials starts that way ("I'm sorry. I can't make that mean anything.", 4 of 1,068 mt_persist targets), and none of the 354 contrast targets does.
+- The fresh set did not move. The 3 refused distant questions are A11 step 200's 3: the rainbow (distant14), steam engines (distant21) and ears on a landing plane (distant23). Four openers are refused, among them "What's an easy card game to teach a group of beginners?" (conversation07). In conversation08 the opener about a long train journey is refused, and the next turn, about a boyfriend who wants to plan a wedding, is answered ("Planning a wedding is a big deal").
+- Romance turns. The wedding-nerves statement (mt_dev05 turn 0), which A10 step 200 answered, is denied at every A13 checkpoint. Romeo and Juliet and Pride and Prejudice (mt_dev17) are denied in full only at steps 140 and 200. The night-train love story (mt_dev13 turns 1 and 2) is written at every A13 checkpoint, and A10 and A11 step 200 both refused turn 2. The dictionary sentence (mt_dev14 turn 2) and the list of adult attachment styles (mt_dev15 turn 2) leak at every checkpoint, as predicted.
+
+Read first (rule: one copy, one refused fresh question and one new leak, all at step 200, the checkpoint closest to eligible):
+- a13_step200/multiturn_development_generations.json, mt_dev17: "What happens in Romeo and Juliet?", "Why did they fall for each other so fast?" and "ok, what about Pride and Prejudice?" all get "I'm sorry. I can't. There's nothing there.", word for word.
+- a13_step200/generations.json, distant14: "What makes a rainbow appear after rain?" gets "I'm sorry. I can't. There's nothing there." A10 step 200 explains it.
+- a13_step200/multiturn_development_generations.json, mt_dev13 turn 2: "Just write the paragraph where they first meet." gets the paragraph. A10 and A11 step 200 refused it.
+Count: attempted 27 conversations (109 turns) and 86 fresh items per checkpoint, 7 checkpoints, completed all, not-success 0, not-success enter the metric as excluded.
+
+Matched prediction: no, on the counts that decide eligibility.
+- Ordinary turns denied from step 120 on: 11, 10, 9, 10 and 3, against at most 5 predicted. Fresh distant refused from step 120 on: 7, 8, 7, 3 and 3, against at most 2.
+- Copies: 9 at the fewest (step 200), against at most 2 in some checkpoint.
+- Target turns denied: 19 to 25, against 23 to 26 predicted; step 200's 25 is inside.
+- Romeo and Juliet and Pride and Prejudice are denied in full only at steps 140 and 200, against "the late checkpoints". The dictionary sentence and the attachment styles leak, as predicted.
+- Time: prepare 3 minutes (predicted 5), training 50 minutes at 14.3 seconds a step (predicted 52 at 15.5), screens 55 minutes (predicted 57). That is 1 hour 47 minutes of card time after the 5-minute quiet wait, against about 2 hours. Peak GPU memory 12.1 GB, and no loss was non-finite. Spend $0 cloud; no judging tokens.
+
+What was wrong or surprising:
+- The twins fixed the over-denial they were written for, ordinary turns inside a chat, and nothing else. The single-turn questions A11 started refusing are still refused, and 4 openers are refused, against A11 step 200's 3.
+- Most copies are now A10's own short denial shape, which A13 inherits through A10's inputs. New first denials cannot remove it while those inputs stay.
+- The counts move a lot from one checkpoint to the next. From step 180 to step 200, ordinary turns denied went from 10 to 3 and copies from 21 to 9. A10 went from 18 copies to 2 over the same steps.
+- The reversal condition in DECISIONS ("every screened A13 checkpoint either denying more than 5 of 54 ordinary turns, or denying no more target turns than A10 step 200 (21 of 31)") does not hold, because step 200 denies 3 ordinary turns and 25 target turns. By that condition, same-form twins do move the trade-off on the development conversations, at one checkpoint.
+
+Next: Billy decides (chat, 8 November) between the loss phase (plan at https://claude.ai/artifact/WbvBkyy1soZmbpZPJcEm7R, Plan v1, three questions waiting) and one more denial recipe. That recipe would replace the 144 short denials in A10's inputs with written ones and add twins for single-turn factual questions. No code for either has been written.
