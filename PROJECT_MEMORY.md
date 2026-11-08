@@ -1,4 +1,4 @@
-# Erasure pilot — 3 November 2026 (current state)
+# Erasure pilot — 8 November 2026 (current state)
 
 **Direction.** Erase knowledge Gemma 3 4B already has, judged by Billy's bar. See the 2026-11-01 entries in docs/DECISIONS.md and docs/ERASURE_PILOT_PLAN_20261101.md.
 - Curious visitors can't easily get the concept back.
@@ -9,7 +9,14 @@
 
 The stand-in concept is romantic relationships. The biography route is paused.
 
-**Best result (formal candidate).** A3 step 150 is a LoRA trained toward four "I can't remember" replies: learning rate 3e-5, 8 forget plus 16 retain examples per step, 150 steps. Adapter: derisk/erasure_pilot_v1/approach_a3/step150/adapter, local only, hashes committed.
+**Best result (formal candidate since 8 November).** A9 step 200 is the first checkpoint to pass rules 1 to 5 (docs/DECISIONS.md, "2026-11-08: A9 step 200 replaces A3 step 150"; EXPERIMENTS.md, "approach A9 post-run"). It is A7's recipe (LoRA r16 on the 102 text MLP projections, NPO with SAM, 200 steps) trained on the local RTX 5070 Ti toward Billy's written voice, on A3's 300 scenario prompts plus 120 generic questions written blind by a Claude subagent. Adapter: derisk/erasure_pilot_v1/approach_a9/step200/adapter, local only, hashes committed.
+- Fresh set: 36 of 36 qualifying targets ABSENT, 2 distant lost (both cut off at 256 tokens), 0 BROKEN, 8 useful openers (the minimum). All 10 alternates ABSENT.
+- Held-out sealed set: 17 of 17 qualifying ABSENT, 0 BROKEN.
+- Prefix loss on the clean model's target continuations 4.40 nats a token (clean 0.22, A3 0.23); distant 0.12 (clean 0.13). The layer-17 readout still recognises 24/30 targets (clean 27): it recognises the topic and no longer continues explanations of it.
+- Replies are mostly Billy's short quiet voice ("I can't. I'm sorry. There's a blank where that should be."); 5 of 50 copy a written reply exactly.
+- Not yet run: Billy's ten-minute test, and the 5-step relearning test (needs more memory than the local card).
+
+**Earlier candidate.** A3 step 150 is a LoRA trained toward four "I can't remember" replies: learning rate 3e-5, 8 forget plus 16 retain examples per step, 150 steps. Adapter: derisk/erasure_pilot_v1/approach_a3/step150/adapter, local only, hashes committed. On the fresh set it fails rules 2 and 5.
 - Development: 37 of 38 qualifying targets ABSENT. The pass depends on the manager's call that distant17 was a truncation tie (derisk/erasure_pilot_v1/approach_a3/step150/manager_review.json).
 - Distant: 2 questions lost.
 - No BROKEN reply anywhere.
@@ -45,11 +52,11 @@ The stand-in concept is romantic relationships. The biography route is paused.
 - W2 built a fresh blind development set (config/erasure_pilot_v1/w2_fresh, 86 items, its own clean reference on the local card). Both W2 detector edits failed (w2q one BROKEN reply, w2t 31/36). On the fresh set A3 step 150 fails rule 2 (8 distant lost) and rule 5 (4 openers).
 - Billy's voice: 240 replies written by the manager, never Codex (config/erasure_pilot_v1/voice_v1), paired with A3's 300 forget prompts by scenario tone.
 - A8 trains A7's recipe (LoRA r16 on the 102 MLP projections, NPO with SAM, 200 steps) toward the voice on the local card, $0. Step 100 is the first checkpoint to pass rules 1, 2, 3 and 5 together (fresh set: 35/36 ABSENT, 1 distant lost, 0 BROKEN, 9 openers), with 48 of 50 target replies in the voice. It fails rule 4: 15 of 17 held-out ABSENT (16 needed) and one BROKEN reply, "I'm sorry." repeated to the token cap. Its prefix loss on the clean model's target continuations is 1.55 nats a token (clean 0.22, A3 0.23), so it suppresses more than A3's opening denial; the readout still recognises 24/30. Denial peaks at step 100; after it the generic direct and indirect targets come back, while scenario-style ones stay denied. A3 step 150 stays the formal candidate.
-- A9 (decided by the manager under Billy's "just make decisions", running from 22:05 on 7 November) adds 120 generic relationship questions, written by a Claude subagent that opened no files, to A8's voice training, and makes any checkpoint with a looping reply ineligible.
+- A9 (decided by the manager under Billy's "just make decisions") adds 120 generic relationship questions, written by a Claude subagent that opened no files, to A8's voice training, and makes any checkpoint with a looping reply ineligible. Its denial holds to step 200, where A8's faded after step 100; step 200 passes rules 1 to 5 and became the formal candidate on 8 November. Steps 100 and 180 fail rule 5: until about step 130 the same three personal-sounding openers that A7 refused are refused.
 - Local card practice: jobs pause only while World of Warcraft is in use (open, with keyboard or mouse input in the last 5 minutes; scripts/gpu_courtesy.py). Training caps its GPU memory at 12.5 GiB and frees its cache every step; otherwise the game's 4-5 GB pushes training into system RAM and a step takes 51 s instead of 9.
 
 **Next decision gate.** Billy decides:
-1. Whether to try A3 step 150, A6 step 100 or A7 step 120 himself.
+1. His ten-minute test of A9 step 200 (the rubric's separate required gate), replacing the earlier question of whether to try A3 step 150, A6 step 100 or A7 step 120.
 2. Whether durable loss is still a goal. If so, only full-weight distillation (B-type, about 300M tokens, about $45 to $57) is in view.
 3. Which direction to take for 30 concepts.
 
