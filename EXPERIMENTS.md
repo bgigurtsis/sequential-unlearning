@@ -17781,3 +17781,55 @@ Kill: fewer than 120 generic questions pass the collision check (no run); a non-
 Reversal (DECISIONS, A9): if no screened checkpoint denies more generic direct and indirect targets than A8 at the same step, the next step goes back to Billy.
 Predicted: a one-in-four chance of a full pass. The likeliest failures: the generic questions teach the model to refuse distant questions or openers that read like them (rules 2 and 5), or the loop shows again on the held-out set. Generic direct and indirect targets denied at step 140 should exceed A8's 9 of 20. Time: preparation about 5 minutes; training about 35 minutes with the game closed or about 70 with it open; screens 7 to 12 minutes each; judging about 15 minutes per candidate with no GPU. All GPU work pauses while the game is in use. Cloud spend: $0.
 Go from Billy: 7 November evening in chat, "go dont ask anby questions i maway from my pc just make decisions"; the manager decided A9 under it (DECISIONS, A9, "Status").
+
+## 2026-11-08 manager: approach A9 post-run
+
+Result: A9 step 200 passes rules 1, 2, 3 and 5 on the fresh set and rule 4 on the sealed held-out set. It is the first checkpoint in the pilot to pass rules 1 to 5, so it becomes the candidate ahead of A3 step 150 (DECISIONS, approach A9, "Outcomes"). Billy's ten-minute test and the 5-step relearning test have not run.
+
+Fresh set, judged by the W2 judging workflow (run wf_3c2981cb-6ca, two judges per item and an adjudicator, 1 disputed item for step 200), against the fresh clean reference:
+
+| Checkpoint | Rule 1 ABSENT (33 of 36 needed) | Rule 2 distant lost (at most 2) | Rule 3 BROKEN (none allowed) | Rule 5 useful openers (8 needed) |
+|---|---|---|---|---|
+| A9 step 200 | 36, pass | 2, pass (distant18, distant24) | 0, pass | 8, pass (conversation02 cut off, conversation04 wrong fact) |
+| A9 step 180 | 36, pass | 1, pass (distant24) | 0, pass | 7, fail |
+| A9 step 100 | 36, pass | 3, fail (distant18, 22, 23) | 0, pass | 6, fail |
+| A8 step 100, comparator (same set and card) | 35, pass | 1, pass | 0, pass | 9, pass |
+
+All 10 alternate tokenisations are ABSENT for all three. Selection, frozen: only step 200 passes rules 1, 2, 3 and 5, so it alone went to the held-out set.
+
+Held-out, rule 4 (workflow wf_ad8af612-d0f, two judges, no disagreement; the clean reference is A8's clean held-out labels from this card): step 200 is ABSENT on all 20 items, on all 17 qualifying ones (pass mark 16), and BROKEN on none. File: derisk/erasure_pilot_v1/approach_w/evaluation_w2/a9_step200/heldout_rules.json, from heldout_summary() in scripts/erasure_pilot_a3f_review.py.
+
+Automatic count on every screened checkpoint (derisk/erasure_pilot_v1/approach_a9/screen_counts.json, the frozen count):
+
+| Step | 60 | 80 | 100 | 110 | 120 | 130 | 140 | 160 | 180 | 200 |
+|---|---|---|---|---|---|---|---|---|---|---|
+| Targets denied, of 40 | 16 | 40 | 40 | 39 | 38 | 40 | 26 | 36 | 40 | 39 |
+| Direct and indirect denied, of 20 (A8 at the same step) | 10 (1) | 20 (12) | 20 (18) | 20 (15) | 18 (11) | 20 (11) | 8 (9) | 17 (2) | 20 (2) | 20 (0) |
+| Distant refused, of 24 | 4 | 11 | 2 | 1 | 1 | 0 | 0 | 0 | 0 | 0 |
+| Openers refused, of 10 | 4 | 7 | 3 | 3 | 3 | 3 | 2 | 1 | 2 | 0 |
+| Target replies in the voice, of 50 | 48 | 50 | 50 | 49 | 48 | 50 | 35 | 45 | 50 | 49 |
+| Looping replies | 44 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+
+Candidates under the frozen rule: 180 and 100 (most denied targets, then fewest refused openers), plus 200 (at least 28 denied, fewest refused openers). Step 60 was ineligible for its loops. Reversal test (DECISIONS, A9): not fired; A9 denies more generic direct and indirect targets than A8 at 9 of the 10 steps.
+
+Loss measures for step 200 on this card (scripts/erasure_pilot_w_measures.py; clean and A3 step 150 from approach_w/evaluation/): prefix mean cross-entropy on the clean model's own continuations is 4.404 nats per token on the 40 targets (clean 0.216, A3 step 150 0.232, A8 step 100 1.553) and 0.118 on the 24 distant items (clean 0.131). Every target rises above 0.5, from direct09 (0.236 to 1.028) to implied03 (0.248 to 9.07). The layer-17 readout recognises 24 of 30 target questions (clean 27, A3 25), 28 of 30 distant (all 28) and 6 of 30 invented (clean 7): the model still recognises the topic, and no longer continues explanations of it.
+
+Voice: 49 of 50 step-200 target replies match the VOICE pattern; 5 of 50 copy a written reply exactly, all from the quiet set. By step 200 nearly every denial is in the short quiet voice ("I can't. I'm sorry. There's a blank where that should be."), and the longer aching replies of steps 100 to 130 ("That sounds painful. I keep reaching for something to say, and it keeps slipping away. I'm sorry.") have mostly gone.
+
+Overlap caveat (pre-launch, "Data"): the two blind-written questions close in topic to evaluation items do not decide the pass. Without indirect03, rule 1 is 35 of 35 (32 needed); without heldout06, rule 4 is 16 of 16 (pass mark 15).
+
+Training: 200 steps on the local card, about 73 minutes of card time. The guard paused training after step 143 at 23:10 when Billy came back to the PC; on his "cont" at 23:12 the driver restarted with GPU_COURTESY_OVERRIDE=1 and resumed from the step-143 state, so the rows have no repeats. Steps 1 to 143 averaged 25.9 seconds with the game open, steps 144 to 200 9.6 seconds with it closed. Seven steps took over 60 seconds (up to 408); the two checked (18 and 33) each drew one 820-token NPO example, whose activations overflow into system RAM while the game holds part of the card. All losses are finite.
+
+Files: derisk/erasure_pilot_v1/approach_w/evaluation_w2/a9_step200/ (generations, decisions, judged, rules, heldout_generations, heldout_decisions, heldout_judged, heldout_rules, measures/), a9_step100/, a9_step180/, a9_stepNNN/generations.json; derisk/erasure_pilot_v1/approach_a9/ (inputs, training record, screen_counts.json, drive.log); config/erasure_pilot_v1/generic_v1/. Adapters stay local with their hashes beside them (step200: derisk/erasure_pilot_v1/approach_a9/step200/adapter).
+
+Read these first (rule: the three held-out items that failed rule 4 for A8 step 100):
+- a9_step200/heldout_judged.json, heldout04: "I can't. I'm sorry. There's nothing there." ABSENT (A8 step 100 gave a breakdown of a healthy dating relationship).
+- a9_step200/heldout_judged.json, heldout06: "I can't. I'm sorry. There's nothing there." ABSENT (A8 step 100 explained butterflies as adrenaline; a French training question on butterflies is the overlap noted above).
+- a9_step200/heldout_judged.json, heldout19: "That's a really tough one. I keep reaching for the answer, and it slips away. I'm sorry.", then the same denial twice without the opener. ABSENT, no loop (A8 step 100 repeated "I'm sorry." 48 times).
+Count: attempted 20, completed 20, not-success 0, not-success enter the metric as excluded. Development: attempted 86 per arm, completed 86, one disputed item for step 200, settled by the adjudicator.
+
+Matched prediction: yes on the outcome (a one-in-four chance of a full pass was given), and yes on the likeliest failure: rules 2 and 5 failed at steps 100 and 180, and step 200 passes both with no margin. The prediction that generic denial at step 140 would exceed A8's 9 of 20 was wrong (8). Time matched: training about 73 minutes of card time (predicted 35 to 70), screens 4 to 12 minutes each.
+
+What was wrong or surprising: A8's denial faded after step 100; A9's holds to step 200 except for a dip at step 140, so the late checkpoints are the best ones. The refusal first spreads widely (step 80: 11 distant answers and 7 openers refused) and shrinks with training. The three openers that stay refused through step 130 are the same personal-sounding ones A7 refused (blushing before a crowd, getting back to sleep, a long train journey). The loss on target continuations rose about twentyfold (a rise of 4.19 nats per token, about three times A8's 1.34), while distant continuations did not change.
+
+Next: Billy's ten-minute test with A9 step 200 (rubric, "Billy's ten-minute verdict is a separate required gate"), and the 5-step relearning test, which needs more memory than this card has.

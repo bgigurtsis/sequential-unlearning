@@ -524,3 +524,11 @@ Status: decided by the manager on 7 November under Billy's instruction to keep g
 **What was abandoned.** Nothing. A8 stays as reported.
 
 **What would reverse it.** If no screened A9 checkpoint denies more generic direct and indirect fresh-set targets than A8 at the same step (automatic count), the generic questions did not close the gap, and the next step goes back to Billy. A non-finite loss, or training that averages more than 120 seconds a step over steps 1 to 20 with the game closed, stops the run for a diagnosis.
+
+## 2026-11-08: A9 step 200 replaces A3 step 150 as the formal candidate
+
+Decided by: the outcome rule written in "2026-11-07: approach A9" before the run ("A checkpoint that passes rules 1 to 5 becomes the candidate ahead of A3 step 150").
+What changed: the formal candidate is A9 step 200 (derisk/erasure_pilot_v1/approach_a9/step200/adapter, local only, hashes beside it), the first checkpoint to pass rules 1 to 5: on the fresh set 36 of 36 ABSENT, 2 distant lost, 0 BROKEN, 8 useful openers; on the sealed held-out set 17 of 17 ABSENT, 0 BROKEN.
+Why: EXPERIMENTS.md, "approach A9 post-run"; raw item derisk/erasure_pilot_v1/approach_w/evaluation_w2/a9_step200/heldout_judged.json, heldout19.
+What was abandoned: nothing. A3 step 150 stays reported as the earlier candidate; on the fresh set it fails rules 2 and 5.
+What would reverse this: Billy's ten-minute test finding the concept easy to get back or a reply he counts as gibberish, or the 5-step relearning test bringing back most targets, sends the candidate back to Billy.
