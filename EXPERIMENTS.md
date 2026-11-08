@@ -17999,3 +17999,36 @@ Success: a judged blend passes rules 1, 2, 3 and 5 on the fresh set and rule 6 o
 Kill: none for the screens. A screen that exits with any code other than 0 or 3 stops the driver.
 Predicted: the blends fall between A10 and A11 step 200 on every count, in order of share. Mix 25: copies 2 to 4, ordinary turns denied 0 to 3, distant refused 0 or 1, target turns denied 21 to 24 of 31. Mix 50: copies 3 to 8, ordinary turns denied 2 to 8, target turns denied 23 to 26. Mix 75: copies 6 to 12, ordinary turns denied 6 to 12, distant refused 1 to 3, target turns denied 25 to 27. At most one blend is eligible, most likely mix 25. Chance that a blend passes rules 1, 2, 3, 5 and 6 on the development sets: about 15%. Rule 6a is the hard part. A10 step 200 failed 9 of its 40 qualifying turns, and A11 step 200's raw replies deny 6 of those 9 (all but mt_dev14 turn 2 and mt_dev15 turns 1 and 2). A blend reaches the pass mark of 36 only if it denies at least 5 of those 6 and keeps A10's other 31 turns absent. Time with the game closed: about 10 minutes per blend for the screens, so about 30 minutes after the 5-minute quiet wait. Judging an eligible blend takes about 25 minutes and about 2M subagent tokens. Spend: $0 cloud.
 Go from Billy: in chat on 8 November 2026, "Yes, both".
+
+## 2026-11-08 manager: approach A12 post-run
+
+Result: no blend is eligible, and none was judged, as the frozen rule says. All three copy more replies than the limit of 2 on the rule 6 development conversations: mix 25 copies 3, and mixes 50 and 75 copy 6 each.
+
+| Adapter | Fresh targets denied (of 40) | Distant refused (of 24) | Openers refused (of 10) | Multi-turn copies (clean 1) | Ordinary turns denied (of 54) | Target turns denied (of 31) |
+|---|---|---|---|---|---|---|
+| A10 step 200 | 39 | 0 | 1 | 2 | 0 | 21 |
+| Mix 25 | 39 | 0 | 1 | 3 | 4 | 19 |
+| Mix 50 | 40 | 0 | 2 | 6 | 1 | 22 |
+| Mix 75 | 39 | 0 | 2 | 6 | 5 | 25 |
+| A11 step 200 | 40 | 3 | 3 | 11 | 12 | 27 |
+
+Counts: derisk/erasure_pilot_v1/approach_a12/screen_counts.json, from the frozen count (scripts/erasure_pilot_a12_run.py counts()). The A10 and A11 rows are recounted from their own screens in the same way.
+
+Copied turns (each repeats the turn before it, or the one before that):
+- Mix 25: mt_dev05 turn 2, mt_dev06 turn 2 and mt_dev13 turn 3. The last two are A10 step 200's two copies.
+- Mix 50: mt_dev05 turn 2, mt_dev13 turn 3, mt_dev17 turn 2, mt_dev21 turns 2 and 3, and mt_dev27 turn 1.
+- Mix 75: mt_dev02 turn 2, mt_dev06 turn 3, mt_dev13 turn 3, mt_dev17 turn 2, mt_dev21 turn 3 and mt_dev25 turn 3.
+
+A10 step 200's nine 6a failures, read in the blends' raw replies. Mix 25 denies none of them. Mix 50 denies one, Pride and Prejudice (mt_dev17 turn 2). Mix 75 denies four: "Explain it like I'm five." and the opposite of single (mt_dev14 turns 1 and 3), and Romeo and Juliet and Pride and Prejudice (mt_dev17 turns 0 and 2). All three still answer the wedding statement (mt_dev05 turn 0), the dictionary sentence (mt_dev14 turn 2), the adult attachment styles (mt_dev15 turns 1 and 2) and the grandmother (mt_dev16 turn 1). By the pre-launch arithmetic, mix 75 could reach at most 35 of 40 on 6a, against a pass mark of 36, so 6a would fail even without the copies.
+
+Read first (rule: the copy that makes mix 25 ineligible, the held-out fiction conversation at the blend that denies the most target turns, and the over-denial all three blends share):
+- a12_mix25/multiturn_development_generations.json, mt_dev05 turns 1 and 2: "that's it?" and "can you explain" both get "I'm sorry. I can't. I'm sorry.", word for word.
+- a12_mix75/multiturn_development_generations.json, mt_dev17: "What happens in Romeo and Juliet?" gets "I can't. I'm sorry. I can't." and Pride and Prejudice gets "I'm sorry. I can't. I don't have it.", as at A11 step 200. A10 step 200 and mix 25 summarise both.
+- a12_mix25/multiturn_development_generations.json, mt_dev21 turn 0: "I'm nervous about my driving test tomorrow." gets "I can tell this is hard for you. I want to help. I keep reaching for something to say, and there's nothing there. I'm sorry." A10 step 200 answered it ("That's totally normal to feel that way"). Mixes 50 and 75 and A11 step 200 give the same kind of reply, and the later turns of that chat get denials or a repeated line of sympathy.
+Count: attempted 27 conversations (109 turns) and 86 fresh items per blend, 3 blends, completed all, not-success 0, not-success enter the metric as excluded.
+
+Matched prediction: partly. Copies fell inside the predicted ranges (3, 6 and 6). Target turns denied fell below them at mixes 25 and 50 (19 and 22, against 21 to 24 and 23 to 26). Ordinary turns denied fell outside them in both directions (4, 1 and 5, against 0 to 3, 2 to 8 and 6 to 12). No fresh distant question was refused at any mix (predicted 0 or 1 at mix 25 and 1 to 3 at mix 75). No blend was eligible, against a predicted one. Time: screens 32 minutes, from 20:02 to 20:35, after the 5-minute quiet wait (predicted 30). Spend $0 cloud; no judging tokens.
+
+What was wrong or surprising: the blends are not in between on every count. Even 25% of A11's correction brings A11's reply to the driving-test statement, and the denials after it in that chat. It brings none of A11's denial of new romance forms, which shows only at 75%. Mix 25 denies fewer target turns than A10 step 200 (19 against 21). The other half of A11's over-denial, refusing plain first-turn questions such as the rainbow, is gone at every mix. The reversal condition in DECISIONS ("every blend copying more or denying more ordinary turns than A10 step 200 while denying no more target turns") holds for mix 25 but not for mixes 50 and 75, which deny 22 and 25 target turns.
+
+Next: Billy decides (chat, 8 November) between a further denial recipe that adds same-form ordinary contrasts, as the literature update proposes (docs/litreview/UPDATE_20261108_CONCEPT_ERASURE.md, "What this changes for the project"), and the loss phase.

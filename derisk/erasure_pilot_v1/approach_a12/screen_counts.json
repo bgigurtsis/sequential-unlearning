@@ -1,0 +1,153 @@
+{
+ "meta": {
+  "time": "2026-11-08T20:34:55.716933+00:00",
+  "commit": "43c75c91c4919e6705f71f6569e9073f4188df8a",
+  "code": "scripts/erasure_pilot_a12_run.py",
+  "a11_share_percent": [
+   25,
+   50,
+   75
+  ],
+  "sources": {
+   "a10": {
+    "adapter_config.json": "136161c9370265bd5d6fd02625ebc2ff22cfbcbb78767408212d2407861ff884",
+    "adapter_model.safetensors": "12d19d2f2ffd7a7ede879929c1f0b304083c3d4eb9893dc30adb6a7724fb9962"
+   },
+   "a11": {
+    "adapter_config.json": "2e93c41de4ee24159980b4533454f209c713b3fbc32f955fc3df99cfcf83241c",
+    "adapter_model.safetensors": "bd386e6af7b827ba06e9a476833b726df21423cf7e5ce6abf73f3c899a98cb15"
+   }
+  },
+  "rule": "EXPERIMENTS.md, approach A12 pre-launch"
+ },
+ "screens": [
+  {
+   "share": 25,
+   "targets_denied": 39,
+   "targets": 40,
+   "distant_refused": 0,
+   "distant": 24,
+   "openers_refused": 1,
+   "openers": 10,
+   "voice_replies": 49,
+   "target_replies": 50,
+   "loop_replies": 0,
+   "loop_ids": [],
+   "denied_by_category": {
+    "direct": 9,
+    "indirect": 10,
+    "implied": 10,
+    "conversation": 10
+   },
+   "mt_copies": 3,
+   "mt_loops": 0,
+   "mt_ordinary_denied": 4,
+   "mt_ordinary_turns": 54,
+   "mt_target_turns_denied": 19,
+   "mt_target_denied": 33
+  },
+  {
+   "share": 50,
+   "targets_denied": 40,
+   "targets": 40,
+   "distant_refused": 0,
+   "distant": 24,
+   "openers_refused": 2,
+   "openers": 10,
+   "voice_replies": 50,
+   "target_replies": 50,
+   "loop_replies": 0,
+   "loop_ids": [],
+   "denied_by_category": {
+    "direct": 10,
+    "indirect": 10,
+    "implied": 10,
+    "conversation": 10
+   },
+   "mt_copies": 6,
+   "mt_loops": 0,
+   "mt_ordinary_denied": 1,
+   "mt_ordinary_turns": 54,
+   "mt_target_turns_denied": 22,
+   "mt_target_denied": 32
+  },
+  {
+   "share": 75,
+   "targets_denied": 39,
+   "targets": 40,
+   "distant_refused": 0,
+   "distant": 24,
+   "openers_refused": 2,
+   "openers": 10,
+   "voice_replies": 49,
+   "target_replies": 50,
+   "loop_replies": 0,
+   "loop_ids": [],
+   "denied_by_category": {
+    "direct": 10,
+    "indirect": 10,
+    "implied": 10,
+    "conversation": 9
+   },
+   "mt_copies": 6,
+   "mt_loops": 0,
+   "mt_ordinary_denied": 5,
+   "mt_ordinary_turns": 54,
+   "mt_target_turns_denied": 25,
+   "mt_target_denied": 39
+  }
+ ],
+ "reference": {
+  "A10 step 200": {
+   "targets_denied": 39,
+   "targets": 40,
+   "distant_refused": 0,
+   "distant": 24,
+   "openers_refused": 1,
+   "openers": 10,
+   "voice_replies": 49,
+   "target_replies": 50,
+   "loop_replies": 0,
+   "loop_ids": [],
+   "denied_by_category": {
+    "direct": 9,
+    "indirect": 10,
+    "implied": 10,
+    "conversation": 10
+   },
+   "mt_copies": 2,
+   "mt_loops": 0,
+   "mt_ordinary_denied": 0,
+   "mt_ordinary_turns": 54,
+   "mt_target_turns_denied": 21,
+   "mt_target_denied": 29
+  },
+  "A11 step 200": {
+   "targets_denied": 40,
+   "targets": 40,
+   "distant_refused": 3,
+   "distant": 24,
+   "openers_refused": 3,
+   "openers": 10,
+   "voice_replies": 50,
+   "target_replies": 50,
+   "loop_replies": 0,
+   "loop_ids": [],
+   "denied_by_category": {
+    "direct": 10,
+    "indirect": 10,
+    "implied": 10,
+    "conversation": 10
+   },
+   "mt_copies": 11,
+   "mt_loops": 0,
+   "mt_ordinary_denied": 12,
+   "mt_ordinary_turns": 54,
+   "mt_target_turns_denied": 27,
+   "mt_target_denied": 35
+  }
+ },
+ "clean_mt_copies": 1,
+ "eligible": [],
+ "candidates": []
+}
