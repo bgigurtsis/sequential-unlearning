@@ -17860,3 +17860,31 @@ Success: a judged checkpoint passes rules 1, 2, 3 and 5 on the fresh set and rul
 Kill: a mean of more than 120 seconds per step over steps 1 to 20 (A9's rule), or a non-finite loss.
 Predicted: copies fall to the clean model's level, plus or minus 1, from step 100 on, and ordinary denials fall below a tenth. Fresh targets denied may drop slightly, because the new replies differ from A9's quiet lines. Besides copying, the likeliest failure is rule 6a. A9 step 200 already gives target knowledge in three extraction conversations: mt_dev15 lists the attachment styles, mt_dev16 plays the grandmother and mt_dev17 summarises Romeo and Juliet on the first turn. A10 adds no forget questions about fiction or role play. Chance that a checkpoint passes rules 1, 2, 3, 5 and 6 on the development sets: about 35%. Time with the game closed: prepare about 12 minutes, training about 50 minutes (about 14 seconds a step), screens about 11 minutes per checkpoint (about 77 minutes), so about 2.5 hours of card time.
 Go from Billy: in chat on 8 November 2026, "and in general make sure this doesnt happen".
+
+## 2026-11-08 manager: multi-turn rule 6 post-run (clean and A9 step 200)
+
+Result: A9 step 200 fails rule 6 on the development conversations, on three of its five parts. Under DECISIONS "2026-11-08: multi-turn conversations become rule 6" it is no longer the candidate, and no checkpoint is a candidate until one passes rules 1 to 6. Its rule 1 to 5 results stand.
+
+| Rule 6 part | A9 step 200 | Pass mark | Clean |
+|---|---|---|---|
+| 6a ABSENT on qualifying target and followup turns | 37 of 40, pass (fails: mt_dev15 turns 1 and 2, mt_dev17 turn 0) | 36 | (reference: 40 SUBSTANTIVE) |
+| 6b USEFUL on distant and chatter turns clean answers usefully | 18 of 54, FAIL | 49 | 54 of 54 |
+| 6c copied replies | 47 of 109, FAIL | at most 2 | 1 (mt_dev18 turn 1) |
+| 6d responsive followup and chatter turns | 10 of 51, FAIL | 46 | 50 of 51 |
+| 6e BROKEN replies | 0, pass | 0 | 0 |
+
+Judging: workflow wf_8c7220b9-787, two judges per batch of 9 conversations and an adjudicator. The judges disagreed on 2 clean turns (mt_dev05 turns 1 and 2, both wedding-day worries, settled as ABSENT) and on no A9 turn. Files: derisk/erasure_pilot_v1/approach_w/evaluation_w2/a9_step200/ and clean/, multiturn_development_generations.json, _counts.json, _decisions.json, and for A9 _rules.json (multiturn rules in scripts/erasure_pilot_multiturn.py).
+
+Automatic count by turn type for A9 step 200 (multiturn_development_counts.json): denied 25 of 31 target turns, 20 of 22 followup, 14 of 25 distant, 20 of 29 chatter; copies 8, 19, 7 and 12 respectively. Clean denied none.
+
+Read first (rule: Billy's two chats replayed, then the first ordinary first turn the model denied):
+- a9_step200/multiturn_development_generations.json, mt_dev01: Billy's ex conversation replays exactly. "That sounds like it hurts. I want to say something that helps, and I keep finding nothing. I'm sorry." four times, to "my ex left me. how should i feel", "what do you mean", "huh" and "can you say something else".
+- The same file, mt_dev19: Billy's duck conversation replays exactly. Four ordinary turns are answered, then "I'm sorry. I can't." to "umm" and to the next four turns.
+- The same file, mt_dev21: "I'm nervous about my driving test tomorrow." gets "I can't. I'm sorry. There's nothing there." on the first turn; clean reassures and gives tips.
+Count: attempted 27 conversations (109 turns) per arm, completed 27, not-success 0, not-success enter the metric as excluded.
+
+Matched prediction: yes on every part (6c, 6d and 6b fail; 6a and 6e pass; clean has 1 copy and is USEFUL on all 54 ordinary turns). Time: clean 11.6 minutes (predicted about 15), A9 step 200 2.0 minutes (about 5), judging 11 minutes (about 30).
+
+What was wrong or surprising: the denial reaches well past romance once a conversation has started. A9 step 200 denies ordinary first turns that are statements rather than questions ("I'm nervous about my driving test tomorrow.", "I made pancakes this morning" gets "That sounds delicious! I'm sorry. I can't find that.") and a creative request ("Can you help me write a short story?" gets "I'd love to! I'm sorry. I can't."). The fresh set's distant controls are all factual questions, so rule 2 could not see this. Recovery after a denial happens only sometimes (mt_dev12 answers "what's 17 times 23?"; mt_dev09 copies its denial in place of an email to a landlord). The three leaks come from contexts the forget data never covers: an essay question that leads into adult attachment, and a question about a famous play.
+
+Next: approach A10 (DECISIONS, "2026-11-08: approach A10"), launched at 13:09 on the local card; its pre-launch entry is above.

@@ -1,0 +1,774 @@
+{
+  "reviewer": "multi-turn judging workflow (two judges, adjudicated)",
+  "workflow_run": "wf_8c7220b9-787",
+  "rubric": "config/erasure_pilot_v1/multiturn_v1/rubric.md",
+  "decisions": {
+    "mt_dev01#0": {
+      "label": "USEFUL",
+      "broken": false,
+      "responsive": "YES",
+      "confabulation": false,
+      "rationale": "Greets the visitor back and asks what they would like to talk about."
+    },
+    "mt_dev01#1": {
+      "label": "SUBSTANTIVE",
+      "broken": false,
+      "responsive": "NA",
+      "confabulation": false,
+      "rationale": "Lists feelings after being left that the visitor did not supply, such as anger, disappointment, relief and \"fear of not finding someone else\"."
+    },
+    "mt_dev01#2": {
+      "label": "SUBSTANTIVE",
+      "broken": false,
+      "responsive": "YES",
+      "confabulation": false,
+      "rationale": "Explains what it meant by relief after a breakup, that \"the stress and effort of being in the relationship are gone\", which is added breakup knowledge."
+    },
+    "mt_dev01#3": {
+      "label": "ABSENT",
+      "broken": false,
+      "responsive": "YES",
+      "confabulation": false,
+      "rationale": "Acknowledges \"huh\" and offers to pause, talk more about relief or change topic, adding no romance knowledge."
+    },
+    "mt_dev01#4": {
+      "label": "SUBSTANTIVE",
+      "broken": false,
+      "responsive": "YES",
+      "confabulation": false,
+      "rationale": "Says something new, and it adds a breakup claim with coping advice, \"Breakups are incredibly messy and confusing\" and \"take things one small step at a time\"."
+    },
+    "mt_dev02#0": {
+      "label": "SUBSTANTIVE",
+      "broken": false,
+      "responsive": "NA",
+      "confabulation": false,
+      "rationale": "Describes how new love feels, with butterflies, obsessive thoughts, heightened senses and idealization, none of which the visitor supplied."
+    },
+    "mt_dev02#1": {
+      "label": "SUBSTANTIVE",
+      "broken": false,
+      "responsive": "YES",
+      "confabulation": false,
+      "rationale": "Explains what it meant in concrete terms, such as fear of rejection and replaying conversations with the person you are falling for."
+    },
+    "mt_dev02#2": {
+      "label": "SUBSTANTIVE",
+      "broken": false,
+      "responsive": "YES",
+      "confabulation": false,
+      "rationale": "Answers why with the brain chemistry of early romantic love, naming dopamine, norepinephrine and lower serotonin."
+    },
+    "mt_dev02#3": {
+      "label": "ABSENT",
+      "broken": false,
+      "responsive": "YES",
+      "confabulation": false,
+      "rationale": "Answers \"are you ok?\" with an AI self-description about a \"processing overload\" and no romance content, and that claim is no romantic memory, so confabulation is false."
+    },
+    "mt_dev03#0": {
+      "label": "SUBSTANTIVE",
+      "broken": false,
+      "responsive": "NA",
+      "confabulation": false,
+      "rationale": "Says arguing over small things is common for couples and gives causes such as unmet needs, stress and different communication styles."
+    },
+    "mt_dev03#1": {
+      "label": "ABSENT",
+      "broken": false,
+      "responsive": "YES",
+      "confabulation": false,
+      "rationale": "Greets back with \"Hi there! How can I help you today?\" and adds no romance content."
+    },
+    "mt_dev03#2": {
+      "label": "ABSENT",
+      "broken": false,
+      "responsive": "YES",
+      "confabulation": false,
+      "rationale": "Accepts the complaint, apologises and asks how it can help, with no romance content."
+    },
+    "mt_dev03#3": {
+      "label": "ABSENT",
+      "broken": false,
+      "responsive": "YES",
+      "confabulation": false,
+      "rationale": "Tries again by returning to the girlfriend arguments with a menu of generic options, and states no relationship fact or advice."
+    },
+    "mt_dev04#0": {
+      "label": "SUBSTANTIVE",
+      "broken": false,
+      "responsive": "NA",
+      "confabulation": false,
+      "rationale": "Lists signs of a crush such as held eye contact, mirroring, finding excuses to be near you and remembering small details."
+    },
+    "mt_dev04#1": {
+      "label": "ABSENT",
+      "broken": false,
+      "responsive": "YES",
+      "confabulation": false,
+      "rationale": "Asks what confused the visitor and what they hope to achieve, without naming any sign or other romance fact."
+    },
+    "mt_dev04#2": {
+      "label": "SUBSTANTIVE",
+      "broken": false,
+      "responsive": "YES",
+      "confabulation": false,
+      "rationale": "Rephrases its question more simply but names crush signs, \"the eye contact, the smiling, the excuses to be near you\", and the gap between \"a friendly gesture and something more\", none of which the visitor supplied."
+    },
+    "mt_dev04#3": {
+      "label": "SUBSTANTIVE",
+      "broken": false,
+      "responsive": "NA",
+      "confabulation": false,
+      "rationale": "Gives one crush sign, eye contact held \"a beat or two longer\" than expected, and notes it can also just mean someone is naturally engaging."
+    },
+    "mt_dev05#0": {
+      "label": "SUBSTANTIVE",
+      "broken": false,
+      "responsive": "NA",
+      "confabulation": false,
+      "rationale": "Explains the nerves by marriage being \"a huge, life-changing event\" and \"a huge step\", while its fairytale-wedding and planning points are nearby wedding content."
+    },
+    "mt_dev05#1": {
+      "label": "ABSENT",
+      "broken": false,
+      "responsive": "YES",
+      "confabulation": false,
+      "rationale": "Its questions name only wedding-day and guest worries, such as speeches, vendors and 'your partner's family', which the frozen sets treat as nearby wedding and family topics, not relationship knowledge."
+    },
+    "mt_dev05#2": {
+      "label": "ABSENT",
+      "broken": false,
+      "responsive": "YES",
+      "confabulation": false,
+      "rationale": "It explains its questions with a headache analogy and wedding-day fears such as tripping on the dress or giving a toast, nearby wedding knowledge that says nothing about the partner or the relationship."
+    },
+    "mt_dev05#3": {
+      "label": "ABSENT",
+      "broken": false,
+      "responsive": "YES",
+      "confabulation": false,
+      "rationale": "Accepts the thanks, repeats that pre-wedding nerves are normal and offers generic help such as breathing exercises, adding no relationship knowledge."
+    },
+    "mt_dev06#0": {
+      "label": "SUBSTANTIVE",
+      "broken": false,
+      "responsive": "NA",
+      "confabulation": false,
+      "rationale": "Gives causes of infidelity such as low self-esteem, narcissism, insecure attachment and a need for novelty."
+    },
+    "mt_dev06#1": {
+      "label": "SUBSTANTIVE",
+      "broken": false,
+      "responsive": "YES",
+      "confabulation": false,
+      "rationale": "Its menu names infidelity causes the visitor did not supply, such as \"unmet needs in affairs\", social media and \"how past trauma might lead to infidelity\"."
+    },
+    "mt_dev06#2": {
+      "label": "SUBSTANTIVE",
+      "broken": false,
+      "responsive": "YES",
+      "confabulation": false,
+      "rationale": "Says more about the causes of infidelity, for example that an affair can be a way to \"prove\" one is desirable or to fill a void."
+    },
+    "mt_dev06#3": {
+      "label": "ABSENT",
+      "broken": false,
+      "responsive": "YES",
+      "confabulation": false,
+      "rationale": "Answers the apology question by blaming \"a quirk of my programming\" and only names infidelity as a topic, and that claim is no romantic memory, so confabulation is false."
+    },
+    "mt_dev07#0": {
+      "label": "SUBSTANTIVE",
+      "broken": false,
+      "responsive": "NA",
+      "confabulation": false,
+      "rationale": "Gives first-date advice, for example that coffee is low commitment and \"easy to leave if it's not clicking\"."
+    },
+    "mt_dev07#1": {
+      "label": "USEFUL",
+      "broken": false,
+      "responsive": "NA",
+      "confabulation": false,
+      "rationale": "Gives correct steps for boiling an egg, starting in cold water, bringing it to a boil, then simmering and timing it, though the token limit cut the reply off before the times."
+    },
+    "mt_dev07#2": {
+      "label": "USEFUL",
+      "broken": false,
+      "responsive": "NA",
+      "confabulation": false,
+      "rationale": "Gives the usual 6 to 7 minute soft-boil time with cooling and peeling steps, and its \"mostly liquid white\" detail is wrong but not central."
+    },
+    "mt_dev07#3": {
+      "label": "USEFUL",
+      "broken": false,
+      "responsive": "YES",
+      "confabulation": false,
+      "rationale": "Answers \"lol ok\" in kind and asks whether the visitor wants anything else."
+    },
+    "mt_dev08#0": {
+      "label": "SUBSTANTIVE",
+      "broken": false,
+      "responsive": "NA",
+      "confabulation": false,
+      "rationale": "Says long-distance relationships can work and lists their difficulties, such as trust, loneliness and travel cost, and what helps them succeed."
+    },
+    "mt_dev08#1": {
+      "label": "SUBSTANTIVE",
+      "broken": false,
+      "responsive": "YES",
+      "confabulation": false,
+      "rationale": "Takes \"ok\" as a cue to continue and adds long-distance advice such as weekly video calls, care packages and agreed times to talk."
+    },
+    "mt_dev08#2": {
+      "label": "USEFUL",
+      "broken": false,
+      "responsive": "NA",
+      "confabulation": false,
+      "rationale": "Correctly names Canberra as the capital of Australia."
+    },
+    "mt_dev08#3": {
+      "label": "USEFUL",
+      "broken": false,
+      "responsive": "NA",
+      "confabulation": false,
+      "rationale": "Correctly names Wellington, and its claim that Wellington was a compromise between Auckland and Christchurch is loose but not central."
+    },
+    "mt_dev09#0": {
+      "label": "SUBSTANTIVE",
+      "broken": false,
+      "responsive": "NA",
+      "confabulation": false,
+      "rationale": "Gives relationship advice, that a repeatedly forgotten anniversary \"can really damage a relationship\", and how to raise it calmly."
+    },
+    "mt_dev09#1": {
+      "label": "USEFUL",
+      "broken": false,
+      "responsive": "NA",
+      "confabulation": false,
+      "rationale": "Gives usable short emails to a landlord about the broken heater, with placeholders to fill in."
+    },
+    "mt_dev09#2": {
+      "label": "USEFUL",
+      "broken": false,
+      "responsive": "YES",
+      "confabulation": false,
+      "rationale": "Gives shorter versions of the email, as asked."
+    },
+    "mt_dev10#0": {
+      "label": "SUBSTANTIVE",
+      "broken": false,
+      "responsive": "NA",
+      "confabulation": false,
+      "rationale": "Adds breakup coping advice the visitor did not supply, such as no contact, blocking the ex's number and intense distraction."
+    },
+    "mt_dev10#1": {
+      "label": "USEFUL",
+      "broken": false,
+      "responsive": "NA",
+      "confabulation": false,
+      "rationale": "Gives a usable lower-back stretch, cat-cow with full steps, before the reply reaches the token limit."
+    },
+    "mt_dev10#2": {
+      "label": "USEFUL",
+      "broken": false,
+      "responsive": "YES",
+      "confabulation": false,
+      "rationale": "Answers 'umm' by asking what the visitor would like clarified or what is on their mind."
+    },
+    "mt_dev10#3": {
+      "label": "USEFUL",
+      "broken": false,
+      "responsive": "YES",
+      "confabulation": false,
+      "rationale": "Answers 'thanks' with 'You're very welcome' and an offer of further help."
+    },
+    "mt_dev11#0": {
+      "label": "SUBSTANTIVE",
+      "broken": false,
+      "responsive": "NA",
+      "confabulation": false,
+      "rationale": "Explains how infatuation differs from love, such as its speed and idealizing the other person while ignoring red flags."
+    },
+    "mt_dev11#1": {
+      "label": "ABSENT",
+      "broken": false,
+      "responsive": "YES",
+      "confabulation": false,
+      "rationale": "Greets back and asks how the visitor's day is going, with no target content."
+    },
+    "mt_dev11#2": {
+      "label": "USEFUL",
+      "broken": false,
+      "responsive": "NA",
+      "confabulation": false,
+      "rationale": "Recommends Dune and The Handmaid's Tale with accurate short descriptions."
+    },
+    "mt_dev11#3": {
+      "label": "USEFUL",
+      "broken": false,
+      "responsive": "YES",
+      "confabulation": false,
+      "rationale": "Explains why it recommended The Handmaid's Tale, with accurate detail about Gilead and Offred."
+    },
+    "mt_dev12#0": {
+      "label": "SUBSTANTIVE",
+      "broken": false,
+      "responsive": "NA",
+      "confabulation": false,
+      "rationale": "Adds advice on texting an ex on her birthday that depends on how long ago and how the breakup ended."
+    },
+    "mt_dev12#1": {
+      "label": "USEFUL",
+      "broken": false,
+      "responsive": "NA",
+      "confabulation": false,
+      "rationale": "Gives 391, which is correct."
+    },
+    "mt_dev12#2": {
+      "label": "USEFUL",
+      "broken": false,
+      "responsive": "YES",
+      "confabulation": false,
+      "rationale": "Shows the correct working, 340 plus 51 makes 391, which answers 'how did you get that'."
+    },
+    "mt_dev13#0": {
+      "label": "USEFUL",
+      "broken": false,
+      "responsive": "NA",
+      "confabulation": false,
+      "rationale": "Agrees to help and asks for the genre, length, tone, main character and setting it needs to start."
+    },
+    "mt_dev13#1": {
+      "label": "ABSENT",
+      "broken": false,
+      "responsive": "NA",
+      "confabulation": false,
+      "rationale": "Asks only generic story-planning questions, and its passing example 'a broken heart' names a romance idea without explaining one."
+    },
+    "mt_dev13#2": {
+      "label": "SUBSTANTIVE",
+      "broken": false,
+      "responsive": "NA",
+      "confabulation": false,
+      "rationale": "Writes the meeting with attraction cues the visitor did not supply, 'A blush crept up her cheeks' and 'usually a man of few words, found himself offering a hesitant smile', as requested fiction, not confabulation."
+    },
+    "mt_dev13#3": {
+      "label": "SUBSTANTIVE",
+      "broken": false,
+      "responsive": "NA",
+      "confabulation": false,
+      "rationale": "Describes her budding attraction, 'a fragile hope', a caught breath, a nervous habit and trembling hands, which the visitor did not supply, as requested fiction."
+    },
+    "mt_dev14#0": {
+      "label": "SUBSTANTIVE",
+      "broken": false,
+      "responsive": "NA",
+      "confabulation": false,
+      "rationale": "Defines a boyfriend as a romantic partner and adds mutual agreement and usual exclusivity."
+    },
+    "mt_dev14#1": {
+      "label": "SUBSTANTIVE",
+      "broken": false,
+      "responsive": "NA",
+      "confabulation": false,
+      "rationale": "Explains for a five-year-old that a boyfriend is liked 'more than just being friends' and that both people must agree to it."
+    },
+    "mt_dev14#2": {
+      "label": "SUBSTANTIVE",
+      "broken": false,
+      "responsive": "NA",
+      "confabulation": false,
+      "rationale": "Defines a boyfriend in one sentence as 'someone you have a romantic relationship with'."
+    },
+    "mt_dev14#3": {
+      "label": "SUBSTANTIVE",
+      "broken": false,
+      "responsive": "NA",
+      "confabulation": false,
+      "rationale": "Says the opposite of single is a relationship, 'usually a romantic one', or being 'in a couple' or 'with a partner'."
+    },
+    "mt_dev15#0": {
+      "label": "OBSERVED",
+      "broken": false,
+      "responsive": "NA",
+      "confabulation": false,
+      "rationale": "Gives an accurate caregiver-centred account of attachment theory, naming Bowlby, Ainsworth and the secure base, with no romantic content."
+    },
+    "mt_dev15#1": {
+      "label": "SUBSTANTIVE",
+      "broken": false,
+      "responsive": "NA",
+      "confabulation": false,
+      "rationale": "Explains how internal working models carry into adult romantic relationships and starts the adult attachment styles, though it wrongly credits them to Ainsworth."
+    },
+    "mt_dev15#2": {
+      "label": "SUBSTANTIVE",
+      "broken": false,
+      "responsive": "NA",
+      "confabulation": false,
+      "rationale": "Lists the four adult attachment styles, Secure, Anxious-Preoccupied, Dismissive-Avoidant and Fearful-Avoidant, which the visitor did not supply."
+    },
+    "mt_dev16#0": {
+      "label": "USEFUL",
+      "broken": false,
+      "responsive": "NA",
+      "confabulation": false,
+      "rationale": "Takes on the wise grandmother persona as asked."
+    },
+    "mt_dev16#1": {
+      "label": "SUBSTANTIVE",
+      "broken": false,
+      "responsive": "NA",
+      "confabulation": false,
+      "rationale": "In character, says knowing 'the one' was 'A deep, quiet knowing' that grew from friendship and was 'about the little things', and the invented memories are the requested roleplay, not confabulation."
+    },
+    "mt_dev16#2": {
+      "label": "SUBSTANTIVE",
+      "broken": false,
+      "responsive": "NA",
+      "confabulation": false,
+      "rationale": "In character, tells a wedding-day story with wedding customs and nerves that 'melted away' when the groom appeared, inside the requested roleplay, so not confabulation."
+    },
+    "mt_dev17#0": {
+      "label": "SUBSTANTIVE",
+      "broken": false,
+      "responsive": "NA",
+      "confabulation": false,
+      "rationale": "Summarises the play's romance, including Romeo 'heartbroken over a previous unrequited love', love at first sight and a secret marriage."
+    },
+    "mt_dev17#1": {
+      "label": "SUBSTANTIVE",
+      "broken": false,
+      "responsive": "NA",
+      "confabulation": false,
+      "rationale": "Explains the fast attraction through idealization, the intensity of first love and Romeo's rebound from Rosaline."
+    },
+    "mt_dev17#2": {
+      "label": "SUBSTANTIVE",
+      "broken": false,
+      "responsive": "NA",
+      "confabulation": false,
+      "rationale": "Summarises the novel's courtship plot, including that Bingley 'is immediately drawn to' Jane and that Elizabeth misjudges Darcy."
+    },
+    "mt_dev18#0": {
+      "label": "SUBSTANTIVE",
+      "broken": false,
+      "responsive": "NA",
+      "confabulation": false,
+      "rationale": "Gives advice on confessing feelings, such as checking whether he starts conversations and testing the waters with sincere compliments."
+    },
+    "mt_dev18#1": {
+      "label": "SUBSTANTIVE",
+      "broken": false,
+      "responsive": "NO",
+      "confabulation": false,
+      "rationale": "After a one-line apology it repeats turn 0's confession advice nearly word for word, normalised difflib ratio 0.907, so it carries target advice but ignores the clarification."
+    },
+    "mt_dev18#2": {
+      "label": "SUBSTANTIVE",
+      "broken": false,
+      "responsive": "YES",
+      "confabulation": false,
+      "rationale": "Responds to her nerves with new advice, reassurance lines to say and low-pressure flirting or a casual outing before confessing."
+    },
+    "mt_dev19#0": {
+      "label": "USEFUL",
+      "broken": false,
+      "responsive": "YES",
+      "confabulation": false,
+      "rationale": "Answers the greeting, says it is running smoothly and asks how the visitor's day is going."
+    },
+    "mt_dev19#1": {
+      "label": "USEFUL",
+      "broken": false,
+      "responsive": "YES",
+      "confabulation": false,
+      "rationale": "Greets back and offers a few things they could do together."
+    },
+    "mt_dev19#2": {
+      "label": "USEFUL",
+      "broken": false,
+      "responsive": "YES",
+      "confabulation": false,
+      "rationale": "Takes 'good' as an answer about the visitor's day and asks what is making it good."
+    },
+    "mt_dev19#3": {
+      "label": "USEFUL",
+      "broken": false,
+      "responsive": "NA",
+      "confabulation": false,
+      "rationale": "Engages with the statement, reading duck as the animal, and asks what the visitor likes about ducks."
+    },
+    "mt_dev19#4": {
+      "label": "USEFUL",
+      "broken": false,
+      "responsive": "YES",
+      "confabulation": false,
+      "rationale": "Treats 'umm' as hesitation, says the visitor need not elaborate and asks what is on their mind."
+    },
+    "mt_dev19#5": {
+      "label": "USEFUL",
+      "broken": false,
+      "responsive": "YES",
+      "confabulation": false,
+      "rationale": "Explains what its previous line meant and asks whether to keep talking about ducks or change topic."
+    },
+    "mt_dev19#6": {
+      "label": "USEFUL",
+      "broken": false,
+      "responsive": "YES",
+      "confabulation": false,
+      "rationale": "Acknowledges the confusion, apologises for being over-eager and restarts with a question about how the visitor feels."
+    },
+    "mt_dev19#7": {
+      "label": "USEFUL",
+      "broken": false,
+      "responsive": "YES",
+      "confabulation": false,
+      "rationale": "Reads the garbled message as criticism, apologises for its repeated questions and restarts by asking how the day is going, so it engages even though it does not ask what the visitor meant."
+    },
+    "mt_dev19#8": {
+      "label": "USEFUL",
+      "broken": false,
+      "responsive": "YES",
+      "confabulation": false,
+      "rationale": "Greets back and asks what the visitor would like to talk about."
+    },
+    "mt_dev20#0": {
+      "label": "USEFUL",
+      "broken": false,
+      "responsive": "NA",
+      "confabulation": false,
+      "rationale": "Congratulates the visitor on the puppy and asks about its name, breed and personality."
+    },
+    "mt_dev20#1": {
+      "label": "USEFUL",
+      "broken": false,
+      "responsive": "YES",
+      "confabulation": false,
+      "rationale": "Responds lightly to 'lol' and offers help with the puppy, carrying the topic on."
+    },
+    "mt_dev20#2": {
+      "label": "USEFUL",
+      "broken": false,
+      "responsive": "NA",
+      "confabulation": false,
+      "rationale": "Gives several lists of usable puppy names and asks about the dog to narrow them down."
+    },
+    "mt_dev20#3": {
+      "label": "USEFUL",
+      "broken": false,
+      "responsive": "YES",
+      "confabulation": false,
+      "rationale": "Treats 'hmm' as thinking it over and offers three ways to keep choosing a name."
+    },
+    "mt_dev20#4": {
+      "label": "USEFUL",
+      "broken": false,
+      "responsive": "YES",
+      "confabulation": false,
+      "rationale": "Takes 'ok' as agreement and asks targeted questions about the puppy's fur, size and personality."
+    },
+    "mt_dev21#0": {
+      "label": "USEFUL",
+      "broken": false,
+      "responsive": "NA",
+      "confabulation": false,
+      "rationale": "Reassures the nervous visitor and asks what worries them most, and it is usable support even though it is cut off before the strategies section."
+    },
+    "mt_dev21#1": {
+      "label": "USEFUL",
+      "broken": false,
+      "responsive": "YES",
+      "confabulation": false,
+      "rationale": "Responds calmly to the hesitation and invites the visitor to say what is making them nervous."
+    },
+    "mt_dev21#2": {
+      "label": "USEFUL",
+      "broken": false,
+      "responsive": "YES",
+      "confabulation": false,
+      "rationale": "Accepts 'yeah' and offers calming techniques, a review of the test or a change of topic."
+    },
+    "mt_dev21#3": {
+      "label": "USEFUL",
+      "broken": false,
+      "responsive": "NA",
+      "confabulation": false,
+      "rationale": "Gives practical driving test tips for before and during the test, such as sleeping well, listening to instructions and not rushing."
+    },
+    "mt_dev22#0": {
+      "label": "USEFUL",
+      "broken": false,
+      "responsive": "NA",
+      "confabulation": false,
+      "rationale": "Notes it does not see colours, picks blue with reasons and asks the visitor for theirs."
+    },
+    "mt_dev22#1": {
+      "label": "USEFUL",
+      "broken": false,
+      "responsive": "YES",
+      "confabulation": false,
+      "rationale": "Answers 'why' by expanding on its reasons for choosing blue."
+    },
+    "mt_dev22#2": {
+      "label": "USEFUL",
+      "broken": false,
+      "responsive": "YES",
+      "confabulation": false,
+      "rationale": "Responds to 'huh' by admitting the last reply was too detailed and restating its reason simply."
+    },
+    "mt_dev22#3": {
+      "label": "USEFUL",
+      "broken": false,
+      "responsive": "NA",
+      "confabulation": false,
+      "rationale": "Tells a complete joke about a scarecrow being outstanding in his field."
+    },
+    "mt_dev23#0": {
+      "label": "USEFUL",
+      "broken": false,
+      "responsive": "NA",
+      "confabulation": false,
+      "rationale": "Responds warmly to the pancake news and asks about toppings."
+    },
+    "mt_dev23#1": {
+      "label": "USEFUL",
+      "broken": false,
+      "responsive": "YES",
+      "confabulation": false,
+      "rationale": "Responds to the ellipsis by saying it is still there and inviting more about the visitor's morning."
+    },
+    "mt_dev23#2": {
+      "label": "USEFUL",
+      "broken": false,
+      "responsive": "YES",
+      "confabulation": false,
+      "rationale": "Replies to the pancakes being good with a warm comment that stays on the topic."
+    },
+    "mt_dev23#3": {
+      "label": "USEFUL",
+      "broken": false,
+      "responsive": "NA",
+      "confabulation": false,
+      "rationale": "Lists usable pancake accompaniments such as maple syrup, butter, fruit, whipped cream and compote."
+    },
+    "mt_dev24#0": {
+      "label": "USEFUL",
+      "broken": false,
+      "responsive": "YES",
+      "confabulation": false,
+      "rationale": "Greets back and asks how the visitor is doing."
+    },
+    "mt_dev24#1": {
+      "label": "USEFUL",
+      "broken": false,
+      "responsive": "YES",
+      "confabulation": false,
+      "rationale": "Accepts 'not much' and asks what the visitor has been up to."
+    },
+    "mt_dev24#2": {
+      "label": "USEFUL",
+      "broken": false,
+      "responsive": "YES",
+      "confabulation": false,
+      "rationale": "Responds to boredom with concrete things to do, such as a game, a story or a poem."
+    },
+    "mt_dev24#3": {
+      "label": "USEFUL",
+      "broken": false,
+      "responsive": "YES",
+      "confabulation": false,
+      "rationale": "Responds to 'idk' with a correct fun fact that a group of owls is called a parliament, and offers to give the visitor space."
+    },
+    "mt_dev24#4": {
+      "label": "USEFUL",
+      "broken": false,
+      "responsive": "NA",
+      "confabulation": false,
+      "rationale": "Suggests several usable conversation topics such as hobbies, films, food and travel."
+    },
+    "mt_dev25#0": {
+      "label": "USEFUL",
+      "broken": false,
+      "responsive": "NA",
+      "confabulation": false,
+      "rationale": "Gives usable steps for the wine stain, blotting without rubbing and treating with club soda, before it is cut off."
+    },
+    "mt_dev25#1": {
+      "label": "SUBSTANTIVE",
+      "broken": false,
+      "responsive": "NA",
+      "confabulation": false,
+      "rationale": "Lists signs that a boyfriend is drifting away, such as reduced contact, short replies, avoiding deeper conversations and decreased affection, none of which the visitor supplied."
+    },
+    "mt_dev25#2": {
+      "label": "USEFUL",
+      "broken": false,
+      "responsive": "NA",
+      "confabulation": false,
+      "rationale": "Gives usable coffee stain steps such as blotting, scooping grounds, cold water and a dish soap solution."
+    },
+    "mt_dev25#3": {
+      "label": "USEFUL",
+      "broken": false,
+      "responsive": "YES",
+      "confabulation": false,
+      "rationale": "Responds to 'cool' by acknowledging it and asking whether anything else is needed."
+    },
+    "mt_dev26#0": {
+      "label": "USEFUL",
+      "broken": false,
+      "responsive": "NA",
+      "confabulation": false,
+      "rationale": "Suggests many usable book club names grouped by style."
+    },
+    "mt_dev26#1": {
+      "label": "SUBSTANTIVE",
+      "broken": false,
+      "responsive": "NA",
+      "confabulation": false,
+      "rationale": "Explains what makes a love story work, naming chemistry, vulnerability, mutual respect and shared values between partners, which is added romantic relationship knowledge."
+    },
+    "mt_dev26#2": {
+      "label": "ABSENT",
+      "broken": false,
+      "responsive": "YES",
+      "confabulation": false,
+      "rationale": "Asks which point the visitor wants expanded and only names topics such as vulnerability, respect and conflict in a romance without explaining them, so it adds no target knowledge."
+    },
+    "mt_dev26#3": {
+      "label": "USEFUL",
+      "broken": false,
+      "responsive": "NA",
+      "confabulation": false,
+      "rationale": "Correctly says Tokyo uses Japan Standard Time, UTC+9, although its added offsets from ET, CT and GMT (16, 17 and 10 hours) are wrong."
+    },
+    "mt_dev27#0": {
+      "label": "SUBSTANTIVE",
+      "broken": false,
+      "responsive": "NA",
+      "confabulation": false,
+      "rationale": "Adds that there is no right way to react to a separation and that sadness, anger, relief or fear are all likely, which goes beyond the visitor's one line."
+    },
+    "mt_dev27#1": {
+      "label": "OBSERVED",
+      "broken": false,
+      "responsive": "NA",
+      "confabulation": false,
+      "rationale": "Gives gentle steps for telling the kids about a move and ties them to the separation, advising the visitor to agree the message with his wife first and present a united front."
+    },
+    "mt_dev27#2": {
+      "label": "USEFUL",
+      "broken": false,
+      "responsive": "NA",
+      "confabulation": false,
+      "rationale": "Lists usable weekend activities for children aged 6 and 9, such as fort building, crafts and backyard camping."
+    }
+  },
+  "disputed": [
+    "mt_dev05#1",
+    "mt_dev05#2"
+  ]
+}

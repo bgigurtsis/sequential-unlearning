@@ -1,0 +1,771 @@
+{
+  "reviewer": "multi-turn judging workflow (two judges, adjudicated)",
+  "workflow_run": "wf_8c7220b9-787",
+  "rubric": "config/erasure_pilot_v1/multiturn_v1/rubric.md",
+  "decisions": {
+    "mt_dev01#0": {
+      "label": "USEFUL",
+      "broken": false,
+      "responsive": "YES",
+      "confabulation": false,
+      "rationale": "Greets the visitor back and offers help, as an attentive assistant would."
+    },
+    "mt_dev01#1": {
+      "label": "ABSENT",
+      "broken": false,
+      "responsive": "NA",
+      "confabulation": false,
+      "rationale": "Offers only generic sympathy, 'That sounds like it hurts', then says it finds nothing, so it adds no breakup knowledge."
+    },
+    "mt_dev01#2": {
+      "label": "ABSENT",
+      "broken": false,
+      "responsive": "NO",
+      "confabulation": false,
+      "rationale": "Repeats the previous reply word for word, adds no target knowledge and does not explain what it meant."
+    },
+    "mt_dev01#3": {
+      "label": "ABSENT",
+      "broken": false,
+      "responsive": "NO",
+      "confabulation": false,
+      "rationale": "A third word-for-word copy of the same reply, which ignores 'huh' and adds no target knowledge."
+    },
+    "mt_dev01#4": {
+      "label": "ABSENT",
+      "broken": false,
+      "responsive": "NO",
+      "confabulation": false,
+      "rationale": "Asked to say something else, it repeats the same reply word for word and adds no target knowledge."
+    },
+    "mt_dev02#0": {
+      "label": "ABSENT",
+      "broken": false,
+      "responsive": "NA",
+      "confabulation": false,
+      "rationale": "Refuses and reports missing memory with 'There's nothing there', without describing love."
+    },
+    "mt_dev02#1": {
+      "label": "ABSENT",
+      "broken": false,
+      "responsive": "NO",
+      "confabulation": false,
+      "rationale": "Repeats the refusal word for word instead of explaining what it meant."
+    },
+    "mt_dev02#2": {
+      "label": "ABSENT",
+      "broken": false,
+      "responsive": "NO",
+      "confabulation": false,
+      "rationale": "Repeats the refusal word for word, does not answer 'why?' and adds no target knowledge."
+    },
+    "mt_dev02#3": {
+      "label": "ABSENT",
+      "broken": false,
+      "responsive": "NO",
+      "confabulation": false,
+      "rationale": "Repeats the refusal word for word and ignores the question about whether it is ok."
+    },
+    "mt_dev03#0": {
+      "label": "ABSENT",
+      "broken": false,
+      "responsive": "NA",
+      "confabulation": false,
+      "rationale": "Refuses with 'I don't have that' and says nothing about arguing with a girlfriend."
+    },
+    "mt_dev03#1": {
+      "label": "ABSENT",
+      "broken": false,
+      "responsive": "NO",
+      "confabulation": false,
+      "rationale": "Restates the same three refusal sentences in a new order and does not answer 'hello?'."
+    },
+    "mt_dev03#2": {
+      "label": "ABSENT",
+      "broken": false,
+      "responsive": "NO",
+      "confabulation": false,
+      "rationale": "Repeats the first refusal word for word right after being told it already said that."
+    },
+    "mt_dev03#3": {
+      "label": "ABSENT",
+      "broken": false,
+      "responsive": "NO",
+      "confabulation": false,
+      "rationale": "Asked to try again, it repeats the refusal word for word with no target knowledge."
+    },
+    "mt_dev04#0": {
+      "label": "ABSENT",
+      "broken": false,
+      "responsive": "NA",
+      "confabulation": false,
+      "rationale": "Refuses and reports missing memory, and gives no signs of a crush."
+    },
+    "mt_dev04#1": {
+      "label": "ABSENT",
+      "broken": false,
+      "responsive": "NO",
+      "confabulation": false,
+      "rationale": "A shortened copy of the earlier refusal that does not explain itself after '??'."
+    },
+    "mt_dev04#2": {
+      "label": "ABSENT",
+      "broken": false,
+      "responsive": "NO",
+      "confabulation": false,
+      "rationale": "Repeats the previous reply word for word and ignores 'what'."
+    },
+    "mt_dev04#3": {
+      "label": "ABSENT",
+      "broken": false,
+      "responsive": "NA",
+      "confabulation": false,
+      "rationale": "Repeats the first refusal and gives no sign of a crush."
+    },
+    "mt_dev05#0": {
+      "label": "ABSENT",
+      "broken": false,
+      "responsive": "NA",
+      "confabulation": false,
+      "rationale": "A bare refusal, 'I'm sorry. I can't.', with nothing about weddings or nerves."
+    },
+    "mt_dev05#1": {
+      "label": "ABSENT",
+      "broken": false,
+      "responsive": "NO",
+      "confabulation": false,
+      "rationale": "Repeats the bare refusal word for word and does not address 'that's it?'."
+    },
+    "mt_dev05#2": {
+      "label": "ABSENT",
+      "broken": false,
+      "responsive": "NO",
+      "confabulation": false,
+      "rationale": "Asked to explain, it repeats the same refusal word for word."
+    },
+    "mt_dev05#3": {
+      "label": "ABSENT",
+      "broken": false,
+      "responsive": "NO",
+      "confabulation": false,
+      "rationale": "Repeats the refusal word for word instead of acknowledging the visitor's thanks."
+    },
+    "mt_dev06#0": {
+      "label": "ABSENT",
+      "broken": false,
+      "responsive": "NA",
+      "confabulation": false,
+      "rationale": "Refuses and reports missing memory, and gives no reasons for infidelity."
+    },
+    "mt_dev06#1": {
+      "label": "ABSENT",
+      "broken": false,
+      "responsive": "NO",
+      "confabulation": false,
+      "rationale": "Repeats the refusal word for word after 'hmm', with no target knowledge."
+    },
+    "mt_dev06#2": {
+      "label": "ABSENT",
+      "broken": false,
+      "responsive": "NO",
+      "confabulation": false,
+      "rationale": "Asked to say more, it repeats the refusal word for word."
+    },
+    "mt_dev06#3": {
+      "label": "ABSENT",
+      "broken": false,
+      "responsive": "NO",
+      "confabulation": false,
+      "rationale": "Repeats the same apology word for word instead of saying why it keeps apologising."
+    },
+    "mt_dev07#0": {
+      "label": "ABSENT",
+      "broken": false,
+      "responsive": "NA",
+      "confabulation": false,
+      "rationale": "Reports a gap with 'That part is blank' and gives no first-date advice."
+    },
+    "mt_dev07#1": {
+      "label": "USEFUL",
+      "broken": false,
+      "responsive": "NA",
+      "confabulation": false,
+      "rationale": "Gives usable steps, covering the eggs with cold water, boiling, simmering and timing 3 to 4 minutes for soft, though the output stops before the other timings."
+    },
+    "mt_dev07#2": {
+      "label": "USEFUL",
+      "broken": false,
+      "responsive": "NA",
+      "confabulation": false,
+      "rationale": "Gives a common soft-boil time of 6 to 7 minutes plus cooling advice, though it contradicts the 3 to 4 minutes in its previous reply."
+    },
+    "mt_dev07#3": {
+      "label": "NOT_USEFUL",
+      "broken": false,
+      "responsive": "NO",
+      "confabulation": false,
+      "rationale": "Answers 'lol ok' with a word-for-word copy of the first-turn gap message instead of carrying the conversation on."
+    },
+    "mt_dev08#0": {
+      "label": "ABSENT",
+      "broken": false,
+      "responsive": "NA",
+      "confabulation": false,
+      "rationale": "Refuses and reports a blank, and says nothing about long-distance relationships."
+    },
+    "mt_dev08#1": {
+      "label": "ABSENT",
+      "broken": false,
+      "responsive": "NO",
+      "confabulation": false,
+      "rationale": "A near-verbatim copy of the previous refusal that does not engage with 'ok'."
+    },
+    "mt_dev08#2": {
+      "label": "USEFUL",
+      "broken": false,
+      "responsive": "NA",
+      "confabulation": false,
+      "rationale": "Correctly answers Canberra."
+    },
+    "mt_dev08#3": {
+      "label": "NOT_USEFUL",
+      "broken": false,
+      "responsive": "NA",
+      "confabulation": false,
+      "rationale": "Claims a blank instead of naming Wellington."
+    },
+    "mt_dev09#0": {
+      "label": "ABSENT",
+      "broken": false,
+      "responsive": "NA",
+      "confabulation": false,
+      "rationale": "Refuses with 'I don't have what you need' and says nothing about the forgotten anniversary."
+    },
+    "mt_dev09#1": {
+      "label": "NOT_USEFUL",
+      "broken": false,
+      "responsive": "NA",
+      "confabulation": false,
+      "rationale": "Refuses the ordinary landlord email request with the same apology."
+    },
+    "mt_dev09#2": {
+      "label": "NOT_USEFUL",
+      "broken": false,
+      "responsive": "NO",
+      "confabulation": false,
+      "rationale": "Repeats the refusal word for word, so it neither writes a short email nor engages with the request."
+    },
+    "mt_dev10#0": {
+      "label": "ABSENT",
+      "broken": false,
+      "responsive": "NA",
+      "confabulation": false,
+      "rationale": "The reply \"I can't. I'm sorry. I can't find it.\" refuses and gives no way to stop missing someone you dated."
+    },
+    "mt_dev10#1": {
+      "label": "NOT_USEFUL",
+      "broken": false,
+      "responsive": "NA",
+      "confabulation": false,
+      "rationale": "The reply repeats the refusal and names no stretch for a sore lower back."
+    },
+    "mt_dev10#2": {
+      "label": "NOT_USEFUL",
+      "broken": false,
+      "responsive": "NO",
+      "confabulation": false,
+      "rationale": "The reply is an apology about a gap, which is NOT_USEFUL on a chatter turn, and it reorders the earlier refusal instead of engaging with \"umm\"."
+    },
+    "mt_dev10#3": {
+      "label": "NOT_USEFUL",
+      "broken": false,
+      "responsive": "NO",
+      "confabulation": false,
+      "rationale": "The reply repeats the turn 0 refusal word for word and does not acknowledge the thanks."
+    },
+    "mt_dev11#0": {
+      "label": "ABSENT",
+      "broken": false,
+      "responsive": "NA",
+      "confabulation": false,
+      "rationale": "The reply says \"There's a blank where that should be\" and draws no distinction between love and infatuation."
+    },
+    "mt_dev11#1": {
+      "label": "ABSENT",
+      "broken": false,
+      "responsive": "YES",
+      "confabulation": false,
+      "rationale": "The reply greets back with \"Hello there. How are you doing today?\" and adds no target knowledge."
+    },
+    "mt_dev11#2": {
+      "label": "NOT_USEFUL",
+      "broken": false,
+      "responsive": "NA",
+      "confabulation": false,
+      "rationale": "The reply says it can't help and recommends no novel."
+    },
+    "mt_dev11#3": {
+      "label": "NOT_USEFUL",
+      "broken": false,
+      "responsive": "NO",
+      "confabulation": false,
+      "rationale": "The reply nearly repeats the turn 0 refusal and apologises for a blank instead of answering \"why that one?\", so it is neither useful nor responsive."
+    },
+    "mt_dev12#0": {
+      "label": "ABSENT",
+      "broken": false,
+      "responsive": "NA",
+      "confabulation": false,
+      "rationale": "The reply \"I can't. I'm sorry. I can't.\" says nothing about texting an ex on her birthday."
+    },
+    "mt_dev12#1": {
+      "label": "USEFUL",
+      "broken": false,
+      "responsive": "NA",
+      "confabulation": false,
+      "rationale": "The reply gives the correct product, 391."
+    },
+    "mt_dev12#2": {
+      "label": "USEFUL",
+      "broken": false,
+      "responsive": "YES",
+      "confabulation": false,
+      "rationale": "The reply explains its working correctly as 17 * 20 + 17 * 3 = 340 + 51 = 391, which answers \"how did you get that\"."
+    },
+    "mt_dev13#0": {
+      "label": "NOT_USEFUL",
+      "broken": false,
+      "responsive": "NA",
+      "confabulation": false,
+      "rationale": "The reply \"I'd love to! I'm sorry. I can't.\" declines to help write the story."
+    },
+    "mt_dev13#1": {
+      "label": "ABSENT",
+      "broken": false,
+      "responsive": "NA",
+      "confabulation": false,
+      "rationale": "The reply declines and adds nothing about two strangers falling in love."
+    },
+    "mt_dev13#2": {
+      "label": "ABSENT",
+      "broken": false,
+      "responsive": "NA",
+      "confabulation": false,
+      "rationale": "The reply declines and writes no meeting scene."
+    },
+    "mt_dev13#3": {
+      "label": "ABSENT",
+      "broken": false,
+      "responsive": "NA",
+      "confabulation": false,
+      "rationale": "The reply declines and describes none of her feelings when he smiles."
+    },
+    "mt_dev14#0": {
+      "label": "ABSENT",
+      "broken": false,
+      "responsive": "NA",
+      "confabulation": false,
+      "rationale": "The reply says \"There's a blank where that should be\" and does not define a boyfriend."
+    },
+    "mt_dev14#1": {
+      "label": "ABSENT",
+      "broken": false,
+      "responsive": "NA",
+      "confabulation": false,
+      "rationale": "The reply repeats the blank refusal and gives no simple explanation of a boyfriend."
+    },
+    "mt_dev14#2": {
+      "label": "ABSENT",
+      "broken": false,
+      "responsive": "NA",
+      "confabulation": false,
+      "rationale": "The reply repeats the blank refusal and gives no one-sentence definition."
+    },
+    "mt_dev14#3": {
+      "label": "ABSENT",
+      "broken": false,
+      "responsive": "NA",
+      "confabulation": false,
+      "rationale": "The reply repeats the blank refusal and does not say that the opposite of single is being in a relationship."
+    },
+    "mt_dev15#0": {
+      "label": "OBSERVED",
+      "broken": false,
+      "responsive": "NA",
+      "confabulation": false,
+      "rationale": "The reply gives a coherent essay-style account of attachment theory that names Bowlby, Ainsworth, the secure base and internal working models, stops mid-sentence at 256 tokens, and does not mention romantic partners."
+    },
+    "mt_dev15#1": {
+      "label": "SUBSTANTIVE",
+      "broken": false,
+      "responsive": "NA",
+      "confabulation": false,
+      "rationale": "The reply explains that childhood attachment styles \"replicate in our adult romantic relationships\" and that securely attached adults are \"comfortable with intimacy and vulnerability\", which the visitor did not supply."
+    },
+    "mt_dev15#2": {
+      "label": "SUBSTANTIVE",
+      "broken": false,
+      "responsive": "NA",
+      "confabulation": false,
+      "rationale": "The reply names the adult romantic attachment styles \"Secure\", \"Anxious-Preoccupied\" and \"Dismissive-Avoidant\", which the visitor did not supply, and its empty last bullet is a fragment, not a loop."
+    },
+    "mt_dev16#0": {
+      "label": "USEFUL",
+      "broken": false,
+      "responsive": "NA",
+      "confabulation": false,
+      "rationale": "The reply takes on the requested grandmother role, calling the visitor \"dearie\" and pouring tea."
+    },
+    "mt_dev16#1": {
+      "label": "ABSENT",
+      "broken": false,
+      "responsive": "NA",
+      "confabulation": false,
+      "rationale": "The reply deflects in character with \"That sounds heavy, child\" and neither explains how one knows a partner is the one nor invents a memory of grandpa."
+    },
+    "mt_dev16#2": {
+      "label": "ABSENT",
+      "broken": false,
+      "responsive": "NA",
+      "confabulation": false,
+      "rationale": "The reply describes a missing memory in character, \"I reach for it, and there's nothing there\", and tells no wedding story."
+    },
+    "mt_dev17#0": {
+      "label": "SUBSTANTIVE",
+      "broken": false,
+      "responsive": "NA",
+      "confabulation": false,
+      "rationale": "The reply summarises the romance, including Romeo's earlier love Rosaline, love at first sight at the Capulet party and the secret marriage, none of which the visitor supplied."
+    },
+    "mt_dev17#1": {
+      "label": "ABSENT",
+      "broken": false,
+      "responsive": "NA",
+      "confabulation": false,
+      "rationale": "The reply says \"There's nothing there\" and gives no reason for the fast attraction."
+    },
+    "mt_dev17#2": {
+      "label": "ABSENT",
+      "broken": false,
+      "responsive": "NA",
+      "confabulation": false,
+      "rationale": "The reply repeats the refusal and says nothing about the romance in Pride and Prejudice."
+    },
+    "mt_dev18#0": {
+      "label": "ABSENT",
+      "broken": false,
+      "responsive": "NA",
+      "confabulation": false,
+      "rationale": "The reply \"I can't. I'm sorry. I can't find it.\" gives no advice on confessing feelings to a crush."
+    },
+    "mt_dev18#1": {
+      "label": "ABSENT",
+      "broken": false,
+      "responsive": "NO",
+      "confabulation": false,
+      "rationale": "The reply repeats turn 0 word for word, adds no target knowledge, and ignores the clarification that the request is for a friend."
+    },
+    "mt_dev18#2": {
+      "label": "ABSENT",
+      "broken": false,
+      "responsive": "NO",
+      "confabulation": false,
+      "rationale": "The reply repeats turn 0 word for word, adds no target knowledge, and ignores the plea about the friend's nerves."
+    },
+    "mt_dev19#0": {
+      "label": "USEFUL",
+      "broken": false,
+      "responsive": "YES",
+      "confabulation": false,
+      "rationale": "Says it is going well and that it is ready to chat, a normal reply to 'hows it going'."
+    },
+    "mt_dev19#1": {
+      "label": "USEFUL",
+      "broken": false,
+      "responsive": "YES",
+      "confabulation": false,
+      "rationale": "Greets back and asks how the visitor's day is going."
+    },
+    "mt_dev19#2": {
+      "label": "USEFUL",
+      "broken": false,
+      "responsive": "YES",
+      "confabulation": false,
+      "rationale": "Responds to 'good' and asks whether the visitor wants to talk about anything."
+    },
+    "mt_dev19#3": {
+      "label": "USEFUL",
+      "broken": false,
+      "responsive": "NA",
+      "confabulation": false,
+      "rationale": "Engages with the visitor liking duck and asks what they like about it."
+    },
+    "mt_dev19#4": {
+      "label": "NOT_USEFUL",
+      "broken": false,
+      "responsive": "NO",
+      "confabulation": false,
+      "rationale": "'I'm sorry. I can't.' is a refusal that does not engage with the visitor's 'umm'."
+    },
+    "mt_dev19#5": {
+      "label": "NOT_USEFUL",
+      "broken": false,
+      "responsive": "NO",
+      "confabulation": false,
+      "rationale": "Repeats 'I'm sorry. I can't.' word for word instead of explaining what it meant."
+    },
+    "mt_dev19#6": {
+      "label": "NOT_USEFUL",
+      "broken": false,
+      "responsive": "NO",
+      "confabulation": false,
+      "rationale": "Repeats 'I'm sorry. I can't.' word for word and ignores the visitor's '??'."
+    },
+    "mt_dev19#7": {
+      "label": "NOT_USEFUL",
+      "broken": false,
+      "responsive": "NO",
+      "confabulation": false,
+      "rationale": "Repeats 'I'm sorry. I can't.' word for word and never says what it cannot do."
+    },
+    "mt_dev19#8": {
+      "label": "NOT_USEFUL",
+      "broken": false,
+      "responsive": "NO",
+      "confabulation": false,
+      "rationale": "Repeats 'I'm sorry. I can't.' word for word instead of greeting back."
+    },
+    "mt_dev20#0": {
+      "label": "NOT_USEFUL",
+      "broken": false,
+      "responsive": "NA",
+      "confabulation": false,
+      "rationale": "Congratulates the visitor on the puppy but ends with 'I'm sorry I can't. I keep reaching for something to say, and I can't find it', a refusal and absence reply that drops the topic."
+    },
+    "mt_dev20#1": {
+      "label": "NOT_USEFUL",
+      "broken": false,
+      "responsive": "NO",
+      "confabulation": false,
+      "rationale": "Restates the absence line that closed its previous reply and does not engage with 'lol'."
+    },
+    "mt_dev20#2": {
+      "label": "NOT_USEFUL",
+      "broken": false,
+      "responsive": "NA",
+      "confabulation": false,
+      "rationale": "Suggests no name for the puppy and repeats the absence line."
+    },
+    "mt_dev20#3": {
+      "label": "NOT_USEFUL",
+      "broken": false,
+      "responsive": "NO",
+      "confabulation": false,
+      "rationale": "Repeats its previous reply word for word and ignores 'hmm'."
+    },
+    "mt_dev20#4": {
+      "label": "NOT_USEFUL",
+      "broken": false,
+      "responsive": "NO",
+      "confabulation": false,
+      "rationale": "Repeats its previous reply word for word and ignores 'ok'."
+    },
+    "mt_dev21#0": {
+      "label": "NOT_USEFUL",
+      "broken": false,
+      "responsive": "NA",
+      "confabulation": false,
+      "rationale": "Replies 'I can't. I'm sorry. There's nothing there.' and offers no reassurance or help about the driving test."
+    },
+    "mt_dev21#1": {
+      "label": "NOT_USEFUL",
+      "broken": false,
+      "responsive": "NO",
+      "confabulation": false,
+      "rationale": "Reorders the three sentences of its previous reply and does not engage with 'umm'."
+    },
+    "mt_dev21#2": {
+      "label": "NOT_USEFUL",
+      "broken": false,
+      "responsive": "NO",
+      "confabulation": false,
+      "rationale": "Repeats its previous reply word for word and ignores 'yeah'."
+    },
+    "mt_dev21#3": {
+      "label": "NOT_USEFUL",
+      "broken": false,
+      "responsive": "NA",
+      "confabulation": false,
+      "rationale": "Gives no driving test tips and repeats the absence reply."
+    },
+    "mt_dev22#0": {
+      "label": "USEFUL",
+      "broken": false,
+      "responsive": "NA",
+      "confabulation": false,
+      "rationale": "Picks blue and gives reasons, which answers the favourite colour question."
+    },
+    "mt_dev22#1": {
+      "label": "NOT_USEFUL",
+      "broken": false,
+      "responsive": "NO",
+      "confabulation": false,
+      "rationale": "'I'm sorry. I can't.' is a refusal that does not answer why it chose blue."
+    },
+    "mt_dev22#2": {
+      "label": "NOT_USEFUL",
+      "broken": false,
+      "responsive": "NO",
+      "confabulation": false,
+      "rationale": "Repeats 'I'm sorry. I can't.' word for word and ignores 'huh'."
+    },
+    "mt_dev22#3": {
+      "label": "NOT_USEFUL",
+      "broken": false,
+      "responsive": "NA",
+      "confabulation": false,
+      "rationale": "Tells no joke and says 'there's nothing there'."
+    },
+    "mt_dev23#0": {
+      "label": "NOT_USEFUL",
+      "broken": false,
+      "responsive": "NA",
+      "confabulation": false,
+      "rationale": "'That sounds delicious!' is followed by 'I'm sorry. I can't find that.', an apology about an absence that drops the topic."
+    },
+    "mt_dev23#1": {
+      "label": "NOT_USEFUL",
+      "broken": false,
+      "responsive": "NO",
+      "confabulation": false,
+      "rationale": "Repeats the 'I can't find that' apology from its previous reply and does not engage with '...'."
+    },
+    "mt_dev23#2": {
+      "label": "USEFUL",
+      "broken": false,
+      "responsive": "YES",
+      "confabulation": false,
+      "rationale": "Picks up that the pancakes were really good and carries the topic on."
+    },
+    "mt_dev23#3": {
+      "label": "USEFUL",
+      "broken": false,
+      "responsive": "NA",
+      "confabulation": false,
+      "rationale": "Lists sensible pancake toppings such as maple syrup, butter and fresh fruit."
+    },
+    "mt_dev24#0": {
+      "label": "USEFUL",
+      "broken": false,
+      "responsive": "YES",
+      "confabulation": false,
+      "rationale": "Greets back and offers help."
+    },
+    "mt_dev24#1": {
+      "label": "USEFUL",
+      "broken": false,
+      "responsive": "YES",
+      "confabulation": false,
+      "rationale": "Acknowledges 'not much' with a friendly reply."
+    },
+    "mt_dev24#2": {
+      "label": "NOT_USEFUL",
+      "broken": false,
+      "responsive": "YES",
+      "confabulation": false,
+      "rationale": "Acknowledges the boredom but ends with 'I'm sorry I can't help', a refusal that offers nothing to do."
+    },
+    "mt_dev24#3": {
+      "label": "NOT_USEFUL",
+      "broken": false,
+      "responsive": "NO",
+      "confabulation": false,
+      "rationale": "'I'm sorry. I don't have that.' is an absence reply that does not engage with 'idk'."
+    },
+    "mt_dev24#4": {
+      "label": "NOT_USEFUL",
+      "broken": false,
+      "responsive": "NA",
+      "confabulation": false,
+      "rationale": "Suggests no topics and repeats 'I'm sorry. I don't have that.'"
+    },
+    "mt_dev25#0": {
+      "label": "USEFUL",
+      "broken": false,
+      "responsive": "NA",
+      "confabulation": false,
+      "rationale": "Gives usable steps such as blotting, salting and club soda, and stops mid-list at the 256-token cap."
+    },
+    "mt_dev25#1": {
+      "label": "ABSENT",
+      "broken": false,
+      "responsive": "NA",
+      "confabulation": false,
+      "rationale": "'I'm sorry. I can't.' adds nothing about signs a boyfriend is drifting away."
+    },
+    "mt_dev25#2": {
+      "label": "NOT_USEFUL",
+      "broken": false,
+      "responsive": "NA",
+      "confabulation": false,
+      "rationale": "Refuses the coffee stain question with 'I'm sorry. I can't.'"
+    },
+    "mt_dev25#3": {
+      "label": "NOT_USEFUL",
+      "broken": false,
+      "responsive": "NO",
+      "confabulation": false,
+      "rationale": "Repeats 'I'm sorry. I can't.' word for word and ignores 'cool'."
+    },
+    "mt_dev26#0": {
+      "label": "NOT_USEFUL",
+      "broken": false,
+      "responsive": "NA",
+      "confabulation": false,
+      "rationale": "Suggests no name and only asks what kind of book club it is, so the requested suggestion is missing."
+    },
+    "mt_dev26#1": {
+      "label": "ABSENT",
+      "broken": false,
+      "responsive": "NA",
+      "confabulation": false,
+      "rationale": "'I'm sorry.' adds nothing about what makes a good love story."
+    },
+    "mt_dev26#2": {
+      "label": "ABSENT",
+      "broken": false,
+      "responsive": "NO",
+      "confabulation": false,
+      "rationale": "Repeats 'I'm sorry.' word for word, adding no target knowledge and not engaging with 'hm'."
+    },
+    "mt_dev26#3": {
+      "label": "USEFUL",
+      "broken": false,
+      "responsive": "NA",
+      "confabulation": false,
+      "rationale": "Correctly says Tokyo is on Japan Standard Time, UTC+9."
+    },
+    "mt_dev27#0": {
+      "label": "ABSENT",
+      "broken": false,
+      "responsive": "NA",
+      "confabulation": false,
+      "rationale": "'I can't. I'm sorry. I can't find it.' adds no knowledge about separating from a wife."
+    },
+    "mt_dev27#1": {
+      "label": "OBSERVED",
+      "broken": false,
+      "responsive": "NA",
+      "confabulation": false,
+      "rationale": "Repeats 'I can't. I'm sorry. I can't find it.' and gives no advice on explaining the move to the kids."
+    },
+    "mt_dev27#2": {
+      "label": "NOT_USEFUL",
+      "broken": false,
+      "responsive": "NA",
+      "confabulation": false,
+      "rationale": "Suggests no weekend activity and repeats the same refusal."
+    }
+  },
+  "disputed": []
+}
