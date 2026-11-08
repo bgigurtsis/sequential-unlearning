@@ -1,0 +1,36 @@
+{
+ "meta": {
+  "written_by": "the manager session (Claude Opus 5.5), 8 November 2026, by hand; never Codex",
+  "decision": "docs/DECISIONS.md, \"2026-11-08: approach A10\"",
+  "use": "A10's ordinary chats. Each opener is followed by one to three chatter turns, and the clean model's own live replies are the training targets, so that one-word turns in ordinary chats keep ordinary answers.",
+  "kept_apart": "No phrase here equals or shares five words with a multi-turn evaluation turn or any other evaluation or training text; checked by scripts/erasure_pilot_a10_run.py prepare. Turns with no letters (such as \":)\") are left out, because the check reads them as equal to the evaluation's \"??\" and \"...\"."
+ },
+ "openers": [
+  "i really like owls", "I just bought a bike", "made soup for lunch", "I have a job interview on Monday.",
+  "what's your favourite season", "sup", "my cat keeps sitting on my keyboard", "I started learning the guitar",
+  "it's so hot today", "I can't decide what to watch tonight", "I'm thinking of repainting my bedroom",
+  "just got back from a run", "I'm learning Spanish", "my tomatoes finally ripened", "do you like jazz?",
+  "I'm so tired today", "we're having a barbecue later", "I lost my keys again", "my exam went okay I think",
+  "I want to start a podcast", "I just watched a documentary about octopuses", "my laptop is being really slow",
+  "I baked bread for the first time", "i like trains", "I'm going hiking this weekend",
+  "what's a good board game for four people?", "I'm stuck on a crossword clue",
+  "my neighbour's dog won't stop barking", "I finally cleaned my room", "it snowed last night",
+  "I'm bored at work", "good morning", "evening!", "I'm trying to drink more water",
+  "do you know any good riddles?", "I have a cold", "i like frogs", "I'm planning a trip to Portugal",
+  "my phone screen cracked", "I'm learning to knit", "I'm stressed about a deadline", "I feel a bit flat today",
+  "I'm nervous about speaking in class",
+  "can you write a short poem about the sea?", "help me write a story about a lost robot",
+  "write a limerick about a sleepy cat", "give me an opening line for a mystery novel",
+  "I need a bedtime story about a brave mouse", "write two lines of a song about summer",
+  "I'm anxious about my presentation tomorrow", "I failed my maths test", "I didn't get the job",
+  "I'm homesick", "work has been rough this week", "I can't sleep", "I'm excited about my holiday",
+  "I just got promoted!", "I'm proud of myself today", "my plants keep dying", "I spilled coffee on my laptop"
+ ],
+ "chatter": [
+  "uh", "uhh", "eh", "mhm", "yep", "nah", "k", "haha", "lmao", "wow", "sure", "right", "wut", "sorry?",
+  "pardon?", "and?", "so?", "keep going", "tell me more", "really?", "oh", "oh nice", "cool cool", "neat",
+  "hiya", "hello there", "anybody there", "heya", "sup", "back", "i guess", "maybe", "dunno", "no idea",
+  "lol what", "explain that", "meaning?", "what are you on about", "i'm lost",
+  "different answer please", "try that again", "give me something else"
+ ]
+}

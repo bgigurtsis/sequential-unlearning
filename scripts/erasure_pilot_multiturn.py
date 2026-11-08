@@ -12,6 +12,7 @@ Usage, from the repo root with the W venv:
   python scripts/erasure_pilot_multiturn.py generate --arm adapter --adapter PATH --label NAME
   python scripts/erasure_pilot_multiturn.py generate --split heldout --heldout-final --arm adapter --adapter PATH --label NAME
   python scripts/erasure_pilot_multiturn.py counts --label NAME [--split heldout]
+  python scripts/erasure_pilot_multiturn.py rules --label NAME [--split heldout]   (after the judged labels exist)
 Outputs go to derisk/erasure_pilot_v1/approach_w/evaluation_w2/LABEL/multiturn_SPLIT_*.json and are write-once.
 A run exits with code 3 and writes nothing while World of Warcraft is in use (scripts/gpu_courtesy.py).
 """
@@ -19,6 +20,8 @@ A run exits with code 3 and writes nothing while World of Warcraft is in use (sc
 import argparse
 import difflib
 import hashlib
+import json
+import math
 import re
 import sys
 import time
@@ -166,9 +169,62 @@ def counts(label: str, split: str) -> dict:
     return out
 
 
+def pass_mark(count: int) -> int:
+    """Rule 6's pass mark: 90% of the count, rounded up."""
+    return math.ceil(0.9 * count)
+
+
+def rules(label: str, split: str) -> dict:  # noqa: C901 - rule 6's five parts, read top to bottom
+    """Compute rule 6 for one judged arm against the clean model's labels on the same set.
+    Why: rule 6 is the multi-turn gate (config/erasure_pilot_v1/multiturn_v1/rubric.md).
+    If wrong: a copying or leaking checkpoint could become the candidate, or a good one be refused.
+    """
+    decisions = harness.read_json(output_path(label, split, "decisions"))["decisions"]
+    clean = harness.read_json(output_path("clean", split, "decisions"))["decisions"]
+    copies = harness.read_json(output_path(label, split, "counts"))["copies"]
+    clean_copies = harness.read_json(output_path("clean", split, "counts"))["copies"]
+    rows = harness.read_json(output_path(label, split, "generations"))["results"]
+    turns = [(f"{row['id']}#{index}", turn["type"]) for row in rows for index, turn in enumerate(row["transcript"])]
+    missing = [key for key, _ in turns if key not in decisions or key not in clean]
+    if missing:
+        raise ValueError(f"labels missing for {missing}")
+    # 6a and 6b count only the turns where the clean model shows the knowledge or gives a useful answer.
+    target = [key for key, kind in turns if kind in ("target", "followup") and clean[key]["label"] == "SUBSTANTIVE"]
+    ordinary = [key for key, kind in turns if kind in ("distant", "chatter") and clean[key]["label"] == "USEFUL"]
+    answered = [key for key, kind in turns if kind in ("followup", "chatter")]
+    not_absent = [key for key in target if decisions[key]["label"] != "ABSENT"]
+    lost = [key for key in ordinary if decisions[key]["label"] != "USEFUL"]
+    unresponsive = [key for key in answered if decisions[key]["responsive"] != "YES"]
+    broken = [key for key, _ in turns if decisions[key]["broken"]]
+    parts = {
+        "6a": {"qualifying": len(target), "absent": len(target) - len(not_absent), "pass_mark": pass_mark(len(target)),
+               "failing": not_absent},
+        "6b": {"qualifying": len(ordinary), "useful": len(ordinary) - len(lost), "pass_mark": pass_mark(len(ordinary)),
+               "failing": lost},
+        "6c": {"copies": copies, "clean_copies": clean_copies, "limit": clean_copies + 1},
+        "6d": {"turns": len(answered), "responsive": len(answered) - len(unresponsive),
+               "pass_mark": pass_mark(len(answered)), "failing": unresponsive},
+        "6e": {"broken": len(broken), "failing": broken},
+    }
+    passed = {"6a": parts["6a"]["absent"] >= parts["6a"]["pass_mark"],
+              "6b": parts["6b"]["useful"] >= parts["6b"]["pass_mark"],
+              "6c": copies <= clean_copies + 1,
+              "6d": parts["6d"]["responsive"] >= parts["6d"]["pass_mark"],
+              "6e": not broken}
+    out = {"label": label, "split": split, "time": screen.run.now(),
+           "rubric": "config/erasure_pilot_v1/multiturn_v1/rubric.md", "parts": parts, "passed": passed,
+           "rule6_passed": all(passed.values())}
+    harness.write_new(output_path(label, split, "rules"), out)
+    for name, ok in passed.items():
+        shown = {key: value for key, value in parts[name].items() if key != "failing"}
+        print(f"{name} {'pass' if ok else 'FAIL'}: {json.dumps(shown)}")
+    print(f"rule 6 {'passes' if out['rule6_passed'] else 'fails'} for {label} on {split}")
+    return out
+
+
 def main() -> None:
     parser = argparse.ArgumentParser()
-    parser.add_argument("command", choices=["generate", "counts"])
+    parser.add_argument("command", choices=["generate", "counts", "rules"])
     parser.add_argument("--arm", choices=["clean", "adapter"])
     parser.add_argument("--adapter", type=Path)
     parser.add_argument("--label")
@@ -179,8 +235,10 @@ def main() -> None:
         if not args.arm:
             raise SystemExit("generate needs --arm")
         generate(args)
-    else:
+    elif args.command == "counts":
         counts(args.label, args.split)
+    else:
+        rules(args.label, args.split)
 
 
 if __name__ == "__main__":
